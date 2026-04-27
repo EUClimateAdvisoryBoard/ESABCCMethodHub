@@ -20,6 +20,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
+import { exportFundingToExcel } from './export';
 
 interface FundingSource {
   id: string;
@@ -69,6 +70,7 @@ export default function FundingSourcesPage() {
   const [search, setSearch] = useState('');
   const [dgFilter, setDgFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [exporting, setExporting] = useState(false);
 
   useEffect(() => {
     fetch('/data/funding-sources.json', { cache: 'no-store' })
@@ -197,11 +199,26 @@ export default function FundingSourcesPage() {
                 </select>
               </div>
               <button
-                disabled
-                title="Excel export coming in Chunk 2"
-                className="px-4 py-2 bg-grey-200 text-tertiary rounded text-sm cursor-not-allowed"
+                disabled={exporting || filtered.length === 0}
+                onClick={async () => {
+                  if (!data) return;
+                  setExporting(true);
+                  try {
+                    const filterParts: string[] = [];
+                    if (search.trim())          filterParts.push(`search="${search.trim()}"`);
+                    if (dgFilter !== 'all')     filterParts.push(`DG=${dgFilter}`);
+                    if (statusFilter !== 'all') filterParts.push(`status=${statusFilter}`);
+                    await exportFundingToExcel(filtered, {
+                      snapshotDate: data.lastUpdated,
+                      filterSummary: filterParts.join(' · '),
+                    });
+                  } finally {
+                    setExporting(false);
+                  }
+                }}
+                className="px-4 py-2 bg-primary hover:bg-primary-dark disabled:bg-grey-200 disabled:text-tertiary text-white rounded text-sm"
               >
-                Export to Excel (soon)
+                {exporting ? 'Exporting…' : 'Export to Excel'}
               </button>
             </section>
 
