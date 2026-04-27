@@ -1,14 +1,14 @@
 # MkDocs configuration — ESABCC Secretariat MethodHub documentation site.
 #
-# Builds the content under `docs/` into a static site served via GitHub
-# Pages (see `.github/workflows/docs.yml`). The site is designed to let a
-# reviewer either skim the overview on the landing page or dive deep into
-# a single module's technical surface — same pages, progressive disclosure.
+# Builds the content under `docs/` into a static site that ships inside
+# the Next.js app under public/docs and is served on Vercel at
+# https://<deployment>/docs/. See scripts/build-docs.sh and the
+# `vercel-build` script in package.json.
 #
 # Run locally:
-#   pip install mkdocs-material pymdown-extensions mkdocs-awesome-pages-plugin
+#   pip install mkdocs-material pymdown-extensions mkdocs-awesome-pages-plugin mkdocs-glightbox
 #   mkdocs serve        # http://127.0.0.1:8000
-#   mkdocs build        # writes to site/
+#   bash scripts/build-docs.sh   # writes to public/docs/
 
 site_name: ESABCC MethodHub — Documentation
 site_description: >-
@@ -16,15 +16,17 @@ site_description: >-
   on Climate Change Secretariat. Built and maintained by CCE5. Packaged
   for self-hosted deployment on EEA infrastructure.
 site_author: CCE5 · ESABCC Secretariat
-site_url: https://sebastianfra.github.io/MethodHub/
-repo_url: https://github.com/SebastianFra/MethodHub
-repo_name: SebastianFra/MethodHub
+site_url: https://esabccmethodhub.vercel.app/docs/
+repo_url: https://github.com/secesabcc/esabccmethodhub
+repo_name: secesabcc/esabccmethodhub
 edit_uri: edit/main/docs/
 copyright: >-
   Built and maintained by CCE5 for the ESABCC Secretariat.
-  Source · <a href="https://github.com/SebastianFra/MethodHub">github.com/SebastianFra/MethodHub</a>.
+  Source · <a href="https://github.com/secesabcc/esabccmethodhub">github.com/secesabcc/esabccmethodhub</a>.
 
 docs_dir: docs
+# Default site_dir; the Vercel build overrides this via
+# `mkdocs build --site-dir public/docs` (see scripts/build-docs.sh).
 site_dir: site
 
 theme:

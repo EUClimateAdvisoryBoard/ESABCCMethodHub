@@ -3,7 +3,25 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
-const apps = [
+type App = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  color: string;
+  gradient: string;
+  icon: JSX.Element;
+  features: string[];
+  status: 'active';
+  /** When true, render as a plain anchor so the browser does a hard
+   *  navigation. Used for static assets that live outside Next's
+   *  router — e.g. the MkDocs site mounted at /docs/. */
+  external?: boolean;
+  /** CTA label override. Defaults to "Open App". */
+  cta?: string;
+};
+
+const apps: App[] = [
   {
     id: 'navigator',
     title: 'EU Policy Navigator',
@@ -19,7 +37,7 @@ const apps = [
       </svg>
     ),
     features: ['97 EU policies mapped', 'Cross-reference analysis', 'Text annotation & tagging', 'Network visualization'],
-    status: 'active' as const,
+    status: 'active',
   },
   {
     id: 'scenarios',
@@ -34,7 +52,7 @@ const apps = [
       </svg>
     ),
     features: ['Eurostat data explorer', 'IPCC scenario projections', 'Pathway comparison', 'Target tracking'],
-    status: 'active' as const,
+    status: 'active',
   },
   {
     id: 'references',
@@ -52,7 +70,25 @@ const apps = [
       </svg>
     ),
     features: ['Paper library', 'Citation management', 'Tag & organize', 'BibTeX export'],
-    status: 'active' as const,
+    status: 'active',
+  },
+  {
+    id: 'documentation',
+    title: 'Documentation',
+    description: 'Five-module deep-dives, infrastructure topology, deployment topology, vision and tech-stack reference. Built from MkDocs Material; served as a subpage of the MethodHub.',
+    href: '/docs/',
+    external: true,
+    cta: 'Open Docs',
+    color: '#00928F',
+    gradient: 'from-[#00928F] to-[#3D5265]',
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+      </svg>
+    ),
+    features: ['Module deep-dives', 'Infrastructure & GDPR', 'Deployment guide', 'API & scripts reference'],
+    status: 'active',
   },
 ];
 
@@ -89,64 +125,78 @@ export default function HubPage() {
 
       {/* App Cards */}
       <section className="max-w-6xl mx-auto px-6 -mt-8 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {apps.map(app => (
-            <Link key={app.id} href={app.href}
-              className="group relative bg-white rounded-2xl shadow-lg border border-grey-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              {/* Color bar */}
-              <div className={`h-2 bg-gradient-to-r ${app.gradient}`} />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {apps.map(app => {
+            const cardClasses = "group relative bg-white rounded-2xl shadow-lg border border-grey-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1";
+            const cardBody = (
+              <>
+                {/* Color bar */}
+                <div className={`h-2 bg-gradient-to-r ${app.gradient}`} />
 
-              <div className="p-6">
-                {/* Icon + Status */}
-                <div className="flex items-start justify-between mb-4">
-                  <div className="p-3 rounded-xl text-white" style={{ backgroundColor: app.color }}>
-                    {app.icon}
-                  </div>
-                  {app.status === 'active' ? (
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 rounded-full px-2.5 py-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
-                      Active
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
-                      Coming Soon
-                    </span>
-                  )}
-                </div>
-
-                {/* Title + Description */}
-                <h2 className="text-xl font-bold text-tertiary-dark mb-2 group-hover:text-secondary transition">
-                  {app.title}
-                </h2>
-                <p className="text-sm text-tertiary leading-relaxed mb-5">
-                  {app.description}
-                </p>
-
-                {/* Features */}
-                <div className="space-y-2 mb-5">
-                  {app.features.map(f => (
-                    <div key={f} className="flex items-center gap-2 text-sm text-tertiary-dark">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={app.color} strokeWidth="2.5">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      {f}
+                <div className="p-6">
+                  {/* Icon + Status */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="p-3 rounded-xl text-white" style={{ backgroundColor: app.color }}>
+                      {app.icon}
                     </div>
-                  ))}
-                </div>
+                    {app.status === 'active' ? (
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 rounded-full px-2.5 py-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                        Active
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                        Coming Soon
+                      </span>
+                    )}
+                  </div>
 
-                {/* CTA */}
-                <div className={`flex items-center gap-2 text-sm font-medium transition ${app.status === 'active' ? 'text-secondary group-hover:gap-3' : 'text-tertiary'}`}>
-                  {app.status === 'active' ? 'Open App' : 'Coming Soon'}
-                  {app.status === 'active' && (
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                  )}
+                  {/* Title + Description */}
+                  <h2 className="text-xl font-bold text-tertiary-dark mb-2 group-hover:text-secondary transition">
+                    {app.title}
+                  </h2>
+                  <p className="text-sm text-tertiary leading-relaxed mb-5">
+                    {app.description}
+                  </p>
+
+                  {/* Features */}
+                  <div className="space-y-2 mb-5">
+                    {app.features.map(f => (
+                      <div key={f} className="flex items-center gap-2 text-sm text-tertiary-dark">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={app.color} strokeWidth="2.5">
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        {f}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA */}
+                  <div className={`flex items-center gap-2 text-sm font-medium transition ${app.status === 'active' ? 'text-secondary group-hover:gap-3' : 'text-tertiary'}`}>
+                    {app.status === 'active' ? (app.cta ?? 'Open App') : 'Coming Soon'}
+                    {app.status === 'active' && (
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
+              </>
+            );
+
+            // /docs/ is a static MkDocs bundle in public/ — bypass the
+            // Next router so the browser does a full navigation.
+            return app.external ? (
+              <a key={app.id} href={app.href} className={cardClasses}>
+                {cardBody}
+              </a>
+            ) : (
+              <Link key={app.id} href={app.href} className={cardClasses}>
+                {cardBody}
+              </Link>
+            );
+          })}
         </div>
 
         {/* Info section */}
