@@ -43,6 +43,7 @@ const PdfDocumentView = dynamic(
 );
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePreview';
+import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
@@ -1691,6 +1692,24 @@ function ContentAnalysisPageInner() {
                     }}
                   />
                 </div>
+              </Panel>
+
+              {/* Visual overview: bar / coverage strip / matrix breakdown
+                  for the current document. Honours the active-code filter
+                  (segmentsForDocument is already filtered upstream). */}
+              <Panel
+                title="Tag distribution"
+                accent={selectedDocument ? selectedDocument.shortTitle : ''}
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <TagDistributionPanel
+                  documents={selectedDocument ? [selectedDocument] : []}
+                  codes={snapshot.codes}
+                  segments={segmentsForDocument}
+                  selectedCodeId={selectedCodeId}
+                />
               </Panel>
 
               {/* Word-table preview (M·05 #8). Shows the user exactly what
