@@ -9,6 +9,54 @@ This README is a quick overview. Every section links into the
 [documentation site](https://eu-climate-policy.vercel.app/docs/) hosted
 under the app on Vercel, which is the single source of truth.
 
+## At a glance
+
+```mermaid
+flowchart TB
+    user((Researcher))
+
+    subgraph app ["MethodHub — single Next.js app"]
+        direction TB
+        subgraph mods ["Five production modules"]
+            direction LR
+            m1["M·01<br/>References"]
+            m2["M·02<br/>Data &amp; Scenarios"]
+            m3["M·03<br/>News"]
+            m4["M·04<br/>Policy Navigator"]
+            m5["M·05<br/>Content Analysis"]
+        end
+        docs["/docs/ subpage<br/>(MkDocs Material)"]
+        beta["beta/ — 8 unrouted experiments"]
+    end
+
+    subgraph data ["Data &amp; AI"]
+        direction LR
+        pg[("Postgres /<br/>Supabase")]
+        llm["LLM layer<br/>3 back-ends"]
+        feeds[("EUR-Lex · Eurostat<br/>IPCC · RSS")]
+    end
+
+    host["Vercel today  →  EEA Docker host (production target)"]
+
+    user --> app
+    mods --> pg
+    mods --> llm
+    mods -. daily pipelines .-> feeds
+    app -.- host
+
+    classDef module fill:#E0F2F1,stroke:#00928F,color:#003D3B
+    classDef docsNode fill:#F1F8E9,stroke:#558B2F,color:#1B5E20
+    classDef betaNode fill:#FFF3E0,stroke:#EF6C00,color:#BF360C,stroke-dasharray:4 4
+    classDef dataNode fill:#EDE7F6,stroke:#4527A0,color:#1A0E5C
+    classDef hostNode fill:#F5F5F5,stroke:#3D5265,color:#3D5265
+
+    class m1,m2,m3,m4,m5 module
+    class docs docsNode
+    class beta betaNode
+    class pg,llm,feeds dataNode
+    class host hostNode
+```
+
 ## What is MethodHub?
 
 A Next.js 14 application that bundles the Secretariat's day-to-day
@@ -42,7 +90,7 @@ Module index: [modules overview](https://eu-climate-policy.vercel.app/docs/modul
 | --- | --- |
 | `src/` | Next.js 14 application — five production modules. |
 | `beta/` | Eight experimental modules, intentionally unrouted. |
-| `docs/` | Source for the password-gated documentation site. |
+| `docs/` | MkDocs source for the `/docs/` documentation subpage. |
 | `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
 | `supabase/` | Postgres migrations. |
 | `Dockerfile`, `docker-compose.yml` | Single-host demo and production build target. |
@@ -114,5 +162,5 @@ root: [`ESABCC-MethodHub-FAQ-non-technical.pdf`](ESABCC-MethodHub-FAQ-non-techni
   <https://climate-advisory-board.europa.eu>
 
 Please ask CCE5 before pulling design details from this repository
-directly — the password-gated docs site is the single source of truth
-for the current architecture.
+directly — the docs site is the single source of truth for the current
+architecture.
