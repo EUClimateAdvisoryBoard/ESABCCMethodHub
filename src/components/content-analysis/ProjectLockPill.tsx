@@ -75,21 +75,32 @@ export default function ProjectLockPill({ mode, lock, onRequestEdit, onHandOff }
   }
 
   // mode === 'watcher'
-  const holderLabel = lock?.holderName?.trim() || 'Another editor';
+  const holderName = lock?.holderName?.trim();
+  const available = !lock;
   return (
     <div
       className="inline-flex items-center gap-2 px-2 py-0.5 rounded-sm border border-[#FCD34D] bg-[#FEF3C7] text-[11px] text-[#92400E]"
-      title="The project is locked by another editor. You can still browse — read-only."
+      title={
+        available
+          ? 'You handed off — the project is read-only until you take it back.'
+          : 'The project is locked by another editor. You can still browse — read-only.'
+      }
     >
       <span aria-hidden>🔒</span>
-      <span className="font-medium">{holderLabel} is editing</span>
-      {heldFor && <span className="text-[10.5px] text-[#92400E]/80">— since {heldFor}</span>}
+      <span className="font-medium">
+        {available
+          ? 'Read-only — you handed off'
+          : `${holderName || 'Another editor'} is editing`}
+      </span>
+      {!available && heldFor && (
+        <span className="text-[10.5px] text-[#92400E]/80">— since {heldFor}</span>
+      )}
       <button
         type="button"
         onClick={() => onRequestEdit()}
         className="ml-1 text-[10.5px] font-semibold text-[#92400E] hover:text-[#7C2D12] underline"
       >
-        Request edit access
+        {available ? 'Resume editing' : 'Request edit access'}
       </button>
     </div>
   );

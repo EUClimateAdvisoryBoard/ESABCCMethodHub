@@ -129,6 +129,11 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
   const watchTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releasedRef = useRef(false);
+  // Set when the user explicitly hands off. Suppresses the watcher loop's
+  // auto-reacquire when no one else is around — otherwise the next poll
+  // would grab the empty lock right back and the UI would flip-flop.
+  // Cleared on requestEdit, successful acquire, or project change.
+  const handedOffRef = useRef(false);
   // Last requested_at we surfaced — used to detect a fresh request
   // (vs. one the holder already saw and dismissed).
   const lastRequestStampRef = useRef<string | null>(null);
@@ -156,6 +161,7 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
         setMode('editor');
         setStolen(!!json.stolen);
         releasedRef.current = false;
+        handedOffRef.current = false;
       } else {
         setMode('watcher');
       }
@@ -208,12 +214,18 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
       const fresh = (json.lock ?? null) as ProjectLock | null;
       setLock(fresh);
       if (!fresh) {
-        // Lock released — try to grab it.
+        // Lock is free. Normally we'd auto-grab it, but if the user just
+        // handed off we honour that choice — they re-acquire explicitly via
+        // "Request edit access".
+        if (handedOffRef.current) return;
         await tryAcquire();
       } else if (fresh.holderId === holderId) {
         // We somehow already hold it (e.g. previous tab's leftover).
         setMode('editor');
       } else {
+        // Someone else holds the lock — we're a real watcher now, so the
+        // hand-off latch no longer applies.
+        handedOffRef.current = false;
         setMode('watcher');
       }
     } catch {
@@ -252,6 +264,7 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
   useEffect(() => {
     setLock(null);
     setStolen(false);
+    handedOffRef.current = false;
     if (!isLockable(projectId)) {
       setMode('idle');
       clearTimers();
@@ -307,12 +320,16 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
   }, [projectId, mode, release]);
 
   const requestEdit = useCallback(async () => {
+    // Explicit user gesture — clear the hand-off latch so a successful
+    // acquire sticks (and so a failed acquire still polls normally).
+    handedOffRef.current = false;
     // Try to acquire — if the holder is stale we'll succeed; otherwise
     // we stay watcher, but the holder's heartbeat surfaces them in the UI.
     await tryAcquire();
   }, [tryAcquire]);
 
   const handOff = useCallback(async () => {
+    handedOffRef.current = true;
     await release();
     setMode('watcher');
     setPendingRequest(null);
