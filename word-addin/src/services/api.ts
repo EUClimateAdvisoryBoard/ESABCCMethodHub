@@ -3,6 +3,7 @@
 // ============================================================================
 
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { searchInActivePlan, setBridgeToken } from './plan-scope';
 
 const BRIDGE_URL = 'http://127.0.0.1:8585';
 
@@ -13,6 +14,7 @@ const SUPABASE_KEY = (window as any).__REFMANAGER_SUPABASE_KEY__ || '';
 // Required for every call except /api/status. The IT installer writes
 // this onto window during the add-in bootstrap.
 const BRIDGE_TOKEN: string = (window as any).__REFMANAGER_BRIDGE_TOKEN__ || '';
+setBridgeToken(BRIDGE_TOKEN);
 
 let useBridge = false;
 let supabase: SupabaseClient | null = null;
@@ -73,6 +75,12 @@ export async function initConnection(): Promise<{ bridge: boolean; supabase: boo
 // ── Search References ──
 
 export async function searchReferences(query: string, libraryId: string): Promise<RefSearchResult[]> {
+  // When a Report Plan is active, search runs entirely against that plan's
+  // bibliography — the Word author cannot accidentally cite something that
+  // isn't in the agreed report library.
+  const scoped = searchInActivePlan(query);
+  if (scoped !== null) return scoped;
+
   if (useBridge) {
     const res = await fetch(
       `${BRIDGE_URL}/api/references/search?q=${encodeURIComponent(query)}&library_id=${encodeURIComponent(libraryId)}`,

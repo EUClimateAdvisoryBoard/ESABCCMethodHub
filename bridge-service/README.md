@@ -31,6 +31,7 @@ Defined in [`src/server.ts`](src/server.ts).
 | POST   | `/api/cite/format`                    | Format one or more citations (CSL-JSON + style)  |
 | POST   | `/api/cite/bibliography`              | Build a bibliography                             |
 | POST   | `/api/sync`                           | Pull new refs from Supabase by `updated_at`      |
+| GET    | `/api/report-plans`                   | List report plans (proxies MethodHub)            |
 | GET    | `/api/report-plan/:id`                | Resolve a plan + its references via MethodHub; returns funding summary |
 
 CORS allows the Office WebView (null origin) and `localhost`.

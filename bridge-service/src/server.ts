@@ -340,6 +340,21 @@ function isEuFunder(f: PlanFunder): boolean {
   return EU_FUNDER_NAME_HINTS.some(h => lower.includes(h));
 }
 
+app.get('/api/report-plans', async (_req, res) => {
+  try {
+    const upstream = await fetch(`${METHODHUB_URL}/api/report-plans`, {
+      headers: { 'Accept': 'application/json' },
+    });
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `Upstream HTTP ${upstream.status}` });
+    }
+    const data = await upstream.json();
+    res.json(data);
+  } catch (err: any) {
+    res.status(502).json({ error: `Could not reach MethodHub at ${METHODHUB_URL}: ${err.message}` });
+  }
+});
+
 app.get('/api/report-plan/:id', async (req, res) => {
   const planId = req.params.id;
   try {
