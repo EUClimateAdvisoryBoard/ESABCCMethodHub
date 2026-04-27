@@ -1,1 +1,24 @@
-[]
+[
+  {
+    "title": "Commissioner Roswall's address at a Structured Dialogue with Members of the European Parliament's Committee for Environment, Climate and Food Safety (ENVI)",
+    "summary": "European Commission Speech Brussels, 27 Apr 2026 Thank you, Chair (Pierfrancesco Maran),\r\nHonourable Members,\r\nThank you for this opportunity to reflect on the past year and to outline my plans for the months ah...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_897",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-04-27T17:32:38.000Z",
+    "tags": [
+      "agriculture"
+    ]
+  },
+  {
+    "title": "Commission seeks feedback on measures to ensure interoperability with Google's Android under the Digital Markets Act",
+    "summary": "European Commission Press release Brussels, 27 Apr 2026 The Commission has sent its preliminary findings to Google as part of the specification proceedings it started on 27 January 2026 under the Digital Markets Act (DMA). These preliminary findings outline the draft measures Google should implement to ensure that third parties have effective access and interoperability with key capabilities of Android.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_887",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-04-26T22:00:00.000Z",
+    "tags": [
+      "emissions"
+    ]
+  }
+]
