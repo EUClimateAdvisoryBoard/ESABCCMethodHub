@@ -1013,14 +1013,15 @@ function ContentAnalysisPageInner() {
           rootCodes={masterRootCodes}
           codesByParent={masterCodesByParent}
           docCountsByCode={docCountsByCode}
+          documents={allDocuments}
           onCancel={() => setViewMode('landing')}
-          onCreate={({ name, description, mode, masterCodeSelection }) => {
+          onCreate={({ name, description, mode, masterCodeSelection, documentAllowList }) => {
             const proj = addProject({
               name,
               description,
               mode,
               masterCodeSelection,
-              documentAllowList: [],
+              documentAllowList,
             });
             setActiveProjectId(proj.id);
             setViewMode('workbench');
