@@ -61,8 +61,20 @@ export async function GET(req: NextRequest) {
     }
   }
 
+  // Fetch pending deletion requests so the admin UI can show a "scheduled
+  // for deletion" badge instead of the user appearing to come back on refresh.
+  const { data: deletions } = await supabase
+    .from('deletion_requests')
+    .select('user_id, requested_at, scheduled_for, reason')
+    .is('cancelled_at', null);
+
+  const deletionMap = new Map(
+    (deletions || []).map((d: Record<string, unknown>) => [d.user_id as string, d]),
+  );
+
   const userList = users.map((u: { id: string; email?: string; created_at: string; last_sign_in_at?: string | null }) => {
     const profile = profileMap.get(u.id) as Record<string, unknown> | undefined;
+    const pending = deletionMap.get(u.id) as Record<string, unknown> | undefined;
     return {
       id: u.id,
       email: u.email,
@@ -71,6 +83,13 @@ export async function GET(req: NextRequest) {
       createdAt: u.created_at,
       lastSignIn: u.last_sign_in_at,
       contributions: contributionCounts.get(u.id) || 0,
+      pendingDeletion: pending
+        ? {
+            requestedAt: pending.requested_at as string,
+            scheduledFor: pending.scheduled_for as string,
+            reason: (pending.reason as string) || '',
+          }
+        : null,
     };
   });
 
@@ -90,9 +109,35 @@ export async function PATCH(req: NextRequest) {
   }
   const actorId = adminCheck.actorId;
 
-  const { userId, role } = await req.json();
-  if (!userId || !role || !['admin', 'user'].includes(role)) {
-    return NextResponse.json({ error: 'Valid userId and role (admin/user) are required.' }, { status: 400 });
+  const { userId, role, cancelDeletion } = await req.json();
+  if (!userId) {
+    return NextResponse.json({ error: 'userId is required.' }, { status: 400 });
+  }
+
+  // Admin withdraws a pending deletion (Art. 17(3) — controller may also
+  // honour a withdrawal on the data subject's behalf, e.g. after support
+  // contact). The retention cron only erases rows where cancelled_at IS NULL.
+  if (cancelDeletion) {
+    const { error: cancelErr } = await supabase
+      .from('deletion_requests')
+      .update({ cancelled_at: new Date().toISOString() })
+      .eq('user_id', userId)
+      .is('cancelled_at', null);
+    if (cancelErr) {
+      return NextResponse.json({ error: cancelErr.message }, { status: 500 });
+    }
+    await recordAdminAction(supabase, {
+      actorId,
+      action: 'user.deletion_cancelled',
+      targetType: 'user',
+      targetId: userId,
+      metadata: {},
+    });
+    return NextResponse.json({ success: true });
+  }
+
+  if (!role || !['admin', 'user'].includes(role)) {
+    return NextResponse.json({ error: 'Valid role (admin/user) is required.' }, { status: 400 });
   }
 
   const { error } = await supabase
