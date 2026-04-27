@@ -46,6 +46,8 @@ import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePre
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
 import NumericExtractionsPanel from '@/components/content-analysis/NumericExtractionsPanel';
+import ProjectLockPill from '@/components/content-analysis/ProjectLockPill';
+import { useProjectLock } from '@/lib/content-analysis/useProjectLock';
 import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
@@ -211,6 +213,15 @@ function ContentAnalysisPageInner() {
     () => snapshot.projects.find(p => p.id === activeProjectId) ?? snapshot.projects[0],
     [snapshot.projects, activeProjectId],
   );
+
+  // Soft-locking: one editor at a time per project. The hook owns
+  // acquire / heartbeat / release; we use `lockMode` further down to
+  // disable mutating controls when we're a watcher.
+  const projectLock = useProjectLock(
+    activeProject && activeProject.id !== 'project-master' ? activeProject.id : null,
+  );
+  const lockMode = projectLock.mode;
+  const canEdit = lockMode !== 'watcher'; // editor / idle (master) → editable
 
   const docsInProjectScope = useMemo(() => {
     if (!activeProject) return [];
@@ -1091,6 +1102,17 @@ function ContentAnalysisPageInner() {
             <span className="text-[11.5px] text-[#3D5265]/75 italic max-w-md truncate">
               {activeProject.description || '—'}
             </span>
+          )}
+
+          {/* Soft-lock pill — only visible on real projects (the master
+              library is a shared workspace, not a per-analyst lock). */}
+          {activeProject && activeProject.id !== 'project-master' && (
+            <ProjectLockPill
+              mode={projectLock.mode}
+              lock={projectLock.lock}
+              onRequestEdit={projectLock.requestEdit}
+              onHandOff={projectLock.handOff}
+            />
           )}
 
           <div className="ml-auto flex items-center gap-1 flex-wrap">
