@@ -7,11 +7,10 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 
-# Generated MkDocs site — built by .github/workflows/docs.yml for GitHub Pages
+# Generated MkDocs site — built by scripts/build-docs.sh during the
+# Vercel build and served at /docs/.
 site/
-site-encrypted/
-site-encrypted-wrapper/
-.staticrypt.json
+public/docs/
 
 # Heavy PDF/image corpora — mount as runtime volumes rather than baking into
 # git or the container image. Keeps the Docker image <250 MB.
