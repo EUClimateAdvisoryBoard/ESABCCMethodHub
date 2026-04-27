@@ -95,24 +95,30 @@ interface AdminUser {
   createdAt: string;
   lastSignIn: string | null;
   contributions: number;
+  pendingDeletion: { requestedAt: string; scheduledFor: string; reason: string } | null;
 }
 
-function AdminUserRow({ u, currentUserId, onToggleRole, onDelete }: {
+function AdminUserRow({ u, currentUserId, onToggleRole, onDelete, onCancelDeletion }: {
   u: AdminUser;
   currentUserId: string;
   onToggleRole: (userId: string, newRole: string) => void;
   onDelete: (userId: string, email: string) => void;
+  onCancelDeletion: (userId: string, email: string) => void;
 }) {
   const isMe = u.id === currentUserId;
+  const isPending = !!u.pendingDeletion;
+  const scheduledLabel = u.pendingDeletion
+    ? new Date(u.pendingDeletion.scheduledFor).toLocaleDateString()
+    : null;
 
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-3 py-3 border-b border-[#E6E7E8] last:border-0">
+    <div className={`flex flex-col sm:flex-row sm:items-center gap-3 py-3 border-b border-[#E6E7E8] last:border-0 ${isPending ? 'opacity-75' : ''}`}>
       <div className="flex items-center gap-3 flex-1 min-w-0">
         <div className="w-9 h-9 rounded-full bg-[#004B7F]/10 flex items-center justify-center shrink-0">
           <span className="text-sm font-bold text-[#004B7F]">{(u.displayName || u.email || '?')[0].toUpperCase()}</span>
         </div>
         <div className="min-w-0 flex-1">
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <p className="text-sm font-medium text-[#3D5265] truncate">{u.displayName}</p>
             {u.role === 'admin' && (
               <span className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-[#004B7F]/10 text-[#004B7F]">Admin</span>
@@ -120,8 +126,19 @@ function AdminUserRow({ u, currentUserId, onToggleRole, onDelete }: {
             {isMe && (
               <span className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-green-100 text-green-700">You</span>
             )}
+            {isPending && (
+              <span
+                title={`Scheduled for permanent deletion on ${scheduledLabel}`}
+                className="px-1.5 py-0.5 rounded text-[10px] font-bold uppercase bg-red-100 text-red-700"
+              >
+                Deletion scheduled
+              </span>
+            )}
           </div>
           <p className="text-xs text-[#3D5265]/50 truncate">{u.email}</p>
+          {isPending && (
+            <p className="text-[11px] text-red-600/80 mt-0.5">Erasure on {scheduledLabel} (30-day grace period)</p>
+          )}
         </div>
       </div>
       <div className="flex items-center gap-2 text-xs text-[#3D5265]/60 shrink-0">
@@ -135,22 +152,33 @@ function AdminUserRow({ u, currentUserId, onToggleRole, onDelete }: {
       </div>
       {!isMe && (
         <div className="flex items-center gap-2 shrink-0">
-          <button
-            onClick={() => onToggleRole(u.id, u.role === 'admin' ? 'user' : 'admin')}
-            className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
-              u.role === 'admin'
-                ? 'border border-orange-200 text-orange-600 hover:bg-orange-50'
-                : 'border border-[#004B7F]/20 text-[#004B7F] hover:bg-[#004B7F]/5'
-            }`}
-          >
-            {u.role === 'admin' ? 'Revoke Admin' : 'Grant Admin'}
-          </button>
-          <button
-            onClick={() => onDelete(u.id, u.email || '')}
-            className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-red-200 text-red-600 hover:bg-red-50 transition"
-          >
-            Delete
-          </button>
+          {isPending ? (
+            <button
+              onClick={() => onCancelDeletion(u.id, u.email || '')}
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-[#004B7F]/20 text-[#004B7F] hover:bg-[#004B7F]/5 transition"
+            >
+              Cancel deletion
+            </button>
+          ) : (
+            <>
+              <button
+                onClick={() => onToggleRole(u.id, u.role === 'admin' ? 'user' : 'admin')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+                  u.role === 'admin'
+                    ? 'border border-orange-200 text-orange-600 hover:bg-orange-50'
+                    : 'border border-[#004B7F]/20 text-[#004B7F] hover:bg-[#004B7F]/5'
+                }`}
+              >
+                {u.role === 'admin' ? 'Revoke Admin' : 'Grant Admin'}
+              </button>
+              <button
+                onClick={() => onDelete(u.id, u.email || '')}
+                className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-red-200 text-red-600 hover:bg-red-50 transition"
+              >
+                Delete
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>
@@ -476,8 +504,14 @@ export default function ProfilePage() {
 
   const handleDeleteUser = async (userId: string, email: string) => {
     if (!session) return;
-    if (!confirm(`Are you sure you want to permanently delete the user "${email}"? This cannot be undone.`)) return;
+    if (!confirm(
+      `Schedule "${email}" for deletion?\n\n` +
+      'GDPR Art. 17 requires a 30-day grace period before erasure. The account ' +
+      'will be marked for deletion now and permanently erased by the retention ' +
+      'job after 30 days. You can cancel during the grace period.\n\nProceed?'
+    )) return;
     setAdminMessage('');
+    setAdminError('');
     try {
       const res = await fetch('/api/admin/users', {
         method: 'DELETE',
@@ -491,7 +525,37 @@ export default function ProfilePage() {
       if (!res.ok) {
         setAdminError(data.error || 'Failed to delete user.');
       } else {
-        setAdminMessage(`User "${email}" has been deleted.`);
+        const when = data?.scheduled_for
+          ? new Date(data.scheduled_for).toLocaleDateString()
+          : 'in 30 days';
+        setAdminMessage(`User "${email}" scheduled for deletion on ${when}. You can cancel during the grace period.`);
+        loadAdminUsers();
+      }
+    } catch {
+      setAdminError('Network error.');
+    }
+    setTimeout(() => { setAdminMessage(''); setAdminError(''); }, 6000);
+  };
+
+  const handleAdminCancelDeletion = async (userId: string, email: string) => {
+    if (!session) return;
+    if (!confirm(`Cancel the scheduled deletion for "${email}"?`)) return;
+    setAdminMessage('');
+    setAdminError('');
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ userId, cancelDeletion: true }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAdminError(data.error || 'Failed to cancel deletion.');
+      } else {
+        setAdminMessage(`Scheduled deletion for "${email}" cancelled.`);
         loadAdminUsers();
       }
     } catch {
@@ -784,6 +848,7 @@ export default function ProfilePage() {
                         currentUserId={user.id}
                         onToggleRole={handleToggleRole}
                         onDelete={handleDeleteUser}
+                        onCancelDeletion={handleAdminCancelDeletion}
                       />
                     ))}
                 </div>
