@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Reference, CSLItem, CSLName, CSLItemType, ITEM_TYPE_LABELS } from '@/lib/references/types';
+import { Reference, CSLItem, CSLName, CSLItemType, ITEM_TYPE_LABELS, FundingEntry, isEuFunder } from '@/lib/references/types';
 import { buildCSLJson, fieldsForType } from '@/lib/references/citation-utils';
 import { addReference, updateReference } from '@/lib/references/reference-service';
 
@@ -10,6 +10,26 @@ interface ReferenceFormProps {
   editingRef?: Reference | null;
   onSaved: () => void;
   onCancel: () => void;
+}
+
+function formatFundingLine(f: FundingEntry): string {
+  const awards = f.awards && f.awards.length > 0 ? f.awards.join(', ') : '';
+  return [f.name, f.doi || '', awards].join(' | ').replace(/\s*\|\s*$/, '');
+}
+
+function parseDisplayedFunding(text: string): FundingEntry[] {
+  return text
+    .split('\n')
+    .map(l => l.trim())
+    .filter(Boolean)
+    .map(line => {
+      const [name = '', doi = '', awards = ''] = line.split('|').map(s => s.trim());
+      const e: FundingEntry = { name };
+      if (doi) e.doi = doi;
+      if (awards) e.awards = awards.split(',').map(a => a.trim()).filter(Boolean);
+      return e;
+    })
+    .filter(f => f.name);
 }
 
 export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel }: ReferenceFormProps) {
@@ -46,10 +66,28 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
     return `${y}-${String(m).padStart(2, '0')}${d ? `-${String(d).padStart(2, '0')}` : ''}`;
   });
   const [legislationCode, setLegislationCode] = useState(csl?.number || '');
+  const [fundingText, setFundingText] = useState(() =>
+    (csl?.funder || []).map(formatFundingLine).join('\n')
+  );
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
 
   const fields = fieldsForType(itemType);
+
+  const parseFunding = (text: string): FundingEntry[] => {
+    return text
+      .split('\n')
+      .map(l => l.trim())
+      .filter(Boolean)
+      .map(line => {
+        const [name = '', doi = '', awards = ''] = line.split('|').map(s => s.trim());
+        const entry: FundingEntry = { name };
+        if (doi) entry.doi = doi;
+        if (awards) entry.awards = awards.split(',').map(a => a.trim()).filter(Boolean);
+        return entry;
+      })
+      .filter(f => f.name);
+  };
 
   const parseAuthors = (text: string): CSLName[] => {
     return text.split('\n').filter(Boolean).map(line => {
@@ -69,6 +107,7 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
 
     try {
       const authors = parseAuthors(authorsText);
+      const funding = parseFunding(fundingText);
       const cslJson = buildCSLJson({
         item_type: itemType,
         title: title.trim(),
@@ -85,6 +124,7 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
         institution: fields.institution ? institution.trim() : '',
         accessed: fields.accessed ? accessed.trim() : '',
         legislation_code: fields.legislationCode ? legislationCode.trim() : '',
+        funding,
       });
 
       const tags = tagsText.split(',').map(t => t.trim()).filter(Boolean);
@@ -101,6 +141,7 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
           container_title: cslJson['container-title'],
           tags,
           notes: notes.trim() || undefined,
+          funding: cslJson.funder || [],
         });
       } else {
         await addReference(libraryId, cslJson, tags, notes.trim() || undefined);
@@ -245,6 +286,21 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
           <label className="block text-sm text-tertiary mb-1">Abstract</label>
           <textarea value={abstract} onChange={e => setAbstract(e.target.value)} rows={4}
             className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-tertiary-dark text-sm" />
+        </div>
+
+        <div className="col-span-2">
+          <label className="block text-sm text-tertiary mb-1">
+            Funding{' '}
+            <span className="text-[10px] text-tertiary">
+              (one per line: <code>Name | DOI prefix | award1, award2</code>; auto-filled from DOI)
+            </span>
+          </label>
+          <textarea value={fundingText} onChange={e => setFundingText(e.target.value)} rows={2}
+            className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-tertiary-dark font-mono text-xs"
+            placeholder="European Commission | 10.13039/501100000780 | 101081244" />
+          {parseDisplayedFunding(fundingText).some(isEuFunder) && (
+            <p className="mt-1 text-[10px] text-[#007B6C] font-semibold">EU-funded</p>
+          )}
         </div>
 
         <div>

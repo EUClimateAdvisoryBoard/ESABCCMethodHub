@@ -2,7 +2,7 @@
 // Citation Key Generation & Formatting Utilities
 // ============================================================================
 
-import { CSLItem, CSLName } from './types';
+import { CSLItem, CSLName, FundingEntry } from './types';
 
 /**
  * Generate a citation key from CSL-JSON data (e.g., "smith2024climate")
@@ -96,6 +96,7 @@ export function buildCSLJson(data: {
   institution?: string;       // for reports, web pages — issuing org
   accessed?: string;          // ISO date YYYY-MM-DD — for webpages, datasets
   legislation_code?: string;  // for legislation — e.g. 2021/1119, COM(2021)550
+  funding?: FundingEntry[];   // funder list (CrossRef-shape)
 }): CSLItem {
   const csl: CSLItem = {
     id: '', // Will be set to citation_key
@@ -125,6 +126,7 @@ export function buildCSLJson(data: {
   // Legislation code → CSL `number` field, which is the conventional CSL
   // location for statute/regulation identifiers.
   if (data.legislation_code) csl.number = data.legislation_code;
+  if (data.funding && data.funding.length > 0) csl.funder = data.funding;
 
   return csl;
 }
