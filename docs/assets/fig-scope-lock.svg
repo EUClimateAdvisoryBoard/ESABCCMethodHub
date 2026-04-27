@@ -1,0 +1,189 @@
+<!--
+  Scope lock — v1.0 ships 5, beta parks 8. The visual is the argument:
+  solid bordered tiles in src/app/, dashed bordered tiles under
+  beta/modules/. The file-system location is the feature flag.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 600"
+     role="img"
+     aria-label="Scope lock — five production modules ship, eight beta modules are parked under beta/modules/.">
+  <title>Scope lock — 5 production + 8 beta</title>
+
+  <defs>
+    <style>
+      .h1         { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; }
+      .h2         { font-family: "Inter", system-ui, sans-serif; font-weight: 600; fill: #3D5584; }
+      .sub        { font-family: "Inter", system-ui, sans-serif; font-weight: 500; fill: #5B6B7B; }
+      .code       { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #8A95A3; letter-spacing: 0.14em; text-transform: uppercase; }
+      .path       { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #608C95; letter-spacing: 0.04em; }
+      .path-beta  { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #B84414; letter-spacing: 0.04em; }
+      .prod       { fill: #FFFFFF; stroke: #608C95; stroke-width: 1.6; }
+      .prod-bar   { fill: #608C95; }
+      .beta       { fill: #FBFBFA; stroke: #B8BCC2; stroke-width: 1; stroke-dasharray: 4 3; }
+      .beta-bar   { fill: #F26119; opacity: 0.55; }
+      .mod-title  { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; font-size: 13px; }
+      .mod-code   { font-family: "JetBrains Mono", monospace; font-size: 10px; fill: #8A95A3; letter-spacing: 0.14em; }
+      .arrow      { fill: #F26119; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text class="h1" font-size="22" x="60" y="52">Scope lock · v1.0</text>
+  <text class="sub" font-size="13" x="60" y="76">The file system is the feature flag. Promoting a beta module is a single <tspan font-family="JetBrains Mono, monospace" fill="#608C95">git mv</tspan>.</text>
+
+  <!-- ============== LEFT: Production (src/app/) ============== -->
+  <g transform="translate(60, 120)">
+    <text class="code" font-size="11" x="0" y="0">Shipped · v1.0</text>
+    <text class="h2" font-size="17" x="0" y="22">Production modules</text>
+    <text class="path" font-size="12" x="0" y="42">src/app/&lt;module&gt;/page.tsx</text>
+
+    <!-- 5 production tiles, 5-column grid -->
+    <g transform="translate(0, 70)">
+      <g>
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 01</text>
+        <text class="mod-title" x="10" y="46">References</text>
+        <text class="sub" font-size="10" x="10" y="63">Literature</text>
+      </g>
+      <g transform="translate(108, 0)">
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 02</text>
+        <text class="mod-title" x="10" y="46">Scenarios</text>
+        <text class="sub" font-size="10" x="10" y="63">AR6 · Eurostat</text>
+      </g>
+      <g transform="translate(216, 0)">
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 03</text>
+        <text class="mod-title" x="10" y="46">News</text>
+        <text class="sub" font-size="10" x="10" y="63">40+ RSS</text>
+      </g>
+      <g transform="translate(324, 0)">
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 04</text>
+        <text class="mod-title" x="10" y="46">Policy</text>
+        <text class="sub" font-size="10" x="10" y="63">Navigator</text>
+      </g>
+      <g transform="translate(432, 0)">
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 05</text>
+        <text class="mod-title" x="10" y="46">Content</text>
+        <text class="sub" font-size="10" x="10" y="63">Analysis</text>
+      </g>
+    </g>
+
+    <!-- Footer stats under the production row -->
+    <g transform="translate(0, 180)">
+      <text class="sub" font-size="12">
+        Covered by: migrations · RLS · retention · GDPR · handoff scripts · parity tests
+      </text>
+    </g>
+  </g>
+
+  <!-- Promotion arrow (curved) -->
+  <g transform="translate(600, 290)">
+    <path d="M 0 0 Q 20 60 0 120" stroke="#F26119" stroke-width="1.8" fill="none" stroke-dasharray="5 4" />
+    <polygon class="arrow" points="-5,115 0,125 5,115" />
+    <polygon class="arrow" points="-5,5 0,-5 5,5" />
+    <text class="code" font-size="10" fill="#B84414" x="16" y="60">git mv ↑</text>
+    <text class="code" font-size="10" fill="#B84414" x="16" y="76">git mv ↓</text>
+  </g>
+
+  <!-- ============== RIGHT: Beta (beta/modules/) ============== -->
+  <g transform="translate(60, 340)">
+    <text class="code" font-size="11" x="0" y="0">Parked · roadmap</text>
+    <text class="h2" font-size="17" x="0" y="22">Beta modules</text>
+    <text class="path-beta" font-size="12" x="0" y="42">beta/modules/&lt;module&gt;/page.tsx  ·  unrouted by the live app</text>
+
+    <!-- 8 beta tiles in 4×2 grid (widened to 150px so longer titles fit). -->
+    <g transform="translate(0, 70)">
+      <!-- row 1 -->
+      <g>
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 06</text>
+        <text class="mod-title" x="10" y="42">Energy System</text>
+        <text class="sub" font-size="10" x="10" y="58">PyPSA</text>
+      </g>
+      <g transform="translate(165, 0)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 07</text>
+        <text class="mod-title" x="10" y="42">Climate Adapt.</text>
+        <text class="sub" font-size="10" x="10" y="58">CLIMADA</text>
+      </g>
+      <g transform="translate(330, 0)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 08</text>
+        <text class="mod-title" x="10" y="42">Maritime &amp; Aviation</text>
+        <text class="sub" font-size="10" x="10" y="58">SEAMAPS</text>
+      </g>
+      <g transform="translate(495, 0)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 09</text>
+        <text class="mod-title" x="10" y="42">Climate Finance</text>
+        <text class="sub" font-size="10" x="10" y="58">NGFS v5</text>
+      </g>
+      <!-- row 2 -->
+      <g transform="translate(0, 86)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 10</text>
+        <text class="mod-title" x="10" y="42">Media Monitoring</text>
+        <text class="sub" font-size="10" x="10" y="58">GDELT</text>
+      </g>
+      <g transform="translate(165, 86)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 11</text>
+        <text class="mod-title" x="10" y="42">Brussels Bulletin</text>
+        <text class="sub" font-size="10" x="10" y="58">Weekly</text>
+      </g>
+      <g transform="translate(330, 86)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 12</text>
+        <text class="mod-title" x="10" y="42">Fact Sheets</text>
+        <text class="sub" font-size="10" x="10" y="58">Templates</text>
+      </g>
+      <g transform="translate(495, 86)">
+        <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
+        <rect class="beta-bar" x="0" y="0" width="150" height="3" />
+        <text class="mod-code" x="10" y="20">M · 13</text>
+        <text class="mod-title" x="10" y="42">FAQ &amp; Prebunking</text>
+        <text class="sub" font-size="10" x="10" y="58">Curated</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Promotion recipe box on the right -->
+  <g transform="translate(760, 120)">
+    <rect x="0" y="0" width="380" height="380" fill="#FFFFFF" stroke="#E6E7E8" stroke-width="1" rx="6" />
+    <text class="code" font-size="11" x="20" y="28">How to promote a beta module</text>
+    <text class="h2" font-size="14" x="20" y="52">Three commands. That is it.</text>
+
+    <g font-family="JetBrains Mono, monospace" font-size="11" fill="#3D5584">
+      <text x="20" y="90"># 1. move the folder back into the app tree</text>
+      <text x="20" y="108" fill="#608C95">git mv beta/modules/&lt;m&gt; src/app/&lt;m&gt;</text>
+
+      <text x="20" y="148"># 2. re-add the navigation entries</text>
+      <text x="20" y="166" fill="#608C95">$EDITOR src/components/SiteHeader.tsx</text>
+      <text x="20" y="184" fill="#608C95">$EDITOR src/app/page.tsx</text>
+
+      <text x="20" y="224"># 3. rebuild — Next.js picks up the route</text>
+      <text x="20" y="242" fill="#608C95">npm run build</text>
+    </g>
+
+    <text class="sub" font-size="12" x="20" y="290">No Next.js config change.</text>
+    <text class="sub" font-size="12" x="20" y="308">No manifest edit.</text>
+    <text class="sub" font-size="12" x="20" y="326">No rewrite.</text>
+
+    <text class="code" font-size="10" fill="#B84414" x="20" y="358">PARKING IS THE FEATURE FLAG.</text>
+  </g>
+</svg>

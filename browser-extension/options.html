@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ESABCC Monitor — settings</title>
+    <style>
+      body { font: 14px/1.5 -apple-system, Segoe UI, system-ui, sans-serif; margin: 0; padding: 24px; max-width: 560px; color: #1a1a1a; }
+      h1 { font-size: 18px; margin: 0 0 4px; }
+      p.lead { color: #555; margin-top: 0; }
+      label { display: block; font-weight: 600; margin-top: 14px; font-size: 13px; }
+      input { width: 100%; padding: 8px 10px; border: 1px solid #CCC; border-radius: 4px; font-size: 14px; margin-top: 4px; box-sizing: border-box; }
+      button { margin-top: 16px; padding: 8px 16px; border: 0; border-radius: 4px; background: #004B7F; color: white; font-weight: 600; cursor: pointer; }
+      .hint { color: #666; font-size: 12px; margin-top: 4px; }
+      .status { margin-top: 16px; color: #007B6C; font-weight: 600; min-height: 20px; }
+      code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background: #EEF3F7; padding: 1px 4px; border-radius: 3px; }
+    </style>
+  </head>
+  <body>
+    <h1>ESABCC Monitor — settings</h1>
+    <p class="lead">
+      Configure where captured LinkedIn posts are sent. Ask your dashboard
+      admin for the API base URL and (optionally) the shared secret.
+    </p>
+
+    <label for="api_base">API base URL</label>
+    <input type="url" id="api_base" placeholder="https://your-eu-climate-policy.vercel.app" />
+    <div class="hint">The dashboard's base URL — the extension will POST to <code>/api/media-monitoring/social/ingest</code>.</div>
+
+    <label for="secret">Shared secret (optional)</label>
+    <input type="password" id="secret" placeholder="Leave blank if MEDIA_MONITORING_SECRET is unset" />
+    <div class="hint">If the server has <code>MEDIA_MONITORING_SECRET</code> set, paste the same value here.</div>
+
+    <button id="save">Save</button>
+    <div class="status" id="status"></div>
+
+    <script src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+node_modules/
+.next/
+out/
+.cache/
+.env
+.env.local
+*.tsbuildinfo
+next-env.d.ts
+
+# Generated MkDocs site — built by .github/workflows/docs.yml for GitHub Pages
+site/
+site-encrypted/
+site-encrypted-wrapper/
+.staticrypt.json
+
+# Heavy PDF/image corpora — mount as runtime volumes rather than baking into
+# git or the container image. Keeps the Docker image <250 MB.
+public/fact-sheets/
+public/content-analysis/
+public/pdf.worker.min.mjs
+
+# Bridge service
+bridge-service/dist/
+bridge-service/cache/
+bridge-service/node_modules/
+bridge-service/csl-styles/
+bridge-service/csl-locales/
+bridge-service/.env
+
+# Word add-in
+word-addin/dist/
+word-addin/node_modules/
+
+# Belt-and-braces: never commit any populated env file. .env / .env.local
+# are already ignored above; this catches per-environment variants too.
+.env.*
+!.env.local.example
+!.env.example

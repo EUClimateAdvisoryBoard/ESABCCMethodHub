@@ -1,0 +1,47 @@
+<!--
+  ESABCC institutional lockup — reproduced from the logo as it appears on
+  https://climate-advisory-board.europa.eu (screenshot-based approximation
+  for internal documentation use by the ESABCC Secretariat).
+  Colour sampled from the source: #658E8C (muted teal).
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 420 240"
+     role="img"
+     aria-label="European Scientific Advisory Board on Climate Change">
+  <title>European Scientific Advisory Board on Climate Change</title>
+
+  <!-- Palette -->
+  <defs>
+    <style>
+      .esabcc-mark { fill: #658E8C; }
+      .esabcc-mark-dark { fill: #4A7A78; }
+      .esabcc-text {
+        fill: #658E8C;
+        font-family: "Helvetica Neue", "Inter", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+    </style>
+  </defs>
+
+  <!-- Top dome (flat semicircle) -->
+  <path class="esabcc-mark"
+        d="M 22 110 Q 210 18 398 110 L 398 112 L 22 112 Z" />
+
+  <!-- Thin horizontal rule beneath the dome -->
+  <rect class="esabcc-mark" x="22" y="120" width="376" height="1.4" />
+
+  <!-- Three-line wordmark -->
+  <g class="esabcc-text" font-size="30">
+    <text x="22" y="155">European Scientific</text>
+    <text x="22" y="188">Advisory Board on</text>
+    <text x="22" y="221">Climate Change</text>
+  </g>
+
+  <!-- Folded-corner accent next to the last line of text (signature graphic) -->
+  <path class="esabcc-mark-dark"
+        d="M 340 196 L 398 196 L 398 226 L 358 226 Q 340 220 340 196 Z" />
+
+  <!-- Closing horizontal rule -->
+  <rect class="esabcc-mark" x="22" y="232" width="376" height="1.4" />
+</svg>

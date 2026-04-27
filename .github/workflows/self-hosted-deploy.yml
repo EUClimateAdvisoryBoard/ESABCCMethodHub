@@ -1,0 +1,79 @@
+name: Self-hosted deploy (EEA)
+
+# Opt-in companion to the Vercel-style `deploy.yml`. Runs the production
+# build on a self-hosted runner that lives inside EEA's network, pushes the
+# resulting image to EEA's container registry, and triggers a rolling
+# restart of the app service. The GitHub-hosted Microsoft runners are
+# intentionally not used here so that (a) build artifacts never leave
+# EEA infrastructure and (b) the runner can reach the in-cluster
+# registry directly.
+#
+# Requires self-hosted runner labels: [self-hosted, eea, linux-x64].
+# Configure via Settings → Actions → Runners → New self-hosted runner.
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: "Container tag to publish (default: commit SHA)"
+        required: false
+        default: ""
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "docs/**"
+      - "*.md"
+
+concurrency:
+  group: self-hosted-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: [self-hosted, eea, linux-x64]
+    timeout-minutes: 30
+    env:
+      REGISTRY: ${{ vars.EEA_REGISTRY }}
+      IMAGE_NAME: methodhub-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve image tag
+        id: tag
+        run: |
+          TAG="${{ inputs.image_tag }}"
+          if [ -z "$TAG" ]; then TAG="${GITHUB_SHA::12}"; fi
+          echo "tag=$TAG" >>"$GITHUB_OUTPUT"
+
+      - name: Log in to EEA registry
+        run: echo "${{ secrets.EEA_REGISTRY_PASSWORD }}" \
+          | docker login "$REGISTRY" -u "${{ secrets.EEA_REGISTRY_USERNAME }}" --password-stdin
+
+      - name: Build image
+        run: |
+          docker build \
+            --build-arg NEXT_PUBLIC_SUPABASE_URL="${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}" \
+            --build-arg NEXT_PUBLIC_SUPABASE_ANON_KEY="${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}" \
+            -t "$REGISTRY/$IMAGE_NAME:${{ steps.tag.outputs.tag }}" \
+            -t "$REGISTRY/$IMAGE_NAME:latest" \
+            .
+
+      - name: Push image
+        run: |
+          docker push "$REGISTRY/$IMAGE_NAME:${{ steps.tag.outputs.tag }}"
+          docker push "$REGISTRY/$IMAGE_NAME:latest"
+
+      - name: Trigger rolling restart
+        # Replace with the command IT has approved for this workload
+        # (systemd unit restart, kubectl rollout, Portainer webhook, etc.).
+        run: |
+          if [ -n "${{ secrets.DEPLOY_WEBHOOK_URL }}" ]; then
+            curl -fsSL -X POST \
+              -H "Authorization: Bearer ${{ secrets.DEPLOY_WEBHOOK_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d "{\"image\":\"$REGISTRY/$IMAGE_NAME:${{ steps.tag.outputs.tag }}\"}" \
+              "${{ secrets.DEPLOY_WEBHOOK_URL }}"
+          else
+            echo "No DEPLOY_WEBHOOK_URL configured — skipping restart hook."
+          fi

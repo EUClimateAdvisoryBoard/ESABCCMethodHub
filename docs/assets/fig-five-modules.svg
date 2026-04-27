@@ -1,0 +1,214 @@
+<!--
+  fig-five-modules.svg
+  ────────────────────────────────────────────────────────────────
+  The five production modules, laid out as a hub-and-spoke around
+  the shared Postgres corpus.
+
+  Design notes:
+    · Scientific-paper feel: light grid watermark, clear hierarchy,
+      tabular numerics, restrained palette.
+    · The corpus sits dead-centre; the five modules ring it.
+    · Solid teal edges  = reads/writes against the shared schema.
+    · Dotted grey edges = explicit peer cross-links (FK, not search).
+    · Each card shows module code, name, one-line scope and the
+      table groups it relies on.
+  ──────────────────────────────────────────────────────────────── -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1280 820"
+     role="img"
+     aria-label="Five production modules share a single Postgres corpus and reference each other directly via explicit foreign keys.">
+  <title>MethodHub — five production modules and the shared corpus</title>
+
+  <defs>
+    <style>
+      /* Palette — aligned with the site theme (extra.css) */
+      .fig-bg       { fill: #FDFCFA; }
+      .fig-grid     { stroke: #F1F2F3; stroke-width: 1; }
+      .fig-rule     { stroke: #E6E7E8; stroke-width: 1; }
+
+      .core-ring    { fill: none; stroke: #608C95; stroke-width: 1;
+                      stroke-dasharray: 3 5; opacity: 0.55; }
+      .core-node    { fill: #FFFFFF; stroke: #608C95; stroke-width: 1.6; }
+      .core-accent  { fill: #E4ECEE; stroke: none; }
+      .core-strip   { fill: #608C95; }
+
+      .mod-card     { fill: #FFFFFF; stroke: #E6E7E8; stroke-width: 1; }
+      .mod-accent   { fill: #608C95; }
+      .mod-shadow   { fill: rgba(61, 85, 132, 0.05); }
+
+      .link-corpus  { stroke: #608C95; stroke-width: 1.6; fill: none;
+                      opacity: 0.85; }
+      .link-peer    { stroke: #B8BCC2; stroke-width: 1; fill: none;
+                      stroke-dasharray: 2 4; }
+
+      /* Typography */
+      .h-title      { font-family: "Inter", system-ui, sans-serif;
+                      font-weight: 700; fill: #3D5584;
+                      letter-spacing: -0.015em; }
+      .h-sub        { font-family: "Inter", system-ui, sans-serif;
+                      font-weight: 400; fill: #5B6B7B; }
+      .k-kicker     { font-family: "JetBrains Mono", monospace;
+                      font-weight: 600; fill: #8A95A3;
+                      letter-spacing: 0.14em; text-transform: uppercase; }
+      .m-code       { font-family: "JetBrains Mono", monospace;
+                      font-weight: 700; fill: #608C95;
+                      letter-spacing: 0.1em; }
+      .m-title      { font-family: "Inter", system-ui, sans-serif;
+                      font-weight: 700; fill: #3D5584;
+                      letter-spacing: -0.01em; }
+      .m-desc       { font-family: "Inter", system-ui, sans-serif;
+                      font-weight: 400; fill: #5B6B7B; }
+      .m-ref        { font-family: "JetBrains Mono", monospace;
+                      font-weight: 500; fill: #8A95A3; font-size: 10px;
+                      letter-spacing: 0.08em; text-transform: uppercase; }
+      .table-row    { font-family: "JetBrains Mono", monospace;
+                      font-size: 11.5px; fill: #3D5584;
+                      font-variant-numeric: tabular-nums; }
+
+      .watermark    { font-family: "JetBrains Mono", monospace;
+                      font-size: 9px; fill: #B8BCC2;
+                      letter-spacing: 0.24em; text-transform: uppercase; }
+    </style>
+
+    <!-- subtle grid pattern for the background watermark -->
+    <pattern id="paperGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" class="fig-grid" fill="none"/>
+    </pattern>
+
+    <!-- arrowhead for the corpus edges -->
+    <marker id="arr-teal" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#608C95" />
+    </marker>
+  </defs>
+
+  <!-- Paper background + grid watermark -->
+  <rect class="fig-bg" x="0" y="0" width="1280" height="820" />
+  <rect x="0" y="0" width="1280" height="820" fill="url(#paperGrid)" opacity="0.5"/>
+
+  <!-- Header ───────────────────────────────────────────────── -->
+  <text class="k-kicker" font-size="11" x="60" y="48">Figure · architecture</text>
+  <text class="h-title" font-size="26" x="60" y="82">Five modules · one shared corpus</text>
+  <text class="h-sub"   font-size="14" x="60" y="108">Every module reads and writes the same Postgres tables. Cross-links are explicit foreign keys — never semantic search.</text>
+  <line class="fig-rule" x1="60" y1="128" x2="1220" y2="128" />
+
+  <!-- Corpus ring + central node ──────────────────────────── -->
+  <circle class="core-ring" cx="640" cy="450" r="240" />
+
+  <g transform="translate(440, 340)">
+    <rect class="mod-shadow" x="4" y="6" width="400" height="220" rx="10" />
+    <rect class="core-node" x="0" y="0" width="400" height="220" rx="10" />
+    <rect class="core-strip" x="0" y="0" width="400" height="5" rx="10" />
+    <rect class="core-strip" x="0" y="0" width="400" height="5" />
+    <rect class="core-accent" x="0" y="5" width="400" height="42" opacity="0.55" />
+
+    <text class="k-kicker" font-size="10" x="20" y="30">Shared corpus</text>
+    <text class="m-title"  font-size="17" x="20" y="68">Postgres 14+ · EEA-managed</text>
+    <line class="fig-rule" x1="20" y1="82" x2="380" y2="82" />
+
+    <g class="table-row">
+      <text x="20" y="108">policies · policy_texts · policy_edges</text>
+      <text x="20" y="128">references · reference_annots</text>
+      <text x="20" y="148">scenarios · scenario_submissions</text>
+      <text x="20" y="168">news_articles · rss_feeds</text>
+      <text x="20" y="188">ca_documents · ca_code_system</text>
+    </g>
+
+    <text class="m-ref" x="20" y="210">5 module groups · 1 schema · 0 duplicates</text>
+  </g>
+
+  <!-- Module cards ─────────────────────────────────────────── -->
+
+  <!-- M·01 · top-left -->
+  <g transform="translate(80, 170)">
+    <rect class="mod-shadow" x="3" y="5" width="310" height="130" rx="7" />
+    <rect class="mod-card"   x="0" y="0" width="310" height="130" rx="7" />
+    <rect class="mod-accent" x="0" y="0" width="310" height="3" />
+    <text class="m-code"  font-size="11" x="16" y="26">M · 01</text>
+    <text class="m-title" font-size="17" x="16" y="54">Reference Manager</text>
+    <text class="m-desc"  font-size="12.5" x="16" y="76">Literature · DOI lookup · PDFs · Word add-in</text>
+    <line class="fig-rule" x1="16" y1="94" x2="294" y2="94" />
+    <text class="m-ref" x="16" y="114">relies on · references · reference_annots</text>
+  </g>
+
+  <!-- M·02 · top-right -->
+  <g transform="translate(890, 170)">
+    <rect class="mod-shadow" x="3" y="5" width="310" height="130" rx="7" />
+    <rect class="mod-card"   x="0" y="0" width="310" height="130" rx="7" />
+    <rect class="mod-accent" x="0" y="0" width="310" height="3" />
+    <text class="m-code"  font-size="11" x="16" y="26">M · 02</text>
+    <text class="m-title" font-size="17" x="16" y="54">Data &amp; Scenario Explorer</text>
+    <text class="m-desc"  font-size="12.5" x="16" y="76">Eurostat · IPCC AR6 · IIASA · EEA</text>
+    <line class="fig-rule" x1="16" y1="94" x2="294" y2="94" />
+    <text class="m-ref" x="16" y="114">relies on · scenarios · submissions</text>
+  </g>
+
+  <!-- M·03 · mid-left -->
+  <g transform="translate(80, 515)">
+    <rect class="mod-shadow" x="3" y="5" width="310" height="130" rx="7" />
+    <rect class="mod-card"   x="0" y="0" width="310" height="130" rx="7" />
+    <rect class="mod-accent" x="0" y="0" width="310" height="3" />
+    <text class="m-code"  font-size="11" x="16" y="26">M · 03</text>
+    <text class="m-title" font-size="17" x="16" y="54">Secretariat News</text>
+    <text class="m-desc"  font-size="12.5" x="16" y="76">40+ RSS sources · 24 h EU briefing</text>
+    <line class="fig-rule" x1="16" y1="94" x2="294" y2="94" />
+    <text class="m-ref" x="16" y="114">relies on · news_articles · rss_feeds</text>
+  </g>
+
+  <!-- M·04 · mid-right -->
+  <g transform="translate(890, 515)">
+    <rect class="mod-shadow" x="3" y="5" width="310" height="130" rx="7" />
+    <rect class="mod-card"   x="0" y="0" width="310" height="130" rx="7" />
+    <rect class="mod-accent" x="0" y="0" width="310" height="3" />
+    <text class="m-code"  font-size="11" x="16" y="26">M · 04</text>
+    <text class="m-title" font-size="17" x="16" y="54">EU Policy Navigator</text>
+    <text class="m-desc"  font-size="12.5" x="16" y="76">Network map · EUR-Lex · annotation</text>
+    <line class="fig-rule" x1="16" y1="94" x2="294" y2="94" />
+    <text class="m-ref" x="16" y="114">relies on · policies · policy_texts</text>
+  </g>
+
+  <!-- M·05 · bottom-centre -->
+  <g transform="translate(485, 680)">
+    <rect class="mod-shadow" x="3" y="5" width="310" height="110" rx="7" />
+    <rect class="mod-card"   x="0" y="0" width="310" height="110" rx="7" />
+    <rect class="mod-accent" x="0" y="0" width="310" height="3" />
+    <text class="m-code"  font-size="11" x="16" y="26">M · 05</text>
+    <text class="m-title" font-size="17" x="16" y="54">Content Analysis</text>
+    <text class="m-desc"  font-size="12.5" x="16" y="76">MAXQDA-style qualitative coding</text>
+    <text class="m-ref"   x="16" y="98">relies on · ca_documents · ca_code_system</text>
+  </g>
+
+  <!-- Edges to the corpus ──────────────────────────────────── -->
+  <path class="link-corpus" d="M 390 232  C 420 260, 440 330, 442 380" marker-end="url(#arr-teal)"/>
+  <path class="link-corpus" d="M 890 232  C 860 260, 840 330, 838 380" marker-end="url(#arr-teal)"/>
+  <path class="link-corpus" d="M 390 578  C 420 558, 440 498, 442 460" marker-end="url(#arr-teal)"/>
+  <path class="link-corpus" d="M 890 578  C 860 558, 840 498, 838 460" marker-end="url(#arr-teal)"/>
+  <path class="link-corpus" d="M 640 680  L 640 566" marker-end="url(#arr-teal)"/>
+
+  <!-- Peer cross-links — outer subtle dotted arcs -->
+  <path class="link-peer" d="M 80 240  Q 40 380 80 520" />
+  <path class="link-peer" d="M 1200 240 Q 1240 380 1200 520" />
+  <path class="link-peer" d="M 400 630  Q 450 665 490 690" />
+  <path class="link-peer" d="M 880 630  Q 830 665 790 690" />
+
+  <!-- Legend ───────────────────────────────────────────────── -->
+  <g transform="translate(60, 760)">
+    <text class="k-kicker" font-size="10" x="0" y="0">Legend</text>
+
+    <line class="link-corpus" x1="0" y1="24" x2="40" y2="24" marker-end="url(#arr-teal)"/>
+    <text class="h-sub" font-size="12" x="50" y="28">reads / writes shared corpus</text>
+
+    <line class="link-peer" x1="260" y1="24" x2="300" y2="24" />
+    <text class="h-sub" font-size="12" x="310" y="28">peer cross-link · explicit FK</text>
+
+    <rect x="520" y="16" width="14" height="14" fill="#FFFFFF" stroke="#608C95" stroke-width="1.6"/>
+    <text class="h-sub" font-size="12" x="544" y="28">corpus</text>
+
+    <rect x="620" y="16" width="14" height="14" fill="#FFFFFF" stroke="#E6E7E8" stroke-width="1"/>
+    <rect x="620" y="16" width="14" height="3"  fill="#608C95"/>
+    <text class="h-sub" font-size="12" x="644" y="28">production module</text>
+  </g>
+
+  <!-- watermark -->
+  <text class="watermark" x="1220" y="800" text-anchor="end">ESABCC · MethodHub · fig-05mod</text>
+</svg>

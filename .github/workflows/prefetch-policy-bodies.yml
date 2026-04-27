@@ -1,0 +1,104 @@
+name: Prefetch EUR-Lex policy bodies
+
+# Runs `scripts/prefetch-eurlex-bodies.mjs` to fill missing policy
+# bodies into `public/content-analysis/policy-bodies.json`. Commits and pushes
+# the generated file back to `main` when it changes.
+#
+# Triggered manually from the Actions tab. Inputs let you force a
+# re-fetch or target a single policy id.
+
+on:
+  workflow_dispatch:
+    inputs:
+      force:
+        description: Re-fetch every policy, including ones already populated.
+        type: boolean
+        default: false
+      only:
+        description: Fetch only the policy with this id (leave blank for all missing).
+        type: string
+        required: false
+
+permissions:
+  contents: write
+
+jobs:
+  prefetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --ignore-scripts
+
+      - name: Prefetch policy bodies
+        run: |
+          ARGS=""
+          if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
+          if [ -n "${{ inputs.only }}" ]; then ARGS="$ARGS --only=${{ inputs.only }}"; fi
+          node scripts/prefetch-eurlex-bodies.mjs $ARGS
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet -- public/content-analysis/policy-bodies.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to public/content-analysis/policy-bodies.json."
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Generated file updated — will commit."
+            git diff --stat -- public/content-analysis/policy-bodies.json
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          FORCE: ${{ inputs.force }}
+          ONLY: ${{ inputs.only }}
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add public/content-analysis/policy-bodies.json
+          SUFFIX=""
+          if [ -n "$ONLY" ]; then SUFFIX=" · only=$ONLY"; fi
+          git commit -m "chore(content-analysis): prefetch EUR-Lex policy bodies (force=$FORCE$SUFFIX)"
+          git push origin main
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Prefetch run summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.changes.outputs.changed }}" = "true" ]; then
+            echo "- ✅ Updated \`public/content-analysis/policy-bodies.json\` and pushed to \`main\`." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- ℹ️ No changes to commit (every policy already populated, or every candidate failed)." >> $GITHUB_STEP_SUMMARY
+          fi
+          echo "- force: \`${{ inputs.force }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "- only: \`${{ inputs.only || '(all missing)' }}\`" >> $GITHUB_STEP_SUMMARY
+          if [ -f .prefetch-diagnostics.log ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "<details><summary>Per-policy attempts (diagnostics)</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            head -200 .prefetch-diagnostics.log >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload diagnostics log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prefetch-diagnostics
+          path: .prefetch-diagnostics.log
+          if-no-files-found: ignore
+          retention-days: 14

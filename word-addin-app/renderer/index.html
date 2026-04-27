@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src https://api.semanticscholar.org;">
+  <title>ESABCC Reference Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="login-screen">
+    <div class="login-card">
+      <h1>ESABCC Reference Manager</h1>
+      <p class="subtitle">European Scientific Advisory Board on Climate Change</p>
+      <input type="password" id="login-password" placeholder="Enter password" autocomplete="off">
+      <button class="login-btn" id="login-btn">Sign In</button>
+      <div class="login-error" id="login-error"></div>
+    </div>
+  </div>
+
+  <!-- App Screen -->
+  <div id="app-screen">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand">
+        ESABCC Reference Manager
+        <span>v1.0</span>
+      </div>
+      <div class="header-actions">
+        <button id="btn-select-all" title="Select all visible references">Select All</button>
+        <button id="btn-deselect-all" title="Deselect all">Deselect</button>
+        <button id="btn-logout">Sign Out</button>
+      </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-tabs">
+      <button class="nav-tab active" data-tab="library">Library</button>
+      <button class="nav-tab" data-tab="bibliography">Bibliography</button>
+      <button class="nav-tab" data-tab="similar">Similar Papers</button>
+      <button class="nav-tab" data-tab="collections">Collections</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Library Tab -->
+      <div class="tab-panel active" id="tab-library">
+        <div class="library-toolbar">
+          <div class="search-box">
+            <span class="search-icon">Search</span>
+            <input type="text" id="search-input" placeholder="Search references by title, author, DOI, journal...">
+          </div>
+          <div class="filter-group">
+            <label>Type:</label>
+            <select id="filter-type">
+              <option value="">All types</option>
+              <option value="article">Article</option>
+              <option value="report">Report</option>
+              <option value="book">Book</option>
+              <option value="chapter">Chapter</option>
+              <option value="web">Web</option>
+              <option value="legislation">Legislation</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>Year:</label>
+            <input type="number" id="filter-year-from" placeholder="From" min="1900" max="2100">
+            <span style="color:var(--text-muted);">-</span>
+            <input type="number" id="filter-year-to" placeholder="To" min="1900" max="2100">
+          </div>
+          <div class="filter-group">
+            <label>Author:</label>
+            <input type="text" id="filter-author" placeholder="Filter by author" style="padding:7px 10px;border:1px solid var(--border);border-radius:var(--radius);font-size:12px;font-family:var(--font);width:140px;outline:none;">
+          </div>
+          <div class="result-count" id="result-count">0 references</div>
+        </div>
+        <div class="ref-list-container">
+          <div class="ref-list" id="ref-list"></div>
+          <div class="detail-panel" id="detail-panel"></div>
+        </div>
+        <div class="pagination" id="pagination"></div>
+      </div>
+
+      <!-- Bibliography Tab -->
+      <div class="tab-panel" id="tab-bibliography">
+        <div class="bib-container">
+          <div class="bib-header">
+            <h2>Bibliography Builder</h2>
+            <div class="bib-actions">
+              <button id="bib-copy" class="primary-action">Copy Bibliography</button>
+              <button id="bib-clear">Clear All</button>
+            </div>
+          </div>
+          <div id="bib-content"></div>
+        </div>
+      </div>
+
+      <!-- Similar Papers Tab -->
+      <div class="tab-panel" id="tab-similar">
+        <div class="similar-container">
+          <h2 style="font-size:16px;font-weight:600;margin-bottom:16px;">Find Similar Papers</h2>
+          <p style="font-size:13px;color:var(--text-secondary);margin-bottom:16px;">
+            Search for related papers using the Semantic Scholar API. Enter a title or select a reference from the library.
+          </p>
+          <div class="similar-search">
+            <input type="text" id="similar-query" placeholder="Enter paper title to find related work...">
+            <button id="similar-search-btn">Search</button>
+          </div>
+          <div id="similar-results"></div>
+        </div>
+      </div>
+
+      <!-- Collections Tab -->
+      <div class="tab-panel" id="tab-collections">
+        <div class="collections-container">
+          <div class="collections-header">
+            <h2>Collections</h2>
+            <button id="btn-new-collection" style="padding:7px 16px;background:var(--primary);color:#fff;border:none;border-radius:var(--radius);font-size:12px;cursor:pointer;">New Collection</button>
+          </div>
+          <div id="collections-list"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Collection Modal -->
+  <div class="modal-overlay hidden" id="modal-new-collection">
+    <div class="modal">
+      <h3>New Collection</h3>
+      <input type="text" id="modal-collection-name" placeholder="Collection name">
+      <textarea id="modal-collection-desc" placeholder="Description (optional)" rows="2"></textarea>
+      <div class="modal-actions">
+        <button id="modal-cancel">Cancel</button>
+        <button id="modal-create" class="primary-action">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add to Collection Modal -->
+  <div class="modal-overlay hidden" id="modal-add-to-collection">
+    <div class="modal">
+      <h3>Add to Collection</h3>
+      <div id="modal-collection-list" style="max-height:300px;overflow-y:auto;margin-bottom:12px;"></div>
+      <div class="modal-actions">
+        <button id="modal-atc-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

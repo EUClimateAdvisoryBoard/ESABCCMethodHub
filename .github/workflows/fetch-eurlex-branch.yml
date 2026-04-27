@@ -1,0 +1,54 @@
+name: Fetch EUR-Lex Texts (feature branch)
+
+# One-off/manual workflow to fetch missing EUR-Lex policy texts on a
+# feature branch (e.g. claude/add-eurolex-text-*) and commit them back to
+# that same branch. The main daily-updates.yml workflow only pushes to main,
+# so this workflow fills the gap for feature work that adds new policies.
+
+on:
+  push:
+    branches:
+      - 'claude/add-eurolex-text-**'
+    paths:
+      - 'scripts/fetch-eurlex-texts.js'
+      - '.github/workflows/fetch-eurlex-branch.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch EUR-Lex policy texts
+        run: node scripts/fetch-eurlex-texts.js
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/policy-texts/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates to current branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/policy-texts/
+          git commit -m "chore: fetch missing EUR-Lex policy texts [automated]"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}

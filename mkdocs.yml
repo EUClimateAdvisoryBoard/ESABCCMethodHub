@@ -1,0 +1,200 @@
+# MkDocs configuration — ESABCC Secretariat MethodHub documentation site.
+#
+# Builds the content under `docs/` into a static site served via GitHub
+# Pages (see `.github/workflows/docs.yml`). The site is designed to let a
+# reviewer either skim the overview on the landing page or dive deep into
+# a single module's technical surface — same pages, progressive disclosure.
+#
+# Run locally:
+#   pip install mkdocs-material pymdown-extensions mkdocs-awesome-pages-plugin
+#   mkdocs serve        # http://127.0.0.1:8000
+#   mkdocs build        # writes to site/
+
+site_name: ESABCC MethodHub — Documentation
+site_description: >-
+  Internal research workspace for the European Scientific Advisory Board
+  on Climate Change Secretariat. Built and maintained by CCE5. Packaged
+  for self-hosted deployment on EEA infrastructure.
+site_author: CCE5 · ESABCC Secretariat
+site_url: https://sebastianfra.github.io/MethodHub/
+repo_url: https://github.com/SebastianFra/MethodHub
+repo_name: SebastianFra/MethodHub
+edit_uri: edit/main/docs/
+copyright: >-
+  Built and maintained by CCE5 for the ESABCC Secretariat.
+  Source · <a href="https://github.com/SebastianFra/MethodHub">github.com/SebastianFra/MethodHub</a>.
+
+docs_dir: docs
+site_dir: site
+
+theme:
+  name: material
+  language: en
+  custom_dir: docs/overrides
+  logo: assets/Landscaper-logo_original-green.png
+  favicon: assets/Landscaper-logo_original-green.png
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    # ESABCC institutional palette — teal primary, dark-blue secondary.
+    # Light mode is the default; dark mode is offered as an affordance.
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    # readthedocs-style layout — everything in the left sidebar, no tabs,
+    # no autohide header. The sidebar is the single source of navigation.
+    #
+    # NOTE: `navigation.instant` is intentionally disabled. Material's
+    # instant-nav uses fetch() to swap page content client-side, which
+    # breaks catastrophically behind the StaticCrypt password gate —
+    # every fetched HTML file is the encrypted shell, not real content.
+    - navigation.tracking          # update URL hash as user scrolls
+    - navigation.sections          # group pages in the sidebar
+    - navigation.indexes           # section landing via section/index.md
+    - navigation.top               # back-to-top button
+    - navigation.footer            # previous / next page
+    - toc.follow                   # highlight active heading in TOC
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link            # link tabs across the page
+    - content.action.edit
+    - content.action.view
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mermaid-zoom.js
+
+extra:
+  generator: false                 # hide "Made with Material for MkDocs"
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/SebastianFra/MethodHub
+    - icon: fontawesome/solid/globe
+      link: https://climate-advisory-board.europa.eu
+      name: European Scientific Advisory Board on Climate Change
+  status:
+    stable: Stable — shipped in v1.0
+    beta: Beta — parked under beta/modules/
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: "¶"
+      toc_depth: 3
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: SebastianFra
+      repo: MethodHub
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds: { case: lower }
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+  # Click-to-zoom lightbox for every image and figure on the site.
+  # Readers can enlarge the detailed SVG diagrams (tech stack layout,
+  # deployment topology, etc.) without leaving the page.
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: slide
+      zoomable: true
+      draggable: true
+      # No in-lightbox caption — the description already renders under
+      # the figure in-page, and auto_caption was eating most of the
+      # viewport so the image itself came out tiny.
+      auto_caption: false
+
+# Navigation — handcrafted so the sidebar reads like a technical handbook
+# rather than an alphabetical file listing.
+nav:
+  - Home: index.md
+  - "FAQ (non-technical)": FAQ-NON-TECHNICAL.md
+  - Overview:
+      - What is MethodHub?: overview/what-is-methodhub.md
+      - The five modules: overview/the-five-modules.md
+      - Beta parking lot: overview/beta.md
+  - Modules:
+      - modules/index.md
+      - "M·01 Reference Manager":    modules/references.md
+      - "M·02 Data & Scenarios":     modules/scenarios.md
+      - "M·03 Secretariat News":     modules/news-feed.md
+      - "M·04 EU Policy Navigator":  modules/policy-navigator.md
+      - "M·05 Content Analysis":     modules/content-analysis.md
+  - Infrastructure:
+      - Overview: infrastructure/index.md
+      - Stewardship model: infrastructure/stewardship.md
+      - Deployment on EEA: infrastructure/deployment.md
+      - AI layer — three paths: infrastructure/ai-layer.md
+      - "Copilot — technical deep-dive": infrastructure/copilot.md
+      - Tech stack: infrastructure/tech-stack.md
+      - Data & GDPR: infrastructure/data-gdpr.md
+  - Vision:
+      - vision/index.md
+      - Blueprint for EEA units: vision/blueprint.md
+      - Roadmap: vision/roadmap.md
+      - User Space: vision/user-space.md
+      - Brainstorm — 20 module improvements: vision/brainstorm-modules-ux-userspace.md
+      - Brainstorm — professional UX for the five modules: vision/brainstorm-pro-ux-five-modules.md
+      - Brainstorm rollout TODO: vision/brainstorm-rollout-todo.md
+  - Reference:
+      - API reference: reference/api.md
+      - Scripts reference: reference/scripts.md
+      - Design system: reference/design-system.md
+
+not_in_nav: |
+  README.md
+  DOCSITE.md

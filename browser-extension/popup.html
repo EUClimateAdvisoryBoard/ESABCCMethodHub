@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ESABCC Monitor</title>
+    <style>
+      body { font: 13px/1.4 -apple-system, Segoe UI, system-ui, sans-serif; margin: 0; padding: 12px; width: 320px; color: #1a1a1a; }
+      h1 { font-size: 14px; margin: 0 0 8px; }
+      button { width: 100%; padding: 8px 12px; border: 0; border-radius: 4px; background: #004B7F; color: white; font-weight: 600; cursor: pointer; font-size: 13px; }
+      button:hover { background: #003A62; }
+      button:disabled { opacity: 0.6; cursor: wait; }
+      .row { margin-top: 10px; font-size: 12px; color: #555; }
+      .ok { color: #007B6C; }
+      .err { color: #B83230; }
+      .chip { display: inline-block; background: #EEF3F7; color: #004B7F; padding: 1px 6px; border-radius: 10px; margin: 1px 2px 0 0; font-size: 11px; }
+      a { color: #004B7F; font-size: 12px; }
+      .muted { color: #888; font-size: 11px; }
+    </style>
+  </head>
+  <body>
+    <h1>Send current LinkedIn post to ESABCC monitor</h1>
+    <button id="capture">Capture now</button>
+    <div class="row" id="status"></div>
+    <div class="row"><a href="#" id="open-options">Extension settings →</a></div>
+    <div class="row muted">Right-click a post or press Alt+Shift+C to capture without opening this popup.</div>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+fastapi>=0.110
+uvicorn[standard]>=0.27
+pydantic>=2.5
+numpy>=1.26
+scipy>=1.12
+pandas>=2.2
+matplotlib>=3.8
+reportlab>=4.1
+# Real PyPSA — same library that PyPSA-Eur's snakemake workflow wraps.
+# n.optimize(solver_name="highs") is the canonical PyPSA-Eur solve call.
+pypsa>=1.1,<2.0
+linopy>=0.3
+highspy>=1.7

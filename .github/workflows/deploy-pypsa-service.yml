@@ -1,0 +1,93 @@
+name: Deploy pypsa-service to Hugging Face Spaces
+
+# This workflow pushes the pypsa-service/ directory to a Hugging Face Docker
+# Space. Once the HF_TOKEN secret is set, it runs automatically on every push
+# to main that touches pypsa-service/, and can also be triggered manually via
+# the Actions tab ("Run workflow") for testing from any branch.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   HF_TOKEN    — Hugging Face write token (hf_...)
+#
+# Optional inputs:
+#   hf_username — defaults to "Sebbelismus"
+#   space_name  — defaults to "eu-climate-policy-pypsa"
+
+on:
+  workflow_dispatch:
+    inputs:
+      hf_username:
+        description: 'Hugging Face username'
+        required: false
+        default: 'Sebbelismus'
+      space_name:
+        description: 'Space name'
+        required: false
+        default: 'eu-climate-policy-pypsa'
+  push:
+    branches: [main]
+    paths:
+      - 'pypsa-service/**'
+      - '.github/workflows/deploy-pypsa-service.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install huggingface_hub
+        run: pip install --quiet 'huggingface_hub>=0.24'
+
+      - name: Deploy pypsa-service to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_USERNAME: ${{ inputs.hf_username || 'Sebbelismus' }}
+          SPACE_NAME: ${{ inputs.space_name || 'eu-climate-policy-pypsa' }}
+        run: |
+          if [ -z "$HF_TOKEN" ]; then
+            echo "::error::HF_TOKEN secret not set. Add it at Settings → Secrets and variables → Actions → New repository secret."
+            exit 1
+          fi
+          python - <<'PY'
+          import os
+          from huggingface_hub import HfApi, create_repo
+
+          repo_id = f"{os.environ['HF_USERNAME']}/{os.environ['SPACE_NAME']}"
+          token = os.environ['HF_TOKEN']
+          api = HfApi(token=token)
+
+          # Idempotent: creates if missing, no-ops if it already exists
+          create_repo(
+              repo_id=repo_id,
+              repo_type='space',
+              space_sdk='docker',
+              exist_ok=True,
+              token=token,
+          )
+          print(f"Space ready: https://huggingface.co/spaces/{repo_id}")
+
+          # Push the entire pypsa-service/ subtree as the root of the Space
+          api.upload_folder(
+              folder_path='pypsa-service',
+              repo_id=repo_id,
+              repo_type='space',
+              commit_message='Auto-deploy from GitHub Actions',
+              ignore_patterns=[
+                  '__pycache__/**',
+                  '*.pyc',
+                  '*.pyo',
+                  '.venv/**',
+                  'venv/**',
+                  '.env',
+                  '*.egg-info/**',
+              ],
+          )
+          print(f"Deployed. Backend will be live in ~3-5 min at:")
+          print(f"  https://{os.environ['HF_USERNAME'].lower()}-{os.environ['SPACE_NAME']}.hf.space")
+          print(f"Health: https://{os.environ['HF_USERNAME'].lower()}-{os.environ['SPACE_NAME']}.hf.space/health")
+          PY

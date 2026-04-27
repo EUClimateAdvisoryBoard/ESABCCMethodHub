@@ -1,0 +1,127 @@
+name: Daily EUR-Lex & News Updates
+
+on:
+  schedule:
+    # Run four times a day so the 24h summary stays fresh.
+    # GitHub Actions scheduled workflows are typically delayed by 15-90 min,
+    # so the 05:00 UTC slot realistically lands ~06:00-06:30 UTC (~06:00-07:30
+    # Copenhagen time depending on DST), which is early enough for the target
+    # "available at 6am Copenhagen" European morning window. The other slots
+    # keep the feed fresh throughout the day.
+    - cron: '0 5,11,17,23 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-policy-texts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch EUR-Lex policy texts
+        run: node scripts/fetch-eurlex-texts.js
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/policy-texts/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit updates
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/policy-texts/
+          git commit -m "chore: update EUR-Lex policy texts [automated]"
+          git pull --rebase origin main
+          git push
+
+  fetch-rss-news:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fetch and filter EU climate news
+        run: node scripts/fetch-news.js
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit news updates
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/
+          git commit -m "chore: update news feed from RSS sources [automated]"
+          git pull --rebase origin main
+          git push
+
+  generate-daily-summary:
+    runs-on: ubuntu-latest
+    needs: fetch-rss-news
+    # Run even if fetch-rss-news failed/was skipped — the script can fall back
+    # to its own RSS fetching and to the cached latest-news.json, so a
+    # transient failure in the news-fetch job must not block the summary.
+    if: ${{ always() }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          # Make sure we pick up any commit that fetch-rss-news just pushed.
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      - name: Generate daily climate & energy news summary
+        run: node scripts/generate-daily-summary.js
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit daily summary
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/daily-summary.json public/data/daily-summaries/
+          git commit -m "chore: generate daily climate & energy news summary [automated]"
+          git pull --rebase origin main
+          git push

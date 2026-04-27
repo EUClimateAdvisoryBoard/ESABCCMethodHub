@@ -1,0 +1,64 @@
+[
+  {
+    "id": "plan-mo8l7aif-jgdgd4",
+    "name": "Adaptation report 2.0",
+    "description": "",
+    "sections": [
+      {
+        "id": "sec-mo8l7aif-4g2bu2",
+        "title": "Introduction",
+        "description": "Background, context, and research question.",
+        "referenceIds": [
+          "doi-10.1080-14693062.2026.2653898",
+          "ref-568"
+        ]
+      },
+      {
+        "id": "sec-mo8l7aif-dbou4u",
+        "title": "Methodology",
+        "description": "Data, models, and analytical approach.",
+        "referenceIds": []
+      },
+      {
+        "id": "sec-mo8l7aif-ncmv5s",
+        "title": "Results",
+        "description": "Main findings and quantitative output.",
+        "referenceIds": []
+      },
+      {
+        "id": "sec-mo8l7aif-p8x4ni",
+        "title": "Discussion",
+        "description": "Interpretation and comparison with the literature.",
+        "referenceIds": []
+      },
+      {
+        "id": "sec-mo8l7aif-b20uo9",
+        "title": "Conclusion",
+        "description": "Key takeaways and policy implications.",
+        "referenceIds": []
+      }
+    ],
+    "references": [
+      {
+        "id": "doi-10.1080-14693062.2026.2653898",
+        "doi": "10.1080/14693062.2026.2653898",
+        "title": "Deep Decarbonization Pathways for national development consistent with carbon neutrality",
+        "authors": "Waisman, H.; Bataille, C.; Briand, Y.; Torres Gunfaus, M.; Pye, S.",
+        "year": "2026",
+        "journal": "Climate Policy",
+        "type": "article-journal",
+        "pages": "1-8",
+        "url": "https://doi.org/10.1080/14693062.2026.2653898"
+      },
+      {
+        "id": "ref-568",
+        "title": "Sultani, D., et al., 2024, 'Sequencing Carbon Dioxide Removal into the EU ETS', SSRN Electronic Journal (DOI: 10.2139/ssrn.4875550).",
+        "authors": "",
+        "year": "2024",
+        "type": "article-journal"
+      }
+    ],
+    "createdAt": "2026-04-21T12:15:27.735Z",
+    "updatedAt": "2026-04-22T12:53:54.143Z"
+  }
+]

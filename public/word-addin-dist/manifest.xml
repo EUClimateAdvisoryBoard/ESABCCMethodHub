@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+
+  <Id>a1b2c3d4-e5f6-7890-abcd-ef1234567890</Id>
+  <Version>1.0.0</Version>
+  <ProviderName>ESABCC Reference Manager</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+  <DisplayName DefaultValue="ESABCC RefManager" />
+  <Description DefaultValue="Insert citations and generate bibliographies from your shared reference library" />
+
+  <IconUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-64.png" />
+  <SupportUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist" />
+
+  <Hosts>
+    <Host Name="Document" />
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html" />
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Document">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStartedTitle" />
+            <Description resid="GetStartedDesc" />
+            <LearnMoreUrl resid="LearnMoreUrl" />
+          </GetStarted>
+          <FunctionFile resid="CommandsUrl" />
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <CustomTab id="ESABCCRefManagerTab">
+              <Group id="RefManagerGroup">
+                <Label resid="GroupLabel" />
+                <Icon>
+                  <bt:Image size="16" resid="Icon16" />
+                  <bt:Image size="32" resid="Icon32" />
+                  <bt:Image size="80" resid="Icon80" />
+                </Icon>
+                <Control xsi:type="Button" id="InsertCitationBtn">
+                  <Label resid="InsertCitationLabel" />
+                  <Supertip>
+                    <Title resid="InsertCitationLabel" />
+                    <Description resid="InsertCitationTip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon16" />
+                    <bt:Image size="32" resid="Icon32" />
+                    <bt:Image size="80" resid="Icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RefManagerPane</TaskpaneId>
+                    <SourceLocation resid="TaskpaneUrl" />
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="InsertBibBtn">
+                  <Label resid="InsertBibLabel" />
+                  <Supertip>
+                    <Title resid="InsertBibLabel" />
+                    <Description resid="InsertBibTip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon16" />
+                    <bt:Image size="32" resid="Icon32" />
+                    <bt:Image size="80" resid="Icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RefManagerPane</TaskpaneId>
+                    <SourceLocation resid="BibUrl" />
+                  </Action>
+                </Control>
+                <Control xsi:type="Button" id="RefreshBtn">
+                  <Label resid="RefreshLabel" />
+                  <Supertip>
+                    <Title resid="RefreshLabel" />
+                    <Description resid="RefreshTip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon16" />
+                    <bt:Image size="32" resid="Icon32" />
+                    <bt:Image size="80" resid="Icon80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>RefManagerPane</TaskpaneId>
+                    <SourceLocation resid="RefreshUrl" />
+                  </Action>
+                </Control>
+              </Group>
+            </CustomTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon16" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-16.png" />
+        <bt:Image id="Icon32" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-32.png" />
+        <bt:Image id="Icon80" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-80.png" />
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="TaskpaneUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html" />
+        <bt:Url id="BibUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html?view=bibliography" />
+        <bt:Url id="RefreshUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html?view=refresh" />
+        <bt:Url id="CommandsUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/commands.html" />
+        <bt:Url id="LearnMoreUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist" />
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStartedTitle" DefaultValue="ESABCC Reference Manager" />
+        <bt:String id="GroupLabel" DefaultValue="References" />
+        <bt:String id="InsertCitationLabel" DefaultValue="Insert Citation" />
+        <bt:String id="InsertBibLabel" DefaultValue="Bibliography" />
+        <bt:String id="RefreshLabel" DefaultValue="Refresh All" />
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStartedDesc" DefaultValue="Search your shared reference library and insert citations into your document." />
+        <bt:String id="InsertCitationTip" DefaultValue="Search and insert a citation from your reference library" />
+        <bt:String id="InsertBibTip" DefaultValue="Generate or update the bibliography based on cited references" />
+        <bt:String id="RefreshTip" DefaultValue="Refresh all citations and bibliography in the document" />
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

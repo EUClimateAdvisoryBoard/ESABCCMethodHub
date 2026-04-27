@@ -1,0 +1,47 @@
+{
+  "date": "2026-04-18",
+  "generatedAt": "2026-04-18T23:33:36.525Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Saturday, 18 April 2026 — Key developments from the last 24 hours",
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": []
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": []
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": []
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": []
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 114,
+    "articlesLast24h": 5,
+    "afterDedup": 5,
+    "feedsQueried": 16,
+    "mexStoriesIngested": 0,
+    "mexShareInBriefing": 0,
+    "euClimateRelevant": 0
+  }
+}

@@ -1,0 +1,201 @@
+<!--
+  fig-roadmap.svg
+  ────────────────────────────────────────────────────────────────
+  Six-month roadmap.
+  Horizontal timeline · five milestones pinned to months M1–M6.
+  Cards alternate above/below the axis to use vertical real estate.
+  Risk per milestone is shown with a small coloured chip
+  (low = teal, medium = signal orange).
+  ──────────────────────────────────────────────────────────────── -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1280 560"
+     role="img"
+     aria-label="Six-month roadmap — Path A readiness, Path B Copilot spike, EEA handoff dry run, graduate first beta module, blueprint kit.">
+  <title>Roadmap — next 6 months</title>
+
+  <defs>
+    <style>
+      .fig-bg      { fill: #FDFCFA; }
+      .fig-grid    { stroke: #F1F2F3; stroke-width: 1; }
+      .fig-rule    { stroke: #E6E7E8; stroke-width: 1; }
+
+      .h-title     { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 700; fill: #3D5584;
+                     letter-spacing: -0.015em; }
+      .h-sub       { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 400; fill: #5B6B7B; }
+      .k-kicker    { font-family: "JetBrains Mono", monospace;
+                     font-weight: 600; fill: #8A95A3;
+                     letter-spacing: 0.14em; text-transform: uppercase; }
+
+      .axis        { stroke: #D9DCDE; stroke-width: 1.4; }
+      .month-label { font-family: "JetBrains Mono", monospace; font-size: 11px;
+                     fill: #8A95A3; letter-spacing: 0.08em;
+                     font-variant-numeric: tabular-nums; }
+      .month-line  { stroke: #EEEDEA; stroke-width: 1; stroke-dasharray: 2 4; }
+
+      .card-shadow { fill: rgba(61, 85, 132, 0.05); }
+      .mi-low      { fill: #FFFFFF; stroke: #608C95; stroke-width: 1.4; }
+      .mi-med      { fill: #FFFFFF; stroke: #F26119; stroke-width: 1.4; }
+      .strip-low   { fill: #608C95; }
+      .strip-med   { fill: #F26119; }
+      .band-low    { fill: #E4ECEE; }
+      .band-med    { fill: #FFEEE3; }
+
+      .pin-low     { fill: #608C95; stroke: #FDFCFA; stroke-width: 2; }
+      .pin-med     { fill: #F26119; stroke: #FDFCFA; stroke-width: 2; }
+      .pin-line-low { stroke: #608C95; stroke-width: 1.2; stroke-dasharray: 3 3; }
+      .pin-line-med { stroke: #F26119; stroke-width: 1.2; stroke-dasharray: 3 3; }
+
+      .step-title  { font-family: "Inter", system-ui, sans-serif;
+                     font-size: 14px; font-weight: 700; fill: #3D5584;
+                     letter-spacing: -0.01em; }
+      .body        { font-family: "Inter", system-ui, sans-serif;
+                     font-size: 11.5px; fill: #5B6B7B; }
+
+      .chip-low    { fill: #E4ECEE; }
+      .chip-med    { fill: #FFEEE3; }
+      .chip-text-low { fill: #466770; font-family: "JetBrains Mono", monospace;
+                       font-size: 10px; font-weight: 700;
+                       letter-spacing: 0.1em; text-transform: uppercase; }
+      .chip-text-med { fill: #B84414; font-family: "JetBrains Mono", monospace;
+                       font-size: 10px; font-weight: 700;
+                       letter-spacing: 0.1em; text-transform: uppercase; }
+
+      .milestone-k { font-family: "JetBrains Mono", monospace;
+                     font-weight: 600; font-size: 10px;
+                     letter-spacing: 0.12em; text-transform: uppercase; }
+
+      .watermark   { font-family: "JetBrains Mono", monospace;
+                     font-size: 9px; fill: #B8BCC2;
+                     letter-spacing: 0.24em; text-transform: uppercase; }
+    </style>
+
+    <pattern id="paperGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" class="fig-grid" fill="none"/>
+    </pattern>
+  </defs>
+
+  <rect class="fig-bg" x="0" y="0" width="1280" height="560" />
+  <rect x="0" y="0" width="1280" height="560" fill="url(#paperGrid)" opacity="0.5"/>
+
+  <!-- Header -->
+  <text class="k-kicker" font-size="11" x="60" y="38">Figure · roadmap</text>
+  <text class="h-title"  font-size="24" x="60" y="70">Roadmap — next 6 months</text>
+  <text class="h-sub"    font-size="13" x="60" y="94">Intent, not commitment. Risk is colour-coded — teal is low, orange is medium.</text>
+
+  <!-- Legend strip · top right -->
+  <g transform="translate(960, 60)">
+    <rect x="0" y="-12" width="14" height="14" class="chip-low"/>
+    <text class="chip-text-low" x="22" y="-1">Low risk</text>
+    <rect x="110" y="-12" width="14" height="14" class="chip-med"/>
+    <text class="chip-text-med" x="132" y="-1">Medium risk</text>
+    <circle cx="240" cy="-5" r="5" class="pin-low"/>
+    <text class="body" x="254" y="-1" font-size="11">milestone pin</text>
+  </g>
+
+  <line class="fig-rule" x1="60" y1="110" x2="1220" y2="110" />
+
+  <!-- Timeline axis · centred vertically -->
+  <line class="axis" x1="80" y1="310" x2="1200" y2="310" />
+
+  <!-- Month ticks (M1–M6), evenly spaced -->
+  <!-- Positions: M1=160, M2=360, M3=560, M4=760, M5=960, M6=1160 -->
+  <g class="month-label">
+    <line class="month-line" x1="160"  y1="120" x2="160"  y2="500"/>
+    <line class="month-line" x1="360"  y1="120" x2="360"  y2="500"/>
+    <line class="month-line" x1="560"  y1="120" x2="560"  y2="500"/>
+    <line class="month-line" x1="760"  y1="120" x2="760"  y2="500"/>
+    <line class="month-line" x1="960"  y1="120" x2="960"  y2="500"/>
+    <line class="month-line" x1="1160" y1="120" x2="1160" y2="500"/>
+
+    <text text-anchor="middle" x="160"  y="332">M1</text>
+    <text text-anchor="middle" x="360"  y="332">M2</text>
+    <text text-anchor="middle" x="560"  y="332">M3</text>
+    <text text-anchor="middle" x="760"  y="332">M4</text>
+    <text text-anchor="middle" x="960"  y="332">M5</text>
+    <text text-anchor="middle" x="1160" y="332">M6</text>
+  </g>
+
+  <!-- ───────────────────────────────────────────────────── -->
+  <!-- Milestones · alternating above / below the axis       -->
+  <!-- ───────────────────────────────────────────────────── -->
+
+  <!-- 1. Path A readiness · below · M1 · low -->
+  <line class="pin-line-low" x1="160" y1="310" x2="160" y2="370"/>
+  <circle class="pin-low" cx="160" cy="310" r="7"/>
+  <g transform="translate(60, 370)">
+    <rect class="card-shadow" x="3" y="5" width="220" height="130" rx="8"/>
+    <rect class="mi-low"      x="0" y="0" width="220" height="130" rx="8"/>
+    <rect class="strip-low"   x="0" y="0" width="220" height="4"/>
+    <rect class="band-low"    x="0" y="4" width="220" height="28" opacity="0.7"/>
+    <text class="milestone-k" fill="#466770" x="14" y="23">M1 · low</text>
+    <text class="step-title" x="14" y="54">Path A readiness</text>
+    <text class="body"       x="14" y="76">Azure OpenAI EU production</text>
+    <text class="body"       x="14" y="92">profile · parity tests vs.</text>
+    <text class="body"       x="14" y="108">current Anthropic.</text>
+  </g>
+
+  <!-- 2. Path B spike · above · M2 · medium -->
+  <line class="pin-line-med" x1="360" y1="310" x2="360" y2="240"/>
+  <circle class="pin-med" cx="360" cy="310" r="7"/>
+  <g transform="translate(260, 110)">
+    <rect class="card-shadow" x="3" y="5" width="240" height="130" rx="8"/>
+    <rect class="mi-med"      x="0" y="0" width="240" height="130" rx="8"/>
+    <rect class="strip-med"   x="0" y="0" width="240" height="4"/>
+    <rect class="band-med"    x="0" y="4" width="240" height="28" opacity="0.75"/>
+    <text class="milestone-k" fill="#B84414" x="14" y="23">M2 · medium · GA timing</text>
+    <text class="step-title" x="14" y="54">Path B · Copilot spike</text>
+    <text class="body"       x="14" y="76"><tspan font-family="JetBrains Mono, monospace" font-size="10.5" fill="#466770">LLM_PROVIDER=copilot-graph</tspan></text>
+    <text class="body"       x="14" y="92">behind a flag, wired against</text>
+    <text class="body"       x="14" y="108">Content Analysis first.</text>
+    <text class="body"       x="14" y="124">Validate EU Data Boundary.</text>
+  </g>
+
+  <!-- 3. EEA handoff dry run · below · M3 · low -->
+  <line class="pin-line-low" x1="560" y1="310" x2="560" y2="370"/>
+  <circle class="pin-low" cx="560" cy="310" r="7"/>
+  <g transform="translate(460, 370)">
+    <rect class="card-shadow" x="3" y="5" width="240" height="130" rx="8"/>
+    <rect class="mi-low"      x="0" y="0" width="240" height="130" rx="8"/>
+    <rect class="strip-low"   x="0" y="0" width="240" height="4"/>
+    <rect class="band-low"    x="0" y="4" width="240" height="28" opacity="0.7"/>
+    <text class="milestone-k" fill="#466770" x="14" y="23">M3 · low</text>
+    <text class="step-title" x="14" y="54">EEA handoff dry run</text>
+    <text class="body"       x="14" y="76">Staging clone on EEA infra</text>
+    <text class="body"       x="14" y="92">+ EU Login + MinIO. Run the</text>
+    <text class="body"       x="14" y="108">parity suite. Time the handoff.</text>
+  </g>
+
+  <!-- 4. Graduate first beta · above · M4 · low -->
+  <line class="pin-line-low" x1="760" y1="310" x2="760" y2="240"/>
+  <circle class="pin-low" cx="760" cy="310" r="7"/>
+  <g transform="translate(660, 110)">
+    <rect class="card-shadow" x="3" y="5" width="240" height="130" rx="8"/>
+    <rect class="mi-low"      x="0" y="0" width="240" height="130" rx="8"/>
+    <rect class="strip-low"   x="0" y="0" width="240" height="4"/>
+    <rect class="band-low"    x="0" y="4" width="240" height="28" opacity="0.7"/>
+    <text class="milestone-k" fill="#466770" x="14" y="23">M4 · low · ships as M · 06</text>
+    <text class="step-title" x="14" y="54">Graduate first beta</text>
+    <text class="body"       x="14" y="76">Likely Media Monitoring —</text>
+    <text class="body"       x="14" y="92">GDELT pipeline is stable,</text>
+    <text class="body"       x="14" y="108">UX is the blocker.</text>
+  </g>
+
+  <!-- 5. Blueprint kit · below · M6 · low -->
+  <line class="pin-line-low" x1="1160" y1="310" x2="1160" y2="370"/>
+  <circle class="pin-low" cx="1160" cy="310" r="7"/>
+  <g transform="translate(1060, 370)">
+    <rect class="card-shadow" x="3" y="5" width="200" height="130" rx="8"/>
+    <rect class="mi-low"      x="0" y="0" width="200" height="130" rx="8"/>
+    <rect class="strip-low"   x="0" y="0" width="200" height="4"/>
+    <rect class="band-low"    x="0" y="4" width="200" height="28" opacity="0.7"/>
+    <text class="milestone-k" fill="#466770" x="14" y="23">M6 · high leverage</text>
+    <text class="step-title" x="14" y="54">Blueprint kit</text>
+    <text class="body"       x="14" y="76">Short stand-alone fork</text>
+    <text class="body"       x="14" y="92">checklist · reference fork</text>
+    <text class="body"       x="14" y="108">for a second EEA unit.</text>
+  </g>
+
+  <text class="watermark" x="1220" y="540" text-anchor="end">ESABCC · MethodHub · fig-roadmap</text>
+</svg>

@@ -1,0 +1,32 @@
+{#-
+  Global footer partial — ESABCC institutional lockup + a concise CCE5
+  stewardship note on every page of the docs site. Overrides the default
+  Material footer so the institutional context is always visible.
+-#}
+<footer class="mh-global-footer" role="contentinfo">
+  <div class="mh-global-footer__inner">
+    <div class="mh-global-footer__lockup">
+      <img src="{{ 'assets/Landscaper-logo_original-green.png' | url }}"
+           alt="MethodHub"
+           class="mh-global-footer__logo">
+      <div class="mh-global-footer__text">
+        <p class="mh-global-footer__title">
+          ESABCC Secretariat MethodHub — Documentation
+        </p>
+        <p class="mh-global-footer__meta">
+          Code stewarded by <strong>CCE5</strong>.
+          Hosting target: <strong>EEA infrastructure</strong> (EU region).
+          Contact: <a href="mailto:sebastian.franz@esabcc.europa.eu">sebastian.franz@esabcc.europa.eu</a>.
+        </p>
+        <p class="mh-global-footer__meta mh-global-footer__meta--dim">
+          Internal use only. Nothing in these docs constitutes official
+          Board advice.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  {#- Preserve Material's own copyright/social row underneath. -#}
+  {% include "partials/copyright.html" %}
+</footer>

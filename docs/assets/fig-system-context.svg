@@ -1,0 +1,232 @@
+<!--
+  fig-system-context.svg
+  ────────────────────────────────────────────────────────────────
+  MethodHub — system context · nested boundaries.
+
+  Layers from the inside out:
+    1. methodhub-app          Next.js + Postgres service (core)
+    2. CCE5 stewardship       code boundary · GitHub
+    3. EEA infrastructure     host boundary · EU region
+    4. Actors                 Secretariat users · peer EEA units · AI
+                              providers · public EU data sources
+  ──────────────────────────────────────────────────────────────── -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1280 780"
+     role="img"
+     aria-label="MethodHub system context — CCE5 stewards the code, EEA hosts the service, the ESABCC Secretariat uses it daily, and peer EEA units can fork it.">
+  <title>MethodHub — system context</title>
+
+  <defs>
+    <style>
+      .fig-bg      { fill: #FDFCFA; }
+      .fig-grid    { stroke: #F1F2F3; stroke-width: 1; }
+      .fig-rule    { stroke: #E6E7E8; stroke-width: 1; }
+
+      .band-eea    { fill: #E4ECEE; stroke: #608C95; stroke-width: 1.2;
+                     stroke-dasharray: 6 4; opacity: 0.55; }
+      .band-cce5   { fill: #FFFFFF; stroke: #3D5584; stroke-width: 1.2; }
+      .band-shadow { fill: rgba(61, 85, 132, 0.04); }
+
+      .core        { fill: #FFFFFF; stroke: #608C95; stroke-width: 2; }
+      .core-strip  { fill: #608C95; }
+      .core-accent { fill: #E4ECEE; }
+
+      .tile        { fill: #FFFFFF; stroke: #D9DCDE; stroke-width: 1; }
+      .tile-ext    { fill: #FBFBFA; stroke: #B8BCC2; stroke-width: 1;
+                     stroke-dasharray: 3 3; }
+      .tile-user   { fill: #FFEEE3; stroke: #F26119; stroke-width: 1; }
+      .tile-strip-user   { fill: #F26119; }
+      .tile-strip-github { fill: #3D5584; }
+
+      .h-title     { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 700; fill: #3D5584;
+                     letter-spacing: -0.015em; }
+      .h-sub       { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 400; fill: #5B6B7B; }
+      .k-kicker    { font-family: "JetBrains Mono", monospace;
+                     font-weight: 600; fill: #8A95A3;
+                     letter-spacing: 0.14em; text-transform: uppercase; }
+
+      .t-title     { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 700; fill: #3D5584;
+                     letter-spacing: -0.01em; }
+      .t-sub       { font-family: "Inter", system-ui, sans-serif;
+                     font-weight: 400; fill: #5B6B7B; }
+      .tag-teal    { fill: #608C95; font-family: "JetBrains Mono", monospace;
+                     letter-spacing: 0.12em; text-transform: uppercase;
+                     font-weight: 600; }
+      .tag-amber   { fill: #B84414; font-family: "JetBrains Mono", monospace;
+                     letter-spacing: 0.12em; text-transform: uppercase;
+                     font-weight: 600; }
+
+      .edge        { stroke: #8A95A3; stroke-width: 1.4; fill: none; }
+      .edge-teal   { stroke: #608C95; stroke-width: 1.8; fill: none; }
+      .edge-amber  { stroke: #F26119; stroke-width: 1.6; fill: none; }
+      .edge-dash   { stroke-dasharray: 5 4; }
+      .label       { font-family: "Inter", system-ui, sans-serif;
+                     font-size: 11.5px; fill: #3D5584; }
+
+      .watermark   { font-family: "JetBrains Mono", monospace;
+                     font-size: 9px; fill: #B8BCC2;
+                     letter-spacing: 0.24em; text-transform: uppercase; }
+    </style>
+
+    <pattern id="paperGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" class="fig-grid" fill="none"/>
+    </pattern>
+
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A95A3" />
+    </marker>
+    <marker id="arrow-teal" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#608C95" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8.5" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F26119" />
+    </marker>
+  </defs>
+
+  <rect class="fig-bg" x="0" y="0" width="1280" height="780" />
+  <rect x="0" y="0" width="1280" height="780" fill="url(#paperGrid)" opacity="0.5"/>
+
+  <!-- Header -->
+  <text class="k-kicker" font-size="11" x="60" y="48">Figure · system context</text>
+  <text class="h-title" font-size="26" x="60" y="82">MethodHub — system context</text>
+  <text class="h-sub"   font-size="14" x="60" y="108">Code stewarded by CCE5, service hosted on EEA infrastructure, used daily by the ESABCC Secretariat.</text>
+  <line class="fig-rule" x1="60" y1="128" x2="1220" y2="128" />
+
+  <!-- Outer EEA-infrastructure band -->
+  <rect class="band-eea" x="40" y="195" width="1200" height="420" rx="14" />
+  <text class="k-kicker" font-size="11" x="60" y="222">EEA infrastructure · EU region</text>
+
+  <!-- Inner CCE5-code band -->
+  <rect class="band-shadow" x="364" y="260" width="512" height="300" rx="12" />
+  <rect class="band-cce5"   x="360" y="256" width="512" height="300" rx="12" />
+  <text class="k-kicker" font-size="11" x="380" y="284">CCE5 · code stewardship</text>
+
+  <!-- Core service -->
+  <g transform="translate(480, 330)">
+    <rect class="band-shadow" x="4" y="6" width="272" height="170" rx="8" />
+    <rect class="core" x="0" y="0" width="272" height="170" rx="8" />
+    <rect class="core-strip" x="0" y="0" width="272" height="5" />
+    <rect class="core-accent" x="0" y="5" width="272" height="34" opacity="0.65"/>
+    <text class="k-kicker" font-size="10" x="18" y="28">The service</text>
+    <text class="t-title"  font-size="20" x="18" y="64">methodhub-app</text>
+    <text class="t-sub"    font-size="12.5" x="18" y="86">Next.js standalone · Docker</text>
+    <text class="t-sub"    font-size="12.5" x="18" y="104">+ Postgres 14+ (EEA)</text>
+    <text class="tag-teal" font-size="11" x="18" y="134">5 production modules</text>
+    <text class="t-sub" font-size="11.5" x="18" y="152">refs · data · news · policy · coding</text>
+  </g>
+
+  <!-- USERS · left column -->
+  <g transform="translate(60, 330)">
+    <text class="k-kicker" font-size="10" x="0" y="-8">Users</text>
+
+    <rect class="band-shadow" x="4" y="6" width="272" height="76" rx="6" />
+    <rect class="tile-user"   x="0" y="0" width="272" height="76" rx="6" />
+    <rect class="tile-strip-user" x="0" y="0" width="272" height="3" />
+    <text class="t-title" font-size="14" x="16" y="28">ESABCC Secretariat</text>
+    <text class="t-sub"   font-size="11.5" x="16" y="46">Policy analysts · scientific officers</text>
+    <text class="tag-amber" font-size="10" x="16" y="64">Primary user · daily</text>
+
+    <rect class="band-shadow" x="4" y="100" width="272" height="76" rx="6" />
+    <rect class="tile-user"   x="0" y="94" width="272" height="76" rx="6" opacity="0.9" />
+    <rect class="tile-strip-user" x="0" y="94" width="272" height="3" />
+    <text class="t-title" font-size="14" x="16" y="122">Peer EEA units · forks</text>
+    <text class="t-sub"   font-size="11.5" x="16" y="140">Any unit building an internal tool</text>
+    <text class="tag-amber" font-size="10" x="16" y="158">Blueprint audience</text>
+  </g>
+  <path class="edge-amber" d="M 332 370 L 478 388" marker-end="url(#arrow-amber)" />
+  <path class="edge-amber edge-dash" d="M 332 460 L 478 430" marker-end="url(#arrow-amber)" />
+
+  <!-- GITHUB · top centre -->
+  <g transform="translate(520, 155)">
+    <text class="k-kicker" font-size="10" x="0" y="-8">Source of truth</text>
+    <rect class="band-shadow" x="4" y="6" width="240" height="66" rx="6" />
+    <rect class="tile"        x="0" y="0" width="240" height="66" rx="6" />
+    <rect class="tile-strip-github" x="0" y="0" width="240" height="3" />
+    <text class="t-title" font-size="14" x="16" y="30">github.com · PRs · CI</text>
+    <text class="t-sub"   font-size="11.5" x="16" y="50">SebastianFra → ESABCC / EEA org</text>
+  </g>
+  <path class="edge-teal" d="M 640 225 L 640 328" marker-end="url(#arrow-teal)" />
+  <text class="label" x="648" y="282">build · pull</text>
+
+  <!-- AGENTIC CODING · top right -->
+  <g transform="translate(830, 155)">
+    <text class="k-kicker" font-size="10" x="0" y="-8">CCE5 loop</text>
+    <rect class="band-shadow" x="4" y="6" width="270" height="66" rx="6" />
+    <rect class="tile"        x="0" y="0" width="270" height="66" rx="6" />
+    <text class="t-title" font-size="14" x="16" y="30">Agentic coding pipelines</text>
+    <text class="t-sub"   font-size="11.5" x="16" y="50">Multi-agent review · self-hosted CI</text>
+  </g>
+  <path class="edge" d="M 830 190 Q 770 230 752 330" marker-end="url(#arrow)" />
+
+  <!-- AI LAYER · right column -->
+  <g transform="translate(920, 330)">
+    <text class="k-kicker" font-size="10" x="0" y="-8">AI layer · one of</text>
+
+    <rect class="tile" x="0" y="0" width="260" height="52" rx="6" />
+    <rect class="tile-strip-github" x="0" y="0" width="260" height="3" />
+    <text class="t-title" font-size="13" x="16" y="24">Azure OpenAI EU</text>
+    <text class="t-sub"   font-size="11" x="16" y="42">service key · per-token</text>
+
+    <rect class="tile" x="0" y="64" width="260" height="52" rx="6" />
+    <rect class="tile-strip-user" x="0" y="64" width="260" height="3" />
+    <text class="t-title" font-size="13" x="16" y="88">M365 Copilot · Graph</text>
+    <text class="t-sub"   font-size="11" x="16" y="106">per-user licence · delegated OAuth</text>
+
+    <rect class="tile-ext" x="0" y="128" width="260" height="40" rx="6" />
+    <text class="t-title" font-size="13" x="16" y="153">No AI path</text>
+  </g>
+  <path class="edge-teal edge-dash" d="M 752 395 L 916 360" marker-end="url(#arrow-teal)" />
+  <path class="edge-teal edge-dash" d="M 752 410 L 916 418" marker-end="url(#arrow-teal)" />
+  <path class="edge edge-dash"       d="M 752 425 L 916 474" marker-end="url(#arrow)" />
+
+  <!-- EXTERNAL DATA · bottom band -->
+  <g transform="translate(180, 640)">
+    <text class="k-kicker" font-size="10" x="0" y="-8">Public EU data sources</text>
+    <rect class="tile-ext" x="0" y="0" width="960" height="66" rx="6" />
+
+    <g font-family="Inter, system-ui, sans-serif">
+      <text class="t-title" font-size="12" x="20" y="22">EUR-Lex</text>
+      <text class="t-sub"   font-size="11" x="20" y="42">CELEX · consolidated text</text>
+
+      <text class="t-title" font-size="12" x="200" y="22">Eurostat</text>
+      <text class="t-sub"   font-size="11" x="200" y="42">Indicators · 2 412 series</text>
+
+      <text class="t-title" font-size="12" x="380" y="22">IIASA AR6</text>
+      <text class="t-sub"   font-size="11" x="380" y="42">Scenario database</text>
+
+      <text class="t-title" font-size="12" x="540" y="22">EEA projections</text>
+      <text class="t-sub"   font-size="11" x="540" y="42">WEM / WAM submissions</text>
+
+      <text class="t-title" font-size="12" x="760" y="22">RSS feeds</text>
+      <text class="t-sub"   font-size="11" x="760" y="42">40+ sources · Crossref</text>
+    </g>
+  </g>
+  <path class="edge edge-dash" d="M 640 640 L 640 505" marker-end="url(#arrow)" />
+  <text class="label" x="648" y="572">scheduled ingestion</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 730)">
+    <rect x="0"   y="-9" width="12" height="12" fill="#FFEEE3" stroke="#F26119"/>
+    <text class="h-sub" font-size="11" x="20" y="1">Users</text>
+
+    <rect x="100" y="-9" width="12" height="12" fill="#FFFFFF" stroke="#608C95" stroke-width="1.5"/>
+    <text class="h-sub" font-size="11" x="120" y="1">Service core</text>
+
+    <rect x="220" y="-9" width="12" height="12" fill="#E4ECEE" stroke="#608C95" stroke-dasharray="3 3"/>
+    <text class="h-sub" font-size="11" x="240" y="1">EEA infrastructure</text>
+
+    <rect x="390" y="-9" width="12" height="12" fill="#FFFFFF" stroke="#3D5584"/>
+    <text class="h-sub" font-size="11" x="410" y="1">CCE5 stewardship</text>
+
+    <rect x="555" y="-9" width="12" height="12" fill="#FBFBFA" stroke="#B8BCC2" stroke-dasharray="3 3"/>
+    <text class="h-sub" font-size="11" x="575" y="1">External services</text>
+  </g>
+
+  <text class="watermark" x="1220" y="760" text-anchor="end">ESABCC · MethodHub · fig-sysctx</text>
+</svg>

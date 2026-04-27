@@ -1,0 +1,75 @@
+# EU Climate Policy Navigator — local / EEA-hosted stack
+# ------------------------------------------------------
+# Brings up the Next.js app + Postgres in one command. Mirrors the
+# "Supabase EU" setup that EEA IT will run on their own infrastructure
+# (their Postgres replaces the `db` service; everything else stays).
+#
+#   docker compose up --build
+#
+# Then open http://localhost:3000 and apply the schema once:
+#   npm run it:apply-schema
+#
+# See docs/infrastructure/deployment.md for the production variant (behind a reverse
+# proxy, with EU Login / Azure AD OIDC, no `db` service because IT provides
+# Postgres).
+
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:-http://localhost:54321}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY:-dev-anon-key}
+    image: methodhub-app:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      # Override DB_PROVIDER so the app talks to the co-located Postgres
+      # rather than Supabase. Flip back to "supabase" when pointing at a
+      # hosted Supabase EU project.
+      DB_PROVIDER: postgres
+      DATABASE_URL: postgres://methodhub:${POSTGRES_PASSWORD:-changeme}@db:5432/methodhub
+      DATABASE_SSL: disable
+      AUTH_PROVIDER: ${AUTH_PROVIDER:-oidc}
+      STORAGE_PROVIDER: ${STORAGE_PROVIDER:-s3}
+      PORT: "3000"
+      HOSTNAME: 0.0.0.0
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: methodhub
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: methodhub
+    volumes:
+      - db_data:/var/lib/postgresql/data
+      # Auto-apply the schema + all migrations on first boot.
+      - ./supabase-schema.sql:/docker-entrypoint-initdb.d/00-base-schema.sql:ro
+      - ./supabase/migrations:/docker-entrypoint-initdb.d/migrations:ro
+    ports:
+      # Expose to host only for local dev; in production leave commented
+      # and let the app reach it over the internal network.
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U methodhub -d methodhub"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # Optional: pypsa-service for energy-system endpoints. Uncomment if the
+  # energy-system module is in scope for your deployment.
+  # pypsa:
+  #   build: ./pypsa-service
+  #   ports:
+  #     - "8001:8001"
+  #   restart: unless-stopped
+
+volumes:
+  db_data:

@@ -1,0 +1,139 @@
+<!--
+  AI layer — three paths, one abstraction.
+  Side-by-side columns for Azure OpenAI, M365 Copilot (via Graph) and
+  no-AI, comparing auth, billing, coverage (scheduled jobs), and EU
+  data-boundary behaviour. The header band ties them to the single
+  LLM_PROVIDER switch in .env.local.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 620"
+     role="img"
+     aria-label="Three AI paths — Azure OpenAI EU, Microsoft 365 Copilot via Graph, and no-AI — all behind one LLM_PROVIDER switch.">
+  <title>AI layer — three paths</title>
+
+  <defs>
+    <style>
+      .h1       { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; }
+      .h2       { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; }
+      .sub      { font-family: "Inter", system-ui, sans-serif; font-weight: 500; fill: #5B6B7B; }
+      .code     { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #8A95A3; letter-spacing: 0.12em; }
+      .env      { font-family: "JetBrains Mono", monospace; font-weight: 600; }
+      .yes      { fill: #608C95; font-family: "Inter", sans-serif; font-weight: 700; }
+      .no       { fill: #B83230; font-family: "Inter", sans-serif; font-weight: 700; }
+      .partial  { fill: #B84414; font-family: "Inter", sans-serif; font-weight: 700; }
+      .path-a   { fill: #E4ECEE; stroke: #608C95; stroke-width: 1.6; }
+      .path-b   { fill: #FFEEE3; stroke: #F26119; stroke-width: 1.6; }
+      .path-c   { fill: #FBFBFA; stroke: #B8BCC2; stroke-width: 1; stroke-dasharray: 4 3; }
+      .divider  { stroke: #E6E7E8; stroke-width: 1; }
+      .row      { font-family: "Inter", system-ui, sans-serif; font-size: 12.5px; fill: #3D5584; }
+      .rowh     { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #8A95A3; font-size: 10.5px; letter-spacing: 0.12em; }
+    </style>
+  </defs>
+
+  <!-- Header -->
+  <text class="h1" font-size="22" x="60" y="54">AI layer — three interchangeable paths</text>
+  <text class="sub" font-size="13" x="60" y="78">One <tspan class="env" fill="#608C95">LLM_PROVIDER</tspan> switch in <tspan class="env" fill="#608C95">.env.local</tspan>. All three paths honour the EU data boundary. Scheduled jobs fall back to Path A when needed.</text>
+
+  <!-- Switch panel -->
+  <g transform="translate(60, 112)">
+    <rect x="0" y="0" width="1080" height="46" fill="#FFFFFF" stroke="#3D5584" stroke-width="1" rx="5" />
+    <text class="code" font-size="11" x="18" y="20">ONE SWITCH</text>
+    <text class="env" font-size="14" fill="#3D5584" x="18" y="38">LLM_PROVIDER =</text>
+    <text class="env" font-size="14" fill="#608C95" x="170" y="38">azure</text>
+    <text class="sub" font-size="13" fill="#5B6B7B" x="232" y="38">|</text>
+    <text class="env" font-size="14" fill="#F26119" x="252" y="38">copilot-graph</text>
+    <text class="sub" font-size="13" fill="#5B6B7B" x="390" y="38">|</text>
+    <text class="env" font-size="14" fill="#8A95A3" x="410" y="38">none</text>
+    <text class="sub" font-size="12" fill="#5B6B7B" x="490" y="38">· plus <tspan class="env" fill="#608C95">LLM_PROVIDER_BATCH</tspan> for cron and <tspan class="env" fill="#608C95">LLM_FALLBACK_PROVIDER</tspan> for users without a licence.</text>
+  </g>
+
+  <!-- Three columns -->
+  <!-- Path A · Azure OpenAI EU -->
+  <g transform="translate(60, 180)">
+    <rect class="path-a" x="0" y="0" width="340" height="380" rx="8" />
+    <text class="code" font-size="11" fill="#608C95" x="20" y="28">PATH A · SERVICE SUBSCRIPTION</text>
+    <text class="h2" font-size="20" x="20" y="58">Azure OpenAI EU</text>
+    <text class="sub" font-size="12" x="20" y="80">Today's default for EEA-hosted production.</text>
+
+    <line class="divider" x1="20" y1="105" x2="320" y2="105" />
+
+    <text class="rowh" x="20" y="128">BILLING</text>
+    <text class="row" x="20" y="148">Per-token · single EEA subscription.</text>
+
+    <text class="rowh" x="20" y="180">AUTH</text>
+    <text class="row" x="20" y="200">Service API key in IT's secret store.</text>
+
+    <text class="rowh" x="20" y="232">SCHEDULED JOBS</text>
+    <text class="yes" font-size="14" x="20" y="252">✓ Yes</text>
+    <text class="row" x="60" y="252">— no user context needed.</text>
+
+    <text class="rowh" x="20" y="284">EU DATA BOUNDARY</text>
+    <text class="yes" font-size="14" x="20" y="304">✓ By provisioning.</text>
+
+    <text class="rowh" x="20" y="336">STATUS</text>
+    <text class="yes" font-size="14" x="20" y="356">✓ Already implemented.</text>
+  </g>
+
+  <!-- Path B · M365 Copilot -->
+  <g transform="translate(430, 180)">
+    <rect class="path-b" x="0" y="0" width="340" height="380" rx="8" />
+    <text class="code" font-size="11" fill="#B84414" x="20" y="28">PATH B · PER-USER LICENCE</text>
+    <text class="h2" font-size="20" x="20" y="58">M365 Copilot · via Graph</text>
+    <text class="sub" font-size="12" x="20" y="80">Vision option — reuses each user's own licence.</text>
+
+    <line class="divider" x1="20" y1="105" x2="320" y2="105" />
+
+    <text class="rowh" x="20" y="128">BILLING</text>
+    <text class="row" x="20" y="148">Absorbed in the user's M365 seat.</text>
+    <text class="row" x="20" y="163">No service subscription.</text>
+
+    <text class="rowh" x="20" y="195">AUTH</text>
+    <text class="row" x="20" y="215">Delegated OAuth via Microsoft Graph.</text>
+    <text class="row" x="20" y="230">No service API key.</text>
+
+    <text class="rowh" x="20" y="262">SCHEDULED JOBS</text>
+    <text class="no" font-size="14" x="20" y="282">✗ Not supported</text>
+    <text class="row" x="20" y="297">→ fall back to Path A.</text>
+
+    <text class="rowh" x="20" y="324">EU DATA BOUNDARY</text>
+    <text class="yes" font-size="14" x="20" y="344">✓ EU Data Boundary by default.</text>
+
+    <text class="rowh" x="20" y="366">STATUS</text>
+    <text class="partial" font-size="14" x="184" y="366">~ Spike in v1.x</text>
+  </g>
+
+  <!-- Path C · No AI -->
+  <g transform="translate(800, 180)">
+    <rect class="path-c" x="0" y="0" width="340" height="380" rx="8" />
+    <text class="code" font-size="11" fill="#8A95A3" x="20" y="28">PATH C · DISABLED</text>
+    <text class="h2" font-size="20" x="20" y="58">No AI path</text>
+    <text class="sub" font-size="12" x="20" y="80">Escape hatch · entire AI layer off.</text>
+
+    <line class="divider" x1="20" y1="105" x2="320" y2="105" />
+
+    <text class="rowh" x="20" y="128">BILLING</text>
+    <text class="row" x="20" y="148">€ 0.</text>
+
+    <text class="rowh" x="20" y="180">AUTH</text>
+    <text class="row" x="20" y="200">n/a.</text>
+
+    <text class="rowh" x="20" y="232">SCHEDULED JOBS</text>
+    <text class="row" x="20" y="252">Pipelines still run · without summaries.</text>
+
+    <text class="rowh" x="20" y="284">EU DATA BOUNDARY</text>
+    <text class="yes" font-size="14" x="20" y="304">✓ Nothing leaves.</text>
+
+    <text class="rowh" x="20" y="336">STATUS</text>
+    <text class="yes" font-size="14" x="20" y="356">✓ Always available.</text>
+  </g>
+
+  <!-- Footer — mixed mode -->
+  <g transform="translate(60, 584)">
+    <text class="sub" font-size="12">
+      <tspan class="code" fill="#8A95A3">RECOMMENDED LANDING:</tspan>
+      <tspan fill="#3D5584">  LLM_PROVIDER=copilot-graph</tspan> for user-initiated calls,
+      <tspan fill="#3D5584">LLM_PROVIDER_BATCH=azure</tspan> for cron,
+      <tspan fill="#3D5584">LLM_FALLBACK_PROVIDER=azure</tspan> for users without a Copilot licence.
+    </text>
+  </g>
+</svg>

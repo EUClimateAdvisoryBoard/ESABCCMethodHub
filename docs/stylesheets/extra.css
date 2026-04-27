@@ -1,0 +1,1225 @@
+/* ──────────────────────────────────────────────────────────────
+ *  ESABCC · MethodHub documentation theme
+ *  ------------------------------------------------------------
+ *  Layered on top of Material for MkDocs. The intent is:
+ *
+ *    · ESABCC institutional palette  (#608C95 teal · #3D5584 dark blue)
+ *    · Scientific layout             (generous whitespace, clear hierarchy)
+ *    · Claude-adjacent typography    (refined sans · tabular numerics · soft borders)
+ *    · Progressive disclosure        (overview first, deep-dive in tabs/details)
+ *
+ *  Everything here is a *design* override — no behaviour changes.
+ * ────────────────────────────────────────────────────────────── */
+
+/* ── 1.  Palette  ──────────────────────────────────────────── */
+:root {
+  /* Institutional palette — signature teal, sea blue, signal orange,
+     forest + mint green, light orange. Used across headers, sidebar,
+     accents, admonitions and figures. */
+  --mh-teal:        #608C95;   /* SIGNATURE COLOUR */
+  --mh-teal-deep:   #466770;
+  --mh-teal-soft:   #E4ECEE;
+  --mh-navy:        #3D5584;   /* SEA BLUE */
+  --mh-navy-deep:   #2B3E63;
+  --mh-orange:      #F26119;   /* SIGNAL ORANGE */
+  --mh-orange-soft: #FFEEE3;
+  --mh-forest:      #2E422F;   /* FOREST GREEN */
+  --mh-forest-deep: #1E2C1F;
+  --mh-mint:        #A2C0B6;   /* MINT GREEN */
+  --mh-mint-soft:   #E7EFEC;
+  --mh-amber:       #F59E2D;   /* LIGHT ORANGE */
+  --mh-ink:         #1F2A36;
+  --mh-ink-dim:     #5B6B7B;
+  --mh-paper:       #FDFCFA;
+  --mh-paper-line:  #EEEDEA;
+  --mh-line:        #E6E7E8;
+  --mh-line-soft:   #F1F2F3;
+
+  /* Material overrides — wiring our palette into Material's tokens */
+  --md-primary-fg-color:        var(--mh-teal);
+  --md-primary-fg-color--light: var(--mh-teal-soft);
+  --md-primary-fg-color--dark:  var(--mh-teal-deep);
+  --md-accent-fg-color:         var(--mh-orange);
+  --md-accent-fg-color--transparent: rgba(242, 97, 25, 0.1);
+  --md-typeset-a-color:         var(--mh-teal);
+  --md-default-bg-color:        var(--mh-paper);
+  --md-default-fg-color:        var(--mh-ink);
+  --md-default-fg-color--light: var(--mh-ink-dim);
+  --md-code-bg-color:           #F6F7F8;
+  --md-code-fg-color:           #2C3E4D;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color:        #101720;
+  --md-default-fg-color:        #E9EDF0;
+  --md-default-fg-color--light: #A6B1BC;
+  --md-primary-fg-color:        #7BA9B1;
+  --md-primary-fg-color--light: rgba(123, 169, 177, 0.18);
+  --md-primary-fg-color--dark:  #466770;
+  --md-typeset-a-color:         #7BA9B1;
+  --md-code-bg-color:           #182231;
+}
+
+/* ── 2.  Typography  ───────────────────────────────────────── */
+body,
+.md-typeset {
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  font-feature-settings: "ss01", "cv11", "tnum";
+  font-size: 15.5px;
+  line-height: 1.7;
+  letter-spacing: -0.003em;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+  color: var(--mh-navy);
+  letter-spacing: -0.015em;
+  font-weight: 700;
+}
+
+.md-typeset h1 { font-size: 2.2rem; line-height: 1.15; margin: 0 0 1.4rem; }
+.md-typeset h2 { font-size: 1.5rem; line-height: 1.2;  margin: 2.6rem 0 1rem; padding-top: 0.4rem; }
+.md-typeset h2::before {
+  content: "";
+  display: block;
+  width: 2rem;
+  height: 2px;
+  background: var(--mh-teal);
+  margin-bottom: 0.8rem;
+}
+.md-typeset h3 { font-size: 1.15rem; margin-top: 2rem; }
+.md-typeset h4 { font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--mh-ink-dim); margin-top: 1.6rem; }
+
+.md-typeset code,
+.md-typeset pre code {
+  font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 0.86em;
+  font-feature-settings: "calt", "tnum";
+}
+
+.md-typeset code:not(.md-code__content) {
+  border: 1px solid var(--mh-line);
+  border-radius: 3px;
+  padding: 0.12em 0.42em;
+  background: #FFFFFF;
+}
+
+/* Tabular numerics for any number-looking text */
+.md-typeset table td,
+.md-typeset .dl-numeric,
+.md-typeset .mh-metric { font-variant-numeric: tabular-nums; }
+
+/* ── 3.  Header  ───────────────────────────────────────────── */
+.md-header {
+  background: var(--mh-navy);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.06);
+}
+
+.md-header__title {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.md-header__button.md-logo img {
+  filter: none;
+  height: 30px;
+  width: auto;
+}
+
+.md-tabs {
+  background: var(--mh-navy-deep);
+}
+
+.md-tabs__item {
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+  height: 2.4rem;
+}
+
+.md-tabs__link {
+  opacity: 0.78;
+  font-weight: 500;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+  color: #FFFFFF;
+}
+
+/* ── 4.  Sidebar / nav  ────────────────────────────────────── */
+.md-nav__title {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--mh-ink-dim);
+  font-weight: 600;
+}
+
+.md-nav__link {
+  font-size: 0.87rem;
+  letter-spacing: -0.002em;
+}
+
+.md-nav__link--active {
+  color: var(--mh-teal-deep);
+  font-weight: 600;
+}
+
+/* ── 5.  Content layout — scientific whitespace  ───────────── */
+.md-main__inner {
+  margin-top: 1rem;
+}
+
+.md-content__inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.4rem 1.2rem 3rem;
+}
+
+.md-typeset hr {
+  border: none;
+  border-top: 1px solid var(--mh-line);
+  margin: 2.2rem 0;
+}
+
+.md-typeset blockquote {
+  border-left: 3px solid var(--mh-teal);
+  padding: 0.6rem 1rem;
+  color: var(--mh-ink-dim);
+  background: var(--mh-teal-soft);
+  border-radius: 0 4px 4px 0;
+}
+
+.md-typeset table:not([class]) {
+  border-collapse: collapse;
+  border: 1px solid var(--mh-line);
+  font-size: 0.84rem;
+  box-shadow: none;
+}
+
+.md-typeset table:not([class]) th {
+  background: var(--mh-line-soft);
+  color: var(--mh-navy);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  border-bottom: 1px solid var(--mh-line);
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding: 0.6rem 0.8rem;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background: var(--mh-paper);
+}
+
+/* Admonitions — refine Material's defaults */
+.md-typeset .admonition,
+.md-typeset details {
+  border-left-width: 3px;
+  border-radius: 3px;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+
+.md-typeset .admonition-title,
+.md-typeset summary {
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+
+/* Strip Material's decorative admonition/details icons — they read as
+   playful badges and don't fit the scientific documentation tone. */
+.md-typeset .admonition-title::before,
+.md-typeset summary::before,
+.md-typeset details > summary::before {
+  display: none !important;
+}
+
+.md-typeset .admonition-title,
+.md-typeset details > summary {
+  padding-left: 0.8rem !important;
+}
+
+/* ── 6.  Custom "overview hero" used on the landing page  ─── */
+.mh-hero {
+  background:
+    radial-gradient(ellipse 900px 480px at 85% -10%, rgba(96, 140, 149, 0.14), transparent 62%),
+    radial-gradient(ellipse 600px 320px at 8% 110%, rgba(242, 97, 25, 0.05), transparent 60%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--mh-paper) 100%);
+  border: 1px solid var(--mh-line);
+  border-radius: 8px;
+  padding: 2.8rem 2.4rem 2.4rem;
+  margin: 0 0 2.4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.mh-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--mh-line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mh-line-soft) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mh-hero > * { position: relative; z-index: 1; }
+
+.mh-hero h1 {
+  margin: 0.6rem 0 0.8rem;
+  font-size: 2.25rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  border-bottom: none;           /* override RTD underline inside hero */
+  padding-bottom: 0;
+}
+
+.mh-hero h1::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 3px;
+  background: var(--mh-teal);
+  margin-top: 0.9rem;
+  border-radius: 1.5px;
+}
+
+.mh-hero-lede {
+  font-size: 1.08rem;
+  color: var(--mh-ink-dim);
+  max-width: 58ch;
+  line-height: 1.62;
+  margin: 0 0 1.6rem;
+}
+
+.mh-hero .md-button {
+  margin: 0 0.4rem 0 0;
+}
+
+.mh-hero .md-button + .md-button { margin-left: 0; }
+
+.mh-hero-ribbon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 1.4rem;
+}
+
+.mh-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.6rem;
+  background: #FFFFFF;
+  border: 1px solid var(--mh-line);
+  border-radius: 3px;
+  color: var(--mh-ink-dim);
+}
+
+.mh-chip--teal    { color: var(--mh-teal-deep); border-color: rgba(96, 140, 149, 0.4); background: var(--mh-teal-soft); }
+.mh-chip--orange  { color: #B84414;            border-color: rgba(242, 97, 25, 0.35); background: var(--mh-orange-soft); }
+.mh-chip--warn    { color: #B84414;            border-color: rgba(242, 97, 25, 0.5);  background: var(--mh-orange-soft); }
+
+.mh-chip::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+.mh-chip--neutral::before { background: var(--mh-ink-dim); }
+
+/* Quick-facts row on the landing page */
+.mh-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--mh-line);
+  border: 1px solid var(--mh-line);
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 1.8rem 0 0;
+  box-shadow: 0 1px 0 0 rgba(61, 85, 132, 0.04);
+}
+
+.mh-fact {
+  background: #FFFFFF;
+  padding: 0.95rem 1.1rem 1rem;
+  position: relative;
+}
+
+.mh-fact::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 18px; height: 2px;
+  background: var(--mh-teal);
+  opacity: 0.55;
+}
+
+.mh-fact__k {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mh-ink-dim);
+  margin: 0;
+}
+
+.mh-fact__v {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--mh-navy);
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  margin: 0.3rem 0 0.15rem;
+}
+
+.mh-fact__sub {
+  font-size: 0.76rem;
+  color: var(--mh-ink-dim);
+  margin: 0;
+}
+
+/* ── 7.  Module cards grid — used on /modules and landing  ── */
+.mh-modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+  list-style: none !important;
+  padding: 0;
+}
+
+.mh-modules li { list-style: none; }
+
+.mh-module {
+  display: block;
+  background: #FFFFFF;
+  border: 1px solid var(--mh-line);
+  border-radius: 5px;
+  padding: 1.15rem 1.2rem;
+  color: inherit !important;
+  text-decoration: none !important;
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  position: relative;
+}
+
+.mh-module::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--mh-teal), rgba(96, 140, 149, 0));
+  opacity: 0;
+  transition: opacity 160ms ease;
+  border-radius: 5px 5px 0 0;
+}
+
+.mh-module:hover {
+  border-color: var(--mh-teal);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px -12px rgba(96, 140, 149, 0.3);
+}
+
+.mh-module:hover::before { opacity: 1; }
+
+.mh-module__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mh-ink-dim);
+  margin-bottom: 0.65rem;
+}
+
+.mh-module__num {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: rgba(96, 140, 149, 0.22);
+  line-height: 1;
+  font-family: "JetBrains Mono", monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.mh-module__title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--mh-navy);
+  margin: 0.2rem 0 0.5rem;
+  line-height: 1.3;
+}
+
+.mh-module__desc {
+  font-size: 0.82rem;
+  color: var(--mh-ink-dim);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mh-module__cta {
+  margin-top: 0.95rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--mh-line);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--mh-orange);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.mh-module--beta {
+  opacity: 0.92;
+  background: var(--mh-paper);
+}
+
+.mh-module--beta:hover {
+  border-color: rgba(242, 97, 25, 0.5);
+  box-shadow: 0 6px 24px -12px rgba(242, 97, 25, 0.25);
+}
+
+/* ── 8.  Callouts for the AI-layer & vision highlights  ───── */
+.mh-callout {
+  border: 1px solid var(--mh-line);
+  border-left: 3px solid var(--mh-teal);
+  border-radius: 3px;
+  background: #FFFFFF;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+}
+
+.mh-callout--vision {
+  border-left-color: var(--mh-orange);
+  background: var(--mh-orange-soft);
+}
+
+.mh-callout__kicker {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mh-teal-deep);
+  font-weight: 600;
+}
+
+.mh-callout--vision .mh-callout__kicker { color: var(--mh-amber); }
+
+/* ── 9.  Topology figure (used in ai-layer + deployment)  ─── */
+.mh-topo {
+  border: 1px solid var(--mh-line);
+  border-radius: 5px;
+  background: #FFFFFF;
+  padding: 1.2rem;
+  margin: 1.6rem 0;
+}
+
+.mh-topo figcaption {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mh-ink-dim);
+  margin-bottom: 0.8rem;
+}
+
+/* Mermaid — match theme */
+.mermaid { text-align: center; }
+
+/* Mermaid click-to-zoom affordance (wired up by mermaid-zoom.js) */
+.mermaid.mh-mermaid-zoomable {
+  cursor: zoom-in;
+  position: relative;
+  border-radius: 4px;
+  transition: box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.mermaid.mh-mermaid-zoomable:hover {
+  background: var(--mh-teal-soft);
+  box-shadow: 0 0 0 1px rgba(96, 140, 149, 0.35);
+}
+
+.mermaid.mh-mermaid-zoomable:focus-visible {
+  outline: 2px solid var(--mh-teal);
+  outline-offset: 3px;
+}
+
+.mh-mermaid-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 22, 32, 0.92);
+  z-index: 9999;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  padding: 2.2rem 2rem 1.4rem;
+}
+
+.mh-mermaid-modal.is-open { display: flex; }
+
+.mh-mermaid-modal__stage {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.mh-mermaid-modal__stage.is-dragging { cursor: grabbing; }
+
+.mh-mermaid-modal__canvas {
+  transform-origin: center center;
+  transition: transform 80ms ease-out;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.mh-mermaid-modal__canvas svg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.4);
+}
+
+.mh-mermaid-modal__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 140ms ease;
+}
+
+.mh-mermaid-modal__close:hover { background: rgba(255, 255, 255, 0.22); }
+
+.mh-mermaid-modal__hint {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-top: 0.8rem;
+}
+
+body.mh-mermaid-modal-lock { overflow: hidden; }
+
+/* ── 9b. Scientific-journal figure frames  ────────────────── */
+/*
+ * Pattern:
+ *   <figure class="mh-figure">
+ *     <img src="assets/fig-…svg" alt="…">
+ *     <figcaption>
+ *       <span class="mh-figure__num">Figure 1.</span>
+ *       Caption text.
+ *     </figcaption>
+ *   </figure>
+ */
+.mh-figure {
+  margin: 2.4rem 0;
+  border: 1px solid var(--mh-line);
+  border-radius: 7px;
+  background: #FFFFFF;
+  padding: 0.7rem 0.7rem 1rem;
+  box-shadow: 0 1px 2px 0 rgba(61, 85, 132, 0.04),
+              0 8px 24px -18px rgba(61, 85, 132, 0.12);
+  transition: border-color 160ms ease, box-shadow 200ms ease;
+}
+
+.mh-figure:hover {
+  border-color: rgba(96, 140, 149, 0.4);
+  box-shadow: 0 1px 2px 0 rgba(61, 85, 132, 0.06),
+              0 14px 40px -20px rgba(96, 140, 149, 0.2);
+}
+
+.mh-figure img,
+.mh-figure svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 720px;
+  border-radius: 3px;
+  background: #FDFCFA;
+}
+
+/* Click-to-zoom affordance — glightbox wraps every <img> in an <a>,
+   so give it a pointer cursor and a subtle hover cue. */
+.md-typeset a.glightbox {
+  display: block;
+  cursor: zoom-in;
+  border-bottom: none;
+  transition: opacity 140ms ease;
+}
+
+.md-typeset a.glightbox:hover { opacity: 0.88; }
+.md-typeset a.glightbox:hover { border-bottom: none; }
+
+/* Lightbox overlay — force the image to actually fill the viewport.
+   Defaults sit the image in a ~800px container that's too small for
+   our detailed SVG diagrams. Override with !important because
+   glightbox injects inline styles from data-width / data-height.
+   Leave a comfortable gutter around the image so the content isn't
+   cramped against the viewport edges and so the nav arrows have room. */
+.glightbox-container .ginner-container,
+.glightbox-container .gslide-inner-content {
+  width: 96vw !important;
+  max-width: 96vw !important;
+  height: 94vh !important;
+  max-height: 94vh !important;
+}
+
+/* Our figures are standalone — hide prev/next arrows so they don't
+   overlap the image edges and create visual clutter. */
+.glightbox-container .gnext,
+.glightbox-container .gprev { display: none !important; }
+
+.glightbox-container .gslide-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glightbox-container .gslide-image img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 94vw !important;
+  max-height: 92vh !important;
+  object-fit: contain;
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 0.6rem;
+  box-sizing: border-box;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.38);
+  /* A second-click inside the lightbox zooms further — glightbox's
+     `zoomable: true` enables mouse-wheel + pinch + drag navigation. */
+  cursor: zoom-in;
+}
+
+/* Hide the in-lightbox description panel — caption stays on the page. */
+.glightbox-container .gslide-description {
+  display: none !important;
+}
+
+/* Larger close button so the escape path is obvious on all viewports */
+.gclose.gbtn {
+  width: 2.6rem;
+  height: 2.6rem;
+}
+
+.mh-figure figcaption {
+  padding: 0.8rem 0.8rem 0;
+  font-size: 0.82rem;
+  color: var(--mh-ink-dim);
+  line-height: 1.55;
+  border-top: 1px solid var(--mh-line-soft);
+  margin-top: 0.8rem;
+}
+
+.mh-figure__num {
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: 700;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mh-teal-deep);
+}
+
+.mh-figure--wide {
+  /* Break out of the content column for the large overview figures. */
+  margin-left: calc(-1 * (50vw - 50%));
+  margin-right: calc(-1 * (50vw - 50%));
+  max-width: calc(100vw - 2rem);
+}
+
+@media (min-width: 1400px) {
+  .mh-figure--wide { max-width: 1400px; margin-left: auto; margin-right: auto; }
+}
+
+/* ── 10a. ESABCC institutional lockup on the landing  ────── */
+.mh-esabcc-lockup {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.9rem 1rem;
+  margin: 1.4rem 0;
+  background: #FFFFFF;
+  border: 1px solid var(--mh-line);
+  border-left: 3px solid var(--mh-teal);
+  border-radius: 3px;
+}
+
+.mh-esabcc-lockup img { height: 54px; width: auto; flex-shrink: 0; }
+.mh-esabcc-lockup p   { margin: 0; font-size: 0.82rem; color: var(--mh-ink-dim); line-height: 1.55; }
+.mh-esabcc-lockup strong { color: var(--mh-navy); font-weight: 600; }
+
+@media (max-width: 600px) {
+  .mh-esabcc-lockup { flex-direction: column; align-items: flex-start; }
+  .mh-esabcc-lockup img { height: 44px; }
+}
+
+/* ── 10b. Global footer (override partial) ─────────────── */
+.mh-global-footer {
+  background: #FFFFFF;
+  border-top: 1px solid var(--mh-line);
+  padding: 2rem 0 0;
+}
+
+.mh-global-footer__inner {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 1.2rem 1.4rem;
+}
+
+.mh-global-footer__lockup {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1rem;
+  background: #FDFCFA;
+  border: 1px solid var(--mh-line);
+  border-left: 3px solid var(--mh-teal);
+  border-radius: 4px;
+}
+
+.mh-global-footer__logo {
+  height: 68px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.mh-global-footer__title {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 700;
+  color: var(--mh-navy);
+  font-size: 0.94rem;
+  margin: 0 0 0.3rem;
+}
+
+.mh-global-footer__meta {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 0.8rem;
+  color: var(--mh-ink-dim);
+  margin: 0.2rem 0;
+  line-height: 1.55;
+}
+
+.mh-global-footer__meta--dim { color: var(--mh-ink-dim); opacity: 0.75; font-size: 0.75rem; }
+
+.mh-global-footer__rev {
+  margin: 0.8rem 0 0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mh-ink-dim);
+}
+
+@media (max-width: 640px) {
+  .mh-global-footer__lockup { flex-direction: column; }
+  .mh-global-footer__logo   { height: 48px; }
+}
+
+/* ── 10. Footer  ───────────────────────────────────────────── */
+.md-footer {
+  background: var(--mh-navy);
+}
+
+.md-footer-meta {
+  background: var(--mh-navy-deep);
+  font-size: 0.78rem;
+}
+
+/* ── 11. Nice subtle link hover on inline links  ──────────── */
+.md-typeset a {
+  transition: color 140ms ease, border-color 140ms ease;
+  border-bottom: 1px solid transparent;
+}
+
+.md-typeset a:hover {
+  color: var(--mh-teal-deep);
+  border-bottom-color: var(--mh-teal);
+}
+
+/* ── 12. Small-screen polish  ─────────────────────────────── */
+@media (max-width: 600px) {
+  .mh-hero { padding: 1.6rem 1.2rem; }
+  .mh-hero h1 { font-size: 1.6rem; }
+  .md-content__inner { padding: 1rem 0.9rem 2rem; }
+}
+
+/* ──────────────────────────────────────────────────────────────
+ *  13.  readthedocs-style chrome (sphinx_rtd_theme emulation)
+ *  ------------------------------------------------------------
+ *  Restyle Material's shell to feel like a classic Sphinx
+ *  technical-docs site (cf. docs.messageix.org, docs.readthedocs.io):
+ *
+ *    · slim dark navy header
+ *    · dark left sidebar with the logo lockup at the top
+ *    · search box immediately under the logo
+ *    · white content column, narrower gutters
+ *    · no top tabs — the sidebar is the only navigation
+ *
+ *  Everything scoped to Material's own class names so we don't have to
+ *  switch themes wholesale. Keep this section at the bottom of the file
+ *  so it wins specificity battles with the earlier overrides.
+ * ────────────────────────────────────────────────────────────── */
+
+:root {
+  --mh-rtd-sidebar-bg:     #EFEAE1;
+  --mh-rtd-sidebar-bg-2:   #E3DCCF;
+  --mh-rtd-sidebar-logo:   var(--mh-teal);
+  --mh-rtd-sidebar-text:   #3B4D63;
+  --mh-rtd-sidebar-dim:    #7A8494;
+  --mh-rtd-sidebar-active: var(--mh-navy-deep);
+  --mh-rtd-sidebar-hover:  rgba(43, 62, 99, 0.08);
+}
+
+/* Header — warm stone "scandi" chrome. Low-saturation taupe gradient,
+   navy text, teal hairline for the signature accent. Mimics the quiet
+   institutional feel of Nordic civic design. */
+.md-header {
+  background:
+    linear-gradient(180deg,
+      #ECE6DC 0%,
+      #DBD2C3 100%);
+  border-bottom: 1px solid rgba(107, 91, 66, 0.22);
+  box-shadow: inset 0 -2px 0 0 var(--mh-teal);
+  height: 3.4rem;
+  position: relative;
+  color: var(--mh-navy-deep);
+}
+
+.md-header[data-md-state="shadow"] {
+  box-shadow: inset 0 -2px 0 0 var(--mh-teal);
+}
+
+/* Search form sitting on the warm stone header — a dark pill would
+   punch a hole, so use a subtle dark-navy tint that matches the text. */
+.md-header .md-search__form {
+  background: rgba(43, 62, 99, 0.08);
+  border: 1px solid rgba(43, 62, 99, 0.14);
+  border-radius: 4px;
+}
+
+.md-header .md-search__form:hover {
+  background: rgba(43, 62, 99, 0.12);
+}
+
+.md-header .md-search__input {
+  color: var(--mh-navy-deep);
+}
+
+.md-header .md-search__input::placeholder {
+  color: rgba(43, 62, 99, 0.55);
+}
+
+.md-header .md-search__icon[for="__search"] svg {
+  fill: rgba(43, 62, 99, 0.7);
+}
+
+.md-header__inner { padding: 0 1rem; }
+
+.md-header__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--mh-navy-deep);
+  letter-spacing: -0.005em;
+  margin-left: 0.4rem;
+}
+
+.md-header__topic:first-child { font-weight: 600; }
+
+/* Buttons (theme toggle, repo link, etc.) — dark icons on stone. */
+.md-header .md-header__button,
+.md-header .md-header__source {
+  color: var(--mh-navy-deep);
+}
+
+.md-header .md-header__button:hover,
+.md-header .md-header__source:hover {
+  color: var(--mh-teal-deep);
+  opacity: 1;
+}
+
+/* Logo — the Landscaper institutional lockup renders on white, so
+   let it sit in a rounded plate so the fine text stays readable and
+   doesn't bleed into the stone gradient. */
+.md-header__button.md-logo {
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+  border-radius: 6px;
+  transition: background-color 140ms ease;
+}
+
+.md-header__button.md-logo:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 32px;
+  width: auto;
+  filter: none;
+}
+
+/* Primary sidebar — the "readthedocs" panel.
+   Material's default `.md-sidebar` carries `padding: 1.2rem 0` for
+   sticky-header clearance, which rendered as an empty tan band above
+   the logo lockup. Zero out the top padding so the logo sits flush. */
+.md-sidebar--primary {
+  background: var(--mh-rtd-sidebar-bg);
+  color: var(--mh-rtd-sidebar-text);
+  box-shadow: inset -1px 0 0 rgba(107, 91, 66, 0.18);
+  padding-top: 0;
+}
+
+.md-sidebar--primary .md-sidebar__scrollwrap { background: transparent; }
+
+/* Logo lockup at the top of the sidebar, rendered as ::before on the
+   scrollwrap so it sits flush below the header. */
+.md-sidebar--primary .md-sidebar__scrollwrap::before {
+  content: "";
+  display: block;
+  height: 88px;
+  margin: 0.4rem 0.8rem 0.6rem;
+  padding: 0.6rem 0.8rem;
+  background-color: transparent;
+  background-image: url("../assets/Landscaper-logo_original-green.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-origin: content-box;
+}
+
+/* Search input under the logo */
+.md-search__form {
+  background: var(--mh-rtd-sidebar-bg-2);
+  border-radius: 3px;
+  height: 2rem;
+}
+
+.md-search__input {
+  color: var(--mh-rtd-sidebar-text);
+  font-size: 0.84rem;
+}
+
+.md-search__input::placeholder { color: var(--mh-rtd-sidebar-dim); }
+.md-search__icon[for="__search"] svg { fill: var(--mh-rtd-sidebar-dim); }
+
+/* Nav inside the dark sidebar */
+.md-sidebar--primary .md-nav {
+  background: transparent;
+  color: var(--mh-rtd-sidebar-text);
+}
+
+/* Hide the top-level nav title (the one that echoes `site_name`) —
+   the logo lockup above it already carries the brand and the two
+   otherwise collide visually with each other and with the first nav
+   link. Keep section sub-titles visible (handled by the rule below). */
+.md-sidebar--primary .md-nav--primary > .md-nav__title {
+  display: none;
+}
+
+.md-sidebar--primary .md-nav__title {
+  background: transparent;
+  color: var(--mh-rtd-sidebar-dim);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 1rem 1rem 0.4rem;
+  box-shadow: none;
+  border-bottom: 1px solid rgba(43, 62, 99, 0.08);
+}
+
+.md-sidebar--primary .md-nav__link {
+  color: var(--mh-rtd-sidebar-text);
+  font-size: 0.86rem;
+  padding: 0.35rem 1rem;
+  margin: 0;
+  border-radius: 0;
+  line-height: 1.4;
+  opacity: 0.92;
+}
+
+.md-sidebar--primary .md-nav__link:hover,
+.md-sidebar--primary .md-nav__link:focus {
+  color: var(--mh-rtd-sidebar-active);
+  background: var(--mh-rtd-sidebar-hover);
+  opacity: 1;
+}
+
+.md-sidebar--primary .md-nav__link--active,
+.md-sidebar--primary .md-nav__item--active > .md-nav__link {
+  color: var(--mh-rtd-sidebar-active);
+  font-weight: 600;
+  background: var(--mh-rtd-sidebar-hover);
+  border-left: 3px solid var(--mh-rtd-sidebar-logo);
+  padding-left: calc(1rem - 3px);
+}
+
+.md-sidebar--primary .md-nav__icon { color: var(--mh-rtd-sidebar-dim); }
+
+/* Nested nav — indent and soften the dividers */
+.md-sidebar--primary .md-nav .md-nav .md-nav__link {
+  padding-left: 1.8rem;
+  font-size: 0.82rem;
+}
+.md-sidebar--primary .md-nav .md-nav .md-nav .md-nav__link {
+  padding-left: 2.4rem;
+}
+
+/* Secondary sidebar (TOC on the right) — keep light, trim chrome */
+.md-sidebar--secondary { box-shadow: none; }
+.md-sidebar--secondary .md-nav__title { font-size: 0.7rem; }
+
+/* Content column — narrower, more air, no top tabs bar */
+.md-tabs { display: none; }
+
+.md-main__inner { margin-top: 0; }
+
+.md-content { background: #FFFFFF; }
+
+.md-content__inner {
+  max-width: 54rem;
+  padding: 1.8rem 2rem 3rem;
+}
+
+/* H1 on content pages — underlined, RTD-style */
+.md-typeset h1 {
+  border-bottom: 1px solid var(--mh-line);
+  padding-bottom: 0.6rem;
+  margin-bottom: 1.6rem;
+  font-size: 1.9rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.4rem;
+  padding-top: 0.2rem;
+  margin-top: 2.8rem;
+  letter-spacing: -0.01em;
+}
+/* Re-enable a slimmer teal accent before each h2 — scientific hierarchy */
+.md-typeset h2::before {
+  display: block;
+  width: 1.6rem;
+  height: 2px;
+  background: var(--mh-teal);
+  margin-bottom: 0.7rem;
+  border-radius: 1px;
+  opacity: 0.85;
+}
+
+.md-typeset h3 {
+  color: var(--mh-navy);
+  margin-top: 2.1rem;
+  letter-spacing: -0.005em;
+}
+
+/* Strip the heavy box-shadow Material puts under code blocks */
+.md-typeset pre > code,
+.md-typeset .highlight pre {
+  box-shadow: none;
+  border: 1px solid var(--mh-line);
+}
+
+/* Footer nav (prev/next) — RTD style: plain links, thin top border */
+.md-footer__inner {
+  background: #FFFFFF;
+  color: var(--mh-ink);
+  padding: 1.2rem 2rem;
+  border-top: 1px solid var(--mh-line);
+}
+
+.md-footer__link { opacity: 1; }
+.md-footer__link:hover { opacity: 0.75; }
+.md-footer__title,
+.md-footer__direction { color: var(--mh-ink); }
+.md-footer__direction { color: var(--mh-ink-dim); font-size: 0.72rem; }
+
+.md-footer-meta {
+  background: var(--mh-rtd-sidebar-bg-2);
+  color: var(--mh-rtd-sidebar-dim);
+  font-size: 0.76rem;
+}
+
+.md-footer-meta a { color: var(--mh-rtd-sidebar-text); }
+
+/* Our custom institutional footer — keep it but quiet it down */
+.mh-global-footer {
+  background: #F6F7F8;
+  border-top: 1px solid var(--mh-line);
+}
+
+/* Hide the "built with Material" attribution — cleaner RTD feel */
+.md-footer-meta__inner .md-copyright__highlight + a { display: none; }
+
+/* Dark-scheme equivalent — invert the content area, keep the sidebar dark */
+[data-md-color-scheme="slate"] {
+  --mh-rtd-sidebar-bg:     #0F1620;
+  --mh-rtd-sidebar-bg-2:   #0A1018;
+  --mh-rtd-sidebar-hover:  #1A2532;
+}
+
+[data-md-color-scheme="slate"] .md-content { background: #101720; }
+[data-md-color-scheme="slate"] .md-footer__inner { background: #101720; color: #E9EDF0; }
+[data-md-color-scheme="slate"] .md-typeset h1 { border-bottom-color: #1F2A36; }
+
+/* Mobile — keep the dark sidebar on the slide-out drawer */
+@media (max-width: 76.1875em) {
+  .md-sidebar--primary {
+    background: var(--mh-rtd-sidebar-bg);
+  }
+  .md-sidebar--primary .md-sidebar__scrollwrap::before {
+    height: 72px;
+    margin: 0.4rem 0.6rem;
+  }
+  .md-content__inner { padding: 1.2rem 1rem 2.4rem; }
+}

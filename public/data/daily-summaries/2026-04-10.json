@@ -1,0 +1,164 @@
+{
+  "date": "2026-04-10",
+  "generatedAt": "2026-04-10T06:00:00.000Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Friday, 10 April 2026 — Key developments from the last 24 hours",
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": [
+        {
+          "title": "EU Climate Law amendment enters into force — 90% net GHG reduction target for 2040 now legally binding",
+          "link": "https://climate.ec.europa.eu/eu-action/european-climate-law_en",
+          "source": "European Commission – Climate Action",
+          "description": "Following the provisional political agreement in December 2025, the amended Climate Law now enshrines the EU's 2040 target of 90% net greenhouse gas reduction, with up to 5% contribution from high-quality international credits.",
+          "published": "2026-04-09T10:00:00.000Z",
+          "score": 28
+        },
+        {
+          "title": "EU Entry/Exit System (EES) goes live at all Schengen external borders",
+          "link": "https://www.iru.org/intelligence/flash-info/europe-entryexit-system-ees-operational-10-april-2026",
+          "source": "IRU / European Commission",
+          "description": "The long-awaited Entry/Exit System became fully operational at all external border crossing points of the Schengen area as of 10 April 2026, digitising border checks for non-EU nationals.",
+          "published": "2026-04-10T06:00:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "Post-2030 Renewable Energy Framework — public consultation open until 12 June",
+          "link": "https://energy.ec.europa.eu/news/post-2030-renewable-energy-framework-public-consultation-2026-03-20_en",
+          "source": "DG Energy",
+          "description": "The Commission's call for evidence closes 16 April and the full public consultation runs until 12 June 2026, gathering input to shape the next-decade renewable energy legislative framework.",
+          "published": "2026-04-09T08:00:00.000Z",
+          "score": 22
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "235 cross-border energy projects selected to boost Europe's interconnectivity",
+          "link": "https://energy.ec.europa.eu/news/235-key-cross-border-energy-projects-boost-europes-interconnectivity-2026-04-09_en",
+          "source": "DG Energy",
+          "description": "The Commission published the second list of Projects of Common and Mutual Interest — 235 projects (up from 166), including 97 electricity/offshore/smart grid projects and 96 hydrogen/electrolyser projects, all eligible for CEF funding.",
+          "published": "2026-04-09T10:00:00.000Z",
+          "score": 26
+        },
+        {
+          "title": "EU considers reviving 2022 energy-crisis measures as Iran conflict disrupts markets",
+          "link": "https://www.carbonbrief.org/daily-brief/eu-warns-of-prolonged-disruption-get-your-own-oil-indias-searing-summer/",
+          "source": "Carbon Brief",
+          "description": "The EU is weighing a return to emergency energy measures — including grid tariff adjustments and tax interventions — similar to those deployed during the 2022 Ukraine crisis, as the ongoing Iran conflict threatens energy supply stability.",
+          "published": "2026-04-09T14:00:00.000Z",
+          "score": 25
+        },
+        {
+          "title": "Italy postpones coal plant shutdowns to 2038 — 13 years behind original schedule",
+          "link": "https://www.carbonbrief.org/debriefed-2-april-2026/",
+          "source": "Carbon Brief",
+          "description": "Italy's lower house voted to extend the life of its four remaining coal-fired power plants until 2038, originally scheduled for closure by December 2025 under the National Energy and Climate Plan, citing the Iran-driven energy crisis.",
+          "published": "2026-04-09T11:00:00.000Z",
+          "score": 22
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "ETS verified emissions report 2025 due — allowance supply drops 8% year-on-year",
+          "link": "https://climate.ec.europa.eu/news-other-reads/news/publication-verified-emissions-report-2025-2026-02-18_en",
+          "source": "European Commission – Climate Action",
+          "description": "The EU ETS verified emissions report for 2025 is expected by 9 April. Analysts note the 2026 allowance supply will be ~8% lower than 2025, tightening the market and supporting a projected average CO₂ price of €85/t (+18% YoY).",
+          "published": "2026-04-09T09:00:00.000Z",
+          "score": 21
+        },
+        {
+          "title": "IRENA: renewables now cheaper than fossil fuels in 91% of new projects worldwide",
+          "link": "https://windeurope.org/news/a-renewables-based-energy-system-will-save-europe-1-6-trillion/",
+          "source": "WindEurope / IRENA",
+          "description": "IRENA confirms that 91% of new renewable energy projects are now cheaper than fossil fuel alternatives. WindEurope estimates a renewables-based energy system would save Europe €1.6 trillion.",
+          "published": "2026-04-09T07:00:00.000Z",
+          "score": 20
+        },
+        {
+          "title": "Global renewable capacity grew 15.5% in 2025 — largest annual increase ever recorded",
+          "link": "https://earth.org/this-week-in-climate-news-april-2026-week-1/",
+          "source": "Earth.Org / IRENA",
+          "description": "Renewables accounted for nearly half of global power capacity by end of 2025, with 692 GW of new capacity added — a 15.5% year-on-year increase, the largest ever recorded.",
+          "published": "2026-04-09T06:00:00.000Z",
+          "score": 18
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": [
+        {
+          "title": "EU Taxonomy Climate Delegated Regulation revision — public consultation underway",
+          "link": "https://www.clearygottlieb.com/news-and-insights/publication-listing/climate-energy-eu-policy-regulation-update-2026-04-01",
+          "source": "Cleary Gottlieb / European Commission",
+          "description": "The Commission launched a public consultation on revising the Taxonomy Climate Delegated Regulation and Environmental Delegated Act technical screening criteria, targeting adoption in Q2 2026.",
+          "published": "2026-04-09T09:00:00.000Z",
+          "score": 20
+        },
+        {
+          "title": "EU ETS carbon price projected to reach €85/t in 2026, crossing €100/t by 2027",
+          "link": "https://www.enerdata.net/publications/executive-briefing/carbon-price-projections-eu-ets.html",
+          "source": "Enerdata",
+          "description": "With allowance supply dropping 8% and free allocations for CBAM sectors cut by 2.5%, analysts project the average EU ETS carbon price at €85/t in 2026 (+18% YoY), crossing into triple digits by 2027.",
+          "published": "2026-04-09T10:00:00.000Z",
+          "score": 19
+        },
+        {
+          "title": "ESG rating providers face mandatory EU supervision from July 2026",
+          "link": "https://www.ey.com/en_lu/insights/wealth-asset-management/luxembourg-market-pulse/sustainable-finance-2025",
+          "source": "EY Luxembourg",
+          "description": "ESG rating providers operating in the EU will be subject to strict disclosure and supervision requirements starting 2 July 2026, bringing transparency and accountability to a rapidly growing market.",
+          "published": "2026-04-09T07:00:00.000Z",
+          "score": 17
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "US-Iran ceasefire talks set to begin in Islamabad as tensions over Strait of Hormuz persist",
+          "link": "https://www.cnn.com/2026/04/09/world/live-news/iran-war-trump-us-ceasefire",
+          "source": "CNN",
+          "description": "US VP Vance heads to Pakistan for high-stakes negotiations with Iran. The Strait of Hormuz remains restricted, with ADNOC confirming access is 'conditioned and controlled'. Spain's FM urged Iran to negotiate in good faith.",
+          "published": "2026-04-10T04:00:00.000Z",
+          "score": 15
+        },
+        {
+          "title": "Israel vows to continue fighting Hezbollah but agrees to direct negotiations with Lebanon",
+          "link": "https://www.npr.org/2026/04/09/nx-s1-5779000/iran-war-updates",
+          "source": "NPR",
+          "description": "PM Netanyahu says there is no ceasefire in Lebanon as Israel pursues direct talks on disarming Hezbollah and establishing peaceful relations, complicating broader US-Iran diplomacy.",
+          "published": "2026-04-09T18:00:00.000Z",
+          "score": 14
+        },
+        {
+          "title": "UN reopens headquarters in Khartoum for first time since 2023 Sudan conflict",
+          "link": "https://en.wikipedia.org/wiki/Portal:Current_events/April_2026",
+          "source": "UN News",
+          "description": "The United Nations reopened its Khartoum headquarters, relocated to Port Sudan in April 2023 when civil war erupted, marking a significant step towards normalisation of international presence in Sudan.",
+          "published": "2026-04-09T12:00:00.000Z",
+          "score": 12
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 347,
+    "articlesLast24h": 42,
+    "afterDedup": 15,
+    "feedsQueried": 19
+  }
+}

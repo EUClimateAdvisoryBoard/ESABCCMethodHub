@@ -1,0 +1,85 @@
+{
+  "date": "2026-04-17",
+  "generatedAt": "2026-04-17T23:38:40.932Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Friday, 17 April 2026 — Key developments from the last 24 hours",
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": []
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "DeBriefed 17 April 2026: Fossil-fuel power slumps &#124; ‘Super’ El Niño warning &#124; Afghanistan’s climate struggle",
+          "link": "https://www.carbonbrief.org/debriefed-17-april-2026-fossil-fuel-power-slumps-super-el-nino-warning-afghanistans-climate-struggle/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate...\nThe post DeBriefed 17 April 2026: Fossil-fuel power slumps | ‘Super’ El Niño warning | Afghanistan’s climate struggle appeared first on Carbon Brief.",
+          "published": "2026-04-17T14:27:52.000Z",
+          "score": 13,
+          "isMex": false
+        },
+        {
+          "title": "Q&#038;A: What Magyar’s defeat of Orbán in Hungary means for climate and energy",
+          "link": "https://www.carbonbrief.org/qa-what-magyars-defeat-of-orban-in-hungary-means-for-climate-and-energy/",
+          "source": "Carbon Brief",
+          "description": "The right-wing populist Hungarian government led by Viktor Orbán has suffered a landslide electoral defeat...\nThe post Q&amp;A: What Magyar’s defeat of Orbán in Hungary means for climate and energy appeared first on Carbon Brief.",
+          "published": "2026-04-17T13:58:02.000Z",
+          "score": 13,
+          "isMex": false
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": [
+        {
+          "title": "REPORT on the proposal for a decision of the European Parliament and of the Council amending Decision (EU) 2015/1814 as regards the market stability reserve for the buildings, road transport and additional sectors - A10-0098/2026",
+          "link": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0098_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "REPORT on the proposal for a decision of the European Parliament and of the Council amending Decision (EU) 2015/1814 as regards the market stability reserve for the buildings, road transport and additional sectors&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Danuše Nerudová&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-04-17T11:06:00.000Z",
+          "score": 26,
+          "isMex": false
+        },
+        {
+          "title": "Minutes - Monday, 19 January 2026 - PE782.388v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-01-19-1_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-04-17T08:05:34.000Z",
+          "score": 20,
+          "isMex": false
+        }
+      ]
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": []
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 114,
+    "articlesLast24h": 11,
+    "afterDedup": 10,
+    "feedsQueried": 16,
+    "mexStoriesIngested": 0,
+    "mexShareInBriefing": 0,
+    "euClimateRelevant": 2
+  }
+}

@@ -1,0 +1,63 @@
+# ============================================================================
+# postgresql.conf.recommended — values to merge into the instance's config.
+#
+# Not a full postgresql.conf — only the non-default settings Method Hub
+# needs. Copy each line into the instance config (or a conf.d/ drop-in),
+# reload, and the rest of the defaults stay as the distro ships them.
+#
+# Sized for the spec: ~2 GB current data, 4 GB/year growth, 50 GB disk,
+# ~30 concurrent app connections (fronted by PgBouncer), single-instance
+# RTO 4h / RPO 24h.
+# ============================================================================
+
+# ── Connections & memory ──────────────────────────────────────────
+# PgBouncer holds the fan-out, so Postgres itself only needs headroom for
+# the pool + a few admin sessions.
+max_connections             = 150
+shared_buffers              = 2GB          # ~25% of 8 GB RAM
+effective_cache_size        = 6GB          # ~75% of 8 GB RAM
+work_mem                    = 32MB
+maintenance_work_mem        = 512MB
+
+# ── WAL / PITR (drives the 30-day point-in-time recovery window) ────────
+wal_level                   = replica
+archive_mode                = on
+# Ship WAL to the ESABCC backup share. %p = path, %f = filename.
+archive_command             = 'test ! -f /var/backups/eu_climate/wal/%f && cp %p /var/backups/eu_climate/wal/%f'
+max_wal_size                = 4GB
+min_wal_size                = 1GB
+wal_compression             = on
+checkpoint_timeout          = 15min
+checkpoint_completion_target = 0.9
+
+# ── Logging (feeds the SIEM) ──────────────────────────────────────────
+log_destination             = 'stderr,csvlog'
+logging_collector           = on
+log_directory               = 'log'
+log_filename                = 'postgresql-%Y-%m-%d.log'
+log_rotation_age            = 1d
+log_min_duration_statement  = 1000         # anything slower than 1 s
+log_connections             = on
+log_disconnections          = on
+log_hostname                = off
+log_line_prefix             = '%t [%p] %q%u@%d '
+log_statement               = 'ddl'        # auth is handled by SIEM + app logs
+log_checkpoints             = on
+log_lock_waits              = on
+
+# ── Encryption at rest is handled by the filesystem / ESABCC SAN, not here.
+# ── TLS in transit ───────────────────────────────────────────────
+ssl                         = on
+ssl_cert_file               = '/etc/postgresql/tls/server.crt'
+ssl_key_file                = '/etc/postgresql/tls/server.key'
+ssl_min_protocol_version    = 'TLSv1.2'
+
+# ── Autovacuum ─ more aggressive than default (we have many small tables) ──
+autovacuum_naptime          = 30s
+autovacuum_vacuum_scale_factor  = 0.1
+autovacuum_analyze_scale_factor = 0.05
+
+# ── Statement timeouts ─ prevent a runaway query from pinning a pool slot ──
+statement_timeout           = 60s          # app-side queries
+idle_in_transaction_session_timeout = 60s
+lock_timeout                = 5s

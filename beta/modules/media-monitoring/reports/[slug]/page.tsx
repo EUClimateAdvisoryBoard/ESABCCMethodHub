@@ -1,0 +1,368 @@
+'use client';
+
+/**
+ * Per-ESABCC-report monitoring page.
+ *
+ * Shows the combined press + social (LinkedIn) coverage attributed to a
+ * single ESABCC report. Board members can open this page directly from the
+ * Reports tab on the main dashboard and share the URL with colleagues.
+ */
+
+import Link from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
+import { useParams } from 'next/navigation';
+import { Chart, registerables } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+import type { EsabccReport } from '@/data/esabcc-reports';
+
+Chart.register(...registerables);
+
+interface Article {
+  id: string;
+  url: string;
+  title: string;
+  summary: string;
+  source_name: string;
+  outlet_domain: string | null;
+  country: string | null;
+  language: string | null;
+  published_at: string | null;
+  estimated_reach: number;
+  matched_keywords: string[];
+}
+
+interface SocialPost {
+  id: string;
+  platform: string;
+  post_url: string;
+  author_handle: string | null;
+  author_name: string | null;
+  content: string;
+  excerpt: string | null;
+  posted_at: string | null;
+  estimated_reach: number;
+  like_count: number | null;
+  comment_count: number | null;
+  matched_keywords: string[];
+}
+
+interface ReportDetailResponse {
+  report: EsabccReport;
+  articles: Article[];
+  posts: SocialPost[];
+  timeline: { date: string; press: number; social: number }[];
+  summary: {
+    press_count: number;
+    social_count: number;
+    press_reach: number;
+    social_reach: number;
+  };
+}
+
+function formatNumber(n: number): string {
+  if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
+  if (n >= 1_000) return `${(n / 1_000).toFixed(1)}K`;
+  return n.toString();
+}
+
+function formatDate(s: string | null): string {
+  if (!s) return '—';
+  try {
+    return new Date(s).toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'short',
+      year: 'numeric',
+    });
+  } catch {
+    return s;
+  }
+}
+
+export default function ReportDetailPage() {
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug;
+
+  const [data, setData] = useState<ReportDetailResponse | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
+  const [channel, setChannel] = useState<'all' | 'press' | 'social'>('all');
+
+  useEffect(() => {
+    let cancelled = false;
+    async function load() {
+      setLoading(true);
+      try {
+        const res = await fetch(`/api/media-monitoring/reports/${slug}`);
+        if (res.status === 404) {
+          if (!cancelled) setNotFound(true);
+          return;
+        }
+        const json = await res.json();
+        if (!cancelled) setData(json);
+      } catch (err) {
+        console.error('Failed to load report detail', err);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    }
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  const timelineChart = useMemo(() => {
+    if (!data || data.timeline.length === 0) return null;
+    return {
+      labels: data.timeline.map((t) => t.date),
+      datasets: [
+        {
+          label: 'Press articles',
+          data: data.timeline.map((t) => t.press),
+          backgroundColor: '#004B7FCC',
+        },
+        {
+          label: 'LinkedIn posts',
+          data: data.timeline.map((t) => t.social),
+          backgroundColor: '#6667ABCC',
+        },
+      ],
+    };
+  }, [data]);
+
+  if (notFound) {
+    return (
+      <div className="max-w-3xl mx-auto px-6 py-20 text-center">
+        <h1 className="text-2xl font-bold text-tertiary-dark">Report not found</h1>
+        <p className="text-sm text-tertiary mt-2">
+          The report slug &quot;{slug}&quot; isn&apos;t in the ESABCC catalogue.
+        </p>
+        <Link
+          href="/media-monitoring"
+          className="inline-block mt-4 text-sm text-primary hover:underline"
+        >
+          Back to media monitoring
+        </Link>
+      </div>
+    );
+  }
+
+  const report = data?.report;
+
+  return (
+    <div className="max-w-[1400px] mx-auto px-3 sm:px-6 py-4 sm:py-8">
+      <Link
+        href="/media-monitoring"
+        className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-secondary hover:text-primary transition mb-3"
+      >
+        <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to media monitoring
+      </Link>
+
+      {loading && !data ? (
+        <div className="text-center text-tertiary py-20">Loading report…</div>
+      ) : report ? (
+        <>
+          <div className="mb-6">
+            <p className="text-[10px] uppercase tracking-wider text-tertiary font-medium">
+              {report.category.replace(/-/g, ' ')} · Published {formatDate(report.published_on)}
+            </p>
+            <h1 className="text-2xl font-bold text-tertiary-dark mt-1">{report.title}</h1>
+            <div className="flex items-center gap-3 mt-3 flex-wrap">
+              <a
+                href={report.source_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-primary hover:underline"
+              >
+                Open on climate-advisory-board.europa.eu →
+              </a>
+              {report.pdf_filename && (
+                <a
+                  href={`/esabcc-reports/${report.pdf_filename}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-secondary hover:underline"
+                >
+                  PDF archive
+                </a>
+              )}
+            </div>
+          </div>
+
+          {/* Summary cards */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
+              <p className="text-2xl font-bold text-primary">
+                {formatNumber(data?.summary.press_count || 0)}
+              </p>
+              <p className="text-xs text-tertiary mt-1">Press articles</p>
+            </div>
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
+              <p className="text-2xl font-bold text-accent-violet">
+                {formatNumber(data?.summary.social_count || 0)}
+              </p>
+              <p className="text-xs text-tertiary mt-1">LinkedIn posts</p>
+            </div>
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
+              <p className="text-2xl font-bold text-accent-orange">
+                {formatNumber(data?.summary.press_reach || 0)}
+              </p>
+              <p className="text-xs text-tertiary mt-1">Press reach</p>
+            </div>
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
+              <p className="text-2xl font-bold text-secondary">
+                {formatNumber(data?.summary.social_reach || 0)}
+              </p>
+              <p className="text-xs text-tertiary mt-1">Social reach</p>
+            </div>
+          </div>
+
+          {/* Timeline */}
+          {timelineChart && (
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-6 mb-6">
+              <h2 className="font-bold text-tertiary-dark text-sm mb-4 uppercase tracking-wider">
+                Coverage timeline — press vs social
+              </h2>
+              <div style={{ height: 260 }}>
+                <Bar
+                  data={timelineChart}
+                  options={{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                      x: { stacked: true },
+                      y: { stacked: true, beginAtZero: true },
+                    },
+                    plugins: { legend: { position: 'bottom' } },
+                  }}
+                />
+              </div>
+            </div>
+          )}
+
+          {/* Channel toggle */}
+          <div className="flex gap-2 mb-4">
+            {(['all', 'press', 'social'] as const).map((c) => (
+              <button
+                key={c}
+                onClick={() => setChannel(c)}
+                className={`text-sm px-4 py-1.5 rounded-full border transition ${
+                  channel === c
+                    ? 'bg-primary text-white border-primary'
+                    : 'bg-white text-tertiary border-grey-200 hover:border-primary'
+                }`}
+              >
+                {c === 'all' ? 'All coverage' : c === 'press' ? 'Press only' : 'Social only'}
+              </button>
+            ))}
+          </div>
+
+          {/* Press list */}
+          {(channel === 'all' || channel === 'press') && (
+            <div className="mb-8">
+              <h2 className="font-bold text-tertiary-dark text-sm mb-3 uppercase tracking-wider">
+                Press articles ({data?.articles.length ?? 0})
+              </h2>
+              {data && data.articles.length > 0 ? (
+                <div className="space-y-3">
+                  {data.articles.map((a) => (
+                    <article
+                      key={a.id}
+                      className="bg-white border border-grey-200 rounded p-4 hover:border-primary transition"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <a
+                            href={a.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-base font-semibold text-tertiary-dark hover:text-primary block"
+                          >
+                            {a.title}
+                          </a>
+                          <p className="text-sm text-tertiary mt-1 line-clamp-2">{a.summary}</p>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-tertiary flex-wrap">
+                            <span className="font-medium text-secondary">{a.source_name}</span>
+                            {a.country && <span>· {a.country}</span>}
+                            <span>· {formatDate(a.published_at)}</span>
+                          </div>
+                        </div>
+                        <div className="text-right shrink-0">
+                          <p className="text-sm font-bold text-accent-orange">
+                            {formatNumber(a.estimated_reach)}
+                          </p>
+                          <p className="text-[10px] text-tertiary">est. reach</p>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-tertiary py-6 text-center">
+                  No press coverage attributed to this report yet.
+                </p>
+              )}
+            </div>
+          )}
+
+          {/* Social list */}
+          {(channel === 'all' || channel === 'social') && (
+            <div>
+              <h2 className="font-bold text-tertiary-dark text-sm mb-3 uppercase tracking-wider">
+                LinkedIn posts ({data?.posts.length ?? 0})
+              </h2>
+              {data && data.posts.length > 0 ? (
+                <div className="space-y-3">
+                  {data.posts.map((p) => (
+                    <article
+                      key={p.id}
+                      className="bg-white border border-grey-200 rounded p-4 hover:border-accent-violet transition"
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                            <span className="text-xs px-2 py-0.5 rounded bg-accent-violet/10 text-accent-violet font-medium uppercase tracking-wider">
+                              {p.platform}
+                            </span>
+                            {p.author_name && (
+                              <span className="text-sm font-semibold text-tertiary-dark">
+                                {p.author_name}
+                              </span>
+                            )}
+                          </div>
+                          <a
+                            href={p.post_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-sm text-tertiary-dark hover:text-accent-violet line-clamp-3 block"
+                          >
+                            {p.excerpt || p.content || '(no text)'}
+                          </a>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-tertiary flex-wrap">
+                            <span>{formatDate(p.posted_at)}</span>
+                            {typeof p.like_count === 'number' && <span>· {p.like_count} likes</span>}
+                            {typeof p.comment_count === 'number' && (
+                              <span>· {p.comment_count} comments</span>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-tertiary py-6 text-center">
+                  No LinkedIn posts attributed to this report yet.
+                </p>
+              )}
+            </div>
+          )}
+        </>
+      ) : null}
+    </div>
+  );
+}

@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --------------------------------------------------------------------------
+   Design tokens — Phase 1 foundations.
+   Modular type scale (1.25 ratio · 12/14/16/18/22/28/36 px),
+   8 px spacing grid + 4 px micro-grid, motion tokens (Material 3
+   standard easing), WCAG 2.2 focus ring, system-status colour taxonomy.
+   -------------------------------------------------------------------------- */
+:root {
+  /* Type scale (modular, ratio ~1.25). Tabular numerals on data surfaces. */
+  --mh-text-2xs: 11px;
+  --mh-text-xs:  12px;
+  --mh-text-sm:  14px;
+  --mh-text-md:  16px;
+  --mh-text-lg:  18px;
+  --mh-text-xl:  22px;
+  --mh-text-2xl: 28px;
+  --mh-text-3xl: 36px;
+
+  --mh-leading-tight: 1.2;   /* headings */
+  --mh-leading-snug:  1.35;  /* sub-headings, dense lists */
+  --mh-leading-base:  1.5;   /* body */
+  --mh-leading-loose: 1.7;   /* long-form prose */
+
+  --mh-tracking-tight:  -0.01em;
+  --mh-tracking-normal: 0em;
+  --mh-tracking-wide:   0.02em;
+
+  /* 8 px grid + 4 px micro-grid. Use these multiples for padding/margin/gap. */
+  --mh-space-0:  0;
+  --mh-space-1:  4px;
+  --mh-space-2:  8px;
+  --mh-space-3:  12px;
+  --mh-space-4:  16px;
+  --mh-space-5:  24px;
+  --mh-space-6:  32px;
+  --mh-space-7:  48px;
+  --mh-space-8:  64px;
+
+  /* Radii. */
+  --mh-radius-xs: 2px;
+  --mh-radius-sm: 4px;
+  --mh-radius-md: 6px;
+  --mh-radius-lg: 8px;
+  --mh-radius-xl: 12px;
+  --mh-radius-pill: 9999px;
+
+  /* Elevation. Restrained — research tools don't float. */
+  --mh-shadow-xs: 0 1px 1px rgba(15, 22, 32, 0.04);
+  --mh-shadow-sm: 0 1px 2px rgba(15, 22, 32, 0.06), 0 1px 1px rgba(15, 22, 32, 0.04);
+  --mh-shadow-md: 0 4px 8px rgba(15, 22, 32, 0.06), 0 2px 4px rgba(15, 22, 32, 0.04);
+  --mh-shadow-lg: 0 12px 24px rgba(15, 22, 32, 0.08), 0 4px 8px rgba(15, 22, 32, 0.04);
+
+  /* Motion tokens — Material 3 standard easing. Enter > exit (asymmetric).
+     All non-essential motion gated by prefers-reduced-motion (see below). */
+  --mh-ease-standard:    cubic-bezier(0.2, 0, 0, 1);
+  --mh-ease-emphasized:  cubic-bezier(0.3, 0, 0, 1);
+  --mh-ease-decelerated: cubic-bezier(0, 0, 0, 1);
+  --mh-ease-accelerated: cubic-bezier(0.3, 0, 1, 1);
+  --mh-duration-instant: 80ms;
+  --mh-duration-fast:    160ms;   /* exit */
+  --mh-duration-base:    240ms;   /* default — enter */
+  --mh-duration-slow:    360ms;
+  --mh-duration-deliberate: 600ms; /* peak-end ring pulse */
+
+  /* Focus ring — WCAG 2.2 SC 2.4.7 + 2.4.13 (focus-not-obscured).
+     3 px outline · 2 px offset · high-contrast token. */
+  --mh-focus-ring-width:  3px;
+  --mh-focus-ring-offset: 2px;
+  --mh-focus-ring-color:  #00928F;          /* secondary teal — meets 3:1 on light */
+  --mh-focus-ring-color-on-dark: #74CBC8;   /* lighter teal — meets 3:1 on dark */
+
+  /* System-status taxonomy. ONE colour, ONE meaning.
+     teal = primary action · blue = info · green = success ·
+     amber = warning · red = destructive. */
+  --mh-status-primary:    #00928F;
+  --mh-status-primary-bg: #EDF1F2;
+  --mh-status-info:       #004B7F;
+  --mh-status-info-bg:    #F2F6F8;
+  --mh-status-success:    #1F7A3A;
+  --mh-status-success-bg: #E5F9E7;
+  --mh-status-warning:    #B86A00;
+  --mh-status-warning-bg: #FFF4DB;
+  --mh-status-danger:     #B83230;
+  --mh-status-danger-bg:  #FCE8E8;
+}
+
+html.dark {
+  /* Dark-mode status backgrounds — 14 % alpha of the foreground colour
+     so contrast stays AA but the badge reads as a tint, not a slab. */
+  --mh-status-primary-bg: rgba(116, 203, 200, 0.14);
+  --mh-status-info-bg:    rgba(116, 149, 178, 0.14);
+  --mh-status-success-bg: rgba(64, 178, 102, 0.14);
+  --mh-status-warning-bg: rgba(255, 159, 60, 0.14);
+  --mh-status-danger-bg:  rgba(232, 88, 86, 0.14);
+  --mh-status-success:    #40B266;
+  --mh-status-warning:    #FF9F3C;
+  --mh-status-danger:     #E85856;
+  --mh-focus-ring-color:  var(--mh-focus-ring-color-on-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Base document
+   -------------------------------------------------------------------------- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scrollbar-gutter: stable;
+  scroll-padding-top: 4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Dark-mode tokens — class-based via Tailwind `darkMode: 'class'`.
+   Activated by adding `dark` class to <html> (handled by PreferencesProvider).
+   -------------------------------------------------------------------------- */
+:root {
+  --mh-bg: #F9FAFB;
+  --mh-fg: #3D5265;
+  --mh-card: #FFFFFF;
+  --mh-border: #E6E7E8;
+  --mh-muted: #808285;
+}
+html.dark {
+  --mh-bg: #0F1620;
+  --mh-fg: #E6EAEE;
+  --mh-card: #18222E;
+  --mh-border: #2A3744;
+  --mh-muted: #8FA0B0;
+  color-scheme: dark;
+}
+
+/* Density utility — set by PreferencesProvider via data-density on <html>. */
+html[data-density="compact"] body { font-size: 13.5px; }
+html[data-density="compact"] .py-3 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+html[data-density="compact"] .py-4 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+html[data-density="compact"] .py-5 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+html[data-density="compact"] .gap-4 { gap: 0.625rem; }
+
+body {
+  font-family: var(--mh-font-sans, 'Segoe UI'), 'Segoe UI', Roboto, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-feature-settings: 'cv11' 1, 'ss03' 1;  /* Inter: cleaner ⟨1⟩ and ⟨a⟩ */
+  color: var(--mh-fg);
+  background: var(--mh-bg);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+  touch-action: manipulation;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+body.has-bottom-nav {
+  padding-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+@media (pointer: coarse) {
+  button, [role='button'], a, input[type='checkbox'], input[type='radio'], label {
+    touch-action: manipulation;
+  }
+  input[type='text'], input[type='email'], input[type='password'], input[type='search'],
+  input[type='number'], input[type='tel'], input[type='url'], input[type='date'],
+  textarea, select {
+    font-size: 16px !important;
+  }
+}
+
+.tap-target, .touch-target {
+  min-height: 44px; min-width: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+.h-scroll, .scroll-x {
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; scroll-snap-type: x proximity;
+}
+.h-scroll::-webkit-scrollbar, .scroll-x::-webkit-scrollbar { display: none; }
+.h-scroll > * { scroll-snap-align: start; }
+
+.mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100vw; }
+
+.node-circle { cursor: pointer; transition: filter 0.15s; }
+.node-circle:hover { filter: brightness(1.15); }
+.ann-highlight { cursor: pointer; border-radius: 2px; }
+.ann-highlight:hover { filter: brightness(0.92); }
+.cite-hl {
+  background: rgba(0,75,127,0.12);
+  border-bottom: 2px solid #004B7F;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.cite-hl:hover { background: rgba(0,75,127,0.25); }
+
+::selection { background: rgba(0,123,108,0.25); }
+
+@media (pointer: fine) {
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #F3F4F5; }
+  ::-webkit-scrollbar-thumb { background: #BCBEC0; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #808285; }
+}
+@media (pointer: coarse) { ::-webkit-scrollbar { display: none; } }
+
+@keyframes drawer-slide-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes drawer-fade-in  { from { opacity: 0; } to { opacity: 1; } }
+.drawer-panel { animation: drawer-slide-in 0.22s ease-out; }
+.drawer-backdrop { animation: drawer-fade-in 0.22s ease-out; }
+
+.only-mobile, .mobile-only { display: none; }
+.only-desktop, .desktop-only { display: block; }
+@media (max-width: 767px) {
+  .only-mobile, .mobile-only { display: block; }
+  .only-desktop, .desktop-only { display: none; }
+}
+
+@media (max-width: 767px) {
+  svg:not([width]), canvas:not([width]) { max-width: 100%; height: auto; }
+}
+
+@media (max-width: 767px) {
+  .wrap-anywhere { overflow-wrap: anywhere; word-break: break-word; }
+  h1, h2, h3, h4, p, li, a, span { word-wrap: break-word; overflow-wrap: break-word; }
+  .hover\:shadow-md:hover, .hover\:shadow-sm:hover { box-shadow: none; }
+}
+
+.pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem); }
+.pt-safe { padding-top: calc(env(safe-area-inset-top) + 0.5rem); }
+
+a, button { -webkit-tap-highlight-color: rgba(0, 146, 143, 0.18); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   WCAG 2.2 focus ring. Apply with class="mh-focus" on any focusable element
+   that does not already ship a ring (e.g. raw <button>, <a>, <div tabIndex>).
+   Replaces ad-hoc focus-visible:ring-* spread across components.
+   -------------------------------------------------------------------------- */
+.mh-focus:focus-visible,
+.mh-focus-within:focus-within {
+  outline: var(--mh-focus-ring-width) solid var(--mh-focus-ring-color);
+  outline-offset: var(--mh-focus-ring-offset);
+  border-radius: var(--mh-radius-sm);
+}
+
+/* Skip-link target — used by a top-of-page <a href="#main"> for keyboard users. */
+.mh-skip-link {
+  position: absolute; left: -9999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+.mh-skip-link:focus {
+  left: 1rem; top: 1rem; width: auto; height: auto;
+  background: var(--mh-card); color: var(--mh-fg);
+  padding: var(--mh-space-3) var(--mh-space-4);
+  border-radius: var(--mh-radius-md);
+  box-shadow: var(--mh-shadow-md);
+  z-index: 200;
+}
+
+/* --------------------------------------------------------------------------
+   System-status badge — single source of truth for chips/pills.
+   Use as <span class="mh-badge mh-badge-success">…</span>.
+   Encodes the five colours = five meanings rule from the brief.
+   -------------------------------------------------------------------------- */
+.mh-badge {
+  display: inline-flex; align-items: center; gap: var(--mh-space-1);
+  padding: 2px var(--mh-space-2); border-radius: var(--mh-radius-pill);
+  font-size: var(--mh-text-2xs); font-weight: 600;
+  font-feature-settings: 'tnum' 1, 'cv11' 1;
+  letter-spacing: var(--mh-tracking-wide);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.mh-badge-primary { background: var(--mh-status-primary-bg); color: var(--mh-status-primary); }
+.mh-badge-info    { background: var(--mh-status-info-bg);    color: var(--mh-status-info);    }
+.mh-badge-success { background: var(--mh-status-success-bg); color: var(--mh-status-success); }
+.mh-badge-warning { background: var(--mh-status-warning-bg); color: var(--mh-status-warning); }
+.mh-badge-danger  { background: var(--mh-status-danger-bg);  color: var(--mh-status-danger);  }
+.mh-badge-neutral { background: var(--mh-bg);                color: var(--mh-muted); border: 1px solid var(--mh-border); }
+
+/* --------------------------------------------------------------------------
+   Tabular numerals — for any data surface (charts axes, tables, citations,
+   year/page numbers). Required by the brief; aligns digits in columns.
+   -------------------------------------------------------------------------- */
+.mh-tnum { font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' 1; }
+
+/* --------------------------------------------------------------------------
+   Motion utilities. Default 240 ms enter, 160 ms exit, M3 standard easing.
+   Auto-disabled by the prefers-reduced-motion block above.
+   -------------------------------------------------------------------------- */
+.mh-motion-base { transition-timing-function: var(--mh-ease-standard); transition-duration: var(--mh-duration-base); }
+.mh-motion-fast { transition-timing-function: var(--mh-ease-standard); transition-duration: var(--mh-duration-fast); }
+
+/* Peak-end ring-pulse — used on deep-link landings to confirm "you arrived
+   here". 600 ms one-shot. Fully disabled under reduced-motion. */
+@keyframes mh-ring-pulse {
+  0%   { box-shadow: 0 0 0 0   rgba(0, 146, 143, 0.45); }
+  60%  { box-shadow: 0 0 0 8px rgba(0, 146, 143, 0); }
+  100% { box-shadow: 0 0 0 0   rgba(0, 146, 143, 0); }
+}
+.mh-ring-pulse { animation: mh-ring-pulse var(--mh-duration-deliberate) var(--mh-ease-decelerated) 1; }
+@media (prefers-reduced-motion: reduce) {
+  .mh-ring-pulse { animation: none; outline: 2px solid var(--mh-status-primary); outline-offset: 2px; }
+}
+
+/* Skeleton-screen shimmer — 1.4 s, low-amplitude. Replace spinners. */
+@keyframes mh-shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.mh-skeleton {
+  background: linear-gradient(90deg, var(--mh-border) 0%, var(--mh-bg) 50%, var(--mh-border) 100%);
+  background-size: 200% 100%;
+  animation: mh-shimmer 1.4s linear infinite;
+  border-radius: var(--mh-radius-sm);
+  color: transparent !important;
+  user-select: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mh-skeleton { animation: none; background: var(--mh-border); }
+}
+
+.container-wide {
+  width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto;
+  padding-left: 1rem; padding-right: 1rem;
+}
+@media (min-width: 640px)  { .container-wide { padding-left: 1.5rem; padding-right: 1.5rem; } }
+@media (min-width: 1024px) { .container-wide { padding-left: 2rem;   padding-right: 2rem;   } }
+
+@media (min-width: 1280px) {
+  .prose-desktop { font-size: 15px; line-height: 1.7; }
+}
+
+@media (max-width: 639px) {
+  .responsive-table table, .responsive-table thead, .responsive-table tbody,
+  .responsive-table th, .responsive-table td, .responsive-table tr { display: block; }
+  .responsive-table thead { display: none; }
+  .responsive-table tr {
+    border: 1px solid #E5E7EB; border-radius: 0.5rem;
+    margin-bottom: 0.5rem; padding: 0.75rem; background: #fff;
+  }
+  .responsive-table td {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.25rem 0; border: none; font-size: 12px; min-height: 28px; gap: 0.5rem;
+  }
+  .responsive-table td::before {
+    content: attr(data-label); font-weight: 600; color: #3D5265;
+    flex-shrink: 0; font-size: 11px;
+  }
+  .responsive-table td:first-child {
+    font-weight: 600; font-size: 13px;
+    padding-bottom: 0.25rem; border-bottom: 1px solid #F3F4F5; margin-bottom: 0.125rem;
+  }
+}
+
+@media (max-width: 767px) {
+  code { word-break: break-all; overflow-wrap: anywhere; font-size: 0.75rem; }
+}

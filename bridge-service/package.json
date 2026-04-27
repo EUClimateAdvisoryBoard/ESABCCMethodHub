@@ -1,0 +1,27 @@
+{
+  "name": "esabcc-refmanager-bridge",
+  "version": "1.0.0",
+  "description": "ESABCC Reference Manager - Local Bridge Service for Word Add-in",
+  "private": true,
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.0",
+    "better-sqlite3": "^11.0.0",
+    "cors": "^2.8.5",
+    "citeproc": "^2.4.63",
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.0",
+    "@types/cors": "^2.8.0",
+    "@types/express": "^4.17.0",
+    "@types/node": "^20.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.4.0"
+  }
+}

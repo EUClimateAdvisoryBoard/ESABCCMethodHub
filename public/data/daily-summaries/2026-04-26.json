@@ -1,0 +1,181 @@
+{
+  "date": "2026-04-26",
+  "generatedAt": "2026-04-26T23:33:28.925Z",
+  "title": "EU Climate & Energy Daily Briefing",
+  "subtitle": "Sunday, 26 April 2026 — Key developments from the last 24 hours",
+  "highlights": [
+    {
+      "headline": "UK departments at odds over energy demands of AI datacentres",
+      "summary": "&lt;p&gt;Discrepancy in forecasts raises questions over government planning for net zero&lt;/p&gt;&lt;p&gt;One vision of the UK’s future involves a decarbonised economy powered by clean, renewable energy. Another involves making the UK an AI superpower.&lt;/p&gt;&lt;p&gt;The government departments responsible for these two visions do not appear to have agreed on their numbers.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/technology/2026/apr/26/uk-departments-at-odds-over-energy-demands-of-a",
+      "tag": "ENERGY",
+      "color": "#E87722"
+    },
+    {
+      "headline": "Toxins plus climate harms likely cause of reduced fertility, study finds",
+      "summary": "&lt;p&gt;Researchers find ‘alarming’ effect on fertility across global species from simultaneous exposures&lt;/p&gt;&lt;p&gt;Simultaneous exposure to toxic chemicals and climate change’s impacts likely generates an additive or synergistic effect that increases reproductive harm, and may contribute to the broad global drop in fertility, new &lt;a href=\"https://www.nature.com/articles/s44454-026-00032-6\"&gt;peer-reviewed research finds&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The review of scientific literatu",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    }
+  ],
+  "sections": [
+    {
+      "id": "eu_policy",
+      "title": "EU Policy & Legislation",
+      "items": []
+    },
+    {
+      "id": "energy",
+      "title": "Energy Transition",
+      "items": [
+        {
+          "title": "UK departments at odds over energy demands of AI datacentres",
+          "link": "https://www.theguardian.com/technology/2026/apr/26/uk-departments-at-odds-over-energy-demands-of-ai-datacentres",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Discrepancy in forecasts raises questions over government planning for net zero&lt;/p&gt;&lt;p&gt;One vision of the UK’s future involves a decarbonised economy powered by clean, renewable energy. Another involves making the UK an AI superpower.&lt;/p&gt;&lt;p&gt;The government departments responsible for these two visions do not appear to have agreed on their numbers.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/technology/2026/apr/26/uk-departments-at-odds-over-energy-demands-of-a",
+          "published": "2026-04-26T07:00:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "Renewable energy will boost national security and protect UK from sabotage, minister says",
+          "link": "https://www.theguardian.com/environment/2026/apr/27/renewable-energy-will-boost-national-security-and-protect-uk-from-sabotage-minister-says",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Widely dispersed wind farms and solar panels are harder to target than fossil fuel power stations, Michael Shanks says&lt;/p&gt;&lt;p&gt;Renewable energy will boost the UK’s national security and make the country more resilient against potential aggression or sabotage, the government’s energy minister has said.&lt;/p&gt;&lt;p&gt;Michael Shanks said widely dispersed wind farms and solar panels were much harder to target than large-scale fossil fuel power stations. They are also not vulne",
+          "published": "2026-04-26T23:01:26.000Z",
+          "score": 7
+        },
+        {
+          "title": "Australia's Wong to visit Japan, China, South Korea to discuss energy security - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPak1wc1dEV3hiSzUydmhpOFNNYWFPSDFFY2RVMUpKWmNReEV3YlQxVGlRZUY3S01UbEloVXdvYkhWRWN5Q2xRT3dCOVBqMlJId3c2XzBvcm5tc0tlb1ZMOGN1dXZ4ZE9YM1FqOEluc21EcFRNb1ZDdDF4YzQtUXpDS3JSalJXREppeE9mZ2l0eFpGMTk0R2wxZzdvMTQtRmtqUkxVZ2R3VmJfb05CX1FRM2JCZU9fVldw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPak1wc1dEV3hiSzUydmhpOFNNYWFPSDFFY2RVMUpKWmNReEV3YlQxVGlRZUY3S01UbEloVXdvYkhWRWN5Q2xRT3dCOVBqMlJId3c2XzBvcm5tc0tlb1ZMOGN1dXZ4ZE9YM1FqOEluc21EcFRNb1ZDdDF4YzQtUXpDS3JSalJXREppeE9mZ2l0eFpGMTk0R2wxZzdvMTQtRmtqUkxVZ2R3VmJfb05CX1FRM2JCZU9fVldw?oc=5\" target=\"_blank\"&gt;Australia's Wong to visit Japan, China, South Korea to discuss energy security&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-26T11:13:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "40 years after Chernobyl: Pripyat today",
+          "link": "https://www.dw.com/en/40-years-after-chernobyl-pripyat-today/a-76925905?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "After the catastrophic accident in the nearby nuclear reactor, the city of Pripyat had to be completely evacuated. Some 50,000 people left their homes forever. DW visited the town with a former resident 40 years later.",
+          "published": "2026-04-26T00:14:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Why biomethane is not the solution to Britain’s gas supply issues | Letter",
+          "link": "https://www.theguardian.com/environment/2026/apr/26/why-biomethane-is-not-the-solution-to-britains-gas-supply-issues",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;&lt;strong&gt;Dr Matilda Dunn &lt;/strong&gt;highlights problems with the expansion of biogas production&lt;/p&gt;&lt;p&gt;Chris Huhne is right to say that the UK faces a false choice between more North Sea drilling and greater reliance on imports of gas (&lt;a href=\"https://www.theguardian.com/environment/2026/apr/21/britain-should-look-to-biomethane-to-expand-gas-supply\"&gt;Letters, 21 April&lt;/a&gt;). But presenting biomethane as a straightforward solution overlooks the serious envi",
+          "published": "2026-04-26T15:46:47.000Z",
+          "score": 2
+        }
+      ]
+    },
+    {
+      "id": "climate",
+      "title": "Climate & Environment",
+      "items": [
+        {
+          "title": "Toxins plus climate harms likely cause of reduced fertility, study finds",
+          "link": "https://www.theguardian.com/science/2026/apr/26/toxic-exposure-climate-crisis-study",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Researchers find ‘alarming’ effect on fertility across global species from simultaneous exposures&lt;/p&gt;&lt;p&gt;Simultaneous exposure to toxic chemicals and climate change’s impacts likely generates an additive or synergistic effect that increases reproductive harm, and may contribute to the broad global drop in fertility, new &lt;a href=\"https://www.nature.com/articles/s44454-026-00032-6\"&gt;peer-reviewed research finds&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;The review of scientific literatu",
+          "published": "2026-04-26T13:00:15.000Z",
+          "score": 7
+        },
+        {
+          "title": "NatWest faces AGM showdown over ‘climate backtracking’",
+          "link": "https://www.theguardian.com/business/2026/apr/26/natwest-agm-showdown-climate-backtracking-protest-vote",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Shareholders including the Church of England back call for protest votes against bank’s chair&lt;/p&gt;&lt;p&gt;NatWest is at risk of an embarrassing showdown at its shareholder meeting this week as investors and scientists call for an urgent reversal of what they describe as “climate backtracking”.&lt;/p&gt;&lt;p&gt;Campaigners including ShareAction are calling for protest votes against the bank’s chair, Rick Haythornthwaite, at its annual meeting in Edinburgh on Tuesday.&lt;/p&gt; &lt",
+          "published": "2026-04-26T11:21:14.000Z",
+          "score": 7
+        },
+        {
+          "title": "UK's biggest ever environmental pollution claim reaches High Court",
+          "link": "https://www.bbc.com/news/articles/cqxl5rjw58po?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "One of the UK's largest chicken producers and a water company accused of polluting three rivers including the River Wye",
+          "published": "2026-04-26T23:01:47.000Z",
+          "score": 7
+        },
+        {
+          "title": "'We're living in a shed because of river pollution'",
+          "link": "https://www.bbc.com/news/articles/c6244zv02ero?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Jane and Tony Coyle spent seven years waiting for planning permission due to River Lugg pollution.",
+          "published": "2026-04-26T06:20:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "Series of wildfires across Scotland during 'extreme' alert",
+          "link": "https://www.bbc.com/news/articles/cly7yvr8g97o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Scottish Fire and rescue Service (SFRS) said an 'extreme' wildfire warning for Western Scotland would remain until midnight.",
+          "published": "2026-04-26T12:52:14.000Z",
+          "score": 4
+        }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Green Finance & Investment",
+      "items": []
+    },
+    {
+      "id": "eu_general",
+      "title": "Beyond Climate — Other Major EU News",
+      "items": []
+    },
+    {
+      "id": "other_world",
+      "title": "Beyond Climate & EU — World News Highlights",
+      "items": [
+        {
+          "title": "Hungary's Magyar to meet EU's von der ​Leyen for talks on EU funds this week - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYTVYS083S1JBc0dsNC1COTVoa1ZXaE4wMEtCTnZ6M2ZpOFZzLXRjSEZXQmw0R1Mzd2IxNVYxOXFHOUFvUXhFUkR3Rnh3R0tuS0ZqMlNHUUdVbUdISTY1RHpTYVo1U2pYVFljcEZpU1hLNDZmNkd0OFFBSDFBYTVSUFpydUFBUFJtWmowZ3FTd1ZROFRrWEY0Y3NETzJGbkZ3Wm44WUZjMDA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQYTVYS083S1JBc0dsNC1COTVoa1ZXaE4wMEtCTnZ6M2ZpOFZzLXRjSEZXQmw0R1Mzd2IxNVYxOXFHOUFvUXhFUkR3Rnh3R0tuS0ZqMlNHUUdVbUdISTY1RHpTYVo1U2pYVFljcEZpU1hLNDZmNkd0OFFBSDFBYTVSUFpydUFBUFJtWmowZ3FTd1ZROFRrWEY0Y3NETzJGbkZ3Wm44WUZjMDA?oc=5\" target=\"_blank\"&gt;Hungary's Magyar to meet EU's von der ​Leyen for talks on EU funds this week&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-26T10:42:30.000Z",
+          "score": 8
+        },
+        {
+          "title": "German election puts Europe's ambitions on ice - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOb1dTMGlrY2VGeDJlc3FhZ0ZOU0JUdXctbEo5MEpqbkh3eUtld2NHUGtvRVUtMms5ejB0ejM2R2Y0dFl0NnVhS3hldE9EQ3lBZ3VVR09qLTBRRkhibTg5NzN0UzZxcGRaVWxtU0JxLUdqdFdoc0QwQlRPTmZid2pxakNPdDhTSlB5OXlnTzJTd19FSUFWLWFXTWtWbUttblU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxOb1dTMGlrY2VGeDJlc3FhZ0ZOU0JUdXctbEo5MEpqbkh3eUtld2NHUGtvRVUtMms5ejB0ejM2R2Y0dFl0NnVhS3hldE9EQ3lBZ3VVR09qLTBRRkhibTg5NzN0UzZxcGRaVWxtU0JxLUdqdFdoc0QwQlRPTmZid2pxakNPdDhTSlB5OXlnTzJTd19FSUFWLWFXTWtWbUttblU?oc=5\" target=\"_blank\"&gt;German election puts Europe's ambitions on ice&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-26T13:04:58.000Z",
+          "score": 8
+        },
+        {
+          "title": "Netanyahu orders army to 'vigorously attack' Hezbollah in Lebanon",
+          "link": "https://www.bbc.com/news/articles/c5yv1nvd4gjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Israeli PM's directive comes as six people were killed by strikes in Lebanon despite a ceasefire being extended by three weeks.",
+          "published": "2026-04-26T00:34:21.000Z",
+          "score": 6
+        },
+        {
+          "title": "Trump and officials 'likely' targets of press dinner shooting suspect, authorities believe",
+          "link": "https://www.bbc.com/news/articles/c2d8dg57rzdo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The suspect is expected to be charged with assault of a federal officer and using a firearm during a crime of violence, officials have said.",
+          "published": "2026-04-26T22:43:36.000Z",
+          "score": 2
+        },
+        {
+          "title": "I was in the room with Trump and heard the low thudding sound of gunfire",
+          "link": "https://www.bbc.com/news/articles/c62j23wzeqeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The BBC's Gary O'Donoghue describes the moment he and others dived for cover as shots rang out at the venue.",
+          "published": "2026-04-26T04:22:59.000Z",
+          "score": 2
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "totalArticlesScanned": 377,
+    "articlesLast24h": 109,
+    "afterDedup": 99,
+    "feedsQueried": 19
+  }
+}

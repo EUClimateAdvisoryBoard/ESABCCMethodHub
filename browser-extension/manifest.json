@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "ESABCC Monitor — LinkedIn Capture",
+  "description": "Right-click a LinkedIn post and send it to the ESABCC media monitoring dashboard.",
+  "version": "1.0.0",
+  "permissions": ["contextMenus", "activeTab", "scripting", "storage", "notifications"],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "https://linkedin.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Send current LinkedIn post to ESABCC Monitor",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "commands": {
+    "capture-current-post": {
+      "suggested_key": { "default": "Alt+Shift+C" },
+      "description": "Capture the current LinkedIn post"
+    }
+  }
+}

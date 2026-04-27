@@ -1,0 +1,48 @@
+name: Fetch ESABCC reports
+
+# Downloads all report PDFs from the European Scientific Advisory Board on
+# Climate Change (ESABCC) and commits them to esabcc-reports/ on the branch
+# the workflow is triggered from.
+#
+# Trigger this manually from the Actions tab (Run workflow) on the branch
+# where you want the PDFs committed (e.g. claude/add-esabcc-reports-kWt6H).
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Monthly refresh on the default branch to pick up new publications.
+    - cron: "0 6 1 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download ESABCC PDFs
+        run: python scripts/fetch_esabcc_reports.py
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain esabcc-reports/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates to current branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add esabcc-reports/
+          git commit -m "chore: fetch ESABCC report PDFs [automated]"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}

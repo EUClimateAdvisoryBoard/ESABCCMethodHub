@@ -1,0 +1,194 @@
+<!--
+  EEA deployment topology — production.
+  Three swim lanes:
+    · Client network     (EU browser, possibly roaming)
+    · EEA infrastructure (TLS edge, container host, Postgres, S3, OIDC)
+    · External services  (AI provider, public EU data)
+  Edge styles distinguish required vs. optional flows.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 760"
+     role="img"
+     aria-label="Production deployment topology — client network, EEA infrastructure (TLS edge, app container, Postgres, storage, OIDC), and external services on separate swim lanes.">
+  <title>MethodHub — EEA deployment topology</title>
+
+  <defs>
+    <style>
+      .h1        { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; }
+      .sub       { font-family: "Inter", system-ui, sans-serif; font-weight: 500; fill: #5B6B7B; }
+      .lane-hdr  { font-family: "JetBrains Mono", monospace; font-weight: 700; fill: #3D5584; letter-spacing: 0.14em; text-transform: uppercase; }
+      .code      { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #8A95A3; letter-spacing: 0.12em; text-transform: uppercase; }
+      .label     { font-family: "Inter", sans-serif; font-weight: 600; fill: #3D5584; }
+      .dim       { font-family: "Inter", sans-serif; font-weight: 500; fill: #5B6B7B; }
+
+      .lane-client { fill: #FCE4EC; stroke: #AD1457; stroke-width: 1.1; stroke-opacity: 0.45; fill-opacity: 0.35; }
+      .lane-eea    { fill: #E4ECEE; stroke: #608C95; stroke-width: 1.4; fill-opacity: 0.55; }
+      .lane-ext    { fill: #FBFBFA; stroke: #B8BCC2; stroke-width: 1.1; stroke-dasharray: 4 3; fill-opacity: 0.55; }
+
+      .tile        { fill: #FFFFFF; stroke: #D9DCDE; stroke-width: 1.1; }
+      .tile-tls    { fill: #FFF3E0; stroke: #EF6C00; stroke-width: 1.1; }
+      .tile-app    { fill: #E3F2FD; stroke: #1565C0; stroke-width: 1.6; }
+      .tile-db     { fill: #EDE7F6; stroke: #4527A0; stroke-width: 1.1; }
+      .tile-id     { fill: #F1F8E9; stroke: #558B2F; stroke-width: 1.1; }
+      .tile-ext    { fill: #FFFFFF; stroke: #B8BCC2; stroke-width: 1; stroke-dasharray: 3 3; }
+
+      .edge-req    { stroke: #3D5584; stroke-width: 2; fill: none; }
+      .edge-opt    { stroke: #8A95A3; stroke-width: 1.6; stroke-dasharray: 5 4; fill: none; }
+      .edge-in     { stroke: #558B2F; stroke-width: 1.8; fill: none; }
+
+      .edge-label  { font-family: "JetBrains Mono", monospace; font-weight: 600; fill: #5B6B7B; font-size: 10.5px; letter-spacing: 0.08em; }
+    </style>
+    <marker id="m-req" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3D5584" />
+    </marker>
+    <marker id="m-opt" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A95A3" />
+    </marker>
+    <marker id="m-in" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#558B2F" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text class="h1" font-size="22" x="60" y="52">EEA deployment topology — production</text>
+  <text class="sub" font-size="13" x="60" y="76">Solid edges are required flows. Dashed edges are optional extensions controlled by environment switches.</text>
+
+  <!-- ======= LANE 1 · CLIENT (top) ======= -->
+  <rect class="lane-client" x="40" y="110" width="1120" height="120" rx="6" />
+  <text class="lane-hdr" font-size="11" x="58" y="134">Client network · EU</text>
+
+  <g transform="translate(80, 148)">
+    <rect class="tile" x="0" y="0" width="240" height="70" rx="5" />
+    <text class="label" font-size="14" x="16" y="26">Policy analyst</text>
+    <text class="dim" font-size="11.5" x="16" y="46">Web browser · EU residency</text>
+    <text class="code" font-size="10" x="16" y="62">ESABCC SECRETARIAT</text>
+  </g>
+  <g transform="translate(380, 148)">
+    <rect class="tile" x="0" y="0" width="220" height="70" rx="5" />
+    <text class="label" font-size="14" x="16" y="26">MS Word + add-in</text>
+    <text class="dim" font-size="11.5" x="16" y="46">Office.js via bridge</text>
+    <text class="code" font-size="10" x="16" y="62">CITATION INSERTION</text>
+  </g>
+
+  <!-- ======= LANE 2 · EEA INFRA (middle) ======= -->
+  <rect class="lane-eea" x="40" y="250" width="1120" height="320" rx="6" />
+  <text class="lane-hdr" font-size="11" x="58" y="274">EEA infrastructure · EU region · operated by EEA IT</text>
+
+  <!-- TLS edge -->
+  <g transform="translate(80, 300)">
+    <rect class="tile-tls" x="0" y="0" width="220" height="90" rx="6" />
+    <text class="code" font-size="10" fill="#BF360C" x="14" y="22">EDGE</text>
+    <text class="label" font-size="15" x="14" y="46">nginx / HAProxy</text>
+    <text class="dim" font-size="11.5" x="14" y="64">TLS termination · HSTS</text>
+    <text class="dim" font-size="11.5" x="14" y="80">EEA domain</text>
+  </g>
+
+  <!-- App container (center, highlighted) -->
+  <g transform="translate(400, 290)">
+    <rect class="tile-app" x="0" y="0" width="280" height="250" rx="8" />
+    <text class="code" font-size="10" fill="#0D47A1" x="16" y="24">CONTAINER · ~180 MB</text>
+    <text class="label" font-size="17" fill="#0D47A1" x="16" y="50">methodhub-app</text>
+    <text class="dim" font-size="12" x="16" y="70">Next.js standalone · node server.js :3000</text>
+
+    <line x1="16" y1="86" x2="264" y2="86" stroke="#1565C0" stroke-width="0.8" stroke-opacity="0.4" />
+
+    <text class="code" font-size="10" fill="#0D47A1" x="16" y="108">ENV SWITCHES</text>
+    <g font-family="JetBrains Mono, monospace" font-size="11" fill="#0D47A1">
+      <text x="16" y="128">DB_PROVIDER=postgres</text>
+      <text x="16" y="144">AUTH_PROVIDER=oidc</text>
+      <text x="16" y="160">STORAGE_PROVIDER=s3</text>
+      <text x="16" y="176">LLM_PROVIDER=azure | copilot-graph</text>
+    </g>
+
+    <line x1="16" y1="194" x2="264" y2="194" stroke="#1565C0" stroke-width="0.8" stroke-opacity="0.4" />
+    <text class="code" font-size="10" fill="#0D47A1" x="16" y="216">5 PRODUCTION MODULES</text>
+    <text class="dim" font-size="11" x="16" y="234">refs · data · news · policy · coding</text>
+  </g>
+
+  <!-- Postgres -->
+  <g transform="translate(760, 300)">
+    <rect class="tile-db" x="0" y="0" width="220" height="90" rx="6" />
+    <text class="code" font-size="10" fill="#311B92" x="14" y="22">DATABASE · REQUIRED</text>
+    <text class="label" font-size="15" x="14" y="46">Postgres 14+</text>
+    <text class="dim" font-size="11.5" x="14" y="64">EEA-managed · RLS</text>
+    <text class="dim" font-size="11.5" x="14" y="80">Retention · audit</text>
+  </g>
+
+  <!-- S3 / MinIO (below Postgres) -->
+  <g transform="translate(760, 410)">
+    <rect class="tile-db" x="0" y="0" width="220" height="60" rx="6" stroke-dasharray="4 3" />
+    <text class="code" font-size="10" fill="#311B92" x="14" y="22">OPTIONAL · STORAGE</text>
+    <text class="label" font-size="13" x="14" y="42">S3 / MinIO · PDFs</text>
+  </g>
+
+  <!-- OIDC -->
+  <g transform="translate(760, 488)">
+    <rect class="tile-id" x="0" y="0" width="220" height="60" rx="6" stroke-dasharray="4 3" />
+    <text class="code" font-size="10" fill="#33691E" x="14" y="22">OPTIONAL · IDENTITY</text>
+    <text class="label" font-size="13" x="14" y="42">EU Login / Azure AD</text>
+  </g>
+
+  <!-- Edges inside EEA lane -->
+  <path class="edge-req" d="M 300 345 L 398 345" marker-end="url(#m-req)" />       <!-- TLS → app -->
+  <path class="edge-req" d="M 682 345 L 758 345" marker-end="url(#m-req)" />       <!-- app → Postgres -->
+  <path class="edge-opt" d="M 682 430 L 758 430" marker-end="url(#m-opt)" />       <!-- app → S3 -->
+  <path class="edge-opt" d="M 682 510 L 758 510" marker-end="url(#m-opt)" />       <!-- app → OIDC -->
+  <text class="edge-label" x="310" y="338">HTTP :3000</text>
+  <text class="edge-label" x="690" y="338">SQL · RLS</text>
+  <text class="edge-label" x="690" y="422">PUT / GET</text>
+  <text class="edge-label" x="690" y="502">OAuth / OIDC</text>
+
+  <!-- Lane 1 → Lane 2 edge (client → TLS) -->
+  <path class="edge-req" d="M 200 220 L 190 294" marker-end="url(#m-req)" />
+  <text class="edge-label" x="200" y="254">HTTPS</text>
+  <path class="edge-req" d="M 490 220 L 480 286" marker-end="url(#m-req)" />
+  <text class="edge-label" x="500" y="254">HTTPS (Word)</text>
+
+  <!-- ======= LANE 3 · EXTERNAL (bottom) ======= -->
+  <rect class="lane-ext" x="40" y="590" width="1120" height="140" rx="6" />
+  <text class="lane-hdr" font-size="11" x="58" y="614">External services</text>
+
+  <!-- AI layer -->
+  <g transform="translate(80, 628)">
+    <rect class="tile-ext" x="0" y="0" width="250" height="80" rx="5" />
+    <text class="code" font-size="10" fill="#8A95A3" x="14" y="20">OPTIONAL · AI LAYER</text>
+    <text class="label" font-size="14" x="14" y="42">Azure OpenAI EU</text>
+    <text class="dim" font-size="11" x="14" y="58">or M365 Copilot via Graph</text>
+    <text class="dim" font-size="11" x="14" y="72">or disabled</text>
+  </g>
+
+  <!-- Public EU data -->
+  <g transform="translate(370, 628)">
+    <rect class="tile-ext" x="0" y="0" width="780" height="80" rx="5" />
+    <text class="code" font-size="10" fill="#8A95A3" x="14" y="20">PUBLIC EU DATA · SCHEDULED INGESTION</text>
+    <g class="dim" font-size="11.5">
+      <text x="14" y="46">EUR-Lex</text>
+      <text x="130" y="46">Eurostat</text>
+      <text x="250" y="46">IIASA AR6</text>
+      <text x="380" y="46">EEA projections</text>
+      <text x="540" y="46">RSS feeds</text>
+      <text x="680" y="46">Crossref</text>
+    </g>
+    <g class="dim" font-size="11">
+      <text x="14" y="64">consolidated text</text>
+      <text x="130" y="64">2 412 series</text>
+      <text x="250" y="64">scenario DB</text>
+      <text x="380" y="64">WEM / WAM</text>
+      <text x="540" y="64">40+ sources</text>
+      <text x="680" y="64">DOI metadata</text>
+    </g>
+  </g>
+
+  <!-- Edges app → externals -->
+  <path class="edge-opt" d="M 540 590 L 540 540" marker-end="url(#m-opt)" />
+  <text class="edge-label" x="548" y="568">AI calls</text>
+  <path class="edge-in"  d="M 760 628 L 620 540" marker-end="url(#m-in)" />
+  <text class="edge-label" x="640" y="600">scheduled pulls</text>
+
+  <!-- Legend -->
+  <g transform="translate(60, 104)" class="dim" font-size="11">
+    <line x1="0"   y1="0" x2="28" y2="0" class="edge-req" /><text x="36" y="4">Required flow</text>
+    <line x1="150" y1="0" x2="178" y2="0" class="edge-opt" /><text x="186" y="4">Optional flow</text>
+    <line x1="290" y1="0" x2="318" y2="0" class="edge-in" /><text x="326" y="4">Inbound / ingestion</text>
+  </g>
+</svg>

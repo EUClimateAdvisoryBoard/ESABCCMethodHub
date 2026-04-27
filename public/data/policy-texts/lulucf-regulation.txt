@@ -1,0 +1,312 @@
+REGULATION (EU) 2018/841 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL
+of 30 May 2018
+on the inclusion of greenhouse gas emissions and removals from land use, land use change and forestry in the 2030 climate and energy framework, and amending Regulation (EU) No 525/2013 and Decision No 529/2013/EU
+
+(as amended by Regulation (EU) 2023/839)
+
+THE EUROPEAN PARLIAMENT AND THE COUNCIL OF THE EUROPEAN UNION,
+
+Having regard to the Treaty on the Functioning of the European Union, and in particular Article 192(1) thereof,
+
+Having regard to the proposal from the European Commission,
+
+After transmission of the draft legislative act to the national parliaments,
+
+Having regard to the opinion of the European Economic and Social Committee,
+
+Having regard to the opinion of the Committee of the Regions,
+
+Acting in accordance with the ordinary legislative procedure,
+
+Whereas the land use, land use change and forestry (LULUCF) sector has the potential to provide long-term climate benefits and thereby to contribute to the achievement of the Union's greenhouse gas emission reduction target and the long-term climate goals of the Paris Agreement; the LULUCF sector provides biomaterials that can substitute fossil- or carbon-intensive materials and therefore plays an important role in the transition to a low-greenhouse-gas-emission economy;
+
+HAVE ADOPTED THIS REGULATION:
+
+
+Article 1
+Subject matter
+
+This Regulation lays down rules on:
+
+(a) commitments of Member States for the land use, land use change and forestry ('LULUCF') sector that contribute to achieving the objectives of the Paris Agreement and meeting the greenhouse gas emission reduction target of the Union for the period from 2021 to 2025;
+
+(b) accounting for emissions and removals from the LULUCF sector and for checking that Member States comply with those commitments;
+
+(c) the setting of a Union net removal target for the LULUCF sector for the period from 2026 to 2030;
+
+(d) targets for net greenhouse gas removals in the LULUCF sector for each Member State for the period from 2026 to 2030.
+
+
+Article 2
+Scope
+
+1. This Regulation applies to emissions and removals of the greenhouse gases listed in Section A of Annex I, as reported pursuant to Article 26(4) of Regulation (EU) 2018/1999 and occurring on the territories of Member States during the periods from 2021 to 2025 and from 2026 to 2030 in any of the following land accounting categories:
+
+(a) afforested land: land reported as cropland, grassland, wetlands, settlements or other land converted to forest land;
+
+(b) deforested land: land reported as forest land converted to cropland, grassland, wetlands, settlements or other land;
+
+(c) managed cropland: land reported as:
+(i) cropland remaining cropland;
+(ii) grassland, wetlands, settlements or other land converted to cropland; or
+(iii) cropland converted to wetlands, settlements or other land;
+
+(d) managed grassland: land reported as:
+(i) grassland remaining grassland;
+(ii) cropland, wetlands, settlements or other land converted to grassland; or
+(iii) grassland converted to wetlands, settlements or other land;
+
+(e) managed forest land: land reported as forest land remaining forest land;
+
+(f) managed wetland: land reported as:
+(i) wetlands remaining wetlands;
+(ii) settlements or other land converted to wetlands; or
+(iii) wetlands converted to settlements or other land;
+
+(g) harvested wood products;
+
+(h) other land use categories where a Member State chooses to include them.
+
+2. During the period from 2021 to 2025, a Member State may choose to include managed wetland within the scope of its commitment. During the period from 2026 to 2030, managed wetland shall be included in the scope.
+
+
+Article 3
+Definitions
+
+For the purposes of this Regulation, the following definitions apply:
+
+(1) 'sink' means any process, activity or mechanism that removes a greenhouse gas, an aerosol, or a precursor of a greenhouse gas from the atmosphere;
+
+(2) 'source' means any process, activity or mechanism that releases a greenhouse gas, an aerosol, or a precursor of a greenhouse gas into the atmosphere;
+
+(3) 'carbon pool' means the whole or part of a biogeochemical feature or system within the territory of a Member State within which carbon, any precursor of a greenhouse gas containing carbon, or any greenhouse gas containing carbon is stored;
+
+(4) 'carbon stock' means the mass of carbon stored in a carbon pool;
+
+(5) 'harvested wood product' means any product resulting from wood harvesting, excluding timber that is burned for energy purposes;
+
+(6) 'forest reference level' means the estimate of the average annual net emissions or removals resulting from managed forest land within the territory of a Member State in the periods from 2021 to 2025 and from 2026 to 2030;
+
+(7) 'instantaneous oxidation' means an accounting method that assumes the full amount of carbon stored in harvested wood products is released into the atmosphere at the time of harvest;
+
+(8) 'natural disturbance' means any non-anthropogenic event or circumstance that causes significant emissions in forests and the occurrence of which is beyond the control of the relevant Member State and whose effects the Member State is objectively unable to significantly limit, even after their occurrence, on emissions;
+
+(9) 'background level' means the average of the natural disturbance dynamics during the period from 2001 to 2020, calculated in accordance with Annex VI, excluding statistical outliers.
+
+
+Article 4
+Commitments and targets
+
+1. For the period from 2021 to 2025, taking into account the flexibilities provided for in Articles 12, 13 and 13a, each Member State shall ensure that emissions do not exceed removals, calculated as the sum of total emissions and total removals on its territory in all of the land accounting categories referred to in Article 2 combined, as accounted for in accordance with this Regulation.
+
+2. The Union-wide target for net greenhouse gas removals shall be 310 million tonnes of CO2 equivalent as a sum of the Member State targets set out in Annex IIa for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.
+
+3. Each Member State shall ensure that the sum of its total emissions and total removals on its territory, in all of the land reporting categories referred to in Article 2(1), results, by applying the accounting rules laid down in this Regulation, in net removals corresponding at least to the target set out in column C of Annex IIa in respect of that Member State for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.
+
+4. By 30 June 2024, each Member State shall submit to the Commission its intended trajectory towards the 2030 target set out in Annex IIa, expressed in terms of annual national targets. Such trajectory shall be consistent with that Member State's integrated national energy and climate plan and with the Union's greenhouse gas inventory data.
+
+5. The Commission shall, by 2025, propose, following a comprehensive review, national targets for Member States for net greenhouse gas removals in the LULUCF sector for each Member State for the period after 2030, including the combined land use, LULUCF and agriculture sector.
+
+
+Article 5
+General accounting rules
+
+1. Each Member State shall prepare and maintain accounts that accurately reflect emissions and removals resulting from the land accounting categories referred to in Article 2. Member States shall ensure that their accounts and other data provided under this Regulation are accurate, complete, consistent, comparable and transparent.
+
+2. Emissions and removals resulting from a land accounting category shall be accounted for as total emissions and total removals in a base year or a base period. Emissions and removals shall be estimated with the methodologies chosen pursuant to 2006 IPCC Guidelines.
+
+3. A Member State shall include in its accounts a given area of land that has been converted from one land accounting category to another, for a default period of 20 years from the date of conversion.
+
+4. Each Member State shall include in its accounts for each land accounting category any change in carbon stock of the following carbon pools:
+(a) above-ground biomass;
+(b) below-ground biomass;
+(c) litter;
+(d) dead wood;
+(e) soil organic carbon;
+(f) harvested wood products in the land accounting categories of afforested land and managed forest land.
+
+5. Each Member State may choose not to include in its accounts changes in carbon stocks of carbon pools where that carbon pool is not a source. However, this possibility to exclude from accounts changes in carbon stocks shall not apply to above-ground biomass, dead wood and harvested wood products on managed forest land.
+
+
+Article 6
+Accounting for afforested land and deforested land
+
+1. Emissions and removals resulting from afforested land and deforested land shall be accounted for as total emissions and total removals for each year in the periods from 2021 to 2025 and from 2026 to 2030.
+
+2. By way of derogation from Article 5(3), where land that has been converted from cropland, grassland, wetlands, settlements or other land to forest land, Member States may change the default period of 20 years for accounting for conversions to forest land, taking into account ecological conditions, in accordance with the 2006 IPCC Guidelines.
+
+
+Article 7
+Accounting for managed cropland, managed grassland and managed wetland
+
+Emissions and removals resulting from managed cropland, managed grassland and managed wetland shall be accounted for in the periods from 2021 to 2025 and from 2026 to 2030 as emissions and removals in each year of those periods.
+
+
+Article 8
+Accounting for managed forest land
+
+1. Emissions and removals resulting from managed forest land shall be accounted for in the periods from 2021 to 2025 and from 2026 to 2030 as emissions and removals for each year of those periods against a forest reference level as set out in national forestry accounting plans.
+
+2. Where the result of the calculation referred to in paragraph 1 is negative in relation to the forest reference level, a Member State shall include in its managed forest land accounts total net removals of no more than the equivalent of 3.5 per cent of the emissions of that Member State in its base year or period as specified in Annex III, multiplied by five.
+
+3. Member States shall submit to the Commission their national forestry accounting plans, including a proposed forest reference level, by 31 December 2018 for the period from 2021 to 2025 and by 30 June 2023 for the period from 2026 to 2030. The national forestry accounting plan shall contain all the elements listed in Section B of Annex IV and shall be made publicly available.
+
+4. Member States shall demonstrate consistency between the methods and data used for establishing the forest reference level in the national forestry accounting plan and those used in the reporting for managed forest land. The forest reference level shall be based on the continuation of sustainable forest management practice, as documented in the period from 2000 to 2009 with regard to dynamic age-related forest characteristics in national forests, using the best available data.
+
+5. The forest reference levels set in accordance with paragraph 3 shall take account of future impact of dynamic age-related forest characteristics in order not to unduly constrain forest management intensity as a core element of sustainable forest management practice, with the aim of maintaining or strengthening long-term carbon sinks.
+
+6. The Commission shall, assisted by a group of experts, carry out a technical assessment of the national forestry accounting plans submitted by Member States pursuant to paragraph 3.
+
+7. The Commission shall adopt delegated acts in accordance with Article 16 to amend Annex IV in order to update the forest reference levels in the light of the technical assessments carried out pursuant to paragraph 6, and to account for any revision or modification of national forestry accounting plans.
+
+
+Article 9
+Accounting for harvested wood products
+
+1. Accounts for harvested wood products pursuant to Article 5(4)(f) shall only cover harvested wood products in the following categories estimated using the first-order decay function, the methodologies and the default half-life values specified in Annex V:
+(a) paper;
+(b) wood panels;
+(c) sawn wood.
+
+2. The Commission may adopt delegated acts in accordance with Article 16 to amend paragraph 1 and Annex V by adding new categories of harvested wood products that have a carbon sequestration effect, on the basis of the 2006 IPCC Guidelines and ensuring environmental integrity.
+
+
+Article 10
+Accounting for natural disturbances
+
+1. At the end of each period from 2021 to 2025 and from 2026 to 2030, Member States may exclude from their accounts for afforested land and managed forest land greenhouse gas emissions resulting from natural disturbances that exceed the average emissions caused by natural disturbances in the period from 2001 to 2020, excluding statistical outliers ('the background level'). That background level shall be calculated in accordance with this Article and Annex VI.
+
+2. Where a Member State applies paragraph 1, it shall:
+(a) submit to the Commission information on the background level for the land accounting categories referred to in paragraph 1, and on the data and methodologies used in accordance with Annex VI; and
+(b) exclude from its accounts by the end of the relevant period all subsequent removals on land affected by natural disturbances.
+
+3. The Commission may adopt delegated acts in accordance with Article 16 to amend Annex VI with regard to the methodology and information requirements relating to the background level.
+
+
+Article 11
+Flexibility for managed forest land
+
+1. Where, in a Member State, total emissions exceed total removals in the land accounting categories referred to in Article 2, as accounted in accordance with this Regulation, that Member State may use the compensation mechanism for managed forest land set out in this Article in order to comply with Article 4(1).
+
+2. Where the result of the calculation referred to in Article 8(1) is positive, the Member State concerned may compensate those emissions provided that:
+(a) the Member State has included in its strategy, submitted pursuant to Article 15 of Regulation (EU) 2018/1999, ongoing or planned specific measures to ensure the conservation or enhancement, as appropriate, of forest sinks and reservoirs; and
+(b) total emissions within the Union do not exceed total removals in the land accounting categories referred to in Article 2 of this Regulation, for the period in which the Member State intends to use the compensation.
+
+3. With respect to the amount of compensation, a Member State may compensate only for sinks accounted as emissions against its forest reference level and only up to the amount set out in Annex VII for that Member State for the period from 2021 to 2025.
+
+
+Article 12
+Flexibility for the period from 2021 to 2025
+
+1. Provided that a Member State respects the minimum commitment for managed forest land pursuant to Article 8(2), it may transfer any surplus removals from managed forest land to any other land accounting category for the purpose of meeting its commitment under Article 4(1).
+
+2. Provided that a Member State achieves net removals that exceed its commitment under Article 4(1), it may:
+(a) bank any surplus quantity and transfer it to the subsequent period; or
+(b) transfer any surplus quantity to another Member State, subject to the agreement of that Member State.
+
+3. Provided that a Member State does not achieve net removals or that its total emissions exceed total removals as set out in Article 4(1), it may use the following flexibilities:
+(a) use the quantity allocated pursuant to Article 4(3) of Regulation (EU) 2018/842;
+(b) use the flexibility provided for in Article 11 of this Regulation;
+(c) purchase surplus removals from another Member State.
+
+
+Article 13
+Flexibility for the period from 2026 to 2030
+
+1. Provided that a Member State achieves net removals that exceed its target referred to in Article 4(3), it may:
+(a) bank any surplus quantity for the purposes of compliance with its target during any subsequent target year; or
+(b) transfer any surplus quantity to another Member State, subject to the agreement of that Member State.
+
+2. Provided that a Member State does not achieve net removals in accordance with its target referred to in Article 4(3), it may use the following flexibilities:
+(a) use any surplus quantity banked from a previous target year;
+(b) use a quantity of up to a maximum of 10 per cent of its net removals reported for the previous target year;
+(c) purchase surplus removals from another Member State;
+(d) use the flexibility set out in Article 13b.
+
+3. Where a Member State does not comply with the monitoring requirements laid down in Article 26 of Regulation (EU) 2018/1999, the Central Administrator designated under Article 20 of Directive 2003/87/EC shall temporarily prohibit that Member State from transferring or banking surplus quantities pursuant to paragraph 1.
+
+
+Article 13a
+Additional flexibility mechanism
+
+1. Where, in a Member State, actual emissions for the land accounting categories referred to in Article 2 exceed removals, as a result of factors identified by the Member State that are beyond its control—including the effects of natural disturbances, the effect of changes in transition periods for land use conversions, or changes in accounting methods—a Member State may use additional flexibility in order to comply with Article 4(1), provided that:
+
+(a) the Member State has submitted to the Commission sufficient evidence of the impact of such factors;
+
+(b) the Member State has included in its integrated national energy and climate plan, submitted or updated pursuant to Regulation (EU) 2018/1999, ongoing or planned specific measures to ensure the conservation or enhancement of all land sinks and reservoirs and to reduce the vulnerability of land to natural disturbances; and
+
+(c) the total emissions within the Union do not exceed total removals in the land accounting categories referred to in Article 2 of this Regulation, in the period in which the Member State intends to use the flexibility.
+
+2. The Commission shall assess the evidence referred to in paragraph 1(a) and may issue an opinion on the sufficiency thereof.
+
+
+Article 13b
+Land flexibility mechanism for the period from 2026 to 2030
+
+1. A land flexibility mechanism, corresponding to a maximum quantity of 178 million tonnes of CO2 equivalent, shall be available in the Union as an additional flexibility to each Member State and shall cover net removals or emissions from the land reporting categories referred to in Article 2 of this Regulation. That land flexibility mechanism shall not affect the overall ambition of the targets for Member States as set out in Annex IIa.
+
+2. Where, during the period from 2026 to 2030, and after exhausting all other flexibilities available pursuant to Article 13, the net greenhouse gas removals of a Member State fall below its target established in Annex IIa, a quantity up to the amount established in column D of Annex IIa for that Member State may be deducted from that Member State's annual emission allocations under Regulation (EU) 2018/842, to the extent needed for compliance with Article 4(3) of this Regulation.
+
+3. Where the Union does not achieve the target referred to in Article 4(2), the overall land flexibility available to Member States shall not exceed a maximum quantity of 178 million tonnes of CO2 equivalent for the whole period from 2026 to 2030.
+
+
+Article 14
+Governance and compliance checks
+
+1. By 15 March 2027 for the period from 2021 to 2025, and by 15 March 2032 for the period from 2026 to 2030, Member States shall submit a compliance report to the Commission setting out the balance of total emissions and total removals for the relevant period for each of the land accounting categories referred to in Article 2, using the accounting rules laid down in this Regulation.
+
+2. The Commission shall carry out a comprehensive review of the compliance reports submitted pursuant to paragraph 1, for the purpose of assessing compliance with Article 4.
+
+3. The Commission shall prepare a report on the operation of this Regulation, including an assessment of the impact of the flexibilities referred to in Articles 11, 12, 13, 13a and 13b, the fulfilment of the commitments and targets under Article 4, as well as the contribution of this Regulation to the Union's overall 2030 greenhouse gas emission reduction target and to the goals of the Paris Agreement.
+
+4. Where the Commission finds, on the basis of the comprehensive review carried out pursuant to paragraph 2, that a Member State does not comply with Article 4, the Commission shall make recommendations to that Member State. Such recommendations shall be made publicly available.
+
+5. Each Member State shall, within six months of receipt of the recommendations referred to in paragraph 4, notify the Commission of the corrective actions it intends to take with a view to complying with Article 4 and shall make those actions publicly available.
+
+6. Where the Commission considers that a Member State has not complied with Article 4, taking into account the corrective actions taken, the Commission may take any appropriate measures in accordance with the Treaties.
+
+
+Article 15
+Register
+
+1. The Commission shall ensure accurate accounting under this Regulation, including the use of flexibilities by Member States under Articles 11, 12, 13, 13a and 13b, through the Union Registry established pursuant to Article 10 of Regulation (EU) No 525/2013 or any successor regulation.
+
+2. The Central Administrator shall carry out an automated check on each transaction resulting from flexibilities under this Regulation and, where necessary, block transactions to ensure there are no irregularities.
+
+3. The information referred to in paragraphs 1 and 2 shall be accessible to the public.
+
+
+Article 16
+Exercise of the delegation
+
+1. The power to adopt delegated acts is conferred on the Commission subject to the conditions laid down in this Article.
+
+2. The power to adopt delegated acts referred to in Article 3, Article 5(2), Article 8(7), Article 9(2) and Article 10(3) shall be conferred on the Commission for a period of five years from 9 July 2018. The Commission shall draw up a report in respect of the delegation of power not later than nine months before the end of the five-year period. The delegation of power shall be tacitly extended for periods of an identical duration, unless the European Parliament or the Council opposes such extension not later than three months before the end of each period.
+
+3. The delegation of power referred to in Article 3, Article 5(2), Article 8(7), Article 9(2) and Article 10(3) may be revoked at any time by the European Parliament or by the Council. A decision to revoke shall put an end to the delegation of the power specified in that decision. It shall take effect the day following the publication of the decision in the Official Journal of the European Union or at a later date specified therein. It shall not affect the validity of any delegated acts already in force.
+
+4. Before adopting a delegated act, the Commission shall consult experts designated by each Member State in accordance with the principles laid down in the Interinstitutional Agreement of 13 April 2016 on Better Law-Making.
+
+5. As soon as it adopts a delegated act, the Commission shall notify it simultaneously to the European Parliament and to the Council.
+
+6. A delegated act adopted pursuant to Article 3, Article 5(2), Article 8(7), Article 9(2) or Article 10(3) shall enter into force only if no objection has been expressed either by the European Parliament or by the Council within a period of two months of notification of that act to the European Parliament and the Council or if, before the expiry of that period, the European Parliament and the Council have both informed the Commission that they will not object. That period shall be extended by two months at the initiative of the European Parliament or of the Council.
+
+
+Article 17
+Review
+
+1. This Regulation shall be kept under review taking into account, inter alia, developments of international circumstances and efforts undertaken to achieve the long-term objectives of the Paris Agreement.
+
+2. On the basis of the findings of the report prepared pursuant to Article 14(3), and the outcome of the assessment carried out pursuant to Article 14(2), the Commission shall, where appropriate, make proposals to ensure the integrity of the Union's overall 2030 greenhouse gas emission reduction target and its contribution to the goals of the Paris Agreement.
+
+3. The Commission shall, within six months of each global stocktake agreed under the Paris Agreement, submit a report to the European Parliament and the Council assessing the functioning of this Regulation, including any imbalance resulting from the flexibilities set out in Articles 11, 12, 13, 13a and 13b, as well as the contribution of this Regulation to the Union's overall 2030 greenhouse gas emission reduction target and its contribution to the goals of the Paris Agreement, and may make proposals as appropriate.
+
+Done at Strasbourg, 30 May 2018.
+
+For the European Parliament
+The President
+A. TAJANI
+
+For the Council
+The President
+L. PAVLOVA

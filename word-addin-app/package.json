@@ -1,0 +1,19 @@
+{
+  "name": "esabcc-reference-manager",
+  "version": "1.0.0",
+  "description": "ESABCC Reference Library - Word Add-in Companion",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "export-refs": "node scripts/export-refs.js",
+    "setup": "npm install && npm run export-refs"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "electron": "^33.2.0"
+  },
+  "devDependencies": {},
+  "author": "ESABCC",
+  "license": "UNLICENSED",
+  "private": true
+}

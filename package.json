@@ -1,0 +1,62 @@
+{
+  "name": "eu-climate-policy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "EU Climate Policy Navigator - Interactive analysis tool for EU climate legislation",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/build-extension-zip.mjs",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "build:extension": "node scripts/build-extension-zip.mjs",
+    "postinstall": "node -e \"require('fs').copyFileSync('node_modules/pdfjs-dist/build/pdf.worker.min.mjs','public/pdf.worker.min.mjs')\"",
+    "db:smoke": "node scripts/migrate-to-postgres/smoke-test.mjs",
+    "db:verify-parity": "node scripts/migrate-to-postgres/verify-parity.mjs",
+    "db:dump-supabase": "bash scripts/migrate-to-postgres/dump.sh",
+    "db:restore-postgres": "bash scripts/migrate-to-postgres/restore.sh",
+    "it:apply-schema": "bash scripts/it-handoff/01-apply-schema.sh",
+    "it:verify": "bash scripts/it-handoff/03-verify.sh",
+    "prefetch-policy-bodies": "node scripts/prefetch-eurlex-bodies.mjs"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "@supabase/supabase-js": "^2.100.0",
+    "@types/leaflet": "^1.9.21",
+    "@types/topojson-client": "^3.1.5",
+    "chart.js": "^4.4.0",
+    "d3": "^7.9.0",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
+    "jszip": "^3.10.1",
+    "leaflet": "^1.9.4",
+    "luminus-mcp": "^0.1.0",
+    "next": "^14.2.0",
+    "pdfjs-dist": "5.4.296",
+    "react": "^18.3.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.0",
+    "react-leaflet": "^4.2.1",
+    "react-pdf": "^10.4.1",
+    "topojson-client": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/d3": "^7.4.0",
+    "@types/file-saver": "^2.0.7",
+    "@types/node": "^20.0.0",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.4.0",
+    "world-atlas": "^2.0.2"
+  },
+  "optionalDependencies": {
+    "pg": "^8.13.1"
+  }
+}

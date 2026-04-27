@@ -1,0 +1,146 @@
+# Build the MkDocs Material documentation site, wrap every page in a
+# StaticCrypt password gate, and publish the encrypted bundle to GitHub
+# Pages. Runs on every push to `main` that touches the docs/ tree or the
+# mkdocs config, and can also be triggered manually.
+#
+# The app itself does not run on GitHub Pages — this workflow only
+# publishes the *documentation* site. Production MethodHub runs inside
+# EEA infrastructure; see docs/infrastructure/deployment.md.
+#
+# Password gate
+# -------------
+# The published site is password-protected with StaticCrypt
+# (https://github.com/robinmoisson/staticrypt). Every HTML file is
+# AES-encrypted at build time using the value of the `DOCS_SITE_PASSWORD`
+# Actions secret; the browser decrypts locally after the user enters
+# the password. Honest about its limits: this is a hard gate against
+# casual browsing and search-engine indexing, not a substitute for
+# real SSO. See docs/DOCSITE.md for the threat-model discussion and
+# the EEA-hosted Path B (OIDC-gated) that replaces it long-term.
+
+name: docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - '.github/workflows/docs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install MkDocs Material
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            mkdocs-material==9.5.42 \
+            pymdown-extensions==10.11.2 \
+            mkdocs-awesome-pages-plugin==2.9.3 \
+            mkdocs-glightbox==0.4.0
+
+      - name: Build site
+        # We intentionally do not pass --strict. A handful of existing
+        # cross-repo links point to files outside docs/ (scripts/, src/,
+        # supabase/) where relative links are not resolvable inside the
+        # site tree but remain valid on GitHub itself. Strict mode would
+        # fail the deploy on those info-level notices.
+        run: mkdocs build --verbose
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install StaticCrypt
+        run: npm install -g staticrypt@3
+
+      - name: Encrypt site with StaticCrypt
+        # Wraps every HTML file in an ESABCC-styled password prompt.
+        # `DOCS_SITE_PASSWORD` must be set as a repository Actions secret
+        # (Settings → Secrets and variables → Actions → New repository
+        # secret). Rotate by changing the secret and re-running the
+        # workflow; the --remember 30 flag keeps users signed in for 30
+        # days on a given device after a successful unlock.
+        env:
+          DOCS_SITE_PASSWORD: ${{ secrets.DOCS_SITE_PASSWORD }}
+        run: |
+          if [ -z "$DOCS_SITE_PASSWORD" ]; then
+            echo "::error::DOCS_SITE_PASSWORD secret is not set. Add it in Settings → Secrets and variables → Actions, then re-run this workflow."
+            exit 1
+          fi
+
+          staticrypt site \
+            --recursive \
+            --password "$DOCS_SITE_PASSWORD" \
+            --directory site-encrypted-wrapper \
+            --short \
+            --remember 30 \
+            --template-title "ESABCC MethodHub · Documentation" \
+            --template-instructions "Internal documentation — password required. Ask CCE5 for the current password." \
+            --template-placeholder "Password" \
+            --template-button "Open docs" \
+            --template-error "Wrong password — try again, or ask CCE5 for the current one." \
+            --template-color-primary "#00928F" \
+            --template-color-secondary "#3D5265"
+
+          # StaticCrypt places output at <--directory>/<input-dir>/… —
+          # flatten it so the Pages artifact root matches the MkDocs
+          # output structure exactly.
+          mv site-encrypted-wrapper/site site-encrypted
+          rm -rf site-encrypted-wrapper
+
+          # Belt-and-braces: tell search engines to stay away even if
+          # someone scrapes the pre-decryption shell.
+          cat > site-encrypted/robots.txt <<'TXT'
+          User-agent: *
+          Disallow: /
+          TXT
+
+          # Sanity check.
+          html_total=$(find site-encrypted -name '*.html' | wc -l)
+          html_gated=$(grep -l "staticrypt-html" site-encrypted -r --include='*.html' | wc -l)
+          echo "Encrypted $html_gated of $html_total HTML files."
+          if [ "$html_gated" -lt "$html_total" ]; then
+            echo "::error::Some HTML files escaped the gate — aborting deploy."
+            exit 1
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site-encrypted
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

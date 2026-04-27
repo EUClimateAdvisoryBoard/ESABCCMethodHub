@@ -1,0 +1,39 @@
+name: GDPR data retention purge
+
+# GDPR Art. 5(1)(e): personal data must not be kept longer than necessary.
+# This workflow calls /api/admin/retention weekly to delete activity-log
+# rows and inbound emails past their configured retention windows.
+
+on:
+  schedule:
+    # Sundays at 03:00 UTC — quiet period for the secretariat.
+    - cron: '0 3 * * 0'
+  workflow_dispatch:
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger retention purge
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          RETENTION_CRON_SECRET: ${{ secrets.RETENTION_CRON_SECRET }}
+        run: |
+          if [ -z "$APP_URL" ] || [ -z "$RETENTION_CRON_SECRET" ]; then
+            echo "APP_URL and RETENTION_CRON_SECRET secrets must be configured."
+            exit 1
+          fi
+
+          response=$(curl -sS -w "\nHTTP_STATUS:%{http_code}" \
+            -X POST "$APP_URL/api/admin/retention" \
+            -H "X-Cron-Secret: $RETENTION_CRON_SECRET")
+
+          status=$(echo "$response" | tail -n1 | sed 's/HTTP_STATUS://')
+          body=$(echo "$response" | sed '$d')
+
+          echo "HTTP $status"
+          echo "$body"
+
+          if [ "$status" != "200" ]; then
+            exit 1
+          fi

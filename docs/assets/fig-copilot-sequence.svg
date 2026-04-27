@@ -1,0 +1,128 @@
+<!--
+  Copilot OAuth sequence — detailed call path for Path B.
+  Four lanes: Browser, methodhub-app, Entra ID / EU Login, Microsoft
+  Graph + Copilot runtime. The figure makes clear that the user's
+  own licence authorises each call; no service API key is used.
+-->
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1200 680"
+     role="img"
+     aria-label="Sequence diagram of the Copilot OAuth flow — sign-in via OIDC, refresh-token exchange, delegated Graph call, Copilot runtime response.">
+  <title>M365 Copilot — OAuth sequence</title>
+
+  <defs>
+    <style>
+      .h1      { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; }
+      .sub     { font-family: "Inter", system-ui, sans-serif; font-weight: 500; fill: #5B6B7B; }
+      .lane    { font-family: "Inter", system-ui, sans-serif; font-weight: 700; fill: #3D5584; font-size: 13.5px; }
+      .step    { font-family: "Inter", system-ui, sans-serif; fill: #3D5584; font-size: 12px; }
+      .mono    { font-family: "JetBrains Mono", monospace; font-size: 11px; fill: #3D5584; }
+      .note    { font-family: "Inter", system-ui, sans-serif; font-size: 11px; fill: #5B6B7B; font-style: italic; }
+      .actor   { fill: #FFFFFF; stroke: #3D5584; stroke-width: 1.4; }
+      .actor-app{ fill: #E3F2FD; stroke: #1565C0; stroke-width: 1.6; }
+      .actor-id{ fill: #F1F8E9; stroke: #558B2F; stroke-width: 1.4; }
+      .actor-cp{ fill: #FFEEE3; stroke: #F26119; stroke-width: 1.4; }
+      .life    { stroke: #B8BCC2; stroke-width: 1; stroke-dasharray: 4 3; }
+      .arrow   { stroke: #3D5584; stroke-width: 1.6; fill: none; }
+      .arrow-b { stroke: #F26119; stroke-width: 1.8; fill: none; }
+      .arrow-back { stroke: #8A95A3; stroke-width: 1.6; fill: none; stroke-dasharray: 3 3; }
+      .num-bubble { fill: #608C95; }
+      .num-text   { fill: #FFFFFF; font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 11px; }
+    </style>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#3D5584" />
+    </marker>
+    <marker id="ar-b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#F26119" />
+    </marker>
+    <marker id="ar-back" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#8A95A3" />
+    </marker>
+  </defs>
+
+  <!-- Header -->
+  <text class="h1" font-size="22" x="60" y="50">M365 Copilot — delegated OAuth sequence</text>
+  <text class="sub" font-size="13" x="60" y="74">No service API key. The signed-in user's own Copilot licence authorises every call.</text>
+
+  <!-- Lane headers -->
+  <g>
+    <rect class="actor"     x="80"   y="100" width="180" height="44" rx="4" />
+    <text class="lane" text-anchor="middle" x="170" y="128">Browser (EU)</text>
+
+    <rect class="actor-app" x="340"  y="100" width="220" height="44" rx="4" />
+    <text class="lane" fill="#0D47A1" text-anchor="middle" x="450" y="128">methodhub-app</text>
+
+    <rect class="actor-id"  x="640"  y="100" width="220" height="44" rx="4" />
+    <text class="lane" fill="#33691E" text-anchor="middle" x="750" y="128">Entra ID · EU Login</text>
+
+    <rect class="actor-cp"  x="940"  y="100" width="220" height="44" rx="4" />
+    <text class="lane" fill="#B84414" text-anchor="middle" x="1050" y="128">Graph + Copilot runtime</text>
+  </g>
+
+  <!-- Lifelines -->
+  <line class="life" x1="170"  y1="144" x2="170"  y2="620" />
+  <line class="life" x1="450"  y1="144" x2="450"  y2="620" />
+  <line class="life" x1="750"  y1="144" x2="750"  y2="620" />
+  <line class="life" x1="1050" y1="144" x2="1050" y2="620" />
+
+  <!-- === Phase 1 · sign-in === -->
+  <text class="sub" font-weight="700" x="60" y="170">Phase 1 · one-time sign-in (OIDC code flow)</text>
+
+  <g>
+    <circle class="num-bubble" cx="165" cy="200" r="11" /><text class="num-text" text-anchor="middle" x="165" y="204">1</text>
+    <path class="arrow" d="M 180 200 L 346 200" marker-end="url(#ar)" />
+    <text class="step" x="200" y="194">open /references</text>
+
+    <circle class="num-bubble" cx="445" cy="232" r="11" /><text class="num-text" text-anchor="middle" x="445" y="236">2</text>
+    <path class="arrow" d="M 460 232 L 740 232" marker-end="url(#ar)" />
+    <text class="step" x="478" y="226">redirect to /authorize</text>
+    <text class="mono" x="478" y="246">scope=openid User.Read Copilot.Chat.Send offline_access</text>
+
+    <circle class="num-bubble" cx="755" cy="280" r="11" /><text class="num-text" text-anchor="middle" x="755" y="284">3</text>
+    <path class="arrow-back" d="M 740 280 L 178 280" marker-end="url(#ar-back)" />
+    <text class="step" x="430" y="274">/authorize → code (via browser redirect)</text>
+
+    <circle class="num-bubble" cx="445" cy="320" r="11" /><text class="num-text" text-anchor="middle" x="445" y="324">4</text>
+    <path class="arrow" d="M 460 320 L 740 320" marker-end="url(#ar)" />
+    <text class="step" x="478" y="314">POST /token  (exchange code + client_secret)</text>
+
+    <circle class="num-bubble" cx="755" cy="360" r="11" /><text class="num-text" text-anchor="middle" x="755" y="364">5</text>
+    <path class="arrow-back" d="M 740 360 L 462 360" marker-end="url(#ar-back)" />
+    <text class="step" x="478" y="354">id_token + access_token + refresh_token</text>
+    <text class="note" x="478" y="374">refresh_token cached encrypted in auth_tokens (AES-256-GCM)</text>
+  </g>
+
+  <!-- === Phase 2 · AI call === -->
+  <text class="sub" font-weight="700" x="60" y="420">Phase 2 · every subsequent AI call</text>
+
+  <g>
+    <circle class="num-bubble" cx="165" cy="450" r="11" /><text class="num-text" text-anchor="middle" x="165" y="454">6</text>
+    <path class="arrow" d="M 180 450 L 346 450" marker-end="url(#ar)" />
+    <text class="step" x="195" y="444">click "AI summary"</text>
+
+    <circle class="num-bubble" cx="445" cy="484" r="11" /><text class="num-text" text-anchor="middle" x="445" y="488">7</text>
+    <path class="arrow" d="M 460 484 L 740 484" marker-end="url(#ar)" />
+    <text class="step" x="478" y="478">refresh → short-lived access_token</text>
+
+    <circle class="num-bubble" cx="755" cy="520" r="11" /><text class="num-text" text-anchor="middle" x="755" y="524">8</text>
+    <path class="arrow-back" d="M 740 520 L 462 520" marker-end="url(#ar-back)" />
+    <text class="step" x="478" y="514">access_token (~1 h TTL)</text>
+
+    <circle class="num-bubble" cx="445" cy="556" r="11" fill="#F26119" /><text class="num-text" text-anchor="middle" x="445" y="560">9</text>
+    <path class="arrow-b" d="M 460 556 L 1046 556" marker-end="url(#ar-b)" />
+    <text class="step" font-weight="600" fill="#B84414" x="478" y="550">POST /copilot/chats — Authorization: Bearer …</text>
+    <text class="mono" fill="#B84414" x="478" y="570">body: { message, groundingSources }</text>
+
+    <circle class="num-bubble" cx="1045" cy="600" r="11" fill="#F26119" /><text class="num-text" text-anchor="middle" x="1045" y="604">10</text>
+    <path class="arrow-back" d="M 1046 600 L 462 600" marker-end="url(#ar-back)" />
+    <text class="step" fill="#B84414" x="478" y="594">response → normaliseCopilotResponse()</text>
+    <text class="note" x="478" y="614">charged to the user's M365 Copilot seat · EU Data Boundary</text>
+  </g>
+
+  <!-- Licence-miss fallback note -->
+  <g transform="translate(940, 500)">
+    <rect x="0" y="0" width="230" height="42" fill="#FBFBFA" stroke="#B8BCC2" stroke-dasharray="3 3" rx="4" />
+    <text class="sub" font-size="10.5" x="10" y="17">402 / 403 on step 9 →</text>
+    <text class="mono" font-size="10" x="10" y="34">LLM_FALLBACK_PROVIDER (Path A)</text>
+  </g>
+</svg>
