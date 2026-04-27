@@ -26,6 +26,15 @@ CREATE TABLE IF NOT EXISTS public.libraries (
 
 ALTER TABLE public.libraries ENABLE ROW LEVEL SECURITY;
 
+CREATE TABLE IF NOT EXISTS public.library_members (
+  library_id UUID REFERENCES public.libraries(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
+  role TEXT CHECK (role IN ('viewer', 'editor', 'admin')) DEFAULT 'viewer',
+  PRIMARY KEY (library_id, user_id)
+);
+
+ALTER TABLE public.library_members ENABLE ROW LEVEL SECURITY;
+
 CREATE POLICY "Users can view own libraries"
   ON public.libraries FOR SELECT
   USING (
@@ -42,15 +51,6 @@ CREATE POLICY "Owners can update libraries"
 
 CREATE POLICY "Owners can delete libraries"
   ON public.libraries FOR DELETE USING (owner_id = auth.uid());
-
-CREATE TABLE IF NOT EXISTS public.library_members (
-  library_id UUID REFERENCES public.libraries(id) ON DELETE CASCADE,
-  user_id UUID REFERENCES public.profiles(id) ON DELETE CASCADE,
-  role TEXT CHECK (role IN ('viewer', 'editor', 'admin')) DEFAULT 'viewer',
-  PRIMARY KEY (library_id, user_id)
-);
-
-ALTER TABLE public.library_members ENABLE ROW LEVEL SECURITY;
 
 CREATE POLICY "Members can view membership"
   ON public.library_members FOR SELECT
