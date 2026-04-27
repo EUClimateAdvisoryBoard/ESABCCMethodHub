@@ -98,6 +98,7 @@ export async function POST(request: NextRequest) {
       location: clampString(body.location, MAX_LOCATION) || undefined,
       importance,
       tags: clampTags(body.tags),
+      policyId: clampString(body.policyId, 200) || null,
       addedBy: clampString(body.addedBy, 200) || 'User',
       authorId: typeof body.authorId === 'string' ? body.authorId : undefined,
       createdAt: new Date().toISOString(),

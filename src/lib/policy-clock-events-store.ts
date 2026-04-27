@@ -53,6 +53,12 @@ export interface PolicyClockUserEvent {
   location?: string;
   importance: PolicyClockImportance;
   tags: string[];
+  /**
+   * Universal policy id (matches `Policy.id` in `src/data/policies.ts`).
+   * When set, the Policy Clock event becomes a first-class hop into the
+   * Policy Navigator, Content Analysis, and Reference Manager modules.
+   */
+  policyId?: string | null;
   addedBy: string;
   authorId?: string;
   createdAt: string;
@@ -79,6 +85,7 @@ interface Row {
   location: string | null;
   importance: string | null;
   tags: string[] | null;
+  policy_id: string | null;
   added_by: string | null;
   author_id: string | null;
   created_at: string;
@@ -104,6 +111,7 @@ function rowToEvent(r: Row): PolicyClockUserEvent {
     location: r.location || undefined,
     importance: imp,
     tags: r.tags || [],
+    policyId: r.policy_id || null,
     addedBy: r.added_by || '',
     authorId: r.author_id || undefined,
     createdAt: r.created_at,
@@ -124,6 +132,7 @@ function eventToRow(e: PolicyClockUserEvent): Omit<Row, 'created_at'> {
     location: e.location || null,
     importance: e.importance,
     tags: e.tags,
+    policy_id: e.policyId || null,
     added_by: e.addedBy,
     author_id: e.authorId || null,
   };

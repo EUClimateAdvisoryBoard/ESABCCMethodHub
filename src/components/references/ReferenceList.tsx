@@ -8,6 +8,8 @@ import { deleteReference, exportBibTeX } from '@/lib/references/reference-servic
 import { getAllPdfAnnotationCounts } from '@/lib/references/pdf-annotations';
 import { formatCitation, CITATION_STYLE_LABELS, type CitationStyle } from '@/lib/references/format-citation';
 import { usePreferences } from '@/lib/preferences-context';
+import { isPolicyCitation } from '@/lib/policy-citations';
+import { linkToPolicyNavigator, linkToContentAnalysis } from '@/lib/cross-module-links';
 
 interface ReferenceListProps {
   references: Reference[];
@@ -269,7 +271,9 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             <span>{sorted.length} reference{sorted.length !== 1 ? 's' : ''}</span>
           </div>
 
-          {sorted.map(ref => (
+          {sorted.map(ref => {
+            const isPolicy = isPolicyCitation(ref);
+            return (
             <div
               key={ref.id}
               role="button"
@@ -278,7 +282,9 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
               className={`mh-focus mh-motion-fast border rounded-lg p-3 sm:p-4 cursor-pointer ${
                 selectedIds.has(ref.id)
                   ? 'border-[var(--mh-status-primary)] bg-[var(--mh-status-primary-bg)]'
-                  : 'border-[var(--mh-border)] bg-[var(--mh-card)] hover:border-[var(--mh-status-primary)]'
+                  : isPolicy
+                    ? 'border-purple-300 bg-purple-50/40 hover:border-purple-500'
+                    : 'border-[var(--mh-border)] bg-[var(--mh-card)] hover:border-[var(--mh-status-primary)]'
               }`}
               onClick={() => onEditReference(ref)}
               onKeyDown={e => { if (e.key === 'Enter') { e.preventDefault(); onEditReference(ref); } }}
@@ -301,6 +307,15 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                       {ref.title}
                     </h3>
                     <div className="flex items-center gap-1 shrink-0 self-start">
+                      {isPolicy && (
+                        <span
+                          className="mh-badge shrink-0"
+                          style={{ background: '#F3E8FF', color: '#7E22CE', borderColor: '#D8B4FE' }}
+                          title="Free-floating policy citation — universal across Policy Navigator, Content Analysis, Policy Clock and the Reference Manager."
+                        >
+                          Policy Citation
+                        </span>
+                      )}
                       {(ref.funding || []).some(isEuFunder) && (
                         <span
                           className="mh-badge shrink-0"
@@ -385,6 +400,39 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                       </button>
                     )}
 
+                    {/* Cross-module navigation for policy citations. Same
+                        universal id powers Policy Navigator, Content
+                        Analysis, and Policy Clock — clicking any of these
+                        chips lands directly on this policy in that module. */}
+                    {isPolicy && (
+                      <>
+                        <Link
+                          href={linkToPolicyNavigator(ref.id)}
+                          onClick={e => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-primary/10 hover:bg-primary/20 text-primary text-xs font-medium transition"
+                          title="Open in Policy Navigator"
+                        >
+                          Policy Navigator
+                        </Link>
+                        <Link
+                          href={linkToContentAnalysis({ policyId: ref.id })}
+                          onClick={e => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-secondary/10 hover:bg-secondary/20 text-secondary text-xs font-medium transition"
+                          title="Open in Content Analysis"
+                        >
+                          Content Analysis
+                        </Link>
+                        <Link
+                          href="/news-feed?view=policy-clock"
+                          onClick={e => e.stopPropagation()}
+                          className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-purple-100 hover:bg-purple-200 text-purple-700 text-xs font-medium transition"
+                          title="See review schedule on the Policy Clock"
+                        >
+                          Policy Clock
+                        </Link>
+                      </>
+                    )}
+
                     {/* PDF icon button → annotation viewer.  Only shown when
                         a PDF has actually been uploaded for this reference. */}
                     {ref.pdf_url && (
@@ -419,7 +467,8 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       )}
     </div>

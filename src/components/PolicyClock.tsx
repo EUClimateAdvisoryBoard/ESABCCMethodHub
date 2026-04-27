@@ -2,6 +2,12 @@
 
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { policies as POLICY_CORPUS } from '@/data/policies';
+import {
+  linkToPolicyNavigator,
+  linkToContentAnalysis,
+  linkToReferenceCitation,
+} from '@/lib/cross-module-links';
 
 /**
  * Policy Clock — horizontal swim-lane timeline of the Brussels bubble.
@@ -45,7 +51,7 @@ export interface PolicyClockEvent {
 interface APIResponse {
   events: PolicyClockEvent[];
   overview: { text: string; generated: boolean; reason?: string };
-  counts: { total: number; live: number; curated: number; by_category: Record<string, number> };
+  counts: { total: number; live: number; curated: number; reviews_due?: number; user?: number; by_category: Record<string, number> };
   sources: { key: string; label: string }[];
   last_updated: string;
 }
@@ -189,6 +195,19 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
 
   const expandedEvent = data?.events.find(e => e.id === expandedId) || null;
 
+  // Upcoming reviews strip — every `revision`-category event due in the next
+  // 12 months, sorted by date. Clickable rows expand the event in place and
+  // surface the cross-module nav (Policy Navigator / Content Analysis /
+  // Reference Manager) inside the detail panel.
+  const upcomingReviews = useMemo(() => {
+    if (!data) return [] as PolicyClockEvent[];
+    const horizon = new Date(Date.now() + 365 * 86400000).toISOString().slice(0, 10);
+    return data.events
+      .filter(e => e.category === 'revision' && e.date >= today && e.date <= horizon)
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(0, 12);
+  }, [data, today]);
+
   return (
     <div className="bg-white rounded-lg border border-grey-200 shadow-sm overflow-hidden">
       {/* ── Header ────────────────────────────────────────────────── */}
@@ -258,6 +277,65 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
                 {data.overview.generated && <span className="text-[9px] text-tertiary ml-1">(AI)</span>}
               </p>
             </div>
+          </div>
+        )}
+
+        {/* Reviews due — surfaces all upcoming review events and gives one-tap
+            access to the linked policy's Navigator card, Content Analysis
+            workbench, and official Reference Manager citation. */}
+        {upcomingReviews.length > 0 && (
+          <div className="rounded-md border border-grey-200 bg-white p-2.5 mb-2">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: CAT.revision.color }} />
+              <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: CAT.revision.color }}>
+                Reviews due ({upcomingReviews.length})
+              </span>
+              <span className="text-[10px] text-tertiary">— next 12 months</span>
+            </div>
+            <ul className="flex flex-col gap-1 max-h-48 overflow-y-auto">
+              {upcomingReviews.map(ev => {
+                const policy = ev.policyId ? POLICY_CORPUS.find(p => p.id === ev.policyId) : null;
+                return (
+                  <li key={ev.id} className="flex items-center gap-2 text-[11px]">
+                    <button
+                      type="button"
+                      onClick={() => setExpandedId(ev.id)}
+                      className="flex-1 text-left flex items-center gap-2 hover:bg-grey-50 rounded px-1.5 py-1 transition"
+                      title="Open event detail"
+                    >
+                      <span className="text-tertiary tabular-nums shrink-0">{ev.date}</span>
+                      <span className="text-tertiary-dark truncate flex-1">{ev.title}</span>
+                      <span className="text-[9px] text-tertiary shrink-0">{relLabel(ev.date)}</span>
+                    </button>
+                    {ev.policyId && (
+                      <div className="flex items-center gap-1 shrink-0">
+                        <Link
+                          href={linkToPolicyNavigator(ev.policyId)}
+                          className="text-[9px] font-semibold px-1.5 py-0.5 rounded border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition"
+                          title={`Open ${policy?.short_title || ev.policyId} in Policy Navigator`}
+                        >
+                          Nav
+                        </Link>
+                        <Link
+                          href={linkToContentAnalysis({ policyId: ev.policyId, context: ev.title })}
+                          className="text-[9px] font-semibold px-1.5 py-0.5 rounded border border-secondary/30 bg-secondary/10 text-secondary hover:bg-secondary/20 transition"
+                          title="Open in Content Analysis"
+                        >
+                          CA
+                        </Link>
+                        <Link
+                          href={linkToReferenceCitation(ev.policyId)}
+                          className="text-[9px] font-semibold px-1.5 py-0.5 rounded border border-purple-300 bg-purple-50 text-purple-700 hover:bg-purple-100 transition"
+                          title="Open official citation in Reference Manager"
+                        >
+                          Cite
+                        </Link>
+                      </div>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
           </div>
         )}
 
@@ -442,6 +520,71 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
                   ))}
                 </div>
               )}
+
+              {/* Cross-module navigation — appears whenever the event carries
+                  a universal policyId, stitching Policy Clock together with
+                  Policy Navigator, Content Analysis, and the Reference
+                  Manager (where the policy is rendered as an official
+                  citation). */}
+              {expandedEvent.policyId && (() => {
+                const policy = POLICY_CORPUS.find(p => p.id === expandedEvent.policyId);
+                return (
+                  <div className="mt-3 pt-2.5 border-t border-grey-200">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" className="text-primary">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                      </svg>
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-tertiary-dark">
+                        Linked policy
+                      </span>
+                      {policy && (
+                        <span className="text-[10px] font-semibold text-primary">{policy.short_title}</span>
+                      )}
+                      <span className="text-[9px] font-mono text-tertiary">id: {expandedEvent.policyId}</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      <Link
+                        href={linkToPolicyNavigator(expandedEvent.policyId)}
+                        className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded border border-primary/30 bg-primary/10 text-primary hover:bg-primary/20 transition"
+                      >
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                          <circle cx="12" cy="12" r="3" />
+                          <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24" />
+                        </svg>
+                        Policy Navigator
+                      </Link>
+                      <Link
+                        href={linkToContentAnalysis({
+                          policyId: expandedEvent.policyId,
+                          context: expandedEvent.title,
+                        })}
+                        className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded border border-secondary/30 bg-secondary/10 text-secondary hover:bg-secondary/20 transition"
+                      >
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                          <polyline points="14 2 14 8 20 8" />
+                          <line x1="9" y1="13" x2="15" y2="13" />
+                          <line x1="9" y1="17" x2="13" y2="17" />
+                        </svg>
+                        Content Analysis
+                      </Link>
+                      <Link
+                        href={linkToReferenceCitation(expandedEvent.policyId)}
+                        className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded border border-purple-300 bg-purple-50 text-purple-700 hover:bg-purple-100 transition"
+                        title="Open the official policy citation in the Reference Manager"
+                      >
+                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
+                          <path d="M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7" />
+                          <path d="M3 7l9 6 9-6" />
+                          <path d="M3 7l9-4 9 4" />
+                        </svg>
+                        Official Citation
+                      </Link>
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
             <button onClick={() => setExpandedId(null)}
               className="text-tertiary hover:text-tertiary-dark p-1">

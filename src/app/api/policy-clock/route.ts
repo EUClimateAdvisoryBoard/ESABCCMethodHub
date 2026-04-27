@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { callLLM, hasAnyLLMKey } from '@/lib/ai-summary';
 import { getPolicyClockUserEvents } from '@/lib/policy-clock-events-store';
+import { buildReviewDueEvents } from '@/lib/policy-clock-reviews';
 
 /**
  * Policy Clock API — the "Brussels bubble" calendar.
@@ -852,12 +853,34 @@ export async function GET(request: NextRequest) {
     category: ev.category,
     source: ev.sourceLabel || 'User-added',
     sourceUrl: ev.sourceUrl,
+    policyId: ev.policyId || null,
     location: ev.location,
     importance: ev.importance,
     tags: ev.tags,
   }));
 
-  let events: PolicyClockEvent[] = [...CURATED_EVENTS, ...dedupedLive, ...userPolicyEvents];
+  // Synthesised "review due" events for every tracked policy whose 5-year
+  // review window falls inside the timeline horizon. Carries `policyId` so
+  // the timeline can deep-link into the Policy Navigator, Content Analysis
+  // and Reference Manager modules.
+  const reviewEvents = buildReviewDueEvents();
+  // Drop synthesised reviews whose policy already has a curated revision/
+  // review event in the same calendar year — the curated entry is more
+  // precise.
+  const curatedRevisionKeys = new Set(
+    CURATED_EVENTS.filter(e => e.category === 'revision' && e.policyId)
+      .map(e => `${e.policyId}-${e.date.slice(0, 4)}`),
+  );
+  const dedupedReviewEvents = reviewEvents.filter(e =>
+    !curatedRevisionKeys.has(`${e.policyId}-${e.date.slice(0, 4)}`),
+  );
+
+  let events: PolicyClockEvent[] = [
+    ...CURATED_EVENTS,
+    ...dedupedReviewEvents,
+    ...dedupedLive,
+    ...userPolicyEvents,
+  ];
 
   // Filter by category if requested.
   if (category) events = events.filter(e => e.category === category);
@@ -869,8 +892,12 @@ export async function GET(request: NextRequest) {
 
   // Compute overview from the unfiltered upcoming set so the summary doesn't
   // depend on the active filter.
-  const allEvents = [...CURATED_EVENTS, ...dedupedLive, ...userPolicyEvents]
-    .sort((a, b) => a.date.localeCompare(b.date));
+  const allEvents = [
+    ...CURATED_EVENTS,
+    ...dedupedReviewEvents,
+    ...dedupedLive,
+    ...userPolicyEvents,
+  ].sort((a, b) => a.date.localeCompare(b.date));
   const overview = skipAI
     ? { text: fallbackOverview(allEvents), generated: false, reason: 'skipped' }
     : await buildWeeklyOverview(allEvents);
@@ -883,6 +910,7 @@ export async function GET(request: NextRequest) {
         total: events.length,
         live: dedupedLive.length,
         curated: CURATED_EVENTS.length,
+        reviews_due: dedupedReviewEvents.length,
         user: userPolicyEvents.length,
         by_category: countBy(events, e => e.category),
       },
