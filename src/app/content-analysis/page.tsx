@@ -1197,8 +1197,9 @@ function ContentAnalysisPageInner() {
       {lockMode === 'watcher' && (
         <div className="bg-[#FEF3C7] border-b border-[#FCD34D] px-4 sm:px-6 py-1.5 text-[11.5px] text-[#92400E]">
           <strong>Read-only.</strong>{' '}
-          {projectLock.lock?.holderName ?? 'Another editor'} is editing this project.
-          Click <em>Request edit access</em> in the header to take over.
+          {projectLock.lock
+            ? <>{projectLock.lock.holderName || 'Another editor'} is editing this project. Click <em>Request edit access</em> in the header to take over.</>
+            : <>You handed off the project lock. Click <em>Resume editing</em> in the header to take it back.</>}
         </div>
       )}
       {activeTab === 'workbench' && (
