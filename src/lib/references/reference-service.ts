@@ -33,7 +33,7 @@
  */
 
 import { supabase } from '../supabase';
-import { Reference, ReferenceLibrary, LibraryMember, CSLItem, CSLName } from './types';
+import { Reference, ReferenceLibrary, LibraryMember, CSLItem, CSLName, FundingEntry } from './types';
 import { generateCitationKey, makeUniqueKey, buildCSLJson, parseBibTeX, parseRIS } from './citation-utils';
 
 // ── Library Operations ──
@@ -146,6 +146,7 @@ export async function addReference(libraryId: string, cslJson: CSLItem, tags?: s
     citation_key: citationKey,
     tags: tags || null,
     notes: notes || null,
+    funding: cslJson.funder || null,
   };
 
   if (!supabase) return addLocalReference(ref);
@@ -172,6 +173,7 @@ export async function updateReference(id: string, updates: Partial<{
   tags: string[];
   notes: string;
   pdf_url: string;
+  funding: FundingEntry[];
 }>): Promise<Reference> {
   if (!supabase) return updateLocalReference(id, updates);
 
@@ -237,6 +239,14 @@ export async function resolveFromDOI(doi: string): Promise<CSLItem> {
   if (work.publisher) csl.publisher = work.publisher;
   if (work.abstract) csl.abstract = stripHtml(work.abstract);
   if (work.URL) csl.URL = work.URL;
+
+  if (Array.isArray(work.funder) && work.funder.length > 0) {
+    csl.funder = work.funder.map((f: any): FundingEntry => ({
+      name: f.name || '',
+      doi: f.DOI || undefined,
+      awards: Array.isArray(f.award) ? f.award.filter(Boolean) : undefined,
+    })).filter((f: FundingEntry) => f.name);
+  }
 
   return csl;
 }
@@ -513,6 +523,7 @@ function addLocalReference(ref: Omit<Reference, 'id' | 'created_at' | 'updated_a
     ...ref,
     id: crypto.randomUUID(),
     pdf_url: null,
+    funding: ref.funding ?? null,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
     created_by: null,

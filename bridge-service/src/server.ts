@@ -77,6 +77,10 @@ const supabaseUrl = process.env.SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_ANON_KEY || '';
 const supabase = supabaseUrl && supabaseKey ? createClient(supabaseUrl, supabaseKey) : null;
 
+// Upstream MethodHub URL — the bridge calls /api/report-plans/:id to read the
+// plan when the Word add-in scopes a session to a specific report.
+const METHODHUB_URL = (process.env.METHODHUB_URL || 'https://methodhub.eu').replace(/\/+$/, '');
+
 // Initialize SQLite cache
 initCache();
 
@@ -289,6 +293,103 @@ app.post('/api/sync', async (req, res) => {
     res.json({ synced: (data || []).length });
   } catch (err: any) {
     res.status(500).json({ error: err.message });
+  }
+});
+
+// ──── REPORT PLAN SCOPE ────
+//
+// The Word add-in tells the bridge "this document is report X" by hitting
+// /api/report-plan/:id. The bridge then:
+//
+//   1. fetches the plan from the upstream MethodHub server,
+//   2. returns the plan body + all its references in CSL-JSON form, and
+//   3. computes the same EU-funded share the in-app panel shows so the
+//      add-in can render it next to the document.
+//
+// This is the "report library" the Word side uses to limit citation
+// suggestions to references actually attached to the report being authored.
+
+const EU_FUNDER_DOI_PREFIXES = new Set<string>([
+  '10.13039/501100000780',
+  '10.13039/100010661',
+  '10.13039/100018693',
+  '10.13039/501100007601',
+  '10.13039/501100008530',
+  '10.13039/501100002347',
+]);
+const EU_FUNDER_NAME_HINTS = [
+  'european commission',
+  'horizon 2020',
+  'horizon europe',
+  'european research council',
+  'erc executive agency',
+  'cinea',
+  'life programme',
+  'digital europe programme',
+];
+
+interface PlanFunder {
+  name?: string;
+  doi?: string;
+  awards?: string[];
+}
+
+function isEuFunder(f: PlanFunder): boolean {
+  if (f.doi && EU_FUNDER_DOI_PREFIXES.has(f.doi)) return true;
+  const lower = (f.name || '').toLowerCase();
+  return EU_FUNDER_NAME_HINTS.some(h => lower.includes(h));
+}
+
+app.get('/api/report-plans', async (_req, res) => {
+  try {
+    const upstream = await fetch(`${METHODHUB_URL}/api/report-plans`, {
+      headers: { 'Accept': 'application/json' },
+    });
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `Upstream HTTP ${upstream.status}` });
+    }
+    const data = await upstream.json();
+    res.json(data);
+  } catch (err: any) {
+    res.status(502).json({ error: `Could not reach MethodHub at ${METHODHUB_URL}: ${err.message}` });
+  }
+});
+
+app.get('/api/report-plan/:id', async (req, res) => {
+  const planId = req.params.id;
+  try {
+    const upstream = await fetch(`${METHODHUB_URL}/api/report-plans/${encodeURIComponent(planId)}`, {
+      headers: { 'Accept': 'application/json' },
+    });
+    if (upstream.status === 404) {
+      return res.status(404).json({ error: `Plan ${planId} not found upstream` });
+    }
+    if (!upstream.ok) {
+      return res.status(upstream.status).json({ error: `Upstream HTTP ${upstream.status}` });
+    }
+    const data: { plan?: { id: string; name: string; references?: Array<{ id: string; funding?: PlanFunder[] }> } } = await upstream.json();
+    const plan = data.plan;
+    if (!plan) return res.status(502).json({ error: 'Upstream did not return a plan' });
+
+    const refs = plan.references || [];
+    const total = refs.length;
+    const withEu = refs.filter(r => (r.funding || []).some(isEuFunder)).length;
+    const withAny = refs.filter(r => (r.funding || []).length > 0).length;
+
+    res.json({
+      planId: plan.id,
+      planName: plan.name,
+      referenceIds: refs.map(r => r.id),
+      references: refs,
+      funding: {
+        total,
+        withAny,
+        withEu,
+        euShare: total > 0 ? withEu / total : 0,
+      },
+    });
+  } catch (err: any) {
+    res.status(502).json({ error: `Could not reach MethodHub at ${METHODHUB_URL}: ${err.message}` });
   }
 });
 

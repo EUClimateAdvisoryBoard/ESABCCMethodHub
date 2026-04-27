@@ -12,6 +12,44 @@
     <!-- Connection status -->
     <div id="connectionStatus" class="status">Connecting...</div>
 
+    <!-- Report Plan scope -->
+    <div id="reportScope" class="report-scope" data-state="loading" aria-live="polite">
+      <div class="report-scope-row">
+        <div class="report-scope-info">
+          <div class="report-scope-label">Report</div>
+          <div id="reportScopeName" class="report-scope-name">Loading…</div>
+          <div id="reportScopeStats" class="report-scope-stats"></div>
+        </div>
+        <div class="report-scope-actions">
+          <button id="reportScopeChange" class="btn btn-sm btn-ghost" type="button"
+                  onclick="openReportPicker()">Change</button>
+          <button id="reportScopeClear" class="btn btn-sm btn-ghost hidden" type="button"
+                  onclick="clearReportScope()">Clear</button>
+        </div>
+      </div>
+      <div id="reportScopeError" class="report-scope-error hidden" role="alert"></div>
+    </div>
+
+    <!-- Report picker dialog -->
+    <div id="reportPicker" class="report-picker hidden" role="dialog" aria-modal="true"
+         aria-labelledby="reportPickerTitle">
+      <div class="report-picker-panel">
+        <div class="report-picker-header">
+          <span id="reportPickerTitle">Pick a report plan</span>
+          <button class="btn btn-ghost btn-sm" type="button" onclick="closeReportPicker()"
+                  aria-label="Close">&times;</button>
+        </div>
+        <input id="reportPickerSearch" class="report-picker-search" type="text"
+               placeholder="Filter by name…" />
+        <ul id="reportPickerList" class="report-picker-list">
+          <li class="report-picker-empty">Loading plans…</li>
+        </ul>
+        <div class="report-picker-footer">
+          <button class="btn btn-sm btn-ghost" type="button" onclick="reloadReportPickerList()">Refresh</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Tab navigation -->
     <div class="tabs">
       <button class="tab active" data-tab="search" onclick="switchTab('search')">Search &amp; Insert</button>

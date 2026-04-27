@@ -31,6 +31,8 @@ Defined in [`src/server.ts`](src/server.ts).
 | POST   | `/api/cite/format`                    | Format one or more citations (CSL-JSON + style)  |
 | POST   | `/api/cite/bibliography`              | Build a bibliography                             |
 | POST   | `/api/sync`                           | Pull new refs from Supabase by `updated_at`      |
+| GET    | `/api/report-plans`                   | List report plans (proxies MethodHub)            |
+| GET    | `/api/report-plan/:id`                | Resolve a plan + its references via MethodHub; returns funding summary |
 
 CORS allows the Office WebView (null origin) and `localhost`.
 
@@ -59,6 +61,7 @@ npm run dev     # ts-node src/server.ts
 | `BRIDGE_PORT`       | `8585`  | Listen port                           |
 | `SUPABASE_URL`      | —       | Remote sync; cache-only mode if unset |
 | `SUPABASE_ANON_KEY` | —       | Supabase anon key                     |
+| `METHODHUB_URL`     | `https://methodhub.eu` | Origin used to resolve report plans for `/api/report-plan/:id` |
 
 Health check: `curl http://127.0.0.1:8585/api/status`.
 

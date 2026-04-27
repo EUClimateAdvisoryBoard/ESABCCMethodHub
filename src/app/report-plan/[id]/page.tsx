@@ -7,11 +7,13 @@ import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
 import { getPlan, savePlan } from '@/lib/report-plans/client';
 import type {
+  PlanFundingEntry,
   PlanReference,
   ReportPlan,
   ReportSection,
 } from '@/lib/report-plans/types';
 import { downloadDocx } from '@/lib/report-plans/word-export';
+import { isEuFunder, summarisePlanFunding } from '@/lib/report-plans/funding-analysis';
 
 // Shape returned by /api/references/library.  Same as the web references
 // fallback loader in src/app/references/page.tsx but reduced to the fields we
@@ -91,6 +93,11 @@ interface CrossrefAuthor {
   family?: string;
   given?: string;
 }
+interface CrossrefFunder {
+  name?: string;
+  DOI?: string;
+  award?: string[];
+}
 interface CrossrefMessage {
   title?: string[];
   author?: CrossrefAuthor[];
@@ -103,6 +110,7 @@ interface CrossrefMessage {
   issue?: string;
   page?: string;
   URL?: string;
+  funder?: CrossrefFunder[];
 }
 
 async function lookupDoi(doi: string): Promise<PlanReference | null> {
@@ -140,6 +148,15 @@ async function lookupDoi(doi: string): Promise<PlanReference | null> {
     issue: m.issue || '',
     pages: m.page || '',
     url: m.URL || '',
+    funding: Array.isArray(m.funder)
+      ? m.funder
+          .map((f): PlanFundingEntry => ({
+            name: f.name || '',
+            doi: f.DOI || undefined,
+            awards: Array.isArray(f.award) ? f.award.filter(Boolean) : undefined,
+          }))
+          .filter(f => f.name)
+      : undefined,
   };
 }
 
@@ -470,6 +487,8 @@ export default function ReportPlanEditorPage() {
           </div>
         </div>
 
+        <FundingPanel plan={plan} />
+
         {/* Sections */}
         <div className="space-y-4">
           {plan.sections.map((section, i) => (
@@ -751,6 +770,102 @@ export default function ReportPlanEditorPage() {
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Funding analysis panel — shows how much of the plan's bibliography is
+ * EU-funded so the user can include it in the report's methodology /
+ * acknowledgements section. CSV download uses the same shape the
+ * Funding Sources beta module exports, so the two can be cross-checked.
+ */
+function FundingPanel({ plan }: { plan: ReportPlan }) {
+  const summary = useMemo(() => summarisePlanFunding(plan), [plan]);
+  const pctEu = summary.totalReferences > 0
+    ? Math.round((summary.withEuFunding / summary.totalReferences) * 100)
+    : 0;
+  const pctAny = summary.totalReferences > 0
+    ? Math.round((summary.withAnyFunding / summary.totalReferences) * 100)
+    : 0;
+
+  const downloadCsv = () => {
+    const header = 'reference_id,doi,title,funders,eu_funded\n';
+    const csvEscape = (s: string) => `"${(s || '').replace(/"/g, '""')}"`;
+    const body = plan.references.map(r => {
+      const funders = (r.funding || []).map(f => f.name).join('; ');
+      const eu = (r.funding || []).some(isEuFunder) ? 'yes' : 'no';
+      return [r.id, r.doi || '', r.title, funders, eu].map(csvEscape).join(',');
+    }).join('\n');
+    const blob = new Blob([header + body], { type: 'text/csv;charset=utf-8' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `funding-${plan.id}.csv`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  };
+
+  if (summary.totalReferences === 0) return null;
+
+  return (
+    <div className="bg-white border border-grey-200 shadow-sm rounded-xl p-5 mb-6">
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div>
+          <h2 className="text-base font-semibold text-tertiary-dark">Funding analysis</h2>
+          <p className="text-xs text-tertiary mt-0.5">
+            Aggregated from each reference&apos;s funder metadata (auto-filled via CrossRef when a DOI is present).
+          </p>
+        </div>
+        <button
+          onClick={downloadCsv}
+          className="px-3 py-1.5 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-xs rounded border border-grey-200"
+        >
+          Download CSV
+        </button>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+        <div className="border border-grey-200 rounded-lg p-3">
+          <p className="text-2xl font-bold text-[#007B6C]">{pctEu}%</p>
+          <p className="text-xs text-tertiary-dark font-semibold">EU-funded references</p>
+          <p className="text-[10px] text-tertiary">{summary.withEuFunding} of {summary.totalReferences}</p>
+        </div>
+        <div className="border border-grey-200 rounded-lg p-3">
+          <p className="text-2xl font-bold text-[#003399]">{pctAny}%</p>
+          <p className="text-xs text-tertiary-dark font-semibold">With any funder tag</p>
+          <p className="text-[10px] text-tertiary">{summary.withAnyFunding} of {summary.totalReferences}</p>
+        </div>
+        <div className="border border-grey-200 rounded-lg p-3">
+          <p className="text-2xl font-bold text-[#6667AB]">{summary.byFunder.length}</p>
+          <p className="text-xs text-tertiary-dark font-semibold">Distinct funders</p>
+          <p className="text-[10px] text-tertiary">Across the plan&apos;s bibliography</p>
+        </div>
+      </div>
+
+      {summary.byFunder.length > 0 && (
+        <div className="border border-grey-100 rounded overflow-hidden">
+          <table className="w-full text-xs">
+            <thead className="bg-grey-50 text-tertiary-dark">
+              <tr>
+                <th className="text-left px-3 py-2 font-semibold">Funder</th>
+                <th className="text-left px-3 py-2 font-semibold w-16">EU?</th>
+                <th className="text-right px-3 py-2 font-semibold w-20">References</th>
+              </tr>
+            </thead>
+            <tbody>
+              {summary.byFunder.slice(0, 10).map(f => (
+                <tr key={f.name} className="border-t border-grey-100">
+                  <td className="px-3 py-1.5">{f.name}</td>
+                  <td className="px-3 py-1.5">
+                    {f.isEu && <span className="inline-block px-2 py-0.5 rounded-full text-[10px] font-semibold bg-[#E6F2F0] text-[#007B6C]">EU</span>}
+                  </td>
+                  <td className="px-3 py-1.5 text-right font-mono">{f.count}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }

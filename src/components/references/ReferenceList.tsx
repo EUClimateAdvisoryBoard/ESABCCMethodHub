@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Reference, ITEM_TYPE_LABELS, CSLItemType } from '@/lib/references/types';
+import { Reference, ITEM_TYPE_LABELS, CSLItemType, isEuFunder } from '@/lib/references/types';
 import { formatAuthors } from '@/lib/references/citation-utils';
 import { deleteReference, exportBibTeX } from '@/lib/references/reference-service';
 import { getAllPdfAnnotationCounts } from '@/lib/references/pdf-annotations';
@@ -300,9 +300,20 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                     >
                       {ref.title}
                     </h3>
-                    <span className="mh-badge mh-badge-neutral shrink-0 self-start">
-                      {ITEM_TYPE_LABELS[ref.item_type as CSLItemType] || ref.item_type}
-                    </span>
+                    <div className="flex items-center gap-1 shrink-0 self-start">
+                      {(ref.funding || []).some(isEuFunder) && (
+                        <span
+                          className="mh-badge shrink-0"
+                          style={{ background: '#E6F2F0', color: '#007B6C' }}
+                          title={(ref.funding || []).map(f => f.name).join(', ')}
+                        >
+                          EU-funded
+                        </span>
+                      )}
+                      <span className="mh-badge mh-badge-neutral">
+                        {ITEM_TYPE_LABELS[ref.item_type as CSLItemType] || ref.item_type}
+                      </span>
+                    </div>
                   </div>
                   <p
                     className="text-[var(--mh-muted)] mt-1"

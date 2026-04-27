@@ -50,6 +50,27 @@ export interface CSLDate {
   literal?: string;
 }
 
+/**
+ * Funding source attached to a reference. Mirrors the CrossRef
+ * `funder[]` shape so DOI auto-fill round-trips cleanly.
+ *
+ *   - `name`     — human-readable funder ("European Commission",
+ *                  "Horizon 2020", "Wellcome Trust").
+ *   - `doi`      — funder DOI prefix (e.g. 10.13039/501100000780 for the
+ *                  EC). Lets us match the funder against the EU portfolio
+ *                  in the Funding Sources module.
+ *   - `awards`   — list of grant identifiers attributable to this funder
+ *                  (e.g. "101081244" for a Horizon Europe project ID).
+ *   - `program`  — optional sub-programme ("Horizon Europe", "LIFE",
+ *                  "Digital Europe Programme").
+ */
+export interface FundingEntry {
+  name: string;
+  doi?: string;
+  awards?: string[];
+  program?: string;
+}
+
 export interface CSLItem {
   id: string;
   type: CSLItemType;
@@ -78,6 +99,8 @@ export interface CSLItem {
   genre?: string;
   source?: string;
   'number-of-pages'?: string;
+  /** Non-standard CSL extension; preserved through Zotero round-trips. */
+  funder?: FundingEntry[];
 }
 
 // ── Application-level types ──
@@ -112,6 +135,8 @@ export interface Reference {
   tags: string[] | null;
   notes: string | null;
   pdf_url: string | null;
+  /** Lifted out of csl_json for cheap aggregation across a library. */
+  funding: FundingEntry[] | null;
   created_at: string;
   updated_at: string;
   created_by: string | null;
@@ -141,6 +166,35 @@ export interface ReferenceFormData {
   url: string;
   tags: string[];
   notes: string;
+  funding: FundingEntry[];
+}
+
+/** Funder DOI prefixes that count as "EU funded" for our analysis. */
+export const EU_FUNDER_DOI_PREFIXES = new Set<string>([
+  '10.13039/501100000780', // European Commission
+  '10.13039/100010661',    // Horizon 2020
+  '10.13039/100018693',    // Horizon Europe
+  '10.13039/501100007601', // European Research Council (ERC)
+  '10.13039/501100008530', // European Regional Development Fund
+  '10.13039/501100002347', // LIFE Programme
+]);
+
+/** Loose name match for funders that may not carry a DOI prefix in CrossRef. */
+const EU_FUNDER_NAME_HINTS = [
+  'european commission',
+  'horizon 2020',
+  'horizon europe',
+  'european research council',
+  'erc executive agency',
+  'cinea',
+  'life programme',
+  'digital europe programme',
+];
+
+export function isEuFunder(entry: FundingEntry): boolean {
+  if (entry.doi && EU_FUNDER_DOI_PREFIXES.has(entry.doi)) return true;
+  const lower = (entry.name || '').toLowerCase();
+  return EU_FUNDER_NAME_HINTS.some(h => lower.includes(h));
 }
 
 export const ITEM_TYPE_LABELS: Record<CSLItemType, string> = {

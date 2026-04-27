@@ -10,6 +10,13 @@
  * `word-export.ts` also reads from this shape. Keep it thin.
  */
 
+/** Funding entry; mirrors the CrossRef funder shape stored on Reference. */
+export interface PlanFundingEntry {
+  name: string;
+  doi?: string;
+  awards?: string[];
+}
+
 // A single reference as it lives inside a report plan.  We keep the minimum
 // metadata needed to render inline citations and a bibliography, matching the
 // shape used by the shared custom-reference library (`CustomRef`) so we can
@@ -27,6 +34,7 @@ export interface PlanReference {
   pages?: string;
   url?: string;
   fullCitation?: string;    // pre-formatted APA-ish string (optional)
+  funding?: PlanFundingEntry[];
 }
 
 // A headline / section in the report outline.
