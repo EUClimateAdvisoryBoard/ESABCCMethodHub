@@ -11,51 +11,9 @@ under the app on Vercel, which is the single source of truth.
 
 ## At a glance
 
-```mermaid
-flowchart TB
-    user((Researcher))
-
-    subgraph app ["MethodHub — single Next.js app"]
-        direction TB
-        subgraph mods ["Five production modules"]
-            direction LR
-            m1["M·01<br/>References"]
-            m2["M·02<br/>Data &amp; Scenarios"]
-            m3["M·03<br/>News"]
-            m4["M·04<br/>Policy Navigator"]
-            m5["M·05<br/>Content Analysis"]
-        end
-        docs["/docs/ subpage<br/>(MkDocs Material)"]
-        beta["beta/ — 8 unrouted experiments"]
-    end
-
-    subgraph data ["Data &amp; AI"]
-        direction LR
-        pg[("Postgres /<br/>Supabase")]
-        llm["LLM layer<br/>3 back-ends"]
-        feeds[("EUR-Lex · Eurostat<br/>IPCC · RSS")]
-    end
-
-    host["Vercel today  →  EEA Docker host (production target)"]
-
-    user --> app
-    mods --> pg
-    mods --> llm
-    mods -. daily pipelines .-> feeds
-    app -.- host
-
-    classDef module fill:#E0F2F1,stroke:#00928F,color:#003D3B
-    classDef docsNode fill:#F1F8E9,stroke:#558B2F,color:#1B5E20
-    classDef betaNode fill:#FFF3E0,stroke:#EF6C00,color:#BF360C,stroke-dasharray:4 4
-    classDef dataNode fill:#EDE7F6,stroke:#4527A0,color:#1A0E5C
-    classDef hostNode fill:#F5F5F5,stroke:#3D5265,color:#3D5265
-
-    class m1,m2,m3,m4,m5 module
-    class docs docsNode
-    class beta betaNode
-    class pg,llm,feeds dataNode
-    class host hostNode
-```
+<p align="center">
+  <img src="docs/assets/fig-system-context.svg" alt="MethodHub system context — CCE5 stewards the code, EEA hosts the service, the ESABCC Secretariat uses it daily, and peer EEA units can fork it." width="100%">
+</p>
 
 ## What is MethodHub?
 
