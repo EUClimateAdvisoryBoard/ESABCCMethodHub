@@ -223,6 +223,20 @@ function ContentAnalysisPageInner() {
   const lockMode = projectLock.mode;
   const canEdit = lockMode !== 'watcher'; // editor / idle (master) → editable
 
+  /** Single chokepoint for "is the user allowed to mutate right now?".
+   *  Returns true when editing is allowed; otherwise surfaces a toast and
+   *  returns false. Every mutating handler short-circuits on a false. */
+  const guardEdit = (): boolean => {
+    if (canEdit) return true;
+    showToast({
+      tone: 'warning',
+      message: 'Project is read-only',
+      description: `${projectLock.lock?.holderName ?? 'Another editor'} is currently editing. Click "Request edit access" in the header to take over.`,
+      timeoutMs: 6000,
+    });
+    return false;
+  };
+
   const docsInProjectScope = useMemo(() => {
     if (!activeProject) return [];
     // Reuse the store's scoping rule but against `allDocuments` (snapshot
@@ -492,6 +506,7 @@ function ContentAnalysisPageInner() {
 
   // ── Handlers ──────────────────────────────────────────────────────────
   const handleIngest = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc?.celexNumber) return;
     // Promote live-reference docs into the snapshot before we mutate.
@@ -539,6 +554,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleManualUpload = async (documentId: string, file: File) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     upsertDocument(doc);
@@ -576,6 +592,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleClassify = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     upsertDocument(doc);
@@ -626,6 +643,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleSuggestCodes = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     if (!doc.text || doc.text.trim().length < 200) {
@@ -721,12 +739,14 @@ function ContentAnalysisPageInner() {
   );
 
   const handleAcceptSuggestion = (suggestionId: string) => {
+    if (!guardEdit()) return;
     const projectId = activeProject && activeProject.id !== 'project-master' ? activeProject.id : null;
     const seg = acceptSuggestion(suggestionId, projectId);
     if (seg) setHighlightedSegmentId(seg.id);
   };
 
   const handleAcceptAllSuggestions = () => {
+    if (!guardEdit()) return;
     if (!selectedDocument) return;
     const count = pendingSuggestions.length;
     if (count === 0) return;
@@ -737,6 +757,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleRejectAllSuggestions = () => {
+    if (!guardEdit()) return;
     if (!selectedDocument) return;
     const count = pendingSuggestions.length;
     if (count === 0) return;
@@ -754,6 +775,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }) => {
+    if (!guardEdit()) return;
     if (!selectedCodeId || !selectedDocument || !activeProject) return;
     upsertDocument(selectedDocument);
     const seg = addSegment({
@@ -774,14 +796,17 @@ function ContentAnalysisPageInner() {
   };
 
   const handleAddCode = (parentId: string | null) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'add', targetId: parentId });
   };
 
   const handleRename = (codeId: string) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'rename', targetId: codeId });
   };
 
   const handleRecolor = (codeId: string) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'recolor', targetId: codeId });
   };
 
@@ -861,6 +886,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleDeleteCode = (codeId: string) => {
+    if (!guardEdit()) return;
     const current = snapshot.codes.find(c => c.id === codeId);
     if (!current) return;
     const ok = window.confirm(
@@ -881,6 +907,9 @@ function ContentAnalysisPageInner() {
 
 
   const handleDeleteProject = () => {
+    // Deleting a project that's locked to someone else would yank work
+    // out from under them; require the lock first.
+    if (!guardEdit()) return;
     if (!activeProject || activeProject.id === 'project-master') return;
     if (!window.confirm(`Delete project "${activeProject.name}"? Project tags will be removed; master segments are preserved.`)) return;
     deleteProject(activeProject.id);
@@ -963,6 +992,7 @@ function ContentAnalysisPageInner() {
   }, [docSearchQuery, selectedDocumentId]);
 
   const toggleMasterCodeInProject = (codeId: string) => {
+    if (!guardEdit()) return;
     if (!activeProject || activeProject.id === 'project-master') return;
     const set = new Set(activeProject.masterCodeSelection);
     if (set.has(codeId)) set.delete(codeId);
@@ -1140,6 +1170,16 @@ function ContentAnalysisPageInner() {
       </section>
 
       {/* ── Main workspace ───────────────────────────────────────────────── */}
+      {/* Read-only banner — only when another editor holds the lock. The
+          per-handler guards already block mutations; this banner is the
+          visual cue so the user doesn't keep clicking dead buttons. */}
+      {lockMode === 'watcher' && (
+        <div className="bg-[#FEF3C7] border-b border-[#FCD34D] px-4 sm:px-6 py-1.5 text-[11.5px] text-[#92400E]">
+          <strong>Read-only.</strong>{' '}
+          {projectLock.lock?.holderName ?? 'Another editor'} is editing this project.
+          Click <em>Request edit access</em> in the header to take over.
+        </div>
+      )}
       {activeTab === 'workbench' && (
         <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-4">
           <div className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)_320px] xl:grid-cols-[320px_minmax(0,1fr)_360px]">
@@ -1275,6 +1315,7 @@ function ContentAnalysisPageInner() {
                     activeFilter={activeCodeFilter ?? undefined}
                     onToggleActive={handleToggleActiveCode}
                     onMove={(id, newParentId) => {
+                      if (!guardEdit()) return;
                       if (!moveCode(id, newParentId)) {
                         showToast({
                           tone: 'danger',
@@ -1284,6 +1325,7 @@ function ContentAnalysisPageInner() {
                       }
                     }}
                     onMerge={(sourceId, targetId) => {
+                      if (!guardEdit()) return;
                       const result = mergeCode(sourceId, targetId);
                       if (result === null) {
                         showToast({
@@ -1610,21 +1652,26 @@ function ContentAnalysisPageInner() {
                                 onCreateSegment={isPreviewingVersion ? () => {} : handleCreateSegment}
                                 onSelectSegment={id => setHighlightedSegmentId(id)}
                                 highlightedSegmentId={highlightedSegmentId}
-                                onSelectionWithoutCode={isPreviewingVersion ? undefined : (sel) =>
+                                onSelectionWithoutCode={isPreviewingVersion ? undefined : (sel) => {
+                                  if (!guardEdit()) return;
                                   setToolbarSel({
                                     startChar: sel.startChar,
                                     endChar: sel.endChar,
                                     text: sel.text,
                                     rect: sel.rect,
-                                  })
-                                }
+                                  });
+                                }}
                                 onDeleteSegment={isPreviewingVersion ? undefined : (id) => {
+                                  if (!guardEdit()) return;
                                   if (window.confirm('Delete this tagged segment?')) {
                                     deleteSegment(id);
                                     if (highlightedSegmentId === id) setHighlightedSegmentId(null);
                                   }
                                 }}
-                                onUpdateSegmentRange={isPreviewingVersion ? undefined : updateSegmentRange}
+                                onUpdateSegmentRange={isPreviewingVersion ? undefined : (id, next) => {
+                                  if (!guardEdit()) return;
+                                  updateSegmentRange(id, next);
+                                }}
                                 searchQuery={docSearchOpen ? docSearchQuery : ''}
                                 searchHitIndex={docSearchHitIndex}
                                 onSearchMatchesChange={setDocSearchTotal}
@@ -1713,6 +1760,7 @@ function ContentAnalysisPageInner() {
                     selectedSegmentId={highlightedSegmentId}
                     onOpenSegment={openSegmentInDoc}
                     onDelete={id => {
+                      if (!guardEdit()) return;
                       if (window.confirm('Delete this tagged segment?')) {
                         deleteSegment(id);
                         if (highlightedSegmentId === id) setHighlightedSegmentId(null);
@@ -1768,8 +1816,8 @@ function ContentAnalysisPageInner() {
                   segments={projectSegments}
                   codes={snapshot.codes}
                   documents={snapshot.documents}
-                  onUpdate={updateSegmentNumeric}
-                  onDelete={deleteSegment}
+                  onUpdate={(id, n) => { if (guardEdit()) updateSegmentNumeric(id, n); }}
+                  onDelete={(id) => { if (guardEdit()) deleteSegment(id); }}
                   onJump={openSegmentInDoc}
                 />
               </Panel>
@@ -1788,6 +1836,7 @@ function ContentAnalysisPageInner() {
                   codes={snapshot.codes}
                   segments={snapshot.segments}
                   onRestore={(codes, segments) => {
+                    if (!guardEdit()) return;
                     restoreCodesAndSegments(codes, segments);
                     showToast({
                       tone: 'success',
@@ -1860,6 +1909,7 @@ function ContentAnalysisPageInner() {
           setToolbarSel(null);
         }}
         onSplit={() => {
+          if (!guardEdit()) return;
           if (!toolbarSel || !selectedDocument) return;
           // Splitting is only meaningful in the structured-block (PDF)
           // view; in the flat-text view there's no block to split.
@@ -1870,6 +1920,7 @@ function ContentAnalysisPageInner() {
           setToolbarSel(null);
         }}
         onCreateAndApply={(suggestedName) => {
+          if (!guardEdit()) return;
           if (!toolbarSel) return;
           // Open the code editor pre-filled, and stash the selection so
           // submitting the modal also creates the segment under the new tag.
@@ -1891,6 +1942,7 @@ function ContentAnalysisPageInner() {
           setSelectedCodeId(codeId);
         }}
         onExtractNumber={() => {
+          if (!guardEdit()) return;
           if (!toolbarSel || !selectedDocument || !activeProject) return;
           // The numeric extraction still needs a qualitative tag. Use the
           // current active code if any; otherwise prompt the user to pick.
@@ -1936,8 +1988,12 @@ function ContentAnalysisPageInner() {
         payload={codeEditor}
         codes={snapshot.codes}
         onCancel={() => setCodeEditor(null)}
-        onSubmit={handleCodeEditorSubmit}
+        onSubmit={(result) => {
+          if (!guardEdit()) return;
+          handleCodeEditorSubmit(result);
+        }}
         onMerge={(sourceId, targetId) => {
+          if (!guardEdit()) return;
           const result = mergeCode(sourceId, targetId);
           if (result === null) {
             showToast({
@@ -1964,6 +2020,7 @@ function ContentAnalysisPageInner() {
           });
         }}
         onMove={(id, newParentId) => {
+          if (!guardEdit()) return;
           if (!moveCode(id, newParentId)) {
             window.alert('Cannot move: target parent is inside the moved subtree.');
           }
