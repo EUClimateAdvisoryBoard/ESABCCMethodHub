@@ -15,6 +15,15 @@ interface Props {
   onCreateSegment: (input: { startChar: number; endChar: number; text: string }) => void;
   onSelectSegment: (segmentId: string) => void;
   highlightedSegmentId?: string | null;
+  /** In-document Ctrl+F search: case-insensitive substring; matches are
+   *  wrapped in a yellow `<mark>` on top of any segment highlight. */
+  searchQuery?: string;
+  /** When set, matches are numbered and the Nth one (0-indexed) gets a
+   *  brighter highlight + scrolls into view. */
+  searchHitIndex?: number;
+  /** Reports the total number of matches back to the parent so it can
+   *  drive the prev/next nav and "N of M" counter. */
+  onSearchMatchesChange?: (total: number) => void;
 }
 
 interface LineInfo {
@@ -42,9 +51,50 @@ export default function AnnotatedDocumentView({
   onCreateSegment,
   onSelectSegment,
   highlightedSegmentId,
+  searchQuery,
+  searchHitIndex,
+  onSearchMatchesChange,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const codeById = useMemo(() => new Map(codes.map(c => [c.id, c])), [codes]);
+
+  // Pre-compute every match offset for the in-document Ctrl+F search.
+  // Recomputed only when the document text or query changes; keeps the
+  // line renderer's per-line slice cheap (it just looks up offsets).
+  const searchMatches = useMemo(() => {
+    const q = (searchQuery ?? '').trim();
+    if (q.length < 2 || !doc.text) return [] as Array<{ start: number; end: number }>;
+    const text = doc.text;
+    const lower = text.toLowerCase();
+    const qLower = q.toLowerCase();
+    const out: Array<{ start: number; end: number }> = [];
+    let cursor = 0;
+    while (true) {
+      const idx = lower.indexOf(qLower, cursor);
+      if (idx < 0) break;
+      out.push({ start: idx, end: idx + q.length });
+      cursor = idx + qLower.length;
+      if (out.length > 5000) break; // hard cap on absurd queries
+    }
+    return out;
+  }, [doc.text, searchQuery]);
+
+  // Notify the parent of the match count so it can drive its own UI.
+  // Effect (rather than render-time call) keeps React happy.
+  useEffect(() => {
+    onSearchMatchesChange?.(searchMatches.length);
+  }, [searchMatches.length, onSearchMatchesChange]);
+
+  // Scroll the active match into view whenever the index changes.
+  useEffect(() => {
+    if (searchHitIndex == null || searchMatches.length === 0) return;
+    const root = containerRef.current;
+    if (!root) return;
+    const target = root.querySelector<HTMLElement>(
+      `[data-search-match="${searchHitIndex}"]`,
+    );
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [searchHitIndex, searchMatches.length]);
 
   const lines = useMemo<LineInfo[]>(() => {
     const out: LineInfo[] = [];
@@ -196,7 +246,7 @@ export default function AnnotatedDocumentView({
             data-char-offset={line.startChar}
             className="flex-1 pl-2 border-l border-[#F0F1F2] py-[1px]"
           >
-            {renderLineWithSpans(line, segments, codeById, highlightedSegmentId)}
+            {renderLineWithSpans(line, segments, codeById, highlightedSegmentId, searchMatches, searchHitIndex)}
           </span>
         </div>
         );
@@ -205,42 +255,62 @@ export default function AnnotatedDocumentView({
   );
 }
 
-/** Render a line, wrapping segment ranges in coloured `<mark>` spans. */
+/** Render a line, wrapping segment ranges in coloured `<mark>` spans, and
+ *  overlaying yellow Ctrl+F search-match highlights on top. */
 function renderLineWithSpans(
   line: LineInfo,
   allSegments: CodedSegment[],
   codeById: Map<string, CodeNode>,
   highlightedSegmentId?: string | null,
+  searchMatches?: Array<{ start: number; end: number }>,
+  searchHitIndex?: number,
 ): React.ReactNode {
-  if (line.touching.length === 0) return line.text || '​';
-  const pieces: React.ReactNode[] = [];
-  let cursor = line.startChar;
-  // Break the line at every segment start/end within it.
+  // Find the search matches that intersect this line, paired with their
+  // global index (so the active hit gets a brighter highlight).
+  const lineMatches: Array<{ start: number; end: number; idx: number }> =
+    searchMatches
+      ? searchMatches
+          .map((m, idx) => ({ ...m, idx }))
+          .filter(m => m.start < line.endChar && m.end > line.startChar)
+      : [];
+
+  if (line.touching.length === 0 && lineMatches.length === 0) {
+    return line.text || '​';
+  }
+
+  // Build the boundary set: line edges, every segment start/end, and every
+  // search-match start/end. Then walk slice-by-slice and stack the right
+  // wrappers on each piece.
   const boundaries = new Set<number>([line.startChar, line.endChar]);
   for (const seg of line.touching) {
     boundaries.add(Math.max(seg.startChar, line.startChar));
     boundaries.add(Math.min(seg.endChar, line.endChar));
   }
+  for (const m of lineMatches) {
+    boundaries.add(Math.max(m.start, line.startChar));
+    boundaries.add(Math.min(m.end, line.endChar));
+  }
   const sortedBounds = [...boundaries].sort((a, b) => a - b);
+  const pieces: React.ReactNode[] = [];
   for (let i = 0; i < sortedBounds.length - 1; i++) {
     const from = sortedBounds[i];
     const to = sortedBounds[i + 1];
     if (from === to) continue;
     const slice = line.text.slice(from - line.startChar, to - line.startChar);
-    // Segments active at mid-point:
-    const active = line.touching.filter(s => s.startChar <= from && s.endChar >= to);
-    if (active.length === 0) {
-      pieces.push(slice);
-    } else {
+    const activeSegs = line.touching.filter(s => s.startChar <= from && s.endChar >= to);
+    const activeMatch = lineMatches.find(m => m.start <= from && m.end >= to);
+
+    let node: React.ReactNode = slice;
+    if (activeSegs.length > 0) {
       // Pick the narrowest (most specific) one for background colour.
-      const narrowest = [...active].sort(
+      const narrowest = [...activeSegs].sort(
         (a, b) => (a.endChar - a.startChar) - (b.endChar - b.startChar),
       )[0];
       const color = codeById.get(narrowest.codeId)?.color ?? '#8A95A3';
-      const isHi = highlightedSegmentId && active.some(s => s.id === highlightedSegmentId);
-      pieces.push(
+      const isHi = highlightedSegmentId && activeSegs.some(s => s.id === highlightedSegmentId);
+      node = (
         <mark
-          key={`${from}-${to}`}
+          key={`seg-${from}-${to}`}
           style={{
             backgroundColor: `${color}${isHi ? '55' : '22'}`,
             borderBottom: `1.5px solid ${color}`,
@@ -249,12 +319,30 @@ function renderLineWithSpans(
           }}
         >
           {slice}
-        </mark>,
+        </mark>
       );
     }
-    cursor = to;
+
+    if (activeMatch) {
+      const isActive = activeMatch.idx === searchHitIndex;
+      node = (
+        <mark
+          key={`hit-${from}-${to}`}
+          data-search-match={activeMatch.idx}
+          style={{
+            backgroundColor: isActive ? '#FBBF24' : '#FEF3C7',
+            outline: isActive ? '1.5px solid #B45309' : 'none',
+            borderRadius: 2,
+            padding: '0 1px',
+          }}
+        >
+          {node}
+        </mark>
+      );
+    }
+
+    pieces.push(node);
   }
-  if (cursor < line.endChar) pieces.push(line.text.slice(cursor - line.startChar));
   return pieces;
 }
 

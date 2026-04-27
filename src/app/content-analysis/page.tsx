@@ -185,6 +185,14 @@ function ContentAnalysisPageInner() {
     status: 'idle' | 'loading' | 'ok' | 'error';
     message?: string;
   }>({ status: 'idle' });
+  // In-document Ctrl+F search — separate from the corpus-wide FullTextSearch
+  // panel. Drives the highlight overlay inside AnnotatedDocumentView /
+  // PdfDocumentView for the *current* document only.
+  const [docSearchOpen, setDocSearchOpen] = useState(false);
+  const [docSearchQuery, setDocSearchQuery] = useState('');
+  const [docSearchHitIndex, setDocSearchHitIndex] = useState(0);
+  const [docSearchTotal, setDocSearchTotal] = useState(0);
+  const docSearchInputRef = useRef<HTMLInputElement | null>(null);
   // Local toast state removed — migrated to the typed ToastHost via showToast().
 
   const activeProject = useMemo(
@@ -829,6 +837,35 @@ function ContentAnalysisPageInner() {
     setClassifyState({ status: 'idle' });
   };
 
+  // Ctrl+F / ⌘F → open the in-document search bar and focus the input.
+  // Only swallows the browser's default Find when the user has the
+  // workbench focused; otherwise the native Find still works.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const isFind = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'f';
+      if (!isFind) return;
+      if (activeTab !== 'workbench' || viewMode !== 'workbench') return;
+      e.preventDefault();
+      setDocSearchOpen(true);
+      // Focus on next tick so the input has mounted.
+      setTimeout(() => docSearchInputRef.current?.focus(), 0);
+      // Pre-fill with the current text selection if there is one.
+      const sel = window.getSelection?.()?.toString().trim();
+      if (sel && sel.length >= 2 && sel.length < 80) {
+        setDocSearchQuery(sel);
+        setDocSearchHitIndex(0);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeTab, viewMode]);
+
+  // Reset hit index when the query or selected document changes so we
+  // always start at the first match in the new context.
+  useEffect(() => {
+    setDocSearchHitIndex(0);
+  }, [docSearchQuery, selectedDocumentId]);
+
   const toggleMasterCodeInProject = (codeId: string) => {
     if (!activeProject || activeProject.id === 'project-master') return;
     const set = new Set(activeProject.masterCodeSelection);
@@ -1340,6 +1377,78 @@ function ContentAnalysisPageInner() {
                                     ? 'Original PDF with block overlays'
                                     : 'Flat-text view · ingest or upload a PDF to enable the PDF pane'}
                               </span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setDocSearchOpen(o => !o);
+                                  if (!docSearchOpen) {
+                                    setTimeout(() => docSearchInputRef.current?.focus(), 0);
+                                  }
+                                }}
+                                className="ml-auto text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                                title="Search within this document · ⌘F"
+                              >
+                                {docSearchOpen ? 'Hide find' : 'Find in document · ⌘F'}
+                              </button>
+                            </div>
+                          )}
+                          {docSearchOpen && (
+                            <div className="flex items-center gap-2 px-3 py-1.5 border-b border-[#E6E7E8] bg-[#FBFBFA]">
+                              <input
+                                ref={docSearchInputRef}
+                                type="search"
+                                value={docSearchQuery}
+                                onChange={e => setDocSearchQuery(e.target.value)}
+                                onKeyDown={e => {
+                                  if (e.key === 'Escape') {
+                                    setDocSearchOpen(false);
+                                  } else if (e.key === 'Enter') {
+                                    if (docSearchTotal === 0) return;
+                                    setDocSearchHitIndex(i =>
+                                      e.shiftKey
+                                        ? (i - 1 + docSearchTotal) % docSearchTotal
+                                        : (i + 1) % docSearchTotal,
+                                    );
+                                  }
+                                }}
+                                placeholder="Find in document…"
+                                className="flex-1 max-w-[280px] border border-[#E6E7E8] rounded-sm px-2 py-1 text-[12px] focus:border-[#00928F] focus:outline-none"
+                                aria-label="Find in document"
+                              />
+                              <span className="font-mono text-[10.5px] tabular-nums text-[#8A95A3] min-w-[60px]">
+                                {docSearchTotal === 0
+                                  ? (docSearchQuery.trim().length >= 2 ? '0 / 0' : '—')
+                                  : `${docSearchHitIndex + 1} / ${docSearchTotal}`}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => docSearchTotal > 0 && setDocSearchHitIndex(i => (i - 1 + docSearchTotal) % docSearchTotal)}
+                                disabled={docSearchTotal === 0}
+                                className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:text-[#B8BCC2] rounded-sm"
+                                aria-label="Previous match"
+                                title="Previous match · Shift+Enter"
+                              >
+                                ↑
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => docSearchTotal > 0 && setDocSearchHitIndex(i => (i + 1) % docSearchTotal)}
+                                disabled={docSearchTotal === 0}
+                                className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:text-[#B8BCC2] rounded-sm"
+                                aria-label="Next match"
+                                title="Next match · Enter"
+                              >
+                                ↓
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => { setDocSearchOpen(false); setDocSearchQuery(''); }}
+                                className="px-1.5 py-0.5 text-[12px] text-[#8A95A3] hover:text-[#3D5265]"
+                                aria-label="Close search"
+                                title="Close · Esc"
+                              >
+                                ×
+                              </button>
                             </div>
                           )}
                           <div className="p-4 max-h-[68vh] overflow-y-auto">
@@ -1361,6 +1470,9 @@ function ContentAnalysisPageInner() {
                                 onCreateSegment={isPreviewingVersion ? () => {} : handleCreateSegment}
                                 onSelectSegment={id => setHighlightedSegmentId(id)}
                                 highlightedSegmentId={highlightedSegmentId}
+                                searchQuery={docSearchOpen ? docSearchQuery : ''}
+                                searchHitIndex={docSearchHitIndex}
+                                onSearchMatchesChange={setDocSearchTotal}
                               />
                             )}
                           </div>
