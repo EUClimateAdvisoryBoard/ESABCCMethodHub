@@ -73,6 +73,16 @@ export default function CodeSystemTree({
     });
   };
 
+  // Ids of every node that has at least one child — used by the
+  // "Collapse all" / "Expand all" header controls.
+  const collapsibleIds = useMemo(
+    () => codes.filter(c => (byParent.get(c.id) ?? []).length > 0).map(c => c.id),
+    [codes, byParent],
+  );
+  const allCollapsed = collapsibleIds.length > 0 && collapsibleIds.every(id => collapsed.has(id));
+  const collapseAll = () => setCollapsed(new Set(collapsibleIds));
+  const expandAll = () => setCollapsed(new Set());
+
   // Sticky breadcrumb (M·05 #10): when a code is selected, build the path
   // from root → leaf so the user keeps spatial context in deep trees.
   const breadcrumb = useMemo(() => {
@@ -329,6 +339,20 @@ export default function CodeSystemTree({
               </li>
             ))}
           </ol>
+        </div>
+      )}
+      {/* Sub-toolbar — only renders when there are collapsible nodes,
+          so flat code books don't gain chrome they can't use. */}
+      {collapsibleIds.length > 0 && (
+        <div className="flex items-center justify-end gap-2 px-2 pt-1.5 pb-1 border-b border-[var(--mh-border)] bg-[#FBFBFA]">
+          <button
+            type="button"
+            onClick={allCollapsed ? expandAll : collapseAll}
+            className="text-[10.5px] font-medium text-[#3D5265] hover:text-[#00928F]"
+            title={allCollapsed ? 'Expand every parent tag' : 'Collapse every parent tag to its root'}
+          >
+            {allCollapsed ? 'Expand all' : 'Collapse all'}
+          </button>
         </div>
       )}
       <ul className="py-1">{roots.map(r => renderNode(r, 0))}</ul>
