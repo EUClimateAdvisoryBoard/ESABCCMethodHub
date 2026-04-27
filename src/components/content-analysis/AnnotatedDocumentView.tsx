@@ -15,6 +15,10 @@ interface Props {
   onCreateSegment: (input: { startChar: number; endChar: number; text: string }) => void;
   onSelectSegment: (segmentId: string) => void;
   highlightedSegmentId?: string | null;
+  /** Called when the user makes a selection but there is no active code.
+   *  Lets the parent open the FloatingCodeToolbar so the user can pick or
+   *  create a tag without the legacy "select a tag first" alert. */
+  onSelectionWithoutCode?: (sel: { startChar: number; endChar: number; text: string; rect: DOMRect }) => void;
   /** In-document Ctrl+F search: case-insensitive substring; matches are
    *  wrapped in a yellow `<mark>` on top of any segment highlight. */
   searchQuery?: string;
@@ -51,6 +55,7 @@ export default function AnnotatedDocumentView({
   onCreateSegment,
   onSelectSegment,
   highlightedSegmentId,
+  onSelectionWithoutCode,
   searchQuery,
   searchHitIndex,
   onSearchMatchesChange,
@@ -168,6 +173,14 @@ export default function AnnotatedDocumentView({
     const text = doc.text.slice(startChar, endChar);
     if (!text.trim()) return;
     if (!activeCodeId) {
+      // Modern flow: surface the floating toolbar so the user can pick an
+      // existing tag or create a new one from the selection. Falls back
+      // to the legacy alert when the parent hasn't migrated yet.
+      if (onSelectionWithoutCode) {
+        const rect = range.getBoundingClientRect();
+        onSelectionWithoutCode({ startChar, endChar, text, rect });
+        return;
+      }
       alert('Select a tag in the left panel first — new segments are created under the active tag.');
       selection.removeAllRanges();
       return;

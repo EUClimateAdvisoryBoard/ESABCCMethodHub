@@ -787,6 +787,24 @@ function ContentAnalysisPageInner() {
         projectId: isProjectScope ? activeProjectId : undefined,
       });
       setSelectedCodeId(code.id);
+      // "+ New tag from selection" path: also create the segment under
+      // the brand-new code so the highlight that started this flow lands
+      // tagged without a second click.
+      const pending = codeEditor.pendingSegmentInput;
+      if (pending && selectedDocument && activeProject) {
+        upsertDocument(selectedDocument);
+        const seg = addSegment({
+          documentId: selectedDocument.id,
+          codeId: code.id,
+          startChar: pending.startChar,
+          endChar: pending.endChar,
+          text: pending.text,
+          blockId: pending.blockId,
+          projectId: activeProject.id === 'project-master' ? null : activeProject.id,
+        });
+        setHighlightedSegmentId(seg.id);
+        showToast({ tone: 'success', message: `Tagged as new "${name}"` });
+      }
     } else if (codeEditor.mode === 'rename' && codeEditor.targetId) {
       const name = result.name?.trim();
       const current = snapshot.codes.find(c => c.id === codeEditor.targetId);
@@ -1470,6 +1488,14 @@ function ContentAnalysisPageInner() {
                                 onCreateSegment={isPreviewingVersion ? () => {} : handleCreateSegment}
                                 onSelectSegment={id => setHighlightedSegmentId(id)}
                                 highlightedSegmentId={highlightedSegmentId}
+                                onSelectionWithoutCode={isPreviewingVersion ? undefined : (sel) =>
+                                  setToolbarSel({
+                                    startChar: sel.startChar,
+                                    endChar: sel.endChar,
+                                    text: sel.text,
+                                    rect: sel.rect,
+                                  })
+                                }
                                 searchQuery={docSearchOpen ? docSearchQuery : ''}
                                 searchHitIndex={docSearchHitIndex}
                                 onSearchMatchesChange={setDocSearchTotal}
@@ -1643,7 +1669,29 @@ function ContentAnalysisPageInner() {
         }}
         onSplit={() => {
           if (!toolbarSel || !selectedDocument) return;
-          splitBlock(selectedDocument.id, toolbarSel.blockId, toolbarSel.startChar);
+          // Splitting is only meaningful in the structured-block (PDF)
+          // view; in the flat-text view there's no block to split.
+          if (toolbarSel.blockId) {
+            splitBlock(selectedDocument.id, toolbarSel.blockId, toolbarSel.startChar);
+          }
+          window.getSelection()?.removeAllRanges();
+          setToolbarSel(null);
+        }}
+        onCreateAndApply={(suggestedName) => {
+          if (!toolbarSel) return;
+          // Open the code editor pre-filled, and stash the selection so
+          // submitting the modal also creates the segment under the new tag.
+          setCodeEditor({
+            mode: 'add',
+            targetId: null,
+            seedName: suggestedName,
+            pendingSegmentInput: {
+              blockId: toolbarSel.blockId,
+              startChar: toolbarSel.startChar,
+              endChar: toolbarSel.endChar,
+              text: toolbarSel.text,
+            },
+          });
           window.getSelection()?.removeAllRanges();
           setToolbarSel(null);
         }}

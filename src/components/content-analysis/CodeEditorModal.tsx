@@ -18,6 +18,18 @@ export interface CodeEditorPayload {
   mode: CodeEditorMode;
   /** For `add`: parent code id or null for root. For `rename`/`recolor`: target id. */
   targetId: string | null;
+  /** Optional pre-fill for `add` mode — used by the "+ New tag from
+   *  selection" path so the user lands on the modal with the highlighted
+   *  text already in the name field, ready to tweak. */
+  seedName?: string;
+  /** Optional segment to create immediately after the new tag is added.
+   *  Caller-supplied so the modal stays presentational. */
+  pendingSegmentInput?: {
+    startChar: number;
+    endChar: number;
+    text: string;
+    blockId?: string;
+  };
 }
 
 export interface CodeEditorResult {
@@ -87,7 +99,7 @@ export default function CodeEditorModal({
       setDescription(cur?.description ?? '');
       setColor(cur?.color ?? PRESET_COLORS[0]);
     } else {
-      setName('');
+      setName(payload.seedName ?? '');
       setDescription('');
       setColor(PRESET_COLORS[Math.floor(Math.random() * PRESET_COLORS.length)]);
     }
