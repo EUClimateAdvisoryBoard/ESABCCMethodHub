@@ -1,9 +1,15 @@
 {
   "date": "2026-04-27",
-  "generatedAt": "2026-04-27T16:19:50.493Z",
+  "generatedAt": "2026-04-27T18:09:02.102Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 27 April 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Commissioner Roswall's address at a Structured Dialogue with Members of the European Parliament's Committee for Environment, Climate and Food Safety (ENVI)",
+      "summary": "European Commission Speech Brussels, 27 Apr 2026 Thank you, Chair (Pierfrancesco Maran),\r\nHonourable Members,\r\nThank you for this opportunity to reflect on the past year and to outline my plans for the months ah...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Clean energy switch must not be excuse to plunder Indigenous lands, say leaders",
       "summary": "&lt;p&gt;Global conference told benefits should not come at expense of well-protected environments&lt;/p&gt;&lt;p&gt;The energy transition must not be used as a fresh excuse to plunder Indigenous territories, delegates at a groundbreaking global conference on phasing out fossil fuels were warned.&lt;/p&gt;&lt;p&gt;High oil prices and &lt;a href=\"https://www.theguardian.com/world/us-israel-war-on-iran\"&gt;war in the Middle East&lt;/a&gt; have boosted the attraction of renewable technologies in ma",
@@ -11,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "UK's biggest ever environmental pollution claim reaches High Court",
-      "summary": "One of the UK's largest chicken producers and a water company accused of polluting three rivers including the River Wye",
+      "headline": "Heavy rain not ‘nearly enough’ to tame two wildfires in drought-stricken Georgia",
+      "summary": "&lt;p&gt;Pineland Road fire and Highway 82 fire have destroyed over 100 homes, and are part of large number of wildfires this spring in the US south&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;amp;utm_campaign=BN22326&amp;amp;utm_content=signup&amp;amp;utm_term=standfirst&amp;amp;utm_source=GUARDIAN_WEB\"&gt;Sign up for the ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commissioner Roswall's address at a Structured Dialogue with Members of the European Parliament's Committee for Environment, Climate and Food Safety (ENVI)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_897",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 27 Apr 2026 Thank you, Chair (Pierfrancesco Maran),\r\nHonourable Members,\r\nThank you for this opportunity to reflect on the past year and to outline my plans for the months ah...",
+          "published": "2026-04-27T17:32:38.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -80,6 +95,14 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Heavy rain not ‘nearly enough’ to tame two wildfires in drought-stricken Georgia",
+          "link": "https://www.theguardian.com/us-news/2026/apr/27/georgia-wildfires-rain",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Pineland Road fire and Highway 82 fire have destroyed over 100 homes, and are part of large number of wildfires this spring in the US south&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;amp;utm_campaign=BN22326&amp;amp;utm_content=signup&amp;amp;utm_term=standfirst&amp;amp;utm_source=GUARDIAN_WEB\"&gt;Sign up for the ",
+          "published": "2026-04-27T17:05:12.000Z",
+          "score": 7
+        },
+        {
           "title": "UK's biggest ever environmental pollution claim reaches High Court",
           "link": "https://www.bbc.com/news/articles/cqxl5rjw58po?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -110,14 +133,6 @@
           "description": "Plans to improve nature have been unveiled, aiming to restore habitats and protect wildlife.",
           "published": "2026-04-27T05:17:28.000Z",
           "score": 2
-        },
-        {
-          "title": "How a yacht club's seawall is being reimagined for marine life",
-          "link": "https://www.bbc.com/news/articles/cvg0rmxyyp1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Ten artificial rock pools have been installed along Strangford Yacht Club's seawall as a refuge for marine life.",
-          "published": "2026-04-27T05:13:16.000Z",
-          "score": 2
         }
       ]
     },
@@ -132,6 +147,22 @@
           "description": "AMENDMENTS 1005 - Draft opinion on the proposal for a regulation of the European Parliament and of the Council establishing the European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security for the period 2028-2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Marta Temido&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 -",
           "published": "2026-04-27T07:33:15.000Z",
           "score": 22
+        },
+        {
+          "title": "Canada to set up sovereign wealth fund with initial funding of C$25 billion - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNa0RkbGdBZnI5djR3NjRtVzV5MmhmMDBwRTlqTk5LaG14ZDVTZ3VjMEl3OUpaSmQ3eVU3UVUzQzNtanM4Ym1DZUZ0R1dKRm11OHJzVUJaSHB5YnFvNVRfSnMzMGQyYXFlc3UybHdySXV3ZzNGUzBLNGdnWXhvSS11eVlva2hwenlPQXFRSjhwYnU5cDJ4LXRYTEhLWnpSRUhvaTI2eHNlME5GVC1XeDRURzdJNA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNa0RkbGdBZnI5djR3NjRtVzV5MmhmMDBwRTlqTk5LaG14ZDVTZ3VjMEl3OUpaSmQ3eVU3UVUzQzNtanM4Ym1DZUZ0R1dKRm11OHJzVUJaSHB5YnFvNVRfSnMzMGQyYXFlc3UybHdySXV3ZzNGUzBLNGdnWXhvSS11eVlva2hwenlPQXFRSjhwYnU5cDJ4LXRYTEhLWnpSRUhvaTI2eHNlME5GVC1XeDRURzdJNA?oc=5\" target=\"_blank\"&gt;Canada to set up sovereign wealth fund with initial funding of C$25 billion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-27T15:23:36.000Z",
+          "score": 2
+        },
+        {
+          "title": "Paramount seeks FCC approval for foreign investors helping fund Warner Bros acquisition - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPWC1LYklfYUlnV21TSmV0NXRoTTc4Mmx5Rmp4NGd5NXVHODB2TUpsSHNYX252WUh0N0F2X05yM0oyTnVWY05pdlByZWNidkhLcGFIWU9ZVVptZUpNRW12RE10eEcwT0lmREU5U1VUMjA5NVVQY1h5UUtKN2lSNlBwVXpza0pnVU1nUnlfNFFEN3pRc0ZjNjR6STdLUFp3ZGJEby1LSElaMmkwQmtpcUF1SEhLRXdMdmZ5bkhlZlNlSl9NTUhJSk9OQzRn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPWC1LYklfYUlnV21TSmV0NXRoTTc4Mmx5Rmp4NGd5NXVHODB2TUpsSHNYX252WUh0N0F2X05yM0oyTnVWY05pdlByZWNidkhLcGFIWU9ZVVptZUpNRW12RE10eEcwT0lmREU5U1VUMjA5NVVQY1h5UUtKN2lSNlBwVXpza0pnVU1nUnlfNFFEN3pRc0ZjNjR6STdLUFp3ZGJEby1LSElaMmkwQmtpcUF1SEhLRXdMdmZ5bkhlZlNlSl9NTUhJSk9OQzRn?oc=5\" target=\"_blank\"&gt;Paramount seeks FCC approval for foreign investors helping fund Warner Bros acquisition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "published": "2026-04-27T16:13:24.000Z",
+          "score": 2
         }
       ]
     },
@@ -139,6 +170,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Commission seeks feedback on measures to ensure interoperability with Google's Android under the Digital Markets Act",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_887",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 27 Apr 2026 The Commission has sent its preliminary findings to Google as part of the specification proceedings it started on 27 January 2026 under the Digital Markets Act (DMA). These preliminary findings outline the draft measures Google should implement to ensure that third parties have effective access and interoperability with key capabilities of Android.",
+          "published": "2026-04-26T22:00:00.000Z",
+          "score": 18
+        },
         {
           "title": "Merz suggests Ukraine may have to accept territorial loss to help pave way for EU membership - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdXlPWkZZbmdJWlJDbUh2NVFGY05jX0ZvbG1XaElPcEplcTgwZGh2WGdPRTdKVTdRQmY2Uk1vanF6Z3pFUXR3YlVWamtJRFliMnVERjNVaG9sQTVTZEtIaUNRVGlHc09iYVBIUXdOel9DRDJRcHVjb3ZhcEJMa0g4Mm1fWjhvQjBmNTBVdVF3UVdEY1lRMjlpemVVNHdmaDNNdW1tX1kwMmF5R0d2Q1QyM0FQLWRNWHlya3VVLQ?oc=5",
@@ -166,23 +205,23 @@
           "link": "https://www.dw.com/en/eu-weighs-giving-us-data-for-fewer-travel-restrictions/a-76912370?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The European Union is negotiating a framework that could allow US authorities to search national databases across much of the bloc as the price for keeping visa-free travel.",
-          "published": "2026-04-27T15:29:00.000Z",
+          "published": "2026-04-27T15:56:00.000Z",
           "score": 8
         },
         {
-          "title": "Taiwan says China sanctions on European arms makers will not hit weapons sourcing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQeE1IeC1PWFFqbC1jcU0yaldSdWNmYzZDYXN0ZUZ3YVZxZlplN2xXSXhkWE1SUmNSU0tvWnZFWm5rejZ5bkhOc0FVMjlOcms0WEpiOW1sSV9PY0dSZ1VHZkxNc3J3MU5DTmg0c1MzOFBxRTFWcEdTUG11U2w0cjlmSzRNaUcyV0NPcDVjYTB2b0VHZ3NLQUloQ1FvN0xsUGlqak1JNEhwX041ekpaZlRR?oc=5",
+          "title": "Google gets pointers from EU regulators on helping AI rivals access services - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcG9ERjNKT0RQOVdXQmNWMG5kTUJfTHdsb2Y3bGN4bkVCeWkzUjlkYWRGbGpadzltOW9DZE0xQzFiQ01qU29reTZURkF6cnh3eVFLbTk4TmFhNTdpbmtYd1dhV3VWWHRWWDBiMkRvYjBpMnhDYThBY1YtMDdmMGEzb3lraWh5Q01wd0YtRXYtSDJYazE2TmozeG9IWnBCekUwcW5meV9wZFlyREdfdWI4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQeE1IeC1PWFFqbC1jcU0yaldSdWNmYzZDYXN0ZUZ3YVZxZlplN2xXSXhkWE1SUmNSU0tvWnZFWm5rejZ5bkhOc0FVMjlOcms0WEpiOW1sSV9PY0dSZ1VHZkxNc3J3MU5DTmg0c1MzOFBxRTFWcEdTUG11U2w0cjlmSzRNaUcyV0NPcDVjYTB2b0VHZ3NLQUloQ1FvN0xsUGlqak1JNEhwX041ekpaZlRR?oc=5\" target=\"_blank\"&gt;Taiwan says China sanctions on European arms makers will not hit weapons sourcing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T02:19:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPcG9ERjNKT0RQOVdXQmNWMG5kTUJfTHdsb2Y3bGN4bkVCeWkzUjlkYWRGbGpadzltOW9DZE0xQzFiQ01qU29reTZURkF6cnh3eVFLbTk4TmFhNTdpbmtYd1dhV3VWWHRWWDBiMkRvYjBpMnhDYThBY1YtMDdmMGEzb3lraWh5Q01wd0YtRXYtSDJYazE2TmozeG9IWnBCekUwcW5meV9wZFlyREdfdWI4?oc=5\" target=\"_blank\"&gt;Google gets pointers from EU regulators on helping AI rivals access services&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-27T16:32:31.000Z",
           "score": 8
         },
         {
-          "title": "EU extends sanctions against Myanmar by a year - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5",
+          "title": "Seagull imitators compete for best screech at sixth European championship - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOMENqSl9kYmoxdko4SkpLbE0tT19Pc3RkeDloOHRlTi1acy1xVjdFZFdjTVlKb3l5WGdNM0xLX2ppNjVwb0phbGNlMkxmN2pVYTJfZ0lTOVhNZFpVek4xa3k1NzJCZXhVSHpkd0xIcmhZMklZa2E0ZDVxTlJDNkFSdXE4OVNBRzhhcjhOVnBheUxmOUFCc0U1bUFqNm90S2w0X3N1OElNM0xleHdFck1MWXNn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5\" target=\"_blank\"&gt;EU extends sanctions against Myanmar by a year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T10:55:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOMENqSl9kYmoxdko4SkpLbE0tT19Pc3RkeDloOHRlTi1acy1xVjdFZFdjTVlKb3l5WGdNM0xLX2ppNjVwb0phbGNlMkxmN2pVYTJfZ0lTOVhNZFpVek4xa3k1NzJCZXhVSHpkd0xIcmhZMklZa2E0ZDVxTlJDNkFSdXE4OVNBRzhhcjhOVnBheUxmOUFCc0U1bUFqNm90S2w0X3N1OElNM0xleHdFck1MWXNn?oc=5\" target=\"_blank\"&gt;Seagull imitators compete for best screech at sixth European championship&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-27T02:18:00.000Z",
           "score": 8
         },
         {
@@ -194,20 +233,20 @@
           "score": 8
         },
         {
-          "title": "Romania's largest party teams up with far-right opposition to topple pro-European coalition - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQN0VsVmxXb3JBX3FFVTh6YjZrWUNMZXNULXk1OVVZTXBrbTBpeHVNYzNpcW9WZUZsdDBka0xwcGxiVFpxdE1OU1dHTXhaTWRCQXR1YW54YWpqOGNiVUR4VGlpWW1ucnBTeGRGTy11b2FaR0pkaEIxNFJyOTdKZWpkcUpqQ1daa3lCLXhvcXVObmhpYmpMWkZZYmFKNW5uN1RKUjRfRlV6VDZic3VIdmRfRVlDdzB1Y0E0V1Nr?oc=5",
+          "title": "EU extends sanctions against Myanmar by a year - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQN0VsVmxXb3JBX3FFVTh6YjZrWUNMZXNULXk1OVVZTXBrbTBpeHVNYzNpcW9WZUZsdDBka0xwcGxiVFpxdE1OU1dHTXhaTWRCQXR1YW54YWpqOGNiVUR4VGlpWW1ucnBTeGRGTy11b2FaR0pkaEIxNFJyOTdKZWpkcUpqQ1daa3lCLXhvcXVObmhpYmpMWkZZYmFKNW5uN1RKUjRfRlV6VDZic3VIdmRfRVlDdzB1Y0E0V1Nr?oc=5\" target=\"_blank\"&gt;Romania's largest party teams up with far-right opposition to topple pro-European coalition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T11:11:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5\" target=\"_blank\"&gt;EU extends sanctions against Myanmar by a year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-27T10:55:44.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 368,
-    "articlesLast24h": 148,
-    "afterDedup": 142,
+    "totalArticlesScanned": 371,
+    "articlesLast24h": 151,
+    "afterDedup": 145,
     "feedsQueried": 19
   }
 }
