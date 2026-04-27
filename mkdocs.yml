@@ -176,6 +176,7 @@ nav:
       - "M·03 Secretariat News":     modules/news-feed.md
       - "M·04 EU Policy Navigator":  modules/policy-navigator.md
       - "M·05 Content Analysis":     modules/content-analysis.md
+      - "M·b3 Funding Sources (beta)": modules/funding-sources.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Stewardship model: infrastructure/stewardship.md

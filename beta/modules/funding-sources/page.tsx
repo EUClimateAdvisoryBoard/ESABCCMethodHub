@@ -22,6 +22,13 @@ import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
 import { exportFundingToExcel } from './export';
 
+interface BulkDownload {
+  label: string;
+  url: string;
+  format: string;
+  notes?: string;
+}
+
 interface FundingSource {
   id: string;
   name: string;
@@ -29,11 +36,14 @@ interface FundingSource {
   publisher: string;
   license: string;
   refresh: string;
+  perProjectUrlPattern?: string | null;
+  bulkDownloads?: BulkDownload[];
 }
 
 interface FundingProject {
   id: string;
   source: string;
+  sourceUrl?: string;
   acronym: string;
   title: string;
   programme: string;
@@ -211,6 +221,7 @@ export default function FundingSourcesPage() {
                     await exportFundingToExcel(filtered, {
                       snapshotDate: data.lastUpdated,
                       filterSummary: filterParts.join(' · '),
+                      sources: data.sources,
                     });
                   } finally {
                     setExporting(false);
@@ -257,6 +268,7 @@ export default function FundingSourcesPage() {
                       <th className="text-left px-3 py-2 font-semibold">Period</th>
                       <th className="text-right px-3 py-2 font-semibold">EC contribution</th>
                       <th className="text-left px-3 py-2 font-semibold">Status</th>
+                      <th className="text-left px-3 py-2 font-semibold">Source</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -283,6 +295,23 @@ export default function FundingSourcesPage() {
                             'bg-grey-100 text-tertiary'
                           }`}>{p.status}</span>
                         </td>
+                        <td className="px-3 py-2 whitespace-nowrap">
+                          {p.sourceUrl ? (
+                            <a
+                              href={p.sourceUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#003399] underline hover:text-[#002266]"
+                              title={`Open record on ${
+                                data.sources.find(s => s.id === p.source)?.name || p.source
+                              }`}
+                            >
+                              {p.source === 'horizon-dashboard' ? `CORDIS · ${p.id}` : 'QlikSense ↗'}
+                            </a>
+                          ) : (
+                            <span className="text-tertiary text-[10px]">—</span>
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -292,17 +321,42 @@ export default function FundingSourcesPage() {
 
             {/* Sources */}
             <section className="bg-surface-blue rounded-lg p-5">
-              <h2 className="text-sm font-bold text-tertiary-dark mb-3">Upstream feeds</h2>
-              <div className="space-y-2 text-xs text-tertiary">
+              <h2 className="text-sm font-bold text-tertiary-dark mb-3">Upstream feeds &amp; bulk downloads</h2>
+              <div className="space-y-5 text-xs text-tertiary">
                 {data.sources.map(s => (
-                  <div key={s.id} className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
-                    <a className="font-semibold text-tertiary-dark underline" href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a>
-                    <span>{s.publisher} · {s.license} · refresh: {s.refresh}</span>
+                  <div key={s.id} className="space-y-1">
+                    <div className="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3">
+                      <a className="font-semibold text-tertiary-dark underline" href={s.url} target="_blank" rel="noopener noreferrer">{s.name}</a>
+                      <span>{s.publisher} · {s.license} · refresh: {s.refresh}</span>
+                    </div>
+                    {s.perProjectUrlPattern && (
+                      <p className="text-[10px] text-tertiary">
+                        Per-project URL pattern:{' '}
+                        <code className="bg-white border border-grey-200 rounded px-1 py-0.5">{s.perProjectUrlPattern}</code>
+                      </p>
+                    )}
+                    {s.bulkDownloads && s.bulkDownloads.length > 0 && (
+                      <ul className="mt-1 space-y-1">
+                        {s.bulkDownloads.map(b => (
+                          <li key={b.url} className="text-[11px]">
+                            <a className="text-[#003399] underline" href={b.url} target="_blank" rel="noopener noreferrer">
+                              {b.label}
+                            </a>
+                            <span className="text-tertiary"> — {b.format}</span>
+                            {b.notes && <span className="text-tertiary"> · {b.notes}</span>}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 ))}
               </div>
-              <p className="mt-3 text-[10px] text-tertiary">
-                The current snapshot is curated. A scheduled scraper will refresh it weekly once the upstream feeds are available headlessly.
+              <p className="mt-4 text-[10px] text-tertiary">
+                Each row in the table above links to its canonical record on the upstream system. The current
+                snapshot in <code>public/data/funding-sources.json</code> is curated; a scheduled scraper
+                (<code>scripts/fetch-funding-sources.py</code>) will refresh it weekly once the feeds are
+                available headlessly. For a one-off bulk pull today, use the CSV / Excel / JSON / XML
+                downloads listed under each feed.
               </p>
             </section>
           </>

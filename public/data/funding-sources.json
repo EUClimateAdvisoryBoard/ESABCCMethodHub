@@ -7,7 +7,22 @@
       "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/horizon-dashboard",
       "publisher": "DG R&I (European Commission)",
       "license": "CC-BY 4.0",
-      "refresh": "monthly"
+      "refresh": "monthly",
+      "perProjectUrlPattern": "https://cordis.europa.eu/project/id/{id}",
+      "bulkDownloads": [
+        {
+          "label": "CORDIS — Horizon Europe projects (CSV / Excel / JSON / XML)",
+          "url": "https://data.europa.eu/data/datasets/cordis-eu-research-projects-under-horizon-europe-2021-2027",
+          "format": "csv,xlsx,json,xml",
+          "notes": "Full Horizon Europe project portfolio, refreshed weekly on data.europa.eu. The same archive is also reachable from https://cordis.europa.eu/data."
+        },
+        {
+          "label": "Horizon Dashboard — in-page export",
+          "url": "https://ec.europa.eu/info/funding-tenders/opportunities/portal/screen/opportunities/horizon-dashboard",
+          "format": "xlsx,csv",
+          "notes": "Use the dashboard's 'Export' button (top-right of any chart) to download the currently filtered slice."
+        }
+      ]
     },
     {
       "id": "qs-digit",
@@ -15,13 +30,29 @@
       "url": "https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/3744499f-670f-42f8-9ef3-0d98f6cd586f/sheet/4c9ea8df-f0f9-4c0d-b26b-99fc0218d9d9/state/analysis",
       "publisher": "DG DIGIT (European Commission)",
       "license": "EU OpenData",
-      "refresh": "weekly"
+      "refresh": "weekly",
+      "perProjectUrlPattern": null,
+      "bulkDownloads": [
+        {
+          "label": "QlikSense — sheet-level CSV/Excel export",
+          "url": "https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/3744499f-670f-42f8-9ef3-0d98f6cd586f/sheet/4c9ea8df-f0f9-4c0d-b26b-99fc0218d9d9/state/analysis",
+          "format": "xlsx,csv",
+          "notes": "QlikSense sheets expose a context-menu 'Download as…' on each table; there is no stable JSON endpoint, so the snapshot is curated until the headless scraper lands."
+        },
+        {
+          "label": "EU Financial Transparency System (FTS) — annual beneficiaries CSV",
+          "url": "https://ec.europa.eu/budget/financial-transparency-system/index.html",
+          "format": "csv,xlsx",
+          "notes": "Authoritative cross-DG record of contracted amounts; useful for cross-checking DIGIT contract totals."
+        }
+      ]
     }
   ],
   "projects": [
     {
       "id": "101081244",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101081244",
       "acronym": "PROBIOMASS",
       "title": "Sustainable bioeconomy pathways for net-zero EU 2050",
       "programme": "Horizon Europe",
@@ -42,6 +73,7 @@
     {
       "id": "101082003",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101082003",
       "acronym": "ADAPT-RISK",
       "title": "Climate adaptation risk indicators for European regions",
       "programme": "Horizon Europe",
@@ -62,6 +94,7 @@
     {
       "id": "101133301",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101133301",
       "acronym": "CIRCLE-EU",
       "title": "Circular industry value chains for European competitiveness",
       "programme": "Horizon Europe",
@@ -82,6 +115,7 @@
     {
       "id": "101081099",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101081099",
       "acronym": "NGFS-EU",
       "title": "Climate stress testing methodology for European supervisors",
       "programme": "Horizon Europe",
@@ -102,6 +136,7 @@
     {
       "id": "101145012",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101145012",
       "acronym": "GRID-FLEX",
       "title": "Flexibility services for the integrated EU electricity grid",
       "programme": "Horizon Europe",
@@ -122,6 +157,7 @@
     {
       "id": "101102204",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101102204",
       "acronym": "MARINE-NetZero",
       "title": "Maritime decarbonisation pathways for European ports",
       "programme": "Horizon Europe",
@@ -142,6 +178,7 @@
     {
       "id": "101140077",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101140077",
       "acronym": "AVIA-FUEL",
       "title": "Sustainable aviation fuel deployment & MRV in EU airspace",
       "programme": "Horizon Europe",
@@ -162,6 +199,7 @@
     {
       "id": "101074410",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101074410",
       "acronym": "PEAT-RESTORE",
       "title": "European peatland restoration and emissions accounting",
       "programme": "Horizon Europe",
@@ -182,6 +220,7 @@
     {
       "id": "QS-2024-DIGIT-1102",
       "source": "qs-digit",
+      "sourceUrl": "https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/3744499f-670f-42f8-9ef3-0d98f6cd586f/sheet/4c9ea8df-f0f9-4c0d-b26b-99fc0218d9d9/state/analysis",
       "acronym": "DIGIT-EOSC",
       "title": "European Open Science Cloud — climate data sharing layer",
       "programme": "Digital Europe Programme",
@@ -201,6 +240,7 @@
     {
       "id": "QS-2024-DIGIT-2207",
       "source": "qs-digit",
+      "sourceUrl": "https://dashboard.tech.ec.europa.eu/qs_digit_dashboard_mt/public/sense/app/3744499f-670f-42f8-9ef3-0d98f6cd586f/sheet/4c9ea8df-f0f9-4c0d-b26b-99fc0218d9d9/state/analysis",
       "acronym": "ENV-DATA-SPACE",
       "title": "European Green Deal Data Space — supply chain emissions",
       "programme": "Digital Europe Programme",
@@ -220,6 +260,7 @@
     {
       "id": "101095108",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101095108",
       "acronym": "JUST-TRANS",
       "title": "Just transition indicators for coal & carbon-intensive regions",
       "programme": "Horizon Europe",
@@ -240,6 +281,7 @@
     {
       "id": "101131009",
       "source": "horizon-dashboard",
+      "sourceUrl": "https://cordis.europa.eu/project/id/101131009",
       "acronym": "URBAN-COOL",
       "title": "Heat-resilient urban planning for southern European cities",
       "programme": "Horizon Europe",

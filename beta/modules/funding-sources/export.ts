@@ -16,6 +16,7 @@ import { saveAs } from 'file-saver';
 export interface FundingProjectRow {
   id: string;
   source: string;
+  sourceUrl?: string;
   acronym: string;
   title: string;
   programme: string;
@@ -37,9 +38,20 @@ export interface FundingProjectRow {
 const ESABCC_NAVY = 'FF003399';
 const ESABCC_TEAL = 'FF007B6C';
 
+export interface FundingSourceMeta {
+  id: string;
+  name: string;
+  url: string;
+  publisher: string;
+  license: string;
+  refresh: string;
+  perProjectUrlPattern?: string | null;
+  bulkDownloads?: { label: string; url: string; format: string; notes?: string }[];
+}
+
 export async function exportFundingToExcel(
   projects: FundingProjectRow[],
-  meta: { snapshotDate: string; filterSummary: string },
+  meta: { snapshotDate: string; filterSummary: string; sources?: FundingSourceMeta[] },
 ): Promise<void> {
   const wb = new ExcelJS.Workbook();
   wb.creator = 'ESABCC MethodHub — Funding Sources';
@@ -66,6 +78,7 @@ export async function exportFundingToExcel(
     { header: 'Status',            key: 'status',      width: 10 },
     { header: 'Keywords',          key: 'keywords',    width: 36 },
     { header: 'Source',            key: 'source',      width: 18 },
+    { header: 'Source URL',        key: 'sourceUrl',   width: 56 },
   ];
 
   ws.getRow(1).font = { bold: true, color: { argb: 'FFFFFFFF' } };
@@ -74,7 +87,7 @@ export async function exportFundingToExcel(
   ws.views = [{ state: 'frozen', ySplit: 1 }];
 
   for (const p of projects) {
-    ws.addRow({
+    const row = ws.addRow({
       acronym:     p.acronym,
       title:       p.title,
       id:          p.id,
@@ -93,7 +106,13 @@ export async function exportFundingToExcel(
       status:      p.status,
       keywords:    p.keywords.join('; '),
       source:      p.source,
+      sourceUrl:   p.sourceUrl || '',
     });
+    if (p.sourceUrl) {
+      const cell = row.getCell('sourceUrl');
+      cell.value = { text: p.sourceUrl, hyperlink: p.sourceUrl };
+      cell.font = { color: { argb: ESABCC_NAVY }, underline: true };
+    }
   }
 
   // Currency format on EC contribution + total cost
@@ -159,6 +178,39 @@ export async function exportFundingToExcel(
     sum.getCell(`B${r}`).numFmt = '#,##0';
     sum.getCell(`C${r}`).value = v.n;
     r += 1;
+  }
+
+  // Sources & bulk downloads — preserves the citation trail inside the workbook.
+  if (meta.sources && meta.sources.length > 0) {
+    r += 2;
+    sum.getCell(`A${r}`).value = 'Upstream feeds & bulk downloads';
+    sum.getCell(`A${r}`).font = { bold: true };
+    r += 1;
+    for (const s of meta.sources) {
+      sum.getCell(`A${r}`).value = s.name;
+      sum.getCell(`A${r}`).font = { bold: true };
+      sum.getCell(`B${r}`).value = { text: s.url, hyperlink: s.url };
+      sum.getCell(`B${r}`).font = { color: { argb: ESABCC_NAVY }, underline: true };
+      r += 1;
+      sum.getCell(`A${r}`).value = `${s.publisher} · ${s.license} · refresh: ${s.refresh}`;
+      r += 1;
+      if (s.perProjectUrlPattern) {
+        sum.getCell(`A${r}`).value = `Per-project URL: ${s.perProjectUrlPattern}`;
+        r += 1;
+      }
+      for (const b of s.bulkDownloads || []) {
+        sum.getCell(`A${r}`).value = `Bulk: ${b.label} (${b.format})`;
+        sum.getCell(`B${r}`).value = { text: b.url, hyperlink: b.url };
+        sum.getCell(`B${r}`).font = { color: { argb: ESABCC_NAVY }, underline: true };
+        r += 1;
+        if (b.notes) {
+          sum.getCell(`A${r}`).value = `   ${b.notes}`;
+          sum.getCell(`A${r}`).font = { italic: true };
+          r += 1;
+        }
+      }
+      r += 1;
+    }
   }
 
   // ── Save ──────────────────────────────────────────────────────────────
