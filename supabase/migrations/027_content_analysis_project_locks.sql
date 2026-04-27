@@ -30,8 +30,22 @@ create table if not exists public.content_analysis_project_locks (
   -- runs without auth.
   holder_name  text not null,
   acquired_at  timestamptz not null default now(),
-  heartbeat_at timestamptz not null default now()
+  heartbeat_at timestamptz not null default now(),
+  -- Pending hand-off request from a watcher. The watcher's display name
+  -- gets parked here when they POST to acquire while the lock is held;
+  -- the holder's next heartbeat returns it so the UI can show "Bob is
+  -- asking for the lock — hand off?". Cleared when the lock is released
+  -- (or stolen, or handed off).
+  request_pending  text,
+  requested_at     timestamptz
 );
+
+-- For older instances that already created the table without the
+-- request columns, add them on re-run. Idempotent.
+alter table public.content_analysis_project_locks
+  add column if not exists request_pending text;
+alter table public.content_analysis_project_locks
+  add column if not exists requested_at timestamptz;
 
 create index if not exists idx_ca_locks_heartbeat
   on public.content_analysis_project_locks (heartbeat_at);

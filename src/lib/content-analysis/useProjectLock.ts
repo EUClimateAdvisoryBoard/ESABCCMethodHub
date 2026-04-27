@@ -28,6 +28,10 @@ export interface ProjectLock {
   holderName: string;
   acquiredAt: string;
   heartbeatAt: string;
+  /** Watcher's display name when they've requested the lock; null/absent
+   *  otherwise. Cleared by the server when the lock changes hands. */
+  requestPending?: string | null;
+  requestedAt?: string | null;
 }
 
 export type LockMode = 'idle' | 'editor' | 'watcher';
@@ -37,10 +41,16 @@ export interface UseProjectLockResult {
   lock: ProjectLock | null;
   /** True the first time we acquired without an existing holder. */
   stolen: boolean;
+  /** Set when the editor sees a fresh hand-off request from a watcher.
+   *  The page surfaces a toast on transition; clears when the editor
+   *  hands off or when the request is dismissed. */
+  pendingRequest: string | null;
   /** Watcher action: ask the current holder to hand off. */
   requestEdit: () => Promise<void>;
   /** Editor action: voluntarily release the lock. */
   handOff: () => Promise<void>;
+  /** Editor action: dismiss the pending-request toast without releasing. */
+  dismissRequest: () => void;
   /** Editor action: bump the idle timer. Wired internally to user gestures. */
   ping: () => void;
 }
@@ -113,11 +123,16 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
   const [lock, setLock] = useState<ProjectLock | null>(null);
   const [mode, setMode] = useState<LockMode>('idle');
   const [stolen, setStolen] = useState(false);
+  const [pendingRequest, setPendingRequest] = useState<string | null>(null);
 
   const heartbeatTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const watchTimer = useRef<ReturnType<typeof setInterval> | null>(null);
   const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const releasedRef = useRef(false);
+  // Last requested_at we surfaced — used to detect a fresh request
+  // (vs. one the holder already saw and dismissed).
+  const lastRequestStampRef = useRef<string | null>(null);
+  const dismissedStampRef = useRef<string | null>(null);
 
   const holderId = typeof window === 'undefined' ? 'ssr' : readOrCreateClientId();
 
@@ -149,6 +164,16 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
     }
   }, [projectId]);
 
+  const surfaceRequestIfFresh = (lk: ProjectLock | null) => {
+    const stamp = lk?.requestedAt ?? null;
+    const requester = lk?.requestPending ?? null;
+    if (!stamp || !requester) return;
+    if (stamp === lastRequestStampRef.current) return; // already shown
+    if (stamp === dismissedStampRef.current) return;   // user dismissed
+    lastRequestStampRef.current = stamp;
+    setPendingRequest(requester);
+  };
+
   const heartbeat = useCallback(async (): Promise<void> => {
     if (!isLockable(projectId)) return;
     try {
@@ -161,6 +186,7 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
       if (json.ok && json.lock) {
         setLock(json.lock);
         setMode('editor');
+        surfaceRequestIfFresh(json.lock as ProjectLock);
       } else if (json.hijacked) {
         // Someone took over — drop to watcher so the controls disable.
         setLock(json.lock ?? null);
@@ -289,8 +315,28 @@ export function useProjectLock(projectId: string | null): UseProjectLockResult {
   const handOff = useCallback(async () => {
     await release();
     setMode('watcher');
+    setPendingRequest(null);
     void pollWatcher();
   }, [release, pollWatcher]);
 
-  return { mode, lock, stolen, requestEdit, handOff, ping };
+  const dismissRequest = useCallback(() => {
+    dismissedStampRef.current = lastRequestStampRef.current;
+    setPendingRequest(null);
+  }, []);
+
+  // Bump the idle timer whenever the editor actually does something.
+  // The page also calls `ping()` from its workbench-level interactions,
+  // but global listeners are enough for the typical "user typing" case.
+  useEffect(() => {
+    if (mode !== 'editor') return;
+    const handler = () => ping();
+    window.addEventListener('mousedown', handler, { passive: true });
+    window.addEventListener('keydown', handler, { passive: true });
+    return () => {
+      window.removeEventListener('mousedown', handler);
+      window.removeEventListener('keydown', handler);
+    };
+  }, [mode, ping]);
+
+  return { mode, lock, stolen, pendingRequest, requestEdit, handOff, dismissRequest, ping };
 }

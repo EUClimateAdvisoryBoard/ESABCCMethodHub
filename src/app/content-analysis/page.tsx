@@ -223,6 +223,27 @@ function ContentAnalysisPageInner() {
   const lockMode = projectLock.mode;
   const canEdit = lockMode !== 'watcher'; // editor / idle (master) → editable
 
+  // Hand-off prompt: when a watcher requests the lock, the hook surfaces
+  // a `pendingRequest` once. We show a single sticky toast so the editor
+  // can hand off or keep going. Re-firing is gated by the hook's
+  // last-stamp ref, so the same request never duplicates the toast.
+  useEffect(() => {
+    if (!projectLock.pendingRequest) return;
+    const requester = projectLock.pendingRequest;
+    showToast({
+      tone: 'warning',
+      message: `${requester} is asking for edit access`,
+      description: 'Hand off the project lock so they can take over, or keep editing.',
+      actionLabel: 'Hand off',
+      onAction: () => { projectLock.handOff(); },
+      timeoutMs: 30000,
+    });
+    // After the toast fires, mark it locally dismissed so we don't loop
+    // when the heartbeat keeps observing the same row. The hook also
+    // tracks the stamp so a *new* request will surface again.
+    projectLock.dismissRequest();
+  }, [projectLock.pendingRequest]);
+
   /** Single chokepoint for "is the user allowed to mutate right now?".
    *  Returns true when editing is allowed; otherwise surfaces a toast and
    *  returns false. Every mutating handler short-circuits on a false. */

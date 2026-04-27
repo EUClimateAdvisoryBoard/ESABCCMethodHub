@@ -22,6 +22,11 @@ export interface ProjectLock {
   holderName: string;
   acquiredAt: string;
   heartbeatAt: string;
+  /** When set, a watcher has asked the current holder to hand off. The
+   *  string is the requester's display name. Cleared whenever the lock
+   *  changes hands (release, steal, hand-off). */
+  requestPending?: string | null;
+  requestedAt?: string | null;
 }
 
 interface LockRow {
@@ -30,6 +35,8 @@ interface LockRow {
   holder_name: string;
   acquired_at: string;
   heartbeat_at: string;
+  request_pending?: string | null;
+  requested_at?: string | null;
 }
 
 interface GlobalCache {
@@ -45,6 +52,8 @@ function rowToLock(r: LockRow): ProjectLock {
     holderName: r.holder_name,
     acquiredAt: r.acquired_at,
     heartbeatAt: r.heartbeat_at,
+    requestPending: r.request_pending ?? null,
+    requestedAt: r.requested_at ?? null,
   };
 }
 
@@ -102,17 +111,33 @@ export interface AcquireResult {
   stolen: boolean;
 }
 
-/** Acquire (or refresh, or steal-if-stale). Idempotent for the same holder. */
+/** Acquire (or refresh, or steal-if-stale). Idempotent for the same holder.
+ *  When the lock is held by someone else and not stale, parks the requester's
+ *  name in `request_pending` so the holder's next heartbeat surfaces a
+ *  hand-off prompt. */
 export async function acquireLock(input: AcquireInput): Promise<AcquireResult> {
   const now = new Date();
   const nowMs = now.getTime();
   const sb = getServerSupabase();
 
-  // Read current lock (server or memory fallback).
   const existing = await getLock(input.projectId);
 
   if (existing && existing.holderId !== input.holderId && !isStale(existing, nowMs)) {
-    return { ok: false, lock: existing, stolen: false };
+    // Lock denied — but record the request so the holder can see it.
+    const stamped: ProjectLock = {
+      ...existing,
+      requestPending: input.holderName,
+      requestedAt: now.toISOString(),
+    };
+    if (sb) {
+      const { error } = await sb
+        .from('content_analysis_project_locks')
+        .update({ request_pending: input.holderName, requested_at: now.toISOString() })
+        .eq('project_id', input.projectId);
+      if (error) console.error('[locks-store] acquireLock request stamp failed:', error.message);
+    }
+    g.__caLocks!.set(input.projectId, stamped);
+    return { ok: false, lock: stamped, stolen: false };
   }
 
   const stolen = !!existing && existing.holderId !== input.holderId && isStale(existing, nowMs);
@@ -121,9 +146,11 @@ export async function acquireLock(input: AcquireInput): Promise<AcquireResult> {
     projectId: input.projectId,
     holderId: input.holderId,
     holderName: input.holderName,
-    // Refresh acquiredAt only when we're a new holder (own-refresh keeps old).
     acquiredAt: existing && existing.holderId === input.holderId ? existing.acquiredAt : now.toISOString(),
     heartbeatAt: now.toISOString(),
+    // Clear any pending request — we're now the holder.
+    requestPending: null,
+    requestedAt: null,
   };
 
   if (sb) {
@@ -133,13 +160,14 @@ export async function acquireLock(input: AcquireInput): Promise<AcquireResult> {
       holder_name: next.holderName,
       acquired_at: next.acquiredAt,
       heartbeat_at: next.heartbeatAt,
+      request_pending: null,
+      requested_at: null,
     };
     const { error } = await sb
       .from('content_analysis_project_locks')
       .upsert(row, { onConflict: 'project_id' });
     if (error) {
       console.error('[locks-store] acquireLock failed:', error.message);
-      // Fall through to memory fallback so the user isn't stuck.
     }
   }
   g.__caLocks!.set(next.projectId, next);
