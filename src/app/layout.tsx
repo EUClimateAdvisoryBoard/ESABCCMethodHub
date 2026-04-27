@@ -3,7 +3,6 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/lib/auth-context';
 import { PreferencesProvider } from '@/lib/preferences-context';
-import PasswordGate from '@/components/PasswordGate';
 import MobileBottomNav from '@/components/MobileBottomNav';
 import ConsentBanner from '@/components/ConsentBanner';
 import KeyboardShortcuts from '@/components/KeyboardShortcuts';
@@ -64,19 +63,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           link sits at the very top of <body>; pressing Tab once exposes it. */}
       <body className="min-h-screen">
         <a href="#main" className="mh-skip-link">Skip to main content</a>
-        <PasswordGate>
-          <AuthProvider>
-            <PreferencesProvider>
-              {children}
-              <MobileBottomNav />
-              <ConsentBanner />
-              <CommandPalette />
-              <ContextDrawer />
-              <KeyboardShortcuts />
-              <ToastHost />
-            </PreferencesProvider>
-          </AuthProvider>
-        </PasswordGate>
+        <AuthProvider>
+          <PreferencesProvider>
+            {children}
+            <MobileBottomNav />
+            <ConsentBanner />
+            <CommandPalette />
+            <ContextDrawer />
+            <KeyboardShortcuts />
+            <ToastHost />
+          </PreferencesProvider>
+        </AuthProvider>
       </body>
     </html>
   );

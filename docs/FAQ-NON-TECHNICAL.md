@@ -1128,9 +1128,9 @@ the authoring context. Mechanically, it consists of three parts:
 Authentication does **not** reuse the main web application's
 session cookie. Instead, the add-in's task-pane route
 (`/word-addin`) is an explicitly public route in the site's
-password gate (`PUBLIC_ROUTES` in `src/components/PasswordGate.tsx`),
-and the add-in holds its own credentials, provisioned at install
-time by EEA IT:
+password gate (`SITE_AUTH_BYPASS_PREFIXES` in
+`src/middleware.ts`), and the add-in holds its own credentials,
+provisioned at install time by EEA IT:
 
 - A **local Bridge token** (`__REFMANAGER_BRIDGE_TOKEN__`)
   injected into the task pane's `window` at bootstrap and sent as
@@ -1265,10 +1265,12 @@ honest state today:
   correctly the hosting partner's responsibility.
 - **Authentication layer.** At present, sign-in uses **Supabase
   Auth** (email + hashed password). In addition, the running
-  application is currently wrapped in a simple site-wide password
-  gate (`src/components/PasswordGate.tsx`) while the site is
-  pre-release; the EEA-hosted production target is **OIDC / EU
-  Login** (Q11, Q19), which is scoped but not yet wired in.
+  application is wrapped in a simple site-wide password gate
+  enforced at the edge in `src/middleware.ts` (server-only
+  `SITE_PASSWORD`; HMAC-signed HttpOnly cookie issued by
+  `/api/auth/site-login`) while the site is pre-release. The
+  EEA-hosted production target is **OIDC / EU Login** (Q11,
+  Q19), which is scoped but not yet wired in.
 - **Application layer.** Route handlers currently validate input
   with manual checks (string length, required fields, type
   coercion) inside each handler. A formal schema-validation

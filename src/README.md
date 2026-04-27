@@ -69,8 +69,13 @@ Grouped by theme. Root-level components live under `src/components/`; themed
 subfolders live under `src/components/{charts, content-analysis, references, ui}`.
 
 **Navigation & layout**: `SiteHeader`, `SiteFooter`, `Navigation`,
-`MobileBottomNav`, `SearchBar`, `NotificationBell`, `PasswordGate`,
+`MobileBottomNav`, `SearchBar`, `NotificationBell`,
 `PageHero`, `LinkPreview`.
+
+The site-wide password gate is now enforced server-side in
+`src/middleware.ts` against the `SITE_PASSWORD` env var; the login
+form lives at `src/app/site-login/`. There is no longer a client-side
+gate component.
 
 **Policy Navigator**: `PolicyNetworkGraph` (D3 force layout), `PolicyCard`,
 `ConnectionGraph`, `ConnectionDetailPanel`, `ConnectionTypesLegend`,
