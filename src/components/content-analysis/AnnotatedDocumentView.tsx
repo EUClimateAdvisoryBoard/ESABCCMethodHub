@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type {
   AnalysisDocument,
   CodeNode,
@@ -19,6 +19,11 @@ interface Props {
    *  Lets the parent open the FloatingCodeToolbar so the user can pick or
    *  create a tag without the legacy "select a tag first" alert. */
   onSelectionWithoutCode?: (sel: { startChar: number; endChar: number; text: string; rect: DOMRect }) => void;
+  /** Right-click on a coded-segment bracket → delete it. */
+  onDeleteSegment?: (segmentId: string) => void;
+  /** Right-click on a coded-segment bracket → resize it. The handler is
+   *  given the new char range; the store re-derives the text slice. */
+  onUpdateSegmentRange?: (segmentId: string, next: { startChar: number; endChar: number }) => void;
   /** In-document Ctrl+F search: case-insensitive substring; matches are
    *  wrapped in a yellow `<mark>` on top of any segment highlight. */
   searchQuery?: string;
@@ -56,11 +61,29 @@ export default function AnnotatedDocumentView({
   onSelectSegment,
   highlightedSegmentId,
   onSelectionWithoutCode,
+  onDeleteSegment,
+  onUpdateSegmentRange,
   searchQuery,
   searchHitIndex,
   onSearchMatchesChange,
 }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
+  // State for the segment context menu (right-click on bracket).
+  const [contextMenu, setContextMenu] = useState<{
+    segmentId: string;
+    x: number;
+    y: number;
+  } | null>(null);
+  useEffect(() => {
+    if (!contextMenu) return;
+    const close = () => setContextMenu(null);
+    window.addEventListener('click', close);
+    window.addEventListener('keydown', close);
+    return () => {
+      window.removeEventListener('click', close);
+      window.removeEventListener('keydown', close);
+    };
+  }, [contextMenu]);
   const codeById = useMemo(() => new Map(codes.map(c => [c.id, c])), [codes]);
 
   // Pre-compute every match offset for the in-document Ctrl+F search.
@@ -236,7 +259,13 @@ export default function AnnotatedDocumentView({
                   key={seg.id}
                   data-segment-id={seg.id}
                   onClick={e => { e.stopPropagation(); onSelectSegment(seg.id); }}
-                  title={`${code?.name ?? 'tag'} — "${seg.text.slice(0, 120)}"`}
+                  onContextMenu={e => {
+                    if (!onDeleteSegment && !onUpdateSegmentRange) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setContextMenu({ segmentId: seg.id, x: e.clientX, y: e.clientY });
+                  }}
+                  title={`${code?.name ?? 'tag'} — "${seg.text.slice(0, 120)}" · right-click for actions`}
                   className="absolute top-0 bottom-0 w-[6px] cursor-pointer"
                   style={{
                     left: `${lane * 10 + 1}px`,
@@ -264,6 +293,112 @@ export default function AnnotatedDocumentView({
         </div>
         );
       })}
+      {contextMenu && (() => {
+        const seg = segments.find(s => s.id === contextMenu.segmentId);
+        if (!seg) return null;
+        const code = codeById.get(seg.codeId);
+        // Bounded slices used for "expand to next sentence" / "shrink to
+        // previous sentence" — operate on the same body the segment was
+        // originally anchored to (block text or flat doc.text).
+        const body = doc.text;
+        const expand = () => {
+          if (!onUpdateSegmentRange) return;
+          // Walk forward from endChar until the next sentence terminator.
+          let end = seg.endChar;
+          const max = Math.min(body.length, seg.endChar + 400);
+          while (end < max && !/[.!?]/.test(body[end])) end++;
+          if (end < body.length) end = Math.min(body.length, end + 1);
+          onUpdateSegmentRange(seg.id, { startChar: seg.startChar, endChar: end });
+          setContextMenu(null);
+        };
+        const shrinkToWord = () => {
+          if (!onUpdateSegmentRange) return;
+          // Reduce to the first whitespace-delimited word inside the range.
+          const slice = body.slice(seg.startChar, seg.endChar);
+          const m = slice.match(/\S+/);
+          if (!m || m.index == null) return;
+          const start = seg.startChar + m.index;
+          const end = start + m[0].length;
+          onUpdateSegmentRange(seg.id, { startChar: start, endChar: end });
+          setContextMenu(null);
+        };
+        const matchSelection = () => {
+          if (!onUpdateSegmentRange) return;
+          const sel = window.getSelection();
+          if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+            window.alert('Select a new range first, then right-click and choose this option.');
+            return;
+          }
+          const range = sel.getRangeAt(0);
+          const start = offsetFromNode(range.startContainer, range.startOffset, containerRef.current!);
+          const end = offsetFromNode(range.endContainer, range.endOffset, containerRef.current!);
+          if (start == null || end == null) return;
+          onUpdateSegmentRange(seg.id, {
+            startChar: Math.min(start, end),
+            endChar: Math.max(start, end),
+          });
+          sel.removeAllRanges();
+          setContextMenu(null);
+        };
+        return (
+          <div
+            role="menu"
+            aria-label="Segment actions"
+            style={{
+              position: 'fixed',
+              left: contextMenu.x,
+              top: contextMenu.y,
+              zIndex: 90,
+            }}
+            onClick={e => e.stopPropagation()}
+            className="bg-white border border-[#E6E7E8] rounded-md shadow-xl text-[12px] text-[#3D5265] min-w-[200px]"
+          >
+            <div className="px-3 py-1.5 border-b border-[#E6E7E8] bg-[#FBFBFA] font-mono text-[10px] uppercase tracking-wider text-[#8A95A3] flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: code?.color ?? '#8A95A3' }} aria-hidden />
+              <span className="truncate">{code?.name ?? 'tag'}</span>
+            </div>
+            {onUpdateSegmentRange && (
+              <>
+                <button
+                  type="button"
+                  onClick={expand}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#F3F4F6]"
+                >
+                  Expand to next sentence
+                </button>
+                <button
+                  type="button"
+                  onClick={shrinkToWord}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#F3F4F6]"
+                >
+                  Shrink to first word
+                </button>
+                <button
+                  type="button"
+                  onClick={matchSelection}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#F3F4F6]"
+                  title="Make this segment match the current text selection"
+                >
+                  Match current selection
+                </button>
+                <div className="border-t border-[#E6E7E8]" />
+              </>
+            )}
+            {onDeleteSegment && (
+              <button
+                type="button"
+                onClick={() => {
+                  onDeleteSegment(seg.id);
+                  setContextMenu(null);
+                }}
+                className="w-full text-left px-3 py-1.5 hover:bg-[#FEE2E2] text-[#B83230]"
+              >
+                Delete segment
+              </button>
+            )}
+          </div>
+        );
+      })()}
     </div>
   );
 }

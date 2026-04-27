@@ -101,6 +101,7 @@ function ContentAnalysisPageInner() {
     moveCode,
     addSegment,
     deleteSegment,
+    updateSegmentRange,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,
@@ -1578,6 +1579,13 @@ function ContentAnalysisPageInner() {
                                     rect: sel.rect,
                                   })
                                 }
+                                onDeleteSegment={isPreviewingVersion ? undefined : (id) => {
+                                  if (window.confirm('Delete this tagged segment?')) {
+                                    deleteSegment(id);
+                                    if (highlightedSegmentId === id) setHighlightedSegmentId(null);
+                                  }
+                                }}
+                                onUpdateSegmentRange={isPreviewingVersion ? undefined : updateSegmentRange}
                                 searchQuery={docSearchOpen ? docSearchQuery : ''}
                                 searchHitIndex={docSearchHitIndex}
                                 onSearchMatchesChange={setDocSearchTotal}

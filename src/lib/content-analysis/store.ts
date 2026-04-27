@@ -428,6 +428,44 @@ export function useContentAnalysis() {
     patchSegmentNote(id, note);
   }, []);
 
+  /** Resize a coded segment in place — used by the bracket-gutter context
+   *  menu in the document view (expand to next sentence, shrink, etc.).
+   *  The caller passes a function that maps the existing offsets to new
+   *  ones; we re-derive the `text` slice from the document body so the
+   *  preview in the segments list stays in sync. */
+  const updateSegmentRange = useCallback((
+    id: string,
+    next: { startChar: number; endChar: number },
+  ) => {
+    let updated: CodedSegment | null = null;
+    update(s => {
+      const segments = s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        const doc = s.documents.find(d => d.id === seg.documentId);
+        // For block-anchored segments, slice from the block's text;
+        // otherwise from the document's flat text.
+        let body = doc?.text ?? '';
+        if (seg.blockId && doc?.blocks) {
+          const block = doc.blocks.find(b => b.id === seg.blockId);
+          body = block?.text ?? body;
+        }
+        const start = Math.max(0, Math.min(next.startChar, next.endChar));
+        const end = Math.min(body.length, Math.max(next.startChar, next.endChar));
+        if (end - start < 1) return seg;
+        const merged: CodedSegment = {
+          ...seg,
+          startChar: start,
+          endChar: end,
+          text: body.slice(start, end),
+        };
+        updated = merged;
+        return merged;
+      });
+      return { ...s, segments };
+    });
+    if (updated) postSegments([updated]);
+  }, []);
+
   // ── Suggestion operations (AI track-changes workflow) ─────────────
   /** Replace all pending suggestions for a document with a fresh batch
    *  from the AI. Accepts an array of raw suggestion inputs (without ids
@@ -951,6 +989,7 @@ export function useContentAnalysis() {
     addSegment,
     deleteSegment,
     updateSegmentNote,
+    updateSegmentRange,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,
