@@ -32,18 +32,19 @@ Opens at `http://localhost:3000`.
 ## Documentation
 
 The full documentation — five-module deep-dives, infrastructure,
-vision, deployment, GDPR and tech stack — is published as a
-password-gated site:
+vision, deployment, GDPR and tech stack — ships as a subpage of the
+MethodHub itself, hosted on Vercel at:
 
-**<https://sebastianfra.github.io/MethodHub/>**
+**<https://esabccmethodhub.vercel.app/docs/>**
 
-The site is encrypted with [StaticCrypt](https://github.com/robinmoisson/staticrypt);
-the browser decrypts locally after you enter the passphrase. Ask CCE5
-for the current password. Ticking *Remember me* keeps a device signed
-in for 30 days. `robots.txt` tells search engines to stay away.
+The MkDocs source lives under `docs/` and is built into `public/docs/`
+during the Vercel build (see `scripts/build-docs.sh` and the
+`vercel-build` script in `package.json`). To preview locally:
 
-Password rotation and the full threat-model discussion live inside the
-docs site under *Docs site → Access*.
+```bash
+bash scripts/build-docs.sh   # writes to public/docs/
+mkdocs serve                 # http://127.0.0.1:8000
+```
 
 Not a developer? The non-technical FAQ is shipped as a PDF at the repo
 root: [`ESABCC-MethodHub-FAQ-non-technical.pdf`](ESABCC-MethodHub-FAQ-non-technical.pdf).
