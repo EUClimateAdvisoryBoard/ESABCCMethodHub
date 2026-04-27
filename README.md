@@ -106,7 +106,7 @@ The full documentation — five-module deep-dives, infrastructure,
 vision, deployment, GDPR and tech stack — ships as a subpage of the
 MethodHub itself, hosted on Vercel at:
 
-**<https://esabccmethodhub.vercel.app/docs/>**
+**<https://eu-climate-policy.vercel.app/docs/>**
 
 The MkDocs source lives under `docs/` and is built into `public/docs/`
 during the Vercel build (see `scripts/build-docs.sh` and the
