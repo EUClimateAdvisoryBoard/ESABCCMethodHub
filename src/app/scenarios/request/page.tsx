@@ -1,5 +1,5 @@
 'use client';
-import { useState, useCallback, useRef, useEffect } from 'react';
+import { Suspense, useState, useCallback, useRef, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
@@ -29,6 +29,16 @@ interface OpenCall {
 }
 
 export default function ScenarioRequestPage() {
+  // useSearchParams must run inside a Suspense boundary so the page can
+  // be statically prerendered.
+  return (
+    <Suspense fallback={null}>
+      <ScenarioRequestPageInner />
+    </Suspense>
+  );
+}
+
+function ScenarioRequestPageInner() {
   const searchParams = useSearchParams();
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');

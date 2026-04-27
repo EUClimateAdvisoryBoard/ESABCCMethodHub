@@ -16,7 +16,7 @@
  * permanently (we record onboarding_seen[moduleKey] = true in their
  * preferences). They can replay it any time via `?help=1` in the URL.
  */
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { usePreferences } from '@/lib/preferences-context';
 
@@ -33,7 +33,17 @@ interface Props {
   steps: TourStep[];
 }
 
-export default function OnboardingTour({ moduleKey, steps }: Props) {
+export default function OnboardingTour(props: Props) {
+  // useSearchParams must live inside a Suspense boundary so that pages
+  // hosting this tour can still be statically prerendered.
+  return (
+    <Suspense fallback={null}>
+      <OnboardingTourInner {...props} />
+    </Suspense>
+  );
+}
+
+function OnboardingTourInner({ moduleKey, steps }: Props) {
   const { prefs, markOnboardingSeen } = usePreferences();
   const search = useSearchParams();
   const [open, setOpen] = useState(false);

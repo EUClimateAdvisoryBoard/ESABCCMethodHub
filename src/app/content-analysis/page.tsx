@@ -23,7 +23,7 @@
  * `react-pdf` is heavy and only needed on the PDF tab, so it is
  * `dynamic`-imported below.
  */
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
@@ -81,6 +81,16 @@ const DEFAULT_CODE_COLORS = [
 ];
 
 export default function ContentAnalysisPage() {
+  // useSearchParams must run inside a Suspense boundary so the page can
+  // be statically prerendered.
+  return (
+    <Suspense fallback={null}>
+      <ContentAnalysisPageInner />
+    </Suspense>
+  );
+}
+
+function ContentAnalysisPageInner() {
   const {
     snapshot,
     addCode,
