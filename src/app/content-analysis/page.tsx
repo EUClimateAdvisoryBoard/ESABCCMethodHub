@@ -44,6 +44,7 @@ const PdfDocumentView = dynamic(
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePreview';
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
+import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
@@ -118,6 +119,7 @@ function ContentAnalysisPageInner() {
     updateProject,
     deleteProject,
     resetAll,
+    restoreCodesAndSegments,
   } = useContentAnalysis();
 
   // Top-level navigation across the module:
@@ -1722,6 +1724,29 @@ function ContentAnalysisPageInner() {
                   segments={segmentsForDocument}
                   codes={snapshot.codes}
                   documents={snapshot.documents}
+                />
+              </Panel>
+
+              {/* Snapshot history — manual + every-5-min auto-save of the
+                  code system and segments. Lives in localStorage, separate
+                  from the main state, so reset-to-seed leaves it intact. */}
+              <Panel
+                title="Snapshots"
+                accent="auto-save · 5 min"
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <SnapshotsPanel
+                  codes={snapshot.codes}
+                  segments={snapshot.segments}
+                  onRestore={(codes, segments) => {
+                    restoreCodesAndSegments(codes, segments);
+                    showToast({
+                      tone: 'success',
+                      message: `Restored ${codes.length} tag${codes.length === 1 ? '' : 's'} and ${segments.length} segment${segments.length === 1 ? '' : 's'}.`,
+                    });
+                  }}
                 />
               </Panel>
             </aside>

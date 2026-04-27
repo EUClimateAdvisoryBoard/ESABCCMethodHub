@@ -974,6 +974,13 @@ export function useContentAnalysis() {
     emit();
   }, []);
 
+  /** Replace the current code system + segments with the contents of a
+   *  snapshot. Documents and projects are preserved — snapshots are only
+   *  about the user's coding work, not the corpus. */
+  const restoreCodesAndSegments = useCallback((codes: CodeNode[], segments: CodedSegment[]) => {
+    update(s => ({ ...s, codes, segments }));
+  }, []);
+
   // ── Derived selectors ──────────────────────────────────────────────
   const rootCodes = useMemo(() => childrenOf(snapshot.codes, null), [snapshot.codes]);
 
@@ -998,6 +1005,7 @@ export function useContentAnalysis() {
     upsertDocument,
     applyPolicyBodies,
     applyResegmentation,
+    restoreCodesAndSegments,
     applyIngestion,
     applyClassifications,
     deleteDocumentVersion,
