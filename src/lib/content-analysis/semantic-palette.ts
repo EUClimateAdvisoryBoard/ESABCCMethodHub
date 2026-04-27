@@ -104,3 +104,26 @@ export function semanticColorFor(rootName: string, depth: number): string | null
   const idx = Math.min(depth, spec.shades.length - 1);
   return spec.shades[idx];
 }
+
+/**
+ * Derive a sub-tag colour by lightening the parent's colour by `steps`.
+ * Used as a fallback when the root tag's name doesn't classify into a
+ * semantic family — guarantees that every sub-tag still visually reads
+ * as part of its parent's family. `steps` should be 1 for a direct
+ * child, 2 for a grandchild, and so on.
+ */
+export function lightenedFromParent(parentHex: string, steps: number): string | null {
+  const m = /^#?([0-9a-fA-F]{6})$/.exec(parentHex.trim());
+  if (!m) return null;
+  let r = parseInt(m[1].slice(0, 2), 16);
+  let g = parseInt(m[1].slice(2, 4), 16);
+  let b = parseInt(m[1].slice(4, 6), 16);
+  // Each step pushes the channel ~22% closer to white. Capped at 0.66 so
+  // even deeply nested tags stay distinguishable from pure white.
+  const factor = Math.max(0, Math.min(0.66, steps * 0.22));
+  r = Math.round(r + (255 - r) * factor);
+  g = Math.round(g + (255 - g) * factor);
+  b = Math.round(b + (255 - b) * factor);
+  const toHex = (n: number) => n.toString(16).padStart(2, '0');
+  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+}

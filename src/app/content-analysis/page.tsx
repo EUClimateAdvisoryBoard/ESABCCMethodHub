@@ -58,7 +58,7 @@ import VersionArchive from '@/components/content-analysis/VersionArchive';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import { TooltipProvider } from '@/components/ui/Tooltip';
 import { showToast } from '@/components/ui/ToastHost';
-import { semanticColorFor } from '@/lib/content-analysis/semantic-palette';
+import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
 import {
   segmentsForProject,
   useContentAnalysis,
@@ -775,8 +775,10 @@ function ContentAnalysisPageInner() {
       if (!name) { setCodeEditor(null); return; }
       const isProjectScope = activeProjectId !== 'project-master';
       // Semantic palette (M·05 #3): walk up to the root to get the family,
-      // then pick a shade by depth. Falls back to DEFAULT_CODE_COLORS when
-      // the root doesn't classify (e.g. user-named idiosyncratic codes).
+      // then pick a shade by depth. When the root doesn't classify into a
+      // known family, fall back to lightening the immediate parent's
+      // colour so sub-tags still read as part of the same family. Random
+      // DEFAULT_CODE_COLORS only fires for root tags with no parent.
       let suggested: string | null = null;
       if (!result.color) {
         let depth = 0;
@@ -790,6 +792,14 @@ function ContentAnalysisPageInner() {
           depth++;
         }
         suggested = semanticColorFor(rootName, depth);
+        if (!suggested && codeEditor.targetId) {
+          // Walk up one to the immediate parent, then lighten by depth.
+          const directParent = snapshot.codes.find(c => c.id === codeEditor.targetId);
+          // Recompute depth as distance from that parent (= 1 for direct child).
+          if (directParent) {
+            suggested = lightenedFromParent(directParent.color, 1);
+          }
+        }
       }
       const code = addCode({
         name,
