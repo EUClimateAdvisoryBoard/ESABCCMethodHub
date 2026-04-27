@@ -17,7 +17,12 @@ fi
 
 PIP="python3 -m pip"
 
-$PIP install --quiet --disable-pip-version-check \
+# Vercel's build image ships an "externally-managed" Python (PEP 668)
+# managed by uv, which refuses ordinary `pip install` invocations. The
+# build VM is ephemeral, so installing into the system site-packages is
+# fine — pass --break-system-packages to override the guard. Harmless on
+# unmanaged Pythons (the flag is silently accepted).
+$PIP install --quiet --disable-pip-version-check --break-system-packages \
   mkdocs-material==9.5.42 \
   pymdown-extensions==10.11.2 \
   mkdocs-awesome-pages-plugin==2.9.3 \
