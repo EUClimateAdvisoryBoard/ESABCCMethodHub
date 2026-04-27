@@ -48,20 +48,6 @@ Module index: [modules overview](https://eu-climate-policy.vercel.app/docs/modul
 | `Dockerfile`, `docker-compose.yml` | Single-host demo and production build target. |
 | `.github/workflows/` | CI, daily pipelines, docs deployment. |
 
-## Quick start (local demo)
-
-```bash
-cp .env.local.example .env.local   # edit DB + LLM keys
-docker compose up --build
-```
-
-Opens at `http://localhost:3000`.
-
-For anything beyond a local demo — running it on EEA infrastructure,
-wiring up the AI layer, GDPR posture — start with
-[deployment](https://eu-climate-policy.vercel.app/docs/infrastructure/deployment/)
-and [tech stack](https://eu-climate-policy.vercel.app/docs/infrastructure/tech-stack/).
-
 ## Infrastructure
 
 MethodHub is packaged for self-hosted deployment on EEA infrastructure.
