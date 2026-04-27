@@ -37,6 +37,7 @@ the quality bar we ship to the Secretariat.
 | `energy-system/`              | Energy System        | PyPSA-style optimisation; requires PyPSA backend service.          |
 | `fact-sheets/`                | Fact Sheet Builder   | Drag-and-drop widgets; LaTeX export path not yet validated.        |
 | `faq/`                        | FAQ & Prebunking     | Content pipeline; awaiting editorial sign-off.                     |
+| `funding-sources/`            | Funding Sources      | Horizon Dashboard + DG DIGIT QlikSense snapshot; scraper pending.  |
 | `maritime-aviation/`          | Maritime & Aviation  | SEAMAPS / OAG data requires procurement.                           |
 | `media-monitoring/`           | Media Monitoring     | GDELT pipeline works; dashboard UX and consent flow WIP.           |
 
