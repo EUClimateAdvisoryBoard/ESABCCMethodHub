@@ -45,6 +45,8 @@ import SegmentsList from '@/components/content-analysis/SegmentsList';
 import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePreview';
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
+import NumericExtractionsPanel from '@/components/content-analysis/NumericExtractionsPanel';
+import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
@@ -104,6 +106,7 @@ function ContentAnalysisPageInner() {
     addSegment,
     deleteSegment,
     updateSegmentRange,
+    updateSegmentNumeric,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,
@@ -1727,6 +1730,28 @@ function ContentAnalysisPageInner() {
                 />
               </Panel>
 
+              {/* Numeric extractions — mixed-methods workflow. Pulls in
+                  every project segment that carries a `numeric` payload
+                  (across the project's documents, not just the current
+                  one) so analysts can build a single budget table from a
+                  whole corpus pass. */}
+              <Panel
+                title="Numeric extractions"
+                accent={`${projectSegments.filter(s => s.numeric).length}`}
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <NumericExtractionsPanel
+                  segments={projectSegments}
+                  codes={snapshot.codes}
+                  documents={snapshot.documents}
+                  onUpdate={updateSegmentNumeric}
+                  onDelete={deleteSegment}
+                  onJump={openSegmentInDoc}
+                />
+              </Panel>
+
               {/* Snapshot history — manual + every-5-min auto-save of the
                   code system and segments. Lives in localStorage, separate
                   from the main state, so reset-to-seed leaves it intact. */}
@@ -1842,6 +1867,41 @@ function ContentAnalysisPageInner() {
         }}
         onPickCode={(codeId) => {
           setSelectedCodeId(codeId);
+        }}
+        onExtractNumber={() => {
+          if (!toolbarSel || !selectedDocument || !activeProject) return;
+          // The numeric extraction still needs a qualitative tag. Use the
+          // current active code if any; otherwise prompt the user to pick.
+          if (!selectedCodeId) {
+            showToast({
+              tone: 'warning',
+              message: 'Pick a tag first',
+              description: 'Numbers stay attached to a qualitative tag (e.g. "Adaptation budget"). Pick one from the toolbar, then extract again.',
+            });
+            return;
+          }
+          const numeric = guessNumericExtraction(toolbarSel.text);
+          upsertDocument(selectedDocument);
+          const seg = addSegment({
+            documentId: selectedDocument.id,
+            codeId: selectedCodeId,
+            startChar: toolbarSel.startChar,
+            endChar: toolbarSel.endChar,
+            text: toolbarSel.text,
+            blockId: toolbarSel.blockId,
+            projectId: activeProject.id === 'project-master' ? null : activeProject.id,
+            numeric,
+          });
+          setHighlightedSegmentId(seg.id);
+          window.getSelection()?.removeAllRanges();
+          setToolbarSel(null);
+          const ok = Number.isFinite(numeric.value);
+          showToast({
+            tone: ok ? 'success' : 'warning',
+            message: ok
+              ? `Extracted ${numeric.value}${numeric.unit ? ' ' + numeric.unit : ''}`
+              : 'Couldn’t parse a number — edit the value in the right panel.',
+          });
         }}
         onClear={() => {
           window.getSelection()?.removeAllRanges();

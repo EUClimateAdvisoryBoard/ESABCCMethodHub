@@ -400,6 +400,8 @@ export function useContentAnalysis() {
     note?: string;
     projectId: string | null;
     blockId?: string;
+    /** Mixed-methods payload (number + unit + year + label). */
+    numeric?: import('./types').NumericExtraction;
   }): CodedSegment => {
     const seg: CodedSegment = {
       id: newId('seg'),
@@ -412,10 +414,32 @@ export function useContentAnalysis() {
       note: input.note ?? '',
       projectId: input.projectId,
       createdAt: new Date().toISOString(),
+      numeric: input.numeric,
     };
     update(s => ({ ...s, segments: [...s.segments, seg] }));
     postSegments([seg]);
     return seg;
+  }, []);
+
+  /** Set or update the numeric metadata on an existing segment. Pass
+   *  `null` to clear the numeric payload (segment stays qualitative). */
+  const updateSegmentNumeric = useCallback((
+    id: string,
+    numeric: import('./types').NumericExtraction | null,
+  ) => {
+    let updated: CodedSegment | null = null;
+    update(s => {
+      const segments = s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        const merged: CodedSegment = numeric
+          ? { ...seg, numeric }
+          : (() => { const { numeric: _drop, ...rest } = seg; return rest; })();
+        updated = merged;
+        return merged;
+      });
+      return { ...s, segments };
+    });
+    if (updated) postSegments([updated]);
   }, []);
 
   const deleteSegment = useCallback((id: string) => {
@@ -997,6 +1021,7 @@ export function useContentAnalysis() {
     deleteSegment,
     updateSegmentNote,
     updateSegmentRange,
+    updateSegmentNumeric,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,

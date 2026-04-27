@@ -40,6 +40,11 @@ interface Props {
    *  pre-filled with the selection text) and applies it to the current
    *  selection. Optional so existing call sites don't break. */
   onCreateAndApply?: (suggestedName: string) => void;
+  /** "Extract number" — fires when the user wants to record the highlighted
+   *  text as a numeric extraction (mixed-methods). The handler typically
+   *  creates a coded segment + attaches a numeric payload parsed from the
+   *  text. Only rendered when supplied. */
+  onExtractNumber?: () => void;
 }
 
 export default function FloatingCodeToolbar({
@@ -51,6 +56,7 @@ export default function FloatingCodeToolbar({
   onPickCode,
   onClear,
   onCreateAndApply,
+  onExtractNumber,
 }: Props) {
   const [mounted, setMounted] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -137,6 +143,17 @@ export default function FloatingCodeToolbar({
           title="Create a new tag from the selected text and apply it"
         >
           + New tag
+        </button>
+      )}
+
+      {onExtractNumber && selection && /\d/.test(selection.text) && (
+        <button
+          type="button"
+          onClick={onExtractNumber}
+          className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
+          title="Capture this number as a structured extraction (value · unit · year · label) for export"
+        >
+          # Extract number
         </button>
       )}
 
