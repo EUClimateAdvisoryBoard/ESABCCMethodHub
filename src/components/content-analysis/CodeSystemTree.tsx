@@ -304,6 +304,9 @@ export default function CodeSystemTree({
             <ActionButton title="Add child tag" onClick={() => onAddChild(node.id)}>＋</ActionButton>
             <ActionButton title="Rename" onClick={() => onRename(node.id)}>✎</ActionButton>
             <ActionButton title="Colour" onClick={() => onRecolor(node.id)}>◐</ActionButton>
+            {onMove && node.parentId && (
+              <ActionButton title="Move to root level" onClick={() => onMove(node.id, null)}>↥</ActionButton>
+            )}
             <ActionButton title="Delete" onClick={() => onDelete(node.id)} danger>×</ActionButton>
           </span>
         </div>
@@ -353,6 +356,33 @@ export default function CodeSystemTree({
           >
             {allCollapsed ? 'Expand all' : 'Collapse all'}
           </button>
+        </div>
+      )}
+      {/* Root drop zone — drop a tag here to promote it to a root tag.
+          Only renders when reparenting is enabled, and only highlights when
+          there's actually a code being dragged over it. */}
+      {onMove && (
+        <div
+          onDragOver={e => {
+            if (!e.dataTransfer.types.includes('mh/code')) return;
+            e.preventDefault();
+            setDragOverId('root');
+          }}
+          onDragLeave={() => { if (dragOverId === 'root') setDragOverId(null); }}
+          onDrop={e => {
+            e.preventDefault();
+            const sourceId = e.dataTransfer.getData('mh/code');
+            setDragOverId(null);
+            if (!sourceId) return;
+            onMove(sourceId, null);
+          }}
+          className={`mx-2 my-1 px-2 py-1 text-[10.5px] text-center rounded-sm border border-dashed transition ${
+            dragOverId === 'root'
+              ? 'border-[var(--mh-status-primary)] bg-[var(--mh-status-primary)]/10 text-[var(--mh-status-primary)]'
+              : 'border-[#E6E7E8] text-[#B8BCC2]'
+          }`}
+        >
+          Drop here to promote to root tag
         </div>
       )}
       <ul className="py-1">{roots.map(r => renderNode(r, 0))}</ul>
