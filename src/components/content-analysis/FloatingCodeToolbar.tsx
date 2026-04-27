@@ -18,7 +18,9 @@ import { createPortal } from 'react-dom';
 import type { CodeNode } from '@/lib/content-analysis/types';
 
 export interface ToolbarSelection {
-  blockId: string;
+  /** Block id when the selection is inside a structured PDF block. Absent
+   *  for the flat-text viewer, in which case offsets are document-wide. */
+  blockId?: string;
   startChar: number;
   endChar: number;
   text: string;
@@ -34,6 +36,15 @@ interface Props {
   onSplit: () => void;
   onPickCode: (codeId: string) => void;
   onClear: () => void;
+  /** "+ New tag from selection" — creates a fresh tag (open the editor
+   *  pre-filled with the selection text) and applies it to the current
+   *  selection. Optional so existing call sites don't break. */
+  onCreateAndApply?: (suggestedName: string) => void;
+  /** "Extract number" — fires when the user wants to record the highlighted
+   *  text as a numeric extraction (mixed-methods). The handler typically
+   *  creates a coded segment + attaches a numeric payload parsed from the
+   *  text. Only rendered when supplied. */
+  onExtractNumber?: () => void;
 }
 
 export default function FloatingCodeToolbar({
@@ -44,6 +55,8 @@ export default function FloatingCodeToolbar({
   onSplit,
   onPickCode,
   onClear,
+  onCreateAndApply,
+  onExtractNumber,
 }: Props) {
   const [mounted, setMounted] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -122,6 +135,28 @@ export default function FloatingCodeToolbar({
         </button>
       )}
 
+      {onCreateAndApply && selection && (
+        <button
+          type="button"
+          onClick={() => onCreateAndApply(selection.text.replace(/\s+/g, ' ').trim().slice(0, 60))}
+          className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
+          title="Create a new tag from the selected text and apply it"
+        >
+          + New tag
+        </button>
+      )}
+
+      {onExtractNumber && selection && /\d/.test(selection.text) && (
+        <button
+          type="button"
+          onClick={onExtractNumber}
+          className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
+          title="Capture this number as a structured extraction (value · unit · year · label) for export"
+        >
+          # Extract number
+        </button>
+      )}
+
       <button
         type="button"
         onClick={onSplit}
@@ -156,6 +191,21 @@ export default function FloatingCodeToolbar({
             className="w-full px-2.5 py-1.5 border-b border-[#E6E7E8] text-[12.5px] focus:outline-none"
           />
           <ul className="max-h-[240px] overflow-y-auto">
+            {onCreateAndApply && selection && (
+              <li>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onCreateAndApply(query.trim() || selection.text.replace(/\s+/g, ' ').trim().slice(0, 60));
+                    setPickerOpen(false);
+                  }}
+                  className="w-full text-left px-2.5 py-1.5 hover:bg-[#F3F4F6] flex items-center gap-2 text-[12px] font-medium text-[#E87722]"
+                >
+                  <span className="w-2.5 h-2.5 rounded-sm shrink-0 border border-dashed border-[#E87722]" aria-hidden />
+                  <span>+ New tag from selection{query.trim() ? ` ("${query.trim()}")` : ''}</span>
+                </button>
+              </li>
+            )}
             {filteredCodes.length === 0 ? (
               <li className="px-3 py-2 text-[11.5px] italic text-[#8A95A3]">
                 No matches.

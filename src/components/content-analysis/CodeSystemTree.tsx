@@ -26,6 +26,14 @@ interface Props {
       renders illustrated paths instead of the plain emptyLabel string. */
   onSeedFromTemplate?: () => void;
   onImportCodebook?: () => void;
+  /** Visibility filter for the segments panel. When non-null, the colored
+   *  square next to each code becomes a toggle: clicking it adds the code
+   *  (and its descendants on a parent click) to / removes it from the
+   *  active set. Empty set ⇒ no codes active ⇒ no segments shown. */
+  activeFilter?: Set<string>;
+  /** Toggle handler. Receives the clicked code id and a flag indicating
+   *  whether the click should also cascade into the code's descendants. */
+  onToggleActive?: (codeId: string, cascadeToDescendants: boolean) => void;
 }
 
 /**
@@ -48,6 +56,8 @@ export default function CodeSystemTree({
   emptyLabel,
   onSeedFromTemplate,
   onImportCodebook,
+  activeFilter,
+  onToggleActive,
 }: Props) {
   const [dragOverId, setDragOverId] = useState<string | 'root' | null>(null);
   const [dragMode, setDragMode] = useState<'move' | 'merge'>('move');
@@ -62,6 +72,16 @@ export default function CodeSystemTree({
       return next;
     });
   };
+
+  // Ids of every node that has at least one child — used by the
+  // "Collapse all" / "Expand all" header controls.
+  const collapsibleIds = useMemo(
+    () => codes.filter(c => (byParent.get(c.id) ?? []).length > 0).map(c => c.id),
+    [codes, byParent],
+  );
+  const allCollapsed = collapsibleIds.length > 0 && collapsibleIds.every(id => collapsed.has(id));
+  const collapseAll = () => setCollapsed(new Set(collapsibleIds));
+  const expandAll = () => setCollapsed(new Set());
 
   // Sticky breadcrumb (M·05 #10): when a code is selected, build the path
   // from root → leaf so the user keeps spatial context in deep trees.
@@ -231,11 +251,41 @@ export default function CodeSystemTree({
             />
           )}
 
-          <span
-            className="w-2.5 h-2.5 rounded-sm shrink-0"
-            style={{ backgroundColor: node.color }}
-            aria-hidden
-          />
+          {onToggleActive ? (
+            (() => {
+              const isActive = !!activeFilter?.has(node.id);
+              return (
+                <button
+                  type="button"
+                  onClick={e => {
+                    e.stopPropagation();
+                    // Clicking on a parent cascades to descendants; on a leaf
+                    // the cascade flag is harmless.
+                    onToggleActive(node.id, children.length > 0);
+                  }}
+                  className="w-3 h-3 rounded-sm shrink-0 transition"
+                  style={{
+                    backgroundColor: isActive ? node.color : 'transparent',
+                    border: isActive ? `1px solid ${node.color}` : `1px dashed ${node.color}`,
+                    opacity: isActive ? 1 : 0.55,
+                  }}
+                  aria-pressed={isActive}
+                  aria-label={`${isActive ? 'Deactivate' : 'Activate'} ${node.name}`}
+                  title={
+                    isActive
+                      ? `Active — click to hide segments tagged "${node.name}"`
+                      : `Inactive — click to show segments tagged "${node.name}"${children.length > 0 ? ' and its sub-tags' : ''}`
+                  }
+                />
+              );
+            })()
+          ) : (
+            <span
+              className="w-2.5 h-2.5 rounded-sm shrink-0"
+              style={{ backgroundColor: node.color }}
+              aria-hidden
+            />
+          )}
 
           <button
             type="button"
@@ -254,6 +304,9 @@ export default function CodeSystemTree({
             <ActionButton title="Add child tag" onClick={() => onAddChild(node.id)}>＋</ActionButton>
             <ActionButton title="Rename" onClick={() => onRename(node.id)}>✎</ActionButton>
             <ActionButton title="Colour" onClick={() => onRecolor(node.id)}>◐</ActionButton>
+            {onMove && node.parentId && (
+              <ActionButton title="Move to root level" onClick={() => onMove(node.id, null)}>↥</ActionButton>
+            )}
             <ActionButton title="Delete" onClick={() => onDelete(node.id)} danger>×</ActionButton>
           </span>
         </div>
@@ -289,6 +342,47 @@ export default function CodeSystemTree({
               </li>
             ))}
           </ol>
+        </div>
+      )}
+      {/* Sub-toolbar — only renders when there are collapsible nodes,
+          so flat code books don't gain chrome they can't use. */}
+      {collapsibleIds.length > 0 && (
+        <div className="flex items-center justify-end gap-2 px-2 pt-1.5 pb-1 border-b border-[var(--mh-border)] bg-[#FBFBFA]">
+          <button
+            type="button"
+            onClick={allCollapsed ? expandAll : collapseAll}
+            className="text-[10.5px] font-medium text-[#3D5265] hover:text-[#00928F]"
+            title={allCollapsed ? 'Expand every parent tag' : 'Collapse every parent tag to its root'}
+          >
+            {allCollapsed ? 'Expand all' : 'Collapse all'}
+          </button>
+        </div>
+      )}
+      {/* Root drop zone — drop a tag here to promote it to a root tag.
+          Only renders when reparenting is enabled, and only highlights when
+          there's actually a code being dragged over it. */}
+      {onMove && (
+        <div
+          onDragOver={e => {
+            if (!e.dataTransfer.types.includes('mh/code')) return;
+            e.preventDefault();
+            setDragOverId('root');
+          }}
+          onDragLeave={() => { if (dragOverId === 'root') setDragOverId(null); }}
+          onDrop={e => {
+            e.preventDefault();
+            const sourceId = e.dataTransfer.getData('mh/code');
+            setDragOverId(null);
+            if (!sourceId) return;
+            onMove(sourceId, null);
+          }}
+          className={`mx-2 my-1 px-2 py-1 text-[10.5px] text-center rounded-sm border border-dashed transition ${
+            dragOverId === 'root'
+              ? 'border-[var(--mh-status-primary)] bg-[var(--mh-status-primary)]/10 text-[var(--mh-status-primary)]'
+              : 'border-[#E6E7E8] text-[#B8BCC2]'
+          }`}
+        >
+          Drop here to promote to root tag
         </div>
       )}
       <ul className="py-1">{roots.map(r => renderNode(r, 0))}</ul>

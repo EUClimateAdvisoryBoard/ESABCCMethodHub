@@ -400,6 +400,8 @@ export function useContentAnalysis() {
     note?: string;
     projectId: string | null;
     blockId?: string;
+    /** Mixed-methods payload (number + unit + year + label). */
+    numeric?: import('./types').NumericExtraction;
   }): CodedSegment => {
     const seg: CodedSegment = {
       id: newId('seg'),
@@ -412,10 +414,32 @@ export function useContentAnalysis() {
       note: input.note ?? '',
       projectId: input.projectId,
       createdAt: new Date().toISOString(),
+      numeric: input.numeric,
     };
     update(s => ({ ...s, segments: [...s.segments, seg] }));
     postSegments([seg]);
     return seg;
+  }, []);
+
+  /** Set or update the numeric metadata on an existing segment. Pass
+   *  `null` to clear the numeric payload (segment stays qualitative). */
+  const updateSegmentNumeric = useCallback((
+    id: string,
+    numeric: import('./types').NumericExtraction | null,
+  ) => {
+    let updated: CodedSegment | null = null;
+    update(s => {
+      const segments = s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        const merged: CodedSegment = numeric
+          ? { ...seg, numeric }
+          : (() => { const { numeric: _drop, ...rest } = seg; return rest; })();
+        updated = merged;
+        return merged;
+      });
+      return { ...s, segments };
+    });
+    if (updated) postSegments([updated]);
   }, []);
 
   const deleteSegment = useCallback((id: string) => {
@@ -426,6 +450,44 @@ export function useContentAnalysis() {
   const updateSegmentNote = useCallback((id: string, note: string) => {
     update(s => ({ ...s, segments: s.segments.map(seg => (seg.id === id ? { ...seg, note } : seg)) }));
     patchSegmentNote(id, note);
+  }, []);
+
+  /** Resize a coded segment in place — used by the bracket-gutter context
+   *  menu in the document view (expand to next sentence, shrink, etc.).
+   *  The caller passes a function that maps the existing offsets to new
+   *  ones; we re-derive the `text` slice from the document body so the
+   *  preview in the segments list stays in sync. */
+  const updateSegmentRange = useCallback((
+    id: string,
+    next: { startChar: number; endChar: number },
+  ) => {
+    let updated: CodedSegment | null = null;
+    update(s => {
+      const segments = s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        const doc = s.documents.find(d => d.id === seg.documentId);
+        // For block-anchored segments, slice from the block's text;
+        // otherwise from the document's flat text.
+        let body = doc?.text ?? '';
+        if (seg.blockId && doc?.blocks) {
+          const block = doc.blocks.find(b => b.id === seg.blockId);
+          body = block?.text ?? body;
+        }
+        const start = Math.max(0, Math.min(next.startChar, next.endChar));
+        const end = Math.min(body.length, Math.max(next.startChar, next.endChar));
+        if (end - start < 1) return seg;
+        const merged: CodedSegment = {
+          ...seg,
+          startChar: start,
+          endChar: end,
+          text: body.slice(start, end),
+        };
+        updated = merged;
+        return merged;
+      });
+      return { ...s, segments };
+    });
+    if (updated) postSegments([updated]);
   }, []);
 
   // ── Suggestion operations (AI track-changes workflow) ─────────────
@@ -936,6 +998,13 @@ export function useContentAnalysis() {
     emit();
   }, []);
 
+  /** Replace the current code system + segments with the contents of a
+   *  snapshot. Documents and projects are preserved — snapshots are only
+   *  about the user's coding work, not the corpus. */
+  const restoreCodesAndSegments = useCallback((codes: CodeNode[], segments: CodedSegment[]) => {
+    update(s => ({ ...s, codes, segments }));
+  }, []);
+
   // ── Derived selectors ──────────────────────────────────────────────
   const rootCodes = useMemo(() => childrenOf(snapshot.codes, null), [snapshot.codes]);
 
@@ -951,6 +1020,8 @@ export function useContentAnalysis() {
     addSegment,
     deleteSegment,
     updateSegmentNote,
+    updateSegmentRange,
+    updateSegmentNumeric,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,
@@ -959,6 +1030,7 @@ export function useContentAnalysis() {
     upsertDocument,
     applyPolicyBodies,
     applyResegmentation,
+    restoreCodesAndSegments,
     applyIngestion,
     applyClassifications,
     deleteDocumentVersion,

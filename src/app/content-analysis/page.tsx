@@ -43,6 +43,12 @@ const PdfDocumentView = dynamic(
 );
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePreview';
+import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
+import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
+import NumericExtractionsPanel from '@/components/content-analysis/NumericExtractionsPanel';
+import ProjectLockPill from '@/components/content-analysis/ProjectLockPill';
+import { useProjectLock } from '@/lib/content-analysis/useProjectLock';
+import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
@@ -58,7 +64,7 @@ import VersionArchive from '@/components/content-analysis/VersionArchive';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import { TooltipProvider } from '@/components/ui/Tooltip';
 import { showToast } from '@/components/ui/ToastHost';
-import { semanticColorFor } from '@/lib/content-analysis/semantic-palette';
+import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
 import {
   segmentsForProject,
   useContentAnalysis,
@@ -101,6 +107,8 @@ function ContentAnalysisPageInner() {
     moveCode,
     addSegment,
     deleteSegment,
+    updateSegmentRange,
+    updateSegmentNumeric,
     replaceDocumentSuggestions,
     acceptSuggestion,
     rejectSuggestion,
@@ -116,6 +124,7 @@ function ContentAnalysisPageInner() {
     updateProject,
     deleteProject,
     resetAll,
+    restoreCodesAndSegments,
   } = useContentAnalysis();
 
   // Top-level navigation across the module:
@@ -185,12 +194,69 @@ function ContentAnalysisPageInner() {
     status: 'idle' | 'loading' | 'ok' | 'error';
     message?: string;
   }>({ status: 'idle' });
+  // In-document Ctrl+F search — separate from the corpus-wide FullTextSearch
+  // panel. Drives the highlight overlay inside AnnotatedDocumentView /
+  // PdfDocumentView for the *current* document only.
+  const [docSearchOpen, setDocSearchOpen] = useState(false);
+  const [docSearchQuery, setDocSearchQuery] = useState('');
+  const [docSearchHitIndex, setDocSearchHitIndex] = useState(0);
+  const [docSearchTotal, setDocSearchTotal] = useState(0);
+  const docSearchInputRef = useRef<HTMLInputElement | null>(null);
+  // Active-code filter for the segments panel. When non-null, only segments
+  // whose codeId is in the set are shown. Default: null (= "all active").
+  // Toggling a colored square in CodeSystemTree mutates this set; the
+  // "Activate all / None" buttons in the panel header reset it.
+  const [activeCodeFilter, setActiveCodeFilter] = useState<Set<string> | null>(null);
   // Local toast state removed — migrated to the typed ToastHost via showToast().
 
   const activeProject = useMemo(
     () => snapshot.projects.find(p => p.id === activeProjectId) ?? snapshot.projects[0],
     [snapshot.projects, activeProjectId],
   );
+
+  // Soft-locking: one editor at a time per project. The hook owns
+  // acquire / heartbeat / release; we use `lockMode` further down to
+  // disable mutating controls when we're a watcher.
+  const projectLock = useProjectLock(
+    activeProject && activeProject.id !== 'project-master' ? activeProject.id : null,
+  );
+  const lockMode = projectLock.mode;
+  const canEdit = lockMode !== 'watcher'; // editor / idle (master) → editable
+
+  // Hand-off prompt: when a watcher requests the lock, the hook surfaces
+  // a `pendingRequest` once. We show a single sticky toast so the editor
+  // can hand off or keep going. Re-firing is gated by the hook's
+  // last-stamp ref, so the same request never duplicates the toast.
+  useEffect(() => {
+    if (!projectLock.pendingRequest) return;
+    const requester = projectLock.pendingRequest;
+    showToast({
+      tone: 'warning',
+      message: `${requester} is asking for edit access`,
+      description: 'Hand off the project lock so they can take over, or keep editing.',
+      actionLabel: 'Hand off',
+      onAction: () => { projectLock.handOff(); },
+      timeoutMs: 30000,
+    });
+    // After the toast fires, mark it locally dismissed so we don't loop
+    // when the heartbeat keeps observing the same row. The hook also
+    // tracks the stamp so a *new* request will surface again.
+    projectLock.dismissRequest();
+  }, [projectLock.pendingRequest]);
+
+  /** Single chokepoint for "is the user allowed to mutate right now?".
+   *  Returns true when editing is allowed; otherwise surfaces a toast and
+   *  returns false. Every mutating handler short-circuits on a false. */
+  const guardEdit = (): boolean => {
+    if (canEdit) return true;
+    showToast({
+      tone: 'warning',
+      message: 'Project is read-only',
+      description: `${projectLock.lock?.holderName ?? 'Another editor'} is currently editing. Click "Request edit access" in the header to take over.`,
+      timeoutMs: 6000,
+    });
+    return false;
+  };
 
   const docsInProjectScope = useMemo(() => {
     if (!activeProject) return [];
@@ -351,8 +417,15 @@ function ContentAnalysisPageInner() {
   }, [incomingDoc, incomingHighlight, incomingContextParam, allDocuments, consumedDeepLink]);
 
   const segmentsForDocument = useMemo(
-    () => (selectedDocument ? projectSegments.filter(s => s.documentId === selectedDocument.id) : []),
-    [projectSegments, selectedDocument],
+    () => {
+      if (!selectedDocument) return [];
+      const all = projectSegments.filter(s => s.documentId === selectedDocument.id);
+      // Apply the colored-square activation filter when the user has
+      // touched it. `null` means "filter not initialised" → show everything.
+      if (!activeCodeFilter) return all;
+      return all.filter(s => activeCodeFilter.has(s.codeId));
+    },
+    [projectSegments, selectedDocument, activeCodeFilter],
   );
 
   // ── Landing / wizard derived state ────────────────────────────────
@@ -454,6 +527,7 @@ function ContentAnalysisPageInner() {
 
   // ── Handlers ──────────────────────────────────────────────────────────
   const handleIngest = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc?.celexNumber) return;
     // Promote live-reference docs into the snapshot before we mutate.
@@ -501,6 +575,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleManualUpload = async (documentId: string, file: File) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     upsertDocument(doc);
@@ -538,6 +613,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleClassify = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     upsertDocument(doc);
@@ -588,6 +664,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleSuggestCodes = async (documentId: string) => {
+    if (!guardEdit()) return;
     const doc = allDocuments.find(d => d.id === documentId);
     if (!doc) return;
     if (!doc.text || doc.text.trim().length < 200) {
@@ -683,12 +760,14 @@ function ContentAnalysisPageInner() {
   );
 
   const handleAcceptSuggestion = (suggestionId: string) => {
+    if (!guardEdit()) return;
     const projectId = activeProject && activeProject.id !== 'project-master' ? activeProject.id : null;
     const seg = acceptSuggestion(suggestionId, projectId);
     if (seg) setHighlightedSegmentId(seg.id);
   };
 
   const handleAcceptAllSuggestions = () => {
+    if (!guardEdit()) return;
     if (!selectedDocument) return;
     const count = pendingSuggestions.length;
     if (count === 0) return;
@@ -699,6 +778,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleRejectAllSuggestions = () => {
+    if (!guardEdit()) return;
     if (!selectedDocument) return;
     const count = pendingSuggestions.length;
     if (count === 0) return;
@@ -716,6 +796,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }) => {
+    if (!guardEdit()) return;
     if (!selectedCodeId || !selectedDocument || !activeProject) return;
     upsertDocument(selectedDocument);
     const seg = addSegment({
@@ -736,14 +817,17 @@ function ContentAnalysisPageInner() {
   };
 
   const handleAddCode = (parentId: string | null) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'add', targetId: parentId });
   };
 
   const handleRename = (codeId: string) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'rename', targetId: codeId });
   };
 
   const handleRecolor = (codeId: string) => {
+    if (!guardEdit()) return;
     setCodeEditor({ mode: 'recolor', targetId: codeId });
   };
 
@@ -754,8 +838,10 @@ function ContentAnalysisPageInner() {
       if (!name) { setCodeEditor(null); return; }
       const isProjectScope = activeProjectId !== 'project-master';
       // Semantic palette (M·05 #3): walk up to the root to get the family,
-      // then pick a shade by depth. Falls back to DEFAULT_CODE_COLORS when
-      // the root doesn't classify (e.g. user-named idiosyncratic codes).
+      // then pick a shade by depth. When the root doesn't classify into a
+      // known family, fall back to lightening the immediate parent's
+      // colour so sub-tags still read as part of the same family. Random
+      // DEFAULT_CODE_COLORS only fires for root tags with no parent.
       let suggested: string | null = null;
       if (!result.color) {
         let depth = 0;
@@ -769,6 +855,14 @@ function ContentAnalysisPageInner() {
           depth++;
         }
         suggested = semanticColorFor(rootName, depth);
+        if (!suggested && codeEditor.targetId) {
+          // Walk up one to the immediate parent, then lighten by depth.
+          const directParent = snapshot.codes.find(c => c.id === codeEditor.targetId);
+          // Recompute depth as distance from that parent (= 1 for direct child).
+          if (directParent) {
+            suggested = lightenedFromParent(directParent.color, 1);
+          }
+        }
       }
       const code = addCode({
         name,
@@ -779,6 +873,24 @@ function ContentAnalysisPageInner() {
         projectId: isProjectScope ? activeProjectId : undefined,
       });
       setSelectedCodeId(code.id);
+      // "+ New tag from selection" path: also create the segment under
+      // the brand-new code so the highlight that started this flow lands
+      // tagged without a second click.
+      const pending = codeEditor.pendingSegmentInput;
+      if (pending && selectedDocument && activeProject) {
+        upsertDocument(selectedDocument);
+        const seg = addSegment({
+          documentId: selectedDocument.id,
+          codeId: code.id,
+          startChar: pending.startChar,
+          endChar: pending.endChar,
+          text: pending.text,
+          blockId: pending.blockId,
+          projectId: activeProject.id === 'project-master' ? null : activeProject.id,
+        });
+        setHighlightedSegmentId(seg.id);
+        showToast({ tone: 'success', message: `Tagged as new "${name}"` });
+      }
     } else if (codeEditor.mode === 'rename' && codeEditor.targetId) {
       const name = result.name?.trim();
       const current = snapshot.codes.find(c => c.id === codeEditor.targetId);
@@ -795,6 +907,7 @@ function ContentAnalysisPageInner() {
   };
 
   const handleDeleteCode = (codeId: string) => {
+    if (!guardEdit()) return;
     const current = snapshot.codes.find(c => c.id === codeId);
     if (!current) return;
     const ok = window.confirm(
@@ -815,6 +928,9 @@ function ContentAnalysisPageInner() {
 
 
   const handleDeleteProject = () => {
+    // Deleting a project that's locked to someone else would yank work
+    // out from under them; require the lock first.
+    if (!guardEdit()) return;
     if (!activeProject || activeProject.id === 'project-master') return;
     if (!window.confirm(`Delete project "${activeProject.name}"? Project tags will be removed; master segments are preserved.`)) return;
     deleteProject(activeProject.id);
@@ -829,7 +945,75 @@ function ContentAnalysisPageInner() {
     setClassifyState({ status: 'idle' });
   };
 
+  // Resolve a code id to itself + all descendants, using the current code
+  // tree. Used by the "activate code" toggle in CodeSystemTree so clicking
+  // a parent's colored square cascades to its sub-tags.
+  const codeWithDescendants = (rootId: string): string[] => {
+    const out: string[] = [rootId];
+    const stack = [rootId];
+    while (stack.length) {
+      const cur = stack.pop()!;
+      for (const c of snapshot.codes) {
+        if (c.parentId === cur) {
+          out.push(c.id);
+          stack.push(c.id);
+        }
+      }
+    }
+    return out;
+  };
+
+  const handleToggleActiveCode = (codeId: string, cascade: boolean) => {
+    setActiveCodeFilter(prev => {
+      // Initialise from "everything" the first time the user toggles —
+      // matches user mental model of starting with all-active and turning
+      // some off. Use visibleCodes since master-tree only shows those.
+      const baseline = prev ?? new Set(visibleCodes.map(c => c.id));
+      const next = new Set(baseline);
+      const ids = cascade ? codeWithDescendants(codeId) : [codeId];
+      // If every target id is already active, deactivate them; otherwise
+      // activate the missing ones. Symmetric, predictable.
+      const allActive = ids.every(id => next.has(id));
+      if (allActive) {
+        for (const id of ids) next.delete(id);
+      } else {
+        for (const id of ids) next.add(id);
+      }
+      return next;
+    });
+  };
+
+  // Ctrl+F / ⌘F → open the in-document search bar and focus the input.
+  // Only swallows the browser's default Find when the user has the
+  // workbench focused; otherwise the native Find still works.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const isFind = (e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'f';
+      if (!isFind) return;
+      if (activeTab !== 'workbench' || viewMode !== 'workbench') return;
+      e.preventDefault();
+      setDocSearchOpen(true);
+      // Focus on next tick so the input has mounted.
+      setTimeout(() => docSearchInputRef.current?.focus(), 0);
+      // Pre-fill with the current text selection if there is one.
+      const sel = window.getSelection?.()?.toString().trim();
+      if (sel && sel.length >= 2 && sel.length < 80) {
+        setDocSearchQuery(sel);
+        setDocSearchHitIndex(0);
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [activeTab, viewMode]);
+
+  // Reset hit index when the query or selected document changes so we
+  // always start at the first match in the new context.
+  useEffect(() => {
+    setDocSearchHitIndex(0);
+  }, [docSearchQuery, selectedDocumentId]);
+
   const toggleMasterCodeInProject = (codeId: string) => {
+    if (!guardEdit()) return;
     if (!activeProject || activeProject.id === 'project-master') return;
     const set = new Set(activeProject.masterCodeSelection);
     if (set.has(codeId)) set.delete(codeId);
@@ -896,14 +1080,15 @@ function ContentAnalysisPageInner() {
           rootCodes={masterRootCodes}
           codesByParent={masterCodesByParent}
           docCountsByCode={docCountsByCode}
+          documents={allDocuments}
           onCancel={() => setViewMode('landing')}
-          onCreate={({ name, description, mode, masterCodeSelection }) => {
+          onCreate={({ name, description, mode, masterCodeSelection, documentAllowList }) => {
             const proj = addProject({
               name,
               description,
               mode,
               masterCodeSelection,
-              documentAllowList: [],
+              documentAllowList,
             });
             setActiveProjectId(proj.id);
             setViewMode('workbench');
@@ -970,6 +1155,17 @@ function ContentAnalysisPageInner() {
             </span>
           )}
 
+          {/* Soft-lock pill — only visible on real projects (the master
+              library is a shared workspace, not a per-analyst lock). */}
+          {activeProject && activeProject.id !== 'project-master' && (
+            <ProjectLockPill
+              mode={projectLock.mode}
+              lock={projectLock.lock}
+              onRequestEdit={projectLock.requestEdit}
+              onHandOff={projectLock.handOff}
+            />
+          )}
+
           <div className="ml-auto flex items-center gap-1 flex-wrap">
             {TAB_LABELS.map(t => (
               <button
@@ -995,6 +1191,16 @@ function ContentAnalysisPageInner() {
       </section>
 
       {/* ── Main workspace ───────────────────────────────────────────────── */}
+      {/* Read-only banner — only when another editor holds the lock. The
+          per-handler guards already block mutations; this banner is the
+          visual cue so the user doesn't keep clicking dead buttons. */}
+      {lockMode === 'watcher' && (
+        <div className="bg-[#FEF3C7] border-b border-[#FCD34D] px-4 sm:px-6 py-1.5 text-[11.5px] text-[#92400E]">
+          <strong>Read-only.</strong>{' '}
+          {projectLock.lock?.holderName ?? 'Another editor'} is editing this project.
+          Click <em>Request edit access</em> in the header to take over.
+        </div>
+      )}
       {activeTab === 'workbench' && (
         <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-4">
           <div className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)_320px] xl:grid-cols-[320px_minmax(0,1fr)_360px]">
@@ -1078,13 +1284,39 @@ function ContentAnalysisPageInner() {
                 title="Tag system"
                 accent={`${visibleCodes.length}`}
                 action={
-                  <button
-                    type="button"
-                    onClick={() => handleAddCode(null)}
-                    className="text-[11px] font-medium text-[#E87722] hover:text-[#c45f14]"
-                  >
-                    + Root
-                  </button>
+                  <div className="flex items-center gap-2">
+                    {activeCodeFilter && (
+                      <span
+                        className="font-mono text-[10px] tracking-[0.1em] uppercase text-[#8A95A3]"
+                        title="Number of active tags out of total"
+                      >
+                        {activeCodeFilter.size} / {visibleCodes.length} active
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setActiveCodeFilter(new Set(visibleCodes.map(c => c.id)))}
+                      className="text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                      title="Activate every tag — segments panel shows everything"
+                    >
+                      All
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveCodeFilter(new Set())}
+                      className="text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                      title="Deactivate every tag — segments panel shows nothing"
+                    >
+                      None
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleAddCode(null)}
+                      className="text-[11px] font-medium text-[#E87722] hover:text-[#c45f14]"
+                    >
+                      + Root
+                    </button>
+                  </div>
                 }
               >
                 <div className="max-h-[45vh] overflow-y-auto overflow-x-auto">
@@ -1092,12 +1324,19 @@ function ContentAnalysisPageInner() {
                     codes={visibleCodes}
                     counts={codeCountsDirect}
                     selectedCodeId={selectedCodeId}
-                    onSelect={setSelectedCodeId}
+                    onSelect={(id) => {
+                      // Toggle: clicking the already-selected tag deselects it,
+                      // so highlighting text won't auto-tag any more.
+                      setSelectedCodeId(prev => (prev === id ? null : id));
+                    }}
                     onAddChild={handleAddCode}
                     onRename={handleRename}
                     onRecolor={handleRecolor}
                     onDelete={handleDeleteCode}
+                    activeFilter={activeCodeFilter ?? undefined}
+                    onToggleActive={handleToggleActiveCode}
                     onMove={(id, newParentId) => {
+                      if (!guardEdit()) return;
                       if (!moveCode(id, newParentId)) {
                         showToast({
                           tone: 'danger',
@@ -1107,6 +1346,7 @@ function ContentAnalysisPageInner() {
                       }
                     }}
                     onMerge={(sourceId, targetId) => {
+                      if (!guardEdit()) return;
                       const result = mergeCode(sourceId, targetId);
                       if (result === null) {
                         showToast({
@@ -1340,6 +1580,78 @@ function ContentAnalysisPageInner() {
                                     ? 'Original PDF with block overlays'
                                     : 'Flat-text view · ingest or upload a PDF to enable the PDF pane'}
                               </span>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  setDocSearchOpen(o => !o);
+                                  if (!docSearchOpen) {
+                                    setTimeout(() => docSearchInputRef.current?.focus(), 0);
+                                  }
+                                }}
+                                className="ml-auto text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                                title="Search within this document · ⌘F"
+                              >
+                                {docSearchOpen ? 'Hide find' : 'Find in document · ⌘F'}
+                              </button>
+                            </div>
+                          )}
+                          {docSearchOpen && (
+                            <div className="flex items-center gap-2 px-3 py-1.5 border-b border-[#E6E7E8] bg-[#FBFBFA]">
+                              <input
+                                ref={docSearchInputRef}
+                                type="search"
+                                value={docSearchQuery}
+                                onChange={e => setDocSearchQuery(e.target.value)}
+                                onKeyDown={e => {
+                                  if (e.key === 'Escape') {
+                                    setDocSearchOpen(false);
+                                  } else if (e.key === 'Enter') {
+                                    if (docSearchTotal === 0) return;
+                                    setDocSearchHitIndex(i =>
+                                      e.shiftKey
+                                        ? (i - 1 + docSearchTotal) % docSearchTotal
+                                        : (i + 1) % docSearchTotal,
+                                    );
+                                  }
+                                }}
+                                placeholder="Find in document…"
+                                className="flex-1 max-w-[280px] border border-[#E6E7E8] rounded-sm px-2 py-1 text-[12px] focus:border-[#00928F] focus:outline-none"
+                                aria-label="Find in document"
+                              />
+                              <span className="font-mono text-[10.5px] tabular-nums text-[#8A95A3] min-w-[60px]">
+                                {docSearchTotal === 0
+                                  ? (docSearchQuery.trim().length >= 2 ? '0 / 0' : '—')
+                                  : `${docSearchHitIndex + 1} / ${docSearchTotal}`}
+                              </span>
+                              <button
+                                type="button"
+                                onClick={() => docSearchTotal > 0 && setDocSearchHitIndex(i => (i - 1 + docSearchTotal) % docSearchTotal)}
+                                disabled={docSearchTotal === 0}
+                                className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:text-[#B8BCC2] rounded-sm"
+                                aria-label="Previous match"
+                                title="Previous match · Shift+Enter"
+                              >
+                                ↑
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => docSearchTotal > 0 && setDocSearchHitIndex(i => (i + 1) % docSearchTotal)}
+                                disabled={docSearchTotal === 0}
+                                className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:text-[#B8BCC2] rounded-sm"
+                                aria-label="Next match"
+                                title="Next match · Enter"
+                              >
+                                ↓
+                              </button>
+                              <button
+                                type="button"
+                                onClick={() => { setDocSearchOpen(false); setDocSearchQuery(''); }}
+                                className="px-1.5 py-0.5 text-[12px] text-[#8A95A3] hover:text-[#3D5265]"
+                                aria-label="Close search"
+                                title="Close · Esc"
+                              >
+                                ×
+                              </button>
                             </div>
                           )}
                           <div className="p-4 max-h-[68vh] overflow-y-auto">
@@ -1361,6 +1673,29 @@ function ContentAnalysisPageInner() {
                                 onCreateSegment={isPreviewingVersion ? () => {} : handleCreateSegment}
                                 onSelectSegment={id => setHighlightedSegmentId(id)}
                                 highlightedSegmentId={highlightedSegmentId}
+                                onSelectionWithoutCode={isPreviewingVersion ? undefined : (sel) => {
+                                  if (!guardEdit()) return;
+                                  setToolbarSel({
+                                    startChar: sel.startChar,
+                                    endChar: sel.endChar,
+                                    text: sel.text,
+                                    rect: sel.rect,
+                                  });
+                                }}
+                                onDeleteSegment={isPreviewingVersion ? undefined : (id) => {
+                                  if (!guardEdit()) return;
+                                  if (window.confirm('Delete this tagged segment?')) {
+                                    deleteSegment(id);
+                                    if (highlightedSegmentId === id) setHighlightedSegmentId(null);
+                                  }
+                                }}
+                                onUpdateSegmentRange={isPreviewingVersion ? undefined : (id, next) => {
+                                  if (!guardEdit()) return;
+                                  updateSegmentRange(id, next);
+                                }}
+                                searchQuery={docSearchOpen ? docSearchQuery : ''}
+                                searchHitIndex={docSearchHitIndex}
+                                onSearchMatchesChange={setDocSearchTotal}
                               />
                             )}
                           </div>
@@ -1446,6 +1781,7 @@ function ContentAnalysisPageInner() {
                     selectedSegmentId={highlightedSegmentId}
                     onOpenSegment={openSegmentInDoc}
                     onDelete={id => {
+                      if (!guardEdit()) return;
                       if (window.confirm('Delete this tagged segment?')) {
                         deleteSegment(id);
                         if (highlightedSegmentId === id) setHighlightedSegmentId(null);
@@ -1453,6 +1789,24 @@ function ContentAnalysisPageInner() {
                     }}
                   />
                 </div>
+              </Panel>
+
+              {/* Visual overview: bar / coverage strip / matrix breakdown
+                  for the current document. Honours the active-code filter
+                  (segmentsForDocument is already filtered upstream). */}
+              <Panel
+                title="Tag distribution"
+                accent={selectedDocument ? selectedDocument.shortTitle : ''}
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <TagDistributionPanel
+                  documents={selectedDocument ? [selectedDocument] : []}
+                  codes={snapshot.codes}
+                  segments={segmentsForDocument}
+                  selectedCodeId={selectedCodeId}
+                />
               </Panel>
 
               {/* Word-table preview (M·05 #8). Shows the user exactly what
@@ -1464,6 +1818,52 @@ function ContentAnalysisPageInner() {
                   segments={segmentsForDocument}
                   codes={snapshot.codes}
                   documents={snapshot.documents}
+                />
+              </Panel>
+
+              {/* Numeric extractions — mixed-methods workflow. Pulls in
+                  every project segment that carries a `numeric` payload
+                  (across the project's documents, not just the current
+                  one) so analysts can build a single budget table from a
+                  whole corpus pass. */}
+              <Panel
+                title="Numeric extractions"
+                accent={`${projectSegments.filter(s => s.numeric).length}`}
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <NumericExtractionsPanel
+                  segments={projectSegments}
+                  codes={snapshot.codes}
+                  documents={snapshot.documents}
+                  onUpdate={(id, n) => { if (guardEdit()) updateSegmentNumeric(id, n); }}
+                  onDelete={(id) => { if (guardEdit()) deleteSegment(id); }}
+                  onJump={openSegmentInDoc}
+                />
+              </Panel>
+
+              {/* Snapshot history — manual + every-5-min auto-save of the
+                  code system and segments. Lives in localStorage, separate
+                  from the main state, so reset-to-seed leaves it intact. */}
+              <Panel
+                title="Snapshots"
+                accent="auto-save · 5 min"
+                bodyClassName="p-0"
+                collapsible
+                defaultCollapsed
+              >
+                <SnapshotsPanel
+                  codes={snapshot.codes}
+                  segments={snapshot.segments}
+                  onRestore={(codes, segments) => {
+                    if (!guardEdit()) return;
+                    restoreCodesAndSegments(codes, segments);
+                    showToast({
+                      tone: 'success',
+                      message: `Restored ${codes.length} tag${codes.length === 1 ? '' : 's'} and ${segments.length} segment${segments.length === 1 ? '' : 's'}.`,
+                    });
+                  }}
                 />
               </Panel>
             </aside>
@@ -1530,13 +1930,73 @@ function ContentAnalysisPageInner() {
           setToolbarSel(null);
         }}
         onSplit={() => {
+          if (!guardEdit()) return;
           if (!toolbarSel || !selectedDocument) return;
-          splitBlock(selectedDocument.id, toolbarSel.blockId, toolbarSel.startChar);
+          // Splitting is only meaningful in the structured-block (PDF)
+          // view; in the flat-text view there's no block to split.
+          if (toolbarSel.blockId) {
+            splitBlock(selectedDocument.id, toolbarSel.blockId, toolbarSel.startChar);
+          }
+          window.getSelection()?.removeAllRanges();
+          setToolbarSel(null);
+        }}
+        onCreateAndApply={(suggestedName) => {
+          if (!guardEdit()) return;
+          if (!toolbarSel) return;
+          // Open the code editor pre-filled, and stash the selection so
+          // submitting the modal also creates the segment under the new tag.
+          setCodeEditor({
+            mode: 'add',
+            targetId: null,
+            seedName: suggestedName,
+            pendingSegmentInput: {
+              blockId: toolbarSel.blockId,
+              startChar: toolbarSel.startChar,
+              endChar: toolbarSel.endChar,
+              text: toolbarSel.text,
+            },
+          });
           window.getSelection()?.removeAllRanges();
           setToolbarSel(null);
         }}
         onPickCode={(codeId) => {
           setSelectedCodeId(codeId);
+        }}
+        onExtractNumber={() => {
+          if (!guardEdit()) return;
+          if (!toolbarSel || !selectedDocument || !activeProject) return;
+          // The numeric extraction still needs a qualitative tag. Use the
+          // current active code if any; otherwise prompt the user to pick.
+          if (!selectedCodeId) {
+            showToast({
+              tone: 'warning',
+              message: 'Pick a tag first',
+              description: 'Numbers stay attached to a qualitative tag (e.g. "Adaptation budget"). Pick one from the toolbar, then extract again.',
+            });
+            return;
+          }
+          const numeric = guessNumericExtraction(toolbarSel.text);
+          upsertDocument(selectedDocument);
+          const seg = addSegment({
+            documentId: selectedDocument.id,
+            codeId: selectedCodeId,
+            startChar: toolbarSel.startChar,
+            endChar: toolbarSel.endChar,
+            text: toolbarSel.text,
+            blockId: toolbarSel.blockId,
+            projectId: activeProject.id === 'project-master' ? null : activeProject.id,
+            numeric,
+          });
+          setHighlightedSegmentId(seg.id);
+          window.getSelection()?.removeAllRanges();
+          setToolbarSel(null);
+          const ok = Number.isFinite(numeric.value);
+          showToast({
+            tone: ok ? 'success' : 'warning',
+            message: ok
+              ? `Extracted ${numeric.value}${numeric.unit ? ' ' + numeric.unit : ''}`
+              : 'Couldn’t parse a number — edit the value in the right panel.',
+          });
         }}
         onClear={() => {
           window.getSelection()?.removeAllRanges();
@@ -1549,8 +2009,12 @@ function ContentAnalysisPageInner() {
         payload={codeEditor}
         codes={snapshot.codes}
         onCancel={() => setCodeEditor(null)}
-        onSubmit={handleCodeEditorSubmit}
+        onSubmit={(result) => {
+          if (!guardEdit()) return;
+          handleCodeEditorSubmit(result);
+        }}
         onMerge={(sourceId, targetId) => {
+          if (!guardEdit()) return;
           const result = mergeCode(sourceId, targetId);
           if (result === null) {
             showToast({
@@ -1577,6 +2041,7 @@ function ContentAnalysisPageInner() {
           });
         }}
         onMove={(id, newParentId) => {
+          if (!guardEdit()) return;
           if (!moveCode(id, newParentId)) {
             window.alert('Cannot move: target parent is inside the moved subtree.');
           }

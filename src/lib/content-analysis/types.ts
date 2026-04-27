@@ -149,6 +149,23 @@ export interface AnalysisDocument {
   referenceUrl?: string;
 }
 
+/** Optional structured payload attached to a "numeric extraction" segment.
+ *  Powers the mixed-methods workflow: analysts highlight a number in a
+ *  policy/budget document, tag it as numeric, and attach a label/unit/year
+ *  so the right-rail panel can present every extraction as a clean table
+ *  for export to Excel/CSV. The raw `text` field on the segment still
+ *  holds the verbatim source quote. */
+export interface NumericExtraction {
+  /** Parsed numeric value. NaN-safe: kept as a number for sort + export. */
+  value: number;
+  /** Free-form unit ("EUR bn", "%", "Mt CO₂eq", "GW", …). */
+  unit?: string;
+  /** Year or year range the value refers to ("2030", "2021–2027"). */
+  year?: string;
+  /** Short human label — what the number represents. */
+  label?: string;
+}
+
 export interface CodedSegment {
   id: string;
   documentId: string;
@@ -165,6 +182,10 @@ export interface CodedSegment {
    *  segments have `projectId === null`. */
   projectId: string | null;
   createdAt: string;
+  /** Mixed-methods payload — present when the segment is a numeric
+   *  extraction (e.g. budget line, target). The segment still has a
+   *  qualitative codeId so it appears under the right tag in the tree. */
+  numeric?: NumericExtraction;
 }
 
 /** An AI-suggested coded segment awaiting human review. Rendered in the
