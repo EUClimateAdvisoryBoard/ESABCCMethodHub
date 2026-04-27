@@ -16,7 +16,7 @@
  * permanently (we record onboarding_seen[moduleKey] = true in their
  * preferences). They can replay it any time via `?help=1` in the URL.
  */
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { usePreferences } from '@/lib/preferences-context';
 
@@ -33,7 +33,19 @@ interface Props {
   steps: TourStep[];
 }
 
-export default function OnboardingTour({ moduleKey, steps }: Props) {
+// Next.js requires components calling useSearchParams() during render to be
+// wrapped in a Suspense boundary so the page can still be statically
+// prerendered. We wrap the inner implementation here so every consumer gets
+// the boundary for free.
+export default function OnboardingTour(props: Props) {
+  return (
+    <Suspense fallback={null}>
+      <OnboardingTourInner {...props} />
+    </Suspense>
+  );
+}
+
+function OnboardingTourInner({ moduleKey, steps }: Props) {
   const { prefs, markOnboardingSeen } = usePreferences();
   const search = useSearchParams();
   const [open, setOpen] = useState(false);
