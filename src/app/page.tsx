@@ -383,14 +383,12 @@ export default async function HomePage() {
               Deployment &amp; infrastructure
             </Link>
             <a
-              href="https://sebastianfra.github.io/MethodHub/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/docs/"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-3 sm:py-2.5 text-[14px] sm:text-[13px] font-medium text-[#3D5265] bg-white border border-[#3D5265]/30 rounded-sm hover:border-[#3D5265] transition-colors touch-target"
             >
               Documentation
-              <svg className="ml-2" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path d="M7 17L17 7M17 7H8M17 7v9" />
+              <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path d="M12 5v14M5 12h14" />
               </svg>
             </a>
           </div>
