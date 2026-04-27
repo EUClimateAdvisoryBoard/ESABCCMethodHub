@@ -98,11 +98,12 @@ interface AdminUser {
   pendingDeletion: { requestedAt: string; scheduledFor: string; reason: string } | null;
 }
 
-function AdminUserRow({ u, currentUserId, onToggleRole, onDelete, onCancelDeletion }: {
+function AdminUserRow({ u, currentUserId, onToggleRole, onDelete, onDeleteNow, onCancelDeletion }: {
   u: AdminUser;
   currentUserId: string;
   onToggleRole: (userId: string, newRole: string) => void;
   onDelete: (userId: string, email: string) => void;
+  onDeleteNow: (userId: string, email: string) => void;
   onCancelDeletion: (userId: string, email: string) => void;
 }) {
   const isMe = u.id === currentUserId;
@@ -176,6 +177,13 @@ function AdminUserRow({ u, currentUserId, onToggleRole, onDelete, onCancelDeleti
                 className="px-3 py-1.5 rounded-lg text-xs font-semibold border border-red-200 text-red-600 hover:bg-red-50 transition"
               >
                 Delete
+              </button>
+              <button
+                onClick={() => onDeleteNow(u.id, u.email || '')}
+                title="Permanently erase this user immediately. Bypasses the 30-day GDPR grace period."
+                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-red-600 text-white hover:bg-red-700 transition"
+              >
+                Delete now
               </button>
             </>
           )}
@@ -537,6 +545,38 @@ export default function ProfilePage() {
     setTimeout(() => { setAdminMessage(''); setAdminError(''); }, 6000);
   };
 
+  const handleDeleteUserNow = async (userId: string, email: string) => {
+    if (!session) return;
+    if (!confirm(
+      `IMMEDIATELY and PERMANENTLY delete "${email}"?\n\n` +
+      'This bypasses the 30-day GDPR grace period and erases the user from ' +
+      'auth.users right now. The user will not be able to recover their account, ' +
+      'and the action will be logged in admin_audit_log.\n\nThis cannot be undone.'
+    )) return;
+    setAdminMessage('');
+    setAdminError('');
+    try {
+      const res = await fetch('/api/admin/users', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+        },
+        body: JSON.stringify({ userId, immediate: true }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setAdminError(data.error || 'Failed to delete user.');
+      } else {
+        setAdminMessage(`User "${email}" has been permanently deleted.`);
+        loadAdminUsers();
+      }
+    } catch {
+      setAdminError('Network error.');
+    }
+    setTimeout(() => { setAdminMessage(''); setAdminError(''); }, 4000);
+  };
+
   const handleAdminCancelDeletion = async (userId: string, email: string) => {
     if (!session) return;
     if (!confirm(`Cancel the scheduled deletion for "${email}"?`)) return;
@@ -848,6 +888,7 @@ export default function ProfilePage() {
                         currentUserId={user.id}
                         onToggleRole={handleToggleRole}
                         onDelete={handleDeleteUser}
+                        onDeleteNow={handleDeleteUserNow}
                         onCancelDeletion={handleAdminCancelDeletion}
                       />
                     ))}
