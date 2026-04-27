@@ -17,12 +17,12 @@ site_description: >-
   for self-hosted deployment on EEA infrastructure.
 site_author: CCE5 · ESABCC Secretariat
 site_url: https://esabccmethodhub.vercel.app/docs/
-repo_url: https://github.com/secesabcc/esabccmethodhub
-repo_name: secesabcc/esabccmethodhub
+repo_url: https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub
+repo_name: EUClimateAdvisoryBoard/ESABCCMethodHub
 edit_uri: edit/main/docs/
 copyright: >-
   Built and maintained by CCE5 for the ESABCC Secretariat.
-  Source · <a href="https://github.com/secesabcc/esabccmethodhub">github.com/secesabcc/esabccmethodhub</a>.
+  Source · <a href="https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub">github.com/EUClimateAdvisoryBoard/ESABCCMethodHub</a>.
 
 docs_dir: docs
 # Default site_dir; the Vercel build overrides this via
@@ -91,7 +91,7 @@ extra:
   generator: false                 # hide "Made with Material for MkDocs"
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/SebastianFra/MethodHub
+      link: https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub
     - icon: fontawesome/solid/globe
       link: https://climate-advisory-board.europa.eu
       name: European Scientific Advisory Board on Climate Change
@@ -124,8 +124,8 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.magiclink:
       repo_url_shorthand: true
-      user: SebastianFra
-      repo: MethodHub
+      user: EUClimateAdvisoryBoard
+      repo: ESABCCMethodHub
   - pymdownx.mark
   - pymdownx.smartsymbols
   - pymdownx.snippets
