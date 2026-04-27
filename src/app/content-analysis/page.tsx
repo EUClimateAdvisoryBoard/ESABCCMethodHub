@@ -193,6 +193,11 @@ function ContentAnalysisPageInner() {
   const [docSearchHitIndex, setDocSearchHitIndex] = useState(0);
   const [docSearchTotal, setDocSearchTotal] = useState(0);
   const docSearchInputRef = useRef<HTMLInputElement | null>(null);
+  // Active-code filter for the segments panel. When non-null, only segments
+  // whose codeId is in the set are shown. Default: null (= "all active").
+  // Toggling a colored square in CodeSystemTree mutates this set; the
+  // "Activate all / None" buttons in the panel header reset it.
+  const [activeCodeFilter, setActiveCodeFilter] = useState<Set<string> | null>(null);
   // Local toast state removed — migrated to the typed ToastHost via showToast().
 
   const activeProject = useMemo(
@@ -359,8 +364,15 @@ function ContentAnalysisPageInner() {
   }, [incomingDoc, incomingHighlight, incomingContextParam, allDocuments, consumedDeepLink]);
 
   const segmentsForDocument = useMemo(
-    () => (selectedDocument ? projectSegments.filter(s => s.documentId === selectedDocument.id) : []),
-    [projectSegments, selectedDocument],
+    () => {
+      if (!selectedDocument) return [];
+      const all = projectSegments.filter(s => s.documentId === selectedDocument.id);
+      // Apply the colored-square activation filter when the user has
+      // touched it. `null` means "filter not initialised" → show everything.
+      if (!activeCodeFilter) return all;
+      return all.filter(s => activeCodeFilter.has(s.codeId));
+    },
+    [projectSegments, selectedDocument, activeCodeFilter],
   );
 
   // ── Landing / wizard derived state ────────────────────────────────
@@ -855,6 +867,44 @@ function ContentAnalysisPageInner() {
     setClassifyState({ status: 'idle' });
   };
 
+  // Resolve a code id to itself + all descendants, using the current code
+  // tree. Used by the "activate code" toggle in CodeSystemTree so clicking
+  // a parent's colored square cascades to its sub-tags.
+  const codeWithDescendants = (rootId: string): string[] => {
+    const out: string[] = [rootId];
+    const stack = [rootId];
+    while (stack.length) {
+      const cur = stack.pop()!;
+      for (const c of snapshot.codes) {
+        if (c.parentId === cur) {
+          out.push(c.id);
+          stack.push(c.id);
+        }
+      }
+    }
+    return out;
+  };
+
+  const handleToggleActiveCode = (codeId: string, cascade: boolean) => {
+    setActiveCodeFilter(prev => {
+      // Initialise from "everything" the first time the user toggles —
+      // matches user mental model of starting with all-active and turning
+      // some off. Use visibleCodes since master-tree only shows those.
+      const baseline = prev ?? new Set(visibleCodes.map(c => c.id));
+      const next = new Set(baseline);
+      const ids = cascade ? codeWithDescendants(codeId) : [codeId];
+      // If every target id is already active, deactivate them; otherwise
+      // activate the missing ones. Symmetric, predictable.
+      const allActive = ids.every(id => next.has(id));
+      if (allActive) {
+        for (const id of ids) next.delete(id);
+      } else {
+        for (const id of ids) next.add(id);
+      }
+      return next;
+    });
+  };
+
   // Ctrl+F / ⌘F → open the in-document search bar and focus the input.
   // Only swallows the browser's default Find when the user has the
   // workbench focused; otherwise the native Find still works.
@@ -1133,13 +1183,39 @@ function ContentAnalysisPageInner() {
                 title="Tag system"
                 accent={`${visibleCodes.length}`}
                 action={
-                  <button
-                    type="button"
-                    onClick={() => handleAddCode(null)}
-                    className="text-[11px] font-medium text-[#E87722] hover:text-[#c45f14]"
-                  >
-                    + Root
-                  </button>
+                  <div className="flex items-center gap-2">
+                    {activeCodeFilter && (
+                      <span
+                        className="font-mono text-[10px] tracking-[0.1em] uppercase text-[#8A95A3]"
+                        title="Number of active tags out of total"
+                      >
+                        {activeCodeFilter.size} / {visibleCodes.length} active
+                      </span>
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => setActiveCodeFilter(new Set(visibleCodes.map(c => c.id)))}
+                      className="text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                      title="Activate every tag — segments panel shows everything"
+                    >
+                      All
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setActiveCodeFilter(new Set())}
+                      className="text-[11px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                      title="Deactivate every tag — segments panel shows nothing"
+                    >
+                      None
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleAddCode(null)}
+                      className="text-[11px] font-medium text-[#E87722] hover:text-[#c45f14]"
+                    >
+                      + Root
+                    </button>
+                  </div>
                 }
               >
                 <div className="max-h-[45vh] overflow-y-auto overflow-x-auto">
@@ -1147,11 +1223,17 @@ function ContentAnalysisPageInner() {
                     codes={visibleCodes}
                     counts={codeCountsDirect}
                     selectedCodeId={selectedCodeId}
-                    onSelect={setSelectedCodeId}
+                    onSelect={(id) => {
+                      // Toggle: clicking the already-selected tag deselects it,
+                      // so highlighting text won't auto-tag any more.
+                      setSelectedCodeId(prev => (prev === id ? null : id));
+                    }}
                     onAddChild={handleAddCode}
                     onRename={handleRename}
                     onRecolor={handleRecolor}
                     onDelete={handleDeleteCode}
+                    activeFilter={activeCodeFilter ?? undefined}
+                    onToggleActive={handleToggleActiveCode}
                     onMove={(id, newParentId) => {
                       if (!moveCode(id, newParentId)) {
                         showToast({

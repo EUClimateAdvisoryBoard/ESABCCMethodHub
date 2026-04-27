@@ -26,6 +26,14 @@ interface Props {
       renders illustrated paths instead of the plain emptyLabel string. */
   onSeedFromTemplate?: () => void;
   onImportCodebook?: () => void;
+  /** Visibility filter for the segments panel. When non-null, the colored
+   *  square next to each code becomes a toggle: clicking it adds the code
+   *  (and its descendants on a parent click) to / removes it from the
+   *  active set. Empty set ⇒ no codes active ⇒ no segments shown. */
+  activeFilter?: Set<string>;
+  /** Toggle handler. Receives the clicked code id and a flag indicating
+   *  whether the click should also cascade into the code's descendants. */
+  onToggleActive?: (codeId: string, cascadeToDescendants: boolean) => void;
 }
 
 /**
@@ -48,6 +56,8 @@ export default function CodeSystemTree({
   emptyLabel,
   onSeedFromTemplate,
   onImportCodebook,
+  activeFilter,
+  onToggleActive,
 }: Props) {
   const [dragOverId, setDragOverId] = useState<string | 'root' | null>(null);
   const [dragMode, setDragMode] = useState<'move' | 'merge'>('move');
@@ -231,11 +241,41 @@ export default function CodeSystemTree({
             />
           )}
 
-          <span
-            className="w-2.5 h-2.5 rounded-sm shrink-0"
-            style={{ backgroundColor: node.color }}
-            aria-hidden
-          />
+          {onToggleActive ? (
+            (() => {
+              const isActive = !!activeFilter?.has(node.id);
+              return (
+                <button
+                  type="button"
+                  onClick={e => {
+                    e.stopPropagation();
+                    // Clicking on a parent cascades to descendants; on a leaf
+                    // the cascade flag is harmless.
+                    onToggleActive(node.id, children.length > 0);
+                  }}
+                  className="w-3 h-3 rounded-sm shrink-0 transition"
+                  style={{
+                    backgroundColor: isActive ? node.color : 'transparent',
+                    border: isActive ? `1px solid ${node.color}` : `1px dashed ${node.color}`,
+                    opacity: isActive ? 1 : 0.55,
+                  }}
+                  aria-pressed={isActive}
+                  aria-label={`${isActive ? 'Deactivate' : 'Activate'} ${node.name}`}
+                  title={
+                    isActive
+                      ? `Active — click to hide segments tagged "${node.name}"`
+                      : `Inactive — click to show segments tagged "${node.name}"${children.length > 0 ? ' and its sub-tags' : ''}`
+                  }
+                />
+              );
+            })()
+          ) : (
+            <span
+              className="w-2.5 h-2.5 rounded-sm shrink-0"
+              style={{ backgroundColor: node.color }}
+              aria-hidden
+            />
+          )}
 
           <button
             type="button"
