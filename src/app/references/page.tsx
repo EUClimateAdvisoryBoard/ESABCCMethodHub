@@ -37,6 +37,7 @@ import {
   subscribeToLibrary,
 } from '@/lib/references/reference-service';
 import { references as staticReferencesRaw } from '@/data/references';
+import { getPolicyCitationsAsReferences } from '@/lib/policy-citations';
 import LibrarySelector from '@/components/references/LibrarySelector';
 import ReferenceList from '@/components/references/ReferenceList';
 import ReferenceForm from '@/components/references/ReferenceForm';
@@ -260,12 +261,17 @@ export default function ReferencesPage() {
         setSelectedLibraryId(null);
         const local = loadLocalCustomRefs();
         const api = await loadApiCustomRefs();
-        // Merge: API refs first, then local, then static (dedup by id across
-        // all three sources so a broken/partial API re-import can never
+        // Free-floating policy citations: every tracked EU policy is exposed
+        // as an official-citation Reference so it can be cited and exported
+        // alongside any other source. Pulled in first so they're always
+        // visible.
+        const policyCitations = getPolicyCitationsAsReferences();
+        // Merge: policy citations first, then API refs, then local, then
+        // static (dedup by id so a broken/partial API re-import can never
         // shadow a complete static reference with the same id).
         const seen = new Set<string>();
         const merged: Reference[] = [];
-        for (const r of [...api, ...local, ...staticReferences]) {
+        for (const r of [...policyCitations, ...api, ...local, ...staticReferences]) {
           if (!r.id || seen.has(r.id)) continue;
           // Skip obviously-corrupt API entries whose title is just the raw
           // citation string (no structured metadata parsed out).
@@ -292,9 +298,10 @@ export default function ReferencesPage() {
       setSelectedLibraryId(null);
       const local = loadLocalCustomRefs();
       const api = await loadApiCustomRefs();
+      const policyCitations = getPolicyCitationsAsReferences();
       const seen = new Set<string>();
       const merged: Reference[] = [];
-      for (const r of [...api, ...local, ...staticReferences]) {
+      for (const r of [...policyCitations, ...api, ...local, ...staticReferences]) {
         if (!r.id || seen.has(r.id)) continue;
         const isCorrupt =
           r.library_id === STATIC_LIBRARY_ID &&
@@ -337,11 +344,13 @@ export default function ReferencesPage() {
       if (apiResult.status === 'rejected') {
         console.error('loadApiCustomRefs failed:', apiResult.reason);
       }
-      // Merge: shared API refs first (newest), then Supabase library refs.
-      // Dedup by id so a ref that lives in both stores appears once.
+      // Merge: policy citations first (free-floating across modules), then
+      // shared API refs (newest), then Supabase library refs. Dedup by id so
+      // a ref that lives in multiple stores appears once.
+      const policyCitations = getPolicyCitationsAsReferences();
       const seen = new Set<string>();
       const merged: Reference[] = [];
-      for (const r of [...apiCustom, ...refs]) {
+      for (const r of [...policyCitations, ...apiCustom, ...refs]) {
         if (!seen.has(r.id)) { seen.add(r.id); merged.push(r); }
       }
       setReferences(merged);
@@ -356,14 +365,18 @@ export default function ReferencesPage() {
   useEffect(() => { loadReferences(); }, [loadReferences]);
 
   // Deep-link support: /references?ref=<id> opens that reference's edit form
-  // once the list has loaded.  Strips the param after opening so subsequent
-  // navigation stays clean.
+  // once the list has loaded.  /references?policy=<id> resolves the universal
+  // policy id against the policy-citation entries (which use Policy.id as
+  // their reference id) so cross-module nav from the Policy Clock or
+  // Content Analysis lands on the official citation. Strips the param after
+  // opening so subsequent navigation stays clean.
   useEffect(() => {
     if (loading || references.length === 0) return;
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
-    const refId = params.get('ref');
-    if (!refId) return;
+    const refId = params.get('ref') || params.get('policy');
+    const usedKey = params.get('ref') ? 'ref' : params.get('policy') ? 'policy' : null;
+    if (!refId || !usedKey) return;
     const target = references.find(r => r.id === refId);
     if (!target) return;
     if (usingFallback) {
@@ -372,7 +385,7 @@ export default function ReferencesPage() {
       setEditingRef(target);
       setView('edit');
     }
-    params.delete('ref');
+    params.delete(usedKey);
     const newUrl = window.location.pathname + (params.toString() ? `?${params}` : '');
     window.history.replaceState({}, '', newUrl);
   }, [loading, references, usingFallback]);
