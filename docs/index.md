@@ -63,7 +63,7 @@ Packaged for self-hosted deployment on **EEA infrastructure**.
     The **[FAQ for non-technical staff](FAQ-NON-TECHNICAL.md)** is a
     plain-language guide to what MethodHub is, how it is built, and what
     is asked of the EEA — every term of jargon unpacked. A PDF copy is
-    also [available at the repo root](https://github.com/SebastianFra/MethodHub/blob/main/ESABCC-MethodHub-FAQ-non-technical.pdf).
+    also [available at the repo root](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/ESABCC-MethodHub-FAQ-non-technical.pdf).
 
 ## The five modules
 
@@ -167,6 +167,6 @@ One Next.js service, one Postgres schema, one handoff script.
 - **CCE5 code stewardship — Sebastian Franz.**
   [sebastian.franz@esabcc.europa.eu](mailto:sebastian.franz@esabcc.europa.eu)
 - **Issues and PRs.**
-  [github.com/SebastianFra/MethodHub](https://github.com/SebastianFra/MethodHub)
+  [github.com/EUClimateAdvisoryBoard/ESABCCMethodHub](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub)
 - **About the Board.**
   [climate-advisory-board.europa.eu](https://climate-advisory-board.europa.eu)

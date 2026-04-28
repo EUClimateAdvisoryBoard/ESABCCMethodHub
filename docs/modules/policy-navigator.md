@@ -1,7 +1,7 @@
 # M · 04 — EU Policy Navigator
 
 !!! tip "Status"
-    Stable · shipped in v1.0 · route [`/policy-navigator`](https://github.com/SebastianFra/MethodHub/tree/main/src/app/policy-navigator)
+    Stable · shipped in v1.0 · route [`/policy-navigator`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/app/policy-navigator)
 
 A network map of EU climate laws. Each node is a policy (regulation,
 directive, decision) and each edge is a structural relationship
@@ -43,12 +43,12 @@ sequenceDiagram
 
 | Path                                                                                                                                   | Role                                                          |
 |----------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
-| [`src/app/policy-navigator/page.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/app/policy-navigator/page.tsx)             | Route entry — filter panel + network view.                    |
-| [`src/components/PolicyNetworkGraph.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/PolicyNetworkGraph.tsx)     | D3-powered network visualisation.                             |
-| [`src/components/FullTextViewer.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/FullTextViewer.tsx)             | Article-level viewer with inline annotation.                  |
-| [`src/components/PolicyGapExplorer.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/PolicyGapExplorer.tsx)       | Gap charts by sector and milestone.                           |
-| [`src/data/policies.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/data/policies.ts)                                        | Master list of tracked acts.                                  |
-| [`src/data/sectoral-policies.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/data/sectoral-policies.ts)                      | Sector groupings + milestone map.                             |
+| [`src/app/policy-navigator/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/policy-navigator/page.tsx)             | Route entry — filter panel + network view.                    |
+| [`src/components/PolicyNetworkGraph.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/PolicyNetworkGraph.tsx)     | D3-powered network visualisation.                             |
+| [`src/components/FullTextViewer.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/FullTextViewer.tsx)             | Article-level viewer with inline annotation.                  |
+| [`src/components/PolicyGapExplorer.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/PolicyGapExplorer.tsx)       | Gap charts by sector and milestone.                           |
+| [`src/data/policies.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/policies.ts)                                        | Master list of tracked acts.                                  |
+| [`src/data/sectoral-policies.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/sectoral-policies.ts)                      | Sector groupings + milestone map.                             |
 
 ## Subroutes
 
@@ -70,8 +70,8 @@ sequenceDiagram
 
 | Script                                                                                                                                 | Cadence | What it does                                                 |
 |----------------------------------------------------------------------------------------------------------------------------------------|---------|--------------------------------------------------------------|
-| [`scripts/fetch-eurlex-texts.js`](https://github.com/SebastianFra/MethodHub/blob/main/scripts/fetch-eurlex-texts.js)                     | daily   | Consolidates CELEX texts from EUR-Lex cellar.                |
-| [`scripts/prefetch-eurlex-bodies.mjs`](https://github.com/SebastianFra/MethodHub/blob/main/scripts/prefetch-eurlex-bodies.mjs)           | on demand | Warms the full-text cache for a list of CELEXes.             |
+| [`scripts/fetch-eurlex-texts.js`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/fetch-eurlex-texts.js)                     | daily   | Consolidates CELEX texts from EUR-Lex cellar.                |
+| [`scripts/prefetch-eurlex-bodies.mjs`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/prefetch-eurlex-bodies.mjs)           | on demand | Warms the full-text cache for a list of CELEXes.             |
 
 ## Schema
 
@@ -90,6 +90,47 @@ policy_clock   (id, celex, event_kind, due_at, completed_at)
 - **M·03 News** — news articles are tagged to policies via `policy_news`.
 - **M·05 Content Analysis** — the policy text viewer is reused as the
   corpus source for M·05's coding surface.
+
+### Policy Clock — universal `policyId` deep-linking
+
+Every tracked policy already carries a stable string id
+(`Policy.id`, e.g. `eu-climate-law`, `cbam-regulation`). That id
+flows through every module that shares the policy corpus, so a
+single click on a Policy Clock event can open the matching artefact
+in any of them.
+
+The contract lives in
+[`src/lib/cross-module-links.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/cross-module-links.ts) —
+the **single source of truth** for the four deep-link shapes:
+
+| Target              | URL                                                                                  |
+|---------------------|--------------------------------------------------------------------------------------|
+| Policy Navigator    | `/policy-navigator/policy?policy=<policyId>`                                         |
+| Content Analysis    | `/content-analysis?policy=<policyId>` (selects the matching corpus document).        |
+| Reference Manager   | `/references?policy=<policyId>` (resolves to the synthesised *Policy Citation*).     |
+| Policy Clock        | `/news-feed/policy-clock?policy=<policyId>` (filters timeline to a single act).      |
+
+Supporting pieces:
+
+- [`src/lib/policy-citations.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/policy-citations.ts)
+  synthesises a free-floating **Policy Citation** Reference Manager
+  entry per policy, using `Policy.id` as the reference id, so
+  `?policy=<id>` deep links always resolve.
+- [`src/lib/policy-clock-reviews.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/policy-clock-reviews.ts)
+  synthesises 5-year review-due events for the whole corpus so the
+  clock surfaces all upcoming reviews automatically.
+- Migration
+  [`026_policy_clock_events_policy_id.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/026_policy_clock_events_policy_id.sql)
+  adds the `policy_id` column + index to `policy_clock_events`;
+  `PolicyClockUserEvent` and the events `POST` route now accept
+  the field.
+- `PolicyClock.tsx` adds a **Reviews due** strip in the header and
+  a cross-module nav block in the expanded event panel — *Policy
+  Navigator* / *Content Analysis* / *Official Citation* chips,
+  rendered only when the event has a `policyId`.
+- `ReferenceList.tsx` shows a **Policy Citation** badge plus
+  jump-to-Navigator and jump-to-Content-Analysis chips on each
+  policy-citation row.
 
 ## Deep dive
 
@@ -150,4 +191,4 @@ policy_clock   (id, celex, event_kind, due_at, completed_at)
 ## Legacy routes
 
 `/policy` and `/policy-text` redirect to `/policy-navigator/*` — see
-[`next.config.js`](https://github.com/SebastianFra/MethodHub/blob/main/next.config.js).
+[`next.config.js`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/next.config.js).

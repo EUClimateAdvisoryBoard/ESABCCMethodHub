@@ -192,7 +192,7 @@ The migration scripts that will back that work live in
 of every change to that code. It is built on top of **Git**, the
 underlying version-control system created in 2005 for the Linux
 kernel. A **repository** (or "repo") is one project's folder on
-GitHub. MethodHub's repo lives at `github.com/SebastianFra/MethodHub`
+GitHub. MethodHub's repo lives at `github.com/EUClimateAdvisoryBoard/ESABCCMethodHub`
 — today under a personal account, intended to move under an ESABCC
 or EEA GitHub organisation later (see Q18).
 
@@ -309,22 +309,32 @@ is no Microsoft Graph SDK in `package.json` and no Graph/Copilot
 client in `src/lib/ai-summary.ts`. This path is an option on the
 roadmap rather than a feature that is live behind a switch.
 
-### 14. What is StaticCrypt? Why is the docs site password-protected?
+### 14. Why is the site password-protected?
 
-**StaticCrypt** is a small open-source tool that encrypts every page
-of a static website with a password and wraps it in a password
-prompt. It runs at build time. The browser downloads the encrypted
-bundle and decrypts it locally after the user enters the correct
-passphrase.
+The whole MethodHub deployment — both the application and the
+documentation under `/docs/` — sits behind a single **password gate
+enforced at the edge**. There is no separate StaticCrypt step
+anymore; the same gate that protects `/policy-navigator` also
+protects `/docs/policy-navigator/`.
 
-We use it on the documentation site because it is the most
-cost-effective way to keep the long-form documentation out of public
-search-engine indices without upgrading the GitHub plan. It is
-**not a substitute for full single-sign-on** — anyone who holds the
-passphrase can read the content, and the passphrase is rotated when
-it is known to have been disclosed. The long-term plan is to serve
-the documentation from inside the MethodHub application itself, under
-OIDC.
+Mechanically:
+
+- The password (`SITE_PASSWORD`) is a server-only environment
+  variable. It never appears in the JavaScript bundle.
+- A small Edge middleware (`src/middleware.ts`) checks every page
+  request. If the user is not signed in, they are 302'd to a
+  styled `/site-login` page.
+- A successful login issues an HMAC-signed, HttpOnly cookie
+  (signed with `SITE_AUTH_SECRET`) that lasts 30 days. After that
+  the user is signed in for every page in the deployment.
+- API routes, the Word add-in's task pane and webhooks have their
+  own auth and bypass the gate so they keep working.
+
+This replaces the older PasswordGate React component (which shipped
+the password in the JS bundle) and the older StaticCrypt-on-Pages
+setup. The long-term plan is still to swap the password gate for
+**OIDC / EU Login** at the EEA cutover — at that point each user
+signs in with their EEA identity and the cookie carries their `sub`.
 
 ### 15. What is MkDocs?
 
@@ -1395,8 +1405,10 @@ in the rest of the documentation. Alphabetical.
 - **RLS.** Row-level security. See Q17.
 - **RSS.** An older standard for machine-readable news feeds,
   still supported by most publishers.
-- **StaticCrypt.** See Q14. The tool that encrypts the docs site
-  behind a password.
+- **Site password gate.** See Q14. An Edge-middleware HMAC cookie
+  that protects every page of the deployment (app + docs) behind
+  one shared `SITE_PASSWORD`. Replaces the legacy StaticCrypt /
+  PasswordGate setup.
 - **Supabase.** See Q9. Postgres plus conveniences, used during
   iteration.
 - **Twelve-factor.** A widely adopted set of conventions for

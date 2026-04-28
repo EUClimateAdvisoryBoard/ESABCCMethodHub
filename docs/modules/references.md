@@ -1,7 +1,7 @@
 # M · 01 — Reference Manager
 
 !!! tip "Status"
-    Stable · shipped in v1.0 · route [`/references`](https://github.com/SebastianFra/MethodHub/tree/main/src/app/references)
+    Stable · shipped in v1.0 · route [`/references`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/app/references)
 
 A literature library for the Secretariat. Replaces what used to be a
 sprawling EndNote / shared-drive setup with a single searchable store,
@@ -47,26 +47,32 @@ sequenceDiagram
 
 | Path                                                           | Role                                                 |
 |----------------------------------------------------------------|------------------------------------------------------|
-| [`src/app/references/page.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/app/references/page.tsx)         | Route entry — owns library-picker + master-detail split. |
-| [`src/lib/references/reference-service.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/lib/references/reference-service.ts) | Client API for references / libraries / subscriptions. |
-| [`src/lib/references/custom-store.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/lib/references/custom-store.ts) | Server-side custom-references store, replaces the old GitHub-file path. |
-| [`src/components/references/*`](https://github.com/SebastianFra/MethodHub/tree/main/src/components/references) | `LibrarySelector`, `ReferenceList`, `ReferenceForm`. |
-| [`bridge-service/`](https://github.com/SebastianFra/MethodHub/tree/main/bridge-service) | Local Node bridge on `localhost:8585` for the Word add-in. |
-| [`word-addin/`](https://github.com/SebastianFra/MethodHub/tree/main/word-addin) | Office.js add-in; pairs with `bridge-service`. |
+| [`src/app/references/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/references/page.tsx)         | Route entry — library-picker + master-detail split, library-header buttons (*+ Add Reference*, *Audit a report*). |
+| [`src/app/references/audit-report/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/references/audit-report/page.tsx) | Two-mode report audit surface: *Upload a finished report* and *Live (Word add-in)*. Lazy-loads `react-pdf` so the Vercel build stays under bundle limits. |
+| [`src/lib/references/reference-service.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/references/reference-service.ts) | Client API for references / libraries / subscriptions. |
+| [`src/lib/references/custom-store.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/references/custom-store.ts) | Server-side custom-references store; persists `funding` round-tripped from CrossRef. |
+| [`src/lib/policy-citations.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/policy-citations.ts) | Synthesises one "Policy Citation" reference per tracked policy so `?policy=<id>` deep-links from the Policy Clock resolve. |
+| [`src/components/references/*`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/components/references) | `LibrarySelector`, `ReferenceList`, `ReferenceForm` — funder textarea + EU-funded badge live here. |
+| [`bridge-service/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/bridge-service) | Local Node bridge on `localhost:8585`. New: `/api/report-plan/:id` and `/api/report-plans` proxies for the Word add-in's plan-scope panel. |
+| [`word-addin/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/word-addin) | Office.js add-in; pairs with `bridge-service`. The task pane now has a *Report* panel at the top that pins the document to a Report Plan — reference search and insertion are then restricted to that plan's bibliography. |
 
 ## API surface
 
 | Method | Path                                     | Purpose                                           |
 |--------|------------------------------------------|---------------------------------------------------|
 | GET    | `/api/references`                        | List references for a library.                    |
-| POST   | `/api/references`                        | Create a reference from normalised metadata.      |
+| POST   | `/api/references`                        | Create a reference from normalised metadata (incl. `funding`). |
 | POST   | `/api/references/doi`                    | Upsert by DOI (idempotent).                       |
 | POST   | `/api/references/pdf`                    | Upload a PDF file and attach to a reference.      |
 | POST   | `/api/references/fetch-pdf`              | Fetch a PDF from a URL and attach.                |
 | GET    | `/api/references/library`                | List the signed-in user's libraries.              |
 | POST   | `/api/references/library/backfill`       | Import bulk references from a legacy dump.        |
-| POST   | `/api/resolve-doi`                       | Fetch Crossref metadata for a DOI.                |
+| POST   | `/api/resolve-doi`                       | Fetch Crossref metadata for a DOI — now lifts CrossRef's `funder[]` into `csl.funder` so any DOI-imported reference picks up funding without re-import. |
 | GET    | `/api/similar-papers`                    | Suggest related papers (Crossref / Semantic Scholar). |
+| GET    | `/api/citations/used`                    | Roll-up of citation-insertion events grouped by Report Plan / document / funder. Backs the *Live (Word add-in)* tab on `/references/audit-report`. |
+| POST   | `/api/citations/used`                    | Append a row to the `citations_used` event log. Posted by the Word add-in on every `insertCitation` / `insertMultiCitation`. |
+| GET    | `/api/report-plans`                      | List Report Plans (used by the Word add-in's plan picker via the bridge). |
+| GET    | `/api/report-plans/[id]`                 | Fetch a single plan + its reference list — drives the bridge's `/api/report-plan/:id` and the `/report-plan/[id]` page (incl. the funding-analysis panel). |
 
 ## Ingestion
 
@@ -78,12 +84,31 @@ user-imported.
 ## Schema
 
 ```
-references        (id, doi, title, authors[], year, abstract,
-                   pdf_url, library_id, added_by, added_at, …)
-reference_tags    (reference_id, tag)
-reference_annots  (reference_id, page, rect, note, created_by, …)
-libraries         (id, name, owner, visibility)
+references         (id, doi, title, authors[], year, abstract,
+                    pdf_url, library_id, added_by, added_at,
+                    funding jsonb, …)
+reference_tags     (reference_id, tag)
+reference_annots   (reference_id, page, rect, note, created_by, …)
+libraries          (id, name, owner, visibility)
+custom_references  (id, … , funding jsonb)         -- inline-form store
+citations_used     (id, reference_id, document_key,
+                    plan_id, doi, funding,
+                    inserted_by, inserted_at)
 ```
+
+`funding` mirrors the CrossRef `funder[]` shape — `{ name, doi,
+award[] }` — and is GIN-indexed on both reference tables so the
+EU-funded share aggregates cheaply across thousands of rows
+(migrations [`025_references_funding.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/025_references_funding.sql)
+and [`028_citations_used.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/028_citations_used.sql)).
+
+`citations_used` is a thin event log — one row per citation
+insertion. `reference_id` is intentionally `text` (not a foreign key)
+because it can point at either `references.id` (uuid) or
+`custom_references.id` (text), and the add-in does not always know
+which store the citation came from. `funding` and `doi` are
+**snapshot fields** — copied at insert time so analytics queries
+don't have to join across both reference stores at read time.
 
 All tables have RLS policies keyed to `added_by` / `library_id`. See
 [Data & GDPR](../infrastructure/data-gdpr.md) for the retention and
@@ -160,6 +185,64 @@ erasure rules.
     zooms; the viewer (`FullTextViewer.tsx`) converts rect → DOM
     coordinates at render time using `pdfjs-dist` page transforms.
 
+## EU-funded share — the citation-audit pipeline
+
+Two surfaces answer one question: *how much of the literature cited
+in our reports is EU-funded?*
+
+### `/references/audit-report` — two modes
+
+The report-audit page lives at
+[`/references/audit-report`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/references/audit-report/page.tsx)
+and is reachable via the **Audit a report** button next to *+ Add
+Reference* in the library headers (both the fallback and Supabase
+variants). It exposes a tab switcher with two modes:
+
+- **Upload a finished report.** Drop a PDF / DOCX in. The page
+  extracts the bibliography, resolves each entry against the
+  references store + CrossRef, and renders headline tiles plus a
+  funder leaderboard. `react-pdf` is **lazy-loaded** here so the
+  Vercel build stays under bundle limits.
+- **Live (Word add-in).** Reads the `citations_used` event log via
+  `GET /api/citations/used`, filterable by Report Plan id and
+  Word document key. Same headline tiles and funder leaderboard
+  shape so the two modes are directly comparable.
+
+The denominator for the EU-funded share **excludes references with
+no funding metadata** in both modes — we can't classify what we
+don't know.
+
+### Report Plans — pinning a Word document to a bibliography
+
+The Word add-in's task pane has a **Report panel** at the top that
+pins the open document to a specific Report Plan. Once pinned:
+
+- Reference search runs entirely against that plan's bibliography —
+  the author **cannot accidentally cite something outside the
+  agreed report library**.
+- The pin persists across saves via
+  `Office.context.document.settings`, so reopening the `.docx`
+  restores the scope without re-picking.
+- Every `insertCitation` / `insertMultiCitation` writes a row to
+  `citations_used` carrying both the document key and the active
+  `plan_id` — that's what the *Live (Word add-in)* tab on the audit
+  page reads.
+
+Plan listing for the picker is proxied through the bridge service:
+
+```
+bridge-service/src/server.ts
+  GET /api/report-plans             list available plans
+  GET /api/report-plan/:id          plan body + scoped reference ids
+                                    + EU-funded share (same calculation
+                                    as the in-app /report-plan/[id] panel)
+```
+
+The bridge calls MethodHub via `METHODHUB_URL` (defaults to the
+public host) and reuses the **same EU funder DOI prefix / name
+list** as the references module so the in-app panel and the Word
+task pane agree.
+
 ## Known limits
 
 - **No automatic citation-style formatting.** The Word add-in inserts a
@@ -169,3 +252,6 @@ erasure rules.
   is a per-project workspace, not a shared canon.
 - **PDF text extraction** is on-demand (served by M·05), not
   pre-computed on upload. Upload costs are kept bounded.
+- **Funder coverage is bounded by CrossRef.** Pre-prints and
+  non-DOI references carry no funder metadata, so they sit in the
+  *unclassified* bucket on the audit surface.

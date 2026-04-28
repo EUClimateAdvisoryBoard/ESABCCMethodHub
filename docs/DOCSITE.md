@@ -2,144 +2,107 @@
 
 This repository ships its own **hosted documentation site**, built with
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from the
-same `docs/` folder that holds the per-subsystem markdown. It is
-published to **GitHub Pages** on every push to `main` by
-[`.github/workflows/docs.yml`](https://github.com/SebastianFra/MethodHub/blob/main/.github/workflows/docs.yml),
-wrapped in a **password gate** before it goes live.
+same `docs/` folder that holds the per-subsystem markdown. Since
+April 2026 it is published as a sub-path of the main MethodHub Vercel
+deployment under [`/docs/`](https://eu-climate-policy.vercel.app/docs/).
+
+## How it ships
+
+The Vercel build runs MkDocs as part of `vercel-build`:
+
+```bash
+# package.json
+"vercel-build": "bash scripts/build-docs.sh && next build"
+```
+
+[`scripts/build-docs.sh`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/build-docs.sh)
+installs `mkdocs-material`, `pymdown-extensions`,
+`mkdocs-awesome-pages-plugin` and `mkdocs-glightbox` (with
+`pip --break-system-packages` because Vercel's build image enforces
+PEP 668), then runs:
+
+```bash
+mkdocs build --site-dir public/docs
+```
+
+That writes the static site straight into the Next.js
+`public/` folder, so Next serves the docs as ordinary static assets at
+`/docs/*`. There is no separate hosting hop and no separate domain —
+the docs travel with the app.
 
 ## Access
 
-The published site is **password-protected**: every page is encrypted
-at build time with [StaticCrypt](https://github.com/robinmoisson/staticrypt)
-and the browser decrypts it once the user enters the current password.
-No account, no OAuth, no per-person provisioning — whoever has the
-password gets in.
+The published site is **password-gated by the same Edge-middleware
+HMAC cookie that gates the rest of the app**. There is no longer a
+separate StaticCrypt encryption step or a separate
+`DOCS_SITE_PASSWORD` secret.
 
-- **URL.** `https://sebastianfra.github.io/MethodHub/` (note the capital
-  `M` — GitHub Pages paths are case-sensitive and match the repo name).
-  After a repo transfer this becomes `https://esabcc.github.io/MethodHub/`
-  or `https://eea.github.io/MethodHub/`.
-- **Ask CCE5** for the current password.
-- **Remember-me.** After a successful unlock, StaticCrypt stores a
-  hashed token in the browser's localStorage for 30 days. Users on a
-  trusted device enter the password once per month.
-- **Rotation.** Change the `DOCS_SITE_PASSWORD` repository secret and
-  re-run the `docs` workflow — the next deploy supersedes the old
-  bundle; localStorage tokens minted against the old password stop
-  working on the next page load.
+- **URL.** [`https://eu-climate-policy.vercel.app/docs/`](https://eu-climate-policy.vercel.app/docs/)
+  (or the EEA hostname after the production cutover).
+- **Gate.** `src/middleware.ts` matches every path that isn't a Next
+  internal or a static asset; it bypasses `/api/*`,
+  `/word-addin/*`, `/word-addin-dist/*`, and `/site-login`. The
+  docs sub-path is **not** bypassed, so any request without a valid
+  `mh_site_auth` cookie is 302'd to `/site-login?next=/docs/…`.
+- **Cookie.** HMAC-signed, HttpOnly, SameSite=Lax, 30-day TTL. Issued
+  on successful login by `/api/auth/site-login`. Cleared by
+  `/api/auth/site-logout`.
+- **Rotation.** Change `SITE_PASSWORD` in Vercel; existing cookies
+  remain valid until they expire because the HMAC is over the
+  expiry, not the password — so password rotation does **not**
+  automatically log everyone out. To force re-login, rotate
+  `SITE_AUTH_SECRET` instead, which invalidates every existing
+  signature.
 
-## Why StaticCrypt (and not something heavier)
+## Why a server-side HMAC gate (and not StaticCrypt)
 
-The threat model is *"not publicly browseable, not indexed by Google"*,
-not *"classified"*. StaticCrypt covers that directly, with zero
-additional infrastructure and no extra GitHub plan:
+The previous setup used StaticCrypt on a GitHub Pages deploy. That had
+two failure modes:
 
-- The repo itself stays public (free GitHub Pages, free for peer EEA
-  units to see the blueprint).
-- The **content** of the docs is only readable after a password unlock.
-- Google and other crawlers hit the encrypted shell and a `robots.txt`
-  that disallows all indexing, so the site is effectively off the
-  search-engine map.
+1. **Encrypted bundle was downloadable** — anyone could brute-force
+   the password offline with a copy of the bundle.
+2. **The legacy `PasswordGate` React component on the app side
+   shipped the password in the JS bundle**, where it was readable
+   via View Source.
 
-Honest call-outs:
+Both went away in commit
+[`f098e5f`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/commit/f098e5f3bbd4f42ef6e525bef7f8d88a8e71df02):
 
-- **StaticCrypt is not SSO.** Anyone with the password has full read
-  access until it is rotated.
-- **The encrypted bundle is downloadable.** A determined attacker who
-  obtains a copy of the bundle could brute-force the password offline,
-  so keep it long and rotate it when it leaks.
-- **For genuinely restricted content**, the long-term plan is to ship
-  the docs from inside the MethodHub app under `/docs`, gated by the
-  same OIDC / EU Login that protects the rest of the service. See
-  [`vision/index.md`](vision/index.md) and
-  [`infrastructure/deployment.md`](infrastructure/deployment.md).
+- `SITE_PASSWORD` is read **on the server** (in the Edge middleware),
+  never sent to the client.
+- The cookie is HMAC-signed with `SITE_AUTH_SECRET`, so a client
+  can't forge one even if it sees a valid cookie value (it has no
+  way to mint new signatures).
+- The cookie is `HttpOnly`, so it cannot be exfiltrated via XSS to a
+  cross-origin script.
+- The check runs at the **edge** (Next.js Edge Runtime), so unauthorised
+  visitors never reach a Server Component or hit the database.
 
-## Enabling the password gate (first-time setup)
-
-The workflow fails fast if the secret is missing, so enabling the gate
-is a two-step operation done once:
-
-1. **Pick a password.** Long passphrase, not a single word. Share it
-   with the Secretariat + EEA IT reviewers through your usual secure
-   channel.
-2. **Add it as a repository secret.**
-   - Web: `github.com/SebastianFra/MethodHub/settings/secrets/actions`
-     → **New repository secret** → name `DOCS_SITE_PASSWORD`, value the
-     chosen passphrase.
-   - CLI: `gh secret set DOCS_SITE_PASSWORD`.
-3. **Re-run the workflow.** Either push a docs change, or use
-   `Actions → docs → Run workflow`.
-
-After the run finishes, visiting the Pages URL shows the ESABCC-styled
-password prompt.
-
-## Disabling the password gate
-
-If at some point the docs should be fully public (for example because
-the repo is moved under `github.com/eea` and the blueprint argument
-takes priority over the password wall), delete the secret and remove
-the StaticCrypt step from `docs.yml`. The next deploy publishes the
-plain MkDocs output.
+This is the gate Q14 of the FAQ and the *Access* section of every
+page describes.
 
 ## Run it locally
 
 ```bash
-pip install mkdocs-material pymdown-extensions
+pip install --break-system-packages \
+    mkdocs-material pymdown-extensions \
+    mkdocs-awesome-pages-plugin mkdocs-glightbox
 mkdocs serve        # http://127.0.0.1:8000 — live-reload
-mkdocs build        # writes a static site to ./site
+mkdocs build        # writes a static site to ./site (default site_dir)
+
+# Or build into the Next public folder, mirroring the Vercel job:
+bash scripts/build-docs.sh
 ```
 
-## Troubleshooting
+When running through `next dev`, the middleware is active too —
+visit `http://localhost:3000/site-login`, enter `SITE_PASSWORD`, and
+the docs become reachable at `http://localhost:3000/docs/`.
 
-### `Encrypt site with StaticCrypt` fails in ~0 seconds
+## Triggering a redeploy
 
-That's the guard at the top of the step firing because the
-`DOCS_SITE_PASSWORD` repository secret is unset. It is working as
-designed — the workflow refuses to publish an unprotected site.
-
-Fix: add the secret (see *Enabling the password gate* above) and
-re-run the failed workflow from the **Actions → docs** tab.
-
-### `sebastianfra.github.io/MethodHub/` returns the generic GitHub "404 — There isn't a GitHub Pages site here"
-
-That is Pages telling you it has nothing to serve at that host/path.
-Distinct from a 404 inside a working site (which would be our styled
-404). Causes, in order of likelihood:
-
-1. Latest `docs` workflow failed at the `build` or `deploy` step, so
-   there is no current artifact. **Fix:** re-run from Actions.
-2. Pages got toggled off, or the Source reverted from "GitHub
-   Actions" to "Deploy from a branch". **Fix:** `Settings → Pages →
-   Source → GitHub Actions`.
-3. The repository was made private on a free plan, which disables
-   Pages immediately. **Fix:** make it public again, upgrade the
-   plan, or switch to Cloudflare Pages + Access.
-4. Transient Pages flap — wait 2–3 minutes and retry a hard reload.
-
-### A page renders without the password prompt after deploy
-
-The deploy sanity-check counts how many of the generated HTML files
-carry the `staticrypt-html` class marker and aborts if any are
-missing, so this should never happen on a successful deploy. If it
-does, it means StaticCrypt silently skipped a file; check the
-`Encrypt site with StaticCrypt` step log, specifically the
-`Encrypted $html_gated of $html_total HTML files.` line, to see which
-ones were missed.
-
-### The password prompt is styled in green, not teal
-
-That is StaticCrypt's default palette. Check the `docs.yml` step —
-the `--template-color-primary` and `--template-color-secondary` flags
-set the ESABCC palette. A deploy that happened before those flags
-landed still shows the old colours; a fresh re-run fixes it.
-
-### Triggering a redeploy without changing the content
-
-The workflow's path filter only matches pushes that touch `docs/**`,
-`mkdocs.yml` or `.github/workflows/docs.yml`. A `git commit --allow-empty`
-will **not** trigger it. Use `workflow_dispatch` instead (from the
-web UI or the GitHub mobile app: **Actions → docs → Run workflow**),
-or push a minor change to one of the filtered paths.
+Any push to `main` triggers a Vercel build, which always re-runs
+`mkdocs build`. There is no separate workflow to re-run; the docs
+update with the next deploy of the app.
 
 ## Structure
 
@@ -151,14 +114,15 @@ docs/
 ├── overrides/                       Material theme overrides (empty today)
 ├── assets/                          Logo, favicon
 ├── overview/                        Plain-language overview
-├── modules/                         Per-module technical deep-dives (5)
+├── modules/                         Per-module technical deep-dives
 ├── infrastructure/                  Stewardship · deployment · AI layer · Copilot · GDPR
+├── reference/                       API · scripts · design system
 └── vision/                          Vision · blueprint · roadmap
 ```
 
 The narrative reference docs were consolidated into the per-topic
-pages under `infrastructure/` and `vision/`; the legacy flat files at
-the top of `docs/` have been removed.
+pages under `infrastructure/`, `reference/` and `vision/`; the legacy
+flat files at the top of `docs/` have been removed.
 
 ## Design
 
@@ -171,3 +135,5 @@ the top of `docs/` have been removed.
   for callouts.
 - **Module cards.** Custom `.mh-module` class mirrors the main web
   app's module grid.
+- **Lightbox.** `mkdocs-glightbox` provides click-to-zoom on every
+  figure, including the SVG diagrams under `assets/`.

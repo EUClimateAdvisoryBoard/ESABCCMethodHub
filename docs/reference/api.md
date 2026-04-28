@@ -21,8 +21,11 @@ expectation, and any salient caveat.
 | `/api/references/fetch-pdf`               | `POST`        | Server-side PDF fetcher for CORS-blocked publisher URLs          | 50 MB cap · http(s) only · 3-hop redirect limit  |
 | `/api/references/library`                 | `GET`, `POST`, `DELETE` | Per-library CRUD against the custom store              | RLS at the store layer                           |
 | `/api/references/library/backfill`        | `POST`        | Bulk-import legacy bibliography (EndNote / BibTeX / RIS)         | Admin-gated · `admin_audit_log`-written           |
-| `/api/resolve-doi`                        | `GET`         | Normalise + look up a DOI through Crossref                       | 30-day cache · 422 on not-found                  |
+| `/api/resolve-doi`                        | `GET`         | Normalise + look up a DOI through Crossref                       | 30-day cache · 422 on not-found · lifts CrossRef `funder[]` into `csl.funder` |
 | `/api/similar-papers`                     | `GET`         | "Find similar" — Semantic Scholar with bundled-corpus fallback    | Query-only · no user data sent                   |
+| `/api/citations/used`                     | `GET`, `POST` | Citation-insertion event log (writes from Word add-in; reads roll-ups for the audit-report Live tab) | Snapshots `funding` + `doi` at write time so reads don't need to join across reference tables |
+| `/api/report-plans`                       | `GET`, `POST`, `DELETE` | Report Reference Plans CRUD                            | Used by the Word add-in's plan picker (proxied via the bridge) |
+| `/api/report-plans/[id]`                  | `GET`, `PATCH`, `DELETE` | Single plan — details, update, delete                  | Drives the bridge's `/api/report-plan/:id` and the in-app `/report-plan/[id]` funding-analysis panel |
 
 ## Module — Data & Scenarios (M·02)
 
@@ -75,11 +78,14 @@ expectation, and any salient caveat.
 | `/api/content-analysis/resegment`            | `POST`        | Re-segment a document at a new granularity                       | Preserves existing annotations where possible           |
 | `/api/content-analysis/classify`             | `POST`        | AI master-code classification for a single document              | `AUTO_LLM_SUMMARIZATION_ENABLED` gate                   |
 | `/api/content-analysis/suggest-codes`        | `POST`        | AI-suggest new coded segments for a document                     | Low-confidence suggestions land in `ca_suggestions`     |
+| `/api/content-analysis/locks`                | `GET`, `POST`, `PATCH`, `DELETE` | Soft-lock lifecycle for the workbench (one editor per project) | Holder identity carried by `X-MH-Client-Id` (uuid in localStorage); 90 s steal threshold; hand-off requests stamped on `request_pending` |
 
 ## Admin, auth, user
 
 | Path                          | Method           | Purpose                                              | Notes                                                     |
 |-------------------------------|------------------|------------------------------------------------------|-----------------------------------------------------------|
+| `/api/auth/site-login`        | `POST`           | Site-wide password gate — accepts `{ password }` (JSON or form) and issues an HMAC-signed `mh_site_auth` cookie | Edge runtime · timing-safe compare against `SITE_PASSWORD` · bypassed by `src/middleware.ts` |
+| `/api/auth/site-logout`       | `POST`           | Clear the `mh_site_auth` cookie                      | Edge runtime · works without JS                            |
 | `/api/auth/signup`            | `POST`           | Dev-only sign-up with admin-email elevation          | Unreachable on `AUTH_PROVIDER=oidc`                       |
 | `/api/auth/magic-link`        | `POST`           | Dev-only magic-link sender                           | Returns 200 regardless to avoid leaking account existence |
 | `/api/auth/forgot-password`   | `POST`           | Dev-only password-reset trigger                      | Out of scope on EEA OIDC                                  |
@@ -110,8 +116,6 @@ expectation, and any salient caveat.
 
 | Path                         | Method | Purpose                                                    |
 |------------------------------|--------|------------------------------------------------------------|
-| `/api/report-plans`          | `GET`, `POST`, `DELETE` | Report Reference Plans CRUD                 |
-| `/api/report-plans/[id]`     | `GET`, `PATCH`, `DELETE` | Single plan — details, update, delete      |
 | `/api/climada`               | `GET`  | CLIMADA impact-chain data (beta, M·07)                     |
 | `/api/brussels-bulletin`     | `POST` | Brussels Bulletin weekly digest generator (beta, M·11)     |
 | `/api/maritime-aviation`     | `GET`  | Shipping & aviation fuel-route data (beta, M·08)           |

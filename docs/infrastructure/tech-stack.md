@@ -2,9 +2,9 @@
 
 Full inventory of what MethodHub runs on, grouped by responsibility.
 Each row is marked either as **in place today** (visible in
-[`package.json`](https://github.com/SebastianFra/MethodHub/blob/main/package.json),
-the [`Dockerfile`](https://github.com/SebastianFra/MethodHub/blob/main/Dockerfile),
-or under [`scripts/`](https://github.com/SebastianFra/MethodHub/tree/main/scripts))
+[`package.json`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/package.json),
+the [`Dockerfile`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/Dockerfile),
+or under [`scripts/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/scripts))
 or as part of the **EEA-ready target** — scoped and named here so
 the handoff punch list is visible, but not yet implemented.
 
@@ -95,8 +95,8 @@ the handoff punch list is visible, but not yet implemented.
 | **Site generator** | **MkDocs Material 9.x**                       | Themed to ESABCC palette via `docs/stylesheets/extra.css`. |
 | **Markdown ext.**  | `pymdownx.*` (superfences, tabbed, details)   | Tabs, collapsible deep-dives, annotated code.            |
 | **Diagrams**       | **Mermaid** + hand-authored **SVG**           | Mermaid for code-like flows, SVG for polished overviews. |
-| **Access control** | **StaticCrypt** (`staticrypt@3`)              | Password gate on every HTML page. See [`DOCSITE.md`](../DOCSITE.md). |
-| **Hosting**        | GitHub Pages (source-of-truth phase)          | Private Pages + OIDC-gated `/docs` route inside the app is the long-term target. |
+| **Access control** | **Edge-middleware HMAC cookie** (`SITE_PASSWORD` + `SITE_AUTH_SECRET`) | Server-side password check at the edge; `HttpOnly` HMAC-signed cookie. Same gate as the rest of the app. See [`DOCSITE.md`](../DOCSITE.md). |
+| **Hosting**        | Vercel — built into `public/docs/` by `scripts/build-docs.sh` | Docs travel with the app deploy. OIDC / EU Login replaces the password gate at the EEA cutover. |
 
 ## Operational guardrails
 

@@ -12,7 +12,7 @@
 ## Responsibilities
 
 === "CCE5 (code)"
-    - Repository ownership on `github.com/SebastianFra/MethodHub`.
+    - Repository ownership on `github.com/EUClimateAdvisoryBoard/ESABCCMethodHub`.
     - Feature development, migrations, data pipelines, UI, docs.
     - PR review loop, agentic coding pipelines, multi-agent review passes.
     - Decides when a beta module graduates out of `beta/modules/`.
@@ -32,7 +32,7 @@ flowchart LR
   classDef it fill:#FFF3E0,stroke:#EF6C00,color:#2C3E4D
 
   subgraph CCE5["CCE5 · code stewardship"]
-    GH[github.com/SebastianFra/MethodHub]:::ccFive
+    GH[github.com/EUClimateAdvisoryBoard/ESABCCMethodHub]:::ccFive
     Agents[Agentic coding pipelines<br/>Multi-agent review · CI · releases]:::ccFive
     GH --- Agents
   end
@@ -134,12 +134,12 @@ release/tag protection changes, so `Maintain` is the recommended floor.
 - The repo URL, and therefore any hardcoded link. These are already
   minimised; the canonical source-of-truth is `package.json`'s
   `repository` field and the `repo_url` in
-  [`mkdocs.yml`](https://github.com/SebastianFra/MethodHub/blob/main/mkdocs.yml).
+  [`mkdocs.yml`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/mkdocs.yml).
   A one-line PR updates both, nothing else.
 
 ## Access today — the practical picture
 
-While the repository still lives at `github.com/SebastianFra/MethodHub`
+While the repository still lives at `github.com/EUClimateAdvisoryBoard/ESABCCMethodHub`
 (a personal GitHub account), **CCE5 colleagues and trusted reviewers
 are added as repository collaborators**, not as org members. On a
 personal account, GitHub allows an unlimited number of collaborators
@@ -153,8 +153,10 @@ Two operating modes are feasible today without any plan upgrade:
       argument).
     - Named collaborators (CCE5 engineers, trusted reviewers) get
       write / maintain access and can push PRs and merge.
-    - Docs site is served from GitHub Pages with the StaticCrypt
-      password gate in front.
+    - Docs site travels with the app — Vercel builds `mkdocs` into
+      `public/docs/` and the same Edge-middleware HMAC gate that
+      protects the app also protects the docs sub-path. See
+      [DOCSITE](../DOCSITE.md).
     - **This is the current state.**
 
 === "Private repo · collaborators only"
@@ -173,12 +175,12 @@ Two operating modes are feasible today without any plan upgrade:
     | Plan                     | Rough price                   | What it unlocks                                             |
     |--------------------------|-------------------------------|-------------------------------------------------------------|
     | **Free** (today)         | €0                            | Public repo · unlimited collaborators · public Pages only.  |
-    | **GitHub Pro**           | ~€4 / month                   | Private repo + Pages works — but URL is still public; keep StaticCrypt as the gate. |
+    | **GitHub Pro**           | ~€4 / month                   | Private repo + Pages works — but the docs are no longer hosted on Pages, they ship inside the Vercel deploy. Pro mainly buys private source. |
     | **GitHub Team (org)**    | ~€4 / user / month            | Private Pages — requires GitHub sign-in and read access. Clean for an internal-only doc site. |
     | **Enterprise Cloud**     | ~€21 / user / month           | SAML SSO — the eventual answer once EEA's Azure AD is in the picture. |
 
 ??? abstract "Inviting a collaborator — step-by-step"
-    From `github.com/SebastianFra/MethodHub/settings/access` (desktop
+    From `github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/settings/access` (desktop
     mode on mobile):
 
     1. **Add people** → type the person's GitHub username or email.
