@@ -15,6 +15,7 @@
 // ---------------------------------------------------------------------------
 
 import { createServerClient, createAdminClient } from '@/lib/supabase-server';
+import type { FundingEntry } from './types';
 
 export interface CustomRef {
   id: string;
@@ -32,6 +33,8 @@ export interface CustomRef {
   addedAt: string;
   source: string; // 'vba' | 'web'
   pdfUrl?: string;
+  /** CrossRef-shaped funder list. Aggregating these powers the EU-funded share. */
+  funding?: FundingEntry[];
 }
 
 // Row shape as stored in Postgres (snake_case columns).
@@ -50,6 +53,7 @@ interface CustomRefRow {
   full_citation: string | null;
   source: string;
   pdf_url: string | null;
+  funding: FundingEntry[] | null;
   added_at: string;
 }
 
@@ -70,6 +74,7 @@ function rowToRef(row: CustomRefRow): CustomRef {
     addedAt: row.added_at,
     source: row.source,
     pdfUrl: row.pdf_url ?? undefined,
+    funding: row.funding ?? undefined,
   };
 }
 
@@ -89,6 +94,7 @@ function refToRow(ref: CustomRef): Omit<CustomRefRow, 'added_at'> & { added_at?:
     full_citation: ref.fullCitation || null,
     source: ref.source || 'web',
     pdf_url: ref.pdfUrl ?? null,
+    funding: ref.funding && ref.funding.length > 0 ? ref.funding : null,
     added_at: ref.addedAt || undefined,
   };
 }

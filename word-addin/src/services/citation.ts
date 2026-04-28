@@ -3,7 +3,8 @@
 // Uses Content Controls + Custom XML Parts
 // ============================================================================
 
-import { RefSearchResult, getReferencesByIds, formatBibliography, formatInlineCitations } from './api';
+import { RefSearchResult, getReferencesByIds, formatBibliography, formatInlineCitations, recordCitationUsage } from './api';
+import { getActivePlanScope, loadPersistedPlanId } from './plan-scope';
 
 // ── Types ──
 
@@ -25,6 +26,34 @@ export interface DocumentCitation {
 const CITE_TAG_PREFIX = 'CITE:';
 const BIB_TAG = 'REFMANAGER:BIBLIOGRAPHY';
 const XML_NAMESPACE = 'http://esabcc.refmanager/citations';
+
+// Best-effort document identifier for the citations_used log. Uses the
+// document URL when Office exposes it (saved files); otherwise falls back to
+// the document title. Both are stable enough across saves for analytics.
+function getDocumentKey(): string {
+  try {
+    const ctx = (Office as any)?.context?.document;
+    const url = ctx?.url;
+    if (typeof url === 'string' && url) return url;
+    const title = ctx?.title;
+    if (typeof title === 'string' && title) return `title:${title}`;
+  } catch {
+    // ignore — fall through
+  }
+  return 'unknown-document';
+}
+
+function logCitationUsage(citation: CitationData): void {
+  const csl: any = citation.cslJson || {};
+  const planId = getActivePlanScope()?.planId || loadPersistedPlanId() || null;
+  void recordCitationUsage({
+    reference_id: citation.refId,
+    document_key: getDocumentKey(),
+    plan_id: planId,
+    doi: typeof csl.DOI === 'string' ? csl.DOI : null,
+    funding: Array.isArray(csl.funder) ? csl.funder : null,
+  });
+}
 
 // ── Insert Single Citation ──
 
@@ -52,6 +81,10 @@ export async function insertCitation(
 
   // Store citation data in Custom XML Part
   await storeCitationInXml(citation);
+
+  // Log usage so the EU-funded share of references in this report can be
+  // computed without re-extracting DOIs from the finished document.
+  logCitationUsage(citation);
 }
 
 // ── Insert Multi-Citation (e.g., "(Smith, 2024; Jones, 2023)") ──
@@ -91,6 +124,11 @@ export async function insertMultiCitation(
   // Store all citations in XML
   for (const citation of citations) {
     await storeCitationInXml(citation);
+  }
+
+  // Log every citation in the group as a separate usage row.
+  for (const citation of citations) {
+    logCitationUsage(citation);
   }
 }
 

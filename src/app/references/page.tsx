@@ -29,7 +29,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
-import { ReferenceLibrary, Reference } from '@/lib/references/types';
+import { ReferenceLibrary, Reference, FundingEntry, isEuFunder } from '@/lib/references/types';
 import {
   getLibraries,
   getReferences,
@@ -135,6 +135,7 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
       year: string; journal: string; type: string; volume: string;
       issue: string; pages: string; url: string; addedAt: string;
       pdfUrl?: string; source?: string;
+      funding?: FundingEntry[] | null;
     }) => {
       const yearNum = r.year ? parseInt(r.year, 10) : null;
       // Derive a source-specific tag so users can tell at a glance
@@ -171,6 +172,7 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
         tags: [sourceTag] as string[],
         notes: null,
         pdf_url: r.pdfUrl || null,
+        funding: r.funding ?? null,
         created_at: r.addedAt || new Date().toISOString(),
         updated_at: r.addedAt || new Date().toISOString(),
         created_by: null,
@@ -184,6 +186,7 @@ async function postRefToApi(ref: {
   doi: string; title: string; authors: string; year: string;
   journal: string; type: string; volume: string; issue: string;
   pages: string; url: string; fullCitation: string;
+  funding?: FundingEntry[] | null;
 }) {
   try {
     await fetch('/api/references/library', {
@@ -199,6 +202,7 @@ async function putRefToApi(ref: {
   id: string; doi: string; title: string; authors: string; year: string;
   journal: string; type: string; volume: string; issue: string;
   pages: string; url: string; fullCitation: string; pdfUrl?: string;
+  funding?: FundingEntry[] | null;
 }): Promise<{ ok: boolean; error?: string }> {
   try {
     const resp = await fetch('/api/references/library', {
@@ -602,6 +606,7 @@ export default function ReferencesPage() {
                         pages: ref.csl_json?.page || '',
                         url: ref.csl_json?.URL || '',
                         fullCitation: '',
+                        funding: ref.funding,
                       });
                       setReferences([ref, ...references]);
                       setShowAddForm(false);
@@ -629,6 +634,7 @@ export default function ReferencesPage() {
                         url: ref.csl_json?.URL || '',
                         fullCitation: '',
                         pdfUrl: ref.pdf_url || '',
+                        funding: ref.funding,
                       });
                       if (!result.ok) {
                         alert(`Failed to save: ${result.error}`);
@@ -807,6 +813,29 @@ export default function ReferencesPage() {
   );
 }
 
+// Funding textarea round-trip: each line is "Name | DOI prefix | award1, award2".
+// Mirrors the helpers in components/references/ReferenceForm.tsx so both forms
+// agree on what the user types.
+function formatFundingLine(f: FundingEntry): string {
+  const awards = f.awards && f.awards.length > 0 ? f.awards.join(', ') : '';
+  return [f.name, f.doi || '', awards].join(' | ').replace(/\s*\|\s*$/, '');
+}
+
+function parseFundingText(text: string): FundingEntry[] {
+  return text
+    .split('\n')
+    .map(l => l.trim())
+    .filter(Boolean)
+    .map(line => {
+      const [name = '', doi = '', awards = ''] = line.split('|').map(s => s.trim());
+      const e: FundingEntry = { name };
+      if (doi) e.doi = doi;
+      if (awards) e.awards = awards.split(',').map(a => a.trim()).filter(Boolean);
+      return e;
+    })
+    .filter(f => f.name);
+}
+
 function AddReferenceForm({
   onSave,
   onCancel,
@@ -833,6 +862,9 @@ function AddReferenceForm({
   const [pages, setPages] = useState(editingRef?.csl_json?.page || '');
   const [tags, setTags] = useState(editingRef?.tags?.join(', ') || '');
   const [notes, setNotes] = useState(editingRef?.notes || '');
+  const [fundingText, setFundingText] = useState(() =>
+    (editingRef?.funding || []).map(formatFundingLine).join('\n')
+  );
   const [doiLoading, setDoiLoading] = useState(false);
   const [doiError, setDoiError] = useState('');
   const [pdfUrl, setPdfUrl] = useState(editingRef?.pdf_url || '');
@@ -1063,6 +1095,19 @@ function AddReferenceForm({
       // URL
       if (item.URL) setUrl(item.URL);
 
+      // Funding — Crossref returns funder[] with name/DOI/award. Round-trip
+      // through the same textarea format so the user can edit/append.
+      if (Array.isArray(item.funder) && item.funder.length > 0) {
+        const funders: FundingEntry[] = item.funder.map((f: { name?: string; DOI?: string; award?: string[] }) => ({
+          name: f.name || '',
+          doi: f.DOI || undefined,
+          awards: Array.isArray(f.award) ? f.award.filter(Boolean) : undefined,
+        })).filter((f: FundingEntry) => f.name);
+        if (funders.length > 0) {
+          setFundingText(funders.map(formatFundingLine).join('\n'));
+        }
+      }
+
       // Clean DOI
       setDoi(cleanDoi);
 
@@ -1083,6 +1128,7 @@ function AddReferenceForm({
 
     const id = editingRef?.id || 'custom-' + Date.now();
     const yearNum = year ? parseInt(year, 10) : null;
+    const funding = parseFundingText(fundingText);
 
     const ref: Reference = {
       id,
@@ -1099,6 +1145,7 @@ function AddReferenceForm({
         page: pages || undefined,
         DOI: doi || undefined,
         URL: url || undefined,
+        funder: funding.length > 0 ? funding : undefined,
       },
       item_type: refType,
       title: title.trim(),
@@ -1111,7 +1158,7 @@ function AddReferenceForm({
       tags: tags ? tags.split(',').map(t => t.trim()).filter(Boolean) : null,
       notes: notes || null,
       pdf_url: pdfUrl || null,
-      funding: editingRef?.funding ?? null,
+      funding: funding.length > 0 ? funding : null,
       created_at: editingRef?.created_at || new Date().toISOString(),
       updated_at: new Date().toISOString(),
       created_by: editingRef?.created_by ?? null,
@@ -1404,9 +1451,23 @@ function AddReferenceForm({
             <label className={labelClass}>Pages</label>
             <input className={inputClass} value={pages} onChange={e => setPages(e.target.value)} placeholder="e.g. 123-145" />
           </div>
-          <div>
-            <label className={labelClass}>URL</label>
-            <input className={inputClass} value={url} onChange={e => setUrl(e.target.value)} />
+          <div className="col-span-2">
+            <label className={labelClass}>
+              Funding{' '}
+              <span className="text-[10px] text-tertiary font-normal">
+                (one per line: <code>Name | DOI prefix | award1, award2</code>; auto-filled from DOI)
+              </span>
+            </label>
+            <textarea
+              className={inputClass + " font-mono text-xs"}
+              rows={2}
+              value={fundingText}
+              onChange={e => setFundingText(e.target.value)}
+              placeholder="European Commission | 10.13039/501100000780 | 101081244"
+            />
+            {parseFundingText(fundingText).some(isEuFunder) && (
+              <p className="mt-1 text-[10px] text-[#007B6C] font-semibold">EU-funded</p>
+            )}
           </div>
           <div className="col-span-2">
             <label className={labelClass}>Tags (comma-separated)</label>

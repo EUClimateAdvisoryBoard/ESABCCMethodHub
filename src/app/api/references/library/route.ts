@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
       url:          existing.url          || body.url          || '',
       fullCitation: existing.fullCitation || body.fullCitation || '',
       pdfUrl:       existing.pdfUrl       || body.pdfUrl       || '',
+      funding:      (body.funding && body.funding.length > 0) ? body.funding : existing.funding,
       addedAt: new Date().toISOString(),
     };
 
@@ -122,6 +123,7 @@ export async function POST(request: NextRequest) {
     addedAt: new Date().toISOString(),
     source: body.source || 'web',
     pdfUrl: body.pdfUrl || '',
+    funding: body.funding && body.funding.length > 0 ? body.funding : undefined,
   };
 
   const result = await upsertRef(ref);
@@ -174,6 +176,7 @@ export async function PUT(request: NextRequest) {
     addedAt: previous?.addedAt ?? new Date().toISOString(),
     source: body.source ?? previous?.source ?? 'web',
     pdfUrl: body.pdfUrl ?? previous?.pdfUrl ?? '',
+    funding: body.funding ?? previous?.funding,
   };
 
   const result = await upsertRef(updated);

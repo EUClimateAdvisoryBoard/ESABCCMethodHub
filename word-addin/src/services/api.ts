@@ -243,3 +243,41 @@ export async function syncLibrary(libraryId: string): Promise<number> {
 export function isUsingBridge(): boolean {
   return useBridge;
 }
+
+// ── Record citation usage ──
+//
+// Fire-and-forget: every successful citation insertion logs a row to
+// `citations_used` so we can later tally the EU-funded share of references
+// in a given report. Failures are silent — the citation has already gone
+// into the document, and dropping a usage log row is preferable to surfacing
+// a save error to the author.
+//
+// The MethodHub API URL is injected on `window` during add-in bootstrap,
+// alongside the bridge token (which the API endpoint accepts as bearer auth
+// when present, falling back to Supabase RLS otherwise).
+const METHODHUB_URL: string =
+  (window as any).__REFMANAGER_METHODHUB_URL__ || 'https://methodhub.eu';
+
+export interface CitationUsageRecord {
+  reference_id: string;
+  document_key: string;
+  plan_id?: string | null;
+  doi?: string | null;
+  funding?: { name: string; doi?: string; awards?: string[] }[] | null;
+}
+
+export async function recordCitationUsage(record: CitationUsageRecord): Promise<void> {
+  try {
+    const url = `${METHODHUB_URL.replace(/\/+$/, '')}/api/citations/used`;
+    await fetch(url, {
+      method: 'POST',
+      headers: bridgeHeaders({ 'Content-Type': 'application/json' }),
+      body: JSON.stringify(record),
+      // Short timeout so a slow network never blocks the user's edit flow.
+      signal: AbortSignal.timeout(4000),
+    });
+  } catch {
+    // Best effort. Citation insertion is the user-visible action; losing a
+    // single analytics row is acceptable.
+  }
+}
