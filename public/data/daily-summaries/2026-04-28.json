@@ -1,6 +1,6 @@
 {
   "date": "2026-04-28",
-  "generatedAt": "2026-04-28T07:35:44.038Z",
+  "generatedAt": "2026-04-28T12:28:33.850Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 28 April 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Clean energy switch must not be excuse to plunder Indigenous lands, say leaders",
-      "summary": "&lt;p&gt;Global conference told benefits should not come at expense of well-protected environments&lt;/p&gt;&lt;p&gt;The energy transition must not be used as a fresh excuse to plunder Indigenous territories, delegates at a groundbreaking global conference on phasing out fossil fuels were warned.&lt;/p&gt;&lt;p&gt;High oil prices and &lt;a href=\"https://www.theguardian.com/world/us-israel-war-on-iran\"&gt;war in the Middle East&lt;/a&gt; have boosted the attraction of renewable technologies in ma",
+      "headline": "Iran war: US wary of peace plan postponing nuclear deal",
+      "summary": "The White House has reportedly not ruled out a proposal from Iran to end its chokehold on the Strait of Hormuz if the US lifts a blockade. However, US officials say any agreement must include a nuclear deal. DW has more.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Heavy rain not ‘nearly enough’ to tame two wildfires in drought-stricken Georgia",
-      "summary": "&lt;p&gt;Pineland Road fire and Highway 82 fire have destroyed over 100 homes, and are part of large number of wildfires this spring in the US south&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;amp;utm_campaign=BN22326&amp;amp;utm_content=signup&amp;amp;utm_term=standfirst&amp;amp;utm_source=GUARDIAN_WEB\"&gt;Sign up for the ",
+      "headline": "Commission and European Parliament sign agreement fostering closer partnership",
+      "summary": "European Commission Press release Brussels, 28 Apr 2026 Today, European Commission President Ursula von der Leyen and European Parliament President Roberta Metsola signed the revised Framework Agreement between both institutions.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -49,12 +49,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Clean energy switch must not be excuse to plunder Indigenous lands, say leaders",
-          "link": "https://www.theguardian.com/world/2026/apr/27/clean-energy-switch-must-not-be-excuse-to-plunder-indigenous-lands-say-leaders",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Global conference told benefits should not come at expense of well-protected environments&lt;/p&gt;&lt;p&gt;The energy transition must not be used as a fresh excuse to plunder Indigenous territories, delegates at a groundbreaking global conference on phasing out fossil fuels were warned.&lt;/p&gt;&lt;p&gt;High oil prices and &lt;a href=\"https://www.theguardian.com/world/us-israel-war-on-iran\"&gt;war in the Middle East&lt;/a&gt; have boosted the attraction of renewable technologies in ma",
-          "published": "2026-04-27T11:00:09.000Z",
-          "score": 7
+          "title": "Iran war: US wary of peace plan postponing nuclear deal",
+          "link": "https://www.dw.com/en/iran-war-us-wary-of-peace-plan-postponing-nuclear-deal/live-76959714?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The White House has reportedly not ruled out a proposal from Iran to end its chokehold on the Strait of Hormuz if the US lifts a blockade. However, US officials say any agreement must include a nuclear deal. DW has more.",
+          "published": "2026-04-28T08:52:00.000Z",
+          "score": 11
         },
         {
           "title": "US, Iran clash at UN after Tehran gets nuclear non-proliferation role - Reuters",
@@ -65,28 +65,20 @@
           "score": 7
         },
         {
-          "title": "Zaporizhzhia nuclear power plant worker killed in Ukraine drone attack, management says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQQ2V1bXZ6djFzVHItS0ZLVU96Z1JRVmNIdGNLUjdzTy04R2RCUU1MamtrT2lXTUxDRTRlamtoMGRBT0ROSmNlVnFPWGxMNVZCV1VMTGpUSmtDTU1iWkVLZ3FhN3ZsaWsydUtUN0lpRS1UMkk5MHdqb2F6ckIxTThjUUNaWk9UOGZKQXA1ejV2UElnTkE1UU9zcHRpOVExbHdaWVhNMGo1QkxhU1BBaVJBbTgwSzJydXhrU0dFbEplQUVZMnZKc0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQQ2V1bXZ6djFzVHItS0ZLVU96Z1JRVmNIdGNLUjdzTy04R2RCUU1MamtrT2lXTUxDRTRlamtoMGRBT0ROSmNlVnFPWGxMNVZCV1VMTGpUSmtDTU1iWkVLZ3FhN3ZsaWsydUtUN0lpRS1UMkk5MHdqb2F6ckIxTThjUUNaWk9UOGZKQXA1ejV2UElnTkE1UU9zcHRpOVExbHdaWVhNMGo1QkxhU1BBaVJBbTgwSzJydXhrU0dFbEplQUVZMnZKc0E?oc=5\" target=\"_blank\"&gt;Zaporizhzhia nuclear power plant worker killed in Ukraine drone attack, management says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-04-27T09:58:09.000Z",
-          "score": 7
-        },
-        {
-          "title": "Chinese EV battery maker CATL launches $5 billion Hong Kong share sale - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbUs3NDZVMlpHRGJ4X3BGRUxjWTd4RE93T1VWMnhrOFQ3alAzMEQwMVQ0eVZYaWV2M2FQY2V3MDF4VlVzZ1pDSnd4cU1kV09RVVZEcXVzOWgxb3QyclcyVVRDWS1KSnVmb0NwVUc1MkRURmp1OGJWT3NrTGJfcWN6M09IRklkUXh5YlA3aDVBQkx3ak1MNm5Uamk1MDR3NFZjdlRPTjNMOFdsZjllTndTTVV4RkJzaFFMRkw2MzRmaEdSdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbUs3NDZVMlpHRGJ4X3BGRUxjWTd4RE93T1VWMnhrOFQ3alAzMEQwMVQ0eVZYaWV2M2FQY2V3MDF4VlVzZ1pDSnd4cU1kV09RVVZEcXVzOWgxb3QyclcyVVRDWS1KSnVmb0NwVUc1MkRURmp1OGJWT3NrTGJfcWN6M09IRklkUXh5YlA3aDVBQkx3ak1MNm5Uamk1MDR3NFZjdlRPTjNMOFdsZjllTndTTVV4RkJzaFFMRkw2MzRmaEdSdw?oc=5\" target=\"_blank\"&gt;Chinese EV battery maker CATL launches $5 billion Hong Kong share sale&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T10:32:47.000Z",
-          "score": 7
-        },
-        {
           "title": "Meta partners with space startup Overview Energy to secure solar power for data centers - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNWExjVnNxNnh2QVFGNnd4TjR0cWtvYVlfYXBLRDNUcERndXpMU3lJcTJ6V1N3N0NrdHl2VXA5VzdzZVBLSGZITDhSci1QLVNPWDhscnBreHkyNTRxMEttdFU3aWlOMmllbzl4RkFpM0xvNUJKaDNPTXdnaTNtRElINDFpM3hvQmRjaFZhNThEa0ZjTU9ibUdrdlVvSVAzRUtGSnB3OFQ3RW9scFhrQmtBVjZod1d4TzQ4TE9YNkxrazlhS3NDSFZmUW9WNDkxUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNWExjVnNxNnh2QVFGNnd4TjR0cWtvYVlfYXBLRDNUcERndXpMU3lJcTJ6V1N3N0NrdHl2VXA5VzdzZVBLSGZITDhSci1QLVNPWDhscnBreHkyNTRxMEttdFU3aWlOMmllbzl4RkFpM0xvNUJKaDNPTXdnaTNtRElINDFpM3hvQmRjaFZhNThEa0ZjTU9ibUdrdlVvSVAzRUtGSnB3OFQ3RW9scFhrQmtBVjZod1d4TzQ4TE9YNkxrazlhS3NDSFZmUW9WNDkxUQ?oc=5\" target=\"_blank\"&gt;Meta partners with space startup Overview Energy to secure solar power for data centers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
           "published": "2026-04-27T16:08:04.000Z",
           "score": 7
+        },
+        {
+          "title": "Middle East crisis could cost world $1tn while oil firms make ‘obscene’ profit, analysis finds",
+          "link": "https://www.theguardian.com/environment/2026/apr/28/middle-east-crisis-oil-firms-profit-colombia-conference",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Climate group calls for urgent windfall tax on excess fossil fuel profits, as delegates tell Colombia conference their nations are suffering&lt;/p&gt;&lt;p&gt;The Middle East oil and gas crunch will impose as much as a trillion dollars of additional costs on the global economy while petroleum companies rake in spectacular profits from elevated fuel prices, analysis has revealed.&lt;/p&gt;&lt;p&gt;The uneven distribution of risk and reward comes amid rising concern that the US-Israeli at",
+          "published": "2026-04-28T11:00:09.000Z",
+          "score": 4
         }
       ]
     },
@@ -94,6 +86,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commission and European Parliament sign agreement fostering closer partnership",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_912",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 28 Apr 2026 Today, European Commission President Ursula von der Leyen and European Parliament President Roberta Metsola signed the revised Framework Agreement between both institutions.",
+          "published": "2026-04-28T07:52:20.000Z",
+          "score": 18
+        },
         {
           "title": "Heavy rain not ‘nearly enough’ to tame two wildfires in drought-stricken Georgia",
           "link": "https://www.theguardian.com/us-news/2026/apr/27/georgia-wildfires-rain",
@@ -111,11 +111,19 @@
           "score": 7
         },
         {
-          "title": "Moody's flags resilience in China economy, moves outlook to 'stable' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQOFBXWWpXcnlHczJnbDdrZnMyVE1mNVFOMHkyS28wU1dsd2JNLTdGRTlFdG5tY2FqNTlSRHhRVG52WkFoVXlqT2hvZko1N3FIMUtKYmJfUk1VQkhCRjFOTURwdGZSbmxuUWF2dGsyaHlKTEswVnZGOVI1ZXRVUDRDc2d5Ym53TGVGM3pSV1BXMVg3OWVkM2FwN2NiY0VrR2VfMkx6LVFKR1Q5TFVQTXN2QjUxTQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQOFBXWWpXcnlHczJnbDdrZnMyVE1mNVFOMHkyS28wU1dsd2JNLTdGRTlFdG5tY2FqNTlSRHhRVG52WkFoVXlqT2hvZko1N3FIMUtKYmJfUk1VQkhCRjFOTURwdGZSbmxuUWF2dGsyaHlKTEswVnZGOVI1ZXRVUDRDc2d5Ym53TGVGM3pSV1BXMVg3OWVkM2FwN2NiY0VrR2VfMkx6LVFKR1Q5TFVQTXN2QjUxTQ?oc=5\" target=\"_blank\"&gt;Moody's flags resilience in China economy, moves outlook to 'stable'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T11:07:17.000Z",
+          "title": "Fact check: Cloud seeding didn&#039;t make it rain in Iran",
+          "link": "https://www.dw.com/en/fact-check-cloud-seeding-didn-t-make-it-rain-in-iran/a-76924780?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Some social media users have claimed the alleged destruction of a climate research center in the United Arab Emirates caused intense precipitation in Iran. But those claims are misleading.",
+          "published": "2026-04-28T09:53:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Musk v Altman: Why the tech billionaires and former friends are now facing off in court",
+          "link": "https://www.bbc.com/news/articles/cn8dedv8w8xo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The battle between the AI big hitters has largely played out on social media. Now it is coming to the courtroom.",
+          "published": "2026-04-28T10:10:54.000Z",
           "score": 2
         }
       ]
@@ -139,14 +147,6 @@
           "description": "The fund - which Canadians can invest in directly - will help pay for major infrastructure projects in the country, the prime minister says.",
           "published": "2026-04-27T18:13:26.000Z",
           "score": 2
-        },
-        {
-          "title": "Large US-based fund manager stays bullish on India debt, says rate‑hike fears overblown - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxORHVuNzd5UzZLUkpnR3VBcTVrclFSTFFfOUN6SHB6Y1JrVTlxZEhrRnU0cWh4RU5Wd3VKWXExVzI5blFmX3dHb1F4UTJlOC1CcjZhLUktanN2SHdNbXRubEc4WGNCZDRmVjl5c1A3a3Q2blMzMnkwd083MENsaVZJcjRFQ1BLZUd6R1plSXlkekI0aGdaREp1aXZocXE5aUFHS0VtQ1FqeFR5TndhazktbWttNmYxQmMwVzJBaQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxORHVuNzd5UzZLUkpnR3VBcTVrclFSTFFfOUN6SHB6Y1JrVTlxZEhrRnU0cWh4RU5Wd3VKWXExVzI5blFmX3dHb1F4UTJlOC1CcjZhLUktanN2SHdNbXRubEc4WGNCZDRmVjl5c1A3a3Q2blMzMnkwd083MENsaVZJcjRFQ1BLZUd6R1plSXlkekI0aGdaREp1aXZocXE5aUFHS0VtQ1FqeFR5TndhazktbWttNmYxQmMwVzJBaQ?oc=5\" target=\"_blank\"&gt;Large US-based fund manager stays bullish on India debt, says rate‑hike fears overblown&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T10:43:43.000Z",
-          "score": 2
         }
       ]
     },
@@ -155,20 +155,20 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Video of a committee meeting - Monday, 27 April 2026 - 17:00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260427-1900-COMMITTEE-ENVI_vd",
+          "title": "Highlights - Dialogue with the Chair of the Committee on Ecology of the Parliament of Montenegro - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260416CAN77623",
           "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 165'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-04-27T19:35:33.000Z",
-          "score": 18
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/305400/Picture_NL_04_26_Montenegro-ms.jpg\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 27 April 2026, ENVI Members held an exchange of views with the Chair of the Committee on Ecology of the Parliament of Montenegro. The dialogue focused on the challenges faced and the efforts made by the country in the context of the enlargement process, in particular under Chapter 27 on envi",
+          "published": "2026-04-28T09:03:41.000Z",
+          "score": 22
         },
         {
-          "title": "Merz suggests Ukraine may have to accept territorial loss to help pave way for EU membership - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdXlPWkZZbmdJWlJDbUh2NVFGY05jX0ZvbG1XaElPcEplcTgwZGh2WGdPRTdKVTdRQmY2Uk1vanF6Z3pFUXR3YlVWamtJRFliMnVERjNVaG9sQTVTZEtIaUNRVGlHc09iYVBIUXdOel9DRDJRcHVjb3ZhcEJMa0g4Mm1fWjhvQjBmNTBVdVF3UVdEY1lRMjlpemVVNHdmaDNNdW1tX1kwMmF5R0d2Q1QyM0FQLWRNWHlya3VVLQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdXlPWkZZbmdJWlJDbUh2NVFGY05jX0ZvbG1XaElPcEplcTgwZGh2WGdPRTdKVTdRQmY2Uk1vanF6Z3pFUXR3YlVWamtJRFliMnVERjNVaG9sQTVTZEtIaUNRVGlHc09iYVBIUXdOel9DRDJRcHVjb3ZhcEJMa0g4Mm1fWjhvQjBmNTBVdVF3UVdEY1lRMjlpemVVNHdmaDNNdW1tX1kwMmF5R0d2Q1QyM0FQLWRNWHlya3VVLQ?oc=5\" target=\"_blank\"&gt;Merz suggests Ukraine may have to accept territorial loss to help pave way for EU membership&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-04-27T12:15:11.000Z",
-          "score": 8
+          "title": "Draft agenda - Monday, 4 May 2026 - Tuesday, 5 May 2026 - PE787.846v02-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-05-04-1_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-04-28T08:23:06.000Z",
+          "score": 18
         }
       ]
     },
@@ -201,28 +201,28 @@
           "score": 8
         },
         {
-          "title": "EU extends sanctions against Myanmar by a year - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOR1hjUFJrMktJQndpeklpM0J6WFJMME51ZXFQSVgwdXo2WDlHR1RkVHBJdENMWXk5amZPQjhPblk4QTZkRWNMdUpleXRIZ2NfcVV2dGZibFk4a3cwMklYaUphd1lqbnNfUEdqMTRRdks2RXdvODdyUzVSYy1ESXhDa21IN1V5RWl0dFljTFNNbDMzTnRVS09CXy01NXFVRUls?oc=5\" target=\"_blank\"&gt;EU extends sanctions against Myanmar by a year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T10:55:44.000Z",
-          "score": 8
-        },
-        {
           "title": "Hungary and EU to discuss terms of release for billions in blocked funds - Reuters",
           "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMXFvSjZDYlhDZTY2bTExVmxIXzQ2WWNDYXpXVXVtOXVtb0hZVTBCX3k5ZHFralBkWXh4TnV4VFB6NmhxbDFNeTRHNzQ2NU04a2J0Uy0wMkZpVHd5aFQ0RWNoV0NoM2tub3Y2c2RoQnU4OWJOM3NHZ09SaElEajZCYlBOSmpnbkxRcHhMSTB4dkZqaUVhanJOT1NLdHBoUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNMXFvSjZDYlhDZTY2bTExVmxIXzQ2WWNDYXpXVXVtOXVtb0hZVTBCX3k5ZHFralBkWXh4TnV4VFB6NmhxbDFNeTRHNzQ2NU04a2J0Uy0wMkZpVHd5aFQ0RWNoV0NoM2tub3Y2c2RoQnU4OWJOM3NHZ09SaElEajZCYlBOSmpnbkxRcHhMSTB4dkZqaUVhanJOT1NLdHBoUQ?oc=5\" target=\"_blank\"&gt;Hungary and EU to discuss terms of release for billions in blocked funds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-04-27T13:04:52.000Z",
           "score": 8
+        },
+        {
+          "title": "What Renault&#039;s new EV reveals about the global auto industry",
+          "link": "https://www.dw.com/en/what-renault-s-new-ev-reveals-about-the-global-auto-industry/a-76823988?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "French carmaker Renault no longer sells its brand in the Chinese market, but it&#039;s not afraid to design and develop them there. It&#039;s just one more sign of big shifts in the global auto industry.",
+          "published": "2026-04-28T09:12:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 375,
-    "articlesLast24h": 146,
-    "afterDedup": 143,
+    "totalArticlesScanned": 376,
+    "articlesLast24h": 147,
+    "afterDedup": 141,
     "feedsQueried": 19
   }
 }
