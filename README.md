@@ -84,6 +84,7 @@ items.
 * [User Space](https://eu-climate-policy.vercel.app/docs/vision/user-space/).
 * [Brainstorm — 20 module improvements](https://eu-climate-policy.vercel.app/docs/vision/brainstorm-modules-ux-userspace/).
 * [Brainstorm — professional UX for the five modules](https://eu-climate-policy.vercel.app/docs/vision/brainstorm-pro-ux-five-modules/).
+* [Brainstorm — report production efficiency](https://eu-climate-policy.vercel.app/docs/vision/brainstorm-report-production/).
 * [Brainstorm rollout TODO](https://eu-climate-policy.vercel.app/docs/vision/brainstorm-rollout-todo/).
 
 ## Reference

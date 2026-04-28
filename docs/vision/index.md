@@ -6,6 +6,7 @@ This section is split into a few focused pages.
 - [Roadmap](roadmap.md) — the next six months, intent (not commitment).
 - [Brainstorm — 20 module improvements](brainstorm-modules-ux-userspace.md) — the depth / UI&nbsp;UX / user-space ideas backing the latest branch.
 - [Brainstorm — professional UX for the five modules](brainstorm-pro-ux-five-modules.md) — third-pass UX brief grounded in current interaction-design literature (Doherty, Fitts, Hick, WCAG 2.2, epistemic-UI).
+- [Brainstorm — report production efficiency](brainstorm-report-production.md) — fourth-pass brief on new modules, new functions in existing modules, and new scientific / policy APIs to make the Secretariat faster at producing ESABCC reports.
 - [Rollout TODO](brainstorm-rollout-todo.md) — migrations + env vars + verification checklist for the brainstorm branch.
 - [User Space](user-space.md) — the cross-module surfaces an analyst lives inside (Workbench, Inbox, Workspaces, Collections, Preferences).
 
