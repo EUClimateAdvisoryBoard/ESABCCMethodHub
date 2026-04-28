@@ -578,12 +578,21 @@ export default function ReferencesPage() {
                       {displayedReferences.length.toLocaleString()} references
                     </p>
                   </div>
-                  <button
-                    onClick={async () => { const u = await requireAuth('Sign in to add references.'); if (u) setShowAddForm(true); }}
-                    className="px-3 py-2 bg-primary hover:bg-primary-dark text-white text-sm rounded-lg"
-                  >
-                    + Add Reference
-                  </button>
+                  <div className="flex gap-2">
+                    <Link
+                      href="/references/audit-report"
+                      className="px-3 py-2 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200"
+                      title="Drop a finished .docx or .pdf to count the EU-funded share of its references"
+                    >
+                      Audit a report
+                    </Link>
+                    <button
+                      onClick={async () => { const u = await requireAuth('Sign in to add references.'); if (u) setShowAddForm(true); }}
+                      className="px-3 py-2 bg-primary hover:bg-primary-dark text-white text-sm rounded-lg"
+                    >
+                      + Add Reference
+                    </button>
+                  </div>
                 </div>
 
                 {/* Add Reference Form (fallback mode) */}
@@ -708,6 +717,13 @@ export default function ReferencesPage() {
                   {view === 'list' && (
                     <div className="flex gap-2">
                       <BackfillButton onDone={() => loadReferences()} />
+                      <Link
+                        href="/references/audit-report"
+                        className="px-3 py-2 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200"
+                        title="Drop a finished .docx or .pdf to count the EU-funded share of its references"
+                      >
+                        Audit a report
+                      </Link>
                       <button
                         onClick={async () => { const u = await requireAuth('Sign in to import references.'); if (u) setView('import'); }}
                         className="px-3 py-2 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200"
