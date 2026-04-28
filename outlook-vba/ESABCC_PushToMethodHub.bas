@@ -59,17 +59,24 @@ Attribute VB_Name = "ESABCC_PushToMethodHub"
 '      any older Application_NewMailEx handler — delete that if present):
 '
 '        Private Sub Application_Startup()
-'            ESABCC_ScheduleNextHourly
+'            ESABCC_StartHourly
 '        End Sub
 '
-'   4. Ctrl+S. Restart Outlook once so the hourly timer arms itself.
+'   4. Ctrl+S. Restart Outlook once so the timer arms itself.
 '
-' From then on, once per hour the module scans the Inbox, pushes any
-' new matches to the webhook, and reschedules itself for the next hour.
+' On startup the module runs an immediate sweep — so the News Feed catches
+' up right away — and then schedules a sweep every AUTOPUSH_INTERVAL_MIN
+' minutes for the rest of the session. Each tick reschedules itself, so
+' no further wiring is needed.
+'
+' If the hourly chain ever breaks (Outlook drops an OnTime callback when
+' it's busy or showing a modal dialog), clicking "Push New Matches Now"
+' both flushes the queue AND rearms the timer. ESABCC_DiagnoseHourly will
+' show whether the next tick is currently scheduled.
+'
 ' The "Push to MethodHub" QAT button still works for one-off pushes of
-' emails that don't match any rule, and the new "Push New Matches Now"
-' button (see below) lets you flush the queue manually between hourly
-' runs.
+' emails that don't match any rule, and the "Push New Matches Now"
+' button lets you flush the queue manually between hourly runs.
 '
 ' NOTE: requires classic desktop Outlook for Windows. The new Outlook
 ' (formerly "One Outlook") and outlook.com in the browser do not run VBA.
@@ -244,16 +251,34 @@ TestErr:
            vbCritical, "Push to MethodHub"
 End Sub
 
-' Called from ThisOutlookSession.Application_Startup on Outlook launch to
-' arm the hourly auto-push timer. Each run reschedules itself, so after
-' the first kickoff no further wiring is needed.
+' Module-level cache of the next scheduled hourly run, so we can both cancel
+' a previously-armed timer (avoiding duplicate sweeps when ScheduleNextHourly
+' is called twice) and surface the time to ESABCC_DiagnoseHourly.
+Private g_nextHourlyRun As Date
+
+' Called from ThisOutlookSession.Application_Startup (via ESABCC_StartHourly)
+' to arm the next hourly auto-push tick. Cancels any previously-scheduled
+' callback first so that calling this multiple times — manual button +
+' startup hook + post-sweep reschedule — doesn't stack duplicate timers.
 Public Sub ESABCC_ScheduleNextHourly()
     On Error Resume Next
+
+    ' Cancel any previously-armed run so timers don't stack. Application.OnTime
+    ' with Schedule:=False requires the EXACT same EarliestTime that was used
+    ' to schedule it, which is why we cache g_nextHourlyRun.
+    If g_nextHourlyRun > 0 Then
+        Application.OnTime EarliestTime:=g_nextHourlyRun, _
+                           Procedure:="ESABCC_AutoPushHourly", _
+                           Schedule:=False
+        Err.Clear ' OnTime errors if the entry was already consumed — that's fine
+    End If
+
     Dim nextRun As Date
     nextRun = DateAdd("n", AUTOPUSH_INTERVAL_MIN, Now)
     Application.OnTime EarliestTime:=nextRun, _
                        Procedure:="ESABCC_AutoPushHourly", _
                        Schedule:=True
+    g_nextHourlyRun = nextRun
     Debug.Print "[ESABCC] next hourly auto-push scheduled at " & nextRun
 End Sub
 
@@ -262,7 +287,24 @@ End Sub
 ' the webhook, marks them so they aren't sent twice, and reschedules
 ' itself. No dialogs — failures go to the VBA Immediate window
 ' (View > Immediate), so this is safe to run unattended.
+'
+' Reschedules BEFORE the sweep so a slow/erroring sweep can't break the
+' hourly chain. Outlook's OnTime is best-effort — if a tick is missed
+' (e.g. Outlook was showing a modal dialog), the chain dies until the
+' next Application_Startup. Re-arming first turns "one bad sweep" into
+' a recoverable event instead of a permanent silent failure.
 Public Sub ESABCC_AutoPushHourly()
+    On Error Resume Next
+    ESABCC_ScheduleNextHourly
+    AutoPushSweep False
+End Sub
+
+' Run once at Outlook launch (from Application_Startup in ThisOutlookSession).
+' Does an immediate sweep so the user sees the News Feed catch up right away,
+' then arms the hourly timer. This is the public entry point users wire up —
+' calling only ESABCC_ScheduleNextHourly meant nothing pushed for the first
+' hour after Outlook opened, which felt broken.
+Public Sub ESABCC_StartHourly()
     On Error Resume Next
     AutoPushSweep False
     ESABCC_ScheduleNextHourly
@@ -271,9 +313,14 @@ End Sub
 ' Manual "flush now" entry point — bind this to a QAT button so the user
 ' can push pending matches without waiting for the next hourly tick. Shows
 ' a summary MsgBox when done so the click is visibly acknowledged.
+'
+' Also re-arms the hourly timer: if Outlook dropped a previous tick (busy,
+' modal dialog) the chain would otherwise be dead until the next restart.
+' Clicking the manual button repairs that.
 Public Sub ESABCC_AutoPushNow()
     On Error GoTo NowErr
     AutoPushSweep True
+    ESABCC_ScheduleNextHourly
     Exit Sub
 
 NowErr:
@@ -282,9 +329,34 @@ NowErr:
            vbCritical, "Push to MethodHub"
 End Sub
 
+' Diagnostic helper for the QAT or VBA Immediate window. Shows whether the
+' hourly timer is armed and when the next tick will fire. Use this after
+' "Push New Matches Now" reports zero pushes to confirm the timer is alive.
+Public Sub ESABCC_DiagnoseHourly()
+    Dim msg As String
+    If g_nextHourlyRun > 0 Then
+        Dim minsLeft As Long
+        minsLeft = DateDiff("n", Now, g_nextHourlyRun)
+        msg = "Hourly auto-push timer is ARMED." & vbCrLf & vbCrLf & _
+              "Next run at: " & Format$(g_nextHourlyRun, "yyyy-mm-dd hh:nn") & _
+              vbCrLf & _
+              "(in " & minsLeft & " min)"
+    Else
+        msg = "Hourly auto-push timer is NOT armed." & vbCrLf & vbCrLf & _
+              "Run ESABCC_StartHourly, or restart Outlook with the" & vbCrLf & _
+              "Application_Startup hook in ThisOutlookSession."
+    End If
+    MsgBox msg, vbInformation, "Push to MethodHub"
+End Sub
+
 ' Shared sweep used by both the hourly timer and the manual button. When
 ' showSummary is True, a MsgBox reports the counts at the end; when False
 ' (the hourly path), we stay silent and just log to Debug.
+'
+' Sorts the inbox newest-first and stops as soon as we cross the lookback
+' cutoff. With a few thousand mails in the inbox the unsorted For-Each was
+' slow enough to occasionally exceed Outlook's OnTime budget, which silently
+' dropped the next tick.
 Private Sub AutoPushSweep(ByVal showSummary As Boolean)
     Dim ns As Object
     Set ns = Application.GetNamespace("MAPI")
@@ -294,6 +366,12 @@ Private Sub AutoPushSweep(ByVal showSummary As Boolean)
     Set inbox = ns.GetDefaultFolder(6) ' olFolderInbox = 6
     If inbox Is Nothing Then Exit Sub
 
+    Dim items As Object
+    Set items = inbox.Items
+    On Error Resume Next
+    items.Sort "[ReceivedTime]", True ' descending — newest first
+    On Error GoTo 0
+
     Dim cutoff As Date
     cutoff = DateAdd("h", -AUTOPUSH_LOOKBACK_HRS, Now)
 
@@ -302,13 +380,19 @@ Private Sub AutoPushSweep(ByVal showSummary As Boolean)
     Dim skippedAlready As Long: skippedAlready = 0
 
     Dim item As Object
-    For Each item In inbox.Items
+    For Each item In items
         If IsMailItem(item) Then
             Dim received As Date
             received = 0
             On Error Resume Next
             received = item.ReceivedTime
             On Error GoTo 0
+
+            ' Items are sorted newest-first, so once we cross the cutoff we
+            ' can stop. Items with no ReceivedTime (received = 0) are rare
+            ' and probably corrupt — skip rather than rescan the whole inbox.
+            If received > 0 And received < cutoff Then Exit For
+
             If received = 0 Or received >= cutoff Then
                 scanned = scanned + 1
                 If AutoPushRuleMatches(item) Then

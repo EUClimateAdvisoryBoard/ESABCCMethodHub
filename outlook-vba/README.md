@@ -45,13 +45,26 @@ sequenceDiagram
 3. In the module, edit:
    - `WEBHOOK_SECRET` — must match `INBOUND_EMAIL_SECRET` on the server.
    - `WEBHOOK_URL` — usually `https://eu-climate-policy.vercel.app/api/inbound-email`.
-4. Press **Ctrl+S** to save. Close and reopen Outlook.
-5. File → Options → Trust Center → enable notifications for macros.
-6. **Optional** — add the QAT buttons:
+4. Wire up the hourly timer: in the VBA editor double-click
+   **ThisOutlookSession** and paste:
+
+   ```vb
+   Private Sub Application_Startup()
+       ESABCC_StartHourly
+   End Sub
+   ```
+
+   `ESABCC_StartHourly` runs an immediate sweep so the feed catches up
+   right away, then arms the hourly tick. Without this hook the timer
+   never starts and no emails are auto-pushed.
+5. Press **Ctrl+S** to save. Close and reopen Outlook.
+6. File → Options → Trust Center → enable notifications for macros.
+7. **Optional** — add the QAT buttons:
    - Right-click the QAT → Customize Quick Access Toolbar.
    - Choose commands from → **Macros**.
-   - Add `ESABCC_PushToMethodHub` (push current email) and
-     `ESABCC_AutoPushNow` (run the rule scan now).
+   - Add `ESABCC_PushToMethodHub` (push current email),
+     `ESABCC_AutoPushNow` (run the rule scan now and rearm the timer),
+     and `ESABCC_DiagnoseHourly` (verify the timer is armed).
 
 ## Configuration in the macro
 
@@ -67,6 +80,8 @@ These are the only values you should need to change.
 | Symptom                                        | Likely cause                                                  |
 |------------------------------------------------|---------------------------------------------------------------|
 | Nothing ever pushes                            | Macro was not saved, or Outlook blocks macros                 |
+| Hourly auto-push not running                   | `Application_Startup` hook missing in `ThisOutlookSession`. Run `ESABCC_DiagnoseHourly` to confirm. |
+| Was working, then stopped                      | Outlook dropped an OnTime tick (busy/modal). Click **Push New Matches Now** — it rearms the timer. |
 | Server returns 401                             | `WEBHOOK_SECRET` differs from `INBOUND_EMAIL_SECRET` on the server |
 | Same email pushed every hour                   | Hidden user property got stripped; re-import the macro        |
 | "Can't connect" errors                         | Corporate firewall blocks outbound HTTPS to Vercel            |
