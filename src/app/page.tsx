@@ -329,6 +329,7 @@ export default async function HomePage() {
     { code: 'M · 12', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
     { code: 'M · 13', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
     { code: 'M · 14', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
+    { code: 'M · 15', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
   ];
 
   return (

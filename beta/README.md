@@ -1,7 +1,7 @@
 # `beta/` — experimental modules (not shipped in v1.0)
 
 This folder is a **deliberate parking lot**. It contains the Next.js page
-folders for eight modules that are *not* part of the v1.0 handoff to EEA IT.
+folders for the modules that are *not* part of the v1.0 handoff to EEA IT.
 
 The production deployment ships the **five stable modules** under
 [`src/app/`](../src/app). Nothing in this folder is routed by the live app:
@@ -40,6 +40,7 @@ the quality bar we ship to the Secretariat.
 | `funding-sources/`            | Funding Sources      | Horizon Dashboard + DG DIGIT QlikSense snapshot; scraper pending.  |
 | `maritime-aviation/`          | Maritime & Aviation  | SEAMAPS / OAG data requires procurement.                           |
 | `media-monitoring/`           | Media Monitoring     | GDELT pipeline works; dashboard UX and consent flow WIP.           |
+| `strategy-docs/`              | Strategy & Framework | Documentation overlay for internal strategy and PIRs; files pending upload. |
 
 ## Promoting a beta module to production
 
