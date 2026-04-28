@@ -1,15 +1,9 @@
 {
   "date": "2026-04-28",
-  "generatedAt": "2026-04-28T12:28:33.850Z",
+  "generatedAt": "2026-04-28T18:22:44.923Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 28 April 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Commissioner Roswall's address at a Structured Dialogue with Members of the European Parliament's Committee for Environment, Climate and Food Safety (ENVI)",
-      "summary": "European Commission Speech Brussels, 27 Apr 2026 Thank you, Chair (Pierfrancesco Maran),\r\nHonourable Members,\r\nThank you for this opportunity to reflect on the past year and to outline my plans for the months ah...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Iran war: US wary of peace plan postponing nuclear deal",
       "summary": "The White House has reportedly not ruled out a proposal from Iran to end its chokehold on the Strait of Hormuz if the US lifts a blockade. However, US officials say any agreement must include a nuclear deal. DW has more.",
@@ -17,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission and European Parliament sign agreement fostering closer partnership",
-      "summary": "European Commission Press release Brussels, 28 Apr 2026 Today, European Commission President Ursula von der Leyen and European Parliament President Roberta Metsola signed the revised Framework Agreement between both institutions.",
+      "headline": "Commission opens in-depth investigation into proposed joint venture between UPM and Sappi",
+      "summary": "European Commission Press release Brussels, 28 Apr 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed creation of a joint venture between UPM-Kymmene Corporation (‘UPM') and Sappi Limited (‘Sappi'). The Commission is concerned that the transaction may reduce competition in certain markets for the production and supply of communication paper and specialty paper in the European Economic Area ('EEA') and result in higher prices,",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,16 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Commissioner Roswall's address at a Structured Dialogue with Members of the European Parliament's Committee for Environment, Climate and Food Safety (ENVI)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_897",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 27 Apr 2026 Thank you, Chair (Pierfrancesco Maran),\r\nHonourable Members,\r\nThank you for this opportunity to reflect on the past year and to outline my plans for the months ah...",
-          "published": "2026-04-27T17:32:38.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -57,6 +42,22 @@
           "score": 11
         },
         {
+          "title": "World ‘will not see significant return to coal’ in 2026 – despite Iran crisis",
+          "link": "https://www.carbonbrief.org/world-will-not-see-significant-return-to-coal-in-2026-despite-iran-crisis/",
+          "source": "Carbon Brief",
+          "description": "A much-discussed “return to coal” by some countries in the wake of the Iran war... The post World ‘will not see significant return to coal’ in 2026 – despite Iran crisis appeared first on Carbon Brief.",
+          "published": "2026-04-28T13:54:19.000Z",
+          "score": 10
+        },
+        {
+          "title": "Trump’s attempt to crush clean energy progress not going to plan, experts say",
+          "link": "https://www.theguardian.com/us-news/2026/apr/28/trump-clean-energy-progress",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;US generated more power from renewables like solar and wind than gas last month in a first&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt; has wielded the full might of his administration to crush the progress of &lt;a href=\"https://www.theguardian.com/environment/renewableenergy\"&gt;clean energy&lt;/a&gt;, which he has called a “scam” and “stupid”. But there are signs this assault is not going to plan.&lt;/p&gt;&lt;p&gt;In March,",
+          "published": "2026-04-28T12:30:09.000Z",
+          "score": 7
+        },
+        {
           "title": "US, Iran clash at UN after Tehran gets nuclear non-proliferation role - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPbGJYSHBXMVhzaG00Ym1GQS1iTGF3SXVVQ2hWNDlmRlRvSE9EYjB4MXI5NlhzSDYzaUlmQUJHX0JoRnJhMDJVeFpCakVWNVFnNkQzbjJfMk5Jc2xoLWFaazJpem5mbFhMdlRVQ1RQeWRXeXVLZWFpR0VsNklObHhzTVluWnRvX2pZbDlQX1I5cVJSX19vRnZaTDNOdEdKNURJNUtrVzBwSm11RF8zWG9lMjM0ZlZTbVBRQjJF?oc=5",
           "source": "Reuters World (via Google News)",
@@ -65,20 +66,12 @@
           "score": 7
         },
         {
-          "title": "Meta partners with space startup Overview Energy to secure solar power for data centers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNWExjVnNxNnh2QVFGNnd4TjR0cWtvYVlfYXBLRDNUcERndXpMU3lJcTJ6V1N3N0NrdHl2VXA5VzdzZVBLSGZITDhSci1QLVNPWDhscnBreHkyNTRxMEttdFU3aWlOMmllbzl4RkFpM0xvNUJKaDNPTXdnaTNtRElINDFpM3hvQmRjaFZhNThEa0ZjTU9ibUdrdlVvSVAzRUtGSnB3OFQ3RW9scFhrQmtBVjZod1d4TzQ4TE9YNkxrazlhS3NDSFZmUW9WNDkxUQ?oc=5",
+          "title": "China prioritises energy security, tech edge as Iran war fallout spreads - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPOG9Vanl0c2Q3TTVpNHp6Y3hTZEpWbGtpMVAyc0lvZEd4QXpWc3BETE8wME9uRlZoelNQZzE2RV9vUkRxdVlOY3RGSVhOVzVPSUlYeThqdW9TVDZhUkVvSDR1NlVub3BscW9EQ09YcnhaNU16TkRIVFRNbTVhb1UtNXJxSy02YlBVV0ZvbUtRRTJMNzNzY1p1TWxEM0RySHBGYmNsZGNDdkdrRkU3NUkybTBjVGk0N2prR2ZtODBDNkktUmJONTl3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxNWExjVnNxNnh2QVFGNnd4TjR0cWtvYVlfYXBLRDNUcERndXpMU3lJcTJ6V1N3N0NrdHl2VXA5VzdzZVBLSGZITDhSci1QLVNPWDhscnBreHkyNTRxMEttdFU3aWlOMmllbzl4RkFpM0xvNUJKaDNPTXdnaTNtRElINDFpM3hvQmRjaFZhNThEa0ZjTU9ibUdrdlVvSVAzRUtGSnB3OFQ3RW9scFhrQmtBVjZod1d4TzQ4TE9YNkxrazlhS3NDSFZmUW9WNDkxUQ?oc=5\" target=\"_blank\"&gt;Meta partners with space startup Overview Energy to secure solar power for data centers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
-          "published": "2026-04-27T16:08:04.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPOG9Vanl0c2Q3TTVpNHp6Y3hTZEpWbGtpMVAyc0lvZEd4QXpWc3BETE8wME9uRlZoelNQZzE2RV9vUkRxdVlOY3RGSVhOVzVPSUlYeThqdW9TVDZhUkVvSDR1NlVub3BscW9EQ09YcnhaNU16TkRIVFRNbTVhb1UtNXJxSy02YlBVV0ZvbUtRRTJMNzNzY1p1TWxEM0RySHBGYmNsZGNDdkdrRkU3NUkybTBjVGk0N2prR2ZtODBDNkktUmJONTl3?oc=5\" target=\"_blank\"&gt;China prioritises energy security, tech edge as Iran war fallout spreads&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-28T05:53:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Middle East crisis could cost world $1tn while oil firms make ‘obscene’ profit, analysis finds",
-          "link": "https://www.theguardian.com/environment/2026/apr/28/middle-east-crisis-oil-firms-profit-colombia-conference",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Climate group calls for urgent windfall tax on excess fossil fuel profits, as delegates tell Colombia conference their nations are suffering&lt;/p&gt;&lt;p&gt;The Middle East oil and gas crunch will impose as much as a trillion dollars of additional costs on the global economy while petroleum companies rake in spectacular profits from elevated fuel prices, analysis has revealed.&lt;/p&gt;&lt;p&gt;The uneven distribution of risk and reward comes amid rising concern that the US-Israeli at",
-          "published": "2026-04-28T11:00:09.000Z",
-          "score": 4
         }
       ]
     },
@@ -86,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commission opens in-depth investigation into proposed joint venture between UPM and Sappi",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_913",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 28 Apr 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed creation of a joint venture between UPM-Kymmene Corporation (‘UPM') and Sappi Limited (‘Sappi'). The Commission is concerned that the transaction may reduce competition in certain markets for the production and supply of communication paper and specialty paper in the European Economic Area ('EEA') and result in higher prices,",
+          "published": "2026-04-28T08:03:33.000Z",
+          "score": 22
+        },
         {
           "title": "Commission and European Parliament sign agreement fostering closer partnership",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_912",
@@ -95,36 +96,28 @@
           "score": 18
         },
         {
-          "title": "Heavy rain not ‘nearly enough’ to tame two wildfires in drought-stricken Georgia",
-          "link": "https://www.theguardian.com/us-news/2026/apr/27/georgia-wildfires-rain",
+          "title": "Science Officer in the IPCC Working Group II Technical Support Unit (College of the Integrative Studies, Singapore)",
+          "link": "https://www.ipcc.ch/2026/04/28/sc-off-wg2-tsu/",
+          "source": "IPCC",
+          "description": "Working Group II of the Intergovernmental Panel on Climate Change is filling the position of Science Officer Deadline: to apply before May 1, 2026 Contract till 30 March 2030 About us Singapore Management University is a place where high-level professionalism blends together with a healthy informality. The &#8216;family-like&#8217; atmosphere among the SMU community fosters a [&#8230;]",
+          "published": "2026-04-28T15:24:08.000Z",
+          "score": 11
+        },
+        {
+          "title": "How does the EU plan to raise money for its next long-term budget? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPRXotUVdvd0dHb3E2VGhIUWl3NFR2TmszM0tBMVdhdUZQRjZpUU5WU2xwMFF0RHFhWTd6RmNTaUhWS0p5bk1iTW52aUJCNGZrMy1ncjJqRFMyazJ6MlFGYVAtQnpRZUlXMklkUGlFNlhzVVhoVjU3ek9xUEYtaGVQNENPUFE0SU1RaEdia3JkRldFZWhkRkt4eUx5Nm1NbEdRTUpHV3M3OHhxMWYwUHZ3ak42SlBRaGswMGhVTQ?oc=5",
+          "source": "Reuters (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPRXotUVdvd0dHb3E2VGhIUWl3NFR2TmszM0tBMVdhdUZQRjZpUU5WU2xwMFF0RHFhWTd6RmNTaUhWS0p5bk1iTW52aUJCNGZrMy1ncjJqRFMyazJ6MlFGYVAtQnpRZUlXMklkUGlFNlhzVVhoVjU3ek9xUEYtaGVQNENPUFE0SU1RaEdia3JkRldFZWhkRkt4eUx5Nm1NbEdRTUpHV3M3OHhxMWYwUHZ3ak42SlBRaGswMGhVTQ?oc=5\" target=\"_blank\"&gt;How does the EU plan to raise money for its next long-term budget?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-28T12:26:26.000Z",
+          "score": 8
+        },
+        {
+          "title": "Singing activists disrupt NatWest meeting over ‘climate backtracking’",
+          "link": "https://www.theguardian.com/business/2026/apr/28/activists-natwest-meeting-climate-backtracking",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Pineland Road fire and Highway 82 fire have destroyed over 100 homes, and are part of large number of wildfires this spring in the US south&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;amp;utm_campaign=BN22326&amp;amp;utm_content=signup&amp;amp;utm_term=standfirst&amp;amp;utm_source=GUARDIAN_WEB\"&gt;Sign up for the ",
-          "published": "2026-04-27T17:05:12.000Z",
+          "description": "&lt;p&gt;AGM briefly adjourned after protesters wearing T-shirts labelled ‘No more big oil’ burst into song&lt;/p&gt;&lt;p&gt;The chair of NatWest was forced to defend the bank against accusations of “climate backtracking” at a chaotic annual shareholder meeting, which was temporarily suspended owing to singing protesters.&lt;/p&gt;&lt;p&gt;Not long after the meeting began in Edinburgh, it was adjourned for about half an hour after a protester interrupted Rick Haythornthwaite’s opening speech.&l",
+          "published": "2026-04-28T15:22:11.000Z",
           "score": 7
-        },
-        {
-          "title": "Canada&#039;s Arctic noise is no party for narwhals",
-          "link": "https://www.dw.com/en/canada-s-arctic-noise-is-no-party-for-narwhals/a-76704611?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Known as the &quot;unicorns of the sea,&quot; narwhals are fleeing Canada&#039;s far north. Researchers suspect a link to noise pollution from increasing ship traffic.",
-          "published": "2026-04-28T07:01:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Fact check: Cloud seeding didn&#039;t make it rain in Iran",
-          "link": "https://www.dw.com/en/fact-check-cloud-seeding-didn-t-make-it-rain-in-iran/a-76924780?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Some social media users have claimed the alleged destruction of a climate research center in the United Arab Emirates caused intense precipitation in Iran. But those claims are misleading.",
-          "published": "2026-04-28T09:53:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Musk v Altman: Why the tech billionaires and former friends are now facing off in court",
-          "link": "https://www.bbc.com/news/articles/cn8dedv8w8xo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The battle between the AI big hitters has largely played out on social media. Now it is coming to the courtroom.",
-          "published": "2026-04-28T10:10:54.000Z",
-          "score": 2
         }
       ]
     },
@@ -139,14 +132,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxON2NtM2ZlSkdLT2xZMUpweHJZcTVjWDlEUVNOYW9IQ2xINmVWNm1IbXdaMUcxRHlRek1CZ1o2Z0hCbWdVMENSWDhhc0VWSUtVb01OZWI4LTFXc05XWlpjdU5WNHp0Y1Z2RktzRWJsOHowdUVrdFVwVmY2UUk4cWU4MEk5WXU2SmxrMGotNlF2V0pCOVdHd2ZZLUZTMURZX1ZwSFFGQ2Nwc1F5QkZ6blNoczJZYlpfeXppNWwxOGpINl9Bdw?oc=5\" target=\"_blank\"&gt;US Congress Republicans push legislation to build, fund Trump's $400 million ballroom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-04-27T23:15:34.000Z",
           "score": 6
-        },
-        {
-          "title": "Canada's Carney launches a sovereign wealth fund. What is it?",
-          "link": "https://www.bbc.com/news/articles/c98m800r28qo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The fund - which Canadians can invest in directly - will help pay for major infrastructure projects in the country, the prime minister says.",
-          "published": "2026-04-27T18:13:26.000Z",
-          "score": 2
         }
       ]
     },
@@ -155,20 +140,36 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Highlights - Dialogue with the Chair of the Committee on Ecology of the Parliament of Montenegro - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260416CAN77623",
+          "title": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities - PE787.680v02-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787680_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/305400/Picture_NL_04_26_Montenegro-ms.jpg\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 27 April 2026, ENVI Members held an exchange of views with the Chair of the Committee on Ecology of the Parliament of Montenegro. The dialogue focused on the challenges faced and the efforts made by the country in the context of the enlargement process, in particular under Chapter 27 on envi",
-          "published": "2026-04-28T09:03:41.000Z",
+          "description": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-04-28T13:49:53.000Z",
           "score": 22
         },
         {
-          "title": "Draft agenda - Monday, 4 May 2026 - Tuesday, 5 May 2026 - PE787.846v02-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-05-04-1_EN.html",
+          "title": "Latest news - ENVI Committee meetings - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20200226CAL09791",
           "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-04-28T08:23:06.000Z",
+          "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday, 4 May 2026, from 15.00 to 19.00 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 5 May 2026, from 8.45 to 12.45 and from 14.45 to 18.45 (Brussels)&lt;/li&gt;&lt;li&gt;Monday, 1 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 2 June 2026 from 9.00 to 12.30 and from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&g",
+          "published": "2026-04-28T15:26:32.000Z",
           "score": 18
+        },
+        {
+          "title": "Review highlights Digital Markets Act remains fit for purpose and has positive impact",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_914",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 28 Apr 2026 The European Commission's first review of the Digital Markets Act (DMA) found that in the first two years of its application, the DMA remains fit for purpose and has opened up new opportunities for businesses and developers, while giving users more control over their experiences and devices, as well as access to more diverse and innovative digital products and services.",
+          "published": "2026-04-28T10:10:34.000Z",
+          "score": 14
+        },
+        {
+          "title": "China says it has made progress with EU in EV tariff dispute - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxONGx6WXFCeFRDSWhQT2xHaVJKY1UxaktpX1R5TE85RzBIUE84LTdFT182R0c5SFd1OUdvUk1YRWVBSm9BdEV5eGpOTTk4UWJtSkJKMzRrY05YOG13aWpWVXduY3FoN210eVY4MmNpQWU2MnJxVEFQZ1JneWJrazFjb3NUWlZrSXd6SktBZU5mb2R0N1Yyd2FlaXA2U0d1MFJLQ0VmWkJEc3RobUMwd3VtZXhsNkNwTG82VHU4TGNyNmt1VERGT3pCTWNPeGNwakE1dUE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxONGx6WXFCeFRDSWhQT2xHaVJKY1UxaktpX1R5TE85RzBIUE84LTdFT182R0c5SFd1OUdvUk1YRWVBSm9BdEV5eGpOTTk4UWJtSkJKMzRrY05YOG13aWpWVXduY3FoN210eVY4MmNpQWU2MnJxVEFQZ1JneWJrazFjb3NUWlZrSXd6SktBZU5mb2R0N1Yyd2FlaXA2U0d1MFJLQ0VmWkJEc3RobUMwd3VtZXhsNkNwTG82VHU4TGNyNmt1VERGT3pCTWNPeGNwakE1dUE?oc=5\" target=\"_blank\"&gt;China says it has made progress with EU in EV tariff dispute&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-28T09:47:48.000Z",
+          "score": 13
         }
       ]
     },
@@ -176,22 +177,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "EU weighs giving US data for fewer travel restrictions",
-          "link": "https://www.dw.com/en/eu-weighs-giving-us-data-for-fewer-travel-restrictions/a-76912370?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Union is negotiating a framework that could allow US authorities to search national databases across much of the bloc as the price for keeping visa-free travel.",
-          "published": "2026-04-27T15:56:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Google gets pointers from EU regulators on helping AI rivals access services - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPcG9ERjNKT0RQOVdXQmNWMG5kTUJfTHdsb2Y3bGN4bkVCeWkzUjlkYWRGbGpadzltOW9DZE0xQzFiQ01qU29reTZURkF6cnh3eVFLbTk4TmFhNTdpbmtYd1dhV3VWWHRWWDBiMkRvYjBpMnhDYThBY1YtMDdmMGEzb3lraWh5Q01wd0YtRXYtSDJYazE2TmozeG9IWnBCekUwcW5meV9wZFlyREdfdWI4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPcG9ERjNKT0RQOVdXQmNWMG5kTUJfTHdsb2Y3bGN4bkVCeWkzUjlkYWRGbGpadzltOW9DZE0xQzFiQ01qU29reTZURkF6cnh3eVFLbTk4TmFhNTdpbmtYd1dhV3VWWHRWWDBiMkRvYjBpMnhDYThBY1YtMDdmMGEzb3lraWh5Q01wd0YtRXYtSDJYazE2TmozeG9IWnBCekUwcW5meV9wZFlyREdfdWI4?oc=5\" target=\"_blank\"&gt;Google gets pointers from EU regulators on helping AI rivals access services&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T16:32:31.000Z",
-          "score": 8
-        },
         {
           "title": "At UN, China denounces Japan and EU over South China Sea remarks - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3M1LTdKWHBackU5UTc1eXR5SGlXWGNZRGxFX3FxeXJhVnNaaDQyd2xkV1NKMWFRZGI3b2FLUi1waHE4TXhnYzdQTHQ2QlZnVV8yMHAzWHl3d1phUTNWMUpNQzZjRlp6aDBhaHpZTGhiaUptbDRyMXNSQ2R5YVBvMEFETTFVV3hiaWtEWFM2TU8ySzVZYTI5UGNLZHduaVlqdU1ZSG9qZw?oc=5",
@@ -201,11 +186,27 @@
           "score": 8
         },
         {
-          "title": "Hungary and EU to discuss terms of release for billions in blocked funds - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNMXFvSjZDYlhDZTY2bTExVmxIXzQ2WWNDYXpXVXVtOXVtb0hZVTBCX3k5ZHFralBkWXh4TnV4VFB6NmhxbDFNeTRHNzQ2NU04a2J0Uy0wMkZpVHd5aFQ0RWNoV0NoM2tub3Y2c2RoQnU4OWJOM3NHZ09SaElEajZCYlBOSmpnbkxRcHhMSTB4dkZqaUVhanJOT1NLdHBoUQ?oc=5",
+          "title": "EU says it has approached Israel over Russian grain boat that docked in Haifa - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdXlsRDI1YzRpZlFjR2ozUDlWWnJhZEF4OWxUMHVDMmFyLTlLbzFlbjBxSXhPaWpGcnJHQW1JVzR6NjVpcTFtNmdWcnAyMFYyaURuZ1l5LWdEbGlxX0FVT2lnajVjTXNXeTJUTHhCU1VQcWtRZjRybGVIUFphYjBqQVlxcVpTc2xZa19mLXE2elZZS1lfbV83TVZtQXQtZUh4THUteVlqbW50Umw2aFhUcm90eFJXVnNxY09GdU5sTDRJWG1WQmM4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNMXFvSjZDYlhDZTY2bTExVmxIXzQ2WWNDYXpXVXVtOXVtb0hZVTBCX3k5ZHFralBkWXh4TnV4VFB6NmhxbDFNeTRHNzQ2NU04a2J0Uy0wMkZpVHd5aFQ0RWNoV0NoM2tub3Y2c2RoQnU4OWJOM3NHZ09SaElEajZCYlBOSmpnbkxRcHhMSTB4dkZqaUVhanJOT1NLdHBoUQ?oc=5\" target=\"_blank\"&gt;Hungary and EU to discuss terms of release for billions in blocked funds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-27T13:04:52.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOdXlsRDI1YzRpZlFjR2ozUDlWWnJhZEF4OWxUMHVDMmFyLTlLbzFlbjBxSXhPaWpGcnJHQW1JVzR6NjVpcTFtNmdWcnAyMFYyaURuZ1l5LWdEbGlxX0FVT2lnajVjTXNXeTJUTHhCU1VQcWtRZjRybGVIUFphYjBqQVlxcVpTc2xZa19mLXE2elZZS1lfbV83TVZtQXQtZUh4THUteVlqbW50Umw2aFhUcm90eFJXVnNxY09GdU5sTDRJWG1WQmM4?oc=5\" target=\"_blank\"&gt;EU says it has approached Israel over Russian grain boat that docked in Haifa&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-04-28T14:16:58.000Z",
+          "score": 8
+        },
+        {
+          "title": "Canadian PM invited to attend European Political Community summit in May - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT3I1dFk3SGVwTFRISkU4V1VWVmxBY3FlQ0tGenQwR3V6UUZ0VHdrT3VpYnRLSV8wN2dfV0VHZDJCMDlVZ01qQW9Fc2NNalNQdlBWc1FEUk52Yi1mcXhBOERTaE1aWTF4ZnZZanFUVWNGVUpfQ0dsMHlNVmVCN3p5b1V4eVFlWE5VTEY5QzR3aGMza2VPWW10YWdXVnlCX1NYZThMMjlqWkQ2Q3pmb19ORkNxSzdvNXZr?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT3I1dFk3SGVwTFRISkU4V1VWVmxBY3FlQ0tGenQwR3V6UUZ0VHdrT3VpYnRLSV8wN2dfV0VHZDJCMDlVZ01qQW9Fc2NNalNQdlBWc1FEUk52Yi1mcXhBOERTaE1aWTF4ZnZZanFUVWNGVUpfQ0dsMHlNVmVCN3p5b1V4eVFlWE5VTEY5QzR3aGMza2VPWW10YWdXVnlCX1NYZThMMjlqWkQ2Q3pmb19ORkNxSzdvNXZr?oc=5\" target=\"_blank\"&gt;Canadian PM invited to attend European Political Community summit in May&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-28T13:56:19.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU's top diplomat calls on Southeast Asian countries to seek alternatives to Russian oil - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMFhBdDZlTFExN0JzR3p4VDlrV1E2OHhfME54VWl1X3hXLV9SVGJUMHcwLURyT2ExbUZpeWNBUGxlZVZjZTdZT2U5NHRjM1lOaGNGMUFTdGk3TWEzX05tYVR4Y0JWeFNEWkVtYm9ib3VOV3BhUzU4VVJqX0ZSVno4dXJ1bE1sd2NYV2RxN1JhUzVrY0hacDFhQUNrTk53Rk1BTkdUajdhNTdhNjRfdTdIVHFwOHNwUXJaUDVKYXgxc3puRjB4Vm9TaEh3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPMFhBdDZlTFExN0JzR3p4VDlrV1E2OHhfME54VWl1X3hXLV9SVGJUMHcwLURyT2ExbUZpeWNBUGxlZVZjZTdZT2U5NHRjM1lOaGNGMUFTdGk3TWEzX05tYVR4Y0JWeFNEWkVtYm9ib3VOV3BhUzU4VVJqX0ZSVno4dXJ1bE1sd2NYV2RxN1JhUzVrY0hacDFhQUNrTk53Rk1BTkdUajdhNTdhNjRfdTdIVHFwOHNwUXJaUDVKYXgxc3puRjB4Vm9TaEh3?oc=5\" target=\"_blank\"&gt;EU's top diplomat calls on Southeast Asian countries to seek alternatives to Russian oil&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
+          "published": "2026-04-28T14:18:11.000Z",
           "score": 8
         },
         {
@@ -213,16 +214,16 @@
           "link": "https://www.dw.com/en/what-renault-s-new-ev-reveals-about-the-global-auto-industry/a-76823988?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "French carmaker Renault no longer sells its brand in the Chinese market, but it&#039;s not afraid to design and develop them there. It&#039;s just one more sign of big shifts in the global auto industry.",
-          "published": "2026-04-28T09:12:00.000Z",
+          "published": "2026-04-28T15:18:00.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 376,
-    "articlesLast24h": 147,
-    "afterDedup": 141,
+    "totalArticlesScanned": 377,
+    "articlesLast24h": 159,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
