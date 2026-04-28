@@ -25,12 +25,9 @@
 
 import { useState } from 'react';
 import JSZip from 'jszip';
-import { pdfjs } from 'react-pdf';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
 import { FundingEntry, isEuFunder } from '@/lib/references/types';
-
-pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 // CrossRef DOIs follow `10.<registrant>/<suffix>`. The character class is
 // deliberately permissive on the suffix side and trimmed afterwards so we
@@ -70,6 +67,11 @@ async function extractTextFromDocx(file: File): Promise<string> {
 }
 
 async function extractTextFromPdf(file: File): Promise<string> {
+  // Lazy-import react-pdf so its DOMMatrix-touching module code never runs in
+  // Next's Node-side prerender pass. The dynamic import is resolved on the
+  // client when the user actually drops a PDF.
+  const { pdfjs } = await import('react-pdf');
+  pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
   const buf = await file.arrayBuffer();
   const pdf = await pdfjs.getDocument({ data: new Uint8Array(buf) }).promise;
   let combined = '';
