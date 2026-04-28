@@ -33,6 +33,8 @@ import OnboardingTour from '@/components/OnboardingTour';
 import PolicyClock from '@/components/PolicyClock';
 import { useAuth } from '@/lib/auth-context';
 import LinkPreview from '@/components/LinkPreview';
+import EuEtsPositionsFigure from '@/components/EuEtsPositionsFigure';
+import OneEuropeOneMarketFigure from '@/components/OneEuropeOneMarketFigure';
 import NewsSavedSearchesPanel from '@/components/NewsSavedSearchesPanel';
 import type { NewsSavedSearch } from '@/lib/useNewsSavedSearches';
 import SuggestPolicyButton from '@/components/SuggestPolicyButton';
@@ -249,6 +251,16 @@ function linkifyText(text: string): React.ReactNode[] {
     parts.push(text.slice(lastIndex));
   }
   return parts.length > 0 ? parts : [text];
+}
+
+// Inline figures wired to `figureKind` on news items. Only the kinds listed
+// below render — anything else is silently ignored so unknown values don't
+// break the feed.
+function renderNewsFigure(kind?: string): React.ReactNode {
+  if (!kind) return null;
+  if (kind === 'eu-ets-positions-apr2026') return <EuEtsPositionsFigure />;
+  if (kind === 'one-europe-one-market-apr2026') return <OneEuropeOneMarketFigure />;
+  return null;
 }
 
 // ── Main Component ─────────────────────────────────────────────────────────────
@@ -2829,6 +2841,18 @@ export default function NewsFeedPage() {
                       >
                         {linkifyText(item.summary)}
                       </p>
+
+                      {/* Inline figure (if any) — rendered for items that ship
+                          with a known `figureKind`. Click opens the modal. */}
+                      {item.figureKind && (
+                        <div
+                          className="mb-3 cursor-zoom-in"
+                          onClick={() => openItemModal(item)}
+                          title="Click to open full briefing"
+                        >
+                          {renderNewsFigure(item.figureKind)}
+                        </div>
+                      )}
                       {(item.fullText && item.fullText.length > item.summary.length) && (
                         <button
                           onClick={() => openItemModal(item)}
@@ -3858,6 +3882,12 @@ export default function NewsFeedPage() {
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-secondary">AI Summary</span>
                   </div>
                   <p className="text-sm text-tertiary-dark leading-relaxed">{linkifyText(selectedItem.aiSummary!)}</p>
+                </div>
+              )}
+
+              {selectedItem.figureKind && (
+                <div className="mb-5">
+                  {renderNewsFigure(selectedItem.figureKind)}
                 </div>
               )}
 
