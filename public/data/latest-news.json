@@ -1,35 +1,27 @@
 [
   {
-    "title": "Review highlights Digital Markets Act remains fit for purpose and has positive impact",
-    "summary": "European Commission Press release Brussels, 28 Apr 2026 The European Commission's first review of the Digital Markets Act (DMA) found that in the first two years of its application, the DMA remains fit for purpose and has opened up new opportunities for businesses and developers, while giving users more control over their experiences and devices, as well as access to more diverse and innovative digital products and services.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_914",
+    "title": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis, its implications on energy prices and the availability of fertilisers",
+    "summary": "European Commission Speech Strasbourg, 29 Apr 2026 “Check against delivery” \r\n \r\nThank you, Madam President, dear Roberta,\r\nDeputy Minister Raouna, dear Marilena,\r\nHonourable Members,\r\nThe informal EUCO started with ...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_923",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-04-28T10:10:34.000Z",
+    "publishedDate": "2026-04-28T22:00:00.000Z",
     "tags": [
-      "emissions"
+      "energy"
     ]
   },
   {
-    "title": "Commission opens in-depth investigation into proposed joint venture between UPM and Sappi",
-    "summary": "European Commission Press release Brussels, 28 Apr 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed creation of a joint venture between UPM-Kymmene Corporation (‘UPM') and Sappi Limited (‘Sappi'). The Commission is concerned that the transaction may reduce competition in certain markets for the production and supply of communication paper and specialty paper in the European Economic Area ('EEA') and result in higher prices,",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_913",
+    "title": "Commission adopts temporary State aid framework to support sectors affected by Middle East crisis",
+    "summary": "European Commission Press release Brussels, 29 Apr 2026 The European Commission has adopted a temporary State aid framework to enable Member States to support the EU economy in the context of the Middle East crisis. The Middle East crisis Temporary State aid Framework (METSAF) is a targeted and temporary framework to address the effects of the crisis on some of the most exposed sectors of the economy: agriculture, fishery, transport and energy-intensive industries.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_894",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-04-28T08:03:33.000Z",
+    "publishedDate": "2026-04-28T22:00:00.000Z",
     "tags": [
-      "emissions"
-    ]
-  },
-  {
-    "title": "Commission and European Parliament sign agreement fostering closer partnership",
-    "summary": "European Commission Press release Brussels, 28 Apr 2026 Today, European Commission President Ursula von der Leyen and European Parliament President Roberta Metsola signed the revised Framework Agreement between both institutions.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_912",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-04-28T07:52:20.000Z",
-    "tags": [
-      "emissions"
+      "emissions",
+      "energy",
+      "transport",
+      "agriculture"
     ]
   }
 ]
