@@ -1,12 +1,12 @@
 {
   "date": "2026-04-29",
-  "generatedAt": "2026-04-29T00:00:31.813Z",
+  "generatedAt": "2026-04-29T07:28:59.094Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 29 April 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "How a controversial gas pipeline deal could further stall Bosnia&#039;s EU accession",
-      "summary": "A US backed gas pipeline could help Bosnia cut reliance on Russian energy. But Brussels warns that a deal with a company linked to Trump allies could put the country&#039;s EU hopes at risk.",
+      "headline": "Extreme weather and green energy on the rise in Europe",
+      "summary": "Europe&#039;s climate extremes have hit new highs — but renewables are now supplying nearly half of the continent&#039;s electricity.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,20 +34,20 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Extreme weather and green energy on the rise in Europe",
+          "link": "https://www.dw.com/en/extreme-weather-and-green-energy-on-the-rise-in-europe/a-76962870?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europe&#039;s climate extremes have hit new highs — but renewables are now supplying nearly half of the continent&#039;s electricity.",
+          "published": "2026-04-29T02:00:00.000Z",
+          "score": 13
+        },
+        {
           "title": "How a controversial gas pipeline deal could further stall Bosnia&#039;s EU accession",
           "link": "https://www.dw.com/en/how-a-controversial-gas-pipeline-deal-could-further-stall-bosnia-s-eu-accession/a-76965210?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "A US backed gas pipeline could help Bosnia cut reliance on Russian energy. But Brussels warns that a deal with a company linked to Trump allies could put the country&#039;s EU hopes at risk.",
           "published": "2026-04-28T19:26:00.000Z",
           "score": 13
-        },
-        {
-          "title": "Iran war: US wary of peace plan postponing nuclear deal",
-          "link": "https://www.dw.com/en/iran-war-us-wary-of-peace-plan-postponing-nuclear-deal/live-76959714?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The White House has reportedly not ruled out a proposal from Iran to end its chokehold on the Strait of Hormuz if the US lifts a blockade. However, US officials say any agreement must include a nuclear deal. DW has more.",
-          "published": "2026-04-28T08:52:00.000Z",
-          "score": 11
         },
         {
           "title": "World ‘will not see significant return to coal’ in 2026 – despite Iran crisis",
@@ -108,7 +108,7 @@
           "link": "https://www.bbc.com/news/articles/c70d0y2514yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The rural vote is a significant, but often overlooked, constituency in the Scottish Parliament election.",
-          "published": "2026-04-28T21:57:22.000Z",
+          "published": "2026-04-29T05:01:56.000Z",
           "score": 8
         },
         {
@@ -178,11 +178,19 @@
           "score": 12
         },
         {
-          "title": "At UN, China denounces Japan and EU over South China Sea remarks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3M1LTdKWHBackU5UTc1eXR5SGlXWGNZRGxFX3FxeXJhVnNaaDQyd2xkV1NKMWFRZGI3b2FLUi1waHE4TXhnYzdQTHQ2QlZnVV8yMHAzWHl3d1phUTNWMUpNQzZjRlp6aDBhaHpZTGhiaUptbDRyMXNSQ2R5YVBvMEFETTFVV3hiaWtEWFM2TU8ySzVZYTI5UGNLZHduaVlqdU1ZSG9qZw?oc=5",
+          "title": "EU countries, lawmakers fail to reach deal on watered-down AI rules - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkpicWJyZm90enV4bWpYOXpLWEdRUDhjTk5UT3piU3J1R1A0aDhkcUx3d21ud21rdjAtaEltN3dhQmpRYlVCM1VrV2hZcG1UNEhQeDdwV2JMQ3phajJoUUh1Y0x1TjFnVW5sUGxJZml3blVBYUhtTzhlWlJaaUg0ZHFtN0h0Z0pEbkV5OHpmX3NBNFRINWpROWx6aHotdnhScl9XekhSaG1jS3hCODNxdGVJOVRPNk1YeWZTaWpDUU9mcWhtclE3ODhlMHpZR2VmcEE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQM3M1LTdKWHBackU5UTc1eXR5SGlXWGNZRGxFX3FxeXJhVnNaaDQyd2xkV1NKMWFRZGI3b2FLUi1waHE4TXhnYzdQTHQ2QlZnVV8yMHAzWHl3d1phUTNWMUpNQzZjRlp6aDBhaHpZTGhiaUptbDRyMXNSQ2R5YVBvMEFETTFVV3hiaWtEWFM2TU8ySzVZYTI5UGNLZHduaVlqdU1ZSG9qZw?oc=5\" target=\"_blank\"&gt;At UN, China denounces Japan and EU over South China Sea remarks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-28T00:24:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkpicWJyZm90enV4bWpYOXpLWEdRUDhjTk5UT3piU3J1R1A0aDhkcUx3d21ud21rdjAtaEltN3dhQmpRYlVCM1VrV2hZcG1UNEhQeDdwV2JMQ3phajJoUUh1Y0x1TjFnVW5sUGxJZml3blVBYUhtTzhlWlJaaUg0ZHFtN0h0Z0pEbkV5OHpmX3NBNFRINWpROWx6aHotdnhScl9XekhSaG1jS3hCODNxdGVJOVRPNk1YeWZTaWpDUU9mcWhtclE3ODhlMHpZR2VmcEE?oc=5\" target=\"_blank\"&gt;EU countries, lawmakers fail to reach deal on watered-down AI rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-04-29T01:37:51.000Z",
+          "score": 8
+        },
+        {
+          "title": "UK parliament votes against inquiry into PM Starmer over Mandelson - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcHNyS3dXLWtaMHJFdjNaQUU4Z2xGcVhLRUZWVVVFTUtQeWhDbnhCUWpqV0oyLWZnR1FPNjRhVXJZUE9KRXJYNWNRRXY1alowSWhJMUZVRHdUYXNzMWlERThFdDZMQUpLVVdZclRVU1BBUng1eE1lM2JPMkNqMUlUVXdqTmtHYnhLdUZzN2k3UlpCM3hpT3p6aVRoOHJVMUxxb2czN2g1ekthS3B5Y2lpLQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPcHNyS3dXLWtaMHJFdjNaQUU4Z2xGcVhLRUZWVVVFTUtQeWhDbnhCUWpqV0oyLWZnR1FPNjRhVXJZUE9KRXJYNWNRRXY1alowSWhJMUZVRHdUYXNzMWlERThFdDZMQUpLVVdZclRVU1BBUng1eE1lM2JPMkNqMUlUVXdqTmtHYnhLdUZzN2k3UlpCM3hpT3p6aVRoOHJVMUxxb2czN2g1ekthS3B5Y2lpLQ?oc=5\" target=\"_blank\"&gt;UK parliament votes against inquiry into PM Starmer over Mandelson&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-28T22:11:59.000Z",
           "score": 8
         },
         {
@@ -200,22 +208,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOdXlsRDI1YzRpZlFjR2ozUDlWWnJhZEF4OWxUMHVDMmFyLTlLbzFlbjBxSXhPaWpGcnJHQW1JVzR6NjVpcTFtNmdWcnAyMFYyaURuZ1l5LWdEbGlxX0FVT2lnajVjTXNXeTJUTHhCU1VQcWtRZjRybGVIUFphYjBqQVlxcVpTc2xZa19mLXE2elZZS1lfbV83TVZtQXQtZUh4THUteVlqbW50Umw2aFhUcm90eFJXVnNxY09GdU5sTDRJWG1WQmM4?oc=5\" target=\"_blank\"&gt;EU says it has approached Israel over Russian grain boat that docked in Haifa&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
           "published": "2026-04-28T14:16:58.000Z",
           "score": 8
-        },
-        {
-          "title": "EU's top diplomat calls on Southeast Asian countries to seek alternatives to Russian oil - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPMFhBdDZlTFExN0JzR3p4VDlrV1E2OHhfME54VWl1X3hXLV9SVGJUMHcwLURyT2ExbUZpeWNBUGxlZVZjZTdZT2U5NHRjM1lOaGNGMUFTdGk3TWEzX05tYVR4Y0JWeFNEWkVtYm9ib3VOV3BhUzU4VVJqX0ZSVno4dXJ1bE1sd2NYV2RxN1JhUzVrY0hacDFhQUNrTk53Rk1BTkdUajdhNTdhNjRfdTdIVHFwOHNwUXJaUDVKYXgxc3puRjB4Vm9TaEh3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxPMFhBdDZlTFExN0JzR3p4VDlrV1E2OHhfME54VWl1X3hXLV9SVGJUMHcwLURyT2ExbUZpeWNBUGxlZVZjZTdZT2U5NHRjM1lOaGNGMUFTdGk3TWEzX05tYVR4Y0JWeFNEWkVtYm9ib3VOV3BhUzU4VVJqX0ZSVno4dXJ1bE1sd2NYV2RxN1JhUzVrY0hacDFhQUNrTk53Rk1BTkdUajdhNTdhNjRfdTdIVHFwOHNwUXJaUDVKYXgxc3puRjB4Vm9TaEh3?oc=5\" target=\"_blank\"&gt;EU's top diplomat calls on Southeast Asian countries to seek alternatives to Russian oil&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-04-28T14:18:11.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 378,
-    "articlesLast24h": 168,
-    "afterDedup": 158,
+    "totalArticlesScanned": 388,
+    "articlesLast24h": 177,
+    "afterDedup": 167,
     "feedsQueried": 19
   }
 }
