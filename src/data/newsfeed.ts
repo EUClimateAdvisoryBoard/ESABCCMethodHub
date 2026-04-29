@@ -51,6 +51,38 @@ export interface NewsItem {
 
 export const newsFeedItems: NewsItem[] = [
   {
+    id: 'nf-seed-esotc-2025-apr2026',
+    title: 'European State of the Climate 2025 — Europe keeps warming at twice the global rate, with record heatwaves, marine heatwaves and wildfires',
+    summary:
+      'The European State of the Climate (ESOTC) 2025 report, jointly produced by the Copernicus Climate Change Service (C3S/ECMWF) and the World Meteorological Organization, was published on 28 April 2026. It confirms that Europe — the world\'s fastest-warming continent — saw another year of broad-scale climate extremes. At least 95% of Europe experienced above-average annual temperatures, sub-Arctic Norway, Sweden and Finland recorded their worst heatwave on record (21 consecutive days, with temperatures exceeding 30 °C inside the Arctic Circle), and the European ocean region posted its highest annual sea surface temperature on record for the fourth year in a row. Marine heatwaves affected 86% of the European seas, with 36% reaching "severe" or "extreme" categories — the highest share on record. Wildfires burnt around 1,034,550 hectares, the largest area on record, while ~70% of European rivers ran below average and 2025 was one of the three driest years for soil moisture since 1992. Renewables met 46.4% of Europe\'s electricity demand, with solar reaching a record 12.5% share.',
+    source: 'other',
+    sourceLabel: 'Copernicus Climate Change Service (C3S/ECMWF) and WMO',
+    url: 'https://climate.copernicus.eu/esotc/2025',
+    publishedDate: '2026-04-28',
+    addedDate: '2026-04-29',
+    addedBy: 'ESABCC Secretariat',
+    type: 'report',
+    tags: ['climate', 'adaptation', 'mitigation', 'emissions', 'energy', 'biodiversity'],
+    isExternal: true,
+    likes: 0,
+    comments: [],
+    fullText:
+      'The European State of the Climate (ESOTC) 2025 report was released on 28 April 2026 by the Copernicus Climate Change Service (C3S), implemented by ECMWF, together with the World Meteorological Organization. The report draws on the work of around 100 scientific contributors and synthesises observations across temperature, the cryosphere, marine ecosystems, rivers and lakes, wildfire risk, and the energy transition.\n\n' +
+      'Headline findings\n\n' +
+      '• Europe remains the fastest-warming continent, with warming continuing to outpace the global mean.\n' +
+      '• At least 95% of Europe experienced above-average annual temperatures in 2025; the area of Europe seeing winter days with freezing temperatures continues to shrink.\n' +
+      '• Sub-Arctic Norway, Sweden and Finland recorded their worst heatwave on record — 21 consecutive days, with temperatures above 30 °C measured inside the Arctic Circle itself.\n' +
+      '• European seas posted their highest annual sea surface temperature on record, the fourth consecutive record year. Marine heatwaves affected 86% of the European ocean region; 36% reached "severe" or "extreme" categories — the highest share on record.\n' +
+      '• Wildfires burnt around 1,034,550 hectares, the largest burnt area on record for Europe.\n' +
+      '• Around 70% of European rivers had below-average flows; 2025 was one of the three driest years for soil moisture since 1992.\n' +
+      '• Glaciers continued to lose mass and snow cover declined, consistent with the multi-decadal trend.\n' +
+      '• Renewables supplied 46.4% of Europe\'s electricity in 2025, with solar reaching a new record contribution of 12.5%.\n\n' +
+      'For the full set of indicators, regional breakdowns and figures, see the ESOTC 2025 portal at https://climate.copernicus.eu/esotc/2025.',
+    detailedAnalysis:
+      'Why this matters for ESABCC. The ESOTC 2025 dataset reinforces three messages that are directly relevant to the Board\'s ongoing advice. First, the gap between European and global warming is not closing — the continent is locking in adaptation needs faster than mitigation pathways are being adjusted, which strengthens the case for keeping the 2040 climate target debate anchored to a science-based trajectory rather than to revised cost-of-action assumptions. Second, the compounding of extremes — sub-Arctic heatwaves, record marine heatwaves on a fourth consecutive year, record burnt area, widespread low river flows and dry soils — is the kind of multi-sector signal that the Board\'s adaptation work should treat as a single coherent risk picture, not as a list of separate hazards. Third, the renewable-electricity figures (46.4% share, solar at 12.5%) confirm that the power-sector transition is on track at EU level, which sharpens the question of whether the bottlenecks now lie in grids, flexibility and electrification of end-uses rather than in generation capacity — a framing the Board may want to reflect in its next opinion on the European Grids package and the Energy Highways investment list (cf. the One Europe, One Market roadmap timeline).\n\n' +
+      'Cross-references: pair this item with the One Europe, One Market roadmap (proposal/target-agreement deadlines for ETS review, Circular Economy Act, energy efficiency and renewables frameworks) and with the EPRS map of Member-State positions on the EU ETS review, both of which are pinned to the feed.',
+  },
+  {
     id: 'nf-seed-one-europe-one-market-apr2026',
     title: 'EU agenda update — One Europe, One Market roadmap (24 Apr) and Better Regulation Communication (28 Apr)',
     summary:
