@@ -21,7 +21,7 @@ by purpose.
 | `scripts/fix-truncated-urls.js`                     | Node     | on demand         | Repair truncated URLs in legacy data imports.                      |
 
 **Triggers.** Each pipeline runs via a matching GitHub Actions
-workflow under [`.github/workflows/`](https://github.com/SebastianFra/MethodHub/tree/main/.github/workflows)
+workflow under [`.github/workflows/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/.github/workflows)
 (`daily-updates.yml`, `fetch-eurlex-branch.yml`, `fetch-esabcc-reports.yml`,
 `prefetch-policy-bodies.yml`). On EEA infrastructure the same scripts
 run from a local cron against the EEA Postgres; GitHub Actions is not
@@ -39,6 +39,7 @@ required.
 | `scripts/it-handoff/01-apply-schema.sh`             | Apply `supabase-schema.sql` + every `supabase/migrations/*.sql`.        |
 | `scripts/it-handoff/02-service-accounts.sql`        | Create the service-role accounts the app uses against EEA Postgres.     |
 | `scripts/it-handoff/03-verify.sh`                   | Post-apply sanity: expected tables, RLS policies, retention GUCs.       |
+| `supabase/combined_migrations.sql`                  | Concatenation of `supabase/migrations/001..028` in order. Lets a fresh database bootstrap by pasting a single file into the SQL editor, instead of running each migration individually. Regenerated whenever a new migration is added. |
 | `scripts/it-handoff/backup.sh`                      | `pg_dump` wrapper intended to be composed with the hosting partner's GPG + object-storage steps. |
 | `scripts/it-handoff/postgresql.conf.recommended`    | Starting `postgresql.conf` values tuned for the MethodHub workload.      |
 | `scripts/seed-custom-references.sql`                | Seed the `custom_references` table for a fresh fork.                    |
@@ -48,6 +49,7 @@ required.
 | Script                                              | Purpose                                                                 |
 |-----------------------------------------------------|-------------------------------------------------------------------------|
 | `scripts/build-extension-zip.mjs`                   | Bundle the browser extension into a distributable ZIP.                  |
+| `scripts/build-docs.sh`                             | Build the MkDocs site into `public/docs/`. Run automatically as part of `vercel-build`. Uses `pip --break-system-packages` so it works on PEP-668 build images. |
 | `scripts/render-faq-pdf.py`                         | Render `docs/FAQ-NON-TECHNICAL.md` into the repo-root PDF.              |
 | `scripts/validate-connections.ts`                   | Nightly check: external feeds respond, schema matches.                  |
 
@@ -74,6 +76,11 @@ ones that matter operationally:
   summariser and classification pipelines.
 - `INBOUND_EMAIL_SECRET` — HMAC for the inbound-email webhook.
 - `MEDIA_MONITORING_SECRET` — cron trigger guard.
+- `SITE_PASSWORD` / `SITE_AUTH_SECRET` — site-wide password gate
+  (Edge middleware) protecting both `/` and `/docs/`.
+- `METHODHUB_URL` — read by `bridge-service` when proxying
+  `/api/report-plans` and `/api/report-plan/:id` for the Word
+  add-in's plan-scope panel.
 
 Full list lives in `.env.local.example`.
 

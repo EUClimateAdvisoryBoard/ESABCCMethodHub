@@ -14,7 +14,7 @@ have to host, and who keeps the code moving afterwards?
 
 | Axis             | Today (pre-handoff pilot)                            | EEA-ready target                                                     |
 |------------------|------------------------------------------------------|----------------------------------------------------------------------|
-| Code             | CCE5 · `github.com/SebastianFra/MethodHub` · Next.js 14 · Postgres | Same — code stewardship stays at CCE5.                   |
+| Code             | CCE5 · `github.com/EUClimateAdvisoryBoard/ESABCCMethodHub` · Next.js 14 · Postgres | Same — code stewardship stays at CCE5.                   |
 | Running app      | Vercel Frankfurt (`fra1`) + Supabase (EU)            | EEA-managed container · EU region · Docker · **not** Vercel          |
 | IT surface       | none — pilot is hosted externally                    | Postgres URL · container host · TLS cert                             |
 | Optional         | AI provider switch live (Azure OpenAI · Anthropic · OpenAI · Gemini) | + OIDC · S3 · per-user M365 Copilot (each requires the corresponding branch to be implemented) |

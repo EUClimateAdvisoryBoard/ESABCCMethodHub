@@ -1,7 +1,7 @@
 # Beta parking lot
 
-Eight experimental modules sit outside the Next.js route tree at
-[`beta/modules/`](https://github.com/SebastianFra/MethodHub/tree/main/beta/modules)
+Ten experimental modules sit outside the Next.js route tree at
+[`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag.
 
@@ -23,6 +23,7 @@ location is the feature flag.
 | `funding-sources/`     | [Funding Sources](../modules/funding-sources.md) | Horizon Dashboard + DG DIGIT QlikSense snapshot; scraper pending. |
 | `maritime-aviation/`   | Maritime & Aviation   | SEAMAPS / OAG data requires procurement.                        |
 | `media-monitoring/`    | Media Monitoring      | GDELT pipeline works; dashboard UX and consent flow WIP.        |
+| `strategy-docs/`       | [Strategy & Framework Docs](../modules/strategy-docs.md) | Catalogue surface for internal strategy / project-framework PDFs; entries placeholdered until source files land in `public/strategy-docs/`. |
 
 ## Promoting a beta module
 

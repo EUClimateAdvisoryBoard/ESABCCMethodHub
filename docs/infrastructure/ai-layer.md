@@ -71,7 +71,7 @@ batch content-analysis pre-tagging).
 ## Code shape
 
 The existing dispatcher in
-[`src/lib/ai-summary.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/lib/ai-summary.ts)
+[`src/lib/ai-summary.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/ai-summary.ts)
 looks up the provider at request time and calls one of
 `callAzureOpenAI()`, `callAnthropic()`, `callGemini()`, or
 `callOpenAI()`. The four providers currently live inline in that

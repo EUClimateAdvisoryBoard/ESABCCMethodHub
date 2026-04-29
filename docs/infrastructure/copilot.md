@@ -191,7 +191,7 @@ Several pipelines run without a user:
 M365 Copilot is a **per-user** entitlement; these jobs cannot use it.
 They keep running on `LLM_PROVIDER_BATCH=azure` (Path A) via a small
 service-side budget. This is how the mixed landing in
-[AI layer — Path C](ai-layer.md#path-c-mixed-recommended-landing)
+[AI layer — Path C](ai-layer.md#path-c-mixed-recommended-eea-landing-target)
 actually works.
 
 ## Rate limits, observability, DLP

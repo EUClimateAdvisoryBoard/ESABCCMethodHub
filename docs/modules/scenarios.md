@@ -1,7 +1,7 @@
 # M · 02 — Data & Scenario Explorer
 
 !!! tip "Status"
-    Stable · shipped in v1.0 · route [`/scenarios`](https://github.com/SebastianFra/MethodHub/tree/main/src/app/scenarios)
+    Stable · shipped in v1.0 · route [`/scenarios`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/src/app/scenarios)
 
 Eurostat indicators alongside IPCC AR6 and IIASA scenario projections in
 one queryable, cross-filtered view — with a path for Secretariat
@@ -47,11 +47,11 @@ flowchart LR
 
 | Path                                                                                                            | Role                                                      |
 |-----------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| [`src/app/scenarios/page.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/app/scenarios/page.tsx)    | Thin route shell.                                         |
-| [`src/components/ScenarioExplorer.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/ScenarioExplorer.tsx)  | The explorer itself — filters, chart, submissions UI.     |
-| [`src/components/ScenarioChart.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/ScenarioChart.tsx)        | Chart.js-based renderer with overlayable series.           |
-| [`src/components/EurostatExplorer.tsx`](https://github.com/SebastianFra/MethodHub/blob/main/src/components/EurostatExplorer.tsx)  | Eurostat indicator browser; embedded as a tab.             |
-| [`src/data/scenarios.ts`](https://github.com/SebastianFra/MethodHub/blob/main/src/data/scenarios.ts)                              | Bundled AR6 WG3 snapshot.                                  |
+| [`src/app/scenarios/page.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/app/scenarios/page.tsx)    | Thin route shell.                                         |
+| [`src/components/ScenarioExplorer.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/ScenarioExplorer.tsx)  | The explorer itself — filters, chart, submissions UI.     |
+| [`src/components/ScenarioChart.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/ScenarioChart.tsx)        | Chart.js-based renderer with overlayable series.           |
+| [`src/components/EurostatExplorer.tsx`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/components/EurostatExplorer.tsx)  | Eurostat indicator browser; embedded as a tab.             |
+| [`src/data/scenarios.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/data/scenarios.ts)                              | Bundled AR6 WG3 snapshot.                                  |
 
 ## API surface
 
@@ -69,8 +69,8 @@ flowchart LR
 
 | Script                                                                                                                               | Cadence | What it does                                    |
 |--------------------------------------------------------------------------------------------------------------------------------------|---------|-------------------------------------------------|
-| [`scripts/fetch_iiasa_data.py`](https://github.com/SebastianFra/MethodHub/blob/main/scripts/fetch_iiasa_data.py)                       | weekly  | Pulls AR6 WG3 snapshot, writes `src/data/scenarios.ts`. |
-| [`scripts/validate-connections.ts`](https://github.com/SebastianFra/MethodHub/blob/main/scripts/validate-connections.ts)               | nightly | Checks external feeds respond and schema matches. |
+| [`scripts/fetch_iiasa_data.py`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/fetch_iiasa_data.py)                       | weekly  | Pulls AR6 WG3 snapshot, writes `src/data/scenarios.ts`. |
+| [`scripts/validate-connections.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/validate-connections.ts)               | nightly | Checks external feeds respond and schema matches. |
 | Eurostat / EEA projections                                                                                                           | on demand | Fetched live per request; results cached per session. |
 
 ## Subroutes

@@ -134,7 +134,7 @@ and AI layer in more depth.
 
 Migrating from the current Supabase setup to EEA Postgres is
 verified by
-[`scripts/migrate-to-postgres/`](https://github.com/SebastianFra/MethodHub/tree/main/scripts/migrate-to-postgres):
+[`scripts/migrate-to-postgres/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/scripts/migrate-to-postgres):
 
 ```
 dump.sh            → pg_dump the live Supabase DB
@@ -146,8 +146,34 @@ smoke-test.mjs     → end-to-end happy path
 ```
 
 Running those four, plus the schema bootstrap in
-[`scripts/it-handoff/01-apply-schema.sh`](https://github.com/SebastianFra/MethodHub/blob/main/scripts/it-handoff/01-apply-schema.sh),
+[`scripts/it-handoff/01-apply-schema.sh`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/it-handoff/01-apply-schema.sh),
 is the intended cutover. This is the path the codebase is
 prepared for; the scripts are the source of truth for exact
 filenames (the older `*.js` names in earlier drafts of these docs
 are out of date).
+
+### Bootstrapping a fresh database
+
+Two paths apply migrations to an empty Postgres:
+
+1. **Stepwise.** `01-apply-schema.sh` walks
+   `supabase/migrations/*.sql` in order. This is what production-
+   like deployments use, because each migration is independently
+   reviewable and re-runnable.
+2. **One-shot.**
+   [`supabase/combined_migrations.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/combined_migrations.sql)
+   concatenates `001..028` in order so a fresh database can be
+   brought up by pasting a single file into the SQL editor of a
+   hosted Supabase project. Useful for local dev and for the
+   "spin up a parallel staging instance" flow.
+
+### Migration-order caveat — `library_members` before `libraries` policies
+
+A subtle ordering rule landed in commit
+[`cec3aeb`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/commit/cec3aeb):
+`library_members` must exist **before** the RLS policies on
+`libraries` are created, because the `libraries` policies read
+membership from `library_members` to decide whether a row is
+visible. Both stepwise apply and the combined file already do
+this in the right order; if you write a custom bootstrap script,
+preserve it.

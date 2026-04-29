@@ -47,7 +47,7 @@ Every design decision is downstream of two constraints:
 ## Scope lock
 
 v1.0 ships **five modules**. Everything else — eight experimental
-modules — lives under [`beta/modules/`](https://github.com/SebastianFra/MethodHub/tree/main/beta/modules)
+modules — lives under [`beta/modules/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules)
 and is **intentionally unrouted** by the Next.js app. Promoting a beta
 module is a single `git mv` back into `src/app/`. The file system is
 the feature flag.

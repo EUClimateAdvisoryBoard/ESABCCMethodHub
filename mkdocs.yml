@@ -177,6 +177,7 @@ nav:
       - "M·04 EU Policy Navigator":  modules/policy-navigator.md
       - "M·05 Content Analysis":     modules/content-analysis.md
       - "M·b3 Funding Sources (beta)": modules/funding-sources.md
+      - "M·15 Strategy & Framework Docs (beta)": modules/strategy-docs.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Stewardship model: infrastructure/stewardship.md

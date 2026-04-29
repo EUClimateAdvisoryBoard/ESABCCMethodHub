@@ -23,7 +23,7 @@
 
 The purge is driven by the Postgres function
 `public.purge_expired_personal_data()` defined in
-[`supabase/migrations/012_gdpr_data_retention.sql`](https://github.com/SebastianFra/MethodHub/blob/main/supabase/migrations/012_gdpr_data_retention.sql).
+[`supabase/migrations/012_gdpr_data_retention.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/012_gdpr_data_retention.sql).
 Today it is invoked weekly by `.github/workflows/gdpr-retention.yml`,
 which POSTs to `/api/admin/retention` with a shared secret.
 
@@ -36,7 +36,7 @@ service has moved in-network.
 ## Right to erasure (Art. 17)
 
 Implemented as a two-step soft-delete in migration `013`
-([`013_gdpr_account_deletion.sql`](https://github.com/SebastianFra/MethodHub/blob/main/supabase/migrations/013_gdpr_account_deletion.sql)):
+([`013_gdpr_account_deletion.sql`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/supabase/migrations/013_gdpr_account_deletion.sql)):
 
 1. The user clicks "Delete account" on `/profile`, which POSTs to
    `/api/user/delete-request`. This marks the account for
