@@ -1,9 +1,15 @@
 {
   "date": "2026-04-29",
-  "generatedAt": "2026-04-29T07:28:59.094Z",
+  "generatedAt": "2026-04-29T12:22:25.940Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 29 April 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis, its implications on energy prices and the availability of fertilisers",
+      "summary": "European Commission Speech Strasbourg, 29 Apr 2026 “Check against delivery” \r\n \r\nThank you, Madam President, dear Roberta,\r\nDeputy Minister Raouna, dear Marilena,\r\nHonourable Members,\r\nThe informal EUCO started with ...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Extreme weather and green energy on the rise in Europe",
       "summary": "Europe&#039;s climate extremes have hit new highs — but renewables are now supplying nearly half of the continent&#039;s electricity.",
@@ -11,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission opens in-depth investigation into proposed joint venture between UPM and Sappi",
-      "summary": "European Commission Press release Brussels, 28 Apr 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed creation of a joint venture between UPM-Kymmene Corporation (‘UPM') and Sappi Limited (‘Sappi'). The Commission is concerned that the transaction may reduce competition in certain markets for the production and supply of communication paper and specialty paper in the European Economic Area ('EEA') and result in higher prices,",
+      "headline": "Science Officer in the IPCC Working Group II Technical Support Unit (College of the Integrative Studies, Singapore)",
+      "summary": "Working Group II of the Intergovernmental Panel on Climate Change is filling the position of Science Officer Deadline: to apply before May 1, 2026 Contract till 30 March 2030 About us Singapore Management University is a place where high-level professionalism blends together with a healthy informality. The &#8216;family-like&#8217; atmosphere among the SMU community fosters a [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Norway wealth fund CEO warns just using AI for job cuts risks backlash - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOMWNKak5SMzl6SDZLSW0tRG51V1c1bWNqY2ZSOXZmd1cwaVlfRklLLTdkT3pvb2toQkVxWjFZT0Z3VGdOb1RHVm1UWFFzdUlvaHNreVRndnRSX2RudXdIQUtxTGV3dmkzMHE0cFRnbm5PU3NxdFF6VU9HZGM0bEhUc3hxdWhsMjhtZkNNVzloeUdpTUFsQmtOOFdyNlBYX3dobm1vOEdTWjdlOW9udlZoRHlITUhQcGQ1UFVac1lNV2hBQmNXbFE?oc=5\" target=\"_blank\"&gt;Norway wealth fund CEO warns just using AI for job cuts risks backlash&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "India's gold investment demand tops jewellery for first time ever in March quarter - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVG9kUU8xem81bUpmTUZ0dXlKNXhnektWWVROcGJFeml5eFU4WWk0VUl5Vkc5QnhQTVFCUVpVQUZZd1hLQ2dzTVJ1Z2tEckZ5LWhGNG9mZkQ3YUk0SlM5UGZSazVnQkJiWUdOQm1EcS1nSmltVDgtWFBvXzhsb3VTVGFFQnk0WkZ4dnlDTVRKamx1S3B0QjNKTHhMS1JYUGNPcDd3TzBYRmF2X3B4T0RTdGRueUpvbGFONGJWWk9yUQ?oc=5\" target=\"_blank\"&gt;India's gold investment demand tops jewellery for first time ever in March quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +33,24 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis, its implications on energy prices and the availability of fertilisers",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_923",
+          "source": "European Commission",
+          "description": "European Commission Speech Strasbourg, 29 Apr 2026 “Check against delivery” \r\n \r\nThank you, Madam President, dear Roberta,\r\nDeputy Minister Raouna, dear Marilena,\r\nHonourable Members,\r\nThe informal EUCO started with ...",
+          "published": "2026-04-28T22:00:00.000Z",
+          "score": 27
+        },
+        {
+          "title": "Commission adopts temporary State aid framework to support sectors affected by Middle East crisis",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_894",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 29 Apr 2026 The European Commission has adopted a temporary State aid framework to enable Member States to support the EU economy in the context of the Middle East crisis. The Middle East crisis Temporary State aid Framework (METSAF) is a targeted and temporary framework to address the effects of the crisis on some of the most exposed sectors of the economy: agriculture, fishery, transport and energy-intensive industries.",
+          "published": "2026-04-28T22:00:00.000Z",
+          "score": 24
+        }
+      ]
     },
     {
       "id": "energy",
@@ -58,19 +81,19 @@
           "score": 10
         },
         {
+          "title": "‘Suicidal’ model of capitalism leading to war and fascism, climate summit told",
+          "link": "https://www.theguardian.com/environment/2026/apr/29/capitalism-colombia-climate-summit-gustavo-petro",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Colombia president Gustavo Petro tells 57-country talks on a green energy transition that fossil fuel interests could destroy humanity&lt;/p&gt;&lt;p&gt;The world is threatened by a “suicidal” model of capitalism that is leading to war, fascism and the potential extinction of humanity, Colombia’s president has said, as he &lt;a href=\"https://www.theguardian.com/environment/2026/apr/24/global-talks-ditch-fossil-fuels-colombia\"&gt;convened 57 governments to address the climate crisis&lt;/",
+          "published": "2026-04-29T10:00:51.000Z",
+          "score": 7
+        },
+        {
           "title": "Trump’s attempt to crush clean energy progress not going to plan, experts say",
           "link": "https://www.theguardian.com/us-news/2026/apr/28/trump-clean-energy-progress",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;US generated more power from renewables including solar and wind than gas last month in a first&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt; has wielded the full might of his administration to crush the progress of &lt;a href=\"https://www.theguardian.com/environment/renewableenergy\"&gt;clean energy&lt;/a&gt;, which he has called a “scam” and “stupid”. But there are signs this assault is not going to plan.&lt;/p&gt;&lt;p&gt;In M",
           "published": "2026-04-28T12:30:09.000Z",
-          "score": 7
-        },
-        {
-          "title": "Trump administration blocks US wind energy projects in switch to oil and gas",
-          "link": "https://www.theguardian.com/us-news/2026/apr/28/trump-administration-wind-projects",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;US representatives Jared Huffman and Jamie Raskin earlier this month called agreements outrageous and unlawful&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/news/2026/feb/17/sign-up-for-the-breaking-news-us-email-to-get-newsletter-alerts-direct-to-your-inbox?utm_medium=ACQUISITIONS_STANDFIRST&amp;amp;utm_campaign=BN22326&amp;amp;utm_content=signup&amp;amp;utm_term=standfirst&amp;amp;utm_source=GUARDIAN_WEB\"&gt;Sign up for the Breaking News US email to get",
-          "published": "2026-04-28T21:37:43.000Z",
           "score": 7
         }
       ]
@@ -79,22 +102,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Commission opens in-depth investigation into proposed joint venture between UPM and Sappi",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_913",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 28 Apr 2026 The European Commission has opened an in-depth investigation to assess, under the EU Merger Regulation, the proposed creation of a joint venture between UPM-Kymmene Corporation (‘UPM') and Sappi Limited (‘Sappi'). The Commission is concerned that the transaction may reduce competition in certain markets for the production and supply of communication paper and specialty paper in the European Economic Area ('EEA') and result in higher prices,",
-          "published": "2026-04-28T08:03:33.000Z",
-          "score": 22
-        },
-        {
-          "title": "Commission and European Parliament sign agreement fostering closer partnership",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_912",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 28 Apr 2026 Today, European Commission President Ursula von der Leyen and European Parliament President Roberta Metsola signed the revised Framework Agreement between both institutions.",
-          "published": "2026-04-28T07:52:20.000Z",
-          "score": 18
-        },
         {
           "title": "Science Officer in the IPCC Working Group II Technical Support Unit (College of the Integrative Studies, Singapore)",
           "link": "https://www.ipcc.ch/2026/04/28/sc-off-wg2-tsu/",
@@ -118,6 +125,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPRXotUVdvd0dHb3E2VGhIUWl3NFR2TmszM0tBMVdhdUZQRjZpUU5WU2xwMFF0RHFhWTd6RmNTaUhWS0p5bk1iTW52aUJCNGZrMy1ncjJqRFMyazJ6MlFGYVAtQnpRZUlXMklkUGlFNlhzVVhoVjU3ek9xUEYtaGVQNENPUFE0SU1RaEdia3JkRldFZWhkRkt4eUx5Nm1NbEdRTUpHV3M3OHhxMWYwUHZ3ak42SlBRaGswMGhVTQ?oc=5\" target=\"_blank\"&gt;How does the EU plan to raise money for its next long-term budget?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-04-28T12:49:43.000Z",
           "score": 8
+        },
+        {
+          "title": "Singing activists disrupt NatWest meeting over ‘climate backtracking’",
+          "link": "https://www.theguardian.com/business/2026/apr/28/activists-natwest-meeting-climate-backtracking",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;AGM briefly adjourned after protesters wearing T-shirts labelled ‘No more big oil’ burst into song&lt;/p&gt;&lt;p&gt;The chair of NatWest was forced to defend the bank against accusations of “climate backtracking” at a chaotic annual shareholder meeting, which was temporarily suspended owing to singing protesters.&lt;/p&gt;&lt;p&gt;Not long after the meeting began in Edinburgh, it was adjourned for about half an hour after a protester interrupted Rick Haythornthwaite’s opening speech.&l",
+          "published": "2026-04-28T15:22:11.000Z",
+          "score": 7
+        },
+        {
+          "title": "Critical minerals are ‘oil of 21st century’ as demand fuels poverty and pollution in poorer countries",
+          "link": "https://www.theguardian.com/global-development/2026/apr/29/critical-minerals-are-oil-of-21st-century-as-demand-fuels-poverty-and-pollution-in-poorer-countries",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Rush for lithium, cobalt and nickel is ravaging livelihoods, water and health of world’s most vulnerable, UN study says &lt;/p&gt;&lt;p&gt;Critical minerals such as lithium, cobalt and nickel are becoming the “oil of the 21st century” as the scramble for precious metals deepens poverty and creates public health crises in some of the world’s most vulnerable communities, a &lt;a href=\"https://doi.org/10.53328/INR25ABN002\"&gt;report by the UN’s water thinktank&lt;/a&gt; has found.&lt;/p&gt",
+          "published": "2026-04-29T10:00:53.000Z",
+          "score": 7
         }
       ]
     },
@@ -125,6 +148,14 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "India's gold investment demand tops jewellery for first time ever in March quarter - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPVG9kUU8xem81bUpmTUZ0dXlKNXhnektWWVROcGJFeml5eFU4WWk0VUl5Vkc5QnhQTVFCUVpVQUZZd1hLQ2dzTVJ1Z2tEckZ5LWhGNG9mZkQ3YUk0SlM5UGZSazVnQkJiWUdOQm1EcS1nSmltVDgtWFBvXzhsb3VTVGFFQnk0WkZ4dnlDTVRKamx1S3B0QjNKTHhMS1JYUGNPcDd3TzBYRmF2X3B4T0RTdGRueUpvbGFONGJWWk9yUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVG9kUU8xem81bUpmTUZ0dXlKNXhnektWWVROcGJFeml5eFU4WWk0VUl5Vkc5QnhQTVFCUVpVQUZZd1hLQ2dzTVJ1Z2tEckZ5LWhGNG9mZkQ3YUk0SlM5UGZSazVnQkJiWUdOQm1EcS1nSmltVDgtWFBvXzhsb3VTVGFFQnk0WkZ4dnlDTVRKamx1S3B0QjNKTHhMS1JYUGNPcDd3TzBYRmF2X3B4T0RTdGRueUpvbGFONGJWWk9yUQ?oc=5\" target=\"_blank\"&gt;India's gold investment demand tops jewellery for first time ever in March quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-29T06:01:00.000Z",
+          "score": 2
+        },
         {
           "title": "Norway wealth fund CEO warns just using AI for job cuts risks backlash - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOMWNKak5SMzl6SDZLSW0tRG51V1c1bWNqY2ZSOXZmd1cwaVlfRklLLTdkT3pvb2toQkVxWjFZT0Z3VGdOb1RHVm1UWFFzdUlvaHNreVRndnRSX2RudXdIQUtxTGV3dmkzMHE0cFRnbm5PU3NxdFF6VU9HZGM0bEhUc3hxdWhsMjhtZkNNVzloeUdpTUFsQmtOOFdyNlBYX3dobm1vOEdTWjdlOW9udlZoRHlITUhQcGQ1UFVac1lNV2hBQmNXbFE?oc=5",
@@ -154,14 +185,6 @@
           "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday, 4 May 2026, from 15.00 to 19.00 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 5 May 2026, from 8.45 to 12.45 and from 14.45 to 18.45 (Brussels)&lt;/li&gt;&lt;li&gt;Monday, 1 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 2 June 2026 from 9.00 to 12.30 and from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&g",
           "published": "2026-04-28T15:26:32.000Z",
           "score": 18
-        },
-        {
-          "title": "Review highlights Digital Markets Act remains fit for purpose and has positive impact",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_914",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 28 Apr 2026 The European Commission's first review of the Digital Markets Act (DMA) found that in the first two years of its application, the DMA remains fit for purpose and has opened up new opportunities for businesses and developers, while giving users more control over their experiences and devices, as well as access to more diverse and innovative digital products and services.",
-          "published": "2026-04-28T10:10:34.000Z",
-          "score": 14
         }
       ]
     },
@@ -178,35 +201,35 @@
           "score": 12
         },
         {
-          "title": "EU countries, lawmakers fail to reach deal on watered-down AI rules - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkpicWJyZm90enV4bWpYOXpLWEdRUDhjTk5UT3piU3J1R1A0aDhkcUx3d21ud21rdjAtaEltN3dhQmpRYlVCM1VrV2hZcG1UNEhQeDdwV2JMQ3phajJoUUh1Y0x1TjFnVW5sUGxJZml3blVBYUhtTzhlWlJaaUg0ZHFtN0h0Z0pEbkV5OHpmX3NBNFRINWpROWx6aHotdnhScl9XekhSaG1jS3hCODNxdGVJOVRPNk1YeWZTaWpDUU9mcWhtclE3ODhlMHpZR2VmcEE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkpicWJyZm90enV4bWpYOXpLWEdRUDhjTk5UT3piU3J1R1A0aDhkcUx3d21ud21rdjAtaEltN3dhQmpRYlVCM1VrV2hZcG1UNEhQeDdwV2JMQ3phajJoUUh1Y0x1TjFnVW5sUGxJZml3blVBYUhtTzhlWlJaaUg0ZHFtN0h0Z0pEbkV5OHpmX3NBNFRINWpROWx6aHotdnhScl9XekhSaG1jS3hCODNxdGVJOVRPNk1YeWZTaWpDUU9mcWhtclE3ODhlMHpZR2VmcEE?oc=5\" target=\"_blank\"&gt;EU countries, lawmakers fail to reach deal on watered-down AI rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-04-29T01:37:51.000Z",
+          "title": "Why Germany wants a seat at the UN Security Council",
+          "link": "https://www.dw.com/en/why-germany-wants-a-seat-at-the-un-security-council/a-76979443?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "With the rules-based world order &quot;under stress,&quot; Germany is on a mission to gain a coveted seat at the United Nation’s top table. German Foreign Minister Johann Wadephul told DW why diplomacy still matters.",
+          "published": "2026-04-29T11:09:00.000Z",
           "score": 8
         },
         {
-          "title": "UK parliament votes against inquiry into PM Starmer over Mandelson - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPcHNyS3dXLWtaMHJFdjNaQUU4Z2xGcVhLRUZWVVVFTUtQeWhDbnhCUWpqV0oyLWZnR1FPNjRhVXJZUE9KRXJYNWNRRXY1alowSWhJMUZVRHdUYXNzMWlERThFdDZMQUpLVVdZclRVU1BBUng1eE1lM2JPMkNqMUlUVXdqTmtHYnhLdUZzN2k3UlpCM3hpT3p6aVRoOHJVMUxxb2czN2g1ekthS3B5Y2lpLQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPcHNyS3dXLWtaMHJFdjNaQUU4Z2xGcVhLRUZWVVVFTUtQeWhDbnhCUWpqV0oyLWZnR1FPNjRhVXJZUE9KRXJYNWNRRXY1alowSWhJMUZVRHdUYXNzMWlERThFdDZMQUpLVVdZclRVU1BBUng1eE1lM2JPMkNqMUlUVXdqTmtHYnhLdUZzN2k3UlpCM3hpT3p6aVRoOHJVMUxxb2czN2g1ekthS3B5Y2lpLQ?oc=5\" target=\"_blank\"&gt;UK parliament votes against inquiry into PM Starmer over Mandelson&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-28T22:11:59.000Z",
+          "title": "Hungary&#039;s Magyar meets EU&#039;s von der Leyen in high-stakes Brussels visit",
+          "link": "https://www.dw.com/en/hungary-s-magyar-meets-eu-s-von-der-leyen-in-high-stakes-brussels-visit/a-76976109?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Even before Peter Magyar takes office as Hungary&#039;s prime minister, he is looking to unlock €10 billion in EU funding ahead of an August deadline. Talks with Ursula von der Leyen come as part of a post-Orban EU reset.",
+          "published": "2026-04-29T09:18:00.000Z",
           "score": 8
         },
         {
-          "title": "Canadian PM invited to attend European Political Community summit in May - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT3I1dFk3SGVwTFRISkU4V1VWVmxBY3FlQ0tGenQwR3V6UUZ0VHdrT3VpYnRLSV8wN2dfV0VHZDJCMDlVZ01qQW9Fc2NNalNQdlBWc1FEUk52Yi1mcXhBOERTaE1aWTF4ZnZZanFUVWNGVUpfQ0dsMHlNVmVCN3p5b1V4eVFlWE5VTEY5QzR3aGMza2VPWW10YWdXVnlCX1NYZThMMjlqWkQ2Q3pmb19ORkNxSzdvNXZr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNT3I1dFk3SGVwTFRISkU4V1VWVmxBY3FlQ0tGenQwR3V6UUZ0VHdrT3VpYnRLSV8wN2dfV0VHZDJCMDlVZ01qQW9Fc2NNalNQdlBWc1FEUk52Yi1mcXhBOERTaE1aWTF4ZnZZanFUVWNGVUpfQ0dsMHlNVmVCN3p5b1V4eVFlWE5VTEY5QzR3aGMza2VPWW10YWdXVnlCX1NYZThMMjlqWkQ2Q3pmb19ORkNxSzdvNXZr?oc=5\" target=\"_blank\"&gt;Canadian PM invited to attend European Political Community summit in May&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-28T13:56:19.000Z",
+          "title": "EU Parliament pushes for bigger long-term budget, new taxes",
+          "link": "https://www.dw.com/en/eu-parliament-pushes-for-bigger-long-term-budget-new-taxes/a-76976119?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Parliament has backed plans to boost the EU&#039;s long-term budget and introduce new taxes to support farming and poorer regions. The proposals have set up a clash with member states, including Germany.",
+          "published": "2026-04-29T08:41:00.000Z",
           "score": 8
         },
         {
-          "title": "EU says it has approached Israel over Russian grain boat that docked in Haifa - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdXlsRDI1YzRpZlFjR2ozUDlWWnJhZEF4OWxUMHVDMmFyLTlLbzFlbjBxSXhPaWpGcnJHQW1JVzR6NjVpcTFtNmdWcnAyMFYyaURuZ1l5LWdEbGlxX0FVT2lnajVjTXNXeTJUTHhCU1VQcWtRZjRybGVIUFphYjBqQVlxcVpTc2xZa19mLXE2elZZS1lfbV83TVZtQXQtZUh4THUteVlqbW50Umw2aFhUcm90eFJXVnNxY09GdU5sTDRJWG1WQmM4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOdXlsRDI1YzRpZlFjR2ozUDlWWnJhZEF4OWxUMHVDMmFyLTlLbzFlbjBxSXhPaWpGcnJHQW1JVzR6NjVpcTFtNmdWcnAyMFYyaURuZ1l5LWdEbGlxX0FVT2lnajVjTXNXeTJUTHhCU1VQcWtRZjRybGVIUFphYjBqQVlxcVpTc2xZa19mLXE2elZZS1lfbV83TVZtQXQtZUh4THUteVlqbW50Umw2aFhUcm90eFJXVnNxY09GdU5sTDRJWG1WQmM4?oc=5\" target=\"_blank\"&gt;EU says it has approached Israel over Russian grain boat that docked in Haifa&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-04-28T14:16:58.000Z",
+          "title": "EU accuses Meta of allowing children under 13 on platforms",
+          "link": "https://www.dw.com/en/eu-accuses-meta-of-allowing-children-under-13-on-platforms/a-76975475?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Commission accused Meta, the company behind Instagram and Facebook, of breaching its own rules of barring children under the age of 13 from using its platforms.",
+          "published": "2026-04-29T07:35:00.000Z",
           "score": 8
         }
       ]
@@ -214,8 +237,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 388,
-    "articlesLast24h": 177,
-    "afterDedup": 167,
+    "articlesLast24h": 183,
+    "afterDedup": 176,
     "feedsQueried": 19
   }
 }
