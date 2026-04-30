@@ -644,8 +644,8 @@ export default function PolicyNavigatorPage() {
                     <span className="text-[10px] uppercase tracking-wider text-tertiary capitalize">
                       {p.domain.replace('_', ' ')}
                     </span>
-                    {p.acronym && (
-                      <span className="text-[10px] font-mono text-grey-500">· {p.acronym}</span>
+                    {p.celex_number && (
+                      <span className="text-[10px] font-mono text-grey-500">· {p.celex_number}</span>
                     )}
                     <span className="text-[10px] text-grey-500 capitalize">· {p.status.replace('_', ' ')}</span>
                   </div>
