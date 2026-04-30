@@ -1,15 +1,9 @@
 {
   "date": "2026-04-29",
-  "generatedAt": "2026-04-29T18:16:22.887Z",
+  "generatedAt": "2026-04-29T23:59:56.531Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 29 April 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis, its implications on energy prices and the availability of fertilisers",
-      "summary": "European Commission Speech Strasbourg, 29 Apr 2026 “Check against delivery” \r\n \r\nThank you, Madam President, dear Roberta,\r\nDeputy Minister Raouna, dear Marilena,\r\nHonourable Members,\r\nThe informal EUCO started with ...",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Extreme weather and green energy on the rise in Europe",
       "summary": "Europe&#039;s climate extremes have hit new highs — but renewables are now supplying nearly half of the continent&#039;s electricity.",
@@ -33,24 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Speech by President von der Leyen at the European Parliament plenary debate on the EU strategy in response to the ongoing Middle East crisis, its implications on energy prices and the availability of fertilisers",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_923",
-          "source": "European Commission",
-          "description": "European Commission Speech Strasbourg, 29 Apr 2026 “Check against delivery” \r\n \r\nThank you, Madam President, dear Roberta,\r\nDeputy Minister Raouna, dear Marilena,\r\nHonourable Members,\r\nThe informal EUCO started with ...",
-          "published": "2026-04-28T22:00:00.000Z",
-          "score": 27
-        },
-        {
-          "title": "Commission adopts temporary State aid framework to support sectors affected by Middle East crisis",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_894",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 29 Apr 2026 The European Commission has adopted a temporary State aid framework to enable Member States to support the EU economy in the context of the Middle East crisis. The Middle East crisis Temporary State aid Framework (METSAF) is a targeted and temporary framework to address the effects of the crisis on some of the most exposed sectors of the economy: agriculture, fishery, transport and energy-intensive industries.",
-          "published": "2026-04-28T22:00:00.000Z",
-          "score": 24
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -65,20 +42,12 @@
           "score": 13
         },
         {
-          "title": "How a controversial gas pipeline deal could further stall Bosnia&#039;s EU accession",
-          "link": "https://www.dw.com/en/how-a-controversial-gas-pipeline-deal-could-further-stall-bosnia-s-eu-accession/a-76965210?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A US backed gas pipeline could help Bosnia cut reliance on Russian energy. But Brussels warns that a deal with a company linked to Trump allies could put the country&#039;s EU hopes at risk.",
-          "published": "2026-04-28T19:26:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Europe's energy crisis response avoids consumption curbs, for now - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZE1YTVNfNlcwdVQ3M2wxZTdObkMxdTdfeDhTYlhKTUJLT21ZYndiVGtHbDY1ZmE0MnZVNzNsUnE2Qzc0dUlWTzhRS0tEbTZfaDhyUjQta2tZSGJFdVZVRGlvNUx4Q2FxUXd0M3MtNnhsTXRSOFl1MUczenRNRC1tOUJRVlpXaVhKUFl5Wm9za210UnhiQjVzbWV4ZkdMRlBCczBfSnJYUDRHVHd6SUprNTA4ZGQtSU91X1Z6LThzUW5uM0tMTzd5TUlQOEYyNl9T?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZE1YTVNfNlcwdVQ3M2wxZTdObkMxdTdfeDhTYlhKTUJLT21ZYndiVGtHbDY1ZmE0MnZVNzNsUnE2Qzc0dUlWTzhRS0tEbTZfaDhyUjQta2tZSGJFdVZVRGlvNUx4Q2FxUXd0M3MtNnhsTXRSOFl1MUczenRNRC1tOUJRVlpXaVhKUFl5Wm9za210UnhiQjVzbWV4ZkdMRlBCczBfSnJYUDRHVHd6SUprNTA4ZGQtSU91X1Z6LThzUW5uM0tMTzd5TUlQOEYyNl9T?oc=5\" target=\"_blank\"&gt;Europe's energy crisis response avoids consumption curbs, for now&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-04-29T11:58:09.000Z",
-          "score": 13
+          "title": "Hot weather and hungry datacentres lift Australia’s energy demand to record highs but batteries quell prices",
+          "link": "https://www.theguardian.com/environment/2026/apr/30/hot-weather-and-hungry-datacentres-lift-australias-energy-demand-to-record-highs-but-batteries-quell-prices",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Rise in electricity demand in first quarter of 2026 was moderated by record output from rooftop solar&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/apr/30/fuel-crisis-cost-of-living-penny-wong-royal-commission-antisemitism-virginia-bell-jim-chalmers-inflation-budget-anthony-albanese-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"ht",
+          "published": "2026-04-29T14:01:50.000Z",
+          "score": 9
         },
         {
           "title": "‘Suicidal’ model of capitalism leading to war and fascism, climate summit told",
@@ -89,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "Labor will back fossil fuels in the budget but the gas tax campaign isn’t dead yet",
+          "title": "Labor will back fossil fuels in the budget but the gas tax campaign isn’t dead yet | Clear air",
           "link": "https://www.theguardian.com/environment/2026/apr/30/anti-fossil-fuel-campaigns-offer-hope-but-labors-budget-will-play-it-safe",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Despite popular support for a 25% levy on gas exports, Anthony Albanese opposes it and there is little discussion about how to reduce our usage&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;strong&gt;Get our &lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;&lt;strong&gt;breaking news email&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;, &lt;/strong&gt;&lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;&lt;strong&gt;free app&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;",
+          "description": "&lt;p&gt;Despite popular support for a 25% levy on gas exports, Anthony Albanese opposes it and there is little discussion about how to reduce our usage&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"htt",
           "published": "2026-04-29T15:13:13.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says King Charles does not want Iran to have nuclear weapon - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPdlZGS1E0bE5KX3l4dEl6YW5aOXRadS13ckhISUJPem00aFV0RUo2NDJ4WVVicUtxTExiQmI5RkFvNUV4YURIWUVaUU5oYk1qT1c4MlcweVd0Y0VKRjhxM0tEZVZYZXdtZWdnY2VCbXFxbG5PQTFlOHVIT1VheFlHZWNIUE1XTkl6UlZheEN3UnY3Z1NZNWd6d09mQ2Z2TmdFTElLSDhtVGRpTEZ3WkRYTQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPdlZGS1E0bE5KX3l4dEl6YW5aOXRadS13ckhISUJPem00aFV0RUo2NDJ4WVVicUtxTExiQmI5RkFvNUV4YURIWUVaUU5oYk1qT1c4MlcweVd0Y0VKRjhxM0tEZVZYZXdtZWdnY2VCbXFxbG5PQTFlOHVIT1VheFlHZWNIUE1XTkl6UlZheEN3UnY3Z1NZNWd6d09mQ2Z2TmdFTElLSDhtVGRpTEZ3WkRYTQ?oc=5\" target=\"_blank\"&gt;Trump says King Charles does not want Iran to have nuclear weapon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-29T02:23:00.000Z",
           "score": 7
         }
       ]
@@ -119,6 +96,14 @@
           "score": 10
         },
         {
+          "title": "The 'Polar Bear Capital' with Arctic gateway ambitions",
+          "link": "https://www.bbc.com/news/articles/cyv1zdey7pmo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Canada is weighing whether a year-round northern trade route to Europe from Churchill, Manitoba, is viable, as climate change speeds Arctic warming.",
+          "published": "2026-04-29T23:35:30.000Z",
+          "score": 9
+        },
+        {
           "title": "How the changing face of farming is reflected in Scotland's election",
           "link": "https://www.bbc.com/news/articles/c70d0y2514yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -133,14 +118,6 @@
           "description": "&lt;p&gt;Rush for lithium, cobalt and nickel is ravaging livelihoods, water and health of world’s most vulnerable, UN study says &lt;/p&gt;&lt;p&gt;Critical minerals such as lithium, cobalt and nickel are becoming the “oil of the 21st century” as the scramble for precious metals deepens poverty and creates public health crises in some of the world’s most vulnerable communities, a &lt;a href=\"https://doi.org/10.53328/INR25ABN002\"&gt;report by the UN’s water thinktank&lt;/a&gt; has found.&lt;/p&gt",
           "published": "2026-04-29T10:00:53.000Z",
           "score": 7
-        },
-        {
-          "title": "CEOs of US’s top energy firms averaged nearly 16% pay raise to $12.3m, review finds",
-          "link": "https://www.theguardian.com/us-news/2026/apr/29/energy-ceo-pay-raises-2025",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Utility bills are up as much as 40% in some regions, and companies shut off power to customers 13m times in 2025&lt;/p&gt;&lt;p&gt;The US’s top utilities’ CEOs enjoyed a 16% pay raise last year – to an average of $12.3m – even as consumers shoulder the pain from high bills spurred by continuing inflation, the Iran war and datacenter growth, a &lt;a href=\"https://energyandpolicy.org/utility-ceo-pay-2025/\"&gt;new review&lt;/a&gt; of industry financial documents shows.&lt;/p&gt;&lt;p&gt;Ut",
-          "published": "2026-04-29T10:00:51.000Z",
-          "score": 7
         }
       ]
     },
@@ -154,6 +131,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPVG9kUU8xem81bUpmTUZ0dXlKNXhnektWWVROcGJFeml5eFU4WWk0VUl5Vkc5QnhQTVFCUVpVQUZZd1hLQ2dzTVJ1Z2tEckZ5LWhGNG9mZkQ3YUk0SlM5UGZSazVnQkJiWUdOQm1EcS1nSmltVDgtWFBvXzhsb3VTVGFFQnk0WkZ4dnlDTVRKamx1S3B0QjNKTHhMS1JYUGNPcDd3TzBYRmF2X3B4T0RTdGRueUpvbGFONGJWWk9yUQ?oc=5\" target=\"_blank\"&gt;India's gold investment demand tops jewellery for first time ever in March quarter&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-04-29T06:01:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Tungsten breaks records as China export curbs, military demand boost investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOQ1lmMTlmWUp2MTlicWR3R0hXSEdsY0FPbUwyTEZOM3B3SDBMVlhNOEFicFZDcmQ0d3p5RWJweEFQeUNFVWhxc3Q4WmlCczlRdG5KUDQ0N0w4SHVEWUFvTVhxdnphUDc1WThGdlVFbEpNTm8zcllhcS0xbE80VEdQb2hmdXYwT2o1Vk1yNlJUdFp6Y2MzVHlzYlZNcXM2a2N5V3ZMbUNTelJyeDFBblAyV3U2TENsWk1yeEs5V0taWmR3MGQwTmc2VVp3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOQ1lmMTlmWUp2MTlicWR3R0hXSEdsY0FPbUwyTEZOM3B3SDBMVlhNOEFicFZDcmQ0d3p5RWJweEFQeUNFVWhxc3Q4WmlCczlRdG5KUDQ0N0w4SHVEWUFvTVhxdnphUDc1WThGdlVFbEpNTm8zcllhcS0xbE80VEdQb2hmdXYwT2o1Vk1yNlJUdFp6Y2MzVHlzYlZNcXM2a2N5V3ZMbUNTelJyeDFBblAyV3U2TENsWk1yeEs5V0taWmR3MGQwTmc2VVp3?oc=5\" target=\"_blank\"&gt;Tungsten breaks records as China export curbs, military demand boost investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-04-29T12:33:45.000Z",
           "score": 2
         }
       ]
@@ -185,12 +170,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "&#039;Only yes means yes&#039; rape definition backed by EU lawmakers",
-          "link": "https://www.dw.com/en/only-yes-means-yes-rape-definition-backed-by-eu-lawmakers/a-76972748?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Hungary's next PM says frozen EU funds will be paid out soon",
+          "link": "https://www.bbc.com/news/articles/c392ln77w30o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Péter Magyar meets EU leaders in Brussels, for the first time since his Tisza party won a landslide election.",
+          "published": "2026-04-29T19:51:54.000Z",
+          "score": 8
+        },
+        {
+          "title": "What are the sticking points for the EU&#039;s new budget?",
+          "link": "https://www.dw.com/en/what-are-the-sticking-points-for-the-eu-s-new-budget/a-76987127?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Parliament voted for a consent-based definition of rape. But what constitutes rape under criminal law still varies significantly across the bloc.",
-          "published": "2026-04-28T19:46:00.000Z",
-          "score": 12
+          "description": "The battle over the next long-term EU budget has begun. The EU&#039;s institutions have staked out their positions and are seeking significantly more funding, but it is the 27 member states that will ultimately decide.",
+          "published": "2026-04-29T19:47:00.000Z",
+          "score": 8
         },
         {
           "title": "Why Germany wants a seat at the UN Security Council",
@@ -209,14 +202,6 @@
           "score": 8
         },
         {
-          "title": "EU Parliament pushes for bigger long-term budget, new taxes",
-          "link": "https://www.dw.com/en/eu-parliament-pushes-for-bigger-long-term-budget-new-taxes/a-76976119?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Parliament has backed plans to boost the EU&#039;s long-term budget and introduce new taxes to support farming and poorer regions. The proposals have set up a clash with member states, including Germany.",
-          "published": "2026-04-29T08:41:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU countries, lawmakers fail to reach deal on watered-down AI rules - Reuters",
           "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVkpicWJyZm90enV4bWpYOXpLWEdRUDhjTk5UT3piU3J1R1A0aDhkcUx3d21ud21rdjAtaEltN3dhQmpRYlVCM1VrV2hZcG1UNEhQeDdwV2JMQ3phajJoUUh1Y0x1TjFnVW5sUGxJZml3blVBYUhtTzhlWlJaaUg0ZHFtN0h0Z0pEbkV5OHpmX3NBNFRINWpROWx6aHotdnhScl9XekhSaG1jS3hCODNxdGVJOVRPNk1YeWZTaWpDUU9mcWhtclE3ODhlMHpZR2VmcEE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -228,9 +213,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 387,
-    "articlesLast24h": 184,
-    "afterDedup": 177,
+    "totalArticlesScanned": 388,
+    "articlesLast24h": 182,
+    "afterDedup": 173,
     "feedsQueried": 19
   }
 }
