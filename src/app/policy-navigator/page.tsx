@@ -106,13 +106,41 @@ export default function PolicyNavigatorPage() {
   // the mobile list component so we don't duplicate render logic.
   const [desktopView, setDesktopView] = useState<'graph' | 'list'>('graph');
 
-  // Deep-link landing (M·04 #4): when arrived at via /policy-navigator?policy=<id>,
-  // smooth-scroll the matching card into view and pulse a ring around it for
-  // 600 ms so the user sees *where* the page landed. Strips the param from
-  // the URL afterwards so subsequent navigation stays clean.
+  // Deep-link landing (M·04 #4 + item 4.1 from the major UI/UX review re-rank):
+  //
+  //   ?article=<policyId>/<articleNumber> → redirect to the policy-text page,
+  //     so cross-module deep-links (news → article, M·05 → article) land
+  //     directly on the readable article rather than the graph. The
+  //     downstream page handles scroll-into-view + ring pulse via its
+  //     existing `highlight=` flow.
+  //
+  //   ?policy=<id> → expand the matching card on the graph view and pulse
+  //     a ring around it for 600 ms (existing M·04 #4 behaviour). The param
+  //     is stripped after landing so subsequent navigation stays clean.
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const params = new URLSearchParams(window.location.search);
+
+    // Article deep-link — accepts "policy/article" or two separate params.
+    const articleParam = params.get('article');
+    let policyForArticle: string | null = null;
+    let articleNumber: string | null = null;
+    if (articleParam) {
+      const slash = articleParam.indexOf('/');
+      if (slash > 0) {
+        policyForArticle = articleParam.slice(0, slash);
+        articleNumber = articleParam.slice(slash + 1);
+      } else {
+        policyForArticle = params.get('policy');
+        articleNumber = articleParam;
+      }
+    }
+    if (policyForArticle && articleNumber) {
+      const target = `/policy-navigator/policy-text?id=${encodeURIComponent(policyForArticle)}&highlight=${encodeURIComponent('Article ' + articleNumber)}`;
+      window.location.replace(target);
+      return;
+    }
+
     const id = params.get('policy');
     if (!id) return;
     setExpanded(id);

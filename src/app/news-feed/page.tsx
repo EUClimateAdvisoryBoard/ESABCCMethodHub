@@ -36,6 +36,7 @@ import LinkPreview from '@/components/LinkPreview';
 import EuEtsPositionsFigure from '@/components/EuEtsPositionsFigure';
 import OneEuropeOneMarketFigure from '@/components/OneEuropeOneMarketFigure';
 import NewsSavedSearchesPanel from '@/components/NewsSavedSearchesPanel';
+import NewsLastVisitBanner from '@/components/NewsLastVisitBanner';
 import type { NewsSavedSearch } from '@/lib/useNewsSavedSearches';
 import SuggestPolicyButton from '@/components/SuggestPolicyButton';
 import { EmptyState, LoadingState, ErrorState } from '@/components/ui/StateView';
@@ -2665,6 +2666,21 @@ export default function NewsFeedPage() {
 
             {/* Feed items */}
             <div className="flex-1 min-w-0 space-y-4">
+              {/* "What's new since you last visited" banner — item 3.2 in
+                  docs/vision/brainstorm-modules-uxui-feasibility-rank.md.
+                  Replaces the always-on blue dot with a single dismissible
+                  strip; click "Open" scrolls to the first new card with a
+                  600 ms ring pulse. */}
+              <NewsLastVisitBanner
+                items={filtered}
+                onOpen={(firstNewId) => {
+                  const el = document.getElementById(`news-item-${firstNewId}`);
+                  if (!el) return;
+                  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  el.classList.add('mh-ring-pulse');
+                  setTimeout(() => el.classList.remove('mh-ring-pulse'), 700);
+                }}
+              />
               {/* Runtime warning when no LLM API key is reaching the
                   serverless functions. The env var is baked into the Vercel
                   build at deploy time, so adding it in the dashboard without
@@ -2740,6 +2756,7 @@ export default function NewsFeedPage() {
 
                 return (
                   <div key={item.id}
+                    id={`news-item-${item.id}`}
                     className={`bg-white rounded-lg border overflow-hidden transition-shadow hover:shadow-md ${
                       item.isDailySpecial
                         ? 'border-l-4 border-l-amber-500 border-amber-200 ring-1 ring-amber-300 bg-gradient-to-br from-amber-50/50 to-orange-50/30'
