@@ -1,18 +1,24 @@
 {
   "date": "2026-04-30",
-  "generatedAt": "2026-04-30T07:32:55.124Z",
+  "generatedAt": "2026-04-30T12:20:14.241Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 30 April 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Hot weather and hungry datacentres lift Australia’s energy demand to record highs but batteries quell prices",
-      "summary": "&lt;p&gt;Rise in electricity demand in first quarter of 2026 was moderated by record output from rooftop solar&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/apr/30/fuel-crisis-cost-of-living-penny-wong-royal-commission-antisemitism-virginia-bell-jim-chalmers-inflation-budget-anthony-albanese-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"ht",
+      "headline": "Commission evaluation shows slow progress in fishing sustainability and ongoing challenges for EU fishers",
+      "summary": "European Commission Press release Brussels, 30 Apr 2026 The European Commission today published its evaluation of the Common Fisheries Policy (CFP) Regulation, covering the decade from 2014 to 2024.",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "‘Historic breakthrough’: Colombia climate talks end with hopes raised for fossil fuel phaseout",
+      "summary": "&lt;p&gt;Nearly 60 countries back voluntary roadmaps to wean world off coal, oil and gas, at conference prompted by frustration with UN climate summits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/apr/30/bank-of-england-expected-hold-interest-rates-noon-assesses-fallout-iran-war-live-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/apr/30/europe-g",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Traditional models still &#8216;outperform AI&#8217; for extreme weather forecasts",
-      "summary": "Computer models that use artificial intelligence (AI) cannot forecast record-breaking weather as well as traditional... The post Traditional models still &#8216;outperform AI&#8217; for extreme weather forecasts appeared first on Carbon Brief.",
+      "headline": "Daily News 30 / 04 / 2026",
+      "summary": "European Commission Daily news Brussels, 30 Apr 2026 Commission issues recommendations to protect vulnerable consumers from high energy prices\r\nThe European Commission has today issued a set of recommendations to h...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,12 +33,29 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission evaluation shows slow progress in fishing sustainability and ongoing challenges for EU fishers",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_938",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 30 Apr 2026 The European Commission today published its evaluation of the Common Fisheries Policy (CFP) Regulation, covering the decade from 2014 to 2024.",
+          "published": "2026-04-30T08:30:57.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "‘Historic breakthrough’: Colombia climate talks end with hopes raised for fossil fuel phaseout",
+          "link": "https://www.theguardian.com/environment/2026/apr/30/colombia-climate-talks-end-fossil-fuel-phaseout",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Nearly 60 countries back voluntary roadmaps to wean world off coal, oil and gas, at conference prompted by frustration with UN climate summits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/apr/30/bank-of-england-expected-hold-interest-rates-noon-assesses-fallout-iran-war-live-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/apr/30/europe-g",
+          "published": "2026-04-30T10:15:24.000Z",
+          "score": 9
+        },
         {
           "title": "Hot weather and hungry datacentres lift Australia’s energy demand to record highs but batteries quell prices",
           "link": "https://www.theguardian.com/environment/2026/apr/30/hot-weather-and-hungry-datacentres-lift-australias-energy-demand-to-record-highs-but-batteries-quell-prices",
@@ -40,14 +63,6 @@
           "description": "&lt;p&gt;Rise in electricity demand in first quarter of 2026 was moderated by record output from rooftop solar&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/apr/30/fuel-crisis-cost-of-living-penny-wong-royal-commission-antisemitism-virginia-bell-jim-chalmers-inflation-budget-anthony-albanese-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"ht",
           "published": "2026-04-29T14:01:50.000Z",
           "score": 9
-        },
-        {
-          "title": "‘Suicidal’ model of capitalism leading to war and fascism, climate summit told",
-          "link": "https://www.theguardian.com/environment/2026/apr/29/capitalism-colombia-climate-summit-gustavo-petro",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Colombia president Gustavo Petro tells 57-country talks on a green energy transition that fossil fuel interests could destroy humanity&lt;/p&gt;&lt;p&gt;The world is threatened by a “suicidal” model of capitalism that is leading to war, fascism and the potential extinction of humanity, Colombia’s president has said, as he &lt;a href=\"https://www.theguardian.com/environment/2026/apr/24/global-talks-ditch-fossil-fuels-colombia\"&gt;convened 57 governments to address the climate crisis&lt;/",
-          "published": "2026-04-29T10:00:51.000Z",
-          "score": 7
         },
         {
           "title": "Labor will back fossil fuels in the budget but the gas tax campaign isn’t dead yet | Clear air",
@@ -66,12 +81,12 @@
           "score": 7
         },
         {
-          "title": "Chornobyl, 40 years on: inside the 1 May Guardian Weekly",
-          "link": "https://www.theguardian.com/news/2026/apr/29/chornobyl-40-years-on-inside-the-1-may-guardian-weekly",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;The long shadow of the world’s worst nuclear accident. &lt;strong&gt;Plus:&lt;/strong&gt; Why apes really are like you&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://support.theguardian.com/uk/subscribe/weekly?promoCode=WWM53X\"&gt;&lt;strong&gt;Get the Guardian Weekly delivered to your home address&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;In March 2022, soon after the full-scale Russian invasion of Ukraine began, Kyiv-based illustrator &lt;a href=\"http",
-          "published": "2026-04-29T17:00:53.000Z",
-          "score": 4
+          "title": "Exclusive: Apollo, Blackstone and KKR vie for Shell stake in LNG Canada, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaUJKcHJPTEI5dm45ZDJoTmkyRmVtMjZnSXZPYUFiU0t2ZlpSVDl6WTJ0WnU5Z0o5RnlsSjFNd0F6dERfMWkyVGxXb1F0VnpkRnp3Qkg5eVlSUDNnWXduTVZibkF6STJCUldfTEVpUHdoOTdBNnZiUmM3MUlWUFN2U1RaZ3JHYmVIckxnaDBXMUFXMDhYU2pFYl85N3V1TFVGOE16aXF4QmlXTW5ORnNveFAxOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOaUJKcHJPTEI5dm45ZDJoTmkyRmVtMjZnSXZPYUFiU0t2ZlpSVDl6WTJ0WnU5Z0o5RnlsSjFNd0F6dERfMWkyVGxXb1F0VnpkRnp3Qkg5eVlSUDNnWXduTVZibkF6STJCUldfTEVpUHdoOTdBNnZiUmM3MUlWUFN2U1RaZ3JHYmVIckxnaDBXMUFXMDhYU2pFYl85N3V1TFVGOE16aXF4QmlXTW5ORnNveFAxOA?oc=5\" target=\"_blank\"&gt;Exclusive: Apollo, Blackstone and KKR vie for Shell stake in LNG Canada, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-30T05:05:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -79,6 +94,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Daily News 30 / 04 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_935",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 30 Apr 2026 Commission issues recommendations to protect vulnerable consumers from high energy prices\r\nThe European Commission has today issued a set of recommendations to h...",
+          "published": "2026-04-30T07:39:35.000Z",
+          "score": 16
+        },
         {
           "title": "Traditional models still &#8216;outperform AI&#8217; for extreme weather forecasts",
           "link": "https://www.carbonbrief.org/traditional-models-still-outperform-ai-for-extreme-weather-forecasts/",
@@ -96,27 +119,19 @@
           "score": 9
         },
         {
-          "title": "Critical minerals are ‘oil of 21st century’ as demand fuels poverty and pollution in poorer countries",
-          "link": "https://www.theguardian.com/global-development/2026/apr/29/critical-minerals-are-oil-of-21st-century-as-demand-fuels-poverty-and-pollution-in-poorer-countries",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Rush for lithium, cobalt and nickel is ravaging livelihoods, water and health of world’s most vulnerable, UN study says &lt;/p&gt;&lt;p&gt;Critical minerals such as lithium, cobalt and nickel are becoming the “oil of the 21st century” as the scramble for precious metals deepens poverty and creates public health crises in some of the world’s most vulnerable communities, a &lt;a href=\"https://doi.org/10.53328/INR25ABN002\"&gt;report by the UN’s water thinktank&lt;/a&gt; has found.&lt;/p&gt",
-          "published": "2026-04-29T10:00:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "CEOs of US’s top energy firms averaged nearly 16% pay raise to $12.3m, review finds",
-          "link": "https://www.theguardian.com/us-news/2026/apr/29/energy-ceo-pay-raises-2025",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Utility bills are up as much as 40% in some regions, and companies shut off power to customers 13m times in 2025&lt;/p&gt;&lt;p&gt;The US’s top utilities’ CEOs enjoyed a 16% pay raise last year – to an average of $12.3m – even as consumers shoulder the pain from high bills spurred by continuing inflation, the Iran war and datacenter growth, a &lt;a href=\"https://energyandpolicy.org/utility-ceo-pay-2025/\"&gt;new review&lt;/a&gt; of industry financial documents shows.&lt;/p&gt;&lt;p&gt;Ut",
-          "published": "2026-04-29T10:00:51.000Z",
-          "score": 7
-        },
-        {
           "title": "'Significant change' needed to tackle agri pollution",
           "link": "https://www.bbc.com/news/articles/cp8pln5lyz3o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The Office for Environmental Protection said existing regulations are insufficient to deliver necessary water quality improvements.",
-          "published": "2026-04-30T05:05:09.000Z",
+          "published": "2026-04-30T11:19:54.000Z",
+          "score": 7
+        },
+        {
+          "title": "'Only so much' voters can worry about - are attitudes to net zero changing?",
+          "link": "https://www.bbc.com/news/articles/c62d4p807lro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Recent studies show a decline in the public's sense of urgency around reaching net zero.",
+          "published": "2026-04-30T07:46:26.000Z",
           "score": 7
         }
       ]
@@ -140,11 +155,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities - PE787.680v03-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787680_EN.pdf",
+          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council Amending Regulation (EU) 2024/1252 - PE787.862v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-787862_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-04-29T16:25:49.000Z",
+          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council Amending Regulation (EU) 2024/1252&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jacek Ozdoba&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-04-30T12:13:24.000Z",
           "score": 22
         },
         {
@@ -162,12 +177,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Hungary's next PM says frozen EU funds will be paid out soon",
-          "link": "https://www.bbc.com/news/articles/c392ln77w30o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Péter Magyar meets EU leaders in Brussels, for the first time since his Tisza party won a landslide election.",
-          "published": "2026-04-29T19:51:54.000Z",
-          "score": 8
+          "title": "Will EU bring in a windfall tax on oil companies?",
+          "link": "https://www.dw.com/en/will-eu-bring-in-a-windfall-tax-on-oil-companies/a-76920556?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Five countries, including Germany, want the EU to bring in a so-called windfall tax to target energy companies benefiting from the price crisis. It can be done, but it&#039;s complex.",
+          "published": "2026-04-30T10:32:00.000Z",
+          "score": 10
         },
         {
           "title": "What are the sticking points for the EU&#039;s new budget?",
@@ -178,36 +193,36 @@
           "score": 8
         },
         {
-          "title": "Why Germany wants a seat at the UN Security Council",
-          "link": "https://www.dw.com/en/why-germany-wants-a-seat-at-the-un-security-council/a-76979443?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "With the rules-based world order &quot;under stress,&quot; Germany is on a mission to gain a coveted seat at the United Nations&#039; top table. German Foreign Minister Johann Wadephul told DW why diplomacy still matters.",
-          "published": "2026-04-29T12:05:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hungary&#039;s Magyar meets EU&#039;s von der Leyen in high-stakes Brussels visit",
-          "link": "https://www.dw.com/en/hungary-s-magyar-meets-eu-s-von-der-leyen-in-high-stakes-brussels-visit/a-76976109?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Even before Peter Magyar takes office as Hungary&#039;s prime minister, he is looking to unlock €10 billion in EU funding ahead of an August deadline. Talks with Ursula von der Leyen come as part of a post-Orban EU reset.",
-          "published": "2026-04-29T09:18:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "New Zealand local council rejects plan for 'comfort women' statue after Japan protest - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbTI1cjlmdjBqMGxHOW9jRkc0WDJaT3JscGdubm9vUzRiOWdORDlsS0RiLVBxZWNadE91aDc4QmtJMnJvekQ2ei1ldW8yQnBmelFXUWtnNFBUbHpvc1JUcXEteXhTbnhEdlJwbkpzNzg1RkFMbUh5dVEtcWYtWGxOQVBMMzBoY1hhbnhMX0M0WU0xbUd2NG9hZTVMd0tRNHVWTjc3bUs5WWRrR1lobFRsQkdrN2RHUnExMEVUbHZKRXk1TDFGa2J2SXloNFpsRVU?oc=5",
+          "title": "China threatens action if EU does not revise new industry and tech rules - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNdTZUWHdfaDI3bUJfZnRkQjdGc2FnNnV4bVN1c21vNzk3TzhRRE9zb2t3alRCREppdEpYTEFUWHhNT1M3NERxWTh6N0lXQXVLYWNJRUsydm42U3R3SEJaOE5rT0xvaG1ibmp1MmwxVmxQcDBDOXFKdTNIQUFvS01kYW1BRnc0OGxLM1hBTEgyOVoyLVBCNEtmTk1MUDJqNUJ1eXZhZy1yMkVzMzNzNkk2VTJwWVRWRkk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxPbTI1cjlmdjBqMGxHOW9jRkc0WDJaT3JscGdubm9vUzRiOWdORDlsS0RiLVBxZWNadE91aDc4QmtJMnJvekQ2ei1ldW8yQnBmelFXUWtnNFBUbHpvc1JUcXEteXhTbnhEdlJwbkpzNzg1RkFMbUh5dVEtcWYtWGxOQVBMMzBoY1hhbnhMX0M0WU0xbUd2NG9hZTVMd0tRNHVWTjc3bUs5WWRrR1lobFRsQkdrN2RHUnExMEVUbHZKRXk1TDFGa2J2SXloNFpsRVU?oc=5\" target=\"_blank\"&gt;New Zealand local council rejects plan for 'comfort women' statue after Japan protest&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
-          "published": "2026-04-29T08:54:41.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNdTZUWHdfaDI3bUJfZnRkQjdGc2FnNnV4bVN1c21vNzk3TzhRRE9zb2t3alRCREppdEpYTEFUWHhNT1M3NERxWTh6N0lXQXVLYWNJRUsydm42U3R3SEJaOE5rT0xvaG1ibmp1MmwxVmxQcDBDOXFKdTNIQUFvS01kYW1BRnc0OGxLM1hBTEgyOVoyLVBCNEtmTk1MUDJqNUJ1eXZhZy1yMkVzMzNzNkk2VTJwWVRWRkk?oc=5\" target=\"_blank\"&gt;China threatens action if EU does not revise new industry and tech rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-29T17:23:21.000Z",
           "score": 8
+        },
+        {
+          "title": "Hungary's Magyar says he had 'successful' talks on funds with EU's von der Leyen - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPSFNoTHJzMHlCemVQc1Z4RmJUR3p1ZkRNTHlWMWpnR0RIbHRrbTIxUXhaMDFUN3h0TEJIeC01VzNRMGJWMlRQdjZ3UmtmcDFKRFRvcko3Yk0zVXZja2RvMWpfcTB5U050alRWbFRJRDU4bG5MQ0szOVFFazJJaUVuaUdoNDIwbjhVc1RyTHpGalhfa3hSQnZOYzBzQmJWMVdZSTZ1Q3hVWWc5V2ZHMGI5cXZZWHFZUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPSFNoTHJzMHlCemVQc1Z4RmJUR3p1ZkRNTHlWMWpnR0RIbHRrbTIxUXhaMDFUN3h0TEJIeC01VzNRMGJWMlRQdjZ3UmtmcDFKRFRvcko3Yk0zVXZja2RvMWpfcTB5U050alRWbFRJRDU4bG5MQ0szOVFFazJJaUVuaUdoNDIwbjhVc1RyTHpGalhfa3hSQnZOYzBzQmJWMVdZSTZ1Q3hVWWc5V2ZHMGI5cXZZWHFZUQ?oc=5\" target=\"_blank\"&gt;Hungary's Magyar says he had 'successful' talks on funds with EU's von der Leyen&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-04-29T16:28:19.000Z",
+          "score": 8
+        },
+        {
+          "title": "First dots on the roadmap to exiting fossil fuels",
+          "link": "https://www.dw.com/en/first-dots-on-the-roadmap-to-exiting-fossil-fuels/a-76992981?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The message from inaugural talks on exiting fossil fuels was clear. It&#039;s not if, but when and how.",
+          "published": "2026-04-30T10:52:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 387,
-    "articlesLast24h": 181,
-    "afterDedup": 173,
+    "totalArticlesScanned": 374,
+    "articlesLast24h": 172,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
