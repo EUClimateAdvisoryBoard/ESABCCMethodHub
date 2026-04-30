@@ -31,6 +31,7 @@
  * `next.config.js`).
  */
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { policies } from '@/data/policies';
 import {
@@ -59,7 +60,10 @@ import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
 const PolicyNetworkGraph = dynamic(() => import('@/components/PolicyNetworkGraph'), { ssr: false });
 const LegislativeCalendar = dynamic(() => import('@/components/LegislativeCalendar'), { ssr: false });
 
-type TopTab = 'policy-map' | 'review-connections' | 'sectoral-overview';
+// Read mode (item 4.2 in the major UI/UX review re-rank) is a fourth tab
+// that lists policies for direct reading rather than network exploration —
+// 80 % of sessions actually want to *read* a policy, not graph-walk it.
+type TopTab = 'read' | 'policy-map' | 'review-connections' | 'sectoral-overview';
 
 const DOMAIN_COLORS: Record<string, string> = {
   climate: '#007B6C', energy: '#FF9933', transport: '#6667AB',
@@ -568,6 +572,7 @@ export default function PolicyNavigatorPage() {
         <div className="max-w-wide mx-auto px-6">
           <div className="flex gap-1 overflow-x-auto" role="tablist" aria-label="Policy Navigator sections">
             {[
+              { id: 'read' as const, label: 'Read', desc: 'Browse and read policy text directly', badge: null as number | null },
               { id: 'policy-map' as const, label: 'Policy Map', desc: 'Network graph + calendar', badge: null as number | null },
               {
                 id: 'review-connections' as const,
@@ -605,6 +610,57 @@ export default function PolicyNavigatorPage() {
           </div>
         </div>
       </section>
+
+      {/* ============================================================
+          PART 0 — READ MODE (item 4.2 in the major UI/UX review re-rank)
+          A clean reader-first surface: no graph, no force layout, just a
+          searchable list of policies that opens the readable text view in
+          one click. Reuses the existing /policy-navigator/policy-text route
+          so no new layout is invented.
+         ============================================================ */}
+      {topTab === 'read' && (
+        <section id="read" className="max-w-wide mx-auto px-6 pt-8 pb-12">
+          <div className="mb-5 max-w-text">
+            <p className="text-[10px] tracking-[0.18em] uppercase text-primary font-semibold mb-1">Read mode</p>
+            <h2 className="text-[22px] font-bold text-tertiary-dark">Browse and read policy text</h2>
+            <p className="text-sm text-tertiary mt-1">
+              {policies.length} policies. Click any title to open the article view with full text, citations and connections.
+            </p>
+          </div>
+          <div className="bg-white rounded-lg border border-grey-200 divide-y divide-grey-100">
+            {policies.map(p => (
+              <Link
+                key={p.id}
+                href={`/policy-navigator/policy-text/?id=${encodeURIComponent(p.id)}`}
+                className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-grey-50 mh-focus mh-motion-fast"
+              >
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                    <span
+                      className="w-2.5 h-2.5 rounded-full shrink-0"
+                      style={{ background: DOMAIN_COLORS[p.domain] || '#3D5265' }}
+                      aria-hidden="true"
+                    />
+                    <span className="text-[10px] uppercase tracking-wider text-tertiary capitalize">
+                      {p.domain.replace('_', ' ')}
+                    </span>
+                    {p.acronym && (
+                      <span className="text-[10px] font-mono text-grey-500">· {p.acronym}</span>
+                    )}
+                    <span className="text-[10px] text-grey-500 capitalize">· {p.status.replace('_', ' ')}</span>
+                  </div>
+                  <p className="text-sm font-semibold text-tertiary-dark truncate">{p.short_title || p.title}</p>
+                </div>
+                <span className="shrink-0 text-tertiary group-hover:text-secondary" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ============================================================
           PART 1 — POLICY MAP (network graph + calendar)

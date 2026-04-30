@@ -1,6 +1,12 @@
 'use client';
 
 import type { CodedSegment, Project } from '@/lib/content-analysis/types';
+import ProvenanceChip from '@/components/ui/ProvenanceChip';
+
+export type ProjectLockSummary = {
+  holderName: string;
+  heartbeatAt: string;
+};
 
 interface Props {
   projects: Project[];
@@ -8,6 +14,10 @@ interface Props {
   segmentCounts: Record<string, number>;
   /** Document counts per project scope (for "in 23 docs" badges). */
   documentCounts: Record<string, number>;
+  /** Active locks by projectId — lets the cards surface "🔒 Maria F." up
+   *  front so users see who holds what before clicking in (item 5.1
+   *  + 5.3 in the major UI/UX review re-rank). */
+  locksByProjectId?: Record<string, ProjectLockSummary>;
   onOpen: (projectId: string) => void;
   onCreate: () => void;
   onDelete: (projectId: string) => void;
@@ -25,6 +35,7 @@ export default function ProjectLanding({
   projects,
   segmentCounts,
   documentCounts,
+  locksByProjectId,
   onOpen,
   onCreate,
   onDelete,
@@ -56,6 +67,7 @@ export default function ProjectLanding({
               segments={segmentCounts[master.id] ?? 0}
               documents={documentCounts[master.id] ?? 0}
               accent="#00928F"
+              lock={locksByProjectId?.[master.id]}
               onOpen={() => onOpen(master.id)}
             />
           </div>
@@ -75,6 +87,7 @@ export default function ProjectLanding({
               segments={segmentCounts[p.id] ?? 0}
               documents={documentCounts[p.id] ?? 0}
               accent="#3D5265"
+              lock={locksByProjectId?.[p.id]}
               onOpen={() => onOpen(p.id)}
               onDelete={() => onDelete(p.id)}
             />
@@ -106,6 +119,7 @@ function ProjectCard({
   segments,
   documents,
   accent,
+  lock,
   onOpen,
   onDelete,
 }: {
@@ -113,6 +127,7 @@ function ProjectCard({
   segments: number;
   documents: number;
   accent: string;
+  lock?: ProjectLockSummary;
   onOpen: () => void;
   onDelete?: () => void;
 }) {
@@ -129,17 +144,27 @@ function ProjectCard({
         >
           {isMaster ? 'Master library' : project.mode.replace(/^./, c => c.toUpperCase())}
         </span>
-        {onDelete && (
-          <button
-            type="button"
-            onClick={e => { e.stopPropagation(); onDelete(); }}
-            className="opacity-0 group-hover:opacity-100 transition text-[#B8BCC2] hover:text-[#B83230] text-[16px] leading-none"
-            aria-label="Delete project"
-            title="Delete project"
-          >
-            ×
-          </button>
-        )}
+        <div className="flex items-center gap-1.5">
+          {lock && (
+            <ProvenanceChip
+              kind="lock"
+              label={lock.holderName}
+              holder={lock.holderName}
+              heartbeatAt={lock.heartbeatAt}
+            />
+          )}
+          {onDelete && (
+            <button
+              type="button"
+              onClick={e => { e.stopPropagation(); onDelete(); }}
+              className="opacity-0 group-hover:opacity-100 transition text-[#B8BCC2] hover:text-[#B83230] text-[16px] leading-none"
+              aria-label="Delete project"
+              title="Delete project"
+            >
+              ×
+            </button>
+          )}
+        </div>
       </div>
       <button type="button" onClick={onOpen} className="text-left flex-1 mt-2">
         <h3 className="text-[15px] font-bold text-[#3D5265] leading-snug group-hover:text-[var(--accent)] transition">

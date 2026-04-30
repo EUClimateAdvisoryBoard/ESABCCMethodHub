@@ -267,6 +267,17 @@ export default function ReferencesPage() {
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(initialUrl.q);
 
+  // Track the most recently opened reference so the Recent panel in the
+  // unified side rail (item 1.2) stays populated. The dispatched event
+  // tells the panel to re-read localStorage without polling.
+  useEffect(() => {
+    if (!editingRef?.id) return;
+    trackRecentReference(editingRef.id);
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('mh:references-recent-updated'));
+    }
+  }, [editingRef?.id]);
+
   // Mirror state → URL whenever the three persisted selectors change.
   // `replace` keeps the back-button history clean; navigations the user
   // explicitly took create entries on their own.
@@ -592,14 +603,27 @@ export default function ReferencesPage() {
 
       <div className="max-w-[1600px] mx-auto px-3 sm:px-4 py-4 sm:py-6">
         <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-          {/* Sidebar -- hidden in fallback mode since there are no libraries to pick */}
+          {/* Unified left rail — item 1.2 in the major UI/UX review re-rank.
+              Replaces the library-only sidebar with: Libraries (existing
+              selector), Tags (top 12 of the current library, click-to-search)
+              and Recent (last 10 references viewed). Saved searches will
+              live in this rail too once the Supabase contract is finalised. */}
           {!usingFallback && (
-            <div className="w-full md:w-64 md:shrink-0">
+            <div className="w-full md:w-64 md:shrink-0 space-y-3">
               <LibrarySelector
                 libraries={libraries}
                 selectedId={selectedLibraryId}
                 onSelect={setSelectedLibraryId}
                 onRefreshNeeded={loadLibraries}
+              />
+              <ReferencesTagsPanel
+                references={references}
+                onPick={setSearchQuery}
+                activeQuery={searchQuery}
+              />
+              <ReferencesRecentPanel
+                allReferences={references}
+                onOpen={(ref) => { setEditingRef(ref); setView('edit'); }}
               />
             </div>
           )}
@@ -1565,6 +1589,130 @@ function AddReferenceForm({
 // which walks every custom reference and fills in missing fields from
 // CrossRef.  Shows a quick summary so the admin can see what changed.
 // ---------------------------------------------------------------------------
+// ──────────────────────────────────────────────────────────────────────────
+//  Side-rail panels (item 1.2 — unified left rail)
+// ──────────────────────────────────────────────────────────────────────────
+
+const RECENT_LS_KEY = 'mh:references-recent';
+const RECENT_MAX = 10;
+
+/** Append a reference id to the recent list (most-recent first, deduped). */
+function trackRecentReference(id: string) {
+  if (typeof window === 'undefined') return;
+  try {
+    const existing: string[] = JSON.parse(window.localStorage.getItem(RECENT_LS_KEY) || '[]');
+    const next = [id, ...existing.filter((x) => x !== id)].slice(0, RECENT_MAX);
+    window.localStorage.setItem(RECENT_LS_KEY, JSON.stringify(next));
+  } catch {
+    /* ignore quota / parse errors */
+  }
+}
+
+function ReferencesTagsPanel({
+  references,
+  onPick,
+  activeQuery,
+}: {
+  references: Reference[];
+  onPick: (q: string) => void;
+  activeQuery: string;
+}) {
+  const tagCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const r of references) {
+      for (const t of r.tags ?? []) {
+        const key = (t || '').trim();
+        if (!key) continue;
+        counts.set(key, (counts.get(key) ?? 0) + 1);
+      }
+    }
+    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 12);
+  }, [references]);
+
+  if (tagCounts.length === 0) return null;
+
+  return (
+    <div className="bg-white rounded-lg border border-grey-200 p-3">
+      <h3 className="text-[10px] uppercase tracking-wider text-grey-500 font-semibold mb-2">Tags</h3>
+      <div className="flex flex-wrap gap-1.5">
+        {tagCounts.map(([tag, n]) => {
+          const active = activeQuery === tag;
+          return (
+            <button
+              key={tag}
+              type="button"
+              onClick={() => onPick(active ? '' : tag)}
+              aria-pressed={active}
+              className={`text-[11px] px-2 py-0.5 rounded-full border transition mh-focus mh-motion-fast ${
+                active
+                  ? 'bg-secondary text-white border-secondary'
+                  : 'bg-white text-tertiary-dark border-grey-200 hover:border-secondary'
+              }`}
+            >
+              {tag}
+              <span className={`ml-1 ${active ? 'text-white/85' : 'text-grey-500'} mh-tnum`}>{n}</span>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ReferencesRecentPanel({
+  allReferences,
+  onOpen,
+}: {
+  allReferences: Reference[];
+  onOpen: (ref: Reference) => void;
+}) {
+  const [recentIds, setRecentIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const ids: string[] = JSON.parse(window.localStorage.getItem(RECENT_LS_KEY) || '[]');
+      setRecentIds(ids);
+    } catch { /* ignore */ }
+    const handler = () => {
+      try {
+        const ids: string[] = JSON.parse(window.localStorage.getItem(RECENT_LS_KEY) || '[]');
+        setRecentIds(ids);
+      } catch { /* ignore */ }
+    };
+    window.addEventListener('mh:references-recent-updated', handler);
+    return () => window.removeEventListener('mh:references-recent-updated', handler);
+  }, []);
+
+  const items = useMemo(() => {
+    const byId = new Map(allReferences.map((r) => [r.id, r]));
+    return recentIds.map((id) => byId.get(id)).filter((r): r is Reference => Boolean(r));
+  }, [recentIds, allReferences]);
+
+  if (items.length === 0) return null;
+
+  return (
+    <div className="bg-white rounded-lg border border-grey-200 p-3">
+      <h3 className="text-[10px] uppercase tracking-wider text-grey-500 font-semibold mb-2">Recent</h3>
+      <ul className="space-y-1">
+        {items.map((r) => (
+          <li key={r.id}>
+            <button
+              type="button"
+              onClick={() => onOpen(r)}
+              className="w-full text-left text-[12px] text-tertiary-dark hover:text-secondary line-clamp-2 mh-focus mh-motion-fast"
+              title={r.title}
+            >
+              {r.title}
+              {r.year ? <span className="text-grey-500 mh-tnum"> · {r.year}</span> : null}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 function BackfillButton({ onDone }: { onDone: () => void }) {
   const [busy, setBusy] = useState(false);
   const [summary, setSummary] = useState<string | null>(null);

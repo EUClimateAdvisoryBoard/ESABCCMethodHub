@@ -38,6 +38,7 @@ import OneEuropeOneMarketFigure from '@/components/OneEuropeOneMarketFigure';
 import NewsSavedSearchesPanel from '@/components/NewsSavedSearchesPanel';
 import NewsLastVisitBanner from '@/components/NewsLastVisitBanner';
 import ProvenanceChip from '@/components/ui/ProvenanceChip';
+import ModeSwitcher from '@/components/ui/ModeSwitcher';
 import type { NewsSavedSearch } from '@/lib/useNewsSavedSearches';
 import SuggestPolicyButton from '@/components/SuggestPolicyButton';
 import { EmptyState, LoadingState, ErrorState } from '@/components/ui/StateView';
@@ -1831,27 +1832,46 @@ export default function NewsFeedPage() {
           </svg>
         </Link>
 
-        {/* View tabs — horizontally scrollable on mobile */}
-        <div className="border-b border-grey-200 mb-4">
-          <div className="h-scroll flex gap-4 items-center -mx-3 sm:mx-0 px-3 sm:px-0">
-            {([
-              ['daily-summary', '24h Summary'],
-              ['feed', 'Feed'],
-              ['live', 'Live News'],
-              ['policy-clock', 'Policy Clock'],
-              ['post', 'Post New'],
-              ['reading-list', 'Reading List'],
-            ] as [ViewMode, string][]).map(([key, label]) => (
-              <button key={key} onClick={() => setView(key)}
-                className={`shrink-0 px-1 pb-2 text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                  view === key
-                    ? 'border-b-2 border-secondary text-secondary'
-                    : 'text-tertiary hover:text-tertiary-dark'
-                }`}>
-                {label}
-              </button>
-            ))}
-            {/* Brussels Bulletin link removed — module parked under beta/. */}
+        {/* Three primary modes — Feed · Briefing · Clock — item 3.1 in the
+            major UI/UX review re-rank. Each mode owns its own job; the
+            secondary surfaces (Live News, Post New, Reading List) stay
+            reachable from the quiet row beneath the mode switcher.
+            Underlying ViewMode ids stay stable so deep-links keep working. */}
+        <div className="border-b border-grey-200 mb-4 pb-2">
+          <div className="flex items-center gap-3 flex-wrap mb-2">
+            <ModeSwitcher
+              ariaLabel="News mode"
+              modes={[
+                { id: 'feed',          label: 'Feed',     subtitle: 'Latest items' },
+                { id: 'daily-summary', label: 'Briefing', subtitle: "Today's TL;DR" },
+                { id: 'policy-clock',  label: 'Clock',    subtitle: 'Policy timeline' },
+              ] as const}
+              value={
+                (view === 'feed' || view === 'daily-summary' || view === 'policy-clock')
+                  ? (view as 'feed' | 'daily-summary' | 'policy-clock')
+                  : 'feed'
+              }
+              onChange={(id) => setView(id as ViewMode)}
+            />
+            <div className="ml-auto flex items-center gap-3 flex-wrap" role="group" aria-label="Secondary surfaces">
+              {([
+                ['live', 'Live News'],
+                ['post', 'Post New'],
+                ['reading-list', 'Reading List'],
+              ] as [ViewMode, string][]).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setView(key)}
+                  className={`text-[12px] font-medium transition-colors whitespace-nowrap ${
+                    view === key
+                      ? 'text-secondary border-b-2 border-secondary'
+                      : 'text-tertiary hover:text-tertiary-dark'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

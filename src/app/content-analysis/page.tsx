@@ -74,12 +74,22 @@ import { Tooltip } from '@/components/ui/Tooltip';
 import ProvenanceChip from '@/components/ui/ProvenanceChip';
 import type { AnalysisMode } from '@/lib/content-analysis/types';
 
-const TAB_LABELS: Array<{ id: 'workbench' | AnalysisMode; label: string; kind: 'primary' | 'beta' }> = [
-  { id: 'workbench',    label: 'Workbench',             kind: 'primary' },
-  { id: 'horizontal',   label: 'Horizontal coherence',  kind: 'primary' },
-  { id: 'vertical',     label: 'Vertical coherence',    kind: 'beta' },
-  { id: 'longitudinal', label: 'Longitudinal',          kind: 'beta' },
-  { id: 'outcomes',     label: 'Outcomes',              kind: 'beta' },
+// Task-verb tabs — item 5.2 in the major UI/UX review re-rank. Each tab is
+// named after the *job* a user is doing (verb), not the analytical concept
+// (noun). Subtitles add a 1-line cue so a new analyst can pick the right
+// surface without opening every tab. Underlying ids stay stable so existing
+// state, code analysis routines and the deep-link contract continue to work.
+const TAB_LABELS: Array<{
+  id: 'workbench' | AnalysisMode;
+  label: string;
+  subtitle: string;
+  kind: 'primary' | 'beta';
+}> = [
+  { id: 'workbench',    label: 'Code',         subtitle: 'Tag segments',          kind: 'primary' },
+  { id: 'horizontal',   label: 'Compare',      subtitle: 'Across policies',       kind: 'primary' },
+  { id: 'vertical',     label: 'Trace',        subtitle: 'Implementation chain',  kind: 'beta'    },
+  { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'beta'    },
+  { id: 'outcomes',     label: 'Summarise',    subtitle: 'Outcomes & narrative',  kind: 'beta'    },
 ];
 
 const DEFAULT_CODE_COLORS = [
@@ -133,6 +143,30 @@ function ContentAnalysisPageInner() {
   //   'new'      — project-creation wizard
   //   'workbench'— the three-panel coding workspace
   const [viewMode, setViewMode] = useState<'landing' | 'new' | 'workbench'>('landing');
+
+  // Surface active locks on the project landing cards (item 5.1 / 5.3 in
+  // the major UI/UX review re-rank). We fetch on every entry into landing
+  // mode so users see who holds what before clicking in. Failures fall
+  // through silently — the cards still render, just without lock chips.
+  const [landingLocks, setLandingLocks] = useState<Record<string, { holderName: string; heartbeatAt: string }>>({});
+  useEffect(() => {
+    if (viewMode !== 'landing') return;
+    let cancelled = false;
+    fetch('/api/content-analysis/locks')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => {
+        if (cancelled || !j?.items) return;
+        const map: Record<string, { holderName: string; heartbeatAt: string }> = {};
+        for (const item of j.items) {
+          if (item?.projectId && item?.holderName && item?.heartbeatAt) {
+            map[item.projectId] = { holderName: item.holderName, heartbeatAt: item.heartbeatAt };
+          }
+        }
+        setLandingLocks(map);
+      })
+      .catch(() => { /* ignore — chips just don't appear */ });
+    return () => { cancelled = true; };
+  }, [viewMode]);
   const [activeTab, setActiveTab] = useState<typeof TAB_LABELS[number]['id']>('workbench');
   const [activeProjectId, setActiveProjectId] = useState<string>('project-master');
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
@@ -1061,6 +1095,7 @@ function ContentAnalysisPageInner() {
           projects={snapshot.projects}
           segmentCounts={projectSegmentCounts}
           documentCounts={projectDocCounts}
+          locksByProjectId={landingLocks}
           onOpen={(id) => {
             setActiveProjectId(id);
             setViewMode('workbench');
@@ -1167,24 +1202,30 @@ function ContentAnalysisPageInner() {
             />
           )}
 
-          <div className="ml-auto flex items-center gap-1 flex-wrap">
+          <div className="ml-auto flex items-stretch gap-1 flex-wrap">
             {TAB_LABELS.map(t => (
               <button
                 key={t.id}
                 type="button"
                 onClick={() => setActiveTab(t.id)}
-                className={`px-3 py-1 rounded-sm text-[11.5px] font-medium border transition ${
+                title={t.subtitle}
+                className={`px-3 py-1 rounded-sm text-left border transition flex flex-col items-start ${
                   activeTab === t.id
                     ? 'bg-[#00928F] text-white border-[#00928F]'
                     : 'bg-white text-[#3D5265] border-[#E6E7E8] hover:border-[#3D5265]'
                 }`}
               >
-                {t.label}
-                {t.kind === 'beta' && (
-                  <span className={`ml-1 text-[9px] ${activeTab === t.id ? 'text-white/90' : 'text-[#E87722]'}`}>
-                    β
-                  </span>
-                )}
+                <span className="text-[11.5px] font-semibold inline-flex items-center">
+                  {t.label}
+                  {t.kind === 'beta' && (
+                    <span className={`ml-1 text-[9px] ${activeTab === t.id ? 'text-white/90' : 'text-[#E87722]'}`}>
+                      β
+                    </span>
+                  )}
+                </span>
+                <span className={`text-[9.5px] leading-tight ${activeTab === t.id ? 'text-white/85' : 'text-[#808285]'}`}>
+                  {t.subtitle}
+                </span>
               </button>
             ))}
           </div>
