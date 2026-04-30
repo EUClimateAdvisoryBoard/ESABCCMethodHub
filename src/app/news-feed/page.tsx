@@ -37,6 +37,7 @@ import EuEtsPositionsFigure from '@/components/EuEtsPositionsFigure';
 import OneEuropeOneMarketFigure from '@/components/OneEuropeOneMarketFigure';
 import NewsSavedSearchesPanel from '@/components/NewsSavedSearchesPanel';
 import NewsLastVisitBanner from '@/components/NewsLastVisitBanner';
+import ProvenanceChip from '@/components/ui/ProvenanceChip';
 import type { NewsSavedSearch } from '@/lib/useNewsSavedSearches';
 import SuggestPolicyButton from '@/components/SuggestPolicyButton';
 import { EmptyState, LoadingState, ErrorState } from '@/components/ui/StateView';
@@ -55,6 +56,23 @@ const SOURCE_OPTIONS: { value: NewsItem['source']; label: string; color: string 
   { value: 'internal', label: 'Internal', color: '#6B7280' },
   { value: 'other', label: 'Other', color: '#9CA3AF' },
 ];
+
+// Source-credibility tiers — item 3.3 in the major UI/UX review re-rank.
+//   primary    = official EU bodies / EUR-Lex
+//   secondary  = international agency releases (IPCC, UNFCCC)
+//   tertiary   = curated news outlets ingested via email / RSS
+//   community  = internal notes and uncategorised sources
+type SourceTier = 'primary' | 'secondary' | 'tertiary' | 'community';
+const SOURCE_TIERS: Record<NewsItem['source'], SourceTier> = {
+  european_commission: 'primary',
+  european_council:    'primary',
+  eea:                 'primary',
+  ipcc:                'secondary',
+  unfccc:              'secondary',
+  email_news_in:       'tertiary',
+  internal:            'community',
+  other:               'community',
+};
 
 const TYPE_OPTIONS: { value: NewsItem['type']; label: string }[] = [
   { value: 'press_release', label: 'Press Release' },
@@ -2774,6 +2792,14 @@ export default function NewsFeedPage() {
                           style={{ backgroundColor: getSourceColor(item.source) }}>
                           {getSourceLabel(item.source)}
                         </span>
+                        {/* Source-credibility tier — item 3.3 in the major
+                            UI/UX review re-rank. Pre-attentive colour band
+                            removes the "is this official?" guesswork. */}
+                        <ProvenanceChip
+                          kind="trust"
+                          tier={SOURCE_TIERS[item.source]}
+                          label={getSourceLabel(item.source)}
+                        />
                         <span className="text-[10px] font-medium text-tertiary bg-grey-100 px-2 py-0.5 rounded capitalize">
                           {item.type.replace('_', ' ')}
                         </span>

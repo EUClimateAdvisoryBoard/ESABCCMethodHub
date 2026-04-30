@@ -29,6 +29,7 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { ReferenceLibrary, Reference, FundingEntry, isEuFunder } from '@/lib/references/types';
 import {
   getLibraries,
@@ -239,12 +240,51 @@ async function deleteRefFromApi(id: string): Promise<{ ok: boolean; error?: stri
 export default function ReferencesPage() {
   const { user, displayName, requireAuth } = useAuth();
   const [libraries, setLibraries] = useState<ReferenceLibrary[]>([]);
-  const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(null);
+
+  // URL-as-state — item 1.1 in the major UI/UX review re-rank. The three
+  // selectors that materially change the page (active library, view mode,
+  // search query) round-trip through the URL so refresh, back/forward,
+  // and shared links restore the same view. We read window.location once
+  // on first render rather than useSearchParams() to avoid having to wrap
+  // the whole page in a <Suspense> boundary just for this.
+  const router = useRouter();
+  const pathname = usePathname();
+  const initialUrl = useMemo(() => {
+    if (typeof window === 'undefined') return { lib: null as string | null, view: 'list' as View, q: '' };
+    const sp = new URLSearchParams(window.location.search);
+    const v = sp.get('view');
+    return {
+      lib: sp.get('lib') || null,
+      view: (v === 'list' || v === 'add' || v === 'edit' || v === 'import') ? (v as View) : ('list' as View),
+      q:   sp.get('q')   || '',
+    };
+  }, []);
+
+  const [selectedLibraryId, setSelectedLibraryId] = useState<string | null>(initialUrl.lib);
   const [references, setReferences] = useState<Reference[]>([]);
-  const [view, setView] = useState<View>('list');
+  const [view, setView] = useState<View>(initialUrl.view);
   const [editingRef, setEditingRef] = useState<Reference | null>(null);
   const [loading, setLoading] = useState(true);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(initialUrl.q);
+
+  // Mirror state → URL whenever the three persisted selectors change.
+  // `replace` keeps the back-button history clean; navigations the user
+  // explicitly took create entries on their own.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    if (selectedLibraryId) params.set('lib', selectedLibraryId);
+    else params.delete('lib');
+    if (view !== 'list') params.set('view', view);
+    else params.delete('view');
+    if (searchQuery) params.set('q', searchQuery);
+    else params.delete('q');
+    const qs = params.toString();
+    const next = qs ? `${pathname}?${qs}` : pathname;
+    if (window.location.pathname + window.location.search !== next) {
+      router.replace(next, { scroll: false });
+    }
+  }, [selectedLibraryId, view, searchQuery, pathname, router]);
   const [usingFallback, setUsingFallback] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
   const [fallbackEditingRef, setFallbackEditingRef] = useState<Reference | null>(null);

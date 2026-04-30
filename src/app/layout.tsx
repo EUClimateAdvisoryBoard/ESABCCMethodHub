@@ -9,6 +9,7 @@ import KeyboardShortcuts from '@/components/KeyboardShortcuts';
 import CommandPalette from '@/components/CommandPalette';
 import ContextDrawer from '@/components/ContextDrawer';
 import ToastHost from '@/components/ui/ToastHost';
+import { TooltipProvider } from '@/components/ui/Tooltip';
 
 // Inter Variable via next/font — loaded with display:swap so we never blank
 // the page while the font is fetching. The Segoe UI / system stack remains
@@ -65,13 +66,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="mh-skip-link">Skip to main content</a>
         <AuthProvider>
           <PreferencesProvider>
-            {children}
-            <MobileBottomNav />
-            <ConsentBanner />
-            <CommandPalette />
-            <ContextDrawer />
-            <KeyboardShortcuts />
-            <ToastHost />
+            {/* Single TooltipProvider at the root so every <Tooltip> /
+                <ProvenanceChip> in the app picks up consistent open/close
+                timings without re-mounting a Radix provider per page. */}
+            <TooltipProvider delayDuration={150} skipDelayDuration={80}>
+              {children}
+              <MobileBottomNav />
+              <ConsentBanner />
+              <CommandPalette />
+              <ContextDrawer />
+              <KeyboardShortcuts />
+              <ToastHost />
+            </TooltipProvider>
           </PreferencesProvider>
         </AuthProvider>
       </body>

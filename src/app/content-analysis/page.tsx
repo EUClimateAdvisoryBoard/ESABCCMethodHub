@@ -71,6 +71,7 @@ import {
 } from '@/lib/content-analysis/store';
 import { useLiveReferences, hasAttachedPdf } from '@/lib/content-analysis/useLiveReferences';
 import { Tooltip } from '@/components/ui/Tooltip';
+import ProvenanceChip from '@/components/ui/ProvenanceChip';
 import type { AnalysisMode } from '@/lib/content-analysis/types';
 
 const TAB_LABELS: Array<{ id: 'workbench' | AnalysisMode; label: string; kind: 'primary' | 'beta' }> = [
@@ -1193,13 +1194,24 @@ function ContentAnalysisPageInner() {
       {/* ── Main workspace ───────────────────────────────────────────────── */}
       {/* Read-only banner — only when another editor holds the lock. The
           per-handler guards already block mutations; this banner is the
-          visual cue so the user doesn't keep clicking dead buttons. */}
+          visual cue so the user doesn't keep clicking dead buttons.
+          Lock-state badge follows the same primitive used for source
+          tiers and lineage so users learn one chip everywhere (item 5.3
+          in the major UI/UX review re-rank). */}
       {lockMode === 'watcher' && (
-        <div className="bg-[#FEF3C7] border-b border-[#FCD34D] px-4 sm:px-6 py-1.5 text-[11.5px] text-[#92400E]">
-          <strong>Read-only.</strong>{' '}
+        <div className="bg-[#FEF3C7] border-b border-[#FCD34D] px-4 sm:px-6 py-1.5 text-[11.5px] text-[#92400E] flex items-center gap-2 flex-wrap">
+          {projectLock.lock && (
+            <ProvenanceChip
+              kind="lock"
+              label={projectLock.lock.holderName || 'Another editor'}
+              holder={projectLock.lock.holderName || 'Another editor'}
+              heartbeatAt={projectLock.lock.heartbeatAt}
+            />
+          )}
+          <strong>Read-only.</strong>
           {projectLock.lock
-            ? <>{projectLock.lock.holderName || 'Another editor'} is editing this project. Click <em>Request edit access</em> in the header to take over.</>
-            : <>You handed off the project lock. Click <em>Resume editing</em> in the header to take it back.</>}
+            ? <span>{projectLock.lock.holderName || 'Another editor'} is editing this project. Click <em>Request edit access</em> in the header to take over.</span>
+            : <span>You handed off the project lock. Click <em>Resume editing</em> in the header to take it back.</span>}
         </div>
       )}
       {activeTab === 'workbench' && (
