@@ -36,6 +36,9 @@ import LinkPreview from '@/components/LinkPreview';
 import EuEtsPositionsFigure from '@/components/EuEtsPositionsFigure';
 import OneEuropeOneMarketFigure from '@/components/OneEuropeOneMarketFigure';
 import NewsSavedSearchesPanel from '@/components/NewsSavedSearchesPanel';
+import NewsLastVisitBanner from '@/components/NewsLastVisitBanner';
+import ProvenanceChip from '@/components/ui/ProvenanceChip';
+import ModeSwitcher from '@/components/ui/ModeSwitcher';
 import type { NewsSavedSearch } from '@/lib/useNewsSavedSearches';
 import SuggestPolicyButton from '@/components/SuggestPolicyButton';
 import { EmptyState, LoadingState, ErrorState } from '@/components/ui/StateView';
@@ -54,6 +57,23 @@ const SOURCE_OPTIONS: { value: NewsItem['source']; label: string; color: string 
   { value: 'internal', label: 'Internal', color: '#6B7280' },
   { value: 'other', label: 'Other', color: '#9CA3AF' },
 ];
+
+// Source-credibility tiers — item 3.3 in the major UI/UX review re-rank.
+//   primary    = official EU bodies / EUR-Lex
+//   secondary  = international agency releases (IPCC, UNFCCC)
+//   tertiary   = curated news outlets ingested via email / RSS
+//   community  = internal notes and uncategorised sources
+type SourceTier = 'primary' | 'secondary' | 'tertiary' | 'community';
+const SOURCE_TIERS: Record<NewsItem['source'], SourceTier> = {
+  european_commission: 'primary',
+  european_council:    'primary',
+  eea:                 'primary',
+  ipcc:                'secondary',
+  unfccc:              'secondary',
+  email_news_in:       'tertiary',
+  internal:            'community',
+  other:               'community',
+};
 
 const TYPE_OPTIONS: { value: NewsItem['type']; label: string }[] = [
   { value: 'press_release', label: 'Press Release' },
@@ -1812,27 +1832,46 @@ export default function NewsFeedPage() {
           </svg>
         </Link>
 
-        {/* View tabs — horizontally scrollable on mobile */}
-        <div className="border-b border-grey-200 mb-4">
-          <div className="h-scroll flex gap-4 items-center -mx-3 sm:mx-0 px-3 sm:px-0">
-            {([
-              ['daily-summary', '24h Summary'],
-              ['feed', 'Feed'],
-              ['live', 'Live News'],
-              ['policy-clock', 'Policy Clock'],
-              ['post', 'Post New'],
-              ['reading-list', 'Reading List'],
-            ] as [ViewMode, string][]).map(([key, label]) => (
-              <button key={key} onClick={() => setView(key)}
-                className={`shrink-0 px-1 pb-2 text-[13px] sm:text-sm font-medium transition-colors whitespace-nowrap ${
-                  view === key
-                    ? 'border-b-2 border-secondary text-secondary'
-                    : 'text-tertiary hover:text-tertiary-dark'
-                }`}>
-                {label}
-              </button>
-            ))}
-            {/* Brussels Bulletin link removed — module parked under beta/. */}
+        {/* Three primary modes — Feed · Briefing · Clock — item 3.1 in the
+            major UI/UX review re-rank. Each mode owns its own job; the
+            secondary surfaces (Live News, Post New, Reading List) stay
+            reachable from the quiet row beneath the mode switcher.
+            Underlying ViewMode ids stay stable so deep-links keep working. */}
+        <div className="border-b border-grey-200 mb-4 pb-2">
+          <div className="flex items-center gap-3 flex-wrap mb-2">
+            <ModeSwitcher
+              ariaLabel="News mode"
+              modes={[
+                { id: 'feed',          label: 'Feed',     subtitle: 'Latest items' },
+                { id: 'daily-summary', label: 'Briefing', subtitle: "Today's TL;DR" },
+                { id: 'policy-clock',  label: 'Clock',    subtitle: 'Policy timeline' },
+              ] as const}
+              value={
+                (view === 'feed' || view === 'daily-summary' || view === 'policy-clock')
+                  ? (view as 'feed' | 'daily-summary' | 'policy-clock')
+                  : 'feed'
+              }
+              onChange={(id) => setView(id as ViewMode)}
+            />
+            <div className="ml-auto flex items-center gap-3 flex-wrap" role="group" aria-label="Secondary surfaces">
+              {([
+                ['live', 'Live News'],
+                ['post', 'Post New'],
+                ['reading-list', 'Reading List'],
+              ] as [ViewMode, string][]).map(([key, label]) => (
+                <button
+                  key={key}
+                  onClick={() => setView(key)}
+                  className={`text-[12px] font-medium transition-colors whitespace-nowrap ${
+                    view === key
+                      ? 'text-secondary border-b-2 border-secondary'
+                      : 'text-tertiary hover:text-tertiary-dark'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -2665,6 +2704,21 @@ export default function NewsFeedPage() {
 
             {/* Feed items */}
             <div className="flex-1 min-w-0 space-y-4">
+              {/* "What's new since you last visited" banner — item 3.2 in
+                  docs/vision/brainstorm-modules-uxui-feasibility-rank.md.
+                  Replaces the always-on blue dot with a single dismissible
+                  strip; click "Open" scrolls to the first new card with a
+                  600 ms ring pulse. */}
+              <NewsLastVisitBanner
+                items={filtered}
+                onOpen={(firstNewId) => {
+                  const el = document.getElementById(`news-item-${firstNewId}`);
+                  if (!el) return;
+                  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  el.classList.add('mh-ring-pulse');
+                  setTimeout(() => el.classList.remove('mh-ring-pulse'), 700);
+                }}
+              />
               {/* Runtime warning when no LLM API key is reaching the
                   serverless functions. The env var is baked into the Vercel
                   build at deploy time, so adding it in the dashboard without
@@ -2740,6 +2794,7 @@ export default function NewsFeedPage() {
 
                 return (
                   <div key={item.id}
+                    id={`news-item-${item.id}`}
                     className={`bg-white rounded-lg border overflow-hidden transition-shadow hover:shadow-md ${
                       item.isDailySpecial
                         ? 'border-l-4 border-l-amber-500 border-amber-200 ring-1 ring-amber-300 bg-gradient-to-br from-amber-50/50 to-orange-50/30'
@@ -2757,6 +2812,14 @@ export default function NewsFeedPage() {
                           style={{ backgroundColor: getSourceColor(item.source) }}>
                           {getSourceLabel(item.source)}
                         </span>
+                        {/* Source-credibility tier — item 3.3 in the major
+                            UI/UX review re-rank. Pre-attentive colour band
+                            removes the "is this official?" guesswork. */}
+                        <ProvenanceChip
+                          kind="trust"
+                          tier={SOURCE_TIERS[item.source]}
+                          label={getSourceLabel(item.source)}
+                        />
                         <span className="text-[10px] font-medium text-tertiary bg-grey-100 px-2 py-0.5 rounded capitalize">
                           {item.type.replace('_', ' ')}
                         </span>
