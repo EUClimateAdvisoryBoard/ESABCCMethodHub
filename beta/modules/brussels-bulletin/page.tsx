@@ -1,36 +1,51 @@
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
+import JSZip from 'jszip';
 import { useAuth } from '@/lib/auth-context';
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Types — must mirror the JSON returned by /api/brussels-bulletin
+// Types — must mirror the JSON shape returned by /api/brussels-bulletin and
+// /api/brussels-bulletin/topics. Layout follows the April 2026 template at
+// public/templates/brussels-bulletin-template.docx:
+//   Heading1 "Key EU policy developments"
+//     Heading2 <topic>          → keyDevelopments[].title
+//       Normal <paragraph>      → keyDevelopments[].paragraphs[]
+//       ListParagraph <bullet>  → keyDevelopments[].bullets[] (optional)
+//   Heading1 "Other developments"
+//     Normal "<DD/M>: <body>"   → otherDevelopments[]
+//   Heading1 "Relevant documents/reports/articles"
+//     Normal <body>             → relevantDocuments[]
 // ──────────────────────────────────────────────────────────────────────────────
 
-interface BulletinSubItem { title: string; body: string }
-interface BulletinMainTopic { title: string; paragraphs: string[] }
+interface BulletinKeyDevelopment {
+  title: string;
+  paragraphs: string[];
+  bullets?: string[];
+}
+interface BulletinOtherDevelopment { date: string; body: string }
+interface BulletinRelevantDocument { body: string }
+
 interface BulletinJson {
   edition: string;
   period: { from: string; to: string };
-  intro: string;
-  keyDevelopments: { main: BulletinMainTopic[]; other: BulletinSubItem[] };
-  importantReports: BulletinSubItem[];
+  keyDevelopments: BulletinKeyDevelopment[];
+  otherDevelopments: BulletinOtherDevelopment[];
+  relevantDocuments: BulletinRelevantDocument[];
   sourcesUsed: number;
   generatedAt: string;
   model: string;
-  fallback?: boolean;
-  fallbackReason?: 'no-api-key' | 'llm-error' | 'parse-error';
-  fallbackDetail?: string;
 }
 
-function fallbackBannerText(b: BulletinJson): string {
-  if (b.fallbackReason === 'llm-error') {
-    return `LLM call failed — falling back to tag-based grouping.${b.fallbackDetail ? ` (${b.fallbackDetail})` : ''}`;
-  }
-  if (b.fallbackReason === 'parse-error') {
-    return `The LLM returned an unparseable response — falling back to tag-based grouping.${b.fallbackDetail ? ` (${b.fallbackDetail})` : ''}`;
-  }
-  return 'Local fallback (no LLM API key set) — text is grouped from tags, not AI-generated.';
+interface TopicSuggestion {
+  title: string;
+  summary: string;
+  itemCount: number;
+}
+
+interface WeightedTopic extends TopicSuggestion {
+  /** Whole-number percentage 0-100. Sum across topics must equal 100. */
+  weight: number;
 }
 
 interface InboundFeedItem {
@@ -66,119 +81,132 @@ interface DisplayItem {
 }
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Word export — emits an HTML document Word can open. Headings use the same
-// label hierarchy as `public/templates/brussels-bulletin-template.docx`:
-//   Title          → "The Brussels Bulletin"
-//   Subtitle       → "Overview of recent EU climate policy-related developments"
-//   Heading 1      → top-level sections (Key EU policy developments / Important reports)
-//   Heading 2      → main topics inside Key EU policy developments
-//   Heading 4      → "Other developments" subtopics + report items
+// Word export — clones the official ESABCC template
+// (`/templates/brussels-bulletin-template.docx`) and replaces only the
+// document body. The output therefore keeps every style, font, header,
+// footer and page setting of the source file untouched, and the body is
+// rebuilt with the template's own paragraph styles:
+//   Title              → "The Brussels Bulletin"
+//   Subtitle           → "Overview of recent EU climate policy-related developments"
+//   Heading1           → top-level sections
+//   Heading2           → topic blocks under "Key EU policy developments"
+//   Normal             → body paragraphs (inc. flat lists in the lower sections)
+//   ListParagraph      → bullets inside Heading2 topics
+//   Strong (run style) → org name above the title
 // ──────────────────────────────────────────────────────────────────────────────
 
-function escapeHtml(s: string): string {
+const TEMPLATE_INTRO_1 =
+  'The overview below contains climate-related news which are considered relevant for the activities of the Advisory Board and are therefore only intended for internal use.';
+const TEMPLATE_INTRO_2 =
+  'When composing this overview, the Secretariat has striven to cover all relevant topics. Nevertheless, the overview below is not exhaustive.';
+
+function escapeXml(s: string): string {
   return s
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;');
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
 }
 
-function buildWordHtml(b: BulletinJson): string {
-  const styles = `
-    body { font-family: 'Segoe UI', Calibri, Arial, sans-serif; color: #1f2937; max-width: 800px; margin: 40px auto; padding: 0 24px; }
-    .header { text-align: center; border-bottom: 3px solid #00665A; padding-bottom: 16px; margin-bottom: 24px; }
-    .header .org { font-size: 11pt; color: #00665A; letter-spacing: 0.5px; }
-    h1.doc-title { font-size: 26pt; color: #00665A; margin: 4px 0; }
-    .doc-subtitle { font-size: 13pt; color: #1f3b4d; margin: 0 0 4px; font-style: italic; }
-    .doc-edition { font-size: 11pt; color: #1f3b4d; margin: 0; }
-    p.intro { font-size: 10.5pt; color: #374151; line-height: 1.5; margin-bottom: 24px; }
-    h2.section { font-size: 16pt; color: #00665A; border-bottom: 2px solid #00665A; padding-bottom: 4px; margin-top: 28px; }
-    h3.topic { font-size: 13pt; color: #1f3b4d; margin-top: 20px; margin-bottom: 6px; }
-    h4.subtopic { font-size: 11pt; color: #00665A; font-weight: bold; margin-top: 14px; margin-bottom: 4px; }
-    p.body { font-size: 10.5pt; color: #1f2937; line-height: 1.5; margin: 4px 0 8px; text-align: justify; }
-    .footer { margin-top: 32px; padding-top: 12px; border-top: 1px solid #e5e7eb; font-size: 9pt; color: #6b7280; text-align: center; }
-  `;
-
-  const main = b.keyDevelopments.main
-    .map(
-      (t) => `
-        <h3 class="topic">${escapeHtml(t.title)}</h3>
-        ${t.paragraphs.map((p) => `<p class="body">${escapeHtml(p)}</p>`).join('')}
-      `
-    )
-    .join('');
-
-  const other = b.keyDevelopments.other.length
-    ? `
-      <h3 class="topic">Other developments</h3>
-      ${b.keyDevelopments.other
-        .map(
-          (s) => `
-            <h4 class="subtopic">${escapeHtml(s.title)}</h4>
-            <p class="body">${escapeHtml(s.body)}</p>
-          `
-        )
-        .join('')}
-    `
-    : '';
-
-  const reports = b.importantReports.length
-    ? `
-      <h2 class="section">Important reports</h2>
-      ${b.importantReports
-        .map(
-          (s) => `
-            <h4 class="subtopic">${escapeHtml(s.title)}</h4>
-            <p class="body">${escapeHtml(s.body)}</p>
-          `
-        )
-        .join('')}
-    `
-    : '';
-
-  return `
-<!DOCTYPE html>
-<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">
-<head>
-  <meta charset="utf-8">
-  <title>The Brussels Bulletin — ${escapeHtml(b.edition)}</title>
-  <style>${styles}</style>
-</head>
-<body>
-  <div class="header">
-    <div class="org">European Scientific Advisory Board on Climate Change</div>
-    <h1 class="doc-title">The Brussels Bulletin</h1>
-    <p class="doc-subtitle">Overview of recent EU climate policy-related developments</p>
-    <p class="doc-edition">${escapeHtml(b.edition)} &mdash; ${escapeHtml(b.period.from)} to ${escapeHtml(b.period.to)}</p>
-  </div>
-
-  <p class="intro">${escapeHtml(b.intro)}</p>
-
-  <h2 class="section">Key EU policy developments</h2>
-  ${main}
-  ${other}
-
-  ${reports}
-
-  <div class="footer">
-    Prepared by the ESABCC Secretariat ${b.fallback ? `(local fallback — ${escapeHtml(b.fallbackReason || 'no-api-key')}${b.fallbackDetail ? `: ${escapeHtml(b.fallbackDetail)}` : ''})` : `using ${escapeHtml(b.model)}`}
-    &middot; Generated ${new Date(b.generatedAt).toLocaleString('en-GB')}
-    &middot; ${b.sourcesUsed} source items
-  </div>
-</body>
-</html>`;
+/** A single paragraph in document.xml, optionally styled and centred. */
+function p(opts: { style?: string; rStyle?: string; center?: boolean; text: string }): string {
+  const pPr: string[] = [];
+  if (opts.style) pPr.push(`<w:pStyle w:val="${opts.style}"/>`);
+  if (opts.center) pPr.push(`<w:jc w:val="center"/>`);
+  const pPrXml = pPr.length ? `<w:pPr>${pPr.join('')}</w:pPr>` : '';
+  const rPr = opts.rStyle ? `<w:rPr><w:rStyle w:val="${opts.rStyle}"/></w:rPr>` : '';
+  return `<w:p>${pPrXml}<w:r>${rPr}<w:t xml:space="preserve">${escapeXml(opts.text)}</w:t></w:r></w:p>`;
 }
 
-function downloadDocx(b: BulletinJson) {
-  const html = buildWordHtml(b);
-  const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+function buildBodyXml(b: BulletinJson, sectPr: string): string {
+  const parts: string[] = [];
+
+  // Header block — same paragraph order/styles as the uploaded template.
+  parts.push(p({ rStyle: 'Strong', center: true, text: 'European Scientific Advisory Board on Climate Change' }));
+  parts.push(p({ style: 'Title', center: true, text: 'The Brussels Bulletin' }));
+  parts.push(p({ style: 'Subtitle', center: true, text: 'Overview of recent EU climate policy-related developments' }));
+  parts.push(p({ center: true, text: b.edition }));
+
+  // Boilerplate intro — verbatim copy of the two paragraphs in the template.
+  parts.push(p({ text: TEMPLATE_INTRO_1 }));
+  parts.push(p({ text: TEMPLATE_INTRO_2 }));
+
+  // Section 1 — Key EU policy developments
+  parts.push(p({ style: 'Heading1', text: 'Key EU policy developments' }));
+  for (const topic of b.keyDevelopments) {
+    parts.push(p({ style: 'Heading2', text: topic.title }));
+    for (const para of topic.paragraphs) {
+      parts.push(p({ text: para }));
+    }
+    if (topic.bullets && topic.bullets.length) {
+      for (const bullet of topic.bullets) {
+        parts.push(p({ style: 'ListParagraph', text: bullet }));
+      }
+    }
+  }
+
+  // Section 2 — Other developments (flat list, "DD/M: <body>")
+  if (b.otherDevelopments.length) {
+    parts.push(p({ style: 'Heading1', text: 'Other developments' }));
+    for (const item of b.otherDevelopments) {
+      const text = item.date ? `${item.date}: ${item.body}` : item.body;
+      parts.push(p({ text }));
+    }
+  }
+
+  // Section 3 — Relevant documents/reports/articles (flat list)
+  if (b.relevantDocuments.length) {
+    parts.push(p({ style: 'Heading1', text: 'Relevant documents/reports/articles' }));
+    for (const doc of b.relevantDocuments) {
+      parts.push(p({ text: doc.body }));
+    }
+  }
+
+  return parts.join('') + sectPr;
+}
+
+async function downloadDocx(b: BulletinJson): Promise<void> {
+  const res = await fetch('/templates/brussels-bulletin-template.docx');
+  if (!res.ok) throw new Error(`Could not load template (${res.status})`);
+  const tplBuf = await res.arrayBuffer();
+
+  const zip = await JSZip.loadAsync(tplBuf);
+  const docFile = zip.file('word/document.xml');
+  if (!docFile) throw new Error('Template is missing word/document.xml');
+  const docXml = await docFile.async('string');
+
+  // Preserve the original sectPr (page size, margins, header/footer refs).
+  const sectStart = docXml.lastIndexOf('<w:sectPr');
+  const sectEnd = docXml.indexOf('</w:sectPr>', sectStart);
+  if (sectStart < 0 || sectEnd < 0) throw new Error('Template sectPr not found');
+  const sectPr = docXml.substring(sectStart, sectEnd + '</w:sectPr>'.length);
+
+  // Replace only the body contents — keep the <w:body> opening tag (and the
+  // surrounding <w:document> with all its xmlns declarations) and the
+  // closing </w:body></w:document> from the original file.
+  const bodyOpen = docXml.indexOf('<w:body>') + '<w:body>'.length;
+  const bodyClose = docXml.lastIndexOf('</w:body>');
+  const newDocXml =
+    docXml.substring(0, bodyOpen) +
+    buildBodyXml(b, sectPr) +
+    docXml.substring(bodyClose);
+
+  zip.file('word/document.xml', newDocXml);
+  const blob = await zip.generateAsync({
+    type: 'blob',
+    mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  });
+
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `Brussels_Bulletin_${b.period.from}_${b.period.to}.doc`;
+  a.download = `Brussels_Bulletin_${b.period.from}_${b.period.to}.docx`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
 }
+
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Page
@@ -194,50 +222,63 @@ function defaultPeriod(): { from: string; to: string } {
   };
 }
 
+
+type WizardStep = 1 | 2 | 3;
+
+interface HistoryEntry {
+  date: string;
+  title: string;
+  model: string;
+}
+
 export default function BrusselsBulletinPage() {
   const init = defaultPeriod();
   const { session } = useAuth();
+
+  // Wizard state
+  const [step, setStep] = useState<WizardStep>(1);
   const [dateFrom, setDateFrom] = useState(init.from);
   const [dateTo, setDateTo] = useState(init.to);
+
+  // Step 1 — topic discovery
+  const [analyzing, setAnalyzing] = useState(false);
+  const [analyzeError, setAnalyzeError] = useState('');
+  const [topics, setTopics] = useState<WeightedTopic[]>([]);
+
+  // Step 3 — bulletin generation
   const [generating, setGenerating] = useState(false);
+  const [generateError, setGenerateError] = useState('');
   const [bulletin, setBulletin] = useState<BulletinJson | null>(null);
-  const [error, setError] = useState<string>('');
+  const [exportError, setExportError] = useState('');
+
+  // Source items in window (read-only context for steps 1/2)
   const [inbound, setInbound] = useState<InboundFeedItem[]>([]);
   const [customPosts, setCustomPosts] = useState<CustomFeedItem[]>([]);
-  const [history, setHistory] = useState<{ date: string; title: string; model: string }[]>([]);
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
 
-  // Load history once on mount
   useEffect(() => {
     try {
       const stored = localStorage.getItem('bb-history');
       if (stored) setHistory(JSON.parse(stored));
-    } catch {
-      /* ignore */
-    }
+    } catch { /* ignore */ }
   }, []);
 
-  // Pull current inbound items so the user can see what feeds the bulletin
   const refreshInbound = useCallback(async () => {
     try {
       const res = await fetch('/api/inbound-email?items=1');
       if (!res.ok) return;
       const data = (await res.json()) as { items?: InboundFeedItem[] };
       setInbound(data.items || []);
-    } catch {
-      /* ignore */
-    }
+    } catch { /* ignore */ }
   }, []);
 
-  // Pull secretariat feed posts
   const refreshCustomPosts = useCallback(async () => {
     try {
       const res = await fetch('/api/custom-posts');
       if (!res.ok) return;
       const data = (await res.json()) as { items?: CustomFeedItem[] };
       setCustomPosts(data.items || []);
-    } catch {
-      /* ignore */
-    }
+    } catch { /* ignore */ }
   }, []);
 
   useEffect(() => {
@@ -279,12 +320,14 @@ export default function BrusselsBulletinPage() {
     (a, b) => b.date.localeCompare(a.date),
   );
 
-  const generate = useCallback(async () => {
-    setGenerating(true);
-    setError('');
+  // ── Step 1: ask the LLM for up to 10 overarching topics ──────────────────
+  const analyze = useCallback(async () => {
+    setAnalyzing(true);
+    setAnalyzeError('');
+    setTopics([]);
     setBulletin(null);
     try {
-      const res = await fetch('/api/brussels-bulletin', {
+      const res = await fetch('/api/brussels-bulletin/topics', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -292,39 +335,129 @@ export default function BrusselsBulletinPage() {
         },
         body: JSON.stringify({ from: dateFrom, to: dateTo }),
       });
+      const data = (await res.json().catch(() => ({}))) as {
+        topics?: TopicSuggestion[]; error?: string; message?: string;
+      };
       if (!res.ok) {
-        const data = (await res.json().catch(() => ({}))) as { message?: string; error?: string };
         throw new Error(data.message || data.error || `HTTP ${res.status}`);
       }
-      const data = (await res.json()) as { bulletin: BulletinJson };
+      const list = data.topics || [];
+      if (list.length === 0) throw new Error('No topics returned by the LLM.');
+      // Default each weight to a flat share that sums to exactly 100.
+      const base = Math.floor(100 / list.length);
+      const remainder = 100 - base * list.length;
+      const weighted: WeightedTopic[] = list.map((t, i) => ({
+        ...t,
+        weight: base + (i < remainder ? 1 : 0),
+      }));
+      setTopics(weighted);
+      setStep(2);
+    } catch (err) {
+      setAnalyzeError(err instanceof Error ? err.message : 'Analysis failed');
+    } finally {
+      setAnalyzing(false);
+    }
+  }, [dateFrom, dateTo, session]);
+
+  // ── Step 2: weight helpers ───────────────────────────────────────────────
+  const totalWeight = topics.reduce((s, t) => s + (Number.isFinite(t.weight) ? t.weight : 0), 0);
+  const weightsValid = Math.round(totalWeight) === 100;
+
+  const setTopicWeight = (i: number, val: number) => {
+    setTopics((prev) =>
+      prev.map((t, idx) => (idx === i ? { ...t, weight: Math.max(0, Math.min(100, Math.round(val))) } : t)),
+    );
+  };
+
+  const normalizeWeights = () => {
+    setTopics((prev) => {
+      const sum = prev.reduce((s, t) => s + (t.weight || 0), 0);
+      if (sum <= 0) {
+        const base = Math.floor(100 / prev.length);
+        const remainder = 100 - base * prev.length;
+        return prev.map((t, i) => ({ ...t, weight: base + (i < remainder ? 1 : 0) }));
+      }
+      const scaled = prev.map((t) => ({ ...t, weight: (t.weight / sum) * 100 }));
+      const rounded = scaled.map((t) => ({ ...t, weight: Math.round(t.weight) }));
+      const diff = 100 - rounded.reduce((s, t) => s + t.weight, 0);
+      if (diff !== 0) {
+        // Distribute the rounding remainder onto the largest topic(s).
+        const idx = rounded
+          .map((t, i) => ({ i, w: t.weight }))
+          .sort((a, b) => b.w - a.w)[0].i;
+        rounded[idx].weight += diff;
+      }
+      return rounded;
+    });
+  };
+
+  // ── Step 3: generate the bulletin from weighted topics ───────────────────
+  const generate = useCallback(async () => {
+    setGenerating(true);
+    setGenerateError('');
+    setBulletin(null);
+    try {
+      const payload = {
+        from: dateFrom,
+        to: dateTo,
+        topics: topics
+          .filter((t) => t.weight > 0)
+          .map((t) => ({ title: t.title, weight: t.weight })),
+      };
+      const res = await fetch('/api/brussels-bulletin', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          ...(session ? { 'Authorization': `Bearer ${session.access_token}` } : {}),
+        },
+        body: JSON.stringify(payload),
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        bulletin?: BulletinJson; error?: string; message?: string;
+      };
+      if (!res.ok || !data.bulletin) {
+        throw new Error(data.message || data.error || `HTTP ${res.status}`);
+      }
       setBulletin(data.bulletin);
-      const entry = {
+      setStep(3);
+      const entry: HistoryEntry = {
         date: new Date().toISOString().split('T')[0],
         title: `Brussels Bulletin ${dateFrom} → ${dateTo}`,
-        model: data.bulletin.fallback ? 'fallback' : data.bulletin.model,
+        model: data.bulletin.model,
       };
       setHistory((prev) => {
         const next = [entry, ...prev].slice(0, 20);
-        try {
-          localStorage.setItem('bb-history', JSON.stringify(next));
-        } catch {
-          /* ignore */
-        }
+        try { localStorage.setItem('bb-history', JSON.stringify(next)); } catch { /* ignore */ }
         return next;
       });
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Generation failed');
+      setGenerateError(err instanceof Error ? err.message : 'Generation failed');
     } finally {
       setGenerating(false);
     }
-  }, [dateFrom, dateTo]);
+  }, [dateFrom, dateTo, topics, session]);
+
+  const onDownloadDocx = useCallback(async () => {
+    if (!bulletin) return;
+    setExportError('');
+    try {
+      await downloadDocx(bulletin);
+    } catch (err) {
+      setExportError(err instanceof Error ? err.message : 'Export failed');
+    }
+  }, [bulletin]);
+
+  const consentBlocked = (analyzeError + generateError).includes('AI generation is opt-in');
 
   return (
     <div className="min-h-screen bg-grey-50">
       {/* Header */}
       <div className="bg-gradient-to-r from-[#007B6C] to-[#00665A]">
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 py-8">
-          <Link href="/news-feed" className="inline-flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition mb-3">
+          <Link
+            href="/news-feed"
+            className="inline-flex items-center gap-1.5 text-xs text-white/70 hover:text-white transition mb-3"
+          >
             <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7" />
             </svg>
@@ -332,20 +465,69 @@ export default function BrusselsBulletinPage() {
           </Link>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">Brussels Bulletin Generator</h1>
           <p className="text-sm text-white/60 max-w-2xl">
-            Generate the periodic Brussels Bulletin from forwarded-email items and secretariat posts in the news feed. Pick a period, click
-            generate, and Claude assembles the bulletin in the same structure as the official ESABCC template.
+            Three-step wizard. (1) Pick a period and let Claude identify up to 10 overarching
+            topics. (2) Allocate a weight to each topic — those weights set the share of the
+            bulletin devoted to it. (3) Generate the bulletin and download it as a Word file
+            using the official ESABCC template.
           </p>
         </div>
       </div>
 
       <div className="max-w-[1000px] mx-auto px-4 sm:px-6 py-6 space-y-6">
-        {/* ── Reference template ─────────────────────────────────── */}
+        {/* Step indicator */}
+        <div className="flex items-center gap-2 text-xs">
+          {([1, 2, 3] as WizardStep[]).map((n, i) => {
+            const active = step === n;
+            const done = step > n;
+            const label = n === 1 ? 'Period & topics' : n === 2 ? 'Weights' : 'Generate';
+            return (
+              <div key={n} className="flex items-center gap-2">
+                <button
+                  onClick={() => {
+                    if (n === 1) setStep(1);
+                    if (n === 2 && topics.length > 0) setStep(2);
+                    if (n === 3 && bulletin) setStep(3);
+                  }}
+                  className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full font-medium transition ${
+                    active
+                      ? 'bg-secondary text-white'
+                      : done
+                      ? 'bg-secondary/10 text-secondary hover:bg-secondary/20'
+                      : 'bg-grey-100 text-tertiary'
+                  }`}
+                >
+                  <span
+                    className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] ${
+                      active ? 'bg-white/20' : done ? 'bg-secondary text-white' : 'bg-white text-tertiary'
+                    }`}
+                  >
+                    {n}
+                  </span>
+                  {label}
+                </button>
+                {i < 2 && <span className="text-tertiary/40">›</span>}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Consent-blocked banner — short-circuits the wizard with a link */}
+        {consentBlocked && (
+          <div className="bg-amber-50 border border-amber-200 text-amber-800 text-sm rounded-lg p-4">
+            <strong>AI generation is opt-in.</strong> Open{' '}
+            <Link href="/profile" className="underline font-medium">
+              your profile → Your data → AI summarisation consent
+            </Link>{' '}
+            to enable it (GDPR Art. 6(1)(a)).
+          </div>
+        )}
+
+        {/* Reference template */}
         <section className="bg-white rounded-lg border border-grey-200 p-5">
           <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-2">Reference Template</h2>
           <p className="text-xs text-tertiary mb-3">
-            The export below mirrors the layout of the official ESABCC template (October 2025 edition):
-            title &middot; subtitle &middot; intro &middot; <em>Key EU policy developments</em> with main topics
-            and <em>Other developments</em> subtopics &middot; <em>Important reports</em>.
+            The Word export below is built by cloning the official ESABCC template and replacing
+            its body, so all styles, fonts, headers and page setup match the template exactly.
           </p>
           <a
             href="/templates/brussels-bulletin-template.docx"
@@ -359,209 +541,304 @@ export default function BrusselsBulletinPage() {
           </a>
         </section>
 
-        {/* ── Configuration ──────────────────────────────────────── */}
-        <section className="bg-white rounded-lg border border-grey-200 p-5 space-y-4">
-          <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider">Period</h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label className="text-xs font-medium text-tertiary-dark block mb-1">Date From</label>
-              <input
-                type="date"
-                value={dateFrom}
-                onChange={(e) => setDateFrom(e.target.value)}
-                className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              />
-            </div>
-            <div>
-              <label className="text-xs font-medium text-tertiary-dark block mb-1">Date To</label>
-              <input
-                type="date"
-                value={dateTo}
-                onChange={(e) => setDateTo(e.target.value)}
-                className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-              />
-            </div>
-          </div>
-
-          <div className="text-xs text-tertiary">
-            <span className="font-medium text-tertiary-dark">{itemsInPeriod.length}</span>{' '}
-            feed item{itemsInPeriod.length !== 1 ? 's' : ''} in this window
-            {(inboundInPeriod.length > 0 || postsInPeriod.length > 0) && (
-              <span className="text-tertiary/70">
-                {' '}({inboundInPeriod.length} email{inboundInPeriod.length !== 1 ? 's' : ''}, {postsInPeriod.length} secretariat post{postsInPeriod.length !== 1 ? 's' : ''})
-              </span>
-            )}
-            {' '}(out of {inbound.length + customPosts.length} total).
-            {inbound.length === 0 && customPosts.length === 0 && (
-              <span className="block mt-1 text-amber-600">
-                No feed items yet — forward newsletters or post items to the News Feed first.
-              </span>
-            )}
-          </div>
-        </section>
-
-        {/* ── Sample of input items ──────────────────────────────── */}
-        {itemsInPeriod.length > 0 && (
-          <section className="bg-white rounded-lg border border-grey-200 p-5">
-            <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-3">Source items used</h2>
-            <ul className="space-y-1.5 text-xs text-tertiary max-h-48 overflow-y-auto pr-2">
-              {itemsInPeriod.slice(0, 30).map((it) => (
-                <li key={it.id} className="flex items-center gap-2">
-                  <span className="text-tertiary/60 shrink-0">{it.date}</span>
-                  <span
-                    className={`shrink-0 px-1 py-0.5 rounded text-[10px] font-medium ${
-                      it.kind === 'post'
-                        ? 'bg-teal-50 text-teal-700'
-                        : 'bg-grey-100 text-tertiary/70'
-                    }`}
-                  >
-                    {it.kind === 'post' ? 'post' : 'email'}
+        {/* ── Step 1 — Period & topic discovery ───────────────────────── */}
+        {step === 1 && (
+          <>
+            <section className="bg-white rounded-lg border border-grey-200 p-5 space-y-4">
+              <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider">
+                Step 1 · Period
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="text-xs font-medium text-tertiary-dark block mb-1">Date From</label>
+                  <input
+                    type="date"
+                    value={dateFrom}
+                    onChange={(e) => setDateFrom(e.target.value)}
+                    className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-tertiary-dark block mb-1">Date To</label>
+                  <input
+                    type="date"
+                    value={dateTo}
+                    onChange={(e) => setDateTo(e.target.value)}
+                    className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                  />
+                </div>
+              </div>
+              <div className="text-xs text-tertiary">
+                <span className="font-medium text-tertiary-dark">{itemsInPeriod.length}</span>{' '}
+                feed item{itemsInPeriod.length !== 1 ? 's' : ''} in this window
+                {(inboundInPeriod.length > 0 || postsInPeriod.length > 0) && (
+                  <span className="text-tertiary/70">
+                    {' '}({inboundInPeriod.length} email{inboundInPeriod.length !== 1 ? 's' : ''},{' '}
+                    {postsInPeriod.length} secretariat post{postsInPeriod.length !== 1 ? 's' : ''})
                   </span>
-                  <span className="text-tertiary-dark truncate">{it.title}</span>
-                </li>
-              ))}
-              {itemsInPeriod.length > 30 && (
-                <li className="text-tertiary/60 italic">… and {itemsInPeriod.length - 30} more</li>
-              )}
-            </ul>
-          </section>
-        )}
+                )}
+                {inbound.length === 0 && customPosts.length === 0 && (
+                  <span className="block mt-1 text-amber-600">
+                    No feed items yet — forward newsletters or post items to the News Feed first.
+                  </span>
+                )}
+              </div>
+            </section>
 
-        {/* ── Generate ───────────────────────────────────────────── */}
-        <div className="flex items-center gap-4">
-          <button
-            onClick={generate}
-            disabled={generating || itemsInPeriod.length === 0}
-            className="px-5 py-2.5 bg-secondary text-white font-medium rounded hover:bg-secondary-dark disabled:opacity-50 transition text-sm"
-          >
-            {generating ? 'Generating bulletin…' : 'Generate Brussels Bulletin'}
-          </button>
-          <div className="text-xs text-tertiary">
-            <p>
-              Uses the configured LLM —{' '}
-              <code className="bg-grey-100 px-1 rounded">GEMINI_API_KEY</code>,{' '}
-              <code className="bg-grey-100 px-1 rounded">ANTHROPIC_API_KEY</code>, or{' '}
-              <code className="bg-grey-100 px-1 rounded">OPENAI_API_KEY</code> (Gemini preferred, free tier).
-            </p>
-            <p className="text-[10px]">Falls back to local tag-based grouping otherwise.</p>
-          </div>
-        </div>
+            {itemsInPeriod.length > 0 && (
+              <section className="bg-white rounded-lg border border-grey-200 p-5">
+                <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-3">Source items used</h2>
+                <ul className="space-y-1.5 text-xs text-tertiary max-h-48 overflow-y-auto pr-2">
+                  {itemsInPeriod.slice(0, 30).map((it) => (
+                    <li key={it.id} className="flex items-center gap-2">
+                      <span className="text-tertiary/60 shrink-0">{it.date}</span>
+                      <span
+                        className={`shrink-0 px-1 py-0.5 rounded text-[10px] font-medium ${
+                          it.kind === 'post' ? 'bg-teal-50 text-teal-700' : 'bg-grey-100 text-tertiary/70'
+                        }`}
+                      >
+                        {it.kind}
+                      </span>
+                      <span className="text-tertiary-dark truncate">{it.title}</span>
+                    </li>
+                  ))}
+                  {itemsInPeriod.length > 30 && (
+                    <li className="text-tertiary/60 italic">… and {itemsInPeriod.length - 30} more</li>
+                  )}
+                </ul>
+              </section>
+            )}
 
-        {error && (
-          <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4">
-            <strong>Could not generate bulletin:</strong> {error}
-          </div>
-        )}
-
-        {generating && (
-          <div className="bg-surface-teal rounded-lg p-5 text-center">
-            <div className="animate-spin w-8 h-8 border-3 border-secondary border-t-transparent rounded-full mx-auto mb-3" />
-            <p className="text-sm text-tertiary-dark font-medium">Generating Brussels Bulletin…</p>
-            <p className="text-xs text-tertiary mt-1">
-              Sending {itemsInPeriod.length} items to the LLM
-            </p>
-          </div>
-        )}
-
-        {/* ── Preview (matches template structure) ────────────────── */}
-        {bulletin && (
-          <section className="bg-white rounded-lg border border-grey-200 overflow-hidden">
-            <div className="bg-[#00665A] p-6 text-center">
-              <p className="text-white/70 text-[11px] uppercase tracking-wider">European Scientific Advisory Board on Climate Change</p>
-              <h2 className="text-2xl font-bold text-white mt-1">The Brussels Bulletin</h2>
-              <p className="text-white/80 text-xs italic mt-1">Overview of recent EU climate policy-related developments</p>
-              <p className="text-white/60 text-xs mt-1">
-                {bulletin.edition} &middot; {bulletin.period.from} → {bulletin.period.to}
+            <div className="flex items-center gap-4">
+              <button
+                onClick={analyze}
+                disabled={analyzing || itemsInPeriod.length === 0}
+                className="px-5 py-2.5 bg-secondary text-white font-medium rounded hover:bg-secondary-dark disabled:opacity-50 transition text-sm"
+              >
+                {analyzing ? 'Analysing topics…' : 'Analyse topics →'}
+              </button>
+              <p className="text-xs text-tertiary">
+                Claude will read every item in the window and propose up to 10 overarching topics.
               </p>
-              {bulletin.fallback && (
-                <p className="text-amber-200 text-[11px] mt-2">
-                  {fallbackBannerText(bulletin)}
+            </div>
+
+            {analyzeError && !consentBlocked && (
+              <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4">
+                <strong>Could not analyse topics:</strong> {analyzeError}
+              </div>
+            )}
+          </>
+        )}
+
+        {/* ── Step 2 — Topic weights ──────────────────────────────────── */}
+        {step === 2 && (
+          <>
+            <section className="bg-white rounded-lg border border-grey-200 p-5 space-y-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider">
+                    Step 2 · Allocate weights
+                  </h2>
+                  <p className="text-xs text-tertiary mt-1">
+                    Each weight is the percentage of the bulletin devoted to that topic. Weights
+                    must sum to <strong>100%</strong>. A topic at 0% will be dropped.
+                  </p>
+                </div>
+                <div className="text-right shrink-0">
+                  <div className={`text-lg font-bold ${weightsValid ? 'text-secondary' : 'text-red-600'}`}>
+                    {Math.round(totalWeight)}%
+                  </div>
+                  <button
+                    onClick={normalizeWeights}
+                    className="text-[11px] text-tertiary hover:text-tertiary-dark underline"
+                  >
+                    Normalise to 100%
+                  </button>
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                {topics.map((t, i) => (
+                  <div key={i} className="border border-grey-100 rounded p-3 flex items-start gap-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-1">
+                        <p className="text-sm font-semibold text-tertiary-dark truncate">{t.title}</p>
+                        <span className="text-[10px] text-tertiary/70 shrink-0">
+                          {t.itemCount} item{t.itemCount !== 1 ? 's' : ''}
+                        </span>
+                      </div>
+                      {t.summary && <p className="text-xs text-tertiary leading-relaxed">{t.summary}</p>}
+                    </div>
+                    <div className="flex flex-col items-end gap-1 shrink-0">
+                      <div className="flex items-center gap-1">
+                        <input
+                          type="number"
+                          min={0}
+                          max={100}
+                          value={t.weight}
+                          onChange={(e) => setTopicWeight(i, parseInt(e.target.value || '0', 10))}
+                          className="w-16 border border-grey-200 rounded px-2 py-1 text-sm text-right focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        />
+                        <span className="text-xs text-tertiary">%</span>
+                      </div>
+                      <input
+                        type="range"
+                        min={0}
+                        max={100}
+                        value={t.weight}
+                        onChange={(e) => setTopicWeight(i, parseInt(e.target.value, 10))}
+                        className="w-32"
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => setStep(1)}
+                className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
+              >
+                ← Back
+              </button>
+              <button
+                onClick={generate}
+                disabled={generating || !weightsValid}
+                className="px-5 py-2.5 bg-secondary text-white font-medium rounded hover:bg-secondary-dark disabled:opacity-50 transition text-sm"
+              >
+                {generating ? 'Generating bulletin…' : 'Generate bulletin →'}
+              </button>
+              {!weightsValid && (
+                <p className="text-xs text-red-600">
+                  Weights currently sum to {Math.round(totalWeight)}%. Adjust or click "Normalise to 100%".
                 </p>
               )}
             </div>
 
-            <div className="p-6 space-y-6">
-              <p className="text-sm text-tertiary leading-relaxed italic border-l-2 border-grey-200 pl-4">{bulletin.intro}</p>
+            {generateError && !consentBlocked && (
+              <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4">
+                <strong>Could not generate bulletin:</strong> {generateError}
+              </div>
+            )}
+          </>
+        )}
 
-              <div>
-                <h3 className="text-sm font-bold text-primary uppercase tracking-wider border-b border-grey-200 pb-1 mb-3">
-                  Key EU policy developments
-                </h3>
-                {bulletin.keyDevelopments.main.map((t, i) => (
-                  <div key={i} className="mb-5">
-                    <h4 className="text-base font-semibold text-tertiary-dark mb-2">{t.title}</h4>
-                    {t.paragraphs.map((p, j) => (
-                      <p key={j} className="text-sm text-tertiary leading-relaxed mb-2">
-                        {p}
-                      </p>
-                    ))}
-                  </div>
-                ))}
+        {/* ── Step 3 — Preview & export ───────────────────────────────── */}
+        {step === 3 && bulletin && (
+          <>
+            <section className="bg-white rounded-lg border border-grey-200 overflow-hidden">
+              <div className="bg-[#00665A] p-6 text-center">
+                <p className="text-white/70 text-[11px] uppercase tracking-wider">European Scientific Advisory Board on Climate Change</p>
+                <h2 className="text-2xl font-bold text-white mt-1">The Brussels Bulletin</h2>
+                <p className="text-white/80 text-xs italic mt-1">Overview of recent EU climate policy-related developments</p>
+                <p className="text-white/60 text-xs mt-1">
+                  {bulletin.edition} &middot; {bulletin.period.from} → {bulletin.period.to}
+                </p>
+              </div>
 
-                {bulletin.keyDevelopments.other.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="text-sm font-semibold text-tertiary-dark mb-2">Other developments</h4>
-                    {bulletin.keyDevelopments.other.map((s, i) => (
-                      <div key={i} className="mb-3">
-                        <p className="text-sm font-semibold text-secondary mb-0.5">{s.title}</p>
-                        <p className="text-sm text-tertiary leading-relaxed">{s.body}</p>
+              <div className="p-6 space-y-6">
+                <div className="text-xs text-tertiary leading-relaxed border-l-2 border-grey-200 pl-4 space-y-2">
+                  <p>{TEMPLATE_INTRO_1}</p>
+                  <p>{TEMPLATE_INTRO_2}</p>
+                </div>
+
+                {bulletin.keyDevelopments.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-bold text-primary uppercase tracking-wider border-b border-grey-200 pb-1 mb-3">
+                      Key EU policy developments
+                    </h3>
+                    {bulletin.keyDevelopments.map((t, i) => (
+                      <div key={i} className="mb-5">
+                        <h4 className="text-base font-semibold text-tertiary-dark mb-2">{t.title}</h4>
+                        {t.paragraphs.map((para, j) => (
+                          <p key={j} className="text-sm text-tertiary leading-relaxed mb-2">{para}</p>
+                        ))}
+                        {t.bullets && t.bullets.length > 0 && (
+                          <ul className="list-disc pl-5 text-sm text-tertiary space-y-1">
+                            {t.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                          </ul>
+                        )}
                       </div>
                     ))}
                   </div>
                 )}
-              </div>
 
-              {bulletin.importantReports.length > 0 && (
-                <div>
-                  <h3 className="text-sm font-bold text-primary uppercase tracking-wider border-b border-grey-200 pb-1 mb-3">
-                    Important reports
-                  </h3>
-                  {bulletin.importantReports.map((s, i) => (
-                    <div key={i} className="mb-3">
-                      <p className="text-sm font-semibold text-secondary mb-0.5">{s.title}</p>
-                      <p className="text-sm text-tertiary leading-relaxed">{s.body}</p>
+                {bulletin.otherDevelopments.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-bold text-primary uppercase tracking-wider border-b border-grey-200 pb-1 mb-3">
+                      Other developments
+                    </h3>
+                    <div className="space-y-2">
+                      {bulletin.otherDevelopments.map((o, i) => (
+                        <p key={i} className="text-sm text-tertiary leading-relaxed">
+                          {o.date && <span className="font-semibold text-tertiary-dark">{o.date}: </span>}
+                          {o.body}
+                        </p>
+                      ))}
                     </div>
-                  ))}
+                  </div>
+                )}
+
+                {bulletin.relevantDocuments.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-bold text-primary uppercase tracking-wider border-b border-grey-200 pb-1 mb-3">
+                      Relevant documents/reports/articles
+                    </h3>
+                    <div className="space-y-2">
+                      {bulletin.relevantDocuments.map((d, i) => (
+                        <p key={i} className="text-sm text-tertiary leading-relaxed">{d.body}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="border-t border-grey-200 pt-4 text-xs text-grey-400 text-center">
+                  Prepared by ESABCC Secretariat &middot; {bulletin.model} &middot; {bulletin.sourcesUsed} source items
                 </div>
-              )}
-
-              <div className="border-t border-grey-200 pt-4 text-xs text-grey-400 text-center">
-                Prepared by ESABCC Secretariat &middot;{' '}
-                {bulletin.fallback ? 'local fallback' : bulletin.model} &middot; {bulletin.sourcesUsed} source items
               </div>
+            </section>
+
+            <div className="flex flex-wrap gap-3">
+              <button
+                onClick={onDownloadDocx}
+                className="px-4 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-primary-dark transition"
+              >
+                Download as Word (.docx)
+              </button>
+              <button
+                onClick={() => {
+                  navigator.clipboard.writeText(JSON.stringify(bulletin, null, 2));
+                  alert('Bulletin JSON copied to clipboard.');
+                }}
+                className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
+              >
+                Copy JSON
+              </button>
+              <button
+                onClick={() => setStep(2)}
+                className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
+              >
+                ← Adjust weights
+              </button>
+              <button
+                onClick={generate}
+                disabled={generating}
+                className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition disabled:opacity-50"
+              >
+                {generating ? 'Regenerating…' : 'Regenerate'}
+              </button>
             </div>
-          </section>
+
+            {exportError && (
+              <div className="bg-red-50 border border-red-200 text-red-700 text-sm rounded-lg p-4">
+                <strong>Could not export:</strong> {exportError}
+              </div>
+            )}
+          </>
         )}
 
-        {/* ── Export ──────────────────────────────────────────────── */}
-        {bulletin && (
-          <div className="flex flex-wrap gap-3">
-            <button
-              onClick={() => downloadDocx(bulletin)}
-              className="px-4 py-2 bg-primary text-white text-sm font-medium rounded hover:bg-primary-dark transition"
-            >
-              Download as Word (.doc)
-            </button>
-            <button
-              onClick={() => {
-                navigator.clipboard.writeText(JSON.stringify(bulletin, null, 2));
-                alert('Bulletin JSON copied to clipboard.');
-              }}
-              className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
-            >
-              Copy JSON
-            </button>
-            <button
-              onClick={generate}
-              className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
-            >
-              Regenerate
-            </button>
-          </div>
-        )}
-
-        {/* ── History ────────────────────────────────────────────── */}
+        {/* History */}
         {history.length > 0 && (
           <section className="bg-white rounded-lg border border-grey-200 p-5">
             <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-3">Generation History</h2>
@@ -579,15 +856,14 @@ export default function BrusselsBulletinPage() {
           </section>
         )}
 
-        {/* ── API Key Notice ─────────────────────────────────────── */}
         <div className="bg-surface-blue rounded-lg p-4 text-xs text-tertiary">
           <p className="font-medium text-tertiary-dark mb-1">LLM API Integration</p>
           <p>
             Set any one of <code className="bg-white px-1 rounded">GEMINI_API_KEY</code>,{' '}
             <code className="bg-white px-1 rounded">ANTHROPIC_API_KEY</code>, or{' '}
-            <code className="bg-white px-1 rounded">OPENAI_API_KEY</code> in your Vercel project environment
-            variables to enable AI generation. Gemini has a free tier at aistudio.google.com/apikey.
-            Without any key, the page still produces a tag-based grouping so the structure can be reviewed.
+            <code className="bg-white px-1 rounded">OPENAI_API_KEY</code> in your Vercel project
+            environment variables to enable AI generation. Gemini has a free tier at
+            aistudio.google.com/apikey.
           </p>
         </div>
       </div>
