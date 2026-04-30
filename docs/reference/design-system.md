@@ -125,6 +125,63 @@ await tags.run([...tags.value, 'just-transition']);
 Centralises the optimistic-UI pattern (success silent, failure rolls
 back). Stops every component from inventing its own try/catch.
 
+### `useUrlState` — URL-as-state
+```ts
+import { useUrlState, codecs } from '@/lib/useUrlState';
+
+const [view, update, reset] = useUrlState({
+  lib:      codecs.string(''),                                  // ?lib=…
+  q:        codecs.string(''),                                  // ?q=…
+  selected: codecs.string(''),                                  // ?selected=…
+  mode:     codecs.enum(['feed', 'briefing', 'clock'], 'feed'), // ?mode=…
+  tags:     codecs.csv([]),                                     // ?tags=a,b,c
+});
+
+update({ selected: ref.id });   // debounced replace by default
+update({ mode: 'briefing' });   // values matching defaults are dropped
+```
+Every meaningful piece of view state lives in the URL — refresh,
+back-button, and shared links all restore the exact view. Foundation
+for items 1.1 / 3.1 / 4.1 / 5.1 in the
+[major UI/UX review re-ranked](../vision/brainstorm-modules-uxui-feasibility-rank.md).
+Pass `{ push: true }` to opt into history entries (e.g. for navigation
+between policies).
+
+### `ModeSwitcher` — task-verb tabs
+```tsx
+import ModeSwitcher, { ModePanel } from '@/components/ui/ModeSwitcher';
+
+<ModeSwitcher
+  ariaLabel="View mode"
+  modes={[
+    { id: 'read',     label: 'Read',     subtitle: 'Article view' },
+    { id: 'code',     label: 'Code',     subtitle: 'Tag segments' },
+    { id: 'compare',  label: 'Compare',  subtitle: 'Side-by-side' },
+    { id: 'export',   label: 'Export',   subtitle: 'Word table' },
+  ]}
+  value={mode}
+  onChange={(id) => update({ mode: id })}
+/>
+```
+Names *jobs* (verbs) instead of nouns. Pairs with `useUrlState`'s
+`enum` codec. Keyboard: ← → to move focus, Home / End to jump.
+Foundation for items 2.1 / 3.1 / 4.2 / 5.2.
+
+### `ProvenanceChip` — where-from / who-owns
+```tsx
+import ProvenanceChip from '@/components/ui/ProvenanceChip';
+
+<ProvenanceChip kind="source"   label="IIASA AR6" />
+<ProvenanceChip kind="lineage"  label="NGFS Net-Zero" uploader="sf@" uploadedAt={uploadedAt} />
+<ProvenanceChip kind="lock"     label="locked" holder="Maria F." heartbeatAt={hb} />
+<ProvenanceChip kind="citation" label="cited" count={12} href="/references/abc/backlinks" />
+<ProvenanceChip kind="trust"    tier="primary" label="EUR-Lex" />
+```
+Five kinds covering source, lineage, lock, citation backlinks and
+credibility tier. Tooltip surfaces the full chain on hover; `aria-label`
+exposes it to screen readers. Foundation for items 1.6 / 2.4 / 3.3 /
+4.6 / 5.3.
+
 ## What Phase 1 does *not* yet ship
 
 These are the next items on the foundations list, sized for the next
