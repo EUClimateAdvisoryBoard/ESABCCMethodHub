@@ -1,29 +1,23 @@
 {
   "date": "2026-05-01",
-  "generatedAt": "2026-05-01T12:01:23.658Z",
+  "generatedAt": "2026-05-01T18:03:32.045Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 1 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305998/ENVI%20news%204-5%20May%202026.pdf\" target=\"_blank\"&gt;ENVI News 4-5 May: Structured dialogues with Vice-President Séjourné, Commissioners Hoekstra and Várelhyi, CBAM and Temporary Decarbonisation Fund, Food and Feed Omnibus, MFF&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305310/ENVI%20news%2015-16%20and%2027%20April%202026.docx%20-%20Final.pdf\" target=\"_bl",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "How LNG interests are seeking to disrupt global talks on decarbonising shipping",
-      "summary": "&lt;p&gt;Observers say pressure on IMO negotiations appears to be linked to countries that have invested heavily in gas&lt;/p&gt;&lt;p&gt;About a fifth of the world’s oil and liquefied natural gas (LNG) passed through the &lt;a href=\"https://www.theguardian.com/us-news/2026/apr/23/trump-claims-us-has-total-control-over-strait-of-hormuz-as-iran-seizes-two-container-ships\"&gt;strait of Hormuz&lt;/a&gt;, a strip of sea less than 30 miles wide at its narrowest point, before it was in effect closed b",
+      "headline": "Octopus Energy boss: some people would accept blackouts if bills cut",
+      "summary": "&lt;p&gt;Greg Jackson argues against costly investments in UK’s power grid that are adding to household bills&lt;/p&gt;&lt;p&gt;The boss of the UK’s biggest energy supplier has suggested that some households would accept an occasional electricity blackout in exchange for much lower energy bills.&lt;/p&gt;&lt;p&gt;A year on from &lt;a href=\"https://www.theguardian.com/world/2025/apr/28/spain-portugal-power-outage\"&gt;Europe’s largest power outage&lt;/a&gt; – which left tens of millions of people ",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Santa Marta: Key outcomes from first summit on ‘transitioning away’ from fossil fuels",
-      "summary": "Countries attending a first-of-its-kind summit have walked away with plans to develop national roadmaps away... The post Santa Marta: Key outcomes from first summit on ‘transitioning away’ from fossil fuels appeared first on Carbon Brief.",
+      "headline": "DeBriefed 1 May 2026: Countries chart path away from fossil fuels &#124; China’s clean-tech surge &#124; Global forest loss slows",
+      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 1 May 2026: Countries chart path away from fossil fuels | China’s clean-tech surge | Global forest loss slows appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Gender investment gap — Are women catching up with men?",
+      "headline": "Gender investment gap: Are women catching up with men?",
       "summary": "Online brokers are tapping into the potential of female investors. Tailor-made products and branding campaigns are on the rise. Will this help bridge the gap between women and men when it comes to investing?",
       "tag": "FINANCE",
       "color": "#7C3AED"
@@ -33,21 +27,36 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260116CNW20362",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305998/ENVI%20news%204-5%20May%202026.pdf\" target=\"_blank\"&gt;ENVI News 4-5 May: Structured dialogues with Vice-President Séjourné, Commissioners Hoekstra and Várelhyi, CBAM and Temporary Decarbonisation Fund, Food and Feed Omnibus, MFF&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305310/ENVI%20news%2015-16%20and%2027%20April%202026.docx%20-%20Final.pdf\" target=\"_bl",
-          "published": "2026-04-30T15:05:43.000Z",
-          "score": 20
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Octopus Energy boss: some people would accept blackouts if bills cut",
+          "link": "https://www.theguardian.com/business/2026/may/01/octopus-energy-boss-blackouts-bills",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Greg Jackson argues against costly investments in UK’s power grid that are adding to household bills&lt;/p&gt;&lt;p&gt;The boss of the UK’s biggest energy supplier has suggested that some households would accept an occasional electricity blackout in exchange for much lower energy bills.&lt;/p&gt;&lt;p&gt;A year on from &lt;a href=\"https://www.theguardian.com/world/2025/apr/28/spain-portugal-power-outage\"&gt;Europe’s largest power outage&lt;/a&gt; – which left tens of millions of people ",
+          "published": "2026-05-01T16:02:42.000Z",
+          "score": 9
+        },
+        {
+          "title": "While Asia and Europe scramble for natural gas, the US glut has nowhere to go - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQMlREZFdvblRlbHBMWWlsU05keDNlRDZhQUNUQW8yT1NQZDRjemkyNHJNbzFnOWdZNVBJeGRCVHBoWV9lUXhESDhLTjBJUXpPWHYzTjZ2WGNDaHRfbVFVTExzTUpEVjlPb2NYdFduaTlhNUl2SUFDd05ZWEUxQzdhN3N4eE02SEZ1aXdXTnIyWWtUSW9zRHg5aFQtem0zaFczQ00yTU5OZjBPSkRXQkN0bG5LZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQMlREZFdvblRlbHBMWWlsU05keDNlRDZhQUNUQW8yT1NQZDRjemkyNHJNbzFnOWdZNVBJeGRCVHBoWV9lUXhESDhLTjBJUXpPWHYzTjZ2WGNDaHRfbVFVTExzTUpEVjlPb2NYdFduaTlhNUl2SUFDd05ZWEUxQzdhN3N4eE02SEZ1aXdXTnIyWWtUSW9zRHg5aFQtem0zaFczQ00yTU5OZjBPSkRXQkN0bG5LZw?oc=5\" target=\"_blank\"&gt;While Asia and Europe scramble for natural gas, the US glut has nowhere to go&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T13:44:41.000Z",
+          "score": 8
+        },
+        {
+          "title": "Could Santa Marta climate talks mark ground zero in push to ditch fossil fuels?",
+          "link": "https://www.theguardian.com/environment/2026/may/01/could-key-climate-talks-mark-ground-zero-in-global-push-to-ditch-fossil-fuels",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Colombia hosted nearly 60 countries at pivotal time on world stage for fight to transition to a clean energy future&lt;/p&gt;&lt;p&gt;Looking out to sea from the grey sandy beaches of Santa Marta, on Colombia’s Caribbean coast, it is never hard to spot evidence of the country’s thriving fossil fuel export trade. Oil tankers ride at anchor on the horizon and sometimes, locals say, lumps of coal wash up on the shore, blown off the collier ships that carry cargos from the nearby mines.&lt;",
+          "published": "2026-05-01T14:19:29.000Z",
+          "score": 7
+        },
         {
           "title": "How LNG interests are seeking to disrupt global talks on decarbonising shipping",
           "link": "https://www.theguardian.com/environment/2026/may/01/lng-liquefied-natural-gas-imo-talks-shipping",
@@ -57,27 +66,11 @@
           "score": 7
         },
         {
-          "title": "Australians will pay more if Albanese prioritises fossil fuel projects, former oil and gas leaders warn",
-          "link": "https://www.theguardian.com/environment/2026/may/01/australians-will-pay-more-if-albanese-fast-tracks-fossil-fuel-projects-former-oil-and-gas-leaders-warn",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Government should accelerate clean energy to protect consumers from ongoing price shocks, they say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/01/alice-springs-anthony-albanese-labor-angus-taylor-coalition-gaza-flotilla-politics-updates-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theg",
-          "published": "2026-04-30T15:00:21.000Z",
-          "score": 7
-        },
-        {
           "title": "Belgium plans to nationalise nuclear power plants",
           "link": "https://www.bbc.com/news/articles/c4g05jg87wko?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Prime Minister Bart De Wever said the move would see \"less dependence on fossil fuel imports and more control over our own supply\".",
           "published": "2026-04-30T19:50:29.000Z",
-          "score": 7
-        },
-        {
-          "title": "Iran war is supercharging the clean energy transition, UN climate chief says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPQ04takFQS1IzVHhjakEtckZFNW1KYjlyQlZhYTFoVEd6ZmRzd0VabUpaWklJTWUyQWF2U2xCX1ZTZkhfaTlILVpoa3lrUVphRzFTanBFMjZYdUsyd0hvN01LVTdVREdleE0wM05oOU5LV1FZdlMtcDhSSW5CdnVKS3UwQ1gyOV9ZSERpM2dFc3laSDN3Z0xxa19KU1IteWY1YkxfNGJYbmdWSnlWYzlDeHU2dmFrdzNVRmZua2VWa29nV0ww?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPQ04takFQS1IzVHhjakEtckZFNW1KYjlyQlZhYTFoVEd6ZmRzd0VabUpaWklJTWUyQWF2U2xCX1ZTZkhfaTlILVpoa3lrUVphRzFTanBFMjZYdUsyd0hvN01LVTdVREdleE0wM05oOU5LV1FZdlMtcDhSSW5CdnVKS3UwQ1gyOV9ZSERpM2dFc3laSDN3Z0xxa19KU1IteWY1YkxfNGJYbmdWSnlWYzlDeHU2dmFrdzNVRmZua2VWa29nV0ww?oc=5\" target=\"_blank\"&gt;Iran war is supercharging the clean energy transition, UN climate chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-30T15:42:52.000Z",
           "score": 7
         }
       ]
@@ -87,36 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Santa Marta: Key outcomes from first summit on ‘transitioning away’ from fossil fuels",
-          "link": "https://www.carbonbrief.org/santa-marta-key-outcomes-from-first-summit-on-transitioning-away-from-fossil-fuels/",
+          "title": "DeBriefed 1 May 2026: Countries chart path away from fossil fuels &#124; China’s clean-tech surge &#124; Global forest loss slows",
+          "link": "https://www.carbonbrief.org/debriefed-1-may-2026-countries-chart-path-away-from-fossil-fuels-chinas-clean-tech-surge-global-forest-loss-slows/",
           "source": "Carbon Brief",
-          "description": "Countries attending a first-of-its-kind summit have walked away with plans to develop national roadmaps away... The post Santa Marta: Key outcomes from first summit on ‘transitioning away’ from fossil fuels appeared first on Carbon Brief.",
-          "published": "2026-04-30T15:37:28.000Z",
+          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 1 May 2026: Countries chart path away from fossil fuels | China’s clean-tech surge | Global forest loss slows appeared first on Carbon Brief.",
+          "published": "2026-05-01T15:28:36.000Z",
           "score": 13
-        },
-        {
-          "title": "China Briefing 30 April 2026: Fossil fuel ‘strict controls’ &#124; El Niño approaches &#124; Why cleantech exports have surged",
-          "link": "https://www.carbonbrief.org/china-briefing-30-april-2026-fossil-fuel-strict-controls-el-nino-approaches-why-cleantech-exports-have-surged/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 30 April 2026: Fossil fuel ‘strict controls’ | El Niño approaches | Why cleantech exports have surged appeared first on Carbon Brief.",
-          "published": "2026-04-30T14:09:29.000Z",
-          "score": 13
-        },
-        {
-          "title": "Analysts cut EU carbon price forecasts on policy reforms - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQS00zMGVnWktTanNGdGliZW04aEV4MHpJLWdQQmVYU2NyMTNiaEdibnVFdlhJd0w2NFRRUnhlYU5SSmFVUkhqSUdjNmVvVkZPMDFQd2dVYkFjamZMYzloem9TSV94Z0NjaHNHVUcxUXJmU2dTbDVTMm1HOXpjd2RDY3Z0djdZY3dHdlhZRVFPU1ZHd2ZfZVg2ZjI4bjNNN0h4cEo3SzVtZWZqejB1bHZoUmpwVHE5QnlsZzNn?oc=5",
-          "source": "Reuters (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQS00zMGVnWktTanNGdGliZW04aEV4MHpJLWdQQmVYU2NyMTNiaEdibnVFdlhJd0w2NFRRUnhlYU5SSmFVUkhqSUdjNmVvVkZPMDFQd2dVYkFjamZMYzloem9TSV94Z0NjaHNHVUcxUXJmU2dTbDVTMm1HOXpjd2RDY3Z0djdZY3dHdlhZRVFPU1ZHd2ZfZVg2ZjI4bjNNN0h4cEo3SzVtZWZqejB1bHZoUmpwVHE5QnlsZzNn?oc=5\" target=\"_blank\"&gt;Analysts cut EU carbon price forecasts on policy reforms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-30T14:39:19.000Z",
-          "score": 13
-        },
-        {
-          "title": "Democrats say EPA head’s budget cut proposal ‘reads like climate change deniers’ manifesto’",
-          "link": "https://www.theguardian.com/environment/2026/apr/30/epa-budget-cut-proposal",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Lee Zeldin claims before Senate that Trump administration plan will make Environmental Protection Agency ‘more efficient’&lt;/p&gt;&lt;p&gt;Senate Democrats accused the &lt;a href=\"https://www.theguardian.com/us-news/trump-administration\"&gt;Trump administration&lt;/a&gt; of abandoning the &lt;a href=\"https://www.theguardian.com/environment/epa\"&gt;Environmental Protection Agency&lt;/a&gt;’s mission to protect human health and the environment at a congressional hearing Wednesday, slammi",
-          "published": "2026-04-30T15:20:59.000Z",
-          "score": 11
         },
         {
           "title": "The climate crisis is making our hay fever worse – and affecting our enjoyment of nature",
@@ -125,6 +94,30 @@
           "description": "&lt;p&gt;In this week’s newsletter: the European pollen season is now up to two weeks longer than it was in the 90s – just one more way global heating is causing millions to suffer&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/global/2022/sep/20/sign-up-for-the-down-to-earth-newsletter-our-free-environmental-email\"&gt;Don’t get Down to Earth delivered to your inbox? Sign up here&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Here’s a confession that may alarm faithful readers of this newsletter: I am",
           "published": "2026-05-01T06:00:39.000Z",
           "score": 9
+        },
+        {
+          "title": "Hope is contagious and science is king: 10 big lessons on ending the fossil fuel era",
+          "link": "https://www.theguardian.com/environment/2026/may/01/santa-marta-colombia-climate-conference-ending-fossil-fuel-era",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;At world-first Santa Marta climate meeting, delegates say it was ‘euphoric’ to finally be focusing on concrete solutions&lt;/p&gt;&lt;p&gt;After a landmark climate meeting in Santa Marta, Colombia, where nearly 60 countries gathered to work out how to end the production and use of planet-heating fossil fuels, what have we learned?&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/2026/may/01/santa-marta-colombia-climate-conference-ending-fossil-fuel-era\"&gt;Continue reading.",
+          "published": "2026-05-01T05:00:40.000Z",
+          "score": 7
+        },
+        {
+          "title": "Germany��s climate U-turn is the worst possible response to the oil shock",
+          "link": "https://www.theguardian.com/commentisfree/2026/may/01/germanys-climate-u-turn-is-the-worst-possible-response-to-the-oil-shock",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Prices at the pump have leapt since the start of the conflict – but clinging to fossil fuels will only prolong the pain&lt;/p&gt;&lt;p&gt;The car is perhaps the closest thing Germany has to a national symbol. For this reason, the success of the auto industry and the happiness of motorists has long been a barometer for the standing of the Federal Republic.&lt;/p&gt;&lt;p&gt;Since the beginning of the war on Iran, German news has been filled with stories about drivers. Journalists have fi",
+          "published": "2026-05-01T04:00:37.000Z",
+          "score": 7
+        },
+        {
+          "title": "Eggs of elusive bird rescued by firefighters during wildfire",
+          "link": "https://www.bbc.com/news/articles/c2k20ggnqldo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "During a wildfire in Brookeborough, County Fermanagh on Thursday, a curlew nest directly in the fire's path was found.",
+          "published": "2026-05-01T15:50:04.000Z",
+          "score": 7
         }
       ]
     },
@@ -133,7 +126,7 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Gender investment gap — Are women catching up with men?",
+          "title": "Gender investment gap: Are women catching up with men?",
           "link": "https://www.dw.com/en/gender-investment-gap-are-women-catching-up-with-men/a-76862702?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Online brokers are tapping into the potential of female investors. Tailor-made products and branding campaigns are on the rise. Will this help bridge the gap between women and men when it comes to investing?",
@@ -141,11 +134,11 @@
           "score": 2
         },
         {
-          "title": "Saudi Arabia&#039;s public fund to withdraw LIV Golf funding",
-          "link": "https://www.dw.com/en/saudi-arabia-s-public-fund-to-withdraw-liv-golf-funding/a-77005158?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Public Investment Fund cites &quot;current macro dynamics&quot; as it slashes funding for breakaway golf tour. LIV isn&#039;t the only casualty of changing Saudi &quot;investment priorities&quot; amid economic turmoil and war in the Middle East.",
-          "published": "2026-04-30T17:58:00.000Z",
+          "title": "Japan signs first $2.2 billion loan under $550 billion US investment pledge - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRG1BcC05V0xxR09Fb00wNXg3R3NfTmk1WG5yUTZHcjlsc0t6Z29FcS1qRVV3bTVxcnJHSHprd3VJLWlPRE9LSlNXdFRFRElvdWJ6WGd1RFE4dmgwVlc3UmtCbzUyVDVVWkZjaWRqb3d1NzBYZWtFUXBjRjhrVjFpdnMwVVhpV0Y1YWtKdXN6SlpoczVkOWh1V012ZGZlRjlWRlVLMFR0X3cybkowVTl5dU5LY1pIOUo1WlozLUFiVHE5bENFUmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPRG1BcC05V0xxR09Fb00wNXg3R3NfTmk1WG5yUTZHcjlsc0t6Z29FcS1qRVV3bTVxcnJHSHprd3VJLWlPRE9LSlNXdFRFRElvdWJ6WGd1RFE4dmgwVlc3UmtCbzUyVDVVWkZjaWRqb3d1NzBYZWtFUXBjRjhrVjFpdnMwVVhpV0Y1YWtKdXN6SlpoczVkOWh1V012ZGZlRjlWRlVLMFR0X3cybkowVTl5dU5LY1pIOUo1WlozLUFiVHE5bENFUmc?oc=5\" target=\"_blank\"&gt;Japan signs first $2.2 billion loan under $550 billion US investment pledge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T07:34:09.000Z",
           "score": 2
         },
         {
@@ -163,19 +156,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities - PE787.680v04-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787680_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 468 - 549 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-04-30T16:28:39.000Z",
-          "score": 22
-        },
-        {
-          "title": "EU kickstarts Mercosur pact to counter US trade hit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNTmNZWEt3OTlrX3JvTjk3bHZkRTNRcURWWTZEX3l2b2I1dHhocjY1cklqT2E0NlNMVVhITW5DTTVuUm5MMDE3OUNwUkpMMTVpLWxISVlHUkp5dFBmeEFZYlotbmlmUlYyWDcwOXlFV3plTjdmcXlHMlhPWG8zR0tRNFp4cTVOSWFwUHdkWFRTVFFvQTZUb1VQWEdTcEw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNTmNZWEt3OTlrX3JvTjk3bHZkRTNRcURWWTZEX3l2b2I1dHhocjY1cklqT2E0NlNMVVhITW5DTTVuUm5MMDE3OUNwUkpMMTVpLWxISVlHUkp5dFBmeEFZYlotbmlmUlYyWDcwOXlFV3plTjdmcXlHMlhPWG8zR0tRNFp4cTVOSWFwUHdkWFRTVFFvQTZUb1VQWEdTcEw?oc=5\" target=\"_blank\"&gt;EU kickstarts Mercosur pact to counter US trade hit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-30T13:00:46.000Z",
+          "title": "Trump to raise tariffs on cars, trucks from EU to 25%",
+          "link": "https://www.dw.com/en/trump-to-raise-tariffs-on-cars-trucks-from-eu-to-25/a-77014772?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "President Donald Trump said he&#039;s raising tariffs on cars and trucks from the European Union to 25%, saying the bloc was not complying with the terms of the trade agreement agreed to with the US.",
+          "published": "2026-05-01T16:25:00.000Z",
           "score": 8
         }
       ]
@@ -185,11 +170,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU overhauls merger rules amid calls for European champions - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOdVJMbkt6NWd5MEFwV3NkRUg0Y0dVOXNoU2FoWnNCcXRJQnlTVTB1VEpUN0ZqckI4NkV6Ynlod0dnQ3JxV1VMMTBzQVFBRE9Sam5jQWsxMm9pSUp4dklvYmZDTjkySjEwZ0p2QnpiZ25taVZ1UU9IbDhWdS1ybmx4WWtjNXN4M3lmdnE5eWd6TnNnalQ4M2RVZ1RPWlp0Zw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOdVJMbkt6NWd5MEFwV3NkRUg0Y0dVOXNoU2FoWnNCcXRJQnlTVTB1VEpUN0ZqckI4NkV6Ynlod0dnQ3JxV1VMMTBzQVFBRE9Sam5jQWsxMm9pSUp4dklvYmZDTjkySjEwZ0p2QnpiZ25taVZ1UU9IbDhWdS1ybmx4WWtjNXN4M3lmdnE5eWd6TnNnalQ4M2RVZ1RPWlp0Zw?oc=5\" target=\"_blank\"&gt;EU overhauls merger rules amid calls for European champions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-30T14:10:14.000Z",
+          "title": "Iran delivers fresh talks proposal to Pakistani mediators",
+          "link": "https://www.dw.com/en/iran-delivers-fresh-talks-proposal-to-pakistani-mediators/live-77007473?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Iran has delivered a new proposal for negotiations with the US to Pakistani mediators, state news agency IRNA said. Iranian foreign minister also spoke with several of his counterparts, including EU&#039;s Kaja Kallas.",
+          "published": "2026-05-01T06:16:00.000Z",
           "score": 8
         },
         {
@@ -201,36 +186,36 @@
           "score": 8
         },
         {
-          "title": "Iran war: Truce stops clock on Congress approval, says Trump&#039;s White House",
-          "link": "https://www.dw.com/en/iran-war-truce-stops-clock-on-congress-approval-says-trump-s-white-house/live-77007473?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Under war powers legislation, US President Trump has until a Friday deadline to end the Iran war or seek approval from Congress. But the White House says the ceasefire has already &quot;terminated&quot; the conflict. Follow DW.",
-          "published": "2026-05-01T06:16:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "US: Trump signs DHS funding bill, ending partial shutdown",
-          "link": "https://www.dw.com/en/us-trump-signs-dhs-funding-bill-ending-partial-shutdown/a-77005913?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The legislation ends a partial government shutdown and restores funding to key government agencies. But Republicans are unhappy that ICE and Border Patrol have been excluded.",
-          "published": "2026-04-30T19:01:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Ukraine to seek clarity from US on Russian ceasefire proposal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPT2tjcC0tcUxzdjNCc0lUalRmRHZFY0JrZEhqaWR2M3FMNnlNbzRFRWdoWDF4UjkxU3V3djBaTEhvV0hHSkRhQjVJWHd6c1FrNHJyVmhKYVJHNGRYc0RqSzNubWxPVUdoWUJaZG5BaFdVbkEzZDhnWTc2c29jWU9jSVRheW9DeGZlVEdydW1hS2tmckNBZUpN?oc=5",
+          "title": "Trump's attacks on Europe's leaders worsen transatlantic frost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPT2tjcC0tcUxzdjNCc0lUalRmRHZFY0JrZEhqaWR2M3FMNnlNbzRFRWdoWDF4UjkxU3V3djBaTEhvV0hHSkRhQjVJWHd6c1FrNHJyVmhKYVJHNGRYc0RqSzNubWxPVUdoWUJaZG5BaFdVbkEzZDhnWTc2c29jWU9jSVRheW9DeGZlVEdydW1hS2tmckNBZUpN?oc=5\" target=\"_blank\"&gt;Ukraine to seek clarity from US on Russian ceasefire proposal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-04-30T13:21:43.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5\" target=\"_blank\"&gt;Trump's attacks on Europe's leaders worsen transatlantic frost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T16:04:18.000Z",
+          "score": 8
+        },
+        {
+          "title": "Atlantic alliance creaks as US and Europe fail to see eye-to-eye - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPWVU1ZGNXYnppektWdjhnOHVNdTdraVBXZ05Xck0zaVpoV2NnbE0tb2oxa2V0UVp3OEdwc2hsZXdKRVFDVG9HOEVqYUZ5cV9PSWxNWndmOW1CUU9YNlJ5cWFpTUwyWmtnSHlQZnFlSDlPX0pJQzBRcFluR3dSSHVLMEtmSngtYVJsYUh2ZF9IU18wR3N6dTdQemhQZVFEd1g3Slo4MFRmMUlVWWRkaVhj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPWVU1ZGNXYnppektWdjhnOHVNdTdraVBXZ05Xck0zaVpoV2NnbE0tb2oxa2V0UVp3OEdwc2hsZXdKRVFDVG9HOEVqYUZ5cV9PSWxNWndmOW1CUU9YNlJ5cWFpTUwyWmtnSHlQZnFlSDlPX0pJQzBRcFluR3dSSHVLMEtmSngtYVJsYUh2ZF9IU18wR3N6dTdQemhQZVFEd1g3Slo4MFRmMUlVWWRkaVhj?oc=5\" target=\"_blank\"&gt;Atlantic alliance creaks as US and Europe fail to see eye-to-eye&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T07:35:44.000Z",
+          "score": 8
+        },
+        {
+          "title": "India to see above-average number of heatwave days in May as energy demand surges - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDZmaTZmSU96X1pzc01GeXByVVdJNUZMRHhzT1F0bVdwZEpUckxBSTFyQ2UyWWFsb0ZfeEF0U0Vlcl96NmZNQ0lXc3BhVWdVbEtiWUtScUlpZzBqTG9kVEdpLXJjZlBRM1o0SWhMeHJ3OE1Mb1drckFRWXFfZE9tbmRWUVlFTFAwb2lQb0hSNE8wYWFvN3pnd0NOb2o0Y1FsbTlyTkVfVmJPMnRyY2M0eWtqbjVpT3BC?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDZmaTZmSU96X1pzc01GeXByVVdJNUZMRHhzT1F0bVdwZEpUckxBSTFyQ2UyWWFsb0ZfeEF0U0Vlcl96NmZNQ0lXc3BhVWdVbEtiWUtScUlpZzBqTG9kVEdpLXJjZlBRM1o0SWhMeHJ3OE1Mb1drckFRWXFfZE9tbmRWUVlFTFAwb2lQb0hSNE8wYWFvN3pnd0NOb2o0Y1FsbTlyTkVfVmJPMnRyY2M0eWtqbjVpT3BC?oc=5\" target=\"_blank\"&gt;India to see above-average number of heatwave days in May as energy demand surges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T10:28:03.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 384,
-    "articlesLast24h": 167,
-    "afterDedup": 161,
+    "totalArticlesScanned": 389,
+    "articlesLast24h": 164,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
