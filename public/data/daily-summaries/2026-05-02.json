@@ -1,12 +1,12 @@
 {
   "date": "2026-05-02",
-  "generatedAt": "2026-05-02T07:02:33.732Z",
+  "generatedAt": "2026-05-02T11:49:56.105Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 2 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Octopus Energy boss: some people would accept blackouts if bills cut",
-      "summary": "&lt;p&gt;Greg Jackson argues against costly investments in UK’s power grid that are adding to household bills&lt;/p&gt;&lt;p&gt;The boss of the UK’s biggest energy supplier has suggested that some households would accept an occasional electricity blackout in exchange for much lower energy bills.&lt;/p&gt;&lt;p&gt;A year on from &lt;a href=\"https://www.theguardian.com/world/2025/apr/28/spain-portugal-power-outage\"&gt;Europe’s largest power outage&lt;/a&gt; – which left tens of millions of people ",
+      "headline": "Iranian proposal rejected by Trump would open strait before nuclear talks, Iran official says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOY3RkdWg1QTVlQmNRQkpSRFhLSmU3QTZsZmtHV016RHB2cG5FOW05bUdPN3N6ZExBVjdCR1RkdXlwLW0yZ1VGazdOVkJKNkEyWVN2V2NBUWJBX3JhREUwUUQwNlQ2RGhsaUhyb193bVRRbGVSejZZTm5QWUlBcThCRlJuajBlTXgwLXNGRmNYelNWRWFYczBDVTFDUkliRFVkQmd0UFRBZFdoOVM2YXp3eU9EZi1DNThYenRnVUE2UnY2bHNXU3FkWkVQRXg?oc=5\" target=\"_blank\"&gt;Iranian proposal rejected by Trump would open strait before nuclear talks, Iran official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 1 May 2026: Countries chart path away from fossil fuels | China’s clean-tech surge | Global forest loss slows appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Japan signs first $2.2 billion loan under $550 billion US investment pledge - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPRG1BcC05V0xxR09Fb00wNXg3R3NfTmk1WG5yUTZHcjlsc0t6Z29FcS1qRVV3bTVxcnJHSHprd3VJLWlPRE9LSlNXdFRFRElvdWJ6WGd1RFE4dmgwVlc3UmtCbzUyVDVVWkZjaWRqb3d1NzBYZWtFUXBjRjhrVjFpdnMwVVhpV0Y1YWtKdXN6SlpoczVkOWh1V012ZGZlRjlWRlVLMFR0X3cybkowVTl5dU5LY1pIOUo1WlozLUFiVHE5bENFUmc?oc=5\" target=\"_blank\"&gt;Japan signs first $2.2 billion loan under $550 billion US investment pledge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,6 +27,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Iranian proposal rejected by Trump would open strait before nuclear talks, Iran official says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOY3RkdWg1QTVlQmNRQkpSRFhLSmU3QTZsZmtHV016RHB2cG5FOW05bUdPN3N6ZExBVjdCR1RkdXlwLW0yZ1VGazdOVkJKNkEyWVN2V2NBUWJBX3JhREUwUUQwNlQ2RGhsaUhyb193bVRRbGVSejZZTm5QWUlBcThCRlJuajBlTXgwLXNGRmNYelNWRWFYczBDVTFDUkliRFVkQmd0UFRBZFdoOVM2YXp3eU9EZi1DNThYenRnVUE2UnY2bHNXU3FkWkVQRXg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOY3RkdWg1QTVlQmNRQkpSRFhLSmU3QTZsZmtHV016RHB2cG5FOW05bUdPN3N6ZExBVjdCR1RkdXlwLW0yZ1VGazdOVkJKNkEyWVN2V2NBUWJBX3JhREUwUUQwNlQ2RGhsaUhyb193bVRRbGVSejZZTm5QWUlBcThCRlJuajBlTXgwLXNGRmNYelNWRWFYczBDVTFDUkliRFVkQmd0UFRBZFdoOVM2YXp3eU9EZi1DNThYenRnVUE2UnY2bHNXU3FkWkVQRXg?oc=5\" target=\"_blank\"&gt;Iranian proposal rejected by Trump would open strait before nuclear talks, Iran official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
+          "published": "2026-05-02T09:37:53.000Z",
+          "score": 11
+        },
         {
           "title": "Octopus Energy boss: some people would accept blackouts if bills cut",
           "link": "https://www.theguardian.com/business/2026/may/01/octopus-energy-boss-blackouts-bills",
@@ -63,14 +65,6 @@
           "source": "BBC Science & Environment",
           "description": "A petition set up by campaign group Save Our Reds, has attracted more than 75,000 signatures.",
           "published": "2026-05-02T06:25:56.000Z",
-          "score": 7
-        },
-        {
-          "title": "LNG Canada exports hit 1 million metric tons for first time in single month - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVM1MGtlMHZHUkJ0elFHMXczaUVxalMtS1BwdmJKTW12cWcwckZkUkxzdE11cS1Wa3lCWjVsVEx6UjZmWFYyY1JZV0FqYmJJRGVDWW5MN2I2dkRlaDZMbXE5OUpQNlZsMVlMMzhWTjk5UzhOeW9IRkxnWG1RVmJvVk5oTDVtNndTdDRzZ2tSVnhmNHRZeWhHRUFIMjNYd2dRa3M3M0JjWGJ4RE9CQkVnbGQwajdrdG5QdWxLOA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPTVM1MGtlMHZHUkJ0elFHMXczaUVxalMtS1BwdmJKTW12cWcwckZkUkxzdE11cS1Wa3lCWjVsVEx6UjZmWFYyY1JZV0FqYmJJRGVDWW5MN2I2dkRlaDZMbXE5OUpQNlZsMVlMMzhWTjk5UzhOeW9IRkxnWG1RVmJvVk5oTDVtNndTdDRzZ2tSVnhmNHRZeWhHRUFIMjNYd2dRa3M3M0JjWGJ4RE9CQkVnbGQwajdrdG5QdWxLOA?oc=5\" target=\"_blank\"&gt;LNG Canada exports hit 1 million metric tons for first time in single month&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T23:29:07.000Z",
           "score": 7
         }
       ]
@@ -104,19 +98,19 @@
           "score": 7
         },
         {
+          "title": "Thousands of trees creating habitat 'powerhouses'",
+          "link": "https://www.bbc.com/news/articles/cdxprr5p18wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Friends of the Lake District say the hedgerows will create new habitats and boost biodiversity.",
+          "published": "2026-05-02T07:26:33.000Z",
+          "score": 4
+        },
+        {
           "title": "Is this the real face of Anne Boleyn?",
           "link": "https://www.bbc.com/news/articles/cp9pz53e891o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "A computer science team believes they have discovered a previously unknown sketch of King Henry VIII's second wife - but not everyone is convinced.",
           "published": "2026-05-01T23:01:44.000Z",
-          "score": 2
-        },
-        {
-          "title": "How ospreys were 'tricked' into breeding in Dorset",
-          "link": "https://www.bbc.com/news/articles/c15d52y4dnwo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Reintroducing ospreys to Dorset involved convincing birds they had been born there.",
-          "published": "2026-05-02T06:21:27.000Z",
           "score": 2
         }
       ]
@@ -124,16 +118,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Japan signs first $2.2 billion loan under $550 billion US investment pledge - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPRG1BcC05V0xxR09Fb00wNXg3R3NfTmk1WG5yUTZHcjlsc0t6Z29FcS1qRVV3bTVxcnJHSHprd3VJLWlPRE9LSlNXdFRFRElvdWJ6WGd1RFE4dmgwVlc3UmtCbzUyVDVVWkZjaWRqb3d1NzBYZWtFUXBjRjhrVjFpdnMwVVhpV0Y1YWtKdXN6SlpoczVkOWh1V012ZGZlRjlWRlVLMFR0X3cybkowVTl5dU5LY1pIOUo1WlozLUFiVHE5bENFUmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPRG1BcC05V0xxR09Fb00wNXg3R3NfTmk1WG5yUTZHcjlsc0t6Z29FcS1qRVV3bTVxcnJHSHprd3VJLWlPRE9LSlNXdFRFRElvdWJ6WGd1RFE4dmgwVlc3UmtCbzUyVDVVWkZjaWRqb3d1NzBYZWtFUXBjRjhrVjFpdnMwVVhpV0Y1YWtKdXN6SlpoczVkOWh1V012ZGZlRjlWRlVLMFR0X3cybkowVTl5dU5LY1pIOUo1WlozLUFiVHE5bENFUmc?oc=5\" target=\"_blank\"&gt;Japan signs first $2.2 billion loan under $550 billion US investment pledge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T07:34:09.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -160,8 +145,24 @@
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNVE1WMTl1SUo5X1BUQkFPOHd1b2ZfVDR3YzMybjJoRTBPYU5mTVNaM1ZVdkdFaXIwQUt5Q3dyaFRjVDBKX3NiOTgxNTNLNDdWVVBCaTRscDVpR3E3NW5wZEdPR05uNzlacGF3NkFBYlpjX0lwdGlXVDc0ZXdMa3I5X3RKeC0yZkI3eUQzQWpqLTdpWEZFTUtxR1cwb1RkT0JXYjdIaGhTYlNXdHE0MjhJ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNVE1WMTl1SUo5X1BUQkFPOHd1b2ZfVDR3YzMybjJoRTBPYU5mTVNaM1ZVdkdFaXIwQUt5Q3dyaFRjVDBKX3NiOTgxNTNLNDdWVVBCaTRscDVpR3E3NW5wZEdPR05uNzlacGF3NkFBYlpjX0lwdGlXVDc0ZXdMa3I5X3RKeC0yZkI3eUQzQWpqLTdpWEZFTUtxR1cwb1RkT0JXYjdIaGhTYlNXdHE0MjhJ?oc=5\" target=\"_blank\"&gt;Trump says he will raise tariff on autos from European Union to 25%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T20:26:58.000Z",
+          "published": "2026-05-01T16:02:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Germany urges stronger European defence after US announces troop drawdown - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeng2WUI0R1hXdmJicTZHd21sUXBER3lWbExOeHNPQnQ2U2t2UDNYNlBIZ1RzWTlYeEJqM0tha1pJanl1SU5CcHhUUzcyTEVvdjcwTDNycTFUWHFMaXEySkhhazBNOUkzZHdmZE5FRHBGWXZyZm44b3ppRFd5UG1yLW1OdDhNNnR0YTJOYUU3ZFh5SGhMU0hXV1ZWTlJhQmQzWlB4Tkd3Ty1NSmU0aERIcEtwaXlJQmFkdktWbG5YZXBFbnlPS1AyRTItWVo0RkNkVDJ6amlB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1gFBVV95cUxQeng2WUI0R1hXdmJicTZHd21sUXBER3lWbExOeHNPQnQ2U2t2UDNYNlBIZ1RzWTlYeEJqM0tha1pJanl1SU5CcHhUUzcyTEVvdjcwTDNycTFUWHFMaXEySkhhazBNOUkzZHdmZE5FRHBGWXZyZm44b3ppRFd5UG1yLW1OdDhNNnR0YTJOYUU3ZFh5SGhMU0hXV1ZWTlJhQmQzWlB4Tkd3Ty1NSmU0aERIcEtwaXlJQmFkdktWbG5YZXBFbnlPS1AyRTItWVo0RkNkVDJ6amlB?oc=5\" target=\"_blank\"&gt;Germany urges stronger European defence after US announces troop drawdown&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-05-02T11:41:55.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany news: US troop pullout &#039;expected&#039; — Pistorius",
+          "link": "https://www.dw.com/en/germany-news-us-troop-pullout-expected-pistorius/live-77018194?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Defense Minister Boris Pistorius says Europe must do more for its own security after the US withdrawal announcement. Police have said some violence marred mostly peaceful May Day demos in Berlin. DW has more.",
+          "published": "2026-05-02T10:45:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -169,14 +170,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Trump's attacks on Europe's leaders worsen transatlantic frost - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5\" target=\"_blank\"&gt;Trump's attacks on Europe's leaders worsen transatlantic frost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T22:06:27.000Z",
-          "score": 8
-        },
         {
           "title": "US warns European allies including UK and Poland of arms shipment delays, FT reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOVVuMDhCdXVSNFNJUmtLZDA3c0czTDJSRHJLMDI2c0tvY3VfNWZnZTRhaHRMV3gtb0R6OXJBX0NaZVBaM1ZZbmlhUjhFQlZTaXNYSEx6anlaUFBrTWpUR1ZqWXdwS3hYMy1lUTVqcHVPU09YYTktNFRzVTVpWnRtR1N2emQ3aERQc2RkMjVHUVl2djNxZVRzdWxBU2ZOSXZKUXA1NGlqMkh0ek16SEtIbnJQVk83SU9ILTc0blhsa1lLMFk?oc=5",
@@ -186,36 +179,44 @@
           "score": 8
         },
         {
-          "title": "Azerbaijan summons EU envoy in row over treatment of Karabakh Armenians - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTk5RdjhDUE5iOFlkOF9xUWx6TmtONWMybTFZckxkeVhnejE4NktlZU94SThOaHlNOWtEZUZZaDZJNXhPT2VpOFBIQjZMQlpnZDVLM1hVeVVSRG5rQWhxOW1fQm9kMGhzXzZUdHVsLXlJZjg5eE42a0tzb0JrclY0bTB4WERmVGJ4dmFHOUJnQ0YtbnZuRlVhWGk5a29FX2xEM0pDeHJLb2RBWW8?oc=5",
+          "title": "Trump's attacks on Europe's leaders worsen transatlantic frost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQTk5RdjhDUE5iOFlkOF9xUWx6TmtONWMybTFZckxkeVhnejE4NktlZU94SThOaHlNOWtEZUZZaDZJNXhPT2VpOFBIQjZMQlpnZDVLM1hVeVVSRG5rQWhxOW1fQm9kMGhzXzZUdHVsLXlJZjg5eE42a0tzb0JrclY0bTB4WERmVGJ4dmFHOUJnQ0YtbnZuRlVhWGk5a29FX2xEM0pDeHJLb2RBWW8?oc=5\" target=\"_blank\"&gt;Azerbaijan summons EU envoy in row over treatment of Karabakh Armenians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T09:27:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNW1HYzBXc3FEM1o1Z0U5MlFuUzU0QW1kdHNqVEUwYUF1V2Fqb1VPYWVKelBZNlh4MVJlMkNWSzN1YksyLXVHYnBHM05FbjZxdFhlY3ZzTHlxNVk5S0FrWlZJUk16QkNqZzZ1a0Z4eGdJVnE0ZEVYS2EtV0Vfeno3TXZCN3ZZM0pFVlVialY5RmpuSWFYNVpMdVJOa0N1TzJ3Mlhsa3Jta202UQ?oc=5\" target=\"_blank\"&gt;Trump's attacks on Europe's leaders worsen transatlantic frost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-01T22:06:27.000Z",
           "score": 8
         },
         {
-          "title": "Tesla sales rebound continues in several European markets in April - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQRnFGSWxlLWR6YnIxMzN3ZzM3NkdONVJ1bDdTT0RCWTBic09HcHpmbzBNenVDazNJOHZrZlJ4UDhUbmRVRUNsZVd5WmdZMWRoQk5tTzJoWXhvOVF5QkIxWkNQdWg1eXVUakVzX2xBWTh5ekxEWWNha2FRazdHMEc4SUpwZ1hIc0FMZ2lDdi0xSkNKUW1DVzg4aUNfS3RsSUdjaWRLZWdCQW5fZkFSSTBDMVg0NmRVZEItdEVoRFhtV3U3R3d2?oc=5",
+          "title": "Japan, Vietnam seek deeper energy, minerals ties amid geopolitical risks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPeHdYYkRETUNUcGJCcjRTcG5LWnVPTmU0ZWd6YUI3Q1VLUEZ4cHdYVGlobkNKNnZDYzY5VzhCUTAyMVl6NnZaeUZRRDhBU2o3ckRWV2x6RGFKbEpRN3RDWEg1WXhYa3FsM3h4QWhHaDQyYVVfRWcwMzRQNy1Qb1dBYThKSmZWcUdOSmRLTExTWk9uM1ZmZzVrVDktVXVtcFpjVDh6YkZR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQRnFGSWxlLWR6YnIxMzN3ZzM3NkdONVJ1bDdTT0RCWTBic09HcHpmbzBNenVDazNJOHZrZlJ4UDhUbmRVRUNsZVd5WmdZMWRoQk5tTzJoWXhvOVF5QkIxWkNQdWg1eXVUakVzX2xBWTh5ekxEWWNha2FRazdHMEc4SUpwZ1hIc0FMZ2lDdi0xSkNKUW1DVzg4aUNfS3RsSUdjaWRLZWdCQW5fZkFSSTBDMVg0NmRVZEItdEVoRFhtV3U3R3d2?oc=5\" target=\"_blank\"&gt;Tesla sales rebound continues in several European markets in April&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T11:05:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "India to see above-average number of heatwave days in May as energy demand surges - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDZmaTZmSU96X1pzc01GeXByVVdJNUZMRHhzT1F0bVdwZEpUckxBSTFyQ2UyWWFsb0ZfeEF0U0Vlcl96NmZNQ0lXc3BhVWdVbEtiWUtScUlpZzBqTG9kVEdpLXJjZlBRM1o0SWhMeHJ3OE1Mb1drckFRWXFfZE9tbmRWUVlFTFAwb2lQb0hSNE8wYWFvN3pnd0NOb2o0Y1FsbTlyTkVfVmJPMnRyY2M0eWtqbjVpT3BC?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQSDZmaTZmSU96X1pzc01GeXByVVdJNUZMRHhzT1F0bVdwZEpUckxBSTFyQ2UyWWFsb0ZfeEF0U0Vlcl96NmZNQ0lXc3BhVWdVbEtiWUtScUlpZzBqTG9kVEdpLXJjZlBRM1o0SWhMeHJ3OE1Mb1drckFRWXFfZE9tbmRWUVlFTFAwb2lQb0hSNE8wYWFvN3pnd0NOb2o0Y1FsbTlyTkVfVmJPMnRyY2M0eWtqbjVpT3BC?oc=5\" target=\"_blank\"&gt;India to see above-average number of heatwave days in May as energy demand surges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-01T10:28:03.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPeHdYYkRETUNUcGJCcjRTcG5LWnVPTmU0ZWd6YUI3Q1VLUEZ4cHdYVGlobkNKNnZDYzY5VzhCUTAyMVl6NnZaeUZRRDhBU2o3ckRWV2x6RGFKbEpRN3RDWEg1WXhYa3FsM3h4QWhHaDQyYVVfRWcwMzRQNy1Qb1dBYThKSmZWcUdOSmRLTExTWk9uM1ZmZzVrVDktVXVtcFpjVDh6YkZR?oc=5\" target=\"_blank\"&gt;Japan, Vietnam seek deeper energy, minerals ties amid geopolitical risks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-02T01:43:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Trump claims other presidents flouted war powers law. It's a mixed record",
+          "link": "https://www.bbc.com/news/articles/c794zlx5lx8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Both Bushes and Reagan won authorisation for wars, but Obama and Clinton ducked the requirement.",
+          "published": "2026-05-02T02:43:48.000Z",
+          "score": 6
+        },
+        {
+          "title": "May Day marked by protests, celebrations, arrests",
+          "link": "https://www.dw.com/en/may-day-marked-by-protests-celebrations-arrests/a-77013669?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Labor Day comes as rising energy costs and shrinking purchasing triggered by the Iran war has hurt workers around the world.",
+          "published": "2026-05-01T15:49:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 387,
-    "articlesLast24h": 146,
-    "afterDedup": 142,
+    "totalArticlesScanned": 388,
+    "articlesLast24h": 147,
+    "afterDedup": 143,
     "feedsQueried": 19
   }
 }
