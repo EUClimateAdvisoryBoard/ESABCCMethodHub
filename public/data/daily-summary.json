@@ -1,6 +1,6 @@
 {
   "date": "2026-05-03",
-  "generatedAt": "2026-05-03T11:47:18.583Z",
+  "generatedAt": "2026-05-03T17:52:10.551Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 3 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,10 +11,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "‘Living in survival mode’: Houston’s embattled immigrant community faces health, climate and petrochemical crises",
-      "summary": "&lt;p&gt;Amid immigration raids, chemical spills, massive floods and costly healthcare, less-affluent residents of one of the most diverse US cities struggle to pull through&lt;/p&gt;&lt;p&gt;Cándido Álvarez has made it his policy never to go to the doctor.&lt;/p&gt;&lt;p&gt;“Not when I’m sick, not even when it’s serious,” he said. “I prefer not to go.”&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/may/02/houston-texas-immigrants-ice-health-extreme-weather\"&gt;Continue reading..",
+      "headline": "How we reported in -30C temperatures in Canada's Arctic",
+      "summary": "BBC's Nadine Yousif and Eloise Alanna spent five days travelling with the country's military rangers through frostbite and sub-zero temperatures.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Thai c.bank says studying tax on fund inflows - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5\" target=\"_blank\"&gt;Thai c.bank says studying tax on fund inflows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -36,11 +42,27 @@
           "score": 7
         },
         {
-          "title": "Solar booms in industrial US midwest as energy crisis persists",
-          "link": "https://www.theguardian.com/us-news/2026/may/02/solar-midwest-energy-crisis",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Electricity has become one of the most important commodities in the region thanks to demand from datacenters, Iran war and rising utility charges &lt;/p&gt;&lt;p&gt;For decades, the only regular visitors to the Twin Lake Reservoir in Lima, Ohio, were fishers passing hot summer evenings trying to snag a largemouth bass.&lt;/p&gt;&lt;p&gt;But today, it’s a hive of activity.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/may/02/solar-midwest-energy-crisis\"&gt;Continue readi",
-          "published": "2026-05-02T16:00:29.000Z",
+          "title": "IAEA says a drone targeted Zaporizhzhia nuclear power plant's external radiation control laboratory - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQcEFtV3QxWTNEQVhZMEhHNjhtWjRtWDYyYnJSZDhrdFFqUVZRcnMzMnBwM25IMTdYbGpwZEFhaERMSjNHWkQzWlhJNjh4OWlod3lESU0xS010ZHpnalUxVGxiR0U4OWprZEUzdG5BR0U5WHpWQ2VZWEFWNUh2Vm8zQ0ljeWRZRERlQlJrS1dhU3l0bGZZb2lvTklTUFZQSjVpeGpYbEY4Q3l2UDhyTEtGbVJjRm52VmhUVVdfR2YwdnkzeTB4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQcEFtV3QxWTNEQVhZMEhHNjhtWjRtWDYyYnJSZDhrdFFqUVZRcnMzMnBwM25IMTdYbGpwZEFhaERMSjNHWkQzWlhJNjh4OWlod3lESU0xS010ZHpnalUxVGxiR0U4OWprZEUzdG5BR0U5WHpWQ2VZWEFWNUh2Vm8zQ0ljeWRZRERlQlJrS1dhU3l0bGZZb2lvTklTUFZQSjVpeGpYbEY4Q3l2UDhyTEtGbVJjRm52VmhUVVdfR2YwdnkzeTB4?oc=5\" target=\"_blank\"&gt;IAEA says a drone targeted Zaporizhzhia nuclear power plant's external radiation control laboratory&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
+          "published": "2026-05-03T13:21:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "Egypt raises natural gas prices for industries amid volatile energy prices - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPek42V1VPVHBpMkotS3BmOGo0YlJWYTZXODJZUGFJbFVONlZzNE5SYmhpcFZuVVBKam8teVhPMjZZUXJRR0lvYmExQjJ3RTlidHNGRFd0bUdPdlgtWE4xX0VGMFBBRTNKUU9NTWM1ZzlnbXNiUmttWVpRS1lfMi1JTVZUWDhydm1MN2p1UjFNSWtfQnhvVGhZWEkxbUdjSU9mUHNISDhqTE5YYmd0Z1JrTnFGbkNWMEtOdUUxOTRaUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPek42V1VPVHBpMkotS3BmOGo0YlJWYTZXODJZUGFJbFVONlZzNE5SYmhpcFZuVVBKam8teVhPMjZZUXJRR0lvYmExQjJ3RTlidHNGRFd0bUdPdlgtWE4xX0VGMFBBRTNKUU9NTWM1ZzlnbXNiUmttWVpRS1lfMi1JTVZUWDhydm1MN2p1UjFNSWtfQnhvVGhZWEkxbUdjSU9mUHNISDhqTE5YYmd0Z1JrTnFGbkNWMEtOdUUxOTRaUQ?oc=5\" target=\"_blank\"&gt;Egypt raises natural gas prices for industries amid volatile energy prices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-03T13:11:34.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump administration cites national security to halt US wind farm projects, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPTjlhcUhwU0lNb1JCNlJVMW5NUWI5T1FWUlNzb0ViUzJhNVNsWnRqWVZ1ODZITmRseEl3YnFmc0RUU2V5WHRWX0IycVZIR21JLW9zMDFyWEJUeW5ZMjdWMl9vZjV4SHlVbHJsZlEtUjBMaUp5eFJ6dmUxVk5xdHcyZG5KUGcteUpsOUVBVUNZV2VVVmgzNWhpUFVWeXZMOVJyVU9JQXM1T0E4THNsZUY1ZzNNSmRHTk1jTUwtVjZrYlNtd01n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPTjlhcUhwU0lNb1JCNlJVMW5NUWI5T1FWUlNzb0ViUzJhNVNsWnRqWVZ1ODZITmRseEl3YnFmc0RUU2V5WHRWX0IycVZIR21JLW9zMDFyWEJUeW5ZMjdWMl9vZjV4SHlVbHJsZlEtUjBMaUp5eFJ6dmUxVk5xdHcyZG5KUGcteUpsOUVBVUNZV2VVVmgzNWhpUFVWeXZMOVJyVU9JQXM1T0E4THNsZUY1ZzNNSmRHTk1jTUwtVjZrYlNtd01n?oc=5\" target=\"_blank\"&gt;Trump administration cites national security to halt US wind farm projects, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-05-03T13:45:43.000Z",
           "score": 7
         },
         {
@@ -50,14 +72,6 @@
           "description": "German industry is being lapped in key sectors like solar panels, semiconductors and even cars — but the country&#039;s midsize businesses suggest the economy isn&#039;t losing its edge.",
           "published": "2026-05-03T05:58:00.000Z",
           "score": 4
-        },
-        {
-          "title": "Brazil's Petrobras raises natural gas prices by 19% after oil shock - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMnlQZThzNVJ5SW5IcFlSanpqQ2NienFVdGRPRWtpV1JEUmlBOVhPal9fT2NRc3N6UzVyTm9qeGlTR3pCNl9uNkdGYjV4UGRtRW1NTExHaDNqS3d2VmtMblJUUHRQUm1nSDZRT3VIdW15YVlwc0JkM1E0cDZ1MUNqNVRyNmlYQWE4M2VTbW11cVlEUXNKNnhfaVJUVXdEclNWYlpvQU1XcndfRHdNUUpyenJobkJ2S1lh?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOMnlQZThzNVJ5SW5IcFlSanpqQ2NienFVdGRPRWtpV1JEUmlBOVhPal9fT2NRc3N6UzVyTm9qeGlTR3pCNl9uNkdGYjV4UGRtRW1NTExHaDNqS3d2VmtMblJUUHRQUm1nSDZRT3VIdW15YVlwc0JkM1E0cDZ1MUNqNVRyNmlYQWE4M2VTbW11cVlEUXNKNnhfaVJUVXdEclNWYlpvQU1XcndfRHdNUUpyenJobkJ2S1lh?oc=5\" target=\"_blank\"&gt;Brazil's Petrobras raises natural gas prices by 19% after oil shock&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-02T16:16:11.000Z",
-          "score": 2
         }
       ]
     },
@@ -65,14 +79,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "‘Living in survival mode’: Houston’s embattled immigrant community faces health, climate and petrochemical crises",
-          "link": "https://www.theguardian.com/us-news/2026/may/02/houston-texas-immigrants-ice-health-extreme-weather",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Amid immigration raids, chemical spills, massive floods and costly healthcare, less-affluent residents of one of the most diverse US cities struggle to pull through&lt;/p&gt;&lt;p&gt;Cándido Álvarez has made it his policy never to go to the doctor.&lt;/p&gt;&lt;p&gt;“Not when I’m sick, not even when it’s serious,” he said. “I prefer not to go.”&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/may/02/houston-texas-immigrants-ice-health-extreme-weather\"&gt;Continue reading..",
-          "published": "2026-05-02T12:00:25.000Z",
-          "score": 7
-        },
         {
           "title": "How we reported in -30C temperatures in Canada's Arctic",
           "link": "https://www.bbc.com/news/videos/cvgz3pnn1ppo?at_medium=RSS&amp;at_campaign=rss",
@@ -82,18 +88,10 @@
           "score": 7
         },
         {
-          "title": "Berkshire CEO Abel says 'we're back to first base' in wildfire litigation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVTk5YzdEbVNSMGdHRFFwWGNyQUtVeFZnU0dUUVQzZVBxNV90THFqOEFxdnhXRXlydGFCQ0FkY2ZodENVdHZDV1RRZjRfSWNiaUQtaHMzNHduejcxNFAxalJNYlVyeWpwdWFMd25UallFQUFhTnhfQjhMZjU2VHdTRlljTHdZLTNrWGFmQ24yYXp4VFFlRXFPRlFab0o0NE9lODl5M0hrdkFSbmk4TnFXOVhITGotaTNVNXN4MWV1SmY0LVJRaWt0bHM1VXdoSkdBTE96ZW1QRQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVTk5YzdEbVNSMGdHRFFwWGNyQUtVeFZnU0dUUVQzZVBxNV90THFqOEFxdnhXRXlydGFCQ0FkY2ZodENVdHZDV1RRZjRfSWNiaUQtaHMzNHduejcxNFAxalJNYlVyeWpwdWFMd25UallFQUFhTnhfQjhMZjU2VHdTRlljTHdZLTNrWGFmQ24yYXp4VFFlRXFPRlFab0o0NE9lODl5M0hrdkFSbmk4TnFXOVhITGotaTNVNXN4MWV1SmY0LVJRaWt0bHM1VXdoSkdBTE96ZW1QRQ?oc=5\" target=\"_blank\"&gt;Berkshire CEO Abel says 'we're back to first base' in wildfire litigation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
-          "published": "2026-05-02T15:35:17.000Z",
-          "score": 7
-        },
-        {
-          "title": "Why Russia’s Northern Sea Route remains a risky bet for global shipping",
-          "link": "https://www.dw.com/en/why-russia-s-northern-sea-route-remains-a-risky-bet-for-global-shipping/a-76987400?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Why Russia&#039;s Northern Sea Route is a risk for global trade",
+          "link": "https://www.dw.com/en/why-russia-s-northern-sea-route-is-a-risk-for-global-trade/a-76987400?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Russia wants its Northern Sea Route to become an important artery of global trade. However, the arctic shortcut between Europe and Asia is fraught with both political and environmental hurdles.",
+          "description": "Russia wants its Northern Sea Route to become an important artery of global trade. However, the Arctic shortcut between Europe and Asia is fraught with both political and environmental hurdles.",
           "published": "2026-05-02T19:43:00.000Z",
           "score": 6
         },
@@ -104,13 +102,38 @@
           "description": "&lt;p&gt;Residents say AI factories with unknown environmental impacts are being rushed into development as proponents argue Australia must ride the data boom or be left behind&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/03/politics-updates-liberals-nepean-byelection-victoria-anthony-albanese-labor-angus-taylor-matt-canavan-nationals-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;l",
           "published": "2026-05-02T20:00:35.000Z",
           "score": 2
+        },
+        {
+          "title": "Nature haven 'trashed' after four-year wait for protection decision",
+          "link": "https://www.bbc.com/news/articles/cvgzl329lqlo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Activists claim developers are damaging the area while NatureScot considers whether or not to designate it a protected site.",
+          "published": "2026-05-03T08:14:19.000Z",
+          "score": 2
+        },
+        {
+          "title": "No ban on over-the-counter pet flea treatments in Jersey",
+          "link": "https://www.bbc.com/news/articles/cjdp50xn5kro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "It comes as the UK looks to restrict the products to vet visits.",
+          "published": "2026-05-03T06:15:12.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Thai c.bank says studying tax on fund inflows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5\" target=\"_blank\"&gt;Thai c.bank says studying tax on fund inflows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-03T12:03:08.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -139,44 +162,44 @@
           "score": 8
         },
         {
-          "title": "U.S. troop withdrawal, EU auto tariffs, Spirit collapses and Banksy - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxObmZfTWk3QzNqNEloQjNPODgtZ2xLRnh3bTNsYWotTGFIYV82cjVLTnJEWUZnYllNVmlhem9PQ2F2LXd5SVJjUDJ4eUpoSXNPWkhpXzk2TDZLeVVtb1pMU1dpUS15V3RMMUdRRmxDLUMyaWFHRUcwVEJid3FOcGxYTVhuRU9EbDU1VVc3eHJIUWFoMEdhempTNkNOenVUVmhLMWNJeVRaMA?oc=5",
+          "title": "ECB policymaker says euro zone recession concerns 'real and justified' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaWR2WXBOXzZxMkkzS201Yjc5WDJHWmtpZHhYRWg4NW1NbGVRWE5OT1lwaldkWGtqb2JPZThVeFRvZ3plNWxZcVFwdEVabkJlRXNhN0dack5tckpXMldzYnZDZnNSSzc1Ni1Kcjg1MlBsVU5QdXd3WGJlcjhXU1JlNlJBeWZIcE1DbURIN2VqcUpmVWE4WVBiZUVteTBXam1MVi1DUTdnNEFFSHZURGZqaDRXQWpQVnR1?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxObmZfTWk3QzNqNEloQjNPODgtZ2xLRnh3bTNsYWotTGFIYV82cjVLTnJEWUZnYllNVmlhem9PQ2F2LXd5SVJjUDJ4eUpoSXNPWkhpXzk2TDZLeVVtb1pMU1dpUS15V3RMMUdRRmxDLUMyaWFHRUcwVEJid3FOcGxYTVhuRU9EbDU1VVc3eHJIUWFoMEdhempTNkNOenVUVmhLMWNJeVRaMA?oc=5\" target=\"_blank\"&gt;U.S. troop withdrawal, EU auto tariffs, Spirit collapses and Banksy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-02T15:46:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaWR2WXBOXzZxMkkzS201Yjc5WDJHWmtpZHhYRWg4NW1NbGVRWE5OT1lwaldkWGtqb2JPZThVeFRvZ3plNWxZcVFwdEVabkJlRXNhN0dack5tckpXMldzYnZDZnNSSzc1Ni1Kcjg1MlBsVU5QdXd3WGJlcjhXU1JlNlJBeWZIcE1DbURIN2VqcUpmVWE4WVBiZUVteTBXam1MVi1DUTdnNEFFSHZURGZqaDRXQWpQVnR1?oc=5\" target=\"_blank\"&gt;ECB policymaker says euro zone recession concerns 'real and justified'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-03T13:43:44.000Z",
           "score": 8
         },
         {
-          "title": "CCS -2009/10 parent forecast - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNeDNlQVZzRUdOZHFMbHlRWHRNZkxTRXhBS01HUG5OMUtaTDFPLUlyVndXN2NXcW1RQnhVNjJnTnoyNHUwd2J2ZWd2WXhWNERtNVQzMG1IU3VnbDNZTFNFMmdOdEJBUnNDdjlHU0VTNXJfZndoZ0N2bHVFVmZtbm5oLUhsY2ZZUWhJV0JSZDFR?oc=5",
+          "title": "Executives see euro rising to $1.25-$1.30 in '06 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQdzc0RUhhQmRSRWVzbjFYdHlIVlV4eGlLazhKSzBzbkNBOXZlejJxVk03c3lVYkFTNEpicjEwNVBISkR1bWFnXy1zQlR5WXZYMHBRUXRLNkN3TE9QcHd4Nmx3NGlqaFU1WmE5b3dncDNpVXlLYjRtUTRzOXp0MEpqZndISjNCMHVYcEx2TmRWbVVDX2x2ODhHMkZuMk4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxNeDNlQVZzRUdOZHFMbHlRWHRNZkxTRXhBS01HUG5OMUtaTDFPLUlyVndXN2NXcW1RQnhVNjJnTnoyNHUwd2J2ZWd2WXhWNERtNVQzMG1IU3VnbDNZTFNFMmdOdEJBUnNDdjlHU0VTNXJfZndoZ0N2bHVFVmZtbm5oLUhsY2ZZUWhJV0JSZDFR?oc=5\" target=\"_blank\"&gt;CCS -2009/10 parent forecast&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-02T21:08:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQdzc0RUhhQmRSRWVzbjFYdHlIVlV4eGlLazhKSzBzbkNBOXZlejJxVk03c3lVYkFTNEpicjEwNVBISkR1bWFnXy1zQlR5WXZYMHBRUXRLNkN3TE9QcHd4Nmx3NGlqaFU1WmE5b3dncDNpVXlLYjRtUTRzOXp0MEpqZndISjNCMHVYcEx2TmRWbVVDX2x2ODhHMkZuMk4?oc=5\" target=\"_blank\"&gt;Executives see euro rising to $1.25-$1.30 in '06&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-03T13:28:42.000Z",
+          "score": 8
+        },
+        {
+          "title": "ADB launches $70 billion plan for energy, digital infrastructure in Asia-Pacific - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPck9QM29iay1XVmZSY1I0VmpRalhmeVAxaktSYmtDRTRfd3hRal9kRUh6djFJVm1mdG9McUQ3SU9Odm5JT0hHa0dEclJXSXRNZDZaamxOSDBSQWlVTWwwS0U1VW5COGkydlhlR0xScmlfa3NhMkhlbjduMzBwMzd1UzloVFZhTHVWekJrZFFLMmdiN0NhMC1MRVVCamlGb2hHdWRVMHh0WEdjTVhqVDg1UjRjSnNpOVdUMlNyY05ZcE03RzFPR1g0S0FhX0txcWNZUDRF?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPck9QM29iay1XVmZSY1I0VmpRalhmeVAxaktSYmtDRTRfd3hRal9kRUh6djFJVm1mdG9McUQ3SU9Odm5JT0hHa0dEclJXSXRNZDZaamxOSDBSQWlVTWwwS0U1VW5COGkydlhlR0xScmlfa3NhMkhlbjduMzBwMzd1UzloVFZhTHVWekJrZFFLMmdiN0NhMC1MRVVCamlGb2hHdWRVMHh0WEdjTVhqVDg1UjRjSnNpOVdUMlNyY05ZcE03RzFPR1g0S0FhX0txcWNZUDRF?oc=5\" target=\"_blank\"&gt;ADB launches $70 billion plan for energy, digital infrastructure in Asia-Pacific&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
+          "published": "2026-05-03T12:38:07.000Z",
           "score": 7
         },
         {
-          "title": "Iran war: Trump says reviewing new Tehran proposal with doubt",
-          "link": "https://www.dw.com/en/iran-war-trump-says-reviewing-new-tehran-proposal-with-doubt/live-77021634?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "US President Donald Trump has said he &quot;can&#039;t imagine&quot; the proposal is acceptable. Tehran said the &quot;ball is in the US&#039; court&quot; to choose whether to pursue diplomacy or confrontation. DW has more.",
-          "published": "2026-05-03T01:38:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Germany troop cuts send wrong signal to Russia, say two top US Republicans",
-          "link": "https://www.bbc.com/news/articles/cewpx5yvwyxo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Iran says US has responded to its latest peace proposal",
+          "link": "https://www.bbc.com/news/articles/cn0px2x53k2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The chairs of the House and Senate armed services committees said withdrawing 5,000 service personnel risked undermining deterrence.",
-          "published": "2026-05-03T08:41:23.000Z",
-          "score": 2
+          "description": "Before reviewing the proposal on Saturday, US President Donald Trump said he could not imagine it \"would be acceptable\".",
+          "published": "2026-05-03T17:31:31.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 388,
-    "articlesLast24h": 137,
-    "afterDedup": 126,
+    "totalArticlesScanned": 387,
+    "articlesLast24h": 136,
+    "afterDedup": 124,
     "feedsQueried": 19
   }
 }
