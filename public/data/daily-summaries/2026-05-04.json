@@ -1,12 +1,12 @@
 {
   "date": "2026-05-04",
-  "generatedAt": "2026-05-04T18:19:39.349Z",
+  "generatedAt": "2026-05-04T23:58:48.005Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 4 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Daily News 04 / 05 / 2026",
-      "summary": "European Commission Daily news Brussels, 04 May 2026 Commission publishes simplification review of EU Deforestation Regulation\r\nToday, the Commission published a report on the simplification of the revised EU Defor...",
+      "headline": "Introductory remarks by Commissioner Hoekstra at the Structured Dialogue in the European Parliament's Committee on Environment, Climate and Food Safety (ENVI)",
+      "summary": "European Commission Speech Brussels, 04 May 2026 Thank you very much Chair,\r\nHonourable Members,\r\nVery good to see you.\r\nThank you for inviting me to take part in today's exchange.\r\nIf you look at the world, if yo...",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
@@ -35,17 +35,17 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Daily News 04 / 05 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_954",
+          "title": "Introductory remarks by Commissioner Hoekstra at the Structured Dialogue in the European Parliament's Committee on Environment, Climate and Food Safety (ENVI)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_986",
           "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 04 May 2026 Commission publishes simplification review of EU Deforestation Regulation\r\nToday, the Commission published a report on the simplification of the revised EU Defor...",
-          "published": "2026-05-04T09:45:35.000Z",
-          "score": 20
+          "description": "European Commission Speech Brussels, 04 May 2026 Thank you very much Chair,\r\nHonourable Members,\r\nVery good to see you.\r\nThank you for inviting me to take part in today's exchange.\r\nIf you look at the world, if yo...",
+          "published": "2026-05-04T17:49:43.000Z",
+          "score": 27
         },
         {
           "title": "EU removes leather from anti-deforestation law after industry pressure - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPSXdVamo0V0syQmM4dXBSeThHN1VHTnBTbF9TQ04tOEhScFY3STdqN1U5UWsxVWJqTEEyZVdwaUhrU1VkR1lMZ0pYM0NhRFc1MnhHMDZ5ZDV1SWNQSUp4eDNjUnQwcEdzN1J1OFpiYmR1aVBVc0tWV3pqWGRJazlobm9kNVNxejloWnVERHkwR1hBLWJSNlREVmpMTzQ5dFlWbzIwVWhGaGlUcUg3U2FzR0J1TDhCVkhtZjhfUG1DQXJGcGNsazg3R0lhdw?oc=5",
-          "source": "Reuters (via Google News)",
+          "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPSXdVamo0V0syQmM4dXBSeThHN1VHTnBTbF9TQ04tOEhScFY3STdqN1U5UWsxVWJqTEEyZVdwaUhrU1VkR1lMZ0pYM0NhRFc1MnhHMDZ5ZDV1SWNQSUp4eDNjUnQwcEdzN1J1OFpiYmR1aVBVc0tWV3pqWGRJazlobm9kNVNxejloWnVERHkwR1hBLWJSNlREVmpMTzQ5dFlWbzIwVWhGaGlUcUg3U2FzR0J1TDhCVkhtZjhfUG1DQXJGcGNsazg3R0lhdw?oc=5\" target=\"_blank\"&gt;EU removes leather from anti-deforestation law after industry pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
           "published": "2026-05-04T14:51:44.000Z",
           "score": 17
@@ -73,6 +73,14 @@
           "score": 19
         },
         {
+          "title": "Speech by Commissioner Jørgensen at the French G7 Presidency's International High-Level Multi-Stakeholder Event on Methane Action",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_987",
+          "source": "European Commission",
+          "description": "European Commission Speech Paris, 04 May 2026 Minister. Excellencies. Distinguished guests. Friends:\r\nMy deep thanks to the French G7 Presidency for hosting this event.\r\nThe current energy crisis is a stark r...",
+          "published": "2026-05-04T18:11:45.000Z",
+          "score": 19
+        },
+        {
           "title": "Fixing methane mega-leaks could boost energy stock amid crisis, report says",
           "link": "https://www.theguardian.com/environment/2026/may/04/fixing-mega-leaks-of-methane-would-hugely-boost-energy-stock-amid-crisis-report-says",
           "source": "The Guardian - Climate",
@@ -89,20 +97,12 @@
           "score": 7
         },
         {
-          "title": "Atmosphere detected on celestial body in solar system's far reaches - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOUjVZX2RxRUtrVzA5b1huenNLTDBQRTlwQWV3UDFNSno5Rk1VUlhBY3BCRGd4b0k3eWpwazdOcmM3bFRzcnpkV3NJcmJFcXlaemN1OGs2TmVUNVRkM0cyYUctdWpPME9peFhDN0toTDJqWHB6Q2pxSk8tRDRtRE01ZVFsWl81dWtuWlFFUmFSQUY5ZWR1U3pEVG0wUk9jUERvcWVNbFVXdw?oc=5",
+          "title": "Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQNm9KaWowV3pqQVVxRjJSZE9ROFVxTlM3YjZiVEI5bGZjcUIwbE1JSl9nWi1tTF8tc2ZpbU80RXFCQWdFNThGa0JZZ0xyai1XSjJEeGVzU3ZtU2ZNNGZMOHpzd0pDYWdlRldLeFZjeEdoeDlidlZ6U3NhYVc5RXZ5Q2ZsMDNvWkNRZkhzckxjeXJITmhIUGV6cFNId3NRakhOckJtOVI2cnZRVnNMQmpYd2JPTm9GMkJHZmpCUktVZ1YtYUtfZlJfM0Z0Tnk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOUjVZX2RxRUtrVzA5b1huenNLTDBQRTlwQWV3UDFNSno5Rk1VUlhBY3BCRGd4b0k3eWpwazdOcmM3bFRzcnpkV3NJcmJFcXlaemN1OGs2TmVUNVRkM0cyYUctdWpPME9peFhDN0toTDJqWHB6Q2pxSk8tRDRtRE01ZVFsWl81dWtuWlFFUmFSQUY5ZWR1U3pEVG0wUk9jUERvcWVNbFVXdw?oc=5\" target=\"_blank\"&gt;Atmosphere detected on celestial body in solar system's far reaches&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-04T15:06:53.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxQNm9KaWowV3pqQVVxRjJSZE9ROFVxTlM3YjZiVEI5bGZjcUIwbE1JSl9nWi1tTF8tc2ZpbU80RXFCQWdFNThGa0JZZ0xyai1XSjJEeGVzU3ZtU2ZNNGZMOHpzd0pDYWdlRldLeFZjeEdoeDlidlZ6U3NhYVc5RXZ5Q2ZsMDNvWkNRZkhzckxjeXJITmhIUGV6cFNId3NRakhOckJtOVI2cnZRVnNMQmpYd2JPTm9GMkJHZmpCUktVZ1YtYUtfZlJfM0Z0Tnk?oc=5\" target=\"_blank\"&gt;Exclusive: US intelligence indicates limited new damage to Iran's nuclear program, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
+          "published": "2026-05-04T20:40:09.000Z",
           "score": 7
-        },
-        {
-          "title": "Reform government could cause Truss-style chaos, says renewables industry",
-          "link": "https://www.theguardian.com/environment/2026/may/04/reform-uk-government-truss-renewable-energy-policy",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Lobbyist Tara Singh says stripping projects of subsidy contracts would undermine investor confidence in UK&lt;/p&gt;&lt;p&gt;Britain could be beset by levels of economic chaos last seen under Liz Truss if a Reform UK government were to fulfil its promise to strip renewable energy projects of subsidy contracts, according to the industry’s chief lobbyist.&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/business/2025/jul/17/reforms-anti-renewables-stance-putting-jobs-and-ener",
-          "published": "2026-05-04T13:00:23.000Z",
-          "score": 4
         }
       ]
     },
@@ -135,19 +135,19 @@
           "score": 7
         },
         {
+          "title": "US Justice Dept sues to block Minnesota's climate change lawsuit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQanR4YmlQX1FIOGVqYURJQ2lGeFhZRE9iR0ZUQ3d6Qi00SDNHY1NBc1E0OTRlSDBiZTBGYUZnU2o0NGdTZng5cDhBelg5NGc5N05aMGktY2VvMzJQcVpPNnVkMndMOTdVZ2hRMTYxdVA5bkQtSmFmVDJyQUVpVEMyTnVRU3UxckRBbUlROV8xRVc0RHhoZlFBT3NpMG9SWGotR0t0Wk5FU2JxVThnRFd1Znhn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQanR4YmlQX1FIOGVqYURJQ2lGeFhZRE9iR0ZUQ3d6Qi00SDNHY1NBc1E0OTRlSDBiZTBGYUZnU2o0NGdTZng5cDhBelg5NGc5N05aMGktY2VvMzJQcVpPNnVkMndMOTdVZ2hRMTYxdVA5bkQtSmFmVDJyQUVpVEMyTnVRU3UxckRBbUlROV8xRVc0RHhoZlFBT3NpMG9SWGotR0t0Wk5FU2JxVThnRFd1Znhn?oc=5\" target=\"_blank\"&gt;US Justice Dept sues to block Minnesota's climate change lawsuit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-04T19:40:13.000Z",
+          "score": 7
+        },
+        {
           "title": "How a hurricane created a 'precious saltmarsh'",
           "link": "https://www.bbc.com/news/articles/c5y74l61j29o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "This year marks 30 years since a storm breached sea defenses in Porlock.",
           "published": "2026-05-04T10:54:41.000Z",
-          "score": 2
-        },
-        {
-          "title": "Pine marten kit receives round-the-clock care after siblings died",
-          "link": "https://www.bbc.com/news/videos/c8d8j51epe4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The kit was rescued from a bin in Wales and is now being looked after at Vale Wildlife Hospital.",
-          "published": "2026-05-04T06:13:01.000Z",
           "score": 2
         }
       ]
@@ -233,14 +233,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "European leaders converge on Armenia as Russia looks on",
-          "link": "https://www.bbc.com/news/articles/cgkp1124y3yo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Two European summits are being held in a country long considered Russia's closest ally in the region.",
-          "published": "2026-05-03T23:19:05.000Z",
-          "score": 8
-        },
-        {
           "title": "Decoding China: Beijing courts Europe amid US dysfunction",
           "link": "https://www.dw.com/en/decoding-china-beijing-courts-europe-amid-us-dysfunction/a-77038349?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -265,20 +257,28 @@
           "score": 8
         },
         {
-          "title": "Tesla's European rebound continues in April despite decline in Norway and Spain - Reuters",
+          "title": "US to move forward with plans to hike EU car tariffs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPeENvRXU5WHZfYzJTSmNEOEJwZzFVNmtFeHgzRWVaZ09pOEdJLU4wRUZJNVFEVXEzREVMU216TDUzWXlvejQ5by1fcDBZZ3V3YkI3MkY2Z1VuNklNeFh6Nkd5NVJHWDR3T0NEQmFXRUdsX29jS1dQcUxpaEFzWW5FT1ZjTUtNY2x6Z3FOU0ZTU3FLT2ZvVVVrU2F2bw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPeENvRXU5WHZfYzJTSmNEOEJwZzFVNmtFeHgzRWVaZ09pOEdJLU4wRUZJNVFEVXEzREVMU216TDUzWXlvejQ5by1fcDBZZ3V3YkI3MkY2Z1VuNklNeFh6Nkd5NVJHWDR3T0NEQmFXRUdsX29jS1dQcUxpaEFzWW5FT1ZjTUtNY2x6Z3FOU0ZTU3FLT2ZvVVVrU2F2bw?oc=5\" target=\"_blank\"&gt;US to move forward with plans to hike EU car tariffs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-04T20:07:42.000Z",
+          "score": 8
+        },
+        {
+          "title": "Tesla posts mixed April sales across Europe but overall rebound stays on track - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQQnVhVlJfSWpSWDFMNm1MUHNhWXJnRVFnenhMcU9KZllJYnBqN0xlT0xyTWhwV091dzM2QU80dXVHY3pzdUhXM3N0QUd3bDZ0clVRcnlidEZOS0x5T2FQVW5TZFJTcVRSVU1rQklsWHNoaGlrT1JrbjFlUkF1a2xkdVlBX0FQSUFfNEdVXzlkZkhLenpxRURYWk00SWJxWllhb0VyQTJ1MG1BNVZzaks1WjJfSmVsRXdRbENJbGtuZWdDT2F3Vmh1QUtMQ2UwV2M?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQQnVhVlJfSWpSWDFMNm1MUHNhWXJnRVFnenhMcU9KZllJYnBqN0xlT0xyTWhwV091dzM2QU80dXVHY3pzdUhXM3N0QUd3bDZ0clVRcnlidEZOS0x5T2FQVW5TZFJTcVRSVU1rQklsWHNoaGlrT1JrbjFlUkF1a2xkdVlBX0FQSUFfNEdVXzlkZkhLenpxRURYWk00SWJxWllhb0VyQTJ1MG1BNVZzaks1WjJfSmVsRXdRbENJbGtuZWdDT2F3Vmh1QUtMQ2UwV2M?oc=5\" target=\"_blank\"&gt;Tesla's European rebound continues in April despite decline in Norway and Spain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-05-04T13:39:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQQnVhVlJfSWpSWDFMNm1MUHNhWXJnRVFnenhMcU9KZllJYnBqN0xlT0xyTWhwV091dzM2QU80dXVHY3pzdUhXM3N0QUd3bDZ0clVRcnlidEZOS0x5T2FQVW5TZFJTcVRSVU1rQklsWHNoaGlrT1JrbjFlUkF1a2xkdVlBX0FQSUFfNEdVXzlkZkhLenpxRURYWk00SWJxWllhb0VyQTJ1MG1BNVZzaks1WjJfSmVsRXdRbENJbGtuZWdDT2F3Vmh1QUtMQ2UwV2M?oc=5\" target=\"_blank\"&gt;Tesla posts mixed April sales across Europe but overall rebound stays on track&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-05-04T17:46:01.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 381,
-    "articlesLast24h": 168,
-    "afterDedup": 145,
+    "totalArticlesScanned": 384,
+    "articlesLast24h": 167,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
