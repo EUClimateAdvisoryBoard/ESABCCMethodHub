@@ -13,6 +13,8 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import { getVote } from '@/lib/voting/store';
+import { detectVotingBackend } from '@/lib/voting/backend';
+import StorageBackendBanner from '../../StorageBackendBanner';
 import { analyse, PriorityAnalysis, TallyAnalysis, StarAnalysis } from '@/lib/voting/analysis';
 
 export const dynamic = 'force-dynamic';
@@ -23,6 +25,7 @@ function fmt(n: number): string {
 }
 
 export default async function ResultsPage({ params }: { params: { voteId: string } }) {
+  const backend = detectVotingBackend();
   const bundle = await getVote(params.voteId);
   if (!bundle) notFound();
   const analysis = analyse(bundle.vote, bundle.ballots);
@@ -46,6 +49,7 @@ export default async function ResultsPage({ params }: { params: { voteId: string
         }
       />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8">
+        <StorageBackendBanner backend={backend} />
         <section className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden">
           <Stat label="Tokens issued" value={String(issued)} />
           <Stat label="Tokens used" value={`${used} / ${issued}`} />
