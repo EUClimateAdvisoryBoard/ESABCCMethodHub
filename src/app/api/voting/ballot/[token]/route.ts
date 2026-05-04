@@ -26,6 +26,8 @@ function publicView(
   bundle: NonNullable<Awaited<ReturnType<typeof findTokenContext>>>,
 ): PublicVoteView {
   const { vote } = bundle.bundle;
+  const t = bundle.tokenRecord;
+  const exhausted = t.maxUses != null && t.useCount >= t.maxUses;
   return {
     id: vote.id,
     title: vote.title,
@@ -36,7 +38,8 @@ function publicView(
     options: vote.options,
     status: vote.status,
     closesAt: vote.closesAt,
-    alreadySubmitted: bundle.tokenRecord.usedAt !== null,
+    alreadySubmitted: exhausted,
+    isShared: t.maxUses !== 1,
   };
 }
 
@@ -72,9 +75,10 @@ export async function POST(req: NextRequest, ctx: { params: { token: string } })
       { status: 404, headers: noStore },
     );
   }
-  if (ctxBundle.tokenRecord.usedAt) {
+  const t = ctxBundle.tokenRecord;
+  if (t.maxUses != null && t.useCount >= t.maxUses) {
     return NextResponse.json(
-      { error: 'This link has already been used.' },
+      { error: 'This link has reached its submission limit.' },
       { status: 409, headers: noStore },
     );
   }

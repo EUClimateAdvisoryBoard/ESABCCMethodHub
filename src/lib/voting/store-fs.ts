@@ -109,6 +109,7 @@ export async function generateTokens(
   voteId: string,
   count: number,
   labels: (string | undefined)[] = [],
+  maxUses: number | null = 1,
 ): Promise<VoteToken[]> {
   const bundle = await readBundle(voteId);
   if (!bundle) throw new Error(`Vote ${voteId} not found`);
@@ -120,6 +121,8 @@ export async function generateTokens(
       label: labels[i],
       createdAt: now,
       usedAt: null,
+      maxUses,
+      useCount: 0,
     });
   }
   bundle.tokens = [...bundle.tokens, ...created];
@@ -166,13 +169,13 @@ export async function recordBallot(
   const tokenIdx = bundle.tokens.findIndex((t) => t.token === token);
   if (tokenIdx < 0) throw new Error('Invalid voting link');
   const tokenRecord = bundle.tokens[tokenIdx];
-  if (tokenRecord.usedAt) throw new Error('This voting link has already been used');
-
-  const fp = fingerprint(voteId, token);
-  if (bundle.ballots.some((b) => b.tokenFingerprint === fp)) {
-    throw new Error('This voting link has already been used');
+  const maxUses = tokenRecord.maxUses ?? null;
+  const useCount = tokenRecord.useCount ?? 0;
+  if (maxUses != null && useCount >= maxUses) {
+    throw new Error('This voting link has reached its submission limit');
   }
 
+  const fp = fingerprint(voteId, token);
   const now = new Date().toISOString();
   const ballot: Ballot = {
     id: newId('ballot'),
@@ -183,7 +186,11 @@ export async function recordBallot(
     tokenFingerprint: fp,
   };
 
-  bundle.tokens[tokenIdx] = { ...tokenRecord, usedAt: now };
+  bundle.tokens[tokenIdx] = {
+    ...tokenRecord,
+    usedAt: tokenRecord.usedAt ?? now,
+    useCount: useCount + 1,
+  };
   bundle.ballots.push(ballot);
   await writeBundle(bundle);
   return ballot;

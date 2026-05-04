@@ -19,6 +19,31 @@ type FetchState =
   | { kind: 'submitted' }
   | { kind: 'already' };
 
+/**
+ * Per-browser idempotency for shared (universal) voting links. We tag the
+ * vote id (NOT the token) in localStorage so the same browser can't easily
+ * submit a second ballot. This is advisory: someone determined could clear
+ * storage, but it covers the realistic "double-click submit" / "I forgot
+ * I already voted" cases. The vote id alone is not personal data.
+ */
+const LS_KEY_PREFIX = 'esabcc-vote-submitted:';
+function hasLocalSubmission(voteId: string): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    return window.localStorage.getItem(LS_KEY_PREFIX + voteId) === '1';
+  } catch {
+    return false;
+  }
+}
+function rememberLocalSubmission(voteId: string): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(LS_KEY_PREFIX + voteId, '1');
+  } catch {
+    /* private mode / quota — best-effort */
+  }
+}
+
 export default function VoteBallot({ token }: { token: string }) {
   const [state, setState] = useState<FetchState>({ kind: 'loading' });
   const [responses, setResponses] = useState<Record<string, number | boolean>>({});
@@ -49,6 +74,14 @@ export default function VoteBallot({ token }: { token: string }) {
         }
         if (vote.closesAt && new Date(vote.closesAt) < new Date()) {
           setState({ kind: 'invalid', message: 'This vote has closed.' });
+          return;
+        }
+        // Per-browser idempotency for shared links: if THIS browser has
+        // already submitted to THIS vote, show the thank-you screen instead
+        // of letting the user submit twice. Soft enforcement only — the
+        // server hasn't capped this token.
+        if (vote.isShared && hasLocalSubmission(vote.id)) {
+          setState({ kind: 'submitted' });
           return;
         }
         setState({ kind: 'ready', vote });
@@ -97,6 +130,7 @@ export default function VoteBallot({ token }: { token: string }) {
       if (!res.ok) {
         setError(json.error ?? 'Could not submit your ballot.');
       } else {
+        rememberLocalSubmission(vote.id);
         setState({ kind: 'submitted' });
       }
     } catch {
@@ -133,10 +167,9 @@ export default function VoteBallot({ token }: { token: string }) {
 
       <div className="mt-8 flex items-center justify-between gap-3 border-t border-[#E6E7E8] pt-6">
         <p className="text-[11.5px] text-[#3D5265]/60 max-w-md leading-snug">
-          Your response is single-use and cannot be edited after submission.
-          {vote.id ? ' ' : ''}
-          {/* Anonymity hint — purely advisory; the server enforces it. */}
-          {/* We don't expose isAnonymous here to avoid implying anything about who can see what. */}
+          {vote.isShared
+            ? 'Your response cannot be edited after submission. Please only submit once.'
+            : 'Your response is single-use and cannot be edited after submission.'}
         </p>
         <button
           type="button"
