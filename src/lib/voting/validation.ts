@@ -85,5 +85,34 @@ export function validateBallotResponses(
       }
       return { ok: true, cleaned };
     }
+
+    case 'average_ranking':
+    case 'ranked_voting': {
+      const N = vote.options.length;
+      const seenRanks = new Set<number>();
+      for (const [optId, v] of Object.entries(cleaned)) {
+        if (typeof v !== 'number' || !Number.isInteger(v) || v < 1 || v > N) {
+          return { ok: false, error: `Rank for "${optId}" must be an integer 1..${N}` };
+        }
+        if (seenRanks.has(v)) {
+          return { ok: false, error: `Rank ${v} is used more than once — each rank must be distinct` };
+        }
+        seenRanks.add(v);
+      }
+      // average_ranking defaults to requiring all options ranked (a full
+      // permutation); ranked_voting defaults to allowing partial rankings.
+      const requireAll =
+        vote.config.requireAllRanked ?? vote.votingSystem === 'average_ranking';
+      if (requireAll) {
+        for (const opt of vote.options) {
+          if (!(opt.id in cleaned)) {
+            return { ok: false, error: `Every option must be ranked — missing "${opt.label}"` };
+          }
+        }
+      } else if (Object.keys(cleaned).length === 0) {
+        return { ok: false, error: 'Rank at least one option' };
+      }
+      return { ok: true, cleaned };
+    }
   }
 }
