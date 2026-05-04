@@ -29,6 +29,8 @@ type Draft = {
   maxSelections: number;
   // Star
   maxStars: number;
+  // Ranking systems (average_ranking / ranked_voting)
+  requireAllRanked: boolean;
 };
 
 const SYSTEMS: { value: VotingSystem; label: string; hint: string }[] = [
@@ -37,6 +39,8 @@ const SYSTEMS: { value: VotingSystem; label: string; hint: string }[] = [
   { value: 'multi_choice',     label: 'Multiple choice',  hint: 'Pick up to N options.' },
   { value: 'approval',         label: 'Approval voting',  hint: 'Approve or reject every option.' },
   { value: 'star',             label: 'Star rating',      hint: 'Rate each option from 1..N stars.' },
+  { value: 'average_ranking',  label: 'Average ranking',  hint: 'Voters order all options 1..N; result is the mean rank per option.' },
+  { value: 'ranked_voting',    label: 'Ranked voting (IRV)', hint: 'Instant-runoff: voters rank options in preference order; eliminate the lowest first-preference each round until a majority winner.' },
 ];
 
 const initial: Draft = {
@@ -55,6 +59,7 @@ const initial: Draft = {
   requireAllScored: true,
   maxSelections: 1,
   maxStars: 5,
+  requireAllRanked: true,
 };
 
 function parseScores(text: string): number[] {
@@ -107,6 +112,10 @@ export default function VoteBuilder() {
         return { maxSelections: Math.max(1, Number(draft.maxSelections) || 1) };
       case 'star':
         return { maxStars: Math.max(2, Number(draft.maxStars) || 5) };
+      case 'average_ranking':
+        return { requireAllRanked: draft.requireAllRanked };
+      case 'ranked_voting':
+        return { requireAllRanked: draft.requireAllRanked };
       case 'approval':
       default:
         return {};
@@ -293,6 +302,24 @@ export default function VoteBuilder() {
               onChange={(e) => setDraft({ ...draft, maxStars: Number(e.target.value) })}
               className="w-32 rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
             />
+          </Field>
+        )}
+
+        {(draft.votingSystem === 'average_ranking' || draft.votingSystem === 'ranked_voting') && (
+          <Field label="">
+            <label className="flex items-center gap-2 text-[13px] mt-2">
+              <input
+                type="checkbox"
+                checked={draft.requireAllRanked}
+                onChange={(e) => setDraft({ ...draft, requireAllRanked: e.target.checked })}
+              />
+              Require every option to be ranked (full permutation 1..N)
+            </label>
+            <span className="block text-[11.5px] text-[#3D5265]/60 mt-1">
+              {draft.votingSystem === 'ranked_voting'
+                ? 'Uncheck to allow truncated ballots — voters may rank only their top preferences.'
+                : 'Voters must place each option in a distinct rank from 1 (best) to N.'}
+            </span>
           </Field>
         )}
 

@@ -227,6 +227,9 @@ function BallotControls({
       return <ApprovalControls vote={vote} responses={responses} setVal={setVal} />;
     case 'star':
       return <StarControls vote={vote} responses={responses} setVal={setVal} />;
+    case 'average_ranking':
+    case 'ranked_voting':
+      return <RankingControls vote={vote} responses={responses} onChange={onChange} />;
   }
 }
 
@@ -443,6 +446,103 @@ function ApprovalControls({
         );
       })}
     </ul>
+  );
+}
+
+function RankingControls({
+  vote,
+  responses,
+  onChange,
+}: {
+  vote: PublicVoteView;
+  responses: Record<string, number | boolean>;
+  onChange: (next: Record<string, number | boolean>) => void;
+}) {
+  const N = vote.options.length;
+  const isIRV = vote.votingSystem === 'ranked_voting';
+  const requireAll = vote.config.requireAllRanked ?? !isIRV;
+
+  // Map rank -> optionId for the swap behaviour.
+  const byRank: Record<number, string> = {};
+  for (const [optId, v] of Object.entries(responses)) {
+    if (typeof v === 'number') byRank[v] = optId;
+  }
+  const rankedCount = Object.keys(byRank).length;
+
+  function setRank(optId: string, rank: number | null) {
+    const next: Record<string, number | boolean> = { ...responses };
+    const current = typeof next[optId] === 'number' ? (next[optId] as number) : null;
+    if (rank === null) {
+      delete next[optId];
+      onChange(next);
+      return;
+    }
+    // If the new rank is already taken by another option, swap ranks.
+    const holder = byRank[rank];
+    if (holder && holder !== optId) {
+      if (current !== null) next[holder] = current;
+      else delete next[holder];
+    }
+    next[optId] = rank;
+    onChange(next);
+  }
+
+  return (
+    <div className="space-y-2">
+      <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12px] text-[#3D5265]/80">
+        {isIRV
+          ? 'Rank options in order of preference (1 = your top choice).'
+          : 'Order every option from 1 (best) to ' + N + ' (worst).'}
+        {' '}Ranked: {rankedCount}/{N}
+        {requireAll ? ' — all options must be ranked.' : ' — partial rankings allowed.'}
+      </div>
+
+      <ul className="divide-y divide-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden bg-white">
+        {vote.options.map((opt) => {
+          const selected = typeof responses[opt.id] === 'number' ? (responses[opt.id] as number) : null;
+          return (
+            <li key={opt.id} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-[14px] font-medium text-[#3D5265]">{opt.label}</p>
+                {opt.description ? (
+                  <p className="text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</p>
+                ) : null}
+              </div>
+              <div className="flex items-center gap-1.5 flex-wrap">
+                {Array.from({ length: N }, (_, i) => i + 1).map((r) => {
+                  const isOn = selected === r;
+                  return (
+                    <button
+                      key={r}
+                      type="button"
+                      onClick={() => setRank(opt.id, isOn ? null : r)}
+                      aria-pressed={isOn}
+                      className={
+                        'min-w-[34px] px-2 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors ' +
+                        (isOn
+                          ? 'bg-[#00928F] border-[#00928F] text-white'
+                          : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
+                      }
+                    >
+                      {r}
+                    </button>
+                  );
+                })}
+                {selected !== null ? (
+                  <button
+                    type="button"
+                    onClick={() => setRank(opt.id, null)}
+                    className="px-2 py-1 text-[11.5px] text-[#3D5265]/70 hover:text-[#B33A3A]"
+                  >
+                    clear
+                  </button>
+                ) : null}
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 }
 

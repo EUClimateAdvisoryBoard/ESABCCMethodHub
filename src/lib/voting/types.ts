@@ -15,7 +15,9 @@ export type VotingSystem =
   | 'single_choice'     // pick exactly one option
   | 'multi_choice'      // pick up to N options
   | 'approval'          // approve / reject each option
-  | 'star';             // 1–5 star rating per option
+  | 'star'              // 1–5 star rating per option
+  | 'average_ranking'   // each voter ranks options 1..N; result = mean rank per option
+  | 'ranked_voting';    // instant-runoff: eliminate the lowest first-preference each round until a majority winner
 
 export type VoteStatus = 'draft' | 'open' | 'closed';
 
@@ -47,6 +49,13 @@ export interface VoteConfig {
   requireAllScored?: boolean;
   maxSelections?: number;
   maxStars?: number;
+  /**
+   * Ranking systems (`average_ranking`, `ranked_voting`). When true, every
+   * option must be given a distinct rank in 1..N. When false (the default
+   * for `ranked_voting`), voters may leave options unranked — useful for
+   * truncated IRV ballots.
+   */
+  requireAllRanked?: boolean;
 }
 
 export interface VoteRecord {
@@ -114,6 +123,9 @@ export interface Ballot {
    *   multi_choice:     optionId -> true (up to N keys)
    *   approval:         optionId -> boolean
    *   star:             optionId -> 1..maxStars
+   *   average_ranking:  optionId -> distinct rank in 1..N (1 = top)
+   *   ranked_voting:    optionId -> distinct rank in 1..N (1 = top); options
+   *                     not ranked are simply omitted from the map.
    */
   responses: Record<string, number | boolean>;
   /** Token id if not anonymous; otherwise undefined. */
