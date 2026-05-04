@@ -362,8 +362,15 @@ create table if not exists public.ballots (
   submitted_at timestamptz not null default now()
 );
 create index if not exists idx_ballots_vote on public.ballots(vote_id);
-create unique index if not exists ux_ballots_vote_fingerprint
-  on public.ballots(vote_id, token_fingerprint);
+
+-- Shared (universal) tokens: see 030_voting_shared_tokens.sql.
+alter table public.vote_tokens
+  add column if not exists max_uses int default 1,
+  add column if not exists use_count int not null default 0;
+-- The fingerprint unique index from migration 029 is dropped here because
+-- a shared token legitimately yields many ballots with the same fingerprint;
+-- single-use is now enforced by the atomic `use_count < max_uses` update.
+drop index if exists public.ux_ballots_vote_fingerprint;
 
 create or replace function public.touch_votes_updated_at()
 returns trigger as $$

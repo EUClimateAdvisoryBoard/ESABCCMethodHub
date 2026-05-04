@@ -50,6 +50,8 @@ type TokenRow = {
   label: string | null;
   used_at: string | null;
   created_at: string;
+  max_uses: number | null;
+  use_count: number;
 };
 
 type BallotRow = {
@@ -84,6 +86,8 @@ function rowToToken(r: TokenRow): VoteToken {
     label: r.label ?? undefined,
     usedAt: r.used_at,
     createdAt: r.created_at,
+    maxUses: r.max_uses,
+    useCount: r.use_count ?? 0,
   };
 }
 
@@ -187,6 +191,7 @@ export async function generateTokens(
   voteId: string,
   count: number,
   labels: (string | undefined)[] = [],
+  maxUses: number | null = 1,
 ): Promise<VoteToken[]> {
   // Make sure the vote exists first so we don't insert orphans (the FK would
   // catch it too, but a clean error message is friendlier).
@@ -205,6 +210,8 @@ export async function generateTokens(
     label: labels[i] ?? null,
     used_at: null,
     created_at: now,
+    max_uses: maxUses,
+    use_count: 0,
   }));
   const { data, error } = await client().from('vote_tokens').insert(rows).select('*');
   if (error) throw error;
@@ -250,20 +257,41 @@ export async function recordBallot(
     throw new Error('Vote has closed');
   }
 
-  // 2. Atomically claim the token: only succeeds when used_at is still NULL.
+  // 2. Read the current token state, then atomically claim a use slot.
+  // We bump `use_count` exactly once if and only if it is still strictly
+  // below `max_uses` (or `max_uses` is null, meaning unlimited). Doing it
+  // inside a single UPDATE … RETURNING with the precise pre-image (matched
+  // on use_count) gives us race-free reservation without an explicit
+  // transaction or RPC.
   const nowIso = new Date().toISOString();
-  const { data: claimed, error: claimErr } = await sb
+  const { data: tokenRow, error: tokenErr } = await sb
     .from('vote_tokens')
-    .update({ used_at: nowIso })
+    .select('*')
     .eq('token', token)
     .eq('vote_id', voteId)
-    .is('used_at', null)
+    .maybeSingle();
+  if (tokenErr) throw tokenErr;
+  if (!tokenRow) throw new Error('Invalid voting link');
+  const t = tokenRow as TokenRow;
+  if (t.max_uses != null && t.use_count >= t.max_uses) {
+    throw new Error('This voting link has reached its submission limit');
+  }
+  const { data: claimed, error: claimErr } = await sb
+    .from('vote_tokens')
+    .update({
+      use_count: t.use_count + 1,
+      used_at: t.used_at ?? nowIso,
+    })
+    .eq('token', token)
+    .eq('vote_id', voteId)
+    .eq('use_count', t.use_count)
     .select('*')
     .maybeSingle();
   if (claimErr) throw claimErr;
   if (!claimed) {
-    // Either token doesn't exist for this vote, or it was already used.
-    throw new Error('This voting link has already been used');
+    // Lost the race — another submitter incremented use_count between our
+    // read and our update.
+    throw new Error('This voting link has reached its submission limit');
   }
 
   // 3. Insert the ballot. The unique index on (vote_id, token_fingerprint)
@@ -286,7 +314,7 @@ export async function recordBallot(
     // Roll the token claim back so the participant can retry rather than
     // being permanently locked out by a transient DB hiccup.
     await sb.from('vote_tokens')
-      .update({ used_at: null })
+      .update({ use_count: t.use_count })
       .eq('token', token);
     throw insertErr;
   }

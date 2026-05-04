@@ -77,8 +77,21 @@ export interface VoteToken {
   /** Optional label visible only to the admin (e.g. participant name). */
   label?: string;
   createdAt: string;
-  /** ISO timestamp when the token was redeemed. null = unused. */
+  /**
+   * ISO timestamp of the FIRST submission via this token. null = never
+   * used. Single-use tokens are exhausted after one submission; shared
+   * tokens (`maxUses=null` or `useCount<maxUses`) keep accepting more.
+   */
   usedAt: string | null;
+  /**
+   * Maximum number of submissions allowed via this token.
+   *   1     → single-use (default; the original behaviour).
+   *   N>1   → up to N submissions allowed.
+   *   null  → unlimited (a "universal link" anyone can submit through).
+   */
+  maxUses: number | null;
+  /** Number of submissions that have actually been made through this token. */
+  useCount: number;
 }
 
 export interface Ballot {
@@ -119,5 +132,17 @@ export interface PublicVoteView {
   options: VoteOption[];
   status: VoteStatus;
   closesAt?: string;
+  /**
+   * True when the token has reached its max_uses cap. For shared tokens
+   * (`isShared=true`) this only flips when the cap is set and exhausted.
+   * Per-browser idempotency for shared links is handled by localStorage on
+   * the client side.
+   */
   alreadySubmitted: boolean;
+  /**
+   * True when this token allows multiple submissions (max_uses != 1).
+   * The ballot page uses this to switch from "single-use" wording to
+   * "shared link" wording.
+   */
+  isShared: boolean;
 }
