@@ -12,16 +12,16 @@
   <DisplayName DefaultValue="ESABCC RefManager" />
   <Description DefaultValue="Insert citations and generate bibliographies from your shared reference library" />
 
-  <IconUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-64.png" />
-  <SupportUrl DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist" />
+  <IconUrl DefaultValue="https://methodhub.vercel.app/word-addin-dist/assets/icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://methodhub.vercel.app/word-addin-dist/assets/icon-64.png" />
+  <SupportUrl DefaultValue="https://methodhub.vercel.app/word-addin-dist" />
 
   <Hosts>
     <Host Name="Document" />
   </Hosts>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html" />
+    <SourceLocation DefaultValue="https://methodhub.vercel.app/word-addin-dist/taskpane.html" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -103,16 +103,16 @@
 
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon16" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-16.png" />
-        <bt:Image id="Icon32" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-32.png" />
-        <bt:Image id="Icon80" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/assets/icon-80.png" />
+        <bt:Image id="Icon16" DefaultValue="https://methodhub.vercel.app/word-addin-dist/assets/icon-16.png" />
+        <bt:Image id="Icon32" DefaultValue="https://methodhub.vercel.app/word-addin-dist/assets/icon-32.png" />
+        <bt:Image id="Icon80" DefaultValue="https://methodhub.vercel.app/word-addin-dist/assets/icon-80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="TaskpaneUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html" />
-        <bt:Url id="BibUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html?view=bibliography" />
-        <bt:Url id="RefreshUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html?view=refresh" />
-        <bt:Url id="CommandsUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist/commands.html" />
-        <bt:Url id="LearnMoreUrl" DefaultValue="https://eu-climate-policy.vercel.app/word-addin-dist" />
+        <bt:Url id="TaskpaneUrl" DefaultValue="https://methodhub.vercel.app/word-addin-dist/taskpane.html" />
+        <bt:Url id="BibUrl" DefaultValue="https://methodhub.vercel.app/word-addin-dist/taskpane.html?view=bibliography" />
+        <bt:Url id="RefreshUrl" DefaultValue="https://methodhub.vercel.app/word-addin-dist/taskpane.html?view=refresh" />
+        <bt:Url id="CommandsUrl" DefaultValue="https://methodhub.vercel.app/word-addin-dist/commands.html" />
+        <bt:Url id="LearnMoreUrl" DefaultValue="https://methodhub.vercel.app/word-addin-dist" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStartedTitle" DefaultValue="ESABCC Reference Manager" />

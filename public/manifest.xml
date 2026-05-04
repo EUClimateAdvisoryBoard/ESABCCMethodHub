@@ -13,9 +13,9 @@
   <DisplayName DefaultValue="ESABCC Reference Manager" />
   <Description DefaultValue="Insert citations, references, and bibliographies from the ESABCC reference library. Supports EEA citation style with 2,600+ references." />
 
-  <IconUrl DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-  <HighResolutionIconUrl DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-64.png" />
-  <SupportUrl DefaultValue="https://eu-climate-policy.vercel.app/" />
+  <IconUrl DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+  <HighResolutionIconUrl DefaultValue="https://methodhub.vercel.app/addin-icon-64.png" />
+  <SupportUrl DefaultValue="https://methodhub.vercel.app/" />
 
   <Hosts>
     <Host Name="Document" />
@@ -28,7 +28,7 @@
   </Requirements>
 
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://eu-climate-policy.vercel.app/word-addin/" />
+    <SourceLocation DefaultValue="https://methodhub.vercel.app/word-addin/" />
   </DefaultSettings>
 
   <Permissions>ReadWriteDocument</Permissions>
@@ -202,38 +202,38 @@
     <Resources>
       <bt:Images>
         <!-- Shared icons (reused across buttons — in production, use distinct icons) -->
-        <bt:Image id="Icon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="Icon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="Icon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="BiblioIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="BiblioIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="BiblioIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="FootnoteIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="FootnoteIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="FootnoteIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="ManagerIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="ManagerIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="ManagerIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="DOIIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="DOIIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="DOIIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="DiscoverIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="DiscoverIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="DiscoverIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
-        <bt:Image id="StyleIcon.16x16" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-16.png" />
-        <bt:Image id="StyleIcon.32x32" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-32.png" />
-        <bt:Image id="StyleIcon.80x80" DefaultValue="https://eu-climate-policy.vercel.app/addin-icon-80.png" />
+        <bt:Image id="Icon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="Icon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="Icon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="BiblioIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="BiblioIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="BiblioIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="FootnoteIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="FootnoteIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="FootnoteIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="ManagerIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="ManagerIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="ManagerIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="DOIIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="DOIIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="DOIIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="DiscoverIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="DiscoverIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="DiscoverIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
+        <bt:Image id="StyleIcon.16x16" DefaultValue="https://methodhub.vercel.app/addin-icon-16.png" />
+        <bt:Image id="StyleIcon.32x32" DefaultValue="https://methodhub.vercel.app/addin-icon-32.png" />
+        <bt:Image id="StyleIcon.80x80" DefaultValue="https://methodhub.vercel.app/addin-icon-80.png" />
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="Functions.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/functions.html" />
-        <bt:Url id="Taskpane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=in-text" />
-        <bt:Url id="BiblioPane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=bibliography" />
-        <bt:Url id="FootnotePane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=footnote" />
-        <bt:Url id="ManagerPane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=manager" />
-        <bt:Url id="DOIPane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=doi" />
-        <bt:Url id="DiscoverPane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=discover" />
-        <bt:Url id="StylePane.Url" DefaultValue="https://eu-climate-policy.vercel.app/word-addin/?mode=style" />
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://eu-climate-policy.vercel.app/" />
+        <bt:Url id="Functions.Url" DefaultValue="https://methodhub.vercel.app/word-addin/functions.html" />
+        <bt:Url id="Taskpane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=in-text" />
+        <bt:Url id="BiblioPane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=bibliography" />
+        <bt:Url id="FootnotePane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=footnote" />
+        <bt:Url id="ManagerPane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=manager" />
+        <bt:Url id="DOIPane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=doi" />
+        <bt:Url id="DiscoverPane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=discover" />
+        <bt:Url id="StylePane.Url" DefaultValue="https://methodhub.vercel.app/word-addin/?mode=style" />
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://methodhub.vercel.app/" />
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="ESABCC Reference Manager" />

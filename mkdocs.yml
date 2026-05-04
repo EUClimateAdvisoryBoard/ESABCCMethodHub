@@ -16,7 +16,7 @@ site_description: >-
   on Climate Change Secretariat. Built and maintained by CCE5. Packaged
   for self-hosted deployment on EEA infrastructure.
 site_author: CCE5 · ESABCC Secretariat
-site_url: https://eu-climate-policy.vercel.app/docs/
+site_url: https://methodhub.vercel.app/docs/
 repo_url: https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub
 repo_name: EUClimateAdvisoryBoard/ESABCCMethodHub
 edit_uri: edit/main/docs/

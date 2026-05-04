@@ -25,7 +25,7 @@ bridge.
 
 - [`manifest.xml`](manifest.xml) declares the add-in to Office.
 - Task pane URL in production:
-  `https://eu-climate-policy.vercel.app/word-addin-dist/taskpane.html`.
+  `https://methodhub.vercel.app/word-addin-dist/taskpane.html`.
 - Three ribbon buttons are exposed: **Insert Citation**, **Bibliography**,
   **Refresh All**.
 
