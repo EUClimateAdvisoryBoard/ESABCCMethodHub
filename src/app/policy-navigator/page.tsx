@@ -86,6 +86,27 @@ const INSTRUMENT_COLORS: Record<string, string> = {
   disclosure: '#8B5CF6',
 };
 
+const POLICY_TYPE_META: Record<
+  'legislation' | 'package' | 'plan',
+  { label: string; color: string; description: string }
+> = {
+  legislation: {
+    label: 'Legislation',
+    color: '#0065A4',
+    description: 'Individual binding legal acts (regulations, directives, decisions)',
+  },
+  package: {
+    label: 'Package',
+    color: '#7C3AED',
+    description: 'Umbrella bundles grouping multiple legislative acts',
+  },
+  plan: {
+    label: 'Policy & Plan',
+    color: '#B45309',
+    description: 'Non-binding strategies, communications and action plans',
+  },
+};
+
 export default function PolicyNavigatorPage() {
   const {
     getGraphData,
@@ -103,6 +124,7 @@ export default function PolicyNavigatorPage() {
 
   // Sectoral overview state
   const [selectedSector, setSelectedSector] = useState<SectorId | 'all'>('all');
+  const [selectedPolicyType, setSelectedPolicyType] = useState<'legislation' | 'package' | 'plan' | 'all'>('all');
   const [selectedInstrument, setSelectedInstrument] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -187,6 +209,8 @@ export default function PolicyNavigatorPage() {
     return SECTOR_POLICIES.filter(p => {
       if (selectedSector !== 'all' && !p.sectors.includes(selectedSector))
         return false;
+      if (selectedPolicyType !== 'all' && p.policyType !== selectedPolicyType)
+        return false;
       if (selectedInstrument !== 'all' && p.instrumentType !== selectedInstrument)
         return false;
       if (query) {
@@ -195,7 +219,7 @@ export default function PolicyNavigatorPage() {
       }
       return true;
     });
-  }, [selectedSector, selectedInstrument, query]);
+  }, [selectedSector, selectedPolicyType, selectedInstrument, query]);
 
   const instruments = Array.from(
     new Set(SECTOR_POLICIES.map(p => p.instrumentType)),
@@ -890,7 +914,7 @@ export default function PolicyNavigatorPage() {
         {/* Sticky active-filter summary (M·04 #6). Mirrors the news + scenarios
             pattern: only renders when filters deviate from default; each pill
             has its own × to clear; counts visible. */}
-        {(selectedSector !== 'all' || selectedInstrument !== 'all' || query.trim() !== '') && (
+        {(selectedSector !== 'all' || selectedPolicyType !== 'all' || selectedInstrument !== 'all' || query.trim() !== '') && (
           <div className="max-w-wide mx-auto px-6">
             <FilterPillRow sticky>
               <span
@@ -906,6 +930,14 @@ export default function PolicyNavigatorPage() {
                   active
                   onClick={() => setSelectedSector('all')}
                   onClear={() => setSelectedSector('all')}
+                />
+              )}
+              {selectedPolicyType !== 'all' && (
+                <FilterPill
+                  label={`Type: ${POLICY_TYPE_META[selectedPolicyType].label}`}
+                  active
+                  onClick={() => setSelectedPolicyType('all')}
+                  onClear={() => setSelectedPolicyType('all')}
                 />
               )}
               {selectedInstrument !== 'all' && (
@@ -926,7 +958,7 @@ export default function PolicyNavigatorPage() {
               )}
               <button
                 type="button"
-                onClick={() => { setSelectedSector('all'); setSelectedInstrument('all'); setQuery(''); }}
+                onClick={() => { setSelectedSector('all'); setSelectedPolicyType('all'); setSelectedInstrument('all'); setQuery(''); }}
                 className="mh-focus mh-motion-fast text-[var(--mh-muted)] hover:text-[var(--mh-status-danger)] underline"
                 style={{ fontSize: 'var(--mh-text-2xs)' }}
               >
@@ -948,6 +980,38 @@ export default function PolicyNavigatorPage() {
                 placeholder="Search sectoral policies…"
                 className="w-full px-3 py-2 border border-grey-200 rounded text-sm"
               />
+              <h3 className="text-sm font-bold text-tertiary-dark mt-4 mb-2">
+                Policy type
+              </h3>
+              <div className="flex flex-wrap gap-1 mb-1">
+                <button
+                  onClick={() => setSelectedPolicyType('all')}
+                  className={`text-[10px] px-2 py-1 rounded ${
+                    selectedPolicyType === 'all'
+                      ? 'bg-primary text-white'
+                      : 'bg-grey-50 text-tertiary border border-grey-200'
+                  }`}
+                >
+                  All
+                </button>
+                {(['legislation', 'package', 'plan'] as const).map(t => (
+                  <button
+                    key={t}
+                    onClick={() => setSelectedPolicyType(t)}
+                    className={`text-[10px] px-2 py-1 rounded ${
+                      selectedPolicyType === t ? 'text-white' : 'text-tertiary border border-grey-200 bg-grey-50'
+                    }`}
+                    style={
+                      selectedPolicyType === t
+                        ? { backgroundColor: POLICY_TYPE_META[t].color }
+                        : undefined
+                    }
+                    title={POLICY_TYPE_META[t].description}
+                  >
+                    {POLICY_TYPE_META[t].label}
+                  </button>
+                ))}
+              </div>
               <h3 className="text-sm font-bold text-tertiary-dark mt-4 mb-2">
                 Instrument type
               </h3>
@@ -1107,6 +1171,7 @@ function SectorPolicyCard({
   onToggle: () => void;
 }) {
   const color = INSTRUMENT_COLORS[policy.instrumentType] || '#0065A4';
+  const ptMeta = POLICY_TYPE_META[policy.policyType];
   return (
     <div id={`policy-${policy.id}`} className="bg-white rounded-xl border border-grey-200 overflow-hidden rounded-lg">
       <button
@@ -1116,7 +1181,7 @@ function SectorPolicyCard({
         <div className="flex items-start gap-3">
           <div
             className="w-1 rounded-full shrink-0 self-stretch"
-            style={{ backgroundColor: color }}
+            style={{ backgroundColor: policy.policyType !== 'legislation' ? ptMeta.color : color }}
           />
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap mb-1">
@@ -1131,6 +1196,13 @@ function SectorPolicyCard({
                   {policy.acronym}
                 </span>
               )}
+              <span
+                className="text-[9px] font-semibold px-1.5 py-0.5 rounded"
+                style={{ backgroundColor: ptMeta.color + '18', color: ptMeta.color }}
+                title={ptMeta.description}
+              >
+                {ptMeta.label}
+              </span>
               <span className="text-[9px] text-tertiary-light uppercase tracking-wide">
                 {policy.instrumentType}
               </span>
