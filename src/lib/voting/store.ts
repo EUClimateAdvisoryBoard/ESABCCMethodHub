@@ -14,18 +14,15 @@
 
 import * as fsStore from './store-fs';
 import * as supabaseStore from './store-supabase';
+import { detectVotingBackend } from './backend';
 import { ensureUniqueOptionIds, fingerprint, newId, newToken, slugify } from './util';
 
 type StoreModule = typeof fsStore;
 
 function pickBackend(): StoreModule {
-  if (
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-  ) {
-    return supabaseStore as unknown as StoreModule;
-  }
-  return fsStore;
+  return detectVotingBackend() === 'supabase'
+    ? (supabaseStore as unknown as StoreModule)
+    : fsStore;
 }
 
 const backend: StoreModule = pickBackend();
