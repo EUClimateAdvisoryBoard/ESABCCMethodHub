@@ -9,6 +9,7 @@
  */
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { unstable_noStore as noStore } from 'next/cache';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -30,6 +31,10 @@ function fmt(n: number): string {
 }
 
 export default async function ResultsPage({ params }: { params: { voteId: string } }) {
+  // Force a fresh read on every request — admins refreshing this page after
+  // a new ballot must see the updated counts and analysis, not a cached
+  // pre-render with stale numbers.
+  noStore();
   const bundle = await getVote(params.voteId);
   if (!bundle) notFound();
   const analysis = analyse(bundle.vote, bundle.ballots);

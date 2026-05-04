@@ -29,44 +29,48 @@ if (process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY) {
   );
 }
 
-const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-let cached: SupabaseClient | null = null;
-let cachedAdmin: SupabaseClient | null = null;
+// Env vars are read at *call time*, not at module load. Module-level capture
+// would freeze stale values into the lambda for its entire warm life — and
+// any function that runs once with an empty env (e.g. a build-time probe)
+// keeps using `undefined` forever, even after the runtime env is populated.
+function env() {
+  return {
+    url: process.env.NEXT_PUBLIC_SUPABASE_URL,
+    serviceKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  };
+}
 
 export function getServerSupabase(): SupabaseClient | null {
-  if (cached) return cached;
+  const { url, serviceKey, anonKey } = env();
   if (!url) return null;
   const key = serviceKey || anonKey;
   if (!key) return null;
-  cached = createClient(url, key, {
+  return createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  return cached;
 }
 
 // Admin client — always uses the service-role key. Used by code paths that
 // need to bypass RLS (e.g. the Word-VBA bridge inserting references without
 // a signed-in user session). Callers must apply their own authorisation.
 export function createAdminClient(): SupabaseClient {
-  if (cachedAdmin) return cachedAdmin;
+  const { url, serviceKey } = env();
   if (!url || !serviceKey) {
     throw new Error(
       'createAdminClient() requires NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.',
     );
   }
-  cachedAdmin = createClient(url, serviceKey, {
+  return createClient(url, serviceKey, {
     auth: { persistSession: false, autoRefreshToken: false },
   });
-  return cachedAdmin;
 }
 
 // Per-request server client bound to the user's access token. Use this
 // inside route handlers when you want RLS to apply as if the signed-in
 // user had made the request directly.
 export function createServerClient(accessToken?: string): SupabaseClient {
+  const { url, serviceKey, anonKey } = env();
   if (!url) throw new Error('NEXT_PUBLIC_SUPABASE_URL is not set.');
   const key = accessToken ? anonKey : (serviceKey || anonKey);
   if (!key) throw new Error('No Supabase key available for createServerClient().');
@@ -79,5 +83,5 @@ export function createServerClient(accessToken?: string): SupabaseClient {
 }
 
 export function hasServiceRole(): boolean {
-  return !!serviceKey;
+  return !!env().serviceKey;
 }
