@@ -14,6 +14,7 @@ const SECTION_MODULES = [
   { href: '/news-feed',        label: 'Secretariat News' },
   { href: '/policy-navigator', label: 'EU Policy Navigator' },
   { href: '/content-analysis', label: 'Content Analysis' },
+  { href: '/voting',           label: 'Voting Tool' },
 ];
 
 const SECTION_MORE = [

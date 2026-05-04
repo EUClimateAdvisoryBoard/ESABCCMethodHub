@@ -72,6 +72,12 @@ const SITE_AUTH_BYPASS_PREFIXES = [
   '/word-addin-dist',    // Built Office Add-in assets (served from /public)
   '/api/auth/site-login',
   '/api/auth/site-logout',
+  // Voting Tool — public ballot pages. Externals (Advisory Board members)
+  // hit `/vote/<token>` to cast a single-use ballot. They must NOT be able
+  // to reach the rest of the Method Hub, so this prefix only opens the
+  // ballot page itself; the matching JSON API lives at /api/voting/ballot
+  // and is accepted because /api/* is exempt from the site gate above.
+  '/vote',
 ];
 
 function isSiteAuthBypass(pathname: string): boolean {
