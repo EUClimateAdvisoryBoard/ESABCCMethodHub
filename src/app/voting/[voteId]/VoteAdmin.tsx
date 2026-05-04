@@ -12,13 +12,20 @@
  * exposure when the screen is shared.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { VoteBundle, VoteToken } from '@/lib/voting/types';
 
 export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
   const router = useRouter();
   const [bundle, setBundle] = useState<VoteBundle>(initial);
+  // When the parent re-renders with a fresh bundle (e.g. after router.refresh()
+  // following a ballot submission elsewhere), pull those new tokens/ballots
+  // into local state. Without this useEffect, useState(initial) snapshots the
+  // first render forever and the Submissions counter never advances.
+  useEffect(() => {
+    setBundle(initial);
+  }, [initial]);
   const [count, setCount] = useState(15);
   const [genLabels, setGenLabels] = useState('');
   const [creating, setCreating] = useState(false);
@@ -26,6 +33,49 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
   // Tokens minted in this browser session — we keep the raw string here so
   // the admin can copy them; on page reload we lose them, on purpose.
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+
+  // Edit-mode for vote metadata (title / description / instructions). The
+  // options list is intentionally not editable here — adding or removing
+  // options after ballots have been submitted would silently invalidate
+  // those ballots.
+  const [editing, setEditing] = useState(false);
+  const [draftTitle, setDraftTitle] = useState(bundle.vote.title);
+  const [draftDesc, setDraftDesc] = useState(bundle.vote.description ?? '');
+  const [draftInstructions, setDraftInstructions] = useState(bundle.vote.instructions ?? '');
+  const [savingEdit, setSavingEdit] = useState(false);
+
+  function startEditing() {
+    setDraftTitle(bundle.vote.title);
+    setDraftDesc(bundle.vote.description ?? '');
+    setDraftInstructions(bundle.vote.instructions ?? '');
+    setEditing(true);
+    setError(null);
+  }
+
+  async function saveEdit() {
+    setSavingEdit(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/voting/votes/${bundle.vote.id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: draftTitle,
+          description: draftDesc || undefined,
+          instructions: draftInstructions || undefined,
+        }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? 'Could not save changes.');
+      setBundle((b) => ({ ...b, vote: json.vote }));
+      setEditing(false);
+      router.refresh();
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setSavingEdit(false);
+    }
+  }
 
   const baseOrigin = typeof window !== 'undefined' ? window.location.origin : '';
 
@@ -149,6 +199,14 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
           <div className="ml-auto flex gap-2">
             <button
               type="button"
+              onClick={startEditing}
+              disabled={editing}
+              className="px-3 py-1.5 text-[12.5px] font-semibold border border-[#3D5265]/40 text-[#3D5265] rounded-sm disabled:opacity-50"
+            >
+              Edit
+            </button>
+            <button
+              type="button"
               onClick={() => setStatus('open')}
               disabled={bundle.vote.status === 'open'}
               className="px-3 py-1.5 text-[12.5px] font-semibold border border-[#00928F] text-[#00928F] rounded-sm disabled:opacity-50"
@@ -165,7 +223,55 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
             </button>
           </div>
         </div>
-        {bundle.vote.description ? (
+        {editing ? (
+          <div className="mt-4 space-y-3">
+            <label className="block text-[12.5px]">
+              <span className="block font-semibold mb-1">Title</span>
+              <input
+                type="text"
+                value={draftTitle}
+                onChange={(e) => setDraftTitle(e.target.value)}
+                className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+              />
+            </label>
+            <label className="block text-[12.5px]">
+              <span className="block font-semibold mb-1">Description</span>
+              <textarea
+                value={draftDesc}
+                onChange={(e) => setDraftDesc(e.target.value)}
+                className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px] min-h-[60px]"
+              />
+            </label>
+            <label className="block text-[12.5px]">
+              <span className="block font-semibold mb-1">Instructions</span>
+              <textarea
+                value={draftInstructions}
+                onChange={(e) => setDraftInstructions(e.target.value)}
+                className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px] min-h-[120px] whitespace-pre-line"
+              />
+            </label>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={saveEdit}
+                disabled={savingEdit || !draftTitle.trim()}
+                className="px-3 py-1.5 text-[12.5px] font-semibold text-white bg-[#00928F] rounded-sm disabled:opacity-50"
+              >
+                {savingEdit ? 'Saving…' : 'Save changes'}
+              </button>
+              <button
+                type="button"
+                onClick={() => setEditing(false)}
+                className="px-3 py-1.5 text-[12.5px] font-semibold border border-[#E6E7E8] text-[#3D5265] rounded-sm"
+              >
+                Cancel
+              </button>
+              <span className="text-[11.5px] text-[#3D5265]/60 ml-2">
+                Options and voting system can&apos;t be edited here — changing them after ballots come in would invalidate existing submissions.
+              </span>
+            </div>
+          </div>
+        ) : bundle.vote.description ? (
           <p className="mt-3 text-[13px] text-[#3D5265]/80">{bundle.vote.description}</p>
         ) : null}
       </section>

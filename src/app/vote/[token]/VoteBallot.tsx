@@ -290,7 +290,27 @@ function PriorityRankingControls({
                     <button
                       key={s}
                       type="button"
-                      onClick={() => setVal(opt.id, isOn ? null : s)}
+                      onClick={() => {
+                        // Already on → clicking removes the score (always allowed).
+                        if (isOn) {
+                          setVal(opt.id, null);
+                          return;
+                        }
+                        // Block selecting a score that has already reached its cap.
+                        // Tell the voter to free a slot first instead of silently
+                        // letting them go over and rejecting on submit.
+                        const cap = caps[String(s)];
+                        const usedNow = counts[String(s)] ?? 0;
+                        if (cap != null && usedNow >= cap) {
+                          const lbl = labels[String(s)] ?? `score ${s}`;
+                          window.alert(
+                            `You can only give ${lbl} (${s}) to ${cap} option${cap === 1 ? '' : 's'}. ` +
+                              `Please untick another option first.`,
+                          );
+                          return;
+                        }
+                        setVal(opt.id, s);
+                      }}
                       aria-pressed={isOn}
                       className={
                         'min-w-[40px] px-2 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors ' +
