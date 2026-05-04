@@ -69,4 +69,12 @@ Every production module now sits inside a shared **User Space** — see
 <span class="mh-module__cta">Open →</span>
 </a></li>
 
+<li markdown><a class="mh-module" href="../modules/voting-tool/" markdown>
+<div class="mh-module__header"><span>M · 06</span><span>Stable</span></div>
+<div class="mh-module__num">06</div>
+<h3 class="mh-module__title">Voting Tool</h3>
+<p class="mh-module__desc">Private AB ballots · single-use or universal links · 7 voting systems · live analysis.</p>
+<span class="mh-module__cta">Open →</span>
+</a></li>
+
 </ul>

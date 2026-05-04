@@ -455,7 +455,7 @@ export default async function HomePage() {
         </div>
         <div className="mt-4 border-t border-[#3D5265]" />
 
-        <div className="mt-6 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-6 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {productionModules.map((m, i) => (
             <Link
               key={m.href}
