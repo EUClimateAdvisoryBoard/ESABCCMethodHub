@@ -11,12 +11,25 @@
     ]
   },
   {
-    "title": "Daily News 04 / 05 / 2026",
-    "summary": "European Commission Daily news Brussels, 04 May 2026 Commission publishes simplification review of EU Deforestation Regulation\r\nToday, the Commission published a report on the simplification of the revised EU Defor...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_954",
+    "title": "Speech by Commissioner Jørgensen at the French G7 Presidency's International High-Level Multi-Stakeholder Event on Methane Action",
+    "summary": "European Commission Speech Paris, 04 May 2026 Minister. Excellencies. Distinguished guests. Friends:\r\nMy deep thanks to the French G7 Presidency for hosting this event.\r\nThe current energy crisis is a stark r...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_987",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-05-04T09:45:35.000Z",
-    "tags": []
+    "publishedDate": "2026-05-04T18:11:45.000Z",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
+    "title": "Introductory remarks by Commissioner Hoekstra at the Structured Dialogue in the European Parliament's Committee on Environment, Climate and Food Safety (ENVI)",
+    "summary": "European Commission Speech Brussels, 04 May 2026 Thank you very much Chair,\r\nHonourable Members,\r\nVery good to see you.\r\nThank you for inviting me to take part in today's exchange.\r\nIf you look at the world, if yo...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_986",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-05-04T17:49:43.000Z",
+    "tags": [
+      "agriculture"
+    ]
   }
 ]
