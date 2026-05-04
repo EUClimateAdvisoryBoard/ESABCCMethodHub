@@ -3,11 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from '@/lib/auth-context';
 import { PreferencesProvider } from '@/lib/preferences-context';
-import MobileBottomNav from '@/components/MobileBottomNav';
-import ConsentBanner from '@/components/ConsentBanner';
-import KeyboardShortcuts from '@/components/KeyboardShortcuts';
-import CommandPalette from '@/components/CommandPalette';
-import ContextDrawer from '@/components/ContextDrawer';
+import MethodHubChrome from '@/components/MethodHubChrome';
 import ToastHost from '@/components/ui/ToastHost';
 import { TooltipProvider } from '@/components/ui/Tooltip';
 
@@ -71,11 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 timings without re-mounting a Radix provider per page. */}
             <TooltipProvider delayDuration={150} skipDelayDuration={80}>
               {children}
-              <MobileBottomNav />
-              <ConsentBanner />
-              <CommandPalette />
-              <ContextDrawer />
-              <KeyboardShortcuts />
+              <MethodHubChrome />
               <ToastHost />
             </TooltipProvider>
           </PreferencesProvider>

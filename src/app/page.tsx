@@ -317,19 +317,30 @@ export default async function HomePage() {
         { label: 'TAGGING', value: 'MAXQDA-style' },
       ],
     },
+    {
+      code: 'M · 06',
+      title: 'Voting Tool',
+      description:
+        'Build private ballots for Advisory Board members. Externals receive a single-use link; submissions stay isolated from the rest of the Hub and feed straight into the analysis surface.',
+      href: '/voting',
+      stats: [
+        { label: 'ACCESS', value: 'Single-use links' },
+        { label: 'ANALYSIS', value: 'Priority + tally' },
+      ],
+    },
   ];
 
   const experimentalModules = [
-    { code: 'M · 06', title: 'Energy System Modelling', href: '/beta/energy-system',     tags: ['PyPSA', 'NUTS-2'] },
-    { code: 'M · 07', title: 'Climate Adaptation',      href: '/beta/climate-adaptation', tags: ['CLIMADA', 'CMIP6'] },
-    { code: 'M · 08', title: 'Maritime & Aviation',     href: '/beta/maritime-aviation',  tags: ['SEAMAPS', 'OAG'] },
-    { code: 'M · 09', title: 'Climate Finance',         href: '/beta/climate-finance',    tags: ['NGFS v5', 'EIB'] },
-    { code: 'M · 10', title: 'Media Monitoring',        href: '/beta/media-monitoring',   tags: ['GDELT', 'MEDIAC'] },
-    { code: 'M · 11', title: 'Brussels Bulletin',       href: '/beta/brussels-bulletin',  tags: ['Weekly', 'MJX export'] },
-    { code: 'M · 12', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
-    { code: 'M · 13', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
-    { code: 'M · 14', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
-    { code: 'M · 15', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
+    { code: 'M · 07', title: 'Energy System Modelling', href: '/beta/energy-system',     tags: ['PyPSA', 'NUTS-2'] },
+    { code: 'M · 08', title: 'Climate Adaptation',      href: '/beta/climate-adaptation', tags: ['CLIMADA', 'CMIP6'] },
+    { code: 'M · 09', title: 'Maritime & Aviation',     href: '/beta/maritime-aviation',  tags: ['SEAMAPS', 'OAG'] },
+    { code: 'M · 10', title: 'Climate Finance',         href: '/beta/climate-finance',    tags: ['NGFS v5', 'EIB'] },
+    { code: 'M · 11', title: 'Media Monitoring',        href: '/beta/media-monitoring',   tags: ['GDELT', 'MEDIAC'] },
+    { code: 'M · 12', title: 'Brussels Bulletin',       href: '/beta/brussels-bulletin',  tags: ['Weekly', 'MJX export'] },
+    { code: 'M · 13', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
+    { code: 'M · 14', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
+    { code: 'M · 15', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
+    { code: 'M · 16', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
   ];
 
   return (
@@ -362,7 +373,7 @@ export default async function HomePage() {
           </h1>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] lg:text-[17px] text-[#3D5265]/80 max-w-3xl leading-relaxed">
             An integrated, internal research workspace for the European Scientific Advisory Board on Climate Change Secretariat.
-            Five production modules — references, data &amp; scenarios, news, policy and content analysis — packaged as a single
+            Six production modules — references, data &amp; scenarios, news, policy, content analysis and voting — packaged as a single
             self-contained Next.js service. It is <strong className="text-[#3D5265]">hosted on Vercel (EU region) today</strong>{' '}
             and built to be redeployed onto <strong className="text-[#3D5265]">EEA infrastructure</strong>, with the codebase
             stewarded by <strong className="text-[#3D5265]">CCE5</strong>.
@@ -373,7 +384,7 @@ export default async function HomePage() {
               href="#modules"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-3 sm:py-2.5 text-[14px] sm:text-[13px] font-semibold text-white bg-[#00928F] border border-[#00928F] rounded-sm hover:bg-[#007a77] transition-colors touch-target shadow-sm"
             >
-              The five modules
+              The six modules
               <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 5v14M5 12h14" />
               </svg>
@@ -398,7 +409,7 @@ export default async function HomePage() {
           {/* Quick facts row */}
           <dl className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden max-w-4xl">
             {[
-              { k: 'Production modules', v: '5', sub: 'stable, shipped' },
+              { k: 'Production modules', v: '6', sub: 'stable, shipped' },
               { k: 'Policies tracked',   v: fmt(policyCount), sub: `${domainCount} domains` },
               { k: 'Scenarios',          v: fmt(scenarioCount), sub: `${fmt(datapointCount)} datapoints` },
               { k: 'References',         v: fmt(refsTotal), sub: 'DOI-indexed' },
@@ -416,7 +427,7 @@ export default async function HomePage() {
       <div id="modules" className="scroll-mt-20" />
 
       {/* ─────────────────────────────────────────────────────────
-          PRODUCTION MODULES  (M·01 – M·05)
+          PRODUCTION MODULES  (M·01 – M·06)
           The five surfaces shipped to the Secretariat. Any beta module
           under `beta/modules/` must not appear here — that separation is
           the whole point of the v1.0 scope lock.
@@ -429,7 +440,7 @@ export default async function HomePage() {
               Scope · v1.0
             </p>
             <h2 className="mt-3 text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#3D5265] leading-[1.15]">
-              The five production modules.
+              The six production modules.
             </h2>
             <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
               Everything in this row is <strong className="text-[#3D5265]">stable</strong>, covered by migrations,
@@ -497,7 +508,7 @@ export default async function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          BETA MODULES  (M·06 – M·14)
+          BETA MODULES  (M·07 – M·16)
           Nine experimental modules routed under `/beta/<slug>`. Each card
           links to its own page; the source lives at `beta/modules/<slug>`
           and is wired into Next.js via a thin re-export under
