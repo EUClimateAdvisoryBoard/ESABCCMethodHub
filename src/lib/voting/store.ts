@@ -19,23 +19,26 @@ import { ensureUniqueOptionIds, fingerprint, newId, newToken, slugify } from './
 
 type StoreModule = typeof fsStore;
 
+// Re-evaluated on every call (not cached at module load) so a lambda that
+// cold-started before its Supabase env vars were visible doesn't get pinned
+// to the filesystem backend forever. Without this, /voting and the per-vote
+// API endpoint can disagree about which backend they're using and the
+// listing reads the empty seed JSON while writes go to Postgres.
 function pickBackend(): StoreModule {
   return detectVotingBackend() === 'supabase'
     ? (supabaseStore as unknown as StoreModule)
     : fsStore;
 }
 
-const backend: StoreModule = pickBackend();
-
-export const listVotes        = (...a: Parameters<StoreModule['listVotes']>)        => backend.listVotes(...a);
-export const getVote          = (...a: Parameters<StoreModule['getVote']>)          => backend.getVote(...a);
-export const createVote       = (...a: Parameters<StoreModule['createVote']>)       => backend.createVote(...a);
-export const updateVote       = (...a: Parameters<StoreModule['updateVote']>)       => backend.updateVote(...a);
-export const deleteVote       = (...a: Parameters<StoreModule['deleteVote']>)       => backend.deleteVote(...a);
-export const resetVote        = (...a: Parameters<StoreModule['resetVote']>)        => backend.resetVote(...a);
-export const generateTokens   = (...a: Parameters<StoreModule['generateTokens']>)   => backend.generateTokens(...a);
-export const findTokenContext = (...a: Parameters<StoreModule['findTokenContext']>) => backend.findTokenContext(...a);
-export const recordBallot     = (...a: Parameters<StoreModule['recordBallot']>)     => backend.recordBallot(...a);
+export const listVotes        = (...a: Parameters<StoreModule['listVotes']>)        => pickBackend().listVotes(...a);
+export const getVote          = (...a: Parameters<StoreModule['getVote']>)          => pickBackend().getVote(...a);
+export const createVote       = (...a: Parameters<StoreModule['createVote']>)       => pickBackend().createVote(...a);
+export const updateVote       = (...a: Parameters<StoreModule['updateVote']>)       => pickBackend().updateVote(...a);
+export const deleteVote       = (...a: Parameters<StoreModule['deleteVote']>)       => pickBackend().deleteVote(...a);
+export const resetVote        = (...a: Parameters<StoreModule['resetVote']>)        => pickBackend().resetVote(...a);
+export const generateTokens   = (...a: Parameters<StoreModule['generateTokens']>)   => pickBackend().generateTokens(...a);
+export const findTokenContext = (...a: Parameters<StoreModule['findTokenContext']>) => pickBackend().findTokenContext(...a);
+export const recordBallot     = (...a: Parameters<StoreModule['recordBallot']>)     => pickBackend().recordBallot(...a);
 
 // Re-export the shared utilities so existing imports
 // (`import { slugify, ensureUniqueOptionIds, newId } from '@/lib/voting/store'`)
