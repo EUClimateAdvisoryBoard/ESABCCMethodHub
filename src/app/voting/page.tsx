@@ -12,6 +12,8 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import { listVotes, getVote } from '@/lib/voting/store';
+import { detectVotingBackend } from '@/lib/voting/backend';
+import StorageBackendBanner from './StorageBackendBanner';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,6 +24,7 @@ function fmtDate(iso?: string) {
 }
 
 export default async function VotingIndex() {
+  const backend = detectVotingBackend();
   const votes = await listVotes();
   const counts = await Promise.all(
     votes.map(async (v) => {
@@ -60,6 +63,7 @@ export default async function VotingIndex() {
       </PageHero>
 
       <main className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <StorageBackendBanner backend={backend} />
         {votes.length === 0 ? (
           <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-[#FBFBFA] p-8 text-center">
             <h2 className="text-[16px] font-bold text-[#3D5265]">No votes yet.</h2>

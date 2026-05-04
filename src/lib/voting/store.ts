@@ -14,18 +14,15 @@
 
 import * as fsStore from './store-fs';
 import * as supabaseStore from './store-supabase';
+import { detectVotingBackend } from './backend';
 import { ensureUniqueOptionIds, fingerprint, newId, newToken, slugify } from './util';
 
 type StoreModule = typeof fsStore;
 
 function pickBackend(): StoreModule {
-  if (
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-  ) {
-    return supabaseStore as unknown as StoreModule;
-  }
-  return fsStore;
+  return detectVotingBackend() === 'supabase'
+    ? (supabaseStore as unknown as StoreModule)
+    : fsStore;
 }
 
 const backend: StoreModule = pickBackend();
@@ -35,6 +32,7 @@ export const getVote          = (...a: Parameters<StoreModule['getVote']>)      
 export const createVote       = (...a: Parameters<StoreModule['createVote']>)       => backend.createVote(...a);
 export const updateVote       = (...a: Parameters<StoreModule['updateVote']>)       => backend.updateVote(...a);
 export const deleteVote       = (...a: Parameters<StoreModule['deleteVote']>)       => backend.deleteVote(...a);
+export const resetVote        = (...a: Parameters<StoreModule['resetVote']>)        => backend.resetVote(...a);
 export const generateTokens   = (...a: Parameters<StoreModule['generateTokens']>)   => backend.generateTokens(...a);
 export const findTokenContext = (...a: Parameters<StoreModule['findTokenContext']>) => backend.findTokenContext(...a);
 export const recordBallot     = (...a: Parameters<StoreModule['recordBallot']>)     => backend.recordBallot(...a);

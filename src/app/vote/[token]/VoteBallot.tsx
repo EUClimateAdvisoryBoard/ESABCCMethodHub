@@ -21,24 +21,31 @@ type FetchState =
 
 /**
  * Per-browser idempotency for shared (universal) voting links. We tag the
- * vote id (NOT the token) in localStorage so the same browser can't easily
- * submit a second ballot. This is advisory: someone determined could clear
- * storage, but it covers the realistic "double-click submit" / "I forgot
- * I already voted" cases. The vote id alone is not personal data.
+ * vote id and the vote's `resetEpoch` (NOT the token) in localStorage so
+ * the same browser can't easily submit a second ballot. This is advisory:
+ * someone determined could clear storage, but it covers the realistic
+ * "double-click submit" / "I forgot I already voted" cases.
+ *
+ * Including the epoch in the key means an admin "Reset" action — which
+ * bumps the epoch on the server — silently invalidates every participant's
+ * existing flag and lets them vote again on the same browser.
  */
 const LS_KEY_PREFIX = 'esabcc-vote-submitted:';
-function hasLocalSubmission(voteId: string): boolean {
+function lsKey(voteId: string, epoch: number): string {
+  return `${LS_KEY_PREFIX}${voteId}:${epoch}`;
+}
+function hasLocalSubmission(voteId: string, epoch: number): boolean {
   if (typeof window === 'undefined') return false;
   try {
-    return window.localStorage.getItem(LS_KEY_PREFIX + voteId) === '1';
+    return window.localStorage.getItem(lsKey(voteId, epoch)) === '1';
   } catch {
     return false;
   }
 }
-function rememberLocalSubmission(voteId: string): void {
+function rememberLocalSubmission(voteId: string, epoch: number): void {
   if (typeof window === 'undefined') return;
   try {
-    window.localStorage.setItem(LS_KEY_PREFIX + voteId, '1');
+    window.localStorage.setItem(lsKey(voteId, epoch), '1');
   } catch {
     /* private mode / quota — best-effort */
   }
@@ -80,7 +87,7 @@ export default function VoteBallot({ token }: { token: string }) {
         // already submitted to THIS vote, show the thank-you screen instead
         // of letting the user submit twice. Soft enforcement only — the
         // server hasn't capped this token.
-        if (vote.isShared && hasLocalSubmission(vote.id)) {
+        if (vote.isShared && hasLocalSubmission(vote.id, vote.resetEpoch)) {
           setState({ kind: 'submitted' });
           return;
         }
@@ -130,7 +137,7 @@ export default function VoteBallot({ token }: { token: string }) {
       if (!res.ok) {
         setError(json.error ?? 'Could not submit your ballot.');
       } else {
-        rememberLocalSubmission(vote.id);
+        rememberLocalSubmission(vote.id, vote.resetEpoch);
         setState({ kind: 'submitted' });
       }
     } catch {

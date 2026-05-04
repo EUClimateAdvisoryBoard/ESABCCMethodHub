@@ -372,6 +372,10 @@ alter table public.vote_tokens
 -- single-use is now enforced by the atomic `use_count < max_uses` update.
 drop index if exists public.ux_ballots_vote_fingerprint;
 
+-- Reset epoch: see 031_voting_reset_epoch.sql.
+alter table public.votes
+  add column if not exists reset_epoch int not null default 0;
+
 create or replace function public.touch_votes_updated_at()
 returns trigger as $$
 begin new.updated_at := now(); return new; end;

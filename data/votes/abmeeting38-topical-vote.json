@@ -28,7 +28,8 @@
     "isAnonymous": true,
     "status": "open",
     "createdAt": "2026-05-04T08:00:00.000Z",
-    "createdBy": "secretariat"
+    "createdBy": "secretariat",
+    "resetEpoch": 0
   },
   "tokens": [],
   "ballots": []

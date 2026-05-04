@@ -40,6 +40,7 @@ function publicView(
     closesAt: vote.closesAt,
     alreadySubmitted: exhausted,
     isShared: t.maxUses !== 1,
+    resetEpoch: vote.resetEpoch ?? 0,
   };
 }
 

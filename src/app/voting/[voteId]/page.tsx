@@ -10,11 +10,14 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import { getVote } from '@/lib/voting/store';
+import { detectVotingBackend } from '@/lib/voting/backend';
+import StorageBackendBanner from '../StorageBackendBanner';
 import VoteAdmin from './VoteAdmin';
 
 export const dynamic = 'force-dynamic';
 
 export default async function VoteAdminPage({ params }: { params: { voteId: string } }) {
+  const backend = detectVotingBackend();
   const bundle = await getVote(params.voteId);
   if (!bundle) notFound();
 
@@ -38,6 +41,7 @@ export default async function VoteAdminPage({ params }: { params: { voteId: stri
         }
       />
       <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <StorageBackendBanner backend={backend} />
         <VoteAdmin initial={bundle} />
       </main>
       <SiteFooter />
