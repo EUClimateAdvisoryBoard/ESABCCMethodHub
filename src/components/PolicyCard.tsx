@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { Policy } from '@/lib/types';
+import { getPolicyType, POLICY_TYPE_META } from '@/lib/policyTypes';
 
 const DOMAIN_COLORS: Record<string, string> = {
   climate: 'bg-secondary text-white',
@@ -33,6 +34,8 @@ const STATUS_DOT: Record<string, string> = {
 };
 
 export default function PolicyCard({ policy }: { policy: Policy }) {
+  const pt = getPolicyType(policy);
+  const ptMeta = POLICY_TYPE_META[pt];
   return (
     <Link href={`/policy-navigator/policy/?id=${policy.id}`}
       className="block bg-white rounded shadow-sm border border-grey-200 p-5 hover:shadow-md hover:border-secondary/30 transition-all">
@@ -43,10 +46,17 @@ export default function PolicyCard({ policy }: { policy: Policy }) {
         </span>
       </div>
       <p className="text-sm text-tertiary line-clamp-2 mb-3">{policy.summary}</p>
-      <div className="flex items-center gap-3 text-xs text-grey-500">
+      <div className="flex items-center gap-3 text-xs text-grey-500 flex-wrap">
         <span className="flex items-center gap-1">
           <span className={`w-2 h-2 rounded-full ${STATUS_DOT[policy.status] || 'bg-grey-400'}`} />
           {policy.status.replace('_', ' ')}
+        </span>
+        <span
+          className="font-semibold px-1.5 py-0.5 rounded text-[10px]"
+          style={{ backgroundColor: ptMeta.color + '18', color: ptMeta.color }}
+          title={ptMeta.description}
+        >
+          {ptMeta.label}
         </span>
         <span className="capitalize">{policy.document_type}</span>
         {policy.celex_number && <span className="font-mono text-tertiary-light">{policy.celex_number}</span>}

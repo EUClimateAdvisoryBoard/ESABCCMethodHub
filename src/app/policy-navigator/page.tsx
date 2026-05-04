@@ -56,6 +56,7 @@ import { useConnectionOverrides, type EnrichedConnection } from '@/lib/useConnec
 import { useNetworks } from '@/lib/useNetworks';
 import { EmptyState } from '@/components/ui/StateView';
 import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
+import { POLICY_TYPE_META, getPolicyType, type PolicyType } from '@/lib/policyTypes';
 
 const PolicyNetworkGraph = dynamic(() => import('@/components/PolicyNetworkGraph'), { ssr: false });
 const LegislativeCalendar = dynamic(() => import('@/components/LegislativeCalendar'), { ssr: false });
@@ -86,26 +87,7 @@ const INSTRUMENT_COLORS: Record<string, string> = {
   disclosure: '#8B5CF6',
 };
 
-const POLICY_TYPE_META: Record<
-  'legislation' | 'package' | 'plan',
-  { label: string; color: string; description: string }
-> = {
-  legislation: {
-    label: 'Legislation',
-    color: '#0065A4',
-    description: 'Individual binding legal acts (regulations, directives, decisions)',
-  },
-  package: {
-    label: 'Package',
-    color: '#7C3AED',
-    description: 'Umbrella bundles grouping multiple legislative acts',
-  },
-  plan: {
-    label: 'Policy & Plan',
-    color: '#B45309',
-    description: 'Non-binding strategies, communications and action plans',
-  },
-};
+// POLICY_TYPE_META imported from @/lib/policyTypes
 
 export default function PolicyNavigatorPage() {
   const {
@@ -123,8 +105,12 @@ export default function PolicyNavigatorPage() {
   const [topTab, setTopTab] = useState<TopTab>('policy-map');
 
   // Sectoral overview state
+  // Read tab filter
+  const [readPolicyType, setReadPolicyType] = useState<PolicyType | 'all'>('all');
+
+  // Sectoral overview state
   const [selectedSector, setSelectedSector] = useState<SectorId | 'all'>('all');
-  const [selectedPolicyType, setSelectedPolicyType] = useState<'legislation' | 'package' | 'plan' | 'all'>('all');
+  const [selectedPolicyType, setSelectedPolicyType] = useState<PolicyType | 'all'>('all');
   const [selectedInstrument, setSelectedInstrument] = useState<string>('all');
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -642,49 +628,104 @@ export default function PolicyNavigatorPage() {
           one click. Reuses the existing /policy-navigator/policy-text route
           so no new layout is invented.
          ============================================================ */}
-      {topTab === 'read' && (
-        <section id="read" className="max-w-wide mx-auto px-6 pt-8 pb-12">
-          <div className="mb-5 max-w-text">
-            <p className="text-[10px] tracking-[0.18em] uppercase text-primary font-semibold mb-1">Read mode</p>
-            <h2 className="text-[22px] font-bold text-tertiary-dark">Browse and read policy text</h2>
-            <p className="text-sm text-tertiary mt-1">
-              {policies.length} policies. Click any title to open the article view with full text, citations and connections.
-            </p>
-          </div>
-          <div className="bg-white rounded-lg border border-grey-200 divide-y divide-grey-100">
-            {policies.map(p => (
-              <Link
-                key={p.id}
-                href={`/policy-navigator/policy-text/?id=${encodeURIComponent(p.id)}`}
-                className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-grey-50 mh-focus mh-motion-fast"
+      {topTab === 'read' && (() => {
+        const readFiltered = readPolicyType === 'all'
+          ? policies
+          : policies.filter(p => getPolicyType(p) === readPolicyType);
+        return (
+          <section id="read" className="max-w-wide mx-auto px-6 pt-8 pb-12">
+            <div className="mb-5 max-w-text">
+              <p className="text-[10px] tracking-[0.18em] uppercase text-primary font-semibold mb-1">Read mode</p>
+              <h2 className="text-[22px] font-bold text-tertiary-dark">Browse and read policy text</h2>
+              <p className="text-sm text-tertiary mt-1">
+                {readFiltered.length} of {policies.length} policies. Click any title to open the article view with full text, citations and connections.
+              </p>
+            </div>
+
+            {/* Policy type filter */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              <button
+                onClick={() => setReadPolicyType('all')}
+                className={`text-xs px-3 py-1.5 rounded-full font-medium border transition ${
+                  readPolicyType === 'all'
+                    ? 'bg-primary text-white border-primary'
+                    : 'bg-white text-tertiary border-grey-200 hover:border-primary'
+                }`}
               >
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center gap-2 mb-0.5 flex-wrap">
-                    <span
-                      className="w-2.5 h-2.5 rounded-full shrink-0"
-                      style={{ background: DOMAIN_COLORS[p.domain] || '#3D5265' }}
-                      aria-hidden="true"
-                    />
-                    <span className="text-[10px] uppercase tracking-wider text-tertiary capitalize">
-                      {p.domain.replace('_', ' ')}
+                All ({policies.length})
+              </button>
+              {(['legislation', 'package', 'plan'] as const).map(t => {
+                const count = policies.filter(p => getPolicyType(p) === t).length;
+                const meta = POLICY_TYPE_META[t];
+                return (
+                  <button
+                    key={t}
+                    onClick={() => setReadPolicyType(t)}
+                    className="text-xs px-3 py-1.5 rounded-full font-medium border transition"
+                    style={
+                      readPolicyType === t
+                        ? { backgroundColor: meta.color, color: '#fff', borderColor: meta.color }
+                        : { backgroundColor: '#fff', color: '#555', borderColor: '#e0e0e0' }
+                    }
+                    title={meta.description}
+                  >
+                    {meta.label} ({count})
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="bg-white rounded-lg border border-grey-200 divide-y divide-grey-100">
+              {readFiltered.map(p => {
+                const pt = getPolicyType(p);
+                const ptMeta = POLICY_TYPE_META[pt];
+                return (
+                  <Link
+                    key={p.id}
+                    href={`/policy-navigator/policy-text/?id=${encodeURIComponent(p.id)}`}
+                    className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-grey-50 mh-focus mh-motion-fast"
+                  >
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                        <span
+                          className="w-2.5 h-2.5 rounded-full shrink-0"
+                          style={{ background: DOMAIN_COLORS[p.domain] || '#3D5265' }}
+                          aria-hidden="true"
+                        />
+                        <span
+                          className="text-[9px] font-semibold px-1.5 py-0.5 rounded"
+                          style={{ backgroundColor: ptMeta.color + '18', color: ptMeta.color }}
+                          title={ptMeta.description}
+                        >
+                          {ptMeta.label}
+                        </span>
+                        <span className="text-[10px] uppercase tracking-wider text-tertiary capitalize">
+                          {p.domain.replace('_', ' ')}
+                        </span>
+                        {p.celex_number && (
+                          <span className="text-[10px] font-mono text-grey-500">· {p.celex_number}</span>
+                        )}
+                        <span className="text-[10px] text-grey-500 capitalize">· {p.status.replace('_', ' ')}</span>
+                      </div>
+                      <p className="text-sm font-semibold text-tertiary-dark truncate">{p.short_title || p.title}</p>
+                    </div>
+                    <span className="shrink-0 text-tertiary group-hover:text-secondary" aria-hidden="true">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
                     </span>
-                    {p.celex_number && (
-                      <span className="text-[10px] font-mono text-grey-500">· {p.celex_number}</span>
-                    )}
-                    <span className="text-[10px] text-grey-500 capitalize">· {p.status.replace('_', ' ')}</span>
-                  </div>
-                  <p className="text-sm font-semibold text-tertiary-dark truncate">{p.short_title || p.title}</p>
+                  </Link>
+                );
+              })}
+              {readFiltered.length === 0 && (
+                <div className="px-4 py-8 text-center text-sm text-tertiary">
+                  No policies match this filter.
                 </div>
-                <span className="shrink-0 text-tertiary group-hover:text-secondary" aria-hidden="true">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-                </span>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+              )}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* ============================================================
           PART 1 — POLICY MAP (network graph + calendar)
@@ -934,7 +975,7 @@ export default function PolicyNavigatorPage() {
               )}
               {selectedPolicyType !== 'all' && (
                 <FilterPill
-                  label={`Type: ${POLICY_TYPE_META[selectedPolicyType].label}`}
+                  label={`Type: ${POLICY_TYPE_META[selectedPolicyType as PolicyType].label}`}
                   active
                   onClick={() => setSelectedPolicyType('all')}
                   onClear={() => setSelectedPolicyType('all')}
