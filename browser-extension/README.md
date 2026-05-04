@@ -24,7 +24,7 @@ Right-click the extension → **Extension options** (or open it from the
 toolbar popup's "Extension settings" link) and set:
 
 - **API base URL** — your deployed dashboard, e.g.
-  `https://eu-climate-policy.vercel.app`.
+  `https://methodhub.vercel.app`.
 - **Shared secret** — only needed if the server has
   `MEDIA_MONITORING_SECRET` set. Paste the same value here.
 

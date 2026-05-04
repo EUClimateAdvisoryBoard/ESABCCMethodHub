@@ -8,7 +8,7 @@ modern add-in (or when IT policy restricts the Office Store).
 ```mermaid
 flowchart LR
   WV[Word + ESABCC_RefManager.bas] -- HTTP --> B[bridge-service<br/>127.0.0.1:8585]
-  WV -- HTTPS fallback --> API[eu-climate-policy.vercel.app]
+  WV -- HTTPS fallback --> API[methodhub.vercel.app]
   B --> S[(Supabase)]
 ```
 
@@ -26,7 +26,7 @@ flowchart LR
 - Adds a **custom ribbon tab** with Search, Insert Citation, Build Bibliography.
 - Talks to the local [`bridge-service`](../bridge-service/README.md) at
   `http://127.0.0.1:8585` for references, search, and formatting.
-- Falls back to the public web app (`https://eu-climate-policy.vercel.app`)
+- Falls back to the public web app (`https://methodhub.vercel.app`)
   for DOI lookups.
 - Marks every inserted citation with a `CITE:` tag so the "Refresh" action can
   find and update them.
@@ -35,7 +35,7 @@ flowchart LR
 Relevant constants at the top of `ESABCC_RefManager.bas`:
 
 - `BRIDGE_URL  = "http://127.0.0.1:8585"`
-- `WEBAPP_URL  = "https://eu-climate-policy.vercel.app"`
+- `WEBAPP_URL  = "https://methodhub.vercel.app"`
 - `CITE_PREFIX = "CITE:"`
 
 ## Install
@@ -82,4 +82,4 @@ folder — handy for templates you share with reviewers.
 | Ribbon tab does not appear              | Template not copied to `%APPDATA%\Microsoft\Word\STARTUP` (re-run `install.ps1`) |
 | "The template cannot be opened" warning | Unblock the `.dotm`: Right-click → Properties → Unblock |
 | All lookups fail with timeout           | `bridge-service` not running                          |
-| DOI lookup returns empty                | Check internet access to `eu-climate-policy.vercel.app` |
+| DOI lookup returns empty                | Check internet access to `methodhub.vercel.app` |

@@ -4,7 +4,7 @@ This repository ships its own **hosted documentation site**, built with
 [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) from the
 same `docs/` folder that holds the per-subsystem markdown. Since
 April 2026 it is published as a sub-path of the main MethodHub Vercel
-deployment under [`/docs/`](https://eu-climate-policy.vercel.app/docs/).
+deployment under [`/docs/`](https://methodhub.vercel.app/docs/).
 
 ## How it ships
 
@@ -37,7 +37,7 @@ HMAC cookie that gates the rest of the app**. There is no longer a
 separate StaticCrypt encryption step or a separate
 `DOCS_SITE_PASSWORD` secret.
 
-- **URL.** [`https://eu-climate-policy.vercel.app/docs/`](https://eu-climate-policy.vercel.app/docs/)
+- **URL.** [`https://methodhub.vercel.app/docs/`](https://methodhub.vercel.app/docs/)
   (or the EEA hostname after the production cutover).
 - **Gate.** `src/middleware.ts` matches every path that isn't a Next
   internal or a static asset; it bypasses `/api/*`,

@@ -119,7 +119,7 @@ Option Explicit
 ' The default below matches the fallback in
 ' src/app/api/inbound-email/route.ts so it works out of the box against a
 ' freshly-deployed instance that hasn't set the env var yet.
-Private Const WEBHOOK_URL As String = "https://eu-climate-policy.vercel.app/api/inbound-email"
+Private Const WEBHOOK_URL As String = "https://methodhub.vercel.app/api/inbound-email"
 Private Const WEBHOOK_SECRET As String = "esabcc-email-webhook-2024"
 
 ' Max characters of body text to include in the POST. The webhook trims

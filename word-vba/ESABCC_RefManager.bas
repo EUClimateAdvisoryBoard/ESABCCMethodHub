@@ -24,7 +24,7 @@ Option Explicit
 
 ' -- Configuration --
 Private Const BRIDGE_URL As String = "http://127.0.0.1:8585"
-Private Const WEBAPP_URL As String = "https://eu-climate-policy.vercel.app"
+Private Const WEBAPP_URL As String = "https://methodhub.vercel.app"
 Private Const CITE_TAG_PREFIX As String = "CITE:"
 Private Const TOOLBAR_NAME As String = "ESABCC References"
 

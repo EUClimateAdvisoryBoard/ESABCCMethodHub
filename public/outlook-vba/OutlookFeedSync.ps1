@@ -33,7 +33,7 @@ $ErrorActionPreference = 'Stop'
 # Trailing slash is required: next.config.js has trailingSlash=true and
 # sends a 308 Permanent Redirect on non-slashed paths. Windows PowerShell 5.1
 # drops the POST body on that redirect.
-$WebhookUrl     = 'https://eu-climate-policy.vercel.app/api/inbound-email/'
+$WebhookUrl     = 'https://methodhub.vercel.app/api/inbound-email/'
 $WebhookSecret  = 'esabcc-feed-7f3a9c2e1b4d1'
 $PushedCategory = 'Pushed to MethodHub'
 $FeedFolderName = 'Feed'

@@ -23,7 +23,7 @@ const MAX_BYTES = 50 * 1024 * 1024; // 50 MB
 const FETCH_TIMEOUT_MS = 30_000;
 const MAX_HTML_HOPS = 2;
 const USER_AGENT =
-  'Mozilla/5.0 (compatible; ESABCC-RefManager/1.0; +https://eu-climate-policy.vercel.app)';
+  'Mozilla/5.0 (compatible; ESABCC-RefManager/1.0; +https://methodhub.vercel.app)';
 
 // Try to pull a PDF URL out of an HTML landing page.  Most publishers
 // include the Google Scholar `citation_pdf_url` meta tag; some also expose

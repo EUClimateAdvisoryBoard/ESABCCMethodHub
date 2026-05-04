@@ -44,7 +44,7 @@ sequenceDiagram
 2. File → Import File → select `ESABCC_PushToMethodHub.bas`.
 3. In the module, edit:
    - `WEBHOOK_SECRET` — must match `INBOUND_EMAIL_SECRET` on the server.
-   - `WEBHOOK_URL` — usually `https://eu-climate-policy.vercel.app/api/inbound-email`.
+   - `WEBHOOK_URL` — usually `https://methodhub.vercel.app/api/inbound-email`.
 4. Wire up the hourly timer: in the VBA editor double-click
    **ThisOutlookSession** and paste:
 
