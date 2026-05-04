@@ -38,10 +38,24 @@ function emptyBundle(vote: VoteRecord): VoteBundle {
   return { vote, tokens: [], ballots: [] };
 }
 
+function normaliseBundle(bundle: VoteBundle): VoteBundle {
+  // Backfill fields added by later migrations so older JSON files keep
+  // working without a one-shot rewrite. Read-only operation.
+  return {
+    ...bundle,
+    vote: { ...bundle.vote, resetEpoch: bundle.vote.resetEpoch ?? 0 },
+    tokens: bundle.tokens.map((t) => ({
+      ...t,
+      maxUses: t.maxUses ?? 1,
+      useCount: t.useCount ?? 0,
+    })),
+  };
+}
+
 async function readBundle(voteId: string): Promise<VoteBundle | null> {
   try {
     const raw = await fs.readFile(bundlePath(voteId), 'utf-8');
-    return JSON.parse(raw) as VoteBundle;
+    return normaliseBundle(JSON.parse(raw) as VoteBundle);
   } catch (err: unknown) {
     if ((err as NodeJS.ErrnoException).code === 'ENOENT') return null;
     throw err;
@@ -64,7 +78,7 @@ export async function listVotes(): Promise<VoteRecord[]> {
     if (!name.endsWith('.json')) continue;
     try {
       const raw = await fs.readFile(path.join(STORE_DIR, name), 'utf-8');
-      const bundle = JSON.parse(raw) as VoteBundle;
+      const bundle = normaliseBundle(JSON.parse(raw) as VoteBundle);
       records.push(bundle.vote);
     } catch {
       // ignore malformed files; admin can clean up via filesystem
@@ -103,6 +117,21 @@ export async function deleteVote(voteId: string): Promise<void> {
   } catch (err: unknown) {
     if ((err as NodeJS.ErrnoException).code !== 'ENOENT') throw err;
   }
+}
+
+/**
+ * Drop every ballot for the vote, reset every token to its unused state,
+ * and bump the reset epoch so participants' localStorage flags are
+ * invalidated. Idempotent.
+ */
+export async function resetVote(voteId: string): Promise<VoteRecord> {
+  const bundle = await readBundle(voteId);
+  if (!bundle) throw new Error(`Vote ${voteId} not found`);
+  bundle.ballots = [];
+  bundle.tokens = bundle.tokens.map((t) => ({ ...t, usedAt: null, useCount: 0 }));
+  bundle.vote = { ...bundle.vote, resetEpoch: (bundle.vote.resetEpoch ?? 0) + 1 };
+  await writeBundle(bundle);
+  return bundle.vote;
 }
 
 export async function generateTokens(

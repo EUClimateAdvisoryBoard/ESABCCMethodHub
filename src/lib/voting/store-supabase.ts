@@ -42,6 +42,7 @@ type VoteRow = {
   closes_at: string | null;
   created_by: string | null;
   created_at: string;
+  reset_epoch: number | null;
 };
 
 type TokenRow = {
@@ -77,6 +78,7 @@ function rowToVote(r: VoteRow): VoteRecord {
     closesAt: r.closes_at ?? undefined,
     createdBy: r.created_by ?? undefined,
     createdAt: r.created_at,
+    resetEpoch: r.reset_epoch ?? 0,
   };
 }
 
@@ -185,6 +187,43 @@ export async function updateVote(
 export async function deleteVote(voteId: string): Promise<void> {
   const { error } = await client().from('votes').delete().eq('id', voteId);
   if (error) throw error;
+}
+
+export async function resetVote(voteId: string): Promise<VoteRecord> {
+  const sb = client();
+
+  // 1. Drop every ballot for this vote.
+  const { error: delErr } = await sb.from('ballots').delete().eq('vote_id', voteId);
+  if (delErr) throw delErr;
+
+  // 2. Reset every token for this vote so the same links can be reused.
+  const { error: tokErr } = await sb
+    .from('vote_tokens')
+    .update({ used_at: null, use_count: 0 })
+    .eq('vote_id', voteId);
+  if (tokErr) throw tokErr;
+
+  // 3. Bump the reset epoch atomically. We read-then-write because
+  // postgrest doesn't expose `reset_epoch = reset_epoch + 1` directly,
+  // but a small race is harmless: two concurrent admins resetting at the
+  // same time both want the epoch ahead of where it was, and either
+  // increment is acceptable.
+  const { data: voteRow, error: readErr } = await sb
+    .from('votes')
+    .select('*')
+    .eq('id', voteId)
+    .maybeSingle();
+  if (readErr) throw readErr;
+  if (!voteRow) throw new Error(`Vote ${voteId} not found`);
+  const next = ((voteRow as VoteRow).reset_epoch ?? 0) + 1;
+  const { data: updated, error: bumpErr } = await sb
+    .from('votes')
+    .update({ reset_epoch: next })
+    .eq('id', voteId)
+    .select('*')
+    .single();
+  if (bumpErr) throw bumpErr;
+  return rowToVote(updated as VoteRow);
 }
 
 export async function generateTokens(

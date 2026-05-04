@@ -32,6 +32,7 @@ export const getVote          = (...a: Parameters<StoreModule['getVote']>)      
 export const createVote       = (...a: Parameters<StoreModule['createVote']>)       => backend.createVote(...a);
 export const updateVote       = (...a: Parameters<StoreModule['updateVote']>)       => backend.updateVote(...a);
 export const deleteVote       = (...a: Parameters<StoreModule['deleteVote']>)       => backend.deleteVote(...a);
+export const resetVote        = (...a: Parameters<StoreModule['resetVote']>)        => backend.resetVote(...a);
 export const generateTokens   = (...a: Parameters<StoreModule['generateTokens']>)   => backend.generateTokens(...a);
 export const findTokenContext = (...a: Parameters<StoreModule['findTokenContext']>) => backend.findTokenContext(...a);
 export const recordBallot     = (...a: Parameters<StoreModule['recordBallot']>)     => backend.recordBallot(...a);

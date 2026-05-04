@@ -69,6 +69,13 @@ export interface VoteRecord {
   createdAt: string;
   closesAt?: string;
   createdBy?: string;
+  /**
+   * Bumped by the admin "Reset" action. The ballot page tags its
+   * localStorage "already submitted" flag with this number, so bumping
+   * the epoch invalidates every participant's browser flag at once.
+   * Defaults to 0 for votes that have never been reset.
+   */
+  resetEpoch: number;
 }
 
 export interface VoteToken {
@@ -145,4 +152,7 @@ export interface PublicVoteView {
    * "shared link" wording.
    */
   isShared: boolean;
+  /** See VoteRecord.resetEpoch — the ballot page mixes this into its
+   * localStorage key so an admin reset re-enables that browser. */
+  resetEpoch: number;
 }

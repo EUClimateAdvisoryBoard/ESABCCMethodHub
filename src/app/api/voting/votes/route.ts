@@ -62,6 +62,7 @@ export async function POST(req: NextRequest) {
     createdAt: now,
     closesAt: body.closesAt,
     createdBy: body.createdBy,
+    resetEpoch: 0,
   };
 
   try {

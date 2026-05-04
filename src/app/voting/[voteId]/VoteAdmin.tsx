@@ -94,6 +94,37 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
     }
   }
 
+  async function resetVote() {
+    const ok = window.confirm(
+      `Reset "${bundle.vote.title}"?\n\n` +
+        '• Every submitted ballot will be permanently deleted.\n' +
+        '• Every voting link will be reset to unused, so the same links can be reused.\n' +
+        '• Browsers that already voted will be allowed to vote again.\n\n' +
+        'This cannot be undone.',
+    );
+    if (!ok) return;
+    setError(null);
+    try {
+      const res = await fetch(`/api/voting/votes/${bundle.vote.id}/reset`, {
+        method: 'POST',
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        setError(json.error ?? 'Could not reset the vote.');
+        return;
+      }
+      // Reflect the reset locally: drop ballots, clear token usage, bump epoch.
+      setBundle((b) => ({
+        vote: json.vote,
+        tokens: b.tokens.map((t) => ({ ...t, usedAt: null, useCount: 0 })),
+        ballots: [],
+      }));
+      router.refresh();
+    } catch {
+      setError('Network error.');
+    }
+  }
+
   async function copy(text: string) {
     try {
       await navigator.clipboard.writeText(text);
@@ -306,6 +337,26 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
             Open results & analysis →
           </a>
         </p>
+      </section>
+
+      <section className="rounded-sm border border-[#B33A3A]/30 bg-[#FBF1ED]/40 p-4 sm:p-5">
+        <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#B33A3A] mb-2">Danger zone</h2>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <div className="text-[12.5px] text-[#3D5265]/80 max-w-2xl">
+            Reset this vote — deletes every submitted ballot, marks every link
+            as unused so the same URLs can be shared again, and bumps the
+            reset epoch (currently <span className="font-mono">{bundle.vote.resetEpoch ?? 0}</span>)
+            so participants who already voted can vote a second time from the
+            same browser. This cannot be undone.
+          </div>
+          <button
+            type="button"
+            onClick={resetVote}
+            className="inline-flex items-center justify-center px-4 py-2 text-[13px] font-semibold text-white bg-[#B33A3A] rounded-sm hover:opacity-90"
+          >
+            Reset vote
+          </button>
+        </div>
       </section>
     </div>
   );
