@@ -8,6 +8,7 @@
  * `middleware.ts` ensures only Method Hub users reach this page.
  */
 import Link from 'next/link';
+import { unstable_noStore as noStore } from 'next/cache';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -24,6 +25,10 @@ function fmtDate(iso?: string) {
 }
 
 export default async function VotingIndex() {
+  // Belt-and-braces against any pre-render or fetch cache: every load must
+  // re-read tokens/ballots from the live store, otherwise admins see stale
+  // counts after a ballot is submitted.
+  noStore();
   const backend = detectVotingBackend();
   const votes = await listVotes();
   const counts = await Promise.all(
