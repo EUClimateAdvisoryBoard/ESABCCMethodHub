@@ -250,15 +250,61 @@ function PriorityRankingControls({
     return c;
   }, [responses]);
 
+  const [warning, setWarning] = useState<string | null>(null);
+
+  // Decide what should happen when the user clicks score `s` on option
+  // `optId`, given the current responses. We ALWAYS allow a click to
+  // un-set the option's current score (toggle off) so the participant
+  // can fix a mistake. We BLOCK a click that would push a score above
+  // its cap; that path returns the warning text instead.
+  function attempt(optId: string, s: number): { kind: 'unset' | 'set' | 'blocked'; message?: string } {
+    const current = responses[optId];
+    if (current === s) return { kind: 'unset' };
+    const cap = caps[String(s)];
+    if (cap != null && (counts[String(s)] ?? 0) >= cap) {
+      const label = labels[String(s)] ? ` (${labels[String(s)]})` : '';
+      return {
+        kind: 'blocked',
+        message:
+          `You can only assign score ${s}${label} to ${cap} option${cap === 1 ? '' : 's'}. ` +
+          `To assign it here, change one of your existing ${s}s to a different score first.`,
+      };
+    }
+    return { kind: 'set' };
+  }
+
+  function handleClick(optId: string, s: number) {
+    const r = attempt(optId, s);
+    if (r.kind === 'blocked') {
+      setWarning(r.message ?? 'You have reached the limit for this score.');
+      return;
+    }
+    setWarning(null);
+    setVal(optId, r.kind === 'unset' ? null : s);
+  }
+
   return (
     <div className="space-y-2">
+      {warning ? (
+        <div
+          role="alert"
+          className="rounded-sm border border-[#E87722] bg-[#FBF1ED] px-3 py-2 text-[12.5px] text-[#3D5265] flex items-start gap-2"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E87722" strokeWidth="2.5" className="mt-[2px] flex-shrink-0" aria-hidden>
+            <path d="M12 9v4M12 17h.01" />
+            <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          </svg>
+          <span>{warning}</span>
+        </div>
+      ) : null}
+
       <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12px] text-[#3D5265]/80 flex flex-wrap gap-x-4 gap-y-1">
         {scores.map((s) => {
           const cap = caps[String(s)];
           const used = counts[String(s)] ?? 0;
-          const overCap = cap != null && used > cap;
+          const atCap = cap != null && used >= cap;
           return (
-            <span key={s} className={overCap ? 'text-[#B33A3A] font-semibold' : ''}>
+            <span key={s} className={atCap ? 'text-[#E87722] font-semibold' : ''}>
               <span className="font-mono mr-1">{s}</span>
               {labels[String(s)] ? <span className="text-[#8A95A3]">({labels[String(s)]})</span> : null}
               <span className="ml-1 text-[#8A95A3]">
@@ -283,16 +329,29 @@ function PriorityRankingControls({
               <div className="flex items-center gap-1.5 flex-wrap">
                 {scores.map((s) => {
                   const isOn = selected === s;
+                  // Mirror the runtime check so we can dim buttons that
+                  // would be rejected. Toggle-off (isOn) is always allowed.
+                  const cap = caps[String(s)];
+                  const wouldBeBlocked =
+                    !isOn && cap != null && (counts[String(s)] ?? 0) >= cap;
                   return (
                     <button
                       key={s}
                       type="button"
-                      onClick={() => setVal(opt.id, isOn ? null : s)}
+                      onClick={() => handleClick(opt.id, s)}
                       aria-pressed={isOn}
+                      aria-disabled={wouldBeBlocked}
+                      title={
+                        wouldBeBlocked
+                          ? `Score ${s} is at its cap of ${cap}. Change one of your existing ${s}s first.`
+                          : undefined
+                      }
                       className={
                         'min-w-[40px] px-2 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors ' +
                         (isOn
                           ? 'bg-[#00928F] border-[#00928F] text-white'
+                          : wouldBeBlocked
+                          ? 'bg-[#F4F5F6] border-[#E6E7E8] text-[#8A95A3] cursor-not-allowed hover:border-[#E87722]'
                           : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
                       }
                     >
