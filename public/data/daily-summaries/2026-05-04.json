@@ -1,18 +1,18 @@
 {
   "date": "2026-05-04",
-  "generatedAt": "2026-05-04T07:51:53.270Z",
+  "generatedAt": "2026-05-04T12:25:37.064Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 4 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Highlights - Exchange of views with Commissioner Wopke Hoekstra - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20241107PHT25251/20241107PHT25251-ms.jpg\" width=\"180\" alt=\"Wopke Hoekstra during the confirmation hearing 2024\" title=\"Wopke Hoekstra during the confirmation hearing 2024 © European Union, 2024 - EP\"/&gt;&lt;/div&gt;&lt;div&gt;On 4 May 2026, ENVI Members will hold an exchange of views with Wopke Hoekstra, Commissioner for Climate, Net Zero and Clean Growth, as part of the s",
+      "headline": "Commission publishes simplification review of EU Deforestation Regulation",
+      "summary": "European Commission Press release Brussels, 04 May 2026 Today, the Commission published a report on the simplification of the revised EU Deforestation Regulation (EUDR) and a set of further measures for a smooth and effective implementation following the agreement of co-legislators last December.",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "‘Wake-up call’: methane emissions from Australian coalmines more than double official estimates, report finds",
-      "summary": "&lt;p&gt;International Energy Agency findings show government must commit to rapid cuts in emissions of greenhouse gas, climate experts say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Emissions of the potent gre",
+      "headline": "Fixing methane mega-leaks could boost energy stock amid crisis, report says",
+      "summary": "&lt;p&gt;International Energy Agency analysis shows methane leaks remained at near-record highs in 2025&lt;/p&gt;&lt;p&gt;Methane emissions from the energy sector remained at near record levels in 2025, the International Energy Agency has concluded.&lt;/p&gt;&lt;p&gt;Tackling the emissions could make billions of cubic metres of gas available to international markets, a top priority as &lt;a href=\"https://www.theguardian.com/business/2026/apr/16/europe-supply-jet-fuel-iran-war-flight-cancellation",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -23,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Thai c.bank says studying tax on fund inflows - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5\" target=\"_blank\"&gt;Thai c.bank says studying tax on fund inflows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Highlights - Vote on the draft opinion on the European Competitiveness Fund - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260107PHT32316/20260107PHT32316-ms.jpeg\" width=\"180\" alt=\"Image with a hand with objects\" title=\"WS Competitiveness © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members will vote on the draft opinion on the European Competitiveness Fund (ECF), proposed by the Commission in July 2025. The proposal establishes a single inve",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -35,28 +35,28 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Highlights - Exchange of views with Commissioner Wopke Hoekstra - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78043",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20241107PHT25251/20241107PHT25251-ms.jpg\" width=\"180\" alt=\"Wopke Hoekstra during the confirmation hearing 2024\" title=\"Wopke Hoekstra during the confirmation hearing 2024 © European Union, 2024 - EP\"/&gt;&lt;/div&gt;&lt;div&gt;On 4 May 2026, ENVI Members will hold an exchange of views with Wopke Hoekstra, Commissioner for Climate, Net Zero and Clean Growth, as part of the s",
-          "published": "2026-05-04T07:26:52.000Z",
-          "score": 24
+          "title": "Commission publishes simplification review of EU Deforestation Regulation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_941",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 04 May 2026 Today, the Commission published a report on the simplification of the revised EU Deforestation Regulation (EUDR) and a set of further measures for a smooth and effective implementation following the agreement of co-legislators last December.",
+          "published": "2026-05-03T22:00:00.000Z",
+          "score": 27
         },
         {
-          "title": "Highlights - Presentation of the study on the impacts of MFF proposals on climate and environment - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78040",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260423PHT41853/20260423PHT41853-ms.jpeg\" width=\"180\" alt=\"a group of people working with graphs and data\" title=\"Navigating the European Commission’s MFF Proposal for 2028-2034 © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 4 May 2026, a study assessing the Commission’s 2028–2034 MFF proposal from a climate and environmental perspective, prepar",
-          "published": "2026-05-04T07:20:22.000Z",
-          "score": 23
-        },
-        {
-          "title": "Highlights - Consideration of draft opinion on the acceleration of permit-granting - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78044",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306031/permit%20granting-ms.jpg\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members will consider the draft opinion on the proposal amending Directives (EU) 2018/2001, (EU) 2019/944 and (EU) 2024/1788 as regards the acceleration of permit-granting procedures. The proposal aims to streamline and speed up permitting for energy infrastructure, including renewabl",
-          "published": "2026-05-04T07:29:10.000Z",
+          "title": "Daily News 04 / 05 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_954",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 04 May 2026 Commission publishes simplification review of EU Deforestation Regulation\r\nToday, the Commission published a report on the simplification of the revised EU Defor...",
+          "published": "2026-05-04T09:45:35.000Z",
           "score": 20
+        },
+        {
+          "title": "EU removes leather from anti-deforestation law after industry pressure - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPSXdVamo0V0syQmM4dXBSeThHN1VHTnBTbF9TQ04tOEhScFY3STdqN1U5UWsxVWJqTEEyZVdwaUhrU1VkR1lMZ0pYM0NhRFc1MnhHMDZ5ZDV1SWNQSUp4eDNjUnQwcEdzN1J1OFpiYmR1aVBVc0tWV3pqWGRJazlobm9kNVNxejloWnVERHkwR1hBLWJSNlREVmpMTzQ5dFlWbzIwVWhGaGlUcUg3U2FzR0J1TDhCVkhtZjhfUG1DQXJGcGNsazg3R0lhdw?oc=5",
+          "source": "Reuters (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPSXdVamo0V0syQmM4dXBSeThHN1VHTnBTbF9TQ04tOEhScFY3STdqN1U5UWsxVWJqTEEyZVdwaUhrU1VkR1lMZ0pYM0NhRFc1MnhHMDZ5ZDV1SWNQSUp4eDNjUnQwcEdzN1J1OFpiYmR1aVBVc0tWV3pqWGRJazlobm9kNVNxejloWnVERHkwR1hBLWJSNlREVmpMTzQ5dFlWbzIwVWhGaGlUcUg3U2FzR0J1TDhCVkhtZjhfUG1DQXJGcGNsazg3R0lhdw?oc=5\" target=\"_blank\"&gt;EU removes leather from anti-deforestation law after industry pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-05-04T10:05:33.000Z",
+          "score": 17
         }
       ]
     },
@@ -65,19 +65,19 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Fixing methane mega-leaks could boost energy stock amid crisis, report says",
+          "link": "https://www.theguardian.com/environment/2026/may/04/fixing-mega-leaks-of-methane-would-hugely-boost-energy-stock-amid-crisis-report-says",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;International Energy Agency analysis shows methane leaks remained at near-record highs in 2025&lt;/p&gt;&lt;p&gt;Methane emissions from the energy sector remained at near record levels in 2025, the International Energy Agency has concluded.&lt;/p&gt;&lt;p&gt;Tackling the emissions could make billions of cubic metres of gas available to international markets, a top priority as &lt;a href=\"https://www.theguardian.com/business/2026/apr/16/europe-supply-jet-fuel-iran-war-flight-cancellation",
+          "published": "2026-05-04T08:50:29.000Z",
+          "score": 9
+        },
+        {
           "title": "‘Wake-up call’: methane emissions from Australian coalmines more than double official estimates, report finds",
           "link": "https://www.theguardian.com/environment/2026/may/04/methane-emissions-australian-coalmines-more-than-double-official-estimates-report-finds",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;International Energy Agency findings show government must commit to rapid cuts in emissions of greenhouse gas, climate experts say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Emissions of the potent gre",
           "published": "2026-05-04T05:31:08.000Z",
-          "score": 7
-        },
-        {
-          "title": "Trump may not be a fan of clean energy but Iran war is accelerating global shift from oil and gas | Heather Stewart",
-          "link": "https://www.theguardian.com/business/2026/may/03/trump-clean-energy-iran-war-global-shift-oil-gas",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Unintended consequence of US president’s actions will be boon for China, the leading renewables manufacturer&lt;/p&gt;&lt;p&gt;Operation Epic Fury has thus far achieved none of Donald Trump’s war aims, but it may well accelerate the global transition towards the clean energy he loves to hate.&lt;/p&gt;&lt;p&gt;Last week brought the latest exchange of verbal blows in the standoff over the strait of Hormuz. Iran was &lt;a href=\"https://www.theguardian.com/world/2026/apr/30/oil-price-news-",
-          "published": "2026-05-03T10:17:41.000Z",
           "score": 7
         },
         {
@@ -119,6 +119,14 @@
           "score": 13
         },
         {
+          "title": "‘Point of no return’: New Orleans relocation must start now due to sea level, study finds",
+          "link": "https://www.theguardian.com/us-news/2026/may/04/new-orleans-sea-levels-relocation-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Louisiana’s cultural hotspot could be surrounded by Gulf of Mexico before end of this century, authors say&lt;/p&gt;&lt;p&gt;The process of relocating people from &lt;a href=\"https://www.theguardian.com/us-news/new-orleans\"&gt;New Orleans&lt;/a&gt; should start immediately, as the city has reached a “point of no return” that will see it surrounded by the ocean within decades due to the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt;, a sta",
+          "published": "2026-05-04T09:00:19.000Z",
+          "score": 7
+        },
+        {
           "title": "Monday briefing: ​Will a new alliance of nations be able to guide the world towards a post-fossil fuel future?",
           "link": "https://www.theguardian.com/world/2026/may/04/monday-briefing-will-a-new-alliance-of-nations-be-able-to-guide-the-world-towards-a-post-fossil-fuel-future",
           "source": "The Guardian - Climate",
@@ -127,19 +135,19 @@
           "score": 7
         },
         {
+          "title": "How a hurricane created a 'precious saltmarsh'",
+          "link": "https://www.bbc.com/news/articles/c5y74l61j29o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "This year marks 30 years since a storm breached sea defenses in Porlock.",
+          "published": "2026-05-04T10:54:41.000Z",
+          "score": 2
+        },
+        {
           "title": "Pine marten kit receives round-the-clock care after siblings died",
           "link": "https://www.bbc.com/news/videos/c8d8j51epe4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The kit was rescued from a bin in Wales and is now being looked after at Vale Wildlife Hospital.",
           "published": "2026-05-04T06:13:01.000Z",
-          "score": 2
-        },
-        {
-          "title": "Nature haven 'trashed' after four-year wait for protection decision",
-          "link": "https://www.bbc.com/news/articles/cvgzl329lqlo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Activists claim developers are damaging the area while NatureScot considers whether or not to designate it a protected site.",
-          "published": "2026-05-03T08:14:19.000Z",
           "score": 2
         }
       ]
@@ -149,12 +157,12 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Thai c.bank says studying tax on fund inflows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOT3ZtdENHNUVsWmNyQXdhTGlZcDlUVGJRZG1JZG1uc0p2dFhxaDRpNlpBMi00aUU1Q01BU3pkVkRYSElXOU5OdzRPT2gwNnBhQW1oQktmOGtVbzN4dllEWXJkXzVaeHhid3BPOWtKV2piSnFMOGFvZnRTQnVjTDhacE5MVVA5VGN1cDcycmh0Y3ZRLUppRWZvcDltVjdOUQ?oc=5\" target=\"_blank\"&gt;Thai c.bank says studying tax on fund inflows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-03T12:03:08.000Z",
-          "score": 2
+          "title": "Highlights - Vote on the draft opinion on the European Competitiveness Fund - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78051",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260107PHT32316/20260107PHT32316-ms.jpeg\" width=\"180\" alt=\"Image with a hand with objects\" title=\"WS Competitiveness © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members will vote on the draft opinion on the European Competitiveness Fund (ECF), proposed by the Commission in July 2025. The proposal establishes a single inve",
+          "published": "2026-05-04T07:55:54.000Z",
+          "score": 22
         }
       ]
     },
@@ -162,6 +170,38 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Highlights - Commission presentation of the Food and Feed Safety Omnibus package - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78050",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306034/food%20and%20feed%20omnibus-ms.jpg\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, the Commission will present the Food and Feed Safety Omnibus simplification package in a joint ENVI–AGRI meeting. Published on 16 December 2025, the proposals were referred to both committees under Rule 59. The Commission representative will outline the main elements of the packa",
+          "published": "2026-05-04T07:53:51.000Z",
+          "score": 22
+        },
+        {
+          "title": "Highlights - Exchange of views with Executive Vice-President Stéphane Séjourné - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78052",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250310PHT27239/20250310PHT27239-ms.jpg\" width=\"180\" alt=\"Stéphane Séjourné, Executive Vice-President for Prosperity and Industrial Strategy\" title=\"Stéphane Séjourné © European Union (2025) - European Parliament\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members will hold an exchange of views with Executive Vice-President Stéphane Séjourné, responsible for Prosperity",
+          "published": "2026-05-04T07:57:05.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - Consideration of amendments regarding the Budget expenditure tracking framework - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78041",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260129PHT32678/20260129PHT32678-ms.jpeg\" width=\"180\" alt=\"Person typing on the laptop and images and graphs related to the budget are popping out\" title=\"Budget concept graph © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 4 May 2026, ENVI Members will consider the amendments to the proposed EU budget tracking and performance framework for 2028–",
+          "published": "2026-05-04T07:23:16.000Z",
+          "score": 18
+        },
+        {
+          "title": "EPC summit: Europe has &#039;gotten the message&#039; from Trump",
+          "link": "https://www.dw.com/en/epc-summit-europe-has-gotten-the-message-from-trump/live-77030273?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "NATO Secretary-General Mark Rutte said at the opening of the EPC summit in Armenia that Europe has &quot;heard&quot; Washington&#039;s frustration over its conflict with Iran and are &quot;stepping up.&quot; DW has the latest.",
+          "published": "2026-05-04T10:05:00.000Z",
+          "score": 8
+        },
         {
           "title": "UK set to enter talks to join the European Union's $105.9 billion Ukraine loan - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQcmF6eWhQeWhqQWVTR3NZbV8wcmhnTWNnRVc1bVh5RWdyYkpnT2F5UVNZdWRMdENSQlNUX20zc0JqUi1UZmIzRDVpOEtiRVFRNWtPd2hodHc0X3d4LTRWVmV2cHdycWcyX1AyNzF6SmpsWk9wUDVSZ1JFRjBvZW94a0ZyUjl3WjdOaHBDdXpxRXBETUZ4MWttVlFiTEhCX3E2ZFdyZzNCeW91UGhVbmZJ?oc=5",
@@ -177,6 +217,30 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "European leaders converge on Armenia as Russia looks on",
+          "link": "https://www.bbc.com/news/articles/cgkp1124y3yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Two European summits are being held in a country long considered Russia's closest ally in the region.",
+          "published": "2026-05-03T23:19:05.000Z",
+          "score": 8
+        },
+        {
+          "title": "Dollar rises, European stocks and bonds fall after reports of U.S. warship being hit missiles - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOV9uTkN4ekk1WUlJdGpLdHlpUDZvZVo1clp3RmVSSS1WZTdHaHM2dmdHSWttOVA0TlJVZHNMTDY5QzlnYlY5dFZlUEIwTllKcGJGLWF4ZGp2UG93NzhNTUxkT21XLUF1ZHBVMGxuY2hlM3owQ0FYTHpZYmdPY2VVajVkQklpZnl5bTRSdFB5TmZBWkIyMjMwcUFUdkFrWWE5UnBkNVZncnpwYmZQeWR6LS1mcHNFT1dYcm5ZT3VZRFI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOOV9uTkN4ekk1WUlJdGpLdHlpUDZvZVo1clp3RmVSSS1WZTdHaHM2dmdHSWttOVA0TlJVZHNMTDY5QzlnYlY5dFZlUEIwTllKcGJGLWF4ZGp2UG93NzhNTUxkT21XLUF1ZHBVMGxuY2hlM3owQ0FYTHpZYmdPY2VVajVkQklpZnl5bTRSdFB5TmZBWkIyMjMwcUFUdkFrWWE5UnBkNVZncnpwYmZQeWR6LS1mcHNFT1dYcm5ZT3VZRFI?oc=5\" target=\"_blank\"&gt;Dollar rises, European stocks and bonds fall after reports of U.S. warship being hit missiles&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-05-04T10:27:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Euro zone firms see new inflation surge if war lasts months, ECB poll shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdEpraW5BcEU4VlVWV25RZFUyQWRlYlF6dHdoZWpKRHBKUHlZRlAtUUdoRmN6bjR5cnFmV3lITWxLalFsRHZsM0xNdk1ZZ1NxUVh3aERaME5USlVYUVBzRHp6WDZ0bmtrSUJHMWhHcnVoV1UyRnd3cWFpcXdzZl9zcGQ1YU84UEtLOXJiUmZ1bUpyaGZFelhmXzBsVWhmRHF3VUY0MWxieVVPZHhBaU82UTZQd3cyamc3S3pDYlI0ZnBwTk82Unc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPdEpraW5BcEU4VlVWV25RZFUyQWRlYlF6dHdoZWpKRHBKUHlZRlAtUUdoRmN6bjR5cnFmV3lITWxLalFsRHZsM0xNdk1ZZ1NxUVh3aERaME5USlVYUVBzRHp6WDZ0bmtrSUJHMWhHcnVoV1UyRnd3cWFpcXdzZl9zcGQ1YU84UEtLOXJiUmZ1bUpyaGZFelhmXzBsVWhmRHF3VUY0MWxieVVPZHhBaU82UTZQd3cyamc3S3pDYlI0ZnBwTk82Unc?oc=5\" target=\"_blank\"&gt;Euro zone firms see new inflation surge if war lasts months, ECB poll shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-04T08:04:37.000Z",
+          "score": 8
+        },
+        {
           "title": "ECB policymaker says euro zone recession concerns 'real and justified' - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOaWR2WXBOXzZxMkkzS201Yjc5WDJHWmtpZHhYRWg4NW1NbGVRWE5OT1lwaldkWGtqb2JPZThVeFRvZ3plNWxZcVFwdEVabkJlRXNhN0dack5tckpXMldzYnZDZnNSSzc1Ni1Kcjg1MlBsVU5QdXd3WGJlcjhXU1JlNlJBeWZIcE1DbURIN2VqcUpmVWE4WVBiZUVteTBXam1MVi1DUTdnNEFFSHZURGZqaDRXQWpQVnR1?oc=5",
           "source": "Reuters World (via Google News)",
@@ -185,44 +249,20 @@
           "score": 8
         },
         {
-          "title": "ADB launches $70 billion plan for energy, digital infrastructure in Asia-Pacific - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPck9QM29iay1XVmZSY1I0VmpRalhmeVAxaktSYmtDRTRfd3hRal9kRUh6djFJVm1mdG9McUQ3SU9Odm5JT0hHa0dEclJXSXRNZDZaamxOSDBSQWlVTWwwS0U1VW5COGkydlhlR0xScmlfa3NhMkhlbjduMzBwMzd1UzloVFZhTHVWekJrZFFLMmdiN0NhMC1MRVVCamlGb2hHdWRVMHh0WEdjTVhqVDg1UjRjSnNpOVdUMlNyY05ZcE03RzFPR1g0S0FhX0txcWNZUDRF?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPck9QM29iay1XVmZSY1I0VmpRalhmeVAxaktSYmtDRTRfd3hRal9kRUh6djFJVm1mdG9McUQ3SU9Odm5JT0hHa0dEclJXSXRNZDZaamxOSDBSQWlVTWwwS0U1VW5COGkydlhlR0xScmlfa3NhMkhlbjduMzBwMzd1UzloVFZhTHVWekJrZFFLMmdiN0NhMC1MRVVCamlGb2hHdWRVMHh0WEdjTVhqVDg1UjRjSnNpOVdUMlNyY05ZcE03RzFPR1g0S0FhX0txcWNZUDRF?oc=5\" target=\"_blank\"&gt;ADB launches $70 billion plan for energy, digital infrastructure in Asia-Pacific&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
-          "published": "2026-05-03T12:38:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Australia and Japan sign agreements on energy and critical minerals - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQU0wzUlpuQnYyaGtkTHl4WGtxVEhBVVdrN2ZKbTV4OURsY1l4SnFwcXl4YkxEQkg3dEpCQ2RpOWZhbWVndTU1di03bTh5WUZaVnFlai00Z0hpWTNCUUtTNHplM0U4LW1uc3hwdjJMMkhFcjhMMU5TRUptS1lfWksyYmNnRW9MQzkwSFhHNDFwNHRWRHYtemM0U05RWjVtLTNsTzJjVUdqN05OeWhHbWx0eFlKMFY0aWtadVNKRA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQU0wzUlpuQnYyaGtkTHl4WGtxVEhBVVdrN2ZKbTV4OURsY1l4SnFwcXl4YkxEQkg3dEpCQ2RpOWZhbWVndTU1di03bTh5WUZaVnFlai00Z0hpWTNCUUtTNHplM0U4LW1uc3hwdjJMMkhFcjhMMU5TRUptS1lfWksyYmNnRW9MQzkwSFhHNDFwNHRWRHYtemM0U05RWjVtLTNsTzJjVUdqN05OeWhHbWx0eFlKMFY0aWtadVNKRA?oc=5\" target=\"_blank\"&gt;Australia and Japan sign agreements on energy and critical minerals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-04T01:19:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "India news: State polls test Modi&#039;s political might",
-          "link": "https://www.dw.com/en/india-news-state-polls-test-modi-s-political-might/live-77026483?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Vote counting begins in West Bengal, Tamil Nadu, Kerala, Assam and Puducherry as Prime Minister Narendra Modi&#039;s Hindu nationalist party hopes to make inroads into opposition strongholds. Follow live.",
-          "published": "2026-05-04T05:11:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Three dead in suspected virus outbreak on Atlantic cruise ship",
-          "link": "https://www.bbc.com/news/articles/cy0294829ndo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Amsterdam bans public adverts for meat and fossil fuels",
+          "link": "https://www.bbc.com/news/articles/c9wejdekpwyo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The World Health Organization said one case of hantavirus infection had been confirmed, with five more suspected cases under investigation.",
-          "published": "2026-05-04T04:46:42.000Z",
-          "score": 2
+          "description": "Local politicians say the move is in line with the Dutch capital's environmental targets.",
+          "published": "2026-05-03T23:07:44.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 386,
-    "articlesLast24h": 135,
-    "afterDedup": 124,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 155,
+    "afterDedup": 133,
     "feedsQueried": 19
   }
 }
