@@ -157,16 +157,18 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
               const meanFraction = Number.isFinite(r.mean)
                 ? Math.max(0, Math.min(1, (r.mean - scoreMin) / span))
                 : null;
+              // The break separator has to live on the <td>s, not the <tr>:
+              // the parent <tbody>'s divide-y draws a border-top on the next
+              // row that paints over a tr-level border-bottom and hides the
+              // line entirely.
+              const breakCell = isBreakAfter ? 'border-b-[3px] border-[#E87722] ' : '';
               return (
                 <tr
                   key={r.optionId}
-                  className={
-                    (inShortlist ? 'bg-[#E6F5F4]/40 ' : '') +
-                    (isBreakAfter ? 'border-b-2 border-[#E87722] ' : '')
-                  }
+                  className={inShortlist ? 'bg-[#E6F5F4]/40' : ''}
                 >
-                  <td className="px-3 py-2 font-mono text-[12px] text-[#8A95A3] tabular-nums">{i + 1}</td>
-                  <td className="px-3 py-2">
+                  <td className={breakCell + 'px-3 py-2 font-mono text-[12px] text-[#8A95A3] tabular-nums'}>{i + 1}</td>
+                  <td className={breakCell + 'px-3 py-2'}>
                     <span className="font-medium">{r.label}</span>
                     {inShortlist ? (
                       <span className="ml-2 inline-block px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-[0.08em] bg-[#00928F]/10 text-[#00928F] rounded-sm">
@@ -174,7 +176,7 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
                       </span>
                     ) : null}
                   </td>
-                  <td className="px-3 py-2">
+                  <td className={breakCell + 'px-3 py-2'}>
                     {meanFraction == null ? (
                       <span className="text-[#8A95A3] font-mono text-[11px]">—</span>
                     ) : (
@@ -189,12 +191,12 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
                       </div>
                     )}
                   </td>
-                  <td className="px-3 py-2 text-right tabular-nums font-bold">{fmt(r.mean)}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{fmt(r.median)}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{fmt(r.stddev)}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{r.count}</td>
+                  <td className={breakCell + 'px-3 py-2 text-right tabular-nums font-bold'}>{fmt(r.mean)}</td>
+                  <td className={breakCell + 'px-3 py-2 text-right tabular-nums'}>{fmt(r.median)}</td>
+                  <td className={breakCell + 'px-3 py-2 text-right tabular-nums'}>{fmt(r.stddev)}</td>
+                  <td className={breakCell + 'px-3 py-2 text-right tabular-nums'}>{r.count}</td>
                   {scoreKeys.map((s) => (
-                    <td key={s} className="px-3 py-2 text-right tabular-nums text-[12px]">
+                    <td key={s} className={breakCell + 'px-3 py-2 text-right tabular-nums text-[12px]'}>
                       {r.scoreCounts[s] ?? 0}
                     </td>
                   ))}
