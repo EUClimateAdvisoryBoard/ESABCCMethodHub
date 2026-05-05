@@ -206,16 +206,82 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
           </tbody>
         </table>
       </div>
-      {analysis.shortlistEnd != null ? (
-        <p className="px-4 py-3 text-[12px] text-[#3D5265]/70 border-t border-[#E6E7E8] leading-relaxed">
-          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#E87722] font-semibold mr-1">
-            Natural break
-          </span>
-          The largest gap between adjacent means falls after rank #{analysis.shortlistEnd + 1}.
-          The orange separator marks where the short list ends.
-        </p>
+      {analysis.shortlistEnd != null && analysis.shortlistInfo ? (
+        <ShortlistExplainer
+          shortlistEnd={analysis.shortlistEnd}
+          info={analysis.shortlistInfo}
+        />
       ) : null}
     </section>
+  );
+}
+
+function ShortlistExplainer({
+  shortlistEnd,
+  info,
+}: {
+  shortlistEnd: number;
+  info: NonNullable<PriorityAnalysis['shortlistInfo']>;
+}) {
+  const targetSize = info.targetEnd + 1;
+  const chosenSize = shortlistEnd + 1;
+  const hitTarget = shortlistEnd === info.targetEnd;
+  // "Near-tie" when the runner-up gap is within 10% of the chosen one (and
+  // both are positive). Below that threshold the cut is sensitive to a few
+  // ballots tipping one way and should be treated as advisory.
+  const closeCall =
+    info.runnerUp != null &&
+    info.chosenGap > 0 &&
+    info.runnerUp.gap > 0 &&
+    (info.chosenGap - info.runnerUp.gap) / info.chosenGap < 0.1;
+
+  return (
+    <div className="px-4 py-3 border-t border-[#E6E7E8] text-[12px] text-[#3D5265]/75 leading-relaxed space-y-2">
+      <p>
+        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#E87722] font-semibold mr-1">
+          Natural break
+        </span>
+        The largest jump between adjacent means falls after rank #{chosenSize} (Δ&nbsp;=&nbsp;{fmt(info.chosenGap)}).
+        The orange separator marks where the short list ends.
+      </p>
+      <p>
+        The cut is the biggest jump within the top-4 to top-7 window. The
+        conventional target is a top-{targetSize} short list, but the boundary
+        moves to wherever that biggest jump actually sits — so the short list
+        follows the data instead of being forced to a fixed size.
+      </p>
+      {hitTarget ? null : (
+        <p>
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+            Off target
+          </span>
+          The cut landed at top-{chosenSize} rather than the conventional
+          top-{targetSize}. This happens when the vote is skewed (broad
+          agreement pushes the biggest gap earlier) or when one option
+          stands clearly apart from a tightly-clustered tail.
+        </p>
+      )}
+      {info.runnerUp ? (
+        <p>
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+            Runner-up
+          </span>
+          The next-best break would put the cut after rank #{info.runnerUp.end + 1} (Δ&nbsp;=&nbsp;{fmt(info.runnerUp.gap)}).
+        </p>
+      ) : null}
+      {closeCall ? (
+        <p className="text-[#B33A3A]">
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] font-semibold mr-1">
+            Near tie
+          </span>
+          The chosen and runner-up gaps are within 10% of each other, so a
+          handful of ballots could move the boundary. When the vote is this
+          dispersed, treat the suggested short list as advisory and confirm
+          the cut-off with the Advisory Board rather than reading it as a
+          definitive draw.
+        </p>
+      ) : null}
+    </div>
   );
 }
 

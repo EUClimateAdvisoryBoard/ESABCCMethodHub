@@ -26,8 +26,6 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
   useEffect(() => {
     setBundle(initial);
   }, [initial]);
-  const [count, setCount] = useState(15);
-  const [genLabels, setGenLabels] = useState('');
   const [creating, setCreating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   // Tokens minted in this browser session — we keep the raw string here so
@@ -100,23 +98,6 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
     const reveal: Record<string, boolean> = {};
     for (const t of fresh) reveal[t.token] = true;
     setRevealed((r) => ({ ...r, ...reveal }));
-  }
-
-  async function generate() {
-    setCreating(true);
-    setError(null);
-    try {
-      const labels = genLabels
-        .split('\n')
-        .map((l) => l.trim())
-        .filter(Boolean);
-      await postTokens({ count, labels, maxUses: 1 });
-      setGenLabels('');
-    } catch (err) {
-      setError((err as Error).message);
-    } finally {
-      setCreating(false);
-    }
   }
 
   async function generateUniversal() {
@@ -301,19 +282,18 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
       </section>
 
       <section className="rounded-sm border border-[#E6E7E8] bg-white p-4 sm:p-5">
-        <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-3">Voting links</h2>
+        <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-3">Voting link</h2>
         <p className="text-[12.5px] text-[#3D5265]/75 mb-4">
-          Two ways to share the ballot: one universal link that anyone can
-          submit through (simpler — share it once), or a batch of single-use
-          links (one per participant, useful when you want to track
-          participation rates). Treat all links like passwords.
+          One universal link to share with every participant — anyone with
+          the link can submit a ballot, and browsers that have already voted
+          are auto-redirected to the thank-you screen. Treat the link like
+          a password.
         </p>
 
-        <div className="rounded-sm border border-[#E6E7E8] p-3 mb-3 bg-[#FBFBFA]">
+        <div className="rounded-sm border border-[#E6E7E8] p-3 bg-[#FBFBFA]">
           <h3 className="text-[12.5px] font-semibold text-[#3D5265]">Universal link</h3>
           <p className="text-[11.5px] text-[#3D5265]/70 mt-0.5 mb-2">
-            One link, unlimited submissions. Browsers that have already
-            voted are auto-redirected to the thank-you screen.
+            One link, unlimited submissions.
           </p>
           <button
             type="button"
@@ -323,40 +303,6 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
           >
             {creating ? 'Generating…' : '+ Generate universal link'}
           </button>
-        </div>
-
-        <div className="rounded-sm border border-[#E6E7E8] p-3">
-          <h3 className="text-[12.5px] font-semibold text-[#3D5265] mb-2">Single-use links (per participant)</h3>
-          <div className="flex flex-wrap items-end gap-3">
-            <label className="text-[12.5px]">
-              <span className="block font-semibold mb-1">How many?</span>
-              <input
-                type="number"
-                min={1}
-                max={500}
-                value={count}
-                onChange={(e) => setCount(Number(e.target.value) || 1)}
-                className="w-24 rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
-              />
-            </label>
-            <label className="flex-1 min-w-[240px] text-[12.5px]">
-              <span className="block font-semibold mb-1">Labels (optional, one per line)</span>
-              <textarea
-                value={genLabels}
-                onChange={(e) => setGenLabels(e.target.value)}
-                placeholder={'e.g. AB Member 1\nAB Member 2'}
-                className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px] min-h-[60px]"
-              />
-            </label>
-            <button
-              type="button"
-              onClick={generate}
-              disabled={creating}
-              className="px-4 py-2 text-[13px] font-semibold text-white bg-[#00928F] rounded-sm hover:opacity-90 disabled:opacity-50"
-            >
-              {creating ? 'Generating…' : '+ Generate links'}
-            </button>
-          </div>
         </div>
         {error ? <p className="mt-2 text-[12.5px] text-[#B33A3A]">{error}</p> : null}
 
