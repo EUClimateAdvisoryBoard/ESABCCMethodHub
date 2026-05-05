@@ -39,7 +39,6 @@ const MODULES: Module[] = [
   { href: '/policy-navigator', label: 'Policy Navigator', short: 'Policy Navigator', group: 'core', topBar: true },
   { href: '/content-analysis', label: 'Content Analysis', short: 'Content Analysis', group: 'core', topBar: true },
   { href: '/voting',           label: 'Voting',           short: 'Voting',           group: 'core', topBar: true },
-  { href: '/eu-climate-councils', label: 'EU Climate Councils', short: 'Climate Councils', group: 'core', topBar: true },
 ];
 
 const TOP_BAR_MODULES = MODULES.filter(m => m.topBar);
