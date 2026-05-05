@@ -150,9 +150,17 @@ export async function deleteAnnotationRemote(id: string): Promise<boolean> {
   if (!sb) { deleteAnnotationLocal(id); return true; }
   try {
     const { error } = await sb.from('annotations').delete().eq('id', id);
-    if (error) { deleteAnnotationLocal(id); return true; }
+    if (error) {
+      console.warn('Supabase annotation delete failed:', error.message);
+      return false;
+    }
+    // Also remove any localStorage copy so fetchAnnotations doesn't resurface it
+    deleteAnnotationLocal(id);
     return true;
-  } catch { deleteAnnotationLocal(id); return true; }
+  } catch (err) {
+    console.warn('Supabase annotation delete error:', err);
+    return false;
+  }
 }
 
 // Update annotation in Supabase (only own)

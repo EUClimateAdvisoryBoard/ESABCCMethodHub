@@ -24,8 +24,8 @@ export default function AnnotationPanel({ policyId, refreshKey }: Props) {
   }, {});
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Delete this annotation?')) return;
-    await deleteAnnotationRemote(id);
+    const ok = await deleteAnnotationRemote(id);
+    if (!ok) return;
     const updated = await fetchAnnotations(policyId);
     setAnnotations(updated);
   };
