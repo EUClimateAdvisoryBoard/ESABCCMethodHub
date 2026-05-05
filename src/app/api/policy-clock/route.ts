@@ -758,6 +758,155 @@ async function fetchFeedEvents(src: FeedSource): Promise<PolicyClockEvent[]> {
   }
 }
 
+// ── 3. OECD CAPMF policy change events ──────────────────────────────────
+// Detects year-over-year changes in EU27 policy instrument adoption (PL) and
+// stringency (0_TO_10) from the OECD Climate Actions and Policies Measurement
+// Framework. Annual data; currently lags ~2 years. No API key required.
+// https://sdmx.oecd.org/public/rest/ (public domain)
+
+const OECD_CAPMF_URL =
+  'https://sdmx.oecd.org/public/rest/data/' +
+  'OECD.ENV.EPI,DSD_CAPMF@DF_CAPMF,1.0/' +
+  'EU27_2020.A.POL_STRINGENCY.' +
+  'LEV1_SEC+LEV2_SEC_E_MBI+LEV3_ETS_E+LEV4_ETS_E_PR+LEV4_ETS_E_GHG+' +
+  'LEV3_CARBONTAX_E+LEV3_FFS_E+LEV3_EXCISETAX_E+LEV3_FIT+LEV3_AUCTION+' +
+  'LEV3_RECS+LEV2_SEC_E_NMBI+LEV2_SEC_I_MBI+LEV2_SEC_I_NMBI+' +
+  'LEV2_SEC_B_MBI+LEV2_SEC_B_NMBI+LEV2_SEC_T_MBI+LEV2_SEC_T_NMBI+' +
+  'LEV1_CROSS_SEC+LEV1_INT.' +
+  '0_TO_10+PL' +
+  '?startPeriod=2018&format=jsondata&dimensionAtObservation=AllDimensions';
+
+const CAPMF_LABELS: Record<string, string> = {
+  LEV3_ETS_E:       'Emissions Trading System (energy)',
+  LEV3_CARBONTAX_E: 'Carbon tax (energy)',
+  LEV3_FIT:         'Feed-in tariffs',
+  LEV3_AUCTION:     'Renewable energy auctions',
+  LEV3_RECS:        'Renewable energy certificate schemes',
+  LEV3_FFS_E:       'Fossil fuel subsidies (energy)',
+  LEV3_EXCISETAX_E: 'Excise tax on energy',
+  LEV2_SEC_E_MBI:   'Energy sector — market-based instruments',
+  LEV2_SEC_E_NMBI:  'Energy sector — non-market-based instruments',
+  LEV2_SEC_I_MBI:   'Industry — market-based instruments',
+  LEV2_SEC_I_NMBI:  'Industry — non-market-based instruments',
+  LEV2_SEC_B_MBI:   'Buildings — market-based instruments',
+  LEV2_SEC_B_NMBI:  'Buildings — non-market-based instruments',
+  LEV2_SEC_T_MBI:   'Transport — market-based instruments',
+  LEV2_SEC_T_NMBI:  'Transport — non-market-based instruments',
+  LEV1_SEC:         'Sectoral policies (aggregate)',
+  LEV1_CROSS_SEC:   'Cross-sectoral policies',
+  LEV1_INT:         'International policies',
+};
+
+// Maps OECD instrument codes to existing policy IDs in the corpus where there
+// is a clear 1-to-1 correspondence.
+const CAPMF_POLICY_ID: Record<string, string> = {
+  LEV3_ETS_E:       'eu-ets-directive',
+  LEV3_CARBONTAX_E: 'eu-climate-law',
+  LEV3_FIT:         'renewable-energy-directive',
+  LEV3_AUCTION:     'renewable-energy-directive',
+};
+
+interface CAPMFObs { instrument: string; scale: string; year: number; value: number; }
+
+function parseOECDCAPMF(json: unknown): CAPMFObs[] {
+  const data = (json as any)?.data;
+  if (!data) return [];
+  const dims: { id: string; values: { id: string }[] }[] =
+    data.structure?.dimensions?.observation ?? [];
+  const idx = (id: string) => dims.findIndex(d => d.id === id);
+  const iInstr = idx('POLICY_INSTRUMENT');
+  const iScale = idx('SCALE');
+  const iTime  = idx('TIME_PERIOD');
+  if (iInstr < 0 || iScale < 0 || iTime < 0) return [];
+  const instrVals = dims[iInstr].values.map(v => v.id);
+  const scaleVals = dims[iScale].values.map(v => v.id);
+  const timeVals  = dims[iTime].values.map(v => v.id);
+  const obsMap: Record<string, number[]> = data.dataSets?.[0]?.observations ?? {};
+  return Object.entries(obsMap).flatMap(([key, vals]) => {
+    const parts = key.split(':').map(Number);
+    const value = (vals as number[])[0];
+    if (value == null || isNaN(value)) return [];
+    return [{ instrument: instrVals[parts[iInstr]], scale: scaleVals[parts[iScale]], year: parseInt(timeVals[parts[iTime]], 10), value }];
+  });
+}
+
+async function fetchOECDCAPMFEvents(): Promise<PolicyClockEvent[]> {
+  try {
+    const res = await fetch(OECD_CAPMF_URL, {
+      next: { revalidate: 86400 }, // daily — OECD data is annual
+      headers: { Accept: 'application/vnd.sdmx.data+json;version=1.0, application/json' },
+    });
+    if (!res.ok) return [];
+    const json = await res.json();
+    const obs = parseOECDCAPMF(json);
+
+    // Group by instrument+scale, keyed by year
+    const byKey = new Map<string, Map<number, number>>();
+    for (const o of obs) {
+      const k = `${o.instrument}::${o.scale}`;
+      if (!byKey.has(k)) byKey.set(k, new Map());
+      byKey.get(k)!.set(o.year, o.value);
+    }
+
+    const events: PolicyClockEvent[] = [];
+    const currentYear = new Date().getFullYear();
+
+    for (const [k, yearMap] of byKey) {
+      const [instrument, scale] = k.split('::');
+      const label    = CAPMF_LABELS[instrument] ?? instrument;
+      const policyId = CAPMF_POLICY_ID[instrument] ?? null;
+      const years    = [...yearMap.keys()].sort((a, b) => a - b);
+
+      if (scale === 'PL') {
+        // Binary adoption indicator: surface 0→1 transitions as events
+        for (let i = 1; i < years.length; i++) {
+          const prev = yearMap.get(years[i - 1]) ?? 0;
+          const curr = yearMap.get(years[i])     ?? 0;
+          if (prev < 0.5 && curr >= 0.5) {
+            events.push({
+              id:          `oecd-capmf-adopt-${instrument}-${years[i]}`,
+              date:        `${years[i]}-01-01`,
+              title:       `OECD CAPMF: EU27 adopted — ${label}`,
+              description: `The OECD Climate Actions & Policies Measurement Framework records the EU27 as having adopted "${label}" as of ${years[i]}. Source: OECD CAPMF dataset (annual).`,
+              category:    'implementation',
+              source:      'OECD CAPMF',
+              sourceUrl:   'https://www.oecd.org/en/data/dashboards/climate-action-dashboard/actions-opportunities.html',
+              policyId,
+              importance:  years[i] >= currentYear - 2 ? 'medium' : 'normal',
+              tags:        ['OECD', 'CAPMF', instrument, 'EU27'],
+            });
+          }
+        }
+      } else if (scale === '0_TO_10') {
+        // Stringency score: flag significant year-over-year jumps (≥1.5 pts)
+        for (let i = 1; i < years.length; i++) {
+          const prev  = yearMap.get(years[i - 1]) ?? 0;
+          const curr  = yearMap.get(years[i])     ?? 0;
+          const delta = curr - prev;
+          if (Math.abs(delta) >= 1.5) {
+            const dir = delta > 0 ? 'tightened' : 'loosened';
+            events.push({
+              id:          `oecd-capmf-change-${instrument}-${years[i]}`,
+              date:        `${years[i]}-01-01`,
+              title:       `OECD CAPMF: EU27 policy ${dir} — ${label}`,
+              description: `OECD CAPMF stringency score for "${label}" in EU27 ${dir} by ${Math.abs(delta).toFixed(1)} points (${prev.toFixed(1)} → ${curr.toFixed(1)} out of 10) in ${years[i]}.`,
+              category:    'revision',
+              source:      'OECD CAPMF',
+              sourceUrl:   'https://www.oecd.org/en/data/dashboards/climate-action-dashboard/actions-opportunities.html',
+              policyId,
+              importance:  'normal',
+              tags:        ['OECD', 'CAPMF', instrument, 'stringency', 'EU27'],
+            });
+          }
+        }
+      }
+    }
+    return events;
+  } catch {
+    return [];
+  }
+}
+
 function inferImportance(title: string, category: PolicyClockCategory): 'high' | 'medium' | 'normal' {
   const t = title.toLowerCase();
   if (/\b(vote|adopt|trilogue|first reading|final|launch|enter into force|agreement)\b/.test(t)) return 'high';
@@ -831,16 +980,18 @@ export async function GET(request: NextRequest) {
   const to = searchParams.get('to');
   const skipAI = searchParams.get('skip_ai') === '1';
 
-  // Fetch live RSS + user-authored events in parallel; failures degrade gracefully.
-  const [liveResults, userEvents] = await Promise.all([
+  // Fetch live RSS, OECD CAPMF, and user-authored events in parallel; failures degrade gracefully.
+  const [liveResults, oecdEvents, userEvents] = await Promise.all([
     Promise.allSettled(RSS_SOURCES.map(fetchFeedEvents)),
+    fetchOECDCAPMFEvents().catch(() => [] as PolicyClockEvent[]),
     getPolicyClockUserEvents().catch(() => []),
   ]);
   const liveEvents = liveResults.flatMap(r => (r.status === 'fulfilled' ? r.value : []));
 
-  // De-duplicate by title (live RSS may repeat curated items).
+  // De-duplicate by title (live RSS and OECD may repeat curated items).
   const curatedTitles = new Set(CURATED_EVENTS.map(e => e.title.toLowerCase()));
-  const dedupedLive = liveEvents.filter(e => !curatedTitles.has(e.title.toLowerCase()));
+  const dedupedLive  = liveEvents.filter(e => !curatedTitles.has(e.title.toLowerCase()));
+  const dedupedOECD  = oecdEvents.filter(e => !curatedTitles.has(e.title.toLowerCase()));
 
   // Convert user-authored events into the Policy Clock event shape.
   const userPolicyEvents: PolicyClockEvent[] = userEvents.map(ev => ({
@@ -879,6 +1030,7 @@ export async function GET(request: NextRequest) {
     ...CURATED_EVENTS,
     ...dedupedReviewEvents,
     ...dedupedLive,
+    ...dedupedOECD,
     ...userPolicyEvents,
   ];
 
@@ -896,6 +1048,7 @@ export async function GET(request: NextRequest) {
     ...CURATED_EVENTS,
     ...dedupedReviewEvents,
     ...dedupedLive,
+    ...dedupedOECD,
     ...userPolicyEvents,
   ].sort((a, b) => a.date.localeCompare(b.date));
   const overview = skipAI
@@ -911,10 +1064,14 @@ export async function GET(request: NextRequest) {
         live: dedupedLive.length,
         curated: CURATED_EVENTS.length,
         reviews_due: dedupedReviewEvents.length,
+        oecd_capmf: dedupedOECD.length,
         user: userPolicyEvents.length,
         by_category: countBy(events, e => e.category),
       },
-      sources: RSS_SOURCES.map(s => ({ key: s.key, label: s.label })),
+      sources: [
+        ...RSS_SOURCES.map(s => ({ key: s.key, label: s.label })),
+        { key: 'oecd_capmf', label: 'OECD CAPMF' },
+      ],
       last_updated: new Date().toISOString(),
     },
     {
