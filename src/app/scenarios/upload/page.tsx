@@ -231,7 +231,7 @@ function UploadPageInner() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Jane Doe"
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div>
@@ -244,7 +244,7 @@ function UploadPageInner() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@institution.eu"
                   required
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div>
@@ -256,7 +256,7 @@ function UploadPageInner() {
                   value={institution}
                   onChange={(e) => setInstitution(e.target.value)}
                   placeholder="e.g. PIK, IIASA, JRC"
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div>
@@ -268,7 +268,7 @@ function UploadPageInner() {
                   value={modelName}
                   onChange={(e) => setModelName(e.target.value)}
                   placeholder="e.g. REMIND 3.2"
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -280,7 +280,7 @@ function UploadPageInner() {
                   value={scenarioName}
                   onChange={(e) => setScenarioName(e.target.value)}
                   placeholder="e.g. NetZero-2050-HighElectrification"
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
               <div className="sm:col-span-2">
@@ -292,15 +292,25 @@ function UploadPageInner() {
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
                   placeholder="What does this scenario represent? Key assumptions, scope, links to documentation."
-                  className="w-full border border-grey-200 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
+                  className="w-full border border-grey-200 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)] rounded px-3 py-2 min-h-[44px] text-sm focus:outline-none focus:ring-2 focus:ring-primary/30"
                 />
               </div>
             </div>
 
-            {/* File drop zone */}
+            {/* File drop zone — taps open the picker on mobile (drag-drop is
+                desktop-only). Drop handlers are no-ops on touch devices. */}
             <div
-              className="border-2 border-dashed border-grey-300 rounded-lg p-8 text-center hover:border-primary/60 transition cursor-pointer"
+              role="button"
+              tabIndex={0}
+              aria-label="Upload data file"
+              className="border-2 border-dashed border-grey-300 dark:border-[var(--mh-border)] rounded-lg p-4 sm:p-8 text-center hover:border-primary/60 active:bg-grey-50 dark:active:bg-[var(--mh-bg)] transition cursor-pointer min-h-[140px] flex flex-col items-center justify-center"
               onClick={() => fileInputRef.current?.click()}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  fileInputRef.current?.click();
+                }
+              }}
               onDragOver={(e) => e.preventDefault()}
               onDrop={(e) => {
                 e.preventDefault();
@@ -382,16 +392,16 @@ function UploadPageInner() {
               </div>
             )}
 
-            <div className="flex flex-wrap justify-end gap-2">
+            <div className="flex flex-col-reverse sm:flex-row sm:flex-wrap sm:justify-end gap-2">
               <Link
                 href="/scenarios"
-                className="px-4 py-2 rounded text-sm font-medium text-tertiary hover:text-tertiary-dark transition">
+                className="text-center px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded text-sm font-medium text-tertiary dark:text-[var(--mh-muted)] hover:text-tertiary-dark active:bg-grey-100 dark:active:bg-[var(--mh-border)] transition flex items-center justify-center">
                 Cancel
               </Link>
               <button
                 onClick={handleSubmit}
                 disabled={!canSubmit}
-                className="px-4 py-2 rounded text-sm font-medium bg-primary text-white hover:bg-primary-dark disabled:opacity-40 disabled:cursor-not-allowed transition">
+                className="px-4 py-2.5 sm:py-2 min-h-[44px] sm:min-h-0 rounded text-sm font-medium bg-primary text-white hover:bg-primary-dark active:bg-primary-dark disabled:opacity-40 disabled:cursor-not-allowed transition">
                 {status === 'uploading' ? 'Uploading…' : 'Submit to database'}
               </button>
             </div>
