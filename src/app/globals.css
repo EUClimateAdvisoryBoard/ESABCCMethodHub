@@ -163,9 +163,23 @@ body.has-bottom-nav {
   }
   input[type='text'], input[type='email'], input[type='password'], input[type='search'],
   input[type='number'], input[type='tel'], input[type='url'], input[type='date'],
+  input[type='datetime-local'], input[type='time'], input[type='month'],
   textarea, select {
+    /* Prevent iOS Safari focus-zoom by forcing a 16px computed font size. */
     font-size: 16px !important;
   }
+  /* Touch targets — every interactive primitive guarantees a 44px tap zone.
+     Skips bare span buttons used inside larger row hit-boxes (which already
+     own the click). */
+  button:not(.mh-no-tap), a.mh-tap, [role='button'].mh-tap {
+    min-height: 44px;
+  }
+}
+
+/* Single-column form groups on phones — labels above inputs, generous gap. */
+@media (max-width: 639px) {
+  .mh-form-row { display: flex; flex-direction: column; gap: 10px; }
+  .mh-form-row > label { font-size: 14px; }
 }
 
 .tap-target, .touch-target {
@@ -205,9 +219,14 @@ body.has-bottom-nav {
 @media (pointer: coarse) { ::-webkit-scrollbar { display: none; } }
 
 @keyframes drawer-slide-in { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes drawer-slide-up { from { transform: translateY(100%); } to { transform: translateY(0); } }
 @keyframes drawer-fade-in  { from { opacity: 0; } to { opacity: 1; } }
 .drawer-panel { animation: drawer-slide-in 0.22s ease-out; }
 .drawer-backdrop { animation: drawer-fade-in 0.22s ease-out; }
+
+/* Bottom-sheet variant — slides up from the bottom of the viewport. Used by
+   the mobile flavour of dialogs (CommandPalette, edit modals, drawers). */
+.sheet-panel { animation: drawer-slide-up 0.22s var(--mh-ease-decelerated, ease-out); }
 
 .only-mobile, .mobile-only { display: none; }
 .only-desktop, .desktop-only { display: block; }
@@ -228,8 +247,38 @@ body.has-bottom-nav {
 
 .pb-safe { padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem); }
 .pt-safe { padding-top: calc(env(safe-area-inset-top) + 0.5rem); }
+.pl-safe { padding-left: env(safe-area-inset-left); }
+.pr-safe { padding-right: env(safe-area-inset-right); }
+
+/* Reserve space above the mobile bottom-nav (64px + safe-area). Apply to any
+   floating UI that would otherwise collide with the tab strip — toasts,
+   consent banner, FABs, sticky action bars. */
+.mb-bottom-nav { margin-bottom: 0; }
+body.has-bottom-nav .mb-bottom-nav {
+  margin-bottom: calc(64px + env(safe-area-inset-bottom));
+}
+.bottom-bottom-nav { bottom: 0; }
+body.has-bottom-nav .bottom-bottom-nav {
+  bottom: calc(64px + env(safe-area-inset-bottom));
+}
+
+/* Body scroll-lock without layout shift. Toggled by drawers / dialogs that
+   need to immobilise the page beneath them. Reserves the scrollbar width so
+   nothing jumps on desktop browsers. */
+html.scroll-locked, body.scroll-locked {
+  overflow: hidden !important;
+  touch-action: none;
+}
 
 a, button { -webkit-tap-highlight-color: rgba(0, 146, 143, 0.18); }
+
+/* Touch devices: hover effects that swap colour rest on the active state instead.
+   Some Tailwind hover: utilities still latch on tap (sticky hover) — neutralise
+   the noisy ones. */
+@media (hover: none) {
+  .hover\:bg-grey-50:hover, .hover\:bg-grey-100:hover { background-color: transparent; }
+  .hover\:shadow-lg:hover { box-shadow: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -238,6 +287,7 @@ a, button { -webkit-tap-highlight-color: rgba(0, 146, 143, 0.18); }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .drawer-panel, .sheet-panel, .drawer-backdrop { animation: none !important; }
 }
 
 /* --------------------------------------------------------------------------
@@ -364,4 +414,116 @@ a, button { -webkit-tap-highlight-color: rgba(0, 146, 143, 0.18); }
 
 @media (max-width: 767px) {
   code { word-break: break-all; overflow-wrap: anywhere; font-size: 0.75rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile sheet primitive — full-screen bottom-up panel for dialogs that are
+   centred cards on desktop. Apply `mh-sheet` to the dialog content and the
+   layout flips to a sheet on viewports under 768px.
+   -------------------------------------------------------------------------- */
+.mh-sheet {
+  display: flex; flex-direction: column;
+}
+@media (max-width: 767px) {
+  .mh-sheet {
+    position: fixed !important;
+    inset: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+    border-radius: 0 !important;
+    padding-top: env(safe-area-inset-top) !important;
+    padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+  .mh-sheet > .mh-sheet-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mh-sheet > .mh-sheet-header,
+  .mh-sheet > .mh-sheet-footer {
+    flex: 0 0 auto;
+  }
+  .mh-sheet > .mh-sheet-footer {
+    border-top: 1px solid var(--mh-border);
+    background: var(--mh-card);
+  }
+}
+
+/* Bottom-sheet (slides up, partial-height) variant. Used for transient
+   pickers (saved searches, filters, action menus). */
+.mh-bottom-sheet {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  background: var(--mh-card); color: var(--mh-fg);
+  border-top-left-radius: var(--mh-radius-xl);
+  border-top-right-radius: var(--mh-radius-xl);
+  box-shadow: 0 -8px 24px rgba(15, 22, 32, 0.12);
+  padding-bottom: env(safe-area-inset-bottom);
+  max-height: 85dvh;
+  display: flex; flex-direction: column;
+  animation: drawer-slide-up 0.22s var(--mh-ease-decelerated, ease-out);
+}
+.mh-bottom-sheet-handle {
+  width: 36px; height: 4px;
+  background: var(--mh-border);
+  border-radius: 9999px;
+  margin: 8px auto 4px;
+  flex-shrink: 0;
+}
+
+/* Tap target — guarantees ≥44×44px on touch devices regardless of
+   the visible icon/glyph size inside. */
+.mh-tap, .tap-target, .touch-target {
+  min-height: 44px; min-width: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* Hide on mobile / show on mobile / mobile-stack helpers. */
+@media (max-width: 767px) {
+  .hide-mobile { display: none !important; }
+  .stack-mobile { flex-direction: column !important; }
+  .stack-mobile > * { width: 100% !important; }
+  .full-mobile { width: 100% !important; max-width: 100% !important; }
+}
+
+/* Container queries fallback — when a parent opts in via `.mh-cq` the children
+   can use Tailwind `@md:` etc. Cheap polyfill: collapse to single column under
+   400px regardless of viewport. */
+@container (max-width: 400px) {
+  .cq\:grid-cols-1 { grid-template-columns: 1fr !important; }
+  .cq\:flex-col { flex-direction: column !important; }
+}
+
+/* Mobile-first horizontal-scroll table affordance — adds a soft fade on the
+   right edge so users see there is more content. */
+@media (max-width: 767px) {
+  .mh-table-scroll {
+    position: relative;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .mh-table-scroll::after {
+    content: '';
+    position: sticky; top: 0; right: 0; height: 100%;
+    width: 24px; pointer-events: none;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.06));
+    margin-left: -24px;
+  }
+}
+
+/* iOS soft-keyboard handling — when a focused input opens the keyboard,
+   `visualViewport` resizes; pages can opt-in via `data-keyboard-aware`
+   on <body> together with the JS in keyboard-aware-scroll.ts. */
+@supports (height: 100dvh) {
+  .h-screen-mobile { height: 100dvh; }
+  .min-h-screen-mobile { min-height: 100dvh; }
+  .max-h-screen-mobile { max-height: 100dvh; }
+}
+@supports not (height: 100dvh) {
+  .h-screen-mobile { height: 100vh; }
+  .min-h-screen-mobile { min-height: 100vh; }
+  .max-h-screen-mobile { max-height: 100vh; }
 }
