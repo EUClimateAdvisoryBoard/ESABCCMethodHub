@@ -118,12 +118,20 @@ export default async function VotingIndex() {
                       <td className="px-3 py-3 text-right tabular-nums">{c?.ballots ?? 0}</td>
                       <td className="px-3 py-3 text-[12.5px]">{fmtDate(v.createdAt)}</td>
                       <td className="px-3 py-3 text-right">
-                        <Link
-                          href={`/voting/${v.id}/results`}
-                          className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
-                        >
-                          Results →
-                        </Link>
+                        <div className="inline-flex items-center gap-3">
+                          <Link
+                            href={`/voting/${v.id}`}
+                            className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
+                          >
+                            View →
+                          </Link>
+                          <Link
+                            href={`/voting/${v.id}/results`}
+                            className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
+                          >
+                            Results →
+                          </Link>
+                        </div>
                       </td>
                     </tr>
                   );
