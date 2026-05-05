@@ -5,7 +5,10 @@ import JSZip from 'jszip';
 import { useAuth } from '@/lib/auth-context';
 
 // ──────────────────────────────────────────────────────────────────────────────
-// Types — must mirror the JSON shape returned by /api/brussels-bulletin and
+// Brussels Bulletin — production module (promoted from beta on 2026-05).
+// Route: /news-feed/brussels-bulletin (subpage of the News module).
+//
+// Types must mirror the JSON shape returned by /api/brussels-bulletin and
 // /api/brussels-bulletin/topics. Layout follows the April 2026 template at
 // public/templates/brussels-bulletin-template.docx:
 //   Heading1 "Key EU policy developments"
@@ -56,6 +59,7 @@ interface InboundFeedItem {
   sourceLabel: string;
   publishedDate: string;
   receivedDate: string;
+  url?: string;
   tags: string[];
   from: string;
 }
@@ -68,6 +72,7 @@ interface CustomFeedItem {
   sourceLabel: string;
   publishedDate: string;
   addedDate: string;
+  url?: string;
   tags: string[];
 }
 
@@ -77,6 +82,10 @@ interface DisplayItem {
   title: string;
   date: string;
   sourceLabel: string;
+  url?: string;
+  summary: string;
+  aiSummary?: string;
+  tags: string[];
   kind: 'email' | 'post';
 }
 
@@ -207,6 +216,154 @@ async function downloadDocx(b: BulletinJson): Promise<void> {
   URL.revokeObjectURL(a.href);
 }
 
+// ──────────────────────────────────────────────────────────────────────────────
+// Background report (.md) — a structured dump of every source item in the
+// selected window with its title, source, date, URL and summary. Designed to
+// be fed verbatim into a more capable external LLM (Claude Opus, Gemini Ultra,
+// GPT-5, …) so it can produce a higher-quality bulletin than the in-product
+// model. Includes a ready-to-use prompt at the top, the list of weighted
+// topics (when available), and — when the in-product bulletin has already been
+// generated — the JSON output as a baseline draft.
+// ──────────────────────────────────────────────────────────────────────────────
+
+function fmtDate(d: string): string {
+  if (!d) return '';
+  const t = new Date(d);
+  if (isNaN(t.getTime())) return d;
+  return t.toISOString().split('T')[0];
+}
+
+function escapeMd(s: string): string {
+  // Markdown is permissive — only the most-disruptive chars need escaping.
+  return s.replace(/\r\n?/g, '\n');
+}
+
+function buildBackgroundReport(opts: {
+  from: string;
+  to: string;
+  items: DisplayItem[];
+  topics: WeightedTopic[];
+  bulletin: BulletinJson | null;
+}): string {
+  const { from, to, items, topics, bulletin } = opts;
+  const generatedAt = new Date().toISOString();
+  const lines: string[] = [];
+
+  lines.push(`# Brussels Bulletin — Background Report`);
+  lines.push('');
+  lines.push(`**Period:** ${from} → ${to}`);
+  lines.push(`**Generated:** ${generatedAt}`);
+  lines.push(`**Source items:** ${items.length}`);
+  lines.push('');
+  lines.push(`> Internal use only. This file packages every source item the ESABCC Secretariat has on file for the period above, together with optional weighted topics and (if already produced) the in-product bulletin draft. Pass it to a more capable LLM to produce a higher-quality bulletin.`);
+  lines.push('');
+
+  lines.push(`## Instructions for the downstream LLM`);
+  lines.push('');
+  lines.push(`You are the European Scientific Advisory Board on Climate Change Secretariat. Produce **The Brussels Bulletin** — an internal periodic overview of EU climate-policy developments — for the period **${from} → ${to}**.`);
+  lines.push('');
+  lines.push(`Use **only** the source items in the "Source items" section. Do not invent facts, do not add citations or links, and do not include a bibliography. Write in the formal style of EU policy briefs.`);
+  lines.push('');
+  lines.push(`Structure the bulletin in three sections, in this order:`);
+  lines.push('');
+  lines.push(`1. **Key EU policy developments** — for each major topic, a short heading followed by 2–4 paragraphs, optionally with bullets.`);
+  lines.push(`2. **Other developments** — flat list of single-paragraph items, each prefixed with the date in DD/M format (e.g. "27/3:").`);
+  lines.push(`3. **Relevant documents/reports/articles** — flat list of one paragraph per published document, study or article.`);
+  lines.push('');
+  lines.push(`Target body length ~1500 words. Respect the per-topic weights below within ±20%; drop topics with weight 0. Headings must be short and carry no trailing punctuation.`);
+  lines.push('');
+
+  if (topics.length) {
+    lines.push(`## Topic weights`);
+    lines.push('');
+    lines.push(`| # | Topic | Weight | Item count | Summary |`);
+    lines.push(`|---|---|---:|---:|---|`);
+    topics.forEach((t, i) => {
+      const summary = (t.summary || '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
+      lines.push(`| ${i + 1} | ${t.title.replace(/\|/g, '\\|')} | ${t.weight}% | ${t.itemCount} | ${summary} |`);
+    });
+    lines.push('');
+  } else {
+    lines.push(`## Topic weights`);
+    lines.push('');
+    lines.push(`_No topics selected yet — let the downstream LLM cluster the source items below into 4–8 overarching themes and weight them by editorial importance._`);
+    lines.push('');
+  }
+
+  if (bulletin) {
+    lines.push(`## In-product bulletin draft (baseline)`);
+    lines.push('');
+    lines.push(`The following draft was produced by the in-product LLM (${bulletin.model}). Use it as a baseline; you are free to restructure, expand or rewrite.`);
+    lines.push('');
+    lines.push('```json');
+    lines.push(JSON.stringify(bulletin, null, 2));
+    lines.push('```');
+    lines.push('');
+  }
+
+  lines.push(`## Source items (${items.length})`);
+  lines.push('');
+  lines.push(`Each item below is one piece of evidence. The "AI summary" field, when present, was produced by an in-product summariser; the raw "Summary" is the original body. Prefer the longer of the two when reasoning.`);
+  lines.push('');
+
+  if (items.length === 0) {
+    lines.push(`_No source items in the selected window._`);
+    lines.push('');
+  } else {
+    items.forEach((it, i) => {
+      lines.push(`### ${i + 1}. ${escapeMd(it.title || '(untitled)')}`);
+      lines.push('');
+      lines.push(`- **Source:** ${escapeMd(it.sourceLabel || '—')}`);
+      lines.push(`- **Date:** ${fmtDate(it.date)}`);
+      lines.push(`- **Kind:** ${it.kind === 'email' ? 'forwarded email' : 'secretariat post'}`);
+      if (it.url && it.url !== '#') {
+        lines.push(`- **URL:** ${it.url}`);
+      }
+      if (it.tags && it.tags.length) {
+        lines.push(`- **Tags:** ${it.tags.join(', ')}`);
+      }
+      lines.push('');
+      if (it.aiSummary) {
+        lines.push(`**AI summary**`);
+        lines.push('');
+        lines.push(escapeMd(it.aiSummary));
+        lines.push('');
+      }
+      if (it.summary && it.summary !== it.aiSummary) {
+        lines.push(`**Summary**`);
+        lines.push('');
+        lines.push(escapeMd(it.summary));
+        lines.push('');
+      }
+      lines.push(`---`);
+      lines.push('');
+    });
+  }
+
+  lines.push(`_End of background report. Generated by ESABCC MethodHub on ${generatedAt}._`);
+  lines.push('');
+
+  return lines.join('\n');
+}
+
+function downloadBackgroundReport(opts: {
+  from: string;
+  to: string;
+  items: DisplayItem[];
+  topics: WeightedTopic[];
+  bulletin: BulletinJson | null;
+}): void {
+  const md = buildBackgroundReport(opts);
+  const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `Brussels_Bulletin_background_${opts.from}_${opts.to}.md`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
+}
+
 
 // ──────────────────────────────────────────────────────────────────────────────
 // Page
@@ -303,6 +460,10 @@ export default function BrusselsBulletinPage() {
       title: it.title,
       date: (it.publishedDate || it.receivedDate || '').split('T')[0],
       sourceLabel: it.sourceLabel,
+      url: it.url,
+      summary: it.summary,
+      aiSummary: it.aiSummary,
+      tags: it.tags || [],
       kind: 'email' as const,
     }));
 
@@ -313,12 +474,31 @@ export default function BrusselsBulletinPage() {
       title: it.title,
       date: (it.publishedDate || it.addedDate || '').split('T')[0],
       sourceLabel: it.sourceLabel,
+      url: it.url,
+      summary: it.summary,
+      aiSummary: it.aiSummary,
+      tags: it.tags || [],
       kind: 'post' as const,
     }));
 
   const itemsInPeriod: DisplayItem[] = [...inboundInPeriod, ...postsInPeriod].sort(
     (a, b) => b.date.localeCompare(a.date),
   );
+
+  const onDownloadBackground = useCallback(() => {
+    setExportError('');
+    try {
+      downloadBackgroundReport({
+        from: dateFrom,
+        to: dateTo,
+        items: itemsInPeriod,
+        topics,
+        bulletin,
+      });
+    } catch (err) {
+      setExportError(err instanceof Error ? err.message : 'Background export failed');
+    }
+  }, [dateFrom, dateTo, itemsInPeriod, topics, bulletin]);
 
   // ── Step 1: ask the LLM for up to 10 overarching topics ──────────────────
   const analyze = useCallback(async () => {
@@ -468,7 +648,8 @@ export default function BrusselsBulletinPage() {
             Three-step wizard. (1) Pick a period and let Claude identify up to 10 overarching
             topics. (2) Allocate a weight to each topic — those weights set the share of the
             bulletin devoted to it. (3) Generate the bulletin and download it as a Word file
-            using the official ESABCC template.
+            using the official ESABCC template, or as a detailed background report (.md) to
+            feed into a more capable external LLM.
           </p>
         </div>
       </div>
@@ -522,23 +703,43 @@ export default function BrusselsBulletinPage() {
           </div>
         )}
 
-        {/* Reference template */}
+        {/* Reference template + downstream export */}
         <section className="bg-white rounded-lg border border-grey-200 p-5">
-          <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-2">Reference Template</h2>
+          <h2 className="text-sm font-bold text-tertiary-dark uppercase tracking-wider mb-2">Templates &amp; raw export</h2>
           <p className="text-xs text-tertiary mb-3">
             The Word export below is built by cloning the official ESABCC template and replacing
             its body, so all styles, fonts, headers and page setup match the template exactly.
+            The background report is a Markdown dump of every source item (title, source, date,
+            URL, summary) plus a ready-to-use prompt — pass it to a more capable external LLM
+            (Claude Opus, Gemini Ultra, GPT-5, …) to produce a higher-quality bulletin.
           </p>
-          <a
-            href="/templates/brussels-bulletin-template.docx"
-            className="inline-flex items-center gap-1.5 text-xs text-secondary hover:underline font-medium"
-            download
-          >
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
-            </svg>
-            Download official template (.docx)
-          </a>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="/templates/brussels-bulletin-template.docx"
+              className="inline-flex items-center gap-1.5 text-xs text-secondary hover:underline font-medium"
+              download
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+              </svg>
+              Download official template (.docx)
+            </a>
+            <button
+              type="button"
+              onClick={onDownloadBackground}
+              disabled={itemsInPeriod.length === 0}
+              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded border border-secondary text-secondary hover:bg-secondary/5 font-medium disabled:opacity-40 disabled:cursor-not-allowed"
+              title={itemsInPeriod.length === 0
+                ? 'Pick a period that contains at least one feed item'
+                : 'Download a Markdown background report containing every source item plus a downstream-LLM prompt'}
+            >
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+              </svg>
+              Download background report (.md) · {itemsInPeriod.length} item{itemsInPeriod.length !== 1 ? 's' : ''}
+            </button>
+          </div>
         </section>
 
         {/* ── Step 1 — Period & topic discovery ───────────────────────── */}
@@ -609,7 +810,7 @@ export default function BrusselsBulletinPage() {
               </section>
             )}
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 flex-wrap">
               <button
                 onClick={analyze}
                 disabled={analyzing || itemsInPeriod.length === 0}
@@ -695,7 +896,7 @@ export default function BrusselsBulletinPage() {
               </div>
             </section>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 flex-wrap">
               <button
                 onClick={() => setStep(1)}
                 className="px-4 py-2 bg-grey-100 text-tertiary-dark text-sm font-medium rounded hover:bg-grey-200 transition"
@@ -708,6 +909,14 @@ export default function BrusselsBulletinPage() {
                 className="px-5 py-2.5 bg-secondary text-white font-medium rounded hover:bg-secondary-dark disabled:opacity-50 transition text-sm"
               >
                 {generating ? 'Generating bulletin…' : 'Generate bulletin →'}
+              </button>
+              <button
+                onClick={onDownloadBackground}
+                disabled={itemsInPeriod.length === 0}
+                className="px-4 py-2 border border-secondary text-secondary text-sm font-medium rounded hover:bg-secondary/5 transition disabled:opacity-40"
+                title="Download a Markdown background report including these weighted topics"
+              >
+                Download background report (.md)
               </button>
               {!weightsValid && (
                 <p className="text-xs text-red-600">
@@ -807,6 +1016,13 @@ export default function BrusselsBulletinPage() {
                 Download as Word (.docx)
               </button>
               <button
+                onClick={onDownloadBackground}
+                className="px-4 py-2 bg-secondary text-white text-sm font-medium rounded hover:bg-secondary-dark transition"
+                title="Markdown export with every source item, weighted topics, and the in-product draft as a baseline — feed it to a more capable external LLM"
+              >
+                Download background report (.md)
+              </button>
+              <button
                 onClick={() => {
                   navigator.clipboard.writeText(JSON.stringify(bulletin, null, 2));
                   alert('Bulletin JSON copied to clipboard.');
@@ -863,7 +1079,8 @@ export default function BrusselsBulletinPage() {
             <code className="bg-white px-1 rounded">ANTHROPIC_API_KEY</code>, or{' '}
             <code className="bg-white px-1 rounded">OPENAI_API_KEY</code> in your Vercel project
             environment variables to enable AI generation. Gemini has a free tier at
-            aistudio.google.com/apikey.
+            aistudio.google.com/apikey. The background report (.md) needs no API key — it ships
+            the raw source items so you can run a more capable external LLM offline.
           </p>
         </div>
       </div>

@@ -336,7 +336,6 @@ export default async function HomePage() {
     { code: 'M · 09', title: 'Maritime & Aviation',     href: '/beta/maritime-aviation',  tags: ['SEAMAPS', 'OAG'] },
     { code: 'M · 10', title: 'Climate Finance',         href: '/beta/climate-finance',    tags: ['NGFS v5', 'EIB'] },
     { code: 'M · 11', title: 'Media Monitoring',        href: '/beta/media-monitoring',   tags: ['GDELT', 'MEDIAC'] },
-    { code: 'M · 12', title: 'Brussels Bulletin',       href: '/beta/brussels-bulletin',  tags: ['Weekly', 'MJX export'] },
     { code: 'M · 13', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
     { code: 'M · 14', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
     { code: 'M · 15', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
@@ -509,11 +508,12 @@ export default async function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          BETA MODULES  (M·07 – M·17)
-          Ten experimental modules routed under `/beta/<slug>`. Each card
+          BETA MODULES  (M·07 – M·17, minus M·12)
+          Nine experimental modules routed under `/beta/<slug>`. Each card
           links to its own page; the source lives at `beta/modules/<slug>`
           and is wired into Next.js via a thin re-export under
-          `src/app/beta/<slug>/page.tsx`.
+          `src/app/beta/<slug>/page.tsx`. M·12 (Brussels Bulletin) was
+          promoted to production and now lives under `/news-feed/brussels-bulletin`.
           ───────────────────────────────────────────────────────── */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
         <div className="flex items-end justify-between gap-4 flex-wrap">

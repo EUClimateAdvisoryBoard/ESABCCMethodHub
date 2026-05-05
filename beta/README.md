@@ -31,7 +31,6 @@ the quality bar we ship to the Secretariat.
 
 | Folder                        | Module               | Why it is beta                                                     |
 |-------------------------------|----------------------|--------------------------------------------------------------------|
-| `brussels-bulletin/`          | Brussels Bulletin    | Weekly digest; pipeline stable, layout still iterating.            |
 | `climate-adaptation/`         | Climate Adaptation   | CLIMADA + CMIP6 hotspots; needs full impact-chain validation.      |
 | `climate-finance/`            | Climate Finance      | NGFS v5 scenarios; EIB green-bond dataset not yet licensed.        |
 | `energy-system/`              | Energy System        | PyPSA-style optimisation; requires PyPSA backend service.          |
