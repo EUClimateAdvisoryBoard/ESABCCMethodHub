@@ -27,6 +27,18 @@ export interface PriorityAnalysis {
   rows: PriorityRow[];
   /** 0-based index — `rows[0..shortlistEnd]` is the proposed short list. */
   shortlistEnd: number | null;
+  /** Diagnostics so the UI can explain why the cut landed where it did
+   *  (and warn when it is weakly supported). Null when there weren't
+   *  enough options to compute a break at all. */
+  shortlistInfo: {
+    /** Conventional target end-index (top-6 → 5), capped by K-1. */
+    targetEnd: number;
+    /** Δmean across the chosen cut (rows[end+1].mean - rows[end].mean). */
+    chosenGap: number;
+    /** Next-largest candidate cut in the search window, or null when only
+     *  one candidate existed. */
+    runnerUp: { end: number; gap: number } | null;
+  } | null;
 }
 
 export interface TallyRow {
@@ -153,26 +165,33 @@ function priorityRanking(vote: VoteRecord, ballots: Ballot[]): PriorityAnalysis 
   });
 
   // Natural break: pick the cut between adjacent rows where the mean jumps
-  // the most, constrained to a 4..7 short-list. Falls back to null when we
-  // do not have enough options to make the split useful.
+  // the most, constrained to a 4..7 short-list (target = top-6). Falls back
+  // to null when we do not have enough options to make the split useful.
   let shortlistEnd: number | null = null;
+  let shortlistInfo: PriorityAnalysis['shortlistInfo'] = null;
   const finite = rows.filter((r) => Number.isFinite(r.mean));
   if (finite.length >= 5) {
     const lo = Math.min(3, finite.length - 1);
     const hi = Math.min(6, finite.length - 1);
-    let bestI = lo;
-    let bestGap = -Infinity;
+    const candidates: { end: number; gap: number }[] = [];
     for (let i = lo; i <= hi; i++) {
-      const gap = finite[i + 1] !== undefined ? finite[i + 1].mean - finite[i].mean : -Infinity;
-      if (gap > bestGap) {
-        bestGap = gap;
-        bestI = i;
-      }
+      if (finite[i + 1] === undefined) continue;
+      candidates.push({ end: i, gap: finite[i + 1].mean - finite[i].mean });
     }
-    shortlistEnd = bestI;
+    if (candidates.length > 0) {
+      // Sort by gap descending; the first wins, the second is the runner-up.
+      candidates.sort((a, b) => b.gap - a.gap);
+      const chosen = candidates[0];
+      shortlistEnd = chosen.end;
+      shortlistInfo = {
+        targetEnd: Math.min(5, finite.length - 1),
+        chosenGap: chosen.gap,
+        runnerUp: candidates[1] ?? null,
+      };
+    }
   }
 
-  return { kind: 'priority_ranking', rows, shortlistEnd };
+  return { kind: 'priority_ranking', rows, shortlistEnd, shortlistInfo };
 }
 
 function tally(vote: VoteRecord, ballots: Ballot[]): TallyAnalysis {
