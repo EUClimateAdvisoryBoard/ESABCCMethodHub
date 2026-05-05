@@ -232,7 +232,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2018 / 2019 (codified)', statutory: 'Yes',
     url: 'https://www.hautconseilclimat.fr/',
     legalBasisUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000039370443',
-    notes: "Unique 6-month statutory government response duty (Art. L.132-4 II) — strongest formal response obligation in Europe after UK. 13 experts, 5-year terms.",
+    notes: "Unique 6-month statutory government response duty (Art. L.132-5 Code de l'environnement) — strongest formal response obligation in Europe after UK. 13 members (president + up to 12 experts), 5-year terms renewable once.",
     lat: 48.8566, lon: 2.3522,
   },
   // 13. Georgia
@@ -284,7 +284,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_no_statute', established: '1971', statutory: '',
     url: 'https://www.umweltrat.de/',
     legalBasisUrl: 'https://www.umweltrat.de/EN/',
-    notes: 'Long-running; biennial environmental reports have strong climate chapters. 7 university professors.',
+    notes: 'Long-running; biennial environmental reports have strong climate chapters. 7 members (typically university professors) from various disciplines, 4-year renewable terms.',
     lat: 52.5200, lon: 13.4050,
   },
   // 17. Greece EMEKA
@@ -401,7 +401,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2021', statutory: 'Yes',
     url: 'https://environnement.public.lu/fr/klima/politique-climatique/observatoire-de-la-politique-climatique.html',
     legalBasisUrl: 'https://data.legilux.public.lu/filestore/eli/etat/leg/loi/2020/12/15/a994/jo/fr/html/eli-etat-leg-loi-2020-12-15-a994-jo-fr-html.html',
-    notes: 'Very strong design for small state; includes former IPCC Vice-Chair Jean-Pascal van Ypersele.',
+    notes: 'Very strong design for small state; 7 members on 5-year terms; founding membership included former IPCC Vice-Chair Jean-Pascal van Ypersele (current roster rotates).',
     lat: 49.6116, lon: 6.1319,
   },
   // 26. Malta NCAC
@@ -452,8 +452,8 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     level: 'national', region: '',
     status: 'active_statutory', established: '2023', statutory: 'Yes',
     url: 'https://www.wkr.nl/',
-    legalBasisUrl: 'https://zoek.officielebekendmakingen.nl/stb-2022-423.html',
-    notes: 'Active (temporary status, expires 4 Nov 2026). Tripartite architecture with Rli (stakeholder) and PBL (monitoring).',
+    legalBasisUrl: 'https://zoek.officielebekendmakingen.nl/stb-2025-350.html',
+    notes: 'Made permanent by Verzamelwet KGG (Stb. 2025, 350), in force 1 Jan 2026, anchoring WKR in the Klimaatwet. Tripartite architecture with Rli (stakeholder) and PBL (monitoring).',
     lat: 52.3676, lon: 4.9041,
   },
   // 30. Poland
