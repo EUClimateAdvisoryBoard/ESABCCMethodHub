@@ -192,6 +192,10 @@ body.has-bottom-nav {
   scrollbar-width: none; scroll-snap-type: x proximity;
 }
 .h-scroll::-webkit-scrollbar, .scroll-x::-webkit-scrollbar { display: none; }
+
+/* Generic scrollbar-hide utility used by horizontal chip rows and similar. */
+.scrollbar-none { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
 .h-scroll > * { scroll-snap-align: start; }
 
 .mobile-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; max-width: 100vw; }
