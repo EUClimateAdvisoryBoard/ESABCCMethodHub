@@ -31,12 +31,20 @@ export interface PriorityAnalysis {
    *  (and warn when it is weakly supported). Null when there weren't
    *  enough options to compute a break at all. */
   shortlistInfo: {
-    /** Conventional target end-index (top-6 → 5), capped by K-1. */
+    /** Whether the cut was driven by the natural-break heuristic or by
+     *  an explicit fixed shortlist size. */
+    mode: 'natural_break' | 'fixed';
+    /** Inclusive search window applied to the natural-break heuristic. */
+    minSize: number;
+    maxSize: number;
+    /** Conventional target end-index (top-6 → 5), capped by K-1. Only
+     *  meaningful for `mode = 'natural_break'`. */
     targetEnd: number;
-    /** Δmean across the chosen cut (rows[end+1].mean - rows[end].mean). */
+    /** Δmean across the chosen cut (rows[end+1].mean - rows[end].mean).
+     *  May be 0 when the boundary was forced by a fixed size. */
     chosenGap: number;
     /** Next-largest candidate cut in the search window, or null when only
-     *  one candidate existed. */
+     *  one candidate existed / mode is fixed. */
     runnerUp: { end: number; gap: number } | null;
   } | null;
 }
@@ -164,15 +172,49 @@ function priorityRanking(vote: VoteRecord, ballots: Ballot[]): PriorityAnalysis 
     return am - bm;
   });
 
-  // Natural break: pick the cut between adjacent rows where the mean jumps
-  // the most, constrained to a 4..7 short-list (target = top-6). Falls back
-  // to null when we do not have enough options to make the split useful.
+  // Shortlist boundary. Two modes (selected via vote.config):
+  //   'fixed'         — cut after exactly `shortlistSize` rows, ignoring gaps.
+  //   'natural_break' — pick the cut where adjacent means jump the most,
+  //                     clamped to [shortlistMin..shortlistMax]. Defaults to
+  //                     4..7. Conventional target = top-6.
+  // Falls back to null when there are not enough scored options to split.
   let shortlistEnd: number | null = null;
   let shortlistInfo: PriorityAnalysis['shortlistInfo'] = null;
   const finite = rows.filter((r) => Number.isFinite(r.mean));
-  if (finite.length >= 5) {
-    const lo = Math.min(3, finite.length - 1);
-    const hi = Math.min(6, finite.length - 1);
+
+  const cfg = vote.config ?? {};
+  const mode: 'natural_break' | 'fixed' = cfg.shortlistMode === 'fixed' ? 'fixed' : 'natural_break';
+  // Sanitise window. Clamp to [1..K-1] and ensure min ≤ max.
+  const K = finite.length;
+  const rawMin = Number.isFinite(cfg.shortlistMin as number) ? Math.floor(cfg.shortlistMin as number) : 4;
+  const rawMax = Number.isFinite(cfg.shortlistMax as number) ? Math.floor(cfg.shortlistMax as number) : 7;
+  const minSize = Math.max(1, Math.min(rawMin, Math.max(K - 1, 1)));
+  const maxSize = Math.max(minSize, Math.min(rawMax, Math.max(K - 1, 1)));
+
+  if (mode === 'fixed') {
+    const requested = Number.isFinite(cfg.shortlistSize as number)
+      ? Math.floor(cfg.shortlistSize as number)
+      : 6;
+    // Clamp to [1..K-1]; nothing to shortlist if K < 2.
+    if (K >= 2) {
+      const size = Math.max(1, Math.min(requested, K - 1));
+      const end = size - 1;
+      const gap = Number.isFinite(finite[end + 1]?.mean) && Number.isFinite(finite[end].mean)
+        ? finite[end + 1].mean - finite[end].mean
+        : 0;
+      shortlistEnd = end;
+      shortlistInfo = {
+        mode: 'fixed',
+        minSize: size,
+        maxSize: size,
+        targetEnd: end,
+        chosenGap: gap,
+        runnerUp: null,
+      };
+    }
+  } else if (K >= Math.max(minSize + 1, 2)) {
+    const lo = Math.min(minSize - 1, K - 1);
+    const hi = Math.min(maxSize - 1, K - 1);
     const candidates: { end: number; gap: number }[] = [];
     for (let i = lo; i <= hi; i++) {
       if (finite[i + 1] === undefined) continue;
@@ -183,8 +225,14 @@ function priorityRanking(vote: VoteRecord, ballots: Ballot[]): PriorityAnalysis 
       candidates.sort((a, b) => b.gap - a.gap);
       const chosen = candidates[0];
       shortlistEnd = chosen.end;
+      // Conventional target — top-6, but no smaller than minSize and no
+      // larger than maxSize; helps the UI explain "off-target" cuts.
+      const targetSize = Math.max(minSize, Math.min(6, maxSize));
       shortlistInfo = {
-        targetEnd: Math.min(5, finite.length - 1),
+        mode: 'natural_break',
+        minSize,
+        maxSize,
+        targetEnd: Math.min(targetSize - 1, K - 1),
         chosenGap: chosen.gap,
         runnerUp: candidates[1] ?? null,
       };

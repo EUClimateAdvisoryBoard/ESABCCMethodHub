@@ -14,9 +14,17 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import type { VoteBundle, VoteToken } from '@/lib/voting/types';
+import type { VoteBundle, VoteRecord, VoteToken } from '@/lib/voting/types';
 
-export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
+export default function VoteAdmin({
+  initial,
+  childVotes = [],
+  hasShortlist = false,
+}: {
+  initial: VoteBundle;
+  childVotes?: VoteRecord[];
+  hasShortlist?: boolean;
+}) {
   const router = useRouter();
   const [bundle, setBundle] = useState<VoteBundle>(initial);
   // When the parent re-renders with a fresh bundle (e.g. after router.refresh()
@@ -40,12 +48,30 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
   const [draftTitle, setDraftTitle] = useState(bundle.vote.title);
   const [draftDesc, setDraftDesc] = useState(bundle.vote.description ?? '');
   const [draftInstructions, setDraftInstructions] = useState(bundle.vote.instructions ?? '');
+  const [draftShortlistMode, setDraftShortlistMode] = useState<'natural_break' | 'fixed'>(
+    (bundle.vote.config?.shortlistMode as 'natural_break' | 'fixed') ?? 'natural_break',
+  );
+  const [draftShortlistMin, setDraftShortlistMin] = useState<number>(
+    Number(bundle.vote.config?.shortlistMin ?? 4),
+  );
+  const [draftShortlistMax, setDraftShortlistMax] = useState<number>(
+    Number(bundle.vote.config?.shortlistMax ?? 7),
+  );
+  const [draftShortlistSize, setDraftShortlistSize] = useState<number>(
+    Number(bundle.vote.config?.shortlistSize ?? 6),
+  );
   const [savingEdit, setSavingEdit] = useState(false);
 
   function startEditing() {
     setDraftTitle(bundle.vote.title);
     setDraftDesc(bundle.vote.description ?? '');
     setDraftInstructions(bundle.vote.instructions ?? '');
+    setDraftShortlistMode(
+      (bundle.vote.config?.shortlistMode as 'natural_break' | 'fixed') ?? 'natural_break',
+    );
+    setDraftShortlistMin(Number(bundle.vote.config?.shortlistMin ?? 4));
+    setDraftShortlistMax(Number(bundle.vote.config?.shortlistMax ?? 7));
+    setDraftShortlistSize(Number(bundle.vote.config?.shortlistSize ?? 6));
     setEditing(true);
     setError(null);
   }
@@ -54,6 +80,21 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
     setSavingEdit(true);
     setError(null);
     try {
+      // Merge shortlist policy fields into the existing config so we don't
+      // wipe per-system settings (scores, caps, labels, …) on save.
+      const isPriority = bundle.vote.votingSystem === 'priority_ranking';
+      const minSize = Math.max(1, Math.floor(draftShortlistMin || 1));
+      const maxSize = Math.max(minSize, Math.floor(draftShortlistMax || minSize));
+      const fixedSize = Math.max(1, Math.floor(draftShortlistSize || 1));
+      const nextConfig = isPriority
+        ? {
+            ...bundle.vote.config,
+            shortlistMode: draftShortlistMode,
+            shortlistMin: minSize,
+            shortlistMax: maxSize,
+            shortlistSize: fixedSize,
+          }
+        : bundle.vote.config;
       const res = await fetch(`/api/voting/votes/${bundle.vote.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
@@ -61,6 +102,7 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
           title: draftTitle,
           description: draftDesc || undefined,
           instructions: draftInstructions || undefined,
+          ...(isPriority ? { config: nextConfig } : {}),
         }),
       });
       const json = await res.json();
@@ -157,6 +199,34 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
     }
   }
 
+  // Spawn a runoff vote ("<title> 2.0") from the current shortlist, mint
+  // a universal link, and reveal the new vote in this admin pane.
+  const [spawning, setSpawning] = useState(false);
+  const [runoff, setRunoff] = useState<{ voteId: string; url: string; title: string } | null>(null);
+
+  async function findClearWinner() {
+    setSpawning(true);
+    setError(null);
+    try {
+      const res = await fetch(`/api/voting/votes/${bundle.vote.id}/runoff`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ votingSystem: 'single_choice' }),
+      });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? 'Could not start the runoff vote.');
+      const url = `${baseOrigin}/vote/${encodeURIComponent(json.token.token)}`;
+      setRunoff({ voteId: json.vote.id, url, title: json.vote.title });
+      // Auto-copy so the admin can paste the link straight into chat / mail.
+      try { await navigator.clipboard.writeText(url); } catch { /* ignore */ }
+      router.refresh();
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setSpawning(false);
+    }
+  }
+
   async function copy(text: string) {
     try {
       await navigator.clipboard.writeText(text);
@@ -244,6 +314,88 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
                 className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px] min-h-[120px] whitespace-pre-line"
               />
             </label>
+            {bundle.vote.votingSystem === 'priority_ranking' ? (
+              <div className="p-3 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]">
+                <div className="text-[12.5px] font-semibold text-[#3D5265] mb-2">Shortlist policy</div>
+                <div className="flex flex-col sm:flex-row gap-2 mb-3">
+                  <label className={
+                    'flex-1 flex items-start gap-2 px-3 py-2 rounded-sm border cursor-pointer ' +
+                    (draftShortlistMode === 'natural_break'
+                      ? 'border-[#00928F] bg-[#E6F5F4]'
+                      : 'border-[#E6E7E8] bg-white')
+                  }>
+                    <input
+                      type="radio"
+                      name="adm-shortlistMode"
+                      checked={draftShortlistMode === 'natural_break'}
+                      onChange={() => setDraftShortlistMode('natural_break')}
+                      className="mt-0.5"
+                    />
+                    <span>
+                      <span className="block text-[12.5px] font-semibold">Natural break</span>
+                      <span className="block text-[11.5px] text-[#3D5265]/70">
+                        Cut where adjacent means jump the most, within a min/max window.
+                      </span>
+                    </span>
+                  </label>
+                  <label className={
+                    'flex-1 flex items-start gap-2 px-3 py-2 rounded-sm border cursor-pointer ' +
+                    (draftShortlistMode === 'fixed'
+                      ? 'border-[#00928F] bg-[#E6F5F4]'
+                      : 'border-[#E6E7E8] bg-white')
+                  }>
+                    <input
+                      type="radio"
+                      name="adm-shortlistMode"
+                      checked={draftShortlistMode === 'fixed'}
+                      onChange={() => setDraftShortlistMode('fixed')}
+                      className="mt-0.5"
+                    />
+                    <span>
+                      <span className="block text-[12.5px] font-semibold">Fixed shortlist size</span>
+                      <span className="block text-[11.5px] text-[#3D5265]/70">
+                        Always cut after exactly N options.
+                      </span>
+                    </span>
+                  </label>
+                </div>
+                {draftShortlistMode === 'natural_break' ? (
+                  <div className="grid grid-cols-2 gap-3">
+                    <label className="block text-[12px]">
+                      <span className="block font-semibold mb-1">Min size</span>
+                      <input
+                        type="number"
+                        min={1}
+                        value={draftShortlistMin}
+                        onChange={(e) => setDraftShortlistMin(Number(e.target.value))}
+                        className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                      />
+                    </label>
+                    <label className="block text-[12px]">
+                      <span className="block font-semibold mb-1">Max size</span>
+                      <input
+                        type="number"
+                        min={1}
+                        value={draftShortlistMax}
+                        onChange={(e) => setDraftShortlistMax(Number(e.target.value))}
+                        className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                      />
+                    </label>
+                  </div>
+                ) : (
+                  <label className="block text-[12px]">
+                    <span className="block font-semibold mb-1">Shortlist size</span>
+                    <input
+                      type="number"
+                      min={1}
+                      value={draftShortlistSize}
+                      onChange={(e) => setDraftShortlistSize(Number(e.target.value))}
+                      className="w-32 rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                    />
+                  </label>
+                )}
+              </div>
+            ) : null}
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -403,6 +555,95 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
           </a>
         </p>
       </section>
+
+      {bundle.vote.votingSystem === 'priority_ranking' && bundle.vote.config?.parentVoteId == null ? (
+        <section className="rounded-sm border border-[#E6E7E8] bg-white p-4 sm:p-5">
+          <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-2">
+            Find a clear winner
+          </h2>
+          <p className="text-[12.5px] text-[#3D5265]/75 mb-3">
+            Cast a follow-up vote (<span className="font-mono">{bundle.vote.title} 2.0</span>) on
+            the shortlisted options only. We&apos;ll create the vote, generate a universal link
+            you can copy and resend, and surface the new result here as soon as ballots come in.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={findClearWinner}
+              disabled={spawning || !hasShortlist}
+              className="inline-flex items-center px-4 py-2 text-[13px] font-semibold text-white bg-[#00928F] rounded-sm hover:opacity-90 disabled:opacity-50"
+              title={hasShortlist ? '' : 'Cast some ballots first — there is no shortlist yet.'}
+            >
+              {spawning ? 'Starting follow-up…' : 'Find clear winner'}
+            </button>
+            {!hasShortlist ? (
+              <span className="text-[11.5px] text-[#3D5265]/60">
+                No shortlist yet — collect more ballots first.
+              </span>
+            ) : null}
+          </div>
+          {runoff ? (
+            <div className="mt-3 rounded-sm border border-[#00928F]/40 bg-[#E6F5F4]/40 p-3">
+              <div className="text-[12.5px] font-semibold text-[#3D5265] mb-1">
+                Created &laquo;{runoff.title}&raquo; — universal link copied to clipboard.
+              </div>
+              <div className="font-mono text-[11.5px] break-all text-[#3D5265]/80 mb-2">
+                {runoff.url}
+              </div>
+              <div className="flex flex-wrap gap-3 text-[12.5px]">
+                <button
+                  type="button"
+                  onClick={() => copy(runoff.url)}
+                  className="font-semibold text-[#00928F] hover:underline"
+                >
+                  Copy link again
+                </button>
+                <a
+                  href={`/voting/${runoff.voteId}`}
+                  className="font-semibold text-[#00928F] hover:underline"
+                >
+                  Open follow-up admin →
+                </a>
+                <a
+                  href={`/voting/${runoff.voteId}/results`}
+                  className="font-semibold text-[#00928F] hover:underline"
+                >
+                  Follow-up results →
+                </a>
+              </div>
+            </div>
+          ) : null}
+        </section>
+      ) : null}
+
+      {childVotes.length > 0 ? (
+        <section className="rounded-sm border border-[#E6E7E8] bg-white p-4 sm:p-5">
+          <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-2">
+            Follow-up votes
+          </h2>
+          <p className="text-[12.5px] text-[#3D5265]/70 mb-3">
+            Subordinate votes spawned from this vote&apos;s shortlist.
+          </p>
+          <ul className="divide-y divide-[#E6E7E8] border border-[#E6E7E8] rounded-sm bg-white">
+            {childVotes.map((child) => (
+              <li key={child.id} className="px-3 py-2 flex flex-wrap items-center gap-3 text-[13px]">
+                <span className="font-medium text-[#3D5265]">{child.title}</span>
+                <span className="font-mono text-[11px] text-[#8A95A3]">
+                  {child.votingSystem.replace(/_/g, ' ')} · {child.status}
+                </span>
+                <span className="ml-auto flex gap-3 text-[12.5px]">
+                  <a className="font-semibold text-[#00928F] hover:underline" href={`/voting/${child.id}`}>
+                    Admin →
+                  </a>
+                  <a className="font-semibold text-[#00928F] hover:underline" href={`/voting/${child.id}/results`}>
+                    Results →
+                  </a>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="rounded-sm border border-[#B33A3A]/30 bg-[#FBF1ED]/40 p-4 sm:p-5">
         <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#B33A3A] mb-2">Danger zone</h2>
