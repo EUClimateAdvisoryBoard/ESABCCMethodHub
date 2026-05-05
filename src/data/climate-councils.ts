@@ -295,8 +295,8 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     bodyOriginal: 'Επιτροπή Μελέτης Επιπτώσεων Κλιματικής Αλλαγής (ΕΜΕΚΑ)',
     level: 'national', region: '',
     status: 'active_no_statute', established: '2009', statutory: '',
-    url: 'https://www.bankofgreece.gr/en/the-bank/climate-change-impacts-study-committee',
-    legalBasisUrl: 'https://www.bankofgreece.gr/en/the-bank/climate-change-impacts-study-committee',
+    url: 'https://www.bankofgreece.gr/en/the-bank/social-responsibility/sustainability-and-climate-change/ccisc',
+    legalBasisUrl: 'https://www.bankofgreece.gr/en/the-bank/social-responsibility/sustainability-and-climate-change/ccisc',
     notes: 'UNIQUE central-bank-based climate advisory model in Europe; most operationally independent Greek body; strong financial-risk focus.',
     lat: 37.9838, lon: 23.7275,
   },
@@ -414,7 +414,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2024', statutory: 'Yes',
     url: 'https://climateaction.gov.mt/ncac/',
     legalBasisUrl: 'https://legislation.mt/eli/cap/643/eng',
-    notes: 'Climate Action Act 2024, Chapter 643, Article 5. 9 members. Chair: Prof. Simone Borg.',
+    notes: 'Climate Action Act 2024 (Act XVI of 2024), Chapter 643. 8 members plus Board Secretary; Chair: Prof. Simone Borg; Deputy Chair: Prof. Alan Deidun.',
     lat: 35.8989, lon: 14.5146,
   },
   // 27. Moldova
@@ -478,7 +478,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     level: 'national', region: '',
     status: 'legislated_not_operational', established: '2021 (legislated); not yet constituted', statutory: 'Yes',
     url: '', legalBasisUrl: 'https://files.dre.pt/1s/2021/12/25200/0000500036.pdf',
-    notes: 'Stark case of legal creation ≠ operational reality; 5 years after legislation, still not operational. Blocked by gender-parity legal challenge.',
+    notes: 'Stark case of legal creation ≠ operational reality; ~4.5 years after Lei n.º 98/2021, still not constituted. Blocked by gender-parity rule (only 5 women indicated of the 8 required for a 17-member body); PGR Advisory Council recommended legislative amendment in 2024-2025.',
     lat: 38.7223, lon: -9.1393,
   },
   // 32. Portugal CNADS
@@ -556,7 +556,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'legislated_not_operational', established: '2021 (legislated); RD pending', statutory: 'Yes',
     url: 'https://www.miteco.gob.es/en/cambio-climatico/participacion-publica/rd_comite_ccte.html',
     legalBasisUrl: 'https://www.boe.es/buscar/act.php?id=BOE-A-2021-8447',
-    notes: 'Delayed operationalisation — Law 7/2021 required establishment within 6 months; still pending in 2026.',
+    notes: 'Delayed operationalisation — Law 7/2021 (Art. 37) required establishment within 6 months; draft RD still in public-consultation phase as of May 2026 (RD 91/2025 governance mechanism is a separate instrument).',
     lat: 40.4168, lon: -3.7038,
   },
   // 38. Sweden
