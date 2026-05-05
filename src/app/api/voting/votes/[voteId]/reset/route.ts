@@ -1,6 +1,6 @@
 /**
  * /api/voting/votes/[voteId]/reset
- *   POST — drop every ballot, reset every token to unused, and bump the
+ *   POST — drop every ballot, delete every issued link, and bump the
  *          vote's reset_epoch so participant browsers' localStorage flags
  *          are silently invalidated.
  *
