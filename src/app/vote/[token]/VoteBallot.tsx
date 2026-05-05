@@ -7,6 +7,10 @@
  * by `/api/voting/ballot/[token]`. It NEVER fetches anything else and never
  * writes to localStorage so there is no spillover to other tabs the user
  * may have open on the same browser.
+ *
+ * The layout is mobile-first: bigger touch targets (≥44px), comfortable line
+ * heights, full-width controls on phones, and a sticky submit bar at the
+ * bottom on small screens so the action stays in reach while scrolling.
  */
 
 import { useEffect, useMemo, useState } from 'react';
@@ -100,7 +104,7 @@ export default function VoteBallot({ token }: { token: string }) {
   }, [token]);
 
   if (state.kind === 'loading') {
-    return <p className="text-sm text-[#3D5265]/70">Loading ballot…</p>;
+    return <p className="text-[15px] text-[#3D5265]/70">Loading ballot…</p>;
   }
   if (state.kind === 'invalid') {
     return <ResultPanel headline="Unable to open this ballot" body={state.message} />;
@@ -148,19 +152,21 @@ export default function VoteBallot({ token }: { token: string }) {
   }
 
   return (
-    <div>
-      <header className="mb-6 sm:mb-8">
+    // Bottom padding reserves space for the mobile sticky submit bar so the
+    // last option isn't hidden behind it.
+    <div className="pb-32 sm:pb-0">
+      <header className="mb-5 sm:mb-8">
         <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#00928F] font-semibold">
           ESABCC · Confidential ballot
         </p>
-        <h1 className="mt-2 text-[24px] sm:text-[28px] font-bold text-[#3D5265] leading-tight">
+        <h1 className="mt-2 text-[22px] sm:text-[28px] font-bold text-[#3D5265] leading-tight">
           {vote.title}
         </h1>
         {vote.description ? (
-          <p className="mt-3 text-[14px] text-[#3D5265]/80 leading-relaxed">{vote.description}</p>
+          <p className="mt-3 text-[15px] sm:text-[14px] text-[#3D5265]/85 leading-relaxed">{vote.description}</p>
         ) : null}
         {vote.instructions ? (
-          <div className="mt-4 rounded-sm border border-[#E6E7E8] bg-white p-3 text-[13px] text-[#3D5265]/85 leading-relaxed whitespace-pre-line">
+          <div className="mt-4 rounded-sm border border-[#E6E7E8] bg-white p-3 sm:p-4 text-[14px] sm:text-[13px] text-[#3D5265]/85 leading-relaxed whitespace-pre-line">
             {vote.instructions}
           </div>
         ) : null}
@@ -169,10 +175,11 @@ export default function VoteBallot({ token }: { token: string }) {
       <BallotControls vote={vote} responses={responses} onChange={setResponses} />
 
       {error ? (
-        <p className="mt-4 text-[13px] text-[#B33A3A]">{error}</p>
+        <p className="mt-4 text-[14px] text-[#B33A3A]" role="alert">{error}</p>
       ) : null}
 
-      <div className="mt-8 flex items-center justify-between gap-3 border-t border-[#E6E7E8] pt-6">
+      {/* Inline footer — visible on tablet/desktop. */}
+      <div className="mt-8 hidden sm:flex items-center justify-between gap-3 border-t border-[#E6E7E8] pt-6">
         <p className="text-[11.5px] text-[#3D5265]/60 max-w-md leading-snug">
           {vote.isShared
             ? 'Your response cannot be edited after submission. Please only submit once.'
@@ -186,6 +193,27 @@ export default function VoteBallot({ token }: { token: string }) {
         >
           {submitting ? 'Submitting…' : 'Submit ballot'}
         </button>
+      </div>
+
+      {/* Sticky submit bar — visible on phones. Sits above the iOS home
+          indicator via env(safe-area-inset-bottom). */}
+      <div
+        className="sm:hidden fixed inset-x-0 bottom-0 z-30 border-t border-[#E6E7E8] bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 px-4 pt-3"
+        style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))' }}
+      >
+        <button
+          type="button"
+          disabled={submitting}
+          onClick={submit}
+          className="w-full inline-flex items-center justify-center px-5 py-3.5 text-[16px] font-semibold text-white bg-[#00928F] rounded-sm hover:opacity-90 disabled:opacity-50 shadow-sm"
+        >
+          {submitting ? 'Submitting…' : 'Submit ballot'}
+        </button>
+        <p className="mt-2 text-[11.5px] text-[#3D5265]/60 leading-snug text-center">
+          {vote.isShared
+            ? 'Your response cannot be edited after submission. Please only submit once.'
+            : 'Your response is single-use and cannot be edited after submission.'}
+        </p>
       </div>
     </div>
   );
@@ -254,8 +282,8 @@ function PriorityRankingControls({
   }, [responses]);
 
   return (
-    <div className="space-y-2">
-      <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12px] text-[#3D5265]/80 flex flex-wrap gap-x-4 gap-y-1">
+    <div className="space-y-3">
+      <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12.5px] text-[#3D5265]/80 flex flex-wrap gap-x-4 gap-y-1">
         {scores.map((s) => {
           const cap = caps[String(s)];
           const used = counts[String(s)] ?? 0;
@@ -276,64 +304,76 @@ function PriorityRankingControls({
         {vote.options.map((opt) => {
           const selected = responses[opt.id];
           return (
-            <li key={opt.id} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-3">
-              <div className="flex-1 min-w-0">
-                <p className="text-[14px] font-medium text-[#3D5265]">{opt.label}</p>
-                {opt.description ? (
-                  <p className="text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</p>
-                ) : null}
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                {scores.map((s) => {
-                  const isOn = selected === s;
-                  const label = labels[String(s)];
-                  return (
-                    <button
-                      key={s}
-                      type="button"
-                      onClick={() => {
-                        // Already on → clicking removes the score (always allowed).
-                        if (isOn) {
-                          setVal(opt.id, null);
-                          return;
+            <li key={opt.id} className="px-3 py-3 sm:py-3">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                <div className="flex-1 min-w-0">
+                  <p className="text-[15px] sm:text-[14px] font-medium text-[#3D5265] leading-snug">{opt.label}</p>
+                  {opt.description ? (
+                    <p className="text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-0.5 leading-snug">{opt.description}</p>
+                  ) : null}
+                </div>
+                <div
+                  className="grid sm:flex sm:flex-wrap sm:items-center gap-1.5"
+                  style={{
+                    // On mobile, give every score an equal-width column so
+                    // the row never wraps awkwardly with one button on a
+                    // second line. Falls back to flex-wrap on sm+.
+                    gridTemplateColumns: `repeat(${Math.max(1, scores.length)}, minmax(0, 1fr))`,
+                  }}
+                >
+                  {scores.map((s) => {
+                    const isOn = selected === s;
+                    const label = labels[String(s)];
+                    return (
+                      <button
+                        key={s}
+                        type="button"
+                        onClick={() => {
+                          // Already on → clicking removes the score (always allowed).
+                          if (isOn) {
+                            setVal(opt.id, null);
+                            return;
+                          }
+                          // Block selecting a score that has already reached its cap.
+                          // Tell the voter to free a slot first instead of silently
+                          // letting them go over and rejecting on submit.
+                          const cap = caps[String(s)];
+                          const usedNow = counts[String(s)] ?? 0;
+                          if (cap != null && usedNow >= cap) {
+                            const lbl = labels[String(s)] ?? `score ${s}`;
+                            window.alert(
+                              `You can only give ${lbl} (${s}) to ${cap} option${cap === 1 ? '' : 's'}. ` +
+                                `Please untick another option first.`,
+                            );
+                            return;
+                          }
+                          setVal(opt.id, s);
+                        }}
+                        aria-pressed={isOn}
+                        title={label ? `${label} (score ${s})` : `score ${s}`}
+                        className={
+                          'min-h-[44px] sm:min-h-0 sm:min-w-[44px] px-2 sm:px-2.5 py-2 sm:py-1 ' +
+                          'rounded-sm text-[13.5px] sm:text-[12.5px] font-semibold border transition-colors capitalize ' +
+                          'flex items-center justify-center gap-1 leading-tight ' +
+                          (isOn
+                            ? 'bg-[#00928F] border-[#00928F] text-white'
+                            : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F] active:bg-[#F1F5F4]')
                         }
-                        // Block selecting a score that has already reached its cap.
-                        // Tell the voter to free a slot first instead of silently
-                        // letting them go over and rejecting on submit.
-                        const cap = caps[String(s)];
-                        const usedNow = counts[String(s)] ?? 0;
-                        if (cap != null && usedNow >= cap) {
-                          const lbl = labels[String(s)] ?? `score ${s}`;
-                          window.alert(
-                            `You can only give ${lbl} (${s}) to ${cap} option${cap === 1 ? '' : 's'}. ` +
-                              `Please untick another option first.`,
-                          );
-                          return;
-                        }
-                        setVal(opt.id, s);
-                      }}
-                      aria-pressed={isOn}
-                      title={label ? `${label} (score ${s})` : `score ${s}`}
-                      className={
-                        'min-w-[44px] px-2.5 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors capitalize ' +
-                        (isOn
-                          ? 'bg-[#00928F] border-[#00928F] text-white'
-                          : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
-                      }
-                    >
-                      {label ? (
-                        <>
-                          {label}
-                          <span className={'ml-1 font-mono normal-case ' + (isOn ? 'opacity-80' : 'text-[#8A95A3]')}>
-                            ·{s}
-                          </span>
-                        </>
-                      ) : (
-                        s
-                      )}
-                    </button>
-                  );
-                })}
+                      >
+                        {label ? (
+                          <>
+                            <span className="truncate">{label}</span>
+                            <span className={'font-mono normal-case ' + (isOn ? 'opacity-80' : 'text-[#8A95A3]')}>
+                              ·{s}
+                            </span>
+                          </>
+                        ) : (
+                          s
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </li>
           );
@@ -355,31 +395,36 @@ function SingleChoiceControls({
   const selected = Object.entries(responses).find(([, v]) => v === true)?.[0] ?? null;
   return (
     <ul className="divide-y divide-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden bg-white">
-      {vote.options.map((opt) => (
-        <li key={opt.id}>
-          <label className="flex items-start gap-3 px-3 py-3 cursor-pointer hover:bg-[#FBFBFA]">
-            <input
-              type="radio"
-              name="single"
-              checked={selected === opt.id}
-              onChange={() => {
-                const next: Record<string, boolean> = {};
-                next[opt.id] = true;
-                // Replace previous selections wholesale.
-                for (const k of Object.keys(responses)) if (k !== opt.id) setVal(k, null);
-                setVal(opt.id, true);
-              }}
-              className="mt-1"
-            />
-            <span>
-              <span className="text-[14px] font-medium text-[#3D5265]">{opt.label}</span>
-              {opt.description ? (
-                <span className="block text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</span>
-              ) : null}
-            </span>
-          </label>
-        </li>
-      ))}
+      {vote.options.map((opt) => {
+        const isSel = selected === opt.id;
+        return (
+          <li key={opt.id}>
+            <label
+              className={
+                'flex items-start gap-3 px-3 py-4 sm:py-3 cursor-pointer min-h-[52px] ' +
+                (isSel ? 'bg-[#E6F5F4]/60' : 'hover:bg-[#FBFBFA] active:bg-[#F1F5F4]')
+              }
+            >
+              <input
+                type="radio"
+                name="single"
+                checked={isSel}
+                onChange={() => {
+                  for (const k of Object.keys(responses)) if (k !== opt.id) setVal(k, null);
+                  setVal(opt.id, true);
+                }}
+                className="mt-1 w-5 h-5 accent-[#00928F]"
+              />
+              <span className="flex-1 min-w-0">
+                <span className="block text-[15px] sm:text-[14px] font-medium text-[#3D5265] leading-snug">{opt.label}</span>
+                {opt.description ? (
+                  <span className="block text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-1 leading-snug">{opt.description}</span>
+                ) : null}
+              </span>
+            </label>
+          </li>
+        );
+      })}
     </ul>
   );
 }
@@ -397,7 +442,9 @@ function MultiChoiceControls({
   const selectedCount = Object.values(responses).filter((v) => v === true).length;
   return (
     <div>
-      <p className="text-[12px] text-[#3D5265]/70 mb-2">Pick up to {max}.  Selected: {selectedCount}.</p>
+      <p className="text-[13px] sm:text-[12px] text-[#3D5265]/75 mb-2">
+        Pick up to {max}.  Selected: <span className="font-semibold text-[#3D5265]">{selectedCount}</span>.
+      </p>
       <ul className="divide-y divide-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden bg-white">
         {vote.options.map((opt) => {
           const checked = responses[opt.id] === true;
@@ -406,8 +453,9 @@ function MultiChoiceControls({
             <li key={opt.id}>
               <label
                 className={
-                  'flex items-start gap-3 px-3 py-3 ' +
-                  (disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-[#FBFBFA]')
+                  'flex items-start gap-3 px-3 py-4 sm:py-3 min-h-[52px] ' +
+                  (disabled ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer hover:bg-[#FBFBFA] active:bg-[#F1F5F4]') +
+                  (checked ? ' bg-[#E6F5F4]/60' : '')
                 }
               >
                 <input
@@ -415,12 +463,12 @@ function MultiChoiceControls({
                   checked={checked}
                   disabled={disabled}
                   onChange={(e) => setVal(opt.id, e.target.checked ? true : null)}
-                  className="mt-1"
+                  className="mt-1 w-5 h-5 accent-[#00928F]"
                 />
-                <span>
-                  <span className="text-[14px] font-medium text-[#3D5265]">{opt.label}</span>
+                <span className="flex-1 min-w-0">
+                  <span className="block text-[15px] sm:text-[14px] font-medium text-[#3D5265] leading-snug">{opt.label}</span>
                   {opt.description ? (
-                    <span className="block text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</span>
+                    <span className="block text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-1 leading-snug">{opt.description}</span>
                   ) : null}
                 </span>
               </label>
@@ -446,32 +494,34 @@ function ApprovalControls({
       {vote.options.map((opt) => {
         const v = responses[opt.id];
         return (
-          <li key={opt.id} className="flex items-center justify-between gap-3 px-3 py-3">
-            <div>
-              <p className="text-[14px] font-medium text-[#3D5265]">{opt.label}</p>
-              {opt.description ? (
-                <p className="text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</p>
-              ) : null}
-            </div>
-            <div className="flex gap-1.5">
-              {([['Approve', true], ['Reject', false]] as const).map(([label, val]) => (
-                <button
-                  key={label}
-                  type="button"
-                  onClick={() => setVal(opt.id, v === val ? null : val)}
-                  aria-pressed={v === val}
-                  className={
-                    'px-2.5 py-1 text-[12px] font-semibold rounded-sm border ' +
-                    (v === val
-                      ? val
-                        ? 'bg-[#00928F] border-[#00928F] text-white'
-                        : 'bg-[#3D5265] border-[#3D5265] text-white'
-                      : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
-                  }
-                >
-                  {label}
-                </button>
-              ))}
+          <li key={opt.id} className="px-3 py-3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-[15px] sm:text-[14px] font-medium text-[#3D5265] leading-snug">{opt.label}</p>
+                {opt.description ? (
+                  <p className="text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-1 leading-snug">{opt.description}</p>
+                ) : null}
+              </div>
+              <div className="grid grid-cols-2 sm:flex gap-2 sm:gap-1.5">
+                {([['Approve', true], ['Reject', false]] as const).map(([label, val]) => (
+                  <button
+                    key={label}
+                    type="button"
+                    onClick={() => setVal(opt.id, v === val ? null : val)}
+                    aria-pressed={v === val}
+                    className={
+                      'min-h-[44px] px-3 py-2 text-[14px] sm:text-[12px] font-semibold rounded-sm border transition-colors ' +
+                      (v === val
+                        ? val
+                          ? 'bg-[#00928F] border-[#00928F] text-white'
+                          : 'bg-[#3D5265] border-[#3D5265] text-white'
+                        : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F] active:bg-[#F1F5F4]')
+                    }
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
             </div>
           </li>
         );
@@ -553,15 +603,73 @@ function RankingControls({
 
   return (
     <div className="space-y-3">
-      <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12px] text-[#3D5265]/80">
-        {isIRV
-          ? 'Drag to rank from your top choice (left, #1) to your last choice (right).'
-          : `Drag to order every option from best (left, #1) to worst (right, #${N}).`}
-        {' '}{requireAll ? 'All options must be ranked.' : 'Partial rankings allowed.'}
+      <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[13px] sm:text-[12px] text-[#3D5265]/85 leading-snug">
+        <span className="sm:hidden">
+          {isIRV
+            ? `Use the ▲ / ▼ buttons to rank from your top choice (#1) to your last choice. Lower number = higher preference.`
+            : `Use the ▲ / ▼ buttons to order every option from best (#1) to worst (#${N}).`}
+          {' '}{requireAll ? 'All options must be ranked.' : 'Partial rankings allowed.'}
+        </span>
+        <span className="hidden sm:inline">
+          {isIRV
+            ? 'Drag to rank from your top choice (left, #1) to your last choice (right). On touch, use ←/→.'
+            : `Drag to order every option from best (left, #1) to worst (right, #${N}). On touch, use ←/→.`}
+          {' '}{requireAll ? 'All options must be ranked.' : 'Partial rankings allowed.'}
+        </span>
       </div>
 
+      {/* Mobile: vertical list with up/down buttons. Desktop: drag-and-drop chips row. */}
       <ol
-        className="flex flex-wrap gap-2 p-2 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]"
+        className="sm:hidden flex flex-col gap-2 p-2 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]"
+      >
+        {order.map((id, i) => {
+          const opt = optionById[id];
+          if (!opt) return null;
+          return (
+            <li
+              key={id}
+              className="flex items-center gap-2 px-3 py-3 rounded-sm border border-[#E6E7E8] bg-white text-[14px] text-[#3D5265]"
+              aria-label={`${opt.label}, current rank ${i + 1} of ${N}`}
+            >
+              <span
+                className="inline-flex items-center justify-center w-9 h-9 rounded-sm bg-[#00928F]/10 text-[#00928F] font-mono text-[14px] font-semibold tabular-nums shrink-0"
+                aria-hidden
+              >
+                {i + 1}
+              </span>
+              <span className="flex-1 min-w-0 font-medium leading-snug">
+                <span className="block truncate" title={opt.label}>{opt.label}</span>
+                {opt.description ? (
+                  <span className="block text-[12px] text-[#3D5265]/65 mt-0.5 truncate">{opt.description}</span>
+                ) : null}
+              </span>
+              <span className="flex flex-col gap-1 shrink-0">
+                <button
+                  type="button"
+                  onClick={() => reorder(i, i - 1)}
+                  disabled={i === 0}
+                  aria-label={`Move ${opt.label} up`}
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-sm border border-[#E6E7E8] bg-white text-[#3D5265] disabled:opacity-30 active:bg-[#F1F5F4]"
+                >
+                  ▲
+                </button>
+                <button
+                  type="button"
+                  onClick={() => reorder(i, i + 1)}
+                  disabled={i === order.length - 1}
+                  aria-label={`Move ${opt.label} down`}
+                  className="w-9 h-9 inline-flex items-center justify-center rounded-sm border border-[#E6E7E8] bg-white text-[#3D5265] disabled:opacity-30 active:bg-[#F1F5F4]"
+                >
+                  ▼
+                </button>
+              </span>
+            </li>
+          );
+        })}
+      </ol>
+
+      <ol
+        className="hidden sm:flex flex-wrap gap-2 p-2 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]"
         // Allow drops onto the list as a whole — handlers on the cards
         // narrow the drop position. Without preventDefault on dragOver the
         // browser refuses to fire the drop event.
@@ -639,10 +747,6 @@ function RankingControls({
           );
         })}
       </ol>
-
-      <p className="text-[11.5px] text-[#3D5265]/60">
-        Touch / no-drag? Use the ←/→ arrows on each card to nudge it left or right.
-      </p>
     </div>
   );
 }
@@ -662,30 +766,32 @@ function StarControls({
       {vote.options.map((opt) => {
         const v = typeof responses[opt.id] === 'number' ? (responses[opt.id] as number) : 0;
         return (
-          <li key={opt.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 px-3 py-3">
-            <div className="flex-1 min-w-0">
-              <p className="text-[14px] font-medium text-[#3D5265]">{opt.label}</p>
-              {opt.description ? (
-                <p className="text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</p>
-              ) : null}
-            </div>
-            <div className="flex items-center gap-1">
-              {Array.from({ length: max }, (_, i) => i + 1).map((n) => (
-                <button
-                  key={n}
-                  type="button"
-                  onClick={() => setVal(opt.id, v === n ? null : n)}
-                  aria-label={`${n} of ${max}`}
-                  className={
-                    'w-7 h-7 rounded-sm border text-[13px] font-semibold ' +
-                    (n <= v
-                      ? 'bg-[#E87722] border-[#E87722] text-white'
-                      : 'bg-white border-[#E6E7E8] text-[#3D5265]')
-                  }
-                >
-                  {n <= v ? '★' : '☆'}
-                </button>
-              ))}
+          <li key={opt.id} className="px-3 py-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-[15px] sm:text-[14px] font-medium text-[#3D5265] leading-snug">{opt.label}</p>
+                {opt.description ? (
+                  <p className="text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-1 leading-snug">{opt.description}</p>
+                ) : null}
+              </div>
+              <div className="flex items-center gap-1.5 sm:gap-1">
+                {Array.from({ length: max }, (_, i) => i + 1).map((n) => (
+                  <button
+                    key={n}
+                    type="button"
+                    onClick={() => setVal(opt.id, v === n ? null : n)}
+                    aria-label={`${n} of ${max}`}
+                    className={
+                      'w-11 h-11 sm:w-7 sm:h-7 rounded-sm border text-[18px] sm:text-[13px] font-semibold flex items-center justify-center ' +
+                      (n <= v
+                        ? 'bg-[#E87722] border-[#E87722] text-white'
+                        : 'bg-white border-[#E6E7E8] text-[#3D5265] active:bg-[#F1F5F4]')
+                    }
+                  >
+                    {n <= v ? '★' : '☆'}
+                  </button>
+                ))}
+              </div>
             </div>
           </li>
         );
