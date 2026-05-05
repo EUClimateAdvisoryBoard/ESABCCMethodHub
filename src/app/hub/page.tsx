@@ -124,28 +124,28 @@ export default function HubPage() {
       </section>
 
       {/* App Cards */}
-      <section className="max-w-6xl mx-auto px-6 -mt-8 pb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 -mt-8 pb-12 sm:pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {apps.map(app => {
-            const cardClasses = "group relative bg-white rounded-2xl shadow-lg border border-grey-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1";
+            const cardClasses = "group relative bg-white dark:bg-[var(--mh-card)] rounded-2xl shadow-md sm:shadow-lg border border-grey-200 dark:border-[var(--mh-border)] overflow-hidden transition-all duration-300 sm:hover:shadow-xl sm:hover:-translate-y-1 active:bg-grey-50 dark:active:bg-[var(--mh-bg)]";
             const cardBody = (
               <>
                 {/* Color bar */}
                 <div className={`h-2 bg-gradient-to-r ${app.gradient}`} />
 
-                <div className="p-6">
+                <div className="p-5 sm:p-6">
                   {/* Icon + Status */}
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="p-3 rounded-xl text-white" style={{ backgroundColor: app.color }}>
+                  <div className="flex items-start justify-between mb-3 sm:mb-4 gap-2">
+                    <div className="p-2.5 sm:p-3 rounded-xl text-white shrink-0" style={{ backgroundColor: app.color }}>
                       {app.icon}
                     </div>
                     {app.status === 'active' ? (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 rounded-full px-2.5 py-1">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-500/15 rounded-full px-2.5 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-green-500" />
                         Active
                       </span>
                     ) : (
-                      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-700 bg-amber-50 rounded-full px-2.5 py-1">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/15 rounded-full px-2.5 py-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
                         Coming Soon
                       </span>
@@ -153,18 +153,18 @@ export default function HubPage() {
                   </div>
 
                   {/* Title + Description */}
-                  <h2 className="text-xl font-bold text-tertiary-dark mb-2 group-hover:text-secondary transition">
+                  <h2 className="text-lg sm:text-xl font-bold text-tertiary-dark dark:text-[var(--mh-fg)] mb-2 group-hover:text-secondary transition">
                     {app.title}
                   </h2>
-                  <p className="text-sm text-tertiary leading-relaxed mb-5">
+                  <p className="text-[13px] sm:text-sm text-tertiary dark:text-[var(--mh-muted)] leading-relaxed mb-4 sm:mb-5">
                     {app.description}
                   </p>
 
                   {/* Features */}
-                  <div className="space-y-2 mb-5">
+                  <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
                     {app.features.map(f => (
-                      <div key={f} className="flex items-center gap-2 text-sm text-tertiary-dark">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={app.color} strokeWidth="2.5">
+                      <div key={f} className="flex items-center gap-2 text-[13px] sm:text-sm text-tertiary-dark dark:text-[var(--mh-fg)]">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={app.color} strokeWidth="2.5" aria-hidden>
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                         {f}
@@ -173,10 +173,10 @@ export default function HubPage() {
                   </div>
 
                   {/* CTA */}
-                  <div className={`flex items-center gap-2 text-sm font-medium transition ${app.status === 'active' ? 'text-secondary group-hover:gap-3' : 'text-tertiary'}`}>
+                  <div className={`flex items-center gap-2 text-[14px] sm:text-sm font-medium transition min-h-[40px] ${app.status === 'active' ? 'text-secondary group-hover:gap-3' : 'text-tertiary dark:text-[var(--mh-muted)]'}`}>
                     {app.status === 'active' ? (app.cta ?? 'Open App') : 'Coming Soon'}
                     {app.status === 'active' && (
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                         <path d="M5 12h14M12 5l7 7-7 7" />
                       </svg>
                     )}

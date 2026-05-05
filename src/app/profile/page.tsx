@@ -677,7 +677,7 @@ export default function ProfilePage() {
                 value={nameValue}
                 onChange={e => setNameValue(e.target.value)}
                 placeholder="Your display name"
-                className="w-full border border-[#E6E7E8] rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
+                className="w-full border border-[#E6E7E8] dark:border-[var(--mh-border)] rounded-lg px-4 py-2.5 min-h-[44px] text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
               />
             </div>
             <div>
@@ -686,7 +686,7 @@ export default function ProfilePage() {
                 type="email"
                 value={user.email || ''}
                 disabled
-                className="w-full border border-[#E6E7E8] rounded-lg px-4 py-2.5 text-sm bg-[#F8F9FA] text-[#3D5265]/60 cursor-not-allowed"
+                className="w-full border border-[#E6E7E8] dark:border-[var(--mh-border)] rounded-lg px-4 py-2.5 min-h-[44px] text-sm bg-[#F8F9FA] dark:bg-[var(--mh-bg)] text-[#3D5265]/60 dark:text-[var(--mh-muted)] cursor-not-allowed"
               />
               <p className="text-xs text-[#3D5265]/50 mt-1">Email address cannot be changed.</p>
             </div>
@@ -703,7 +703,7 @@ export default function ProfilePage() {
               <button
                 type="submit"
                 disabled={nameSaving || nameValue === displayName}
-                className="px-6 py-2.5 bg-[#007B6C] text-white text-sm font-semibold rounded-lg hover:bg-[#006B5E] disabled:opacity-40 transition"
+                className="w-full sm:w-auto px-6 py-3 sm:py-2.5 min-h-[44px] sm:min-h-0 bg-[#007B6C] text-white text-sm font-semibold rounded-lg hover:bg-[#006B5E] active:bg-[#005A4F] disabled:opacity-40 transition"
               >
                 {nameSaving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -723,7 +723,7 @@ export default function ProfilePage() {
                 placeholder="At least 6 characters"
                 minLength={6}
                 required
-                className="w-full border border-[#E6E7E8] rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
+                className="w-full border border-[#E6E7E8] dark:border-[var(--mh-border)] rounded-lg px-4 py-2.5 min-h-[44px] text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
               />
             </div>
             <div>
@@ -735,7 +735,7 @@ export default function ProfilePage() {
                 placeholder="Repeat your new password"
                 minLength={6}
                 required
-                className="w-full border border-[#E6E7E8] rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
+                className="w-full border border-[#E6E7E8] dark:border-[var(--mh-border)] rounded-lg px-4 py-2.5 min-h-[44px] text-sm focus:ring-2 focus:ring-[#007B6C]/30 focus:border-[#007B6C] focus:outline-none transition"
               />
             </div>
 
