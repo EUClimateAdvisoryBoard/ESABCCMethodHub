@@ -103,13 +103,14 @@ export default function SiteHeader() {
     setMenuOpen(false);
   }, [pathname]);
 
-  // Lock body scroll while drawer is open
+  // Lock body scroll while drawer is open. Uses the scroll-locked utility
+  // class (globals.css) so scrollbar width is reserved and no layout shift
+  // is visible on desktop browsers.
   useEffect(() => {
     if (typeof document === 'undefined') return;
     if (menuOpen) {
-      const prev = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => { document.body.style.overflow = prev; };
+      document.body.classList.add('scroll-locked');
+      return () => { document.body.classList.remove('scroll-locked'); };
     }
   }, [menuOpen]);
 
@@ -125,16 +126,16 @@ export default function SiteHeader() {
     pathname === href || (href !== '/' && pathname?.startsWith(href + '/'));
 
   const header = (
-    <header className="sticky top-0 z-40 border-b border-[#E6E7E8] bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 pt-safe">
+    <header className="sticky top-0 z-40 border-b border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white/95 dark:bg-[var(--mh-card)]/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 supports-[backdrop-filter]:dark:bg-[var(--mh-card)]/80 pt-[env(safe-area-inset-top)]">
       <div className="max-w-[1280px] mx-auto px-3 sm:px-6 h-[60px] sm:h-[72px] flex items-center gap-3 sm:gap-5">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group min-w-0">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 shrink-0 group min-w-0" aria-label="ESABCC MethodHub home">
           <MethodHubLogo className="w-[34px] h-[34px] sm:w-[42px] sm:h-[42px] shrink-0" />
-          <span className="text-[11px] sm:text-[13px] leading-[1.15] font-bold text-[#3D5265] whitespace-nowrap">
+          <span className="text-[11px] sm:text-[13px] leading-[1.15] font-bold text-[#3D5265] dark:text-[var(--mh-fg)] whitespace-nowrap">
             <span className="hidden sm:inline">ESABCC Secretariat</span>
             <span className="sm:hidden">ESABCC</span>
             <br />
-            <span className="text-[#00928F] group-hover:text-[#007a77] transition-colors">
+            <span className="text-[#00928F] dark:text-[#74CBC8] group-hover:text-[#007a77] transition-colors">
               MethodHub
             </span>
           </span>
@@ -209,13 +210,13 @@ export default function SiteHeader() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden ml-auto -mr-1 p-3 rounded-lg active:bg-grey-100 transition touch-target"
+          className="md:hidden ml-auto -mr-1 p-3 rounded-lg active:bg-grey-100 dark:active:bg-[var(--mh-border)] transition touch-target text-[#3D5265] dark:text-[var(--mh-fg)]"
           onClick={() => setMenuOpen(true)}
           aria-label="Open menu"
           aria-expanded={menuOpen}
           aria-controls="method-hub-drawer"
         >
-          <svg width="24" height="24" fill="none" stroke="#3D5265" strokeWidth="2" strokeLinecap="round">
+          <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
             <path d="M4 7h16M4 12h16M4 17h16" />
           </svg>
         </button>
@@ -233,23 +234,23 @@ export default function SiteHeader() {
         className="drawer-backdrop absolute inset-0 bg-black/40"
         onClick={() => setMenuOpen(false)}
       />
-      <div className="drawer-panel absolute top-0 right-0 bottom-0 w-[86%] max-w-[360px] bg-white shadow-2xl flex flex-col pt-safe pb-safe">
+      <div className="drawer-panel absolute top-0 right-0 bottom-0 w-[86%] max-w-[360px] bg-white dark:bg-[var(--mh-card)] text-[#3D5265] dark:text-[var(--mh-fg)] shadow-2xl flex flex-col pt-[env(safe-area-inset-top)] pb-safe">
             {/* Drawer header */}
-            <div className="flex items-center justify-between px-5 h-[60px] border-b border-grey-200 shrink-0">
+            <div className="flex items-center justify-between px-5 h-[60px] border-b border-grey-200 dark:border-[var(--mh-border)] shrink-0">
               <div className="flex items-center gap-2">
                 <MethodHubLogo className="w-[30px] h-[30px]" />
-                <span className="text-[12px] font-bold text-[#3D5265] leading-tight">
+                <span className="text-[12px] font-bold leading-tight">
                   ESABCC
                   <br />
-                  <span className="text-[#00928F]">MethodHub</span>
+                  <span className="text-[#00928F] dark:text-[#74CBC8]">MethodHub</span>
                 </span>
               </div>
               <button
                 onClick={() => setMenuOpen(false)}
-                className="p-2.5 -mr-2 rounded-lg active:bg-grey-100 touch-target"
+                className="p-2.5 -mr-2 rounded-lg active:bg-grey-100 dark:active:bg-[var(--mh-border)] touch-target text-[#3D5265] dark:text-[var(--mh-fg)]"
                 aria-label="Close menu"
               >
-                <svg width="22" height="22" fill="none" stroke="#3D5265" strokeWidth="2" strokeLinecap="round">
+                <svg width="22" height="22" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                   <path d="M6 6l12 12M6 18L18 6" />
                 </svg>
               </button>
@@ -272,10 +273,11 @@ export default function SiteHeader() {
                           key={m.href}
                           href={m.href}
                           onClick={() => setMenuOpen(false)}
-                          className={`flex items-center justify-between px-5 py-3.5 text-[15px] ${
+                          aria-current={active ? 'page' : undefined}
+                          className={`flex items-center justify-between px-5 py-4 text-[15px] min-h-[52px] ${
                             active
-                              ? 'text-primary font-semibold bg-primary/5 border-l-[3px] border-primary'
-                              : 'text-[#3D5265] active:bg-grey-100 border-l-[3px] border-transparent'
+                              ? 'text-primary dark:text-secondary-lighter font-semibold bg-primary/5 dark:bg-secondary/15 border-l-[3px] border-primary dark:border-secondary'
+                              : 'text-[#3D5265] dark:text-[var(--mh-fg)] active:bg-grey-100 dark:active:bg-[var(--mh-border)] border-l-[3px] border-transparent'
                           }`}
                         >
                           <span>{m.label}</span>
@@ -291,32 +293,32 @@ export default function SiteHeader() {
             </div>
 
             {/* Drawer footer with auth */}
-            <div className="border-t border-grey-200 px-5 py-4 shrink-0">
+            <div className="border-t border-grey-200 dark:border-[var(--mh-border)] px-5 py-4 shrink-0">
               {user ? (
                 <div className="space-y-3">
                   <Link
                     href="/profile"
                     onClick={() => setMenuOpen(false)}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-[#F8F9FA] active:bg-grey-100 transition"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-[#F8F9FA] dark:bg-[var(--mh-bg)] active:bg-grey-100 dark:active:bg-[var(--mh-border)] transition min-h-[60px]"
                   >
-                    <div className="w-10 h-10 rounded-full bg-[#007B6C]/10 flex items-center justify-center shrink-0">
-                      <span className="text-sm font-bold text-[#007B6C]">
+                    <div className="w-10 h-10 rounded-full bg-[#007B6C]/10 dark:bg-secondary/20 flex items-center justify-center shrink-0">
+                      <span className="text-sm font-bold text-[#007B6C] dark:text-secondary-lighter">
                         {(displayName || user.email || '?')[0].toUpperCase()}
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <p className="text-[13px] font-semibold text-[#3D5265] truncate">
+                      <p className="text-[13px] font-semibold text-[#3D5265] dark:text-[var(--mh-fg)] truncate">
                         {displayName || 'Anonymous'}
                       </p>
-                      <p className="text-[11px] text-[#3D5265]/50 truncate">{user.email}</p>
+                      <p className="text-[11px] text-[#3D5265]/50 dark:text-[var(--mh-muted)] truncate">{user.email}</p>
                     </div>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3D5265" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="opacity-40">
                       <path d="M9 18l6-6-6-6" />
                     </svg>
                   </Link>
                   <button
                     onClick={() => { signOut(); setMenuOpen(false); }}
-                    className="w-full py-2.5 text-[12px] font-medium text-[#3D5265] border border-grey-300 rounded-lg active:bg-grey-100"
+                    className="w-full min-h-[44px] py-2.5 text-[13px] font-medium text-[#3D5265] dark:text-[var(--mh-fg)] border border-grey-300 dark:border-[var(--mh-border)] rounded-lg active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
                   >
                     Sign out
                   </button>
@@ -324,7 +326,7 @@ export default function SiteHeader() {
               ) : (
                 <button
                   onClick={() => { requireAuth('Sign in to access all features.'); setMenuOpen(false); }}
-                  className="w-full py-3 text-[14px] font-semibold text-white bg-primary rounded-lg active:bg-primary-dark"
+                  className="w-full min-h-[48px] py-3 text-[14px] font-semibold text-white bg-primary rounded-lg active:bg-primary-dark"
                 >
                   Sign in
                 </button>

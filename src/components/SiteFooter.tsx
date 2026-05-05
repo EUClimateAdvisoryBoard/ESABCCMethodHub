@@ -52,13 +52,16 @@ function FooterSection({ title, items }: FooterSectionProps) {
         </svg>
       </button>
       <ul
-        className={`space-y-2 sm:space-y-1 text-white/60 text-[13px] sm:text-[12px] ${
+        className={`space-y-1 sm:space-y-1 text-white/60 text-[13px] sm:text-[12px] ${
           open ? 'block pb-4' : 'hidden'
         } sm:block sm:pb-0`}
       >
         {items.map(i => (
           <li key={i.href}>
-            <Link href={i.href} className="hover:text-white transition inline-block py-2.5 sm:py-0 min-h-[44px] flex items-center">
+            <Link
+              href={i.href}
+              className="hover:text-white transition flex items-center min-h-[44px] sm:min-h-0 py-2 sm:py-0.5"
+            >
               {i.label}
             </Link>
           </li>
@@ -87,13 +90,13 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-4 text-[11px] text-white/50 flex flex-col sm:flex-row gap-2 sm:gap-0 sm:items-center sm:justify-between">
+        <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-4 text-[11px] text-white/50 flex flex-col sm:flex-row gap-3 sm:gap-0 sm:items-center sm:justify-between">
           <span>ESABCC Secretariat MethodHub · internal use</span>
-          <nav className="flex flex-wrap gap-x-4 gap-y-1 text-white/60">
-            <Link href="/legal/privacy" className="hover:text-white transition">Privacy</Link>
-            <Link href="/legal/cookies" className="hover:text-white transition">Cookies</Link>
-            <Link href="/legal/terms" className="hover:text-white transition">Terms</Link>
-            <Link href="/profile" className="hover:text-white transition">Your data</Link>
+          <nav className="flex flex-wrap gap-x-4 gap-y-1 text-white/60" aria-label="Legal">
+            <Link href="/legal/privacy" className="hover:text-white transition py-1.5 inline-flex items-center min-h-[36px]">Privacy</Link>
+            <Link href="/legal/cookies" className="hover:text-white transition py-1.5 inline-flex items-center min-h-[36px]">Cookies</Link>
+            <Link href="/legal/terms" className="hover:text-white transition py-1.5 inline-flex items-center min-h-[36px]">Terms</Link>
+            <Link href="/profile" className="hover:text-white transition py-1.5 inline-flex items-center min-h-[36px]">Your data</Link>
           </nav>
         </div>
       </div>
