@@ -129,7 +129,7 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
     const ok = window.confirm(
       `Reset "${bundle.vote.title}"?\n\n` +
         '• Every submitted ballot will be permanently deleted.\n' +
-        '• Every voting link will be reset to unused, so the same links can be reused.\n' +
+        '• Every voting link will be deleted — you will need to generate new links.\n' +
         '• Browsers that already voted will be allowed to vote again.\n\n' +
         'This cannot be undone.',
     );
@@ -144,10 +144,11 @@ export default function VoteAdmin({ initial }: { initial: VoteBundle }) {
         setError(json.error ?? 'Could not reset the vote.');
         return;
       }
-      // Reflect the reset locally: drop ballots, clear token usage, bump epoch.
+      // Reflect the reset locally: drop ballots, drop every link, bump epoch.
       setBundle((b) => ({
+        ...b,
         vote: json.vote,
-        tokens: b.tokens.map((t) => ({ ...t, usedAt: null, useCount: 0 })),
+        tokens: [],
         ballots: [],
       }));
       router.refresh();

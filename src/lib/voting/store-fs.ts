@@ -120,15 +120,15 @@ export async function deleteVote(voteId: string): Promise<void> {
 }
 
 /**
- * Drop every ballot for the vote, reset every token to its unused state,
- * and bump the reset epoch so participants' localStorage flags are
+ * Drop every ballot for the vote, delete every issued voting link, and
+ * bump the reset epoch so participants' localStorage flags are
  * invalidated. Idempotent.
  */
 export async function resetVote(voteId: string): Promise<VoteRecord> {
   const bundle = await readBundle(voteId);
   if (!bundle) throw new Error(`Vote ${voteId} not found`);
   bundle.ballots = [];
-  bundle.tokens = bundle.tokens.map((t) => ({ ...t, usedAt: null, useCount: 0 }));
+  bundle.tokens = [];
   bundle.vote = { ...bundle.vote, resetEpoch: (bundle.vote.resetEpoch ?? 0) + 1 };
   await writeBundle(bundle);
   return bundle.vote;

@@ -196,11 +196,8 @@ export async function resetVote(voteId: string): Promise<VoteRecord> {
   const { error: delErr } = await sb.from('ballots').delete().eq('vote_id', voteId);
   if (delErr) throw delErr;
 
-  // 2. Reset every token for this vote so the same links can be reused.
-  const { error: tokErr } = await sb
-    .from('vote_tokens')
-    .update({ used_at: null, use_count: 0 })
-    .eq('vote_id', voteId);
+  // 2. Delete every issued link for this vote — admins regenerate from scratch.
+  const { error: tokErr } = await sb.from('vote_tokens').delete().eq('vote_id', voteId);
   if (tokErr) throw tokErr;
 
   // 3. Bump the reset epoch atomically. We read-then-write because
