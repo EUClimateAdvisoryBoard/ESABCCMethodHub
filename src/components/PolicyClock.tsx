@@ -292,7 +292,7 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
               </span>
               <span className="text-[10px] text-tertiary">— next 12 months</span>
             </div>
-            <ul className="flex flex-col gap-1 max-h-48 overflow-y-auto">
+            <ul className="flex flex-col gap-1 max-h-[30vh] sm:max-h-48 overflow-y-auto">
               {upcomingReviews.map(ev => {
                 const policy = ev.policyId ? POLICY_CORPUS.find(p => p.id === ev.policyId) : null;
                 return (

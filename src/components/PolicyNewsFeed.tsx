@@ -142,7 +142,7 @@ export default function PolicyNewsFeed({ policyId, limit }: Props) {
                 <Link
                   key={pid}
                   href={`/policy-navigator/policy/?id=${pid}`}
-                  className="text-[10px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-medium hover:bg-primary/20 transition"
+                  className="text-[11px] sm:text-[10px] px-2 py-1 sm:py-0.5 min-h-[28px] sm:min-h-0 inline-flex items-center rounded bg-primary/10 dark:bg-primary/20 text-primary dark:text-secondary-lighter font-medium hover:bg-primary/20 active:bg-primary/25 transition"
                 >
                   {POLICY_LABELS[pid] || pid}
                 </Link>

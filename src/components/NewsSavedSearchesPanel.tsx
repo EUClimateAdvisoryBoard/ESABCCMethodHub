@@ -32,6 +32,9 @@ export default function NewsSavedSearchesPanel({ articles, currentQuery = '', on
   const [notify, setNotify] = useState(false);
   const [busy, setBusy] = useState(false);
   const [createError, setCreateError] = useState<string | null>(null);
+  // Mobile-only collapse — defaults to open so the panel reveals saved
+  // searches at first paint. Desktop ignores the toggle.
+  const [mobileExpanded, setMobileExpanded] = useState(true);
 
   // Compute fresh-vs-total match counts for every saved search up front.
   const enriched = useMemo(
@@ -81,15 +84,44 @@ export default function NewsSavedSearchesPanel({ articles, currentQuery = '', on
   };
 
   return (
-    <div className="border border-grey-200 rounded p-3 bg-white">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-2">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-tertiary">
+    <div className="border border-grey-200 dark:border-[var(--mh-border)] rounded-md bg-white dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)]">
+      <button
+        type="button"
+        onClick={() => setMobileExpanded(o => !o)}
+        aria-expanded={mobileExpanded}
+        aria-controls="news-saved-searches-body"
+        className="md:hidden w-full flex items-center justify-between px-3 py-3 min-h-[48px] select-none active:bg-grey-50 dark:active:bg-[var(--mh-border)]"
+      >
+        <span className="flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-tertiary dark:text-[var(--mh-muted)]" aria-hidden>
             <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
           </svg>
-          <span className="text-sm font-medium text-tertiary-dark">Saved searches</span>
+          <span className="text-[14px] font-medium">Saved searches</span>
           {searches.length > 0 && (
-            <span className="px-1.5 py-0.5 rounded bg-grey-100 text-[10px] tabular-nums text-tertiary">
+            <span className="px-1.5 py-0.5 rounded bg-grey-100 dark:bg-[var(--mh-bg)] text-[11px] tabular-nums text-tertiary dark:text-[var(--mh-muted)]">
+              {searches.length}
+            </span>
+          )}
+        </span>
+        <svg
+          className={`transition-transform ${mobileExpanded ? 'rotate-180' : ''}`}
+          width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+      <div
+        id="news-saved-searches-body"
+        className={`p-3 md:p-3 ${mobileExpanded ? '' : 'hidden'} md:!block`}
+      >
+      <div className="hidden md:flex items-center justify-between mb-2">
+        <div className="flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-tertiary dark:text-[var(--mh-muted)]" aria-hidden>
+            <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <span className="text-sm font-medium text-tertiary-dark dark:text-[var(--mh-fg)]">Saved searches</span>
+          {searches.length > 0 && (
+            <span className="px-1.5 py-0.5 rounded bg-grey-100 dark:bg-[var(--mh-bg)] text-[10px] tabular-nums text-tertiary dark:text-[var(--mh-muted)]">
               {searches.length}
             </span>
           )}
@@ -100,7 +132,18 @@ export default function NewsSavedSearchesPanel({ articles, currentQuery = '', on
             setQuery(currentQuery);
             setCreateError(null);
           }}
-          className="text-[11px] px-2 py-0.5 rounded border border-primary text-primary hover:bg-primary hover:text-white">
+          className="text-[11px] px-2 py-1 min-h-[32px] rounded border border-primary text-primary hover:bg-primary hover:text-white">
+          {creatingOpen ? 'Cancel' : '+ Save current search'}
+        </button>
+      </div>
+      <div className="md:hidden mb-2">
+        <button
+          onClick={() => {
+            setCreatingOpen(o => !o);
+            setQuery(currentQuery);
+            setCreateError(null);
+          }}
+          className="w-full text-[13px] px-3 py-2 min-h-[40px] rounded border border-primary text-primary hover:bg-primary hover:text-white active:bg-primary-dark">
           {creatingOpen ? 'Cancel' : '+ Save current search'}
         </button>
       </div>
@@ -175,17 +218,19 @@ export default function NewsSavedSearchesPanel({ articles, currentQuery = '', on
                 )}
               </div>
               {search.query && (
-                <div className="text-[10px] text-tertiary truncate">"{search.query}"</div>
+                <div className="text-[10px] text-tertiary dark:text-[var(--mh-muted)] truncate">&ldquo;{search.query}&rdquo;</div>
               )}
             </button>
             <button
               onClick={() => handleDelete(search)}
               title="Delete saved search"
-              className="px-1.5 py-0.5 text-[10px] rounded border border-grey-300 hover:border-red-500 hover:text-red-600">
+              aria-label={`Delete saved search ${search.name}`}
+              className="px-2 py-1 min-h-[36px] text-[11px] sm:text-[10px] rounded border border-grey-300 dark:border-[var(--mh-border)] hover:border-red-500 hover:text-red-600 active:bg-red-50 dark:active:bg-[var(--mh-border)]">
               Delete
             </button>
           </div>
         ))}
+      </div>
       </div>
     </div>
   );

@@ -107,14 +107,15 @@ export default function DailyBriefingPage() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] print:bg-white">
-      {/* ── Compact top bar ─────────────────────────────────────── */}
-      <header className="bg-[#004B7F] text-white print:hidden">
+      {/* ── Compact top bar — sticky on phones so the back-link is always
+          reachable without scrolling to the top of a long briefing. */}
+      <header className="sticky top-0 z-30 bg-[#004B7F] text-white print:hidden pt-[env(safe-area-inset-top)] shadow-sm">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between">
           <Link
             href="/news-feed"
-            className="inline-flex items-center gap-1.5 text-xs text-white/80 hover:text-white transition"
+            className="inline-flex items-center gap-1.5 text-[13px] sm:text-xs text-white/85 hover:text-white active:text-white transition min-h-[40px] px-1 -mx-1"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M15 19l-7-7 7-7" />
             </svg>
             News Feed
