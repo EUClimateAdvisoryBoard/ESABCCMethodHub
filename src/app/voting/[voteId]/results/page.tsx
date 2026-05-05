@@ -116,7 +116,11 @@ export default async function ResultsPage({ params }: { params: { voteId: string
         ) : null}
 
         {analysis.kind === 'priority_ranking' ? (
-          <PriorityTable analysis={analysis} ballots={submitted} />
+          <PriorityTable
+            analysis={analysis}
+            ballots={submitted}
+            scoreLabels={bundle.vote.config.scoreLabels ?? {}}
+          />
         ) : analysis.kind === 'star' ? (
           <StarTable analysis={analysis} />
         ) : analysis.kind === 'average_ranking' ? (
@@ -141,7 +145,15 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ballots: number }) {
+function PriorityTable({
+  analysis,
+  ballots,
+  scoreLabels,
+}: {
+  analysis: PriorityAnalysis;
+  ballots: number;
+  scoreLabels: Record<string, string>;
+}) {
   const scoreKeys = Object.keys(analysis.rows[0]?.scoreCounts ?? {});
   // Domain for the inline mean-bar: scores observed in this analysis. We use
   // the min/max numeric scoreKey rather than a hard-coded 1..3 so the bar
@@ -256,7 +268,68 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
           info={analysis.shortlistInfo}
         />
       ) : null}
+      <MethodologyNote scoreKeys={scoreKeys} scoreLabels={scoreLabels} rows={analysis.rows} />
     </section>
+  );
+}
+
+/**
+ * Short footer that pins down the scoring convention used in the table:
+ * lists each allowed score together with its label (e.g. "1 = high"), and
+ * spells out the "lower mean = higher priority" rule. The score labels live
+ * on the parent vote (vote.config.scoreLabels) but they are not echoed by
+ * the analysis rows — we surface them here from the raw config instead.
+ */
+function MethodologyNote({
+  scoreKeys,
+  rows,
+  scoreLabels,
+}: {
+  scoreKeys: string[];
+  rows: PriorityAnalysis['rows'];
+  scoreLabels?: Record<string, string>;
+}) {
+  // Re-derive the scoring labels from whatever the page already loaded.
+  // Empty when the vote was created without scoreLabels — in that case we
+  // omit the labels and only describe the priority direction.
+  const labels = scoreLabels ?? {};
+  const items = scoreKeys
+    .map((k) => ({ score: k, label: labels[k] }))
+    .filter((it) => Number.isFinite(Number(it.score)));
+  // Suppress the per-row stats reference if the table is empty.
+  if (rows.length === 0) return null;
+  return (
+    <div className="px-4 py-3 border-t border-[#E6E7E8] text-[12px] text-[#3D5265]/75 leading-relaxed space-y-2">
+      <p>
+        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+          Methodology
+        </span>
+        Each ballot assigns one of the allowed integer scores to every option.
+        We compute the mean, median and standard deviation of those scores
+        per option, sort ascending, and call the lowest-mean rows the
+        highest-priority. The shortlist boundary (orange separator) follows
+        the policy configured for this vote.
+      </p>
+      <p>
+        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+          Scores
+        </span>
+        {items.length > 0 ? (
+          <>
+            {items.map((it, i) => (
+              <span key={it.score}>
+                {i > 0 ? ', ' : ''}
+                <span className="font-mono">{it.score}</span>
+                {it.label ? <> = {it.label}</> : null}
+              </span>
+            ))}
+            {'. '}
+          </>
+        ) : null}
+        Lower numeric scores represent higher priority — so a smaller mean
+        means a stronger collective preference for that option.
+      </p>
+    </div>
   );
 }
 

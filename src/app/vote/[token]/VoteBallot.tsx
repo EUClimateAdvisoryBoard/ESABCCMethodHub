@@ -286,6 +286,7 @@ function PriorityRankingControls({
               <div className="flex items-center gap-1.5 flex-wrap">
                 {scores.map((s) => {
                   const isOn = selected === s;
+                  const label = labels[String(s)];
                   return (
                     <button
                       key={s}
@@ -312,14 +313,24 @@ function PriorityRankingControls({
                         setVal(opt.id, s);
                       }}
                       aria-pressed={isOn}
+                      title={label ? `${label} (score ${s})` : `score ${s}`}
                       className={
-                        'min-w-[40px] px-2 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors ' +
+                        'min-w-[44px] px-2.5 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors capitalize ' +
                         (isOn
                           ? 'bg-[#00928F] border-[#00928F] text-white'
                           : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
                       }
                     >
-                      {s}
+                      {label ? (
+                        <>
+                          {label}
+                          <span className={'ml-1 font-mono normal-case ' + (isOn ? 'opacity-80' : 'text-[#8A95A3]')}>
+                            ·{s}
+                          </span>
+                        </>
+                      ) : (
+                        s
+                      )}
                     </button>
                   );
                 })}

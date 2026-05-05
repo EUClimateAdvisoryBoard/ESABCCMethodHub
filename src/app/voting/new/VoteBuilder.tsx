@@ -59,7 +59,7 @@ const initial: Draft = {
   options: [],
   scoresText: '1,2,3',
   capsText: '1:3,2:3',
-  scoreLabelsText: '1:highest priority,2:medium priority,3:lowest priority',
+  scoreLabelsText: '1:high,2:medium,3:low',
   requireAllScored: true,
   shortlistMode: 'natural_break',
   shortlistMin: 4,
