@@ -38,6 +38,12 @@ export interface ClimateCouncil {
   notes: string;
   lat: number;
   lon: number;
+  /**
+   * Free-form key/value pairs added by curators via the "More fields" button
+   * in the edit drawer. The union of all keys used across the catalogue
+   * defines the set of optional fields offered to every body.
+   */
+  customFields?: Record<string, string>;
 }
 
 export const COUNCIL_STATUS_LABELS: Record<CouncilStatus, string> = {
