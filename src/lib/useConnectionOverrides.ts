@@ -260,6 +260,65 @@ async function syncRequest(
   }
 }
 
+/**
+ * Upload local-only changes to the server before a server snapshot is applied.
+ * Only entries absent from `serverPayload` are uploaded — existing server
+ * entries win on conflict so the server stays authoritative.
+ * This recovers changes made while a session was expired or unavailable.
+ */
+async function flushLocalOnlyChanges(
+  localOverrides: OverrideMap,
+  localVerifications: VerificationMap,
+  localAdded: PolicyConnection[],
+  serverPayload: ServerStatePayload,
+): Promise<void> {
+  const serverOverrideIds = new Set(serverPayload.overrides.map(r => String(r.connection_id)));
+  const serverVerificationIds = new Set(serverPayload.verifications.map(r => String(r.connection_id)));
+  const serverAdditionIds = new Set(serverPayload.additions.map(r => r.id));
+
+  const pending: Promise<unknown>[] = [];
+
+  for (const [idStr, patch] of Object.entries(localOverrides)) {
+    if (!serverOverrideIds.has(idStr)) {
+      pending.push(syncRequest('POST', { op: 'saveOverride', id: Number(idStr), patch }));
+    }
+  }
+
+  for (const [idStr, record] of Object.entries(localVerifications)) {
+    if (!serverVerificationIds.has(idStr)) {
+      pending.push(
+        syncRequest('POST', {
+          op: 'setVerification',
+          id: Number(idStr),
+          status: record.status,
+          reviewerName: record.reviewerName,
+          reviewerNote: record.reviewerNote,
+        }),
+      );
+    }
+  }
+
+  for (const conn of localAdded) {
+    if (!serverAdditionIds.has(conn.id)) {
+      pending.push(
+        syncRequest('POST', {
+          op: 'addConnection',
+          draft: {
+            source_policy_id: conn.source_policy_id,
+            target_policy_id: conn.target_policy_id,
+            connection_type: conn.connection_type,
+            description: conn.description,
+            articles_source: conn.articles_source ?? null,
+            articles_target: conn.articles_target ?? null,
+          },
+        }),
+      );
+    }
+  }
+
+  if (pending.length > 0) await Promise.all(pending);
+}
+
 export function useConnectionOverrides() {
   const [overrides, setOverrides] = useState<OverrideMap>(() => readOverrides());
   const [added, setAdded] = useState<PolicyConnection[]>(() => readAdded());
@@ -283,8 +342,27 @@ export function useConnectionOverrides() {
   useEffect(() => {
     let cancelled = false;
     const refresh = async () => {
-      const payload = await syncRequest('GET');
-      if (!cancelled && payload) applyServerPayload(payload);
+      const serverPayload = await syncRequest('GET');
+      if (cancelled || !serverPayload) return;
+
+      // Before overwriting local state, upload any local-only changes that
+      // never reached the server (e.g. edits made while the session was expired).
+      const localOverrides = readOverrides();
+      const localVerifications = readVerifications();
+      const localAdded = readAdded();
+      const hasPendingLocal =
+        Object.keys(localOverrides).some(id => !serverPayload.overrides.find(r => String(r.connection_id) === id)) ||
+        Object.keys(localVerifications).some(id => !serverPayload.verifications.find(r => String(r.connection_id) === id)) ||
+        localAdded.some(c => !serverPayload.additions.find(r => r.id === c.id));
+
+      if (hasPendingLocal) {
+        await flushLocalOnlyChanges(localOverrides, localVerifications, localAdded, serverPayload);
+        if (cancelled) return;
+        const flushedPayload = await syncRequest('GET');
+        if (!cancelled && flushedPayload) applyServerPayload(flushedPayload);
+      } else {
+        applyServerPayload(serverPayload);
+      }
     };
     refresh();
 
