@@ -125,8 +125,17 @@ export function PreferencesProvider({ children }: { children: ReactNode }) {
         if (!res.ok) return;
         const data = await res.json();
         if (cancelled) return;
-        setPrefs(p => ({ ...p, ...data }));
-        writeLocal(data);
+        setPrefs(p => {
+          const merged = {
+            ...p,
+            ...data,
+            // Union local + remote seen flags so skipping a tour while
+            // offline (or before sign-in) is never reset by the Supabase load.
+            onboarding_seen: { ...p.onboarding_seen, ...(data.onboarding_seen ?? {}) },
+          };
+          writeLocal(merged);
+          return merged;
+        });
       } finally {
         if (!cancelled) setLoading(false);
       }
