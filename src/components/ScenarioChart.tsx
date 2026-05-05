@@ -536,8 +536,19 @@ export default function ScenarioChart({ series, unit, variable, region, compact,
               />
               {callout && (
                 <div
-                  className="absolute top-2 px-2 py-1 rounded-md bg-[var(--mh-card)] border border-[var(--mh-status-primary)] shadow-md pointer-events-auto mh-tnum"
-                  style={{ left: Math.min(brush.x1 + 8, (overlayRef.current?.clientWidth ?? 9999) - 220), fontSize: 'var(--mh-text-xs)' }}
+                  className="absolute top-2 px-2 py-1 rounded-md bg-[var(--mh-card)] border border-[var(--mh-status-primary)] shadow-md pointer-events-auto mh-tnum max-w-[min(220px,calc(100%-1rem))]"
+                  style={{
+                    // Keep the callout fully on-screen on narrow viewports.
+                    // Caps `left` so the callout's right edge never exceeds
+                    // the chart container; falls back to 8px if the brush
+                    // starts near the right edge.
+                    left: (() => {
+                      const cw = overlayRef.current?.clientWidth ?? 9999;
+                      const calloutWidth = Math.min(220, cw - 16);
+                      return Math.max(8, Math.min(brush.x1 + 8, cw - calloutWidth - 8));
+                    })(),
+                    fontSize: 'var(--mh-text-xs)',
+                  }}
                 >
                   <div className="font-semibold text-[var(--mh-status-primary)]">
                     {brush.y1} → {brush.y2}

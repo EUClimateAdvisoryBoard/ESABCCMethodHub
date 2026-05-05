@@ -90,18 +90,21 @@ export default function CommentSection({ policyId, refreshKey }: Props) {
             {error}
           </div>
         )}
-        <div className="border border-grey-200 rounded-lg overflow-hidden">
+        <div className="border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] rounded-lg overflow-hidden">
+          <label className="sr-only" htmlFor="cmt-input">{replyTo ? 'Write a reply' : 'Add a comment'}</label>
           <textarea
+            id="cmt-input"
             value={newText}
             onChange={e => setNewText(e.target.value)}
-            placeholder={replyTo ? 'Write a reply...' : 'Add a comment...'}
-            className="w-full px-4 py-3 text-sm resize-none h-20 focus:outline-none focus:ring-2 focus:ring-secondary/20"
+            placeholder={replyTo ? 'Write a reply…' : 'Add a comment…'}
+            className="w-full px-4 py-3 text-sm bg-transparent min-h-[88px] resize-y focus:outline-none focus:ring-2 focus:ring-secondary/30"
+            style={{ maxHeight: '40dvh' }}
           />
-          <div className="flex items-center justify-between px-4 py-2 bg-grey-50 border-t border-grey-100">
-            <div className="flex items-center gap-2">
-              <span className="text-xs text-grey-400">Markdown supported</span>
+          <div className="flex flex-col-reverse sm:flex-row sm:items-center sm:justify-between px-3 sm:px-4 py-2 gap-2 bg-grey-50 dark:bg-[var(--mh-bg)] border-t border-grey-100 dark:border-[var(--mh-border)]">
+            <div className="flex items-center gap-3">
+              <span className="text-[11px] text-grey-400 dark:text-[var(--mh-muted)]">Markdown supported</span>
               {replyTo && (
-                <button onClick={() => setReplyTo(null)} className="text-xs text-secondary hover:underline">
+                <button onClick={() => setReplyTo(null)} className="text-[12px] text-secondary hover:underline min-h-[36px]">
                   Cancel reply
                 </button>
               )}
@@ -109,9 +112,9 @@ export default function CommentSection({ policyId, refreshKey }: Props) {
             <button
               onClick={() => handleSubmit(replyTo || undefined)}
               disabled={submitting || !newText.trim()}
-              className="px-4 py-1.5 bg-secondary text-white text-xs font-medium rounded hover:bg-secondary-dark disabled:opacity-40 transition"
+              className="w-full sm:w-auto px-4 py-2 sm:py-1.5 min-h-[44px] sm:min-h-0 bg-secondary text-white text-[13px] sm:text-xs font-medium rounded hover:bg-secondary-dark active:bg-primary disabled:opacity-40 transition"
             >
-              {submitting ? 'Posting...' : replyTo ? 'Post Reply' : 'Post Comment'}
+              {submitting ? 'Posting…' : replyTo ? 'Post reply' : 'Post comment'}
             </button>
           </div>
         </div>
@@ -156,35 +159,44 @@ function CommentCard({
   const timeAgo = getTimeAgo(comment.created_at);
 
   return (
-    <div className={`${depth > 0 ? 'ml-6 border-l-2 border-grey-100 pl-4' : ''}`}>
-      <div className="bg-white rounded border border-grey-200 p-3">
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center">
-            <span className="text-xs font-bold text-secondary">
+    <div className={`${depth > 0 ? 'ml-3 sm:ml-6 border-l-2 border-grey-100 dark:border-[var(--mh-border)] pl-3 sm:pl-4' : ''}`}>
+      <div className="bg-white dark:bg-[var(--mh-card)] rounded border border-grey-200 dark:border-[var(--mh-border)] p-3">
+        <div className="flex items-center gap-2 mb-2 flex-wrap">
+          <div className="w-8 h-8 sm:w-7 sm:h-7 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+            <span className="text-[13px] sm:text-xs font-bold text-secondary">
               {(comment.user_display_name || '?')[0].toUpperCase()}
             </span>
           </div>
-          <span className="text-xs font-medium text-tertiary-dark">
+          <span className="text-[13px] sm:text-xs font-medium text-tertiary-dark dark:text-[var(--mh-fg)] truncate">
             {comment.user_display_name || 'Anonymous'}
           </span>
-          <span className="text-xs text-grey-400">{timeAgo}</span>
-          <div className="ml-auto flex items-center gap-2">
-            <button onClick={() => onReply(comment.id)}
-              className="text-xs text-tertiary hover:text-secondary">Reply</button>
+          <span className="text-[11px] text-grey-400 dark:text-[var(--mh-muted)]">{timeAgo}</span>
+          <div className="ml-auto flex items-center gap-1">
+            <button
+              onClick={() => onReply(comment.id)}
+              className="text-[12px] text-tertiary dark:text-[var(--mh-muted)] hover:text-secondary px-2 py-1 min-h-[36px] rounded active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
+            >
+              Reply
+            </button>
             {isOwner && (
-              <button onClick={() => onDelete(comment.id)}
-                className="text-xs text-grey-400 hover:text-accent-red">Delete</button>
+              <button
+                onClick={() => onDelete(comment.id)}
+                aria-label="Delete comment"
+                className="text-[12px] text-grey-400 dark:text-[var(--mh-muted)] hover:text-accent-red px-2 py-1 min-h-[36px] rounded active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
+              >
+                Delete
+              </button>
             )}
           </div>
         </div>
 
         {showExcerpt && comment.char_start !== null && (
-          <div className="text-xs text-tertiary italic bg-grey-50 rounded px-2 py-1 mb-2 border-l-2 border-secondary/30">
+          <div className="text-[11px] sm:text-xs text-tertiary dark:text-[var(--mh-muted)] italic bg-grey-50 dark:bg-[var(--mh-bg)] rounded px-2 py-1 mb-2 border-l-2 border-secondary/30">
             Refers to text at position {comment.char_start}-{comment.char_end}
           </div>
         )}
 
-        <p className="text-sm text-tertiary-dark leading-relaxed whitespace-pre-wrap">{comment.text}</p>
+        <p className="text-[14px] sm:text-sm text-tertiary-dark dark:text-[var(--mh-fg)] leading-relaxed whitespace-pre-wrap break-words">{comment.text}</p>
       </div>
 
       {/* Threaded replies */}

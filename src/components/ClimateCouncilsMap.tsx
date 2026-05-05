@@ -50,12 +50,12 @@ export default function ClimateCouncilsMap({
     });
 
   return (
-    <div className="rounded-lg overflow-hidden border border-grey-200 shadow-sm bg-white">
+    <div className="rounded-lg overflow-hidden border border-grey-200 dark:border-[var(--mh-border)] shadow-sm bg-white dark:bg-[var(--mh-card)]">
       <MapContainer
         center={[52.5, 13.0]}
         zoom={4}
         scrollWheelZoom={true}
-        style={{ height, width: '100%' }}
+        style={{ height: `min(${height}px, 70dvh)`, minHeight: 320, width: '100%' }}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

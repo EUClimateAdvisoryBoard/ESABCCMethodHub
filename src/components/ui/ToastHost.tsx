@@ -112,7 +112,7 @@ export default function ToastHost() {
     <div
       aria-live="polite"
       aria-atomic="false"
-      className="fixed bottom-4 right-4 z-[120] flex flex-col gap-2 pointer-events-none max-w-[min(92vw,420px)]"
+      className="fixed left-2 right-2 sm:left-auto sm:right-4 z-[120] flex flex-col gap-2 pointer-events-none sm:max-w-[420px] bottom-bottom-nav mb-[max(env(safe-area-inset-bottom),1rem)] sm:mb-0 sm:bottom-4"
     >
       {toasts.map(t => (
         <div
@@ -121,7 +121,7 @@ export default function ToastHost() {
           className={`pointer-events-auto bg-[var(--mh-card)] text-[var(--mh-fg)] rounded-lg shadow-lg border-l-4 border-y border-r border-[var(--mh-border)] ${TONE_CLASS[t.tone]} px-4 py-3 flex items-start gap-3`}
           style={{ boxShadow: 'var(--mh-shadow-lg)' }}
         >
-          <span aria-hidden="true" className={`mt-1.5 inline-block h-2 w-2 rounded-full ${TONE_DOT[t.tone]}`} />
+          <span aria-hidden="true" className={`mt-1.5 inline-block h-2 w-2 rounded-full ${TONE_DOT[t.tone]} shrink-0`} />
           <div className="flex-1 min-w-0">
             <p className="font-medium" style={{ fontSize: 'var(--mh-text-sm)', lineHeight: 'var(--mh-leading-snug)' }}>
               {t.message}
@@ -136,7 +136,7 @@ export default function ToastHost() {
             <button
               type="button"
               onClick={async () => { await t.onAction!(); dismiss(t.id); }}
-              className="mh-focus mh-motion-fast text-[var(--mh-status-primary)] font-semibold whitespace-nowrap"
+              className="mh-focus mh-motion-fast text-[var(--mh-status-primary)] font-semibold whitespace-nowrap min-h-[36px] px-2 -mx-1 rounded shrink-0"
               style={{ fontSize: 'var(--mh-text-sm)' }}
             >
               {t.actionLabel}
@@ -146,7 +146,7 @@ export default function ToastHost() {
             type="button"
             onClick={() => dismiss(t.id)}
             aria-label="Dismiss"
-            className="mh-focus mh-motion-fast text-[var(--mh-muted)] hover:text-[var(--mh-fg)]"
+            className="mh-focus mh-motion-fast text-[var(--mh-muted)] hover:text-[var(--mh-fg)] active:text-[var(--mh-fg)] min-h-[36px] min-w-[36px] -m-1.5 p-1.5 rounded flex items-center justify-center shrink-0"
             style={{ fontSize: 'var(--mh-text-md)', lineHeight: 1 }}
           >
             ×

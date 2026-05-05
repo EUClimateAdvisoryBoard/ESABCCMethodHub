@@ -735,13 +735,13 @@ export default function BrusselsBulletinPage() {
             ready-to-use prompt. Pass it to a more capable external LLM (Claude Opus, Gemini
             Ultra, GPT-5, …) to produce a higher-quality bulletin.
           </p>
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3">
             <a
               href="/templates/brussels-bulletin-template.docx"
-              className="inline-flex items-center gap-1.5 text-xs text-secondary hover:underline font-medium"
+              className="inline-flex items-center justify-center gap-2 text-[13px] sm:text-xs px-3 py-2 sm:py-0 min-h-[44px] sm:min-h-0 text-secondary hover:underline font-medium"
               download
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
               </svg>
               Download official template (.docx)
@@ -750,12 +750,12 @@ export default function BrusselsBulletinPage() {
               type="button"
               onClick={onDownloadBackground}
               disabled={itemsInPeriod.length === 0}
-              className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded border border-secondary text-secondary hover:bg-secondary/5 font-medium disabled:opacity-40 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 text-[13px] sm:text-xs px-3 py-2 sm:py-1.5 min-h-[44px] sm:min-h-0 rounded border border-secondary text-secondary hover:bg-secondary/5 active:bg-secondary/10 font-medium disabled:opacity-40 disabled:cursor-not-allowed"
               title={itemsInPeriod.length === 0
                 ? 'Pick a period that contains at least one feed item'
                 : 'Download a Markdown background report containing every source item plus a downstream-LLM prompt'}
             >
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
                 <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
                 <polyline points="14 2 14 8 20 8" />
               </svg>

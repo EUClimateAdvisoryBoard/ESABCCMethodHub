@@ -325,10 +325,14 @@ export default function ConnectionsReviewTable() {
         />
       )}
 
-      {/* Table */}
-      <div className="overflow-x-auto">
+      {/* Table — horizontally scrollable on mobile with a soft fade hint
+          on the right edge. The Articles, Description and Reviewer columns
+          fall away under md so the most-decision-making cells (status,
+          source→target, type, actions) stay legible at 375 px. */}
+      <p className="md:hidden text-[11px] text-tertiary dark:text-[var(--mh-muted)] mb-1 italic">Swipe horizontally to see all columns.</p>
+      <div className="mh-table-scroll overflow-x-auto -mx-3 sm:mx-0 px-3 sm:px-0">
         <table className="w-full text-[12px]">
-          <thead className="bg-grey-50 text-[10px] uppercase tracking-wider text-tertiary-light">
+          <thead className="bg-grey-50 dark:bg-[var(--mh-bg)] text-[10px] uppercase tracking-wider text-tertiary-light dark:text-[var(--mh-muted)]">
             <tr>
               <Th className="w-[30px]">
                 <input
@@ -350,9 +354,9 @@ export default function ConnectionsReviewTable() {
               <Th className="w-[110px]">Status</Th>
               <Th>Source → Target</Th>
               <Th className="w-[130px]">Type</Th>
-              <Th className="min-w-[260px]">Description</Th>
-              <Th className="w-[150px]">Articles (src / tgt)</Th>
-              <Th className="w-[140px]">Reviewer</Th>
+              <Th className="min-w-[260px] hidden md:table-cell">Description</Th>
+              <Th className="w-[150px] hidden md:table-cell">Articles (src / tgt)</Th>
+              <Th className="w-[140px] hidden lg:table-cell">Reviewer</Th>
               <Th className="w-[190px] text-right pr-4">Actions</Th>
             </tr>
           </thead>
@@ -566,7 +570,7 @@ function Row({
         </select>
       </td>
 
-      <td className="px-3 py-2 text-tertiary-dark leading-snug">
+      <td className="px-3 py-2 text-tertiary-dark leading-snug hidden md:table-cell">
         <EditableText
           value={connection.description || ''}
           placeholder="No rationale recorded. Click to add one."
@@ -585,7 +589,7 @@ function Row({
         )}
       </td>
 
-      <td className="px-3 py-2 text-[11px] text-tertiary">
+      <td className="px-3 py-2 text-[11px] text-tertiary hidden md:table-cell">
         <div className="flex items-baseline gap-1">
           <span className="text-tertiary-light w-6 shrink-0">src</span>
           <EditableText
@@ -619,7 +623,7 @@ function Row({
         )}
       </td>
 
-      <td className="px-3 py-2 text-[11px] text-tertiary">
+      <td className="px-3 py-2 text-[11px] text-tertiary hidden lg:table-cell">
         {connection.verification.reviewerName ? (
           <>
             <div className="font-medium text-tertiary-dark truncate max-w-[130px]">

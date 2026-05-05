@@ -109,8 +109,9 @@ export default function MobileBottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 backdrop-blur-md border-t border-grey-200 pb-safe"
+      className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white/95 dark:bg-[var(--mh-card)]/95 backdrop-blur-md border-t border-grey-200 dark:border-[var(--mh-border)] pb-safe"
       aria-label="Primary mobile navigation"
+      role="navigation"
     >
       <div className="grid grid-cols-6 h-16">
         {MODULES.map(item => {
@@ -119,11 +120,22 @@ export default function MobileBottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className={`flex flex-col items-center justify-center gap-0.5 px-0.5 text-[10px] font-medium leading-none transition-colors ${
-                active ? 'text-primary' : 'text-tertiary'
+              aria-current={active ? 'page' : undefined}
+              aria-label={item.label}
+              className={`flex flex-col items-center justify-center gap-0.5 px-0.5 text-[10px] font-medium leading-none transition-colors min-h-[56px] active:bg-grey-100 dark:active:bg-[var(--mh-border)] ${
+                active
+                  ? 'text-primary dark:text-secondary-lighter'
+                  : 'text-tertiary dark:text-[var(--mh-muted)]'
               }`}
             >
-              <span className={active ? 'text-primary' : 'text-tertiary-dark/80'}>
+              <span
+                className={
+                  active
+                    ? 'text-primary dark:text-secondary-lighter'
+                    : 'text-tertiary-dark/80 dark:text-[var(--mh-muted)]'
+                }
+                aria-hidden
+              >
                 {item.icon}
               </span>
               <span className="truncate max-w-full">{item.label}</span>
