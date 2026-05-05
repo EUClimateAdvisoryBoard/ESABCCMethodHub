@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useAuth } from '@/lib/auth-context';
 
 /**
@@ -90,7 +91,12 @@ function MethodHubLogo({ className = '' }: { className?: string }) {
 export default function SiteHeader() {
   const { user, displayName, requireAuth, signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  // Mount flag — drawer is portalled to document.body so we can't render it
+  // until after hydration.
+  useEffect(() => { setMounted(true); }, []);
 
   // Close drawer on route change
   useEffect(() => {
@@ -118,7 +124,7 @@ export default function SiteHeader() {
   const isActive = (href: string) =>
     pathname === href || (href !== '/' && pathname?.startsWith(href + '/'));
 
-  return (
+  const header = (
     <header className="sticky top-0 z-40 border-b border-[#E6E7E8] bg-white/95 backdrop-blur-md supports-[backdrop-filter]:bg-white/80 pt-safe">
       <div className="max-w-[1280px] mx-auto px-3 sm:px-6 h-[60px] sm:h-[72px] flex items-center gap-3 sm:gap-5">
         {/* Brand */}
@@ -215,14 +221,19 @@ export default function SiteHeader() {
         </button>
       </div>
 
-      {/* Mobile drawer — full-screen slide-in from right */}
-      {menuOpen && (
-        <div id="method-hub-drawer" className="fixed inset-0 z-50 md:hidden" role="dialog" aria-modal="true">
-          <div
-            className="drawer-backdrop absolute inset-0 bg-black/40"
-            onClick={() => setMenuOpen(false)}
-          />
-          <div className="drawer-panel absolute top-0 right-0 bottom-0 w-[86%] max-w-[360px] bg-white shadow-2xl flex flex-col pt-safe pb-safe">
+      {/* Mobile drawer is rendered via a portal further below — it must live
+          outside this <header>, which has backdrop-blur-md and therefore acts
+          as a containing block for any descendant with position: fixed. */}
+    </header>
+  );
+
+  const drawer = menuOpen && (
+    <div id="method-hub-drawer" className="fixed inset-0 z-[100] md:hidden" role="dialog" aria-modal="true">
+      <div
+        className="drawer-backdrop absolute inset-0 bg-black/40"
+        onClick={() => setMenuOpen(false)}
+      />
+      <div className="drawer-panel absolute top-0 right-0 bottom-0 w-[86%] max-w-[360px] bg-white shadow-2xl flex flex-col pt-safe pb-safe">
             {/* Drawer header */}
             <div className="flex items-center justify-between px-5 h-[60px] border-b border-grey-200 shrink-0">
               <div className="flex items-center gap-2">
@@ -321,7 +332,12 @@ export default function SiteHeader() {
             </div>
           </div>
         </div>
-      )}
-    </header>
+  );
+
+  return (
+    <>
+      {header}
+      {mounted && drawer ? createPortal(drawer, document.body) : null}
+    </>
   );
 }
