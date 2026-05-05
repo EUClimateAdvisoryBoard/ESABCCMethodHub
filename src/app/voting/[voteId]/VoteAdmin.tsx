@@ -12,9 +12,10 @@
  * exposure when the screen is shared.
  */
 
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import type { VoteBundle, VoteRecord, VoteToken } from '@/lib/voting/types';
+import BallotQrCode from './BallotQrCode';
 
 export default function VoteAdmin({
   initial,
@@ -39,6 +40,9 @@ export default function VoteAdmin({
   // Tokens minted in this browser session — we keep the raw string here so
   // the admin can copy them; on page reload we lose them, on purpose.
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+  // Which token rows have their QR-code panel expanded. Newly minted tokens
+  // start expanded so the admin sees a scannable code immediately.
+  const [qrOpen, setQrOpen] = useState<Record<string, boolean>>({});
 
   // Edit-mode for vote metadata (title / description / instructions). The
   // options list is intentionally not editable here — adding or removing
@@ -140,6 +144,9 @@ export default function VoteAdmin({
     const reveal: Record<string, boolean> = {};
     for (const t of fresh) reveal[t.token] = true;
     setRevealed((r) => ({ ...r, ...reveal }));
+    // Auto-expand the QR panel for the just-minted link so the admin can
+    // immediately project / share the scannable code.
+    setQrOpen((q) => ({ ...q, ...reveal }));
   }
 
   async function generateUniversal() {
@@ -470,18 +477,20 @@ export default function VoteAdmin({
       </section>
 
       <section className="rounded-sm border border-[#E6E7E8] bg-white p-4 sm:p-5">
-        <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-3">Voting link</h2>
+        <h2 className="text-[14px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-3">Voting link &amp; QR code</h2>
         <p className="text-[12.5px] text-[#3D5265]/75 mb-4">
           One universal link to share with every participant — anyone with
           the link can submit a ballot, and browsers that have already voted
-          are auto-redirected to the thank-you screen. Treat the link like
-          a password.
+          are auto-redirected to the thank-you screen. A QR code is rendered
+          alongside each link so participants can scan it from a projected
+          screen or printed handout instead of typing the URL. Treat the link
+          like a password.
         </p>
 
         <div className="rounded-sm border border-[#E6E7E8] p-3 bg-[#FBFBFA]">
           <h3 className="text-[12.5px] font-semibold text-[#3D5265]">Universal link</h3>
           <p className="text-[11.5px] text-[#3D5265]/70 mt-0.5 mb-2">
-            One link, unlimited submissions.
+            One link, unlimited submissions. The QR opens automatically next to the link.
           </p>
           <button
             type="button"
@@ -489,7 +498,7 @@ export default function VoteAdmin({
             disabled={creating}
             className="px-3 py-1.5 text-[12.5px] font-semibold text-white bg-[#00928F] rounded-sm hover:opacity-90 disabled:opacity-50"
           >
-            {creating ? 'Generating…' : '+ Generate universal link'}
+            {creating ? 'Generating…' : '+ Generate universal link & QR code'}
           </button>
         </div>
         {error ? <p className="mt-2 text-[12.5px] text-[#B33A3A]">{error}</p> : null}
@@ -528,48 +537,71 @@ export default function VoteAdmin({
                     const isSingleUse = t.maxUses === 1;
                     const usedCount = t.useCount ?? 0;
                     const exhausted = t.maxUses != null && usedCount >= t.maxUses;
+                    const qrShown = !!qrOpen[t.token];
                     return (
-                      <tr key={t.token}>
-                        <td className="px-3 py-2 text-[12.5px] text-[#3D5265]">{t.label ?? '—'}</td>
-                        <td className="px-3 py-2 font-mono text-[11.5px] break-all">
-                          {showRaw ? url : `${url.slice(0, baseOrigin.length + 8)}…`}
-                        </td>
-                        <td className="px-3 py-2">
-                          {isUniversal ? (
-                            <span className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#00928F]">universal</span>
-                          ) : isSingleUse ? (
-                            <span className={
-                              'font-mono text-[10.5px] uppercase tracking-[0.08em] ' +
-                              (exhausted ? 'text-[#E87722]' : 'text-[#3D5265]/70')
-                            }>
-                              {exhausted ? 'used' : 'single-use'}
-                            </span>
-                          ) : (
-                            <span className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#3D5265]/70">
-                              {usedCount} / {t.maxUses}
-                            </span>
-                          )}
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-[12px]">
-                          {usedCount}
-                        </td>
-                        <td className="px-3 py-2 text-right">
-                          <button
-                            type="button"
-                            onClick={() => copy(url)}
-                            className="text-[12px] font-semibold text-[#00928F] hover:underline mr-3"
-                          >
-                            Copy URL
-                          </button>
-                          <button
-                            type="button"
-                            onClick={() => setRevealed((r) => ({ ...r, [t.token]: !r[t.token] }))}
-                            className="text-[12px] text-[#3D5265]/70 hover:text-[#3D5265]"
-                          >
-                            {showRaw ? 'Hide' : 'Show'}
-                          </button>
-                        </td>
-                      </tr>
+                      <Fragment key={t.token}>
+                        <tr>
+                          <td className="px-3 py-2 text-[12.5px] text-[#3D5265]">{t.label ?? '—'}</td>
+                          <td className="px-3 py-2 font-mono text-[11.5px] break-all">
+                            {showRaw ? url : `${url.slice(0, baseOrigin.length + 8)}…`}
+                          </td>
+                          <td className="px-3 py-2">
+                            {isUniversal ? (
+                              <span className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#00928F]">universal</span>
+                            ) : isSingleUse ? (
+                              <span className={
+                                'font-mono text-[10.5px] uppercase tracking-[0.08em] ' +
+                                (exhausted ? 'text-[#E87722]' : 'text-[#3D5265]/70')
+                              }>
+                                {exhausted ? 'used' : 'single-use'}
+                              </span>
+                            ) : (
+                              <span className="font-mono text-[10.5px] uppercase tracking-[0.08em] text-[#3D5265]/70">
+                                {usedCount} / {t.maxUses}
+                              </span>
+                            )}
+                          </td>
+                          <td className="px-3 py-2 text-right tabular-nums text-[12px]">
+                            {usedCount}
+                          </td>
+                          <td className="px-3 py-2 text-right whitespace-nowrap">
+                            <button
+                              type="button"
+                              onClick={() => setQrOpen((q) => ({ ...q, [t.token]: !q[t.token] }))}
+                              aria-expanded={qrShown}
+                              className={
+                                'text-[12px] font-semibold mr-3 hover:underline ' +
+                                (qrShown ? 'text-[#3D5265]' : 'text-[#00928F]')
+                              }
+                            >
+                              {qrShown ? 'Hide QR' : 'Show QR'}
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => copy(url)}
+                              className="text-[12px] font-semibold text-[#00928F] hover:underline mr-3"
+                            >
+                              Copy URL
+                            </button>
+                            <button
+                              type="button"
+                              onClick={() => setRevealed((r) => ({ ...r, [t.token]: !r[t.token] }))}
+                              className="text-[12px] text-[#3D5265]/70 hover:text-[#3D5265]"
+                            >
+                              {showRaw ? 'Hide' : 'Show'}
+                            </button>
+                          </td>
+                        </tr>
+                        {qrShown ? (
+                          <tr className="bg-[#FBFBFA]">
+                            <td colSpan={5} className="px-3 py-4">
+                              <div className="flex justify-center sm:justify-start">
+                                <BallotQrCode url={url} caption={t.label ?? undefined} />
+                              </div>
+                            </td>
+                          </tr>
+                        ) : null}
+                      </Fragment>
                     );
                   })}
                 </tbody>
@@ -622,8 +654,11 @@ export default function VoteAdmin({
               <div className="text-[12.5px] font-semibold text-[#3D5265] mb-1">
                 Created &laquo;{runoff.title}&raquo; — universal link copied to clipboard.
               </div>
-              <div className="font-mono text-[11.5px] break-all text-[#3D5265]/80 mb-2">
+              <div className="font-mono text-[11.5px] break-all text-[#3D5265]/80 mb-3">
                 {runoff.url}
+              </div>
+              <div className="mb-3">
+                <BallotQrCode url={runoff.url} caption={runoff.title} />
               </div>
               <div className="flex flex-wrap gap-3 text-[12.5px]">
                 <button
