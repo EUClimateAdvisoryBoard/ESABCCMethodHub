@@ -211,7 +211,7 @@ export default function VoteAdmin({
       const res = await fetch(`/api/voting/votes/${bundle.vote.id}/runoff`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ votingSystem: 'single_choice' }),
+        body: JSON.stringify({ votingSystem: 'average_ranking' }),
       });
       const json = await res.json();
       if (!res.ok) throw new Error(json.error ?? 'Could not start the runoff vote.');
