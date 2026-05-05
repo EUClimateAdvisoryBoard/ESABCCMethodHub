@@ -84,61 +84,119 @@ export default async function VotingIndex() {
             </Link>
           </div>
         ) : (
-          <div className="overflow-x-auto rounded-sm border border-[#E6E7E8]">
-            <table className="min-w-full text-[13px]">
-              <thead className="bg-[#FBFBFA] text-[#3D5265]/70 font-mono text-[10.5px] uppercase tracking-[0.1em]">
-                <tr>
-                  <th className="text-left px-3 py-2.5">Title</th>
-                  <th className="text-left px-3 py-2.5">System</th>
-                  <th className="text-left px-3 py-2.5">Status</th>
-                  <th className="text-right px-3 py-2.5">Tokens</th>
-                  <th className="text-right px-3 py-2.5">Ballots</th>
-                  <th className="text-left px-3 py-2.5">Created</th>
-                  <th className="text-right px-3 py-2.5">Actions</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-[#E6E7E8]">
-                {votes.map((v) => {
-                  const c = countMap.get(v.id);
-                  return (
-                    <tr key={v.id} className="hover:bg-[#FBFBFA]">
-                      <td className="px-3 py-3">
-                        <Link className="font-semibold text-[#3D5265] hover:text-[#00928F]" href={`/voting/${v.id}`}>
-                          {v.title}
-                        </Link>
-                        <div className="text-[11px] font-mono text-[#8A95A3]">{v.id}</div>
-                      </td>
-                      <td className="px-3 py-3 text-[12.5px]">{v.votingSystem.replace(/_/g, ' ')}</td>
-                      <td className="px-3 py-3">
-                        <StatusBadge status={v.status} />
-                      </td>
-                      <td className="px-3 py-3 text-right tabular-nums">
-                        {c ? `${c.used} / ${c.tokens}` : '—'}
-                      </td>
-                      <td className="px-3 py-3 text-right tabular-nums">{c?.ballots ?? 0}</td>
-                      <td className="px-3 py-3 text-[12.5px]">{fmtDate(v.createdAt)}</td>
-                      <td className="px-3 py-3 text-right">
-                        <div className="inline-flex items-center gap-3">
-                          <Link
-                            href={`/voting/${v.id}`}
-                            className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
-                          >
-                            View →
+          <>
+            {/* Mobile / narrow tablet — card-based list, no horizontal scroll. */}
+            <ul className="md:hidden grid grid-cols-1 gap-3" aria-label="Votes">
+              {votes.map((v) => {
+                const c = countMap.get(v.id);
+                return (
+                  <li
+                    key={v.id}
+                    className="rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4 shadow-sm"
+                  >
+                    <div className="flex items-start justify-between gap-2">
+                      <Link
+                        className="font-semibold text-[14px] text-[#3D5265] dark:text-[var(--mh-fg)] hover:text-[#00928F] flex-1 min-w-0 break-words"
+                        href={`/voting/${v.id}`}
+                      >
+                        {v.title}
+                      </Link>
+                      <StatusBadge status={v.status} />
+                    </div>
+                    <div className="mt-1 text-[11px] font-mono text-[#8A95A3] dark:text-[var(--mh-muted)] truncate">{v.id}</div>
+                    <dl className="mt-3 grid grid-cols-3 gap-2 text-[12px]">
+                      <div>
+                        <dt className="text-[10px] uppercase tracking-[0.08em] text-[#8A95A3] dark:text-[var(--mh-muted)]">System</dt>
+                        <dd className="mt-0.5 text-[#3D5265] dark:text-[var(--mh-fg)] capitalize">{v.votingSystem.replace(/_/g, ' ')}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[10px] uppercase tracking-[0.08em] text-[#8A95A3] dark:text-[var(--mh-muted)]">Tokens</dt>
+                        <dd className="mt-0.5 tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]">{c ? `${c.used} / ${c.tokens}` : '—'}</dd>
+                      </div>
+                      <div>
+                        <dt className="text-[10px] uppercase tracking-[0.08em] text-[#8A95A3] dark:text-[var(--mh-muted)]">Ballots</dt>
+                        <dd className="mt-0.5 tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]">{c?.ballots ?? 0}</dd>
+                      </div>
+                    </dl>
+                    <p className="mt-2 text-[11px] text-[#8A95A3] dark:text-[var(--mh-muted)]">
+                      Created {fmtDate(v.createdAt)}
+                    </p>
+                    <div className="mt-3 flex gap-2">
+                      <Link
+                        href={`/voting/${v.id}`}
+                        className="flex-1 inline-flex items-center justify-center min-h-[40px] px-3 text-[12px] font-semibold text-white bg-[#00928F] rounded active:opacity-90"
+                      >
+                        View
+                      </Link>
+                      <Link
+                        href={`/voting/${v.id}/results`}
+                        className="flex-1 inline-flex items-center justify-center min-h-[40px] px-3 text-[12px] font-semibold text-[#00928F] border border-[#00928F]/30 rounded active:bg-[#E6F5F4] dark:active:bg-[var(--mh-border)]"
+                      >
+                        Results
+                      </Link>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* md+ — table layout with explicit horizontal-scroll affordance. */}
+            <div className="hidden md:block overflow-x-auto rounded-sm border border-[#E6E7E8] dark:border-[var(--mh-border)]">
+              <table className="min-w-full text-[13px]">
+                <thead className="bg-[#FBFBFA] dark:bg-[var(--mh-bg)] text-[#3D5265]/70 dark:text-[var(--mh-muted)] font-mono text-[10.5px] uppercase tracking-[0.1em]">
+                  <tr>
+                    <th className="text-left px-3 py-2.5">Title</th>
+                    <th className="text-left px-3 py-2.5">System</th>
+                    <th className="text-left px-3 py-2.5">Status</th>
+                    <th className="text-right px-3 py-2.5">Tokens</th>
+                    <th className="text-right px-3 py-2.5">Ballots</th>
+                    <th className="text-left px-3 py-2.5">Created</th>
+                    <th className="text-right px-3 py-2.5">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-[#E6E7E8] dark:divide-[var(--mh-border)]">
+                  {votes.map((v) => {
+                    const c = countMap.get(v.id);
+                    return (
+                      <tr key={v.id} className="hover:bg-[#FBFBFA] dark:hover:bg-[var(--mh-bg)]">
+                        <td className="px-3 py-3">
+                          <Link className="font-semibold text-[#3D5265] dark:text-[var(--mh-fg)] hover:text-[#00928F]" href={`/voting/${v.id}`}>
+                            {v.title}
                           </Link>
-                          <Link
-                            href={`/voting/${v.id}/results`}
-                            className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
-                          >
-                            Results →
-                          </Link>
-                        </div>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
+                          <div className="text-[11px] font-mono text-[#8A95A3] dark:text-[var(--mh-muted)]">{v.id}</div>
+                        </td>
+                        <td className="px-3 py-3 text-[12.5px]">{v.votingSystem.replace(/_/g, ' ')}</td>
+                        <td className="px-3 py-3">
+                          <StatusBadge status={v.status} />
+                        </td>
+                        <td className="px-3 py-3 text-right tabular-nums">
+                          {c ? `${c.used} / ${c.tokens}` : '—'}
+                        </td>
+                        <td className="px-3 py-3 text-right tabular-nums">{c?.ballots ?? 0}</td>
+                        <td className="px-3 py-3 text-[12.5px]">{fmtDate(v.createdAt)}</td>
+                        <td className="px-3 py-3 text-right">
+                          <div className="inline-flex items-center gap-3">
+                            <Link
+                              href={`/voting/${v.id}`}
+                              className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
+                            >
+                              View →
+                            </Link>
+                            <Link
+                              href={`/voting/${v.id}/results`}
+                              className="text-[12.5px] font-semibold text-[#00928F] hover:underline"
+                            >
+                              Results →
+                            </Link>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </>
         )}
       </main>
       <SiteFooter />
