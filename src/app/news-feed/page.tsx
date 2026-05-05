@@ -20,9 +20,9 @@
  *   scripts/fetch-news.js             → RSS sweep (hourly)
  *   scripts/generate-daily-summary.js → LLM-backed 24 h summariser (4×/day)
  *
- * The previous Brussels-Bulletin CTA was removed — that module is now
- * parked under `beta/modules/brussels-bulletin` and is intentionally
- * unreachable from production UI.
+ * The Brussels-Bulletin generator was promoted out of beta and now lives
+ * at `/news-feed/brussels-bulletin` — the link sits next to the Feed mode
+ * in the mode switcher below.
  */
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import Link from 'next/link';
@@ -1853,6 +1853,21 @@ export default function NewsFeedPage() {
               }
               onChange={(id) => setView(id as ViewMode)}
             />
+            {/* Brussels Bulletin — sits next to Feed; opens the dedicated
+                wizard subpage rather than swapping a view in place because
+                it has its own multi-step state and downstream-LLM export. */}
+            <Link
+              href="/news-feed/brussels-bulletin"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg border border-secondary/40 text-secondary bg-secondary/5 hover:bg-secondary/10 transition whitespace-nowrap"
+              title="Brussels Bulletin generator — wizard, Word export, and Markdown background report for an external LLM"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M4 4h12a4 4 0 014 4v12H8a4 4 0 01-4-4V4z" />
+                <path d="M8 8h8M8 12h8M8 16h5" />
+              </svg>
+              Bulletin
+              <span className="hidden md:inline text-[10px] font-normal text-tertiary">background report</span>
+            </Link>
             <div className="ml-auto flex items-center gap-3 flex-wrap" role="group" aria-label="Secondary surfaces">
               {([
                 ['live', 'Live News'],
