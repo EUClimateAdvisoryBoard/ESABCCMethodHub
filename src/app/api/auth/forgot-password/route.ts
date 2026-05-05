@@ -32,8 +32,12 @@ export async function POST(req: NextRequest) {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
+    // Prefer an explicit, configured site URL so the email link points to the
+    // public hostname rather than whatever Host header reached the API route.
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin).replace(/\/$/, '');
+
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${req.nextUrl.origin}/profile`,
+      redirectTo: `${siteUrl}/profile`,
     });
 
     if (error) {

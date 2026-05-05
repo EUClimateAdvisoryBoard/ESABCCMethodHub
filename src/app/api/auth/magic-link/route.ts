@@ -31,10 +31,15 @@ export async function POST(req: NextRequest) {
       auth: { persistSession: false, autoRefreshToken: false },
     });
 
+    // Prefer an explicit, configured site URL so the email link points to the
+    // public hostname rather than whatever Host header reached the API route.
+    // Falls back to the request origin only when the env var is unset.
+    const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || req.nextUrl.origin).replace(/\/$/, '');
+
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
-        emailRedirectTo: `${req.nextUrl.origin}/profile`,
+        emailRedirectTo: `${siteUrl}/profile`,
       },
     });
 
