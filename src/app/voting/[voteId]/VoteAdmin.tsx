@@ -167,6 +167,33 @@ export default function VoteAdmin({
     }
   }
 
+  async function deleteVote() {
+    const ok = window.confirm(
+      `Permanently delete "${bundle.vote.title}"?\n\n` +
+        '• The vote, every voting link and every submitted ballot will be removed.\n' +
+        '• Existing voting links will stop working.\n' +
+        '• Results pages for this vote will no longer be reachable.\n\n' +
+        'Closing keeps the record and lets you view results — only delete if\n' +
+        'you really want this vote gone. This cannot be undone.',
+    );
+    if (!ok) return;
+    setError(null);
+    try {
+      const res = await fetch(`/api/voting/votes/${bundle.vote.id}`, {
+        method: 'DELETE',
+      });
+      if (!res.ok) {
+        const json = await res.json().catch(() => ({}));
+        setError(json.error ?? 'Could not delete the vote.');
+        return;
+      }
+      router.push('/voting');
+      router.refresh();
+    } catch {
+      setError('Network error.');
+    }
+  }
+
   async function resetVote() {
     const ok = window.confirm(
       `Reset "${bundle.vote.title}"?\n\n` +
@@ -284,6 +311,14 @@ export default function VoteAdmin({
               className="px-3 py-1.5 text-[12.5px] font-semibold border border-[#E87722] text-[#E87722] rounded-sm disabled:opacity-50"
             >
               Close
+            </button>
+            <button
+              type="button"
+              onClick={deleteVote}
+              title="Permanently delete this vote, its links and its ballots"
+              className="px-3 py-1.5 text-[12.5px] font-semibold border border-[#B33A3A] text-[#B33A3A] rounded-sm hover:bg-[#FBF1ED]/40"
+            >
+              Delete
             </button>
           </div>
         </div>
