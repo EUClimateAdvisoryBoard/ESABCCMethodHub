@@ -33,6 +33,7 @@ interface DbRow {
   notes: string | null;
   lat: number | null;
   lon: number | null;
+  custom_fields: Record<string, string> | null;
 }
 
 function rowToCouncil(r: DbRow): ClimateCouncil {
@@ -52,6 +53,7 @@ function rowToCouncil(r: DbRow): ClimateCouncil {
     notes: r.notes || '',
     lat: r.lat ?? 0,
     lon: r.lon ?? 0,
+    customFields: r.custom_fields || {},
   };
 }
 
@@ -72,6 +74,7 @@ function councilToRow(c: ClimateCouncil): DbRow {
     notes: c.notes,
     lat: c.lat,
     lon: c.lon,
+    custom_fields: c.customFields || {},
   };
 }
 

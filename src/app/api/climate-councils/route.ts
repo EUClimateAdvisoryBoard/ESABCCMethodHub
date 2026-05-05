@@ -22,6 +22,23 @@ import {
   CouncilStatus,
 } from '@/data/climate-councils';
 
+// Custom fields are open-ended key/value pairs added by curators. We
+// normalise both keys and values to plain strings, drop blanks, and cap
+// the field count so a misuse can't bloat the row.
+function sanitizeCustomFields(input: unknown): Record<string, string> {
+  if (!input || typeof input !== 'object' || Array.isArray(input)) return {};
+  const out: Record<string, string> = {};
+  let n = 0;
+  for (const [rawKey, rawVal] of Object.entries(input as Record<string, unknown>)) {
+    const key = String(rawKey).trim().slice(0, 80);
+    if (!key) continue;
+    const value = rawVal == null ? '' : String(rawVal).slice(0, 4000);
+    out[key] = value;
+    if (++n >= 40) break;
+  }
+  return out;
+}
+
 const VALID_LEVELS: CouncilLevel[] = ['eu', 'national', 'subnational'];
 const VALID_STATUSES: CouncilStatus[] = [
   'active_statutory',
@@ -85,6 +102,7 @@ export async function POST(request: NextRequest) {
     notes: (body.notes || '').trim(),
     lat: typeof body.lat === 'number' ? body.lat : 0,
     lon: typeof body.lon === 'number' ? body.lon : 0,
+    customFields: sanitizeCustomFields(body.customFields),
   };
 
   const saved = await upsertCouncil(council);

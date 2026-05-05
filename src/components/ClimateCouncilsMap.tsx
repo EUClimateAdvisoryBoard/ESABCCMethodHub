@@ -24,10 +24,13 @@ import {
 interface Props {
   councils: ClimateCouncil[];
   onEdit?: (council: ClimateCouncil) => void;
+  onExpand?: (council: ClimateCouncil) => void;
   height?: number;
 }
 
-export default function ClimateCouncilsMap({ councils, onEdit, height = 560 }: Props) {
+export default function ClimateCouncilsMap({
+  councils, onEdit, onExpand, height = 560,
+}: Props) {
   // Slight jitter for bodies that share a city (Brussels, Athens, Berlin,
   // Vienna…) so overlapping pins remain individually clickable.
   const seen = new Map<string, number>();
@@ -109,7 +112,7 @@ export default function ClimateCouncilsMap({ councils, onEdit, height = 560 }: P
                     </div>
                   )}
                   {c.notes && <div className="mt-2 text-[11px] leading-snug">{c.notes}</div>}
-                  <div className="mt-3 flex flex-wrap gap-2">
+                  <div className="mt-3 flex flex-wrap gap-2 items-center">
                     {c.url && (
                       <a
                         href={c.url}
@@ -130,10 +133,19 @@ export default function ClimateCouncilsMap({ councils, onEdit, height = 560 }: P
                         Legal basis ↗
                       </a>
                     )}
+                    {onExpand && (
+                      <button
+                        onClick={() => onExpand(c)}
+                        className="ml-auto text-[11px] text-primary border border-primary/40 px-2 py-0.5 rounded hover:bg-primary/5"
+                        title="Jump to this body's entry in the list below"
+                      >
+                        Expand ↓
+                      </button>
+                    )}
                     {onEdit && (
                       <button
                         onClick={() => onEdit(c)}
-                        className="ml-auto text-[11px] text-white bg-primary px-2 py-0.5 rounded hover:bg-primary-dark"
+                        className={`${onExpand ? '' : 'ml-auto'} text-[11px] text-white bg-primary px-2 py-0.5 rounded hover:bg-primary-dark`}
                       >
                         Edit
                       </button>

@@ -20,7 +20,7 @@
  */
 
 import dynamic from 'next/dynamic';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { useAuth } from '@/lib/auth-context';
@@ -56,6 +56,30 @@ const STATUS_OPTIONS: CouncilStatus[] = [
 
 const LEVEL_OPTIONS: CouncilLevel[] = ['eu', 'national', 'subnational'];
 
+// Virtual filter values group several statuses together so the summary
+// stat cards (Active / At-risk / Gaps) can act as one-click filters.
+type StatusFilter = CouncilStatus | 'all' | 'active' | 'at_risk' | 'gaps';
+
+const STATUS_GROUPS: Record<'active' | 'at_risk' | 'gaps', CouncilStatus[]> = {
+  active:  ['active_statutory', 'active_no_statute', 'inter_ministerial'],
+  at_risk: ['legislated_not_operational', 'dormant'],
+  gaps:    ['none', 'abolished'],
+};
+
+const STATUS_GROUP_LABELS: Record<'active' | 'at_risk' | 'gaps', string> = {
+  active:  'Active (any form)',
+  at_risk: 'At-risk / pending',
+  gaps:    'Gaps (no body or abolished)',
+};
+
+function matchesStatusFilter(status: CouncilStatus, filter: StatusFilter): boolean {
+  if (filter === 'all') return true;
+  if (filter === 'active' || filter === 'at_risk' || filter === 'gaps') {
+    return STATUS_GROUPS[filter].includes(status);
+  }
+  return status === filter;
+}
+
 function emptyCouncil(): ClimateCouncil {
   return {
     id: '',
@@ -81,7 +105,7 @@ export default function EuClimateCouncilsPage() {
   const [councils, setCouncils] = useState<ClimateCouncil[]>(SEED_COUNCILS);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
-  const [statusFilter, setStatusFilter] = useState<CouncilStatus | 'all'>('all');
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
   const [levelFilter, setLevelFilter] = useState<CouncilLevel | 'all'>('all');
   const [editing, setEditing] = useState<ClimateCouncil | null>(null);
   const [isNew, setIsNew] = useState(false);
@@ -112,7 +136,7 @@ export default function EuClimateCouncilsPage() {
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
     return councils.filter(c => {
-      if (statusFilter !== 'all' && c.status !== statusFilter) return false;
+      if (!matchesStatusFilter(c.status, statusFilter)) return false;
       if (levelFilter !== 'all' && c.level !== levelFilter) return false;
       if (!q) return true;
       return (
@@ -152,6 +176,57 @@ export default function EuClimateCouncilsPage() {
 
     return { total, byStatus, byLevel, countriesWithActive, countriesWithGap };
   }, [councils]);
+
+  // ── Custom field keys: union across the entire catalogue ────────────────
+  // Once a curator adds a field on one body, every other body's edit form
+  // surfaces it as an "available field" so they can fill it in too.
+  const allCustomFieldKeys = useMemo(() => {
+    const set = new Set<string>();
+    councils.forEach(c => {
+      if (c.customFields) Object.keys(c.customFields).forEach(k => set.add(k));
+    });
+    return Array.from(set).sort();
+  }, [councils]);
+
+  // ── Refs for scroll-to-list / scroll-to-body ─────────────────────────────
+  const listRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<Record<string, HTMLLIElement | null>>({});
+  const [highlightId, setHighlightId] = useState<string | null>(null);
+
+  const scrollToList = useCallback(() => {
+    requestAnimationFrame(() => {
+      listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }, []);
+
+  const setStatusFilterAndScroll = useCallback(
+    (filter: StatusFilter) => {
+      setStatusFilter(filter);
+      scrollToList();
+    },
+    [scrollToList],
+  );
+
+  // Map popup → "Expand" jumps to the body's full card. Clears any filter
+  // that would otherwise hide it, then scrolls and pulses a highlight.
+  const handleExpand = useCallback(
+    (c: ClimateCouncil) => {
+      setStatusFilter('all');
+      setLevelFilter('all');
+      setSearch('');
+      setHighlightId(c.id);
+      requestAnimationFrame(() => {
+        const node = cardRefs.current[c.id];
+        if (node) {
+          node.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          listRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+      window.setTimeout(() => setHighlightId(null), 2400);
+    },
+    [],
+  );
 
   // ── Edit handlers ────────────────────────────────────────────────────────
   const handleEdit = useCallback(
@@ -254,12 +329,16 @@ export default function EuClimateCouncilsPage() {
           </p>
         </section>
 
-        {/* Coverage cards */}
+        {/* Coverage cards — clicking a card filters the list to that group
+            and scrolls down to it. The Bodies-tracked card resets filters. */}
+        {!editing && (
         <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
           <StatCard
             label="Bodies tracked"
             value={stats.total.toString()}
             sub={`EU ${stats.byLevel.eu} · National ${stats.byLevel.national} · Sub-national ${stats.byLevel.subnational}`}
+            active={statusFilter === 'all'}
+            onClick={() => setStatusFilterAndScroll('all')}
           />
           <StatCard
             label="Active (any form)"
@@ -269,6 +348,8 @@ export default function EuClimateCouncilsPage() {
               stats.byStatus.inter_ministerial
             ).toString()}
             sub={`Statutory: ${stats.byStatus.active_statutory}`}
+            active={statusFilter === 'active'}
+            onClick={() => setStatusFilterAndScroll('active')}
           />
           <StatCard
             label="At-risk / pending"
@@ -278,23 +359,35 @@ export default function EuClimateCouncilsPage() {
             ).toString()}
             sub="Legislated-not-operational + dormant"
             tone="amber"
+            active={statusFilter === 'at_risk'}
+            onClick={() => setStatusFilterAndScroll('at_risk')}
           />
           <StatCard
             label="Gaps"
             value={(stats.byStatus.none + stats.byStatus.abolished).toString()}
             sub={`No body: ${stats.byStatus.none} · Abolished: ${stats.byStatus.abolished}`}
             tone="red"
+            active={statusFilter === 'gaps'}
+            onClick={() => setStatusFilterAndScroll('gaps')}
           />
         </section>
+        )}
 
-        {/* Map */}
+        {/* Map — hidden while the edit drawer is open so curators can focus
+            on the form without the heavy Leaflet canvas competing for layout */}
+        {!editing && (
         <section className="mb-8">
           <div className="flex items-center justify-between mb-3">
             <h2 className="text-lg font-semibold text-tertiary-dark">Map</h2>
             <Legend />
           </div>
-          <ClimateCouncilsMap councils={filtered} onEdit={handleEdit} />
+          <ClimateCouncilsMap
+            councils={filtered}
+            onEdit={handleEdit}
+            onExpand={handleExpand}
+          />
         </section>
+        )}
 
         {/* Filters + add */}
         <section className="mb-4 flex flex-wrap gap-2 items-center">
@@ -307,13 +400,20 @@ export default function EuClimateCouncilsPage() {
           />
           <select
             value={statusFilter}
-            onChange={e => setStatusFilter(e.target.value as CouncilStatus | 'all')}
+            onChange={e => setStatusFilter(e.target.value as StatusFilter)}
             className="px-3 py-2 text-sm border border-grey-300 rounded bg-white"
           >
             <option value="all">All statuses</option>
-            {STATUS_OPTIONS.map(s => (
-              <option key={s} value={s}>{COUNCIL_STATUS_LABELS[s]}</option>
-            ))}
+            <optgroup label="Groups">
+              <option value="active">{STATUS_GROUP_LABELS.active}</option>
+              <option value="at_risk">{STATUS_GROUP_LABELS.at_risk}</option>
+              <option value="gaps">{STATUS_GROUP_LABELS.gaps}</option>
+            </optgroup>
+            <optgroup label="Individual statuses">
+              {STATUS_OPTIONS.map(s => (
+                <option key={s} value={s}>{COUNCIL_STATUS_LABELS[s]}</option>
+              ))}
+            </optgroup>
           </select>
           <select
             value={levelFilter}
@@ -338,7 +438,7 @@ export default function EuClimateCouncilsPage() {
         )}
 
         {/* List grouped by country */}
-        <section className="space-y-5">
+        <section ref={listRef} className="space-y-5 scroll-mt-20">
           {byCountry.length === 0 && (
             <div className="text-sm text-tertiary p-6 text-center bg-grey-50 rounded">
               No bodies match the current filters.
@@ -354,7 +454,13 @@ export default function EuClimateCouncilsPage() {
               </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {items.map(c => (
-                  <CouncilCard key={c.id} council={c} onEdit={handleEdit} />
+                  <CouncilCard
+                    key={c.id}
+                    council={c}
+                    onEdit={handleEdit}
+                    highlight={highlightId === c.id}
+                    refCallback={el => { cardRefs.current[c.id] = el; }}
+                  />
                 ))}
               </ul>
             </div>
@@ -369,6 +475,7 @@ export default function EuClimateCouncilsPage() {
           isNew={isNew}
           saving={saving}
           error={saveError}
+          allCustomFieldKeys={allCustomFieldKeys}
           onChange={setEditing}
           onSave={handleSave}
           onDelete={isNew ? undefined : handleDelete}
@@ -389,12 +496,14 @@ export default function EuClimateCouncilsPage() {
 // ───────────────────────────────────────────────────────────────────────────
 
 function StatCard({
-  label, value, sub, tone,
+  label, value, sub, tone, active, onClick,
 }: {
   label: string;
   value: string;
   sub: string;
   tone?: 'amber' | 'red';
+  active?: boolean;
+  onClick?: () => void;
 }) {
   const accent =
     tone === 'red'
@@ -402,12 +511,19 @@ function StatCard({
       : tone === 'amber'
       ? 'border-l-[#F9A825]'
       : 'border-l-primary';
+  const ring = active ? 'ring-2 ring-primary/40' : '';
+  const cursor = onClick ? 'cursor-pointer hover:shadow-md hover:border-grey-300' : '';
   return (
-    <div className={`bg-white border border-grey-200 border-l-4 ${accent} rounded p-3`}>
+    <button
+      type="button"
+      onClick={onClick}
+      disabled={!onClick}
+      className={`text-left w-full bg-white border border-grey-200 border-l-4 ${accent} ${ring} ${cursor} rounded p-3 transition disabled:cursor-default`}
+    >
       <div className="text-[11px] uppercase tracking-wide text-tertiary">{label}</div>
       <div className="text-2xl font-bold text-tertiary-dark mt-0.5">{value}</div>
       <div className="text-[11px] text-tertiary mt-1 leading-tight">{sub}</div>
-    </div>
+    </button>
   );
 }
 
@@ -430,12 +546,26 @@ function Legend() {
 function CouncilCard({
   council: c,
   onEdit,
+  highlight,
+  refCallback,
 }: {
   council: ClimateCouncil;
   onEdit: (c: ClimateCouncil) => void;
+  highlight?: boolean;
+  refCallback?: (el: HTMLLIElement | null) => void;
 }) {
+  const customEntries = c.customFields
+    ? Object.entries(c.customFields).filter(([, v]) => v && v.trim() !== '')
+    : [];
   return (
-    <li className="bg-white border border-grey-200 rounded p-3 hover:border-grey-300 transition">
+    <li
+      ref={refCallback}
+      className={`bg-white border rounded p-3 transition scroll-mt-24 ${
+        highlight
+          ? 'border-primary ring-2 ring-primary/40 shadow-md'
+          : 'border-grey-200 hover:border-grey-300'
+      }`}
+    >
       <div className="flex items-start gap-2 mb-1.5">
         <span
           className="mt-1 inline-block w-2.5 h-2.5 rounded-full shrink-0"
@@ -481,6 +611,17 @@ function CouncilCard({
         <p className="text-[12px] text-tertiary leading-snug line-clamp-3 mb-2">{c.notes}</p>
       )}
 
+      {customEntries.length > 0 && (
+        <dl className="text-[11px] text-tertiary mb-2 grid grid-cols-[max-content_1fr] gap-x-2 gap-y-0.5">
+          {customEntries.map(([k, v]) => (
+            <div key={k} className="contents">
+              <dt className="font-medium text-tertiary-dark">{k}:</dt>
+              <dd className="text-tertiary truncate">{v}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+
       <div className="flex flex-wrap gap-3 items-center text-[11px]">
         {c.url && (
           <a
@@ -514,13 +655,14 @@ function CouncilCard({
 }
 
 function EditDrawer({
-  council, isNew, saving, error,
+  council, isNew, saving, error, allCustomFieldKeys,
   onChange, onSave, onDelete, onClose,
 }: {
   council: ClimateCouncil;
   isNew: boolean;
   saving: boolean;
   error: string | null;
+  allCustomFieldKeys: string[];
   onChange: (c: ClimateCouncil) => void;
   onSave: () => void;
   onDelete?: () => void;
@@ -528,6 +670,26 @@ function EditDrawer({
 }) {
   const set = <K extends keyof ClimateCouncil>(key: K, value: ClimateCouncil[K]) =>
     onChange({ ...council, [key]: value });
+
+  const customFields = council.customFields || {};
+  const setCustomField = (key: string, value: string) => {
+    const next = { ...customFields, [key]: value };
+    onChange({ ...council, customFields: next });
+  };
+  const removeCustomField = (key: string) => {
+    const next = { ...customFields };
+    delete next[key];
+    onChange({ ...council, customFields: next });
+  };
+  const addCustomField = (rawKey: string) => {
+    const key = rawKey.trim().slice(0, 80);
+    if (!key) return;
+    if (key in customFields) return;
+    onChange({ ...council, customFields: { ...customFields, [key]: '' } });
+  };
+  // Field keys defined elsewhere in the catalogue but not yet on this body —
+  // surfaced as one-click "add" suggestions.
+  const suggestedKeys = allCustomFieldKeys.filter(k => !(k in customFields));
 
   return (
     <div className="fixed inset-0 z-50 flex" role="dialog" aria-modal="true">
@@ -693,6 +855,69 @@ function EditDrawer({
             </Field>
           </div>
 
+          {/* Custom fields — open-ended key/value pairs. Adding a key on
+              one body makes it offered as a suggestion on every other body. */}
+          <div className="border-t border-grey-100 pt-3 mt-3">
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="text-[11px] uppercase tracking-wide text-tertiary">
+                Custom fields
+              </h3>
+              <span className="text-[10px] text-tertiary">
+                {Object.keys(customFields).length} on this body · {allCustomFieldKeys.length} catalogue-wide
+              </span>
+            </div>
+
+            {Object.keys(customFields).length === 0 && (
+              <p className="text-[11px] text-tertiary mb-2">
+                No custom fields yet. Add one to capture extra information
+                (e.g. <em>chair</em>, <em>budget</em>, <em>secretariat size</em>) — every
+                other body in the catalogue will then be able to fill it in too.
+              </p>
+            )}
+
+            {Object.entries(customFields).map(([key, value]) => (
+              <div key={key} className="mb-2">
+                <div className="flex items-center justify-between mb-1">
+                  <label className="text-[11px] font-medium text-tertiary-dark">{key}</label>
+                  <button
+                    type="button"
+                    onClick={() => removeCustomField(key)}
+                    className="text-[10px] text-red-700 hover:underline"
+                  >
+                    Remove
+                  </button>
+                </div>
+                <input
+                  value={value}
+                  onChange={e => setCustomField(key, e.target.value)}
+                  className="input"
+                />
+              </div>
+            ))}
+
+            <AddCustomField onAdd={addCustomField} />
+
+            {suggestedKeys.length > 0 && (
+              <div className="mt-2">
+                <div className="text-[10px] uppercase tracking-wide text-tertiary mb-1">
+                  Used elsewhere in the catalogue
+                </div>
+                <div className="flex flex-wrap gap-1">
+                  {suggestedKeys.map(k => (
+                    <button
+                      key={k}
+                      type="button"
+                      onClick={() => addCustomField(k)}
+                      className="text-[11px] px-2 py-0.5 border border-grey-300 rounded-full hover:bg-grey-50"
+                    >
+                      + {k}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {error && (
             <div className="bg-red-50 border border-red-200 text-red-700 text-xs p-2 rounded">
               {error}
@@ -744,6 +969,57 @@ function EditDrawer({
           }
         `}</style>
       </aside>
+    </div>
+  );
+}
+
+function AddCustomField({ onAdd }: { onAdd: (key: string) => void }) {
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
+  const submit = () => {
+    if (!name.trim()) return;
+    onAdd(name);
+    setName('');
+    setOpen(false);
+  };
+  if (!open) {
+    return (
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="text-[11px] text-primary hover:underline"
+      >
+        + Add field
+      </button>
+    );
+  }
+  return (
+    <div className="flex gap-1.5 items-center">
+      <input
+        autoFocus
+        value={name}
+        onChange={e => setName(e.target.value)}
+        onKeyDown={e => {
+          if (e.key === 'Enter') { e.preventDefault(); submit(); }
+          if (e.key === 'Escape') { setOpen(false); setName(''); }
+        }}
+        placeholder="Field name (e.g. Chair, Budget)"
+        className="input flex-1"
+      />
+      <button
+        type="button"
+        onClick={submit}
+        className="px-2 py-1 text-[11px] font-medium text-white bg-primary rounded"
+      >
+        Add
+      </button>
+      <button
+        type="button"
+        onClick={() => { setOpen(false); setName(''); }}
+        className="px-2 py-1 text-[11px] text-tertiary"
+      >
+        Cancel
+      </button>
     </div>
   );
 }
