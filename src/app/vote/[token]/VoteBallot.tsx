@@ -312,15 +312,7 @@ function PriorityRankingControls({
                     <p className="text-[13px] sm:text-[12px] text-[#3D5265]/70 mt-0.5 leading-snug">{opt.description}</p>
                   ) : null}
                 </div>
-                <div
-                  className="grid sm:flex sm:flex-wrap sm:items-center gap-1.5"
-                  style={{
-                    // On mobile, give every score an equal-width column so
-                    // the row never wraps awkwardly with one button on a
-                    // second line. Falls back to flex-wrap on sm+.
-                    gridTemplateColumns: `repeat(${Math.max(1, scores.length)}, minmax(0, 1fr))`,
-                  }}
-                >
+                <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-1.5">
                   {scores.map((s) => {
                     const isOn = selected === s;
                     const label = labels[String(s)];
@@ -329,14 +321,10 @@ function PriorityRankingControls({
                         key={s}
                         type="button"
                         onClick={() => {
-                          // Already on → clicking removes the score (always allowed).
                           if (isOn) {
                             setVal(opt.id, null);
                             return;
                           }
-                          // Block selecting a score that has already reached its cap.
-                          // Tell the voter to free a slot first instead of silently
-                          // letting them go over and rejecting on submit.
                           const cap = caps[String(s)];
                           const usedNow = counts[String(s)] ?? 0;
                           if (cap != null && usedNow >= cap) {
@@ -352,9 +340,9 @@ function PriorityRankingControls({
                         aria-pressed={isOn}
                         title={label ? `${label} (score ${s})` : `score ${s}`}
                         className={
-                          'min-h-[44px] sm:min-h-0 sm:min-w-[44px] px-2 sm:px-2.5 py-2 sm:py-1 ' +
+                          'w-full sm:w-auto min-h-[44px] sm:min-h-0 sm:min-w-[44px] px-3 sm:px-2.5 py-2 sm:py-1 ' +
                           'rounded-sm text-[13.5px] sm:text-[12.5px] font-semibold border transition-colors capitalize ' +
-                          'flex items-center justify-center gap-1 leading-tight ' +
+                          'flex items-center justify-center gap-2 leading-tight ' +
                           (isOn
                             ? 'bg-[#00928F] border-[#00928F] text-white'
                             : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F] active:bg-[#F1F5F4]')
@@ -362,7 +350,7 @@ function PriorityRankingControls({
                       >
                         {label ? (
                           <>
-                            <span className="truncate">{label}</span>
+                            <span>{label}</span>
                             <span className={'font-mono normal-case ' + (isOn ? 'opacity-80' : 'text-[#8A95A3]')}>
                               ·{s}
                             </span>
