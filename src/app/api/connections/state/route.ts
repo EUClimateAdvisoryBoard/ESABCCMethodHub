@@ -47,6 +47,13 @@ interface AdditionRow {
   articles_source: string | null;
   articles_target: string | null;
 }
+interface AssignmentRow {
+  connection_id: number;
+  assignee_user_id: string | null;
+  assignee_name: string;
+  assigned_by: string | null;
+  assigned_at: string;
+}
 
 const VALID_STATUS: ReadonlySet<VerificationStatus> = new Set([
   'unverified', 'verified', 'rejected', 'needs_review',
@@ -64,18 +71,21 @@ async function requireUser(req: NextRequest) {
 }
 
 async function loadAll(supabase: NonNullable<ReturnType<typeof getServerSupabase>>) {
-  const [overridesRes, verificationsRes, additionsRes] = await Promise.all([
+  const [overridesRes, verificationsRes, additionsRes, assignmentsRes] = await Promise.all([
     supabase.from('connection_overrides').select('*'),
     supabase.from('connection_verifications').select('*'),
     supabase.from('connection_additions').select('*').order('added_at', { ascending: true }),
+    supabase.from('connection_assignments').select('*'),
   ]);
   if (overridesRes.error) throw new Error(overridesRes.error.message);
   if (verificationsRes.error) throw new Error(verificationsRes.error.message);
   if (additionsRes.error) throw new Error(additionsRes.error.message);
+  if (assignmentsRes.error) throw new Error(assignmentsRes.error.message);
   return {
     overrides: (overridesRes.data ?? []) as OverrideRow[],
     verifications: (verificationsRes.data ?? []) as VerificationRow[],
     additions: (additionsRes.data ?? []) as AdditionRow[],
+    assignments: (assignmentsRes.data ?? []) as AssignmentRow[],
   };
 }
 
@@ -272,6 +282,41 @@ export async function POST(req: NextRequest) {
           .from('connection_additions')
           .delete()
           .eq('id', id);
+        if (delErr) throw new Error(delErr.message);
+        break;
+      }
+
+      // ── assignments ──────────────────────────────────────────────────────
+      case 'setAssignee': {
+        const id = Number(body.id);
+        if (!Number.isFinite(id)) {
+          return NextResponse.json({ error: 'Invalid id.' }, { status: 400 });
+        }
+        const assigneeName = typeof body.assigneeName === 'string' ? body.assigneeName : '';
+        const assigneeUserId = typeof body.assigneeUserId === 'string' ? body.assigneeUserId : null;
+        const row: AssignmentRow = {
+          connection_id: id,
+          assignee_user_id: assigneeUserId,
+          assignee_name: assigneeName,
+          assigned_by: user.id,
+          assigned_at: new Date().toISOString(),
+        };
+        const { error: upErr } = await supabase
+          .from('connection_assignments')
+          .upsert(row, { onConflict: 'connection_id' });
+        if (upErr) throw new Error(upErr.message);
+        break;
+      }
+
+      case 'clearAssignee': {
+        const id = Number(body.id);
+        if (!Number.isFinite(id)) {
+          return NextResponse.json({ error: 'Invalid id.' }, { status: 400 });
+        }
+        const { error: delErr } = await supabase
+          .from('connection_assignments')
+          .delete()
+          .eq('connection_id', id);
         if (delErr) throw new Error(delErr.message);
         break;
       }
