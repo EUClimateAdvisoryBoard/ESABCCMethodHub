@@ -245,7 +245,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'inter_ministerial', established: '2020', statutory: '',
     url: 'https://mepa.gov.ge/',
     legalBasisUrl: 'https://matsne.gov.ge/en',
-    notes: 'Ministerial body; not independent. Decree 54/2020.',
+    notes: 'Ministerial body; not independent. Government Decree #54 of 23 January 2020. 8 ministries; chaired by Minister of Environmental Protection and Agriculture. Two advisory sub-bodies (Coordination Group, Working Group).',
     lat: 41.7151, lon: 44.8271,
   },
   // 14. Germany Council of Experts
@@ -426,8 +426,8 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     level: 'national', region: '',
     status: 'inter_ministerial', established: '2014 / 2024 (reorganised)', statutory: 'Secondary',
     url: 'https://www.mediu.gov.md/',
-    legalBasisUrl: 'https://www.legis.md/cautare/getResults?doc_id=144210&lang=ro',
-    notes: 'Amnesty 2025 report flagged operational dysfunction; accession-driven reform.',
+    legalBasisUrl: 'https://www.legis.md/cautare/rezultate/?searchword=Hot%C4%83r%C3%A2re+nr.+425+din+2024',
+    notes: "Reorganised by Government Decision 425/2024 (under Office of the Prime Minister). Amnesty International's 'State of the World's Human Rights' April 2025 (POL 10/8515/2025) flagged 'lack of a functional National Commission on Climate Change' as a barrier to Moldova's 2030/2050 targets.",
     lat: 47.0105, lon: 28.8638,
   },
   // 28. Netherlands Rli
@@ -527,10 +527,10 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     bodyName: 'National Council on Climate Change',
     bodyOriginal: 'Nacionalni savet za klimatske promene (NCCC)',
     level: 'national', region: '',
-    status: 'dormant', established: '2021', statutory: '',
+    status: 'active_statutory', established: '2021 / 2025 (reconstituted)', statutory: 'Yes',
     url: 'https://www.ekologija.gov.rs/',
     legalBasisUrl: 'https://www.pravno-informacioni-sistem.rs/',
-    notes: 'Active but very sparse meetings (4 since 2021). Strongest legal anchor in Western Balkans.',
+    notes: 'Statutory anchor in 2021 Law on Climate Change — strongest legal anchor in Western Balkans. Held 4 sessions 2021-2024 (2 in 2024). Reconstituted 18 Sept 2025 under Minister Sara Pavkov with 33 members (ministries, scientific institutions, civil society); future cadence uncertain.',
     lat: 44.7866, lon: 20.4489,
   },
   // 36. Slovenia
@@ -605,10 +605,10 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     bodyName: 'Scientific and Expert Council on Climate Change and Ozone Layer Protection',
     bodyOriginal: 'Науково-експертна рада з питань зміни клімату та збереження озонового шару',
     level: 'national', region: '',
-    status: 'active_statutory', established: '2026 (constituted; law 2024)', statutory: 'Yes',
+    status: 'active_statutory', established: '14 January 2026 (constituted by CMU resolution; underlying Law 3991-IX of 2024)', statutory: 'Yes',
     url: 'https://www.kmu.gov.ua/',
     legalBasisUrl: 'https://zakon.rada.gov.ua/laws/show/3991-IX',
-    notes: 'First primarily-scientific climate advisory body in any EU candidate country; driven by Ukraine Facility (€50bn) conditionality. 29 scientists.',
+    notes: 'Cabinet of Ministers resolution of 14 Jan 2026 established the Council and approved composition of 29 scientists; based on Law 3991-IX (2024). First primarily-scientific climate advisory body in any EU candidate country; aligned with Ukraine Facility (€50bn) conditionality.',
     lat: 50.4501, lon: 30.5234,
   },
 
@@ -907,7 +907,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
   {
     id: 'me-none',
     countryCode: 'ME', countryName: 'Montenegro',
-    bodyName: "NONE — Montenegro's Law 73/2019 does NOT establish a climate council",
+    bodyName: "NONE — Montenegro's Law on Protection from Negative Impacts of Climate Change (Off. Gazette 73/2019) does NOT establish a climate council",
     bodyOriginal: '',
     level: 'national', region: '',
     status: 'none', established: '', statutory: '',
@@ -926,7 +926,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'none', established: '', statutory: 'Yes',
     url: '',
     legalBasisUrl: 'https://www.moepp.gov.mk/',
-    notes: 'Inter-ministerial WG on climate exists; advisory body may follow climate law adoption.',
+    notes: 'Draft Law on Climate Action (in preparation since 2020) NOT adopted as of May 2026 (per EP A10-0118/2025 and 2025 EU Rule of Law Report). 2025-2030 INECP adopted; new Energy Law adopted 14 May 2025 — but neither establishes an advisory body. Inter-ministerial WG only.',
     lat: 41.9981, lon: 21.4254,
   },
   // 66. Slovakia
