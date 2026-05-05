@@ -790,13 +790,11 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                       </button>
                       <button onClick={async (e) => {
                         e.stopPropagation();
-                        if (confirm('Delete this annotation?')) {
-                          await deleteAnnotationRemote(ann.id);
-                          const updated = await fetchAnnotations(policyId);
-                          setAnnotations(updated);
-                          setEditingAnnotation(null);
-                          onAnnotationsChange?.();
-                        }
+                        await deleteAnnotationRemote(ann.id);
+                        const updated = await fetchAnnotations(policyId);
+                        setAnnotations(updated);
+                        setEditingAnnotation(null);
+                        onAnnotationsChange?.();
                       }} className="px-3 bg-red-50 text-red-600 text-xs py-2 rounded-lg font-medium hover:bg-red-100 transition">
                         Delete
                       </button>
