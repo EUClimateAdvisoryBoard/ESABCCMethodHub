@@ -92,23 +92,45 @@ export async function POST(req: NextRequest, ctx: { params: { voteId: string } }
   const votingSystem: VotingSystem =
     body.votingSystem && ALLOWED_SYSTEMS.includes(body.votingSystem)
       ? body.votingSystem
-      : 'single_choice';
+      : 'average_ranking';
 
   const allVotes = await listVotes();
   const title = (body.title?.trim()) || nextRunoffTitle(parent.vote.title, allVotes.map((v) => v.title));
   const id = newId(slugify(title));
   const now = new Date().toISOString();
 
+  // Build per-system config. Notably we do NOT carry the parent's
+  // priority-ranking config (scores, caps, labels) into a follow-up that
+  // doesn't use those concepts — the result would be a ballot whose
+  // instructions describe a totally different ballot.
+  const runoffConfig: Record<string, unknown> = { parentVoteId: parent.vote.id };
+  if (votingSystem === 'single_choice') runoffConfig.maxSelections = 1;
+  if (votingSystem === 'average_ranking' || votingSystem === 'ranked_voting') {
+    runoffConfig.requireAllRanked = true;
+  }
+
+  // Per-system instructions so voters know what to do — the parent's
+  // instructions describe priority scoring and would be confusing here.
+  const runoffInstructions =
+    votingSystem === 'average_ranking'
+      ? 'Drag the options into your preferred order — leftmost = best, rightmost = worst. Submit when you are happy with the order. The clear winner is the option with the lowest mean rank across all ballots.'
+      : votingSystem === 'ranked_voting'
+        ? 'Drag the options into your preferred order — leftmost = top choice. The winner is decided by instant-runoff: the option with the fewest first-preferences is eliminated each round until one option holds a majority.'
+        : votingSystem === 'single_choice'
+          ? 'Pick the single option you believe should win.'
+          : votingSystem === 'approval'
+            ? 'Tick every option you would be happy to see win.'
+            : votingSystem === 'star'
+              ? 'Rate each option from 1 to 5 stars.'
+              : undefined;
+
   const record: VoteRecord = {
     id,
     title,
     description: `Follow-up vote from "${parent.vote.title}" — pick the clear winner from the shortlisted options.`,
-    instructions: parent.vote.instructions,
+    instructions: runoffInstructions,
     votingSystem,
-    config: {
-      parentVoteId: parent.vote.id,
-      ...(votingSystem === 'single_choice' ? { maxSelections: 1 } : {}),
-    },
+    config: runoffConfig,
     options,
     isAnonymous: parent.vote.isAnonymous,
     status: 'open',

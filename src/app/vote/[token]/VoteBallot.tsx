@@ -491,88 +491,158 @@ function RankingControls({
 }) {
   const N = vote.options.length;
   const isIRV = vote.votingSystem === 'ranked_voting';
+  // For average_ranking we always rank every option. IRV defaults to optional
+  // ranks so partial ballots are allowed; we surface that distinction in the
+  // hint copy.
   const requireAll = vote.config.requireAllRanked ?? !isIRV;
 
-  // Map rank -> optionId for the swap behaviour.
-  const byRank: Record<number, string> = {};
-  for (const [optId, v] of Object.entries(responses)) {
-    if (typeof v === 'number') byRank[v] = optId;
-  }
-  const rankedCount = Object.keys(byRank).length;
+  // Local order state — the array index *is* the rank. Initialised once
+  // from the existing responses (to survive a parent re-render) and from
+  // vote.options order otherwise so first-time voters see a deterministic
+  // starting layout to drag from.
+  const initialOrder = useMemo(() => {
+    const sorted = [...vote.options].sort((a, b) => {
+      const ra = typeof responses[a.id] === 'number' ? (responses[a.id] as number) : Number.POSITIVE_INFINITY;
+      const rb = typeof responses[b.id] === 'number' ? (responses[b.id] as number) : Number.POSITIVE_INFINITY;
+      return ra - rb;
+    });
+    return sorted.map((o) => o.id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  function setRank(optId: string, rank: number | null) {
-    const next: Record<string, number | boolean> = { ...responses };
-    const current = typeof next[optId] === 'number' ? (next[optId] as number) : null;
-    if (rank === null) {
-      delete next[optId];
-      onChange(next);
-      return;
+  const [order, setOrder] = useState<string[]>(initialOrder);
+  const [dragIdx, setDragIdx] = useState<number | null>(null);
+  const [overIdx, setOverIdx] = useState<number | null>(null);
+
+  // Push position-derived ranks back to the parent on every reorder. We
+  // skip writing if responses is already in sync to avoid an infinite
+  // re-render loop with the parent's onChange.
+  useEffect(() => {
+    const next: Record<string, number | boolean> = {};
+    order.forEach((id, i) => {
+      next[id] = i + 1;
+    });
+    // Cheap equality check.
+    const sameSize = Object.keys(responses).length === order.length;
+    if (sameSize) {
+      let same = true;
+      for (const id of order) {
+        if (responses[id] !== next[id]) {
+          same = false;
+          break;
+        }
+      }
+      if (same) return;
     }
-    // If the new rank is already taken by another option, swap ranks.
-    const holder = byRank[rank];
-    if (holder && holder !== optId) {
-      if (current !== null) next[holder] = current;
-      else delete next[holder];
-    }
-    next[optId] = rank;
     onChange(next);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [order]);
+
+  function reorder(from: number, to: number) {
+    if (from === to || from < 0 || to < 0 || from >= order.length || to >= order.length) return;
+    setOrder((prev) => {
+      const arr = [...prev];
+      const [moved] = arr.splice(from, 1);
+      arr.splice(to, 0, moved);
+      return arr;
+    });
   }
+
+  const optionById: Record<string, typeof vote.options[number]> = {};
+  for (const o of vote.options) optionById[o.id] = o;
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       <div className="rounded-sm border border-dashed border-[#B8BCC2] bg-white px-3 py-2 text-[12px] text-[#3D5265]/80">
         {isIRV
-          ? 'Rank options in order of preference (1 = your top choice).'
-          : 'Order every option from 1 (best) to ' + N + ' (worst).'}
-        {' '}Ranked: {rankedCount}/{N}
-        {requireAll ? ' — all options must be ranked.' : ' — partial rankings allowed.'}
+          ? 'Drag to rank from your top choice (left, #1) to your last choice (right).'
+          : `Drag to order every option from best (left, #1) to worst (right, #${N}).`}
+        {' '}{requireAll ? 'All options must be ranked.' : 'Partial rankings allowed.'}
       </div>
 
-      <ul className="divide-y divide-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden bg-white">
-        {vote.options.map((opt) => {
-          const selected = typeof responses[opt.id] === 'number' ? (responses[opt.id] as number) : null;
+      <ol
+        className="flex flex-wrap gap-2 p-2 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]"
+        // Allow drops onto the list as a whole — handlers on the cards
+        // narrow the drop position. Without preventDefault on dragOver the
+        // browser refuses to fire the drop event.
+        onDragOver={(e) => e.preventDefault()}
+      >
+        {order.map((id, i) => {
+          const opt = optionById[id];
+          if (!opt) return null;
+          const dragging = dragIdx === i;
+          const over = overIdx === i && dragIdx !== null && dragIdx !== i;
           return (
-            <li key={opt.id} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 px-3 py-3">
-              <div className="flex-1 min-w-0">
-                <p className="text-[14px] font-medium text-[#3D5265]">{opt.label}</p>
-                {opt.description ? (
-                  <p className="text-[12px] text-[#3D5265]/70 mt-0.5">{opt.description}</p>
-                ) : null}
-              </div>
-              <div className="flex items-center gap-1.5 flex-wrap">
-                {Array.from({ length: N }, (_, i) => i + 1).map((r) => {
-                  const isOn = selected === r;
-                  return (
-                    <button
-                      key={r}
-                      type="button"
-                      onClick={() => setRank(opt.id, isOn ? null : r)}
-                      aria-pressed={isOn}
-                      className={
-                        'min-w-[34px] px-2 py-1 rounded-sm text-[12.5px] font-semibold border transition-colors ' +
-                        (isOn
-                          ? 'bg-[#00928F] border-[#00928F] text-white'
-                          : 'bg-white border-[#E6E7E8] text-[#3D5265] hover:border-[#00928F]')
-                      }
-                    >
-                      {r}
-                    </button>
-                  );
-                })}
-                {selected !== null ? (
-                  <button
-                    type="button"
-                    onClick={() => setRank(opt.id, null)}
-                    className="px-2 py-1 text-[11.5px] text-[#3D5265]/70 hover:text-[#B33A3A]"
-                  >
-                    clear
-                  </button>
-                ) : null}
-              </div>
+            <li
+              key={id}
+              draggable
+              onDragStart={(e) => {
+                setDragIdx(i);
+                e.dataTransfer.effectAllowed = 'move';
+                // Required by Firefox to start the drag.
+                try { e.dataTransfer.setData('text/plain', String(i)); } catch { /* ignore */ }
+              }}
+              onDragOver={(e) => {
+                e.preventDefault();
+                if (overIdx !== i) setOverIdx(i);
+              }}
+              onDragLeave={() => {
+                if (overIdx === i) setOverIdx(null);
+              }}
+              onDrop={(e) => {
+                e.preventDefault();
+                if (dragIdx !== null) reorder(dragIdx, i);
+                setDragIdx(null);
+                setOverIdx(null);
+              }}
+              onDragEnd={() => {
+                setDragIdx(null);
+                setOverIdx(null);
+              }}
+              className={
+                'group relative flex items-center gap-2 px-3 py-2 min-w-[160px] max-w-[260px] ' +
+                'rounded-sm border bg-white text-[13px] text-[#3D5265] cursor-grab active:cursor-grabbing select-none transition ' +
+                (dragging ? 'opacity-50 ' : '') +
+                (over ? 'border-[#00928F] ring-2 ring-[#00928F]/30 ' : 'border-[#E6E7E8] ')
+              }
+              aria-grabbed={dragging}
+              aria-label={`${opt.label}, current rank ${i + 1} of ${N}`}
+            >
+              <span
+                className="inline-flex items-center justify-center w-6 h-6 rounded-sm bg-[#00928F]/10 text-[#00928F] font-mono text-[12px] font-semibold tabular-nums"
+                aria-hidden
+              >
+                {i + 1}
+              </span>
+              <span className="flex-1 truncate font-medium" title={opt.label}>{opt.label}</span>
+              <span className="flex flex-col -my-1">
+                <button
+                  type="button"
+                  onClick={() => reorder(i, i - 1)}
+                  disabled={i === 0}
+                  aria-label={`Move ${opt.label} earlier`}
+                  className="px-1 text-[11px] text-[#3D5265]/60 hover:text-[#00928F] disabled:opacity-30"
+                >
+                  ←
+                </button>
+                <button
+                  type="button"
+                  onClick={() => reorder(i, i + 1)}
+                  disabled={i === order.length - 1}
+                  aria-label={`Move ${opt.label} later`}
+                  className="px-1 text-[11px] text-[#3D5265]/60 hover:text-[#00928F] disabled:opacity-30"
+                >
+                  →
+                </button>
+              </span>
             </li>
           );
         })}
-      </ul>
+      </ol>
+
+      <p className="text-[11.5px] text-[#3D5265]/60">
+        Touch / no-drag? Use the ←/→ arrows on each card to nudge it left or right.
+      </p>
     </div>
   );
 }
