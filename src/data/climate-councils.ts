@@ -180,7 +180,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2014 / 2020 (strengthened)', statutory: 'Yes',
     url: 'https://klimaraadet.dk/en',
     legalBasisUrl: 'https://www.retsinformation.dk/eli/lta/2020/965',
-    notes: "Europe's 2nd strongest body after UK CCC; ~20 FTE, ~DKK 25 million/year. Annual Climate Programme to Folketing must address Council recommendations with Minister's position on each (§7(2)).",
+    notes: "Europe's 2nd strongest body after UK CCC; ~20 FTE; budget cut from ~DKK 25 m/year to ~DKK 9.3 m from 2024. Annual Climate Programme to Folketing must address Council recommendations with Minister's position on each (Climate Act §7, stk. 2).",
     lat: 55.6761, lon: 12.5683,
   },
   // 9. Estonia
@@ -190,10 +190,10 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     bodyName: 'Climate Council',
     bodyOriginal: 'Kliimanõukogu',
     level: 'national', region: '',
-    status: 'active_no_statute', established: '2023 (August)', statutory: 'Yes',
+    status: 'active_no_statute', established: '2023 (August)', statutory: 'No',
     url: 'https://kliimanoukogu.ee/',
     legalBasisUrl: 'https://kliimaministeerium.ee/en/climate-resilient-economy-act',
-    notes: '17 members — scientists, economists, business figures. Climate-Resilient Economy Act pending since 2024.',
+    notes: '17 members — scientists, economists, business figures (chair: Kaspar Oja). Climate-Resilient Economy Act drafting initiated 2023; as of May 2026 still not adopted by Riigikogu and unlikely before 2027 elections.',
     lat: 59.4370, lon: 24.7536,
   },
   // 10. Finland
@@ -206,7 +206,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2015 / reconstituted 2022', statutory: 'Yes',
     url: 'https://www.ilmastopaneeli.fi/en/the-finnish-climate-change-panel/',
     legalBasisUrl: 'https://www.finlex.fi/fi/laki/ajantasa/2022/20220423',
-    notes: 'Largest national panel in Europe (15 scientists). Government must consult the Panel on national climate plans.',
+    notes: 'One of the largest scientific climate panels in Europe (15 scientists). Government must consult the Panel on national climate plans.',
     lat: 60.1699, lon: 24.9384,
   },
   // 11. Finland Sámi
@@ -219,7 +219,7 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     status: 'active_statutory', established: '2023 (constituted August)', statutory: 'Yes',
     url: 'https://saamelainenilmastoneuvosto.fi/',
     legalBasisUrl: 'https://www.finlex.fi/fi/laki/ajantasa/2022/20220423',
-    notes: 'World-first statutory indigenous climate advisory body; unique model for indigenous-knowledge integration. Hosted at University of Oulu.',
+    notes: 'World-first statutory indigenous climate advisory body; 12 members (half scientists, half holders of traditional Sámi knowledge); unique model for indigenous-knowledge integration. Hosted at University of Oulu (CERH).',
     lat: 65.0121, lon: 25.4651,
   },
   // 12. France HCC
@@ -385,10 +385,10 @@ export const SEED_COUNCILS: ClimateCouncil[] = [
     bodyName: 'National Climate Change Committee',
     bodyOriginal: 'Nacionalinis klimato kaitos komitetas',
     level: 'national', region: '',
-    status: 'active_statutory', established: '2009 / 2023 (reformed)', statutory: 'Yes',
+    status: 'active_statutory', established: '2001 (committee) / 2023 (reformed under 2022 amendments)', statutory: 'Yes',
     url: 'https://am.lrv.lt/',
     legalBasisUrl: 'https://e-seimas.lrs.lt/portal/legalAct/lt/TAD/TAIS.346905',
-    notes: 'Strongest Baltic body; explicit ESABCC-alignment reform in 2023. 11 all-scientist members.',
+    notes: 'Strongest Baltic body; 2023 reform created an all-scientist composition (11 members from research institutions, chair Dr. Arūnas Bukantis, VU) intended to collaborate with ESABCC.',
     lat: 54.6872, lon: 25.2797,
   },
   // 25. Luxembourg OPC
