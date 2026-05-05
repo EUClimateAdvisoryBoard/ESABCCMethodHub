@@ -572,14 +572,14 @@ export default function PolicyNavigatorPage() {
         <div className="max-w-wide mx-auto px-6">
           <div className="flex gap-1 overflow-x-auto" role="tablist" aria-label="Policy Navigator sections">
             {[
-              { id: 'read' as const, label: 'Read', desc: 'Browse and read policy text directly', badge: null as number | null },
-              { id: 'policy-map' as const, label: 'Policy Map', desc: 'Network graph + calendar', badge: null as number | null },
+              { id: 'read' as const, label: 'Policies', desc: 'Browse and read policy text directly', badge: null as number | null },
               {
                 id: 'review-connections' as const,
                 label: 'Review connections',
                 desc: 'Approve, edit or reject every connection on the map',
                 badge: pendingCount || null,
               },
+              { id: 'policy-map' as const, label: 'Policy Map', desc: 'Network graph + calendar', badge: null as number | null },
               { id: 'sectoral-overview' as const, label: 'Sectoral Overview', desc: 'Sector-by-sector milestones', badge: null as number | null },
             ].map(t => (
               <button
