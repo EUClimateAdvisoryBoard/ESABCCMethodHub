@@ -25,6 +25,10 @@ type Draft = {
   capsText: string;               // e.g. "1:3,2:3"
   scoreLabelsText: string;        // e.g. "1:high,2:medium,3:low"
   requireAllScored: boolean;
+  shortlistMode: 'natural_break' | 'fixed';
+  shortlistMin: number;
+  shortlistMax: number;
+  shortlistSize: number;
   // Single / multi
   maxSelections: number;
   // Star
@@ -55,8 +59,12 @@ const initial: Draft = {
   options: [],
   scoresText: '1,2,3',
   capsText: '1:3,2:3',
-  scoreLabelsText: '1:highest priority,2:medium priority,3:lowest priority',
+  scoreLabelsText: '1:high,2:medium,3:low',
   requireAllScored: true,
+  shortlistMode: 'natural_break',
+  shortlistMin: 4,
+  shortlistMax: 7,
+  shortlistSize: 6,
   maxSelections: 1,
   maxStars: 5,
   requireAllRanked: true,
@@ -99,13 +107,20 @@ export default function VoteBuilder() {
 
   const config = useMemo(() => {
     switch (draft.votingSystem) {
-      case 'priority_ranking':
+      case 'priority_ranking': {
+        const min = Math.max(1, Math.floor(draft.shortlistMin || 1));
+        const max = Math.max(min, Math.floor(draft.shortlistMax || min));
         return {
           scores: parseScores(draft.scoresText),
           maxPerScore: parseCaps(draft.capsText),
           scoreLabels: parseLabels(draft.scoreLabelsText),
           requireAllScored: draft.requireAllScored,
+          shortlistMode: draft.shortlistMode,
+          shortlistMin: min,
+          shortlistMax: max,
+          shortlistSize: Math.max(1, Math.floor(draft.shortlistSize || 1)),
         };
+      }
       case 'single_choice':
         return { maxSelections: 1 };
       case 'multi_choice':
@@ -278,6 +293,83 @@ export default function VoteBuilder() {
                 Require every option to be scored
               </label>
             </Field>
+            <div className="sm:col-span-2 mt-2 p-3 rounded-sm border border-[#E6E7E8] bg-[#FBFBFA]">
+              <div className="text-[12.5px] font-semibold text-[#3D5265] mb-2">Shortlist policy</div>
+              <div className="flex flex-col sm:flex-row gap-2 mb-3">
+                <label className={
+                  'flex-1 flex items-start gap-2 px-3 py-2 rounded-sm border cursor-pointer ' +
+                  (draft.shortlistMode === 'natural_break'
+                    ? 'border-[#00928F] bg-[#E6F5F4]'
+                    : 'border-[#E6E7E8] bg-white')
+                }>
+                  <input
+                    type="radio"
+                    name="shortlistMode"
+                    checked={draft.shortlistMode === 'natural_break'}
+                    onChange={() => setDraft({ ...draft, shortlistMode: 'natural_break' })}
+                    className="mt-0.5"
+                  />
+                  <span>
+                    <span className="block text-[12.5px] font-semibold">Natural break</span>
+                    <span className="block text-[11.5px] text-[#3D5265]/70">
+                      Cut where adjacent means jump the most, within a min/max window.
+                    </span>
+                  </span>
+                </label>
+                <label className={
+                  'flex-1 flex items-start gap-2 px-3 py-2 rounded-sm border cursor-pointer ' +
+                  (draft.shortlistMode === 'fixed'
+                    ? 'border-[#00928F] bg-[#E6F5F4]'
+                    : 'border-[#E6E7E8] bg-white')
+                }>
+                  <input
+                    type="radio"
+                    name="shortlistMode"
+                    checked={draft.shortlistMode === 'fixed'}
+                    onChange={() => setDraft({ ...draft, shortlistMode: 'fixed' })}
+                    className="mt-0.5"
+                  />
+                  <span>
+                    <span className="block text-[12.5px] font-semibold">Fixed shortlist size</span>
+                    <span className="block text-[11.5px] text-[#3D5265]/70">
+                      Always cut after exactly N options, regardless of mean clustering.
+                    </span>
+                  </span>
+                </label>
+              </div>
+              {draft.shortlistMode === 'natural_break' ? (
+                <div className="grid grid-cols-2 gap-3">
+                  <Field label="Min size" hint="Smallest allowed shortlist (inclusive).">
+                    <input
+                      type="number"
+                      min={1}
+                      value={draft.shortlistMin}
+                      onChange={(e) => setDraft({ ...draft, shortlistMin: Number(e.target.value) })}
+                      className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                    />
+                  </Field>
+                  <Field label="Max size" hint="Largest allowed shortlist (inclusive).">
+                    <input
+                      type="number"
+                      min={1}
+                      value={draft.shortlistMax}
+                      onChange={(e) => setDraft({ ...draft, shortlistMax: Number(e.target.value) })}
+                      className="w-full rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                    />
+                  </Field>
+                </div>
+              ) : (
+                <Field label="Shortlist size" hint="Number of top-ranked options to include.">
+                  <input
+                    type="number"
+                    min={1}
+                    value={draft.shortlistSize}
+                    onChange={(e) => setDraft({ ...draft, shortlistSize: Number(e.target.value) })}
+                    className="w-32 rounded-sm border border-[#E6E7E8] px-3 py-2 text-[13px]"
+                  />
+                </Field>
+              )}
+            </div>
           </div>
         )}
 

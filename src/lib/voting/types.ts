@@ -56,6 +56,29 @@ export interface VoteConfig {
    * truncated IRV ballots.
    */
   requireAllRanked?: boolean;
+  /**
+   * Priority-ranking shortlist policy (analysis-only — does not affect ballot
+   * validation).
+   *
+   *   'natural_break' (default) — pick the cut where adjacent means jump
+   *     the most, clamped to the [shortlistMin..shortlistMax] window. The
+   *     window defaults to 4..7 when these fields are omitted.
+   *   'fixed' — always cut after `shortlistSize` rows, regardless of where
+   *     the biggest mean-gap lands.
+   */
+  shortlistMode?: 'natural_break' | 'fixed';
+  /** Lower bound on the natural-break shortlist size (inclusive). */
+  shortlistMin?: number;
+  /** Upper bound on the natural-break shortlist size (inclusive). */
+  shortlistMax?: number;
+  /** Shortlist size when `shortlistMode = 'fixed'`. */
+  shortlistSize?: number;
+  /**
+   * If this vote was spawned by "Find clear winner" on a parent vote, the
+   * parent's id. Lets the parent's admin/results pages link to the runoff
+   * and pull its outcome back into the original surface.
+   */
+  parentVoteId?: string;
 }
 
 export interface VoteRecord {

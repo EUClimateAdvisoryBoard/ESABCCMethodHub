@@ -13,7 +13,7 @@ import { unstable_noStore as noStore } from 'next/cache';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
-import { getVote } from '@/lib/voting/store';
+import { getVote, listVotes } from '@/lib/voting/store';
 import {
   analyse,
   PriorityAnalysis,
@@ -43,6 +43,13 @@ export default async function ResultsPage({ params }: { params: { voteId: string
   const used = bundle.tokens.filter((t) => t.usedAt).length;
   const submitted = bundle.ballots.length;
 
+  // Pull in this vote's runoff descendants and (if relevant) its parent so
+  // the admin can navigate between the layered votes from one screen.
+  const allVotes = await listVotes();
+  const childVotes = allVotes.filter((v) => v.config?.parentVoteId === bundle.vote.id);
+  const parentVoteId = bundle.vote.config?.parentVoteId;
+  const parentVote = parentVoteId ? allVotes.find((v) => v.id === parentVoteId) ?? null : null;
+
   return (
     <div className="min-h-screen bg-white text-[#3D5265]">
       <SiteHeader />
@@ -71,8 +78,49 @@ export default async function ResultsPage({ params }: { params: { voteId: string
           </div>
         </section>
 
+        {parentVote ? (
+          <section className="rounded-sm border border-[#00928F]/40 bg-[#E6F5F4]/40 p-4 text-[13px] text-[#3D5265]">
+            <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#00928F] font-semibold mr-2">
+              Follow-up vote
+            </span>
+            Spawned from{' '}
+            <Link href={`/voting/${parentVote.id}/results`} className="font-semibold text-[#00928F] hover:underline">
+              {parentVote.title}
+            </Link>
+            {' '}to find the clear winner among its shortlist.
+          </section>
+        ) : null}
+
+        {childVotes.length > 0 ? (
+          <section className="rounded-sm border border-[#E6E7E8] bg-white p-4">
+            <h3 className="text-[13px] font-mono uppercase tracking-[0.12em] text-[#3D5265]/70 mb-2">
+              Follow-up votes
+            </h3>
+            <ul className="space-y-1 text-[13px]">
+              {childVotes.map((child) => (
+                <li key={child.id} className="flex flex-wrap items-center gap-3">
+                  <span className="font-medium">{child.title}</span>
+                  <span className="font-mono text-[11px] text-[#8A95A3]">
+                    {child.votingSystem.replace(/_/g, ' ')} · {child.status}
+                  </span>
+                  <Link
+                    href={`/voting/${child.id}/results`}
+                    className="ml-auto font-semibold text-[#00928F] hover:underline text-[12.5px]"
+                  >
+                    Open follow-up results →
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+
         {analysis.kind === 'priority_ranking' ? (
-          <PriorityTable analysis={analysis} ballots={submitted} />
+          <PriorityTable
+            analysis={analysis}
+            ballots={submitted}
+            scoreLabels={bundle.vote.config.scoreLabels ?? {}}
+          />
         ) : analysis.kind === 'star' ? (
           <StarTable analysis={analysis} />
         ) : analysis.kind === 'average_ranking' ? (
@@ -97,7 +145,15 @@ function Stat({ label, value }: { label: string; value: string }) {
   );
 }
 
-function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ballots: number }) {
+function PriorityTable({
+  analysis,
+  ballots,
+  scoreLabels,
+}: {
+  analysis: PriorityAnalysis;
+  ballots: number;
+  scoreLabels: Record<string, string>;
+}) {
   const scoreKeys = Object.keys(analysis.rows[0]?.scoreCounts ?? {});
   // Domain for the inline mean-bar: scores observed in this analysis. We use
   // the min/max numeric scoreKey rather than a hard-coded 1..3 so the bar
@@ -212,7 +268,68 @@ function PriorityTable({ analysis, ballots }: { analysis: PriorityAnalysis; ball
           info={analysis.shortlistInfo}
         />
       ) : null}
+      <MethodologyNote scoreKeys={scoreKeys} scoreLabels={scoreLabels} rows={analysis.rows} />
     </section>
+  );
+}
+
+/**
+ * Short footer that pins down the scoring convention used in the table:
+ * lists each allowed score together with its label (e.g. "1 = high"), and
+ * spells out the "lower mean = higher priority" rule. The score labels live
+ * on the parent vote (vote.config.scoreLabels) but they are not echoed by
+ * the analysis rows — we surface them here from the raw config instead.
+ */
+function MethodologyNote({
+  scoreKeys,
+  rows,
+  scoreLabels,
+}: {
+  scoreKeys: string[];
+  rows: PriorityAnalysis['rows'];
+  scoreLabels?: Record<string, string>;
+}) {
+  // Re-derive the scoring labels from whatever the page already loaded.
+  // Empty when the vote was created without scoreLabels — in that case we
+  // omit the labels and only describe the priority direction.
+  const labels = scoreLabels ?? {};
+  const items = scoreKeys
+    .map((k) => ({ score: k, label: labels[k] }))
+    .filter((it) => Number.isFinite(Number(it.score)));
+  // Suppress the per-row stats reference if the table is empty.
+  if (rows.length === 0) return null;
+  return (
+    <div className="px-4 py-3 border-t border-[#E6E7E8] text-[12px] text-[#3D5265]/75 leading-relaxed space-y-2">
+      <p>
+        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+          Methodology
+        </span>
+        Each ballot assigns one of the allowed integer scores to every option.
+        We compute the mean, median and standard deviation of those scores
+        per option, sort ascending, and call the lowest-mean rows the
+        highest-priority. The shortlist boundary (orange separator) follows
+        the policy configured for this vote.
+      </p>
+      <p>
+        <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#3D5265]/60 font-semibold mr-1">
+          Scores
+        </span>
+        {items.length > 0 ? (
+          <>
+            {items.map((it, i) => (
+              <span key={it.score}>
+                {i > 0 ? ', ' : ''}
+                <span className="font-mono">{it.score}</span>
+                {it.label ? <> = {it.label}</> : null}
+              </span>
+            ))}
+            {'. '}
+          </>
+        ) : null}
+        Lower numeric scores represent higher priority — so a smaller mean
+        means a stronger collective preference for that option.
+      </p>
+    </div>
   );
 }
 
@@ -223,8 +340,26 @@ function ShortlistExplainer({
   shortlistEnd: number;
   info: NonNullable<PriorityAnalysis['shortlistInfo']>;
 }) {
-  const targetSize = info.targetEnd + 1;
   const chosenSize = shortlistEnd + 1;
+
+  if (info.mode === 'fixed') {
+    return (
+      <div className="px-4 py-3 border-t border-[#E6E7E8] text-[12px] text-[#3D5265]/75 leading-relaxed space-y-2">
+        <p>
+          <span className="font-mono text-[10.5px] uppercase tracking-[0.12em] text-[#E87722] font-semibold mr-1">
+            Fixed shortlist
+          </span>
+          The shortlist is fixed at the top {chosenSize} option{chosenSize === 1 ? '' : 's'} regardless
+          of where the means cluster. The orange separator marks the cut.
+          {Number.isFinite(info.chosenGap) && info.chosenGap !== 0
+            ? <> Δmean across this boundary: {fmt(info.chosenGap)}.</>
+            : null}
+        </p>
+      </div>
+    );
+  }
+
+  const targetSize = info.targetEnd + 1;
   const hitTarget = shortlistEnd === info.targetEnd;
   // "Near-tie" when the runner-up gap is within 10% of the chosen one (and
   // both are positive). Below that threshold the cut is sensitive to a few
@@ -245,7 +380,7 @@ function ShortlistExplainer({
         The orange separator marks where the short list ends.
       </p>
       <p>
-        The cut is the biggest jump within the top-4 to top-7 window. The
+        The cut is the biggest jump within the top-{info.minSize} to top-{info.maxSize} window. The
         conventional target is a top-{targetSize} short list, but the boundary
         moves to wherever that biggest jump actually sits — so the short list
         follows the data instead of being forced to a fixed size.
