@@ -32,6 +32,7 @@ import { supabase } from '@/lib/supabase';
 const OVERRIDES_KEY = 'eu-policy-connection-overrides';
 const ADDED_KEY = 'eu-policy-connection-added';
 const VERIFICATIONS_KEY = 'eu-policy-connection-verifications';
+const ASSIGNMENTS_KEY = 'eu-policy-connection-assignments';
 const CHANGE_EVENT = 'eu-policy-connections-changed';
 
 export type VerificationStatus = 'unverified' | 'verified' | 'rejected' | 'needs_review';
@@ -47,6 +48,14 @@ export interface VerificationRecord {
   /** Optional free-text rationale for the verification decision. */
   reviewerNote?: string;
 }
+
+export interface AssignmentRecord {
+  assigneeName: string;
+  assigneeUserId: string | null;
+  assignedAt: string;
+}
+
+type AssignmentMap = Record<string, AssignmentRecord>;
 
 export type ConnectionPatch = Partial<
   Pick<PolicyConnection, 'connection_type' | 'description' | 'articles_source' | 'articles_target'>
@@ -91,6 +100,10 @@ function readVerifications(): VerificationMap {
   return readJson<VerificationMap>(VERIFICATIONS_KEY) ?? {};
 }
 
+function readAssignments(): AssignmentMap {
+  return readJson<AssignmentMap>(ASSIGNMENTS_KEY) ?? {};
+}
+
 function applyPatch(base: PolicyConnection, patch?: ConnectionPatch): PolicyConnection {
   if (!patch) return base;
   return {
@@ -111,6 +124,8 @@ export interface EnrichedConnection extends PolicyConnection {
   /** True when this connection came from `addedConnections`, not the shipped dataset. */
   isUserAdded: boolean;
   verification: VerificationRecord;
+  /** Set when a reviewer has been assigned to review this connection. */
+  assignment: AssignmentRecord | null;
 }
 
 const DEFAULT_VERIFICATION: VerificationRecord = {
@@ -123,6 +138,7 @@ function enrich(
   c: PolicyConnection,
   overrides: OverrideMap,
   verifications: VerificationMap,
+  assignments: AssignmentMap,
   isUserAdded: boolean,
 ): EnrichedConnection {
   const source = policies.find(p => p.id === c.source_policy_id);
@@ -137,6 +153,7 @@ function enrich(
     isEdited: Boolean(overrides[key]),
     isUserAdded,
     verification: verifications[key] ?? DEFAULT_VERIFICATION,
+    assignment: assignments[key] ?? null,
   };
 }
 
@@ -179,10 +196,18 @@ interface ServerAdditionRow {
   articles_source: string | null;
   articles_target: string | null;
 }
+interface ServerAssignmentRow {
+  connection_id: number;
+  assignee_user_id: string | null;
+  assignee_name: string;
+  assigned_by: string | null;
+  assigned_at: string;
+}
 interface ServerStatePayload {
   overrides: ServerOverrideRow[];
   verifications: ServerVerificationRow[];
   additions: ServerAdditionRow[];
+  assignments: ServerAssignmentRow[];
   created?: ServerAdditionRow;
 }
 
@@ -209,6 +234,18 @@ function rowsToVerificationMap(rows: ServerVerificationRow[]): VerificationMap {
       reviewerUserId: r.reviewer_user_id,
       reviewedAt: r.reviewed_at,
       reviewerNote: r.reviewer_note ?? undefined,
+    };
+  }
+  return out;
+}
+
+function rowsToAssignmentMap(rows: ServerAssignmentRow[]): AssignmentMap {
+  const out: AssignmentMap = {};
+  for (const r of rows) {
+    out[String(r.connection_id)] = {
+      assigneeName: r.assignee_name,
+      assigneeUserId: r.assignee_user_id,
+      assignedAt: r.assigned_at,
     };
   }
   return out;
@@ -270,11 +307,13 @@ async function flushLocalOnlyChanges(
   localOverrides: OverrideMap,
   localVerifications: VerificationMap,
   localAdded: PolicyConnection[],
+  localAssignments: AssignmentMap,
   serverPayload: ServerStatePayload,
 ): Promise<void> {
   const serverOverrideIds = new Set(serverPayload.overrides.map(r => String(r.connection_id)));
   const serverVerificationIds = new Set(serverPayload.verifications.map(r => String(r.connection_id)));
   const serverAdditionIds = new Set(serverPayload.additions.map(r => r.id));
+  const serverAssignmentIds = new Set(serverPayload.assignments.map(r => String(r.connection_id)));
 
   const pending: Promise<unknown>[] = [];
 
@@ -316,6 +355,19 @@ async function flushLocalOnlyChanges(
     }
   }
 
+  for (const [idStr, record] of Object.entries(localAssignments)) {
+    if (!serverAssignmentIds.has(idStr)) {
+      pending.push(
+        syncRequest('POST', {
+          op: 'setAssignee',
+          id: Number(idStr),
+          assigneeName: record.assigneeName,
+          assigneeUserId: record.assigneeUserId,
+        }),
+      );
+    }
+  }
+
   if (pending.length > 0) await Promise.all(pending);
 }
 
@@ -323,18 +375,22 @@ export function useConnectionOverrides() {
   const [overrides, setOverrides] = useState<OverrideMap>(() => readOverrides());
   const [added, setAdded] = useState<PolicyConnection[]>(() => readAdded());
   const [verifications, setVerifications] = useState<VerificationMap>(() => readVerifications());
+  const [assignments, setAssignments] = useState<AssignmentMap>(() => readAssignments());
 
   /** Apply a server payload → state + localStorage cache. */
   const applyServerPayload = useCallback((payload: ServerStatePayload) => {
     const nextOverrides = rowsToOverrideMap(payload.overrides);
     const nextVerifications = rowsToVerificationMap(payload.verifications);
     const nextAdded = rowsToAddedConnections(payload.additions);
+    const nextAssignments = rowsToAssignmentMap(payload.assignments ?? []);
     writeJson(OVERRIDES_KEY, nextOverrides);
     writeJson(VERIFICATIONS_KEY, nextVerifications);
     writeJson(ADDED_KEY, nextAdded);
+    writeJson(ASSIGNMENTS_KEY, nextAssignments);
     setOverrides(nextOverrides);
     setVerifications(nextVerifications);
     setAdded(nextAdded);
+    setAssignments(nextAssignments);
   }, []);
 
   // Hydrate from Supabase when a session is available, and refresh whenever
@@ -350,13 +406,15 @@ export function useConnectionOverrides() {
       const localOverrides = readOverrides();
       const localVerifications = readVerifications();
       const localAdded = readAdded();
+      const localAssignments = readAssignments();
       const hasPendingLocal =
         Object.keys(localOverrides).some(id => !serverPayload.overrides.find(r => String(r.connection_id) === id)) ||
         Object.keys(localVerifications).some(id => !serverPayload.verifications.find(r => String(r.connection_id) === id)) ||
-        localAdded.some(c => !serverPayload.additions.find(r => r.id === c.id));
+        localAdded.some(c => !serverPayload.additions.find(r => r.id === c.id)) ||
+        Object.keys(localAssignments).some(id => !serverPayload.assignments.find(r => String(r.connection_id) === id));
 
       if (hasPendingLocal) {
-        await flushLocalOnlyChanges(localOverrides, localVerifications, localAdded, serverPayload);
+        await flushLocalOnlyChanges(localOverrides, localVerifications, localAdded, localAssignments, serverPayload);
         if (cancelled) return;
         const flushedPayload = await syncRequest('GET');
         if (!cancelled && flushedPayload) applyServerPayload(flushedPayload);
@@ -382,9 +440,13 @@ export function useConnectionOverrides() {
       setOverrides(readOverrides());
       setAdded(readAdded());
       setVerifications(readVerifications());
+      setAssignments(readAssignments());
     };
     const onStorage = (e: StorageEvent) => {
-      if (e.key === OVERRIDES_KEY || e.key === ADDED_KEY || e.key === VERIFICATIONS_KEY) refreshLocal();
+      if (
+        e.key === OVERRIDES_KEY || e.key === ADDED_KEY ||
+        e.key === VERIFICATIONS_KEY || e.key === ASSIGNMENTS_KEY
+      ) refreshLocal();
     };
     window.addEventListener('storage', onStorage);
     window.addEventListener(CHANGE_EVENT, refreshLocal);
@@ -406,10 +468,10 @@ export function useConnectionOverrides() {
   );
 
   const enrichedConnections = useMemo<EnrichedConnection[]>(() => {
-    const fromBase = mergedBase.map(c => enrich(c, overrides, verifications, false));
-    const fromAdded = added.map(c => enrich(c, overrides, verifications, true));
+    const fromBase = mergedBase.map(c => enrich(c, overrides, verifications, assignments, false));
+    const fromAdded = added.map(c => enrich(c, overrides, verifications, assignments, true));
     return [...fromBase, ...fromAdded];
-  }, [mergedBase, added, overrides, verifications]);
+  }, [mergedBase, added, overrides, verifications, assignments]);
 
   // ── Mutations ──────────────────────────────────────────────────────────
   // Pattern: optimistic local update for snappy UI, then POST to /api/...
@@ -566,6 +628,38 @@ export function useConnectionOverrides() {
     [applyServerPayload],
   );
 
+  const setAssignee = useCallback(
+    async (id: number, assigneeName: string, assigneeUserId: string | null) => {
+      const record: AssignmentRecord = {
+        assigneeName,
+        assigneeUserId,
+        assignedAt: new Date().toISOString(),
+      };
+      const current = readAssignments();
+      const next: AssignmentMap = { ...current, [String(id)]: record };
+      writeJson(ASSIGNMENTS_KEY, next);
+      setAssignments(next);
+      const payload = await syncRequest('POST', { op: 'setAssignee', id, assigneeName, assigneeUserId });
+      if (payload) applyServerPayload(payload);
+    },
+    [applyServerPayload],
+  );
+
+  const clearAssignee = useCallback(
+    async (id: number) => {
+      const current = readAssignments();
+      if (String(id) in current) {
+        const next = { ...current };
+        delete next[String(id)];
+        writeJson(ASSIGNMENTS_KEY, next);
+        setAssignments(next);
+      }
+      const payload = await syncRequest('POST', { op: 'clearAssignee', id });
+      if (payload) applyServerPayload(payload);
+    },
+    [applyServerPayload],
+  );
+
   const getConnectionsForPolicy = useCallback(
     (policyId: string): EnrichedConnection[] =>
       enrichedConnections.filter(
@@ -624,6 +718,8 @@ export function useConnectionOverrides() {
     addConnection,
     updateAddedConnection,
     deleteAddedConnection,
+    setAssignee,
+    clearAssignee,
     getConnectionsForPolicy,
     getGraphData,
   };

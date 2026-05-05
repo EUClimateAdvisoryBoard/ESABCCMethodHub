@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
 import { policies } from '@/data/policies';
 import {
@@ -8,6 +8,11 @@ import {
   type EnrichedConnection,
   type VerificationStatus,
 } from '@/lib/useConnectionOverrides';
+
+interface Assignee {
+  id: string;
+  name: string;
+}
 import {
   CONNECTION_TYPE_LIST,
   getConnectionType,
@@ -76,12 +81,31 @@ export default function ConnectionsReviewTable() {
     addConnection,
     updateAddedConnection,
     deleteAddedConnection,
+    setAssignee,
+    clearAssignee,
   } = useConnectionOverrides();
 
   const [filter, setFilter] = useState<FilterKey>('unverified');
   const [query, setQuery] = useState('');
   const [selectedIds, setSelectedIds] = useState<Set<number>>(new Set());
   const [addingOpen, setAddingOpen] = useState(false);
+  const [assignees, setAssignees] = useState<Assignee[]>([]);
+
+  useEffect(() => {
+    if (!user) return;
+    import('@/lib/supabase').then(async ({ supabase }) => {
+      if (!supabase) return;
+      const { data } = await supabase.auth.getSession();
+      const token = data.session?.access_token;
+      if (!token) return;
+      fetch('/api/connections/assignees', {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+        .then(r => r.ok ? r.json() : null)
+        .then(d => { if (d?.assignees) setAssignees(d.assignees); })
+        .catch(() => {});
+    });
+  }, [user]);
 
   const reviewerName = displayName || user?.email || 'Anonymous reviewer';
   const reviewerUserId = user?.id ?? null;
@@ -363,6 +387,9 @@ export default function ConnectionsReviewTable() {
                 onDelete={() => {
                   if (c.isUserAdded) deleteAddedConnection(c.id);
                 }}
+                onAssign={(userId, userName) => setAssignee(c.id, userName, userId)}
+                onClearAssign={() => clearAssignee(c.id)}
+                assignees={assignees}
               />
             ))}
           </tbody>
@@ -418,6 +445,9 @@ function Row({
   onPatch,
   onRevertEdit,
   onDelete,
+  onAssign,
+  onClearAssign,
+  assignees,
 }: {
   connection: EnrichedConnection;
   selected: boolean;
@@ -432,6 +462,9 @@ function Row({
   ) => void;
   onRevertEdit: () => void;
   onDelete: () => void;
+  onAssign: (userId: string, userName: string) => void;
+  onClearAssign: () => void;
+  assignees: Assignee[];
 }) {
   const style = STATUS_STYLES[connection.verification.status];
   const typeDef = getConnectionType(connection.connection_type);
@@ -641,6 +674,12 @@ function Row({
             </button>
           )}
           <ChangeHistory artefactKind="connection" artefactId={String(connection.id)} className="ml-1" />
+          <AssignToButton
+            current={connection.assignment}
+            assignees={assignees}
+            onAssign={onAssign}
+            onClear={onClearAssign}
+          />
           {connection.isEdited && !connection.isUserAdded && (
             <button
               type="button"
@@ -1000,6 +1039,77 @@ function ActionButton({
     >
       {children}
     </button>
+  );
+}
+
+function AssignToButton({
+  current,
+  assignees,
+  onAssign,
+  onClear,
+}: {
+  current: { assigneeName: string } | null;
+  assignees: Assignee[];
+  onAssign: (id: string, name: string) => void;
+  onClear: () => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, [open]);
+
+  if (current) {
+    return (
+      <span className="inline-flex items-center gap-1 text-[10.5px] text-violet-700 ml-1">
+        <span title={`Assigned to ${current.assigneeName}`}>→ {current.assigneeName}</span>
+        <button
+          type="button"
+          onClick={onClear}
+          title="Remove assignment"
+          className="text-tertiary hover:text-red-600 leading-none"
+        >
+          ×
+        </button>
+      </span>
+    );
+  }
+
+  return (
+    <div ref={ref} className="relative inline-block ml-1">
+      <button
+        type="button"
+        onClick={() => setOpen(v => !v)}
+        title="Assign this connection to a reviewer"
+        className="text-[10.5px] text-tertiary hover:text-tertiary-dark underline underline-offset-2"
+      >
+        Assign to
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full mt-1 z-50 bg-white border border-grey-200 rounded shadow-lg min-w-[160px] max-h-52 overflow-y-auto">
+          {assignees.length === 0 ? (
+            <p className="px-3 py-2 text-[11px] text-tertiary italic">No users found.</p>
+          ) : (
+            assignees.map(a => (
+              <button
+                key={a.id}
+                type="button"
+                className="w-full text-left px-3 py-1.5 text-[11px] hover:bg-grey-50 text-tertiary-dark"
+                onClick={() => { onAssign(a.id, a.name); setOpen(false); }}
+              >
+                {a.name}
+              </button>
+            ))
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
