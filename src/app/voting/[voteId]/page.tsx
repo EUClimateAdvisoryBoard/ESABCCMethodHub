@@ -6,6 +6,7 @@
  */
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { unstable_noStore as noStore } from 'next/cache';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -17,6 +18,10 @@ import VoteAdmin from './VoteAdmin';
 export const dynamic = 'force-dynamic';
 
 export default async function VoteAdminPage({ params }: { params: { voteId: string } }) {
+  // Force a fresh read on every request. Without this, Next.js can serve a
+  // cached bundle from the data layer and the Submissions counter stays at 0
+  // while the results page (which already opts out) shows the real ballots.
+  noStore();
   const backend = detectVotingBackend();
   const bundle = await getVote(params.voteId);
   if (!bundle) notFound();
