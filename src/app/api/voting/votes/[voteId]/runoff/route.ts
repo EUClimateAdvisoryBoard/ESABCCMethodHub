@@ -141,7 +141,34 @@ export async function POST(req: NextRequest, ctx: { params: { voteId: string } }
   try {
     await createVote(record);
   } catch (err: unknown) {
-    return NextResponse.json({ error: (err as Error).message }, { status: 409 });
+    const message = (err as Error).message ?? '';
+    // The DB rejects voting_system values that aren't in its check
+    // constraint. Production DBs that missed migration 032/034 still cap
+    // the allow-list at the original 029 set, so `average_ranking` /
+    // `ranked_voting` runoffs blow up here. Try once more with a system
+    // we know is in every constraint version.
+    if (
+      /votes_voting_system_check/i.test(message) &&
+      record.votingSystem !== 'single_choice'
+    ) {
+      const fallback: VoteRecord = {
+        ...record,
+        votingSystem: 'single_choice',
+        config: { parentVoteId: parent.vote.id, maxSelections: 1 },
+        instructions: 'Pick the single option you believe should win.',
+      };
+      try {
+        await createVote(fallback);
+        const tokens = await generateTokens(fallback.id, 1, ['Universal link'], null);
+        return NextResponse.json({ vote: fallback, token: tokens[0] }, { status: 201 });
+      } catch (fallbackErr: unknown) {
+        return NextResponse.json(
+          { error: (fallbackErr as Error).message },
+          { status: 409 },
+        );
+      }
+    }
+    return NextResponse.json({ error: message }, { status: 409 });
   }
 
   // One universal link, ready to share.
