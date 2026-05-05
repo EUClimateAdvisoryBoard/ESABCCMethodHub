@@ -55,6 +55,7 @@ interface InboundFeedItem {
   id: string;
   title: string;
   summary: string;
+  fullText?: string;
   aiSummary?: string;
   sourceLabel: string;
   publishedDate: string;
@@ -84,6 +85,7 @@ interface DisplayItem {
   sourceLabel: string;
   url?: string;
   summary: string;
+  fullText?: string;
   aiSummary?: string;
   tags: string[];
   kind: 'email' | 'post';
@@ -303,7 +305,7 @@ function buildBackgroundReport(opts: {
 
   lines.push(`## Source items (${items.length})`);
   lines.push('');
-  lines.push(`Each item below is one piece of evidence. The "AI summary" field, when present, was produced by an in-product summariser; the raw "Summary" is the original body. Prefer the longer of the two when reasoning.`);
+  lines.push(`Each item below is one piece of evidence. The "Full content" field, when present, is the verbatim body of the forwarded email or post — prefer it when reasoning. "AI summary" was produced by an in-product summariser and is included for orientation only. "Short summary" is an editor-written lede when it differs from both.`);
   lines.push('');
 
   if (items.length === 0) {
@@ -329,8 +331,26 @@ function buildBackgroundReport(opts: {
         lines.push(escapeMd(it.aiSummary));
         lines.push('');
       }
-      if (it.summary && it.summary !== it.aiSummary) {
-        lines.push(`**Summary**`);
+      // Prefer the full email body (fullText) over the short summary —
+      // this is the verbatim content the downstream LLM should reason
+      // over. Fall back to summary when fullText is missing (e.g. for
+      // secretariat posts, which don't have a separate body field).
+      const bodyText = it.fullText || it.summary;
+      if (bodyText) {
+        lines.push(`**Full content**`);
+        lines.push('');
+        lines.push(escapeMd(bodyText));
+        lines.push('');
+      }
+      // Keep the short summary too when it differs from the full text and
+      // from the AI summary — it sometimes carries an editor-written lede
+      // that's worth preserving.
+      if (
+        it.summary &&
+        it.summary !== it.fullText &&
+        it.summary !== it.aiSummary
+      ) {
+        lines.push(`**Short summary**`);
         lines.push('');
         lines.push(escapeMd(it.summary));
         lines.push('');
@@ -462,6 +482,7 @@ export default function BrusselsBulletinPage() {
       sourceLabel: it.sourceLabel,
       url: it.url,
       summary: it.summary,
+      fullText: it.fullText,
       aiSummary: it.aiSummary,
       tags: it.tags || [],
       kind: 'email' as const,
@@ -709,9 +730,10 @@ export default function BrusselsBulletinPage() {
           <p className="text-xs text-tertiary mb-3">
             The Word export below is built by cloning the official ESABCC template and replacing
             its body, so all styles, fonts, headers and page setup match the template exactly.
-            The background report is a Markdown dump of every source item (title, source, date,
-            URL, summary) plus a ready-to-use prompt — pass it to a more capable external LLM
-            (Claude Opus, Gemini Ultra, GPT-5, …) to produce a higher-quality bulletin.
+            The background report is a Markdown dump of every source item — title, source, date,
+            URL, tags, the AI summary <em>and the full email body verbatim</em> — plus a
+            ready-to-use prompt. Pass it to a more capable external LLM (Claude Opus, Gemini
+            Ultra, GPT-5, …) to produce a higher-quality bulletin.
           </p>
           <div className="flex flex-wrap items-center gap-3">
             <a
