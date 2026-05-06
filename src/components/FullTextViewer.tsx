@@ -740,104 +740,74 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                       {ann.user_display_name && <>{ann.user_display_name} &middot; </>}
                       {new Date(ann.created_at).toLocaleDateString()}
                     </span>
-                    <span className="block text-secondary mt-1.5 font-medium" style={{ fontSize: '10px' }}>
-                      {!(ann as Annotation & { user_id?: string }).user_id || (ann as Annotation & { user_id?: string }).user_id === user?.id ? 'Click to edit' : 'Click to view'}
+                    <span className="block text-secondary mt-1.5 font-medium" style={{ fontSize: '10px' }}>Click to edit</span>
+                    <span className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white" />
+                  </span>
+                )}
+                {/* Edit popover */}
+                {isEditing && (
+                  <span className="absolute z-40 bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-white rounded-xl shadow-2xl border border-grey-200 p-4 text-left"
+                    style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', lineHeight: '1.5', whiteSpace: 'normal' }}
+                    onClick={(e) => e.stopPropagation()}>
+                    <span className="flex items-center justify-between mb-3">
+                      <span className="text-sm font-bold text-tertiary-dark flex items-center gap-1.5">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-secondary">
+                          <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
+                          <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
+                        </svg>
+                        Edit Annotation
+                      </span>
+                      <button onClick={(e) => { e.stopPropagation(); setEditingAnnotation(null); }}
+                        className="text-grey-400 hover:text-tertiary-dark">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
+                      </button>
+                    </span>
+                    <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Tag</span>
+                    <span className="flex flex-wrap gap-1.5 mb-3">
+                      {tags.slice(0, 8).map(t => (
+                        <button key={t.name} onClick={(e) => { e.stopPropagation(); setEditTag(t.name); }}
+                          className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-lg border transition ${editTag === t.name ? 'border-transparent text-white font-medium' : 'border-grey-200 text-tertiary-dark hover:border-grey-300'}`}
+                          style={editTag === t.name ? { backgroundColor: getTagColor(t.name) } : {}}>
+                          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: getTagColor(t.name) }} />
+                          {t.name.replace(/_/g, ' ')}
+                        </button>
+                      ))}
+                    </span>
+                    <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Note</span>
+                    <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)}
+                      className="w-full text-sm border border-grey-200 rounded-lg px-3 py-2 mb-3 h-16 resize-none focus:ring-2 focus:ring-secondary/40 focus:outline-none"
+                      style={{ fontFamily: 'system-ui, sans-serif' }}
+                      onClick={(e) => e.stopPropagation()} />
+                    <span className="flex gap-2">
+                      <button onClick={async (e) => {
+                        e.stopPropagation();
+                        await updateAnnotationRemote(ann.id, { tag: editTag, note: editNote });
+                        const updated = await fetchAnnotations(policyId);
+                        setAnnotations(reconcileAnnotations(updated));
+                        setEditingAnnotation(null);
+                        onAnnotationsChange?.();
+                      }} className="flex-1 bg-secondary text-white text-xs py-2 rounded-lg font-medium hover:bg-secondary-dark transition">
+                        Save Changes
+                      </button>
+                      <button onClick={async (e) => {
+                        e.stopPropagation();
+                        const ok = await deleteAnnotationRemote(ann.id);
+                        if (!ok) return;
+                        const updated = await fetchAnnotations(policyId);
+                        setAnnotations(reconcileAnnotations(updated));
+                        setEditingAnnotation(null);
+                        onAnnotationsChange?.();
+                      }} className="px-3 bg-red-50 text-red-600 text-xs py-2 rounded-lg font-medium hover:bg-red-100 transition">
+                        Delete
+                      </button>
+                      <button onClick={(e) => { e.stopPropagation(); setEditingAnnotation(null); }}
+                        className="px-3 bg-grey-100 text-tertiary text-xs py-2 rounded-lg font-medium hover:bg-grey-200 transition">
+                        Cancel
+                      </button>
                     </span>
                     <span className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white" />
                   </span>
                 )}
-                {/* Annotation popover (edit for owner, read-only for others) */}
-                {isEditing && (() => {
-                  const annUserId = (ann as Annotation & { user_id?: string }).user_id;
-                  const isOwner = !annUserId || annUserId === user?.id;
-                  return (
-                    <span className="absolute z-40 bottom-full left-1/2 -translate-x-1/2 mb-2 w-80 bg-white rounded-xl shadow-2xl border border-grey-200 p-4 text-left"
-                      style={{ fontFamily: 'system-ui, sans-serif', fontSize: '13px', lineHeight: '1.5', whiteSpace: 'normal' }}
-                      onClick={(e) => e.stopPropagation()}>
-                      <span className="flex items-center justify-between mb-3">
-                        <span className="text-sm font-bold text-tertiary-dark flex items-center gap-1.5">
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-secondary">
-                            <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" />
-                            <path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z" />
-                          </svg>
-                          {isOwner ? 'Edit Annotation' : 'Annotation'}
-                        </span>
-                        <button onClick={(e) => { e.stopPropagation(); setEditingAnnotation(null); }}
-                          className="text-grey-400 hover:text-tertiary-dark">
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                        </button>
-                      </span>
-                      {/* Tag */}
-                      <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Tag</span>
-                      {isOwner ? (
-                        <span className="flex flex-wrap gap-1.5 mb-3">
-                          {tags.slice(0, 8).map(t => (
-                            <button key={t.name} onClick={(e) => { e.stopPropagation(); setEditTag(t.name); }}
-                              className={`inline-flex items-center gap-1 text-xs px-2 py-1 rounded-lg border transition ${editTag === t.name ? 'border-transparent text-white font-medium' : 'border-grey-200 text-tertiary-dark hover:border-grey-300'}`}
-                              style={editTag === t.name ? { backgroundColor: getTagColor(t.name) } : {}}>
-                              <span className="w-2 h-2 rounded-full" style={{ backgroundColor: getTagColor(t.name) }} />
-                              {t.name.replace(/_/g, ' ')}
-                            </button>
-                          ))}
-                        </span>
-                      ) : (
-                        <span className="flex items-center gap-1.5 mb-3">
-                          <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: tagColor }} />
-                          <span className="text-xs font-medium text-tertiary-dark">{ann.tag.replace(/_/g, ' ')}</span>
-                        </span>
-                      )}
-                      {/* Note */}
-                      <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Note</span>
-                      {isOwner ? (
-                        <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)}
-                          className="w-full text-sm border border-grey-200 rounded-lg px-3 py-2 mb-3 h-16 resize-none focus:ring-2 focus:ring-secondary/40 focus:outline-none"
-                          style={{ fontFamily: 'system-ui, sans-serif' }}
-                          onClick={(e) => e.stopPropagation()} />
-                      ) : (
-                        <span className="block text-sm text-tertiary-dark mb-3 min-h-[2rem]">
-                          {ann.note || <span className="italic text-grey-400">No note</span>}
-                        </span>
-                      )}
-                      {/* Author */}
-                      {ann.user_display_name && (
-                        <span className="block text-xs text-grey-400 mb-3">{ann.user_display_name} &middot; {new Date(ann.created_at).toLocaleDateString()}</span>
-                      )}
-                      {/* Action buttons */}
-                      <span className="flex gap-2">
-                        {isOwner ? (
-                          <>
-                            <button onClick={async (e) => {
-                              e.stopPropagation();
-                              await updateAnnotationRemote(ann.id, { tag: editTag, note: editNote });
-                              const updated = await fetchAnnotations(policyId);
-                              setAnnotations(reconcileAnnotations(updated));
-                              setEditingAnnotation(null);
-                              onAnnotationsChange?.();
-                            }} className="flex-1 bg-secondary text-white text-xs py-2 rounded-lg font-medium hover:bg-secondary-dark transition">
-                              Save Changes
-                            </button>
-                            <button onClick={async (e) => {
-                              e.stopPropagation();
-                              const ok = await deleteAnnotationRemote(ann.id);
-                              if (!ok) return;
-                              const updated = await fetchAnnotations(policyId);
-                              setAnnotations(reconcileAnnotations(updated));
-                              setEditingAnnotation(null);
-                              onAnnotationsChange?.();
-                            }} className="px-3 bg-red-50 text-red-600 text-xs py-2 rounded-lg font-medium hover:bg-red-100 transition">
-                              Delete
-                            </button>
-                          </>
-                        ) : null}
-                        <button onClick={(e) => { e.stopPropagation(); setEditingAnnotation(null); }}
-                          className={`px-3 bg-grey-100 text-tertiary text-xs py-2 rounded-lg font-medium hover:bg-grey-200 transition ${!isOwner ? 'flex-1' : ''}`}>
-                          {isOwner ? 'Cancel' : 'Close'}
-                        </button>
-                      </span>
-                      <span className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-r-[6px] border-t-[6px] border-l-transparent border-r-transparent border-t-white" />
-                    </span>
-                  );
-                })()}
               </span>
             );
           }
