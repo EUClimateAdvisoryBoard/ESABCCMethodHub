@@ -92,6 +92,10 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
   useEffect(() => {
     fetchAnnotations(policyId).then(anns => setAnnotations(reconcileAnnotations(anns)));
     fetchTags().then(setTags);
+    const interval = setInterval(() => {
+      fetchAnnotations(policyId).then(anns => setAnnotations(reconcileAnnotations(anns)));
+    }, 30_000);
+    return () => clearInterval(interval);
   }, [policyId, reconcileAnnotations]);
 
   // Listen for scroll-to events from annotation panel
@@ -709,6 +713,7 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                 }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if ((ann as Annotation & { user_id?: string }).user_id && (ann as Annotation & { user_id?: string }).user_id !== user?.id) return;
                   if (editingAnnotation === ann.id) {
                     setEditingAnnotation(null);
                   } else {
