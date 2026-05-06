@@ -713,7 +713,6 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                 }}
                 onClick={(e) => {
                   e.stopPropagation();
-                  if ((ann as Annotation & { user_id?: string }).user_id && (ann as Annotation & { user_id?: string }).user_id !== user?.id) return;
                   if (editingAnnotation === ann.id) {
                     setEditingAnnotation(null);
                   } else {
@@ -763,7 +762,6 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6L6 18M6 6l12 12" /></svg>
                       </button>
                     </span>
-                    {/* Tag selector for edit */}
                     <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Tag</span>
                     <span className="flex flex-wrap gap-1.5 mb-3">
                       {tags.slice(0, 8).map(t => (
@@ -775,13 +773,11 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                         </button>
                       ))}
                     </span>
-                    {/* Note editor */}
                     <span className="block text-xs font-medium text-tertiary-dark uppercase tracking-wider mb-1.5">Note</span>
                     <textarea value={editNote} onChange={(e) => setEditNote(e.target.value)}
                       className="w-full text-sm border border-grey-200 rounded-lg px-3 py-2 mb-3 h-16 resize-none focus:ring-2 focus:ring-secondary/40 focus:outline-none"
                       style={{ fontFamily: 'system-ui, sans-serif' }}
                       onClick={(e) => e.stopPropagation()} />
-                    {/* Action buttons */}
                     <span className="flex gap-2">
                       <button onClick={async (e) => {
                         e.stopPropagation();

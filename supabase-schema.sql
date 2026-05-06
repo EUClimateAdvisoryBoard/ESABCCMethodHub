@@ -144,11 +144,11 @@ drop policy if exists "Users can insert own annotations" on public.annotations;
 create policy "Users can insert own annotations"
   on public.annotations for insert with check (auth.uid() = user_id);
 drop policy if exists "Users can update own annotations" on public.annotations;
-create policy "Users can update own annotations"
-  on public.annotations for update using (auth.uid() = user_id);
+create policy "Authenticated users can update annotations"
+  on public.annotations for update using (auth.uid() is not null);
 drop policy if exists "Users can delete own annotations" on public.annotations;
-create policy "Users can delete own annotations"
-  on public.annotations for delete using (auth.uid() = user_id);
+create policy "Authenticated users can delete annotations"
+  on public.annotations for delete using (auth.uid() is not null);
 create index if not exists idx_annotations_policy on public.annotations(policy_id);
 create index if not exists idx_annotations_user on public.annotations(user_id);
 

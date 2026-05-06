@@ -2,8 +2,6 @@
 import { useState, useEffect } from 'react';
 import { Annotation } from '@/lib/types';
 import { fetchAnnotations, deleteAnnotationRemote, getTagColor } from '@/lib/store';
-import { useAuth } from '@/lib/auth-context';
-
 interface Props {
   policyId: string;
   refreshKey?: number;
@@ -12,7 +10,6 @@ interface Props {
 export default function AnnotationPanel({ policyId, refreshKey }: Props) {
   const [annotations, setAnnotations] = useState<(Annotation & { user_id?: string; user_display_name?: string })[]>([]);
   const [filterTag, setFilterTag] = useState<string>('');
-  const { user } = useAuth();
 
   useEffect(() => {
     fetchAnnotations(policyId).then(setAnnotations);
@@ -71,7 +68,6 @@ export default function AnnotationPanel({ policyId, refreshKey }: Props) {
 
       {/* Annotation list */}
       {filtered.map(ann => {
-        const isOwner = user?.id === ann.user_id;
         return (
           <div
             key={ann.id}
@@ -88,17 +84,15 @@ export default function AnnotationPanel({ policyId, refreshKey }: Props) {
               >
                 {ann.tag.replace(/_/g, ' ')}
               </span>
-              {isOwner && (
-                <button
-                  onClick={e => { e.stopPropagation(); handleDelete(ann.id); }}
-                  aria-label="Delete annotation"
-                  className="text-grey-400 dark:text-[var(--mh-muted)] hover:text-accent-red active:text-accent-red p-1.5 -m-1.5 min-h-[36px] min-w-[36px] flex items-center justify-center rounded-md active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
-                >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
-                  </svg>
-                </button>
-              )}
+              <button
+                onClick={e => { e.stopPropagation(); handleDelete(ann.id); }}
+                aria-label="Delete annotation"
+                className="text-grey-400 dark:text-[var(--mh-muted)] hover:text-accent-red active:text-accent-red p-1.5 -m-1.5 min-h-[36px] min-w-[36px] flex items-center justify-center rounded-md active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2" />
+                </svg>
+              </button>
             </div>
             <p className="text-[12px] sm:text-xs text-tertiary dark:text-[var(--mh-muted)] italic line-clamp-3">&ldquo;{ann.text_excerpt}&rdquo;</p>
             {ann.note && <p className="text-[13px] sm:text-xs text-tertiary-dark dark:text-[var(--mh-fg)] mt-1 break-words">{ann.note}</p>}
