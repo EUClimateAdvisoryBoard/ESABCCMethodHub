@@ -1,6 +1,6 @@
 {
   "date": "2026-05-06",
-  "generatedAt": "2026-05-06T18:18:30.839Z",
+  "generatedAt": "2026-05-06T23:57:16.539Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 6 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -21,12 +21,6 @@
       "summary": "European Commission Speech Brussels, 06 May 2026 Good afternoon, ladies and gentlemen.\r\nMy thanks to Aleksandra and the team at Better Finance for putting together today's conference and for inviting me to take...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5\" target=\"_blank\"&gt;FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -65,6 +59,14 @@
           "score": 11
         },
         {
+          "title": "Gas tax: How beer fuelled a debate on Australia's energy giants",
+          "link": "https://www.bbc.com/news/articles/cy02pzxd4y4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Campaigners say Australia is giving away its gas 'for free' and should tax exports like Norway and Qatar.",
+          "published": "2026-05-06T20:58:03.000Z",
+          "score": 7
+        },
+        {
           "title": "France moves aircraft carrier to Red Sea with eye on Hormuz mission - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNkNmdkd5WEV4RkdWa1FvWFVGdEFvMUlubFV6eVBwelItSHVuNmxxTnBHUmY1MWdvWmJLekpMdFhBcG8wZDlGck1Oc2Q3Q0RabTYwTHBPUF9HcTdTZzNrMWpOc1JfNjRaMVNfb1NKOEx1N3R0c05ZREFjRUtFYy03Ni1pNkhvV0lFSkNkUG5GV1I1Y0VXUEFLcHpCby1tTmVIZEhRM2E5WTJCSnB0T2tKejJhNA?oc=5",
           "source": "Reuters World (via Google News)",
@@ -78,14 +80,6 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Europe punished Russian billionaires over the war in Ukraine. It should do the same to those abetting an ecocidal regime&lt;/p&gt;&lt;p&gt;The ecological disasters of the US-Israel war with Iran are &lt;a href=\"https://www.wired.com/story/war-on-iran-unseen-impact-on-environment/\"&gt;already bad enough&lt;/a&gt;. The noxious smoke from bombed oil facilities, spills in the Gulf’s waters, the contamination of farmland and groundwater with toxic chemicals unleashed by explosions and their ",
           "published": "2026-05-06T04:00:02.000Z",
-          "score": 4
-        },
-        {
-          "title": "Norwegian government attacked over decision to reopen North Sea gasfields",
-          "link": "https://www.theguardian.com/business/2026/may/06/norwegian-government-rebuked-over-decision-to-reopen-north-sea-gas-fields",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Approval for exploration in 70 new areas prompts fierce backlash from fossil fuel opponents &lt;/p&gt;&lt;p&gt;The Norwegian government has been heavily criticised for approving plans to reopen three North Sea gasfields nearly three decades after they were closed to help fill the gap in energy supplies created by the Middle East war.&lt;/p&gt;&lt;p&gt;Amid sharp price rises in oil and gas since the US and Israel’s attack on Iran in February, Oslo has also given its approval for oil and ",
-          "published": "2026-05-06T15:25:36.000Z",
           "score": 4
         }
       ]
@@ -139,16 +133,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5\" target=\"_blank\"&gt;FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-05T21:29:31.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -185,6 +170,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQZDhmSW9wWHFrOHF6RnFCMUpGMGlpcTRybjVjZE9oTGltUmpRY2M3MHFsTmgxcy04TVcyanBJa2tGbUMyR1V1c3lsWkJRVE5tYWEwLWdqdXo1TGhwZnQ3bUpxNmZQZERjaDZQQ09WUkhxcWZwMTQ5NTZCeU9kVjBIVDlwX19MUWlTa2F1bE9nNzN1QXNPc2RDb0xWSFFnSF9tOVJJVmtNXzJBdV8tdmk1MlF1dEdvV2FkNU4xM3hEbUhtR2Zf?oc=5\" target=\"_blank\"&gt;G7 trade talks target critical minerals as US-EU tariff rift strains unity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-06T14:08:54.000Z",
           "score": 8
+        },
+        {
+          "title": "Breakingviews - US NATO exit would call for EU fiscal creativity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcjVzQXdONDlzYWZlTXluSmREWkEzaGg0UXZUMUFwMzFETFpKTk1XUHFnRDRYc3dSdmV4LWFmWDRUd3JXVkprWTNLaHNaUExPZG9vMWt3Rzc5WlotODZ5VEFGMGh3TEhnekpoX3RMcTdMa0xKZnhTa3F1V2drOGV5dGhXOVVOd3lmbEs4NlFYb3lZczdVaG1UV2hVcUFPQWNmNjQyYi1kVWs?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcjVzQXdONDlzYWZlTXluSmREWkEzaGg0UXZUMUFwMzFETFpKTk1XUHFnRDRYc3dSdmV4LWFmWDRUd3JXVkprWTNLaHNaUExPZG9vMWt3Rzc5WlotODZ5VEFGMGh3TEhnekpoX3RMcTdMa0xKZnhTa3F1V2drOGV5dGhXOVVOd3lmbEs4NlFYb3lZczdVaG1UV2hVcUFPQWNmNjQyYi1kVWs?oc=5\" target=\"_blank\"&gt;Breakingviews - US NATO exit would call for EU fiscal creativity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T05:00:00.000Z",
+          "score": 8
         }
       ]
     },
@@ -201,6 +194,14 @@
           "score": 8
         },
         {
+          "title": "Euro zone services activity slumps in April on weak demand, PMI shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPM1Fxems4VzJjZ0NqTURqTVRDWHV6U1BKS1FWRWZxWXlJWkFMaVFyV0RMUTZkZnRnTmszUTJVOWtvX1l2cmM2V1MyNXM3cWVkNXFBN0xlQldvcEk4QVJreE9jeDNqNmw0Vjc2SmVtTVBnSjE2bjg3UWxEcDQ1amJjSE8wd21JTHB6R2o0WmZLTldXdWJVbzVBcHFBOVJkdmlDTld0QnM1NEdvWjRFZ2NkNg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPM1Fxems4VzJjZ0NqTURqTVRDWHV6U1BKS1FWRWZxWXlJWkFMaVFyV0RMUTZkZnRnTmszUTJVOWtvX1l2cmM2V1MyNXM3cWVkNXFBN0xlQldvcEk4QVJreE9jeDNqNmw0Vjc2SmVtTVBnSjE2bjg3UWxEcDQ1amJjSE8wd21JTHB6R2o0WmZLTldXdWJVbzVBcHFBOVJkdmlDTld0QnM1NEdvWjRFZ2NkNg?oc=5\" target=\"_blank\"&gt;Euro zone services activity slumps in April on weak demand, PMI shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T08:06:49.000Z",
+          "score": 8
+        },
+        {
           "title": "Spain asks European Commission to block US sanctions on ICC - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZU1jLUx0MmF3bzlobE1HdzRhTzQ4WjFGVXBKUzdiSDdaQjMwbUMzLWU5VnBaLUN3NmtKRnJxeHBhdjFmckY5YmZKLV9hcktsRlpROWx4MEZrQVh2cl9pYmRMSkJ3SGJHUG5QM2x6amFsa3lhSHhuS0JNWWNUSWxrNGdrby0yRWlqVlRSWkl2bHkzUzY5TWN3RHlfRQ?oc=5",
           "source": "Reuters World (via Google News)",
@@ -213,32 +214,24 @@
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM256QnRGWVdJclZYWUxDdmZucUlxVExkTTlUOHh3Rlk4MWVBY3kzSGV3TFFndHRXdEJEZ2E0amwwQkQ0c0FJV2psbmpMZGQ2dlkxUlBHbzNBS25NZ210NTk5TFpzc205YkViOEF3SUN2UGN6eFZGZkZtV0tyeklfMVMxTWhfUTIzMFpTSEI1ekhFVHZhMzd0REpKeEt6TzdIRXpzMUwzUkwwR0Y0NTZDOHFDdmJUSHFSREFYRW03eEYxSTA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM256QnRGWVdJclZYWUxDdmZucUlxVExkTTlUOHh3Rlk4MWVBY3kzSGV3TFFndHRXdEJEZ2E0amwwQkQ0c0FJV2psbmpMZGQ2dlkxUlBHbzNBS25NZ210NTk5TFpzc205YkViOEF3SUN2UGN6eFZGZkZtV0tyeklfMVMxTWhfUTIzMFpTSEI1ekhFVHZhMzd0REpKeEt6TzdIRXpzMUwzUkwwR0Y0NTZDOHFDdmJUSHFSREFYRW03eEYxSTA?oc=5\" target=\"_blank\"&gt;EU plan to phase out Chinese tech could cost bloc over $400 billion, Chinese study says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-05-06T11:47:24.000Z",
+          "published": "2026-05-06T21:24:43.000Z",
           "score": 8
         },
         {
-          "title": "Could Ghana outlaw &#039;sex for jobs&#039; demands?",
-          "link": "https://www.dw.com/en/could-ghana-outlaw-sex-for-jobs-demands/a-77062838?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "President John Mahama wants to criminalize employers demanding sex in exchange for work. But can a new law — that falls into a legal grey zone — be enforced?",
-          "published": "2026-05-06T11:06:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Israel says Hezbollah commander targeted in Beirut strike",
-          "link": "https://www.dw.com/en/israel-says-hezbollah-commander-targeted-in-beirut-strike/live-77059422?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Israel says it has struck the Lebanese capital for the first time since a ceasefire took effect in mid April. Meanwhile, Iran said it was still reviewing a US peace proposal. Follow DW.",
-          "published": "2026-05-06T07:09:00.000Z",
+          "title": "Iran considering US proposal to end war, official says",
+          "link": "https://www.bbc.com/news/articles/cj0pq2q8221o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The White House reportedly believes it could be closing in on a 14-point memorandum of understanding with Iran.",
+          "published": "2026-05-06T21:27:59.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 388,
+    "totalArticlesScanned": 390,
     "articlesLast24h": 164,
-    "afterDedup": 153,
+    "afterDedup": 150,
     "feedsQueried": 19
   }
 }
