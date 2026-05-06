@@ -6,6 +6,7 @@ import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogBody,
   DialogFooter,
   DialogHeader,
   DialogTitle,
@@ -136,7 +137,7 @@ export default function CodeEditorModal({
         e.preventDefault();
         inputRef.current?.focus();
       }}>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col flex-1 min-h-0">
           <DialogHeader>
             <DialogTitle>{title}</DialogTitle>
             {parentPath.length > 0 && (
@@ -144,7 +145,7 @@ export default function CodeEditorModal({
             )}
           </DialogHeader>
 
-          <div className="px-4 py-4 space-y-4">
+          <DialogBody className="px-4 py-4 space-y-4">
             {payload.mode !== 'recolor' && (
               <label className="block">
                 <span className="block text-[11px] font-medium text-[#3D5265] mb-1">
@@ -222,11 +223,10 @@ export default function CodeEditorModal({
                 />
               </div>
             </div>
-          </div>
 
           {payload.mode === 'rename' && payload.targetId && (onMerge || onMove) && (
-            <div className="px-4 pb-4 -mt-2 border-t border-[#E6E7E8] pt-3">
-              <div className="text-[11px] font-medium text-[#3D5265] mb-2">Reorganise</div>
+            <div className="-mx-4 px-4 pb-2 border-t border-[#E6E7E8] dark:border-[var(--mh-border)] pt-3">
+              <div className="text-[11px] font-medium text-[#3D5265] dark:text-[var(--mh-fg)] mb-2">Reorganise</div>
               {onMerge && (
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[11px] text-[#8A95A3] w-16 shrink-0">Merge into</span>
@@ -288,6 +288,7 @@ export default function CodeEditorModal({
               )}
             </div>
           )}
+          </DialogBody>
 
           <DialogFooter>
             <Button type="button" variant="ghost" onClick={onCancel}>Cancel</Button>

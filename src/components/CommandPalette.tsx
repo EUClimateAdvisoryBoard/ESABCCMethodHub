@@ -92,17 +92,17 @@ export default function CommandPalette() {
   if (!open) return null;
   return (
     <div
-      className="fixed inset-0 z-[110] flex items-start justify-center pt-[12vh] bg-black/40 backdrop-blur-sm"
+      className="fixed inset-0 z-[110] flex items-start justify-center pt-[4vh] sm:pt-[12vh] bg-black/40 backdrop-blur-sm"
       onClick={close}
       role="dialog"
       aria-modal="true"
       aria-label="Command palette"
     >
       <div
-        className="w-[min(620px,92vw)] bg-white dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)] rounded-xl shadow-2xl border border-grey-200 dark:border-[var(--mh-border)] overflow-hidden"
+        className="mh-sheet w-[min(620px,92vw)] bg-white dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)] rounded-xl shadow-2xl border border-grey-200 dark:border-[var(--mh-border)] overflow-hidden max-h-[calc(100dvh-8vh)]"
         onClick={e => e.stopPropagation()}
       >
-        <div className="flex items-center px-4 py-3 border-b border-grey-100 dark:border-[var(--mh-border)] gap-2">
+        <div className="mh-sheet-header flex items-center px-4 py-3 border-b border-grey-100 dark:border-[var(--mh-border)] gap-2">
           <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden>
             <circle cx="11" cy="11" r="7" />
             <path d="M21 21l-4.3-4.3" />
@@ -113,11 +113,26 @@ export default function CommandPalette() {
             onChange={e => setQ(e.target.value)}
             onKeyDown={onKeyDown}
             placeholder="Search references, scenarios, news, policies, codes…"
-            className="flex-1 bg-transparent outline-none text-sm placeholder:text-grey-400"
+            className="flex-1 bg-transparent outline-none text-base sm:text-sm placeholder:text-grey-400"
+            autoComplete="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            inputMode="search"
+            aria-label="Search query"
           />
-          <kbd className="text-[10px] text-grey-500 border border-grey-200 dark:border-[var(--mh-border)] rounded px-1.5 py-0.5">ESC</kbd>
+          <kbd className="hidden sm:inline-flex text-[10px] text-grey-500 border border-grey-200 dark:border-[var(--mh-border)] rounded px-1.5 py-0.5">ESC</kbd>
+          <button
+            type="button"
+            onClick={close}
+            aria-label="Close search"
+            className="sm:hidden p-2 -mr-1 rounded-md active:bg-grey-100 dark:active:bg-[var(--mh-border)]"
+          >
+            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24" aria-hidden>
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
+          </button>
         </div>
-        <div className="max-h-[60vh] overflow-y-auto">
+        <div className="mh-sheet-body max-h-[60vh] overflow-y-auto">
           {q.trim().length < 2 ? (
             <p className="text-xs text-grey-500 px-4 py-6 text-center">Type at least 2 characters. Tip: prefix with <code>p:</code> policy, <code>r:</code> reference, <code>n:</code> news, <code>c:</code> code.</p>
           ) : loading && hits.length === 0 ? (
@@ -132,10 +147,10 @@ export default function CommandPalette() {
                     href={h.href}
                     onClick={close}
                     onMouseEnter={() => setActive(i)}
-                    className={`flex items-center gap-3 px-4 py-2.5 border-l-2 ${
+                    className={`flex items-center gap-3 px-4 py-3 sm:py-2.5 min-h-[48px] sm:min-h-0 border-l-2 ${
                       i === active
                         ? 'bg-grey-50 dark:bg-[#222D3B] border-secondary'
-                        : 'border-transparent hover:bg-grey-50 dark:hover:bg-[#1D2734]'
+                        : 'border-transparent hover:bg-grey-50 dark:hover:bg-[#1D2734] active:bg-grey-50 dark:active:bg-[#1D2734]'
                     }`}
                   >
                     <span className={`w-1.5 h-1.5 rounded-full ${MODULE_DOT[h.module]}`} aria-hidden />

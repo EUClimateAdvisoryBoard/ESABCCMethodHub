@@ -151,11 +151,11 @@ export default function ApprovalProgress({
           )}
         </div>
 
-        {/* Legend */}
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10.5px]">
+        {/* Legend — wraps to 2×2 on phones, single row on tablet+. */}
+        <div className="mt-2 grid grid-cols-2 sm:flex sm:flex-wrap gap-x-3 sm:gap-x-4 gap-y-1.5 sm:gap-y-1 text-[11px] sm:text-[10.5px]">
           <Legend color="bg-emerald-500" label="Approved" n={approved} />
           <Legend color="bg-amber-300" label="Pending" n={pending} />
-          <Legend color="bg-blue-400" label="Needs more info" n={needsReview} />
+          <Legend color="bg-blue-400" label="Needs info" n={needsReview} />
           <Legend color="bg-red-400" label="Rejected" n={rejected} />
         </div>
       </div>

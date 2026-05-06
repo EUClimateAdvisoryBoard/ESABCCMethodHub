@@ -147,7 +147,18 @@ export default function PypsaLeafletMap({ result, colors, height = 560 }: Props)
   ];
 
   return (
-    <div style={{ width: '100%', height, borderRadius: 6, overflow: 'hidden', position: 'relative' }}>
+    <div
+      style={{
+        width: '100%',
+        // Cap to 70 dvh on shorter viewports so the map never eats the entire
+        // screen on phones; prefer the caller's `height` on tall desktops.
+        height: `min(${height}px, 70dvh)`,
+        minHeight: 320,
+        borderRadius: 6,
+        overflow: 'hidden',
+        position: 'relative',
+      }}
+    >
       <MapContainer
         bounds={bounds}
         scrollWheelZoom={true}

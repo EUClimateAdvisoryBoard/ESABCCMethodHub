@@ -815,15 +815,18 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
         })}
       </div>
 
-      {/* Selection popover for creating annotations */}
+      {/* Selection popover for creating annotations. On phones the popover
+          becomes a sticky bottom-sheet anchored above the bottom-nav so the
+          form stays reachable when the soft keyboard opens. */}
       {selection && (
-        <div className="absolute z-40 bg-white rounded-xl shadow-2xl border border-grey-200 p-4 sm:p-5 w-[calc(100%-1rem)] sm:w-80 left-2 sm:left-auto"
-          style={{
-            ...( typeof window !== 'undefined' && window.innerWidth >= 640
+        <div
+          className="fixed sm:absolute z-[90] sm:z-40 bg-white dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)] rounded-t-xl sm:rounded-xl shadow-2xl border border-grey-200 dark:border-[var(--mh-border)] p-4 sm:p-5 left-0 right-0 sm:w-80 sm:left-auto sm:right-auto bottom-bottom-nav sm:bottom-auto pb-[calc(1rem+env(safe-area-inset-bottom))] sm:pb-5 max-h-[80dvh] overflow-y-auto"
+          style={
+            typeof window !== 'undefined' && window.innerWidth >= 640
               ? { left: Math.max(0, Math.min(selection.x - 160, (containerRef.current?.offsetWidth || 600) - 320)), top: selection.y - 240 }
-              : { top: Math.max(8, selection.y - 280) }
-            ),
-          }}>
+              : undefined
+          }
+        >
           {/* Header */}
           <div className="flex items-center gap-2 mb-3">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-secondary">

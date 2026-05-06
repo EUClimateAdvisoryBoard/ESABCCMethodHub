@@ -39,15 +39,19 @@ export default function ScenarioViewsMenu({ getState, applyState, autoLoadId, on
     })();
   }, [autoLoadId, loadById, applyState, onAutoLoaded]);
 
-  // Close the dropdown on outside click.
+  // Close the dropdown on outside click / tap.
   useEffect(() => {
     if (!open) return;
-    const onDocClick = (e: MouseEvent) => {
+    const onDocClick = (e: MouseEvent | TouchEvent) => {
       if (!dropdownRef.current) return;
       if (!dropdownRef.current.contains(e.target as Node)) setOpen(false);
     };
     document.addEventListener('mousedown', onDocClick);
-    return () => document.removeEventListener('mousedown', onDocClick);
+    document.addEventListener('touchstart', onDocClick);
+    return () => {
+      document.removeEventListener('mousedown', onDocClick);
+      document.removeEventListener('touchstart', onDocClick);
+    };
   }, [open]);
 
   const handleSave = async () => {
@@ -107,7 +111,7 @@ export default function ScenarioViewsMenu({ getState, applyState, autoLoadId, on
       </button>
 
       {open && (
-        <div className="absolute right-0 mt-1 z-50 w-[360px] bg-white border border-grey-200 rounded shadow-lg p-3 text-[13px]">
+        <div className="fixed sm:absolute inset-x-2 sm:inset-x-auto bottom-2 sm:bottom-auto sm:right-0 sm:mt-1 z-[60] sm:z-50 w-auto sm:w-[360px] max-w-[min(360px,calc(100vw-1rem))] max-h-[70dvh] overflow-y-auto bg-white dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)] border border-grey-200 dark:border-[var(--mh-border)] rounded-lg shadow-lg p-3 text-[13px]">
           <div className="flex items-center justify-between mb-2">
             <div className="font-medium text-tertiary-dark">Saved views</div>
             <button
