@@ -16,6 +16,10 @@ export default function AnnotationPanel({ policyId, refreshKey }: Props) {
 
   useEffect(() => {
     fetchAnnotations(policyId).then(setAnnotations);
+    const interval = setInterval(() => {
+      fetchAnnotations(policyId).then(setAnnotations);
+    }, 30_000);
+    return () => clearInterval(interval);
   }, [policyId, refreshKey]);
 
   const filtered = filterTag ? annotations.filter(a => a.tag === filterTag) : annotations;
@@ -24,8 +28,8 @@ export default function AnnotationPanel({ policyId, refreshKey }: Props) {
   }, {});
 
   const handleDelete = async (id: string) => {
-    if (!confirm('Delete this annotation?')) return;
-    await deleteAnnotationRemote(id);
+    const ok = await deleteAnnotationRemote(id);
+    if (!ok) return;
     const updated = await fetchAnnotations(policyId);
     setAnnotations(updated);
   };

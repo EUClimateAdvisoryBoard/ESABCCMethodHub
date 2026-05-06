@@ -92,6 +92,10 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
   useEffect(() => {
     fetchAnnotations(policyId).then(anns => setAnnotations(reconcileAnnotations(anns)));
     fetchTags().then(setTags);
+    const interval = setInterval(() => {
+      fetchAnnotations(policyId).then(anns => setAnnotations(reconcileAnnotations(anns)));
+    }, 30_000);
+    return () => clearInterval(interval);
   }, [policyId, reconcileAnnotations]);
 
   // Listen for scroll-to events from annotation panel
@@ -709,6 +713,7 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                 }}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if ((ann as Annotation & { user_id?: string }).user_id && (ann as Annotation & { user_id?: string }).user_id !== user?.id) return;
                   if (editingAnnotation === ann.id) {
                     setEditingAnnotation(null);
                   } else {
@@ -782,7 +787,7 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                         e.stopPropagation();
                         await updateAnnotationRemote(ann.id, { tag: editTag, note: editNote });
                         const updated = await fetchAnnotations(policyId);
-                        setAnnotations(updated);
+                        setAnnotations(reconcileAnnotations(updated));
                         setEditingAnnotation(null);
                         onAnnotationsChange?.();
                       }} className="flex-1 bg-secondary text-white text-xs py-2 rounded-lg font-medium hover:bg-secondary-dark transition">
@@ -790,9 +795,10 @@ export default function FullTextViewer({ policyId, text, citations, policyConnec
                       </button>
                       <button onClick={async (e) => {
                         e.stopPropagation();
-                        await deleteAnnotationRemote(ann.id);
+                        const ok = await deleteAnnotationRemote(ann.id);
+                        if (!ok) return;
                         const updated = await fetchAnnotations(policyId);
-                        setAnnotations(updated);
+                        setAnnotations(reconcileAnnotations(updated));
                         setEditingAnnotation(null);
                         onAnnotationsChange?.();
                       }} className="px-3 bg-red-50 text-red-600 text-xs py-2 rounded-lg font-medium hover:bg-red-100 transition">
