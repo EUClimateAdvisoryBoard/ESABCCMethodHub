@@ -1,9 +1,15 @@
 {
   "date": "2026-05-06",
-  "generatedAt": "2026-05-06T12:32:19.663Z",
+  "generatedAt": "2026-05-06T18:18:30.839Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 6 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Daily News 06 / 05 / 2026",
+      "summary": "European Commission Daily news Brussels, 06 May 2026 Commission seeks feedback on revised sustainability reporting standards\r\nToday, the Commission is launching a consultation on the draft revised European Sustaina...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -11,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Here&#039;s why some cities are banning fossil fuel and meat ads",
-      "summary": "Cities from Amsterdam to Sydney are banning fossil fuel advertisements, drawing from tactics once used to curb smoking. They&#039;re targeting the messaging that has normalized carbon-intensive lifestyles for decades.",
+      "headline": "Speech by Commissioner Albuquerque at Better Finance's international conference: Integrating Europe's Capital Markets: Delivering for Retail Investors",
+      "summary": "European Commission Speech Brussels, 06 May 2026 Good afternoon, ladies and gentlemen.\r\nMy thanks to Aleksandra and the team at Better Finance for putting together today's conference and for inviting me to take...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Hedge fund Citadel bets on Miami as debate over New York second homes heats up - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPZzRxU2ZUVmtDMXRUWGt6M3R6MWhfUEJMWlJKOVRpU1JUSjNkRFBhRnBlTW1zb3BsVWdNTDdaS2dReGhyaS1VclFxcGFBaExHRklBS2tRQ0hwaGowUU1VYk9qa09OclJhRlBHalQzaV9Ya0plUU1lczFaNXdqeDhZTkxtZDdJemxmdG10R0xYTkpUSTlvV3BnQ21zYjI2emtsZXN2ZjJ3WQ?oc=5\" target=\"_blank\"&gt;Hedge fund Citadel bets on Miami as debate over New York second homes heats up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5\" target=\"_blank\"&gt;FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Daily News 06 / 05 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1001",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 06 May 2026 Commission seeks feedback on revised sustainability reporting standards\r\nToday, the Commission is launching a consultation on the draft revised European Sustaina...",
+          "published": "2026-05-06T09:29:23.000Z",
+          "score": 20
+        }
+      ]
     },
     {
       "id": "energy",
@@ -50,11 +65,11 @@
           "score": 11
         },
         {
-          "title": "US to lift Eritrea sanctions as Red Sea tensions reshape alliances, document says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNY2ZNd0h6MnE3SVprUjNnV1ZaamxLelVqYXVtUEJfWVN0Y29mZUh1bHFaMVd0SWVQLU5ScjJlUzVkMk42Vjd5Ny01MjBZbzRjbmpDeDZfMlJKSGY1Y0VZbnB4c3RObWpSNDhDM2NQOTRuWG5mNUNPMHlBVF9mVHFZZ1ItTHI2N2JMYnhHblBSZDRPMGIxTGtsNEQtbFBOM1lZSFdGMjZzWHMtekV1RkRIdTYxQlV2SFVaZWdLbDFvMW4?oc=5",
+          "title": "France moves aircraft carrier to Red Sea with eye on Hormuz mission - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNNkNmdkd5WEV4RkdWa1FvWFVGdEFvMUlubFV6eVBwelItSHVuNmxxTnBHUmY1MWdvWmJLekpMdFhBcG8wZDlGck1Oc2Q3Q0RabTYwTHBPUF9HcTdTZzNrMWpOc1JfNjRaMVNfb1NKOEx1N3R0c05ZREFjRUtFYy03Ni1pNkhvV0lFSkNkUG5GV1I1Y0VXUEFLcHpCby1tTmVIZEhRM2E5WTJCSnB0T2tKejJhNA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNY2ZNd0h6MnE3SVprUjNnV1ZaamxLelVqYXVtUEJfWVN0Y29mZUh1bHFaMVd0SWVQLU5ScjJlUzVkMk42Vjd5Ny01MjBZbzRjbmpDeDZfMlJKSGY1Y0VZbnB4c3RObWpSNDhDM2NQOTRuWG5mNUNPMHlBVF9mVHFZZ1ItTHI2N2JMYnhHblBSZDRPMGIxTGtsNEQtbFBOM1lZSFdGMjZzWHMtekV1RkRIdTYxQlV2SFVaZWdLbDFvMW4?oc=5\" target=\"_blank\"&gt;US to lift Eritrea sanctions as Red Sea tensions reshape alliances, document says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-05T14:46:55.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNNkNmdkd5WEV4RkdWa1FvWFVGdEFvMUlubFV6eVBwelItSHVuNmxxTnBHUmY1MWdvWmJLekpMdFhBcG8wZDlGck1Oc2Q3Q0RabTYwTHBPUF9HcTdTZzNrMWpOc1JfNjRaMVNfb1NKOEx1N3R0c05ZREFjRUtFYy03Ni1pNkhvV0lFSkNkUG5GV1I1Y0VXUEFLcHpCby1tTmVIZEhRM2E5WTJCSnB0T2tKejJhNA?oc=5\" target=\"_blank\"&gt;France moves aircraft carrier to Red Sea with eye on Hormuz mission&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T16:53:20.000Z",
           "score": 7
         },
         {
@@ -64,6 +79,14 @@
           "description": "&lt;p&gt;Europe punished Russian billionaires over the war in Ukraine. It should do the same to those abetting an ecocidal regime&lt;/p&gt;&lt;p&gt;The ecological disasters of the US-Israel war with Iran are &lt;a href=\"https://www.wired.com/story/war-on-iran-unseen-impact-on-environment/\"&gt;already bad enough&lt;/a&gt;. The noxious smoke from bombed oil facilities, spills in the Gulf’s waters, the contamination of farmland and groundwater with toxic chemicals unleashed by explosions and their ",
           "published": "2026-05-06T04:00:02.000Z",
           "score": 4
+        },
+        {
+          "title": "Norwegian government attacked over decision to reopen North Sea gasfields",
+          "link": "https://www.theguardian.com/business/2026/may/06/norwegian-government-rebuked-over-decision-to-reopen-north-sea-gas-fields",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Approval for exploration in 70 new areas prompts fierce backlash from fossil fuel opponents &lt;/p&gt;&lt;p&gt;The Norwegian government has been heavily criticised for approving plans to reopen three North Sea gasfields nearly three decades after they were closed to help fill the gap in energy supplies created by the Middle East war.&lt;/p&gt;&lt;p&gt;Amid sharp price rises in oil and gas since the US and Israel’s attack on Iran in February, Oslo has also given its approval for oil and ",
+          "published": "2026-05-06T15:25:36.000Z",
+          "score": 4
         }
       ]
     },
@@ -72,11 +95,35 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Here&#039;s why some cities are banning fossil fuel and meat ads",
-          "link": "https://www.dw.com/en/here-s-why-some-cities-are-banning-fossil-fuel-and-meat-ads/a-77054187?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Cities from Amsterdam to Sydney are banning fossil fuel advertisements, drawing from tactics once used to curb smoking. They&#039;re targeting the messaging that has normalized carbon-intensive lifestyles for decades.",
-          "published": "2026-05-05T15:09:00.000Z",
+          "title": "Speech by Commissioner Albuquerque at Better Finance's international conference: Integrating Europe's Capital Markets: Delivering for Retail Investors",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1010",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 06 May 2026 Good afternoon, ladies and gentlemen.\r\nMy thanks to Aleksandra and the team at Better Finance for putting together today's conference and for inviting me to take...",
+          "published": "2026-05-06T13:45:29.000Z",
+          "score": 18
+        },
+        {
+          "title": "Cropped 6 May 2026: Forest loss falls &#124; Deforestation regulations &#124; Saving ‘India’s Galapagos’",
+          "link": "https://www.carbonbrief.org/cropped-6-may-2026-forest-loss-falls-deforestation-regulations-saving-indias-galapagos/",
+          "source": "Carbon Brief",
+          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 6 May 2026: Forest loss falls | Deforestation regulations | Saving ‘India’s Galapagos’ appeared first on Carbon Brief.",
+          "published": "2026-05-06T15:57:04.000Z",
+          "score": 13
+        },
+        {
+          "title": "Vacancy: Three-week summer journalism internship at Carbon Brief",
+          "link": "https://www.carbonbrief.org/vacancy-three-week-summer-journalism-internship-at-carbon-brief-3/",
+          "source": "Carbon Brief",
+          "description": "Carbon Brief is offering an exciting opportunity for students, or recent graduates, to work with... The post Vacancy: Three-week summer journalism internship at Carbon Brief appeared first on Carbon Brief.",
+          "published": "2026-05-06T14:13:16.000Z",
+          "score": 13
+        },
+        {
+          "title": "Fears for 'hundreds' of young fish after pollution incident",
+          "link": "https://www.bbc.com/news/articles/c0k2g40rvkro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "'Hundreds' of salmon may have died at Tievenny Burn in County Tyrone, anglers say.",
+          "published": "2026-05-06T14:52:39.000Z",
           "score": 7
         },
         {
@@ -86,30 +133,6 @@
           "description": "&lt;p&gt;Researchers say 481-metre wave in fjord was triggered by rockslide linked to climate crisis&lt;/p&gt;&lt;p&gt;A mega tsunami in &lt;a href=\"https://www.theguardian.com/us-news/alaska\"&gt;Alaska&lt;/a&gt; last year in a fjord visited by cruise ships is a stark warning of the risks of coastal rockslides and glacier retreat fueled by the climate crisis, a new study warns.&lt;/p&gt;&lt;p&gt;Scientists recorded the world’s second-tallest tsunami after it struck the Tracy Arm fjord in south-e",
           "published": "2026-05-06T12:00:19.000Z",
           "score": 4
-        },
-        {
-          "title": "‘Heat, floods and droughts make men more violent to women’: Natasha Walter on eco-feminism in a world on fire",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/may/06/heat-floods-droughts-men-more-violent-to-women-natasha-walter-eco-feminism-world",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The author has become acutely aware of how the climate crisis is affecting women – and, in her new book, she argues that it’s time for mainstream western feminists to join the dots&lt;/p&gt;&lt;p&gt;Natasha Walter is halfway through explaining how she came to be politically radicalised when a young woman approaches the cafe table. We two middle-aged women look like “the most trustworthy people here,” she says, so could we watch her baby while she grabs a coffee? Like the solid citizen s",
-          "published": "2026-05-06T11:00:07.000Z",
-          "score": 4
-        },
-        {
-          "title": "Why is NI facing a growing threat from wildfires?",
-          "link": "https://www.bbc.com/news/articles/c0729z88z37o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Figures show that spring drought events are happening more often while there has been a sharp rise in \"fire weather\".",
-          "published": "2026-05-06T05:18:27.000Z",
-          "score": 4
-        },
-        {
-          "title": "Massive Alaska megatsunami was second largest ever recorded",
-          "link": "https://www.bbc.com/news/articles/c1m253033m4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A new scientific analysis of the event shows tiny earthquakes triggered a massive landslide.",
-          "published": "2026-05-06T12:00:25.000Z",
-          "score": 2
         }
       ]
     },
@@ -118,27 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Hedge fund Citadel bets on Miami as debate over New York second homes heats up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZzRxU2ZUVmtDMXRUWGt6M3R6MWhfUEJMWlJKOVRpU1JUSjNkRFBhRnBlTW1zb3BsVWdNTDdaS2dReGhyaS1VclFxcGFBaExHRklBS2tRQ0hwaGowUU1VYk9qa09OclJhRlBHalQzaV9Ya0plUU1lczFaNXdqeDhZTkxtZDdJemxmdG10R0xYTkpUSTlvV3BnQ21zYjI2emtsZXN2ZjJ3WQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPZzRxU2ZUVmtDMXRUWGt6M3R6MWhfUEJMWlJKOVRpU1JUSjNkRFBhRnBlTW1zb3BsVWdNTDdaS2dReGhyaS1VclFxcGFBaExHRklBS2tRQ0hwaGowUU1VYk9qa09OclJhRlBHalQzaV9Ya0plUU1lczFaNXdqeDhZTkxtZDdJemxmdG10R0xYTkpUSTlvV3BnQ21zYjI2emtsZXN2ZjJ3WQ?oc=5\" target=\"_blank\"&gt;Hedge fund Citadel bets on Miami as debate over New York second homes heats up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-05T17:53:00.000Z",
-          "score": 2
-        },
-        {
           "title": "FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONGNVNVNtUmpJOS1GS05HSkhWSmFOZDNpeWFHZlctd19NVDdZaG94cHZBcFRPX3VhaTJnY3czX0xoalVTcFY3T0lzeFBFeEo2MlpZbTV0QTV4b3F0RnBaYXB5bS11U1lBTDJtZU5tYTNjVnpaTllwT2RWdzM3aFhuV3c0TGRpOEhsa2dWRWJ2X1J5Tm1uQ2d2WXNnblU0WTMydHRRelI3WkZfY3N2X2ZMbG5IODZrcXc?oc=5\" target=\"_blank\"&gt;FCC commissioner seeks rigorous review of foreign investment in Warner Bros deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-05T21:29:31.000Z",
-          "score": 2
-        },
-        {
-          "title": "DeepSeek nears $45 billion valuation as China’s ‘Big Fund’ leads investment talks, FT reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNdGZBZEktVUYyd3YyNmlKaHVhYW9nczhYQ2NSX3ZlSXA4T3ZBX3Z3U0s3NlQyZklQci1WTjFCdUJzbEl0ZENGUTJ1dWVDWkZXZnM0c1JIQTA1NU4tZFFyTDNxenRjRXJHU2thZm1lc0FvaDN2ZHdGRkJGaVpDSTU0UV9uTGZjSjBLN1RCakFpd29uejd5U1p1ZU9EZ0NDRDNXMnFMeUJfZkZGdXlRMHV0dXJNQU8xbGlfUDVaWFh6LVB5UXlmY3NPMlFySC0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNdGZBZEktVUYyd3YyNmlKaHVhYW9nczhYQ2NSX3ZlSXA4T3ZBX3Z3U0s3NlQyZklQci1WTjFCdUJzbEl0ZENGUTJ1dWVDWkZXZnM0c1JIQTA1NU4tZFFyTDNxenRjRXJHU2thZm1lc0FvaDN2ZHdGRkJGaVpDSTU0UV9uTGZjSjBLN1RCakFpd29uejd5U1p1ZU9EZ0NDRDNXMnFMeUJfZkZGdXlRMHV0dXJNQU8xbGlfUDVaWFh6LVB5UXlmY3NPMlFySC0?oc=5\" target=\"_blank\"&gt;DeepSeek nears $45 billion valuation as China’s ‘Big Fund’ leads investment talks, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
-          "published": "2026-05-06T05:56:00.000Z",
           "score": 2
         }
       ]
@@ -170,6 +177,14 @@
           "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday, 1 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 2 June 2026 from 9.00 to 12.30 and from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Monday, 15 June 2026 from 19.00 to 21.00 (Strasbourg)&lt;/li&gt;&lt;li&gt;Monday, 22 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 23 June 2026 from 9.00 to 12.",
           "published": "2026-05-06T08:43:44.000Z",
           "score": 18
+        },
+        {
+          "title": "G7 trade talks target critical minerals as US-EU tariff rift strains unity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQZDhmSW9wWHFrOHF6RnFCMUpGMGlpcTRybjVjZE9oTGltUmpRY2M3MHFsTmgxcy04TVcyanBJa2tGbUMyR1V1c3lsWkJRVE5tYWEwLWdqdXo1TGhwZnQ3bUpxNmZQZERjaDZQQ09WUkhxcWZwMTQ5NTZCeU9kVjBIVDlwX19MUWlTa2F1bE9nNzN1QXNPc2RDb0xWSFFnSF9tOVJJVmtNXzJBdV8tdmk1MlF1dEdvV2FkNU4xM3hEbUhtR2Zf?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQZDhmSW9wWHFrOHF6RnFCMUpGMGlpcTRybjVjZE9oTGltUmpRY2M3MHFsTmgxcy04TVcyanBJa2tGbUMyR1V1c3lsWkJRVE5tYWEwLWdqdXo1TGhwZnQ3bUpxNmZQZERjaDZQQ09WUkhxcWZwMTQ5NTZCeU9kVjBIVDlwX19MUWlTa2F1bE9nNzN1QXNPc2RDb0xWSFFnSF9tOVJJVmtNXzJBdV8tdmk1MlF1dEdvV2FkNU4xM3hEbUhtR2Zf?oc=5\" target=\"_blank\"&gt;G7 trade talks target critical minerals as US-EU tariff rift strains unity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T14:08:54.000Z",
+          "score": 8
         }
       ]
     },
@@ -186,44 +201,44 @@
           "score": 8
         },
         {
-          "title": "Armenia balances on the tightrope between Russia and the EU",
-          "link": "https://www.dw.com/en/armenia-balances-on-the-tightrope-between-russia-and-the-eu/a-77055231?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Armenia is moving closer to the EU politically and strategically. But its clear orientation toward the West while keeping close ties with Russia remains a balancing act.",
-          "published": "2026-05-05T15:38:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Exclusive: Brazil pulp giant Suzano set to win full EU nod for $3.4 billion Kimberly-Clark deal, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQkhoMXZTMFJRcEl0c3VrRlN4aDVwV1NVaE83WWx4NjAtd0twcU05N09ESnBpRzBMeWFVTlJVU1JncDIzT1hEUHVTWGk2dDR0SHVIbzBaVERaS1p1MGRQZ2VDQTdzRHkyODh5SkhFYjc1em5mRXZJNUxUSWVndlNhLXdwRGk2VXBMYUEyZFZRWE95U2VIa1kxUDlaallBSkRWcW51M3pJZFNZMXpuU094THlNczI4NlAz?oc=5",
+          "title": "Spain asks European Commission to block US sanctions on ICC - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOZU1jLUx0MmF3bzlobE1HdzRhTzQ4WjFGVXBKUzdiSDdaQjMwbUMzLWU5VnBaLUN3NmtKRnJxeHBhdjFmckY5YmZKLV9hcktsRlpROWx4MEZrQVh2cl9pYmRMSkJ3SGJHUG5QM2x6amFsa3lhSHhuS0JNWWNUSWxrNGdrby0yRWlqVlRSWkl2bHkzUzY5TWN3RHlfRQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPQkhoMXZTMFJRcEl0c3VrRlN4aDVwV1NVaE83WWx4NjAtd0twcU05N09ESnBpRzBMeWFVTlJVU1JncDIzT1hEUHVTWGk2dDR0SHVIbzBaVERaS1p1MGRQZ2VDQTdzRHkyODh5SkhFYjc1em5mRXZJNUxUSWVndlNhLXdwRGk2VXBMYUEyZFZRWE95U2VIa1kxUDlaallBSkRWcW51M3pJZFNZMXpuU094THlNczI4NlAz?oc=5\" target=\"_blank\"&gt;Exclusive: Brazil pulp giant Suzano set to win full EU nod for $3.4 billion Kimberly-Clark deal, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-05-05T16:15:15.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOZU1jLUx0MmF3bzlobE1HdzRhTzQ4WjFGVXBKUzdiSDdaQjMwbUMzLWU5VnBaLUN3NmtKRnJxeHBhdjFmckY5YmZKLV9hcktsRlpROWx4MEZrQVh2cl9pYmRMSkJ3SGJHUG5QM2x6amFsa3lhSHhuS0JNWWNUSWxrNGdrby0yRWlqVlRSWkl2bHkzUzY5TWN3RHlfRQ?oc=5\" target=\"_blank\"&gt;Spain asks European Commission to block US sanctions on ICC&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T07:23:43.000Z",
           "score": 8
         },
         {
-          "title": "Romanian PM ousted in no-confidence vote",
-          "link": "https://www.bbc.com/news/articles/cgkpjz2638ro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Ilie Bolojan lost the vote after the largest party in his coalition joined the far-right opposition to depose him.",
-          "published": "2026-05-05T14:05:11.000Z",
+          "title": "EU plan to phase out Chinese tech could cost bloc over $400 billion, Chinese study says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM256QnRGWVdJclZYWUxDdmZucUlxVExkTTlUOHh3Rlk4MWVBY3kzSGV3TFFndHRXdEJEZ2E0amwwQkQ0c0FJV2psbmpMZGQ2dlkxUlBHbzNBS25NZ210NTk5TFpzc205YkViOEF3SUN2UGN6eFZGZkZtV0tyeklfMVMxTWhfUTIzMFpTSEI1ekhFVHZhMzd0REpKeEt6TzdIRXpzMUwzUkwwR0Y0NTZDOHFDdmJUSHFSREFYRW03eEYxSTA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQM256QnRGWVdJclZYWUxDdmZucUlxVExkTTlUOHh3Rlk4MWVBY3kzSGV3TFFndHRXdEJEZ2E0amwwQkQ0c0FJV2psbmpMZGQ2dlkxUlBHbzNBS25NZ210NTk5TFpzc205YkViOEF3SUN2UGN6eFZGZkZtV0tyeklfMVMxTWhfUTIzMFpTSEI1ekhFVHZhMzd0REpKeEt6TzdIRXpzMUwzUkwwR0Y0NTZDOHFDdmJUSHFSREFYRW03eEYxSTA?oc=5\" target=\"_blank\"&gt;EU plan to phase out Chinese tech could cost bloc over $400 billion, Chinese study says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-05-06T11:47:24.000Z",
+          "score": 8
+        },
+        {
+          "title": "Could Ghana outlaw &#039;sex for jobs&#039; demands?",
+          "link": "https://www.dw.com/en/could-ghana-outlaw-sex-for-jobs-demands/a-77062838?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "President John Mahama wants to criminalize employers demanding sex in exchange for work. But can a new law — that falls into a legal grey zone — be enforced?",
+          "published": "2026-05-06T11:06:00.000Z",
           "score": 6
         },
         {
-          "title": "Ghana debates ban on &#039;sex for jobs&#039; practices",
-          "link": "https://www.dw.com/en/ghana-debates-ban-on-sex-for-jobs-practices/a-77062838?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Israel says Hezbollah commander targeted in Beirut strike",
+          "link": "https://www.dw.com/en/israel-says-hezbollah-commander-targeted-in-beirut-strike/live-77059422?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "President John Mahama wants to make it illegal for employers to demand sexual favors in exchange for jobs. A new law could close a major gap in workplace protections, but enforcing it may prove the real test.",
-          "published": "2026-05-06T11:06:00.000Z",
+          "description": "Israel says it has struck the Lebanese capital for the first time since a ceasefire took effect in mid April. Meanwhile, Iran said it was still reviewing a US peace proposal. Follow DW.",
+          "published": "2026-05-06T07:09:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 393,
-    "articlesLast24h": 171,
-    "afterDedup": 147,
+    "totalArticlesScanned": 388,
+    "articlesLast24h": 164,
+    "afterDedup": 153,
     "feedsQueried": 19
   }
 }
