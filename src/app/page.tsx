@@ -341,6 +341,7 @@ export default async function HomePage() {
     { code: 'M · 15', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
     { code: 'M · 16', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
     { code: 'M · 17', title: 'EU Climate Councils',     href: '/beta/eu-climate-councils', tags: ['67 bodies', 'Leaflet map'] },
+    { code: 'M · 18', title: 'Project Management',      href: '/beta/project-management',  tags: ['5 Phases', 'Gantt', 'Manual v2.1'] },
   ];
 
   return (
@@ -526,7 +527,7 @@ export default async function HomePage() {
               Out of scope for v1.0 — but on the roadmap.
             </h2>
             <p className="mt-3 max-w-3xl text-[13px] text-[#3D5265]/75 leading-relaxed">
-              Ten experimental modules live under <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">beta/modules/</code> and are exposed at <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">/beta/&lt;slug&gt;</code>.
+              Eleven experimental modules live under <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">beta/modules/</code> and are exposed at <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">/beta/&lt;slug&gt;</code>.
               Click any card to open the prototype.
             </p>
           </div>
