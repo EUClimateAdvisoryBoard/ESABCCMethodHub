@@ -1,6 +1,6 @@
 {
   "date": "2026-05-07",
-  "generatedAt": "2026-05-07T12:34:05.609Z",
+  "generatedAt": "2026-05-07T18:29:57.016Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 7 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Commission approves €5 billion German State aid scheme to support decarbonisation of industry",
-      "summary": "European Commission Press release Brussels, 07 May 2026 The European Commission has approved, under EU State aid rules, a €5 billion German scheme to help companies in industrial sectors decarbonise their production processes. The scheme contributes to achieving Germany's energy and climate targets, as well as the EU's sustainable prosperity and competitiveness objectives.",
+      "headline": "Video message by President von der Leyen opening the European University Institute's 50th Anniversary Celebrations",
+      "summary": "European Commission Speech Brussels, 07 May 2026 Thank you, Professor Patrizia Nanz, for the invitation.\r\nPresident Costa, dear Antonio,\r\nPresident Metsola, dear Roberta,\r\nDistinguished guests,\r\nBut most important...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -57,10 +57,18 @@
           "score": 19
         },
         {
-          "title": "Solar sabotage: Why Europe sees security risks in solar power",
-          "link": "https://www.dw.com/en/solar-sabotage-why-europe-sees-security-risks-in-solar-power/a-77066865?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Analysis: Wind and solar have saved UK from gas imports worth £1.7bn since Iran war began",
+          "link": "https://www.carbonbrief.org/analysis-wind-and-solar-have-saved-uk-from-gas-imports-worth-1-7bn-since-iran-war-began/",
+          "source": "Carbon Brief",
+          "description": "The UK has avoided the need for gas imports worth £1.7bn since the start of... The post Analysis: Wind and solar have saved UK from gas imports worth £1.7bn since Iran war began appeared first on Carbon Brief.",
+          "published": "2026-05-07T13:02:57.000Z",
+          "score": 13
+        },
+        {
+          "title": "&#039;The threat is real.&#039; Why the EU is treating Chinese solar tech like a security threat.",
+          "link": "https://www.dw.com/en/the-threat-is-real-why-the-eu-is-treating-chinese-solar-tech-like-a-security-threat/a-77066865?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Europe&#039;s reliance on Chinese-made solar technology has triggered cybersecurity warnings over possible remote access to power grids. With EU funding curbs, the debate over the bloc&#039;s green energy strategy is heating up.",
+          "description": "Europe&#039;s solar boom is powered by Chinese technology. But experts warn Chinese-made tech could threaten the continent&#039;s safety and even create blackouts. Now, Brussels is moving to reduce its dependence.",
           "published": "2026-05-07T10:49:00.000Z",
           "score": 13
         },
@@ -73,19 +81,11 @@
           "score": 9
         },
         {
-          "title": "Climate campaigners attack Shell over ‘windfall’ profits from Iran war",
-          "link": "https://www.theguardian.com/business/2026/may/07/climate-campaigners-attack-shell-over-windfall-profits-from-iran-war",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Firm benefits from conflict to rake in $6.9bn as higher energy prices turbocharge profits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/may/07/iran-deal-shell-profits-oil-gas-stock-markets-business-live\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Shell has reported better than expected profits of $6.9bn (£5bn) after its oil traders reaped the benefits of soaring energy prices during the war in Ir",
-          "published": "2026-05-07T12:09:24.000Z",
-          "score": 7
-        },
-        {
-          "title": "Both left and right are deluding themselves about the scale of the energy crisis Britain faces | Ewan Gibbs",
-          "link": "https://www.theguardian.com/commentisfree/2026/may/07/left-right-energy-crisis-britain-north-sea-renewables",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Decades of complacency cannot be magicked away by drilling in the North Sea – or even by hoping that renewables will quickly power everything&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Ewan Gibbs is a historian of energy at the University of Glasgow&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;First it was Russia’s full-scale invasion of Ukraine, now it is the &lt;a href=\"https://www.theguardian.com/world/2026/may/04/shipping-bosses-nervous-trump-plan-to-guide-vessels-strait-of-hormuz-iran\"&gt;bl",
-          "published": "2026-05-07T12:00:48.000Z",
+          "title": "Trump’s Iran war may stymie climate gains with boost to big oil, experts say",
+          "link": "https://www.theguardian.com/us-news/2026/may/07/iran-war-big-oil-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Windfall profits could lock in Trump-era political wins for the industry and slow clean-energy transition&lt;/p&gt;&lt;p&gt;The billions in profits big oil is reaping due to the Iran war may stymie the energy transition, experts and advocates fear, incentivizing oil and gas expansion and boosting the sector’s funds for political lobbying.&lt;/p&gt;&lt;p&gt;“Windfall profits from Trump’s war will allow big oil to build a wall of money around its Trump-era political victories,” said Lukas",
+          "published": "2026-05-07T11:30:47.000Z",
           "score": 7
         }
       ]
@@ -95,28 +95,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission approves €5 billion German State aid scheme to support decarbonisation of industry",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_997",
+          "title": "Video message by President von der Leyen opening the European University Institute's 50th Anniversary Celebrations",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1029",
           "source": "European Commission",
-          "description": "European Commission Press release Brussels, 07 May 2026 The European Commission has approved, under EU State aid rules, a €5 billion German scheme to help companies in industrial sectors decarbonise their production processes. The scheme contributes to achieving Germany's energy and climate targets, as well as the EU's sustainable prosperity and competitiveness objectives.",
-          "published": "2026-05-06T22:00:00.000Z",
-          "score": 20
-        },
-        {
-          "title": "Cropped 6 May 2026: Forest loss falls &#124; Deforestation regulations &#124; Saving ‘India’s Galapagos’",
-          "link": "https://www.carbonbrief.org/cropped-6-may-2026-forest-loss-falls-deforestation-regulations-saving-indias-galapagos/",
-          "source": "Carbon Brief",
-          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 6 May 2026: Forest loss falls | Deforestation regulations | Saving ‘India’s Galapagos’ appeared first on Carbon Brief.",
-          "published": "2026-05-06T15:57:04.000Z",
-          "score": 13
-        },
-        {
-          "title": "Vacancy: Three-week summer journalism internship at Carbon Brief",
-          "link": "https://www.carbonbrief.org/vacancy-three-week-summer-journalism-internship-at-carbon-brief-3/",
-          "source": "Carbon Brief",
-          "description": "Carbon Brief is offering an exciting opportunity for students, or recent graduates, to work with... The post Vacancy: Three-week summer journalism internship at Carbon Brief appeared first on Carbon Brief.",
-          "published": "2026-05-06T14:13:16.000Z",
-          "score": 13
+          "description": "European Commission Speech Brussels, 07 May 2026 Thank you, Professor Patrizia Nanz, for the invitation.\r\nPresident Costa, dear Antonio,\r\nPresident Metsola, dear Roberta,\r\nDistinguished guests,\r\nBut most important...",
+          "published": "2026-05-07T09:13:31.000Z",
+          "score": 18
         },
         {
           "title": "‘At a crossroads’: will piling-up crises force Europe to put brakes on SUV culture?",
@@ -127,12 +111,28 @@
           "score": 8
         },
         {
-          "title": "Fears for 'hundreds' of young fish after pollution incident",
-          "link": "https://www.bbc.com/news/articles/c0k2g40rvkro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "'Hundreds' of salmon may have died at Tievenny Burn in County Tyrone, anglers say.",
-          "published": "2026-05-06T14:52:39.000Z",
+          "title": "BP to sell stakes in flagship UK carbon capture projects in Northern England - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPMEtub0tDY0R0RXE5VG12R0RXSHo2NkwwS1hiYTFSMjluMFQ3ZThvTm9Fd3hOWE5jeHhfcUl6ZjZXSXg4a2gtaWJXUHZDQmVQd3NPUjFWWjdQNUFzdFhuRUM3enYzZ05tUUpJWjRJeXdRV2xzNHA1ZThqQ0JUa3ZZcmlUeEJ4ZG4wQndhVUFoMlRpOHR0cmd1Q1VhaV9ubHRLRFNTWkgtdFg1R0J2R0l5eEh6TU5YWTNZbUM4NGFBcjJNX2xhY29fOWRhaTFVQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPMEtub0tDY0R0RXE5VG12R0RXSHo2NkwwS1hiYTFSMjluMFQ3ZThvTm9Fd3hOWE5jeHhfcUl6ZjZXSXg4a2gtaWJXUHZDQmVQd3NPUjFWWjdQNUFzdFhuRUM3enYzZ05tUUpJWjRJeXdRV2xzNHA1ZThqQ0JUa3ZZcmlUeEJ4ZG4wQndhVUFoMlRpOHR0cmd1Q1VhaV9ubHRLRFNTWkgtdFg1R0J2R0l5eEh6TU5YWTNZbUM4NGFBcjJNX2xhY29fOWRhaTFVQQ?oc=5\" target=\"_blank\"&gt;BP to sell stakes in flagship UK carbon capture projects in Northern England&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-05-07T10:53:33.000Z",
           "score": 7
+        },
+        {
+          "title": "Endangered eel population boost hopes",
+          "link": "https://www.bbc.com/news/articles/c5yr49zy1zxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The European eel population has declined sharply since the 1980s due to environmental factors.",
+          "published": "2026-05-07T05:10:07.000Z",
+          "score": 4
+        },
+        {
+          "title": "How to drive progress on the green transition | Letters",
+          "link": "https://www.theguardian.com/environment/2026/may/07/how-to-drive-progress-on-the-green-transition",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Readers respond to an editorial on the need to speed up the shift to renewables&lt;/p&gt;&lt;p&gt;Your editorial is spot-on (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/may/04/the-guardian-view-on-the-green-transition-politicians-should-speed-it-up-and-households-too\"&gt;The Guardian view on the green transition: politicians should speed it up – and households too, 4 May&lt;/a&gt;). Sadly many of the policies implemented by politicians are counterproductive, based on the ",
+          "published": "2026-05-07T16:37:55.000Z",
+          "score": 2
         }
       ]
     },
@@ -147,6 +147,14 @@
           "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Competitiveness Fund ('ECF’), including the specific programme for defence research and innovation activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Stine Bosse&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-05-07T10:15:16.000Z",
           "score": 22
+        },
+        {
+          "title": "Blue Owl private credit fund cuts dividend as borrowing costs rise - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbWdnbEMzRVIzWFpNRkE3UFNlWkVuVGVpVDJvMVJzSWswTGNjMGdPU1ZBN3RxdFVkQ1d4Mms3ejBBZDdFUzdIcVpqWFotT3ZZcTJSU3R5UWoxaDZLN2V3V3JjWFo1cV9mbGs2bk5rVnY3a1ZyQmFHN29hY3Vhc1J2NkNSQ2htU3JMSm12eGsycXB0emo4T0wyZEUyOERTTUVRUHd5dWJVbGI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQbWdnbEMzRVIzWFpNRkE3UFNlWkVuVGVpVDJvMVJzSWswTGNjMGdPU1ZBN3RxdFVkQ1d4Mms3ejBBZDdFUzdIcVpqWFotT3ZZcTJSU3R5UWoxaDZLN2V3V3JjWFo1cV9mbGs2bk5rVnY3a1ZyQmFHN29hY3Vhc1J2NkNSQ2htU3JMSm12eGsycXB0emo4T0wyZEUyOERTTUVRUHd5dWJVbGI?oc=5\" target=\"_blank\"&gt;Blue Owl private credit fund cuts dividend as borrowing costs rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-06T21:46:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -161,6 +169,14 @@
           "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the Connecting Europe Facility for the period 2028-2034, amending Regulation (EU) 2024/1679 and repealing Regulation (EU) 2021/1153&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-05-07T07:55:18.000Z",
           "score": 22
+        },
+        {
+          "title": "Minutes - Monday, 16 March 2026 - Tuesday, 17 March 2026 - PE787.025v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-03-16-1_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-07T16:15:01.000Z",
+          "score": 18
         },
         {
           "title": "EU reaches tentative deal on simpler AI rules, plans ban on &#039;nudifier&#039; apps",
@@ -193,11 +209,11 @@
           "score": 8
         },
         {
-          "title": "Ivory Coast dissolves electoral commission after criticism - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOOVBRTjlGNE5MSzkzcXBONko4UDlvVzFOQVAtMVpranZ3eHFSblBiN1h2Tkk4UTJ6a1RFeXdwTHdvS2RmTl9fRmhxSVZVSDNiTUw4X0hhTUVDeUxVLUJTX0xzSmVkanZRdWJmVjBEX2k0WkF6eUQtTDZJQUZZaFNhVkNLS1MzTURUTXVreGZnczZKZ1N0clZHeWJRb1o2c0lxbGQyQ2R0QW8xQms?oc=5",
+          "title": "Spain seizes 30 tons of cocaine in record European haul, detains 23 crew - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOOVBRTjlGNE5MSzkzcXBONko4UDlvVzFOQVAtMVpranZ3eHFSblBiN1h2Tkk4UTJ6a1RFeXdwTHdvS2RmTl9fRmhxSVZVSDNiTUw4X0hhTUVDeUxVLUJTX0xzSmVkanZRdWJmVjBEX2k0WkF6eUQtTDZJQUZZaFNhVkNLS1MzTURUTXVreGZnczZKZ1N0clZHeWJRb1o2c0lxbGQyQ2R0QW8xQms?oc=5\" target=\"_blank\"&gt;Ivory Coast dissolves electoral commission after criticism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-06T16:08:30.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5\" target=\"_blank\"&gt;Spain seizes 30 tons of cocaine in record European haul, detains 23 crew&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-07T14:37:40.000Z",
           "score": 8
         },
         {
@@ -205,24 +221,24 @@
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcnJwMkVtT213YlZBSmFDTkp1UTA4LUY4ek5JMHo3Z3pMZEUtQURTdFZBRnBfTkdlc3c0VmVHV19fNWJDVkYxSzYzNFhxM0NjV3FtcWQ4ZU9HU0Nla0w1c2ZkaWQteUpPQmpHWkRyZmtfXzAxa0h5VklEYUNyVUh5ZktPMmVXWGVLRmZnZnZINkFJR2F3VklNU2RlZWZ1YkZPZVE3V2FqSVJSS3c2Z1VJWUVXRzJxUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPcnJwMkVtT213YlZBSmFDTkp1UTA4LUY4ek5JMHo3Z3pMZEUtQURTdFZBRnBfTkdlc3c0VmVHV19fNWJDVkYxSzYzNFhxM0NjV3FtcWQ4ZU9HU0Nla0w1c2ZkaWQteUpPQmpHWkRyZmtfXzAxa0h5VklEYUNyVUh5ZktPMmVXWGVLRmZnZnZINkFJR2F3VklNU2RlZWZ1YkZPZVE3V2FqSVJSS3c2Z1VJWUVXRzJxUQ?oc=5\" target=\"_blank\"&gt;Poland's EMP teams up with Foxconn to build EV manufacturing hub&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T08:43:28.000Z",
+          "published": "2026-05-07T10:22:01.000Z",
           "score": 7
         },
         {
-          "title": "Iran considering US proposal as Trump says war will be 'over quickly'",
-          "link": "https://www.bbc.com/news/articles/cj0pq2q8221o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Mediator Pakistan says it is \"endeavouring to convert this ceasefire into a permanent end to this war\".",
-          "published": "2026-05-07T04:06:33.000Z",
-          "score": 6
+          "title": "BOJ debated need for rate hike if energy shock persists, minutes show - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOUklDX3JMbDBCMnNnUXFWZmdLN09Ec3BPdjJ5TWZtSTdoa3IzR0xibDdZcHRkc3c2YURodVRJRWtzdktXV3JMNlFlUUdqOUt6c3g0S0JMb1RRTWVwRmNGMnFTZzN0MDA2Y3pyQjdncU9hVDBZc1lhUi1aanB4MEUzOFY4NDEtQ0ZabUNUMVNyQk5FSDhLZFQ2dm9DanJ5VEIxTEkwb1UtQmg0eGEwTl9yVl9nalM3OEE1Y1pzZV8wM1BFZE1UQ2haUUNvZGw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOUklDX3JMbDBCMnNnUXFWZmdLN09Ec3BPdjJ5TWZtSTdoa3IzR0xibDdZcHRkc3c2YURodVRJRWtzdktXV3JMNlFlUUdqOUt6c3g0S0JMb1RRTWVwRmNGMnFTZzN0MDA2Y3pyQjdncU9hVDBZc1lhUi1aanB4MEUzOFY4NDEtQ0ZabUNUMVNyQk5FSDhLZFQ2dm9DanJ5VEIxTEkwb1UtQmg0eGEwTl9yVl9nalM3OEE1Y1pzZV8wM1BFZE1UQ2haUUNvZGw?oc=5\" target=\"_blank\"&gt;BOJ debated need for rate hike if energy shock persists, minutes show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-05-07T00:20:00.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 399,
-    "articlesLast24h": 162,
-    "afterDedup": 154,
+    "articlesLast24h": 171,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
