@@ -1,18 +1,18 @@
 {
   "date": "2026-05-08",
-  "generatedAt": "2026-05-08T12:12:56.341Z",
+  "generatedAt": "2026-05-08T18:15:27.884Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 8 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
-      "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
+      "headline": "DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions &#124; Wind and solar save UK ‘£1.7bn’ &#124; Amazon ‘tipping point’",
+      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions | Wind and solar save UK ‘£1.7bn’ | Amazon ‘tipping point’ appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Airline emissions in Europe top pre-Covid levels despite pledge to decarbonise",
-      "summary": "&lt;p&gt;Promises to cut emissions and use more fuel-efficient planes fail to stop rise, with Ryanair’s carbon footprint 50% up on 2019&lt;/p&gt;&lt;p&gt;Emissions from flying in Europe have now passed pre-pandemic levels, with Ryanair’s carbon footprint 50% higher than in 2019, research has shown.&lt;/p&gt;&lt;p&gt;Total aviation emissions continue to increase despite industry pledges to decarbonise and the introduction of more fuel-efficient planes, driven by the massive expansion of low-cost ",
+      "headline": "Factcheck: What the UK car industry is not saying about EV targets",
+      "summary": "For several years, the UK car industry has been claiming that demand is not high... The post Factcheck: What the UK car industry is not saying about EV targets appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -28,20 +28,20 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions &#124; Wind and solar save UK ‘£1.7bn’ &#124; Amazon ‘tipping point’",
+          "link": "https://www.carbonbrief.org/debriefed-8-may-2026-eu-eyes-fossil-fuel-exemptions-wind-and-solar-save-uk-1-7bn-amazon-tipping-point/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions | Wind and solar save UK ‘£1.7bn’ | Amazon ‘tipping point’ appeared first on Carbon Brief.",
+          "published": "2026-05-08T13:36:36.000Z",
+          "score": 19
+        },
+        {
           "title": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_977",
           "source": "European Commission",
           "description": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
           "published": "2026-05-27T22:00:00.000Z",
           "score": 19
-        },
-        {
-          "title": "Analysis: Wind and solar have saved UK from gas imports worth £1.7bn since Iran war began",
-          "link": "https://www.carbonbrief.org/analysis-wind-and-solar-have-saved-uk-from-gas-imports-worth-1-7bn-since-iran-war-began/",
-          "source": "Carbon Brief",
-          "description": "The UK has avoided the need for gas imports worth £1.7bn since the start of... The post Analysis: Wind and solar have saved UK from gas imports worth £1.7bn since Iran war began appeared first on Carbon Brief.",
-          "published": "2026-05-07T13:02:57.000Z",
-          "score": 13
         },
         {
           "title": "‘A share in the delight’: the people investing in the UK’s first community-owned solar battery",
@@ -52,19 +52,19 @@
           "score": 7
         },
         {
-          "title": "Climate campaigners attack Shell over ‘windfall’ profits from Iran war",
-          "link": "https://www.theguardian.com/business/2026/may/07/climate-campaigners-attack-shell-over-windfall-profits-from-iran-war",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Firm benefits from conflict to rake in $6.9bn as higher energy prices turbocharge profits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/may/07/iran-deal-shell-profits-oil-gas-stock-markets-business-live\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Shell has reported better than expected profits of $6.9bn (£5bn) after its oil traders reaped the benefits of soaring energy prices during the war in Ir",
-          "published": "2026-05-07T15:40:53.000Z",
-          "score": 7
-        },
-        {
           "title": "Gas-fired power still looks a safe bet for Centrica in the renewables era",
           "link": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/may/07/gas-fired-power-still-looks-a-safe-bet-for-centrica-in-the-renewables-era",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;There will still be a need to have gas in the wings to keep the lights on, so the financials stack up on Severn plant purchase&lt;/p&gt;&lt;p&gt;The eye-catching non-Hormuz news in energy-land last month was that Great Britain is set for &lt;a href=\"https://www.theguardian.com/environment/2026/apr/14/run-dishwasher-plug-car-how-great-britain-plans-use-record-wind-solar-power\"&gt;a record-breaking summer for wind and solar power generation&lt;/a&gt;. The national energy system operator e",
           "published": "2026-05-07T18:15:35.000Z",
+          "score": 4
+        },
+        {
+          "title": "BBC Inside Science",
+          "link": "https://www.bbc.co.uk/sounds/play/w3ct977k?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "We explore whether Pluto should regain its title as the solar system’s ninth planet",
+          "published": "2026-05-07T20:00:00.000Z",
           "score": 4
         }
       ]
@@ -73,6 +73,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Factcheck: What the UK car industry is not saying about EV targets",
+          "link": "https://www.carbonbrief.org/factcheck-what-the-uk-car-industry-is-not-saying-about-ev-targets/",
+          "source": "Carbon Brief",
+          "description": "For several years, the UK car industry has been claiming that demand is not high... The post Factcheck: What the UK car industry is not saying about EV targets appeared first on Carbon Brief.",
+          "published": "2026-05-08T13:18:15.000Z",
+          "score": 13
+        },
+        {
+          "title": "IPCC invites government representatives and experts to review the second draft of the Special Report on Climate Change and Cities",
+          "link": "https://www.ipcc.ch/2026/05/08/ipcc-srcities-second-order-draft-review/",
+          "source": "IPCC",
+          "description": "GENEVA, May 8 – The Intergovernmental Panel on Climate Change (IPCC) has opened registration for governments and experts to serve as Expert Reviewers on the Second-Order Draft (SOD) of the Special Report on Climate Change and Cities. Following the Third Lead Author Meeting this January, authors of this Special Report have processed comments from expert [&#8230;]",
+          "published": "2026-05-08T13:05:41.000Z",
+          "score": 11
+        },
         {
           "title": "Airline emissions in Europe top pre-Covid levels despite pledge to decarbonise",
           "link": "https://www.theguardian.com/environment/2026/may/08/airline-emissions-in-europe-top-pre-covid-levels-despite-pledge-to-decarbonise",
@@ -85,7 +101,7 @@
           "title": "Inequality causing 100,000 extra deaths a year from heat and cold in Europe",
           "link": "https://www.theguardian.com/environment/2026/may/08/inequality-extra-deaths-heat-cold-europe-climate",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Findings come after third-hottest April on record globally and amid fears of more brutal European summer weather&lt;/p&gt;&lt;p&gt;Economic inequality adds more than 100,000 deaths to the vast toll from heat and cold in Europe each year, &lt;a href=\"https://doi.org/10.1038/s44360-026-00106-0\"&gt;research&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Cutting levels inequality to match that of Europe’s most equal region, as measured by the Gini index, would reduce temperature-related mortality b",
+          "description": "&lt;p&gt;Findings come after third-hottest April on record globally and amid fears of more brutal European summer weather&lt;/p&gt;&lt;p&gt;Economic inequality adds more than 100,000 deaths to the vast toll from heat and cold in Europe each year, &lt;a href=\"https://doi.org/10.1038/s44360-026-00106-0\"&gt;research&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Cutting levels of inequality to match that of Europe’s most equal region, Slovenia, as measured by the Gini index, would reduce temperature-relate",
           "published": "2026-05-08T09:29:38.000Z",
           "score": 8
         },
@@ -96,22 +112,6 @@
           "description": "&lt;p&gt;Temperature swings have left crops across the Plains in terrible conditions, with some farmers opting not to harvest&lt;/p&gt;&lt;p&gt;Merrill Nielsen’s wheat crop looked healthy after he planted it in the fall on his 2,500-acre farm in north-central &lt;a href=\"https://www.theguardian.com/us-news/kansas\"&gt;Kansas&lt;/a&gt;, about 50 miles west of Salina, the plants benefiting from higher-than-normal November rainfall.&lt;/p&gt;&lt;p&gt;But an abnormally warm and dry winter, followed b",
           "published": "2026-05-08T10:00:24.000Z",
           "score": 7
-        },
-        {
-          "title": "How sunburn inspired a new way to store energy",
-          "link": "https://www.bbc.com/news/articles/c62l9gnx775o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Molecules that can capture heat could be a useful technology to decarbonise heating.",
-          "published": "2026-05-07T23:03:04.000Z",
-          "score": 7
-        },
-        {
-          "title": "How to drive progress on the green transition | Letters",
-          "link": "https://www.theguardian.com/environment/2026/may/07/how-to-drive-progress-on-the-green-transition",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Readers respond to an editorial on the need to speed up the shift to renewables&lt;/p&gt;&lt;p&gt;Your editorial is spot-on (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/may/04/the-guardian-view-on-the-green-transition-politicians-should-speed-it-up-and-households-too\"&gt;The Guardian view on the green transition: politicians should speed it up – and households too, 4 May&lt;/a&gt;). Sadly many of the policies implemented by politicians are counterproductive, based on the ",
-          "published": "2026-05-07T16:37:55.000Z",
-          "score": 2
         }
       ]
     },
@@ -133,14 +133,6 @@
           "score": 22
         },
         {
-          "title": "Minutes - Monday, 16 March 2026 - Tuesday, 17 March 2026 - PE787.025v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-03-16-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-07T16:15:01.000Z",
-          "score": 18
-        },
-        {
           "title": "Trump gives EU ultimatum deadline to approve trade deal with US",
           "link": "https://www.bbc.com/news/articles/cp3pyk4nw3lo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -149,19 +141,19 @@
           "score": 12
         },
         {
-          "title": "Trump gives EU until July 4 to implement trade deal",
-          "link": "https://www.dw.com/en/trump-gives-eu-until-july-4-to-implement-trade-deal/a-77087158?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Trump has threatened to impose higher tariffs on the bloc if it doesn&#039;t implement the trade deal agreed last year by his deadline.",
-          "published": "2026-05-07T19:30:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU wants to move fast on Moldova accession talks, Kallas says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMmFCNkNxbGJZRUFzODZWVEo2a3FNdVFkWnltQjM5Y1JGRGZnNHJoNG1iODNwMFBwX3VfRzBLdmlwbzdwMm1SMVRXdzg1d3puZTNFTGs5OE1oZTRuY2JWa0NrNWNubjJlU0VQX0RYUVZkVVE0bktRcGNNcGpoSzVHMmZZR0EwcHNVbVVrenpkNkdLVGZwRDUta0t5Q1JxR0dNeElsakl3?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNMmFCNkNxbGJZRUFzODZWVEo2a3FNdVFkWnltQjM5Y1JGRGZnNHJoNG1iODNwMFBwX3VfRzBLdmlwbzdwMm1SMVRXdzg1d3puZTNFTGs5OE1oZTRuY2JWa0NrNWNubjJlU0VQX0RYUVZkVVE0bktRcGNNcGpoSzVHMmZZR0EwcHNVbVVrenpkNkdLVGZwRDUta0t5Q1JxR0dNeElsakl3?oc=5\" target=\"_blank\"&gt;EU wants to move fast on Moldova accession talks, Kallas says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-08T08:51:13.000Z",
+          "score": 8
+        },
+        {
+          "title": "Taiwan parliament approves extra defence spending but less than government wanted - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeTIxcDlRX1hZX3g3MmRpemdydVFMSTFFMFMyUkRRWHV1RkJ2azRtTzI0cEszSVh0eXhudC0wZkZ6aVJtY1JsU000LXVnUzV5VE5EZVBHaURhZHZTNWlER2NDOGtfVnZwVkJIZ1lYQWY5Ml9vejV1RlZLMzkwSTRCMjVhU2RKTl9NS0pmazlJdFRpM0llRkZoRkcta0pIQmRqMlBnZWkySHpQbkNoSkZ1c05Ld1hKQl96OFB5cnZIQjktNkt2NnExRWtTdmU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNeTIxcDlRX1hZX3g3MmRpemdydVFMSTFFMFMyUkRRWHV1RkJ2azRtTzI0cEszSVh0eXhudC0wZkZ6aVJtY1JsU000LXVnUzV5VE5EZVBHaURhZHZTNWlER2NDOGtfVnZwVkJIZ1lYQWY5Ml9vejV1RlZLMzkwSTRCMjVhU2RKTl9NS0pmazlJdFRpM0llRkZoRkcta0pIQmRqMlBnZWkySHpQbkNoSkZ1c05Ld1hKQl96OFB5cnZIQjktNkt2NnExRWtTdmU?oc=5\" target=\"_blank\"&gt;Taiwan parliament approves extra defence spending but less than government wanted&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-05-08T09:27:43.000Z",
           "score": 8
         }
       ]
@@ -171,11 +163,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Stellantis, Leapmotor to move to joint EV production in Europe, deepen partnership - Reuters",
+          "title": "Stellantis, Leapmotor deepen ties with joint EV production in Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGptUEJKak5uOWRWVWpxLUdDd25FaEthMXNydUsxTmFfM09jcjhUVHJTQ0kxWnFRRHdLcE43R3FZV09pMmNZdVFkNFd1Ry0ycHJSaEdjQTllRWp5WklJRmF5aEFTLVd3cm9jalg5dkxIckxtZTVISGxYMUlVYUdhZFQyMm9WZGk0bGZlTmpwS3ZTX2ZzVFgyM3BoeG50NHhDVjVpZkM5TkNaQm5veTdVOEZRZlZ4RzJENGVCUUtpRE4wSkpsRnZz?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGptUEJKak5uOWRWVWpxLUdDd25FaEthMXNydUsxTmFfM09jcjhUVHJTQ0kxWnFRRHdLcE43R3FZV09pMmNZdVFkNFd1Ry0ycHJSaEdjQTllRWp5WklJRmF5aEFTLVd3cm9jalg5dkxIckxtZTVISGxYMUlVYUdhZFQyMm9WZGk0bGZlTmpwS3ZTX2ZzVFgyM3BoeG50NHhDVjVpZkM5TkNaQm5veTdVOEZRZlZ4RzJENGVCUUtpRE4wSkpsRnZz?oc=5\" target=\"_blank\"&gt;Stellantis, Leapmotor to move to joint EV production in Europe, deepen partnership&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-05-08T06:20:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGptUEJKak5uOWRWVWpxLUdDd25FaEthMXNydUsxTmFfM09jcjhUVHJTQ0kxWnFRRHdLcE43R3FZV09pMmNZdVFkNFd1Ry0ycHJSaEdjQTllRWp5WklJRmF5aEFTLVd3cm9jalg5dkxIckxtZTVISGxYMUlVYUdhZFQyMm9WZGk0bGZlTmpwS3ZTX2ZzVFgyM3BoeG50NHhDVjVpZkM5TkNaQm5veTdVOEZRZlZ4RzJENGVCUUtpRE4wSkpsRnZz?oc=5\" target=\"_blank\"&gt;Stellantis, Leapmotor deepen ties with joint EV production in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T16:12:31.000Z",
           "score": 13
         },
         {
@@ -183,7 +175,7 @@
           "link": "https://www.bbc.com/news/articles/cp8pk2m4nlxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "An international air body suggests wider acceptance of US-grade jet fuel could help to head off any supply problems.",
-          "published": "2026-05-08T10:56:52.000Z",
+          "published": "2026-05-08T14:42:13.000Z",
           "score": 8
         },
         {
@@ -195,28 +187,28 @@
           "score": 8
         },
         {
-          "title": "Spain seizes 30 tons of cocaine in record European haul, detains 23 crew - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5",
+          "title": "EU ministers to adopt sanctions related to Russia's deportations of Ukrainian children - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPWWVzOWxOdG9RRno5QUV3RDYyaWtSakd3Qmw3b1pDRlItRFdpQ09hdm5uV2syZ1R2QmM0bHBtV0UzSGFoMERfc2tiMEw1enV0ZGpTTGtkcDROZjQxc3dNTUhuVHRNZERyWG9IaDh3ZkFVRmhza3VZT2R3STZlVW9EMjNoVHIwa1dZVHZMREZRNEZ1a3E3NFJic1dieDVSdF9WSDVKNGk5Vk1QT2wtUHFZVi1CVmVvM3ZGYlE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5\" target=\"_blank\"&gt;Spain seizes 30 tons of cocaine in record European haul, detains 23 crew&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T14:37:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPWWVzOWxOdG9RRno5QUV3RDYyaWtSakd3Qmw3b1pDRlItRFdpQ09hdm5uV2syZ1R2QmM0bHBtV0UzSGFoMERfc2tiMEw1enV0ZGpTTGtkcDROZjQxc3dNTUhuVHRNZERyWG9IaDh3ZkFVRmhza3VZT2R3STZlVW9EMjNoVHIwa1dZVHZMREZRNEZ1a3E3NFJic1dieDVSdF9WSDVKNGk5Vk1QT2wtUHFZVi1CVmVvM3ZGYlE?oc=5\" target=\"_blank\"&gt;EU ministers to adopt sanctions related to Russia's deportations of Ukrainian children&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T09:20:09.000Z",
           "score": 8
         },
         {
-          "title": "Putin is ready to talk with EU but won't make the first move, Kremlin says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSmp4WnBDQ2pwSm1ycWdyZEdiX0ZMVThWTjBMSzNnVy1HT2gzWWJiS2tjN0pQNEI3T3JDUWZVTHU4T3gtSHZnQ2RLYW9mWHZZbGlRVWVhOXRIUWJETkd4Y0ZXZWtqeE11RFNiU1dUd1VQTWxPcTc1WlpjN1BkR0xEWHBRM1hfOHhEbFhMSWwyMXc5SEx0c1JHNjkwVDhWUEZXSnJTUW1XM2tPdWJfUm13?oc=5",
+          "title": "Google has bit more time to address concerns in EU investigation, EU Commission says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdVpOb2gzQXo2eDc2TzMxWTR0RWRqLXY2S2ZLd3d6QkVWZU9qckw4MktGSXBZU3NNUE1PajNiS0Rya0xlUVEtUkZlU0VPXzJWaVJtSlFjNGN6WlNaS19IOUhMRlFiRXl5dmFyekdvOE1XZlRRTm9ta0RXVWJ2U1E3ZTU2ZzZtcEs5XzhlN1JSN3A4b0N2M0FJbFNwS0pKeVlqMHBXeFFDNEZzSTk0WENpdURfWmRUdmZ1Z3cw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPSmp4WnBDQ2pwSm1ycWdyZEdiX0ZMVThWTjBMSzNnVy1HT2gzWWJiS2tjN0pQNEI3T3JDUWZVTHU4T3gtSHZnQ2RLYW9mWHZZbGlRVWVhOXRIUWJETkd4Y0ZXZWtqeE11RFNiU1dUd1VQTWxPcTc1WlpjN1BkR0xEWHBRM1hfOHhEbFhMSWwyMXc5SEx0c1JHNjkwVDhWUEZXSnJTUW1XM2tPdWJfUm13?oc=5\" target=\"_blank\"&gt;Putin is ready to talk with EU but won't make the first move, Kremlin says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-08T10:39:18.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOdVpOb2gzQXo2eDc2TzMxWTR0RWRqLXY2S2ZLd3d6QkVWZU9qckw4MktGSXBZU3NNUE1PajNiS0Rya0xlUVEtUkZlU0VPXzJWaVJtSlFjNGN6WlNaS19IOUhMRlFiRXl5dmFyekdvOE1XZlRRTm9ta0RXVWJ2U1E3ZTU2ZzZtcEs5XzhlN1JSN3A4b0N2M0FJbFNwS0pKeVlqMHBXeFFDNEZzSTk0WENpdURfWmRUdmZ1Z3cw?oc=5\" target=\"_blank\"&gt;Google has bit more time to address concerns in EU investigation, EU Commission says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T11:26:10.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 397,
-    "articlesLast24h": 180,
-    "afterDedup": 170,
+    "totalArticlesScanned": 398,
+    "articlesLast24h": 170,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
