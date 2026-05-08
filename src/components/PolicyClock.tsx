@@ -68,8 +68,11 @@ const CAT: Record<PolicyClockCategory, { label: string; color: string; bg: strin
 };
 
 const LANE_ORDER = Object.keys(CAT) as PolicyClockCategory[];
-const LANE_H = 54;       // px height per swim lane
+const LANE_H = 54;       // px height per swim lane (minimum)
 const DAY_W = 4.5;       // px per day on the timeline
+const ROW_SLOT = 26;     // px slot height per stacked event row
+const EVENT_H_MULTI = 22;// px event pill height when rows are stacked
+const LANE_PAD = 6;      // px top/bottom padding within each lane
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // ── Helpers ──────────────────────────────────────────────────────────────
@@ -113,6 +116,36 @@ function monthTicks(startDate: string, totalDays: number) {
     d.setDate(1);
   }
   return ticks;
+}
+
+/**
+ * Assign each event to the lowest row index where it doesn't overlap any
+ * already-placed event. Returns a map of event.id → row index (0-based).
+ */
+function assignRows(
+  events: PolicyClockEvent[],
+  timelineStart: string,
+  totalDays: number,
+): Map<string, number> {
+  const rows = new Map<string, number>();
+  const rowRightEdges: number[] = []; // rightmost pixel of each row's last event
+  const sorted = [...events].sort((a, b) => a.date.localeCompare(b.date));
+
+  for (const ev of sorted) {
+    const startDay = Math.max(0, daysBetween(timelineStart, ev.date));
+    const endDay = ev.endDate
+      ? Math.min(totalDays, daysBetween(timelineStart, ev.endDate))
+      : startDay;
+    const barW = Math.max((endDay - startDay + 1) * DAY_W, ev.importance === 'high' ? 120 : 100);
+    const left = startDay * DAY_W;
+    const right = left + barW;
+
+    let r = rowRightEdges.findIndex(edge => edge <= left);
+    if (r === -1) r = rowRightEdges.length;
+    rowRightEdges[r] = right;
+    rows.set(ev.id, r);
+  }
+  return rows;
 }
 
 // ── Component ────────────────────────────────────────────────────────────
@@ -177,6 +210,37 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
   }, [data, visibleLanes, timelineStart, timelineEnd]);
 
   const ticks = useMemo(() => monthTicks(timelineStart, totalDays), [timelineStart, totalDays]);
+
+  // Per-lane layout: row assignments, effective height, and cumulative yBase.
+  // Lanes with overlapping events expand vertically to stack them cleanly.
+  const laneLayouts = useMemo((): {
+    lane: PolicyClockCategory;
+    events: PolicyClockEvent[];
+    rowMap: Map<string, number>;
+    numRows: number;
+    rowSlot: number;
+    eventH: number;
+    height: number;
+    yBase: number;
+  }[] => {
+    let yOffset = 28; // header ruler height
+    return visibleLanes.map((lane: PolicyClockCategory) => {
+      const events: PolicyClockEvent[] = eventsByLane.get(lane) || [];
+      const rowMap = assignRows(events, timelineStart, totalDays);
+      const numRows = events.length > 0
+        ? Math.max(...events.map((ev: PolicyClockEvent) => (rowMap.get(ev.id) ?? 0) + 1))
+        : 1;
+      // Single row reuses the original tall pill; multi-row uses compact pills.
+      const rowSlot = numRows === 1 ? LANE_H - 12 : ROW_SLOT;
+      const eventH  = numRows === 1 ? LANE_H - 12 : EVENT_H_MULTI;
+      const height  = Math.max(LANE_H, LANE_PAD * 2 + numRows * rowSlot);
+      const yBase   = yOffset;
+      yOffset += height;
+      return { lane, events, rowMap, numRows, rowSlot, eventH, height, yBase };
+    });
+  }, [visibleLanes, eventsByLane, timelineStart, totalDays]);
+
+  const totalLaneHeight = laneLayouts.reduce((sum: number, l: { height: number }) => sum + l.height, 0);
 
   // Scroll to "today" on first load
   useEffect(() => {
@@ -378,9 +442,9 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
           <div className="shrink-0 border-r border-grey-200 bg-grey-50 z-10">
             {/* Header spacer for the month ruler */}
             <div className="h-[28px] border-b border-grey-200" />
-            {visibleLanes.map(lane => (
+            {laneLayouts.map(({ lane, height }: { lane: PolicyClockCategory; height: number }) => (
               <div key={lane} className="flex items-center gap-1.5 px-3 border-b border-grey-100"
-                style={{ height: LANE_H }}>
+                style={{ height }}>
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ backgroundColor: CAT[lane].color }} />
                 <span className="text-[10px] font-semibold text-tertiary-dark whitespace-nowrap" style={{ color: CAT[lane].color }}>
                   {CAT[lane].label}
@@ -391,7 +455,7 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
 
           {/* Scrollable timeline area */}
           <div ref={scrollRef} className="flex-1 overflow-x-auto overflow-y-hidden">
-            <div style={{ width: totalWidth, minHeight: 28 + visibleLanes.length * LANE_H }} className="relative">
+            <div style={{ width: totalWidth, minHeight: 28 + totalLaneHeight }} className="relative">
               {/* Month ruler */}
               <div className="h-[28px] border-b border-grey-200 flex sticky top-0 bg-white z-10">
                 {ticks.map((t, i) => (
@@ -417,64 +481,66 @@ export default function PolicyClock({ onAddDate }: { onAddDate?: () => void } = 
               </div>
 
               {/* Swim lanes */}
-              {visibleLanes.map((lane, laneIdx) => {
-                const events = eventsByLane.get(lane) || [];
-                const yBase = 28 + laneIdx * LANE_H;
-                return (
-                  <div key={lane}>
-                    {/* Lane background stripe */}
-                    <div className="absolute left-0 right-0 border-b border-grey-100"
-                      style={{ top: yBase, height: LANE_H, backgroundColor: laneIdx % 2 === 0 ? 'transparent' : '#f9fafb' }} />
+              {laneLayouts.map(({ lane, events, rowMap, rowSlot, eventH, height, yBase }: {
+                lane: PolicyClockCategory; events: PolicyClockEvent[];
+                rowMap: Map<string, number>; rowSlot: number; eventH: number;
+                height: number; yBase: number;
+              }, laneIdx: number) => (
+                <div key={lane}>
+                  {/* Lane background stripe — height matches stacked rows */}
+                  <div className="absolute left-0 right-0 border-b border-grey-100"
+                    style={{ top: yBase, height, backgroundColor: laneIdx % 2 === 0 ? 'transparent' : '#f9fafb' }} />
 
-                    {/* Events */}
-                    {events.map(ev => {
-                      const startDay = Math.max(0, daysBetween(timelineStart, ev.date));
-                      const endDay = ev.endDate
-                        ? Math.min(totalDays, daysBetween(timelineStart, ev.endDate))
-                        : startDay;
-                      const barW = Math.max((endDay - startDay + 1) * DAY_W, ev.importance === 'high' ? 120 : 100);
-                      const left = startDay * DAY_W;
-                      const isExpanded = expandedId === ev.id;
-                      const meta = CAT[ev.category];
+                  {/* Events — placed in overlap-free rows */}
+                  {events.map((ev: PolicyClockEvent) => {
+                    const startDay = Math.max(0, daysBetween(timelineStart, ev.date));
+                    const endDay = ev.endDate
+                      ? Math.min(totalDays, daysBetween(timelineStart, ev.endDate))
+                      : startDay;
+                    const barW = Math.max((endDay - startDay + 1) * DAY_W, ev.importance === 'high' ? 120 : 100);
+                    const left = startDay * DAY_W;
+                    const rowIdx = rowMap.get(ev.id) ?? 0;
+                    const topOffset = yBase + LANE_PAD + rowIdx * rowSlot + Math.floor((rowSlot - eventH) / 2);
+                    const isExpanded = expandedId === ev.id;
+                    const meta = CAT[ev.category];
 
-                      return (
-                        <button key={ev.id}
-                          onClick={() => setExpandedId(isExpanded ? null : ev.id)}
-                          className={`absolute rounded-md border text-left px-1.5 py-0.5 transition-all hover:shadow-md hover:z-30 cursor-pointer group ${
-                            isExpanded ? 'z-30 outline outline-2 outline-offset-1 shadow-lg' : 'z-10'
-                          }`}
-                          style={{
-                            left,
-                            top: yBase + 6,
-                            width: barW,
-                            height: LANE_H - 12,
-                            backgroundColor: meta.bg,
-                            borderColor: meta.color + '60',
-                            outlineColor: isExpanded ? meta.color : undefined,
-                          }}
-                          title={`${fmtDay(ev.date)} — ${ev.title}`}
-                        >
-                          <div className="flex items-center gap-1 overflow-hidden h-full">
-                            {ev.importance === 'high' && (
-                              <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 animate-pulse" />
-                            )}
-                            <span className="text-[10px] font-semibold leading-tight truncate" style={{ color: meta.color }}>
-                              {ev.title}
-                            </span>
-                          </div>
-                          {/* Tooltip on hover */}
-                          <div className="hidden group-hover:block absolute left-0 top-full mt-1 w-60 bg-white rounded-lg shadow-xl border border-grey-200 p-3 z-50 pointer-events-none">
-                            <p className="text-[10px] font-bold" style={{ color: meta.color }}>{meta.label}</p>
-                            <p className="text-xs font-semibold text-tertiary-dark mt-0.5">{ev.title}</p>
-                            <p className="text-[10px] text-tertiary mt-1">{fmtDay(ev.date)} {ev.endDate && ev.endDate !== ev.date ? `→ ${fmtDay(ev.endDate)}` : ''}</p>
-                            <p className="text-[10px] text-tertiary mt-0.5 leading-relaxed line-clamp-3">{ev.description}</p>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-                );
-              })}
+                    return (
+                      <button key={ev.id}
+                        onClick={() => setExpandedId(isExpanded ? null : ev.id)}
+                        className={`absolute rounded-md border text-left px-1.5 py-0.5 transition-all hover:shadow-md hover:z-30 cursor-pointer group ${
+                          isExpanded ? 'z-30 outline outline-2 outline-offset-1 shadow-lg' : 'z-10'
+                        }`}
+                        style={{
+                          left,
+                          top: topOffset,
+                          width: barW,
+                          height: eventH,
+                          backgroundColor: meta.bg,
+                          borderColor: meta.color + '60',
+                          outlineColor: isExpanded ? meta.color : undefined,
+                        }}
+                        title={`${fmtDay(ev.date)} — ${ev.title}`}
+                      >
+                        <div className="flex items-center gap-1 overflow-hidden h-full">
+                          {ev.importance === 'high' && (
+                            <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 animate-pulse" />
+                          )}
+                          <span className="text-[10px] font-semibold leading-tight truncate" style={{ color: meta.color }}>
+                            {ev.title}
+                          </span>
+                        </div>
+                        {/* Tooltip on hover */}
+                        <div className="hidden group-hover:block absolute left-0 top-full mt-1 w-60 bg-white rounded-lg shadow-xl border border-grey-200 p-3 z-50 pointer-events-none">
+                          <p className="text-[10px] font-bold" style={{ color: meta.color }}>{meta.label}</p>
+                          <p className="text-xs font-semibold text-tertiary-dark mt-0.5">{ev.title}</p>
+                          <p className="text-[10px] text-tertiary mt-1">{fmtDay(ev.date)} {ev.endDate && ev.endDate !== ev.date ? `→ ${fmtDay(ev.endDate)}` : ''}</p>
+                          <p className="text-[10px] text-tertiary mt-0.5 leading-relaxed line-clamp-3">{ev.description}</p>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
           </div>
         </div>
