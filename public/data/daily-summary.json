@@ -1,6 +1,6 @@
 {
   "date": "2026-05-08",
-  "generatedAt": "2026-05-08T06:56:29.323Z",
+  "generatedAt": "2026-05-08T12:12:56.341Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 8 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "Video message by President von der Leyen opening the European University Institute's 50th Anniversary Celebrations",
-      "summary": "European Commission Speech Brussels, 07 May 2026 Thank you, Professor Patrizia Nanz, for the invitation.\r\nPresident Costa, dear Antonio,\r\nPresident Metsola, dear Roberta,\r\nDistinguished guests,\r\nBut most important...",
+      "headline": "Airline emissions in Europe top pre-Covid levels despite pledge to decarbonise",
+      "summary": "&lt;p&gt;Promises to cut emissions and use more fuel-efficient planes fail to stop rise, with Ryanair’s carbon footprint 50% up on 2019&lt;/p&gt;&lt;p&gt;Emissions from flying in Europe have now passed pre-pandemic levels, with Ryanair’s carbon footprint 50% higher than in 2019, research has shown.&lt;/p&gt;&lt;p&gt;Total aviation emissions continue to increase despite industry pledges to decarbonise and the introduction of more fuel-efficient planes, driven by the massive expansion of low-cost ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Competitiveness Fund ('ECF’), including the specific programme for defence research and innovation activities - PE784.252v02-00",
-      "summary": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Competitiveness Fund ('ECF’), including the specific programme for defence research and innovation activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Stine Bosse&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -50,19 +44,11 @@
           "score": 13
         },
         {
-          "title": "Why the EU sees Chinese solar tech as a major security risk",
-          "link": "https://www.dw.com/en/why-the-eu-sees-chinese-solar-tech-as-a-major-security-risk/a-77066865?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Europe&#039;s solar boom is powered by Chinese technology. But experts warn Chinese-made tech could threaten the continent&#039;s safety and even create blackouts. Now, Brussels is aiming to reduce its dependence.",
-          "published": "2026-05-07T10:49:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Trump’s Iran war may stymie climate gains with boost to big oil, experts say",
-          "link": "https://www.theguardian.com/us-news/2026/may/07/iran-war-big-oil-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Windfall profits could lock in Trump-era political wins for the industry and slow clean-energy transition&lt;/p&gt;&lt;p&gt;The billions in profits big oil is reaping due to the Iran war may stymie the energy transition, experts and advocates fear, incentivizing oil and gas expansion and boosting the sector’s funds for political lobbying.&lt;/p&gt;&lt;p&gt;“Windfall profits from Trump’s war will allow big oil to build a wall of money around its Trump-era political victories,” said Lukas",
-          "published": "2026-05-07T11:30:47.000Z",
+          "title": "‘A share in the delight’: the people investing in the UK’s first community-owned solar battery",
+          "link": "https://www.theguardian.com/environment/2026/may/08/a-share-in-the-delight-the-people-investing-in-the-uks-first-community-owned-solar-battery",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Oxfordshire’s Ray Valley Solar already generates clean energy for 7,000 homes, and is now crowdfunding storage to marry daylight with evening demand&lt;/p&gt;&lt;p&gt;Tucked away among hedgerows on a large field between a motorway and the River Ray, one of the UK’s largest community-owned solar parks is hard to spot from the surrounding country lanes.&lt;/p&gt;&lt;p&gt;But the nearly 36,000 solar panels installed on the site are literally a shining example of what can be achieved when a",
+          "published": "2026-05-08T09:00:41.000Z",
           "score": 7
         },
         {
@@ -72,6 +58,14 @@
           "description": "&lt;p&gt;Firm benefits from conflict to rake in $6.9bn as higher energy prices turbocharge profits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/may/07/iran-deal-shell-profits-oil-gas-stock-markets-business-live\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Shell has reported better than expected profits of $6.9bn (£5bn) after its oil traders reaped the benefits of soaring energy prices during the war in Ir",
           "published": "2026-05-07T15:40:53.000Z",
           "score": 7
+        },
+        {
+          "title": "Gas-fired power still looks a safe bet for Centrica in the renewables era",
+          "link": "https://www.theguardian.com/business/nils-pratley-on-finance/2026/may/07/gas-fired-power-still-looks-a-safe-bet-for-centrica-in-the-renewables-era",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;There will still be a need to have gas in the wings to keep the lights on, so the financials stack up on Severn plant purchase&lt;/p&gt;&lt;p&gt;The eye-catching non-Hormuz news in energy-land last month was that Great Britain is set for &lt;a href=\"https://www.theguardian.com/environment/2026/apr/14/run-dishwasher-plug-car-how-great-britain-plans-use-record-wind-solar-power\"&gt;a record-breaking summer for wind and solar power generation&lt;/a&gt;. The national energy system operator e",
+          "published": "2026-05-07T18:15:35.000Z",
+          "score": 4
         }
       ]
     },
@@ -80,20 +74,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Video message by President von der Leyen opening the European University Institute's 50th Anniversary Celebrations",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1029",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 07 May 2026 Thank you, Professor Patrizia Nanz, for the invitation.\r\nPresident Costa, dear Antonio,\r\nPresident Metsola, dear Roberta,\r\nDistinguished guests,\r\nBut most important...",
-          "published": "2026-05-07T09:13:31.000Z",
-          "score": 18
+          "title": "Airline emissions in Europe top pre-Covid levels despite pledge to decarbonise",
+          "link": "https://www.theguardian.com/environment/2026/may/08/airline-emissions-in-europe-top-pre-covid-levels-despite-pledge-to-decarbonise",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Promises to cut emissions and use more fuel-efficient planes fail to stop rise, with Ryanair’s carbon footprint 50% up on 2019&lt;/p&gt;&lt;p&gt;Emissions from flying in Europe have now passed pre-pandemic levels, with Ryanair’s carbon footprint 50% higher than in 2019, research has shown.&lt;/p&gt;&lt;p&gt;Total aviation emissions continue to increase despite industry pledges to decarbonise and the introduction of more fuel-efficient planes, driven by the massive expansion of low-cost ",
+          "published": "2026-05-08T10:30:25.000Z",
+          "score": 10
         },
         {
-          "title": "‘At a crossroads’: will piling-up crises force Europe to put brakes on SUV culture?",
-          "link": "https://www.theguardian.com/environment/2026/may/07/europe-us-car-culture-bigger-vehicles-harms-suvs-trucks",
+          "title": "Inequality causing 100,000 extra deaths a year from heat and cold in Europe",
+          "link": "https://www.theguardian.com/environment/2026/may/08/inequality-extra-deaths-heat-cold-europe-climate",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Bigger cars including electric can cause multiple harms, yet resistance to rise of US-style vehicles has had mixed support&lt;/p&gt;&lt;p&gt;On a brisk winter’s evening in Europe’s automotive heartland, a cyclist who had pushed for safer streets went out on his bike for a final time. Andreas Mandalka had documented dangerous driving and shoddy cycling infrastructure for years, measuring the margins at which cars zipped past him and posting videos of blatant violations. While quick to re",
-          "published": "2026-05-07T10:00:45.000Z",
+          "description": "&lt;p&gt;Findings come after third-hottest April on record globally and amid fears of more brutal European summer weather&lt;/p&gt;&lt;p&gt;Economic inequality adds more than 100,000 deaths to the vast toll from heat and cold in Europe each year, &lt;a href=\"https://doi.org/10.1038/s44360-026-00106-0\"&gt;research&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Cutting levels inequality to match that of Europe’s most equal region, as measured by the Gini index, would reduce temperature-related mortality b",
+          "published": "2026-05-08T09:29:38.000Z",
           "score": 8
+        },
+        {
+          "title": "‘The worst time for wheat’: US farmers face losses to extreme heat and drought",
+          "link": "https://www.theguardian.com/environment/2026/may/08/wheat-farmers-face-loss-crops-heat-drought",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Temperature swings have left crops across the Plains in terrible conditions, with some farmers opting not to harvest&lt;/p&gt;&lt;p&gt;Merrill Nielsen’s wheat crop looked healthy after he planted it in the fall on his 2,500-acre farm in north-central &lt;a href=\"https://www.theguardian.com/us-news/kansas\"&gt;Kansas&lt;/a&gt;, about 50 miles west of Salina, the plants benefiting from higher-than-normal November rainfall.&lt;/p&gt;&lt;p&gt;But an abnormally warm and dry winter, followed b",
+          "published": "2026-05-08T10:00:24.000Z",
+          "score": 7
         },
         {
           "title": "How sunburn inspired a new way to store energy",
@@ -101,14 +103,6 @@
           "source": "BBC Science & Environment",
           "description": "Molecules that can capture heat could be a useful technology to decarbonise heating.",
           "published": "2026-05-07T23:03:04.000Z",
-          "score": 7
-        },
-        {
-          "title": "BP to sell stakes in flagship UK carbon capture projects in Northern England - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPMEtub0tDY0R0RXE5VG12R0RXSHo2NkwwS1hiYTFSMjluMFQ3ZThvTm9Fd3hOWE5jeHhfcUl6ZjZXSXg4a2gtaWJXUHZDQmVQd3NPUjFWWjdQNUFzdFhuRUM3enYzZ05tUUpJWjRJeXdRV2xzNHA1ZThqQ0JUa3ZZcmlUeEJ4ZG4wQndhVUFoMlRpOHR0cmd1Q1VhaV9ubHRLRFNTWkgtdFg1R0J2R0l5eEh6TU5YWTNZbUM4NGFBcjJNX2xhY29fOWRhaTFVQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxPMEtub0tDY0R0RXE5VG12R0RXSHo2NkwwS1hiYTFSMjluMFQ3ZThvTm9Fd3hOWE5jeHhfcUl6ZjZXSXg4a2gtaWJXUHZDQmVQd3NPUjFWWjdQNUFzdFhuRUM3enYzZ05tUUpJWjRJeXdRV2xzNHA1ZThqQ0JUa3ZZcmlUeEJ4ZG4wQndhVUFoMlRpOHR0cmd1Q1VhaV9ubHRLRFNTWkgtdFg1R0J2R0l5eEh6TU5YWTNZbUM4NGFBcjJNX2xhY29fOWRhaTFVQQ?oc=5\" target=\"_blank\"&gt;BP to sell stakes in flagship UK carbon capture projects in Northern England&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-05-07T10:53:33.000Z",
           "score": 7
         },
         {
@@ -124,27 +118,18 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Competitiveness Fund ('ECF’), including the specific programme for defence research and innovation activities - PE784.252v02-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-784252_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Competitiveness Fund ('ECF’), including the specific programme for defence research and innovation activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Stine Bosse&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-07T10:15:16.000Z",
-          "score": 22
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the Connecting Europe Facility for the period 2028-2034, amending Regulation (EU) 2024/1679 and repealing Regulation (EU) 2021/1153 - PE787.926v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-787926_EN.pdf",
+          "title": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625 - PE787.763v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787763_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the Connecting Europe Facility for the period 2028-2034, amending Regulation (EU) 2024/1679 and repealing Regulation (EU) 2021/1153&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-07T07:55:18.000Z",
+          "description": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-08T08:43:01.000Z",
           "score": 22
         },
         {
@@ -172,11 +157,11 @@
           "score": 8
         },
         {
-          "title": "EU reaches tentative deal on simpler AI rules, plans ban on &#039;nudifier&#039; apps",
-          "link": "https://www.dw.com/en/eu-reaches-tentative-deal-on-simpler-ai-rules-plans-ban-on-nudifier-apps/a-77073411?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "In a provisional deal, the European Union has agreed on a ban on the use of AI for creating pornographic deepfakes and sexualized imagery. It has also agreed on amending certain rules within the EU&#039;s AI Act.",
-          "published": "2026-05-07T08:07:00.000Z",
+          "title": "EU wants to move fast on Moldova accession talks, Kallas says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNMmFCNkNxbGJZRUFzODZWVEo2a3FNdVFkWnltQjM5Y1JGRGZnNHJoNG1iODNwMFBwX3VfRzBLdmlwbzdwMm1SMVRXdzg1d3puZTNFTGs5OE1oZTRuY2JWa0NrNWNubjJlU0VQX0RYUVZkVVE0bktRcGNNcGpoSzVHMmZZR0EwcHNVbVVrenpkNkdLVGZwRDUta0t5Q1JxR0dNeElsakl3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNMmFCNkNxbGJZRUFzODZWVEo2a3FNdVFkWnltQjM5Y1JGRGZnNHJoNG1iODNwMFBwX3VfRzBLdmlwbzdwMm1SMVRXdzg1d3puZTNFTGs5OE1oZTRuY2JWa0NrNWNubjJlU0VQX0RYUVZkVVE0bktRcGNNcGpoSzVHMmZZR0EwcHNVbVVrenpkNkdLVGZwRDUta0t5Q1JxR0dNeElsakl3?oc=5\" target=\"_blank\"&gt;EU wants to move fast on Moldova accession talks, Kallas says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T08:51:13.000Z",
           "score": 8
         }
       ]
@@ -186,52 +171,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Stellantis, Leapmotor to move to joint EV production in Europe, deepen partnership - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGptUEJKak5uOWRWVWpxLUdDd25FaEthMXNydUsxTmFfM09jcjhUVHJTQ0kxWnFRRHdLcE43R3FZV09pMmNZdVFkNFd1Ry0ycHJSaEdjQTllRWp5WklJRmF5aEFTLVd3cm9jalg5dkxIckxtZTVISGxYMUlVYUdhZFQyMm9WZGk0bGZlTmpwS3ZTX2ZzVFgyM3BoeG50NHhDVjVpZkM5TkNaQm5veTdVOEZRZlZ4RzJENGVCUUtpRE4wSkpsRnZz?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGptUEJKak5uOWRWVWpxLUdDd25FaEthMXNydUsxTmFfM09jcjhUVHJTQ0kxWnFRRHdLcE43R3FZV09pMmNZdVFkNFd1Ry0ycHJSaEdjQTllRWp5WklJRmF5aEFTLVd3cm9jalg5dkxIckxtZTVISGxYMUlVYUdhZFQyMm9WZGk0bGZlTmpwS3ZTX2ZzVFgyM3BoeG50NHhDVjVpZkM5TkNaQm5veTdVOEZRZlZ4RzJENGVCUUtpRE4wSkpsRnZz?oc=5\" target=\"_blank\"&gt;Stellantis, Leapmotor to move to joint EV production in Europe, deepen partnership&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-05-08T06:20:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "US jet fuel could be used in Europe to ease possible shortages",
+          "link": "https://www.bbc.com/news/articles/cp8pk2m4nlxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "An international air body suggests wider acceptance of US-grade jet fuel could help to head off any supply problems.",
+          "published": "2026-05-08T10:56:52.000Z",
+          "score": 8
+        },
+        {
+          "title": "South Africa Constitutional Court orders Parliament to revisit Ramaphosa impeachment proceedings",
+          "link": "https://www.dw.com/en/south-africa-constitutional-court-orders-parliament-to-revisit-ramaphosa-impeachment-proceedings/a-77090630?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Cyril Ramaphosa&#039;s presidency is on the line, as lawmakers will now have to reconsider whether there are grounds to impeach him over the scandal dubbed &quot;Farmgate.&quot;",
+          "published": "2026-05-08T08:42:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Spain seizes 30 tons of cocaine in record European haul, detains 23 crew - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNeVJCcno0TUduQ0VfMEh1UlI4cVdRdllVYTJJU2djWkFZWXZHN2VONlRrUzVlX1AwS3czdE5mSjBiY2hkRkk1ZXN5TXc3VHRBdENDRVVNSTdScW04UFp6cXgwWTAzdTduRFhFRkRpYWRad1dQVGZxeUhfaFA3YXdsRUE1UmduUmlFVXBoLVFqbXVwMzR0VEh4OFNSUEtRWFNscUViTXBxMUhPNHFRQ2M4UTFqTE80LVBEaHpZXw?oc=5\" target=\"_blank\"&gt;Spain seizes 30 tons of cocaine in record European haul, detains 23 crew&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T14:37:40.000Z",
+          "published": "2026-05-07T14:37:00.000Z",
           "score": 8
         },
         {
-          "title": "Russia says Armenia is being dragged into EU's 'anti-Russian orbit' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQQ0R4aTFWeXNRa0ozOVNOUm5ESUtFc2dEUG1KbGwyR3pIelZ3THdkUHdWa29kNWJJNmdpLVI0d3ZnVS1VS2w0cWs2Z0YxMlh1TlFiNWE3S3pVMUJsbnlBeTk3TjkwcW1NTkJTZTRNa0hmNFpibGJWdzNuSTdqeUcyNkN4TTFJTXh1dlRyLU80emN5U29xRk1fc25jbEdaNUxRbmJXZmVVeWpPUQ?oc=5",
+          "title": "Putin is ready to talk with EU but won't make the first move, Kremlin says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPSmp4WnBDQ2pwSm1ycWdyZEdiX0ZMVThWTjBMSzNnVy1HT2gzWWJiS2tjN0pQNEI3T3JDUWZVTHU4T3gtSHZnQ2RLYW9mWHZZbGlRVWVhOXRIUWJETkd4Y0ZXZWtqeE11RFNiU1dUd1VQTWxPcTc1WlpjN1BkR0xEWHBRM1hfOHhEbFhMSWwyMXc5SEx0c1JHNjkwVDhWUEZXSnJTUW1XM2tPdWJfUm13?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQQ0R4aTFWeXNRa0ozOVNOUm5ESUtFc2dEUG1KbGwyR3pIelZ3THdkUHdWa29kNWJJNmdpLVI0d3ZnVS1VS2w0cWs2Z0YxMlh1TlFiNWE3S3pVMUJsbnlBeTk3TjkwcW1NTkJTZTRNa0hmNFpibGJWdzNuSTdqeUcyNkN4TTFJTXh1dlRyLU80emN5U29xRk1fc25jbEdaNUxRbmJXZmVVeWpPUQ?oc=5\" target=\"_blank\"&gt;Russia says Armenia is being dragged into EU's 'anti-Russian orbit'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T11:01:49.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPSmp4WnBDQ2pwSm1ycWdyZEdiX0ZMVThWTjBMSzNnVy1HT2gzWWJiS2tjN0pQNEI3T3JDUWZVTHU4T3gtSHZnQ2RLYW9mWHZZbGlRVWVhOXRIUWJETkd4Y0ZXZWtqeE11RFNiU1dUd1VQTWxPcTc1WlpjN1BkR0xEWHBRM1hfOHhEbFhMSWwyMXc5SEx0c1JHNjkwVDhWUEZXSnJTUW1XM2tPdWJfUm13?oc=5\" target=\"_blank\"&gt;Putin is ready to talk with EU but won't make the first move, Kremlin says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T10:39:18.000Z",
           "score": 8
-        },
-        {
-          "title": "Bosnia's election commission calls general election for October 4 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQUUtNX25kLUdORlk1clI5VXJLbHdjNzl5R2tvMFlPaDNTajB1a0ViZ0pEYXo4b1hwM0ROWVlfbkdiZm1nUlNoVC1adUJNUjBmTmZMa0pPcWttanBUSy16dkRBLUREUFRrSUUtTl83ZUdocU1yZE9LQkROTmdpNWFSMzZiQXE2eUNzTlNGc3lQZUtvY1JHN0k3clhlUjQxWjhIcGM3WlB5NjVQekhZYXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQUUtNX25kLUdORlk1clI5VXJLbHdjNzl5R2tvMFlPaDNTajB1a0ViZ0pEYXo4b1hwM0ROWVlfbkdiZm1nUlNoVC1adUJNUjBmTmZMa0pPcWttanBUSy16dkRBLUREUFRrSUUtTl83ZUdocU1yZE9LQkROTmdpNWFSMzZiQXE2eUNzTlNGc3lQZUtvY1JHN0k3clhlUjQxWjhIcGM3WlB5NjVQekhZYXc?oc=5\" target=\"_blank\"&gt;Bosnia's election commission calls general election for October 4&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T10:49:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "Moldovan parliament restricts use of Russian, prompts opposition walkout - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOMVU2ejJDVm9PMFhaVEVYTXhGN2ZJaUFvcmgtRjVZSTFlZHVtYmxwSGRVbEpzaGZ6cE5yRHBFOWNOaEFicmNPTkFBSkkxS2FBQXhiXzlfRDlXMUpjRm1wdHZiMTFqMm5EdUdrS29HbjhESDExLXZrRWhrTXI3c1htWlZ2N3g2OU8yUDRpVmJtb19pUWJyYWp1aFZzMExhTVhKSUY0V01RNGxVSmdtNVZr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOMVU2ejJDVm9PMFhaVEVYTXhGN2ZJaUFvcmgtRjVZSTFlZHVtYmxwSGRVbEpzaGZ6cE5yRHBFOWNOaEFicmNPTkFBSkkxS2FBQXhiXzlfRDlXMUpjRm1wdHZiMTFqMm5EdUdrS29HbjhESDExLXZrRWhrTXI3c1htWlZ2N3g2OU8yUDRpVmJtb19pUWJyYWp1aFZzMExhTVhKSUY0V01RNGxVSmdtNVZr?oc=5\" target=\"_blank\"&gt;Moldovan parliament restricts use of Russian, prompts opposition walkout&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T21:44:17.000Z",
-          "score": 8
-        },
-        {
-          "title": "Poland's EMP teams up with Foxconn to build EV manufacturing hub - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcnJwMkVtT213YlZBSmFDTkp1UTA4LUY4ek5JMHo3Z3pMZEUtQURTdFZBRnBfTkdlc3c0VmVHV19fNWJDVkYxSzYzNFhxM0NjV3FtcWQ4ZU9HU0Nla0w1c2ZkaWQteUpPQmpHWkRyZmtfXzAxa0h5VklEYUNyVUh5ZktPMmVXWGVLRmZnZnZINkFJR2F3VklNU2RlZWZ1YkZPZVE3V2FqSVJSS3c2Z1VJWUVXRzJxUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPcnJwMkVtT213YlZBSmFDTkp1UTA4LUY4ek5JMHo3Z3pMZEUtQURTdFZBRnBfTkdlc3c0VmVHV19fNWJDVkYxSzYzNFhxM0NjV3FtcWQ4ZU9HU0Nla0w1c2ZkaWQteUpPQmpHWkRyZmtfXzAxa0h5VklEYUNyVUh5ZktPMmVXWGVLRmZnZnZINkFJR2F3VklNU2RlZWZ1YkZPZVE3V2FqSVJSS3c2Z1VJWUVXRzJxUQ?oc=5\" target=\"_blank\"&gt;Poland's EMP teams up with Foxconn to build EV manufacturing hub&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-07T10:22:01.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 179,
-    "afterDedup": 171,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 180,
+    "afterDedup": 170,
     "feedsQueried": 19
   }
 }
