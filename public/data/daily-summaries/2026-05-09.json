@@ -1,20 +1,26 @@
 {
   "date": "2026-05-09",
-  "generatedAt": "2026-05-09T11:52:42.731Z",
+  "generatedAt": "2026-05-09T17:53:21.336Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 9 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions &#124; Wind and solar save UK ‘£1.7bn’ &#124; Amazon ‘tipping point’",
-      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions | Wind and solar save UK ‘£1.7bn’ | Amazon ‘tipping point’ appeared first on Carbon Brief.",
+      "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
+      "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: What the UK car industry is not saying about EV targets",
-      "summary": "For several years, the UK car industry has been claiming that demand is not high... The post Factcheck: What the UK car industry is not saying about EV targets appeared first on Carbon Brief.",
+      "headline": "‘Closing the chapter’ on Fema: Trump panel seeks to weaken disaster response amid climate crisis",
+      "summary": "&lt;p&gt;Council’s plan will leave Federal Emergency Management Agency ill-equipped to respond to extreme weather events, experts say&lt;/p&gt;&lt;p&gt;Sweeping changes may be in store at the Federal Emergency Management Agency (Fema), the nation’s frontline emergency response coordinator, that experts warned could further erode US capacity to handle disasters as the risks of &lt;a href=\"https://www.theguardian.com/world/extreme-weather\"&gt;extreme weather&lt;/a&gt; fueled by the &lt;a href=\"htt",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Goldman Sachs' private credit fund cuts value by 3.7% - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxORVhubllxS01hRHRGMjJHQ0dNc0hsZTFmVnNUa2hQVFRmQngyLWJGREJDMTV4ZnRLTTFfMnkzZlNmc2NXR01JRVFIS1RtYzFsZlBUUUE3ZDVSNlVIR0dvNldaVkRfMFdkWDJqYzdfdmdIYWFfMFJpTXpWdnNiU0FtRXZMNEZsSUo3TTBjWTFTMGxZcHJ2WXhZLXd3SjJqRHFDeGJoMkdWWF9Udw?oc=5\" target=\"_blank\"&gt;Goldman Sachs' private credit fund cuts value by 3.7%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -27,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions &#124; Wind and solar save UK ‘£1.7bn’ &#124; Amazon ‘tipping point’",
-          "link": "https://www.carbonbrief.org/debriefed-8-may-2026-eu-eyes-fossil-fuel-exemptions-wind-and-solar-save-uk-1-7bn-amazon-tipping-point/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 8 May 2026: EU eyes fossil-fuel exemptions | Wind and solar save UK ‘£1.7bn’ | Amazon ‘tipping point’ appeared first on Carbon Brief.",
-          "published": "2026-05-08T13:36:36.000Z",
-          "score": 19
-        },
         {
           "title": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_977",
@@ -60,12 +58,20 @@
           "score": 7
         },
         {
-          "title": "Putin oversees scaled-back Victory Day parade on Red Square",
-          "link": "https://www.dw.com/en/putin-oversees-scaled-back-victory-day-parade-on-red-square/a-77103146?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Vladimir Putin has praised Russian troops fighting in Ukraine in a speech at Moscow&#039;s May 9 parade. The threat of Ukrainian attacks means tanks, missiles and other heavy weapons are absent from this year&#039;s event.",
-          "published": "2026-05-09T09:15:00.000Z",
+          "title": "Rosenberg: Scaled-back Victory Parade in Moscow's Red Square",
+          "link": "https://www.bbc.com/news/videos/ckgp541p5ndo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The BBC's Russia editor reports from Moscow, where the annual Victory Day display was quieter than usual.",
+          "published": "2026-05-09T12:12:50.000Z",
           "score": 7
+        },
+        {
+          "title": "‘The odds are not in our favour’: who sets the Doomsday Clock – and what can they tell us about the future of humanity?",
+          "link": "https://www.theguardian.com/science/2026/may/09/doomsday-clock-ai-iran-ukraine-war-climate-breakdown-nuclear-apocalypse",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;With the war on Iran, Ukraine, AI and climate breakdown increasing the likelihood of a nuclear war, the clock stands closer to midnight than ever before. So who decides how many seconds we have left – and can we buy ourselves more time?&lt;/p&gt;&lt;p&gt;The Earth is getting hotter. Conflicts are raging, in the Middle East and Ukraine, each increasing the chance of nuclear war. AI is infiltrating almost every aspect of our lives, despite its unpredictability and tendency to hallucinate.",
+          "published": "2026-05-09T05:00:49.000Z",
+          "score": 4
         }
       ]
     },
@@ -74,20 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Factcheck: What the UK car industry is not saying about EV targets",
-          "link": "https://www.carbonbrief.org/factcheck-what-the-uk-car-industry-is-not-saying-about-ev-targets/",
-          "source": "Carbon Brief",
-          "description": "For several years, the UK car industry has been claiming that demand is not high... The post Factcheck: What the UK car industry is not saying about EV targets appeared first on Carbon Brief.",
-          "published": "2026-05-08T13:18:15.000Z",
-          "score": 13
-        },
-        {
-          "title": "IPCC invites government representatives and experts to review the second draft of the Special Report on Climate Change and Cities",
-          "link": "https://www.ipcc.ch/2026/05/08/ipcc-srcities-second-order-draft-review/",
-          "source": "IPCC",
-          "description": "GENEVA, May 8 – The Intergovernmental Panel on Climate Change (IPCC) has opened registration for governments and experts to serve as Expert Reviewers on the Second-Order Draft (SOD) of the Special Report on Climate Change and Cities. Following the Third Lead Author Meeting this January, authors of this Special Report have processed comments from expert [&#8230;]",
-          "published": "2026-05-08T13:05:41.000Z",
-          "score": 11
+          "title": "‘Closing the chapter’ on Fema: Trump panel seeks to weaken disaster response amid climate crisis",
+          "link": "https://www.theguardian.com/us-news/2026/may/09/trump-council-fema-disaster-preparedness",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Council’s plan will leave Federal Emergency Management Agency ill-equipped to respond to extreme weather events, experts say&lt;/p&gt;&lt;p&gt;Sweeping changes may be in store at the Federal Emergency Management Agency (Fema), the nation’s frontline emergency response coordinator, that experts warned could further erode US capacity to handle disasters as the risks of &lt;a href=\"https://www.theguardian.com/world/extreme-weather\"&gt;extreme weather&lt;/a&gt; fueled by the &lt;a href=\"htt",
+          "published": "2026-05-09T12:00:57.000Z",
+          "score": 9
         },
         {
           "title": "‘It could have been a second Great Fire’: how east London blaze showed scale of UK wildfire threat",
@@ -106,30 +104,47 @@
           "score": 7
         },
         {
-          "title": "Enbridge sees best North American energy investment climate in over a decade - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOTVowdUNxYnhIX3paaGZ6VHlGTjY0akZleVJHSVg2cXJlRWxBQlI3cHllSHJ0TXdRZ2ZLTm1wS2ZiVzhpcFphUTk3QnFsM2FDMVdTamhSWlJjWWptaUI1NVhVNGUyNjI3X3BzSER5enREdU9QMFM4czgzU05VVkszYWxLbnU2TWR2clhNTVJsbWpJNkFhX2IwU1MxeGtDZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOTVowdUNxYnhIX3paaGZ6VHlGTjY0akZleVJHSVg2cXJlRWxBQlI3cHllSHJ0TXdRZ2ZLTm1wS2ZiVzhpcFphUTk3QnFsM2FDMVdTamhSWlJjWWptaUI1NVhVNGUyNjI3X3BzSER5enREdU9QMFM4czgzU05VVkszYWxLbnU2TWR2clhNTVJsbWpJNkFhX2IwU1MxeGtDZw?oc=5\" target=\"_blank\"&gt;Enbridge sees best North American energy investment climate in over a decade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-08T16:35:16.000Z",
-          "score": 7
+          "title": "Nature recovery zones inspired by Attenborough",
+          "link": "https://www.bbc.com/news/articles/c62eje88wy3o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Gloucestershire Wildlife Trust says the campaign, focusing on nature recovery, is its biggest yet.",
+          "published": "2026-05-09T10:27:38.000Z",
+          "score": 2
+        },
+        {
+          "title": "Why Gen Z birdwatchers are flocking to reserves",
+          "link": "https://www.bbc.com/news/articles/cdjpdm9v7gno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Bempton Cliffs, one of the UK's largest sanctuaries, has seen a notable rise in younger twitchers.",
+          "published": "2026-05-09T06:19:28.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Goldman Sachs' private credit fund cuts value by 3.7% - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxORVhubllxS01hRHRGMjJHQ0dNc0hsZTFmVnNUa2hQVFRmQngyLWJGREJDMTV4ZnRLTTFfMnkzZlNmc2NXR01JRVFIS1RtYzFsZlBUUUE3ZDVSNlVIR0dvNldaVkRfMFdkWDJqYzdfdmdIYWFfMFJpTXpWdnNiU0FtRXZMNEZsSUo3TTBjWTFTMGxZcHJ2WXhZLXd3SjJqRHFDeGJoMkdWWF9Udw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxORVhubllxS01hRHRGMjJHQ0dNc0hsZTFmVnNUa2hQVFRmQngyLWJGREJDMTV4ZnRLTTFfMnkzZlNmc2NXR01JRVFIS1RtYzFsZlBUUUE3ZDVSNlVIR0dvNldaVkRfMFdkWDJqYzdfdmdIYWFfMFJpTXpWdnNiU0FtRXZMNEZsSUo3TTBjWTFTMGxZcHJ2WXhZLXd3SjJqRHFDeGJoMkdWWF9Udw?oc=5\" target=\"_blank\"&gt;Goldman Sachs' private credit fund cuts value by 3.7%&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T19:19:17.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Poland signs first loan deal as part of EU defence spending push - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdGJEelFXR1NTbFIza0szRXJWY0dKV1I5cnRxaHVub3ZyYnJBRmtfd005QTR0MUM4LUxVUXpUT3Rzc2xrdGV6Zm9kS3dfN3J6dGZBa0k3cG4yQlJYOU1RTUl3dzB2ZktxRDJwRVVGUVUycmIzUmRPeDduMFp3dVBReE04cUhVMEhRUk1GQjR3UEQtRzlLNnRMUllmbkRtalgySkhhbTVLZTBwamJtRXBxWHpvUDJoTmpKa0NZSlB3?oc=5",
+          "title": "Merz says Europe wants a strong NATO and shares US goal of ending Iran war - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOTg3amxWT3JjQ3Fiazl3OGF5d0xWTV9iNVJ5VVJWVENOM0RoVWd4dWI2UmFLbDQ1QzhsZi1SdjdRclQzLTlUcUVkS0dva2Y0czc0Njd0b2dNeVFtSjNyUnJSZld5UlZGNXJGTFc3UGR1N2d6RnZnSW1lbDhvbEpkWDZCSzJIcnd0eEZiLWRZdFdETkd2T2FKcTBNeTBnN3JYZFBzS0pPeHdRU3c?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPdGJEelFXR1NTbFIza0szRXJWY0dKV1I5cnRxaHVub3ZyYnJBRmtfd005QTR0MUM4LUxVUXpUT3Rzc2xrdGV6Zm9kS3dfN3J6dGZBa0k3cG4yQlJYOU1RTUl3dzB2ZktxRDJwRVVGUVUycmIzUmRPeDduMFp3dVBReE04cUhVMEhRUk1GQjR3UEQtRzlLNnRMUllmbkRtalgySkhhbTVLZTBwamJtRXBxWHpvUDJoTmpKa0NZSlB3?oc=5\" target=\"_blank\"&gt;Poland signs first loan deal as part of EU defence spending push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-08T16:49:57.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOTg3amxWT3JjQ3Fiazl3OGF5d0xWTV9iNVJ5VVJWVENOM0RoVWd4dWI2UmFLbDQ1QzhsZi1SdjdRclQzLTlUcUVkS0dva2Y0czc0Njd0b2dNeVFtSjNyUnJSZld5UlZGNXJGTFc3UGR1N2d6RnZnSW1lbDhvbEpkWDZCSzJIcnd0eEZiLWRZdFdETkd2T2FKcTBNeTBnN3JYZFBzS0pPeHdRU3c?oc=5\" target=\"_blank\"&gt;Merz says Europe wants a strong NATO and shares US goal of ending Iran war&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-09T11:39:43.000Z",
           "score": 8
         }
       ]
@@ -139,27 +154,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "US jet fuel could be used in Europe to ease possible shortages",
-          "link": "https://www.bbc.com/news/articles/cp8pk2m4nlxo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Japanese council votes to remove unconscious mayor",
+          "link": "https://www.bbc.com/news/articles/clypw9w907zo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "An international air body suggests wider acceptance of US-grade jet fuel could help to head off any supply problems.",
-          "published": "2026-05-08T14:42:13.000Z",
+          "description": "Kikuo Hatakeyama, 72, has served as the mayor of Hachirogata in north-east Japan since 2008, but fell ill in February.",
+          "published": "2026-05-09T12:12:19.000Z",
           "score": 8
         },
         {
-          "title": "EU tells airlines: no obstacles to careful use of Jet A fuel - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbFZsVkk4U1JZVkFFWjlfYlMwYjIzMTA3dVFISUpEamJTWTRDNVBMclhHSUhJMFY2QzFITU1TUk1xN0thWVZqelFLdWJSclA2cVgtdVo5TjExaVRLRTIxTlU5X1NxRFZjSHJZOEdRek5DLVRfWFVGc3lrMjlUWXdqMFJqRjlBVWJWbEQydjIzNW1Zc18yNm1CSnRBVG1qM2w2WlkyeE9rUEdoekpmVVZQRzY3dmpLYmE4NG1fLUVB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQbFZsVkk4U1JZVkFFWjlfYlMwYjIzMTA3dVFISUpEamJTWTRDNVBMclhHSUhJMFY2QzFITU1TUk1xN0thWVZqelFLdWJSclA2cVgtdVo5TjExaVRLRTIxTlU5X1NxRFZjSHJZOEdRek5DLVRfWFVGc3lrMjlUWXdqMFJqRjlBVWJWbEQydjIzNW1Zc18yNm1CSnRBVG1qM2w2WlkyeE9rUEdoekpmVVZQRzY3dmpLYmE4NG1fLUVB?oc=5\" target=\"_blank\"&gt;EU tells airlines: no obstacles to careful use of Jet A fuel&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-08T12:47:24.000Z",
-          "score": 8
-        },
-        {
-          "title": "US says it will revert to higher tariffs on EU goods if Brussels misses July 4 deadline - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTnpBc3B0NTdJSzRHdS1vZldDWU5raTMycDBEZVM3eW5tYlpMV1I4NWlwTUx6M3oyN2dGWFl2ZDVnZG96TE9YQ3MyU2VMQVg0VmtPa2NBX0F1eks5YVJEbjZPb2w0RjhEVVQtWExUMDNmUWQzcm1NTUU3SUJrdDZhYnp6cnBxcUR0dlI2dENyZmx4UTlrb2ZSUWVpdHUxaUkwMUxhVFpFVHAtY0c1eF9pa3htTkE5akpr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNTnpBc3B0NTdJSzRHdS1vZldDWU5raTMycDBEZVM3eW5tYlpMV1I4NWlwTUx6M3oyN2dGWFl2ZDVnZG96TE9YQ3MyU2VMQVg0VmtPa2NBX0F1eks5YVJEbjZPb2w0RjhEVVQtWExUMDNmUWQzcm1NTUU3SUJrdDZhYnp6cnBxcUR0dlI2dENyZmx4UTlrb2ZSUWVpdHUxaUkwMUxhVFpFVHAtY0c1eF9pa3htTkE5akpr?oc=5\" target=\"_blank\"&gt;US says it will revert to higher tariffs on EU goods if Brussels misses July 4 deadline&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-08T16:32:16.000Z",
+          "title": "Tariffs or not? How EU is dealing with US &#039;dealmaking&#039;",
+          "link": "https://www.dw.com/en/tariffs-or-not-how-eu-is-dealing-with-us-dealmaking/a-77100109?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Earlier this week, President Trump threatened European car makers with 25% tariffs before walking it back later in the week. How is the EU dealing with this unpredictability?",
+          "published": "2026-05-09T12:39:00.000Z",
           "score": 8
         },
         {
@@ -177,14 +184,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPU2JYY1ZDVE81Um9XWU43bnhUOEsxRy1UdGtscWsydnZrOEkyZ3h1SFltS252eHVNV2h2NGVKUmZHc1VXWmJOc2hxMXBQa1lieFhWdUc3UFgzOEg1VE1jbUhDbmRXTF9IT2t3RHJiYTZ0UTBuVXBxTGY3ZzB6b0hLa0c3V00xS2tHLXA3VUdpd2VlSnBMbVlqVUxGOVU5eFJUWXpyQ3VLXzRlQTUyWE5qVEg3X3U4SzhkOWFHV1RyV09RZnc?oc=5\" target=\"_blank\"&gt;China energy imports drop in April amid Iran war as fuel exports hit decade low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-09T06:58:00.000Z",
           "score": 7
+        },
+        {
+          "title": "New York Mayor Mamdani's 'freeze the rent' promise survives a noisy vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPN29KOUNYakhlRVlVSHVJcHFqWGNpU1JCSXJ4aDlWU1V3VC05aEVWbXNsc3ZRR3dVZmN6VUY5anhFbXBnbHBSMngxSGxfTFJ0Vng0OGZJWFBSX2hmSkR1ZG9SZkJLMDhrS2VFYmxNMWpxR0dKcXFrbjBNNzV4cVQyNjFQMzlMc2NJNUl3SnM2T0poSktyd0J3UW1JcUtGOVBKc0lVSUJCX2RWRzZU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPN29KOUNYakhlRVlVSHVJcHFqWGNpU1JCSXJ4aDlWU1V3VC05aEVWbXNsc3ZRR3dVZmN6VUY5anhFbXBnbHBSMngxSGxfTFJ0Vng0OGZJWFBSX2hmSkR1ZG9SZkJLMDhrS2VFYmxNMWpxR0dKcXFrbjBNNzV4cVQyNjFQMzlMc2NJNUl3SnM2T0poSktyd0J3UW1JcUtGOVBKc0lVSUJCX2RWRzZU?oc=5\" target=\"_blank\"&gt;New York Mayor Mamdani's 'freeze the rent' promise survives a noisy vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-08T18:50:03.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 389,
-    "articlesLast24h": 151,
-    "afterDedup": 147,
+    "totalArticlesScanned": 392,
+    "articlesLast24h": 144,
+    "afterDedup": 135,
     "feedsQueried": 19
   }
 }
