@@ -1,6 +1,6 @@
 {
   "date": "2026-05-10",
-  "generatedAt": "2026-05-10T07:29:43.386Z",
+  "generatedAt": "2026-05-10T11:56:37.992Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 10 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -82,20 +82,12 @@
           "score": 9
         },
         {
-          "title": "‘It could have been a second Great Fire’: how east London blaze showed scale of UK wildfire threat",
-          "link": "https://www.theguardian.com/uk-news/2026/may/09/second-great-fire-wennington-london-wildfires-threat",
+          "title": "Gullah Geechee people set out to keep their family land. Unclear titles and surging taxes are pushing them out",
+          "link": "https://www.theguardian.com/news/2026/may/10/gullah-geechee-low-country",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;In record 40C heat on 19 July 2022, 18 homes were lost in village of Wennington – a signal for firefighters to adapt, but UK response remains fragmented&lt;/p&gt;&lt;p&gt;When neighbours urged Lynn Sabberton and her partner, Terry, to flee from their home in &lt;a href=\"https://www.theguardian.com/uk-news/2022/jul/20/this-doesnt-happen-in-wennington-residents-and-fire-services-reel-after-homes-lost-in-blazes-across-england\"&gt;Wennington&lt;/a&gt; one day in 2022, the couple weren’t sur",
-          "published": "2026-05-09T08:00:51.000Z",
-          "score": 7
-        },
-        {
-          "title": "How sunburn inspired a new way to store energy",
-          "link": "https://www.bbc.com/news/articles/c62l9gnx775o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Molecules that can capture heat could be a useful technology to decarbonise heating.",
-          "published": "2026-05-09T08:28:23.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Property disputes, predatory developers and surging sea levels are putting the historic Black community at risk&lt;/p&gt;&lt;p&gt;On Arthur Champen’s half-acre property in Hilton Head Island, &lt;a href=\"https://www.theguardian.com/us-news/south-carolina\"&gt;South Carolina&lt;/a&gt;, a thicket of southern live oaks, palmettos and pine trees muffle the roar of cars on nearby highway 278. His &lt;a href=\"https://lowcountrygullah.com/what-is-haint-blue/\"&gt;haint blue&lt;/a&gt; house, ligh",
+          "published": "2026-05-10T11:00:24.000Z",
+          "score": 2
         },
         {
           "title": "Sean Duffy faces backlash for new family reality show: ‘unfocused and out of touch’",
@@ -112,6 +104,14 @@
           "description": "The Woodland Trust urges people to \"stick to the path\" when visiting and photographing bluebell woods.",
           "published": "2026-05-10T06:30:42.000Z",
           "score": 2
+        },
+        {
+          "title": "Study looks at reintroduction of storks in Britain",
+          "link": "https://www.bbc.com/news/articles/cj6p70n7550o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "PhD student Sophie Rabone is considering the impact of reintroducing the species more widely.",
+          "published": "2026-05-10T06:20:47.000Z",
+          "score": 2
         }
       ]
     },
@@ -124,14 +124,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "Merz says Europe wants a strong NATO and shares US goal of ending Iran war - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOTg3amxWT3JjQ3Fiazl3OGF5d0xWTV9iNVJ5VVJWVENOM0RoVWd4dWI2UmFLbDQ1QzhsZi1SdjdRclQzLTlUcUVkS0dva2Y0czc0Njd0b2dNeVFtSjNyUnJSZld5UlZGNXJGTFc3UGR1N2d6RnZnSW1lbDhvbEpkWDZCSzJIcnd0eEZiLWRZdFdETkd2T2FKcTBNeTBnN3JYZFBzS0pPeHdRU3c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQOTg3amxWT3JjQ3Fiazl3OGF5d0xWTV9iNVJ5VVJWVENOM0RoVWd4dWI2UmFLbDQ1QzhsZi1SdjdRclQzLTlUcUVkS0dva2Y0czc0Njd0b2dNeVFtSjNyUnJSZld5UlZGNXJGTFc3UGR1N2d6RnZnSW1lbDhvbEpkWDZCSzJIcnd0eEZiLWRZdFdETkd2T2FKcTBNeTBnN3JYZFBzS0pPeHdRU3c?oc=5\" target=\"_blank\"&gt;Merz says Europe wants a strong NATO and shares US goal of ending Iran war&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-09T11:39:43.000Z",
-          "score": 8
-        },
         {
           "title": "All passengers on hantavirus-hit ship considered high-risk contacts, EU health agency says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxNOVNKTjhmSXJ6SnRmOUNfWkJ5R01KeHFEaHhlRkVFVFRVdEJvWVBKUjBHNGVkeHN3QzBlUTJyZl9Va0p2Q0xsV3NrQWh4YWVtLVM1V0FkVVpQOVRWNWF5RDVjWVBZUGtmT2FMVW55TTQtWExXUWxKYVhibGhfdFhvOXZpSm52REh5cU1vZVNQZHdlYUc2MXAtaTREaDh6a21tNFVIUWFCWXBIY3hqRmZCTEpzbFBJOGhtbERWM28xSmVZa1AycEdQcHBVN0RUZVhWS2pFNzAtVkx2Rkp4NHhN?oc=5",
@@ -171,28 +163,28 @@
           "score": 8
         },
         {
-          "title": "Putin tells Fico: Russia will meet Slovakia's energy demand - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPQk1lTVlwODcwTVV4TXgyZDJRVFlwVllWaXdWeWktZEMwTlo2Z1FxUUZVVm9aeDA4eGd5RmJnMU15VGl3SHNMYm8xVC1vRmdiX2E4cjhZUEtXMmYxYS13ekFZSUEyUUFaUHJKTVJ2V3JWMk8wQ3NodnE5cXIxdXhKSDVmc1RHMWtBd2FjQ2R6c3hNb3pidzdZWm5YdVRjZ1cwX19vS0FqUE9pdTI2S0E?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPQk1lTVlwODcwTVV4TXgyZDJRVFlwVllWaXdWeWktZEMwTlo2Z1FxUUZVVm9aeDA4eGd5RmJnMU15VGl3SHNMYm8xVC1vRmdiX2E4cjhZUEtXMmYxYS13ekFZSUEyUUFaUHJKTVJ2V3JWMk8wQ3NodnE5cXIxdXhKSDVmc1RHMWtBd2FjQ2R6c3hNb3pidzdZWm5YdVRjZ1cwX19vS0FqUE9pdTI2S0E?oc=5\" target=\"_blank\"&gt;Putin tells Fico: Russia will meet Slovakia's energy demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-09T11:42:30.000Z",
-          "score": 7
-        },
-        {
           "title": "Brazil judge suspends law that reduces Bolsonaro&#039;s jail term",
           "link": "https://www.dw.com/en/brazil-judge-suspends-law-that-reduces-bolsonaro-s-jail-term/a-77107420?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Brazil&#039;s top court prohibited the implementation of legislation that would drastically cut former President Jair Bolsonaro&#039;s prison term.",
           "published": "2026-05-10T03:37:00.000Z",
           "score": 6
+        },
+        {
+          "title": "Data centers: Tech boom with downsides",
+          "link": "https://www.dw.com/en/data-centers-tech-boom-with-downsides/a-77106191?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Data centers are energy-intensive engines of growth, the backbone and hub of digitalization. Thousands of them are being built all around the world. The Iran war has shown how vulnerable societies are as a result.",
+          "published": "2026-05-10T06:40:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 384,
-    "articlesLast24h": 144,
-    "afterDedup": 131,
+    "articlesLast24h": 143,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
