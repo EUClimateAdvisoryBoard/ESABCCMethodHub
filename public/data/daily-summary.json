@@ -1,15 +1,9 @@
 {
   "date": "2026-05-12",
-  "generatedAt": "2026-05-12T13:09:10.788Z",
+  "generatedAt": "2026-05-12T19:00:37.714Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 12 May 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE787.667v01-00",
-      "summary": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -17,26 +11,17 @@
       "color": "#E87722"
     },
     {
-      "headline": "OpenAI creates new unit with $4 billion investment to aid corporate AI push - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONzBVZGx1c2JvQTRJeWZ2d1FPQU1GTnhSaEZONVV0YmpaRnI4WE50Q25udWxlNC1LbVR0ZkJnTzJYM0dRekdNZWVVempHSEZJT1ZTS1Q3bDI0NHJRdW5lOURaUmNPX0UtQVNnUXNyQUhXQnhvd1lYT1JZdXl5dWtiNk9CblcxV1FHQmdoSGpiekJjX3kwSlZSeHVOcE93ZHY1VU92bldWRTZqb2NKck1yUlRqWjkzRk0?oc=5\" target=\"_blank\"&gt;OpenAI creates new unit with $4 billion investment to aid corporate AI push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
+      "headline": "New Zealand plans law change to stop private climate lawsuits - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQLW5WUThJbk1vQVpIWVFFLUpRZW9kRkJadXktOTVUUlBKR0VoYk51bU5DMnE4RWgxN2lEVS1ZRXdfTjFnTlVZdVZLVUN2WWk2dmx6RWNmRFpSZEpIaWRuck5xdXdaVHl6ZE5rQTFzekRiOGJoZGFmUDhONHNSaTBFVF9jVFB1YzlCM2RrWEIzNGIxekRxeGg5dGJSelJ5SWExOVlmd0QyUWRoQlh0d1ZlY1V0MA?oc=5\" target=\"_blank\"&gt;New Zealand plans law change to stop private climate lawsuits&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE787.667v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PR-787667_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-12T09:59:37.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -59,19 +44,27 @@
           "score": 7
         },
         {
-          "title": "Exclusive: India declines Russian LNG under sanctions, talks continue on permitted cargoes, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSGh4dmdOU0F5MUxPRjg4SkJDYkNjaUtMYzRQR29qVHRzRDlRajNMYUpVNFBfdE9wZExkcVpxMzlReUszV29LSzBHbFJwRm1USXQ2ZXc3bmJ6d1g5TFRXa3F0VTFmUnBfSDVhVW9PMGNPWm5ZWk9pcUNUZlhjcGtYNURsNE9jTlJQRW94ME84TmpPUEYtSGxqVXVOdmNwSkV3NHhqbU9DMEVRcm9LN0JTTm5LekZ5ZFZneTlRQWFRM3ZvS281Wmc?oc=5",
+          "title": "Warsh's red lines worry world finance - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWVJWem1waUIzcy1ickJZcjdzeVdsRVRaUVNwTWlzUXphT05HWF9GenV0dllJMi01T1NVb2xzQ2hsSFcxZmttenA0TGoyTHItQnB1MkQ0eTg4bEJ1cGhGQ1I2RVpiSkI4cFJRbXRaU21fMzg4XzFLMjVyN0o0MWRQeHNXZEU5WTdfM1c5clI2ZGpfLWdJZEpsN1VhdW1oUlZQb2MtZGJOTnk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOSGh4dmdOU0F5MUxPRjg4SkJDYkNjaUtMYzRQR29qVHRzRDlRajNMYUpVNFBfdE9wZExkcVpxMzlReUszV29LSzBHbFJwRm1USXQ2ZXc3bmJ6d1g5TFRXa3F0VTFmUnBfSDVhVW9PMGNPWm5ZWk9pcUNUZlhjcGtYNURsNE9jTlJQRW94ME84TmpPUEYtSGxqVXVOdmNwSkV3NHhqbU9DMEVRcm9LN0JTTm5LekZ5ZFZneTlRQWFRM3ZvS281Wmc?oc=5\" target=\"_blank\"&gt;Exclusive: India declines Russian LNG under sanctions, talks continue on permitted cargoes, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f",
-          "published": "2026-05-11T14:28:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWVJWem1waUIzcy1ickJZcjdzeVdsRVRaUVNwTWlzUXphT05HWF9GenV0dllJMi01T1NVb2xzQ2hsSFcxZmttenA0TGoyTHItQnB1MkQ0eTg4bEJ1cGhGQ1I2RVpiSkI4cFJRbXRaU21fMzg4XzFLMjVyN0o0MWRQeHNXZEU5WTdfM1c5clI2ZGpfLWdJZEpsN1VhdW1oUlZQb2MtZGJOTnk?oc=5\" target=\"_blank\"&gt;Warsh's red lines worry world finance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T06:06:00.000Z",
           "score": 7
         },
         {
-          "title": "Trump says he supports suspending US gas tax after prices remain high - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5",
+          "title": "Putin says Russia will deploy new Sarmat nuclear missile this year - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQd0wyY05FUjJUV2V1RVlSanM1b0RTNjlZZFVKS05feXZuX2czaTljcW9ybU12XzFpV2hyLTNPRFpZY09GWGlhYjZnd1U1UlJCalVxLWk3UnNuSFRKZW5waXJ3Y1NUSEJFZmt4SmpoRTI3c0dzNlZvODVOVXFEa2lKQXNreGxtN3NpZ19sUU00Umt5M0hhYjdfay1ScnZaUFJFVy1abkxhaUNNODNzY05qZ1FVZEw1Q2JL?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5\" target=\"_blank\"&gt;Trump says he supports suspending US gas tax after prices remain high&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T15:25:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQd0wyY05FUjJUV2V1RVlSanM1b0RTNjlZZFVKS05feXZuX2czaTljcW9ybU12XzFpV2hyLTNPRFpZY09GWGlhYjZnd1U1UlJCalVxLWk3UnNuSFRKZW5waXJ3Y1NUSEJFZmt4SmpoRTI3c0dzNlZvODVOVXFEa2lKQXNreGxtN3NpZ19sUU00Umt5M0hhYjdfay1ScnZaUFJFVy1abkxhaUNNODNzY05qZ1FVZEw1Q2JL?oc=5\" target=\"_blank\"&gt;Putin says Russia will deploy new Sarmat nuclear missile this year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T18:01:17.000Z",
+          "score": 7
+        },
+        {
+          "title": "Norway raises oil, gas revenue forecast to $78 billion for 2026 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQMzVFX2dRV0M5a3ZPWEJBOVhtc1VnTXpxYzk0MndaeUw0UmVuM3RPSnY1UWhhSUZ1a05WRHNJUlhGY1J1dHBsMFdxLVVLdENjZGxidjhkbjJYTU5CVWE3VndwMVo2VWtDSU4xaEJLWW9sSTlxbUwtc3JlSERMQi1LQlhrbmdKYTRQdTFwdHl3OTlsTDJfaG9jWHRwYVZPMGlV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxQMzVFX2dRV0M5a3ZPWEJBOVhtc1VnTXpxYzk0MndaeUw0UmVuM3RPSnY1UWhhSUZ1a05WRHNJUlhGY1J1dHBsMFdxLVVLdENjZGxidjhkbjJYTU5CVWE3VndwMVo2VWtDSU4xaEJLWW9sSTlxbUwtc3JlSERMQi1LQlhrbmdKYTRQdTFwdHl3OTlsTDJfaG9jWHRwYVZPMGlV?oc=5\" target=\"_blank\"&gt;Norway raises oil, gas revenue forecast to $78 billion for 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T10:22:47.000Z",
           "score": 2
         }
       ]
@@ -79,40 +72,48 @@
     {
       "id": "climate",
       "title": "Climate & Environment",
-      "items": []
+      "items": [
+        {
+          "title": "New Zealand plans law change to stop private climate lawsuits - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQLW5WUThJbk1vQVpIWVFFLUpRZW9kRkJadXktOTVUUlBKR0VoYk51bU5DMnE4RWgxN2lEVS1ZRXdfTjFnTlVZdVZLVUN2WWk2dmx6RWNmRFpSZEpIaWRuck5xdXdaVHl6ZE5rQTFzekRiOGJoZGFmUDhONHNSaTBFVF9jVFB1YzlCM2RrWEIzNGIxekRxeGg5dGJSelJ5SWExOVlmd0QyUWRoQlh0d1ZlY1V0MA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQLW5WUThJbk1vQVpIWVFFLUpRZW9kRkJadXktOTVUUlBKR0VoYk51bU5DMnE4RWgxN2lEVS1ZRXdfTjFnTlVZdVZLVUN2WWk2dmx6RWNmRFpSZEpIaWRuck5xdXdaVHl6ZE5rQTFzekRiOGJoZGFmUDhONHNSaTBFVF9jVFB1YzlCM2RrWEIzNGIxekRxeGg5dGJSelJ5SWExOVlmd0QyUWRoQlh0d1ZlY1V0MA?oc=5\" target=\"_blank\"&gt;New Zealand plans law change to stop private climate lawsuits&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-11T23:47:00.000Z",
+          "score": 11
+        }
+      ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "OpenAI creates new unit with $4 billion investment to aid corporate AI push - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONzBVZGx1c2JvQTRJeWZ2d1FPQU1GTnhSaEZONVV0YmpaRnI4WE50Q25udWxlNC1LbVR0ZkJnTzJYM0dRekdNZWVVempHSEZJT1ZTS1Q3bDI0NHJRdW5lOURaUmNPX0UtQVNnUXNyQUhXQnhvd1lYT1JZdXl5dWtiNk9CblcxV1FHQmdoSGpiekJjX3kwSlZSeHVOcE93ZHY1VU92bldWRTZqb2NKck1yUlRqWjkzRk0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONzBVZGx1c2JvQTRJeWZ2d1FPQU1GTnhSaEZONVV0YmpaRnI4WE50Q25udWxlNC1LbVR0ZkJnTzJYM0dRekdNZWVVempHSEZJT1ZTS1Q3bDI0NHJRdW5lOURaUmNPX0UtQVNnUXNyQUhXQnhvd1lYT1JZdXl5dWtiNk9CblcxV1FHQmdoSGpiekJjX3kwSlZSeHVOcE93ZHY1VU92bldWRTZqb2NKck1yUlRqWjkzRk0?oc=5\" target=\"_blank\"&gt;OpenAI creates new unit with $4 billion investment to aid corporate AI push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T13:59:44.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625 - PE787.763v02-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787763_EN.pdf",
+          "title": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles - PE787.931v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-PR-787931_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-11T17:33:01.000Z",
+          "description": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Transport and Tourism&lt;br/&gt;Tiemo Wölken, François Kalfon&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-12T14:33:35.000Z",
           "score": 22
         },
         {
-          "title": "Ukraine: EU sanctions Russians over &#039;systematic unlawful deportation&#039; of children",
-          "link": "https://www.dw.com/en/ukraine-eu-sanctions-russians-over-systematic-unlawful-deportation-of-children/live-77121806?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU is sanctioning 16 individuals and seven entities over alleged child abductions. The UK also issued fresh sanctions, and Germany&#039;s defense minister visited Kyiv amid a shaky ceasefire. DW has the latest.",
-          "published": "2026-05-11T13:19:00.000Z",
+          "title": "Briefing - Monthly Highlights: Research digest for committees - May 2026 - PE 760.340 - Special Committee on the Housing Crisis in the European Union - Committee on Employment and Social Affairs - Committee on Culture and Education - Subcommittee on Human Rights - Committee on Budgets - Committee on Foreign Affairs - Committee on Transport and Tourism - Committee on Budgetary Control - Committee on Development - Committee on the Internal Market and Consumer Protection - Committee on Public Health - Committee on the Environment, Public Health and Food Safety - Committee on Economic and Monetary Affairs - Committee on Fisheries - Special Committee on the European Democracy Shield",
+          "link": "https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/760340/CCLA_BRI(2026)760340_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-11T22:00:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "EU to invite Taliban officials to Brussels to hold migration talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZnpOam1DUjBnQXVVUUpSaWRtQ09rVnFHRHBQcGdaX2h4UUZrc3lvWUVHdHZSNjQ5dXQ1UERHQzBJajVPVXpyMk5hd1JVMEpPaWhkWjh1NTRVSm1ZMDdLa29zLURaSTZnTi1CN1dFSm9oMDBQTFd2OEtzU3JNT0NWbkMweF9rd2xESDVSczBxTTFwUG9TVjhGNEpLMEZsd0VOSWFiSUhEeUw3OVBkMTJldGdn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPZnpOam1DUjBnQXVVUUpSaWRtQ09rVnFHRHBQcGdaX2h4UUZrc3lvWUVHdHZSNjQ5dXQ1UERHQzBJajVPVXpyMk5hd1JVMEpPaWhkWjh1NTRVSm1ZMDdLa29zLURaSTZnTi1CN1dFSm9oMDBQTFd2OEtzU3JNT0NWbkMweF9rd2xESDVSczBxTTFwUG9TVjhGNEpLMEZsd0VOSWFiSUhEeUw3OVBkMTJldGdn?oc=5\" target=\"_blank\"&gt;EU to invite Taliban officials to Brussels to hold migration talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T13:33:23.000Z",
           "score": 8
         }
       ]
@@ -130,19 +131,19 @@
           "score": 8
         },
         {
-          "title": "'Britain at the heart of Europe': How Starmer's plans are going down in the EU",
-          "link": "https://www.bbc.com/news/articles/cwy2k7re9jdo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Sir Keir Starmer pledged to rebuild the UK's relationship with Europe in a defiant speech on Monday.",
-          "published": "2026-05-11T17:15:52.000Z",
-          "score": 8
-        },
-        {
           "title": "EU agrees sanctions on Israeli settlers over West Bank violence",
           "link": "https://www.bbc.com/news/articles/c202wp2rl09o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The EU's foreign policy chief said \"extremism and violence carry consequences\", while Israel branded the move \"arbitrary\".",
           "published": "2026-05-11T19:37:17.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU invites Taiban members to discuss Afghan migrant returns",
+          "link": "https://www.dw.com/en/eu-invites-taiban-members-to-discuss-afghan-migrant-returns/a-77134268?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Commission has invited officials from Afghanitan&#039;s Taliban to discuss the returns of certain migrants. It&#039;s controversial on humanitarian grounds, and because Brussels doesn&#039;t recognize Taliban authority.",
+          "published": "2026-05-12T18:05:00.000Z",
           "score": 8
         },
         {
@@ -154,20 +155,20 @@
           "score": 8
         },
         {
-          "title": "EU chief turns up heat on social media's 'addictive' design - Reuters",
+          "title": "EU takes aim at TikTok, Meta's 'addictive designs' for teens - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5\" target=\"_blank\"&gt;EU chief turns up heat on social media's 'addictive' design&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-12T11:48:18.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5\" target=\"_blank\"&gt;EU takes aim at TikTok, Meta's 'addictive designs' for teens&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T15:46:46.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 154,
-    "afterDedup": 147,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 153,
+    "afterDedup": 148,
     "feedsQueried": 19
   }
 }
