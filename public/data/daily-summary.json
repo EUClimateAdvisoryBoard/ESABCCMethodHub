@@ -1,9 +1,15 @@
 {
   "date": "2026-05-12",
-  "generatedAt": "2026-05-12T07:47:20.041Z",
+  "generatedAt": "2026-05-12T13:09:10.788Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 12 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE787.667v01-00",
+      "summary": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -11,14 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "US in closely guarded talks to open new bases in Greenland",
-      "summary": "It is seeking to open three bases in the south of the Arctic territory, according to multiple officials familiar with the talks.",
-      "tag": "CLIMATE",
-      "color": "#2E8B57"
-    },
-    {
-      "headline": "Oil price predicted to remain above $100 for rest of year",
-      "summary": "Investment bank JP Morgan expects oil to remain in the \"low $100s\" even if the Strait of Hormuz were to reopen next month.",
+      "headline": "OpenAI creates new unit with $4 billion investment to aid corporate AI push - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxONzBVZGx1c2JvQTRJeWZ2d1FPQU1GTnhSaEZONVV0YmpaRnI4WE50Q25udWxlNC1LbVR0ZkJnTzJYM0dRekdNZWVVempHSEZJT1ZTS1Q3bDI0NHJRdW5lOURaUmNPX0UtQVNnUXNyQUhXQnhvd1lYT1JZdXl5dWtiNk9CblcxV1FHQmdoSGpiekJjX3kwSlZSeHVOcE93ZHY1VU92bldWRTZqb2NKck1yUlRqWjkzRk0?oc=5\" target=\"_blank\"&gt;OpenAI creates new unit with $4 billion investment to aid corporate AI push&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +27,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE787.667v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PR-787667_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-12T09:59:37.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -42,7 +51,7 @@
           "score": 19
         },
         {
-          "title": "Datacentres should be forced to invest in wind and solar energy, agree all states except Queensland",
+          "title": "Datacentres should be forced to invest in wind and solar energy, all states agree – except Queensland",
           "link": "https://www.theguardian.com/environment/2026/may/12/datacentres-australia-wind-solar-energy-investment",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;State and federal energy ministers say investments in new renewable energy and storage should ‘fully offset’ new datacentres’ energy needs&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/12/budget-2026-live-updates-federal-treasurer-jim-chalmers-speech-time-tonight-latest-news-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguar",
@@ -50,81 +59,32 @@
           "score": 7
         },
         {
-          "title": "Nigeria&#039;s solar boom faces cost and policy barriers",
-          "link": "https://www.dw.com/en/nigeria-s-solar-boom-faces-cost-and-policy-barriers/a-77122375?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Nigeria&#039;s rising solar imports signal a search for alternatives to unreliable grid power and high fuel costs. But adoption is being held back by steep upfront prices, limited financing and policy uncertainty.",
-          "published": "2026-05-11T13:36:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "What will happen to Iran&#039;s nuclear material?",
-          "link": "https://www.dw.com/en/what-will-happen-to-iran-s-nuclear-material/a-77122353?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iran is believed to have over 440 kilograms of enriched uranium, which could be turned into weapons-grade nuclear material. Despite Trump&#039;s pledge to get the &quot;nuclear dust,&quot; Tehran has kept it out of US reach.",
-          "published": "2026-05-11T13:02:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Hungary to review Paks nuclear plant expansion, ministerial nominee says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPYjc2U0tndmpBbk5Rd045b1ktV0dEMlZsb3h1akRNYjJXNDZ4RlFLWVpZaXBGVEJVdjIyX2tVY2JKNThWT0M2SFZqZTNScDlNWmx6MzUxdE8xNWdNRHdZQWgwQTg4MzcyZnA5aV9lZ3QySGsxNjlfTWEyTVdZMmMxWWxweEI1TDRSZGVxVmc5elFtX3AtUWNKRkdfZk1hNUppOS1BUWlucDNhM3R1V25Z?oc=5",
+          "title": "Exclusive: India declines Russian LNG under sanctions, talks continue on permitted cargoes, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSGh4dmdOU0F5MUxPRjg4SkJDYkNjaUtMYzRQR29qVHRzRDlRajNMYUpVNFBfdE9wZExkcVpxMzlReUszV29LSzBHbFJwRm1USXQ2ZXc3bmJ6d1g5TFRXa3F0VTFmUnBfSDVhVW9PMGNPWm5ZWk9pcUNUZlhjcGtYNURsNE9jTlJQRW94ME84TmpPUEYtSGxqVXVOdmNwSkV3NHhqbU9DMEVRcm9LN0JTTm5LekZ5ZFZneTlRQWFRM3ZvS281Wmc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxPYjc2U0tndmpBbk5Rd045b1ktV0dEMlZsb3h1akRNYjJXNDZ4RlFLWVpZaXBGVEJVdjIyX2tVY2JKNThWT0M2SFZqZTNScDlNWmx6MzUxdE8xNWdNRHdZQWgwQTg4MzcyZnA5aV9lZ3QySGsxNjlfTWEyTVdZMmMxWWxweEI1TDRSZGVxVmc5elFtX3AtUWNKRkdfZk1hNUppOS1BUWlucDNhM3R1V25Z?oc=5\" target=\"_blank\"&gt;Hungary to review Paks nuclear plant expansion, ministerial nominee says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T14:55:39.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOSGh4dmdOU0F5MUxPRjg4SkJDYkNjaUtMYzRQR29qVHRzRDlRajNMYUpVNFBfdE9wZExkcVpxMzlReUszV29LSzBHbFJwRm1USXQ2ZXc3bmJ6d1g5TFRXa3F0VTFmUnBfSDVhVW9PMGNPWm5ZWk9pcUNUZlhjcGtYNURsNE9jTlJQRW94ME84TmpPUEYtSGxqVXVOdmNwSkV3NHhqbU9DMEVRcm9LN0JTTm5LekZ5ZFZneTlRQWFRM3ZvS281Wmc?oc=5\" target=\"_blank\"&gt;Exclusive: India declines Russian LNG under sanctions, talks continue on permitted cargoes, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f",
+          "published": "2026-05-11T14:28:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Trump says he supports suspending US gas tax after prices remain high - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPUkNMYWQ1MDVIbWZpTkxYYy00UHUtblhya21wWk5Za3gtWDFPc05FUlpSSWhFREhteTFlbUN5Q09taGMzV09FczJacHVzeWlhMDhBNDdOXzh4b0laOUN0d3A5dFlVREsyQWJsOVBsUGl6QThvOFRRdGdQTjltbGtuZkoxTDYyZmdQQ05jdkVPMHRGbnlhQTlmcE80ZHFsMUNOT185Tjl1ek9xdzVOZGdsMTd4NGpXcTVGZ0FmOGI3VGE?oc=5\" target=\"_blank\"&gt;Trump says he supports suspending US gas tax after prices remain high&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-11T15:25:00.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "climate",
       "title": "Climate & Environment",
-      "items": [
-        {
-          "title": "US in closely guarded talks to open new bases in Greenland",
-          "link": "https://www.bbc.com/news/articles/cx21669452lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "It is seeking to open three bases in the south of the Arctic territory, according to multiple officials familiar with the talks.",
-          "published": "2026-05-11T23:56:11.000Z",
-          "score": 4
-        },
-        {
-          "title": "Lasers in the sky: hi-tech missions track record snowpack loss in US west",
-          "link": "https://www.theguardian.com/us-news/2026/may/11/critically-low-snowpack-west",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Data from missions showing critically low snowpack on mountains across the west raises alarm among experts&lt;/p&gt;&lt;p&gt;High above the jagged peaks of California’s Sierra Nevada, the view from the cockpit is breathtaking. At first glance, the mountains appear draped in a pristine white blanket. But as the flight crew gears up for a high-stakes mission, the sensors onboard this specialized aircraft prove that looks can be deceiving.&lt;/p&gt;&lt;p&gt;“This is a distinct dry year,” s",
-          "published": "2026-05-11T13:00:55.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "Oil price predicted to remain above $100 for rest of year",
-          "link": "https://www.bbc.com/news/articles/ckgp4ev4yg4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Investment bank JP Morgan expects oil to remain in the \"low $100s\" even if the Strait of Hormuz were to reopen next month.",
-          "published": "2026-05-11T16:57:15.000Z",
-          "score": 2
-        },
-        {
-          "title": "India's small-cap, mid-cap mutual fund inflows hit record highs in April - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNRThidFhpOTNmLTJZZG45QWVkam0tdkRqR1VnYXBjeElZRTcxdU5FTzJxUnY5ekU0N1VJaENFVDJFS0R5bWczTU93MzhhYjNMdkYtcmJidUpVbFVqSUxoYTZ6T0FXUjZSSUlPU0ZVZXRHUTd1YmttdGpNd3A0ZGVHSVB4MU5zQWVDSlpHVTNYS3Rkb05YMW9hM0x5WWVUdVBOcmNEaHVOUGVUcE02QnZwdjdhXzg4UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNRThidFhpOTNmLTJZZG45QWVkam0tdkRqR1VnYXBjeElZRTcxdU5FTzJxUnY5ekU0N1VJaENFVDJFS0R5bWczTU93MzhhYjNMdkYtcmJidUpVbFVqSUxoYTZ6T0FXUjZSSUlPU0ZVZXRHUTd1YmttdGpNd3A0ZGVHSVB4MU5zQWVDSlpHVTNYS3Rkb05YMW9hM0x5WWVUdVBOcmNEaHVOUGVUcE02QnZwdjdhXzg4UQ?oc=5\" target=\"_blank\"&gt;India's small-cap, mid-cap mutual fund inflows hit record highs in April&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T12:21:23.000Z",
-          "score": 2
-        },
-        {
-          "title": "African leaders push for risk pricing rethink, fresh investment at France Africa summit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTBVNnA5MkdhUnRXQ1BzOGJENlQ1enpwRzBaT2VSeGFZTVF4ckFWaEFCdllkVnphODZlUm5UeGVoNVliaVZIWkRXektWbzNOT19jSGFob1BVajBCb0RGR0FJWnNRRVU2cWl1QnozcnZUNGJDWU5MWGV4TjVOUXFzb0ZfZHhxTkY1Mmcyb2YzdjVfNld1N0Vab1ptd3lUcG41UlR6d1JPVTB5NUh5SkhTYmJpRm9QZWxEbDQ0TXNjeE1YS2pPQ0E4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTBVNnA5MkdhUnRXQ1BzOGJENlQ1enpwRzBaT2VSeGFZTVF4ckFWaEFCdllkVnphODZlUm5UeGVoNVliaVZIWkRXektWbzNOT19jSGFob1BVajBCb0RGR0FJWnNRRVU2cWl1QnozcnZUNGJDWU5MWGV4TjVOUXFzb0ZfZHhxTkY1Mmcyb2YzdjVfNld1N0Vab1ptd3lUcG41UlR6d1JPVTB5NUh5SkhTYmJpRm9QZWxEbDQ0TXNjeE1YS2pPQ0E4?oc=5\" target=\"_blank\"&gt;African leaders push for risk pricing rethink, fresh investment at France Africa summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-05-11T09:43:17.000Z",
-          "score": 2
-        },
         {
           "title": "OpenAI creates new unit with $4 billion investment to aid corporate AI push - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONzBVZGx1c2JvQTRJeWZ2d1FPQU1GTnhSaEZONVV0YmpaRnI4WE50Q25udWxlNC1LbVR0ZkJnTzJYM0dRekdNZWVVempHSEZJT1ZTS1Q3bDI0NHJRdW5lOURaUmNPX0UtQVNnUXNyQUhXQnhvd1lYT1JZdXl5dWtiNk9CblcxV1FHQmdoSGpiekJjX3kwSlZSeHVOcE93ZHY1VU92bldWRTZqb2NKck1yUlRqWjkzRk0?oc=5",
@@ -148,36 +108,12 @@
           "score": 22
         },
         {
-          "title": "Minutes - Tuesday, 24 February 2026 - Wednesday, 25 February 2026 - PE785.392v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-02-24-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-11T10:03:10.000Z",
-          "score": 18
-        },
-        {
           "title": "Ukraine: EU sanctions Russians over &#039;systematic unlawful deportation&#039; of children",
           "link": "https://www.dw.com/en/ukraine-eu-sanctions-russians-over-systematic-unlawful-deportation-of-children/live-77121806?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The EU is sanctioning 16 individuals and seven entities over alleged child abductions. The UK also issued fresh sanctions, and Germany&#039;s defense minister visited Kyiv amid a shaky ceasefire. DW has the latest.",
           "published": "2026-05-11T13:19:00.000Z",
           "score": 8
-        },
-        {
-          "title": "EU agrees to restore fuller trade ties with Syria - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOaHpmQWVIR1ZscWhFdy16RjF5TWp2RS1jNlZiYjJlSnpFeHRVOGdlTVVDTmxOWW05Sm9qVVFrN05Wb0VjWFlLUWxCWXNNMVpQd2JjUE5xeUxUUnNkdzh5clNyMjkzaFVQRmlmNHpOSzB2bFRzZG1SLXhDaG9qTFZwa2I3ZkE1ampETVphR0VmSC00TXJKUGl6YkEtNTIyLVVpR3c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOaHpmQWVIR1ZscWhFdy16RjF5TWp2RS1jNlZiYjJlSnpFeHRVOGdlTVVDTmxOWW05Sm9qVVFrN05Wb0VjWFlLUWxCWXNNMVpQd2JjUE5xeUxUUnNkdzh5clNyMjkzaFVQRmlmNHpOSzB2bFRzZG1SLXhDaG9qTFZwa2I3ZkE1ampETVphR0VmSC00TXJKUGl6YkEtNTIyLVVpR3c?oc=5\" target=\"_blank\"&gt;EU agrees to restore fuller trade ties with Syria&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T10:58:24.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hantavirus: Evacuated passengers begin returning home",
-          "link": "https://www.dw.com/en/hantavirus-evacuated-passengers-begin-returning-home/live-77063670?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Passengers on the ill-fated cruise from several European countries, including Germany, are returning home and will be screened by health authorities. One French woman developed symptoms on the return flight.",
-          "published": "2026-05-11T09:47:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -185,6 +121,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "EU needs to delay social media access for children - von der Leyen",
+          "link": "https://www.bbc.com/news/articles/c9q3x19ddl7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "She told an EU summit that an expert panel was due to come up with steps on how to protect minors online by July.",
+          "published": "2026-05-12T11:00:34.000Z",
+          "score": 8
+        },
         {
           "title": "'Britain at the heart of Europe': How Starmer's plans are going down in the EU",
           "link": "https://www.bbc.com/news/articles/cwy2k7re9jdo?at_medium=RSS&amp;at_campaign=rss",
@@ -210,28 +154,20 @@
           "score": 8
         },
         {
-          "title": "EU ministers dismiss Putin's idea of role for Schroeder in future security talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdjhqUmlOMmxPdmZEQUZQeERjekQ0aFFUTGFYNWZ2OVVhV19wZ2JkeGtsazZ0eERNZEhXVHdiVmx1cl83RXhoWG5zZlVOblhhT0hwczRMSUtXSC1XQmQ4OU0ta0NaVzBLOHNQYjVQdDF6dUFRcVFxY1lBYTlzUi1Vc054d3VabFA1YmJCR1E2VUpMNkF6RkQxZ2Nobm5BdWl0YlRIcXN0UmpVRFVLUGZReThLSWhEMXNl?oc=5",
+          "title": "EU chief turns up heat on social media's 'addictive' design - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPdjhqUmlOMmxPdmZEQUZQeERjekQ0aFFUTGFYNWZ2OVVhV19wZ2JkeGtsazZ0eERNZEhXVHdiVmx1cl83RXhoWG5zZlVOblhhT0hwczRMSUtXSC1XQmQ4OU0ta0NaVzBLOHNQYjVQdDF6dUFRcVFxY1lBYTlzUi1Vc054d3VabFA1YmJCR1E2VUpMNkF6RkQxZ2Nobm5BdWl0YlRIcXN0UmpVRFVLUGZReThLSWhEMXNl?oc=5\" target=\"_blank\"&gt;EU ministers dismiss Putin's idea of role for Schroeder in future security talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T10:55:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU imposes sanctions on Russia individuals, entities in Russia over Ukrainian children - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQbEV1al8yRnpnRzJDMV9UY2dGbjM5aG5TNTFDMkZoRktOM0tQTi1TM0s3SndPXzB0YTZGdS1IRVFjcUZkNHB1dUQxeG9zVzRBaF9zNzhKTEtpcWdHVzA0SFpDSW40WlhIY1M4V3Y5SUlGV0hxZEo4NDJWcG5rV0llWXRGSEg0eGFjRTNreHBWN0RINk9NU3RSVkJaM0NMQmtibmJyRmh3cERnejRuay1yTDRncjUwSXo4R1BIQkhR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQbEV1al8yRnpnRzJDMV9UY2dGbjM5aG5TNTFDMkZoRktOM0tQTi1TM0s3SndPXzB0YTZGdS1IRVFjcUZkNHB1dUQxeG9zVzRBaF9zNzhKTEtpcWdHVzA0SFpDSW40WlhIY1M4V3Y5SUlGV0hxZEo4NDJWcG5rV0llWXRGSEg0eGFjRTNreHBWN0RINk9NU3RSVkJaM0NMQmtibmJyRmh3cERnejRuay1yTDRncjUwSXo4R1BIQkhR?oc=5\" target=\"_blank\"&gt;EU imposes sanctions on Russia individuals, entities in Russia over Ukrainian children&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-11T11:45:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5\" target=\"_blank\"&gt;EU chief turns up heat on social media's 'addictive' design&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T11:48:18.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 156,
-    "afterDedup": 151,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 154,
+    "afterDedup": 147,
     "feedsQueried": 19
   }
 }
