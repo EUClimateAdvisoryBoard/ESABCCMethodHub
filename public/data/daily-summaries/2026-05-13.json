@@ -1,9 +1,15 @@
 {
   "date": "2026-05-13",
-  "generatedAt": "2026-05-13T00:04:38.688Z",
+  "generatedAt": "2026-05-13T07:53:51.403Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 13 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Ivory Coast cocoa traceability rates fail to improve as EU anti-deforestation law looms - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNTdlSmRWbUFyWlMtRDVrTU5tNlprNzVNX3I5d19mMGljT0x2VkJ6U2ZNZXIycC1tOFRLbGVKRjU4V19xYUZNTF9JOFdVaUJMR21Dc1BxR3Z3bDJhTU15ckRDcUNTN1g3emFZZWoyNzVSRUU3VlFGTHJ1anJ2SnpWSEZReXFpdHVSVnNJM1ladVVvZXB1RXdOZnBscVdaMnU0NHZhdVZVMm9rNGpXMGpBVW1sbXo1TFRuYnZiSkgta196WWo3dW5vUWY0ZDFNQjJwUG9CUUlnelU?oc=5\" target=\"_blank\"&gt;Ivory Coast cocoa traceability rates fail to improve as EU anti-deforestation law looms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -11,8 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "African leaders push for risk pricing rethink, fresh investment at France Africa summit - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTBVNnA5MkdhUnRXQ1BzOGJENlQ1enpwRzBaT2VSeGFZTVF4ckFWaEFCdllkVnphODZlUm5UeGVoNVliaVZIWkRXektWbzNOT19jSGFob1BVajBCb0RGR0FJWnNRRVU2cWl1QnozcnZUNGJDWU5MWGV4TjVOUXFzb0ZfZHhxTkY1Mmcyb2YzdjVfNld1N0Vab1ptd3lUcG41UlR6d1JPVTB5NUh5SkhTYmJpRm9QZWxEbDQ0TXNjeE1YS2pPQ0E4?oc=5\" target=\"_blank\"&gt;African leaders push for risk pricing rethink, fresh investment at France Africa summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+      "headline": "Watch: Presenter flies in to host air quality special",
+      "summary": "Environment correspondent Jon Cuthill paraglides into position ahead of a BBC South special.",
+      "tag": "CLIMATE",
+      "color": "#2E8B57"
+    },
+    {
+      "headline": "Equinix to create new Malaysia data centre with over $190 million investment - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQY3E1TWlDZWl5SUlxX0luV0RTRlVabjRUcXNVWlFIVHI5NjlVVjM3LVhBMkdmT18zYWpGTFBFX210dGpTWmc4M0JSZTNwQTY0LU9nQ2RRaFFjczY4YUFsYmphRWE4V3JERXRkNURBLXJWTzNIeTJKUDhUSG9pMFVkbVpEXzI3d09wRzlFd3I1cnZLS2xYaEhmVklYUEpHN0JmOFBOSVNsTUtkZ1kzSkJQcFhXVnllbzRkTXk0akRLdnpRanNZT2c?oc=5\" target=\"_blank\"&gt;Equinix to create new Malaysia data centre with over $190 million investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -21,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Ivory Coast cocoa traceability rates fail to improve as EU anti-deforestation law looms - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNTdlSmRWbUFyWlMtRDVrTU5tNlprNzVNX3I5d19mMGljT0x2VkJ6U2ZNZXIycC1tOFRLbGVKRjU4V19xYUZNTF9JOFdVaUJMR21Dc1BxR3Z3bDJhTU15ckRDcUNTN1g3emFZZWoyNzVSRUU3VlFGTHJ1anJ2SnpWSEZReXFpdHVSVnNJM1ladVVvZXB1RXdOZnBscVdaMnU0NHZhdVZVMm9rNGpXMGpBVW1sbXo1TFRuYnZiSkgta196WWo3dW5vUWY0ZDFNQjJwUG9CUUlnelU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2AFBVV95cUxQNTdlSmRWbUFyWlMtRDVrTU5tNlprNzVNX3I5d19mMGljT0x2VkJ6U2ZNZXIycC1tOFRLbGVKRjU4V19xYUZNTF9JOFdVaUJMR21Dc1BxR3Z3bDJhTU15ckRDcUNTN1g3emFZZWoyNzVSRUU3VlFGTHJ1anJ2SnpWSEZReXFpdHVSVnNJM1ladVVvZXB1RXdOZnBscVdaMnU0NHZhdVZVMm9rNGpXMGpBVW1sbXo1TFRuYnZiSkgta196WWo3dW5vUWY0ZDFNQjJwUG9CUUlnelU?oc=5\" target=\"_blank\"&gt;Ivory Coast cocoa traceability rates fail to improve as EU anti-deforestation law looms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
+          "published": "2026-05-12T17:05:53.000Z",
+          "score": 17
+        }
+      ]
     },
     {
       "id": "energy",
@@ -36,27 +57,27 @@
           "score": 19
         },
         {
-          "title": "Datacentres should be forced to invest in wind and solar energy, all states agree – except Queensland",
-          "link": "https://www.theguardian.com/environment/2026/may/12/datacentres-australia-wind-solar-energy-investment",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;State and federal energy ministers say investments in new renewable energy and storage should ‘fully offset’ new datacentres’ energy needs&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/12/budget-2026-live-updates-federal-treasurer-jim-chalmers-speech-time-tonight-latest-news-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguar",
-          "published": "2026-05-12T05:16:37.000Z",
-          "score": 7
-        },
-        {
-          "title": "Warsh's red lines worry world finance - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWVJWem1waUIzcy1ickJZcjdzeVdsRVRaUVNwTWlzUXphT05HWF9GenV0dllJMi01T1NVb2xzQ2hsSFcxZmttenA0TGoyTHItQnB1MkQ0eTg4bEJ1cGhGQ1I2RVpiSkI4cFJRbXRaU21fMzg4XzFLMjVyN0o0MWRQeHNXZEU5WTdfM1c5clI2ZGpfLWdJZEpsN1VhdW1oUlZQb2MtZGJOTnk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxNWVJWem1waUIzcy1ickJZcjdzeVdsRVRaUVNwTWlzUXphT05HWF9GenV0dllJMi01T1NVb2xzQ2hsSFcxZmttenA0TGoyTHItQnB1MkQ0eTg4bEJ1cGhGQ1I2RVpiSkI4cFJRbXRaU21fMzg4XzFLMjVyN0o0MWRQeHNXZEU5WTdfM1c5clI2ZGpfLWdJZEpsN1VhdW1oUlZQb2MtZGJOTnk?oc=5\" target=\"_blank\"&gt;Warsh's red lines worry world finance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-12T06:06:00.000Z",
-          "score": 7
-        },
-        {
           "title": "Putin says Russia will deploy new Sarmat nuclear missile this year - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQd0wyY05FUjJUV2V1RVlSanM1b0RTNjlZZFVKS05feXZuX2czaTljcW9ybU12XzFpV2hyLTNPRFpZY09GWGlhYjZnd1U1UlJCalVxLWk3UnNuSFRKZW5waXJ3Y1NUSEJFZmt4SmpoRTI3c0dzNlZvODVOVXFEa2lKQXNreGxtN3NpZ19sUU00Umt5M0hhYjdfay1ScnZaUFJFVy1abkxhaUNNODNzY05qZ1FVZEw1Q2JL?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQd0wyY05FUjJUV2V1RVlSanM1b0RTNjlZZFVKS05feXZuX2czaTljcW9ybU12XzFpV2hyLTNPRFpZY09GWGlhYjZnd1U1UlJCalVxLWk3UnNuSFRKZW5waXJ3Y1NUSEJFZmt4SmpoRTI3c0dzNlZvODVOVXFEa2lKQXNreGxtN3NpZ19sUU00Umt5M0hhYjdfay1ScnZaUFJFVy1abkxhaUNNODNzY05qZ1FVZEw1Q2JL?oc=5\" target=\"_blank\"&gt;Putin says Russia will deploy new Sarmat nuclear missile this year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-12T18:01:17.000Z",
+          "score": 7
+        },
+        {
+          "title": "Colombia sees worst civilian impact from conflict in a decade, says Red Cross - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTXY2LUdrcUwyYWJIMnlVTEc0ejNxMW5JSGFsRWJ5Sk9DbjkyaWZET3BibGNBbnYxRnk2SEZ5M3cxUUhWSEExNlp3ZTNNVC1kUjNiamtCdmdEU0lSZTBONjM4c1BybUc4ZFFzRG5ma2NaeVItVWt0ZmFzS3UzaVN2Z09PenJNbjQ5cEZ6bzZiN1o3LXBRQ1kyQVZjVzJmSlZHOXU4RENMOE9wUktIbTQ2N3dlQjgwWk1z?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTXY2LUdrcUwyYWJIMnlVTEc0ejNxMW5JSGFsRWJ5Sk9DbjkyaWZET3BibGNBbnYxRnk2SEZ5M3cxUUhWSEExNlp3ZTNNVC1kUjNiamtCdmdEU0lSZTBONjM4c1BybUc4ZFFzRG5ma2NaeVItVWt0ZmFzS3UzaVN2Z09PenJNbjQ5cEZ6bzZiN1o3LXBRQ1kyQVZjVzJmSlZHOXU4RENMOE9wUktIbTQ2N3dlQjgwWk1z?oc=5\" target=\"_blank\"&gt;Colombia sees worst civilian impact from conflict in a decade, says Red Cross&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T21:35:45.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says stopping Iran's nuclear program outweighs Americans' economic pain - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMzloZTd4X0wyYnN2V01VaVhodG56OHd0TGFlVnhoXzREdkFLdGUwb3E5bm90anVtT2N5UUZvaG9FaFdmQlNMX2pXdlV3UTJpTjc4VldpOHR2MlpVTlMyRFN2bVVOSTMtOWtobUhtbHNBaW82VzZHNTRTZ3NmTkdKU1F4LVhrTTJlQ2Znb3ZIXzNwZXo4WVdvTXRqYnV6RnpvZUJEWVhOWmxzTDR0bDM0cndmdW5GUWtFSVg0WA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOMzloZTd4X0wyYnN2V01VaVhodG56OHd0TGFlVnhoXzREdkFLdGUwb3E5bm90anVtT2N5UUZvaG9FaFdmQlNMX2pXdlV3UTJpTjc4VldpOHR2MlpVTlMyRFN2bVVOSTMtOWtobUhtbHNBaW82VzZHNTRTZ3NmTkdKU1F4LVhrTTJlQ2Znb3ZIXzNwZXo4WVdvTXRqYnV6RnpvZUJEWVhOWmxzTDR0bDM0cndmdW5GUWtFSVg0WA?oc=5\" target=\"_blank\"&gt;Trump says stopping Iran's nuclear program outweighs Americans' economic pain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-13T00:16:00.000Z",
           "score": 7
         },
         {
@@ -72,20 +93,53 @@
     {
       "id": "climate",
       "title": "Climate & Environment",
-      "items": []
+      "items": [
+        {
+          "title": "Watch: Presenter flies in to host air quality special",
+          "link": "https://www.bbc.com/news/videos/c74rw78ry9yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Environment correspondent Jon Cuthill paraglides into position ahead of a BBC South special.",
+          "published": "2026-05-13T05:02:07.000Z",
+          "score": 7
+        },
+        {
+          "title": "How air pollution is being monitored",
+          "link": "https://www.bbc.com/news/articles/cdxpl4w5027o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The main source of pollution is local emissions, created by things like traffic and manufacturing.",
+          "published": "2026-05-13T05:01:19.000Z",
+          "score": 7
+        },
+        {
+          "title": "Is caring about the climate unmanly?",
+          "link": "https://www.dw.com/en/is-caring-about-the-climate-unmanly/a-76779473?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The answer is complex — and says a lot about how masculinity works in the modern world.",
+          "published": "2026-05-13T07:33:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "David Attenborough is not just a national treasure: he is also the most radical person on TV | Jonathan Liew",
+          "link": "https://www.theguardian.com/commentisfree/2026/may/13/david-attenborough-most-radical-person-tv",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The naturalist is venerated as a cuddly Paddington Bear, but he’s more than that. Don’t let the superficial backslaps obscure the political critique he makes&lt;/p&gt;&lt;p&gt;The excesses the capitalist system has brought us have got to be curbed somehow. Ordinary people worldwide are beginning to realise that greed does not actually lead to joy. Our economic system has been based on the profit principle: you have to come out at the end of the year having made a profit, and the bigger ",
+          "published": "2026-05-13T07:00:23.000Z",
+          "score": 2
+        },
+        {
+          "title": "White-tailed eagles to be released in Exmoor despite farmer warnings",
+          "link": "https://www.bbc.com/news/articles/cd6p26y6d8vo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Some farmers fear the reintroduction of the UK's biggest bird of prey will threaten their livestock.",
+          "published": "2026-05-13T05:00:08.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "African leaders push for risk pricing rethink, fresh investment at France Africa summit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTBVNnA5MkdhUnRXQ1BzOGJENlQ1enpwRzBaT2VSeGFZTVF4ckFWaEFCdllkVnphODZlUm5UeGVoNVliaVZIWkRXektWbzNOT19jSGFob1BVajBCb0RGR0FJWnNRRVU2cWl1QnozcnZUNGJDWU5MWGV4TjVOUXFzb0ZfZHhxTkY1Mmcyb2YzdjVfNld1N0Vab1ptd3lUcG41UlR6d1JPVTB5NUh5SkhTYmJpRm9QZWxEbDQ0TXNjeE1YS2pPQ0E4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPZTBVNnA5MkdhUnRXQ1BzOGJENlQ1enpwRzBaT2VSeGFZTVF4ckFWaEFCdllkVnphODZlUm5UeGVoNVliaVZIWkRXektWbzNOT19jSGFob1BVajBCb0RGR0FJWnNRRVU2cWl1QnozcnZUNGJDWU5MWGV4TjVOUXFzb0ZfZHhxTkY1Mmcyb2YzdjVfNld1N0Vab1ptd3lUcG41UlR6d1JPVTB5NUh5SkhTYmJpRm9QZWxEbDQ0TXNjeE1YS2pPQ0E4?oc=5\" target=\"_blank\"&gt;African leaders push for risk pricing rethink, fresh investment at France Africa summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-05-12T20:24:34.000Z",
-          "score": 2
-        },
         {
           "title": "Equinix to create new Malaysia data centre with over $190 million investment - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQY3E1TWlDZWl5SUlxX0luV0RTRlVabjRUcXNVWlFIVHI5NjlVVjM3LVhBMkdmT18zYWpGTFBFX210dGpTWmc4M0JSZTNwQTY0LU9nQ2RRaFFjczY4YUFsYmphRWE4V3JERXRkNURBLXJWTzNIeTJKUDhUSG9pMFVkbVpEXzI3d09wRzlFd3I1cnZLS2xYaEhmVklYUEpHN0JmOFBOSVNsTUtkZ1kzSkJQcFhXVnllbzRkTXk0akRLdnpRanNZT2c?oc=5",
@@ -139,14 +193,6 @@
           "score": 8
         },
         {
-          "title": "EU negotiators agree new rules on vital medicines",
-          "link": "https://www.dw.com/en/eu-negotiators-agree-new-rules-on-vital-medicines/a-77126715?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A new agreement aims to tackle the drug shortages that have plagued the bloc. Among other things, it would make it easier to use public funds to support the production of essential medicines.",
-          "published": "2026-05-12T06:08:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU takes aim at TikTok, Meta's 'addictive designs' for teens - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPQ0hzczk3TGZybnhnS19HOERmQWYyZXNUWkdwcVpqS09MNWRlekMzRFJKd3VfMzh0SlpGMUkwZWVFbk5GVlZwNHBUYl9ELW5oeG41NXYxMUFRc3IyQ2JYTm1ZZzAzMFZ6dTlXNGpSWmVOUi1wUFdoaUxjZmdtT2pVX0F6d2lqZjMyX00tbkllSWxRSTVMNkw0dGVpc0tKSVBLZTQ0?oc=5",
           "source": "Reuters World (via Google News)",
@@ -155,20 +201,28 @@
           "score": 8
         },
         {
-          "title": "US inflation jumps to 3.8% as energy costs surge from Iran war",
-          "link": "https://www.bbc.com/news/articles/c202pgxx89lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The key measure of US inflation rises its highest level since May 2023 as consumers feel the impact of the Iran war.",
-          "published": "2026-05-12T18:36:58.000Z",
+          "title": "India inflation edges up in April to 3.48% as energy risks grow - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQb3FWX2xyYzRIb1FJc1pXaWhSbnJUbHJkUEZmTTZmcXFwQ1M4Y3FsQlJGNTFQd0ZhdjNUcDlwOERzcGhERzdwNGJpbVM2aWN3NjNfS251TGhNTnUtZkhFbXNWcEdOU1N2Tk94eS1UMmR4bkpDb2FocVNxQUtLdURZZW54U0pJLXlSQ0FSVkQ4eWhmSVlCbDJ6UkJQanFDM2dZWmpuWXNB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQb3FWX2xyYzRIb1FJc1pXaWhSbnJUbHJkUEZmTTZmcXFwQ1M4Y3FsQlJGNTFQd0ZhdjNUcDlwOERzcGhERzdwNGJpbVM2aWN3NjNfS251TGhNTnUtZkhFbXNWcEdOU1N2Tk94eS1UMmR4bkpDb2FocVNxQUtLdURZZW54U0pJLXlSQ0FSVkQ4eWhmSVlCbDJ6UkJQanFDM2dZWmpuWXNB?oc=5\" target=\"_blank\"&gt;India inflation edges up in April to 3.48% as energy risks grow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-12T11:22:42.000Z",
+          "score": 7
+        },
+        {
+          "title": "Exclusive: Iraq, Pakistan strike energy deals with Iran as Tehran flexes Hormuz control - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeEV0N2V1QmJhSWFBeG9JZE5EV3I1RFpoY3hicVNfeG1BVWdwcDFXSUEwRzQ0SDJLVk5wQnhCSWc3MWJNcnFkNGRoTERUT0d4ZXJVU05iTHgtU3RwbW5SUHZRbXdUbERCclpXRDV6WHpnaERHM2cyX2ZmVlg1cDJTUHlNMmozVVVkeVcxdm5WSzNHQ0s3Nkx4dndEaUlfUHNzcVVYZDFtYWhZVWp4ajZuemQtdnMxWDVkNFRDSEo4ZHFHQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPeEV0N2V1QmJhSWFBeG9JZE5EV3I1RFpoY3hicVNfeG1BVWdwcDFXSUEwRzQ0SDJLVk5wQnhCSWc3MWJNcnFkNGRoTERUT0d4ZXJVU05iTHgtU3RwbW5SUHZRbXdUbERCclpXRDV6WHpnaERHM2cyX2ZmVlg1cDJTUHlNMmozVVVkeVcxdm5WSzNHQ0s3Nkx4dndEaUlfUHNzcVVYZDFtYWhZVWp4ajZuemQtdnMxWDVkNFRDSEo4ZHFHQQ?oc=5\" target=\"_blank\"&gt;Exclusive: Iraq, Pakistan strike energy deals with Iran as Tehran flexes Hormuz control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-05-12T18:07:38.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 147,
-    "afterDedup": 141,
+    "totalArticlesScanned": 397,
+    "articlesLast24h": 150,
+    "afterDedup": 143,
     "feedsQueried": 19
   }
 }
