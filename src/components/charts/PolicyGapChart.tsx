@@ -36,6 +36,13 @@ export interface ProjectionData {
   wam: { year: number; value: number }[];
 }
 
+export interface LegacyProjectionSeries {
+  /** Label for this vintage, e.g. "EEA T&P 2021" */
+  label: string;
+  wem: { year: number; value: number }[];
+  wam: { year: number; value: number }[];
+}
+
 interface Props {
   /** Historical data points */
   data: { year: number; value: number }[];
@@ -43,6 +50,8 @@ interface Props {
   benchmarks: BenchmarkPoint[];
   /** EEA WEM/WAM projections (optional — replaces simple trend when present) */
   projections?: ProjectionData;
+  /** Older EEA projection vintages to overlay (2021, 2017, etc.) */
+  legacyProjections?: LegacyProjectionSeries[];
   /** Chart title */
   title: string;
   /** Y-axis unit */
@@ -61,10 +70,18 @@ interface Props {
   sourceLabel?: string;
 }
 
+// Muted color palette for legacy vintages (WEM, WAM pairs)
+// Older vintages get progressively lighter/different hues to stay readable.
+const LEGACY_COLORS: { wem: string; wam: string }[] = [
+  { wem: '#7b9e87', wam: '#c4a882' }, // 2021: muted sage / warm sand
+  { wem: '#9baabb', wam: '#b8997a' }, // 2017: slate blue / tan
+];
+
 export default function PolicyGapChart({
   data,
   benchmarks,
   projections,
+  legacyProjections,
   title,
   unit,
   code,
@@ -300,6 +317,79 @@ export default function PolicyGapChart({
       });
     }
 
+    // ── Legacy projection vintages (2021, 2017, …) ──────────────────────
+    if (legacyProjections && legacyProjections.length > 0) {
+      legacyProjections.forEach((legacy, idx) => {
+        const colors = LEGACY_COLORS[idx % LEGACY_COLORS.length];
+
+        // WEM vintage line
+        if (legacy.wem.length > 0) {
+          const wemMap = new Map(legacy.wem.map(p => [p.year, p.value]));
+          const wemSorted = [...legacy.wem].sort((a, b) => a.year - b.year);
+          const allPts = [{ year: lastHistorical.year, value: lastHistorical.value }, ...wemSorted];
+          const legacyWemData = years.map(y => {
+            if (y < lastHistorical.year) return null;
+            if (y === lastHistorical.year) return lastHistorical.value;
+            if (wemMap.has(y)) return wemMap.get(y)!;
+            for (let i = 0; i < allPts.length - 1; i++) {
+              if (y > allPts[i].year && y < allPts[i + 1].year) {
+                const t = (y - allPts[i].year) / (allPts[i + 1].year - allPts[i].year);
+                return allPts[i].value + t * (allPts[i + 1].value - allPts[i].value);
+              }
+            }
+            return null;
+          });
+          datasets.push({
+            label: `WEM (${legacy.label})`,
+            data: legacyWemData,
+            borderColor: colors.wem,
+            backgroundColor: colors.wem,
+            borderWidth: compact ? 1 : 1.5,
+            pointRadius: 0,
+            pointHoverRadius: compact ? 2 : 4,
+            tension: 0.2,
+            spanGaps: true,
+            fill: false,
+            borderDash: [4, 4],
+            order: 6 + idx * 2,
+          });
+        }
+
+        // WAM vintage line
+        if (legacy.wam.length > 0) {
+          const wamMap = new Map(legacy.wam.map(p => [p.year, p.value]));
+          const wamSorted = [...legacy.wam].sort((a, b) => a.year - b.year);
+          const allPts = [{ year: lastHistorical.year, value: lastHistorical.value }, ...wamSorted];
+          const legacyWamData = years.map(y => {
+            if (y < lastHistorical.year) return null;
+            if (y === lastHistorical.year) return lastHistorical.value;
+            if (wamMap.has(y)) return wamMap.get(y)!;
+            for (let i = 0; i < allPts.length - 1; i++) {
+              if (y > allPts[i].year && y < allPts[i + 1].year) {
+                const t = (y - allPts[i].year) / (allPts[i + 1].year - allPts[i].year);
+                return allPts[i].value + t * (allPts[i + 1].value - allPts[i].value);
+              }
+            }
+            return null;
+          });
+          datasets.push({
+            label: `WAM (${legacy.label})`,
+            data: legacyWamData,
+            borderColor: colors.wam,
+            backgroundColor: colors.wam,
+            borderWidth: compact ? 1 : 1.5,
+            pointRadius: 0,
+            pointHoverRadius: compact ? 2 : 4,
+            tension: 0.2,
+            spanGaps: true,
+            fill: false,
+            borderDash: [2, 4],
+            order: 7 + idx * 2,
+          });
+        }
+      });
+    }
+
     // Historical data (solid line)
     datasets.push({
       label: 'Historical (Eurostat/EEA)',
@@ -423,7 +513,7 @@ export default function PolicyGapChart({
     });
 
     return () => { chartRef.current?.destroy(); };
-  }, [data, benchmarks, projections, title, unit, code, sectorColor, compact, altUnit, sourceLabel]);
+  }, [data, benchmarks, projections, legacyProjections, title, unit, code, sectorColor, compact, altUnit, sourceLabel]);
 
   return (
     <div style={{ height: compact ? 280 : 420 }}>

@@ -25,7 +25,11 @@ import {
   parseEurostatResponse,
 } from '@/lib/scenarios/policy-gap';
 import { ESABCC } from '@/lib/esabcc-palette';
-import type { IndicatorProjections } from '@/lib/scenarios/eea-projections';
+import {
+  type IndicatorProjections,
+  LEGACY_PROJECTION_VINTAGES,
+} from '@/lib/scenarios/eea-projections';
+import { EU_COUNTRIES } from '@/lib/eu-countries';
 
 const PolicyGapChart = dynamic(
   () => import('@/components/charts/PolicyGapChart'),
@@ -40,7 +44,20 @@ interface IndicatorData {
   lastUpdated?: string;
 }
 
-const GEO_CODE = 'EU27_2020';
+// EU-27 member states only (exclude NO, CH, GB)
+const EU27_ISO2 = new Set([
+  'AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR',
+  'DE','GR','HU','IE','IT','LV','LT','LU','MT','NL',
+  'PL','PT','RO','SK','SI','ES','SE',
+]);
+
+const MEMBER_STATE_OPTIONS = [
+  { value: 'EU27_2020', label: 'EU-27' },
+  ...EU_COUNTRIES
+    .filter((c, idx, arr) => EU27_ISO2.has(c.iso2) && arr.findIndex(x => x.iso2 === c.iso2) === idx)
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map(c => ({ value: c.iso2, label: c.name })),
+];
 
 export default function PolicyGapExplorer() {
   const [activeSector, setActiveSector] = useState<PolicyGapSector>('Overall');
@@ -48,18 +65,28 @@ export default function PolicyGapExplorer() {
   const [projectionData, setProjectionData] = useState<Record<string, IndicatorProjections>>({});
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [selectedGeo, setSelectedGeo] = useState<string>('EU27_2020');
+  const [showVintage2021, setShowVintage2021] = useState(false);
+  const [showVintage2017, setShowVintage2017] = useState(false);
   const abortRef = useRef<AbortController | null>(null);
-  const projectionsFetched = useRef(false);
+  const projectionsFetched = useRef<string>(''); // tracks geo for which projections were fetched
 
   const sectorIndicators = POLICY_GAP_INDICATORS.filter(i => i.sector === activeSector);
+  const isEU27 = selectedGeo === 'EU27_2020';
+
+  // Resolve the Eurostat geo code (EU27_2020 for EU, ISO-2 for MS)
+  const eurostatGeo = selectedGeo;
+  // Resolve the EEA projections geo code (null for EU27, ISO-2 for MS)
+  const eeaGeo = isEU27 ? null : selectedGeo;
 
   // ── Fetch data for all indicators in the active sector ──────────────
-  const fetchSectorData = useCallback(async (sector: PolicyGapSector) => {
+  const fetchSectorData = useCallback(async (sector: PolicyGapSector, geoCode: string) => {
     abortRef.current?.abort();
     const controller = new AbortController();
     abortRef.current = controller;
 
     const indicators = POLICY_GAP_INDICATORS.filter(i => i.sector === sector);
+    const isEU = geoCode === 'EU27_2020';
 
     // Mark all as loading
     setIndicatorData(prev => {
@@ -70,6 +97,9 @@ export default function PolicyGapExplorer() {
       return next;
     });
 
+    // EEA SDMX region name (EU27 for aggregate, ISO-2 for MS)
+    const eeaRegion = isEU ? 'EU27' : geoCode;
+
     // Fetch in parallel
     const results = await Promise.allSettled(
       indicators.map(async (ind) => {
@@ -77,7 +107,7 @@ export default function PolicyGapExplorer() {
         if (!source) throw new Error('No data source configured');
 
         if (source.provider === 'eurostat') {
-          const url = buildEurostatUrl(source, GEO_CODE);
+          const url = buildEurostatUrl(source, geoCode);
           const res = await fetch(url, { signal: controller.signal });
           if (!res.ok) throw new Error(`Eurostat ${res.status}`);
           const json = await res.json();
@@ -85,7 +115,7 @@ export default function PolicyGapExplorer() {
 
           // Handle ratio indicators (e.g. electrification rate = electricity / total)
           if (ind.ratioSource) {
-            const denUrl = buildEurostatUrl(ind.ratioSource, GEO_CODE);
+            const denUrl = buildEurostatUrl(ind.ratioSource, geoCode);
             const denRes = await fetch(denUrl, { signal: controller.signal });
             if (!denRes.ok) throw new Error(`Eurostat denominator ${denRes.status}`);
             const denJson = await denRes.json();
@@ -111,7 +141,7 @@ export default function PolicyGapExplorer() {
             db: 'eea',
             action: 'datapoints',
             variables: ind.sources[0].code,
-            regions: 'EU27',
+            regions: eeaRegion,
           });
           const res = await fetch(`/api/scenarios?${params}`, { signal: controller.signal });
           if (!res.ok) throw new Error(`EEA ${res.status}`);
@@ -152,19 +182,24 @@ export default function PolicyGapExplorer() {
   }, []);
 
   useEffect(() => {
-    fetchSectorData(activeSector);
+    fetchSectorData(activeSector, selectedGeo);
     return () => { abortRef.current?.abort(); };
-  }, [activeSector, fetchSectorData]);
+  }, [activeSector, selectedGeo, fetchSectorData]);
 
-  // ── Fetch EEA projections (once, for all indicators) ─────────────────
+  // ── Fetch EEA projections (whenever selected geo changes) ─────────────
   useEffect(() => {
-    if (projectionsFetched.current) return;
-    projectionsFetched.current = true;
+    const geoKey = selectedGeo;
+    if (projectionsFetched.current === geoKey) return;
+    projectionsFetched.current = geoKey;
 
     const controller = new AbortController();
+    setProjectionData({}); // clear old projections while fetching
     (async () => {
       try {
-        const res = await fetch('/api/eea-projections', { signal: controller.signal });
+        const params = new URLSearchParams();
+        if (selectedGeo !== 'EU27_2020') params.set('geo', selectedGeo);
+        const url = `/api/eea-projections${params.toString() ? `?${params}` : ''}`;
+        const res = await fetch(url, { signal: controller.signal });
         if (!res.ok) return;
         const data: IndicatorProjections[] = await res.json();
         const map: Record<string, IndicatorProjections> = {};
@@ -176,7 +211,7 @@ export default function PolicyGapExplorer() {
     })();
 
     return () => controller.abort();
-  }, []);
+  }, [selectedGeo]);
 
   // ── Export chart as PNG ─────────────────────────────────────────────
   const exportChart = useCallback((canvasId: string, filename: string) => {
@@ -189,17 +224,17 @@ export default function PolicyGapExplorer() {
   }, []);
 
   // ── Export data as CSV ─────────────────────────────────────────────
-  const exportCsv = useCallback((ind: PolicyGapIndicator, data: { year: number; value: number }[]) => {
+  const exportCsv = useCallback((ind: PolicyGapIndicator, data: { year: number; value: number }[], geoLabel: string) => {
     const rows = [
-      ['Year', ind.title, `Unit: ${ind.unit}`].join(','),
+      ['Year', ind.title, `Unit: ${ind.unit}`, `Region: ${geoLabel}`].join(','),
       ...data.map(d => `${d.year},${d.value.toFixed(2)},`),
       '',
-      'Benchmarks:',
+      'Benchmarks (EU-27):',
       ...ind.benchmarks.map(b => `${b.year},${b.value},${b.label}`),
     ];
     const blob = new Blob([rows.join('\n')], { type: 'text/csv' });
     const link = document.createElement('a');
-    link.download = `${ind.code}_${ind.id}.csv`;
+    link.download = `${ind.code}_${ind.id}_${geoLabel.replace(/\s+/g, '_')}.csv`;
     link.href = URL.createObjectURL(blob);
     link.click();
     URL.revokeObjectURL(link.href);
@@ -267,6 +302,25 @@ export default function PolicyGapExplorer() {
     };
   };
 
+  // Derive the selected country label for display
+  const selectedGeoLabel = MEMBER_STATE_OPTIONS.find(o => o.value === selectedGeo)?.label ?? selectedGeo;
+
+  // Build legacy projection series for the chart based on active toggles
+  const buildLegacyProjections = (indicatorId: string) => {
+    const series = [];
+    if (showVintage2021 && isEU27) {
+      const v = LEGACY_PROJECTION_VINTAGES.find(v => v.year === 2021);
+      const d = v?.byIndicator[indicatorId];
+      if (d) series.push({ label: v!.label, wem: d.wem, wam: d.wam });
+    }
+    if (showVintage2017 && isEU27) {
+      const v = LEGACY_PROJECTION_VINTAGES.find(v => v.year === 2017);
+      const d = v?.byIndicator[indicatorId];
+      if (d) series.push({ label: v!.label, wem: d.wem, wam: d.wam });
+    }
+    return series.length > 0 ? series : undefined;
+  };
+
   return (
     <div className="space-y-4">
       {/* Header */}
@@ -295,23 +349,93 @@ export default function PolicyGapExplorer() {
           the last {TREND_WINDOW_YEARS} years of reported data (reference period shown on each card) against
           the linear annual change required to reach the 2030 and, where available, 2050 benchmarks.
         </p>
-        <div className="flex items-center gap-3 mt-2">
-          <label className="flex items-center gap-1.5 text-xs text-grey-600 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={autoRefresh}
-              onChange={() => setAutoRefresh(!autoRefresh)}
-              className="rounded border-grey-300 text-primary focus:ring-primary"
-            />
-            Auto-update data
-          </label>
-          <button
-            onClick={() => fetchSectorData(activeSector)}
-            className="text-xs text-primary hover:underline font-medium"
-          >
-            Refresh now
-          </button>
+
+        {/* ── Region selector + projection vintage toggles ──────────────── */}
+        <div className="mt-3 flex flex-wrap items-start gap-4">
+          {/* Region selector */}
+          <div className="flex flex-col gap-1">
+            <label className="text-[10px] font-semibold text-grey-600 uppercase tracking-wide">
+              Region
+            </label>
+            <select
+              value={selectedGeo}
+              onChange={e => {
+                setSelectedGeo(e.target.value);
+                setExpandedId(null);
+              }}
+              className="text-xs border border-grey-300 rounded px-2 py-1 bg-white text-grey-800 focus:outline-none focus:ring-1 focus:ring-primary"
+            >
+              {MEMBER_STATE_OPTIONS.map(opt => (
+                <option key={opt.value} value={opt.value}>{opt.label}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Projection vintage overlays (EU-27 only — legacy data is aggregated) */}
+          <div className="flex flex-col gap-1">
+            <span className="text-[10px] font-semibold text-grey-600 uppercase tracking-wide">
+              Overlay historical projections
+            </span>
+            <div className="flex items-center gap-3">
+              <label className={`flex items-center gap-1.5 text-xs cursor-pointer ${!isEU27 ? 'opacity-40 pointer-events-none' : 'text-grey-700'}`}>
+                <input
+                  type="checkbox"
+                  checked={showVintage2021}
+                  onChange={() => setShowVintage2021(v => !v)}
+                  disabled={!isEU27}
+                  className="rounded border-grey-300 text-primary focus:ring-primary"
+                />
+                <span className="inline-block w-4 h-0.5 rounded" style={{ backgroundColor: '#7b9e87', borderTop: '2px dashed #7b9e87' }} />
+                WEM/WAM 2021
+              </label>
+              <label className={`flex items-center gap-1.5 text-xs cursor-pointer ${!isEU27 ? 'opacity-40 pointer-events-none' : 'text-grey-700'}`}>
+                <input
+                  type="checkbox"
+                  checked={showVintage2017}
+                  onChange={() => setShowVintage2017(v => !v)}
+                  disabled={!isEU27}
+                  className="rounded border-grey-300 text-primary focus:ring-primary"
+                />
+                <span className="inline-block w-4 h-0.5 rounded" style={{ backgroundColor: '#9baabb', borderTop: '2px dashed #9baabb' }} />
+                WEM/WAM 2017
+              </label>
+              {!isEU27 && (
+                <span className="text-[10px] text-grey-400 italic">EU-27 only</span>
+              )}
+            </div>
+          </div>
+
+          {/* Auto-refresh + manual refresh */}
+          <div className="flex flex-col gap-1 ml-auto">
+            <span className="text-[10px] font-semibold text-grey-600 uppercase tracking-wide">Data</span>
+            <div className="flex items-center gap-3">
+              <label className="flex items-center gap-1.5 text-xs text-grey-600 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={autoRefresh}
+                  onChange={() => setAutoRefresh(!autoRefresh)}
+                  className="rounded border-grey-300 text-primary focus:ring-primary"
+                />
+                Auto-update
+              </label>
+              <button
+                onClick={() => fetchSectorData(activeSector, selectedGeo)}
+                className="text-xs text-primary hover:underline font-medium"
+              >
+                Refresh now
+              </button>
+            </div>
+          </div>
         </div>
+
+        {/* Member state notice */}
+        {!isEU27 && (
+          <div className="mt-2 text-[10px] text-grey-500 bg-amber-50 border border-amber-200 rounded px-2 py-1.5">
+            Showing data for <strong>{selectedGeoLabel}</strong>. EU-level benchmark targets are shown for reference —
+            Member State-specific targets under the Effort Sharing Regulation differ by country.
+            Projection overlays (WEM/WAM) show country-level submissions to the EEA where available.
+          </div>
+        )}
       </div>
 
       {/* Sector tabs */}
@@ -452,7 +576,7 @@ export default function PolicyGapExplorer() {
                     </button>
                     {hasData && (
                       <button
-                        onClick={(e) => { e.stopPropagation(); exportCsv(ind, d!.data); }}
+                        onClick={(e) => { e.stopPropagation(); exportCsv(ind, d!.data, selectedGeoLabel); }}
                         className="text-[10px] text-grey-500 hover:text-primary px-1.5 py-0.5 rounded hover:bg-grey-100"
                         title="Export CSV"
                       >
@@ -485,7 +609,8 @@ export default function PolicyGapExplorer() {
                         wem: projectionData[ind.id].wem,
                         wam: projectionData[ind.id].wam,
                       } : undefined}
-                      title={ind.title}
+                      legacyProjections={buildLegacyProjections(ind.id)}
+                      title={`${ind.title}${!isEU27 ? ` — ${selectedGeoLabel}` : ''}`}
                       unit={ind.unit}
                       code={ind.code}
                       sectorColor={SECTOR_COLORS[activeSector]}
@@ -546,7 +671,7 @@ export default function PolicyGapExplorer() {
                       {d?.lastUpdated && (
                         <> · Fetched {new Date(d.lastUpdated).toLocaleDateString()}</>
                       )}
-                      {' '}· Region: EU27 · Trend reference period: last {TREND_WINDOW_YEARS} years of observed data
+                      {' '}· Region: {selectedGeoLabel} · Trend reference period: last {TREND_WINDOW_YEARS} years of observed data
                     </div>
                     {ind.scopeNote && (
                       <div className="italic text-grey-500">{ind.scopeNote}</div>
@@ -592,6 +717,14 @@ export default function PolicyGapExplorer() {
           <div className="flex items-start gap-2">
             <span className="w-3 h-3 mt-0.5 shrink-0 bg-[#3d5584] rotate-45 rounded-sm" />
             <span><strong>EU legislated targets</strong> — Binding objectives set in EU law (e.g. European Climate Law, EED recast, Fit for 55 package).</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="w-4 h-0.5 mt-1.5 shrink-0 rounded border-t-2 border-dashed border-[#7b9e87]" />
+            <span><strong>WEM/WAM 2021</strong> — EU-27 projections from EEA Trends &amp; Projections 2021 (pre Fit for 55). Shown for comparison when the 2021 overlay is enabled.</span>
+          </div>
+          <div className="flex items-start gap-2">
+            <span className="w-4 h-0.5 mt-1.5 shrink-0 rounded border-t-2 border-dashed border-[#9baabb]" />
+            <span><strong>WEM/WAM 2017</strong> — EU-27 projections from EEA Trends &amp; Projections 2017 (pre European Green Deal). Shown for comparison when the 2017 overlay is enabled.</span>
           </div>
         </div>
       </div>
