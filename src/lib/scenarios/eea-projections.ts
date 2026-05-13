@@ -215,25 +215,32 @@ async function discoverTable(signal?: AbortSignal): Promise<string> {
 }
 
 /**
- * Build a SQL query to fetch EU-level projections for a given set of
- * category/gas filters. The column names in the EEA projections dataset
- * use year-based column names (Year_2020, Year_2025, etc.) or pivoted
+ * Build a SQL query to fetch EU-level (or country-level) projections for a
+ * given set of category/gas filters. The column names in the EEA projections
+ * dataset use year-based column names (Year_2020, Year_2025, etc.) or pivoted
  * rows with a Year column. We handle both patterns.
+ *
+ * @param countryCode  ISO-2 code for a single Member State (e.g. 'DE'), or
+ *                     null/undefined for the EU-27 aggregate.
  */
 function buildProjectionQuery(
   table: string,
   categories: string[],
   gases: string[],
   scenarios: string[],
+  countryCode?: string | null,
 ): string {
   const catList = categories.map(c => `'${c.replace(/'/g, "''")}'`).join(',');
   const gasList = gases.map(g => `'${g.replace(/'/g, "''")}'`).join(',');
   const scenList = scenarios.map(s => `'${s.replace(/'/g, "''")}'`).join(',');
 
-  // Try common column name patterns for the country code
   // EEA datasets use CountryCode, Country_code, Member_State, or GeoCode
+  const geoFilter = countryCode
+    ? `(CountryCode = '${countryCode}' OR Country_code = '${countryCode}')`
+    : `(CountryCode = 'EU27' OR CountryCode = 'EU' OR Country_code = 'EU27' OR Country_code = 'EU')`;
+
   return `SELECT * FROM ${table}
-    WHERE (CountryCode = 'EU27' OR CountryCode = 'EU' OR Country_code = 'EU27' OR Country_code = 'EU')
+    WHERE ${geoFilter}
     AND (Scenario IN (${scenList}) OR Scenario_type IN (${scenList}))
     AND (Category_name IN (${catList}) OR Category IN (${catList}) OR Sector IN (${catList}))
     AND (Gas IN (${gasList}) OR Pollutant IN (${gasList}))`;
@@ -303,10 +310,14 @@ function parseProjectionRows(
 
 /**
  * Fetch EEA projections for a single indicator from Discodata.
+ *
+ * @param countryCode  ISO-2 code for a Member State (e.g. 'DE'), or
+ *                     omit/null for EU-27 aggregate.
  */
 export async function fetchIndicatorProjections(
   mapping: ProjectionMapping,
   signal?: AbortSignal,
+  countryCode?: string | null,
 ): Promise<IndicatorProjections> {
   const table = await discoverTable(signal);
   const sql = buildProjectionQuery(
@@ -314,6 +325,7 @@ export async function fetchIndicatorProjections(
     mapping.categories,
     mapping.gases,
     ['WEM', 'WAM', 'With existing measures', 'With additional measures'],
+    countryCode,
   );
 
   const rows = await queryDiscodata(sql, signal);
@@ -323,27 +335,32 @@ export async function fetchIndicatorProjections(
     indicatorId: mapping.indicatorId,
     wem,
     wam,
-    source: 'EEA Discodata',
+    source: countryCode ? `EEA Discodata (${countryCode})` : 'EEA Discodata',
     lastUpdated: new Date().toISOString(),
   };
 }
 
 /**
  * Fetch EEA projections for all mapped indicators.
+ *
+ * @param countryCode  ISO-2 code for a Member State, or omit for EU-27.
  */
 export async function fetchAllProjections(
   signal?: AbortSignal,
+  countryCode?: string | null,
 ): Promise<IndicatorProjections[]> {
-  // Try Discodata first; if table discovery fails, return fallback data
+  // Try Discodata first; if table discovery fails, return fallback (EU-27 only)
   try {
     await discoverTable(signal);
   } catch {
     console.warn('EEA Discodata table not found, using fallback projections');
+    // Fallback data is only available for EU-27
+    if (countryCode) return [];
     return getFallbackProjections();
   }
 
   const results = await Promise.allSettled(
-    PROJECTION_MAPPINGS.map(m => fetchIndicatorProjections(m, signal)),
+    PROJECTION_MAPPINGS.map(m => fetchIndicatorProjections(m, signal, countryCode)),
   );
 
   const projections: IndicatorProjections[] = [];
@@ -351,8 +368,8 @@ export async function fetchAllProjections(
     const result = results[i];
     if (result.status === 'fulfilled' && (result.value.wem.length > 0 || result.value.wam.length > 0)) {
       projections.push(result.value);
-    } else {
-      // Use fallback for this indicator
+    } else if (!countryCode) {
+      // Use EU-27 fallback for this indicator when no country-specific data
       const fb = FALLBACK_PROJECTIONS[PROJECTION_MAPPINGS[i].indicatorId];
       if (fb) {
         projections.push({
@@ -534,3 +551,275 @@ export function getProjectionMapping(indicatorId: string): ProjectionMapping | u
 export function hasProjectionMapping(indicatorId: string): boolean {
   return PROJECTION_MAPPINGS.some(m => m.indicatorId === indicatorId);
 }
+
+// ── Historical projection vintages ──────────────────────────────────────
+// Approximate EU-27 WEM/WAM values digitised from EEA Trends and Projections
+// reports (2017 and 2021 editions). These are static snapshots used to show
+// how Member States' projections have evolved over time.
+//
+// Values are in Mt CO2e, already at the same scale as FALLBACK_PROJECTIONS.
+//
+// Sources:
+//   2021: EEA Trends and Projections in Europe 2021 (Report No 16/2021)
+//         Based on Member States' submissions under Governance Regulation,
+//         before the Fit for 55 package was implemented.
+//   2017: EEA Trends and Projections in Europe 2017 (Report No 25/2017)
+//         Based on Member States' submissions under Decision No 280/2004/EC,
+//         pre-Paris Agreement implementation by EU.
+//
+// Note: values are approximate and for illustrative comparison only.
+// Consult the respective EEA reports for exact figures.
+
+export interface LegacyProjectionVintage {
+  /** Publication year of the EEA T&P report */
+  year: number;
+  /** Human-readable label */
+  label: string;
+  /** Projections per indicator ID */
+  byIndicator: Record<string, { wem: ProjectionPoint[]; wam: ProjectionPoint[] }>;
+}
+
+export const LEGACY_PROJECTION_VINTAGES: LegacyProjectionVintage[] = [
+  {
+    year: 2021,
+    label: 'EEA T&P 2021',
+    byIndicator: {
+      'o1-total-ghg': {
+        wem: [
+          { year: 2025, value: 3590 },
+          { year: 2030, value: 3480 },
+          { year: 2035, value: 3320 },
+          { year: 2040, value: 3160 },
+          { year: 2045, value: 3010 },
+          { year: 2050, value: 2860 },
+        ],
+        wam: [
+          { year: 2025, value: 3490 },
+          { year: 2030, value: 3230 },
+          { year: 2035, value: 2940 },
+          { year: 2040, value: 2680 },
+          { year: 2045, value: 2450 },
+          { year: 2050, value: 2220 },
+        ],
+      },
+      'e1-energy-ghg': {
+        wem: [
+          { year: 2025, value: 1060 },
+          { year: 2030, value:  980 },
+          { year: 2040, value:  810 },
+          { year: 2050, value:  630 },
+        ],
+        wam: [
+          { year: 2025, value: 1010 },
+          { year: 2030, value:  850 },
+          { year: 2040, value:  610 },
+          { year: 2050, value:  380 },
+        ],
+      },
+      'i1-industry-ghg': {
+        wem: [
+          { year: 2025, value: 650 },
+          { year: 2030, value: 620 },
+          { year: 2040, value: 570 },
+          { year: 2050, value: 510 },
+        ],
+        wam: [
+          { year: 2025, value: 630 },
+          { year: 2030, value: 570 },
+          { year: 2040, value: 490 },
+          { year: 2050, value: 390 },
+        ],
+      },
+      't1-transport-ghg': {
+        wem: [
+          { year: 2025, value: 870 },
+          { year: 2030, value: 840 },
+          { year: 2040, value: 760 },
+          { year: 2050, value: 670 },
+        ],
+        wam: [
+          { year: 2025, value: 850 },
+          { year: 2030, value: 780 },
+          { year: 2040, value: 640 },
+          { year: 2050, value: 480 },
+        ],
+      },
+      'b1-buildings-ghg': {
+        wem: [
+          { year: 2025, value: 520 },
+          { year: 2030, value: 490 },
+          { year: 2040, value: 420 },
+          { year: 2050, value: 360 },
+        ],
+        wam: [
+          { year: 2025, value: 500 },
+          { year: 2030, value: 440 },
+          { year: 2040, value: 340 },
+          { year: 2050, value: 230 },
+        ],
+      },
+      'a1-agriculture-ghg': {
+        wem: [
+          { year: 2025, value: 398 },
+          { year: 2030, value: 393 },
+          { year: 2040, value: 385 },
+          { year: 2050, value: 375 },
+        ],
+        wam: [
+          { year: 2025, value: 390 },
+          { year: 2030, value: 378 },
+          { year: 2040, value: 360 },
+          { year: 2050, value: 340 },
+        ],
+      },
+      'l1-lulucf': {
+        wem: [
+          { year: 2025, value: -200 },
+          { year: 2030, value: -205 },
+          { year: 2040, value: -215 },
+          { year: 2050, value: -225 },
+        ],
+        wam: [
+          { year: 2025, value: -215 },
+          { year: 2030, value: -240 },
+          { year: 2040, value: -270 },
+          { year: 2050, value: -310 },
+        ],
+      },
+      'e6-methane': {
+        wem: [
+          { year: 2025, value: 74 },
+          { year: 2030, value: 68 },
+          { year: 2040, value: 58 },
+          { year: 2050, value: 48 },
+        ],
+        wam: [
+          { year: 2025, value: 71 },
+          { year: 2030, value: 61 },
+          { year: 2040, value: 48 },
+          { year: 2050, value: 34 },
+        ],
+      },
+    },
+  },
+  {
+    year: 2017,
+    label: 'EEA T&P 2017',
+    byIndicator: {
+      'o1-total-ghg': {
+        wem: [
+          { year: 2025, value: 4080 },
+          { year: 2030, value: 3980 },
+          { year: 2035, value: 3870 },
+          { year: 2040, value: 3750 },
+          { year: 2050, value: 3510 },
+        ],
+        wam: [
+          { year: 2025, value: 3990 },
+          { year: 2030, value: 3780 },
+          { year: 2035, value: 3530 },
+          { year: 2040, value: 3290 },
+          { year: 2050, value: 3010 },
+        ],
+      },
+      'e1-energy-ghg': {
+        wem: [
+          { year: 2025, value: 1330 },
+          { year: 2030, value: 1250 },
+          { year: 2040, value: 1100 },
+          { year: 2050, value:  950 },
+        ],
+        wam: [
+          { year: 2025, value: 1280 },
+          { year: 2030, value: 1150 },
+          { year: 2040, value:  940 },
+          { year: 2050, value:  720 },
+        ],
+      },
+      'i1-industry-ghg': {
+        wem: [
+          { year: 2025, value: 740 },
+          { year: 2030, value: 720 },
+          { year: 2040, value: 690 },
+          { year: 2050, value: 650 },
+        ],
+        wam: [
+          { year: 2025, value: 720 },
+          { year: 2030, value: 680 },
+          { year: 2040, value: 620 },
+          { year: 2050, value: 550 },
+        ],
+      },
+      't1-transport-ghg': {
+        wem: [
+          { year: 2025, value: 1020 },
+          { year: 2030, value: 1010 },
+          { year: 2040, value:  990 },
+          { year: 2050, value:  960 },
+        ],
+        wam: [
+          { year: 2025, value:  990 },
+          { year: 2030, value:  940 },
+          { year: 2040, value:  870 },
+          { year: 2050, value:  780 },
+        ],
+      },
+      'b1-buildings-ghg': {
+        wem: [
+          { year: 2025, value: 590 },
+          { year: 2030, value: 560 },
+          { year: 2040, value: 500 },
+          { year: 2050, value: 440 },
+        ],
+        wam: [
+          { year: 2025, value: 570 },
+          { year: 2030, value: 520 },
+          { year: 2040, value: 430 },
+          { year: 2050, value: 340 },
+        ],
+      },
+      'a1-agriculture-ghg': {
+        wem: [
+          { year: 2025, value: 415 },
+          { year: 2030, value: 412 },
+          { year: 2040, value: 408 },
+          { year: 2050, value: 402 },
+        ],
+        wam: [
+          { year: 2025, value: 410 },
+          { year: 2030, value: 400 },
+          { year: 2040, value: 388 },
+          { year: 2050, value: 373 },
+        ],
+      },
+      'l1-lulucf': {
+        wem: [
+          { year: 2025, value: -180 },
+          { year: 2030, value: -183 },
+          { year: 2040, value: -188 },
+          { year: 2050, value: -193 },
+        ],
+        wam: [
+          { year: 2025, value: -190 },
+          { year: 2030, value: -200 },
+          { year: 2040, value: -215 },
+          { year: 2050, value: -233 },
+        ],
+      },
+      'e6-methane': {
+        wem: [
+          { year: 2025, value: 90 },
+          { year: 2030, value: 86 },
+          { year: 2040, value: 79 },
+          { year: 2050, value: 71 },
+        ],
+        wam: [
+          { year: 2025, value: 87 },
+          { year: 2030, value: 80 },
+          { year: 2040, value: 68 },
+          { year: 2050, value: 56 },
+        ],
+      },
+    },
+  },
+];
