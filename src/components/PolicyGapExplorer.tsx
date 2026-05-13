@@ -625,7 +625,7 @@ export default function PolicyGapExplorer() {
                         <p className="font-medium mb-1">Data fetch failed</p>
                         <p className="text-xs text-grey-500">{d.error}</p>
                         <button
-                          onClick={() => fetchSectorData(activeSector)}
+                          onClick={() => fetchSectorData(activeSector, selectedGeo)}
                           className="mt-2 text-xs text-primary hover:underline"
                         >
                           Retry
