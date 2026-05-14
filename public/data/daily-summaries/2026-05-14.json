@@ -1,9 +1,15 @@
 {
   "date": "2026-05-14",
-  "generatedAt": "2026-05-14T00:03:47.917Z",
+  "generatedAt": "2026-05-14T07:46:13.313Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 14 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "UN members prepare for pivotal vote on landmark ICJ climate justice ruling",
+      "summary": "&lt;p&gt;If resolution is passed governments will have legal responsibility to cut greenhouse gas emissions&lt;/p&gt;&lt;p&gt;The UN’s willingness to tackle the climate crisis in a fair and legal way will be tested next week during a critical vote of the UN general assembly in New York.&lt;/p&gt;&lt;p&gt;Every member state is being asked to back a &lt;a href=\"https://www.theguardian.com/environment/2025/jul/23/healthy-environment-is-a-human-right-top-un-court-rules\"&gt;series of landmark finding",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "UN members prepare for pivotal vote on landmark ICJ climate justice ruling",
+          "link": "https://www.theguardian.com/world/2026/may/14/un-members-prepare-for-pivotal-vote-on-landmark-icj-climate-justice-ruling",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;If resolution is passed governments will have legal responsibility to cut greenhouse gas emissions&lt;/p&gt;&lt;p&gt;The UN’s willingness to tackle the climate crisis in a fair and legal way will be tested next week during a critical vote of the UN general assembly in New York.&lt;/p&gt;&lt;p&gt;Every member state is being asked to back a &lt;a href=\"https://www.theguardian.com/environment/2025/jul/23/healthy-environment-is-a-human-right-top-un-court-rules\"&gt;series of landmark finding",
+          "published": "2026-05-14T07:00:20.000Z",
+          "score": 13
+        }
+      ]
     },
     {
       "id": "energy",
@@ -42,11 +57,11 @@
           "score": 19
         },
         {
-          "title": "Trump says stopping Iran's nuclear program outweighs Americans' economic pain - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOMzloZTd4X0wyYnN2V01VaVhodG56OHd0TGFlVnhoXzREdkFLdGUwb3E5bm90anVtT2N5UUZvaG9FaFdmQlNMX2pXdlV3UTJpTjc4VldpOHR2MlpVTlMyRFN2bVVOSTMtOWtobUhtbHNBaW82VzZHNTRTZ3NmTkdKU1F4LVhrTTJlQ2Znb3ZIXzNwZXo4WVdvTXRqYnV6RnpvZUJEWVhOWmxzTDR0bDM0cndmdW5GUWtFSVg0WA?oc=5",
+          "title": "Ford stock surges 13% on investor optimism for new energy storage business - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOOTlKbjlfamtFZjFIb2w0d0dXWVBTQjRfODJCWTAwRW9SekppUmdmTnV5TlQyY0p3UDdUNVc5ck9zbDAyMmlaSFJHRkVNQnR2N0hLTTRZZEtBa2lCZk04R2IzT0tTRUEtZ1plQ1FKOHZMeUVGcFdlZ2dnY1NoSE9EU0xoY2pOcGZlTmprVFQyMzhoNnloRk1reF9kSVc1a0x0WHRDR3BBclNoMzdfbGd3RGN5LTdsQm40TzBLU25scXVIMEdVSVpSeC1Cb2E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOMzloZTd4X0wyYnN2V01VaVhodG56OHd0TGFlVnhoXzREdkFLdGUwb3E5bm90anVtT2N5UUZvaG9FaFdmQlNMX2pXdlV3UTJpTjc4VldpOHR2MlpVTlMyRFN2bVVOSTMtOWtobUhtbHNBaW82VzZHNTRTZ3NmTkdKU1F4LVhrTTJlQ2Znb3ZIXzNwZXo4WVdvTXRqYnV6RnpvZUJEWVhOWmxzTDR0bDM0cndmdW5GUWtFSVg0WA?oc=5\" target=\"_blank\"&gt;Trump says stopping Iran's nuclear program outweighs Americans' economic pain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-13T00:16:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOOTlKbjlfamtFZjFIb2w0d0dXWVBTQjRfODJCWTAwRW9SekppUmdmTnV5TlQyY0p3UDdUNVc5ck9zbDAyMmlaSFJHRkVNQnR2N0hLTTRZZEtBa2lCZk04R2IzT0tTRUEtZ1plQ1FKOHZMeUVGcFdlZ2dnY1NoSE9EU0xoY2pOcGZlTmprVFQyMzhoNnloRk1reF9kSVc1a0x0WHRDR3BBclNoMzdfbGd3RGN5LTdsQm40TzBLU25scXVIMEdVSVpSeC1Cb2E?oc=5\" target=\"_blank\"&gt;Ford stock surges 13% on investor optimism for new energy storage business&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-05-13T23:45:53.000Z",
           "score": 7
         },
         {
@@ -56,14 +71,6 @@
           "description": "&lt;p&gt;Industry body says energy consumption driven by AI up 15% globally in two years as it warns of societal backlash&lt;/p&gt;&lt;p&gt;Datacentres are consuming 6% of electricity in the UK and US, with the growing strain of AI on energy supplies prompting community resistance, according to research.&lt;/p&gt;&lt;p&gt;The proportion of electricity used by vast warehouses stacked with microchips to power AI and the internet has risen 15% worldwide in the past two years as annual global invest",
           "published": "2026-05-13T10:48:13.000Z",
           "score": 4
-        },
-        {
-          "title": "Ukrainian drone attack sparks fire at gas plant in Russia's Astrakhan region, governor says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOenB3cEdRYkFXUVFnNUUyejRaX09Bc3BlRng1OHQxaENIMG90OVV3MU1nc0tRS1JZT1hYUmJHMGtxUUVxTHo2aUJjTGFEeW1qUkJIejhJX0ZVNTBNdFBxUVlTdG1zcm1XMnNJX0lOR0dGazdSOHpDTEpvYWhpTVZjdzliZW1yRWQ5ZXY0Tm9XakdkLUYteXVOV0NfQTFZTXVyWXZsMGJzQ3c3ckV3X3BoMjdEVUtPbkV6V2hIeEFYRXh5WnNYdmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOenB3cEdRYkFXUVFnNUUyejRaX09Bc3BlRng1OHQxaENIMG90OVV3MU1nc0tRS1JZT1hYUmJHMGtxUUVxTHo2aUJjTGFEeW1qUkJIejhJX0ZVNTBNdFBxUVlTdG1zcm1XMnNJX0lOR0dGazdSOHpDTEpvYWhpTVZjdzliZW1yRWQ5ZXY0Tm9XakdkLUYteXVOV0NfQTFZTXVyWXZsMGJzQ3c3ckV3X3BoMjdEVUtPbkV6V2hIeEFYRXh5WnNYdmc?oc=5\" target=\"_blank\"&gt;Ukrainian drone attack sparks fire at gas plant in Russia's Astrakhan region, governor says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-05-13T06:37:00.000Z",
-          "score": 2
         },
         {
           "title": "India clears $3.9 billion push to turn coal into gas to reduce imported fuel reliance - Reuters",
@@ -96,28 +103,28 @@
           "score": 7
         },
         {
-          "title": "Watch: Presenter flies in to host air quality special",
-          "link": "https://www.bbc.com/news/videos/c74rw78ry9yo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Environment correspondent Jon Cuthill paraglides into position ahead of a BBC South special.",
-          "published": "2026-05-13T05:02:07.000Z",
-          "score": 7
+          "title": "‘Irresponsible’: backlash as Utah approves datacenter twice the size of Manhattan",
+          "link": "https://www.theguardian.com/us-news/2026/may/13/utah-approves-datacenter-backlash",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Facility would require more power than entire state uses and suck up vast amount of water in drought-stricken area&lt;/p&gt;&lt;p&gt;A plan to create one of the world’s largest datacenters, a gargantuan project spanning an area more than twice the size of Manhattan, has provoked a furious public backlash in &lt;a href=\"https://www.theguardian.com/us-news/utah\"&gt;Utah&lt;/a&gt; amid concerns over its vast energy use and impact upon the state’s stressed &lt;a href=\"https://www.theguardia",
+          "published": "2026-05-13T11:30:56.000Z",
+          "score": 4
         },
         {
-          "title": "How air pollution is being monitored",
-          "link": "https://www.bbc.com/news/articles/cdxpl4w5027o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "City's historic Assembly Rooms to be repaired",
+          "link": "https://www.bbc.com/news/articles/cdxp5z0k4gvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "The main source of pollution is local emissions, created by things like traffic and manufacturing.",
-          "published": "2026-05-13T05:01:19.000Z",
-          "score": 7
+          "description": "York Conservation Trust says the Grade I-listed building needs work to its roof and portico.",
+          "published": "2026-05-14T07:14:28.000Z",
+          "score": 2
         },
         {
-          "title": "Is caring about the climate unmanly?",
-          "link": "https://www.dw.com/en/is-caring-about-the-climate-unmanly/a-76779473?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The answer is complex — and says a lot about how masculinity works in the modern world.",
-          "published": "2026-05-13T07:33:00.000Z",
-          "score": 7
+          "title": "'Beekeeping helps me clear my mind and get better headspace'",
+          "link": "https://www.bbc.com/news/articles/cj0pyq20ypno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Jenson, 17, says it helped him feel good to return to school after four years learning at home.",
+          "published": "2026-05-14T05:13:54.000Z",
+          "score": 2
         }
       ]
     },
@@ -134,11 +141,11 @@
           "score": 8
         },
         {
-          "title": "Trump's designs on Greenland prod investment, tourism likely to pay off faster than mines - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUGxWZVphSE5TUVBaWExhYXh1TkhHTnRDOEFmeEJEdjNIU1RUR1RIR1hkOTZjbzdZdzVRS1V6b3djSG1IaVNfbXBZa0N2M2paSnpmQU1KUWtNTFJlMjh5S0Q2V0JoQXJuUVZtdmF1Z25OU2djT2FwMnhlaUd0VlFTSG5PcUdwSFVJZ19FU3JHQjZqY2lsUVBQbDdFSlhOczQwY3l2SEtEVXhKdlRzSEVBXzJEeTBINVFS?oc=5",
+          "title": "Chinese firms warn Indonesia's nickel quotas, tax hikes threaten investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeVNTVVFFZ2p5VzVaR1FtZVpIeEktcWRwMEpxYmw1bUcwcTdSeWZGV2tWTFJWc0ZEcHZiaHVISlhWaXNGc1RySWtIR0FxTkJZWU9VbHBGRU1xZDRpb04xekFXX3VNNGE4enpoVGJsaGJ3YVctSVV1TVNzcWVGZjR5TGVPTmNObHdWRmNtc0lUZFJOb0pxcGhDdER4X0tERmJ4d25FdXRzZTVBVk1BXy00UTZHYkJaZHI1MjYtYmg3MVZab05jajZv?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUGxWZVphSE5TUVBaWExhYXh1TkhHTnRDOEFmeEJEdjNIU1RUR1RIR1hkOTZjbzdZdzVRS1V6b3djSG1IaVNfbXBZa0N2M2paSnpmQU1KUWtNTFJlMjh5S0Q2V0JoQXJuUVZtdmF1Z25OU2djT2FwMnhlaUd0VlFTSG5PcUdwSFVJZ19FU3JHQjZqY2lsUVBQbDdFSlhOczQwY3l2SEtEVXhKdlRzSEVBXzJEeTBINVFS?oc=5\" target=\"_blank\"&gt;Trump's designs on Greenland prod investment, tourism likely to pay off faster than mines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-13T11:52:08.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNeVNTVVFFZ2p5VzVaR1FtZVpIeEktcWRwMEpxYmw1bUcwcTdSeWZGV2tWTFJWc0ZEcHZiaHVISlhWaXNGc1RySWtIR0FxTkJZWU9VbHBGRU1xZDRpb04xekFXX3VNNGE4enpoVGJsaGJ3YVctSVV1TVNzcWVGZjR5TGVPTmNObHdWRmNtc0lUZFJOb0pxcGhDdER4X0tERmJ4d25FdXRzZTVBVk1BXy00UTZHYkJaZHI1MjYtYmg3MVZab05jajZv?oc=5\" target=\"_blank\"&gt;Chinese firms warn Indonesia's nickel quotas, tax hikes threaten investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-13T12:17:00.000Z",
           "score": 2
         },
         {
@@ -156,14 +163,6 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Keynote speech by Commissioner Kubilius at the event \"European Union Defence Initiatives: The Eastern Flank within a 360° Security Approach\"",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1073",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 13 May 2026 Good morning,\r\nThank you Ambassador,\r\nWe are living in the real environment of 360 degrees of challenges to our security.\r\nThe Iran war brings real threats to our ...",
-          "published": "2026-05-13T07:24:13.000Z",
-          "score": 18
-        },
-        {
           "title": "Latvian government loses majority in parliament over handling of Ukraine drone incidents - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNNEdLZHdKbE5MQV9IMmtSdEx4TGlZU2pFQ3VSdnJHSTB2a1lrUkhIRmlFMVVDYnlpc09UbXhrOC11S2djMUh2RU41MUN1RE9HYWdaZm1Pc0ktSndnUE1xdFRQQk1WZ3pOaFk0T3NxRTM4MFFfeHIwZVRadFFkSHZuSHZlajV1eXVXc0JpV1MydkppWVhTY0NYZHd3ZUM0NmZpamZjR1FPZGhkbGRFa1gzY3RoTzM?oc=5",
           "source": "Reuters World (via Google News)",
@@ -178,12 +177,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Mercedes Benz CEO: current EU rules have not spurred intended shift away from combustion engines - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRk12cWh4M2U0M1Y1YWpqaUZmSTd4dkwyd0ZqdlB4SzZKZmRZSzJmQktFMTBpa3RoM04zamU1MGhxNnVmNEZEYWlnaHZsQW9xaXVVc0ZWdnhLbHBXSzh3S3VHd3FrWkxjdTl2THFGcEpxcWVQZVRqWXFIbDY4cG5zdXNwSkxlNVNVWmhKUTZlYkdEQ0paOUYySUx5NnlTc3gyRmwzYjJDeUt5Rnc5aWMtM0hmMUhiNDFlRElWbjNwNFZlOHBldjdYam5vOEVlQzVxUGM0?oc=5",
+          "title": "Chinese EV startup Xpeng in talks with Volkswagen to buy European factory, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0V5U3lFRTZZSl9FZXBvb25kcTlwOG5iSVk0WDBVMHFXcWM0T053RmUwNElVemYyTUI2eS1zbTFURUVaQzRXV2dkVVE5UkpQM3pTYkpqWWZPRWlLZ0xmSXdCOUJsNjlGaU1qWDQwdEF0cHR1NjQ4SEhYZnotdnBOYXZLOHZkQVJ4R0JlRlZaRjZHS0pYQkNxMlV5NllkS1BSZE56RGpuNkIwS2NwckEyQ2dQc1BGWm5uSkxzUm5jd21VcEZW?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPRk12cWh4M2U0M1Y1YWpqaUZmSTd4dkwyd0ZqdlB4SzZKZmRZSzJmQktFMTBpa3RoM04zamU1MGhxNnVmNEZEYWlnaHZsQW9xaXVVc0ZWdnhLbHBXSzh3S3VHd3FrWkxjdTl2THFGcEpxcWVQZVRqWXFIbDY4cG5zdXNwSkxlNVNVWmhKUTZlYkdEQ0paOUYySUx5NnlTc3gyRmwzYjJDeUt5Rnc5aWMtM0hmMUhiNDFlRElWbjNwNFZlOHBldjdYam5vOEVlQzVxUGM0?oc=5\" target=\"_blank\"&gt;Mercedes Benz CEO: current EU rules have not spurred intended shift away from combustion engines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font co",
-          "published": "2026-05-13T11:02:34.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0V5U3lFRTZZSl9FZXBvb25kcTlwOG5iSVk0WDBVMHFXcWM0T053RmUwNElVemYyTUI2eS1zbTFURUVaQzRXV2dkVVE5UkpQM3pTYkpqWWZPRWlLZ0xmSXdCOUJsNjlGaU1qWDQwdEF0cHR1NjQ4SEhYZnotdnBOYXZLOHZkQVJ4R0JlRlZaRjZHS0pYQkNxMlV5NllkS1BSZE56RGpuNkIwS2NwckEyQ2dQc1BGWm5uSkxzUm5jd21VcEZW?oc=5\" target=\"_blank\"&gt;Chinese EV startup Xpeng in talks with Volkswagen to buy European factory, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-05-13T20:47:44.000Z",
+          "score": 13
         },
         {
           "title": "Europe set for easier train journeys as EU unveils single-ticket plan - Reuters",
@@ -194,20 +193,20 @@
           "score": 8
         },
         {
-          "title": "From Australia to Europe, countries move to curb children's social media access - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVFBHdjRDTXdveThibXU1bXk3S3IwN2pDSUp5bXVfZVQ0ME5VUHphZGhYS0xkVkdiUThJWl9HR3p3aU9xd0VldEw5MXlBd1hNYlZTN3ZPbnBSaHRBYW5WNWZ5UXRRdG5aRWIxaUE0OU9WeEE1OG1rWWVQOFF6SEdlV1VvOC1ieVZEODhLMVJ3RVR5VS12RDZ4VzMwd2ZuNVJTVkpPRkpfd3VGazcwbDJkbm9SWmpaZVdxOXlz?oc=5",
+          "title": "PM Starmer's leadership woes overshadow parliament's grand reopening - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOaDB3SV9Nc0lJTEdhb0I0X19ORXRaZHZGZHM4VWVBWWl0S2s0Rm9xYTdYVnRjaURrYThKR1pReXhTYlU5alpLajNoR0JKWGxsOThPUVQ3Mk9oUUVpSl9qVFcxQlJVamZ4UkplZXZHX0ZQcFl3dVpiLXV1OGx5ZmJFQnRSVEIxdk5jVy10WU40a0ZsWExWNmoyVEpyZzBCeWRBWk9aWHEzdGx1bnBaRjVpNw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNVFBHdjRDTXdveThibXU1bXk3S3IwN2pDSUp5bXVfZVQ0ME5VUHphZGhYS0xkVkdiUThJWl9HR3p3aU9xd0VldEw5MXlBd1hNYlZTN3ZPbnBSaHRBYW5WNWZ5UXRRdG5aRWIxaUE0OU9WeEE1OG1rWWVQOFF6SEdlV1VvOC1ieVZEODhLMVJ3RVR5VS12RDZ4VzMwd2ZuNVJTVkpPRkpfd3VGazcwbDJkbm9SWmpaZVdxOXlz?oc=5\" target=\"_blank\"&gt;From Australia to Europe, countries move to curb children's social media access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-13T15:29:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOaDB3SV9Nc0lJTEdhb0I0X19ORXRaZHZGZHM4VWVBWWl0S2s0Rm9xYTdYVnRjaURrYThKR1pReXhTYlU5alpLajNoR0JKWGxsOThPUVQ3Mk9oUUVpSl9qVFcxQlJVamZ4UkplZXZHX0ZQcFl3dVpiLXV1OGx5ZmJFQnRSVEIxdk5jVy10WU40a0ZsWExWNmoyVEpyZzBCeWRBWk9aWHEzdGx1bnBaRjVpNw?oc=5\" target=\"_blank\"&gt;PM Starmer's leadership woes overshadow parliament's grand reopening&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-13T18:52:54.000Z",
           "score": 8
         },
         {
-          "title": "BYD in talks with Stellantis, others for Europe plants, Bloomberg News reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQ29Lemw1SUZGbVlVblVKQ1ZWYTZuSVR3bEtQY0lGN2gyUlJFZHlQTEYyMTlBYk93cVJfTThnNGY4Wk5YcnE0SkVGeDZwaE1PLUNZYlFHUmJ0bkt6Rm1jdFZvNHprVGNmTmNKVV9tVkEwaEFjanJwSUNVeXBvQ2lSMmNYTnMzYWR5MUs0UWNaTnE4YUltOEpReFhJdk1PenN3cHhGNnZwSVdITVFzQzZ1cExNVURWQXJsQ1NzQUI2ZjR3NEd1ZmljbjlRS0QyTWJycko2Q1FETQ?oc=5",
+          "title": "Vietnam EV maker VinFast says it will undergo corporate restructuring - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYVFnQUpweUNsMncwVnlnSWJfSkhzTVpSNW44Tkx0elNFZW9SZGFVbHVZSDYwcUJ3clBTVG5IYU1haDJEMzBBb2I5bkxIWEl1YVN0YjdNVVBBWFliZzlPT3JnTUZELTRpdVdyOEdkNkdBZ3JxTmNBald0NDNLdUM1eDFVYlpudklNNjR6TFFQRkphd3NrTjZkVzJ2SW5uOW9SdXQ3aW9DbFNPeVlJUkYwdkR1Q2Nwazd2bUtPNjBIdTRMUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQ29Lemw1SUZGbVlVblVKQ1ZWYTZuSVR3bEtQY0lGN2gyUlJFZHlQTEYyMTlBYk93cVJfTThnNGY4Wk5YcnE0SkVGeDZwaE1PLUNZYlFHUmJ0bkt6Rm1jdFZvNHprVGNmTmNKVV9tVkEwaEFjanJwSUNVeXBvQ2lSMmNYTnMzYWR5MUs0UWNaTnE4YUltOEpReFhJdk1PenN3cHhGNnZwSVdITVFzQzZ1cExNVURWQXJsQ1NzQUI2ZjR3NEd1ZmljbjlRS0QyTWJycko2Q1FETQ?oc=5\" target=\"_blank\"&gt;BYD in talks with Stellantis, others for Europe plants, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
-          "published": "2026-05-13T10:07:27.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOYVFnQUpweUNsMncwVnlnSWJfSkhzTVpSNW44Tkx0elNFZW9SZGFVbHVZSDYwcUJ3clBTVG5IYU1haDJEMzBBb2I5bkxIWEl1YVN0YjdNVVBBWFliZzlPT3JnTUZELTRpdVdyOEdkNkdBZ3JxTmNBald0NDNLdUM1eDFVYlpudklNNjR6TFFQRkphd3NrTjZkVzJ2SW5uOW9SdXQ3aW9DbFNPeVlJUkYwdkR1Q2Nwazd2bUtPNjBIdTRMUQ?oc=5\" target=\"_blank\"&gt;Vietnam EV maker VinFast says it will undergo corporate restructuring&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-13T09:16:07.000Z",
+          "score": 7
         },
         {
           "title": "Can South Africa&#039;s President Ramaphosa avoid impeachment again?",
@@ -221,9 +220,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 401,
-    "articlesLast24h": 150,
-    "afterDedup": 149,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 149,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
