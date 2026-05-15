@@ -1,15 +1,9 @@
 {
   "date": "2026-05-15",
-  "generatedAt": "2026-05-15T00:02:39.070Z",
+  "generatedAt": "2026-05-15T07:52:46.685Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 15 May 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "UN members prepare for pivotal vote on landmark ICJ climate justice ruling",
-      "summary": "&lt;p&gt;If resolution is passed, governments will recognise&lt;strong&gt; &lt;/strong&gt;their legal responsibility to cut greenhouse gas emissions&lt;/p&gt;&lt;p&gt;The UN’s willingness to tackle the climate crisis in a fair and legal way will be tested next week during a critical vote of the UN general assembly in New York.&lt;/p&gt;&lt;p&gt;Every member state is being asked to back a &lt;a href=\"https://www.theguardian.com/environment/2025/jul/23/healthy-environment-is-a-human-right-top-un-c",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -17,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Study warns of dangerous heat at 2026 World Cup as climate risks grow - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQc3pFWTFUZHlhNy1JekR3RmExMWdjMGRzUVBJVWl4T1N3bzlnU0hORWNZUWd1OVlwSlBsN011c2pmb21sYXQ4RERJNXNKX25oNWRmV2NkcDRXOUh4N2V4aDRnNG1yTUFadkZ5aDdxcmRwUXAxeHJqQ080YTN0V3drTFB0REFwcFJ3bno1VmtqSlQzZ1AtSHpMYzRZSUVEbUNNdDhEZ0F6TElvTElxQmhV?oc=5\" target=\"_blank\"&gt;Study warns of dangerous heat at 2026 World Cup as climate risks grow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "A woolly solution to NI's peatland problems?",
+      "summary": "Could locally-sourced wool restore peatlands and reduce the carbon cost of conservation?",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,16 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "UN members prepare for pivotal vote on landmark ICJ climate justice ruling",
-          "link": "https://www.theguardian.com/world/2026/may/14/un-members-prepare-for-pivotal-vote-on-landmark-icj-climate-justice-ruling",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;If resolution is passed, governments will recognise&lt;strong&gt; &lt;/strong&gt;their legal responsibility to cut greenhouse gas emissions&lt;/p&gt;&lt;p&gt;The UN’s willingness to tackle the climate crisis in a fair and legal way will be tested next week during a critical vote of the UN general assembly in New York.&lt;/p&gt;&lt;p&gt;Every member state is being asked to back a &lt;a href=\"https://www.theguardian.com/environment/2025/jul/23/healthy-environment-is-a-human-right-top-un-c",
-          "published": "2026-05-14T07:00:20.000Z",
-          "score": 13
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -65,11 +50,11 @@
           "score": 7
         },
         {
-          "title": "Cuba says CIA chief visited Havana as energy crisis worsens",
+          "title": "CIA chief visits Cuba as energy crisis worsens",
           "link": "https://www.bbc.com/news/articles/cd7pyrj0vx7o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The reported visit came after the US renewed an offer of aid to ease the effects of its oil blockade.",
-          "published": "2026-05-14T21:39:10.000Z",
+          "description": "The reported visit to Havana came after the US renewed an offer of aid to ease the effects of its oil blockade.",
+          "published": "2026-05-15T02:40:50.000Z",
           "score": 7
         },
         {
@@ -81,12 +66,12 @@
           "score": 7
         },
         {
-          "title": "China goes electric, but can it get off coal?",
-          "link": "https://www.dw.com/en/china-goes-electric-but-can-it-get-off-coal/a-77147566?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The world&#039;s clean energy superpower also emits the most CO2. But coal-fired power may have peaked as China electrifies its economy with ever more renewables.",
-          "published": "2026-05-14T08:30:00.000Z",
-          "score": 4
+          "title": "Trump says he and China's Xi agree Iran cannot have nuclear weapons - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFFlcklCYWQwZUZGc2xjSF9QWjJvMU1PWFVtakpUVDljdTFCMzJqN2lULXMycUVxS2V2Q0I4X3h3ZndCczNqZ2JKTEFwdW1tTlBMMGlJRWRiT05jT3otM1BtT3F6YmxNQ1hEM1hjVnZPTEdXX1JlWk9lWWJLd3BvQlozTDFDQnQtbFU5ZUZzakE4Q0RPTHA5QWVmbXluVkFSRVQtZjlmdkRNUHVhR29v?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFFlcklCYWQwZUZGc2xjSF9QWjJvMU1PWFVtakpUVDljdTFCMzJqN2lULXMycUVxS2V2Q0I4X3h3ZndCczNqZ2JKTEFwdW1tTlBMMGlJRWRiT05jT3otM1BtT3F6YmxNQ1hEM1hjVnZPTEdXX1JlWk9lWWJLd3BvQlozTDFDQnQtbFU5ZUZzakE4Q0RPTHA5QWVmbXluVkFSRVQtZjlmdkRNUHVhR29v?oc=5\" target=\"_blank\"&gt;Trump says he and China's Xi agree Iran cannot have nuclear weapons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-15T06:18:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -95,12 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Study warns of dangerous heat at 2026 World Cup as climate risks grow - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQc3pFWTFUZHlhNy1JekR3RmExMWdjMGRzUVBJVWl4T1N3bzlnU0hORWNZUWd1OVlwSlBsN011c2pmb21sYXQ4RERJNXNKX25oNWRmV2NkcDRXOUh4N2V4aDRnNG1yTUFadkZ5aDdxcmRwUXAxeHJqQ080YTN0V3drTFB0REFwcFJ3bno1VmtqSlQzZ1AtSHpMYzRZSUVEbUNNdDhEZ0F6TElvTElxQmhV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQc3pFWTFUZHlhNy1JekR3RmExMWdjMGRzUVBJVWl4T1N3bzlnU0hORWNZUWd1OVlwSlBsN011c2pmb21sYXQ4RERJNXNKX25oNWRmV2NkcDRXOUh4N2V4aDRnNG1yTUFadkZ5aDdxcmRwUXAxeHJqQ080YTN0V3drTFB0REFwcFJ3bno1VmtqSlQzZ1AtSHpMYzRZSUVEbUNNdDhEZ0F6TElvTElxQmhV?oc=5\" target=\"_blank\"&gt;Study warns of dangerous heat at 2026 World Cup as climate risks grow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T04:04:00.000Z",
-          "score": 7
+          "title": "A woolly solution to NI's peatland problems?",
+          "link": "https://www.bbc.com/news/articles/cm2p7prl47jo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Could locally-sourced wool restore peatlands and reduce the carbon cost of conservation?",
+          "published": "2026-05-15T05:40:37.000Z",
+          "score": 4
         },
         {
           "title": "Watchdog groups urge Senate to investigate Samuel Alito over oil stock conflicts",
@@ -111,19 +96,11 @@
           "score": 2
         },
         {
-          "title": "City's historic Assembly Rooms to be repaired",
-          "link": "https://www.bbc.com/news/articles/cdxp5z0k4gvo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "'Don't swim' at 12 of 14 river bathing sites, as more locations announced",
+          "link": "https://www.bbc.com/news/articles/cvgzvqq9345o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "York Conservation Trust says the Grade I-listed building needs work to its roof and portico.",
-          "published": "2026-05-14T07:14:28.000Z",
-          "score": 2
-        },
-        {
-          "title": "'Beekeeping helps me clear my mind and get better headspace'",
-          "link": "https://www.bbc.com/news/articles/cj0pyq20ypno?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Jenson, 17, says it helped him feel good to return to school after four years learning at home.",
-          "published": "2026-05-14T05:13:54.000Z",
+          "description": "Too much bacteria linked to faeces found at almost all England's designated river bathing sites",
+          "published": "2026-05-15T04:13:45.000Z",
           "score": 2
         },
         {
@@ -160,19 +137,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "How international student tuition fees vary across Europe",
-          "link": "https://www.dw.com/en/how-international-student-tuition-fees-vary-across-europe/a-77146306?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A French government plan to charge students from outside the EU 16 times more than previously have stoked discontent. But how does this compare to the rest of Europe, both inside the EU and out?",
-          "published": "2026-05-14T19:52:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "European airlines downplay fears of summer jet fuel shortage - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQRklXOGV5aWtWek9ZUkFwLXNPSDVKYkhGNGVESW9PWjlGZXJnX29hNFNBc1JHckZwX2tBbVVFYUt2aWsxUzVrVU8ySHpubHJHVWVXenVLeHI2S0lSWEszOXBhQzBOMy1fY0wxY2VJbXFGWUE3WDZvOXJRSmhPa05oUWpZZ3d1U0FvSk5xXy12OWRLclhuRnVPem16VVNwLU1DSU9xWTYyd2tPLTQ4aGx6MjhWMWdrUHlCT3hrTzFkaHdpVUMxa3Bv?oc=5",
+          "title": "Germany's Merz calls for EU budget overhaul as battle looms - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWttM3BzYkFlZVNlWTdibGo1REhiUVhYb3R0NEw1QVRfSFVXOXJ4aEdEUDdVZGVuaGtkRzBNbXBQVXAxcTJ5SUFqTDN0aTJnYk9ZRmpEWlZTWW9zY1ZnNHIyTFFGelJ1bU5uLW9Yd2hDNEdzRkVacHdPR3BlWW96S3Yza2pnM0tnbnk4ZlZMSG03N3NsQ2o3RjJUY2dWSUQzTTRucFB4Yw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQRklXOGV5aWtWek9ZUkFwLXNPSDVKYkhGNGVESW9PWjlGZXJnX29hNFNBc1JHckZwX2tBbVVFYUt2aWsxUzVrVU8ySHpubHJHVWVXenVLeHI2S0lSWEszOXBhQzBOMy1fY0wxY2VJbXFGWUE3WDZvOXJRSmhPa05oUWpZZ3d1U0FvSk5xXy12OWRLclhuRnVPem16VVNwLU1DSU9xWTYyd2tPLTQ4aGx6MjhWMWdrUHlCT3hrTzFkaHdpVUMxa3Bv?oc=5\" target=\"_blank\"&gt;European airlines downplay fears of summer jet fuel shortage&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T05:03:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWttM3BzYkFlZVNlWTdibGo1REhiUVhYb3R0NEw1QVRfSFVXOXJ4aEdEUDdVZGVuaGtkRzBNbXBQVXAxcTJ5SUFqTDN0aTJnYk9ZRmpEWlZTWW9zY1ZnNHIyTFFGelJ1bU5uLW9Yd2hDNEdzRkVacHdPR3BlWW96S3Yza2pnM0tnbnk4ZlZMSG03N3NsQ2o3RjJUY2dWSUQzTTRucFB4Yw?oc=5\" target=\"_blank\"&gt;Germany's Merz calls for EU budget overhaul as battle looms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-14T11:09:55.000Z",
           "score": 8
         },
         {
@@ -184,11 +153,11 @@
           "score": 7
         },
         {
-          "title": "India rupee slips to record low near 96 per USD as energy risks deepen - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPdnIyaW9Rd3NYRWo5TEVTZmNpNzRmUDBFZ1FDbEhqbGhBQlhraFhKUThQYy1CZUZEWFNIT3ptRnVxMVRIMmJIWm1aTUFIM1VFNVZLbjVVa2diS3pjMU9yOVJIb2t3RC1tMlB1YmIxaXdXRjlubGFjVTQ0M3MwNzRLMjVmUkpTTlZYeURpeVNmMTVnVDY4SFI3dGdVbDdtRDBZSW5rYw?oc=5",
+          "title": "Japan's wholesale inflation spikes on energy shock, bolsters case for June rate hike - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNNndSRU5IRVh2Q0Z6RzhVeG93MElmamhGYVdlUjNxOGgzRUpCcU5hb0JjZUtjQmM3R0R6Wm1HV2M0MExsQjhuQ0ZEcEJVaDM5eWdvY1lHZGNZTEdYSUhXX2pETml5ZGNOY0ZVNWVWalBmdlJnWjFDVXVMMjRuanBFdGs2UEN0ZUNLNFUyWngxeWcyaU5ENEZXWURDY2tralVLWHRtd0twSGJpSmxWcjRzMlVTMWU1VEp0YXc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPdnIyaW9Rd3NYRWo5TEVTZmNpNzRmUDBFZ1FDbEhqbGhBQlhraFhKUThQYy1CZUZEWFNIT3ptRnVxMVRIMmJIWm1aTUFIM1VFNVZLbjVVa2diS3pjMU9yOVJIb2t3RC1tMlB1YmIxaXdXRjlubGFjVTQ0M3MwNzRLMjVmUkpTTlZYeURpeVNmMTVnVDY4SFI3dGdVbDdtRDBZSW5rYw?oc=5\" target=\"_blank\"&gt;India rupee slips to record low near 96 per USD as energy risks deepen&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T04:22:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNNndSRU5IRVh2Q0Z6RzhVeG93MElmamhGYVdlUjNxOGgzRUpCcU5hb0JjZUtjQmM3R0R6Wm1HV2M0MExsQjhuQ0ZEcEJVaDM5eWdvY1lHZGNZTEdYSUhXX2pETml5ZGNOY0ZVNWVWalBmdlJnWjFDVXVMMjRuanBFdGs2UEN0ZUNLNFUyWngxeWcyaU5ENEZXWURDY2tralVLWHRtd0twSGJpSmxWcjRzMlVTMWU1VEp0YXc?oc=5\" target=\"_blank\"&gt;Japan's wholesale inflation spikes on energy shock, bolsters case for June rate hike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-15T00:02:00.000Z",
           "score": 7
         },
         {
@@ -198,14 +167,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZzNLTkJTTF9kelVrZUNaWTY3Uk1hSlpacmpvWFJyQnZTaVF2ZW93TWVRcEpfVURUNHBvSDB0NC00aEZ4WXktZl9maVRpdHBCMndpSFljbXNYMXRHSDNvZnBQcTBXcC03Uk9RTEF2NjR5M0ZabzZCWnExcEpFNkk1SHlhUFh4azFHWnRiRVZoLVhMSFZiQV9FczlNQzRocUZ0Tl9Qc243VnpaYmZIUU00OA?oc=5\" target=\"_blank\"&gt;U.S. officials flag prospect of Chinese energy purchases after Trump-Xi meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-14T11:17:47.000Z",
           "score": 7
+        },
+        {
+          "title": "Modi likely to seek more energy supplies from UAE during short visit, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSTNkTm1CVWFlUmdlSnBvSHJOTzI1QVUxRWRYU1B6QWkxVzA4Rk81MXhpT1UtVmdINm91MllBQmdpcXhwVUxob21sOVBOLXJGeEx2WThiZVJJWnEwVlRWQS1YZzZVU2lwWTdXRjlQLXRBUGhqQ0FNeS1NXzdmbjR1WlpoTHRTa0Fua1dnb0NaWl9xdGhPOXNZc0QwUjJsMXZROEhXTmNyT1dKeXV4YVpXYVBKbEprbzdxYlVJaGtLZDlCdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSTNkTm1CVWFlUmdlSnBvSHJOTzI1QVUxRWRYU1B6QWkxVzA4Rk81MXhpT1UtVmdINm91MllBQmdpcXhwVUxob21sOVBOLXJGeEx2WThiZVJJWnEwVlRWQS1YZzZVU2lwWTdXRjlQLXRBUGhqQ0FNeS1NXzdmbjR1WlpoTHRTa0Fua1dnb0NaWl9xdGhPOXNZc0QwUjJsMXZROEhXTmNyT1dKeXV4YVpXYVBKbEprbzdxYlVJaGtLZDlCdw?oc=5\" target=\"_blank\"&gt;Modi likely to seek more energy supplies from UAE during short visit, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-14T09:35:16.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 414,
-    "articlesLast24h": 148,
-    "afterDedup": 143,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 146,
+    "afterDedup": 138,
     "feedsQueried": 19
   }
 }
