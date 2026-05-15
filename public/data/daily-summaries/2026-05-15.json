@@ -1,6 +1,6 @@
 {
   "date": "2026-05-15",
-  "generatedAt": "2026-05-15T07:52:46.685Z",
+  "generatedAt": "2026-05-15T12:58:27.189Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 15 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -15,12 +15,6 @@
       "summary": "Could locally-sourced wool restore peatlands and reduce the carbon cost of conservation?",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "UK to tighten money market fund rules by end of year - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNNkxkd2FIMWNaaDlJR0lHVHFwbERoQTRpbUp3ckQ0bGkzeXJWVDJXTzFwMmZoQmJGV1c0MXRteTRZWllQLVBUV2pPLXdFdFBDYU56RmxLQThJMlVGTlNGRFpBWURrT2xlMWFOcE9vbnBFYW5NbmpMamJTYWhtc0I2MTg2c3hzbWVYak82Uy1ZTklmUWs?oc=5\" target=\"_blank\"&gt;UK to tighten money market fund rules by end of year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -66,11 +60,11 @@
           "score": 7
         },
         {
-          "title": "Trump says he and China's Xi agree Iran cannot have nuclear weapons - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFFlcklCYWQwZUZGc2xjSF9QWjJvMU1PWFVtakpUVDljdTFCMzJqN2lULXMycUVxS2V2Q0I4X3h3ZndCczNqZ2JKTEFwdW1tTlBMMGlJRWRiT05jT3otM1BtT3F6YmxNQ1hEM1hjVnZPTEdXX1JlWk9lWWJLd3BvQlozTDFDQnQtbFU5ZUZzakE4Q0RPTHA5QWVmbXluVkFSRVQtZjlmdkRNUHVhR29v?oc=5",
+          "title": "Volkswagen labour leaders stand by 'red line' on plant closures - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ0tQaXowYm1MYzJGWU16WDNoaWRMQmptRE1pZnNlRGl5bVFiU2NoY2t0Sl96VDNPUmlDMThPMnhJZGd0WVJLMVhXYlVlR0VObkhncEJXSDVSOW1peEp5cl81ZkpDMkVuV0RJQmtxS1dCNWxzUERNU1NuYWNNb2NCVUcwOEh6dVMwczd6NndKUzVzeVVPTW55LUNJN0dyeE85TWgwUWdEeUctdkJYNmZSWDJDd0ZpejdT?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOeFFlcklCYWQwZUZGc2xjSF9QWjJvMU1PWFVtakpUVDljdTFCMzJqN2lULXMycUVxS2V2Q0I4X3h3ZndCczNqZ2JKTEFwdW1tTlBMMGlJRWRiT05jT3otM1BtT3F6YmxNQ1hEM1hjVnZPTEdXX1JlWk9lWWJLd3BvQlozTDFDQnQtbFU5ZUZzakE4Q0RPTHA5QWVmbXluVkFSRVQtZjlmdkRNUHVhR29v?oc=5\" target=\"_blank\"&gt;Trump says he and China's Xi agree Iran cannot have nuclear weapons&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-15T06:18:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQ0tQaXowYm1MYzJGWU16WDNoaWRMQmptRE1pZnNlRGl5bVFiU2NoY2t0Sl96VDNPUmlDMThPMnhJZGd0WVJLMVhXYlVlR0VObkhncEJXSDVSOW1peEp5cl81ZkpDMkVuV0RJQmtxS1dCNWxzUERNU1NuYWNNb2NCVUcwOEh6dVMwczd6NndKUzVzeVVPTW55LUNJN0dyeE85TWgwUWdEeUctdkJYNmZSWDJDd0ZpejdT?oc=5\" target=\"_blank\"&gt;Volkswagen labour leaders stand by 'red line' on plant closures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-15T04:06:05.000Z",
           "score": 7
         }
       ]
@@ -104,8 +98,16 @@
           "score": 2
         },
         {
+          "title": "US firm set to buy satellite station in £37m deal",
+          "link": "https://www.bbc.com/news/articles/c072v8ne53yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A Texas-based company wants to expand its deep space communitcations network.",
+          "published": "2026-05-15T11:03:06.000Z",
+          "score": 2
+        },
+        {
           "title": "BBC Inside Science",
-          "link": "https://www.bbc.co.uk/sounds/play/w3ct977l?at_medium=RSS&amp;at_campaign=rss",
+          "link": "https://www.bbc.co.uk/sounds/play/live:bbc_world_service_west_africa?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "What do we know about the disease following its outbreak on a cruise ship this month?",
           "published": "2026-05-14T20:00:00.000Z",
@@ -116,16 +118,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "UK to tighten money market fund rules by end of year - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNNkxkd2FIMWNaaDlJR0lHVHFwbERoQTRpbUp3ckQ0bGkzeXJWVDJXTzFwMmZoQmJGV1c0MXRteTRZWllQLVBUV2pPLXdFdFBDYU56RmxLQThJMlVGTlNGRFpBWURrT2xlMWFOcE9vbnBFYW5NbmpMamJTYWhtc0I2MTg2c3hzbWVYak82Uy1ZTklmUWs?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxNNkxkd2FIMWNaaDlJR0lHVHFwbERoQTRpbUp3ckQ0bGkzeXJWVDJXTzFwMmZoQmJGV1c0MXRteTRZWllQLVBUV2pPLXdFdFBDYU56RmxLQThJMlVGTlNGRFpBWURrT2xlMWFOcE9vbnBFYW5NbmpMamJTYWhtc0I2MTg2c3hzbWVYak82Uy1ZTklmUWs?oc=5\" target=\"_blank\"&gt;UK to tighten money market fund rules by end of year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T10:58:19.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -137,20 +130,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany's Merz calls for EU budget overhaul as battle looms - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWttM3BzYkFlZVNlWTdibGo1REhiUVhYb3R0NEw1QVRfSFVXOXJ4aEdEUDdVZGVuaGtkRzBNbXBQVXAxcTJ5SUFqTDN0aTJnYk9ZRmpEWlZTWW9zY1ZnNHIyTFFGelJ1bU5uLW9Yd2hDNEdzRkVacHdPR3BlWW96S3Yza2pnM0tnbnk4ZlZMSG03N3NsQ2o3RjJUY2dWSUQzTTRucFB4Yw?oc=5",
+          "title": "Iraqi parliament approves partial government led by PM Zaidi - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPaGVqYW9hSWNWWTFHbWlrWER2ZFJWM2xLVlhWUzBtVlg1R1k5MGFfNDh3Y0RoTTVabkctNWhsa0g0RVZ1TnpRa0VXbU1JSDNtZi1RdVZiUFFYazBfUHhQUFVvU05jcmtrRExDTE5ZdktpaHBWLXNyYXJma2E1M2tfeVdoTVA5N3FFTU9ZSXl4MGNwTF84eWpLalVTTVR2c180RWNIMmhYOHNjMEV1MHF2NGUtOEs?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNUWttM3BzYkFlZVNlWTdibGo1REhiUVhYb3R0NEw1QVRfSFVXOXJ4aEdEUDdVZGVuaGtkRzBNbXBQVXAxcTJ5SUFqTDN0aTJnYk9ZRmpEWlZTWW9zY1ZnNHIyTFFGelJ1bU5uLW9Yd2hDNEdzRkVacHdPR3BlWW96S3Yza2pnM0tnbnk4ZlZMSG03N3NsQ2o3RjJUY2dWSUQzTTRucFB4Yw?oc=5\" target=\"_blank\"&gt;Germany's Merz calls for EU budget overhaul as battle looms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T11:09:55.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPaGVqYW9hSWNWWTFHbWlrWER2ZFJWM2xLVlhWUzBtVlg1R1k5MGFfNDh3Y0RoTTVabkctNWhsa0g0RVZ1TnpRa0VXbU1JSDNtZi1RdVZiUFFYazBfUHhQUFVvU05jcmtrRExDTE5ZdktpaHBWLXNyYXJma2E1M2tfeVdoTVA5N3FFTU9ZSXl4MGNwTF84eWpLalVTTVR2c180RWNIMmhYOHNjMEV1MHF2NGUtOEs?oc=5\" target=\"_blank\"&gt;Iraqi parliament approves partial government led by PM Zaidi&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-14T15:50:00.000Z",
           "score": 8
         },
         {
-          "title": "Honda reports first loss since 1957 as it waters down EV strategy, but shares rise on 2026 forecasts",
-          "link": "https://www.dw.com/en/honda-reports-first-loss-since-1957-as-it-waters-down-ev-strategy-but-shares-rise-on-2026-forecasts/a-77158590?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Japanese carmaker pursued an aggressive switch towards electric vehicles that it&#039;s now trying to walk back. Despite posting its first loss since 1957, its share price spiked on more buoyant predictions for 2026.",
-          "published": "2026-05-14T08:52:00.000Z",
-          "score": 7
+          "title": "Investors take fright as left-leaning candidate secures path to UK parliament - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYnFlWVZYMlpYTjFjOVRGSldVX1owYVdNb0VsR21lQVJKdnk1WkJzMFZ5cXd4TFRabFRYYUN5S3FNekNvQlJVek16SXlTb2R3VDJ1UC1wLVpoeXNrX0JoajFyaXNSVlhPNnlUWmhfZFQzRWd1RkZyQ01ERWF5Mm5zQk84QnhrX3lHdE9iWC1tSEhKV2JieFZnT2pxc3pqRHRSZ2RXYg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOYnFlWVZYMlpYTjFjOVRGSldVX1owYVdNb0VsR21lQVJKdnk1WkJzMFZ5cXd4TFRabFRYYUN5S3FNekNvQlJVek16SXlTb2R3VDJ1UC1wLVpoeXNrX0JoajFyaXNSVlhPNnlUWmhfZFQzRWd1RkZyQ01ERWF5Mm5zQk84QnhrX3lHdE9iWC1tSEhKV2JieFZnT2pxc3pqRHRSZ2RXYg?oc=5\" target=\"_blank\"&gt;Investors take fright as left-leaning candidate secures path to UK parliament&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-15T10:55:06.000Z",
+          "score": 8
         },
         {
           "title": "Japan's wholesale inflation spikes on energy shock, bolsters case for June rate hike - Reuters",
@@ -161,28 +154,28 @@
           "score": 7
         },
         {
-          "title": "U.S. officials flag prospect of Chinese energy purchases after Trump-Xi meeting - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZzNLTkJTTF9kelVrZUNaWTY3Uk1hSlpacmpvWFJyQnZTaVF2ZW93TWVRcEpfVURUNHBvSDB0NC00aEZ4WXktZl9maVRpdHBCMndpSFljbXNYMXRHSDNvZnBQcTBXcC03Uk9RTEF2NjR5M0ZabzZCWnExcEpFNkk1SHlhUFh4azFHWnRiRVZoLVhMSFZiQV9FczlNQzRocUZ0Tl9Qc243VnpaYmZIUU00OA?oc=5",
+          "title": "India signs agreements with UAE on defence, energy during Modi visit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDhoVjBDY3I3ZkJ1am9uYzZHaURtV3RwaUcyWHh1VzBMR0VuNGFjeVRDdEY0bzBUMmtqSS1QRHF2TVNpOFVsNXpPU2lhTkpQV20xd1FxMWxIdVRsTldPY203MDJ0dG1rbW5HTklFYllZMm5FT291T3JZMEFLVkNtQ0MtSzV3a2lHZ2x4UlhLRjJrVUVlZ0FMNHpSUUg4WkpwMkZXMlBCSEQ1blZkZGdoVg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZzNLTkJTTF9kelVrZUNaWTY3Uk1hSlpacmpvWFJyQnZTaVF2ZW93TWVRcEpfVURUNHBvSDB0NC00aEZ4WXktZl9maVRpdHBCMndpSFljbXNYMXRHSDNvZnBQcTBXcC03Uk9RTEF2NjR5M0ZabzZCWnExcEpFNkk1SHlhUFh4azFHWnRiRVZoLVhMSFZiQV9FczlNQzRocUZ0Tl9Qc243VnpaYmZIUU00OA?oc=5\" target=\"_blank\"&gt;U.S. officials flag prospect of Chinese energy purchases after Trump-Xi meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T11:17:47.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDhoVjBDY3I3ZkJ1am9uYzZHaURtV3RwaUcyWHh1VzBMR0VuNGFjeVRDdEY0bzBUMmtqSS1QRHF2TVNpOFVsNXpPU2lhTkpQV20xd1FxMWxIdVRsTldPY203MDJ0dG1rbW5HTklFYllZMm5FT291T3JZMEFLVkNtQ0MtSzV3a2lHZ2x4UlhLRjJrVUVlZ0FMNHpSUUg4WkpwMkZXMlBCSEQ1blZkZGdoVg?oc=5\" target=\"_blank\"&gt;India signs agreements with UAE on defence, energy during Modi visit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-15T11:17:38.000Z",
           "score": 7
         },
         {
-          "title": "Modi likely to seek more energy supplies from UAE during short visit, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSTNkTm1CVWFlUmdlSnBvSHJOTzI1QVUxRWRYU1B6QWkxVzA4Rk81MXhpT1UtVmdINm91MllBQmdpcXhwVUxob21sOVBOLXJGeEx2WThiZVJJWnEwVlRWQS1YZzZVU2lwWTdXRjlQLXRBUGhqQ0FNeS1NXzdmbjR1WlpoTHRTa0Fua1dnb0NaWl9xdGhPOXNZc0QwUjJsMXZROEhXTmNyT1dKeXV4YVpXYVBKbEprbzdxYlVJaGtLZDlCdw?oc=5",
+          "title": "US Senate committee advances crypto bill in milestone for digital assets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOck5sSTR3MEhWMC1ydmZQSG1vMEdBdmpxT2lLUkY1Q0hoeDZTLVA5ajQyVUkzUDRJb0lUZ3JOYWhRV2oxWHNtb1dUaVlMYllTX2N6OTZSLVUwOGxfTlFsWUppS0hxMVRwNUxpR2x5MTg0dllRS0dQT2VMb1NvVGRzM1ZIZ3h2QlVjQUs2VGtyQW1wM3A0RjVEUjZ2RTY3NVZlSm56RFBIbmlzVUVIX1ZSNWN0SU83Y013Qnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSTNkTm1CVWFlUmdlSnBvSHJOTzI1QVUxRWRYU1B6QWkxVzA4Rk81MXhpT1UtVmdINm91MllBQmdpcXhwVUxob21sOVBOLXJGeEx2WThiZVJJWnEwVlRWQS1YZzZVU2lwWTdXRjlQLXRBUGhqQ0FNeS1NXzdmbjR1WlpoTHRTa0Fua1dnb0NaWl9xdGhPOXNZc0QwUjJsMXZROEhXTmNyT1dKeXV4YVpXYVBKbEprbzdxYlVJaGtLZDlCdw?oc=5\" target=\"_blank\"&gt;Modi likely to seek more energy supplies from UAE during short visit, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-14T09:35:16.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOck5sSTR3MEhWMC1ydmZQSG1vMEdBdmpxT2lLUkY1Q0hoeDZTLVA5ajQyVUkzUDRJb0lUZ3JOYWhRV2oxWHNtb1dUaVlMYllTX2N6OTZSLVUwOGxfTlFsWUppS0hxMVRwNUxpR2x5MTg0dllRS0dQT2VMb1NvVGRzM1ZIZ3h2QlVjQUs2VGtyQW1wM3A0RjVEUjZ2RTY3NVZlSm56RFBIbmlzVUVIX1ZSNWN0SU83Y013Qnc?oc=5\" target=\"_blank\"&gt;US Senate committee advances crypto bill in milestone for digital assets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-14T17:13:37.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 146,
-    "afterDedup": 138,
+    "totalArticlesScanned": 391,
+    "articlesLast24h": 151,
+    "afterDedup": 145,
     "feedsQueried": 19
   }
 }
