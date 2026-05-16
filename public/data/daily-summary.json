@@ -1,6 +1,6 @@
 {
   "date": "2026-05-16",
-  "generatedAt": "2026-05-16T11:53:02.655Z",
+  "generatedAt": "2026-05-16T17:56:16.833Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 16 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "DeBriefed 15 April 2026: Trump-Xi talk energy &#124; ‘Supercharged’ El Niño &#124; India’s first ‘heat lounges’",
-      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 15 April 2026: Trump-Xi talk energy | ‘Supercharged’ El Niño | India’s first ‘heat lounges’ appeared first on Carbon Brief.",
+      "headline": "Declare climate crisis a global public health emergency, experts tell WHO",
+      "summary": "&lt;p&gt;Exclusive: Commission says alert would trigger coordinated international response that could help avoid millions dying&lt;/p&gt;&lt;p&gt;The climate crisis should be declared a global public health emergency by the World Health Organization, or millions more people will die unnecessarily, leading international experts have said.&lt;/p&gt;&lt;p&gt;The independent &lt;a href=\"https://www.who.int/europe/groups/pan-european-commission-on-climate-and-health\"&gt;pan-European commission on cli",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "U.S. equity fund inflows at three week high on chipmaker demand - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPcG8wak5TVHhtTll2N04tSTlxUmhIZkFWajN6SDUzcUJXRWdQZFRfT2F1WURiOUxQeDc4bTYyZkQ1azFyTko5M05PQWZqVHJ2MGMxZjBldDIwNkd2NGYyLUU1ZXoyWGs1LVZWTFFkanc5WTdMVk9lcDRoX0U2dFRtb1N4cl8zdzVTaVFXYkVjLW1OV2ZNNEFlWU5BV2E2SnlVOXc?oc=5\" target=\"_blank\"&gt;U.S. equity fund inflows at three week high on chipmaker demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -50,14 +44,6 @@
           "score": 7
         },
         {
-          "title": "Trump says 20-year nuclear programme suspension by Iran would be enough",
-          "link": "https://www.bbc.com/news/articles/cgkpnnen5dzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US president says Tehran has to show \"real\" commitment to removing nuclear fuel and stopping uranium enrichment.",
-          "published": "2026-05-15T21:17:05.000Z",
-          "score": 7
-        },
-        {
           "title": "Caturus to start construction of major US LNG facility after securing $9.75 billion - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPbWdYRjh3WjR6SGRkUWYzUHJVdW9yRVRQMGRWMHdPUzhFUDBrSFctQUFSN2pBVGg0Q1c3QzU3RmJOSjVUbDBZZVFndFBnVlJzazZsMFJoWFhPYWNnZk5IaVBnYjk0ZWVHSXNSMVF3RXZETjdCVWdXMHBiWDdkNFF0MVlmUmhwRWpsdEN1QVlYWXpuaEMxMUFkeWk1U3hUN1V0UjNGNGhaT1hnZm9HcDVlS0pPSHJNRnJlUWpGRVBjNGczU3RscXc?oc=5",
           "source": "Reuters World (via Google News)",
@@ -80,22 +66,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "DeBriefed 15 April 2026: Trump-Xi talk energy &#124; ‘Supercharged’ El Niño &#124; India’s first ‘heat lounges’",
-          "link": "https://www.carbonbrief.org/debriefed-15-april-2026-trump-xi-talk-energy-supercharged-el-nino-indias-first-heat-lounges/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 15 April 2026: Trump-Xi talk energy | ‘Supercharged’ El Niño | India’s first ‘heat lounges’ appeared first on Carbon Brief.",
-          "published": "2026-05-15T13:50:06.000Z",
-          "score": 13
-        },
-        {
-          "title": "Analysis: UK no longer top UN Green Climate Fund donor after latest aid cut",
-          "link": "https://www.carbonbrief.org/analysis-uk-no-longer-top-un-green-climate-fund-donor-after-latest-aid-cut/",
-          "source": "Carbon Brief",
-          "description": "The UK is no longer the top contributor to the UN’s flagship Green Climate Fund... The post Analysis: UK no longer top UN Green Climate Fund donor after latest aid cut appeared first on Carbon Brief.",
-          "published": "2026-05-15T13:30:36.000Z",
-          "score": 13
-        },
-        {
           "title": "Declare climate crisis a global public health emergency, experts tell WHO",
           "link": "https://www.theguardian.com/environment/2026/may/16/who-should-declare-climate-crisis-global-public-health-emergency-experts-say",
           "source": "The Guardian - Climate",
@@ -104,19 +74,35 @@
           "score": 9
         },
         {
-          "title": "Germany news: Chancellor Merz says he wouldn&#039;t advise his kids to go to the US",
-          "link": "https://www.dw.com/en/germany-news-chancellor-merz-says-he-wouldn-t-advise-his-kids-to-go-to-the-us/live-77168830?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Chancellor Friedrich Merz said he wouldn&#039;t currently advise young Germans like his children to move to the US to study or work. He cited &quot;the social climate that has suddenly developed.&quot;",
-          "published": "2026-05-15T17:03:00.000Z",
-          "score": 4
+          "title": "Canada deepens Arctic defense ties with Nordics after Trump threats - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcGY3S3dpalJMdTJyYTBnaEFGQUFRRmVNQUk1VDdQdWxraWpSMHp0RHVWaXFfR09GRU1OTEVoQlllNnQ1UEN5WEE0bnZmRlM4SHdveFpvMWJMR0xDX0k1NUsxMTFNTGU4Zkc0RTRHYXpjRWNwLW5rcVoyd0F3V3hIR2ljUHRhY1ZxZXJtRlpQcDlQcTJjdXoxb0N1S3J2bmRKVXA3bUhRZnVOYVcxYUc2cGVKZnVOdjNEYlFWNVpEY0dYM1BvVFN1cll3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOcGY3S3dpalJMdTJyYTBnaEFGQUFRRmVNQUk1VDdQdWxraWpSMHp0RHVWaXFfR09GRU1OTEVoQlllNnQ1UEN5WEE0bnZmRlM4SHdveFpvMWJMR0xDX0k1NUsxMTFNTGU4Zkc0RTRHYXpjRWNwLW5rcVoyd0F3V3hIR2ljUHRhY1ZxZXJtRlpQcDlQcTJjdXoxb0N1S3J2bmRKVXA3bUhRZnVOYVcxYUc2cGVKZnVOdjNEYlFWNVpEY0dYM1BvVFN1cll3?oc=5\" target=\"_blank\"&gt;Canada deepens Arctic defense ties with Nordics after Trump threats&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-16T13:02:08.000Z",
+          "score": 7
         },
         {
-          "title": "Is it safe to swim at England's bathing sites?",
-          "link": "https://www.bbc.com/news/videos/c0q27gn78d1o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Carney announces Alberta carbon pricing deal that may pave path for new oil pipeline - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxOTzZSSGIzaDlMQkJmRnFRRnl6VnVZTEhsYmU2TzdTOVpabWlGR0MyM09nMG1uTzdxQXZuQ3VKYWJ5aFQ3NVkzazh0WmhpTGR2c3plZW9SSDVkX0t2elBtYjRjSHRVallkT05hSTUyS0RBNGZYUlVQMC1JbDlkQlpMb3lHUzlNV1A5N1ZrRWdFdnVId2tJWnNyRVlvSnZEajdCREV3N2M5eTljdFFCcko0ZFA4SWNIUWIzVi1iWmhraWl1Rk9XQ1ZHajJFMVY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxOTzZSSGIzaDlMQkJmRnFRRnl6VnVZTEhsYmU2TzdTOVpabWlGR0MyM09nMG1uTzdxQXZuQ3VKYWJ5aFQ3NVkzazh0WmhpTGR2c3plZW9SSDVkX0t2elBtYjRjSHRVallkT05hSTUyS0RBNGZYUlVQMC1JbDlkQlpMb3lHUzlNV1A5N1ZrRWdFdnVId2tJWnNyRVlvSnZEajdCREV3N2M5eTljdFFCcko0ZFA4SWNIUWIzVi1iWmhraWl1Rk9XQ1ZHajJFMVY?oc=5\" target=\"_blank\"&gt;Carney announces Alberta carbon pricing deal that may pave path for new oil pipeline&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
+          "published": "2026-05-15T21:32:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Maldives diver dies in operation to recover bodies of Italians from cave",
+          "link": "https://www.theguardian.com/world/2026/may/16/maldives-scuba-divers-italy-drowned-cave",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Mohamed Mahudhee suffered decompression sickness after searching for scuba divers in Vaavu Atoll and died in hospital&lt;/p&gt;&lt;p&gt;A Maldivian military diver has died during a high-risk operation to recover the bodies of four of the Italian scuba divers who drowned while exploring a deep underwater cave in the Maldives.&lt;/p&gt;&lt;p&gt;The diver suffered underwater decompression sickness after searching for the bodies of the Italians who, according to Italy’s foreign ministry, ha",
+          "published": "2026-05-16T11:45:36.000Z",
+          "score": 2
+        },
+        {
+          "title": "Rare plant makes comeback from brink of extinction",
+          "link": "https://www.bbc.com/news/articles/c4g0w899j5yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Signs warning people not to swim are in place at almost all of England's official inland river bathing sites due to concerns the water could be unsafe",
-          "published": "2026-05-15T15:41:17.000Z",
+          "description": "The Kentish milkwort has seen a seven-fold increase since conservation efforts in 2013.",
+          "published": "2026-05-16T06:18:48.000Z",
           "score": 2
         }
       ]
@@ -124,16 +110,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "U.S. equity fund inflows at three week high on chipmaker demand - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcG8wak5TVHhtTll2N04tSTlxUmhIZkFWajN6SDUzcUJXRWdQZFRfT2F1WURiOUxQeDc4bTYyZkQ1azFyTko5M05PQWZqVHJ2MGMxZjBldDIwNkd2NGYyLUU1ZXoyWGs1LVZWTFFkanc5WTdMVk9lcDRoX0U2dFRtb1N4cl8zdzVTaVFXYkVjLW1OV2ZNNEFlWU5BV2E2SnlVOXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPcG8wak5TVHhtTll2N04tSTlxUmhIZkFWajN6SDUzcUJXRWdQZFRfT2F1WURiOUxQeDc4bTYyZkQ1azFyTko5M05PQWZqVHJ2MGMxZjBldDIwNkd2NGYyLUU1ZXoyWGs1LVZWTFFkanc5WTdMVk9lcDRoX0U2dFRtb1N4cl8zdzVTaVFXYkVjLW1OV2ZNNEFlWU5BV2E2SnlVOXc?oc=5\" target=\"_blank\"&gt;U.S. equity fund inflows at three week high on chipmaker demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-15T14:05:43.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -143,16 +120,8 @@
           "title": "India news: PM Modi visits the Netherlands at start of Europe tour",
           "link": "https://www.dw.com/en/india-news-pm-modi-visits-the-netherlands-at-start-of-europe-tour/live-77178271?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Modi is looking to deepen India&#039;s trade agreements with its European partners and diversify beyond China-centric supply chains. Meanwhile, Indian farmers are once again clashing with the police. Follow DW.",
+          "description": "Modi is looking to deepen India&#039;s trade agreements with its European partners and diversify beyond China-centric supply chains. Meanwhile, Indian farmers are once again clashing with the police.",
           "published": "2026-05-16T06:25:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ukraine: Dozens of European countries sign up to special tribunal plan to prosecute Russia",
-          "link": "https://www.dw.com/en/ukraine-dozens-of-european-countries-sign-up-to-special-tribunal-plan-to-prosecute-russia/a-77174512?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "At talks in Moldova, more than 30 countries have said they will join a future special tribunal for Ukraine prosecuting Russia over its invasion. How the body will force Russians to stand trial is not clear.",
-          "published": "2026-05-15T15:35:00.000Z",
           "score": 8
         }
       ]
@@ -168,14 +137,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQcnhoTVUwY09tRnJua2hpTUJ0LXVEWjRRRVNlNTJTUVhJOE95N3U2NXRSQ3FZOUhWYlRmUG4tM2ZuUGRhdndzUGhqREdWOHZHZUlac2p0V3paU3Q1b1kwZmk0SFpsOEdVZlZSR3Jlb1VRRlZ2OHdhNXhrX1U1Z2xaaFVTenM3MGdUd2FQTm1BRFpHM2NGOTRLRTZDbWxISEZ6Z1BybEJsZGxTM3lPZUFVSVVuX1g4TXBUdWFIM2F1cEptRm9U?oc=5\" target=\"_blank\"&gt;US accuses Iraqi man of helping Iran-backed militia's plans for attacks in US, Europe​&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
           "published": "2026-05-16T03:24:00.000Z",
           "score": 8
-        },
-        {
-          "title": "India deepens defence, energy ties with UAE during PM Modi visit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDhoVjBDY3I3ZkJ1am9uYzZHaURtV3RwaUcyWHh1VzBMR0VuNGFjeVRDdEY0bzBUMmtqSS1QRHF2TVNpOFVsNXpPU2lhTkpQV20xd1FxMWxIdVRsTldPY203MDJ0dG1rbW5HTklFYllZMm5FT291T3JZMEFLVkNtQ0MtSzV3a2lHZ2x4UlhLRjJrVUVlZ0FMNHpSUUg4WkpwMkZXMlBCSEQ1blZkZGdoVg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOZDhoVjBDY3I3ZkJ1am9uYzZHaURtV3RwaUcyWHh1VzBMR0VuNGFjeVRDdEY0bzBUMmtqSS1QRHF2TVNpOFVsNXpPU2lhTkpQV20xd1FxMWxIdVRsTldPY203MDJ0dG1rbW5HTklFYllZMm5FT291T3JZMEFLVkNtQ0MtSzV3a2lHZ2x4UlhLRjJrVUVlZ0FMNHpSUUg4WkpwMkZXMlBCSEQ1blZkZGdoVg?oc=5\" target=\"_blank\"&gt;India deepens defence, energy ties with UAE during PM Modi visit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-15T13:42:31.000Z",
-          "score": 7
         },
         {
           "title": "American Bar Association votes to eliminate DEI rule for law schools - Reuters",
@@ -194,20 +155,28 @@
           "score": 4
         },
         {
-          "title": "Senior IS leader killed in joint operation, US and Nigeria say",
-          "link": "https://www.bbc.com/news/articles/cy72p2kpd03o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Middle East updates: Big crowds at Nakba Day rally in London",
+          "link": "https://www.dw.com/en/middle-east-updates-big-crowds-at-nakba-day-rally-in-london/live-77179563?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Big crowds have gathered in London to honor Nakba Day. Meanwhile, Iran&#039;s state TV reports that European countries are discussing the safe transit of ships through the Strait of Hormuz.",
+          "published": "2026-05-16T14:50:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Taiwan insists it is independent after Trump warning",
+          "link": "https://www.bbc.com/news/articles/cx2132w81jqo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "President Donald Trump said the operation eliminated \"the most active terrorist in the world\", Abu-Bilal al-Minuki.",
-          "published": "2026-05-16T11:44:54.000Z",
+          "description": "Fresh from his summit in Beijing, the US president warned against a formal declaration of independence by the island.",
+          "published": "2026-05-16T17:01:53.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 387,
-    "articlesLast24h": 146,
-    "afterDedup": 144,
+    "totalArticlesScanned": 386,
+    "articlesLast24h": 139,
+    "afterDedup": 137,
     "feedsQueried": 19
   }
 }
