@@ -1,6 +1,6 @@
 {
   "date": "2026-05-17",
-  "generatedAt": "2026-05-17T12:04:16.272Z",
+  "generatedAt": "2026-05-17T17:58:57.540Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 17 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -15,12 +15,6 @@
       "summary": "&lt;p&gt;The 2022 World Cup failed to deliver on its environmental promises. From air travel emissions to heat-related dangers, the 2026 edition will be even worse&lt;/p&gt;&lt;p&gt;Soccer fans are increasingly watching preparations for the 2026 World Cup through their fingers. The most popular sporting event on the planet is awash in controversy, whether it’s the eye-watering &lt;a href=\"https://www.theguardian.com/football/2026/may/11/world-cup-2026-ticket-prices-fifa-sport-politics\"&gt;ticket",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "BlackRock weighs multibillion-dollar investment in SpaceX IPO, the Information reports - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPLUVKcGZ2eWREVzY2eEFuckJSMjB2dWNIeGVFSzRNd0VKQU5qcklYb2Zyb1dIYnRVMTN1TDdtZFRiXzJyR3g5NHp6UmRYbmMwVU1JcE9JRnNSUU4wSHBGekc3RENFSjVOakFjLWJ6NzBBSE5yalFHU0x5aEl6eVpNSjZtaFZmaFFpUDBiLVdSZkQtaWhWak40UTl0Rk5PckVwbTRJbERJMFdfaXRTSzJMYmxwMU55Uk9fOE05d2VlVndzSm9RbmNXWS1lM25FdTZMSzBicFhhaXBEVThp?oc=5\" target=\"_blank\"&gt;BlackRock weighs multibillion-dollar investment in SpaceX IPO, the Information reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font ",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -42,6 +36,14 @@
           "score": 19
         },
         {
+          "title": "UAE reports strike near Abu Dhabi nuclear power plant",
+          "link": "https://www.bbc.com/news/articles/cwy27pkj1l1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The country is investigating the source of the strike, which it calls a \"dangerous escalation\".",
+          "published": "2026-05-17T16:25:38.000Z",
+          "score": 7
+        },
+        {
           "title": "German transport minister promotes green hydrogen in Japan",
           "link": "https://www.dw.com/en/german-transport-minister-promotes-green-hydrogen-in-japan/a-77182456?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -50,20 +52,20 @@
           "score": 7
         },
         {
-          "title": "Middle East: Drone strike sparks fire at UAE nuclear plant",
-          "link": "https://www.dw.com/en/middle-east-drone-strike-sparks-fire-at-uae-nuclear-plant/live-77179563?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "No party has claimed responsibility for the strike on the Barakah nuclear power plant, but Iran has repeatedly launched attacks on the UAE since the start of the war. Follow DW for more.",
-          "published": "2026-05-16T14:50:00.000Z",
+          "title": "Di Giannantonio wins crash-marred Catalan GP after double red flag drama - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNEtNbThEOFcwanlPRkQ0Z2Q2a1FfMjFyWWYwZU1CM3Q4QzlxaWhEQmY5TXZoNmk4VTNGWnpJXzRSREtoZVFKT20yVjZwclRERm5OV1U4TFMxeDBRUDVCakx5aHJfTlU0UGI2S2FZV2MtQnJFTHpJYTVSaHNpUGc3eDB1cXh6RHZXeWlWWmZUNWRabmFNZFFLMzJkSHRta2ktWm9BQUl5Nmw5UFpMTU83X1BnMFVTdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQNEtNbThEOFcwanlPRkQ0Z2Q2a1FfMjFyWWYwZU1CM3Q4QzlxaWhEQmY5TXZoNmk4VTNGWnpJXzRSREtoZVFKT20yVjZwclRERm5OV1U4TFMxeDBRUDVCakx5aHJfTlU0UGI2S2FZV2MtQnJFTHpJYTVSaHNpUGc3eDB1cXh6RHZXeWlWWmZUNWRabmFNZFFLMzJkSHRta2ktWm9BQUl5Nmw5UFpMTU83X1BnMFVTdw?oc=5\" target=\"_blank\"&gt;Di Giannantonio wins crash-marred Catalan GP after double red flag drama&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-17T16:50:48.000Z",
           "score": 7
         },
         {
-          "title": "India news: CNG gas price hiked in Delhi NCR amid Iran war fallout",
-          "link": "https://www.dw.com/en/india-news-cng-gas-price-hiked-in-delhi-ncr-amid-iran-war-fallout/live-77178271?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The price of CNG has increased in Delhi and the surrounding region for the second time in two days, as India grapples with the economic impact of the Iran war. Meanwhile, Modi is set to arrive in Sweden. DW has more.",
-          "published": "2026-05-17T06:06:00.000Z",
-          "score": 2
+          "title": "The American epoch of oil is collapsing. What comes next could be ugly | Jonathan Watts",
+          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/may/17/america-china-energy-oil-renewables",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;China is dominating the energy transition with astonishing result, while fossil fuel fascists in the US try to turn back the clock&lt;/p&gt;&lt;p&gt;“Farewell,” the flag-waving Chinese children chanted to Donald Trump as he strolled along the red carpet back to Air Force One at the end of his summit with Xi Jinping in Beijing.&lt;/p&gt;&lt;p&gt;The US leader &lt;a href=\"https://www.cnbc.com/2026/05/15/trump-xi-summit-energy-purchase-china-iran-war-oil-shock-.html\"&gt;claimed&lt;/a&gt; h",
+          "published": "2026-05-17T13:00:41.000Z",
+          "score": 4
         }
       ]
     },
@@ -80,12 +82,12 @@
           "score": 7
         },
         {
-          "title": "Canada deepens Arctic defense ties with Nordics after Trump threats - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOcGY3S3dpalJMdTJyYTBnaEFGQUFRRmVNQUk1VDdQdWxraWpSMHp0RHVWaXFfR09GRU1OTEVoQlllNnQ1UEN5WEE0bnZmRlM4SHdveFpvMWJMR0xDX0k1NUsxMTFNTGU4Zkc0RTRHYXpjRWNwLW5rcVoyd0F3V3hIR2ljUHRhY1ZxZXJtRlpQcDlQcTJjdXoxb0N1S3J2bmRKVXA3bUhRZnVOYVcxYUc2cGVKZnVOdjNEYlFWNVpEY0dYM1BvVFN1cll3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOcGY3S3dpalJMdTJyYTBnaEFGQUFRRmVNQUk1VDdQdWxraWpSMHp0RHVWaXFfR09GRU1OTEVoQlllNnQ1UEN5WEE0bnZmRlM4SHdveFpvMWJMR0xDX0k1NUsxMTFNTGU4Zkc0RTRHYXpjRWNwLW5rcVoyd0F3V3hIR2ljUHRhY1ZxZXJtRlpQcDlQcTJjdXoxb0N1S3J2bmRKVXA3bUhRZnVOYVcxYUc2cGVKZnVOdjNEYlFWNVpEY0dYM1BvVFN1cll3?oc=5\" target=\"_blank\"&gt;Canada deepens Arctic defense ties with Nordics after Trump threats&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-16T13:02:08.000Z",
-          "score": 7
+          "title": "Experts sound alarm as North America’s bees start swarm season unusually early",
+          "link": "https://www.theguardian.com/environment/2026/may/17/north-america-bees-early-swarm-season",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;After record losses last year, beekeepers report a warm winter has led to bees ‘waking up earlier’ this year&lt;/p&gt;&lt;p&gt;After a series of &lt;a href=\"https://www.theguardian.com/us-news/2026/apr/09/hottest-march-on-record\"&gt;record-breaking &lt;/a&gt;US &lt;a href=\"https://www.theguardian.com/us-news/2026/mar/20/heatwave-us-west-climate-crisis\"&gt;heatwaves&lt;/a&gt;, the 2026 bee swarm season in North America has started 17 days earlier than last year, pushing beekeepers to ada",
+          "published": "2026-05-17T12:00:38.000Z",
+          "score": 4
         },
         {
           "title": "‘It’s no longer exceptional’: Karachi struggles under brutal new reality of extreme heat",
@@ -100,16 +102,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "BlackRock weighs multibillion-dollar investment in SpaceX IPO, the Information reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPLUVKcGZ2eWREVzY2eEFuckJSMjB2dWNIeGVFSzRNd0VKQU5qcklYb2Zyb1dIYnRVMTN1TDdtZFRiXzJyR3g5NHp6UmRYbmMwVU1JcE9JRnNSUU4wSHBGekc3RENFSjVOakFjLWJ6NzBBSE5yalFHU0x5aEl6eVpNSjZtaFZmaFFpUDBiLVdSZkQtaWhWak40UTl0Rk5PckVwbTRJbERJMFdfaXRTSzJMYmxwMU55Uk9fOE05d2VlVndzSm9RbmNXWS1lM25FdTZMSzBicFhhaXBEVThp?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi3AFBVV95cUxPLUVKcGZ2eWREVzY2eEFuckJSMjB2dWNIeGVFSzRNd0VKQU5qcklYb2Zyb1dIYnRVMTN1TDdtZFRiXzJyR3g5NHp6UmRYbmMwVU1JcE9JRnNSUU4wSHBGekc3RENFSjVOakFjLWJ6NzBBSE5yalFHU0x5aEl6eVpNSjZtaFZmaFFpUDBiLVdSZkQtaWhWak40UTl0Rk5PckVwbTRJbERJMFdfaXRTSzJMYmxwMU55Uk9fOE05d2VlVndzSm9RbmNXWS1lM25FdTZMSzBicFhhaXBEVThp?oc=5\" target=\"_blank\"&gt;BlackRock weighs multibillion-dollar investment in SpaceX IPO, the Information reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font ",
-          "published": "2026-05-16T17:18:26.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -125,15 +118,23 @@
           "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNW5tcU9NVFZyNVNYelR0a1Z1ckJhaGYySzlSMWlIckNSZm1MMjhtaFZBMlJhOThCUW94aVBxdmdHdENmT1d0SURCLUFLX0dLaEVHX3RRNTBRSXJ2N1p4MFpWS2o3Zl96MzF0YjR2WVl4SV9acXdiUmJqNUdZVjVYdWhvWEtlaE01ZjlQOHRzUy1XZ2V2cFhybE1VdFJSTllXLW5kUm8tSEFjaC01emxHOWd3b3JZU0xVZS1LU0d4QjBnUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNW5tcU9NVFZyNVNYelR0a1Z1ckJhaGYySzlSMWlIckNSZm1MMjhtaFZBMlJhOThCUW94aVBxdmdHdENmT1d0SURCLUFLX0dLaEVHX3RRNTBRSXJ2N1p4MFpWS2o3Zl96MzF0YjR2WVl4SV9acXdiUmJqNUdZVjVYdWhvWEtlaE01ZjlQOHRzUy1XZ2V2cFhybE1VdFJSTllXLW5kUm8tSEFjaC01emxHOWd3b3JZU0xVZS1LU0d4QjBnUQ?oc=5\" target=\"_blank\"&gt;Two ex-Malaysian ministers to vacate parliament seats, join new party&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-17T09:36:29.000Z",
+          "published": "2026-05-17T11:43:34.000Z",
           "score": 8
         },
         {
-          "title": "WHO declares Ebola outbreak in DR Congo a global health emergency",
+          "title": "New Epstein victims turn up in French probe — prosecutor",
+          "link": "https://www.dw.com/en/new-epstein-victims-turn-up-in-french-probe-prosecutor/a-77190062?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "France is pursuing its own investigation into the Epstein affair, looking at potential crimes committed in the EU country or involving French nationals tied to the US sex offender.",
+          "published": "2026-05-17T17:21:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "WHO declares Ebola outbreak in DR Congo an international emergency",
           "link": "https://www.bbc.com/news/articles/c2l2p0wwzzdo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The agency added that the outbreak, with around 246 cases and 80 deaths, does not meet the criteria of pandemic emergency.",
-          "published": "2026-05-17T09:26:53.000Z",
+          "published": "2026-05-17T13:00:26.000Z",
           "score": 2
         },
         {
@@ -141,7 +142,7 @@
           "link": "https://www.bbc.com/news/articles/c5ye480kxpmo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Ukraine's president says the strikes are a \"justified\" response to deadly Russian attacks on Ukrainian cities.",
-          "published": "2026-05-17T11:28:02.000Z",
+          "published": "2026-05-17T14:18:23.000Z",
           "score": 2
         },
         {
@@ -149,24 +150,16 @@
           "link": "https://www.bbc.com/news/articles/cyv28pd4n22o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Eight people were injured, four seriously, before passers-by gave chase and stopped the man.",
-          "published": "2026-05-17T08:33:37.000Z",
-          "score": 2
-        },
-        {
-          "title": "Hezbollah drone strike videos show evolving tactics against Israel",
-          "link": "https://www.bbc.com/news/articles/c1j2zwe9g5no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "BBC Verify has examined dozens of videos of fibre-optic drone attacks carried out by the Lebanese armed group.",
-          "published": "2026-05-16T23:10:19.000Z",
+          "published": "2026-05-17T13:57:56.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 385,
-    "articlesLast24h": 137,
-    "afterDedup": 130,
+    "totalArticlesScanned": 386,
+    "articlesLast24h": 131,
+    "afterDedup": 117,
     "feedsQueried": 19
   }
 }
