@@ -1,6 +1,6 @@
 {
   "date": "2026-05-18",
-  "generatedAt": "2026-05-18T08:48:30.397Z",
+  "generatedAt": "2026-05-18T14:34:05.765Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 18 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "‘Green card for the planet’? Fifa’s World Cup is on pace to be a climate catastrophe",
-      "summary": "&lt;p&gt;The 2022 World Cup failed to deliver on its environmental promises. From air travel emissions to heat-related dangers, the 2026 edition will be even worse&lt;/p&gt;&lt;p&gt;Soccer fans are increasingly watching preparations for the 2026 World Cup through their fingers. The most popular sporting event on the planet is awash in controversy, whether it’s the eye-watering &lt;a href=\"https://www.theguardian.com/football/2026/may/11/world-cup-2026-ticket-prices-fifa-sport-politics\"&gt;ticket",
+      "headline": "Commission proposes €144 million from the European Union Solidarity Fund to help Spain, Romania, and Cyprus recover from climate disasters",
+      "summary": "European Commission Press release Brussels, 18 May 2026 The European Commission has proposed the mobilisation of €144 million from the European Union Solidarity Fund (EUSF) to aid Spain, Romania and Cyprus.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "AMENDMENTS 39 - 178 - Draft report Establishing the Temporary Decarbonisation Fund - PE786.795v01-00",
-      "summary": "AMENDMENTS 39 - 178 - Draft report Establishing the Temporary Decarbonisation Fund&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pascal Canfin&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "headline": "AMENDMENTS 179 - 372 - Draft report Establishing the Temporary Decarbonisation Fund - PE788.817v02-00",
+      "summary": "AMENDMENTS 179 - 372 - Draft report Establishing the Temporary Decarbonisation Fund&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pascal Canfin&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -42,6 +42,14 @@
           "score": 19
         },
         {
+          "title": "The Iran war reminds us: we’ll never be energy-independent with fossil fuels | Lloyd Doggett and Michael Shank",
+          "link": "https://www.theguardian.com/commentisfree/2026/may/18/iran-war-energy-independence-fossil-fuels",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Energy security comes from using local, renewable resources to power, heat and cool communities, as Ukraine is doing&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt;’s unjustified war on Iran and the resulting global fuel crisis is a continuing reminder that true energy security and independence will continue to elude us so long as we remain dependent on fossil fuels.&lt;/p&gt;&lt;p&gt;Whether it’s wars over oil and gas resource ac",
+          "published": "2026-05-18T10:00:54.000Z",
+          "score": 7
+        },
+        {
           "title": "UAE reports strike near Abu Dhabi nuclear power plant",
           "link": "https://www.bbc.com/news/articles/cwy27pkj1l1o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -50,27 +58,19 @@
           "score": 7
         },
         {
-          "title": "Belarus holds nuclear weapons drills, defence ministry says - Reuters",
+          "title": "Belarus holds nuclear weapons drills - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbEF6OWhNTklpVG9Scy1PdmNmNEJ4Vk94Z18yb2xLX3NLZXFRektNMmJqbk5iZDdpa0Z2TDFnd2t0VEFsQ05SdC01cTFyQ3ZRYXluemdsRkpCSF9UU3VZcE8zWXZnUDZHQ2F5UWxFeER2TzNEZk11OVFxWEdnNnNxeHhhNEo1ME9VbkRkRktka24yMzdTVDVfRGlzWlJHWDVEbVdQVm1vRUdxVm8?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbEF6OWhNTklpVG9Scy1PdmNmNEJ4Vk94Z18yb2xLX3NLZXFRektNMmJqbk5iZDdpa0Z2TDFnd2t0VEFsQ05SdC01cTFyQ3ZRYXluemdsRkpCSF9UU3VZcE8zWXZnUDZHQ2F5UWxFeER2TzNEZk11OVFxWEdnNnNxeHhhNEo1ME9VbkRkRktka24yMzdTVDVfRGlzWlJHWDVEbVdQVm1vRUdxVm8?oc=5\" target=\"_blank\"&gt;Belarus holds nuclear weapons drills, defence ministry says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T07:46:32.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbEF6OWhNTklpVG9Scy1PdmNmNEJ4Vk94Z18yb2xLX3NLZXFRektNMmJqbk5iZDdpa0Z2TDFnd2t0VEFsQ05SdC01cTFyQ3ZRYXluemdsRkpCSF9UU3VZcE8zWXZnUDZHQ2F5UWxFeER2TzNEZk11OVFxWEdnNnNxeHhhNEo1ME9VbkRkRktka24yMzdTVDVfRGlzWlJHWDVEbVdQVm1vRUdxVm8?oc=5\" target=\"_blank\"&gt;Belarus holds nuclear weapons drills&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-18T08:14:47.000Z",
           "score": 7
         },
         {
-          "title": "Oil touches two-week high after drone attack on UAE nuclear power plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOTlA3eGttQ0l5dDVlN1RaVmNDTmtlWHFjc25RdEppWm1XbUFjY3cxZ1ZYZXlxWnhoTTNRQ1pHM1Vlb08zTGEtRU8xN1ZycGZPLTZaS3AwaXZMektUMERFZHpxSk1iWWZBeUs2X1A3bzRmV3dPQW1QeVVHOGhTbXJ6LTNiR2t3akthaDE1NWhXMEZDQ2dpOU1iWjZpTFpmQzEya3B2WWtrVWg0Ny1kM2p2WEsyQkt0MVU?oc=5",
+          "title": "Australia union says workers to strike at Inpex LNG facility from May 27 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQeDZ5YXFReExCdnVTeWJMUGg2R0VBeEJjVXBSVUdCWDdGSEduYVJGVUFscDV4ZVRON2l4b2dyOTdMVUVrdDdnQTl6REdTVnRScGJBSVRIS05tUkNGaGxSX1ZzWUZxQW5rTVNFb3p6SG16d1hyMnV3LVYxR3hJSjBWNGtzdHdQOTNncTdwQjF1THFIeEhjalBxazF6SXZnWDJQTzdVcVhKaGRCaXNKV2VId3QtM2ZaLU9LYUlxRA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOTlA3eGttQ0l5dDVlN1RaVmNDTmtlWHFjc25RdEppWm1XbUFjY3cxZ1ZYZXlxWnhoTTNRQ1pHM1Vlb08zTGEtRU8xN1ZycGZPLTZaS3AwaXZMektUMERFZHpxSk1iWWZBeUs2X1A3bzRmV3dPQW1QeVVHOGhTbXJ6LTNiR2t3akthaDE1NWhXMEZDQ2dpOU1iWjZpTFpmQzEya3B2WWtrVWg0Ny1kM2p2WEsyQkt0MVU?oc=5\" target=\"_blank\"&gt;Oil touches two-week high after drone attack on UAE nuclear power plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-17T22:11:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Style from the Cannes red carpet - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE10Vlc0WmFZRGNrRms5aEhBdzlVT1lJakVCa1hfVk1pYnpubmJER2s0RnFwSzA1RFA0QUQ0cmJkNlp1Wm5VZkJjdTRFd3FmMUJHeDBmOEc2RDh0QTdfZHdISGstOHh2RDQ5UzRRcDVPYi1IQkpadTdn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMid0FVX3lxTE10Vlc0WmFZRGNrRms5aEhBdzlVT1lJakVCa1hfVk1pYnpubmJER2s0RnFwSzA1RFA0QUQ0cmJkNlp1Wm5VZkJjdTRFd3FmMUJHeDBmOEc2RDh0QTdfZHdISGstOHh2RDQ5UzRRcDVPYi1IQkpadTdn?oc=5\" target=\"_blank\"&gt;Style from the Cannes red carpet&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-17T20:44:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQeDZ5YXFReExCdnVTeWJMUGg2R0VBeEJjVXBSVUdCWDdGSEduYVJGVUFscDV4ZVRON2l4b2dyOTdMVUVrdDdnQTl6REdTVnRScGJBSVRIS05tUkNGaGxSX1ZzWUZxQW5rTVNFb3p6SG16d1hyMnV3LVYxR3hJSjBWNGtzdHdQOTNncTdwQjF1THFIeEhjalBxazF6SXZnWDJQTzdVcVhKaGRCaXNKV2VId3QtM2ZaLU9LYUlxRA?oc=5\" target=\"_blank\"&gt;Australia union says workers to strike at Inpex LNG facility from May 27&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-18T06:16:41.000Z",
           "score": 7
         }
       ]
@@ -80,44 +80,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "‘Green card for the planet’? Fifa’s World Cup is on pace to be a climate catastrophe",
-          "link": "https://www.theguardian.com/football/2026/may/17/world-cup-climate-change",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The 2022 World Cup failed to deliver on its environmental promises. From air travel emissions to heat-related dangers, the 2026 edition will be even worse&lt;/p&gt;&lt;p&gt;Soccer fans are increasingly watching preparations for the 2026 World Cup through their fingers. The most popular sporting event on the planet is awash in controversy, whether it’s the eye-watering &lt;a href=\"https://www.theguardian.com/football/2026/may/11/world-cup-2026-ticket-prices-fifa-sport-politics\"&gt;ticket",
-          "published": "2026-05-17T10:00:35.000Z",
+          "title": "Commission proposes €144 million from the European Union Solidarity Fund to help Spain, Romania, and Cyprus recover from climate disasters",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1092",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 18 May 2026 The European Commission has proposed the mobilisation of €144 million from the European Union Solidarity Fund (EUSF) to aid Spain, Romania and Cyprus.",
+          "published": "2026-05-18T09:07:13.000Z",
+          "score": 23
+        },
+        {
+          "title": "Daily News 18 / 05 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1094",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 18 May 2026 Commission proposes €144 million from the European Union Solidarity Fund to help Spain, Romania, and Cyprus recover from climate disasters \r\nThe European Commiss...",
+          "published": "2026-05-18T09:54:48.000Z",
+          "score": 16
+        },
+        {
+          "title": "Factcheck: US and Iran are world’s only major emitters without net-zero targets",
+          "link": "https://www.carbonbrief.org/factcheck-us-and-iran-are-worlds-only-major-emitters-without-net-zero-targets/",
+          "source": "Carbon Brief",
+          "description": "Many right-leaning figures have tried to push the idea that the UK is an outlier... The post Factcheck: US and Iran are world’s only major emitters without net-zero targets appeared first on Carbon Brief.",
+          "published": "2026-05-18T14:21:04.000Z",
+          "score": 13
+        },
+        {
+          "title": "Drafting of the next IPCC assessment of climate impacts, adaptation and vulnerabilities gets underway as authors gather in Nassau",
+          "link": "https://www.ipcc.ch/2026/05/18/pr-wgii-ar7-lamii-nassau/",
+          "source": "IPCC",
+          "description": "Over 200 authors from the IPCC’s Working Group II gather in the Bahamas to work on the draft of the next scientific report assessing climate impacts, adaptation and vulnerabilities. NASSAU, May 18 —The authors of the Intergovernmental Panel on Climate Change (IPCC) working on the next Working Group II report which assesses the latest science [&#8230;]",
+          "published": "2026-05-18T13:40:12.000Z",
+          "score": 11
+        },
+        {
+          "title": "Germany news: 2030 climate goals in danger, experts warn",
+          "link": "https://www.dw.com/en/germany-news-2030-climate-goals-in-danger-experts-warn/live-77193205?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Headlines in Germany this Monday include higher than planned CO2 emissions, plans to ramp up civil defense measures, and Chancellor Merz meeting euroskeptic Bulgarian Premier Rumen Radev. DW has more.",
+          "published": "2026-05-18T10:30:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Rai's knockout punch in Rocky's backyard ends century-long English drought at PGA Championship - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPS01ZZEpzSkF2aGpUd2ZWbVpMSGZvSURSVDk5Z0JDdzQ3RXJIcy1UX3ZZOWsydGFITWp3X3pYRURrTndUX2l3TnZ0T0RBV1Y0V2lyeTZIOThSV3oxaFJobmFUUkdEOWNBQ0dYeGR4R1N1azNSMEZaWjEwMUcwM0RxbjFUM3oyU2Vac1ItNjZqOEJIQ19ITFFGUWJxR2JTLW1WcExKTWZ2elV2MWliLTBhbllaY0hfTC1rMFdr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPS01ZZEpzSkF2aGpUd2ZWbVpMSGZvSURSVDk5Z0JDdzQ3RXJIcy1UX3ZZOWsydGFITWp3X3pYRURrTndUX2l3TnZ0T0RBV1Y0V2lyeTZIOThSV3oxaFJobmFUUkdEOWNBQ0dYeGR4R1N1azNSMEZaWjEwMUcwM0RxbjFUM3oyU2Vac1ItNjZqOEJIQ19ITFFGUWJxR2JTLW1WcExKTWZ2elV2MWliLTBhbllaY0hfTC1rMFdr?oc=5\" target=\"_blank\"&gt;Rai's knockout punch in Rocky's backyard ends century-long English drought at PGA Championship&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-05-17T17:56:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Experts sound alarm as North America’s bees start swarm season unusually early",
-          "link": "https://www.theguardian.com/environment/2026/may/17/north-america-bees-early-swarm-season",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;After record losses last year, beekeepers report a warm winter has led to bees ‘waking up earlier’ this year&lt;/p&gt;&lt;p&gt;After a series of &lt;a href=\"https://www.theguardian.com/us-news/2026/apr/09/hottest-march-on-record\"&gt;record-breaking &lt;/a&gt;US &lt;a href=\"https://www.theguardian.com/us-news/2026/mar/20/heatwave-us-west-climate-crisis\"&gt;heatwaves&lt;/a&gt;, the 2026 bee swarm season in North America has started 17 days earlier than last year, pushing beekeepers to ada",
-          "published": "2026-05-17T12:00:38.000Z",
-          "score": 4
-        },
-        {
-          "title": "Waste carrier licences to be tightened as part of illegal dumping crackdown",
-          "link": "https://www.bbc.com/news/articles/c707jlxwx38o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The proposed changes come after a cow named Beau Vine got approved for a waste removal licence.",
-          "published": "2026-05-18T01:11:02.000Z",
-          "score": 2
-        },
-        {
-          "title": "Blue Flags awarded but one beach misses out",
-          "link": "https://www.bbc.com/news/articles/c042qqqg11no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Keep Britain Tidy awards six Blue Flags but Avon Beach misses out because of a slip-up.",
-          "published": "2026-05-18T05:21:30.000Z",
-          "score": 2
         }
       ]
     },
@@ -126,11 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "AMENDMENTS 39 - 178 - Draft report Establishing the Temporary Decarbonisation Fund - PE786.795v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-786795_EN.pdf",
+          "title": "AMENDMENTS 179 - 372 - Draft report Establishing the Temporary Decarbonisation Fund - PE788.817v02-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788817_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 39 - 178 - Draft report Establishing the Temporary Decarbonisation Fund&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pascal Canfin&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-18T07:33:05.000Z",
+          "description": "AMENDMENTS 179 - 372 - Draft report Establishing the Temporary Decarbonisation Fund&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pascal Canfin&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-18T09:20:14.000Z",
           "score": 18
         }
       ]
@@ -138,12 +138,29 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Latest news - ENVI Committee meetings - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20200226CAL09791",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday, 1 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 2 June 2026 from 9.00 to 12.30 and from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Monday, 15 June 2026 from 19.00 to 21.00 (Strasbourg)&lt;/li&gt;&lt;li&gt;Monday, 22 June 2026 from 15.00 to 18.30 (Brussels)&lt;/li&gt;&lt;li&gt;Tuesday, 23 June 2026 from 9.00 to 12.",
+          "published": "2026-05-18T09:38:39.000Z",
+          "score": 18
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Germany&#039;s crisis-hit chemical industry seeks revival",
+          "link": "https://www.dw.com/en/germany-s-crisis-hit-chemical-industry-seeks-revival/a-77166282?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Hit by high energy costs and regulation, Germany&#039;s chemical companies are scaling back production at home while expanding abroad. Can the trend be reversed?",
+          "published": "2026-05-18T10:20:00.000Z",
+          "score": 8
+        },
         {
           "title": "EU to force companies to buy components from non-Chinese suppliers, FT reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNQWJCZjhjZFBkS1VfNWNRVGs3b1lpTlZzTEJ6eEhLLUs0bDJKbmZFWTZUMWQ5YlVpREh6X3ZCLS0wQjdiZUpNOWUwN096UUNSR3ZXNVZ2M2F0Y09veF9NNlJpYzRoeWstd016cWNocjF1SkZTVEtDREdXSU5QQW90UDhCd0pKWG14QU5VTDBHNTVfcW5TbkU5eDVibGlDZV9PV01tblJ4dVR2eE42UGpmVmkzWVI?oc=5",
@@ -153,44 +170,36 @@
           "score": 8
         },
         {
-          "title": "Two ex-Malaysian ministers to vacate parliament seats, join new party - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNW5tcU9NVFZyNVNYelR0a1Z1ckJhaGYySzlSMWlIckNSZm1MMjhtaFZBMlJhOThCUW94aVBxdmdHdENmT1d0SURCLUFLX0dLaEVHX3RRNTBRSXJ2N1p4MFpWS2o3Zl96MzF0YjR2WVl4SV9acXdiUmJqNUdZVjVYdWhvWEtlaE01ZjlQOHRzUy1XZ2V2cFhybE1VdFJSTllXLW5kUm8tSEFjaC01emxHOWd3b3JZU0xVZS1LU0d4QjBnUQ?oc=5",
+          "title": "Norway joins EU's Baltic Sea Region cooperation amid greater security focus - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNeVVlYXBDclM3MzhKeUk2UzVPSmU1UEE1U1NuRkRPak1IUks4UXc0TWIyNUpsSDltYVBWTElVQVN5eFVlVDFtazVVYVRpR2xQWmhDd1BZLW9RdUZqYUpZMGVpWmFWRUtFSEFJNTdxdW9xSHhrb1RranNZUXY1RGdzV24yWDZCVTdIUk8yTmtGbWt4RTI4YWFHdmZSeDVFMzJFLWQzM0tNWUFTTzczQ1NSY2IxUzBaNTA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNNW5tcU9NVFZyNVNYelR0a1Z1ckJhaGYySzlSMWlIckNSZm1MMjhtaFZBMlJhOThCUW94aVBxdmdHdENmT1d0SURCLUFLX0dLaEVHX3RRNTBRSXJ2N1p4MFpWS2o3Zl96MzF0YjR2WVl4SV9acXdiUmJqNUdZVjVYdWhvWEtlaE01ZjlQOHRzUy1XZ2V2cFhybE1VdFJSTllXLW5kUm8tSEFjaC01emxHOWd3b3JZU0xVZS1LU0d4QjBnUQ?oc=5\" target=\"_blank\"&gt;Two ex-Malaysian ministers to vacate parliament seats, join new party&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-17T11:43:34.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNeVVlYXBDclM3MzhKeUk2UzVPSmU1UEE1U1NuRkRPak1IUks4UXc0TWIyNUpsSDltYVBWTElVQVN5eFVlVDFtazVVYVRpR2xQWmhDd1BZLW9RdUZqYUpZMGVpWmFWRUtFSEFJNTdxdW9xSHhrb1RranNZUXY1RGdzV24yWDZCVTdIUk8yTmtGbWt4RTI4YWFHdmZSeDVFMzJFLWQzM0tNWUFTTzczQ1NSY2IxUzBaNTA?oc=5\" target=\"_blank\"&gt;Norway joins EU's Baltic Sea Region cooperation amid greater security focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-18T08:19:29.000Z",
           "score": 8
         },
         {
-          "title": "Revised Iranian proposal to end war shared with US, Pakistani source says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOakpsZkRTa3dDcTltOXJiUktHZEJsQTNYWlppMzl3Q3lzV01WN01FVC1xaEdfUVdndHV3UTgzc2JlSTQzUmFMR0ZPX2E5b1pRaEQ2Tk9PdEtFTmFCcWtJdTRZNUo2cFFkYWViOWppUGlreWF5SEpVUnFEbG1OMkdZdWZXVk54cTM1eUtVMnBjSFJuWjdlNXpvdDR1WG8zSERTZS14bXd2VWRGWmU4ZlJuTU5pRHo4QWE3WlNhS2pYVGxmdw?oc=5",
+          "title": "European shares fall as inflation worries grip markets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWjVXY1Q4OFhURzh6Ql9fLVd2eWk2b1pXNEU0MzNyMDFuWUM1LW95YlUzLVROU0lkMHEyT19WcnJkUUtVZXJlQ3BRaEtrRXdlZTlJZExjb0p6YVJXdzBLMXJ6VXU2RzVVUmJSWTkwa1ZycnNPNHJkQjdnUG1GejBjODRpX01vVk5QVHA5VzJwdERzUmVsU2N3Z3lVR3Q?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOakpsZkRTa3dDcTltOXJiUktHZEJsQTNYWlppMzl3Q3lzV01WN01FVC1xaEdfUVdndHV3UTgzc2JlSTQzUmFMR0ZPX2E5b1pRaEQ2Tk9PdEtFTmFCcWtJdTRZNUo2cFFkYWViOWppUGlreWF5SEpVUnFEbG1OMkdZdWZXVk54cTM1eUtVMnBjSFJuWjdlNXpvdDR1WG8zSERTZS14bXd2VWRGWmU4ZlJuTU5pRHo4QWE3WlNhS2pYVGxmdw?oc=5\" target=\"_blank\"&gt;Revised Iranian proposal to end war shared with US, Pakistani source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T08:16:15.000Z",
-          "score": 6
-        },
-        {
-          "title": "New Epstein victims turn up in French probe — prosecutor",
-          "link": "https://www.dw.com/en/new-epstein-victims-turn-up-in-french-probe-prosecutor/a-77190062?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "France is pursuing its own investigation into the Epstein affair, looking at potential crimes committed in the EU country or involving French nationals tied to the US sex offender.",
-          "published": "2026-05-17T17:21:00.000Z",
-          "score": 4
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNWjVXY1Q4OFhURzh6Ql9fLVd2eWk2b1pXNEU0MzNyMDFuWUM1LW95YlUzLVROU0lkMHEyT19WcnJkUUtVZXJlQ3BRaEtrRXdlZTlJZExjb0p6YVJXdzBLMXJ6VXU2RzVVUmJSWTkwa1ZycnNPNHJkQjdnUG1GejBjODRpX01vVk5QVHA5VzJwdERzUmVsU2N3Z3lVR3Q?oc=5\" target=\"_blank\"&gt;European shares fall as inflation worries grip markets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-18T08:59:47.000Z",
+          "score": 8
         },
         {
           "title": "Trump warns 'clock is ticking' for Iran as peace progress stalls",
           "link": "https://www.bbc.com/news/articles/cd0p4y9y48xo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Iranian media reports the US has not made concrete concessions in response to Tehran's latest proposals.",
-          "published": "2026-05-18T03:53:36.000Z",
-          "score": 2
+          "description": "On Monday Iran said it had responded to the latest US proposal and that exchanges with Washington were continuing.",
+          "published": "2026-05-18T09:58:35.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 386,
-    "articlesLast24h": 142,
-    "afterDedup": 136,
+    "totalArticlesScanned": 393,
+    "articlesLast24h": 154,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
