@@ -1,12 +1,12 @@
 {
   "date": "2026-05-19",
-  "generatedAt": "2026-05-19T13:59:48.193Z",
+  "generatedAt": "2026-05-19T19:05:13.683Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 19 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AMENDMENTS 307 - 476 - Draft opinion Guidelines for trans-European energy infrastructure, amending Regulations (EU) 2019/942, (EU) 2019/943 and (EU) 2024/1789 and repealing Regulation (EU) 2022/869 - PE788.785v01-00",
-      "summary": "AMENDMENTS 307 - 476 - Draft opinion Guidelines for trans-European energy infrastructure, amending Regulations (EU) 2019/942, (EU) 2019/943 and (EU) 2024/1789 and repealing Regulation (EU) 2022/869&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Elżbieta Katarzyna Łukacijewska&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "headline": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306684/CE%20hearing-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on the current legislative framework on circular economy, the lessons learnt and possible ways forward, as well as how to ",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
@@ -17,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Factcheck: US and Iran are world’s only major emitters without net-zero targets",
-      "summary": "Many right-leaning figures have tried to push the idea that the UK is an outlier... The post Factcheck: US and Iran are world’s only major emitters without net-zero targets appeared first on Carbon Brief.",
+      "headline": "Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems",
+      "summary": "European Commission Press release Strasbourg, 19 May 2026 Today, the European Commission registered two European Citizens' Initiatives (ECIs) entitled ‘Rights for Nature: Empower Citizens to Represent and Protect Ecosystems' and ‘Reconnecting nature through the creation of European biodiversity corridors'.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Chinese greenfield investment in Europe reaches new record, newspaper reports - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPb3BZdlROVFYxTFVYb0VEcGZuZ3FuSldzZE91VlJWVDFXdWM3Tk1WZG51VzJ2RVpWMlZITjh5b3J5b2xiTjNpY25LbjIwanRoTDRuWTVrQVNialBMNGVPbkcyZzFId0dPMmRjZThUOUtSVVFEM0toUnYzTmppODlITXZZVWs5WVVJVVloZHBfdUhxNktwTkdfeTR3Uld2WFJQdVZIOXI0QzFINWJFd2Yyd3B2YW9pejlQU0VjbmxB?oc=5\" target=\"_blank\"&gt;Chinese greenfield investment in Europe reaches new record, newspaper reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Trump administration unveils $1.8bn fund to compensate his allies as he drops tax lawsuit",
+      "summary": "The settlement will go towards individuals who allege they were subjected to unfair investigations.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,6 +34,14 @@
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
       "items": [
+        {
+          "title": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260519CHE14204",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306684/CE%20hearing-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on the current legislative framework on circular economy, the lessons learnt and possible ways forward, as well as how to ",
+          "published": "2026-05-19T16:46:44.000Z",
+          "score": 27
+        },
         {
           "title": "AMENDMENTS 307 - 476 - Draft opinion Guidelines for trans-European energy infrastructure, amending Regulations (EU) 2019/942, (EU) 2019/943 and (EU) 2024/1789 and repealing Regulation (EU) 2022/869 - PE788.785v01-00",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788785_EN.pdf",
@@ -57,19 +65,19 @@
           "score": 19
         },
         {
+          "title": "Strike near UAE reactor revives concerns over nuclear plant safety in wartime",
+          "link": "https://www.theguardian.com/world/2026/may/19/strike-near-uae-reactor-concerns-nuclear-plant-safety-iran-war-middle-east",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Attack marks first time military action has forced a fully operating nuclear power plant to rely on backup generators&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/world/live/2026/may/19/us-israel-iran-war-trump-peace-attacks-gulf-allies-strikes-hormuz-latest-news-updates\"&gt;Middle East crisis – live updates&lt;/a&gt;&lt;/p&gt;&lt;p&gt;A drone strike that cut off external power to a nuclear reactor in the United Arab Emirates this week has revived concerns over the safety",
+          "published": "2026-05-19T14:49:59.000Z",
+          "score": 7
+        },
+        {
           "title": "Moscow begins nuclear drills as Russia-Ukraine drone strikes intensify",
           "link": "https://www.dw.com/en/moscow-begins-nuclear-drills-as-russia-ukraine-drone-strikes-intensify/a-77208390?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "As Russian and Ukrainian forces carried out fresh cross-border aerial strikes, Moscow launched nationwide nuclear drills.",
           "published": "2026-05-19T07:30:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Belarus launches drills involving Russian nuclear weapons",
-          "link": "https://www.dw.com/en/belarus-launches-drills-involving-russian-nuclear-weapons/a-77204498?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Belarusian Defense Ministry said the drills would test its readiness to deploy nuclear weapons. Ukraine decried the exercise as Russia &quot;de facto legitimising the proliferation of nuclear weapons worldwide.&quot;",
-          "published": "2026-05-18T18:12:00.000Z",
           "score": 7
         },
         {
@@ -81,11 +89,11 @@
           "score": 7
         },
         {
-          "title": "Donald Trump says 'good chance' of Iran nuclear deal after delaying strike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPbEcweThxYmdBYkkwQzlJY1psMThtcDlwNTN3ZjBYQXctYUozbzV5LVpMSGpqdlhINm5ZZDltbk05dS1RMFRjYU1WNHcwS2EyR1NiTXZmaUstY3FCZ0lhOFVlVXBhWW5tNDAtalFWUHBrTVdSOWZMLU5yYkRNNDB0R1MxZmE3eXdNR2VNdHB6aVZUMkdIQjQwNHVzZjFwWmRSWHE3Vk1NU0NkN083MmdRVw?oc=5",
+          "title": "Four US LNG vessels sailing to China after Trump-Xi summit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQWN1ZkdDUlo5WkNYRzRxMmlzSmF6OGlWNzl5b3RZZWZYTmMwR3J3YVR6MDllWjJ4aXN4b0x1REZqbERRSFp3LXl3RWlfRlN2YmxvOXYySnpWME9uRVdfdzdtcDRCWnBSTmEtaUNfcnZFM0lZdDJrQzBCcmUxaDJ2elFNdExIRG1NTmJPQWJidHl1MDV3Z3l0Ylh0SnY3TF9zVXU4dGlMaER4OHc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPbEcweThxYmdBYkkwQzlJY1psMThtcDlwNTN3ZjBYQXctYUozbzV5LVpMSGpqdlhINm5ZZDltbk05dS1RMFRjYU1WNHcwS2EyR1NiTXZmaUstY3FCZ0lhOFVlVXBhWW5tNDAtalFWUHBrTVdSOWZMLU5yYkRNNDB0R1MxZmE3eXdNR2VNdHB6aVZUMkdIQjQwNHVzZjFwWmRSWHE3Vk1NU0NkN083MmdRVw?oc=5\" target=\"_blank\"&gt;Donald Trump says 'good chance' of Iran nuclear deal after delaying strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T22:16:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQWN1ZkdDUlo5WkNYRzRxMmlzSmF6OGlWNzl5b3RZZWZYTmMwR3J3YVR6MDllWjJ4aXN4b0x1REZqbERRSFp3LXl3RWlfRlN2YmxvOXYySnpWME9uRVdfdzdtcDRCWnBSTmEtaUNfcnZFM0lZdDJrQzBCcmUxaDJ2elFNdExIRG1NTmJPQWJidHl1MDV3Z3l0Ylh0SnY3TF9zVXU4dGlMaER4OHc?oc=5\" target=\"_blank\"&gt;Four US LNG vessels sailing to China after Trump-Xi summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T15:34:17.000Z",
           "score": 7
         }
       ]
@@ -95,11 +103,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Factcheck: US and Iran are world’s only major emitters without net-zero targets",
-          "link": "https://www.carbonbrief.org/factcheck-us-and-iran-are-worlds-only-major-emitters-without-net-zero-targets/",
+          "title": "Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1064",
+          "source": "European Commission",
+          "description": "European Commission Press release Strasbourg, 19 May 2026 Today, the European Commission registered two European Citizens' Initiatives (ECIs) entitled ‘Rights for Nature: Empower Citizens to Represent and Protect Ecosystems' and ‘Reconnecting nature through the creation of European biodiversity corridors'.",
+          "published": "2026-05-18T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Daily News 19 / 05 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1108",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 19 May 2026 Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems\r\nToday, the European Commission registered two European ...",
+          "published": "2026-05-19T13:35:36.000Z",
+          "score": 16
+        },
+        {
+          "title": "Factcheck: Trump’s false claims about the IPCC and ‘RCP8.5’ climate scenario",
+          "link": "https://www.carbonbrief.org/factcheck-trumps-false-claims-about-the-ipcc-and-rcp8-5-climate-scenario/",
           "source": "Carbon Brief",
-          "description": "Many right-leaning figures have tried to push the idea that the UK is an outlier... The post Factcheck: US and Iran are world’s only major emitters without net-zero targets appeared first on Carbon Brief.",
-          "published": "2026-05-18T14:21:04.000Z",
+          "description": "Among a flurry of posts on social media last weekend, US president Donald Trump declared... The post Factcheck: Trump’s false claims about the IPCC and ‘RCP8.5’ climate scenario appeared first on Carbon Brief.",
+          "published": "2026-05-19T16:22:02.000Z",
           "score": 13
         },
         {
@@ -111,28 +135,12 @@
           "score": 8
         },
         {
-          "title": "NextEra to buy Dominion in $67bn deal creating US utility giant",
-          "link": "https://www.theguardian.com/business/2026/may/18/nextera-dominion-merger-us-energy",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Deal would create largest regulated US utility, serving 10 million customers as AI-driven demand for power surges&lt;/p&gt;&lt;p&gt;NextEra, a US &lt;a href=\"https://www.theguardian.com/environment/energy\"&gt;energy&lt;/a&gt; giant, announced on Monday that it will buy Dominion Energy in a $67bn deal, creating what the companies say will be the world’s largest regulated utility business.&lt;/p&gt;&lt;p&gt;The deal comes as the appetite for energy sources has swelled with the constructio",
-          "published": "2026-05-18T16:25:05.000Z",
-          "score": 4
-        },
-        {
-          "title": "Animal park welcomes four Sumatran tiger cubs",
-          "link": "https://www.bbc.com/news/articles/c1w29n4z44lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "There are fewer than 400 of Sumatran tigers left in the wild, according to the park.",
-          "published": "2026-05-19T09:24:03.000Z",
-          "score": 2
-        },
-        {
-          "title": "Plan to track for signs of endangered water vole",
-          "link": "https://www.bbc.com/news/articles/cn8p1gy1q0xo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Water vole numbers nationally are in free fall, with more than 90 per cent lost since the 1970s.",
-          "published": "2026-05-19T05:38:46.000Z",
-          "score": 2
+          "title": "‘Foolish’ CSIRO job cuts will mean Australia unable to provide climate projections to global reports, scientists warn",
+          "link": "https://www.theguardian.com/australia-news/2026/may/20/csiro-job-cuts-climate-australia-projections-to-global-reports",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Science agency is planning to sack a third of the team working on the national climate model, sources say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p",
+          "published": "2026-05-19T15:00:08.000Z",
+          "score": 7
         }
       ]
     },
@@ -141,15 +149,7 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Chinese greenfield investment in Europe reaches new record, newspaper reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb3BZdlROVFYxTFVYb0VEcGZuZ3FuSldzZE91VlJWVDFXdWM3Tk1WZG51VzJ2RVpWMlZITjh5b3J5b2xiTjNpY25LbjIwanRoTDRuWTVrQVNialBMNGVPbkcyZzFId0dPMmRjZThUOUtSVVFEM0toUnYzTmppODlITXZZVWs5WVVJVVloZHBfdUhxNktwTkdfeTR3Uld2WFJQdVZIOXI0QzFINWJFd2Yyd3B2YW9pejlQU0VjbmxB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPb3BZdlROVFYxTFVYb0VEcGZuZ3FuSldzZE91VlJWVDFXdWM3Tk1WZG51VzJ2RVpWMlZITjh5b3J5b2xiTjNpY25LbjIwanRoTDRuWTVrQVNialBMNGVPbkcyZzFId0dPMmRjZThUOUtSVVFEM0toUnYzTmppODlITXZZVWs5WVVJVVloZHBfdUhxNktwTkdfeTR3Uld2WFJQdVZIOXI0QzFINWJFd2Yyd3B2YW9pejlQU0VjbmxB?oc=5\" target=\"_blank\"&gt;Chinese greenfield investment in Europe reaches new record, newspaper reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T17:55:02.000Z",
-          "score": 8
-        },
-        {
-          "title": "Trump administration unveils $1.7bn fund to compensate his allies as he drops tax lawsuit",
+          "title": "Trump administration unveils $1.8bn fund to compensate his allies as he drops tax lawsuit",
           "link": "https://www.bbc.com/news/articles/cvgzr7vr203o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The settlement will go towards individuals who allege they were subjected to unfair investigations.",
@@ -157,27 +157,11 @@
           "score": 2
         },
         {
-          "title": "Trump drops IRS lawsuit, gets billion-dollar &#039;victim&#039;s fund&#039;",
-          "link": "https://www.dw.com/en/trump-drops-irs-lawsuit-gets-billion-dollar-victim-s-fund/a-77204690?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A new settlement will disburse $1.76 billion to victims of so-called &quot;lawfare,&quot; who were prosecuted under President Joe Biden. Critics have said the move amounts to &quot;outright corruption.&quot;",
-          "published": "2026-05-18T19:42:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Trump administration ends civil, criminal cases against Adani after $10 billion investment promise - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNeXdpUzV6UWQwQmtDdWlWMGlJVnppWFNzR1Jzc2Z5N0F4dTFUM2kwbnNhcGU4YUgybTZCa1hka1hmNEFSZUhmbDZoRmw2dnpRdkxVNjliYjJHaGFMSXhRcmdFelpSYmxEdXRpazJia1lXWFdxVzYxT0FQRnRlRFhCVWRHQmJCMjJobEYtRHhuRzJvLXBrLWwwLVI1RE8zbnY5M0V2cnJKdGxKV1V4U1l4RlRxUWRDNGlJN1RYUjJ2OA?oc=5",
+          "title": "China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSWFjZGM2bm10cE9ENkZYcnNCeC02V0EySW41VjhVM1ZiMTdnbzVyaW4tMUJSVFM3eGdhOE5sMno4czhxLWxLSmtQcGt1U3RMRHJZWDNWTllYS2VBajFkQkdvR2VOZnN0Z0dWQld3clIxOEJEZk1rQ2ZvSlBkMC1BVDg0eWZERGlhb1RXZW5QR3Vhb1NBcnF6V092ZkY1UGJiX3JHTkFvbFVNWnJ2cGNlQ2hXOFZiOWFkVUYzR3AtSkY3cnJRWmJZ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNeXdpUzV6UWQwQmtDdWlWMGlJVnppWFNzR1Jzc2Z5N0F4dTFUM2kwbnNhcGU4YUgybTZCa1hka1hmNEFSZUhmbDZoRmw2dnpRdkxVNjliYjJHaGFMSXhRcmdFelpSYmxEdXRpazJia1lXWFdxVzYxT0FQRnRlRFhCVWRHQmJCMjJobEYtRHhuRzJvLXBrLWwwLVI1RE8zbnY5M0V2cnJKdGxKV1V4U1l4RlRxUWRDNGlJN1RYUjJ2OA?oc=5\" target=\"_blank\"&gt;Trump administration ends civil, criminal cases against Adani after $10 billion investment promise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-05-18T14:22:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Zambia state investment firm forms gold mining joint venture - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOU1NXWEc2MC1NYVB4cGxCOEZWOWVnNVJSZWxOWDVUMGJUWlVmaDdEQXhERUh3aXpwT2JPRzRPVExkZllXWDQzOUNCS1oyQUJ1UWRCM0hXNWVVRV83V0RoNFE0TE04MVBWeFpUSXotWXo1cnRZc0xRbDQ2RnNsNTYyMi1IdlZwVGctcnVBOWU1cGVDODJnWDFFbkFibXRlbmhnd0Q0UHl6bUszRmlqc3c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOU1NXWEc2MC1NYVB4cGxCOEZWOWVnNVJSZWxOWDVUMGJUWlVmaDdEQXhERUh3aXpwT2JPRzRPVExkZllXWDQzOUNCS1oyQUJ1UWRCM0hXNWVVRV83V0RoNFE0TE04MVBWeFpUSXotWXo1cnRZc0xRbDQ2RnNsNTYyMi1IdlZwVGctcnVBOWU1cGVDODJnWDFFbkFibXRlbmhnd0Q0UHl6bUszRmlqc3c?oc=5\" target=\"_blank\"&gt;Zambia state investment firm forms gold mining joint venture&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T17:38:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNSWFjZGM2bm10cE9ENkZYcnNCeC02V0EySW41VjhVM1ZiMTdnbzVyaW4tMUJSVFM3eGdhOE5sMno4czhxLWxLSmtQcGt1U3RMRHJZWDNWTllYS2VBajFkQkdvR2VOZnN0Z0dWQld3clIxOEJEZk1rQ2ZvSlBkMC1BVDg0eWZERGlhb1RXZW5QR3Vhb1NBcnF6V092ZkY1UGJiX3JHTkFvbFVNWnJ2cGNlQ2hXOFZiOWFkVUYzR3AtSkY3cnJRWmJZ?oc=5\" target=\"_blank\"&gt;China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-05-19T09:27:52.000Z",
           "score": 2
         }
       ]
@@ -186,6 +170,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625 - PE787.763v03-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787763_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-19T13:43:02.000Z",
+          "score": 22
+        },
         {
           "title": "Top European Parliament honor to be awarded for first time",
           "link": "https://www.dw.com/en/top-european-parliament-honor-to-be-awarded-for-first-time/a-77208111?maca=en-rss-en-all-1573-xml-mrss",
@@ -213,23 +205,7 @@
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5\" target=\"_blank\"&gt;Hungary's Magyar visits Poland on first trip abroad as PM, seeks to reset EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T05:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU extends sanctions on former Assad regime for one year, delists Syrian ministries - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOam55c3lRTkJ6Qk9VYzhtVFFEbXViVGtwWXdCaWdNbEdoZ2d3QzUxSGIwbk5ZQnEyblNhbU9fSW9PZkFjdF9SWmJHTGlCSkxhQmpDWFlSMmJJSlVMMnNQWlJIS0dlQUZTUHhBaEZyS0poM1d5bHVVaWRROTdIZzJ4cTg3X2hLcmJZZkkwdnk4VV9BUDctSDlFbWVlbjNTSGgyVjBXTnhpbTIycG03bGpCa3FYdEMyX2ktT0RjRURXMVFfRWQ2RVZCYg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOam55c3lRTkJ6Qk9VYzhtVFFEbXViVGtwWXdCaWdNbEdoZ2d3QzUxSGIwbk5ZQnEyblNhbU9fSW9PZkFjdF9SWmJHTGlCSkxhQmpDWFlSMmJJSlVMMnNQWlJIS0dlQUZTUHhBaEZyS0poM1d5bHVVaWRROTdIZzJ4cTg3X2hLcmJZZkkwdnk4VV9BUDctSDlFbWVlbjNTSGgyVjBXTnhpbTIycG03bGpCa3FYdEMyX2ktT0RjRURXMVFfRWQ2RVZCYg?oc=5\" target=\"_blank\"&gt;EU extends sanctions on former Assad regime for one year, delists Syrian ministries&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
-          "published": "2026-05-18T17:59:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "European shares end volatile session higher, inflation concerns limit gains - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNWjVXY1Q4OFhURzh6Ql9fLVd2eWk2b1pXNEU0MzNyMDFuWUM1LW95YlUzLVROU0lkMHEyT19WcnJkUUtVZXJlQ3BRaEtrRXdlZTlJZExjb0p6YVJXdzBLMXJ6VXU2RzVVUmJSWTkwa1ZycnNPNHJkQjdnUG1GejBjODRpX01vVk5QVHA5VzJwdERzUmVsU2N3Z3lVR3Q?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNWjVXY1Q4OFhURzh6Ql9fLVd2eWk2b1pXNEU0MzNyMDFuWUM1LW95YlUzLVROU0lkMHEyT19WcnJkUUtVZXJlQ3BRaEtrRXdlZTlJZExjb0p6YVJXdzBLMXJ6VXU2RzVVUmJSWTkwa1ZycnNPNHJkQjdnUG1GejBjODRpX01vVk5QVHA5VzJwdERzUmVsU2N3Z3lVR3Q?oc=5\" target=\"_blank\"&gt;European shares end volatile session higher, inflation concerns limit gains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-18T17:08:56.000Z",
+          "published": "2026-05-19T18:02:41.000Z",
           "score": 8
         },
         {
@@ -239,14 +215,30 @@
           "description": "The South Korean and Japanese leaders, whose nations have not always had good relations, have vowed deeper ties at talks. They reaffirmed stronger security coordination and energy cooperation in challenging times.",
           "published": "2026-05-19T10:03:00.000Z",
           "score": 7
+        },
+        {
+          "title": "US House lawmakers propose $130 annual EV fee to pay for road repairs - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNVU1vMjVyMnNyR0hhbjEwOGh0ak11YUtoekM1d3dyZkpnbjgtMzE4X0VHXzRpZzlxX0N0d2tGdFI5cGRGSmQ2WXc3NHVPX1FVd1JIbDFod01ibjRnNGdkQ3lXUHlrUF9vWlFfTXNYRGM4SEtVRmRRa2NPUVBTQTV4QTY1cjN5SVhWZnloaGZWbEN1cm54bFBQTTUxNGkxSFZLWnpEai1R?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNVU1vMjVyMnNyR0hhbjEwOGh0ak11YUtoekM1d3dyZkpnbjgtMzE4X0VHXzRpZzlxX0N0d2tGdFI5cGRGSmQ2WXc3NHVPX1FVd1JIbDFod01ibjRnNGdkQ3lXUHlrUF9vWlFfTXNYRGM4SEtVRmRRa2NPUVBTQTV4QTY1cjN5SVhWZnloaGZWbEN1cm54bFBQTTUxNGkxSFZLWnpEai1R?oc=5\" target=\"_blank\"&gt;US House lawmakers propose $130 annual EV fee to pay for road repairs&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-18T21:57:10.000Z",
+          "score": 7
+        },
+        {
+          "title": "Britain's energy price cap to rise 13% in July, Cornwall Insight says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa082ME9GYVVoOXU3YXFfVlpIWUNwdjByOEhyeGpVLWJPQzhkSnJLQTROT21jOXlRZHI3UFRDWlJhN1RIZVRLSmY1M0pfaU14Qk1jSERUWjVtNEdpS2FEd1RETGp1SUJiS2o5U2NsVEMwcS16OGNLWVU1TEtvNHFjY0ZUa0FDRldoUDZOanRBM1pRbVlKcFM1dXZIUnFqcVRfUXRxTnFjTnNOVklxdXRWWVVR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNa082ME9GYVVoOXU3YXFfVlpIWUNwdjByOEhyeGpVLWJPQzhkSnJLQTROT21jOXlRZHI3UFRDWlJhN1RIZVRLSmY1M0pfaU14Qk1jSERUWjVtNEdpS2FEd1RETGp1SUJiS2o5U2NsVEMwcS16OGNLWVU1TEtvNHFjY0ZUa0FDRldoUDZOanRBM1pRbVlKcFM1dXZIUnFqcVRfUXRxTnFjTnNOVklxdXRWWVVR?oc=5\" target=\"_blank\"&gt;Britain's energy price cap to rise 13% in July, Cornwall Insight says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T07:42:01.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 151,
-    "afterDedup": 147,
+    "totalArticlesScanned": 393,
+    "articlesLast24h": 154,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
