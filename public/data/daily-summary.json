@@ -1,6 +1,6 @@
 {
   "date": "2026-05-20",
-  "generatedAt": "2026-05-20T08:30:43.435Z",
+  "generatedAt": "2026-05-20T13:43:21.076Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 20 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
-      "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
+      "headline": "Commission approves €1.3 billion German State aid to support renewable hydrogen production",
+      "summary": "European Commission Press release Brussels, 20 May 2026 The European Commission has approved, under EU State aid rules, a €1.3 billion German State aid scheme to support the production of renewable hydrogen through the European Hydrogen Bank's “Auctions-as-a-Service” tool for the auction that closed in 2026.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Daily News 19 / 05 / 2026",
-      "summary": "European Commission Daily news Brussels, 19 May 2026 Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems\r\nToday, the European Commission registered two European ...",
+      "headline": "CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’",
+      "summary": "Investing in flood defences, air conditioning and other measures to protect the UK from climate... The post CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’ appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -33,15 +33,7 @@
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260519CHE14204",
           "source": "EU Parliament ENVI Committee",
           "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306684/CE%20hearing-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on the current legislative framework on circular economy, the lessons learnt and possible ways forward, as well as how to ",
-          "published": "2026-05-19T16:46:44.000Z",
-          "score": 27
-        },
-        {
-          "title": "AMENDMENTS 307 - 476 - Draft opinion Guidelines for trans-European energy infrastructure, amending Regulations (EU) 2019/942, (EU) 2019/943 and (EU) 2024/1789 and repealing Regulation (EU) 2022/869 - PE788.785v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788785_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 307 - 476 - Draft opinion Guidelines for trans-European energy infrastructure, amending Regulations (EU) 2019/942, (EU) 2019/943 and (EU) 2024/1789 and repealing Regulation (EU) 2022/869&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Elżbieta Katarzyna Łukacijewska&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-19T11:54:37.000Z",
+          "published": "2026-05-20T09:40:14.000Z",
           "score": 27
         }
       ]
@@ -50,6 +42,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Commission approves €1.3 billion German State aid to support renewable hydrogen production",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1096",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 20 May 2026 The European Commission has approved, under EU State aid rules, a €1.3 billion German State aid scheme to support the production of renewable hydrogen through the European Hydrogen Bank's “Auctions-as-a-Service” tool for the auction that closed in 2026.",
+          "published": "2026-05-19T22:00:00.000Z",
+          "score": 23
+        },
         {
           "title": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_977",
@@ -75,19 +75,11 @@
           "score": 7
         },
         {
-          "title": "Battery maker Varta to cut 350 jobs after losing major client - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUDMtZ0JxVDgxNlppSk9Vck9uU2VmRkpEbEFDblN1eWstSGdNbTlBOFpUMFFCdTk4b3NqUHBsR05wdEc2QUxmZGtkR2N0Z2V2cGpLWVhNZXRWUTNfYTA4YWdOY3Y3SFRnY3RJSmRseHlIWUJZY1pSRjMyeDZkcEVtUEFKQV9QdTNUQW1fU3JYVjZMMjYycmJTZWQ2MFREZm9Bem1aNm81c2pMNkFIc013LTR1Qnh3UnZD?oc=5",
+          "title": "Xi and Putin unite in criticism of US on nuclear, security issues - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUDMtZ0JxVDgxNlppSk9Vck9uU2VmRkpEbEFDblN1eWstSGdNbTlBOFpUMFFCdTk4b3NqUHBsR05wdEc2QUxmZGtkR2N0Z2V2cGpLWVhNZXRWUTNfYTA4YWdOY3Y3SFRnY3RJSmRseHlIWUJZY1pSRjMyeDZkcEVtUEFKQV9QdTNUQW1fU3JYVjZMMjYycmJTZWQ2MFREZm9Bem1aNm81c2pMNkFIc013LTR1Qnh3UnZD?oc=5\" target=\"_blank\"&gt;Battery maker Varta to cut 350 jobs after losing major client&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T09:12:53.000Z",
-          "score": 7
-        },
-        {
-          "title": "Four US LNG vessels sailing to China after Trump-Xi summit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQWN1ZkdDUlo5WkNYRzRxMmlzSmF6OGlWNzl5b3RZZWZYTmMwR3J3YVR6MDllWjJ4aXN4b0x1REZqbERRSFp3LXl3RWlfRlN2YmxvOXYySnpWME9uRVdfdzdtcDRCWnBSTmEtaUNfcnZFM0lZdDJrQzBCcmUxaDJ2elFNdExIRG1NTmJPQWJidHl1MDV3Z3l0Ylh0SnY3TF9zVXU4dGlMaER4OHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOQWN1ZkdDUlo5WkNYRzRxMmlzSmF6OGlWNzl5b3RZZWZYTmMwR3J3YVR6MDllWjJ4aXN4b0x1REZqbERRSFp3LXl3RWlfRlN2YmxvOXYySnpWME9uRVdfdzdtcDRCWnBSTmEtaUNfcnZFM0lZdDJrQzBCcmUxaDJ2elFNdExIRG1NTmJPQWJidHl1MDV3Z3l0Ylh0SnY3TF9zVXU4dGlMaER4OHc?oc=5\" target=\"_blank\"&gt;Four US LNG vessels sailing to China after Trump-Xi summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T15:34:17.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5\" target=\"_blank\"&gt;Xi and Putin unite in criticism of US on nuclear, security issues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T22:51:00.000Z",
           "score": 7
         }
       ]
@@ -96,14 +88,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Daily News 19 / 05 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1108",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 19 May 2026 Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems\r\nToday, the European Commission registered two European ...",
-          "published": "2026-05-19T13:35:36.000Z",
-          "score": 16
-        },
         {
           "title": "CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’",
           "link": "https://www.carbonbrief.org/ccc-investing-in-urgent-uk-adaptation-action-cheaper-than-climate-damages/",
@@ -121,19 +105,27 @@
           "score": 13
         },
         {
-          "title": "UK ‘built for climate that no longer exists’ and needs urgent changes to survive global heating, report warns",
-          "link": "https://www.theguardian.com/environment/2026/may/20/uk-built-for-climate-that-no-longer-exists-and-needs-urgent-changes-to-survive-global-heating-report-warns",
+          "title": "Rachel Reeves to protect ‘critical’ clean energy projects from legal challenges",
+          "link": "https://www.theguardian.com/politics/2026/may/20/rachel-reeves-protect-clean-energy-projects-legal-challenges-environment",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Chancellor’s planning shake-up would ‘reduce exposure from judicial review on all but human rights grounds’&lt;/p&gt;&lt;p&gt;Rachel Reeves is ​preparing to announce a planning shake-up ‌that would fast-track clean energy ​and infrastructure projects by curbing judicial reviews, the ​Treasury has said.&lt;/p&gt;&lt;p&gt;The chancellor will propose that parliament should be able to designate and approve the most important clean energy projects as of “critical national importance”, as par",
+          "published": "2026-05-20T08:50:22.000Z",
+          "score": 9
+        },
+        {
+          "title": "Eva v Goliath: the 20-year-old climate activist taking on Trump and the fossil fuel industry",
+          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/may/20/eva-lighthiser-trump-climate",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Landmark report calls for widespread air conditioning and says UK temperatures forecast to exceed 40C by 2050&lt;/p&gt;&lt;p&gt;British homes will need air conditioning to survive predicted levels of global heating, the government’s climate advisers have warned in a report, as measures such as drawing curtains, opening windows and growing trees for shade are not likely to be enough.&lt;/p&gt;&lt;p&gt;Air conditioning should be installed in all care homes and hospitals within the next 10",
-          "published": "2026-05-19T23:01:17.000Z",
+          "description": "&lt;p&gt;Young Americans are suing the president for violating rights with executive orders that fuel the climate crisis&lt;/p&gt;&lt;p&gt;Eva Lighthiser was at a dorm party on her &lt;a href=\"https://www.theguardian.com/us-news/colorado\"&gt;Colorado&lt;/a&gt; college campus last month when she had to call it an early night.&lt;/p&gt;&lt;p&gt;“I said, ‘Hey, I’ve got to go to bed, I’m flying out to Portland tomorrow,’ and then of course follow-up questions get raised,” she said. “I’m like, ‘Well,",
+          "published": "2026-05-20T13:00:42.000Z",
           "score": 7
         },
         {
-          "title": "‘Foolish’ CSIRO job cuts will mean Australia unable to provide climate projections to global reports, scientists warn",
-          "link": "https://www.theguardian.com/australia-news/2026/may/20/csiro-job-cuts-climate-australia-projections-to-global-reports",
+          "title": "UK ‘built for climate that no longer exists’ and needs urgent changes to survive global heating, report warns",
+          "link": "https://www.theguardian.com/environment/2026/may/20/uk-built-for-climate-that-no-longer-exists-and-needs-urgent-changes-to-survive-global-heating-report-warns",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Science agency is planning to sack a third of the team working on the national climate model, sources say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/20/federal-budget-tim-wilson-reply-national-press-club-coalition-liberal-national-angus-taylor-labor-anthony-albanese-jim-chalmers-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&",
-          "published": "2026-05-19T15:00:08.000Z",
+          "description": "&lt;p&gt;Landmark report calls for widespread air conditioning and says UK temperatures forecast to exceed 40C by 2050&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/science/2026/may/20/britain-must-think-like-a-hot-country-otherwise-inequalities-will-only-grow\"&gt;Britain must think like a hot country – otherwise inequalities will only grow&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;British homes will need air conditioning to survive predicted levels of glo",
+          "published": "2026-05-19T23:01:17.000Z",
           "score": 7
         }
       ]
@@ -148,11 +140,27 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625 - PE787.763v03-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787763_EN.pdf",
+          "title": "Remarks by Commissioner Hoekstra during the debate in the European Parliament on ‘Reviewing the ETS system to support European competitiveness'",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1117",
+          "source": "European Commission",
+          "description": "European Commission Speech Strasbourg, 20 May 2026 President, Honourable Members,\r\nThank you very much, dear Chair, Honourable Members, for putting this on the agenda. And Mr Procaccini, thank you very much for o...",
+          "published": "2026-05-20T11:52:23.000Z",
+          "score": 23
+        },
+        {
+          "title": "AMENDMENTS 38 - 232 - Draft opinion Amending Directives (EU) 2018/2001, (EU) 2019/944, (EU) 2024/1788 as regards acceleration of permit-granting procedures - PE788.794v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788794_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-19T13:43:02.000Z",
+          "description": "AMENDMENTS 38 - 232 - Draft opinion Amending Directives (EU) 2018/2001, (EU) 2019/944, (EU) 2024/1788 as regards acceleration of permit-granting procedures&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Rasmus Nordqvist&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-20T13:13:06.000Z",
+          "score": 22
+        },
+        {
+          "title": "Speech by President von der Leyen at the European Parliament plenary debate on ‘High time to deliver on the Single Market, providing certainty and predictability for EU businesses and quality jobs'",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1110",
+          "source": "European Commission",
+          "description": "European Commission Speech Strasbourg, 20 May 2026 You have chosen the Single Market as central debate topic today – that is very good. Our Single Market is more than a continental marketplace; it is a cornerstone of who we are as Europeans. It binds our citizens, our businesses and our values together. The free movement of goods, services, capital and people. It has delivered decades of growth, jobs and opportunities. It has created better choices for consumers, larger markets for businesses an",
+          "published": "2026-05-19T22:00:00.000Z",
           "score": 22
         },
         {
@@ -170,14 +178,6 @@
           "description": "The EU reached a provisional agreement to remove import duties on US goods, keeping the bloc on track to meet Trump&#039;s deadline to avoid higher tariffs on European exports.",
           "published": "2026-05-20T01:46:00.000Z",
           "score": 8
-        },
-        {
-          "title": "US troop withdrawal from Europe to take &#039;years&#039; — general",
-          "link": "https://www.dw.com/en/us-troop-withdrawal-from-europe-to-take-years-general/a-77221778?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "NATO top commander Alexus Grynkewich said the US withdrawal would be &quot;well-synchronized&quot; with European allies. It comes after Donald Trump announced a decision to pull 5,000 troops out of Germany.",
-          "published": "2026-05-19T19:43:00.000Z",
-          "score": 8
         }
       ]
     },
@@ -186,18 +186,10 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Stellantis plans $17,500 small EV to revive European market - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeEVIaDY2YkJ1bGhRYWFSVnFhTDMzWUdrbEZkWlgwdzZsemxLRGxyemhtYjJxZWJ3UW5QQUJhMVI4ZUhPVTJ3ZS1HUlAtdVJ1bUk0dWQxRm5iU1pzeEVfeFk1cHRqODdoNE5JMmxmUDBYUjd1ZlY3Vmo4cGczeV9RMWN1aF95dmQ1Qzl3RE9YcjUyRVpCUVVkRm5lb3V5Mk5yRFBN?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNeEVIaDY2YkJ1bGhRYWFSVnFhTDMzWUdrbEZkWlgwdzZsemxLRGxyemhtYjJxZWJ3UW5QQUJhMVI4ZUhPVTJ3ZS1HUlAtdVJ1bUk0dWQxRm5iU1pzeEVfeFk1cHRqODdoNE5JMmxmUDBYUjd1ZlY3Vmo4cGczeV9RMWN1aF95dmQ1Qzl3RE9YcjUyRVpCUVVkRm5lb3V5Mk5yRFBN?oc=5\" target=\"_blank\"&gt;Stellantis plans $17,500 small EV to revive European market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T08:34:51.000Z",
-          "score": 13
-        },
-        {
-          "title": "The EU is failing to cut pesticide use",
-          "link": "https://www.dw.com/en/the-eu-is-failing-to-cut-pesticide-use/a-76961584?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU is failing to cut pesticide use",
+          "link": "https://www.dw.com/en/eu-is-failing-to-cut-pesticide-use/a-76961584?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "With binding cut targets scrapped, the EU&#039;s pledge to halve pesticide use is stalling. Even as controversial chemicals like glyphosate remain on sale across the bloc.",
+          "description": "With binding cut targets scrapped, the European Union&#039;s pledge to halve pesticide use is stalling — even as controversial chemicals like glyphosate remain on sale across the bloc.",
           "published": "2026-05-20T08:00:00.000Z",
           "score": 8
         },
@@ -206,32 +198,40 @@
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5\" target=\"_blank\"&gt;Russia is concerned by US, EU rare earth activity in Central Asia, media reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-20T00:30:00.000Z",
+          "published": "2026-05-20T00:30:53.000Z",
           "score": 8
         },
         {
-          "title": "Hungary's Magyar visits Poland on first trip abroad as PM, seeks to reset EU ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5",
+          "title": "EU shortlists tungsten, rare earths for first stockpile to curb China reliance - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmhvVmxQbzA1anZ0Q2p2WXpFMm83M0VwOW1sZ0ZnN0k0OWNyeF9KZGtvMmxJYUhWWGF5RWlOck82TEtsN0dMSmxjNm10TmMxOFd0TW9fRTQ3OHFza2tXZzhqNkFLVU5oUHVaNGQxNkczaHRDQjR6endqTXNldDNRSWFlUHlOUUdSY1NtQWxGOXlqVWVFY3BaczRkMVBvUFpob0FPOVp1T2hRcXMwa3NuUkR5N1hsLUF1bGc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5\" target=\"_blank\"&gt;Hungary's Magyar visits Poland on first trip abroad as PM, seeks to reset EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T18:02:41.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmhvVmxQbzA1anZ0Q2p2WXpFMm83M0VwOW1sZ0ZnN0k0OWNyeF9KZGtvMmxJYUhWWGF5RWlOck82TEtsN0dMSmxjNm10TmMxOFd0TW9fRTQ3OHFza2tXZzhqNkFLVU5oUHVaNGQxNkczaHRDQjR6endqTXNldDNRSWFlUHlOUUdSY1NtQWxGOXlqVWVFY3BaczRkMVBvUFpob0FPOVp1T2hRcXMwa3NuUkR5N1hsLUF1bGc?oc=5\" target=\"_blank\"&gt;EU shortlists tungsten, rare earths for first stockpile to curb China reliance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T08:35:43.000Z",
           "score": 8
         },
         {
-          "title": "China's Xi, Russia's Putin praise ties at Beijing talks; energy in focus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5",
+          "title": "France invites European powers to attend July 14 Bastille Day celebrations - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPM3lsSlF4OFpTRElfamgtR2ZtR3hoenlBX0k5S2RuQTVCbHhfcGJCMzVRbnJkdnZEMkNtTXdSc2kzRERrNURzUkhIQlppNmNsdVNBR04wUFBtMW5oeURHZ1prQW1yZWQ1VG52VFN4dVZOd2ZXZHN3emJoaGhza1pBWlV0ajUxbG5odUJIQl9YeFpYbUwzX3IyUHpRV1I1OVFvaWFjdWlGQlM5NGxkM1loNnF2OA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5\" target=\"_blank\"&gt;China's Xi, Russia's Putin praise ties at Beijing talks; energy in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T22:51:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPM3lsSlF4OFpTRElfamgtR2ZtR3hoenlBX0k5S2RuQTVCbHhfcGJCMzVRbnJkdnZEMkNtTXdSc2kzRERrNURzUkhIQlppNmNsdVNBR04wUFBtMW5oeURHZ1prQW1yZWQ1VG52VFN4dVZOd2ZXZHN3emJoaGhza1pBWlV0ajUxbG5odUJIQl9YeFpYbUwzX3IyUHpRV1I1OVFvaWFjdWlGQlM5NGxkM1loNnF2OA?oc=5\" target=\"_blank\"&gt;France invites European powers to attend July 14 Bastille Day celebrations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T15:23:13.000Z",
+          "score": 8
+        },
+        {
+          "title": "Israel's parliament has voted to dissolve itself. What's next? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNc2NKLXBmZmRUMEY4WVRfclJmX3dyeFZuaGRKdXAxODhFS25YR0RxSmJiblVDYWxvMFpDbnFTZ0NLNlJ6SGRWM1Bad0NGMEVtcUtqU2gwSk04aXRvWXMxT1hSTEZka0FoNW8yX1hkSWpwTGRuNjhlTlNzWndNTjdwMldoVEJLd1pYOG94MjI3NEw0OVZNamNMSmNaRVNRSXZoZW91VDB3WnhjbUs5dDlWZHJ2Nlo?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNc2NKLXBmZmRUMEY4WVRfclJmX3dyeFZuaGRKdXAxODhFS25YR0RxSmJiblVDYWxvMFpDbnFTZ0NLNlJ6SGRWM1Bad0NGMEVtcUtqU2gwSk04aXRvWXMxT1hSTEZka0FoNW8yX1hkSWpwTGRuNjhlTlNzWndNTjdwMldoVEJLd1pYOG94MjI3NEw0OVZNamNMSmNaRVNRSXZoZW91VDB3WnhjbUs5dDlWZHJ2Nlo?oc=5\" target=\"_blank\"&gt;Israel's parliament has voted to dissolve itself. What's next?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T10:54:12.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 163,
-    "afterDedup": 157,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 167,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
