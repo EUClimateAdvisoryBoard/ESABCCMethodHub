@@ -1,6 +1,6 @@
 {
   "date": "2026-05-20",
-  "generatedAt": "2026-05-20T13:43:21.076Z",
+  "generatedAt": "2026-05-20T19:27:03.279Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 20 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,22 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Commission approves €1.3 billion German State aid to support renewable hydrogen production",
-      "summary": "European Commission Press release Brussels, 20 May 2026 The European Commission has approved, under EU State aid rules, a €1.3 billion German State aid scheme to support the production of renewable hydrogen through the European Hydrogen Bank's “Auctions-as-a-Service” tool for the auction that closed in 2026.",
+      "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
+      "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’",
-      "summary": "Investing in flood defences, air conditioning and other measures to protect the UK from climate... The post CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’ appeared first on Carbon Brief.",
+      "headline": "Speech by Commissioner Albuquerque at the 6th Annual European Financial Integration Conference, organised by the Association for Financial Markets in Europe (AFME)",
+      "summary": "European Commission Speech Frankfurt, 20 May 2026 Good afternoon, ladies and gentlemen.\r\nThanks to Adam and the team at AFME for inviting me to speak today.\r\nMany of you represent financial intermediaries at the ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "French consortium to bid for EU's AI datacentre fund - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQU2hhTTJCNjhVLWNJUnlKSjJiWHFrSUVHSWNyUlphdVY5WWlYbWJjQVlrN1VjZEl5dUNxRVBQV0tXUG5MRDdsWlBTbTg5NVJ3bmhIMG53UkZrbUFybUNZaTZ2UjFrZzFCTEZfemQxMHhFTGlnZHFxM0NBek1BVFNGMkVRN1pWTjFkZ2NTUUMzdnNFZVJZZmlFQm9jWFNBUQ?oc=5\" target=\"_blank\"&gt;French consortium to bid for EU's AI datacentre fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -43,14 +49,6 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Commission approves €1.3 billion German State aid to support renewable hydrogen production",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1096",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 20 May 2026 The European Commission has approved, under EU State aid rules, a €1.3 billion German State aid scheme to support the production of renewable hydrogen through the European Hydrogen Bank's “Auctions-as-a-Service” tool for the auction that closed in 2026.",
-          "published": "2026-05-19T22:00:00.000Z",
-          "score": 23
-        },
-        {
           "title": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_977",
           "source": "European Commission",
@@ -67,20 +65,28 @@
           "score": 7
         },
         {
-          "title": "Strike near UAE reactor revives concerns over nuclear plant safety in wartime",
-          "link": "https://www.theguardian.com/world/2026/may/19/strike-near-uae-reactor-concerns-nuclear-plant-safety-iran-war-middle-east",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Attack marks first time military action has forced a fully operating nuclear power plant to rely on backup generators&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/world/live/2026/may/19/us-israel-iran-war-trump-peace-attacks-gulf-allies-strikes-hormuz-latest-news-updates\"&gt;Middle East crisis – live updates&lt;/a&gt;&lt;/p&gt;&lt;p&gt;A drone strike that cut off external power to a nuclear reactor in the United Arab Emirates this week has revived concerns over the safety",
-          "published": "2026-05-19T14:49:59.000Z",
+          "title": "UAE says drone that hit near its nuclear plant was launched from Iraq - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOT2dHVzQ2eEVnWGZVRFRLc2haczVQRnh5cG9uQS1BUURicC0yZ2QtVWRRR0xZeXlFREozQVBtT09ZMUFCNUhGdnhRVE5IdWFuLWNaNWV2QVVETWxtN3NtTDJtdlg3SFNtc090aktqeEo2TG45ZWhrN2EtQmJRb0ZqazNXWjcxY2xNcXRmZXFoQTBvUWZXWnVtWGRDQjBSblE4ZWVLbkFSQlkxMUxhV2tOM2I5d21rcjRfOWc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOT2dHVzQ2eEVnWGZVRFRLc2haczVQRnh5cG9uQS1BUURicC0yZ2QtVWRRR0xZeXlFREozQVBtT09ZMUFCNUhGdnhRVE5IdWFuLWNaNWV2QVVETWxtN3NtTDJtdlg3SFNtc090aktqeEo2TG45ZWhrN2EtQmJRb0ZqazNXWjcxY2xNcXRmZXFoQTBvUWZXWnVtWGRDQjBSblE4ZWVLbkFSQlkxMUxhV2tOM2I5d21rcjRfOWc?oc=5\" target=\"_blank\"&gt;UAE says drone that hit near its nuclear plant was launched from Iraq&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T22:14:57.000Z",
           "score": 7
         },
         {
-          "title": "Xi and Putin unite in criticism of US on nuclear, security issues - Reuters",
+          "title": "US nuclear power pact with Saudi Arabia lacks strict guardrails, letter says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOS2lxWkw5Q0pxeF84VnFvT2w1dGxIczZrUnRqOVBaTWtFd0NKNzVESlhncXI2RmU5SHdQZXU1TC00Vk9VWS01czdJZDJqaXEzVnB5NUlRSldwZE9nbmpfUVQzZXVEMGcydVpZSWlocVIzZV9nVGRob09LdkU5V2U2SDZPcnBaRE41UnZiRy1MUllDN3VON1RfallNYkdUa1hGWWJsSVNPTGJUWFVDOVdYRW82TTdtRXlEcHZNd3hqb2dDRFgwaVRYRg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOS2lxWkw5Q0pxeF84VnFvT2w1dGxIczZrUnRqOVBaTWtFd0NKNzVESlhncXI2RmU5SHdQZXU1TC00Vk9VWS01czdJZDJqaXEzVnB5NUlRSldwZE9nbmpfUVQzZXVEMGcydVpZSWlocVIzZV9nVGRob09LdkU5V2U2SDZPcnBaRE41UnZiRy1MUllDN3VON1RfallNYkdUa1hGWWJsSVNPTGJUWFVDOVdYRW82TTdtRXlEcHZNd3hqb2dDRFgwaVRYRg?oc=5\" target=\"_blank\"&gt;US nuclear power pact with Saudi Arabia lacks strict guardrails, letter says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-05-19T21:16:56.000Z",
+          "score": 7
+        },
+        {
+          "title": "Xi and Putin unite to criticise US, but fail to clinch big gas deal - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5\" target=\"_blank\"&gt;Xi and Putin unite in criticism of US on nuclear, security issues&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5\" target=\"_blank\"&gt;Xi and Putin unite to criticise US, but fail to clinch big gas deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-19T22:51:00.000Z",
-          "score": 7
+          "score": 2
         }
       ]
     },
@@ -88,6 +94,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Speech by Commissioner Albuquerque at the 6th Annual European Financial Integration Conference, organised by the Association for Financial Markets in Europe (AFME)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1118",
+          "source": "European Commission",
+          "description": "European Commission Speech Frankfurt, 20 May 2026 Good afternoon, ladies and gentlemen.\r\nThanks to Adam and the team at AFME for inviting me to speak today.\r\nMany of you represent financial intermediaries at the ...",
+          "published": "2026-05-20T12:15:26.000Z",
+          "score": 18
+        },
+        {
+          "title": "Cropped 20 May 2026: Deforestation roadmap &#124; Melanesian Ocean Summit &#124; Returning pet parrots to the wild",
+          "link": "https://www.carbonbrief.org/cropped-20-may-2026-deforestation-roadmap-melanesian-ocean-summit-returning-pet-parrots-to-the-wild/",
+          "source": "Carbon Brief",
+          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 20 May 2026: Deforestation roadmap | Melanesian Ocean Summit | Returning pet parrots to the wild appeared first on Carbon Brief.",
+          "published": "2026-05-20T14:16:25.000Z",
+          "score": 13
+        },
         {
           "title": "CCC: Investing in ‘urgent’ UK adaptation action ‘cheaper than climate damages’",
           "link": "https://www.carbonbrief.org/ccc-investing-in-urgent-uk-adaptation-action-cheaper-than-climate-damages/",
@@ -97,43 +119,44 @@
           "score": 13
         },
         {
-          "title": "Factcheck: Trump’s false claims about the IPCC and ‘RCP8.5’ climate scenario",
-          "link": "https://www.carbonbrief.org/factcheck-trumps-false-claims-about-the-ipcc-and-rcp8-5-climate-scenario/",
-          "source": "Carbon Brief",
-          "description": "Among a flurry of posts on social media last weekend, US president Donald Trump declared... The post Factcheck: Trump’s false claims about the IPCC and ‘RCP8.5’ climate scenario appeared first on Carbon Brief.",
-          "published": "2026-05-19T16:22:02.000Z",
-          "score": 13
+          "title": "IPCC News Comment",
+          "link": "https://www.ipcc.ch/2026/05/20/ipcc-news-comment-scenarios/",
+          "source": "IPCC",
+          "description": "GENEVA, May 20 &#8211; In relation to some of the recent media and social media reporting, the Intergovernmental Panel on Climate Change (IPCC) wishes to clarify that, in several instances, the paper on climate scenarios authored by the Scenario Model Intercomparison Project (https://wcrp-cmip.org/mips/scenariomip/), which inputs assumptions to part of the Coupled Model Intercomparison Project (CMIP) [&#8230;]",
+          "published": "2026-05-20T15:20:54.000Z",
+          "score": 11
         },
         {
           "title": "Rachel Reeves to protect ‘critical’ clean energy projects from legal challenges",
           "link": "https://www.theguardian.com/politics/2026/may/20/rachel-reeves-protect-clean-energy-projects-legal-challenges-environment",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Chancellor’s planning shake-up would ‘reduce exposure from judicial review on all but human rights grounds’&lt;/p&gt;&lt;p&gt;Rachel Reeves is ​preparing to announce a planning shake-up ‌that would fast-track clean energy ​and infrastructure projects by curbing judicial reviews, the ​Treasury has said.&lt;/p&gt;&lt;p&gt;The chancellor will propose that parliament should be able to designate and approve the most important clean energy projects as of “critical national importance”, as par",
-          "published": "2026-05-20T08:50:22.000Z",
+          "description": "&lt;p&gt;Chancellor’s planning shake-up in England and Wales would ‘reduce exposure from judicial review on all but human rights grounds’&lt;/p&gt;&lt;p&gt;Rachel Reeves is poised to fast-track clean energy projects in England and Wales with planning reforms to curb the use of judicial reviews against new infrastructure, the ​Treasury has said.&lt;/p&gt;&lt;p&gt;Under the chancellor’s proposals, parliament will be able to designate and approve the most important clean energy projects as of “crit",
+          "published": "2026-05-20T15:56:56.000Z",
           "score": 9
-        },
-        {
-          "title": "Eva v Goliath: the 20-year-old climate activist taking on Trump and the fossil fuel industry",
-          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/may/20/eva-lighthiser-trump-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Young Americans are suing the president for violating rights with executive orders that fuel the climate crisis&lt;/p&gt;&lt;p&gt;Eva Lighthiser was at a dorm party on her &lt;a href=\"https://www.theguardian.com/us-news/colorado\"&gt;Colorado&lt;/a&gt; college campus last month when she had to call it an early night.&lt;/p&gt;&lt;p&gt;“I said, ‘Hey, I’ve got to go to bed, I’m flying out to Portland tomorrow,’ and then of course follow-up questions get raised,” she said. “I’m like, ‘Well,",
-          "published": "2026-05-20T13:00:42.000Z",
-          "score": 7
-        },
-        {
-          "title": "UK ‘built for climate that no longer exists’ and needs urgent changes to survive global heating, report warns",
-          "link": "https://www.theguardian.com/environment/2026/may/20/uk-built-for-climate-that-no-longer-exists-and-needs-urgent-changes-to-survive-global-heating-report-warns",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Landmark report calls for widespread air conditioning and says UK temperatures forecast to exceed 40C by 2050&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/science/2026/may/20/britain-must-think-like-a-hot-country-otherwise-inequalities-will-only-grow\"&gt;Britain must think like a hot country – otherwise inequalities will only grow&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;British homes will need air conditioning to survive predicted levels of glo",
-          "published": "2026-05-19T23:01:17.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "French consortium to bid for EU's AI datacentre fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQU2hhTTJCNjhVLWNJUnlKSjJiWHFrSUVHSWNyUlphdVY5WWlYbWJjQVlrN1VjZEl5dUNxRVBQV0tXUG5MRDdsWlBTbTg5NVJ3bmhIMG53UkZrbUFybUNZaTZ2UjFrZzFCTEZfemQxMHhFTGlnZHFxM0NBek1BVFNGMkVRN1pWTjFkZ2NTUUMzdnNFZVJZZmlFQm9jWFNBUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQU2hhTTJCNjhVLWNJUnlKSjJiWHFrSUVHSWNyUlphdVY5WWlYbWJjQVlrN1VjZEl5dUNxRVBQV0tXUG5MRDdsWlBTbTg5NVJ3bmhIMG53UkZrbUFybUNZaTZ2UjFrZzFCTEZfemQxMHhFTGlnZHFxM0NBek1BVFNGMkVRN1pWTjFkZ2NTUUMzdnNFZVJZZmlFQm9jWFNBUQ?oc=5\" target=\"_blank\"&gt;French consortium to bid for EU's AI datacentre fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T16:36:07.000Z",
+          "score": 8
+        },
+        {
+          "title": "Trump administration ends civil, criminal cases against Adani after $10 billion investment promise - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNeXdpUzV6UWQwQmtDdWlWMGlJVnppWFNzR1Jzc2Z5N0F4dTFUM2kwbnNhcGU4YUgybTZCa1hka1hmNEFSZUhmbDZoRmw2dnpRdkxVNjliYjJHaGFMSXhRcmdFelpSYmxEdXRpazJia1lXWFdxVzYxT0FQRnRlRFhCVWRHQmJCMjJobEYtRHhuRzJvLXBrLWwwLVI1RE8zbnY5M0V2cnJKdGxKV1V4U1l4RlRxUWRDNGlJN1RYUjJ2OA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNeXdpUzV6UWQwQmtDdWlWMGlJVnppWFNzR1Jzc2Z5N0F4dTFUM2kwbnNhcGU4YUgybTZCa1hka1hmNEFSZUhmbDZoRmw2dnpRdkxVNjliYjJHaGFMSXhRcmdFelpSYmxEdXRpazJia1lXWFdxVzYxT0FQRnRlRFhCVWRHQmJCMjJobEYtRHhuRzJvLXBrLWwwLVI1RE8zbnY5M0V2cnJKdGxKV1V4U1l4RlRxUWRDNGlJN1RYUjJ2OA?oc=5\" target=\"_blank\"&gt;Trump administration ends civil, criminal cases against Adani after $10 billion investment promise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-05-19T19:35:55.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -164,19 +187,11 @@
           "score": 22
         },
         {
-          "title": "US to reduce troops in Europe to 2021 levels, Pentagon says",
-          "link": "https://www.dw.com/en/us-to-reduce-troops-in-europe-to-2021-levels-pentagon-says/a-77222971?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "NATO: Rutte says US troop withdrawal won&#039;t hurt Europe",
+          "link": "https://www.dw.com/en/nato-rutte-says-us-troop-withdrawal-won-t-hurt-europe/a-77231586?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The scaling back would bring the number of US troops on the continent to the level before Russia launched its full-scale invasion of Ukraine. The Pentagon said that was in line with Trump&#039;s &#039;America first&#039; agenda.",
-          "published": "2026-05-20T03:03:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU strikes deal on US trade pact ahead of Trump tariff deadline",
-          "link": "https://www.dw.com/en/eu-strikes-deal-on-us-trade-pact-ahead-of-trump-tariff-deadline/a-77222972?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU reached a provisional agreement to remove import duties on US goods, keeping the bloc on track to meet Trump&#039;s deadline to avoid higher tariffs on European exports.",
-          "published": "2026-05-20T01:46:00.000Z",
+          "description": "NATO&#039;s Mark Rutte said US troop reductions in Europe will be structured and not harm defenses. The Trump administration has been aggressive and unclear about the drawdown but a US pivot has been in the works for years.",
+          "published": "2026-05-20T14:40:00.000Z",
           "score": 8
         }
       ]
@@ -186,6 +201,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Montenegro at 20: EU ambitions and Serbian ties",
+          "link": "https://www.dw.com/en/montenegro-at-20-eu-ambitions-and-serbian-ties/a-77233006?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Twenty years after seceding from the state union with Serbia, Montenegro is seen as a Western Balkan frontrunner for EU membership but remains marked by corruption, unresolved divisions and Serbia&#039;s political influence.",
+          "published": "2026-05-20T15:43:00.000Z",
+          "score": 8
+        },
+        {
           "title": "EU is failing to cut pesticide use",
           "link": "https://www.dw.com/en/eu-is-failing-to-cut-pesticide-use/a-76961584?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -194,44 +217,36 @@
           "score": 8
         },
         {
+          "title": "US force adjustments in Europe will be gradual and structured, Rutte says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcnF0SGZ0S3FKU2dtVkdtR0VVWGxvaGg3Ykh0NHVBQVU2akJwMUFVRGQyTlZlM2hsWGdkNTdFS2ZaQUJnM19uNDBlMl92ak5JdEV0bkZtRGZIVXYtWlVPbkNfVVNORlg5X0YzekxmOGYyMGt2ZFI3dmJfNWxSUHhBQXhuZklrWFpkYXFId05DLUpTNVNmRE9GSFhHTkVCeUsxb25XOW5STWhhbVk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcnF0SGZ0S3FKU2dtVkdtR0VVWGxvaGg3Ykh0NHVBQVU2akJwMUFVRGQyTlZlM2hsWGdkNTdFS2ZaQUJnM19uNDBlMl92ak5JdEV0bkZtRGZIVXYtWlVPbkNfVVNORlg5X0YzekxmOGYyMGt2ZFI3dmJfNWxSUHhBQXhuZklrWFpkYXFId05DLUpTNVNmRE9GSFhHTkVCeUsxb25XOW5STWhhbVk?oc=5\" target=\"_blank\"&gt;US force adjustments in Europe will be gradual and structured, Rutte says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T09:45:04.000Z",
+          "score": 8
+        },
+        {
           "title": "Russia is concerned by US, EU rare earth activity in Central Asia, media reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5\" target=\"_blank\"&gt;Russia is concerned by US, EU rare earth activity in Central Asia, media reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-20T00:30:53.000Z",
+          "published": "2026-05-20T00:30:00.000Z",
           "score": 8
         },
         {
-          "title": "EU shortlists tungsten, rare earths for first stockpile to curb China reliance - Reuters",
+          "title": "EU shortlists tungsten, rare earths for first stockpile to curb reliance on China - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmhvVmxQbzA1anZ0Q2p2WXpFMm83M0VwOW1sZ0ZnN0k0OWNyeF9KZGtvMmxJYUhWWGF5RWlOck82TEtsN0dMSmxjNm10TmMxOFd0TW9fRTQ3OHFza2tXZzhqNkFLVU5oUHVaNGQxNkczaHRDQjR6endqTXNldDNRSWFlUHlOUUdSY1NtQWxGOXlqVWVFY3BaczRkMVBvUFpob0FPOVp1T2hRcXMwa3NuUkR5N1hsLUF1bGc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmhvVmxQbzA1anZ0Q2p2WXpFMm83M0VwOW1sZ0ZnN0k0OWNyeF9KZGtvMmxJYUhWWGF5RWlOck82TEtsN0dMSmxjNm10TmMxOFd0TW9fRTQ3OHFza2tXZzhqNkFLVU5oUHVaNGQxNkczaHRDQjR6endqTXNldDNRSWFlUHlOUUdSY1NtQWxGOXlqVWVFY3BaczRkMVBvUFpob0FPOVp1T2hRcXMwa3NuUkR5N1hsLUF1bGc?oc=5\" target=\"_blank\"&gt;EU shortlists tungsten, rare earths for first stockpile to curb China reliance&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-20T08:35:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "France invites European powers to attend July 14 Bastille Day celebrations - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPM3lsSlF4OFpTRElfamgtR2ZtR3hoenlBX0k5S2RuQTVCbHhfcGJCMzVRbnJkdnZEMkNtTXdSc2kzRERrNURzUkhIQlppNmNsdVNBR04wUFBtMW5oeURHZ1prQW1yZWQ1VG52VFN4dVZOd2ZXZHN3emJoaGhza1pBWlV0ajUxbG5odUJIQl9YeFpYbUwzX3IyUHpRV1I1OVFvaWFjdWlGQlM5NGxkM1loNnF2OA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPM3lsSlF4OFpTRElfamgtR2ZtR3hoenlBX0k5S2RuQTVCbHhfcGJCMzVRbnJkdnZEMkNtTXdSc2kzRERrNURzUkhIQlppNmNsdVNBR04wUFBtMW5oeURHZ1prQW1yZWQ1VG52VFN4dVZOd2ZXZHN3emJoaGhza1pBWlV0ajUxbG5odUJIQl9YeFpYbUwzX3IyUHpRV1I1OVFvaWFjdWlGQlM5NGxkM1loNnF2OA?oc=5\" target=\"_blank\"&gt;France invites European powers to attend July 14 Bastille Day celebrations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T15:23:13.000Z",
-          "score": 8
-        },
-        {
-          "title": "Israel's parliament has voted to dissolve itself. What's next? - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNc2NKLXBmZmRUMEY4WVRfclJmX3dyeFZuaGRKdXAxODhFS25YR0RxSmJiblVDYWxvMFpDbnFTZ0NLNlJ6SGRWM1Bad0NGMEVtcUtqU2gwSk04aXRvWXMxT1hSTEZka0FoNW8yX1hkSWpwTGRuNjhlTlNzWndNTjdwMldoVEJLd1pYOG94MjI3NEw0OVZNamNMSmNaRVNRSXZoZW91VDB3WnhjbUs5dDlWZHJ2Nlo?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNc2NKLXBmZmRUMEY4WVRfclJmX3dyeFZuaGRKdXAxODhFS25YR0RxSmJiblVDYWxvMFpDbnFTZ0NLNlJ6SGRWM1Bad0NGMEVtcUtqU2gwSk04aXRvWXMxT1hSTEZka0FoNW8yX1hkSWpwTGRuNjhlTlNzWndNTjdwMldoVEJLd1pYOG94MjI3NEw0OVZNamNMSmNaRVNRSXZoZW91VDB3WnhjbUs5dDlWZHJ2Nlo?oc=5\" target=\"_blank\"&gt;Israel's parliament has voted to dissolve itself. What's next?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-20T10:54:12.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNMmhvVmxQbzA1anZ0Q2p2WXpFMm83M0VwOW1sZ0ZnN0k0OWNyeF9KZGtvMmxJYUhWWGF5RWlOck82TEtsN0dMSmxjNm10TmMxOFd0TW9fRTQ3OHFza2tXZzhqNkFLVU5oUHVaNGQxNkczaHRDQjR6endqTXNldDNRSWFlUHlOUUdSY1NtQWxGOXlqVWVFY3BaczRkMVBvUFpob0FPOVp1T2hRcXMwa3NuUkR5N1hsLUF1bGc?oc=5\" target=\"_blank\"&gt;EU shortlists tungsten, rare earths for first stockpile to curb reliance on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T14:18:07.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 167,
-    "afterDedup": 163,
+    "totalArticlesScanned": 391,
+    "articlesLast24h": 163,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
