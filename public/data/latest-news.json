@@ -11,25 +11,36 @@
     ]
   },
   {
-    "title": "Daily News 19 / 05 / 2026",
-    "summary": "European Commission Daily news Brussels, 19 May 2026 Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems\r\nToday, the European Commission registered two European ...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1108",
+    "title": "Remarks by Commissioner Hoekstra during the debate in the European Parliament on ‘Reviewing the ETS system to support European competitiveness'",
+    "summary": "European Commission Speech Strasbourg, 20 May 2026 President, Honourable Members,\r\nThank you very much, dear Chair, Honourable Members, for putting this on the agenda. And Mr Procaccini, thank you very much for o...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1117",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-05-19T13:35:36.000Z",
+    "publishedDate": "2026-05-20T11:52:23.000Z",
     "tags": [
-      "biodiversity"
+      "emissions"
     ]
   },
   {
-    "title": "Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems",
-    "summary": "European Commission Press release Strasbourg, 19 May 2026 Today, the European Commission registered two European Citizens' Initiatives (ECIs) entitled ‘Rights for Nature: Empower Citizens to Represent and Protect Ecosystems' and ‘Reconnecting nature through the creation of European biodiversity corridors'.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1064",
+    "title": "Speech by President von der Leyen at the European Parliament plenary debate on ‘High time to deliver on the Single Market, providing certainty and predictability for EU businesses and quality jobs'",
+    "summary": "European Commission Speech Strasbourg, 20 May 2026 You have chosen the Single Market as central debate topic today – that is very good. Our Single Market is more than a continental marketplace; it is a cornerstone of who we are as Europeans. It binds our citizens, our businesses and our values together. The free movement of goods, services, capital and people. It has delivered decades of growth, jobs and opportunities. It has created better choices for consumers, larger markets for businesses an",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1110",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-05-18T22:00:00.000Z",
+    "publishedDate": "2026-05-19T22:00:00.000Z",
     "tags": [
-      "biodiversity"
+      "emissions"
+    ]
+  },
+  {
+    "title": "Commission approves €1.3 billion German State aid to support renewable hydrogen production",
+    "summary": "European Commission Press release Brussels, 20 May 2026 The European Commission has approved, under EU State aid rules, a €1.3 billion German State aid scheme to support the production of renewable hydrogen through the European Hydrogen Bank's “Auctions-as-a-Service” tool for the auction that closed in 2026.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1096",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-05-19T22:00:00.000Z",
+    "tags": [
+      "energy"
     ]
   }
 ]
