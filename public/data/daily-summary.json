@@ -1,6 +1,6 @@
 {
   "date": "2026-05-20",
-  "generatedAt": "2026-05-20T00:11:20.357Z",
+  "generatedAt": "2026-05-20T08:30:43.435Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 20 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -21,12 +21,6 @@
       "summary": "European Commission Daily news Brussels, 19 May 2026 Commission registers two European Citizens' Initiatives on the protection of biodiversity and ecosystems\r\nToday, the European Commission registered two European ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNSWFjZGM2bm10cE9ENkZYcnNCeC02V0EySW41VjhVM1ZiMTdnbzVyaW4tMUJSVFM3eGdhOE5sMno4czhxLWxLSmtQcGt1U3RMRHJZWDNWTllYS2VBajFkQkdvR2VOZnN0Z0dWQld3clIxOEJEZk1rQ2ZvSlBkMC1BVDg0eWZERGlhb1RXZW5QR3Vhb1NBcnF6V092ZkY1UGJiX3JHTkFvbFVNWnJ2cGNlQ2hXOFZiOWFkVUYzR3AtSkY3cnJRWmJZ?oc=5\" target=\"_blank\"&gt;China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -127,19 +121,19 @@
           "score": 13
         },
         {
-          "title": "Europe's oldest science park could be redeveloped",
-          "link": "https://www.bbc.com/news/articles/c8d8rddp1vqo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Cambridge Science Park submits plans which could create 20,000 jobs and new public spaces.",
-          "published": "2026-05-19T05:16:57.000Z",
-          "score": 8
-        },
-        {
           "title": "UK ‘built for climate that no longer exists’ and needs urgent changes to survive global heating, report warns",
           "link": "https://www.theguardian.com/environment/2026/may/20/uk-built-for-climate-that-no-longer-exists-and-needs-urgent-changes-to-survive-global-heating-report-warns",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Landmark report calls for widespread air conditioning and says UK temperatures forecast to exceed 40C by 2050&lt;/p&gt;&lt;p&gt;British homes will need air conditioning to survive predicted levels of global heating, the government’s climate advisers have warned in a report, as measures such as drawing curtains, opening windows and growing trees for shade are not likely to be enough.&lt;/p&gt;&lt;p&gt;Air conditioning should be installed in all care homes and hospitals within the next 10",
           "published": "2026-05-19T23:01:17.000Z",
+          "score": 7
+        },
+        {
+          "title": "‘Foolish’ CSIRO job cuts will mean Australia unable to provide climate projections to global reports, scientists warn",
+          "link": "https://www.theguardian.com/australia-news/2026/may/20/csiro-job-cuts-climate-australia-projections-to-global-reports",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Science agency is planning to sack a third of the team working on the national climate model, sources say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/20/federal-budget-tim-wilson-reply-national-press-club-coalition-liberal-national-angus-taylor-labor-anthony-albanese-jim-chalmers-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&",
+          "published": "2026-05-19T15:00:08.000Z",
           "score": 7
         }
       ]
@@ -147,16 +141,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNSWFjZGM2bm10cE9ENkZYcnNCeC02V0EySW41VjhVM1ZiMTdnbzVyaW4tMUJSVFM3eGdhOE5sMno4czhxLWxLSmtQcGt1U3RMRHJZWDNWTllYS2VBajFkQkdvR2VOZnN0Z0dWQld3clIxOEJEZk1rQ2ZvSlBkMC1BVDg0eWZERGlhb1RXZW5QR3Vhb1NBcnF6V092ZkY1UGJiX3JHTkFvbFVNWnJ2cGNlQ2hXOFZiOWFkVUYzR3AtSkY3cnJRWmJZ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNSWFjZGM2bm10cE9ENkZYcnNCeC02V0EySW41VjhVM1ZiMTdnbzVyaW4tMUJSVFM3eGdhOE5sMno4czhxLWxLSmtQcGt1U3RMRHJZWDNWTllYS2VBajFkQkdvR2VOZnN0Z0dWQld3clIxOEJEZk1rQ2ZvSlBkMC1BVDg0eWZERGlhb1RXZW5QR3Vhb1NBcnF6V092ZkY1UGJiX3JHTkFvbFVNWnJ2cGNlQ2hXOFZiOWFkVUYzR3AtSkY3cnJRWmJZ?oc=5\" target=\"_blank\"&gt;China's top flash-memory chipmaker YMTC begins pre-IPO coaching with investment bank&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-          "published": "2026-05-19T09:27:52.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -171,35 +156,27 @@
           "score": 22
         },
         {
+          "title": "US to reduce troops in Europe to 2021 levels, Pentagon says",
+          "link": "https://www.dw.com/en/us-to-reduce-troops-in-europe-to-2021-levels-pentagon-says/a-77222971?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The scaling back would bring the number of US troops on the continent to the level before Russia launched its full-scale invasion of Ukraine. The Pentagon said that was in line with Trump&#039;s &#039;America first&#039; agenda.",
+          "published": "2026-05-20T03:03:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU strikes deal on US trade pact ahead of Trump tariff deadline",
+          "link": "https://www.dw.com/en/eu-strikes-deal-on-us-trade-pact-ahead-of-trump-tariff-deadline/a-77222972?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU reached a provisional agreement to remove import duties on US goods, keeping the bloc on track to meet Trump&#039;s deadline to avoid higher tariffs on European exports.",
+          "published": "2026-05-20T01:46:00.000Z",
+          "score": 8
+        },
+        {
           "title": "US troop withdrawal from Europe to take &#039;years&#039; — general",
           "link": "https://www.dw.com/en/us-troop-withdrawal-from-europe-to-take-years-general/a-77221778?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "NATO top commander Alexus Grynkewich said the US withdrawal would be &quot;well-synchronized&quot; with European allies. It comes after Donald Trump announced a decision to pull 5,000 troops out of Germany.",
           "published": "2026-05-19T19:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Top European Parliament honor to be awarded for first time",
-          "link": "https://www.dw.com/en/top-european-parliament-honor-to-be-awarded-for-first-time/a-77208111?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s Angela Merkel and Ukraine&#039;s Volodymyr Zelenskyy are among the first laureates of the European Order of Merit. They and other winners will be awarded the honor at a ceremony in the French city of Strasbourg.",
-          "published": "2026-05-19T07:51:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU prepares to cut US import duties to avoid Trump tariff hike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOZE1lcjd3MHl6T3U5UTZKdUVBMjd0SzY5WDZPaEhrQjEzaHo0SlJKa3VwcXBKMkptS2o0ekRpR1VWVXdtZFJZQ0lWZ3doYTI2bWF3OTFCODVPSHpaNlNUWklYS3NrdmhHczRzV3NtblJMel9JVldJT3Vsd3NSOTVDdUNoUkh1dlpsN3JPd05MVlJpRUVmZ2IyZ2ZrYTRSb1JnZmJr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOZE1lcjd3MHl6T3U5UTZKdUVBMjd0SzY5WDZPaEhrQjEzaHo0SlJKa3VwcXBKMkptS2o0ekRpR1VWVXdtZFJZQ0lWZ3doYTI2bWF3OTFCODVPSHpaNlNUWklYS3NrdmhHczRzV3NtblJMel9JVldJT3Vsd3NSOTVDdUNoUkh1dlpsN3JPd05MVlJpRUVmZ2IyZ2ZrYTRSb1JnZmJr?oc=5\" target=\"_blank\"&gt;EU prepares to cut US import duties to avoid Trump tariff hike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T07:56:35.000Z",
-          "score": 8
-        },
-        {
-          "title": "NATO expects US troop cuts from Europe to take years - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVkRvVmRRNWJPZkd6Q2JpOC10WlVIbThUbVZMUG9BR2dGUXc0UThxM1c0c1hrY1pvSTJLOGxac3pYaHJ5OXY1SkI2TlRmeWRDMWZsT1pzQUcyNF8wWG00cEotc2RyWmdkTkhnRUQ0T1F5WnQxNjhESFFqT0gzcGl6NXpKOEl3ZXpUN2E3Vk42S3c1eWd2WGNLejFUWENKUzN3b2N0WWttX0lnbzhwTnJDX19PUzJ4dmNXUUdCcHE4ZHpCdWhMNWtVT3QyWWhaczJRc0JsVVV2cw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxQVkRvVmRRNWJPZkd6Q2JpOC10WlVIbThUbVZMUG9BR2dGUXc0UThxM1c0c1hrY1pvSTJLOGxac3pYaHJ5OXY1SkI2TlRmeWRDMWZsT1pzQUcyNF8wWG00cEotc2RyWmdkTkhnRUQ0T1F5WnQxNjhESFFqT0gzcGl6NXpKOEl3ZXpUN2E3Vk42S3c1eWd2WGNLejFUWENKUzN3b2N0WWttX0lnbzhwTnJDX19PUzJ4dmNXUUdCcHE4ZHpCdWhMNWtVT3QyWWhaczJRc0JsVVV2cw?oc=5\" target=\"_blank\"&gt;NATO expects US troop cuts from Europe to take years&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T19:21:05.000Z",
           "score": 8
         }
       ]
@@ -209,11 +186,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Russian sanctions waiver extension shows G7 does not agree on everything, EU's Dombrovskis says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNb1BlQV9SWHdhcU9WdFJ1NEphZFgyeWE1dkFyUURpZ0habUFnZExPZXRqb2RYU2h4bjhyWGFVT3FrekVvYURmT09kU2xpX0lJU0tENG9ESXI5ZXlqdjJfT0ZYYmF1UklpZkx6RVUwZHJiaU9wUmw2cVFwMjhsSC01U2Z0QU1tYXgzLUZnMjdmeEhrV2Z5OVlrSnZSakRZek9RVDZfYkVTeW05LTdSdWI0aTIxWHBJcGlnOW9rX01B?oc=5",
+          "title": "Stellantis plans $17,500 small EV to revive European market - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNeEVIaDY2YkJ1bGhRYWFSVnFhTDMzWUdrbEZkWlgwdzZsemxLRGxyemhtYjJxZWJ3UW5QQUJhMVI4ZUhPVTJ3ZS1HUlAtdVJ1bUk0dWQxRm5iU1pzeEVfeFk1cHRqODdoNE5JMmxmUDBYUjd1ZlY3Vmo4cGczeV9RMWN1aF95dmQ1Qzl3RE9YcjUyRVpCUVVkRm5lb3V5Mk5yRFBN?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNb1BlQV9SWHdhcU9WdFJ1NEphZFgyeWE1dkFyUURpZ0habUFnZExPZXRqb2RYU2h4bjhyWGFVT3FrekVvYURmT09kU2xpX0lJU0tENG9ESXI5ZXlqdjJfT0ZYYmF1UklpZkx6RVUwZHJiaU9wUmw2cVFwMjhsSC01U2Z0QU1tYXgzLUZnMjdmeEhrV2Z5OVlrSnZSakRZek9RVDZfYkVTeW05LTdSdWI0aTIxWHBJcGlnOW9rX01B?oc=5\" target=\"_blank\"&gt;Russian sanctions waiver extension shows G7 does not agree on everything, EU's Dombrovskis says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-05-19T13:22:58.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNeEVIaDY2YkJ1bGhRYWFSVnFhTDMzWUdrbEZkWlgwdzZsemxLRGxyemhtYjJxZWJ3UW5QQUJhMVI4ZUhPVTJ3ZS1HUlAtdVJ1bUk0dWQxRm5iU1pzeEVfeFk1cHRqODdoNE5JMmxmUDBYUjd1ZlY3Vmo4cGczeV9RMWN1aF95dmQ1Qzl3RE9YcjUyRVpCUVVkRm5lb3V5Mk5yRFBN?oc=5\" target=\"_blank\"&gt;Stellantis plans $17,500 small EV to revive European market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T08:34:51.000Z",
+          "score": 13
+        },
+        {
+          "title": "The EU is failing to cut pesticide use",
+          "link": "https://www.dw.com/en/the-eu-is-failing-to-cut-pesticide-use/a-76961584?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "With binding cut targets scrapped, the EU&#039;s pledge to halve pesticide use is stalling. Even as controversial chemicals like glyphosate remain on sale across the bloc.",
+          "published": "2026-05-20T08:00:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Russia is concerned by US, EU rare earth activity in Central Asia, media reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQT1NRTDNhY2RXdUkxektfUjdpRHJxVTl6TTNfTlpFYVRkV1JJMFpXSWFnTktoR1A1b0UxcGl4NzNhYXFXMkF3OFFnWndvbnlJVFhHYWROMWNCb3RQVWNpY2lLeFdSQ2NJd0JGTHB0R0xtNVE3b1VJNFh2MDJZSlBXcjVJOXJZc0pNT1hVOU9KX0NFSzdRWGZJV1JxSlNOYlNoelNGSUg1M1J2TGZ1aEwtWXQ0OHdBT1djb2NsT0dvdm8?oc=5\" target=\"_blank\"&gt;Russia is concerned by US, EU rare earth activity in Central Asia, media reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-20T00:30:00.000Z",
           "score": 8
         },
         {
@@ -221,40 +214,24 @@
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPRUh0WFpHUEEyUUczZ3hVaHkwOEZ2S2lSUG8xYjJJMHJ3cmJ3aVNpUEFSbHEwZ2V1TGNxOHBVTTFLTXc3TjdpMjdiNWVhR2I4aFRUV0lUX084Mzk5UFloNDRySzNhcmFFMUdyNjJNelh2M2FyRVZLMmRNa1FDRkc1bmU5b2h5VXNibGVKX2JubFRIZFJOU2tZcVp1ZGlDOWhDOV8wVVMtN2hSSlQxZkxfdjNZOV96dlQ0MXRF?oc=5\" target=\"_blank\"&gt;Hungary's Magyar visits Poland on first trip abroad as PM, seeks to reset EU ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T21:04:12.000Z",
+          "published": "2026-05-19T18:02:41.000Z",
           "score": 8
         },
         {
-          "title": "Imec CEO calls for stronger AI design push in EU's Chips Act - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNMWFKWWh4MHhoeVJGXzE2R1pTcVNobTlzRm1GNnBiUXlVNHJkeXk1WTVMdlRBYnROSE9vdTFwcmc1ZloyNGticWNOajlwRVVDV2M5OFpRUWxWclJnNkk2V2Z6YzVuQU8zWXZUckRHUmY0UGJEQ0FCSFlNN0MwcGtIXzRySXJkSDBlYjZmOFZGV0hUZHZjX0pGeS1wX1JkdzdyS3c?oc=5",
+          "title": "China's Xi, Russia's Putin praise ties at Beijing talks; energy in focus - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxNMWFKWWh4MHhoeVJGXzE2R1pTcVNobTlzRm1GNnBiUXlVNHJkeXk1WTVMdlRBYnROSE9vdTFwcmc1ZloyNGticWNOajlwRVVDV2M5OFpRUWxWclJnNkk2V2Z6YzVuQU8zWXZUckRHUmY0UGJEQ0FCSFlNN0MwcGtIXzRySXJkSDBlYjZmOFZGV0hUZHZjX0pGeS1wX1JkdzdyS3c?oc=5\" target=\"_blank\"&gt;Imec CEO calls for stronger AI design push in EU's Chips Act&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T13:59:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "South Korea, Japan agree to boost energy cooperation",
-          "link": "https://www.dw.com/en/south-korea-japan-agree-to-boost-energy-cooperation/a-77209237?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The South Korean and Japanese leaders, whose nations have not always had good relations, have vowed deeper ties at talks. They reaffirmed stronger security coordination and energy cooperation in challenging times.",
-          "published": "2026-05-19T10:03:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Britain's energy price cap to rise 13% in July, Cornwall Insight says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNa082ME9GYVVoOXU3YXFfVlpIWUNwdjByOEhyeGpVLWJPQzhkSnJLQTROT21jOXlRZHI3UFRDWlJhN1RIZVRLSmY1M0pfaU14Qk1jSERUWjVtNEdpS2FEd1RETGp1SUJiS2o5U2NsVEMwcS16OGNLWVU1TEtvNHFjY0ZUa0FDRldoUDZOanRBM1pRbVlKcFM1dXZIUnFqcVRfUXRxTnFjTnNOVklxdXRWWVVR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNa082ME9GYVVoOXU3YXFfVlpIWUNwdjByOEhyeGpVLWJPQzhkSnJLQTROT21jOXlRZHI3UFRDWlJhN1RIZVRLSmY1M0pfaU14Qk1jSERUWjVtNEdpS2FEd1RETGp1SUJiS2o5U2NsVEMwcS16OGNLWVU1TEtvNHFjY0ZUa0FDRldoUDZOanRBM1pRbVlKcFM1dXZIUnFqcVRfUXRxTnFjTnNOVklxdXRWWVVR?oc=5\" target=\"_blank\"&gt;Britain's energy price cap to rise 13% in July, Cornwall Insight says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-19T07:42:01.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPTktrd0RwaTNydHdramF5RWttdWZDa0JtaHNzV1pfNENxLW1EbDNqX0VjVHZ5ekJ4Z2F1elVIemF0VXcwSm1zem9HbXZpUnN4SEdfYU1McHBYYm9LVFE2cElLLVEzdkpGaENvU1lLRHJIb2toSXZ3M28yVVRzaS1JdmxaUUIzc1FKUVhYTWkzdjBXQlB0VktPZGJ3Vlg1UXhtWjdV?oc=5\" target=\"_blank\"&gt;China's Xi, Russia's Putin praise ties at Beijing talks; energy in focus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-19T22:51:00.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 395,
-    "articlesLast24h": 156,
-    "afterDedup": 153,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 163,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
