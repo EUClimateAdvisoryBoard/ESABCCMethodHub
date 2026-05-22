@@ -95,9 +95,11 @@ export function useRecommendations() {
   const [error, setError] = useState<string | null>(null);
 
   const fetch = useCallback(async () => {
+    const sb = supabase;
+    if (!sb) { setLoading(false); return; }
     setLoading(true);
     setError(null);
-    const { data, error: err } = await supabase
+    const { data, error: err } = await sb
       .from('recommendations')
       .select(`
         *,
@@ -113,24 +115,24 @@ export function useRecommendations() {
       setRecommendations((data as RawRow[]).map(flatten));
     }
     setLoading(false);
-  }, [supabase]);
+  }, []);
 
   useEffect(() => { fetch(); }, [fetch]);
 
   // ── Save links (used by both add and update) ───────────────────────────
 
-  async function saveLinks(recId: string, policyIds: string[], indicatorIds: string[]) {
+  async function saveLinks(sb: NonNullable<typeof supabase>, recId: string, policyIds: string[], indicatorIds: string[]) {
     // Delete existing links then re-insert — simplest approach for a small dataset.
-    await supabase.from('recommendation_policy_links').delete().eq('recommendation_id', recId);
-    await supabase.from('recommendation_indicator_links').delete().eq('recommendation_id', recId);
+    await sb.from('recommendation_policy_links').delete().eq('recommendation_id', recId);
+    await sb.from('recommendation_indicator_links').delete().eq('recommendation_id', recId);
 
     if (policyIds.length > 0) {
-      await supabase.from('recommendation_policy_links').insert(
+      await sb.from('recommendation_policy_links').insert(
         policyIds.map(pid => ({ recommendation_id: recId, policy_id: pid }))
       );
     }
     if (indicatorIds.length > 0) {
-      await supabase.from('recommendation_indicator_links').insert(
+      await sb.from('recommendation_indicator_links').insert(
         indicatorIds.map(iid => ({ recommendation_id: recId, indicator_id: iid }))
       );
     }
@@ -139,8 +141,10 @@ export function useRecommendations() {
   // ── Add ────────────────────────────────────────────────────────────────
 
   async function addRecommendation(draft: RecommendationDraft): Promise<string | null> {
+    const sb = supabase;
+    if (!sb) return 'Database not available';
     const { policy_ids, indicator_ids, ...row } = draft;
-    const { data, error: err } = await supabase
+    const { data, error: err } = await sb
       .from('recommendations')
       .insert([{
         ...row,
@@ -153,7 +157,7 @@ export function useRecommendations() {
       .single();
 
     if (err || !data) return err?.message ?? 'Insert failed';
-    await saveLinks(data.id, policy_ids, indicator_ids);
+    await saveLinks(sb, data.id, policy_ids, indicator_ids);
     await fetch();
     return null;
   }
@@ -161,8 +165,10 @@ export function useRecommendations() {
   // ── Update ─────────────────────────────────────────────────────────────
 
   async function updateRecommendation(id: string, draft: RecommendationDraft): Promise<string | null> {
+    const sb = supabase;
+    if (!sb) return 'Database not available';
     const { policy_ids, indicator_ids, ...row } = draft;
-    const { error: err } = await supabase
+    const { error: err } = await sb
       .from('recommendations')
       .update({
         ...row,
@@ -174,7 +180,7 @@ export function useRecommendations() {
       .eq('id', id);
 
     if (err) return err.message;
-    await saveLinks(id, policy_ids, indicator_ids);
+    await saveLinks(sb, id, policy_ids, indicator_ids);
     await fetch();
     return null;
   }
@@ -182,7 +188,9 @@ export function useRecommendations() {
   // ── Delete ─────────────────────────────────────────────────────────────
 
   async function deleteRecommendation(id: string): Promise<string | null> {
-    const { error: err } = await supabase.from('recommendations').delete().eq('id', id);
+    const sb = supabase;
+    if (!sb) return 'Database not available';
+    const { error: err } = await sb.from('recommendations').delete().eq('id', id);
     if (err) return err.message;
     await fetch();
     return null;
