@@ -6,6 +6,7 @@ import { Suspense, useState, useEffect } from 'react';
 import { setContext } from '@/components/ContextDrawer';
 import { getPolicy, getPolicyCitations, policies } from '@/data/policies';
 import { getReferencesForPolicy } from '@/lib/policy-references';
+import { useRecommendations } from '@/lib/useRecommendations';
 import { CONNECTION_TYPES } from '@/lib/connectionTypes';
 import { useConnectionOverrides, type EnrichedConnection } from '@/lib/useConnectionOverrides';
 import PolicyCard from '@/components/PolicyCard';
@@ -57,6 +58,8 @@ function PolicyContent() {
   const conns = getConnectionsForPolicy(id);
   const cites = getPolicyCitations(id);
   const relatedRefs = getReferencesForPolicy(id, 10);
+  const { recommendations: allRecs } = useRecommendations();
+  const relatedRecs = allRecs.filter(r => r.policy_ids.includes(id ?? ''));
 
   // Register the page's context so the global drawer (#6) and assistant
   // (#11) can fetch related items / ground their answers.
@@ -295,6 +298,28 @@ function PolicyContent() {
                       )}
                     </p>
                   </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Advisory Board Recommendations */}
+          {relatedRecs.length > 0 && (
+            <div className="bg-white rounded shadow-sm border border-grey-200 p-5">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="font-bold text-tertiary-dark text-sm">Board Recommendations ({relatedRecs.length})</h3>
+                <Link href="/recommendations" className="text-[10px] text-secondary hover:underline font-medium">View all</Link>
+              </div>
+              <div className="space-y-2.5">
+                {relatedRecs.map(rec => (
+                  <Link
+                    key={rec.id}
+                    href={`/recommendations?id=${rec.id}`}
+                    className="block text-xs border-b border-grey-100 pb-2.5 last:border-0 last:pb-0 group"
+                  >
+                    <p className="text-tertiary-dark leading-snug group-hover:text-secondary transition-colors">{rec.short_text}</p>
+                    <p className="text-grey-400 mt-0.5">{rec.report_title} · {rec.year}</p>
+                  </Link>
                 ))}
               </div>
             </div>
