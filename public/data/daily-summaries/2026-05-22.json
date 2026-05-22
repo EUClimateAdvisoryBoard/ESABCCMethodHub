@@ -1,6 +1,6 @@
 {
   "date": "2026-05-22",
-  "generatedAt": "2026-05-22T08:26:23.954Z",
+  "generatedAt": "2026-05-22T13:37:06.243Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 22 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "‘It’s put the joy levels up’: the flood-prone London school with a climate-adapted playground",
-      "summary": "&lt;p&gt;When pupils could no longer play outside, St John’s school in Barnet decided to act, enlisting Trees for Cities to help rethink its outside space&lt;/p&gt;&lt;p&gt;The play area at St John’s Church of England primary in Barnet, north London, used to flood so severely it was often unusable. “It would get so bad that the children couldn’t be dismissed from the playground,” says Macci Dobie, the school’s headteacher. “We had to dismiss them from different parts of the school or, literally,",
+      "headline": "Commission approves €13 million French State aid for fishing companies facing increased fuel prices due to Middle East crisis",
+      "summary": "European Commission Press release Brussels, 22 May 2026 The European Commission has approved a €13 million French aid scheme to support fishing companies to address the increase in fuel prices due to the Middle East crisis. The scheme was approved under the Middle East Crisis Temporary State Aid Framework (METSAF) adopted by the Commission on 29 April 2026.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Will SpaceX&#039;s IPO fund life on Mars — and a trillionaire?",
-      "summary": "SpaceX is launching history&#039;s biggest public listing, propelling Elon Musk&#039;s wealth into the stratosphere. DW explores whether the firm&#039;s out-of-this-world ambitions are truly cosmic or another black hole for investors.",
+      "headline": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE788.907v01-00",
+      "summary": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europar",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -57,20 +57,12 @@
           "score": 19
         },
         {
-          "title": "Extreme climate scenario fades, but warming continues",
-          "link": "https://www.dw.com/en/extreme-climate-scenario-fades-but-warming-continues/a-77238401?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The rapid rollout of renewable energy is helping to shift emissions trends, but expected temperature rises remain high as the UN moves to tighten countries&#039; commitments.",
-          "published": "2026-05-21T09:51:00.000Z",
+          "title": "First there were coalmines, then came the windfarms. Why Colombia’s Wayúu people fear Colombia’s green energy boom",
+          "link": "https://www.theguardian.com/global-development/2026/may/22/mining-windfarm-renewable-colombia-wayuu-people-green-energy-boom",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;In the country’s north, mining has ravaged Indigenous lands and lives for decades. Is history repeating itself as renewable energy schemes arrive on their doorstep?&lt;/p&gt;&lt;p&gt;In the heart of the dry tropical forest, Maria Elena Aguilar Uriana walks past towering cacti, her ancestors’ graves, and patterned clothes blowing in the wind. Her brow is furrowed, her hands fixed on her hips. She points to a former watering hole, now nothing but dust.&lt;/p&gt;&lt;p&gt;“Our children are ",
+          "published": "2026-05-22T11:00:57.000Z",
           "score": 7
-        },
-        {
-          "title": "QatarEnergy, ExxonMobil sign deal with Egypt to study Cyprus gas development - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcHhfRUFfMzhjcXF3TlQtbE9LZVd1dF9JaUpHUFBsRG4xeVY3eUE1SmNvU1FOT3J0WEV3MHQ4ai1RRTRqcG14b2RkZHJDZk1JM2FKV0p1dkVNUktvMTdWVjVwS25ZdFdDS0V6YWpxRnN6SGhwREp3b1lUZFkweFVOVm5oRV96VEx6ZkdTRVRHOGM0c3ZPY0J0Z0J6SDd6dEg4SEo1c3ppSGNQNEstT1ZOUXl2clVMNkx0UlcyaFlEa0ttdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcHhfRUFfMzhjcXF3TlQtbE9LZVd1dF9JaUpHUFBsRG4xeVY3eUE1SmNvU1FOT3J0WEV3MHQ4ai1RRTRqcG14b2RkZHJDZk1JM2FKV0p1dkVNUktvMTdWVjVwS25ZdFdDS0V6YWpxRnN6SGhwREp3b1lUZFkweFVOVm5oRV96VEx6ZkdTRVRHOGM0c3ZPY0J0Z0J6SDd6dEg4SEo1c3ppSGNQNEstT1ZOUXl2clVMNkx0UlcyaFlEa0ttdw?oc=5\" target=\"_blank\"&gt;QatarEnergy, ExxonMobil sign deal with Egypt to study Cyprus gas development&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T11:57:32.000Z",
-          "score": 2
         }
       ]
     },
@@ -78,6 +70,22 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commission approves €13 million French State aid for fishing companies facing increased fuel prices due to Middle East crisis",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1121",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 22 May 2026 The European Commission has approved a €13 million French aid scheme to support fishing companies to address the increase in fuel prices due to the Middle East crisis. The scheme was approved under the Middle East Crisis Temporary State Aid Framework (METSAF) adopted by the Commission on 29 April 2026.",
+          "published": "2026-05-21T22:00:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "Guest post: How CMIP7 will shape the next wave of climate science",
+          "link": "https://www.carbonbrief.org/guest-post-how-cmip7-will-shape-the-next-wave-of-climate-science/",
+          "source": "Carbon Brief",
+          "description": "Hundreds of scientists in dozens of institutions are embarking on the next phase of the... The post Guest post: How CMIP7 will shape the next wave of climate science appeared first on Carbon Brief.",
+          "published": "2026-05-22T09:59:55.000Z",
+          "score": 13
+        },
         {
           "title": "‘It’s put the joy levels up’: the flood-prone London school with a climate-adapted playground",
           "link": "https://www.theguardian.com/environment/2026/may/21/flood-prone-london-school-climate-adapted-playground",
@@ -87,27 +95,11 @@
           "score": 7
         },
         {
-          "title": "Colombia’s climate crossroads: Trumpism casts shadow over presidential battle",
-          "link": "https://www.theguardian.com/world/2026/may/21/colombia-climate-crossroads-trumpism-casts-shadow-presidential-election",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Colombia is a global leader in climate activism. Could US influence drag country to a future of mining and fracking?&lt;/p&gt;&lt;p&gt;Several hours after dark in a quiet Caribbean neighbourhood, a cluster of environmental activists gather on plastic chairs between a mango tree and a courtyard wall emblazoned with the words “Colombia, respira!” (Breathe, Colombia).&lt;/p&gt;&lt;p&gt;So many people have turned up that some have to stand. That is because tonight’s speaker is &lt;a href=\"h",
-          "published": "2026-05-21T10:41:10.000Z",
-          "score": 7
-        },
-        {
           "title": "One Nation says it’s the only party in Australia to question climate science. It should ask itself why | Temperature Check",
           "link": "https://www.theguardian.com/australia-news/2026/may/22/one-nation-pauline-hanson-australia-questions-climate-science-ntwnfb",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Climate change denial has become untenable yet Hanson’s party digs in – with conspiracy theories, cherrypicking and claims that are easy to refute&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/may/22/australia-news-live-flotilla-sumud-israel-al-roj-camp-isis-budget-capital-gains-negative-gearing-jim-chalmers-anthony-albanese-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&g",
           "published": "2026-05-21T15:00:34.000Z",
-          "score": 7
-        },
-        {
-          "title": "Canadian prime minister Mark Carney is not the climate guy you thought | Seth Klein",
-          "link": "https://www.theguardian.com/commentisfree/2026/may/21/mark-carney-climate-canada",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;While Canada may be clinging to fossil fuels, much of the world is moving on&lt;/p&gt;&lt;p&gt;Casual international observers would be forgiven for assuming Canada is in the comforting hands of a climate champ. After all, while climate policy rollbacks reign supreme in Donald Trump’s America, Canada is now led by a man who, while serving as governor of the Bank of England, delivered a celebrated 2015 speech, “&lt;a href=\"https://www.bankofengland.co.uk/speech/2015/breaking-the-tragedy-o",
-          "published": "2026-05-21T10:00:07.000Z",
           "score": 7
         },
         {
@@ -125,12 +117,20 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Will SpaceX&#039;s IPO fund life on Mars — and a trillionaire?",
-          "link": "https://www.dw.com/en/will-spacex-s-ipo-fund-life-on-mars-and-a-trillionaire/a-77236838?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "SpaceX is launching history&#039;s biggest public listing, propelling Elon Musk&#039;s wealth into the stratosphere. DW explores whether the firm&#039;s out-of-this-world ambitions are truly cosmic or another black hole for investors.",
-          "published": "2026-05-21T13:24:00.000Z",
-          "score": 2
+          "title": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE788.907v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788907_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europar",
+          "published": "2026-05-22T09:46:30.000Z",
+          "score": 22
+        },
+        {
+          "title": "Commission awards €400 million to European projects to decarbonise heat production",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1134",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 22 May 2026 Today, the European Commission has selected 65 projects under the Innovation Fund Heat Auction.",
+          "published": "2026-05-21T22:00:00.000Z",
+          "score": 18
         },
         {
           "title": "Democratic senators raise alarm over foreign investment in Paramount, Warner Bros merger - Reuters",
@@ -141,19 +141,11 @@
           "score": 2
         },
         {
-          "title": "Foreign investment in Germany falls to near decade-low, agency says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQbmRfTlYyc21zX1hzWTROdDVqV1h1eUpIUGw5dW40MVpUcXBNYnlVUHlSYzV4bXdZeW1zb0QzU3Z0VmFtZkxjV01fcmxsSV80Vnloa3diZU5tRFBWbVpLQzBTUUZwSE1mcVVMTkhYVWJJeXJpRGx0NnRlVkJPWW5GUGtZQkhsdXVscUZjTHRSejlkWjJpRndrQ0VQMnNHSjhjNFo2dUE4VW5hLUUx?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQbmRfTlYyc21zX1hzWTROdDVqV1h1eUpIUGw5dW40MVpUcXBNYnlVUHlSYzV4bXdZeW1zb0QzU3Z0VmFtZkxjV01fcmxsSV80Vnloa3diZU5tRFBWbVpLQzBTUUZwSE1mcVVMTkhYVWJJeXJpRGx0NnRlVkJPWW5GUGtZQkhsdXVscUZjTHRSejlkWjJpRndrQ0VQMnNHSjhjNFo2dUE4VW5hLUUx?oc=5\" target=\"_blank\"&gt;Foreign investment in Germany falls to near decade-low, agency says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T09:02:50.000Z",
-          "score": 2
-        },
-        {
           "title": "JPMorgan rolls out AI tools in investment banking globally, senior banker says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQ3RjanZNcldXZnVxdFpSMjl6WEhSamJGd19ISy1pOGR3R0RlWjJCT0JzMUowYm4xdlBrRWw2eE9WSHJZMDNKdmIzU2ZoMU1TZUFNZU0xbDJYUUwzVDdoTXN0c3dYdEozQkFwQ3JPTXlFRWdIMXZ3WURXZ3lpVkpwaC03OWlNcnN2WEVMVURKR2lNR1dIeTludnJfNGc4OWg5bEhNWUFhZ2syMzBXM3dGb2FNd0hwbFdNQTR1aHY2V01zUTZZeFhONA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOQ3RjanZNcldXZnVxdFpSMjl6WEhSamJGd19ISy1pOGR3R0RlWjJCT0JzMUowYm4xdlBrRWw2eE9WSHJZMDNKdmIzU2ZoMU1TZUFNZU0xbDJYUUwzVDdoTXN0c3dYdEozQkFwQ3JPTXlFRWdIMXZ3WURXZ3lpVkpwaC03OWlNcnN2WEVMVURKR2lNR1dIeTludnJfNGc4OWg5bEhNWUFhZ2syMzBXM3dGb2FNd0hwbFdNQTR1aHY2V01zUTZZeFhONA?oc=5\" target=\"_blank\"&gt;JPMorgan rolls out AI tools in investment banking globally, senior banker says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-05-21T16:49:43.000Z",
+          "published": "2026-05-21T16:47:00.000Z",
           "score": 2
         },
         {
@@ -171,28 +163,36 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Draft agenda - Monday, 1 June 2026 - Wednesday, 3 June 2026 - PE789.036v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-06-01-1_EN.html",
+          "title": "AMENDMENTS 35 - 234 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures - PE788.846v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788846_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 35 - 234 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Mohammed Chahim&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-22T09:06:42.000Z",
+          "score": 22
+        },
+        {
+          "title": "Draft agenda - Wednesday, 3 June 2026 - PE789.026v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on the Internal Market and Consumer Protection , Committee on Transport and Tourism",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-OJ-2026-06-03-1_EN.html",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-22T07:40:26.000Z",
+          "published": "2026-05-22T10:20:14.000Z",
           "score": 18
         },
         {
-          "title": "Gonorrhoea and syphilis hit record levels in Europe",
-          "link": "https://www.bbc.com/news/articles/cm2pj07dr7lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "STIs have surged thanks to record cases and gaps in testing and prevention, a health agency reports.",
-          "published": "2026-05-21T12:19:15.000Z",
+          "title": "Mexico, EU to sign stalled trade deal as they aim to diversify from US - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPU3hRMkZqRjFiT0tUMzFiTFRoR1ZqQ0dUeVY2SzdtckRLSWxLZVRFYVhiVjBUUnpybVhHMWFjNmZJSHFqUFhPS0szbGpaSGVQc0JiLU5FUTZiR2dyZDZTcDhWNVBsd0xhdm5pbFcxbjZoR0hVSEVtb2oxNi1MTVdES21JTU9YTVA1eC0ySWNUZ04wZ0FndVNEV0lhVU52R0JQR0p5N004eHhMZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPU3hRMkZqRjFiT0tUMzFiTFRoR1ZqQ0dUeVY2SzdtckRLSWxLZVRFYVhiVjBUUnpybVhHMWFjNmZJSHFqUFhPS0szbGpaSGVQc0JiLU5FUTZiR2dyZDZTcDhWNVBsd0xhdm5pbFcxbjZoR0hVSEVtb2oxNi1MTVdES21JTU9YTVA1eC0ySWNUZ04wZ0FndVNEV0lhVU52R0JQR0p5N004eHhMZw?oc=5\" target=\"_blank\"&gt;Mexico, EU to sign stalled trade deal as they aim to diversify from US&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T12:04:09.000Z",
           "score": 8
         },
         {
-          "title": "Germany's Merz pitches 'associate' EU membership for Ukraine - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPb2VjV0lXSWtpaEkxckNYM1RhaGtCM0R0aTBfTzlOaHJrM3FqSHdLZC1ZY3Rod1dfVkZhWnVZaUk3cHg1eEVZRHhPanFDYkhZcXdBWHhGRGVWNEc3OFJFT2JDNkZMWld0ZzdMaWhubDN5c0F5clJmR2FUNUo1ckNWamxvTkl2bDR6aG1nUDJIQlJPaHhyZXFZMXhJS3Y3Ujg0V0haUg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPb2VjV0lXSWtpaEkxckNYM1RhaGtCM0R0aTBfTzlOaHJrM3FqSHdLZC1ZY3Rod1dfVkZhWnVZaUk3cHg1eEVZRHhPanFDYkhZcXdBWHhGRGVWNEc3OFJFT2JDNkZMWld0ZzdMaWhubDN5c0F5clJmR2FUNUo1ckNWamxvTkl2bDR6aG1nUDJIQlJPaHhyZXFZMXhJS3Y3Ujg0V0haUg?oc=5\" target=\"_blank\"&gt;Germany's Merz pitches 'associate' EU membership for Ukraine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T12:09:04.000Z",
-          "score": 8
+          "title": "US to send 5,000 additional troops to Poland — Trump",
+          "link": "https://www.dw.com/en/us-to-send-5-000-additional-troops-to-poland-trump/a-77255103?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Trump said the decision to deploy more troops to Poland was influenced by nationalist Karol Nawrocki winning the Polish presidency last year. The announcement comes as the US scales back its military presence in Europe.",
+          "published": "2026-05-21T21:46:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -201,20 +201,28 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Iran war drags European economy down, pushes prices up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3RGVHR6WTRZWk53ZzdZZF9ySHZNdTNHdUh2VDZGUnlCZkVQcGxuVjM0T3lUbGwtN2V2cVZqaTlNZHNFNk1sT0hSRXRyNTlxd0N2eThLZVE3Q0QyMEFmN0JfVGJfcl9wM0xUbmtmRXJrVDEzNzZEWkxlOTI1Mld3U0tyRjhzMkNNRUR1aFdJbjhzcW1oZkhNUkNjWTdkdG5iT29QMQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOV3RGVHR6WTRZWk53ZzdZZF9ySHZNdTNHdUh2VDZGUnlCZkVQcGxuVjM0T3lUbGwtN2V2cVZqaTlNZHNFNk1sT0hSRXRyNTlxd0N2eThLZVE3Q0QyMEFmN0JfVGJfcl9wM0xUbmtmRXJrVDEzNzZEWkxlOTI1Mld3U0tyRjhzMkNNRUR1aFdJbjhzcW1oZkhNUkNjWTdkdG5iT29QMQ?oc=5\" target=\"_blank\"&gt;Iran war drags European economy down, pushes prices up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T11:43:43.000Z",
+          "title": "Cyprus election expected to shake up national politics",
+          "link": "https://www.dw.com/en/cyprus-election-expected-to-shake-up-national-politics/a-77260976?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Cyprus goes to the polls to elect a new parliament on May 24. The vote is expected to reshape the country&#039;s political landscape, weaken traditional parties and accelerate the rise of new anti-establishment movements.",
+          "published": "2026-05-22T10:33:00.000Z",
           "score": 8
         },
         {
-          "title": "Japan's core inflation hits 4-year low, rebound eyed on energy shock - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNOUt5c0hjYW04T09keEUxMFlGbFh0cW80OUNDSDVfelB3TzYzWi1EbWVyb1RHcGdtR1EtMUNscUxhX1EwUTA5blVfNnFDTVFFUkhyQk1jdlhhSDhlVHl3SW9Rdll2YkxnWk54Wkw3cVFzWFdaZzFxUnBqSEp0d3dwN1Z3VXh6ODUwQkdnaGFaTjVXX252VE1tZTVlZzZkeXJ6?oc=5",
+          "title": "China foreign minister to chair UN Security Council meeting in US, visit Canada - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPb0ZvYkZ6RWhnVXoyeVdBQXNId2MxSmR2bEpwSWFEZ3htYmxVbkZNYlZGUk81QzRlZk1sTWt5TktKdmNpb0lySmJMMnZCVklWb2tDZ3NIblo5VjlQbENYYTV6WmJDU3B5R1d0UTJqMV93TnU3ektScHZHX2RBRklucXA4NXdkLWc2LUJra3NUT0RmX19tM0s2OTNWYkZJZ0lzejY2ME5MdGxDNkg5V0tvWW5RVDlRM0dNb2VVaw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNOUt5c0hjYW04T09keEUxMFlGbFh0cW80OUNDSDVfelB3TzYzWi1EbWVyb1RHcGdtR1EtMUNscUxhX1EwUTA5blVfNnFDTVFFUkhyQk1jdlhhSDhlVHl3SW9Rdll2YkxnWk54Wkw3cVFzWFdaZzFxUnBqSEp0d3dwN1Z3VXh6ODUwQkdnaGFaTjVXX252VE1tZTVlZzZkeXJ6?oc=5\" target=\"_blank\"&gt;Japan's core inflation hits 4-year low, rebound eyed on energy shock&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T23:48:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPb0ZvYkZ6RWhnVXoyeVdBQXNId2MxSmR2bEpwSWFEZ3htYmxVbkZNYlZGUk81QzRlZk1sTWt5TktKdmNpb0lySmJMMnZCVklWb2tDZ3NIblo5VjlQbENYYTV6WmJDU3B5R1d0UTJqMV93TnU3ektScHZHX2RBRklucXA4NXdkLWc2LUJra3NUT0RmX19tM0s2OTNWYkZJZ0lzejY2ME5MdGxDNkg5V0tvWW5RVDlRM0dNb2VVaw?oc=5\" target=\"_blank\"&gt;China foreign minister to chair UN Security Council meeting in US, visit Canada&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T07:35:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe's AI stocks shine through gloom of Iran war - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPSkJmUXNhaXlNbFNrbGVQdTRldWdZbXI0UVFvQkx5UHd1YWVWc0lOTENwbDVCa0tyQjJ1NHVMV21MVVc1ejJBcGZ2eW9IakUzNTNxa2RBNWhfUmc5N0pOSUMwNmFlMDZtMVpETkUyLVZGWV9xY2p6YkZxMXpBdUVmOWFtRG8yLVE0Nmh5SDlyYURlNGR1Ql9Na3JB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxPSkJmUXNhaXlNbFNrbGVQdTRldWdZbXI0UVFvQkx5UHd1YWVWc0lOTENwbDVCa0tyQjJ1NHVMV21MVVc1ejJBcGZ2eW9IakUzNTNxa2RBNWhfUmc5N0pOSUMwNmFlMDZtMVpETkUyLVZGWV9xY2p6YkZxMXpBdUVmOWFtRG8yLVE0Nmh5SDlyYURlNGR1Ql9Na3JB?oc=5\" target=\"_blank\"&gt;Europe's AI stocks shine through gloom of Iran war&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T05:06:00.000Z",
+          "score": 8
         },
         {
           "title": "U.N. top court says workers have the right to strike under main labour law treaty - Reuters",
@@ -225,28 +233,20 @@
           "score": 6
         },
         {
-          "title": "Samsung workers to begin vote on pay deal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLURQWDZVajNGSVNWbEZCdkUzSHY4c25SV0FDYU9QMTg3THVGTmJLVEZpOWltUHIyMVlOUlFOczRpb3ZtbUpIWTgtMHpFYXE4OVR5OW16NjNTajVJT0s4T1BHNG1NMmZRQ0JLcGppeGtBRlRTVTRtbjVWNjNRRXlvV0FRSEVnSk1ZZ2JRVXd1RnBzcU05cGN1M2x6QnIwdHd3ZGRFeHFpb0tPRWhwTEJBbFhKRFRFRzNYSFB0SGpHVQ?oc=5",
+          "title": "US House Republicans cancel Iran war powers vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNN3EwOGNmNGZ1RHg2NkhNaHNwakpqSHhPTHlsSmdVRDNJTXF6dFVNaWpIX3RXWmdRSG8zaHJDN1RxclBRZFh4SW9udEpXTTFhNWtDSlFXcGN5Rk5jX3V6aU9qV0l2TjhrZnp4cDlrbWRMN0dNdzR0RnpCTUhHY21UYjZFLURHTzhxMkVSTFcwcnZzQXg0d29iWQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOLURQWDZVajNGSVNWbEZCdkUzSHY4c25SV0FDYU9QMTg3THVGTmJLVEZpOWltUHIyMVlOUlFOczRpb3ZtbUpIWTgtMHpFYXE4OVR5OW16NjNTajVJT0s4T1BHNG1NMmZRQ0JLcGppeGtBRlRTVTRtbjVWNjNRRXlvV0FRSEVnSk1ZZ2JRVXd1RnBzcU05cGN1M2x6QnIwdHd3ZGRFeHFpb0tPRWhwTEJBbFhKRFRFRzNYSFB0SGpHVQ?oc=5\" target=\"_blank\"&gt;Samsung workers to begin vote on pay deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-22T01:22:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Exclusive: US House Foreign Affairs Committee Chair warns of China role in Argentina contract bid - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMUgyanAybXlnYnBjeTN6V3R0eDNaVVVKRFQ4RDh5eDZSd2ctNXFYbm9VOTREdDB6dzV1OTVnck1qMlFIel91WU94eXNyV1FTckRCeEw5SmE1d2ZYWno1c1VuTExHNUY3bFFZVVdXcWNFVVhSTmpqZ0tQQ0d6S3Bsa2haS3FyeWVraUNrRU5LN2l1a05LYXZuaG1CSHVPUVo5ekRhbW9VWXgwcjZRQmVqSmpSWllNOU1XRHpSTmtGQ1hTc1k?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMUgyanAybXlnYnBjeTN6V3R0eDNaVVVKRFQ4RDh5eDZSd2ctNXFYbm9VOTREdDB6dzV1OTVnck1qMlFIel91WU94eXNyV1FTckRCeEw5SmE1d2ZYWno1c1VuTExHNUY3bFFZVVdXcWNFVVhSTmpqZ0tQQ0d6S3Bsa2haS3FyeWVraUNrRU5LN2l1a05LYXZuaG1CSHVPUVo5ekRhbW9VWXgwcjZRQmVqSmpSWllNOU1XRHpSTmtGQ1hTc1k?oc=5\" target=\"_blank\"&gt;Exclusive: US House Foreign Affairs Committee Chair warns of China role in Argentina contract bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-05-21T15:14:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxNN3EwOGNmNGZ1RHg2NkhNaHNwakpqSHhPTHlsSmdVRDNJTXF6dFVNaWpIX3RXWmdRSG8zaHJDN1RxclBRZFh4SW9udEpXTTFhNWtDSlFXcGN5Rk5jX3V6aU9qV0l2TjhrZnp4cDlrbWRMN0dNdzR0RnpCTUhHY21UYjZFLURHTzhxMkVSTFcwcnZzQXg0d29iWQ?oc=5\" target=\"_blank\"&gt;US House Republicans cancel Iran war powers vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-21T22:55:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 399,
-    "articlesLast24h": 167,
-    "afterDedup": 161,
+    "totalArticlesScanned": 404,
+    "articlesLast24h": 181,
+    "afterDedup": 171,
     "feedsQueried": 19
   }
 }
