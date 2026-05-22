@@ -1308,8 +1308,17 @@ ${chartImages.map((src, i) => `<div class="chart"><img src="${src}" alt="Chart $
   const [autoLoadId, setAutoLoadId] = useState<string | null>(null);
   useEffect(() => {
     if (typeof window === 'undefined') return;
-    const id = new URLSearchParams(window.location.search).get('view');
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('view');
     if (id) setAutoLoadId(id);
+    // ?gap=<indicatorId> deep-links into the policy-gap tab from Recommendations
+    const gap = params.get('gap');
+    if (gap) {
+      setTopMode('policy-gap');
+      const url = new URL(window.location.href);
+      url.searchParams.delete('gap');
+      window.history.replaceState({}, '', url.toString());
+    }
   }, []);
   const handleAutoLoaded = useCallback(() => {
     if (typeof window === 'undefined') return;

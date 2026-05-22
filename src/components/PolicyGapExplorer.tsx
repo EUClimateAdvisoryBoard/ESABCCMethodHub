@@ -13,6 +13,8 @@
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import Link from 'next/link';
+import { useRecommendations } from '@/lib/useRecommendations';
 import dynamic from 'next/dynamic';
 import {
   POLICY_GAP_INDICATORS,
@@ -60,6 +62,7 @@ const MEMBER_STATE_OPTIONS = [
 ];
 
 export default function PolicyGapExplorer() {
+  const { recommendations } = useRecommendations();
   const [activeSector, setActiveSector] = useState<PolicyGapSector>('Overall');
   const [indicatorData, setIndicatorData] = useState<Record<string, IndicatorData>>({});
   const [projectionData, setProjectionData] = useState<Record<string, IndicatorProjections>>({});
@@ -535,6 +538,21 @@ export default function PolicyGapExplorer() {
               ) : d?.error ? (
                 <div className="text-xs text-[#b04545] mt-2">{d.error}</div>
               ) : null}
+              {(() => {
+                const recs = recommendations.filter(r => r.indicator_ids.includes(ind.id));
+                if (recs.length === 0) return null;
+                return (
+                  <div className="mt-2 pt-2 border-t border-grey-100">
+                    <Link
+                      href={`/recommendations?id=${recs[0].id}`}
+                      onClick={e => e.stopPropagation()}
+                      className="text-[10px] text-secondary hover:underline"
+                    >
+                      {recs.length} Board recommendation{recs.length === 1 ? '' : 's'}
+                    </Link>
+                  </div>
+                );
+              })()}
             </button>
           );
         })}
