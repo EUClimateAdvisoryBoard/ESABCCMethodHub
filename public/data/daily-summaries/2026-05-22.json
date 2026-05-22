@@ -1,9 +1,15 @@
 {
   "date": "2026-05-22",
-  "generatedAt": "2026-05-22T00:07:21.442Z",
+  "generatedAt": "2026-05-22T08:26:23.954Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 22 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -11,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Speech by Commissioner Albuquerque at the European Securities and Markets Authority (ESMA) conference: A new era for EU capital markets",
-      "summary": "European Commission Speech Paris, 21 May 2026 Good morning, ladies and gentlemen.\r\nMany thanks to Verena for inviting me to take part in today's discussion. It is a pleasure to be back in Paris. I am encoura...",
+      "headline": "‘It’s put the joy levels up’: the flood-prone London school with a climate-adapted playground",
+      "summary": "&lt;p&gt;When pupils could no longer play outside, St John’s school in Barnet decided to act, enlisting Trees for Cities to help rethink its outside space&lt;/p&gt;&lt;p&gt;The play area at St John’s Church of England primary in Barnet, north London, used to flood so severely it was often unusable. “It would get so bad that the children couldn’t be dismissed from the playground,” says Macci Dobie, the school’s headteacher. “We had to dismiss them from different parts of the school or, literally,",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260522CHE14228",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
+          "published": "2026-05-22T07:41:08.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -50,28 +65,12 @@
           "score": 7
         },
         {
-          "title": "Russia flexes nuclear muscles as tensions rise with NATO - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNM1N1SmNXcEZxUGlGUmI5R29uSXJTNGVBM3g0eWZDU0VoRk9LS2x2RGRMSlpxcjhMT3BfdEZMM1l1bDRkWENzVjFxM2diTURtRkVWVHJwQUtMN2R5ZzBRZEZBNzVYNExiQ0tRUjVSUnJOUENabmFLRDNBaW9DVklnVTZndVo2c05nM3l3NnRUcERMaS1IZTNrWVFHV3luX1pUYnRHaWpWS01rcm9hTEhZ?oc=5",
+          "title": "QatarEnergy, ExxonMobil sign deal with Egypt to study Cyprus gas development - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcHhfRUFfMzhjcXF3TlQtbE9LZVd1dF9JaUpHUFBsRG4xeVY3eUE1SmNvU1FOT3J0WEV3MHQ4ai1RRTRqcG14b2RkZHJDZk1JM2FKV0p1dkVNUktvMTdWVjVwS25ZdFdDS0V6YWpxRnN6SGhwREp3b1lUZFkweFVOVm5oRV96VEx6ZkdTRVRHOGM0c3ZPY0J0Z0J6SDd6dEg4SEo1c3ppSGNQNEstT1ZOUXl2clVMNkx0UlcyaFlEa0ttdw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNM1N1SmNXcEZxUGlGUmI5R29uSXJTNGVBM3g0eWZDU0VoRk9LS2x2RGRMSlpxcjhMT3BfdEZMM1l1bDRkWENzVjFxM2diTURtRkVWVHJwQUtMN2R5ZzBRZEZBNzVYNExiQ0tRUjVSUnJOUENabmFLRDNBaW9DVklnVTZndVo2c05nM3l3NnRUcERMaS1IZTNrWVFHV3luX1pUYnRHaWpWS01rcm9hTEhZ?oc=5\" target=\"_blank\"&gt;Russia flexes nuclear muscles as tensions rise with NATO&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T05:19:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Vietnamese EV maker VinFast's move to shift $7 billion in debt raises 'red flags' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQS3BDMkFyb1RSOXQtajFqQzRRcnJfN20waC1HX1BWUFF4eHF6cE1fWDQtbDl1SUhPdUhLekJPcWlKdUM0Z1pqOU5DaFdmUEp6YmpaYVowTHFnVU1VY3MzcnBld3p2Y0FMMWxsYlVfb2FNLVNrd0FWZ01SNFBBY0c0Qkp6bHBJVUdkVVEtRzV0RktwY1dmU21sdlJMSmhhMzZXZmY4SUs0YkR5OWZmX3V5dG5sQ2VpbVowWUR5ejA3WjZiVm9q?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQS3BDMkFyb1RSOXQtajFqQzRRcnJfN20waC1HX1BWUFF4eHF6cE1fWDQtbDl1SUhPdUhLekJPcWlKdUM0Z1pqOU5DaFdmUEp6YmpaYVowTHFnVU1VY3MzcnBld3p2Y0FMMWxsYlVfb2FNLVNrd0FWZ01SNFBBY0c0Qkp6bHBJVUdkVVEtRzV0RktwY1dmU21sdlJMSmhhMzZXZmY4SUs0YkR5OWZmX3V5dG5sQ2VpbVowWUR5ejA3WjZiVm9q?oc=5\" target=\"_blank\"&gt;Vietnamese EV maker VinFast's move to shift $7 billion in debt raises 'red flags'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-05-21T04:54:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Italy pays the price of Meloni's stalled green energy transition - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNSy0wMUNENURQOGozaHdBWFVPRUZ2UkRRVTY2eU13azgyX2pkellxYkYyLTJLcVAyYjFNaHFRcFdjWHY1U0NURGZ2TEwyVnp3RGxXUzFNdXZfZW9WczRYZGVCZTRub3d5ZWRBVi1QQ0p2Q3RqaXRMSDlHR25aTFNQR2VFelFWa2pjb3ZmcmRiaDlCYVRKVnNvWGg0d1c4bVc5bkFQem1BWjV2TGp5?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNSy0wMUNENURQOGozaHdBWFVPRUZ2UkRRVTY2eU13azgyX2pkellxYkYyLTJLcVAyYjFNaHFRcFdjWHY1U0NURGZ2TEwyVnp3RGxXUzFNdXZfZW9WczRYZGVCZTRub3d5ZWRBVi1QQ0p2Q3RqaXRMSDlHR25aTFNQR2VFelFWa2pjb3ZmcmRiaDlCYVRKVnNvWGg0d1c4bVc5bkFQem1BWjV2TGp5?oc=5\" target=\"_blank\"&gt;Italy pays the price of Meloni's stalled green energy transition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T05:02:00.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQcHhfRUFfMzhjcXF3TlQtbE9LZVd1dF9JaUpHUFBsRG4xeVY3eUE1SmNvU1FOT3J0WEV3MHQ4ai1RRTRqcG14b2RkZHJDZk1JM2FKV0p1dkVNUktvMTdWVjVwS25ZdFdDS0V6YWpxRnN6SGhwREp3b1lUZFkweFVOVm5oRV96VEx6ZkdTRVRHOGM0c3ZPY0J0Z0J6SDd6dEg4SEo1c3ppSGNQNEstT1ZOUXl2clVMNkx0UlcyaFlEa0ttdw?oc=5\" target=\"_blank\"&gt;QatarEnergy, ExxonMobil sign deal with Egypt to study Cyprus gas development&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-21T11:57:32.000Z",
+          "score": 2
         }
       ]
     },
@@ -79,14 +78,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Speech by Commissioner Albuquerque at the European Securities and Markets Authority (ESMA) conference: A new era for EU capital markets",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1128",
-          "source": "European Commission",
-          "description": "European Commission Speech Paris, 21 May 2026 Good morning, ladies and gentlemen.\r\nMany thanks to Verena for inviting me to take part in today's discussion. It is a pleasure to be back in Paris. I am encoura...",
-          "published": "2026-05-21T08:06:23.000Z",
-          "score": 18
-        },
         {
           "title": "‘It’s put the joy levels up’: the flood-prone London school with a climate-adapted playground",
           "link": "https://www.theguardian.com/environment/2026/may/21/flood-prone-london-school-climate-adapted-playground",
@@ -117,6 +108,14 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;While Canada may be clinging to fossil fuels, much of the world is moving on&lt;/p&gt;&lt;p&gt;Casual international observers would be forgiven for assuming Canada is in the comforting hands of a climate champ. After all, while climate policy rollbacks reign supreme in Donald Trump’s America, Canada is now led by a man who, while serving as governor of the Bank of England, delivered a celebrated 2015 speech, “&lt;a href=\"https://www.bankofengland.co.uk/speech/2015/breaking-the-tragedy-o",
           "published": "2026-05-21T10:00:07.000Z",
+          "score": 7
+        },
+        {
+          "title": "How do hurricanes and typhoons form and is climate change making them stronger?",
+          "link": "https://www.bbc.com/news/articles/cz913gxlw3jo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "These powerful tropical storms are generally becoming more intense as the world warms.",
+          "published": "2026-05-21T15:28:27.000Z",
           "score": 7
         }
       ]
@@ -172,6 +171,14 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "Draft agenda - Monday, 1 June 2026 - Wednesday, 3 June 2026 - PE789.036v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-06-01-1_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-22T07:40:26.000Z",
+          "score": 18
+        },
+        {
           "title": "Gonorrhoea and syphilis hit record levels in Europe",
           "link": "https://www.bbc.com/news/articles/cm2pj07dr7lo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -184,7 +191,7 @@
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPb2VjV0lXSWtpaEkxckNYM1RhaGtCM0R0aTBfTzlOaHJrM3FqSHdLZC1ZY3Rod1dfVkZhWnVZaUk3cHg1eEVZRHhPanFDYkhZcXdBWHhGRGVWNEc3OFJFT2JDNkZMWld0ZzdMaWhubDN5c0F5clJmR2FUNUo1ckNWamxvTkl2bDR6aG1nUDJIQlJPaHhyZXFZMXhJS3Y3Ujg0V0haUg?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPb2VjV0lXSWtpaEkxckNYM1RhaGtCM0R0aTBfTzlOaHJrM3FqSHdLZC1ZY3Rod1dfVkZhWnVZaUk3cHg1eEVZRHhPanFDYkhZcXdBWHhGRGVWNEc3OFJFT2JDNkZMWld0ZzdMaWhubDN5c0F5clJmR2FUNUo1ckNWamxvTkl2bDR6aG1nUDJIQlJPaHhyZXFZMXhJS3Y3Ujg0V0haUg?oc=5\" target=\"_blank\"&gt;Germany's Merz pitches 'associate' EU membership for Ukraine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T04:02:00.000Z",
+          "published": "2026-05-21T12:09:04.000Z",
           "score": 8
         }
       ]
@@ -202,12 +209,12 @@
           "score": 8
         },
         {
-          "title": "Samsung strike on hold as workers push for AI bonus",
-          "link": "https://www.bbc.com/news/articles/c4g04qkqlk2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The walkout, which was due to start on Thursday, has been suspended while union members vote on a tentative deal.",
-          "published": "2026-05-21T06:01:54.000Z",
-          "score": 6
+          "title": "Japan's core inflation hits 4-year low, rebound eyed on energy shock - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNOUt5c0hjYW04T09keEUxMFlGbFh0cW80OUNDSDVfelB3TzYzWi1EbWVyb1RHcGdtR1EtMUNscUxhX1EwUTA5blVfNnFDTVFFUkhyQk1jdlhhSDhlVHl3SW9Rdll2YkxnWk54Wkw3cVFzWFdaZzFxUnBqSEp0d3dwN1Z3VXh6ODUwQkdnaGFaTjVXX252VE1tZTVlZzZkeXJ6?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNOUt5c0hjYW04T09keEUxMFlGbFh0cW80OUNDSDVfelB3TzYzWi1EbWVyb1RHcGdtR1EtMUNscUxhX1EwUTA5blVfNnFDTVFFUkhyQk1jdlhhSDhlVHl3SW9Rdll2YkxnWk54Wkw3cVFzWFdaZzFxUnBqSEp0d3dwN1Z3VXh6ODUwQkdnaGFaTjVXX252VE1tZTVlZzZkeXJ6?oc=5\" target=\"_blank\"&gt;Japan's core inflation hits 4-year low, rebound eyed on energy shock&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-21T23:48:00.000Z",
+          "score": 7
         },
         {
           "title": "U.N. top court says workers have the right to strike under main labour law treaty - Reuters",
@@ -218,28 +225,28 @@
           "score": 6
         },
         {
+          "title": "Samsung workers to begin vote on pay deal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOLURQWDZVajNGSVNWbEZCdkUzSHY4c25SV0FDYU9QMTg3THVGTmJLVEZpOWltUHIyMVlOUlFOczRpb3ZtbUpIWTgtMHpFYXE4OVR5OW16NjNTajVJT0s4T1BHNG1NMmZRQ0JLcGppeGtBRlRTVTRtbjVWNjNRRXlvV0FRSEVnSk1ZZ2JRVXd1RnBzcU05cGN1M2x6QnIwdHd3ZGRFeHFpb0tPRWhwTEJBbFhKRFRFRzNYSFB0SGpHVQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOLURQWDZVajNGSVNWbEZCdkUzSHY4c25SV0FDYU9QMTg3THVGTmJLVEZpOWltUHIyMVlOUlFOczRpb3ZtbUpIWTgtMHpFYXE4OVR5OW16NjNTajVJT0s4T1BHNG1NMmZRQ0JLcGppeGtBRlRTVTRtbjVWNjNRRXlvV0FRSEVnSk1ZZ2JRVXd1RnBzcU05cGN1M2x6QnIwdHd3ZGRFeHFpb0tPRWhwTEJBbFhKRFRFRzNYSFB0SGpHVQ?oc=5\" target=\"_blank\"&gt;Samsung workers to begin vote on pay deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T01:22:00.000Z",
+          "score": 6
+        },
+        {
           "title": "Exclusive: US House Foreign Affairs Committee Chair warns of China role in Argentina contract bid - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMUgyanAybXlnYnBjeTN6V3R0eDNaVVVKRFQ4RDh5eDZSd2ctNXFYbm9VOTREdDB6dzV1OTVnck1qMlFIel91WU94eXNyV1FTckRCeEw5SmE1d2ZYWno1c1VuTExHNUY3bFFZVVdXcWNFVVhSTmpqZ0tQQ0d6S3Bsa2haS3FyeWVraUNrRU5LN2l1a05LYXZuaG1CSHVPUVo5ekRhbW9VWXgwcjZRQmVqSmpSWllNOU1XRHpSTmtGQ1hTc1k?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQMUgyanAybXlnYnBjeTN6V3R0eDNaVVVKRFQ4RDh5eDZSd2ctNXFYbm9VOTREdDB6dzV1OTVnck1qMlFIel91WU94eXNyV1FTckRCeEw5SmE1d2ZYWno1c1VuTExHNUY3bFFZVVdXcWNFVVhSTmpqZ0tQQ0d6S3Bsa2haS3FyeWVraUNrRU5LN2l1a05LYXZuaG1CSHVPUVo5ekRhbW9VWXgwcjZRQmVqSmpSWllNOU1XRHpSTmtGQ1hTc1k?oc=5\" target=\"_blank\"&gt;Exclusive: US House Foreign Affairs Committee Chair warns of China role in Argentina contract bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
           "published": "2026-05-21T15:14:00.000Z",
           "score": 6
-        },
-        {
-          "title": "Alberta lawmakers recommend October vote on remaining in Canada - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOM0VpYjZEdmVyUGRBWDdCc1NQWXJNUGNYZG1qLXZjd0RZZkVybkNGX19laW96NjR1dHJZb3R0VUt6RndkZDNkelNhTFpoTnFCdmpVMTBtWmY5aHdZVUFYWmNkVlVSemU1VjVsNktaVjlfeFFFclU0VVlpMk1iMzFBdGlPTUl5MTJyS1J5bkkwSmczVTdtdWhXUkxucXdGbnA2?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxOM0VpYjZEdmVyUGRBWDdCc1NQWXJNUGNYZG1qLXZjd0RZZkVybkNGX19laW96NjR1dHJZb3R0VUt6RndkZDNkelNhTFpoTnFCdmpVMTBtWmY5aHdZVUFYWmNkVlVSemU1VjVsNktaVjlfeFFFclU0VVlpMk1iMzFBdGlPTUl5MTJyS1J5bkkwSmczVTdtdWhXUkxucXdGbnA2?oc=5\" target=\"_blank\"&gt;Alberta lawmakers recommend October vote on remaining in Canada&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-21T21:47:17.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 395,
-    "articlesLast24h": 154,
-    "afterDedup": 152,
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 167,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
