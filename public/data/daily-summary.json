@@ -1,15 +1,9 @@
 {
   "date": "2026-05-23",
-  "generatedAt": "2026-05-23T07:36:59.842Z",
+  "generatedAt": "2026-05-23T12:01:49.509Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 23 May 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -23,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE788.907v01-00",
-      "summary": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europar",
+      "headline": "EU, Mexico sign expanded trade deal",
+      "summary": "The updated accord between the European Union and Mexico removes most remaining barriers to trade and investment. President Sheinbaum said Mexico&#039;s respective trade deals with the EU and the US were &quot;not contradictory.&quot;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,16 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260522CHE14228",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
-          "published": "2026-05-22T07:41:08.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -57,19 +42,19 @@
           "score": 19
         },
         {
-          "title": "First there were coalmines, then came the windfarms. Why Colombia’s Wayúu people fear Colombia’s green energy boom",
-          "link": "https://www.theguardian.com/global-development/2026/may/22/mining-windfarm-renewable-colombia-wayuu-people-green-energy-boom",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;In the country’s north, mining has ravaged Indigenous lands and lives for decades. Is history repeating itself as renewable energy schemes arrive on their doorstep?&lt;/p&gt;&lt;p&gt;In the heart of the dry tropical forest, Maria Elena Aguilar Uriana walks past towering cacti, her ancestors’ graves, and patterned clothes blowing in the wind. Her brow is furrowed, her hands fixed on her hips. She points to a former watering hole, now nothing but dust.&lt;/p&gt;&lt;p&gt;“Our children are ",
-          "published": "2026-05-22T11:00:57.000Z",
-          "score": 7
-        },
-        {
           "title": "Third Qatari LNG tanker heads through Hormuz to China, data shows - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQZXU2T2pnLVB5dkVsZjZWczJMRzYyZk1fTkVoZ1hTYWsyTGx3U3c4OC0yNFBneV9lWFRHUGkwYy12OWxlYzh2czhvWlA0MmpXOEVpQ0tJSTZUQjFTRkR5bkRNSzZaZkVYN2piRi02RElYR1NEMW5zbGFiOXJCanVNRUVBeDZjbDFpTVVZakNSRkdwc3Bib0J4WHpkTzdXc3d4czV2dWcwS2tESldReXc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQZXU2T2pnLVB5dkVsZjZWczJMRzYyZk1fTkVoZ1hTYWsyTGx3U3c4OC0yNFBneV9lWFRHUGkwYy12OWxlYzh2czhvWlA0MmpXOEVpQ0tJSTZUQjFTRkR5bkRNSzZaZkVYN2piRi02RElYR1NEMW5zbGFiOXJCanVNRUVBeDZjbDFpTVVZakNSRkdwc3Bib0J4WHpkTzdXc3d4czV2dWcwS2tESldReXc?oc=5\" target=\"_blank\"&gt;Third Qatari LNG tanker heads through Hormuz to China, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-22T16:05:10.000Z",
+          "score": 7
+        },
+        {
+          "title": "A ‘red zone’ looms for global oil supplies - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQekpOMnU0QUVhWXJJM2RPdWdSZ1RkaWk4cUxSbXZqMFZ1THlHNWhkR0ZtZlkzdXRZeHR3dExydXNPVUh5N2htbWJ4ajFFaTRycEF6ZVh6YURfenItM3M3bWI2bzVNLU9GcGpzVVFxcVpMMExXQTMydEpYdW9tMXdBSm9IV1RFb3V4RjRHWk1n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxQekpOMnU0QUVhWXJJM2RPdWdSZ1RkaWk4cUxSbXZqMFZ1THlHNWhkR0ZtZlkzdXRZeHR3dExydXNPVUh5N2htbWJ4ajFFaTRycEF6ZVh6YURfenItM3M3bWI2bzVNLU9GcGpzVVFxcVpMMExXQTMydEpYdW9tMXdBSm9IV1RFb3V4RjRHWk1n?oc=5\" target=\"_blank\"&gt;A ‘red zone’ looms for global oil supplies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T15:00:00.000Z",
           "score": 7
         },
         {
@@ -81,11 +66,11 @@
           "score": 7
         },
         {
-          "title": "At least 90 dead in Chinese coal mine explosion, state media reports",
+          "title": "At least 90 killed in Chinese coal mine explosion, state media reports",
           "link": "https://www.bbc.com/news/articles/c5y0ve18qlko?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The explosion took place at 19:29 local time on Friday at a coal mine in northern China.",
-          "published": "2026-05-23T06:37:29.000Z",
+          "description": "The blast in Shanxi province constitutes the country's worst mining disaster in 16 years.",
+          "published": "2026-05-23T11:23:10.000Z",
           "score": 2
         }
       ]
@@ -103,20 +88,20 @@
           "score": 13
         },
         {
-          "title": "Guest post: How CMIP7 will shape the next wave of climate science",
-          "link": "https://www.carbonbrief.org/guest-post-how-cmip7-will-shape-the-next-wave-of-climate-science/",
-          "source": "Carbon Brief",
-          "description": "Hundreds of scientists in dozens of institutions are embarking on the next phase of the... The post Guest post: How CMIP7 will shape the next wave of climate science appeared first on Carbon Brief.",
-          "published": "2026-05-22T09:59:55.000Z",
-          "score": 13
-        },
-        {
           "title": "Experts: Why migration is ‘not a failure of adaptation’ in a warming world",
           "link": "https://www.carbonbrief.org/experts-why-migration-is-not-a-failure-of-adaptation-in-a-warming-world/",
           "source": "Carbon Brief",
           "description": "Hundreds of scientists gathered in London this week to discuss the role of migration as... The post Experts: Why migration is ‘not a failure of adaptation’ in a warming world appeared first on Carbon Brief.",
           "published": "2026-05-22T14:24:29.000Z",
           "score": 10
+        },
+        {
+          "title": "Thailand revives bill to clear the air of toxic smog",
+          "link": "https://www.dw.com/en/thailand-revives-bill-to-clear-the-air-of-toxic-smog/a-77239344?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Seasonal smog is a major public health problem in Thailand. Long-delayed legislation aims to stop air pollution before it starts, but enforcement could present a problem.",
+          "published": "2026-05-23T11:57:00.000Z",
+          "score": 8
         },
         {
           "title": "What’s at steak: myths about masculinity and meat eating pose a challenge for the climate crisis",
@@ -140,14 +125,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034 - PE788.907v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788907_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 14 - 149 - Draft opinion Establishing the European Fund for Regional Development including for European Territorial Cooperation (Interreg) and the Cohesion Fund as part of the Fund set out in Regulation (EU) […] [NRP] and establishing conditions for the implementation of the Union support to regional development from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jana Nagyová&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europar",
-          "published": "2026-05-22T09:46:30.000Z",
-          "score": 22
-        },
         {
           "title": "EU, Mexico sign expanded trade deal",
           "link": "https://www.dw.com/en/eu-mexico-sign-expanded-trade-deal/a-77270446?maca=en-rss-en-all-1573-xml-mrss",
@@ -179,12 +156,28 @@
           "score": 22
         },
         {
-          "title": "Draft agenda - Wednesday, 3 June 2026 - PE789.026v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on the Internal Market and Consumer Protection , Committee on Transport and Tourism",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-OJ-2026-06-03-1_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-22T10:20:14.000Z",
-          "score": 18
+          "title": "Exclusive: Ukraine's Zelenskiy says proposal of associate EU membership 'unfair' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQakN0UXdpeHNBOThxLXNzU0RBOHlqN3BXaEN5NGN2cWxjZGVmSVQtQzlXLVF1TGF2YmNSVVF2Z0xJck44TFRMVmFkUTlWZkwzM1d1QU5JOWp5Z1cxN2ZsemhCNy1pMGpXRV96MmJiQjFPSUNpSGN4OVlZTDFQUTRsdWYzLUYwMV9EY3hNNHIzNzlFQUNHLWZXeUoxc3BOOUFHNnVaNllMN1Utd0ZULUROaGlR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQakN0UXdpeHNBOThxLXNzU0RBOHlqN3BXaEN5NGN2cWxjZGVmSVQtQzlXLVF1TGF2YmNSVVF2Z0xJck44TFRMVmFkUTlWZkwzM1d1QU5JOWp5Z1cxN2ZsemhCNy1pMGpXRV96MmJiQjFPSUNpSGN4OVlZTDFQUTRsdWYzLUYwMV9EY3hNNHIzNzlFQUNHLWZXeUoxc3BOOUFHNnVaNllMN1Utd0ZULUROaGlR?oc=5\" target=\"_blank\"&gt;Exclusive: Ukraine's Zelenskiy says proposal of associate EU membership 'unfair'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-23T10:14:03.000Z",
+          "score": 12
+        },
+        {
+          "title": "UK floated single market for goods with EU, media say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbW9lbGVlN3lCRzBqOURPdk9WZ0JRaDRsQzRsTkJRMXhfVEo0WjhBYUJ4TTV5WUhlSV9ZdXhSSmljc0wxYzhTRlVPaDktWUJYVjF0RENBcm1CaWE1bjlKcXBtMFpvVG54bC05RlpJT0M4Ym1UWUJLYzliS2EwbHRiYWdqUGdiVkpHdUstejJHYnV2WElzUnBnQw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQbW9lbGVlN3lCRzBqOURPdk9WZ0JRaDRsQzRsTkJRMXhfVEo0WjhBYUJ4TTV5WUhlSV9ZdXhSSmljc0wxYzhTRlVPaDktWUJYVjF0RENBcm1CaWE1bjlKcXBtMFpvVG54bC05RlpJT0M4Ym1UWUJLYzliS2EwbHRiYWdqUGdiVkpHdUstejJHYnV2WElzUnBnQw?oc=5\" target=\"_blank\"&gt;UK floated single market for goods with EU, media say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-23T07:56:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Hundreds rally in Taipei for defence spending after parliament cuts funds - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNREJ0NjdkbnZzTjY0SHV4T1pNcDI1T3pHZFdicTlxcmhzQ09NZW4wTmNBM0JGbGRWLXFFaTkzb0R5cXR1Z0cyWUVNOWtvSEp0M0lkUVJkUVUzQ1RQc0FmMVBNYUx1ODZJZlllbmdNZ3VRcU03aGRFRVRRbk5nZ2lRek4zN1ZSdlFPS0ZBZFJ1dHp1MGNwSlVOV2ctdFhma2pucU9XUWNtOUhxU2ZPOG5NYWtmMWk?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNREJ0NjdkbnZzTjY0SHV4T1pNcDI1T3pHZFdicTlxcmhzQ09NZW4wTmNBM0JGbGRWLXFFaTkzb0R5cXR1Z0cyWUVNOWtvSEp0M0lkUVJkUVUzQ1RQc0FmMVBNYUx1ODZJZlllbmdNZ3VRcU03aGRFRVRRbk5nZ2lRek4zN1ZSdlFPS0ZBZFJ1dHp1MGNwSlVOV2ctdFhma2pucU9XUWNtOUhxU2ZPOG5NYWtmMWk?oc=5\" target=\"_blank\"&gt;Hundreds rally in Taipei for defence spending after parliament cuts funds&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-23T08:15:43.000Z",
+          "score": 8
         }
       ]
     },
@@ -193,27 +186,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Germany news: Parliament approves reforms giving pharmacies more autonomy on vaccinations, prescriptions, tests",
-          "link": "https://www.dw.com/en/germany-news-parliament-approves-reforms-giving-pharmacies-more-autonomy-on-vaccinations-prescriptions-tests/live-77264680?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Lawmakers passed a bill allowing pharmacies to issue certain prescription medications independently as well as to conduct more rapid tests. And bees besiege a Beetle in Düsseldorf&#039;s rush hour.",
-          "published": "2026-05-22T14:50:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Cyprus election expected to shake up national politics",
-          "link": "https://www.dw.com/en/cyprus-election-expected-to-shake-up-national-politics/a-77260976?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Cyprus goes to the polls to elect a new parliament on May 24. The vote is expected to reshape the country&#039;s political landscape, weaken traditional parties and accelerate the rise of new anti-establishment movements.",
-          "published": "2026-05-22T10:33:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Swiss widen sanctions against Russia, Belarus in line with EU measures - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNZTVnSmlyUndRWFlsSmlwaVJNZDBuNFRmZkJRN1FQdkF1OVdNMTVtVzMtXzYzeGRSZV9HS2wyV1Y5Wm8yb1drbEF3Z08tRU8tcjhoNi01WE0tUEVrZkI5ZThVOUU4cndURm5rUmpCQUpnb2l6cExId2w5c05ZaUVySTA2cnI4dWtQa01FN0YwZ3B3T09qcVZnc2RTVWFQcjZzV3NWd0JXZS1idHQwZEg2eGxIR1U?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNZTVnSmlyUndRWFlsSmlwaVJNZDBuNFRmZkJRN1FQdkF1OVdNMTVtVzMtXzYzeGRSZV9HS2wyV1Y5Wm8yb1drbEF3Z08tRU8tcjhoNi01WE0tUEVrZkI5ZThVOUU4cndURm5rUmpCQUpnb2l6cExId2w5c05ZaUVySTA2cnI4dWtQa01FN0YwZ3B3T09qcVZnc2RTVWFQcjZzV3NWd0JXZS1idHQwZEg2eGxIR1U?oc=5\" target=\"_blank\"&gt;Swiss widen sanctions against Russia, Belarus in line with EU measures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-22T15:10:54.000Z",
+          "score": 8
+        },
+        {
+          "title": "European Commission proposes Russia sanctions reprieve for dealings with Chinese chips firm - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNckdIUUtxTW0tRTVRblZQeDJNWEExTDE1SWZCUUNNTFh5NVQtQTlxcmRpUV9FOEd4eUdQVnZKU2dkTkg0ZUhaSDFhc1pPQ3F5cURSLVNHcFFEWWdaR2NfMXNLVmhBanZteVd0d2R0a1kyZjR6cklrcnZPaFliOW5sY2dOcTFnTVJ6S190eDYweTVSNm05Ylo2dFJfbzlBQktEMzRqczlNYVNEOEhKVUpvdFF5eFZQTHg4WUpFUzBWTDNvdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNckdIUUtxTW0tRTVRblZQeDJNWEExTDE1SWZCUUNNTFh5NVQtQTlxcmRpUV9FOEd4eUdQVnZKU2dkTkg0ZUhaSDFhc1pPQ3F5cURSLVNHcFFEWWdaR2NfMXNLVmhBanZteVd0d2R0a1kyZjR6cklrcnZPaFliOW5sY2dOcTFnTVJ6S190eDYweTVSNm05Ylo2dFJfbzlBQktEMzRqczlNYVNEOEhKVUpvdFF5eFZQTHg4WUpFUzBWTDNvdw?oc=5\" target=\"_blank\"&gt;European Commission proposes Russia sanctions reprieve for dealings with Chinese chips firm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
+          "published": "2026-05-22T13:22:34.000Z",
+          "score": 8
+        },
+        {
+          "title": "Logistics giants urge EU to phase in low-value package duty rules - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNYWFFM050YlVWcGJiTVdUX1JvOVFsS05sNkJFZ0NWTnphazBITUcweWJRZENVMnNnLXhlSzNIRWhDeDRiRHdhR3dTUXhVTnIxWWwxc2tGRDUwUnFxdnFOV1dQWHo1VkUzODdVNkZ3VXRISEtzNHViYm5xR0NUd3VHODUzSUJQcUdOYVlVQl8tTmpObDBwdC02Si12MTdVX01KLU9pQkZIaVRmc1VkTlFWSw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNYWFFM050YlVWcGJiTVdUX1JvOVFsS05sNkJFZ0NWTnphazBITUcweWJRZENVMnNnLXhlSzNIRWhDeDRiRHdhR3dTUXhVTnIxWWwxc2tGRDUwUnFxdnFOV1dQWHo1VkUzODdVNkZ3VXRISEtzNHViYm5xR0NUd3VHODUzSUJQcUdOYVlVQl8tTmpObDBwdC02Si12MTdVX01KLU9pQkZIaVRmc1VkTlFWSw?oc=5\" target=\"_blank\"&gt;Logistics giants urge EU to phase in low-value package duty rules&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T16:43:58.000Z",
           "score": 8
         },
         {
@@ -225,20 +218,20 @@
           "score": 8
         },
         {
-          "title": "European Commission proposes Russia sanctions reprieve for dealings with Chinese chips firm - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNckdIUUtxTW0tRTVRblZQeDJNWEExTDE1SWZCUUNNTFh5NVQtQTlxcmRpUV9FOEd4eUdQVnZKU2dkTkg0ZUhaSDFhc1pPQ3F5cURSLVNHcFFEWWdaR2NfMXNLVmhBanZteVd0d2R0a1kyZjR6cklrcnZPaFliOW5sY2dOcTFnTVJ6S190eDYweTVSNm05Ylo2dFJfbzlBQktEMzRqczlNYVNEOEhKVUpvdFF5eFZQTHg4WUpFUzBWTDNvdw?oc=5",
+          "title": "European shares end at more than one-month high on tech boost - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeXo0M1UxeF80R1oxbWpuUVk0MEFJYkdjRnNra3NkWGFrZGdMRUJIb19yUEdtbHVJcmN5cXBlaTRqWi1TRk15Z21hcXNSVktzcHlKdGlLUHRBNy1qN0tScjRubjZINzA5RU5sWlhfZ3N5WVdJWl9HekZ4anplN2UwcUttQ2RHZmV1YzV5em14dFE0TThYWTR3SG9NeEI3azdLbmc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNckdIUUtxTW0tRTVRblZQeDJNWEExTDE1SWZCUUNNTFh5NVQtQTlxcmRpUV9FOEd4eUdQVnZKU2dkTkg0ZUhaSDFhc1pPQ3F5cURSLVNHcFFEWWdaR2NfMXNLVmhBanZteVd0d2R0a1kyZjR6cklrcnZPaFliOW5sY2dOcTFnTVJ6S190eDYweTVSNm05Ylo2dFJfbzlBQktEMzRqczlNYVNEOEhKVUpvdFF5eFZQTHg4WUpFUzBWTDNvdw?oc=5\" target=\"_blank\"&gt;European Commission proposes Russia sanctions reprieve for dealings with Chinese chips firm&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
-          "published": "2026-05-22T13:22:34.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPeXo0M1UxeF80R1oxbWpuUVk0MEFJYkdjRnNra3NkWGFrZGdMRUJIb19yUEdtbHVJcmN5cXBlaTRqWi1TRk15Z21hcXNSVktzcHlKdGlLUHRBNy1qN0tScjRubjZINzA5RU5sWlhfZ3N5WVdJWl9HekZ4anplN2UwcUttQ2RHZmV1YzV5em14dFE0TThYWTR3SG9NeEI3azdLbmc?oc=5\" target=\"_blank\"&gt;European shares end at more than one-month high on tech boost&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-22T16:29:34.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 173,
-    "afterDedup": 157,
+    "totalArticlesScanned": 391,
+    "articlesLast24h": 161,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
