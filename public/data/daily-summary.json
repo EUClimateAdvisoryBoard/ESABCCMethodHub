@@ -1,6 +1,6 @@
 {
   "date": "2026-05-24",
-  "generatedAt": "2026-05-24T07:50:47.540Z",
+  "generatedAt": "2026-05-24T12:02:46.862Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 24 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Thailand revives bill to clear the air of toxic smog",
-      "summary": "Seasonal smog is a major public health problem in Thailand. Long-delayed legislation aims to stop air pollution before it starts, but enforcement could present a problem.",
+      "headline": "Could nature itself hold the solution to climate change?",
+      "summary": "&lt;p&gt;Technological interventions face huge financial or practical challenges, but there is another way&lt;/p&gt;&lt;p&gt;In 2019, my scientific research was nearly brought&amp;nbsp;to an early end when my team and I published the bombastic statement that natural forest restoration was the “best climate&amp;nbsp;change solution” available in a paper for&amp;nbsp;the peer-reviewed journal &lt;a href=\"https://www.science.org/doi/10.1126/science.aax0848\"&gt;Science&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -46,7 +46,7 @@
           "link": "https://www.bbc.com/news/articles/c759knxln0wo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "They are thought to have caught the virus before the outbreak was identified, the Red Cross says.",
-          "published": "2026-05-23T19:55:16.000Z",
+          "published": "2026-05-24T11:09:54.000Z",
           "score": 7
         },
         {
@@ -58,19 +58,19 @@
           "score": 4
         },
         {
+          "title": "BBC at the site of China's worst mining disaster in more than a decade",
+          "link": "https://www.bbc.com/news/videos/c809m33yjz7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "At least 82 people have been killed after a gas explosion at the Liushenyu mine in China.",
+          "published": "2026-05-24T10:34:52.000Z",
+          "score": 2
+        },
+        {
           "title": "At least 82 killed in Chinese coal mine explosion",
           "link": "https://www.bbc.com/news/articles/c5y0ve18qlko?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The blast in Shanxi province constitutes the country's worst mining disaster in 16 years.",
           "published": "2026-05-24T03:18:38.000Z",
-          "score": 2
-        },
-        {
-          "title": "Some of China's deadliest coal mine accidents - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOckVoeHhpVmFjR0kzd1FUUUpGc1ZSSDZJR0lsM19IWkFTM0JObk1wY1BFMTZHZTFlQU85U3U2OG9WS0g5aDNUU0RIT29qelNJZE9aR0lXNGJrWFR1YzlxV1ZkVjdVclQzVHpBdmVlYTRMYlVISjRnb0NEY2trVjVjUlRncVFpRGJsSU9zNFFuOTNnRjA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxOckVoeHhpVmFjR0kzd1FUUUpGc1ZSSDZJR0lsM19IWkFTM0JObk1wY1BFMTZHZTFlQU85U3U2OG9WS0g5aDNUU0RIT29qelNJZE9aR0lXNGJrWFR1YzlxV1ZkVjdVclQzVHpBdmVlYTRMYlVISjRnb0NEY2trVjVjUlRncVFpRGJsSU9zNFFuOTNnRjA?oc=5\" target=\"_blank\"&gt;Some of China's deadliest coal mine accidents&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-23T09:33:43.000Z",
           "score": 2
         }
       ]
@@ -80,12 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Thailand revives bill to clear the air of toxic smog",
-          "link": "https://www.dw.com/en/thailand-revives-bill-to-clear-the-air-of-toxic-smog/a-77239344?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Seasonal smog is a major public health problem in Thailand. Long-delayed legislation aims to stop air pollution before it starts, but enforcement could present a problem.",
-          "published": "2026-05-23T11:57:00.000Z",
-          "score": 8
+          "title": "Could nature itself hold the solution to climate change?",
+          "link": "https://www.theguardian.com/books/2026/may/24/could-nature-itself-hold-the-solution-to-climate-change",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Technological interventions face huge financial or practical challenges, but there is another way&lt;/p&gt;&lt;p&gt;In 2019, my scientific research was nearly brought&amp;nbsp;to an early end when my team and I published the bombastic statement that natural forest restoration was the “best climate&amp;nbsp;change solution” available in a paper for&amp;nbsp;the peer-reviewed journal &lt;a href=\"https://www.science.org/doi/10.1126/science.aax0848\"&gt;Science&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;I",
+          "published": "2026-05-24T11:00:56.000Z",
+          "score": 7
         },
         {
           "title": "Climate change threatens global plant species as habitats shrink - Reuters",
@@ -112,11 +112,11 @@
           "score": 2
         },
         {
-          "title": "‘Turn off the juice of the rulers!’ Who are the Volcano Group, mystery saboteurs behind a five-day Berlin blackout?",
-          "link": "https://www.theguardian.com/environment/2026/may/23/volcano-group-berlin-blackout-mystery-saboteurs",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Earlier this year, the city was hit by its longest power cut since the second world war. But were those responsible eco-terrorists, agents of the far-right, or even Russian proxies?&lt;/p&gt;&lt;p&gt;Sebastian Brandt, chief technician of the Immanuel hospital in the leafy, affluent Wannsee district of Berlin, guessed something was wrong as soon as he opened the window of his home and smelled diesel. It was 3 January, a freezing Saturday morning, and luckily the hospital opposite had rel",
-          "published": "2026-05-23T10:00:26.000Z",
+          "title": "Rare coastal grassland restoration completed",
+          "link": "https://www.bbc.com/news/articles/c8e8jlr20jeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Almost £1m is spent successfully restoring magnesian limestone grasslands in County Durham.",
+          "published": "2026-05-23T15:13:08.000Z",
           "score": 2
         }
       ]
@@ -156,14 +156,6 @@
           "score": 8
         },
         {
-          "title": "UK floated single market for goods with EU, media say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQbW9lbGVlN3lCRzBqOURPdk9WZ0JRaDRsQzRsTkJRMXhfVEo0WjhBYUJ4TTV5WUhlSV9ZdXhSSmljc0wxYzhTRlVPaDktWUJYVjF0RENBcm1CaWE1bjlKcXBtMFpvVG54bC05RlpJT0M4Ym1UWUJLYzliS2EwbHRiYWdqUGdiVkpHdUstejJHYnV2WElzUnBnQw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxQbW9lbGVlN3lCRzBqOURPdk9WZ0JRaDRsQzRsTkJRMXhfVEo0WjhBYUJ4TTV5WUhlSV9ZdXhSSmljc0wxYzhTRlVPaDktWUJYVjF0RENBcm1CaWE1bjlKcXBtMFpvVG54bC05RlpJT0M4Ym1UWUJLYzliS2EwbHRiYWdqUGdiVkpHdUstejJHYnV2WElzUnBnQw?oc=5\" target=\"_blank\"&gt;UK floated single market for goods with EU, media say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-23T07:56:09.000Z",
-          "score": 8
-        },
-        {
           "title": "Mexico, EU sign stalled trade deal in move to diversify from US - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9aTlpmUURSOG9waFE3SVFoYXhGRE9OSUtkSVBaQ3hqR2dGZ3pBTzMyM3hBdHljWDgyYmtIektmUnFQSWhndjRsVFgyRS1XdmxVZEZPcEE3cjF3eGd6ZmZEQjlNeWNCd1E?oc=5",
           "source": "Reuters World (via Google News)",
@@ -194,19 +186,19 @@
           "score": 8
         },
         {
-          "title": "EU must reform, consolidate, use joint debt to cope with spending needs, IMF says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPckc1Y0Q5dE1nOFM5VjlxOEdvUjAycFJ6N2NWZFl4UktNa3BvWndNcEpjMkNqTkVOQ19BcTJPUjdadGVISTBVaXJoWk9fUVkwT3FDdDFYWGdfREw3VzRsb1dCN05RaFk0cjF5SVRVYUxIUFVTUGpkajQ3VDJ5ZWlNa1ZRYzRsajdZVDdUNzhGb2dndmU1aXljd0lWUUdFRWlqYzV5bzY5Y3JucnUtU0pCSzdNZWdVUDhtWkdrOVBtcC1WV3RFY2tz?oc=5",
+          "title": "Energy tycoon Riquelme confirms challenge for Real Madrid presidency - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWlJWN0xnaVpFbUlFNF9kRkdtdEcwblJ1a2ZwejJBVWN3TDlVRVo3WHJOV1RDV0h3Vmkwa3BBWkNEWENpb0FUVmJqU1Byc2EyZ0MxcFY3LUY3SFMyX3F1MDRJcUpnZ3pXOVhjRFNvdE1GN2JoVk01ZFdGNF9pSHJVYU1pQk5yalgyZW5RRWVPUGc0VkE4ZkxvZ3RuQjJ5V25EWGhnX3BNR3dKWG14NVAwRVRrVEs?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPckc1Y0Q5dE1nOFM5VjlxOEdvUjAycFJ6N2NWZFl4UktNa3BvWndNcEpjMkNqTkVOQ19BcTJPUjdadGVISTBVaXJoWk9fUVkwT3FDdDFYWGdfREw3VzRsb1dCN05RaFk0cjF5SVRVYUxIUFVTUGpkajQ3VDJ5ZWlNa1ZRYzRsajdZVDdUNzhGb2dndmU1aXljd0lWUUdFRWlqYzV5bzY5Y3JucnUtU0pCSzdNZWdVUDhtWkdrOVBtcC1WV3RFY2tz?oc=5\" target=\"_blank\"&gt;EU must reform, consolidate, use joint debt to cope with spending needs, IMF says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-05-23T09:29:43.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOWlJWN0xnaVpFbUlFNF9kRkdtdEcwblJ1a2ZwejJBVWN3TDlVRVo3WHJOV1RDV0h3Vmkwa3BBWkNEWENpb0FUVmJqU1Byc2EyZ0MxcFY3LUY3SFMyX3F1MDRJcUpnZ3pXOVhjRFNvdE1GN2JoVk01ZFdGNF9pSHJVYU1pQk5yalgyZW5RRWVPUGc0VkE4ZkxvZ3RuQjJ5V25EWGhnX3BNR3dKWG14NVAwRVRrVEs?oc=5\" target=\"_blank\"&gt;Energy tycoon Riquelme confirms challenge for Real Madrid presidency&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-23T17:47:16.000Z",
+          "score": 7
         },
         {
-          "title": "Rubio meets Modi during India visit with energy high on agenda",
-          "link": "https://www.bbc.com/news/articles/c87qrwyyrn2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The secretary of state wants to sell US energy to Delhi to make up for shortfalls caused by the Iran war.",
-          "published": "2026-05-23T11:55:39.000Z",
+          "title": "Nissan unit scraps plan to make EV powertrains in UK, Nikkei says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVTlqNW8wUHBtTjhfcUFrckRGQk54VzFlRFA4cFg1d1hXX3FqX3NOM25idWZPUEhVNU50alA0dHBpbnBoWmhVZUFDUUlCMGFaRDlnLUdPb0xNaUZ0ZzNPZ3lCOHBuS3dZcmxhZnhRVVFPeXk4VU5QdWVkNl9PUFBtaTgyMUFPbDBZVWNTTU1jcUFQa28tdGxaZkZVc2dYeGZPVzRZUFhQa1ZrWW9qVVk4bEdLNFFDNk1GeE9BSlgyWTYwUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQVTlqNW8wUHBtTjhfcUFrckRGQk54VzFlRFA4cFg1d1hXX3FqX3NOM25idWZPUEhVNU50alA0dHBpbnBoWmhVZUFDUUlCMGFaRDlnLUdPb0xNaUZ0ZzNPZ3lCOHBuS3dZcmxhZnhRVVFPeXk4VU5QdWVkNl9PUFBtaTgyMUFPbDBZVWNTTU1jcUFQa28tdGxaZkZVc2dYeGZPVzRZUFhQa1ZrWW9qVVk4bEdLNFFDNk1GeE9BSlgyWTYwUQ?oc=5\" target=\"_blank\"&gt;Nissan unit scraps plan to make EV powertrains in UK, Nikkei says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-24T05:53:00.000Z",
           "score": 7
         },
         {
@@ -221,9 +213,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 144,
-    "afterDedup": 127,
+    "totalArticlesScanned": 403,
+    "articlesLast24h": 145,
+    "afterDedup": 123,
     "feedsQueried": 19
   }
 }
