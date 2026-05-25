@@ -1,6 +1,6 @@
 {
   "date": "2026-05-25",
-  "generatedAt": "2026-05-25T14:13:08.748Z",
+  "generatedAt": "2026-05-25T18:30:04.704Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 25 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "The BHP files: World’s biggest miner BHP backtracks on climate action with key projects put on ice, leaked documents reveal",
-      "summary": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Cache of internal documents leaked to the Guardian and the ABC’s Four Corners show multinational has war-gamed ways to massively delay decarbonisation&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/ng-interactive/2026/may/25/bhp-files-internal-memo-revealed\"&gt;Revealed: the internal BHP memo that slammed the brakes on world’s biggest miner’s climate push&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Read mo",
+      "headline": "Revealed: Floods have forced at least 67 closures at NHS hospitals since 2021",
+      "summary": "At least 67 NHS hospital wards, departments and other sites across the UK have been... The post Revealed: Floods have forced at least 67 closures at NHS hospitals since 2021 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Hedge fund tech positions hover near record highs, Goldman Sachs says - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQU0ZIdzdVYVZ2VVRWYkJ1SmdkTTVnUHA4UksxUzJsWnk2bEtNZnJZSkpFSzZnb3hmSWR0TXVUSGZBa0VlTTg5aFVHNnl2T24xd0xfSHlIaEl2Tk5tUG9kREI2c2s3YWFYVWxCRzRPUWxmN3FEcGIwN1FPSjE5cHoycUNSMEo0aUFHaDVTVVhKN1dsVjB2SWlQcG80QjU5MW1OMkNnd2RqZHNKdzBNZzN2RTRoTVhyU0xnWHZF?oc=5\" target=\"_blank\"&gt;Hedge fund tech positions hover near record highs, Goldman Sachs says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Scotland: Former SNP chief executive admits embezzling funds",
+      "summary": "The Scottish National Party&#039;s former chief executive, Peter Murrell, has admitted embezzling about £400,000 of party funds to fund a lavish lifestyle.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -42,11 +42,19 @@
           "score": 19
         },
         {
+          "title": "UK needs to urgently install air conditioning in schools and care homes, climate campaigners say",
+          "link": "https://www.theguardian.com/environment/2026/may/25/uk-urgently-install-air-conditioning-in-schools-care-homes-climate-campaigners-say",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Government should fit solar panels to power air con units where vulnerable people live, say green advocates&lt;/p&gt;&lt;p&gt;As the country baked in record May temperatures, climate campaigners have said the UK government needs to urgently start installing air conditioning units in schools, care homes and places where vulnerable people live.&lt;/p&gt;&lt;p&gt;In 2022, when temperatures spiked above 40C (104F), about 3,000 people in Britain died of causes associated with heat. Studies s",
+          "published": "2026-05-25T14:43:11.000Z",
+          "score": 7
+        },
+        {
           "title": "Oil and LNG tankers exit Hormuz, heading for Pakistan and China - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNVVVSQnVDcHd0cUZHRnpsSjdXUUhHT0Q0eDVUNElUVTdhNml5WGVQWFBIVnBsVTM4RUZ1WWVhVHROVk9uaFNzbS1keFZWdW9jSDFXc0g3OWl1bmFVNUZZMW9kd2tHRDN1alFxWUM2RnBVZzM2Sk9fNTNtZXdrQ0lUblEySXBUVHpUa1lKbkNIemVJclh3dmEwdXNkTjRFR3NxQ0pkaUVDSTBjbHp0WHgxUUVnanVqaHkyRUJ6MQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNVVVSQnVDcHd0cUZHRnpsSjdXUUhHT0Q0eDVUNElUVTdhNml5WGVQWFBIVnBsVTM4RUZ1WWVhVHROVk9uaFNzbS1keFZWdW9jSDFXc0g3OWl1bmFVNUZZMW9kd2tHRDN1alFxWUM2RnBVZzM2Sk9fNTNtZXdrQ0lUblEySXBUVHpUa1lKbkNIemVJclh3dmEwdXNkTjRFR3NxQ0pkaUVDSTBjbHp0WHgxUUVnanVqaHkyRUJ6MQ?oc=5\" target=\"_blank\"&gt;Oil and LNG tankers exit Hormuz, heading for Pakistan and China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T00:14:00.000Z",
+          "published": "2026-05-25T14:13:36.000Z",
           "score": 7
         },
         {
@@ -64,14 +72,6 @@
           "description": "At least 82 people have been killed and two are missing after a gas explosion at a coal mine in northern China on Sunday, officials say.",
           "published": "2026-05-25T10:20:57.000Z",
           "score": 2
-        },
-        {
-          "title": "China mine blast: Search and investigation continue",
-          "link": "https://www.dw.com/en/china-mine-blast-search-and-investigation-continue/a-77280984?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Chinese authorities have launched an investigation into &quot;serious breaches&quot; of security regulations after an explosion in a coal mine left at least 82 people dead. Two people remain missing.",
-          "published": "2026-05-24T18:24:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -79,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Revealed: Floods have forced at least 67 closures at NHS hospitals since 2021",
+          "link": "https://www.carbonbrief.org/revealed-floods-have-forced-at-least-67-closures-at-nhs-hospitals-since-2021/",
+          "source": "Carbon Brief",
+          "description": "At least 67 NHS hospital wards, departments and other sites across the UK have been... The post Revealed: Floods have forced at least 67 closures at NHS hospitals since 2021 appeared first on Carbon Brief.",
+          "published": "2026-05-25T15:00:00.000Z",
+          "score": 10
+        },
         {
           "title": "The BHP files: World’s biggest miner BHP backtracks on climate action with key projects put on ice, leaked documents reveal",
           "link": "https://www.theguardian.com/world/2026/may/25/bhp-files-leak-mining-company-climate-action",
@@ -110,14 +118,6 @@
           "description": "&lt;p&gt;The next El Niño is predicted to be bigger than ever with devastating global impacts&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2014/jun/16/-sp-first-dog-on-the-moon-subscribe-by-email\"&gt;Sign up here to get an email&lt;/a&gt; whenever First Dog cartoons are published&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"http://firstshoponthemoon.com/\"&gt;Get all your needs met at the First Dog shop&lt;/a&gt; if what you need is First Dog m",
           "published": "2026-05-25T06:50:42.000Z",
           "score": 7
-        },
-        {
-          "title": "Why Michigan is emerging as one of America’s worst-hit climate states",
-          "link": "https://www.theguardian.com/us-news/2026/may/25/michigan-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The state saw 33 tornadoes last year and severe flooding as researchers say links to climate change are undeniable&lt;/p&gt;&lt;p&gt;The tornado hit west Ann Arbor at 1.45am on 15 April, passing through Veterans Memorial park, where it knocked several mature oak trees and ripped up baseball field fences before setting its sights on a local ice rink.&lt;/p&gt;&lt;p&gt;“It came up through the parking lot and, in that time, the pressure differential between the tornado and the air inside t",
-          "published": "2026-05-25T11:00:23.000Z",
-          "score": 7
         }
       ]
     },
@@ -125,6 +125,22 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Scotland: Former SNP chief executive admits embezzling funds",
+          "link": "https://www.dw.com/en/scotland-former-snp-chief-executive-admits-embezzling-funds/a-77288456?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Scottish National Party&#039;s former chief executive, Peter Murrell, has admitted embezzling about £400,000 of party funds to fund a lavish lifestyle.",
+          "published": "2026-05-25T17:00:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Will SpaceX&#039;s IPO fund life on Mars — and a trillionaire?",
+          "link": "https://www.dw.com/en/will-spacex-s-ipo-fund-life-on-mars-and-a-trillionaire/a-77236838?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "SpaceX is launching history&#039;s biggest public listing, propelling Elon Musk&#039;s wealth into the stratosphere. DW explores whether the firm&#039;s out-of-this-world ambitions are truly cosmic or another black hole for investors.",
+          "published": "2026-05-25T16:27:00.000Z",
+          "score": 2
+        },
         {
           "title": "Hedge fund tech positions hover near record highs, Goldman Sachs says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQU0ZIdzdVYVZ2VVRWYkJ1SmdkTTVnUHA4UksxUzJsWnk2bEtNZnJZSkpFSzZnb3hmSWR0TXVUSGZBa0VlTTg5aFVHNnl2T24xd0xfSHlIaEl2Tk5tUG9kREI2c2s3YWFYVWxCRzRPUWxmN3FEcGIwN1FPSjE5cHoycUNSMEo0aUFHaDVTVVhKN1dsVjB2SWlQcG80QjU5MW1OMkNnd2RqZHNKdzBNZzN2RTRoTVhyU0xnWHZF?oc=5",
@@ -162,6 +178,14 @@
           "score": 8
         },
         {
+          "title": "Senegal's parliament speaker quits two days after prime minister sacked - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5\" target=\"_blank\"&gt;Senegal's parliament speaker quits two days after prime minister sacked&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-25T08:41:45.000Z",
+          "score": 8
+        },
+        {
           "title": "Greek police arrest 20 in Crete over suspected EU farm subsidies fraud - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRzhRWU5zeVFLdUlnWWcxQnE4LXkwUXdPb19uaVQzN28tOXluNFJRUWg1dlBTcUg1NVFnQ05ReGY0cGpRLUNCQVAySU44WnVNRmR3ZC1EZHZmVVhWQ2w1N3MwdmRsbFNRNnUyZmFWQmQ0SmREQ2ZNLXJXZXFSUkFYN3Z0dlROLU4xWlpCaFc0dzFvTzdSOEZLRVVGb3prVGQzbUUtUVhra1BwSmhwRGc?oc=5",
           "source": "Reuters World (via Google News)",
@@ -174,15 +198,7 @@
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxObmRBQ0RKSHBHYVJpQUF0b2MwSG1zVFpxQWczbmZwSDYxQnAwYzhVSWktS3dQNlRHc3M0cnMtYzFnN2I3WDdYM1M1V0JJaXNYYlA3dGNPd2I3UlpFRVRvekpZYkJ4LTh2NFlFVGp6Y1JjNHE1anAwbWotaElEa0U5UEtobVBnNFNKVG16Q3d6WmZDTWRrUWZVMms0TVRJU3pYZ24xc2NnZEZXUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxObmRBQ0RKSHBHYVJpQUF0b2MwSG1zVFpxQWczbmZwSDYxQnAwYzhVSWktS3dQNlRHc3M0cnMtYzFnN2I3WDdYM1M1V0JJaXNYYlA3dGNPd2I3UlpFRVRvekpZYkJ4LTh2NFlFVGp6Y1JjNHE1anAwbWotaElEa0U5UEtobVBnNFNKVG16Q3d6WmZDTWRrUWZVMms0TVRJU3pYZ24xc2NnZEZXUQ?oc=5\" target=\"_blank\"&gt;Qalibaf reelected as Iran's parliament speaker, Fars says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T07:07:25.000Z",
-          "score": 8
-        },
-        {
-          "title": "Senegal's parliament speaker quits two days after prime minister sacked - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5\" target=\"_blank\"&gt;Senegal's parliament speaker quits two days after prime minister sacked&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T08:41:45.000Z",
+          "published": "2026-05-25T06:58:00.000Z",
           "score": 8
         },
         {
@@ -190,7 +206,7 @@
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNWko0ZE13QUlLMHNBWGhlS2NMV0JIQ0FZOFRwRE1uRzhsREgxN3RoVHpEZVFOVi16Q2VkWVZHNE9hb0drNEx1V1V5SFd0SVlYbk13N2IzUUJ3TjdYeXdueVB4OGJMM01fblh5LTRyOTRJT3RTNWpIRXlCNklZdVR4TmJxMGltZF9VZEh0eDBIcUJ4MEx3Y0Y3cnVGSWRXWXMwWWFZcmo3dWxoa3dyMHB0R25YNFNFTlU?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNWko0ZE13QUlLMHNBWGhlS2NMV0JIQ0FZOFRwRE1uRzhsREgxN3RoVHpEZVFOVi16Q2VkWVZHNE9hb0drNEx1V1V5SFd0SVlYbk13N2IzUUJ3TjdYeXdueVB4OGJMM01fblh5LTRyOTRJT3RTNWpIRXlCNklZdVR4TmJxMGltZF9VZEh0eDBIcUJ4MEx3Y0Y3cnVGSWRXWXMwWWFZcmo3dWxoa3dyMHB0R25YNFNFTlU?oc=5\" target=\"_blank\"&gt;Pope, urging AI regulation, warns some weapons now beyond human control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T14:07:37.000Z",
+          "published": "2026-05-25T15:55:51.000Z",
           "score": 6
         }
       ]
@@ -198,8 +214,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 389,
-    "articlesLast24h": 157,
-    "afterDedup": 143,
+    "articlesLast24h": 158,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
