@@ -1,9 +1,15 @@
 {
   "date": "2026-05-26",
-  "generatedAt": "2026-05-26T08:36:13.692Z",
+  "generatedAt": "2026-05-26T13:59:05.924Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 26 May 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -11,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Analysis: China’s new carbon metric leaves Germany-sized gap in its emissions",
-      "summary": "A major change in the way that China measures its core climate goal has effectively... The post Analysis: China’s new carbon metric leaves Germany-sized gap in its emissions appeared first on Carbon Brief.",
+      "headline": "Opening remarks by Commissioner Hoekstra at the High-Level Roundtable on Climate Resilience and Defence and Security",
+      "summary": "European Commission Speech Brussels, 26 May 2026 Good morning and a warm welcome to all.\r\nIt is truly a pleasure to host all of you.\r\nI had planned on being here with fellow Commissioner Andrius Kubilius but he ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Scotland: Former SNP executive admits embezzling party funds",
-      "summary": "The Scottish National Party&#039;s former chief executive, Peter Murrell, has admitted embezzling about £400,000 from the political party to fund a lavish lifestyle.",
+      "headline": "Highlights - Vote on the draft opinion on the European Competitiveness Fund - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260107PHT32316/20260107PHT32316-ms.jpeg\" width=\"180\" alt=\"Image with a hand with objects\" title=\"WS Competitiveness © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members voted on the draft opinion on the European Competitiveness Fund (ECF), proposed by the Commission in July 2025. The proposal establishes a single investme",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260522CHE14228",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
+          "published": "2026-05-26T10:09:56.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -50,6 +65,14 @@
           "score": 7
         },
         {
+          "title": "Even Trump can&#039;t stop the advance of wind power",
+          "link": "https://www.dw.com/en/even-trump-can-t-stop-the-advance-of-wind-power/a-77248308?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The United States is in the middle of the largest offshore wind expansion in its history — despite Donald Trump waging what clean energy advocates describe as an all-out war against the sector.",
+          "published": "2026-05-26T09:34:00.000Z",
+          "score": 7
+        },
+        {
           "title": "South Korea aims to launch first nuclear-powered submarine by the mid-2030s - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRFpWYVZuMUJySS15MW8xOGlqMnAzNGQxY0pJNjZkQmMwcHJmcHdRV3JQTkVDUzkwX2owSHFaVnp5SER0V2pzU1QxVkFMNVB4RWVEeXdWQ0E2RDV2Z3JFZC1ieE8ydWdCZ1J6NWplSFQxTVdVOEZRR0ZaQW9DYVZuZlJ2dGlFeVVDTkFGbEZmLWhxRm13NjU4cV9CZDdlVzhkdFpVUFA5Q214LWhjY1BwakdBRGtXWFJGaDhPcU8tTm0?oc=5",
           "source": "Reuters World (via Google News)",
@@ -64,14 +87,6 @@
           "description": "&lt;p&gt;Regulator could do us all a favour with clear multi-year forecasts and breakdowns of electricity pricing&lt;/p&gt;&lt;p&gt;It is easy to predict where the energy regulator will set the next quarterly price cap on Wednesday. It’s just a matter of tracking wholesale prices in Ofgem’s relevant backward-looking “observation period”. Energy consultant Cornwall Insight &lt;a href=\"https://www.theguardian.com/money/2026/may/19/energy-bills-rise-july-gas-electricity-prices-cap-great-britain-ira",
           "published": "2026-05-26T07:00:48.000Z",
           "score": 4
-        },
-        {
-          "title": "India bars piped natural gas customers from buying LPG cylinders, order shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcEZKa29VeUY3MGNfVDk2Nzgwa3pmSUFwcDdNNDNsMXFIc2ZPczJNV2R0eHFreDhpU1gzS1VWRmlDTFIzdU5KejRYVVNLMjFLQVhmUEo1TXhpbmlsZGFrNE1GTnRQaHIwdWo3NUNzSVRaY09idkUtY0lJVmxZUjgtWkVrNlFHYlQ5c0w0d2tCSDJ6Mk5RZXFaNTZnMUFjTnFqVmd6NEE4RGFjMlNKSmk1T1lVTWdvcjZFY1VqX1NtOVA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcEZKa29VeUY3MGNfVDk2Nzgwa3pmSUFwcDdNNDNsMXFIc2ZPczJNV2R0eHFreDhpU1gzS1VWRmlDTFIzdU5KejRYVVNLMjFLQVhmUEo1TXhpbmlsZGFrNE1GTnRQaHIwdWo3NUNzSVRaY09idkUtY0lJVmxZUjgtWkVrNlFHYlQ5c0w0d2tCSDJ6Mk5RZXFaNTZnMUFjTnFqVmd6NEE4RGFjMlNKSmk1T1lVTWdvcjZFY1VqX1NtOVA?oc=5\" target=\"_blank\"&gt;India bars piped natural gas customers from buying LPG cylinders, order shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T12:59:43.000Z",
-          "score": 2
         }
       ]
     },
@@ -79,6 +94,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Opening remarks by Commissioner Hoekstra at the High-Level Roundtable on Climate Resilience and Defence and Security",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1155",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 26 May 2026 Good morning and a warm welcome to all.\r\nIt is truly a pleasure to host all of you.\r\nI had planned on being here with fellow Commissioner Andrius Kubilius but he ...",
+          "published": "2026-05-26T09:49:26.000Z",
+          "score": 23
+        },
         {
           "title": "Analysis: China’s new carbon metric leaves Germany-sized gap in its emissions",
           "link": "https://www.carbonbrief.org/analysis-chinas-new-carbon-metric-leaves-germany-sized-gap-in-its-emissions/",
@@ -96,27 +119,19 @@
           "score": 10
         },
         {
+          "title": "Revealed: huge climate cost of harmful emissions from US immigration flights",
+          "link": "https://www.theguardian.com/us-news/2026/may/26/us-immigration-flights-emissions",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Trump campaign accelerating climate crisis as officials move migrants to detention jails and deport them from US&lt;/p&gt;&lt;p&gt;US immigration enforcement flights are producing hundreds of thousands of metric tonnes of climate-damaging carbon emissions as officials shuttle unprecedented numbers of people to detention centers far from home and deport them to countries across the world.&lt;/p&gt;&lt;p&gt;Donald Trump’s mass &lt;a href=\"https://www.theguardian.com/us-news/usimmigration\"",
+          "published": "2026-05-26T09:00:51.000Z",
+          "score": 7
+        },
+        {
           "title": "Ian McEwan says pessimism ‘a bigger problem than climate change’",
           "link": "https://www.theguardian.com/books/2026/may/25/ian-mcewan-says-pessimism-a-bigger-problem-than-climate-change",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Speaking at Hay festival as UK breaks May heat record, author says optimism is a ‘moral duty’&lt;/p&gt;&lt;p&gt;Pessimism is probably “a bigger problem than climate change”, said the novelist Ian McEwan on Monday afternoon, as temperatures &lt;a href=\"https://www.theguardian.com/uk-news/2026/may/25/uk-heat-may-temperature-record-weather\"&gt;broke May records&lt;/a&gt; in the UK.&lt;/p&gt;&lt;p&gt;McEwan “constantly” hears people say that they don’t “expect their children to have as good",
           "published": "2026-05-25T20:47:02.000Z",
-          "score": 7
-        },
-        {
-          "title": "The BHP files: World’s biggest miner BHP backtracks on climate action with key projects put on ice, leaked documents reveal",
-          "link": "https://www.theguardian.com/world/2026/may/25/bhp-files-leak-mining-company-climate-action",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Cache of internal documents leaked to the Guardian and the ABC’s Four Corners show multinational has war-gamed ways to massively delay decarbonisation&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/ng-interactive/2026/may/25/bhp-files-internal-memo-revealed\"&gt;Revealed: the internal BHP memo that slammed the brakes on world’s biggest miner’s climate push&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Read mo",
-          "published": "2026-05-25T10:30:25.000Z",
-          "score": 7
-        },
-        {
-          "title": "BHP defies its own climate strategy to spend hundreds of millions on polluting diesel trucks in Pilbara",
-          "link": "https://www.theguardian.com/world/2026/may/25/bhp-diesel-trucks-pilbara-australia-mining-climate-pollution",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;&lt;strong&gt;Exclusive:&lt;/strong&gt; Mining giant says technology is not yet advanced enough to run a fully electrified fleet but experts say it is hooked on federal fuel tax credits&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/ng-interactive/2026/may/25/bhp-files-internal-memo-revealed\"&gt;Revealed: the internal BHP memo that slammed the brakes on world’s biggest miner’s climate push&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Read more fr",
-          "published": "2026-05-25T10:30:24.000Z",
           "score": 7
         }
       ]
@@ -125,6 +140,30 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
+        {
+          "title": "Highlights - Vote on the draft opinion on the European Competitiveness Fund - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78051",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260107PHT32316/20260107PHT32316-ms.jpeg\" width=\"180\" alt=\"Image with a hand with objects\" title=\"WS Competitiveness © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members voted on the draft opinion on the European Competitiveness Fund (ECF), proposed by the Commission in July 2025. The proposal establishes a single investme",
+          "published": "2026-05-26T10:16:48.000Z",
+          "score": 22
+        },
+        {
+          "title": "AMENDMENTS 373 - 679 - Draft report Establishing the Temporary Decarbonisation Fund - PE788.820v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-788820_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 373 - 679 - Draft report Establishing the Temporary Decarbonisation Fund&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pascal Canfin&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-26T13:04:24.000Z",
+          "score": 18
+        },
+        {
+          "title": "UK could join $4.65 billion EU startup fund, EU official tells FT - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcUdxRFVmbVR6M2luTUw0anRta2hNY0lIaTRYTU4wM1FoSHAxR2F1czN6QXItUDAzdmpxS1RHSU03V2twOUR6cEY4ZFVMbmJldGlYRFdQb1VzR2xFVXJOc015YjFEY3AtVk1Kc1JZREJzSWpYR2RWX0MwaUh3V3Joa1FfdXFMRlBnMDVUNm1CZjRhZm5qVDlMTVh5MnVLQjhPTWlkR1lIXzB2dnM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxOcUdxRFVmbVR6M2luTUw0anRta2hNY0lIaTRYTU4wM1FoSHAxR2F1czN6QXItUDAzdmpxS1RHSU03V2twOUR6cEY4ZFVMbmJldGlYRFdQb1VzR2xFVXJOc015YjFEY3AtVk1Kc1JZREJzSWpYR2RWX0MwaUh3V3Joa1FfdXFMRlBnMDVUNm1CZjRhZm5qVDlMTVh5MnVLQjhPTWlkR1lIXzB2dnM?oc=5\" target=\"_blank\"&gt;UK could join $4.65 billion EU startup fund, EU official tells FT&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-26T04:17:00.000Z",
+          "score": 8
+        },
         {
           "title": "Scotland: Former SNP executive admits embezzling party funds",
           "link": "https://www.dw.com/en/scotland-former-snp-executive-admits-embezzling-party-funds/a-77288456?maca=en-rss-en-all-1573-xml-mrss",
@@ -140,14 +179,6 @@
           "description": "SpaceX is launching history&#039;s biggest public listing, propelling Elon Musk&#039;s wealth into the stratosphere. DW explores whether the firm&#039;s out-of-this-world ambitions are truly cosmic or another black hole for investors.",
           "published": "2026-05-25T16:27:00.000Z",
           "score": 2
-        },
-        {
-          "title": "Hedge fund tech positions hover near record highs, Goldman Sachs says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQU0ZIdzdVYVZ2VVRWYkJ1SmdkTTVnUHA4UksxUzJsWnk2bEtNZnJZSkpFSzZnb3hmSWR0TXVUSGZBa0VlTTg5aFVHNnl2T24xd0xfSHlIaEl2Tk5tUG9kREI2c2s3YWFYVWxCRzRPUWxmN3FEcGIwN1FPSjE5cHoycUNSMEo0aUFHaDVTVVhKN1dsVjB2SWlQcG80QjU5MW1OMkNnd2RqZHNKdzBNZzN2RTRoTVhyU0xnWHZF?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQU0ZIdzdVYVZ2VVRWYkJ1SmdkTTVnUHA4UksxUzJsWnk2bEtNZnJZSkpFSzZnb3hmSWR0TXVUSGZBa0VlTTg5aFVHNnl2T24xd0xfSHlIaEl2Tk5tUG9kREI2c2s3YWFYVWxCRzRPUWxmN3FEcGIwN1FPSjE5cHoycUNSMEo0aUFHaDVTVVhKN1dsVjB2SWlQcG80QjU5MW1OMkNnd2RqZHNKdzBNZzN2RTRoTVhyU0xnWHZF?oc=5\" target=\"_blank\"&gt;Hedge fund tech positions hover near record highs, Goldman Sachs says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T08:47:43.000Z",
-          "score": 2
         }
       ]
     },
@@ -160,7 +191,7 @@
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78050",
           "source": "EU Parliament ENVI Committee",
           "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260526PHT43906/20260526PHT43906-ms.jpg\" width=\"180\" alt=\"Food and Feed Omnibus\" title=\"Food and Feed Omnibus © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, the Commission presented the Food and Feed Safety Omnibus simplification package in a joint ENVI–AGRI meeting. Published on 16 December 2025, the proposals were referred to bot",
-          "published": "2026-05-26T08:23:49.000Z",
+          "published": "2026-05-26T10:16:59.000Z",
           "score": 22
         },
         {
@@ -170,6 +201,22 @@
           "description": "AMENDMENTS 1 - 37 - Draft recommendation for second reading Plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-05-26T05:53:02.000Z",
           "score": 22
+        },
+        {
+          "title": "Highlights - Exchange of views with Executive Vice-President Stéphane Séjourné - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78052",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250310PHT27239/20250310PHT27239-ms.jpg\" width=\"180\" alt=\"Stéphane Séjourné, Executive Vice-President for Prosperity and Industrial Strategy\" title=\"Stéphane Séjourné © European Union (2025) - European Parliament\"/&gt;&lt;/div&gt;&lt;div&gt;On 5 May 2026, ENVI Members held an exchange of views with Executive Vice-President Stéphane Séjourné, responsible for Prosperity and ",
+          "published": "2026-05-26T10:16:54.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - Consideration of amendments regarding the Budget expenditure tracking framework - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260504CAN78041",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260129PHT32678/20260129PHT32678-ms.jpeg\" width=\"180\" alt=\"Person typing on the laptop and images and graphs related to the budget are popping out\" title=\"Budget concept graph © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 4 May 2026, ENVI Members considered the amendments to the proposed EU budget tracking and performance framework for 2028–203",
+          "published": "2026-05-26T10:13:44.000Z",
+          "score": 18
         }
       ]
     },
@@ -178,11 +225,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Senegal's leadership row mounts as parliament speaker resigns",
-          "link": "https://www.bbc.com/news/articles/c87qq07l1d8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Some speculate that El Malick Ndiaye stepped down so that ousted-PM Ousmane Sonko can take his place.",
-          "published": "2026-05-25T11:12:43.000Z",
+          "title": "Where are US forces stationed in Europe?",
+          "link": "https://www.dw.com/en/where-are-us-forces-stationed-in-europe/a-77270063?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The United States operates various bases across the European continent. DW breaks down what these sites are used for, and how many troops are stationed there.",
+          "published": "2026-05-26T10:05:00.000Z",
           "score": 8
         },
         {
@@ -202,28 +249,28 @@
           "score": 8
         },
         {
-          "title": "Greek police arrest 20 in Crete over suspected EU farm subsidies fraud - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNRzhRWU5zeVFLdUlnWWcxQnE4LXkwUXdPb19uaVQzN28tOXluNFJRUWg1dlBTcUg1NVFnQ05ReGY0cGpRLUNCQVAySU44WnVNRmR3ZC1EZHZmVVhWQ2w1N3MwdmRsbFNRNnUyZmFWQmQ0SmREQ2ZNLXJXZXFSUkFYN3Z0dlROLU4xWlpCaFc0dzFvTzdSOEZLRVVGb3prVGQzbUUtUVhra1BwSmhwRGc?oc=5",
+          "title": "European stocks fall, oil rises after US strikes Iran - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOLUdJaVVrejdzRGFrQTZTY0JUUzY5SEVJUzR5WWJpYjJBdEJHenRtTzJ5dEd0Rkd2SGhrTk1qQ3o5MGhOb3dVSlZSd2gwNVFZV2hCS2VCWkFoUlA2WV8xTEhKbEpyVVhxWnNCMl85dllubTQzU2kwM0Q0WDlKek5YZUE4UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNRzhRWU5zeVFLdUlnWWcxQnE4LXkwUXdPb19uaVQzN28tOXluNFJRUWg1dlBTcUg1NVFnQ05ReGY0cGpRLUNCQVAySU44WnVNRmR3ZC1EZHZmVVhWQ2w1N3MwdmRsbFNRNnUyZmFWQmQ0SmREQ2ZNLXJXZXFSUkFYN3Z0dlROLU4xWlpCaFc0dzFvTzdSOEZLRVVGb3prVGQzbUUtUVhra1BwSmhwRGc?oc=5\" target=\"_blank\"&gt;Greek police arrest 20 in Crete over suspected EU farm subsidies fraud&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T09:31:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxOLUdJaVVrejdzRGFrQTZTY0JUUzY5SEVJUzR5WWJpYjJBdEJHenRtTzJ5dEd0Rkd2SGhrTk1qQ3o5MGhOb3dVSlZSd2gwNVFZV2hCS2VCWkFoUlA2WV8xTEhKbEpyVVhxWnNCMl85dllubTQzU2kwM0Q0WDlKek5YZUE4UQ?oc=5\" target=\"_blank\"&gt;European stocks fall, oil rises after US strikes Iran&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-26T01:15:00.000Z",
           "score": 8
         },
         {
-          "title": "Senegal's parliament speaker quits two days after prime minister sacked - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5",
+          "title": "Europe's STOXX 600 wipes out Iran war losses on peace deal hopes, AI optimism - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNc0h4WWVIblV4ckplUm5FbHEzenM5RURSTTQ3c0NGN2Y3Y1hqLTJNcmtZU3cwaENYNmdMZ21NT2tyWjFybjZoU01YTlYwWUhRYjBLMWs5SUw2TzVhMWMySlVXbzlMZ0piQ3BIYXlpWEdkY1ZGbmhoZlFjWXpKb191RDAzSE1MdDlXYW1pWVBUVXZSODdRMFY2eklfX1drMmtTSE5tbVY5NjFBM0o4UHZaajlzV2RlR1k?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSUktcVZwaXZBSWloeWsyTmtOU2plRGRCX28zXzNZNG1vcUR3OFpvV2JmOUZWWkVlSGhNcG9SeUtwRVBnWUktSVFJdDB3VDdhLWdKbDBQdVZoSHZHNXlYXzRqbHZIMURIQUtBTVRyaUpvOGstMU5mT3d5NDh0VFVQUTM2d0FZR1hXQlJIcnhXZWFlVXdhQ1A3UTNKTkVLMXdraXN1UEVJV0FVbHhyQnI2RGwxRTVLcUF4QzBB?oc=5\" target=\"_blank\"&gt;Senegal's parliament speaker quits two days after prime minister sacked&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-25T08:41:45.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNc0h4WWVIblV4ckplUm5FbHEzenM5RURSTTQ3c0NGN2Y3Y1hqLTJNcmtZU3cwaENYNmdMZ21NT2tyWjFybjZoU01YTlYwWUhRYjBLMWs5SUw2TzVhMWMySlVXbzlMZ0piQ3BIYXlpWEdkY1ZGbmhoZlFjWXpKb191RDAzSE1MdDlXYW1pWVBUVXZSODdRMFY2eklfX1drMmtTSE5tbVY5NjFBM0o4UHZaajlzV2RlR1k?oc=5\" target=\"_blank\"&gt;Europe's STOXX 600 wipes out Iran war losses on peace deal hopes, AI optimism&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-25T16:29:24.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 388,
-    "articlesLast24h": 164,
-    "afterDedup": 154,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 184,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
