@@ -89,7 +89,10 @@ export async function getReferences(libraryId: string): Promise<Reference[]> {
 export async function searchReferences(libraryId: string, query: string): Promise<Reference[]> {
   if (!supabase) return searchLocalReferences(libraryId, query);
 
-  // Use full-text search for multi-word queries, ILIKE for simple ones
+  // Full-text search via the weighted fts tsvector column (migration 038).
+  // The fts column combines title (A), abstract (B), pdf_full_text (C),
+  // and notes/container_title (D), so a single websearch query matches
+  // across metadata AND the extracted PDF content.
   if (query.includes(' ')) {
     const { data, error } = await supabase
       .from('references')
@@ -102,12 +105,12 @@ export async function searchReferences(libraryId: string, query: string): Promis
     return data || [];
   }
 
-  // Simple search across key fields
+  // Single-word: ILIKE across key metadata fields + pdf_full_text
   const { data, error } = await supabase
     .from('references')
     .select('*')
     .eq('library_id', libraryId)
-    .or(`title.ilike.%${query}%,citation_key.ilike.%${query}%,container_title.ilike.%${query}%,doi.ilike.%${query}%`)
+    .or(`title.ilike.%${query}%,citation_key.ilike.%${query}%,container_title.ilike.%${query}%,doi.ilike.%${query}%,pdf_full_text.ilike.%${query}%`)
     .limit(50);
 
   if (error) throw error;
