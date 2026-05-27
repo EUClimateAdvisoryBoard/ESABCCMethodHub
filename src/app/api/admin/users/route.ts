@@ -1,3 +1,7 @@
+/**
+ * Admin user management API for listing, updating roles, and scheduling deletions.
+ * Supports GET, PATCH, and DELETE methods; requires admin authentication.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase, hasServiceRole } from '@/lib/supabase-server';
 import { recordAdminAction } from '@/lib/admin-audit';

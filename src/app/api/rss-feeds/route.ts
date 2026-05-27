@@ -1,3 +1,7 @@
+/**
+ * General RSS feed aggregator returning all EU institution news items.
+ * Supports GET with optional ?source=, ?limit=, and ?offset= query parameters.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { fetchAllFeedItems } from '@/lib/rss-feeds';
 

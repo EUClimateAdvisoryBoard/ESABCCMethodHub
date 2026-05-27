@@ -1,3 +1,6 @@
+/**
+ * Side panel listing annotations for a policy, with tag filtering and delete support.
+ */
 'use client';
 import { useState, useEffect } from 'react';
 import { Annotation } from '@/lib/types';

@@ -1,3 +1,7 @@
+/**
+ * Admin endpoint to run GDPR data-retention purges.
+ * Supports POST via admin Bearer token or cron secret header.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSupabase, hasServiceRole } from '@/lib/supabase-server';
 import { recordAdminAction } from '@/lib/admin-audit';

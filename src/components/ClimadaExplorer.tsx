@@ -1,3 +1,6 @@
+/**
+ * Interactive CLIMADA-based climate risk explorer with choropleth map and hazard breakdown charts.
+ */
 'use client';
 
 import { useEffect, useRef, useState } from 'react';

@@ -1,3 +1,6 @@
+/**
+ * Compact card displaying a policy's title, domain badge, status, and key metadata.
+ */
 'use client';
 import Link from 'next/link';
 import { Policy } from '@/lib/types';

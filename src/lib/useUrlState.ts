@@ -1,3 +1,6 @@
+/**
+ * URL-as-state hook that syncs view state to query parameters for deep-linking and persistence.
+ */
 'use client';
 
 // ---------------------------------------------------------------------------

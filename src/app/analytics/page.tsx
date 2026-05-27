@@ -1,3 +1,6 @@
+/**
+ * Analytics dashboard with policy network charts and user activity feed.
+ */
 'use client';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';

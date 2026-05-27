@@ -1,3 +1,7 @@
+/**
+ * Aggregates live European energy prices from multiple sources (electricity, oil, gas, carbon).
+ * Supports GET with optional ?type= and ?country= filters; falls back to demo data.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 
 /**

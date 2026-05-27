@@ -1,3 +1,6 @@
+/**
+ * Back-compat shim that re-exports the undo toast helper; prefer ToastHost in new code.
+ */
 'use client';
 
 // ---------------------------------------------------------------------------

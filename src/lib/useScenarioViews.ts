@@ -1,3 +1,6 @@
+/**
+ * Hook for saving, loading, and sharing named scenario explorer view configurations.
+ */
 'use client';
 import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';

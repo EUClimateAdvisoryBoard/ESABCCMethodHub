@@ -16,8 +16,8 @@ hide:
 # MethodHub documentation
 
 <p class="mh-hero-lede">
-The ESABCC Secretariat's internal research workspace — five integrated
-modules for references, data, news, policy and content analysis, shipped
+The ESABCC Secretariat's internal research workspace — six integrated
+modules for references, data, news, policy, content analysis, and voting, shipped
 as one Next.js service stewarded by CCE5 and designed for handoff to
 EEA-managed infrastructure.
 </p>
@@ -28,8 +28,8 @@ EEA-managed infrastructure.
 <div class="mh-facts" markdown>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Production modules</p>
-<p class="mh-fact__v">5</p>
-<p class="mh-fact__sub">refs · data · news · policy · coding</p>
+<p class="mh-fact__v">6</p>
+<p class="mh-fact__sub">refs · data · news · policy · coding · voting</p>
 </div>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Beta parking lot</p>
@@ -65,11 +65,11 @@ Packaged for self-hosted deployment on **EEA infrastructure**.
     is asked of the EEA — every term of jargon unpacked. A PDF copy is
     also [available at the repo root](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/ESABCC-MethodHub-FAQ-non-technical.pdf).
 
-## The five modules
+## The six modules
 
 Each module reads and writes the same Postgres corpus — a reference
 created in M·01 shows up in M·05, a policy annotated in M·04 is reachable
-from M·05. No module is master; all five are peers.
+from M·05. No module is master; all six are peers.
 
 <ul class="mh-modules" markdown>
 
@@ -114,6 +114,15 @@ from M·05. No module is master; all five are peers.
 <div class="mh-module__header"><span>M · 05</span><span class="mh-module__num">05</span></div>
 <div class="mh-module__title">Content Analysis</div>
 <p class="mh-module__desc">Hierarchical qualitative coding of policy texts and references.</p>
+<div class="mh-module__cta">Open module →</div>
+</a>
+</li>
+
+<li markdown>
+<a class="mh-module" href="modules/voting-tool/" markdown>
+<div class="mh-module__header"><span>M · 06</span><span class="mh-module__num">06</span></div>
+<div class="mh-module__title">Voting Tool</div>
+<p class="mh-module__desc">Private AB ballots with single-use links, 7 voting systems, and live analysis.</p>
 <div class="mh-module__cta">Open module →</div>
 </a>
 </li>

@@ -1,3 +1,6 @@
+/**
+ * Hook for managing client-side connection overrides, verifications, and user-added connections.
+ */
 'use client';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { connections as baseConnections, policies } from '@/data/policies';

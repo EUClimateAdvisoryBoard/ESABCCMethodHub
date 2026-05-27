@@ -1,3 +1,6 @@
+/**
+ * Header notification bell with unread count badge and dropdown panel for in-app notifications.
+ */
 'use client';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useAuth } from '@/lib/auth-context';

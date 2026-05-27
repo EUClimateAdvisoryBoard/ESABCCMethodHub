@@ -199,6 +199,8 @@ nav:
   - Reference:
       - API reference: reference/api.md
       - Scripts reference: reference/scripts.md
+      - Component library: reference/components.md
+      - "Clients & extensions": reference/clients.md
       - Design system: reference/design-system.md
 
 not_in_nav: |

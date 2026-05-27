@@ -1,3 +1,6 @@
+/**
+ * Full-page data and scenario explorer with database/variable selection, chart views, and export tools.
+ */
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';

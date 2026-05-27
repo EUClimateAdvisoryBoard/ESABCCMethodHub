@@ -1,3 +1,6 @@
+/**
+ * Threaded comment section for policy discussions with reply and delete support.
+ */
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { Comment, fetchComments, createComment, deleteComment } from '@/lib/comments';

@@ -1,3 +1,7 @@
+/**
+ * Serves pre-generated daily news summaries from the filesystem.
+ * Supports GET to retrieve the latest, a specific date, or list available dates.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';

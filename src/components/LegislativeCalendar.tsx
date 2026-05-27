@@ -1,3 +1,6 @@
+/**
+ * Monthly legislative calendar displaying upcoming policy deadlines, reviews, and transposition dates.
+ */
 'use client';
 
 import { useEffect, useState } from 'react';

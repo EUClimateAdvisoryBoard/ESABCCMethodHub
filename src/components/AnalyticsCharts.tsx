@@ -1,3 +1,6 @@
+/**
+ * Dashboard charts showing policy domain distribution, connection types, and annotation statistics.
+ */
 'use client';
 import { useMemo, useState, useEffect } from 'react';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, ArcElement, Title, Tooltip, Legend } from 'chart.js';

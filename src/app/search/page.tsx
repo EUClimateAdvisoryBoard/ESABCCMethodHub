@@ -1,3 +1,6 @@
+/**
+ * Global search page for querying policies and annotations.
+ */
 'use client';
 import { useState, useCallback } from 'react';
 import Link from 'next/link';

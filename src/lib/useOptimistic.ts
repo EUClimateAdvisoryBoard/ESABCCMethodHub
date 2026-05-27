@@ -1,3 +1,6 @@
+/**
+ * Optimistic update hook that applies changes immediately and rolls back on failure.
+ */
 'use client';
 
 // ---------------------------------------------------------------------------

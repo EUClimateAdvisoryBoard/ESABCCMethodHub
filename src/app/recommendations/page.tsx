@@ -1,3 +1,6 @@
+/**
+ * Recommendations tracker for ESABCC policy implementation status.
+ */
 'use client';
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';

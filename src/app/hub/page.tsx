@@ -1,3 +1,6 @@
+/**
+ * Hub landing page listing all available MethodHub applications.
+ */
 'use client';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';

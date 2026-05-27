@@ -1,3 +1,6 @@
+/**
+ * Fact-sheet definitions and figure metadata for ESABCC report summaries.
+ */
 import { ESABCC, ESABCC_ORDERED } from '@/lib/esabcc-palette';
 
 /* ------------------------------------------------------------------ */

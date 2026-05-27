@@ -1,3 +1,6 @@
+/**
+ * Chart.js line chart for scenario projections with median/percentile envelopes and historical mode.
+ */
 'use client';
 
 import { useRef, useEffect, useState } from 'react';

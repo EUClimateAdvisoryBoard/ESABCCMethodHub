@@ -1,3 +1,7 @@
+/**
+ * Resolves a DOI to structured bibliographic metadata via the CrossRef API.
+ * Supports GET with a ?doi= query parameter.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
