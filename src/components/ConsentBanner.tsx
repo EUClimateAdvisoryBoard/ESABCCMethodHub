@@ -1,3 +1,6 @@
+/**
+ * GDPR-compliant consent banner for optional local-storage features.
+ */
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';

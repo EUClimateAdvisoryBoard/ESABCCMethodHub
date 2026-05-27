@@ -1,3 +1,6 @@
+/**
+ * D3 force-directed graph visualizing connections between a policy and its related policies.
+ */
 'use client';
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';

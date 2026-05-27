@@ -1,3 +1,6 @@
+/**
+ * Timeline feed showing recent annotations, comments, and tag activity across policies.
+ */
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';

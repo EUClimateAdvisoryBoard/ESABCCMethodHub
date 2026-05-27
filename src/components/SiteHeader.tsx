@@ -1,3 +1,6 @@
+/**
+ * Site-wide responsive header with production module navigation, auth controls, and mobile drawer.
+ */
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

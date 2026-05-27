@@ -1,3 +1,6 @@
+/**
+ * Root layout providing global styles, fonts, auth, and the MethodHub chrome.
+ */
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';

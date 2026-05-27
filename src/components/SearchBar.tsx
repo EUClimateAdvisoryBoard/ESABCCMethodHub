@@ -1,3 +1,6 @@
+/**
+ * Debounced search input with clear button for filtering policies and annotations.
+ */
 'use client';
 import { useState, useEffect } from 'react';
 

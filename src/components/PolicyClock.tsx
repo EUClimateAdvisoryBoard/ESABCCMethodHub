@@ -1,3 +1,6 @@
+/**
+ * Horizontal swim-lane timeline of EU legislative events with category filtering and AI weekly overview.
+ */
 'use client';
 
 import Link from 'next/link';

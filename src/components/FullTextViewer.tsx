@@ -1,3 +1,6 @@
+/**
+ * Full-text policy viewer with inline citation highlights, annotation creation, and search scroll.
+ */
 'use client';
 import { useState, useRef, useCallback, useEffect, useMemo } from 'react';
 import Link from 'next/link';

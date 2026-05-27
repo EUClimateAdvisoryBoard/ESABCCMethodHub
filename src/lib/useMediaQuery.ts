@@ -1,3 +1,6 @@
+/**
+ * Reactive CSS media query hook with SSR-safe hydration.
+ */
 'use client';
 import { useEffect, useState } from 'react';
 

@@ -1,3 +1,6 @@
+/**
+ * Top-of-graph bar for selecting, creating, editing, and deleting policy networks.
+ */
 'use client';
 import { useState } from 'react';
 import { useNetworks, type PolicyNetwork } from '@/lib/useNetworks';

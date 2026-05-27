@@ -1,3 +1,6 @@
+/**
+ * Interactive D3 force-directed graph of the full policy network with domain coloring and connection-type filtering.
+ */
 'use client';
 import { useEffect, useRef, useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';

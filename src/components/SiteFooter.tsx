@@ -1,3 +1,6 @@
+/**
+ * Site-wide footer with module links, newsletter signup, and legal/accessibility information.
+ */
 'use client';
 import Link from 'next/link';
 import { useState } from 'react';

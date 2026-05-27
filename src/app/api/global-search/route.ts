@@ -1,3 +1,7 @@
+/**
+ * Cross-module search API for policies, references, news, scenarios, and codes.
+ * Supports GET with a ?q= query parameter and optional module prefix filters.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { policies } from '@/data/policies';
 import { references } from '@/data/references';

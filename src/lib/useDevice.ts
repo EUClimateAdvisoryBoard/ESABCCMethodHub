@@ -1,3 +1,6 @@
+/**
+ * Device detection hook providing reactive viewport size, device kind, and touch capability.
+ */
 'use client';
 import { useEffect, useState } from 'react';
 

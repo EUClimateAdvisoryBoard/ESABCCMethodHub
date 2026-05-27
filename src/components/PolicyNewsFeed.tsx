@@ -1,3 +1,6 @@
+/**
+ * Live news feed showing recent articles linked to EU policies, filterable by policy ID.
+ */
 'use client';
 
 import { useState, useEffect } from 'react';

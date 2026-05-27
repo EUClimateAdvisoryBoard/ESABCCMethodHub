@@ -1,3 +1,6 @@
+/**
+ * Compact Open Graph preview card that fetches and displays metadata for a given URL.
+ */
 'use client';
 import { useState, useEffect } from 'react';
 

@@ -1,3 +1,6 @@
+/**
+ * Backward-compatible placeholder for pre-fetched policy body texts.
+ */
 // Placeholder kept for backward compatibility with any lingering
 // imports. The real prefetched bodies are now served as a static asset
 // from `public/content-analysis/policy-bodies.json` and loaded lazily

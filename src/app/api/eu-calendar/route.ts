@@ -1,3 +1,7 @@
+/**
+ * Returns a curated list of upcoming EU legislative milestones and policy deadlines.
+ * Supports GET; responses are cached for 24 hours.
+ */
 import { NextResponse } from 'next/server';
 
 export interface CalendarEvent {

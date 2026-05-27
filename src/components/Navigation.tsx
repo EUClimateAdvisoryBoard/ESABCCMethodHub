@@ -1,3 +1,6 @@
+/**
+ * Legacy navigation bar with responsive mobile drawer and user auth menu.
+ */
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';

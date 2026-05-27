@@ -1,3 +1,6 @@
+/**
+ * Hook for managing advisory board recommendations and their implementation status.
+ */
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';

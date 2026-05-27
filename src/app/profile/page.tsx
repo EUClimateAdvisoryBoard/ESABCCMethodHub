@@ -1,3 +1,6 @@
+/**
+ * User profile page with account settings and activity log.
+ */
 'use client';
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
