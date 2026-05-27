@@ -76,6 +76,7 @@ function scoreReference(
     journal?: string | null;
     doi?: string | null;
     year: string;
+    pdfFullText?: string | null;
   },
   tokens: string[],
   doiQuery: string
@@ -88,11 +89,12 @@ function scoreReference(
   if (tokens.length === 0) return 1; // empty query → keep all (caller filters)
 
   const fields: Array<{ value: string; weight: number }> = [
-    { value: normalize(ref.title),         weight: 10 },
-    { value: normalize(ref.authors),       weight: 8 },
-    { value: normalize(ref.journal || ''), weight: 4 },
-    { value: normalize(ref.year),          weight: 6 },
-    { value: normalize(ref.doi || ''),     weight: 5 },
+    { value: normalize(ref.title),              weight: 10 },
+    { value: normalize(ref.authors),            weight: 8 },
+    { value: normalize(ref.journal || ''),      weight: 4 },
+    { value: normalize(ref.year),               weight: 6 },
+    { value: normalize(ref.doi || ''),          weight: 5 },
+    { value: normalize(ref.pdfFullText || ''),  weight: 3 },
   ];
 
   let total = 0;
