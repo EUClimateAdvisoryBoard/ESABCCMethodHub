@@ -1,15 +1,9 @@
 {
   "date": "2026-05-27",
-  "generatedAt": "2026-05-27T14:31:59.591Z",
+  "generatedAt": "2026-05-27T19:27:09.469Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 27 May 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Study - Tomorrow's Primary Forests: The feasibility of realising novel primary forests in the western part of Europe - PE 774.748 - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div&gt;Primary forests are large, self-regulating ecosystems of exceptional ecological importance. In Europe, they are rare, fragmented, and pressured by infrastructure, and intensive forestry. Their strict protection is urgent for biodiversity conservation, climate mitigation, and other ecosystem services. Novel Primary Forests (NPFs) are large, self-regulating forests with minimal human intervention under development that offer a strategic way to restore ecological integrity and enhance cl",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Video message for roundtable discussion on LNG &amp; Shipping organised by CBS Alumni Club and Columbia Global Energy Centre",
       "summary": "European Commission Speech Brussels, 04 May 2026 Ladies and gentlemen,\r\nI have been asked to present the EU perspective on the closure of the Strait of Hormuz. But first, allow me to welcome that finally after ...",
@@ -27,24 +21,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Study - Tomorrow's Primary Forests: The feasibility of realising novel primary forests in the western part of Europe - PE 774.748 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/RegData/etudes/STUD/2026/774748/EPRS_STU(2026)774748_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div&gt;Primary forests are large, self-regulating ecosystems of exceptional ecological importance. In Europe, they are rare, fragmented, and pressured by infrastructure, and intensive forestry. Their strict protection is urgent for biodiversity conservation, climate mitigation, and other ecosystem services. Novel Primary Forests (NPFs) are large, self-regulating forests with minimal human intervention under development that offer a strategic way to restore ecological integrity and enhance cl",
-          "published": "2026-05-26T15:08:47.000Z",
-          "score": 24
-        },
-        {
-          "title": "DRAFT MOTION FOR A RESOLUTION on the 2026 UN Climate Change Conference in Antalya, Türkiye (COP31) - PE786.880v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-RD-786880_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT MOTION FOR A RESOLUTION on the 2026 UN Climate Change Conference in Antalya, Türkiye (COP31)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-26T15:33:03.000Z",
-          "score": 23
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -105,6 +82,14 @@
           "score": 22
         },
         {
+          "title": "Extreme heat in Europe ‘a brutal reminder’ of climate crisis, UN chief says",
+          "link": "https://www.theguardian.com/environment/2026/may/27/extreme-heat-in-europe-a-brutal-reminder-of-climate-crisis-un-chief-says",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Simon Stiell said burning fossil fuels was driving intense heatwaves as UK and France broke temperature records on consecutive days&lt;/p&gt;&lt;p&gt;The UN climate chief has said an extreme early heat event sweeping parts of western Europe was “a brutal reminder of the spiralling impacts of the climate crisis”, after France and the UK set new temperature records for May on two consecutive days.&lt;/p&gt;&lt;p&gt;Simon Stiell, the executive secretary of the UN Framework Convention on Cl",
+          "published": "2026-05-27T14:50:32.000Z",
+          "score": 13
+        },
+        {
           "title": "'No timeline or cost' for clean-up plan of one of Europe's largest illegal dumps",
           "link": "https://www.bbc.com/news/articles/cp8prj928dyo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -121,20 +106,12 @@
           "score": 7
         },
         {
-          "title": "Why temperature records are being not only broken but smashed",
-          "link": "https://www.bbc.com/news/articles/c62rrj66p3eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The combined effects of a heat dome and climate change have brought extreme warmth to western Europe.",
-          "published": "2026-05-27T14:08:50.000Z",
-          "score": 6
-        },
-        {
-          "title": "Seven heat-related deaths in France as May records set in several countries",
-          "link": "https://www.theguardian.com/world/2026/may/26/deaths-france-linked-record-high-temperatures",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Extreme early summer event across western Europe also brings highest temperatures for month in UK and Ireland&lt;/p&gt;&lt;p&gt;Seven people have died in France in an extreme early summer heat event affecting a swathe of western Europe, with record high temperatures for May recorded for a second day in several countries.&lt;/p&gt;&lt;p&gt;In France, which logged its hottest ever May day on Monday and again on Tuesday, the weather agency Météo France said the heatwave could last through ",
-          "published": "2026-05-26T20:47:54.000Z",
-          "score": 4
+          "title": "China's new carbon metrics 'erased half' of emissions growth reported from 2020 to 2025, report says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPZGozMXdkU2pkZGhjU0swRFVodHlHUC1PYXRlY0V0VlFELUNqNjZOUGFad2loeWVab2x1Ukg4cmxJMUhVeDFCSjh4aUJWcDg3Y1YzNHNRZ3dobVUwd2FWbEpOV0M3cDlPN1gzam5LMVJMakZYZzVxbV9nUENrbUphS0RlVmlNTUJSRG5zUHlUMUxvTEZCamhzVk5aUndXUWtWZjhhb1JFV1FzUE1tZzBDX3pSUWROM0JLeU5JYjVJWThFaGVWRnFrcHhQVndfRmw2cEVZ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0wFBVV95cUxPZGozMXdkU2pkZGhjU0swRFVodHlHUC1PYXRlY0V0VlFELUNqNjZOUGFad2loeWVab2x1Ukg4cmxJMUhVeDFCSjh4aUJWcDg3Y1YzNHNRZ3dobVUwd2FWbEpOV0M3cDlPN1gzam5LMVJMakZYZzVxbV9nUENrbUphS0RlVmlNTUJSRG5zUHlUMUxvTEZCamhzVk5aUndXUWtWZjhhb1JFV1FzUE1tZzBDX3pSUWROM0JLeU5JYjVJWThFaGVWRnFrcHhQVndfRmw2cEVZ?oc=5\" target=\"_blank\"&gt;China's new carbon metrics 'erased half' of emissions growth reported from 2020 to 2025, report says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;fon",
+          "published": "2026-05-27T06:41:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -148,11 +125,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 807 - 1070 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures - PE789.029v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789029_EN.pdf",
+          "title": "AMENDMENTS 548 - 806 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures - PE787.880v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-787880_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 807 - 1070 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Mohammed Chahim&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-27T13:46:03.000Z",
+          "description": "AMENDMENTS 548 - 806 - Draft report Amending Regulation (EU) 2023/956 as regards the extension of its scope to downstream goods and anti-circumvention measures&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Mohammed Chahim&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-05-27T18:15:44.000Z",
           "score": 22
         },
         {
@@ -164,19 +141,11 @@
           "score": 8
         },
         {
-          "title": "Ukraine: EU, Germany summon Russian envoys after Moscow tells diplomats to leave Kyiv",
-          "link": "https://www.dw.com/en/ukraine-eu-germany-summon-russian-envoys-after-moscow-tells-diplomats-to-leave-kyiv/a-77300543?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU enlargement: Is the bloc ready to welcome new members?",
+          "link": "https://www.dw.com/en/eu-enlargement-is-the-bloc-ready-to-welcome-new-members/a-77319025?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The EU and Germany both summoned Russian diplomats to protest attacks on Kyiv and orders for diplomats to leave the city. The UN secretary-general also rebuked Russia in a session on proliferating conflicts worldwide.",
-          "published": "2026-05-26T16:07:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "France, Italy and Spain urge EU to toughen and hasten trade defences - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMW9vOXRKWFdQMGFxYldjNGNRSk1zek90cDdQRkVTdklhNEtNanc5M0d5SEd0Q0ZCcDhBVE1VVEtMZ01VdWw2bFNZT3lPcXh1bFllMk50V25hUXlRbFNwSUgxTjhvNHUzRS1oU1Q5WDFISDRRUGIwYjdiSWRXek93a3ZBRFdXVFBfR3BNc0l2TFNxc1h0dlBIUnBIR1h3V0lCWnBObUVzMA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOMW9vOXRKWFdQMGFxYldjNGNRSk1zek90cDdQRkVTdklhNEtNanc5M0d5SEd0Q0ZCcDhBVE1VVEtMZ01VdWw2bFNZT3lPcXh1bFllMk50V25hUXlRbFNwSUgxTjhvNHUzRS1oU1Q5WDFISDRRUGIwYjdiSWRXek93a3ZBRFdXVFBfR3BNc0l2TFNxc1h0dlBIUnBIR1h3V0lCWnBObUVzMA?oc=5\" target=\"_blank\"&gt;France, Italy and Spain urge EU to toughen and hasten trade defences&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-26T15:41:13.000Z",
+          "description": "Brussels says the EU must grow, but resistance within the bloc remains strong, with some arguing that it must reform before enlarging. Montenegro remains the only country with a realistic chance of joining soon.",
+          "published": "2026-05-27T15:36:00.000Z",
           "score": 8
         }
       ]
@@ -194,44 +163,44 @@
           "score": 12
         },
         {
-          "title": "Paris 'punishingly hot' as Western Europe hit by heatwave",
-          "link": "https://www.bbc.com/news/videos/cy522zrkr7lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Hugh Schofield reports from Paris as a heat dome settled over Western Europe bringing temperatures above the average for May.",
-          "published": "2026-05-26T16:46:58.000Z",
-          "score": 8
-        },
-        {
           "title": "China stalls Airbus approvals to pressure Europe on homegrown Chinese jets, Bloomberg News reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOTGcxcDBVQkhXUTZ4a0taOG9wS1p3eUZJM21lYXZQYzVYZ0FwWVdvNE9SLVo1a3VVTjhFT2FmS201MU8tbnUtdnRGbzhrTFltcURvTlZlbGNwYnV3bTRRV056eEZjX25MN3UzZWlmTFZjZ0lPdnFMUHRfcFBSV2hpOHdtbmRIYlFndU9GaU9QS3dxQUp4M1dmTmlFc21RZWxFSVpCX2l6ZzIwZWFMV21xT3B1Rm81bDBtZmFPdG9YRG5zSjVlR1F1VnAyZW4zUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOTGcxcDBVQkhXUTZ4a0taOG9wS1p3eUZJM21lYXZQYzVYZ0FwWVdvNE9SLVo1a3VVTjhFT2FmS201MU8tbnUtdnRGbzhrTFltcURvTlZlbGNwYnV3bTRRV056eEZjX25MN3UzZWlmTFZjZ0lPdnFMUHRfcFBSV2hpOHdtbmRIYlFndU9GaU9QS3dxQUp4M1dmTmlFc21RZWxFSVpCX2l6ZzIwZWFMV21xT3B1Rm81bDBtZmFPdG9YRG5zSjVlR1F1VnAyZW4zUQ?oc=5\" target=\"_blank\"&gt;China stalls Airbus approvals to pressure Europe on homegrown Chinese jets, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=",
-          "published": "2026-05-27T10:12:53.000Z",
+          "published": "2026-05-27T02:28:00.000Z",
           "score": 8
         },
         {
-          "title": "Senegal's ousted prime minister Sonko elected parliament speaker - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOSlJONHRtZlZsMDhnQXVmRUlYbnNBcU41NllpbHJaZnFkTzl4LWpfUFNzU2R4OVBUQ1dMbk4wQkpTTU1adXljTlVuaF9oMnRXZldpX2FIOURRMkZaVzR5NVZ4UjRWYmFCVmhTakxZMUY5dzZ3WmlfU1ptWEU0VzRwcEhVd3BEcGM4M05QRnloTzQtZHZBLV9WblNFbFBOOC10cVlGcjV2YTFqU0RQQWcw?oc=5",
+          "title": "More European firms find China to be less difficult to operate in, survey shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUWFkS3Q0aEV2Ry1uOUh3ZXdmZDNCSHVmMW9BdDBZYlY5OXkxTVd6bGw3T01tOTZZUmFYYzYzSXY2SGxwQjRvdjA5c0hEMWNfYncwckFOTzFaY3Eya0Z1ZmpvZzlGUVdkZnVlT3laaWN2M2U4UmpOd3AxUlBGWXVVRFVBTkFRT1BlV0NuVVN3Mjk1d3BQOWRpODRWZEtNQ2dHWXZQd1ltMVBtSzBZamVCWFM5VzJERkRG?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOSlJONHRtZlZsMDhnQXVmRUlYbnNBcU41NllpbHJaZnFkTzl4LWpfUFNzU2R4OVBUQ1dMbk4wQkpTTU1adXljTlVuaF9oMnRXZldpX2FIOURRMkZaVzR5NVZ4UjRWYmFCVmhTakxZMUY5dzZ3WmlfU1ptWEU0VzRwcEhVd3BEcGM4M05QRnloTzQtZHZBLV9WblNFbFBOOC10cVlGcjV2YTFqU0RQQWcw?oc=5\" target=\"_blank\"&gt;Senegal's ousted prime minister Sonko elected parliament speaker&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-26T15:15:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOUWFkS3Q0aEV2Ry1uOUh3ZXdmZDNCSHVmMW9BdDBZYlY5OXkxTVd6bGw3T01tOTZZUmFYYzYzSXY2SGxwQjRvdjA5c0hEMWNfYncwckFOTzFaY3Eya0Z1ZmpvZzlGUVdkZnVlT3laaWN2M2U4UmpOd3AxUlBGWXVVRFVBTkFRT1BlV0NuVVN3Mjk1d3BQOWRpODRWZEtNQ2dHWXZQd1ltMVBtSzBZamVCWFM5VzJERkRG?oc=5\" target=\"_blank\"&gt;More European firms find China to be less difficult to operate in, survey shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-27T03:05:00.000Z",
           "score": 8
         },
         {
-          "title": "SoftBank hires banks for US IPOs of SB Energy and AI robotics spinoff Roze, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYW56R18tUlFncHQ4S0hlN2NJbkpwOWl6eDJhVS1Jdjg3VVJFWXNCUG5xSmNILWxJZlZnYVJSWS1aWm5rbFhkQ09PelFLMEtoMk1HTW5HVGNLREl1WUlvYjNkbmxtckh4LUtKampGQkk4QndTeTlYSGI1b2hQTDJTcU5JZ0lpNW13akllZWQtWE90VWFnSWNuLTZpdThqaVQ5ODVfUFRUQTlERE1mRlFTS0tCbnZEZjhw?oc=5",
+          "title": "BOJ's Ueda warns temporary energy shock could become persistent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPQUdCcHdOSkdfd19ERDAxVnpCZUVRWFBQRFdVUGd1bExLSkFab05YMWJhQThDcHNtLUNHQTBjNWp3MkxNLUJ0UDYzOVphNmVpOHB6SkpQU0lncjAza21xcG5oY0pNNjRUcDUwU0V6X05tM1VMSzdhUVh6X3I5TDJoQ2dRcXlnenRFRWxKeTZvNmhLb0lnMmJKZEprcmIwVlBqYjlycjAxRW5XMnZ4RjUtaHM3dkxEWTlHSmxrbHNB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNYW56R18tUlFncHQ4S0hlN2NJbkpwOWl6eDJhVS1Jdjg3VVJFWXNCUG5xSmNILWxJZlZnYVJSWS1aWm5rbFhkQ09PelFLMEtoMk1HTW5HVGNLREl1WUlvYjNkbmxtckh4LUtKampGQkk4QndTeTlYSGI1b2hQTDJTcU5JZ0lpNW13akllZWQtWE90VWFnSWNuLTZpdThqaVQ5ODVfUFRUQTlERE1mRlFTS0tCbnZEZjhw?oc=5\" target=\"_blank\"&gt;SoftBank hires banks for US IPOs of SB Energy and AI robotics spinoff Roze, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-26T19:21:40.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPQUdCcHdOSkdfd19ERDAxVnpCZUVRWFBQRFdVUGd1bExLSkFab05YMWJhQThDcHNtLUNHQTBjNWp3MkxNLUJ0UDYzOVphNmVpOHB6SkpQU0lncjAza21xcG5oY0pNNjRUcDUwU0V6X05tM1VMSzdhUVh6X3I5TDJoQ2dRcXlnenRFRWxKeTZvNmhLb0lnMmJKZEprcmIwVlBqYjlycjAxRW5XMnZ4RjUtaHM3dkxEWTlHSmxrbHNB?oc=5\" target=\"_blank\"&gt;BOJ's Ueda warns temporary energy shock could become persistent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-27T00:45:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "NZ central bank flags imminent hikes to counter energy shock after narrow hold - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNUhNYkUwNWlmTmkwYWg4M0hwUHhQVm5Qcnh6Zllza3FtOElTcXpSWjdkQ3YzS2dzV05OS18zUnpnN2dJUTVnRlVXX2MzR1M2akpPeWc0T0NWeXdjWUFwRXdhejdSUWpvUlpSWVNUZENGay1xTW5qVFBCOGJpR1hNcjB2TE1MQWlsUEs1djA5SUJ1MVBPZVNDN3hRVzFFR0dTTEItLVNzd2tHNDRxYWxfWU81RV9Nd3ZKWlZTNHpId3o0Zw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQNUhNYkUwNWlmTmkwYWg4M0hwUHhQVm5Qcnh6Zllza3FtOElTcXpSWjdkQ3YzS2dzV05OS18zUnpnN2dJUTVnRlVXX2MzR1M2akpPeWc0T0NWeXdjWUFwRXdhejdSUWpvUlpSWVNUZENGay1xTW5qVFBCOGJpR1hNcjB2TE1MQWlsUEs1djA5SUJ1MVBPZVNDN3hRVzFFR0dTTEItLVNzd2tHNDRxYWxfWU81RV9Nd3ZKWlZTNHpId3o0Zw?oc=5\" target=\"_blank\"&gt;NZ central bank flags imminent hikes to counter energy shock after narrow hold&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-27T02:30:00.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
+    "totalArticlesScanned": 391,
     "articlesLast24h": 168,
-    "afterDedup": 158,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
