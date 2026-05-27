@@ -520,12 +520,13 @@ function getLocalReferencesByIds(ids: string[]): Reference[] {
   return getAllLocalReferences().filter(r => idSet.has(r.id));
 }
 
-function addLocalReference(ref: Omit<Reference, 'id' | 'created_at' | 'updated_at' | 'created_by' | 'pdf_url'>): Reference {
+function addLocalReference(ref: Omit<Reference, 'id' | 'created_at' | 'updated_at' | 'created_by' | 'pdf_url' | 'pdf_full_text'>): Reference {
   const refs = getAllLocalReferences();
   const fullRef: Reference = {
     ...ref,
     id: crypto.randomUUID(),
     pdf_url: null,
+    pdf_full_text: null,
     funding: ref.funding ?? null,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),

@@ -108,7 +108,7 @@ export async function POST(_request: NextRequest) {
     processed: results.length,
     succeeded: results.filter(r => r.ok).length,
     failed: results.filter(r => !r.ok).length,
-    remaining: Math.max(0, (refs.length === BATCH_SIZE ? '(more may remain)' : 0)),
+    remaining: refs.length === BATCH_SIZE ? '(more may remain)' : 0,
     results,
   });
 }
