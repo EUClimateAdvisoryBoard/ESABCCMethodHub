@@ -3,6 +3,7 @@
 This section answers the operational question: what does EEA IT actually
 have to host, and who keeps the code moving afterwards?
 
+- [Architecture overview](architecture.md) — how the app fits together, for a reviewer who hasn't read the code.
 - [Stewardship model](stewardship.md) — CCE5 owns the code, EEA IT hosts the service.
 - [Deployment on EEA](deployment.md) — the handoff, the container, the reverse proxy.
 - [AI layer — three paths](ai-layer.md) — Azure OpenAI · M365 Copilot · none.

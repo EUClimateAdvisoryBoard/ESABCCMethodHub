@@ -181,6 +181,7 @@ nav:
       - "M·15 Strategy & Framework Docs (beta)": modules/strategy-docs.md
   - Infrastructure:
       - Overview: infrastructure/index.md
+      - Architecture overview: infrastructure/architecture.md
       - Stewardship model: infrastructure/stewardship.md
       - Deployment on EEA: infrastructure/deployment.md
       - AI layer — three paths: infrastructure/ai-layer.md
