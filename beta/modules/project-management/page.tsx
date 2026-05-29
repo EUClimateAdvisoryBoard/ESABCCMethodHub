@@ -5,7 +5,7 @@ import PageHero from '@/components/PageHero';
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Project Manual v2.1 – ESABCC 5-Phase Project Lifecycle
-// Source: 2023-10-22 Project Manual_v2-1.docx
+// Source: project-documents/2023-10-22 Project Manual_v2-1.docx
 // ─────────────────────────────────────────────────────────────────────────────
 
 const PHASE_COLORS = {

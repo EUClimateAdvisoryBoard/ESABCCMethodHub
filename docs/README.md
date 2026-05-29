@@ -1,8 +1,10 @@
 # Documentation index
 
-The `docs/` folder is the detailed reference for the EU Climate Policy
-Navigator. Start at the [root README](../README.md) for a high-level tour,
-then come here for deep dives.
+The `docs/` folder is the MkDocs source for the MethodHub documentation
+site (served at <https://methodhub.vercel.app/docs/>). Start at the
+[root README](../README.md) for a high-level tour, then come here for the
+deep dives. When browsing on GitHub you can read the Markdown directly;
+the rendered site is built by `scripts/build-docs.sh`.
 
 | File                                                           | What it covers                                                    |
 |----------------------------------------------------------------|-------------------------------------------------------------------|
