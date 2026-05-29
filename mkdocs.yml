@@ -159,6 +159,11 @@ plugins:
       # the figure in-page, and auto_caption was eating most of the
       # viewport so the image itself came out tiny.
       auto_caption: false
+  # Keep the old /overview/the-five-modules/ URL alive after the v1.0 → six
+  # module rename. The README and any external bookmarks still point at it.
+  - redirects:
+      redirect_maps:
+        overview/the-five-modules.md: overview/the-six-modules.md
 
 # Navigation — handcrafted so the sidebar reads like a technical handbook
 # rather than an alphabetical file listing.
@@ -167,7 +172,7 @@ nav:
   - "FAQ (non-technical)": FAQ-NON-TECHNICAL.md
   - Overview:
       - What is MethodHub?: overview/what-is-methodhub.md
-      - The six modules: overview/the-five-modules.md
+      - The six modules: overview/the-six-modules.md
       - Beta parking lot: overview/beta.md
   - Modules:
       - modules/index.md

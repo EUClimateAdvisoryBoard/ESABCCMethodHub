@@ -52,12 +52,12 @@ and is **intentionally unrouted** by the Next.js app. Promoting a beta
 module is a single `git mv` back into `src/app/`. The file system is
 the feature flag.
 
-[The six modules →](the-five-modules.md){ .md-button .md-button--primary }
+[The six modules →](the-six-modules.md){ .md-button .md-button--primary }
 [Beta parking lot →](beta.md){ .md-button }
 
 ## Where to go next
 
-- Want the **big picture**? Stay in this section — [The six modules](the-five-modules.md) has the one-table answer.
+- Want the **big picture**? Stay in this section — [The six modules](the-six-modules.md) has the one-table answer.
 - Want a **technical deep-dive** on a specific module? Jump to the [Modules](../modules/index.md) section.
 - Want to **host** this? Start with [Deployment on EEA](../infrastructure/deployment.md).
 - Want to **fork** this for another EEA unit? Read [Blueprint for EEA units](../vision/blueprint.md).

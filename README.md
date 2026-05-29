@@ -27,7 +27,7 @@ the science team signs off.
 
 Read more:
 [What is MethodHub?](https://methodhub.vercel.app/docs/overview/what-is-methodhub/) ·
-[The six modules](https://methodhub.vercel.app/docs/overview/the-five-modules/) ·
+[The six modules](https://methodhub.vercel.app/docs/overview/the-six-modules/) ·
 [Beta parking lot](https://methodhub.vercel.app/docs/overview/beta/) ·
 [FAQ (non-technical)](https://methodhub.vercel.app/docs/FAQ-NON-TECHNICAL/).
 

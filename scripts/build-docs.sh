@@ -26,7 +26,8 @@ $PIP install --quiet --disable-pip-version-check --break-system-packages \
   mkdocs-material==9.5.42 \
   pymdown-extensions==10.11.2 \
   mkdocs-awesome-pages-plugin==2.9.3 \
-  mkdocs-glightbox==0.4.0
+  mkdocs-glightbox==0.4.0 \
+  mkdocs-redirects==1.2.1
 
 rm -rf public/docs
 python3 -m mkdocs build --site-dir public/docs --clean
