@@ -646,7 +646,7 @@ export default async function HomePage() {
 
                 <ul className="divide-y divide-[#E6E7E8]">
                   {[
-                    ['Repo',  'github.com/SebastianFra/MethodHub',        'ESABCC or EEA org · CCE5 keeps Maintain'],
+                    ['Repo',  'github.com/EUClimateAdvisoryBoard/ESABCCMethodHub', 'ESABCC or EEA org · CCE5 keeps Maintain'],
                     ['Host',  'Vercel · EU region (Frankfurt)',           'EEA infrastructure (EU region)'],
                     ['Data',  'Supabase EU · Postgres · Auth · Storage',  'EEA Postgres · S3/MinIO · EU Login'],
                     ['AI',    'Azure OpenAI EU · service key',            'M365 Copilot · per-user licence via Graph'],
