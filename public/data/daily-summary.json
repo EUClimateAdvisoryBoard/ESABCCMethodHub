@@ -1,18 +1,24 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T08:46:47.455Z",
+  "generatedAt": "2026-05-29T14:03:18.990Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 29 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Portugal breaks hottest May day record as Europe swelters in heatwave",
-      "summary": "French students are taking their exams in baking schools, while red alerts are issued in Italy.",
+      "headline": "Study - Expected impact of the deployment of Automated Vehicles in the EU - PE 774.754 - Committee on Legal Affairs - Committee on the Internal Market and Consumer Protection - Committee on Employment and Social Affairs - Committee on Transport and Tourism - Committee on the Environment, Public Health and Food Safety - Committee on Industry, Research and Energy",
+      "summary": "&lt;div&gt;This study examines the future deployment of Automated Vehicles in the European Union through an analysis combining technological assessment, scenario development, and policy evaluation. Building on recent advances in Artificial Intelligence, Software-Defined Vehicles, and Intelligent Infrastructure, the study develops three scenarios – European Leadership, Selective Strengths and Dependencies, and External Dependence – to explore how Europe's regulatory and industrial position might ",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May &#124; Indian heat deaths &#124; Nigeria’s solar mini-grids",
+      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May | Indian heat deaths | Nigeria’s solar mini-grids appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Media reaction: UK and Europe&#8217;s ‘mind-boggling’ May heat and climate change",
-      "summary": "Europe has been hit by a searing heatwave, which has shattered temperature records across France,... The post Media reaction: UK and Europe&#8217;s ‘mind-boggling’ May heat and climate change appeared first on Carbon Brief.",
+      "headline": "China Briefing 28 May 2026: Deadly rains &#124; China pushes back &#124; Examining China’s carbon intensity metric",
+      "summary": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 28 May 2026: Deadly rains | China pushes back | Examining China’s carbon intensity metric appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -21,12 +27,45 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Study - Expected impact of the deployment of Automated Vehicles in the EU - PE 774.754 - Committee on Legal Affairs - Committee on the Internal Market and Consumer Protection - Committee on Employment and Social Affairs - Committee on Transport and Tourism - Committee on the Environment, Public Health and Food Safety - Committee on Industry, Research and Energy",
+          "link": "https://www.europarl.europa.eu/RegData/etudes/STUD/2026/774754/EPRS_STU(2026)774754_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div&gt;This study examines the future deployment of Automated Vehicles in the European Union through an analysis combining technological assessment, scenario development, and policy evaluation. Building on recent advances in Artificial Intelligence, Software-Defined Vehicles, and Intelligent Infrastructure, the study develops three scenarios – European Leadership, Selective Strengths and Dependencies, and External Dependence – to explore how Europe's regulatory and industrial position might ",
+          "published": "2026-05-28T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May &#124; Indian heat deaths &#124; Nigeria’s solar mini-grids",
+          "link": "https://www.carbonbrief.org/debriefed-29-may-2026-europes-mind-boggling-may-indian-heat-deaths-nigerias-solar-mini-grids/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May | Indian heat deaths | Nigeria’s solar mini-grids appeared first on Carbon Brief.",
+          "published": "2026-05-29T14:00:00.000Z",
+          "score": 19
+        },
+        {
+          "title": "Commission approves €9 billion Spanish capacity mechanism for security of electricity supply",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1163",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 29 May 2026 The European Commission has approved, under EU State aid rules, a €9 billion capacity mechanism for electricity supply for Spain. This aid measure aims to ensure that there is sufficient capacity to produce, store or flexibly consume electricity and that electricity production meets the expected demand.",
+          "published": "2026-05-28T22:00:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "AI boom means US is now ‘investing more’ in fossil-fuel power than China",
+          "link": "https://www.carbonbrief.org/ai-boom-means-us-is-now-investing-more-in-fossil-fuel-power-than-china/",
+          "source": "Carbon Brief",
+          "description": "The “data-centre boom” is driving a surge in gas investment in the US, pushing its... The post AI boom means US is now ‘investing more’ in fossil-fuel power than China appeared first on Carbon Brief.",
+          "published": "2026-05-29T12:58:11.000Z",
+          "score": 13
+        },
         {
           "title": "Portugal breaks hottest May day record as Europe swelters in heatwave",
           "link": "https://www.bbc.com/news/articles/c3v2yv5207xo?at_medium=RSS&amp;at_campaign=rss",
@@ -36,35 +75,11 @@
           "score": 10
         },
         {
-          "title": "Blair’s fossil fuel ideas ‘bizarre’ in face of energy and climate crises, experts say",
-          "link": "https://www.theguardian.com/environment/2026/may/28/tony-blair-fossil-fuel-advice-bizarre-energy-climate-crises-experts-say",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Energy specialists say abandoning net zero and increasing oil and gas drilling would cause more instability for Britons&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/may/28/alan-milburn-neets-review-labour-youth-unemployment-uk-politics-live-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Abandoning net zero and drilling for more oil and gas in the North Sea would be a massive setback ",
-          "published": "2026-05-28T12:41:02.000Z",
-          "score": 7
-        },
-        {
           "title": "The Guardian view on energy shocks: winter is coming – and Labour needs a plan | Editorial",
           "link": "https://www.theguardian.com/commentisfree/2026/may/28/the-guardian-view-on-energy-shocks-winter-is-coming-and-labour-needs-a-plan",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Clean power remains essential. But until it arrives, Britain must stop LNG made scarce by the Iran war setting gas and electricity prices &lt;/p&gt;&lt;p&gt;The US-Israel war on Iran will drive household energy costs in Britain to their &lt;a href=\"https://www.cnbc.com/2026/05/27/uk-energy-bills-price-cap-ofgem-iran-war-oil-shock.html\"&gt;highest level &lt;/a&gt;in two years over the summer. This has given fresh impetus to calls for the energy secretary, Ed Miliband, to change course. T",
           "published": "2026-05-28T17:44:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Iran war: Oil shortages threaten global energy security",
-          "link": "https://www.dw.com/en/iran-war-oil-shortages-threaten-global-energy-security/a-77313462?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Strategic petroleum reserves are declining rapidly as countries release emergency crude supplies to cushion the economic impact of the Middle East conflict.",
-          "published": "2026-05-28T09:02:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Russia signs $16.5 billion deal to build first nuclear power plant in Kazakhstan - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQSm1sc2lvc2t0YXZLeW9ibHduT2ZMWTZuSlBGUnNiVzZkeEo3N0tfQXoxWmlhWjBLSWpGSjZvTzNiU2o3OTVna1BqbEx4VHQ2dnRBZmROckRHVC1nbjk3QURpRG1OTVZ6YTdUcFFwRUxBX3FTNEpFVmtxY1A2bHZveHZVazRfUS1FMG5PQkdtamRGeWNrU0JhZFgzM1BZUTIwVzVWNHlfSXVESEJVbTlFcw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQSm1sc2lvc2t0YXZLeW9ibHduT2ZMWTZuSlBGUnNiVzZkeEo3N0tfQXoxWmlhWjBLSWpGSjZvTzNiU2o3OTVna1BqbEx4VHQ2dnRBZmROckRHVC1nbjk3QURpRG1OTVZ6YTdUcFFwRUxBX3FTNEpFVmtxY1A2bHZveHZVazRfUS1FMG5PQkdtamRGeWNrU0JhZFgzM1BZUTIwVzVWNHlfSXVESEJVbTlFcw?oc=5\" target=\"_blank\"&gt;Russia signs $16.5 billion deal to build first nuclear power plant in Kazakhstan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T11:20:40.000Z",
           "score": 7
         }
       ]
@@ -74,14 +89,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Media reaction: UK and Europe&#8217;s ‘mind-boggling’ May heat and climate change",
-          "link": "https://www.carbonbrief.org/media-reaction-uk-and-europes-mind-boggling-may-heat-and-climate-change/",
-          "source": "Carbon Brief",
-          "description": "Europe has been hit by a searing heatwave, which has shattered temperature records across France,... The post Media reaction: UK and Europe&#8217;s ‘mind-boggling’ May heat and climate change appeared first on Carbon Brief.",
-          "published": "2026-05-28T12:29:38.000Z",
-          "score": 19
-        },
-        {
           "title": "China Briefing 28 May 2026: Deadly rains &#124; China pushes back &#124; Examining China’s carbon intensity metric",
           "link": "https://www.carbonbrief.org/china-briefing-28-may-2026-deadly-rains-china-pushes-back-examining-chinas-carbon-intensity-metric/",
           "source": "Carbon Brief",
@@ -90,28 +97,36 @@
           "score": 13
         },
         {
-          "title": "‘Saaz is our gold’: the Czech scientists breeding hops that can survive a hotter Europe",
-          "link": "https://www.theguardian.com/environment/2026/may/28/saaz-is-our-gold-the-czech-scientists-breeding-hops-that-can-survive-a-hotter-europe",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Researchers are working to create new drought-resistant varieties of the ingredient that gives Czech pilsner its character&lt;/p&gt;&lt;p&gt;It is the country that drinks more beer per capita than any other but in the last few years Czechia has been hit by droughts and heatwaves, which make it harder to grow the Saaz hops, one of the key ingredients that goes into the country’s world famous beer.&lt;/p&gt;&lt;p&gt;At the Hop Research Institute, however, scientists are working to create ",
-          "published": "2026-05-28T12:00:20.000Z",
+          "title": "EM-DAT: Trump aid cuts could close database storing ‘world’s memory of disasters’",
+          "link": "https://www.carbonbrief.org/em-dat-trump-aid-cuts-could-close-database-storing-worlds-memory-of-disasters/",
+          "source": "Carbon Brief",
+          "description": "The world’s most comprehensive disaster database – relied on by thousands of climate scientists and... The post EM-DAT: Trump aid cuts could close database storing ‘world’s memory of disasters’ appeared first on Carbon Brief.",
+          "published": "2026-05-29T09:44:14.000Z",
           "score": 10
         },
         {
-          "title": "New dark skies policy could boost night-time economy, says council",
-          "link": "https://www.bbc.com/news/articles/ckgp57x2yxvo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Experts: Germany&#039;s progress on climate goals insufficient",
+          "link": "https://www.dw.com/en/experts-germany-s-progress-on-climate-goals-insufficient/a-77306041?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Council of Experts on Climate Change has found that Germany has both accomplished and simultaneously failed to meet its 2025 climate goals.",
+          "published": "2026-05-29T11:30:00.000Z",
+          "score": 9
+        },
+        {
+          "title": "Clean-up of one of Europe's largest illegal dumps 'could begin in 2028'",
+          "link": "https://www.bbc.com/news/articles/cn0pn21e1r2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Highland Council says it already has some of the darkest skies in Europe for stargazers to enjoy.",
-          "published": "2026-05-28T11:59:24.000Z",
+          "description": "Environment Minister Andrew Muir says it could take up to five years to complete work on the Mobuoy site.",
+          "published": "2026-05-29T09:26:11.000Z",
           "score": 8
         },
         {
-          "title": "Global heating is making hajj ever more dangerous, report finds",
-          "link": "https://www.theguardian.com/environment/2026/may/29/global-heating-hajj-muslim-pilgrimage-saudi-arabia-dangerous",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Rising heat in Saudi Arabia threatens millions of Muslim pilgrims – but cutting fossil fuels would keep it safer&lt;/p&gt;&lt;p&gt;Global heating has “fundamentally altered” the climate of Mecca and is exposing millions of hajj pilgrims to extreme and dangerous heat even in months outside summer, new analysis has found.&lt;/p&gt;&lt;p&gt;Carbon dioxide emissions from fossil fuels means scorching temperatures of 40C (104F) are now regularly experienced in May, the study showed. In past d",
-          "published": "2026-05-28T23:01:34.000Z",
-          "score": 4
+          "title": "Germany news: Climate activists target tank factory",
+          "link": "https://www.dw.com/en/germany-news-climate-activists-target-tank-factory/live-77340490?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Climate activists have carried out protests across the industrial Ruhr Valley ahead of a weekend of climate action. Meanwhile, Germany&#039;s footballers have undergone doping tests ahead of the World Cup. DW has more.",
+          "published": "2026-05-29T08:47:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -124,14 +139,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council on speeding-up environmental assessments - PE788.874v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PR-788874_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council on speeding-up environmental assessments&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Emma Wiesner&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-05-28T10:33:31.000Z",
-          "score": 22
-        },
         {
           "title": "Russia on the back foot with dynamics of war shifting in Ukraine’s favour, EU says – as it happened",
           "link": "https://www.theguardian.com/world/live/2026/may/28/europe-russia-ukraine-talks-heatwave-kaja-kallas-putin-latest-news-updates",
@@ -149,19 +156,27 @@
           "score": 8
         },
         {
-          "title": "Latvia parliament approves new government after drone dispute topples coalition - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5\" target=\"_blank\"&gt;Latvia parliament approves new government after drone dispute topples coalition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T16:54:47.000Z",
-          "score": 8
-        },
-        {
           "title": "Russia will not choose who speaks for Europe in potential Ukraine talks, EU ministers say - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWkNhT0FqWFlPWTZHMWk4dlp2NGxwbVUyZEZhR1ZxM3FScjJnX3E3ZXc5WWJNVzhHd25NU2ZkQTNMVDlXRVdzY1RCZW05eHJiNFBLMkJrcW4zTEI0NHU3NnhQSjNOcm0tZ0Q3NGVOVllLV3ZCd1hPODU2MmJsX0lrZkhHXzd1SmxMUWVoSTFmdGlsdUkxbGdTaVh5MWZkSmhHYU1ORFlkTS1uR0tvOU9mT2llMDhMTmN1WHJMdFlLZmthWE9W?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOWkNhT0FqWFlPWTZHMWk4dlp2NGxwbVUyZEZhR1ZxM3FScjJnX3E3ZXc5WWJNVzhHd25NU2ZkQTNMVDlXRVdzY1RCZW05eHJiNFBLMkJrcW4zTEI0NHU3NnhQSjNOcm0tZ0Q3NGVOVllLV3ZCd1hPODU2MmJsX0lrZkhHXzd1SmxMUWVoSTFmdGlsdUkxbGdTaVh5MWZkSmhHYU1ORFlkTS1uR0tvOU9mT2llMDhMTmN1WHJMdFlLZmthWE9W?oc=5\" target=\"_blank\"&gt;Russia will not choose who speaks for Europe in potential Ukraine talks, EU ministers say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
           "published": "2026-05-28T16:01:08.000Z",
+          "score": 8
+        },
+        {
+          "title": "European Commission vows tougher action on trade with China - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3E1SGdZbDdXeENzcTNpNFBJeFRiV05HRGFNc05NalJGcldRTW5CQXQwcHN2ZW9weVUyWC00VXpHX3BWYWc0Q3locWNwcjZpbm9MSXRaYmUtUVktTlJDcTB3OGloX3ptblZiZHMxYzJjSGlFRzhGUkhJT3JQa0FTZEJyUTkxc3BHTmJHQk1oVEppYUxxSVhMaHFaUElhZGdXaExVdjdtYWpaUUc4bExkWQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3E1SGdZbDdXeENzcTNpNFBJeFRiV05HRGFNc05NalJGcldRTW5CQXQwcHN2ZW9weVUyWC00VXpHX3BWYWc0Q3locWNwcjZpbm9MSXRaYmUtUVktTlJDcTB3OGloX3ptblZiZHMxYzJjSGlFRzhGUkhJT3JQa0FTZEJyUTkxc3BHTmJHQk1oVEppYUxxSVhMaHFaUElhZGdXaExVdjdtYWpaUUc4bExkWQ?oc=5\" target=\"_blank\"&gt;European Commission vows tougher action on trade with China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T12:11:03.000Z",
+          "score": 8
+        },
+        {
+          "title": "Latvia parliament approves new government after drone dispute topples coalition - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5\" target=\"_blank\"&gt;Latvia parliament approves new government after drone dispute topples coalition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-28T16:54:47.000Z",
           "score": 8
         }
       ]
@@ -195,28 +210,28 @@
           "score": 8
         },
         {
-          "title": "Why Europe is getting so hot",
-          "link": "https://www.dw.com/en/why-europe-is-getting-so-hot/a-77320871?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Europe is sweltering under extreme heat that has broken records and claimed lives. Why is the continent heating so fast?",
-          "published": "2026-05-28T12:20:00.000Z",
-          "score": 8
-        },
-        {
           "title": "JD.com's Ceconomy deal involves Chinese subsidies, EU regulators warn - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQX0djZFB2RE5SNGRyX3U4QkJyc2ZZR1NqVVROc2t5bFFINElhbC1TQ3YzTU9qMW4wT3NjRkN2NFR0eHcwS3lLeC1RYkJjdEJyOUFhWGpDMUJSemVmX0UwOVg3eE1sRUd3U1VIaXNReFQ0SDdSYTllVDJXMFFwSlZvcG96Q3pnWENmdXJvWURMTW9PTmJaU0pDMjRmNmxMM3hlUld2SmFIUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQX0djZFB2RE5SNGRyX3U4QkJyc2ZZR1NqVVROc2t5bFFINElhbC1TQ3YzTU9qMW4wT3NjRkN2NFR0eHcwS3lLeC1RYkJjdEJyOUFhWGpDMUJSemVmX0UwOVg3eE1sRUd3U1VIaXNReFQ0SDdSYTllVDJXMFFwSlZvcG96Q3pnWENmdXJvWURMTW9PTmJaU0pDMjRmNmxMM3hlUld2SmFIUQ?oc=5\" target=\"_blank\"&gt;JD.com's Ceconomy deal involves Chinese subsidies, EU regulators warn&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-28T15:34:18.000Z",
           "score": 8
+        },
+        {
+          "title": "Temu fined $232 million for breaching EU rules on sale of illegal products - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZk9abWFIckZ0VzRwTExyUnFwMmpvdmFoRW1FX3R6cGhvQXN5VEpycmJ6Z3RMSkg5c0Z3dmR4MFowR2tsWDA4cEQ1dWpTS19hclZ3a2hvQVIxa1g1Z2NENlB3b0tjcmczRENRZVNWMm1ORkU3OWZocFN2SmZtV2lsLTYyc3lWOVVyS3YwMVJrTFZkdzBKNlB1RldWZFVEUmxtczVDbTlGNXlqZGtzZXNoZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZk9abWFIckZ0VzRwTExyUnFwMmpvdmFoRW1FX3R6cGhvQXN5VEpycmJ6Z3RMSkg5c0Z3dmR4MFowR2tsWDA4cEQ1dWpTS19hclZ3a2hvQVIxa1g1Z2NENlB3b0tjcmczRENRZVNWMm1ORkU3OWZocFN2SmZtV2lsLTYyc3lWOVVyS3YwMVJrTFZkdzBKNlB1RldWZFVEUmxtczVDbTlGNXlqZGtzZXNoZw?oc=5\" target=\"_blank\"&gt;Temu fined $232 million for breaching EU rules on sale of illegal products&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-28T16:39:01.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 169,
-    "afterDedup": 160,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 171,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
