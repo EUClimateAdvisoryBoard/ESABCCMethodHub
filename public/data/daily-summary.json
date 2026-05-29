@@ -1,6 +1,6 @@
 {
   "date": "2026-05-29",
-  "generatedAt": "2026-05-29T14:03:18.990Z",
+  "generatedAt": "2026-05-29T19:33:14.622Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 29 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,10 +17,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "China Briefing 28 May 2026: Deadly rains &#124; China pushes back &#124; Examining China’s carbon intensity metric",
-      "summary": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 28 May 2026: Deadly rains | China pushes back | Examining China’s carbon intensity metric appeared first on Carbon Brief.",
+      "headline": "EM-DAT: Trump aid cuts could close database storing ‘world’s memory of disasters’",
+      "summary": "The world’s most comprehensive disaster database – relied on by thousands of climate scientists and... The post EM-DAT: Trump aid cuts could close database storing ‘world’s memory of disasters’ appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "US judge halts Trump&#039;s &#039;anti-weaponization&#039; fund",
+      "summary": "The billion-dollar &quot;anti-weaponization&quot; fund was meant to compensate people who Trump sees as victims of so-called &quot;lawfare&quot; by Joe Biden&#039;s administration.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -75,11 +81,11 @@
           "score": 10
         },
         {
-          "title": "The Guardian view on energy shocks: winter is coming – and Labour needs a plan | Editorial",
-          "link": "https://www.theguardian.com/commentisfree/2026/may/28/the-guardian-view-on-energy-shocks-winter-is-coming-and-labour-needs-a-plan",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Clean power remains essential. But until it arrives, Britain must stop LNG made scarce by the Iran war setting gas and electricity prices &lt;/p&gt;&lt;p&gt;The US-Israel war on Iran will drive household energy costs in Britain to their &lt;a href=\"https://www.cnbc.com/2026/05/27/uk-energy-bills-price-cap-ofgem-iran-war-oil-shock.html\"&gt;highest level &lt;/a&gt;in two years over the summer. This has given fresh impetus to calls for the energy secretary, Ed Miliband, to change course. T",
-          "published": "2026-05-28T17:44:07.000Z",
+          "title": "South Korea pushes nuclear-powered submarine plan",
+          "link": "https://www.dw.com/en/south-korea-pushes-nuclear-powered-submarine-plan/a-77348692?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Seoul&#039;s plans for nuclear-powered vessels come as regional rivals ramp up undersea capabilities, raising concerns over a widening military buildup.",
+          "published": "2026-05-29T13:34:00.000Z",
           "score": 7
         }
       ]
@@ -88,14 +94,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "China Briefing 28 May 2026: Deadly rains &#124; China pushes back &#124; Examining China’s carbon intensity metric",
-          "link": "https://www.carbonbrief.org/china-briefing-28-may-2026-deadly-rains-china-pushes-back-examining-chinas-carbon-intensity-metric/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 28 May 2026: Deadly rains | China pushes back | Examining China’s carbon intensity metric appeared first on Carbon Brief.",
-          "published": "2026-05-28T14:40:21.000Z",
-          "score": 13
-        },
         {
           "title": "EM-DAT: Trump aid cuts could close database storing ‘world’s memory of disasters’",
           "link": "https://www.carbonbrief.org/em-dat-trump-aid-cuts-could-close-database-storing-worlds-memory-of-disasters/",
@@ -127,40 +125,57 @@
           "description": "Climate activists have carried out protests across the industrial Ruhr Valley ahead of a weekend of climate action. Meanwhile, Germany&#039;s footballers have undergone doping tests ahead of the World Cup. DW has more.",
           "published": "2026-05-29T08:47:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Global heating is making hajj ever more dangerous, report finds",
+          "link": "https://www.theguardian.com/environment/2026/may/29/global-heating-hajj-muslim-pilgrimage-saudi-arabia-dangerous",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Rising heat in Saudi Arabia threatens millions of Muslim pilgrims – but cutting fossil fuels would keep it safer&lt;/p&gt;&lt;p&gt;Global heating has “fundamentally altered” the climate of Mecca and is exposing millions of hajj pilgrims to extreme and dangerous heat even in months outside summer, new analysis has found.&lt;/p&gt;&lt;p&gt;Carbon dioxide emissions from fossil fuels means scorching temperatures of 40C (104F) are now regularly experienced in May, the study showed. In past d",
+          "published": "2026-05-28T23:01:34.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "US judge halts Trump&#039;s &#039;anti-weaponization&#039; fund",
+          "link": "https://www.dw.com/en/us-judge-halts-trump-s-anti-weaponization-fund/a-77351158?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The billion-dollar &quot;anti-weaponization&quot; fund was meant to compensate people who Trump sees as victims of so-called &quot;lawfare&quot; by Joe Biden&#039;s administration.",
+          "published": "2026-05-29T16:57:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "US judge temporarily blocks Trump's $1.8 billion 'weaponization' fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb0xLNy01M0Q1MUNIYVhQb2ZiR1VTVU0zSmtNYWt5S1hSaFFqMnI5SmQ3M0FqRk5Sa0FqN0N6eTRRX1ozaWpyWUFoYWVYUlRJMktULVU4Qjk1RmJwVnIzNjdSbi1hdG5IQjRmSjVwdnZJRC03R09DXzFPY242SGIyMGpBNkU0UU4tY3R0OU1ZZGl0WEx6a1JJMTJPdXNscjJTb01BQ3RnV3Zqdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb0xLNy01M0Q1MUNIYVhQb2ZiR1VTVU0zSmtNYWt5S1hSaFFqMnI5SmQ3M0FqRk5Sa0FqN0N6eTRRX1ozaWpyWUFoYWVYUlRJMktULVU4Qjk1RmJwVnIzNjdSbi1hdG5IQjRmSjVwdnZJRC03R09DXzFPY242SGIyMGpBNkU0UU4tY3R0OU1ZZGl0WEx6a1JJMTJPdXNscjJTb01BQ3RnV3Zqdw?oc=5\" target=\"_blank\"&gt;US judge temporarily blocks Trump's $1.8 billion 'weaponization' fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T15:14:55.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Russia on the back foot with dynamics of war shifting in Ukraine’s favour, EU says – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/may/28/europe-russia-ukraine-talks-heatwave-kaja-kallas-putin-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;This blog is now closed &lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;Hungary’s Magyar hits a bit more upbeat tone in his latest post on Facebook,&lt;/strong&gt; saying that while there are still some issues that need to be resolved, the two sides managed to agree a deal on “many important questions.”&lt;/p&gt;&lt;p&gt;In a Facebook video, &lt;a href=\"https://www.facebook.com/peter.magyar.102?__cft__[0]=AZYBMyyZrw26j05KL7nFezPwr-ZxMvLyMeUiH8VuxBCQdml_OC2MHFPHEVM7MDHIY23cAAPaGZP4YQJHoxo1h4",
-          "published": "2026-05-28T15:10:32.000Z",
+          "title": "Nato and EU condemn Russia after drone hits Romanian residential block",
+          "link": "https://www.bbc.com/news/articles/c93x4nxlkjeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Romania says the Russian drone was likely hit over Ukraine by its air defences and altered its trajectory.",
+          "published": "2026-05-29T17:27:09.000Z",
           "score": 8
         },
         {
-          "title": "Iceland's parliament votes to hold referendum on EU accession talks in August - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPeEFpenlZVzZRTkk3eE5xMk1IQ2htbmlQbC1ZcUpJWFBqdVpWcTlUUk1zQk90Smlpc0RNZzVDOTFhdFJRMTBJZHBuaEV6OWlvajROTk03WjlRRjlrN2tiOHp1QlRBS1gyYjJrdnVjZk9heVJ6bE9jMGdhYk9YeEw1TGI4aFIzdEVfT180TUVoeEVCek11SUpEeV9JSGJhLVd5VnFhU3JTR2w4OFVzeGpNbXZfSlNMLTA?oc=5",
+          "title": "Russian official warns Europe to brace for more drone incidents after Romania episode - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDBQVkdUSU0wajMxWGY0X2RwRUVtd0NDYWlqV1lrYV9XN1R5UHk4aXBCV0w0a3hkWFVEekNKMkhGMzJxdWJCdzE1dFd5RWNBY2xWeU9WUlUyZ19aYk1SS3dFS3d6M283TDVfd2hOZWFvZ1RGX19aUWhFandYbEZjZmNmVnVMZDlNM2FRX1A0Ukg5MjAyVnVIMTdseW1rQTltZDZZd0d0WDdScEhOblZZUzZBcGtvOEpqQnZlTkdiQU14cnNqeXc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPeEFpenlZVzZRTkk3eE5xMk1IQ2htbmlQbC1ZcUpJWFBqdVpWcTlUUk1zQk90Smlpc0RNZzVDOTFhdFJRMTBJZHBuaEV6OWlvajROTk03WjlRRjlrN2tiOHp1QlRBS1gyYjJrdnVjZk9heVJ6bE9jMGdhYk9YeEw1TGI4aFIzdEVfT180TUVoeEVCek11SUpEeV9JSGJhLVd5VnFhU3JTR2w4OFVzeGpNbXZfSlNMLTA?oc=5\" target=\"_blank\"&gt;Iceland's parliament votes to hold referendum on EU accession talks in August&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T18:05:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russia will not choose who speaks for Europe in potential Ukraine talks, EU ministers say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOWkNhT0FqWFlPWTZHMWk4dlp2NGxwbVUyZEZhR1ZxM3FScjJnX3E3ZXc5WWJNVzhHd25NU2ZkQTNMVDlXRVdzY1RCZW05eHJiNFBLMkJrcW4zTEI0NHU3NnhQSjNOcm0tZ0Q3NGVOVllLV3ZCd1hPODU2MmJsX0lrZkhHXzd1SmxMUWVoSTFmdGlsdUkxbGdTaVh5MWZkSmhHYU1ORFlkTS1uR0tvOU9mT2llMDhMTmN1WHJMdFlLZmthWE9W?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOWkNhT0FqWFlPWTZHMWk4dlp2NGxwbVUyZEZhR1ZxM3FScjJnX3E3ZXc5WWJNVzhHd25NU2ZkQTNMVDlXRVdzY1RCZW05eHJiNFBLMkJrcW4zTEI0NHU3NnhQSjNOcm0tZ0Q3NGVOVllLV3ZCd1hPODU2MmJsX0lrZkhHXzd1SmxMUWVoSTFmdGlsdUkxbGdTaVh5MWZkSmhHYU1ORFlkTS1uR0tvOU9mT2llMDhMTmN1WHJMdFlLZmthWE9W?oc=5\" target=\"_blank\"&gt;Russia will not choose who speaks for Europe in potential Ukraine talks, EU ministers say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
-          "published": "2026-05-28T16:01:08.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDBQVkdUSU0wajMxWGY0X2RwRUVtd0NDYWlqV1lrYV9XN1R5UHk4aXBCV0w0a3hkWFVEekNKMkhGMzJxdWJCdzE1dFd5RWNBY2xWeU9WUlUyZ19aYk1SS3dFS3d6M283TDVfd2hOZWFvZ1RGX19aUWhFandYbEZjZmNmVnVMZDlNM2FRX1A0Ukg5MjAyVnVIMTdseW1rQTltZDZZd0d0WDdScEhOblZZUzZBcGtvOEpqQnZlTkdiQU14cnNqeXc?oc=5\" target=\"_blank\"&gt;Russian official warns Europe to brace for more drone incidents after Romania episode&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-05-29T13:33:04.000Z",
           "score": 8
         },
         {
@@ -170,14 +185,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3E1SGdZbDdXeENzcTNpNFBJeFRiV05HRGFNc05NalJGcldRTW5CQXQwcHN2ZW9weVUyWC00VXpHX3BWYWc0Q3locWNwcjZpbm9MSXRaYmUtUVktTlJDcTB3OGloX3ptblZiZHMxYzJjSGlFRzhGUkhJT3JQa0FTZEJyUTkxc3BHTmJHQk1oVEppYUxxSVhMaHFaUElhZGdXaExVdjdtYWpaUUc4bExkWQ?oc=5\" target=\"_blank\"&gt;European Commission vows tougher action on trade with China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-05-29T12:11:03.000Z",
           "score": 8
-        },
-        {
-          "title": "Latvia parliament approves new government after drone dispute topples coalition - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNRGRVTTRzZlJJdGdfcE84cVlaamF0SEJDeUZMazBnRG5YSVZsdXF2VmZESVZhT3VyYU9yT2k4eUZwSFAyRzZjOThOVkpVdlIzdktuU1VtdGU1bTNOZi04T3Z6UlJSaXZMSF9SZHZnMGl5QzUtSzZBdEVfS2J5WG0ybzg1bG9uUmFjTDl6SW1xOERocHFZc1loMERpOXlrcjVGUmx6azVnQmtxcFdsNFZjRjQ1aFVpLXFO?oc=5\" target=\"_blank\"&gt;Latvia parliament approves new government after drone dispute topples coalition&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T16:54:47.000Z",
-          "score": 8
         }
       ]
     },
@@ -186,52 +193,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU fines Temu €200m for allowing sale of illegal products",
-          "link": "https://www.bbc.com/news/articles/c1k2ydn1rz8o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "EU unblocks €16 billion in Hungary assistance as Magyar promises reforms",
+          "link": "https://www.dw.com/en/eu-unblocks-€16-billion-in-hungary-assistance-as-magyar-promises-reforms/a-77349350?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Reforms under new Prime Minister Peter Magyar will enable the EU to free up billions in frozen assistance for Budapest. The EU&#039;s Ursula von der Leyen announced the news as Magyar visited Brussels.",
+          "published": "2026-05-29T16:20:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Brazil rare earths miner Viridis to sell to US, European buyers, not China, CEO says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZzREZnkxTEUtSVNjaVJ3eTRYMjMydnhERnJrb3RWX01uVVdJVjJneEU5VEtNVk10dWFSS25lVk9uemtKcEdKd0NrdG1kTzV1VXZ1YnJfZHU1S0xoSTdCbFZXMEFUcXc2NFRmMDFyY0hGRzRKM3RpYWhXNHpacUFTdVV0NzBCWm9BdjM5b24zYmlVUGk4ZXVGMTJuUlA2M3RqOW5acjRNMVl5Q2ExdHYwS25oWW5WNVNaNEZpeW1GRmM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZzREZnkxTEUtSVNjaVJ3eTRYMjMydnhERnJrb3RWX01uVVdJVjJneEU5VEtNVk10dWFSS25lVk9uemtKcEdKd0NrdG1kTzV1VXZ1YnJfZHU1S0xoSTdCbFZXMEFUcXc2NFRmMDFyY0hGRzRKM3RpYWhXNHpacUFTdVV0NzBCWm9BdjM5b24zYmlVUGk4ZXVGMTJuUlA2M3RqOW5acjRNMVl5Q2ExdHYwS25oWW5WNVNaNEZpeW1GRmM?oc=5\" target=\"_blank\"&gt;Brazil rare earths miner Viridis to sell to US, European buyers, not China, CEO says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-28T21:04:55.000Z",
+          "score": 8
+        },
+        {
+          "title": "Russian-led economic union considers suspending Armenia over EU ambitions - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNb012aUU1OHJBa1dQLTd6YVBLX2xMejZleWpGVVowcEFPMTRjcXZaSnJteUZ5Z3AzYXVwYnVPWTVSd3lRY2diTXRNQ3AxdGFLT0lXSkZFYzJKbnV0eFVDZTlMYXdVQWNCRTlhd3dMTnMzaV9pNVJjTEFEbHBCM0NfLXBHRjZxT1dmc1RxX2xaU1NOUnhCQ1c5QUkyS2p4ejlhWldGemlOY1dFYVI3U1JmSGdjR2ZXMURib0dsblphbGs?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNb012aUU1OHJBa1dQLTd6YVBLX2xMejZleWpGVVowcEFPMTRjcXZaSnJteUZ5Z3AzYXVwYnVPWTVSd3lRY2diTXRNQ3AxdGFLT0lXSkZFYzJKbnV0eFVDZTlMYXdVQWNCRTlhd3dMTnMzaV9pNVJjTEFEbHBCM0NfLXBHRjZxT1dmc1RxX2xaU1NOUnhCQ1c5QUkyS2p4ejlhWldGemlOY1dFYVI3U1JmSGdjR2ZXMURib0dsblphbGs?oc=5\" target=\"_blank\"&gt;Russian-led economic union considers suspending Armenia over EU ambitions&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T16:59:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Hungary's PM says he will conclude political deal on EU funds with von der Leyen - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdkpVMnYydVhmWjlOTi1nVVBPSENTeXBSYmRpSm00ZVR4d2RZSnBYd3pkeWY0MVoyM1NNajlmSmtPQXJHMU1idkhHMGtRQWlhVHpYYnljbGYtYVp4QWVjaW5QMkdIODVrV2pXQmhBWmJsUkxrUzhlT1F2NG1DU2NscUVlVWJsR2cwYXFkVmhrMUgzcFZBbVVLZkduMjNrTWo2bnFiUlFfSUw3b0NsbTVOa0NTb00xQnBua29QZnNUNFhlWFE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdkpVMnYydVhmWjlOTi1nVVBPSENTeXBSYmRpSm00ZVR4d2RZSnBYd3pkeWY0MVoyM1NNajlmSmtPQXJHMU1idkhHMGtRQWlhVHpYYnljbGYtYVp4QWVjaW5QMkdIODVrV2pXQmhBWmJsUkxrUzhlT1F2NG1DU2NscUVlVWJsR2cwYXFkVmhrMUgzcFZBbVVLZkduMjNrTWo2bnFiUlFfSUw3b0NsbTVOa0NTb00xQnBua29QZnNUNFhlWFE?oc=5\" target=\"_blank\"&gt;Hungary's PM says he will conclude political deal on EU funds with von der Leyen&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T11:17:59.000Z",
+          "score": 8
+        },
+        {
+          "title": "'Poison seller' who sold toxic chemicals online to people across world admits aiding suicides",
+          "link": "https://www.bbc.com/news/articles/c70vg7glglyo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The European Commission says the Chinese-owned online retailer failed to take account of risks from baby toys and faulty chargers sold on its platform.",
-          "published": "2026-05-28T14:54:50.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU fines Temu €200M over unsafe toys, non-compliant products",
-          "link": "https://www.dw.com/en/eu-fines-temu-€200m-over-unsafe-toys-non-compliant-products/a-77336877?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "EU regulators said Temu failed to identify and assess the systemic risks of illegal products&#039; on its platform and the harm they posed to consumers.",
-          "published": "2026-05-28T16:52:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "France moves to symbolically repeal slavery legislation",
-          "link": "https://www.dw.com/en/france-moves-to-symbolically-repeal-slavery-legislation/a-77332888?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Members of the lower house of the French parliament unanimously voted to abolish a series of royal edicts known as the &quot;Code noir&quot; or Black Code. The bill stops short of some lawmakers&#039; demands like possible reparations.",
-          "published": "2026-05-28T16:02:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "JD.com's Ceconomy deal involves Chinese subsidies, EU regulators warn - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQX0djZFB2RE5SNGRyX3U4QkJyc2ZZR1NqVVROc2t5bFFINElhbC1TQ3YzTU9qMW4wT3NjRkN2NFR0eHcwS3lLeC1RYkJjdEJyOUFhWGpDMUJSemVmX0UwOVg3eE1sRUd3U1VIaXNReFQ0SDdSYTllVDJXMFFwSlZvcG96Q3pnWENmdXJvWURMTW9PTmJaU0pDMjRmNmxMM3hlUld2SmFIUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxQX0djZFB2RE5SNGRyX3U4QkJyc2ZZR1NqVVROc2t5bFFINElhbC1TQ3YzTU9qMW4wT3NjRkN2NFR0eHcwS3lLeC1RYkJjdEJyOUFhWGpDMUJSemVmX0UwOVg3eE1sRUd3U1VIaXNReFQ0SDdSYTllVDJXMFFwSlZvcG96Q3pnWENmdXJvWURMTW9PTmJaU0pDMjRmNmxMM3hlUld2SmFIUQ?oc=5\" target=\"_blank\"&gt;JD.com's Ceconomy deal involves Chinese subsidies, EU regulators warn&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T15:34:18.000Z",
-          "score": 8
-        },
-        {
-          "title": "Temu fined $232 million for breaching EU rules on sale of illegal products - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZk9abWFIckZ0VzRwTExyUnFwMmpvdmFoRW1FX3R6cGhvQXN5VEpycmJ6Z3RMSkg5c0Z3dmR4MFowR2tsWDA4cEQ1dWpTS19hclZ3a2hvQVIxa1g1Z2NENlB3b0tjcmczRENRZVNWMm1ORkU3OWZocFN2SmZtV2lsLTYyc3lWOVVyS3YwMVJrTFZkdzBKNlB1RldWZFVEUmxtczVDbTlGNXlqZGtzZXNoZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxPZk9abWFIckZ0VzRwTExyUnFwMmpvdmFoRW1FX3R6cGhvQXN5VEpycmJ6Z3RMSkg5c0Z3dmR4MFowR2tsWDA4cEQ1dWpTS19hclZ3a2hvQVIxa1g1Z2NENlB3b0tjcmczRENRZVNWMm1ORkU3OWZocFN2SmZtV2lsLTYyc3lWOVVyS3YwMVJrTFZkdzBKNlB1RldWZFVEUmxtczVDbTlGNXlqZGtzZXNoZw?oc=5\" target=\"_blank\"&gt;Temu fined $232 million for breaching EU rules on sale of illegal products&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-28T16:39:01.000Z",
-          "score": 8
+          "description": "Kenneth Law admitted charges relating to Canadian victims - but families say he should also be charged in the UK over 79 deaths in Britain.",
+          "published": "2026-05-29T17:08:50.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 394,
-    "articlesLast24h": 171,
-    "afterDedup": 157,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 155,
+    "afterDedup": 144,
     "feedsQueried": 19
   }
 }
