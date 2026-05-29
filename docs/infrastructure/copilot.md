@@ -78,7 +78,7 @@ A single Entra ID app registration in the EEA tenant covers it.
 
     ```
     App type:             Web (confidential client)
-    Redirect URI:         https://methodhub.eea/auth/callback
+    Redirect URI:         https://methodhub.example/auth/callback
     Supported accounts:   Accounts in this organizational directory only
                           (EEA tenant)
     Client secret:        stored in IT's secret store as AZURE_CLIENT_SECRET

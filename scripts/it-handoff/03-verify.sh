@@ -12,7 +12,7 @@
 # Prints a summary and exits 0 on success, 1 on any failure.
 #
 # IT action:
-#   DATABASE_URL="postgresql://admin@db.esabcc.local:5432/eu_climate" \
+#   DATABASE_URL="postgresql://admin@db.internal.example:5432/eu_climate" \
 #     ./03-verify.sh
 # ============================================================================
 set -euo pipefail

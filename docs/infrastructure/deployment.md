@@ -85,7 +85,7 @@ and AI layer in more depth.
     ```
     # Data layer
     DB_PROVIDER=postgres
-    DATABASE_URL=postgres://user:***@pg.eea.internal:5432/methodhub
+    DATABASE_URL=postgres://user:***@pg.internal.example:5432/methodhub
     PGSSLMODE=require          # recommended for EEA Postgres
 
     # Auth
@@ -93,11 +93,11 @@ and AI layer in more depth.
     OIDC_ISSUER_URL=https://login.microsoftonline.com/<tenant>/v2.0
     OIDC_CLIENT_ID=...
     OIDC_CLIENT_SECRET=***     # in IT secret store
-    OIDC_REDIRECT_URI=https://methodhub.eea/api/auth/callback
+    OIDC_REDIRECT_URI=https://methodhub.example/api/auth/callback
 
     # Storage
     STORAGE_PROVIDER=s3
-    S3_ENDPOINT=https://minio.eea.internal
+    S3_ENDPOINT=https://minio.internal.example
     S3_BUCKET=methodhub-refs
     S3_ACCESS_KEY_ID=...
     S3_SECRET_ACCESS_KEY=***
@@ -151,6 +151,25 @@ is the intended cutover. This is the path the codebase is
 prepared for; the scripts are the source of truth for exact
 filenames (the older `*.js` names in earlier drafts of these docs
 are out of date).
+
+!!! warning "Post-cutover: decommission the prototype Supabase project"
+    The prototype runs on a hosted Supabase project whose URL
+    (`NEXT_PUBLIC_SUPABASE_URL`) is, by design, public — it ships in
+    the browser bundle, so the security boundary is the anon key plus
+    **Row-Level Security**, never the URL. Two things to confirm once the
+    EEA Postgres cutover is verified:
+
+    1. **Decommission or lock down the prototype project.** Once traffic
+       moves to EEA infra, pause/delete the Supabase project (or at least
+       rotate its keys) so the public URL no longer points at a live
+       database.
+    2. **Confirm RLS is enforced on every table** for as long as the
+       prototype stays reachable. The service-role key bypasses RLS and
+       must remain server-side only (it is *not* committed to this
+       repository).
+
+    Because this repository is public, never paste a live project URL +
+    anon key into an issue, commit, or doc without confirming RLS is on.
 
 ### Bootstrapping a fresh database
 

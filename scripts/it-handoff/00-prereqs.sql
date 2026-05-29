@@ -6,7 +6,7 @@
 --
 -- IT action:   psql "$ADMIN_URL" -v ON_ERROR_STOP=1 -f 00-prereqs.sql
 --              where $ADMIN_URL points at the `postgres` maintenance DB,
---              e.g. postgresql://admin@db.esabcc.local:5432/postgres
+--              e.g. postgresql://admin@db.internal.example:5432/postgres
 -- Idempotent:  safe to re-run.
 -- ============================================================================
 
