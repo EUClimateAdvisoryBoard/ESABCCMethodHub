@@ -30,6 +30,8 @@ scripts/migrate-to-postgres
 # Heavy PDF/image corpora — mount at runtime if needed
 public/fact-sheets
 public/content-analysis
+# Reference / governance documents — not used by the runtime
+project-documents
 supabase-schema.sql
 supabase
 *.log

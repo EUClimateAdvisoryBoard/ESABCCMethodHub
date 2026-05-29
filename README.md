@@ -53,6 +53,7 @@ Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 | `supabase/` | Postgres migrations. |
 | `Dockerfile`, `docker-compose.yml` | Single-host demo and production build target. |
 | `.github/workflows/` | CI, daily pipelines, docs deployment. |
+| `project-documents/` | Source and governance documents (Project Manual, PIRs) — reference only, not used by the runtime. |
 
 ## Infrastructure
 
