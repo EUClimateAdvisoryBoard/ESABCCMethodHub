@@ -32,7 +32,7 @@ flowchart TB
 
 ## `app/` — routes
 
-The five modules plus utility pages:
+The six modules plus utility pages:
 
 | Route                              | Purpose                                                    |
 |------------------------------------|------------------------------------------------------------|

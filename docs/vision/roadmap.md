@@ -62,7 +62,7 @@ codebases instead of one.
 
 ## What is **not** on the roadmap
 
-- Rewriting the scope — the five production modules are locked for v1.0.
+- Rewriting the scope — the six production modules are locked for v1.0.
 - Adding new beta modules — the parking lot has eight already; more
   would dilute the signal.
 - Migrating off Next.js, Postgres or Docker — the stack is the value.

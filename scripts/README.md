@@ -1,7 +1,7 @@
 # scripts/
 
 Utility scripts that power the data pipelines and Supabase-to-Postgres
-migration for the five modules. See
+migration for the six modules. See
 [docs/DATA_PIPELINES.md](../docs/DATA_PIPELINES.md) for how these run in CI.
 
 ```mermaid

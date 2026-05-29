@@ -2,7 +2,7 @@
 
 The app exposes a single `LLM_PROVIDER` switch that selects which backend
 serves the "summarise", "pre-tag" and "classify" calls used across the
-five production modules. **Three paths** are on the table, listed in the
+six production modules. **Three paths** are on the table, listed in the
 order we expect EEA IT to consider them.
 
 <figure class="mh-figure mh-figure--wide" markdown>

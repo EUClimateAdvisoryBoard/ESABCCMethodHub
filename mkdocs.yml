@@ -167,7 +167,7 @@ nav:
   - "FAQ (non-technical)": FAQ-NON-TECHNICAL.md
   - Overview:
       - What is MethodHub?: overview/what-is-methodhub.md
-      - The five modules: overview/the-five-modules.md
+      - The six modules: overview/the-five-modules.md
       - Beta parking lot: overview/beta.md
   - Modules:
       - modules/index.md

@@ -11,7 +11,7 @@ the rendered site is built by `scripts/build-docs.sh`.
 | [vision/index.md](vision/index.md)                             | The consolidated vision — EEA hosting target, CCE5 stewardship, the per-user **M365 Copilot** option, and the blueprint for other EEA units. Start here. |
 | [infrastructure/index.md](infrastructure/index.md)             | Stewardship model (CCE5 keeps the code, EEA IT runs the service), why the EEA-ready target is an EEA-managed container (not Vercel) even though the current pilot still runs on Vercel Frankfurt, and the Copilot technical deep-dive. |
 | [infrastructure/deployment.md](infrastructure/deployment.md)   | One-page IT handoff for self-hosted EEA deployment.               |
-| [infrastructure/tech-stack.md](infrastructure/tech-stack.md)   | How the five modules and their supporting services connect.       |
+| [infrastructure/tech-stack.md](infrastructure/tech-stack.md)   | How the six modules and their supporting services connect.       |
 | [infrastructure/data-gdpr.md](infrastructure/data-gdpr.md)     | What's built into the code, what still needs DPO sign-off, and the operational schedule for retention / erasure jobs. |
 | [../beta/README.md](../beta/README.md)                         | Parking lot for the eight experimental modules — what's there, why, and how to promote one to production. |
 
