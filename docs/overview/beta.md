@@ -6,8 +6,8 @@ in the repository. They are **intentionally unrouted** — the file-system
 location is the feature flag.
 
 <figure class="mh-figure mh-figure--wide" markdown>
-<img src="../../assets/fig-scope-lock.svg" alt="Scope lock diagram — five production modules with solid borders in src/app/ vs. eight beta modules with dashed borders under beta/modules/. A curved arrow between them is labelled git mv to indicate the single-command promotion path.">
-<figcaption><span class="mh-figure__num">Figure 3.</span> The v1.0 scope lock. Five production modules live under <code>src/app/</code> with all the production scaffolding; eight beta modules sit under <code>beta/modules/</code> outside the Next.js route tree. Promotion in either direction is one <code>git mv</code>.</figcaption>
+<img src="../../assets/fig-scope-lock.svg" alt="Scope lock diagram — six production modules with solid borders in src/app/ vs. eight beta modules with dashed borders under beta/modules/. A curved arrow between them is labelled git mv to indicate the single-command promotion path.">
+<figcaption><span class="mh-figure__num">Figure 3.</span> The v1.0 scope lock. Six production modules live under <code>src/app/</code> with all the production scaffolding; eight beta modules sit under <code>beta/modules/</code> outside the Next.js route tree. Promotion in either direction is one <code>git mv</code>.</figcaption>
 </figure>
 
 ## What is parked

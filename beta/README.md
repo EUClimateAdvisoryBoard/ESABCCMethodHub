@@ -17,11 +17,11 @@ production and which are still prototypes. The file system itself communicates
 that:
 
 ```
-src/app/           ← production routes (the five modules + utilities)
+src/app/           ← production routes (the six modules + utilities)
 beta/modules/      ← experimental prototypes, unrouted
 ```
 
-The five production modules have been hardened: schema migrations, RLS
+The six production modules have been hardened: schema migrations, RLS
 policies, GDPR retention, data-pipeline tests, IT handoff scripts. The beta
 modules are useful demos of *where this platform can go* — energy-system
 optimisation, climate-risk chains, media monitoring — but they are not yet at

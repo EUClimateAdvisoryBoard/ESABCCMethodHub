@@ -10,14 +10,14 @@ Per-module page with the same structure on every one:
 6. **Schema** — the tables involved.
 7. **Known limits & roadmap**.
 
-## Cross-module surfaces (apply to all five)
+## Cross-module surfaces (apply to all six)
 
 Every production module now sits inside a shared **User Space** — see
 [Vision → User Space](../vision/user-space.md). Common affordances:
 
 - **⌘K Command Palette** — global search across References, Scenarios, News, Policies, Codes.
 - **Onboarding tour** — 3–4 step intro on first visit; replay with `?help=1`.
-- **Context Drawer** (`⌘.`) — shows artefacts related to the current page from the other four modules.
+- **Context Drawer** (`⌘.`) — shows artefacts related to the current page from the other five modules.
 - **AI Assistant** — floating chat grounded on the current artefact (needs an LLM key).
 - **Add to Collection / Workspace** — chips on every list card, plus a drag-drop drop-zone in collections.
 - **Change history** — `history` popover on connections (and any artefact wired into `/api/artefact-history`).

@@ -51,7 +51,7 @@ that advice faster and more transparently, but any outputs produced
 inside it are working drafts until the Board signs off through its
 normal process.
 
-### 4. What are "the five modules"?
+### 4. What are "the six modules"?
 
 MethodHub v1.0 ships with five focused areas:
 
@@ -639,7 +639,7 @@ Two backstops.
 
 Three deliberate choices in the architecture:
 
-- **Bounded scope.** Five modules are locked for v1.0; all other
+- **Bounded scope.** Six modules are locked for v1.0; all other
   experimental modules are held in `beta/`. The production surface
   area is deliberately constrained.
 - **Standard components.** Every technology choice (Next.js,

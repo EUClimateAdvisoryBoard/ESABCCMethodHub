@@ -22,7 +22,7 @@ the technical handbook.
 
 ## Why a separate module
 
-The five production modules cover **research outputs**: literature,
+The six production modules cover **research outputs**: literature,
 scenarios, news, policies, qualitative coding. Strategy & Framework
 Docs covers the **rules of engagement**: how the Secretariat decides,
 runs and reports on the work that produces those outputs. Keeping

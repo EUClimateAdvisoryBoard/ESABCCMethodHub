@@ -19,18 +19,19 @@ under the app on Vercel, which is the single source of truth.
 
 A Next.js 14 application that bundles the Secretariat's day-to-day
 research tooling — reference management, scenario data, news
-monitoring, EU policy tracking and content analysis — behind a single
-sign-in. Five production modules ship in `src/`; eight experimental
+monitoring, EU policy tracking, content analysis and anonymous
+voting — behind a single sign-in. Six production modules ship in
+`src/`; eight experimental
 modules sit unrouted in `beta/` and are pulled into production once
 the science team signs off.
 
 Read more:
 [What is MethodHub?](https://methodhub.vercel.app/docs/overview/what-is-methodhub/) ·
-[The five modules](https://methodhub.vercel.app/docs/overview/the-five-modules/) ·
+[The six modules](https://methodhub.vercel.app/docs/overview/the-six-modules/) ·
 [Beta parking lot](https://methodhub.vercel.app/docs/overview/beta/) ·
 [FAQ (non-technical)](https://methodhub.vercel.app/docs/FAQ-NON-TECHNICAL/).
 
-## The five production modules
+## The six production modules
 
 | # | Module | What it does | Docs |
 | --- | --- | --- | --- |
@@ -39,6 +40,7 @@ Read more:
 | M·03 | Secretariat News | Curated daily climate-policy news feed. | [news feed](https://methodhub.vercel.app/docs/modules/news-feed/) |
 | M·04 | EU Policy Navigator | Search and timeline over EU climate legislation. | [policy navigator](https://methodhub.vercel.app/docs/modules/policy-navigator/) |
 | M·05 | Content Analysis | LLM-assisted analysis of long documents. | [content analysis](https://methodhub.vercel.app/docs/modules/content-analysis/) |
+| M·06 | Voting Tool | Anonymous Advisory-Board ballots with seven voting systems and live analysis. | [voting tool](https://methodhub.vercel.app/docs/modules/voting-tool/) |
 
 Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 
@@ -46,7 +48,7 @@ Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 
 | Path | Contents |
 | --- | --- |
-| `src/` | Next.js 14 application — five production modules. |
+| `src/` | Next.js 14 application — six production modules. |
 | `beta/` | Eight experimental modules, intentionally unrouted. |
 | `docs/` | MkDocs source for the `/docs/` documentation subpage. |
 | `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
@@ -95,7 +97,7 @@ items.
 
 ## Documentation
 
-The full documentation — five-module deep-dives, infrastructure,
+The full documentation — six-module deep-dives, infrastructure,
 vision, deployment, GDPR and tech stack — ships as a subpage of the
 MethodHub itself, hosted on Vercel at:
 
