@@ -16,8 +16,8 @@
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 1280 820"
      role="img"
-     aria-label="Five production modules share a single Postgres corpus and reference each other directly via explicit foreign keys.">
-  <title>MethodHub — five production modules and the shared corpus</title>
+     aria-label="Five corpus-backed modules share a single Postgres corpus and reference each other directly via explicit foreign keys; the sixth module, Voting Tool, keeps an isolated ballot store.">
+  <title>MethodHub — five corpus-backed modules and the shared corpus</title>
 
   <defs>
     <style>

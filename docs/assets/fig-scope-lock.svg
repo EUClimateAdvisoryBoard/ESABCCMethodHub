@@ -1,13 +1,13 @@
 <!--
-  Scope lock — v1.0 ships 5, beta parks 8. The visual is the argument:
+  Scope lock — v1.0 ships 6, beta parks 8. The visual is the argument:
   solid bordered tiles in src/app/, dashed bordered tiles under
   beta/modules/. The file-system location is the feature flag.
 -->
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 1200 600"
      role="img"
-     aria-label="Scope lock — five production modules ship, eight beta modules are parked under beta/modules/.">
-  <title>Scope lock — 5 production + 8 beta</title>
+     aria-label="Scope lock — six production modules ship, eight beta modules are parked under beta/modules/.">
+  <title>Scope lock — 6 production + 8 beta</title>
 
   <defs>
     <style>
@@ -37,7 +37,7 @@
     <text class="h2" font-size="17" x="0" y="22">Production modules</text>
     <text class="path" font-size="12" x="0" y="42">src/app/&lt;module&gt;/page.tsx</text>
 
-    <!-- 5 production tiles, 5-column grid -->
+    <!-- 6 production tiles, 6-column grid -->
     <g transform="translate(0, 70)">
       <g>
         <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
@@ -74,6 +74,13 @@
         <text class="mod-title" x="10" y="46">Content</text>
         <text class="sub" font-size="10" x="10" y="63">Analysis</text>
       </g>
+      <g transform="translate(540, 0)">
+        <rect class="prod" x="0" y="0" width="95" height="80" rx="4" />
+        <rect class="prod-bar" x="0" y="0" width="95" height="3" />
+        <text class="mod-code" x="10" y="20">M · 06</text>
+        <text class="mod-title" x="10" y="46">Voting</text>
+        <text class="sub" font-size="10" x="10" y="63">Ballots</text>
+      </g>
     </g>
 
     <!-- Footer stats under the production row -->
@@ -105,28 +112,28 @@
       <g>
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 06</text>
+        <text class="mod-code" x="10" y="20">M · 07</text>
         <text class="mod-title" x="10" y="42">Energy System</text>
         <text class="sub" font-size="10" x="10" y="58">PyPSA</text>
       </g>
       <g transform="translate(165, 0)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 07</text>
+        <text class="mod-code" x="10" y="20">M · 08</text>
         <text class="mod-title" x="10" y="42">Climate Adapt.</text>
         <text class="sub" font-size="10" x="10" y="58">CLIMADA</text>
       </g>
       <g transform="translate(330, 0)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 08</text>
+        <text class="mod-code" x="10" y="20">M · 09</text>
         <text class="mod-title" x="10" y="42">Maritime &amp; Aviation</text>
         <text class="sub" font-size="10" x="10" y="58">SEAMAPS</text>
       </g>
       <g transform="translate(495, 0)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 09</text>
+        <text class="mod-code" x="10" y="20">M · 10</text>
         <text class="mod-title" x="10" y="42">Climate Finance</text>
         <text class="sub" font-size="10" x="10" y="58">NGFS v5</text>
       </g>
@@ -134,28 +141,28 @@
       <g transform="translate(0, 86)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 10</text>
+        <text class="mod-code" x="10" y="20">M · 11</text>
         <text class="mod-title" x="10" y="42">Media Monitoring</text>
         <text class="sub" font-size="10" x="10" y="58">GDELT</text>
       </g>
       <g transform="translate(165, 86)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 11</text>
+        <text class="mod-code" x="10" y="20">M · 12</text>
         <text class="mod-title" x="10" y="42">Brussels Bulletin</text>
         <text class="sub" font-size="10" x="10" y="58">Weekly</text>
       </g>
       <g transform="translate(330, 86)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 12</text>
+        <text class="mod-code" x="10" y="20">M · 13</text>
         <text class="mod-title" x="10" y="42">Fact Sheets</text>
         <text class="sub" font-size="10" x="10" y="58">Templates</text>
       </g>
       <g transform="translate(495, 86)">
         <rect class="beta" x="0" y="0" width="150" height="70" rx="4" />
         <rect class="beta-bar" x="0" y="0" width="150" height="3" />
-        <text class="mod-code" x="10" y="20">M · 13</text>
+        <text class="mod-code" x="10" y="20">M · 14</text>
         <text class="mod-title" x="10" y="42">FAQ &amp; Prebunking</text>
         <text class="sub" font-size="10" x="10" y="58">Curated</text>
       </g>
