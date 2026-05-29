@@ -8,7 +8,7 @@
 # EXISTS), so re-running is safe.
 #
 # IT action:
-#   DATABASE_URL="postgresql://admin@db.esabcc.local:5432/eu_climate" \
+#   DATABASE_URL="postgresql://admin@db.internal.example:5432/eu_climate" \
 #     ./01-apply-schema.sh
 #
 # Requires 00-prereqs.sql to have run first (extensions + auth shim).
@@ -17,7 +17,7 @@ set -euo pipefail
 
 if [[ -z "${DATABASE_URL:-}" ]]; then
   echo "ERROR: DATABASE_URL is not set." >&2
-  echo "Example: DATABASE_URL=postgresql://admin@db.esabcc.local:5432/eu_climate $0" >&2
+  echo "Example: DATABASE_URL=postgresql://admin@db.internal.example:5432/eu_climate $0" >&2
   exit 1
 fi
 

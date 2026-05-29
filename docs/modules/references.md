@@ -147,10 +147,10 @@ erasure rules.
     than direct browser → webapp calls:
 
     - Office.js runs in a sandboxed iframe without access to the user's
-      Secretariat-wide OIDC session cookie for `methodhub.eea`.
+      Secretariat-wide OIDC session cookie for `methodhub.example`.
     - The bridge holds a long-lived refresh token on the user's
       machine and exchanges it for short-lived access tokens per call.
-    - CORS to `methodhub.eea` from an Office iframe is an endless
+    - CORS to `methodhub.example` from an Office iframe is an endless
       battle with Microsoft's shifting host origins. A local bridge
       dodges all of it.
 
