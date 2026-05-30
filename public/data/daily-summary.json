@@ -1,6 +1,6 @@
 {
   "date": "2026-05-30",
-  "generatedAt": "2026-05-30T00:10:50.596Z",
+  "generatedAt": "2026-05-30T07:42:54.209Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 30 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -88,14 +88,6 @@
           "score": 10
         },
         {
-          "title": "Experts: Germany&#039;s progress on climate goals insufficient",
-          "link": "https://www.dw.com/en/experts-germany-s-progress-on-climate-goals-insufficient/a-77306041?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Council of Experts on Climate Change has found that Germany has both accomplished and simultaneously failed to meet its 2025 climate goals.",
-          "published": "2026-05-29T11:30:00.000Z",
-          "score": 9
-        },
-        {
           "title": "Clean-up of one of Europe's largest illegal dumps 'could begin in 2028'",
           "link": "https://www.bbc.com/news/articles/cn0pn21e1r2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -104,19 +96,27 @@
           "score": 8
         },
         {
-          "title": "Germany news: Climate activists target tank factory",
-          "link": "https://www.dw.com/en/germany-news-climate-activists-target-tank-factory/live-77340490?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Climate activists have carried out protests across the industrial Ruhr Valley ahead of a weekend of climate action. Meanwhile, Germany&#039;s footballers have undergone doping tests ahead of the World Cup. DW has more.",
-          "published": "2026-05-29T08:47:00.000Z",
-          "score": 7
+          "title": "Exploding rocket casts doubts over Nasa's Moon plans",
+          "link": "https://www.bbc.com/news/articles/cwy2q0g07kgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Explosion of Blue Origin rocket is a setback for the company and for Nasa's Moon plans.",
+          "published": "2026-05-29T10:38:46.000Z",
+          "score": 2
         },
         {
-          "title": "Air conditioning: the wealthy and well can afford it, but disabled people who need it most can't | Frances Ryan",
-          "link": "https://www.theguardian.com/commentisfree/2026/may/29/people-disabilities-heatwaves-uncomfortable-safe-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;It is a short-term fix, but AC is an essential tool for many for whom the heat can be harmful, and even life-threatening&lt;/p&gt;&lt;p&gt;I used to love a heatwave. I was the sort of British person who acted like I was in the Mediterranean if the sun was slightly visible, coercing friends to take the outside restaurant table and eagerly working in the garden until my MacBook started to overheat rather than my internal organs. That was until I developed post-viral fatigue from the flu n",
-          "published": "2026-05-29T07:00:43.000Z",
+          "title": "Wildlife park opens hub featuring erupting volcano",
+          "link": "https://www.bbc.com/news/articles/cvgzz9ndydyo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The new building has two areas filled with interactive features to aid learning.",
+          "published": "2026-05-30T05:28:02.000Z",
+          "score": 2
+        },
+        {
+          "title": "Ospreys hatch fourth and final egg of the season",
+          "link": "https://www.bbc.com/news/articles/c5y8r71z89ro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Webcams show the fourth chick emerging as the mother feeds the other three with fish.",
+          "published": "2026-05-29T09:51:34.000Z",
           "score": 2
         }
       ]
@@ -142,11 +142,11 @@
           "score": 2
         },
         {
-          "title": "Hong Kong plans tax cuts on bonus pay to lure top fund managers, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZzFLei1PcDkxamdJVzZuX0lRSnNFZm5rYldha2I3U25uMTBNMUZWUk43Zk5TZUdCRFhmWGp2VTF1Vnkybl9PblRpaDRsS1RXeDhGRm5RclNtQnJ6UkwzRXFUNmJCNWFfRUhNblhIX0plNlBiNnBtdzJPSG9pN3BpMmVRcjV6OTJMQkJvMFhVekYzdVZabDZjSE5GSHZLNUdjQzBnQnZsYmtYYXNrM3U2bDJmYkloNTgycG01R3YwLW8ydw?oc=5",
+          "title": "Danish pension fund excludes SpaceX citing governance and valuation - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQ25PNUZBWms4eGVNaXRObDhHTXdmdVc2WlVST0FXS0lqTkc4VkhkcnRHS003UjB5cTFreTFpLWdDQktnSUt0T1ZIN29reG9UcmVzb0ljOW5xSkRadVpJbnhKX0JZdmFuMkF2UnFvS0lWTm9HbVJNZ0ZnRThFUjJkSU96UmQ1dzRuNklhNlpkM0Q0akZHZExIQ3VLWDMteWw0RXhOS0hCSzVrQ3RzWXpJYnhzZnU2TDV6eHpV?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZzFLei1PcDkxamdJVzZuX0lRSnNFZm5rYldha2I3U25uMTBNMUZWUk43Zk5TZUdCRFhmWGp2VTF1Vnkybl9PblRpaDRsS1RXeDhGRm5RclNtQnJ6UkwzRXFUNmJCNWFfRUhNblhIX0plNlBiNnBtdzJPSG9pN3BpMmVRcjV6OTJMQkJvMFhVekYzdVZabDZjSE5GSHZLNUdjQzBnQnZsYmtYYXNrM3U2bDJmYkloNTgycG01R3YwLW8ydw?oc=5\" target=\"_blank\"&gt;Hong Kong plans tax cuts on bonus pay to lure top fund managers, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T09:15:04.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQ25PNUZBWms4eGVNaXRObDhHTXdmdVc2WlVST0FXS0lqTkc4VkhkcnRHS003UjB5cTFreTFpLWdDQktnSUt0T1ZIN29reG9UcmVzb0ljOW5xSkRadVpJbnhKX0JZdmFuMkF2UnFvS0lWTm9HbVJNZ0ZnRThFUjJkSU96UmQ1dzRuNklhNlpkM0Q0akZHZExIQ3VLWDMteWw0RXhOS0hCSzVrQ3RzWXpJYnhzZnU2TDV6eHpV?oc=5\" target=\"_blank\"&gt;Danish pension fund excludes SpaceX citing governance and valuation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T14:29:00.000Z",
           "score": 2
         }
       ]
@@ -186,10 +186,18 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Ghana approves law criminalizing LGBTQ promotion activities",
-          "link": "https://www.dw.com/en/ghana-approves-law-criminalizing-lgbtq-promotion-activities/a-77352654?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Ghana parliament passes anti-LGBTQ+ bill",
+          "link": "https://www.bbc.com/news/articles/c5yedendprko?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Same-sex acts are punishable by jail terms under Ghana's new bill targeting those identifying as gay, lesbian or transgender.",
+          "published": "2026-05-30T00:51:49.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ghana approves law criminalizing LGBTQ+ activities, advocacy",
+          "link": "https://www.dw.com/en/ghana-approves-law-criminalizing-lgbtq-activities-advocacy/a-77352654?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Ghana&#039;s parliament passed one of the most repressive anti-LGBTQ laws in Africa. The law imposes prison terms on individuals who promote LGBTQ activities.",
+          "description": "Ghana&#039;s Parliament passed one of the most repressive anti-LGBTQ+ laws in Africa. The law imposes prison terms on individuals who &quot;promote&quot; LGBTQ+ activities.",
           "published": "2026-05-29T22:41:00.000Z",
           "score": 8
         },
@@ -210,28 +218,20 @@
           "score": 8
         },
         {
-          "title": "IMF, World Bank, others warn Middle East war is straining energy supplies - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcnJzOC1UQWtTREhyMklUSzZ5MFh3QWNweDMtcWRrdWpUQ3Azd2xpVjIyenJPdzFyN216V0FZOHRhR0FWNG83STJGUHpoaXhOakdWOE9xTWZ4eDd1VDBXZG1ja1Jvb1VRaDZVRUNRT2JlMk5MYXFJaDY1ckNKTGdVQl92dVV2R3A5cFRQQU1xSWhnMmREUGI1NXRtWmlYck05VVFxZWtSU002WkEzSW1FNVpZM3lXWEwtTnNhbHBycVM?oc=5",
+          "title": "EU's six biggest economies agree on capital markets supervision - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNRDA5TEpQay1EUWdMOVhpamhpc1hvRHA0eVJiXzlGRFV1OE5XQ1ZPZ2lsLTFHaFpZeTUyRUV5U3Z5ZFFoOFZ4TmwwakxXcmZsb3ZNVXJ2czg5U2dWYnBNTGtaX3dyVm9Pd1g0RnhYUmlBQ1BxRGlocFc1emJVdWtGUnozZFJXX0NyZlY4NGV2X2wtMXNVMzJKYUNTcm9FY3h6NWlJ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxQcnJzOC1UQWtTREhyMklUSzZ5MFh3QWNweDMtcWRrdWpUQ3Azd2xpVjIyenJPdzFyN216V0FZOHRhR0FWNG83STJGUHpoaXhOakdWOE9xTWZ4eDd1VDBXZG1ja1Jvb1VRaDZVRUNRT2JlMk5MYXFJaDY1ckNKTGdVQl92dVV2R3A5cFRQQU1xSWhnMmREUGI1NXRtWmlYck05VVFxZWtSU002WkEzSW1FNVpZM3lXWEwtTnNhbHBycVM?oc=5\" target=\"_blank\"&gt;IMF, World Bank, others warn Middle East war is straining energy supplies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T19:58:03.000Z",
-          "score": 7
-        },
-        {
-          "title": "Analysts hike oil forecasts again as energy flows face slow recovery: Reuters poll - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUmhFQXhycmZwc2hTREd1MTYyZmtjLTdiTVFibzloMTZtT015a0tMV2RsWllrX25CSnF3cDJsNTh6NEYyeEt2YTFtb3UtaHJrOVNqZlZkUE1FY1BWRGYtTGtySF9NcUM1QWl4eEVrTWU3Mjc3R2VIRFI4UFJSM19oV0owaUIxVUdwN3JqdWx0SnNVcWRhcTV1Y2xEX3pxcXRFVnR2ekZYZFJtd3Y1QW54ZnNFNUQ4YTBE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNUmhFQXhycmZwc2hTREd1MTYyZmtjLTdiTVFibzloMTZtT015a0tMV2RsWllrX25CSnF3cDJsNTh6NEYyeEt2YTFtb3UtaHJrOVNqZlZkUE1FY1BWRGYtTGtySF9NcUM1QWl4eEVrTWU3Mjc3R2VIRFI4UFJSM19oV0owaUIxVUdwN3JqdWx0SnNVcWRhcTV1Y2xEX3pxcXRFVnR2ekZYZFJtd3Y1QW54ZnNFNUQ4YTBE?oc=5\" target=\"_blank\"&gt;Analysts hike oil forecasts again as energy flows face slow recovery: Reuters poll&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T11:33:32.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNRDA5TEpQay1EUWdMOVhpamhpc1hvRHA0eVJiXzlGRFV1OE5XQ1ZPZ2lsLTFHaFpZeTUyRUV5U3Z5ZFFoOFZ4TmwwakxXcmZsb3ZNVXJ2czg5U2dWYnBNTGtaX3dyVm9Pd1g0RnhYUmlBQ1BxRGlocFc1emJVdWtGUnozZFJXX0NyZlY4NGV2X2wtMXNVMzJKYUNTcm9FY3h6NWlJ?oc=5\" target=\"_blank\"&gt;EU's six biggest economies agree on capital markets supervision&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T17:42:31.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 390,
-    "articlesLast24h": 151,
-    "afterDedup": 138,
+    "articlesLast24h": 153,
+    "afterDedup": 144,
     "feedsQueried": 19
   }
 }
