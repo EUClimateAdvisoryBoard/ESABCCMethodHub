@@ -1,12 +1,12 @@
 {
   "date": "2026-05-30",
-  "generatedAt": "2026-05-30T12:06:04.949Z",
+  "generatedAt": "2026-05-30T18:03:51.573Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 30 May 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May &#124; Indian heat deaths &#124; Nigeria’s solar mini-grids",
-      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May | Indian heat deaths | Nigeria’s solar mini-grids appeared first on Carbon Brief.",
+      "headline": "Power play: what to consider when installing a home battery in Australia",
+      "summary": "&lt;p&gt;More than 400,000 batteries have been installed under the cheaper home batteries scheme. Here’s how to get the best bang for your buck&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/series/change-by-degrees\"&gt;Change by degrees&lt;/a&gt; offers life hacks and sustainable living tips each Saturday to help reduce your household’s carbon footprint&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Got a question or tip for reducing household emissions? Em",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "US judge halts Trump&#039;s &#039;anti-weaponization&#039; fund",
-      "summary": "The billion-dollar &quot;anti-weaponization&quot; fund was meant to compensate people who Trump sees as victims of so-called &quot;lawfare&quot; by Joe Biden&#039;s administration.",
+      "headline": "Nomura seeks US fund management acquisitions as part of global expansion - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPNnJfZmVxaUxsY1h0a1VsVVQ1c2xBQ1o2cjk1UzgyRmduYkZzTzFiZXNhdW9PMkU3LWRMMi1yNGlQLWF1ZVFaMlNHN2pXU2I5ZnMxM0ZLbC1CUWJBY1JYTUYyUXJ3MHZ0bTVhQjlBSUlBaEJWQ0tUb2JKcGJKMjFjejRER29DRy1jZndXYXA3TmsyNXFoUHFPM1o0OHlodW1Qc1laeE9QNU41MS1JbWI0NmpseVB6blNYWjdGNGIzWQ?oc=5\" target=\"_blank\"&gt;Nomura seeks US fund management acquisitions as part of global expansion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,22 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May &#124; Indian heat deaths &#124; Nigeria’s solar mini-grids",
-          "link": "https://www.carbonbrief.org/debriefed-29-may-2026-europes-mind-boggling-may-indian-heat-deaths-nigerias-solar-mini-grids/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 29 May 2026: Europe’s ‘mind-boggling’ May | Indian heat deaths | Nigeria’s solar mini-grids appeared first on Carbon Brief.",
-          "published": "2026-05-29T14:00:00.000Z",
-          "score": 19
-        },
-        {
-          "title": "AI boom means US is now ‘investing more’ in fossil-fuel power than China",
-          "link": "https://www.carbonbrief.org/ai-boom-means-us-is-now-investing-more-in-fossil-fuel-power-than-china/",
-          "source": "Carbon Brief",
-          "description": "The “data-centre boom” is driving a surge in gas investment in the US, pushing its... The post AI boom means US is now ‘investing more’ in fossil-fuel power than China appeared first on Carbon Brief.",
-          "published": "2026-05-29T12:58:11.000Z",
-          "score": 13
-        },
         {
           "title": "Power play: what to consider when installing a home battery in Australia",
           "link": "https://www.theguardian.com/australia-news/2026/may/30/power-play-what-to-consider-when-installing-a-home-battery-in-australia",
@@ -66,11 +50,11 @@
           "score": 7
         },
         {
-          "title": "Exclusive: GM-LG battery company delays return of laid-off workers to Ohio plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNLXJ4N204bUdiSnNrLWVOYU53a3p0XzZ3ZjViUVZuWVRnSl9UZDRFcTBpM01UOGpkeHBHY0wyUWJKR1lKOUctazZUd1NzR3FPOXk0RHJ3UGJvcVZxZlJXcy1hWlVxaTR1ckZ6dDdqQ1lJRkJtWmowN1YzWDFfeHdnbFBsY3JMcHFfYmwtM1hpMGpFdjJ4UzhqclNYUTBDa3MzeEFld2JvN1RTSUVfdFQzN1MtRGxTUThjdGx5QWNyUFFtVVNCY1VUZHp0bXY?oc=5",
+          "title": "Russia's Rosatom says Ukrainian drone struck Zaporizhzhia nuclear plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTmhILXhZa18tS0tYbG8tMFNOZzFXaU53TURVMDlPNmtDLTk1X0Z1MHdpWmZOLTJoRUtLRWRnQXNiZlpmd3VPaURRNGhxS2JpamtzZW05Y1RTc2piTzZMU1lUekZyTndfQ0dBV2JvLVdZUU1Ncm5xR2ZaQ1FUdDV1SzNvclIxb2pIZExVNEJzeEhseDlnbDFFWkpIVHZUcGJ1YUhjbkxYZlpmU284ckxnNVhiUU84enllNF9J?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNLXJ4N204bUdiSnNrLWVOYU53a3p0XzZ3ZjViUVZuWVRnSl9UZDRFcTBpM01UOGpkeHBHY0wyUWJKR1lKOUctazZUd1NzR3FPOXk0RHJ3UGJvcVZxZlJXcy1hWlVxaTR1ckZ6dDdqQ1lJRkJtWmowN1YzWDFfeHdnbFBsY3JMcHFfYmwtM1hpMGpFdjJ4UzhqclNYUTBDa3MzeEFld2JvN1RTSUVfdFQzN1MtRGxTUThjdGx5QWNyUFFtVVNCY1VUZHp0bXY?oc=5\" target=\"_blank\"&gt;Exclusive: GM-LG battery company delays return of laid-off workers to Ohio plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-05-29T16:40:49.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOTmhILXhZa18tS0tYbG8tMFNOZzFXaU53TURVMDlPNmtDLTk1X0Z1MHdpWmZOLTJoRUtLRWRnQXNiZlpmd3VPaURRNGhxS2JpamtzZW05Y1RTc2piTzZMU1lUekZyTndfQ0dBV2JvLVdZUU1Ncm5xR2ZaQ1FUdDV1SzNvclIxb2pIZExVNEJzeEhseDlnbDFFWkpIVHZUcGJ1YUhjbkxYZlpmU284ckxnNVhiUU84enllNF9J?oc=5\" target=\"_blank\"&gt;Russia's Rosatom says Ukrainian drone struck Zaporizhzhia nuclear plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-30T15:17:43.000Z",
           "score": 7
         }
       ]
@@ -104,19 +88,19 @@
           "score": 2
         },
         {
+          "title": "Project to bring wildlife closer to city people",
+          "link": "https://www.bbc.com/news/articles/cm2pj0ge99po?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The events will include bat nights, fungi and birdsong events and a summer solstice celebration.",
+          "published": "2026-05-30T13:49:17.000Z",
+          "score": 2
+        },
+        {
           "title": "Wildlife park opens hub featuring erupting volcano",
           "link": "https://www.bbc.com/news/articles/cvgzz9ndydyo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The new building has two areas filled with interactive features to aid learning.",
           "published": "2026-05-30T05:28:02.000Z",
-          "score": 2
-        },
-        {
-          "title": "Rare 'Blue Moon' set to light up UK skies",
-          "link": "https://www.bbc.com/news/videos/cy52d07zrywo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Sophia Herod explains what is meant by the phrase \"Blue Moon\" - and it doesn't mean the Moon is turning blue.",
-          "published": "2026-05-29T15:53:26.000Z",
           "score": 2
         }
       ]
@@ -126,27 +110,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "US judge halts Trump&#039;s &#039;anti-weaponization&#039; fund",
-          "link": "https://www.dw.com/en/us-judge-halts-trump-s-anti-weaponization-fund/a-77351158?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The billion-dollar &quot;anti-weaponization&quot; fund was meant to compensate people who Trump sees as victims of so-called &quot;lawfare&quot; by Joe Biden&#039;s administration.",
-          "published": "2026-05-29T16:57:00.000Z",
+          "title": "Nomura seeks US fund management acquisitions as part of global expansion - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPNnJfZmVxaUxsY1h0a1VsVVQ1c2xBQ1o2cjk1UzgyRmduYkZzTzFiZXNhdW9PMkU3LWRMMi1yNGlQLWF1ZVFaMlNHN2pXU2I5ZnMxM0ZLbC1CUWJBY1JYTUYyUXJ3MHZ0bTVhQjlBSUlBaEJWQ0tUb2JKcGJKMjFjejRER29DRy1jZndXYXA3TmsyNXFoUHFPM1o0OHlodW1Qc1laeE9QNU41MS1JbWI0NmpseVB6blNYWjdGNGIzWQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPNnJfZmVxaUxsY1h0a1VsVVQ1c2xBQ1o2cjk1UzgyRmduYkZzTzFiZXNhdW9PMkU3LWRMMi1yNGlQLWF1ZVFaMlNHN2pXU2I5ZnMxM0ZLbC1CUWJBY1JYTUYyUXJ3MHZ0bTVhQjlBSUlBaEJWQ0tUb2JKcGJKMjFjejRER29DRy1jZndXYXA3TmsyNXFoUHFPM1o0OHlodW1Qc1laeE9QNU41MS1JbWI0NmpseVB6blNYWjdGNGIzWQ?oc=5\" target=\"_blank\"&gt;Nomura seeks US fund management acquisitions as part of global expansion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-29T19:09:15.000Z",
           "score": 2
         },
         {
-          "title": "US judge temporarily blocks Trump's $1.8 billion 'weaponization' fund - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb0xLNy01M0Q1MUNIYVhQb2ZiR1VTVU0zSmtNYWt5S1hSaFFqMnI5SmQ3M0FqRk5Sa0FqN0N6eTRRX1ozaWpyWUFoYWVYUlRJMktULVU4Qjk1RmJwVnIzNjdSbi1hdG5IQjRmSjVwdnZJRC03R09DXzFPY242SGIyMGpBNkU0UU4tY3R0OU1ZZGl0WEx6a1JJMTJPdXNscjJTb01BQ3RnV3Zqdw?oc=5",
+          "title": "Senate Republicans face a political knife-edge over Trump's 'anti-weaponization' fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHMwNmVDUmFROTA4dXh4Q0ZvclU1UUVKQUNWYnA4Nm9YcmQ5R25zTnNFbDRDRDRuRDYyRFJENTc1bWpyLWRTYk5WNVVnYk1EZmM4ZFJ4RTJLS3BDLVBHX01WTDI5aGpHMFlVRTN2UUwtQkpKeWYwMXZrZFNxM09NMzVBdnRJalBSWmdRcXBpalNaZk9yc0dSV0E3aHZ0NHB3MkFhcnU3SEVJdXBZWnFNR3VkTUJ5a1ktbHAtVjRrOFlXdS1fRDAtRlBwN3lMUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxNb0xLNy01M0Q1MUNIYVhQb2ZiR1VTVU0zSmtNYWt5S1hSaFFqMnI5SmQ3M0FqRk5Sa0FqN0N6eTRRX1ozaWpyWUFoYWVYUlRJMktULVU4Qjk1RmJwVnIzNjdSbi1hdG5IQjRmSjVwdnZJRC03R09DXzFPY242SGIyMGpBNkU0UU4tY3R0OU1ZZGl0WEx6a1JJMTJPdXNscjJTb01BQ3RnV3Zqdw?oc=5\" target=\"_blank\"&gt;US judge temporarily blocks Trump's $1.8 billion 'weaponization' fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T13:41:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Danish pension fund excludes SpaceX citing governance and valuation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQ25PNUZBWms4eGVNaXRObDhHTXdmdVc2WlVST0FXS0lqTkc4VkhkcnRHS003UjB5cTFreTFpLWdDQktnSUt0T1ZIN29reG9UcmVzb0ljOW5xSkRadVpJbnhKX0JZdmFuMkF2UnFvS0lWTm9HbVJNZ0ZnRThFUjJkSU96UmQ1dzRuNklhNlpkM0Q0akZHZExIQ3VLWDMteWw0RXhOS0hCSzVrQ3RzWXpJYnhzZnU2TDV6eHpV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQ25PNUZBWms4eGVNaXRObDhHTXdmdVc2WlVST0FXS0lqTkc4VkhkcnRHS003UjB5cTFreTFpLWdDQktnSUt0T1ZIN29reG9UcmVzb0ljOW5xSkRadVpJbnhKX0JZdmFuMkF2UnFvS0lWTm9HbVJNZ0ZnRThFUjJkSU96UmQ1dzRuNklhNlpkM0Q0akZHZExIQ3VLWDMteWw0RXhOS0hCSzVrQ3RzWXpJYnhzZnU2TDV6eHpV?oc=5\" target=\"_blank\"&gt;Danish pension fund excludes SpaceX citing governance and valuation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T14:29:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHMwNmVDUmFROTA4dXh4Q0ZvclU1UUVKQUNWYnA4Nm9YcmQ5R25zTnNFbDRDRDRuRDYyRFJENTc1bWpyLWRTYk5WNVVnYk1EZmM4ZFJ4RTJLS3BDLVBHX01WTDI5aGpHMFlVRTN2UUwtQkpKeWYwMXZrZFNxM09NMzVBdnRJalBSWmdRcXBpalNaZk9yc0dSV0E3aHZ0NHB3MkFhcnU3SEVJdXBZWnFNR3VkTUJ5a1ktbHAtVjRrOFlXdS1fRDAtRlBwN3lMUQ?oc=5\" target=\"_blank\"&gt;Senate Republicans face a political knife-edge over Trump's 'anti-weaponization' fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
+          "published": "2026-05-30T13:18:14.000Z",
           "score": 2
         }
       ]
@@ -156,27 +132,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Nato and EU condemn Russia after drone hits Romanian residential block",
-          "link": "https://www.bbc.com/news/articles/c93x4nxlkjeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Romania says the Russian drone was likely hit over Ukraine by its air defences and altered its trajectory.",
-          "published": "2026-05-29T17:27:09.000Z",
-          "score": 8
-        },
-        {
-          "title": "Russian official warns Europe to brace for more drone incidents after Romania episode - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDBQVkdUSU0wajMxWGY0X2RwRUVtd0NDYWlqV1lrYV9XN1R5UHk4aXBCV0w0a3hkWFVEekNKMkhGMzJxdWJCdzE1dFd5RWNBY2xWeU9WUlUyZ19aYk1SS3dFS3d6M283TDVfd2hOZWFvZ1RGX19aUWhFandYbEZjZmNmVnVMZDlNM2FRX1A0Ukg5MjAyVnVIMTdseW1rQTltZDZZd0d0WDdScEhOblZZUzZBcGtvOEpqQnZlTkdiQU14cnNqeXc?oc=5",
+          "title": "Liverpool sack Slot after title defence turns into European scramble - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPRUVTR1E4NXpsSTd4LVAtWU54QjRkV0EwWllSaVNMMkJoSS1KcUMtXzgzQ2hXdnpkVVV2MDVqMmgtVGNLZHJ3MFpmVF9CaEloTktmMTV6aTIzRlh6TDY4NFhXZjFWLUc3R0dqWHREYjV3eVY3SUZyS2dkUGo4T05mMXJqckh0VmpadV9Lc0RjNkdJX3lXLW5jNlhBWm8?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPMDBQVkdUSU0wajMxWGY0X2RwRUVtd0NDYWlqV1lrYV9XN1R5UHk4aXBCV0w0a3hkWFVEekNKMkhGMzJxdWJCdzE1dFd5RWNBY2xWeU9WUlUyZ19aYk1SS3dFS3d6M283TDVfd2hOZWFvZ1RGX19aUWhFandYbEZjZmNmVnVMZDlNM2FRX1A0Ukg5MjAyVnVIMTdseW1rQTltZDZZd0d0WDdScEhOblZZUzZBcGtvOEpqQnZlTkdiQU14cnNqeXc?oc=5\" target=\"_blank\"&gt;Russian official warns Europe to brace for more drone incidents after Romania episode&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
-          "published": "2026-05-29T22:25:06.000Z",
-          "score": 8
-        },
-        {
-          "title": "European Commission vows tougher action on trade with China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3E1SGdZbDdXeENzcTNpNFBJeFRiV05HRGFNc05NalJGcldRTW5CQXQwcHN2ZW9weVUyWC00VXpHX3BWYWc0Q3locWNwcjZpbm9MSXRaYmUtUVktTlJDcTB3OGloX3ptblZiZHMxYzJjSGlFRzhGUkhJT3JQa0FTZEJyUTkxc3BHTmJHQk1oVEppYUxxSVhMaHFaUElhZGdXaExVdjdtYWpaUUc4bExkWQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQb3E1SGdZbDdXeENzcTNpNFBJeFRiV05HRGFNc05NalJGcldRTW5CQXQwcHN2ZW9weVUyWC00VXpHX3BWYWc0Q3locWNwcjZpbm9MSXRaYmUtUVktTlJDcTB3OGloX3ptblZiZHMxYzJjSGlFRzhGUkhJT3JQa0FTZEJyUTkxc3BHTmJHQk1oVEppYUxxSVhMaHFaUElhZGdXaExVdjdtYWpaUUc4bExkWQ?oc=5\" target=\"_blank\"&gt;European Commission vows tougher action on trade with China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-29T12:11:03.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPRUVTR1E4NXpsSTd4LVAtWU54QjRkV0EwWllSaVNMMkJoSS1KcUMtXzgzQ2hXdnpkVVV2MDVqMmgtVGNLZHJ3MFpmVF9CaEloTktmMTV6aTIzRlh6TDY4NFhXZjFWLUc3R0dqWHREYjV3eVY3SUZyS2dkUGo4T05mMXJqckh0VmpadV9Lc0RjNkdJX3lXLW5jNlhBWm8?oc=5\" target=\"_blank\"&gt;Liverpool sack Slot after title defence turns into European scramble&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-30T16:56:15.000Z",
           "score": 8
         }
       ]
@@ -186,7 +146,7 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Ghana parliament passes anti-LGBTQ+ bill",
+          "title": "Ghana's parliament passes anti-LGBTQ+ bill",
           "link": "https://www.bbc.com/news/articles/c5yedendprko?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Same-sex acts are punishable by jail terms under Ghana's new bill targeting those identifying as gay, lesbian or transgender.",
@@ -218,20 +178,20 @@
           "score": 8
         },
         {
-          "title": "EU unblocks €16 billion in Hungary assistance as Magyar promises reforms",
-          "link": "https://www.dw.com/en/eu-unblocks-€16-billion-in-hungary-assistance-as-magyar-promises-reforms/a-77349350?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Reforms under new Prime Minister Peter Magyar will enable the EU to free up billions in frozen assistance for Budapest. The EU&#039;s Ursula von der Leyen announced the news as Magyar visited Brussels.",
-          "published": "2026-05-29T16:20:00.000Z",
+          "title": "US planning faster troop withdrawal from Europe, newspaper says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYnEybF9EeDRqOGwxZnNCTzljb1lXM0RaT08yS3R1UUQ1N1o2bS1VbFFUcGVhbnJUaExpdXpiTmdfa21OQ2x2MHpXX1JUVVFkNnlEM0VwU3pIdV9JT1lhMEhYZjhQYmowN1ZDZnZzcjVDMkltS3liNmtDM0k2cnVmYjVIY3ZHazE1Rk9RV0pNeHVRVFQ2NUkwMTVhdEdXcG5i?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNYnEybF9EeDRqOGwxZnNCTzljb1lXM0RaT08yS3R1UUQ1N1o2bS1VbFFUcGVhbnJUaExpdXpiTmdfa21OQ2x2MHpXX1JUVVFkNnlEM0VwU3pIdV9JT1lhMEhYZjhQYmowN1ZDZnZzcjVDMkltS3liNmtDM0k2cnVmYjVIY3ZHazE1Rk9RV0pNeHVRVFQ2NUkwMTVhdEdXcG5i?oc=5\" target=\"_blank\"&gt;US planning faster troop withdrawal from Europe, newspaper says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-05-30T15:40:04.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 391,
-    "articlesLast24h": 147,
-    "afterDedup": 139,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 140,
+    "afterDedup": 135,
     "feedsQueried": 19
   }
 }
