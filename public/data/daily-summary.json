@@ -1,6 +1,6 @@
 {
   "date": "2026-05-31",
-  "generatedAt": "2026-05-31T00:02:27.225Z",
+  "generatedAt": "2026-05-31T08:16:21.056Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 31 May 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -40,6 +40,14 @@
           "description": "&lt;p&gt;Australia is pioneering a revolution in home renewables and battery use, proving what is possible with the right policies&lt;/p&gt;&lt;p&gt;The timing was rich with symbolism. As intense heatwaves pummelled Europe and Asia, and oil markets around the world leapt and sputtered, the two big chimneys of one of Australia’s largest power stations were being demolished. Meanwhile, the Australian energy minister was holding a media conference to hail a &lt;a href=\"https://www.theguardian.com/a",
           "published": "2026-05-31T00:00:33.000Z",
           "score": 9
+        },
+        {
+          "title": "Ukraine: IAEA seeks access to Zaporizhzhia nuclear plant after reported drone strike",
+          "link": "https://www.dw.com/en/ukraine-iaea-seeks-access-to-zaporizhzhia-nuclear-plant-after-reported-drone-strike/a-77361296?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Russia claims that a Ukrainian drone struck the Zaporizhzhia nuclear plant. Ukraine has denied the accusation. The International Atomic Energy Agency has sought to examine the facility.",
+          "published": "2026-05-31T03:04:00.000Z",
+          "score": 7
         },
         {
           "title": "Russia says Ukrainian drone struck Zaporizhzhia nuclear plant, Kyiv denies - Reuters",
@@ -104,11 +112,11 @@
           "score": 2
         },
         {
-          "title": "Project to bring wildlife closer to city people",
-          "link": "https://www.bbc.com/news/articles/cm2pj0ge99po?at_medium=RSS&amp;at_campaign=rss",
+          "title": "How a lost road helped rewild a rare landscape",
+          "link": "https://www.bbc.com/news/articles/cdepj87pjwxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "The events will include bat nights, fungi and birdsong events and a summer solstice celebration.",
-          "published": "2026-05-30T13:49:17.000Z",
+          "description": "The Hindhead Tunnel has sparked one of the most successful rewilding projects in southern England.",
+          "published": "2026-05-31T06:01:40.000Z",
           "score": 2
         }
       ]
@@ -130,7 +138,7 @@
           "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHMwNmVDUmFROTA4dXh4Q0ZvclU1UUVKQUNWYnA4Nm9YcmQ5R25zTnNFbDRDRDRuRDYyRFJENTc1bWpyLWRTYk5WNVVnYk1EZmM4ZFJ4RTJLS3BDLVBHX01WTDI5aGpHMFlVRTN2UUwtQkpKeWYwMXZrZFNxM09NMzVBdnRJalBSWmdRcXBpalNaZk9yc0dSV0E3aHZ0NHB3MkFhcnU3SEVJdXBZWnFNR3VkTUJ5a1ktbHAtVjRrOFlXdS1fRDAtRlBwN3lMUQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQTHMwNmVDUmFROTA4dXh4Q0ZvclU1UUVKQUNWYnA4Nm9YcmQ5R25zTnNFbDRDRDRuRDYyRFJENTc1bWpyLWRTYk5WNVVnYk1EZmM4ZFJ4RTJLS3BDLVBHX01WTDI5aGpHMFlVRTN2UUwtQkpKeWYwMXZrZFNxM09NMzVBdnRJalBSWmdRcXBpalNaZk9yc0dSV0E3aHZ0NHB3MkFhcnU3SEVJdXBZWnFNR3VkTUJ5a1ktbHAtVjRrOFlXdS1fRDAtRlBwN3lMUQ?oc=5\" target=\"_blank\"&gt;Senate Republicans face a political knife-edge over Trump's 'anti-weaponization' fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
-          "published": "2026-05-30T13:18:14.000Z",
+          "published": "2026-05-30T10:02:00.000Z",
           "score": 2
         }
       ]
@@ -153,14 +161,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Ghana's parliament passes anti-LGBTQ+ bill",
-          "link": "https://www.bbc.com/news/articles/c5yedendprko?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Same-sex acts are punishable by jail terms under Ghana's new bill targeting those identifying as gay, lesbian or transgender.",
-          "published": "2026-05-30T00:51:49.000Z",
-          "score": 8
-        },
         {
           "title": "What Hungary must do to receive EU funds frozen under Orban",
           "link": "https://www.dw.com/en/what-hungary-must-do-to-receive-eu-funds-frozen-under-orban/a-77354206?maca=en-rss-en-all-1573-xml-mrss",
@@ -192,14 +192,22 @@
           "description": "Ecuadorian leader Daniel Noboa offers to cancel tariffs after speaking to a right-wing presidential candidate ahead of Sunday's vote.",
           "published": "2026-05-30T20:40:07.000Z",
           "score": 6
+        },
+        {
+          "title": "Ferrari wanted to take on Chinese EVs with the Luce - then the backlash started",
+          "link": "https://www.bbc.com/news/articles/c1l2y7j7454o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The brand's first EV has been heavily criticised, with some saying it has abandoned Ferrari's roots.",
+          "published": "2026-05-30T22:23:32.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 385,
-    "articlesLast24h": 139,
-    "afterDedup": 130,
+    "totalArticlesScanned": 388,
+    "articlesLast24h": 143,
+    "afterDedup": 132,
     "feedsQueried": 19
   }
 }
