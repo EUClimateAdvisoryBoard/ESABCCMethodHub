@@ -87,9 +87,28 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
     id: 'industry-project',
     name: 'Industry Project',
     shortDescription:
-      'Analytical workspace dedicated to industrial decarbonisation. ' +
-      'Modules to be added as the project scope is defined.',
+      'Analytical workspace dedicated to industrial decarbonisation, with an ' +
+      'indicator database and a recommendations tracker.',
     isSeed: true,
-    modules: [],
+    modules: [
+      {
+        id: 'indicators',
+        kind: 'indicators',
+        name: 'Indicator database',
+        description:
+          'Industrial-decarbonisation indicators. Table + chart view with ' +
+          'the Excel-like spreadsheet editor and formula engine; add ' +
+          'indicators and round-trip them through Excel.',
+      },
+      {
+        id: 'recommendations',
+        kind: 'recommendations',
+        name: 'Recommendations tracker',
+        description:
+          'Track recommendations relevant to industrial decarbonisation, ' +
+          'with status, dated uptake events and the fact-check / verify ' +
+          'workflow.',
+      },
+    ],
   },
 ];
