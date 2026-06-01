@@ -36,6 +36,20 @@ async function send<T>(
 
 const BASE = '/api/project-workspace';
 
+export interface IndicatorImportSummary {
+  ok: boolean;
+  indicatorsProcessed: number;
+  summary: {
+    id: string;
+    metadataUpdated: boolean;
+    pointsWritten: number;
+    pointsDeleted: number;
+    warnings: string[];
+  }[];
+  warnings: string[];
+  errors: string[];
+}
+
 export const pwApi = {
   createProject(body: { id?: string; name: string; description?: string }) {
     return send<{ project: { id: string; name: string; description: string } }>(
@@ -134,6 +148,35 @@ export const pwApi = {
   },
   deletePolicyAnnotation(id: string) {
     return send(`${BASE}/policy-annotations/${id}`, 'DELETE');
+  },
+  /** Download the whole indicator database as an .xlsx workbook (one tab per indicator). */
+  async downloadIndicatorsWorkbook(projectId: string): Promise<Blob> {
+    const res = await fetch(
+      `${BASE}/indicators/export?projectId=${encodeURIComponent(projectId)}`,
+      { headers: { ...(await authHeader()) } }
+    );
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '');
+      throw new Error(`${res.status} ${txt || res.statusText}`);
+    }
+    return res.blob();
+  },
+  /** Upload an edited workbook to update indicators, their series and helper columns. */
+  async importIndicatorsWorkbook(projectId: string, file: File): Promise<IndicatorImportSummary> {
+    const fd = new FormData();
+    fd.append('projectId', projectId);
+    fd.append('file', file);
+    // Note: do NOT set content-type — the browser must add the multipart boundary.
+    const res = await fetch(`${BASE}/indicators/import`, {
+      method: 'POST',
+      headers: { ...(await authHeader()) },
+      body: fd,
+    });
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '');
+      throw new Error(`${res.status} ${txt || res.statusText}`);
+    }
+    return (await res.json()) as IndicatorImportSummary;
   },
   refreshIndicator(id: string) {
     return send<{
