@@ -39,6 +39,7 @@ import PolicyCodesOverlay, { CodeFilterBar } from './PolicyCodesOverlay';
 import { getDescendantIds } from '@/lib/content-analysis/master-code-catalog';
 import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
 import DownloadMenu from './DownloadMenu';
+import WorkspaceComments from './WorkspaceComments';
 import type { SheetSpec, DocBlock } from '@/lib/exports';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
@@ -546,7 +547,6 @@ function PolicyBody({
   const [editField, setEditField] = useState<string>('meaning');
   const [editValue, setEditValue] = useState('');
   const [factCheck, setFactCheck] = useState('');
-  const [comment, setComment] = useState('');
 
   const userAlreadyApproved =
     !!currentUserId && approvers.some(a => a.id === currentUserId);
@@ -858,30 +858,15 @@ function PolicyBody({
         </div>
       </details>
 
-      <details className="border border-grey-200 rounded-lg p-2">
-        <summary className="text-[11px] font-semibold text-tertiary-dark cursor-pointer">
-          Add comment
-        </summary>
-        <div className="mt-2 space-y-2">
-          <textarea
-            value={comment}
-            onChange={e => setComment(e.target.value)}
-            placeholder="Your comment"
-            className="w-full h-20 px-2 py-1 border border-grey-200 rounded text-xs"
-          />
-          <button
-            type="button"
-            disabled={!comment || busy || !isSignedIn}
-            onClick={() => {
-              onAdd('comment', '', comment);
-              setComment('');
-            }}
-            className="px-3 py-1 rounded-md bg-primary text-white text-[11px] font-semibold hover:bg-primary-dark disabled:opacity-50"
-          >
-            Add comment
-          </button>
-        </div>
-      </details>
+      {/* Threaded discussion: @-mention colleagues (they get notified), reply and resolve */}
+      <div className="border border-grey-200 rounded-lg p-3">
+        <WorkspaceComments
+          projectId={projectId}
+          target={{ kind: 'policy', id: policy.id }}
+          title="Comments"
+          compact
+        />
+      </div>
 
       {annotations.length > 0 && (
         <div>
