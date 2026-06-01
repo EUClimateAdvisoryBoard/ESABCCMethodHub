@@ -58,6 +58,25 @@ export interface Indicator {
   data: IndicatorDataPoint[];
   /** True for ECNO/seed indicators; user-added ones are false. */
   isSeed: boolean;
+  /**
+   * Cluster shown in the Indicator Database UI.
+   *  - `esabcc`     — indicators rebuilt from the 2024 ESABCC report
+   *                   ("Towards EU climate neutrality") underlying-data
+   *                   workbook. Treated as the "existing indicators" set.
+   *  - `additional` — every other indicator already in the platform
+   *                   (mostly the ECNO progress-tracker mapping). Shown
+   *                   beneath the existing set.
+   * Defaults to `additional` if not set, so legacy entries don't have to
+   * be touched one by one.
+   */
+  group?: 'esabcc' | 'additional';
+  /** ESABCC report indicator code (e.g. "O1", "E4a"). */
+  code?: string;
+  /**
+   * Id of an indicator measuring the same concept. Used by the UI to
+   * surface duplicates between the two groups (ESABCC ↔ additional).
+   */
+  duplicateOf?: string;
 }
 
 export const ECNO_INDICATORS: Indicator[] = [
