@@ -35,6 +35,9 @@ import type {
 import { invalidatePromotedEditsCache } from '@/lib/project-workspace/usePromotedPolicyEdits';
 import { useAuth } from '@/lib/auth-context';
 import PolicyCodesPanel from './PolicyCodesPanel';
+import PolicyCodesOverlay, { CodeFilterBar } from './PolicyCodesOverlay';
+import { getDescendantIds } from '@/lib/content-analysis/master-code-catalog';
+import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
   approve: 'Approved',
@@ -90,6 +93,8 @@ export default function PolicyAnalysisModule({
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
   const [overrides, setOverrides] = useState<PolicyOverrideMap>(initialOverrides);
   const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
+  const [codeFilter, setCodeFilter] = useState<string | null>(null);
+  const [viewMode, setViewMode] = useState<'list' | 'codes'>('list');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
   const [busy, setBusy] = useState(false);
 
@@ -103,11 +108,6 @@ export default function PolicyAnalysisModule({
     }
     return m;
   }
-
-  const filtered = useMemo(() => {
-    if (sectorFilter === 'all') return SECTOR_POLICIES;
-    return SECTOR_POLICIES.filter(p => p.sectors.includes(sectorFilter));
-  }, [sectorFilter]);
 
   const annByPolicy = useMemo(() => {
     const m = new Map<string, PolicyAnnotation[]>();
@@ -128,6 +128,26 @@ export default function PolicyAnalysisModule({
     }
     return m;
   }, [initialPolicyCodes]);
+
+  const codeFilterDescendants = useMemo(
+    () => (codeFilter ? getDescendantIds(codeFilter) : null),
+    [codeFilter]
+  );
+
+  const filtered = useMemo(() => {
+    return SECTOR_POLICIES.filter(p => {
+      if (sectorFilter !== 'all' && !p.sectors.includes(sectorFilter)) return false;
+      if (codeFilterDescendants) {
+        const pTags = POLICY_MASTER_TAGS[p.id] ?? [];
+        const projectTags = (codesByPolicy.get(p.id) ?? [])
+          .filter(c => !c.removed)
+          .map(c => c.codeId);
+        const allTags = [...new Set([...pTags, ...projectTags])];
+        if (!allTags.some(t => codeFilterDescendants.has(t))) return false;
+      }
+      return true;
+    });
+  }, [sectorFilter, codeFilterDescendants, codesByPolicy]);
 
   async function addAnnotation(
     policyId: string,
@@ -230,36 +250,76 @@ export default function PolicyAnalysisModule({
         )}
       </header>
 
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          onClick={() => setSectorFilter('all')}
-          className={`text-[11px] px-2 py-1 rounded border ${
-            sectorFilter === 'all'
-              ? 'bg-primary text-white border-primary'
-              : 'border-grey-200 text-tertiary'
-          }`}
-        >
-          All sectors ({SECTOR_POLICIES.length})
-        </button>
-        {SECTORS.map(s => {
-          const count = SECTOR_POLICIES.filter(p => p.sectors.includes(s.id)).length;
-          return (
-            <button
-              key={s.id}
-              type="button"
-              onClick={() => setSectorFilter(s.id)}
-              className={`text-[11px] px-2 py-1 rounded border ${
-                sectorFilter === s.id
-                  ? 'text-white border-transparent'
-                  : 'border-grey-200 text-tertiary'
-              }`}
-              style={sectorFilter === s.id ? { backgroundColor: s.color } : undefined}
-            >
-              {s.name} ({count})
-            </button>
-          );
-        })}
+      {/* View mode toggle */}
+      <div className="flex items-center gap-2">
+        <div className="flex rounded border border-grey-200 overflow-hidden text-[11px]">
+          <button
+            type="button"
+            onClick={() => setViewMode('list')}
+            className={`px-3 py-1 ${viewMode === 'list' ? 'bg-primary text-white' : 'text-tertiary hover:bg-grey-50'}`}
+          >
+            Policy list
+          </button>
+          <button
+            type="button"
+            onClick={() => setViewMode('codes')}
+            className={`px-3 py-1 border-l border-grey-200 ${viewMode === 'codes' ? 'bg-primary text-white' : 'text-tertiary hover:bg-grey-50'}`}
+          >
+            Code view
+          </button>
+        </div>
+      </div>
+
+      {viewMode === 'codes' && (
+        <PolicyCodesOverlay policyCodes={initialPolicyCodes} />
+      )}
+
+      {viewMode === 'list' && (
+      <>
+      {/* Sector + code filters */}
+      <div className="space-y-2">
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setSectorFilter('all')}
+            className={`text-[11px] px-2 py-1 rounded border ${
+              sectorFilter === 'all'
+                ? 'bg-primary text-white border-primary'
+                : 'border-grey-200 text-tertiary'
+            }`}
+          >
+            All sectors ({SECTOR_POLICIES.length})
+          </button>
+          {SECTORS.map(s => {
+            const count = SECTOR_POLICIES.filter(p => p.sectors.includes(s.id)).length;
+            return (
+              <button
+                key={s.id}
+                type="button"
+                onClick={() => setSectorFilter(s.id)}
+                className={`text-[11px] px-2 py-1 rounded border ${
+                  sectorFilter === s.id
+                    ? 'text-white border-transparent'
+                    : 'border-grey-200 text-tertiary'
+                }`}
+                style={sectorFilter === s.id ? { backgroundColor: s.color } : undefined}
+              >
+                {s.name} ({count})
+              </button>
+            );
+          })}
+        </div>
+        <CodeFilterBar
+          projectId={projectId}
+          policyCodes={initialPolicyCodes}
+          selectedCodeId={codeFilter}
+          onSelect={setCodeFilter}
+        />
+        {codeFilter && (
+          <p className="text-[10px] text-tertiary">
+            Showing {filtered.length} of {SECTOR_POLICIES.length} policies with active codes in this category.
+          </p>
+        )}
       </div>
 
       <ul className="space-y-3">
@@ -336,6 +396,8 @@ export default function PolicyAnalysisModule({
           );
         })}
       </ul>
+      </>
+      )}
     </div>
   );
 }

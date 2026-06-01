@@ -28,6 +28,21 @@ export function getMasterCode(codeId: string): CodeNode | null {
   return getCache().get(codeId) ?? null;
 }
 
+/** All master codes, in seed order. */
+export function getAllMasterCodes(): CodeNode[] {
+  return Array.from(getCache().values());
+}
+
+/** Root codes (no parent). */
+export function getRootCodes(): CodeNode[] {
+  return getAllMasterCodes().filter(c => c.parentId === null);
+}
+
+/** Direct children of a code. */
+export function getMasterCodeChildren(codeId: string): CodeNode[] {
+  return getAllMasterCodes().filter(c => c.parentId === codeId);
+}
+
 /** Path of master codes from root to the given code, inclusive. */
 export function getMasterCodePath(codeId: string): CodeNode[] {
   const cache = getCache();
@@ -40,4 +55,20 @@ export function getMasterCodePath(codeId: string): CodeNode[] {
     cur = cur.parentId ? cache.get(cur.parentId) ?? undefined : undefined;
   }
   return path;
+}
+
+/** All descendant code ids (inclusive of the given code itself). */
+export function getDescendantIds(codeId: string): Set<string> {
+  const result = new Set<string>();
+  const queue = [codeId];
+  const all = getAllMasterCodes();
+  while (queue.length > 0) {
+    const cur = queue.shift()!;
+    if (result.has(cur)) continue;
+    result.add(cur);
+    for (const c of all) {
+      if (c.parentId === cur) queue.push(c.id);
+    }
+  }
+  return result;
 }
