@@ -76,21 +76,39 @@ export function isWorkspaceDbEnabled(): boolean {
   return !!getServerSupabase();
 }
 
+/**
+ * Exposes the otherwise-private seed pass so admin endpoints can force a
+ * reseed (useful when the lazy on-page-render path has not been hit yet,
+ * or when its first run silently failed and we want to retry deliberately).
+ */
+export async function reseedFor(projectId: string): Promise<void> {
+  await ensureSeedDataFor(projectId);
+}
+
 async function ensureSeedDataFor(projectId: string) {
   const sb = getServerSupabase();
   if (!sb) return;
 
   if (projectId === 'policy-gap-2-0') {
-    // Seed indicators (only if missing).
-    const { data: existing } = await sb
+    // Seed indicators. We look up the rows that already exist (any
+    // `is_seed` value) so we don't try to re-insert them, then UPSERT the
+    // remainder — `onConflict` makes the call resilient to PKs that
+    // somehow survive the prefilter (e.g. a stale row from before
+    // `is_seed=true` was a convention).
+    const { data: existing, error: readErr } = await sb
       .from('pw_indicators')
       .select('id')
-      .eq('project_id', projectId)
-      .eq('is_seed', true);
+      .eq('project_id', projectId);
+    if (readErr) {
+      console.error('[pw seed] failed to read existing indicators', {
+        projectId,
+        error: readErr.message,
+      });
+    }
     const have = new Set((existing ?? []).map(r => r.id));
     const toInsert = ECNO_INDICATORS.filter(i => !have.has(i.id));
     if (toInsert.length > 0) {
-      const { error: insErr } = await sb.from('pw_indicators').insert(
+      const { error: insErr } = await sb.from('pw_indicators').upsert(
         toInsert.map(i => ({
           id: i.id,
           project_id: projectId,
@@ -104,7 +122,8 @@ async function ensureSeedDataFor(projectId: string) {
           target_value: i.targetValue ?? null,
           target_year: i.targetYear ?? null,
           is_seed: true,
-        }))
+        })),
+        { onConflict: 'id', ignoreDuplicates: true }
       );
       if (insErr) {
         console.error('[pw seed] failed to insert indicators', {
@@ -117,7 +136,9 @@ async function ensureSeedDataFor(projectId: string) {
           i.data.map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
         );
         if (points.length > 0) {
-          const { error: ptsErr } = await sb.from('pw_indicator_points').insert(points);
+          const { error: ptsErr } = await sb
+            .from('pw_indicator_points')
+            .upsert(points, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
           if (ptsErr) {
             console.error('[pw seed] failed to insert indicator points', {
               projectId,
