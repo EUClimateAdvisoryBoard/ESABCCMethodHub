@@ -17,6 +17,7 @@ import SiteFooter from '@/components/SiteFooter';
 import {
   getProject,
   listIndicators,
+  listIndicatorSheets,
   listRecommendations,
   listMemberStateCells,
   listPolicyAnnotations,
@@ -40,6 +41,7 @@ export default async function ProjectPage({
 
   const [
     indicators,
+    indicatorSheets,
     recommendations,
     memberStateCells,
     policyAnnotations,
@@ -47,6 +49,7 @@ export default async function ProjectPage({
     policyCodes,
   ] = await Promise.all([
     listIndicators(params.projectId),
+    listIndicatorSheets(params.projectId),
     listRecommendations(params.projectId),
     listMemberStateCells(params.projectId),
     listPolicyAnnotations(params.projectId),
@@ -92,6 +95,7 @@ export default async function ProjectPage({
           project={project}
           activeModule={activeModule}
           indicators={indicators}
+          indicatorSheets={indicatorSheets}
           recommendations={recommendations}
           memberStateCells={memberStateCells}
           policyAnnotations={policyAnnotations}

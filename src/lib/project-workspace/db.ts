@@ -28,7 +28,7 @@ import {
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
 import type { WorkspaceProject, WorkspaceModule, WorkspaceModuleKind } from '@/data/project-workspace';
-import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-excel';
+import { normalizeLayout, type IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 
 export type DBProject = WorkspaceProject;
 export type DBIndicator = Indicator;
@@ -339,10 +339,8 @@ export async function listIndicatorSheets(
     .in('indicator_id', ids);
   const out: Record<string, IndicatorSheetLayout> = {};
   for (const r of data ?? []) {
-    const layout = r.layout as IndicatorSheetLayout | null;
-    if (layout && Array.isArray(layout.headers) && Array.isArray(layout.rows)) {
-      out[r.indicator_id] = layout;
-    }
+    const layout = normalizeLayout(r.layout);
+    if (layout) out[r.indicator_id] = layout;
   }
   return out;
 }

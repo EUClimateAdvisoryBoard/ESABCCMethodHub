@@ -9,6 +9,7 @@
 'use client';
 
 import { supabase } from '@/lib/supabase';
+import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 
 async function authHeader(): Promise<Record<string, string>> {
   if (!supabase) return {};
@@ -177,6 +178,17 @@ export const pwApi = {
       throw new Error(`${res.status} ${txt || res.statusText}`);
     }
     return (await res.json()) as IndicatorImportSummary;
+  },
+  /** Save the full in-app data grid for one indicator (series + helper columns). */
+  saveIndicatorSheet(
+    id: string,
+    body: { layout: IndicatorSheetLayout; points: { year: number; value: number }[]; source?: string }
+  ) {
+    return send<{ ok: boolean; points: { year: number; value: number }[] }>(
+      `${BASE}/indicators/${id}/sheet`,
+      'PUT',
+      body
+    );
   },
   refreshIndicator(id: string) {
     return send<{

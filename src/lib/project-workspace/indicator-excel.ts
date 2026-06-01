@@ -34,6 +34,11 @@ import type {
   IndicatorCategory,
   IndicatorDataPoint,
 } from '@/data/ecno-indicators';
+import type {
+  SheetCell,
+  IndicatorSheetColumn,
+  IndicatorSheetLayout,
+} from './indicator-sheet';
 
 export const CATEGORY_IDS: IndicatorCategory[] = [
   'emissions',
@@ -48,18 +53,16 @@ export const CATEGORY_IDS: IndicatorCategory[] = [
   'fairness',
 ];
 
-/** A single helper/value cell: a primitive, or a formula with its last result. */
-export type SheetCell = number | string | null | { f: string; v?: number | string | null };
-
-/**
- * The part of an indicator's tab that is NOT the canonical plotted series:
- * the column headers after `Year` (headers[0] is always the `Value` column)
- * and, per year, the cells under those headers (preserving formulas).
- */
-export interface IndicatorSheetLayout {
-  headers: string[];
-  rows: { year: number; cells: SheetCell[] }[];
-}
+// Re-export the pure grid model so existing importers of this module keep
+// working; the definitions live in the client-safe indicator-sheet module.
+export type {
+  SheetCell,
+  ColumnOp,
+  ColumnFormula,
+  IndicatorSheetColumn,
+  IndicatorSheetLayout,
+} from './indicator-sheet';
+export { normalizeLayout } from './indicator-sheet';
 
 export interface ParsedIndicator {
   id: string;
@@ -161,6 +164,13 @@ function buildHowToSheet(wb: ExcelJS.Workbook) {
     ['  • Columns C onward — your own HELPER columns (raw inputs, multipliers,', false],
     ['        intermediate workings). They are never plotted, but they are saved', false],
     ['        and reappear next time you download. Add as many as you like.', false],
+    ['  • Per-column source — add a cell note (comment) on any header cell like', false],
+    ['        "Source: …" to record where that column comes from. It round-trips', false],
+    ['        and shows next to the column in the app’s edit / calc mode.', false],
+    ['', false],
+    ['You can also do all of this in the app: open an indicator and click', false],
+    ['"Edit data / calc" to add rows, helper columns, per-column sources and', false],
+    ['derive columns (e.g. Value = Raw × Multiplier) without leaving the site.', false],
     ['', false],
     ['The "Indicators" tab holds editable metadata (name, unit, target, source …).', false],
     ['Do NOT change the ID column or rename tabs — those are how rows are matched', false],
@@ -226,15 +236,22 @@ function buildIndicatorSheet(
 ) {
   const ws = wb.addWorksheet(tabName, { views: [{ state: 'frozen', ySplit: 1 }] });
 
-  // Headers after Year: always start with "Value", then any stored helpers.
-  const helperHeaders =
-    layout && layout.headers.length > 0 ? layout.headers.slice(1) : [];
+  // Columns after Year: always start with "Value", then any stored helpers.
+  const helperCols =
+    layout && layout.columns.length > 0 ? layout.columns.slice(1) : [];
+  const helperHeaders = helperCols.map(c => c.header);
   const headerRow = [YEAR_HEADER, VALUE_HEADER, ...helperHeaders];
   ws.addRow(headerRow);
   styleHeaderRow(ws.getRow(1), HEADER_FILL);
   // Tint the Value header so the "this is what gets plotted" column stands out.
   const valueHeaderCell = ws.getCell(1, 2);
   valueHeaderCell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: VALUE_FILL } };
+  // Record each column's source as a header-cell note so it round-trips.
+  const valueSource = layout?.columns[0]?.source;
+  if (valueSource) valueHeaderCell.note = `Source: ${valueSource}`;
+  helperCols.forEach((c, i) => {
+    if (c.source) ws.getCell(1, 3 + i).note = `Source: ${c.source}`;
+  });
 
   const pointByYear = new Map(ind.data.map(p => [p.year, p.value]));
   const layoutByYear = new Map((layout?.rows ?? []).map(r => [r.year, r.cells]));
@@ -408,9 +425,10 @@ function parseDataSheet(ws: ExcelJS.Worksheet): {
     if (headers[c] === undefined || headers[c] === '') continue;
     layoutCols.push(c);
   }
-  const layoutHeaders = layoutCols.map((c, i) =>
-    i === 0 ? VALUE_HEADER : headers[c] || `Column ${c}`
-  );
+  const columns: IndicatorSheetColumn[] = layoutCols.map((c, i) => ({
+    header: i === 0 ? VALUE_HEADER : headers[c] || `Column ${c}`,
+    source: noteSource(headerRow.getCell(c)),
+  }));
 
   const points: IndicatorDataPoint[] = [];
   const rows: IndicatorSheetLayout['rows'] = [];
@@ -433,7 +451,21 @@ function parseDataSheet(ws: ExcelJS.Worksheet): {
     if (value !== null) points.push({ year, value });
   });
 
-  return { points, layout: { headers: layoutHeaders, rows }, warnings };
+  return { points, layout: { columns, rows }, warnings };
+}
+
+/** Reads a "Source: …" header-cell note back into a plain source string. */
+function noteSource(cell: ExcelJS.Cell): string | undefined {
+  const note = cell.note as unknown;
+  let text = '';
+  if (typeof note === 'string') text = note;
+  else if (note && typeof note === 'object') {
+    const texts = (note as { texts?: { text?: string }[] }).texts;
+    if (Array.isArray(texts)) text = texts.map(t => t.text ?? '').join('');
+  }
+  text = text.trim();
+  if (!text) return undefined;
+  return text.replace(/^source:\s*/i, '').trim() || undefined;
 }
 
 // ── Cell helpers ─────────────────────────────────────────────────────────────

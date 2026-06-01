@@ -34,6 +34,8 @@ import {
   type IndicatorDataPoint,
 } from '@/data/ecno-indicators';
 import { pwApi, type IndicatorImportSummary } from '@/lib/project-workspace/client';
+import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
+import IndicatorDataEditor from './IndicatorDataEditor';
 
 ChartJS.register(
   CategoryScale,
@@ -72,14 +74,16 @@ function groupOf(i: Indicator): 'esabcc' | 'additional' {
 interface Props {
   projectId: string;
   initial: Indicator[];
+  initialLayouts: Record<string, IndicatorSheetLayout>;
 }
 
-export default function IndicatorModule({ projectId, initial }: Props) {
+export default function IndicatorModule({ projectId, initial, initialLayouts }: Props) {
   const router = useRouter();
   const [indicators, setIndicators] = useState<Indicator[]>(initial);
+  const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
-  const [editing, setEditing] = useState<string | null>(null);
+  const [editorOpen, setEditorOpen] = useState(false);
   const [adding, setAdding] = useState(false);
   const [busy, setBusy] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
@@ -96,18 +100,18 @@ export default function IndicatorModule({ projectId, initial }: Props) {
     setIndicators(prev => prev.map(i => (i.id === id ? { ...i, ...patch } : i)));
   }
 
-  async function handleAddPoint(id: string, point: IndicatorDataPoint) {
-    setBusy(true);
-    try {
-      await pwApi.upsertPoint({ indicatorId: id, year: point.year, value: point.value });
-      patchLocal(id, {
-        data: [...indicators.find(i => i.id === id)!.data.filter(d => d.year !== point.year), point].sort(
-          (a, b) => a.year - b.year
-        ),
-      });
-    } finally {
-      setBusy(false);
-    }
+  function handleSheetSaved(
+    id: string,
+    points: IndicatorDataPoint[],
+    layout: IndicatorSheetLayout,
+    source: string
+  ) {
+    patchLocal(id, {
+      data: [...points].sort((a, b) => a.year - b.year),
+      source: source || indicators.find(i => i.id === id)?.source,
+    });
+    setLayouts(prev => ({ ...prev, [id]: layout }));
+    setEditorOpen(false);
   }
 
   async function handleRemovePoint(id: string, year: number) {
@@ -412,11 +416,12 @@ export default function IndicatorModule({ projectId, initial }: Props) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setEditing(selected.id)}
+                  onClick={() => setEditorOpen(true)}
                   className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
                   disabled={busy}
+                  title="Add data, helper columns and derived (calc) columns for this indicator"
                 >
-                  Add data
+                  Edit data / calc
                 </button>
                 {LIVE_REFRESHABLE_INDICATORS.has(selected.id) && (
                   <button
@@ -528,12 +533,14 @@ export default function IndicatorModule({ projectId, initial }: Props) {
       {adding && (
         <AddIndicatorDialog onClose={() => setAdding(false)} onSave={handleAddIndicator} />
       )}
-      {editing && (
-        <EditDataDialog
-          indicator={indicators.find(i => i.id === editing)!}
-          onClose={() => setEditing(null)}
-          onAddPoint={p => handleAddPoint(editing, p)}
-          busy={busy}
+      {editorOpen && selected && (
+        <IndicatorDataEditor
+          indicator={selected}
+          layout={layouts[selected.id]}
+          onClose={() => setEditorOpen(false)}
+          onSaved={(points, layout, source) =>
+            handleSheetSaved(selected.id, points, layout, source)
+          }
         />
       )}
       {importOpen && (
@@ -818,67 +825,6 @@ function parseCsvPoints(text: string): IndicatorDataPoint[] {
     points.push({ year, value });
   }
   return points.sort((a, b) => a.year - b.year);
-}
-
-function EditDataDialog({
-  indicator,
-  onClose,
-  onAddPoint,
-  busy,
-}: {
-  indicator: Indicator;
-  onClose: () => void;
-  onAddPoint: (p: IndicatorDataPoint) => Promise<void> | void;
-  busy: boolean;
-}) {
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [value, setValue] = useState('');
-
-  return (
-    <DialogShell title={`Add / update data — ${indicator.name}`} onClose={onClose}>
-      <p className="text-xs text-tertiary mb-3">
-        Existing entry for the same year will be replaced.
-      </p>
-      <div className="grid grid-cols-2 gap-3 text-sm">
-        <Field label="Year">
-          <input
-            type="number"
-            className={inputCls}
-            value={year}
-            onChange={e => setYear(parseInt(e.target.value, 10) || year)}
-          />
-        </Field>
-        <Field label={`Value (${indicator.unit})`}>
-          <input
-            type="number"
-            step="any"
-            className={inputCls}
-            value={value}
-            onChange={e => setValue(e.target.value)}
-          />
-        </Field>
-      </div>
-      <div className="mt-4 flex justify-end gap-2">
-        <button type="button" onClick={onClose} className={btnSecondary}>
-          Close
-        </button>
-        <button
-          type="button"
-          disabled={!value || busy}
-          onClick={async () => {
-            const v = parseFloat(value);
-            if (Number.isFinite(v)) {
-              await onAddPoint({ year, value: v });
-              setValue('');
-            }
-          }}
-          className={btnPrimary}
-        >
-          {busy ? 'Saving…' : 'Add point'}
-        </button>
-      </div>
-    </DialogShell>
-  );
 }
 
 function DialogShell({

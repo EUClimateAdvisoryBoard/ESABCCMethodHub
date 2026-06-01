@@ -15,6 +15,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase-server';
 import { parseIndicatorsWorkbook } from '@/lib/project-workspace/indicator-excel';
+import {
+  normalizeLayout,
+  type IndicatorSheetColumn,
+  type IndicatorSheetLayout,
+} from '@/lib/project-workspace/indicator-sheet';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -68,6 +73,18 @@ export async function POST(req: NextRequest) {
     );
   }
 
+  // Existing layouts let us preserve per-column metadata (source, derivation)
+  // that the spreadsheet grid itself doesn't carry, matched by column header.
+  const { data: existingSheets } = await sb
+    .from('pw_indicator_sheets')
+    .select('indicator_id, layout')
+    .in('indicator_id', Array.from(knownIds));
+  const priorLayouts = new Map<string, IndicatorSheetLayout>();
+  for (const r of existingSheets ?? []) {
+    const norm = normalizeLayout(r.layout);
+    if (norm) priorLayouts.set(r.indicator_id, norm);
+  }
+
   const summary: {
     id: string;
     metadataUpdated: boolean;
@@ -117,10 +134,13 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 3) Helper-column layout (preserved across round-trips).
+    // 3) Helper-column layout (preserved across round-trips). The grid only
+    // carries values + the source notes, so merge per-column source/formula
+    // from any previously-stored layout (matched by header).
     if (ind.layout) {
+      const merged = mergeColumnMeta(ind.layout, priorLayouts.get(ind.id));
       const { error: sheetErr } = await sb.from('pw_indicator_sheets').upsert(
-        { indicator_id: ind.id, layout: ind.layout, updated_by: u.user.id },
+        { indicator_id: ind.id, layout: merged, updated_by: u.user.id },
         { onConflict: 'indicator_id' }
       );
       if (sheetErr) item.warnings.push(`layout: ${sheetErr.message}`);
@@ -136,6 +156,27 @@ export async function POST(req: NextRequest) {
     warnings: parsed.warnings,
     errors,
   });
+}
+
+/** Fills missing per-column source/formula on the parsed layout from a prior one. */
+function mergeColumnMeta(
+  parsed: IndicatorSheetLayout,
+  prior: IndicatorSheetLayout | undefined
+): IndicatorSheetLayout {
+  if (!prior) return parsed;
+  const priorByHeader = new Map<string, IndicatorSheetColumn>(
+    prior.columns.map(c => [c.header, c])
+  );
+  const columns = parsed.columns.map(c => {
+    const p = priorByHeader.get(c.header);
+    if (!p) return c;
+    return {
+      header: c.header,
+      source: c.source ?? p.source,
+      formula: c.formula ?? p.formula,
+    };
+  });
+  return { columns, rows: parsed.rows };
 }
 
 function metadataPatch(m: {
