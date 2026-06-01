@@ -1,18 +1,12 @@
 {
   "date": "2026-06-01",
-  "generatedAt": "2026-06-01T16:39:31.992Z",
+  "generatedAt": "2026-06-01T20:56:49.115Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 1 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/307301/ENVI%2006%2001-03%20%2015%202026_Monday%201%20June.pdf\" target=\"_blank\"&gt;ENVI News 1-3 &amp; 15 June: ETS public hearing, biodiversity convention with Commissioner Roswall and the CBD Executive Secretary, wildfires and structural dialogue with Commissioner Lahbib and CO₂ standards for passenger cars&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305998/ENVI%2",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Secret tunnels and unregistered workers: China's coal mine disaster is a reminder of darker days",
-      "summary": "China's worst coal mining disaster in 15 years comes amid an ambitious pivot towards green energy.",
+      "headline": "Russia's LNG exports rise 11.5% in January to May, data shows - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNWVpSaWZzRVZPUFhodVFpZDhhVldnWTlxZFB2WlQzR2ZhTHFoYkVXNExVZkRWTHBodUJ6MFQ5bTBIQTJKN3BtdmFpUWVicHI4Yk1OUHF0b20tX2VBd0RMOHUxS2dUUU1DVHZKa2FWX1F5SFNsYllpYzUyTmtKeG9JMWtYLUpqaXZnTWtxd2NOVTczbmMwamZCRXdFaFFpa2Vsd0xDaFNB?oc=5\" target=\"_blank\"&gt;Russia's LNG exports rise 11.5% in January to May, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -27,21 +21,20 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260116CNW20362",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/307301/ENVI%2006%2001-03%20%2015%202026_Monday%201%20June.pdf\" target=\"_blank\"&gt;ENVI News 1-3 &amp; 15 June: ETS public hearing, biodiversity convention with Commissioner Roswall and the CBD Executive Secretary, wildfires and structural dialogue with Commissioner Lahbib and CO₂ standards for passenger cars&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/305998/ENVI%2",
-          "published": "2026-06-01T10:30:16.000Z",
-          "score": 20
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Russia's LNG exports rise 11.5% in January to May, data shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNWVpSaWZzRVZPUFhodVFpZDhhVldnWTlxZFB2WlQzR2ZhTHFoYkVXNExVZkRWTHBodUJ6MFQ5bTBIQTJKN3BtdmFpUWVicHI4Yk1OUHF0b20tX2VBd0RMOHUxS2dUUU1DVHZKa2FWX1F5SFNsYllpYzUyTmtKeG9JMWtYLUpqaXZnTWtxd2NOVTczbmMwamZCRXdFaFFpa2Vsd0xDaFNB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNWVpSaWZzRVZPUFhodVFpZDhhVldnWTlxZFB2WlQzR2ZhTHFoYkVXNExVZkRWTHBodUJ6MFQ5bTBIQTJKN3BtdmFpUWVicHI4Yk1OUHF0b20tX2VBd0RMOHUxS2dUUU1DVHZKa2FWX1F5SFNsYllpYzUyTmtKeG9JMWtYLUpqaXZnTWtxd2NOVTczbmMwamZCRXdFaFFpa2Vsd0xDaFNB?oc=5\" target=\"_blank\"&gt;Russia's LNG exports rise 11.5% in January to May, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-01T14:35:43.000Z",
+          "score": 7
+        },
         {
           "title": "Secret tunnels and unregistered workers: China's coal mine disaster is a reminder of darker days",
           "link": "https://www.bbc.com/news/articles/cpwpeg57777o?at_medium=RSS&amp;at_campaign=rss",
@@ -55,7 +48,23 @@
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNM2ZzMmRnNV9CMWdOQ3dqU0RaWThSUTJpRUNXeXdWSFBwc3lZQ0tZdmRCcnVYODlvZkY2MkdGdHZoakpCU0trS3ZEeWZ5RHJXSWhZR2VLX3FKUl9ZbG0xS3puWUJESjkxT3VGZlY5Z3VwXzcxS1dxMG1nYlJhalZqWVJKUUVkUGJfaTZzSEpIbW43b0xGR3hod2s1S0FXNE9DU0RwRlNHSkZVVTJWLVJQcGV6bC02WjdIdnZN?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNM2ZzMmRnNV9CMWdOQ3dqU0RaWThSUTJpRUNXeXdWSFBwc3lZQ0tZdmRCcnVYODlvZkY2MkdGdHZoakpCU0trS3ZEeWZ5RHJXSWhZR2VLX3FKUl9ZbG0xS3puWUJESjkxT3VGZlY5Z3VwXzcxS1dxMG1nYlJhalZqWVJKUUVkUGJfaTZzSEpIbW43b0xGR3hod2s1S0FXNE9DU0RwRlNHSkZVVTJWLVJQcGV6bC02WjdIdnZN?oc=5\" target=\"_blank\"&gt;Some workers at SK Hynix chip plant in South Korea exposed to gas leak, Yonhap says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-01T03:02:00.000Z",
+          "published": "2026-06-01T07:45:26.000Z",
+          "score": 2
+        },
+        {
+          "title": "Glencore's South African smelter cancels planned job cuts after electricity deal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPOGdFSG0yeGtnZnVVVUd3R1BQZndrS1RUbG5WSWJfT2FobUU3VFlyQ21uTVpBQnR4bXJZN3dCOEZpMm5oaWs0d09Id2pVV0IxNWg5SU95QzY4eDBTVlpJQURtdmxWWTlyLVBsc0FDWmlwYm5hZmRKbG45RmJIOGk3RjhsMGxhWVBrRS1RTGFFVTlkSTh3YV90Z1VFUGpFcGRVMDlyMEx6UExaMDB3dF9NVmFPVUxtT2V6bEtjU3V6QnAxOHVvQVlzN2Vadw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPOGdFSG0yeGtnZnVVVUd3R1BQZndrS1RUbG5WSWJfT2FobUU3VFlyQ21uTVpBQnR4bXJZN3dCOEZpMm5oaWs0d09Id2pVV0IxNWg5SU95QzY4eDBTVlpJQURtdmxWWTlyLVBsc0FDWmlwYm5hZmRKbG45RmJIOGk3RjhsMGxhWVBrRS1RTGFFVTlkSTh3YV90Z1VFUGpFcGRVMDlyMEx6UExaMDB3dF9NVmFPVUxtT2V6bEtjU3V6QnAxOHVvQVlzN2Vadw?oc=5\" target=\"_blank\"&gt;Glencore's South African smelter cancels planned job cuts after electricity deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-06-01T08:41:55.000Z",
+          "score": 2
+        },
+        {
+          "title": "BP starts commercial gas production at Azerbaijan's ACG field - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSDI2aGFsMjZNaGZucU1YSGpCbnQ2ZkdIRGJtSFdDaDd3bjFfLWJEczExdWlaY29DM09Ya2w2WnExN3lLVjhRRnZPZkZnVExsdTdMSVJ5eWJmMzY4RnNGVFZvSUZNaHNTMDUtMlBCRTc2UHFzdUdHM0FocmVqVkNKU3gwSWt0ekF1YXBDYi1zTUpTUXA4WTY4MzM1cHRqMUQ4bFdZOUpiTW9XZEpKY3lTbS0zaGxzYlI1eHJIZW1WQ1pQQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNSDI2aGFsMjZNaGZucU1YSGpCbnQ2ZkdIRGJtSFdDaDd3bjFfLWJEczExdWlaY29DM09Ya2w2WnExN3lLVjhRRnZPZkZnVExsdTdMSVJ5eWJmMzY4RnNGVFZvSUZNaHNTMDUtMlBCRTc2UHFzdUdHM0FocmVqVkNKU3gwSWt0ekF1YXBDYi1zTUpTUXA4WTY4MzM1cHRqMUQ4bFdZOUpiTW9XZEpKY3lTbS0zaGxzYlI1eHJIZW1WQ1pQQQ?oc=5\" target=\"_blank\"&gt;BP starts commercial gas production at Azerbaijan's ACG field&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-01T10:15:12.000Z",
           "score": 2
         }
       ]
@@ -70,14 +79,6 @@
           "source": "Deutsche Welle World",
           "description": "It started as a school project to promote local businesses in a remote Bavarian region. Now, the &quot;Chiemgauer&quot; currency helps to cut emissions.",
           "published": "2026-06-01T06:46:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Wildfire season returns to Canada's oil sands - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOQnVqTTlqZmx0bnh4TllXSEpSbHJXakVUTmgyS3pJZGJXMndOOUJ0Uk9yT2tUaTF4cUF3WWZRRXdNcDUtMmYwaUJMQzhOMHJFVDJXTnZFY1Z4R0NSYk5icXhTdDQ2eW8yX01WZ3RpUFg3Zmcyb0RmZ2t1VlRJdHJlYzVEV0tBTVl5ZFBGVkxUX3lHZ3dfT1RjSA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxOQnVqTTlqZmx0bnh4TllXSEpSbHJXakVUTmgyS3pJZGJXMndOOUJ0Uk9yT2tUaTF4cUF3WWZRRXdNcDUtMmYwaUJMQzhOMHJFVDJXTnZFY1Z4R0NSYk5icXhTdDQ2eW8yX01WZ3RpUFg3Zmcyb0RmZ2t1VlRJdHJlYzVEV0tBTVl5ZFBGVkxUX3lHZ3dfT1RjSA?oc=5\" target=\"_blank\"&gt;Wildfire season returns to Canada's oil sands&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-31T18:42:34.000Z",
           "score": 7
         },
         {
@@ -102,6 +103,14 @@
           "source": "BBC Science & Environment",
           "description": "According to Nasa, the meteor released the equivalent to about 300 tons of TNT when it broke up.",
           "published": "2026-06-01T14:56:37.000Z",
+          "score": 2
+        },
+        {
+          "title": "Night sky events to watch out for this summer",
+          "link": "https://www.bbc.com/news/videos/cdjpvd04x0po?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Milky Way, the Summer triangle, eclipses and a meteor shower can all be seen over the next few months.",
+          "published": "2026-06-01T10:44:00.000Z",
           "score": 2
         }
       ]
@@ -130,6 +139,30 @@
           "description": "DRAFT REPORT on the proposal for a regulation of the European Parliament and of the Council suspending the application of the rules on the appointment of authorised representatives for extended producer responsibility for waste, waste electrical and electronical equipment and single use plastic waste&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Ingeborg Ter Laak&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© ",
           "published": "2026-06-01T10:01:22.000Z",
           "score": 22
+        },
+        {
+          "title": "Video of a committee meeting - Monday, 1 June 2026 - 13:45 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260601-1500-COMMITTEE-ENVI_vd",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Length of video : 225'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-01T16:56:53.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - ENVI-TRAN Joint consideration of draft report on Clean Corporate Vehicles - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78571",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230215PHT75307/20230215PHT75307-ms.jpg\" width=\"180\" alt=\"Electric car charging in a parking slot\" title=\"CO2 Emissions for cars and vans © Michael Flippo / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 3 June 2026, ENVI and TRAN Members will discuss the draft report on the Commission proposal on Clean Corporate Vehicles, which is part of the Automotive Package. The proposal ",
+          "published": "2026-06-01T10:28:06.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - Exchange of views with Commissioner Lahbib as part of structured dialogue - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78569",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250506PHT28258/20250506PHT28258-ms.jpg\" width=\"180\" alt=\"The Commissioner Hadja Lahbib front of the European flag\" title=\"Commissioner Hadja Lahbib © European Union (2025) - European Parliament\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, Members will hold an exchange of views with Commissioner Lahbib on preparedness, civil protection and crisis management as part of the s",
+          "published": "2026-06-01T10:27:44.000Z",
+          "score": 18
         }
       ]
     },
@@ -150,7 +183,23 @@
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQXBxaWZHczc2WHVwMWtiUVJESmhvZk9ybEJVR3Y3alF4QnhIOVhyaUlSWGFXM2dUTXEycjJ5al9wUEpzUVZNdTFJOTZCTS1sLWVBWWVoMWY1ZzE2RXZkSmxHSGR4bjdqdENmaFhLOFNRRl9uWEtyRllHOE1hRU11S1gyQUxNYmpTY2dYbkFkRm9rNHZSV21BaUVodU5QX2FrdXFhNnd2MXl3RXBVRjRiek9IN01zZDBJaGZvbU9JMFY0dmU0OVBIYw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxNQXBxaWZHczc2WHVwMWtiUVJESmhvZk9ybEJVR3Y3alF4QnhIOVhyaUlSWGFXM2dUTXEycjJ5al9wUEpzUVZNdTFJOTZCTS1sLWVBWWVoMWY1ZzE2RXZkSmxHSGR4bjdqdENmaFhLOFNRRl9uWEtyRllHOE1hRU11S1gyQUxNYmpTY2dYbkFkRm9rNHZSV21BaUVodU5QX2FrdXFhNnd2MXl3RXBVRjRiek9IN01zZDBJaGZvbU9JMFY0dmU0OVBIYw?oc=5\" target=\"_blank\"&gt;Nvidia to work with US, European humanoid robot makers in addition to China's Unitree&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-06-01T05:23:00.000Z",
+          "published": "2026-06-01T11:58:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Prosus given more time to comply with Delivery Hero stake sale, EU regulators say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPczNnVHN6NldfREFrenlsQnVNLXNLalZ5VlZ5OHViU3RyTTVjaWwzeVdPaUFheXYyOUN6NTBvckRQSS1aa2g2b1VtQ1FwMDJELXd3bm5SUmlXZ3ZSVEtMVmdoMlpnRERfNG95OHlUeVVUd1czYnk1NEhPV1RfWXhwV2FsQXI0MWtHQ2VwZTJ0OWpTX3FUSnczLTNvYVh5b0pBZzI3WFRxYkhQMUhjUk5vdlVJZjF3ZXd5WVVfMUJrcw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPczNnVHN6NldfREFrenlsQnVNLXNLalZ5VlZ5OHViU3RyTTVjaWwzeVdPaUFheXYyOUN6NTBvckRQSS1aa2g2b1VtQ1FwMDJELXd3bm5SUmlXZ3ZSVEtMVmdoMlpnRERfNG95OHlUeVVUd1czYnk1NEhPV1RfWXhwV2FsQXI0MWtHQ2VwZTJ0OWpTX3FUSnczLTNvYVh5b0pBZzI3WFRxYkhQMUhjUk5vdlVJZjF3ZXd5WVVfMUJrcw?oc=5\" target=\"_blank\"&gt;Prosus given more time to comply with Delivery Hero stake sale, EU regulators say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-01T14:27:18.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU may keep Russian oil price cap unchanged at $44 per barrel to pressure Moscow - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRlV1ZDZ2dXFFVVVOcEdkczk4b19fZmY4RFV2UnctcVlKMDQ4QU93c2Z1S09sRDFRQlNPbTE0UjNSN1NLUTktb1Z1SExxUVFWLW1NM1pCaGwyVkNnUFVFUkhycGhlN0dmXzdJY3M3MmJzY2hFN0ktcEJzTkNGcDVtXzlNQmgzOUFEQTVxblpucldPZkJsNFdITUhZbjBWTVVseFFHSWhkMFU2cVZqUXZ3NS1wVEd4QXlPNWYzS3l3REU4ZkU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRlV1ZDZ2dXFFVVVOcEdkczk4b19fZmY4RFV2UnctcVlKMDQ4QU93c2Z1S09sRDFRQlNPbTE0UjNSN1NLUTktb1Z1SExxUVFWLW1NM1pCaGwyVkNnUFVFUkhycGhlN0dmXzdJY3M3MmJzY2hFN0ktcEJzTkNGcDVtXzlNQmgzOUFEQTVxblpucldPZkJsNFdITUhZbjBWTVVseFFHSWhkMFU2cVZqUXZ3NS1wVEd4QXlPNWYzS3l3REU4ZkU?oc=5\" target=\"_blank\"&gt;EU may keep Russian oil price cap unchanged at $44 per barrel to pressure Moscow&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-01T15:24:06.000Z",
           "score": 8
         },
         {
@@ -160,30 +209,14 @@
           "description": "Prime Minister Abiy Ahmed's party is expected to dominate the election as conflicts overshadow the vote.",
           "published": "2026-06-01T14:35:36.000Z",
           "score": 6
-        },
-        {
-          "title": "Law changes that will come into effect at the 2026 World Cup - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPem5YQzZWbk9Va0UxclU4TThHMHhCOU85QWdpdmY4ekFFQllrU29WWUJreXpBMVRVRFByYmNyOTI1aFBmcDROUE91aDN6T3cycnR1Rk1yMTE2NkNISmtVX1hPR2tINkJ2WDN1bHM5X0VycGVnbEc0bkJIX3JrMVVPaHBKQlFQbkJsX2JTeVdoSVdqQWZVRzNoZHdzTE04UVFBbnR4TWRB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPem5YQzZWbk9Va0UxclU4TThHMHhCOU85QWdpdmY4ekFFQllrU29WWUJreXpBMVRVRFByYmNyOTI1aFBmcDROUE91aDN6T3cycnR1Rk1yMTE2NkNISmtVX1hPR2tINkJ2WDN1bHM5X0VycGVnbEc0bkJIX3JrMVVPaHBKQlFQbkJsX2JTeVdoSVdqQWZVRzNoZHdzTE04UVFBbnR4TWRB?oc=5\" target=\"_blank\"&gt;Law changes that will come into effect at the 2026 World Cup&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-05-31T19:51:45.000Z",
-          "score": 6
-        },
-        {
-          "title": "Colombia right winger De La Espriella nearly tied with leftist Cepeda in presidential vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOb29NNXhFVVZiQTVSV1FSTHgtdERxWG5OeDJMSkxJTXVVbTNUMFlCNnl6RFc1M2lNcjZ0YUZ0M3JJc1NQYTIyS1BUUW5jNkVnS3FmcXdseFFleV83Rl9iRElZRFdWLWE2NWN3R09meE83UGpHT3EyMXozVmRNNEM3UXZjenNNdVJHVzVoaWh4Y1IwUmZjdWlHSFJzMmVrSFNzZ2NUTHYwZFNLdVRzOWZMLVVkX2NfazM1TFVWdA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOb29NNXhFVVZiQTVSV1FSTHgtdERxWG5OeDJMSkxJTXVVbTNUMFlCNnl6RFc1M2lNcjZ0YUZ0M3JJc1NQYTIyS1BUUW5jNkVnS3FmcXdseFFleV83Rl9iRElZRFdWLWE2NWN3R09meE83UGpHT3EyMXozVmRNNEM3UXZjenNNdVJHVzVoaWh4Y1IwUmZjdWlHSFJzMmVrSFNzZ2NUTHYwZFNLdVRzOWZMLVVkX2NfazM1TFVWdA?oc=5\" target=\"_blank\"&gt;Colombia right winger De La Espriella nearly tied with leftist Cepeda in presidential vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-05-31T21:49:43.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 395,
-    "articlesLast24h": 165,
-    "afterDedup": 149,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 166,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
