@@ -101,10 +101,11 @@ const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     status: 'in-progress',
     uptakeEvents: [
       {
-        date: '2024-10-30',
+        date: '2023-12-18',
         note:
-          'Commission assessment of draft updated NECPs published, identifying ' +
-          'significant gaps versus the 2030 collective targets.',
+          'Commission EU-wide assessment of the draft updated NECPs published, ' +
+          'identifying significant gaps versus the 2030 collective targets. ' +
+          '(EU-wide assessment of the final NECPs followed on 28 May 2025.)',
       },
       {
         date: '2024-06-30',
@@ -257,10 +258,10 @@ const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     status: 'in-progress',
     uptakeEvents: [
       {
-        date: '2024-06-27',
+        date: '2023-06-05',
         note:
-          'Social Climate Fund Regulation (EU) 2023/955 in force; Member State ' +
-          'plans due 30 June 2025; fund operational from 2026.',
+          'Social Climate Fund Regulation (EU) 2023/955 entered into force; ' +
+          'Member State plans due 30 June 2025; fund operational from 2026.',
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955',
       },
