@@ -133,5 +133,5 @@ insert into public.pw_modules (id, project_id, kind, name, description, position
   ('meetings', 'industry-project', 'meetings',
      'Meetings',
      'Track every meeting for this report — notes, summaries and minutes, the AI-extracted three key takeaways, milestones and a project timeline.',
-     0, true)
+     4, true)
 on conflict (project_id, id) do nothing;

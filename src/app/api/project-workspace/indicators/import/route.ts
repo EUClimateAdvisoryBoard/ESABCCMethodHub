@@ -20,6 +20,7 @@ import {
   type IndicatorSheetColumn,
   type IndicatorSheetLayout,
 } from '@/lib/project-workspace/indicator-sheet';
+import { recordIndicatorRevision } from '@/lib/project-workspace/indicator-revisions';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -144,6 +145,19 @@ export async function POST(req: NextRequest) {
         { onConflict: 'indicator_id' }
       );
       if (sheetErr) item.warnings.push(`layout: ${sheetErr.message}`);
+    }
+
+    // Archive a restore point for any indicator the workbook actually changed.
+    if (item.metadataUpdated || item.pointsWritten > 0 || ind.layout) {
+      await recordIndicatorRevision(sb, {
+        indicatorId: ind.id,
+        projectId,
+        action: 'import',
+        summary: `Excel import — ${item.pointsWritten} point${
+          item.pointsWritten === 1 ? '' : 's'
+        }${item.metadataUpdated ? ', details updated' : ''}`,
+        user: u.user,
+      });
     }
 
     summary.push(item);

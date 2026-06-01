@@ -25,16 +25,31 @@ import {
 import {
   ESABCC_2024_RECOMMENDATIONS,
   ESABCC_2023_2040_TARGET_ADVICE,
+  ESABCC_INDUSTRY_RECOMMENDATIONS,
   type PastRecommendation,
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
+import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 
-/** Recommendations seeded into every workspace project, with their report label. */
+/** Recommendations seeded into the Policy Gap project, with their report label. */
 const SEED_RECOMMENDATIONS: PastRecommendation[] = [
   ...ESABCC_2024_RECOMMENDATIONS,
   ESABCC_2023_2040_TARGET_ADVICE,
 ];
-import type { WorkspaceProject, WorkspaceModule, WorkspaceModuleKind } from '@/data/project-workspace';
+
+/**
+ * Recommendations seeded into the Industry Project: the industry-tagged subset,
+ * re-keyed with an `industry-` id prefix because `pw_recommendations.id` is a
+ * global primary key — the same recommendation can be tracked in both projects.
+ */
+const INDUSTRY_SEED_RECOMMENDATIONS: PastRecommendation[] =
+  ESABCC_INDUSTRY_RECOMMENDATIONS.map(r => ({ ...r, id: `industry-${r.id}` }));
+import {
+  SEED_PROJECTS,
+  type WorkspaceProject,
+  type WorkspaceModule,
+  type WorkspaceModuleKind,
+} from '@/data/project-workspace';
 import { normalizeLayout, type IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 
 export type DBProject = WorkspaceProject;
@@ -98,177 +113,218 @@ export async function reseedFor(projectId: string): Promise<void> {
   await ensureSeedDataFor(projectId);
 }
 
+type Supa = NonNullable<ReturnType<typeof getServerSupabase>>;
+
+/**
+ * Idempotently insert a seed project's modules. Mirrors the migration so the
+ * lazy on-render path makes a project's tabs appear even before the SQL seed
+ * has run (the Industry Project's four modules ship this way).
+ */
+async function ensureSeedModules(sb: Supa, projectId: string) {
+  const project = SEED_PROJECTS.find(p => p.id === projectId);
+  if (!project || project.modules.length === 0) return;
+  const { data: existing } = await sb
+    .from('pw_modules')
+    .select('id')
+    .eq('project_id', projectId);
+  const have = new Set((existing ?? []).map(r => r.id));
+  const toInsert = project.modules
+    .map((m, position) => ({ m, position }))
+    .filter(({ m }) => !have.has(m.id));
+  if (toInsert.length === 0) return;
+  const { error } = await sb.from('pw_modules').insert(
+    toInsert.map(({ m, position }) => ({
+      id: m.id,
+      project_id: projectId,
+      kind: m.kind,
+      name: m.name,
+      description: m.description,
+      position,
+      is_seed: true,
+    }))
+  );
+  if (error) {
+    console.error('[pw seed] failed to insert modules', { projectId, error: error.message });
+  }
+}
+
+/** Insert any of `pool` that aren't already present in the project. */
+async function ensureSeedIndicators(sb: Supa, projectId: string, pool: Indicator[]) {
+  const { data: existing, error: readErr } = await sb
+    .from('pw_indicators')
+    .select('id')
+    .eq('project_id', projectId);
+  if (readErr) {
+    console.error('[pw seed] failed to read existing indicators', {
+      projectId,
+      error: readErr.message,
+    });
+  }
+  const have = new Set((existing ?? []).map(r => r.id));
+  const toInsert = pool.filter(i => !have.has(i.id));
+  if (toInsert.length === 0) return;
+  // UPSERT with onConflict makes the call resilient to PKs that survive the
+  // prefilter (e.g. a stale row from before `is_seed=true` was a convention).
+  const { error: insErr } = await sb.from('pw_indicators').upsert(
+    toInsert.map(i => ({
+      id: i.id,
+      project_id: projectId,
+      name: i.name,
+      category: i.category,
+      unit: i.unit,
+      description: i.description,
+      source: i.source,
+      source_url: i.sourceUrl,
+      direction: i.direction,
+      target_value: i.targetValue ?? null,
+      target_year: i.targetYear ?? null,
+      is_seed: true,
+    })),
+    { onConflict: 'id', ignoreDuplicates: true }
+  );
+  if (insErr) {
+    console.error('[pw seed] failed to insert indicators', {
+      projectId,
+      attempted: toInsert.length,
+      error: insErr.message,
+    });
+    return;
+  }
+  const points = toInsert.flatMap(i =>
+    i.data.map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
+  );
+  if (points.length > 0) {
+    const { error: ptsErr } = await sb
+      .from('pw_indicator_points')
+      .upsert(points, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
+    if (ptsErr) {
+      console.error('[pw seed] failed to insert indicator points', {
+        projectId,
+        attempted: points.length,
+        error: ptsErr.message,
+      });
+    }
+  }
+}
+
+/**
+ * Insert any of `recs` that aren't already present in the project, and backfill
+ * the source-report label on any pre-existing rows that predate the report
+ * columns. We read *every* existing row (any `is_seed` value), not just seed
+ * rows, so a stray row carrying a seed id with `is_seed=false` doesn't collide
+ * on the primary key and abort the whole insert batch — the
+ * `onConflict:id, ignoreDuplicates` upsert makes the call resilient.
+ */
+async function ensureSeedRecommendations(
+  sb: Supa,
+  projectId: string,
+  recs: PastRecommendation[]
+) {
+  const { data: existingRecs, error: recReadErr } = await sb
+    .from('pw_recommendations')
+    .select('id, report_label')
+    .eq('project_id', projectId);
+  if (recReadErr) {
+    console.error('[pw seed] failed to read existing recommendations', {
+      projectId,
+      error: recReadErr.message,
+    });
+  }
+  const haveRecs = new Set((existingRecs ?? []).map(r => r.id));
+  const recsToInsert = recs.filter(r => !haveRecs.has(r.id));
+  if (recsToInsert.length > 0) {
+    const { error } = await sb.from('pw_recommendations').upsert(
+      recsToInsert.map(r => ({
+        id: r.id,
+        project_id: projectId,
+        area: r.area,
+        title: r.title,
+        summary: r.summary,
+        status: r.status,
+        report_id: r.report?.id ?? '',
+        report_label: r.report?.label ?? '',
+        report_url: r.report?.url ?? '',
+        tags: r.tags ?? [],
+        is_seed: true,
+      })),
+      { onConflict: 'id', ignoreDuplicates: true }
+    );
+    if (error) {
+      console.error('[pw seed] failed to insert recommendations', {
+        projectId,
+        attempted: recsToInsert.length,
+        error: error.message,
+      });
+      return;
+    }
+    const events = recsToInsert.flatMap(r =>
+      r.uptakeEvents.map(e => ({
+        recommendation_id: r.id,
+        occurred_at: e.date,
+        note: e.note,
+        source_url: e.sourceUrl ?? '',
+      }))
+    );
+    if (events.length > 0) {
+      const { error: evErr } = await sb
+        .from('pw_recommendation_events')
+        .insert(events);
+      if (evErr) {
+        console.error('[pw seed] failed to insert recommendation events', {
+          projectId,
+          attempted: events.length,
+          error: evErr.message,
+        });
+      }
+    }
+  }
+
+  // Backfill the source-report label on any pre-existing rows that predate the
+  // report columns and were missed by migration 042's `is_seed=true` filter, so
+  // they no longer render under the "Unlabelled" group.
+  const unlabelledIds = new Set(
+    (existingRecs ?? []).filter(r => !r.report_label).map(r => r.id)
+  );
+  const toLabel = recs.filter(r => r.report && unlabelledIds.has(r.id));
+  for (const r of toLabel) {
+    const { error: lblErr } = await sb
+      .from('pw_recommendations')
+      .update({
+        report_id: r.report!.id,
+        report_label: r.report!.label,
+        report_url: r.report!.url,
+      })
+      .eq('id', r.id)
+      .eq('project_id', projectId);
+    if (lblErr) {
+      console.error('[pw seed] failed to backfill recommendation report label', {
+        projectId,
+        id: r.id,
+        error: lblErr.message,
+      });
+    }
+  }
+}
+
 async function ensureSeedDataFor(projectId: string) {
   const sb = getServerSupabase();
   if (!sb) return;
 
   if (projectId === 'policy-gap-2-0') {
-    // Seed indicators. We look up the rows that already exist (any
-    // `is_seed` value) so we don't try to re-insert them, then UPSERT the
-    // remainder — `onConflict` makes the call resilient to PKs that
-    // somehow survive the prefilter (e.g. a stale row from before
-    // `is_seed=true` was a convention).
-    const { data: existing, error: readErr } = await sb
-      .from('pw_indicators')
-      .select('id')
-      .eq('project_id', projectId);
-    if (readErr) {
-      console.error('[pw seed] failed to read existing indicators', {
-        projectId,
-        error: readErr.message,
-      });
-    }
-    const have = new Set((existing ?? []).map(r => r.id));
-    // ESABCC report indicators are the "existing" group; ECNO ones are
-    // the "additional" group. Both are seeded into the same table — the
-    // group is derived in the UI from the indicator id prefix.
-    const seedPool: Indicator[] = [
+    // ESABCC report indicators are the "existing" group; ECNO ones are the
+    // "additional" group. Both seed into the same table — the UI derives the
+    // group from the indicator id prefix.
+    await ensureSeedIndicators(sb, projectId, [
       ...ESABCC_REPORT_INDICATORS,
       ...ECNO_INDICATORS,
-    ];
-    const toInsert = seedPool.filter(i => !have.has(i.id));
-    if (toInsert.length > 0) {
-      const { error: insErr } = await sb.from('pw_indicators').upsert(
-        toInsert.map(i => ({
-          id: i.id,
-          project_id: projectId,
-          name: i.name,
-          category: i.category,
-          unit: i.unit,
-          description: i.description,
-          source: i.source,
-          source_url: i.sourceUrl,
-          direction: i.direction,
-          target_value: i.targetValue ?? null,
-          target_year: i.targetYear ?? null,
-          is_seed: true,
-        })),
-        { onConflict: 'id', ignoreDuplicates: true }
-      );
-      if (insErr) {
-        console.error('[pw seed] failed to insert indicators', {
-          projectId,
-          attempted: toInsert.length,
-          error: insErr.message,
-        });
-      } else {
-        const points = toInsert.flatMap(i =>
-          i.data.map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
-        );
-        if (points.length > 0) {
-          const { error: ptsErr } = await sb
-            .from('pw_indicator_points')
-            .upsert(points, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
-          if (ptsErr) {
-            console.error('[pw seed] failed to insert indicator points', {
-              projectId,
-              attempted: points.length,
-              error: ptsErr.message,
-            });
-          }
-        }
-      }
-    }
-
-    // Seed recommendations. Mirror the indicator pass above: read *every*
-    // existing row for this project (any `is_seed` value), not just the seed
-    // rows. Two earlier bugs are fixed here:
-    //   1. The old code only treated `is_seed=true` rows as "present" and then
-    //      did a plain `.insert()`. A stray row carrying a seed id with
-    //      `is_seed=false` (e.g. seeded before the `is_seed` convention, or the
-    //      2023 advice row) would be missing from `haveRecs`, land in the insert
-    //      batch, collide on the primary key and abort the *whole* batch — so
-    //      the remaining recommendations silently never got inserted. The
-    //      `onConflict:id, ignoreDuplicates` upsert makes the call resilient.
-    //   2. Pre-existing rows whose report label was never backfilled (migration
-    //      042 only touched `is_seed=true` rows) stayed "Unlabelled". We now
-    //      backfill the source-report label on any blank row whose id matches a
-    //      seed recommendation — every seed id maps to exactly one report.
-    const { data: existingRecs, error: recReadErr } = await sb
-      .from('pw_recommendations')
-      .select('id, report_label')
-      .eq('project_id', projectId);
-    if (recReadErr) {
-      console.error('[pw seed] failed to read existing recommendations', {
-        projectId,
-        error: recReadErr.message,
-      });
-    }
-    const haveRecs = new Set((existingRecs ?? []).map(r => r.id));
-    const recsToInsert = SEED_RECOMMENDATIONS.filter(r => !haveRecs.has(r.id));
-    if (recsToInsert.length > 0) {
-      const { error: recInsErr } = await sb.from('pw_recommendations').upsert(
-        recsToInsert.map(r => ({
-          id: r.id,
-          project_id: projectId,
-          area: r.area,
-          title: r.title,
-          summary: r.summary,
-          status: r.status,
-          report_id: r.report?.id ?? '',
-          report_label: r.report?.label ?? '',
-          report_url: r.report?.url ?? '',
-          is_seed: true,
-        })),
-        { onConflict: 'id', ignoreDuplicates: true }
-      );
-      if (recInsErr) {
-        console.error('[pw seed] failed to insert recommendations', {
-          projectId,
-          attempted: recsToInsert.length,
-          error: recInsErr.message,
-        });
-      } else {
-        const events = recsToInsert.flatMap(r =>
-          r.uptakeEvents.map(e => ({
-            recommendation_id: r.id,
-            occurred_at: e.date,
-            note: e.note,
-            source_url: e.sourceUrl ?? '',
-          }))
-        );
-        if (events.length > 0) {
-          const { error: evErr } = await sb
-            .from('pw_recommendation_events')
-            .insert(events);
-          if (evErr) {
-            console.error('[pw seed] failed to insert recommendation events', {
-              projectId,
-              attempted: events.length,
-              error: evErr.message,
-            });
-          }
-        }
-      }
-    }
-
-    // Backfill the source-report label on any pre-existing rows that predate
-    // the report columns and were missed by migration 042's `is_seed=true`
-    // filter, so they no longer render under the "Unlabelled" group.
-    const unlabelledIds = new Set(
-      (existingRecs ?? []).filter(r => !r.report_label).map(r => r.id)
-    );
-    const toLabel = SEED_RECOMMENDATIONS.filter(
-      r => r.report && unlabelledIds.has(r.id)
-    );
-    for (const r of toLabel) {
-      const { error: lblErr } = await sb
-        .from('pw_recommendations')
-        .update({
-          report_id: r.report!.id,
-          report_label: r.report!.label,
-          report_url: r.report!.url,
-        })
-        .eq('id', r.id)
-        .eq('project_id', projectId);
-      if (lblErr) {
-        console.error('[pw seed] failed to backfill recommendation report label', {
-          projectId,
-          id: r.id,
-          error: lblErr.message,
-        });
-      }
-    }
+    ]);
+    await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
+  } else if (projectId === 'industry-project') {
+    // The Industry Project copies the Policy Gap toolset, scoped to industry:
+    // industry indicators and the industry-tagged recommendations.
+    await ensureSeedModules(sb, projectId);
+    await ensureSeedIndicators(sb, projectId, INDUSTRY_INDICATORS);
+    await ensureSeedRecommendations(sb, projectId, INDUSTRY_SEED_RECOMMENDATIONS);
   }
 }
 
@@ -330,6 +386,9 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
 
 /** In-memory seed list used when Supabase is not configured (dev / preview). */
 function seedIndicators(projectId: string): DBIndicator[] {
+  if (projectId === 'industry-project') {
+    return INDUSTRY_INDICATORS.map(i => ({ ...i, group: 'additional' as const }));
+  }
   if (projectId !== 'policy-gap-2-0') return [];
   return [
     ...ESABCC_REPORT_INDICATORS.map(i => ({ ...i, group: 'esabcc' as const })),
@@ -448,6 +507,7 @@ export async function listRecommendations(projectId: string): Promise<DBRecommen
     report: r.report_label
       ? { id: r.report_id || '', label: r.report_label, url: r.report_url || '' }
       : undefined,
+    tags: Array.isArray(r.tags) && r.tags.length > 0 ? r.tags : undefined,
     uptakeEvents: (events ?? [])
       .filter(e => e.recommendation_id === r.id)
       .map(e => ({

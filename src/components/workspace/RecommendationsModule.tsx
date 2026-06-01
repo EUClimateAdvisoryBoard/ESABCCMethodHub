@@ -15,6 +15,7 @@
 import { useState } from 'react';
 import {
   RECOMMENDATION_REPORTS,
+  RECOMMENDATION_TAG_OPTIONS,
   type PastRecommendation,
   type RecommendationReport,
   type RecommendationStatus,
@@ -70,6 +71,18 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
     try {
       await pwApi.patchRecommendation(id, fields);
       setRecs(prev => prev.map(r => (r.id === id ? { ...r, ...fields } : r)));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function updateTags(id: string, tags: string[]) {
+    setBusy(true);
+    try {
+      await pwApi.patchRecommendation(id, { tags });
+      setRecs(prev =>
+        prev.map(r => (r.id === id ? { ...r, tags: tags.length > 0 ? tags : undefined } : r))
+      );
     } finally {
       setBusy(false);
     }
@@ -147,14 +160,23 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
     setBusy(true);
     try {
       const { report, ...rest } = fields;
+      // New recommendations added inside a sector-focused project inherit that
+      // sector's tag so the data stays coherent with how it was seeded.
+      const tags = projectId === 'industry-project' ? ['industry'] : undefined;
       const res = await pwApi.createRecommendation({
         projectId,
         ...rest,
         reportId: report?.id,
         reportLabel: report?.label,
         reportUrl: report?.url,
+        tags,
       });
-      const created: PastRecommendation = { ...fields, id: res.recommendation.id, uptakeEvents: [] };
+      const created: PastRecommendation = {
+        ...fields,
+        id: res.recommendation.id,
+        uptakeEvents: [],
+        tags,
+      };
       setRecs(prev => [...prev, created]);
       setOpenId(created.id);
       setAdding(false);
@@ -288,6 +310,14 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                       {r.report.label}
                     </span>
                   )}
+                  {r.tags?.map(t => (
+                    <span
+                      key={t}
+                      className="text-[10px] px-1.5 py-0.5 rounded bg-secondary/10 text-secondary border border-secondary/20"
+                    >
+                      #{t}
+                    </span>
+                  ))}
                 </div>
                 <p className="text-sm font-medium text-tertiary-dark mt-0.5">{r.title}</p>
               </div>
@@ -373,6 +403,12 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                     </a>
                   )}
                 </div>
+
+                <TagEditor
+                  tags={r.tags ?? []}
+                  busy={busy}
+                  onChange={tags => updateTags(r.id, tags)}
+                />
 
                 <div>
                   <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-2">
@@ -701,6 +737,99 @@ function EditableText({
         >
           Discard
         </button>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * Sector-tag editor. Tags decide which sector-focused project a recommendation
+ * surfaces in — e.g. the Industry Project tracks everything tagged `industry`.
+ * Suggested tags come from RECOMMENDATION_TAG_OPTIONS but any free-form tag is
+ * allowed.
+ */
+function TagEditor({
+  tags,
+  busy,
+  onChange,
+}: {
+  tags: string[];
+  busy: boolean;
+  onChange: (tags: string[]) => void;
+}) {
+  const [draft, setDraft] = useState('');
+
+  function add(tag: string) {
+    const t = tag.trim().toLowerCase();
+    if (!t || tags.includes(t)) return;
+    onChange([...tags, t]);
+    setDraft('');
+  }
+  function remove(tag: string) {
+    onChange(tags.filter(t => t !== tag));
+  }
+
+  const suggestions = RECOMMENDATION_TAG_OPTIONS.filter(o => !tags.includes(o));
+
+  return (
+    <div>
+      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1.5">
+        Sector tags
+      </p>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {tags.length === 0 && (
+          <span className="text-[11px] text-tertiary-light italic">No tags yet.</span>
+        )}
+        {tags.map(t => (
+          <span
+            key={t}
+            className="text-[10px] px-1.5 py-0.5 rounded bg-secondary/10 text-secondary border border-secondary/20 inline-flex items-center gap-1"
+          >
+            #{t}
+            <button
+              type="button"
+              disabled={busy}
+              onClick={() => remove(t)}
+              className="text-secondary/70 hover:text-secondary disabled:opacity-50"
+              aria-label={`Remove ${t} tag`}
+            >
+              ×
+            </button>
+          </span>
+        ))}
+      </div>
+      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+        <input
+          value={draft}
+          onChange={e => setDraft(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              add(draft);
+            }
+          }}
+          placeholder="Add a tag (e.g. industry)"
+          className="px-2 py-1 border border-grey-200 rounded text-xs min-w-[160px]"
+        />
+        <button
+          type="button"
+          disabled={busy || !draft.trim()}
+          onClick={() => add(draft)}
+          className="text-[11px] px-2 py-1 rounded border border-grey-200 text-tertiary hover:bg-grey-50 disabled:opacity-50"
+        >
+          Add tag
+        </button>
+        {suggestions.slice(0, 6).map(o => (
+          <button
+            key={o}
+            type="button"
+            disabled={busy}
+            onClick={() => add(o)}
+            className="text-[10px] px-1.5 py-0.5 rounded border border-dashed border-grey-300 text-tertiary-light hover:bg-grey-50 disabled:opacity-50"
+          >
+            + {o}
+          </button>
+        ))}
       </div>
     </div>
   );
