@@ -37,6 +37,7 @@ import { pwApi, type IndicatorImportSummary } from '@/lib/project-workspace/clie
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import IndicatorDataEditor from './IndicatorDataEditor';
 import DownloadMenu from './DownloadMenu';
+import CollaborationPanel from './CollaborationPanel';
 import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
 
 ChartJS.register(
@@ -537,6 +538,14 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 ))}
               </tbody>
             </table>
+          </div>
+
+          <div className="bg-white rounded-xl border border-grey-200 p-4">
+            <CollaborationPanel
+              projectId={projectId}
+              target={{ kind: 'indicator', id: selected.id }}
+              heading={`Review & discussion — ${selected.name}`}
+            />
           </div>
         </div>
       </div>

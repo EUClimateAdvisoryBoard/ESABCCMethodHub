@@ -20,6 +20,9 @@ import {
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
 import { pwApi } from '@/lib/project-workspace/client';
+import DownloadMenu from './DownloadMenu';
+import CollaborationPanel from './CollaborationPanel';
+import type { SheetSpec, DocBlock } from '@/lib/exports';
 
 /** Known reports offered in the report picker. */
 const REPORT_OPTIONS: RecommendationReport[] = Object.values(RECOMMENDATION_REPORTS);
@@ -212,15 +215,22 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
             events, or add and remove recommendations as new advice is published.
           </p>
         </div>
-        {!adding && (
-          <button
-            type="button"
-            onClick={() => setAdding(true)}
-            className="shrink-0 px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
-          >
-            + Add recommendation
-          </button>
-        )}
+        <div className="flex items-center gap-2 shrink-0">
+          <DownloadMenu
+            filename="esabcc-recommendations-tracker"
+            data={{ getSheets: () => buildRecsSheets(recs) }}
+            text={{ getBlocks: () => buildRecsDoc(reportGroups) }}
+          />
+          {!adding && (
+            <button
+              type="button"
+              onClick={() => setAdding(true)}
+              className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
+            >
+              + Add recommendation
+            </button>
+          )}
+        </div>
       </header>
 
       {adding && (
@@ -407,6 +417,15 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                   <AddEventForm onAdd={(d, n, u) => addEvent(r.id, d, n, u)} busy={busy} />
                 </div>
 
+                <div className="pt-2 border-t border-grey-100">
+                  <CollaborationPanel
+                    projectId={projectId}
+                    target={{ kind: 'recommendation', id: r.id }}
+                    heading="Review & discussion"
+                    compact
+                  />
+                </div>
+
                 <div className="pt-2 border-t border-grey-100 flex justify-end">
                   <button
                     type="button"
@@ -428,6 +447,65 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
       )}
     </div>
   );
+}
+
+/** Build Excel sheets for the recommendations tracker (recs + uptake events). */
+function buildRecsSheets(recs: PastRecommendation[]): SheetSpec[] {
+  const recSheet: SheetSpec = {
+    name: 'Recommendations',
+    title: 'ESABCC recommendations tracker',
+    headers: ['Area', 'Title', 'Summary', 'Status', 'Report', 'Uptake events'],
+    rows: recs.map(r => [
+      r.area,
+      r.title,
+      r.summary,
+      STATUS_LABELS[r.status],
+      r.report?.label ?? '',
+      r.uptakeEvents.length,
+    ]),
+  };
+  const eventRows = recs.flatMap(r =>
+    r.uptakeEvents.map(e => [r.title, e.date, e.note, e.sourceUrl ?? ''])
+  );
+  const sheets: SheetSpec[] = [recSheet];
+  if (eventRows.length > 0) {
+    sheets.push({
+      name: 'Uptake events',
+      headers: ['Recommendation', 'Date', 'Note', 'Source'],
+      rows: eventRows,
+    });
+  }
+  return sheets;
+}
+
+/** Build a Word document of the tracker, grouped by source report. */
+function buildRecsDoc(
+  groups: { id: string; label: string; url?: string; recs: PastRecommendation[] }[]
+): DocBlock[] {
+  const blocks: DocBlock[] = [
+    { type: 'heading', level: 1, text: 'ESABCC recommendations tracker' },
+  ];
+  for (const g of groups) {
+    blocks.push({ type: 'heading', level: 2, text: g.label });
+    for (const r of g.recs) {
+      blocks.push({ type: 'heading', level: 3, text: r.title });
+      blocks.push({
+        type: 'paragraph',
+        text: `${r.area ? r.area + '  ·  ' : ''}Status: ${STATUS_LABELS[r.status]}`,
+        italic: true,
+      });
+      if (r.summary) blocks.push({ type: 'paragraph', text: r.summary });
+      if (r.uptakeEvents.length > 0) {
+        blocks.push({
+          type: 'bullets',
+          items: r.uptakeEvents.map(
+            e => `${e.date} — ${e.note}${e.sourceUrl ? ` (${e.sourceUrl})` : ''}`
+          ),
+        });
+      }
+    }
+  }
+  return blocks;
 }
 
 function AddRecommendationForm({
