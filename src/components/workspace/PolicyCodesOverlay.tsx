@@ -860,7 +860,7 @@ function PolicyChipList({
               <span className="text-tertiary-light">{p.acronym}</span>
             )}
             <a
-              href={`/policy-navigator?policy=${encodeURIComponent(pid)}`}
+              href={`/policy-navigator/policy/?id=${encodeURIComponent(pid)}`}
               className="text-secondary hover:underline shrink-0"
             >
               View ↗
