@@ -28,7 +28,8 @@ import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
 import PolicyAnalysisModule from './PolicyAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
-import { pwApi } from '@/lib/project-workspace/client';
+import MeetingsModule from './MeetingsModule';
+import { pwApi, type Meeting, type Milestone } from '@/lib/project-workspace/client';
 
 interface Props {
   project: WorkspaceProject;
@@ -41,6 +42,8 @@ interface Props {
   policyOverrides: PolicyOverrideMap;
   policyCodes: PolicyCode[];
   customContent: Record<string, string>;
+  meetings: Meeting[];
+  milestones: Milestone[];
 }
 
 const MODULE_KIND_OPTIONS = [
@@ -48,6 +51,7 @@ const MODULE_KIND_OPTIONS = [
   { id: 'recommendations', label: 'Recommendations tracker' },
   { id: 'member-states', label: 'Member state space' },
   { id: 'policy-analysis', label: 'Policy analysis' },
+  { id: 'meetings', label: 'Meetings' },
   { id: 'custom', label: 'Custom (notes)' },
 ];
 
@@ -62,6 +66,8 @@ export default function ProjectShell({
   policyOverrides,
   policyCodes,
   customContent,
+  meetings,
+  milestones,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -121,6 +127,13 @@ export default function ProjectShell({
           initialAnnotations={policyAnnotations}
           initialOverrides={policyOverrides}
           initialPolicyCodes={policyCodes}
+        />
+      )}
+      {current?.kind === 'meetings' && (
+        <MeetingsModule
+          projectId={project.id}
+          initialMeetings={meetings}
+          initialMilestones={milestones}
         />
       )}
       {current?.kind === 'custom' && (
