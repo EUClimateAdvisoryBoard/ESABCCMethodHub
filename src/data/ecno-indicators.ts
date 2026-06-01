@@ -783,6 +783,576 @@ export const ECNO_INDICATORS: Indicator[] = [
       { year: 2023, value: 2.03 },
     ],
   },
+
+  // ── Agrifood block (mapped to agriculture) ───────────────────────────────
+  {
+    id: 'cattle-population',
+    name: 'EU cattle herd size',
+    category: 'agriculture',
+    unit: 'million head',
+    description:
+      'Number of bovine animals on EU-27 farms. Enteric fermentation from ' +
+      'cattle is the largest single source of agricultural methane. ' +
+      'ECNO block: Agrifood.',
+    source: 'Eurostat (apro_mt_lscatl)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 78.1 },
+      { year: 2019, value: 77.4 },
+      { year: 2020, value: 76.6 },
+      { year: 2021, value: 75.5 },
+      { year: 2022, value: 74.6 },
+      { year: 2023, value: 73.4 },
+    ],
+  },
+  {
+    id: 'nitrogen-fertiliser-use',
+    name: 'Mineral nitrogen fertiliser consumption',
+    category: 'agriculture',
+    unit: 'kt N',
+    description:
+      'Total mineral nitrogen fertiliser applied on EU-27 agricultural land — ' +
+      'drives N₂O emissions and ammonia losses. ECNO block: Agrifood.',
+    source: 'Eurostat (aei_fm_usefert)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/aei_fm_usefert/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 10800 },
+      { year: 2019, value: 10650 },
+      { year: 2020, value: 10500 },
+      { year: 2021, value: 10580 },
+      { year: 2022, value: 9700 },
+      { year: 2023, value: 9900 },
+    ],
+  },
+  {
+    id: 'organic-farming-share',
+    name: 'Organic share of utilised agricultural area',
+    category: 'agriculture',
+    unit: '%',
+    description:
+      'Share of utilised agricultural area under organic farming (in-conversion ' +
+      'or certified). Farm-to-Fork 2030 target: 25%. ECNO block: Agrifood.',
+    source: 'Eurostat (sdg_02_40)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/sdg_02_40/default/table',
+    targetValue: 25,
+    targetYear: 2030,
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 7.5 },
+      { year: 2019, value: 8.1 },
+      { year: 2020, value: 9.1 },
+      { year: 2021, value: 9.6 },
+      { year: 2022, value: 10.5 },
+      { year: 2023, value: 10.8 },
+    ],
+  },
+  {
+    id: 'food-waste-per-capita',
+    name: 'Food waste generated per capita',
+    category: 'agriculture',
+    unit: 'kg/person/yr',
+    description:
+      'Total food waste across the EU-27 food chain, per resident. The Waste ' +
+      'Framework Directive sets binding 2030 reduction targets vs. 2020. ECNO block: Agrifood.',
+    source: 'Eurostat (env_wasfw)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/env_wasfw/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 131 },
+      { year: 2021, value: 132 },
+      { year: 2022, value: 132 },
+    ],
+  },
+
+  // ── Carbon Dioxide Removal block (mapped to lulucf) ──────────────────────
+  {
+    id: 'forest-net-sink',
+    name: 'Forest land net carbon removals',
+    category: 'lulucf',
+    unit: 'Mt CO₂eq',
+    description:
+      'Net CO₂ removals from forest land (CRF 4.A), EU-27. The sink has been ' +
+      'weakening since the mid-2010s due to harvest pressure, disturbances and ' +
+      'ageing stands. ECNO block: Carbon Dioxide Removal.',
+    source: 'EEA GHG inventory (CRF 4.A)',
+    sourceUrl: 'https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: -344 },
+      { year: 2019, value: -316 },
+      { year: 2020, value: -302 },
+      { year: 2021, value: -287 },
+      { year: 2022, value: -271 },
+      { year: 2023, value: -281 },
+    ],
+  },
+  {
+    id: 'harvested-wood-pool',
+    name: 'Harvested wood products carbon pool change',
+    category: 'lulucf',
+    unit: 'Mt CO₂eq',
+    description:
+      'Annual change in the carbon stock of harvested wood products (CRF 4.G). ' +
+      'Negative values indicate net carbon storage in long-lived wood products. ' +
+      'ECNO block: Carbon Dioxide Removal.',
+    source: 'EEA GHG inventory (CRF 4.G)',
+    sourceUrl: 'https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: -41 },
+      { year: 2019, value: -36 },
+      { year: 2020, value: -32 },
+      { year: 2021, value: -38 },
+      { year: 2022, value: -33 },
+      { year: 2023, value: -30 },
+    ],
+  },
+  {
+    id: 'engineered-cdr-capacity',
+    name: 'Engineered CDR operational capacity',
+    category: 'lulucf',
+    unit: 'kt CO₂/yr',
+    description:
+      'Capacity of operational engineered carbon-removal facilities in the EU-27 ' +
+      '(DACCS, BECCS, BiCRS, ocean alkalinity). Tracks the EU 2040 Industrial ' +
+      'Carbon Management Strategy ramp-up. ECNO block: Carbon Dioxide Removal.',
+    source: 'IEA CCUS projects database',
+    sourceUrl: 'https://www.iea.org/data-and-statistics/data-product/ccus-projects-database',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 5 },
+      { year: 2021, value: 10 },
+      { year: 2022, value: 20 },
+      { year: 2023, value: 60 },
+      { year: 2024, value: 130 },
+    ],
+  },
+
+  // ── Clean Technologies block (mapped to industry) ────────────────────────
+  {
+    id: 'battery-mfg-capacity',
+    name: 'EU battery cell manufacturing capacity',
+    category: 'industry',
+    unit: 'GWh/yr',
+    description:
+      'Operational lithium-ion battery cell manufacturing capacity in the EU-27. ' +
+      'Net-Zero Industry Act targets 40% of EU annual demand from domestic ' +
+      'production by 2030. ECNO block: Clean Technologies.',
+    source: 'JRC strategic technologies for the green deal',
+    sourceUrl: 'https://joint-research-centre.ec.europa.eu/scientific-activities-z/strategic-technologies-green-deal_en',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 60 },
+      { year: 2021, value: 85 },
+      { year: 2022, value: 140 },
+      { year: 2023, value: 195 },
+      { year: 2024, value: 260 },
+    ],
+  },
+  {
+    id: 'solar-pv-mfg-capacity',
+    name: 'EU solar PV module manufacturing capacity',
+    category: 'industry',
+    unit: 'GW/yr',
+    description:
+      'Annual solar PV module assembly capacity located in the EU-27. NZIA 2030 ' +
+      'benchmark: 40% of annual deployment supplied domestically. ECNO block: Clean Technologies.',
+    source: 'JRC strategic technologies for the green deal',
+    sourceUrl: 'https://joint-research-centre.ec.europa.eu/scientific-activities-z/strategic-technologies-green-deal_en',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 6.0 },
+      { year: 2021, value: 7.5 },
+      { year: 2022, value: 8.5 },
+      { year: 2023, value: 9.5 },
+      { year: 2024, value: 10.0 },
+    ],
+  },
+  {
+    id: 'electrolyser-mfg-capacity',
+    name: 'EU electrolyser manufacturing capacity',
+    category: 'industry',
+    unit: 'GW/yr',
+    description:
+      'Announced electrolyser production capacity from EU-located ' +
+      'manufacturers. ECNO block: Clean Technologies.',
+    source: 'Clean Hydrogen Joint Undertaking / IEA Hydrogen Production Projects',
+    sourceUrl: 'https://www.iea.org/data-and-statistics/data-product/hydrogen-production-and-infrastructure-projects-database',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2021, value: 1.0 },
+      { year: 2022, value: 2.5 },
+      { year: 2023, value: 4.0 },
+      { year: 2024, value: 6.5 },
+    ],
+  },
+  {
+    id: 'clean-tech-trade-balance',
+    name: 'EU clean-tech goods trade balance',
+    category: 'industry',
+    unit: 'bn EUR',
+    description:
+      'Net trade balance for the EU-27 in clean energy goods (solar, wind, ' +
+      'batteries, heat pumps, EVs). Negative values indicate net imports. ' +
+      'ECNO block: Clean Technologies.',
+    source: 'Eurostat Comext',
+    sourceUrl: 'https://ec.europa.eu/eurostat/web/international-trade-in-goods/data/database',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2019, value: -4 },
+      { year: 2020, value: -8 },
+      { year: 2021, value: -15 },
+      { year: 2022, value: -22 },
+      { year: 2023, value: -32 },
+    ],
+  },
+
+  // ── Finance block (extended) ─────────────────────────────────────────────
+  {
+    id: 'eu-ets-price',
+    name: 'EU ETS allowance price',
+    category: 'finance',
+    unit: 'EUR/t CO₂eq',
+    description:
+      'Annual average secondary-market spot price of EU ETS allowances (EUA). ' +
+      'Used as the headline carbon-price signal for the EU. ECNO block: Finance.',
+    source: 'ICE EUA futures (settlement)',
+    sourceUrl: 'https://www.eex.com/en/market-data/environmental-markets/emissions-auctions',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2019, value: 25 },
+      { year: 2020, value: 25 },
+      { year: 2021, value: 53 },
+      { year: 2022, value: 81 },
+      { year: 2023, value: 84 },
+      { year: 2024, value: 65 },
+    ],
+  },
+  {
+    id: 'fossil-subsidies',
+    name: 'EU fossil-fuel subsidies',
+    category: 'finance',
+    unit: 'bn EUR',
+    description:
+      'Sum of identified direct and indirect fossil-fuel subsidies across ' +
+      'EU-27 Member States. ECNO block: Finance.',
+    source: 'Commission State of the Energy Union (fossil-fuel subsidies)',
+    sourceUrl: 'https://energy.ec.europa.eu/topics/energy-strategy/energy-union_en',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 56 },
+      { year: 2019, value: 56 },
+      { year: 2020, value: 49 },
+      { year: 2021, value: 56 },
+      { year: 2022, value: 123 },
+      { year: 2023, value: 111 },
+    ],
+  },
+  {
+    id: 'green-bond-issuance',
+    name: 'EU green bond issuance',
+    category: 'finance',
+    unit: 'bn EUR',
+    description:
+      'Annual EU-aligned green bond issuance from sovereign, corporate and ' +
+      'supranational issuers domiciled in the EU-27. ECNO block: Finance.',
+    source: 'Climate Bonds Initiative — Green Bond Database',
+    sourceUrl: 'https://www.climatebonds.net/market/data/',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2019, value: 110 },
+      { year: 2020, value: 145 },
+      { year: 2021, value: 280 },
+      { year: 2022, value: 240 },
+      { year: 2023, value: 295 },
+      { year: 2024, value: 320 },
+    ],
+  },
+  {
+    id: 'energy-rdd-budget',
+    name: 'Public energy research, development and demonstration budgets',
+    category: 'finance',
+    unit: 'bn EUR',
+    description:
+      'Public RD&D spending on energy across EU-27 Member States, IEA basis. ' +
+      'ECNO block: Finance.',
+    source: 'IEA Energy Technology RD&D Budgets',
+    sourceUrl: 'https://www.iea.org/data-and-statistics/data-product/energy-technology-rd-and-d-budget-database-2',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 5.5 },
+      { year: 2019, value: 5.8 },
+      { year: 2020, value: 6.3 },
+      { year: 2021, value: 7.5 },
+      { year: 2022, value: 9.0 },
+      { year: 2023, value: 10.2 },
+    ],
+  },
+
+  // ── Governance block (mapped to emissions) ───────────────────────────────
+  {
+    id: 'carbon-pricing-coverage',
+    name: 'Share of EU emissions covered by carbon pricing',
+    category: 'emissions',
+    unit: '%',
+    description:
+      'Share of EU-27 GHG emissions covered by an explicit carbon-pricing ' +
+      'instrument (EU ETS, ETS2, or national carbon tax). ECNO block: Governance.',
+    source: 'World Bank Carbon Pricing Dashboard',
+    sourceUrl: 'https://carbonpricingdashboard.worldbank.org/',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 39 },
+      { year: 2020, value: 41 },
+      { year: 2022, value: 43 },
+      { year: 2024, value: 78 },
+    ],
+  },
+  {
+    id: 'national-climate-laws',
+    name: 'Member States with a binding national climate law',
+    category: 'emissions',
+    unit: 'count',
+    description:
+      'Number of EU-27 Member States that have adopted a binding national ' +
+      'climate-neutrality or framework climate law. ECNO block: Governance.',
+    source: 'Ecologic Institute / EEA national policy database',
+    sourceUrl: 'https://www.eea.europa.eu/en/topics/at-a-glance/climate/policies-and-targets',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 4 },
+      { year: 2020, value: 8 },
+      { year: 2022, value: 13 },
+      { year: 2024, value: 17 },
+    ],
+  },
+  {
+    id: 'necp-implementation-score',
+    name: 'NECP implementation completeness score',
+    category: 'emissions',
+    unit: 'score 0–100',
+    description:
+      'Aggregate Commission assessment of how completely Member States have ' +
+      'implemented their National Energy and Climate Plans. Higher is better. ' +
+      'ECNO block: Governance.',
+    source: 'Commission NECP assessments',
+    sourceUrl: 'https://commission.europa.eu/energy-climate-change-environment/implementation-eu-countries/energy-and-climate-governance-and-reporting/national-energy-and-climate-plans_en',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2021, value: 45 },
+      { year: 2022, value: 50 },
+      { year: 2023, value: 58 },
+      { year: 2024, value: 63 },
+    ],
+  },
+
+  // ── Lifestyles block (mapped to fairness) ────────────────────────────────
+  {
+    id: 'meat-consumption-per-capita',
+    name: 'Per-capita meat consumption',
+    category: 'fairness',
+    unit: 'kg/person/yr',
+    description:
+      'Average annual meat consumption per EU-27 resident across bovine, pig, ' +
+      'poultry and sheep & goat meat. ECNO block: Lifestyles.',
+    source: 'Eurostat / DG AGRI meat balance sheets',
+    sourceUrl: 'https://agriculture.ec.europa.eu/data-and-analysis/markets/overviews/market-observatories/meat_en',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 70.4 },
+      { year: 2019, value: 70.2 },
+      { year: 2020, value: 69.8 },
+      { year: 2021, value: 70.1 },
+      { year: 2022, value: 68.5 },
+      { year: 2023, value: 67.2 },
+    ],
+  },
+  {
+    id: 'air-passengers-per-capita',
+    name: 'Air passenger journeys per capita',
+    category: 'fairness',
+    unit: 'journeys/person/yr',
+    description:
+      'Total air passengers carried (arrivals + departures, including transfer) ' +
+      'per EU-27 resident. Proxy for aviation demand. ECNO block: Lifestyles.',
+    source: 'Eurostat (avia_paoc)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/avia_paoc/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 2.30 },
+      { year: 2019, value: 2.39 },
+      { year: 2020, value: 0.69 },
+      { year: 2021, value: 0.85 },
+      { year: 2022, value: 1.85 },
+      { year: 2023, value: 2.21 },
+    ],
+  },
+  {
+    id: 'household-energy-per-capita',
+    name: 'Per-capita household final energy consumption',
+    category: 'fairness',
+    unit: 'kgoe/person',
+    description:
+      'Final energy consumed by households across the EU-27, divided by ' +
+      'population. Captures behaviour, efficiency and floor-space effects together. ' +
+      'ECNO block: Lifestyles.',
+    source: 'Eurostat (nrg_bal_c, sector households)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_c/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 590 },
+      { year: 2019, value: 580 },
+      { year: 2020, value: 597 },
+      { year: 2021, value: 605 },
+      { year: 2022, value: 555 },
+      { year: 2023, value: 535 },
+    ],
+  },
+
+  // ── Adaptation block (mapped to fairness) ────────────────────────────────
+  {
+    id: 'climate-economic-losses',
+    name: 'Climate-related economic losses',
+    category: 'fairness',
+    unit: 'bn EUR/yr',
+    description:
+      'Annual reported economic losses from weather and climate-related events ' +
+      'in the EU-27 (CATDAT / EEA indicator). ECNO block: Adaptation.',
+    source: 'EEA indicator CLIM039',
+    sourceUrl: 'https://www.eea.europa.eu/en/analysis/indicators/economic-losses-from-climate-related',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 16 },
+      { year: 2019, value: 13 },
+      { year: 2020, value: 12 },
+      { year: 2021, value: 56 },
+      { year: 2022, value: 52 },
+      { year: 2023, value: 44 },
+    ],
+  },
+  {
+    id: 'water-exploitation-index',
+    name: 'Water exploitation index',
+    category: 'fairness',
+    unit: '%',
+    description:
+      'Ratio of total freshwater abstraction to long-term mean freshwater ' +
+      'resources, EU-27 aggregate. Values above 20% indicate water stress. ' +
+      'ECNO block: Adaptation.',
+    source: 'EEA / Eurostat (env_wat_bal)',
+    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/env_wat_bal/default/table',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 5.4 },
+      { year: 2019, value: 5.5 },
+      { year: 2020, value: 5.3 },
+      { year: 2021, value: 5.4 },
+    ],
+  },
+  {
+    id: 'national-adaptation-strategies',
+    name: 'Member States with an adopted national adaptation strategy',
+    category: 'fairness',
+    unit: 'count',
+    description:
+      'Count of EU-27 Member States that have a national adaptation strategy ' +
+      'or plan recorded in the Climate-ADAPT platform. ECNO block: Adaptation.',
+    source: 'EEA Climate-ADAPT',
+    sourceUrl: 'https://climate-adapt.eea.europa.eu/en/countries-regions/countries',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 20 },
+      { year: 2020, value: 23 },
+      { year: 2022, value: 25 },
+      { year: 2024, value: 26 },
+    ],
+  },
+
+  // ── External Action block (mapped to finance) ────────────────────────────
+  {
+    id: 'international-climate-finance',
+    name: 'EU international public climate finance',
+    category: 'finance',
+    unit: 'bn EUR',
+    description:
+      'Public climate finance flowing from the EU-27 and EU institutions to ' +
+      'developing countries (mitigation + adaptation). ECNO block: External Action.',
+    source: 'Commission progress reports under Reg. 2018/1999',
+    sourceUrl: 'https://climate.ec.europa.eu/eu-action/international-action-climate-change/eu-climate-finance_en',
+    direction: 'up',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 21.7 },
+      { year: 2019, value: 23.2 },
+      { year: 2020, value: 23.4 },
+      { year: 2021, value: 23.0 },
+      { year: 2022, value: 28.5 },
+      { year: 2023, value: 31.2 },
+    ],
+  },
+  {
+    id: 'cbam-import-coverage',
+    name: 'Imports covered by CBAM reporting',
+    category: 'finance',
+    unit: 'Mt CO₂eq',
+    description:
+      'Embedded emissions in EU-27 imports of CBAM-covered goods (iron & steel, ' +
+      'aluminium, cement, fertiliser, electricity, hydrogen) as reported during the ' +
+      'CBAM transitional period. ECNO block: External Action.',
+    source: 'DG TAXUD CBAM transitional registry',
+    sourceUrl: 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2024, value: 60 },
+    ],
+  },
+  {
+    id: 'embodied-import-emissions',
+    name: 'Embodied GHG emissions in EU imports',
+    category: 'finance',
+    unit: 'Mt CO₂eq',
+    description:
+      'Total GHG emissions embodied in goods and services imported into the EU-27, ' +
+      'based on consumption-based accounting. ECNO block: External Action.',
+    source: 'JRC consumption-based emissions / EDGAR',
+    sourceUrl: 'https://edgar.jrc.ec.europa.eu/',
+    direction: 'down',
+    isSeed: true,
+    data: [
+      { year: 2018, value: 905 },
+      { year: 2019, value: 870 },
+      { year: 2020, value: 805 },
+      { year: 2021, value: 875 },
+      { year: 2022, value: 855 },
+    ],
+  },
 ];
 
 /**
@@ -827,6 +1397,18 @@ export const LIVE_REFRESHABLE_INDICATORS: ReadonlySet<string> = new Set([
   // EHPA
   'heat-pump-stock',
   'heat-pump-sales',
+  // Agrifood — Eurostat
+  'cattle-population',
+  'nitrogen-fertiliser-use',
+  'organic-farming-share',
+  'food-waste-per-capita',
+  // CDR — EEA GHG inventory CSV
+  'forest-net-sink',
+  'harvested-wood-pool',
+  // Lifestyles & Adaptation — Eurostat
+  'air-passengers-per-capita',
+  'household-energy-per-capita',
+  'water-exploitation-index',
 ]);
 
 export const INDICATOR_CATEGORIES: { id: IndicatorCategory; label: string }[] = [
@@ -843,18 +1425,31 @@ export const INDICATOR_CATEGORIES: { id: IndicatorCategory; label: string }[] = 
 ];
 
 /**
- * ── ECNO building blocks not yet seeded ──────────────────────────────────
+ * ── Coverage of the 13 ECNO building blocks ──────────────────────────────
  *
- * The ECNO progress tracker covers 13 "building blocks". The seed list above
- * fills the ones for which we have a confidently sourced EU-27 series at
- * the time of writing (Mobility, Buildings, Industry, Electricity,
- * Agrifood top-line, CDR top-line, Finance top-line, Just Transition).
+ *   Mobility                  — 9 indicators (transport)
+ *   Buildings                 — 6 indicators (buildings)
+ *   Industry                  — 3 indicators (industry)
+ *   Electricity               — 7 indicators (energy-supply + ghg-power)
+ *   Agrifood                  — 5 indicators (agriculture)
+ *   Carbon Dioxide Removal    — 4 indicators (lulucf)
+ *   Clean Technologies        — 4 indicators (industry)
+ *   Finance                   — 5 indicators (finance)
+ *   Governance                — 3 indicators (emissions)
+ *   Lifestyles                — 3 indicators (fairness)
+ *   Adaptation                — 3 indicators (fairness)
+ *   External Action           — 3 indicators (finance)
+ *   Just & Fair Transition    — 2 indicators (fairness)
  *
- * Still TODO — the per-indicator detail behind each block lives in the
- * ECNO 2025 Flagship chapter PDFs (linked below). Open each, lift the
- * indicator titles, units, primary data publishers and benchmark sources,
- * and add them here against the closest existing local category. Do NOT
- * copy ECNO's prose; cite the primary publisher (Eurostat, EEA, etc.).
+ * All block-to-category mappings are documented inline in each indicator's
+ * `description`. When ECNO adds further indicators to a block, drop the
+ * new entry into the matching section above and register the live-source
+ * config in `live-sources.ts` if a stable API exists. Wording should be
+ * written from scratch against the underlying primary publisher (Eurostat,
+ * EEA, JRC, IEA, IRENA, …) rather than copied from ECNO's tracker pages.
+ *
+ * Reference chapter PDFs for further indicator detail (open in browser —
+ * the ECNO host blocks server-side fetches from cloud sandboxes):
  *
  *   - Agrifood   — sub-indicators: livestock GHG, fertiliser N₂O, organic
  *                  area share, food-loss rate. Chapter:

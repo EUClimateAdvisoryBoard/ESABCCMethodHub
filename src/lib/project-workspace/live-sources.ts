@@ -193,6 +193,74 @@ const REGISTRY: Record<string, LiveSourceConfig> = {
     label: 'Eurostat nrg_bal_s · industry electricity share · EU27_2020',
   },
 
+  // Agrifood
+  'cattle-population': {
+    kind: 'eurostat',
+    dataset: 'apro_mt_lscatl',
+    filters: { geo: 'EU27_2020', animals: 'A2000', month: 'M12', unit: 'THS_HD' },
+    label: 'Eurostat apro_mt_lscatl · bovine December · EU27_2020',
+    transform: pts => pts.map(p => ({ year: p.year, value: Math.round(p.value / 100) / 10 })),
+  },
+  'nitrogen-fertiliser-use': {
+    kind: 'eurostat',
+    dataset: 'aei_fm_usefert',
+    filters: { geo: 'EU27_2020', nutrient: 'N', unit: 'T' },
+    label: 'Eurostat aei_fm_usefert · N · EU27_2020',
+    transform: pts => pts.map(p => ({ year: p.year, value: Math.round(p.value / 100) / 10 })),
+  },
+  'organic-farming-share': {
+    kind: 'eurostat',
+    dataset: 'sdg_02_40',
+    filters: { geo: 'EU27_2020', unit: 'PC_UAA' },
+    label: 'Eurostat sdg_02_40 · organic share UAA · EU27_2020',
+  },
+  'food-waste-per-capita': {
+    kind: 'eurostat',
+    dataset: 'env_wasfw',
+    filters: { geo: 'EU27_2020', waste: 'W091', unit: 'KG_HAB' },
+    label: 'Eurostat env_wasfw · food waste · EU27_2020',
+  },
+
+  // Lifestyles
+  'air-passengers-per-capita': {
+    // Eurostat doesn't publish per-capita directly — total passengers in PAS_CRD
+    // divided by EU-27 population. Derived in the transform below using a
+    // fixed-ish 449 M population baseline; refresh recomputes against the
+    // current series value, so multi-year drift is minor.
+    kind: 'eurostat',
+    dataset: 'avia_paoc',
+    filters: { geo: 'EU27_2020', tra_meas: 'PAS_CRD', unit: 'PAS' },
+    label: 'Eurostat avia_paoc · total passengers · EU27_2020',
+    transform: pts =>
+      pts.map(p => ({ year: p.year, value: Math.round((p.value / 449_000_000) * 100) / 100 })),
+  },
+  'household-energy-per-capita': {
+    kind: 'eurostat',
+    dataset: 'nrg_bal_c',
+    filters: { geo: 'EU27_2020', nrg_bal: 'FC_OTH_HH_E', siec: 'TOTAL', unit: 'KGOE_HAB' },
+    label: 'Eurostat nrg_bal_c · household final energy/cap · EU27_2020',
+  },
+
+  // Adaptation
+  'water-exploitation-index': {
+    kind: 'eurostat',
+    dataset: 'env_wat_bal',
+    filters: { geo: 'EU27_2020', unit: 'PC' },
+    label: 'Eurostat env_wat_bal · WEI · EU27_2020',
+  },
+
+  // CDR — EEA inventory branches
+  'forest-net-sink': {
+    kind: 'eea',
+    crfCodes: ['4.A'],
+    label: 'EEA GHG inventory · CRF 4.A (forest land) · EU27',
+  },
+  'harvested-wood-pool': {
+    kind: 'eea',
+    crfCodes: ['4.G'],
+    label: 'EEA GHG inventory · CRF 4.G (HWP) · EU27',
+  },
+
   // ── EEA GHG inventory ────────────────────────────────────────────────────
   'ghg-total-net': {
     kind: 'eea',
