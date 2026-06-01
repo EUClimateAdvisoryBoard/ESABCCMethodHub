@@ -43,10 +43,10 @@ const at: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 68.8, unit: 'Mt CO2e', year: 2023, source: 'UBA / UNFCCC' },
+    totalLatest: { value: 68.8, unit: 'Mt CO2e', year: 2023, source: 'UBA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=AT" },
     total1990: 79.0,
-    perCapita: { value: 7.6, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 7.6, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=AT" },
+    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=AT" },
     target2030: { value: -48, unit: '%', baseline: '2005', notes: 'ESR target; revised NECP indicative national contribution.' },
     target2050: { value: -100, unit: '%', year: 2040, notes: 'Climate neutrality by 2040 — government-programme commitment.' },
     sectors: [
@@ -74,7 +74,7 @@ const at: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 39.3, unit: '%', year: 2023, source: 'Statistik Austria / Eurostat' },
+    shareLatest: { value: 39.3, unit: '%', year: 2023, source: 'Statistik Austria / Eurostat', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=AT" },
     share2005: 22.6,
     share2020: 36.5,
     target2030: 57,
@@ -99,9 +99,9 @@ const at: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 33.6, unit: 'Mtoe', year: 2022 },
-    final:   { value: 27.9, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 90, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 33.6, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=AT" },
+    final:   { value: 27.9, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=AT" },
+    intensity: { value: 90, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=AT" },
     target2030: -25,
     narrative:
       'Final energy consumption has been broadly flat at ~28-29 Mtoe for over a ' +
@@ -112,11 +112,11 @@ const at: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 11.2, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 14.4, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 56.8, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 3700, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 95, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 11.2, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/austria-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 14.4, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/austria-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 56.8, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/austria-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 3700, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 95, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=AT" },
     narrative:
       'Air quality has improved markedly since 2005, particularly NO₂ in urban ' +
       'centres after diesel-fleet renewal. Inversion-driven PM2.5 spikes in ' +
@@ -127,10 +127,10 @@ const at: CountryProfile = {
     status: 'partial',
   },
   water: {
-    surfaceWaterGood: { value: 39, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 88, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 97, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 39, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/austria" },
+    groundwaterGood: { value: 88, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/austria" },
+    bathingWaterExcellent: { value: 97, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=AT" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=AT" },
     narrative:
       'Drinking and bathing water quality is excellent — Austria draws ~50% of ' +
       'drinking water from karst aquifers and is one of few EU countries supplying ' +
@@ -141,10 +141,10 @@ const at: CountryProfile = {
     status: 'partial',
   },
   biodiversity: {
-    natura2000Land: { value: 15.0, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 0, unit: '% EEZ', year: 2023, source: 'Landlocked' },
-    threatenedSpecies: { value: 540, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 18, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 15.0, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=AT" },
+    natura2000Marine: { value: 0, unit: '% EEZ', year: 2023, source: 'Landlocked', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=AT" },
+    threatenedSpecies: { value: 540, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=AT" },
+    habitatsFavourable: { value: 18, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/austria" },
     narrative:
       'Natura 2000 land coverage at ~15% is below the EU-27 average; the federal ' +
       'system (nature protection is a Länder competence) creates persistent ' +
@@ -154,9 +154,9 @@ const at: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 63, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 13.0, unit: '%', year: 2022 },
-    resourceProductivity: { value: 2.4, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 63, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=AT" },
+    circularMaterialUseRate: { value: 13.0, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=AT" },
+    resourceProductivity: { value: 2.4, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=AT" },
     narrative:
       'Austria has one of the EU\'s highest municipal recycling rates (~63%) and ' +
       'mature waste infrastructure — landfilling of untreated municipal waste has ' +
