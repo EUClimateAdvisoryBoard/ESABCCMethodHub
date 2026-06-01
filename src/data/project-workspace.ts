@@ -87,8 +87,12 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
     id: 'industry-project',
     name: 'Industry Project',
     shortDescription:
-      'Analytical workspace dedicated to industrial decarbonisation, with an ' +
-      'indicator database and a recommendations tracker.',
+      'Analytical workspace dedicated to industrial decarbonisation — taken in ' +
+      'the wider sense of industry (energy-intensive sectors, carbon pricing & ' +
+      'leakage, hydrogen and CCU/CCS, clean-tech and circularity). The same ' +
+      'four tools as Policy Gap 2.0, scoped to industry: industry indicators, ' +
+      'the industry-tagged recommendations, industry-tagged policies and a ' +
+      'member-state space framed around industrial transition.',
     isSeed: true,
     modules: [
       {
@@ -96,18 +100,41 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'indicators',
         name: 'Indicator database',
         description:
-          'Industrial-decarbonisation indicators. Table + chart view with ' +
-          'the Excel-like spreadsheet editor and formula engine; add ' +
-          'indicators and round-trip them through Excel.',
+          'Industry-focused indicators: industrial GHG emissions, energy ' +
+          'intensity and electrification, electrolyser capacity, circular ' +
+          'material use, the ETS carbon price and free allocation, and ' +
+          'clean-tech investment. Table + chart view with the Excel-like ' +
+          'spreadsheet editor; editable in the UI and round-trippable via Excel.',
       },
       {
         id: 'recommendations',
         kind: 'recommendations',
         name: 'Recommendations tracker',
         description:
-          'Track recommendations relevant to industrial decarbonisation, ' +
-          'with status, dated uptake events and the fact-check / verify ' +
-          'workflow.',
+          'ESABCC recommendations tagged "industry" — the Industry chapter ' +
+          '(I1–I3) plus the cross-chapter advice that drives industrial ' +
+          'decarbonisation (ETS/CBAM, hydrogen, CCU/CCS, clean-tech, ' +
+          'circularity). Track status, log dated uptake events, retag, and ' +
+          'use the fact-check / verify workflow.',
+      },
+      {
+        id: 'member-states',
+        kind: 'member-states',
+        name: 'Member state space',
+        description:
+          'EEA-style member-state view framed around industrial transition — ' +
+          'energy-intensive industry footprint, electrification and the ' +
+          'clean-tech build-out, with the shared per-country profiles.',
+      },
+      {
+        id: 'policy-analysis',
+        kind: 'policy-analysis',
+        name: 'Policy analysis',
+        description:
+          'Sectoral policy review pre-filtered to industry-tagged policies ' +
+          '(ETS, ETS2, CBAM, IED, Net-Zero Industry Act, CRMA, Ecodesign, ' +
+          'batteries, REACH, F-gas …). Mirrors the EU Policy Navigator; edits ' +
+          'made here propagate to the navigator.',
       },
     ],
   },

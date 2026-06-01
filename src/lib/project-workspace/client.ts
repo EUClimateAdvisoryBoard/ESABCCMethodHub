@@ -104,6 +104,7 @@ export const pwApi = {
     reportId?: string;
     reportLabel?: string;
     reportUrl?: string;
+    tags?: string[];
   }) {
     return send<{ recommendation: { id: string } }>(`${BASE}/recommendations`, 'POST', body);
   },

@@ -28,6 +28,7 @@ export async function POST(req: NextRequest) {
     reportId?: string;
     reportLabel?: string;
     reportUrl?: string;
+    tags?: string[];
   };
 
   if (!body.projectId || !body.title) {
@@ -56,6 +57,7 @@ export async function POST(req: NextRequest) {
       report_id: body.reportId ?? '',
       report_label: body.reportLabel ?? '',
       report_url: body.reportUrl ?? '',
+      tags: Array.isArray(body.tags) ? body.tags : [],
       is_seed: false,
       created_by: u.user.id,
     })

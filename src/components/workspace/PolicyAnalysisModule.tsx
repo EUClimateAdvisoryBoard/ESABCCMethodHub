@@ -71,6 +71,12 @@ interface Props {
   initialAnnotations: PolicyAnnotation[];
   initialOverrides: PolicyOverrideMap;
   initialPolicyCodes: PolicyCode[];
+  /**
+   * Sector the policy list is pre-filtered to on first render (e.g. the
+   * Industry Project opens on the `industry` sector). Users can still switch
+   * to any other sector or "All sectors".
+   */
+  defaultSector?: SectorId;
 }
 
 /** Effective text for a policy field, preferring a promoted edit override. */
@@ -170,12 +176,13 @@ export default function PolicyAnalysisModule({
   initialAnnotations,
   initialOverrides,
   initialPolicyCodes,
+  defaultSector,
 }: Props) {
   const { user, displayName } = useAuth();
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
   const [overrides, setOverrides] = useState<PolicyOverrideMap>(initialOverrides);
   const [policyCodes, setPolicyCodes] = useState<PolicyCode[]>(initialPolicyCodes);
-  const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
+  const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>(defaultSector ?? 'all');
   const [codeFilter, setCodeFilter] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'codes'>('list');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
