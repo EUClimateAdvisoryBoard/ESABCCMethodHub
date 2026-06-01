@@ -44,10 +44,10 @@ const nl: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 156, unit: 'Mt CO2e', year: 2023, source: 'RIVM / UNFCCC' },
+    totalLatest: { value: 156, unit: 'Mt CO2e', year: 2023, source: 'RIVM / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=NL" },
     total1990: 228,
-    perCapita: { value: 8.8, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.17, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 8.8, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=NL" },
+    perGdp: { value: 0.17, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=NL" },
     target2030: { value: -55, unit: '%', baseline: '1990', notes: 'Climate Act amendment (2023) — government aims for −60% to keep buffer.' },
     target2050: { value: -95, unit: '%', year: 2050, notes: 'Climate Act target range −95% to climate neutrality by 2050.' },
     sectors: [
@@ -77,7 +77,7 @@ const nl: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 17.5, unit: '%', year: 2023, source: 'CBS / Eurostat' },
+    shareLatest: { value: 17.5, unit: '%', year: 2023, source: 'CBS / Eurostat', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=NL" },
     share2005: 2.5,
     share2020: 14.0,
     target2030: 39,
@@ -104,9 +104,9 @@ const nl: CountryProfile = {
     status: 'partial',
   },
   efficiency: {
-    primary: { value: 60, unit: 'Mtoe', year: 2022 },
-    final:   { value: 45, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 92, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 60, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=NL" },
+    final:   { value: 45, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=NL" },
+    intensity: { value: 92, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=NL" },
     target2030: -22,
     narrative:
       'Final energy consumption fell ~8% between 2008 and 2022; the trajectory has ' +
@@ -118,11 +118,11 @@ const nl: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 9.4, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 17.8, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 41.5, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 8400, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 94, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 9.4, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/netherlands-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 17.8, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/netherlands-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 41.5, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/netherlands-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 8400, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 94, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=NL" },
     narrative:
       'Dense population and intensive livestock farming create a particular ammonia / ' +
       'secondary-PM problem: NL has among the highest NH₃ deposition in the EU. ' +
@@ -133,10 +133,10 @@ const nl: CountryProfile = {
     status: 'partial',
   },
   water: {
-    surfaceWaterGood: { value: 1, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 76, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 70, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 100, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 1, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/netherlands" },
+    groundwaterGood: { value: 76, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/netherlands" },
+    bathingWaterExcellent: { value: 70, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=NL" },
+    drinkingWaterCompliance: { value: 100, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=NL" },
     narrative:
       'Drinking-water quality is among the best in the EU, but surface-water ecological ' +
       'status is the worst in the EU — only ~1% of water bodies are "good", reflecting ' +
@@ -147,10 +147,10 @@ const nl: CountryProfile = {
     status: 'concern',
   },
   biodiversity: {
-    natura2000Land: { value: 13.6, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 26, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 1100, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 12, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 13.6, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=NL" },
+    natura2000Marine: { value: 26, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=NL" },
+    threatenedSpecies: { value: 1100, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=NL" },
+    habitatsFavourable: { value: 12, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/netherlands" },
     narrative:
       'Only ~12% of habitats are in favourable conservation status — the lowest in the ' +
       'EU — driven by nitrogen deposition exceeding critical loads on the majority of ' +
@@ -161,9 +161,9 @@ const nl: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 56, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 27.5, unit: '%', year: 2022 },
-    resourceProductivity: { value: 4.4, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 56, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=NL" },
+    circularMaterialUseRate: { value: 27.5, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=NL" },
+    resourceProductivity: { value: 4.4, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=NL" },
     narrative:
       'Circular material use rate is the highest in the EU (~28%) — driven by an open, ' +
       'logistically-integrated economy and a strong waste-trading hub. The 2016 ' +

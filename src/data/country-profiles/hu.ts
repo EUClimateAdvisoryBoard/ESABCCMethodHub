@@ -42,10 +42,10 @@ const hu: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 60, unit: 'Mt CO2e', year: 2022, source: 'UNFCCC / EEA' },
+    totalLatest: { value: 60, unit: 'Mt CO2e', year: 2022, source: 'UNFCCC / EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=HU" },
     total1990: 94,
-    perCapita: { value: 6.3, unit: 't CO2e/cap', year: 2022, source: 'EEA' },
-    perGdp: { value: 0.34, unit: 'kg CO2e/€', year: 2022, source: 'EEA' },
+    perCapita: { value: 6.3, unit: 't CO2e/cap', year: 2022, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=HU" },
+    perGdp: { value: 0.34, unit: 'kg CO2e/€', year: 2022, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=HU" },
     target2030: { value: -40, unit: '%', baseline: '1990', notes: 'Climate Protection Act (Act XLIV of 2020); aligns with ESR effort-sharing share.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Climate neutrality by 2050 enshrined in the Climate Protection Act.' },
     sectors: [
@@ -74,7 +74,7 @@ const hu: CountryProfile = {
     status: 'off-track',
   },
   renewables: {
-    shareLatest: { value: 15.2, unit: '%', year: 2022, source: 'Eurostat SHARES' },
+    shareLatest: { value: 15.2, unit: '%', year: 2022, source: 'Eurostat SHARES', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=HU" },
     share2005: 6.9,
     share2020: 13.9,
     target2030: 29,
@@ -99,9 +99,9 @@ const hu: CountryProfile = {
     status: 'off-track',
   },
   efficiency: {
-    primary: { value: 24.5, unit: 'Mtoe', year: 2022 },
-    final:   { value: 18.6, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 196, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 24.5, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=HU" },
+    final:   { value: 18.6, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=HU" },
+    intensity: { value: 196, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=HU" },
     target2030: -8,
     narrative:
       'Energy intensity remains roughly twice the EU-27 average reflecting the ' +
@@ -113,11 +113,11 @@ const hu: CountryProfile = {
     status: 'off-track',
   },
   air: {
-    pm25: { value: 13.2, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 17.5, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 65.3, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 11500, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 99, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 13.2, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/hungary-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 17.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/hungary-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 65.3, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/hungary-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 11500, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 99, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=HU" },
     narrative:
       'PM2.5 concentrations are well above the WHO guideline value across all urban ' +
       'agglomerations, with domestic solid-fuel heating (firewood and lignite) the ' +
@@ -128,10 +128,10 @@ const hu: CountryProfile = {
     status: 'concern',
   },
   water: {
-    surfaceWaterGood: { value: 9, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 73, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 75, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 98, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 9, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/hungary" },
+    groundwaterGood: { value: 73, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/hungary" },
+    bathingWaterExcellent: { value: 75, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=HU" },
+    drinkingWaterCompliance: { value: 98, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=HU" },
     narrative:
       'Hungary sits at the downstream end of nearly all its major river basins, making ' +
       'it highly dependent on transboundary water quality. Only ~9% of surface waters ' +
@@ -141,10 +141,10 @@ const hu: CountryProfile = {
     status: 'concern',
   },
   biodiversity: {
-    natura2000Land: { value: 21.4, unit: '% land', year: 2023 },
-    threatenedSpecies: { value: 410, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 16, unit: '%', year: 2019, source: 'Art. 17 reporting' },
-    protectedAreas: { value: 22.5, unit: '% land', year: 2023 },
+    natura2000Land: { value: 21.4, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=HU" },
+    threatenedSpecies: { value: 410, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=HU" },
+    habitatsFavourable: { value: 16, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/hungary" },
+    protectedAreas: { value: 22.5, unit: '% land', year: 2023, source: "EEA CDDA — designated areas", sourceUrl: "https://www.eea.europa.eu/en/datahub/datahubitem-view/c97c5544-1ed5-453c-94a9-7c0e065e18a3?country=HU" },
     narrative:
       'Natura 2000 land coverage at ~21% is in line with the EU-27 average and includes ' +
       'iconic puszta grasslands of Hortobágy and Kiskunság national parks. However, only ' +
@@ -154,9 +154,9 @@ const hu: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 32, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 6.8, unit: '%', year: 2022 },
-    resourceProductivity: { value: 1.1, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 32, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=HU" },
+    circularMaterialUseRate: { value: 6.8, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=HU" },
+    resourceProductivity: { value: 1.1, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=HU" },
     narrative:
       'Hungary lags the EU-27 average on every major circular-economy indicator. ' +
       'Municipal recycling at ~32% is well below the 2025 EU target (55%) and the ' +

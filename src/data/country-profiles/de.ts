@@ -42,10 +42,10 @@ const de: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 673, unit: 'Mt CO2e', year: 2023, source: 'UBA / UNFCCC' },
+    totalLatest: { value: 673, unit: 'Mt CO2e', year: 2023, source: 'UBA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=DE" },
     total1990: 1249,
-    perCapita: { value: 8.0, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 8.0, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=DE" },
+    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=DE" },
     target2030: { value: -65, unit: '%', baseline: '1990', notes: 'Federal Climate Action Law (KSG); 2030 target tightened in 2021 amendment.' },
     target2050: { value: -100, unit: '%', year: 2045, notes: 'Net-zero by 2045, five years ahead of the EU economy-wide target.' },
     sectors: [
@@ -75,7 +75,7 @@ const de: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 22.0, unit: '%', year: 2023, source: 'AGEE-Stat' },
+    shareLatest: { value: 22.0, unit: '%', year: 2023, source: 'AGEE-Stat', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=DE" },
     share2005: 6.8,
     share2020: 19.1,
     target2030: 41,
@@ -101,9 +101,9 @@ const de: CountryProfile = {
     status: 'partial',
   },
   efficiency: {
-    primary: { value: 290, unit: 'Mtoe', year: 2022 },
-    final:   { value: 197, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 95, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 290, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=DE" },
+    final:   { value: 197, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=DE" },
+    intensity: { value: 95, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=DE" },
     target2030: -26,
     narrative:
       'Final energy consumption fell ~17% between 2008 and 2022, but industrial ' +
@@ -114,11 +114,11 @@ const de: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 11.0, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 14.8, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 50.4, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 28900, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 96, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 11.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/germany-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 14.8, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/germany-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 50.4, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/germany-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 28900, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 96, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=DE" },
     narrative:
       'Air quality has improved markedly — PM2.5 fell from ~17 µg/m³ in 2005 to ~11 ' +
       'µg/m³ in 2022 — but almost all urban populations remain above the WHO ' +
@@ -128,10 +128,10 @@ const de: CountryProfile = {
     status: 'partial',
   },
   water: {
-    surfaceWaterGood: { value: 9, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 64, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 91, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 9, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/germany" },
+    groundwaterGood: { value: 64, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/germany" },
+    bathingWaterExcellent: { value: 91, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=DE" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=DE" },
     narrative:
       'Drinking and bathing-water quality is excellent, but only ~9% of surface ' +
       'water bodies reach "good ecological status" — diffuse agricultural nitrate ' +
@@ -141,10 +141,10 @@ const de: CountryProfile = {
     status: 'concern',
   },
   biodiversity: {
-    natura2000Land: { value: 15.5, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 45, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 1820, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 25, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 15.5, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=DE" },
+    natura2000Marine: { value: 45, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=DE" },
+    threatenedSpecies: { value: 1820, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=DE" },
+    habitatsFavourable: { value: 25, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/germany" },
     narrative:
       'Natura 2000 land coverage at ~15.5% is below the EU-27 average; marine ' +
       'coverage is very high (mostly North Sea / Baltic). Only ~25% of habitat ' +
@@ -155,9 +155,9 @@ const de: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 68, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 13.4, unit: '%', year: 2022 },
-    resourceProductivity: { value: 2.7, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 68, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=DE" },
+    circularMaterialUseRate: { value: 13.4, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=DE" },
+    resourceProductivity: { value: 2.7, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=DE" },
     narrative:
       'Municipal recycling at ~68% is the highest in the EU, but the circular ' +
       'material use rate (~13%) has been flat for a decade and resource ' +

@@ -46,10 +46,10 @@ const gr: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 71.0, unit: 'Mt CO2e', year: 2023, source: 'YPEN / UNFCCC' },
+    totalLatest: { value: 71.0, unit: 'Mt CO2e', year: 2023, source: 'YPEN / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=EL" },
     total1990: 105.6,
-    perCapita: { value: 6.8, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.36, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 6.8, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=EL" },
+    perGdp: { value: 0.36, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=EL" },
     target2030: { value: -55, unit: '%', baseline: '1990', notes: 'National Climate Law (4936/2022) — economy-wide target.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Net-zero by 2050; -80% interim 2040 milestone in statute.' },
     sectors: [
@@ -78,7 +78,7 @@ const gr: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 25.3, unit: '%', year: 2023, source: 'YPEN / Eurostat' },
+    shareLatest: { value: 25.3, unit: '%', year: 2023, source: 'YPEN / Eurostat', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=EL" },
     share2005: 7.0,
     share2020: 21.7,
     target2030: 44,
@@ -103,9 +103,9 @@ const gr: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 21.4, unit: 'Mtoe', year: 2022 },
-    final:   { value: 15.8, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 116, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 21.4, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=EL" },
+    final:   { value: 15.8, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=EL" },
+    intensity: { value: 116, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=EL" },
     target2030: -38,
     narrative:
       'Energy intensity remains above the EU-27 average, weighed down by an ageing ' +
@@ -116,11 +116,11 @@ const gr: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 12.5, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 22.8, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 65.1, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 7400, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 98, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 12.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/greece-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 22.8, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/greece-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 65.1, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/greece-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 7400, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 98, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=EL" },
     narrative:
       'Athens and Thessaloniki suffer the EU\'s highest ozone exposure and ' +
       'recurring PM2.5 exceedances from a mix of traffic, residential wood-burning ' +
@@ -130,10 +130,10 @@ const gr: CountryProfile = {
     status: 'concern',
   },
   water: {
-    surfaceWaterGood: { value: 56, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 80, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 97, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 56, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/greece" },
+    groundwaterGood: { value: 80, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/greece" },
+    bathingWaterExcellent: { value: 97, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=EL" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=EL" },
     narrative:
       'Bathing-water quality is among the EU\'s highest (97% excellent) — a key ' +
       'tourism asset. However, the Thessaly basin (Pinios) suffers from severe ' +
@@ -144,10 +144,10 @@ const gr: CountryProfile = {
     status: 'partial',
   },
   biodiversity: {
-    natura2000Land: { value: 27.5, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 22.0, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 1010, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 24, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 27.5, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=EL" },
+    natura2000Marine: { value: 22.0, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=EL" },
+    threatenedSpecies: { value: 1010, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=EL" },
+    habitatsFavourable: { value: 24, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/greece" },
     narrative:
       'Greece has very high Natura 2000 coverage (~27.5% land) reflecting ' +
       'exceptional Mediterranean biodiversity, but only ~24% of habitats achieve ' +
@@ -158,9 +158,9 @@ const gr: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 21, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 5.4, unit: '%', year: 2022 },
-    resourceProductivity: { value: 1.3, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 21, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=EL" },
+    circularMaterialUseRate: { value: 5.4, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=EL" },
+    resourceProductivity: { value: 1.3, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=EL" },
     narrative:
       'Greece has one of the EU\'s lowest municipal recycling rates (~21%) and ' +
       'high landfilling (~80%) — multiple Court of Justice infringement rulings ' +
