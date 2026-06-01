@@ -36,6 +36,7 @@ import {
 import { pwApi, type IndicatorImportSummary } from '@/lib/project-workspace/client';
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import IndicatorDataEditor from './IndicatorDataEditor';
+import IndicatorHistory from './IndicatorHistory';
 import DownloadMenu from './DownloadMenu';
 import CollaborationPanel from './CollaborationPanel';
 import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
@@ -88,6 +89,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
   const [editorOpen, setEditorOpen] = useState(false);
+  const [historyOpen, setHistoryOpen] = useState(false);
   const [adding, setAdding] = useState(false);
   const [busy, setBusy] = useState(false);
   const [importOpen, setImportOpen] = useState(false);
@@ -427,6 +429,15 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 >
                   Edit data / calc
                 </button>
+                <button
+                  type="button"
+                  onClick={() => setHistoryOpen(true)}
+                  className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
+                  disabled={busy}
+                  title="View the change log (who changed what, and when) and restore a previous version"
+                >
+                  History
+                </button>
                 <DownloadMenu
                   size="sm"
                   filename={`indicator-${selected.id}`}
@@ -567,6 +578,14 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
         <ImportExcelDialog
           projectId={projectId}
           onClose={() => setImportOpen(false)}
+        />
+      )}
+      {historyOpen && selected && (
+        <IndicatorHistory
+          indicatorId={selected.id}
+          indicatorName={selected.name}
+          onClose={() => setHistoryOpen(false)}
+          onRestored={() => router.refresh()}
         />
       )}
     </div>
