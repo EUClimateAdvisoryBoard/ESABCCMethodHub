@@ -79,13 +79,29 @@ export const pwApi = {
   patchRecommendation(id: string, body: Record<string, unknown>) {
     return send(`${BASE}/recommendations/${id}`, 'PATCH', body);
   },
+  createRecommendation(body: {
+    projectId: string;
+    id?: string;
+    area?: string;
+    title: string;
+    summary?: string;
+    status?: 'not-addressed' | 'in-progress' | 'partially' | 'addressed';
+  }) {
+    return send<{ recommendation: { id: string } }>(`${BASE}/recommendations`, 'POST', body);
+  },
+  deleteRecommendation(id: string) {
+    return send(`${BASE}/recommendations/${id}`, 'DELETE');
+  },
   addRecommendationEvent(body: {
     recommendationId: string;
     occurredAt: string;
     note: string;
     sourceUrl?: string;
   }) {
-    return send(`${BASE}/recommendation-events`, 'POST', body);
+    return send<{ event: { id: string } }>(`${BASE}/recommendation-events`, 'POST', body);
+  },
+  deleteRecommendationEvent(id: string) {
+    return send(`${BASE}/recommendation-events?id=${encodeURIComponent(id)}`, 'DELETE');
   },
   upsertMemberStateCell(body: {
     projectId: string;

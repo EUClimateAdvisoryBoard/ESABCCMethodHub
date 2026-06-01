@@ -246,6 +246,7 @@ export async function listRecommendations(projectId: string): Promise<DBRecommen
     uptakeEvents: (events ?? [])
       .filter(e => e.recommendation_id === r.id)
       .map(e => ({
+        id: e.id,
         date: e.occurred_at,
         note: e.note,
         sourceUrl: e.source_url || undefined,

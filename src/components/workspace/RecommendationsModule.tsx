@@ -2,9 +2,13 @@
  * Past recommendations tracker for the Project Workspace.
  * -------------------------------------------------------
  * Reads recommendations from the DB (initial set seeded from the 2024
- * ESABCC report). Users can change the implementation status and log
- * dated uptake events ("2040 target picked up by Regulation (EU)
- * 2026/667") with optional source URLs.
+ * ESABCC report). Users can:
+ *   • Add a new recommendation,
+ *   • Edit title, summary and area,
+ *   • Change the implementation status,
+ *   • Log dated uptake events, with optional source URL,
+ *   • Remove an individual event, and
+ *   • Delete a recommendation entirely.
  */
 'use client';
 
@@ -24,15 +28,18 @@ const STATUS_LABELS: Record<RecommendationStatus, string> = {
   'partially': 'Partially addressed',
   'addressed': 'Addressed',
 };
+const STATUSES: RecommendationStatus[] = ['not-addressed', 'in-progress', 'partially', 'addressed'];
 
 interface Props {
+  projectId: string;
   initial: PastRecommendation[];
 }
 
-export default function RecommendationsModule({ initial }: Props) {
+export default function RecommendationsModule({ projectId, initial }: Props) {
   const [recs, setRecs] = useState<PastRecommendation[]>(initial);
   const [openId, setOpenId] = useState<string | null>(initial[0]?.id ?? null);
   const [busy, setBusy] = useState(false);
+  const [adding, setAdding] = useState(false);
 
   async function updateStatus(id: string, status: RecommendationStatus) {
     setBusy(true);
@@ -46,7 +53,7 @@ export default function RecommendationsModule({ initial }: Props) {
 
   async function updateText(
     id: string,
-    fields: { title?: string; summary?: string }
+    fields: { title?: string; summary?: string; area?: string }
   ) {
     setBusy(true);
     try {
@@ -65,7 +72,7 @@ export default function RecommendationsModule({ initial }: Props) {
   ) {
     setBusy(true);
     try {
-      await pwApi.addRecommendationEvent({
+      const res = await pwApi.addRecommendationEvent({
         recommendationId: id,
         occurredAt,
         note,
@@ -78,7 +85,7 @@ export default function RecommendationsModule({ initial }: Props) {
                 ...r,
                 uptakeEvents: [
                   ...r.uptakeEvents,
-                  { date: occurredAt, note, sourceUrl },
+                  { id: res.event.id, date: occurredAt, note, sourceUrl },
                 ].sort((a, b) => a.date.localeCompare(b.date)),
               }
             : r
@@ -89,23 +96,89 @@ export default function RecommendationsModule({ initial }: Props) {
     }
   }
 
+  async function deleteEvent(recId: string, eventId: string) {
+    setBusy(true);
+    try {
+      await pwApi.deleteRecommendationEvent(eventId);
+      setRecs(prev =>
+        prev.map(r =>
+          r.id === recId
+            ? { ...r, uptakeEvents: r.uptakeEvents.filter(e => e.id !== eventId) }
+            : r
+        )
+      );
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function createRecommendation(fields: {
+    area: string;
+    title: string;
+    summary: string;
+    status: RecommendationStatus;
+  }) {
+    setBusy(true);
+    try {
+      const res = await pwApi.createRecommendation({ projectId, ...fields });
+      const created: PastRecommendation = { ...fields, id: res.recommendation.id, uptakeEvents: [] };
+      setRecs(prev => [...prev, created]);
+      setOpenId(created.id);
+      setAdding(false);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function removeRecommendation(id: string) {
+    if (!confirm('Remove this recommendation and all of its uptake events? This cannot be undone.')) return;
+    setBusy(true);
+    try {
+      await pwApi.deleteRecommendation(id);
+      setRecs(prev => prev.filter(r => r.id !== id));
+      if (openId === id) setOpenId(null);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   return (
     <div className="space-y-4">
-      <header>
-        <h2 className="text-lg font-bold text-tertiary-dark">Past recommendations tracker</h2>
-        <p className="text-sm text-tertiary mt-1 max-w-2xl">
-          Recommendations from the January 2024 ESABCC report{' '}
-          <a
-            href="https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities"
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-primary"
+      <header className="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <h2 className="text-lg font-bold text-tertiary-dark">Past recommendations tracker</h2>
+          <p className="text-sm text-tertiary mt-1 max-w-2xl">
+            Recommendations from the January 2024 ESABCC report{' '}
+            <a
+              href="https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:text-primary"
+            >
+              Towards EU climate neutrality
+            </a>
+            . Edit text, change status, log dated uptake events, or add and remove
+            recommendations as new advice is published.
+          </p>
+        </div>
+        {!adding && (
+          <button
+            type="button"
+            onClick={() => setAdding(true)}
+            className="shrink-0 px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
           >
-            Towards EU climate neutrality
-          </a>
-          . Update the status and log dated uptake events (e.g. enactment of the −90% 2040 target).
-        </p>
+            + Add recommendation
+          </button>
+        )}
       </header>
+
+      {adding && (
+        <AddRecommendationForm
+          busy={busy}
+          onCreate={createRecommendation}
+          onCancel={() => setAdding(false)}
+        />
+      )}
 
       <ul className="space-y-3">
         {recs.map(r => (
@@ -133,6 +206,13 @@ export default function RecommendationsModule({ initial }: Props) {
             {openId === r.id && (
               <div className="px-4 py-3 border-t border-grey-100 space-y-3">
                 <EditableText
+                  label="Area"
+                  value={r.area}
+                  busy={busy}
+                  onSave={v => updateText(r.id, { area: v })}
+                  multiline={false}
+                />
+                <EditableText
                   label="Title"
                   value={r.title}
                   busy={busy}
@@ -151,7 +231,7 @@ export default function RecommendationsModule({ initial }: Props) {
                   <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
                     Status
                   </span>
-                  {(['not-addressed', 'in-progress', 'partially', 'addressed'] as const).map(s => (
+                  {STATUSES.map(s => (
                     <button
                       key={s}
                       type="button"
@@ -179,29 +259,145 @@ export default function RecommendationsModule({ initial }: Props) {
                   )}
                   <ul className="space-y-1.5">
                     {r.uptakeEvents.map((e, idx) => (
-                      <li key={idx} className="text-xs text-tertiary-dark">
-                        <span className="font-mono text-tertiary">{e.date}</span>{' '}
-                        — {e.note}{' '}
-                        {e.sourceUrl && (
-                          <a
-                            href={e.sourceUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline text-primary"
+                      <li key={e.id ?? idx} className="text-xs text-tertiary-dark flex items-start gap-2">
+                        <span className="flex-1">
+                          <span className="font-mono text-tertiary">{e.date}</span>{' '}
+                          — {e.note}{' '}
+                          {e.sourceUrl && (
+                            <a
+                              href={e.sourceUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="underline text-primary"
+                            >
+                              source
+                            </a>
+                          )}
+                        </span>
+                        {e.id && (
+                          <button
+                            type="button"
+                            disabled={busy}
+                            onClick={() => deleteEvent(r.id, e.id!)}
+                            className="text-[10px] text-red-600 hover:underline disabled:opacity-50"
+                            aria-label="Remove event"
                           >
-                            source
-                          </a>
+                            remove
+                          </button>
                         )}
                       </li>
                     ))}
                   </ul>
                   <AddEventForm onAdd={(d, n, u) => addEvent(r.id, d, n, u)} busy={busy} />
                 </div>
+
+                <div className="pt-2 border-t border-grey-100 flex justify-end">
+                  <button
+                    type="button"
+                    disabled={busy}
+                    onClick={() => removeRecommendation(r.id)}
+                    className="text-[11px] px-3 py-1 rounded border border-red-200 text-red-700 hover:bg-red-50 disabled:opacity-50"
+                  >
+                    Remove recommendation
+                  </button>
+                </div>
               </div>
             )}
           </li>
         ))}
+        {recs.length === 0 && (
+          <li className="text-sm text-tertiary-light italic px-4 py-6 text-center bg-white border border-dashed border-grey-200 rounded-xl">
+            No recommendations yet. Use “Add recommendation” to create the first one.
+          </li>
+        )}
       </ul>
+    </div>
+  );
+}
+
+function AddRecommendationForm({
+  busy,
+  onCreate,
+  onCancel,
+}: {
+  busy: boolean;
+  onCreate: (fields: {
+    area: string;
+    title: string;
+    summary: string;
+    status: RecommendationStatus;
+  }) => void;
+  onCancel: () => void;
+}) {
+  const [area, setArea] = useState('');
+  const [title, setTitle] = useState('');
+  const [summary, setSummary] = useState('');
+  const [status, setStatus] = useState<RecommendationStatus>('not-addressed');
+
+  const canSave = title.trim() !== '';
+
+  return (
+    <div className="bg-white border border-grey-200 rounded-xl p-4 space-y-3">
+      <p className="text-xs uppercase tracking-wide text-tertiary-light font-semibold">
+        New recommendation
+      </p>
+      <label className="block text-[11px] text-tertiary">
+        <span className="block mb-1">Area / chapter</span>
+        <input
+          value={area}
+          onChange={e => setArea(e.target.value)}
+          placeholder="e.g. KR14 · Carbon pricing"
+          className="w-full px-2 py-1 border border-grey-200 rounded text-sm"
+        />
+      </label>
+      <label className="block text-[11px] text-tertiary">
+        <span className="block mb-1">Title <span className="text-red-600">*</span></span>
+        <input
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="What does the Board recommend?"
+          className="w-full px-2 py-1 border border-grey-200 rounded text-sm"
+        />
+      </label>
+      <label className="block text-[11px] text-tertiary">
+        <span className="block mb-1">Summary</span>
+        <textarea
+          value={summary}
+          onChange={e => setSummary(e.target.value)}
+          rows={3}
+          placeholder="Operative ask + main mapped instrument(s)…"
+          className="w-full px-2 py-1 border border-grey-200 rounded text-sm"
+        />
+      </label>
+      <label className="block text-[11px] text-tertiary">
+        <span className="block mb-1">Initial status</span>
+        <select
+          value={status}
+          onChange={e => setStatus(e.target.value as RecommendationStatus)}
+          className="px-2 py-1 border border-grey-200 rounded text-sm bg-white"
+        >
+          {STATUSES.map(s => (
+            <option key={s} value={s}>{STATUS_LABELS[s]}</option>
+          ))}
+        </select>
+      </label>
+      <div className="flex gap-2">
+        <button
+          type="button"
+          disabled={busy || !canSave}
+          onClick={() => onCreate({ area: area.trim(), title: title.trim(), summary: summary.trim(), status })}
+          className="px-3 py-1 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
+        >
+          Create
+        </button>
+        <button
+          type="button"
+          onClick={onCancel}
+          className="px-3 py-1 rounded-md border border-grey-200 text-xs text-tertiary hover:bg-grey-50"
+        >
+          Discard
+        </button>
+      </div>
     </div>
   );
 }
@@ -247,7 +443,7 @@ function EditableText({
               : 'text-sm font-medium text-tertiary-dark'
           }
         >
-          {value}
+          {value || <span className="italic text-tertiary-light">(empty)</span>}
         </p>
       </div>
     );
@@ -275,7 +471,7 @@ function EditableText({
       <div className="mt-1 flex gap-2">
         <button
           type="button"
-          disabled={busy || !draft.trim() || draft === value}
+          disabled={busy || draft === value}
           onClick={() => {
             onSave(draft.trim());
             setEditing(false);
@@ -289,7 +485,7 @@ function EditableText({
           onClick={() => setEditing(false)}
           className="px-3 py-1 rounded-md border border-grey-200 text-xs text-tertiary hover:bg-grey-50"
         >
-          Cancel
+          Discard
         </button>
       </div>
     </div>
