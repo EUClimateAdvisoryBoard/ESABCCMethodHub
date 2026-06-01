@@ -56,6 +56,7 @@ import { useConnectionOverrides, type EnrichedConnection } from '@/lib/useConnec
 import { useNetworks } from '@/lib/useNetworks';
 import { EmptyState } from '@/components/ui/StateView';
 import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
+import PolicyAnnotationsPanel from '@/components/workspace/PolicyAnnotationsBadge';
 
 const PolicyNetworkGraph = dynamic(() => import('@/components/PolicyNetworkGraph'), { ssr: false });
 const LegislativeCalendar = dynamic(() => import('@/components/LegislativeCalendar'), { ssr: false });
@@ -1288,6 +1289,7 @@ function SectorPolicyCard({
               </a>
             )}
           </div>
+          <PolicyAnnotationsPanel policyId={policy.id} />
         </div>
       )}
     </div>

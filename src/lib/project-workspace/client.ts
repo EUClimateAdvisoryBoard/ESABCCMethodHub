@@ -1,0 +1,114 @@
+/**
+ * Browser-side fetch helpers for the Project Workspace API.
+ * --------------------------------------------------------
+ * Every write goes through these helpers so authorisation tokens
+ * are handled in one place. Reads are server-rendered, so there is
+ * intentionally no client read helper for entities that the page
+ * already passes in as props.
+ */
+'use client';
+
+import { supabase } from '@/lib/supabase';
+
+async function authHeader(): Promise<Record<string, string>> {
+  if (!supabase) return {};
+  const { data } = await supabase.auth.getSession();
+  const token = data.session?.access_token;
+  return token ? { authorization: `Bearer ${token}` } : {};
+}
+
+async function send<T>(
+  url: string,
+  method: 'POST' | 'PATCH' | 'PUT' | 'DELETE',
+  body?: unknown
+): Promise<T> {
+  const res = await fetch(url, {
+    method,
+    headers: { 'content-type': 'application/json', ...(await authHeader()) },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  if (!res.ok) {
+    const txt = await res.text().catch(() => '');
+    throw new Error(`${res.status} ${txt || res.statusText}`);
+  }
+  return (await res.json()) as T;
+}
+
+const BASE = '/api/project-workspace';
+
+export const pwApi = {
+  createProject(body: { id?: string; name: string; description?: string }) {
+    return send<{ project: { id: string; name: string; description: string } }>(
+      `${BASE}/projects`,
+      'POST',
+      body
+    );
+  },
+  createModule(projectId: string, body: { id?: string; kind: string; name: string; description?: string }) {
+    return send(`${BASE}/projects/${projectId}/modules`, 'POST', body);
+  },
+  createIndicator(body: {
+    projectId: string;
+    name: string;
+    category: string;
+    unit: string;
+    description?: string;
+    source?: string;
+    sourceUrl?: string;
+    direction?: 'up' | 'down';
+    targetValue?: number;
+    targetYear?: number;
+  }) {
+    return send<{ indicator: { id: string } }>(`${BASE}/indicators`, 'POST', body);
+  },
+  patchIndicator(id: string, body: Record<string, unknown>) {
+    return send(`${BASE}/indicators/${id}`, 'PATCH', body);
+  },
+  deleteIndicator(id: string) {
+    return send(`${BASE}/indicators/${id}`, 'DELETE');
+  },
+  upsertPoint(body: { indicatorId: string; year: number; value: number }) {
+    return send(`${BASE}/indicator-points`, 'POST', body);
+  },
+  deletePoint(indicatorId: string, year: number) {
+    return send(
+      `${BASE}/indicator-points?indicatorId=${encodeURIComponent(indicatorId)}&year=${year}`,
+      'DELETE'
+    );
+  },
+  patchRecommendation(id: string, body: Record<string, unknown>) {
+    return send(`${BASE}/recommendations/${id}`, 'PATCH', body);
+  },
+  addRecommendationEvent(body: {
+    recommendationId: string;
+    occurredAt: string;
+    note: string;
+    sourceUrl?: string;
+  }) {
+    return send(`${BASE}/recommendation-events`, 'POST', body);
+  },
+  upsertMemberStateCell(body: {
+    projectId: string;
+    countryCode: string;
+    sectorId: string;
+    status?: string;
+    note?: string;
+  }) {
+    return send(`${BASE}/member-state-cells`, 'PUT', body);
+  },
+  createPolicyAnnotation(body: {
+    projectId: string;
+    policyId: string;
+    kind: 'approve' | 'disapprove' | 'fact-check' | 'edit' | 'comment';
+    field?: string;
+    value?: string;
+  }) {
+    return send<{ annotation: { id: string } }>(`${BASE}/policy-annotations`, 'POST', body);
+  },
+  patchPolicyAnnotation(id: string, body: Record<string, unknown>) {
+    return send(`${BASE}/policy-annotations/${id}`, 'PATCH', body);
+  },
+  deletePolicyAnnotation(id: string) {
+    return send(`${BASE}/policy-annotations/${id}`, 'DELETE');
+  },
+};
