@@ -92,11 +92,26 @@ export default function PolicyAnalysisModule({
   const { user, displayName } = useAuth();
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
   const [overrides, setOverrides] = useState<PolicyOverrideMap>(initialOverrides);
+  const [policyCodes, setPolicyCodes] = useState<PolicyCode[]>(initialPolicyCodes);
   const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
   const [codeFilter, setCodeFilter] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'list' | 'codes'>('list');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
   const [busy, setBusy] = useState(false);
+
+  /** Refetch the project-wide policy-code rows. Called after any code edit. */
+  const refreshPolicyCodes = async () => {
+    try {
+      const res = await fetch(
+        `/api/project-workspace/policy-codes?projectId=${encodeURIComponent(projectId)}`
+      );
+      if (!res.ok) return;
+      const { codes } = (await res.json()) as { codes: PolicyCode[] };
+      setPolicyCodes(codes);
+    } catch {
+      // network blip — leave the cached state in place.
+    }
+  };
 
   /** Latest promoted edit per (policy, field) — recomputed from annotations. */
   function rebuildOverrides(items: PolicyAnnotation[]): PolicyOverrideMap {
@@ -121,13 +136,13 @@ export default function PolicyAnalysisModule({
 
   const codesByPolicy = useMemo(() => {
     const m = new Map<string, PolicyCode[]>();
-    for (const c of initialPolicyCodes) {
+    for (const c of policyCodes) {
       const list = m.get(c.policyId) ?? [];
       list.push(c);
       m.set(c.policyId, list);
     }
     return m;
-  }, [initialPolicyCodes]);
+  }, [policyCodes]);
 
   const codeFilterDescendants = useMemo(
     () => (codeFilter ? getDescendantIds(codeFilter) : null),
@@ -271,7 +286,12 @@ export default function PolicyAnalysisModule({
       </div>
 
       {viewMode === 'codes' && (
-        <PolicyCodesOverlay policyCodes={initialPolicyCodes} />
+        <PolicyCodesOverlay
+          projectId={projectId}
+          policyCodes={policyCodes}
+          isSignedIn={!!user}
+          onCodesChanged={refreshPolicyCodes}
+        />
       )}
 
       {viewMode === 'list' && (
@@ -311,7 +331,7 @@ export default function PolicyAnalysisModule({
         </div>
         <CodeFilterBar
           projectId={projectId}
-          policyCodes={initialPolicyCodes}
+          policyCodes={policyCodes}
           selectedCodeId={codeFilter}
           onSelect={setCodeFilter}
         />
