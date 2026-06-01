@@ -41,10 +41,10 @@ const lt: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 19.5, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC' },
+    totalLatest: { value: 19.5, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=LT" },
     total1990: 42.3,
-    perCapita: { value: 6.8, unit: 't CO2e/cap', year: 2022, source: 'EEA' },
-    perGdp: { value: 0.30, unit: 'kg CO2e/€', year: 2022, source: 'EEA' },
+    perCapita: { value: 6.8, unit: 't CO2e/cap', year: 2022, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=LT" },
+    perGdp: { value: 0.30, unit: 'kg CO2e/€', year: 2022, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=LT" },
     target2030: { value: -21, unit: '%', baseline: '2005', notes: 'ESR 2030 target under Fit-for-55.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Climate neutrality by 2050 (Climate Change Management Law, 2021).' },
     sectors: [
@@ -73,7 +73,7 @@ const lt: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 28.2, unit: '%', year: 2022, source: 'Eurostat SHARES' },
+    shareLatest: { value: 28.2, unit: '%', year: 2022, source: 'Eurostat SHARES', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=LT" },
     share2005: 16.8,
     share2020: 26.8,
     target2030: 55,
@@ -98,9 +98,9 @@ const lt: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 6.9, unit: 'Mtoe', year: 2022 },
-    final:   { value: 5.8, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 122, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 6.9, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=LT" },
+    final:   { value: 5.8, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=LT" },
+    intensity: { value: 122, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=LT" },
     target2030: -22,
     narrative:
       'Energy intensity has fallen ~40% since 2005, but final-energy consumption is ' +
@@ -111,11 +111,11 @@ const lt: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 12.0, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 13.5, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 47.0, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 2600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 96, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 12.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/lithuania-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 13.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/lithuania-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 47.0, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/lithuania-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 2600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 96, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=LT" },
     narrative:
       'PM2.5 levels are driven by residential biomass combustion and a high-age diesel ' +
       'vehicle fleet, especially in Vilnius and Kaunas. The National Air Pollution ' +
@@ -125,10 +125,10 @@ const lt: CountryProfile = {
     status: 'partial',
   },
   water: {
-    surfaceWaterGood: { value: 50, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 92, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 76, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 50, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/lithuania" },
+    groundwaterGood: { value: 92, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/lithuania" },
+    bathingWaterExcellent: { value: 76, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=LT" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=LT" },
     narrative:
       'Surface waters are pressured by nutrient runoff from intensive agriculture in ' +
       'the central plain. Groundwater status is good. Curonian Lagoon eutrophication ' +
@@ -137,10 +137,10 @@ const lt: CountryProfile = {
     status: 'partial',
   },
   biodiversity: {
-    natura2000Land: { value: 12.8, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 17.0, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 660, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 34, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 12.8, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=LT" },
+    natura2000Marine: { value: 17.0, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=LT" },
+    threatenedSpecies: { value: 660, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=LT" },
+    habitatsFavourable: { value: 34, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/lithuania" },
     narrative:
       'Natura 2000 terrestrial coverage at ~13% is below the EU average. Forest ' +
       'biodiversity is the priority area, with old-growth stands declining. The ' +
@@ -149,9 +149,9 @@ const lt: CountryProfile = {
     status: 'partial',
   },
   circular: {
-    municipalRecycling: { value: 43, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 4.8, unit: '%', year: 2022 },
-    resourceProductivity: { value: 1.0, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 43, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=LT" },
+    circularMaterialUseRate: { value: 4.8, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=LT" },
+    resourceProductivity: { value: 1.0, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=LT" },
     narrative:
       'Recycling rates have improved from a low base but Lithuania is at risk of ' +
       'missing the 2025 (55%) target. The Deposit Return Scheme launched in 2016 is ' +
