@@ -340,6 +340,87 @@ export const pwApi = {
     const qs = new URLSearchParams({ projectId, kind: target.kind, id: target.id });
     return send(`${BASE}/verifications?${qs.toString()}`, 'DELETE');
   },
+
+  // ── Meetings ─────────────────────────────────────────────────────────────
+  async listMeetings(projectId: string): Promise<Meeting[]> {
+    const res = await fetch(`${BASE}/meetings?projectId=${encodeURIComponent(projectId)}`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { meetings?: Meeting[] };
+    return json.meetings ?? [];
+  },
+  createMeeting(body: {
+    projectId: string;
+    title: string;
+    type?: string;
+    occurredAt?: string;
+    location?: string;
+    attendees?: string;
+  }) {
+    return send<{ meeting: Meeting }>(`${BASE}/meetings`, 'POST', body);
+  },
+  patchMeeting(id: string, body: Record<string, unknown>) {
+    return send<{ meeting: Meeting }>(`${BASE}/meetings/${id}`, 'PATCH', body);
+  },
+  deleteMeeting(id: string) {
+    return send(`${BASE}/meetings/${id}`, 'DELETE');
+  },
+  /** Run the LLM to extract the three key points and/or write a summary. */
+  analyzeMeeting(id: string, mode: 'key-points' | 'summary' | 'both' = 'key-points') {
+    return send<{ ok: boolean; keyPoints?: string[]; summary?: string; reason?: string }>(
+      `${BASE}/meetings/${id}/analyze`,
+      'POST',
+      { mode }
+    );
+  },
+  /** Upload a recorded blob and get back its transcript. */
+  async transcribeMeeting(
+    id: string,
+    file: File
+  ): Promise<{ ok: boolean; text?: string; reason?: string; error?: string }> {
+    const fd = new FormData();
+    fd.append('file', file, file.name || 'recording.webm');
+    const res = await fetch(`${BASE}/meetings/${id}/transcribe`, {
+      method: 'POST',
+      headers: { ...(await authHeader()) },
+      body: fd,
+    });
+    return (await res.json().catch(() => ({ ok: false, reason: 'network-error' }))) as {
+      ok: boolean;
+      text?: string;
+      reason?: string;
+      error?: string;
+    };
+  },
+
+  // ── Milestones ───────────────────────────────────────────────────────────
+  async listMilestones(projectId: string): Promise<Milestone[]> {
+    const res = await fetch(`${BASE}/milestones?projectId=${encodeURIComponent(projectId)}`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { milestones?: Milestone[] };
+    return json.milestones ?? [];
+  },
+  createMilestone(body: {
+    projectId: string;
+    meetingId?: string | null;
+    title: string;
+    type?: string;
+    targetDate?: string;
+    status?: string;
+    description?: string;
+    sortOrder?: number;
+  }) {
+    return send<{ milestone: Milestone }>(`${BASE}/milestones`, 'POST', body);
+  },
+  patchMilestone(id: string, body: Record<string, unknown>) {
+    return send<{ milestone: Milestone }>(`${BASE}/milestones/${id}`, 'PATCH', body);
+  },
+  deleteMilestone(id: string) {
+    return send(`${BASE}/milestones/${id}`, 'DELETE');
+  },
 };
 
 /**
@@ -411,5 +492,40 @@ export interface WorkspaceVerification {
   status: 'verified' | 'disputed';
   note: string;
   userName: string;
+  updatedAt: string;
+}
+
+/** Mirror of the server `Meeting` shape (see meetings.ts). */
+export interface Meeting {
+  id: string;
+  projectId: string;
+  title: string;
+  type: string;
+  occurredAt: string;
+  location: string;
+  attendees: string;
+  notes: string;
+  summary: string;
+  minutes: string;
+  keyPoints: string[];
+  audioUrl: string;
+  createdBy: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** Mirror of the server `Milestone` shape (see meetings.ts). */
+export interface Milestone {
+  id: string;
+  projectId: string;
+  meetingId: string | null;
+  title: string;
+  type: string;
+  targetDate: string;
+  status: string;
+  description: string;
+  sortOrder: number;
+  createdBy: string | null;
+  createdAt: string;
   updatedAt: string;
 }

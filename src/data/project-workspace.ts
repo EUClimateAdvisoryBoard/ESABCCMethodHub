@@ -19,6 +19,7 @@ export type WorkspaceModuleKind =
   | 'recommendations'
   | 'member-states'
   | 'policy-analysis'
+  | 'meetings'
   | 'custom';
 
 export interface WorkspaceModule {
@@ -81,6 +82,16 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Sectoral policy review. Mirrors the Sectoral overview in the ' +
           'EU Policy Navigator; edits made here propagate to the navigator.',
       },
+      {
+        id: 'meetings',
+        kind: 'meetings',
+        name: 'Meetings',
+        description:
+          'Track every meeting for this report — notes, summaries and ' +
+          'minutes, the AI-extracted three key takeaways, milestones and a ' +
+          'project timeline. Record on your phone to transcribe straight ' +
+          'into notes; discuss collaboratively with @mentions.',
+      },
     ],
   },
   {
@@ -135,6 +146,16 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           '(ETS, ETS2, CBAM, IED, Net-Zero Industry Act, CRMA, Ecodesign, ' +
           'batteries, REACH, F-gas …). Mirrors the EU Policy Navigator; edits ' +
           'made here propagate to the navigator.',
+      },
+      {
+        id: 'meetings',
+        kind: 'meetings',
+        name: 'Meetings',
+        description:
+          'Track every meeting for this report — notes, summaries and ' +
+          'minutes, the AI-extracted three key takeaways, milestones and a ' +
+          'project timeline. Record on your phone to transcribe straight ' +
+          'into notes; discuss collaboratively with @mentions.',
       },
     ],
   },

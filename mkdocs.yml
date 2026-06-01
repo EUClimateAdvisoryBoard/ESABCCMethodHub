@@ -191,6 +191,7 @@ nav:
       - Deployment on EEA: infrastructure/deployment.md
       - AI layer — three paths: infrastructure/ai-layer.md
       - "Copilot — technical deep-dive": infrastructure/copilot.md
+      - Azure Whisper — meeting transcription: infrastructure/azure-whisper-transcription.md
       - Tech stack: infrastructure/tech-stack.md
       - Data & GDPR: infrastructure/data-gdpr.md
   - Vision:

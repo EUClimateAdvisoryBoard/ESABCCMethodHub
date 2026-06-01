@@ -25,6 +25,7 @@ import {
   getPolicyOverrides,
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
+import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
 import ProjectShell from '@/components/workspace/ProjectShell';
 
 export const dynamic = 'force-dynamic';
@@ -47,6 +48,8 @@ export default async function ProjectPage({
     policyAnnotations,
     policyOverrides,
     policyCodes,
+    meetings,
+    milestones,
   ] = await Promise.all([
     listIndicators(params.projectId),
     listIndicatorSheets(params.projectId),
@@ -55,6 +58,8 @@ export default async function ProjectPage({
     listPolicyAnnotations(params.projectId),
     getPolicyOverrides(),
     listPolicyCodes(params.projectId),
+    listMeetings(params.projectId),
+    listMilestones(params.projectId),
   ]);
 
   const activeModule =
@@ -102,6 +107,8 @@ export default async function ProjectPage({
           policyOverrides={policyOverrides}
           policyCodes={policyCodes}
           customContent={customContent}
+          meetings={meetings}
+          milestones={milestones}
         />
       </main>
       <SiteFooter />
