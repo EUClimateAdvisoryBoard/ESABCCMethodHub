@@ -53,10 +53,11 @@ export default async function MemberStatesLandingPage() {
         <section className="mb-8">
           <h2 className="text-base font-bold text-tertiary-dark mb-2">Geospatial overview</h2>
           <p className="text-[12px] text-tertiary mb-3">
-            Markers are coloured by the headline GHG trajectory status; marker size scales with
-            population. Click a marker for the country summary and an "Open profile" jump.
+            Each EU member state is filled by its assessed status for the chosen indicator.
+            Switch indicators using the pills at the top of the map; hover for a quick
+            status read-out, click for key figures and a jump to the full profile.
           </p>
-          <MemberStatesMap profiles={profiles} colorBy="ghg" />
+          <MemberStatesMap profiles={profiles} />
         </section>
 
         <section id="heatmap" className="mb-8 scroll-mt-24">
