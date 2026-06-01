@@ -41,10 +41,10 @@ const se: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 41, unit: 'Mt CO2e', year: 2023, source: 'Naturvårdsverket / UNFCCC' },
+    totalLatest: { value: 41, unit: 'Mt CO2e', year: 2023, source: 'Naturvårdsverket / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=SE" },
     total1990: 71,
-    perCapita: { value: 3.9, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.07, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 3.9, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=SE" },
+    perGdp: { value: 0.07, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=SE" },
     target2030: { value: -63, unit: '%', baseline: '1990 (excl. LULUCF)', notes: 'Climate Policy Framework — domestic milestone; transport sub-target −70% vs 2010.' },
     target2050: { value: -85, unit: '%', year: 2045, notes: 'Net-zero by 2045 incl. LULUCF and flexibility mechanisms; gross emissions cut ≥85%.' },
     sectors: [
@@ -73,7 +73,7 @@ const se: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 66.0, unit: '%', year: 2023, source: 'Eurostat' },
+    shareLatest: { value: 66.0, unit: '%', year: 2023, source: 'Eurostat', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=SE" },
     share2005: 40.5,
     share2020: 60.1,
     target2030: 65,
@@ -99,9 +99,9 @@ const se: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 47, unit: 'Mtoe', year: 2022 },
-    final:   { value: 32, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 99, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 47, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=SE" },
+    final:   { value: 32, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=SE" },
+    intensity: { value: 99, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=SE" },
     target2030: -8,
     narrative:
       'Energy intensity is a third lower than the EU-27 average. Final energy ' +
@@ -112,11 +112,11 @@ const se: CountryProfile = {
     status: 'on-track',
   },
   air: {
-    pm25: { value: 5.8, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 8.5, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 31.0, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 2900, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 51, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 5.8, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/sweden-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 8.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/sweden-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 31.0, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/sweden-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 2900, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 51, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=SE" },
     narrative:
       'Air quality is among the best in the EU thanks to dispersed population, ' +
       'fossil-free district heating and stringent vehicle standards. Wood-stove ' +
@@ -126,10 +126,10 @@ const se: CountryProfile = {
     status: 'on-track',
   },
   water: {
-    surfaceWaterGood: { value: 23, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 98, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 77, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 23, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/sweden" },
+    groundwaterGood: { value: 98, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/sweden" },
+    bathingWaterExcellent: { value: 77, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=SE" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=SE" },
     narrative:
       'Groundwater status is essentially universally good; surface-water ecological ' +
       'status (~23% "good") is constrained by atmospheric mercury deposition (legacy ' +
@@ -139,10 +139,10 @@ const se: CountryProfile = {
     status: 'partial',
   },
   biodiversity: {
-    natura2000Land: { value: 13.4, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 14, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 2250, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 20, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 13.4, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=SE" },
+    natura2000Marine: { value: 14, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=SE" },
+    threatenedSpecies: { value: 2250, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=SE" },
+    habitatsFavourable: { value: 20, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/sweden" },
     narrative:
       'Natura 2000 land share is below the EU-27 mean and habitat favourable-status ' +
       'is only ~20%, driven by intensive forestry. The dominant pressure is the ' +
@@ -153,9 +153,9 @@ const se: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 41, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 7.0, unit: '%', year: 2022 },
-    resourceProductivity: { value: 2.6, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 41, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=SE" },
+    circularMaterialUseRate: { value: 7.0, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=SE" },
+    resourceProductivity: { value: 2.6, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=SE" },
     narrative:
       'Municipal recycling at ~41% lags the EU-27 average — Sweden incinerates ~50% of ' +
       'municipal waste with energy recovery for district heat (long-time policy choice ' +
