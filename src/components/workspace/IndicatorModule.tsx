@@ -94,7 +94,10 @@ export default function IndicatorModule({ projectId, initial }: Props) {
     }
   }
 
-  async function handleAddIndicator(input: Omit<Indicator, 'id' | 'data' | 'isSeed'>) {
+  async function handleAddIndicator(
+    input: Omit<Indicator, 'id' | 'data' | 'isSeed'>,
+    points: IndicatorDataPoint[] = []
+  ) {
     setBusy(true);
     try {
       const { indicator } = await pwApi.createIndicator({
@@ -109,7 +112,17 @@ export default function IndicatorModule({ projectId, initial }: Props) {
         targetValue: input.targetValue,
         targetYear: input.targetYear,
       });
-      const next: Indicator = { ...input, id: indicator.id, data: [], isSeed: false };
+      const saved: IndicatorDataPoint[] = [];
+      for (const p of points) {
+        await pwApi.upsertPoint({ indicatorId: indicator.id, year: p.year, value: p.value });
+        saved.push(p);
+      }
+      const next: Indicator = {
+        ...input,
+        id: indicator.id,
+        data: saved.sort((a, b) => a.year - b.year),
+        isSeed: false,
+      };
       setIndicators(prev => [...prev, next]);
       setSelectedId(indicator.id);
       setAdding(false);
@@ -422,7 +435,7 @@ function AddIndicatorDialog({
   onSave,
 }: {
   onClose: () => void;
-  onSave: (i: Omit<Indicator, 'id' | 'data' | 'isSeed'>) => void;
+  onSave: (i: Omit<Indicator, 'id' | 'data' | 'isSeed'>, points: IndicatorDataPoint[]) => void;
 }) {
   const [name, setName] = useState('');
   const [unit, setUnit] = useState('');
@@ -431,6 +444,31 @@ function AddIndicatorDialog({
   const [source, setSource] = useState('User-added');
   const [sourceUrl, setSourceUrl] = useState('');
   const [description, setDescription] = useState('');
+  const [csvFileName, setCsvFileName] = useState<string | null>(null);
+  const [csvPoints, setCsvPoints] = useState<IndicatorDataPoint[]>([]);
+  const [csvError, setCsvError] = useState<string | null>(null);
+
+  function handleCsvFile(file: File) {
+    setCsvError(null);
+    setCsvFileName(file.name);
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const points = parseCsvPoints(String(reader.result ?? ''));
+        if (points.length === 0) {
+          setCsvError('No valid year,value rows found.');
+          setCsvPoints([]);
+          return;
+        }
+        setCsvPoints(points);
+      } catch (e) {
+        setCsvError((e as Error).message);
+        setCsvPoints([]);
+      }
+    };
+    reader.onerror = () => setCsvError('Could not read file.');
+    reader.readAsText(file);
+  }
 
   return (
     <DialogShell title="Add indicator" onClose={onClose}>
@@ -485,6 +523,29 @@ function AddIndicatorDialog({
             onChange={e => setDescription(e.target.value)}
           />
         </Field>
+        <Field label="Data points (CSV)" full>
+          <input
+            type="file"
+            accept=".csv,text/csv"
+            className="block w-full text-xs text-tertiary file:mr-2 file:py-1 file:px-2 file:rounded file:border file:border-grey-200 file:bg-grey-50 file:text-tertiary-dark file:text-xs hover:file:bg-grey-100"
+            onChange={e => {
+              const f = e.target.files?.[0];
+              if (f) handleCsvFile(f);
+            }}
+          />
+          <p className="mt-1 text-[10px] text-tertiary-light">
+            Two columns: <code>year,value</code>. Header row optional. Example: <code>2020,3500</code>
+          </p>
+          {csvFileName && !csvError && csvPoints.length > 0 && (
+            <p className="mt-1 text-[10px] text-green-700">
+              {csvFileName}: {csvPoints.length} row{csvPoints.length === 1 ? '' : 's'} ready (
+              {csvPoints[0].year}–{csvPoints[csvPoints.length - 1].year}).
+            </p>
+          )}
+          {csvError && (
+            <p className="mt-1 text-[10px] text-red-700">{csvError}</p>
+          )}
+        </Field>
       </div>
       <div className="mt-4 flex justify-end gap-2">
         <button type="button" onClick={onClose} className={btnSecondary}>
@@ -494,15 +555,18 @@ function AddIndicatorDialog({
           type="button"
           disabled={!name || !unit}
           onClick={() =>
-            onSave({
-              name,
-              unit,
-              category,
-              direction,
-              source,
-              sourceUrl,
-              description,
-            })
+            onSave(
+              {
+                name,
+                unit,
+                category,
+                direction,
+                source,
+                sourceUrl,
+                description,
+              },
+              csvPoints
+            )
           }
           className={btnPrimary}
         >
@@ -511,6 +575,25 @@ function AddIndicatorDialog({
       </div>
     </DialogShell>
   );
+}
+
+function parseCsvPoints(text: string): IndicatorDataPoint[] {
+  const points: IndicatorDataPoint[] = [];
+  const seen = new Set<number>();
+  const lines = text.split(/\r?\n/);
+  for (const raw of lines) {
+    const line = raw.trim();
+    if (!line) continue;
+    const cells = line.split(/[,;\t]/).map(c => c.trim().replace(/^"|"$/g, ''));
+    if (cells.length < 2) continue;
+    const year = parseInt(cells[0], 10);
+    const value = parseFloat(cells[1]);
+    if (!Number.isFinite(year) || !Number.isFinite(value)) continue;
+    if (seen.has(year)) continue;
+    seen.add(year);
+    points.push({ year, value });
+  }
+  return points.sort((a, b) => a.year - b.year);
 }
 
 function EditDataDialog({
