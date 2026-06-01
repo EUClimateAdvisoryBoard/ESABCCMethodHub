@@ -13,6 +13,9 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { pwApi } from '@/lib/project-workspace/client';
+import DownloadMenu from './DownloadMenu';
+import CollaborationPanel from './CollaborationPanel';
+import type { DocBlock } from '@/lib/exports';
 
 interface Props {
   projectId: string;
@@ -72,15 +75,21 @@ export default function CustomNotesModule({
             <code>[links](url)</code>). Saved automatically.
           </p>
         </div>
-        <p className="text-[11px] text-tertiary-light">
-          {busy
-            ? 'Saving…'
-            : error
-              ? <span className="text-red-700">Save failed: {error}</span>
-              : lastSavedAt
-                ? `Saved · ${lastSavedAt.toLocaleTimeString()}`
-                : 'Unsaved'}
-        </p>
+        <div className="flex items-center gap-3">
+          <p className="text-[11px] text-tertiary-light">
+            {busy
+              ? 'Saving…'
+              : error
+                ? <span className="text-red-700">Save failed: {error}</span>
+                : lastSavedAt
+                  ? `Saved · ${lastSavedAt.toLocaleTimeString()}`
+                  : 'Unsaved'}
+          </p>
+          <DownloadMenu
+            filename={moduleName.toLowerCase().replace(/\s+/g, '-') || 'notes'}
+            text={{ getBlocks: () => markdownToDocBlocks(moduleName, content) }}
+          />
+        </div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
@@ -97,8 +106,61 @@ export default function CustomNotesModule({
           dangerouslySetInnerHTML={{ __html: preview }}
         />
       </div>
+
+      <div className="bg-white rounded-xl border border-grey-200 p-4">
+        <CollaborationPanel
+          projectId={projectId}
+          target={{ kind: 'module', id: moduleId }}
+          heading={`Review & discussion — ${moduleName}`}
+        />
+      </div>
     </div>
   );
+}
+
+/** Convert the scratchpad's light Markdown into Word document blocks. */
+function markdownToDocBlocks(title: string, src: string): DocBlock[] {
+  const blocks: DocBlock[] = [{ type: 'heading', level: 1, text: title || 'Notes' }];
+  const lines = src.split('\n');
+  let bullets: string[] = [];
+  const flush = () => {
+    if (bullets.length > 0) {
+      blocks.push({ type: 'bullets', items: bullets });
+      bullets = [];
+    }
+  };
+  for (const raw of lines) {
+    const line = raw.trimEnd();
+    if (!line.trim()) {
+      flush();
+      continue;
+    }
+    const h = /^(#{1,6})\s+(.*)$/.exec(line);
+    if (h) {
+      flush();
+      const lvl = Math.min(h[1].length, 3) as 1 | 2 | 3;
+      blocks.push({ type: 'heading', level: lvl, text: stripInline(h[2]) });
+      continue;
+    }
+    const li = /^\s*(?:[-*]|\d+\.)\s+(.*)$/.exec(line);
+    if (li) {
+      bullets.push(stripInline(li[1]));
+      continue;
+    }
+    flush();
+    blocks.push({ type: 'paragraph', text: stripInline(line) });
+  }
+  flush();
+  return blocks;
+}
+
+/** Strip the lightweight Markdown markers so Word shows clean text. */
+function stripInline(s: string): string {
+  return s
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/(?<!\*)\*([^*]+)\*(?!\*)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '$1 ($2)');
 }
 
 /** Tiny, deliberately limited Markdown→HTML for the preview pane. */
