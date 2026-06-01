@@ -50,8 +50,11 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'indicators',
         name: 'Indicator database',
         description:
-          'EU-level progress indicators (ECNO framework + custom). ' +
-          'Table + chart view, editable in the UI.',
+          'Two clusters: existing indicators rebuilt from the 2024 ESABCC ' +
+          'progress report (Towards EU climate neutrality), and additional ' +
+          'indicators covering the ECNO building blocks. Table + chart view, ' +
+          'editable in the UI; "Refresh from source" pulls updates from ' +
+          'Eurostat / EEA / EAFO / IRENA / EHPA.',
       },
       {
         id: 'recommendations',

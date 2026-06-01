@@ -45,6 +45,29 @@ ChartJS.register(
   Legend
 );
 
+/**
+ * Two top-level groups in the sidebar. ESABCC indicators (rebuilt from
+ * the 2024 progress report's underlying-data workbook) are listed first
+ * as the "existing" set; everything else (ECNO mapping + user-added)
+ * follows as additional.
+ */
+const GROUPS = [
+  {
+    id: 'esabcc' as const,
+    label: 'Existing indicators',
+    help: 'Rebuilt from the 2024 ESABCC progress report (Towards EU climate neutrality).',
+  },
+  {
+    id: 'additional' as const,
+    label: 'Additional indicators',
+    help: 'ECNO progress-tracker mapping plus any user-added indicators.',
+  },
+];
+
+function groupOf(i: Indicator): 'esabcc' | 'additional' {
+  return i.group ?? (i.id.startsWith('esabcc-') ? 'esabcc' : 'additional');
+}
+
 interface Props {
   projectId: string;
   initial: Indicator[];
@@ -63,6 +86,9 @@ export default function IndicatorModule({ projectId, initial }: Props) {
   >(null);
 
   const selected = indicators.find(i => i.id === selectedId) ?? indicators[0];
+  const duplicateCounterpart = selected?.duplicateOf
+    ? indicators.find(i => i.id === selected.duplicateOf)
+    : undefined;
 
   function patchLocal(id: string, patch: Partial<Indicator>) {
     setIndicators(prev => prev.map(i => (i.id === id ? { ...i, ...patch } : i)));
@@ -209,10 +235,13 @@ export default function IndicatorModule({ projectId, initial }: Props) {
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Indicator database</h2>
           <p className="text-sm text-tertiary mt-1 max-w-2xl">
-            EU-level progress indicators based on the ECNO framework. Seed
-            values are the latest publicly available figures from EEA /
-            Eurostat; you can override them, add data points, or define
-            entirely new indicators. Everything is stored in Postgres.
+            Two clusters: <strong>existing indicators</strong> rebuilt
+            from the 2024 ESABCC progress report (Towards EU climate
+            neutrality) underlying-data workbook, and{' '}
+            <strong>additional indicators</strong> covering the ECNO
+            building blocks plus anything user-added. Use{' '}
+            <em>Refresh from source</em> on supported entries to pull
+            updates from Eurostat / EEA / EAFO / IRENA / EHPA.
           </p>
         </div>
         <button
@@ -225,37 +254,67 @@ export default function IndicatorModule({ projectId, initial }: Props) {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-6">
-        <aside className="bg-white rounded-xl border border-grey-200 p-3 max-h-[520px] overflow-y-auto">
-          {INDICATOR_CATEGORIES.map(cat => {
-            const inCat = indicators.filter(i => i.category === cat.id);
-            if (inCat.length === 0) return null;
+        <aside className="bg-white rounded-xl border border-grey-200 p-3 max-h-[640px] overflow-y-auto">
+          {GROUPS.map(g => {
+            const inGroup = indicators.filter(i => groupOf(i) === g.id);
+            if (inGroup.length === 0) return null;
             return (
-              <div key={cat.id} className="mb-3">
-                <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">
-                  {cat.label}
+              <div key={g.id} className="mb-4">
+                <p className="text-[11px] uppercase tracking-wide text-tertiary-dark font-bold mb-1 pb-1 border-b border-grey-200">
+                  {g.label}{' '}
+                  <span className="text-tertiary-light font-normal">
+                    ({inGroup.length})
+                  </span>
                 </p>
-                <ul className="space-y-0.5">
-                  {inCat.map(i => (
-                    <li key={i.id}>
-                      <button
-                        type="button"
-                        onClick={() => setSelectedId(i.id)}
-                        className={`w-full text-left px-2 py-1.5 rounded text-xs leading-snug ${
-                          selectedId === i.id
-                            ? 'bg-primary/10 text-primary font-medium'
-                            : 'text-tertiary-dark hover:bg-grey-50'
-                        }`}
-                      >
-                        {i.name}
-                        {!i.isSeed && (
-                          <span className="ml-1 text-[9px] uppercase text-secondary">
-                            custom
-                          </span>
-                        )}
-                      </button>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-[10px] text-tertiary-light mb-2 leading-snug">
+                  {g.help}
+                </p>
+                {INDICATOR_CATEGORIES.map(cat => {
+                  const inCat = inGroup.filter(i => i.category === cat.id);
+                  if (inCat.length === 0) return null;
+                  return (
+                    <div key={cat.id} className="mb-2">
+                      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">
+                        {cat.label}
+                      </p>
+                      <ul className="space-y-0.5">
+                        {inCat.map(i => (
+                          <li key={i.id}>
+                            <button
+                              type="button"
+                              onClick={() => setSelectedId(i.id)}
+                              className={`w-full text-left px-2 py-1.5 rounded text-xs leading-snug ${
+                                selectedId === i.id
+                                  ? 'bg-primary/10 text-primary font-medium'
+                                  : 'text-tertiary-dark hover:bg-grey-50'
+                              }`}
+                            >
+                              {i.code && (
+                                <span className="font-mono text-tertiary-light mr-1">
+                                  {i.code}
+                                </span>
+                              )}
+                              {i.name}
+                              {i.duplicateOf && (
+                                <span
+                                  className="ml-1 text-[9px] uppercase text-amber-700"
+                                  title="Duplicate of indicator in the other group"
+                                >
+                                  ↔ dup
+                                </span>
+                              )}
+                              {!i.isSeed && (
+                                <span className="ml-1 text-[9px] uppercase text-secondary">
+                                  custom
+                                </span>
+                              )}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })}
               </div>
             );
           })}
@@ -346,6 +405,21 @@ export default function IndicatorModule({ projectId, initial }: Props) {
                 )}
               </div>
             </div>
+            {duplicateCounterpart && (
+              <div className="text-[11px] px-2 py-1.5 rounded mb-2 bg-amber-50 border border-amber-200 text-amber-900">
+                Duplicate of{' '}
+                <button
+                  type="button"
+                  className="underline font-medium"
+                  onClick={() => setSelectedId(duplicateCounterpart.id)}
+                >
+                  {duplicateCounterpart.code ? `${duplicateCounterpart.code} — ` : ''}
+                  {duplicateCounterpart.name}
+                </button>{' '}
+                in the {groupOf(duplicateCounterpart) === 'esabcc' ? 'existing' : 'additional'}{' '}
+                group. Check source / units before merging.
+              </div>
+            )}
             {refreshStatus && (
               <div
                 className={`text-[11px] px-2 py-1.5 rounded mb-2 ${

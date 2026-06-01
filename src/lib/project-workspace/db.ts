@@ -18,6 +18,10 @@ import {
   type IndicatorDataPoint,
 } from '@/data/ecno-indicators';
 import {
+  ESABCC_REPORT_INDICATORS,
+  ECNO_TO_ESABCC_DUPLICATE,
+} from '@/data/esabcc-indicators';
+import {
   ESABCC_2024_RECOMMENDATIONS,
   type PastRecommendation,
   type RecommendationStatus,
@@ -88,7 +92,14 @@ async function ensureSeedDataFor(projectId: string) {
       .eq('project_id', projectId)
       .eq('is_seed', true);
     const have = new Set((existing ?? []).map(r => r.id));
-    const toInsert = ECNO_INDICATORS.filter(i => !have.has(i.id));
+    // ESABCC report indicators are the "existing" group; ECNO ones are
+    // the "additional" group. Both are seeded into the same table — the
+    // group is derived in the UI from the indicator id prefix.
+    const seedPool: Indicator[] = [
+      ...ESABCC_REPORT_INDICATORS,
+      ...ECNO_INDICATORS,
+    ];
+    const toInsert = seedPool.filter(i => !have.has(i.id));
     if (toInsert.length > 0) {
       const { error: insErr } = await sb.from('pw_indicators').insert(
         toInsert.map(i => ({
@@ -218,9 +229,22 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
   };
 }
 
+/** In-memory seed list used when Supabase is not configured (dev / preview). */
+function seedIndicators(projectId: string): DBIndicator[] {
+  if (projectId !== 'policy-gap-2-0') return [];
+  return [
+    ...ESABCC_REPORT_INDICATORS.map(i => ({ ...i, group: 'esabcc' as const })),
+    ...ECNO_INDICATORS.map(i => ({
+      ...i,
+      group: 'additional' as const,
+      duplicateOf: i.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[i.id],
+    })),
+  ];
+}
+
 export async function listIndicators(projectId: string): Promise<DBIndicator[]> {
   const sb = getServerSupabase();
-  if (!sb) return [];
+  if (!sb) return seedIndicators(projectId);
   await ensureSeedDataFor(projectId);
   const { data: rows } = await sb
     .from('pw_indicators')
@@ -234,23 +258,31 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
     .from('pw_indicator_points')
     .select('*')
     .in('indicator_id', ids);
-  return rows.map<DBIndicator>(r => ({
-    id: r.id,
-    name: r.name,
-    category: r.category as Indicator['category'],
-    unit: r.unit,
-    description: r.description,
-    source: r.source,
-    sourceUrl: r.source_url,
-    direction: r.direction as 'up' | 'down',
-    targetValue: r.target_value ?? undefined,
-    targetYear: r.target_year ?? undefined,
-    isSeed: !!r.is_seed,
-    data: (points ?? [])
-      .filter(p => p.indicator_id === r.id)
-      .map<IndicatorDataPoint>(p => ({ year: p.year, value: p.value }))
-      .sort((a, b) => a.year - b.year),
-  }));
+  const esabccById = new Map(ESABCC_REPORT_INDICATORS.map(i => [i.id, i]));
+  return rows.map<DBIndicator>(r => {
+    const isEsabcc = r.id.startsWith('esabcc-');
+    const meta = esabccById.get(r.id);
+    return {
+      id: r.id,
+      name: r.name,
+      category: r.category as Indicator['category'],
+      unit: r.unit,
+      description: r.description,
+      source: r.source,
+      sourceUrl: r.source_url,
+      direction: r.direction as 'up' | 'down',
+      targetValue: r.target_value ?? undefined,
+      targetYear: r.target_year ?? undefined,
+      isSeed: !!r.is_seed,
+      group: isEsabcc ? 'esabcc' : 'additional',
+      code: meta?.code,
+      duplicateOf: meta?.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[r.id],
+      data: (points ?? [])
+        .filter(p => p.indicator_id === r.id)
+        .map<IndicatorDataPoint>(p => ({ year: p.year, value: p.value }))
+        .sort((a, b) => a.year - b.year),
+    };
+  });
 }
 
 export async function listRecommendations(projectId: string): Promise<DBRecommendation[]> {
