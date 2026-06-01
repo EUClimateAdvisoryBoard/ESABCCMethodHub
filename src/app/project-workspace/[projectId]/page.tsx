@@ -20,6 +20,7 @@ import {
   listRecommendations,
   listMemberStateCells,
   listPolicyAnnotations,
+  listPolicyCodes,
   getPolicyOverrides,
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
@@ -43,12 +44,14 @@ export default async function ProjectPage({
     memberStateCells,
     policyAnnotations,
     policyOverrides,
+    policyCodes,
   ] = await Promise.all([
     listIndicators(params.projectId),
     listRecommendations(params.projectId),
     listMemberStateCells(params.projectId),
     listPolicyAnnotations(params.projectId),
     getPolicyOverrides(),
+    listPolicyCodes(params.projectId),
   ]);
 
   const activeModule =
@@ -93,6 +96,7 @@ export default async function ProjectPage({
           memberStateCells={memberStateCells}
           policyAnnotations={policyAnnotations}
           policyOverrides={policyOverrides}
+          policyCodes={policyCodes}
           customContent={customContent}
         />
       </main>

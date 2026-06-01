@@ -58,6 +58,14 @@ import { EmptyState } from '@/components/ui/StateView';
 import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
 import PolicyAnnotationsPanel from '@/components/workspace/PolicyAnnotationsBadge';
 import { usePromotedPolicyEdits } from '@/lib/project-workspace/usePromotedPolicyEdits';
+import NavigatorMasterCodes from '@/components/NavigatorMasterCodes';
+import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
+import {
+  getDescendantIds,
+  getRootCodes,
+  getMasterCodeChildren,
+  getMasterCode,
+} from '@/lib/content-analysis/master-code-catalog';
 
 const PolicyNetworkGraph = dynamic(() => import('@/components/PolicyNetworkGraph'), { ssr: false });
 const LegislativeCalendar = dynamic(() => import('@/components/LegislativeCalendar'), { ssr: false });
@@ -106,6 +114,7 @@ export default function PolicyNavigatorPage() {
   // Sectoral overview state
   const [selectedSector, setSelectedSector] = useState<SectorId | 'all'>('all');
   const [selectedInstrument, setSelectedInstrument] = useState<string>('all');
+  const [selectedCode, setSelectedCode] = useState<string | null>(null);
   const [query, setQuery] = useState('');
   const [expanded, setExpanded] = useState<string | null>(null);
   // Desktop view mode (M·04 #5): same data, two shapes. List view reuses
@@ -185,6 +194,11 @@ export default function PolicyNavigatorPage() {
     [enrichedConnections],
   );
 
+  const selectedCodeDescendants = useMemo(
+    () => (selectedCode ? getDescendantIds(selectedCode) : null),
+    [selectedCode]
+  );
+
   const filteredSectorPolicies = useMemo(() => {
     return SECTOR_POLICIES.filter(p => {
       if (selectedSector !== 'all' && !p.sectors.includes(selectedSector))
@@ -195,9 +209,13 @@ export default function PolicyNavigatorPage() {
         const hay = (p.name + ' ' + (p.acronym || '') + ' ' + p.meaning).toLowerCase();
         if (!hay.includes(query.toLowerCase())) return false;
       }
+      if (selectedCodeDescendants) {
+        const pTags = POLICY_MASTER_TAGS[p.id] ?? [];
+        if (!pTags.some(t => selectedCodeDescendants.has(t))) return false;
+      }
       return true;
     });
-  }, [selectedSector, selectedInstrument, query]);
+  }, [selectedSector, selectedInstrument, query, selectedCodeDescendants]);
 
   const instruments = Array.from(
     new Set(SECTOR_POLICIES.map(p => p.instrumentType)),
@@ -478,6 +496,8 @@ export default function PolicyNavigatorPage() {
                   policy={p}
                   expanded={expanded === p.id}
                   onToggle={() => setExpanded(expanded === p.id ? null : p.id)}
+                  activeCodeId={selectedCode}
+                  onCodeFilter={setSelectedCode}
                 />
               ))}
             </div>
@@ -892,7 +912,7 @@ export default function PolicyNavigatorPage() {
         {/* Sticky active-filter summary (M·04 #6). Mirrors the news + scenarios
             pattern: only renders when filters deviate from default; each pill
             has its own × to clear; counts visible. */}
-        {(selectedSector !== 'all' || selectedInstrument !== 'all' || query.trim() !== '') && (
+        {(selectedSector !== 'all' || selectedInstrument !== 'all' || query.trim() !== '' || selectedCode !== null) && (
           <div className="max-w-wide mx-auto px-6">
             <FilterPillRow sticky>
               <span
@@ -926,9 +946,18 @@ export default function PolicyNavigatorPage() {
                   onClear={() => setQuery('')}
                 />
               )}
+              {selectedCode !== null && (
+                <FilterPill
+                  label={`Code: ${selectedCode}`}
+                  count={filteredSectorPolicies.length}
+                  active
+                  onClick={() => setSelectedCode(null)}
+                  onClear={() => setSelectedCode(null)}
+                />
+              )}
               <button
                 type="button"
-                onClick={() => { setSelectedSector('all'); setSelectedInstrument('all'); setQuery(''); }}
+                onClick={() => { setSelectedSector('all'); setSelectedInstrument('all'); setQuery(''); setSelectedCode(null); }}
                 className="mh-focus mh-motion-fast text-[var(--mh-muted)] hover:text-[var(--mh-status-danger)] underline"
                 style={{ fontSize: 'var(--mh-text-2xs)' }}
               >
@@ -982,6 +1011,13 @@ export default function PolicyNavigatorPage() {
                 ))}
               </div>
             </div>
+
+            <SLRCodeFilter
+              selectedCode={selectedCode}
+              onSelect={setSelectedCode}
+              policyCount={filteredSectorPolicies.length}
+              totalCount={SECTOR_POLICIES.length}
+            />
 
             {selectedSector !== 'all' && (
               <div className="bg-white rounded-xl border border-grey-200 p-4">
@@ -1062,6 +1098,8 @@ export default function PolicyNavigatorPage() {
                 policy={p}
                 expanded={expanded === p.id}
                 onToggle={() => setExpanded(expanded === p.id ? null : p.id)}
+                activeCodeId={selectedCode}
+                onCodeFilter={setSelectedCode}
               />
             ))}
 
@@ -1103,10 +1141,14 @@ function SectorPolicyCard({
   policy,
   expanded,
   onToggle,
+  activeCodeId,
+  onCodeFilter,
 }: {
   policy: SectorPolicy;
   expanded: boolean;
   onToggle: () => void;
+  activeCodeId: string | null;
+  onCodeFilter: (codeId: string | null) => void;
 }) {
   const color = INSTRUMENT_COLORS[policy.instrumentType] || '#0065A4';
   // Promoted edits from the Project Workspace shadow the bundled SECTOR_POLICIES
@@ -1181,6 +1223,11 @@ function SectorPolicyCard({
 
       {expanded && (
         <div className="border-t border-grey-100 p-4 bg-grey-50 text-[12px] text-tertiary-dark leading-relaxed space-y-3">
+          <NavigatorMasterCodes
+            policyId={policy.id}
+            activeCodeId={activeCodeId}
+            onCodeFilter={onCodeFilter}
+          />
           <div>
             <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
               What it means
@@ -1320,6 +1367,123 @@ function SectorPolicyCard({
           <PolicyAnnotationsPanel policyId={policy.id} />
         </div>
       )}
+    </div>
+  );
+}
+
+/** Sidebar widget: filter the sectoral overview by master taxonomy code.
+ *  Shows root codes with per-code policy counts; clicking a root expands
+ *  to show its immediate children. */
+function SLRCodeFilter({
+  selectedCode,
+  onSelect,
+  policyCount,
+  totalCount,
+}: {
+  selectedCode: string | null;
+  onSelect: (codeId: string | null) => void;
+  policyCount: number;
+  totalCount: number;
+}) {
+  const [openRoot, setOpenRoot] = useState<string | null>(null);
+  const roots = useMemo(() => getRootCodes(), []);
+
+  function policyCountFor(codeId: string): number {
+    const desc = getDescendantIds(codeId);
+    return SECTOR_POLICIES.filter(p =>
+      (POLICY_MASTER_TAGS[p.id] ?? []).some(t => desc.has(t))
+    ).length;
+  }
+
+  return (
+    <div className="bg-white rounded-xl border border-grey-200 p-4">
+      <div className="flex items-center justify-between mb-2">
+        <h3 className="text-xs font-bold text-tertiary-dark">Filter by SLR code</h3>
+        {selectedCode && (
+          <button
+            type="button"
+            onClick={() => onSelect(null)}
+            className="text-[10px] text-secondary hover:underline"
+          >
+            Clear
+          </button>
+        )}
+      </div>
+      {selectedCode && (
+        <p className="text-[10px] text-tertiary mb-2">
+          Showing {policyCount} / {totalCount} policies with code{' '}
+          <span className="font-semibold text-tertiary-dark">
+            {getMasterCode(selectedCode)?.name ?? selectedCode}
+          </span>
+        </p>
+      )}
+      <div className="space-y-1">
+        {roots.map(root => {
+          const children = getMasterCodeChildren(root.id);
+          const isOpen = openRoot === root.id;
+          const rootCount = policyCountFor(root.id);
+          return (
+            <div key={root.id}>
+              <div className="flex items-center gap-1">
+                <button
+                  type="button"
+                  onClick={() => onSelect(selectedCode === root.id ? null : root.id)}
+                  className={`flex-1 text-left flex items-center gap-1.5 text-[11px] px-2 py-1 rounded transition-colors ${
+                    selectedCode === root.id
+                      ? 'text-white'
+                      : 'hover:bg-grey-50 text-tertiary-dark'
+                  }`}
+                  style={selectedCode === root.id ? { backgroundColor: root.color } : undefined}
+                >
+                  <span
+                    className="inline-block h-2 w-2 rounded-full shrink-0"
+                    style={{ backgroundColor: root.color }}
+                  />
+                  <span className="flex-1">{root.name}</span>
+                  <span className="text-[10px] opacity-60">{rootCount}</span>
+                </button>
+                {children.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setOpenRoot(isOpen ? null : root.id)}
+                    className="text-[10px] text-tertiary-light hover:text-tertiary px-1"
+                  >
+                    {isOpen ? '▴' : '▾'}
+                  </button>
+                )}
+              </div>
+              {isOpen && children.length > 0 && (
+                <div className="ml-4 mt-0.5 space-y-0.5">
+                  {children.map(child => {
+                    const childCount = policyCountFor(child.id);
+                    if (childCount === 0) return null;
+                    return (
+                      <button
+                        key={child.id}
+                        type="button"
+                        onClick={() => onSelect(selectedCode === child.id ? null : child.id)}
+                        className={`w-full text-left flex items-center gap-1.5 text-[10px] px-2 py-0.5 rounded transition-colors ${
+                          selectedCode === child.id
+                            ? 'text-white'
+                            : 'hover:bg-grey-50 text-tertiary'
+                        }`}
+                        style={selectedCode === child.id ? { backgroundColor: child.color } : undefined}
+                      >
+                        <span
+                          className="inline-block h-1.5 w-1.5 rounded-full shrink-0"
+                          style={{ backgroundColor: child.color }}
+                        />
+                        <span className="flex-1">{child.name}</span>
+                        <span className="opacity-60">{childCount}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
