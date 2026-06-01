@@ -328,6 +328,17 @@ export default async function HomePage() {
         { label: 'ANALYSIS', value: 'Priority + tally' },
       ],
     },
+    {
+      code: 'M · 07',
+      title: 'Project Workspace',
+      description:
+        'A workspace per analytical project. Bundles indicator databases, recommendation trackers, member-state space and policy analysis under Policy Gap 2.0 and other projects.',
+      href: '/project-workspace',
+      stats: [
+        { label: 'PROJECTS', value: '2 seed' },
+        { label: 'MODULES', value: 'User-extensible' },
+      ],
+    },
   ];
 
   const experimentalModules = [
