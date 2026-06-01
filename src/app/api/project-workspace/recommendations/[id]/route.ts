@@ -21,6 +21,8 @@ export async function PATCH(
   for (const k of ['title', 'summary', 'status', 'area']) {
     if (k in body) patch[k] = body[k];
   }
+  // Sector tags (array column). Coerced to an array so a null clears them.
+  if ('tags' in body) patch.tags = Array.isArray(body.tags) ? body.tags : [];
   // Report label fields (camelCase in the API → snake_case columns).
   const reportFields: Record<string, string> = {
     reportId: 'report_id',

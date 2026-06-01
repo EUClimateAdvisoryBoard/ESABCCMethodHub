@@ -70,6 +70,11 @@ export default function ProjectShell({
   const current = project.modules.find(m => m.id === active);
   const [adding, setAdding] = useState(false);
 
+  // The seed Industry Project scopes its copied tools to industry: policies
+  // pre-filter to the industry sector and the member-state space is framed
+  // around industrial transition.
+  const industryFocus = project.id === 'industry-project';
+
   function setActive(id: string) {
     const params = new URLSearchParams(search.toString());
     params.set('module', id);
@@ -113,7 +118,7 @@ export default function ProjectShell({
         <RecommendationsModule projectId={project.id} initial={recommendations} />
       )}
       {current?.kind === 'member-states' && (
-        <MemberStatesModule projectId={project.id} />
+        <MemberStatesModule projectId={project.id} industryFocus={industryFocus} />
       )}
       {current?.kind === 'policy-analysis' && (
         <PolicyAnalysisModule
@@ -121,6 +126,7 @@ export default function ProjectShell({
           initialAnnotations={policyAnnotations}
           initialOverrides={policyOverrides}
           initialPolicyCodes={policyCodes}
+          defaultSector={industryFocus ? 'industry' : undefined}
         />
       )}
       {current?.kind === 'custom' && (

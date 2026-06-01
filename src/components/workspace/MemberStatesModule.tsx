@@ -35,7 +35,29 @@ const MemberStatesMap = dynamic(
   },
 );
 
-export default function MemberStatesModule({ projectId }: { projectId: string }) {
+/**
+ * Industrial sub-sectors in scope for the Industry Project's member-state view,
+ * taken in the wider sense of industry. Surfaced as a reference frame so the
+ * shared country profiles are read through an industrial-transition lens.
+ */
+const INDUSTRY_SUBSECTORS = [
+  'Iron & steel',
+  'Cement & lime',
+  'Chemicals & fertilisers',
+  'Refining',
+  'Non-ferrous metals (aluminium)',
+  'Pulp & paper',
+  'Glass & ceramics',
+  'Clean-tech manufacturing',
+];
+
+export default function MemberStatesModule({
+  projectId,
+  industryFocus = false,
+}: {
+  projectId: string;
+  industryFocus?: boolean;
+}) {
   const [profiles, setProfiles] = useState<CountryProfile[] | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
@@ -70,14 +92,30 @@ export default function MemberStatesModule({ projectId }: { projectId: string })
     <div className="space-y-6">
       <header className="flex items-start justify-between gap-3 flex-wrap">
         <div>
-          <h2 className="text-lg font-bold text-tertiary-dark">Member State space</h2>
+          <h2 className="text-lg font-bold text-tertiary-dark">
+            Member State space{industryFocus ? ' — industrial transition' : ''}
+          </h2>
           <p className="text-sm text-tertiary mt-1 max-w-3xl">
-            EEA-style profile for each EU member state — emissions trajectories,
-            renewables progress, energy efficiency, air, water, biodiversity,
-            circular economy, adaptation and NECP delivery. Use the map to
-            pivot between indicators; the heatmap below sorts countries by
-            their status on any indicator; clicking a country opens the
-            full profile.
+            {industryFocus ? (
+              <>
+                EEA-style profile for each EU member state, read through an
+                industrial-transition lens — industrial emissions and energy
+                use, electrification and the hydrogen / CCU-CCS build-out, the
+                clean-tech manufacturing footprint and circularity, alongside the
+                shared per-country indicators. Use the map to pivot between
+                indicators; the heatmap sorts countries; clicking a country opens
+                the full profile.
+              </>
+            ) : (
+              <>
+                EEA-style profile for each EU member state — emissions
+                trajectories, renewables progress, energy efficiency, air, water,
+                biodiversity, circular economy, adaptation and NECP delivery. Use
+                the map to pivot between indicators; the heatmap below sorts
+                countries by their status on any indicator; clicking a country
+                opens the full profile.
+              </>
+            )}
           </p>
         </div>
         <div className="flex flex-wrap gap-2 text-[12px] items-center">
@@ -101,6 +139,31 @@ export default function MemberStatesModule({ projectId }: { projectId: string })
           </Link>
         </div>
       </header>
+
+      {industryFocus && (
+        <section className="bg-secondary/5 border border-secondary/20 rounded-xl p-4">
+          <h3 className="text-xs font-bold uppercase tracking-wide text-secondary mb-2">
+            Industrial sub-sectors in scope
+          </h3>
+          <div className="flex flex-wrap gap-1.5">
+            {INDUSTRY_SUBSECTORS.map(s => (
+              <span
+                key={s}
+                className="text-[11px] px-2 py-0.5 rounded-full bg-white border border-secondary/30 text-tertiary-dark"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+          <p className="text-[11px] text-tertiary mt-2 max-w-3xl">
+            Use the country directory and map below to assess where the EU&rsquo;s
+            energy-intensive industry sits, and where the electrification,
+            hydrogen and clean-tech build-out is concentrated. Capture
+            member-state-specific findings in the discussion thread at the foot of
+            this page.
+          </p>
+        </section>
+      )}
 
       <section>
         <MemberStatesMap profiles={profiles} />

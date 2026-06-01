@@ -74,6 +74,27 @@ export const RECOMMENDATION_REPORTS = {
   },
 } as const satisfies Record<string, RecommendationReport>;
 
+/**
+ * Cross-cutting sector tags layered on top of the source-report label.
+ * Unlike `area` (the report's own chapter coding) these are workspace tags the
+ * Secretariat applies so a recommendation can surface in a sector-focused
+ * project (e.g. the Industry Project) regardless of which chapter it sits in.
+ * The list is a suggestion set for the tag picker — tags are stored free-form.
+ */
+export const RECOMMENDATION_TAG_OPTIONS = [
+  'industry',
+  'energy-supply',
+  'transport',
+  'buildings',
+  'agriculture',
+  'lulucf',
+  'carbon-pricing',
+  'finance',
+  'governance',
+  'fairness',
+] as const;
+export type RecommendationTag = (typeof RECOMMENDATION_TAG_OPTIONS)[number];
+
 export interface PastRecommendation {
   id: string;
   /** Chapter / area of the 2024 report. */
@@ -84,7 +105,40 @@ export interface PastRecommendation {
   uptakeEvents: UptakeEvent[];
   /** Source report the recommendation comes from. Optional for legacy rows. */
   report?: RecommendationReport;
+  /**
+   * Workspace sector tags (free-form). Used to surface a recommendation in a
+   * sector-focused project — e.g. the Industry Project tracks every
+   * recommendation tagged `industry`. Empty / absent on untagged rows.
+   */
+  tags?: string[];
 }
+
+/**
+ * Industry-sector tags applied to the 2024 recommendations, keyed by id.
+ * Taken in the *wider* sense of industrial decarbonisation: the Industry
+ * chapter (I1–I3) plus the cross-chapter recommendations that drive it —
+ * carbon pricing / leakage protection (ETS, CBAM, free allocation), hydrogen
+ * and CCU/CCS for industry, clean-tech R&D and value chains, and material
+ * demand / circular economy. Edit here (or via the tracker UI) to retag.
+ */
+const RECOMMENDATION_TAGS: Record<string, RecommendationTag[]> = {
+  // Key recommendations touching industrial decarbonisation
+  'kr3-renewables-investment-outlook': ['industry', 'energy-supply'],
+  'kr7-ets-fit-for-net-zero': ['industry', 'carbon-pricing'],
+  'kr10-target-ccs-hydrogen-bioenergy': ['industry', 'energy-supply'],
+  'kr12-energy-material-demand-reduction': ['industry'],
+  // Energy-supply chapter recommendations with an industrial end use
+  'e6-hydrogen-targeting': ['industry', 'energy-supply'],
+  'e7-ccus-targeting': ['industry', 'energy-supply'],
+  'e8-rd-allocation-review': ['industry', 'energy-supply'],
+  // Industry chapter (I1–I3)
+  'i1-circular-economy-ceap2': ['industry'],
+  'i2-carbon-leakage-alternatives': ['industry', 'carbon-pricing'],
+  'i3-low-emission-industrial-tech': ['industry'],
+  // Pricing & removals — carbon-leakage protection / CBAM revenue
+  'c2-free-allocation-alternatives': ['industry', 'carbon-pricing'],
+  'c6-expand-climate-revenue': ['industry', 'carbon-pricing'],
+};
 
 const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
   {
@@ -1158,10 +1212,18 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
 const REPORT_2024 = RECOMMENDATION_REPORTS['towards-eu-climate-neutrality-2024'];
 
 export const ESABCC_2024_KEY_RECOMMENDATIONS: PastRecommendation[] =
-  ESABCC_2024_KEY_RECOMMENDATIONS_BASE.map(r => ({ ...r, report: REPORT_2024 }));
+  ESABCC_2024_KEY_RECOMMENDATIONS_BASE.map(r => ({
+    ...r,
+    report: REPORT_2024,
+    tags: RECOMMENDATION_TAGS[r.id],
+  }));
 
 export const ESABCC_2024_SECTORAL_RECOMMENDATIONS: PastRecommendation[] =
-  ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE.map(r => ({ ...r, report: REPORT_2024 }));
+  ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE.map(r => ({
+    ...r,
+    report: REPORT_2024,
+    tags: RECOMMENDATION_TAGS[r.id],
+  }));
 
 /**
  * Full Jan 2024 recommendation set used to seed the tracker:
@@ -1172,6 +1234,14 @@ export const ESABCC_2024_RECOMMENDATIONS: PastRecommendation[] = [
   ...ESABCC_2024_KEY_RECOMMENDATIONS,
   ...ESABCC_2024_SECTORAL_RECOMMENDATIONS,
 ];
+
+/**
+ * The subset of 2024 recommendations carrying the `industry` tag, used to seed
+ * the Industry Project's recommendation tracker. Derived from the tags above so
+ * adding a tag automatically pulls a recommendation into the Industry Project.
+ */
+export const ESABCC_INDUSTRY_RECOMMENDATIONS: PastRecommendation[] =
+  ESABCC_2024_RECOMMENDATIONS.filter(r => r.tags?.includes('industry'));
 
 // ───────────────────────────────────────────────────────────────────────────
 // Supplementary advice — separate June 2023 ESABCC output, included here so
