@@ -43,10 +43,10 @@ const ee: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 11.8, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC' },
+    totalLatest: { value: 11.8, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=EE" },
     total1990: 39.6,
-    perCapita: { value: 8.6, unit: 't CO2e/cap', year: 2022, source: 'EEA' },
-    perGdp: { value: 0.36, unit: 'kg CO2e/€', year: 2022, source: 'EEA' },
+    perCapita: { value: 8.6, unit: 't CO2e/cap', year: 2022, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=EE" },
+    perGdp: { value: 0.36, unit: 'kg CO2e/€', year: 2022, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=EE" },
     target2030: { value: -24, unit: '%', baseline: '2005', notes: 'ESR 2030 target under Fit-for-55; LULUCF separate.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Climate neutrality by 2050 (2022 Riigikogu resolution).' },
     sectors: [
@@ -75,7 +75,7 @@ const ee: CountryProfile = {
     status: 'on-track',
   },
   renewables: {
-    shareLatest: { value: 38.5, unit: '%', year: 2022, source: 'Eurostat SHARES' },
+    shareLatest: { value: 38.5, unit: '%', year: 2022, source: 'Eurostat SHARES', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=EE" },
     share2005: 17.5,
     share2020: 30.1,
     target2030: 65,
@@ -100,9 +100,9 @@ const ee: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 5.2, unit: 'Mtoe', year: 2022 },
-    final:   { value: 2.9, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 226, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 5.2, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=EE" },
+    final:   { value: 2.9, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=EE" },
+    intensity: { value: 226, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=EE" },
     target2030: -23,
     narrative:
       'Energy intensity per unit GDP is among the highest in the EU due to the ' +
@@ -113,11 +113,11 @@ const ee: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 6.3, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 9.5, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 38.4, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 78, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 6.3, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/estonia-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 9.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/estonia-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 38.4, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/estonia-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 78, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=EE" },
     narrative:
       'Estonia has among the lowest PM2.5 concentrations in the EU thanks to low ' +
       'population density and prevailing maritime air masses. Localised hotspots ' +
@@ -127,10 +127,10 @@ const ee: CountryProfile = {
     status: 'on-track',
   },
   water: {
-    surfaceWaterGood: { value: 56, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 71, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 80, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 56, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/estonia" },
+    groundwaterGood: { value: 71, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/estonia" },
+    bathingWaterExcellent: { value: 80, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=EE" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=EE" },
     narrative:
       'Surface waters are heavily affected by diffuse pollution from agriculture and ' +
       'historic legacy contamination in Ida-Viru oil-shale mining areas. Bathing ' +
@@ -140,10 +140,10 @@ const ee: CountryProfile = {
     status: 'partial',
   },
   biodiversity: {
-    natura2000Land: { value: 17.9, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 27.0, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 720, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 33, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 17.9, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=EE" },
+    natura2000Marine: { value: 27.0, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=EE" },
+    threatenedSpecies: { value: 720, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=EE" },
+    habitatsFavourable: { value: 33, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/estonia" },
     narrative:
       'Estonia retains exceptional natural mires, boreal forest and coastal habitats. ' +
       'Forest cover (~52% of land) supports a substantial LULUCF sink that has ' +
@@ -152,9 +152,9 @@ const ee: CountryProfile = {
     status: 'partial',
   },
   circular: {
-    municipalRecycling: { value: 30, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 17.9, unit: '%', year: 2022 },
-    resourceProductivity: { value: 0.7, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 30, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=EE" },
+    circularMaterialUseRate: { value: 17.9, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=EE" },
+    resourceProductivity: { value: 0.7, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=EE" },
     narrative:
       'Municipal recycling is low and Estonia is at risk of missing the 2025 ' +
       '(55%) target. The circular material use rate is, paradoxically, above the ' +
