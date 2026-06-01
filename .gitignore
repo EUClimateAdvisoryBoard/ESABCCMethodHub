@@ -35,3 +35,4 @@ word-addin/node_modules/
 .env.*
 !.env.local.example
 !.env.example
+__pycache__/
