@@ -170,16 +170,34 @@ async function ensureSeedDataFor(projectId: string) {
       }
     }
 
-    // Seed recommendations.
-    const { data: existingRecs } = await sb
+    // Seed recommendations. Mirror the indicator pass above: read *every*
+    // existing row for this project (any `is_seed` value), not just the seed
+    // rows. Two earlier bugs are fixed here:
+    //   1. The old code only treated `is_seed=true` rows as "present" and then
+    //      did a plain `.insert()`. A stray row carrying a seed id with
+    //      `is_seed=false` (e.g. seeded before the `is_seed` convention, or the
+    //      2023 advice row) would be missing from `haveRecs`, land in the insert
+    //      batch, collide on the primary key and abort the *whole* batch — so
+    //      the remaining recommendations silently never got inserted. The
+    //      `onConflict:id, ignoreDuplicates` upsert makes the call resilient.
+    //   2. Pre-existing rows whose report label was never backfilled (migration
+    //      042 only touched `is_seed=true` rows) stayed "Unlabelled". We now
+    //      backfill the source-report label on any blank row whose id matches a
+    //      seed recommendation — every seed id maps to exactly one report.
+    const { data: existingRecs, error: recReadErr } = await sb
       .from('pw_recommendations')
-      .select('id')
-      .eq('project_id', projectId)
-      .eq('is_seed', true);
+      .select('id, report_label')
+      .eq('project_id', projectId);
+    if (recReadErr) {
+      console.error('[pw seed] failed to read existing recommendations', {
+        projectId,
+        error: recReadErr.message,
+      });
+    }
     const haveRecs = new Set((existingRecs ?? []).map(r => r.id));
     const recsToInsert = SEED_RECOMMENDATIONS.filter(r => !haveRecs.has(r.id));
     if (recsToInsert.length > 0) {
-      await sb.from('pw_recommendations').insert(
+      const { error: recInsErr } = await sb.from('pw_recommendations').upsert(
         recsToInsert.map(r => ({
           id: r.id,
           project_id: projectId,
@@ -191,18 +209,64 @@ async function ensureSeedDataFor(projectId: string) {
           report_label: r.report?.label ?? '',
           report_url: r.report?.url ?? '',
           is_seed: true,
-        }))
+        })),
+        { onConflict: 'id', ignoreDuplicates: true }
       );
-      const events = recsToInsert.flatMap(r =>
-        r.uptakeEvents.map(e => ({
-          recommendation_id: r.id,
-          occurred_at: e.date,
-          note: e.note,
-          source_url: e.sourceUrl ?? '',
-        }))
-      );
-      if (events.length > 0) {
-        await sb.from('pw_recommendation_events').insert(events);
+      if (recInsErr) {
+        console.error('[pw seed] failed to insert recommendations', {
+          projectId,
+          attempted: recsToInsert.length,
+          error: recInsErr.message,
+        });
+      } else {
+        const events = recsToInsert.flatMap(r =>
+          r.uptakeEvents.map(e => ({
+            recommendation_id: r.id,
+            occurred_at: e.date,
+            note: e.note,
+            source_url: e.sourceUrl ?? '',
+          }))
+        );
+        if (events.length > 0) {
+          const { error: evErr } = await sb
+            .from('pw_recommendation_events')
+            .insert(events);
+          if (evErr) {
+            console.error('[pw seed] failed to insert recommendation events', {
+              projectId,
+              attempted: events.length,
+              error: evErr.message,
+            });
+          }
+        }
+      }
+    }
+
+    // Backfill the source-report label on any pre-existing rows that predate
+    // the report columns and were missed by migration 042's `is_seed=true`
+    // filter, so they no longer render under the "Unlabelled" group.
+    const unlabelledIds = new Set(
+      (existingRecs ?? []).filter(r => !r.report_label).map(r => r.id)
+    );
+    const toLabel = SEED_RECOMMENDATIONS.filter(
+      r => r.report && unlabelledIds.has(r.id)
+    );
+    for (const r of toLabel) {
+      const { error: lblErr } = await sb
+        .from('pw_recommendations')
+        .update({
+          report_id: r.report!.id,
+          report_label: r.report!.label,
+          report_url: r.report!.url,
+        })
+        .eq('id', r.id)
+        .eq('project_id', projectId);
+      if (lblErr) {
+        console.error('[pw seed] failed to backfill recommendation report label', {
+          projectId,
+          id: r.id,
+          error: lblErr.message,
+        });
       }
     }
   }
