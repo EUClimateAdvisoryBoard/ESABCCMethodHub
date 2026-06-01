@@ -204,6 +204,21 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
       .map(rc => ({ year: rc.year, value: rc.values[VALUE_ID] }))
       .filter((p): p is { year: number; value: number } => p.value !== null && p.value !== undefined);
 
+    // Guard against accidentally wiping an indicator that already has data:
+    // saving treats the grid as the source of truth, so an empty Value series
+    // deletes every stored point.
+    if (points.length === 0 && indicator.data.length > 0) {
+      const ok = window.confirm(
+        `This will delete all ${indicator.data.length} data point` +
+          `${indicator.data.length === 1 ? '' : 's'} for “${indicator.name}”, ` +
+          `because no row has a Value. Continue?`
+      );
+      if (!ok) {
+        setError('Save cancelled — no data points were changed.');
+        return;
+      }
+    }
+
     const valueSource = (columns[0]?.source ?? '').trim();
 
     setBusy(true);
