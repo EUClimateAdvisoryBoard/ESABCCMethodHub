@@ -37,14 +37,13 @@ interface Module {
 }
 
 const MODULES: Module[] = [
-  { href: '/references',       label: 'References',       short: 'References',       group: 'core', topBar: true },
-  { href: '/scenarios',        label: 'Data & Scenarios', short: 'Data',             group: 'core', topBar: true },
-  { href: '/news-feed',        label: 'News',             short: 'News',             group: 'core', topBar: true },
-  { href: '/policy-navigator', label: 'Policy Navigator', short: 'Policy Navigator', group: 'core', topBar: true },
-  { href: '/member-states',    label: 'Member States',    short: 'Members',          group: 'core', topBar: true },
-  { href: '/content-analysis', label: 'Content Analysis', short: 'Content Analysis', group: 'core', topBar: true },
-  { href: '/voting',           label: 'Voting',           short: 'Voting',           group: 'core', topBar: true },
-  { href: '/recommendations',  label: 'Recommendations',  short: 'Recommendations',  group: 'core', topBar: true },
+  { href: '/references',        label: 'References',        short: 'References',        group: 'core', topBar: true },
+  { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core', topBar: true },
+  { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core', topBar: true },
+  { href: '/policy-navigator',  label: 'Policy Navigator',  short: 'Policy Navigator',  group: 'core', topBar: true },
+  { href: '/project-workspace', label: 'Project Workspace', short: 'Project Workspace', group: 'core', topBar: true },
+  { href: '/voting',            label: 'Voting',            short: 'Voting',            group: 'core', topBar: true },
+  { href: '/recommendations',   label: 'Recommendations',   short: 'Recommendations',   group: 'core', topBar: true },
 ];
 
 const TOP_BAR_MODULES = MODULES.filter(m => m.topBar);
