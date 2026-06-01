@@ -8,17 +8,17 @@
  * The Leaflet map is loaded via next/dynamic ({ ssr:false }) — Leaflet
  * touches `window` on mount.
  */
-import dynamic from 'next/dynamic';
+import nextDynamic from 'next/dynamic';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import MemberStatesHeatmap from '@/components/member-states/MemberStatesHeatmap';
 import { loadAllEffectiveProfiles } from '@/lib/country-profiles/server';
 
-export const dynamic_ = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-const MemberStatesMap = dynamic(
+const MemberStatesMap = nextDynamic(
   () => import('@/components/member-states/MemberStatesMap'),
   { ssr: false, loading: () => <div className="h-[540px] bg-grey-50 animate-pulse rounded-lg" /> },
 );
