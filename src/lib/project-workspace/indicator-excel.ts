@@ -39,6 +39,8 @@ import type {
   IndicatorSheetColumn,
   IndicatorSheetLayout,
 } from './indicator-sheet';
+import { formulaExpr, resolveRef } from './indicator-sheet';
+import { parseFormula, toExcelFormula } from './formula';
 
 export const CATEGORY_IDS: IndicatorCategory[] = [
   'emissions',
@@ -169,8 +171,11 @@ function buildHowToSheet(wb: ExcelJS.Workbook) {
     ['        and shows next to the column in the app’s edit / calc mode.', false],
     ['', false],
     ['You can also do all of this in the app: open an indicator and click', false],
-    ['"Edit data / calc" to add rows, helper columns, per-column sources and', false],
-    ['derive columns (e.g. Value = Raw × Multiplier) without leaving the site.', false],
+    ['"Edit data / calc" for a full spreadsheet — formula bar, column letters,', false],
+    ['keyboard navigation and paste. Derive any column from the others with a', false],
+    ['free-form formula, e.g.  = [Raw] * [Multiplier]  or  = (B - C) / B * 100.', false],
+    ['Those derivations are written back here as live Excel formulas, so the', false],
+    ['downloaded workbook recomputes on its own.', false],
     ['', false],
     ['The "Indicators" tab holds editable metadata (name, unit, target, source …).', false],
     ['Do NOT change the ID column or rename tabs — those are how rows are matched', false],
@@ -259,32 +264,77 @@ function buildIndicatorSheet(
     new Set([...pointByYear.keys(), ...layoutByYear.keys()])
   ).sort((a, b) => a - b);
 
-  for (const year of years) {
+  // All data columns in sheet order (B = Value, C+ = helpers) with any
+  // column-level derivation, so derived columns can be written as live Excel
+  // formulas (e.g. =C2*D2) rather than frozen numbers.
+  const allCols: IndicatorSheetColumn[] = layout?.columns?.length
+    ? layout.columns
+    : [{ header: VALUE_HEADER }];
+  const colHeaders = allCols.map(c => c.header);
+  // Reference (header / grid letter) → Excel column letter. A=Year, B=col0 …
+  const letterOf = (ref: string): string | null => {
+    const t = resolveRef(ref, colHeaders);
+    if (!t) return null;
+    return t.kind === 'year' ? 'A' : excelColLetter(t.index + 2);
+  };
+  const colAst = allCols.map(c => {
+    const expr = formulaExpr(c.formula);
+    return expr ? parseFormula(expr).ast : null;
+  });
+
+  years.forEach((year, yi) => {
     const cells = layoutByYear.get(year) ?? [];
     const row = ws.addRow([]);
+    const excelRow = yi + 2; // row 1 is the header
     row.getCell(1).value = year;
 
-    // Value column (B): keep a stored formula, but otherwise use the canonical
-    // point value so UI edits made since the last upload aren't overwritten.
-    const stored = cells[0];
-    const point = pointByYear.get(year);
-    if (isFormula(stored)) {
-      row.getCell(2).value = { formula: stored.f, result: point ?? coerceResult(stored.v) };
-    } else {
-      row.getCell(2).value = point ?? (typeof stored === 'number' ? stored : null);
-    }
+    allCols.forEach((_c, p) => {
+      const excelCol = p + 2; // B = Value (p=0), C = first helper, …
+      const stored = cells[p];
+      const isValue = p === 0;
+      const point = isValue ? pointByYear.get(year) : undefined;
+      const numericFallback =
+        point ?? (typeof stored === 'number' ? stored : isFormula(stored) ? coerceResult(stored.v) : null);
 
-    // Helper columns (C+).
-    helperHeaders.forEach((_h, i) => {
-      writeCell(row.getCell(3 + i), cells[i + 1] ?? null);
+      // Column-level derivation → emit a live Excel formula for this row.
+      if (colAst[p]) {
+        const f = toExcelFormula(colAst[p], excelRow, letterOf);
+        if (f) {
+          row.getCell(excelCol).value = { formula: f, result: numericFallback ?? undefined };
+          return;
+        }
+      }
+      // Value column: prefer the canonical point value over stored cells.
+      if (isValue) {
+        if (isFormula(stored)) {
+          row.getCell(2).value = { formula: stored.f, result: point ?? coerceResult(stored.v) };
+        } else {
+          row.getCell(2).value = point ?? (typeof stored === 'number' ? stored : null);
+        }
+        return;
+      }
+      // Helper column without a column-level formula: write the stored cell
+      // (which may itself carry a hand-written Excel formula from a prior upload).
+      writeCell(row.getCell(excelCol), stored ?? null);
     });
-  }
+  });
 
   ws.getColumn(1).width = 10;
   ws.getColumn(2).width = 16;
   helperHeaders.forEach((_h, i) => {
     ws.getColumn(3 + i).width = 16;
   });
+}
+
+/** 1-based column number → Excel column letter (1→A, 2→B, 27→AA). */
+function excelColLetter(n: number): string {
+  let s = '';
+  while (n > 0) {
+    const r = (n - 1) % 26;
+    s = String.fromCharCode(65 + r) + s;
+    n = Math.floor((n - 1) / 26);
+  }
+  return s;
 }
 
 function writeCell(cell: ExcelJS.Cell, model: SheetCell) {
