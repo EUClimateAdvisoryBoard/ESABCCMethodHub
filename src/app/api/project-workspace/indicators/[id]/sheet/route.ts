@@ -17,6 +17,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase-server';
 import { normalizeLayout } from '@/lib/project-workspace/indicator-sheet';
+import { recordIndicatorRevision } from '@/lib/project-workspace/indicator-revisions';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -106,6 +107,13 @@ export async function PUT(
     { onConflict: 'indicator_id' }
   );
   if (sheetErr) return NextResponse.json({ error: sheetErr.message }, { status: 400 });
+
+  // Archive the resulting version (audit log + restore point).
+  await recordIndicatorRevision(sb, {
+    indicatorId: id,
+    action: 'edit-sheet',
+    user: u.user,
+  });
 
   return NextResponse.json({ ok: true, points });
 }

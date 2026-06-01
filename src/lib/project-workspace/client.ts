@@ -201,6 +201,23 @@ export const pwApi = {
       points: { year: number; value: number }[];
     }>(`${BASE}/indicators/${id}/refresh`, 'POST');
   },
+  /** Version history / audit log for one indicator (newest first). */
+  async listIndicatorRevisions(id: string): Promise<IndicatorRevision[]> {
+    const res = await fetch(`${BASE}/indicators/${id}/revisions`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { revisions?: IndicatorRevision[] };
+    return json.revisions ?? [];
+  },
+  /** Restore an indicator to a previously-archived version. */
+  restoreIndicatorRevision(id: string, revisionId: number) {
+    return send<{ ok: boolean; points: { year: number; value: number }[] }>(
+      `${BASE}/indicators/${id}/revisions/restore`,
+      'POST',
+      { revisionId }
+    );
+  },
   forkPolicyCodes(body: { projectId: string; policyId: string }) {
     return send(`${BASE}/policy-codes`, 'POST', { ...body, action: 'fork' });
   },
@@ -322,6 +339,50 @@ export const pwApi = {
     const qs = new URLSearchParams({ projectId, kind: target.kind, id: target.id });
     return send(`${BASE}/verifications?${qs.toString()}`, 'DELETE');
   },
+};
+
+/**
+ * Client-side mirror of the server `IndicatorRevision` shape (see
+ * indicator-revisions.ts, which is `server-only` and can't be imported here).
+ */
+export type IndicatorRevisionAction =
+  | 'create'
+  | 'edit-sheet'
+  | 'import'
+  | 'refresh'
+  | 'point-upsert'
+  | 'point-delete'
+  | 'metadata'
+  | 'restore'
+  | 'delete';
+
+export interface IndicatorRevision {
+  id: number;
+  indicatorId: string;
+  projectId: string;
+  action: IndicatorRevisionAction;
+  summary: string;
+  changedBy: string | null;
+  changedByName: string;
+  changedAt: string;
+  snapshot: {
+    metadata: Record<string, unknown> | null;
+    points: { year: number; value: number }[];
+    layout: unknown | null;
+  } | null;
+}
+
+/** Human-readable labels, kept in sync with REVISION_ACTION_LABELS server-side. */
+export const REVISION_ACTION_LABELS: Record<IndicatorRevisionAction, string> = {
+  create: 'Created',
+  'edit-sheet': 'Edited data / calc grid',
+  import: 'Imported from Excel',
+  refresh: 'Refreshed from source',
+  'point-upsert': 'Edited a data point',
+  'point-delete': 'Removed a data point',
+  metadata: 'Edited details',
+  restore: 'Restored a previous version',
+  delete: 'Deleted indicator',
 };
 
 /** Mirror of the server `WorkspaceComment` shape (see collaboration.ts). */

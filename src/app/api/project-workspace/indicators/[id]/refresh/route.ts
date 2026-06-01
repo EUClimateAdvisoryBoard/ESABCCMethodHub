@@ -12,6 +12,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase-server';
 import { fetchLiveSeries, hasLiveSource } from '@/lib/project-workspace/live-sources';
+import { recordIndicatorRevision } from '@/lib/project-workspace/indicator-revisions';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -28,6 +29,8 @@ export async function POST(
   const t = token(req);
   if (!t) return NextResponse.json({ error: 'unauthorised' }, { status: 401 });
   const sb = createServerClient(t);
+  const { data: u } = await sb.auth.getUser();
+  if (!u?.user) return NextResponse.json({ error: 'unauthorised' }, { status: 401 });
 
   const indicatorId = params.id;
   if (!hasLiveSource(indicatorId)) {
@@ -95,6 +98,16 @@ export async function POST(
     ok: true,
     points_added: result.points.length,
     message: '',
+  });
+
+  // Archive the post-refresh version (audit log + restore point).
+  await recordIndicatorRevision(sb, {
+    indicatorId,
+    action: 'refresh',
+    summary: `Pulled ${result.points.length} point${
+      result.points.length === 1 ? '' : 's'
+    } from ${result.source}`,
+    user: u.user,
   });
 
   // Return the full series (post-upsert) so the UI can re-render without a

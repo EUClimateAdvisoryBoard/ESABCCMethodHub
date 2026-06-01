@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase-server';
+import { recordIndicatorRevision } from '@/lib/project-workspace/indicator-revisions';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -64,5 +65,14 @@ export async function POST(req: NextRequest) {
   if (error || !data) {
     return NextResponse.json({ error: error?.message ?? 'create failed' }, { status: 400 });
   }
+
+  await recordIndicatorRevision(sb, {
+    indicatorId: id,
+    projectId: body.projectId,
+    action: 'create',
+    summary: `Created “${body.name}”`,
+    user: u.user,
+  });
+
   return NextResponse.json({ indicator: data });
 }
