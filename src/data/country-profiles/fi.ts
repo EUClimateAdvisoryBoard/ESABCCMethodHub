@@ -42,10 +42,10 @@ const fi: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 42, unit: 'Mt CO2e (excl. LULUCF)', year: 2023, source: 'Statistics Finland / UNFCCC' },
+    totalLatest: { value: 42, unit: 'Mt CO2e (excl. LULUCF)', year: 2023, source: 'Statistics Finland / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=FI" },
     total1990: 71,
-    perCapita: { value: 7.5, unit: 't CO2e/cap', year: 2023, source: 'EEA' },
-    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA' },
+    perCapita: { value: 7.5, unit: 't CO2e/cap', year: 2023, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=FI" },
+    perGdp: { value: 0.16, unit: 'kg CO2e/€', year: 2023, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=FI" },
     target2030: { value: -60, unit: '%', baseline: '1990 (excl. LULUCF)', notes: 'Climate Act 2022 — interim milestone on path to 2035 net-zero.' },
     target2050: { value: -100, unit: '%', year: 2035, notes: 'Net-zero by 2035 incl. LULUCF; ≥−60% net by 2050 (negative emissions).' },
     sectors: [
@@ -75,7 +75,7 @@ const fi: CountryProfile = {
     status: 'off-track',
   },
   renewables: {
-    shareLatest: { value: 47.9, unit: '%', year: 2023, source: 'Statistics Finland' },
+    shareLatest: { value: 47.9, unit: '%', year: 2023, source: 'Statistics Finland', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=FI" },
     share2005: 28.6,
     share2020: 43.9,
     target2030: 51,
@@ -100,9 +100,9 @@ const fi: CountryProfile = {
     status: 'on-track',
   },
   efficiency: {
-    primary: { value: 33, unit: 'Mtoe', year: 2022 },
-    final:   { value: 25, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 130, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 33, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=FI" },
+    final:   { value: 25, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=FI" },
+    intensity: { value: 130, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=FI" },
     target2030: -14,
     narrative:
       'Energy intensity is high vs the EU mean owing to long heating season, dispersed ' +
@@ -113,11 +113,11 @@ const fi: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 5.5, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 9.0, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 28.0, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 1600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 48, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 5.5, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/finland-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 9.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/finland-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 28.0, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/finland-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 1600, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 48, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=FI" },
     narrative:
       'Finland has the EU\'s lowest population-weighted PM2.5 exposure thanks to low ' +
       'population density, clean district heating and limited diesel-passenger-car ' +
@@ -127,10 +127,10 @@ const fi: CountryProfile = {
     status: 'on-track',
   },
   water: {
-    surfaceWaterGood: { value: 65, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 98, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 79, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 65, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/finland" },
+    groundwaterGood: { value: 98, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/finland" },
+    bathingWaterExcellent: { value: 79, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=FI" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=FI" },
     narrative:
       'Water quality is among the best in the EU; ~65% of surface water bodies meet ' +
       '"good" ecological status. Eutrophication of the Baltic Sea (Gulf of Finland, ' +
@@ -139,10 +139,10 @@ const fi: CountryProfile = {
     status: 'on-track',
   },
   biodiversity: {
-    natura2000Land: { value: 12.7, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 11, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 2670, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 12, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 12.7, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=FI" },
+    natura2000Marine: { value: 11, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=FI" },
+    threatenedSpecies: { value: 2670, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=FI" },
+    habitatsFavourable: { value: 12, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/finland" },
     narrative:
       'Finland has extensive protected forest area but only ~12% of habitats reach ' +
       'favourable conservation status. The dominant pressure is the forestry model — ' +
@@ -154,9 +154,9 @@ const fi: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 42, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 8.3, unit: '%', year: 2022 },
-    resourceProductivity: { value: 1.7, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 42, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=FI" },
+    circularMaterialUseRate: { value: 8.3, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=FI" },
+    resourceProductivity: { value: 1.7, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=FI" },
     narrative:
       'Municipal recycling at ~42% is below the EU-27 average — heavily reliant on ' +
       'waste-to-energy in CHP. Circular material use rate (~8%) is also below average. ' +
