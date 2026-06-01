@@ -19,6 +19,7 @@ import type { PastRecommendation } from '@/data/esabcc-recommendations';
 import type {
   MemberStateCell,
   PolicyAnnotation,
+  PolicyCode,
   PolicyOverrideMap,
 } from '@/lib/project-workspace/db';
 import IndicatorModule from './IndicatorModule';
@@ -36,6 +37,7 @@ interface Props {
   memberStateCells: MemberStateCell[];
   policyAnnotations: PolicyAnnotation[];
   policyOverrides: PolicyOverrideMap;
+  policyCodes: PolicyCode[];
   customContent: Record<string, string>;
 }
 
@@ -55,6 +57,7 @@ export default function ProjectShell({
   memberStateCells,
   policyAnnotations,
   policyOverrides,
+  policyCodes,
   customContent,
 }: Props) {
   const router = useRouter();
@@ -110,6 +113,7 @@ export default function ProjectShell({
           projectId={project.id}
           initialAnnotations={policyAnnotations}
           initialOverrides={policyOverrides}
+          initialPolicyCodes={policyCodes}
         />
       )}
       {current?.kind === 'custom' && (

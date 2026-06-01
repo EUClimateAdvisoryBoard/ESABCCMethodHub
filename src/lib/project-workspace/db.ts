@@ -53,6 +53,24 @@ export interface PolicyAnnotation {
 /** Promoted `edit` annotations, indexed by policy → field → value. */
 export type PolicyOverrideMap = Record<string, Record<string, string>>;
 
+/**
+ * One project-scoped code assignment on a policy. Rows only exist once a
+ * project has forked the master codes for that policy — until then the
+ * UI shows the master codes directly via the catalog.
+ */
+export interface PolicyCode {
+  id: string;
+  projectId: string;
+  policyId: string;
+  codeId: string;
+  source: 'master' | 'custom';
+  parentCodeId: string | null;
+  label: string;
+  color: string;
+  removed: boolean;
+  createdAt: string;
+}
+
 /** True when Supabase is configured. */
 export function isWorkspaceDbEnabled(): boolean {
   return !!getServerSupabase();
@@ -317,6 +335,33 @@ export async function getPolicyOverrides(): Promise<PolicyOverrideMap> {
     out[r.policy_id][r.field] = r.value ?? '';
   }
   return out;
+}
+
+export async function listPolicyCodes(
+  projectId: string,
+  policyId?: string
+): Promise<PolicyCode[]> {
+  const sb = getServerSupabase();
+  if (!sb) return [];
+  let q = sb
+    .from('pw_policy_codes')
+    .select('*')
+    .eq('project_id', projectId)
+    .order('created_at', { ascending: true });
+  if (policyId) q = q.eq('policy_id', policyId);
+  const { data } = await q;
+  return (data ?? []).map(r => ({
+    id: r.id,
+    projectId: r.project_id,
+    policyId: r.policy_id,
+    codeId: r.code_id,
+    source: r.source,
+    parentCodeId: r.parent_code_id ?? null,
+    label: r.label ?? '',
+    color: r.color ?? '#94A3B8',
+    removed: !!r.removed,
+    createdAt: r.created_at,
+  }));
 }
 
 export async function getCustomModuleContent(

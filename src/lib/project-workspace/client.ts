@@ -143,6 +143,50 @@ export const pwApi = {
       points: { year: number; value: number }[];
     }>(`${BASE}/indicators/${id}/refresh`, 'POST');
   },
+  forkPolicyCodes(body: { projectId: string; policyId: string }) {
+    return send(`${BASE}/policy-codes`, 'POST', { ...body, action: 'fork' });
+  },
+  toggleMasterPolicyCode(body: {
+    projectId: string;
+    policyId: string;
+    codeId: string;
+    removed: boolean;
+  }) {
+    return send<{ code: { id: string; removed: boolean } }>(
+      `${BASE}/policy-codes`,
+      'POST',
+      { ...body, action: 'toggle-master' }
+    );
+  },
+  addCustomPolicyCode(body: {
+    projectId: string;
+    policyId: string;
+    label: string;
+    color?: string;
+    parentCodeId?: string | null;
+  }) {
+    return send<{
+      code: {
+        id: string;
+        code_id: string;
+        label: string;
+        color: string;
+        parent_code_id: string | null;
+        source: 'master' | 'custom';
+        removed: boolean;
+        created_at: string;
+      };
+    }>(`${BASE}/policy-codes`, 'POST', { ...body, action: 'add-custom' });
+  },
+  patchPolicyCode(
+    id: string,
+    body: { label?: string; color?: string; parentCodeId?: string | null; removed?: boolean }
+  ) {
+    return send(`${BASE}/policy-codes/${id}`, 'PATCH', body);
+  },
+  deletePolicyCode(id: string) {
+    return send(`${BASE}/policy-codes/${id}`, 'DELETE');
+  },
   saveCustomContent(projectId: string, moduleId: string, content: string) {
     return send(`${BASE}/custom-module-content`, 'PUT', {
       projectId,

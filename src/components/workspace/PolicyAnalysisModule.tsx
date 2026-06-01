@@ -27,9 +27,14 @@ import {
   getCitationLinks,
 } from '@/data/sectoral-policies';
 import { pwApi } from '@/lib/project-workspace/client';
-import type { PolicyAnnotation, PolicyOverrideMap } from '@/lib/project-workspace/db';
+import type {
+  PolicyAnnotation,
+  PolicyCode,
+  PolicyOverrideMap,
+} from '@/lib/project-workspace/db';
 import { invalidatePromotedEditsCache } from '@/lib/project-workspace/usePromotedPolicyEdits';
 import { useAuth } from '@/lib/auth-context';
+import PolicyCodesPanel from './PolicyCodesPanel';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
   approve: 'Approved',
@@ -59,6 +64,7 @@ interface Props {
   projectId: string;
   initialAnnotations: PolicyAnnotation[];
   initialOverrides: PolicyOverrideMap;
+  initialPolicyCodes: PolicyCode[];
 }
 
 /** Distinct users who approved a policy with an annotation that is still open. */
@@ -78,6 +84,7 @@ export default function PolicyAnalysisModule({
   projectId,
   initialAnnotations,
   initialOverrides,
+  initialPolicyCodes,
 }: Props) {
   const { user, displayName } = useAuth();
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
@@ -111,6 +118,16 @@ export default function PolicyAnalysisModule({
     }
     return m;
   }, [annotations]);
+
+  const codesByPolicy = useMemo(() => {
+    const m = new Map<string, PolicyCode[]>();
+    for (const c of initialPolicyCodes) {
+      const list = m.get(c.policyId) ?? [];
+      list.push(c);
+      m.set(c.policyId, list);
+    }
+    return m;
+  }, [initialPolicyCodes]);
 
   async function addAnnotation(
     policyId: string,
@@ -298,8 +315,10 @@ export default function PolicyAnalysisModule({
               </button>
               {open && (
                 <PolicyBody
+                  projectId={projectId}
                   policy={p}
                   annotations={anns}
+                  policyCodes={codesByPolicy.get(p.id) ?? []}
                   overrides={overrides[p.id] ?? {}}
                   approvers={approvers}
                   fourEyeChecked={fourEyeChecked}
@@ -322,8 +341,10 @@ export default function PolicyAnalysisModule({
 }
 
 function PolicyBody({
+  projectId,
   policy,
   annotations,
+  policyCodes,
   overrides,
   approvers,
   fourEyeChecked,
@@ -336,8 +357,10 @@ function PolicyBody({
   onPromote,
   onDelete,
 }: {
+  projectId: string;
   policy: SectorPolicy;
   annotations: PolicyAnnotation[];
+  policyCodes: PolicyCode[];
   overrides: Record<string, string>;
   approvers: { id: string; name: string; at: string }[];
   fourEyeChecked: boolean;
@@ -518,6 +541,14 @@ function PolicyBody({
           </a>
         )}
       </div>
+
+      {/* Project-scoped codes (copy-on-write over the master taxonomy) */}
+      <PolicyCodesPanel
+        projectId={projectId}
+        policyId={policy.id}
+        initialCodes={policyCodes}
+        isSignedIn={isSignedIn}
+      />
 
       {/* Four-eye approval block */}
       <div className="rounded-lg border border-grey-200 bg-grey-50 p-3">
