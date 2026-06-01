@@ -206,18 +206,22 @@ const fr: CountryProfile = {
     draftSubmitted: '2023-11',
     finalSubmitted: '2024-07',
     commissionAssessment:
-      'Commission assessment (December 2023) judged the French NECP draft "partially ' +
-      'aligned" — flagged the 2030 renewable energy contribution (33%) as below the ' +
-      'EU formula (44%), insufficient quantification of the transport decarbonisation ' +
-      'pathway, and gaps in the energy-poverty action plan. Final NECP improved on ' +
-      'the renewables ambition and added detail on the nuclear-renewables mix.',
+      'When the Commission graded the December 2023 draft it concluded France was only ' +
+      'part-way to the EU 2030 framework: the 33% renewables contribution sat well ' +
+      'below the 44% the EU allocation formula suggested, the transport pathway was ' +
+      'thinly quantified, and the energy-poverty annex was incomplete. The July 2024 ' +
+      'final plan responded by lifting the renewables headline and elaborating how ' +
+      'the nuclear fleet and new build are expected to coexist with variable RES.',
     esabccCommentary:
-      'France\'s mitigation architecture (SNBC + Energy-Climate Law) is well-developed ' +
-      'but the carbon-budget overshoot in 2019-2023 (transport, buildings) has not ' +
-      'triggered automatic corrective measures. ESABCC notes the LULUCF sink ' +
-      'collapse materially reduces the achievability of the −50% net 2030 target, ' +
-      'and that the SNBC-3 outlook depends on rapid EPR2 build-out — first ' +
-      'commissioning expected only 2035-2037.',
+      'Our reading is that France has the strongest formal mitigation architecture in ' +
+      'the EU (the SNBC budgets plus the Energy-Climate Law), but the third carbon ' +
+      'budget period went off-trajectory in transport and buildings without triggering ' +
+      'any automatic correction. Two additional concerns shape our view: (i) the ' +
+      'land-sink has shrunk by roughly 40% since 2015, so the −50% net 2030 target now ' +
+      'rests on a thinner buffer than the SNBC-3 modelling assumes, and (ii) the ' +
+      'electricity outlook is contingent on EPR2 reactors that will not deliver power ' +
+      'before the mid-2030s, leaving an interim decade dependent on lifetime extensions ' +
+      'of the existing fleet.',
     gaps: [
       'Transport sector overshooting SNBC-2 budget; LEZ rollout politically contested',
       'LULUCF sink collapse (−40% since 2015) not yet reflected in policy mix',

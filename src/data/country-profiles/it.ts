@@ -207,19 +207,22 @@ const it: CountryProfile = {
     draftSubmitted: '2023-06',
     finalSubmitted: '2024-07',
     commissionAssessment:
-      'Commission assessment (December 2023) judged the Italian NECP "partially aligned" ' +
-      '— flagged renewables target (37% in the draft, raised to 39.4% in the final) ' +
-      'as below the EU contribution formula, insufficient detail on the transport ' +
-      'decarbonisation pathway, and limited treatment of the energy-efficiency sub-' +
-      'sectoral targets. Final PNIEC update strengthened renewables and added a ' +
-      'phase-out trajectory for residential gas heating.',
+      'The Commission\'s December 2023 verdict on the Italian draft was "partially ' +
+      'aligned". Three weaknesses dominated the feedback: a renewables share (37% in ' +
+      'the draft) too low against the implied EU effort-share, only a sketchy account ' +
+      'of how transport emissions would actually be cut, and missing granularity on ' +
+      'efficiency sub-targets. In the July 2024 update Rome moved the RES headline to ' +
+      '39.4% and, for the first time, set out an explicit timeline for retiring gas ' +
+      'boilers from the housing stock.',
     esabccCommentary:
-      'PNIEC update represents a significant ambition step-up over the 2019 version, ' +
-      'but the central risk is delivery — Italy\'s permitting and grid-connection ' +
-      'bottlenecks have produced repeated auction shortfalls. ESABCC notes the LULUCF ' +
-      'sink projection is optimistic given wildfire pressures, and that the south ' +
-      'Italy offshore-wind pipeline (essential for the 2030 trajectory) carries ' +
-      'material delivery risk.',
+      'On paper the 2024 PNIEC is a meaningful upgrade on the 2019 plan, but in our ' +
+      'view the binding constraint is execution rather than ambition. Auctions under ' +
+      'FER-1 and FER-X have undershot their volumes repeatedly because permits and ' +
+      'grid connections do not arrive on the timescale projected by the plan. We ' +
+      'also flag two specific pieces of the modelling that look optimistic: the ' +
+      'LULUCF sink trajectory looks fragile against rising wildfire activity, and ' +
+      'the southern offshore-wind pipeline — on which the 2030 capacity figures ' +
+      'depend — has yet to demonstrate it can clear development risk at scale.',
     gaps: [
       'Permitting bottlenecks for renewables — regional/superintendency veto powers ',
       'Transport sector ESR trajectory not clearly delivered by current policy mix',
