@@ -172,6 +172,26 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
     }
   }
 
+  // Group recommendations by their source report, preserving first-seen order.
+  const reportGroups = (() => {
+    const order: string[] = [];
+    const byId = new Map<
+      string,
+      { id: string; label: string; url?: string; recs: PastRecommendation[] }
+    >();
+    for (const r of recs) {
+      const id = r.report?.id ?? '__unlabelled__';
+      let g = byId.get(id);
+      if (!g) {
+        g = { id, label: r.report?.label ?? 'Unlabelled', url: r.report?.url, recs: [] };
+        byId.set(id, g);
+        order.push(id);
+      }
+      g.recs.push(r);
+    }
+    return order.map(id => byId.get(id)!);
+  })();
+
   return (
     <div className="space-y-4">
       <header className="flex flex-wrap items-start justify-between gap-3">
@@ -211,12 +231,38 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
         />
       )}
 
-      <ul className="space-y-3">
-        {recs.map(r => (
-          <li
-            key={r.id}
-            className="bg-white border border-grey-200 rounded-xl overflow-hidden"
-          >
+      {recs.length === 0 ? (
+        <p className="text-sm text-tertiary-light italic px-4 py-6 text-center bg-white border border-dashed border-grey-200 rounded-xl">
+          No recommendations yet. Use “Add recommendation” to create the first one.
+        </p>
+      ) : (
+        <div className="space-y-6">
+          {reportGroups.map(g => (
+            <section key={g.id} className="space-y-2">
+              <div className="flex items-center gap-2">
+                <h3 className="text-xs font-semibold uppercase tracking-wide text-tertiary">
+                  {g.label}
+                </h3>
+                {g.url && (
+                  <a
+                    href={g.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-[11px] underline text-primary"
+                  >
+                    report
+                  </a>
+                )}
+                <span className="text-[10px] text-tertiary-light">
+                  {g.recs.length} {g.recs.length === 1 ? 'rec' : 'recs'}
+                </span>
+              </div>
+              <ul className="space-y-3">
+                {g.recs.map(r => (
+                  <li
+                    key={r.id}
+                    className="bg-white border border-grey-200 rounded-xl overflow-hidden"
+                  >
             <button
               type="button"
               onClick={() => setOpenId(openId === r.id ? null : r.id)}
@@ -373,14 +419,13 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                 </div>
               </div>
             )}
-          </li>
-        ))}
-        {recs.length === 0 && (
-          <li className="text-sm text-tertiary-light italic px-4 py-6 text-center bg-white border border-dashed border-grey-200 rounded-xl">
-            No recommendations yet. Use “Add recommendation” to create the first one.
-          </li>
-        )}
-      </ul>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
