@@ -86,6 +86,9 @@ export const pwApi = {
     title: string;
     summary?: string;
     status?: 'not-addressed' | 'in-progress' | 'partially' | 'addressed';
+    reportId?: string;
+    reportLabel?: string;
+    reportUrl?: string;
   }) {
     return send<{ recommendation: { id: string } }>(`${BASE}/recommendations`, 'POST', body);
   },

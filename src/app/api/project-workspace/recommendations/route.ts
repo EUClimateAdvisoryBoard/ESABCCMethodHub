@@ -25,6 +25,9 @@ export async function POST(req: NextRequest) {
     title?: string;
     summary?: string;
     status?: string;
+    reportId?: string;
+    reportLabel?: string;
+    reportUrl?: string;
   };
 
   if (!body.projectId || !body.title) {
@@ -50,6 +53,9 @@ export async function POST(req: NextRequest) {
       title: body.title,
       summary: body.summary ?? '',
       status: body.status ?? 'not-addressed',
+      report_id: body.reportId ?? '',
+      report_label: body.reportLabel ?? '',
+      report_url: body.reportUrl ?? '',
       is_seed: false,
       created_by: u.user.id,
     })
