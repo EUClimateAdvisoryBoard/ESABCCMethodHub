@@ -11,6 +11,12 @@
 --     member-states, policy-analysis). The project row itself is created in
 --     038_project_workspace.sql.
 --
+-- Companion to 044_pw_industry_modules.sql (which seeds the indicators +
+-- recommendations modules with a 2-module scope). This file sorts first, so on
+-- a fresh deploy it seeds all four modules and that companion becomes a no-op;
+-- the inserts and the description update below are written to converge to the
+-- same end-state whichever migration ran first.
+--
 -- Idempotent: re-running it will not duplicate rows or overwrite manual tags.
 -- See src/data/esabcc-recommendations.ts (RECOMMENDATION_TAGS) and
 -- src/data/industry-indicators.ts for the canonical seed definitions.
@@ -76,8 +82,14 @@ insert into public.pw_modules (id, project_id, kind, name, description, position
      3, true)
 on conflict (project_id, id) do nothing;
 
--- Refresh the project description now that its scope is defined.
+-- Refresh the project description now that its scope is defined. Matches either
+-- the original 038 blurb or the 2-module description from
+-- 044_pw_industry_modules.sql, so the four-tool scope wins regardless of which
+-- migration ran first — but never clobbers a hand-edited description.
 update public.pw_projects
   set description = 'Analytical workspace dedicated to industrial decarbonisation — the same four tools as Policy Gap 2.0, scoped to industry: industry indicators, the industry-tagged recommendations, industry-tagged policies and a member-state space framed around industrial transition.'
   where id = 'industry-project'
-    and description = 'Analytical workspace dedicated to industrial decarbonisation. Modules to be added as the project scope is defined.';
+    and description in (
+      'Analytical workspace dedicated to industrial decarbonisation. Modules to be added as the project scope is defined.',
+      'Analytical workspace dedicated to industrial decarbonisation, with an indicator database and a recommendations tracker.'
+    );

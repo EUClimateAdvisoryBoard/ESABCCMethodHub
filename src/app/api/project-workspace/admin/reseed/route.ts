@@ -1,8 +1,9 @@
 /**
  * POST /api/project-workspace/admin/reseed?project=policy-gap-2-0
  *
- * Forces the ECNO indicator seed pass against the requested project and
- * reports the resulting row count. Used when the lazy on-page-render
+ * Forces the seed pass (ECNO indicators + ESABCC recommendations) against the
+ * requested project and reports the resulting row counts. Used when the lazy
+ * on-page-render
  * seeder hasn't fired (cold project, no traffic yet) or when its first
  * pass silently failed and we want a deliberate retry whose error path
  * is visible in the response.
@@ -42,11 +43,16 @@ export async function POST(req: NextRequest) {
   }
 
   // Snapshot before/after so the caller can verify the reseed actually
-  // inserted something.
-  const before = await sb
-    .from('pw_indicators')
-    .select('id', { count: 'exact', head: true })
-    .eq('project_id', project);
+  // inserted something. We track both indicators and recommendations because
+  // the seed pass covers both tables.
+  const count = (table: string) =>
+    sb
+      .from(table)
+      .select('id', { count: 'exact', head: true })
+      .eq('project_id', project);
+
+  const indicatorsBefore = await count('pw_indicators');
+  const recommendationsBefore = await count('pw_recommendations');
 
   try {
     await reseedFor(project);
@@ -57,16 +63,26 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const after = await sb
-    .from('pw_indicators')
-    .select('id', { count: 'exact', head: true })
-    .eq('project_id', project);
+  const indicatorsAfter = await count('pw_indicators');
+  const recommendationsAfter = await count('pw_recommendations');
+
+  const snapshot = (
+    before: { count: number | null },
+    after: { count: number | null }
+  ) => ({
+    before: before.count ?? null,
+    after: after.count ?? null,
+    delta: (after.count ?? 0) - (before.count ?? 0),
+  });
 
   return NextResponse.json({
     ok: true,
     project,
-    before: before.count ?? null,
-    after: after.count ?? null,
-    delta: (after.count ?? 0) - (before.count ?? 0),
+    indicators: snapshot(indicatorsBefore, indicatorsAfter),
+    recommendations: snapshot(recommendationsBefore, recommendationsAfter),
+    // Kept for backwards compatibility with existing callers/scripts.
+    before: indicatorsBefore.count ?? null,
+    after: indicatorsAfter.count ?? null,
+    delta: (indicatorsAfter.count ?? 0) - (indicatorsBefore.count ?? 0),
   });
 }

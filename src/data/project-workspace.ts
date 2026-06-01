@@ -103,7 +103,8 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Industry-focused indicators: industrial GHG emissions, energy ' +
           'intensity and electrification, electrolyser capacity, circular ' +
           'material use, the ETS carbon price and free allocation, and ' +
-          'clean-tech investment. Table + chart view, editable in the UI.',
+          'clean-tech investment. Table + chart view with the Excel-like ' +
+          'spreadsheet editor; editable in the UI and round-trippable via Excel.',
       },
       {
         id: 'recommendations',
@@ -113,7 +114,8 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'ESABCC recommendations tagged "industry" — the Industry chapter ' +
           '(I1–I3) plus the cross-chapter advice that drives industrial ' +
           'decarbonisation (ETS/CBAM, hydrogen, CCU/CCS, clean-tech, ' +
-          'circularity). Track status, log dated uptake events and retag.',
+          'circularity). Track status, log dated uptake events, retag, and ' +
+          'use the fact-check / verify workflow.',
       },
       {
         id: 'member-states',

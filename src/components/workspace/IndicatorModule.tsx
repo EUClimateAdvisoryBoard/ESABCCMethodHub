@@ -423,7 +423,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                   onClick={() => setEditorOpen(true)}
                   className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
                   disabled={busy}
-                  title="Add data, helper columns and derived (calc) columns for this indicator"
+                  title="Open the spreadsheet editor: add data, helper columns and derive columns with Excel-like formulas (e.g. =B*C)"
                 >
                   Edit data / calc
                 </button>
