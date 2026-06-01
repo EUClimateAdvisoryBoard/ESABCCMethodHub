@@ -38,6 +38,8 @@ import PolicyCodesPanel from './PolicyCodesPanel';
 import PolicyCodesOverlay, { CodeFilterBar } from './PolicyCodesOverlay';
 import { getDescendantIds } from '@/lib/content-analysis/master-code-catalog';
 import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
+import DownloadMenu from './DownloadMenu';
+import type { SheetSpec, DocBlock } from '@/lib/exports';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
   approve: 'Approved',
@@ -68,6 +70,85 @@ interface Props {
   initialAnnotations: PolicyAnnotation[];
   initialOverrides: PolicyOverrideMap;
   initialPolicyCodes: PolicyCode[];
+}
+
+/** Effective text for a policy field, preferring a promoted edit override. */
+function effective(
+  p: SectorPolicy,
+  field: keyof SectorPolicy,
+  overrides: PolicyOverrideMap
+): string {
+  const ov = overrides[p.id]?.[field as string];
+  if (ov != null && ov !== '') return ov;
+  const v = p[field];
+  return typeof v === 'string' ? v : '';
+}
+
+/** Build a one-sheet Excel of the (filtered) sectoral policies. */
+function buildPolicySheet(policies: SectorPolicy[], overrides: PolicyOverrideMap): SheetSpec {
+  return {
+    name: 'Sectoral policies',
+    title: 'Sectoral policy analysis',
+    subtitle: 'Promoted edits shown as current text',
+    headers: [
+      'Policy',
+      'Scope',
+      'Plain-language meaning',
+      'Current requirement',
+      'Future requirement',
+      'Official source',
+    ],
+    rows: policies.map(p => [
+      p.acronym ? `${p.name} (${p.acronym})` : p.name,
+      effective(p, 'scope', overrides),
+      effective(p, 'meaning', overrides),
+      effective(p, 'currentRequirement', overrides),
+      effective(p, 'futureRequirement', overrides),
+      p.sourceUrl ?? '',
+    ]),
+  };
+}
+
+/** Build a Word document of the (filtered) sectoral policies. */
+function buildPolicyDoc(policies: SectorPolicy[], overrides: PolicyOverrideMap): DocBlock[] {
+  const blocks: DocBlock[] = [
+    { type: 'heading', level: 1, text: 'Sectoral policy analysis' },
+    {
+      type: 'paragraph',
+      text: 'Mirror of the EU Policy Navigator sectoral overview. Promoted edits are shown as the current text.',
+      italic: true,
+    },
+  ];
+  for (const p of policies) {
+    blocks.push({
+      type: 'heading',
+      level: 2,
+      text: p.acronym ? `${p.name} (${p.acronym})` : p.name,
+    });
+    const meaning = effective(p, 'meaning', overrides);
+    if (meaning) blocks.push({ type: 'paragraph', text: meaning });
+    const cur = effective(p, 'currentRequirement', overrides);
+    if (cur) {
+      blocks.push({ type: 'paragraph', text: 'Current requirement', bold: true });
+      blocks.push({ type: 'paragraph', text: cur });
+    }
+    const fut = effective(p, 'futureRequirement', overrides);
+    if (fut) {
+      blocks.push({ type: 'paragraph', text: 'Future requirement', bold: true });
+      blocks.push({ type: 'paragraph', text: fut });
+    }
+    if (p.keyMilestones && p.keyMilestones.length > 0) {
+      blocks.push({ type: 'paragraph', text: 'Milestones', bold: true });
+      blocks.push({
+        type: 'bullets',
+        items: p.keyMilestones.map(m => `${m.year}: ${m.requirement}`),
+      });
+    }
+    if (p.sourceUrl) {
+      blocks.push({ type: 'paragraph', text: `Source: ${p.sourceUrl}`, italic: true });
+    }
+  }
+  return blocks;
 }
 
 /** Distinct users who approved a policy with an annotation that is still open. */
@@ -248,14 +329,21 @@ export default function PolicyAnalysisModule({
   return (
     <div className="space-y-4">
       <header>
-        <h2 className="text-lg font-bold text-tertiary-dark">Policy analysis</h2>
+        <div className="flex items-start justify-between gap-3 flex-wrap">
+          <h2 className="text-lg font-bold text-tertiary-dark">Policy analysis</h2>
+          <DownloadMenu
+            filename="sectoral-policy-analysis"
+            data={{ getSheets: () => [buildPolicySheet(filtered, overrides)] }}
+            text={{ getBlocks: () => buildPolicyDoc(filtered, overrides) }}
+          />
+        </div>
         <p className="text-sm text-tertiary mt-1 max-w-3xl">
           Mirror of the “Sectoral overview” in the EU Policy Navigator. Approve, edit
           the text, edit the legal-basis connections, fact-check or comment on
           individual policy entries. Approvals follow the four-eye principle: two
           distinct sign-offs are required before an entry is marked
           “four-eye checked”. Promoted edits become the canonical text in the
-          navigator.
+          navigator. The download includes any promoted edits as the current text.
         </p>
         {!user && (
           <p className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-2 inline-block">
