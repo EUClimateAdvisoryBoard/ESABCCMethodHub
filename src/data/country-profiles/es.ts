@@ -206,17 +206,22 @@ const es: CountryProfile = {
     draftSubmitted: '2023-06',
     finalSubmitted: '2024-09',
     commissionAssessment:
-      'Commission assessment (December 2023) judged the Spanish NECP "largely aligned" ' +
-      '— one of the more positive headline assessments — with the renewables ambition ' +
-      'praised. Final PNIEC update raised RES to 48%, GHG to −32% vs 1990, and added ' +
-      'an industrial decarbonisation chapter. Outstanding gaps in transport, ' +
-      'agriculture methane and waste-sector measures.',
+      'In the December 2023 round Spain attracted one of the friendlier headline ' +
+      'verdicts in the EU: the Commission described the plan as "largely aligned" and ' +
+      'singled out the renewables architecture for praise. The September 2024 update ' +
+      'then took the renewables share to 48% and the economy-wide GHG cut to 32% ' +
+      'against 1990, while adding a new chapter on industrial decarbonisation. The ' +
+      'remaining holes that we still see being flagged are in non-ETS transport ' +
+      'measures, livestock methane and a thin waste-sector annex.',
     esabccCommentary:
-      'Spain stands out for ambition and clarity of architectural choices (coal exit, ' +
-      'nuclear phase-out, renewables ramp-up) but the delivery wedge is on demand-side ' +
-      'measures: transport decarbonisation, agriculture methane and the water-' +
-      'energy-food nexus. ESABCC notes the just-transition framework as an EU ' +
-      'best-practice model worth replicating.',
+      'What makes Spain unusual in the EU comparison is not the size of its ambition ' +
+      'but the clarity of its supply-side choices — coal already gone, nuclear set to ' +
+      'follow on a published schedule, and a renewables build-out that already exceeds ' +
+      'the previous PNIEC. The delivery risk has migrated to the demand side: road ' +
+      'transport, agricultural methane and the water-energy-food nexus in the south. ' +
+      'We would also draw attention to the Spanish just-transition framework — the ' +
+      'institute, the tripartite agreements, the comarca-level reinvestment plans — ' +
+      'as a piece of governance design other Member States could usefully adapt.',
     gaps: [
       'Transport sector ESR trajectory not clearly delivered — limited LEZ rollout, weak modal-shift policy',
       'Agriculture methane (livestock, manure management) under-addressed',

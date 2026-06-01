@@ -211,19 +211,23 @@ const pl: CountryProfile = {
     draftSubmitted: '2023-09',
     finalSubmitted: '2024-10',
     commissionAssessment:
-      'Commission assessment (December 2023) judged the Polish NECP draft "not aligned" ' +
-      '— flagged renewables target (29.8% in draft) as below the EU contribution ' +
-      'formula (38%), GHG ESR target underspecified, no quantified phase-out ' +
-      'trajectory for coal in power, and limited just-transition detail. Final ' +
-      'NECP (October 2024) raised RES to 32.6% and added a coal-phase-out indicative ' +
-      'pathway but did not commit to a 2049 end-date in statute.',
+      'Poland received one of the bluntest verdicts of the December 2023 cycle: the ' +
+      'Commission concluded the draft was "not aligned". The specific concerns ran ' +
+      'across the file — a renewables share (29.8%) well below the EU\'s indicative ' +
+      'contribution, an under-defined ESR pathway, no quantified end-date for coal ' +
+      'in the electricity mix, and a just-transition annex that was thin on numbers. ' +
+      'The October 2024 final plan answered some of these points by lifting RES to ' +
+      '32.6% and sketching an indicative coal-exit curve, but stopped short of ' +
+      'putting a statutory phase-out date for power-sector coal into law.',
     esabccCommentary:
-      'Poland\'s NECP architecture reflects the political constraints of a country ' +
-      'with the largest coal-region restructuring burden in the EU. The change of ' +
-      'government in late 2023 has opened a substantial policy-reset window; ESABCC ' +
-      'notes that the 2049 hard-coal exit date is incompatible with the EU 2050 ' +
-      'neutrality goal and is being renegotiated. A national climate-neutrality law ' +
-      'is the key near-term deliverable to watch.',
+      'Our reading of the Polish file is that the previous PNIEC was constrained ' +
+      'less by analytical capability than by the political weight of coal-region ' +
+      'restructuring — Poland has the largest such burden anywhere in the EU. The ' +
+      'change of government at the end of 2023 has materially widened the policy ' +
+      'space: a national climate-neutrality law is under preparation and the 2021 ' +
+      'social agreement that fixed the mining exit at 2049 is being reopened. In ' +
+      'our view 2049 is incompatible with EU-wide neutrality by 2050, so what is ' +
+      'now renegotiated in Warsaw will shape the credibility of the whole pathway.',
     gaps: [
       'No statutory 2050 climate-neutrality target; national climate law in preparation',
       '2030 RES target (32.6%) below the EU contribution formula (38%)',
