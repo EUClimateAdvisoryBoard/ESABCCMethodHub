@@ -44,6 +44,19 @@ export default function RecommendationsModule({ initial }: Props) {
     }
   }
 
+  async function updateText(
+    id: string,
+    fields: { title?: string; summary?: string }
+  ) {
+    setBusy(true);
+    try {
+      await pwApi.patchRecommendation(id, fields);
+      setRecs(prev => prev.map(r => (r.id === id ? { ...r, ...fields } : r)));
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function addEvent(
     id: string,
     occurredAt: string,
@@ -119,7 +132,20 @@ export default function RecommendationsModule({ initial }: Props) {
             </button>
             {openId === r.id && (
               <div className="px-4 py-3 border-t border-grey-100 space-y-3">
-                <p className="text-sm text-tertiary leading-relaxed">{r.summary}</p>
+                <EditableText
+                  label="Title"
+                  value={r.title}
+                  busy={busy}
+                  onSave={v => updateText(r.id, { title: v })}
+                  multiline={false}
+                />
+                <EditableText
+                  label="Summary"
+                  value={r.summary}
+                  busy={busy}
+                  onSave={v => updateText(r.id, { summary: v })}
+                  multiline
+                />
 
                 <div className="flex items-center gap-2 flex-wrap">
                   <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
@@ -176,6 +202,96 @@ export default function RecommendationsModule({ initial }: Props) {
           </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function EditableText({
+  label,
+  value,
+  onSave,
+  busy,
+  multiline,
+}: {
+  label: string;
+  value: string;
+  onSave: (v: string) => void;
+  busy: boolean;
+  multiline: boolean;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(value);
+
+  if (!editing) {
+    return (
+      <div className="group">
+        <div className="flex items-baseline gap-2">
+          <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
+            {label}
+          </span>
+          <button
+            type="button"
+            onClick={() => {
+              setDraft(value);
+              setEditing(true);
+            }}
+            className="text-[10px] text-primary underline opacity-0 group-hover:opacity-100 focus:opacity-100"
+          >
+            Edit
+          </button>
+        </div>
+        <p
+          className={
+            multiline
+              ? 'text-sm text-tertiary leading-relaxed whitespace-pre-wrap'
+              : 'text-sm font-medium text-tertiary-dark'
+          }
+        >
+          {value}
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <span className="block text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">
+        {label}
+      </span>
+      {multiline ? (
+        <textarea
+          value={draft}
+          onChange={e => setDraft(e.target.value)}
+          rows={4}
+          className="w-full px-2 py-1 border border-grey-200 rounded text-sm"
+        />
+      ) : (
+        <input
+          value={draft}
+          onChange={e => setDraft(e.target.value)}
+          className="w-full px-2 py-1 border border-grey-200 rounded text-sm"
+        />
+      )}
+      <div className="mt-1 flex gap-2">
+        <button
+          type="button"
+          disabled={busy || !draft.trim() || draft === value}
+          onClick={() => {
+            onSave(draft.trim());
+            setEditing(false);
+          }}
+          className="px-3 py-1 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
+        >
+          Save
+        </button>
+        <button
+          type="button"
+          onClick={() => setEditing(false)}
+          className="px-3 py-1 rounded-md border border-grey-200 text-xs text-tertiary hover:bg-grey-50"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }
