@@ -24,9 +24,16 @@ import {
 } from '@/data/esabcc-indicators';
 import {
   ESABCC_2024_RECOMMENDATIONS,
+  ESABCC_2023_2040_TARGET_ADVICE,
   type PastRecommendation,
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
+
+/** Recommendations seeded into every workspace project, with their report label. */
+const SEED_RECOMMENDATIONS: PastRecommendation[] = [
+  ...ESABCC_2024_RECOMMENDATIONS,
+  ESABCC_2023_2040_TARGET_ADVICE,
+];
 import type { WorkspaceProject, WorkspaceModule, WorkspaceModuleKind } from '@/data/project-workspace';
 
 export type DBProject = WorkspaceProject;
@@ -169,7 +176,7 @@ async function ensureSeedDataFor(projectId: string) {
       .eq('project_id', projectId)
       .eq('is_seed', true);
     const haveRecs = new Set((existingRecs ?? []).map(r => r.id));
-    const recsToInsert = ESABCC_2024_RECOMMENDATIONS.filter(r => !haveRecs.has(r.id));
+    const recsToInsert = SEED_RECOMMENDATIONS.filter(r => !haveRecs.has(r.id));
     if (recsToInsert.length > 0) {
       await sb.from('pw_recommendations').insert(
         recsToInsert.map(r => ({
@@ -179,6 +186,9 @@ async function ensureSeedDataFor(projectId: string) {
           title: r.title,
           summary: r.summary,
           status: r.status,
+          report_id: r.report?.id ?? '',
+          report_label: r.report?.label ?? '',
+          report_url: r.report?.url ?? '',
           is_seed: true,
         }))
       );
@@ -333,12 +343,17 @@ export async function listRecommendations(projectId: string): Promise<DBRecommen
     .select('*')
     .in('recommendation_id', ids)
     .order('occurred_at', { ascending: true });
+  // Existing seed rows are backfilled with their report by migration 042; new
+  // rows carry it from the seed/create path. A blank label means "unlabelled".
   return rows.map<DBRecommendation>(r => ({
     id: r.id,
     area: r.area,
     title: r.title,
     summary: r.summary,
     status: r.status as RecommendationStatus,
+    report: r.report_label
+      ? { id: r.report_id || '', label: r.report_label, url: r.report_url || '' }
+      : undefined,
     uptakeEvents: (events ?? [])
       .filter(e => e.recommendation_id === r.id)
       .map(e => ({

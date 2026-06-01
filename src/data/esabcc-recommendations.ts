@@ -46,6 +46,34 @@ export interface UptakeEvent {
   sourceUrl?: string;
 }
 
+/** Source ESABCC report a recommendation is drawn from (rendered as a label). */
+export interface RecommendationReport {
+  /** Stable slug identifying the report. */
+  id: string;
+  /** Short chip label, e.g. "Towards EU climate neutrality (Jan 2024)". */
+  label: string;
+  /** Canonical URL for the report. */
+  url: string;
+}
+
+/**
+ * Known ESABCC reports recommendations are tagged with. Keyed by report id so
+ * seeds and the UI share one source of truth; add an entry here when tracking
+ * advice from a new publication.
+ */
+export const RECOMMENDATION_REPORTS = {
+  'towards-eu-climate-neutrality-2024': {
+    id: 'towards-eu-climate-neutrality-2024',
+    label: 'Towards EU climate neutrality (Jan 2024)',
+    url: 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
+  },
+  '2040-target-advice-2023': {
+    id: '2040-target-advice-2023',
+    label: 'Scientific advice on the EU 2040 climate target (June 2023)',
+    url: 'https://climate-advisory-board.europa.eu/reports-and-publications/scientific-advice-for-the-determination-of-an-eu-wide-2040-climate-target',
+  },
+} as const satisfies Record<string, RecommendationReport>;
+
 export interface PastRecommendation {
   id: string;
   /** Chapter / area of the 2024 report. */
@@ -54,9 +82,11 @@ export interface PastRecommendation {
   summary: string;
   status: RecommendationStatus;
   uptakeEvents: UptakeEvent[];
+  /** Source report the recommendation comes from. Optional for legacy rows. */
+  report?: RecommendationReport;
 }
 
-export const ESABCC_2024_KEY_RECOMMENDATIONS: PastRecommendation[] = [
+const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
   {
     id: 'kr1-necps-implementation',
     area: 'KR1 · 2030 target',
@@ -329,7 +359,7 @@ export const ESABCC_2024_KEY_RECOMMENDATIONS: PastRecommendation[] = [
 //   "post-2030", "undecided") → 'not-addressed'.
 // ───────────────────────────────────────────────────────────────────────────
 
-export const ESABCC_2024_SECTORAL_RECOMMENDATIONS: PastRecommendation[] = [
+const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
   // ── Energy supply (E) ────────────────────────────────────────────────────
   {
     id: 'e1-net-zero-policy-alignment',
@@ -1123,10 +1153,20 @@ export const ESABCC_2024_SECTORAL_RECOMMENDATIONS: PastRecommendation[] = [
   },
 ];
 
+// Every recommendation in this file's two arrays comes from the same report,
+// so the report label is attached here rather than repeated on each entry.
+const REPORT_2024 = RECOMMENDATION_REPORTS['towards-eu-climate-neutrality-2024'];
+
+export const ESABCC_2024_KEY_RECOMMENDATIONS: PastRecommendation[] =
+  ESABCC_2024_KEY_RECOMMENDATIONS_BASE.map(r => ({ ...r, report: REPORT_2024 }));
+
+export const ESABCC_2024_SECTORAL_RECOMMENDATIONS: PastRecommendation[] =
+  ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE.map(r => ({ ...r, report: REPORT_2024 }));
+
 /**
  * Full Jan 2024 recommendation set used to seed the tracker:
  * the 13 Key recommendations followed by the 55 sectoral recommendations
- * (68 in total).
+ * (68 in total), each labelled with its source report.
  */
 export const ESABCC_2024_RECOMMENDATIONS: PastRecommendation[] = [
   ...ESABCC_2024_KEY_RECOMMENDATIONS,
@@ -1149,6 +1189,7 @@ export const ESABCC_2023_2040_TARGET_ADVICE: PastRecommendation = {
     '2030–2050"). Set a science-based 2040 target with a strong domestic ' +
     'component and limits on the role of removals.',
   status: 'addressed',
+  report: RECOMMENDATION_REPORTS['2040-target-advice-2023'],
   uptakeEvents: [
     {
       date: '2024-02-06',

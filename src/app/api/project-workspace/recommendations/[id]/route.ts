@@ -21,6 +21,15 @@ export async function PATCH(
   for (const k of ['title', 'summary', 'status', 'area']) {
     if (k in body) patch[k] = body[k];
   }
+  // Report label fields (camelCase in the API → snake_case columns).
+  const reportFields: Record<string, string> = {
+    reportId: 'report_id',
+    reportLabel: 'report_label',
+    reportUrl: 'report_url',
+  };
+  for (const [key, col] of Object.entries(reportFields)) {
+    if (key in body) patch[col] = body[key];
+  }
   if (Object.keys(patch).length === 0) {
     return NextResponse.json({ error: 'no fields' }, { status: 400 });
   }

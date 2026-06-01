@@ -13,8 +13,16 @@
 'use client';
 
 import { useState } from 'react';
-import type { PastRecommendation, RecommendationStatus } from '@/data/esabcc-recommendations';
+import {
+  RECOMMENDATION_REPORTS,
+  type PastRecommendation,
+  type RecommendationReport,
+  type RecommendationStatus,
+} from '@/data/esabcc-recommendations';
 import { pwApi } from '@/lib/project-workspace/client';
+
+/** Known reports offered in the report picker. */
+const REPORT_OPTIONS: RecommendationReport[] = Object.values(RECOMMENDATION_REPORTS);
 
 const STATUS_COLORS: Record<RecommendationStatus, string> = {
   'not-addressed': 'bg-red-100 text-red-800 border-red-200',
@@ -59,6 +67,20 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
     try {
       await pwApi.patchRecommendation(id, fields);
       setRecs(prev => prev.map(r => (r.id === id ? { ...r, ...fields } : r)));
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function updateReport(id: string, report: RecommendationReport | undefined) {
+    setBusy(true);
+    try {
+      await pwApi.patchRecommendation(id, {
+        reportId: report?.id ?? '',
+        reportLabel: report?.label ?? '',
+        reportUrl: report?.url ?? '',
+      });
+      setRecs(prev => prev.map(r => (r.id === id ? { ...r, report } : r)));
     } finally {
       setBusy(false);
     }
@@ -117,10 +139,18 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
     title: string;
     summary: string;
     status: RecommendationStatus;
+    report?: RecommendationReport;
   }) {
     setBusy(true);
     try {
-      const res = await pwApi.createRecommendation({ projectId, ...fields });
+      const { report, ...rest } = fields;
+      const res = await pwApi.createRecommendation({
+        projectId,
+        ...rest,
+        reportId: report?.id,
+        reportLabel: report?.label,
+        reportUrl: report?.url,
+      });
       const created: PastRecommendation = { ...fields, id: res.recommendation.id, uptakeEvents: [] };
       setRecs(prev => [...prev, created]);
       setOpenId(created.id);
@@ -148,7 +178,8 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Past recommendations tracker</h2>
           <p className="text-sm text-tertiary mt-1 max-w-2xl">
-            Recommendations from the January 2024 ESABCC report{' '}
+            ESABCC recommendations, each labelled with the report it comes from —
+            chiefly the January 2024 report{' '}
             <a
               href="https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities"
               target="_blank"
@@ -157,8 +188,8 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
             >
               Towards EU climate neutrality
             </a>
-            . Edit text, change status, log dated uptake events, or add and remove
-            recommendations as new advice is published.
+            . Edit text, change status, set the source report, log dated uptake
+            events, or add and remove recommendations as new advice is published.
           </p>
         </div>
         {!adding && (
@@ -192,10 +223,17 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
               className="w-full text-left px-4 py-3 flex items-start gap-3 hover:bg-grey-50"
             >
               <div className="flex-1">
-                <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
-                  {r.area}
-                </p>
-                <p className="text-sm font-medium text-tertiary-dark">{r.title}</p>
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
+                    {r.area}
+                  </p>
+                  {r.report && (
+                    <span className="text-[10px] px-1.5 py-0.5 rounded bg-primary/8 text-primary border border-primary/15">
+                      {r.report.label}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm font-medium text-tertiary-dark mt-0.5">{r.title}</p>
               </div>
               <span
                 className={`text-[10px] px-2 py-0.5 rounded-full border ${STATUS_COLORS[r.status]}`}
@@ -246,6 +284,38 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                       {STATUS_LABELS[s]}
                     </button>
                   ))}
+                </div>
+
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
+                    Source report
+                  </span>
+                  <select
+                    value={r.report?.id ?? ''}
+                    disabled={busy}
+                    onChange={e =>
+                      updateReport(
+                        r.id,
+                        REPORT_OPTIONS.find(o => o.id === e.target.value)
+                      )
+                    }
+                    className="text-[11px] px-2 py-1 border border-grey-200 rounded bg-white"
+                  >
+                    <option value="">— Unlabelled —</option>
+                    {REPORT_OPTIONS.map(o => (
+                      <option key={o.id} value={o.id}>{o.label}</option>
+                    ))}
+                  </select>
+                  {r.report?.url && (
+                    <a
+                      href={r.report.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="text-[11px] underline text-primary"
+                    >
+                      open report
+                    </a>
+                  )}
                 </div>
 
                 <div>
@@ -326,6 +396,7 @@ function AddRecommendationForm({
     title: string;
     summary: string;
     status: RecommendationStatus;
+    report?: RecommendationReport;
   }) => void;
   onCancel: () => void;
 }) {
@@ -333,6 +404,7 @@ function AddRecommendationForm({
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [status, setStatus] = useState<RecommendationStatus>('not-addressed');
+  const [reportId, setReportId] = useState<string>(REPORT_OPTIONS[0]?.id ?? '');
 
   const canSave = title.trim() !== '';
 
@@ -381,11 +453,30 @@ function AddRecommendationForm({
           ))}
         </select>
       </label>
+      <label className="block text-[11px] text-tertiary">
+        <span className="block mb-1">Source report</span>
+        <select
+          value={reportId}
+          onChange={e => setReportId(e.target.value)}
+          className="px-2 py-1 border border-grey-200 rounded text-sm bg-white"
+        >
+          <option value="">— Unlabelled —</option>
+          {REPORT_OPTIONS.map(o => (
+            <option key={o.id} value={o.id}>{o.label}</option>
+          ))}
+        </select>
+      </label>
       <div className="flex gap-2">
         <button
           type="button"
           disabled={busy || !canSave}
-          onClick={() => onCreate({ area: area.trim(), title: title.trim(), summary: summary.trim(), status })}
+          onClick={() => onCreate({
+            area: area.trim(),
+            title: title.trim(),
+            summary: summary.trim(),
+            status,
+            report: REPORT_OPTIONS.find(o => o.id === reportId),
+          })}
           className="px-3 py-1 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
         >
           Create
