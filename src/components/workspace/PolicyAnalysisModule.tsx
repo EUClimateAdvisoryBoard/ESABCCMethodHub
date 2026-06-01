@@ -1,11 +1,19 @@
 /**
  * Policy analysis module for the Project Workspace.
  * --------------------------------------------------
- * Mirrors the data shown on the EU Policy Navigator's "Sectoral overview"
- * tab, but adds a review workflow on top: approve / disapprove, fact-check,
- * edit a specific field, or leave a comment. All annotations are stored in
- * `pw_policy_annotations` and re-read by the navigator so changes
- * propagate automatically.
+ * Mirrors the full content shown on the EU Policy Navigator's "Sectoral
+ * overview" tab (plain-language meaning, current / future requirement,
+ * milestones, article-level legal basis, CELEX, official source) and
+ * adds a four-eye review workflow: approve, edit text, edit connections,
+ * fact-check, comment.
+ *
+ * Approvals are signed with the logged-in user's display name. A policy
+ * is marked "four-eye checked" once two distinct users have approved it.
+ * Same user cannot approve twice; the second sign-off must come from a
+ * different identity.
+ *
+ * All annotations are stored in `pw_policy_annotations` and re-read by
+ * the navigator so changes propagate automatically.
  */
 'use client';
 
@@ -15,9 +23,11 @@ import {
   SECTOR_POLICIES,
   type SectorPolicy,
   type SectorId,
+  getCitationLinks,
 } from '@/data/sectoral-policies';
 import { pwApi } from '@/lib/project-workspace/client';
 import type { PolicyAnnotation } from '@/lib/project-workspace/db';
+import { useAuth } from '@/lib/auth-context';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
   approve: 'Approved',
@@ -38,6 +48,9 @@ const EDITABLE_FIELDS = [
   { id: 'meaning', label: 'Plain-language meaning' },
   { id: 'currentRequirement', label: 'Current requirement' },
   { id: 'futureRequirement', label: 'Future requirement' },
+  { id: 'scope', label: 'Scope' },
+  { id: 'keyMilestones', label: 'Milestones' },
+  { id: 'articleCitations', label: 'Legal basis / article citations' },
 ] as const;
 
 interface Props {
@@ -45,7 +58,21 @@ interface Props {
   initialAnnotations: PolicyAnnotation[];
 }
 
+/** Distinct users who approved a policy with an annotation that is still open. */
+function getApprovers(anns: PolicyAnnotation[]): { id: string; name: string; at: string }[] {
+  const byUser = new Map<string, { id: string; name: string; at: string }>();
+  for (const a of anns) {
+    if (a.kind !== 'approve' || a.status !== 'open') continue;
+    const id = a.createdBy ?? `anon:${a.id}`;
+    if (!byUser.has(id)) {
+      byUser.set(id, { id, name: a.value || 'Anonymous', at: a.createdAt });
+    }
+  }
+  return Array.from(byUser.values());
+}
+
 export default function PolicyAnalysisModule({ projectId, initialAnnotations }: Props) {
+  const { user, displayName } = useAuth();
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
   const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
@@ -89,7 +116,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
         field,
         value,
         status: 'open',
-        createdBy: null,
+        createdBy: user?.id ?? null,
         createdAt: new Date().toISOString(),
       };
       setAnnotations(prev => [a, ...prev]);
@@ -120,16 +147,25 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
     }
   }
 
+  const signature = displayName?.trim() || user?.email || '';
+
   return (
     <div className="space-y-4">
       <header>
         <h2 className="text-lg font-bold text-tertiary-dark">Policy analysis</h2>
         <p className="text-sm text-tertiary mt-1 max-w-3xl">
-          Mirror of the “Sectoral overview” in the EU Policy Navigator. Approve, flag,
-          fact-check, suggest edits or comment on individual policy entries.
-          Annotations are stored centrally and surface back inside the navigator
-          so the Secretariat sees them in context.
+          Mirror of the “Sectoral overview” in the EU Policy Navigator. Approve, edit
+          the text, edit the legal-basis connections, fact-check or comment on
+          individual policy entries. Approvals follow the four-eye principle: two
+          distinct sign-offs are required before an entry is marked
+          “four-eye checked”.
         </p>
+        {!user && (
+          <p className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-2 inline-block">
+            Sign in to approve, edit or comment — annotations are signed with your
+            account.
+          </p>
+        )}
       </header>
 
       <div className="flex flex-wrap gap-2">
@@ -167,6 +203,8 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
       <ul className="space-y-3">
         {filtered.map(p => {
           const anns = annByPolicy.get(p.id) ?? [];
+          const approvers = getApprovers(anns);
+          const fourEyeChecked = approvers.length >= 2;
           const open = openId === p.id;
           return (
             <li key={p.id} className="bg-white border border-grey-200 rounded-xl">
@@ -188,16 +226,40 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
                     )}
                   </p>
                 </div>
-                {anns.length > 0 && (
-                  <span className="text-[10px] px-2 py-0.5 rounded-full border border-grey-200 text-tertiary">
-                    {anns.length} annotation{anns.length === 1 ? '' : 's'}
-                  </span>
-                )}
+                <div className="flex flex-col items-end gap-1">
+                  {fourEyeChecked ? (
+                    <span
+                      className="text-[10px] px-2 py-0.5 rounded-full border border-green-300 bg-green-50 text-green-800 font-semibold inline-flex items-center gap-1"
+                      title={`Four-eye checked — approved by ${approvers
+                        .map(a => a.name)
+                        .join(' & ')}`}
+                    >
+                      ✓✓ Four-eye checked
+                    </span>
+                  ) : approvers.length === 1 ? (
+                    <span
+                      className="text-[10px] px-2 py-0.5 rounded-full border border-amber-300 bg-amber-50 text-amber-800 font-semibold inline-flex items-center gap-1"
+                      title={`1/2 approvals — awaiting second sign-off (approved by ${approvers[0].name})`}
+                    >
+                      1/2 approved
+                    </span>
+                  ) : null}
+                  {anns.length > 0 && (
+                    <span className="text-[10px] px-2 py-0.5 rounded-full border border-grey-200 text-tertiary">
+                      {anns.length} annotation{anns.length === 1 ? '' : 's'}
+                    </span>
+                  )}
+                </div>
               </button>
               {open && (
                 <PolicyBody
                   policy={p}
                   annotations={anns}
+                  approvers={approvers}
+                  fourEyeChecked={fourEyeChecked}
+                  currentUserId={user?.id ?? null}
+                  signature={signature}
+                  isSignedIn={!!user}
                   busy={busy}
                   onAdd={(kind, field, value) => addAnnotation(p.id, kind, field, value)}
                   onResolve={resolveAnnotation}
@@ -215,6 +277,11 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
 function PolicyBody({
   policy,
   annotations,
+  approvers,
+  fourEyeChecked,
+  currentUserId,
+  signature,
+  isSignedIn,
   busy,
   onAdd,
   onResolve,
@@ -222,6 +289,11 @@ function PolicyBody({
 }: {
   policy: SectorPolicy;
   annotations: PolicyAnnotation[];
+  approvers: { id: string; name: string; at: string }[];
+  fourEyeChecked: boolean;
+  currentUserId: string | null;
+  signature: string;
+  isSignedIn: boolean;
   busy: boolean;
   onAdd: (kind: PolicyAnnotation['kind'], field: string, value: string) => void;
   onResolve: (id: string) => void;
@@ -232,37 +304,220 @@ function PolicyBody({
   const [factCheck, setFactCheck] = useState('');
   const [comment, setComment] = useState('');
 
+  const userAlreadyApproved =
+    !!currentUserId && approvers.some(a => a.id === currentUserId);
+  const sector = SECTORS.find(s => policy.sectors.includes(s.id));
+  const sectorColor = sector?.color ?? '#404040';
+  const citationLinks = getCitationLinks(policy);
+  const eurLexUrl = policy.ceLexId
+    ? `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:${policy.ceLexId}`
+    : null;
+
+  function handleApprove() {
+    if (!isSignedIn || userAlreadyApproved) return;
+    onAdd('approve', '', signature || 'Anonymous');
+  }
+
   return (
     <div className="px-4 py-3 border-t border-grey-100 space-y-4 text-xs">
+      {/* Header strip matching Policy Navigator */}
+      <div className="flex flex-wrap items-center gap-2">
+        {policy.acronym && (
+          <span
+            className="text-[10px] font-bold px-1.5 py-0.5 rounded"
+            style={{ backgroundColor: sectorColor + '20', color: sectorColor }}
+          >
+            {policy.acronym}
+          </span>
+        )}
+        <span className="text-[10px] text-tertiary-light uppercase tracking-wide">
+          {policy.instrumentType}
+        </span>
+        {policy.inForce && (
+          <span className="text-[10px] text-tertiary">in force {policy.inForce}</span>
+        )}
+        {policy.adopted && (
+          <span className="text-[10px] text-tertiary">adopted {policy.adopted}</span>
+        )}
+        <div className="flex flex-wrap gap-1 ml-auto">
+          {policy.sectors.map(s => {
+            const sec = SECTORS.find(x => x.id === s);
+            if (!sec) return null;
+            return (
+              <span
+                key={s}
+                className="text-[9px] px-1.5 py-0.5 rounded"
+                style={{ backgroundColor: sec.color + '20', color: sec.color }}
+              >
+                {sec.name}
+              </span>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* What it means */}
+      <Field label="Plain-language meaning">{policy.meaning}</Field>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <Field label="Plain-language meaning">{policy.meaning}</Field>
         <Field label="Current requirement">{policy.currentRequirement}</Field>
         <Field label="Future requirement">{policy.futureRequirement}</Field>
         <Field label="Scope">{policy.scope}</Field>
       </div>
 
-      <div className="flex flex-wrap gap-2">
-        <button
-          type="button"
-          disabled={busy}
-          onClick={() => onAdd('approve', '', '')}
-          className="text-[11px] px-2 py-1 rounded border border-green-300 text-green-800 hover:bg-green-50"
-        >
-          ✓ Approve
-        </button>
-        <button
-          type="button"
-          disabled={busy}
-          onClick={() => onAdd('disapprove', '', '')}
-          className="text-[11px] px-2 py-1 rounded border border-red-300 text-red-800 hover:bg-red-50"
-        >
-          ✗ Disapprove
-        </button>
+      {/* Milestones */}
+      {policy.keyMilestones.length > 0 && (
+        <div>
+          <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-bold mb-1.5">
+            Milestones
+          </p>
+          <div className="space-y-1.5">
+            {policy.keyMilestones.map((m, i) => (
+              <div key={i} className="flex gap-3 items-start">
+                <span
+                  className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded text-white"
+                  style={{ backgroundColor: sectorColor }}
+                >
+                  {m.year}
+                </span>
+                <span className="text-[11px]">{m.requirement}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Legal basis */}
+      {citationLinks.length > 0 && (
+        <div>
+          <div className="flex items-center gap-2 mb-1.5">
+            <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-bold">
+              Legal basis (article-level citations)
+            </p>
+            <span className="text-[8px] bg-blue-50 text-blue-600 px-1.5 py-0.5 rounded-full font-medium uppercase tracking-wider border border-blue-100">
+              AI-generated links
+            </span>
+          </div>
+          <ul className="space-y-1">
+            {citationLinks.map((link, i) => {
+              const isExternal = link.url.startsWith('http');
+              return (
+                <li
+                  key={i}
+                  className="text-[10px] text-tertiary-dark flex gap-1.5 items-start"
+                >
+                  <span className="text-tertiary select-none shrink-0 mt-px">-</span>
+                  <a
+                    href={link.url}
+                    {...(isExternal
+                      ? { target: '_blank', rel: 'noopener noreferrer' }
+                      : {})}
+                    className="flex-1 hover:text-secondary hover:underline transition-colors"
+                  >
+                    {link.citation}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+
+      {/* Source footer */}
+      <div className="flex flex-wrap gap-3 text-[10px] text-tertiary-light pt-2 border-t border-grey-200">
+        {policy.ceLexId && eurLexUrl && (
+          <a
+            href={eurLexUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:underline"
+          >
+            CELEX: {policy.ceLexId} ↗
+          </a>
+        )}
+        {policy.sourceUrl && (
+          <a
+            href={policy.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-secondary hover:underline"
+          >
+            Official source ↗
+          </a>
+        )}
       </div>
 
+      {/* Four-eye approval block */}
+      <div className="rounded-lg border border-grey-200 bg-grey-50 p-3">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-bold">
+            Four-eye review
+          </p>
+          {fourEyeChecked ? (
+            <span className="text-[10px] px-2 py-0.5 rounded-full border border-green-300 bg-green-100 text-green-800 font-semibold">
+              ✓✓ Four-eye checked
+            </span>
+          ) : (
+            <span className="text-[10px] px-2 py-0.5 rounded-full border border-grey-200 bg-white text-tertiary">
+              {approvers.length}/2 approvals
+            </span>
+          )}
+        </div>
+
+        {approvers.length > 0 ? (
+          <ul className="space-y-1 mb-2">
+            {approvers.map(a => (
+              <li key={a.id} className="text-[11px] text-tertiary-dark flex items-center gap-2">
+                <span className="text-green-700">✓</span>
+                <span className="font-medium">{a.name}</span>
+                <span className="text-[10px] text-tertiary-light">
+                  on {a.at.slice(0, 10)}
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="text-[11px] text-tertiary mb-2">
+            No approvals yet. Two distinct sign-offs are required.
+          </p>
+        )}
+
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            disabled={busy || !isSignedIn || userAlreadyApproved}
+            onClick={handleApprove}
+            title={
+              !isSignedIn
+                ? 'Sign in to approve'
+                : userAlreadyApproved
+                  ? 'You have already approved this entry — second sign-off must come from a different user'
+                  : signature
+                    ? `Sign as ${signature}`
+                    : 'Approve'
+            }
+            className="text-[11px] px-2 py-1 rounded border border-green-300 text-green-800 hover:bg-green-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            {userAlreadyApproved ? '✓ You approved' : '✓ Approve'}
+            {signature && !userAlreadyApproved && (
+              <span className="text-tertiary-light ml-1">as {signature}</span>
+            )}
+          </button>
+          <button
+            type="button"
+            disabled={busy || !isSignedIn}
+            onClick={() => onAdd('disapprove', '', signature || 'Anonymous')}
+            className="text-[11px] px-2 py-1 rounded border border-red-300 text-red-800 hover:bg-red-50 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            ✗ Disapprove
+          </button>
+        </div>
+      </div>
+
+      {/* Suggest edit (text or connections) */}
       <details className="border border-grey-200 rounded-lg p-2">
         <summary className="text-[11px] font-semibold text-tertiary-dark cursor-pointer">
-          Suggest an edit
+          Suggest an edit (text or connections)
         </summary>
         <div className="mt-2 space-y-2">
           <label className="block">
@@ -282,12 +537,18 @@ function PolicyBody({
           <textarea
             value={editValue}
             onChange={e => setEditValue(e.target.value)}
-            placeholder="Proposed new text"
+            placeholder={
+              editField === 'articleCitations'
+                ? 'Add / remove / reword article citations (one per line)'
+                : editField === 'keyMilestones'
+                  ? 'Proposed milestones (e.g. 2030 — -55% vs 1990)'
+                  : 'Proposed new text'
+            }
             className="w-full h-20 px-2 py-1 border border-grey-200 rounded text-xs"
           />
           <button
             type="button"
-            disabled={!editValue || busy}
+            disabled={!editValue || busy || !isSignedIn}
             onClick={() => {
               onAdd('edit', editField, editValue);
               setEditValue('');
@@ -312,7 +573,7 @@ function PolicyBody({
           />
           <button
             type="button"
-            disabled={!factCheck || busy}
+            disabled={!factCheck || busy || !isSignedIn}
             onClick={() => {
               onAdd('fact-check', '', factCheck);
               setFactCheck('');
@@ -337,7 +598,7 @@ function PolicyBody({
           />
           <button
             type="button"
-            disabled={!comment || busy}
+            disabled={!comment || busy || !isSignedIn}
             onClick={() => {
               onAdd('comment', '', comment);
               setComment('');
