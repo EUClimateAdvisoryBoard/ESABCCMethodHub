@@ -100,7 +100,7 @@ export default function ProjectShell({
         <IndicatorModule projectId={project.id} initial={indicators} />
       )}
       {current?.kind === 'recommendations' && (
-        <RecommendationsModule initial={recommendations} />
+        <RecommendationsModule projectId={project.id} initial={recommendations} />
       )}
       {current?.kind === 'member-states' && (
         <MemberStatesModule projectId={project.id} initial={memberStateCells} />

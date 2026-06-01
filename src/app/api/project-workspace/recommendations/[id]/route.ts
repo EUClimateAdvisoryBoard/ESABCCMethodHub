@@ -33,3 +33,15 @@ export async function PATCH(
   if (error) return NextResponse.json({ error: error.message }, { status: 400 });
   return NextResponse.json({ recommendation: data });
 }
+
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  const t = token(req);
+  if (!t) return NextResponse.json({ error: 'unauthorised' }, { status: 401 });
+  const sb = createServerClient(t);
+  const { error } = await sb.from('pw_recommendations').delete().eq('id', params.id);
+  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
+  return NextResponse.json({ ok: true });
+}
