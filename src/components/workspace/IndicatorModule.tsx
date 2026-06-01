@@ -11,8 +11,9 @@
  */
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { saveAs } from 'file-saver';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -32,7 +33,9 @@ import {
   type IndicatorCategory,
   type IndicatorDataPoint,
 } from '@/data/ecno-indicators';
-import { pwApi } from '@/lib/project-workspace/client';
+import { pwApi, type IndicatorImportSummary } from '@/lib/project-workspace/client';
+import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
+import IndicatorDataEditor from './IndicatorDataEditor';
 
 ChartJS.register(
   CategoryScale,
@@ -71,16 +74,19 @@ function groupOf(i: Indicator): 'esabcc' | 'additional' {
 interface Props {
   projectId: string;
   initial: Indicator[];
+  initialLayouts: Record<string, IndicatorSheetLayout>;
 }
 
-export default function IndicatorModule({ projectId, initial }: Props) {
+export default function IndicatorModule({ projectId, initial, initialLayouts }: Props) {
   const router = useRouter();
   const [indicators, setIndicators] = useState<Indicator[]>(initial);
+  const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
-  const [editing, setEditing] = useState<string | null>(null);
+  const [editorOpen, setEditorOpen] = useState(false);
   const [adding, setAdding] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [importOpen, setImportOpen] = useState(false);
   const [refreshStatus, setRefreshStatus] = useState<
     { kind: 'ok' | 'err'; message: string } | null
   >(null);
@@ -94,18 +100,18 @@ export default function IndicatorModule({ projectId, initial }: Props) {
     setIndicators(prev => prev.map(i => (i.id === id ? { ...i, ...patch } : i)));
   }
 
-  async function handleAddPoint(id: string, point: IndicatorDataPoint) {
-    setBusy(true);
-    try {
-      await pwApi.upsertPoint({ indicatorId: id, year: point.year, value: point.value });
-      patchLocal(id, {
-        data: [...indicators.find(i => i.id === id)!.data.filter(d => d.year !== point.year), point].sort(
-          (a, b) => a.year - b.year
-        ),
-      });
-    } finally {
-      setBusy(false);
-    }
+  function handleSheetSaved(
+    id: string,
+    points: IndicatorDataPoint[],
+    layout: IndicatorSheetLayout,
+    source: string
+  ) {
+    patchLocal(id, {
+      data: [...points].sort((a, b) => a.year - b.year),
+      source: source || indicators.find(i => i.id === id)?.source,
+    });
+    setLayouts(prev => ({ ...prev, [id]: layout }));
+    setEditorOpen(false);
   }
 
   async function handleRemovePoint(id: string, year: number) {
@@ -187,6 +193,20 @@ export default function IndicatorModule({ projectId, initial }: Props) {
     }
   }
 
+  async function handleDownloadExcel() {
+    setBusy(true);
+    setRefreshStatus(null);
+    try {
+      const blob = await pwApi.downloadIndicatorsWorkbook(projectId);
+      const date = new Date().toISOString().slice(0, 10);
+      saveAs(blob, `indicator-database-${projectId}-${date}.xlsx`);
+    } catch (e) {
+      setRefreshStatus({ kind: 'err', message: `Download failed: ${(e as Error).message}` });
+    } finally {
+      setBusy(false);
+    }
+  }
+
   if (!selected) {
     return (
       <div className="text-sm text-tertiary">
@@ -244,13 +264,33 @@ export default function IndicatorModule({ projectId, initial }: Props) {
             updates from Eurostat / EEA / EAFO / IRENA / EHPA.
           </p>
         </div>
-        <button
-          type="button"
-          onClick={() => setAdding(true)}
-          className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
-        >
-          + Add indicator
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={handleDownloadExcel}
+            disabled={busy}
+            className="px-3 py-1.5 rounded-md border border-grey-200 text-tertiary-dark text-xs font-semibold hover:bg-grey-50 disabled:opacity-50"
+            title="Download the whole indicator database as one Excel workbook — one tab per indicator"
+          >
+            ↓ Download Excel
+          </button>
+          <button
+            type="button"
+            onClick={() => setImportOpen(true)}
+            disabled={busy}
+            className="px-3 py-1.5 rounded-md border border-grey-200 text-tertiary-dark text-xs font-semibold hover:bg-grey-50 disabled:opacity-50"
+            title="Upload an edited workbook to update the indicator database"
+          >
+            ↑ Upload Excel
+          </button>
+          <button
+            type="button"
+            onClick={() => setAdding(true)}
+            className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
+          >
+            + Add indicator
+          </button>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-6">
@@ -376,11 +416,12 @@ export default function IndicatorModule({ projectId, initial }: Props) {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setEditing(selected.id)}
+                  onClick={() => setEditorOpen(true)}
                   className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
                   disabled={busy}
+                  title="Add data, helper columns and derived (calc) columns for this indicator"
                 >
-                  Add data
+                  Edit data / calc
                 </button>
                 {LIVE_REFRESHABLE_INDICATORS.has(selected.id) && (
                   <button
@@ -492,15 +533,131 @@ export default function IndicatorModule({ projectId, initial }: Props) {
       {adding && (
         <AddIndicatorDialog onClose={() => setAdding(false)} onSave={handleAddIndicator} />
       )}
-      {editing && (
-        <EditDataDialog
-          indicator={indicators.find(i => i.id === editing)!}
-          onClose={() => setEditing(null)}
-          onAddPoint={p => handleAddPoint(editing, p)}
-          busy={busy}
+      {editorOpen && selected && (
+        <IndicatorDataEditor
+          indicator={selected}
+          layout={layouts[selected.id]}
+          onClose={() => setEditorOpen(false)}
+          onSaved={(points, layout, source) =>
+            handleSheetSaved(selected.id, points, layout, source)
+          }
+        />
+      )}
+      {importOpen && (
+        <ImportExcelDialog
+          projectId={projectId}
+          onClose={() => setImportOpen(false)}
         />
       )}
     </div>
+  );
+}
+
+function ImportExcelDialog({
+  projectId,
+  onClose,
+}: {
+  projectId: string;
+  onClose: () => void;
+}) {
+  const [file, setFile] = useState<File | null>(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [result, setResult] = useState<IndicatorImportSummary | null>(null);
+
+  async function handleUpload() {
+    if (!file) return;
+    setBusy(true);
+    setError(null);
+    try {
+      const res = await pwApi.importIndicatorsWorkbook(projectId, file);
+      setResult(res);
+    } catch (e) {
+      setError((e as Error).message);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  // Once changes are applied the in-page chart/table won't reflect them until
+  // the server component re-renders, so reload on close after a successful run.
+  function done() {
+    if (result) window.location.reload();
+    else onClose();
+  }
+
+  const totalPoints = result?.summary.reduce((n, s) => n + s.pointsWritten, 0) ?? 0;
+  const totalDeleted = result?.summary.reduce((n, s) => n + s.pointsDeleted, 0) ?? 0;
+  const metaCount = result?.summary.filter(s => s.metadataUpdated).length ?? 0;
+  const perIndicatorWarnings =
+    result?.summary.flatMap(s => s.warnings.map(w => `${s.id}: ${w}`)) ?? [];
+  const allWarnings = [...(result?.warnings ?? []), ...perIndicatorWarnings];
+
+  return (
+    <DialogShell title="Upload indicator workbook" onClose={done}>
+      {!result ? (
+        <div className="text-sm">
+          <p className="text-xs text-tertiary mb-3">
+            Upload an edited copy of the indicator-database workbook. Indicators
+            are matched by the <strong>ID</strong> column on the “Indicators”
+            tab; each tab’s <strong>Year</strong> / <strong>Value</strong> rows
+            replace that indicator’s plotted series, and any helper columns you
+            added are saved for next time. New IDs are ignored — add new
+            indicators with “+ Add indicator”.
+          </p>
+          <input
+            type="file"
+            accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+            className="block w-full text-xs text-tertiary file:mr-2 file:py-1 file:px-2 file:rounded file:border file:border-grey-200 file:bg-grey-50 file:text-tertiary-dark file:text-xs hover:file:bg-grey-100"
+            onChange={e => {
+              setFile(e.target.files?.[0] ?? null);
+              setError(null);
+            }}
+          />
+          {error && <p className="mt-2 text-[11px] text-red-700">{error}</p>}
+          <div className="mt-4 flex justify-end gap-2">
+            <button type="button" onClick={onClose} className={btnSecondary}>
+              Cancel
+            </button>
+            <button
+              type="button"
+              disabled={!file || busy}
+              onClick={handleUpload}
+              className={btnPrimary}
+            >
+              {busy ? 'Uploading…' : 'Upload & apply'}
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className="text-sm">
+          <div className="rounded-md bg-green-50 border border-green-200 text-green-800 text-xs px-3 py-2 mb-3">
+            Processed <strong>{result.indicatorsProcessed}</strong> indicator
+            {result.indicatorsProcessed === 1 ? '' : 's'}: wrote{' '}
+            <strong>{totalPoints}</strong> data point{totalPoints === 1 ? '' : 's'}
+            {totalDeleted > 0 && <> · removed {totalDeleted}</>}
+            {metaCount > 0 && <> · updated metadata on {metaCount}</>}.
+          </div>
+          {allWarnings.length > 0 && (
+            <div className="rounded-md bg-amber-50 border border-amber-200 text-amber-900 text-[11px] px-3 py-2 mb-3 max-h-48 overflow-y-auto">
+              <p className="font-semibold mb-1">
+                {allWarnings.length} note{allWarnings.length === 1 ? '' : 's'}:
+              </p>
+              <ul className="list-disc pl-4 space-y-0.5">
+                {allWarnings.map((w, i) => (
+                  <li key={i}>{w}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className="mt-4 flex justify-end">
+            <button type="button" onClick={done} className={btnPrimary}>
+              Done
+            </button>
+          </div>
+        </div>
+      )}
+    </DialogShell>
   );
 }
 
@@ -668,67 +825,6 @@ function parseCsvPoints(text: string): IndicatorDataPoint[] {
     points.push({ year, value });
   }
   return points.sort((a, b) => a.year - b.year);
-}
-
-function EditDataDialog({
-  indicator,
-  onClose,
-  onAddPoint,
-  busy,
-}: {
-  indicator: Indicator;
-  onClose: () => void;
-  onAddPoint: (p: IndicatorDataPoint) => Promise<void> | void;
-  busy: boolean;
-}) {
-  const [year, setYear] = useState(new Date().getFullYear());
-  const [value, setValue] = useState('');
-
-  return (
-    <DialogShell title={`Add / update data — ${indicator.name}`} onClose={onClose}>
-      <p className="text-xs text-tertiary mb-3">
-        Existing entry for the same year will be replaced.
-      </p>
-      <div className="grid grid-cols-2 gap-3 text-sm">
-        <Field label="Year">
-          <input
-            type="number"
-            className={inputCls}
-            value={year}
-            onChange={e => setYear(parseInt(e.target.value, 10) || year)}
-          />
-        </Field>
-        <Field label={`Value (${indicator.unit})`}>
-          <input
-            type="number"
-            step="any"
-            className={inputCls}
-            value={value}
-            onChange={e => setValue(e.target.value)}
-          />
-        </Field>
-      </div>
-      <div className="mt-4 flex justify-end gap-2">
-        <button type="button" onClick={onClose} className={btnSecondary}>
-          Close
-        </button>
-        <button
-          type="button"
-          disabled={!value || busy}
-          onClick={async () => {
-            const v = parseFloat(value);
-            if (Number.isFinite(v)) {
-              await onAddPoint({ year, value: v });
-              setValue('');
-            }
-          }}
-          className={btnPrimary}
-        >
-          {busy ? 'Saving…' : 'Add point'}
-        </button>
-      </div>
-    </DialogShell>
-  );
 }
 
 function DialogShell({

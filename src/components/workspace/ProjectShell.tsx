@@ -22,6 +22,7 @@ import type {
   PolicyCode,
   PolicyOverrideMap,
 } from '@/lib/project-workspace/db';
+import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import IndicatorModule from './IndicatorModule';
 import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
@@ -33,6 +34,7 @@ interface Props {
   project: WorkspaceProject;
   activeModule?: string;
   indicators: Indicator[];
+  indicatorSheets: Record<string, IndicatorSheetLayout>;
   recommendations: PastRecommendation[];
   memberStateCells: MemberStateCell[];
   policyAnnotations: PolicyAnnotation[];
@@ -53,6 +55,7 @@ export default function ProjectShell({
   project,
   activeModule,
   indicators,
+  indicatorSheets,
   recommendations,
   memberStateCells,
   policyAnnotations,
@@ -100,7 +103,11 @@ export default function ProjectShell({
       </div>
 
       {current?.kind === 'indicators' && (
-        <IndicatorModule projectId={project.id} initial={indicators} />
+        <IndicatorModule
+          projectId={project.id}
+          initial={indicators}
+          initialLayouts={indicatorSheets}
+        />
       )}
       {current?.kind === 'recommendations' && (
         <RecommendationsModule projectId={project.id} initial={recommendations} />

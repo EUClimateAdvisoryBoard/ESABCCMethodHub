@@ -35,6 +35,7 @@ const SEED_RECOMMENDATIONS: PastRecommendation[] = [
   ESABCC_2023_2040_TARGET_ADVICE,
 ];
 import type { WorkspaceProject, WorkspaceModule, WorkspaceModuleKind } from '@/data/project-workspace';
+import { normalizeLayout, type IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 
 export type DBProject = WorkspaceProject;
 export type DBIndicator = Indicator;
@@ -323,6 +324,35 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
         .sort((a, b) => a.year - b.year),
     };
   });
+}
+
+/**
+ * Stored Excel helper-column layouts, keyed by indicator id. Only indicators
+ * that have been round-tripped through the workbook have a row; everything
+ * else falls back to a plain Year/Value tab at export time.
+ */
+export async function listIndicatorSheets(
+  projectId: string
+): Promise<Record<string, IndicatorSheetLayout>> {
+  noStore();
+  const sb = getServerSupabase();
+  if (!sb) return {};
+  const { data: inds } = await sb
+    .from('pw_indicators')
+    .select('id')
+    .eq('project_id', projectId);
+  const ids = (inds ?? []).map(r => r.id);
+  if (ids.length === 0) return {};
+  const { data } = await sb
+    .from('pw_indicator_sheets')
+    .select('indicator_id, layout')
+    .in('indicator_id', ids);
+  const out: Record<string, IndicatorSheetLayout> = {};
+  for (const r of data ?? []) {
+    const layout = normalizeLayout(r.layout);
+    if (layout) out[r.indicator_id] = layout;
+  }
+  return out;
 }
 
 export async function listRecommendations(projectId: string): Promise<DBRecommendation[]> {
