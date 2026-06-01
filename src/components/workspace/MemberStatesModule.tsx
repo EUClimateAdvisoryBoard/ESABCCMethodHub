@@ -21,6 +21,9 @@ import { useEffect, useState } from 'react';
 import { cpApi } from '@/lib/country-profiles/client';
 import type { CountryProfile } from '@/data/country-profiles/_types';
 import MemberStatesHeatmap from '@/components/member-states/MemberStatesHeatmap';
+import DownloadMenu from './DownloadMenu';
+import CollaborationPanel from './CollaborationPanel';
+import type { SheetSpec, DocBlock } from '@/lib/exports';
 
 const MemberStatesMap = dynamic(
   () => import('@/components/member-states/MemberStatesMap'),
@@ -32,7 +35,7 @@ const MemberStatesMap = dynamic(
   },
 );
 
-export default function MemberStatesModule() {
+export default function MemberStatesModule({ projectId }: { projectId: string }) {
   const [profiles, setProfiles] = useState<CountryProfile[] | null>(null);
   const [err, setErr] = useState<string | null>(null);
 
@@ -77,7 +80,12 @@ export default function MemberStatesModule() {
             full profile.
           </p>
         </div>
-        <div className="flex flex-wrap gap-2 text-[12px]">
+        <div className="flex flex-wrap gap-2 text-[12px] items-center">
+          <DownloadMenu
+            filename="member-state-directory"
+            data={{ getSheets: () => [buildDirectorySheet(profiles)] }}
+            text={{ getBlocks: () => buildDirectoryDoc(profiles) }}
+          />
           <Link
             href="/member-states/submissions"
             className="px-3 py-1.5 rounded-md bg-primary text-white hover:bg-primary-dark"
@@ -123,6 +131,40 @@ export default function MemberStatesModule() {
             ))}
         </div>
       </section>
+
+      <section className="bg-white rounded-xl border border-grey-200 p-4">
+        <CollaborationPanel
+          projectId={projectId}
+          target={{ kind: 'module', id: 'member-states' }}
+          heading="Review & discussion — Member State space"
+        />
+      </section>
     </div>
   );
+}
+
+/** Build a one-sheet directory workbook (code, name, summary). */
+function buildDirectorySheet(profiles: CountryProfile[]): SheetSpec {
+  return {
+    name: 'Member states',
+    title: 'EU member state directory',
+    headers: ['Code', 'Country', 'Summary'],
+    rows: profiles
+      .slice()
+      .sort((a, b) => a.name.localeCompare(b.name))
+      .map(p => [p.code, p.name, p.hero.summary?.split('\n')[0] ?? '']),
+  };
+}
+
+/** Build a Word overview listing each member state with its summary line. */
+function buildDirectoryDoc(profiles: CountryProfile[]): DocBlock[] {
+  const blocks: DocBlock[] = [
+    { type: 'heading', level: 1, text: 'EU member state directory' },
+  ];
+  for (const p of profiles.slice().sort((a, b) => a.name.localeCompare(b.name))) {
+    blocks.push({ type: 'heading', level: 3, text: `${p.name} (${p.code})` });
+    const summary = p.hero.summary?.split('\n')[0];
+    if (summary) blocks.push({ type: 'paragraph', text: summary });
+  }
+  return blocks;
 }

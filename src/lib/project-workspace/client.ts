@@ -252,4 +252,102 @@ export const pwApi = {
       content,
     });
   },
+
+  // ── Collaboration: comments, @mentions, verifications ────────────────────
+  /** All taggable people (id + display name) for the @mention picker. */
+  async listPeople(): Promise<{ id: string; name: string }[]> {
+    const res = await fetch(`${BASE}/people`, { headers: { ...(await authHeader()) } });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { people?: { id: string; name: string }[] };
+    return json.people ?? [];
+  },
+  async listComments(
+    projectId: string,
+    target?: { kind: string; id: string }
+  ): Promise<WorkspaceComment[]> {
+    const qs = new URLSearchParams({ projectId });
+    if (target) {
+      qs.set('kind', target.kind);
+      qs.set('id', target.id);
+    }
+    const res = await fetch(`${BASE}/comments?${qs.toString()}`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { comments?: WorkspaceComment[] };
+    return json.comments ?? [];
+  },
+  createComment(body: {
+    projectId: string;
+    targetKind: string;
+    targetId: string;
+    body: string;
+    parentId?: string | null;
+    mentions?: string[];
+  }) {
+    return send<{ comment: WorkspaceComment }>(`${BASE}/comments`, 'POST', body);
+  },
+  patchComment(id: string, body: { body?: string; resolved?: boolean }) {
+    return send<{ comment: WorkspaceComment }>(`${BASE}/comments/${id}`, 'PATCH', body);
+  },
+  deleteComment(id: string) {
+    return send(`${BASE}/comments/${id}`, 'DELETE');
+  },
+  async listVerifications(
+    projectId: string,
+    target?: { kind: string; id: string }
+  ): Promise<WorkspaceVerification[]> {
+    const qs = new URLSearchParams({ projectId });
+    if (target) {
+      qs.set('kind', target.kind);
+      qs.set('id', target.id);
+    }
+    const res = await fetch(`${BASE}/verifications?${qs.toString()}`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { verifications?: WorkspaceVerification[] };
+    return json.verifications ?? [];
+  },
+  setVerification(body: {
+    projectId: string;
+    targetKind: string;
+    targetId: string;
+    status: 'verified' | 'disputed';
+    note?: string;
+  }) {
+    return send<{ verification: WorkspaceVerification }>(`${BASE}/verifications`, 'PUT', body);
+  },
+  clearVerification(projectId: string, target: { kind: string; id: string }) {
+    const qs = new URLSearchParams({ projectId, kind: target.kind, id: target.id });
+    return send(`${BASE}/verifications?${qs.toString()}`, 'DELETE');
+  },
 };
+
+/** Mirror of the server `WorkspaceComment` shape (see collaboration.ts). */
+export interface WorkspaceComment {
+  id: string;
+  projectId: string;
+  targetKind: string;
+  targetId: string;
+  parentId: string | null;
+  body: string;
+  mentions: string[];
+  resolved: boolean;
+  createdBy: string | null;
+  authorName: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** Mirror of the server `WorkspaceVerification` shape. */
+export interface WorkspaceVerification {
+  projectId: string;
+  targetKind: string;
+  targetId: string;
+  userId: string;
+  status: 'verified' | 'disputed';
+  note: string;
+  userName: string;
+  updatedAt: string;
+}
