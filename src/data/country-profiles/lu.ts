@@ -42,10 +42,10 @@ const lu: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 8.9, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC' },
+    totalLatest: { value: 8.9, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=LU" },
     total1990: 12.0,
-    perCapita: { value: 13.5, unit: 't CO2e/cap', year: 2022, source: 'EEA' },
-    perGdp: { value: 0.13, unit: 'kg CO2e/€', year: 2022, source: 'EEA' },
+    perCapita: { value: 13.5, unit: 't CO2e/cap', year: 2022, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=LU" },
+    perGdp: { value: 0.13, unit: 'kg CO2e/€', year: 2022, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=LU" },
     target2030: { value: -55, unit: '%', baseline: '2005', notes: 'Climate Law (2020); among the most ambitious national 2030 targets in the EU.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Net-zero by 2050 (Climate Law, 2020).' },
     sectors: [
@@ -75,7 +75,7 @@ const lu: CountryProfile = {
     status: 'partial',
   },
   renewables: {
-    shareLatest: { value: 14.4, unit: '%', year: 2022, source: 'Eurostat SHARES' },
+    shareLatest: { value: 14.4, unit: '%', year: 2022, source: 'Eurostat SHARES', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=LU" },
     share2005: 1.4,
     share2020: 11.7,
     target2030: 37,
@@ -100,9 +100,9 @@ const lu: CountryProfile = {
     status: 'partial',
   },
   efficiency: {
-    primary: { value: 3.7, unit: 'Mtoe', year: 2022 },
-    final:   { value: 3.4, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 53, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 3.7, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=LU" },
+    final:   { value: 3.4, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=LU" },
+    intensity: { value: 53, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=LU" },
     target2030: -44,
     narrative:
       'Energy intensity per unit GDP is the lowest in the EU thanks to the ' +
@@ -114,11 +114,11 @@ const lu: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 9.2, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 22.0, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 49.0, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 240, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 98, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 9.2, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/luxembourg-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 22.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/luxembourg-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 49.0, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/luxembourg-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 240, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 98, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=LU" },
     narrative:
       'NO2 concentrations are above the EU average and reflect the very high road-' +
       'traffic intensity, including diesel commuter and lorry transit. Free public ' +
@@ -129,10 +129,10 @@ const lu: CountryProfile = {
     status: 'partial',
   },
   water: {
-    surfaceWaterGood: { value: 4, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 70, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 50, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 4, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/luxembourg" },
+    groundwaterGood: { value: 70, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/luxembourg" },
+    bathingWaterExcellent: { value: 50, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=LU" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=LU" },
     narrative:
       'Only ~4% of surface waters reach "good ecological status" — among the lowest ' +
       'in the EU — driven by diffuse agricultural pollution and morphological ' +
@@ -143,10 +143,10 @@ const lu: CountryProfile = {
     status: 'concern',
   },
   biodiversity: {
-    natura2000Land: { value: 27.4, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 0, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 350, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 22, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 27.4, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=LU" },
+    natura2000Marine: { value: 0, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=LU" },
+    threatenedSpecies: { value: 350, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=LU" },
+    habitatsFavourable: { value: 22, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/luxembourg" },
     narrative:
       'Natura 2000 terrestrial coverage at ~27% is well above the EU average. ' +
       'However, habitat condition is poor: only ~22% of Habitats Directive ' +
@@ -156,9 +156,9 @@ const lu: CountryProfile = {
     status: 'concern',
   },
   circular: {
-    municipalRecycling: { value: 52, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 11.0, unit: '%', year: 2022 },
-    resourceProductivity: { value: 4.4, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 52, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=LU" },
+    circularMaterialUseRate: { value: 11.0, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=LU" },
+    resourceProductivity: { value: 4.4, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=LU" },
     narrative:
       'Resource productivity is the highest in the EU (financial-services GDP per ' +
       'unit material throughput). Municipal recycling at ~52% is approaching the ' +
