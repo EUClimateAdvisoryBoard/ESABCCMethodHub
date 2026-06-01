@@ -18,6 +18,7 @@ interface Annotation {
   field: string;
   value: string;
   status: 'open' | 'resolved';
+  promotedAt: string | null;
   createdAt: string;
 }
 
@@ -75,6 +76,11 @@ export default function PolicyAnnotationsPanel({ policyId }: { policyId: string 
               <span className="ml-1 text-[10px] text-tertiary-dark">({a.field})</span>
             )}
             {a.value && <span className="ml-1">— {a.value}</span>}
+            {a.promotedAt && (
+              <span className="ml-2 text-[9px] font-semibold uppercase tracking-wide text-blue-700 bg-blue-100 border border-blue-200 px-1.5 py-0.5 rounded-full">
+                Canonical
+              </span>
+            )}
             <span className="ml-2 text-[10px] text-tertiary-light">
               {a.createdAt.slice(0, 10)}
             </span>

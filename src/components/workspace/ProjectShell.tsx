@@ -16,11 +16,16 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import type { WorkspaceProject } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
-import type { MemberStateCell, PolicyAnnotation } from '@/lib/project-workspace/db';
+import type {
+  MemberStateCell,
+  PolicyAnnotation,
+  PolicyOverrideMap,
+} from '@/lib/project-workspace/db';
 import IndicatorModule from './IndicatorModule';
 import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
 import PolicyAnalysisModule from './PolicyAnalysisModule';
+import CustomNotesModule from './CustomNotesModule';
 import { pwApi } from '@/lib/project-workspace/client';
 
 interface Props {
@@ -30,6 +35,8 @@ interface Props {
   recommendations: PastRecommendation[];
   memberStateCells: MemberStateCell[];
   policyAnnotations: PolicyAnnotation[];
+  policyOverrides: PolicyOverrideMap;
+  customContent: Record<string, string>;
 }
 
 const MODULE_KIND_OPTIONS = [
@@ -37,7 +44,7 @@ const MODULE_KIND_OPTIONS = [
   { id: 'recommendations', label: 'Recommendations tracker' },
   { id: 'member-states', label: 'Member state space' },
   { id: 'policy-analysis', label: 'Policy analysis' },
-  { id: 'custom', label: 'Custom (empty)' },
+  { id: 'custom', label: 'Custom (notes)' },
 ];
 
 export default function ProjectShell({
@@ -47,6 +54,8 @@ export default function ProjectShell({
   recommendations,
   memberStateCells,
   policyAnnotations,
+  policyOverrides,
+  customContent,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -100,12 +109,16 @@ export default function ProjectShell({
         <PolicyAnalysisModule
           projectId={project.id}
           initialAnnotations={policyAnnotations}
+          initialOverrides={policyOverrides}
         />
       )}
       {current?.kind === 'custom' && (
-        <p className="text-sm text-tertiary">
-          Custom module placeholder — wire up your own content here.
-        </p>
+        <CustomNotesModule
+          projectId={project.id}
+          moduleId={current.id}
+          moduleName={current.name}
+          initialContent={customContent[current.id] ?? ''}
+        />
       )}
       {!current && (
         <p className="text-sm text-tertiary">
