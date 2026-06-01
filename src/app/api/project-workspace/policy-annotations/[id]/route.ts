@@ -19,6 +19,12 @@ export async function PATCH(
   const body = (await req.json().catch(() => ({}))) as Record<string, unknown>;
   const patch: Record<string, unknown> = {};
   for (const k of ['status', 'value', 'field']) if (k in body) patch[k] = body[k];
+  // Promotion: setting `promote: true` writes a timestamp so the edit becomes
+  // the canonical text for the policy field; `promote: false` un-promotes it.
+  // Only meaningful for kind = 'edit'; the UI guards against the rest.
+  if ('promote' in body) {
+    patch.promoted_at = body.promote ? new Date().toISOString() : null;
+  }
   if (Object.keys(patch).length === 0) {
     return NextResponse.json({ error: 'no fields' }, { status: 400 });
   }

@@ -17,7 +17,8 @@ import {
   type SectorId,
 } from '@/data/sectoral-policies';
 import { pwApi } from '@/lib/project-workspace/client';
-import type { PolicyAnnotation } from '@/lib/project-workspace/db';
+import type { PolicyAnnotation, PolicyOverrideMap } from '@/lib/project-workspace/db';
+import { invalidatePromotedEditsCache } from '@/lib/project-workspace/usePromotedPolicyEdits';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
   approve: 'Approved',
@@ -43,13 +44,30 @@ const EDITABLE_FIELDS = [
 interface Props {
   projectId: string;
   initialAnnotations: PolicyAnnotation[];
+  initialOverrides: PolicyOverrideMap;
 }
 
-export default function PolicyAnalysisModule({ projectId, initialAnnotations }: Props) {
+export default function PolicyAnalysisModule({
+  projectId,
+  initialAnnotations,
+  initialOverrides,
+}: Props) {
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
+  const [overrides, setOverrides] = useState<PolicyOverrideMap>(initialOverrides);
   const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
   const [busy, setBusy] = useState(false);
+
+  /** Latest promoted edit per (policy, field) — recomputed from annotations. */
+  function rebuildOverrides(items: PolicyAnnotation[]): PolicyOverrideMap {
+    const m: PolicyOverrideMap = {};
+    for (const a of items) {
+      if (a.kind !== 'edit' || !a.promotedAt || !a.field) continue;
+      m[a.policyId] ??= {};
+      m[a.policyId][a.field] = a.value;
+    }
+    return m;
+  }
 
   const filtered = useMemo(() => {
     if (sectorFilter === 'all') return SECTOR_POLICIES;
@@ -89,6 +107,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
         field,
         value,
         status: 'open',
+        promotedAt: null,
         createdBy: null,
         createdAt: new Date().toISOString(),
       };
@@ -110,11 +129,38 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
     }
   }
 
+  async function promoteAnnotation(id: string, promote: boolean) {
+    setBusy(true);
+    try {
+      await pwApi.promotePolicyAnnotation(id, promote);
+      const target = annotations.find(a => a.id === id);
+      setAnnotations(prev => {
+        const next = prev.map(a =>
+          a.id === id
+            ? { ...a, promotedAt: promote ? new Date().toISOString() : null }
+            : a
+        );
+        setOverrides(rebuildOverrides(next));
+        return next;
+      });
+      // The EU Policy Navigator caches promoted edits per policy on the
+      // client; drop the cached entry so the next time the user opens this
+      // policy there the canonical view reflects the change.
+      if (target) invalidatePromotedEditsCache(target.policyId);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function deleteAnnotation(id: string) {
     setBusy(true);
     try {
       await pwApi.deletePolicyAnnotation(id);
-      setAnnotations(prev => prev.filter(a => a.id !== id));
+      setAnnotations(prev => {
+        const next = prev.filter(a => a.id !== id);
+        setOverrides(rebuildOverrides(next));
+        return next;
+      });
     } finally {
       setBusy(false);
     }
@@ -198,9 +244,11 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
                 <PolicyBody
                   policy={p}
                   annotations={anns}
+                  overrides={overrides[p.id] ?? {}}
                   busy={busy}
                   onAdd={(kind, field, value) => addAnnotation(p.id, kind, field, value)}
                   onResolve={resolveAnnotation}
+                  onPromote={promoteAnnotation}
                   onDelete={deleteAnnotation}
                 />
               )}
@@ -215,16 +263,20 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
 function PolicyBody({
   policy,
   annotations,
+  overrides,
   busy,
   onAdd,
   onResolve,
+  onPromote,
   onDelete,
 }: {
   policy: SectorPolicy;
   annotations: PolicyAnnotation[];
+  overrides: Record<string, string>;
   busy: boolean;
   onAdd: (kind: PolicyAnnotation['kind'], field: string, value: string) => void;
   onResolve: (id: string) => void;
+  onPromote: (id: string, promote: boolean) => void;
   onDelete: (id: string) => void;
 }) {
   const [editField, setEditField] = useState<string>('meaning');
@@ -232,12 +284,30 @@ function PolicyBody({
   const [factCheck, setFactCheck] = useState('');
   const [comment, setComment] = useState('');
 
+  const display = {
+    meaning: overrides.meaning ?? policy.meaning,
+    currentRequirement: overrides.currentRequirement ?? policy.currentRequirement,
+    futureRequirement: overrides.futureRequirement ?? policy.futureRequirement,
+  };
+
   return (
     <div className="px-4 py-3 border-t border-grey-100 space-y-4 text-xs">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <Field label="Plain-language meaning">{policy.meaning}</Field>
-        <Field label="Current requirement">{policy.currentRequirement}</Field>
-        <Field label="Future requirement">{policy.futureRequirement}</Field>
+        <Field label="Plain-language meaning" overridden={'meaning' in overrides}>
+          {display.meaning}
+        </Field>
+        <Field
+          label="Current requirement"
+          overridden={'currentRequirement' in overrides}
+        >
+          {display.currentRequirement}
+        </Field>
+        <Field
+          label="Future requirement"
+          overridden={'futureRequirement' in overrides}
+        >
+          {display.futureRequirement}
+        </Field>
         <Field label="Scope">{policy.scope}</Field>
       </div>
 
@@ -367,9 +437,29 @@ function PolicyBody({
                   <span className="ml-1 text-[10px] text-tertiary-dark">({a.field})</span>
                 )}
                 {a.value && <span className="ml-1">— {a.value}</span>}
+                {a.promotedAt && (
+                  <span className="ml-2 text-[10px] font-semibold uppercase tracking-wide text-blue-700">
+                    canonical
+                  </span>
+                )}
                 <span className="ml-2 text-[10px] text-tertiary-light">
                   {a.createdAt.slice(0, 10)}
                 </span>
+                {a.kind === 'edit' && a.field && (
+                  <button
+                    type="button"
+                    onClick={() => onPromote(a.id, !a.promotedAt)}
+                    disabled={busy}
+                    title={
+                      a.promotedAt
+                        ? 'Remove this edit from the canonical view'
+                        : 'Promote this edit so the EU Policy Navigator shows it as the canonical text'
+                    }
+                    className="ml-2 text-[10px] underline text-blue-700"
+                  >
+                    {a.promotedAt ? 'un-promote' : 'promote'}
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={() => onResolve(a.id)}
@@ -395,11 +485,28 @@ function PolicyBody({
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({
+  label,
+  children,
+  overridden,
+}: {
+  label: string;
+  children: React.ReactNode;
+  overridden?: boolean;
+}) {
   return (
-    <div className="bg-grey-50 rounded p-2">
-      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">
+    <div
+      className={`rounded p-2 ${
+        overridden ? 'bg-blue-50 border border-blue-200' : 'bg-grey-50'
+      }`}
+    >
+      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1 flex items-center gap-1">
         {label}
+        {overridden && (
+          <span className="text-[9px] font-semibold text-blue-700 uppercase tracking-wide">
+            · promoted edit
+          </span>
+        )}
       </p>
       <p className="text-xs text-tertiary-dark leading-snug">{children}</p>
     </div>
