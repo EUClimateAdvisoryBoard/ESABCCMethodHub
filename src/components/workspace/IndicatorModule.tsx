@@ -11,7 +11,7 @@
  */
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { saveAs } from 'file-saver';
 import {
@@ -36,6 +36,8 @@ import {
 import { pwApi, type IndicatorImportSummary } from '@/lib/project-workspace/client';
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import IndicatorDataEditor from './IndicatorDataEditor';
+import DownloadMenu from './DownloadMenu';
+import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
 
 ChartJS.register(
   CategoryScale,
@@ -79,6 +81,7 @@ interface Props {
 
 export default function IndicatorModule({ projectId, initial, initialLayouts }: Props) {
   const router = useRouter();
+  const chartRef = useRef<HTMLDivElement>(null);
   const [indicators, setIndicators] = useState<Indicator[]>(initial);
   const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
@@ -272,7 +275,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
             className="px-3 py-1.5 rounded-md border border-grey-200 text-tertiary-dark text-xs font-semibold hover:bg-grey-50 disabled:opacity-50"
             title="Download the whole indicator database as one Excel workbook — one tab per indicator"
           >
-            ↓ Download Excel
+            ↓ Download all (Excel)
           </button>
           <button
             type="button"
@@ -423,6 +426,14 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 >
                   Edit data / calc
                 </button>
+                <DownloadMenu
+                  size="sm"
+                  filename={`indicator-${selected.id}`}
+                  provenance={buildExportProvenance([selected.source, selected.name])}
+                  chart={{ getContainer: () => chartRef.current }}
+                  data={{ getSheets: () => [buildIndicatorSheet(selected)] }}
+                  text={{ getBlocks: () => buildIndicatorDoc(selected) }}
+                />
                 {LIVE_REFRESHABLE_INDICATORS.has(selected.id) && (
                   <button
                     type="button"
@@ -473,7 +484,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 {refreshStatus.message}
               </div>
             )}
-            <div className="h-72">
+            <div className="h-72" ref={chartRef}>
               {selected.data.length > 0 ? (
                 <ChartCmp
                   data={chartData}
@@ -825,6 +836,43 @@ function parseCsvPoints(text: string): IndicatorDataPoint[] {
     points.push({ year, value });
   }
   return points.sort((a, b) => a.year - b.year);
+}
+
+/** Build a single-sheet workbook spec for one indicator's plotted series. */
+function buildIndicatorSheet(ind: Indicator): SheetSpec {
+  return {
+    name: (ind.code ? `${ind.code} ` : '') + ind.name,
+    title: ind.name,
+    subtitle: `Unit: ${ind.unit}${ind.source ? ` · Source: ${ind.source}` : ''}`,
+    headers: ['Year', `Value (${ind.unit})`],
+    rows: ind.data.map(d => [d.year, d.value]),
+  };
+}
+
+/** Build a Word document describing one indicator (metadata + data table). */
+function buildIndicatorDoc(ind: Indicator): DocBlock[] {
+  const blocks: DocBlock[] = [
+    { type: 'heading', level: 1, text: ind.name },
+  ];
+  if (ind.description) blocks.push({ type: 'paragraph', text: ind.description });
+  const meta: string[] = [`Unit: ${ind.unit}`];
+  if (ind.source) meta.push(`Source: ${ind.source}`);
+  if (ind.sourceUrl) meta.push(ind.sourceUrl);
+  if (ind.targetValue !== undefined && ind.targetYear !== undefined) {
+    meta.push(`Target: ${ind.targetValue} ${ind.unit} by ${ind.targetYear}`);
+  }
+  blocks.push({ type: 'paragraph', text: meta.join('  ·  '), italic: true });
+  blocks.push({ type: 'heading', level: 2, text: 'Data' });
+  if (ind.data.length > 0) {
+    blocks.push({
+      type: 'table',
+      headers: ['Year', `Value (${ind.unit})`],
+      rows: ind.data.map(d => [d.year, d.value]),
+    });
+  } else {
+    blocks.push({ type: 'paragraph', text: 'No data points recorded yet.', italic: true });
+  }
+  return blocks;
 }
 
 function DialogShell({
