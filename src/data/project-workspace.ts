@@ -66,8 +66,9 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'member-states',
         name: 'Member state space',
         description:
-          'EU-27 × sector matrix — placeholder cells for member-state ' +
-          'specific findings (filled in over time).',
+          'EEA-style profile for each EU-27 member state: choropleth ' +
+          'map, indicator heatmap and full per-country detail page ' +
+          'with editor and external-contributor workflow.',
       },
       {
         id: 'policy-analysis',

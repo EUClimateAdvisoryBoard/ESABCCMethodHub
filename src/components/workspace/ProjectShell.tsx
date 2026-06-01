@@ -103,7 +103,7 @@ export default function ProjectShell({
         <RecommendationsModule projectId={project.id} initial={recommendations} />
       )}
       {current?.kind === 'member-states' && (
-        <MemberStatesModule projectId={project.id} initial={memberStateCells} />
+        <MemberStatesModule />
       )}
       {current?.kind === 'policy-analysis' && (
         <PolicyAnalysisModule
