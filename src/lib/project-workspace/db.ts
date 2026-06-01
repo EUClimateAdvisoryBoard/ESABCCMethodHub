@@ -11,6 +11,7 @@
  * so a fresh deploy is usable without a manual seeding step.
  */
 import 'server-only';
+import { unstable_noStore as noStore } from 'next/cache';
 import { getServerSupabase } from '@/lib/supabase-server';
 import {
   ECNO_INDICATORS,
@@ -197,6 +198,7 @@ async function ensureSeedDataFor(projectId: string) {
 }
 
 export async function listProjects(): Promise<DBProject[]> {
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return [];
   const { data: projects } = await sb
@@ -226,6 +228,7 @@ export async function listProjects(): Promise<DBProject[]> {
 }
 
 export async function getProject(projectId: string): Promise<DBProject | null> {
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return null;
   await ensureSeedDataFor(projectId);
@@ -264,6 +267,12 @@ function seedIndicators(projectId: string): DBIndicator[] {
 }
 
 export async function listIndicators(projectId: string): Promise<DBIndicator[]> {
+  // Disable Next.js's data cache for this read so a stale Supabase
+  // response from a previous deploy can't keep masking newly-seeded
+  // indicators. The /project-workspace pages are already
+  // `force-dynamic`, but the Supabase JS client wraps `fetch`, which
+  // Next.js will cache by default unless the route explicitly opts out.
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return seedIndicators(projectId);
   await ensureSeedDataFor(projectId);
@@ -307,6 +316,7 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
 }
 
 export async function listRecommendations(projectId: string): Promise<DBRecommendation[]> {
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return [];
   await ensureSeedDataFor(projectId);
