@@ -12,7 +12,7 @@
  */
 
 import Link from 'next/link';
-import type { CountryProfile, SectorSplit, Status } from '@/data/country-profiles/_types';
+import type { CountryProfile, IndicatorValue, SectorSplit, Status } from '@/data/country-profiles/_types';
 import { STATUS_COLORS, STATUS_LABELS } from '@/data/country-profiles/_types';
 import CountryTrendChart from './CountryTrendChart';
 
@@ -49,8 +49,8 @@ function Section({
 }
 
 function KeyFigure({
-  label, value, unit, year, source,
-}: { label: string; value?: number | string; unit?: string; year?: number; source?: string }) {
+  label, value, unit, year, source, sourceUrl,
+}: { label: string; value?: number | string; unit?: string; year?: number; source?: string; sourceUrl?: string }) {
   if (value == null) {
     return (
       <div className="rounded-md border border-dashed border-grey-200 p-3 text-tertiary text-[11px] italic">
@@ -58,6 +58,11 @@ function KeyFigure({
       </div>
     );
   }
+  const sourceNode = source && (
+    sourceUrl
+      ? <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="underline decoration-dotted hover:text-primary">{source} ↗</a>
+      : <span>{source}</span>
+  );
   return (
     <div className="rounded-md border border-grey-200 p-3">
       <div className="text-[10px] uppercase tracking-wide text-tertiary mb-0.5">{label}</div>
@@ -67,10 +72,29 @@ function KeyFigure({
       </div>
       {(year || source) && (
         <div className="text-[10px] text-tertiary-light mt-1">
-          {year && <span>{year}</span>}{year && source && ' · '}{source}
+          {year && <span>{year}</span>}{year && source && ' · '}{sourceNode}
         </div>
       )}
     </div>
+  );
+}
+
+/**
+ * Renders a KeyFigure from an IndicatorValue, optionally overriding the unit
+ * (some figures use a default unit when the data omits one).
+ */
+function IndicatorFigure({
+  label, indicator, unit,
+}: { label: string; indicator?: IndicatorValue; unit?: string }) {
+  return (
+    <KeyFigure
+      label={label}
+      value={indicator?.value}
+      unit={indicator?.unit ?? unit}
+      year={indicator?.year}
+      source={indicator?.source}
+      sourceUrl={indicator?.sourceUrl}
+    />
   );
 }
 
@@ -138,32 +162,10 @@ export default function CountryProfileView({ profile: p }: Props) {
             )}
           </div>
           <div className="space-y-2">
-            <KeyFigure
-              label="GHG (latest)"
-              value={p.ghg.totalLatest?.value}
-              unit={p.ghg.totalLatest?.unit}
-              year={p.ghg.totalLatest?.year}
-              source={p.ghg.totalLatest?.source}
-            />
-            <KeyFigure
-              label="Renewables share"
-              value={p.renewables.shareLatest?.value}
-              unit={p.renewables.shareLatest?.unit ?? '%'}
-              year={p.renewables.shareLatest?.year}
-              source={p.renewables.shareLatest?.source}
-            />
-            <KeyFigure
-              label="Energy intensity"
-              value={p.efficiency.intensity?.value}
-              unit={p.efficiency.intensity?.unit}
-              year={p.efficiency.intensity?.year}
-            />
-            <KeyFigure
-              label="PM2.5"
-              value={p.air.pm25?.value}
-              unit={p.air.pm25?.unit ?? 'µg/m³'}
-              year={p.air.pm25?.year}
-            />
+            <IndicatorFigure label="GHG (latest)" indicator={p.ghg.totalLatest} />
+            <IndicatorFigure label="Renewables share" indicator={p.renewables.shareLatest} unit="%" />
+            <IndicatorFigure label="Energy intensity" indicator={p.efficiency.intensity} />
+            <IndicatorFigure label="PM2.5" indicator={p.air.pm25} unit="µg/m³" />
           </div>
         </div>
 
@@ -183,10 +185,10 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* GHG */}
       <Section id="ghg" title="GHG emissions" status={p.ghg.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="Total (latest)" value={p.ghg.totalLatest?.value} unit={p.ghg.totalLatest?.unit} year={p.ghg.totalLatest?.year} source={p.ghg.totalLatest?.source} />
+          <IndicatorFigure label="Total (latest)" indicator={p.ghg.totalLatest} />
           <KeyFigure label="1990 baseline" value={p.ghg.total1990} unit="Mt CO2e" />
-          <KeyFigure label="Per capita" value={p.ghg.perCapita?.value} unit={p.ghg.perCapita?.unit} year={p.ghg.perCapita?.year} />
-          <KeyFigure label="Per GDP" value={p.ghg.perGdp?.value} unit={p.ghg.perGdp?.unit} year={p.ghg.perGdp?.year} />
+          <IndicatorFigure label="Per capita" indicator={p.ghg.perCapita} />
+          <IndicatorFigure label="Per GDP" indicator={p.ghg.perGdp} />
         </div>
         {(p.ghg.target2030 || p.ghg.target2050) && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
@@ -240,7 +242,7 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Renewables */}
       <Section id="renewables" title="Renewable energy" status={p.renewables.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="Share (latest)" value={p.renewables.shareLatest?.value} unit="%" year={p.renewables.shareLatest?.year} />
+          <IndicatorFigure label="Share (latest)" indicator={p.renewables.shareLatest} unit="%" />
           <KeyFigure label="2005" value={p.renewables.share2005} unit="%" />
           <KeyFigure label="2020" value={p.renewables.share2020} unit="%" />
           <KeyFigure label="2030 target" value={p.renewables.target2030} unit="%" />
@@ -268,9 +270,9 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Efficiency */}
       <Section id="efficiency" title="Energy efficiency" status={p.efficiency.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="Primary energy" value={p.efficiency.primary?.value} unit={p.efficiency.primary?.unit} year={p.efficiency.primary?.year} />
-          <KeyFigure label="Final energy" value={p.efficiency.final?.value} unit={p.efficiency.final?.unit} year={p.efficiency.final?.year} />
-          <KeyFigure label="Energy intensity" value={p.efficiency.intensity?.value} unit={p.efficiency.intensity?.unit} year={p.efficiency.intensity?.year} />
+          <IndicatorFigure label="Primary energy" indicator={p.efficiency.primary} />
+          <IndicatorFigure label="Final energy" indicator={p.efficiency.final} />
+          <IndicatorFigure label="Energy intensity" indicator={p.efficiency.intensity} />
           <KeyFigure label="2030 saving target" value={p.efficiency.target2030} unit="%" />
         </div>
         {p.efficiency.narrative && (
@@ -281,10 +283,10 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Air */}
       <Section id="air" title="Air quality" status={p.air.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="PM2.5" value={p.air.pm25?.value} unit={p.air.pm25?.unit ?? 'µg/m³'} year={p.air.pm25?.year} />
-          <KeyFigure label="NO₂" value={p.air.no2?.value} unit={p.air.no2?.unit ?? 'µg/m³'} year={p.air.no2?.year} />
-          <KeyFigure label="O₃" value={p.air.ozone?.value} unit={p.air.ozone?.unit ?? 'µg/m³'} year={p.air.ozone?.year} />
-          <KeyFigure label="Premature deaths (PM2.5)" value={p.air.prematureDeaths?.value} unit={p.air.prematureDeaths?.unit ?? '/yr'} year={p.air.prematureDeaths?.year} />
+          <IndicatorFigure label="PM2.5" indicator={p.air.pm25} unit="µg/m³" />
+          <IndicatorFigure label="NO₂" indicator={p.air.no2} unit="µg/m³" />
+          <IndicatorFigure label="O₃" indicator={p.air.ozone} unit="µg/m³" />
+          <IndicatorFigure label="Premature deaths (PM2.5)" indicator={p.air.prematureDeaths} unit="/yr" />
         </div>
         {p.air.narrative && (
           <p className="text-[12px] text-tertiary-dark whitespace-pre-line leading-relaxed">{p.air.narrative}</p>
@@ -294,10 +296,10 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Water */}
       <Section id="water" title="Water" status={p.water.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="Surface water — good status" value={p.water.surfaceWaterGood?.value} unit="%" year={p.water.surfaceWaterGood?.year} />
-          <KeyFigure label="Groundwater — good status" value={p.water.groundwaterGood?.value} unit="%" year={p.water.groundwaterGood?.year} />
-          <KeyFigure label="Bathing water — excellent" value={p.water.bathingWaterExcellent?.value} unit="%" year={p.water.bathingWaterExcellent?.year} />
-          <KeyFigure label="Drinking water — compliance" value={p.water.drinkingWaterCompliance?.value} unit="%" year={p.water.drinkingWaterCompliance?.year} />
+          <IndicatorFigure label="Surface water — good status" indicator={p.water.surfaceWaterGood} unit="%" />
+          <IndicatorFigure label="Groundwater — good status" indicator={p.water.groundwaterGood} unit="%" />
+          <IndicatorFigure label="Bathing water — excellent" indicator={p.water.bathingWaterExcellent} unit="%" />
+          <IndicatorFigure label="Drinking water — compliance" indicator={p.water.drinkingWaterCompliance} unit="%" />
         </div>
         {p.water.narrative && (
           <p className="text-[12px] text-tertiary-dark whitespace-pre-line leading-relaxed">{p.water.narrative}</p>
@@ -307,10 +309,10 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Biodiversity */}
       <Section id="biodiversity" title="Biodiversity & nature" status={p.biodiversity.status}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-          <KeyFigure label="Natura 2000 land" value={p.biodiversity.natura2000Land?.value} unit="% land" year={p.biodiversity.natura2000Land?.year} />
-          <KeyFigure label="Natura 2000 marine" value={p.biodiversity.natura2000Marine?.value} unit="% EEZ" year={p.biodiversity.natura2000Marine?.year} />
-          <KeyFigure label="Threatened species" value={p.biodiversity.threatenedSpecies?.value} unit="count" year={p.biodiversity.threatenedSpecies?.year} />
-          <KeyFigure label="Habitats — favourable" value={p.biodiversity.habitatsFavourable?.value} unit="%" year={p.biodiversity.habitatsFavourable?.year} />
+          <IndicatorFigure label="Natura 2000 land" indicator={p.biodiversity.natura2000Land} unit="% land" />
+          <IndicatorFigure label="Natura 2000 marine" indicator={p.biodiversity.natura2000Marine} unit="% EEZ" />
+          <IndicatorFigure label="Threatened species" indicator={p.biodiversity.threatenedSpecies} unit="count" />
+          <IndicatorFigure label="Habitats — favourable" indicator={p.biodiversity.habitatsFavourable} unit="%" />
         </div>
         {p.biodiversity.narrative && (
           <p className="text-[12px] text-tertiary-dark whitespace-pre-line leading-relaxed">{p.biodiversity.narrative}</p>
@@ -320,9 +322,9 @@ export default function CountryProfileView({ profile: p }: Props) {
       {/* Circular */}
       <Section id="circular" title="Circular economy" status={p.circular.status}>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-          <KeyFigure label="Municipal recycling" value={p.circular.municipalRecycling?.value} unit="%" year={p.circular.municipalRecycling?.year} />
-          <KeyFigure label="Circular material use rate" value={p.circular.circularMaterialUseRate?.value} unit="%" year={p.circular.circularMaterialUseRate?.year} />
-          <KeyFigure label="Resource productivity" value={p.circular.resourceProductivity?.value} unit={p.circular.resourceProductivity?.unit ?? '€/kg'} year={p.circular.resourceProductivity?.year} />
+          <IndicatorFigure label="Municipal recycling" indicator={p.circular.municipalRecycling} unit="%" />
+          <IndicatorFigure label="Circular material use rate" indicator={p.circular.circularMaterialUseRate} unit="%" />
+          <IndicatorFigure label="Resource productivity" indicator={p.circular.resourceProductivity} unit="€/kg" />
         </div>
         {p.circular.narrative && (
           <p className="text-[12px] text-tertiary-dark whitespace-pre-line leading-relaxed">{p.circular.narrative}</p>
