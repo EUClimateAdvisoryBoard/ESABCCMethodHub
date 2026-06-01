@@ -19,6 +19,7 @@ interface Annotation {
   value: string;
   status: 'open' | 'resolved';
   promotedAt: string | null;
+  createdBy?: string | null;
   createdAt: string;
 }
 
@@ -58,11 +59,34 @@ export default function PolicyAnnotationsPanel({ policyId }: { policyId: string 
   if (!items || items.length === 0) return null;
 
   const open = items.filter(a => a.status === 'open');
+  const approvers = new Map<string, { name: string; at: string }>();
+  for (const a of items) {
+    if (a.kind !== 'approve' || a.status !== 'open') continue;
+    const id = a.createdBy ?? `anon:${a.id}`;
+    if (!approvers.has(id)) {
+      approvers.set(id, { name: a.value || 'Anonymous', at: a.createdAt });
+    }
+  }
+  const fourEyeChecked = approvers.size >= 2;
   return (
     <div className="bg-white border border-grey-200 rounded p-3">
-      <p className="text-[10px] uppercase tracking-wide text-secondary font-bold mb-2">
-        Project Workspace annotations ({open.length} open)
-      </p>
+      <div className="flex flex-wrap items-center gap-2 mb-2">
+        <p className="text-[10px] uppercase tracking-wide text-secondary font-bold">
+          Project Workspace annotations ({open.length} open)
+        </p>
+        {fourEyeChecked ? (
+          <span
+            className="text-[10px] px-2 py-0.5 rounded-full border border-green-300 bg-green-50 text-green-800 font-semibold"
+            title={`Four-eye checked — approved by ${Array.from(approvers.values()).map(a => a.name).join(' & ')}`}
+          >
+            ✓✓ Four-eye checked
+          </span>
+        ) : approvers.size === 1 ? (
+          <span className="text-[10px] px-2 py-0.5 rounded-full border border-amber-300 bg-amber-50 text-amber-800 font-semibold">
+            1/2 approved
+          </span>
+        ) : null}
+      </div>
       <ul className="space-y-1.5">
         {items.map(a => (
           <li
