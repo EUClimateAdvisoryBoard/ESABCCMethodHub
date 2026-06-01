@@ -14,12 +14,11 @@
  */
 
 import {
-  MapContainer, TileLayer, GeoJSON, Tooltip, Popup,
+  MapContainer, TileLayer, GeoJSON,
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import { useEffect, useMemo, useState } from 'react';
-import * as topojsonClient from 'topojson-client';
 import Link from 'next/link';
 import type { CountryProfile, HeatmapIndicatorKey } from '@/data/country-profiles/_types';
 import {
@@ -48,7 +47,9 @@ const N3_TO_A2: Record<string, string> = Object.fromEntries(
   Object.entries(EU_A2_TO_N3).map(([k, v]) => [v, k]),
 );
 
-const WORLD_TOPO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+// Static asset produced by `scripts/build-eu27-geojson.mjs` (prebuild). Same
+// origin, so the site's CSP `connect-src` directive doesn't block it.
+const EU27_GEOJSON_URL = '/data/eu27-boundaries.geojson';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnyGeo = any;
@@ -58,25 +59,17 @@ export default function MemberStatesMap({
 }: Props) {
   const [indicator, setIndicator] = useState<HeatmapIndicatorKey>(defaultIndicator);
   const [geo, setGeo] = useState<AnyGeo | null>(null);
+  const [geoError, setGeoError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
-    fetch(WORLD_TOPO_URL)
-      .then(r => r.json())
-      .then(topo => {
-        if (cancelled) return;
-        const fc = topojsonClient.feature(topo, topo.objects.countries) as AnyGeo;
-        // Keep only EU-27 features.
-        const filtered = {
-          type: 'FeatureCollection',
-          features: (fc.features ?? []).filter((f: AnyGeo) => {
-            const id = String(f.id ?? f.properties?.iso_n3 ?? '').padStart(3, '0');
-            return id in N3_TO_A2;
-          }),
-        };
-        setGeo(filtered);
+    fetch(EU27_GEOJSON_URL)
+      .then(r => {
+        if (!r.ok) throw new Error(`status ${r.status}`);
+        return r.json();
       })
-      .catch(() => setGeo(null));
+      .then(fc => { if (!cancelled) setGeo(fc); })
+      .catch(e => { if (!cancelled) setGeoError(e instanceof Error ? e.message : 'load failed'); });
     return () => { cancelled = true; };
   }, []);
 
@@ -132,6 +125,12 @@ export default function MemberStatesMap({
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
+        {geoError && (
+          <div className="absolute top-2 left-2 z-[400] bg-red-50 border border-red-200 text-red-900 text-[11px] rounded px-2 py-1">
+            Map polygons failed to load: {geoError}. The directory below still works.
+          </div>
+        )}
 
         {geo && (
           <GeoJSON

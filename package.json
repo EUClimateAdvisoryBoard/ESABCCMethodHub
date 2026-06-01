@@ -5,7 +5,7 @@
   "description": "EU Climate Policy Navigator - Interactive analysis tool for EU climate legislation",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "node scripts/build-extension-zip.mjs",
+    "prebuild": "node scripts/build-extension-zip.mjs && node scripts/build-eu27-geojson.mjs",
     "build": "next build",
     "build:docs": "bash scripts/build-docs.sh",
     "vercel-build": "bash scripts/build-docs.sh && npm run build",
