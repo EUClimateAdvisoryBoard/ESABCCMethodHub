@@ -4,13 +4,14 @@
  * Mirrors the full content shown on the EU Policy Navigator's "Sectoral
  * overview" tab (plain-language meaning, current / future requirement,
  * milestones, article-level legal basis, CELEX, official source) and
- * adds a four-eye review workflow: approve, edit text, edit connections,
- * fact-check, comment.
+ * adds a review workflow on top:
  *
- * Approvals are signed with the logged-in user's display name. A policy
- * is marked "four-eye checked" once two distinct users have approved it.
- * Same user cannot approve twice; the second sign-off must come from a
- * different identity.
+ *   • Approve / disapprove with four-eye sign-off — an entry is marked
+ *     "four-eye checked" only after two distinct users have approved it.
+ *     The same user cannot supply both approvals.
+ *   • Suggest edits to text or to the legal-basis connections; promoted
+ *     edits become the canonical text in the EU Policy Navigator.
+ *   • Fact-check claims and leave comments.
  *
  * All annotations are stored in `pw_policy_annotations` and re-read by
  * the navigator so changes propagate automatically.
@@ -26,7 +27,8 @@ import {
   getCitationLinks,
 } from '@/data/sectoral-policies';
 import { pwApi } from '@/lib/project-workspace/client';
-import type { PolicyAnnotation } from '@/lib/project-workspace/db';
+import type { PolicyAnnotation, PolicyOverrideMap } from '@/lib/project-workspace/db';
+import { invalidatePromotedEditsCache } from '@/lib/project-workspace/usePromotedPolicyEdits';
 import { useAuth } from '@/lib/auth-context';
 
 const KIND_LABELS: Record<PolicyAnnotation['kind'], string> = {
@@ -56,6 +58,7 @@ const EDITABLE_FIELDS = [
 interface Props {
   projectId: string;
   initialAnnotations: PolicyAnnotation[];
+  initialOverrides: PolicyOverrideMap;
 }
 
 /** Distinct users who approved a policy with an annotation that is still open. */
@@ -71,12 +74,28 @@ function getApprovers(anns: PolicyAnnotation[]): { id: string; name: string; at:
   return Array.from(byUser.values());
 }
 
-export default function PolicyAnalysisModule({ projectId, initialAnnotations }: Props) {
+export default function PolicyAnalysisModule({
+  projectId,
+  initialAnnotations,
+  initialOverrides,
+}: Props) {
   const { user, displayName } = useAuth();
   const [annotations, setAnnotations] = useState<PolicyAnnotation[]>(initialAnnotations);
+  const [overrides, setOverrides] = useState<PolicyOverrideMap>(initialOverrides);
   const [sectorFilter, setSectorFilter] = useState<SectorId | 'all'>('all');
   const [openId, setOpenId] = useState<string | null>(SECTOR_POLICIES[0]?.id ?? null);
   const [busy, setBusy] = useState(false);
+
+  /** Latest promoted edit per (policy, field) — recomputed from annotations. */
+  function rebuildOverrides(items: PolicyAnnotation[]): PolicyOverrideMap {
+    const m: PolicyOverrideMap = {};
+    for (const a of items) {
+      if (a.kind !== 'edit' || !a.promotedAt || !a.field) continue;
+      m[a.policyId] ??= {};
+      m[a.policyId][a.field] = a.value;
+    }
+    return m;
+  }
 
   const filtered = useMemo(() => {
     if (sectorFilter === 'all') return SECTOR_POLICIES;
@@ -116,6 +135,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
         field,
         value,
         status: 'open',
+        promotedAt: null,
         createdBy: user?.id ?? null,
         createdAt: new Date().toISOString(),
       };
@@ -137,11 +157,35 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
     }
   }
 
+  async function promoteAnnotation(id: string, promote: boolean) {
+    setBusy(true);
+    try {
+      await pwApi.promotePolicyAnnotation(id, promote);
+      const target = annotations.find(a => a.id === id);
+      setAnnotations(prev => {
+        const next = prev.map(a =>
+          a.id === id
+            ? { ...a, promotedAt: promote ? new Date().toISOString() : null }
+            : a
+        );
+        setOverrides(rebuildOverrides(next));
+        return next;
+      });
+      if (target) invalidatePromotedEditsCache(target.policyId);
+    } finally {
+      setBusy(false);
+    }
+  }
+
   async function deleteAnnotation(id: string) {
     setBusy(true);
     try {
       await pwApi.deletePolicyAnnotation(id);
-      setAnnotations(prev => prev.filter(a => a.id !== id));
+      setAnnotations(prev => {
+        const next = prev.filter(a => a.id !== id);
+        setOverrides(rebuildOverrides(next));
+        return next;
+      });
     } finally {
       setBusy(false);
     }
@@ -158,7 +202,8 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
           the text, edit the legal-basis connections, fact-check or comment on
           individual policy entries. Approvals follow the four-eye principle: two
           distinct sign-offs are required before an entry is marked
-          “four-eye checked”.
+          “four-eye checked”. Promoted edits become the canonical text in the
+          navigator.
         </p>
         {!user && (
           <p className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-1 mt-2 inline-block">
@@ -255,6 +300,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
                 <PolicyBody
                   policy={p}
                   annotations={anns}
+                  overrides={overrides[p.id] ?? {}}
                   approvers={approvers}
                   fourEyeChecked={fourEyeChecked}
                   currentUserId={user?.id ?? null}
@@ -263,6 +309,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
                   busy={busy}
                   onAdd={(kind, field, value) => addAnnotation(p.id, kind, field, value)}
                   onResolve={resolveAnnotation}
+                  onPromote={promoteAnnotation}
                   onDelete={deleteAnnotation}
                 />
               )}
@@ -277,6 +324,7 @@ export default function PolicyAnalysisModule({ projectId, initialAnnotations }: 
 function PolicyBody({
   policy,
   annotations,
+  overrides,
   approvers,
   fourEyeChecked,
   currentUserId,
@@ -285,10 +333,12 @@ function PolicyBody({
   busy,
   onAdd,
   onResolve,
+  onPromote,
   onDelete,
 }: {
   policy: SectorPolicy;
   annotations: PolicyAnnotation[];
+  overrides: Record<string, string>;
   approvers: { id: string; name: string; at: string }[];
   fourEyeChecked: boolean;
   currentUserId: string | null;
@@ -297,6 +347,7 @@ function PolicyBody({
   busy: boolean;
   onAdd: (kind: PolicyAnnotation['kind'], field: string, value: string) => void;
   onResolve: (id: string) => void;
+  onPromote: (id: string, promote: boolean) => void;
   onDelete: (id: string) => void;
 }) {
   const [editField, setEditField] = useState<string>('meaning');
@@ -312,6 +363,13 @@ function PolicyBody({
   const eurLexUrl = policy.ceLexId
     ? `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:${policy.ceLexId}`
     : null;
+
+  const display = {
+    meaning: overrides.meaning ?? policy.meaning,
+    currentRequirement: overrides.currentRequirement ?? policy.currentRequirement,
+    futureRequirement: overrides.futureRequirement ?? policy.futureRequirement,
+    scope: overrides.scope ?? policy.scope,
+  };
 
   function handleApprove() {
     if (!isSignedIn || userAlreadyApproved) return;
@@ -356,13 +414,27 @@ function PolicyBody({
         </div>
       </div>
 
-      {/* What it means */}
-      <Field label="Plain-language meaning">{policy.meaning}</Field>
+      {/* What it means (canonical text, optionally a promoted edit) */}
+      <Field label="Plain-language meaning" overridden={'meaning' in overrides}>
+        {display.meaning}
+      </Field>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <Field label="Current requirement">{policy.currentRequirement}</Field>
-        <Field label="Future requirement">{policy.futureRequirement}</Field>
-        <Field label="Scope">{policy.scope}</Field>
+        <Field
+          label="Current requirement"
+          overridden={'currentRequirement' in overrides}
+        >
+          {display.currentRequirement}
+        </Field>
+        <Field
+          label="Future requirement"
+          overridden={'futureRequirement' in overrides}
+        >
+          {display.futureRequirement}
+        </Field>
+        <Field label="Scope" overridden={'scope' in overrides}>
+          {display.scope}
+        </Field>
       </div>
 
       {/* Milestones */}
@@ -628,9 +700,29 @@ function PolicyBody({
                   <span className="ml-1 text-[10px] text-tertiary-dark">({a.field})</span>
                 )}
                 {a.value && <span className="ml-1">— {a.value}</span>}
+                {a.promotedAt && (
+                  <span className="ml-2 text-[10px] font-semibold uppercase tracking-wide text-blue-700">
+                    canonical
+                  </span>
+                )}
                 <span className="ml-2 text-[10px] text-tertiary-light">
                   {a.createdAt.slice(0, 10)}
                 </span>
+                {a.kind === 'edit' && a.field && (
+                  <button
+                    type="button"
+                    onClick={() => onPromote(a.id, !a.promotedAt)}
+                    disabled={busy}
+                    title={
+                      a.promotedAt
+                        ? 'Remove this edit from the canonical view'
+                        : 'Promote this edit so the EU Policy Navigator shows it as the canonical text'
+                    }
+                    className="ml-2 text-[10px] underline text-blue-700"
+                  >
+                    {a.promotedAt ? 'un-promote' : 'promote'}
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={() => onResolve(a.id)}
@@ -656,11 +748,28 @@ function PolicyBody({
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({
+  label,
+  children,
+  overridden,
+}: {
+  label: string;
+  children: React.ReactNode;
+  overridden?: boolean;
+}) {
   return (
-    <div className="bg-grey-50 rounded p-2">
-      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">
+    <div
+      className={`rounded p-2 ${
+        overridden ? 'bg-blue-50 border border-blue-200' : 'bg-grey-50'
+      }`}
+    >
+      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-1 flex items-center gap-1">
         {label}
+        {overridden && (
+          <span className="text-[9px] font-semibold text-blue-700 uppercase tracking-wide">
+            · promoted edit
+          </span>
+        )}
       </p>
       <p className="text-xs text-tertiary-dark leading-snug">{children}</p>
     </div>

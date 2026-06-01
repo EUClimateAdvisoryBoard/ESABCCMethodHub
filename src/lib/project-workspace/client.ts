@@ -108,7 +108,30 @@ export const pwApi = {
   patchPolicyAnnotation(id: string, body: Record<string, unknown>) {
     return send(`${BASE}/policy-annotations/${id}`, 'PATCH', body);
   },
+  /** Promote (or un-promote) a "Suggested edit" annotation into the canonical policy view. */
+  promotePolicyAnnotation(id: string, promote: boolean) {
+    return send<{ annotation: { id: string; promoted_at: string | null } }>(
+      `${BASE}/policy-annotations/${id}`,
+      'PATCH',
+      { promote }
+    );
+  },
   deletePolicyAnnotation(id: string) {
     return send(`${BASE}/policy-annotations/${id}`, 'DELETE');
+  },
+  refreshIndicator(id: string) {
+    return send<{
+      ok: boolean;
+      source: string;
+      pointsFetched: number;
+      points: { year: number; value: number }[];
+    }>(`${BASE}/indicators/${id}/refresh`, 'POST');
+  },
+  saveCustomContent(projectId: string, moduleId: string, content: string) {
+    return send(`${BASE}/custom-module-content`, 'PUT', {
+      projectId,
+      moduleId,
+      content,
+    });
   },
 };

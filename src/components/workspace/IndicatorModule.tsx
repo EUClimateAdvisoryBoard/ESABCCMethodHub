@@ -25,7 +25,13 @@ import {
   Legend,
 } from 'chart.js';
 import { Line, Bar } from 'react-chartjs-2';
-import { INDICATOR_CATEGORIES, type Indicator, type IndicatorCategory, type IndicatorDataPoint } from '@/data/ecno-indicators';
+import {
+  INDICATOR_CATEGORIES,
+  LIVE_REFRESHABLE_INDICATORS,
+  type Indicator,
+  type IndicatorCategory,
+  type IndicatorDataPoint,
+} from '@/data/ecno-indicators';
 import { pwApi } from '@/lib/project-workspace/client';
 
 ChartJS.register(
@@ -52,6 +58,9 @@ export default function IndicatorModule({ projectId, initial }: Props) {
   const [editing, setEditing] = useState<string | null>(null);
   const [adding, setAdding] = useState(false);
   const [busy, setBusy] = useState(false);
+  const [refreshStatus, setRefreshStatus] = useState<
+    { kind: 'ok' | 'err'; message: string } | null
+  >(null);
 
   const selected = indicators.find(i => i.id === selectedId) ?? indicators[0];
 
@@ -104,6 +113,23 @@ export default function IndicatorModule({ projectId, initial }: Props) {
       setIndicators(prev => [...prev, next]);
       setSelectedId(indicator.id);
       setAdding(false);
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function handleRefreshFromSource(id: string) {
+    setBusy(true);
+    setRefreshStatus(null);
+    try {
+      const res = await pwApi.refreshIndicator(id);
+      patchLocal(id, { data: res.points });
+      setRefreshStatus({
+        kind: 'ok',
+        message: `Pulled ${res.pointsFetched} point${res.pointsFetched === 1 ? '' : 's'} from ${res.source}.`,
+      });
+    } catch (e) {
+      setRefreshStatus({ kind: 'err', message: (e as Error).message });
     } finally {
       setBusy(false);
     }
@@ -284,6 +310,17 @@ export default function IndicatorModule({ projectId, initial }: Props) {
                 >
                   Add data
                 </button>
+                {LIVE_REFRESHABLE_INDICATORS.has(selected.id) && (
+                  <button
+                    type="button"
+                    onClick={() => handleRefreshFromSource(selected.id)}
+                    disabled={busy}
+                    className="px-2 py-1 text-[10px] rounded border border-primary text-primary disabled:opacity-50"
+                    title="Pull the latest values from the public source (Eurostat / EEA)"
+                  >
+                    {busy ? 'Refreshing…' : 'Refresh from source'}
+                  </button>
+                )}
                 {!selected.isSeed && (
                   <button
                     type="button"
@@ -296,6 +333,18 @@ export default function IndicatorModule({ projectId, initial }: Props) {
                 )}
               </div>
             </div>
+            {refreshStatus && (
+              <div
+                className={`text-[11px] px-2 py-1.5 rounded mb-2 ${
+                  refreshStatus.kind === 'ok'
+                    ? 'bg-green-50 text-green-800 border border-green-200'
+                    : 'bg-red-50 text-red-800 border border-red-200'
+                }`}
+                role="status"
+              >
+                {refreshStatus.message}
+              </div>
+            )}
             <div className="h-72">
               {selected.data.length > 0 ? (
                 <ChartCmp

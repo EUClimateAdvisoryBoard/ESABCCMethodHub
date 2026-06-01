@@ -20,6 +20,8 @@ import {
   listRecommendations,
   listMemberStateCells,
   listPolicyAnnotations,
+  getPolicyOverrides,
+  getCustomModuleContent,
 } from '@/lib/project-workspace/db';
 import ProjectShell from '@/components/workspace/ProjectShell';
 
@@ -35,18 +37,35 @@ export default async function ProjectPage({
   const project = await getProject(params.projectId);
   if (!project) notFound();
 
-  const [indicators, recommendations, memberStateCells, policyAnnotations] =
-    await Promise.all([
-      listIndicators(params.projectId),
-      listRecommendations(params.projectId),
-      listMemberStateCells(params.projectId),
-      listPolicyAnnotations(params.projectId),
-    ]);
+  const [
+    indicators,
+    recommendations,
+    memberStateCells,
+    policyAnnotations,
+    policyOverrides,
+  ] = await Promise.all([
+    listIndicators(params.projectId),
+    listRecommendations(params.projectId),
+    listMemberStateCells(params.projectId),
+    listPolicyAnnotations(params.projectId),
+    getPolicyOverrides(),
+  ]);
 
   const activeModule =
     searchParams.module && project.modules.some(m => m.id === searchParams.module)
       ? searchParams.module
       : project.modules[0]?.id;
+
+  // Pre-load scratchpad content for every custom module so they all render
+  // server-side. Cheap: one row per custom module, typically <5 per project.
+  const customContent: Record<string, string> = {};
+  await Promise.all(
+    project.modules
+      .filter(m => m.kind === 'custom')
+      .map(async m => {
+        customContent[m.id] = await getCustomModuleContent(project.id, m.id);
+      })
+  );
 
   return (
     <div className="min-h-screen bg-white text-tertiary-dark">
@@ -73,6 +92,8 @@ export default async function ProjectPage({
           recommendations={recommendations}
           memberStateCells={memberStateCells}
           policyAnnotations={policyAnnotations}
+          policyOverrides={policyOverrides}
+          customContent={customContent}
         />
       </main>
       <SiteFooter />

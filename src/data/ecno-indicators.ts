@@ -272,6 +272,22 @@ export const ECNO_INDICATORS: Indicator[] = [
   },
 ];
 
+/**
+ * Indicators with a registered live-source connector (see
+ * `src/lib/project-workspace/live-sources.ts`). The UI uses this list to
+ * enable the "Refresh from source" button. Keep in sync with the registry
+ * — entries missing from one place but present in the other are silently
+ * unreachable.
+ */
+export const LIVE_REFRESHABLE_INDICATORS: ReadonlySet<string> = new Set([
+  // Wired against Eurostat's JSON-stat REST API. EEA-sourced indicators
+  // still update by hand because the datahub lacks a stable REST endpoint;
+  // see live-sources.ts for the parked EEA scaffolding.
+  'res-share',
+  'final-energy-consumption',
+  'energy-poverty-share',
+]);
+
 export const INDICATOR_CATEGORIES: { id: IndicatorCategory; label: string }[] = [
   { id: 'emissions',     label: 'Emissions' },
   { id: 'energy-supply', label: 'Energy supply' },

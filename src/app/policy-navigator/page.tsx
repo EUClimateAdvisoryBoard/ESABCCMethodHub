@@ -57,6 +57,7 @@ import { useNetworks } from '@/lib/useNetworks';
 import { EmptyState } from '@/components/ui/StateView';
 import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
 import PolicyAnnotationsPanel from '@/components/workspace/PolicyAnnotationsBadge';
+import { usePromotedPolicyEdits } from '@/lib/project-workspace/usePromotedPolicyEdits';
 
 const PolicyNetworkGraph = dynamic(() => import('@/components/PolicyNetworkGraph'), { ssr: false });
 const LegislativeCalendar = dynamic(() => import('@/components/LegislativeCalendar'), { ssr: false });
@@ -1108,6 +1109,12 @@ function SectorPolicyCard({
   onToggle: () => void;
 }) {
   const color = INSTRUMENT_COLORS[policy.instrumentType] || '#0065A4';
+  // Promoted edits from the Project Workspace shadow the bundled SECTOR_POLICIES
+  // text — only fetched once the card is opened so we don't hammer the API.
+  const promoted = usePromotedPolicyEdits(policy.id, expanded);
+  const meaning = promoted.meaning ?? policy.meaning;
+  const currentRequirement = promoted.currentRequirement ?? policy.currentRequirement;
+  const futureRequirement = promoted.futureRequirement ?? policy.futureRequirement;
   return (
     <div id={`policy-${policy.id}`} className="bg-white rounded-xl border border-grey-200 overflow-hidden rounded-lg">
       <button
@@ -1140,7 +1147,7 @@ function SectorPolicyCard({
               )}
             </div>
             <p className="text-[11px] text-tertiary leading-relaxed line-clamp-2">
-              {policy.meaning}
+              {meaning}
             </p>
             <div className="flex flex-wrap gap-1 mt-2">
               {policy.sectors.map(s => {
@@ -1175,23 +1182,44 @@ function SectorPolicyCard({
       {expanded && (
         <div className="border-t border-grey-100 p-4 bg-grey-50 text-[12px] text-tertiary-dark leading-relaxed space-y-3">
           <div>
-            <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1">
+            <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
               What it means
+              {promoted.meaning && (
+                <PromotedBadge title="Promoted edit from the Project Workspace" />
+              )}
             </p>
-            <p>{policy.meaning}</p>
+            <p>{meaning}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            <div className="bg-white rounded p-3 border border-grey-200">
-              <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1">
+            <div
+              className={`rounded p-3 border ${
+                promoted.currentRequirement
+                  ? 'bg-blue-50 border-blue-200'
+                  : 'bg-white border-grey-200'
+              }`}
+            >
+              <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
                 Current requirement
+                {promoted.currentRequirement && (
+                  <PromotedBadge title="Promoted edit from the Project Workspace" />
+                )}
               </p>
-              <p className="text-[11px]">{policy.currentRequirement}</p>
+              <p className="text-[11px]">{currentRequirement}</p>
             </div>
-            <div className="bg-white rounded p-3 border border-grey-200">
-              <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1">
+            <div
+              className={`rounded p-3 border ${
+                promoted.futureRequirement
+                  ? 'bg-blue-50 border-blue-200'
+                  : 'bg-white border-grey-200'
+              }`}
+            >
+              <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
                 Future requirement
+                {promoted.futureRequirement && (
+                  <PromotedBadge title="Promoted edit from the Project Workspace" />
+                )}
               </p>
-              <p className="text-[11px]">{policy.futureRequirement}</p>
+              <p className="text-[11px]">{futureRequirement}</p>
             </div>
           </div>
           <div>
@@ -1293,5 +1321,16 @@ function SectorPolicyCard({
         </div>
       )}
     </div>
+  );
+}
+
+function PromotedBadge({ title }: { title: string }) {
+  return (
+    <span
+      title={title}
+      className="text-[8px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded-full font-medium uppercase tracking-wider border border-blue-200"
+    >
+      Promoted edit
+    </span>
   );
 }

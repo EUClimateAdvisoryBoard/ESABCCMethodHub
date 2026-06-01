@@ -44,9 +44,14 @@ export interface PolicyAnnotation {
   field: string;
   value: string;
   status: 'open' | 'resolved';
+  /** Non-null = the annotation has been promoted into the canonical policy view. */
+  promotedAt: string | null;
   createdBy: string | null;
   createdAt: string;
 }
+
+/** Promoted `edit` annotations, indexed by policy → field → value. */
+export type PolicyOverrideMap = Record<string, Record<string, string>>;
 
 /** True when Supabase is configured. */
 export function isWorkspaceDbEnabled(): boolean {
@@ -282,7 +287,48 @@ export async function listPolicyAnnotations(
     field: r.field,
     value: r.value,
     status: r.status,
+    promotedAt: r.promoted_at ?? null,
     createdBy: r.created_by,
     createdAt: r.created_at,
   }));
+}
+
+/**
+ * Returns the last-promoted edit per (policy, field). Read by both the
+ * workspace policy-analysis tab and the EU Policy Navigator's sectoral
+ * overview so promoted edits replace the bundled SECTOR_POLICIES text
+ * without anyone having to edit the data file.
+ */
+export async function getPolicyOverrides(): Promise<PolicyOverrideMap> {
+  const sb = getServerSupabase();
+  if (!sb) return {};
+  const { data } = await sb
+    .from('pw_policy_annotations')
+    .select('policy_id, field, value, promoted_at')
+    .eq('kind', 'edit')
+    .not('promoted_at', 'is', null)
+    .order('promoted_at', { ascending: true });
+  const out: PolicyOverrideMap = {};
+  for (const r of data ?? []) {
+    if (!r.field) continue;
+    out[r.policy_id] ??= {};
+    // Later promotions win (ordered ASC, so last write overrides).
+    out[r.policy_id][r.field] = r.value ?? '';
+  }
+  return out;
+}
+
+export async function getCustomModuleContent(
+  projectId: string,
+  moduleId: string
+): Promise<string> {
+  const sb = getServerSupabase();
+  if (!sb) return '';
+  const { data } = await sb
+    .from('pw_custom_module_content')
+    .select('content')
+    .eq('project_id', projectId)
+    .eq('module_id', moduleId)
+    .maybeSingle();
+  return data?.content ?? '';
 }
