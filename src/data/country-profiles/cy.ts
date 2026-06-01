@@ -43,10 +43,10 @@ const cy: CountryProfile = {
     ],
   },
   ghg: {
-    totalLatest: { value: 8.2, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC' },
+    totalLatest: { value: 8.2, unit: 'Mt CO2e', year: 2022, source: 'EEA / UNFCCC', sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/greenhouse-gases-viewer-data-viewers?activeAccordion=&country=CY" },
     total1990: 5.5,
-    perCapita: { value: 9.0, unit: 't CO2e/cap', year: 2022, source: 'EEA' },
-    perGdp: { value: 0.32, unit: 'kg CO2e/€', year: 2022, source: 'EEA' },
+    perCapita: { value: 9.0, unit: 't CO2e/cap', year: 2022, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/total-greenhouse-gas-emission-trends?activeAccordion=546a7c35-9188-4d23-94ee-005d97c26f2b&country=CY" },
+    perGdp: { value: 0.32, unit: 'kg CO2e/€', year: 2022, source: 'EEA', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/sdg_13_10/default/table?lang=en&geo=CY" },
     target2030: { value: -32, unit: '%', baseline: '2005', notes: 'ESR 2030 target under Fit-for-55; ambition raised in 2024 NECP.' },
     target2050: { value: -100, unit: '%', year: 2050, notes: 'Climate neutrality by 2050 (Long-Term Strategy 2024).' },
     sectors: [
@@ -76,7 +76,7 @@ const cy: CountryProfile = {
     status: 'off-track',
   },
   renewables: {
-    shareLatest: { value: 16.8, unit: '%', year: 2022, source: 'Eurostat SHARES' },
+    shareLatest: { value: 16.8, unit: '%', year: 2022, source: 'Eurostat SHARES', sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ren/default/table?lang=en&geo=CY" },
     share2005: 3.1,
     share2020: 16.9,
     target2030: 23,
@@ -102,9 +102,9 @@ const cy: CountryProfile = {
     status: 'partial',
   },
   efficiency: {
-    primary: { value: 2.5, unit: 'Mtoe', year: 2022 },
-    final:   { value: 1.9, unit: 'Mtoe', year: 2022 },
-    intensity: { value: 96, unit: 'kgoe/1000 EUR (2015)', year: 2022 },
+    primary: { value: 2.5, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — primary energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=CY" },
+    final:   { value: 1.9, unit: 'Mtoe', year: 2022, source: "Eurostat (nrg_bal_s — final energy)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_bal_s/default/table?lang=en&geo=CY" },
+    intensity: { value: 96, unit: 'kgoe/1000 EUR (2015)', year: 2022, source: "Eurostat (nrg_ind_ei)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ei/default/table?lang=en&geo=CY" },
     target2030: -19,
     narrative:
       'Energy intensity has fallen ~25% since 2005, but absolute consumption is ' +
@@ -114,11 +114,11 @@ const cy: CountryProfile = {
     status: 'partial',
   },
   air: {
-    pm25: { value: 14.0, unit: 'µg/m³', year: 2022 },
-    no2:  { value: 16.0, unit: 'µg/m³', year: 2022 },
-    ozone: { value: 70.0, unit: 'µg/m³ (SOMO35)', year: 2022 },
-    prematureDeaths: { value: 540, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA' },
-    exceedanceShare: { value: 100, unit: '% urban pop > WHO 5 µg/m³', year: 2022 },
+    pm25: { value: 14.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/cyprus-air-pollution-country-fact-sheet-2024" },
+    no2:  { value: 16.0, unit: 'µg/m³', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/cyprus-air-pollution-country-fact-sheet-2024" },
+    ozone: { value: 70.0, unit: 'µg/m³ (SOMO35)', year: 2022, source: "EEA air pollution country fact sheet", sourceUrl: "https://www.eea.europa.eu/en/topics/in-depth/air-pollution/air-pollution-country-fact-sheets-2024/cyprus-air-pollution-country-fact-sheet-2024" },
+    prematureDeaths: { value: 540, unit: 'deaths/yr (PM2.5)', year: 2021, source: 'EEA', sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/health-impacts-of-air-pollution-in-europe-2024" },
+    exceedanceShare: { value: 100, unit: '% urban pop > WHO 5 µg/m³', year: 2022, source: "EEA — Exceedance of air quality standards", sourceUrl: "https://www.eea.europa.eu/en/analysis/indicators/exceedance-of-air-quality-standards?activeAccordion=&country=CY" },
     narrative:
       'PM2.5 levels are elevated due to a substantial Saharan dust contribution ' +
       '(~30-40% of annual average), residential biomass burning and heavy-fuel-oil ' +
@@ -129,10 +129,10 @@ const cy: CountryProfile = {
     status: 'concern',
   },
   water: {
-    surfaceWaterGood: { value: 16, unit: '%', year: 2021, source: 'WISE-WFD' },
-    groundwaterGood: { value: 31, unit: '%', year: 2021 },
-    bathingWaterExcellent: { value: 99, unit: '%', year: 2023 },
-    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022 },
+    surfaceWaterGood: { value: 16, unit: '%', year: 2021, source: 'WISE-WFD', sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/cyprus" },
+    groundwaterGood: { value: 31, unit: '%', year: 2021, source: "WISE-WFD country profile", sourceUrl: "https://water.europa.eu/freshwater/countries/wfd/cyprus" },
+    bathingWaterExcellent: { value: 99, unit: '%', year: 2023, source: "EEA bathing water reports", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/bathing-water-directive/state-of-bathing-waters?country=CY" },
+    drinkingWaterCompliance: { value: 99, unit: '%', year: 2022, source: "EU Drinking Water Directive reporting", sourceUrl: "https://water.europa.eu/freshwater/europe-freshwater/drinking-water-directive/state-of-drinking-water?country=CY" },
     narrative:
       'Cyprus is among the most water-scarce countries in the EU (~270 m³/cap/yr ' +
       'natural availability). Groundwater is over-abstracted and saline intrusion ' +
@@ -142,10 +142,10 @@ const cy: CountryProfile = {
     status: 'concern',
   },
   biodiversity: {
-    natura2000Land: { value: 28.8, unit: '% land', year: 2023 },
-    natura2000Marine: { value: 7.2, unit: '% EEZ', year: 2023 },
-    threatenedSpecies: { value: 420, unit: 'IUCN red-list', year: 2022 },
-    habitatsFavourable: { value: 38, unit: '%', year: 2019, source: 'Art. 17 reporting' },
+    natura2000Land: { value: 28.8, unit: '% land', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=CY" },
+    natura2000Marine: { value: 7.2, unit: '% EEZ', year: 2023, source: "EEA Natura 2000 barometer", sourceUrl: "https://www.eea.europa.eu/en/analysis/maps-and-charts/natura-2000-barometer-statistics?country=CY" },
+    threatenedSpecies: { value: 420, unit: 'IUCN red-list', year: 2022, source: "IUCN Red List — national totals", sourceUrl: "https://www.iucnredlist.org/search?searchType=species&landRegions=CY" },
+    habitatsFavourable: { value: 38, unit: '%', year: 2019, source: 'Art. 17 reporting', sourceUrl: "https://www.eea.europa.eu/themes/biodiversity/state-of-nature-in-the-eu/article-17-national-summary-dashboards/cyprus" },
     narrative:
       'Natura 2000 terrestrial coverage at ~29% is approaching the 30%-by-2030 EU ' +
       'target. Marine coverage is below average and is being expanded. The Akamas ' +
@@ -155,9 +155,9 @@ const cy: CountryProfile = {
     status: 'partial',
   },
   circular: {
-    municipalRecycling: { value: 18, unit: '%', year: 2022 },
-    circularMaterialUseRate: { value: 3.0, unit: '%', year: 2022 },
-    resourceProductivity: { value: 1.6, unit: '€/kg', year: 2022 },
+    municipalRecycling: { value: 18, unit: '%', year: 2022, source: "Eurostat (cei_wm011)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_wm011/default/table?lang=en&geo=CY" },
+    circularMaterialUseRate: { value: 3.0, unit: '%', year: 2022, source: "Eurostat (cei_srm030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_srm030/default/table?lang=en&geo=CY" },
+    resourceProductivity: { value: 1.6, unit: '€/kg', year: 2022, source: "Eurostat (cei_pc030)", sourceUrl: "https://ec.europa.eu/eurostat/databrowser/view/cei_pc030/default/table?lang=en&geo=CY" },
     narrative:
       'Cyprus has one of the EU\'s lowest recycling rates and is at acute risk of ' +
       'missing the 2025 (55%) target. Landfill remains dominant. The 2021 Circular ' +
