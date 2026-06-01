@@ -72,7 +72,7 @@ async function ensureSeedDataFor(projectId: string) {
     const have = new Set((existing ?? []).map(r => r.id));
     const toInsert = ECNO_INDICATORS.filter(i => !have.has(i.id));
     if (toInsert.length > 0) {
-      await sb.from('pw_indicators').insert(
+      const { error: insErr } = await sb.from('pw_indicators').insert(
         toInsert.map(i => ({
           id: i.id,
           project_id: projectId,
@@ -88,11 +88,26 @@ async function ensureSeedDataFor(projectId: string) {
           is_seed: true,
         }))
       );
-      const points = toInsert.flatMap(i =>
-        i.data.map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
-      );
-      if (points.length > 0) {
-        await sb.from('pw_indicator_points').insert(points);
+      if (insErr) {
+        console.error('[pw seed] failed to insert indicators', {
+          projectId,
+          attempted: toInsert.length,
+          error: insErr.message,
+        });
+      } else {
+        const points = toInsert.flatMap(i =>
+          i.data.map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
+        );
+        if (points.length > 0) {
+          const { error: ptsErr } = await sb.from('pw_indicator_points').insert(points);
+          if (ptsErr) {
+            console.error('[pw seed] failed to insert indicator points', {
+              projectId,
+              attempted: points.length,
+              error: ptsErr.message,
+            });
+          }
+        }
       }
     }
 
