@@ -228,9 +228,18 @@ const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
         date: '2023-06-05',
         note:
           'ETS revision entered into force, creating ETS2 for road transport and ' +
-          'buildings (operational 2027): Dir (EU) 2023/959.',
+          'buildings (originally operational 2027): Dir (EU) 2023/959.',
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L0959',
+      },
+      {
+        date: '2025-11-13',
+        note:
+          'ETS2 start postponed from 2027 to 2028 (Environment Council 5 Nov ' +
+          '2025; Parliament agreed 13 Nov 2025), alongside the 2040 climate-' +
+          'target deal.',
+        sourceUrl:
+          'https://climate.ec.europa.eu/eu-action/carbon-markets/ets2-buildings-road-transport-and-additional-sectors_en',
       },
     ],
   },
@@ -334,8 +343,10 @@ const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R3012',
       },
       {
-        date: '2024-08-15',
-        note: 'EU Methane Regulation (EU) 2024/1787 in force; implementing acts pending.',
+        date: '2024-08-04',
+        note:
+          'EU Methane Regulation (EU) 2024/1787 entered into force (OJ ' +
+          'publication 15 July 2024); implementing acts pending.',
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787',
       },
@@ -495,8 +506,10 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     status: 'partially',
     uptakeEvents: [
       {
-        date: '2024-08-15',
-        note: 'EU Methane Regulation (EU) 2024/1787 in force; implementing acts pending.',
+        date: '2024-08-04',
+        note:
+          'EU Methane Regulation (EU) 2024/1787 entered into force (OJ ' +
+          'publication 15 July 2024); implementing acts pending.',
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787',
       },
@@ -641,9 +654,20 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
       'Combine the new ETS2 price signal with fast, ambitious implementation of ' +
       'the recast Energy Performance of Buildings Directive. Map: EPBD recast ' +
       'Dir (EU) 2024/1275; ETS2 (Dir (EU) 2023/959). EPBD in force; transposition ' +
-      'and ETS2 (2027) implementation pending.',
+      'and ETS2 implementation pending — ETS2 start postponed from 2027 to 2028 ' +
+      'as part of the 2040 climate-law deal.',
     status: 'partially',
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-11-13',
+        note:
+          'ETS2 start postponed from 2027 to 2028 (Environment Council 5 Nov ' +
+          '2025; Parliament agreed 13 Nov 2025), agreed alongside the 2040 ' +
+          'climate-target deal to allow more preparation time.',
+        sourceUrl:
+          'https://climate.ec.europa.eu/eu-action/carbon-markets/ets2-buildings-road-transport-and-additional-sectors_en',
+      },
+    ],
   },
   {
     id: 'b2-renovation-strategies',
