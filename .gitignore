@@ -36,3 +36,6 @@ word-addin/node_modules/
 !.env.local.example
 !.env.example
 __pycache__/
+
+# retag pipeline working dir
+.retag/
