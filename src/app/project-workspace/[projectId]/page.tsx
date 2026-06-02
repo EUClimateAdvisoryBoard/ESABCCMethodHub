@@ -30,6 +30,7 @@ import {
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
 import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
+import { listPhases } from '@/lib/project-workspace/phases';
 import type {
   MemberStateCell,
   PolicyAnnotation,
@@ -39,7 +40,7 @@ import type {
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
-import type { Meeting, Milestone } from '@/lib/project-workspace/client';
+import type { Meeting, Milestone, Phase } from '@/lib/project-workspace/client';
 import ProjectShell from '@/components/workspace/ProjectShell';
 
 export const dynamic = 'force-dynamic';
@@ -72,6 +73,7 @@ export default async function ProjectPage({
   let policyCodes: PolicyCode[] = [];
   let meetings: Meeting[] = [];
   let milestones: Milestone[] = [];
+  let phases: Phase[] = [];
   const customContent: Record<string, string> = {};
 
   if (kind === 'indicators') {
@@ -90,9 +92,10 @@ export default async function ProjectPage({
       listPolicyCodes(params.projectId),
     ]);
   } else if (kind === 'meetings') {
-    [meetings, milestones] = await Promise.all([
+    [meetings, milestones, phases] = await Promise.all([
       listMeetings(params.projectId),
       listMilestones(params.projectId),
+      listPhases(params.projectId),
     ]);
   } else if (kind === 'custom' && current) {
     customContent[current.id] = await getCustomModuleContent(project.id, current.id);
@@ -129,6 +132,7 @@ export default async function ProjectPage({
           customContent={customContent}
           meetings={meetings}
           milestones={milestones}
+          phases={phases}
         />
       </main>
       <SiteFooter />
