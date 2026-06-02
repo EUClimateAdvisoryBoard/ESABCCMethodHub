@@ -6,9 +6,13 @@
  * have a dedicated client component; user-added "custom" modules
  * currently render a stub asking the user to choose a kind.
  *
- * Initial data is server-fetched once per request so the page is
- * fast to first paint; client components handle mutations and update
- * their local state on success.
+ * Performance: only the active tab's data is fetched server-side.
+ * `ProjectShell` only renders one module at a time, and tab switches
+ * re-render via `router.push(?module=…)`, which re-runs this server
+ * component with the new active kind. The other modules' fetches —
+ * indicators (all data points), recommendations (all uptake events),
+ * policy annotations / overrides / codes, meetings, milestones —
+ * are skipped until their tab is opened.
  */
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -26,6 +30,16 @@ import {
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
 import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
+import type {
+  MemberStateCell,
+  PolicyAnnotation,
+  PolicyCode,
+  PolicyOverrideMap,
+} from '@/lib/project-workspace/db';
+import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
+import type { Indicator } from '@/data/ecno-indicators';
+import type { PastRecommendation } from '@/data/esabcc-recommendations';
+import type { Meeting, Milestone } from '@/lib/project-workspace/client';
 import ProjectShell from '@/components/workspace/ProjectShell';
 
 export const dynamic = 'force-dynamic';
@@ -40,43 +54,49 @@ export default async function ProjectPage({
   const project = await getProject(params.projectId);
   if (!project) notFound();
 
-  const [
-    indicators,
-    indicatorSheets,
-    recommendations,
-    memberStateCells,
-    policyAnnotations,
-    policyOverrides,
-    policyCodes,
-    meetings,
-    milestones,
-  ] = await Promise.all([
-    listIndicators(params.projectId),
-    listIndicatorSheets(params.projectId),
-    listRecommendations(params.projectId),
-    listMemberStateCells(params.projectId),
-    listPolicyAnnotations(params.projectId),
-    getPolicyOverrides(),
-    listPolicyCodes(params.projectId),
-    listMeetings(params.projectId),
-    listMilestones(params.projectId),
-  ]);
-
   const activeModule =
     searchParams.module && project.modules.some(m => m.id === searchParams.module)
       ? searchParams.module
       : project.modules[0]?.id;
+  const current = project.modules.find(m => m.id === activeModule);
+  const kind = current?.kind;
 
-  // Pre-load scratchpad content for every custom module so they all render
-  // server-side. Cheap: one row per custom module, typically <5 per project.
+  // Only fetch data for the active tab. Empty defaults flow into ProjectShell
+  // for the modules it won't render this turn.
+  let indicators: Indicator[] = [];
+  let indicatorSheets: Record<string, IndicatorSheetLayout> = {};
+  let recommendations: PastRecommendation[] = [];
+  let memberStateCells: MemberStateCell[] = [];
+  let policyAnnotations: PolicyAnnotation[] = [];
+  let policyOverrides: PolicyOverrideMap = {};
+  let policyCodes: PolicyCode[] = [];
+  let meetings: Meeting[] = [];
+  let milestones: Milestone[] = [];
   const customContent: Record<string, string> = {};
-  await Promise.all(
-    project.modules
-      .filter(m => m.kind === 'custom')
-      .map(async m => {
-        customContent[m.id] = await getCustomModuleContent(project.id, m.id);
-      })
-  );
+
+  if (kind === 'indicators') {
+    [indicators, indicatorSheets] = await Promise.all([
+      listIndicators(params.projectId),
+      listIndicatorSheets(params.projectId),
+    ]);
+  } else if (kind === 'recommendations') {
+    recommendations = await listRecommendations(params.projectId);
+  } else if (kind === 'member-states') {
+    memberStateCells = await listMemberStateCells(params.projectId);
+  } else if (kind === 'policy-analysis') {
+    [policyAnnotations, policyOverrides, policyCodes] = await Promise.all([
+      listPolicyAnnotations(params.projectId),
+      getPolicyOverrides(),
+      listPolicyCodes(params.projectId),
+    ]);
+  } else if (kind === 'meetings') {
+    [meetings, milestones] = await Promise.all([
+      listMeetings(params.projectId),
+      listMilestones(params.projectId),
+    ]);
+  } else if (kind === 'custom' && current) {
+    customContent[current.id] = await getCustomModuleContent(project.id, current.id);
+  }
 
   return (
     <div className="min-h-screen bg-white text-tertiary-dark">
