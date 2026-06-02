@@ -99,3 +99,35 @@ def verify(name, computed, expected, tol=0.5):
             msgs.append(f"  {name} {y}: computed {cv:.3f} vs expected {ev:.3f} (Δ{d:.3f})")
     head = f"  {name}: {'OK' if ok else 'MISMATCH'} ({len(common)} yrs, worst Δ{worst:.4f})"
     return ok, [head] + msgs
+
+
+def recompute_layout(layout):
+    """Recompute the Value column from a layout's stored raw cells, exactly as
+    the app's computeColumns would (column formulas over helper columns). Used
+    for INDEPENDENT central verification, regardless of how the layout was
+    built. Returns {year: value}."""
+    cols = layout["columns"]; headers = [c["header"] for c in cols]
+    formula = {c["header"]: (c.get("formula") or {}).get("expr") for c in cols}
+    import re as _re
+    def refs(expr):
+        rs = set(_re.findall(r"\[([^\]]+)\]", expr))
+        for h in headers:
+            if _re.match(r'^[A-Za-z_][A-Za-z0-9_]*$', h) and \
+               _re.search(rf'(?<![\[\w]){_re.escape(h)}(?![\w\]])', expr):
+                rs.add(h)
+        return rs
+    refmap = {h: refs(formula[h]) for h in headers if formula[h]}
+    out = {}
+    for row in layout["rows"]:
+        cells = row["cells"]
+        known = {headers[i]: cells[i] for i in range(len(headers)) if not formula[headers[i]]}
+        pending = {h for h in headers if formula[h]}
+        progress = True
+        while pending and progress:
+            progress = False
+            for h in list(pending):
+                if refmap[h] <= set(known):
+                    known[h] = eval_expr(formula[h], headers, known)
+                    pending.discard(h); progress = True
+        out[row["year"]] = known.get(headers[0])
+    return out
