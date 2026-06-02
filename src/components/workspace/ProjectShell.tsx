@@ -29,7 +29,7 @@ import MemberStatesModule from './MemberStatesModule';
 import PolicyAnalysisModule from './PolicyAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
-import { pwApi, type Meeting, type Milestone } from '@/lib/project-workspace/client';
+import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 
 interface Props {
   project: WorkspaceProject;
@@ -44,6 +44,7 @@ interface Props {
   customContent: Record<string, string>;
   meetings: Meeting[];
   milestones: Milestone[];
+  phases: Phase[];
 }
 
 const MODULE_KIND_OPTIONS = [
@@ -68,6 +69,7 @@ export default function ProjectShell({
   customContent,
   meetings,
   milestones,
+  phases,
 }: Props) {
   const router = useRouter();
   const pathname = usePathname();
@@ -140,6 +142,7 @@ export default function ProjectShell({
           projectId={project.id}
           initialMeetings={meetings}
           initialMilestones={milestones}
+          initialPhases={phases}
         />
       )}
       {current?.kind === 'custom' && (

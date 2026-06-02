@@ -421,6 +421,33 @@ export const pwApi = {
   deleteMilestone(id: string) {
     return send(`${BASE}/milestones/${id}`, 'DELETE');
   },
+
+  // ── Phases (Gantt blocks) ────────────────────────────────────────────────
+  async listPhases(projectId: string): Promise<Phase[]> {
+    const res = await fetch(`${BASE}/phases?projectId=${encodeURIComponent(projectId)}`, {
+      headers: { ...(await authHeader()) },
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { phases?: Phase[] };
+    return json.phases ?? [];
+  },
+  createPhase(body: {
+    projectId: string;
+    title: string;
+    startDate: string;
+    endDate: string;
+    color?: string;
+    description?: string;
+    sortOrder?: number;
+  }) {
+    return send<{ phase: Phase }>(`${BASE}/phases`, 'POST', body);
+  },
+  patchPhase(id: string, body: Record<string, unknown>) {
+    return send<{ phase: Phase }>(`${BASE}/phases/${id}`, 'PATCH', body);
+  },
+  deletePhase(id: string) {
+    return send(`${BASE}/phases/${id}`, 'DELETE');
+  },
 };
 
 /**
@@ -523,6 +550,21 @@ export interface Milestone {
   type: string;
   targetDate: string;
   status: string;
+  description: string;
+  sortOrder: number;
+  createdBy: string | null;
+  createdAt: string;
+  updatedAt: string;
+}
+
+/** Mirror of the server `Phase` shape (see phases.ts). Gantt time-block. */
+export interface Phase {
+  id: string;
+  projectId: string;
+  title: string;
+  startDate: string;
+  endDate: string;
+  color: string;
   description: string;
   sortOrder: number;
   createdBy: string | null;

@@ -21,7 +21,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useAuth } from '@/lib/auth-context';
-import { pwApi, type Meeting, type Milestone } from '@/lib/project-workspace/client';
+import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 import CollaborationPanel from './CollaborationPanel';
 import MeetingsTimeline from './MeetingsTimeline';
 import MeetingsProgress from './MeetingsProgress';
@@ -40,14 +40,21 @@ interface Props {
   projectId: string;
   initialMeetings: Meeting[];
   initialMilestones: Milestone[];
+  initialPhases: Phase[];
 }
 
 type View = 'meetings' | 'timeline' | 'progress';
 
-export default function MeetingsModule({ projectId, initialMeetings, initialMilestones }: Props) {
+export default function MeetingsModule({
+  projectId,
+  initialMeetings,
+  initialMilestones,
+  initialPhases,
+}: Props) {
   const { requireAuth } = useAuth();
   const [meetings, setMeetings] = useState<Meeting[]>(initialMeetings);
   const [milestones, setMilestones] = useState<Milestone[]>(initialMilestones);
+  const [phases, setPhases] = useState<Phase[]>(initialPhases);
   const [view, setView] = useState<View>('meetings');
   const [selectedId, setSelectedId] = useState<string | null>(initialMeetings[0]?.id ?? null);
   const [typeFilter, setTypeFilter] = useState<string>('all');
@@ -147,7 +154,15 @@ export default function MeetingsModule({ projectId, initialMeetings, initialMile
       </header>
 
       {view === 'progress' ? (
-        <MeetingsProgress meetings={meetings} milestones={milestones} />
+        <MeetingsProgress
+          projectId={projectId}
+          meetings={meetings}
+          milestones={milestones}
+          phases={phases}
+          onUpsertPhase={p => setPhases(prev => upsertById(prev, p))}
+          onRemovePhase={id => setPhases(prev => prev.filter(p => p.id !== id))}
+          requireAuth={requireAuth}
+        />
       ) : view === 'timeline' ? (
         <TimelineView
           projectId={projectId}
@@ -235,6 +250,14 @@ export default function MeetingsModule({ projectId, initialMeetings, initialMile
 
 function byDate(a: Meeting, b: Meeting) {
   return new Date(a.occurredAt).getTime() - new Date(b.occurredAt).getTime();
+}
+
+function upsertById<T extends { id: string }>(list: T[], item: T): T[] {
+  const i = list.findIndex(x => x.id === item.id);
+  if (i === -1) return [...list, item];
+  const next = [...list];
+  next[i] = item;
+  return next;
 }
 
 function TabBtn({

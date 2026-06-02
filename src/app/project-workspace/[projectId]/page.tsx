@@ -26,6 +26,7 @@ import {
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
 import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
+import { listPhases } from '@/lib/project-workspace/phases';
 import ProjectShell from '@/components/workspace/ProjectShell';
 
 export const dynamic = 'force-dynamic';
@@ -50,6 +51,7 @@ export default async function ProjectPage({
     policyCodes,
     meetings,
     milestones,
+    phases,
   ] = await Promise.all([
     listIndicators(params.projectId),
     listIndicatorSheets(params.projectId),
@@ -60,6 +62,7 @@ export default async function ProjectPage({
     listPolicyCodes(params.projectId),
     listMeetings(params.projectId),
     listMilestones(params.projectId),
+    listPhases(params.projectId),
   ]);
 
   const activeModule =
@@ -109,6 +112,7 @@ export default async function ProjectPage({
           customContent={customContent}
           meetings={meetings}
           milestones={milestones}
+          phases={phases}
         />
       </main>
       <SiteFooter />
