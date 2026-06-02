@@ -39,7 +39,7 @@ required.
 | `scripts/it-handoff/01-apply-schema.sh`             | Apply `supabase-schema.sql` + every `supabase/migrations/*.sql`.        |
 | `scripts/it-handoff/02-service-accounts.sql`        | Create the service-role accounts the app uses against EEA Postgres.     |
 | `scripts/it-handoff/03-verify.sh`                   | Post-apply sanity: expected tables, RLS policies, retention GUCs.       |
-| `supabase/combined_migrations.sql`                  | Concatenation of `supabase/migrations/001..028` in order. Lets a fresh database bootstrap by pasting a single file into the SQL editor, instead of running each migration individually. Regenerated whenever a new migration is added. |
+| `supabase/combined_migrations.sql`                  | Concatenation of `supabase/migrations/001..046` in order. Lets a fresh database bootstrap by pasting a single file into the SQL editor, instead of running each migration individually. Regenerated whenever a new migration is added. |
 | `scripts/it-handoff/backup.sh`                      | `pg_dump` wrapper intended to be composed with the hosting partner's GPG + object-storage steps. |
 | `scripts/it-handoff/postgresql.conf.recommended`    | Starting `postgresql.conf` values tuned for the MethodHub workload.      |
 | `scripts/seed-custom-references.sql`                | Seed the `custom_references` table for a fresh fork.                    |
