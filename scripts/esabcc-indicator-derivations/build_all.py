@@ -72,7 +72,7 @@ def main():
     print("\n=== CENTRAL RE-VERIFICATION (relative tol 1% + flat-line check) ===")
     for ok, ind, line in sorted(report, key=lambda r: (r[0], r[1])):
         print(("  PASS " if ok else " FAIL ") + line)
-    n = emit.emit(layouts, 'supabase/migrations/045_seed_indicator_derivations.sql')
+    n = emit.emit(layouts, 'supabase/migrations/047_seed_indicator_derivations.sql')
     npass = sum(1 for ok, *_ in report if ok)
     print(f"\nEmitted {n} verified layouts -> migration 045 ({npass}/{len(report)} passed)")
 
