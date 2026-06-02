@@ -25,7 +25,7 @@ import { references } from '@/data/references';
 import { policies } from '@/data/policies';
 import { scenarios } from '@/data/scenarios';
 import { newsFeedItems } from '@/data/newsfeed';
-import { ESABCC_2024_RECOMMENDATIONS } from '@/data/esabcc-recommendations';
+import { ALL_ESABCC_RECOMMENDATIONS } from '@/data/esabcc-recommendations';
 import { getServerSupabase } from '@/lib/supabase-server';
 
 export const dynamic = 'force-dynamic';
@@ -261,7 +261,7 @@ export default async function HomePage() {
   // ── EU Policy Navigator ──────────────────────────────────────────────
   const policyCount = policies.length;
   const domainCount = new Set(policies.map((p) => p.domain)).size;
-  const recommendationCount = ESABCC_2024_RECOMMENDATIONS.length;
+  const recommendationCount = ALL_ESABCC_RECOMMENDATIONS.length;
 
   const productionModules = [
     {

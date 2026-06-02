@@ -23,8 +23,7 @@ import {
   ECNO_TO_ESABCC_DUPLICATE,
 } from '@/data/esabcc-indicators';
 import {
-  ESABCC_2024_RECOMMENDATIONS,
-  ESABCC_2023_2040_TARGET_ADVICE,
+  ALL_ESABCC_RECOMMENDATIONS,
   ESABCC_INDUSTRY_RECOMMENDATIONS,
   type PastRecommendation,
   type RecommendationStatus,
@@ -32,10 +31,7 @@ import {
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 
 /** Recommendations seeded into the Policy Gap project, with their report label. */
-const SEED_RECOMMENDATIONS: PastRecommendation[] = [
-  ...ESABCC_2024_RECOMMENDATIONS,
-  ESABCC_2023_2040_TARGET_ADVICE,
-];
+const SEED_RECOMMENDATIONS: PastRecommendation[] = [...ALL_ESABCC_RECOMMENDATIONS];
 
 /**
  * Recommendations seeded into the Industry Project: the industry-tagged subset,

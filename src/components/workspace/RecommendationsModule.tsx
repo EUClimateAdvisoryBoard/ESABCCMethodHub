@@ -223,18 +223,19 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Past recommendations tracker</h2>
           <p className="text-sm text-tertiary mt-1 max-w-2xl">
-            ESABCC recommendations, each labelled with the report it comes from —
-            chiefly the January 2024 report{' '}
+            Recommendations from every ESABCC{' '}
             <a
-              href="https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities"
+              href="https://climate-advisory-board.europa.eu/reports-and-publications"
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-primary"
             >
-              Towards EU climate neutrality
-            </a>
-            . Edit text, change status, set the source report, log dated uptake
-            events, or add and remove recommendations as new advice is published.
+              report and advice
+            </a>{' '}
+            published to date, each labelled with the source publication and
+            grouped below by report. Edit text, change status, set the source
+            report, log dated uptake events, or add and remove recommendations
+            as new advice is published.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
