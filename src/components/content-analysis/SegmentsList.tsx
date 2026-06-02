@@ -1,5 +1,6 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import type {
   AnalysisDocument,
   CodeNode,
@@ -13,6 +14,16 @@ interface Props {
   selectedSegmentId: string | null;
   onOpenSegment: (segmentId: string) => void;
   onDelete: (segmentId: string) => void;
+  /** When provided, each segment row exposes an add/edit comment control.
+   *  The comment is the segment's shared `note`, persisted through the store
+   *  so everyone in the project can read it. */
+  onUpdateNote?: (segmentId: string, note: string) => void;
+  /** Set to a segment id to open its comment editor (e.g. straight after
+   *  tagging, from the "Add comment" toast action). */
+  requestCommentForId?: string | null;
+  /** Called once the requested comment editor has been opened, so the
+   *  parent can clear its request state and allow re-triggering. */
+  onCommentRequestConsumed?: () => void;
 }
 
 /**
@@ -27,9 +38,45 @@ export default function SegmentsList({
   selectedSegmentId,
   onOpenSegment,
   onDelete,
+  onUpdateNote,
+  requestCommentForId,
+  onCommentRequestConsumed,
 }: Props) {
   const codeById = new Map(codes.map(c => [c.id, c]));
   const docById = new Map(documents.map(d => [d.id, d]));
+
+  // Inline comment editor — which segment is being commented on, and the draft.
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [draft, setDraft] = useState('');
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Open the editor when the parent requests it (e.g. just after tagging).
+  useEffect(() => {
+    if (!requestCommentForId) return;
+    const seg = segments.find(s => s.id === requestCommentForId);
+    if (!seg) return;
+    setEditingId(seg.id);
+    setDraft(seg.note ?? '');
+    onCommentRequestConsumed?.();
+  }, [requestCommentForId, segments, onCommentRequestConsumed]);
+
+  useEffect(() => {
+    if (editingId) textareaRef.current?.focus();
+  }, [editingId]);
+
+  const openEditor = (seg: CodedSegment) => {
+    setEditingId(seg.id);
+    setDraft(seg.note ?? '');
+  };
+  const saveEditor = () => {
+    if (editingId && onUpdateNote) onUpdateNote(editingId, draft.trim());
+    setEditingId(null);
+    setDraft('');
+  };
+  const cancelEditor = () => {
+    setEditingId(null);
+    setDraft('');
+  };
 
   const buildRows = () => {
     const header = ['Tag', 'Document', 'Quote', 'Note', 'Range'];
@@ -186,9 +233,67 @@ export default function SegmentsList({
                   <p className="mt-1 text-[11.5px] italic text-[#3D5265] leading-snug line-clamp-3">
                     “{seg.text.trim()}”
                   </p>
-                  {seg.note && (
-                    <p className="mt-1 text-[11px] text-[#3D5265]/70 line-clamp-2">{seg.note}</p>
+
+                  {/* Shared comment — readable by everyone in the project. */}
+                  {onUpdateNote ? (
+                    editingId === seg.id ? (
+                      <div className="mt-1.5" onClick={e => e.stopPropagation()}>
+                        <textarea
+                          ref={textareaRef}
+                          value={draft}
+                          onChange={e => setDraft(e.target.value)}
+                          onKeyDown={e => {
+                            if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); saveEditor(); }
+                            else if (e.key === 'Escape') { e.preventDefault(); cancelEditor(); }
+                          }}
+                          placeholder="Add a comment on this tag for the team…"
+                          className="w-full h-16 px-2 py-1 border border-[#E6E7E8] rounded text-[11.5px] text-[#3D5265] focus:outline-none focus:border-[#00928F]"
+                        />
+                        <div className="flex items-center gap-2 mt-1">
+                          <button
+                            type="button"
+                            onClick={saveEditor}
+                            className="text-[11px] font-semibold text-white bg-[#00928F] hover:bg-[#017a77] rounded px-2 py-0.5"
+                          >
+                            Save comment
+                          </button>
+                          <button
+                            type="button"
+                            onClick={cancelEditor}
+                            className="text-[11px] text-[#8A95A3] hover:text-[#3D5265]"
+                          >
+                            Cancel
+                          </button>
+                          <span className="ml-auto font-mono text-[9px] text-[#B8BCC2]">⌘↵ save · esc cancel</span>
+                        </div>
+                      </div>
+                    ) : seg.note ? (
+                      <div
+                        className="mt-1.5 flex items-start gap-1 group/comment"
+                        onClick={e => { e.stopPropagation(); openEditor(seg); }}
+                        title="Edit comment"
+                      >
+                        <span aria-hidden className="text-[#00928F] text-[11px] leading-tight mt-px">💬</span>
+                        <p className="text-[11px] text-[#3D5265]/80 leading-snug flex-1 cursor-text hover:text-[#3D5265]">
+                          {seg.note}
+                        </p>
+                        <span className="text-[10px] text-[#B8BCC2] opacity-0 group-hover/comment:opacity-100">edit</span>
+                      </div>
+                    ) : (
+                      <button
+                        type="button"
+                        onClick={e => { e.stopPropagation(); openEditor(seg); }}
+                        className="mt-1.5 text-[11px] text-[#8A95A3] hover:text-[#00928F]"
+                      >
+                        + Add comment
+                      </button>
+                    )
+                  ) : (
+                    seg.note && (
+                      <p className="mt-1 text-[11px] text-[#3D5265]/70 line-clamp-2">{seg.note}</p>
+                    )
                   )}
+
                   <p className="mt-1 font-mono text-[10px] text-[#8A95A3] truncate">
                     {doc?.shortTitle ?? seg.documentId} · chars {seg.startChar}–{seg.endChar}
                   </p>

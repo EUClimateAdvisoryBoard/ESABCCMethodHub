@@ -132,6 +132,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     mergeCode,
     addSegment,
     deleteSegment,
+    updateSegmentNote,
     upsertDocument,
     applyIngestion,
   } = useContentAnalysis();
@@ -154,6 +155,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
   const [selectedCodeId, setSelectedCodeId] = useState<string | null>(null);
   const [highlightedSegmentId, setHighlightedSegmentId] = useState<string | null>(null);
+  // When set, the segments panel opens an inline comment editor for this
+  // segment — used by the "Add comment" toast action straight after tagging.
+  const [commentForSegmentId, setCommentForSegmentId] = useState<string | null>(null);
   const [toolbarSel, setToolbarSel] = useState<ToolbarSelection | null>(null);
   const [codeEditor, setCodeEditor] = useState<CodeEditorPayload | null>(null);
   const [ingestState, setIngestState] = useState<{ status: 'idle' | 'loading' | 'error' | 'ok'; message?: string }>({ status: 'idle' });
@@ -319,7 +323,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     });
     setHighlightedSegmentId(seg.id);
     const code = snapshot.codes.find(c => c.id === codeId);
-    showToast({ tone: 'success', message: `Tagged as "${code?.name ?? 'tag'}"` });
+    showToast({
+      tone: 'success',
+      message: `Tagged as "${code?.name ?? 'tag'}"`,
+      description: 'Add a comment so the team knows why.',
+      actionLabel: 'Add comment',
+      onAction: () => {
+        setView('code');
+        setHighlightedSegmentId(seg.id);
+        setCommentForSegmentId(seg.id);
+      },
+      timeoutMs: 8000,
+    });
   };
 
   const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }) => {
@@ -739,6 +754,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 selectedSegmentId={highlightedSegmentId}
                 onOpenSegment={setHighlightedSegmentId}
                 onDelete={deleteSegment}
+                onUpdateNote={updateSegmentNote}
+                requestCommentForId={commentForSegmentId}
+                onCommentRequestConsumed={() => setCommentForSegmentId(null)}
               />
             </div>
           </aside>
