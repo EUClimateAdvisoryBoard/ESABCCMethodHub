@@ -46,6 +46,21 @@ def _conv_units(header):
     return None, None
 
 
+def _humanize(expr):
+    """Turn a stored formula into a readable one: drop [..] and trailing unit
+    parens from names, use × / ÷, and round long decimals."""
+    if not expr:
+        return ""
+    s = re.sub(r"\[([^\]]+)\]", lambda m: _strip_unit(m.group(1)), expr)
+    s = re.sub(r"\d+\.\d+(?:[eE][+-]?\d+)?",
+               lambda m: (str(int(float(m.group(0)))) if float(m.group(0)) == int(float(m.group(0)))
+                          else f"{float(m.group(0)):.4g}"), s)
+    s = s.replace("*", " × ").replace("/", " ÷ ")
+    s = re.sub(r"(?<=[\w)\]])\s*\+\s*", " + ", s)
+    s = re.sub(r"(?<=[\w)\]])\s*-\s*(?=[\w(\[])", " - ", s)
+    return re.sub(r"[ ]{2,}", " ", s).strip()
+
+
 def _top_split(e, ops):
     """Split expr on the first top-level operator in `ops`; returns (l, op, r)."""
     depth = 0
@@ -59,14 +74,16 @@ def _top_split(e, ops):
     return None
 
 
-def describe(layout, name=None, unit=None):
-    """Plain-language, step-by-step explanation of how the Value is derived —
-    what each step does and why it makes sense — generated from the layout so it
-    always matches the actual calculation. Surfaced behind the calc editor's
-    'ⓘ Derivation' button."""
+def describe(layout, name=None, unit=None, description=None):
+    """Plain-language, well-documented explanation of how the Value is derived —
+    what it measures, the step-by-step calculation, what every column is and why
+    it's needed, the readable formula, and the reasoning — generated from the
+    layout so it always matches the actual calculation. Surfaced behind the calc
+    editor's 'ⓘ Derivation' button."""
     cols = layout["columns"]
     rows = layout.get("rows", [])
     value_expr = (cols[0].get("formula") or {}).get("expr", "").strip()
+    orig_value_expr = value_expr
     helpers = cols[1:]
 
     # Classify helper columns (their grid index = position in cols).
@@ -79,6 +96,8 @@ def describe(layout, name=None, unit=None):
     title = f"{name or 'This indicator'}" + (f"  ({unit})" if unit else "")
 
     steps, why = [], ""
+    div_share = is_intensity = False
+    denom_names = set()
 
     # If the Value is just a single derived column, unwrap it so we explain that
     # column's actual calculation (e.g. a share/ratio) instead of "take X".
@@ -157,7 +176,9 @@ def describe(layout, name=None, unit=None):
         # Ratio: numerator / denominator (denominator is data, not a constant).
         num_p = _plain_list(names_from(div[0])) or "the selected components"
         den_p = _plain_list(names_from(div[2])) or "the total"
+        denom_names = set(names_from(div[2]))
         if unit_l == "%" or "share" in (name or "").lower():
+            div_share = True
             if "+" in div[0]:
                 steps.append(f"Add up {num_p}.")
                 steps.append(f"Divide that by {den_p} to get its share of the total.")
@@ -166,6 +187,7 @@ def describe(layout, name=None, unit=None):
             why = ("The indicator tracks the mix, not absolute volumes — expressing it as a share "
                    "of the total shows how the balance shifts over time.")
         else:
+            is_intensity = True
             steps.append(f"Divide {num_p} by {den_p}.")
             why = (f"This gives {unit or 'a per-unit figure'} — the amount per unit of output "
                    "(an intensity), so it reflects how clean/efficient production is, not how much is made.")
@@ -220,22 +242,65 @@ def describe(layout, name=None, unit=None):
         steps.append("Combine the inputs as shown to produce the plotted value.")
         why = "Reproduces the published figure from its underlying inputs."
 
-    # ── Assemble ─────────────────────────────────────────────────────────────
+    # ── Per-column documentation ──────────────────────────────────────────────
     def clean_src(s):
         s = (s or "").strip()
         return None if (not s or s.lower().startswith("see ")) else s
-    srcs = sorted({s for s in (clean_src(c.get("source")) for c in inputs) if s})
 
-    L = [title, ""]
-    L.append("How it's calculated:")
+    factor_set = {c["header"] for c in factors}
+
+    def column_doc(c):
+        h = c["header"]
+        nm = _strip_unit(h)
+        src = clean_src(c.get("source"))
+        expr = (c.get("formula") or {}).get("expr")
+        if h in factor_set:
+            ru, tu = _conv_units(h)
+            if ru and tu:
+                return (f"{nm} — unit-conversion factor ({ru} → {tu}). Needed because the source "
+                        f"reports {ru} but the indicator is shown in {tu}; multiplying by it only "
+                        f"changes the unit, not the underlying quantity.")
+            return f"{nm} — a constant factor applied in the calculation."
+        if expr:
+            return (f"{nm} — intermediate step, computed as {_humanize(expr)}. It prepares this "
+                    f"component from the detailed source rows so the final line can combine them.")
+        if nm in denom_names:
+            return (f"{nm} — the total, used as the denominator. Dividing by it turns the "
+                    f"components into a {'share' if div_share else 'per-unit figure'}.")
+        why_in = "one of the source categories that are added together to form the total"
+        if div_share:
+            why_in = "one of the components measured against the total to form the share"
+        elif is_intensity:
+            why_in = "one of the two quantities the indicator divides"
+        return (f"{nm} — raw input" + (f" from {src}" if src else "") +
+                f". It is {why_in}, so it has to be captured to reproduce the figure.")
+
+    # ── Assemble ─────────────────────────────────────────────────────────────
+    L = [title]
+    if description:
+        L += ["", f"What it measures: {description}"]
+
+    L += ["", "How it's calculated:"]
     for i, s in enumerate(steps, 1):
         L.append(f"  {i}. {s}")
+
     if why:
-        L += ["", f"Why: {why}"]
-    if srcs:
-        L += ["", "Source data: " + _plain_list(srcs) + "."]
-    L += ["", "Everything recomputes live — update a raw input and the plotted "
-          "value updates automatically."]
+        L += ["", "Why it's done this way:", f"  {why}"]
+
+    L += ["", "The columns in this sheet (and why each is needed):"]
+    L.append(f"  • Value — the final number plotted on the website, in {unit or 'the indicator unit'}.")
+    for c in helpers:
+        L.append(f"  • {column_doc(c)}")
+
+    L += ["", "Formula:", f"  Value = {_humanize(orig_value_expr) or '(entered directly)'}"]
+    for c in helpers:
+        e = (c.get("formula") or {}).get("expr")
+        if e:
+            L.append(f"  {_strip_unit(c['header'])} = {_humanize(e)}")
+
+    L += ["", "Everything recomputes live — change a raw input and the plotted "
+          "value (and any intermediate columns) update automatically, using the "
+          "same formulas as the original source workbook."]
     return "\n".join(L)
 
 HEADER = """\
