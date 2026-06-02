@@ -18,7 +18,11 @@ export type WorkspaceModuleKind =
   | 'indicators'
   | 'recommendations'
   | 'member-states'
+  // `policy-analysis` is the legacy id, retained for backward-compatibility
+  // with module rows seeded before the Content Analysis rework. It now
+  // renders the same MAXQDA-style Content Analysis workbench.
   | 'policy-analysis'
+  | 'content-analysis'
   | 'meetings'
   | 'custom';
 
@@ -75,12 +79,15 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'with editor and external-contributor workflow.',
       },
       {
-        id: 'policy-analysis',
-        kind: 'policy-analysis',
-        name: 'Policy analysis',
+        id: 'content-analysis',
+        kind: 'content-analysis',
+        name: 'Content analysis',
         description:
-          'Sectoral policy review. Mirrors the Sectoral overview in the ' +
-          'EU Policy Navigator; edits made here propagate to the navigator.',
+          'MAXQDA-style qualitative coding for this project. Choose a source — ' +
+          'the EU policy corpus, scientific literature or grey literature & ' +
+          'reports — then mark passages and attach tags & codes. Tags save ' +
+          'live and build on the shared master library, with lenses to compare ' +
+          'what each project is coding.',
       },
     ],
   },
@@ -91,18 +98,19 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
       'Analytical workspace dedicated to industrial decarbonisation — taken in ' +
       'the wider sense of industry (energy-intensive sectors, carbon pricing & ' +
       'leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to ' +
-      'industry-tagged policies via the policy analysis tool.',
+      'industry-tagged policies via the content analysis tool.',
     isSeed: true,
     modules: [
       {
-        id: 'policy-analysis',
-        kind: 'policy-analysis',
-        name: 'Policy analysis',
+        id: 'content-analysis',
+        kind: 'content-analysis',
+        name: 'Content analysis',
         description:
-          'Sectoral policy review pre-filtered to industry-tagged policies ' +
-          '(ETS, ETS2, CBAM, IED, Net-Zero Industry Act, CRMA, Ecodesign, ' +
-          'batteries, REACH, F-gas …). Mirrors the EU Policy Navigator; edits ' +
-          'made here propagate to the navigator.',
+          'MAXQDA-style qualitative coding scoped to industry. Choose a source — ' +
+          'the EU policy corpus (pre-filtered to industry-tagged policies: ETS, ' +
+          'ETS2, CBAM, IED, Net-Zero Industry Act, CRMA …), scientific literature ' +
+          'or grey literature & reports — then mark passages and attach tags & ' +
+          'codes. Tags save live and build on the shared master library.',
       },
     ],
   },

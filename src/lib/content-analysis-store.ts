@@ -18,17 +18,19 @@
  */
 
 import { getServerSupabase } from './supabase-server';
-import type { CodedSegment, CodeSuggestion } from './content-analysis/types';
+import type { CodedSegment, CodeSuggestion, CodeNode } from './content-analysis/types';
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
 
 interface GlobalCache {
   __caSegments?: CodedSegment[];
   __caSuggestions?: CodeSuggestion[];
+  __caCodes?: CodeNode[];
 }
 const g = globalThis as unknown as GlobalCache;
 if (!g.__caSegments) g.__caSegments = [];
 if (!g.__caSuggestions) g.__caSuggestions = [];
+if (!g.__caCodes) g.__caCodes = [];
 
 const MAX_ROWS = 20000;
 
@@ -306,4 +308,103 @@ export async function clearDocumentSuggestions(
     return;
   }
   g.__caSuggestions = g.__caSuggestions!.filter(x => x.documentId !== documentId);
+}
+
+// Codes ---------------------------------------------------------------------
+// Only runtime (user-created, typically project-scoped) codes are persisted
+// here — master codes are deterministic seed data and resolve client-side.
+
+interface CodeRow {
+  id: string;
+  parent_id: string | null;
+  name: string;
+  description: string | null;
+  color: string;
+  scope: string;
+  project_id: string | null;
+  updated_at?: string;
+}
+
+function rowToCode(r: CodeRow): CodeNode {
+  return {
+    id: r.id,
+    parentId: r.parent_id,
+    name: r.name,
+    description: r.description ?? undefined,
+    color: r.color,
+    scope: r.scope === 'master' ? 'master' : 'project',
+    projectId: r.project_id ?? undefined,
+    createdAt: r.updated_at ?? new Date().toISOString(),
+  };
+}
+
+function codeToRow(c: CodeNode): CodeRow {
+  return {
+    id: c.id,
+    parent_id: c.parentId,
+    name: c.name,
+    description: c.description ?? '',
+    color: c.color,
+    scope: c.scope,
+    project_id: c.projectId ?? null,
+    updated_at: new Date().toISOString(),
+  };
+}
+
+export async function getCodes(): Promise<CodeNode[]> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_codes')
+      .select('*')
+      .limit(MAX_ROWS);
+    if (error) {
+      console.error('[content-analysis-store] getCodes failed:', error.message);
+      return g.__caCodes!;
+    }
+    return (data as CodeRow[]).map(rowToCode);
+  }
+  return g.__caCodes!;
+}
+
+export async function upsertCodes(codes: CodeNode[]): Promise<void> {
+  if (codes.length === 0) return;
+  const sb = getServerSupabase();
+  if (sb) {
+    const rows = codes.map(codeToRow);
+    const { error } = await sb
+      .from('content_analysis_codes')
+      .upsert(rows, { onConflict: 'id' });
+    if (error) {
+      console.error('[content-analysis-store] upsertCodes failed:', error.message);
+    } else {
+      return;
+    }
+  }
+  const bag = g.__caCodes!;
+  for (const c of codes) {
+    const idx = bag.findIndex(x => x.id === c.id);
+    if (idx >= 0) bag[idx] = c;
+    else bag.push(c);
+  }
+}
+
+export async function deleteCode(id: string): Promise<boolean> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { error } = await sb
+      .from('content_analysis_codes')
+      .delete()
+      .eq('id', id);
+    if (error) {
+      console.error('[content-analysis-store] deleteCode failed:', error.message);
+      return false;
+    }
+    return true;
+  }
+  const bag = g.__caCodes!;
+  const idx = bag.findIndex(x => x.id === id);
+  if (idx < 0) return false;
+  bag.splice(idx, 1);
+  return true;
 }

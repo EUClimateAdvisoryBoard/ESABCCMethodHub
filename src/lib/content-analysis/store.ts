@@ -85,6 +85,26 @@ function deleteSegmentRemote(id: string): void {
   }).catch(err => logApiError('deleteSegment', err));
 }
 
+/** Persist a runtime code to the server. Only project-scoped codes are
+ *  synced — master codes are deterministic seed data resolved client-side,
+ *  so we never push the whole bundled taxonomy. */
+function postCode(code: CodeNode): void {
+  if (code.scope !== 'project') return;
+  fetch('/api/content-analysis/codes', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ codes: [code] }),
+    keepalive: true,
+  }).catch(err => logApiError('postCode', err));
+}
+
+function deleteCodeRemote(id: string): void {
+  fetch(`/api/content-analysis/codes?id=${encodeURIComponent(id)}`, {
+    method: 'DELETE',
+    keepalive: true,
+  }).catch(err => logApiError('deleteCode', err));
+}
+
 function postSuggestions(documentId: string, suggestions: CodeSuggestion[]): void {
   fetch('/api/content-analysis/suggestions', {
     method: 'POST',
@@ -116,15 +136,18 @@ async function syncFromServer(): Promise<void> {
   if (serverSynced) return;
   serverSynced = true;
   try {
-    const [segResp, suggResp] = await Promise.all([
+    const [segResp, suggResp, codesResp] = await Promise.all([
       fetch('/api/content-analysis/segments', { cache: 'no-store' }),
       fetch('/api/content-analysis/suggestions', { cache: 'no-store' }),
+      fetch('/api/content-analysis/codes', { cache: 'no-store' }),
     ]);
-    if (!segResp.ok && !suggResp.ok) return;
+    if (!segResp.ok && !suggResp.ok && !codesResp.ok) return;
     const segJson = segResp.ok ? await segResp.json() : { items: [] };
     const suggJson = suggResp.ok ? await suggResp.json() : { items: [] };
+    const codesJson = codesResp.ok ? await codesResp.json() : { items: [] };
     const serverSegs: CodedSegment[] = Array.isArray(segJson.items) ? segJson.items : [];
     const serverSuggs: CodeSuggestion[] = Array.isArray(suggJson.items) ? suggJson.items : [];
+    const serverCodes: CodeNode[] = Array.isArray(codesJson.items) ? codesJson.items : [];
     update(s => {
       const byIdSeg = new Map<string, CodedSegment>();
       for (const x of s.segments) byIdSeg.set(x.id, x);
@@ -132,10 +155,18 @@ async function syncFromServer(): Promise<void> {
       const bySuggId = new Map<string, CodeSuggestion>();
       for (const x of s.suggestions) bySuggId.set(x.id, x);
       for (const x of serverSuggs) bySuggId.set(x.id, x);
+      // Merge server codes (other users' project tags) over local ones so a
+      // tag created in another project's context resolves here. Seed master
+      // codes already present locally are preserved (server only holds
+      // runtime codes).
+      const byIdCode = new Map<string, CodeNode>();
+      for (const x of s.codes) byIdCode.set(x.id, x);
+      for (const x of serverCodes) byIdCode.set(x.id, x);
       return {
         ...s,
         segments: Array.from(byIdSeg.values()),
         suggestions: Array.from(bySuggId.values()),
+        codes: Array.from(byIdCode.values()),
       };
     });
   } catch (err) {
@@ -270,21 +301,42 @@ export function useContentAnalysis() {
       createdAt: new Date().toISOString(),
     };
     update(s => ({ ...s, codes: [...s.codes, code] }));
+    postCode(code);
     return code;
   }, []);
 
   const renameCode = useCallback((id: string, name: string) => {
-    update(s => ({ ...s, codes: s.codes.map(c => (c.id === id ? { ...c, name } : c)) }));
+    let updated: CodeNode | null = null;
+    update(s => ({
+      ...s,
+      codes: s.codes.map(c => {
+        if (c.id !== id) return c;
+        updated = { ...c, name };
+        return updated;
+      }),
+    }));
+    if (updated) postCode(updated);
   }, []);
 
   const recolorCode = useCallback((id: string, color: string) => {
-    update(s => ({ ...s, codes: s.codes.map(c => (c.id === id ? { ...c, color } : c)) }));
+    let updated: CodeNode | null = null;
+    update(s => ({
+      ...s,
+      codes: s.codes.map(c => {
+        if (c.id !== id) return c;
+        updated = { ...c, color };
+        return updated;
+      }),
+    }));
+    if (updated) postCode(updated);
   }, []);
 
   const deleteCode = useCallback((id: string) => {
     const cascadedSegmentIds: string[] = [];
+    const removedCodeIds: string[] = [];
     update(s => {
       const toRemove = new Set(descendantCodeIds(s.codes, id));
+      for (const c of s.codes) if (toRemove.has(c.id)) removedCodeIds.push(c.id);
       for (const seg of s.segments) {
         if (toRemove.has(seg.codeId)) cascadedSegmentIds.push(seg.id);
       }
@@ -295,6 +347,7 @@ export function useContentAnalysis() {
       };
     });
     for (const segId of cascadedSegmentIds) deleteSegmentRemote(segId);
+    for (const codeId of removedCodeIds) deleteCodeRemote(codeId);
   }, []);
 
   /**
@@ -347,6 +400,8 @@ export function useContentAnalysis() {
       };
     });
     if (rejected) return null;
+    // The merged-away source subtree is gone — drop those rows server-side.
+    for (const c of removedCodes) deleteCodeRemote(c.id);
     // Undo closure: re-install the deleted codes and restore the original
     // codeId on every segment that was reassigned. Re-POSTs so the server
     // reflects the rollback too.
@@ -364,6 +419,7 @@ export function useContentAnalysis() {
           segments: restored,
         };
       });
+      for (const c of removedCodes) postCode(c);
     };
     return { reassigned, undo };
   }, []);
@@ -376,6 +432,7 @@ export function useContentAnalysis() {
    */
   const moveCode = useCallback((id: string, newParentId: string | null): boolean => {
     let ok = true;
+    let moved: CodeNode | null = null;
     update(s => {
       const subtree = new Set(descendantCodeIds(s.codes, id));
       if (newParentId !== null && subtree.has(newParentId)) {
@@ -384,9 +441,14 @@ export function useContentAnalysis() {
       }
       return {
         ...s,
-        codes: s.codes.map(c => (c.id === id ? { ...c, parentId: newParentId } : c)),
+        codes: s.codes.map(c => {
+          if (c.id !== id) return c;
+          moved = { ...c, parentId: newParentId };
+          return moved;
+        }),
       };
     });
+    if (ok && moved) postCode(moved);
     return ok;
   }, []);
 

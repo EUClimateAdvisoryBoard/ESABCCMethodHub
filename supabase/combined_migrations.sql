@@ -1,5 +1,5 @@
 -- ============================================================================
--- COMBINED MIGRATIONS (001 -> 046)
+-- COMBINED MIGRATIONS (001 -> 049)
 -- Auto-generated from supabase/migrations/*.sql for one-shot SQL Editor runs.
 -- Wrap is intentionally absent: each source migration is idempotent
 -- (CREATE ... IF NOT EXISTS / DROP ... IF EXISTS), so re-running is safe.
@@ -5536,3 +5536,88 @@ begin
   execute format(
     'create policy "%s delete" on public.%I for delete to authenticated using (true)', t, t);
 end $$;
+
+
+-- ----------------------------------------------------------------------------
+-- 047_pw_industry_policy_only.sql
+-- ----------------------------------------------------------------------------
+
+delete from public.pw_modules
+where project_id = 'industry-project'
+  and is_seed = true
+  and id in ('indicators', 'recommendations', 'member-states', 'meetings');
+
+delete from public.pw_modules
+where project_id = 'policy-gap-2-0'
+  and is_seed = true
+  and id = 'meetings';
+
+update public.pw_projects
+  set description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the policy analysis tool.'
+  where id = 'industry-project'
+    and description = 'Analytical workspace dedicated to industrial decarbonisation — the same four tools as Policy Gap 2.0, scoped to industry: industry indicators, the industry-tagged recommendations, industry-tagged policies and a member-state space framed around industrial transition.';
+
+
+-- ----------------------------------------------------------------------------
+-- 048_pw_content_analysis_module.sql
+-- ----------------------------------------------------------------------------
+
+alter table public.pw_modules drop constraint if exists pw_modules_kind_check;
+alter table public.pw_modules add constraint pw_modules_kind_check
+  check (kind in (
+    'indicators',
+    'recommendations',
+    'member-states',
+    'policy-analysis',
+    'content-analysis',
+    'meetings',
+    'custom'
+  ));
+
+update public.pw_modules m
+set
+  id          = 'content-analysis',
+  kind        = 'content-analysis',
+  name        = 'Content analysis',
+  description =
+    'MAXQDA-style qualitative coding for this project. Choose a source — the ' ||
+    'EU policy corpus, scientific literature or grey literature & reports — ' ||
+    'then mark passages and attach tags & codes. Tags save live and build on ' ||
+    'the shared master library, with lenses to compare what each project codes.'
+where m.kind = 'policy-analysis'
+  and not exists (
+    select 1 from public.pw_modules x
+    where x.project_id = m.project_id and x.id = 'content-analysis'
+  );
+
+update public.pw_projects
+  set description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the content analysis tool.'
+  where id = 'industry-project'
+    and description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the policy analysis tool.';
+
+
+-- ----------------------------------------------------------------------------
+-- 049_content_analysis_codes_table.sql
+-- ----------------------------------------------------------------------------
+
+create table if not exists public.content_analysis_codes (
+  id             text primary key,
+  parent_id      text,
+  name           text not null,
+  description    text not null default '',
+  color          text not null default '#00928F',
+  scope          text not null default 'project',
+  project_id     text,
+  author_id      uuid references auth.users(id) on delete set null,
+  created_at     timestamptz not null default now(),
+  updated_at     timestamptz not null default now()
+);
+
+create index if not exists idx_ca_codes_project on public.content_analysis_codes (project_id);
+create index if not exists idx_ca_codes_parent  on public.content_analysis_codes (parent_id);
+
+alter table public.content_analysis_codes enable row level security;
+
+drop policy if exists "Content analysis codes are viewable by everyone" on public.content_analysis_codes;
+create policy "Content analysis codes are viewable by everyone"
+  on public.content_analysis_codes for select using (true);

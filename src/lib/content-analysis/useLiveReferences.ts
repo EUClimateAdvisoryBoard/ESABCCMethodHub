@@ -119,6 +119,7 @@ function staticToAnalysisDoc(r: typeof staticRefs[number]): AnalysisDocument | n
     referenceAuthors: r.authors,
     referenceYear: r.year,
     referenceUrl: urlForPdf ?? undefined,
+    referenceType: r.type,
   };
 }
 
@@ -141,7 +142,32 @@ function apiToAnalysisDoc(r: ApiRef): AnalysisDocument | null {
     referenceAuthors: r.authors,
     referenceYear: r.year,
     referenceUrl: url || undefined,
+    referenceType: normaliseRefType(r.type),
   };
+}
+
+/** Map an arbitrary `type` string from the live references API onto the
+ *  closed reference-type union; unknowns fall back to 'report' (grey
+ *  literature) so they still land in a usable bucket. */
+function normaliseRefType(t: string | undefined): AnalysisDocument['referenceType'] {
+  switch (t) {
+    case 'article':
+    case 'report':
+    case 'web':
+    case 'chapter':
+    case 'legislation':
+    case 'book':
+      return t;
+    default:
+      return 'report';
+  }
+}
+
+/** True when a reference is peer-reviewed scientific literature (article,
+ *  book or book chapter); everything else (report, web, legislation) is
+ *  treated as grey literature. */
+export function isScientificLiterature(doc: AnalysisDocument): boolean {
+  return doc.referenceType === 'article' || doc.referenceType === 'book' || doc.referenceType === 'chapter';
 }
 
 function mapKind(t: string | undefined): AnalysisDocument['kind'] {

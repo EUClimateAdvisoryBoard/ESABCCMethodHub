@@ -1,18 +1,19 @@
 /**
  * Project detail page for the Project Workspace.
  * ----------------------------------------------
- * Renders the project's modules as tabs. Today the four module kinds
- * (indicators, recommendations, member-states, policy-analysis) each
- * have a dedicated client component; user-added "custom" modules
- * currently render a stub asking the user to choose a kind.
+ * Renders the project's modules as tabs. The module kinds (indicators,
+ * recommendations, member-states, content-analysis, meetings) each have a
+ * dedicated client component; user-added "custom" modules render a notes
+ * editor. The Content Analysis module is fully client-driven (it talks to
+ * the content-analysis store + API directly), so it needs no server fetch
+ * here.
  *
  * Performance: only the active tab's data is fetched server-side.
  * `ProjectShell` only renders one module at a time, and tab switches
  * re-render via `router.push(?module=…)`, which re-runs this server
  * component with the new active kind. The other modules' fetches —
  * indicators (all data points), recommendations (all uptake events),
- * policy annotations / overrides / codes, meetings, milestones —
- * are skipped until their tab is opened.
+ * meetings, milestones — are skipped until their tab is opened.
  */
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -24,19 +25,11 @@ import {
   listIndicatorSheets,
   listRecommendations,
   listMemberStateCells,
-  listPolicyAnnotations,
-  listPolicyCodes,
-  getPolicyOverrides,
   getCustomModuleContent,
 } from '@/lib/project-workspace/db';
 import { listMeetings, listMilestones } from '@/lib/project-workspace/meetings';
 import { listPhases } from '@/lib/project-workspace/phases';
-import type {
-  MemberStateCell,
-  PolicyAnnotation,
-  PolicyCode,
-  PolicyOverrideMap,
-} from '@/lib/project-workspace/db';
+import type { MemberStateCell } from '@/lib/project-workspace/db';
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
@@ -68,9 +61,6 @@ export default async function ProjectPage({
   let indicatorSheets: Record<string, IndicatorSheetLayout> = {};
   let recommendations: PastRecommendation[] = [];
   let memberStateCells: MemberStateCell[] = [];
-  let policyAnnotations: PolicyAnnotation[] = [];
-  let policyOverrides: PolicyOverrideMap = {};
-  let policyCodes: PolicyCode[] = [];
   let meetings: Meeting[] = [];
   let milestones: Milestone[] = [];
   let phases: Phase[] = [];
@@ -85,12 +75,6 @@ export default async function ProjectPage({
     recommendations = await listRecommendations(params.projectId);
   } else if (kind === 'member-states') {
     memberStateCells = await listMemberStateCells(params.projectId);
-  } else if (kind === 'policy-analysis') {
-    [policyAnnotations, policyOverrides, policyCodes] = await Promise.all([
-      listPolicyAnnotations(params.projectId),
-      getPolicyOverrides(),
-      listPolicyCodes(params.projectId),
-    ]);
   } else if (kind === 'meetings') {
     [meetings, milestones, phases] = await Promise.all([
       listMeetings(params.projectId),
@@ -126,9 +110,6 @@ export default async function ProjectPage({
           indicatorSheets={indicatorSheets}
           recommendations={recommendations}
           memberStateCells={memberStateCells}
-          policyAnnotations={policyAnnotations}
-          policyOverrides={policyOverrides}
-          policyCodes={policyCodes}
           customContent={customContent}
           meetings={meetings}
           milestones={milestones}
