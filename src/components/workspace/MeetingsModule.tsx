@@ -24,6 +24,7 @@ import { useAuth } from '@/lib/auth-context';
 import { pwApi, type Meeting, type Milestone } from '@/lib/project-workspace/client';
 import CollaborationPanel from './CollaborationPanel';
 import MeetingsTimeline from './MeetingsTimeline';
+import MeetingsProgress from './MeetingsProgress';
 import {
   MEETING_TYPES,
   MILESTONE_TYPES,
@@ -41,7 +42,7 @@ interface Props {
   initialMilestones: Milestone[];
 }
 
-type View = 'meetings' | 'timeline';
+type View = 'meetings' | 'timeline' | 'progress';
 
 export default function MeetingsModule({ projectId, initialMeetings, initialMilestones }: Props) {
   const { requireAuth } = useAuth();
@@ -116,10 +117,11 @@ export default function MeetingsModule({ projectId, initialMeetings, initialMile
     <div className="space-y-4">
       <header className="flex items-start justify-between gap-3 flex-wrap">
         <div>
-          <h2 className="text-lg font-bold text-tertiary-dark">Meetings</h2>
+          <h2 className="text-lg font-bold text-tertiary-dark">Meetings &amp; Progress</h2>
           <p className="text-xs text-tertiary mt-1 max-w-2xl">
             Track every meeting for this report — notes, summaries and minutes, the
-            AI-extracted three key takeaways, milestones and a project timeline.
+            AI-extracted three key takeaways, milestones, a project timeline and a
+            progress dashboard for the project lead.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -129,6 +131,9 @@ export default function MeetingsModule({ projectId, initialMeetings, initialMile
             </TabBtn>
             <TabBtn active={view === 'timeline'} onClick={() => setView('timeline')}>
               Timeline &amp; milestones
+            </TabBtn>
+            <TabBtn active={view === 'progress'} onClick={() => setView('progress')}>
+              Progress
             </TabBtn>
           </div>
           <button
@@ -141,7 +146,9 @@ export default function MeetingsModule({ projectId, initialMeetings, initialMile
         </div>
       </header>
 
-      {view === 'timeline' ? (
+      {view === 'progress' ? (
+        <MeetingsProgress meetings={meetings} milestones={milestones} />
+      ) : view === 'timeline' ? (
         <TimelineView
           projectId={projectId}
           meetings={meetings}
