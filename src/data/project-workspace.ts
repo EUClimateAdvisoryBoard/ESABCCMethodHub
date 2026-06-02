@@ -31,6 +31,17 @@ export interface WorkspaceModule {
   kind: WorkspaceModuleKind;
   name: string;
   description: string;
+  /**
+   * Featured modules are the project's primary, production-ready tools.
+   * They render with a bold tab label to set them apart from the more
+   * experimental modules.
+   */
+  featured?: boolean;
+  /**
+   * Beta modules are still experimental. They render with a small "beta"
+   * marker next to the tab label.
+   */
+  beta?: boolean;
 }
 
 export interface WorkspaceProject {
@@ -54,6 +65,7 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         id: 'indicators',
         kind: 'indicators',
         name: 'Indicator database',
+        featured: true,
         description:
           'Two clusters: existing indicators rebuilt from the 2024 ESABCC ' +
           'progress report (Towards EU climate neutrality), and additional ' +
@@ -62,32 +74,35 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Eurostat / EEA / EAFO / IRENA / EHPA.',
       },
       {
-        id: 'recommendations',
-        kind: 'recommendations',
-        name: 'Past recommendations tracker',
-        description:
-          'Recommendations from every ESABCC report, with status and dated ' +
-          'uptake events.',
-      },
-      {
-        id: 'member-states',
-        kind: 'member-states',
-        name: 'Member state space',
-        description:
-          'EEA-style profile for each EU-27 member state: choropleth ' +
-          'map, indicator heatmap and full per-country detail page ' +
-          'with editor and external-contributor workflow.',
-      },
-      {
         id: 'content-analysis',
         kind: 'content-analysis',
         name: 'Content analysis',
+        featured: true,
         description:
           'MAXQDA-style qualitative coding for this project. Choose a source — ' +
           'the EU policy corpus, scientific literature or grey literature & ' +
           'reports — then mark passages and attach tags & codes. Tags save ' +
           'live and build on the shared master library, with lenses to compare ' +
           'what each project is coding.',
+      },
+      {
+        id: 'member-states',
+        kind: 'member-states',
+        name: 'Member state space',
+        beta: true,
+        description:
+          'EEA-style profile for each EU-27 member state: choropleth ' +
+          'map, indicator heatmap and full per-country detail page ' +
+          'with editor and external-contributor workflow.',
+      },
+      {
+        id: 'recommendations',
+        kind: 'recommendations',
+        name: 'Past recommendations tracker',
+        beta: true,
+        description:
+          'Recommendations from every ESABCC report, with status and dated ' +
+          'uptake events.',
       },
     ],
   },
