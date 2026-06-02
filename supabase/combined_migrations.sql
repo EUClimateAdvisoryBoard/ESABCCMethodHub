@@ -35,6 +35,7 @@ CREATE TABLE IF NOT EXISTS public.library_members (
 
 ALTER TABLE public.library_members ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "Users can view own libraries" ON public.libraries;
 CREATE POLICY "Users can view own libraries"
   ON public.libraries FOR SELECT
   USING (
@@ -43,15 +44,19 @@ CREATE POLICY "Users can view own libraries"
     OR is_shared = true
   );
 
+DROP POLICY IF EXISTS "Authenticated users can create libraries" ON public.libraries;
 CREATE POLICY "Authenticated users can create libraries"
   ON public.libraries FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
 
+DROP POLICY IF EXISTS "Owners can update libraries" ON public.libraries;
 CREATE POLICY "Owners can update libraries"
   ON public.libraries FOR UPDATE USING (owner_id = auth.uid());
 
+DROP POLICY IF EXISTS "Owners can delete libraries" ON public.libraries;
 CREATE POLICY "Owners can delete libraries"
   ON public.libraries FOR DELETE USING (owner_id = auth.uid());
 
+DROP POLICY IF EXISTS "Members can view membership" ON public.library_members;
 CREATE POLICY "Members can view membership"
   ON public.library_members FOR SELECT
   USING (
@@ -59,6 +64,7 @@ CREATE POLICY "Members can view membership"
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+DROP POLICY IF EXISTS "Library owners/admins can manage members" ON public.library_members;
 CREATE POLICY "Library owners/admins can manage members"
   ON public.library_members FOR INSERT
   WITH CHECK (
@@ -69,6 +75,7 @@ CREATE POLICY "Library owners/admins can manage members"
     )
   );
 
+DROP POLICY IF EXISTS "Library owners/admins can update members" ON public.library_members;
 CREATE POLICY "Library owners/admins can update members"
   ON public.library_members FOR UPDATE
   USING (
@@ -79,6 +86,7 @@ CREATE POLICY "Library owners/admins can update members"
     )
   );
 
+DROP POLICY IF EXISTS "Library owners/admins can remove members" ON public.library_members;
 CREATE POLICY "Library owners/admins can remove members"
   ON public.library_members FOR DELETE
   USING (
@@ -120,6 +128,7 @@ CREATE INDEX IF NOT EXISTS references_year_idx ON public.references(year);
 
 ALTER TABLE public.references ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "read_references" ON public.references;
 CREATE POLICY "read_references" ON public.references FOR SELECT
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid())
@@ -127,18 +136,21 @@ CREATE POLICY "read_references" ON public.references FOR SELECT
     OR library_id IN (SELECT id FROM public.libraries WHERE is_shared = true)
   );
 
+DROP POLICY IF EXISTS "write_references" ON public.references;
 CREATE POLICY "write_references" ON public.references FOR INSERT
   WITH CHECK (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+DROP POLICY IF EXISTS "update_references" ON public.references;
 CREATE POLICY "update_references" ON public.references FOR UPDATE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+DROP POLICY IF EXISTS "delete_references" ON public.references;
 CREATE POLICY "delete_references" ON public.references FOR DELETE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
@@ -167,9 +179,11 @@ CREATE TABLE IF NOT EXISTS public.csl_styles (
 
 ALTER TABLE public.csl_styles ENABLE ROW LEVEL SECURITY;
 
+DROP POLICY IF EXISTS "CSL styles are viewable by everyone" ON public.csl_styles;
 CREATE POLICY "CSL styles are viewable by everyone"
   ON public.csl_styles FOR SELECT USING (true);
 
+DROP POLICY IF EXISTS "Authenticated users can add styles" ON public.csl_styles;
 CREATE POLICY "Authenticated users can add styles"
   ON public.csl_styles FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
 
@@ -222,6 +236,7 @@ alter table public.inbound_emails enable row level security;
 
 drop policy if exists "Inbound emails are viewable by everyone" on public.inbound_emails;
 drop policy if exists "Inbound emails are viewable by authenticated users" on public.inbound_emails;
+DROP POLICY IF EXISTS "Inbound emails are viewable by authenticated users" ON public.inbound_emails;
 create policy "Inbound emails are viewable by authenticated users"
   on public.inbound_emails for select using (auth.uid() is not null);
 
@@ -275,10 +290,12 @@ create index if not exists idx_scenario_submissions_call    on public.scenario_s
 alter table public.scenario_submissions enable row level security;
 
 drop policy if exists "Scenario submissions are viewable by everyone" on public.scenario_submissions;
+DROP POLICY IF EXISTS "Scenario submissions are viewable by everyone" ON public.scenario_submissions;
 create policy "Scenario submissions are viewable by everyone"
   on public.scenario_submissions for select using (true);
 
 drop policy if exists "Anyone can submit scenario data" on public.scenario_submissions;
+DROP POLICY IF EXISTS "Anyone can submit scenario data" ON public.scenario_submissions;
 create policy "Anyone can submit scenario data"
   on public.scenario_submissions for insert with check (true);
 
@@ -288,11 +305,13 @@ insert into storage.buckets (id, name, public)
   on conflict (id) do nothing;
 
 drop policy if exists "Scenario submissions bucket public read" on storage.objects;
+DROP POLICY IF EXISTS "Scenario submissions bucket public read" ON storage.objects;
 create policy "Scenario submissions bucket public read"
   on storage.objects for select
   using (bucket_id = 'scenario-submissions');
 
 drop policy if exists "Scenario submissions bucket public write" on storage.objects;
+DROP POLICY IF EXISTS "Scenario submissions bucket public write" ON storage.objects;
 create policy "Scenario submissions bucket public write"
   on storage.objects for insert
   with check (bucket_id = 'scenario-submissions');
@@ -335,18 +354,22 @@ create index if not exists idx_media_keywords_active
 alter table public.media_keywords enable row level security;
 
 drop policy if exists "Media keywords are viewable by everyone" on public.media_keywords;
+DROP POLICY IF EXISTS "Media keywords are viewable by everyone" ON public.media_keywords;
 create policy "Media keywords are viewable by everyone"
   on public.media_keywords for select using (true);
 
 drop policy if exists "Authenticated users can create media keywords" on public.media_keywords;
+DROP POLICY IF EXISTS "Authenticated users can create media keywords" ON public.media_keywords;
 create policy "Authenticated users can create media keywords"
   on public.media_keywords for insert with check (auth.uid() is not null);
 
 drop policy if exists "Authors can update their media keywords" on public.media_keywords;
+DROP POLICY IF EXISTS "Authors can update their media keywords" ON public.media_keywords;
 create policy "Authors can update their media keywords"
   on public.media_keywords for update using (auth.uid() = created_by or created_by is null);
 
 drop policy if exists "Authors can delete their media keywords" on public.media_keywords;
+DROP POLICY IF EXISTS "Authors can delete their media keywords" ON public.media_keywords;
 create policy "Authors can delete their media keywords"
   on public.media_keywords for delete using (auth.uid() = created_by or created_by is null);
 
@@ -374,6 +397,7 @@ create index if not exists idx_media_outlets_tier    on public.media_outlets (ti
 alter table public.media_outlets enable row level security;
 
 drop policy if exists "Media outlets are viewable by everyone" on public.media_outlets;
+DROP POLICY IF EXISTS "Media outlets are viewable by everyone" ON public.media_outlets;
 create policy "Media outlets are viewable by everyone"
   on public.media_outlets for select using (true);
 
@@ -410,6 +434,7 @@ create index if not exists idx_media_articles_kw_text   on public.media_articles
 alter table public.media_articles enable row level security;
 
 drop policy if exists "Media articles are viewable by everyone" on public.media_articles;
+DROP POLICY IF EXISTS "Media articles are viewable by everyone" ON public.media_articles;
 create policy "Media articles are viewable by everyone"
   on public.media_articles for select using (true);
 
@@ -431,6 +456,7 @@ create index if not exists idx_media_fetch_runs_started on public.media_fetch_ru
 alter table public.media_fetch_runs enable row level security;
 
 drop policy if exists "Media fetch runs are viewable by everyone" on public.media_fetch_runs;
+DROP POLICY IF EXISTS "Media fetch runs are viewable by everyone" ON public.media_fetch_runs;
 create policy "Media fetch runs are viewable by everyone"
   on public.media_fetch_runs for select using (true);
 
@@ -756,6 +782,7 @@ create index if not exists idx_custom_posts_author     on public.custom_posts (a
 alter table public.custom_posts enable row level security;
 
 drop policy if exists "Custom posts are viewable by everyone" on public.custom_posts;
+DROP POLICY IF EXISTS "Custom posts are viewable by everyone" ON public.custom_posts;
 create policy "Custom posts are viewable by everyone"
   on public.custom_posts for select using (true);
 
@@ -799,10 +826,12 @@ create index if not exists idx_policy_clock_events_importance on public.policy_c
 alter table public.policy_clock_events enable row level security;
 
 drop policy if exists "Policy clock events are viewable by everyone" on public.policy_clock_events;
+DROP POLICY IF EXISTS "Policy clock events are viewable by everyone" ON public.policy_clock_events;
 create policy "Policy clock events are viewable by everyone"
   on public.policy_clock_events for select using (true);
 
 drop policy if exists "Authors can delete own policy clock events" on public.policy_clock_events;
+DROP POLICY IF EXISTS "Authors can delete own policy clock events" ON public.policy_clock_events;
 create policy "Authors can delete own policy clock events"
   on public.policy_clock_events for delete using (auth.uid() = author_id);
 
@@ -823,10 +852,12 @@ create index if not exists idx_notifications_user on public.notifications (user_
 alter table public.notifications enable row level security;
 
 drop policy if exists "Users can view own notifications" on public.notifications;
+DROP POLICY IF EXISTS "Users can view own notifications" ON public.notifications;
 create policy "Users can view own notifications"
   on public.notifications for select using (auth.uid() = user_id);
 
 drop policy if exists "Users can update own notifications" on public.notifications;
+DROP POLICY IF EXISTS "Users can update own notifications" ON public.notifications;
 create policy "Users can update own notifications"
   on public.notifications for update using (auth.uid() = user_id);
 
@@ -884,18 +915,22 @@ create index if not exists idx_media_social_sources_active
 alter table public.media_social_sources enable row level security;
 
 drop policy if exists "Social sources are viewable by everyone" on public.media_social_sources;
+DROP POLICY IF EXISTS "Social sources are viewable by everyone" ON public.media_social_sources;
 create policy "Social sources are viewable by everyone"
   on public.media_social_sources for select using (true);
 
 drop policy if exists "Authenticated users can manage social sources" on public.media_social_sources;
+DROP POLICY IF EXISTS "Authenticated users can manage social sources" ON public.media_social_sources;
 create policy "Authenticated users can manage social sources"
   on public.media_social_sources for insert with check (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can update social sources" on public.media_social_sources;
+DROP POLICY IF EXISTS "Authenticated users can update social sources" ON public.media_social_sources;
 create policy "Authenticated users can update social sources"
   on public.media_social_sources for update using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can delete social sources" on public.media_social_sources;
+DROP POLICY IF EXISTS "Authenticated users can delete social sources" ON public.media_social_sources;
 create policy "Authenticated users can delete social sources"
   on public.media_social_sources for delete using (auth.uid() is not null);
 
@@ -940,6 +975,7 @@ create index if not exists idx_media_social_posts_reports   on public.media_soci
 alter table public.media_social_posts enable row level security;
 
 drop policy if exists "Social posts are viewable by everyone" on public.media_social_posts;
+DROP POLICY IF EXISTS "Social posts are viewable by everyone" ON public.media_social_posts;
 create policy "Social posts are viewable by everyone"
   on public.media_social_posts for select using (true);
 
@@ -989,24 +1025,28 @@ delete from public.media_social_sources
 
 drop policy if exists "Profiles are viewable by everyone" on public.profiles;
 drop policy if exists "Profiles are viewable by authenticated users" on public.profiles;
+DROP POLICY IF EXISTS "Profiles are viewable by authenticated users" ON public.profiles;
 create policy "Profiles are viewable by authenticated users"
   on public.profiles for select
   using (auth.uid() is not null);
 
 drop policy if exists "Annotations are viewable by everyone" on public.annotations;
 drop policy if exists "Annotations are viewable by authenticated users" on public.annotations;
+DROP POLICY IF EXISTS "Annotations are viewable by authenticated users" ON public.annotations;
 create policy "Annotations are viewable by authenticated users"
   on public.annotations for select
   using (auth.uid() is not null);
 
 drop policy if exists "Custom tags are viewable by everyone" on public.custom_tags;
 drop policy if exists "Custom tags are viewable by authenticated users" on public.custom_tags;
+DROP POLICY IF EXISTS "Custom tags are viewable by authenticated users" ON public.custom_tags;
 create policy "Custom tags are viewable by authenticated users"
   on public.custom_tags for select
   using (auth.uid() is not null);
 
 drop policy if exists "Comments are viewable by everyone" on public.comments;
 drop policy if exists "Comments are viewable by authenticated users" on public.comments;
+DROP POLICY IF EXISTS "Comments are viewable by authenticated users" ON public.comments;
 create policy "Comments are viewable by authenticated users"
   on public.comments for select
   using (auth.uid() is not null);
@@ -1014,9 +1054,11 @@ create policy "Comments are viewable by authenticated users"
 drop policy if exists "Activity log is viewable by everyone" on public.activity_log;
 drop policy if exists "Activity log is viewable by self" on public.activity_log;
 drop policy if exists "Activity log is viewable by admins" on public.activity_log;
+DROP POLICY IF EXISTS "Activity log is viewable by self" ON public.activity_log;
 create policy "Activity log is viewable by self"
   on public.activity_log for select
   using (auth.uid() = user_id);
+DROP POLICY IF EXISTS "Activity log is viewable by admins" ON public.activity_log;
 create policy "Activity log is viewable by admins"
   on public.activity_log for select
   using (
@@ -1025,18 +1067,21 @@ create policy "Activity log is viewable by admins"
 
 drop policy if exists "Shared reading list is viewable by everyone" on public.shared_reading_list;
 drop policy if exists "Shared reading list is viewable by authenticated users" on public.shared_reading_list;
+DROP POLICY IF EXISTS "Shared reading list is viewable by authenticated users" ON public.shared_reading_list;
 create policy "Shared reading list is viewable by authenticated users"
   on public.shared_reading_list for select
   using (auth.uid() is not null);
 
 drop policy if exists "Upvotes are viewable by everyone" on public.reading_list_upvotes;
 drop policy if exists "Upvotes are viewable by authenticated users" on public.reading_list_upvotes;
+DROP POLICY IF EXISTS "Upvotes are viewable by authenticated users" ON public.reading_list_upvotes;
 create policy "Upvotes are viewable by authenticated users"
   on public.reading_list_upvotes for select
   using (auth.uid() is not null);
 
 drop policy if exists "Inbound emails are viewable by everyone" on public.inbound_emails;
 drop policy if exists "Inbound emails are viewable by authenticated users" on public.inbound_emails;
+DROP POLICY IF EXISTS "Inbound emails are viewable by authenticated users" ON public.inbound_emails;
 create policy "Inbound emails are viewable by authenticated users"
   on public.inbound_emails for select
   using (auth.uid() is not null);
@@ -1245,10 +1290,12 @@ create table if not exists public.deletion_requests (
 alter table public.deletion_requests enable row level security;
 
 drop policy if exists "Deletion requests visible to self" on public.deletion_requests;
+DROP POLICY IF EXISTS "Deletion requests visible to self" ON public.deletion_requests;
 create policy "Deletion requests visible to self"
   on public.deletion_requests for select using (auth.uid() = user_id);
 
 drop policy if exists "Deletion requests visible to admins" on public.deletion_requests;
+DROP POLICY IF EXISTS "Deletion requests visible to admins" ON public.deletion_requests;
 create policy "Deletion requests visible to admins"
   on public.deletion_requests for select using (
     exists (select 1 from public.profiles where id = auth.uid() and role = 'admin')
@@ -1389,6 +1436,7 @@ create index if not exists idx_admin_audit_target  on public.admin_audit_log(tar
 alter table public.admin_audit_log enable row level security;
 
 drop policy if exists "Admin audit log is viewable by admins" on public.admin_audit_log;
+DROP POLICY IF EXISTS "Admin audit log is viewable by admins" ON public.admin_audit_log;
 create policy "Admin audit log is viewable by admins"
   on public.admin_audit_log for select using (
     exists (select 1 from public.profiles where id = auth.uid() and role = 'admin')
@@ -1483,6 +1531,7 @@ create index if not exists idx_ca_segments_created  on public.content_analysis_s
 alter table public.content_analysis_segments enable row level security;
 
 drop policy if exists "Coded segments are viewable by everyone" on public.content_analysis_segments;
+DROP POLICY IF EXISTS "Coded segments are viewable by everyone" ON public.content_analysis_segments;
 create policy "Coded segments are viewable by everyone"
   on public.content_analysis_segments for select using (true);
 
@@ -1506,6 +1555,7 @@ create index if not exists idx_ca_suggestions_created  on public.content_analysi
 alter table public.content_analysis_suggestions enable row level security;
 
 drop policy if exists "Code suggestions are viewable by everyone" on public.content_analysis_suggestions;
+DROP POLICY IF EXISTS "Code suggestions are viewable by everyone" ON public.content_analysis_suggestions;
 create policy "Code suggestions are viewable by everyone"
   on public.content_analysis_suggestions for select using (true);
 
@@ -1558,17 +1608,20 @@ alter table public.custom_references enable row level security;
 
 -- Authenticated staff can read the full library.
 drop policy if exists "Custom references readable by authenticated" on public.custom_references;
+DROP POLICY IF EXISTS "Custom references readable by authenticated" ON public.custom_references;
 create policy "Custom references readable by authenticated"
   on public.custom_references for select using (auth.uid() is not null);
 
 -- Any authenticated user can add a reference; we record who did it.
 drop policy if exists "Authenticated users can insert references" on public.custom_references;
+DROP POLICY IF EXISTS "Authenticated users can insert references" ON public.custom_references;
 create policy "Authenticated users can insert references"
   on public.custom_references for insert
   with check (auth.uid() is not null and (added_by is null or added_by = auth.uid()));
 
 -- Updates/deletes are gated to the original adder or an admin.
 drop policy if exists "Adder or admin can update references" on public.custom_references;
+DROP POLICY IF EXISTS "Adder or admin can update references" ON public.custom_references;
 create policy "Adder or admin can update references"
   on public.custom_references for update using (
     added_by = auth.uid()
@@ -1576,6 +1629,7 @@ create policy "Adder or admin can update references"
   );
 
 drop policy if exists "Adder or admin can delete references" on public.custom_references;
+DROP POLICY IF EXISTS "Adder or admin can delete references" ON public.custom_references;
 create policy "Adder or admin can delete references"
   on public.custom_references for delete using (
     added_by = auth.uid()
@@ -1632,22 +1686,26 @@ alter table public.connection_overrides enable row level security;
 
 drop policy if exists "Connection overrides readable by authenticated"
   on public.connection_overrides;
+DROP POLICY IF EXISTS "Connection overrides readable by authenticated" ON public.connection_overrides;
 create policy "Connection overrides readable by authenticated"
   on public.connection_overrides for select using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can write connection overrides"
   on public.connection_overrides;
+DROP POLICY IF EXISTS "Authenticated users can write connection overrides" ON public.connection_overrides;
 create policy "Authenticated users can write connection overrides"
   on public.connection_overrides for insert
   with check (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can update connection overrides"
   on public.connection_overrides;
+DROP POLICY IF EXISTS "Authenticated users can update connection overrides" ON public.connection_overrides;
 create policy "Authenticated users can update connection overrides"
   on public.connection_overrides for update using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can delete connection overrides"
   on public.connection_overrides;
+DROP POLICY IF EXISTS "Authenticated users can delete connection overrides" ON public.connection_overrides;
 create policy "Authenticated users can delete connection overrides"
   on public.connection_overrides for delete using (auth.uid() is not null);
 
@@ -1670,22 +1728,26 @@ alter table public.connection_verifications enable row level security;
 
 drop policy if exists "Connection verifications readable by authenticated"
   on public.connection_verifications;
+DROP POLICY IF EXISTS "Connection verifications readable by authenticated" ON public.connection_verifications;
 create policy "Connection verifications readable by authenticated"
   on public.connection_verifications for select using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can write connection verifications"
   on public.connection_verifications;
+DROP POLICY IF EXISTS "Authenticated users can write connection verifications" ON public.connection_verifications;
 create policy "Authenticated users can write connection verifications"
   on public.connection_verifications for insert
   with check (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can update connection verifications"
   on public.connection_verifications;
+DROP POLICY IF EXISTS "Authenticated users can update connection verifications" ON public.connection_verifications;
 create policy "Authenticated users can update connection verifications"
   on public.connection_verifications for update using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can delete connection verifications"
   on public.connection_verifications;
+DROP POLICY IF EXISTS "Authenticated users can delete connection verifications" ON public.connection_verifications;
 create policy "Authenticated users can delete connection verifications"
   on public.connection_verifications for delete using (auth.uid() is not null);
 
@@ -1719,22 +1781,26 @@ alter table public.connection_additions enable row level security;
 
 drop policy if exists "Connection additions readable by authenticated"
   on public.connection_additions;
+DROP POLICY IF EXISTS "Connection additions readable by authenticated" ON public.connection_additions;
 create policy "Connection additions readable by authenticated"
   on public.connection_additions for select using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can add connections"
   on public.connection_additions;
+DROP POLICY IF EXISTS "Authenticated users can add connections" ON public.connection_additions;
 create policy "Authenticated users can add connections"
   on public.connection_additions for insert
   with check (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can update connection additions"
   on public.connection_additions;
+DROP POLICY IF EXISTS "Authenticated users can update connection additions" ON public.connection_additions;
 create policy "Authenticated users can update connection additions"
   on public.connection_additions for update using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can delete connection additions"
   on public.connection_additions;
+DROP POLICY IF EXISTS "Authenticated users can delete connection additions" ON public.connection_additions;
 create policy "Authenticated users can delete connection additions"
   on public.connection_additions for delete using (auth.uid() is not null);
 
@@ -1786,6 +1852,7 @@ alter table public.scenario_views enable row level security;
 
 drop policy if exists "Scenario views readable by owner or shared"
   on public.scenario_views;
+DROP POLICY IF EXISTS "Scenario views readable by owner or shared" ON public.scenario_views;
 create policy "Scenario views readable by owner or shared"
   on public.scenario_views for select using (
     auth.uid() is not null and (is_shared = true or created_by = auth.uid())
@@ -1793,17 +1860,20 @@ create policy "Scenario views readable by owner or shared"
 
 drop policy if exists "Authenticated users can create scenario views"
   on public.scenario_views;
+DROP POLICY IF EXISTS "Authenticated users can create scenario views" ON public.scenario_views;
 create policy "Authenticated users can create scenario views"
   on public.scenario_views for insert
   with check (auth.uid() is not null and (created_by is null or created_by = auth.uid()));
 
 drop policy if exists "Owner can update own scenario views"
   on public.scenario_views;
+DROP POLICY IF EXISTS "Owner can update own scenario views" ON public.scenario_views;
 create policy "Owner can update own scenario views"
   on public.scenario_views for update using (created_by = auth.uid());
 
 drop policy if exists "Owner can delete own scenario views"
   on public.scenario_views;
+DROP POLICY IF EXISTS "Owner can delete own scenario views" ON public.scenario_views;
 create policy "Owner can delete own scenario views"
   on public.scenario_views for delete using (created_by = auth.uid());
 
@@ -1856,11 +1926,13 @@ alter table public.shared_reading_list_items enable row level security;
 
 drop policy if exists "Shared reading list readable by authenticated"
   on public.shared_reading_list_items;
+DROP POLICY IF EXISTS "Shared reading list readable by authenticated" ON public.shared_reading_list_items;
 create policy "Shared reading list readable by authenticated"
   on public.shared_reading_list_items for select using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can add to shared reading list"
   on public.shared_reading_list_items;
+DROP POLICY IF EXISTS "Authenticated users can add to shared reading list" ON public.shared_reading_list_items;
 create policy "Authenticated users can add to shared reading list"
   on public.shared_reading_list_items for insert
   with check (auth.uid() is not null and (added_by is null or added_by = auth.uid()));
@@ -1870,11 +1942,13 @@ create policy "Authenticated users can add to shared reading list"
 -- semantics already used by `connection_overrides`.
 drop policy if exists "Authenticated users can update shared reading list"
   on public.shared_reading_list_items;
+DROP POLICY IF EXISTS "Authenticated users can update shared reading list" ON public.shared_reading_list_items;
 create policy "Authenticated users can update shared reading list"
   on public.shared_reading_list_items for update using (auth.uid() is not null);
 
 drop policy if exists "Adder or admin can delete shared reading list items"
   on public.shared_reading_list_items;
+DROP POLICY IF EXISTS "Adder or admin can delete shared reading list items" ON public.shared_reading_list_items;
 create policy "Adder or admin can delete shared reading list items"
   on public.shared_reading_list_items for delete using (
     added_by = auth.uid()
@@ -1899,17 +1973,20 @@ alter table public.shared_reading_list_upvotes enable row level security;
 
 drop policy if exists "Upvotes readable by authenticated"
   on public.shared_reading_list_upvotes;
+DROP POLICY IF EXISTS "Upvotes readable by authenticated" ON public.shared_reading_list_upvotes;
 create policy "Upvotes readable by authenticated"
   on public.shared_reading_list_upvotes for select using (auth.uid() is not null);
 
 drop policy if exists "Users can manage their own upvotes"
   on public.shared_reading_list_upvotes;
+DROP POLICY IF EXISTS "Users can manage their own upvotes" ON public.shared_reading_list_upvotes;
 create policy "Users can manage their own upvotes"
   on public.shared_reading_list_upvotes for insert
   with check (auth.uid() = user_id);
 
 drop policy if exists "Users can remove their own upvotes"
   on public.shared_reading_list_upvotes;
+DROP POLICY IF EXISTS "Users can remove their own upvotes" ON public.shared_reading_list_upvotes;
 create policy "Users can remove their own upvotes"
   on public.shared_reading_list_upvotes for delete using (auth.uid() = user_id);
 
@@ -1964,22 +2041,26 @@ alter table public.news_saved_searches enable row level security;
 -- Saved searches are private to the user that created them.
 drop policy if exists "Users read their own saved searches"
   on public.news_saved_searches;
+DROP POLICY IF EXISTS "Users read their own saved searches" ON public.news_saved_searches;
 create policy "Users read their own saved searches"
   on public.news_saved_searches for select using (user_id = auth.uid());
 
 drop policy if exists "Users insert their own saved searches"
   on public.news_saved_searches;
+DROP POLICY IF EXISTS "Users insert their own saved searches" ON public.news_saved_searches;
 create policy "Users insert their own saved searches"
   on public.news_saved_searches for insert
   with check (user_id = auth.uid());
 
 drop policy if exists "Users update their own saved searches"
   on public.news_saved_searches;
+DROP POLICY IF EXISTS "Users update their own saved searches" ON public.news_saved_searches;
 create policy "Users update their own saved searches"
   on public.news_saved_searches for update using (user_id = auth.uid());
 
 drop policy if exists "Users delete their own saved searches"
   on public.news_saved_searches;
+DROP POLICY IF EXISTS "Users delete their own saved searches" ON public.news_saved_searches;
 create policy "Users delete their own saved searches"
   on public.news_saved_searches for delete using (user_id = auth.uid());
 
@@ -2029,17 +2110,20 @@ alter table public.user_preferences enable row level security;
 
 drop policy if exists "Users read their own preferences"
   on public.user_preferences;
+DROP POLICY IF EXISTS "Users read their own preferences" ON public.user_preferences;
 create policy "Users read their own preferences"
   on public.user_preferences for select using (user_id = auth.uid());
 
 drop policy if exists "Users insert their own preferences"
   on public.user_preferences;
+DROP POLICY IF EXISTS "Users insert their own preferences" ON public.user_preferences;
 create policy "Users insert their own preferences"
   on public.user_preferences for insert
   with check (user_id = auth.uid());
 
 drop policy if exists "Users update their own preferences"
   on public.user_preferences;
+DROP POLICY IF EXISTS "Users update their own preferences" ON public.user_preferences;
 create policy "Users update their own preferences"
   on public.user_preferences for update using (user_id = auth.uid());
 
@@ -2114,18 +2198,22 @@ alter table public.workspace_items enable row level security;
 -- Members can read; owners can insert/update/delete; new workspaces are
 -- created with the creator as their first 'owner' membership row.
 drop policy if exists "Workspace member read" on public.workspaces;
+DROP POLICY IF EXISTS "Workspace member read" ON public.workspaces;
 create policy "Workspace member read" on public.workspaces for select using (
   id in (select workspace_id from public.workspace_members where user_id = auth.uid())
 );
 drop policy if exists "Workspace owner write" on public.workspaces;
+DROP POLICY IF EXISTS "Workspace owner write" ON public.workspaces;
 create policy "Workspace owner write" on public.workspaces for all using (owner_id = auth.uid())
   with check (owner_id = auth.uid());
 
 drop policy if exists "Workspace member listing" on public.workspace_members;
+DROP POLICY IF EXISTS "Workspace member listing" ON public.workspace_members;
 create policy "Workspace member listing" on public.workspace_members for select using (
   workspace_id in (select workspace_id from public.workspace_members where user_id = auth.uid())
 );
 drop policy if exists "Workspace owner manages members" on public.workspace_members;
+DROP POLICY IF EXISTS "Workspace owner manages members" ON public.workspace_members;
 create policy "Workspace owner manages members" on public.workspace_members for all using (
   workspace_id in (select id from public.workspaces where owner_id = auth.uid())
 ) with check (
@@ -2133,10 +2221,12 @@ create policy "Workspace owner manages members" on public.workspace_members for 
 );
 
 drop policy if exists "Workspace member reads items" on public.workspace_items;
+DROP POLICY IF EXISTS "Workspace member reads items" ON public.workspace_items;
 create policy "Workspace member reads items" on public.workspace_items for select using (
   workspace_id in (select workspace_id from public.workspace_members where user_id = auth.uid())
 );
 drop policy if exists "Workspace member writes items" on public.workspace_items;
+DROP POLICY IF EXISTS "Workspace member writes items" ON public.workspace_items;
 create policy "Workspace member writes items" on public.workspace_items for all using (
   workspace_id in (select workspace_id from public.workspace_members where user_id = auth.uid() and role in ('owner','editor'))
 ) with check (
@@ -2170,10 +2260,12 @@ alter table public.collections enable row level security;
 alter table public.collection_items enable row level security;
 
 drop policy if exists "Users own their collections" on public.collections;
+DROP POLICY IF EXISTS "Users own their collections" ON public.collections;
 create policy "Users own their collections" on public.collections for all using (user_id = auth.uid())
   with check (user_id = auth.uid());
 
 drop policy if exists "Users own their collection items" on public.collection_items;
+DROP POLICY IF EXISTS "Users own their collection items" ON public.collection_items;
 create policy "Users own their collection items" on public.collection_items for all using (user_id = auth.uid())
   with check (user_id = auth.uid());
 
@@ -2201,9 +2293,11 @@ alter table public.artefact_history enable row level security;
 -- data); writers are limited to authenticated users so anon CSRF can't
 -- pollute the log.
 drop policy if exists "Authenticated read history" on public.artefact_history;
+DROP POLICY IF EXISTS "Authenticated read history" ON public.artefact_history;
 create policy "Authenticated read history" on public.artefact_history for select
   using (auth.role() = 'authenticated');
 drop policy if exists "Authenticated insert history" on public.artefact_history;
+DROP POLICY IF EXISTS "Authenticated insert history" ON public.artefact_history;
 create policy "Authenticated insert history" on public.artefact_history for insert
   with check (auth.role() = 'authenticated' and user_id = auth.uid());
 
@@ -2234,16 +2328,20 @@ alter table public.text_annotations enable row level security;
 -- Personal annotations are private unless attached to a workspace, in
 -- which case all members of that workspace can read.
 drop policy if exists "Read own or workspace annotations" on public.text_annotations;
+DROP POLICY IF EXISTS "Read own or workspace annotations" ON public.text_annotations;
 create policy "Read own or workspace annotations" on public.text_annotations for select using (
   user_id = auth.uid()
   or (workspace_id is not null
       and workspace_id in (select workspace_id from public.workspace_members where user_id = auth.uid()))
 );
 drop policy if exists "Insert own annotations" on public.text_annotations;
+DROP POLICY IF EXISTS "Insert own annotations" ON public.text_annotations;
 create policy "Insert own annotations" on public.text_annotations for insert with check (user_id = auth.uid());
 drop policy if exists "Update own annotations" on public.text_annotations;
+DROP POLICY IF EXISTS "Update own annotations" ON public.text_annotations;
 create policy "Update own annotations" on public.text_annotations for update using (user_id = auth.uid());
 drop policy if exists "Delete own annotations" on public.text_annotations;
+DROP POLICY IF EXISTS "Delete own annotations" ON public.text_annotations;
 create policy "Delete own annotations" on public.text_annotations for delete using (user_id = auth.uid());
 
 
@@ -2363,6 +2461,7 @@ alter table public.content_analysis_project_locks enable row level security;
 -- service-role-only and gated by the API route.
 drop policy if exists "Project locks are viewable by everyone"
   on public.content_analysis_project_locks;
+DROP POLICY IF EXISTS "Project locks are viewable by everyone" ON public.content_analysis_project_locks;
 create policy "Project locks are viewable by everyone"
   on public.content_analysis_project_locks for select using (true);
 
@@ -2438,12 +2537,14 @@ alter table public.citations_used enable row level security;
 
 -- Authenticated staff can read the log (analytics dashboards).
 drop policy if exists "Citations used readable by authenticated" on public.citations_used;
+DROP POLICY IF EXISTS "Citations used readable by authenticated" ON public.citations_used;
 create policy "Citations used readable by authenticated"
   on public.citations_used for select using (auth.uid() is not null);
 
 -- Authenticated users can record their own insertions; service role (used by
 -- the bridge / Next.js API) bypasses RLS.
 drop policy if exists "Authenticated users can record citation usage" on public.citations_used;
+DROP POLICY IF EXISTS "Authenticated users can record citation usage" ON public.citations_used;
 create policy "Authenticated users can record citation usage"
   on public.citations_used for insert
   with check (auth.uid() is not null and (inserted_by is null or inserted_by = auth.uid()));
@@ -2749,6 +2850,7 @@ alter table public.climate_councils enable row level security;
 
 -- Public read: the catalogue is openly browsable.
 drop policy if exists "Climate councils are viewable by everyone" on public.climate_councils;
+DROP POLICY IF EXISTS "Climate councils are viewable by everyone" ON public.climate_councils;
 create policy "Climate councils are viewable by everyone"
   on public.climate_councils for select using (true);
 
@@ -2756,14 +2858,17 @@ create policy "Climate councils are viewable by everyone"
 -- mirrors references and policy clock — anyone signed in can contribute,
 -- admins moderate via the audit log).
 drop policy if exists "Authenticated users can insert climate councils" on public.climate_councils;
+DROP POLICY IF EXISTS "Authenticated users can insert climate councils" ON public.climate_councils;
 create policy "Authenticated users can insert climate councils"
   on public.climate_councils for insert with check (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can update climate councils" on public.climate_councils;
+DROP POLICY IF EXISTS "Authenticated users can update climate councils" ON public.climate_councils;
 create policy "Authenticated users can update climate councils"
   on public.climate_councils for update using (auth.uid() is not null);
 
 drop policy if exists "Authenticated users can delete climate councils" on public.climate_councils;
+DROP POLICY IF EXISTS "Authenticated users can delete climate councils" ON public.climate_councils;
 create policy "Authenticated users can delete climate councils"
   on public.climate_councils for delete using (auth.uid() is not null);
 
@@ -2787,10 +2892,12 @@ create table if not exists public.connection_assignments (
 alter table public.connection_assignments enable row level security;
 
 -- All authenticated users can read assignments (shared editorial view).
+DROP POLICY IF EXISTS "conn_assign_read" ON public.connection_assignments;
 create policy "conn_assign_read" on public.connection_assignments
   for select using (auth.role() = 'authenticated');
 
 -- All authenticated users can insert / update / delete assignments.
+DROP POLICY IF EXISTS "conn_assign_write" ON public.connection_assignments;
 create policy "conn_assign_write" on public.connection_assignments
   for all using (auth.role() = 'authenticated');
 
@@ -2856,11 +2963,13 @@ alter table public.climate_councils
 -- edits to the original author makes them unwieldy in practice.
 
 drop policy if exists "Users can update own annotations" on public.annotations;
+DROP POLICY IF EXISTS "Authenticated users can update annotations" ON public.annotations;
 create policy "Authenticated users can update annotations"
   on public.annotations for update
   using (auth.uid() is not null);
 
 drop policy if exists "Users can delete own annotations" on public.annotations;
+DROP POLICY IF EXISTS "Authenticated users can delete annotations" ON public.annotations;
 create policy "Authenticated users can delete annotations"
   on public.annotations for delete
   using (auth.uid() is not null);
@@ -2930,39 +3039,49 @@ alter table public.recommendation_policy_links enable row level security;
 alter table public.recommendation_indicator_links enable row level security;
 
 -- recommendations
+DROP POLICY IF EXISTS "Authenticated users can read recommendations" ON public.recommendations;
 create policy "Authenticated users can read recommendations"
   on public.recommendations for select to authenticated using (true);
 
+DROP POLICY IF EXISTS "Authenticated users can insert recommendations" ON public.recommendations;
 create policy "Authenticated users can insert recommendations"
   on public.recommendations for insert to authenticated
   with check (auth.uid() is not null);
 
+DROP POLICY IF EXISTS "Authenticated users can update recommendations" ON public.recommendations;
 create policy "Authenticated users can update recommendations"
   on public.recommendations for update to authenticated
   using (true) with check (true);
 
+DROP POLICY IF EXISTS "Authenticated users can delete recommendations" ON public.recommendations;
 create policy "Authenticated users can delete recommendations"
   on public.recommendations for delete to authenticated using (true);
 
 -- policy links
+DROP POLICY IF EXISTS "Authenticated users can read policy links" ON public.recommendation_policy_links;
 create policy "Authenticated users can read policy links"
   on public.recommendation_policy_links for select to authenticated using (true);
 
+DROP POLICY IF EXISTS "Authenticated users can insert policy links" ON public.recommendation_policy_links;
 create policy "Authenticated users can insert policy links"
   on public.recommendation_policy_links for insert to authenticated
   with check (true);
 
+DROP POLICY IF EXISTS "Authenticated users can delete policy links" ON public.recommendation_policy_links;
 create policy "Authenticated users can delete policy links"
   on public.recommendation_policy_links for delete to authenticated using (true);
 
 -- indicator links
+DROP POLICY IF EXISTS "Authenticated users can read indicator links" ON public.recommendation_indicator_links;
 create policy "Authenticated users can read indicator links"
   on public.recommendation_indicator_links for select to authenticated using (true);
 
+DROP POLICY IF EXISTS "Authenticated users can insert indicator links" ON public.recommendation_indicator_links;
 create policy "Authenticated users can insert indicator links"
   on public.recommendation_indicator_links for insert to authenticated
   with check (true);
 
+DROP POLICY IF EXISTS "Authenticated users can delete indicator links" ON public.recommendation_indicator_links;
 create policy "Authenticated users can delete indicator links"
   on public.recommendation_indicator_links for delete to authenticated using (true);
 
@@ -3452,12 +3571,16 @@ drop policy if exists "pw_policy_codes insert" on public.pw_policy_codes;
 drop policy if exists "pw_policy_codes update" on public.pw_policy_codes;
 drop policy if exists "pw_policy_codes delete" on public.pw_policy_codes;
 
+DROP POLICY IF EXISTS "pw_policy_codes read" ON public.pw_policy_codes;
 create policy "pw_policy_codes read"
   on public.pw_policy_codes for select to authenticated using (true);
+DROP POLICY IF EXISTS "pw_policy_codes insert" ON public.pw_policy_codes;
 create policy "pw_policy_codes insert"
   on public.pw_policy_codes for insert to authenticated with check (auth.uid() is not null);
+DROP POLICY IF EXISTS "pw_policy_codes update" ON public.pw_policy_codes;
 create policy "pw_policy_codes update"
   on public.pw_policy_codes for update to authenticated using (true) with check (true);
+DROP POLICY IF EXISTS "pw_policy_codes delete" ON public.pw_policy_codes;
 create policy "pw_policy_codes delete"
   on public.pw_policy_codes for delete to authenticated using (true);
 
@@ -4785,12 +4908,16 @@ drop policy if exists "pw_indicator_sheets insert" on public.pw_indicator_sheets
 drop policy if exists "pw_indicator_sheets update" on public.pw_indicator_sheets;
 drop policy if exists "pw_indicator_sheets delete" on public.pw_indicator_sheets;
 
+DROP POLICY IF EXISTS "pw_indicator_sheets read" ON public.pw_indicator_sheets;
 create policy "pw_indicator_sheets read"   on public.pw_indicator_sheets
   for select to authenticated using (true);
+DROP POLICY IF EXISTS "pw_indicator_sheets insert" ON public.pw_indicator_sheets;
 create policy "pw_indicator_sheets insert" on public.pw_indicator_sheets
   for insert to authenticated with check (auth.uid() is not null);
+DROP POLICY IF EXISTS "pw_indicator_sheets update" ON public.pw_indicator_sheets;
 create policy "pw_indicator_sheets update" on public.pw_indicator_sheets
   for update to authenticated using (true) with check (true);
+DROP POLICY IF EXISTS "pw_indicator_sheets delete" ON public.pw_indicator_sheets;
 create policy "pw_indicator_sheets delete" on public.pw_indicator_sheets
   for delete to authenticated using (true);
 
@@ -4903,12 +5030,16 @@ drop policy if exists "pw_comments insert" on public.pw_comments;
 drop policy if exists "pw_comments update" on public.pw_comments;
 drop policy if exists "pw_comments delete" on public.pw_comments;
 
+DROP POLICY IF EXISTS "pw_comments read" ON public.pw_comments;
 create policy "pw_comments read"
   on public.pw_comments for select to authenticated using (true);
+DROP POLICY IF EXISTS "pw_comments insert" ON public.pw_comments;
 create policy "pw_comments insert"
   on public.pw_comments for insert to authenticated with check (auth.uid() is not null);
+DROP POLICY IF EXISTS "pw_comments update" ON public.pw_comments;
 create policy "pw_comments update"
   on public.pw_comments for update to authenticated using (true) with check (true);
+DROP POLICY IF EXISTS "pw_comments delete" ON public.pw_comments;
 create policy "pw_comments delete"
   on public.pw_comments for delete to authenticated using (auth.uid() = created_by);
 
@@ -4918,12 +5049,16 @@ drop policy if exists "pw_verifications insert" on public.pw_verifications;
 drop policy if exists "pw_verifications update" on public.pw_verifications;
 drop policy if exists "pw_verifications delete" on public.pw_verifications;
 
+DROP POLICY IF EXISTS "pw_verifications read" ON public.pw_verifications;
 create policy "pw_verifications read"
   on public.pw_verifications for select to authenticated using (true);
+DROP POLICY IF EXISTS "pw_verifications insert" ON public.pw_verifications;
 create policy "pw_verifications insert"
   on public.pw_verifications for insert to authenticated with check (auth.uid() = user_id);
+DROP POLICY IF EXISTS "pw_verifications update" ON public.pw_verifications;
 create policy "pw_verifications update"
   on public.pw_verifications for update to authenticated using (auth.uid() = user_id) with check (auth.uid() = user_id);
+DROP POLICY IF EXISTS "pw_verifications delete" ON public.pw_verifications;
 create policy "pw_verifications delete"
   on public.pw_verifications for delete to authenticated using (auth.uid() = user_id);
 
@@ -5101,8 +5236,10 @@ alter table public.pw_indicator_revisions enable row level security;
 drop policy if exists "pw_indicator_revisions read"   on public.pw_indicator_revisions;
 drop policy if exists "pw_indicator_revisions insert" on public.pw_indicator_revisions;
 
+DROP POLICY IF EXISTS "pw_indicator_revisions read" ON public.pw_indicator_revisions;
 create policy "pw_indicator_revisions read"
   on public.pw_indicator_revisions for select to authenticated using (true);
+DROP POLICY IF EXISTS "pw_indicator_revisions insert" ON public.pw_indicator_revisions;
 create policy "pw_indicator_revisions insert"
   on public.pw_indicator_revisions for insert to authenticated with check (auth.uid() is not null);
 
