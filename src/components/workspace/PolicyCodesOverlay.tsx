@@ -52,6 +52,33 @@ const COLOR_SWATCHES = [
 
 // ── Shared helpers ────────────────────────────────────────────────────────
 
+/** A flat custom-code summary as surfaced in the overlay. */
+interface CustomCodeSummary {
+  id: string;
+  label: string;
+  color: string;
+  parentCodeId: string | null;
+  policyIds: string[];
+}
+
+/** All custom-code ids in the subtree rooted at `codeId` (inclusive).
+ *  Used to stop a code being re-parented or merged under its own
+ *  descendant (which would create a cycle). */
+function customSubtreeIds(codeId: string, customCodes: CustomCodeSummary[]): Set<string> {
+  const out = new Set<string>([codeId]);
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const c of customCodes) {
+      if (c.parentCodeId && out.has(c.parentCodeId) && !out.has(c.id)) {
+        out.add(c.id);
+        changed = true;
+      }
+    }
+  }
+  return out;
+}
+
 /** Active (non-removed) code ids for a policy inside a project.
  *  Falls back to master tags when the policy hasn't been forked yet. */
 function activePolicyCodeIds(
@@ -181,6 +208,11 @@ export default function PolicyCodesOverlay({
     codeId: string;
     label: string;
     color: string;
+    parentCodeId: string | null;
+  } | null>(null);
+  const [merging, setMerging] = useState<{
+    codeId: string;
+    label: string;
   } | null>(null);
   const [policyPicker, setPolicyPicker] = useState<{
     label: string;
@@ -228,7 +260,7 @@ export default function PolicyCodesOverlay({
 
   // Custom project-only codes, grouped by codeId. The first row's
   // metadata (label / color / parent) is treated as canonical.
-  const customCodes = useMemo(() => {
+  const customCodes = useMemo<CustomCodeSummary[]>(() => {
     const seen = new Map<
       string,
       { label: string; color: string; parentCodeId: string | null; policyIds: string[] }
@@ -247,6 +279,20 @@ export default function PolicyCodesOverlay({
     }
     return Array.from(seen.entries()).map(([id, v]) => ({ id, ...v }));
   }, [policyCodes]);
+
+  // Flat list of every master code present in the project tree — used as
+  // re-parent / merge targets alongside the custom codes.
+  const masterOptions = useMemo(() => {
+    const out: { id: string; name: string }[] = [];
+    const walk = (nodes: MasterTreeNode[]) => {
+      for (const n of nodes) {
+        out.push({ id: n.code.id, name: n.code.name });
+        walk(n.children);
+      }
+    };
+    walk(masterTree);
+    return out;
+  }, [masterTree]);
 
   // ── Mutations ─────────────────────────────────────────────────────────
   async function withBusy<T>(fn: () => Promise<T>): Promise<T | null> {
@@ -301,15 +347,48 @@ export default function PolicyCodesOverlay({
     });
   }
 
-  /** Rename / recolour every row that carries this custom codeId. */
-  async function patchCustomCode(codeId: string, label: string, color: string) {
+  /** Rename / recolour / re-parent every row that carries this custom
+   *  codeId. `parentCodeId === undefined` leaves the parent untouched. */
+  async function patchCustomCode(
+    codeId: string,
+    label: string,
+    color: string,
+    parentCodeId?: string | null
+  ) {
     if (!isSignedIn) return;
     const rows = policyCodes.filter(
       r => r.source === 'custom' && r.codeId === codeId && !r.removed
     );
     await withBusy(async () => {
       for (const r of rows) {
-        await pwApi.patchPolicyCode(r.id, { label, color });
+        await pwApi.patchPolicyCode(r.id, {
+          label,
+          color,
+          ...(parentCodeId !== undefined ? { parentCodeId } : {}),
+        });
+      }
+    });
+  }
+
+  /** Merge a custom code into another code. The target inherits the
+   *  source's children (re-parented across every policy), then the source
+   *  rows are deleted everywhere. Matches the merge semantics of the
+   *  M·05 content-analysis code tree. */
+  async function mergeCustomCode(sourceCodeId: string, targetCodeId: string) {
+    if (!isSignedIn || sourceCodeId === targetCodeId) return;
+    // Custom child rows whose parent is the source → re-parent to target.
+    const childRows = policyCodes.filter(
+      r => r.source === 'custom' && r.parentCodeId === sourceCodeId
+    );
+    const sourceRows = policyCodes.filter(
+      r => r.source === 'custom' && r.codeId === sourceCodeId
+    );
+    await withBusy(async () => {
+      for (const r of childRows) {
+        await pwApi.patchPolicyCode(r.id, { parentCodeId: targetCodeId });
+      }
+      for (const r of sourceRows) {
+        await pwApi.deletePolicyCode(r.id);
       }
     });
   }
@@ -355,9 +434,10 @@ export default function PolicyCodesOverlay({
       <div className="flex flex-wrap items-center gap-3 justify-between">
         <p className="text-xs text-tertiary max-w-2xl">
           Code-centric view — group the project's policies by master
-          taxonomy, sector, or instrument. Master grouping is editable:
-          rename or recolour custom codes, hide a master code from this
-          project, or remove a code from a single policy.
+          taxonomy, sector, or instrument. Master grouping is fully
+          editable: add, rename, recolour, move (re-parent) or merge custom
+          codes, hide a master code from this project, or remove a code from
+          a single policy.
         </p>
         <div className="flex items-center gap-2">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
@@ -415,7 +495,15 @@ export default function PolicyCodesOverlay({
           totalActiveCodes={totalActiveCodes}
           isSignedIn={isSignedIn}
           busy={busy}
-          onEdit={(codeId, label, color) => setEditing({ codeId, label, color })}
+          onEdit={cc =>
+            setEditing({
+              codeId: cc.id,
+              label: cc.label,
+              color: cc.color,
+              parentCodeId: cc.parentCodeId,
+            })
+          }
+          onMerge={cc => setMerging({ codeId: cc.id, label: cc.label })}
           onHideMaster={hideMasterAcrossProject}
           onDeleteCustom={deleteCustomEverywhere}
           onRemoveFromPolicy={removeFromPolicy}
@@ -434,15 +522,32 @@ export default function PolicyCodesOverlay({
         />
       )}
 
-      {/* Inline edit dialog (custom-code rename / recolour). */}
+      {/* Inline edit dialog (custom-code rename / recolour / move). */}
       {editing && (
         <EditCodeDialog
           initial={editing}
           busy={busy}
+          masterOptions={masterOptions}
+          customCodes={customCodes}
           onCancel={() => setEditing(null)}
-          onSave={async (label, color) => {
-            await patchCustomCode(editing.codeId, label, color);
+          onSave={async (label, color, parentCodeId) => {
+            await patchCustomCode(editing.codeId, label, color, parentCodeId);
             setEditing(null);
+          }}
+        />
+      )}
+
+      {/* Merge dialog (fold one custom code into another). */}
+      {merging && (
+        <MergeCodeDialog
+          source={merging}
+          busy={busy}
+          masterOptions={masterOptions}
+          customCodes={customCodes}
+          onCancel={() => setMerging(null)}
+          onMerge={async targetCodeId => {
+            await mergeCustomCode(merging.codeId, targetCodeId);
+            setMerging(null);
           }}
         />
       )}
@@ -504,18 +609,20 @@ function MasterGrouping({
   isSignedIn,
   busy,
   onEdit,
+  onMerge,
   onHideMaster,
   onDeleteCustom,
   onRemoveFromPolicy,
 }: {
   tree: MasterTreeNode[];
-  customCodes: { id: string; label: string; color: string; parentCodeId: string | null; policyIds: string[] }[];
+  customCodes: CustomCodeSummary[];
   expandedKey: string | null;
   onToggle: (key: string) => void;
   totalActiveCodes: number;
   isSignedIn: boolean;
   busy: boolean;
-  onEdit: (codeId: string, label: string, color: string) => void;
+  onEdit: (cc: CustomCodeSummary) => void;
+  onMerge: (cc: CustomCodeSummary) => void;
   onHideMaster: (codeId: string) => void;
   onDeleteCustom: (codeId: string) => void;
   onRemoveFromPolicy: (codeId: string, policyId: string) => void;
@@ -577,11 +684,20 @@ function MasterGrouping({
                       <button
                         type="button"
                         disabled={busy}
-                        onClick={() => onEdit(cc.id, cc.label, cc.color)}
-                        title="Rename / recolour"
+                        onClick={() => onEdit(cc)}
+                        title="Rename / recolour / move"
                         className="text-[11px] text-tertiary hover:text-primary disabled:opacity-50"
                       >
                         ✎
+                      </button>
+                      <button
+                        type="button"
+                        disabled={busy}
+                        onClick={() => onMerge(cc)}
+                        title="Merge into another code"
+                        className="text-[11px] text-tertiary hover:text-primary disabled:opacity-50"
+                      >
+                        ⤵
                       </button>
                       <button
                         type="button"
@@ -888,16 +1004,38 @@ function PolicyChipList({
 function EditCodeDialog({
   initial,
   busy,
+  masterOptions,
+  customCodes,
   onCancel,
   onSave,
 }: {
-  initial: { codeId: string; label: string; color: string };
+  initial: { codeId: string; label: string; color: string; parentCodeId: string | null };
   busy: boolean;
+  masterOptions: { id: string; name: string }[];
+  customCodes: CustomCodeSummary[];
   onCancel: () => void;
-  onSave: (label: string, color: string) => void | Promise<void>;
+  onSave: (label: string, color: string, parentCodeId: string | null) => void | Promise<void>;
 }) {
   const [label, setLabel] = useState(initial.label);
   const [color, setColor] = useState(initial.color);
+  const [parentCodeId, setParentCodeId] = useState<string | null>(initial.parentCodeId);
+
+  // A code cannot become a child of itself or of one of its own
+  // descendants — that would create a cycle in the tree.
+  const blocked = useMemo(
+    () => customSubtreeIds(initial.codeId, customCodes),
+    [initial.codeId, customCodes]
+  );
+  const parentOptions = useMemo(() => {
+    const out: { id: string; label: string }[] = [];
+    for (const m of masterOptions) out.push({ id: m.id, label: m.name });
+    for (const cc of customCodes) {
+      if (blocked.has(cc.id)) continue;
+      out.push({ id: cc.id, label: `${cc.label} (custom)` });
+    }
+    return out;
+  }, [masterOptions, customCodes, blocked]);
+
   return (
     <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 p-4">
       <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-4">
@@ -909,6 +1047,19 @@ function EditCodeDialog({
           onChange={e => setLabel(e.target.value)}
           className="w-full px-2 py-1 border border-grey-200 rounded text-[12px] mb-3"
         />
+        <label className="block text-[11px] text-tertiary mb-1">Parent (move)</label>
+        <select
+          value={parentCodeId ?? ''}
+          onChange={e => setParentCodeId(e.target.value || null)}
+          className="w-full px-2 py-1 border border-grey-200 rounded text-[12px] mb-3"
+        >
+          <option value="">— top-level —</option>
+          {parentOptions.map(p => (
+            <option key={p.id} value={p.id}>
+              {p.label}
+            </option>
+          ))}
+        </select>
         <p className="text-[11px] text-tertiary mb-1">Colour</p>
         <div className="flex flex-wrap gap-1 mb-4">
           {COLOR_SWATCHES.map(c => (
@@ -933,10 +1084,89 @@ function EditCodeDialog({
           <button
             type="button"
             disabled={busy || !label.trim()}
-            onClick={() => onSave(label.trim(), color)}
+            onClick={() => onSave(label.trim(), color, parentCodeId)}
             className="text-[11px] px-3 py-1 rounded bg-primary text-white font-semibold disabled:opacity-50"
           >
             Save
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Merge dialog (fold one custom code into another) ──────────────────────
+
+function MergeCodeDialog({
+  source,
+  busy,
+  masterOptions,
+  customCodes,
+  onCancel,
+  onMerge,
+}: {
+  source: { codeId: string; label: string };
+  busy: boolean;
+  masterOptions: { id: string; name: string }[];
+  customCodes: CustomCodeSummary[];
+  onCancel: () => void;
+  onMerge: (targetCodeId: string) => void | Promise<void>;
+}) {
+  const [targetCodeId, setTargetCodeId] = useState<string>('');
+
+  // The merge source and its descendants can't be the target.
+  const blocked = useMemo(
+    () => customSubtreeIds(source.codeId, customCodes),
+    [source.codeId, customCodes]
+  );
+  const targetOptions = useMemo(() => {
+    const out: { id: string; label: string }[] = [];
+    for (const m of masterOptions) out.push({ id: m.id, label: m.name });
+    for (const cc of customCodes) {
+      if (blocked.has(cc.id)) continue;
+      out.push({ id: cc.id, label: `${cc.label} (custom)` });
+    }
+    return out;
+  }, [masterOptions, customCodes, blocked]);
+
+  return (
+    <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/40 p-4">
+      <div className="bg-white rounded-lg shadow-lg max-w-md w-full p-4">
+        <h3 className="text-sm font-bold text-tertiary-dark mb-1">Merge custom code</h3>
+        <p className="text-[11px] text-tertiary mb-3">
+          Fold <span className="font-semibold">{source.label}</span> into another
+          code. Its sub-codes are re-parented onto the target, then the source code
+          is removed from every policy in this project.
+        </p>
+        <label className="block text-[11px] text-tertiary mb-1">Merge into</label>
+        <select
+          autoFocus
+          value={targetCodeId}
+          onChange={e => setTargetCodeId(e.target.value)}
+          className="w-full px-2 py-1 border border-grey-200 rounded text-[12px] mb-4"
+        >
+          <option value="">— pick a target code —</option>
+          {targetOptions.map(p => (
+            <option key={p.id} value={p.id}>
+              {p.label}
+            </option>
+          ))}
+        </select>
+        <div className="flex justify-end gap-2">
+          <button
+            type="button"
+            onClick={onCancel}
+            className="text-[11px] px-3 py-1 rounded border border-grey-200 text-tertiary hover:bg-grey-50"
+          >
+            Cancel
+          </button>
+          <button
+            type="button"
+            disabled={busy || !targetCodeId}
+            onClick={() => onMerge(targetCodeId)}
+            className="text-[11px] px-3 py-1 rounded bg-primary text-white font-semibold disabled:opacity-50"
+          >
+            Merge
           </button>
         </div>
       </div>

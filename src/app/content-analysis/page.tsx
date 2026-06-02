@@ -59,6 +59,7 @@ import CodeEditorModal, {
 } from '@/components/content-analysis/CodeEditorModal';
 import FullTextSearch, { type SearchHit } from '@/components/content-analysis/FullTextSearch';
 import ProjectLanding from '@/components/content-analysis/ProjectLanding';
+import WorkspacePolicyLibraries from '@/components/content-analysis/WorkspacePolicyLibraries';
 import NewProjectWizard from '@/components/content-analysis/NewProjectWizard';
 import VersionArchive from '@/components/content-analysis/VersionArchive';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
@@ -1110,6 +1111,8 @@ function ContentAnalysisPageInner() {
           }}
         />
       )}
+
+      {viewMode === 'landing' && <WorkspacePolicyLibraries />}
 
       {viewMode === 'new' && (
         <NewProjectWizard
