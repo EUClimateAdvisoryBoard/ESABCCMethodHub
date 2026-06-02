@@ -74,7 +74,7 @@ def main():
         print(("  PASS " if ok else " FAIL ") + line)
     n = emit.emit(layouts, 'supabase/migrations/047_seed_indicator_derivations.sql')
     npass = sum(1 for ok, *_ in report if ok)
-    print(f"\nEmitted {n} verified layouts -> migration 045 ({npass}/{len(report)} passed)")
+    print(f"\nEmitted {n} verified layouts -> migration 047 ({npass}/{len(report)} passed)")
 
 if __name__ == '__main__':
     main()
