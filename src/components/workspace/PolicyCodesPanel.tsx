@@ -16,6 +16,8 @@
 import { useMemo, useState } from 'react';
 import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
 import { getMasterCode, getMasterCodePath } from '@/lib/content-analysis/master-code-catalog';
+import { useMasterTagStatus, tagKey } from '@/lib/content-analysis/useMasterTagStatus';
+import TagOriginBadge from '@/components/content-analysis/TagOriginBadge';
 import type { CodeNode } from '@/lib/content-analysis/types';
 import { pwApi } from '@/lib/project-workspace/client';
 import type { PolicyCode } from '@/lib/project-workspace/db';
@@ -60,6 +62,9 @@ export default function PolicyCodesPanel({
   const [showRemoved, setShowRemoved] = useState(false);
   const [addingUnder, setAddingUnder] = useState<string | null>(null);
   const [newLabel, setNewLabel] = useState('');
+
+  // AI/human provenance for this policy's master tags.
+  const { isConfirmed, confirm, revert, busyKey, confirmed } = useMasterTagStatus(policyId);
 
   const hasFork = codes.length > 0;
 
@@ -294,6 +299,16 @@ export default function PolicyCodesPanel({
                 <span className="text-[9px] uppercase tracking-wide text-tertiary-light">
                   {node.source === 'master' ? 'master' : 'custom'}
                 </span>
+                {node.source === 'master' && node.isTaggedHere && (
+                  <TagOriginBadge
+                    origin={isConfirmed(policyId, node.codeId) ? 'human' : 'ai'}
+                    canEdit={isSignedIn}
+                    busy={busyKey === tagKey(policyId, node.codeId)}
+                    confirmedByName={confirmed.get(tagKey(policyId, node.codeId))?.confirmedByName}
+                    onConfirm={() => confirm(policyId, node.codeId)}
+                    onRevert={() => revert(policyId, node.codeId)}
+                  />
+                )}
               </span>
               {isSignedIn && node.source === 'master' && node.isTaggedHere && (
                 <button
