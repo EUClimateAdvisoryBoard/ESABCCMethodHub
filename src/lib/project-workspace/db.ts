@@ -11,6 +11,7 @@
  * so a fresh deploy is usable without a manual seeding step.
  */
 import 'server-only';
+import { cache } from 'react';
 import { unstable_noStore as noStore } from 'next/cache';
 import { getServerSupabase } from '@/lib/supabase-server';
 import {
@@ -23,8 +24,7 @@ import {
   ECNO_TO_ESABCC_DUPLICATE,
 } from '@/data/esabcc-indicators';
 import {
-  ESABCC_2024_RECOMMENDATIONS,
-  ESABCC_2023_2040_TARGET_ADVICE,
+  ALL_ESABCC_RECOMMENDATIONS,
   ESABCC_INDUSTRY_RECOMMENDATIONS,
   type PastRecommendation,
   type RecommendationStatus,
@@ -32,10 +32,7 @@ import {
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 
 /** Recommendations seeded into the Policy Gap project, with their report label. */
-const SEED_RECOMMENDATIONS: PastRecommendation[] = [
-  ...ESABCC_2024_RECOMMENDATIONS,
-  ESABCC_2023_2040_TARGET_ADVICE,
-];
+const SEED_RECOMMENDATIONS: PastRecommendation[] = [...ALL_ESABCC_RECOMMENDATIONS];
 
 /**
  * Recommendations seeded into the Industry Project: the industry-tagged subset,
@@ -306,7 +303,10 @@ async function ensureSeedRecommendations(
   }
 }
 
-async function ensureSeedDataFor(projectId: string) {
+// Per-request memoization: the project page invokes ensureSeedDataFor from
+// getProject, listIndicators, and listRecommendations in parallel. Without
+// cache() that's 3× the read-then-conditional-write traffic per render.
+const ensureSeedDataFor = cache(async function ensureSeedDataFor(projectId: string) {
   const sb = getServerSupabase();
   if (!sb) return;
 
@@ -326,7 +326,7 @@ async function ensureSeedDataFor(projectId: string) {
     await ensureSeedIndicators(sb, projectId, INDUSTRY_INDICATORS);
     await ensureSeedRecommendations(sb, projectId, INDUSTRY_SEED_RECOMMENDATIONS);
   }
-}
+});
 
 export async function listProjects(): Promise<DBProject[]> {
   noStore();
