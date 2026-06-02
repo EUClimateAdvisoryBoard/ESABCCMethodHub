@@ -7,7 +7,8 @@
   "overview_sheet": "Figure 7",
   "overview_series": "Total (ECL scope)",
   "chapter": "Ch3",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator O1. Total EU-27 GHG emissions in the scope of the European Climate Law (EU-27 plus international aviation and maritime). 2030 target: -55% vs 1990; 2050: climate neutrality; ESABCC 2040 advice range: -90 to -95%."
  },
  "esabcc-o2-pec": {
   "code": "O2 (PEC)",
@@ -17,7 +18,8 @@
   "overview_sheet": "Figure 9",
   "overview_series": "PEC",
   "chapter": "Ch3",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator O2 (primary energy component). EED 2030 indicative benchmark applies; Climate Target Plan MIX 2050 trajectory used as longer-run benchmark."
  },
  "esabcc-o2-fec": {
   "code": "O2 (FEC)",
@@ -27,7 +29,8 @@
   "overview_sheet": "Figure 9",
   "overview_series": "FEC",
   "chapter": "Ch3",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator O2 (final energy component). 2030 EED indicative benchmark: 763 Mtoe (~8 875 TWh)."
  },
  "esabcc-o3-gross-inland": {
   "code": "O3",
@@ -37,7 +40,8 @@
   "overview_sheet": "Figure 10",
   "overview_series": "Total",
   "chapter": "Ch3",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator O3. Gross inland energy consumption covering all fuels and renewables. Benchmark from Climate Target Plan MIX 2050 scenario."
  },
  "esabcc-e1-energy-supply-ghg": {
   "code": "E1",
@@ -47,7 +51,8 @@
   "overview_sheet": "Figure 11 and 13",
   "overview_series": "Total",
   "chapter": "Ch4",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator E1. Total energy supply emissions: public power & heat, refineries and other energy industries. Fit-for-55 MIX gives the 2030 benchmark."
  },
  "esabcc-e2-fossil-power-share": {
   "code": "E2 (fossil)",
@@ -57,7 +62,8 @@
   "overview_sheet": "Figure 14",
   "overview_series": "Share fossils",
   "chapter": "Ch4",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator E2 (fossil component). Share of fossil fuels in total electricity generation; complements the renewable share to highlight the substitution pace."
  },
  "esabcc-e2-res-noBio-power-share": {
   "code": "E2 (RES)",
@@ -67,7 +73,8 @@
   "overview_sheet": "Figure 14",
   "overview_series": "Share renewables (excl. bio)",
   "chapter": "Ch4",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator E2 (renewables component). Share of non-biomass renewables (wind, solar PV, hydro, geothermal) in total electricity generation."
  },
  "esabcc-e3-grid-co2-intensity": {
   "code": "E3",
@@ -77,7 +84,8 @@
   "overview_sheet": "Figure 15",
   "overview_series": "historical",
   "chapter": "Ch4",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator E3. Average EU electricity GHG intensity (Scope-2). Fit-for-55 MIX 2030 benchmark plus 1.5TECH 2050 trajectory."
  },
  "esabcc-e4a-solar-pv-add": {
   "code": "E4a",
@@ -87,7 +95,8 @@
   "overview_sheet": "Figure 16",
   "overview_series": "Historic",
   "chapter": "Ch4",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator E4a. Net new solar photovoltaic capacity commissioned per year across the EU-27."
  },
  "esabcc-e4b-wind-add": {
   "code": "E4b/c",
@@ -97,7 +106,8 @@
   "overview_sheet": "Figure 17",
   "overview_series": "Historic",
   "chapter": "Ch4",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicators E4b (onshore) and E4c (offshore). Net new wind capacity commissioned per year, all axes."
  },
  "esabcc-e5-electrification": {
   "code": "E5",
@@ -107,7 +117,8 @@
   "overview_sheet": "Figure 18",
   "overview_series": "Historic",
   "chapter": "Ch4",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator E5. Share of electricity in total final energy consumption; Fit-for-55 MIX gives the 2030 benchmark."
  },
  "esabcc-e6-energy-ch4": {
   "code": "E6",
@@ -117,7 +128,8 @@
   "overview_sheet": "Figure 19",
   "overview_series": "Total",
   "chapter": "Ch4",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator E6. Methane emissions from fuel combustion and fugitives. Aligned with the Methane Regulation."
  },
  "esabcc-i1-industry-ghg": {
   "code": "I1",
@@ -127,7 +139,8 @@
   "overview_sheet": "Figure 20 and 23",
   "overview_series": "Total",
   "chapter": "Ch5",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator I1. Industrial CO₂ plus other GHGs (combustion + process emissions). Fit-for-55 MIX 2030 benchmark."
  },
  "esabcc-i3-circular-mat-use": {
   "code": "I3",
@@ -137,7 +150,8 @@
   "overview_sheet": "Figure 25",
   "overview_series": "Historic",
   "chapter": "Ch5",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator I3. Share of material input from recycled sources. Circular Economy Action Plan benchmark: 23.4% by 2030."
  },
  "esabcc-i4-steel-ghg-intensity": {
   "code": "I4 (steel)",
@@ -147,7 +161,8 @@
   "overview_sheet": "Figure 26",
   "overview_series": "Steel",
   "chapter": "Ch5",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator I4 (steel component). Total emissions (combustion + process) per tonne of crude steel produced."
  },
  "esabcc-i4-cement-ghg-intensity": {
   "code": "I4 (cement)",
@@ -157,7 +172,8 @@
   "overview_sheet": "Figure 26",
   "overview_series": "Cement",
   "chapter": "Ch5",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator I4 (cement component). Total emissions per tonne of cement produced."
  },
  "esabcc-i4-chemicals-ghg-intensity": {
   "code": "I4 (chemicals)",
@@ -167,7 +183,8 @@
   "overview_sheet": "Figure 26",
   "overview_series": "Base organic chemicals",
   "chapter": "Ch5",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator I4 (chemicals component). Combustion + process emissions per tonne of ethylene, propylene, methanol etc."
  },
  "esabcc-i5-industry-fec": {
   "code": "I5",
@@ -177,7 +194,8 @@
   "overview_sheet": "Figure 27",
   "overview_series": "Total",
   "chapter": "Ch5",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator I5. Final energy use in manufacturing industries (excluding non-energy use)."
  },
  "esabcc-i6-industry-electrification": {
   "code": "I6",
@@ -187,7 +205,8 @@
   "overview_sheet": "Figure 28",
   "overview_series": "% of electricity",
   "chapter": "Ch5",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator I6. Share of electricity in industrial final energy use (excluding non-energy use). Climate Target Plan benchmarks for 2030 and 2050."
  },
  "esabcc-t1-transport-ghg": {
   "code": "T1",
@@ -197,7 +216,8 @@
   "overview_sheet": "Figure 32 and 34",
   "overview_series": "Total",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T1. All EU-27 transport GHG emissions (road, rail, IWW, aviation). Fit-for-55 MIX 2030 benchmark."
  },
  "esabcc-t2a-passenger-demand": {
   "code": "T2a",
@@ -207,7 +227,8 @@
   "overview_sheet": "Figure 35",
   "overview_series": "Total",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T2a. Total passenger-kilometres travelled across all inland and air modes."
  },
  "esabcc-t2b-freight-demand": {
   "code": "T2b",
@@ -217,7 +238,8 @@
   "overview_sheet": "Figure 36",
   "overview_series": "Total",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T2b. Total freight tonne-kilometres across road, rail and inland waterways."
  },
  "esabcc-t3a-road-share-passenger": {
   "code": "T3a",
@@ -227,7 +249,8 @@
   "overview_sheet": "Figure 37",
   "overview_series": "Passenger (cars and two-wheelers)",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T3a. Passenger-side road share (cars + two-wheelers) of motorised inland transport, excluding aviation, maritime and active modes."
  },
  "esabcc-t3b-air-passenger": {
   "code": "T3b",
@@ -237,7 +260,8 @@
   "overview_sheet": "Figure 38",
   "overview_series": "Historic",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T3b. Intra-EU passenger-kilometres travelled by air; Fit-for-55 MIX 2030 plus 1.5LIFE/TECH 2050 benchmarks."
  },
  "esabcc-t4-car-co2-intensity": {
   "code": "T4",
@@ -247,7 +271,8 @@
   "overview_sheet": "Figure 40",
   "overview_series": "Historic - WLTP",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T4. Average tailpipe CO₂ intensity of newly registered cars, WLTP basis. Reg (EU) 2023/851 sets 0 g/km from 2035."
  },
  "esabcc-t5a-zev-share-newcars": {
   "code": "T5a",
@@ -257,7 +282,8 @@
   "overview_sheet": "Figure 41",
   "overview_series": "ZEV share",
   "chapter": "Ch6",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator T5a. Battery-electric + fuel-cell share of new passenger car registrations."
  },
  "esabcc-t5b-zev-lorries-stock": {
   "code": "T5b",
@@ -267,7 +293,8 @@
   "overview_sheet": "Figure 42",
   "overview_series": "Total",
   "chapter": "Ch6",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator T5b. Stock of zero-emission heavy-duty lorries on EU roads."
  },
  "esabcc-t6a-fossil-transport-share": {
   "code": "T6a",
@@ -277,7 +304,8 @@
   "overview_sheet": "Figure 43",
   "overview_series": "Historic",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T6a. Fossil share of transport energy use including international bunker fuels."
  },
  "esabcc-t6b-foodcrop-biofuels": {
   "code": "T6b",
@@ -287,7 +315,8 @@
   "overview_sheet": "Figure 44",
   "overview_series": "Biofuels from food crops",
   "chapter": "Ch6",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator T6b. Energy from first-generation biofuels (food/feed crops) used in the transport sector."
  },
  "esabcc-b1-buildings-ghg": {
   "code": "B1",
@@ -297,7 +326,8 @@
   "overview_sheet": "Figure 45 and 47",
   "overview_series": "Total",
   "chapter": "Ch7",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator B1. Direct GHG emissions from heating, cooling and cooking in residential and tertiary buildings."
  },
  "esabcc-b2-buildings-fec": {
   "code": "B2",
@@ -307,7 +337,8 @@
   "overview_sheet": "Figure 48",
   "overview_series": "Total (residential + tertiary)",
   "chapter": "Ch7",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator B2. Final energy consumption in residential plus tertiary buildings (heating, cooling, appliances, lighting)."
  },
  "esabcc-b5a-residential-fossil-share": {
   "code": "B5a",
@@ -317,7 +348,8 @@
   "overview_sheet": "Figure 51",
   "overview_series": "Fossils",
   "chapter": "Ch7",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator B5a (fossil component). Share of fossil fuels in residential final energy consumption."
  },
  "esabcc-b5b-tertiary-fossil-share": {
   "code": "B5b",
@@ -327,7 +359,8 @@
   "overview_sheet": "Figure 52",
   "overview_series": "Fossils",
   "chapter": "Ch7",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator B5b (fossil component). Share of fossil fuels in tertiary sector final energy consumption."
  },
  "esabcc-b6-heat-pump-stock": {
   "code": "B6",
@@ -337,7 +370,8 @@
   "overview_sheet": "Figure 53",
   "overview_series": "Historic",
   "chapter": "Ch7",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator B6. Cumulative stock of heat pumps. REPowerEU 2030 objective requires 60 million units."
  },
  "esabcc-a1-agri-nonco2": {
   "code": "A1",
@@ -347,7 +381,8 @@
   "overview_sheet": "Figure 54 and 56",
   "overview_series": "Total",
   "chapter": "Ch8",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator A1. Non-CO₂ emissions from EU agriculture (enteric fermentation, manure, fertiliser, other)."
  },
  "esabcc-a3-fertiliser-use": {
   "code": "A3 (use)",
@@ -357,7 +392,8 @@
   "overview_sheet": "Figure 58",
   "overview_series": "Total",
   "chapter": "Ch8",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator A3 (total use). Total nitrogen applied as inorganic + organic fertiliser. Farm-to-Fork 2030 benchmark: 20% reduction vs 2018."
  },
  "esabcc-a3-nue": {
   "code": "A3 (NUE)",
@@ -367,7 +403,8 @@
   "overview_sheet": "Figure 58",
   "overview_series": "Nitrogen Use Efficiency",
   "chapter": "Ch8",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator A3 (efficiency component). Share of applied N that ends up in harvested products."
  },
  "esabcc-a7-bioenergy-feedstock": {
   "code": "A7",
@@ -377,7 +414,8 @@
   "overview_sheet": "Figure 62",
   "overview_series": "Historic total",
   "chapter": "Ch8",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator A7. Cereal and oilseed crops diverted to bioenergy. Climate Target Plan 2030 benchmark for sustainable levels."
  },
  "esabcc-l1-lulucf-net": {
   "code": "L1",
@@ -387,7 +425,8 @@
   "overview_sheet": "Figure 63 and 65",
   "overview_series": "Total",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L1. Net GHG balance for land use, land-use change and forestry (negative = net removals). LULUCF Regulation 2030 target: net -310 Mt CO₂eq."
  },
  "esabcc-l3-afforestation": {
   "code": "L3",
@@ -397,7 +436,8 @@
   "overview_sheet": "Figure 67",
   "overview_series": "Afforestation",
   "chapter": "Ch9",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC progress indicator L3. Annual area of land newly classified as forest (afforestation)."
  },
  "esabcc-l4-deforestation": {
   "code": "L4",
@@ -407,7 +447,8 @@
   "overview_sheet": "Figure 67",
   "overview_series": "Deforestation",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L4. Annual area of forest converted to other land uses (deforestation)."
  },
  "esabcc-l5-settlement-area": {
   "code": "L5",
@@ -417,7 +458,8 @@
   "overview_sheet": "Figure 68",
   "overview_series": "annual increase in settlement area",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L5. Annual increase in settlement area used as proxy for net land take. 7th EAP no-net-land-take 2050 target."
  },
  "esabcc-l6-forest-sink": {
   "code": "L6",
@@ -427,7 +469,8 @@
   "overview_sheet": "Figure 69",
   "overview_series": "Living biomass sink",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L6. Net removals attributed to living forest biomass (negative = removals)."
  },
  "esabcc-l7-nonforest-lulucf": {
   "code": "L7",
@@ -437,7 +480,8 @@
   "overview_sheet": "Figure 71",
   "overview_series": "Total",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L7. Net GHG balance from cropland, grassland, wetlands and settlements (positive = net emissions)."
  },
  "esabcc-l8-bioenergy-use": {
   "code": "L8",
@@ -447,7 +491,8 @@
   "overview_sheet": "Figure 72",
   "overview_series": "Total",
   "chapter": "Ch9",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC progress indicator L8. Final consumption of bioenergy across power, heat, transport, industry and other sectors."
  },
  "esabcc-f-fossil-subsidies": {
   "code": "F1",
@@ -457,7 +502,8 @@
   "overview_sheet": "Figure 78",
   "overview_series": "FFST",
   "chapter": "?",
-  "direction": "down"
+  "direction": "down",
+  "description": "ESABCC chapter on finance. Total EU fossil-fuel subsidies estimated by the Fossil Fuel Subsidy Tracker. Should fall to zero per Council conclusions."
  },
  "esabcc-f-green-bonds": {
   "code": "F2",
@@ -467,7 +513,8 @@
   "overview_sheet": "Figure 80",
   "overview_series": "Green bonds",
   "chapter": "?",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC chapter on finance. Annual green bond issuance by EU issuers (sovereign + corporate)."
  },
  "esabcc-f-green-bonds-share": {
   "code": "F2 (share)",
@@ -477,7 +524,8 @@
   "overview_sheet": "Figure 80",
   "overview_series": "Green bonds share",
   "chapter": "?",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC chapter on finance. Green bonds as a share of total EU bond issuance."
  },
  "esabcc-f-gerd": {
   "code": "F3",
@@ -487,7 +535,8 @@
   "overview_sheet": "Figure 81",
   "overview_series": "EU27",
   "chapter": "?",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC chapter on innovation. Gross domestic expenditure on research and development as a share of GDP. Lisbon agenda target: 3%."
  },
  "esabcc-f-climate-patents-share": {
   "code": "F4",
@@ -497,7 +546,8 @@
   "overview_sheet": "Figure 83",
   "overview_series": "Share of climate patents across all fillings in the EU",
   "chapter": "?",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC chapter on innovation. Climate-mitigation patents as a share of all EU patent filings (OECD ENV-Tech taxonomy)."
  },
  "esabcc-f-cleantech-investment": {
   "code": "F5",
@@ -507,6 +557,7 @@
   "overview_sheet": "Figure 86",
   "overview_series": "EU",
   "chapter": "?",
-  "direction": "up"
+  "direction": "up",
+  "description": "ESABCC chapter on innovation. Total cleantech investment (public + private) relative to EU GDP."
  }
 }

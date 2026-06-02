@@ -69,7 +69,8 @@ def main():
             report.append((ok, ind_id, line))
             if ok:
                 g = GT.get(ind_id, {})
-                layout["derivation"] = emit.describe(layout, g.get("name"), g.get("unit"))
+                layout["derivation"] = emit.describe(
+                    layout, g.get("name"), g.get("unit"), g.get("description"))
                 layouts[ind_id] = layout
     print("\n=== CENTRAL RE-VERIFICATION (relative tol 1% + flat-line check) ===")
     for ok, ind, line in sorted(report, key=lambda r: (r[0], r[1])):
