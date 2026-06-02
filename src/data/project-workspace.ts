@@ -85,12 +85,13 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
       {
         id: 'meetings',
         kind: 'meetings',
-        name: 'Meetings',
+        name: 'Meetings & Progress',
         description:
           'Track every meeting for this report — notes, summaries and ' +
           'minutes, the AI-extracted three key takeaways, milestones and a ' +
           'project timeline. Record on your phone to transcribe straight ' +
-          'into notes; discuss collaboratively with @mentions.',
+          'into notes; discuss collaboratively with @mentions. The Progress ' +
+          'tab gives the project lead a standard progress dashboard.',
       },
     ],
   },
@@ -150,12 +151,13 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
       {
         id: 'meetings',
         kind: 'meetings',
-        name: 'Meetings',
+        name: 'Meetings & Progress',
         description:
           'Track every meeting for this report — notes, summaries and ' +
           'minutes, the AI-extracted three key takeaways, milestones and a ' +
           'project timeline. Record on your phone to transcribe straight ' +
-          'into notes; discuss collaboratively with @mentions.',
+          'into notes; discuss collaboratively with @mentions. The Progress ' +
+          'tab gives the project lead a standard progress dashboard.',
       },
     ],
   },

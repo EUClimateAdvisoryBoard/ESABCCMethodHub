@@ -51,7 +51,7 @@ const MODULE_KIND_OPTIONS = [
   { id: 'recommendations', label: 'Recommendations tracker' },
   { id: 'member-states', label: 'Member state space' },
   { id: 'policy-analysis', label: 'Policy analysis' },
-  { id: 'meetings', label: 'Meetings' },
+  { id: 'meetings', label: 'Meetings & Progress' },
   { id: 'custom', label: 'Custom (notes)' },
 ];
 
