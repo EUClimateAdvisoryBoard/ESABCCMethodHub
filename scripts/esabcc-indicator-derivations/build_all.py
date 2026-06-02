@@ -68,13 +68,15 @@ def main():
             line = f"{ind_id:<34} {n:>2}yr  worstΔ={wa if wa is not None else 0:.4f}  rel={wrs}{flag}"
             report.append((ok, ind_id, line))
             if ok:
+                g = GT.get(ind_id, {})
+                layout["derivation"] = emit.describe(layout, g.get("name"), g.get("unit"))
                 layouts[ind_id] = layout
     print("\n=== CENTRAL RE-VERIFICATION (relative tol 1% + flat-line check) ===")
     for ok, ind, line in sorted(report, key=lambda r: (r[0], r[1])):
         print(("  PASS " if ok else " FAIL ") + line)
-    n = emit.emit(layouts, 'supabase/migrations/045_seed_indicator_derivations.sql')
+    n = emit.emit(layouts, 'supabase/migrations/052_indicator_derivation_descriptions.sql')
     npass = sum(1 for ok, *_ in report if ok)
-    print(f"\nEmitted {n} verified layouts -> migration 045 ({npass}/{len(report)} passed)")
+    print(f"\nEmitted {n} verified layouts -> migration 052 ({npass}/{len(report)} passed)")
 
 if __name__ == '__main__':
     main()
