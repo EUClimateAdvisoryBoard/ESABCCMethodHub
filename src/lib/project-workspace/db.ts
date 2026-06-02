@@ -11,6 +11,7 @@
  * so a fresh deploy is usable without a manual seeding step.
  */
 import 'server-only';
+import { cache } from 'react';
 import { unstable_noStore as noStore } from 'next/cache';
 import { getServerSupabase } from '@/lib/supabase-server';
 import {
@@ -302,7 +303,10 @@ async function ensureSeedRecommendations(
   }
 }
 
-async function ensureSeedDataFor(projectId: string) {
+// Per-request memoization: the project page invokes ensureSeedDataFor from
+// getProject, listIndicators, and listRecommendations in parallel. Without
+// cache() that's 3× the read-then-conditional-write traffic per render.
+const ensureSeedDataFor = cache(async function ensureSeedDataFor(projectId: string) {
   const sb = getServerSupabase();
   if (!sb) return;
 
@@ -322,7 +326,7 @@ async function ensureSeedDataFor(projectId: string) {
     await ensureSeedIndicators(sb, projectId, INDUSTRY_INDICATORS);
     await ensureSeedRecommendations(sb, projectId, INDUSTRY_SEED_RECOMMENDATIONS);
   }
-}
+});
 
 export async function listProjects(): Promise<DBProject[]> {
   noStore();
