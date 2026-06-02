@@ -68,6 +68,8 @@ def main():
             line = f"{ind_id:<34} {n:>2}yr  worstΔ={wa if wa is not None else 0:.4f}  rel={wrs}{flag}"
             report.append((ok, ind_id, line))
             if ok:
+                g = GT.get(ind_id, {})
+                layout["derivation"] = emit.describe(layout, g.get("name"), g.get("unit"))
                 layouts[ind_id] = layout
     print("\n=== CENTRAL RE-VERIFICATION (relative tol 1% + flat-line check) ===")
     for ok, ind, line in sorted(report, key=lambda r: (r[0], r[1])):

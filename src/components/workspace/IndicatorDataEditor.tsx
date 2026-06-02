@@ -81,6 +81,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showHelp, setShowHelp] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
 
   // Active cell over the full grid: col 0 = Year, col k = columns[k-1].
   const [sel, setSel] = useState<{ r: number; c: number }>({ r: 0, c: 1 });
@@ -528,10 +529,54 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
               Unit: {indicator.unit}.
             </p>
           </div>
-          <button type="button" onClick={onClose} className="text-tertiary text-sm" aria-label="Close">
-            ✕
-          </button>
+          <div className="flex items-center gap-3">
+            {layout?.derivation && (
+              <button
+                type="button"
+                onClick={() => setShowInfo(true)}
+                className="shrink-0 inline-flex items-center gap-1 text-[11px] font-semibold text-secondary border border-secondary/40 rounded px-2 py-1 hover:bg-secondary/5"
+                title="Step-by-step overview of how this indicator is derived"
+              >
+                ⓘ Derivation
+              </button>
+            )}
+            <button type="button" onClick={onClose} className="text-tertiary text-sm" aria-label="Close">
+              ✕
+            </button>
+          </div>
         </div>
+
+        {/* Derivation overview — how the Value column is built from raw inputs */}
+        {showInfo && layout?.derivation && (
+          <div
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-4"
+            onClick={() => setShowInfo(false)}
+          >
+            <div
+              className="bg-white rounded-xl shadow-xl border border-grey-200 w-full max-w-2xl max-h-[85vh] flex flex-col"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="flex items-center justify-between px-5 py-3 border-b border-grey-200">
+                <h3 className="text-sm font-bold text-tertiary-dark">
+                  How “{indicator.name}” is derived
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => setShowInfo(false)}
+                  className="text-tertiary text-sm"
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="overflow-auto px-5 py-4">
+                <pre className="whitespace-pre-wrap font-sans text-[12px] leading-relaxed text-tertiary-dark">
+                  {layout.derivation}
+                </pre>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Formula bar */}
         <div className="px-5 py-2 border-b border-grey-100 flex items-center gap-2 bg-white">

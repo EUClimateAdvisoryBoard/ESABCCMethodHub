@@ -60,6 +60,13 @@ export interface IndicatorSheetColumn {
 export interface IndicatorSheetLayout {
   columns: IndicatorSheetColumn[];
   rows: { year: number; cells: SheetCell[] }[];
+  /**
+   * Optional human-readable, step-by-step explanation of how the Value column
+   * is derived from the helper columns (raw inputs → intermediate steps →
+   * final formula). Surfaced behind the "ⓘ Derivation" button in the calc
+   * editor. Plain text; rendered with preserved whitespace.
+   */
+  derivation?: string;
 }
 
 export function isColumnFormula(v: unknown): v is ColumnFormula {
@@ -235,7 +242,8 @@ export function normalizeLayout(raw: unknown): IndicatorSheetLayout | null {
       return { year, cells };
     })
     .filter((r): r is { year: number; cells: SheetCell[] } => r !== null);
-  return { columns, rows };
+  const derivation = typeof obj.derivation === 'string' ? obj.derivation : undefined;
+  return derivation ? { columns, rows, derivation } : { columns, rows };
 }
 
 /** Numeric value of a stored cell (resolving a formula cell to its result). */
