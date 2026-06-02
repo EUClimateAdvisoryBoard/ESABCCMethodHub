@@ -1,5 +1,5 @@
 -- ============================================================================
--- COMBINED MIGRATIONS (001 -> 048)
+-- COMBINED MIGRATIONS (001 -> 049)
 -- Auto-generated from supabase/migrations/*.sql for one-shot SQL Editor runs.
 -- Wrap is intentionally absent: each source migration is idempotent
 -- (CREATE ... IF NOT EXISTS / DROP ... IF EXISTS), so re-running is safe.
@@ -5539,7 +5539,27 @@ end $$;
 
 
 -- ----------------------------------------------------------------------------
--- 047_pw_content_analysis_module.sql
+-- 047_pw_industry_policy_only.sql
+-- ----------------------------------------------------------------------------
+
+delete from public.pw_modules
+where project_id = 'industry-project'
+  and is_seed = true
+  and id in ('indicators', 'recommendations', 'member-states', 'meetings');
+
+delete from public.pw_modules
+where project_id = 'policy-gap-2-0'
+  and is_seed = true
+  and id = 'meetings';
+
+update public.pw_projects
+  set description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the policy analysis tool.'
+  where id = 'industry-project'
+    and description = 'Analytical workspace dedicated to industrial decarbonisation — the same four tools as Policy Gap 2.0, scoped to industry: industry indicators, the industry-tagged recommendations, industry-tagged policies and a member-state space framed around industrial transition.';
+
+
+-- ----------------------------------------------------------------------------
+-- 048_pw_content_analysis_module.sql
 -- ----------------------------------------------------------------------------
 
 alter table public.pw_modules drop constraint if exists pw_modules_kind_check;
@@ -5570,9 +5590,14 @@ where m.kind = 'policy-analysis'
     where x.project_id = m.project_id and x.id = 'content-analysis'
   );
 
+update public.pw_projects
+  set description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the content analysis tool.'
+  where id = 'industry-project'
+    and description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the policy analysis tool.';
+
 
 -- ----------------------------------------------------------------------------
--- 048_content_analysis_codes_table.sql
+-- 049_content_analysis_codes_table.sql
 -- ----------------------------------------------------------------------------
 
 create table if not exists public.content_analysis_codes (

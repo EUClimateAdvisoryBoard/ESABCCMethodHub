@@ -48,3 +48,11 @@ where m.kind = 'policy-analysis'
     select 1 from public.pw_modules x
     where x.project_id = m.project_id and x.id = 'content-analysis'
   );
+
+-- Migration 047 refreshed the Industry Project blurb to mention "the policy
+-- analysis tool"; that tool is now Content analysis, so keep the wording in
+-- step (only when it still carries 047's exact text).
+update public.pw_projects
+  set description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the content analysis tool.'
+  where id = 'industry-project'
+    and description = 'Analytical workspace dedicated to industrial decarbonisation — taken in the wider sense of industry (energy-intensive sectors, carbon pricing & leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to industry-tagged policies via the policy analysis tool.';
