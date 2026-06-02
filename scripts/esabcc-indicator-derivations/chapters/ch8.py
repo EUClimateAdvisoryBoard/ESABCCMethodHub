@@ -37,13 +37,27 @@ def build():
     out = {}
 
     # ── A1 — Agricultural non-CO2 emissions (Figure 54 and 56 / 'Total') ──
-    # Sheet row 3 'Total' is the raw EEA GHG inventory figure (no in-sheet
-    # formula; the component rows 4-6 only run to 2021 while Total runs to
-    # 2022), so it is captured as the raw published series.
-    out['esabcc-a1-agri-nonco2'] = _raw_passthrough(
-        'A1. GHG+DemandSide', 3, 4, list(range(2005, 2023)),
-        'Total agriculture emissions (EEA)', 'EEA GHG data viewer',
-        'EEA GHG data viewer')
+    # Sheet 'A1. GHG+DemandSide' row 3 'Total' is a raw EEA inventory series; it
+    # decomposes into rows 4 (enteric fermentation), 5 (manure management),
+    # 6 (fertilizer use) and 7 (other = residual) — all EEA GHG data viewer.
+    # Build Total as the sum of these four component rows (the deepest raw
+    # decomposition the sheet exposes). Components run D(2005)..T(2021); the raw
+    # Total has an extra 2022 point with no component breakdown, so this layout
+    # covers 2005-2021.
+    Va1, _ = lib.grid(CH, 'A1. GHG+DemandSide')
+    comps = {'Enteric fermentation': 4, 'Manure management': 5,
+             'Fertilizer use': 6, 'Other': 7}
+    a1_years = [y for y in range(2005, 2023)
+                if all(isinstance(Va1.get((r, 4 + (y - 2005))), (int, float))
+                       for r in comps.values())]
+    a1_data = {h: {y: Va1.get((r, 4 + (y - 2005))) for y in a1_years}
+               for h, r in comps.items()}
+    a1_expr = "+".join(f"[{h}]" for h in comps)
+    a1, _ = lib.build_layout(
+        'Value', 'EEA GHG data viewer', a1_expr,
+        [{"header": h, "source": "EEA GHG data viewer"} for h in comps],
+        a1_years, lambda h, y: a1_data[h][y])
+    out['esabcc-a1-agri-nonco2'] = a1
 
     # ── A3 — Total fertiliser nitrogen use (Figure 58 / 'Total') ──
     # Sheet row 3 = D4 + D5 = Inorganic + Organic fertiliser (EU CRF tables).
@@ -53,12 +67,13 @@ def build():
     out['esabcc-a3-fertiliser-use'] = fert
 
     # ── A3 — Nitrogen Use Efficiency (Figure 58 / 'Nitrogen Use Efficiency') ──
-    # Sheet row 6 is a published FAOSTAT % with no underlying ratio in this
-    # workbook; expand captures it as the raw published row (single column).
-    Tn = transpose.Transposer(CH, 'A3. Fertilizer New Intensity')
-    ycn = {2005 + (c - 4): c for c in range(4, 20)}  # D(4)=2005 .. S(19)=2020
-    nue, _ = Tn.expand(6, ycn, value_header='Value', value_source='FAOSTAT')
-    out['esabcc-a3-nue'] = nue
+    # NUE is a ratio (N output / N input). This workbook publishes it directly
+    # as a FAOSTAT % row (sheet 'A3. Fertilizer New Intensity' row 6) with no
+    # in-sheet ratio components, so it is captured as a single raw helper
+    # feeding Value. Cols D(2005)..S(2020).
+    out['esabcc-a3-nue'] = _raw_passthrough(
+        'A3. Fertilizer New Intensity', 6, 4, list(range(2005, 2021)),
+        'Nitrogen Use Efficiency', 'FAOSTAT', 'FAOSTAT')
 
     # ── A7 — Bioenergy feedstock (Figure 62 / 'Historic total') ──
     # Sheet row 23 = row24 + row25 = Cereal crops (=row8) + Oilseed (=row14),
