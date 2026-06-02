@@ -36,3 +36,6 @@ word-addin/node_modules/
 !.env.local.example
 !.env.example
 __pycache__/
+
+# Reverse-engineering scratch area (chapter workbooks live on origin/main)
+scratch/

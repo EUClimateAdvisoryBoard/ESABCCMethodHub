@@ -1,0 +1,512 @@
+{
+ "esabcc-o1-ghg-total": {
+  "code": "O1",
+  "name": "Total EU GHG emissions (European Climate Law scope)",
+  "category": "emissions",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 7",
+  "overview_series": "Total (ECL scope)",
+  "chapter": "Ch3",
+  "direction": "down"
+ },
+ "esabcc-o2-pec": {
+  "code": "O2 (PEC)",
+  "name": "Primary energy consumption (EU-27)",
+  "category": "energy-demand",
+  "unit": "TWh",
+  "overview_sheet": "Figure 9",
+  "overview_series": "PEC",
+  "chapter": "Ch3",
+  "direction": "down"
+ },
+ "esabcc-o2-fec": {
+  "code": "O2 (FEC)",
+  "name": "Final energy consumption (EU-27)",
+  "category": "energy-demand",
+  "unit": "TWh",
+  "overview_sheet": "Figure 9",
+  "overview_series": "FEC",
+  "chapter": "Ch3",
+  "direction": "down"
+ },
+ "esabcc-o3-gross-inland": {
+  "code": "O3",
+  "name": "Gross inland energy consumption (EU-27)",
+  "category": "energy-demand",
+  "unit": "TWh",
+  "overview_sheet": "Figure 10",
+  "overview_series": "Total",
+  "chapter": "Ch3",
+  "direction": "down"
+ },
+ "esabcc-e1-energy-supply-ghg": {
+  "code": "E1",
+  "name": "Energy supply GHG emissions",
+  "category": "energy-supply",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 11 and 13",
+  "overview_series": "Total",
+  "chapter": "Ch4",
+  "direction": "down"
+ },
+ "esabcc-e2-fossil-power-share": {
+  "code": "E2 (fossil)",
+  "name": "Fossil share of EU electricity mix",
+  "category": "energy-supply",
+  "unit": "%",
+  "overview_sheet": "Figure 14",
+  "overview_series": "Share fossils",
+  "chapter": "Ch4",
+  "direction": "down"
+ },
+ "esabcc-e2-res-noBio-power-share": {
+  "code": "E2 (RES)",
+  "name": "Non-biomass renewable share of EU electricity mix",
+  "category": "energy-supply",
+  "unit": "%",
+  "overview_sheet": "Figure 14",
+  "overview_series": "Share renewables (excl. bio)",
+  "chapter": "Ch4",
+  "direction": "up"
+ },
+ "esabcc-e3-grid-co2-intensity": {
+  "code": "E3",
+  "name": "Average GHG intensity of EU electricity",
+  "category": "energy-supply",
+  "unit": "g CO₂eq/kWh",
+  "overview_sheet": "Figure 15",
+  "overview_series": "historical",
+  "chapter": "Ch4",
+  "direction": "down"
+ },
+ "esabcc-e4a-solar-pv-add": {
+  "code": "E4a",
+  "name": "Annual solar PV capacity additions (EU)",
+  "category": "energy-supply",
+  "unit": "GW/yr",
+  "overview_sheet": "Figure 16",
+  "overview_series": "Historic",
+  "chapter": "Ch4",
+  "direction": "up"
+ },
+ "esabcc-e4b-wind-add": {
+  "code": "E4b/c",
+  "name": "Annual wind capacity additions (EU)",
+  "category": "energy-supply",
+  "unit": "GW/yr",
+  "overview_sheet": "Figure 17",
+  "overview_series": "Historic",
+  "chapter": "Ch4",
+  "direction": "up"
+ },
+ "esabcc-e5-electrification": {
+  "code": "E5",
+  "name": "Electrification rate of final energy use",
+  "category": "energy-demand",
+  "unit": "%",
+  "overview_sheet": "Figure 18",
+  "overview_series": "Historic",
+  "chapter": "Ch4",
+  "direction": "up"
+ },
+ "esabcc-e6-energy-ch4": {
+  "code": "E6",
+  "name": "Energy-related methane emissions (EU-27)",
+  "category": "energy-supply",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 19",
+  "overview_series": "Total",
+  "chapter": "Ch4",
+  "direction": "down"
+ },
+ "esabcc-i1-industry-ghg": {
+  "code": "I1",
+  "name": "Industrial GHG emissions",
+  "category": "industry",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 20 and 23",
+  "overview_series": "Total",
+  "chapter": "Ch5",
+  "direction": "down"
+ },
+ "esabcc-i3-circular-mat-use": {
+  "code": "I3",
+  "name": "Circular material use rate (EU)",
+  "category": "industry",
+  "unit": "%",
+  "overview_sheet": "Figure 25",
+  "overview_series": "Historic",
+  "chapter": "Ch5",
+  "direction": "up"
+ },
+ "esabcc-i4-steel-ghg-intensity": {
+  "code": "I4 (steel)",
+  "name": "GHG intensity of EU steel production",
+  "category": "industry",
+  "unit": "t CO₂/t",
+  "overview_sheet": "Figure 26",
+  "overview_series": "Steel",
+  "chapter": "Ch5",
+  "direction": "down"
+ },
+ "esabcc-i4-cement-ghg-intensity": {
+  "code": "I4 (cement)",
+  "name": "GHG intensity of EU cement production",
+  "category": "industry",
+  "unit": "t CO₂/t",
+  "overview_sheet": "Figure 26",
+  "overview_series": "Cement",
+  "chapter": "Ch5",
+  "direction": "down"
+ },
+ "esabcc-i4-chemicals-ghg-intensity": {
+  "code": "I4 (chemicals)",
+  "name": "GHG intensity of EU base organic chemicals",
+  "category": "industry",
+  "unit": "t CO₂/t",
+  "overview_sheet": "Figure 26",
+  "overview_series": "Base organic chemicals",
+  "chapter": "Ch5",
+  "direction": "down"
+ },
+ "esabcc-i5-industry-fec": {
+  "code": "I5",
+  "name": "Industrial final energy consumption (EU)",
+  "category": "industry",
+  "unit": "TWh",
+  "overview_sheet": "Figure 27",
+  "overview_series": "Total",
+  "chapter": "Ch5",
+  "direction": "down"
+ },
+ "esabcc-i6-industry-electrification": {
+  "code": "I6",
+  "name": "Electricity share of industrial final energy use",
+  "category": "industry",
+  "unit": "%",
+  "overview_sheet": "Figure 28",
+  "overview_series": "% of electricity",
+  "chapter": "Ch5",
+  "direction": "up"
+ },
+ "esabcc-t1-transport-ghg": {
+  "code": "T1",
+  "name": "Transport GHG emissions (EU)",
+  "category": "transport",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 32 and 34",
+  "overview_series": "Total",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t2a-passenger-demand": {
+  "code": "T2a",
+  "name": "Total passenger transport demand",
+  "category": "transport",
+  "unit": "Gpkm",
+  "overview_sheet": "Figure 35",
+  "overview_series": "Total",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t2b-freight-demand": {
+  "code": "T2b",
+  "name": "Total freight transport demand",
+  "category": "transport",
+  "unit": "Gtkm",
+  "overview_sheet": "Figure 36",
+  "overview_series": "Total",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t3a-road-share-passenger": {
+  "code": "T3a",
+  "name": "Road share of motorised inland passenger transport",
+  "category": "transport",
+  "unit": "%",
+  "overview_sheet": "Figure 37",
+  "overview_series": "Passenger (cars and two-wheelers)",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t3b-air-passenger": {
+  "code": "T3b",
+  "name": "Intra-EU air passenger transport",
+  "category": "transport",
+  "unit": "Gpkm",
+  "overview_sheet": "Figure 38",
+  "overview_series": "Historic",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t4-car-co2-intensity": {
+  "code": "T4",
+  "name": "Average CO₂ intensity of new passenger cars (WLTP)",
+  "category": "transport",
+  "unit": "g CO₂/km",
+  "overview_sheet": "Figure 40",
+  "overview_series": "Historic - WLTP",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t5a-zev-share-newcars": {
+  "code": "T5a",
+  "name": "ZEV share of new passenger car registrations",
+  "category": "transport",
+  "unit": "%",
+  "overview_sheet": "Figure 41",
+  "overview_series": "ZEV share",
+  "chapter": "Ch6",
+  "direction": "up"
+ },
+ "esabcc-t5b-zev-lorries-stock": {
+  "code": "T5b",
+  "name": "Zero-emission lorries in the EU fleet",
+  "category": "transport",
+  "unit": "vehicles",
+  "overview_sheet": "Figure 42",
+  "overview_series": "Total",
+  "chapter": "Ch6",
+  "direction": "up"
+ },
+ "esabcc-t6a-fossil-transport-share": {
+  "code": "T6a",
+  "name": "Fossil share of transport energy use",
+  "category": "transport",
+  "unit": "%",
+  "overview_sheet": "Figure 43",
+  "overview_series": "Historic",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-t6b-foodcrop-biofuels": {
+  "code": "T6b",
+  "name": "Use of first-generation (food-crop) biofuels in transport",
+  "category": "transport",
+  "unit": "TWh",
+  "overview_sheet": "Figure 44",
+  "overview_series": "Biofuels from food crops",
+  "chapter": "Ch6",
+  "direction": "down"
+ },
+ "esabcc-b1-buildings-ghg": {
+  "code": "B1",
+  "name": "Residential + tertiary building GHG emissions",
+  "category": "buildings",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 45 and 47",
+  "overview_series": "Total",
+  "chapter": "Ch7",
+  "direction": "down"
+ },
+ "esabcc-b2-buildings-fec": {
+  "code": "B2",
+  "name": "Final energy consumption in buildings",
+  "category": "buildings",
+  "unit": "TWh",
+  "overview_sheet": "Figure 48",
+  "overview_series": "Total (residential + tertiary)",
+  "chapter": "Ch7",
+  "direction": "down"
+ },
+ "esabcc-b5a-residential-fossil-share": {
+  "code": "B5a",
+  "name": "Fossil share of residential energy mix",
+  "category": "buildings",
+  "unit": "%",
+  "overview_sheet": "Figure 51",
+  "overview_series": "Fossils",
+  "chapter": "Ch7",
+  "direction": "down"
+ },
+ "esabcc-b5b-tertiary-fossil-share": {
+  "code": "B5b",
+  "name": "Fossil share of tertiary energy mix",
+  "category": "buildings",
+  "unit": "%",
+  "overview_sheet": "Figure 52",
+  "overview_series": "Fossils",
+  "chapter": "Ch7",
+  "direction": "down"
+ },
+ "esabcc-b6-heat-pump-stock": {
+  "code": "B6",
+  "name": "EU stock of installed heat pumps",
+  "category": "buildings",
+  "unit": "million units",
+  "overview_sheet": "Figure 53",
+  "overview_series": "Historic",
+  "chapter": "Ch7",
+  "direction": "up"
+ },
+ "esabcc-a1-agri-nonco2": {
+  "code": "A1",
+  "name": "Agricultural non-CO₂ emissions",
+  "category": "agriculture",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 54 and 56",
+  "overview_series": "Total",
+  "chapter": "Ch8",
+  "direction": "down"
+ },
+ "esabcc-a3-fertiliser-use": {
+  "code": "A3 (use)",
+  "name": "Total fertiliser nitrogen use (EU)",
+  "category": "agriculture",
+  "unit": "Mt N",
+  "overview_sheet": "Figure 58",
+  "overview_series": "Total",
+  "chapter": "Ch8",
+  "direction": "down"
+ },
+ "esabcc-a3-nue": {
+  "code": "A3 (NUE)",
+  "name": "Nitrogen use efficiency in EU agriculture",
+  "category": "agriculture",
+  "unit": "%",
+  "overview_sheet": "Figure 58",
+  "overview_series": "Nitrogen Use Efficiency",
+  "chapter": "Ch8",
+  "direction": "up"
+ },
+ "esabcc-a7-bioenergy-feedstock": {
+  "code": "A7",
+  "name": "Agricultural products used as bioenergy feedstock",
+  "category": "agriculture",
+  "unit": "Mt fresh",
+  "overview_sheet": "Figure 62",
+  "overview_series": "Historic total",
+  "chapter": "Ch8",
+  "direction": "down"
+ },
+ "esabcc-l1-lulucf-net": {
+  "code": "L1",
+  "name": "LULUCF net GHG balance",
+  "category": "lulucf",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 63 and 65",
+  "overview_series": "Total",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-l3-afforestation": {
+  "code": "L3",
+  "name": "Annual afforested area",
+  "category": "lulucf",
+  "unit": "thousand ha/yr",
+  "overview_sheet": "Figure 67",
+  "overview_series": "Afforestation",
+  "chapter": "Ch9",
+  "direction": "up"
+ },
+ "esabcc-l4-deforestation": {
+  "code": "L4",
+  "name": "Annual deforested area",
+  "category": "lulucf",
+  "unit": "thousand ha/yr",
+  "overview_sheet": "Figure 67",
+  "overview_series": "Deforestation",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-l5-settlement-area": {
+  "code": "L5",
+  "name": "Annual settlement area increase (net land take proxy)",
+  "category": "lulucf",
+  "unit": "thousand ha/yr",
+  "overview_sheet": "Figure 68",
+  "overview_series": "annual increase in settlement area",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-l6-forest-sink": {
+  "code": "L6",
+  "name": "Forest land living-biomass carbon sink",
+  "category": "lulucf",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 69",
+  "overview_series": "Living biomass sink",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-l7-nonforest-lulucf": {
+  "code": "L7",
+  "name": "Non-forest LULUCF net GHG emissions",
+  "category": "lulucf",
+  "unit": "Mt CO₂eq",
+  "overview_sheet": "Figure 71",
+  "overview_series": "Total",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-l8-bioenergy-use": {
+  "code": "L8",
+  "name": "Total bioenergy use (EU-27)",
+  "category": "lulucf",
+  "unit": "TWh",
+  "overview_sheet": "Figure 72",
+  "overview_series": "Total",
+  "chapter": "Ch9",
+  "direction": "down"
+ },
+ "esabcc-f-fossil-subsidies": {
+  "code": "F1",
+  "name": "EU fossil-fuel subsidies (FFST)",
+  "category": "finance",
+  "unit": "billion EUR",
+  "overview_sheet": "Figure 78",
+  "overview_series": "FFST",
+  "chapter": "?",
+  "direction": "down"
+ },
+ "esabcc-f-green-bonds": {
+  "code": "F2",
+  "name": "EU green bond issuance",
+  "category": "finance",
+  "unit": "billion EUR",
+  "overview_sheet": "Figure 80",
+  "overview_series": "Green bonds",
+  "chapter": "?",
+  "direction": "up"
+ },
+ "esabcc-f-green-bonds-share": {
+  "code": "F2 (share)",
+  "name": "Green share of EU bond issuance",
+  "category": "finance",
+  "unit": "%",
+  "overview_sheet": "Figure 80",
+  "overview_series": "Green bonds share",
+  "chapter": "?",
+  "direction": "up"
+ },
+ "esabcc-f-gerd": {
+  "code": "F3",
+  "name": "EU R&D expenditure (GERD)",
+  "category": "finance",
+  "unit": "% of GDP",
+  "overview_sheet": "Figure 81",
+  "overview_series": "EU27",
+  "chapter": "?",
+  "direction": "up"
+ },
+ "esabcc-f-climate-patents-share": {
+  "code": "F4",
+  "name": "Climate-related share of EU patent filings",
+  "category": "finance",
+  "unit": "%",
+  "overview_sheet": "Figure 83",
+  "overview_series": "Share of climate patents across all fillings in the EU",
+  "chapter": "?",
+  "direction": "up"
+ },
+ "esabcc-f-cleantech-investment": {
+  "code": "F5",
+  "name": "Cleantech investment in the EU",
+  "category": "finance",
+  "unit": "% of GDP",
+  "overview_sheet": "Figure 86",
+  "overview_series": "EU",
+  "chapter": "?",
+  "direction": "up"
+ }
+}
