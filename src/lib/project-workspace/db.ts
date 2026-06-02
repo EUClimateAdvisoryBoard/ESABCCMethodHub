@@ -130,6 +130,8 @@ async function ensureSeedModules(sb: Supa, projectId: string) {
       description: m.description,
       position,
       is_seed: true,
+      featured: m.featured ?? false,
+      beta: m.beta ?? false,
     }))
   );
   if (error) {
@@ -345,6 +347,8 @@ export async function listProjects(): Promise<DBProject[]> {
         kind: m.kind as WorkspaceModuleKind,
         name: m.name,
         description: m.description,
+        featured: !!m.featured,
+        beta: !!m.beta,
       })),
   }));
 }
@@ -371,6 +375,8 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
       kind: m.kind as WorkspaceModuleKind,
       name: m.name,
       description: m.description,
+      featured: !!m.featured,
+      beta: !!m.beta,
     })),
   };
 }
