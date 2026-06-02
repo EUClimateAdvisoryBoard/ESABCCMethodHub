@@ -25,7 +25,6 @@ import {
 } from '@/data/esabcc-indicators';
 import {
   ALL_ESABCC_RECOMMENDATIONS,
-  ESABCC_INDUSTRY_RECOMMENDATIONS,
   type PastRecommendation,
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
@@ -34,13 +33,6 @@ import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 /** Recommendations seeded into the Policy Gap project, with their report label. */
 const SEED_RECOMMENDATIONS: PastRecommendation[] = [...ALL_ESABCC_RECOMMENDATIONS];
 
-/**
- * Recommendations seeded into the Industry Project: the industry-tagged subset,
- * re-keyed with an `industry-` id prefix because `pw_recommendations.id` is a
- * global primary key — the same recommendation can be tracked in both projects.
- */
-const INDUSTRY_SEED_RECOMMENDATIONS: PastRecommendation[] =
-  ESABCC_INDUSTRY_RECOMMENDATIONS.map(r => ({ ...r, id: `industry-${r.id}` }));
 import {
   SEED_PROJECTS,
   type WorkspaceProject,
@@ -320,11 +312,10 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(projectId: stri
     ]);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
-    // The Industry Project copies the Policy Gap toolset, scoped to industry:
-    // industry indicators and the industry-tagged recommendations.
+    // The Industry Project is scoped to a single tool: the industry-tagged
+    // policy analysis. The indicator database, recommendations tracker and
+    // member-state space were removed (see migration 047).
     await ensureSeedModules(sb, projectId);
-    await ensureSeedIndicators(sb, projectId, INDUSTRY_INDICATORS);
-    await ensureSeedRecommendations(sb, projectId, INDUSTRY_SEED_RECOMMENDATIONS);
   }
 });
 

@@ -82,17 +82,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Sectoral policy review. Mirrors the Sectoral overview in the ' +
           'EU Policy Navigator; edits made here propagate to the navigator.',
       },
-      {
-        id: 'meetings',
-        kind: 'meetings',
-        name: 'Meetings & Progress',
-        description:
-          'Track every meeting for this report — notes, summaries and ' +
-          'minutes, the AI-extracted three key takeaways, milestones and a ' +
-          'project timeline. Record on your phone to transcribe straight ' +
-          'into notes; discuss collaboratively with @mentions. The Progress ' +
-          'tab gives the project lead a standard progress dashboard.',
-      },
     ],
   },
   {
@@ -101,43 +90,10 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
     shortDescription:
       'Analytical workspace dedicated to industrial decarbonisation — taken in ' +
       'the wider sense of industry (energy-intensive sectors, carbon pricing & ' +
-      'leakage, hydrogen and CCU/CCS, clean-tech and circularity). The same ' +
-      'four tools as Policy Gap 2.0, scoped to industry: industry indicators, ' +
-      'the industry-tagged recommendations, industry-tagged policies and a ' +
-      'member-state space framed around industrial transition.',
+      'leakage, hydrogen and CCU/CCS, clean-tech and circularity). Scoped to ' +
+      'industry-tagged policies via the policy analysis tool.',
     isSeed: true,
     modules: [
-      {
-        id: 'indicators',
-        kind: 'indicators',
-        name: 'Indicator database',
-        description:
-          'Industry-focused indicators: industrial GHG emissions, energy ' +
-          'intensity and electrification, electrolyser capacity, circular ' +
-          'material use, the ETS carbon price and free allocation, and ' +
-          'clean-tech investment. Table + chart view with the Excel-like ' +
-          'spreadsheet editor; editable in the UI and round-trippable via Excel.',
-      },
-      {
-        id: 'recommendations',
-        kind: 'recommendations',
-        name: 'Recommendations tracker',
-        description:
-          'ESABCC recommendations tagged "industry" — the Industry chapter ' +
-          '(I1–I3) plus the cross-chapter advice that drives industrial ' +
-          'decarbonisation (ETS/CBAM, hydrogen, CCU/CCS, clean-tech, ' +
-          'circularity). Track status, log dated uptake events, retag, and ' +
-          'use the fact-check / verify workflow.',
-      },
-      {
-        id: 'member-states',
-        kind: 'member-states',
-        name: 'Member state space',
-        description:
-          'EEA-style member-state view framed around industrial transition — ' +
-          'energy-intensive industry footprint, electrification and the ' +
-          'clean-tech build-out, with the shared per-country profiles.',
-      },
       {
         id: 'policy-analysis',
         kind: 'policy-analysis',
@@ -147,17 +103,6 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           '(ETS, ETS2, CBAM, IED, Net-Zero Industry Act, CRMA, Ecodesign, ' +
           'batteries, REACH, F-gas …). Mirrors the EU Policy Navigator; edits ' +
           'made here propagate to the navigator.',
-      },
-      {
-        id: 'meetings',
-        kind: 'meetings',
-        name: 'Meetings & Progress',
-        description:
-          'Track every meeting for this report — notes, summaries and ' +
-          'minutes, the AI-extracted three key takeaways, milestones and a ' +
-          'project timeline. Record on your phone to transcribe straight ' +
-          'into notes; discuss collaboratively with @mentions. The Progress ' +
-          'tab gives the project lead a standard progress dashboard.',
       },
     ],
   },
