@@ -2617,7 +2617,14 @@ create table if not exists public.ballots (
 );
 
 create index if not exists idx_ballots_vote on public.ballots(vote_id);
-create unique index if not exists ux_ballots_vote_fingerprint
+-- NOTE: migration 029 originally created this as a UNIQUE index. Migration
+-- 030 (shared tokens) drops it because shared tokens legitimately produce
+-- many ballots with the same (vote_id, token_fingerprint). When re-running
+-- this combined file against a database that has accumulated such rows,
+-- the UNIQUE creation would fail. Create a non-unique index instead — the
+-- subsequent DROP INDEX IF EXISTS in 030 still applies, and the final
+-- database state is identical.
+create index if not exists ux_ballots_vote_fingerprint
   on public.ballots(vote_id, token_fingerprint);
 
 -- updated_at trigger for votes ------------------------------------------------
