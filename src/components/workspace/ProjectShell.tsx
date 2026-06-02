@@ -86,13 +86,20 @@ export default function ProjectShell({
             key={m.id}
             type="button"
             onClick={() => setActive(m.id)}
-            className={`shrink-0 px-3 py-2 text-xs font-medium border-b-2 -mb-px ${
+            className={`shrink-0 px-3 py-2 text-xs border-b-2 -mb-px ${
+              m.featured ? 'font-bold' : 'font-medium'
+            } ${
               active === m.id
                 ? 'border-primary text-primary'
                 : 'border-transparent text-tertiary hover:text-tertiary-dark'
             }`}
           >
             {m.name}
+            {m.beta && (
+              <span className="ml-1.5 align-middle text-[9px] uppercase tracking-wide text-secondary/70 font-normal">
+                beta
+              </span>
+            )}
           </button>
         ))}
         <button
