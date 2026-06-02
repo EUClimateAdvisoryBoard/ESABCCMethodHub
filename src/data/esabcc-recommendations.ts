@@ -219,6 +219,13 @@ const ESABCC_2024_KEY_RECOMMENDATIONS_BASE: PastRecommendation[] = [
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999',
       },
+      {
+        date: '2025-05-28',
+        note:
+          'Commission EU-wide assessment of the final updated NECPs published: ' +
+          'projected ~−54% by 2030, still short of the −55% collective target, ' +
+          'with implementation gaps remaining.',
+      },
     ],
   },
   {
@@ -557,10 +564,22 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
       'shipping)',
     summary:
       'Channel hydrogen toward genuinely hard-to-electrify end uses. Map: ' +
-      'Hydrogen & decarbonised gas market package; RED III Dir (EU) 2023/2413. ' +
-      'Framework emerging; binding end-use targeting still partial.',
+      'Hydrogen & decarbonised gas market package Reg (EU) 2024/1789 + Dir (EU) ' +
+      '2024/1788; RED III Dir (EU) 2023/2413. Market framework now adopted, but ' +
+      'binding prioritisation of hydrogen for hard-to-abate end uses remains ' +
+      'partial.',
     status: 'in-progress',
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2024-06-13',
+        note:
+          'Hydrogen and Decarbonised Gas Market Package adopted: Reg (EU) ' +
+          '2024/1789 and Dir (EU) 2024/1788 (H2 Regulation applies from 5 Feb ' +
+          '2025; Directive transposition by 5 Aug 2026).',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1789',
+      },
+    ],
   },
   {
     id: 'e7-ccus-targeting',
@@ -606,15 +625,25 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
       'Tackle upstream fossil emissions for both domestic production and ' +
       'imports, building on the Methane Regulation and considering an ETS ' +
       'extension to fugitive emissions plus an import border adjustment. Map: ' +
-      'Methane Reg (EU) 2024/1787. Methane Reg in force; pricing/border-' +
-      'adjustment extension not yet proposed.',
+      'Methane Reg (EU) 2024/1787. Methane Reg in force and now in active ' +
+      'implementation; the pricing/border-adjustment extension to fugitive and ' +
+      'upstream-import emissions has not been proposed.',
     status: 'partially',
     uptakeEvents: [
       {
         date: '2024-08-04',
         note:
           'EU Methane Regulation (EU) 2024/1787 entered into force (OJ ' +
-          'publication 15 July 2024); implementing acts pending.',
+          'publication 15 July 2024).',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787',
+      },
+      {
+        date: '2026-02-05',
+        note:
+          'Prohibition on routine flaring and venting under the Methane ' +
+          'Regulation became applicable; import-side methane-intensity rules ' +
+          'follow from 2027/2030.',
         sourceUrl:
           'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787',
       },
@@ -645,10 +674,31 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     summary:
       'Replace free allocation over time with alternative carbon-leakage ' +
       'protection, while monitoring and widening CBAM coverage. Map: CBAM Reg ' +
-      '(EU) 2023/956; ETS Dir (EU) 2023/959. Transition begun; alternatives and ' +
-      'scope expansion still under development.',
+      '(EU) 2023/956; ETS Dir (EU) 2023/959. CBAM definitive regime started ' +
+      '1 Jan 2026 with free-allocation phase-out (2026–2034) underway; a ' +
+      'scope-extension proposal is in negotiation, but alternatives to free ' +
+      'allocation are still being developed.',
     status: 'in-progress',
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-01-01',
+        note:
+          'CBAM definitive regime entered application under Reg (EU) 2023/956; ' +
+          'free-allocation phase-out for CBAM sectors begins (2.5% in 2026, ' +
+          'rising to 100% by 2034).',
+        sourceUrl:
+          'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
+      },
+      {
+        date: '2025-12-16',
+        note:
+          'Commission tabled a proposal to extend CBAM scope to downstream ' +
+          'steel and aluminium products (targeted application 2028); in ' +
+          'legislative negotiation.',
+        sourceUrl:
+          'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en',
+      },
+    ],
   },
   {
     id: 'i3-low-emission-industrial-tech',
@@ -686,9 +736,26 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     summary:
       'Promote modal shift and remove non-market barriers, including adopting ' +
       'the rail-capacity and combined-transport files. Map: Rail Capacity Reg; ' +
-      'Combined Transport Directive (pending). Key files not yet adopted.',
-    status: 'not-addressed',
-    uptakeEvents: [],
+      'Combined Transport Directive. Mixed outcome: the Rail Capacity ' +
+      'Regulation was adopted in 2026, while the Combined Transport Directive ' +
+      'revision is being withdrawn after co-legislators failed to agree.',
+    status: 'partially',
+    uptakeEvents: [
+      {
+        date: '2026-05-21',
+        note:
+          'European Parliament gave final approval to the Regulation on the use ' +
+          'of railway infrastructure capacity in the Single European Railway ' +
+          'Area (Council first-reading position adopted 21 Apr 2026).',
+      },
+      {
+        date: '2025-10-21',
+        note:
+          'Commission 2026 Work Programme signals withdrawal of the 2023 ' +
+          'proposal to revise the Combined Transport Directive after co-' +
+          'legislators failed to reach agreement.',
+      },
+    ],
   },
   {
     id: 't3-efficient-zev-incentives',
@@ -699,10 +766,20 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     summary:
       'Steer uptake incentives toward the most energy- and resource-efficient ' +
       'zero-emission vehicles. Map: Cars & vans CO₂ standards Reg (EU) ' +
-      '2023/851; AFIR Reg (EU) 2023/1804. Core standards in force; efficiency-' +
-      'weighted incentives still partial.',
+      '2023/851; HDV CO₂ standards Reg (EU) 2024/1610; AFIR Reg (EU) 2023/1804. ' +
+      'Core standards in force; efficiency-weighted incentives still partial.',
     status: 'partially',
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2024-05-13',
+        note:
+          'HDV CO₂ standards Reg (EU) 2024/1610 adopted, raising the 2030 target ' +
+          'to −45% and adding −65% (2035) and −90% (2040) — pushing zero-emission ' +
+          'trucks and buses.',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1610',
+      },
+    ],
   },
   {
     id: 't4-direct-electrification-fuels',
@@ -863,10 +940,23 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
       'a sustainable food culture',
     summary:
       'Encourage healthier, more plant-based diets, reduce food waste and ' +
-      'support a sustainable food culture. Map: Sustainable Food Systems ' +
-      'framework (unproposed). The framework law has not been tabled.',
-    status: 'not-addressed',
-    uptakeEvents: [],
+      'support a sustainable food culture. Map: Waste Framework Directive ' +
+      'revision (binding food-waste reduction targets); Sustainable Food Systems ' +
+      'framework (still unproposed). The food-waste leg advanced via the 2025 ' +
+      'Waste Framework Directive revision, but plant-based-diet incentives and ' +
+      'the overarching framework law remain absent.',
+    status: 'partially',
+    uptakeEvents: [
+      {
+        date: '2025-09-30',
+        note:
+          'Revision of the Waste Framework Directive adopted, setting binding ' +
+          '2030 food-waste reduction targets (−10% in processing/manufacturing, ' +
+          '−30% per capita in retail, restaurants and households).',
+        sourceUrl:
+          'https://environment.ec.europa.eu/topics/waste-and-recycling/food-waste_en',
+      },
+    ],
   },
   {
     id: 'a4-biofuel-support-limits',
@@ -893,7 +983,17 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
       'Nature Restoration Reg (EU) 2024/1991; CAP. Nature Restoration adopted; ' +
       'CAP/biofuel reform incomplete.',
     status: 'partially',
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2024-06-17',
+        note:
+          'Nature Restoration Regulation (EU) 2024/1991 adopted by Council, with ' +
+          'binding ecosystem-restoration targets including for peatlands and ' +
+          'forests.',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991',
+      },
+    ],
   },
   {
     id: 'l2-bioenergy-targeting',
@@ -1015,9 +1115,11 @@ const ESABCC_2024_SECTORAL_RECOMMENDATIONS_BASE: PastRecommendation[] = [
     summary:
       'Develop pricing instruments covering reductions and removals in ' +
       'agriculture/food and LULUCF. Map: no pricing proposal; CRCF Reg (EU) ' +
-      '2024/3012. CRCF addresses certification of removals only; no sectoral ' +
-      'pricing proposed.',
-    status: 'partially',
+      '2024/3012 (certification only). No sectoral GHG pricing instrument has ' +
+      'been proposed — consistent with the unaddressed agri (A2) and LULUCF (L3) ' +
+      'pricing recommendations, the CRCF certifies removals but does not price ' +
+      'emissions.',
+    status: 'not-addressed',
     uptakeEvents: [],
   },
   {
@@ -1332,7 +1434,10 @@ export const ESABCC_2023_2040_TARGET_ADVICE: PastRecommendation = {
     'From the separate June 2023 ESABCC advice ("Scientific advice for the ' +
     'determination of an EU-wide 2040 climate target and a GHG budget for ' +
     '2030–2050"). Set a science-based 2040 target with a strong domestic ' +
-    'component and limits on the role of removals.',
+    'component and limits on the role of removals. A binding target was ' +
+    'enacted at the −90% floor of the recommended range, but with up to 5% ' +
+    'international credits from 2036 — a partial divergence from the Board\'s ' +
+    'call for a strong domestic component.',
   status: 'addressed',
   report: RECOMMENDATION_REPORTS['2040-target-advice-2023'],
   uptakeEvents: [
@@ -1342,6 +1447,22 @@ export const ESABCC_2023_2040_TARGET_ADVICE: PastRecommendation = {
         'Commission Communication COM(2024) 63 final proposed a −90% 2040 target.',
       sourceUrl:
         'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024DC0063',
+    },
+    {
+      date: '2025-07-02',
+      note:
+        'Commission tabled the legislative proposal to amend the European ' +
+        'Climate Law with a −90% net 2040 target allowing limited international ' +
+        'credits from 2036 (COM(2025) 386).',
+      sourceUrl:
+        'https://climate.ec.europa.eu/eu-action/climate-strategies-targets/2040-climate-target_en',
+    },
+    {
+      date: '2025-12-08',
+      note:
+        'Provisional trilogue agreement on the 2040 climate-law amendment: ' +
+        '−90% target with up to 5% international credits from 2036, alongside ' +
+        'the ETS2 delay to 2028.',
     },
     {
       date: '2026-03-11',
@@ -1648,11 +1769,23 @@ export const ESABCC_2022_TENE_GUIDELINES_RECOMMENDATIONS: PastRecommendation[] =
       'ENTSOs should publish full model documentation and detailed, machine-' +
       'readable input/output tables with units, sources, metadata and uncertainty ' +
       'ranges, so third parties can reproduce results as required by Art. 12 ' +
-      'TEN-E. 2024 review found Plexos and the Demand Forecasting Toolbox still ' +
-      'closed-access.',
-    status: 'not-addressed',
+      'TEN-E. The Board\'s June 2024 review found overall scenario-building ' +
+      'transparency had improved versus prior cycles, but the main model ' +
+      '(Plexos) and the Demand Forecasting Toolbox remain closed-access, so ' +
+      'full FAIR publication is not yet achieved.',
+    status: 'partially',
     report: REPORT_TENE_GUIDE_2022,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2024-06-27',
+        note:
+          'ESABCC advice on draft TYNDP 2024 scenarios: transparency improved ' +
+          'over previous cycles, but Plexos remains closed and FAIR publication ' +
+          'incomplete.',
+        sourceUrl:
+          'https://climate-advisory-board.europa.eu/reports-and-publications/towards-climate-neutral-and-resilient-energy-networks-across-europe-advice-on-draft-scenarios-under-the-eu-regulation-on-trans-european-energy-networks',
+      },
+    ],
   },
   {
     id: 'tene-guide-2022-reporting-content',
@@ -2179,7 +2312,16 @@ export const ESABCC_2024_TENE_SCENARIOS_RECOMMENDATIONS: PastRecommendation[] = 
       '11–14 Gt range.',
     status: 'in-progress',
     report: REPORT_TENE_2024,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-01-28',
+        note:
+          'ENTSO-E and ENTSOG published the final TYNDP 2024 Scenarios Report, ' +
+          'incorporating part of the Board\'s and stakeholders\' feedback on ' +
+          'assumptions, the GHG budget and storyline differentiation.',
+        sourceUrl: 'https://tyndp.entsoe.eu/',
+      },
+    ],
   },
   {
     id: 'tene-2024-climate-resilience',
@@ -2322,10 +2464,22 @@ export const ESABCC_2024_TENE_SCENARIOS_RECOMMENDATIONS: PastRecommendation[] = 
       '2030); scenarios should cover diverse options to reduce fossil-fuel ' +
       'import dependency; the 2022 building-block approach should be properly ' +
       'integrated with transparent dynamic linkages between modules (Plexos, ' +
-      'DFT, Energy Transition Model, etc.).',
-    status: 'in-progress',
+      'DFT, Energy Transition Model, etc.). The TYNDP 2026 cycle replaces DE/GA ' +
+      'with a central target-compliant scenario plus high/low economic variants ' +
+      '— partly addressing the call for a wider pathway range, though full ' +
+      'building-block integration remains outstanding.',
+    status: 'partially',
     report: REPORT_TENE_2024,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-06-16',
+        note:
+          'TYNDP 2026 draft scenarios released for consultation: DE and GA ' +
+          'replaced by a central NT+ scenario aligned with EU 2030/2035/2040/' +
+          '2050 targets, with high/low economic variants as stress tests.',
+        sourceUrl: 'https://tyndp.entsoe.eu/',
+      },
+    ],
   },
   {
     id: 'tene-2024-fair-process',
@@ -2393,10 +2547,39 @@ export const ESABCC_2025_CDR_RECOMMENDATIONS: PastRecommendation[] = [
       'certificates between temporary removals, permanent removals and ' +
       'emission reductions. CRCF data should feed national GHG inventories ' +
       'under the Governance Regulation. Also urges rapid adoption of the ' +
-      'Forest Monitoring Law and Soil Monitoring and Resilience Law.',
-    status: 'in-progress',
+      'Forest Monitoring Law and Soil Monitoring and Resilience Law. The Soil ' +
+      'Monitoring Law was adopted and the first CRCF permanent-removals ' +
+      'methodologies set, but the Forest Monitoring Law was rejected — a mixed, ' +
+      'partial delivery.',
+    status: 'partially',
     report: REPORT_CDR_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-12-16',
+        note:
+          'Soil Monitoring and Resilience Directive (the EU\'s first soils law) ' +
+          'entered into force, delivering one leg of the recommendation.',
+        sourceUrl:
+          'https://environment.ec.europa.eu/topics/soil-and-land/soil-health_en',
+      },
+      {
+        date: '2025-10-21',
+        note:
+          'European Parliament rejected the Forest Monitoring Law at first ' +
+          'reading; the Commission signalled withdrawal — this leg not delivered.',
+        sourceUrl:
+          'https://www.europarl.europa.eu/legislative-train/theme-a-european-green-deal/file-eu-forest-observation-reporting-and-data-collection',
+      },
+      {
+        date: '2026-02-03',
+        note:
+          'Commission adopted the first CRCF delegated act setting permanent ' +
+          'carbon-removal methodologies (DACCS, BioCCS, biochar), advancing the ' +
+          'certificate differentiation the Board called for.',
+        sourceUrl:
+          'https://climate.ec.europa.eu/eu-action/carbon-removals_en',
+      },
+    ],
   },
   {
     id: 'cdr-2025-land-sink-lulucf',
@@ -2414,7 +2597,24 @@ export const ESABCC_2025_CDR_RECOMMENDATIONS: PastRecommendation[] = [
       'declined ~one third over the last decade.',
     status: 'in-progress',
     report: REPORT_CDR_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-12-16',
+        note:
+          'Soil Monitoring and Resilience Directive entered into force — first ' +
+          'EU soils law, supporting land-sink monitoring.',
+        sourceUrl:
+          'https://environment.ec.europa.eu/topics/soil-and-land/soil-health_en',
+      },
+      {
+        date: '2025-10-21',
+        note:
+          'Forest Monitoring Law rejected by the European Parliament at first ' +
+          'reading; Commission to withdraw — land-sink monitoring leg weakened.',
+        sourceUrl:
+          'https://www.europarl.europa.eu/legislative-train/theme-a-european-green-deal/file-eu-forest-observation-reporting-and-data-collection',
+      },
+    ],
   },
   {
     id: 'cdr-2025-innovation',
@@ -2449,7 +2649,17 @@ export const ESABCC_2025_CDR_RECOMMENDATIONS: PastRecommendation[] = [
       'value chain.',
     status: 'in-progress',
     report: REPORT_CDR_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2025-10-06',
+        note:
+          'Commission launched a public consultation on a CO2 Market and ' +
+          'Infrastructure Framework, with a legislative proposal targeted for ' +
+          '2026 — addressing coordinated EU CO2 transport/storage planning.',
+        sourceUrl:
+          'https://energy.ec.europa.eu/topics/carbon-management-and-fossil-fuels/industrial-carbon-management_en',
+      },
+    ],
   },
   {
     id: 'cdr-2025-ets-integration',
@@ -2462,10 +2672,21 @@ export const ESABCC_2025_CDR_RECOMMENDATIONS: PastRecommendation[] = [
       'and prepare for net-zero/net-negative, integrating permanent removals ' +
       'gradually with quantitative and qualitative limits consistent with ' +
       'separate targets. Robust certification (CDR2) must precede market ' +
-      'integration. The 2026 ETS review is the next decision point.',
-    status: 'not-addressed',
+      'integration. The 2026 ETS review — with the Art. 30(5) report on ' +
+      'negative emissions due by 31 July 2026 — is now actively under way.',
+    status: 'in-progress',
     report: REPORT_CDR_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-01-01',
+        note:
+          'Commission preparing the 2026 ETS revision (expected mid-2026), ' +
+          'including options to integrate permanent removals, alongside the ETS ' +
+          'Directive Art. 30(5) report on negative emissions due 31 July 2026.',
+        sourceUrl:
+          'https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en',
+      },
+    ],
   },
   {
     id: 'cdr-2025-lulucf-pricing',
@@ -2568,7 +2789,17 @@ export const ESABCC_2025_CLIMATE_LAW_RECOMMENDATIONS: PastRecommendation[] = [
       'reflected in the adopted Reg (EU) 2026/667.',
     status: 'not-addressed',
     report: REPORT_CL_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-03-11',
+        note:
+          'Reg (EU) 2026/667 adopts a single net −90% 2040 target with no ' +
+          'separate sub-targets for gross reductions, permanent removals or ' +
+          'temporary removals — contrary to the Board\'s advice.',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0667',
+      },
+    ],
   },
   {
     id: 'climate-law-2025-international-action',
@@ -2587,7 +2818,17 @@ export const ESABCC_2025_CLIMATE_LAW_RECOMMENDATIONS: PastRecommendation[] = [
       '(EU) 2026/667 allowing up to 5% international credits from 2036.',
     status: 'partially',
     report: REPORT_CL_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-03-11',
+        note:
+          'Reg (EU) 2026/667 permits up to 5% international credits from 2036 to ' +
+          'count towards the EU 2040 target — directly contrary to the Board\'s ' +
+          'advice that credits not be used to meet the 2040/2035 domestic targets.',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0667',
+      },
+    ],
   },
   {
     id: 'climate-law-2025-adaptation',
@@ -2604,10 +2845,22 @@ export const ESABCC_2025_CLIMATE_LAW_RECOMMENDATIONS: PastRecommendation[] = [
       'with the Paris Agreement Global Goal on Adaptation, set collective EU ' +
       'adaptation targets and indicators, support periodic EU-wide risk ' +
       'assessments and MEL, and clarify roles across EU institutions and ' +
-      'Member States.',
-    status: 'in-progress',
+      'Member States. The Climate Law amendment (Reg (EU) 2026/667) did not ' +
+      'reinforce adaptation governance; the European integrated framework for ' +
+      'climate resilience remains forthcoming.',
+    status: 'not-addressed',
     report: REPORT_CL_2025,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-03-11',
+        note:
+          'Regulation (EU) 2026/667 amending the European Climate Law adopted ' +
+          'without enshrining the EU adaptation vision, measurable targets/' +
+          'indicators or strengthened governance the Board called for.',
+        sourceUrl:
+          'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32026R0667',
+      },
+    ],
   },
 ];
 
@@ -2698,10 +2951,22 @@ export const ESABCC_2026_ADAPTATION_RECOMMENDATIONS: PastRecommendation[] = [
       'Make private-sector climate-risk disclosure consistent across EU ' +
       'legislation, with the CSRD as the key instrument. Maps to CSRD, ESRS, ' +
       'EBA/ECB/EIOPA supervisory work and the Sustainable Finance framework. ' +
-      'CSRD scope was reduced under Omnibus simplification.',
-    status: 'partially',
+      'The recommendation asks to extend coverage, but the Omnibus I ' +
+      'simplification (in force Mar 2026) sharply narrowed CSRD scope — moving ' +
+      'in the opposite direction.',
+    status: 'not-addressed',
     report: REPORT_ADAPT_2026,
-    uptakeEvents: [],
+    uptakeEvents: [
+      {
+        date: '2026-03-18',
+        note:
+          'Omnibus I simplification entered into force, removing the large ' +
+          'majority of companies from CSRD scope — contrary to the ' +
+          'recommendation to extend geographic and sectoral coverage.',
+        sourceUrl:
+          'https://finance.ec.europa.eu/capital-markets-union-and-financial-markets/company-reporting-and-auditing/company-reporting/sustainability-reporting_en',
+      },
+    ],
   },
   {
     id: 'adaptation-2026-planning-baseline',
