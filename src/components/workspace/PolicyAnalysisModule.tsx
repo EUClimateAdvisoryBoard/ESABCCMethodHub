@@ -614,6 +614,14 @@ function PolicyBody({
         </div>
       </div>
 
+      {/* Project-scoped codes (copy-on-write over the master taxonomy) */}
+      <PolicyCodesPanel
+        projectId={projectId}
+        policyId={policy.id}
+        initialCodes={policyCodes}
+        isSignedIn={isSignedIn}
+      />
+
       {/* What it means (canonical text, optionally a promoted edit) */}
       <Field label="Plain-language meaning" overridden={'meaning' in overrides}>
         {display.meaning}
@@ -718,14 +726,6 @@ function PolicyBody({
           </a>
         )}
       </div>
-
-      {/* Project-scoped codes (copy-on-write over the master taxonomy) */}
-      <PolicyCodesPanel
-        projectId={projectId}
-        policyId={policy.id}
-        initialCodes={policyCodes}
-        isSignedIn={isSignedIn}
-      />
 
       {/* Four-eye approval block */}
       <div className="rounded-lg border border-grey-200 bg-grey-50 p-3">
