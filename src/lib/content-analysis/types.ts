@@ -147,6 +147,12 @@ export interface AnalysisDocument {
   referenceYear?: string;
   /** DOI / external URL for reference docs. */
   referenceUrl?: string;
+  /** Original reference-manager type, preserved so the workspace Content
+   *  Analysis module can split the reference library into "scientific
+   *  literature" (peer-reviewed: article / book / chapter) and "grey
+   *  literature & reports" (report / web / legislation). Only set for
+   *  `sourceKind === 'reference'`. */
+  referenceType?: 'article' | 'report' | 'web' | 'chapter' | 'legislation' | 'book';
 }
 
 /** Optional structured payload attached to a "numeric extraction" segment.

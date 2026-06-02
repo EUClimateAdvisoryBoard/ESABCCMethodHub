@@ -16,17 +16,12 @@ import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import type { WorkspaceProject } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
-import type {
-  MemberStateCell,
-  PolicyAnnotation,
-  PolicyCode,
-  PolicyOverrideMap,
-} from '@/lib/project-workspace/db';
+import type { MemberStateCell } from '@/lib/project-workspace/db';
 import type { IndicatorSheetLayout } from '@/lib/project-workspace/indicator-sheet';
 import IndicatorModule from './IndicatorModule';
 import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
-import PolicyAnalysisModule from './PolicyAnalysisModule';
+import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
@@ -38,9 +33,6 @@ interface Props {
   indicatorSheets: Record<string, IndicatorSheetLayout>;
   recommendations: PastRecommendation[];
   memberStateCells: MemberStateCell[];
-  policyAnnotations: PolicyAnnotation[];
-  policyOverrides: PolicyOverrideMap;
-  policyCodes: PolicyCode[];
   customContent: Record<string, string>;
   meetings: Meeting[];
   milestones: Milestone[];
@@ -51,7 +43,7 @@ const MODULE_KIND_OPTIONS = [
   { id: 'indicators', label: 'Indicator database' },
   { id: 'recommendations', label: 'Recommendations tracker' },
   { id: 'member-states', label: 'Member state space' },
-  { id: 'policy-analysis', label: 'Policy analysis' },
+  { id: 'content-analysis', label: 'Content analysis' },
   { id: 'meetings', label: 'Meetings & Progress' },
   { id: 'custom', label: 'Custom (notes)' },
 ];
@@ -63,9 +55,6 @@ export default function ProjectShell({
   indicatorSheets,
   recommendations,
   memberStateCells,
-  policyAnnotations,
-  policyOverrides,
-  policyCodes,
   customContent,
   meetings,
   milestones,
@@ -128,13 +117,11 @@ export default function ProjectShell({
       {current?.kind === 'member-states' && (
         <MemberStatesModule projectId={project.id} industryFocus={industryFocus} />
       )}
-      {current?.kind === 'policy-analysis' && (
-        <PolicyAnalysisModule
+      {(current?.kind === 'content-analysis' || current?.kind === 'policy-analysis') && (
+        <ContentAnalysisModule
           projectId={project.id}
-          initialAnnotations={policyAnnotations}
-          initialOverrides={policyOverrides}
-          initialPolicyCodes={policyCodes}
-          defaultSector={industryFocus ? 'industry' : undefined}
+          projectName={project.name}
+          industryFocus={industryFocus}
         />
       )}
       {current?.kind === 'meetings' && (
