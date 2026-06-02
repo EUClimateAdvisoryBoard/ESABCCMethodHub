@@ -5621,3 +5621,62 @@ alter table public.content_analysis_codes enable row level security;
 drop policy if exists "Content analysis codes are viewable by everyone" on public.content_analysis_codes;
 create policy "Content analysis codes are viewable by everyone"
   on public.content_analysis_codes for select using (true);
+
+
+-- ----------------------------------------------------------------------------
+-- 050_content_analysis_master_tag_status.sql
+-- ----------------------------------------------------------------------------
+
+create table if not exists public.content_analysis_master_tag_status (
+  policy_id          text        not null,
+  code_id            text        not null,
+  origin             text        not null default 'human' check (origin in ('ai','human')),
+  confirmed_by       uuid        references auth.users(id) on delete set null,
+  confirmed_by_name  text,
+  confirmed_at       timestamptz not null default now(),
+  primary key (policy_id, code_id)
+);
+
+create index if not exists ca_master_tag_status_policy_idx
+  on public.content_analysis_master_tag_status(policy_id);
+
+alter table public.content_analysis_master_tag_status enable row level security;
+
+drop policy if exists "ca_master_tag_status read"   on public.content_analysis_master_tag_status;
+drop policy if exists "ca_master_tag_status insert" on public.content_analysis_master_tag_status;
+drop policy if exists "ca_master_tag_status update" on public.content_analysis_master_tag_status;
+drop policy if exists "ca_master_tag_status delete" on public.content_analysis_master_tag_status;
+
+create policy "ca_master_tag_status read"
+  on public.content_analysis_master_tag_status for select using (true);
+create policy "ca_master_tag_status insert"
+  on public.content_analysis_master_tag_status for insert to authenticated with check (auth.uid() is not null);
+create policy "ca_master_tag_status update"
+  on public.content_analysis_master_tag_status for update to authenticated using (true) with check (true);
+create policy "ca_master_tag_status delete"
+  on public.content_analysis_master_tag_status for delete to authenticated using (true);
+
+
+-- ----------------------------------------------------------------------------
+-- 051_pw_module_flags.sql
+-- ----------------------------------------------------------------------------
+
+alter table public.pw_modules
+  add column if not exists featured boolean not null default false,
+  add column if not exists beta     boolean not null default false;
+
+update public.pw_modules
+  set featured = true, beta = false, position = 0
+  where project_id = 'policy-gap-2-0' and id = 'indicators';
+
+update public.pw_modules
+  set featured = true, beta = false, position = 1
+  where project_id = 'policy-gap-2-0' and id = 'content-analysis';
+
+update public.pw_modules
+  set beta = true, featured = false, position = 2
+  where project_id = 'policy-gap-2-0' and id = 'member-states';
+
+update public.pw_modules
+  set beta = true, featured = false, position = 3
+  where project_id = 'policy-gap-2-0' and id = 'recommendations';
