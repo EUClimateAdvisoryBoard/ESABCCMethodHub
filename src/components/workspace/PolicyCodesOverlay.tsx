@@ -42,6 +42,11 @@ import {
 import type { CodeNode } from '@/lib/content-analysis/types';
 import type { PolicyCode } from '@/lib/project-workspace/db';
 import { pwApi } from '@/lib/project-workspace/client';
+import { useMasterTagStatus, tagKey } from '@/lib/content-analysis/useMasterTagStatus';
+import TagOriginBadge from '@/components/content-analysis/TagOriginBadge';
+
+/** AI/human status accessors threaded down to the per-policy master chips. */
+type OriginApi = ReturnType<typeof useMasterTagStatus>;
 
 // A few common palette swatches users can recolour custom codes with.
 const COLOR_SWATCHES = [
@@ -203,6 +208,8 @@ export default function PolicyCodesOverlay({
   const [groupBy, setGroupBy] = useState<GroupBy>('master');
   const [expandedKey, setExpandedKey] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+  // AI/human provenance for every master tag in the corpus (loaded once).
+  const originApi = useMasterTagStatus(null);
   const [error, setError] = useState<string | null>(null);
   const [editing, setEditing] = useState<{
     codeId: string;
@@ -495,6 +502,7 @@ export default function PolicyCodesOverlay({
           totalActiveCodes={totalActiveCodes}
           isSignedIn={isSignedIn}
           busy={busy}
+          originApi={originApi}
           onEdit={cc =>
             setEditing({
               codeId: cc.id,
@@ -608,6 +616,7 @@ function MasterGrouping({
   totalActiveCodes,
   isSignedIn,
   busy,
+  originApi,
   onEdit,
   onMerge,
   onHideMaster,
@@ -621,6 +630,7 @@ function MasterGrouping({
   totalActiveCodes: number;
   isSignedIn: boolean;
   busy: boolean;
+  originApi: OriginApi;
   onEdit: (cc: CustomCodeSummary) => void;
   onMerge: (cc: CustomCodeSummary) => void;
   onHideMaster: (codeId: string) => void;
@@ -647,6 +657,7 @@ function MasterGrouping({
           onToggle={onToggle}
           isSignedIn={isSignedIn}
           busy={busy}
+          originApi={originApi}
           onHideMaster={onHideMaster}
           onRemoveFromPolicy={onRemoveFromPolicy}
         />
@@ -740,6 +751,7 @@ function MasterTreeRow({
   onToggle,
   isSignedIn,
   busy,
+  originApi,
   onHideMaster,
   onRemoveFromPolicy,
 }: {
@@ -749,6 +761,7 @@ function MasterTreeRow({
   onToggle: (key: string) => void;
   isSignedIn: boolean;
   busy: boolean;
+  originApi: OriginApi;
   onHideMaster: (codeId: string) => void;
   onRemoveFromPolicy: (codeId: string, policyId: string) => void;
 }) {
@@ -814,6 +827,8 @@ function MasterTreeRow({
               isSignedIn={isSignedIn}
               busy={busy}
               onRemove={pid => onRemoveFromPolicy(code.id, pid)}
+              codeId={code.id}
+              originApi={originApi}
             />
           )}
           {children.map(child => (
@@ -825,6 +840,7 @@ function MasterTreeRow({
               onToggle={onToggle}
               isSignedIn={isSignedIn}
               busy={busy}
+              originApi={originApi}
               onHideMaster={onHideMaster}
               onRemoveFromPolicy={onRemoveFromPolicy}
             />
@@ -953,18 +969,24 @@ function PolicyChipList({
   isSignedIn,
   busy,
   onRemove,
+  codeId,
+  originApi,
 }: {
   policyIds: string[];
   color: string;
   isSignedIn: boolean;
   busy: boolean;
   onRemove?: (policyId: string) => void;
+  /** Master code id — enables the AI/human badge per (policy, code) pair. */
+  codeId?: string;
+  originApi?: OriginApi;
 }) {
   return (
     <ul className="space-y-0.5 mt-0.5 mb-2">
       {policyIds.map(pid => {
         const p = SECTOR_POLICIES.find(x => x.id === pid);
         if (!p) return null;
+        const showBadge = !!codeId && !!originApi;
         return (
           <li key={pid} className="flex items-center gap-2 text-[10px] text-tertiary-dark pl-2 py-0.5">
             <span
@@ -972,6 +994,16 @@ function PolicyChipList({
               style={{ backgroundColor: color }}
             />
             <span className="flex-1">{p.name}</span>
+            {showBadge && (
+              <TagOriginBadge
+                origin={originApi!.isConfirmed(pid, codeId!) ? 'human' : 'ai'}
+                canEdit={originApi!.isSignedIn}
+                busy={originApi!.busyKey === tagKey(pid, codeId!)}
+                confirmedByName={originApi!.confirmed.get(tagKey(pid, codeId!))?.confirmedByName}
+                onConfirm={() => originApi!.confirm(pid, codeId!)}
+                onRevert={() => originApi!.revert(pid, codeId!)}
+              />
+            )}
             {p.acronym && (
               <span className="text-tertiary-light">{p.acronym}</span>
             )}
