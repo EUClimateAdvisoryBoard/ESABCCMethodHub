@@ -86,6 +86,10 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
   const [sel, setSel] = useState<{ r: number; c: number }>({ r: 0, c: 1 });
   const [bar, setBar] = useState(''); // formula-bar text
   const [barFocused, setBarFocused] = useState(false);
+  // Excel-style fill-handle drag: copy the source cell's value down/up the column.
+  const [fillDrag, setFillDrag] = useState<{ startR: number; col: number; endR: number } | null>(
+    null
+  );
 
   const cellRefs = useRef(new Map<string, HTMLElement>());
   const setCellRef = (key: string) => (el: HTMLElement | null) => {
@@ -246,6 +250,73 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
     if (value.trim().startsWith('=')) {
       if (setColumnFormula(col.id, value)) setCell(rowIdx, col.id, ''); // drop the typed "="
     }
+  }
+
+  // ── fill-handle drag (Excel-style copy down) ───────────────────────────────
+  useEffect(() => {
+    if (!fillDrag) return;
+    function onMove(e: PointerEvent) {
+      const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
+      const cell = el?.closest('[data-fill-row]') as HTMLElement | null;
+      if (!cell) return;
+      const r = Number(cell.dataset.fillRow);
+      if (Number.isInteger(r)) setFillDrag(prev => (prev ? { ...prev, endR: r } : prev));
+    }
+    function onUp() {
+      setFillDrag(curr => {
+        if (curr) applyFill(curr);
+        return null;
+      });
+    }
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerup', onUp);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerup', onUp);
+    };
+    // applyFill closes over rows/columns, but reading the latest via setRows
+    // means we don't need it in the deps.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [fillDrag !== null]);
+
+  function applyFill(d: { startR: number; col: number; endR: number }) {
+    const from = Math.min(d.startR, d.endR);
+    const to = Math.max(d.startR, d.endR);
+    if (from === to) return;
+    if (d.col === 0) {
+      // Year column: continue the year sequence (+1 per row away from source).
+      setRows(prev => {
+        const baseYear = prev[d.startR]?.year;
+        if (baseYear === undefined) return prev;
+        const next = prev.map(r => ({ ...r, cells: { ...r.cells } }));
+        const used = new Set<number>();
+        for (let i = 0; i < next.length; i++) {
+          if (i < from || i > to) used.add(next[i].year);
+        }
+        used.add(baseYear);
+        for (let i = from; i <= to; i++) {
+          if (i === d.startR) continue;
+          let y = baseYear + (i - d.startR);
+          while (used.has(y)) y += i >= d.startR ? 1 : -1;
+          used.add(y);
+          next[i] = { ...next[i], year: y };
+        }
+        next.sort((a, b) => a.year - b.year);
+        return next;
+      });
+      return;
+    }
+    const colIdx = d.col - 1;
+    setRows(prev => {
+      const col = columns[colIdx];
+      if (!col || col.formula) return prev;
+      const source = prev[d.startR]?.cells[col.id] ?? '';
+      return prev.map((r, i) =>
+        i >= from && i <= to && i !== d.startR
+          ? { ...r, cells: { ...r.cells, [col.id]: source } }
+          : r
+      );
+    });
   }
 
   // ── clipboard paste (Excel / TSV / CSV) ────────────────────────────────────
@@ -605,10 +676,21 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
                   </td>
                 </tr>
               )}
-              {rows.map((row, ri) => (
+              {rows.map((row, ri) => {
+                const inFillRange = (gc: number) =>
+                  !!fillDrag &&
+                  fillDrag.col === gc &&
+                  ri >= Math.min(fillDrag.startR, fillDrag.endR) &&
+                  ri <= Math.max(fillDrag.startR, fillDrag.endR);
+                return (
                 <tr key={row.year}>
                   {/* Year cell */}
-                  <td className="sticky left-0 z-10 bg-white border border-grey-200 p-0">
+                  <td
+                    data-fill-row={ri}
+                    className={`sticky left-0 z-10 bg-white border border-grey-200 p-0 relative ${
+                      inFillRange(0) ? 'bg-primary/10' : ''
+                    }`}
+                  >
                     <input
                       ref={setCellRef(`${ri}:0`)}
                       type="number"
@@ -620,14 +702,26 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
                         sel.r === ri && sel.c === 0 ? 'ring-2 ring-primary ring-inset' : ''
                       }`}
                     />
+                    {sel.r === ri && sel.c === 0 && !fillDrag && (
+                      <FillHandle
+                        onStart={() => setFillDrag({ startR: ri, col: 0, endR: ri })}
+                      />
+                    )}
                   </td>
                   {columns.map((c, ci) => {
                     const gc = ci + 1;
                     const derived = !!c.formula;
                     const val = computed[ci]?.[ri];
                     const selected = sel.r === ri && sel.c === gc;
+                    const filling = inFillRange(gc);
                     return (
-                      <td key={c.id} className="border border-grey-200 p-0">
+                      <td
+                        key={c.id}
+                        data-fill-row={ri}
+                        className={`border border-grey-200 p-0 relative ${
+                          filling ? 'bg-primary/10' : ''
+                        }`}
+                      >
                         {derived ? (
                           <div
                             ref={setCellRef(`${ri}:${gc}`)}
@@ -660,6 +754,11 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
                             } ${selected ? 'ring-2 ring-primary ring-inset' : ''}`}
                           />
                         )}
+                        {selected && !derived && !fillDrag && (
+                          <FillHandle
+                            onStart={() => setFillDrag({ startR: ri, col: gc, endR: ri })}
+                          />
+                        )}
                       </td>
                     );
                   })}
@@ -674,7 +773,8 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
                     </button>
                   </td>
                 </tr>
-              ))}
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -698,6 +798,20 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
 
 // Give the formula-bar input a stable id so header "edit formula" can focus it.
 // (Applied via the element below — kept here to document the contract.)
+
+function FillHandle({ onStart }: { onStart: () => void }) {
+  return (
+    <div
+      onPointerDown={e => {
+        e.preventDefault();
+        e.stopPropagation();
+        onStart();
+      }}
+      className="absolute -bottom-[3px] -right-[3px] w-[7px] h-[7px] bg-primary border border-white cursor-crosshair z-20"
+      title="Drag down to fill the column with this value"
+    />
+  );
+}
 
 function ColumnHeader({
   col,
