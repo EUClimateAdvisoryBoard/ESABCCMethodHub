@@ -62,8 +62,8 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
         kind: 'recommendations',
         name: 'Past recommendations tracker',
         description:
-          'Recommendations from the 2024 ESABCC progress report, with ' +
-          'status and dated uptake events.',
+          'Recommendations from every ESABCC report, with status and dated ' +
+          'uptake events.',
       },
       {
         id: 'member-states',
