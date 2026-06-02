@@ -18,6 +18,7 @@
  */
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
 import {
   SECTORS,
@@ -25,7 +26,10 @@ import {
   type SectorPolicy,
   type SectorId,
   getCitationLinks,
+  getViewerPolicyId,
 } from '@/data/sectoral-policies';
+import { policies } from '@/data/policies';
+import { linkToContentAnalysis } from '@/lib/cross-module-links';
 import { pwApi } from '@/lib/project-workspace/client';
 import type {
   PolicyAnnotation,
@@ -564,6 +568,17 @@ function PolicyBody({
     ? `https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:${policy.ceLexId}`
     : null;
 
+  // "Detail" deep-link into the Content Analysis workbench. The sector-policy
+  // id is mapped to the matching content-analysis document id; the button is
+  // only shown when that document actually exists in the corpus so we never
+  // render a dead link.
+  const viewerId = getViewerPolicyId(policy.id);
+  const hasContentAnalysisDoc = policies.some(p => p.id === viewerId);
+  const contentAnalysisUrl = linkToContentAnalysis({
+    policyId: viewerId,
+    context: `${policy.acronym ? `${policy.name} (${policy.acronym})` : policy.name} — opened from the Project Workspace policy analysis`,
+  });
+
   const display = {
     meaning: overrides.meaning ?? policy.meaning,
     currentRequirement: overrides.currentRequirement ?? policy.currentRequirement,
@@ -597,20 +612,44 @@ function PolicyBody({
         {policy.adopted && (
           <span className="text-[10px] text-tertiary">adopted {policy.adopted}</span>
         )}
-        <div className="flex flex-wrap gap-1 ml-auto">
-          {policy.sectors.map(s => {
-            const sec = SECTORS.find(x => x.id === s);
-            if (!sec) return null;
-            return (
-              <span
-                key={s}
-                className="text-[9px] px-1.5 py-0.5 rounded"
-                style={{ backgroundColor: sec.color + '20', color: sec.color }}
+        <div className="flex items-center gap-2 ml-auto">
+          {hasContentAnalysisDoc && (
+            <Link
+              href={contentAnalysisUrl}
+              title="Open this policy in the Content Analysis workbench — full text, AI tags and coded segments"
+              className="inline-flex items-center gap-1 text-[10px] font-semibold px-2 py-1 rounded border border-secondary/40 text-secondary hover:bg-secondary hover:text-white transition-colors"
+            >
+              Detail
+              <svg
+                width="11"
+                height="11"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                aria-hidden="true"
               >
-                {sec.name}
-              </span>
-            );
-          })}
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </Link>
+          )}
+          <div className="flex flex-wrap gap-1">
+            {policy.sectors.map(s => {
+              const sec = SECTORS.find(x => x.id === s);
+              if (!sec) return null;
+              return (
+                <span
+                  key={s}
+                  className="text-[9px] px-1.5 py-0.5 rounded"
+                  style={{ backgroundColor: sec.color + '20', color: sec.color }}
+                >
+                  {sec.name}
+                </span>
+              );
+            })}
+          </div>
         </div>
       </div>
 
