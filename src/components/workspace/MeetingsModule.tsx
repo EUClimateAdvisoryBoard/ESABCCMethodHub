@@ -626,11 +626,16 @@ function Recorder({
   const recRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // Browser Web Speech API runs in parallel to MediaRecorder so we can fall
+  // back to it when the server has no Whisper provider configured.
+  const speechRef = useRef<SpeechRecognitionLike | null>(null);
+  const speechTextRef = useRef<string>('');
 
   useEffect(() => {
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
       recRef.current?.stream.getTracks().forEach(t => t.stop());
+      try { speechRef.current?.stop(); } catch { /* noop */ }
     };
   }, []);
 
@@ -650,11 +655,16 @@ function Recorder({
       };
       rec.onstop = () => {
         stream.getTracks().forEach(t => t.stop());
+        try { speechRef.current?.stop(); } catch { /* noop */ }
         const blob = new Blob(chunksRef.current, { type: rec.mimeType || 'audio/webm' });
         transcribe(blob);
       };
       rec.start();
       recRef.current = rec;
+      speechTextRef.current = '';
+      speechRef.current = startWebSpeech(t => {
+        speechTextRef.current = (speechTextRef.current + ' ' + t).trim();
+      });
       setElapsed(0);
       setState('recording');
       timerRef.current = setInterval(() => setElapsed(e => e + 1), 1000);
@@ -669,23 +679,40 @@ function Recorder({
     setState('transcribing');
   }
 
+  async function appendTranscript(text: string, provider: 'whisper' | 'browser') {
+    const stamp = new Date().toLocaleString('en-GB');
+    const label = provider === 'browser' ? 'Transcript · browser' : 'Transcript';
+    const addition = `\n\n— ${label} (${stamp}) —\n${text}`;
+    const nextNotes = (meeting.notes + addition).trim();
+    const { meeting: updated } = await pwApi.patchMeeting(meeting.id, { notes: nextNotes });
+    onChange(updated);
+  }
+
   async function transcribe(blob: Blob) {
     const ext = blob.type.includes('mp4') ? 'mp4' : blob.type.includes('ogg') ? 'ogg' : 'webm';
     const file = new File([blob], `meeting-${Date.now()}.${ext}`, { type: blob.type });
+    const browserText = speechTextRef.current.trim();
     try {
       const r = await pwApi.transcribeMeeting(meeting.id, file);
       if (r.ok && r.text) {
-        const stamp = new Date().toLocaleString('en-GB');
-        const addition = `\n\n— Transcript (${stamp}) —\n${r.text}`;
-        const nextNotes = (meeting.notes + addition).trim();
-        const { meeting: updated } = await pwApi.patchMeeting(meeting.id, { notes: nextNotes });
-        onChange(updated);
+        await appendTranscript(r.text, 'whisper');
         setNote('Transcript added to the notes below.');
+      } else if (r.reason === 'no-api-key' && browserText) {
+        await appendTranscript(browserText, 'browser');
+        setNote('Server transcription is not configured — used the browser’s on-device speech recognition instead (lower accuracy).');
+      } else if (r.reason === 'no-api-key') {
+        setNote('Transcription isn’t configured on the server, and your browser doesn’t support on-device speech recognition. Try Chrome or Edge, or configure Whisper.');
       } else {
         setNote(reasonMessage(r.reason) || r.error || 'Transcription failed.');
       }
     } catch (e) {
-      setNote((e as Error).message);
+      // Network error reaching the server — still salvage the browser transcript if we have one.
+      if (browserText) {
+        await appendTranscript(browserText, 'browser');
+        setNote('Could not reach the server — used the browser’s on-device transcript instead.');
+      } else {
+        setNote((e as Error).message);
+      }
     } finally {
       setState('idle');
     }
@@ -1235,6 +1262,60 @@ function fmtTime(secs: number): string {
   const m = Math.floor(secs / 60);
   const s = secs % 60;
   return `${m}:${String(s).padStart(2, '0')}`;
+}
+
+// ── Web Speech API fallback ──────────────────────────────────────────────────
+// Chrome/Edge (and recent Safari) expose SpeechRecognition under the
+// `webkitSpeechRecognition` global. We use it opportunistically: it streams
+// final transcript chunks while the meeting is being recorded, and we keep
+// them around in case the server has no Whisper provider configured.
+
+interface SpeechRecognitionLike {
+  start: () => void;
+  stop: () => void;
+  abort: () => void;
+}
+
+function startWebSpeech(onFinal: (text: string) => void): SpeechRecognitionLike | null {
+  if (typeof window === 'undefined') return null;
+  const Ctor =
+    (window as unknown as { SpeechRecognition?: new () => SpeechRecognitionLike })
+      .SpeechRecognition ||
+    (window as unknown as { webkitSpeechRecognition?: new () => SpeechRecognitionLike })
+      .webkitSpeechRecognition;
+  if (!Ctor) return null;
+  try {
+    const rec = new Ctor() as SpeechRecognitionLike & {
+      continuous: boolean;
+      interimResults: boolean;
+      lang?: string;
+      onresult: (e: { resultIndex: number; results: ArrayLike<{ 0: { transcript: string }; isFinal: boolean }> }) => void;
+      onerror: (e: unknown) => void;
+      onend: () => void;
+    };
+    rec.continuous = true;
+    rec.interimResults = false;
+    if (typeof navigator !== 'undefined' && navigator.language) rec.lang = navigator.language;
+    rec.onresult = e => {
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const r = e.results[i];
+        if (r.isFinal) onFinal(r[0].transcript.trim());
+      }
+    };
+    rec.onerror = () => { /* swallow — the blob is still uploaded to the server */ };
+    // SpeechRecognition stops itself on some browsers after periods of silence;
+    // restart so we keep collecting until MediaRecorder stops it explicitly.
+    let stopped = false;
+    rec.onend = () => { if (!stopped) { try { rec.start(); } catch { /* noop */ } } };
+    rec.start();
+    return {
+      start: () => rec.start(),
+      stop: () => { stopped = true; try { rec.stop(); } catch { /* noop */ } },
+      abort: () => { stopped = true; try { rec.abort(); } catch { /* noop */ } },
+    };
+  } catch {
+    return null;
+  }
 }
 
 function reasonMessage(reason?: string): string {

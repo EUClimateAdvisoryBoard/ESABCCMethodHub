@@ -1,11 +1,14 @@
 # Azure Whisper — meeting transcription setup
 
 The **Meetings** module (Project Workspace) can record audio in the browser
-and turn it into notes automatically. Speech-to-text is **Whisper-only**: it
-needs either an OpenAI key *or* an **Azure OpenAI Whisper deployment**. The
-Anthropic / Gemini keys that power the rest of the app's AI (summaries, the
-"three key points" button) **do not** do audio — so transcription has to be
-wired up separately.
+and turn it into notes automatically. The preferred path is **Whisper** —
+either via OpenAI or an **Azure OpenAI Whisper deployment** — which gives
+the best accuracy. If no Whisper key is configured, the recorder falls back
+to the browser's **Web Speech API** (Chrome/Edge/Safari) at zero cost but
+lower quality (see [No-key fallback](#no-key-fallback-web-speech-api)
+below). The Anthropic / Gemini keys that power the rest of the app's AI
+(summaries, the "three key points" button) **do not** do audio — so
+transcription has to be wired up separately.
 
 This guide walks an administrator through creating the Azure deployment and
 pointing the app at it. Budget ~15 minutes.
@@ -133,9 +136,31 @@ provider — re-check the three variables and that the app was restarted.
 | `400` about API version | Set `AZURE_OPENAI_API_VERSION` to a version your resource supports. |
 | Recording works but never transcribes | Audio > 25 MB, or the browser blocked the microphone (check the site's permission prompt). |
 
-## No-key fallback
+## No-key fallback (Web Speech API)
 
-If you don't want to provision Whisper at all, the recorder still works for
-capturing audio, but won't produce text. A lower-accuracy, **browser-based**
-transcription (Web Speech API, Chrome/Edge) can be added on request — it needs
-no server key but isn't suitable for long or multi-speaker meetings.
+If no Whisper provider is configured, the recorder transparently falls back
+to the browser's built-in **Web Speech API**:
+
+- Runs in parallel with the audio recording — no extra step for the user.
+- **No server key, no per-minute cost.** Speech recognition happens
+  client-side (or via the browser vendor's free service, depending on the
+  browser).
+- Transcript blocks captured this way are labelled
+  `— Transcript · browser (…) —` in the notes, so it's clear which path
+  produced them.
+
+Caveats:
+
+- **Browser support:** works in Chrome, Edge and recent Safari; **Firefox
+  does not implement** the API. On unsupported browsers the recorder still
+  captures audio, but you'll need to type notes manually.
+- **Accuracy is materially lower than Whisper**, especially for accents,
+  cross-talk, technical vocabulary and meetings longer than ~10 minutes.
+- **Single language at a time** — the app uses the browser's UI language;
+  multilingual meetings transcribe poorly.
+- The recognizer **needs an active network connection** in most browsers
+  (Chrome streams audio to Google's service); only a few browser builds
+  run it fully offline.
+
+For real meetings (board, multi-speaker, recorded archive) keep Whisper
+configured — the browser path is a safety net, not a replacement.
