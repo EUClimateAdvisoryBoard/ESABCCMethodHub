@@ -1980,11 +1980,11 @@ End Function
 ' SEARCH ENGINE
 ' ============================================================================
 
-Private Sub DoSearch(query As String)
+Private Sub DoSearch(query As String, Optional projectName As String = "")
     m_ResCount = 0
 
     Dim json As String
-    json = FetchSearchResults(query)
+    json = FetchSearchResults(query, projectName)
 
     If json = "" Or json = "[]" Then Exit Sub
 
@@ -2122,11 +2122,16 @@ Private Sub ParseResultsJsonLibrary(json As String)
     m_ResCount = total
 End Sub
 
-Private Function FetchSearchResults(query As String) As String
+Private Function FetchSearchResults(query As String, Optional projectName As String = "") As String
     On Error GoTo FetchErr
 
     Dim url As String
-    If m_UseBridge Then
+    If projectName <> "" Then
+        ' Project view always uses the web API (the bridge has no concept of
+        ' project tags). A higher limit lets the user browse the whole report.
+        url = WEBAPP_URL & "/api/references?q=" & UrlEncode(query) & _
+              "&project=" & UrlEncode(projectName) & "&limit=200"
+    ElseIf m_UseBridge Then
         url = BRIDGE_URL & "/api/references/search?q=" & UrlEncode(query)
     Else
         url = WEBAPP_URL & "/api/references?q=" & UrlEncode(query) & "&limit=30"
@@ -2437,13 +2442,20 @@ End Function
 ' USERFORM BRIDGE FUNCTIONS (Public — called by UserForm event handlers)
 ' ============================================================================
 
-Public Sub FormBridge_Search(query As String, lst As Object, lblStatus As Object)
+Public Sub FormBridge_Search(query As String, lst As Object, lblStatus As Object, Optional projectName As String = "")
     Application.StatusBar = "ESABCC: Searching..."
     DoEvents
-    If Trim(query) = "" Then
+
+    Dim proj As String: proj = NormalizeProjectChoice(projectName)
+
+    If proj <> "" Then
+        ' Project view: scope the whole library to one report (server-filtered),
+        ' optionally narrowed further by the query text.
+        DoSearch query, proj
+    ElseIf Trim(query) = "" Then
         LoadLatestAddedRefs
     Else
-        DoSearch query
+        DoSearch query, ""
     End If
     Application.StatusBar = ""
 
@@ -2478,6 +2490,46 @@ Public Sub FormBridge_Search(query As String, lst As Object, lblStatus As Object
         End If
         lst.List(lst.ListCount - 1, 2) = doiCol
     Next i
+End Sub
+
+' The combo's "(All projects)" sentinel and blank both mean "no filter".
+Private Function NormalizeProjectChoice(ByVal projectName As String) As String
+    Dim p As String: p = Trim(projectName)
+    If p = "(All projects)" Then p = ""
+    NormalizeProjectChoice = p
+End Function
+
+' Populate the search form's Project combo from the live library. Pulls the
+' distinct project list (the reports references have been tagged with) from
+' /api/references?facet=projects so the user can pick a report and browse just
+' its literature -- handy when you remember the report but not the paper title.
+Public Sub FormBridge_LoadProjects(cmb As Object)
+    On Error GoTo Done
+    cmb.Clear
+    cmb.AddItem "(All projects)"
+
+    Dim http As Object
+    Set http = CreateHttpObject()
+    http.Open "GET", WEBAPP_URL & "/api/references?facet=projects", False
+    http.setRequestHeader "Accept", "application/json"
+    http.send
+    If http.Status <> 200 Then GoTo Done
+
+    ' Response shape: { "projects": [ { "name": "...", "count": N }, ... ] }
+    Dim resp As String: resp = http.responseText
+    Dim pos As Long: pos = 1
+    Do
+        Dim namestart As Long
+        namestart = InStr(pos, resp, """name""")
+        If namestart = 0 Then Exit Do
+        Dim nm As String
+        nm = JsonVal(Mid(resp, namestart, 400), "name")
+        If nm <> "" Then cmb.AddItem nm
+        pos = namestart + 6
+    Loop
+
+Done:
+    If cmb.ListCount > 0 Then cmb.ListIndex = 0
 End Sub
 
 ' Called by the search UserForm's "Add to Group" button. Adds the selected
@@ -2777,22 +2829,34 @@ Private Function BuildSearchForm(proj As Object) As Boolean
     c.Left = 420: c.Top = 54: c.Width = 96: c.Height = 26
     c.Font.Size = 10: c.Font.Bold = True
 
+    ' Project filter label
+    Set c = d.Controls.Add("Forms.Label.1", "lblProject", True)
+    c.Caption = "Project:"
+    c.Left = 14: c.Top = 86: c.Width = 48: c.Height = 16
+    c.Font.Size = 9: c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    ' Project filter combo - scopes the list to one report's literature
+    Set c = d.Controls.Add("Forms.ComboBox.1", "cmbProject", True)
+    c.Left = 64: c.Top = 84: c.Width = 452: c.Height = 20
+    c.Font.Size = 9
+    c.Style = 2  ' fmStyleDropDownList - pick from the list only
+
     ' Hint
     Set c = d.Controls.Add("Forms.Label.1", "lblHint", True)
     c.Caption = "Leave empty and click Search to see recently added references"
-    c.Left = 14: c.Top = 82: c.Width = 504: c.Height = 14
+    c.Left = 14: c.Top = 110: c.Width = 504: c.Height = 14
     c.Font.Size = 8: c.ForeColor = RGB(120, 120, 120): c.BackStyle = 0
 
     ' Status
     Set c = d.Controls.Add("Forms.Label.1", "lblStatus", True)
     c.Caption = ""
-    c.Left = 14: c.Top = 98: c.Width = 504: c.Height = 16
+    c.Left = 14: c.Top = 126: c.Width = 504: c.Height = 16
     c.Font.Size = 9: c.Font.Bold = True
     c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
 
     ' Results list (3-column)
     Set c = d.Controls.Add("Forms.ListBox.1", "lstResults", True)
-    c.Left = 14: c.Top = 118: c.Width = 504: c.Height = 258
+    c.Left = 14: c.Top = 146: c.Width = 504: c.Height = 230
     c.Font.Size = 10
     c.ColumnCount = 3
     c.ColumnWidths = "148;238;115"
@@ -2844,7 +2908,8 @@ Private Function BuildSearchForm(proj As Object) As Boolean
 
     ' Inject event handler code
     Dim s As String
-    s = "Private Sub UserForm_Initialize()" & vbCrLf & _
+    s = "Private mReady As Boolean" & vbCrLf & vbCrLf & _
+        "Private Sub UserForm_Initialize()" & vbCrLf & _
         "    If ESABCC_RefManager.g_GroupMode Then" & vbCrLf & _
         "        Me.btnInsert.Caption = ""Add to Group""" & vbCrLf & _
         "        Me.lblBasket.Visible = True" & vbCrLf & _
@@ -2859,13 +2924,19 @@ Private Function BuildSearchForm(proj As Object) As Boolean
         "        Me.btnBasketRemove.Visible = False" & vbCrLf & _
         "        Me.btnDone.Visible = False" & vbCrLf & _
         "    End If" & vbCrLf & _
+        "    ESABCC_RefManager.FormBridge_LoadProjects Me.cmbProject" & vbCrLf & _
         "    Me.txtSearch.SetFocus" & vbCrLf & _
+        "    mReady = True" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub btnSearch_Click()" & vbCrLf & _
         "    Me.lblStatus.Caption = ""Searching...""" & vbCrLf & _
         "    Me.lblStatus.ForeColor = &H808080" & vbCrLf & _
         "    DoEvents" & vbCrLf & _
-        "    ESABCC_RefManager.FormBridge_Search Me.txtSearch.Value, Me.lstResults, Me.lblStatus" & vbCrLf & _
+        "    ESABCC_RefManager.FormBridge_Search Me.txtSearch.Value, Me.lstResults, Me.lblStatus, Me.cmbProject.Value" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub cmbProject_Change()" & vbCrLf & _
+        "    If Not mReady Then Exit Sub" & vbCrLf & _
+        "    btnSearch_Click" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub txtSearch_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)" & vbCrLf & _
         "    If KeyCode = 13 Then btnSearch_Click" & vbCrLf & _

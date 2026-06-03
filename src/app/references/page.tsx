@@ -664,9 +664,10 @@ export default function ReferencesPage() {
                 (see showToast() calls in handleAddToReadingList / onShare). */}
 
             {/* Project view bar — works in both fallback and Supabase modes.
-                Lets the user scope the shared library to one report's
-                references; the rail panel and this control share state. */}
-            {projectSummaries.length > 0 && (view === 'list') && (
+                Always shown in list view so it's discoverable even before any
+                project tags exist; the rail panel and this control share
+                state. Lets the user scope the shared library to one report. */}
+            {view === 'list' && references.length > 0 && (
               <div className="flex flex-wrap items-center gap-2 mb-3 text-sm">
                 <label htmlFor="ref-project-view" className="text-tertiary font-medium">
                   Project view:
@@ -675,14 +676,19 @@ export default function ReferencesPage() {
                   id="ref-project-view"
                   value={projectFilter}
                   onChange={(e) => setProjectFilter(e.target.value)}
-                  className="bg-grey-100 border border-grey-200 rounded px-2 py-1 text-tertiary-dark"
+                  disabled={projectSummaries.length === 0}
+                  className="bg-grey-100 border border-grey-200 rounded px-2 py-1 text-tertiary-dark disabled:opacity-60"
                 >
                   <option value="">All references</option>
                   {projectSummaries.map((p) => (
                     <option key={p.name} value={p.name}>{p.name} ({p.count})</option>
                   ))}
                 </select>
-                {projectFilter.trim() && (
+                {projectSummaries.length === 0 ? (
+                  <span className="text-tertiary">
+                    No projects yet — open a reference and set its <strong className="font-medium">Report / Project</strong> to file it under a report (e.g. Policy Gap 2.0).
+                  </span>
+                ) : projectFilter.trim() ? (
                   <>
                     <span className="text-tertiary">
                       {displayedReferences.length.toLocaleString()} in “{projectFilter}”
@@ -695,7 +701,7 @@ export default function ReferencesPage() {
                       Clear
                     </button>
                   </>
-                )}
+                ) : null}
               </div>
             )}
 
