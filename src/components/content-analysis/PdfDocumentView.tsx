@@ -113,6 +113,26 @@ export default function PdfDocumentView({
 
   const codeById = useMemo(() => new Map(codes.map(c => [c.id, c])), [codes]);
 
+  // Scroll the highlighted block into view (e.g. when a coded segment is
+  // clicked in the sidebar). The target page/overlay may not be rendered yet,
+  // so retry a few times while react-pdf catches up.
+  useEffect(() => {
+    if (!highlightedBlockId) return;
+    let cancelled = false;
+    const tryScroll = (attempt: number) => {
+      if (cancelled) return;
+      const sel = `[data-block-id="${CSS.escape(highlightedBlockId)}"]`;
+      const el = containerRef.current?.querySelector(sel);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      if (attempt < 12) setTimeout(() => tryScroll(attempt + 1), 150);
+    };
+    tryScroll(0);
+    return () => { cancelled = true; };
+  }, [highlightedBlockId]);
+
   return (
     <div ref={containerRef} className="flex flex-col items-center">
       {onSelectText && (
@@ -312,6 +332,7 @@ function BlockOverlay({
 
   return (
     <div
+      data-block-id={block.id}
       title={`${block.kind} · p${block.page}`}
       style={style}
       onClick={onClick ? e => { e.stopPropagation(); onClick(); } : undefined}
