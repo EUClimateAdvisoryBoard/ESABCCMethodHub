@@ -42,6 +42,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useAuth } from '@/lib/auth-context';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
   useLiveReferences,
@@ -138,6 +139,15 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     setDocumentSummary,
   } = useContentAnalysis();
   const liveRefs = useLiveReferences();
+  const { user, displayName } = useAuth();
+
+  /** Stamp a saved tag comment with the signed-in author so the segments
+   *  list can show "who said it". */
+  const handleUpdateNote = useCallback(
+    (id: string, note: string) =>
+      updateSegmentNote(id, note, { name: displayName ?? undefined, id: user?.id }),
+    [updateSegmentNote, displayName, user?.id],
+  );
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
   const [view, setView] = useState<'code' | 'analyse'>('code');
@@ -336,6 +346,22 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
+  };
+
+  /** Remove a document from this workspace's corpus, with a confirm — the
+   *  discoverable "delete document I added" control on each list row. Coded
+   *  segments are intentionally kept (they stay attributable to the project
+   *  and visible under its lens). */
+  const confirmRemoveFromCorpus = (id: string) => {
+    const doc = corpusDocs.find(d => d.id === id);
+    const label = doc?.shortTitle || doc?.title || 'this document';
+    if (
+      window.confirm(
+        `Remove “${label}” from this workspace?\n\nAny tags & comments you’ve already made on it are kept — you can add it back anytime.`,
+      )
+    ) {
+      removeFromCorpus(id);
+    }
   };
 
   const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }, codeId: string) => {
@@ -659,6 +685,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     selectedDocumentId={selectedDocument?.id ?? null}
                     onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setIngestState({ status: 'idle' }); }}
                     counts={docCounts}
+                    onRemove={confirmRemoveFromCorpus}
                   />
                 </div>
               )}
@@ -790,7 +817,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 selectedSegmentId={highlightedSegmentId}
                 onOpenSegment={setHighlightedSegmentId}
                 onDelete={deleteSegment}
-                onUpdateNote={updateSegmentNote}
+                onUpdateNote={handleUpdateNote}
                 requestCommentForId={commentForSegmentId}
                 onCommentRequestConsumed={() => setCommentForSegmentId(null)}
               />

@@ -201,6 +201,13 @@ export default function SegmentsList({
             const code = codeById.get(seg.codeId);
             const doc = docById.get(seg.documentId);
             const isSelected = selectedSegmentId === seg.id;
+            // Byline for the shared comment — who left it and when.
+            const noteDate = seg.noteUpdatedAt
+              ? new Date(seg.noteUpdatedAt).toLocaleDateString(undefined, {
+                  year: 'numeric', month: 'short', day: 'numeric',
+                })
+              : null;
+            const noteByline = [seg.noteAuthor, noteDate].filter(Boolean).join(' · ');
             return (
               <li key={seg.id}>
                 <div
@@ -274,9 +281,14 @@ export default function SegmentsList({
                         title="Edit comment"
                       >
                         <span aria-hidden className="text-[#00928F] text-[11px] leading-tight mt-px">💬</span>
-                        <p className="text-[11px] text-[#3D5265]/80 leading-snug flex-1 cursor-text hover:text-[#3D5265]">
-                          {seg.note}
-                        </p>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-[11px] text-[#3D5265]/80 leading-snug cursor-text hover:text-[#3D5265]">
+                            {seg.note}
+                          </p>
+                          {noteByline && (
+                            <p className="mt-0.5 text-[10px] text-[#8A95A3]">— {noteByline}</p>
+                          )}
+                        </div>
                         <span className="text-[10px] text-[#B8BCC2] opacity-0 group-hover/comment:opacity-100">edit</span>
                       </div>
                     ) : (
@@ -290,7 +302,12 @@ export default function SegmentsList({
                     )
                   ) : (
                     seg.note && (
-                      <p className="mt-1 text-[11px] text-[#3D5265]/70 line-clamp-2">{seg.note}</p>
+                      <div className="mt-1">
+                        <p className="text-[11px] text-[#3D5265]/70 line-clamp-2">{seg.note}</p>
+                        {noteByline && (
+                          <p className="mt-0.5 text-[10px] text-[#8A95A3]">— {noteByline}</p>
+                        )}
+                      </div>
                     )
                   )}
 

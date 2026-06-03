@@ -26,6 +26,7 @@ import type { CodedSegment } from '@/lib/content-analysis/types';
 
 const MAX_TEXT_LEN = 20000;
 const MAX_NOTE_LEN = 4000;
+const MAX_NAME_LEN = 200;
 const MAX_BATCH = 500;
 
 function clampString(v: unknown, max: number): string {
@@ -49,6 +50,10 @@ function coerceSegment(raw: unknown): CodedSegment | null {
     endChar: r.endChar,
     text: clampString(r.text, MAX_TEXT_LEN),
     note: clampString(r.note, MAX_NOTE_LEN),
+    noteAuthor:
+      typeof r.noteAuthor === 'string' ? clampString(r.noteAuthor, MAX_NAME_LEN) : undefined,
+    noteAuthorId: typeof r.noteAuthorId === 'string' ? r.noteAuthorId : undefined,
+    noteUpdatedAt: typeof r.noteUpdatedAt === 'string' ? r.noteUpdatedAt : undefined,
     projectId: typeof r.projectId === 'string' ? r.projectId : null,
     createdAt:
       typeof r.createdAt === 'string' ? r.createdAt : new Date().toISOString(),
@@ -111,7 +116,14 @@ export async function PATCH(request: NextRequest) {
     if (typeof body.note !== 'string') {
       return NextResponse.json({ error: 'note is required' }, { status: 400 });
     }
-    const ok = await updateSegmentNote(id, clampString(body.note, MAX_NOTE_LEN));
+    const author = {
+      name:
+        typeof body.noteAuthor === 'string'
+          ? clampString(body.noteAuthor, MAX_NAME_LEN)
+          : undefined,
+      id: typeof body.noteAuthorId === 'string' ? body.noteAuthorId : undefined,
+    };
+    const ok = await updateSegmentNote(id, clampString(body.note, MAX_NOTE_LEN), author);
     if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json({ status: 'updated', id });
   } catch (err) {

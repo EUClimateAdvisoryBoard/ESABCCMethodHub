@@ -12,6 +12,9 @@ interface Props {
   /** Per-document set of block IDs that have at least one segment.
       When provided, the row shows a coverage progress ring (M·05 #7). */
   coveredBlocks?: Record<string, Set<string>>;
+  /** When provided, each row exposes a remove control that takes the
+      document out of this workspace's corpus (coded segments are kept). */
+  onRemove?: (id: string) => void;
 }
 
 /**
@@ -25,6 +28,7 @@ export default function DocumentList({
   onSelect,
   counts,
   coveredBlocks,
+  onRemove,
 }: Props) {
   const codeById = new Map(codes.map(c => [c.id, c]));
 
@@ -44,11 +48,11 @@ export default function DocumentList({
         const covered = coveredBlocks?.[doc.id]?.size ?? 0;
         const coverage = totalBlocks > 0 ? Math.min(1, covered / totalBlocks) : 0;
         return (
-          <li key={doc.id}>
+          <li key={doc.id} className="relative group">
             <button
               type="button"
               onClick={() => onSelect(doc.id)}
-              className={`w-full text-left px-3 py-2 transition ${
+              className={`w-full text-left px-3 py-2 transition ${onRemove ? 'pr-8' : ''} ${
                 isSelected ? 'bg-[#00928F]/10' : 'hover:bg-[#F3F4F6]'
               }`}
             >
@@ -122,6 +126,17 @@ export default function DocumentList({
                 })}
               </div>
             </button>
+            {onRemove && (
+              <button
+                type="button"
+                onClick={() => onRemove(doc.id)}
+                className="absolute top-1.5 right-1.5 text-[#B8BCC2] hover:text-[#B83230] text-[15px] leading-none px-1 rounded opacity-0 group-hover:opacity-100 focus:opacity-100 transition"
+                aria-label={`Remove ${doc.shortTitle} from this workspace`}
+                title="Remove from this workspace (coded segments are kept)"
+              >
+                ×
+              </button>
+            )}
           </li>
         );
       })}

@@ -70,11 +70,15 @@ function postSegments(segments: CodedSegment[]): void {
   }).catch(err => logApiError('postSegments', err));
 }
 
-function patchSegmentNote(id: string, note: string): void {
+function patchSegmentNote(
+  id: string,
+  note: string,
+  author?: { name?: string; id?: string },
+): void {
   fetch('/api/content-analysis/segments', {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ id, note }),
+    body: JSON.stringify({ id, note, noteAuthor: author?.name, noteAuthorId: author?.id }),
     keepalive: true,
   }).catch(err => logApiError('patchSegmentNote', err));
 }
@@ -536,9 +540,30 @@ export function useContentAnalysis() {
     deleteSegmentRemote(id);
   }, []);
 
-  const updateSegmentNote = useCallback((id: string, note: string) => {
-    update(s => ({ ...s, segments: s.segments.map(seg => (seg.id === id ? { ...seg, note } : seg)) }));
-    patchSegmentNote(id, note);
+  /** Update the shared note ("comment") on a segment. `author` stamps the
+   *  comment with who wrote it (display name + auth id) so the segments list
+   *  can show a byline; pass it from the signed-in user. */
+  const updateSegmentNote = useCallback((
+    id: string,
+    note: string,
+    author?: { name?: string; id?: string },
+  ) => {
+    const now = new Date().toISOString();
+    update(s => ({
+      ...s,
+      segments: s.segments.map(seg =>
+        seg.id === id
+          ? {
+              ...seg,
+              note,
+              noteAuthor: author?.name,
+              noteAuthorId: author?.id,
+              noteUpdatedAt: now,
+            }
+          : seg,
+      ),
+    }));
+    patchSegmentNote(id, note, author);
   }, []);
 
   /** Resize a coded segment in place — used by the bracket-gutter context

@@ -184,6 +184,14 @@ export interface CodedSegment {
   endChar: number;
   text: string;
   note: string;
+  /** Who last wrote/edited the shared `note` (the tag comment), and when —
+   *  so the comment can show a byline like "Maria Schmidt · 3 Jun 2026".
+   *  `noteAuthor` is the display name; `noteAuthorId` the auth user id.
+   *  All optional: segments tagged before this shipped, or notes saved by a
+   *  signed-out user, simply have no byline. */
+  noteAuthor?: string;
+  noteAuthorId?: string;
+  noteUpdatedAt?: string;
   /** Segments created inside a project are scoped to it; master-level
    *  segments have `projectId === null`. */
   projectId: string | null;
