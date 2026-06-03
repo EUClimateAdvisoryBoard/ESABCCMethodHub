@@ -1,13 +1,33 @@
 [
   {
-    "title": "Speech by Commissioner Lahbib to the Committee on the Environment, Climate and Food Safety in the European Parliament",
-    "summary": "European Commission Speech Brussels, 02 Jun 2026 The Ebola outbreak in Uganda and DRC continues to spread at a rate faster than the response. Conflict in the Middle East is hitting the global economy, driving ...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1239",
+    "title": "Daily News 03 / 06 / 2026",
+    "summary": "European Commission Daily news Brussels, 03 Jun 2026 Eurobarometer shows continued public support for biodiversity protection across Europe\r\nPublished at the start of the EU Green Week, the Special Eurobarometer su...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1246",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-02T16:34:48.000Z",
+    "publishedDate": "2026-06-03T11:51:00.000Z",
     "tags": [
-      "agriculture"
+      "biodiversity"
+    ]
+  },
+  {
+    "title": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
+    "summary": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1245",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-03T11:25:23.000Z",
+    "tags": []
+  },
+  {
+    "title": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
+    "summary": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1185",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-02T22:00:00.000Z",
+    "tags": [
+      "energy"
     ]
   }
 ]
