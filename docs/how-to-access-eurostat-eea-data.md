@@ -128,6 +128,29 @@ above server-side and upserts the new points — no manual API calls.
 
 ---
 
+## 4b. Automated refresh (recommended) — the GitHub Action
+
+This repo ships a workflow that does the pulls for you on GitHub's
+runners (which have open network egress, unlike the Claude Code sandbox):
+
+- **Workflow:** `.github/workflows/refresh-indicators.yml` — runs monthly
+  and on-demand (**Actions → Refresh indicators from Eurostat & EEA →
+  Run workflow**).
+- **Fetcher:** `scripts/esabcc-indicators/refresh-from-sources.mjs`
+  (Node, no deps) — holds the recipe table, pulls each series, converts
+  units, keeps only years after the report baseline, flags them
+  `afterReport`, and patches `src/data/esabcc-indicators.ts`.
+- **Fact-check artifact:** `scripts/esabcc-indicators/render_verification_pdf.py`
+  regenerates `docs/Indicator-Refresh-Report.pdf` from the run's
+  provenance (every new value + source URL).
+- **Output:** the job opens a **pull request** (never a direct push to
+  `main`), so each automated value is reviewed against its source before
+  merging.
+
+Add an indicator to automation by extending the `RECIPES` table in the
+fetch script — the next run validates it empirically and reports any bad
+dataset code in the PR rather than writing garbage.
+
 ## 5. Recipes for the indicators left empty
 
 Run these from an unrestricted host (or wire them into the registry).
