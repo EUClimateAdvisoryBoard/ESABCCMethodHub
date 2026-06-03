@@ -8,6 +8,55 @@ import json
 import re
 
 
+# Honest, indicator-specific caveats for derivations that are approximate, are
+# really the published series (not a reconstruction), or rest on a scope/scaling
+# choice worth checking. Appended to the in-app derivation text.
+CAVEATS = {
+    "esabcc-t6b-foodcrop-biofuels":
+        "Year alignment is uncertain — the source workbook's columns were labelled 2011–2021 "
+        "but map onto the published 2005–2015 range. Confirm the correct years before relying on this.",
+    "esabcc-a3-nue":
+        "Not independently derived: nitrogen-use efficiency is taken as the published FAOSTAT ratio. "
+        "The underlying nitrogen input/output terms are not in the source workbook, so updating raw "
+        "data will not recompute it.",
+    "esabcc-e3-grid-co2-intensity":
+        "Not independently derived: the published EEA grid-intensity series is used directly rather "
+        "than rebuilt from emissions ÷ generation.",
+    "esabcc-t3b-air-passenger":
+        "Taken directly from the published Eurostat series; there is no underlying decomposition to recompute.",
+    "esabcc-t4-car-co2-intensity":
+        "Published series used directly; only 2020–2022 and on the WLTP test basis (not comparable with "
+        "older NEDC figures).",
+    "esabcc-i3-circular-mat-use":
+        "Published Eurostat indicator (sdg_12_41) stored directly — there is no calculation to reproduce.",
+    "esabcc-e4a-solar-pv-add":
+        "Computed as the year-on-year change in cumulative installed capacity, i.e. NET additions "
+        "(new minus decommissioned), which can differ from gross installations.",
+    "esabcc-e4b-wind-add":
+        "Captures onshore wind only, computed as the year-on-year change in cumulative capacity (NET "
+        "additions). If the indicator is meant to include offshore wind, this understates total additions.",
+    "esabcc-o1-ghg-total":
+        "International maritime is included at a fixed scope factor (≈0.64) — confirm it matches the "
+        "intended European Climate Law attribution. 'Waste and other sectors' is a residual (total net "
+        "emissions minus the listed sectors), so it absorbs any unlisted items.",
+    "esabcc-e1-energy-supply-ghg":
+        "The sectoral breakdown is available 2005–2021; the 2022 point uses the reported total only "
+        "(the four components are blank that year).",
+    "esabcc-i4-chemicals-ghg-intensity":
+        "Emissions cover base organic chemicals, while production is only ethylene + propylene + "
+        "aromatics; if the emissions boundary is wider than these products, the intensity is biased high.",
+    "esabcc-i4-steel-ghg-intensity":
+        "Emissions (EEA inventory) and production (industry association) use different system boundaries; "
+        "small scope mismatches can bias the ratio.",
+    "esabcc-i4-cement-ghg-intensity":
+        "Emissions (EEA inventory) and production (industry association) use different system boundaries; "
+        "small scope mismatches can bias the ratio.",
+    "esabcc-l5-settlement-area":
+        "Used as a proxy for net land take — it is the annual change in settlement area, not a direct "
+        "measurement of land take.",
+}
+
+
 def _strip_unit(h):
     return re.sub(r"\s*\([^)]*\)\s*$", "", h).strip()
 
@@ -74,7 +123,7 @@ def _top_split(e, ops):
     return None
 
 
-def describe(layout, name=None, unit=None, description=None):
+def describe(layout, name=None, unit=None, description=None, ind_id=None):
     """Plain-language, well-documented explanation of how the Value is derived —
     what it measures, the step-by-step calculation, what every column is and why
     it's needed, the readable formula, and the reasoning — generated from the
@@ -170,7 +219,9 @@ def describe(layout, name=None, unit=None, description=None):
     if not value_expr or not helpers:
         steps.append("This indicator is published directly by the source, so no "
                      "calculation is applied — the plotted series is the reported data itself.")
-        why = "There is nothing to derive: the source already provides exactly this figure."
+        why = ("It is an observation, not a reconstruction: the source already provides exactly this "
+               "quantity, and it cannot be regenerated from more primitive inputs here because the "
+               "source does not expose them.")
 
     elif div and not re.fullmatch(r"\s*[\d.eE+]+\s*", div[2]):
         # Ratio: numerator / denominator (denominator is data, not a constant).
@@ -184,13 +235,15 @@ def describe(layout, name=None, unit=None, description=None):
                 steps.append(f"Divide that by {den_p} to get its share of the total.")
             else:
                 steps.append(f"Divide {num_p} by {den_p} to get its share of the total.")
-            why = ("The indicator tracks the mix, not absolute volumes — expressing it as a share "
-                   "of the total shows how the balance shifts over time.")
+            why = ("Normalising by the total removes the effect of overall volume and isolates the "
+                   "compositional shift (the fuel/modal mix) — which is the quantity of policy interest, "
+                   "and makes years with different total demand directly comparable.")
         else:
             is_intensity = True
             steps.append(f"Divide {num_p} by {den_p}.")
-            why = (f"This gives {unit or 'a per-unit figure'} — the amount per unit of output "
-                   "(an intensity), so it reflects how clean/efficient production is, not how much is made.")
+            why = (f"Dividing the emissions flux by physical output yields a specific emission factor "
+                   f"({unit or 'emissions per unit produced'}) — a measure of process carbon efficiency "
+                   "that is independent of how much is produced.")
 
     elif has_factor and ("*" in peeled):
         # Unit conversion: (sum of inputs) × factor.
@@ -208,8 +261,9 @@ def describe(layout, name=None, unit=None, description=None):
                          + (f", reported in {raw_u}." if raw_u else "."))
             steps.append("Convert it" + (f" from {raw_u} to {tgt_u}" if raw_u and tgt_u else
                                          " to the chart's unit") + ".")
-        why = (f"The chart is shown in {unit or tgt_u or 'the plotted unit'}, while the source reports "
-               f"{raw_u or 'a different unit'}; the factor only changes the unit, not the data.")
+        why = (f"A unit conversion is an exact linear rescaling (e.g. 1 toe ≡ 11.63 MWh): it expresses "
+               f"the source's {raw_u or 'native-unit'} data in {unit or tgt_u or 'the plotted unit'} "
+               "without changing the underlying physical quantity or introducing any assumption.")
 
     elif sub and len(re.findall(r"\[([^\]]+)\]", peeled)) == 2:
         # Difference — typically this year minus last year (an annual change).
@@ -219,8 +273,9 @@ def describe(layout, name=None, unit=None, description=None):
             base = re.sub(r"\s*\((?:previous[^)]*)\)", "", prev)
             base = _strip_unit(re.sub(r"\bprevious year\b", "", base, flags=re.I)).strip(" ,")
             steps.append(f"Take this year's {base or 'cumulative total'} and subtract last year's value{scale_note}.")
-            why = ("The indicator is an annual addition — how much was added in that year, which is "
-                   "the increase in the cumulative total from one year to the next.")
+            why = ("The annual flow is the first difference of the cumulative stock, which recovers the "
+                   "capacity added each year. Note this is a NET figure (gross additions minus "
+                   "retirements), not gross installations.")
         else:
             a, b = names_from(sub[0]), names_from(sub[2])
             steps.append(f"Subtract {_plain_list(b) or 'the second'} from {_plain_list(a) or 'the first'}{scale_note}.")
@@ -230,13 +285,14 @@ def describe(layout, name=None, unit=None, description=None):
         sign = " — reported as a negative value (it represents a loss/removal)" if neg else ""
         steps.append(f"Add up {_plain_list(combined)}{scale_note}{sign}.")
         composite_note(combined)
-        why = ("The total is simply the sum of its parts — adding the individual source categories "
-               "reproduces the published total exactly.")
+        why = ("This is an accounting identity: the source reports these categories as mutually "
+               "exclusive and exhaustive, so their sum is the total by construction — no modelling "
+               "assumption is introduced, only disaggregated official data are re-aggregated.")
 
     elif len(combined) == 1:
         steps.append(f"Take {combined[0]}{scale_note}.")
         composite_note(combined)
-        why = "The published figure comes straight from this source series."
+        why = "The published figure comes straight from this single source series."
 
     else:
         steps.append("Combine the inputs as shown to produce the plotted value.")
@@ -248,6 +304,9 @@ def describe(layout, name=None, unit=None, description=None):
         return None if (not s or s.lower().startswith("see ")) else s
 
     factor_set = {c["header"] for c in factors}
+    raw_inputs = [c for c in helpers
+                  if not (c.get("formula") or {}).get("expr") and c["header"] not in factor_set]
+    single_passthrough = len(raw_inputs) == 1 and not div_share and not is_intensity
 
     def column_doc(c):
         h = c["header"]
@@ -267,6 +326,10 @@ def describe(layout, name=None, unit=None, description=None):
         if nm in denom_names:
             return (f"{nm} — the total, used as the denominator. Dividing by it turns the "
                     f"components into a {'share' if div_share else 'per-unit figure'}.")
+        if single_passthrough:
+            return (f"{nm} — raw input" + (f" from {src}" if src else "") +
+                    ". This is the published series the indicator reports; no further "
+                    "breakdown is available in the source.")
         why_in = "one of the source categories that are added together to form the total"
         if div_share:
             why_in = "one of the components measured against the total to form the share"
@@ -286,6 +349,10 @@ def describe(layout, name=None, unit=None, description=None):
 
     if why:
         L += ["", "Why it's done this way:", f"  {why}"]
+
+    caveat = CAVEATS.get(ind_id)
+    if caveat:
+        L += ["", "⚠ Caveat:", f"  {caveat}"]
 
     L += ["", "The columns in this sheet (and why each is needed):"]
     L.append(f"  • Value — the final number plotted on the website, in {unit or 'the indicator unit'}.")

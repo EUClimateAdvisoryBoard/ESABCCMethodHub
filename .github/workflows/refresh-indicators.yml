@@ -1,0 +1,87 @@
+name: Refresh indicators from Eurostat & EEA
+
+# Pulls the latest EU-27 values for the ESABCC report indicators straight
+# from the Eurostat API and the EEA GHG data viewer, flags the new years as
+# `afterReport`, regenerates the fact-check PDF, and opens a PR for review.
+#
+# Runs on GitHub's runners (open network egress) — the Claude Code web
+# sandbox can't reach ec.europa.eu / eea.europa.eu. See
+# docs/how-to-access-eurostat-eea-data.md.
+#
+# Output is a PR (never a direct push to main) so every automated value is
+# fact-checked against its source before merging.
+
+on:
+  workflow_dispatch: {}        # manual "Run workflow" button
+  schedule:
+    - cron: '0 6 1 * *'        # 06:00 UTC on the 1st of each month
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull latest values & patch the data file
+        run: node scripts/esabcc-indicators/refresh-from-sources.mjs
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Regenerate the fact-check PDF
+        run: |
+          pip install --quiet reportlab
+          python3 scripts/esabcc-indicators/render_verification_pdf.py
+
+      - name: Detect changes
+        id: diff
+        run: |
+          if [ -n "$(git status --porcelain src/data/esabcc-indicators.ts docs/ scripts/esabcc-indicators/refresh-provenance.json)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            echo "No new data from Eurostat/EEA this run."
+          fi
+
+      - name: Open / update pull request
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          BRANCH="bot/indicator-refresh"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add src/data/esabcc-indicators.ts docs/Indicator-Refresh-Report.pdf \
+                  scripts/esabcc-indicators/refresh-provenance.json
+          git commit -m "chore: refresh indicators from Eurostat & EEA [automated]"
+          git push -f origin "$BRANCH"
+          {
+            printf '%s\n\n' "Automated pull of the latest EU-27 values for the ESABCC report indicators."
+            printf '%s\n' "- New years are flagged \`afterReport\` in \`src/data/esabcc-indicators.ts\` (orange + NEW badge in the Indicator Database)."
+            printf '%s\n' "- **Fact-check before merging:** every new value with its source URL is in \`docs/Indicator-Refresh-Report.pdf\` and \`scripts/esabcc-indicators/refresh-provenance.json\`."
+            printf '%s\n' "- Recipes live in \`scripts/esabcc-indicators/refresh-from-sources.mjs\`."
+          } > /tmp/pr-body.md
+          if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
+            echo "PR already open for $BRANCH — updated with a new commit."
+          elif gh pr create --base main --head "$BRANCH" \
+                 --title "Automated indicator refresh (Eurostat & EEA)" \
+                 --body-file /tmp/pr-body.md; then
+            echo "Opened PR for $BRANCH."
+          else
+            # Org setting "Allow GitHub Actions to create and approve pull
+            # requests" is likely off. The branch is pushed regardless — surface
+            # a one-click compare link instead of failing the job.
+            echo "::warning::Could not open a PR automatically (enable Settings → Actions → 'Allow GitHub Actions to create and approve pull requests'). Branch pushed — open it manually:"
+            echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
+          fi

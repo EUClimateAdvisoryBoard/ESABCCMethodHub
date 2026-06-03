@@ -70,7 +70,7 @@ def main():
             if ok:
                 g = GT.get(ind_id, {})
                 layout["derivation"] = emit.describe(
-                    layout, g.get("name"), g.get("unit"), g.get("description"))
+                    layout, g.get("name"), g.get("unit"), g.get("description"), ind_id)
                 layouts[ind_id] = layout
     print("\n=== CENTRAL RE-VERIFICATION (relative tol 1% + flat-line check) ===")
     for ok, ind, line in sorted(report, key=lambda r: (r[0], r[1])):

@@ -37,5 +37,9 @@ word-addin/node_modules/
 !.env.example
 __pycache__/
 
+# retag pipeline working dir
+.retag/
+.prefetch-diagnostics.log
+
 # Reverse-engineering scratch area (chapter workbooks live on origin/main)
 scratch/
