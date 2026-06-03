@@ -21,6 +21,65 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { references } from '@/data/references';
 import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
+import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
+import type { CSLName } from '@/lib/references/types';
+
+// Flat shape the Word add-in / VBA consume.
+interface FlatRef {
+  id: string;
+  authors: string;
+  year: string;
+  title: string;
+  journal: string | null;
+  volume: string | null;
+  issue: string | null;
+  pages: string | null;
+  doi: string | null;
+  url: string | null;
+  type: string;
+  fullCitation: string;
+  tags: string[];
+}
+
+// Render a CSL author array ("Family, G.; …") for the flat shape.
+function authorsToString(authors: CSLName[] | null | undefined): string {
+  if (!Array.isArray(authors)) return '';
+  return authors
+    .map(a => a.literal || [a.family, a.given].filter(Boolean).join(', '))
+    .filter(Boolean)
+    .join('; ');
+}
+
+// Pull rows from the Supabase `references` table (the web Reference Manager's
+// store) so project tags assigned there flow live into the add-in's project
+// filter. Best-effort: skipped silently when no service-role key is set.
+async function getSupabaseReferences(): Promise<FlatRef[]> {
+  if (!hasServiceRole()) return [];
+  try {
+    const supabase = createAdminClient();
+    const { data, error } = await supabase
+      .from('references')
+      .select('id, title, authors, year, doi, container_title, item_type, tags, csl_json');
+    if (error || !data) return [];
+    return data.map((r: any): FlatRef => ({
+      id: r.id,
+      authors: authorsToString(r.authors),
+      year: r.year ? String(r.year) : '',
+      title: r.title || '',
+      journal: r.container_title ?? null,
+      volume: r.csl_json?.volume ?? null,
+      issue: r.csl_json?.issue ?? null,
+      pages: r.csl_json?.page ?? null,
+      doi: r.doi ?? null,
+      url: r.csl_json?.URL ?? null,
+      type: r.item_type || 'article-journal',
+      fullCitation: '',
+      tags: Array.isArray(r.tags) ? r.tags : [],
+    }));
+  } catch {
+    return [];
+  }
+}
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -153,12 +212,21 @@ export async function GET(request: NextRequest) {
     url: r.url || null,
     type: r.type || 'article-journal',
     fullCitation: r.fullCitation || '',
+    tags: r.tags || [],
   }));
 
-  // Deduplicate by id
-  const staticIds = new Set(references.map(r => r.id));
-  const uniqueCustom = customRefs.filter(r => !staticIds.has(r.id));
-  const allRefs = [...references, ...uniqueCustom];
+  // Live rows from the web Reference Manager's Supabase store (carries the
+  // project tags users assign), best-effort and deduped by id.
+  const supabaseRefs = await getSupabaseReferences();
+
+  // Deduplicate by id, in priority order: custom store → Supabase → static.
+  const seen = new Set<string>();
+  const allRefs: Array<Record<string, any>> = [];
+  for (const r of [...customRefs, ...supabaseRefs, ...references]) {
+    if (seen.has(r.id)) continue;
+    seen.add(r.id);
+    allRefs.push(r);
+  }
 
   let filtered = allRefs;
 
@@ -173,7 +241,7 @@ export async function GET(request: NextRequest) {
     // Score every candidate; keep only those with a positive score, then
     // sort by score descending so the best matches float to the top.
     const scored = filtered
-      .map(r => ({ ref: r, score: scoreReference(r, tokens, doiQuery) }))
+      .map(r => ({ ref: r, score: scoreReference(r as any, tokens, doiQuery) }))
       .filter(s => s.score > 0)
       .sort((a, b) => b.score - a.score);
 
@@ -198,6 +266,7 @@ export async function GET(request: NextRequest) {
       type: r.type,
       citation_key: r.id,
       fullCitation: sanitize(r.fullCitation || `${r.authors} (${r.year}). ${r.title}.${r.journal ? ' ' + r.journal : ''}${r.doi ? ' DOI: ' + r.doi : ''}`),
+      tags: Array.isArray(r.tags) ? r.tags.map((t: string) => sanitize(String(t))) : [],
     })),
   }, {
     headers: {

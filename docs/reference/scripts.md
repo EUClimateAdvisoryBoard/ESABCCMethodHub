@@ -71,16 +71,15 @@ ones that matter operationally:
 - `DATABASE_URL` — Postgres (EEA production).
 - `NEXT_PUBLIC_SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` — Supabase (prototype).
 - `REFS_GITHUB_TOKEN` — optional GitHub persistence during the
-  prototype phase (reference + report-plan stores).
+  prototype phase (reference store).
 - `ANTHROPIC_API_KEY` / `AZURE_OPENAI_*` — LLM provider for the daily
   summariser and classification pipelines.
 - `INBOUND_EMAIL_SECRET` — HMAC for the inbound-email webhook.
 - `MEDIA_MONITORING_SECRET` — cron trigger guard.
 - `SITE_PASSWORD` / `SITE_AUTH_SECRET` — site-wide password gate
   (Edge middleware) protecting both `/` and `/docs/`.
-- `METHODHUB_URL` — read by `bridge-service` when proxying
-  `/api/report-plans` and `/api/report-plan/:id` for the Word
-  add-in's plan-scope panel.
+- `REFMANAGER_API_URL` — read by the Word add-in companion app to
+  fetch the live reference library (defaults to the public host).
 
 Full list lives in `.env.local.example`.
 

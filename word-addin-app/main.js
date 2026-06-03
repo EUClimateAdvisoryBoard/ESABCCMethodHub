@@ -51,7 +51,32 @@ function initDatabase() {
 
 // --- Load References ---
 
-function loadReferences() {
+// Live MethodHub library. Override with REFMANAGER_API_URL for EEA-internal or
+// localhost deployments. Trailing slashes are trimmed so the path join is clean.
+const API_BASE = (process.env.REFMANAGER_API_URL || 'https://methodhub.eu').replace(/\/+$/, '');
+
+// Prefer the live library so project tags ("project:<report>") assigned in the
+// web Reference Manager show up in the project filter here. Falls back to the
+// bundled snapshot when offline or the host is unreachable.
+async function loadReferences() {
+  try {
+    const res = await fetch(`${API_BASE}/api/references?limit=100000`, {
+      headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(8000),
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (Array.isArray(data.items) && data.items.length > 0) {
+        return data.items;
+      }
+    }
+  } catch {
+    // offline / unreachable — fall through to the bundled snapshot
+  }
+  return loadBundledReferences();
+}
+
+function loadBundledReferences() {
   const refPath = path.join(__dirname, 'data', 'references.json');
   if (!fs.existsSync(refPath)) {
     return [];
@@ -85,7 +110,7 @@ function createWindow() {
 // --- IPC Handlers ---
 
 function registerIpcHandlers() {
-  ipcMain.handle('load-references', () => {
+  ipcMain.handle('load-references', async () => {
     return loadReferences();
   });
 

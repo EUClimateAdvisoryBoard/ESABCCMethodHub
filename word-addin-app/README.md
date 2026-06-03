@@ -4,9 +4,17 @@ A desktop reference management application for the European Scientific Advisory 
 
 ## Features
 
+- **Live library**: On launch, fetches the shared library from the MethodHub
+  API (`/api/references`) so references — and the project tags assigned in the
+  web Reference Manager — stay current. Falls back to the bundled snapshot
+  (`data/references.json`) when offline.
 - **Reference Library**: Browse, search, and filter 2600+ climate policy references
 - **Full-text Search**: Search across titles, authors, journals, DOIs, and citations
-- **Filters**: Filter by publication type, year range, and author
+- **Filters**: Filter by publication type, year range, author, and **project**
+  (the report a reference was added in the context of, e.g. *Policy Gap 2.0*).
+  The project filter narrows the pick-list to one report's literature — handy
+  when you remember the report but not the exact paper title. It appears only
+  when the data carries project tags.
 - **Annotations**: Add notes and annotations to any reference (stored locally in SQLite)
 - **Collections**: Organise references into named collections
 - **Word Integration**: Copy citations and references to clipboard for pasting into Word
@@ -40,6 +48,18 @@ Or use the combined setup command:
 
 ```bash
 npm run setup && npm start
+```
+
+The bundled `data/references.json` is only the **offline fallback**. At runtime
+the app fetches the live library from the MethodHub API.
+
+### Pointing at a different host
+
+By default the app reads from `https://methodhub.eu`. Override it for an
+EEA-internal or local deployment:
+
+```bash
+REFMANAGER_API_URL=http://localhost:3000 npm start
 ```
 
 ## Project Structure
