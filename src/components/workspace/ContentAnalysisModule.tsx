@@ -1028,6 +1028,28 @@ function DocumentViewer({
   // without a re-upload.
   const hasLibraryPdf = isReference && Boolean(doc.pdfUrl);
 
+  // Map the selected segment to the block it lives in, so clicking a coded
+  // segment in the sidebar scrolls the PDF to that passage and highlights it.
+  // PDF-made segments carry a blockId directly; text-panel segments are
+  // resolved by which block's character range covers their start offset.
+  const blockRanges = useMemo(() => {
+    const full = doc.text ?? '';
+    const ranges: { id: string; start: number; end: number }[] = [];
+    let cursor = 0;
+    for (const b of doc.blocks ?? []) {
+      if (!b.text) continue;
+      const idx = full.indexOf(b.text, cursor);
+      if (idx >= 0) { ranges.push({ id: b.id, start: idx, end: idx + b.text.length }); cursor = idx + b.text.length; }
+    }
+    return ranges;
+  }, [doc.blocks, doc.text]);
+  const highlightedSeg = segments.find(s => s.id === highlightedSegmentId) ?? null;
+  const highlightedBlockId =
+    highlightedSeg?.blockId ??
+    (highlightedSeg
+      ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
+      : null);
+
   return (
     <div className="flex flex-col min-h-0">
       <div className="px-3 py-2 border-b border-grey-200 flex items-start justify-between gap-2">
@@ -1123,7 +1145,7 @@ function DocumentViewer({
             pdfSrcUrl={pdfSrcUrl}
             segments={segments}
             codes={codes}
-            highlightedBlockId={highlightedSegmentId}
+            highlightedBlockId={highlightedBlockId}
             onSelectText={(sel: PdfTextSelection) => {
               const { startChar, endChar } = locateSelectionOffsets(doc, sel.blockId, sel.text);
               onSelectionWithoutCode({
