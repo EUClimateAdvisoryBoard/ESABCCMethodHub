@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 // ---------------------------------------------------------------------------
-// Prefetch EUR-Lex bodies for every policy missing a shipped `full_text`.
+// Prefetch full legislative bodies for every policy missing a shipped
+// `full_text`.
 //
-// Reads `src/data/policies.ts` (regex-based, no runtime), tries the
-// EUR-Lex HTML then PDF endpoints for each CELEX, strips tags, and
-// writes the result to `src/data/policy-bodies.generated.ts`.
+// Reads `src/data/policies.ts` (regex-based, no runtime). For each CELEX it
+// tries, in order:
+//   1. CELLAR — the EU Publications Office content-negotiation endpoint
+//      (publications.europa.eu/resource/celex/{CELEX}). Same official text,
+//      NO AWS WAF, returns 200. Primary source.
+//   2. EUR-Lex HTML / PDF — kept as a fallback, but usually returns an AWS
+//      WAF bot-challenge (HTTP 202) that a script cannot solve.
+// It strips tags and writes the result to
+// `public/content-analysis/policy-bodies.json`.
 //
 // Idempotent: run as often as needed. Already-fetched policies are
 // skipped unless `--force` is passed. Rate-limited to 1.2s per request
@@ -158,10 +165,25 @@ async function loadExisting(file) {
   }
 }
 
-// ── EUR-Lex fetcher (HTML preferred, PDF fallback) ───────────────────────
+// ── Fetcher (CELLAR primary, EUR-Lex HTML/PDF fallback) ──────────────────
 async function fetchOne(celex) {
   const attempts = [];
   globalAttempts = attempts;
+
+  // 1. CELLAR (EU Publications Office) — official text via HTTP content
+  //    negotiation, no AWS WAF. This is the reliable path: allowlist
+  //    publications.europa.eu and it returns 200 with the full body.
+  const cellarCandidates = [
+    `https://publications.europa.eu/resource/celex/${celex}`,
+    `http://publications.europa.eu/resource/celex/${celex}`,
+  ];
+  for (const url of cellarCandidates) {
+    const res = await tryCellar(url);
+    attempts.push(res.tag);
+    if (res.ok) return { text: res.text, sourceUrl: url, source: 'cellar', attempts };
+  }
+
+  // 2. EUR-Lex HTML — typically blocked by an AWS WAF JS challenge (202).
   const htmlCandidates = [
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}`,
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}&from=EN`,
@@ -187,10 +209,45 @@ async function fetchOne(celex) {
   return null;
 }
 
+// CELLAR content-negotiation fetch. Ask for English (x)html; CELLAR resolves
+// the language expression and returns the document body directly (200).
+async function tryCellar(url) {
+  try {
+    const resp = await fetch(url, {
+      headers: {
+        'User-Agent': UA,
+        Accept: 'text/html, application/xhtml+xml, text/plain;q=0.8, */*;q=0.5',
+        'Accept-Language': 'eng',
+      },
+      redirect: 'follow',
+    });
+    if (!resp.ok) return { ok: false, tag: `cellar ${resp.status}` };
+    const ct = resp.headers.get('content-type') ?? '';
+    const body = await resp.text();
+    if (body.length < 2000) return { ok: false, tag: `cellar too-short(${body.length})` };
+    // CELLAR usually serves (x)html; strip markup when present, else take the
+    // plain body as-is.
+    const looksMarkup = /html|xml/.test(ct) || /<\/?[a-z][\s>]/i.test(body.slice(0, 1000));
+    const text = looksMarkup ? htmlToText(body) : body.trim();
+    if (text.length < MIN_BODY_CHARS) {
+      return { ok: false, tag: `cellar stripped-too-short(${text.length})` };
+    }
+    return { ok: true, tag: `cellar ok(${text.length})`, text };
+  } catch (err) {
+    return { ok: false, tag: `cellar err(${err?.message?.slice(0, 60) ?? err})` };
+  }
+}
+
 async function tryHtml(url) {
   try {
     const resp = await fetch(url, { headers: HEADERS, redirect: 'follow' });
     const ct = resp.headers.get('content-type') ?? '';
+    // EUR-Lex fronts its content with an AWS WAF: a 202 (or the
+    // x-amzn-waf-action header) means "solve a JS challenge first", which a
+    // script can't do. Surface it clearly rather than mislabelling it.
+    if (resp.status === 202 || resp.headers.get('x-amzn-waf-action')) {
+      return { ok: false, tag: `html waf-challenge(${resp.status})` };
+    }
     if (!resp.ok) return { ok: false, tag: `html ${resp.status}` };
     if (!ct.includes('html')) return { ok: false, tag: `html non-html(${ct.split(';')[0]})` };
     const html = await resp.text();
