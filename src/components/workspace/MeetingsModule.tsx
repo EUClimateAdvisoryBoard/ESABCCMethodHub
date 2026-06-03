@@ -131,8 +131,8 @@ export default function MeetingsModule({
             progress dashboard for the project lead.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-          <div className="inline-flex rounded-lg border border-grey-200 overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 w-full sm:w-auto">
+          <div className="inline-flex rounded-lg border border-grey-200 overflow-x-auto">
             <TabBtn active={view === 'meetings'} onClick={() => setView('meetings')}>
               Meetings
             </TabBtn>
@@ -273,7 +273,7 @@ function TabBtn({
     <button
       type="button"
       onClick={onClick}
-      className={`px-3 py-1.5 text-xs font-medium ${
+      className={`px-3 py-1.5 text-xs font-medium whitespace-nowrap ${
         active ? 'bg-primary text-white' : 'bg-white text-tertiary hover:bg-grey-50'
       }`}
     >
@@ -485,7 +485,7 @@ function HeaderEditor({
         placeholder="Meeting title"
         className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm font-semibold"
       />
-      <div className="grid grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
         <select
           value={type}
           onChange={e => setType(e.target.value)}
@@ -1204,7 +1204,7 @@ function NewMeetingDialog({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
       <div
-        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 space-y-3"
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 space-y-3 max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         <h3 className="text-sm font-bold text-tertiary-dark">New meeting</h3>
@@ -1215,7 +1215,7 @@ function NewMeetingDialog({
           placeholder="Meeting title"
           className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm"
         />
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
           <label className="block text-xs text-tertiary">
             <span className="block mb-1 font-medium text-tertiary-dark">Type</span>
             <select

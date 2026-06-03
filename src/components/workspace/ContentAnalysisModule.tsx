@@ -679,7 +679,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       <header className="flex items-start justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Content analysis</h2>
-          <div className="flex items-center gap-1.5 mt-1.5">
+          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
             <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">Source:</span>
             {SOURCE_TYPES.map(s => (
               <button
@@ -772,9 +772,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           <TagDistributionPanel documents={corpusDocs} codes={visibleCodes} segments={analysisSegments} />
         </div>
       ) : (
-        <div className="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
           {/* LEFT: corpus + add documents */}
-          <aside className="flex flex-col gap-3 min-h-0">
+          <aside className="flex flex-col gap-3 min-h-0 min-w-0">
             <div className="border border-grey-200 rounded-lg bg-white">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
                 <span className="text-[11px] font-semibold text-tertiary-dark">In this workspace</span>
@@ -879,7 +879,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           </aside>
 
           {/* CENTRE: document viewer */}
-          <section className="border border-grey-200 rounded-lg bg-white min-h-[50vh] flex flex-col">
+          <section className="border border-grey-200 rounded-lg bg-white min-h-[50vh] flex flex-col min-w-0">
             {!selectedDocument ? (
               <div className="flex-1 flex items-center justify-center p-8 text-center">
                 <p className="text-sm text-tertiary max-w-sm">
@@ -914,7 +914,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           </section>
 
           {/* RIGHT: coded segments */}
-          <aside className="border border-grey-200 rounded-lg bg-white min-h-0">
+          <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
             <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
               <span className="text-[11px] font-semibold text-tertiary-dark">Coded segments</span>
               <span className="text-[10px] font-mono text-tertiary-light">{docSegments.length}</span>

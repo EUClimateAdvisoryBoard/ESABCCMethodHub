@@ -446,7 +446,7 @@ export default function PolicyCodesOverlay({
           codes, hide a master code from this project, or remove a code from
           a single policy.
         </p>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
             Group by
           </span>
@@ -1314,7 +1314,7 @@ function AddCodeDialog({
           ))}
         </div>
 
-        <div className="flex items-center justify-between mb-2">
+        <div className="flex items-center justify-between mb-2 flex-wrap gap-2">
           <p className="text-[11px] text-tertiary">
             Apply to policies ({state.selectedIds.size} selected)
           </p>

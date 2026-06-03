@@ -95,14 +95,14 @@ export default function IndicatorHistory({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-2 sm:p-4"
       onClick={onClose}
     >
       <div
         className="bg-white rounded-xl shadow-xl border border-grey-200 w-full max-w-2xl max-h-[88vh] flex flex-col"
         onClick={e => e.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-5 py-3 border-b border-grey-200">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-grey-200">
           <div>
             <h3 className="text-sm font-bold text-tertiary-dark">
               Version history — {indicatorName}
@@ -118,17 +118,17 @@ export default function IndicatorHistory({
         </div>
 
         {notice && (
-          <div className="mx-5 mt-3 text-[11px] px-2 py-1.5 rounded bg-green-50 border border-green-200 text-green-800">
+          <div className="mx-4 sm:mx-5 mt-3 text-[11px] px-2 py-1.5 rounded bg-green-50 border border-green-200 text-green-800">
             {notice}
           </div>
         )}
         {error && (
-          <div className="mx-5 mt-3 text-[11px] px-2 py-1.5 rounded bg-red-50 border border-red-200 text-red-800">
+          <div className="mx-4 sm:mx-5 mt-3 text-[11px] px-2 py-1.5 rounded bg-red-50 border border-red-200 text-red-800">
             {error}
           </div>
         )}
 
-        <div className="overflow-y-auto flex-1 px-5 py-3">
+        <div className="overflow-y-auto flex-1 px-4 sm:px-5 py-3">
           {revisions === null ? (
             <p className="text-xs text-tertiary-light py-6 text-center">Loading history…</p>
           ) : revisions.length === 0 ? (
@@ -176,7 +176,7 @@ export default function IndicatorHistory({
           )}
         </div>
 
-        <div className="px-5 py-3 border-t border-grey-200 flex justify-end">
+        <div className="px-4 sm:px-5 py-3 border-t border-grey-200 flex justify-end">
           <button
             type="button"
             onClick={onClose}
