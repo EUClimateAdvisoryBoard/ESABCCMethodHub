@@ -134,13 +134,6 @@ const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge · CRF 1.A.2 + 2 (industry energy + processes) · EU27_2020',
     note: 'CO₂-eq (Mt).',
   },
-  'esabcc-t1-transport-ghg': {
-    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
-    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A3' },
-    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A3`,
-    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.3 (domestic transport) · EU27_2020',
-    note: 'CO₂-eq (Mt). Excludes international aviation/navigation (memo items).',
-  },
   'esabcc-b1-buildings-ghg': {
     kind: 'eurostat', dataset: 'env_air_gge', round: 1,
     filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A4' },
@@ -148,23 +141,15 @@ const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge · CRF 1.A.4 (residential + commercial) · EU27_2020',
     note: 'CO₂-eq (Mt).',
   },
-  'esabcc-a1-agri-nonco2': {
-    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
-    sumFilters: [
-      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF3' },
-      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'N2O', src_crf: 'CRF3' },
-    ],
-    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF3`,
-    sourceTitle: 'Eurostat env_air_gge · CRF 3 (agriculture) CH₄+N₂O · EU27_2020',
-    note: 'Sum of CH₄ and N₂O in CO₂-eq (Mt); excludes minor agricultural CO₂ (liming/urea).',
-  },
-  'esabcc-e6-energy-ch4': {
-    kind: 'eurostat', dataset: 'env_air_gge', round: 2,
-    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF1' },
-    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF1`,
-    sourceTitle: 'Eurostat env_air_gge · CRF 1 (energy) CH₄ · EU27_2020',
-    note: 'Energy-sector methane in CO₂-eq (Mt).',
-  },
+  // Deliberately NOT automated (validated empirically on run #3, then removed):
+  //  • T1 transport (CRF 1.A.3): env_air_gge returns ~795 Mt for 2023 vs the
+  //    report's 906.6 in 2022 — a ~12% scope offset (the report series appears
+  //    to include international aviation/navigation). Auto-appending would draw
+  //    a false −12% cliff, so T1 stays in the curated sheet.
+  //  • A1 agriculture & E6 energy-CH₄: env_air_gge airpol=CH4/N2O reports gas
+  //    MASS, not CO₂-equivalent (anchor check measured 0.02–0.03× off), and no
+  //    per-gas CO₂-eq slice is exposed there. Keep manual until a CO₂-eq
+  //    per-gas source is wired in.
   'esabcc-l1-lulucf-net': {
     kind: 'eurostat', dataset: 'env_air_gge', round: 1,
     filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF4' },
