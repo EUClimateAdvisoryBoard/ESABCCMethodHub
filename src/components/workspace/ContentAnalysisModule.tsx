@@ -56,6 +56,7 @@ import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocume
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
+import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
 import CodeEditorModal, {
   type CodeEditorPayload,
   type CodeEditorResult,
@@ -66,6 +67,61 @@ const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
   { ssr: false, loading: () => <div className="p-4 text-[12px] text-[#8A95A3]">Loading PDF viewer…</div> },
 );
+
+// Locate a passage selected on a PDF page within the document's flat text so a
+// coded segment can anchor to real character offsets. PDF text-layer
+// selections often differ from `doc.text` only in whitespace, so we match on a
+// whitespace-normalised copy and map the hit back to original offsets.
+function findNormalized(
+  haystack: string,
+  needle: string,
+  fromIndex = 0,
+): { startChar: number; endChar: number } | null {
+  const nNeedle = needle.replace(/\s+/g, ' ').trim().toLowerCase();
+  if (nNeedle.length < 2) return null;
+  let norm = '';
+  const map: number[] = [];
+  let prevSpace = false;
+  for (let i = 0; i < haystack.length; i++) {
+    const ch = haystack[i];
+    if (/\s/.test(ch)) {
+      if (prevSpace) continue;
+      norm += ' '; map.push(i); prevSpace = true;
+    } else {
+      norm += ch.toLowerCase(); map.push(i); prevSpace = false;
+    }
+  }
+  let searchFrom = 0;
+  for (;;) {
+    const at = norm.indexOf(nNeedle, searchFrom);
+    if (at < 0) return null;
+    const startOrig = map[at];
+    if (startOrig >= fromIndex) {
+      const endNorm = Math.min(at + nNeedle.length - 1, map.length - 1);
+      return { startChar: startOrig, endChar: map[endNorm] + 1 };
+    }
+    searchFrom = at + 1;
+  }
+}
+
+function locateSelectionOffsets(
+  doc: AnalysisDocument,
+  blockId: string | null,
+  text: string,
+): { startChar: number; endChar: number } {
+  const full = doc.text ?? '';
+  let base = 0;
+  const block = blockId ? doc.blocks?.find(b => b.id === blockId) : undefined;
+  if (block?.text) {
+    const bi = full.indexOf(block.text);
+    if (bi >= 0) base = bi;
+  }
+  return (
+    findNormalized(full, text, base) ||
+    findNormalized(full, text, 0) ||
+    { startChar: base, endChar: base + (block?.text?.length ?? text.length) }
+  );
+}
 
 const DEFAULT_CODE_COLORS = [
   '#00928F', '#E87722', '#0065A4', '#7C3AED', '#D97706',
@@ -1035,7 +1091,16 @@ function DocumentViewer({
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedSegmentId}
-            onSelectBlock={onSelectSegment}
+            onSelectText={(sel: PdfTextSelection) => {
+              const { startChar, endChar } = locateSelectionOffsets(doc, sel.blockId, sel.text);
+              onSelectionWithoutCode({
+                blockId: sel.blockId ?? undefined,
+                startChar,
+                endChar,
+                text: sel.text,
+                rect: sel.rect,
+              });
+            }}
           />
           {/* Extracted text — collapsed by default so the PDF stays the
               focus. Expand it to select a passage and attach a tag (the raw
