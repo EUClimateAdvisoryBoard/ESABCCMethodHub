@@ -162,6 +162,16 @@ async function loadExisting(file) {
 async function fetchOne(celex) {
   const attempts = [];
   globalAttempts = attempts;
+  // CELLAR (Publications Office REST) first. The eur-lex.europa.eu HTML/PDF
+  // endpoints are often unreachable from CI / sandboxed runners (they sit
+  // behind an interactive consent gate), whereas the CELLAR resource API at
+  // publications.europa.eu serves the same authentic OJ text via content
+  // negotiation and is reachable far more reliably.
+  {
+    const res = await tryCellar(celex);
+    attempts.push(res.tag);
+    if (res.ok) return { text: res.text, sourceUrl: res.sourceUrl, source: res.source, attempts };
+  }
   const htmlCandidates = [
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}`,
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}&from=EN`,
@@ -238,6 +248,140 @@ async function tryPdf(url) {
   } catch (err) {
     return { ok: false, tag: `pdf err(${err?.message?.slice(0, 60) ?? err})` };
   }
+}
+
+// ── CELLAR fetcher (Publications Office REST, content-negotiated) ─────────
+// Resolves http://publications.europa.eu/resource/celex/<CELEX> with an
+// Accept header. A single OJ document answers 200 directly; multi-stream
+// records (most COM communications) answer 300 Multiple Choices with an
+// HTML list of `…/DOC_n` manifestation streams, which we follow and
+// concatenate. HTML is preferred; PDF is the fallback for scanned acts.
+const CELLAR_BASE = 'http://publications.europa.eu/resource/celex/';
+const CELLAR_HEADERS = { ...HEADERS, Referer: 'https://publications.europa.eu/' };
+
+async function tryCellar(celex) {
+  // 1) HTML (xhtml) — direct 200 or 300-list of HTML streams.
+  try {
+    const url = `${CELLAR_BASE}${celex}`;
+    const resp = await fetch(url, {
+      headers: { ...CELLAR_HEADERS, Accept: 'application/xhtml+xml', 'Accept-Language': 'eng' },
+      redirect: 'follow',
+    });
+    if (resp.status === 200) {
+      const ct = resp.headers.get('content-type') ?? '';
+      const html = await resp.text();
+      if (ct.includes('html') && html.length >= 2000) {
+        const text = htmlToText(html);
+        if (text.length >= MIN_BODY_CHARS) {
+          return { ok: true, tag: `cellar html ok(${text.length})`, text, sourceUrl: url, source: 'eurlex-html' };
+        }
+      }
+    } else if (resp.status === 300) {
+      const list = await resp.text();
+      const streams = parseCellarStreams(list);
+      const htmlStreams = streams.filter(s => /\.x?html?$/i.test(s.name));
+      if (htmlStreams.length) {
+        const parts = [];
+        for (const s of htmlStreams.slice(0, 12)) {
+          const part = await fetchCellarStream(s.href, 'html');
+          if (part) parts.push(part);
+        }
+        const text = parts.join('\n\n').trim();
+        if (text.length >= MIN_BODY_CHARS) {
+          return { ok: true, tag: `cellar html-multi ok(${text.length}, ${parts.length}p)`, text, sourceUrl: url, source: 'eurlex-html' };
+        }
+      }
+    }
+  } catch (err) {
+    return { ok: false, tag: `cellar html err(${err?.message?.slice(0, 60) ?? err})` };
+  }
+  // 2) PDF fallback — direct 200 or 300-list of PDF streams.
+  try {
+    const url = `${CELLAR_BASE}${celex}`;
+    const resp = await fetch(url, {
+      headers: { ...CELLAR_HEADERS, Accept: 'application/pdf', 'Accept-Language': 'eng' },
+      redirect: 'follow',
+    });
+    if (resp.status === 200) {
+      const buf = new Uint8Array(await resp.arrayBuffer());
+      const text = await pdfBufferToText(buf);
+      if (text && text.length >= MIN_BODY_CHARS) {
+        return { ok: true, tag: `cellar pdf ok(${text.length})`, text, sourceUrl: url, source: 'eurlex-pdf' };
+      }
+    } else if (resp.status === 300) {
+      const list = await resp.text();
+      const pdfStreams = parseCellarStreams(list).filter(s => /\.pdf$/i.test(s.name));
+      const parts = [];
+      for (const s of pdfStreams.slice(0, 8)) {
+        const part = await fetchCellarStream(s.href, 'pdf');
+        if (part) parts.push(part);
+      }
+      const text = parts.join('\n\n').trim();
+      if (text.length >= MIN_BODY_CHARS) {
+        return { ok: true, tag: `cellar pdf-multi ok(${text.length}, ${parts.length}p)`, text, sourceUrl: url, source: 'eurlex-pdf' };
+      }
+    }
+    return { ok: false, tag: `cellar miss(html+pdf, status ${resp.status})` };
+  } catch (err) {
+    return { ok: false, tag: `cellar pdf err(${err?.message?.slice(0, 60) ?? err})` };
+  }
+}
+
+// Parse a CELLAR "300 Multiple-Choice" listing into ordered streams. Each
+// item carries a `…/DOC_n` href and a `stream_name` (e.g. `1_EN_ACT…html`)
+// — we keep both so the caller can pick HTML vs PDF manifestations.
+function parseCellarStreams(listHtml) {
+  const items = listHtml.split(/title="item"/).slice(1);
+  const out = [];
+  for (const chunk of items) {
+    const href = chunk.match(/href="(https?:\/\/[^"]+\/DOC_\d+)"/);
+    const name = chunk.match(/title="stream_name">([^<]+)</);
+    const order = chunk.match(/title="stream_order"[^>]*>(\d+)</);
+    if (href && name) {
+      out.push({ href: href[1], name: name[1].trim(), order: order ? parseInt(order[1], 10) : 0 });
+    }
+  }
+  out.sort((a, b) => a.order - b.order);
+  return out;
+}
+
+async function fetchCellarStream(href, kind) {
+  try {
+    const resp = await fetch(href, { headers: CELLAR_HEADERS, redirect: 'follow' });
+    if (!resp.ok) return null;
+    if (kind === 'html') {
+      const html = await resp.text();
+      const text = htmlToText(html);
+      return text.length >= 80 ? text : null;
+    }
+    const buf = new Uint8Array(await resp.arrayBuffer());
+    return await pdfBufferToText(buf);
+  } catch {
+    return null;
+  }
+}
+
+// Shared pdfjs text extraction (used by both the eur-lex and CELLAR PDF paths).
+async function pdfBufferToText(buf) {
+  const isPdf = buf[0] === 0x25 && buf[1] === 0x50 && buf[2] === 0x44 && buf[3] === 0x46 && buf[4] === 0x2d;
+  if (!isPdf) return null;
+  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
+  const loadingTask = pdfjs.getDocument({
+    data: buf,
+    disableFontFace: true,
+    useSystemFonts: false,
+    isEvalSupported: false,
+    ...({ disableWorker: true }),
+  });
+  const pdf = await loadingTask.promise;
+  const pages = [];
+  for (let p = 1; p <= Math.min(pdf.numPages, 400); p++) {
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    const text = content.items.map(it => ('str' in it ? it.str : '')).join(' ');
+    if (text.trim()) pages.push(text.replace(/\s+/g, ' ').trim());
+  }
+  return pages.join('\n\n');
 }
 
 function htmlToText(html) {

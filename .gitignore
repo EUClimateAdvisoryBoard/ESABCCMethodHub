@@ -39,3 +39,7 @@ __pycache__/
 
 # Reverse-engineering scratch area (chapter workbooks live on origin/main)
 scratch/
+
+# Re-tag workflow intermediates (scripts/retag-policies.mjs)
+.retag/
+.prefetch-diagnostics.log
