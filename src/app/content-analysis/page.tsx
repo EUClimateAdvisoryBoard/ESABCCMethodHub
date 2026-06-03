@@ -27,7 +27,7 @@ import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
-import OnboardingTour from '@/components/OnboardingTour';
+import GuidedSession from '@/components/content-analysis/GuidedSession';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import dynamic from 'next/dynamic';
@@ -46,6 +46,7 @@ import SegmentsTablePreview from '@/components/content-analysis/SegmentsTablePre
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
 import NumericExtractionsPanel from '@/components/content-analysis/NumericExtractionsPanel';
+import DocumentSummaryPanel from '@/components/content-analysis/DocumentSummaryPanel';
 import ProjectLockPill from '@/components/content-analysis/ProjectLockPill';
 import { useProjectLock } from '@/lib/content-analysis/useProjectLock';
 import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
@@ -66,6 +67,12 @@ import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content
 import { TooltipProvider } from '@/components/ui/Tooltip';
 import { showToast } from '@/components/ui/ToastHost';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
+import {
+  sourceTierOf,
+  SOURCE_TIER_META,
+  SOURCE_FILTER_OPTIONS,
+  type SourceTier,
+} from '@/lib/content-analysis/source-tier';
 import {
   segmentsForProject,
   useContentAnalysis,
@@ -137,6 +144,7 @@ function ContentAnalysisPageInner() {
     deleteProject,
     resetAll,
     restoreCodesAndSegments,
+    setDocumentSummary,
   } = useContentAnalysis();
 
   // Top-level navigation across the module:
@@ -181,7 +189,9 @@ function ContentAnalysisPageInner() {
     status: 'idle' | 'loading' | 'error' | 'ok';
     message?: string;
   }>({ status: 'idle' });
-  const [sourceFilter, setSourceFilter] = useState<'all' | 'policy' | 'reference'>('policy');
+  const [sourceFilter, setSourceFilter] = useState<'all' | SourceTier>('policy');
+  /** Bumped by the "Guided tour" button to replay the workbench walkthrough. */
+  const [tourReplay, setTourReplay] = useState(0);
   /** When set, the viewer shows this archived version instead of the live doc. */
   const [viewingVersionId, setViewingVersionId] = useState<string | null>(null);
   const [pdfOnly, setPdfOnly] = useState(false);
@@ -318,7 +328,7 @@ function ContentAnalysisPageInner() {
   const docsInScope = useMemo(() => {
     let out = docsInProjectScope;
     if (sourceFilter !== 'all') {
-      out = out.filter(d => (d.sourceKind ?? 'policy') === sourceFilter);
+      out = out.filter(d => sourceTierOf(d) === sourceFilter);
     }
     if (pdfOnly) {
       out = out.filter(d => d.celexNumber || hasAttachedPdf(d));
@@ -344,6 +354,24 @@ function ContentAnalysisPageInner() {
     () => docsInScope.find(d => d.id === selectedDocumentId) ?? docsInScope[0] ?? null,
     [docsInScope, selectedDocumentId],
   );
+
+  // Source tier of the document currently in view — drives the tier-aware
+  // opening line of the guided tour ("you're working with policy/scientific/
+  // grey sources").
+  const activeSourceTier: SourceTier = useMemo(
+    () => (sourceFilter !== 'all'
+      ? sourceFilter
+      : selectedDocument ? sourceTierOf(selectedDocument) : 'policy'),
+    [sourceFilter, selectedDocument],
+  );
+
+  // Whole-document summary for the current (project, document). Keyed exactly
+  // as the store keys it so re-saving updates the same row.
+  const currentSummary = useMemo(() => {
+    if (!selectedDocument) return null;
+    const id = `summary-${activeProjectId ?? 'master'}-${selectedDocument.id}`;
+    return snapshot.summaries.find(s => s.id === id) ?? null;
+  }, [snapshot.summaries, activeProjectId, selectedDocument]);
 
   // Auto-dismiss is now handled centrally by the typed ToastHost
   // (default 5s for info/success, 9s for danger).
@@ -1061,12 +1089,82 @@ function ContentAnalysisPageInner() {
     <TooltipProvider delayDuration={150} skipDelayDuration={80}>
     <div className="min-h-screen bg-white">
       <SiteHeader />
-      <OnboardingTour
-        moduleKey="content-analysis"
+      {/* Guided session (M·05). Auto-opens the first time an analyst opens a
+          project workbench — i.e. once a source is in front of them — and
+          walks through the whole loop: pick a source tier, add codes, apply
+          them, summarise, switch lenses, read the results. Replayable from the
+          "Guided tour" button (bumps `tourReplay`). */}
+      <GuidedSession
+        moduleKey="content-analysis-workbench"
+        active={viewMode === 'workbench'}
+        replayToken={tourReplay}
         steps={[
-          { title: 'Hierarchical code tree', body: 'Every code can have children. Drag-merge or move codes from the editor — it auto-rejects cycles.' },
-          { title: 'AI pre-tagging', body: 'AI suggestions are flagged; accept or reject from the segment list.' },
-          { title: 'Word-compatible export', body: 'Export coded segments as a styled table droppable into Word.' },
+          {
+            title: 'Your sources, in three tiers',
+            anchor: '.ca-tour-source',
+            body: (
+              <>
+                You&apos;re working with <strong>{SOURCE_TIER_META[activeSourceTier].label.toLowerCase()}</strong> sources.
+                {' '}{SOURCE_TIER_META[activeSourceTier].blurb} Use these tabs to switch between
+                {' '}<strong>Policy</strong>, <strong>Scientific</strong> and <strong>Grey</strong> literature — each is
+                read and coded a little differently.
+              </>
+            ),
+          },
+          {
+            title: '1 · Add codes',
+            anchor: '.ca-tour-codes',
+            body: (
+              <>
+                Build your code system here. Click <strong>+ Root</strong> for a top-level theme, or the
+                {' '}<strong>+</strong> on any code to nest a child — codes form a hierarchy you can drag to
+                re-parent or merge.
+              </>
+            ),
+          },
+          {
+            title: '2 · Select a code & tag text',
+            anchor: '.ca-tour-doc',
+            body: (
+              <>
+                Click a code to make it the <strong>active tag</strong>, then highlight any passage in the
+                document to code it. No code active? Highlighting pops a toolbar where you can
+                {' '}<strong>create a code and apply it</strong> in one step.
+              </>
+            ),
+          },
+          {
+            title: '3 · Write a summary',
+            anchor: '.ca-tour-summary',
+            body: (
+              <>
+                Capture the gist of each document — what it commits to, what&apos;s missing. Summaries are
+                saved per project and shared with your team, so a reviewer sees your read at a glance.
+              </>
+            ),
+          },
+          {
+            title: '4 · Change lenses',
+            anchor: '.ca-tour-lenses',
+            body: (
+              <>
+                Switch analytical lenses without losing your work: <strong>Code</strong> to tag,
+                {' '}<strong>Compare</strong> for the cross-document matrix, and <strong>Trace</strong>,
+                {' '}<strong>Timeline</strong> &amp; <strong>Summarise</strong> for deeper passes.
+              </>
+            ),
+          },
+          {
+            title: '5 · Analyse the results',
+            anchor: '.ca-tour-results',
+            body: (
+              <>
+                Every coded passage lands here. Jump back to its source, see the <strong>tag
+                distribution</strong>, pull <strong>numeric extractions</strong>, or export the lot to
+                {' '}<strong>Word / CSV</strong>. Switch to <strong>Compare</strong> for coverage across the corpus.
+              </>
+            ),
+          },
         ]}
       />
       <PageHero
@@ -1205,7 +1303,15 @@ function ContentAnalysisPageInner() {
             />
           )}
 
-          <div className="ml-auto flex items-stretch gap-1 flex-wrap">
+          <button
+            type="button"
+            onClick={() => setTourReplay(t => t + 1)}
+            className="text-[11.5px] font-medium text-[#00928F] hover:text-[#006F6C] inline-flex items-center gap-1"
+            title="Replay the guided walkthrough"
+          >
+            <span aria-hidden>🧭</span> Guided tour
+          </button>
+          <div className="ca-tour-lenses ml-auto flex items-stretch gap-1 flex-wrap">
             {TAB_LABELS.map(t => (
               <button
                 key={t.id}
@@ -1271,14 +1377,10 @@ function ContentAnalysisPageInner() {
               </Panel>
 
               <Panel title="Documents in scope" accent={`${docsInScope.length}`}>
-                <div className="flex items-center gap-1 px-2.5 py-1.5 border-b border-[#E6E7E8] bg-white">
-                  {([
-                    { id: 'policy',    label: 'Policies' },
-                    { id: 'reference', label: 'References' },
-                    { id: 'all',       label: 'Both' },
-                  ] as const).map(opt => {
+                <div className="ca-tour-source flex items-center gap-1 px-2.5 py-1.5 border-b border-[#E6E7E8] bg-white">
+                  {SOURCE_FILTER_OPTIONS.map(opt => {
                     const count = docsInProjectScope.filter(d =>
-                      opt.id === 'all' ? true : (d.sourceKind ?? 'policy') === opt.id,
+                      opt.id === 'all' ? true : sourceTierOf(d) === opt.id,
                     ).length;
                     const active = sourceFilter === opt.id;
                     return (
@@ -1286,6 +1388,7 @@ function ContentAnalysisPageInner() {
                         key={opt.id}
                         type="button"
                         onClick={() => setSourceFilter(opt.id)}
+                        title={opt.hint}
                         className={`px-2 py-0.5 rounded-sm text-[10.5px] font-medium transition ${
                           active
                             ? 'bg-[#3D5265] text-white'
@@ -1340,6 +1443,7 @@ function ContentAnalysisPageInner() {
               <Panel
                 title="Tag system"
                 accent={`${visibleCodes.length}`}
+                anchorClassName="ca-tour-codes"
                 action={
                   <div className="flex items-center gap-2">
                     {activeCodeFilter && (
@@ -1429,7 +1533,7 @@ function ContentAnalysisPageInner() {
             </aside>
 
             {/* CENTER: annotated document */}
-            <main className="flex flex-col min-h-0">
+            <main className="ca-tour-doc flex flex-col min-h-0">
               <Panel
                 title={selectedDocument ? selectedDocument.shortTitle : 'Document'}
                 accent={selectedDocument?.kind.toUpperCase()}
@@ -1792,6 +1896,31 @@ function ContentAnalysisPageInner() {
 
               {selectedDocument && (
                 <Panel
+                  title="Document summary"
+                  accent={currentSummary ? 'saved' : 'optional'}
+                  anchorClassName="ca-tour-summary"
+                  bodyClassName="p-0"
+                  collapsible
+                  defaultCollapsed={!currentSummary}
+                >
+                  <DocumentSummaryPanel
+                    value={currentSummary?.text ?? ''}
+                    updatedAt={currentSummary?.updatedAt}
+                    readOnly={lockMode === 'watcher'}
+                    onSave={(text) => {
+                      if (!guardEdit()) return;
+                      setDocumentSummary(
+                        selectedDocument.id,
+                        activeProjectId === 'project-master' ? null : activeProjectId,
+                        text,
+                      );
+                    }}
+                  />
+                </Panel>
+              )}
+
+              {selectedDocument && (
+                <Panel
                   title="AI tag suggestions"
                   accent={pendingSuggestions.length > 0 ? `${pendingSuggestions.length} pending` : 'track changes'}
                   bodyClassName="p-0"
@@ -1829,7 +1958,7 @@ function ContentAnalysisPageInner() {
                 </Panel>
               )}
 
-              <Panel title="Tagged segments" accent={`${segmentsForDocument.length}`} bodyClassName="p-0 flex flex-col min-h-0">
+              <Panel title="Tagged segments" accent={`${segmentsForDocument.length}`} anchorClassName="ca-tour-results" bodyClassName="p-0 flex flex-col min-h-0">
                 <div className="max-h-[60vh] overflow-hidden flex">
                   <SegmentsList
                     segments={segmentsForDocument}
@@ -2123,6 +2252,7 @@ function Panel({
   bodyClassName,
   collapsible,
   defaultCollapsed,
+  anchorClassName,
 }: {
   title: string;
   accent?: React.ReactNode;
@@ -2132,11 +2262,13 @@ function Panel({
   /** When true, renders a chevron toggle in the header that hides the body. */
   collapsible?: boolean;
   defaultCollapsed?: boolean;
+  /** Extra class on the panel root — used to anchor the guided tour. */
+  anchorClassName?: string;
 }) {
   const [collapsed, setCollapsed] = useState(!!defaultCollapsed);
   const toggle = () => setCollapsed(c => !c);
   return (
-    <section className="border border-[#E6E7E8] rounded-sm bg-white flex flex-col min-h-0">
+    <section className={`border border-[#E6E7E8] rounded-sm bg-white flex flex-col min-h-0${anchorClassName ? ` ${anchorClassName}` : ''}`}>
       <header className="flex items-center justify-between gap-2 px-3 py-2 border-b border-[#E6E7E8] bg-[#FBFBFA]">
         <div
           className={`flex items-baseline gap-2 min-w-0 ${collapsible ? 'cursor-pointer select-none' : ''}`}
