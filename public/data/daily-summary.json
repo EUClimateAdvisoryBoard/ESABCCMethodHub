@@ -1,24 +1,24 @@
 {
   "date": "2026-06-03",
-  "generatedAt": "2026-06-03T09:30:22.951Z",
+  "generatedAt": "2026-06-03T15:29:25.296Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 3 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Q&#038;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits",
-      "summary": "The Labour government wants to cut UK greenhouse gas emissions to 87% below 1990 levels... The post Q&amp;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits appeared first on Carbon Brief.",
+      "headline": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
+      "summary": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: The current state of ‘carbon dioxide removal’ around the world",
-      "summary": "Carbon dioxide removal (CDR) technologies will need to be deployed at rates even faster than... The post Q&amp;A: The current state of ‘carbon dioxide removal’ around the world appeared first on Carbon Brief.",
+      "headline": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
+      "summary": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Trump administration drops $1.8bn 'anti-weaponisation' fund",
-      "summary": "Acting Attorney General Todd Blanche's announcement to abandon the fund comes amid pushback from top Republican lawmakers.",
+      "headline": "The end of Trump's 'weaponisation' fund is another sign Republicans are fighting back",
+      "summary": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,6 +34,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1185",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
+          "published": "2026-06-02T22:00:00.000Z",
+          "score": 19
+        },
+        {
           "title": "Q&#038;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits",
           "link": "https://www.carbonbrief.org/qa-how-uks-seventh-carbon-budget-will-deliver-865bn-in-economic-benefits/",
           "source": "Carbon Brief",
@@ -42,28 +50,20 @@
           "score": 13
         },
         {
-          "title": "Most Gulf markets in red amid uncertainty over US-Iran peace talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOeUp0NGF0Q1cxeDZNNWhxekNVSkVuTUdfQ29ZUDhOYkduOS02UWF6X0tEa2xDNGxIZXg0SElRVGNvRktCYUJwRlpsRDdJSFAxbDFwaXZKVWNWSDdnWjdsUmlPZDc2SlN2OEZYazh4c1d2cVJvRWF1WDdLM2E3WUQ4LUZFTlM2VWgzQnc0VkUwb0xLQ2Nrcl8xRGVLT1o3ZVEybmIzZllCcDgxVlFxNzkyRVc4Y0lZN0pJMkFSNmVZUGlMdlRRbHc?oc=5",
+          "title": "Trump says Iran has agreed to not have a nuclear weapon - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNclpNOGV6ZDdVV04yTGFpTW9NaG9peGpnRTNuYkM2dmg1dmctSEJnRl80a01OZjgydVdueURjUVpMLVJZbWlzVWxxZ3BkSi03b0RsaThqdnk0bzJsaEhkdzhZbE52OTFCd1N4bWdKc3hfMnNBVlYtTTgwV0FMYXgxd1BCdU1MRi1MX0huLW93M2RqNWZjczgyUlhERmZrcEdPS3RjZ2Z6UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOeUp0NGF0Q1cxeDZNNWhxekNVSkVuTUdfQ29ZUDhOYkduOS02UWF6X0tEa2xDNGxIZXg0SElRVGNvRktCYUJwRlpsRDdJSFAxbDFwaXZKVWNWSDdnWjdsUmlPZDc2SlN2OEZYazh4c1d2cVJvRWF1WDdLM2E3WUQ4LUZFTlM2VWgzQnc0VkUwb0xLQ2Nrcl8xRGVLT1o3ZVEybmIzZllCcDgxVlFxNzkyRVc4Y0lZN0pJMkFSNmVZUGlMdlRRbHc?oc=5\" target=\"_blank\"&gt;Most Gulf markets in red amid uncertainty over US-Iran peace talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-02T13:46:50.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNclpNOGV6ZDdVV04yTGFpTW9NaG9peGpnRTNuYkM2dmg1dmctSEJnRl80a01OZjgydVdueURjUVpMLVJZbWlzVWxxZ3BkSi03b0RsaThqdnk0bzJsaEhkdzhZbE52OTFCd1N4bWdKc3hfMnNBVlYtTTgwV0FMYXgxd1BCdU1MRi1MX0huLW93M2RqNWZjczgyUlhERmZrcEdPS3RjZ2Z6UQ?oc=5\" target=\"_blank\"&gt;Trump says Iran has agreed to not have a nuclear weapon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T12:39:51.000Z",
           "score": 7
         },
         {
-          "title": "Six US states sue Trump administration over deal to kill windfarm project",
-          "link": "https://www.theguardian.com/us-news/2026/jun/02/lawsuit-trump-administration-windfarm-leases",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;State attorneys general argue $1bn deal to terminate major offshore wind lease off the coast of New York is unlawful&lt;/p&gt;&lt;p&gt;Six states sued the &lt;a href=\"https://www.theguardian.com/us-news/trump-administration\"&gt;Trump administration&lt;/a&gt; on Tuesday over its decision to cancel a major offshore wind lease off the coast of &lt;a href=\"https://www.theguardian.com/us-news/new-york\"&gt;New York&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;In March, federal officials announced they would ",
-          "published": "2026-06-02T14:22:36.000Z",
-          "score": 4
-        },
-        {
-          "title": "New ways to remove CO2 from atmosphere must grow much faster, report says",
-          "link": "https://www.theguardian.com/environment/2026/jun/02/new-ways-remove-co2-from-atmosphere-carbon-dioxide-removal",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Novel forms of CO&lt;sub&gt;2&lt;/sub&gt; removal must expand at ‘highly ambitious rates’ if world is to limit global heating to 1.5C, says study&lt;/p&gt;&lt;p&gt;Humanity must suck carbon out of the atmosphere with new technologies even faster than the breakneck speed with which it has deployed solar panels if it is to limit global heating to 1.5C, a report has found.&lt;/p&gt;&lt;p&gt;Novel forms of carbon dioxide removal (CDR) must grow at “highly ambitious rates” to bridge the gap ",
-          "published": "2026-06-02T13:30:23.000Z",
-          "score": 4
+          "title": "Workers' strike delays LNG tanker loading at Australia's Ichthys plant - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5\" target=\"_blank\"&gt;Workers' strike delays LNG tanker loading at Australia's Ichthys plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T03:40:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -72,44 +72,44 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Q&#038;A: The current state of ‘carbon dioxide removal’ around the world",
-          "link": "https://www.carbonbrief.org/qa-the-current-state-of-carbon-dioxide-removal-around-the-world/",
+          "title": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1245",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
+          "published": "2026-06-03T11:25:23.000Z",
+          "score": 18
+        },
+        {
+          "title": "Daily News 03 / 06 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1246",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 03 Jun 2026 Eurobarometer shows continued public support for biodiversity protection across Europe\r\nPublished at the start of the EU Green Week, the Special Eurobarometer su...",
+          "published": "2026-06-03T11:51:00.000Z",
+          "score": 16
+        },
+        {
+          "title": "Cropped 3 June 2026: Highway through the Amazon &#124; El Niño impact &#124; State of CO2 removal",
+          "link": "https://www.carbonbrief.org/cropped-3-june-2026-highway-through-the-amazon-el-nino-impact-state-of-co2-removal/",
           "source": "Carbon Brief",
-          "description": "Carbon dioxide removal (CDR) technologies will need to be deployed at rates even faster than... The post Q&amp;A: The current state of ‘carbon dioxide removal’ around the world appeared first on Carbon Brief.",
-          "published": "2026-06-02T13:31:33.000Z",
-          "score": 13
+          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 3 June 2026: Highway through the Amazon | El Niño impact | State of CO2 removal appeared first on Carbon Brief.",
+          "published": "2026-06-03T14:06:03.000Z",
+          "score": 10
         },
         {
-          "title": "Shell pumped oil through Nigeria pipeline for years despite pollution evidence, documents show",
-          "link": "https://www.bbc.com/news/articles/cdrp8v7407ro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The oil giant says the documents ignore the critical context of the complex operating environment at the time.",
-          "published": "2026-06-03T05:13:02.000Z",
-          "score": 7
-        },
-        {
-          "title": "A strong El Nino may be imminent. Climate change will make its effects worse - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGJvWmhqM2J2djI2eU1KVVlKUHlubzRpNk5nclctZVNJVXBtSnNHUVpvZTN5TDBPZW5PaVc1dUVBX2Frcm1QV1ZscTBlanpYM3VWaWVqLVMzX2wwSXdhdTZfT2NRY082SnQ0N2l1LWtXR2xoblpydWNPZUQ2bWd2dU1zZWFOS3FsMVFDZnRld3FDbjc5T3MxTDZEQXhHUG1yUGV6VVpfTTliRDZkcFAxODdzUHpWRFNGX2NNbjA2YUtaOUo2Wktn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOeGJvWmhqM2J2djI2eU1KVVlKUHlubzRpNk5nclctZVNJVXBtSnNHUVpvZTN5TDBPZW5PaVc1dUVBX2Frcm1QV1ZscTBlanpYM3VWaWVqLVMzX2wwSXdhdTZfT2NRY082SnQ0N2l1LWtXR2xoblpydWNPZUQ2bWd2dU1zZWFOS3FsMVFDZnRld3FDbjc5T3MxTDZEQXhHUG1yUGV6VVpfTTliRDZkcFAxODdzUHpWRFNGX2NNbjA2YUtaOUo2Wktn?oc=5\" target=\"_blank\"&gt;A strong El Nino may be imminent. Climate change will make its effects worse&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-06-02T20:44:35.000Z",
-          "score": 7
-        },
-        {
-          "title": "Dismay as Trump officials to dismantle key ocean monitoring system",
-          "link": "https://www.theguardian.com/environment/2026/jun/02/trump-administration-ocean-observatories-initiative",
+          "title": "​Why is Europe still not ready for extreme heat?",
+          "link": "https://www.theguardian.com/world/2026/jun/03/why-is-europe-still-not-ready-for-extreme-heat",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Ocean Observatories Initiative, $368m network that has provided crucial climate data, latest victim of Trump cuts&lt;/p&gt;&lt;p&gt;The Trump administration plans to dismantle a $368m deep-sea observation system that has for more than a decade provided crucial data on ocean systems and climate change.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://oceanobservatories.org/2026/05/announcement-on-ooi-descoping/\"&gt;notice&lt;/a&gt;, the National Science Foundation (NSF) announced that it had “",
-          "published": "2026-06-02T22:35:44.000Z",
-          "score": 4
+          "description": "&lt;p&gt;​The first heatwaves of the season reveal how ​ill-prepared governments across the continent are to protect people from increasingly dangerous temperatures&lt;/p&gt;&lt;p&gt;&lt;strong&gt;• &lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2018/mar/22/this-is-europe-sign-up-guardian-email-updates\"&gt;&lt;strong&gt;Don’t get This Is Europe delivered to your inbox? Sign up here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Meteorological summer has begun",
+          "published": "2026-06-03T14:25:26.000Z",
+          "score": 8
         },
         {
-          "title": "Next El Niño could be strongest in decades",
-          "link": "https://www.bbc.com/news/videos/c8e8zzw30zyo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Bathing warning issued after 'potential water pollution incident'",
+          "link": "https://www.bbc.com/news/articles/c242ezpv64zo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "A new phase of the natural El Niño weather pattern could begin in a matter of weeks, the UN has warned, boosting temperatures on a planet already under strain from climate change.",
-          "published": "2026-06-02T14:50:54.000Z",
-          "score": 4
+          "description": "The National Trust, which manages Portstewart Strand, has urged visitors to the beach to be vigilant.",
+          "published": "2026-06-03T12:15:45.000Z",
+          "score": 7
         }
       ]
     },
@@ -118,11 +118,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Trump administration drops $1.8bn 'anti-weaponisation' fund",
-          "link": "https://www.bbc.com/news/articles/crkpyj41m15o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "The end of Trump's 'weaponisation' fund is another sign Republicans are fighting back",
+          "link": "https://www.bbc.com/news/articles/c87q9d7r57yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Acting Attorney General Todd Blanche's announcement to abandon the fund comes amid pushback from top Republican lawmakers.",
-          "published": "2026-06-03T00:16:09.000Z",
+          "description": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
+          "published": "2026-06-03T12:25:31.000Z",
           "score": 2
         },
         {
@@ -138,60 +138,19 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Video of a committee meeting - Wednesday, 3 June 2026 - 07:00 - Committee on the Environment, Public Health and Food Safety - Committee on Transport and Tourism",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260603-0900-COMMITTEE-TRAN-ENVI_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 60'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-03T08:08:02.000Z",
-          "score": 18
-        },
-        {
-          "title": "Highlights - ENVI-TRAN Joint consideration of draft report on Clean Corporate Vehicles - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78571",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230215PHT75307/20230215PHT75307-ms.jpg\" width=\"180\" alt=\"Electric car charging in a parking slot\" title=\"CO2 Emissions for cars and vans © Michael Flippo / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 3 June 2026, ENVI and TRAN Members will discuss the draft report on the Commission proposal on Clean Corporate Vehicles, which is part of the Automotive Package. The proposal ",
-          "published": "2026-06-02T16:13:51.000Z",
-          "score": 18
-        },
-        {
-          "title": "Highlights - Exchange of views with Commissioner Lahbib as part of structured dialogue - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78569",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250506PHT28258/20250506PHT28258-ms.jpg\" width=\"180\" alt=\"The Commissioner Hadja Lahbib front of the European flag\" title=\"Commissioner Hadja Lahbib © European Union (2025) - European Parliament\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, Members held an exchange of views with Commissioner Lahbib on preparedness, civil protection and crisis management as part of the struct",
-          "published": "2026-06-02T16:13:43.000Z",
-          "score": 18
-        },
-        {
-          "title": "Germany&#039;s Merz backs Hungary&#039;s new pro-EU course",
-          "link": "https://www.dw.com/en/germany-s-merz-backs-hungary-s-new-pro-eu-course/a-77395755?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "After talks with Hungary&#039;s new prime minister, Peter Magyar, German Chancellor Friedrich Merz expects a positive reset in EU relations. Meanwhile, Budapest has signaled only a partial shift so far on support for Ukraine.",
-          "published": "2026-06-02T16:44:00.000Z",
-          "score": 8
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Parliamentary elections in Armenia: What&#039;s at stake",
-          "link": "https://www.dw.com/en/parliamentary-elections-in-armenia-what-s-at-stake/a-77400608?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Armenia&#039;s election offers a choice between Russia and EU",
+          "link": "https://www.dw.com/en/armenia-s-election-offers-a-choice-between-russia-and-eu/a-77400608?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Armenians are set to vote on the country&#039;s future geopolitical direction at the June 7 ballot. It will be a test of public opinion in Russia’s longstanding ally that has seen a gradual drift towards the EU.",
+          "description": "Armenians are set to vote on the country&#039;s future geopolitical direction on June 7. The election will be a test of public opinion in the long-standing Russia ally, where the population is increasingly eyeing the EU.",
           "published": "2026-06-03T08:36:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Unpacking Germany&#039;s campaign for a UN Security Council seat",
-          "link": "https://www.dw.com/en/unpacking-germany-s-campaign-for-a-un-security-council-seat/a-77386458?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "On Wednesday, the United Nations will hold elections for several seats on the UN Security Council. Germany&#039;s government is campaigning vigorously for a seat.",
-          "published": "2026-06-02T11:10:00.000Z",
-          "score": 8
+          "score": 12
         },
         {
           "title": "Paramount seeks EU approval to buy Warner Bros; decision due July 7 - Reuters",
@@ -202,12 +161,12 @@
           "score": 8
         },
         {
-          "title": "Venezuela's Rodriguez to discuss energy ties during India visit from June 3-7 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZ2NRcGY1dGdFWUpVRTFrbC1RVmVvcjZhNnJNWG02SkV1RVFpb1VLMHFPSF8zMXQ4RXFpM2l3TnlHMUEyQXpITkhOVGtrSzJlbWdfa2JRUnJTaVJPOFBzT05iNEI4eF96c1lUd0x4dkdjekNyUGZ1dk5IVUNFMzVjZ1NKMVl6NVRFLW43V0s0VXBFOVBrX19Hb3BzYWUzaDJjY3F1azVibW1udw?oc=5",
+          "title": "Germany sees window opening for talks between Europe and Russia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY0Ixd1VBMW9rTmY3bUZ6czlGTkF6WHQ5UVprYTB2WUVxSWYzeGJQdDhMTGd1Q1dvMUlHQlpfM29FRlE2Q3Q1aEdQeXkyVzdfYXdaRW1rSWgtOUFzb1FKbDV3ajc4d2VpdldzWnpfRUdBbVF5d0RManVSdklJblJhTzJyMUNtWDdhcF82Tkhmc01ZZy0xNV9QdXdWS0haTHFBMjRqQ3lIOWFjVlU?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQZ2NRcGY1dGdFWUpVRTFrbC1RVmVvcjZhNnJNWG02SkV1RVFpb1VLMHFPSF8zMXQ4RXFpM2l3TnlHMUEyQXpITkhOVGtrSzJlbWdfa2JRUnJTaVJPOFBzT05iNEI4eF96c1lUd0x4dkdjekNyUGZ1dk5IVUNFMzVjZ1NKMVl6NVRFLW43V0s0VXBFOVBrX19Hb3BzYWUzaDJjY3F1azVibW1udw?oc=5\" target=\"_blank\"&gt;Venezuela's Rodriguez to discuss energy ties during India visit from June 3-7&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-02T12:43:51.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY0Ixd1VBMW9rTmY3bUZ6czlGTkF6WHQ5UVprYTB2WUVxSWYzeGJQdDhMTGd1Q1dvMUlHQlpfM29FRlE2Q3Q1aEdQeXkyVzdfYXdaRW1rSWgtOUFzb1FKbDV3ajc4d2VpdldzWnpfRUdBbVF5d0RManVSdklJblJhTzJyMUNtWDdhcF82Tkhmc01ZZy0xNV9QdXdWS0haTHFBMjRqQ3lIOWFjVlU?oc=5\" target=\"_blank\"&gt;Germany sees window opening for talks between Europe and Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T11:11:41.000Z",
+          "score": 8
         },
         {
           "title": "Exclusive: India's Tata taps Chery for premium EV push, leveraging Chinese tech - Reuters",
@@ -216,14 +175,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcTktSUlNcndQNzZtVjZUeF8xV3Q0UjRPYnRDVEFhWlAxYloyOE9XYzEzQzVwVC15TVI0Wi15a2hmY25yR1d0M0FKZlFKSjFtMHhqLTRza2lZWjRxN3VMY1d1YVJRejAxcm1tVG0yOURZYmxQY09OSzd3NVI2amhkQVF3RGZFVTJDcnc2NW82TVhzYVZ2ZDNUamZsdVQxY1kwN01tb0xlUWk?oc=5\" target=\"_blank\"&gt;Exclusive: India's Tata taps Chery for premium EV push, leveraging Chinese tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-03T05:51:00.000Z",
           "score": 7
+        },
+        {
+          "title": "Los Angeles Mayor Karen Bass advances to run-off in race to run California's biggest city",
+          "link": "https://www.bbc.com/news/articles/c74dp1yk51vo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The mayor's opponent could be either Republican newcomer and reality TV star Spencer Pratt, or a fellow Democrat, council member Nithya Raman.",
+          "published": "2026-06-03T09:17:07.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 395,
-    "articlesLast24h": 164,
-    "afterDedup": 150,
+    "totalArticlesScanned": 370,
+    "articlesLast24h": 154,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
