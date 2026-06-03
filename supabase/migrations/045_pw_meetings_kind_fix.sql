@@ -4,6 +4,10 @@
 --   • the seeded Meetings module rows for both report workspaces
 --
 -- Idempotent: safe to run even if 044_pw_meetings.sql has already taken effect.
+--
+-- 'content-analysis' (added in 048) is included so re-applying this whole chain
+-- to a database already past 048 doesn't fail the constraint against existing
+-- content-analysis rows. The allowed set only ever widens.
 -- ─────────────────────────────────────────────────────────────────────────────
 
 alter table public.pw_modules drop constraint if exists pw_modules_kind_check;
@@ -13,6 +17,7 @@ alter table public.pw_modules add constraint pw_modules_kind_check
     'recommendations',
     'member-states',
     'policy-analysis',
+    'content-analysis',
     'custom',
     'meetings'
   ));

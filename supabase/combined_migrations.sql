@@ -5337,6 +5337,7 @@ alter table public.pw_modules add constraint pw_modules_kind_check
     'recommendations',
     'member-states',
     'policy-analysis',
+    'content-analysis',
     'custom',
     'meetings'
   ));
@@ -5457,6 +5458,7 @@ alter table public.pw_modules add constraint pw_modules_kind_check
     'recommendations',
     'member-states',
     'policy-analysis',
+    'content-analysis',
     'custom',
     'meetings'
   ));
