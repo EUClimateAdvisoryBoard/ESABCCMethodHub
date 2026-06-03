@@ -15,6 +15,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { Block, BlockKind } from '@/lib/content-analysis/types';
+import { ensurePdfNodeGlobals } from '@/lib/content-analysis/pdf-node-globals';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -157,6 +158,7 @@ interface IngestResult {
 }
 
 async function extractBlocks(data: Uint8Array, celex: string): Promise<IngestResult> {
+  await ensurePdfNodeGlobals();
   const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
   const loadingTask = pdfjsLib.getDocument({
     data,
