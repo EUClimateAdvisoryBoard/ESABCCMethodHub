@@ -919,6 +919,10 @@ _A4_SERIES = {
 for _pkey, _pname, _base in [('bovine', 'Bovine meat', 0), ('dairy', 'Dairy products', 5), ('pig', 'Pig meat', 10)]:
     for _i, _skey in enumerate(['cons', 'prod', 'herd']):
         _slug, _word, _nm, _unit, _dir = _A4_SERIES[_skey]
+        _extra = {}
+        # Bovine herd size ↔ the pre-existing ECNO 'cattle-population' indicator.
+        if _pkey == 'bovine' and _skey == 'herd':
+            _extra['duplicateOf'] = 'cattle-population'
         _add(
             sheet='Figure 59', seriesPos=_base + _i,
             id=f'esabcc-a4-{_pkey}-{_slug}', code=f'A4 ({_pkey}, {_word})',
@@ -930,7 +934,7 @@ for _pkey, _pname, _base in [('bovine', 'Bovine meat', 0), ('dairy', 'Dairy prod
                 'production and herd size to relate demand, output and animal numbers.'),
             sourceShort='Eurostat/FAOSTAT food balances + livestock surveys',
             sourceUrl='https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
-            direction=_dir,
+            direction=_dir, **_extra,
         )
 
 # ── A5 — average animal-product consumption (Figure 60), kcal/cap/day.
@@ -972,6 +976,7 @@ _add(
     sourceShort='Eurostat (env_wasfw)',
     sourceUrl='https://ec.europa.eu/eurostat/databrowser/view/env_wasfw/default/table',
     direction='down', target=(65.5, 2030),
+    duplicateOf='food-waste-per-capita',
 )
 
 # ── B4 — population and floor area of homes and businesses (Figure 50), indexed
@@ -1082,6 +1087,7 @@ _add(
 #    weighted rate (historic point at 2020) with the 2030 scenario as target.
 for _slug, _nm, _hist, _scen in [('residential', 'Residential', 0.010, 0.018),
                                   ('commercial', 'Commercial', 0.006, 0.011)]:
+    _extra = {'duplicateOf': 'building-renovation-rate'} if _slug == 'residential' else {}
     _add(
         sheet='Figure 49', dataPoints=[{'year': 2020, 'value': _hist}],
         id=f'esabcc-b3-{_slug}-renovation-rate', code=f'B3 ({_slug})',
@@ -1094,7 +1100,7 @@ for _slug, _nm, _hist, _scen in [('residential', 'Residential', 0.010, 0.018),
             'counts deep renovations more than light ones (Light/Medium/Deep depths).'),
         sourceShort='Climate Target Plan impact assessment + Eurostat',
         sourceUrl='https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020SC0176',
-        direction='up', target=(_scen, 2030),
+        direction='up', target=(_scen, 2030), **_extra,
     )
 
 RECIPES += NEW_RECIPES

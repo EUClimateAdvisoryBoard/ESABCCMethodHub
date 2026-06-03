@@ -134,6 +134,33 @@ instead stores the **full underlying EU-CRF area time series** (million ha,
 change recompute as `last − first` year. Six categories: Cropland,
 Grassland, Wetland, Settlements, Forest land, Other. 6 entries.
 
+## Overlaps with existing indicators
+
+Three of the new entries measure the same concept as a pre-existing ECNO
+"additional" indicator, so they are cross-linked via `duplicateOf` (the
+ESABCC copy is authoritative; the UI shows a **DUP** badge on both sides):
+
+| New ESABCC entry | links to (ECNO id) |
+|------------------|--------------------|
+| A6 food waste per capita | `food-waste-per-capita` |
+| A4 bovine herd size | `cattle-population` |
+| B3 residential renovation rate | `building-renovation-rate` |
+
+All other new entries are genuinely new concepts (no id or topical
+collision with the existing database).
+
+## Seeding (no migration needed)
+
+Indicators reach the app through the runtime seeder
+(`ensureSeedIndicators` in `src/lib/project-workspace/db.ts`), not a SQL
+migration: any TS entry whose id is not yet in `pw_indicators` is upserted
+on the next workspace load. If a first seed inserts the rows but its points
+write fails or races (leaving blank charts), `listIndicators` now
+**self-heals** — it detects seeded indicators with zero points, serves the
+bundled series immediately, and persists the missing points. The admin
+endpoint `POST /api/project-workspace/admin/reseed?project=policy-gap-2-0`
+(Bearer-token gated) forces the same backfill on demand.
+
 ## Verifying / regenerating
 
 ```bash
