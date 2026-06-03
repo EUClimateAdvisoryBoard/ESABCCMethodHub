@@ -490,6 +490,26 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
     .select('*')
     .in('indicator_id', ids);
   const esabccById = new Map(ESABCC_REPORT_INDICATORS.map(i => [i.id, i]));
+  // Self-heal: if a seeded indicator's row exists but its points never landed
+  // (a first-seed that inserted the row then failed/raced on its points), the
+  // chart would render blank. `points` is already in hand, so detecting the gap
+  // is free; we repopulate from the bundled series and only write when there is
+  // an actual gap, so the steady state costs nothing extra.
+  const idsWithPoints = new Set((points ?? []).map(p => p.indicator_id));
+  const missingPoints = rows
+    .filter(r => esabccById.has(r.id) && !idsWithPoints.has(r.id))
+    .flatMap(r =>
+      (esabccById.get(r.id)?.data ?? []).map(p => ({
+        indicator_id: r.id,
+        year: p.year,
+        value: p.value,
+      }))
+    );
+  if (missingPoints.length > 0) {
+    await sb
+      .from('pw_indicator_points')
+      .upsert(missingPoints, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
+  }
   return rows.map<DBIndicator>(r => {
     const isEsabcc = r.id.startsWith('esabcc-');
     const meta = esabccById.get(r.id);
@@ -499,6 +519,20 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
     const afterReportYears = new Set(
       (meta?.data ?? []).filter(p => p.afterReport).map(p => p.year)
     );
+    const dbData = (points ?? [])
+      .filter(p => p.indicator_id === r.id)
+      .map<IndicatorDataPoint>(p =>
+        afterReportYears.has(p.year)
+          ? { year: p.year, value: p.value, afterReport: true }
+          : { year: p.year, value: p.value }
+      )
+      .sort((a, b) => a.year - b.year);
+    // If the DB row had no points yet, serve the bundled series straight away
+    // (the self-heal above persists them for next time).
+    const data =
+      dbData.length === 0 && meta?.data?.length
+        ? [...meta.data].sort((a, b) => a.year - b.year)
+        : dbData;
     return {
       id: r.id,
       name: r.name,
@@ -514,14 +548,7 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       group: isEsabcc ? 'esabcc' : 'additional',
       code: meta?.code,
       duplicateOf: meta?.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[r.id],
-      data: (points ?? [])
-        .filter(p => p.indicator_id === r.id)
-        .map<IndicatorDataPoint>(p =>
-          afterReportYears.has(p.year)
-            ? { year: p.year, value: p.value, afterReport: true }
-            : { year: p.year, value: p.value }
-        )
-        .sort((a, b) => a.year - b.year),
+      data,
     };
   });
 }
