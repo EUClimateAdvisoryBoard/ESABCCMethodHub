@@ -16,6 +16,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { Block, BlockKind } from '@/lib/content-analysis/types';
+import { ensurePdfNodeGlobals } from '@/lib/content-analysis/pdf-node-globals';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -216,6 +217,7 @@ async function extractBlocks(
   pdfUrl: string,
 ): Promise<IngestResult> {
   // Legacy build is CommonJS-friendly and works server-side without DOM.
+  await ensurePdfNodeGlobals();
   const pdfjsLib = await import('pdfjs-dist/legacy/build/pdf.mjs');
 
   // `disableWorker` is valid at runtime but not in the published d.mts —
