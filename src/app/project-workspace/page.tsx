@@ -21,7 +21,7 @@ export default async function ProjectWorkspaceIndex() {
   return (
     <div className="min-h-screen bg-white text-tertiary-dark">
       <SiteHeader />
-      <main className="max-w-wide mx-auto px-6 py-10">
+      <main className="max-w-wide mx-auto px-4 py-6 sm:px-6 sm:py-10">
         <header className="mb-8">
           <p className="text-[10px] tracking-[0.18em] uppercase text-primary font-semibold mb-1">
             M · 19

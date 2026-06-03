@@ -316,7 +316,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
             updates from Eurostat / EEA / EAFO / IRENA / EHPA.
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={handleDownloadExcel}
@@ -346,7 +346,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
       </header>
 
       {showFrameworks && (
-        <div className="flex items-center gap-1 border border-grey-200 rounded-lg p-0.5 w-fit">
+        <div className="flex flex-wrap items-center gap-1 border border-grey-200 rounded-lg p-0.5 w-full sm:w-fit">
           <button
             type="button"
             onClick={() => setView('indicators')}
@@ -503,7 +503,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                   )}
                 </p>
               </div>
-              <div className="flex gap-1">
+              <div className="flex gap-1 flex-wrap">
                 <button
                   type="button"
                   onClick={() => setChartType('line')}
@@ -877,7 +877,7 @@ function AddIndicatorDialog({
 
   return (
     <DialogShell title="Add indicator" onClose={onClose}>
-      <div className="grid grid-cols-2 gap-3 text-sm">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
         <Field label="Name">
           <input className={inputCls} value={name} onChange={e => setName(e.target.value)} />
         </Field>
@@ -1053,7 +1053,7 @@ function DialogShell({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-xl w-full p-5"
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-xl w-full p-4 sm:p-5 max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-3">

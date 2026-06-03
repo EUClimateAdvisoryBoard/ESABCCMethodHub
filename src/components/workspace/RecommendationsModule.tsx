@@ -810,7 +810,7 @@ function TagEditor({
             }
           }}
           placeholder="Add a tag (e.g. industry)"
-          className="px-2 py-1 border border-grey-200 rounded text-xs min-w-[160px]"
+          className="px-2 py-1 border border-grey-200 rounded text-xs w-full sm:w-auto sm:min-w-[160px]"
         />
         <button
           type="button"
@@ -857,7 +857,7 @@ function AddEventForm({
           className="px-2 py-1 border border-grey-200 rounded text-xs"
         />
       </label>
-      <label className="text-[10px] text-tertiary flex-1 min-w-[200px]">
+      <label className="text-[10px] text-tertiary flex-1 w-full sm:w-auto sm:min-w-[200px]">
         <span className="block mb-0.5">Note</span>
         <input
           value={note}
@@ -866,7 +866,7 @@ function AddEventForm({
           className="w-full px-2 py-1 border border-grey-200 rounded text-xs"
         />
       </label>
-      <label className="text-[10px] text-tertiary flex-1 min-w-[200px]">
+      <label className="text-[10px] text-tertiary flex-1 w-full sm:w-auto sm:min-w-[200px]">
         <span className="block mb-0.5">Source URL (optional)</span>
         <input
           value={url}

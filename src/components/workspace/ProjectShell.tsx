@@ -201,7 +201,7 @@ function AddModuleDialog({
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5"
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
         <h3 className="text-sm font-bold text-tertiary-dark mb-3">Add module</h3>

@@ -280,7 +280,7 @@ export default function PolicyCodesPanel({
           {visibleTree.map(node => (
             <li
               key={node.key}
-              className="flex items-center gap-2 text-[11px]"
+              className="flex items-center gap-2 text-[11px] flex-wrap"
               style={{ paddingLeft: `${node.depth * 12}px` }}
             >
               <span

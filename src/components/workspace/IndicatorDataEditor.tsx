@@ -512,13 +512,13 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
   const activeRef = sel.c === 0 ? `${colLetter(0)}${sel.r + 1}` : `${colLetter(sel.c)}${sel.r + 1}`;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-2 sm:p-4" onClick={onClose}>
       <div
         className="bg-white rounded-xl shadow-xl border border-grey-200 w-full max-w-6xl max-h-[92vh] flex flex-col"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-5 py-3 border-b border-grey-200">
+        <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-grey-200">
           <div>
             <h3 className="text-sm font-bold text-tertiary-dark">
               Edit data / calc — {indicator.name}
@@ -549,14 +549,14 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
         {/* Derivation overview — how the Value column is built from raw inputs */}
         {showInfo && layout?.derivation && (
           <div
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-4"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/40 p-2 sm:p-4"
             onClick={() => setShowInfo(false)}
           >
             <div
               className="bg-white rounded-xl shadow-xl border border-grey-200 w-full max-w-2xl max-h-[85vh] flex flex-col"
               onClick={e => e.stopPropagation()}
             >
-              <div className="flex items-center justify-between px-5 py-3 border-b border-grey-200">
+              <div className="flex items-center justify-between px-4 sm:px-5 py-3 border-b border-grey-200">
                 <h3 className="text-sm font-bold text-tertiary-dark">
                   How “{indicator.name}” is derived
                 </h3>
@@ -569,7 +569,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
                   ✕
                 </button>
               </div>
-              <div className="overflow-auto px-5 py-4">
+              <div className="overflow-auto px-4 sm:px-5 py-4">
                 <pre className="whitespace-pre-wrap font-sans text-[12px] leading-relaxed text-tertiary-dark">
                   {layout.derivation}
                 </pre>
@@ -579,7 +579,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
         )}
 
         {/* Formula bar */}
-        <div className="px-5 py-2 border-b border-grey-100 flex items-center gap-2 bg-white">
+        <div className="px-4 sm:px-5 py-2 border-b border-grey-100 flex items-center gap-2 bg-white">
           <span
             className="shrink-0 w-14 text-center text-[11px] font-mono font-semibold text-tertiary-dark bg-grey-50 border border-grey-200 rounded px-1 py-1"
             title="Active cell"
@@ -627,7 +627,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
         {showHelp && <FormulaHelp columns={columns} />}
 
         {/* Toolbar */}
-        <div className="px-5 py-2 flex items-center gap-2 flex-wrap border-b border-grey-100 bg-grey-50">
+        <div className="px-4 sm:px-5 py-2 flex items-center gap-2 flex-wrap border-b border-grey-100 bg-grey-50">
           <button type="button" onClick={addColumn} className={btnSecondary}>
             + Column
           </button>
@@ -655,7 +655,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
 
         {/* Grid */}
         <div
-          className="overflow-auto flex-1 px-5 py-3"
+          className="overflow-auto flex-1 px-4 sm:px-5 py-3"
           onPaste={e => {
             const text = e.clipboardData.getData('text');
             if (text && text.includes('\t')) {
@@ -825,7 +825,7 @@ export default function IndicatorDataEditor({ indicator, layout, onClose, onSave
         </div>
 
         {/* Footer */}
-        <div className="px-5 py-3 border-t border-grey-200 flex items-center justify-between gap-3">
+        <div className="px-4 sm:px-5 py-3 border-t border-grey-200 flex items-center justify-between gap-3">
           <div className="text-[11px] text-red-700 min-h-[1rem] flex-1">{error}</div>
           <div className="flex gap-2">
             <button type="button" onClick={onClose} className={btnSecondary}>
@@ -941,7 +941,7 @@ function FormulaHelp({ columns }: { columns: ECol[] }) {
       ? `= [${columns[1]?.header || 'Helper'}] * [${columns[0]?.header || 'Value'}]`
       : '= B * C';
   return (
-    <div className="px-5 py-2 bg-secondary/5 border-b border-secondary/20 text-[11px] text-tertiary leading-relaxed">
+    <div className="px-4 sm:px-5 py-2 bg-secondary/5 border-b border-secondary/20 text-[11px] text-tertiary leading-relaxed">
       <p className="mb-1">
         <strong className="text-tertiary-dark">Formulas</strong> apply to a whole column and
         recompute live. Reference other columns by{' '}

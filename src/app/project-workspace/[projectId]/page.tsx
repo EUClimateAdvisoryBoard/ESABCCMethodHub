@@ -88,7 +88,7 @@ export default async function ProjectPage({
   return (
     <div className="min-h-screen bg-white text-tertiary-dark">
       <SiteHeader />
-      <main className="max-w-wide mx-auto px-6 py-8">
+      <main className="max-w-wide mx-auto px-4 py-6 sm:px-6 sm:py-8">
         <nav className="text-xs text-tertiary mb-4">
           <Link href="/project-workspace" className="hover:text-primary">
             Project Workspace

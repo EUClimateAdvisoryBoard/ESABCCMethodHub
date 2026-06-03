@@ -240,10 +240,10 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
                 className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-grey-50"
               >
                 <span className="w-2.5 h-2.5 rounded-full shrink-0" style={{ background: s.color }} />
-                <span className="font-semibold text-tertiary-dark">{s.name}</span>
-                <span className="text-[11px] text-tertiary-light">{s.figure}</span>
+                <span className="font-semibold text-tertiary-dark truncate min-w-0">{s.name}</span>
+                <span className="text-[11px] text-tertiary-light shrink-0">{s.figure}</span>
                 <span className="hidden sm:block text-sm text-tertiary truncate flex-1">{s.goal}</span>
-                <span className="text-[11px] text-tertiary-light shrink-0">
+                <span className="text-[11px] text-tertiary-light shrink-0 text-right">
                   {c.levers} levers · {c.linked}/{c.indicators} indicators linked
                 </span>
                 <span className="text-tertiary-light shrink-0">{isOpen ? '▾' : '▸'}</span>
