@@ -228,12 +228,69 @@ export interface CodeSuggestion {
   createdAt: string;
 }
 
-/** A free-text, whole-document summary — a "comment for the entire paper".
+/** SmartArt-style diagram layouts for a summary "slide". Rendered with plain
+ *  SVG/CSS (no external dependency) so the team can sketch a flow, a checklist,
+ *  a cycle or a simple hierarchy without leaving the workbench. */
+export type SummaryDiagramLayout = 'process' | 'list' | 'cycle' | 'hierarchy';
+
+/** One node in a SmartArt-style diagram. For `hierarchy` layouts a node may
+ *  have `children` (one level of nesting is rendered). */
+export interface SummaryDiagramNode {
+  id: string;
+  text: string;
+  /** Child node ids — only meaningful for the `hierarchy` layout. */
+  children?: string[];
+}
+
+/** The kind of "slide" in a rich summary deck. */
+export type SummaryBlockKind = 'text' | 'diagram' | 'image';
+
+interface SummaryBlockBase {
+  id: string;
+  kind: SummaryBlockKind;
+}
+
+/** A free-text slide (supports simple line breaks). */
+export interface SummaryTextBlock extends SummaryBlockBase {
+  kind: 'text';
+  text: string;
+}
+
+/** A flowchart / SmartArt-style slide. */
+export interface SummaryDiagramBlock extends SummaryBlockBase {
+  kind: 'diagram';
+  layout: SummaryDiagramLayout;
+  /** Optional heading shown above the diagram. */
+  title?: string;
+  nodes: SummaryDiagramNode[];
+}
+
+/** A screenshot / image slide. `src` is a data-URL (base64) or hosted URL —
+ *  these are the heavy payloads that make the lazy-load worthwhile. */
+export interface SummaryImageBlock extends SummaryBlockBase {
+  kind: 'image';
+  src: string;
+  alt?: string;
+  caption?: string;
+}
+
+/** One slide of a rich summary deck. */
+export type SummaryBlock = SummaryTextBlock | SummaryDiagramBlock | SummaryImageBlock;
+
+/** A whole-document summary — a "comment for the entire paper".
  *  Unlike a `CodedSegment.note` (which is pinned to a passage) this is
  *  attached to the document as a whole, no matter its kind (policy, grey or
  *  scientific literature). Persisted through the shared store so the whole
  *  team sees it. Scoped to a project so the Industry and Policy Gap reports
- *  can each keep their own take on the same paper. */
+ *  can each keep their own take on the same paper.
+ *
+ *  Beyond the plain-text lead (`text`), a summary can carry a rich deck of
+ *  `blocks` — text, SmartArt-style flowcharts and screenshots — turning the
+ *  summary into a little interactive presentation. Because those blocks (and
+ *  especially embedded screenshots) are heavy, they are **lazy-loaded**: the
+ *  bulk list only ships `text` + `blockCount`, and `blocks` is fetched on
+ *  demand when the user opens "Show summary". A summary whose `blocks` is
+ *  `undefined` simply hasn't been hydrated yet (vs. `[]` = no rich slides). */
 export interface DocumentSummary {
   /** Deterministic `summary-<projectId|master>-<documentId>` so re-saving
    *  updates the same row rather than piling up duplicates. */
@@ -241,7 +298,14 @@ export interface DocumentSummary {
   documentId: string;
   /** Project the summary was authored under; `null` for master-level. */
   projectId: string | null;
+  /** Plain-text lead / abstract. Always shipped in the bulk list. */
   text: string;
+  /** Rich presentation slides. `undefined` when not yet hydrated (lazy),
+   *  `[]` when the summary has no rich slides. */
+  blocks?: SummaryBlock[];
+  /** Number of rich slides — shipped in the bulk list so the badge and the
+   *  "Show summary (N slides)" affordance render without fetching `blocks`. */
+  blockCount?: number;
   createdAt: string;
   updatedAt: string;
 }
