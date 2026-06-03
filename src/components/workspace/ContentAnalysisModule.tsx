@@ -46,6 +46,7 @@ import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
   useLiveReferences,
   isScientificLiterature,
+  referencePdfCacheKey,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
 import type { AnalysisDocument, CodeNode, DocumentSummary } from '@/lib/content-analysis/types';
@@ -466,15 +467,20 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
   };
 
-  const handleUpload = async (doc: AnalysisDocument, file: File) => {
+  // Shared PDF ingestion path. Sends the bytes to the ingest-upload route,
+  // which extracts text + block boxes and caches the PDF server-side under a
+  // stable key (the real CELEX for policies, or a synthetic key derived from
+  // the document id for references). The cached PDF then lights up the PDF
+  // annotation pane via /api/content-analysis/pdf.
+  const ingestPdfBlob = async (doc: AnalysisDocument, blob: Blob, label: string) => {
     upsertDocument(doc);
-    setIngestState({ status: 'loading', message: `Uploading ${file.name}…` });
+    setIngestState({ status: 'loading', message: `Loading ${label}…` });
     try {
       const form = new FormData();
-      form.append('file', file);
-      const celex = doc.celexNumber
-        ? encodeURIComponent(doc.celexNumber)
-        : encodeURIComponent(doc.id.toUpperCase().replace(/[^0-9A-Z]/g, '').slice(0, 20) || 'UPLOAD');
+      // The route reads the `file` field; a third arg gives it a filename so
+      // it is treated as a File rather than a string.
+      form.append('file', blob, 'document.pdf');
+      const celex = encodeURIComponent(doc.celexNumber ?? referencePdfCacheKey(doc.id));
       const resp = await fetch(`/api/content-analysis/ingest-upload?celex=${celex}`, { method: 'POST', body: form });
       const data = await resp.json();
       if (!resp.ok) { setIngestState({ status: 'error', message: data?.error ?? `HTTP ${resp.status}` }); return; }
@@ -482,10 +488,37 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         pdfUrl: data.pdfUrl || '', pageCount: data.pageCount, blocks: data.blocks,
         text: data.text, ingestedAt: data.ingestedAt, archiveSource: 'manual-upload',
       });
-      setIngestState({ status: 'ok', message: 'PDF uploaded' });
+      setIngestState({ status: 'ok', message: 'PDF loaded' });
     } catch (err) {
       setIngestState({ status: 'error', message: String(err) });
     }
+  };
+
+  const handleUpload = (doc: AnalysisDocument, file: File) =>
+    ingestPdfBlob(doc, file, file.name);
+
+  // Pull the PDF a user already uploaded in the reference manager (stored in
+  // the public `reference-pdfs` bucket) and ingest it here — so grey/scientific
+  // literature can be annotated without re-uploading the same file.
+  const handleLoadReferencePdf = async (doc: AnalysisDocument) => {
+    if (!doc.pdfUrl) return;
+    setIngestState({ status: 'loading', message: 'Fetching PDF from reference library…' });
+    let blob: Blob;
+    try {
+      const resp = await fetch(doc.pdfUrl, { cache: 'no-store' });
+      if (!resp.ok) {
+        setIngestState({ status: 'error', message: `Could not fetch the reference PDF (HTTP ${resp.status}). Try uploading it manually.` });
+        return;
+      }
+      blob = await resp.blob();
+    } catch (err) {
+      setIngestState({
+        status: 'error',
+        message: `Could not fetch the reference PDF (${err instanceof Error ? err.message : String(err)}). Try uploading it manually.`,
+      });
+      return;
+    }
+    await ingestPdfBlob(doc, blob, 'reference PDF');
   };
 
   // ── Lens chips data ───────────────────────────────────────────────────────
@@ -772,6 +805,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onRemoveFromCorpus={() => removeFromCorpus(selectedDocument.id)}
                 onLoadText={() => handleLoadText(selectedDocument)}
                 onUpload={file => handleUpload(selectedDocument, file)}
+                onLoadReferencePdf={() => handleLoadReferencePdf(selectedDocument)}
               />
             )}
           </section>
@@ -861,6 +895,7 @@ function DocumentViewer({
   onRemoveFromCorpus,
   onLoadText,
   onUpload,
+  onLoadReferencePdf,
 }: {
   document: AnalysisDocument;
   segments: import('@/lib/content-analysis/types').CodedSegment[];
@@ -880,12 +915,20 @@ function DocumentViewer({
   onRemoveFromCorpus: () => void;
   onLoadText: () => void;
   onUpload: (file: File) => void;
+  onLoadReferencePdf: () => void;
 }) {
   const hasText = (doc.text ?? '').trim().length > 50;
   const isReference = (doc.sourceKind ?? 'policy') === 'reference';
+  // References have no real CELEX; their cached PDF is keyed by a synthetic
+  // id-derived key. Either keyed source lights up the PDF annotation pane
+  // once its bytes have been ingested (EUR-Lex fetch or manual/library load).
+  const pdfCacheKey = doc.celexNumber ?? (isReference ? referencePdfCacheKey(doc.id) : null);
   const hasPdfPane = Boolean(
-    doc.celexNumber && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
+    pdfCacheKey && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
   );
+  // A reference PDF is already on file in the reference manager, ready to load
+  // without a re-upload.
+  const hasLibraryPdf = isReference && Boolean(doc.pdfUrl);
 
   return (
     <div className="flex flex-col min-h-0">
@@ -930,7 +973,9 @@ function DocumentViewer({
         <div className="flex-1 flex flex-col items-center justify-center p-8 text-center gap-3">
           <p className="text-sm text-tertiary max-w-sm">
             {isReference
-              ? 'Upload the PDF for this reference to extract its text and start tagging.'
+              ? hasLibraryPdf
+                ? 'A PDF is attached to this reference in the reference library. Load it here to view the original pages and tag them inline.'
+                : 'Upload the PDF for this reference to extract its text and start tagging.'
               : 'Load the full legal text from EUR-Lex (or upload the PDF) to start tagging.'}
           </p>
           <div className="flex items-center gap-2">
@@ -942,6 +987,16 @@ function DocumentViewer({
                 className="px-3 py-1.5 rounded-md bg-primary text-white text-[11px] font-semibold hover:bg-primary-dark disabled:opacity-50"
               >
                 Load full text
+              </button>
+            )}
+            {hasLibraryPdf && (
+              <button
+                type="button"
+                onClick={onLoadReferencePdf}
+                disabled={ingestState.status === 'loading'}
+                className="px-3 py-1.5 rounded-md bg-primary text-white text-[11px] font-semibold hover:bg-primary-dark disabled:opacity-50"
+              >
+                Load PDF
               </button>
             )}
             <label className="px-3 py-1.5 rounded-md border border-grey-200 text-[11px] font-semibold text-tertiary-dark hover:bg-grey-50 cursor-pointer">
@@ -964,7 +1019,7 @@ function DocumentViewer({
         <div className="flex-1 overflow-auto p-2">
           <PdfDocumentView
             document={doc}
-            pdfSrcUrl={`/api/content-analysis/pdf?celex=${encodeURIComponent(doc.celexNumber!)}`}
+            pdfSrcUrl={`/api/content-analysis/pdf?celex=${encodeURIComponent(pdfCacheKey!)}`}
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedSegmentId}

@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
+import { listRefs } from '@/lib/references/custom-store';
 
 /**
  * PDF proxy route — M·01.
@@ -51,8 +51,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'id is required' }, { status: 400 });
   }
 
-  await ensureSeedLoaded();
-  const store = getStore();
+  // `listRefs()` reads the custom-references table directly. (The old
+  // synchronous `getStore()` accessor is a deprecated stub that always
+  // returns an empty array, so this route previously 404'd on every
+  // server-stored reference.)
+  const store = await listRefs();
   const ref = store.find(r => r.id === id);
   if (!ref) {
     return NextResponse.json({ error: 'Reference not found' }, { status: 404 });

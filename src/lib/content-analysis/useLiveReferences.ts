@@ -142,8 +142,25 @@ function apiToAnalysisDoc(r: ApiRef): AnalysisDocument | null {
     referenceAuthors: r.authors,
     referenceYear: r.year,
     referenceUrl: url || undefined,
+    // Surface the reference-manager PDF (stored in the `reference-pdfs`
+    // bucket) so the content-analysis workbench can load it into the PDF
+    // annotation pane instead of forcing the analyst to re-upload it. Kept
+    // separate from `referenceUrl`, which may point at a DOI / landing page.
+    pdfUrl: r.pdfUrl || undefined,
     referenceType: normaliseRefType(r.type),
   };
+}
+
+/**
+ * Stable cache key (a synthetic "celex") for a reference document's PDF in
+ * the content-analysis ingest cache. References have no real CELEX number, so
+ * we derive one from the document id. It must satisfy the ingest routes'
+ * `/^[0-9A-Z]{8,20}$/` guard and stay identical between the upload and the
+ * subsequent view so `/api/content-analysis/pdf?celex=…` resolves the bytes.
+ */
+export function referencePdfCacheKey(docId: string): string {
+  const cleaned = docId.toUpperCase().replace(/[^0-9A-Z]/g, '') || 'UPLOAD';
+  return cleaned.slice(0, 20).padEnd(8, '0');
 }
 
 /** Map an arbitrary `type` string from the live references API onto the
