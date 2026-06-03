@@ -709,7 +709,10 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'en-ad-o1',
         label: 'Energy supply resilient to heat, drought & extremes',
         note: 'EUCRA infrastructure cluster — risks to energy generation, transmission & demand (more action needed)',
-        indicators: [ref('EDRβ', 'Drought damage to energy', ['beta-adapt-energy-drought-damage'])],
+        indicators: [
+          ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days']),
+          ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index']),
+        ],
       },
     ],
     levers: [
@@ -721,9 +724,9 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
       },
       {
         id: 'en-ad-l2',
-        label: 'Grid & demand resilience to peak heat',
+        label: 'Generation & grid resilience to heat & drought',
         parent: 'en-ad-o1',
-        indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
+        indicators: [ref('EDRβ', 'Drought damage to energy', ['beta-adapt-energy-drought-damage'])],
       },
     ],
     enabling: [
@@ -741,7 +744,7 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'in-ad-o1',
         label: 'Water- & climate-resilient production and supply chains',
         note: 'EUCRA economy & finance cluster — risks to industrial output & supply chains (more action needed)',
-        indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+        indicators: [ref('LOSS', 'Climate economic losses', ['climate-economic-losses'])],
       },
     ],
     levers: [
@@ -763,7 +766,6 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'in-ad-e1',
         kind: 'cross-cutting',
         label: 'Supply-chain climate-risk management',
-        indicatorIds: ['climate-economic-losses'],
       },
     ],
   },
@@ -773,7 +775,7 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'tr-ad-o1',
         label: 'Climate-resilient transport infrastructure',
         note: 'EUCRA infrastructure cluster — inland flooding is one of 8 risks rated "urgent action needed"',
-        indicators: [ref('COASTβ', 'Coastal flood damage to transport', ['beta-adapt-transport-coastal-damage'])],
+        indicators: [ref('LOSS', 'Climate economic losses', ['climate-economic-losses'])],
       },
     ],
     levers: [
@@ -787,7 +789,7 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'tr-ad-l2',
         label: 'Flood- & heat-risk reduction on networks',
         parent: 'tr-ad-o1',
-        indicators: [ref('LOSS', 'Climate economic losses', ['climate-economic-losses'])],
+        indicators: [ref('COASTβ', 'Coastal flood damage to transport', ['beta-adapt-transport-coastal-damage'])],
       },
     ],
     enabling: [
@@ -804,13 +806,16 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'bu-ad-o1',
         label: 'Heat-resilient buildings & population',
         note: 'EUCRA health cluster — heat on human health is one of 8 "urgent action needed" risks',
-        indicators: [ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality'])],
+        indicators: [
+          ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality']),
+          ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days']),
+        ],
       },
       {
         id: 'bu-ad-o2',
         label: 'Flood-safe built environment',
         note: 'EUCRA infrastructure cluster — river & pluvial flooding (urgent action needed)',
-        indicators: [ref('FLOODβ', 'Population in flood-prone areas', ['beta-adapt-flood-prone-population'])],
+        indicators: [ref('LOSS', 'Climate economic losses', ['climate-economic-losses'])],
       },
     ],
     levers: [
@@ -847,7 +852,10 @@ const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
         id: 'ag-ad-o1',
         label: 'Drought- & heat-resilient farming and food systems',
         note: 'EUCRA food cluster — crop production is one of 8 "urgent action needed" risks',
-        indicators: [ref('DRGTβ', 'Cropland drought impact', ['beta-adapt-drought-impact'])],
+        indicators: [
+          ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index']),
+          ref('DRGTβ', 'Ecosystem drought impact', ['beta-adapt-drought-impact']),
+        ],
       },
     ],
     levers: [

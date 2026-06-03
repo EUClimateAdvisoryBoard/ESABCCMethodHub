@@ -285,14 +285,15 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     category: 'adaptation',
     unit: 'deaths/yr (summer)',
     description:
-      'BETA (adaptation). Modelled heat-related excess deaths during the European summer — the core human-resilience / overheating outcome for buildings & health (EUCRA "health" cluster, heat flagged most urgent). ≈ 61,700 (2022); ≈ 47,700 (2023); ≈ 62,800 (2024); >70,000 in 2003 (ISGlobal/Nature Medicine; EEA European Climate & Health Observatory). Modelled estimates covering ~32–35 European countries, not a registry series; cooling degree days is the cleaner annual companion.',
-    source: 'ISGlobal / Nature Medicine; EEA Climate-ADAPT',
+      'BETA (adaptation). Modelled heat-related excess deaths during the European summer — the core human-resilience / overheating outcome for buildings & health (EUCRA "health" cluster, heat flagged most urgent). > 70,000 in the 2003 heatwave (Robine et al.); ≈ 61,700 (2022), ≈ 47,700 (2023), ≈ 62,800 (2024) (Ballester/Masselot et al., Nature Medicine; EEA European Climate & Health Observatory). Modelled estimates covering ~32–35 European countries (not strictly EU-27) on shifting methods, so treat as event markers rather than a smooth trend; cooling degree days is the cleaner annual companion.',
+    source: 'Robine et al. 2008; Nature Medicine; EEA Climate-ADAPT',
     sourceUrl: 'https://www.eea.europa.eu/en/analysis/maps-and-charts/trends-in-heat-related-mortality',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
     isSeed: true,
     data: [
+      { year: 2003, value: 70000 },
       { year: 2022, value: 61672 },
       { year: 2023, value: 47690 },
       { year: 2024, value: 62775 },
@@ -305,7 +306,7 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     category: 'adaptation',
     unit: 'hectares',
     description:
-      'BETA (adaptation). Area burnt by wildfires each year — the canonical EU forest-climate indicator and a clean annual EFFIS series (EU-27): 2021 ≈ 500,566 ha; 2022 ≈ 748,426; 2023 ≈ 468,289; 2024 ≈ 383,317 ha. 2025 was a record ≈ 1,079,538 ha (~2× the 2006–2024 average of ≈ 354,185 ha). Highly volatile year-to-year — read with a multi-year mean.',
+      'BETA (adaptation). Area burnt by wildfires each year — the canonical EU forest-climate indicator and a clean annual EFFIS series (EU-27), confirmed anchor years: 2017 ≈ 988,427 ha (severe Iberian season); 2021 ≈ 500,566; 2022 ≈ 748,426; 2023 ≈ 468,289; 2024 ≈ 383,317; 2025 ≈ 1,079,538 ha (the most destructive EU season since 2006). 17-year (2006–2024) average ≈ 354,185 ha. Highly volatile year-to-year — read with a multi-year mean. Intermediate years (2006–2016, 2018–2020) are on the EFFIS portal and should be exported to complete the series.',
     source: 'JRC EFFIS (European Forest Fire Information System)',
     sourceUrl: 'https://forest-fire.emergency.copernicus.eu/apps/effis.statistics/estimates',
     direction: 'down',
@@ -313,20 +314,22 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
+      { year: 2017, value: 988427 },
       { year: 2021, value: 500566 },
       { year: 2022, value: 748426 },
       { year: 2023, value: 468289 },
       { year: 2024, value: 383317 },
+      { year: 2025, value: 1079538 },
     ],
   },
   {
     id: 'beta-adapt-drought-impact',
     code: 'DRGTβ',
-    name: 'Cropland & ecosystem area impacted by drought (EU)',
+    name: 'EU ecosystem area impacted by drought',
     category: 'adaptation',
     unit: 'km²',
     description:
-      'BETA (adaptation). EU cropland area with below-average vegetation productivity due to drought — EEA 8th EAP headline indicator "drought impact on ecosystems" (Copernicus EDO Soil Moisture Index), a clean annual EU series 2000–2024. ≈ 66,500 km² in 2023 (above the 2000–2020 average); average annual drought impact ≈ 141,229 km² (≈3.5% of EU land) over 2000–2020, with a rising trend despite the 2023 recovery. Directly agricultural and ecosystem-relevant.',
+      'BETA (adaptation). EU ecosystem area with drought-driven below-average productivity — EEA 8th EAP headline indicator "drought impact on ecosystems" (Copernicus EDO Soil Moisture Index), a clean annual EU series 2000–2024. 2024 ≈ 143,513 km², just above the 2000–2020 average of ≈ 141,229 km² (≈3.5% of EU land); of 2000–2024, 12 years exceeded the median, 8 of them after 2010 (rising trend). Cropland-only impact was ≈ 66,500 km² in 2023. Pull the full annual bars from the EEA viewer to complete the series.',
     source: 'EEA 8th EAP / Copernicus European Drought Observatory (Soil Moisture Index)',
     sourceUrl: 'https://www.eea.europa.eu/en/analysis/indicators/drought-impact-on-ecosystems-in-europe',
     direction: 'down',
@@ -334,7 +337,7 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
-      { year: 2023, value: 66500 },
+      { year: 2024, value: 143513 },
     ],
   },
   {

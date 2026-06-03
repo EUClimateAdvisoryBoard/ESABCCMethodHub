@@ -82,6 +82,26 @@ indicators were removed.
 Existing ECNO adaptation series reused in the layer:
 `water-exploitation-index` (WEI+) and `climate-economic-losses`.
 
+### Historical depth
+
+Every adaptation **outcome** card is anchored by a series with real multi-year
+history, so no outcome reads as a single recent point:
+
+- Economic losses — 6 yrs (EEA, full record back to 1980 available)
+- EFFIS burnt area — confirmed anchors 2017 + 2021–2025 (2006– on the portal)
+- Heat-related mortality — 2003 + 2022–2024
+- WEI+ water scarcity — 4 yrs (2000– available)
+- Cooling degree days — 2020, 2022 (1979– available)
+- Ecosystem drought impact — 2024 + the 2000–2020 average
+
+The inherently single-point items (rail network at risk, insurance gap,
+flood-prone population, and the PESETA/Nature **projections** for coastal
+transport and energy drought damage) are deliberately placed on the
+adaptation **levers**, not the outcomes. Several deep series still show only
+their confirmed anchor years here because the EEA/Eurostat/EFFIS portals block
+automated extraction; each description names the exact table to export to fill
+every year.
+
 ## Caveats for whoever promotes these out of beta
 
 - Re-pull every series from its linked dataset; portals (Eurostat, EEA, EFFIS,
