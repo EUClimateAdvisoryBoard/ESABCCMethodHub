@@ -39,6 +39,14 @@ import IndicatorDataEditor from './IndicatorDataEditor';
 import IndicatorHistory from './IndicatorHistory';
 import DownloadMenu from './DownloadMenu';
 import CollaborationPanel from './CollaborationPanel';
+import FrameworkBoard from './FrameworkBoard';
+
+/**
+ * The Sector Frameworks flow-chart view is scoped to the Policy Gap 2.0
+ * project only — that is the workspace whose indicator database is rebuilt
+ * from the ESABCC report the frameworks come from.
+ */
+const FRAMEWORKS_PROJECT_ID = 'policy-gap-2-0';
 import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
 
 ChartJS.register(
@@ -88,6 +96,8 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
+  const showFrameworks = projectId === FRAMEWORKS_PROJECT_ID;
+  const [view, setView] = useState<'indicators' | 'flowcharts'>('indicators');
   const [editorOpen, setEditorOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [adding, setAdding] = useState(false);
@@ -322,6 +332,39 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
         </div>
       </header>
 
+      {showFrameworks && (
+        <div className="flex items-center gap-1 border border-grey-200 rounded-lg p-0.5 w-fit">
+          <button
+            type="button"
+            onClick={() => setView('indicators')}
+            className={`px-3 py-1.5 rounded-md text-xs font-semibold ${
+              view === 'indicators' ? 'bg-primary text-white' : 'text-tertiary-dark hover:bg-grey-50'
+            }`}
+          >
+            List of indicators
+          </button>
+          <button
+            type="button"
+            onClick={() => setView('flowcharts')}
+            className={`px-3 py-1.5 rounded-md text-xs font-semibold ${
+              view === 'flowcharts' ? 'bg-primary text-white' : 'text-tertiary-dark hover:bg-grey-50'
+            }`}
+          >
+            Flow charts
+          </button>
+        </div>
+      )}
+
+      {showFrameworks && view === 'flowcharts' ? (
+        <FrameworkBoard
+          projectId={projectId}
+          allIndicators={indicators}
+          onOpenInList={(id) => {
+            setSelectedId(id);
+            setView('indicators');
+          }}
+        />
+      ) : (
       <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-6">
         <aside className="bg-white rounded-xl border border-grey-200 p-3 max-h-[640px] overflow-y-auto">
           {GROUPS.map(g => {
@@ -611,6 +654,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
           </div>
         </div>
       </div>
+      )}
 
       {adding && (
         <AddIndicatorDialog onClose={() => setAdding(false)} onSave={handleAddIndicator} />
