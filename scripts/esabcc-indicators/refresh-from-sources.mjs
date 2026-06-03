@@ -79,18 +79,18 @@ const RECIPES = {
   'esabcc-e5-electrification': {
     kind: 'eurostat', dataset: 'nrg_bal_s',
     filters: { geo: 'EU27_2020', nrg_bal: 'FC_E', siec: 'E7000', unit: 'PC' },
-    toRepo: v => v / 100, round: 4,
+    toRepo: v => v, round: 2,
     sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC`,
     sourceTitle: 'Eurostat nrg_bal_s · electricity share of final energy · EU27_2020',
-    note: 'Percent÷100→fraction.',
+    note: 'Stored as percent-number to match ECNO duplicate end-use-electrification.',
   },
   'esabcc-i6-industry-electrification': {
     kind: 'eurostat', dataset: 'nrg_bal_s',
     filters: { geo: 'EU27_2020', nrg_bal: 'FC_IND_E', siec: 'E7000', unit: 'PC' },
-    toRepo: v => v / 100, round: 4,
+    toRepo: v => v, round: 2,
     sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC`,
     sourceTitle: 'Eurostat nrg_bal_s · industry electricity share · EU27_2020',
-    note: 'Percent÷100→fraction.',
+    note: 'Stored as percent-number to match ECNO duplicate industry-electrification.',
   },
   'esabcc-i3-circular-mat-use': {
     kind: 'eurostat', dataset: 'cei_srm030',

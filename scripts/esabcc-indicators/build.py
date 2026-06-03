@@ -746,10 +746,35 @@ def resolve_points(r):
     return pts, (r.get('unitOverride') or s['unit'] or '')
 
 
+# ── Percent-encoding reconciliation ──────────────────────────────────────────
+# These six indicators are stored in the report's underlying-data workbook as
+# fractions (0-1) but are flagged `duplicateOf` an ECNO indicator that carries
+# the SAME concept and unit ('%') as a percent-number (e.g. fossil power share
+# 42.0, not 0.42). The app renders `value + unit` with no x100, so the fraction
+# form displayed 100x too small and sat at 100x the scale of its ECNO twin.
+# Multiply these six by 100 on emit so each matches its ECNO duplicate and the
+# renderer. SCALE_TARGET additionally rescales the (fraction) target where one
+# is present; T5a's target is already a percent-number (100% by 2035) and is
+# deliberately NOT listed. Indicators with NO ECNO twin keep the report's
+# fraction convention untouched (see docs/Indicator-Database-Fact-Check).
+SCALE_POINTS = {
+    'esabcc-e2-fossil-power-share': 100,
+    'esabcc-e5-electrification': 100,
+    'esabcc-i6-industry-electrification': 100,
+    'esabcc-t3a-road-share-passenger': 100,
+    'esabcc-t5a-zev-share-newcars': 100,
+    'esabcc-b3-residential-renovation-rate': 100,
+}
+SCALE_TARGET = {'esabcc-b3-residential-renovation-rate': 100}
+
+
 def emit_recipe(r):
     points, unit = resolve_points(r)
     if points is None:
         return f"  // [missing] {r['sheet']} / {r.get('series', r.get('seriesPos'))}\n"
+    _sc = SCALE_POINTS.get(r['id'])
+    if _sc:
+        points = [dict(p, value=p['value'] * _sc) for p in points]
     # Round to 4 sig figs to reduce file size
     def fmt(v):
         if v == 0:
@@ -770,7 +795,8 @@ def emit_recipe(r):
     tgt = r.get('target')
     target_lines = ''
     if tgt is not None:
-        target_lines = f"    targetValue: {tgt[0]},\n    targetYear: {tgt[1]},\n"
+        _tv = round(tgt[0] * SCALE_TARGET[r['id']], 6) if r['id'] in SCALE_TARGET else tgt[0]
+        target_lines = f"    targetValue: {_tv},\n    targetYear: {tgt[1]},\n"
     dup = r.get('duplicateOf')
     dup_line = f"    duplicateOf: {ts_string(dup)},\n" if dup else ''
     return (
