@@ -723,7 +723,17 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           </span>
           {lensChips.map(c => {
             const on = lenses.has(c.id);
-            const count = snapshot.segments.filter(s => lensOf(s.projectId) === c.id).length;
+            // Count only the annotations actually reachable here — segments on
+            // documents added to this workspace for the active source type
+            // (`corpusIdSet` is already source-type scoped). This keeps the
+            // badge honest: it matches what the Code/Analyse views can show,
+            // instead of a project's global total. A global count could read
+            // e.g. "4" while every panel shows nothing, because those segments
+            // live on documents from another source type or that haven't been
+            // added to this corpus.
+            const count = snapshot.segments.filter(
+              s => lensOf(s.projectId) === c.id && corpusIdSet.has(s.documentId),
+            ).length;
             return (
               <button
                 key={c.id}
@@ -745,7 +755,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         <p className="text-[10px] text-tertiary-light mt-1.5">
           Master library tags are the shared starting point, so you never code
           from scratch. Toggle a project to see — and cluster — what it has
-          tagged. New tags you add here are attributed to <strong>{projectName}</strong>.
+          tagged. Counts reflect annotations on the documents you’ve added to
+          this workspace for the current source, so a project may read 0 here
+          even when it has coded other documents. New tags you add here are
+          attributed to <strong>{projectName}</strong>.
         </p>
       </div>
 
