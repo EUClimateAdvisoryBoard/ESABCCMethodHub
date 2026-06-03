@@ -243,7 +243,7 @@ export interface SummaryDiagramNode {
 }
 
 /** The kind of "slide" in a rich summary deck. */
-export type SummaryBlockKind = 'text' | 'diagram' | 'image';
+export type SummaryBlockKind = 'text' | 'diagram' | 'image' | 'mermaid';
 
 interface SummaryBlockBase {
   id: string;
@@ -274,8 +274,23 @@ export interface SummaryImageBlock extends SummaryBlockBase {
   caption?: string;
 }
 
+/** A Mermaid diagram slide — free-text Mermaid source rendered to SVG. Lets
+ *  analysts hand-write flowcharts, sequence diagrams, etc. that go beyond the
+ *  fixed SmartArt layouts. Mermaid is loaded lazily on the client. */
+export interface SummaryMermaidBlock extends SummaryBlockBase {
+  kind: 'mermaid';
+  /** Optional heading shown above the diagram. */
+  title?: string;
+  /** Mermaid source, e.g. "flowchart TD\n  A-->B". */
+  code: string;
+}
+
 /** One slide of a rich summary deck. */
-export type SummaryBlock = SummaryTextBlock | SummaryDiagramBlock | SummaryImageBlock;
+export type SummaryBlock =
+  | SummaryTextBlock
+  | SummaryDiagramBlock
+  | SummaryImageBlock
+  | SummaryMermaidBlock;
 
 /** A whole-document summary — a "comment for the entire paper".
  *  Unlike a `CodedSegment.note` (which is pinned to a passage) this is
