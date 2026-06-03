@@ -35,6 +35,7 @@
 import { supabase } from '../supabase';
 import { Reference, ReferenceLibrary, LibraryMember, CSLItem, CSLName, FundingEntry } from './types';
 import { generateCitationKey, makeUniqueKey, buildCSLJson, parseBibTeX, parseRIS } from './citation-utils';
+import { combineTags } from './projects';
 
 // ── Library Operations ──
 
@@ -306,10 +307,15 @@ async function getExistingDoiSet(libraryId: string): Promise<Set<string>> {
 async function importEntries(
   libraryId: string,
   items: CSLItem[],
+  projects: string[] = [],
 ): Promise<BatchImportResult> {
   const existingDois = await getExistingDoiSet(libraryId);
   const imported: Reference[] = [];
   const skipped: BatchImportSkip[] = [];
+  // When importing inside an active project view, stamp every entry with that
+  // report's project tag so the badge shows up automatically — no need to open
+  // each reference and tag it by hand.
+  const projectTags = projects.length ? combineTags([], projects) : undefined;
   // Track DOIs we've added in this batch too — same file twice is a common case.
   const seenInBatch = new Set<string>();
   for (const item of items) {
@@ -320,7 +326,7 @@ async function importEntries(
       continue;
     }
     try {
-      const ref = await addReference(libraryId, item);
+      const ref = await addReference(libraryId, item, projectTags);
       imported.push(ref);
       if (doi) seenInBatch.add(doi);
     } catch (err) {
@@ -334,14 +340,14 @@ async function importEntries(
   return { imported, skipped, parsed: items.length };
 }
 
-export async function importBibTeX(libraryId: string, bibtex: string): Promise<BatchImportResult> {
+export async function importBibTeX(libraryId: string, bibtex: string, projects: string[] = []): Promise<BatchImportResult> {
   const items = parseBibTeX(bibtex);
-  return importEntries(libraryId, items);
+  return importEntries(libraryId, items, projects);
 }
 
-export async function importRIS(libraryId: string, ris: string): Promise<BatchImportResult> {
+export async function importRIS(libraryId: string, ris: string, projects: string[] = []): Promise<BatchImportResult> {
   const items = parseRIS(ris);
-  return importEntries(libraryId, items);
+  return importEntries(libraryId, items, projects);
 }
 
 // ── Helpers ──

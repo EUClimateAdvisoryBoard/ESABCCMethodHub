@@ -966,6 +966,7 @@ export default function ReferencesPage() {
                     libraryId={selectedLibraryId!}
                     onImported={() => { loadReferences(); }}
                     onClose={() => setView('list')}
+                    defaultProject={projectFilter}
                   />
                 )}
               </>
