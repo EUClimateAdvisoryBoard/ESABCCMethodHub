@@ -56,7 +56,7 @@ import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
-import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
+import WorkspaceAnalysis from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
 import CodeEditorModal, {
@@ -763,14 +763,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       </div>
 
       {view === 'analyse' ? (
-        <div className="space-y-3">
-          <p className="text-xs text-tertiary">
-            Clustering {analysisSegments.length} coded segment{analysisSegments.length === 1 ? '' : 's'} across{' '}
-            {corpusDocs.length} {activeSourceMeta.title.toLowerCase()} document{corpusDocs.length === 1 ? '' : 's'},
-            through the selected lens{lenses.size === 1 ? '' : 'es'}.
-          </p>
-          <TagDistributionPanel documents={corpusDocs} codes={visibleCodes} segments={analysisSegments} />
-        </div>
+        <WorkspaceAnalysis
+          projectId={projectId}
+          projectName={projectName}
+          documents={corpusDocs}
+          codes={visibleCodes}
+          segments={analysisSegments}
+          sourceLabel={activeSourceMeta.title}
+        />
       ) : (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
           {/* LEFT: corpus + add documents */}
