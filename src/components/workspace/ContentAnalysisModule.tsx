@@ -40,7 +40,9 @@
  */
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { renderMarkdown } from '@/lib/markdown';
+import { uploadFigure } from '@/lib/content-analysis/figure-storage';
 import dynamic from 'next/dynamic';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
@@ -1210,6 +1212,81 @@ function DocumentSummaryPanel({
   /** Open the panel and jump straight into the editor — the header CTA. */
   const startEditing = () => { setOpen(true); setEditing(true); };
 
+  // ── Rich-text editing helpers (markdown under the hood) ──
+  const taRef = useRef<HTMLTextAreaElement>(null);
+  const [uploading, setUploading] = useState(false);
+  const [uploadError, setUploadError] = useState<string | null>(null);
+
+  /** Wrap the current selection (or a placeholder) with markdown markers. */
+  const wrapSelection = (prefix: string, suffix = prefix, placeholder = 'text') => {
+    const ta = taRef.current;
+    const start = ta?.selectionStart ?? draft.length;
+    const end = ta?.selectionEnd ?? draft.length;
+    const sel = draft.slice(start, end) || placeholder;
+    const next = draft.slice(0, start) + prefix + sel + suffix + draft.slice(end);
+    setDraft(next);
+    requestAnimationFrame(() => {
+      ta?.focus();
+      ta?.setSelectionRange(start + prefix.length, start + prefix.length + sel.length);
+    });
+  };
+
+  /** Prefix each selected line (for headings / list items). */
+  const prefixLines = (prefix: string) => {
+    const ta = taRef.current;
+    const start = ta?.selectionStart ?? draft.length;
+    const end = ta?.selectionEnd ?? start;
+    const lineStart = draft.lastIndexOf('\n', start - 1) + 1;
+    const before = draft.slice(0, lineStart);
+    const block = draft.slice(lineStart, end) || '';
+    const after = draft.slice(end);
+    const prefixed = (block || prefix.trim()).split('\n').map(l => prefix + l).join('\n');
+    const next = before + prefixed + after;
+    setDraft(next);
+    requestAnimationFrame(() => { ta?.focus(); });
+  };
+
+  /** Insert raw text at the caret. */
+  const insertAtCaret = (snippet: string) => {
+    const ta = taRef.current;
+    const start = ta?.selectionStart ?? draft.length;
+    const end = ta?.selectionEnd ?? draft.length;
+    const next = draft.slice(0, start) + snippet + draft.slice(end);
+    setDraft(next);
+    requestAnimationFrame(() => {
+      ta?.focus();
+      const pos = start + snippet.length;
+      ta?.setSelectionRange(pos, pos);
+    });
+  };
+
+  /** Upload an image (file picker or pasted screenshot) and embed it. */
+  const addFigure = async (file: Blob) => {
+    setUploading(true);
+    setUploadError(null);
+    const res = await uploadFigure(file);
+    setUploading(false);
+    if (!res.ok || !res.publicUrl) {
+      setUploadError(res.error || 'Could not upload the image.');
+      return;
+    }
+    insertAtCaret(`\n![figure](${res.publicUrl})\n`);
+  };
+
+  const onPaste = (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const items = e.clipboardData?.items;
+    if (!items) return;
+    for (const it of Array.from(items)) {
+      if (it.type.startsWith('image/')) {
+        const file = it.getAsFile();
+        if (file) { e.preventDefault(); void addFigure(file); return; }
+      }
+    }
+  };
+
+  const toolbarBtn =
+    'px-1.5 py-0.5 rounded border border-grey-200 bg-white text-[11px] text-tertiary-dark hover:bg-grey-100';
+
   const updatedLabel = summary?.updatedAt
     ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
     : null;
@@ -1253,14 +1330,46 @@ function DocumentSummaryPanel({
         <div className="px-3 pb-3 space-y-2">
           {editing ? (
             <div className="space-y-2">
+              {/* Formatting toolbar — inserts lightweight markdown. */}
+              <div className="flex flex-wrap items-center gap-1">
+                <button type="button" title="Bold" className={`${toolbarBtn} font-bold`} onClick={() => wrapSelection('**')}>B</button>
+                <button type="button" title="Italic" className={`${toolbarBtn} italic`} onClick={() => wrapSelection('*')}>I</button>
+                <button type="button" title="Heading" className={toolbarBtn} onClick={() => prefixLines('### ')}>H</button>
+                <button type="button" title="Bulleted list" className={toolbarBtn} onClick={() => prefixLines('- ')}>• List</button>
+                <button type="button" title="Numbered list" className={toolbarBtn} onClick={() => prefixLines('1. ')}>1. List</button>
+                <button type="button" title="Link" className={toolbarBtn} onClick={() => wrapSelection('[', '](https://)', 'label')}>🔗</button>
+                <label className={`${toolbarBtn} cursor-pointer ${uploading ? 'opacity-50 pointer-events-none' : ''}`} title="Insert a figure / screenshot">
+                  {uploading ? 'Uploading…' : '🖼 Figure'}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={e => { const f = e.target.files?.[0]; if (f) void addFigure(f); e.currentTarget.value = ''; }}
+                  />
+                </label>
+                <span className="text-[10px] text-tertiary-light ml-1">or paste a screenshot</span>
+              </div>
               <textarea
+                ref={taRef}
                 value={draft}
                 onChange={e => setDraft(e.target.value)}
-                rows={4}
+                onPaste={onPaste}
+                rows={6}
                 autoFocus
-                placeholder="Summarise this paper for the team — key findings, relevance, how to use it…"
-                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y"
+                placeholder="Summarise this paper for the team — key findings, relevance, how to use it… Use the toolbar for headings, bullet lists and figures. Paste a screenshot to embed it."
+                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y font-mono"
               />
+              {uploadError && <p className="text-[10px] text-red-600">{uploadError}</p>}
+              {/* Live preview so figures / lists are visible before saving. */}
+              {draft.trim() && (
+                <div className="rounded border border-grey-200 bg-white px-2 py-1.5">
+                  <p className="text-[9px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">Preview</p>
+                  <div
+                    className="text-[12px] text-tertiary-dark leading-snug"
+                    dangerouslySetInnerHTML={{ __html: renderMarkdown(draft) }}
+                  />
+                </div>
+              )}
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -1271,7 +1380,7 @@ function DocumentSummaryPanel({
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setDraft(summary?.text ?? ''); setEditing(false); }}
+                  onClick={() => { setDraft(summary?.text ?? ''); setEditing(false); setUploadError(null); }}
                   className="text-[11px] text-tertiary-light hover:text-tertiary"
                 >
                   Cancel
@@ -1281,9 +1390,10 @@ function DocumentSummaryPanel({
             </div>
           ) : hasSummary ? (
             <div className="space-y-1">
-              <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">
-                {summary!.text}
-              </p>
+              <div
+                className="text-[12px] text-tertiary-dark leading-snug"
+                dangerouslySetInnerHTML={{ __html: renderMarkdown(summary!.text) }}
+              />
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -1314,7 +1424,10 @@ function DocumentSummaryPanel({
                   <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
                     {projectNameById.get(s.projectId) ?? 'Other project'}
                   </p>
-                  <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{s.text}</p>
+                  <div
+                    className="text-[12px] text-tertiary leading-snug"
+                    dangerouslySetInnerHTML={{ __html: renderMarkdown(s.text) }}
+                  />
                 </div>
               ))}
             </div>
