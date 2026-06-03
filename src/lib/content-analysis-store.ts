@@ -52,6 +52,9 @@ interface SegmentRow {
   end_char: number;
   text: string | null;
   note: string | null;
+  note_author: string | null;
+  note_author_id: string | null;
+  note_updated_at: string | null;
   project_id: string | null;
   created_at: string | null;
 }
@@ -66,6 +69,9 @@ function rowToSegment(r: SegmentRow): CodedSegment {
     endChar: r.end_char,
     text: r.text ?? '',
     note: r.note ?? '',
+    noteAuthor: r.note_author ?? undefined,
+    noteAuthorId: r.note_author_id ?? undefined,
+    noteUpdatedAt: r.note_updated_at ?? undefined,
     projectId: r.project_id,
     createdAt: r.created_at ?? new Date().toISOString(),
   };
@@ -81,6 +87,9 @@ function segmentToRow(s: CodedSegment): SegmentRow {
     end_char: s.endChar,
     text: s.text ?? '',
     note: s.note ?? '',
+    note_author: s.noteAuthor ?? null,
+    note_author_id: s.noteAuthorId ?? null,
+    note_updated_at: s.noteUpdatedAt ?? null,
     project_id: s.projectId,
     created_at: s.createdAt,
   };
@@ -182,12 +191,20 @@ export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
 export async function updateSegmentNote(
   id: string,
   note: string,
+  author?: { name?: string; id?: string },
 ): Promise<boolean> {
+  const now = new Date().toISOString();
   const sb = getServerSupabase();
   if (sb) {
     const { error } = await sb
       .from('content_analysis_segments')
-      .update({ note, updated_at: new Date().toISOString() })
+      .update({
+        note,
+        note_author: author?.name ?? null,
+        note_author_id: author?.id ?? null,
+        note_updated_at: now,
+        updated_at: now,
+      })
       .eq('id', id);
     if (error) {
       console.error('[content-analysis-store] updateSegmentNote failed:', error.message);
@@ -198,7 +215,13 @@ export async function updateSegmentNote(
   const bag = g.__caSegments!;
   const idx = bag.findIndex(x => x.id === id);
   if (idx < 0) return false;
-  bag[idx] = { ...bag[idx], note };
+  bag[idx] = {
+    ...bag[idx],
+    note,
+    noteAuthor: author?.name,
+    noteAuthorId: author?.id,
+    noteUpdatedAt: now,
+  };
   return true;
 }
 
