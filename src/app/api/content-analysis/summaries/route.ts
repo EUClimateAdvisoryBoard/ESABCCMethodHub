@@ -85,6 +85,11 @@ function coerceBlock(raw: unknown): SummaryBlock | null {
       : [];
     return { id: r.id, kind: 'diagram', layout, title: clampString(r.title, 300), nodes };
   }
+  if (r.kind === 'mermaid') {
+    const code = clampString(r.code, MAX_BLOCK_TEXT);
+    if (!code) return null;
+    return { id: r.id, kind: 'mermaid', title: clampString(r.title, 300), code };
+  }
   return null;
 }
 

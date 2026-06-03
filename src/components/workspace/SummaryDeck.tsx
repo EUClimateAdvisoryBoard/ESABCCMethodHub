@@ -14,12 +14,13 @@
 // and annotate it — instead of staring at a wall of text.
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type {
   SummaryBlock,
   SummaryDiagramBlock,
   SummaryDiagramLayout,
   SummaryImageBlock,
+  SummaryMermaidBlock,
   SummaryTextBlock,
 } from '@/lib/content-analysis/types';
 
@@ -121,6 +122,68 @@ export function SummaryDiagram({ block }: { block: SummaryDiagramBlock }) {
   );
 }
 
+// ── Mermaid renderer (shared by viewer + editor preview) ─────────────────────
+
+/** Renders Mermaid source to SVG. Mermaid is heavy and browser-only, so it's
+ *  imported lazily inside the effect (kept out of the main bundle / off the
+ *  server) and rendered with securityLevel 'strict'. */
+function MermaidRender({ code }: { code: string }) {
+  const [svg, setSvg] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const idRef = useRef(`mmd-${Math.random().toString(36).slice(2)}`);
+
+  useEffect(() => {
+    let cancelled = false;
+    const src = code.trim();
+    if (!src) { setSvg(''); setError(null); return; }
+    (async () => {
+      try {
+        const mermaid = (await import('mermaid')).default;
+        mermaid.initialize({
+          startOnLoad: false,
+          securityLevel: 'strict',
+          theme: 'neutral',
+          fontFamily: 'inherit',
+        });
+        const { svg } = await mermaid.render(idRef.current, src);
+        if (!cancelled) { setSvg(svg); setError(null); }
+      } catch (err) {
+        if (!cancelled) setError(err instanceof Error ? err.message : String(err));
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [code]);
+
+  if (error) {
+    return (
+      <div className="rounded border border-red-200 bg-red-50 p-2">
+        <p className="text-[10px] font-semibold text-red-700 mb-1">Diagram error</p>
+        <p className="text-[10px] text-red-600">{error}</p>
+      </div>
+    );
+  }
+  if (!svg) {
+    return <p className="text-[10px] text-tertiary-light italic">Rendering diagram…</p>;
+  }
+  return (
+    <div
+      className="flex justify-center overflow-x-auto [&_svg]:max-w-full [&_svg]:h-auto"
+      dangerouslySetInnerHTML={{ __html: svg }}
+    />
+  );
+}
+
+export function SummaryMermaid({ block }: { block: SummaryMermaidBlock }) {
+  return (
+    <figure className="rounded-md border border-grey-200 bg-grey-50/60 p-2.5">
+      {block.title && (
+        <figcaption className="text-[11px] font-semibold text-tertiary-dark mb-2">{block.title}</figcaption>
+      )}
+      <MermaidRender code={block.code} />
+    </figure>
+  );
+}
+
 // ── Viewer ───────────────────────────────────────────────────────────────────
 
 function ViewerBlock({ block }: { block: SummaryBlock }) {
@@ -128,6 +191,9 @@ function ViewerBlock({ block }: { block: SummaryBlock }) {
     return (
       <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">{block.text}</p>
     );
+  }
+  if (block.kind === 'mermaid') {
+    return <SummaryMermaid block={block} />;
   }
   if (block.kind === 'image') {
     return (
@@ -189,7 +255,13 @@ function EditorBlock({
   onDelete: () => void;
 }) {
   const label =
-    block.kind === 'text' ? 'Text' : block.kind === 'image' ? 'Screenshot' : 'Flowchart';
+    block.kind === 'text'
+      ? 'Text'
+      : block.kind === 'image'
+        ? 'Screenshot'
+        : block.kind === 'mermaid'
+          ? 'Mermaid'
+          : 'Flowchart';
 
   return (
     <div className="rounded-md border border-grey-200 bg-white p-2 space-y-2">
@@ -243,6 +315,51 @@ function EditorBlock({
 
       {block.kind === 'diagram' && (
         <DiagramBlockEditor block={block} onChange={onChange} />
+      )}
+
+      {block.kind === 'mermaid' && (
+        <MermaidBlockEditor block={block} onChange={onChange} />
+      )}
+    </div>
+  );
+}
+
+function MermaidBlockEditor({
+  block,
+  onChange,
+}: {
+  block: SummaryMermaidBlock;
+  onChange: (b: SummaryBlock) => void;
+}) {
+  return (
+    <div className="space-y-2">
+      <input
+        type="text"
+        value={block.title ?? ''}
+        onChange={e => onChange({ ...block, title: e.target.value })}
+        placeholder="Diagram title (optional)"
+        className="w-full px-2 py-1 border border-grey-200 rounded text-[11px] font-semibold"
+      />
+      <textarea
+        value={block.code}
+        onChange={e => onChange({ ...block, code: e.target.value })}
+        rows={6}
+        spellCheck={false}
+        placeholder={'flowchart TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do this]\n  B -->|No| D[Stop]'}
+        className="w-full px-2 py-1.5 border border-grey-200 rounded text-[11px] leading-snug resize-y font-mono"
+      />
+      <p className="text-[9px] text-tertiary-light">
+        Write{' '}
+        <a href="https://mermaid.js.org/intro/" target="_blank" rel="noreferrer" className="text-secondary hover:underline">
+          Mermaid
+        </a>{' '}
+        syntax — flowcharts, sequence diagrams, and more.
+      </p>
+      {block.code.trim() && (
+        <div className="pt-2 border-t border-grey-100">
+          <p className="text-[9px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">Preview</p>
+          <MermaidRender code={block.code} />
+        </div>
       )}
     </div>
   );
@@ -439,7 +556,9 @@ export function SummaryDeckEditor({
         ? { ...base, kind: 'text', text: '' }
         : kind === 'image'
           ? { ...base, kind: 'image', src: '', caption: '' }
-          : { ...base, kind: 'diagram', layout: 'process', title: '', nodes: [{ id: newBlockId(), text: '' }] };
+          : kind === 'mermaid'
+            ? { ...base, kind: 'mermaid', title: '', code: 'flowchart TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do this]\n  B -->|No| D[Stop]' }
+            : { ...base, kind: 'diagram', layout: 'process', title: '', nodes: [{ id: newBlockId(), text: '' }] };
     onChange([...blocks, block]);
   };
 
@@ -460,6 +579,7 @@ export function SummaryDeckEditor({
         <span className="text-[10px] text-tertiary-light">Add slide:</span>
         <button type="button" onClick={() => add('text')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Text</button>
         <button type="button" onClick={() => add('diagram')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Flowchart</button>
+        <button type="button" onClick={() => add('mermaid')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Mermaid</button>
         <button type="button" onClick={() => add('image')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Screenshot</button>
       </div>
     </div>
