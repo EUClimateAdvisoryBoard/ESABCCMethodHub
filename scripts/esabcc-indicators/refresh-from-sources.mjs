@@ -7,24 +7,25 @@
  * sandbox, where ec.europa.eu / eea.europa.eu are blocked by the network
  * allowlist. See docs/how-to-access-eurostat-eea-data.md.
  *
- * What it does, per recipe below:
+ * Per recipe below it:
  *   1. Pulls the EU-27 series from Eurostat (JSON-stat REST) or the EEA GHG
  *      data-viewer CSV (sliced by CRF sector code / gas).
- *   2. Converts to the unit/scale this repo stores (Mtoe×11.63→TWh, PJ÷3.6→TWh,
+ *   2. Converts to the unit/scale this repo stores (Mtoe×11.63→TWh, kt→Mt,
  *      percent÷100→fraction, …) and rounds to the stored precision.
- *   3. Keeps only years AFTER the indicator's last *report* year (the newest
- *      data point that is NOT already flagged afterReport).
- *   4. Rewrites src/data/esabcc-indicators.ts: strips the indicator's existing
- *      `afterReport: true` points and appends the freshly fetched ones. This
- *      makes the script idempotent and lets it supersede earlier hand-sourced
- *      estimates with exact API values.
- *   5. Writes a provenance file (scripts/esabcc-indicators/refresh-provenance.json)
- *      that the PDF generator turns into the source-verification sheet.
+ *   3. SANITY-CHECKS the pull against the indicator's own last report value
+ *      (the "anchor"): if the freshly-fetched value for that same year is off
+ *      by more than 2× (or flips sign for a non-trivial magnitude), the recipe
+ *      is treated as a unit/scope mismatch and skipped — never written.
+ *   4. Keeps only years AFTER the anchor year, flags them afterReport, and
+ *      rewrites src/data/esabcc-indicators.ts (stripping the indicator's
+ *      existing afterReport points first, so the script is idempotent and
+ *      supersedes earlier hand-sourced estimates with exact API values).
+ *   5. Writes scripts/esabcc-indicators/refresh-provenance.json for the PDF.
  *
  * The recipe table mirrors src/lib/project-workspace/{eurostat.ts,live-sources.ts}.
- * A recipe that errors or returns nothing is skipped (logged) — it never
- * writes partial/garbage data. Use `--dry-run` to fetch and report without
- * touching the TS file.
+ * A recipe that errors, returns nothing, or fails the anchor check is skipped
+ * (logged) — it never writes partial/garbage data. `--dry-run` fetches and
+ * reports without touching the TS file.
  *
  * Usage:  node scripts/esabcc-indicators/refresh-from-sources.mjs [--dry-run]
  */
@@ -47,12 +48,12 @@ const EEA_CSV =
 const MTOE_TO_TWH = 11.63; // 1 Mtoe = 1000 ktoe × 0.011630 TWh
 
 /**
- * Recipes keyed by the esabcc-* indicator id. Each entry carries enough
- * provenance to populate the verification sheet. Extend this table to cover
- * more indicators — CI validates new recipes empirically on the next run.
+ * Recipes keyed by the esabcc-* indicator id. Extend this table to cover more
+ * indicators — CI validates new recipes empirically (anchor check) on the
+ * next run.
  *
  *  eurostat: { dataset, filters }                → JSON-stat series
- *  eea:      { crfCodes, gasMatch?, sumGases? }   → GHG-viewer CSV slice
+ *  eea:      { crfCodes, sumGases? }              → GHG-viewer CSV slice (→Mt)
  *  toRepo:   (v) => v                             → unit conversion
  *  round:    decimals
  *  sourceUrl, sourceTitle, note                   → shown in the PDF
@@ -108,11 +109,11 @@ const RECIPES = {
     note: 'Stored as percent of GDP. Publisher may revise the report’s base year (vintage).',
   },
 
-  // ── EEA GHG data viewer (CO₂-eq, Mt) ─────────────────────────────────────
+  // ── EEA GHG data viewer (CO₂-eq, → Mt) ───────────────────────────────────
   'esabcc-e1-energy-supply-ghg': {
     kind: 'eea', crfCodes: ['1.A.1', '1.B'], round: 1,
     sourceTitle: 'EEA GHG data viewer · CRF 1.A.1 + 1.B (energy supply) · EU27',
-    note: 'Sum of public power/heat + fugitive emissions; CO₂-eq.',
+    note: 'Public power/heat + fugitive emissions; CO₂-eq.',
   },
   'esabcc-i1-industry-ghg': {
     kind: 'eea', crfCodes: ['1.A.2', '2'], round: 1,
@@ -146,6 +147,23 @@ const RECIPES = {
   },
 };
 
+// ───────────────────────── helpers ─────────────────────────
+
+/** Parse a number that may use European formatting ("1.234,5" → 1234.5). */
+function parseNum(s) {
+  if (s == null) return NaN;
+  let t = String(s).trim().replace(/\s/g, '');
+  if (t === '' || /^[:.\-]$/.test(t)) return NaN;
+  if (t.includes(',') && t.includes('.')) t = t.replace(/\./g, '').replace(',', '.');
+  else if (t.includes(',')) t = t.replace(',', '.');
+  return parseFloat(t);
+}
+
+function round(v, d) {
+  const f = 10 ** d;
+  return Math.round(v * f) / f;
+}
+
 // ───────────────────────── fetchers ─────────────────────────
 
 async function fetchEurostat(dataset, filters) {
@@ -157,10 +175,8 @@ async function fetchEurostat(dataset, filters) {
   const idx = j?.dimension?.time?.category?.index;
   if (!idx) throw new Error('no time dimension');
   const val = j.value || {};
+  const entries = Array.isArray(idx) ? idx.map((y, i) => [y, i]) : Object.entries(idx);
   const out = [];
-  const entries = Array.isArray(idx)
-    ? idx.map((y, i) => [y, i])
-    : Object.entries(idx);
   for (const [y, i] of entries) {
     const v = val[String(i)];
     if (v === null || v === undefined) continue;
@@ -169,59 +185,90 @@ async function fetchEurostat(dataset, filters) {
   return out.sort((a, b) => a.year - b.year);
 }
 
-function parseCsv(text) {
-  // Minimal CSV (handles quoted fields with commas).
-  const rows = [];
-  for (const line of text.split(/\r?\n/)) {
-    if (!line) continue;
-    const cells = [];
-    let cur = '', q = false;
-    for (let i = 0; i < line.length; i++) {
-      const c = line[i];
-      if (q) {
-        if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; }
-        else if (c === '"') q = false;
-        else cur += c;
-      } else if (c === '"') q = true;
-      else if (c === ',') { cells.push(cur); cur = ''; }
-      else cur += c;
-    }
-    cells.push(cur);
-    rows.push(cells);
+function detectDelimiter(line) {
+  const counts = { ',': 0, ';': 0, '\t': 0 };
+  let q = false;
+  for (const c of line) {
+    if (c === '"') q = !q;
+    else if (!q && c in counts) counts[c]++;
   }
-  return rows;
+  return Object.entries(counts).sort((a, b) => b[1] - a[1])[0][0];
 }
 
-let _eeaCsvCache = null;
+function parseCsvLine(line, delim) {
+  const cells = [];
+  let cur = '', q = false;
+  for (let i = 0; i < line.length; i++) {
+    const c = line[i];
+    if (q) {
+      if (c === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+      else if (c === '"') q = false;
+      else cur += c;
+    } else if (c === '"') q = true;
+    else if (c === delim) { cells.push(cur); cur = ''; }
+    else cur += c;
+  }
+  cells.push(cur);
+  return cells;
+}
+
+let _eea = null;
 async function getEeaRows() {
-  if (_eeaCsvCache) return _eeaCsvCache;
+  if (_eea) return _eea;
   const res = await fetch(EEA_CSV);
   if (!res.ok) throw new Error(`EEA datahub → ${res.status} ${res.statusText}`);
-  const rows = parseCsv(await res.text());
-  if (rows.length === 0) throw new Error('EEA CSV empty');
+  const text = await res.text();
+  const lines = text.split(/\r?\n/).filter(l => l.length);
+  if (lines.length === 0) throw new Error('EEA CSV empty');
+  const delim = detectDelimiter(lines[0]);
+  const rows = lines.map(l => parseCsvLine(l, delim));
   const header = rows[0].map(h => h.trim().toLowerCase());
-  const col = {
-    year: header.findIndex(h => h === 'year'),
-    sector: header.findIndex(h => ['sector_code', 'crf_code', 'sector'].includes(h)),
-    gas: header.findIndex(h => ['pollutant_name', 'gas', 'pollutant'].includes(h)),
-    value: header.findIndex(h => ['emissions', 'value'].includes(h)),
+  const find = (...preds) => {
+    for (const p of preds) {
+      const i = header.findIndex(h => p(h));
+      if (i >= 0) return i;
+    }
+    return -1;
   };
-  if (col.year < 0 || col.sector < 0 || col.value < 0)
-    throw new Error('EEA CSV missing expected columns');
-  _eeaCsvCache = { rows, col };
-  return _eeaCsvCache;
+  const col = {
+    year: find(h => h === 'year', h => h.includes('year')),
+    sector: find(h => h === 'sector_code' || h === 'crf_code',
+                 h => h.includes('sector') && h.includes('code'),
+                 h => h.includes('crf') || h.includes('sector') || h.includes('category')),
+    gas: find(h => h === 'pollutant_name' || h === 'gas' || h === 'pollutant',
+              h => h.includes('pollutant') || h.includes('gas')),
+    value: find(h => h === 'emissions' || h === 'value',
+                h => h.includes('emission') || h.includes('value')),
+    unit: find(h => h === 'unit', h => h.includes('unit')),
+  };
+  if (col.year < 0 || col.sector < 0 || col.value < 0) {
+    throw new Error(`EEA CSV columns not recognised (delim="${delim}", header=${header.slice(0, 12).join('|')})`);
+  }
+  _eea = { rows, col };
+  return _eea;
 }
 
-async function fetchEea({ crfCodes, gasMatch, sumGases }) {
+/** kt/Gg CO2-eq → Mt; Mt → Mt; t → Mt. Returns a multiplier to reach Mt. */
+function unitToMt(u) {
+  const s = (u || '').toLowerCase();
+  if (/\bmt\b|million|teragram|tg\b/.test(s)) return 1;
+  if (/\bkt\b|gigagram|gg\b|kiloton/.test(s)) return 0.001;
+  if (/megagram|\bmg\b/.test(s)) return 1e-6;
+  if (/tonne|\bt\b/.test(s)) return 1e-6;
+  return null; // unknown — let the anchor check guard magnitude
+}
+
+async function fetchEea({ crfCodes, sumGases }) {
   const { rows, col } = await getEeaRows();
-  // Default: take the single aggregate "all greenhouse gases (CO2 equivalent)"
-  // row per sector/year. When sumGases is set, sum those gas rows instead.
-  const aggMatch = gasMatch || ['all greenhouse gases', 'co2 equivalent', 'co2-eq', 'co2 eq'];
+  const aggMatch = ['all greenhouse gases', 'co2 equivalent', 'co2-eq', 'co2 eq'];
+  let factor = 1, factorSeen = false;
   const totals = new Map();
   for (let i = 1; i < rows.length; i++) {
     const r = rows[i];
     const code = (r[col.sector] ?? '').trim();
-    if (!crfCodes.some(c => code === c || code.startsWith(c + '.'))) continue;
+    // Match the EXACT aggregate code only — the GHG viewer CSV carries both
+    // parent and child rows, so summing children too would double-count.
+    if (!crfCodes.some(c => code === c)) continue;
     const gas = col.gas >= 0 ? (r[col.gas] ?? '').trim().toLowerCase() : '';
     if (sumGases) {
       if (!sumGases.some(g => gas.includes(g))) continue;
@@ -229,53 +276,62 @@ async function fetchEea({ crfCodes, gasMatch, sumGases }) {
       if (!aggMatch.some(g => gas.includes(g))) continue;
     }
     const year = parseInt(r[col.year], 10);
-    const v = parseFloat(r[col.value]);
+    const v = parseNum(r[col.value]);
     if (!Number.isFinite(year) || !Number.isFinite(v)) continue;
-    totals.set(year, (totals.get(year) ?? 0) + v);
+    if (!factorSeen && col.unit >= 0) {
+      const f = unitToMt(r[col.unit]);
+      if (f != null) { factor = f; factorSeen = true; }
+    }
+    totals.set(year, (totals.get(year) ?? 0) + v * factor);
   }
-  return [...totals.entries()]
-    .map(([year, value]) => ({ year, value }))
-    .sort((a, b) => a.year - b.year);
+  return [...totals.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
 }
 
 // ───────────────────────── TS patching ─────────────────────────
 
-/** Locate the one-line `data: [ ... ]` array for a given indicator id. */
 function findDataArray(src, id) {
   const m = new RegExp(`id: '${id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}'`).exec(src);
   if (!m) return null;
   const di = src.indexOf('data: [', m.index);
   if (di < 0) return null;
-  const open = di + 'data: ['.length - 1; // index of '['
+  const open = di + 'data: ['.length - 1;
   const close = src.indexOf(']', open);
   return { open, close, body: src.slice(open + 1, close) };
 }
 
 const POINT_RE = /\{\s*year:\s*(-?\d+),\s*value:\s*(-?[\d.]+)(,\s*afterReport:\s*true)?\s*\}/g;
 
-function reportYears(body) {
-  const ys = [];
-  let m;
-  POINT_RE.lastIndex = 0;
-  while ((m = POINT_RE.exec(body))) if (!m[3]) ys.push(Number(m[1]));
-  return ys;
+/** Report points = those NOT flagged afterReport. */
+function reportPoints(body) {
+  const pts = [];
+  let m; POINT_RE.lastIndex = 0;
+  while ((m = POINT_RE.exec(body))) if (!m[3]) pts.push({ year: Number(m[1]), value: Number(m[2]) });
+  return pts;
 }
 
-function round(v, d) {
-  const f = 10 ** d;
-  return Math.round(v * f) / f;
+/** Anchor check: fetched value at the report's last year must be within 2×. */
+function anchorOk(anchorVal, fetchedAtAnchor) {
+  if (!Number.isFinite(fetchedAtAnchor)) return { ok: true, reason: 'no-anchor-year' };
+  if (Math.abs(anchorVal) < 1e-9) return { ok: true, reason: 'zero-anchor' };
+  const ratio = fetchedAtAnchor / anchorVal;
+  if (ratio <= 0) return { ok: false, reason: `sign flip (anchor ${anchorVal}, fetched ${fetchedAtAnchor})` };
+  if (ratio < 0.5 || ratio > 2)
+    return { ok: false, reason: `${ratio.toFixed(3)}× off anchor (anchor ${anchorVal}, fetched ${round(fetchedAtAnchor, 3)})` };
+  return { ok: true, reason: `${ratio.toFixed(3)}× anchor` };
 }
 
 async function main() {
   let src = await readFile(TS_FILE, 'utf8');
   const provenance = [];
-  // Apply edits back-to-front so string offsets stay valid.
   const edits = [];
 
   for (const [id, rec] of Object.entries(RECIPES)) {
     const loc = findDataArray(src, id);
     if (!loc) { console.error(`! ${id}: not found in TS`); continue; }
-    const baseYear = Math.max(...reportYears(loc.body), -Infinity);
+    const reps = reportPoints(loc.body);
+    const baseYear = Math.max(...reps.map(p => p.year));
+    const baseVal = reps.find(p => p.year === baseYear)?.value;
+    const meta = { id, sourceTitle: rec.sourceTitle, sourceUrl: rec.sourceUrl, note: rec.note };
 
     let fetched;
     try {
@@ -284,37 +340,35 @@ async function main() {
         : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
-      provenance.push({ id, status: 'error', message: e.message,
-        sourceTitle: rec.sourceTitle, sourceUrl: rec.sourceUrl, note: rec.note });
+      provenance.push({ ...meta, status: 'error', message: e.message });
       continue;
     }
 
     const toRepo = rec.toRepo || (v => v);
-    const newPts = fetched
-      .filter(p => p.year > baseYear)
-      .map(p => ({ year: p.year, value: round(toRepo(p.value), rec.round) }));
+    const conv = fetched.map(p => ({ year: p.year, value: round(toRepo(p.value), rec.round) }));
 
-    if (newPts.length === 0) {
-      console.log(`= ${id}: no years after ${baseYear}`);
-      provenance.push({ id, status: 'up-to-date', baseYear, newPoints: [],
-        sourceTitle: rec.sourceTitle, sourceUrl: rec.sourceUrl, note: rec.note });
+    // Sanity-check against the report anchor before trusting the series.
+    const atAnchor = conv.find(p => p.year === baseYear)?.value;
+    const chk = anchorOk(baseVal, atAnchor);
+    if (!chk.ok) {
+      console.error(`! ${id}: anchor check failed — ${chk.reason}; skipping`);
+      provenance.push({ ...meta, status: 'mismatch', message: chk.reason, baseYear });
       continue;
     }
 
-    // Rebuild the array body: drop old afterReport points, keep report points,
-    // append fresh afterReport points (sorted by year).
-    const kept = [];
-    let m; POINT_RE.lastIndex = 0;
-    while ((m = POINT_RE.exec(loc.body))) {
-      if (!m[3]) kept.push(`{ year: ${m[1]}, value: ${m[2]} }`);
+    const newPts = conv.filter(p => p.year > baseYear);
+    if (newPts.length === 0) {
+      console.log(`= ${id}: no years after ${baseYear} (${chk.reason})`);
+      provenance.push({ ...meta, status: 'up-to-date', baseYear, newPoints: [] });
+      continue;
     }
-    for (const p of newPts) kept.push(`{ year: ${p.year}, value: ${p.value}, afterReport: true }`);
-    const newBody = kept.join(', ');
-    edits.push({ open: loc.open, close: loc.close, text: `[${newBody}]` });
 
-    console.log(`+ ${id}: +${newPts.length} pts (${newPts.map(p => p.year).join(',')})`);
-    provenance.push({ id, status: 'updated', baseYear, newPoints: newPts,
-      sourceTitle: rec.sourceTitle, sourceUrl: rec.sourceUrl, note: rec.note });
+    const kept = reps.map(p => `{ year: ${p.year}, value: ${p.value} }`);
+    for (const p of newPts) kept.push(`{ year: ${p.year}, value: ${p.value}, afterReport: true }`);
+    edits.push({ open: loc.open, close: loc.close, text: `[${kept.join(', ')}]` });
+
+    console.log(`+ ${id}: +${newPts.length} pts (${newPts.map(p => p.year).join(',')}) [${chk.reason}]`);
+    provenance.push({ ...meta, status: 'updated', baseYear, newPoints: newPts });
   }
 
   edits.sort((a, b) => b.open - a.open);
@@ -328,9 +382,9 @@ async function main() {
       { generatedAt: new Date().toISOString(), indicators: provenance }, null, 2));
     console.log(`\nWrote ${TS_FILE} and ${PROV_FILE}`);
   }
-  const upd = provenance.filter(p => p.status === 'updated').length;
-  const err = provenance.filter(p => p.status === 'error').length;
-  console.log(`Summary: ${upd} updated, ${err} errored, ${provenance.length} recipes.`);
+  const by = s => provenance.filter(p => p.status === s).length;
+  console.log(`\nSummary: ${by('updated')} updated, ${by('up-to-date')} up-to-date, ` +
+              `${by('mismatch')} mismatch, ${by('error')} errored, ${provenance.length} recipes.`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
