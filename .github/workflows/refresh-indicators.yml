@@ -74,8 +74,14 @@ jobs:
           } > /tmp/pr-body.md
           if gh pr view "$BRANCH" --json state --jq .state 2>/dev/null | grep -q OPEN; then
             echo "PR already open for $BRANCH — updated with a new commit."
+          elif gh pr create --base main --head "$BRANCH" \
+                 --title "Automated indicator refresh (Eurostat & EEA)" \
+                 --body-file /tmp/pr-body.md; then
+            echo "Opened PR for $BRANCH."
           else
-            gh pr create --base main --head "$BRANCH" \
-              --title "Automated indicator refresh (Eurostat & EEA)" \
-              --body-file /tmp/pr-body.md
+            # Org setting "Allow GitHub Actions to create and approve pull
+            # requests" is likely off. The branch is pushed regardless — surface
+            # a one-click compare link instead of failing the job.
+            echo "::warning::Could not open a PR automatically (enable Settings → Actions → 'Allow GitHub Actions to create and approve pull requests'). Branch pushed — open it manually:"
+            echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/compare/main...${BRANCH}?expand=1"
           fi

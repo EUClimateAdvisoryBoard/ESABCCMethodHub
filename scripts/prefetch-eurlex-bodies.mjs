@@ -1,10 +1,17 @@
 #!/usr/bin/env node
 // ---------------------------------------------------------------------------
-// Prefetch EUR-Lex bodies for every policy missing a shipped `full_text`.
+// Prefetch full legislative bodies for every policy missing a shipped
+// `full_text`.
 //
-// Reads `src/data/policies.ts` (regex-based, no runtime), tries the
-// EUR-Lex HTML then PDF endpoints for each CELEX, strips tags, and
-// writes the result to `src/data/policy-bodies.generated.ts`.
+// Reads `src/data/policies.ts` (regex-based, no runtime). For each CELEX it
+// tries, in order:
+//   1. CELLAR — the EU Publications Office content-negotiation endpoint
+//      (publications.europa.eu/resource/celex/{CELEX}). Same official text,
+//      NO AWS WAF, returns 200. Primary source.
+//   2. EUR-Lex HTML / PDF — kept as a fallback, but usually returns an AWS
+//      WAF bot-challenge (HTTP 202) that a script cannot solve.
+// It strips tags and writes the result to
+// `public/content-analysis/policy-bodies.json`.
 //
 // Idempotent: run as often as needed. Already-fetched policies are
 // skipped unless `--force` is passed. Rate-limited to 1.2s per request
@@ -158,20 +165,25 @@ async function loadExisting(file) {
   }
 }
 
-// ── EUR-Lex fetcher (HTML preferred, PDF fallback) ───────────────────────
+// ── Fetcher (CELLAR primary, EUR-Lex HTML/PDF fallback) ──────────────────
 async function fetchOne(celex) {
   const attempts = [];
   globalAttempts = attempts;
-  // CELLAR (Publications Office REST) first. The eur-lex.europa.eu HTML/PDF
-  // endpoints are often unreachable from CI / sandboxed runners (they sit
-  // behind an interactive consent gate), whereas the CELLAR resource API at
-  // publications.europa.eu serves the same authentic OJ text via content
-  // negotiation and is reachable far more reliably.
-  {
-    const res = await tryCellar(celex);
+
+  // 1. CELLAR (EU Publications Office) — official text via HTTP content
+  //    negotiation, no AWS WAF. This is the reliable path: allowlist
+  //    publications.europa.eu and it returns 200 with the full body.
+  const cellarCandidates = [
+    `https://publications.europa.eu/resource/celex/${celex}`,
+    `http://publications.europa.eu/resource/celex/${celex}`,
+  ];
+  for (const url of cellarCandidates) {
+    const res = await tryCellar(url);
     attempts.push(res.tag);
-    if (res.ok) return { text: res.text, sourceUrl: res.sourceUrl, source: res.source, attempts };
+    if (res.ok) return { text: res.text, sourceUrl: url, source: 'cellar', attempts };
   }
+
+  // 2. EUR-Lex HTML — typically blocked by an AWS WAF JS challenge (202).
   const htmlCandidates = [
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}`,
     `https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:${celex}&from=EN`,
@@ -197,10 +209,45 @@ async function fetchOne(celex) {
   return null;
 }
 
+// CELLAR content-negotiation fetch. Ask for English (x)html; CELLAR resolves
+// the language expression and returns the document body directly (200).
+async function tryCellar(url) {
+  try {
+    const resp = await fetch(url, {
+      headers: {
+        'User-Agent': UA,
+        Accept: 'text/html, application/xhtml+xml, text/plain;q=0.8, */*;q=0.5',
+        'Accept-Language': 'eng',
+      },
+      redirect: 'follow',
+    });
+    if (!resp.ok) return { ok: false, tag: `cellar ${resp.status}` };
+    const ct = resp.headers.get('content-type') ?? '';
+    const body = await resp.text();
+    if (body.length < 2000) return { ok: false, tag: `cellar too-short(${body.length})` };
+    // CELLAR usually serves (x)html; strip markup when present, else take the
+    // plain body as-is.
+    const looksMarkup = /html|xml/.test(ct) || /<\/?[a-z][\s>]/i.test(body.slice(0, 1000));
+    const text = looksMarkup ? htmlToText(body) : body.trim();
+    if (text.length < MIN_BODY_CHARS) {
+      return { ok: false, tag: `cellar stripped-too-short(${text.length})` };
+    }
+    return { ok: true, tag: `cellar ok(${text.length})`, text };
+  } catch (err) {
+    return { ok: false, tag: `cellar err(${err?.message?.slice(0, 60) ?? err})` };
+  }
+}
+
 async function tryHtml(url) {
   try {
     const resp = await fetch(url, { headers: HEADERS, redirect: 'follow' });
     const ct = resp.headers.get('content-type') ?? '';
+    // EUR-Lex fronts its content with an AWS WAF: a 202 (or the
+    // x-amzn-waf-action header) means "solve a JS challenge first", which a
+    // script can't do. Surface it clearly rather than mislabelling it.
+    if (resp.status === 202 || resp.headers.get('x-amzn-waf-action')) {
+      return { ok: false, tag: `html waf-challenge(${resp.status})` };
+    }
     if (!resp.ok) return { ok: false, tag: `html ${resp.status}` };
     if (!ct.includes('html')) return { ok: false, tag: `html non-html(${ct.split(';')[0]})` };
     const html = await resp.text();
@@ -248,140 +295,6 @@ async function tryPdf(url) {
   } catch (err) {
     return { ok: false, tag: `pdf err(${err?.message?.slice(0, 60) ?? err})` };
   }
-}
-
-// ── CELLAR fetcher (Publications Office REST, content-negotiated) ─────────
-// Resolves http://publications.europa.eu/resource/celex/<CELEX> with an
-// Accept header. A single OJ document answers 200 directly; multi-stream
-// records (most COM communications) answer 300 Multiple Choices with an
-// HTML list of `…/DOC_n` manifestation streams, which we follow and
-// concatenate. HTML is preferred; PDF is the fallback for scanned acts.
-const CELLAR_BASE = 'http://publications.europa.eu/resource/celex/';
-const CELLAR_HEADERS = { ...HEADERS, Referer: 'https://publications.europa.eu/' };
-
-async function tryCellar(celex) {
-  // 1) HTML (xhtml) — direct 200 or 300-list of HTML streams.
-  try {
-    const url = `${CELLAR_BASE}${celex}`;
-    const resp = await fetch(url, {
-      headers: { ...CELLAR_HEADERS, Accept: 'application/xhtml+xml', 'Accept-Language': 'eng' },
-      redirect: 'follow',
-    });
-    if (resp.status === 200) {
-      const ct = resp.headers.get('content-type') ?? '';
-      const html = await resp.text();
-      if (ct.includes('html') && html.length >= 2000) {
-        const text = htmlToText(html);
-        if (text.length >= MIN_BODY_CHARS) {
-          return { ok: true, tag: `cellar html ok(${text.length})`, text, sourceUrl: url, source: 'eurlex-html' };
-        }
-      }
-    } else if (resp.status === 300) {
-      const list = await resp.text();
-      const streams = parseCellarStreams(list);
-      const htmlStreams = streams.filter(s => /\.x?html?$/i.test(s.name));
-      if (htmlStreams.length) {
-        const parts = [];
-        for (const s of htmlStreams.slice(0, 12)) {
-          const part = await fetchCellarStream(s.href, 'html');
-          if (part) parts.push(part);
-        }
-        const text = parts.join('\n\n').trim();
-        if (text.length >= MIN_BODY_CHARS) {
-          return { ok: true, tag: `cellar html-multi ok(${text.length}, ${parts.length}p)`, text, sourceUrl: url, source: 'eurlex-html' };
-        }
-      }
-    }
-  } catch (err) {
-    return { ok: false, tag: `cellar html err(${err?.message?.slice(0, 60) ?? err})` };
-  }
-  // 2) PDF fallback — direct 200 or 300-list of PDF streams.
-  try {
-    const url = `${CELLAR_BASE}${celex}`;
-    const resp = await fetch(url, {
-      headers: { ...CELLAR_HEADERS, Accept: 'application/pdf', 'Accept-Language': 'eng' },
-      redirect: 'follow',
-    });
-    if (resp.status === 200) {
-      const buf = new Uint8Array(await resp.arrayBuffer());
-      const text = await pdfBufferToText(buf);
-      if (text && text.length >= MIN_BODY_CHARS) {
-        return { ok: true, tag: `cellar pdf ok(${text.length})`, text, sourceUrl: url, source: 'eurlex-pdf' };
-      }
-    } else if (resp.status === 300) {
-      const list = await resp.text();
-      const pdfStreams = parseCellarStreams(list).filter(s => /\.pdf$/i.test(s.name));
-      const parts = [];
-      for (const s of pdfStreams.slice(0, 8)) {
-        const part = await fetchCellarStream(s.href, 'pdf');
-        if (part) parts.push(part);
-      }
-      const text = parts.join('\n\n').trim();
-      if (text.length >= MIN_BODY_CHARS) {
-        return { ok: true, tag: `cellar pdf-multi ok(${text.length}, ${parts.length}p)`, text, sourceUrl: url, source: 'eurlex-pdf' };
-      }
-    }
-    return { ok: false, tag: `cellar miss(html+pdf, status ${resp.status})` };
-  } catch (err) {
-    return { ok: false, tag: `cellar pdf err(${err?.message?.slice(0, 60) ?? err})` };
-  }
-}
-
-// Parse a CELLAR "300 Multiple-Choice" listing into ordered streams. Each
-// item carries a `…/DOC_n` href and a `stream_name` (e.g. `1_EN_ACT…html`)
-// — we keep both so the caller can pick HTML vs PDF manifestations.
-function parseCellarStreams(listHtml) {
-  const items = listHtml.split(/title="item"/).slice(1);
-  const out = [];
-  for (const chunk of items) {
-    const href = chunk.match(/href="(https?:\/\/[^"]+\/DOC_\d+)"/);
-    const name = chunk.match(/title="stream_name">([^<]+)</);
-    const order = chunk.match(/title="stream_order"[^>]*>(\d+)</);
-    if (href && name) {
-      out.push({ href: href[1], name: name[1].trim(), order: order ? parseInt(order[1], 10) : 0 });
-    }
-  }
-  out.sort((a, b) => a.order - b.order);
-  return out;
-}
-
-async function fetchCellarStream(href, kind) {
-  try {
-    const resp = await fetch(href, { headers: CELLAR_HEADERS, redirect: 'follow' });
-    if (!resp.ok) return null;
-    if (kind === 'html') {
-      const html = await resp.text();
-      const text = htmlToText(html);
-      return text.length >= 80 ? text : null;
-    }
-    const buf = new Uint8Array(await resp.arrayBuffer());
-    return await pdfBufferToText(buf);
-  } catch {
-    return null;
-  }
-}
-
-// Shared pdfjs text extraction (used by both the eur-lex and CELLAR PDF paths).
-async function pdfBufferToText(buf) {
-  const isPdf = buf[0] === 0x25 && buf[1] === 0x50 && buf[2] === 0x44 && buf[3] === 0x46 && buf[4] === 0x2d;
-  if (!isPdf) return null;
-  const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
-  const loadingTask = pdfjs.getDocument({
-    data: buf,
-    disableFontFace: true,
-    useSystemFonts: false,
-    isEvalSupported: false,
-    ...({ disableWorker: true }),
-  });
-  const pdf = await loadingTask.promise;
-  const pages = [];
-  for (let p = 1; p <= Math.min(pdf.numPages, 400); p++) {
-    const page = await pdf.getPage(p);
-    const content = await page.getTextContent();
-    const text = content.items.map(it => ('str' in it ? it.str : '')).join(' ');
-    if (text.trim()) pages.push(text.replace(/\s+/g, ' ').trim());
-  }
-  return pages.join('\n\n');
 }
 
 function htmlToText(html) {

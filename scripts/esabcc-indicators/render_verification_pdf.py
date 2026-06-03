@@ -71,7 +71,7 @@ def main() -> None:
     rows = [hdr]
     new_idx = []
     status_color = {"updated": "#1a7f37", "up-to-date": "#8a95a3",
-                    "error": "#b3261e"}
+                    "error": "#b3261e", "mismatch": "#9a6700"}
     for i in inds:
         st = i.get("status", "")
         pts = i.get("newPoints", [])
@@ -80,6 +80,8 @@ def main() -> None:
             pcell = Paragraph(ptxt, cellnew)
         elif st == "error":
             pcell = Paragraph(f"<font color='#b3261e'>fetch failed: {esc(i.get('message',''))}</font>", cell)
+        elif st == "mismatch":
+            pcell = Paragraph(f"<font color='#9a6700'>skipped (anchor check): {esc(i.get('message',''))}</font>", cell)
         else:
             pcell = Paragraph("<font color='#8a95a3'>— up to date</font>", cell)
         url = i.get("sourceUrl") or ""
