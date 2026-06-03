@@ -36,7 +36,7 @@ export const BETA_INDICATORS: Indicator[] = [
     category: 'energy-supply',
     unit: '%',
     description:
-      'BETA. Share of fossil fuels (solid, oil, gas) in EU-27 gross available energy — the headline measure of fossil-fuel phase-out across the whole energy system. 2021 = 70%, 2022 = 70.9% confirmed from Eurostat releases; 2015–2020 rounded from the published series. Re-pull from Eurostat nrg_ind_ffgae (SDG sdg_07_10) before promotion.',
+      'BETA. Share of fossil fuels (solid, oil, gas) in EU-27 gross available energy — the headline measure of fossil-fuel phase-out across the whole energy system. Only research-confirmed years are included (2019–2022; 2021 = 70%, 2022 = 70.9% per Eurostat releases). Re-pull the full series from Eurostat nrg_ind_ffgae (SDG sdg_07_10) to extend it.',
     source: 'Eurostat (nrg_ind_ffgae / sdg_07_10)',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_ind_ffgae/default/table?lang=en',
     direction: 'down',
@@ -44,8 +44,6 @@ export const BETA_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
-      { year: 2015, value: 73 },
-      { year: 2018, value: 72 },
       { year: 2019, value: 71 },
       { year: 2020, value: 70 },
       { year: 2021, value: 70 },
@@ -125,7 +123,7 @@ export const BETA_INDICATORS: Indicator[] = [
     category: 'industry',
     unit: 'EUR/kg',
     description:
-      'BETA. GDP (chain-linked, ref. 2015) per kg of domestic material consumption — the headline material-efficiency / circularity measure. Confirmed endpoints: EUR 2.04/kg (2018) → 2.23/kg (2023), +9.2%. Intermediate years move roughly monotonically; re-pull from Eurostat sdg_12_20 / env_ac_rp.',
+      'BETA. GDP (chain-linked, ref. 2015) per kg of domestic material consumption — the headline material-efficiency / circularity measure. Only the research-confirmed endpoints are included: EUR 2.04/kg (2018) → 2.23/kg (2023), +9.2%. Re-pull the intermediate years from Eurostat sdg_12_20 / env_ac_rp.',
     source: 'Eurostat (env_ac_rp / sdg_12_20)',
     sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/sdg_12_20/default/table?lang=en',
     direction: 'up',
@@ -134,7 +132,6 @@ export const BETA_INDICATORS: Indicator[] = [
     isSeed: true,
     data: [
       { year: 2018, value: 2.04 },
-      { year: 2020, value: 2.13 },
       { year: 2023, value: 2.23 },
     ],
   },
@@ -147,7 +144,7 @@ export const BETA_INDICATORS: Indicator[] = [
     category: 'transport',
     unit: 'Mtoe',
     description:
-      'BETA. EU-27 final energy consumption of the transport sector — proxy for demand for energy-intensive transport (transport ≈ 32% of EU final energy). ~315 Mtoe pre-pandemic peak (2019), ~275 in the 2020 COVID trough, ~300 in 2022–23. Scope (domestic vs incl. international bunkers) and exact PJ should be confirmed against Eurostat nrg_bal_c before promotion.',
+      'BETA. EU-27 final energy consumption of the transport sector — proxy for demand for energy-intensive transport (transport ≈ 32% of EU final energy). Research-anchored years only: ~315 Mtoe pre-pandemic peak (2019), ~275 in the 2020 COVID trough (≈−13%), ~300 in 2022–23. Values are approximate; scope (domestic vs incl. international bunkers) and exact PJ should be confirmed against Eurostat nrg_bal_c before promotion.',
     source: 'Eurostat (nrg_bal_c — transport detailed statistics)',
     sourceUrl: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Final_energy_consumption_in_transport_-_detailed_statistics',
     direction: 'down',
@@ -157,7 +154,6 @@ export const BETA_INDICATORS: Indicator[] = [
     data: [
       { year: 2019, value: 315 },
       { year: 2020, value: 275 },
-      { year: 2021, value: 290 },
       { year: 2022, value: 300 },
       { year: 2023, value: 300 },
     ],
@@ -216,7 +212,7 @@ export const BETA_INDICATORS: Indicator[] = [
     category: 'lulucf',
     unit: 'Mt CO₂e',
     description:
-      'BETA. Combined net GHG emissions from the Cropland (CRF 4.B) and Grassland (4.C) LULUCF categories (positive = net source) — proxy for reducing emissions within land-use categories. EEA reports cropland+grassland+wetlands as a net source of ~70 Mt/yr; with wetlands ≈8.8 Mt the cropland+grassland residual is ~55–60 Mt (cropland dominates). Re-pull exact per-category EU-27 values from the EEA land-use data table.',
+      'BETA. Combined net GHG emissions from the Cropland (CRF 4.B) and Grassland (4.C) LULUCF categories (positive = net source) — proxy for reducing emissions within land-use categories. The two recent points are a research-derived magnitude: EEA reports cropland+grassland+wetlands as a net source of ~70 Mt/yr and, with wetlands ≈8.8 Mt, the cropland+grassland residual is ~55–60 Mt (cropland dominates). Sign and magnitude are reliable; exact per-category EU-27 values should be re-pulled from the EEA land-use data table.',
     source: 'EEA GHG inventory / UNFCCC CRF (4.B + 4.C)',
     sourceUrl: 'https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emissions-from-land',
     direction: 'down',
@@ -224,7 +220,6 @@ export const BETA_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
-      { year: 2021, value: 59 },
       { year: 2022, value: 58 },
       { year: 2023, value: 57 },
     ],
@@ -244,7 +239,6 @@ export const BETA_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
-      { year: 2021, value: 8.9 },
       { year: 2022, value: 8.8 },
       { year: 2023, value: 8.8 },
     ],
