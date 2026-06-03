@@ -24,6 +24,10 @@ interface Props {
   /** Right-click on a coded-segment bracket → resize it. The handler is
    *  given the new char range; the store re-derives the text slice. */
   onUpdateSegmentRange?: (segmentId: string, next: { startChar: number; endChar: number }) => void;
+  /** Click (or context-menu) on a coded-segment bracket → open the shared
+   *  comment editor for that segment. When supplied, a left-click on the
+   *  bracket also opens the comment so commenting is one click from the text. */
+  onCommentSegment?: (segmentId: string) => void;
   /** In-document Ctrl+F search: case-insensitive substring; matches are
    *  wrapped in a yellow `<mark>` on top of any segment highlight. */
   searchQuery?: string;
@@ -63,6 +67,7 @@ export default function AnnotatedDocumentView({
   onSelectionWithoutCode,
   onDeleteSegment,
   onUpdateSegmentRange,
+  onCommentSegment,
   searchQuery,
   searchHitIndex,
   onSearchMatchesChange,
@@ -258,14 +263,19 @@ export default function AnnotatedDocumentView({
                   type="button"
                   key={seg.id}
                   data-segment-id={seg.id}
-                  onClick={e => { e.stopPropagation(); onSelectSegment(seg.id); }}
+                  onClick={e => {
+                    e.stopPropagation();
+                    onSelectSegment(seg.id);
+                    // One-click commenting straight from the text margin.
+                    onCommentSegment?.(seg.id);
+                  }}
                   onContextMenu={e => {
-                    if (!onDeleteSegment && !onUpdateSegmentRange) return;
+                    if (!onDeleteSegment && !onUpdateSegmentRange && !onCommentSegment) return;
                     e.preventDefault();
                     e.stopPropagation();
                     setContextMenu({ segmentId: seg.id, x: e.clientX, y: e.clientY });
                   }}
-                  title={`${code?.name ?? 'tag'} — "${seg.text.slice(0, 120)}" · right-click for actions`}
+                  title={`${code?.name ?? 'tag'} — "${seg.text.slice(0, 120)}" · click to comment · right-click for actions`}
                   className="absolute top-0 bottom-0 w-[6px] cursor-pointer"
                   style={{
                     left: `${lane * 10 + 1}px`,
@@ -357,6 +367,21 @@ export default function AnnotatedDocumentView({
               <span className="w-2 h-2 rounded-sm" style={{ backgroundColor: code?.color ?? '#8A95A3' }} aria-hidden />
               <span className="truncate">{code?.name ?? 'tag'}</span>
             </div>
+            {onCommentSegment && (
+              <>
+                <button
+                  type="button"
+                  onClick={() => {
+                    onCommentSegment(seg.id);
+                    setContextMenu(null);
+                  }}
+                  className="w-full text-left px-3 py-1.5 hover:bg-[#F3F4F6]"
+                >
+                  💬 {seg.note ? 'Edit comment' : 'Add comment'}
+                </button>
+                <div className="border-t border-[#E6E7E8]" />
+              </>
+            )}
             {onUpdateSegmentRange && (
               <>
                 <button

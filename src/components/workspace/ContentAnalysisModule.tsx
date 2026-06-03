@@ -732,6 +732,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onCreateSegment={handleCreateSegment}
                 onSelectSegment={setHighlightedSegmentId}
                 onDeleteSegment={deleteSegment}
+                onCommentSegment={id => { setHighlightedSegmentId(id); setCommentForSegmentId(id); }}
                 onSelectionWithoutCode={sel => setToolbarSel(sel)}
                 onRemoveFromCorpus={() => removeFromCorpus(selectedDocument.id)}
                 onLoadText={() => handleLoadText(selectedDocument)}
@@ -816,6 +817,7 @@ function DocumentViewer({
   onCreateSegment,
   onSelectSegment,
   onDeleteSegment,
+  onCommentSegment,
   onSelectionWithoutCode,
   onRemoveFromCorpus,
   onLoadText,
@@ -830,6 +832,7 @@ function DocumentViewer({
   onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string }) => void;
   onSelectSegment: (id: string) => void;
   onDeleteSegment: (id: string) => void;
+  onCommentSegment: (id: string) => void;
   onSelectionWithoutCode: (sel: ToolbarSelection) => void;
   onRemoveFromCorpus: () => void;
   onLoadText: () => void;
@@ -925,6 +928,7 @@ function DocumentViewer({
               onSelectSegment={onSelectSegment}
               highlightedSegmentId={highlightedSegmentId}
               onDeleteSegment={onDeleteSegment}
+              onCommentSegment={onCommentSegment}
               onSelectionWithoutCode={sel => onSelectionWithoutCode({ ...sel })}
             />
           </div>
@@ -940,6 +944,7 @@ function DocumentViewer({
             onSelectSegment={onSelectSegment}
             highlightedSegmentId={highlightedSegmentId}
             onDeleteSegment={onDeleteSegment}
+            onCommentSegment={onCommentSegment}
             onSelectionWithoutCode={sel => onSelectionWithoutCode({ ...sel })}
           />
         </div>

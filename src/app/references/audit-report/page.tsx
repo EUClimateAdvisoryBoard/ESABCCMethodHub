@@ -10,9 +10,8 @@
  *      Useful for legacy reports and reports authored outside the add-in.
  *
  *   2. "Live (Word add-in)" — read the citations_used event log written by
- *      the add-in every time someone inserts a citation. Filterable by the
- *      Report Plan id (set per-document in Office.context.document.settings)
- *      so you can pin the view to a specific report.
+ *      the add-in every time someone inserts a citation. Filterable by
+ *      document so you can pin the view to a specific report.
  *
  * Both share the same headline tiles and funder leaderboard so the numbers
  * are comparable across the two modes.
@@ -332,7 +331,6 @@ interface UsageRow {
   id: string;
   reference_id: string;
   document_key: string;
-  plan_id: string | null;
   doi: string | null;
   funding: FundingEntry[] | null;
   inserted_at: string;
@@ -350,7 +348,6 @@ function LiveAuditView() {
   const [data, setData] = useState<UsageResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
-  const [planFilter, setPlanFilter] = useState<string>('');
   const [documentFilter, setDocumentFilter] = useState<string>('');
 
   useEffect(() => {
@@ -359,7 +356,6 @@ function LiveAuditView() {
     setLoading(true);
     setError(null);
     const params = new URLSearchParams();
-    if (planFilter) params.set('plan_id', planFilter);
     if (documentFilter) params.set('document_key', documentFilter);
     const qs = params.toString();
     fetch(`/api/citations/used${qs ? `?${qs}` : ''}`, {
@@ -383,10 +379,9 @@ function LiveAuditView() {
       cancelled = true;
       controller.abort();
     };
-  }, [planFilter, documentFilter]);
+  }, [documentFilter]);
 
   const rows = data?.citations || [];
-  const planOptions = [...new Set(rows.map(r => r.plan_id).filter(Boolean) as string[])].sort();
   const documentOptions = [...new Set(rows.map(r => r.document_key).filter(Boolean))].sort();
   const funderBreakdown = buildFunderBreakdown(
     rows.flatMap(r => (r.funding || []) as FundingEntry[]),
@@ -404,23 +399,10 @@ function LiveAuditView() {
       <p className="text-sm text-tertiary">
         Every time someone inserts a citation via the Word add-in, a row is recorded in{' '}
         <code>citations_used</code>. This view aggregates that log so you can see the EU-funded
-        share for a specific Report Plan or document, without re-extracting DOIs.
+        share for a specific document, without re-extracting DOIs.
       </p>
 
       <section className="bg-white border border-grey-200 rounded-lg p-4 flex flex-wrap items-end gap-3">
-        <div className="flex-1 min-w-[220px]">
-          <label className="block text-[11px] uppercase tracking-wide text-tertiary mb-1">Report plan</label>
-          <select
-            value={planFilter}
-            onChange={e => setPlanFilter(e.target.value)}
-            className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-sm text-tertiary-dark"
-          >
-            <option value="">All plans</option>
-            {planOptions.map(p => (
-              <option key={p} value={p}>{p}</option>
-            ))}
-          </select>
-        </div>
         <div className="flex-1 min-w-[220px]">
           <label className="block text-[11px] uppercase tracking-wide text-tertiary mb-1">Document</label>
           <select
@@ -468,7 +450,6 @@ function LiveAuditView() {
                     <th className="text-left px-3 py-2 font-semibold">Inserted</th>
                     <th className="text-left px-3 py-2 font-semibold">Reference</th>
                     <th className="text-left px-3 py-2 font-semibold">Document</th>
-                    <th className="text-left px-3 py-2 font-semibold">Plan</th>
                     <th className="text-left px-3 py-2 font-semibold">Funders</th>
                     <th className="text-left px-3 py-2 font-semibold">EU?</th>
                   </tr>
@@ -476,7 +457,7 @@ function LiveAuditView() {
                 <tbody>
                   {rows.length === 0 && (
                     <tr>
-                      <td colSpan={6} className="px-3 py-6 text-center text-sm text-tertiary">
+                      <td colSpan={5} className="px-3 py-6 text-center text-sm text-tertiary">
                         No citations recorded yet for this scope.
                       </td>
                     </tr>
@@ -496,7 +477,6 @@ function LiveAuditView() {
                         <td className="px-3 py-2 truncate max-w-[180px]" title={r.document_key}>
                           {r.document_key}
                         </td>
-                        <td className="px-3 py-2">{r.plan_id || <span className="text-tertiary">—</span>}</td>
                         <td className="px-3 py-2">
                           {funders.length === 0 ? (
                             <span className="text-tertiary">—</span>

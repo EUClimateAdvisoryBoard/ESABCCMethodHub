@@ -6,7 +6,6 @@ import {
   initConnection,
   searchReferences,
   getLibraries,
-  isUsingBridge,
   syncLibrary,
   RefSearchResult,
 } from '../services/api';
@@ -18,15 +17,6 @@ import {
   getAllCitations,
   CitationData,
 } from '../services/citation';
-import {
-  getActivePlanScope,
-  listPlansFromBridge,
-  loadPersistedPlanId,
-  PlanScope,
-  PlanSummary,
-  restorePlanScope,
-  setActivePlanScope,
-} from '../services/plan-scope';
 
 import './taskpane.css';
 
@@ -68,11 +58,6 @@ async function initializeAddin(): Promise<void> {
 
     // Load libraries
     await loadLibraries();
-
-    // Restore the report-plan scope persisted on this document, if any.
-    // Bridge needs to be reachable to resolve the plan; if not, we keep the
-    // persisted ID and surface an inline error so the user can retry.
-    await restoreReportScopeUI();
 
     // Set up search handler
     const searchInput = document.getElementById('searchInput') as HTMLInputElement;
@@ -139,15 +124,8 @@ async function loadLibraries(): Promise<void> {
 // ── Search ──
 
 async function handleSearch(query: string): Promise<void> {
-  const scope = getActivePlanScope();
-  // No scope and no library / no query → keep the prompt-to-search empty state.
-  // Scope present → empty query means "show the full plan bibliography",
-  // since the plan is small enough to render in full.
-  if (!query.trim() && !scope) {
-    if (!currentLibraryId) {
-      showEmptyState();
-      return;
-    }
+  // No query → keep the prompt-to-search empty state.
+  if (!query.trim()) {
     showEmptyState();
     return;
   }
@@ -204,11 +182,8 @@ function renderSearchResults(results: RefSearchResult[]): void {
 }
 
 function showEmptyState(): void {
-  const scope = getActivePlanScope();
-  const msg = scope
-    ? `Type to search the ${scope.planName} bibliography (${scope.refs.length} refs).`
-    : 'Type to search your reference library';
-  document.getElementById('refList')!.innerHTML = `<li class="ref-empty">${escapeHtml(msg)}</li>`;
+  document.getElementById('refList')!.innerHTML =
+    '<li class="ref-empty">Type to search your reference library</li>';
 }
 
 // ── Citation Insertion (exposed to HTML onclick) ──
@@ -353,12 +328,6 @@ async function scanDocumentCitations(): Promise<void> {
   bridgeEl.className = `status-badge ${conn.bridge ? 'status-connected' : 'status-disconnected'}`;
   supabaseEl.textContent = conn.supabase ? 'Connected' : 'Not connected';
   supabaseEl.className = `status-badge ${conn.supabase ? 'status-connected' : 'status-disconnected'}`;
-
-  // If the bridge just came back online and the document had a persisted
-  // plan that previously failed to resolve, retry now.
-  if (conn.bridge && !getActivePlanScope() && loadPersistedPlanId()) {
-    await restoreReportScopeUI();
-  }
 };
 
 // ── Tab Navigation ──
@@ -391,176 +360,6 @@ function showStatus(message: string, type: string): void {
   el.textContent = message;
   el.className = `status ${type}`;
 }
-
-// ── Report Plan scope UI ───────────────────────────────────────────────────
-
-let reportPickerLoaded = false;
-let reportPickerCache: PlanSummary[] = [];
-
-async function restoreReportScopeUI(): Promise<void> {
-  const persistedId = loadPersistedPlanId();
-  if (!persistedId) {
-    renderReportScope(null, null);
-    return;
-  }
-  // Show an intermediate "loading" state while we resolve the persisted plan.
-  renderReportScope(null, { loading: true, persistedId });
-  try {
-    const scope = await restorePlanScope();
-    renderReportScope(scope, null);
-  } catch (err) {
-    renderReportScope(null, {
-      stale: true,
-      persistedId,
-      error: (err as Error).message || 'Could not load plan',
-    });
-  }
-}
-
-interface ReportScopeStatus {
-  loading?: boolean;
-  stale?: boolean;
-  persistedId?: string;
-  error?: string;
-}
-
-function renderReportScope(scope: PlanScope | null, status: ReportScopeStatus | null): void {
-  const wrap = document.getElementById('reportScope')!;
-  const nameEl = document.getElementById('reportScopeName')!;
-  const statsEl = document.getElementById('reportScopeStats')!;
-  const errorEl = document.getElementById('reportScopeError')!;
-  const clearBtn = document.getElementById('reportScopeClear')!;
-  const changeBtn = document.getElementById('reportScopeChange')! as HTMLButtonElement;
-
-  errorEl.classList.add('hidden');
-  errorEl.textContent = '';
-
-  if (status?.loading) {
-    wrap.dataset.state = 'loading';
-    nameEl.textContent = 'Restoring report…';
-    statsEl.textContent = `Plan ID ${status.persistedId}`;
-    clearBtn.classList.add('hidden');
-    changeBtn.disabled = true;
-    return;
-  }
-
-  changeBtn.disabled = false;
-
-  if (status?.stale) {
-    wrap.dataset.state = 'stale';
-    nameEl.textContent = 'Report scope unavailable';
-    statsEl.textContent = `Persisted plan ID ${status.persistedId}`;
-    errorEl.textContent = status.error || 'The persisted plan could not be resolved.';
-    errorEl.classList.remove('hidden');
-    clearBtn.classList.remove('hidden');
-    return;
-  }
-
-  if (!scope) {
-    wrap.dataset.state = 'none';
-    nameEl.textContent = 'No report scope';
-    statsEl.textContent = 'Search runs against the full library. Pick a report to scope citations.';
-    clearBtn.classList.add('hidden');
-    return;
-  }
-
-  wrap.dataset.state = 'active';
-  nameEl.textContent = scope.planName;
-  const total = scope.funding.total;
-  const eu = scope.funding.withEu;
-  const pct = total > 0 ? Math.round(scope.funding.euShare * 100) : 0;
-  const refsLabel = total === 1 ? 'reference' : 'references';
-  statsEl.innerHTML = total === 0
-    ? '0 references in this plan'
-    : `${total} ${refsLabel} · <span class="eu-badge">${pct}% EU-funded</span> <span class="text-muted">(${eu} of ${total})</span>`;
-  clearBtn.classList.remove('hidden');
-}
-
-(window as any).openReportPicker = async function(): Promise<void> {
-  const picker = document.getElementById('reportPicker')!;
-  picker.classList.remove('hidden');
-  const search = document.getElementById('reportPickerSearch') as HTMLInputElement;
-  search.value = '';
-  search.oninput = () => renderReportPickerList(reportPickerCache, search.value);
-
-  if (!reportPickerLoaded) {
-    await reloadReportPickerList();
-  } else {
-    renderReportPickerList(reportPickerCache, '');
-  }
-  setTimeout(() => search.focus(), 0);
-};
-
-(window as any).closeReportPicker = function(): void {
-  document.getElementById('reportPicker')!.classList.add('hidden');
-};
-
-(window as any).reloadReportPickerList = async function(): Promise<void> {
-  const list = document.getElementById('reportPickerList')!;
-  list.innerHTML = '<li class="report-picker-empty">Loading plans…</li>';
-  if (!isUsingBridge()) {
-    list.innerHTML = '<li class="report-picker-error">Bridge offline — cannot list plans.</li>';
-    return;
-  }
-  try {
-    reportPickerCache = await listPlansFromBridge();
-    reportPickerLoaded = true;
-    renderReportPickerList(reportPickerCache, '');
-  } catch (err) {
-    list.innerHTML = `<li class="report-picker-error">${escapeHtml((err as Error).message || 'Failed to load plans')}</li>`;
-  }
-};
-
-function renderReportPickerList(plans: PlanSummary[], filter: string): void {
-  const list = document.getElementById('reportPickerList')!;
-  const q = filter.trim().toLowerCase();
-  const filtered = q
-    ? plans.filter(p => p.name.toLowerCase().includes(q) || (p.description || '').toLowerCase().includes(q))
-    : plans;
-
-  if (filtered.length === 0) {
-    list.innerHTML = '<li class="report-picker-empty">No matching plans.</li>';
-    return;
-  }
-  const activeId = getActivePlanScope()?.planId;
-  list.innerHTML = filtered.map(p => `
-    <li class="report-picker-item ${p.id === activeId ? 'active' : ''}"
-        data-id="${escapeAttr(p.id)}" onclick="pickReportPlan('${escapeAttr(p.id)}')">
-      <div class="name">${escapeHtml(p.name)}</div>
-      <div class="meta">${p.referenceCount} refs · ${p.sectionCount} sections${p.description ? ` · ${escapeHtml(p.description)}` : ''}</div>
-    </li>
-  `).join('');
-}
-
-(window as any).pickReportPlan = async function(planId: string): Promise<void> {
-  (window as any).closeReportPicker();
-  renderReportScope(null, { loading: true, persistedId: planId });
-  try {
-    const scope = await setActivePlanScope(planId);
-    renderReportScope(scope, null);
-    showStatus(`Scoped to ${scope?.planName ?? 'plan'}`, 'connected');
-    // Refresh the search panel: clear the input and re-show the (now scoped)
-    // empty state. The user immediately sees the plan's bibliography when
-    // they next type.
-    const searchInput = document.getElementById('searchInput') as HTMLInputElement;
-    if (searchInput) {
-      searchInput.value = '';
-      showEmptyState();
-    }
-  } catch (err) {
-    renderReportScope(null, {
-      stale: true,
-      persistedId: planId,
-      error: (err as Error).message || 'Could not load plan',
-    });
-  }
-};
-
-(window as any).clearReportScope = async function(): Promise<void> {
-  await setActivePlanScope(null);
-  renderReportScope(null, null);
-  showStatus('Report scope cleared', 'connected');
-};
 
 function escapeHtml(str: string): string {
   const div = document.createElement('div');

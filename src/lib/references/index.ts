@@ -15,3 +15,4 @@
 export * from './types';
 export * from './citation-utils';
 export * from './reference-service';
+export * from './projects';

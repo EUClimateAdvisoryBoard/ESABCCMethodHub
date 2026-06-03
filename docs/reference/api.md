@@ -24,8 +24,6 @@ expectation, and any salient caveat.
 | `/api/resolve-doi`                        | `GET`         | Normalise + look up a DOI through Crossref                       | 30-day cache · 422 on not-found · lifts CrossRef `funder[]` into `csl.funder` |
 | `/api/similar-papers`                     | `GET`         | "Find similar" — Semantic Scholar with bundled-corpus fallback    | Query-only · no user data sent                   |
 | `/api/citations/used`                     | `GET`, `POST` | Citation-insertion event log (writes from Word add-in; reads roll-ups for the audit-report Live tab) | Snapshots `funding` + `doi` at write time so reads don't need to join across reference tables |
-| `/api/report-plans`                       | `GET`, `POST`, `DELETE` | Report Reference Plans CRUD                            | Used by the Word add-in's plan picker (proxied via the bridge) |
-| `/api/report-plans/[id]`                  | `GET`, `PATCH`, `DELETE` | Single plan — details, update, delete                  | Drives the bridge's `/api/report-plan/:id` and the in-app `/report-plan/[id]` funding-analysis panel |
 
 ## Module — Data & Scenarios (M·02)
 

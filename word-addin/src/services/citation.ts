@@ -4,7 +4,6 @@
 // ============================================================================
 
 import { RefSearchResult, getReferencesByIds, formatBibliography, formatInlineCitations, recordCitationUsage } from './api';
-import { getActivePlanScope, loadPersistedPlanId } from './plan-scope';
 
 // ── Types ──
 
@@ -45,11 +44,9 @@ function getDocumentKey(): string {
 
 function logCitationUsage(citation: CitationData): void {
   const csl: any = citation.cslJson || {};
-  const planId = getActivePlanScope()?.planId || loadPersistedPlanId() || null;
   void recordCitationUsage({
     reference_id: citation.refId,
     document_key: getDocumentKey(),
-    plan_id: planId,
     doi: typeof csl.DOI === 'string' ? csl.DOI : null,
     funding: Array.isArray(csl.funder) ? csl.funder : null,
   });
