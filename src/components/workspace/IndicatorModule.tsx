@@ -97,7 +97,11 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
   const showFrameworks = projectId === FRAMEWORKS_PROJECT_ID;
-  const [view, setView] = useState<'indicators' | 'flowcharts'>('indicators');
+  // For the Policy Gap project the flow-chart overview is the landing view —
+  // the frameworks are what motivate the indicators, so users see them first.
+  const [view, setView] = useState<'indicators' | 'flowcharts'>(
+    projectId === FRAMEWORKS_PROJECT_ID ? 'flowcharts' : 'indicators'
+  );
   const [editorOpen, setEditorOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [adding, setAdding] = useState(false);

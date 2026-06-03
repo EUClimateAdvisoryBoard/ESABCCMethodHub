@@ -24,6 +24,7 @@ import {
   type SectorFramework,
 } from '@/data/sector-frameworks';
 import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/SectorFlow';
+import OverviewFigure from '@/components/frameworks/OverviewFigure';
 import IndicatorDetail from '@/components/frameworks/IndicatorDetail';
 
 interface Props {
@@ -83,6 +84,33 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
     setBoard((b) => ({ ...b, sectors: b.sectors.map((s) => (s.id === next.id ? next : s)) }));
   }, []);
 
+  // ── add / delete a whole flow chart (no coding needed) ───────────────────
+  const addSector = () => {
+    const uid = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+    const outcomeId = uid('o');
+    const s: SectorFramework = {
+      id: uid('sector'),
+      name: 'New flow chart',
+      figure: 'Custom',
+      color: '#3D6E8C',
+      goal: 'Describe the goal of this flow chart',
+      goalIndicators: [],
+      outcomes: [{ id: outcomeId, layer: 'outcome', label: 'New outcome', parents: ['goal'], indicators: [] }],
+      levers: [{ id: uid('l'), layer: 'lever', label: 'New lever', parents: [outcomeId], indicators: [] }],
+      enabling: [],
+    };
+    setBoard((b) => ({ ...b, sectors: [...b.sectors, s] }));
+    setEditing(true);
+    setExpanded((prev) => new Set(prev).add(s.id));
+    requestAnimationFrame(() =>
+      document.getElementById(`sector-section-${s.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+    );
+  };
+  const deleteSector = (id: string) => {
+    if (confirm('Delete this entire flow chart? This cannot be undone.'))
+      setBoard((b) => ({ ...b, sectors: b.sectors.filter((s) => s.id !== id) }));
+  };
+
   const toggleExpand = (id: string) =>
     setExpanded((prev) => {
       const n = new Set(prev);
@@ -90,6 +118,12 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
       else n.add(id);
       return n;
     });
+  const expandAndScroll = (id: string) => {
+    setExpanded((prev) => new Set(prev).add(id));
+    requestAnimationFrame(() =>
+      document.getElementById(`sector-section-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' }),
+    );
+  };
   const allExpanded = expanded.size === board.sectors.length;
   const expandAll = () => setExpanded(new Set(allExpanded ? [] : board.sectors.map((s) => s.id)));
 
@@ -110,7 +144,9 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
       <p className="text-sm text-tertiary mb-4 max-w-3xl">
         The ESABCC report assesses each sector with a framework that flows from the climate goal, through
         outcomes and mitigation levers, down to enabling conditions. The white boxes are the progress
-        indicators in this database — click any chip to open the data behind it.
+        indicators in this database — click any chip to open the data behind it. Dashed{' '}
+        <span className="text-tertiary-light">no&nbsp;data</span> boxes are concepts the report names but
+        for which no time series is curated yet; link one to an indicator in edit mode.
       </p>
 
       <div className="flex flex-wrap items-center gap-2 mb-4">
@@ -128,6 +164,12 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
         >
           {allExpanded ? 'Collapse all' : 'Expand all'}
         </button>
+        <button
+          onClick={addSector}
+          className="text-xs font-semibold px-3 py-1.5 rounded-md bg-primary text-white hover:bg-primary-dark"
+        >
+          + New flow chart
+        </button>
         <div className="flex-1" />
         <button
           onClick={resetBoard}
@@ -144,12 +186,24 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
         </div>
       )}
 
+      {/* Simplified overview: all sectors + indicators connected to the goal. */}
+      <div className="rounded-xl border border-grey-200 bg-white p-4 mb-5">
+        <div className="text-[11px] uppercase tracking-wide text-tertiary-light font-semibold mb-3">
+          Overview — all sector frameworks
+        </div>
+        <OverviewFigure sectors={board.sectors} onOpenIndicator={setDrawer} onExpand={expandAndScroll} />
+      </div>
+
       <div className="space-y-3">
         {board.sectors.map((s) => {
           const isOpen = expanded.has(s.id);
           const c = counts(s);
           return (
-            <section key={s.id} className="rounded-xl border border-grey-200 overflow-hidden bg-white">
+            <section
+              key={s.id}
+              id={`sector-section-${s.id}`}
+              className="rounded-xl border border-grey-200 overflow-hidden bg-white scroll-mt-4"
+            >
               <button
                 onClick={() => toggleExpand(s.id)}
                 className="w-full flex items-center gap-3 px-4 py-3 text-left hover:bg-grey-50"
@@ -165,6 +219,36 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
               </button>
               {isOpen && (
                 <div className="px-4 pb-5 pt-1 border-t border-grey-100">
+                  {editing && (
+                    <div className="flex flex-wrap items-center gap-2 mb-3 p-2 rounded-md bg-grey-50 border border-grey-200">
+                      <label className="text-[10px] text-tertiary-light">Name</label>
+                      <input
+                        value={s.name}
+                        onChange={(e) => updateSector({ ...s, name: e.target.value })}
+                        className="text-xs border border-grey-200 rounded px-2 py-1 w-40"
+                      />
+                      <label className="text-[10px] text-tertiary-light">Figure / tag</label>
+                      <input
+                        value={s.figure}
+                        onChange={(e) => updateSector({ ...s, figure: e.target.value })}
+                        className="text-xs border border-grey-200 rounded px-2 py-1 w-28"
+                      />
+                      <label className="text-[10px] text-tertiary-light">Colour</label>
+                      <input
+                        type="color"
+                        value={s.color}
+                        onChange={(e) => updateSector({ ...s, color: e.target.value })}
+                        className="h-7 w-9 rounded border border-grey-200 cursor-pointer"
+                      />
+                      <div className="flex-1" />
+                      <button
+                        onClick={() => deleteSector(s.id)}
+                        className="text-xs font-semibold px-2.5 py-1 rounded border border-grey-200 text-red-600 hover:border-red-300"
+                      >
+                        Delete flow chart
+                      </button>
+                    </div>
+                  )}
                   <SectorFlow
                     sector={s}
                     editing={editing}
