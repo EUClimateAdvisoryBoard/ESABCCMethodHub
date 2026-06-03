@@ -28,6 +28,8 @@
 
   const $searchInput = document.getElementById('search-input');
   const $filterType = document.getElementById('filter-type');
+  const $filterProject = document.getElementById('filter-project');
+  const $filterProjectGroup = document.getElementById('filter-project-group');
   const $filterYearFrom = document.getElementById('filter-year-from');
   const $filterYearTo = document.getElementById('filter-year-to');
   const $filterAuthor = document.getElementById('filter-author');
@@ -90,7 +92,73 @@
       annotationCounts = {};
       console.error('Failed to load references:', err);
     }
+    populateProjectFilter();
     applyFilters();
+  }
+
+  // ==================== Projects (report context) ====================
+  // References can be filed under one or more reports via "project:<name>"
+  // tags (or a `projects: []` array). When the dataset carries any, we expose
+  // a "Project" dropdown so a writer can pick from just that report's
+  // literature — handy when you don't recall the exact title.
+
+  const PROJECT_TAG_PREFIX = 'project:';
+
+  function projectsForRef(ref) {
+    const out = [];
+    if (Array.isArray(ref.projects)) {
+      for (const p of ref.projects) if (p) out.push(String(p).trim());
+    }
+    if (Array.isArray(ref.tags)) {
+      for (const t of ref.tags) {
+        const s = String(t || '').trim();
+        if (s.toLowerCase().startsWith(PROJECT_TAG_PREFIX)) {
+          const name = s.slice(PROJECT_TAG_PREFIX.length).trim();
+          if (name) out.push(name);
+        }
+      }
+    }
+    return out;
+  }
+
+  function refInProject(ref, projectName) {
+    const target = projectName.trim().toLowerCase();
+    if (!target) return true;
+    return projectsForRef(ref).some((p) => p.toLowerCase() === target);
+  }
+
+  function populateProjectFilter() {
+    if (!$filterProject || !$filterProjectGroup) return;
+    const counts = new Map();
+    for (const ref of allReferences) {
+      for (const name of projectsForRef(ref)) {
+        const key = name.toLowerCase();
+        const existing = counts.get(key);
+        if (existing) existing.count += 1;
+        else counts.set(key, { name, count: 1 });
+      }
+    }
+    const projects = [...counts.values()].sort(
+      (a, b) => b.count - a.count || a.name.localeCompare(b.name)
+    );
+    if (projects.length === 0) {
+      $filterProjectGroup.style.display = 'none';
+      return;
+    }
+    $filterProjectGroup.style.display = '';
+    const current = $filterProject.value;
+    $filterProject.innerHTML =
+      '<option value="">All projects</option>' +
+      projects
+        .map(
+          (p) =>
+            `<option value="${escapeAttr(p.name)}">${escapeHtml(p.name)} (${p.count})</option>`
+        )
+        .join('');
+    // Preserve the selection across reloads if it still exists.
+    if (current && projects.some((p) => p.name === current)) {
+      $filterProject.value = current;
+    }
   }
 
   // ==================== Filtering & Search ====================
@@ -98,6 +166,7 @@
   function applyFilters() {
     const query = $searchInput.value.trim().toLowerCase();
     const typeFilter = $filterType.value;
+    const projectFilter = $filterProject ? $filterProject.value : '';
     const yearFrom = parseInt($filterYearFrom.value) || 0;
     const yearTo = parseInt($filterYearTo.value) || 9999;
     const authorFilter = $filterAuthor.value.trim().toLowerCase();
@@ -105,6 +174,9 @@
     filteredReferences = allReferences.filter((ref) => {
       // Type filter
       if (typeFilter && ref.type !== typeFilter) return false;
+
+      // Project view — narrow to one report's literature
+      if (projectFilter && !refInProject(ref, projectFilter)) return false;
 
       // Year range
       const yr = parseInt(ref.year) || 0;
@@ -147,6 +219,7 @@
 
   $searchInput.addEventListener('input', onSearchChange);
   $filterType.addEventListener('change', applyFilters);
+  if ($filterProject) $filterProject.addEventListener('change', applyFilters);
   $filterYearFrom.addEventListener('input', onSearchChange);
   $filterYearTo.addEventListener('input', onSearchChange);
   $filterAuthor.addEventListener('input', onSearchChange);

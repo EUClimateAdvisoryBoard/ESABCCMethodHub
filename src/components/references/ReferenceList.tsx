@@ -9,6 +9,7 @@ import { getAllPdfAnnotationCounts } from '@/lib/references/pdf-annotations';
 import { formatCitation, CITATION_STYLE_LABELS, type CitationStyle } from '@/lib/references/format-citation';
 import { usePreferences } from '@/lib/preferences-context';
 import { isPolicyCitation } from '@/lib/policy-citations';
+import { splitTags } from '@/lib/references/projects';
 import { linkToPolicyNavigator, linkToContentAnalysis } from '@/lib/cross-module-links';
 
 interface ReferenceListProps {
@@ -273,6 +274,7 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
 
           {sorted.map(ref => {
             const isPolicy = isPolicyCitation(ref);
+            const { plain: plainTags, projects: projectTags } = splitTags(ref.tags);
             return (
             <div
               key={ref.id}
@@ -382,7 +384,23 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                         [{ref.citation_key}]
                       </span>
                     )}
-                    {ref.tags && ref.tags.length > 0 && ref.tags.map(tag => (
+                    {/* Project tags (report context) are surfaced as distinct
+                        badges so the "added in the context of <report>" link is
+                        legible; plain tags keep the neutral info badge. */}
+                    {projectTags.map(name => (
+                      <span
+                        key={`project:${name}`}
+                        className="mh-badge"
+                        style={{
+                          background: 'var(--mh-secondary, #0E47CB)',
+                          color: '#fff',
+                        }}
+                        title={`Report / project: ${name}`}
+                      >
+                        {name}
+                      </span>
+                    ))}
+                    {plainTags.map(tag => (
                       <span key={tag} className="mh-badge mh-badge-info">{tag}</span>
                     ))}
 
