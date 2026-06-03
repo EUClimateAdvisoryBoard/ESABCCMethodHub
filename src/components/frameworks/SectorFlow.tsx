@@ -1,9 +1,11 @@
 /**
  * One sector's assessment framework rendered as a connected, editable board of
- * cards — mirroring the report figures (goal → outcomes → mitigation levers →
- * enabling conditions). Indicator chips are the white boxes; clicking one opens
- * the data behind it. In edit mode every card and chip can be relabelled,
- * removed, re-wired or added to.
+ * cards — laid out like the report figures: a coloured level-label column on
+ * the left (GHG emission reductions → Outcomes → Mitigation levers → Enabling
+ * conditions), one row per level, level-coloured cards, and white indicator
+ * boxes. Indicator chips open the data behind them. In edit mode every card,
+ * chip, enabling bullet and its chapter reference can be relabelled, removed,
+ * re-wired or added to.
  */
 'use client';
 import { useMemo, useState } from 'react';
@@ -31,6 +33,13 @@ interface Props {
   onChange: (next: SectorFramework) => void;
   onOpenIndicator: (p: OpenIndicatorPayload) => void;
 }
+
+// Uniform per-level palette mirroring the report figures.
+const OUTCOME_BG = '#4E8595';
+const LEVER_BG = '#9E4A46';
+const ENABLING_LABEL_BG = '#C9B83F';
+const ENABLING_BAND_BG = '#FBF8DD';
+const CONNECTOR = '#94a3b8';
 
 const uid = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 
@@ -93,7 +102,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
   const deleteEnabling = (id: string) => patch({ enabling: sector.enabling.filter((e) => e.id !== id) });
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative text-[11px]">
       {/* connector overlay */}
       <svg
         className="absolute inset-0 pointer-events-none z-0"
@@ -103,134 +112,146 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
         preserveAspectRatio="none"
       >
         {lines.map((l) => (
-          <path key={l.id} d={l.d} fill="none" stroke={sector.color} strokeWidth={1.5} opacity={0.55} />
+          <path key={l.id} d={l.d} fill="none" stroke={CONNECTOR} strokeWidth={1.2} opacity={0.8} />
         ))}
       </svg>
 
-      <div className="relative z-10 space-y-6">
+      <div className="relative z-10 space-y-2">
         {/* ── Goal ───────────────────────────────────────────────────────────── */}
-        <div className="flex items-stretch gap-3 flex-wrap">
-          <div
-            ref={register('goal')}
-            className="flex-1 min-w-[260px] rounded-lg px-5 py-4 text-white shadow-sm"
-            style={{ background: sector.color }}
-          >
-            <div className="text-[10px] uppercase tracking-wide opacity-80 mb-1">GHG emission reductions</div>
-            <EditableText
-              value={sector.goal}
-              editing={editing}
-              className="font-semibold leading-snug"
-              onChange={(goal) => patch({ goal })}
-            />
+        <Row label="GHG emission reductions" bg={sector.color} text="#fff">
+          <div className="flex items-stretch gap-2">
+            <div
+              ref={register('goal')}
+              className="flex-1 min-w-0 rounded px-3 py-2 text-white shadow-sm flex items-center"
+              style={{ background: sector.color }}
+            >
+              <EditableText
+                value={sector.goal}
+                editing={editing}
+                className="font-semibold leading-snug text-[12px]"
+                onChange={(goal) => patch({ goal })}
+              />
+            </div>
+            <div className="flex flex-col justify-center gap-1 shrink-0">
+              <ChipRow
+                refs={sector.goalIndicators}
+                editing={editing}
+                allIndicators={allIndicators}
+                onOpen={onOpenIndicator}
+                onRemove={(refId) => removeRef('goal', refId)}
+                onAdd={(indId) => addRefTo('goal', indId)}
+              />
+            </div>
           </div>
-          <div className="flex flex-col justify-center gap-1.5">
-            <ChipRow
-              refs={sector.goalIndicators}
-              editing={editing}
-              allIndicators={allIndicators}
-              onOpen={onOpenIndicator}
-              onRemove={(refId) => removeRef('goal', refId)}
-              onAdd={(indId) => addRefTo('goal', indId)}
-            />
-          </div>
-        </div>
+        </Row>
 
         {/* ── Outcomes ───────────────────────────────────────────────────────── */}
-        <LayerLabel text="Outcomes" editing={editing} onAdd={() => addNode('outcome')} addLabel="outcome" />
-        <div className="grid gap-3 sm:grid-cols-2">
-          {sector.outcomes.map((o) => (
-            <NodeCard
-              key={o.id}
-              node={o}
-              accent={sector.color}
-              editing={editing}
-              allIndicators={allIndicators}
-              registerRef={register(o.id)}
-              onOpen={onOpenIndicator}
-              onLabel={(label) => updateNode('outcome', o.id, (n) => ({ ...n, label }))}
-              onDelete={() => deleteNode('outcome', o.id)}
-              onAddRef={(indId) => addRefTo({ layer: 'outcome', id: o.id }, indId)}
-              onRemoveRef={(refId) => removeRef({ layer: 'outcome', id: o.id }, refId)}
-            />
-          ))}
-        </div>
+        <Row label="Outcomes" bg={OUTCOME_BG} text="#fff" onAdd={editing ? () => addNode('outcome') : undefined}>
+          <div className="flex gap-2 items-stretch">
+            {sector.outcomes.map((o) => (
+              <NodeCard
+                key={o.id}
+                node={o}
+                bg={OUTCOME_BG}
+                editing={editing}
+                allIndicators={allIndicators}
+                registerRef={register(o.id)}
+                onOpen={onOpenIndicator}
+                onLabel={(label) => updateNode('outcome', o.id, (n) => ({ ...n, label }))}
+                onDelete={() => deleteNode('outcome', o.id)}
+                onAddRef={(indId) => addRefTo({ layer: 'outcome', id: o.id }, indId)}
+                onRemoveRef={(refId) => removeRef({ layer: 'outcome', id: o.id }, refId)}
+              />
+            ))}
+          </div>
+        </Row>
 
         {/* ── Mitigation levers ──────────────────────────────────────────────── */}
-        <LayerLabel text="Mitigation levers" editing={editing} onAdd={() => addNode('lever')} addLabel="lever" />
-        <div className="grid gap-3 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {sector.levers.map((l) => (
-            <NodeCard
-              key={l.id}
-              node={l}
-              accent={sector.color}
-              editing={editing}
-              allIndicators={allIndicators}
-              registerRef={register(l.id)}
-              onOpen={onOpenIndicator}
-              onLabel={(label) => updateNode('lever', l.id, (n) => ({ ...n, label }))}
-              onDelete={() => deleteNode('lever', l.id)}
-              onAddRef={(indId) => addRefTo({ layer: 'lever', id: l.id }, indId)}
-              onRemoveRef={(refId) => removeRef({ layer: 'lever', id: l.id }, refId)}
-              parentPicker={
-                editing ? (
-                  <ParentPicker
-                    node={l}
-                    outcomes={sector.outcomes}
-                    onToggle={(pid) =>
-                      updateNode('lever', l.id, (n) => ({
-                        ...n,
-                        parents: n.parents.includes(pid) ? n.parents.filter((x) => x !== pid) : [...n.parents, pid],
-                      }))
-                    }
-                  />
-                ) : null
-              }
-            />
-          ))}
-        </div>
+        <Row label="Mitigation levers" bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
+          <div className="flex gap-2 items-stretch overflow-x-auto pb-1">
+            {sector.levers.map((l) => (
+              <NodeCard
+                key={l.id}
+                node={l}
+                bg={LEVER_BG}
+                editing={editing}
+                allIndicators={allIndicators}
+                registerRef={register(l.id)}
+                onOpen={onOpenIndicator}
+                onLabel={(label) => updateNode('lever', l.id, (n) => ({ ...n, label }))}
+                onDelete={() => deleteNode('lever', l.id)}
+                onAddRef={(indId) => addRefTo({ layer: 'lever', id: l.id }, indId)}
+                onRemoveRef={(refId) => removeRef({ layer: 'lever', id: l.id }, refId)}
+                parentPicker={
+                  editing ? (
+                    <ParentPicker
+                      node={l}
+                      outcomes={sector.outcomes}
+                      onToggle={(pid) =>
+                        updateNode('lever', l.id, (n) => ({
+                          ...n,
+                          parents: n.parents.includes(pid) ? n.parents.filter((x) => x !== pid) : [...n.parents, pid],
+                        }))
+                      }
+                    />
+                  ) : null
+                }
+              />
+            ))}
+          </div>
+        </Row>
 
         {/* ── Enabling conditions ────────────────────────────────────────────── */}
-        <div className="rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border,#333)] bg-[#FBFBF7] dark:bg-white/5 p-4">
-          <div className="text-[10px] uppercase tracking-wide text-gray-500 mb-3">
-            Enabling conditions <span className="normal-case">(non-exhaustive)</span>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
+        <Row label="Enabling conditions (non-exhaustive)" bg={ENABLING_LABEL_BG} text="#3a3413">
+          <div className="rounded p-3 grid gap-4 sm:grid-cols-3" style={{ background: ENABLING_BAND_BG }}>
             {(['sector-specific', 'not-assessed', 'cross-cutting'] as EnablingKind[]).map((kind) => {
               const items = sector.enabling.filter((e) => e.kind === kind);
               if (items.length === 0 && !editing) return null;
               return (
                 <div key={kind}>
-                  <div className="text-xs font-semibold mb-1.5" style={{ color: sector.color }}>
-                    {ENABLING_KIND_LABEL[kind]}
-                  </div>
+                  <div className="text-[10px] font-semibold mb-1.5 text-[#5a5320]">{ENABLING_KIND_LABEL[kind]}</div>
                   <ul className="space-y-1">
                     {items.map((e) => (
-                      <li key={e.id} className="text-xs flex items-start gap-1.5 group">
-                        <span className="mt-1 w-1 h-1 rounded-full shrink-0" style={{ background: sector.color }} />
-                        <span className="flex-1">
-                          <EditableText
-                            value={e.label}
-                            editing={editing}
-                            inline
-                            onChange={(label) => updateEnabling(e.id, (x) => ({ ...x, label }))}
-                          />
-                          {e.chapter && <span className="text-gray-400"> ({e.chapter})</span>}
-                          {e.indicatorIds && e.indicatorIds.length > 0 && (
-                            <button
-                              onClick={() =>
-                                onOpenIndicator({ title: e.label, indicatorIds: e.indicatorIds! })
-                              }
-                              className="ml-1 text-[10px] font-mono text-[#3D6E8C] hover:underline"
-                            >
-                              data ↗
-                            </button>
+                      <li key={e.id} className="text-[11px] flex items-start gap-1 group">
+                        <span className="mt-1 w-1 h-1 rounded-full shrink-0 bg-[#8a7f2e]" />
+                        <span className="flex-1 leading-snug">
+                          {editing ? (
+                            <span className="inline-flex flex-wrap items-center gap-1">
+                              <input
+                                value={e.label}
+                                onChange={(ev) => updateEnabling(e.id, (x) => ({ ...x, label: ev.target.value }))}
+                                className="bg-transparent border-b border-dashed border-[#b3a64a] focus:border-[#5a5320] outline-none min-w-[80px]"
+                              />
+                              <input
+                                value={e.chapter ?? ''}
+                                placeholder="ch. —"
+                                onChange={(ev) =>
+                                  updateEnabling(e.id, (x) => ({ ...x, chapter: ev.target.value.trim() || undefined }))
+                                }
+                                className="w-16 bg-white/60 rounded px-1 text-[10px] text-[#5a5320] border border-[#cabf63] outline-none focus:border-[#5a5320]"
+                                title="Chapter reference — clear to remove"
+                              />
+                            </span>
+                          ) : (
+                            <>
+                              {e.label}
+                              {e.chapter && <span className="text-[#8a7f2e]"> ({e.chapter})</span>}
+                              {e.indicatorIds && e.indicatorIds.length > 0 && (
+                                <button
+                                  onClick={() => onOpenIndicator({ title: e.label, indicatorIds: e.indicatorIds! })}
+                                  className="ml-1 text-[10px] font-mono text-[#2f6e8c] hover:underline"
+                                >
+                                  data ↗
+                                </button>
+                              )}
+                            </>
                           )}
                         </span>
                         {editing && (
                           <button
                             onClick={() => deleteEnabling(e.id)}
-                            className="opacity-0 group-hover:opacity-100 text-gray-400 hover:text-red-600"
-                            aria-label="Remove"
+                            className="opacity-0 group-hover:opacity-100 text-[#8a7f2e] hover:text-red-600 leading-none"
+                            aria-label="Remove enabling condition"
                           >
                             ×
                           </button>
@@ -239,10 +260,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                     ))}
                   </ul>
                   {editing && (
-                    <button
-                      onClick={() => addEnabling(kind)}
-                      className="mt-1.5 text-[11px] text-gray-400 hover:text-gray-700"
-                    >
+                    <button onClick={() => addEnabling(kind)} className="mt-1.5 text-[10px] text-[#8a7f2e] hover:text-[#5a5320]">
                       + add
                     </button>
                   )}
@@ -250,7 +268,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
               );
             })}
           </div>
-        </div>
+        </Row>
       </div>
     </div>
   );
@@ -258,33 +276,41 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
 
 // ── sub-components ────────────────────────────────────────────────────────────
 
-function LayerLabel({
+/** A level band: coloured label cell on the left + content on the right. */
+function Row({
+  label,
+  bg,
   text,
-  editing,
+  children,
   onAdd,
-  addLabel,
 }: {
+  label: string;
+  bg: string;
   text: string;
-  editing: boolean;
-  onAdd: () => void;
-  addLabel: string;
+  children: React.ReactNode;
+  onAdd?: () => void;
 }) {
   return (
-    <div className="flex items-center gap-2">
-      <span className="text-[10px] uppercase tracking-wide text-gray-500">{text}</span>
-      <span className="flex-1 border-t border-dashed border-gray-200 dark:border-white/10" />
-      {editing && (
-        <button onClick={onAdd} className="text-[11px] text-[#3D6E8C] hover:underline">
-          + add {addLabel}
-        </button>
-      )}
+    <div className="grid grid-cols-[84px_minmax(0,1fr)] gap-2 items-stretch">
+      <div
+        className="rounded px-2 py-1 text-[10px] font-semibold leading-tight flex flex-col justify-center"
+        style={{ background: bg, color: text }}
+      >
+        {label}
+        {onAdd && (
+          <button onClick={onAdd} className="mt-1 text-[9px] font-normal underline opacity-90 hover:opacity-100 text-left">
+            + add
+          </button>
+        )}
+      </div>
+      <div>{children}</div>
     </div>
   );
 }
 
 function NodeCard({
   node,
-  accent,
+  bg,
   editing,
   allIndicators,
   registerRef,
@@ -296,7 +322,7 @@ function NodeCard({
   parentPicker,
 }: {
   node: FrameworkNode;
-  accent: string;
+  bg: string;
   editing: boolean;
   allIndicators: Indicator[];
   registerRef: (el: HTMLElement | null) => void;
@@ -310,36 +336,34 @@ function NodeCard({
   return (
     <div
       ref={registerRef}
-      className="relative rounded-lg border bg-white dark:bg-white/5 shadow-sm group"
-      style={{ borderColor: accent + '55' }}
+      className="relative rounded shadow-sm group flex-1 min-w-[118px] flex flex-col"
+      style={{ background: bg }}
     >
-      <div className="h-1 rounded-t-lg" style={{ background: accent }} />
-      <div className="p-3">
-        <div className="flex items-start gap-1.5">
-          <EditableText value={node.label} editing={editing} className="text-sm font-medium leading-snug flex-1" onChange={onLabel} />
+      <div className="p-2 flex flex-col gap-1.5 h-full">
+        <div className="flex items-start gap-1">
+          <EditableText value={node.label} editing={editing} className="text-[11px] font-semibold leading-tight text-white flex-1" onChange={onLabel} />
           {editing && (
-            <button onClick={onDelete} className="text-gray-300 hover:text-red-600 text-lg leading-none" aria-label="Delete card">
+            <button onClick={onDelete} className="text-white/60 hover:text-white text-base leading-none" aria-label="Delete card">
               ×
             </button>
           )}
         </div>
-        {node.note && <p className="text-[11px] text-gray-400 mt-1">{node.note}</p>}
+        {node.note && <p className="text-[9px] text-white/75 leading-tight">{node.note}</p>}
         {parentPicker}
-        <div className="mt-2">
-          <ChipRow
-            refs={node.indicators}
-            editing={editing}
-            allIndicators={allIndicators}
-            onOpen={onOpen}
-            onRemove={onRemoveRef}
-            onAdd={onAddRef}
-          />
-        </div>
+        <ChipRow
+          refs={node.indicators}
+          editing={editing}
+          allIndicators={allIndicators}
+          onOpen={onOpen}
+          onRemove={onRemoveRef}
+          onAdd={onAddRef}
+        />
       </div>
     </div>
   );
 }
 
+/** White indicator boxes that sit on the coloured cards (or beside the goal). */
 function ChipRow({
   refs,
   editing,
@@ -356,22 +380,22 @@ function ChipRow({
   onAdd: (indId: string) => void;
 }) {
   return (
-    <div className="flex flex-wrap gap-1.5">
+    <div className="flex flex-wrap gap-1 mt-auto">
       {refs.map((r) => {
         const linked = r.indicatorIds.length > 0;
         return (
           <span
             key={r.refId}
-            className={`group/chip inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-[11px] ${
+            className={`group/chip inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] ${
               linked
-                ? 'bg-white dark:bg-white/10 border-gray-300 cursor-pointer hover:border-[#3D6E8C]'
-                : 'bg-gray-50 dark:bg-white/5 border-dashed border-gray-300 text-gray-400'
+                ? 'bg-white text-gray-800 cursor-pointer hover:ring-1 hover:ring-white'
+                : 'bg-white/20 text-white/80 border border-dashed border-white/50'
             }`}
             onClick={() => onOpen({ title: r.label, code: r.code, indicatorIds: r.indicatorIds })}
             title={r.label}
           >
             <span className="font-mono font-semibold">{r.code}</span>
-            <span className="max-w-[140px] truncate">{r.label}</span>
+            <span className="max-w-[120px] truncate">{r.label}</span>
             {!linked && <span className="italic">no data</span>}
             {editing && (
               <button
@@ -380,7 +404,7 @@ function ChipRow({
                   onRemove(r.refId);
                 }}
                 className="text-gray-400 hover:text-red-600"
-                aria-label="Unlink"
+                aria-label="Unlink indicator"
               >
                 ×
               </button>
@@ -399,7 +423,7 @@ function AddIndicator({ allIndicators, onAdd }: { allIndicators: Indicator[]; on
     return (
       <button
         onClick={() => setOpen(true)}
-        className="inline-flex items-center rounded border border-dashed border-[#3D6E8C] text-[#3D6E8C] px-1.5 py-0.5 text-[11px] hover:bg-[#3D6E8C]/10"
+        className="inline-flex items-center rounded border border-dashed border-white/70 text-white px-1.5 py-0.5 text-[10px] hover:bg-white/10"
       >
         + link data
       </button>
@@ -414,7 +438,7 @@ function AddIndicator({ allIndicators, onAdd }: { allIndicators: Indicator[]; on
         setOpen(false);
       }}
       onBlur={() => setOpen(false)}
-      className="text-[11px] border rounded px-1 py-0.5 max-w-[200px]"
+      className="text-[10px] text-gray-800 border rounded px-1 py-0.5 max-w-[180px]"
     >
       <option value="" disabled>
         Pick an indicator…
@@ -439,13 +463,13 @@ function ParentPicker({
   onToggle: (id: string) => void;
 }) {
   return (
-    <div className="mt-2 border-t border-dashed pt-1.5">
-      <div className="text-[10px] text-gray-400 mb-1">feeds into:</div>
+    <div className="border-t border-dashed border-white/30 pt-1">
+      <div className="text-[9px] text-white/70 mb-0.5">feeds into:</div>
       <div className="flex flex-wrap gap-1">
         {outcomes.map((o) => (
-          <label key={o.id} className="flex items-center gap-1 text-[10px] cursor-pointer">
+          <label key={o.id} className="flex items-center gap-1 text-[9px] text-white cursor-pointer">
             <input type="checkbox" checked={node.parents.includes(o.id)} onChange={() => onToggle(o.id)} />
-            <span className="max-w-[90px] truncate">{o.label}</span>
+            <span className="max-w-[80px] truncate">{o.label}</span>
           </label>
         ))}
       </div>
@@ -458,30 +482,19 @@ function EditableText({
   editing,
   onChange,
   className = '',
-  inline = false,
 }: {
   value: string;
   editing: boolean;
   onChange: (v: string) => void;
   className?: string;
-  inline?: boolean;
 }) {
-  if (!editing) return inline ? <span className={className}>{value}</span> : <div className={className}>{value}</div>;
-  if (inline) {
-    return (
-      <input
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className={`bg-transparent border-b border-dashed border-gray-300 focus:border-[#3D6E8C] outline-none ${className}`}
-      />
-    );
-  }
+  if (!editing) return <div className={className}>{value}</div>;
   return (
     <textarea
       value={value}
       onChange={(e) => onChange(e.target.value)}
       rows={2}
-      className={`w-full bg-white/10 rounded px-1 py-0.5 border border-white/30 focus:border-white outline-none resize-none ${className}`}
+      className={`w-full bg-white/15 rounded px-1 py-0.5 border border-white/40 focus:border-white outline-none resize-none ${className}`}
     />
   );
 }
