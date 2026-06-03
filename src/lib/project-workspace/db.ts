@@ -99,7 +99,10 @@ export function isWorkspaceDbEnabled(): boolean {
  * or when its first run silently failed and we want to retry deliberately).
  */
 export async function reseedFor(projectId: string): Promise<void> {
-  await ensureSeedDataFor(projectId);
+  // Force the point-backfill pass too, so a deliberate reseed adds any new
+  // years the monthly refresh appended to indicators that were already seeded
+  // (the lazy on-render path skips this to stay cheap).
+  await ensureSeedDataFor(projectId, true);
 }
 
 type Supa = NonNullable<ReturnType<typeof getServerSupabase>>;
@@ -139,8 +142,22 @@ async function ensureSeedModules(sb: Supa, projectId: string) {
   }
 }
 
-/** Insert any of `pool` that aren't already present in the project. */
-async function ensureSeedIndicators(sb: Supa, projectId: string, pool: Indicator[]) {
+/**
+ * Insert any of `pool` that aren't already present in the project.
+ *
+ * When `backfillPoints` is set, also top up the time series of indicators that
+ * already exist — the monthly Eurostat/EEA refresh appends later years to the
+ * bundled data, but the steady-state path below skips an existing indicator
+ * entirely, so without this pass those new years never reach the DB. The
+ * backfill is gated (off for the lazy on-render path) because it costs an extra
+ * point read; it runs on a deliberate reseed.
+ */
+async function ensureSeedIndicators(
+  sb: Supa,
+  projectId: string,
+  pool: Indicator[],
+  backfillPoints = false
+) {
   const { data: existing, error: readErr } = await sb
     .from('pw_indicators')
     .select('id')
@@ -153,7 +170,10 @@ async function ensureSeedIndicators(sb: Supa, projectId: string, pool: Indicator
   }
   const have = new Set((existing ?? []).map(r => r.id));
   const toInsert = pool.filter(i => !have.has(i.id));
-  if (toInsert.length === 0) return;
+  if (toInsert.length === 0) {
+    if (backfillPoints) await backfillExistingPoints(sb, pool, have);
+    return;
+  }
   // UPSERT with onConflict makes the call resilient to PKs that survive the
   // prefilter (e.g. a stale row from before `is_seed=true` was a convention).
   const { error: insErr } = await sb.from('pw_indicators').upsert(
@@ -195,6 +215,53 @@ async function ensureSeedIndicators(sb: Supa, projectId: string, pool: Indicator
         error: ptsErr.message,
       });
     }
+  }
+
+  // Top up the series of the indicators that already existed (the ones skipped
+  // above) with any years the refresh has added since they were first seeded.
+  if (backfillPoints) await backfillExistingPoints(sb, pool, have);
+}
+
+/**
+ * Insert any data points missing from `pw_indicator_points` for indicators that
+ * are already in the DB. Reads the stored (indicator_id, year) keys first and
+ * inserts only the genuinely-missing ones with `ignoreDuplicates`, so existing
+ * values are never overwritten and the call is a no-op once the DB is caught up.
+ */
+async function backfillExistingPoints(
+  sb: Supa,
+  pool: Indicator[],
+  existingIds: Set<string>
+) {
+  const ids = pool.filter(i => existingIds.has(i.id)).map(i => i.id);
+  if (ids.length === 0) return;
+  const { data: existingPts, error: ptReadErr } = await sb
+    .from('pw_indicator_points')
+    .select('indicator_id, year')
+    .in('indicator_id', ids);
+  if (ptReadErr) {
+    console.error('[pw seed] failed to read existing indicator points', {
+      error: ptReadErr.message,
+    });
+    return;
+  }
+  const haveKey = new Set((existingPts ?? []).map(p => `${p.indicator_id}:${p.year}`));
+  const missing = pool
+    .filter(i => existingIds.has(i.id))
+    .flatMap(i =>
+      i.data
+        .filter(p => !haveKey.has(`${i.id}:${p.year}`))
+        .map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
+    );
+  if (missing.length === 0) return;
+  const { error } = await sb
+    .from('pw_indicator_points')
+    .upsert(missing, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
+  if (error) {
+    console.error('[pw seed] failed to backfill indicator points', {
+      attempted: missing.length,
+      error: error.message,
+    });
   }
 }
 
@@ -300,7 +367,10 @@ async function ensureSeedRecommendations(
 // Per-request memoization: the project page invokes ensureSeedDataFor from
 // getProject, listIndicators, and listRecommendations in parallel. Without
 // cache() that's 3× the read-then-conditional-write traffic per render.
-const ensureSeedDataFor = cache(async function ensureSeedDataFor(projectId: string) {
+const ensureSeedDataFor = cache(async function ensureSeedDataFor(
+  projectId: string,
+  backfillPoints = false
+) {
   const sb = getServerSupabase();
   if (!sb) return;
 
@@ -311,7 +381,7 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(projectId: stri
     await ensureSeedIndicators(sb, projectId, [
       ...ESABCC_REPORT_INDICATORS,
       ...ECNO_INDICATORS,
-    ]);
+    ], backfillPoints);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
     // The Industry Project is scoped to a single tool: the industry-tagged

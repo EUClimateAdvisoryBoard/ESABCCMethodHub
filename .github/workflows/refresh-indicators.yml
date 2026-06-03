@@ -33,6 +33,12 @@ jobs:
       - name: Pull latest values & patch the data file
         run: node scripts/esabcc-indicators/refresh-from-sources.mjs
 
+      - name: Regenerate the DB backfill migration
+        # Mirrors the new afterReport points into pw_indicator_points so the
+        # production database (which the Indicator Database reads from) actually
+        # receives the new years — the TS edit alone never reaches the DB.
+        run: node scripts/esabcc-indicators/build-points-backfill.mjs
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -45,7 +51,7 @@ jobs:
       - name: Detect changes
         id: diff
         run: |
-          if [ -n "$(git status --porcelain src/data/esabcc-indicators.ts docs/ scripts/esabcc-indicators/refresh-provenance.json)" ]; then
+          if [ -n "$(git status --porcelain src/data/esabcc-indicators.ts docs/ scripts/esabcc-indicators/refresh-provenance.json supabase/migrations/055_backfill_indicator_points.sql)" ]; then
             echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "changed=false" >> "$GITHUB_OUTPUT"
@@ -63,7 +69,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
           git add src/data/esabcc-indicators.ts docs/Indicator-Refresh-Report.pdf \
-                  scripts/esabcc-indicators/refresh-provenance.json
+                  scripts/esabcc-indicators/refresh-provenance.json \
+                  supabase/migrations/055_backfill_indicator_points.sql
           git commit -m "chore: refresh indicators from Eurostat & EEA [automated]"
           git push -f origin "$BRANCH"
           {
