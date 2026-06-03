@@ -24,9 +24,17 @@
  * a user can wire up or fill in later.
  */
 import { ESABCC_REPORT_INDICATORS } from './esabcc-indicators';
-import type { Indicator } from './ecno-indicators';
+import { ECNO_INDICATORS, type Indicator } from './ecno-indicators';
+import { ALL_BETA_INDICATORS } from './beta-indicators';
 
 export type EnablingKind = 'sector-specific' | 'cross-cutting' | 'not-assessed';
+
+/**
+ * Which track a card belongs to. The published report frameworks are all
+ * `mitigation`; the "Flow charts (beta)" view adds `adaptation` outcomes,
+ * levers and enabling conditions on top. Undefined is treated as mitigation.
+ */
+export type FrameworkTrack = 'mitigation' | 'adaptation';
 
 /** A white-box indicator chip attached to a framework node. */
 export interface IndicatorRef {
@@ -45,6 +53,8 @@ export interface FrameworkNode {
   id: string;
   layer: 'outcome' | 'lever';
   label: string;
+  /** Mitigation (default) or adaptation. Adaptation cards only appear in the beta board. */
+  track?: FrameworkTrack;
   note?: string;
   /**
    * ids of the cards one layer up that this card feeds into.
@@ -58,6 +68,8 @@ export interface FrameworkNode {
 export interface EnablingItem {
   id: string;
   kind: EnablingKind;
+  /** Mitigation (default) or adaptation. */
+  track?: FrameworkTrack;
   label: string;
   /** Chapter reference shown in parentheses, e.g. "ch. 10". */
   chapter?: string;
@@ -87,11 +99,25 @@ export interface FrameworkBoard {
 /** Current schema version of the default board (bump to invalidate saved edits). */
 export const FRAMEWORK_BOARD_VERSION = 2;
 
+/**
+ * Schema version of the beta board (report frameworks + adaptation layer).
+ * Stored under a separate localStorage key so the two boards never collide;
+ * bump to invalidate saved edits of the beta board specifically.
+ */
+export const FRAMEWORK_BOARD_BETA_VERSION = 1;
+
 // ── Indicator lookup ────────────────────────────────────────────────────────
 
-/** All indicators that framework nodes can link to, indexed by id. */
-export const FRAMEWORK_INDICATOR_INDEX: Record<string, Indicator> =
-  Object.fromEntries(ESABCC_REPORT_INDICATORS.map((i) => [i.id, i]));
+/**
+ * All indicators that framework nodes can link to, indexed by id. Includes the
+ * ESABCC report set, the beta + beta-adaptation indicators, and the ECNO
+ * progress-tracker indicators (a few levers/outcomes link straight to an
+ * existing ECNO series rather than a new beta one). ESABCC ids win on the rare
+ * chance of a collision since they are listed first.
+ */
+export const FRAMEWORK_INDICATOR_INDEX: Record<string, Indicator> = Object.fromEntries(
+  [...ECNO_INDICATORS, ...ALL_BETA_INDICATORS, ...ESABCC_REPORT_INDICATORS].map((i) => [i.id, i]),
+);
 
 /** Resolve a list of indicator ids to the full indicator records. */
 export function resolveIndicators(ids: string[]): Indicator[] {
@@ -141,7 +167,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
       },
     ],
     levers: [
-      { id: 'en-l1', layer: 'lever', label: 'Fossil fuel phase-out', parents: ['en-o1'], indicators: [] },
+      {
+        id: 'en-l1',
+        layer: 'lever',
+        label: 'Fossil fuel phase-out',
+        parents: ['en-o1'],
+        indicators: [ref('E7β', 'Fossil share of gross available energy', ['beta-fossil-share-gae'])],
+      },
       {
         id: 'en-l2',
         layer: 'lever',
@@ -159,7 +191,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
           ref('E4b', 'Wind power capacities', ['esabcc-e4b-wind-add']),
         ],
       },
-      { id: 'en-l4', layer: 'lever', label: 'Targeted CCU/CCS', parents: ['en-o1'], indicators: [] },
+      {
+        id: 'en-l4',
+        layer: 'lever',
+        label: 'Targeted CCU/CCS',
+        parents: ['en-o1'],
+        indicators: [ref('E8β', 'CO₂ capture & storage capacity', ['beta-ccs-capacity'])],
+      },
       {
         id: 'en-l5',
         layer: 'lever',
@@ -167,7 +205,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['en-o1', 'en-o2'],
         indicators: [ref('E5', 'Electrification rate', ['esabcc-e5-electrification'])],
       },
-      { id: 'en-l6', layer: 'lever', label: 'Energy efficiency', parents: ['en-o2'], indicators: [] },
+      {
+        id: 'en-l6',
+        layer: 'lever',
+        label: 'Energy efficiency',
+        parents: ['en-o2'],
+        indicators: [ref('E9β', 'Energy intensity of the economy', ['beta-energy-intensity'])],
+      },
     ],
     enabling: [
       { id: 'en-e1', kind: 'sector-specific', label: "Investors' certainty and market signals" },
@@ -217,8 +261,20 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
       },
     ],
     levers: [
-      { id: 'in-l1', layer: 'lever', label: 'Product demand reduction', parents: ['in-o1'], indicators: [] },
-      { id: 'in-l2', layer: 'lever', label: 'Material efficiency and substitution', parents: ['in-o1'], indicators: [] },
+      {
+        id: 'in-l1',
+        layer: 'lever',
+        label: 'Product demand reduction',
+        parents: ['in-o1'],
+        indicators: [ref('I8β', 'Material consumption per capita', ['beta-dmc-per-capita'])],
+      },
+      {
+        id: 'in-l2',
+        layer: 'lever',
+        label: 'Material efficiency and substitution',
+        parents: ['in-o1'],
+        indicators: [ref('I9β', 'Resource productivity (GDP/DMC)', ['beta-resource-productivity'])],
+      },
       {
         id: 'in-l3',
         layer: 'lever',
@@ -236,7 +292,15 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
           ref('I6', 'Energy mix', ['esabcc-i6-industry-electrification']),
         ],
       },
-      { id: 'in-l5', layer: 'lever', label: 'New production processes', parents: ['in-o2'], indicators: [] },
+      {
+        id: 'in-l5',
+        layer: 'lever',
+        label: 'New production processes',
+        parents: ['in-o2'],
+        // Links to the existing ECNO electrolyser-capacity series (hydrogen-based
+        // direct reduction etc. is the headline new low-carbon process).
+        indicators: [ref('H2', 'Installed electrolyser capacity', ['hydrogen-electrolyser-capacity'])],
+      },
       {
         id: 'in-l6',
         layer: 'lever',
@@ -277,7 +341,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Reduce demand for energy-intensive transport',
         parents: ['goal'],
-        indicators: [],
+        indicators: [ref('T7β', 'Transport final energy consumption', ['beta-transport-fec'])],
       },
       {
         id: 'tr-o2',
@@ -311,7 +375,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
           ref('T5', '% of ZEVs in new registrations', ['esabcc-t5a-zev-share-newcars', 'esabcc-t5b-zev-lorries-stock']),
         ],
       },
-      { id: 'tr-l4', layer: 'lever', label: 'Vehicle efficiency', parents: ['tr-o2'], indicators: [] },
+      {
+        id: 'tr-l4',
+        layer: 'lever',
+        label: 'Vehicle efficiency',
+        parents: ['tr-o2'],
+        indicators: [ref('T8β', 'Average CO₂ of new cars (WLTP)', ['beta-new-car-co2'])],
+      },
       {
         id: 'tr-l5',
         layer: 'lever',
@@ -365,7 +435,15 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
       },
     ],
     levers: [
-      { id: 'bu-l1', layer: 'lever', label: 'Energy and material sufficiency', parents: ['bu-o1'], indicators: [] },
+      {
+        id: 'bu-l1',
+        layer: 'lever',
+        label: 'Energy and material sufficiency',
+        parents: ['bu-o1'],
+        // Existing ECNO series: per-capita household final energy use is the
+        // clearest sufficiency proxy.
+        indicators: [ref('HH', 'Household energy use per capita', ['household-energy-per-capita'])],
+      },
       {
         id: 'bu-l2',
         layer: 'lever',
@@ -373,7 +451,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['bu-o1'],
         indicators: [ref('B4', 'Population and floor area', ['esabcc-b4-floor-area'])],
       },
-      { id: 'bu-l3', layer: 'lever', label: 'Zero-emission new builds', parents: ['bu-o1'], indicators: [] },
+      {
+        id: 'bu-l3',
+        layer: 'lever',
+        label: 'Zero-emission new builds',
+        parents: ['bu-o1'],
+        indicators: [ref('B7β', 'nZEB / class-A share of new dwellings', ['beta-nzeb-new-share'])],
+      },
       {
         id: 'bu-l4',
         layer: 'lever',
@@ -447,7 +531,14 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['ag-o1'],
         indicators: [ref('A3-NUE', 'Nitrogen use efficiency', ['esabcc-a3-nue'])],
       },
-      { id: 'ag-l3', layer: 'lever', label: 'Reduced production', parents: ['ag-o2'], indicators: [] },
+      {
+        id: 'ag-l3',
+        layer: 'lever',
+        label: 'Reduced production',
+        parents: ['ag-o2'],
+        // Existing ECNO series: EU cattle herd size proxies livestock production.
+        indicators: [ref('A8', 'EU cattle herd size', ['cattle-population'])],
+      },
       {
         id: 'ag-l4',
         layer: 'lever',
@@ -502,7 +593,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Reduce emissions and increase removals within land-use categories',
         parents: ['goal'],
-        indicators: [],
+        indicators: [ref('L9β', 'Net flux from cropland & grassland', ['beta-cropland-grassland-flux'])],
       },
     ],
     levers: [
@@ -520,7 +611,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['lu-o1'],
         indicators: [ref('L3', 'Afforestation', ['esabcc-l3-afforestation'])],
       },
-      { id: 'lu-l3', layer: 'lever', label: 'Wetland conservation and restoration', parents: ['lu-o2'], indicators: [] },
+      {
+        id: 'lu-l3',
+        layer: 'lever',
+        label: 'Wetland conservation and restoration',
+        parents: ['lu-o2'],
+        indicators: [ref('L10β', 'Net GHG emissions from wetlands', ['beta-wetlands-flux'])],
+      },
       {
         id: 'lu-l4',
         layer: 'lever',
@@ -563,6 +660,165 @@ export function defaultFrameworkBoard(): FrameworkBoard {
     version: FRAMEWORK_BOARD_VERSION,
     sectors: JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[],
   };
+}
+
+// ── Beta board: report frameworks + an adaptation & resilience layer ─────────
+//
+// For the "Flow charts (beta)" view each sector is copied verbatim and then
+// extended with an adaptation outcome, an adaptation lever and an adaptation
+// enabling condition (all `track: 'adaptation'`), wired to the beta-adaptation
+// indicators and to fitting existing ECNO series (water-exploitation-index,
+// climate-economic-losses, national-adaptation-strategies).
+
+interface AdaptationLayer {
+  outcome: { id: string; label: string; indicators: IndicatorRef[] };
+  lever: { id: string; label: string; indicators: IndicatorRef[] };
+  enabling: { id: string; kind: EnablingKind; label: string; indicatorIds?: string[] };
+}
+
+/** Per-sector adaptation additions, keyed by sector id. */
+const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
+  energy: {
+    outcome: {
+      id: 'en-ad-o1',
+      label: 'Climate-resilient energy supply system',
+      indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
+    },
+    lever: {
+      id: 'en-ad-l1',
+      label: 'Climate-proofing of generation & grids',
+      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+    },
+    enabling: {
+      id: 'en-ad-e1',
+      kind: 'cross-cutting',
+      label: 'Climate-risk assessment of energy infrastructure (EUCRA)',
+      indicatorIds: ['national-adaptation-strategies'],
+    },
+  },
+  industry: {
+    outcome: {
+      id: 'in-ad-o1',
+      label: 'Climate-resilient production & supply chains',
+      indicators: [ref('LOSSβ', 'Climate-related economic losses', ['climate-economic-losses'])],
+    },
+    lever: {
+      id: 'in-ad-l1',
+      label: 'Water-stress & heat management in production',
+      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+    },
+    enabling: {
+      id: 'in-ad-e1',
+      kind: 'cross-cutting',
+      label: 'Supply-chain climate-risk management',
+    },
+  },
+  transport: {
+    outcome: {
+      id: 'tr-ad-o1',
+      label: 'Climate-resilient transport infrastructure',
+      indicators: [ref('FLOODβ', 'Population exposed to flooding', ['beta-adapt-flood-exposure'])],
+    },
+    lever: {
+      id: 'tr-ad-l1',
+      label: 'Climate-proofing of roads, rail & ports',
+      indicators: [ref('LOSSβ', 'Climate-related economic losses', ['climate-economic-losses'])],
+    },
+    enabling: {
+      id: 'tr-ad-e1',
+      kind: 'cross-cutting',
+      label: 'Resilience standards in infrastructure planning (TEN-T)',
+    },
+  },
+  buildings: {
+    outcome: {
+      id: 'bu-ad-o1',
+      label: 'Heat- and flood-resilient building stock',
+      indicators: [ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality'])],
+    },
+    lever: {
+      id: 'bu-ad-l1',
+      label: 'Passive cooling, shading & green infrastructure',
+      indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
+    },
+    enabling: {
+      id: 'bu-ad-e1',
+      kind: 'sector-specific',
+      label: 'Overheating limits in building codes',
+    },
+  },
+  agriculture: {
+    outcome: {
+      id: 'ag-ad-o1',
+      label: 'Drought- and climate-resilient farming',
+      indicators: [ref('DRGTβ', 'Territory under drought', ['beta-adapt-drought-area'])],
+    },
+    lever: {
+      id: 'ag-ad-l1',
+      label: 'Water-efficient irrigation & soil-moisture management',
+      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+    },
+    enabling: {
+      id: 'ag-ad-e1',
+      kind: 'sector-specific',
+      label: 'Crop diversification, resilient varieties & insurance',
+    },
+  },
+  lulucf: {
+    outcome: {
+      id: 'lu-ad-o1',
+      label: 'Resilient forests & ecosystems',
+      indicators: [ref('FORβ', 'Forest natural disturbances', ['beta-adapt-forest-disturbance'])],
+    },
+    lever: {
+      id: 'lu-ad-l1',
+      label: 'Wildfire & pest-risk management',
+      indicators: [ref('FIREβ', 'Annual area burnt by wildfires', ['beta-adapt-burnt-area'])],
+    },
+    enabling: {
+      id: 'lu-ad-e1',
+      kind: 'sector-specific',
+      label: 'Drought- and fire-adapted species & ecosystem restoration',
+    },
+  },
+};
+
+/**
+ * A fresh, deep copy of the report board with the adaptation & resilience layer
+ * grafted on — the starting point for the "Flow charts (beta)" view.
+ */
+export function defaultFrameworkBoardBeta(): FrameworkBoard {
+  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
+  for (const sector of sectors) {
+    const layer = ADAPTATION_LAYERS[sector.id];
+    if (!layer) continue;
+    sector.outcomes.push({
+      id: layer.outcome.id,
+      layer: 'outcome',
+      track: 'adaptation',
+      label: layer.outcome.label,
+      parents: ['goal'],
+      indicators: layer.outcome.indicators,
+    });
+    sector.levers.push({
+      id: layer.lever.id,
+      layer: 'lever',
+      track: 'adaptation',
+      label: layer.lever.label,
+      parents: [layer.outcome.id],
+      indicators: layer.lever.indicators,
+    });
+    sector.enabling.push({
+      id: layer.enabling.id,
+      kind: layer.enabling.kind,
+      track: 'adaptation',
+      label: layer.enabling.label,
+      indicatorIds: layer.enabling.indicatorIds,
+    });
+  }
+  // Deep-clone so the shared ADAPTATION_LAYERS objects aren't aliased into the
+  // returned (editable) board.
+  return JSON.parse(JSON.stringify({ version: FRAMEWORK_BOARD_BETA_VERSION, sectors })) as FrameworkBoard;
 }
 
 export const ENABLING_KIND_LABEL: Record<EnablingKind, string> = {

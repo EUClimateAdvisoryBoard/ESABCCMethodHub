@@ -23,6 +23,7 @@ import {
   ESABCC_REPORT_INDICATORS,
   ECNO_TO_ESABCC_DUPLICATE,
 } from '@/data/esabcc-indicators';
+import { BETA_INDICATORS, BETA_ADAPTATION_INDICATORS } from '@/data/beta-indicators';
 import {
   ALL_ESABCC_RECOMMENDATIONS,
   type PastRecommendation,
@@ -381,6 +382,8 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
     await ensureSeedIndicators(sb, projectId, [
       ...ESABCC_REPORT_INDICATORS,
       ...ECNO_INDICATORS,
+      ...BETA_INDICATORS,
+      ...BETA_ADAPTATION_INDICATORS,
     ], backfillPoints);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
@@ -464,6 +467,9 @@ function seedIndicators(projectId: string): DBIndicator[] {
       group: 'additional' as const,
       duplicateOf: i.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[i.id],
     })),
+    // Beta indicators carry their own group ('beta' / 'beta-adaptation').
+    ...BETA_INDICATORS.map(i => ({ ...i, group: 'beta' as const })),
+    ...BETA_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'beta-adaptation' as const })),
   ];
 }
 
@@ -489,7 +495,17 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
     .from('pw_indicator_points')
     .select('*')
     .in('indicator_id', ids);
-  const esabccById = new Map(ESABCC_REPORT_INDICATORS.map(i => [i.id, i]));
+  // Bundled metadata for every seeded indicator (ESABCC + beta + beta-adaptation
+  // + ECNO). Used to restore fields the pw_indicators table doesn't store —
+  // group, code, the beta flag, duplicateOf — and as the point self-heal source.
+  const esabccById = new Map(
+    [
+      ...ESABCC_REPORT_INDICATORS,
+      ...BETA_INDICATORS,
+      ...BETA_ADAPTATION_INDICATORS,
+      ...ECNO_INDICATORS,
+    ].map(i => [i.id, i]),
+  );
   // Self-heal: if a seeded indicator's row exists but its points never landed
   // (a first-seed that inserted the row then failed/raced on its points), the
   // chart would render blank. `points` is already in hand, so detecting the gap
@@ -545,7 +561,8 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       targetValue: r.target_value ?? undefined,
       targetYear: r.target_year ?? undefined,
       isSeed: !!r.is_seed,
-      group: isEsabcc ? 'esabcc' : 'additional',
+      group: meta?.group ?? (isEsabcc ? 'esabcc' : 'additional'),
+      beta: meta?.beta,
       code: meta?.code,
       duplicateOf: meta?.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[r.id],
       data,

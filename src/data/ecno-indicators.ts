@@ -35,7 +35,8 @@ export type IndicatorCategory =
   | 'agriculture'
   | 'lulucf'
   | 'finance'
-  | 'fairness';
+  | 'fairness'
+  | 'adaptation';
 
 export interface IndicatorDataPoint {
   year: number;
@@ -75,10 +76,27 @@ export interface Indicator {
    *  - `additional` — every other indicator already in the platform
    *                   (mostly the ECNO progress-tracker mapping). Shown
    *                   beneath the existing set.
+   *  - `beta`       — newly proposed "beta" indicators added so that every
+   *                   mitigation lever and outcome in the sector
+   *                   assessment-framework flow charts has at least one
+   *                   linked indicator. Provisional: sources are real but
+   *                   the series are best-available and may be revised.
+   *                   Shown in their own "New beta indicators" group.
+   *  - `beta-adaptation` — provisional climate-adaptation / resilience
+   *                   indicators that power the adaptation-and-resilience
+   *                   layer of the "Flow charts (beta)" view. Shown in
+   *                   their own "Beta adaptation indicators" group.
    * Defaults to `additional` if not set, so legacy entries don't have to
    * be touched one by one.
    */
-  group?: 'esabcc' | 'additional';
+  group?: 'esabcc' | 'additional' | 'beta' | 'beta-adaptation';
+  /**
+   * Marks a provisional "beta" indicator (see `group: 'beta'`). The UI
+   * renders a small β badge wherever the indicator appears (sidebar list
+   * and flow-chart chips) so reviewers know the series is not yet curated
+   * to the same standard as the ESABCC report indicators.
+   */
+  beta?: boolean;
   /** ESABCC report indicator code (e.g. "O1", "E4a"). */
   code?: string;
   /**
@@ -1450,6 +1468,7 @@ export const INDICATOR_CATEGORIES: { id: IndicatorCategory; label: string }[] = 
   { id: 'lulucf',        label: 'LULUCF' },
   { id: 'finance',       label: 'Finance' },
   { id: 'fairness',      label: 'Fairness & jobs' },
+  { id: 'adaptation',    label: 'Adaptation & resilience' },
 ];
 
 /**

@@ -70,10 +70,22 @@ const GROUPS = [
     label: 'Additional indicators',
     help: 'ECNO progress-tracker mapping plus any user-added indicators.',
   },
+  {
+    id: 'beta' as const,
+    label: 'New beta indicators',
+    help: 'Provisional indicators added so every mitigation lever and outcome in the sector flow charts has a linked series. Sources are real; values are best-available and may be revised.',
+  },
+  {
+    id: 'beta-adaptation' as const,
+    label: 'Beta adaptation indicators',
+    help: 'Provisional climate-adaptation & resilience indicators powering the adaptation layer of the Flow charts (beta) view. Drawn from EEA, JRC, Eurostat and the ECNO adaptation building block.',
+  },
 ];
 
-function groupOf(i: Indicator): 'esabcc' | 'additional' {
-  return i.group ?? (i.id.startsWith('esabcc-') ? 'esabcc' : 'additional');
+function groupOf(i: Indicator): 'esabcc' | 'additional' | 'beta' | 'beta-adaptation' {
+  if (i.group) return i.group;
+  if (i.beta) return 'beta';
+  return i.id.startsWith('esabcc-') ? 'esabcc' : 'additional';
 }
 
 interface Props {
@@ -96,7 +108,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   const showFrameworks = initial.some((i) => i.id.startsWith('esabcc-'));
   // The flow-chart overview is the landing view — the frameworks are what
   // motivate the indicators, so users see them first.
-  const [view, setView] = useState<'indicators' | 'flowcharts'>(
+  const [view, setView] = useState<'indicators' | 'flowcharts' | 'flowcharts-beta'>(
     showFrameworks ? 'flowcharts' : 'indicators'
   );
   const [editorOpen, setEditorOpen] = useState(false);
@@ -353,11 +365,30 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
           >
             Flow charts
           </button>
+          <button
+            type="button"
+            onClick={() => setView('flowcharts-beta')}
+            className={`px-3 py-1.5 rounded-md text-xs font-semibold inline-flex items-center gap-1 ${
+              view === 'flowcharts-beta' ? 'bg-primary text-white' : 'text-tertiary-dark hover:bg-grey-50'
+            }`}
+            title="Copy of the report flow charts with an added adaptation & resilience layer"
+          >
+            Flow charts (beta)
+            <span
+              className={`text-[9px] uppercase font-bold rounded px-1 ${
+                view === 'flowcharts-beta' ? 'bg-white/25 text-white' : 'bg-teal-100 text-teal-700'
+              }`}
+            >
+              β
+            </span>
+          </button>
         </div>
       )}
 
-      {showFrameworks && view === 'flowcharts' ? (
+      {showFrameworks && (view === 'flowcharts' || view === 'flowcharts-beta') ? (
         <FrameworkBoard
+          key={view}
+          variant={view === 'flowcharts-beta' ? 'beta' : 'report'}
           projectId={projectId}
           allIndicators={indicators}
           onOpenInList={(id) => {
@@ -408,6 +439,14 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                                 </span>
                               )}
                               {i.name}
+                              {i.beta && (
+                                <span
+                                  className="ml-1 text-[9px] uppercase font-semibold text-teal-700"
+                                  title="Provisional beta indicator — source is real, values may be revised"
+                                >
+                                  β beta
+                                </span>
+                              )}
                               {i.duplicateOf && (
                                 <span
                                   className="ml-1 text-[9px] uppercase text-amber-700"

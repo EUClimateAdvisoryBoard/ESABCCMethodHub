@@ -15,6 +15,7 @@ import {
   type EnablingItem,
   type EnablingKind,
   type FrameworkNode,
+  type FrameworkTrack,
   type IndicatorRef,
   type SectorFramework,
 } from '@/data/sector-frameworks';
@@ -32,18 +33,30 @@ interface Props {
   allIndicators: Indicator[];
   onChange: (next: SectorFramework) => void;
   onOpenIndicator: (p: OpenIndicatorPayload) => void;
+  /** 'beta' relabels the lever row and lets adaptation-tracked cards render. */
+  variant?: 'report' | 'beta';
 }
 
 // Uniform per-level palette mirroring the report figures.
 const OUTCOME_BG = '#4E8595';
 const LEVER_BG = '#9E4A46';
+// Adaptation-track cards use a distinct teal family in the beta board.
+const ADAPT_OUTCOME_BG = '#2E7D74';
+const ADAPT_LEVER_BG = '#3F8C7F';
 const ENABLING_LABEL_BG = '#C9B83F';
 const ENABLING_BAND_BG = '#FBF8DD';
 const CONNECTOR = '#94a3b8';
 
+/** Pick a card colour from its layer + adaptation track. */
+function nodeBg(layer: 'outcome' | 'lever', track?: FrameworkTrack): string {
+  if (track === 'adaptation') return layer === 'outcome' ? ADAPT_OUTCOME_BG : ADAPT_LEVER_BG;
+  return layer === 'outcome' ? OUTCOME_BG : LEVER_BG;
+}
+
 const uid = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 
-export default function SectorFlow({ sector, editing, allIndicators, onChange, onOpenIndicator }: Props) {
+export default function SectorFlow({ sector, editing, allIndicators, onChange, onOpenIndicator, variant = 'report' }: Props) {
+  const isBeta = variant === 'beta';
   const edges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const o of sector.outcomes) e.push({ from: o.id, to: 'goal' });
@@ -146,13 +159,13 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
         </Row>
 
         {/* ── Outcomes ───────────────────────────────────────────────────────── */}
-        <Row label="Outcomes" bg={OUTCOME_BG} text="#fff" onAdd={editing ? () => addNode('outcome') : undefined}>
-          <div className="flex gap-2 items-stretch">
+        <Row label={isBeta ? 'Outcomes (mitigation & adaptation)' : 'Outcomes'} bg={OUTCOME_BG} text="#fff" onAdd={editing ? () => addNode('outcome') : undefined}>
+          <div className="flex gap-2 items-stretch flex-wrap">
             {sector.outcomes.map((o) => (
               <NodeCard
                 key={o.id}
                 node={o}
-                bg={OUTCOME_BG}
+                bg={nodeBg('outcome', o.track)}
                 editing={editing}
                 allIndicators={allIndicators}
                 registerRef={register(o.id)}
@@ -166,14 +179,14 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
           </div>
         </Row>
 
-        {/* ── Mitigation levers ──────────────────────────────────────────────── */}
-        <Row label="Mitigation levers" bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
+        {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
+        <Row label={isBeta ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
           <div className="flex gap-2 items-stretch overflow-x-auto pb-1">
             {sector.levers.map((l) => (
               <NodeCard
                 key={l.id}
                 node={l}
-                bg={LEVER_BG}
+                bg={nodeBg('lever', l.track)}
                 editing={editing}
                 allIndicators={allIndicators}
                 registerRef={register(l.id)}
@@ -234,6 +247,11 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                             </span>
                           ) : (
                             <>
+                              {e.track === 'adaptation' && (
+                                <span className="mr-1 inline-flex items-center rounded bg-teal-100 text-teal-800 px-1 text-[8px] font-bold uppercase">
+                                  ⛨ adapt
+                                </span>
+                              )}
                               {e.label}
                               {e.chapter && <span className="text-[#8a7f2e]"> ({e.chapter})</span>}
                               {e.indicatorIds && e.indicatorIds.length > 0 && (
@@ -340,6 +358,11 @@ function NodeCard({
       style={{ background: bg }}
     >
       <div className="p-2 flex flex-col gap-1.5 h-full">
+        {node.track === 'adaptation' && (
+          <span className="self-start inline-flex items-center gap-0.5 rounded bg-white/25 text-white px-1 py-0.5 text-[8px] font-bold uppercase tracking-wide">
+            ⛨ adapt
+          </span>
+        )}
         <div className="flex items-start gap-1">
           <EditableText value={node.label} editing={editing} className="text-[11px] font-semibold leading-tight text-white flex-1" onChange={onLabel} />
           {editing && (
@@ -383,6 +406,7 @@ function ChipRow({
     <div className="flex flex-wrap gap-1 mt-auto">
       {refs.map((r) => {
         const linked = r.indicatorIds.length > 0;
+        const isBetaRef = r.indicatorIds.some((id) => allIndicators.find((i) => i.id === id)?.beta);
         return (
           <span
             key={r.refId}
@@ -396,6 +420,11 @@ function ChipRow({
           >
             <span className="font-mono font-semibold">{r.code}</span>
             <span className="max-w-[120px] truncate">{r.label}</span>
+            {isBetaRef && (
+              <span className="text-teal-700 font-bold" title="Beta indicator">
+                β
+              </span>
+            )}
             {!linked && <span className="italic">no data</span>}
             {editing && (
               <button
