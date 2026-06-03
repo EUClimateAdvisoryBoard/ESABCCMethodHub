@@ -109,40 +109,67 @@ const RECIPES = {
     note: 'Stored as percent of GDP. Publisher may revise the report’s base year (vintage).',
   },
 
-  // ── EEA GHG data viewer (CO₂-eq, → Mt) ───────────────────────────────────
+  // ── EU GHG inventory via Eurostat env_air_gge (CO₂-eq, MIO_T = Mt) ────────
+  // The EEA data-viewer "download?format=csv" URL returns HTML, not CSV, so we
+  // pull the same inventory from Eurostat's env_air_gge (GHG by CRF source
+  // sector) over the proven JSON-stat path. src_crf/airpol codes are
+  // best-effort; the anchor check skips any that don't reconcile.
   'esabcc-e1-energy-supply-ghg': {
-    kind: 'eea', crfCodes: ['1.A.1', '1.B'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 1.A.1 + 1.B (energy supply) · EU27',
-    note: 'Public power/heat + fugitive emissions; CO₂-eq.',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A1' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1B' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A1`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.1 + 1.B (energy supply) · EU27_2020',
+    note: 'Public power/heat + fugitive emissions; CO₂-eq (Mt).',
   },
   'esabcc-i1-industry-ghg': {
-    kind: 'eea', crfCodes: ['1.A.2', '2'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 1.A.2 + 2 (industry energy + processes) · EU27',
-    note: 'CO₂-eq.',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A2' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF2' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A2`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.2 + 2 (industry energy + processes) · EU27_2020',
+    note: 'CO₂-eq (Mt).',
   },
   'esabcc-t1-transport-ghg': {
-    kind: 'eea', crfCodes: ['1.A.3'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 1.A.3 (domestic transport) · EU27',
-    note: 'CO₂-eq. Excludes international aviation/navigation (memo items).',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A3' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A3`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.3 (domestic transport) · EU27_2020',
+    note: 'CO₂-eq (Mt). Excludes international aviation/navigation (memo items).',
   },
   'esabcc-b1-buildings-ghg': {
-    kind: 'eea', crfCodes: ['1.A.4'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 1.A.4 (residential + commercial) · EU27',
-    note: 'CO₂-eq.',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A4' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A4`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.4 (residential + commercial) · EU27_2020',
+    note: 'CO₂-eq (Mt).',
   },
   'esabcc-a1-agri-nonco2': {
-    kind: 'eea', crfCodes: ['3'], sumGases: ['ch4', 'methane', 'n2o', 'nitrous'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 3 (agriculture) CH₄+N₂O · EU27',
-    note: 'Sum of CH₄ and N₂O in CO₂-eq; excludes minor agricultural CO₂ (liming/urea).',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF3' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'N2O', src_crf: 'CRF3' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF3`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 3 (agriculture) CH₄+N₂O · EU27_2020',
+    note: 'Sum of CH₄ and N₂O in CO₂-eq (Mt); excludes minor agricultural CO₂ (liming/urea).',
   },
   'esabcc-e6-energy-ch4': {
-    kind: 'eea', crfCodes: ['1'], sumGases: ['ch4', 'methane'], round: 2,
-    sourceTitle: 'EEA GHG data viewer · CRF 1 (energy) CH₄ · EU27',
-    note: 'Energy-sector methane in CO₂-eq.',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 2,
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF1' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF1`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1 (energy) CH₄ · EU27_2020',
+    note: 'Energy-sector methane in CO₂-eq (Mt).',
   },
   'esabcc-l1-lulucf-net': {
-    kind: 'eea', crfCodes: ['4'], round: 1,
-    sourceTitle: 'EEA GHG data viewer · CRF 4 (LULUCF) net · EU27',
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1,
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF4' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 4 (LULUCF) net · EU27_2020',
     note: 'Net sink is negative. Subject to inventory-vintage revision vs the report base year.',
   },
 };
@@ -183,6 +210,17 @@ async function fetchEurostat(dataset, filters) {
     out.push({ year: Number(y), value: Number(v) });
   }
   return out.sort((a, b) => a.year - b.year);
+}
+
+/** Fetch several Eurostat slices and sum them by year (sector/gas totals). */
+async function fetchEurostatSum(dataset, filtersList) {
+  const acc = new Map();
+  for (const f of filtersList) {
+    for (const p of await fetchEurostat(dataset, f)) {
+      acc.set(p.year, (acc.get(p.year) ?? 0) + p.value);
+    }
+  }
+  return [...acc.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
 }
 
 function detectDelimiter(line) {
@@ -336,7 +374,9 @@ async function main() {
     let fetched;
     try {
       fetched = rec.kind === 'eurostat'
-        ? await fetchEurostat(rec.dataset, rec.filters)
+        ? (rec.sumFilters
+            ? await fetchEurostatSum(rec.dataset, rec.sumFilters)
+            : await fetchEurostat(rec.dataset, rec.filters))
         : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
