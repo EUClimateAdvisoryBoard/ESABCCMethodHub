@@ -41,8 +41,8 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { renderMarkdown } from '@/lib/markdown';
 import { uploadFigure } from '@/lib/content-analysis/figure-storage';
+import SummaryContent from '@/components/content-analysis/SummaryContent';
 import dynamic from 'next/dynamic';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
@@ -1286,6 +1286,8 @@ function DocumentSummaryPanel({
 
   const toolbarBtn =
     'px-1.5 py-0.5 rounded border border-grey-200 bg-white text-[11px] text-tertiary-dark hover:bg-grey-100';
+  const DIAGRAM_TEMPLATE =
+    '\n```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do this]\n  B -->|No| D[Stop]\n```\n';
 
   const updatedLabel = summary?.updatedAt
     ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
@@ -1338,6 +1340,7 @@ function DocumentSummaryPanel({
                 <button type="button" title="Bulleted list" className={toolbarBtn} onClick={() => prefixLines('- ')}>• List</button>
                 <button type="button" title="Numbered list" className={toolbarBtn} onClick={() => prefixLines('1. ')}>1. List</button>
                 <button type="button" title="Link" className={toolbarBtn} onClick={() => wrapSelection('[', '](https://)', 'label')}>🔗</button>
+                <button type="button" title="Insert a flow-chart / diagram (Mermaid)" className={toolbarBtn} onClick={() => insertAtCaret(DIAGRAM_TEMPLATE)}>⤳ Diagram</button>
                 <label className={`${toolbarBtn} cursor-pointer ${uploading ? 'opacity-50 pointer-events-none' : ''}`} title="Insert a figure / screenshot">
                   {uploading ? 'Uploading…' : '🖼 Figure'}
                   <input
@@ -1360,14 +1363,11 @@ function DocumentSummaryPanel({
                 className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y font-mono"
               />
               {uploadError && <p className="text-[10px] text-red-600">{uploadError}</p>}
-              {/* Live preview so figures / lists are visible before saving. */}
+              {/* Live preview so figures / lists / diagrams are visible before saving. */}
               {draft.trim() && (
                 <div className="rounded border border-grey-200 bg-white px-2 py-1.5">
                   <p className="text-[9px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">Preview</p>
-                  <div
-                    className="text-[12px] text-tertiary-dark leading-snug"
-                    dangerouslySetInnerHTML={{ __html: renderMarkdown(draft) }}
-                  />
+                  <SummaryContent markdown={draft} />
                 </div>
               )}
               <div className="flex items-center gap-2">
@@ -1390,10 +1390,7 @@ function DocumentSummaryPanel({
             </div>
           ) : hasSummary ? (
             <div className="space-y-1">
-              <div
-                className="text-[12px] text-tertiary-dark leading-snug"
-                dangerouslySetInnerHTML={{ __html: renderMarkdown(summary!.text) }}
-              />
+              <SummaryContent markdown={summary!.text} />
               <div className="flex items-center gap-2">
                 <button
                   type="button"
@@ -1424,10 +1421,7 @@ function DocumentSummaryPanel({
                   <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
                     {projectNameById.get(s.projectId) ?? 'Other project'}
                   </p>
-                  <div
-                    className="text-[12px] text-tertiary leading-snug"
-                    dangerouslySetInnerHTML={{ __html: renderMarkdown(s.text) }}
-                  />
+                  <SummaryContent markdown={s.text} className="text-[12px] text-tertiary leading-snug" />
                 </div>
               ))}
             </div>
