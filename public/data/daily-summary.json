@@ -1,12 +1,12 @@
 {
   "date": "2026-06-03",
-  "generatedAt": "2026-06-03T15:29:25.296Z",
+  "generatedAt": "2026-06-03T20:19:36.017Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 3 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
-      "summary": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
+      "headline": "Q&#038;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits",
+      "summary": "The Labour government wants to cut UK greenhouse gas emissions to 87% below 1990 levels... The post Q&amp;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,7 +17,7 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "The end of Trump's 'weaponisation' fund is another sign Republicans are fighting back",
+      "headline": "The end of Trump's 'anti-weaponisation' fund is another sign Republicans are fighting back",
       "summary": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
       "tag": "FINANCE",
       "color": "#7C3AED"
@@ -34,20 +34,20 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1185",
-          "source": "European Commission",
-          "description": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
-          "published": "2026-06-02T22:00:00.000Z",
-          "score": 19
-        },
-        {
           "title": "Q&#038;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits",
           "link": "https://www.carbonbrief.org/qa-how-uks-seventh-carbon-budget-will-deliver-865bn-in-economic-benefits/",
           "source": "Carbon Brief",
           "description": "The Labour government wants to cut UK greenhouse gas emissions to 87% below 1990 levels... The post Q&amp;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits appeared first on Carbon Brief.",
           "published": "2026-06-03T08:11:32.000Z",
           "score": 13
+        },
+        {
+          "title": "Australia’s battery-powered revolution: inside the 5 June Guardian Weekly",
+          "link": "https://www.theguardian.com/news/2026/jun/03/australias-battery-powered-revolution-inside-the-5-june-guardian-weekly",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;How to change the energy market from within. &lt;strong&gt;Plus:&lt;/strong&gt; Is Iran Trump’s Vietnam?&lt;br&gt;&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://support.theguardian.com/uk/subscribe/weekly?promoCode=WWM53X\"&gt;&lt;strong&gt;Get the Guardian Weekly delivered to your home address&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Last week, as the war in Iran continued to choke global oil supplies, the UK government announced a 13% increase in the cap on energy prices. But it was anothe",
+          "published": "2026-06-03T17:00:11.000Z",
+          "score": 7
         },
         {
           "title": "Trump says Iran has agreed to not have a nuclear weapon - Reuters",
@@ -58,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "Workers' strike delays LNG tanker loading at Australia's Ichthys plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5",
+          "title": "Indian rupee could fall to 98/USD by July amid energy crisis, BofA Securities exec says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxNbTJCNUVRbThYblctS3I4SXF2d2NtOTd3a1VZc1h0X3liVDNIc1VhclB2Z1g2UjJGbkh1TUJILWRmeUZGbmV2bDJXQVNwMHRlX2E1cFU2VGh0aGEyaDVpM0Qwc2MzQXRYQVlFdWxVam5UV2Y4ZTI3cl85MEVnTC11X05iRkg3VUItemJaSGlWZklHRG0xNGMxbVE5cThXWkFRRG1hanJGUXM2SlVUTm4wRTNRM3RhTXRMX19MQjdPa0tpZmc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5\" target=\"_blank\"&gt;Workers' strike delays LNG tanker loading at Australia's Ichthys plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T03:40:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxNbTJCNUVRbThYblctS3I4SXF2d2NtOTd3a1VZc1h0X3liVDNIc1VhclB2Z1g2UjJGbkh1TUJILWRmeUZGbmV2bDJXQVNwMHRlX2E1cFU2VGh0aGEyaDVpM0Qwc2MzQXRYQVlFdWxVam5UV2Y4ZTI3cl85MEVnTC11X05iRkg3VUItemJaSGlWZklHRG0xNGMxbVE5cThXWkFRRG1hanJGUXM2SlVUTm4wRTNRM3RhTXRMX19MQjdPa0tpZmc?oc=5\" target=\"_blank\"&gt;Indian rupee could fall to 98/USD by July amid energy crisis, BofA Securities exec says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-06-03T05:55:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "US, South Korea discuss nuclear cooperation in security talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXNLOW44UXVEUDdiUE9uVEtYT0ttYjlGekk2eHozY0dQVDBoNVE1SkVJN28xQUpUX1hRRUVwbXZCak5GZU9Ec0lvLVVpR2RzYS0xZGlieVNDelp4MTNSUmtYbHpMTnAtRnJkVjAwM0IwVzAyaV9Pd3dVUzZQSGV6Q1R6SW91VTJIb3ViT1NXM1gyWDlZZ3pBR3poaDJvakM5djVJTmZET0VRbEZpaUNkeFpB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNdXNLOW44UXVEUDdiUE9uVEtYT0ttYjlGekk2eHozY0dQVDBoNVE1SkVJN28xQUpUX1hRRUVwbXZCak5GZU9Ec0lvLVVpR2RzYS0xZGlieVNDelp4MTNSUmtYbHpMTnAtRnJkVjAwM0IwVzAyaV9Pd3dVUzZQSGV6Q1R6SW91VTJIb3ViT1NXM1gyWDlZZ3pBR3poaDJvakM5djVJTmZET0VRbEZpaUNkeFpB?oc=5\" target=\"_blank\"&gt;US, South Korea discuss nuclear cooperation in security talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T08:47:05.000Z",
           "score": 7
         }
       ]
@@ -78,6 +86,14 @@
           "description": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
           "published": "2026-06-03T11:25:23.000Z",
           "score": 18
+        },
+        {
+          "title": "Commissioner Roswall's keynote address at the LIFE Awards",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1260",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 03 Jun 2026 Good evening, everyone.\r\nIt is a real pleasure to be here among so many people who dedicate their talent, expertise and energy to protecting our environment and ...",
+          "published": "2026-06-03T17:51:56.000Z",
+          "score": 16
         },
         {
           "title": "Daily News 03 / 06 / 2026",
@@ -102,14 +118,6 @@
           "description": "&lt;p&gt;​The first heatwaves of the season reveal how ​ill-prepared governments across the continent are to protect people from increasingly dangerous temperatures&lt;/p&gt;&lt;p&gt;&lt;strong&gt;• &lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2018/mar/22/this-is-europe-sign-up-guardian-email-updates\"&gt;&lt;strong&gt;Don’t get This Is Europe delivered to your inbox? Sign up here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Meteorological summer has begun",
           "published": "2026-06-03T14:25:26.000Z",
           "score": 8
-        },
-        {
-          "title": "Bathing warning issued after 'potential water pollution incident'",
-          "link": "https://www.bbc.com/news/articles/c242ezpv64zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The National Trust, which manages Portstewart Strand, has urged visitors to the beach to be vigilant.",
-          "published": "2026-06-03T12:15:45.000Z",
-          "score": 7
         }
       ]
     },
@@ -118,19 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "The end of Trump's 'weaponisation' fund is another sign Republicans are fighting back",
+          "title": "The end of Trump's 'anti-weaponisation' fund is another sign Republicans are fighting back",
           "link": "https://www.bbc.com/news/articles/c87q9d7r57yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
-          "published": "2026-06-03T12:25:31.000Z",
-          "score": 2
-        },
-        {
-          "title": "Chevron applies for Argentina tax break program with $13.8 billion investment plan - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOeVdqakd5bjc2SFRXbUR3Y05KY2dibjA2M1EwTHUtNTlsaHhsYjRiWDVZcXBlMk4wUmk4TlpSOEg3UG9jeThxS0EtZE5rZjdYdzZOcDlTTnVhVWFVYkQ1VHMwZG5JTmhJTWhBLTFzMUZMMURONG9TZGJzN0ZOSFZBVXFTaElnYUd0TmVjc0xwQ09QV3FYVXFfSGMxVGtxWlhYSlFDN0ZPbUxiNkNodk5jX1YwMmJLUFRBZ2dzTEhZZVg2NEViYVo4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOeVdqakd5bjc2SFRXbUR3Y05KY2dibjA2M1EwTHUtNTlsaHhsYjRiWDVZcXBlMk4wUmk4TlpSOEg3UG9jeThxS0EtZE5rZjdYdzZOcDlTTnVhVWFVYkQ1VHMwZG5JTmhJTWhBLTFzMUZMMURONG9TZGJzN0ZOSFZBVXFTaElnYUd0TmVjc0xwQ09QV3FYVXFfSGMxVGtxWlhYSlFDN0ZPbUxiNkNodk5jX1YwMmJLUFRBZ2dzTEhZZVg2NEViYVo4?oc=5\" target=\"_blank\"&gt;Chevron applies for Argentina tax break program with $13.8 billion investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
-          "published": "2026-06-02T17:29:43.000Z",
+          "published": "2026-06-03T19:05:17.000Z",
           "score": 2
         }
       ]
@@ -138,12 +138,69 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "DRAFT OPINION on the proposal for a regulation of the European Parliament and of the Council establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act) - PE788.881v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-788881_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "DRAFT OPINION on the proposal for a regulation of the European Parliament and of the Council establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Nicolás González Casares&lt;br /&gt; ",
+          "published": "2026-06-03T13:11:58.000Z",
+          "score": 22
+        },
+        {
+          "title": "Video of a committee meeting - Wednesday, 3 June 2026 - 13:30 - Committee on the Environment, Public Health and Food Safety - Committee on the Internal Market and Consumer Protection - Committee on Transport and Tourism",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260603-1530-COMMITTEE-TRAN-ENVI-IMCO_vd",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Length of video : 60'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-03T14:54:32.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - ENVI-TRAN Joint consideration of draft report on Clean Corporate Vehicles - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78571",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230215PHT75307/20230215PHT75307-ms.jpg\" width=\"180\" alt=\"Electric car charging in a parking slot\" title=\"CO2 Emissions for cars and vans © Michael Flippo / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 3 June 2026, ENVI and TRAN Members discussed the draft report on the Commission proposal on Clean Corporate Vehicles, which is part of the Automotive Package. The proposal aim",
+          "published": "2026-06-03T10:18:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "New U.S. tariffs on EU goods would be unacceptable, EU trade committee head says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONnpwOEVXLURXS3lSNDRtaGx3eWRwUllsYXpYT3hDMFI3QmMzRDg0MS1lTmh1aGd6NEt1ZXFaektUdzdOckpjU2hJQzgxVHhiVnFuWWRCazhuWXUxSFdiZ3N1TkdObGIxWE1TLTUtTXFSaEhDdk1LdEFJS1ZLdzBBSURQRVVpbks4WE5wY05MSXZobnZtSFhHRzROdnpPNjdLdVpLMWFNbUpReG5welpwcnQzcXNINGJBWnVr?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxONnpwOEVXLURXS3lSNDRtaGx3eWRwUllsYXpYT3hDMFI3QmMzRDg0MS1lTmh1aGd6NEt1ZXFaektUdzdOckpjU2hJQzgxVHhiVnFuWWRCazhuWXUxSFdiZ3N1TkdObGIxWE1TLTUtTXFSaEhDdk1LdEFJS1ZLdzBBSURQRVVpbks4WE5wY05MSXZobnZtSFhHRzROdnpPNjdLdVpLMWFNbUpReG5welpwcnQzcXNINGJBWnVr?oc=5\" target=\"_blank\"&gt;New U.S. tariffs on EU goods would be unacceptable, EU trade committee head says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T08:17:34.000Z",
+          "score": 12
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5\" target=\"_blank\"&gt;EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
+          "published": "2026-06-03T11:58:05.000Z",
+          "score": 13
+        },
+        {
+          "title": "EU plans energy standards for data centres amid concerns over soaring power use - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOWWFHOHNwNmxoNEdTZUd3YzdXVlc2RklQOXMwVXhGbGNZc1U5VHhROGxWSWtQYmNRNGxlcUJCNEVNSnJRSUtBYmt2NzFIRm91ck5uTWU0ZXhNNmVJTVZYX1kwUDE4M0I1S3JBaHhGUl9zdFZRaXNYcWdsbzZnVmN6T1R5cWVsSklnNXJRNXgyeUVhSTJsUU1hZ0ozdE9udDd1LVlRYUc1dzlSTUxrcEFkMldncGNUeHdhTHBzeGpQdmVOWmxLVHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOWWFHOHNwNmxoNEdTZUd3YzdXVlc2RklQOXMwVXhGbGNZc1U5VHhROGxWSWtQYmNRNGxlcUJCNEVNSnJRSUtBYmt2NzFIRm91ck5uTWU0ZXhNNmVJTVZYX1kwUDE4M0I1S3JBaHhGUl9zdFZRaXNYcWdsbzZnVmN6T1R5cWVsSklnNXJRNXgyeUVhSTJsUU1hZ0ozdE9udDd1LVlRYUc1dzlSTUxrcEFkMldncGNUeHdhTHBzeGpQdmVOWmxLVHc?oc=5\" target=\"_blank\"&gt;EU plans energy standards for data centres amid concerns over soaring power use&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-06-03T16:18:41.000Z",
+          "score": 13
+        },
+        {
+          "title": "Germany loses vote for UN Security Council seat",
+          "link": "https://www.dw.com/en/germany-loses-vote-for-un-security-council-seat/a-77409955?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Fifteen of the 193 UN member states sit on the UN Security Council. Germany was in competition with Austria and Portugal for two seats in the &quot;Western Europe and Others&quot; group.",
+          "published": "2026-06-03T17:01:00.000Z",
+          "score": 12
+        },
         {
           "title": "Armenia&#039;s election offers a choice between Russia and EU",
           "link": "https://www.dw.com/en/armenia-s-election-offers-a-choice-between-russia-and-eu/a-77400608?maca=en-rss-en-all-1573-xml-mrss",
@@ -153,44 +210,20 @@
           "score": 12
         },
         {
-          "title": "Paramount seeks EU approval to buy Warner Bros; decision due July 7 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPeGJhNS1keUU5d1ZxaHdsaThLemM4blJlVHp0ZXJYbmVYTzZDZGJ3VFkyUG9vWE94VzdieThkU1BKWjVoeGhJZmJicWI4azZsVlRwMEVZd2ZCOVlBb2ljRHpZdzBwWmRVT2pQSjhQeXRNcjFYQ3Vud0R5VkEybl9tUU5mcmlqLTNFMlpWMzhyRXFIb25qTFVCbQ?oc=5",
+          "title": "Five countries elected to UN Security Council; Germany misses out - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdFJ5dy14a252eHR0UFVQNFVPWTd1UnhnS2MzN1hQc1BodGhVdTRSeldoVkZ4MmFaem0zb05CRXd1QjZ2anMwbnVpUXNQSXVYamFwc0VaTjJTREdKLTRoc2Z1aF8wbkhLZlNmSmhHYkhqRnlDRkVoSnQ2RmxfLUJZOWJNTWIxRUJtckNqWUZiZklBSk5nNjd2N3pNTjAzbWItS3ZFVDR2Q1Q1ci1mOTVya2tKN2l5VS15WXFtdQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPeGJhNS1keUU5d1ZxaHdsaThLemM4blJlVHp0ZXJYbmVYTzZDZGJ3VFkyUG9vWE94VzdieThkU1BKWjVoeGhJZmJicWI4azZsVlRwMEVZd2ZCOVlBb2ljRHpZdzBwWmRVT2pQSjhQeXRNcjFYQ3Vud0R5VkEybl9tUU5mcmlqLTNFMlpWMzhyRXFIb25qTFVCbQ?oc=5\" target=\"_blank\"&gt;Paramount seeks EU approval to buy Warner Bros; decision due July 7&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-02T16:11:31.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNdFJ5dy14a252eHR0UFVQNFVPWTd1UnhnS2MzN1hQc1BodGhVdTRSeldoVkZ4MmFaem0zb05CRXd1QjZ2anMwbnVpUXNQSXVYamFwc0VaTjJTREdKLTRoc2Z1aF8wbkhLZlNmSmhHYkhqRnlDRkVoSnQ2RmxfLUJZOWJNTWIxRUJtckNqWUZiZklBSk5nNjd2N3pNTjAzbWItS3ZFVDR2Q1Q1ci1mOTVya2tKN2l5VS15WXFtdQ?oc=5\" target=\"_blank\"&gt;Five countries elected to UN Security Council; Germany misses out&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T18:46:04.000Z",
           "score": 8
-        },
-        {
-          "title": "Germany sees window opening for talks between Europe and Russia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY0Ixd1VBMW9rTmY3bUZ6czlGTkF6WHQ5UVprYTB2WUVxSWYzeGJQdDhMTGd1Q1dvMUlHQlpfM29FRlE2Q3Q1aEdQeXkyVzdfYXdaRW1rSWgtOUFzb1FKbDV3ajc4d2VpdldzWnpfRUdBbVF5d0RManVSdklJblJhTzJyMUNtWDdhcF82Tkhmc01ZZy0xNV9QdXdWS0haTHFBMjRqQ3lIOWFjVlU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxQY0Ixd1VBMW9rTmY3bUZ6czlGTkF6WHQ5UVprYTB2WUVxSWYzeGJQdDhMTGd1Q1dvMUlHQlpfM29FRlE2Q3Q1aEdQeXkyVzdfYXdaRW1rSWgtOUFzb1FKbDV3ajc4d2VpdldzWnpfRUdBbVF5d0RManVSdklJblJhTzJyMUNtWDdhcF82Tkhmc01ZZy0xNV9QdXdWS0haTHFBMjRqQ3lIOWFjVlU?oc=5\" target=\"_blank\"&gt;Germany sees window opening for talks between Europe and Russia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T11:11:41.000Z",
-          "score": 8
-        },
-        {
-          "title": "Exclusive: India's Tata taps Chery for premium EV push, leveraging Chinese tech - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcTktSUlNcndQNzZtVjZUeF8xV3Q0UjRPYnRDVEFhWlAxYloyOE9XYzEzQzVwVC15TVI0Wi15a2hmY25yR1d0M0FKZlFKSjFtMHhqLTRza2lZWjRxN3VMY1d1YVJRejAxcm1tVG0yOURZYmxQY09OSzd3NVI2amhkQVF3RGZFVTJDcnc2NW82TVhzYVZ2ZDNUamZsdVQxY1kwN01tb0xlUWk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOcTktSUlNcndQNzZtVjZUeF8xV3Q0UjRPYnRDVEFhWlAxYloyOE9XYzEzQzVwVC15TVI0Wi15a2hmY25yR1d0M0FKZlFKSjFtMHhqLTRza2lZWjRxN3VMY1d1YVJRejAxcm1tVG0yOURZYmxQY09OSzd3NVI2amhkQVF3RGZFVTJDcnc2NW82TVhzYVZ2ZDNUamZsdVQxY1kwN01tb0xlUWk?oc=5\" target=\"_blank\"&gt;Exclusive: India's Tata taps Chery for premium EV push, leveraging Chinese tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T05:51:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Los Angeles Mayor Karen Bass advances to run-off in race to run California's biggest city",
-          "link": "https://www.bbc.com/news/articles/c74dp1yk51vo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The mayor's opponent could be either Republican newcomer and reality TV star Spencer Pratt, or a fellow Democrat, council member Nithya Raman.",
-          "published": "2026-06-03T09:17:07.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 370,
-    "articlesLast24h": 154,
-    "afterDedup": 152,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 162,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
