@@ -242,7 +242,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'CCS/CCU',
         parents: ['in-o2'],
-        indicators: [ref('I7', '# of low-carbon projects', [])],
+        indicators: [
+          ref('I7', '# of low-carbon projects', [
+            'esabcc-i7a-steel-projects',
+            'esabcc-i7b-cement-projects',
+            'esabcc-i7c-chemicals-projects',
+          ]),
+        ],
       },
     ],
     enabling: [
