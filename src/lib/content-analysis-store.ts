@@ -18,7 +18,12 @@
  */
 
 import { getServerSupabase } from './supabase-server';
-import type { CodedSegment, CodeSuggestion, CodeNode } from './content-analysis/types';
+import type {
+  CodedSegment,
+  CodeSuggestion,
+  CodeNode,
+  DocumentSummary,
+} from './content-analysis/types';
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
 
@@ -26,11 +31,13 @@ interface GlobalCache {
   __caSegments?: CodedSegment[];
   __caSuggestions?: CodeSuggestion[];
   __caCodes?: CodeNode[];
+  __caSummaries?: DocumentSummary[];
 }
 const g = globalThis as unknown as GlobalCache;
 if (!g.__caSegments) g.__caSegments = [];
 if (!g.__caSuggestions) g.__caSuggestions = [];
 if (!g.__caCodes) g.__caCodes = [];
+if (!g.__caSummaries) g.__caSummaries = [];
 
 const MAX_ROWS = 20000;
 
@@ -403,6 +410,101 @@ export async function deleteCode(id: string): Promise<boolean> {
     return true;
   }
   const bag = g.__caCodes!;
+  const idx = bag.findIndex(x => x.id === id);
+  if (idx < 0) return false;
+  bag.splice(idx, 1);
+  return true;
+}
+
+// Summaries -----------------------------------------------------------------
+// Whole-document, free-text summaries ("comment for the entire paper"),
+// scoped by (document_id, project_id) with a deterministic id so re-saving
+// updates the row in place.
+
+interface SummaryRow {
+  id: string;
+  document_id: string;
+  project_id: string | null;
+  text: string | null;
+  created_at: string | null;
+  updated_at: string | null;
+}
+
+function rowToSummary(r: SummaryRow): DocumentSummary {
+  return {
+    id: r.id,
+    documentId: r.document_id,
+    projectId: r.project_id,
+    text: r.text ?? '',
+    createdAt: r.created_at ?? new Date().toISOString(),
+    updatedAt: r.updated_at ?? r.created_at ?? new Date().toISOString(),
+  };
+}
+
+function summaryToRow(s: DocumentSummary): SummaryRow {
+  return {
+    id: s.id,
+    document_id: s.documentId,
+    project_id: s.projectId,
+    text: s.text ?? '',
+    created_at: s.createdAt,
+    updated_at: s.updatedAt,
+  };
+}
+
+export async function getSummaries(): Promise<DocumentSummary[]> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_summaries')
+      .select('*')
+      .order('updated_at', { ascending: true })
+      .limit(MAX_ROWS);
+    if (error) {
+      console.error('[content-analysis-store] getSummaries failed:', error.message);
+      return g.__caSummaries!;
+    }
+    return (data as SummaryRow[]).map(rowToSummary);
+  }
+  return g.__caSummaries!;
+}
+
+export async function upsertSummaries(summaries: DocumentSummary[]): Promise<void> {
+  if (summaries.length === 0) return;
+  const sb = getServerSupabase();
+  if (sb) {
+    const rows = summaries.map(summaryToRow);
+    const { error } = await sb
+      .from('content_analysis_summaries')
+      .upsert(rows, { onConflict: 'id' });
+    if (error) {
+      console.error('[content-analysis-store] upsertSummaries failed:', error.message);
+    } else {
+      return;
+    }
+  }
+  const bag = g.__caSummaries!;
+  for (const s of summaries) {
+    const idx = bag.findIndex(x => x.id === s.id);
+    if (idx >= 0) bag[idx] = s;
+    else bag.push(s);
+  }
+}
+
+export async function deleteSummary(id: string): Promise<boolean> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { error } = await sb
+      .from('content_analysis_summaries')
+      .delete()
+      .eq('id', id);
+    if (error) {
+      console.error('[content-analysis-store] deleteSummary failed:', error.message);
+      return false;
+    }
+    return true;
+  }
+  const bag = g.__caSummaries!;
   const idx = bag.findIndex(x => x.id === id);
   if (idx < 0) return false;
   bag.splice(idx, 1);
