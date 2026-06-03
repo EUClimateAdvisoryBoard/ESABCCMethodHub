@@ -10,15 +10,18 @@ import NotificationBell from './NotificationBell';
 
 // NOTE: SiteHeader is the live header since early 2026; this legacy component
 // is kept only because a few internal routes still import <Navigation />.
-// The list below mirrors SiteHeader: five production modules only. Beta
+// The list below mirrors SiteHeader: the eight production modules only. Beta
 // modules live under `beta/modules/` and are intentionally unreachable.
 const NAV_ITEMS = [
-  { href: '/',                 label: 'Method Hub'       },
-  { href: '/references',       label: 'References'       },
-  { href: '/scenarios',        label: 'Scenarios'        },
-  { href: '/news-feed',        label: 'News Feed'        },
-  { href: '/policy-navigator', label: 'Policy Navigator' },
-  { href: '/content-analysis', label: 'Content Analysis' },
+  { href: '/',                  label: 'Method Hub'        },
+  { href: '/references',        label: 'References'        },
+  { href: '/scenarios',         label: 'Scenarios'         },
+  { href: '/news-feed',         label: 'News Feed'         },
+  { href: '/policy-navigator',  label: 'Policy Navigator'  },
+  { href: '/content-analysis',  label: 'Content Analysis'  },
+  { href: '/voting',            label: 'Voting'            },
+  { href: '/project-workspace', label: 'Project Workspace' },
+  { href: '/recommendations',   label: 'Recommendations'   },
 ];
 
 export default function Navigation() {

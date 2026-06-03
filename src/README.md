@@ -32,7 +32,7 @@ flowchart TB
 
 ## `app/` — routes
 
-The six modules plus utility pages:
+The eight modules plus utility pages:
 
 | Route                              | Purpose                                                    |
 |------------------------------------|------------------------------------------------------------|
@@ -44,6 +44,10 @@ The six modules plus utility pages:
 | `/scenarios`                       | IIASA AR6 / Eurostat scenario explorer                     |
 | `/news-feed`                       | Curated RSS + daily briefing                               |
 | `/content-analysis`                | MAXQDA-style qualitative coding workbench                  |
+| `/voting`, `/vote/[token]`         | Advisory-Board ballots (isolated store) + single-use links |
+| `/project-workspace`               | Per-project binder: indicators, member states, recommendations, meetings |
+| `/member-states`, `/member-states/[code]` | EU-27 country-profile map, heatmap and editor      |
+| `/recommendations`                 | Advisory-Board recommendation tracker (shared with Policy Gap 2.0) |
 | `/profile`, `/guide`               | User profile, help guides                                  |
 | `/word-addin`                      | Word add-in taskpane (served to Office)                    |
 

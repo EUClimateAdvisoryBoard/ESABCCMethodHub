@@ -16,8 +16,9 @@ hide:
 # MethodHub documentation
 
 <p class="mh-hero-lede">
-The ESABCC Secretariat's internal research workspace — six integrated
-modules for references, data, news, policy, content analysis, and voting, shipped
+The ESABCC Secretariat's internal research workspace — eight integrated
+modules for references, data, news, policy, content analysis, voting, the
+project workspace, and the recommendations tracker, shipped
 as one Next.js service stewarded by CCE5 and designed for handoff to
 EEA-managed infrastructure.
 </p>
@@ -28,12 +29,12 @@ EEA-managed infrastructure.
 <div class="mh-facts" markdown>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Production modules</p>
-<p class="mh-fact__v">6</p>
-<p class="mh-fact__sub">refs · data · news · policy · coding · voting</p>
+<p class="mh-fact__v">8</p>
+<p class="mh-fact__sub">refs · data · news · policy · coding · voting · workspace · recommendations</p>
 </div>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Beta parking lot</p>
-<p class="mh-fact__v">8</p>
+<p class="mh-fact__v">11</p>
 <p class="mh-fact__sub">intentionally unrouted</p>
 </div>
 <div class="mh-fact" markdown>
@@ -65,11 +66,12 @@ Packaged for self-hosted deployment on **EEA infrastructure**.
     is asked of the EEA — every term of jargon unpacked. A PDF copy is
     also [available at the repo root](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/ESABCC-MethodHub-FAQ-non-technical.pdf).
 
-## The six modules
+## The eight modules
 
-Each module reads and writes the same Postgres corpus — a reference
+Each corpus module reads and writes the same Postgres corpus — a reference
 created in M·01 shows up in M·05, a policy annotated in M·04 is reachable
-from M·05. No module is master; all six are peers.
+from M·05. No module is master; the corpus modules are peers, the project
+layer (M·07–M·08) hangs off them, and the Voting Tool keeps an isolated store.
 
 <ul class="mh-modules" markdown>
 
@@ -128,10 +130,28 @@ from M·05. No module is master; all six are peers.
 </li>
 
 <li markdown>
+<a class="mh-module" href="modules/project-workspace/" markdown>
+<div class="mh-module__header"><span>M · 07</span><span class="mh-module__num">07</span></div>
+<div class="mh-module__title">Project Workspace</div>
+<p class="mh-module__desc">A workspace per project — indicator databases, member-state matrix, recommendation tracker, policy analysis.</p>
+<div class="mh-module__cta">Open module →</div>
+</a>
+</li>
+
+<li markdown>
+<a class="mh-module" href="modules/recommendations/" markdown>
+<div class="mh-module__header"><span>M · 08</span><span class="mh-module__num">08</span></div>
+<div class="mh-module__title">Recommendations</div>
+<p class="mh-module__desc">Tracker for Advisory-Board recommendations — implementation status and dated uptake events against EU law.</p>
+<div class="mh-module__cta">Open module →</div>
+</a>
+</li>
+
+<li markdown>
 <a class="mh-module mh-module--beta" href="overview/beta/" markdown>
-<div class="mh-module__header"><span>BETA · ×8</span><span class="mh-module__num">β</span></div>
+<div class="mh-module__header"><span>BETA · ×11</span><span class="mh-module__num">β</span></div>
 <div class="mh-module__title">Beta parking lot</div>
-<p class="mh-module__desc">Eight experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
+<p class="mh-module__desc">Eleven experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
 <div class="mh-module__cta">Browse beta →</div>
 </a>
 </li>

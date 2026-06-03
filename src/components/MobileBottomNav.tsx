@@ -8,9 +8,11 @@ import { useDevice } from '@/lib/useDevice';
  * Thumb-reachable bottom tab bar for mobile. Appears only on viewports
  * under 768px, hidden entirely on tablets and desktops.
  *
- * Surfaces all six production modules (M·01 References, M·02 Data,
- * M·03 News, M·04 Policy, M·05 Analysis, M·06 Vote) directly in the
- * tab strip. Hub is reachable via the header logo. Beta modules live
+ * Surfaces the six most-used production modules (M·01 References,
+ * M·02 Data, M·03 News, M·04 Policy, M·05 Analysis, M·06 Vote) directly
+ * in the thumb strip. The other two core modules (M·07 Project Workspace,
+ * M·08 Recommendations) and the Hub are reachable via the header drawer /
+ * logo — eight tabs would not fit a thumb-reachable bar. Beta modules live
  * under `beta/modules/` and are intentionally unreachable from every
  * navigation surface.
  *

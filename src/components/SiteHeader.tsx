@@ -11,7 +11,7 @@ import { useAuth } from '@/lib/auth-context';
 /**
  * Site-wide header for MethodHub.
  *
- * Shows only the **five production modules** — beta modules live under
+ * Shows only the **eight production modules** — beta modules live under
  * `beta/modules/` in the repository and are intentionally unrouted, so they
  * must not appear in navigation. Promoting a beta module to production means
  * `git mv`-ing it back into `src/app/` and re-adding an entry to `MODULES`.
@@ -41,9 +41,10 @@ const MODULES: Module[] = [
   { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core', topBar: true },
   { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core', topBar: true },
   { href: '/policy-navigator',  label: 'Policy Navigator',  short: 'Policy Navigator',  group: 'core', topBar: true },
+  { href: '/content-analysis',  label: 'Content Analysis',  short: 'Content',           group: 'core', topBar: true },
+  { href: '/voting',            label: 'Voting',            short: 'Voting',            group: 'core', topBar: true },
   { href: '/project-workspace', label: 'Project Workspace', short: 'Project Workspace', group: 'core', topBar: true },
   { href: '/recommendations',   label: 'Recommendations',   short: 'Recommendations',   group: 'core', topBar: true },
-  { href: '/voting',            label: 'Voting',            short: 'Voting',            group: 'core', topBar: true },
 ];
 
 const TOP_BAR_MODULES = MODULES.filter(m => m.topBar);

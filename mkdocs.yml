@@ -159,11 +159,13 @@ plugins:
       # the figure in-page, and auto_caption was eating most of the
       # viewport so the image itself came out tiny.
       auto_caption: false
-  # Keep the old /overview/the-five-modules/ URL alive after the v1.0 → six
-  # module rename. The README and any external bookmarks still point at it.
+  # Keep the older /overview/the-five-modules/ and /overview/the-six-modules/
+  # URLs alive after the v1.0 → six → eight module growth. The README and any
+  # external bookmarks still point at them.
   - redirects:
       redirect_maps:
-        overview/the-five-modules.md: overview/the-six-modules.md
+        overview/the-five-modules.md: overview/the-eight-modules.md
+        overview/the-six-modules.md: overview/the-eight-modules.md
 
 # Navigation — handcrafted so the sidebar reads like a technical handbook
 # rather than an alphabetical file listing.
@@ -172,7 +174,7 @@ nav:
   - "FAQ (non-technical)": FAQ-NON-TECHNICAL.md
   - Overview:
       - What is MethodHub?: overview/what-is-methodhub.md
-      - The six modules: overview/the-six-modules.md
+      - The eight modules: overview/the-eight-modules.md
       - Beta parking lot: overview/beta.md
   - Modules:
       - modules/index.md
@@ -182,8 +184,10 @@ nav:
       - "M·04 EU Policy Navigator":  modules/policy-navigator.md
       - "M·05 Content Analysis":     modules/content-analysis.md
       - "M·06 Voting Tool":          modules/voting-tool.md
-      - "M·b3 Funding Sources (beta)": modules/funding-sources.md
-      - "M·15 Strategy & Framework Docs (beta)": modules/strategy-docs.md
+      - "M·07 Project Workspace":    modules/project-workspace.md
+      - "M·08 Recommendations":      modules/recommendations.md
+      - "M·16 Funding Sources (beta)": modules/funding-sources.md
+      - "M·17 Strategy & Framework Docs (beta)": modules/strategy-docs.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Architecture overview: infrastructure/architecture.md

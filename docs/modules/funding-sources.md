@@ -1,4 +1,4 @@
-# M · b3 — Funding Sources
+# M · 16 — Funding Sources
 
 !!! tip "Status"
     Beta · parked under [`beta/modules/funding-sources/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules/funding-sources) · route only enabled when promoted to `src/app/`

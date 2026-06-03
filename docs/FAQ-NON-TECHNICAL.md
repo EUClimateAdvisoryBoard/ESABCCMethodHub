@@ -51,12 +51,15 @@ that advice faster and more transparently, but any outputs produced
 inside it are working drafts until the Board signs off through its
 normal process.
 
-### 4. What are "the six modules"?
+### 4. What are "the eight modules"?
 
-MethodHub v1.0 ships with five focused areas:
+MethodHub launched with six focused areas and has since grown to
+**eight**. Each is a self-contained tool, but they all share the same
+underlying data so work flows between them:
 
 1. **Reference Manager** — a searchable literature library with
-   one-click DOI lookup and a Word add-in for inline citations.
+   one-click DOI lookup (paste a paper's identifier and its details fill
+   in automatically) and a Word add-in for inline citations.
 2. **Data & Scenarios** — Eurostat indicators alongside the IPCC and
    IIASA scenario databases, all in one chart.
 3. **Secretariat News** — a curated climate-policy news feed, an
@@ -66,12 +69,28 @@ MethodHub v1.0 ships with five focused areas:
 5. **Content Analysis** — MAXQDA-style qualitative coding of policy
    texts and references (MAXQDA is a commercial coding tool; this is
    the in-browser equivalent).
+6. **Voting Tool** — private ballots for Advisory-Board members.
+   Externals get a single-use link; results feed straight into a live
+   analysis view. The ballots are deliberately kept separate from
+   everything else in the tool.
+7. **Project Workspace** — a "digital binder" per piece of work (for
+   example *Policy Gap 2.0*). Inside a binder are tabs: an indicator
+   database (the numbers the Board tracks year by year), a map of the 27
+   member states, a recommendations tracker, and tagged policy text.
+   Teams share the same binder and everyone's edits save together.
+8. **Recommendations** — a scoreboard of the Board's published
+   recommendations: for each one, whether the EU has acted (*not
+   addressed*, *in progress*, *partially*, *addressed*) and a dated
+   timeline of the evidence. (It is the same data as the Project
+   Workspace's recommendations tab, shown on its own page.)
 
-All other experimental functionality (energy-system modelling, media
-monitoring, the Brussels Bulletin, etc.) is held in a `beta/` folder
-within the repository. Those modules exist and are functional, but
-are deliberately excluded from the v1.0 release so that the
-production scope remains tractable to review.
+The most recent two — Project Workspace and Recommendations — started
+life in the experimental folder and were promoted once they proved
+useful. All other experimental functionality (energy-system modelling,
+media monitoring, a map of national climate councils, etc.) stays in a
+`beta/` folder within the repository: eleven modules that exist and work
+but are deliberately excluded from the core so the production scope
+remains tractable to review.
 
 ### 5. Who built it, who will keep building it?
 
@@ -639,7 +658,7 @@ Two backstops.
 
 Three deliberate choices in the architecture:
 
-- **Bounded scope.** Six modules are locked for v1.0; all other
+- **Bounded scope.** Eight modules form the locked core; all other
   experimental modules are held in `beta/`. The production surface
   area is deliberately constrained.
 - **Standard components.** Every technology choice (Next.js,

@@ -10,7 +10,7 @@ the handoff punch list is visible, but not yet implemented.
 
 <figure class="mh-figure mh-figure--wide" markdown>
 <img src="../../assets/fig-repo-layout.svg" alt="Four-zone repository layout — src/ for the shipped Next.js app, beta/ for scope-parked modules, docs/ for the hosted documentation, scripts/ and supabase/ for ingestion and deployment.">
-<figcaption><span class="mh-figure__num">Figure 8.</span> Repository layout. A reviewer can read the scope off the folder names alone: the six production modules live under <code>src/app/</code>, the eight beta modules sit under <code>beta/modules/</code> outside the Next.js route tree, documentation ships from <code>docs/</code>, and the operational surface (pipelines, migrations, handoff scripts, container assets) is rooted at the repo root.</figcaption>
+<figcaption><span class="mh-figure__num">Figure 8.</span> Repository layout. A reviewer can read the scope off the folder names alone: the eight production modules live under <code>src/app/</code>, the eleven beta modules sit under <code>beta/modules/</code> outside the Next.js route tree, documentation ships from <code>docs/</code>, and the operational surface (pipelines, migrations, handoff scripts, container assets) is rooted at the repo root.</figcaption>
 </figure>
 
 ## Runtime
@@ -25,8 +25,14 @@ the handoff punch list is visible, but not yet implemented.
 | **Component primitives** | **Radix UI** (dialog, dropdown, tooltip)    | Accessible headless primitives. No bespoke modal code.                                  |
 | **Charting**           | **Chart.js**                                  | Good enough for line/bar/stacked, small bundle, tabular tooltips.                       |
 | **Graph layout**       | **D3 force simulation** (via `d3-force`)      | Only the parts of D3 we use; saves ~80 kB.                                              |
-| **Mapping**            | **Leaflet** + OSM tiles                       | Free, deterministic, no API key.                                                        |
-| **PDF rendering**      | **`pdfjs-dist`** via `react-pdf`              | Used by Content Analysis and Reference annotation.                                      |
+| **Mapping**            | **Leaflet** + **react-leaflet** + OSM tiles   | Member-state choropleth (M·07) + climate-councils map. Free, deterministic, no API key. |
+| **Geometry**           | **`topojson-client`** + **`world-atlas`**     | EU-27 boundary simplification; pre-baked to GeoJSON at build (`build-eu27-geojson.mjs`). |
+| **PDF rendering**      | **`pdfjs-dist`** via **`react-pdf`**          | Used by Content Analysis (M·05) and Reference annotation (M·01). Lazy-loaded per tab.   |
+| **Spreadsheets**       | **`exceljs`**                                 | Indicator-database Excel export / import (M·07) with formula-aware cells.               |
+| **File output**        | **`file-saver`** + **`jszip`**                | Client-side downloads (CSV/XLSX, bundled exports, the extension zip).                    |
+| **QR codes**           | **`qrcode`**                                  | Single-use voting-ballot links (M·06) rendered as scannable QR.                          |
+| **In-app diagrams**    | **`mermaid`**                                 | Rendered client-side inside guide / analysis surfaces.                                   |
+| **Server canvas**      | **`@napi-rs/canvas`**                         | Server-side image generation (e.g. social / factsheet cards) without a headless browser. |
 | **Icon set**           | Inline SVGs + Radix UI icons                  | No separate icon-library dependency today; inline SVGs keep the bundle small.            |
 
 ## Data layer
@@ -40,6 +46,39 @@ the handoff punch list is visible, but not yet implemented.
 | **Row security**   | **RLS on every user-data table**      | `auth.uid() = added_by` or library / workspace membership.        |
 | **Object storage** | **Supabase Storage** or **S3 / MinIO** | Reference PDFs, content-analysis ingested files.                  |
 | **Cache**          | In-memory + Postgres cache tables     | No Redis. Every cache row has a `fetched_at` and a TTL in code.   |
+
+### The data-layer façade (`src/lib/db/`)
+
+All persistent state is Postgres, but the code reaches it through a thin
+façade rather than scattering client construction across call sites. This is
+the **cutover seam** for the EEA handoff:
+
+- `src/lib/db/config.ts` declares the provider switches — `DB_PROVIDER`
+  (`supabase` | `postgres`), `STORAGE_PROVIDER`, `REALTIME_PROVIDER`,
+  `AUTH_PROVIDER` — so each piece of infrastructure can migrate on its own
+  schedule.
+- The self-hosted Postgres pool (`pg`) is an **optional dependency** and is
+  `import()`-ed lazily, so a Supabase-only deployment never loads it.
+- Per-module logic lives in `*-store.ts` / `db.ts` files (`lib/references/`,
+  `lib/scenarios/`, `lib/content-analysis/`, `lib/voting/`,
+  `lib/project-workspace/`, `lib/country-profiles/`) that talk SQL or the
+  Supabase client behind the façade — never a generated ORM DSL.
+
+## Module → dependency map
+
+Which third-party libraries each of the eight core modules actually leans on.
+Anything not listed here is shared chrome (Next.js, React, Tailwind, Radix).
+
+| Module                       | Key dependencies                                                              |
+|------------------------------|-------------------------------------------------------------------------------|
+| M·01 Reference Manager       | `pdfjs-dist` / `react-pdf` (annotation), Crossref (DOI), the Word bridge + Office.js add-in + Electron companion. |
+| M·02 Data & Scenarios        | `chart.js` / `react-chartjs-2`, `d3` (scales), Eurostat + IIASA AR6 + EEA clients. |
+| M·03 Secretariat News        | `lib/rss-feeds.ts` (regex RSS), `lib/ai-summary.ts` (narrative briefing), inbound-email ingest. |
+| M·04 EU Policy Navigator     | `d3-force` (network layout), `lib/article-extractor.ts`, EUR-Lex cellar text. |
+| M·05 Content Analysis        | `pdfjs-dist` / `react-pdf`, the hierarchical-code model in `lib/content-analysis/`. |
+| M·06 Voting Tool             | `qrcode` (single-use links), isolated ballot store, seven tally algorithms in `lib/voting/`. |
+| M·07 Project Workspace       | `exceljs` (indicator workbooks), `leaflet` / `react-leaflet` + `topojson-client` (member-states map), `file-saver`, the indicator-refresh upstream clients (Eurostat / EEA / EAFO / IRENA / EHPA). |
+| M·08 Recommendations         | Shares the M·07 `pw_*` store; no extra runtime deps beyond the workspace API. |
 
 ## Auth & identity
 
@@ -122,6 +161,34 @@ the handoff punch list is visible, but not yet implemented.
   migration in `supabase/migrations/` and a row-count parity
   smoke test at `scripts/migrate-to-postgres/verify-parity.mjs`
   (run via `npm run db:verify-parity`).
+
+## Client & satellite components
+
+None of these ship inside the deployable container, but they are part of the
+stack a reviewer will see in the repo. Each is independently deployable or
+runs on the user's own machine.
+
+| Component            | Stack                                          | Role                                                                 |
+|----------------------|------------------------------------------------|----------------------------------------------------------------------|
+| `bridge-service/`    | Node HTTP server, loopback `:8585`, SQLite cache | Holds the Word add-in's token so the add-in never sees Supabase creds. |
+| `word-addin/`        | **Office.js** task-pane add-in (webpack + TS)  | Live search-and-insert of citations into a Word manuscript (M·01).   |
+| `word-addin-app/`    | **Electron** desktop companion                 | Zotero-style reference browser; live library fetch + offline snapshot. |
+| `browser-extension/` | MV3 Edge/Chrome extension                      | One-click LinkedIn capture into the beta media-monitoring module.    |
+| `pypsa-service/`     | **Python / FastAPI**, own `Dockerfile`         | Energy-system optimisation solver; called only by the beta energy module. |
+| `outlook-vba/`, `word-vba/` | VBA macros + PowerShell installers      | Legacy push-to-Hub macros for sites without the Office.js add-in.    |
+
+The [Clients & extensions](../reference/clients.md) reference covers each in
+full.
+
+## Build & configuration
+
+| File                  | What it pins                                                                                  |
+|-----------------------|-----------------------------------------------------------------------------------------------|
+| `next.config.js`      | `output: 'standalone'`, trailing-slash, global security headers (HSTS, CSP, `X-Frame-Options`), dynamic CORS for the Office hosts, and legacy `/policy` → `/policy-navigator/*` redirects. |
+| `tsconfig.json`       | `strict` TypeScript, path alias `@/*` → `./src/*`.                                            |
+| `tailwind.config.ts`  | ESABCC palette (primary `#004B7F`, secondary `#007B6C`) + responsive max-widths.              |
+| `Dockerfile`          | Three-stage `node:20-alpine` build → ~180 MB non-root image, entrypoint `node server.js`.     |
+| `package.json` scripts | `prebuild` bakes the extension zip + EU-27 GeoJSON; `postinstall` copies the `pdf.worker` into `public/`; `vercel-build` builds the docs then the app. |
 
 ## What we deliberately **don't** use
 

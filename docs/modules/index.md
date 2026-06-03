@@ -10,14 +10,14 @@ Per-module page with the same structure on every one:
 6. **Schema** — the tables involved.
 7. **Known limits & roadmap**.
 
-## Cross-module surfaces (apply to all six)
+## Cross-module surfaces (apply to all eight)
 
 Every production module now sits inside a shared **User Space** — see
 [Vision → User Space](../vision/user-space.md). Common affordances:
 
 - **⌘K Command Palette** — global search across References, Scenarios, News, Policies, Codes.
 - **Onboarding tour** — 3–4 step intro on first visit; replay with `?help=1`.
-- **Context Drawer** (`⌘.`) — shows artefacts related to the current page from the other five modules.
+- **Context Drawer** (`⌘.`) — shows artefacts related to the current page from the other modules.
 - **AI Assistant** — floating chat grounded on the current artefact (needs an LLM key).
 - **Add to Collection / Workspace** — chips on every list card, plus a drag-drop drop-zone in collections.
 - **Change history** — `history` popover on connections (and any artefact wired into `/api/artefact-history`).
@@ -74,6 +74,22 @@ Every production module now sits inside a shared **User Space** — see
 <div class="mh-module__num">06</div>
 <h3 class="mh-module__title">Voting Tool</h3>
 <p class="mh-module__desc">Private AB ballots · single-use or universal links · 7 voting systems · live analysis.</p>
+<span class="mh-module__cta">Open →</span>
+</a></li>
+
+<li markdown><a class="mh-module" href="../modules/project-workspace/" markdown>
+<div class="mh-module__header"><span>M · 07</span><span>Stable</span></div>
+<div class="mh-module__num">07</div>
+<h3 class="mh-module__title">Project Workspace</h3>
+<p class="mh-module__desc">Per-project binder · indicator DB · member-state matrix · recommendation tracker · meetings.</p>
+<span class="mh-module__cta">Open →</span>
+</a></li>
+
+<li markdown><a class="mh-module" href="../modules/recommendations/" markdown>
+<div class="mh-module__header"><span>M · 08</span><span>Stable</span></div>
+<div class="mh-module__num">08</div>
+<h3 class="mh-module__title">Recommendations</h3>
+<p class="mh-module__desc">Advisory-Board recommendation tracker · status · dated uptake events vs. EU law.</p>
 <span class="mh-module__cta">Open →</span>
 </a></li>
 

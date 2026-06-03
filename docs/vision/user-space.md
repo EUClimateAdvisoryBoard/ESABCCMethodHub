@@ -1,7 +1,7 @@
 # User Space
 
 Everything in MethodHub that belongs to *the analyst*, not to a module. These
-surfaces unify the six production modules into a single product.
+surfaces unify the eight production modules into a single product.
 
 | Surface | Path | What it does |
 | ------- | ---- | ------------ |

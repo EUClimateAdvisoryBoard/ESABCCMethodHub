@@ -68,8 +68,8 @@ All state is externalised to Postgres and object storage. See
 | `src/lib/` | Business logic: data access, auth, the AI dispatcher, per-module `*-store.ts` modules, React hooks. | Where the non-trivial logic lives. |
 | `src/lib/db/` | The data-layer **façade** — provider selection + the lazy Postgres pool. | The cutover seam (see below). |
 | `src/data/` | Large static datasets (e.g. the curated reference corpus). | Compiled into the bundle; not user state. |
-| `beta/modules/` | Eight experimental modules, **unrouted**. | Outside the `app/` tree, so the build ignores them. Promotion = move a folder back into `src/app/`. |
-| `supabase/migrations/` | 38 numbered SQL migrations — the schema, RLS, GDPR functions. | Applied in filename order; the source of truth for the DB. |
+| `beta/modules/` | Eleven experimental modules, **unrouted**. | Outside the `app/` tree, so the build ignores them. Promotion = move a folder back into `src/app/` (this is how M·07 and M·08 graduated). |
+| `supabase/migrations/` | 60-plus numbered SQL migrations — the schema, RLS, GDPR functions. | Applied in filename order; the source of truth for the DB. |
 | `scripts/` | Ingestion pipelines, the Postgres migration kit, the IT-handoff kit. | See [Scripts reference](../reference/scripts.md). |
 | `Dockerfile`, `docker-compose.yml` | Production image + one-command local stack. | |
 | `.github/workflows/` | CI, scheduled pipelines, the self-hosted EEA deploy. | |
@@ -125,18 +125,19 @@ set globally in `next.config.js`.
 
 ## The production modules and their code
 
-The five headline modules plus the Voting Tool make up the shipped
-surface. Each maps cleanly onto a route folder, an API namespace, a
-`src/lib` area, and a set of migrations.
+The eight core modules make up the shipped surface. Each maps cleanly onto a
+route folder, an API namespace, a `src/lib` area, and a set of migrations.
 
 | Module | Page routes | API namespace | Logic |
 |--------|------------|---------------|-------|
-| Reference Manager | `app/references/` | `api/references/*` | `lib/references/`, `lib/references.ts` |
-| Data & Scenarios | `app/scenarios/` | `api/scenarios/*` | `lib/scenarios/` |
-| Secretariat News | `app/news-feed/` | `api/news-feed/*`, `api/inbound-email/*`, `api/daily-summary/*` | `lib/rss-feeds.ts`, `lib/ai-summary.ts` |
-| EU Policy Navigator | `app/policy-navigator/` | `api/policy-clock/*`, `api/policy-text`, `api/eu-calendar` | `lib/policy-*.ts` |
-| Content Analysis | `app/content-analysis/` | `api/content-analysis/*` | `lib/content-analysis/` |
-| Voting Tool | `app/voting/`, `app/vote/[token]/` | `api/voting/*` | `lib/voting/` |
+| M·01 Reference Manager | `app/references/` | `api/references/*` | `lib/references/`, `lib/references.ts` |
+| M·02 Data & Scenarios | `app/scenarios/` | `api/scenarios/*` | `lib/scenarios/` |
+| M·03 Secretariat News | `app/news-feed/` | `api/news-feed/*`, `api/inbound-email/*`, `api/daily-summary/*` | `lib/rss-feeds.ts`, `lib/ai-summary.ts` |
+| M·04 EU Policy Navigator | `app/policy-navigator/` | `api/policy-clock/*`, `api/policy-text`, `api/eu-calendar` | `lib/policy-*.ts` |
+| M·05 Content Analysis | `app/content-analysis/` | `api/content-analysis/*` | `lib/content-analysis/` |
+| M·06 Voting Tool | `app/voting/`, `app/vote/[token]/` | `api/voting/*` | `lib/voting/` |
+| M·07 Project Workspace | `app/project-workspace/`, `app/member-states/` | `api/project-workspace/*`, `api/member-states/*` | `lib/project-workspace/`, `lib/country-profiles/` |
+| M·08 Recommendations | `app/recommendations/` | `api/project-workspace/recommendations*` | `lib/project-workspace/db.ts` |
 
 Module deep-dives live under [Modules](../modules/index.md); every API
 route is catalogued in the [API reference](../reference/api.md).
