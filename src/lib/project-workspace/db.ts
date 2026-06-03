@@ -493,6 +493,12 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
   return rows.map<DBIndicator>(r => {
     const isEsabcc = r.id.startsWith('esabcc-');
     const meta = esabccById.get(r.id);
+    // pw_indicator_points has no afterReport column, so re-derive the flag from
+    // the bundled metadata. Without this the post-report years lose their
+    // orange + "NEW" styling once they're served from the DB.
+    const afterReportYears = new Set(
+      (meta?.data ?? []).filter(p => p.afterReport).map(p => p.year)
+    );
     return {
       id: r.id,
       name: r.name,
@@ -510,7 +516,11 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       duplicateOf: meta?.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[r.id],
       data: (points ?? [])
         .filter(p => p.indicator_id === r.id)
-        .map<IndicatorDataPoint>(p => ({ year: p.year, value: p.value }))
+        .map<IndicatorDataPoint>(p =>
+          afterReportYears.has(p.year)
+            ? { year: p.year, value: p.value, afterReport: true }
+            : { year: p.year, value: p.value }
+        )
         .sort((a, b) => a.year - b.year),
     };
   });

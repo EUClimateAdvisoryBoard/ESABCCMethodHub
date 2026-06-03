@@ -30,7 +30,9 @@ import { dirname, join } from 'node:path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..', '..');
-const OUT = join(ROOT, 'supabase', 'migrations', '055_backfill_indicator_points.sql');
+const MIGRATION_NAME = '055_backfill_indicator_points.sql';
+const OUT = join(ROOT, 'supabase', 'migrations', MIGRATION_NAME);
+const COMBINED = join(ROOT, 'supabase', 'combined_migrations.sql');
 
 // Data files whose `afterReport` points should be mirrored into the DB.
 const SOURCES = [
@@ -108,6 +110,46 @@ async function main() {
   const sql = header + rows.join(',\n') + '\non conflict (indicator_id, year) do nothing;\n';
   await writeFile(OUT, sql);
   console.log(`Wrote ${OUT} — ${rows.length} post-report points across ${indicators.length} indicators.`);
+
+  await syncCombined(sql);
+}
+
+/**
+ * Keep the mirrored migration block inside supabase/combined_migrations.sql in
+ * sync. That file is the one-shot apply path (pasted into the Supabase SQL
+ * Editor); if it isn't updated, the new years never run for anyone using it —
+ * which is exactly how the backfill silently went missing after a refresh.
+ * Replaces the existing block (this migration is last in the file) or appends a
+ * fresh one, and bumps the banner range. Other migrations are left untouched.
+ */
+async function syncCombined(sql) {
+  let combined;
+  try {
+    combined = await readFile(COMBINED, 'utf8');
+  } catch {
+    console.log(`(skip combined sync: ${COMBINED} not found)`);
+    return;
+  }
+  const RULE = combined.split('\n').find(l => /^-- -{20,}$/.test(l));
+  if (!RULE) throw new Error('combined_migrations.sql: separator line not found');
+
+  const marker = `\n${RULE}\n-- ${MIGRATION_NAME}\n`;
+  const at = combined.indexOf(marker);
+  // This migration is the highest-numbered, so its block runs to EOF — drop
+  // everything from the marker onward, then re-append the fresh block.
+  if (at >= 0) combined = combined.slice(0, at);
+  combined = combined.replace(/\s*$/, '\n');
+  combined += `\n${RULE}\n-- ${MIGRATION_NAME}\n${RULE}\n\n${sql.replace(/\s*$/, '')}\n`;
+
+  // Bump the banner's upper bound to this migration's number.
+  const num = MIGRATION_NAME.match(/^(\d+)_/)[1];
+  combined = combined.replace(
+    /-- COMBINED MIGRATIONS \((\d+) -> \d+\)/,
+    `-- COMBINED MIGRATIONS ($1 -> ${num})`
+  );
+
+  await writeFile(COMBINED, combined);
+  console.log(`Synced ${MIGRATION_NAME} block into ${COMBINED}.`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
