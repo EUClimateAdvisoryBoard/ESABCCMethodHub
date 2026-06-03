@@ -40,10 +40,9 @@
  */
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { uploadFigure } from '@/lib/content-analysis/figure-storage';
-import SummaryContent from '@/components/content-analysis/SummaryContent';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useAuth } from '@/lib/auth-context';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
   useLiveReferences,
@@ -51,7 +50,8 @@ import {
   referencePdfCacheKey,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
-import type { AnalysisDocument, CodeNode, DocumentSummary } from '@/lib/content-analysis/types';
+import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
+import { SummaryDeckViewer, SummaryDeckEditor } from './SummaryDeck';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
@@ -195,8 +195,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     upsertDocument,
     applyIngestion,
     setDocumentSummary,
+    loadSummaryBlocks,
   } = useContentAnalysis();
   const liveRefs = useLiveReferences();
+  const { user, displayName } = useAuth();
+
+  /** Stamp a saved tag comment with the signed-in author so the segments
+   *  list can show "who said it". */
+  const handleUpdateNote = useCallback(
+    (id: string, note: string) =>
+      updateSegmentNote(id, note, { name: displayName ?? undefined, id: user?.id }),
+    [updateSegmentNote, displayName, user?.id],
+  );
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
   const [view, setView] = useState<'code' | 'analyse'>('code');
@@ -369,10 +379,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     [docSummaries, projectId],
   );
 
-  const handleSaveSummary = (text: string) => {
+  const handleSaveSummary = (text: string, blocks: SummaryBlock[]) => {
     if (!selectedDocument) return;
     upsertDocument(selectedDocument);
-    setDocumentSummary(selectedDocument.id, projectId, text);
+    setDocumentSummary(selectedDocument.id, projectId, text, blocks);
   };
 
   // ── Counts (within the active lens) ──────────────────────────────────────
@@ -395,6 +405,22 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
+  };
+
+  /** Remove a document from this workspace's corpus, with a confirm — the
+   *  discoverable "delete document I added" control on each list row. Coded
+   *  segments are intentionally kept (they stay attributable to the project
+   *  and visible under its lens). */
+  const confirmRemoveFromCorpus = (id: string) => {
+    const doc = corpusDocs.find(d => d.id === id);
+    const label = doc?.shortTitle || doc?.title || 'this document';
+    if (
+      window.confirm(
+        `Remove “${label}” from this workspace?\n\nAny tags & comments you’ve already made on it are kept — you can add it back anytime.`,
+      )
+    ) {
+      removeFromCorpus(id);
+    }
   };
 
   const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }, codeId: string) => {
@@ -753,6 +779,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     selectedDocumentId={selectedDocument?.id ?? null}
                     onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setIngestState({ status: 'idle' }); }}
                     counts={docCounts}
+                    onRemove={confirmRemoveFromCorpus}
                   />
                 </div>
               )}
@@ -858,6 +885,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 otherSummaries={otherSummaries}
                 projectNameById={projectNameById}
                 onSaveSummary={handleSaveSummary}
+                onLoadSummaryBlocks={loadSummaryBlocks}
                 onCreateSegment={handleCreateSegment}
                 onSelectSegment={setHighlightedSegmentId}
                 onDeleteSegment={deleteSegment}
@@ -885,7 +913,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 selectedSegmentId={highlightedSegmentId}
                 onOpenSegment={setHighlightedSegmentId}
                 onDelete={deleteSegment}
-                onUpdateNote={updateSegmentNote}
+                onUpdateNote={handleUpdateNote}
                 requestCommentForId={commentForSegmentId}
                 onCommentRequestConsumed={() => setCommentForSegmentId(null)}
               />
@@ -948,6 +976,7 @@ function DocumentViewer({
   otherSummaries,
   projectNameById,
   onSaveSummary,
+  onLoadSummaryBlocks,
   onCreateSegment,
   onSelectSegment,
   onDeleteSegment,
@@ -967,7 +996,8 @@ function DocumentViewer({
   summary: DocumentSummary | null;
   otherSummaries: DocumentSummary[];
   projectNameById: Map<string | null, string>;
-  onSaveSummary: (text: string) => void;
+  onSaveSummary: (text: string, blocks: SummaryBlock[]) => void;
+  onLoadSummaryBlocks: (id: string) => Promise<SummaryBlock[]>;
   onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string }) => void;
   onSelectSegment: (id: string) => void;
   onDeleteSegment: (id: string) => void;
@@ -1057,6 +1087,7 @@ function DocumentViewer({
         otherSummaries={otherSummaries}
         projectNameById={projectNameById}
         onSave={onSaveSummary}
+        onLoadBlocks={onLoadSummaryBlocks}
       />
 
       {!hasText ? (
@@ -1176,118 +1207,71 @@ function DocumentViewer({
  * every document kind. The current project's summary is editable; summaries
  * authored under other projects are shown read-only for context, so the whole
  * team can see each report's take on the same paper.
+ *
+ * Beyond a plain-text lead, a summary is a little presentation: a deck of
+ * slides mixing text, SmartArt-style flowcharts and screenshots. Those slides
+ * are heavy, so they are **lazy-loaded** — the panel ships closed and only
+ * fetches the deck (`onLoadBlocks`) when the user opens "Show summary".
  */
 function DocumentSummaryPanel({
   summary,
   otherSummaries,
   projectNameById,
   onSave,
+  onLoadBlocks,
 }: {
   summary: DocumentSummary | null;
   otherSummaries: DocumentSummary[];
   projectNameById: Map<string | null, string>;
-  onSave: (text: string) => void;
+  onSave: (text: string, blocks: SummaryBlock[]) => void;
+  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
 }) {
-  const hasSummary = Boolean(summary?.text?.trim());
-  // Open by default when there's already something to read, so it isn't missed.
-  const [open, setOpen] = useState(hasSummary);
-  const [editing, setEditing] = useState(false);
-  const [draft, setDraft] = useState(summary?.text ?? '');
+  const leadText = summary?.text?.trim() ?? '';
+  const slideCount = summary?.blockCount ?? summary?.blocks?.length ?? 0;
+  const hasContent = Boolean(leadText) || slideCount > 0;
 
-  // Re-sync local state when the selected document (and thus its summary)
-  // changes underneath us.
+  // Closed by default — the deck (and its screenshots) is only fetched once the
+  // user explicitly opens the summary, so the workbench stays snappy.
+  const [open, setOpen] = useState(false);
+  const [editing, setEditing] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [draftText, setDraftText] = useState('');
+  const [draftBlocks, setDraftBlocks] = useState<SummaryBlock[]>([]);
+
+  // Re-sync when the selected document (and thus its summary) changes.
   const summaryKey = summary?.id ?? 'none';
   useEffect(() => {
-    setDraft(summary?.text ?? '');
+    setOpen(false);
     setEditing(false);
-    setOpen(Boolean(summary?.text?.trim()));
-  }, [summaryKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [summaryKey]);
+
+  // Lazy-hydrate the deck the first time the panel is opened for viewing.
+  useEffect(() => {
+    if (!open || editing || !summary) return;
+    if (summary.blocks === undefined && slideCount > 0) {
+      setLoading(true);
+      onLoadBlocks(summary.id).finally(() => setLoading(false));
+    }
+  }, [open, editing, summaryKey, summary?.blocks, slideCount]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const startEditing = async () => {
+    setOpen(true);
+    let blocks = summary?.blocks;
+    if (summary && blocks === undefined) {
+      setLoading(true);
+      blocks = await onLoadBlocks(summary.id);
+      setLoading(false);
+    }
+    setDraftText(summary?.text ?? '');
+    setDraftBlocks(blocks ?? []);
+    setEditing(true);
+  };
 
   const save = () => {
-    onSave(draft);
+    onSave(draftText, draftBlocks);
     setEditing(false);
-    if (!draft.trim()) setOpen(false);
+    if (!draftText.trim() && draftBlocks.length === 0) setOpen(false);
   };
-
-  /** Open the panel and jump straight into the editor — the header CTA. */
-  const startEditing = () => { setOpen(true); setEditing(true); };
-
-  // ── Rich-text editing helpers (markdown under the hood) ──
-  const taRef = useRef<HTMLTextAreaElement>(null);
-  const [uploading, setUploading] = useState(false);
-  const [uploadError, setUploadError] = useState<string | null>(null);
-
-  /** Wrap the current selection (or a placeholder) with markdown markers. */
-  const wrapSelection = (prefix: string, suffix = prefix, placeholder = 'text') => {
-    const ta = taRef.current;
-    const start = ta?.selectionStart ?? draft.length;
-    const end = ta?.selectionEnd ?? draft.length;
-    const sel = draft.slice(start, end) || placeholder;
-    const next = draft.slice(0, start) + prefix + sel + suffix + draft.slice(end);
-    setDraft(next);
-    requestAnimationFrame(() => {
-      ta?.focus();
-      ta?.setSelectionRange(start + prefix.length, start + prefix.length + sel.length);
-    });
-  };
-
-  /** Prefix each selected line (for headings / list items). */
-  const prefixLines = (prefix: string) => {
-    const ta = taRef.current;
-    const start = ta?.selectionStart ?? draft.length;
-    const end = ta?.selectionEnd ?? start;
-    const lineStart = draft.lastIndexOf('\n', start - 1) + 1;
-    const before = draft.slice(0, lineStart);
-    const block = draft.slice(lineStart, end) || '';
-    const after = draft.slice(end);
-    const prefixed = (block || prefix.trim()).split('\n').map(l => prefix + l).join('\n');
-    const next = before + prefixed + after;
-    setDraft(next);
-    requestAnimationFrame(() => { ta?.focus(); });
-  };
-
-  /** Insert raw text at the caret. */
-  const insertAtCaret = (snippet: string) => {
-    const ta = taRef.current;
-    const start = ta?.selectionStart ?? draft.length;
-    const end = ta?.selectionEnd ?? draft.length;
-    const next = draft.slice(0, start) + snippet + draft.slice(end);
-    setDraft(next);
-    requestAnimationFrame(() => {
-      ta?.focus();
-      const pos = start + snippet.length;
-      ta?.setSelectionRange(pos, pos);
-    });
-  };
-
-  /** Upload an image (file picker or pasted screenshot) and embed it. */
-  const addFigure = async (file: Blob) => {
-    setUploading(true);
-    setUploadError(null);
-    const res = await uploadFigure(file);
-    setUploading(false);
-    if (!res.ok || !res.publicUrl) {
-      setUploadError(res.error || 'Could not upload the image.');
-      return;
-    }
-    insertAtCaret(`\n![figure](${res.publicUrl})\n`);
-  };
-
-  const onPaste = (e: React.ClipboardEvent<HTMLTextAreaElement>) => {
-    const items = e.clipboardData?.items;
-    if (!items) return;
-    for (const it of Array.from(items)) {
-      if (it.type.startsWith('image/')) {
-        const file = it.getAsFile();
-        if (file) { e.preventDefault(); void addFigure(file); return; }
-      }
-    }
-  };
-
-  const toolbarBtn =
-    'px-1.5 py-0.5 rounded border border-grey-200 bg-white text-[11px] text-tertiary-dark hover:bg-grey-100';
-  const DIAGRAM_TEMPLATE =
-    '\n```mermaid\nflowchart TD\n  A[Start] --> B{Decision}\n  B -->|Yes| C[Do this]\n  B -->|No| D[Stop]\n```\n';
 
   const updatedLabel = summary?.updatedAt
     ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
@@ -1304,9 +1288,9 @@ function DocumentSummaryPanel({
           <span className="text-[11px] font-semibold text-tertiary-dark flex items-center gap-1.5">
             <span aria-hidden>▤</span>
             Summary
-            {hasSummary && (
+            {hasContent && (
               <span className="text-[9px] font-normal text-white bg-secondary rounded-full px-1.5 py-0.5">
-                1
+                {slideCount > 0 ? `${slideCount} slide${slideCount === 1 ? '' : 's'}` : '1'}
               </span>
             )}
             {otherSummaries.length > 0 && (
@@ -1315,7 +1299,9 @@ function DocumentSummaryPanel({
               </span>
             )}
           </span>
-          <span className="text-[10px] text-tertiary-light">{open ? '▴' : '▾'}</span>
+          <span className="text-[10px] text-secondary font-semibold">
+            {open ? 'Hide ▴' : (hasContent ? 'Show summary ▾' : '▾')}
+          </span>
         </button>
         {!editing && (
           <button
@@ -1323,7 +1309,7 @@ function DocumentSummaryPanel({
             onClick={startEditing}
             className="shrink-0 px-2 py-0.5 rounded border border-secondary text-secondary text-[11px] font-semibold hover:bg-secondary hover:text-white transition"
           >
-            {hasSummary ? 'Edit summary' : '+ Add summary'}
+            {hasContent ? 'Edit summary' : '+ Add summary'}
           </button>
         )}
       </div>
@@ -1332,45 +1318,16 @@ function DocumentSummaryPanel({
         <div className="px-3 pb-3 space-y-2">
           {editing ? (
             <div className="space-y-2">
-              {/* Formatting toolbar — inserts lightweight markdown. */}
-              <div className="flex flex-wrap items-center gap-1">
-                <button type="button" title="Bold" className={`${toolbarBtn} font-bold`} onClick={() => wrapSelection('**')}>B</button>
-                <button type="button" title="Italic" className={`${toolbarBtn} italic`} onClick={() => wrapSelection('*')}>I</button>
-                <button type="button" title="Heading" className={toolbarBtn} onClick={() => prefixLines('### ')}>H</button>
-                <button type="button" title="Bulleted list" className={toolbarBtn} onClick={() => prefixLines('- ')}>• List</button>
-                <button type="button" title="Numbered list" className={toolbarBtn} onClick={() => prefixLines('1. ')}>1. List</button>
-                <button type="button" title="Link" className={toolbarBtn} onClick={() => wrapSelection('[', '](https://)', 'label')}>🔗</button>
-                <button type="button" title="Insert a flow-chart / diagram (Mermaid)" className={toolbarBtn} onClick={() => insertAtCaret(DIAGRAM_TEMPLATE)}>⤳ Diagram</button>
-                <label className={`${toolbarBtn} cursor-pointer ${uploading ? 'opacity-50 pointer-events-none' : ''}`} title="Insert a figure / screenshot">
-                  {uploading ? 'Uploading…' : '🖼 Figure'}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={e => { const f = e.target.files?.[0]; if (f) void addFigure(f); e.currentTarget.value = ''; }}
-                  />
-                </label>
-                <span className="text-[10px] text-tertiary-light ml-1">or paste a screenshot</span>
-              </div>
               <textarea
-                ref={taRef}
-                value={draft}
-                onChange={e => setDraft(e.target.value)}
-                onPaste={onPaste}
-                rows={6}
+                value={draftText}
+                onChange={e => setDraftText(e.target.value)}
+                rows={3}
                 autoFocus
-                placeholder="Summarise this paper for the team — key findings, relevance, how to use it… Use the toolbar for headings, bullet lists and figures. Paste a screenshot to embed it."
-                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y font-mono"
+                placeholder="Summarise this paper for the team — key findings, relevance, how to use it…"
+                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y"
               />
-              {uploadError && <p className="text-[10px] text-red-600">{uploadError}</p>}
-              {/* Live preview so figures / lists / diagrams are visible before saving. */}
-              {draft.trim() && (
-                <div className="rounded border border-grey-200 bg-white px-2 py-1.5">
-                  <p className="text-[9px] uppercase tracking-wide text-tertiary-light font-semibold mb-1">Preview</p>
-                  <SummaryContent markdown={draft} />
-                </div>
-              )}
-              <div className="flex items-center gap-2">
+              <SummaryDeckEditor blocks={draftBlocks} onChange={setDraftBlocks} />
+              <div className="flex items-center gap-2 pt-1 border-t border-grey-200">
                 <button
                   type="button"
                   onClick={save}
@@ -1380,7 +1337,7 @@ function DocumentSummaryPanel({
                 </button>
                 <button
                   type="button"
-                  onClick={() => { setDraft(summary?.text ?? ''); setEditing(false); setUploadError(null); }}
+                  onClick={() => setEditing(false)}
                   className="text-[11px] text-tertiary-light hover:text-tertiary"
                 >
                   Cancel
@@ -1388,13 +1345,20 @@ function DocumentSummaryPanel({
                 <span className="text-[10px] text-tertiary-light ml-auto">Shared with the team</span>
               </div>
             </div>
-          ) : hasSummary ? (
-            <div className="space-y-1">
-              <SummaryContent markdown={summary!.text} />
+          ) : hasContent ? (
+            <div className="space-y-2">
+              {leadText && (
+                <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">{leadText}</p>
+              )}
+              {loading && summary?.blocks === undefined ? (
+                <p className="text-[11px] text-tertiary-light italic">Loading slides…</p>
+              ) : (
+                <SummaryDeckViewer blocks={summary?.blocks ?? []} />
+              )}
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setEditing(true)}
+                  onClick={startEditing}
                   className="text-[11px] text-secondary hover:underline"
                 >
                   Edit
@@ -1407,7 +1371,7 @@ function DocumentSummaryPanel({
           ) : (
             <button
               type="button"
-              onClick={() => setEditing(true)}
+              onClick={startEditing}
               className="text-[11px] text-secondary hover:underline"
             >
               + Add summary
@@ -1415,19 +1379,64 @@ function DocumentSummaryPanel({
           )}
 
           {otherSummaries.length > 0 && (
-            <div className="pt-2 border-t border-grey-200 space-y-2">
+            <div className="pt-2 border-t border-grey-200 space-y-3">
               {otherSummaries.map(s => (
-                <div key={s.id}>
-                  <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
-                    {projectNameById.get(s.projectId) ?? 'Other project'}
-                  </p>
-                  <SummaryContent markdown={s.text} className="text-[12px] text-tertiary leading-snug" />
-                </div>
+                <OtherProjectSummary
+                  key={s.id}
+                  summary={s}
+                  projectName={projectNameById.get(s.projectId) ?? 'Other project'}
+                  onLoadBlocks={onLoadBlocks}
+                />
               ))}
             </div>
           )}
         </div>
       )}
+    </div>
+  );
+}
+
+/** Read-only view of another project's summary of the same paper. The slide
+ *  deck is lazy: shown only when the reader clicks "Show N slides". */
+function OtherProjectSummary({
+  summary,
+  projectName,
+  onLoadBlocks,
+}: {
+  summary: DocumentSummary;
+  projectName: string;
+  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
+}) {
+  const [shown, setShown] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const slideCount = summary.blockCount ?? summary.blocks?.length ?? 0;
+
+  const show = async () => {
+    setShown(true);
+    if (summary.blocks === undefined && slideCount > 0) {
+      setLoading(true);
+      await onLoadBlocks(summary.id);
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div className="space-y-1">
+      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">{projectName}</p>
+      {summary.text && (
+        <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{summary.text}</p>
+      )}
+      {slideCount > 0 && !shown && (
+        <button
+          type="button"
+          onClick={show}
+          className="text-[11px] text-secondary hover:underline"
+        >
+          Show {slideCount} slide{slideCount === 1 ? '' : 's'}
+        </button>
+      )}
+      {shown && loading && <p className="text-[11px] text-tertiary-light italic">Loading slides…</p>}
+      {shown && summary.blocks && <SummaryDeckViewer blocks={summary.blocks} />}
     </div>
   );
 }

@@ -29,6 +29,12 @@
 -- ── Allow the new module kind ────────────────────────────────────────────────
 -- The kind CHECK constraint was created inline in 038 as pw_modules_kind_check.
 -- Drop and recreate it with 'meetings' added.
+--
+-- 'content-analysis' is included too even though it's only introduced later (in
+-- 048): when this whole chain is re-applied to a database that's already past
+-- 048 (e.g. the one-shot combined_migrations.sql run), the existing
+-- content-analysis module rows would otherwise fail this stricter constraint.
+-- The set only ever widens, so this is forward-compatible.
 alter table public.pw_modules drop constraint if exists pw_modules_kind_check;
 alter table public.pw_modules add constraint pw_modules_kind_check
   check (kind in (
@@ -36,6 +42,7 @@ alter table public.pw_modules add constraint pw_modules_kind_check
     'recommendations',
     'member-states',
     'policy-analysis',
+    'content-analysis',
     'custom',
     'meetings'
   ));

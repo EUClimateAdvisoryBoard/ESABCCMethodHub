@@ -23,6 +23,7 @@ import type {
   CodeSuggestion,
   CodeNode,
   DocumentSummary,
+  SummaryBlock,
 } from './content-analysis/types';
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
@@ -52,6 +53,9 @@ interface SegmentRow {
   end_char: number;
   text: string | null;
   note: string | null;
+  note_author: string | null;
+  note_author_id: string | null;
+  note_updated_at: string | null;
   project_id: string | null;
   created_at: string | null;
 }
@@ -66,6 +70,9 @@ function rowToSegment(r: SegmentRow): CodedSegment {
     endChar: r.end_char,
     text: r.text ?? '',
     note: r.note ?? '',
+    noteAuthor: r.note_author ?? undefined,
+    noteAuthorId: r.note_author_id ?? undefined,
+    noteUpdatedAt: r.note_updated_at ?? undefined,
     projectId: r.project_id,
     createdAt: r.created_at ?? new Date().toISOString(),
   };
@@ -81,6 +88,9 @@ function segmentToRow(s: CodedSegment): SegmentRow {
     end_char: s.endChar,
     text: s.text ?? '',
     note: s.note ?? '',
+    note_author: s.noteAuthor ?? null,
+    note_author_id: s.noteAuthorId ?? null,
+    note_updated_at: s.noteUpdatedAt ?? null,
     project_id: s.projectId,
     created_at: s.createdAt,
   };
@@ -182,12 +192,20 @@ export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
 export async function updateSegmentNote(
   id: string,
   note: string,
+  author?: { name?: string; id?: string },
 ): Promise<boolean> {
+  const now = new Date().toISOString();
   const sb = getServerSupabase();
   if (sb) {
     const { error } = await sb
       .from('content_analysis_segments')
-      .update({ note, updated_at: new Date().toISOString() })
+      .update({
+        note,
+        note_author: author?.name ?? null,
+        note_author_id: author?.id ?? null,
+        note_updated_at: now,
+        updated_at: now,
+      })
       .eq('id', id);
     if (error) {
       console.error('[content-analysis-store] updateSegmentNote failed:', error.message);
@@ -198,7 +216,13 @@ export async function updateSegmentNote(
   const bag = g.__caSegments!;
   const idx = bag.findIndex(x => x.id === id);
   if (idx < 0) return false;
-  bag[idx] = { ...bag[idx], note };
+  bag[idx] = {
+    ...bag[idx],
+    note,
+    noteAuthor: author?.name,
+    noteAuthorId: author?.id,
+    noteUpdatedAt: now,
+  };
   return true;
 }
 
@@ -426,30 +450,54 @@ interface SummaryRow {
   document_id: string;
   project_id: string | null;
   text: string | null;
+  blocks?: SummaryBlock[] | null;
+  block_count?: number | null;
   created_at: string | null;
   updated_at: string | null;
 }
 
-function rowToSummary(r: SummaryRow): DocumentSummary {
+// Columns shipped in the bulk list — deliberately *excludes* `blocks` so the
+// heavy screenshot payloads are not loaded until the user opens a summary.
+const SUMMARY_LIST_COLUMNS = 'id,document_id,project_id,text,block_count,created_at,updated_at';
+
+/** Light mapping for the bulk list: no `blocks` (lazy), just `blockCount`. */
+function rowToSummaryLight(r: SummaryRow): DocumentSummary {
   return {
     id: r.id,
     documentId: r.document_id,
     projectId: r.project_id,
     text: r.text ?? '',
+    blockCount: typeof r.block_count === 'number' ? r.block_count : 0,
     createdAt: r.created_at ?? new Date().toISOString(),
     updatedAt: r.updated_at ?? r.created_at ?? new Date().toISOString(),
   };
 }
 
+/** Full mapping including the hydrated `blocks` deck. */
+function rowToSummaryFull(r: SummaryRow): DocumentSummary {
+  const blocks = Array.isArray(r.blocks) ? r.blocks : [];
+  return { ...rowToSummaryLight(r), blocks, blockCount: blocks.length };
+}
+
 function summaryToRow(s: DocumentSummary): SummaryRow {
+  const blocks = Array.isArray(s.blocks) ? s.blocks : [];
   return {
     id: s.id,
     document_id: s.documentId,
     project_id: s.projectId,
     text: s.text ?? '',
+    blocks,
+    block_count: blocks.length,
     created_at: s.createdAt,
     updated_at: s.updatedAt,
   };
+}
+
+/** Drop the heavy `blocks` from a summary, leaving a light list entry that
+ *  still carries `blockCount` for the badge / "Show summary" affordance. */
+function stripBlocks(s: DocumentSummary): DocumentSummary {
+  const { blocks, ...rest } = s;
+  return { ...rest, blockCount: Array.isArray(blocks) ? blocks.length : (s.blockCount ?? 0) };
 }
 
 export async function getSummaries(): Promise<DocumentSummary[]> {
@@ -457,16 +505,36 @@ export async function getSummaries(): Promise<DocumentSummary[]> {
   if (sb) {
     const { data, error } = await sb
       .from('content_analysis_summaries')
-      .select('*')
+      .select(SUMMARY_LIST_COLUMNS)
       .order('updated_at', { ascending: true })
       .limit(MAX_ROWS);
     if (error) {
       console.error('[content-analysis-store] getSummaries failed:', error.message);
-      return g.__caSummaries!;
+      return g.__caSummaries!.map(stripBlocks);
     }
-    return (data as SummaryRow[]).map(rowToSummary);
+    return (data as SummaryRow[]).map(rowToSummaryLight);
   }
-  return g.__caSummaries!;
+  return g.__caSummaries!.map(stripBlocks);
+}
+
+/** Fetch a single summary with its full `blocks` deck hydrated. Returns
+ *  `null` when no such summary exists. This is the lazy-load entry point —
+ *  called when the user opens "Show summary". */
+export async function getSummary(id: string): Promise<DocumentSummary | null> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_summaries')
+      .select('*')
+      .eq('id', id)
+      .maybeSingle();
+    if (error) {
+      console.error('[content-analysis-store] getSummary failed:', error.message);
+      return g.__caSummaries!.find(s => s.id === id) ?? null;
+    }
+    return data ? rowToSummaryFull(data as SummaryRow) : null;
+  }
+  return g.__caSummaries!.find(s => s.id === id) ?? null;
 }
 
 export async function upsertSummaries(summaries: DocumentSummary[]): Promise<void> {
@@ -485,9 +553,14 @@ export async function upsertSummaries(summaries: DocumentSummary[]): Promise<voi
   }
   const bag = g.__caSummaries!;
   for (const s of summaries) {
+    const withCount: DocumentSummary = {
+      ...s,
+      blocks: Array.isArray(s.blocks) ? s.blocks : [],
+      blockCount: Array.isArray(s.blocks) ? s.blocks.length : 0,
+    };
     const idx = bag.findIndex(x => x.id === s.id);
-    if (idx >= 0) bag[idx] = s;
-    else bag.push(s);
+    if (idx >= 0) bag[idx] = withCount;
+    else bag.push(withCount);
   }
 }
 

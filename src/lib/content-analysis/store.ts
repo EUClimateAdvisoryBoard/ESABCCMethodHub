@@ -42,6 +42,7 @@ import type {
   ContentAnalysisSnapshot,
   DocumentSummary,
   Project,
+  SummaryBlock,
 } from './types';
 import type { Block, AiClassification } from './types';
 import { buildSeedSnapshot, deriveBlocksFromText } from './seed';
@@ -70,11 +71,15 @@ function postSegments(segments: CodedSegment[]): void {
   }).catch(err => logApiError('postSegments', err));
 }
 
-function patchSegmentNote(id: string, note: string): void {
+function patchSegmentNote(
+  id: string,
+  note: string,
+  author?: { name?: string; id?: string },
+): void {
   fetch('/api/content-analysis/segments', {
     method: 'PATCH',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ id, note }),
+    body: JSON.stringify({ id, note, noteAuthor: author?.name, noteAuthorId: author?.id }),
     keepalive: true,
   }).catch(err => logApiError('patchSegmentNote', err));
 }
@@ -216,7 +221,19 @@ function emit(): void {
 function persist(): void {
   if (typeof window === 'undefined') return;
   try {
-    localStorage.setItem(LS_KEY, JSON.stringify(state));
+    // Strip the heavy summary `blocks` (embedded screenshots) before writing
+    // to localStorage — they live in the durable store and are re-hydrated on
+    // demand, so persisting them would blow the quota for no benefit. We keep
+    // `blockCount` so the "Show summary (N slides)" affordance still renders.
+    const lean: ContentAnalysisSnapshot = {
+      ...state,
+      summaries: state.summaries.map(s =>
+        s.blocks === undefined
+          ? s
+          : { ...s, blocks: undefined, blockCount: s.blocks.length },
+      ),
+    };
+    localStorage.setItem(LS_KEY, JSON.stringify(lean));
   } catch {
     // quota exceeded — silently drop in the beta
   }
@@ -536,9 +553,30 @@ export function useContentAnalysis() {
     deleteSegmentRemote(id);
   }, []);
 
-  const updateSegmentNote = useCallback((id: string, note: string) => {
-    update(s => ({ ...s, segments: s.segments.map(seg => (seg.id === id ? { ...seg, note } : seg)) }));
-    patchSegmentNote(id, note);
+  /** Update the shared note ("comment") on a segment. `author` stamps the
+   *  comment with who wrote it (display name + auth id) so the segments list
+   *  can show a byline; pass it from the signed-in user. */
+  const updateSegmentNote = useCallback((
+    id: string,
+    note: string,
+    author?: { name?: string; id?: string },
+  ) => {
+    const now = new Date().toISOString();
+    update(s => ({
+      ...s,
+      segments: s.segments.map(seg =>
+        seg.id === id
+          ? {
+              ...seg,
+              note,
+              noteAuthor: author?.name,
+              noteAuthorId: author?.id,
+              noteUpdatedAt: now,
+            }
+          : seg,
+      ),
+    }));
+    patchSegmentNote(id, note, author);
   }, []);
 
   /** Resize a coded segment in place — used by the bracket-gutter context
@@ -1057,16 +1095,19 @@ export function useContentAnalysis() {
   // ── Document summary operations ────────────────────────────────────
   /** Set (or clear) the whole-document summary for a document under a
    *  project. The id is deterministic per (project, document) so re-saving
-   *  updates the same row. An empty / whitespace `text` clears the summary.
-   *  Mirrors to the shared store so the whole team sees it. */
+   *  updates the same row. The summary carries a plain-text lead (`text`) and
+   *  an optional rich deck of `blocks` (text, SmartArt-style flowcharts,
+   *  screenshots). It is cleared only when *both* the text and the deck are
+   *  empty. Mirrors to the shared store so the whole team sees it. */
   const setDocumentSummary = useCallback((
     documentId: string,
     projectId: string | null,
     text: string,
+    blocks: SummaryBlock[] = [],
   ): DocumentSummary | null => {
     const id = `summary-${projectId ?? 'master'}-${documentId}`;
     const trimmed = text.trim();
-    if (!trimmed) {
+    if (!trimmed && blocks.length === 0) {
       update(s => ({ ...s, summaries: s.summaries.filter(x => x.id !== id) }));
       deleteSummaryRemote(id);
       return null;
@@ -1080,6 +1121,8 @@ export function useContentAnalysis() {
         documentId,
         projectId,
         text: trimmed,
+        blocks,
+        blockCount: blocks.length,
         createdAt: existing?.createdAt ?? now,
         updatedAt: now,
       };
@@ -1088,6 +1131,42 @@ export function useContentAnalysis() {
     });
     if (saved) postSummary(saved);
     return saved;
+  }, []);
+
+  /** Lazy-load a summary's rich `blocks` deck from the durable store. The
+   *  bulk list ships only `text` + `blockCount`, so the heavy slides (with
+   *  embedded screenshots) are fetched only when the user opens the panel.
+   *  Resolves to the hydrated blocks (`[]` when there are none). No-op /
+   *  cached once `blocks` is present. */
+  const loadSummaryBlocks = useCallback(async (id: string): Promise<SummaryBlock[]> => {
+    const current = state.summaries.find(s => s.id === id);
+    if (current?.blocks !== undefined) return current.blocks;
+    try {
+      const resp = await fetch(
+        `/api/content-analysis/summaries?id=${encodeURIComponent(id)}`,
+        { cache: 'no-store' },
+      );
+      if (!resp.ok) {
+        // 404 ⇒ no durable row yet; treat as an empty deck so we don't refetch.
+        update(s => ({
+          ...s,
+          summaries: s.summaries.map(x => (x.id === id ? { ...x, blocks: [] } : x)),
+        }));
+        return [];
+      }
+      const json = await resp.json();
+      const blocks: SummaryBlock[] = Array.isArray(json?.item?.blocks) ? json.item.blocks : [];
+      update(s => ({
+        ...s,
+        summaries: s.summaries.map(x =>
+          x.id === id ? { ...x, blocks, blockCount: blocks.length } : x,
+        ),
+      }));
+      return blocks;
+    } catch (err) {
+      logApiError('loadSummaryBlocks', err);
+      return current?.blocks ?? [];
+    }
   }, []);
 
   // ── Project operations ─────────────────────────────────────────────
@@ -1159,6 +1238,7 @@ export function useContentAnalysis() {
     applyIngestion,
     applyClassifications,
     setDocumentSummary,
+    loadSummaryBlocks,
     deleteDocumentVersion,
     reorderBlocks,
     splitBlock,
