@@ -31,6 +31,14 @@ flowchart LR
 - Marks every inserted citation with a `CITE:` tag so the "Refresh" action can
   find and update them.
 - Keeps a session-local basket of selected references.
+- Offers a **Project** filter in the search dialog: pick a report (e.g.
+  *Policy Gap 2.0*) to scope the list to just that report's literature —
+  handy when you remember the report but not the exact paper title. The
+  project list is pulled live from `/api/references?facet=projects`.
+
+> **Note:** the search dialog is generated at install time. After updating
+> `ESABCC_RefManager.bas`, re-run `install.cmd` (or re-embed) so the new
+> Project filter appears in Word.
 
 Relevant constants at the top of `ESABCC_RefManager.bas`:
 

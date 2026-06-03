@@ -23,6 +23,7 @@ import { references } from '@/data/references';
 import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
 import type { CSLName } from '@/lib/references/types';
+import { aggregateProjects, referenceInProject } from '@/lib/references/projects';
 
 // Flat shape the Word add-in / VBA consume.
 interface FlatRef {
@@ -191,6 +192,8 @@ function scoreReference(
 export async function GET(request: NextRequest) {
   const search = request.nextUrl.searchParams.get('q') || '';
   const type = request.nextUrl.searchParams.get('type') || '';
+  const project = request.nextUrl.searchParams.get('project') || '';
+  const facet = request.nextUrl.searchParams.get('facet') || '';
   const limit = parseInt(request.nextUrl.searchParams.get('limit') || '50');
   const offset = parseInt(request.nextUrl.searchParams.get('offset') || '0');
 
@@ -228,7 +231,22 @@ export async function GET(request: NextRequest) {
     allRefs.push(r);
   }
 
+  // Facet mode: return just the distinct project list (name + count) so the
+  // Word add-in can populate its "Project" dropdown without parsing the whole
+  // library. Cheap, and avoids shipping thousands of rows for a combo box.
+  if (facet === 'projects') {
+    return NextResponse.json(
+      { projects: aggregateProjects(allRefs as Array<{ tags?: string[] }>) },
+      { headers: { 'Access-Control-Allow-Origin': '*', 'Cache-Control': 'public, s-maxage=120, stale-while-revalidate=600' } },
+    );
+  }
+
   let filtered = allRefs;
+
+  // Project view: scope the shared library to one report's references.
+  if (project) {
+    filtered = filtered.filter(r => referenceInProject(r as { tags?: string[] }, project));
+  }
 
   if (type && type !== 'all') {
     filtered = filtered.filter(r => r.type === type);
