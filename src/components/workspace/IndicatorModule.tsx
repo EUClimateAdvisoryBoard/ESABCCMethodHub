@@ -40,13 +40,6 @@ import IndicatorHistory from './IndicatorHistory';
 import DownloadMenu from './DownloadMenu';
 import CollaborationPanel from './CollaborationPanel';
 import FrameworkBoard from './FrameworkBoard';
-
-/**
- * The Sector Frameworks flow-chart view is scoped to the Policy Gap 2.0
- * project only — that is the workspace whose indicator database is rebuilt
- * from the ESABCC report the frameworks come from.
- */
-const FRAMEWORKS_PROJECT_ID = 'policy-gap-2-0';
 import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
 
 ChartJS.register(
@@ -96,11 +89,15 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
   const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
-  const showFrameworks = projectId === FRAMEWORKS_PROJECT_ID;
-  // For the Policy Gap project the flow-chart overview is the landing view —
-  // the frameworks are what motivate the indicators, so users see them first.
+  // Show the sector flow-chart view wherever the indicator database contains
+  // the ESABCC report cluster (ids prefixed `esabcc-`) — i.e. the report
+  // workspace — regardless of the project's exact id. (Gating on a hard-coded
+  // project id broke when the project was created with a different id.)
+  const showFrameworks = initial.some((i) => i.id.startsWith('esabcc-'));
+  // The flow-chart overview is the landing view — the frameworks are what
+  // motivate the indicators, so users see them first.
   const [view, setView] = useState<'indicators' | 'flowcharts'>(
-    projectId === FRAMEWORKS_PROJECT_ID ? 'flowcharts' : 'indicators'
+    showFrameworks ? 'flowcharts' : 'indicators'
   );
   const [editorOpen, setEditorOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);

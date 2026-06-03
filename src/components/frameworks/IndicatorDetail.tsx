@@ -8,7 +8,9 @@
 'use client';
 import { useEffect } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
+import { INDICATOR_BREAKDOWNS } from '@/data/indicator-breakdowns';
 import IndicatorChart from './IndicatorChart';
+import BreakdownChart from './BreakdownChart';
 
 interface Props {
   title: string;
@@ -58,6 +60,7 @@ export default function IndicatorDetail({ title, code, indicators, onClose, onOp
 
           {indicators.map((ind) => {
             const l = latest(ind);
+            const breakdown = INDICATOR_BREAKDOWNS[ind.id];
             return (
               <div key={ind.id} className="border border-[#E6E7E8] dark:border-[var(--mh-border,#333)] rounded-lg p-4">
                 <div className="flex items-baseline justify-between gap-2 mb-1">
@@ -66,10 +69,10 @@ export default function IndicatorDetail({ title, code, indicators, onClose, onOp
                 </div>
                 <p className="text-xs text-gray-500 mb-3">{ind.description}</p>
 
-                <IndicatorChart indicator={ind} height={150} />
+                {breakdown ? <BreakdownChart spec={breakdown} height={210} /> : <IndicatorChart indicator={ind} height={150} />}
 
                 <dl className="grid grid-cols-2 gap-x-4 gap-y-1 mt-3 text-xs">
-                  {l && (
+                  {l && !breakdown && (
                     <>
                       <dt className="text-gray-400">Latest ({l.year})</dt>
                       <dd className="text-right font-medium">
