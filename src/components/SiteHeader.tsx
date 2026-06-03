@@ -38,6 +38,7 @@ interface Module {
 
 const MODULES: Module[] = [
   { href: '/references',        label: 'References',        short: 'References',        group: 'core', topBar: true },
+  { href: '/frameworks',        label: 'Sector Frameworks', short: 'Frameworks',        group: 'core', topBar: true },
   { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core', topBar: true },
   { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core', topBar: true },
   { href: '/policy-navigator',  label: 'Policy Navigator',  short: 'Policy Navigator',  group: 'core', topBar: true },
