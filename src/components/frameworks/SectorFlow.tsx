@@ -235,15 +235,6 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                                 onChange={(ev) => updateEnabling(e.id, (x) => ({ ...x, label: ev.target.value }))}
                                 className="bg-transparent border-b border-dashed border-[#b3a64a] focus:border-[#5a5320] outline-none min-w-[80px]"
                               />
-                              <input
-                                value={e.chapter ?? ''}
-                                placeholder="ch. —"
-                                onChange={(ev) =>
-                                  updateEnabling(e.id, (x) => ({ ...x, chapter: ev.target.value.trim() || undefined }))
-                                }
-                                className="w-16 bg-white/60 rounded px-1 text-[10px] text-[#5a5320] border border-[#cabf63] outline-none focus:border-[#5a5320]"
-                                title="Chapter reference — clear to remove"
-                              />
                             </span>
                           ) : (
                             <>
@@ -253,7 +244,6 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                                 </span>
                               )}
                               {e.label}
-                              {e.chapter && <span className="text-[#8a7f2e]"> ({e.chapter})</span>}
                               {e.indicatorIds && e.indicatorIds.length > 0 && (
                                 <button
                                   onClick={() => onOpenIndicator({ title: e.label, indicatorIds: e.indicatorIds! })}
