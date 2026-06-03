@@ -1,5 +1,16 @@
 [
   {
+    "title": "Commissioner Roswall's keynote address at the LIFE Awards",
+    "summary": "European Commission Speech Brussels, 03 Jun 2026 Good evening, everyone.\r\nIt is a real pleasure to be here among so many people who dedicate their talent, expertise and energy to protecting our environment and ...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1260",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-03T17:51:56.000Z",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
     "title": "Daily News 03 / 06 / 2026",
     "summary": "European Commission Daily news Brussels, 03 Jun 2026 Eurobarometer shows continued public support for biodiversity protection across Europe\r\nPublished at the start of the EU Green Week, the Special Eurobarometer su...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1246",
@@ -18,16 +29,5 @@
     "sourceLabel": "European Commission",
     "publishedDate": "2026-06-03T11:25:23.000Z",
     "tags": []
-  },
-  {
-    "title": "Questions and answers on the Strategic roadmap for digitalisation and AI in energy",
-    "summary": "European Commission Questions and answers Brussels, 03 Jun 2026 How will this initiative help mitigate the impact of the current energy crisis?",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1185",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-02T22:00:00.000Z",
-    "tags": [
-      "energy"
-    ]
   }
 ]
