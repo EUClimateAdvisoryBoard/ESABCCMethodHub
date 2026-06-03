@@ -194,7 +194,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Lower demand for GHG-intensive materials',
         parents: ['goal'],
-        indicators: [ref('I2', 'Total demand for selected materials', [])],
+        indicators: [
+          ref('I2', 'Total demand for selected materials', [
+            'esabcc-i2a-steel-use',
+            'esabcc-i2b-cement-use',
+            'esabcc-i2c-chemicals-production',
+          ]),
+        ],
       },
       {
         id: 'in-o2',
@@ -359,7 +365,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Sustainable construction',
         parents: ['bu-o1'],
-        indicators: [ref('B4', 'Population and floor area', [])],
+        indicators: [ref('B4', 'Population and floor area', ['esabcc-b4-floor-area'])],
       },
       { id: 'bu-l3', layer: 'lever', label: 'Zero-emission new builds', parents: ['bu-o1'], indicators: [] },
       {
@@ -367,7 +373,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Deep retrofits',
         parents: ['bu-o1'],
-        indicators: [ref('B3', 'Renovation rate', [])],
+        indicators: [ref('B3', 'Renovation rate', ['esabcc-b3-renovation-rate'])],
       },
       {
         id: 'bu-l5',
@@ -404,7 +410,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Lower GHG intensity of production',
         parents: ['goal'],
-        indicators: [ref('A-int', 'Emission intensity of dairy cattle, non-dairy cattle, pigs & swine', [])],
+        indicators: [
+          ref('A2', 'Emission intensity of dairy cattle, non-dairy cattle, pigs & swine', [
+            'esabcc-a2-dairy-ghg-intensity',
+            'esabcc-a2-nondairy-ghg-intensity',
+            'esabcc-a2-pigs-ghg-intensity',
+          ]),
+        ],
       },
       {
         id: 'ag-o2',
@@ -415,7 +427,13 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
       },
     ],
     levers: [
-      { id: 'ag-l1', layer: 'lever', label: 'Low-emission livestock production', parents: ['ag-o1'], indicators: [] },
+      {
+        id: 'ag-l1',
+        layer: 'lever',
+        label: 'Low-emission livestock production',
+        parents: ['ag-o1'],
+        indicators: [ref('A4', 'Production of animal products', ['esabcc-a4-dairy-production'])],
+      },
       {
         id: 'ag-l2',
         layer: 'lever',
@@ -424,8 +442,20 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         indicators: [ref('A3-NUE', 'Nitrogen use efficiency', ['esabcc-a3-nue'])],
       },
       { id: 'ag-l3', layer: 'lever', label: 'Reduced production', parents: ['ag-o2'], indicators: [] },
-      { id: 'ag-l4', layer: 'lever', label: 'Sustainable, healthy diets', parents: ['ag-o2'], indicators: [] },
-      { id: 'ag-l5', layer: 'lever', label: 'Reduced food loss and waste', parents: ['ag-o2'], indicators: [] },
+      {
+        id: 'ag-l4',
+        layer: 'lever',
+        label: 'Sustainable, healthy diets',
+        parents: ['ag-o2'],
+        indicators: [ref('A5', 'Animal product consumption per capita', ['esabcc-a5-bovine-consumption'])],
+      },
+      {
+        id: 'ag-l5',
+        layer: 'lever',
+        label: 'Reduced food loss and waste',
+        parents: ['ag-o2'],
+        indicators: [ref('A6', 'Food waste per capita', ['esabcc-a6-food-waste'])],
+      },
       {
         id: 'ag-l6',
         layer: 'lever',
@@ -459,7 +489,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Maintain or expand the surface area of carbon-rich land-use categories',
         parents: ['goal'],
-        indicators: [ref('L2', 'Overall changes in land-use-change categories', [])],
+        indicators: [ref('L2', 'Overall changes in land-use-change categories', ['esabcc-l2-forest-area'])],
       },
       {
         id: 'lu-o2',
