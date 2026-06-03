@@ -1045,33 +1045,47 @@ function DocumentSummaryPanel({
     if (!draft.trim()) setOpen(false);
   };
 
+  /** Open the panel and jump straight into the editor — the header CTA. */
+  const startEditing = () => { setOpen(true); setEditing(true); };
+
   const updatedLabel = summary?.updatedAt
     ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
     : null;
 
   return (
     <div className="border-b border-grey-200 bg-grey-50/60">
-      <button
-        type="button"
-        onClick={() => setOpen(o => !o)}
-        className="w-full px-3 py-1.5 flex items-center justify-between text-left"
-      >
-        <span className="text-[11px] font-semibold text-tertiary-dark flex items-center gap-1.5">
-          <span aria-hidden>▤</span>
-          Summary
-          {hasSummary && (
-            <span className="text-[9px] font-normal text-white bg-secondary rounded-full px-1.5 py-0.5">
-              1
-            </span>
-          )}
-          {otherSummaries.length > 0 && (
-            <span className="text-[9px] font-normal text-tertiary-light">
-              +{otherSummaries.length} other project{otherSummaries.length === 1 ? '' : 's'}
-            </span>
-          )}
-        </span>
-        <span className="text-[10px] text-tertiary-light">{open ? '▴' : '▾'}</span>
-      </button>
+      <div className="w-full px-3 py-1.5 flex items-center justify-between gap-2">
+        <button
+          type="button"
+          onClick={() => setOpen(o => !o)}
+          className="flex items-center gap-1.5 text-left min-w-0"
+        >
+          <span className="text-[11px] font-semibold text-tertiary-dark flex items-center gap-1.5">
+            <span aria-hidden>▤</span>
+            Summary
+            {hasSummary && (
+              <span className="text-[9px] font-normal text-white bg-secondary rounded-full px-1.5 py-0.5">
+                1
+              </span>
+            )}
+            {otherSummaries.length > 0 && (
+              <span className="text-[9px] font-normal text-tertiary-light">
+                +{otherSummaries.length} other project{otherSummaries.length === 1 ? '' : 's'}
+              </span>
+            )}
+          </span>
+          <span className="text-[10px] text-tertiary-light">{open ? '▴' : '▾'}</span>
+        </button>
+        {!editing && (
+          <button
+            type="button"
+            onClick={startEditing}
+            className="shrink-0 px-2 py-0.5 rounded border border-secondary text-secondary text-[11px] font-semibold hover:bg-secondary hover:text-white transition"
+          >
+            {hasSummary ? 'Edit summary' : '+ Add summary'}
+          </button>
+        )}
+      </div>
 
       {open && (
         <div className="px-3 pb-3 space-y-2">
