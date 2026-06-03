@@ -228,15 +228,38 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
     );
   }
 
+  // Highlight points added after the 2024 ESABCC report so reviewers can
+  // see at a glance which values are the latest updates (orange, larger)
+  // versus the original report figures (blue).
+  const hasAfterReport = selected.data.some(d => d.afterReport);
+  const POST_REPORT_COLOR = '#E8702A';
+  const REPORT_COLOR = '#0065A4';
   const chartData = {
     labels: selected.data.map(d => d.year),
     datasets: [
       {
         label: `${selected.name} (${selected.unit})`,
         data: selected.data.map(d => d.value),
-        borderColor: '#0065A4',
+        borderColor: REPORT_COLOR,
         backgroundColor: 'rgba(0, 101, 164, 0.25)',
         tension: 0.25,
+        pointRadius: selected.data.map(d => (d.afterReport ? 5 : 3)),
+        pointBackgroundColor: selected.data.map(d =>
+          d.afterReport ? POST_REPORT_COLOR : REPORT_COLOR
+        ),
+        pointBorderColor: selected.data.map(d =>
+          d.afterReport ? POST_REPORT_COLOR : REPORT_COLOR
+        ),
+        // Draw the segment that extends past the report as a dashed orange
+        // line so the post-report extension is visually distinct.
+        segment: {
+          borderColor: (ctx: { p1DataIndex: number }) =>
+            selected.data[ctx.p1DataIndex]?.afterReport
+              ? POST_REPORT_COLOR
+              : REPORT_COLOR,
+          borderDash: (ctx: { p1DataIndex: number }) =>
+            selected.data[ctx.p1DataIndex]?.afterReport ? [5, 4] : undefined,
+        },
       },
       ...(selected.targetValue !== undefined && selected.targetYear !== undefined
         ? [
@@ -512,6 +535,18 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 </div>
               )}
             </div>
+            {hasAfterReport && (
+              <p className="mt-2 text-[11px] text-tertiary flex items-center gap-1.5">
+                <span
+                  className="inline-block w-2.5 h-2.5 rounded-full"
+                  style={{ backgroundColor: POST_REPORT_COLOR }}
+                  aria-hidden
+                />
+                Orange points (dashed segment) are the latest updates pulled
+                from the primary source <strong>after</strong> the 2024 ESABCC
+                report — not part of the original report figures.
+              </p>
+            )}
           </div>
 
           <div className="bg-white rounded-xl border border-grey-200 overflow-hidden">
@@ -532,8 +567,24 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                   </tr>
                 )}
                 {selected.data.map(d => (
-                  <tr key={d.year} className="border-t border-grey-100">
-                    <td className="px-3 py-1.5">{d.year}</td>
+                  <tr
+                    key={d.year}
+                    className={`border-t border-grey-100 ${
+                      d.afterReport ? 'bg-orange-50' : ''
+                    }`}
+                  >
+                    <td className="px-3 py-1.5">
+                      {d.year}
+                      {d.afterReport && (
+                        <span
+                          className="ml-2 align-middle text-[9px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded text-white"
+                          style={{ backgroundColor: '#E8702A' }}
+                          title="Added after the 2024 ESABCC report — latest update from the primary source"
+                        >
+                          new
+                        </span>
+                      )}
+                    </td>
                     <td className="px-3 py-1.5 text-right font-mono">{d.value}</td>
                     <td className="px-3 py-1.5 text-right">
                       <button

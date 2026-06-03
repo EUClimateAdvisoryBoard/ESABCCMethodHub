@@ -40,6 +40,15 @@ export type IndicatorCategory =
 export interface IndicatorDataPoint {
   year: number;
   value: number;
+  /**
+   * True for data points added AFTER the 2024 ESABCC report
+   * ("Towards EU climate neutrality") was published — i.e. newer years
+   * pulled from the primary publisher that were not part of the report's
+   * underlying-data workbook. The Indicator Database chart/table render
+   * these distinctly so reviewers can see which values are the latest
+   * updates rather than original report figures.
+   */
+  afterReport?: boolean;
 }
 
 export interface Indicator {

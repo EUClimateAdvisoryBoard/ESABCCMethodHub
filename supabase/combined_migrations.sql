@@ -5686,13 +5686,13 @@ update public.pw_modules
 -- ----------------------------------------------------------------------------
 
 -- ─────────────────────────────────────────────────────────────────────────────
--- Add step-by-step DERIVATION DESCRIPTIONS to the indicator calc-space layouts.
+-- DERIVATION DESCRIPTIONS for the indicator calc-space layouts (scientific + caveats).
 --
--- Companion to 045_seed_indicator_derivations.sql: same 45 layouts, but each
--- carries a fully documented `derivation` field (what it measures, the steps,
--- every column and why it's needed, the readable formula, the scientific
--- reasoning, and an honest caveat where the derivation is approximate or is
--- really the published series). `do update` so it refreshes rows 045 seeded.
+-- Companion to 045_seed_indicator_derivations.sql: same 45 layouts, each with a
+-- documented `derivation` field — what it measures, the steps, every column and
+-- why it's needed, the readable formula, the scientific reasoning, and an honest
+-- '⚠ Caveat' where the derivation is approximate or is really the published
+-- series. `do update` so it refreshes the rows 045 seeded.
 -- ─────────────────────────────────────────────────────────────────────────────
 
 insert into public.pw_indicator_sheets (indicator_id, layout)
