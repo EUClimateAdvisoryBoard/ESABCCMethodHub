@@ -55,6 +55,13 @@ import { EmptyState, LoadingState } from '@/components/ui/StateView';
 import Skeleton from '@/components/ui/Skeleton';
 import { showToast } from '@/components/ui/ToastHost';
 import { useClipboardIdentifier } from '@/lib/references/use-clipboard-identifier';
+import {
+  splitTags,
+  combineTags,
+  parseCommaList,
+  referenceInProject,
+  aggregateProjects,
+} from '@/lib/references/projects';
 
 // Map the static references (old format) to the Supabase Reference type so
 // ReferenceList can render them without changes.
@@ -250,13 +257,14 @@ export default function ReferencesPage() {
   const router = useRouter();
   const pathname = usePathname();
   const initialUrl = useMemo(() => {
-    if (typeof window === 'undefined') return { lib: null as string | null, view: 'list' as View, q: '' };
+    if (typeof window === 'undefined') return { lib: null as string | null, view: 'list' as View, q: '', project: '' };
     const sp = new URLSearchParams(window.location.search);
     const v = sp.get('view');
     return {
       lib: sp.get('lib') || null,
       view: (v === 'list' || v === 'add' || v === 'edit' || v === 'import') ? (v as View) : ('list' as View),
       q:   sp.get('q')   || '',
+      project: sp.get('project') || '',
     };
   }, []);
 
@@ -266,6 +274,9 @@ export default function ReferencesPage() {
   const [editingRef, setEditingRef] = useState<Reference | null>(null);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState(initialUrl.q);
+  // Active "project view" — when set, the shared library is filtered to the
+  // references tagged for that report (e.g. "Policy Gap 2.0"). Empty = all.
+  const [projectFilter, setProjectFilter] = useState(initialUrl.project);
 
   // Track the most recently opened reference so the Recent panel in the
   // unified side rail (item 1.2) stays populated. The dispatched event
@@ -290,12 +301,14 @@ export default function ReferencesPage() {
     else params.delete('view');
     if (searchQuery) params.set('q', searchQuery);
     else params.delete('q');
+    if (projectFilter) params.set('project', projectFilter);
+    else params.delete('project');
     const qs = params.toString();
     const next = qs ? `${pathname}?${qs}` : pathname;
     if (window.location.pathname + window.location.search !== next) {
       router.replace(next, { scroll: false });
     }
-  }, [selectedLibraryId, view, searchQuery, pathname, router]);
+  }, [selectedLibraryId, view, searchQuery, projectFilter, pathname, router]);
   const [usingFallback, setUsingFallback] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
   const [fallbackEditingRef, setFallbackEditingRef] = useState<Reference | null>(null);
@@ -483,31 +496,46 @@ export default function ReferencesPage() {
   // authors, DOI, journal, tags, or year of a reference.  Use double-quoted
   // phrases to search for an exact phrase (e.g. `"carbon border" adjustment`).
   const displayedReferences = useMemo(() => {
-    if (!usingFallback || !searchQuery.trim()) return references;
-    // Tokenize: keep quoted phrases as single tokens, split rest on whitespace
-    const raw = searchQuery.trim().toLowerCase();
-    const tokens: string[] = [];
-    const quoteRe = /"([^"]+)"|(\S+)/g;
-    let m: RegExpExecArray | null;
-    while ((m = quoteRe.exec(raw)) !== null) {
-      const tok = (m[1] || m[2] || '').trim();
-      if (tok) tokens.push(tok);
+    let base = references;
+    // Fallback mode searches client-side; Supabase mode searches server-side
+    // (the query is baked into `references` by loadReferences).
+    if (usingFallback && searchQuery.trim()) {
+      // Tokenize: keep quoted phrases as single tokens, split rest on whitespace
+      const raw = searchQuery.trim().toLowerCase();
+      const tokens: string[] = [];
+      const quoteRe = /"([^"]+)"|(\S+)/g;
+      let m: RegExpExecArray | null;
+      while ((m = quoteRe.exec(raw)) !== null) {
+        const tok = (m[1] || m[2] || '').trim();
+        if (tok) tokens.push(tok);
+      }
+      if (tokens.length > 0) {
+        base = base.filter((r) => {
+          const haystack = [
+            r.title || '',
+            r.authors?.map((a) => a.literal || `${a.given || ''} ${a.family || ''}`).join(' ') || '',
+            r.doi || '',
+            r.container_title || '',
+            r.abstract || '',
+            (r.tags || []).join(' '),
+            r.year ? String(r.year) : '',
+            r.item_type || '',
+          ].join(' ').toLowerCase();
+          return tokens.every((t) => haystack.includes(t));
+        });
+      }
     }
-    if (tokens.length === 0) return references;
-    return references.filter((r) => {
-      const haystack = [
-        r.title || '',
-        r.authors?.map((a) => a.literal || `${a.given || ''} ${a.family || ''}`).join(' ') || '',
-        r.doi || '',
-        r.container_title || '',
-        r.abstract || '',
-        (r.tags || []).join(' '),
-        r.year ? String(r.year) : '',
-        r.item_type || '',
-      ].join(' ').toLowerCase();
-      return tokens.every((t) => haystack.includes(t));
-    });
-  }, [references, searchQuery, usingFallback]);
+    // Project view — one shared library, filtered to a report's references.
+    // Applies in both modes.
+    if (projectFilter.trim()) {
+      base = base.filter((r) => referenceInProject(r, projectFilter));
+    }
+    return base;
+  }, [references, searchQuery, usingFallback, projectFilter]);
+
+  // Distinct projects (report contexts) across the loaded library, with counts.
+  const projectSummaries = useMemo(() => aggregateProjects(references), [references]);
+  const knownProjectNames = useMemo(() => projectSummaries.map((p) => p.name), [projectSummaries]);
 
   // id → display title map for the recent-annotations feed.  The feed stores
   // references by id in localStorage, but only knows the id — so we hand it a
@@ -616,6 +644,11 @@ export default function ReferencesPage() {
                 onSelect={setSelectedLibraryId}
                 onRefreshNeeded={loadLibraries}
               />
+              <ReferencesProjectsPanel
+                projects={projectSummaries}
+                activeProject={projectFilter}
+                onPick={setProjectFilter}
+              />
               <ReferencesTagsPanel
                 references={references}
                 onPick={setSearchQuery}
@@ -632,6 +665,43 @@ export default function ReferencesPage() {
           <div className="flex-1 min-w-0">
             {/* Inline toast banners removed — replaced by the typed ToastHost
                 (see showToast() calls in handleAddToReadingList / onShare). */}
+
+            {/* Project view bar — works in both fallback and Supabase modes.
+                Lets the user scope the shared library to one report's
+                references; the rail panel and this control share state. */}
+            {projectSummaries.length > 0 && (view === 'list') && (
+              <div className="flex flex-wrap items-center gap-2 mb-3 text-sm">
+                <label htmlFor="ref-project-view" className="text-tertiary font-medium">
+                  Project view:
+                </label>
+                <select
+                  id="ref-project-view"
+                  value={projectFilter}
+                  onChange={(e) => setProjectFilter(e.target.value)}
+                  className="bg-grey-100 border border-grey-200 rounded px-2 py-1 text-tertiary-dark"
+                >
+                  <option value="">All references</option>
+                  {projectSummaries.map((p) => (
+                    <option key={p.name} value={p.name}>{p.name} ({p.count})</option>
+                  ))}
+                </select>
+                {projectFilter.trim() && (
+                  <>
+                    <span className="text-tertiary">
+                      {displayedReferences.length.toLocaleString()} in “{projectFilter}”
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setProjectFilter('')}
+                      className="text-secondary hover:underline"
+                    >
+                      Clear
+                    </button>
+                  </>
+                )}
+              </div>
+            )}
+
             {showFallbackContent && (
               <>
                 {/* Fallback header */}
@@ -685,6 +755,8 @@ export default function ReferencesPage() {
                       setShowAddForm(false);
                     }}
                     onCancel={() => setShowAddForm(false)}
+                    knownProjects={knownProjectNames}
+                    defaultProject={projectFilter}
                   />
                 )}
 
@@ -692,6 +764,7 @@ export default function ReferencesPage() {
                 {fallbackEditingRef && !showAddForm && (
                   <AddReferenceForm
                     editingRef={fallbackEditingRef}
+                    knownProjects={knownProjectNames}
                     onSave={async (ref) => {
                       const result = await putRefToApi({
                         id: ref.id,
@@ -818,28 +891,36 @@ export default function ReferencesPage() {
                 {view === 'list' && (
                   loading ? (
                     <Skeleton.Stack count={5} />
-                  ) : references.length === 0 ? (
-                    <EmptyState
-                      title={searchQuery ? 'No matches' : 'This library is empty'}
-                      body={
-                        searchQuery
-                          ? `Nothing in “${selectedLibrary?.name ?? 'this library'}” matches “${searchQuery}”. Try a broader query, or clear the search.`
-                          : 'Start your library by importing a BibTeX/RIS file, or by adding a reference one at a time.'
-                      }
-                      primaryAction={
-                        searchQuery
-                          ? { label: 'Clear search', onClick: () => setSearchQuery('') }
-                          : { label: '+ Add reference', onClick: async () => { const u = await requireAuth('Sign in to add references.'); if (u) { setEditingRef(null); setView('add'); } } }
-                      }
-                      secondaryActions={
-                        searchQuery
-                          ? undefined
-                          : [{ label: 'Import file', onClick: async () => { const u = await requireAuth('Sign in to import references.'); if (u) setView('import'); } }]
-                      }
-                    />
+                  ) : displayedReferences.length === 0 ? (
+                    projectFilter.trim() ? (
+                      <EmptyState
+                        title="No references in this project"
+                        body={`Nothing in “${selectedLibrary?.name ?? 'this library'}” is tagged for “${projectFilter}” yet. Open a reference and add the project under “Report / Project”, or clear the project view.`}
+                        primaryAction={{ label: 'Clear project view', onClick: () => setProjectFilter('') }}
+                      />
+                    ) : (
+                      <EmptyState
+                        title={searchQuery ? 'No matches' : 'This library is empty'}
+                        body={
+                          searchQuery
+                            ? `Nothing in “${selectedLibrary?.name ?? 'this library'}” matches “${searchQuery}”. Try a broader query, or clear the search.`
+                            : 'Start your library by importing a BibTeX/RIS file, or by adding a reference one at a time.'
+                        }
+                        primaryAction={
+                          searchQuery
+                            ? { label: 'Clear search', onClick: () => setSearchQuery('') }
+                            : { label: '+ Add reference', onClick: async () => { const u = await requireAuth('Sign in to add references.'); if (u) { setEditingRef(null); setView('add'); } } }
+                        }
+                        secondaryActions={
+                          searchQuery
+                            ? undefined
+                            : [{ label: 'Import file', onClick: async () => { const u = await requireAuth('Sign in to import references.'); if (u) setView('import'); } }]
+                        }
+                      />
+                    )
                   ) : (
                     <ReferenceList
-                      references={references}
+                      references={displayedReferences}
                       onRefreshNeeded={loadReferences}
                       onEditReference={handleEditReference}
                       onAddToReadingList={handleAddToReadingList}
@@ -854,6 +935,8 @@ export default function ReferencesPage() {
                       editingRef={view === 'edit' ? editingRef : null}
                       onSaved={handleSaved}
                       onCancel={() => { setView('list'); setEditingRef(null); }}
+                      knownProjects={knownProjectNames}
+                      defaultProject={view === 'add' ? projectFilter : ''}
                     />
                   </div>
                 )}
@@ -922,12 +1005,18 @@ function AddReferenceForm({
   editingRef,
   onDelete,
   onShare,
+  knownProjects = [],
+  defaultProject = '',
 }: {
   onSave: (ref: Reference) => void;
   onCancel: () => void;
   editingRef?: Reference | null;
   onDelete?: () => void;
   onShare?: () => void;
+  /** Existing project names across the library, for autocomplete. */
+  knownProjects?: string[];
+  /** Pre-fill the project field when adding inside an active project view. */
+  defaultProject?: string;
 }) {
   const isEditing = !!editingRef;
   const [title, setTitle] = useState(editingRef?.title || '');
@@ -940,7 +1029,13 @@ function AddReferenceForm({
   const [volume, setVolume] = useState(editingRef?.csl_json?.volume || '');
   const [issue, setIssue] = useState(editingRef?.csl_json?.issue || '');
   const [pages, setPages] = useState(editingRef?.csl_json?.page || '');
-  const [tags, setTags] = useState(editingRef?.tags?.join(', ') || '');
+  // Plain tags and project tags ("project:<report>") are edited separately so
+  // the report context stays a first-class field. See lib/references/projects.
+  const initialSplit = splitTags(editingRef?.tags);
+  const [tags, setTags] = useState(initialSplit.plain.join(', '));
+  const [projects, setProjects] = useState(
+    (editingRef ? initialSplit.projects : (defaultProject ? [defaultProject] : [])).join(', ')
+  );
   const [notes, setNotes] = useState(editingRef?.notes || '');
   const [fundingText, setFundingText] = useState(() =>
     (editingRef?.funding || []).map(formatFundingLine).join('\n')
@@ -1235,7 +1330,10 @@ function AddReferenceForm({
       abstract: editingRef?.abstract ?? null,
       container_title: journal || null,
       citation_key: editingRef?.citation_key ?? null,
-      tags: tags ? tags.split(',').map(t => t.trim()).filter(Boolean) : null,
+      tags: (() => {
+        const combined = combineTags(parseCommaList(tags), parseCommaList(projects));
+        return combined.length > 0 ? combined : null;
+      })(),
       notes: notes || null,
       pdf_url: pdfUrl || null,
       funding: funding.length > 0 ? funding : null,
@@ -1550,6 +1648,24 @@ function AddReferenceForm({
             )}
           </div>
           <div className="col-span-2">
+            <label className={labelClass}>
+              Report / Project{' '}
+              <span className="font-normal text-tertiary text-xs">
+                (comma-separated — the report this reference is used in, e.g. Policy Gap 2.0)
+              </span>
+            </label>
+            <input
+              className={inputClass}
+              value={projects}
+              onChange={e => setProjects(e.target.value)}
+              list="add-form-known-projects"
+              placeholder="Policy Gap 2.0"
+            />
+            <datalist id="add-form-known-projects">
+              {knownProjects.map(p => <option key={p} value={p} />)}
+            </datalist>
+          </div>
+          <div className="col-span-2">
             <label className={labelClass}>Tags (comma-separated)</label>
             <input className={inputClass} value={tags} onChange={e => setTags(e.target.value)} placeholder="climate, policy, adaptation" />
           </div>
@@ -1606,6 +1722,56 @@ function trackRecentReference(id: string) {
   } catch {
     /* ignore quota / parse errors */
   }
+}
+
+/**
+ * "Projects" rail panel — lists the report contexts (project tags) found in
+ * the library with counts. Clicking a project scopes the list to that report;
+ * clicking the active one again clears the filter. This is the discovery
+ * surface for the project view requested in the M·01 brief.
+ */
+function ReferencesProjectsPanel({
+  projects,
+  activeProject,
+  onPick,
+}: {
+  projects: { name: string; count: number }[];
+  activeProject: string;
+  onPick: (name: string) => void;
+}) {
+  if (projects.length === 0) return null;
+  const active = activeProject.trim().toLowerCase();
+
+  return (
+    <div className="bg-white rounded-lg border border-grey-200 p-3">
+      <h3 className="text-[10px] uppercase tracking-wider text-grey-500 font-semibold mb-2">
+        Projects / Reports
+      </h3>
+      <ul className="space-y-1">
+        {projects.map(({ name, count }) => {
+          const isActive = active === name.toLowerCase();
+          return (
+            <li key={name}>
+              <button
+                type="button"
+                onClick={() => onPick(isActive ? '' : name)}
+                aria-pressed={isActive}
+                className={`w-full flex items-center justify-between gap-2 text-left text-[12px] px-2 py-1 rounded border transition mh-focus mh-motion-fast ${
+                  isActive
+                    ? 'bg-secondary text-white border-secondary'
+                    : 'bg-white text-tertiary-dark border-grey-200 hover:border-secondary'
+                }`}
+                title={`Show only references used in ${name}`}
+              >
+                <span className="truncate">{name}</span>
+                <span className={`mh-tnum ${isActive ? 'text-white/85' : 'text-grey-500'}`}>{count}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
 
 function ReferencesTagsPanel({

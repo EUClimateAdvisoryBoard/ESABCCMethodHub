@@ -114,6 +114,47 @@ All tables have RLS policies keyed to `added_by` / `library_id`. See
 [Data & GDPR](../infrastructure/data-gdpr.md) for the retention and
 erasure rules.
 
+## Projects — tagging a reference with its report context
+
+The library is **one shared bibliography**, not one per report. To keep
+it that way while still answering "which papers did we use for *Policy
+Gap 2.0*?", a reference can be filed under one or more **projects** (the
+report it was added in the context of).
+
+Projects are modelled as a reserved namespace inside the existing
+`tags[]` array using a `project:` prefix — no schema migration, and the
+membership rides along through CSL `keyword` / BibTeX / RIS exports like
+any other tag:
+
+```
+tag  "project:Policy Gap 2.0"   ⇄   project name  "Policy Gap 2.0"
+```
+
+The helper module
+[`src/lib/references/projects.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/references/projects.ts)
+owns the convention (`splitTags`, `combineTags`, `aggregateProjects`,
+`referenceInProject`). Both reference forms surface a dedicated
+**Report / Project** field (separate from free tags, with autocomplete
+over existing projects), and adding a reference while a project view is
+active pre-fills that report.
+
+Three places consume it:
+
+- **Project view (web).** The reference manager's left rail lists every
+  project with a count; a *Project view* dropdown above the list filters
+  the shared library down to one report. Project membership is also shown
+  as a distinct badge on each row, and the active project round-trips
+  through the URL (`?project=…`) so a scoped view is shareable.
+- **Word companion app.** The desktop add-in
+  ([`word-addin-app/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/word-addin-app))
+  gains a **Project** filter that narrows the pick-list to one report's
+  literature — useful when you remember the report but not the exact
+  paper title. The control hides itself when the dataset carries no
+  project tags.
+
+This is the lightweight, per-reference complement to **Report Plans**
+(below), which pin a whole Word document to a pre-agreed bibliography.
+
 ## Deep dive
 
 ??? abstract "DOI resolution — Crossref request/response shape"
