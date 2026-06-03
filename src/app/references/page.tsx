@@ -144,6 +144,7 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
       issue: string; pages: string; url: string; addedAt: string;
       pdfUrl?: string; source?: string;
       funding?: FundingEntry[] | null;
+      tags?: string[] | null;
     }) => {
       const yearNum = r.year ? parseInt(r.year, 10) : null;
       // Derive a source-specific tag so users can tell at a glance
@@ -153,6 +154,20 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
         r.source === 'vba' ? 'word' :
         r.source === 'web' ? 'web' :
         'custom';
+      // Preserve the tags stored in the DB (free tags + project tags) and
+      // append the derived source tag. Earlier this map dropped r.tags and
+      // kept only the source tag, which made saved project tags vanish on
+      // reload even though they were persisted.
+      const mergedTags: string[] = [];
+      const seenTag = new Set<string>();
+      for (const t of [...(Array.isArray(r.tags) ? r.tags : []), sourceTag]) {
+        const v = (t || '').trim();
+        if (!v) continue;
+        const k = v.toLowerCase();
+        if (seenTag.has(k)) continue;
+        seenTag.add(k);
+        mergedTags.push(v);
+      }
       return {
         id: r.id,
         library_id: STATIC_LIBRARY_ID,
@@ -177,7 +192,7 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
         abstract: null,
         container_title: r.journal || null,
         citation_key: null,
-        tags: [sourceTag] as string[],
+        tags: mergedTags,
         notes: null,
         pdf_url: r.pdfUrl || null,
         funding: r.funding ?? null,
