@@ -6,7 +6,7 @@ import {
   updateSegmentNote,
   upsertSegments,
 } from '@/lib/content-analysis-store';
-import type { CodedSegment } from '@/lib/content-analysis/types';
+import type { CodedSegment, PdfAnchor } from '@/lib/content-analysis/types';
 
 /**
  * Coded-segments API
@@ -29,9 +29,33 @@ const MAX_NOTE_LEN = 4000;
 const MAX_NAME_LEN = 200;
 const MAX_BATCH = 500;
 
+const MAX_ANCHOR_RECTS = 200;
+
 function clampString(v: unknown, max: number): string {
   if (typeof v !== 'string') return '';
   return v.slice(0, max);
+}
+
+/** Accept a well-formed `{ page, rects: [[x,y,w,h], …] }` PDF anchor, dropping
+ *  anything malformed so a bad client payload can't poison the row. */
+function coercePdfAnchor(raw: unknown): PdfAnchor | undefined {
+  if (!raw || typeof raw !== 'object') return undefined;
+  const r = raw as Record<string, unknown>;
+  if (typeof r.page !== 'number' || !Number.isFinite(r.page) || !Array.isArray(r.rects)) {
+    return undefined;
+  }
+  const rects: number[][] = [];
+  for (const rect of r.rects.slice(0, MAX_ANCHOR_RECTS)) {
+    if (
+      Array.isArray(rect) &&
+      rect.length === 4 &&
+      rect.every(n => typeof n === 'number' && Number.isFinite(n))
+    ) {
+      rects.push(rect as number[]);
+    }
+  }
+  if (rects.length === 0) return undefined;
+  return { page: r.page, rects };
 }
 
 function coerceSegment(raw: unknown): CodedSegment | null {
@@ -46,6 +70,7 @@ function coerceSegment(raw: unknown): CodedSegment | null {
     documentId: r.documentId,
     codeId: r.codeId,
     blockId: typeof r.blockId === 'string' ? r.blockId : undefined,
+    pdfAnchor: coercePdfAnchor(r.pdfAnchor),
     startChar: r.startChar,
     endChar: r.endChar,
     text: clampString(r.text, MAX_TEXT_LEN),

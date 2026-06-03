@@ -21,6 +21,10 @@ export interface PdfTextSelection {
   page: number;
   /** Block the selection started in, if it could be hit-tested. */
   blockId: string | null;
+  /** Exact selection rectangles in PDF user-space points (the same space as
+   *  block bboxes), so the resulting segment highlights the real selected
+   *  text rather than the whole enclosing block. */
+  rects: number[][];
   /** Client rect of the selection, for anchoring the floating toolbar. */
   rect: DOMRect;
 }
@@ -32,6 +36,9 @@ interface Props {
   segments: CodedSegment[];
   codes: CodeNode[];
   highlightedBlockId?: string | null;
+  /** The coded segment currently selected in the sidebar. When it carries a
+   *  precise PDF anchor we scroll to (and emphasise) that exact passage. */
+  highlightedSegmentId?: string | null;
   /** Fired when the user selects text directly on a page, so the parent can
    *  open the tag picker and create a coded segment in place. When provided,
    *  the page text layer is made selectable and block overlays are
@@ -66,6 +73,7 @@ export default function PdfDocumentView({
   segments,
   codes,
   highlightedBlockId,
+  highlightedSegmentId,
   onSelectText,
   onSelectBlock,
 }: Props) {
@@ -100,10 +108,13 @@ export default function PdfDocumentView({
     return map;
   }, [doc.blocks]);
 
+  // Block-anchored segments (legacy / no precise anchor) → tinted over their
+  // whole block. Segments that carry a precise `pdfAnchor` are drawn exactly
+  // over the selected text instead and grouped by page below.
   const segmentsByBlock = useMemo(() => {
     const map = new Map<string, CodedSegment[]>();
     for (const s of segments) {
-      if (!s.blockId) continue;
+      if (!s.blockId || s.pdfAnchor) continue;
       const arr = map.get(s.blockId) ?? [];
       arr.push(s);
       map.set(s.blockId, arr);
@@ -111,27 +122,52 @@ export default function PdfDocumentView({
     return map;
   }, [segments]);
 
+  // Precisely-anchored segments → one highlight per selection rectangle, drawn
+  // over the exact text the analyst marked.
+  const anchoredByPage = useMemo(() => {
+    const map = new Map<number, CodedSegment[]>();
+    for (const s of segments) {
+      if (!s.pdfAnchor) continue;
+      const arr = map.get(s.pdfAnchor.page) ?? [];
+      arr.push(s);
+      map.set(s.pdfAnchor.page, arr);
+    }
+    return map;
+  }, [segments]);
+
   const codeById = useMemo(() => new Map(codes.map(c => [c.id, c])), [codes]);
 
-  // Scroll the highlighted block into view (e.g. when a coded segment is
-  // clicked in the sidebar). The target page/overlay may not be rendered yet,
-  // so retry a few times while react-pdf catches up.
+  // Scroll the highlighted passage into view (e.g. when a coded segment is
+  // clicked in the sidebar). Prefer the precise per-segment anchor — it jumps
+  // to the exact marked text, and works even when no block was hit-tested —
+  // and fall back to the enclosing block for legacy segments. The target
+  // page/overlay may not be rendered yet, so retry a few times while react-pdf
+  // catches up.
   useEffect(() => {
-    if (!highlightedBlockId) return;
+    if (!highlightedSegmentId && !highlightedBlockId) return;
     let cancelled = false;
+    const selectors = [
+      highlightedSegmentId
+        ? `[data-segment-id="${CSS.escape(highlightedSegmentId)}"]`
+        : null,
+      highlightedBlockId
+        ? `[data-block-id="${CSS.escape(highlightedBlockId)}"]`
+        : null,
+    ].filter((s): s is string => s !== null);
     const tryScroll = (attempt: number) => {
       if (cancelled) return;
-      const sel = `[data-block-id="${CSS.escape(highlightedBlockId)}"]`;
-      const el = containerRef.current?.querySelector(sel);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        return;
+      for (const sel of selectors) {
+        const el = containerRef.current?.querySelector(sel);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
       }
       if (attempt < 12) setTimeout(() => tryScroll(attempt + 1), 150);
     };
     tryScroll(0);
     return () => { cancelled = true; };
-  }, [highlightedBlockId]);
+  }, [highlightedSegmentId, highlightedBlockId]);
 
   return (
     <div ref={containerRef} className="flex flex-col items-center">
@@ -154,8 +190,10 @@ export default function PdfDocumentView({
             width={pageWidth}
             blocks={blocksByPage.get(pageNumber) ?? []}
             segmentsByBlock={segmentsByBlock}
+            anchoredSegments={anchoredByPage.get(pageNumber) ?? []}
             codeById={codeById}
             highlightedBlockId={highlightedBlockId ?? null}
+            highlightedSegmentId={highlightedSegmentId ?? null}
             onSelectText={onSelectText}
             onSelectBlock={onSelectText ? undefined : onSelectBlock}
           />
@@ -175,8 +213,11 @@ interface PageProps {
   width: number;
   blocks: Block[];
   segmentsByBlock: Map<string, CodedSegment[]>;
+  /** Segments on this page that carry a precise `pdfAnchor`. */
+  anchoredSegments: CodedSegment[];
   codeById: Map<string, CodeNode>;
   highlightedBlockId: string | null;
+  highlightedSegmentId: string | null;
   onSelectText?: (sel: PdfTextSelection) => void;
   onSelectBlock?: (blockId: string) => void;
 }
@@ -186,8 +227,10 @@ function PdfPageOverlay({
   width,
   blocks,
   segmentsByBlock,
+  anchoredSegments,
   codeById,
   highlightedBlockId,
+  highlightedSegmentId,
   onSelectText,
   onSelectBlock,
 }: PageProps) {
@@ -212,12 +255,28 @@ function PdfPageOverlay({
     const wrap = wrapRef.current;
     if (!wrap || !wrap.contains(range.startContainer)) return;
 
-    const rects = range.getClientRects();
-    const anchorRect = rects.length ? rects[0] : range.getBoundingClientRect();
+    const clientRects = range.getClientRects();
+    const anchorRect = clientRects.length ? clientRects[0] : range.getBoundingClientRect();
 
+    // Convert the selection's client rectangles into page-relative PDF
+    // user-space points so the highlight can be re-drawn over the exact text
+    // on any later render (and scrolled to precisely). Coalesce slivers and
+    // near-duplicate rows pdfjs sometimes emits per glyph run.
+    const pdfRects: number[][] = [];
     let blockId: string | null = null;
     if (scale != null) {
       const wrapRect = wrap.getBoundingClientRect();
+      for (const cr of Array.from(clientRects)) {
+        if (cr.width < 1 || cr.height < 1) continue;
+        pdfRects.push([
+          (cr.left - wrapRect.left) / scale,
+          (cr.top - wrapRect.top) / scale,
+          cr.width / scale,
+          cr.height / scale,
+        ]);
+      }
+      // Still hit-test a block for back-compat (e.g. the extracted-text view
+      // and offset resolution), using the selection's start point.
       const px = (anchorRect.left - wrapRect.left) / scale;
       const py = (anchorRect.top - wrapRect.top) / scale;
       for (const b of blocks) {
@@ -229,7 +288,7 @@ function PdfPageOverlay({
         }
       }
     }
-    onSelectText({ text, page: pageNumber, blockId, rect: range.getBoundingClientRect() });
+    onSelectText({ text, page: pageNumber, blockId, rects: pdfRects, rect: range.getBoundingClientRect() });
   }
 
   return (
@@ -258,6 +317,15 @@ function PdfPageOverlay({
               codeById={codeById}
               isHighlighted={highlightedBlockId === block.id}
               onClick={onSelectBlock ? () => onSelectBlock(block.id) : undefined}
+            />
+          ))}
+          {anchoredSegments.map(seg => (
+            <SegmentHighlight
+              key={seg.id}
+              segment={seg}
+              scale={scale}
+              color={codeById.get(seg.codeId)?.color ?? '#8A95A3'}
+              isHighlighted={highlightedSegmentId === seg.id}
             />
           ))}
         </div>
@@ -339,5 +407,49 @@ function BlockOverlay({
     >
       {tints}
     </div>
+  );
+}
+
+// ── Precise per-segment highlight ─────────────────────────────────────────
+
+interface SegmentHighlightProps {
+  segment: CodedSegment;
+  scale: number;
+  color: string;
+  isHighlighted: boolean;
+}
+
+/**
+ * Draws one tinted rectangle per selection rect captured at marking time, so
+ * the highlight sits over the exact text the analyst selected — not the whole
+ * enclosing block. The first rect carries the `data-segment-id` anchor the
+ * sidebar scrolls to. Inert (pointer-events:none) so the pdfjs text layer
+ * underneath stays selectable for further tagging.
+ */
+function SegmentHighlight({ segment, scale, color, isHighlighted }: SegmentHighlightProps) {
+  const rects = segment.pdfAnchor?.rects ?? [];
+  if (!rects.length) return null;
+  return (
+    <>
+      {rects.map(([x, y, w, h], i) => (
+        <span
+          key={i}
+          data-segment-id={i === 0 ? segment.id : undefined}
+          title={segment.text}
+          style={{
+            position: 'absolute',
+            left: x * scale,
+            top: y * scale,
+            width: w * scale,
+            height: h * scale,
+            background: isHighlighted ? `${color}59` : `${color}33`,
+            borderBottom: `2px solid ${color}`,
+            boxShadow: isHighlighted ? `0 0 0 1.5px ${color}` : 'none',
+            pointerEvents: 'none',
+            borderRadius: 1,
+          }}
+        />
+      ))}
+    </>
   );
 }

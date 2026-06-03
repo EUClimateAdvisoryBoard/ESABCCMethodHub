@@ -30,6 +30,7 @@ export interface CodeEditorPayload {
     endChar: number;
     text: string;
     blockId?: string;
+    pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor;
   };
 }
 

@@ -23,6 +23,7 @@ import type {
   CodeSuggestion,
   CodeNode,
   DocumentSummary,
+  PdfAnchor,
   SummaryBlock,
 } from './content-analysis/types';
 
@@ -58,6 +59,23 @@ interface SegmentRow {
   note_updated_at: string | null;
   project_id: string | null;
   created_at: string | null;
+  pdf_anchor: PdfAnchor | null;
+}
+
+/** Defensively validate a `pdf_anchor` jsonb value read back from the DB (or
+ *  posted by a client) — only a well-formed `{ page, rects }` shape survives. */
+function coercePdfAnchor(raw: unknown): PdfAnchor | undefined {
+  if (!raw || typeof raw !== 'object') return undefined;
+  const r = raw as Record<string, unknown>;
+  if (typeof r.page !== 'number' || !Array.isArray(r.rects)) return undefined;
+  const rects: number[][] = [];
+  for (const rect of r.rects) {
+    if (Array.isArray(rect) && rect.length === 4 && rect.every(n => typeof n === 'number')) {
+      rects.push(rect as number[]);
+    }
+  }
+  if (rects.length === 0) return undefined;
+  return { page: r.page, rects };
 }
 
 function rowToSegment(r: SegmentRow): CodedSegment {
@@ -66,6 +84,7 @@ function rowToSegment(r: SegmentRow): CodedSegment {
     documentId: r.document_id,
     codeId: r.code_id,
     blockId: r.block_id ?? undefined,
+    pdfAnchor: coercePdfAnchor(r.pdf_anchor),
     startChar: r.start_char,
     endChar: r.end_char,
     text: r.text ?? '',
@@ -93,6 +112,7 @@ function segmentToRow(s: CodedSegment): SegmentRow {
     note_updated_at: s.noteUpdatedAt ?? null,
     project_id: s.projectId,
     created_at: s.createdAt,
+    pdf_anchor: s.pdfAnchor ?? null,
   };
 }
 
@@ -172,9 +192,20 @@ export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
     const rows = segs.map(segmentToRow);
-    const { error } = await sb
+    let { error } = await sb
       .from('content_analysis_segments')
       .upsert(rows, { onConflict: 'id' });
+    // `pdf_anchor` is added by migration 057. If the deploy reaches a database
+    // where the migration hasn't been applied yet, PostgREST rejects the
+    // unknown column — so retry once without it rather than failing every
+    // segment save (the precise highlight just falls back to the block tint
+    // until the column lands). Detected by the column name in the error.
+    if (error && /pdf_anchor/.test(error.message)) {
+      const legacyRows = rows.map(({ pdf_anchor: _drop, ...rest }) => rest);
+      ({ error } = await sb
+        .from('content_analysis_segments')
+        .upsert(legacyRows, { onConflict: 'id' }));
+    }
     if (error) {
       console.error('[content-analysis-store] upsertSegments failed:', error.message);
     } else {

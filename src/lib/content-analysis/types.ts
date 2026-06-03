@@ -172,6 +172,20 @@ export interface NumericExtraction {
   label?: string;
 }
 
+/** Precise anchor for a passage marked directly on a rendered PDF page.
+ *  Captures the page and the exact selection rectangles (in PDF user-space
+ *  points — the same coordinate space as `Block.bboxes`) at the moment the
+ *  text was marked, so the highlight renders over the *actual selected text*
+ *  rather than the whole enclosing block, and clicking the segment jumps to
+ *  that exact spot. Absent for flat-text segments and pre-existing PDF
+ *  segments tagged before this shipped (those fall back to the block tint). */
+export interface PdfAnchor {
+  /** 1-indexed page the selection was made on. */
+  page: number;
+  /** Selection rectangles, each `[x, y, w, h]` in PDF user-space points. */
+  rects: number[][];
+}
+
 export interface CodedSegment {
   id: string;
   documentId: string;
@@ -179,6 +193,9 @@ export interface CodedSegment {
   /** When set, `startChar`/`endChar` are offsets within this block's text.
    *  When absent (legacy), they are offsets against AnalysisDocument.text. */
   blockId?: string;
+  /** Precise PDF selection anchor — present for passages marked directly on
+   *  a PDF page. Drives exact-position highlighting and click-to-jump. */
+  pdfAnchor?: PdfAnchor;
   /** Inclusive start / exclusive end. */
   startChar: number;
   endChar: number;
