@@ -18,7 +18,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import {
   defaultFrameworkBoard,
+  defaultFrameworkBoardBeta,
   FRAMEWORK_BOARD_VERSION,
+  FRAMEWORK_BOARD_BETA_VERSION,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
   type SectorFramework,
@@ -35,12 +37,25 @@ interface Props {
   onOpenInList?: (id: string) => void;
   /** Distinct localStorage namespace (per project). */
   projectId: string;
+  /**
+   * 'report' (default) renders the six published ESABCC assessment frameworks.
+   * 'beta' renders a copy of those frameworks with an added
+   * adaptation-and-resilience layer (extra outcomes, levers and enabling
+   * conditions tagged as adaptation, plus the beta adaptation indicators).
+   */
+  variant?: 'report' | 'beta';
 }
 
-export default function FrameworkBoard({ allIndicators, onOpenInList, projectId }: Props) {
-  const storageKey = `esabcc-framework-board:${projectId}`;
+export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, variant = 'report' }: Props) {
+  const isBeta = variant === 'beta';
+  const boardVersion = isBeta ? FRAMEWORK_BOARD_BETA_VERSION : FRAMEWORK_BOARD_VERSION;
+  const makeDefault = useCallback(
+    () => (isBeta ? defaultFrameworkBoardBeta() : defaultFrameworkBoard()),
+    [isBeta],
+  );
+  const storageKey = `esabcc-framework-board${isBeta ? '-beta' : ''}:${projectId}`;
   const [mounted, setMounted] = useState(false);
-  const [board, setBoard] = useState<Board>(() => defaultFrameworkBoard());
+  const [board, setBoard] = useState<Board>(() => makeDefault());
   const [editing, setEditing] = useState(false);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
@@ -63,7 +78,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
       const raw = localStorage.getItem(storageKey);
       if (raw) {
         const parsed = JSON.parse(raw) as Board;
-        if (parsed.version === FRAMEWORK_BOARD_VERSION && Array.isArray(parsed.sectors)) setBoard(parsed);
+        if (parsed.version === boardVersion && Array.isArray(parsed.sectors)) setBoard(parsed);
       }
     } catch {
       /* ignore */
@@ -128,8 +143,10 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
   const expandAll = () => setExpanded(new Set(allExpanded ? [] : board.sectors.map((s) => s.id)));
 
   const resetBoard = () => {
-    if (confirm('Reset all sector frameworks to the published report version? Your edits will be lost.'))
-      setBoard(defaultFrameworkBoard());
+    const msg = isBeta
+      ? 'Reset the beta flow charts (report frameworks + adaptation layer)? Your edits will be lost.'
+      : 'Reset all sector frameworks to the published report version? Your edits will be lost.';
+    if (confirm(msg)) setBoard(makeDefault());
   };
 
   const drawerIndicators = useMemo(() => (drawer ? resolve(drawer.indicatorIds) : []), [drawer, resolve]);
@@ -141,13 +158,27 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
 
   return (
     <div>
-      <p className="text-sm text-tertiary mb-4 max-w-3xl">
-        The ESABCC report assesses each sector with a framework that flows from the climate goal, through
-        outcomes and mitigation levers, down to enabling conditions. The white boxes are the progress
-        indicators in this database — click any chip to open the data behind it. Dashed{' '}
-        <span className="text-tertiary-light">no&nbsp;data</span> boxes are concepts the report names but
-        for which no time series is curated yet; link one to an indicator in edit mode.
-      </p>
+      {isBeta ? (
+        <p className="text-sm text-tertiary mb-4 max-w-3xl">
+          <span className="font-semibold text-teal-700">Beta:</span> a copy of the six report flow charts
+          with an added <span className="font-semibold">adaptation &amp; resilience</span> layer. Alongside
+          the mitigation levers, each sector now carries adaptation outcomes, adaptation levers and
+          adaptation enabling conditions (marked{' '}
+          <span className="align-middle inline-flex items-center rounded bg-teal-100 text-teal-800 px-1 text-[10px] font-semibold">
+            ⛨ adapt
+          </span>
+          ), wired to provisional <span className="font-semibold">beta adaptation indicators</span> from the
+          EEA, JRC, Eurostat and the ECNO adaptation building block. Click any chip to open the data behind it.
+        </p>
+      ) : (
+        <p className="text-sm text-tertiary mb-4 max-w-3xl">
+          The ESABCC report assesses each sector with a framework that flows from the climate goal, through
+          outcomes and mitigation levers, down to enabling conditions. The white boxes are the progress
+          indicators in this database — click any chip to open the data behind it. Dashed{' '}
+          <span className="text-tertiary-light">no&nbsp;data</span> boxes are concepts the report names but
+          for which no time series is curated yet; link one to an indicator in edit mode.
+        </p>
+      )}
 
       <div className="flex flex-wrap items-center gap-2 mb-4">
         <button
@@ -255,6 +286,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId 
                     allIndicators={allIndicators}
                     onChange={updateSector}
                     onOpenIndicator={setDrawer}
+                    variant={variant}
                   />
                 </div>
               )}
