@@ -246,15 +246,18 @@ export const BETA_INDICATORS: Indicator[] = [
 ];
 
 // ── Beta adaptation / resilience indicators ───────────────────────────────────
-// Sector-specific climate-hazard / resilience series. Where the platform already
-// carries a fitting adaptation series from the ECNO tracker, the flow charts link
-// to that id instead of duplicating it here:
-//   • water-exploitation-index      (WEI+ / water scarcity)
-//   • climate-economic-losses       (losses from weather & climate extremes)
-//   • national-adaptation-strategies (governance / EUCRA follow-up)
-// Several of these adaptation series are genuinely sparse (snapshots, modelled
-// baselines or multi-year averages rather than tidy annual EU-27 tables) — that
-// is flagged per indicator and is exactly why they ship as beta.
+// Sector-fitting climate-resilience series, organised around the EEA European
+// Climate Risk Assessment (EUCRA, 2024) risk clusters and powering each sector's
+// adaptation sub-framework in the "Flow charts (beta)" view. Where the platform
+// already carries a fitting adaptation series from the ECNO tracker, the flow
+// charts link to that id instead of duplicating it here:
+//   • water-exploitation-index  (WEI+ / water scarcity — energy, industry, agri)
+//   • climate-economic-losses   (losses from weather & climate extremes)
+// Some of these series are clean annual EU records (cooling degree days, EFFIS
+// burnt area, drought impact); others are recent point estimates, scenario
+// baselines (coastal transport / energy drought damage) or structural snapshots
+// (rail network at risk, flood-prone population, insurance gap). That is flagged
+// per indicator and is exactly why they ship as beta.
 export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
   {
     id: 'beta-adapt-cooling-degree-days',
@@ -263,9 +266,9 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     category: 'adaptation',
     unit: 'CDD index',
     description:
-      'BETA (adaptation). Cooling degree days — climate-driven cooling demand and heat stress on the energy system and buildings. EU long-run average ≈ 75; 2020 = 99, 2022 = 140 confirmed from Eurostat Statistics Explained (the 2022 heat year). Re-pull the full EU27_2020 annual series from Eurostat nrg_chdd_a (indic_nrg=CDD).',
-    source: 'Eurostat (nrg_chdd_a, JRC-MARS meteorology)',
-    sourceUrl: 'https://ec.europa.eu/eurostat/databrowser/view/nrg_chdd_a/default/table',
+      'BETA (adaptation). Cooling degree days — climate-driven cooling demand and heat stress on the energy system and buildings. EEA/Eurostat publish a clean annual EU series from 1979 with a clear rising trend (recent years well above the 1979–2020 baseline). EU long-run average ≈ 75; 2020 = 99, 2022 = 140 (the 2022 heat year). Re-pull the full EU27_2020 series from Eurostat nrg_chdd_a (indic_nrg=CDD).',
+    source: 'Eurostat (nrg_chdd_a) / EEA Cooling degree days',
+    sourceUrl: 'https://www.eea.europa.eu/en/analysis/maps-and-charts/cooling-degree-days',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
@@ -282,9 +285,9 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     category: 'adaptation',
     unit: 'deaths/yr (summer)',
     description:
-      'BETA (adaptation). Modelled heat-related excess deaths during the European summer — a core human-resilience / overheating outcome for buildings. 2022 ≈ 61,700; 2023 ≈ 47,700; 2024 ≈ 62,800 (Ballester/ISGlobal, Nature Medicine; tracked by the EEA European Climate & Health Observatory). NB: covers 32–35 European countries, not strictly EU-27; baselines differ slightly between annual papers.',
+      'BETA (adaptation). Modelled heat-related excess deaths during the European summer — the core human-resilience / overheating outcome for buildings & health (EUCRA "health" cluster, heat flagged most urgent). ≈ 61,700 (2022); ≈ 47,700 (2023); ≈ 62,800 (2024); >70,000 in 2003 (ISGlobal/Nature Medicine; EEA European Climate & Health Observatory). Modelled estimates covering ~32–35 European countries, not a registry series; cooling degree days is the cleaner annual companion.',
     source: 'ISGlobal / Nature Medicine; EEA Climate-ADAPT',
-    sourceUrl: 'https://climate-adapt.eea.europa.eu/en/observatory/news-archive-observatory/over-62-700-deaths-associated-with-record-breaking-heat-during-the-summer-of-2024-in-europe',
+    sourceUrl: 'https://www.eea.europa.eu/en/analysis/maps-and-charts/trends-in-heat-related-mortality',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
@@ -298,11 +301,11 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
   {
     id: 'beta-adapt-burnt-area',
     code: 'FIREβ',
-    name: 'Annual area burnt by wildfires (EU)',
+    name: 'Annual area burnt by wildfires (EU-27)',
     category: 'adaptation',
     unit: 'hectares',
     description:
-      'BETA (adaptation). Area burnt by wildfires each year, the only true annual fire-disturbance series for EU forests (JRC EFFIS, fires > 30 ha). 2017 = 988,427 ha; 2021 = 500,566; 2022 = 837,212; 2023 = 504,002 ha confirmed from EFFIS reports; 2020 ≈ 340,000 ha approximate. "EU" vs "EU-27" coverage varies by report — extract the full table from the EFFIS statistics portal (.xls).',
+      'BETA (adaptation). Area burnt by wildfires each year — the canonical EU forest-climate indicator and a clean annual EFFIS series (EU-27): 2021 ≈ 500,566 ha; 2022 ≈ 748,426; 2023 ≈ 468,289; 2024 ≈ 383,317 ha. 2025 was a record ≈ 1,079,538 ha (~2× the 2006–2024 average of ≈ 354,185 ha). Highly volatile year-to-year — read with a multi-year mean.',
     source: 'JRC EFFIS (European Forest Fire Information System)',
     sourceUrl: 'https://forest-fire.emergency.copernicus.eu/apps/effis.statistics/estimates',
     direction: 'down',
@@ -310,65 +313,118 @@ export const BETA_ADAPTATION_INDICATORS: Indicator[] = [
     beta: true,
     isSeed: true,
     data: [
-      { year: 2017, value: 988427 },
-      { year: 2020, value: 340000 },
       { year: 2021, value: 500566 },
-      { year: 2022, value: 837212 },
-      { year: 2023, value: 504002 },
+      { year: 2022, value: 748426 },
+      { year: 2023, value: 468289 },
+      { year: 2024, value: 383317 },
     ],
   },
   {
-    id: 'beta-adapt-drought-area',
+    id: 'beta-adapt-drought-impact',
     code: 'DRGTβ',
-    name: 'EU territory under drought warning/alert (peak)',
+    name: 'Cropland & ecosystem area impacted by drought (EU)',
     category: 'adaptation',
-    unit: '% of area (peak)',
+    unit: 'km²',
     description:
-      'BETA (adaptation) — ILLUSTRATIVE / SPARSE. Share of European territory in Combined Drought Indicator "warning + alert" classes (JRC European Drought Observatory). The robustly documented anchor is the August-2022 peak: ~47% warning + ~17% alert ≈ 64% — the most severe drought in ≥500 years. EDO publishes 10-day maps, not an annual series; treat this as a documented peak, not a trend line.',
-    source: 'JRC European Drought Observatory (Combined Drought Indicator)',
-    sourceUrl: 'https://drought.emergency.copernicus.eu/edov2/php/index.php?id=1052',
+      'BETA (adaptation). EU cropland area with below-average vegetation productivity due to drought — EEA 8th EAP headline indicator "drought impact on ecosystems" (Copernicus EDO Soil Moisture Index), a clean annual EU series 2000–2024. ≈ 66,500 km² in 2023 (above the 2000–2020 average); average annual drought impact ≈ 141,229 km² (≈3.5% of EU land) over 2000–2020, with a rising trend despite the 2023 recovery. Directly agricultural and ecosystem-relevant.',
+    source: 'EEA 8th EAP / Copernicus European Drought Observatory (Soil Moisture Index)',
+    sourceUrl: 'https://www.eea.europa.eu/en/analysis/indicators/drought-impact-on-ecosystems-in-europe',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
     isSeed: true,
     data: [
-      { year: 2022, value: 64 },
+      { year: 2023, value: 66500 },
     ],
   },
   {
-    id: 'beta-adapt-flood-exposure',
+    id: 'beta-adapt-rail-disruption',
+    code: 'RAILβ',
+    name: 'EU rail network reporting rising extreme-weather impacts',
+    category: 'adaptation',
+    unit: '% of network (track-km)',
+    description:
+      'BETA (adaptation) — the best genuinely transport-specific EU resilience signal (replaces the earlier generic flood-exposure proxy). 70% of EU rail infrastructure managers report increasing extreme-weather impacts, covering ≈ 79% of the EU network by track-km; cumulative weather-related rail delay over 2015–2024 ≈ the equivalent of 1–3 full years of EU railway service (EEA TERM; EU Agency for Railways). Floods, windstorms and landslides are the most disruptive hazards. A clean per-year series is not yet public — treat as a structural exposure indicator.',
+    source: 'EEA Transport & Environment Reporting Mechanism (TERM); EU Agency for Railways',
+    sourceUrl: 'https://www.eea.europa.eu/highlights/europe2019s-transport-network-vulnerable-to',
+    direction: 'down',
+    group: 'beta-adaptation',
+    beta: true,
+    isSeed: true,
+    data: [
+      { year: 2024, value: 79 },
+    ],
+  },
+  {
+    id: 'beta-adapt-flood-prone-population',
     code: 'FLOODβ',
-    name: 'Population exposed to river flooding (EU baseline)',
+    name: 'Population in potential flood-prone areas (EU)',
     category: 'adaptation',
-    unit: 'people/yr',
+    unit: '% of population',
     description:
-      'BETA (adaptation) — BASELINE, not an observed trend. Modelled population annually exposed to river flooding in Europe under current climate ≈ 172,000 people/yr (plus ~100,000/yr to coastal flooding). No-adaptation projections rise to ~252,000 (1.5°C), ~338,000 (2°C), ~484,000 (3°C) by ~2100 (JRC PESETA IV; EEA EUCRA 2024). Present as a baseline/scenario indicator.',
-    source: 'JRC PESETA IV / EEA European Climate Risk Assessment (EUCRA)',
-    sourceUrl: 'https://climate-adapt.eea.europa.eu/en/eu-adaptation-policy/key-eu-actions/european-climate-risk-assessment',
+      'BETA (adaptation). Share of the population living in potential flood-prone areas — a built-environment resilience measure (EUCRA "infrastructure" cluster). ≈ 12% of Europe’s population (≈ 52 million people) in 2021, highest in DE, FR and IT (EEA / European Climate & Health Observatory). A recent point estimate, updated infrequently rather than a long annual series.',
+    source: 'EEA / European Climate & Health Observatory',
+    sourceUrl: 'https://climate-adapt.eea.europa.eu/en/observatory/publications-data/analysis-data/exposure-to-potential-flood-prone-areas',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
     isSeed: true,
     data: [
-      { year: 2020, value: 172000 },
+      { year: 2021, value: 12 },
     ],
   },
   {
-    id: 'beta-adapt-forest-disturbance',
-    code: 'FORβ',
-    name: 'Forest area affected by natural disturbances (Europe)',
+    id: 'beta-adapt-insurance-gap',
+    code: 'INSβ',
+    name: 'Climate insurance protection gap (EU)',
     category: 'adaptation',
-    unit: 'million m³ wood/yr',
+    unit: '% of losses uninsured',
     description:
-      'BETA (adaptation) — STRUCTURAL / SPARSE. Wood volume damaged by natural disturbances (storms, fire, drought, insects/pathogens) in European forests, the primary published metric — last-20-year average ≈ 80 million m³/yr, up from ~52–62 m³/yr over 1950–2020 (JRC European Forest Disturbance Atlas; FOREST EUROPE State of Europe’s Forests). 2015 storms alone damaged ~1.76 million ha. Reported as multi-year averages, not a tidy annual EU-27 table.',
-    source: 'JRC European Forest Disturbance Atlas / FOREST EUROPE; EEA FISE',
-    sourceUrl: 'https://forest.eea.europa.eu/topics/health/threats',
+      'BETA (adaptation). Share of weather- and climate-related losses that are uninsured — the economy & finance resilience measure (EUCRA "economy & finance" cluster; Climate Resilience Dialogue). Only ≈ a quarter to a third of EU climate losses are insured, so roughly 70% are uninsured; most Member States are >50% uninsured and many >90%, and the gap is widening (EEA / EIOPA dashboard). Context: EUR 738 bn of losses 1980–2023, of which EUR 162 bn in 2021–2023 alone.',
+    source: 'EEA / EIOPA insurance protection gap dashboard',
+    sourceUrl: 'https://www.eea.europa.eu/en/europe-environment-2025/main-report/insurance-protection-gap-for',
     direction: 'down',
     group: 'beta-adaptation',
     beta: true,
     isSeed: true,
     data: [
-      { year: 2020, value: 80 },
+      { year: 2024, value: 70 },
+    ],
+  },
+  {
+    id: 'beta-adapt-transport-coastal-damage',
+    code: 'COASTβ',
+    name: 'Expected annual flood damage to EU coastal transport',
+    category: 'adaptation',
+    unit: '€ million/yr',
+    description:
+      'BETA (adaptation). Expected annual damage to European surface transport infrastructure from coastal flooding — a genuinely transport-specific EUCRA "infrastructure" measure. Baseline (1980–2020) ≈ €722 M/yr with ≈ 1,592 km of network affected per year, rising to ≈ €1,108 M/yr at +1.5 °C and ≈ €1,487 M/yr at +4 °C (Nature Climate Change, 2025). Inland flooding of population & infrastructure is one of EUCRA’s 8 most-urgent risks. Baseline + warming-level projection, not an observed annual series.',
+    source: 'Nature Climate Change (2025); EEA EUCRA',
+    sourceUrl: 'https://www.nature.com/articles/s41558-025-02510-y',
+    direction: 'down',
+    group: 'beta-adaptation',
+    beta: true,
+    isSeed: true,
+    data: [
+      { year: 2020, value: 722 },
+    ],
+  },
+  {
+    id: 'beta-adapt-energy-drought-damage',
+    code: 'EDRβ',
+    name: 'Drought-related damage to the EU energy sector',
+    category: 'adaptation',
+    unit: '€ billion/yr',
+    description:
+      'BETA (adaptation). Climate-driven drought damage to the energy sector (reduced thermal & hydropower output and cooling-water availability) — EEA flags energy as the sector with the largest projected increase in climate damage. JRC PESETA IV: ≈ €1.4 bn/yr today rising to ≈ €3.3 bn/yr at +3 °C (Mediterranean + Atlantic), with southern-Europe hydropower changing −18% to +9%. Scenario estimate, not an observed annual series; cooling degree days is the companion live tracker.',
+    source: 'JRC PESETA IV (energy supply)',
+    sourceUrl: 'https://joint-research-centre.ec.europa.eu/projects-and-activities/peseta-climate-change-projects/jrc-peseta-iv/energy-supply_en',
+    direction: 'down',
+    group: 'beta-adaptation',
+    beta: true,
+    isSeed: true,
+    data: [
+      { year: 2020, value: 1.4 },
     ],
   },
 ];

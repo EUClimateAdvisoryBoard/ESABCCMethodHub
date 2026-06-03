@@ -662,159 +662,288 @@ export function defaultFrameworkBoard(): FrameworkBoard {
   };
 }
 
-// ── Beta board: report frameworks + an adaptation & resilience layer ─────────
+// ── Beta board: report frameworks + a per-sector adaptation framework ─────
 //
 // For the "Flow charts (beta)" view each sector is copied verbatim and then
-// extended with an adaptation outcome, an adaptation lever and an adaptation
-// enabling condition (all `track: 'adaptation'`), wired to the beta-adaptation
-// indicators and to fitting existing ECNO series (water-exploitation-index,
-// climate-economic-losses, national-adaptation-strategies).
+// given its OWN adaptation & resilience sub-framework: one or more adaptation
+// outcomes (framed around the relevant EUCRA 2024 risk cluster — ecosystems,
+// food, health, infrastructure, economy & finance), each fed by adaptation
+// levers, plus an adaptation enabling condition. All adaptation cards carry
+// `track: 'adaptation'`. Indicators are the sector-fitting beta-adaptation
+// series, with fitting ECNO series reused where they already exist
+// (water-exploitation-index, climate-economic-losses). Motivated by the EU
+// Adaptation Strategy (2021) and the EEA European Climate Risk Assessment
+// (EUCRA, 2024).
 
+interface AdaptOutcome {
+  id: string;
+  label: string;
+  /** Short EUCRA framing line (cluster + urgency) shown under the card. */
+  note?: string;
+  indicators: IndicatorRef[];
+}
+interface AdaptLever {
+  id: string;
+  label: string;
+  /** id of the adaptation outcome this lever feeds. */
+  parent: string;
+  indicators: IndicatorRef[];
+}
+interface AdaptEnabling {
+  id: string;
+  kind: EnablingKind;
+  label: string;
+  indicatorIds?: string[];
+}
 interface AdaptationLayer {
-  outcome: { id: string; label: string; indicators: IndicatorRef[] };
-  lever: { id: string; label: string; indicators: IndicatorRef[] };
-  enabling: { id: string; kind: EnablingKind; label: string; indicatorIds?: string[] };
+  outcomes: AdaptOutcome[];
+  levers: AdaptLever[];
+  enabling: AdaptEnabling[];
 }
 
-/** Per-sector adaptation additions, keyed by sector id. */
+/** Per-sector adaptation sub-frameworks, keyed by sector id. */
 const ADAPTATION_LAYERS: Record<string, AdaptationLayer> = {
   energy: {
-    outcome: {
-      id: 'en-ad-o1',
-      label: 'Climate-resilient energy supply system',
-      indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
-    },
-    lever: {
-      id: 'en-ad-l1',
-      label: 'Climate-proofing of generation & grids',
-      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
-    },
-    enabling: {
-      id: 'en-ad-e1',
-      kind: 'cross-cutting',
-      label: 'Climate-risk assessment of energy infrastructure (EUCRA)',
-      indicatorIds: ['national-adaptation-strategies'],
-    },
+    outcomes: [
+      {
+        id: 'en-ad-o1',
+        label: 'Energy supply resilient to heat, drought & extremes',
+        note: 'EUCRA infrastructure cluster — risks to energy generation, transmission & demand (more action needed)',
+        indicators: [ref('EDRβ', 'Drought damage to energy', ['beta-adapt-energy-drought-damage'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'en-ad-l1',
+        label: 'Cooling-water & drought management for generation',
+        parent: 'en-ad-o1',
+        indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+      },
+      {
+        id: 'en-ad-l2',
+        label: 'Grid & demand resilience to peak heat',
+        parent: 'en-ad-o1',
+        indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'en-ad-e1',
+        kind: 'cross-cutting',
+        label: 'Climate-risk assessment & insurance of energy assets',
+        indicatorIds: ['beta-adapt-insurance-gap'],
+      },
+    ],
   },
   industry: {
-    outcome: {
-      id: 'in-ad-o1',
-      label: 'Climate-resilient production & supply chains',
-      indicators: [ref('LOSSβ', 'Climate-related economic losses', ['climate-economic-losses'])],
-    },
-    lever: {
-      id: 'in-ad-l1',
-      label: 'Water-stress & heat management in production',
-      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
-    },
-    enabling: {
-      id: 'in-ad-e1',
-      kind: 'cross-cutting',
-      label: 'Supply-chain climate-risk management',
-    },
+    outcomes: [
+      {
+        id: 'in-ad-o1',
+        label: 'Water- & climate-resilient production and supply chains',
+        note: 'EUCRA economy & finance cluster — risks to industrial output & supply chains (more action needed)',
+        indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'in-ad-l1',
+        label: 'Industrial water-stress management',
+        parent: 'in-ad-o1',
+        indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+      },
+      {
+        id: 'in-ad-l2',
+        label: 'Risk transfer & insurance for climate losses',
+        parent: 'in-ad-o1',
+        indicators: [ref('INSβ', 'Insurance protection gap', ['beta-adapt-insurance-gap'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'in-ad-e1',
+        kind: 'cross-cutting',
+        label: 'Supply-chain climate-risk management',
+        indicatorIds: ['climate-economic-losses'],
+      },
+    ],
   },
   transport: {
-    outcome: {
-      id: 'tr-ad-o1',
-      label: 'Climate-resilient transport infrastructure',
-      indicators: [ref('FLOODβ', 'Population exposed to flooding', ['beta-adapt-flood-exposure'])],
-    },
-    lever: {
-      id: 'tr-ad-l1',
-      label: 'Climate-proofing of roads, rail & ports',
-      indicators: [ref('LOSSβ', 'Climate-related economic losses', ['climate-economic-losses'])],
-    },
-    enabling: {
-      id: 'tr-ad-e1',
-      kind: 'cross-cutting',
-      label: 'Resilience standards in infrastructure planning (TEN-T)',
-    },
+    outcomes: [
+      {
+        id: 'tr-ad-o1',
+        label: 'Climate-resilient transport infrastructure',
+        note: 'EUCRA infrastructure cluster — inland flooding is one of 8 risks rated "urgent action needed"',
+        indicators: [ref('COASTβ', 'Coastal flood damage to transport', ['beta-adapt-transport-coastal-damage'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'tr-ad-l1',
+        label: 'Climate-proofing & maintenance of rail, road & ports',
+        parent: 'tr-ad-o1',
+        indicators: [ref('RAILβ', 'Rail network at weather risk', ['beta-adapt-rail-disruption'])],
+      },
+      {
+        id: 'tr-ad-l2',
+        label: 'Flood- & heat-risk reduction on networks',
+        parent: 'tr-ad-o1',
+        indicators: [ref('LOSS', 'Climate economic losses', ['climate-economic-losses'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'tr-ad-e1',
+        kind: 'cross-cutting',
+        label: 'Resilience standards in TEN-T planning',
+      },
+    ],
   },
   buildings: {
-    outcome: {
-      id: 'bu-ad-o1',
-      label: 'Heat- and flood-resilient building stock',
-      indicators: [ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality'])],
-    },
-    lever: {
-      id: 'bu-ad-l1',
-      label: 'Passive cooling, shading & green infrastructure',
-      indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
-    },
-    enabling: {
-      id: 'bu-ad-e1',
-      kind: 'sector-specific',
-      label: 'Overheating limits in building codes',
-    },
+    outcomes: [
+      {
+        id: 'bu-ad-o1',
+        label: 'Heat-resilient buildings & population',
+        note: 'EUCRA health cluster — heat on human health is one of 8 "urgent action needed" risks',
+        indicators: [ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality'])],
+      },
+      {
+        id: 'bu-ad-o2',
+        label: 'Flood-safe built environment',
+        note: 'EUCRA infrastructure cluster — river & pluvial flooding (urgent action needed)',
+        indicators: [ref('FLOODβ', 'Population in flood-prone areas', ['beta-adapt-flood-prone-population'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'bu-ad-l1',
+        label: 'Passive cooling, shading & green infrastructure',
+        parent: 'bu-ad-o1',
+        indicators: [ref('CDDβ', 'Cooling degree days', ['beta-adapt-cooling-degree-days'])],
+      },
+      {
+        id: 'bu-ad-l2',
+        label: 'Heat action plans & protection of vulnerable groups',
+        parent: 'bu-ad-o1',
+        indicators: [ref('HEATβ', 'Heat-related mortality', ['beta-adapt-heat-mortality'])],
+      },
+      {
+        id: 'bu-ad-l3',
+        label: 'Flood-risk reduction & risk-informed siting',
+        parent: 'bu-ad-o2',
+        indicators: [ref('FLOODβ', 'Population in flood-prone areas', ['beta-adapt-flood-prone-population'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'bu-ad-e1',
+        kind: 'sector-specific',
+        label: 'Overheating & flood standards in building codes',
+      },
+    ],
   },
   agriculture: {
-    outcome: {
-      id: 'ag-ad-o1',
-      label: 'Drought- and climate-resilient farming',
-      indicators: [ref('DRGTβ', 'Territory under drought', ['beta-adapt-drought-area'])],
-    },
-    lever: {
-      id: 'ag-ad-l1',
-      label: 'Water-efficient irrigation & soil-moisture management',
-      indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
-    },
-    enabling: {
-      id: 'ag-ad-e1',
-      kind: 'sector-specific',
-      label: 'Crop diversification, resilient varieties & insurance',
-    },
+    outcomes: [
+      {
+        id: 'ag-ad-o1',
+        label: 'Drought- & heat-resilient farming and food systems',
+        note: 'EUCRA food cluster — crop production is one of 8 "urgent action needed" risks',
+        indicators: [ref('DRGTβ', 'Cropland drought impact', ['beta-adapt-drought-impact'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'ag-ad-l1',
+        label: 'Water-efficient irrigation & drought management',
+        parent: 'ag-ad-o1',
+        indicators: [ref('WEI+', 'Water scarcity (WEI+)', ['water-exploitation-index'])],
+      },
+      {
+        id: 'ag-ad-l2',
+        label: 'Drought-tolerant crops & soil-moisture management',
+        parent: 'ag-ad-o1',
+        indicators: [ref('DRGTβ', 'Cropland drought impact', ['beta-adapt-drought-impact'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'ag-ad-e1',
+        kind: 'sector-specific',
+        label: 'Crop diversification, insurance & early warning',
+      },
+    ],
   },
   lulucf: {
-    outcome: {
-      id: 'lu-ad-o1',
-      label: 'Resilient forests & ecosystems',
-      indicators: [ref('FORβ', 'Forest natural disturbances', ['beta-adapt-forest-disturbance'])],
-    },
-    lever: {
-      id: 'lu-ad-l1',
-      label: 'Wildfire & pest-risk management',
-      indicators: [ref('FIREβ', 'Annual area burnt by wildfires', ['beta-adapt-burnt-area'])],
-    },
-    enabling: {
-      id: 'lu-ad-e1',
-      kind: 'sector-specific',
-      label: 'Drought- and fire-adapted species & ecosystem restoration',
-    },
+    outcomes: [
+      {
+        id: 'lu-ad-o1',
+        label: 'Resilient forests & ecosystems',
+        note: 'EUCRA ecosystems cluster — wildfire is one of 8 "urgent action needed" risks',
+        indicators: [ref('FIREβ', 'Area burnt by wildfires', ['beta-adapt-burnt-area'])],
+      },
+    ],
+    levers: [
+      {
+        id: 'lu-ad-l1',
+        label: 'Wildfire risk management & early warning (EFFIS)',
+        parent: 'lu-ad-o1',
+        indicators: [ref('FIREβ', 'Area burnt by wildfires', ['beta-adapt-burnt-area'])],
+      },
+      {
+        id: 'lu-ad-l2',
+        label: 'Drought-adapted species & ecosystem restoration',
+        parent: 'lu-ad-o1',
+        indicators: [ref('DRGTβ', 'Drought impact on ecosystems', ['beta-adapt-drought-impact'])],
+      },
+    ],
+    enabling: [
+      {
+        id: 'lu-ad-e1',
+        kind: 'sector-specific',
+        label: 'Climate-adapted forest management & restoration',
+      },
+    ],
   },
 };
 
 /**
- * A fresh, deep copy of the report board with the adaptation & resilience layer
- * grafted on — the starting point for the "Flow charts (beta)" view.
+ * A fresh, deep copy of the report board with each sector's adaptation
+ * sub-framework grafted on — the starting point for the "Flow charts (beta)" view.
  */
 export function defaultFrameworkBoardBeta(): FrameworkBoard {
   const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
   for (const sector of sectors) {
     const layer = ADAPTATION_LAYERS[sector.id];
     if (!layer) continue;
-    sector.outcomes.push({
-      id: layer.outcome.id,
-      layer: 'outcome',
-      track: 'adaptation',
-      label: layer.outcome.label,
-      parents: ['goal'],
-      indicators: layer.outcome.indicators,
-    });
-    sector.levers.push({
-      id: layer.lever.id,
-      layer: 'lever',
-      track: 'adaptation',
-      label: layer.lever.label,
-      parents: [layer.outcome.id],
-      indicators: layer.lever.indicators,
-    });
-    sector.enabling.push({
-      id: layer.enabling.id,
-      kind: layer.enabling.kind,
-      track: 'adaptation',
-      label: layer.enabling.label,
-      indicatorIds: layer.enabling.indicatorIds,
-    });
+    for (const o of layer.outcomes) {
+      sector.outcomes.push({
+        id: o.id,
+        layer: 'outcome',
+        track: 'adaptation',
+        label: o.label,
+        note: o.note,
+        parents: ['goal'],
+        indicators: o.indicators,
+      });
+    }
+    for (const l of layer.levers) {
+      sector.levers.push({
+        id: l.id,
+        layer: 'lever',
+        track: 'adaptation',
+        label: l.label,
+        parents: [l.parent],
+        indicators: l.indicators,
+      });
+    }
+    for (const e of layer.enabling) {
+      sector.enabling.push({
+        id: e.id,
+        kind: e.kind,
+        track: 'adaptation',
+        label: e.label,
+        indicatorIds: e.indicatorIds,
+      });
+    }
   }
   // Deep-clone so the shared ADAPTATION_LAYERS objects aren't aliased into the
   // returned (editable) board.

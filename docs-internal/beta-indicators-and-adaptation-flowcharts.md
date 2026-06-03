@@ -45,20 +45,42 @@ series** rather than creating duplicates:
 - Buildings · Energy & material sufficiency → `household-energy-per-capita`
 - Agriculture · Reduced production → `cattle-population`
 
-## New beta adaptation indicators (group `beta-adaptation`)
+## Adaptation as a per-sector sub-framework (EUCRA-anchored)
 
-| Indicator | Unit | Source | Used for (sector) |
+Rather than bolting one adaptation chip onto each sector, the **Flow charts (beta)**
+view now gives **every sector its own adaptation & resilience sub-framework**: one
+or more adaptation **outcomes** framed as the relevant **EUCRA 2024 risk cluster**
+(ecosystems, food, health, infrastructure, economy & finance), fed by 2–3
+adaptation **levers**, plus an adaptation **enabling** condition — all teal
+`⛨ adapt` cards. Each adaptation outcome carries a short EUCRA framing note (e.g.
+"infrastructure cluster — inland flooding is one of 8 'urgent action needed'
+risks"). In total: 7 adaptation outcomes and 13 adaptation levers across the six
+sectors (buildings has two outcomes — heat and flood). Motivated by the EU
+Adaptation Strategy (2021) and the EEA European Climate Risk Assessment (EUCRA,
+EEA Report 01/2024).
+
+### New beta adaptation indicators (group `beta-adaptation`)
+
+| Indicator | Unit | Source | Sector fit |
 |---|---|---|---|
-| Cooling degree days (EU-27) | CDD index | Eurostat `nrg_chdd_a` | Energy, Buildings |
-| Heat-related mortality (Europe, summer) | deaths/yr | ISGlobal / Nature Medicine; EEA Climate-ADAPT | Buildings |
-| Annual area burnt by wildfires (EU) | hectares | JRC EFFIS | LULUCF |
-| EU territory under drought warning/alert (peak) | % of area | JRC European Drought Observatory | Agriculture |
-| Population exposed to river flooding (baseline) | people/yr | JRC PESETA IV / EEA EUCRA | Transport |
-| Forest area affected by natural disturbances | million m³/yr | JRC Forest Disturbance Atlas / FOREST EUROPE | LULUCF |
+| Cooling degree days (EU-27) | CDD index | Eurostat `nrg_chdd_a` / EEA | Energy, Buildings |
+| Heat-related mortality (Europe, summer) | deaths/yr | ISGlobal / Nature Medicine; EEA | Buildings/health |
+| Annual area burnt by wildfires (EU-27) | hectares | JRC EFFIS | LULUCF/forests |
+| Cropland & ecosystem area impacted by drought | km² | EEA 8th EAP / Copernicus EDO | Agriculture, LULUCF |
+| EU rail network reporting rising weather impacts | % of network | EEA TERM; EU Agency for Railways | Transport |
+| Population in potential flood-prone areas | % of population | EEA / Climate-ADAPT | Buildings |
+| Climate insurance protection gap | % uninsured | EEA / EIOPA | Industry, Energy |
+| Expected annual flood damage to coastal transport | € million/yr | Nature Climate Change 2025; EUCRA | Transport |
+| Drought-related damage to the EU energy sector | € billion/yr | JRC PESETA IV | Energy |
 
-Existing ECNO adaptation series reused in the adaptation layer:
-`water-exploitation-index`, `climate-economic-losses`,
-`national-adaptation-strategies`.
+The earlier mismatched chips were replaced: **transport** dropped the generic
+"population exposed to river flooding" in favour of the EEA TERM rail-network
+measure plus the Nature 2025 coastal-transport damage figures; the weak
+"drought peak %", "flood-exposure baseline" and "forest disturbance m³"
+indicators were removed.
+
+Existing ECNO adaptation series reused in the layer:
+`water-exploitation-index` (WEI+) and `climate-economic-losses`.
 
 ## Caveats for whoever promotes these out of beta
 
