@@ -23,12 +23,32 @@ const CACHE_DIR = path.join(process.cwd(), '.cache', 'content-analysis');
 const MAX_BYTES = 40 * 1024 * 1024;
 const MAX_PAGES = 600;
 
+// Hosts we will fetch a `?url=` PDF from server-side. Mirrors the references
+// PDF proxy allow-list so this can't be turned into an open SSRF gateway —
+// reference PDFs live in the public Supabase `reference-pdfs` bucket.
+const ALLOWED_PDF_HOSTS = ['supabase.co', 'supabase.in'];
+
+function isAllowedPdfHost(url: string): boolean {
+  try {
+    const u = new URL(url);
+    return ALLOWED_PDF_HOSTS.some(h => u.hostname === h || u.hostname.endsWith('.' + h));
+  } catch {
+    return false;
+  }
+}
+
 export async function POST(req: NextRequest) {
   const celexRaw = req.nextUrl.searchParams.get('celex') ?? '';
   const celex = celexRaw.trim().toUpperCase() || `UPLOAD-${Date.now().toString(36)}`;
   if (celexRaw && !/^[0-9A-Z]{8,20}$/.test(celex)) {
     return NextResponse.json({ error: 'invalid celex format' }, { status: 400 });
   }
+
+  // Optional server-side fetch: when a `url` is supplied (and there is no
+  // uploaded body) the route pulls the PDF itself. This is how reference PDFs
+  // already stored in the library are ingested — the bytes never round-trip
+  // through the browser, sidestepping cross-origin fetch / truncation issues.
+  const sourceUrl = req.nextUrl.searchParams.get('url');
 
   let pdfBytes: Uint8Array | null = null;
   const contentType = req.headers.get('content-type') ?? '';
@@ -44,9 +64,37 @@ export async function POST(req: NextRequest) {
     } else if (contentType.includes('application/pdf')) {
       const buf = await req.arrayBuffer();
       pdfBytes = new Uint8Array(buf);
+    } else if (sourceUrl) {
+      if (!isAllowedPdfHost(sourceUrl)) {
+        return NextResponse.json(
+          { error: 'PDF host not allowed', detail: (() => { try { return new URL(sourceUrl).hostname; } catch { return sourceUrl; } })() },
+          { status: 400 },
+        );
+      }
+      let upstream: Response;
+      try {
+        upstream = await fetch(sourceUrl, {
+          cache: 'no-store',
+          redirect: 'follow',
+          headers: {
+            'User-Agent': 'ESABCC-ContentAnalysis/1.0',
+            Accept: 'application/pdf,*/*;q=0.8',
+          },
+        });
+      } catch (err) {
+        return NextResponse.json({ error: 'could not fetch source PDF', detail: String(err) }, { status: 502 });
+      }
+      if (!upstream.ok) {
+        const body = await upstream.text().catch(() => '');
+        return NextResponse.json(
+          { error: `source PDF HTTP ${upstream.status}`, detail: body.slice(0, 200) },
+          { status: 502 },
+        );
+      }
+      pdfBytes = new Uint8Array(await upstream.arrayBuffer());
     } else {
       return NextResponse.json(
-        { error: 'expected multipart/form-data (field "file") or application/pdf body' },
+        { error: 'expected multipart/form-data (field "file"), application/pdf body, or a ?url= source' },
         { status: 400 },
       );
     }

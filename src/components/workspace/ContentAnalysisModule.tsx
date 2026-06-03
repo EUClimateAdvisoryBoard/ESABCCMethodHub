@@ -467,23 +467,42 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
   };
 
-  // Shared PDF ingestion path. Sends the bytes to the ingest-upload route,
-  // which extracts text + block boxes and caches the PDF server-side under a
-  // stable key (the real CELEX for policies, or a synthetic key derived from
-  // the document id for references). The cached PDF then lights up the PDF
-  // annotation pane via /api/content-analysis/pdf.
-  const ingestPdfBlob = async (doc: AnalysisDocument, blob: Blob, label: string) => {
+  // Shared PDF ingestion path. The ingest-upload route extracts text + block
+  // boxes and caches the PDF server-side under a stable key (the real CELEX
+  // for policies, or a synthetic key derived from the document id for
+  // references). The cached PDF then lights up the PDF annotation pane via
+  // /api/content-analysis/pdf.
+  //
+  // Bytes are supplied either as an uploaded `blob` (the file picker) or via
+  // `sourceUrl`, in which case the server fetches them itself — used for
+  // reference PDFs already stored in the library, so they don't have to make
+  // a fragile cross-origin round-trip through the browser.
+  const ingestPdf = async (
+    doc: AnalysisDocument,
+    opts: { blob?: Blob; sourceUrl?: string; label: string },
+  ) => {
     upsertDocument(doc);
-    setIngestState({ status: 'loading', message: `Loading ${label}…` });
+    setIngestState({ status: 'loading', message: `Loading ${opts.label}…` });
     try {
-      const form = new FormData();
-      // The route reads the `file` field; a third arg gives it a filename so
-      // it is treated as a File rather than a string.
-      form.append('file', blob, 'document.pdf');
       const celex = encodeURIComponent(doc.celexNumber ?? referencePdfCacheKey(doc.id));
-      const resp = await fetch(`/api/content-analysis/ingest-upload?celex=${celex}`, { method: 'POST', body: form });
+      let url = `/api/content-analysis/ingest-upload?celex=${celex}`;
+      const init: RequestInit = { method: 'POST' };
+      if (opts.blob) {
+        const form = new FormData();
+        // The route reads the `file` field; a third arg gives it a filename so
+        // it is treated as a File rather than a string.
+        form.append('file', opts.blob, 'document.pdf');
+        init.body = form;
+      } else if (opts.sourceUrl) {
+        url += `&url=${encodeURIComponent(opts.sourceUrl)}`;
+      }
+      const resp = await fetch(url, init);
       const data = await resp.json();
-      if (!resp.ok) { setIngestState({ status: 'error', message: data?.error ?? `HTTP ${resp.status}` }); return; }
+      if (!resp.ok) {
+        const message = [data?.error, data?.detail].filter(Boolean).join(' — ') || `HTTP ${resp.status}`;
+        setIngestState({ status: 'error', message });
+        return;
+      }
       applyIngestion(doc.id, {
         pdfUrl: data.pdfUrl || '', pageCount: data.pageCount, blocks: data.blocks,
         text: data.text, ingestedAt: data.ingestedAt, archiveSource: 'manual-upload',
@@ -495,30 +514,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   };
 
   const handleUpload = (doc: AnalysisDocument, file: File) =>
-    ingestPdfBlob(doc, file, file.name);
+    ingestPdf(doc, { blob: file, label: file.name });
 
-  // Pull the PDF a user already uploaded in the reference manager (stored in
-  // the public `reference-pdfs` bucket) and ingest it here — so grey/scientific
-  // literature can be annotated without re-uploading the same file.
-  const handleLoadReferencePdf = async (doc: AnalysisDocument) => {
+  // Ingest the PDF a user already uploaded in the reference manager (stored in
+  // the public `reference-pdfs` bucket) so grey/scientific literature can be
+  // annotated without re-uploading the same file.
+  const handleLoadReferencePdf = (doc: AnalysisDocument) => {
     if (!doc.pdfUrl) return;
-    setIngestState({ status: 'loading', message: 'Fetching PDF from reference library…' });
-    let blob: Blob;
-    try {
-      const resp = await fetch(doc.pdfUrl, { cache: 'no-store' });
-      if (!resp.ok) {
-        setIngestState({ status: 'error', message: `Could not fetch the reference PDF (HTTP ${resp.status}). Try uploading it manually.` });
-        return;
-      }
-      blob = await resp.blob();
-    } catch (err) {
-      setIngestState({
-        status: 'error',
-        message: `Could not fetch the reference PDF (${err instanceof Error ? err.message : String(err)}). Try uploading it manually.`,
-      });
-      return;
-    }
-    await ingestPdfBlob(doc, blob, 'reference PDF');
+    return ingestPdf(doc, { sourceUrl: doc.pdfUrl, label: 'reference PDF' });
   };
 
   // ── Lens chips data ───────────────────────────────────────────────────────
