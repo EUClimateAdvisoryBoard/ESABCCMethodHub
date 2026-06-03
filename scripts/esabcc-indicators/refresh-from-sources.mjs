@@ -141,15 +141,46 @@ const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge · CRF 1.A.4 (residential + commercial) · EU27_2020',
     note: 'CO₂-eq (Mt).',
   },
-  // Deliberately NOT automated (validated empirically on run #3, then removed):
-  //  • T1 transport (CRF 1.A.3): env_air_gge returns ~795 Mt for 2023 vs the
-  //    report's 906.6 in 2022 — a ~12% scope offset (the report series appears
-  //    to include international aviation/navigation). Auto-appending would draw
-  //    a false −12% cliff, so T1 stays in the curated sheet.
-  //  • A1 agriculture & E6 energy-CH₄: env_air_gge airpol=CH4/N2O reports gas
-  //    MASS, not CO₂-equivalent (anchor check measured 0.02–0.03× off), and no
-  //    per-gas CO₂-eq slice is exposed there. Keep manual until a CO₂-eq
-  //    per-gas source is wired in.
+  // These three use SPLICE mode: the live source is on a different scale than
+  // the report baseline, so we apply its year-on-year change to the report's
+  // absolute value rather than overwriting the level (run #3 showed why).
+  'esabcc-t1-transport-ghg': {
+    // env_air_gge CRF 1.A.3 (domestic) is ~12% below the report's transport
+    // series; splicing its trend onto the report baseline avoids the cliff.
+    // Add international aviation/navigation memo legs so the trend captures the
+    // aviation rebound (failed legs are skipped automatically).
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A3' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1D1A' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1D1B' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A3`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1.A.3 + intl aviation/navigation (1.D.1.a/b) · EU27_2020',
+    note: 'Spliced: report baseline × env_air_gge transport YoY change (report scope includes international transport).',
+  },
+  'esabcc-a1-agri-nonco2': {
+    // env_air_gge airpol=CH4/N2O is gas MASS, not CO₂-eq. GWP-weight the legs
+    // (AR5 GWP100: CH₄≈28, N₂O≈265) to get a CO₂-eq-proxy trend, then splice
+    // onto the report's CO₂-eq baseline.
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: [
+      { f: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF3' }, w: 28 },
+      { f: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'N2O', src_crf: 'CRF3' }, w: 265 },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF3`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 3 CH₄+N₂O (GWP-weighted) · EU27_2020',
+    note: 'Spliced: GWP-weighted (CH₄×28 + N₂O×265) YoY change × report CO₂-eq baseline.',
+  },
+  'esabcc-e6-energy-ch4': {
+    // CH₄ mass YoY change == CO₂-eq YoY change (constant GWP), so splice the
+    // single-gas mass trend onto the report's CO₂-eq baseline.
+    kind: 'eurostat', dataset: 'env_air_gge', round: 2, mode: 'splice',
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CH4', src_crf: 'CRF1' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF1`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 1 energy CH₄ · EU27_2020',
+    note: 'Spliced: energy-sector CH₄ mass YoY change × report CO₂-eq baseline.',
+  },
   'esabcc-l1-lulucf-net': {
     kind: 'eurostat', dataset: 'env_air_gge', round: 1,
     filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF4' },
@@ -197,14 +228,28 @@ async function fetchEurostat(dataset, filters) {
   return out.sort((a, b) => a.year - b.year);
 }
 
-/** Fetch several Eurostat slices and sum them by year (sector/gas totals). */
-async function fetchEurostatSum(dataset, filtersList) {
+/**
+ * Fetch several Eurostat slices and sum them by year. Each leg may be a plain
+ * filter object, or `{ f: filters, w: weight }` to apply a multiplier (e.g. a
+ * GWP factor turning a gas mass into CO₂-equivalent). Fault-tolerant: a leg
+ * that errors is skipped; throws only if every leg fails.
+ */
+async function fetchEurostatSum(dataset, legs) {
   const acc = new Map();
-  for (const f of filtersList) {
-    for (const p of await fetchEurostat(dataset, f)) {
-      acc.set(p.year, (acc.get(p.year) ?? 0) + p.value);
+  let ok = 0;
+  for (const leg of legs) {
+    const f = leg.f ?? leg;
+    const w = leg.w ?? 1;
+    try {
+      for (const p of await fetchEurostat(dataset, f)) {
+        acc.set(p.year, (acc.get(p.year) ?? 0) + p.value * w);
+      }
+      ok++;
+    } catch (e) {
+      console.error(`    (sum leg skipped: ${e.message})`);
     }
   }
+  if (ok === 0) throw new Error('all sum legs failed');
   return [...acc.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
 }
 
@@ -369,19 +414,37 @@ async function main() {
       continue;
     }
 
-    const toRepo = rec.toRepo || (v => v);
-    const conv = fetched.map(p => ({ year: p.year, value: round(toRepo(p.value), rec.round) }));
-
-    // Sanity-check against the report anchor before trusting the series.
-    const atAnchor = conv.find(p => p.year === baseYear)?.value;
-    const chk = anchorOk(baseVal, atAnchor);
-    if (!chk.ok) {
-      console.error(`! ${id}: anchor check failed — ${chk.reason}; skipping`);
-      provenance.push({ ...meta, status: 'mismatch', message: chk.reason, baseYear });
-      continue;
+    let newPts, chk;
+    if (rec.mode === 'splice') {
+      // Chain-splice: keep the report's absolute baseline and apply the live
+      // source's year-on-year change. Fixes indicators where the source is on
+      // a different scale/scope than the report (gas mass vs CO₂-eq; narrower
+      // sector scope) — the ratio cancels the offset, leaving the real trend.
+      const base = fetched.find(p => p.year === baseYear)?.value;
+      if (!Number.isFinite(base) || Math.abs(base) < 1e-12 || !Number.isFinite(baseVal)) {
+        const msg = `splice anchor ${baseYear} missing in source`;
+        console.error(`! ${id}: ${msg}; skipping`);
+        provenance.push({ ...meta, status: 'mismatch', message: msg, baseYear });
+        continue;
+      }
+      newPts = fetched.filter(p => p.year > baseYear)
+        .map(p => ({ year: p.year, value: round(baseVal * (p.value / base), rec.round) }));
+      chk = { reason: `spliced onto report ${baseYear}=${baseVal}` };
+    } else {
+      const toRepo = rec.toRepo || (v => v);
+      const conv = fetched.map(p => ({ year: p.year, value: round(toRepo(p.value), rec.round) }));
+      // Sanity-check against the report anchor before trusting the series.
+      const atAnchor = conv.find(p => p.year === baseYear)?.value;
+      const a = anchorOk(baseVal, atAnchor);
+      if (!a.ok) {
+        console.error(`! ${id}: anchor check failed — ${a.reason}; skipping`);
+        provenance.push({ ...meta, status: 'mismatch', message: a.reason, baseYear });
+        continue;
+      }
+      newPts = conv.filter(p => p.year > baseYear);
+      chk = a;
     }
 
-    const newPts = conv.filter(p => p.year > baseYear);
     if (newPts.length === 0) {
       console.log(`= ${id}: no years after ${baseYear} (${chk.reason})`);
       provenance.push({ ...meta, status: 'up-to-date', baseYear, newPoints: [] });
