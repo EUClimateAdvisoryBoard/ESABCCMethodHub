@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-06-03T08:39:27.974Z",
+  "indicators": [
+    {
+      "id": "esabcc-o2-pec",
+      "sourceTitle": "Eurostat nrg_ind_eff · primary energy consumption (PEC2020-2030) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=PEC2020-2030&unit=MTOE",
+      "note": "Mtoe×11.63→TWh.",
+      "status": "up-to-date",
+      "baseYear": 2021,
+      "newPoints": []
+    },
+    {
+      "id": "esabcc-o2-fec",
+      "sourceTitle": "Eurostat nrg_ind_eff · final energy consumption (FEC2020-2030) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_ind_eff?format=JSON&geo=EU27_2020&nrg_bal=FEC2020-2030&unit=MTOE",
+      "note": "Mtoe×11.63→TWh.",
+      "status": "up-to-date",
+      "baseYear": 2021,
+      "newPoints": []
+    },
+    {
+      "id": "esabcc-e5-electrification",
+      "sourceTitle": "Eurostat nrg_bal_s · electricity share of final energy · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC",
+      "note": "Percent÷100→fraction.",
+      "status": "up-to-date",
+      "baseYear": 2021,
+      "newPoints": []
+    },
+    {
+      "id": "esabcc-i6-industry-electrification",
+      "sourceTitle": "Eurostat nrg_bal_s · industry electricity share · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC",
+      "note": "Percent÷100→fraction.",
+      "status": "up-to-date",
+      "baseYear": 2021,
+      "newPoints": []
+    },
+    {
+      "id": "esabcc-i3-circular-mat-use",
+      "sourceTitle": "Eurostat cei_srm030 · circular material use rate · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/cei_srm030?format=JSON&geo=EU27_2020&unit=PC",
+      "note": "Percent÷100→fraction.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 0.114
+        },
+        {
+          "year": 2023,
+          "value": 0.121
+        },
+        {
+          "year": 2024,
+          "value": 0.122
+        }
+      ]
+    },
+    {
+      "id": "esabcc-f-gerd",
+      "sourceTitle": "Eurostat rd_e_gerdtot · GERD as % of GDP · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/rd_e_gerdtot?format=JSON&geo=EU27_2020&sectperf=TOTAL&unit=PC_GDP",
+      "note": "Stored as percent of GDP. Publisher may revise the report’s base year (vintage).",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 2.26
+        },
+        {
+          "year": 2024,
+          "value": 2.24
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e1-energy-supply-ghg",
+      "sourceTitle": "Eurostat env_air_gge · CRF 1.A.1 + 1.B (energy supply) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A1",
+      "note": "Public power/heat + fugitive emissions; CO₂-eq (Mt).",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 746.3
+        },
+        {
+          "year": 2024,
+          "value": 689.1
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i1-industry-ghg",
+      "sourceTitle": "Eurostat env_air_gge · CRF 1.A.2 + 2 (industry energy + processes) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A2",
+      "note": "CO₂-eq (Mt).",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 622.1
+        },
+        {
+          "year": 2024,
+          "value": 611.4
+        }
+      ]
+    },
+    {
+      "id": "esabcc-b1-buildings-ghg",
+      "sourceTitle": "Eurostat env_air_gge · CRF 1.A.4 (residential + commercial) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A4",
+      "note": "CO₂-eq (Mt).",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 437.3
+        },
+        {
+          "year": 2024,
+          "value": 430.7
+        }
+      ]
+    },
+    {
+      "id": "esabcc-t1-transport-ghg",
+      "sourceTitle": "Eurostat env_air_gge · CRF 1.A.3 + intl aviation/navigation (1.D.1.a/b) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A3",
+      "note": "Spliced: report baseline × env_air_gge transport YoY change (report scope includes international transport).",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 901.9
+        },
+        {
+          "year": 2024,
+          "value": 920
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a1-agri-nonco2",
+      "sourceTitle": "Eurostat env_air_gge · CRF 3 CH₄+N₂O (GWP-weighted) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF3",
+      "note": "Spliced: GWP-weighted (CH₄×28 + N₂O×265) YoY change × report CO₂-eq baseline.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 359.9
+        },
+        {
+          "year": 2024,
+          "value": 355.7
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e6-energy-ch4",
+      "sourceTitle": "Eurostat env_air_gge · CRF 1 energy CH₄ · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CH4&src_crf=CRF1",
+      "note": "Spliced: energy-sector CH₄ mass YoY change × report CO₂-eq baseline.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 64.46
+        },
+        {
+          "year": 2023,
+          "value": 60.05
+        },
+        {
+          "year": 2024,
+          "value": 57.77
+        }
+      ]
+    },
+    {
+      "id": "esabcc-l1-lulucf-net",
+      "sourceTitle": "Eurostat env_air_gge · CRF 4 (LULUCF) net · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4",
+      "note": "Net sink is negative. Subject to inventory-vintage revision vs the report base year.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": -215.5
+        },
+        {
+          "year": 2024,
+          "value": -231
+        }
+      ]
+    }
+  ]
+}
