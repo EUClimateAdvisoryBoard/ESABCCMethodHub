@@ -9,23 +9,27 @@ const nextConfig = {
   // Bundle the Brussels Bulletin Word template into the serverless function
   // so the docx-export route can read it via fs.readFile at runtime.
   experimental: {
-    // pdfjs-dist polyfills the browser globals it needs (DOMMatrix, Path2D,
-    // ImageData) in Node by `require("@napi-rs/canvas")` at runtime. Keep the
-    // native package external so webpack doesn't try to bundle its .node
-    // binary.
-    serverComponentsExternalPackages: ['@napi-rs/canvas'],
+    // Keep pdfjs-dist and the native canvas package external so webpack
+    // doesn't bundle them into the serverless function. Bundling pdfjs
+    // rewrites its dynamic worker import to a /chunks/pdf.worker.mjs path
+    // that is never emitted ("Setting up fake worker failed"); loading it
+    // from node_modules at runtime (as in local dev) resolves the worker
+    // correctly. @napi-rs/canvas must stay external so its .node binary
+    // isn't bundled.
+    serverComponentsExternalPackages: ['pdfjs-dist', '@napi-rs/canvas'],
     outputFileTracingIncludes: {
       '/api/brussels-bulletin/export-docx': ['./public/templates/**'],
-      // pdfjs reaches for @napi-rs/canvas through a runtime createRequire,
-      // which the file tracer can't follow — without these the standalone
-      // image ships without the package and PDF ingestion fails with
-      // "DOMMatrix is not defined". The `canvas-*` glob picks up whichever
-      // platform binary npm installed (musl on the Alpine build image).
+      // pdfjs loads its worker via a dynamic import the file tracer can't
+      // follow, and reaches for @napi-rs/canvas through a runtime
+      // createRequire. Force the pdfjs build dir (incl. pdf.worker.mjs) and
+      // the canvas package + its platform binary into both ingest functions.
       '/api/content-analysis/ingest': [
+        './node_modules/pdfjs-dist/legacy/build/**',
         './node_modules/@napi-rs/canvas/**',
         './node_modules/@napi-rs/canvas-*/**',
       ],
       '/api/content-analysis/ingest-upload': [
+        './node_modules/pdfjs-dist/legacy/build/**',
         './node_modules/@napi-rs/canvas/**',
         './node_modules/@napi-rs/canvas-*/**',
       ],

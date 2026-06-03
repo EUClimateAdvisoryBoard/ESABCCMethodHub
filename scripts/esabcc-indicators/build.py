@@ -716,12 +716,40 @@ def ts_string(s):
     return "'" + s.replace("\\", "\\\\").replace("'", "\\'") + "'"
 
 
-def emit_recipe(r):
-    s = find_series(r['sheet'], r['series'])
+def resolve_points(r):
+    """Return (points, unit) for a recipe. Three provenance modes:
+
+    • dataPoints — values supplied inline in the recipe. Used for figures the
+      generic extractor could not pull as a year×value series (categorical
+      project counts, single-year snapshots, or series that only live in the
+      chapter working file, not the consolidated underlying-data workbook).
+    • seriesPos  — pick a specific series by its position in the sheet's series
+      list. Needed for the multi-panel figures (I2 / A2 / A4 …) whose panels
+      repeat the same labels ('Production', 'Use', …) once per material, so a
+      label match alone is ambiguous.
+    • series     — case-insensitive label match (the original single-series path).
+    """
+    if 'dataPoints' in r:
+        pts = [dict(p) for p in r['dataPoints']]
+        pts.sort(key=lambda p: p['year'])
+        return pts, (r.get('unitOverride') or '')
+    if 'seriesPos' in r:
+        rec = DATA.get(r['sheet'])
+        s = rec['series'][r['seriesPos']] if rec else None
+    else:
+        s = find_series(r['sheet'], r['series'])
     if not s:
-        return f"  // [missing] {r['sheet']} / {r['series']}\n"
-    points = [p for p in s['data'] if isinstance(p['value'], (int, float))]
-    points.sort(key=lambda p: p['year'])
+        return None, None
+    pts = [{'year': p['year'], 'value': p['value']}
+           for p in s['data'] if isinstance(p['value'], (int, float))]
+    pts.sort(key=lambda p: p['year'])
+    return pts, (r.get('unitOverride') or s['unit'] or '')
+
+
+def emit_recipe(r):
+    points, unit = resolve_points(r)
+    if points is None:
+        return f"  // [missing] {r['sheet']} / {r.get('series', r.get('seriesPos'))}\n"
     # Round to 4 sig figs to reduce file size
     def fmt(v):
         if v == 0:
@@ -734,9 +762,11 @@ def emit_recipe(r):
         if av >= 1:
             return f'{v:.3f}'
         return f'{v:.4f}'
-    pts = ', '.join(f"{{ year: {p['year']}, value: {fmt(p['value'])} }}" for p in points)
+    def pt(p):
+        tail = ', afterReport: true' if p.get('afterReport') else ''
+        return f"{{ year: {p['year']}, value: {fmt(p['value'])}{tail} }}"
+    pts = ', '.join(pt(p) for p in points)
     src_url = r['sourceUrl']
-    unit = r.get('unitOverride') or s['unit'] or ''
     tgt = r.get('target')
     target_lines = ''
     if tgt is not None:
@@ -788,8 +818,306 @@ lines = [
     "export const ESABCC_REPORT_INDICATORS: Indicator[] = [\n"
 ]
 
+# ═══════════════════════════════════════════════════════════════════════════
+# Post-report completeness pass — the named report figures that were missing
+# from the Indicator Database (I2, I7a/b/c, A2, A4, A5, A6, B3, B4, L2).
+#
+# Each report "Indicator" figure with several plotted series becomes one
+# Indicator-Database entry PER SERIES (matching how E2/I4/A3/O2 were already
+# split), because the database stores one line per entry. Provenance is read
+# back from the report's own workbooks:
+#   • seriesPos  — pull an exact series out of the consolidated underlying-data
+#                  workbook (extract.json). Used where the figure is a clean
+#                  year×value series but the panel labels repeat per material.
+#   • dataPoints — values that the generic year-based extractor can't represent
+#                  (categorical project counts, single-year snapshots) or that
+#                  only live in the chapter working file. The inline numbers are
+#                  taken verbatim from the cited sheet; see
+#                  docs/Indicator-Database-Missing-Indicators-Update.md for the
+#                  full per-indicator derivation write-up.
+# ═══════════════════════════════════════════════════════════════════════════
+NEW_RECIPES = []
+
+EEA = 'https://www.eea.europa.eu/en/datahub/datahubitem-view/3b7fe76c-524a-439a-bfd2-a6e4046302a2'
+ESABCC_REPORT = 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities'
+
+
+def _add(**r):
+    r['_new'] = True
+    NEW_RECIPES.append(r)
+
+
+# ── I2 — production, use and trade balance of steel, cement, base organic
+#    chemicals (Figure 24). Sheet panels: Steel (rows 39-41), Cement (45-47),
+#    Base organic chemicals (51-53); each plots Production / Use / Trade balance
+#    in Mt. The Cement 'Trade balance' row in the workbook is a stray copy of
+#    the Steel row (identical values), so it is OMITTED rather than propagated.
+_I2_SERIES = {  # key -> (id-slug, code-suffix, name-phrase, direction)
+    'production': ('production', 'production', 'production', 'down'),
+    'use':        ('use', 'use', 'apparent use (consumption)', 'down'),
+    'trade':      ('trade-balance', 'trade', 'net trade balance', 'up'),
+}
+_I2_MATERIALS = [
+    ('steel', 'Steel', 'crude steel', {'production': 0, 'use': 1, 'trade': 2}),
+    ('cement', 'Cement', 'cement', {'production': 5, 'use': 6}),
+    ('chemicals', 'Chemicals', 'base organic chemicals', {'production': 10, 'use': 11, 'trade': 12}),
+]
+for _mkey, _mname, _mphrase, _posmap in _I2_MATERIALS:
+    for _skey, _pos in _posmap.items():
+        _slug, _csuf, _sphrase, _dir = _I2_SERIES[_skey]
+        _add(
+            sheet='Figure 24', seriesPos=_pos,
+            id=f'esabcc-i2-{_mkey}-{_slug}', code=f'I2 ({_mname.lower()}, {_csuf})',
+            name=f'{_mname} {_sphrase} (EU)',
+            category='industry', unitOverride='Mt',
+            description=(
+                f'ESABCC progress indicator I2 ({_mname.lower()} {_csuf}). '
+                f'EU {_sphrase} of {_mphrase} (Figure 24). Production, use and '
+                'trade balance together show how much demand is met domestically '
+                'versus through net trade — a context indicator with no policy target.'),
+            sourceShort='Eurostat PRODCOM & trade + Eurofer/Cembureau',
+            sourceUrl='https://ec.europa.eu/eurostat/web/prodcom/database',
+            direction=_dir,
+        )
+
+# ── A2 — livestock products: production, GHG emissions and GHG intensity
+#    (Figure 57). Panels: Bovine meat (40-42), Dairy products (46-48), Pig meat
+#    (52-54). Series: GHG emissions (Mt CO₂eq), Production (Mt), GHG intensity
+#    (t CO₂eq/t). 2010-2021 (emissions) / 2010-2020 (production, intensity).
+_A2_SERIES = {  # key -> (slug, code-word, name, unit, direction)
+    'ghg':  ('ghg', 'GHG', 'GHG emissions', 'Mt CO₂eq', 'down'),
+    'prod': ('production', 'production', 'production', 'Mt', 'down'),
+    'int':  ('ghg-intensity', 'intensity', 'GHG intensity', 't CO₂eq/t', 'down'),
+}
+_A2_PANELS = [('bovine', 'Bovine meat', 0), ('dairy', 'Dairy products', 5), ('pig', 'Pig meat', 10)]
+for _pkey, _pname, _base in _A2_PANELS:
+    for _i, _skey in enumerate(['ghg', 'prod', 'int']):
+        _slug, _word, _nm, _unit, _dir = _A2_SERIES[_skey]
+        _add(
+            sheet='Figure 57', seriesPos=_base + _i,
+            id=f'esabcc-a2-{_pkey}-{_slug}', code=f'A2 ({_pkey}, {_word})',
+            name=f'{_pname}: {_nm} (EU)',
+            category='agriculture', unitOverride=_unit,
+            description=(
+                f'ESABCC progress indicator A2 ({_pname.lower()} {_nm.lower()}). '
+                f'{_nm} for EU {_pname.lower()} (Figure 57). GHG intensity = '
+                'emissions / production; lower intensity reflects more '
+                'climate-efficient production.'),
+            sourceShort='EEA GHG data viewer + Eurostat/FAOSTAT production',
+            sourceUrl=EEA, direction=_dir,
+        )
+
+# ── A4 — production, consumption and herd size of livestock products
+#    (Figure 59). Panels: Bovine meat (40-42), Dairy products (46-48), Pig meat
+#    (52-54). Series: Consumption (Mt), Production (Mt), Herd size (million
+#    heads). 2010-2020.
+_A4_SERIES = {
+    'cons': ('consumption', 'consumption', 'consumption', 'Mt', 'down'),
+    'prod': ('production', 'production', 'production', 'Mt', 'down'),
+    'herd': ('herd-size', 'herd', 'herd size', 'million heads', 'down'),
+}
+for _pkey, _pname, _base in [('bovine', 'Bovine meat', 0), ('dairy', 'Dairy products', 5), ('pig', 'Pig meat', 10)]:
+    for _i, _skey in enumerate(['cons', 'prod', 'herd']):
+        _slug, _word, _nm, _unit, _dir = _A4_SERIES[_skey]
+        _extra = {}
+        # Bovine herd size ↔ the pre-existing ECNO 'cattle-population' indicator.
+        if _pkey == 'bovine' and _skey == 'herd':
+            _extra['duplicateOf'] = 'cattle-population'
+        _add(
+            sheet='Figure 59', seriesPos=_base + _i,
+            id=f'esabcc-a4-{_pkey}-{_slug}', code=f'A4 ({_pkey}, {_word})',
+            name=f'{_pname}: {_nm} (EU)',
+            category='agriculture', unitOverride=_unit,
+            description=(
+                f'ESABCC progress indicator A4 ({_pname.lower()} {_nm.lower()}). '
+                f'EU {_nm} of {_pname.lower()} (Figure 59), shown alongside '
+                'production and herd size to relate demand, output and animal numbers.'),
+            sourceShort='Eurostat/FAOSTAT food balances + livestock surveys',
+            sourceUrl='https://ec.europa.eu/eurostat/databrowser/view/apro_mt_lscatl/default/table',
+            direction=_dir, **_extra,
+        )
+
+# ── A5 — average animal-product consumption (Figure 60), kcal/cap/day.
+#    Panels: Bovine meat (27), Dairy products (32), Pig meat (37). The 2050
+#    benchmark (sustainable-diet level) is carried as the target.
+for _pkey, _pname, _pos, _bench in [('bovine', 'Bovine meat', 0, 48.0),
+                                     ('dairy', 'Dairy products', 4, 301.0),
+                                     ('pig', 'Pig meat', 8, 187.0)]:
+    _add(
+        sheet='Figure 60', seriesPos=_pos,
+        id=f'esabcc-a5-{_pkey}-consumption', code=f'A5 ({_pkey})',
+        name=f'Average {_pname.lower()} consumption (EU)',
+        category='agriculture', unitOverride='kcal/cap/day',
+        description=(
+            f'ESABCC progress indicator A5 ({_pname.lower()}). Average per-capita '
+            f'{_pname.lower()} consumption (Figure 60). The 2050 benchmark reflects '
+            'the EEA "sustainable and healthy diet" level used in the report.'),
+        sourceShort='FAOSTAT food balance sheets',
+        sourceUrl='https://www.fao.org/faostat/en/#data/FBS',
+        direction='down', target=(_bench, 2050),
+    )
+
+# ── A6 — food waste in the EU, 2020 (Figure 61), kg/cap/year. The figure is a
+#    single-year breakdown by source (Households 70, Food processing 26, Primary
+#    production 14, Restaurant sector 12, Retail and distribution 9 → Total 131)
+#    compared with the Farm-to-Fork 2030 benchmark (–50% per capita ≈ 65.5).
+#    Stored as the headline total with the source split documented here and in
+#    the write-up, plus the 2030 benchmark as the target.
+_add(
+    sheet='Figure 61', dataPoints=[{'year': 2020, 'value': 131.0}],
+    id='esabcc-a6-food-waste', code='A6',
+    name='Food waste per capita (EU)',
+    category='agriculture', unitOverride='kg/cap/year',
+    description=(
+        'ESABCC progress indicator A6. Total EU food waste per capita in 2020 '
+        '(Figure 61): 131 kg, split across households (70), food processing (26), '
+        'primary production (14), restaurants (12) and retail/distribution (9). '
+        'Farm-to-Fork 2030 benchmark: halve per-capita food waste (≈65.5 kg).'),
+    sourceShort='Eurostat (env_wasfw)',
+    sourceUrl='https://ec.europa.eu/eurostat/databrowser/view/env_wasfw/default/table',
+    direction='down', target=(65.5, 2030),
+    duplicateOf='food-waste-per-capita',
+)
+
+# ── B4 — population and floor area of homes and businesses (Figure 50), indexed
+#    to 2005 (=1.0). Five drivers of buildings energy demand.
+_B4 = [
+    (0, 'dwellings', 'Total number of dwellings'),
+    (1, 'floor-area', 'Average floor area per dwelling'),
+    (2, 'surface-residential', 'Total residential floor surface'),
+    (3, 'population', 'EU population'),
+    (4, 'surface-tertiary', 'Total tertiary floor surface'),
+]
+for _pos, _slug, _nm in _B4:
+    _add(
+        sheet='Figure 50', seriesPos=_pos,
+        id=f'esabcc-b4-{_slug}', code=f'B4 ({_slug.replace("-", " ")})',
+        name=f'{_nm} (index, 2005 = 1.0)',
+        category='buildings', unitOverride='% of 2005',
+        description=(
+            f'ESABCC progress indicator B4. {_nm}, indexed to 2005 = 1.0 '
+            '(Figure 50). These structural drivers (more, larger dwellings; '
+            'growing population and floor area) push buildings energy demand up, '
+            'against which efficiency gains must be set.'),
+        sourceShort='Eurostat (Building Stock Observatory, demo_pjan)',
+        sourceUrl='https://ec.europa.eu/eurostat/web/population-demography/demography-population-stock-balance/database',
+        direction='up',
+    )
+
+# ── L2 — change in surface area per land-use category (Figure 66). The figure
+#    plots the net 2005→2021 change per category; the database stores the full
+#    underlying area time series (EU CRF, million ha, 2005-2021) from the
+#    chapter workbook 'L2. Areas per land-use category', which is richer than
+#    the single change bar and lets the change recompute as last − first.
+_L2 = {
+    'cropland':   ('Cropland', 'down', [(2005,127.4616),(2006,126.488),(2007,126.0492),(2008,125.7002),(2009,125.2316),(2010,124.5782),(2011,124.2133),(2012,123.9136),(2013,123.7157),(2014,123.2748),(2015,123.0508),(2016,122.7479),(2017,122.4555),(2018,121.7141),(2019,121.3409),(2020,121.2998),(2021,120.9335)]),
+    'grassland':  ('Grassland', 'up', [(2005,73.5261),(2006,73.4064),(2007,73.3774),(2008,73.2869),(2009,73.2221),(2010,73.4395),(2011,73.3826),(2012,73.2632),(2013,73.1637),(2014,73.1722),(2015,73.1232),(2016,73.1027),(2017,73.0252),(2018,73.4207),(2019,73.4625),(2020,73.1667),(2021,73.2009)]),
+    'wetland':    ('Wetland', 'up', [(2005,23.617),(2006,23.6439),(2007,23.6501),(2008,23.6592),(2009,23.7485),(2010,23.7881),(2011,23.8125),(2012,23.8307),(2013,23.8175),(2014,23.8378),(2015,23.8478),(2016,23.8561),(2017,23.8696),(2018,23.8737),(2019,23.8748),(2020,23.8827),(2021,23.8659)]),
+    'settlements':('Settlements', 'down', [(2005,24.8788),(2006,25.2799),(2007,25.5119),(2008,25.7377),(2009,25.9743),(2010,26.2063),(2011,26.4348),(2012,26.6667),(2013,26.8226),(2014,27.0879),(2015,27.2135),(2016,27.3926),(2017,27.5341),(2018,27.6984),(2019,27.8477),(2020,28.0052),(2021,28.1474)]),
+    'forest':     ('Forest land', 'up', [(2005,164.2618),(2006,164.9258),(2007,165.1946),(2008,165.4098),(2009,165.616),(2010,165.7841),(2011,165.96),(2012,166.1325),(2013,166.2852),(2014,166.4268),(2015,166.5778),(2016,166.7324),(2017,166.9564),(2018,167.141),(2019,167.3371),(2020,167.5219),(2021,167.7341)]),
+    'other':      ('Other', 'down', [(2005,9.7954),(2006,9.7959),(2007,9.7572),(2008,9.7459),(2009,9.7467),(2010,9.7435),(2011,9.7371),(2012,9.7332),(2013,9.7352),(2014,9.7405),(2015,9.7273),(2016,9.7085),(2017,9.6994),(2018,9.6923),(2019,9.6773),(2020,9.664),(2021,9.6582)]),
+}
+for _slug, (_nm, _dir, _pts) in _L2.items():
+    _add(
+        sheet='Figure 66', dataPoints=[{'year': y, 'value': v} for y, v in _pts],
+        id=f'esabcc-l2-{_slug}-area', code=f'L2 ({_slug})',
+        name=f'{_nm} surface area (EU)',
+        category='lulucf', unitOverride='million ha',
+        description=(
+            f'ESABCC progress indicator L2. EU {_nm.lower()} surface area '
+            '(Figure 66, underlying EU CRF area series). Figure 66 shows the net '
+            f'2005→2021 change; here the full area path is stored so the change '
+            '(last − first year) is reproducible.'),
+        sourceShort='EU GHG inventory (CRF tables)',
+        sourceUrl=EEA, direction=_dir,
+    )
+
+# ── I7a/b/c — low-carbon industrial projects (Figures 29/30/31). These are
+#    categorical project COUNTS (by technology group × project scale/status),
+#    not a time series, so each is stored as a single snapshot point at the
+#    report's data vintage (2023) carrying the headline project count, with the
+#    technology/scale breakdown documented below and in the write-up.
+_add(
+    sheet='Figure 29', dataPoints=[{'year': 2023, 'value': 48.0}],
+    id='esabcc-i7a-steel-projects', code='I7a',
+    name='Low-carbon steel projects (EU)',
+    category='industry', unitOverride='projects',
+    description=(
+        'ESABCC progress indicator I7a. Count of announced low-carbon steel '
+        'projects in the EU (Figure 29, Green Steel Tracker), 48 in total by '
+        'project scale: R&D 6, pilot 8, demo 5, full scale 29 — and technology '
+        '(DRI, H₂ production, EAF, CCS/CCU, other). Categorical snapshot.'),
+    sourceShort='Green Steel Tracker (Leadership Group for Industry Transition)',
+    sourceUrl='https://www.industrytransition.org/green-steel-tracker/',
+    direction='up',
+)
+_add(
+    sheet='Figure 30', dataPoints=[{'year': 2023, 'value': 62.0}],
+    id='esabcc-i7b-cement-projects', code='I7b',
+    name='Low-carbon cement projects (EU)',
+    category='industry', unitOverride='projects',
+    description=(
+        'ESABCC progress indicator I7b. Count of announced low-carbon cement '
+        'projects in the EU (Figure 30), 62 in total by project scale '
+        '(unspecified 5, R&D 22, pilot 24, demo 7, full scale 4) and technology '
+        '(CCS/CCU, material substitution/recycling, fuel switch/electrification, '
+        'energy efficiency, mineralisation). Categorical snapshot.'),
+    sourceShort='ESABCC project database',
+    sourceUrl=ESABCC_REPORT, direction='up',
+)
+_add(
+    sheet='Figure 31', dataPoints=[{'year': 2023, 'value': 171.0}],
+    id='esabcc-i7c-chemicals-projects', code='I7c',
+    name='Low-carbon chemicals projects (EU)',
+    category='industry', unitOverride='projects',
+    description=(
+        'ESABCC progress indicator I7c. Count of low-carbon base-chemicals '
+        'projects in the EU (Figure 31), 171 in total by technology — renewables '
+        '54, chemical recycling 28, H₂ & derivatives 27, CCS/CCU 18, efficiency '
+        '15, biochemicals 14, mechanical recycling 13, e-cracker 2 — split by '
+        'status (planned/started). Categorical snapshot.'),
+    sourceShort='ESABCC project database',
+    sourceUrl=ESABCC_REPORT, direction='up',
+)
+
+# ── B3 — residential annual renovation rate and depth (Figure 49), % of
+#    building stock. The figure reports period-average weighted renovation rates
+#    (not annual time series): the 2016-2020 historic rate and the 2026-2030
+#    Climate-Target-Plan scenario rate, split Light/Medium/Deep. Stored as the
+#    weighted rate (historic point at 2020) with the 2030 scenario as target.
+for _slug, _nm, _hist, _scen in [('residential', 'Residential', 0.010, 0.018),
+                                  ('commercial', 'Commercial', 0.006, 0.011)]:
+    _extra = {'duplicateOf': 'building-renovation-rate'} if _slug == 'residential' else {}
+    _add(
+        sheet='Figure 49', dataPoints=[{'year': 2020, 'value': _hist}],
+        id=f'esabcc-b3-{_slug}-renovation-rate', code=f'B3 ({_slug})',
+        name=f'{_nm} weighted renovation rate (EU)',
+        category='buildings', unitOverride='%',
+        description=(
+            f'ESABCC progress indicator B3. {_nm} weighted annual renovation rate '
+            f'(Figure 49): {_hist*100:.1f}% over 2016-2020, rising to {_scen*100:.1f}% '
+            'in the 2026-2030 Climate Target Plan scenario (target). "Weighted" '
+            'counts deep renovations more than light ones (Light/Medium/Deep depths).'),
+        sourceShort='Climate Target Plan impact assessment + Eurostat',
+        sourceUrl='https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020SC0176',
+        direction='up', target=(_scen, 2030), **_extra,
+    )
+
+RECIPES += NEW_RECIPES
+
 for r in RECIPES:
     lines.append(emit_recipe(r))
 
 lines.append("];\n")
-print(''.join(lines))
+
+if __name__ == '__main__':
+    import sys
+    # `--new-only` prints just the entries flagged `_new` (no file header /
+    # array wrapper). The committed esabcc-indicators.ts additionally carries
+    # post-report `afterReport` points injected by the live-source refresh,
+    # which a full regen would drop — so new indicators are appended into the
+    # existing array with this mode rather than rewriting the whole file.
+    if '--new-only' in sys.argv:
+        print(''.join(emit_recipe(r) for r in RECIPES if r.get('_new')))
+    else:
+        print(''.join(lines))

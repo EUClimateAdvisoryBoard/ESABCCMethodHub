@@ -196,9 +196,9 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['goal'],
         indicators: [
           ref('I2', 'Total demand for selected materials', [
-            'esabcc-i2a-steel-use',
-            'esabcc-i2b-cement-use',
-            'esabcc-i2c-chemicals-production',
+            'esabcc-i2-steel-use',
+            'esabcc-i2-cement-use',
+            'esabcc-i2-chemicals-production',
           ]),
         ],
       },
@@ -379,7 +379,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Deep retrofits',
         parents: ['bu-o1'],
-        indicators: [ref('B3', 'Renovation rate', ['esabcc-b3-renovation-rate'])],
+        indicators: [ref('B3', 'Renovation rate', ['esabcc-b3-residential-renovation-rate'])],
       },
       {
         id: 'bu-l5',
@@ -419,8 +419,8 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         indicators: [
           ref('A2', 'Emission intensity of dairy cattle, non-dairy cattle, pigs & swine', [
             'esabcc-a2-dairy-ghg-intensity',
-            'esabcc-a2-nondairy-ghg-intensity',
-            'esabcc-a2-pigs-ghg-intensity',
+            'esabcc-a2-bovine-ghg-intensity',
+            'esabcc-a2-pig-ghg-intensity',
           ]),
         ],
       },

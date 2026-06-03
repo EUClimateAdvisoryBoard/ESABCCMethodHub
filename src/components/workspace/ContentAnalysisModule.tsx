@@ -58,6 +58,7 @@ import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocume
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import TagDistributionPanel from '@/components/content-analysis/TagDistributionPanel';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
+import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
 import CodeEditorModal, {
   type CodeEditorPayload,
   type CodeEditorResult,
@@ -68,6 +69,61 @@ const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
   { ssr: false, loading: () => <div className="p-4 text-[12px] text-[#8A95A3]">Loading PDF viewer…</div> },
 );
+
+// Locate a passage selected on a PDF page within the document's flat text so a
+// coded segment can anchor to real character offsets. PDF text-layer
+// selections often differ from `doc.text` only in whitespace, so we match on a
+// whitespace-normalised copy and map the hit back to original offsets.
+function findNormalized(
+  haystack: string,
+  needle: string,
+  fromIndex = 0,
+): { startChar: number; endChar: number } | null {
+  const nNeedle = needle.replace(/\s+/g, ' ').trim().toLowerCase();
+  if (nNeedle.length < 2) return null;
+  let norm = '';
+  const map: number[] = [];
+  let prevSpace = false;
+  for (let i = 0; i < haystack.length; i++) {
+    const ch = haystack[i];
+    if (/\s/.test(ch)) {
+      if (prevSpace) continue;
+      norm += ' '; map.push(i); prevSpace = true;
+    } else {
+      norm += ch.toLowerCase(); map.push(i); prevSpace = false;
+    }
+  }
+  let searchFrom = 0;
+  for (;;) {
+    const at = norm.indexOf(nNeedle, searchFrom);
+    if (at < 0) return null;
+    const startOrig = map[at];
+    if (startOrig >= fromIndex) {
+      const endNorm = Math.min(at + nNeedle.length - 1, map.length - 1);
+      return { startChar: startOrig, endChar: map[endNorm] + 1 };
+    }
+    searchFrom = at + 1;
+  }
+}
+
+function locateSelectionOffsets(
+  doc: AnalysisDocument,
+  blockId: string | null,
+  text: string,
+): { startChar: number; endChar: number } {
+  const full = doc.text ?? '';
+  let base = 0;
+  const block = blockId ? doc.blocks?.find(b => b.id === blockId) : undefined;
+  if (block?.text) {
+    const bi = full.indexOf(block.text);
+    if (bi >= 0) base = bi;
+  }
+  return (
+    findNormalized(full, text, base) ||
+    findNormalized(full, text, 0) ||
+    { startChar: base, endChar: base + (block?.text?.length ?? text.length) }
+  );
+}
 
 const DEFAULT_CODE_COLORS = [
   '#00928F', '#E87722', '#0065A4', '#7C3AED', '#D97706',
@@ -954,16 +1010,45 @@ function DocumentViewer({
 }) {
   const hasText = (doc.text ?? '').trim().length > 50;
   const isReference = (doc.sourceKind ?? 'policy') === 'reference';
-  // References have no real CELEX; their cached PDF is keyed by a synthetic
-  // id-derived key. Either keyed source lights up the PDF annotation pane
-  // once its bytes have been ingested (EUR-Lex fetch or manual/library load).
-  const pdfCacheKey = doc.celexNumber ?? (isReference ? referencePdfCacheKey(doc.id) : null);
+  // PDF source for the annotation pane. EUR-Lex policies stream from the
+  // ingest cache by CELEX. References render the *original* PDF straight from
+  // the reference library via the durable Supabase-backed proxy (keyed by the
+  // reference id) — the ephemeral ingest cache can 404 on a different
+  // serverless instance, and we already have the file in storage.
+  const refId = isReference ? doc.id.replace(/^ref-doc-/, '') : null;
+  const pdfSrcUrl = doc.celexNumber
+    ? `/api/content-analysis/pdf?celex=${encodeURIComponent(doc.celexNumber)}`
+    : refId
+      ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
+      : '';
   const hasPdfPane = Boolean(
-    pdfCacheKey && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
+    pdfSrcUrl && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
   );
   // A reference PDF is already on file in the reference manager, ready to load
   // without a re-upload.
   const hasLibraryPdf = isReference && Boolean(doc.pdfUrl);
+
+  // Map the selected segment to the block it lives in, so clicking a coded
+  // segment in the sidebar scrolls the PDF to that passage and highlights it.
+  // PDF-made segments carry a blockId directly; text-panel segments are
+  // resolved by which block's character range covers their start offset.
+  const blockRanges = useMemo(() => {
+    const full = doc.text ?? '';
+    const ranges: { id: string; start: number; end: number }[] = [];
+    let cursor = 0;
+    for (const b of doc.blocks ?? []) {
+      if (!b.text) continue;
+      const idx = full.indexOf(b.text, cursor);
+      if (idx >= 0) { ranges.push({ id: b.id, start: idx, end: idx + b.text.length }); cursor = idx + b.text.length; }
+    }
+    return ranges;
+  }, [doc.blocks, doc.text]);
+  const highlightedSeg = segments.find(s => s.id === highlightedSegmentId) ?? null;
+  const highlightedBlockId =
+    highlightedSeg?.blockId ??
+    (highlightedSeg
+      ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
+      : null);
 
   return (
     <div className="flex flex-col min-h-0">
@@ -1053,28 +1138,47 @@ function DocumentViewer({
         </div>
       ) : hasPdfPane ? (
         <div className="flex-1 overflow-auto p-2">
+          {/* Original PDF — the primary surface. Coded passages show as
+              colour tints over the page; click a block to highlight it. */}
           <PdfDocumentView
             document={doc}
-            pdfSrcUrl={`/api/content-analysis/pdf?celex=${encodeURIComponent(pdfCacheKey!)}`}
+            pdfSrcUrl={pdfSrcUrl}
             segments={segments}
             codes={codes}
-            highlightedBlockId={highlightedSegmentId}
-            onSelectBlock={onSelectSegment}
+            highlightedBlockId={highlightedBlockId}
+            onSelectText={(sel: PdfTextSelection) => {
+              const { startChar, endChar } = locateSelectionOffsets(doc, sel.blockId, sel.text);
+              onSelectionWithoutCode({
+                blockId: sel.blockId ?? undefined,
+                startChar,
+                endChar,
+                text: sel.text,
+                rect: sel.rect,
+              });
+            }}
           />
-          <div className="mt-2">
-            <AnnotatedDocumentView
-              document={doc}
-              segments={segments}
-              codes={codes}
-              activeCodeId={activeCodeId}
-              onCreateSegment={onCreateSegment}
-              onSelectSegment={onSelectSegment}
-              highlightedSegmentId={highlightedSegmentId}
-              onDeleteSegment={onDeleteSegment}
-              onCommentSegment={onCommentSegment}
-              onSelectionWithoutCode={sel => onSelectionWithoutCode({ ...sel })}
-            />
-          </div>
+          {/* Extracted text — collapsed by default so the PDF stays the
+              focus. Expand it to select a passage and attach a tag (the raw
+              text is where passage selection currently happens). */}
+          <details className="mt-3 border-t border-grey-200 pt-2 group">
+            <summary className="cursor-pointer text-[11px] font-semibold text-secondary hover:opacity-80 select-none list-none">
+              ▸ Extracted text — select a passage here to tag it
+            </summary>
+            <div className="mt-2">
+              <AnnotatedDocumentView
+                document={doc}
+                segments={segments}
+                codes={codes}
+                activeCodeId={activeCodeId}
+                onCreateSegment={onCreateSegment}
+                onSelectSegment={onSelectSegment}
+                highlightedSegmentId={highlightedSegmentId}
+                onDeleteSegment={onDeleteSegment}
+                onCommentSegment={onCommentSegment}
+                onSelectionWithoutCode={sel => onSelectionWithoutCode({ ...sel })}
+              />
+            </div>
+          </details>
         </div>
       ) : (
         <div className="flex-1 overflow-auto p-3">
