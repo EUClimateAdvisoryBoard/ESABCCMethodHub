@@ -134,9 +134,22 @@ export interface PersistResult {
 export async function upsertRef(ref: CustomRef, addedBy?: string): Promise<PersistResult> {
   const supabase = createAdminClient();
   const row = { ...refToRow(ref), added_by: addedBy ?? null };
-  const { error, status } = await supabase
+  let { error, status } = await supabase
     .from('custom_references')
     .upsert(row, { onConflict: 'id' });
+
+  // Backward-compat: migration 053 adds the `tags` column. If it hasn't been
+  // applied yet, PostgREST rejects the unknown column ("Could not find the
+  // 'tags' column … in the schema cache"). Retry without `tags` so saving
+  // still works — project tags just won't persist until the migration runs.
+  if (error && /tags/i.test(error.message) && /(column|schema cache)/i.test(error.message)) {
+    const { tags, ...rowWithoutTags } = row;
+    void tags;
+    ({ error, status } = await supabase
+      .from('custom_references')
+      .upsert(rowWithoutTags, { onConflict: 'id' }));
+  }
+
   if (error) return { ok: false, status, error: error.message };
   return { ok: true, status };
 }
