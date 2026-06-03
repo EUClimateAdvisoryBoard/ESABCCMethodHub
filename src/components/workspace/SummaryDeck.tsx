@@ -260,8 +260,8 @@ function EditorBlock({
       : block.kind === 'image'
         ? 'Screenshot'
         : block.kind === 'mermaid'
-          ? 'Mermaid'
-          : 'Flowchart';
+          ? 'Flowchart'
+          : 'Diagram (legacy)';
 
   return (
     <div className="rounded-md border border-grey-200 bg-white p-2 space-y-2">
@@ -578,8 +578,7 @@ export function SummaryDeckEditor({
       <div className="flex flex-wrap items-center gap-2 pt-1">
         <span className="text-[10px] text-tertiary-light">Add slide:</span>
         <button type="button" onClick={() => add('text')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Text</button>
-        <button type="button" onClick={() => add('diagram')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Flowchart</button>
-        <button type="button" onClick={() => add('mermaid')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Mermaid</button>
+        <button type="button" onClick={() => add('mermaid')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Flowchart</button>
         <button type="button" onClick={() => add('image')} className="px-2 py-0.5 rounded border border-grey-200 text-[11px] text-tertiary hover:border-secondary hover:text-secondary transition">+ Screenshot</button>
       </div>
     </div>
