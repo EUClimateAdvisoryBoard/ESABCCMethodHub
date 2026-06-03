@@ -48,7 +48,7 @@ import {
   isScientificLiterature,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
-import type { AnalysisDocument, CodeNode } from '@/lib/content-analysis/types';
+import type { AnalysisDocument, CodeNode, DocumentSummary } from '@/lib/content-analysis/types';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
@@ -135,6 +135,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     updateSegmentNote,
     upsertDocument,
     applyIngestion,
+    setDocumentSummary,
   } = useContentAnalysis();
   const liveRefs = useLiveReferences();
 
@@ -284,6 +285,36 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     () => (selectedDocument ? lensSegments.filter(s => s.documentId === selectedDocument.id) : []),
     [lensSegments, selectedDocument],
   );
+
+  // ── Document-level summaries ("comment for the entire paper") ─────────────
+  const projectNameById = useMemo(() => {
+    const m = new Map<string | null, string>();
+    m.set(null, 'Master library');
+    m.set(projectId, projectName);
+    for (const p of wsProjects) m.set(p.id, p.name);
+    return m;
+  }, [projectId, projectName, wsProjects]);
+
+  const docSummaries = useMemo(
+    () => (selectedDocument ? snapshot.summaries.filter(s => s.documentId === selectedDocument.id) : []),
+    [snapshot.summaries, selectedDocument],
+  );
+  /** This project's own summary for the selected document — the editable one. */
+  const ownSummary = useMemo(
+    () => docSummaries.find(s => s.projectId === projectId) ?? null,
+    [docSummaries, projectId],
+  );
+  /** Summaries authored under other projects — shown read-only for context. */
+  const otherSummaries = useMemo(
+    () => docSummaries.filter(s => s.projectId !== projectId),
+    [docSummaries, projectId],
+  );
+
+  const handleSaveSummary = (text: string) => {
+    if (!selectedDocument) return;
+    upsertDocument(selectedDocument);
+    setDocumentSummary(selectedDocument.id, projectId, text);
+  };
 
   // ── Counts (within the active lens) ──────────────────────────────────────
   const codeCountsDirect = useMemo(() => {
@@ -729,6 +760,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 activeCodeId={selectedCodeId}
                 highlightedSegmentId={highlightedSegmentId}
                 ingestState={ingestState}
+                summary={ownSummary}
+                otherSummaries={otherSummaries}
+                projectNameById={projectNameById}
+                onSaveSummary={handleSaveSummary}
                 onCreateSegment={handleCreateSegment}
                 onSelectSegment={setHighlightedSegmentId}
                 onDeleteSegment={deleteSegment}
@@ -814,6 +849,10 @@ function DocumentViewer({
   activeCodeId,
   highlightedSegmentId,
   ingestState,
+  summary,
+  otherSummaries,
+  projectNameById,
+  onSaveSummary,
   onCreateSegment,
   onSelectSegment,
   onDeleteSegment,
@@ -829,6 +868,10 @@ function DocumentViewer({
   activeCodeId: string | null;
   highlightedSegmentId: string | null;
   ingestState: { status: 'idle' | 'loading' | 'error' | 'ok'; message?: string };
+  summary: DocumentSummary | null;
+  otherSummaries: DocumentSummary[];
+  projectNameById: Map<string | null, string>;
+  onSaveSummary: (text: string) => void;
   onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string }) => void;
   onSelectSegment: (id: string) => void;
   onDeleteSegment: (id: string) => void;
@@ -873,6 +916,15 @@ function DocumentViewer({
           </button>
         </div>
       </div>
+
+      {/* Whole-document summary — a "comment for the entire paper", available
+          for every document kind (policy, grey or scientific literature). */}
+      <DocumentSummaryPanel
+        summary={summary}
+        otherSummaries={otherSummaries}
+        projectNameById={projectNameById}
+        onSave={onSaveSummary}
+      />
 
       {!hasText ? (
         <div className="flex-1 flex flex-col items-center justify-center p-8 text-center gap-3">
@@ -947,6 +999,150 @@ function DocumentViewer({
             onCommentSegment={onCommentSegment}
             onSelectionWithoutCode={sel => onSelectionWithoutCode({ ...sel })}
           />
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Whole-document summary panel ─────────────────────────────────────────────
+/**
+ * A collapsible "comment for the entire paper" attached to the document as a
+ * whole — distinct from the passage-level notes on coded segments. Shown for
+ * every document kind. The current project's summary is editable; summaries
+ * authored under other projects are shown read-only for context, so the whole
+ * team can see each report's take on the same paper.
+ */
+function DocumentSummaryPanel({
+  summary,
+  otherSummaries,
+  projectNameById,
+  onSave,
+}: {
+  summary: DocumentSummary | null;
+  otherSummaries: DocumentSummary[];
+  projectNameById: Map<string | null, string>;
+  onSave: (text: string) => void;
+}) {
+  const hasSummary = Boolean(summary?.text?.trim());
+  // Open by default when there's already something to read, so it isn't missed.
+  const [open, setOpen] = useState(hasSummary);
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(summary?.text ?? '');
+
+  // Re-sync local state when the selected document (and thus its summary)
+  // changes underneath us.
+  const summaryKey = summary?.id ?? 'none';
+  useEffect(() => {
+    setDraft(summary?.text ?? '');
+    setEditing(false);
+    setOpen(Boolean(summary?.text?.trim()));
+  }, [summaryKey]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const save = () => {
+    onSave(draft);
+    setEditing(false);
+    if (!draft.trim()) setOpen(false);
+  };
+
+  const updatedLabel = summary?.updatedAt
+    ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+    : null;
+
+  return (
+    <div className="border-b border-grey-200 bg-grey-50/60">
+      <button
+        type="button"
+        onClick={() => setOpen(o => !o)}
+        className="w-full px-3 py-1.5 flex items-center justify-between text-left"
+      >
+        <span className="text-[11px] font-semibold text-tertiary-dark flex items-center gap-1.5">
+          <span aria-hidden>▤</span>
+          Summary
+          {hasSummary && (
+            <span className="text-[9px] font-normal text-white bg-secondary rounded-full px-1.5 py-0.5">
+              1
+            </span>
+          )}
+          {otherSummaries.length > 0 && (
+            <span className="text-[9px] font-normal text-tertiary-light">
+              +{otherSummaries.length} other project{otherSummaries.length === 1 ? '' : 's'}
+            </span>
+          )}
+        </span>
+        <span className="text-[10px] text-tertiary-light">{open ? '▴' : '▾'}</span>
+      </button>
+
+      {open && (
+        <div className="px-3 pb-3 space-y-2">
+          {editing ? (
+            <div className="space-y-2">
+              <textarea
+                value={draft}
+                onChange={e => setDraft(e.target.value)}
+                rows={4}
+                autoFocus
+                placeholder="Summarise this paper for the team — key findings, relevance, how to use it…"
+                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y"
+              />
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={save}
+                  className="px-3 py-1 rounded-md bg-primary text-white text-[11px] font-semibold hover:bg-primary-dark"
+                >
+                  Save summary
+                </button>
+                <button
+                  type="button"
+                  onClick={() => { setDraft(summary?.text ?? ''); setEditing(false); }}
+                  className="text-[11px] text-tertiary-light hover:text-tertiary"
+                >
+                  Cancel
+                </button>
+                <span className="text-[10px] text-tertiary-light ml-auto">Shared with the team</span>
+              </div>
+            </div>
+          ) : hasSummary ? (
+            <div className="space-y-1">
+              <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">
+                {summary!.text}
+              </p>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => setEditing(true)}
+                  className="text-[11px] text-secondary hover:underline"
+                >
+                  Edit
+                </button>
+                {updatedLabel && (
+                  <span className="text-[10px] text-tertiary-light">Updated {updatedLabel}</span>
+                )}
+              </div>
+            </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setEditing(true)}
+              className="text-[11px] text-secondary hover:underline"
+            >
+              + Add summary
+            </button>
+          )}
+
+          {otherSummaries.length > 0 && (
+            <div className="pt-2 border-t border-grey-200 space-y-2">
+              {otherSummaries.map(s => (
+                <div key={s.id}>
+                  <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">
+                    {projectNameById.get(s.projectId) ?? 'Other project'}
+                  </p>
+                  <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{s.text}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>

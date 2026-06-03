@@ -40,6 +40,7 @@ import type {
   CodedSegment,
   CodeSuggestion,
   ContentAnalysisSnapshot,
+  DocumentSummary,
   Project,
 } from './types';
 import type { Block, AiClassification } from './types';
@@ -128,6 +129,22 @@ function clearDocumentSuggestionsRemote(documentId: string): void {
   ).catch(err => logApiError('clearDocumentSuggestions', err));
 }
 
+function postSummary(summary: DocumentSummary): void {
+  fetch('/api/content-analysis/summaries', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ summaries: [summary] }),
+    keepalive: true,
+  }).catch(err => logApiError('postSummary', err));
+}
+
+function deleteSummaryRemote(id: string): void {
+  fetch(`/api/content-analysis/summaries?id=${encodeURIComponent(id)}`, {
+    method: 'DELETE',
+    keepalive: true,
+  }).catch(err => logApiError('deleteSummary', err));
+}
+
 let serverSynced = false;
 
 /** Merge server-side segments + suggestions into local state. Server
@@ -136,18 +153,21 @@ async function syncFromServer(): Promise<void> {
   if (serverSynced) return;
   serverSynced = true;
   try {
-    const [segResp, suggResp, codesResp] = await Promise.all([
+    const [segResp, suggResp, codesResp, summResp] = await Promise.all([
       fetch('/api/content-analysis/segments', { cache: 'no-store' }),
       fetch('/api/content-analysis/suggestions', { cache: 'no-store' }),
       fetch('/api/content-analysis/codes', { cache: 'no-store' }),
+      fetch('/api/content-analysis/summaries', { cache: 'no-store' }),
     ]);
-    if (!segResp.ok && !suggResp.ok && !codesResp.ok) return;
+    if (!segResp.ok && !suggResp.ok && !codesResp.ok && !summResp.ok) return;
     const segJson = segResp.ok ? await segResp.json() : { items: [] };
     const suggJson = suggResp.ok ? await suggResp.json() : { items: [] };
     const codesJson = codesResp.ok ? await codesResp.json() : { items: [] };
+    const summJson = summResp.ok ? await summResp.json() : { items: [] };
     const serverSegs: CodedSegment[] = Array.isArray(segJson.items) ? segJson.items : [];
     const serverSuggs: CodeSuggestion[] = Array.isArray(suggJson.items) ? suggJson.items : [];
     const serverCodes: CodeNode[] = Array.isArray(codesJson.items) ? codesJson.items : [];
+    const serverSumms: DocumentSummary[] = Array.isArray(summJson.items) ? summJson.items : [];
     update(s => {
       const byIdSeg = new Map<string, CodedSegment>();
       for (const x of s.segments) byIdSeg.set(x.id, x);
@@ -162,11 +182,16 @@ async function syncFromServer(): Promise<void> {
       const byIdCode = new Map<string, CodeNode>();
       for (const x of s.codes) byIdCode.set(x.id, x);
       for (const x of serverCodes) byIdCode.set(x.id, x);
+      // Server summaries win on id collision so a teammate's summary shows up.
+      const byIdSumm = new Map<string, DocumentSummary>();
+      for (const x of s.summaries) byIdSumm.set(x.id, x);
+      for (const x of serverSumms) byIdSumm.set(x.id, x);
       return {
         ...s,
         segments: Array.from(byIdSeg.values()),
         suggestions: Array.from(bySuggId.values()),
         codes: Array.from(byIdCode.values()),
+        summaries: Array.from(byIdSumm.values()),
       };
     });
   } catch (err) {
@@ -181,7 +206,7 @@ let hydrated = false;
 const listeners = new Set<() => void>();
 
 function emptySnapshot(): ContentAnalysisSnapshot {
-  return { version: 1, codes: [], documents: [], segments: [], projects: [], suggestions: [] };
+  return { version: 1, codes: [], documents: [], segments: [], projects: [], suggestions: [], summaries: [] };
 }
 
 function emit(): void {
@@ -219,6 +244,8 @@ function hydrate(): void {
           // to [] for older persisted snapshots so we don't have to bump
           // the version number and wipe the user's work.
           suggestions: parsed.suggestions ?? [],
+          // `summaries` was added later still — same defaulting strategy.
+          summaries: parsed.summaries ?? [],
         };
         return;
       }
@@ -1027,6 +1054,42 @@ export function useContentAnalysis() {
     }));
   }, []);
 
+  // ── Document summary operations ────────────────────────────────────
+  /** Set (or clear) the whole-document summary for a document under a
+   *  project. The id is deterministic per (project, document) so re-saving
+   *  updates the same row. An empty / whitespace `text` clears the summary.
+   *  Mirrors to the shared store so the whole team sees it. */
+  const setDocumentSummary = useCallback((
+    documentId: string,
+    projectId: string | null,
+    text: string,
+  ): DocumentSummary | null => {
+    const id = `summary-${projectId ?? 'master'}-${documentId}`;
+    const trimmed = text.trim();
+    if (!trimmed) {
+      update(s => ({ ...s, summaries: s.summaries.filter(x => x.id !== id) }));
+      deleteSummaryRemote(id);
+      return null;
+    }
+    const now = new Date().toISOString();
+    let saved: DocumentSummary | null = null;
+    update(s => {
+      const existing = s.summaries.find(x => x.id === id);
+      const next: DocumentSummary = {
+        id,
+        documentId,
+        projectId,
+        text: trimmed,
+        createdAt: existing?.createdAt ?? now,
+        updatedAt: now,
+      };
+      saved = next;
+      return { ...s, summaries: [...s.summaries.filter(x => x.id !== id), next] };
+    });
+    if (saved) postSummary(saved);
+    return saved;
+  }, []);
+
   // ── Project operations ─────────────────────────────────────────────
   const addProject = useCallback((input: Omit<Project, 'id' | 'createdAt' | 'updatedAt'>): Project => {
     const now = new Date().toISOString();
@@ -1095,6 +1158,7 @@ export function useContentAnalysis() {
     restoreCodesAndSegments,
     applyIngestion,
     applyClassifications,
+    setDocumentSummary,
     deleteDocumentVersion,
     reorderBlocks,
     splitBlock,

@@ -220,6 +220,24 @@ export interface CodeSuggestion {
   createdAt: string;
 }
 
+/** A free-text, whole-document summary — a "comment for the entire paper".
+ *  Unlike a `CodedSegment.note` (which is pinned to a passage) this is
+ *  attached to the document as a whole, no matter its kind (policy, grey or
+ *  scientific literature). Persisted through the shared store so the whole
+ *  team sees it. Scoped to a project so the Industry and Policy Gap reports
+ *  can each keep their own take on the same paper. */
+export interface DocumentSummary {
+  /** Deterministic `summary-<projectId|master>-<documentId>` so re-saving
+   *  updates the same row rather than piling up duplicates. */
+  id: string;
+  documentId: string;
+  /** Project the summary was authored under; `null` for master-level. */
+  projectId: string | null;
+  text: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export interface Project {
   id: string;
   name: string;
@@ -243,4 +261,6 @@ export interface ContentAnalysisSnapshot {
   projects: Project[];
   /** Pending AI code suggestions awaiting human accept/reject. */
   suggestions: CodeSuggestion[];
+  /** Whole-document, free-text summaries ("comment for the entire paper"). */
+  summaries: DocumentSummary[];
 }

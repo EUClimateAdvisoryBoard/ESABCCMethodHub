@@ -681,5 +681,6 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     segments: [],
     projects,
     suggestions: [],
+    summaries: [],
   };
 }
