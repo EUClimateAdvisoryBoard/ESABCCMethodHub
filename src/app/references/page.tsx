@@ -194,7 +194,7 @@ async function postRefToApi(ref: {
   doi: string; title: string; authors: string; year: string;
   journal: string; type: string; volume: string; issue: string;
   pages: string; url: string; fullCitation: string;
-  funding?: FundingEntry[] | null;
+  funding?: FundingEntry[] | null; tags?: string[];
 }) {
   try {
     await fetch('/api/references/library', {
@@ -210,7 +210,7 @@ async function putRefToApi(ref: {
   id: string; doi: string; title: string; authors: string; year: string;
   journal: string; type: string; volume: string; issue: string;
   pages: string; url: string; fullCitation: string; pdfUrl?: string;
-  funding?: FundingEntry[] | null;
+  funding?: FundingEntry[] | null; tags?: string[];
 }): Promise<{ ok: boolean; error?: string }> {
   try {
     const resp = await fetch('/api/references/library', {
@@ -623,9 +623,6 @@ export default function ReferencesPage() {
           <a href="/references/word-addin-setup" className="px-3 py-1.5 bg-white hover:bg-[#E6E7E8] text-[#3D5265] text-xs rounded border border-[#E6E7E8]">
             Word Add-in Setup
           </a>
-          <a href="/report-plan" className="px-3 py-1.5 bg-white hover:bg-[#E6E7E8] text-[#3D5265] text-xs rounded border border-[#E6E7E8]">
-            Report Plan
-          </a>
         </div>
       </PageHero>
 
@@ -750,6 +747,7 @@ export default function ReferencesPage() {
                         url: ref.csl_json?.URL || '',
                         fullCitation: '',
                         funding: ref.funding,
+                        tags: ref.tags || [],
                       });
                       setReferences([ref, ...references]);
                       setShowAddForm(false);
@@ -781,6 +779,7 @@ export default function ReferencesPage() {
                         fullCitation: '',
                         pdfUrl: ref.pdf_url || '',
                         funding: ref.funding,
+                        tags: ref.tags || [],
                       });
                       if (!result.ok) {
                         alert(`Failed to save: ${result.error}`);

@@ -89,6 +89,10 @@ export async function POST(request: NextRequest) {
       fullCitation: existing.fullCitation || body.fullCitation || '',
       pdfUrl:       existing.pdfUrl       || body.pdfUrl       || '',
       funding:      (body.funding && body.funding.length > 0) ? body.funding : existing.funding,
+      // Tags are owned by the editing client (project assignment), so take the
+      // incoming list when present rather than merging — lets a re-save clear
+      // a project the user removed.
+      tags:         (body.tags && body.tags.length > 0) ? body.tags : existing.tags,
       addedAt: new Date().toISOString(),
     };
 
@@ -124,6 +128,7 @@ export async function POST(request: NextRequest) {
     source: body.source || 'web',
     pdfUrl: body.pdfUrl || '',
     funding: body.funding && body.funding.length > 0 ? body.funding : undefined,
+    tags: body.tags && body.tags.length > 0 ? body.tags : undefined,
   };
 
   const result = await upsertRef(ref);
@@ -177,6 +182,7 @@ export async function PUT(request: NextRequest) {
     source: body.source ?? previous?.source ?? 'web',
     pdfUrl: body.pdfUrl ?? previous?.pdfUrl ?? '',
     funding: body.funding ?? previous?.funding,
+    tags: body.tags ?? previous?.tags,
   };
 
   const result = await upsertRef(updated);

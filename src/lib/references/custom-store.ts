@@ -35,6 +35,12 @@ export interface CustomRef {
   pdfUrl?: string;
   /** CrossRef-shaped funder list. Aggregating these powers the EU-funded share. */
   funding?: FundingEntry[];
+  /**
+   * Free tags + project tags ("project:<report>"). Carried through so the
+   * Word add-in and `/api/references` can offer a live project filter — see
+   * `src/lib/references/projects.ts`.
+   */
+  tags?: string[];
 }
 
 // Row shape as stored in Postgres (snake_case columns).
@@ -54,6 +60,7 @@ interface CustomRefRow {
   source: string;
   pdf_url: string | null;
   funding: FundingEntry[] | null;
+  tags: string[] | null;
   added_at: string;
 }
 
@@ -75,6 +82,7 @@ function rowToRef(row: CustomRefRow): CustomRef {
     source: row.source,
     pdfUrl: row.pdf_url ?? undefined,
     funding: row.funding ?? undefined,
+    tags: row.tags ?? undefined,
   };
 }
 
@@ -95,6 +103,7 @@ function refToRow(ref: CustomRef): Omit<CustomRefRow, 'added_at'> & { added_at?:
     source: ref.source || 'web',
     pdf_url: ref.pdfUrl ?? null,
     funding: ref.funding && ref.funding.length > 0 ? ref.funding : null,
+    tags: ref.tags && ref.tags.length > 0 ? ref.tags : null,
     added_at: ref.addedAt || undefined,
   };
 }

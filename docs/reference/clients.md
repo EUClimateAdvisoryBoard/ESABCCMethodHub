@@ -13,7 +13,7 @@ and bridges Word clients to Supabase. Runs on the analyst's machine.
 |------|--------|
 | **Runtime** | Node.js + Express |
 | **Cache** | better-sqlite3 with WAL mode, 4 indices |
-| **Endpoints** | `/search`, `/cite`, `/sync`, `/report-plan` (10 total) |
+| **Endpoints** | `/search`, `/cite`, `/sync`, `/status` |
 | **Auth** | Origin-validated CORS + optional token |
 | **Fallback** | Falls back to direct Supabase if bridge is unreachable |
 
@@ -46,7 +46,7 @@ in the ribbon.
 | **Runtime** | Office.js + TypeScript + Webpack |
 | **Install** | Sideload `manifest.xml` or deploy via admin centre |
 | **Connection** | Bridge-first, Supabase fallback |
-| **Features** | Search, insert citation, generate bibliography, report plans |
+| **Features** | Search, insert citation, generate bibliography |
 
 ### Key files
 

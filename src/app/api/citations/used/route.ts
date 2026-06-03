@@ -6,10 +6,10 @@
  * having to re-extract DOIs from finished `.docx` files.
  *
  * The Word add-in (and any other client that inserts a citation) calls this
- * endpoint with the reference id, the document key, and (when set) the active
- * Report Plan id. The DOI and funder array are denormalised onto the row at
- * write time so analytics queries don't have to join across two reference
- * tables (`references` and `custom_references`).
+ * endpoint with the reference id and the document key. The DOI and funder
+ * array are denormalised onto the row at write time so analytics queries
+ * don't have to join across two reference tables (`references` and
+ * `custom_references`).
  *
  * Auth model:
  *   - Web flows authenticate via the standard Supabase session (RLS).
@@ -28,7 +28,6 @@ export const dynamic = 'force-dynamic';
 interface UsageBody {
   reference_id?: string;
   document_key?: string;
-  plan_id?: string | null;
   doi?: string | null;
   funding?: FundingEntry[] | null;
 }
@@ -61,7 +60,6 @@ export async function POST(request: NextRequest) {
   const row = {
     reference_id: body.reference_id,
     document_key: body.document_key,
-    plan_id: body.plan_id ?? null,
     doi: body.doi ?? null,
     funding: body.funding && body.funding.length > 0 ? body.funding : null,
   };
@@ -82,16 +80,14 @@ interface UsageRow {
   id: string;
   reference_id: string;
   document_key: string;
-  plan_id: string | null;
   doi: string | null;
   funding: FundingEntry[] | null;
   inserted_at: string;
 }
 
-// GET /api/citations/used?plan_id=…&document_key=… — returns the rows plus a
-// rolled-up EU-funded share so dashboards don't have to compute it themselves.
+// GET /api/citations/used?document_key=… — returns the rows plus a rolled-up
+// EU-funded share so dashboards don't have to compute it themselves.
 export async function GET(request: NextRequest) {
-  const planId = request.nextUrl.searchParams.get('plan_id');
   const documentKey = request.nextUrl.searchParams.get('document_key');
 
   const usingBridge = bridgeAuthorized(request);
@@ -99,9 +95,8 @@ export async function GET(request: NextRequest) {
 
   let query = supabase
     .from('citations_used')
-    .select('id, reference_id, document_key, plan_id, doi, funding, inserted_at')
+    .select('id, reference_id, document_key, doi, funding, inserted_at')
     .order('inserted_at', { ascending: false });
-  if (planId) query = query.eq('plan_id', planId);
   if (documentKey) query = query.eq('document_key', documentKey);
 
   const { data, error } = await query;
