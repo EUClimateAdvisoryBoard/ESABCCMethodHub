@@ -10,6 +10,7 @@ import {
   type BatchImportResult,
 } from '@/lib/references/reference-service';
 import { formatAuthors } from '@/lib/references/citation-utils';
+import { combineTags } from '@/lib/references/projects';
 import { CSLItem } from '@/lib/references/types';
 import { useClipboardIdentifier } from '@/lib/references/use-clipboard-identifier';
 import Skeleton from '@/components/ui/Skeleton';
@@ -29,11 +30,20 @@ interface ImportModalProps {
   libraryId: string;
   onImported: () => void;
   onClose: () => void;
+  /**
+   * Active report / project view. When set, every reference imported here is
+   * filed under this project automatically (its badge shows up without
+   * editing each entry by hand).
+   */
+  defaultProject?: string;
 }
 
 type ImportTab = 'doi' | 'pdf' | 'bibtex' | 'ris';
 
-export default function ImportModal({ libraryId, onImported, onClose }: ImportModalProps) {
+export default function ImportModal({ libraryId, onImported, onClose, defaultProject = '' }: ImportModalProps) {
+  // The project names new references are filed under (0 or 1 today).
+  const projectName = defaultProject.trim();
+  const projects = projectName ? [projectName] : [];
   const [activeTab, setActiveTab] = useState<ImportTab>('doi');
   const [doiInput, setDoiInput] = useState('');
   const [bibtexInput, setBibtexInput] = useState('');
@@ -67,7 +77,7 @@ export default function ImportModal({ libraryId, onImported, onClose }: ImportMo
     setError('');
 
     try {
-      await addReference(libraryId, preview);
+      await addReference(libraryId, preview, projects.length ? combineTags([], projects) : undefined);
       setPreview(null);
       setDoiInput('');
       onImported();
@@ -85,7 +95,7 @@ export default function ImportModal({ libraryId, onImported, onClose }: ImportMo
     setBatchResult(null);
 
     try {
-      const result = await importBibTeX(libraryId, bibtexInput);
+      const result = await importBibTeX(libraryId, bibtexInput, projects);
       setBatchResult(result);
       if (result.imported.length > 0) {
         setBibtexInput('');
@@ -107,7 +117,7 @@ export default function ImportModal({ libraryId, onImported, onClose }: ImportMo
     setBatchResult(null);
 
     try {
-      const result = await importRIS(libraryId, risInput);
+      const result = await importRIS(libraryId, risInput, projects);
       setBatchResult(result);
       if (result.imported.length > 0) {
         setRisInput('');
@@ -168,6 +178,12 @@ export default function ImportModal({ libraryId, onImported, onClose }: ImportMo
         </div>
 
         <div className="p-4">
+          {projectName && (
+            <div className="rounded-lg border border-[var(--mh-status-info)] bg-[var(--mh-status-info-bg)] text-[var(--mh-status-info)] p-3 text-sm mb-4">
+              New references will be filed under{' '}
+              <span className="font-semibold">{projectName}</span> automatically.
+            </div>
+          )}
           {error && (
             <div role="alert" className="rounded-lg border border-[var(--mh-status-danger)] bg-[var(--mh-status-danger-bg)] text-[var(--mh-status-danger)] p-3 text-sm mb-4">
               {error}
@@ -264,7 +280,7 @@ export default function ImportModal({ libraryId, onImported, onClose }: ImportMo
               lives next to the input where the user is looking. */}
           {/* Cite PDF Tab — drop a PDF, extract DOI, resolve in one click. */}
           {activeTab === 'pdf' && (
-            <CitePdfDropZone libraryId={libraryId} onImported={onImported} />
+            <CitePdfDropZone libraryId={libraryId} onImported={onImported} defaultProject={projectName} />
           )}
 
           {/* BibTeX Tab */}

@@ -8,6 +8,7 @@ import {
 } from '@/lib/references/reference-service';
 import { CSLItem } from '@/lib/references/types';
 import { formatAuthors } from '@/lib/references/citation-utils';
+import { combineTags } from '@/lib/references/projects';
 
 // Reuse the same worker the rest of the app already serves.
 pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
@@ -20,6 +21,11 @@ interface Props {
   libraryId: string;
   /** Called after a reference has been added so the parent list refreshes. */
   onImported: () => void;
+  /**
+   * Active report / project view. When set, the imported reference is filed
+   * under this project automatically so its badge appears without editing.
+   */
+  defaultProject?: string;
 }
 
 interface ExtractionResult {
@@ -42,7 +48,7 @@ interface ExtractionResult {
  * One-click ingestion replaces the previous five-step flow (download
  * PDF → find DOI → paste DOI → look up → confirm).
  */
-export default function CitePdfDropZone({ libraryId, onImported }: Props) {
+export default function CitePdfDropZone({ libraryId, onImported, defaultProject = '' }: Props) {
   const [busy, setBusy] = useState(false);
   const [stage, setStage] = useState<'idle' | 'reading' | 'resolving' | 'preview' | 'no-doi'>('idle');
   const [extraction, setExtraction] = useState<ExtractionResult | null>(null);
@@ -107,7 +113,8 @@ export default function CitePdfDropZone({ libraryId, onImported }: Props) {
     setBusy(true);
     setError(null);
     try {
-      await addReference(libraryId, extraction.csl);
+      const project = defaultProject.trim();
+      await addReference(libraryId, extraction.csl, project ? combineTags([], [project]) : undefined);
       onImported();
       reset();
     } catch (e) {
@@ -115,7 +122,7 @@ export default function CitePdfDropZone({ libraryId, onImported }: Props) {
     } finally {
       setBusy(false);
     }
-  }, [extraction, libraryId, onImported]);
+  }, [extraction, libraryId, onImported, defaultProject]);
 
   const onDrop = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
