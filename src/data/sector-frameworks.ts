@@ -85,7 +85,7 @@ export interface FrameworkBoard {
 }
 
 /** Current schema version of the default board (bump to invalidate saved edits). */
-export const FRAMEWORK_BOARD_VERSION = 1;
+export const FRAMEWORK_BOARD_VERSION = 2;
 
 // ── Indicator lookup ────────────────────────────────────────────────────────
 
