@@ -116,7 +116,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
         ))}
       </svg>
 
-      <div className="relative z-10 space-y-2">
+      <div className="relative z-10 space-y-8">
         {/* ── Goal ───────────────────────────────────────────────────────────── */}
         <Row label="GHG emission reductions" bg={sector.color} text="#fff">
           <div className="flex items-stretch gap-2">
