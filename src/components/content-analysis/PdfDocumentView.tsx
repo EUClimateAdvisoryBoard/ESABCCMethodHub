@@ -420,9 +420,10 @@ interface SegmentHighlightProps {
 }
 
 /**
- * Draws one tinted rectangle per selection rect captured at marking time, so
- * the highlight sits over the exact text the analyst selected — not the whole
- * enclosing block. The first rect carries the `data-segment-id` anchor the
+ * Draws one outlined rectangle per selection rect captured at marking time, so
+ * the highlight frames the exact text the analyst selected — not the whole
+ * enclosing block. A coloured frame (rather than a solid fill) keeps the text
+ * underneath readable. The first rect carries the `data-segment-id` anchor the
  * sidebar scrolls to. Inert (pointer-events:none) so the pdfjs text layer
  * underneath stays selectable for further tagging.
  */
@@ -442,11 +443,13 @@ function SegmentHighlight({ segment, scale, color, isHighlighted }: SegmentHighl
             top: y * scale,
             width: w * scale,
             height: h * scale,
-            background: isHighlighted ? `${color}59` : `${color}33`,
-            borderBottom: `2px solid ${color}`,
-            boxShadow: isHighlighted ? `0 0 0 1.5px ${color}` : 'none',
+            // Frame, not fill — a faint tint only when selected, so the text
+            // stays legible. Selection emphasis is carried by a thicker, fully
+            // opaque border rather than a darker wash.
+            background: isHighlighted ? `${color}1F` : 'transparent',
+            border: isHighlighted ? `1.5px solid ${color}` : `1px solid ${color}99`,
             pointerEvents: 'none',
-            borderRadius: 1,
+            borderRadius: 2,
           }}
         />
       ))}
