@@ -506,6 +506,9 @@ export function useContentAnalysis() {
     note?: string;
     projectId: string | null;
     blockId?: string;
+    /** Precise PDF selection anchor — present for passages marked on a PDF
+     *  page, so the highlight sticks to the exact selected text. */
+    pdfAnchor?: import('./types').PdfAnchor;
     /** Mixed-methods payload (number + unit + year + label). */
     numeric?: import('./types').NumericExtraction;
   }): CodedSegment => {
@@ -514,6 +517,7 @@ export function useContentAnalysis() {
       documentId: input.documentId,
       codeId: input.codeId,
       blockId: input.blockId,
+      pdfAnchor: input.pdfAnchor,
       startChar: input.startChar,
       endChar: input.endChar,
       text: input.text,

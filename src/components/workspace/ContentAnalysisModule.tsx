@@ -423,7 +423,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
   };
 
-  const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }, codeId: string) => {
+  const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }, codeId: string) => {
     if (!selectedDocument) return;
     upsertDocument(selectedDocument);
     const seg = addSegment({
@@ -433,6 +433,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       endChar: input.endChar,
       text: input.text,
       blockId: input.blockId,
+      pdfAnchor: input.pdfAnchor,
       // Stamp with this workspace's project id so the tag is attributable
       // to the project — this is what powers the lens comparison.
       projectId,
@@ -453,7 +454,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     });
   };
 
-  const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string }) => {
+  const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }) => {
     if (!selectedCodeId || !selectedDocument) return;
     createSegment(input, selectedCodeId);
   };
@@ -930,14 +931,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         codes={visibleCodes}
         onApply={() => {
           if (!toolbarSel || !selectedCodeId) return;
-          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId }, selectedCodeId);
+          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor }, selectedCodeId);
           setToolbarSel(null);
         }}
         onSplit={() => setToolbarSel(null)}
         onPickCode={codeId => {
           if (!toolbarSel) return;
           setSelectedCodeId(codeId);
-          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId }, codeId);
+          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor }, codeId);
           setToolbarSel(null);
         }}
         onClear={() => setToolbarSel(null)}
@@ -947,7 +948,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             mode: 'add',
             targetId: null,
             seedName: suggestedName,
-            pendingSegmentInput: { startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId },
+            pendingSegmentInput: { startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor },
           });
           setToolbarSel(null);
         }}
@@ -998,7 +999,7 @@ function DocumentViewer({
   projectNameById: Map<string | null, string>;
   onSaveSummary: (text: string, blocks: SummaryBlock[]) => void;
   onLoadSummaryBlocks: (id: string) => Promise<SummaryBlock[]>;
-  onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string }) => void;
+  onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }) => void;
   onSelectSegment: (id: string) => void;
   onDeleteSegment: (id: string) => void;
   onCommentSegment: (id: string) => void;
@@ -1044,11 +1045,16 @@ function DocumentViewer({
     return ranges;
   }, [doc.blocks, doc.text]);
   const highlightedSeg = segments.find(s => s.id === highlightedSegmentId) ?? null;
-  const highlightedBlockId =
-    highlightedSeg?.blockId ??
-    (highlightedSeg
-      ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
-      : null);
+  // Segments with a precise PDF anchor are emphasised by their own highlight,
+  // so don't also tint the whole enclosing block — that's the imprecise
+  // behaviour we're moving away from. Only fall back to a block highlight for
+  // legacy / flat-text segments.
+  const highlightedBlockId = highlightedSeg?.pdfAnchor
+    ? null
+    : highlightedSeg?.blockId ??
+      (highlightedSeg
+        ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
+        : null);
 
   return (
     <div className="flex flex-col min-h-0">
@@ -1146,10 +1152,15 @@ function DocumentViewer({
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedBlockId}
+            highlightedSegmentId={highlightedSegmentId}
             onSelectText={(sel: PdfTextSelection) => {
               const { startChar, endChar } = locateSelectionOffsets(doc, sel.blockId, sel.text);
               onSelectionWithoutCode({
                 blockId: sel.blockId ?? undefined,
+                // The exact selection rectangles — what makes the highlight
+                // stick to the text the analyst marked, and click-to-jump land
+                // on it precisely.
+                pdfAnchor: sel.rects.length ? { page: sel.page, rects: sel.rects } : undefined,
                 startChar,
                 endChar,
                 text: sel.text,

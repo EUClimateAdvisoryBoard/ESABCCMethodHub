@@ -15,12 +15,16 @@
 
 import { useEffect, useLayoutEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { CodeNode } from '@/lib/content-analysis/types';
+import type { CodeNode, PdfAnchor } from '@/lib/content-analysis/types';
 
 export interface ToolbarSelection {
   /** Block id when the selection is inside a structured PDF block. Absent
    *  for the flat-text viewer, in which case offsets are document-wide. */
   blockId?: string;
+  /** Precise PDF selection anchor — set when the selection was made directly
+   *  on a rendered PDF page, so the resulting segment highlights the exact
+   *  selected text rather than the whole enclosing block. */
+  pdfAnchor?: PdfAnchor;
   startChar: number;
   endChar: number;
   text: string;
