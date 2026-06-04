@@ -72,34 +72,71 @@ export default function GuidedSession({ moduleKey, steps, active, replayToken = 
     markOnboardingSeen(moduleKey);
   }, [markOnboardingSeen, moduleKey]);
 
-  // Measure the current step's anchor and keep it in sync with scroll/resize.
+  // Keep the current step's anchor selector in a ref so the scroll/resize
+  // listener can read it without being re-subscribed on every render. (The
+  // `steps` prop is typically an inline array literal that the host recreates
+  // on each render, so depending on its identity would thrash the effects.)
+  const anchorRef = useRef<string | undefined>(undefined);
+  anchorRef.current = steps[step]?.anchor;
+
   const measure = useCallback(() => {
-    const sel = steps[step]?.anchor;
+    const sel = anchorRef.current;
     if (!sel) { setRect(null); return; }
     const el = document.querySelector(sel) as HTMLElement | null;
     if (!el) { setRect(null); return; }
     const r = el.getBoundingClientRect();
     setRect({ top: r.top, left: r.left, width: r.width, height: r.height });
-  }, [step, steps]);
+  }, []);
 
   // Fire the step's onEnter (e.g. switch the host page's tab) once per entry,
-  // before measuring so the anchor exists by the time we look for it.
+  // before we look for its anchor.
   useEffect(() => {
     if (!open) return;
     steps[step]?.onEnter?.();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open, step]);
 
+  // Locate, scroll to and measure the anchor for the active step. A step's
+  // onEnter may have just switched the host's tab, so the target section can
+  // mount a frame or two later — poll with rAF until it appears (rather than a
+  // single fixed timeout that fires before the section exists), scroll it into
+  // view once, then keep measuring for a few frames so the spotlight follows
+  // the smooth scroll. Depends only on open/step, so it runs once per step
+  // entry instead of on every host re-render.
   useEffect(() => {
     if (!open) return;
     const sel = steps[step]?.anchor;
-    const el = sel ? (document.querySelector(sel) as HTMLElement | null) : null;
-    // Bring the anchor into view, then measure on the next frame once the
-    // smooth scroll has had a chance to settle.
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    const id = window.setTimeout(measure, el ? 320 : 0);
-    return () => window.clearTimeout(id);
-  }, [open, step, steps, measure]);
+    if (!sel) { setRect(null); return; }
+
+    let raf = 0;
+    let frames = 0;
+    let scrolled = false;
+
+    const locate = () => {
+      const el = document.querySelector(sel) as HTMLElement | null;
+      if (!el) {
+        // Anchor not in the DOM yet (e.g. its tab is still mounting). Keep
+        // polling for a short while before falling back to a centred card.
+        frames += 1;
+        if (frames < 60) { raf = requestAnimationFrame(locate); return; }
+        setRect(null);
+        return;
+      }
+      if (!scrolled) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        scrolled = true;
+      }
+      const r = el.getBoundingClientRect();
+      setRect({ top: r.top, left: r.left, width: r.width, height: r.height });
+      // Re-measure for a few frames so the box tracks the smooth scroll.
+      frames += 1;
+      if (frames < 45) raf = requestAnimationFrame(locate);
+    };
+
+    raf = requestAnimationFrame(locate);
+    return () => cancelAnimationFrame(raf);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, step]);
 
   useEffect(() => {
     if (!open) return;
