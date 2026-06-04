@@ -239,12 +239,21 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
 
   if (!selected) {
     return (
-      <div className="text-sm text-tertiary">
-        No indicators yet.{' '}
-        <button onClick={() => setAdding(true)} className="text-primary underline">
-          Add one
+      <div className="rounded-xl border border-dashed border-grey-300 bg-grey-50 px-6 py-12 text-center">
+        <p className="text-sm font-semibold text-tertiary-dark">No indicators yet</p>
+        <p className="text-xs text-tertiary mt-1 max-w-sm mx-auto">
+          Add your first indicator to start tracking a number over time. You can
+          type in the values or upload them from a spreadsheet.
+        </p>
+        <button
+          onClick={() => setAdding(true)}
+          className="mt-4 inline-flex items-center gap-1.5 px-3 py-2 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+            <path d="M12 5v14M5 12h14" />
+          </svg>
+          Add your first indicator
         </button>
-        .
         {adding && (
           <AddIndicatorDialog onClose={() => setAdding(false)} onSave={handleAddIndicator} />
         )}
@@ -308,13 +317,11 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Indicator database</h2>
           <p className="text-sm text-tertiary mt-1 max-w-2xl">
-            Two clusters: <strong>existing indicators</strong> rebuilt
-            from the 2024 ESABCC progress report (Towards EU climate
-            neutrality) underlying-data workbook, and{' '}
-            <strong>additional indicators</strong> covering the ECNO
-            building blocks plus anything user-added. Use{' '}
-            <em>Refresh from source</em> on supported entries to pull
-            updates from Eurostat / EEA / EAFO / IRENA / EHPA.
+            The numbers behind this project. Pick an indicator from the list on
+            the left to see its chart and data table — then edit the values, add
+            your own indicator, or download everything to Excel. Where a live
+            source is available, <em>Refresh from source</em> pulls the latest
+            figures for you.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-2">
@@ -485,42 +492,47 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                   )}
                 </p>
               </div>
-              <div className="flex gap-1 flex-wrap">
-                <button
-                  type="button"
-                  onClick={() => setChartType('line')}
-                  className={`px-2 py-1 text-[10px] rounded border ${
-                    chartType === 'line'
-                      ? 'bg-primary text-white border-primary'
-                      : 'border-grey-200 text-tertiary'
-                  }`}
-                >
-                  Line
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setChartType('bar')}
-                  className={`px-2 py-1 text-[10px] rounded border ${
-                    chartType === 'bar'
-                      ? 'bg-primary text-white border-primary'
-                      : 'border-grey-200 text-tertiary'
-                  }`}
-                >
-                  Bar
-                </button>
+              <div className="flex gap-1.5 flex-wrap items-center">
+                {/* Chart-type segmented toggle */}
+                <div className="inline-flex rounded-md border border-grey-200 p-0.5" role="group" aria-label="Chart type">
+                  <button
+                    type="button"
+                    onClick={() => setChartType('line')}
+                    aria-pressed={chartType === 'line'}
+                    className={`px-2.5 py-1 text-[11px] font-medium rounded ${
+                      chartType === 'line'
+                        ? 'bg-primary text-white'
+                        : 'text-tertiary hover:bg-grey-50'
+                    }`}
+                  >
+                    Line
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setChartType('bar')}
+                    aria-pressed={chartType === 'bar'}
+                    className={`px-2.5 py-1 text-[11px] font-medium rounded ${
+                      chartType === 'bar'
+                        ? 'bg-primary text-white'
+                        : 'text-tertiary hover:bg-grey-50'
+                    }`}
+                  >
+                    Bar
+                  </button>
+                </div>
                 <button
                   type="button"
                   onClick={() => setEditorOpen(true)}
-                  className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
+                  className="px-2.5 py-1 text-[11px] font-medium rounded border border-grey-200 text-tertiary-dark hover:bg-grey-50 disabled:opacity-50"
                   disabled={busy}
                   title="Open the spreadsheet editor: add data, helper columns and derive columns with Excel-like formulas (e.g. =B*C)"
                 >
-                  Edit data / calc
+                  Edit data
                 </button>
                 <button
                   type="button"
                   onClick={() => setHistoryOpen(true)}
-                  className="px-2 py-1 text-[10px] rounded border border-grey-200 text-tertiary"
+                  className="px-2.5 py-1 text-[11px] font-medium rounded border border-grey-200 text-tertiary-dark hover:bg-grey-50 disabled:opacity-50"
                   disabled={busy}
                   title="View the change log (who changed what, and when) and restore a previous version"
                 >
@@ -539,7 +551,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                     type="button"
                     onClick={() => handleRefreshFromSource(selected.id)}
                     disabled={busy}
-                    className="px-2 py-1 text-[10px] rounded border border-primary text-primary disabled:opacity-50"
+                    className="px-2.5 py-1 text-[11px] font-medium rounded border border-primary text-primary hover:bg-primary/5 disabled:opacity-50"
                     title="Pull the latest values from the public source (Eurostat / EEA)"
                   >
                     {busy ? 'Refreshing…' : 'Refresh from source'}
@@ -549,7 +561,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                   <button
                     type="button"
                     onClick={() => handleDeleteIndicator(selected.id)}
-                    className="px-2 py-1 text-[10px] rounded border border-red-200 text-red-700"
+                    className="px-2.5 py-1 text-[11px] font-medium rounded border border-red-200 text-red-700 hover:bg-red-50 disabled:opacity-50"
                     disabled={busy}
                   >
                     Delete
@@ -596,7 +608,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 />
               ) : (
                 <div className="h-full flex items-center justify-center text-xs text-tertiary-light">
-                  No data points yet — click “Add data” to record one.
+                  No data points yet — click “Edit data” above to record one.
                 </div>
               )}
             </div>
