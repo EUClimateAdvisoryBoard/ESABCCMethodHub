@@ -628,11 +628,11 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         <header>
           <h2 className="text-lg font-bold text-tertiary-dark">Content analysis</h2>
           <p className="text-sm text-tertiary mt-1 max-w-3xl">
-            A MAXQDA-style coding workbench for this project. Choose what you want
-            to analyse — the policy corpus, scientific literature or grey
-            literature & reports. Mark passages and attach tags &amp; codes; every
-            tag saves live and is shared back across projects through the master
-            library.
+            Read through documents, highlight the passages that matter and label
+            them with tags — what researchers call &ldquo;coding&rdquo;. To begin,
+            choose what you want to read: EU policy texts, scientific literature,
+            or grey literature &amp; reports. Everything you tag saves instantly and
+            is shared with the team.
           </p>
         </header>
         <div className="grid gap-3 sm:grid-cols-3">
@@ -882,7 +882,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       <div className="ca-ws-tour-lens bg-grey-50 border border-grey-200 rounded-lg p-2.5">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold" title="Whose tags are shown — toggle to compare what other projects are coding">
-            Lens:
+            Whose tags (lens):
           </span>
           {lensChips.map(c => {
             const on = lenses.has(c.id);
