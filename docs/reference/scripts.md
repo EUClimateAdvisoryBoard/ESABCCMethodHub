@@ -52,6 +52,7 @@ required.
 | `scripts/build-docs.sh`                             | Build the MkDocs site into `public/docs/`. Run automatically as part of `vercel-build`. Uses `pip --break-system-packages` so it works on PEP-668 build images. |
 | `scripts/render-faq-pdf.py`                         | Render `docs/FAQ-NON-TECHNICAL.md` into the repo-root PDF.              |
 | `scripts/validate-connections.ts`                   | Nightly check: external feeds respond, schema matches.                  |
+| `scripts/classify-references.mjs`                   | Classify the whole reference corpus (static + custom) into scientific vs grey literature and emit the [classification batch](classification-batch.md) (`public/data/reference-classification-batch.json` + the markdown report). Offline; mirrors the Content Analysis `sourceTierOf` rule. |
 
 ## Fact-sheet verification (beta)
 

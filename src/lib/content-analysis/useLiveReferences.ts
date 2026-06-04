@@ -163,11 +163,26 @@ export function referencePdfCacheKey(docId: string): string {
   return cleaned.slice(0, 20).padEnd(8, '0');
 }
 
-/** Map an arbitrary `type` string from the live references API onto the
- *  closed reference-type union; unknowns fall back to 'report' (grey
- *  literature) so they still land in a usable bucket. */
+/**
+ * Map an arbitrary `type` string from the live references API onto the closed
+ * reference-type union used by the workbench.
+ *
+ * The live stack (VBA add-in + web ingestion) stores its `type` as a **CSL-JSON
+ * item type** (`article-journal`, `paper-conference`, `webpage`, …; see
+ * `CSLItemType` in `@/lib/references/types`), whereas the bundled static
+ * library already uses the closed union (`article` / `report` / `web` /
+ * `chapter` / `legislation` / `book`). Earlier this function only recognised
+ * the closed union, so every CSL-typed reference — including peer-reviewed
+ * `article-journal` papers — fell through to `report` and was mis-filed as
+ * grey literature in the Content Analysis source filter. We now translate the
+ * full CSL taxonomy so the scientific / grey split is correct for both stacks.
+ *
+ * Unknown / non-textual types fall back to `report` (grey), the safer bucket
+ * for anything we can't confirm is peer-reviewed.
+ */
 function normaliseRefType(t: string | undefined): AnalysisDocument['referenceType'] {
   switch (t) {
+    // ── Closed-union values (bundled static library) ──
     case 'article':
     case 'report':
     case 'web':
@@ -175,6 +190,24 @@ function normaliseRefType(t: string | undefined): AnalysisDocument['referenceTyp
     case 'legislation':
     case 'book':
       return t;
+
+    // ── Scientific / peer-reviewed CSL types → article / book / chapter ──
+    case 'article-journal':
+    case 'paper-conference':
+      return 'article';
+    case 'entry-encyclopedia':
+      return 'chapter';
+
+    // ── Grey-literature CSL types → web / report ──
+    case 'webpage':
+    case 'article-newspaper':
+    case 'article-magazine':
+      return 'web';
+    case 'thesis':
+    case 'dataset':
+    case 'manuscript':
+      return 'report';
+
     default:
       return 'report';
   }
