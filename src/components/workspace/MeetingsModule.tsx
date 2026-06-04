@@ -126,9 +126,10 @@ export default function MeetingsModule({
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Meetings &amp; Progress</h2>
           <p className="text-xs text-tertiary mt-1 max-w-2xl">
-            Track every meeting for this report — notes, summaries and minutes, the
-            AI-extracted three key takeaways, milestones, a project timeline and a
-            progress dashboard for the project lead.
+            Keep a record of every meeting — who came, the notes and minutes, and
+            the key takeaways. Switch to <strong>Timeline &amp; milestones</strong>{' '}
+            to see the plan, or <strong>Progress</strong> for a one-glance status.
+            Use <em>+ New meeting</em> to add one.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 w-full sm:w-auto">
@@ -233,8 +234,8 @@ export default function MeetingsModule({
                 requireAuth={requireAuth}
               />
             ) : (
-              <div className="h-full flex items-center justify-center text-sm text-tertiary-light border border-dashed border-grey-200 rounded-xl py-20">
-                Select a meeting to view and edit it.
+              <div className="h-full flex items-center justify-center text-center text-sm text-tertiary-light border border-dashed border-grey-200 rounded-xl py-20 px-4">
+                Pick a meeting from the list to read or edit it.
               </div>
             )}
           </div>
