@@ -5,6 +5,12 @@
  * module's UI. Module navigation is driven through the `?module=` query
  * string so users can deep-link to a specific tab.
  *
+ * The tab bar is built for non-technical team members: each tab carries
+ * the module's icon and a hover tooltip, and a short plain-language
+ * helper line under the bar explains what the open tool is for. Icons,
+ * labels and blurbs all come from the shared `moduleMeta` catalogue so
+ * the tabs match the project cards on the landing page.
+ *
  * Adding a new module from the UI hits POST /api/project-workspace/
  * projects/[id]/modules; on success we refresh the route so the new
  * module appears.
@@ -13,7 +19,7 @@
 
 import { useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
-import type { WorkspaceProject } from '@/data/project-workspace';
+import type { WorkspaceProject, WorkspaceModuleKind } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
 import type { MemberStateCell } from '@/lib/project-workspace/db';
@@ -24,6 +30,8 @@ import MemberStatesModule from './MemberStatesModule';
 import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
+import { moduleMeta } from './moduleMeta';
+import { Tooltip, TooltipProvider } from '@/components/ui/Tooltip';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 
 interface Props {
@@ -39,13 +47,13 @@ interface Props {
   phases: Phase[];
 }
 
-const MODULE_KIND_OPTIONS = [
-  { id: 'indicators', label: 'Indicator database' },
-  { id: 'recommendations', label: 'Recommendations tracker' },
-  { id: 'member-states', label: 'Member state space' },
-  { id: 'content-analysis', label: 'Content analysis' },
-  { id: 'meetings', label: 'Meetings & Progress' },
-  { id: 'custom', label: 'Custom (notes)' },
+const MODULE_KIND_OPTIONS: { id: string; label: string; blurb: string }[] = [
+  { id: 'indicators', label: 'Indicators', blurb: 'Numbers and charts in a table you can edit.' },
+  { id: 'content-analysis', label: 'Content analysis', blurb: 'Highlight and tag passages in documents.' },
+  { id: 'member-states', label: 'Member states', blurb: 'Compare the 27 EU countries on a map.' },
+  { id: 'recommendations', label: 'Recommendations', blurb: 'Track recommendations and their uptake.' },
+  { id: 'meetings', label: 'Meetings & progress', blurb: 'Meetings, milestones and progress.' },
+  { id: 'custom', label: 'Notes', blurb: 'A free-form space for notes and write-ups.' },
 ];
 
 export default function ProjectShell({
@@ -65,6 +73,7 @@ export default function ProjectShell({
   const search = useSearchParams();
   const active = activeModule ?? project.modules[0]?.id;
   const current = project.modules.find(m => m.id === active);
+  const currentMeta = current ? moduleMeta(current.kind) : null;
   const [adding, setAdding] = useState(false);
 
   // The seed Industry Project scopes its copied tools to industry: policies
@@ -80,36 +89,64 @@ export default function ProjectShell({
 
   return (
     <div>
-      <div className="flex gap-1 border-b border-grey-200 mb-6 overflow-x-auto">
-        {project.modules.map(m => (
-          <button
-            key={m.id}
-            type="button"
-            onClick={() => setActive(m.id)}
-            className={`shrink-0 px-3 py-2 text-xs border-b-2 -mb-px ${
-              m.featured ? 'font-bold' : 'font-medium'
-            } ${
-              active === m.id
-                ? 'border-primary text-primary'
-                : 'border-transparent text-tertiary hover:text-tertiary-dark'
-            }`}
-          >
-            {m.name}
-            {m.beta && (
-              <span className="ml-1.5 align-middle text-[9px] uppercase tracking-wide text-secondary/70 font-normal">
-                beta
-              </span>
-            )}
-          </button>
-        ))}
-        <button
-          type="button"
-          onClick={() => setAdding(true)}
-          className="shrink-0 ml-auto px-3 py-2 text-xs text-secondary hover:text-primary"
+      <TooltipProvider delayDuration={120}>
+        <div
+          role="tablist"
+          aria-label="Project tools"
+          className="flex gap-1 border-b border-grey-200 overflow-x-auto"
         >
-          + Add module
-        </button>
-      </div>
+          {project.modules.map(m => {
+            const meta = moduleMeta(m.kind);
+            const isActive = active === m.id;
+            return (
+              <Tooltip key={m.id} content={meta.blurb}>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  onClick={() => setActive(m.id)}
+                  className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-2.5 text-xs border-b-2 -mb-px transition-colors ${
+                    m.featured ? 'font-bold' : 'font-medium'
+                  } ${
+                    isActive
+                      ? 'border-primary text-primary'
+                      : 'border-transparent text-tertiary hover:text-tertiary-dark hover:border-grey-300'
+                  }`}
+                >
+                  <meta.Icon className="w-4 h-4 shrink-0" />
+                  {m.name}
+                  {m.beta && (
+                    <span className="ml-0.5 align-middle text-[9px] uppercase tracking-wide text-secondary/70 font-normal">
+                      beta
+                    </span>
+                  )}
+                </button>
+              </Tooltip>
+            );
+          })}
+          <button
+            type="button"
+            onClick={() => setAdding(true)}
+            className="shrink-0 ml-auto inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+              <path d="M12 5v14M5 12h14" />
+            </svg>
+            Add tool
+          </button>
+        </div>
+      </TooltipProvider>
+
+      {/* Plain-language helper: what the open tool is for. */}
+      {currentMeta && (
+        <p className="mt-3 mb-6 flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+          <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
+            <currentMeta.Icon className="w-4 h-4" />
+          </span>
+          <span>{currentMeta.blurb}</span>
+        </p>
+      )}
+      {!currentMeta && <div className="mb-6" />}
 
       {current?.kind === 'indicators' && (
         <IndicatorModule
@@ -148,9 +185,12 @@ export default function ProjectShell({
         />
       )}
       {!current && (
-        <p className="text-sm text-tertiary">
-          This project has no modules yet. Click <em>+ Add module</em> to create one.
-        </p>
+        <div className="rounded-xl border border-dashed border-grey-300 bg-grey-50 px-6 py-12 text-center">
+          <p className="text-sm font-semibold text-tertiary-dark">No tools yet</p>
+          <p className="text-xs text-tertiary mt-1">
+            Click <em>Add tool</em> above to add the first tool to this project.
+          </p>
+        </div>
       )}
 
       {adding && (
@@ -182,11 +222,25 @@ function AddModuleDialog({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // Default the name to the chosen tool's friendly label so users rarely
+  // have to type anything — but let them override it.
+  const [nameEdited, setNameEdited] = useState(false);
+  const selected = MODULE_KIND_OPTIONS.find(k => k.id === kind);
+  const effectiveName = nameEdited ? name : name || selected?.label || '';
+
+  function chooseKind(id: string) {
+    setKind(id);
+    if (!nameEdited) {
+      const label = MODULE_KIND_OPTIONS.find(k => k.id === id)?.label ?? '';
+      setName(label);
+    }
+  }
+
   async function submit() {
     setBusy(true);
     setError(null);
     try {
-      await pwApi.createModule(projectId, { name, description, kind });
+      await pwApi.createModule(projectId, { name: effectiveName, description, kind });
       onCreated();
     } catch (e) {
       setError((e as Error).message);
@@ -199,40 +253,79 @@ function AddModuleDialog({
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4"
       onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Add a tool"
     >
       <div
-        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-md w-full p-5 max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-xl shadow-xl border border-grey-200 max-w-lg w-full p-5 max-h-[90vh] overflow-y-auto"
         onClick={e => e.stopPropagation()}
       >
-        <h3 className="text-sm font-bold text-tertiary-dark mb-3">Add module</h3>
-        <label className="block text-xs text-tertiary mb-3">
-          <span className="block mb-1 font-medium text-tertiary-dark">Kind</span>
-          <select
-            value={kind}
-            onChange={e => setKind(e.target.value)}
-            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm"
-          >
-            {MODULE_KIND_OPTIONS.map(k => (
-              <option key={k.id} value={k.id}>
-                {k.label}
-              </option>
-            ))}
-          </select>
-        </label>
+        <h3 className="text-base font-bold text-tertiary-dark mb-1">Add a tool</h3>
+        <p className="text-xs text-tertiary mb-4">
+          Pick what this tool should do. You can rename it below.
+        </p>
+
+        {/* Visual type picker — icon + plain-language blurb per option. */}
+        <fieldset className="mb-4">
+          <legend className="sr-only">Choose a tool type</legend>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {MODULE_KIND_OPTIONS.map(opt => {
+              const meta = moduleMeta(opt.id as WorkspaceModuleKind);
+              const isSelected = kind === opt.id;
+              return (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => chooseKind(opt.id)}
+                  aria-pressed={isSelected}
+                  className={`flex items-start gap-3 rounded-lg border p-3 text-left transition ${
+                    isSelected
+                      ? 'border-primary bg-primary/5 ring-1 ring-primary/30'
+                      : 'border-grey-200 hover:border-primary/40 hover:bg-grey-50'
+                  }`}
+                >
+                  <span
+                    className="shrink-0 inline-flex items-center justify-center w-8 h-8 rounded-lg"
+                    style={{ color: meta.accent, backgroundColor: meta.accentBg }}
+                  >
+                    <meta.Icon className="w-4 h-4" />
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold text-tertiary-dark">
+                      {opt.label}
+                    </span>
+                    <span className="block text-[11px] text-tertiary leading-snug mt-0.5">
+                      {opt.blurb}
+                    </span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
+
         <label className="block text-xs text-tertiary mb-3">
           <span className="block mb-1 font-medium text-tertiary-dark">Name</span>
           <input
-            value={name}
-            onChange={e => setName(e.target.value)}
-            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm"
+            value={effectiveName}
+            onChange={e => {
+              setNameEdited(true);
+              setName(e.target.value);
+            }}
+            placeholder={selected?.label}
+            className="w-full px-2.5 py-2 border border-grey-200 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
           />
         </label>
-        <label className="block text-xs text-tertiary mb-3">
-          <span className="block mb-1 font-medium text-tertiary-dark">Description</span>
+        <label className="block text-xs text-tertiary mb-4">
+          <span className="block mb-1 font-medium text-tertiary-dark">
+            Description <span className="font-normal text-tertiary-light">(optional)</span>
+          </span>
           <textarea
             value={description}
             onChange={e => setDescription(e.target.value)}
-            className="w-full px-2 py-1.5 border border-grey-200 rounded text-sm h-20"
+            placeholder="What is this tool for in this project?"
+            className="w-full px-2.5 py-2 border border-grey-200 rounded-md text-sm h-20 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary"
           />
         </label>
         {error && <p className="text-xs text-red-700 mb-2">{error}</p>}
@@ -246,11 +339,11 @@ function AddModuleDialog({
           </button>
           <button
             type="button"
-            disabled={!name || busy}
+            disabled={!effectiveName || busy}
             onClick={submit}
             className="px-3 py-1.5 rounded-md bg-primary text-white text-xs font-semibold hover:bg-primary-dark disabled:opacity-50"
           >
-            {busy ? 'Creating…' : 'Create'}
+            {busy ? 'Adding…' : 'Add tool'}
           </button>
         </div>
       </div>
