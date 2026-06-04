@@ -1,6 +1,6 @@
 {
   "date": "2026-06-04",
-  "generatedAt": "2026-06-04T01:43:47.803Z",
+  "generatedAt": "2026-06-04T08:52:22.548Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 4 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -42,19 +42,19 @@
           "score": 13
         },
         {
-          "title": "Q&#038;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits",
-          "link": "https://www.carbonbrief.org/qa-how-uks-seventh-carbon-budget-will-deliver-865bn-in-economic-benefits/",
-          "source": "Carbon Brief",
-          "description": "The Labour government wants to cut UK greenhouse gas emissions to 87% below 1990 levels... The post Q&amp;A: How UK’s seventh carbon budget will deliver &#8216;£865bn’ in economic benefits appeared first on Carbon Brief.",
-          "published": "2026-06-03T08:11:32.000Z",
-          "score": 13
-        },
-        {
           "title": "Australia’s battery-powered revolution: inside the 5 June Guardian Weekly",
           "link": "https://www.theguardian.com/news/2026/jun/03/australias-battery-powered-revolution-inside-the-5-june-guardian-weekly",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;How to change the energy market from within. &lt;strong&gt;Plus:&lt;/strong&gt; Is Iran Trump’s Vietnam?&lt;br&gt;&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://support.theguardian.com/uk/subscribe/weekly?promoCode=WWM53X\"&gt;&lt;strong&gt;Get the Guardian Weekly delivered to your home address&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Last week, as the war in Iran continued to choke global oil supplies, the UK government announced a 13% increase in the cap on energy prices. But it was anothe",
           "published": "2026-06-03T17:00:11.000Z",
+          "score": 7
+        },
+        {
+          "title": "North Korea unveils nuclear weapons fuel production plant",
+          "link": "https://www.dw.com/en/north-korea-unveils-nuclear-weapons-fuel-production-plant/a-77414339?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Kim Jong Un called for North Korea&#039;s capacity to produce weapons-grade uranium to grow at an &quot;exponential rate.&quot;",
+          "published": "2026-06-04T03:44:00.000Z",
           "score": 7
         },
         {
@@ -66,12 +66,12 @@
           "score": 7
         },
         {
-          "title": "Workers' strike delays LNG tanker loading at Australia's Ichthys plant - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOTEIwVTJiRGJHd1MxOHM3a2tnQmNOY0VIT05oaDh4b0JrT2pIOE0zV0pTNlIwNUtoenRFSk1GLWxibXJSLVV1RzZqZWlfUDJxWXlEUjlMT3pmU21BWGs1MEdLYmsyS2VRakVEeGdCOUtCZndrak16Zko5d19nWDVMZVJWV05GN0UtMGVDSWJHYTFTLUZqNnRwdmwwVHpudTNxQXp5a3ZtbmNXbVI4cXNGaHVValAxTnBp?oc=5\" target=\"_blank\"&gt;Workers' strike delays LNG tanker loading at Australia's Ichthys plant&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T03:40:00.000Z",
-          "score": 7
+          "title": "‘Waste colonialism’: Fiji says no to Australian billionaire’s incineration plan",
+          "link": "https://www.theguardian.com/world/2026/jun/04/fiji-offshore-rubbish-waste-government-rejects-australian-billionaire-pacific-ashtray-plan",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Government rejects offshore rubbish being shipped to Fiji and burned after opposition from traditional landowners and tourism operators&lt;/p&gt;&lt;p&gt;The Fijian government has rejected a &lt;a href=\"https://www.theguardian.com/world/2026/apr/23/waste-incinerator-fiji-plan-australians-ian-malouf-rob-cromb-kookai\"&gt;plan by an Australian billionaire to burn rubbish for energy&lt;/a&gt; in Fiji after backlash from traditional landowners and tourism operators.&lt;/p&gt;&lt;p&gt;The pla",
+          "published": "2026-06-04T03:53:22.000Z",
+          "score": 4
         }
       ]
     },
@@ -140,6 +140,14 @@
           "description": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
           "published": "2026-06-03T19:05:17.000Z",
           "score": 2
+        },
+        {
+          "title": "India approves $1 billion fund to help airlines weather fuel cost surge - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTEc0OFpZUk5uQkc0RWdiSEFoamM0eXVMaU5tTlM5b3lfWFlwU0R6em9CMVBzZF9RR3Z1YmdQb3hWdmp0eG0telZETlpuS1lzbjk5NmZ6T3p6TFhpd25PU2ZpSEJkbkZVM2NwM2RFZDdhc1NFUEFmcWFwcjc1VlZzTzFFdmRYN3lYVDFNQTl5ZTZLSHpkUVFCN3pwaGVINlhtVWplU1lOc3U?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTEc0OFpZUk5uQkc0RWdiSEFoamM0eXVMaU5tTlM5b3lfWFlwU0R6em9CMVBzZF9RR3Z1YmdQb3hWdmp0eG0telZETlpuS1lzbjk5NmZ6T3p6TFhpd25PU2ZpSEJkbkZVM2NwM2RFZDdhc1NFUEFmcWFwcjc1VlZzTzFFdmRYN3lYVDFNQTl5ZTZLSHpkUVFCN3pwaGVINlhtVWplU1lOc3U?oc=5\" target=\"_blank\"&gt;India approves $1 billion fund to help airlines weather fuel cost surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T10:38:55.000Z",
+          "score": 2
         }
       ]
     },
@@ -172,19 +180,19 @@
           "score": 18
         },
         {
-          "title": "New U.S. tariffs on EU goods would be unacceptable, EU trade committee head says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxONnpwOEVXLURXS3lSNDRtaGx3eWRwUllsYXpYT3hDMFI3QmMzRDg0MS1lTmh1aGd6NEt1ZXFaektUdzdOckpjU2hJQzgxVHhiVnFuWWRCazhuWXUxSFdiZ3N1TkdObGIxWE1TLTUtTXFSaEhDdk1LdEFJS1ZLdzBBSURQRVVpbks4WE5wY05MSXZobnZtSFhHRzROdnpPNjdLdVpLMWFNbUpReG5welpwcnQzcXNINGJBWnVr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxONnpwOEVXLURXS3lSNDRtaGx3eWRwUllsYXpYT3hDMFI3QmMzRDg0MS1lTmh1aGd6NEt1ZXFaektUdzdOckpjU2hJQzgxVHhiVnFuWWRCazhuWXUxSFdiZ3N1TkdObGIxWE1TLTUtTXFSaEhDdk1LdEFJS1ZLdzBBSURQRVVpbks4WE5wY05MSXZobnZtSFhHRzROdnpPNjdLdVpLMWFNbUpReG5welpwcnQzcXNINGJBWnVr?oc=5\" target=\"_blank\"&gt;New U.S. tariffs on EU goods would be unacceptable, EU trade committee head says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T08:17:34.000Z",
-          "score": 12
-        },
-        {
           "title": "Germany blames Russia for 'bitter defeat' in UN Security Council bid",
           "link": "https://www.bbc.com/news/articles/cgmp3pg71edo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Johann Wadephul said it was \"no secret\" Russia had stirred up sentiment against Germany over its support for Ukraine.",
           "published": "2026-06-04T01:02:24.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine moves closer to EU accession after Hungary deal",
+          "link": "https://www.dw.com/en/ukraine-moves-closer-to-eu-accession-after-hungary-deal/a-77414375?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Budapest will likely drop its veto on Kyiv joining the EU after reaching a deal on rights for Ukraine&#039;s ethnic Hungarian minority. But it remains opposed to Ukraine&#039;s accession being fast-tracked.",
+          "published": "2026-06-04T06:23:00.000Z",
           "score": 8
         }
       ]
@@ -218,12 +226,12 @@
           "score": 12
         },
         {
-          "title": "Armenia&#039;s election offers a choice between Russia and EU",
-          "link": "https://www.dw.com/en/armenia-s-election-offers-a-choice-between-russia-and-eu/a-77400608?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Armenians are set to vote on the country&#039;s future geopolitical direction on June 7. The election will be a test of public opinion in the long-standing Russia ally, where the population is increasingly eyeing the EU.",
-          "published": "2026-06-03T08:36:00.000Z",
-          "score": 12
+          "title": "How US, Europe and Britain target goods made with forced labour - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR3pzeVppLXpJYjVaRXhQWWZ4YzBLYkZCWWZILUFVTk5IOGNIcWNURVFCaUdtQjBPOXA0Rmk0Wnlnekt4MDZ0VlBVN3k5bjRibkJIeEZ0d2pVYU5FVE03T3pSdUM4VnVEOGRndmVBajdDMWtjcU85QkxRS2tzR0NMd1ZnT3NydjRxb0FEMXdYZlhYUENldV9pZ1BLS28xYmhRY2ZzakJ4eXdLQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR3pzeVppLXpJYjVaRXhQWWZ4YzBLYkZCWWZILUFVTk5IOGNIcWNURVFCaUdtQjBPOXA0Rmk0Wnlnekt4MDZ0VlBVN3k5bjRibkJIeEZ0d2pVYU5FVE03T3pSdUM4VnVEOGRndmVBajdDMWtjcU85QkxRS2tzR0NMd1ZnT3NydjRxb0FEMXdYZlhYUENldV9pZ1BLS28xYmhRY2ZzakJ4eXdLQQ?oc=5\" target=\"_blank\"&gt;How US, Europe and Britain target goods made with forced labour&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T16:17:22.000Z",
+          "score": 8
         },
         {
           "title": "Germany says Russia stirred up opposition to UN Security Council bid - Reuters",
@@ -237,9 +245,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 166,
-    "afterDedup": 156,
+    "totalArticlesScanned": 390,
+    "articlesLast24h": 169,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
