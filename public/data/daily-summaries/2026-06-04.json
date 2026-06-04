@@ -1,12 +1,12 @@
 {
   "date": "2026-06-04",
-  "generatedAt": "2026-06-04T13:59:54.875Z",
+  "generatedAt": "2026-06-04T19:25:00.635Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 4 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260526PHT43924/20260526PHT43924-ms.png\" width=\"180\" alt=\"Circular economy\" title=\"Circular economy hearing © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on th",
+      "headline": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
@@ -35,11 +35,11 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260519CHE14204",
+          "title": "Hearings - Public Hearing on the EU ETS: Current Performance and Pathways for the Future - 02-06-2026 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260522CHE14228",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260526PHT43924/20260526PHT43924-ms.png\" width=\"180\" alt=\"Circular economy\" title=\"Circular economy hearing © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on th",
-          "published": "2026-06-04T09:14:26.000Z",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/cmsdata/306848/ETS%20picture-ms.png\" width=\"180\" alt=\"\" title=\"\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 June 2026, the ENVI Committee is organising a public hearing on the EU Emissions Trading System (EU ETS), titled “EU ETS: Current Performance and Pathways for the Future”. The hearing will focus on the current functioning of the EU ETS, its role in delivering cost-effective decarbonisation, and possible",
+          "published": "2026-06-04T14:37:19.000Z",
           "score": 27
         },
         {
@@ -65,28 +65,36 @@
           "score": 13
         },
         {
-          "title": "Australia’s battery-powered revolution: inside the 5 June Guardian Weekly",
-          "link": "https://www.theguardian.com/news/2026/jun/03/australias-battery-powered-revolution-inside-the-5-june-guardian-weekly",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;How to change the energy market from within. &lt;strong&gt;Plus:&lt;/strong&gt; Is Iran Trump’s Vietnam?&lt;br&gt;&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://support.theguardian.com/uk/subscribe/weekly?promoCode=WWM53X\"&gt;&lt;strong&gt;Get the Guardian Weekly delivered to your home address&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Last week, as the war in Iran continued to choke global oil supplies, the UK government announced a 13% increase in the cap on energy prices. But it was anothe",
-          "published": "2026-06-03T17:00:11.000Z",
+          "title": "California and New York weaken climate rules as red states ramp up green energy",
+          "link": "https://www.theguardian.com/environment/2026/jun/04/climate-crisis-blue-states-california-new-york",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Republican-led states growing renewable capabilities at faster rate as Texas emerges as clean-energy leader&lt;/p&gt;&lt;p&gt;Democratic-led states are eroding their climate policies, as red states are scaling up their clean energy deployment.&lt;/p&gt;&lt;p&gt;California on Friday scaled back its cap-and-invest program, offering more than $3bn in free pollution allowances to polluting companies. Earlier the same week, New York weakened its groundbreaking climate law, delaying a plan to",
+          "published": "2026-06-04T16:00:10.000Z",
+          "score": 11
+        },
+        {
+          "title": "First IAEA report on Iran's nuclear programme since February shows little change despite war - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOd0ljYkZKSjRhZ3B4bHVaYXY3eTdSUlhwWEJ5M1FFTmxMOU9NLUVVWVhuT1pZaDdPSmhlZGd3eUhoWkZ6OGx3UVU3SS13VVM3dnNnU2gzSkpMVXdfUU5NRU9DRVgxd2wxZk04UlNjalVScEtYdUlud3JUS3U5UUdsaF9UaXlRMkhrQVZKbGRRbUI5V2diNkZDaURDVndJS3NjSHJyRHBYYzFPUko2bGdsTGNoTmFJd2gweE1aNXRfUmNyVF9RdS1CcUpn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOd0ljYkZKSjRhZ3B4bHVaYXY3eTdSUlhwWEJ5M1FFTmxMOU9NLUVVWVhuT1pZaDdPSmhlZGd3eUhoWkZ6OGx3UVU3SS13VVM3dnNnU2gzSkpMVXdfUU5NRU9DRVgxd2wxZk04UlNjalVScEtYdUlud3JUS3U5UUdsaF9UaXlRMkhrQVZKbGRRbUI5V2diNkZDaURDVndJS3NjSHJyRHBYYzFPUko2bGdsTGNoTmFJd2gweE1aNXRfUmNyVF9RdS1CcUpn?oc=5\" target=\"_blank\"&gt;First IAEA report on Iran's nuclear programme since February shows little change despite war&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt",
+          "published": "2026-06-04T15:32:34.000Z",
           "score": 7
         },
         {
-          "title": "‘Waste colonialism’: Fiji says no to Australian billionaire’s incineration plan",
-          "link": "https://www.theguardian.com/world/2026/jun/04/fiji-offshore-rubbish-waste-government-rejects-australian-billionaire-pacific-ashtray-plan",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Government rejects offshore rubbish being shipped to Fiji and burned after opposition from traditional landowners and tourism operators&lt;/p&gt;&lt;p&gt;The Fijian government has rejected a &lt;a href=\"https://www.theguardian.com/world/2026/apr/23/waste-incinerator-fiji-plan-australians-ian-malouf-rob-cromb-kookai\"&gt;plan by an Australian billionaire to burn rubbish for energy&lt;/a&gt; in Fiji after backlash from traditional landowners and tourism operators.&lt;/p&gt;&lt;p&gt;The pla",
-          "published": "2026-06-04T03:53:22.000Z",
-          "score": 4
+          "title": "Chinese battery maker CATL expects energy storage to make up half of global sales by 2030 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQc0h2SWtZckhIbjQ1V2VLZTVVQUhfeVNid3hxZ0xVR1RoWnl5TmhGajJWQ2l5bExiUGhMdVd2ZkJYRGJxLURhc19FcnhfOWpJUEV0VHlBZ0dESWFtTlpfN1VrMVJZNndUTXNjREY4Q0QwR1NteTZPM1BOcTdMVnhGQTZjT1FqbUU0Rk5pV0ZoX09kODczNWRGUDRNU29qVEJINGZ2YWpYcHBCeHFWM0xXS3FxSGtZQVVUaVliYm9BX2R2ZHp1RzVaX0JR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQc0h2SWtZckhIbjQ1V2VLZTVVQUhfeVNid3hxZ0xVR1RoWnl5TmhGajJWQ2l5bExiUGhMdVd2ZkJYRGJxLURhc19FcnhfOWpJUEV0VHlBZ0dESWFtTlpfN1VrMVJZNndUTXNjREY4Q0QwR1NteTZPM1BOcTdMVnhGQTZjT1FqbUU0Rk5pV0ZoX09kODczNWRGUDRNU29qVEJINGZ2YWpYcHBCeHFWM0xXS3FxSGtZQVVUaVliYm9BX2R2ZHp1RzVaX0JR?oc=5\" target=\"_blank\"&gt;Chinese battery maker CATL expects energy storage to make up half of global sales by 2030&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-06-04T09:59:59.000Z",
+          "score": 7
         },
         {
-          "title": "Stuck on oil: Can Hawaii power itself?",
-          "link": "https://www.dw.com/en/stuck-on-oil-can-hawaii-power-itself/a-76967079?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Hawaii imports much of its fuel — and pays the price. From solar to geothermal, the state is searching for a way out of fossil fuel dependence.",
-          "published": "2026-06-04T10:54:00.000Z",
-          "score": 4
+          "title": "North Korea's Kim calls for 'exponential' nuclear expansion after inspecting new plant, KCNA says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQYzlfcFMzcm5uQ1dkZV9MQW16b1BSN2RfYnItSmxJazY3dms1N3dPcWVQLTNYUG5RZThkUWxQTE1VcFg1Wm5uMk9CRjBieFVoRlF0V0xCWWNzQnJpWklrWEVTSFlxTzlfS2xXTkg0MXkzUmxjcHlRaUV0MzZQeTRNdDN4WXlEVHVGUFpmYl9IQURsbFlnQkJpSFEtN3M0cjdjOVljWHpDS1dUUllkclMwNnlHTWxUVHJrcWppQjVTNEstV3Y3VGhPQUttZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxQYzlfcFMzcm5uQ1dkZV9MQW16b1BSN2RfYnItSmxJazY3dms1N3dPcWVQLTNYUG5RZThkUWxQTE1VcFg1Wm5uMk9CRjBieFVoRlF0V0xCWWNzQnJpWklrWEVTSFlxTzlfS2xXTkg0MXkzUmxjcHlRaUV0MzZQeTRNdDN4WXlEVHVGUFpmYl9IQURsbFlnQkJpSFEtN3M0cjdjOVljWHpDS1dUUllkclMwNnlHTWxUVHJrcWppQjVTNEstV3Y3VGhPQUttZw?oc=5\" target=\"_blank\"&gt;North Korea's Kim calls for 'exponential' nuclear expansion after inspecting new plant, KCNA says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6",
+          "published": "2026-06-03T21:20:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -103,36 +111,36 @@
           "score": 22
         },
         {
-          "title": "Commission decides to refer France to the Court of Justice of the European Union over restrictions on veterinary companies and vets that violate EU law",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1173",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer France to the Court of Justice of the European Union for failing to comply with the rules on the freedom of establishment and the free movement of services, as set out in the Treaty on the functioning of the European Union (TFEU) and the Services Directive (Directive 2006/123/EC), with regard to national rules governing veterinary companies and veterinarians.",
-          "published": "2026-06-03T22:00:00.000Z",
-          "score": 22
-        },
-        {
-          "title": "Cropped 3 June 2026: Highway through the Amazon &#124; El Niño impact &#124; State of CO2 removal",
-          "link": "https://www.carbonbrief.org/cropped-3-june-2026-highway-through-the-amazon-el-nino-impact-state-of-co2-removal/",
-          "source": "Carbon Brief",
-          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 3 June 2026: Highway through the Amazon | El Niño impact | State of CO2 removal appeared first on Carbon Brief.",
-          "published": "2026-06-03T14:06:03.000Z",
-          "score": 10
-        },
-        {
-          "title": "​Why is Europe still not ready for extreme heat?",
-          "link": "https://www.theguardian.com/world/2026/jun/03/why-is-europe-still-not-ready-for-extreme-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;​The first heatwaves of the season reveal how ​ill-prepared governments across the continent are to protect people from increasingly dangerous temperatures&lt;/p&gt;&lt;p&gt;&lt;strong&gt;• &lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2018/mar/22/this-is-europe-sign-up-guardian-email-updates\"&gt;&lt;strong&gt;Don’t get This Is Europe delivered to your inbox? Sign up here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Meteorological summer has begun",
-          "published": "2026-06-03T14:25:26.000Z",
-          "score": 8
-        },
-        {
           "title": "Bathing warning lifted after pollution investigation",
           "link": "https://www.bbc.com/news/articles/ckgprrmmzj9o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Officials say the water at Portstewart Strand does not pose a risk to the public.",
           "published": "2026-06-04T13:23:23.000Z",
           "score": 7
+        },
+        {
+          "title": "Kushner-backed luxury resort plan sparks protests in Albania",
+          "link": "https://www.bbc.com/news/articles/c3r2rdjv2n1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Demonstrators say the project backed by Donald Trump's son-in-law would harm a protected environment.",
+          "published": "2026-06-04T14:33:21.000Z",
+          "score": 6
+        },
+        {
+          "title": "‘That’s a bad combination’: why Australia may be in for a slushy snow season",
+          "link": "https://www.theguardian.com/australia-news/2026/jun/05/australia-ski-season-snow-climate-change-el-nino-impact",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Snow arrives in time for the start of ski season, but climate change and El Niño mean it may not stick around for long, experts say&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt",
+          "published": "2026-06-04T15:00:09.000Z",
+          "score": 4
+        },
+        {
+          "title": "‘An equal and habitable world is possible’: academics set out sweeping vision for planetary survival",
+          "link": "https://www.theguardian.com/environment/2026/jun/04/world-inequality-lab-equality-academics-planetary-survival",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Global report provides an alternative to climate breakdown, political extremism and economic tensions&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/environment/2026/jun/04/happiness-is-not-just-about-gdp-ambitious-plan-or-utopia\"&gt;‘Happiness is not just about GDP’: ambitious plan or utopia?&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Humanity can raise living standards, reduce inequality and keep global heating within a 2C rise, according to a sweeping vision for planetary survival.&lt;",
+          "published": "2026-06-04T06:00:28.000Z",
+          "score": 4
         }
       ]
     },
@@ -146,14 +154,6 @@
           "source": "BBC World News",
           "description": "The bill to fund immigration agencies has been delayed by opposition to Trump's 'anti-weaponisation fund'.",
           "published": "2026-06-04T01:18:09.000Z",
-          "score": 2
-        },
-        {
-          "title": "The end of Trump's 'anti-weaponisation' fund is another sign Republicans are fighting back",
-          "link": "https://www.bbc.com/news/articles/c87q9d7r57yo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The $1.8bn fund would have paid people the Trump administration decided were unjustly and politically targeted.",
-          "published": "2026-06-03T19:05:17.000Z",
           "score": 2
         },
         {
@@ -171,12 +171,12 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Video of a committee meeting - Wednesday, 3 June 2026 - 13:30 - Committee on the Environment, Public Health and Food Safety - Committee on the Internal Market and Consumer Protection - Committee on Transport and Tourism",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260603-1530-COMMITTEE-TRAN-ENVI-IMCO_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 60'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-03T14:54:32.000Z",
-          "score": 18
+          "title": "German asylum benefits cuts violate EU law, top court rules",
+          "link": "https://www.dw.com/en/german-asylum-benefits-cuts-violate-eu-law-top-court-rules/a-77424233?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "In a victory for rejected asylum-seekers, the European Court of Justice has ruled they must be given more than just the bare minimum to survive. But as the EU&#039;s new migration pact kicks in, will relief be short-lived?",
+          "published": "2026-06-04T16:13:00.000Z",
+          "score": 12
         },
         {
           "title": "Germany blames Russia for 'bitter defeat' in UN Security Council bid",
@@ -187,11 +187,11 @@
           "score": 8
         },
         {
-          "title": "Ukraine moves closer to EU accession after Hungary deal",
-          "link": "https://www.dw.com/en/ukraine-moves-closer-to-eu-accession-after-hungary-deal/a-77414375?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Budapest will likely drop its veto on Kyiv joining the EU after reaching a deal on rights for Ukraine&#039;s ethnic Hungarian minority. But it remains opposed to Ukraine&#039;s accession being fast-tracked.",
-          "published": "2026-06-04T06:23:00.000Z",
+          "title": "Hungary and Ukraine agree on minority rights, paving way for EU talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5\" target=\"_blank\"&gt;Hungary and Ukraine agree on minority rights, paving way for EU talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T20:01:30.000Z",
           "score": 8
         },
         {
@@ -201,14 +201,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ05YVkg4eVFvSHlKUV9ERUNZMWJ2bHNsYVZjXzNhc01PamhuVG5NREZpaldXWWlSbmc0azVqbC1wYVBhc29pMFV0dGRzYjF1T3RSU3lFWmxCamI0RlRfYmxfU3pQMU5tYWZQMmRzV1BQUVg5Z1QzVUFzbEUzVngwZjVnMENzaDJEUmpuOElVOXl4dkFURnlFelVVQXhsM0tTTm8tZWlYTmVEUExFTDllQzlqR1VtdkV4?oc=5\" target=\"_blank\"&gt;All EU members greenlight first step in accession talks, Ukraine PM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-03T22:42:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Hungary and Ukraine agree on minority rights, paving way for EU talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5\" target=\"_blank\"&gt;Hungary and Ukraine agree on minority rights, paving way for EU talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T20:01:30.000Z",
-          "score": 8
         }
       ]
     },
@@ -217,27 +209,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU plans energy standards for data centres amid concerns over soaring power use - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOWWFHOHNwNmxoNEdTZUd3YzdXVlc2RklQOXMwVXhGbGNZc1U5VHhROGxWSWtQYmNRNGxlcUJCNEVNSnJRSUtBYmt2NzFIRm91ck5uTWU0ZXhNNmVJTVZYX1kwUDE4M0I1S3JBaHhGUl9zdFZRaXNYcWdsbzZnVmN6T1R5cWVsSklnNXJRNXgyeUVhSTJsUU1hZ0ozdE9udDd1LVlRYUc1dzlSTUxrcEFkMldncGNUeHdhTHBzeGpQdmVOWmxLVHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOWWFHOHNwNmxoNEdTZUd3YzdXVlc2RklQOXMwVXhGbGNZc1U5VHhROGxWSWtQYmNRNGxlcUJCNEVNSnJRSUtBYmt2NzFIRm91ck5uTWU0ZXhNNmVJTVZYX1kwUDE4M0I1S3JBaHhGUl9zdFZRaXNYcWdsbzZnVmN6T1R5cWVsSklnNXJRNXgyeUVhSTJsUU1hZ0ozdE9udDd1LVlRYUc1dzlSTUxrcEFkMldncGNUeHdhTHBzeGpQdmVOWmxLVHc?oc=5\" target=\"_blank\"&gt;EU plans energy standards for data centres amid concerns over soaring power use&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-06-03T16:18:41.000Z",
-          "score": 13
-        },
-        {
-          "title": "EU concerns grow over Albania&#039;s Trump-linked megaproject",
-          "link": "https://www.dw.com/en/eu-concerns-grow-over-albania-s-trump-linked-megaproject/a-77409540?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU seeking ways to speed up Western Balkans membership",
+          "link": "https://www.dw.com/en/eu-seeking-ways-to-speed-up-western-balkans-membership/a-77424398?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "A huge luxury resort on Albania&#039;s protected coast linked to Jared Kushner, son-in-law of US President Donald Trump, is sparking protests, environmental concerns and scrutiny as the country advances toward EU membership.",
-          "published": "2026-06-04T09:11:00.000Z",
-          "score": 12
+          "description": "European Council President Antonio Costa said new ways need to be found to speed up Western Balkans membership in the EU. His comments come ahead of an upcoming summit in Montenegro.",
+          "published": "2026-06-04T15:00:00.000Z",
+          "score": 8
         },
         {
-          "title": "How US, Europe and Britain target goods made with forced labour - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR3pzeVppLXpJYjVaRXhQWWZ4YzBLYkZCWWZILUFVTk5IOGNIcWNURVFCaUdtQjBPOXA0Rmk0Wnlnekt4MDZ0VlBVN3k5bjRibkJIeEZ0d2pVYU5FVE03T3pSdUM4VnVEOGRndmVBajdDMWtjcU85QkxRS2tzR0NMd1ZnT3NydjRxb0FEMXdYZlhYUENldV9pZ1BLS28xYmhRY2ZzakJ4eXdLQQ?oc=5",
+          "title": "Sweden urges EU to tighten rules on tourist visas for Russians - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOcmpNakJaY1Boc0NpTEdMQ1BJTlY5YXNqdEViSEpYTTVvNk5fYVh1UFUwN3gycVpIOFRtQXpYNWw5a2IzNlhtR19rM0NDNTRERGU0TFM3VkdVaDhKNFFKSnNfQ2NDUTEyWGk4TVIzNHFSVzc1Tno1c01HbmJUNU9tLU0xNXRjcU9aZDZyUVF1M1BiZTVma3NWLVhn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR3pzeVppLXpJYjVaRXhQWWZ4YzBLYkZCWWZILUFVTk5IOGNIcWNURVFCaUdtQjBPOXA0Rmk0Wnlnekt4MDZ0VlBVN3k5bjRibkJIeEZ0d2pVYU5FVE03T3pSdUM4VnVEOGRndmVBajdDMWtjcU85QkxRS2tzR0NMd1ZnT3NydjRxb0FEMXdYZlhYUENldV9pZ1BLS28xYmhRY2ZzakJ4eXdLQQ?oc=5\" target=\"_blank\"&gt;How US, Europe and Britain target goods made with forced labour&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T16:17:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOcmpNakJaY1Boc0NpTEdMQ1BJTlY5YXNqdEViSEpYTTVvNk5fYVh1UFUwN3gycVpIOFRtQXpYNWw5a2IzNlhtR19rM0NDNTRERGU0TFM3VkdVaDhKNFFKSnNfQ2NDUTEyWGk4TVIzNHFSVzc1Tno1c01HbmJUNU9tLU0xNXRjcU9aZDZyUVF1M1BiZTVma3NWLVhn?oc=5\" target=\"_blank\"&gt;Sweden urges EU to tighten rules on tourist visas for Russians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-04T13:56:08.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany says Russia stirred up opposition to UN Security Council bid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOGlDTFlPS2pVSkVxekc5QVFzS2VObWpNZWp2Tm9pRGhhMFNpVlBsNHAtLUROdnZNTlg0RTNCNUpWNkVfNkwxS0pZMnFJTFJVbkNxZXpOcWhoU2FCTTNLdXBDZWdBVFRjU25rbUxDb2JoVmZaNjlwSy04cE93dElsUWRWZW1UZjFtYml2T1FKRVhXS2ZmeWpB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQOGlDTFlPS2pVSkVxekc5QVFzS2VObWpNZWp2Tm9pRGhhMFNpVlBsNHAtLUROdnZNTlg0RTNCNUpWNkVfNkwxS0pZMnFJTFJVbkNxZXpOcWhoU2FCTTNLdXBDZWdBVFRjU25rbUxDb2JoVmZaNjlwSy04cE93dElsUWRWZW1UZjFtYml2T1FKRVhXS2ZmeWpB?oc=5\" target=\"_blank\"&gt;Germany says Russia stirred up opposition to UN Security Council bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T20:13:03.000Z",
           "score": 8
         },
         {
@@ -249,20 +241,20 @@
           "score": 8
         },
         {
-          "title": "Germany says Russia stirred up opposition to UN Security Council bid - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQOGlDTFlPS2pVSkVxekc5QVFzS2VObWpNZWp2Tm9pRGhhMFNpVlBsNHAtLUROdnZNTlg0RTNCNUpWNkVfNkwxS0pZMnFJTFJVbkNxZXpOcWhoU2FCTTNLdXBDZWdBVFRjU25rbUxDb2JoVmZaNjlwSy04cE93dElsUWRWZW1UZjFtYml2T1FKRVhXS2ZmeWpB?oc=5",
+          "title": "Five countries elected to UN Security Council; Germany misses out - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNdFJ5dy14a252eHR0UFVQNFVPWTd1UnhnS2MzN1hQc1BodGhVdTRSeldoVkZ4MmFaem0zb05CRXd1QjZ2anMwbnVpUXNQSXVYamFwc0VaTjJTREdKLTRoc2Z1aF8wbkhLZlNmSmhHYkhqRnlDRkVoSnQ2RmxfLUJZOWJNTWIxRUJtckNqWUZiZklBSk5nNjd2N3pNTjAzbWItS3ZFVDR2Q1Q1ci1mOTVya2tKN2l5VS15WXFtdQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxQOGlDTFlPS2pVSkVxekc5QVFzS2VObWpNZWp2Tm9pRGhhMFNpVlBsNHAtLUROdnZNTlg0RTNCNUpWNkVfNkwxS0pZMnFJTFJVbkNxZXpOcWhoU2FCTTNLdXBDZWdBVFRjU25rbUxDb2JoVmZaNjlwSy04cE93dElsUWRWZW1UZjFtYml2T1FKRVhXS2ZmeWpB?oc=5\" target=\"_blank\"&gt;Germany says Russia stirred up opposition to UN Security Council bid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T20:13:03.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNdFJ5dy14a252eHR0UFVQNFVPWTd1UnhnS2MzN1hQc1BodGhVdTRSeldoVkZ4MmFaem0zb05CRXd1QjZ2anMwbnVpUXNQSXVYamFwc0VaTjJTREdKLTRoc2Z1aF8wbkhLZlNmSmhHYkhqRnlDRkVoSnQ2RmxfLUJZOWJNTWIxRUJtckNqWUZiZklBSk5nNjd2N3pNTjAzbWItS3ZFVDR2Q1Q1ci1mOTVya2tKN2l5VS15WXFtdQ?oc=5\" target=\"_blank\"&gt;Five countries elected to UN Security Council; Germany misses out&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T20:17:54.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 394,
-    "articlesLast24h": 166,
-    "afterDedup": 159,
+    "totalArticlesScanned": 399,
+    "articlesLast24h": 173,
+    "afterDedup": 162,
     "feedsQueried": 19
   }
 }
