@@ -53,6 +53,8 @@ import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
+import ProjectSummariesView from '@/components/content-analysis/ProjectSummariesView';
+import LongitudinalTimelineView from '@/components/content-analysis/LongitudinalTimelineView';
 import AiClassificationsList from '@/components/content-analysis/AiClassificationsList';
 import CodeEditorModal, {
   type CodeEditorPayload,
@@ -96,8 +98,8 @@ const TAB_LABELS: Array<{
   { id: 'workbench',    label: 'Code',         subtitle: 'Tag segments',          kind: 'primary' },
   { id: 'horizontal',   label: 'Compare',      subtitle: 'Across policies',       kind: 'primary' },
   { id: 'vertical',     label: 'Trace',        subtitle: 'Implementation chain',  kind: 'beta'    },
-  { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'beta'    },
-  { id: 'outcomes',     label: 'Summarise',    subtitle: 'Outcomes & narrative',  kind: 'beta'    },
+  { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'primary' },
+  { id: 'outcomes',     label: 'Summarise',    subtitle: 'Document summaries',     kind: 'primary' },
 ];
 
 const DEFAULT_CODE_COLORS = [
@@ -145,6 +147,7 @@ function ContentAnalysisPageInner() {
     resetAll,
     restoreCodesAndSegments,
     setDocumentSummary,
+    loadSummaryBlocks,
   } = useContentAnalysis();
 
   // Top-level navigation across the module:
@@ -192,6 +195,8 @@ function ContentAnalysisPageInner() {
   const [sourceFilter, setSourceFilter] = useState<'all' | SourceTier>('policy');
   /** Bumped by the "Guided tour" button to replay the workbench walkthrough. */
   const [tourReplay, setTourReplay] = useState(0);
+  /** Bumped by the "How to analyse" button to replay the analysis walkthrough. */
+  const [analysisTourReplay, setAnalysisTourReplay] = useState(0);
   /** When set, the viewer shows this archived version instead of the live doc. */
   const [viewingVersionId, setViewingVersionId] = useState<string | null>(null);
   const [pdfOnly, setPdfOnly] = useState(false);
@@ -365,13 +370,30 @@ function ContentAnalysisPageInner() {
     [sourceFilter, selectedDocument],
   );
 
-  // Whole-document summary for the current (project, document). Keyed exactly
-  // as the store keys it so re-saving updates the same row.
-  const currentSummary = useMemo(() => {
-    if (!selectedDocument) return null;
-    const id = `summary-${activeProjectId ?? 'master'}-${selectedDocument.id}`;
-    return snapshot.summaries.find(s => s.id === id) ?? null;
-  }, [snapshot.summaries, activeProjectId, selectedDocument]);
+  // Whole-document summary for the current (project, document). The store
+  // keys a summary by (project, document); the active project here is the
+  // master library (null) unless a real project is open.
+  const summaryProjectId = activeProjectId === 'project-master' ? null : activeProjectId;
+  const allDocSummaries = useMemo(
+    () => (selectedDocument ? snapshot.summaries.filter(s => s.documentId === selectedDocument.id) : []),
+    [snapshot.summaries, selectedDocument],
+  );
+  const currentSummary = useMemo(
+    () => allDocSummaries.find(s => s.projectId === summaryProjectId) ?? null,
+    [allDocSummaries, summaryProjectId],
+  );
+  /** Summaries authored under other projects — shown read-only for context. */
+  const otherDocSummaries = useMemo(
+    () => allDocSummaries.filter(s => s.projectId !== summaryProjectId),
+    [allDocSummaries, summaryProjectId],
+  );
+  /** Map a summary's projectId (null = master library) to a display name. */
+  const summaryProjectNames = useMemo(() => {
+    const m = new Map<string | null, string>();
+    m.set(null, 'Master library');
+    for (const p of snapshot.projects) m.set(p.id, p.name);
+    return m;
+  }, [snapshot.projects]);
 
   // Auto-dismiss is now handled centrally by the typed ToastHost
   // (default 5s for info/success, 9s for danger).
@@ -1167,6 +1189,74 @@ function ContentAnalysisPageInner() {
           },
         ]}
       />
+      {/* Analysis-section walkthrough. Auto-opens the first time an analyst
+          leaves the Code tab for one of the analysis lenses, and drives the
+          tabs as it goes so each lens is explained on its own surface.
+          Replayable from the "How to analyse" button. */}
+      <GuidedSession
+        moduleKey="content-analysis-analysis"
+        active={viewMode === 'workbench' && activeTab !== 'workbench'}
+        replayToken={analysisTourReplay}
+        steps={[
+          {
+            title: 'The analysis lenses',
+            anchor: '.ca-tour-lenses',
+            body: (
+              <>
+                <strong>Code</strong> is where you tag. The other four tabs <em>analyse</em> what you and the
+                team have tagged — without changing anything. Let&apos;s walk through each.
+              </>
+            ),
+          },
+          {
+            title: 'Compare — cross-document matrix',
+            anchor: '.ca-tour-compare',
+            onEnter: () => setActiveTab('horizontal'),
+            body: (
+              <>
+                Rows are your top-level codes, columns are documents, and each cell counts the tagged
+                segments — a heat-map of which themes show up where. Use the <strong>Source</strong> filter
+                above the matrix to scope it to policy, scientific or grey sources.
+              </>
+            ),
+          },
+          {
+            title: 'Timeline — versions over time',
+            anchor: '.ca-tour-timeline',
+            onEnter: () => setActiveTab('longitudinal'),
+            body: (
+              <>
+                For each act with a version history, every frozen snapshot plus the current body lines up
+                left-to-right, with the <strong>size change</strong> between versions. Click a point to
+                preview that version in the reader.
+              </>
+            ),
+          },
+          {
+            title: 'Summarise — corpus read-across',
+            anchor: '.ca-tour-summarise',
+            onEnter: () => setActiveTab('outcomes'),
+            body: (
+              <>
+                Every whole-document <strong>summary</strong> in the project, in one place — this project&apos;s
+                take expanded, other projects&apos; read-only. Open a card to jump back to its document.
+              </>
+            ),
+          },
+          {
+            title: 'Trace — coming next',
+            anchor: '.ca-tour-trace',
+            onEnter: () => setActiveTab('vertical'),
+            body: (
+              <>
+                <strong>Trace</strong> will follow a target through to its budgets and implementation
+                documents. It needs cross-document links that aren&apos;t in place yet — the panel lists what
+                it&apos;s waiting on.
+              </>
+            ),
+          },
+        ]}
+      />
       <PageHero
         title="Content Analysis"
         subtitle={
@@ -1311,6 +1401,16 @@ function ContentAnalysisPageInner() {
           >
             <span aria-hidden>🧭</span> Guided tour
           </button>
+          {activeTab !== 'workbench' && (
+            <button
+              type="button"
+              onClick={() => setAnalysisTourReplay(t => t + 1)}
+              className="text-[11.5px] font-medium text-[#00928F] hover:text-[#006F6C] inline-flex items-center gap-1"
+              title="Walk through the analysis lenses"
+            >
+              <span aria-hidden>📊</span> How to analyse
+            </button>
+          )}
           <div className="ca-tour-lenses ml-auto flex items-stretch gap-1 flex-wrap">
             {TAB_LABELS.map(t => (
               <button
@@ -1895,28 +1995,18 @@ function ContentAnalysisPageInner() {
               )}
 
               {selectedDocument && (
-                <Panel
-                  title="Document summary"
-                  accent={currentSummary ? 'saved' : 'optional'}
-                  anchorClassName="ca-tour-summary"
-                  bodyClassName="p-0"
-                  collapsible
-                  defaultCollapsed={!currentSummary}
-                >
-                  <DocumentSummaryPanel
-                    value={currentSummary?.text ?? ''}
-                    updatedAt={currentSummary?.updatedAt}
-                    readOnly={lockMode === 'watcher'}
-                    onSave={(text) => {
-                      if (!guardEdit()) return;
-                      setDocumentSummary(
-                        selectedDocument.id,
-                        activeProjectId === 'project-master' ? null : activeProjectId,
-                        text,
-                      );
-                    }}
-                  />
-                </Panel>
+                <DocumentSummaryPanel
+                  anchorClassName="ca-tour-summary border border-[#E6E7E8] rounded-sm overflow-hidden"
+                  summary={currentSummary}
+                  otherSummaries={otherDocSummaries}
+                  projectNameById={summaryProjectNames}
+                  readOnly={lockMode === 'watcher'}
+                  onSave={(text, blocks) => {
+                    if (!guardEdit()) return;
+                    setDocumentSummary(selectedDocument.id, summaryProjectId, text, blocks);
+                  }}
+                  onLoadBlocks={loadSummaryBlocks}
+                />
               )}
 
               {selectedDocument && (
@@ -2058,11 +2148,39 @@ function ContentAnalysisPageInner() {
       )}
 
       {activeTab === 'horizontal' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-compare max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <h2 className="text-[18px] font-bold text-[#3D5265]">Horizontal policy coherence</h2>
           <p className="mt-1 text-[12.5px] text-[#3D5265]/75 max-w-3xl leading-relaxed">
             Cross-document view across the current project scope. Each cell counts tagged segments under a top-level concept.
           </p>
+          {/* Source-tier filter — scope the matrix columns to policy /
+              scientific / grey (or all). Shares the same `sourceFilter` state
+              as the coding view so the two surfaces stay in step. */}
+          <div className="mt-3 flex items-center gap-1.5 flex-wrap">
+            <span className="text-[10px] uppercase tracking-[0.14em] text-[#8A95A3] font-mono mr-1">Source</span>
+            {SOURCE_FILTER_OPTIONS.map(opt => {
+              const count = docsInProjectScope.filter(d =>
+                opt.id === 'all' ? true : sourceTierOf(d) === opt.id,
+              ).length;
+              const active = sourceFilter === opt.id;
+              return (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setSourceFilter(opt.id)}
+                  title={opt.hint}
+                  className={`px-2 py-0.5 rounded-sm text-[11px] font-medium transition ${
+                    active ? 'bg-[#3D5265] text-white' : 'text-[#3D5265] border border-[#E6E7E8] hover:bg-[#F3F4F6]'
+                  }`}
+                >
+                  {opt.label}
+                  <span className={`ml-1 font-mono tabular-nums ${active ? 'text-white/80' : 'text-[#8A95A3]'}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
           <div className="mt-4 border border-[#E6E7E8] rounded-sm bg-white p-3 sm:p-4">
             <HorizontalCoherenceView
               documents={docsInScope}
@@ -2074,24 +2192,46 @@ function ContentAnalysisPageInner() {
       )}
 
       {activeTab === 'vertical' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-trace max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <AnalysisPlaceholder mode="vertical" />
         </section>
       )}
       {activeTab === 'longitudinal' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
-          <AnalysisPlaceholder mode="longitudinal" />
+        <section className="ca-tour-timeline max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+          <LongitudinalTimelineView
+            documents={docsInProjectScope}
+            onOpenVersion={(documentId, versionId) => {
+              setActiveTab('workbench');
+              // Make sure the target doc is visible in the corpus list whatever
+              // tier filter is active, so the reader can resolve it.
+              setSourceFilter('all');
+              setSelectedDocumentId(documentId);
+              setHighlightedSegmentId(null);
+              setViewingVersionId(versionId);
+            }}
+          />
         </section>
       )}
       {activeTab === 'outcomes' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
-          <AnalysisPlaceholder mode="outcomes" />
+        <section className="ca-tour-summarise max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+          <ProjectSummariesView
+            documents={docsInProjectScope}
+            summaries={snapshot.summaries}
+            activeProjectId={summaryProjectId}
+            projectNameById={summaryProjectNames}
+            onLoadBlocks={loadSummaryBlocks}
+            onOpenDocument={(id) => {
+              setActiveTab('workbench');
+              setSelectedDocumentId(id);
+              setHighlightedSegmentId(null);
+            }}
+          />
         </section>
       )}
 
       <footer className="mt-6 border-t border-[#E6E7E8] bg-[#FBFBFA]">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-5 text-[11.5px] text-[#8A95A3] leading-relaxed">
-          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). Add vertical, longitudinal and outcomes views once the required document kinds and indicator joins are in place.
+          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). The Summarise read-across and the Timeline version-history view are live; Trace (target → budget → implementation) lands once the cross-document link kinds are in place.
         </div>
       </footer>
         </>

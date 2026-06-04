@@ -46,12 +46,18 @@ import { useAuth } from '@/lib/auth-context';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
   useLiveReferences,
-  isScientificLiterature,
   referencePdfCacheKey,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
 import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
-import { SummaryDeckViewer, SummaryDeckEditor } from './SummaryDeck';
+import {
+  sourceTierOf,
+  SOURCE_TIER_META,
+  SOURCE_TIERS,
+  type SourceTier,
+} from '@/lib/content-analysis/source-tier';
+import DocumentSummaryPanel from '@/components/content-analysis/DocumentSummaryPanel';
+import GuidedSession from '@/components/content-analysis/GuidedSession';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
@@ -131,36 +137,18 @@ const DEFAULT_CODE_COLORS = [
 ];
 
 // ── Source types ────────────────────────────────────────────────────────────
-type SourceType = 'policy' | 'scientific' | 'grey';
+// The three source tiers (policy / scientific / grey) and their labels come
+// from the shared `source-tier` module, so this in-workspace surface and the
+// standalone /content-analysis route never drift apart.
+type SourceType = SourceTier;
 
-const SOURCE_TYPES: Array<{
-  id: SourceType;
-  title: string;
-  blurb: string;
-  icon: string;
-}> = [
-  {
-    id: 'policy',
-    title: 'Policy analysis',
-    blurb:
-      'Deep-dive the relevant EU policies. Mark any passage in the legal text and attach tags & codes to the exact wording.',
-    icon: '§',
-  },
-  {
-    id: 'scientific',
-    title: 'Scientific literature',
-    blurb:
-      'Peer-reviewed references from the reference manager (articles, books, chapters). Upload the paper PDF to code it line by line.',
-    icon: '🎓',
-  },
-  {
-    id: 'grey',
-    title: 'Grey literature & reports',
-    blurb:
-      'Reports, working papers and other grey references from the reference manager. Upload the report PDF to start tagging.',
-    icon: '📄',
-  },
-];
+const SOURCE_TYPES: Array<{ id: SourceType; title: string; blurb: string; icon: string }> =
+  SOURCE_TIERS.map(id => ({
+    id,
+    title: SOURCE_TIER_META[id].title,
+    blurb: SOURCE_TIER_META[id].chooserBlurb,
+    icon: SOURCE_TIER_META[id].icon,
+  }));
 
 interface WorkspaceProjectLite {
   id: string;
@@ -210,6 +198,8 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
   const [view, setView] = useState<'code' | 'analyse'>('code');
+  /** Bumped by the "Guided tour" button to replay the walkthrough. */
+  const [tourReplay, setTourReplay] = useState(0);
 
   // The lens set — whose tags are visible. Always seeded with the master
   // library + this project so an analyst never starts from a blank canvas.
@@ -274,13 +264,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   }, [snapshot.documents, liveRefs.docs]);
 
   const matchesSource = useCallback(
-    (d: AnalysisDocument): boolean => {
-      const isRef = (d.sourceKind ?? 'policy') === 'reference';
-      if (sourceType === 'policy') return !isRef;
-      if (sourceType === 'scientific') return isRef && isScientificLiterature(d);
-      if (sourceType === 'grey') return isRef && !isScientificLiterature(d);
-      return false;
-    },
+    (d: AnalysisDocument): boolean => sourceType != null && sourceTierOf(d) === sourceType,
     [sourceType],
   );
 
@@ -675,17 +659,91 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // ── Render: workbench ─────────────────────────────────────────────────────
   return (
     <div className="space-y-4">
+      {/* Guided session — same walkthrough as the standalone /content-analysis
+          route, adapted to this in-workspace layout. Auto-opens the first time
+          an analyst reaches the workbench (i.e. once they've picked a source)
+          and is replayable from the "Guided tour" button. */}
+      <GuidedSession
+        moduleKey="content-analysis-workspace"
+        active={sourceType != null}
+        replayToken={tourReplay}
+        steps={[
+          {
+            title: 'Your source tier',
+            anchor: '.ca-ws-tour-source',
+            body: (
+              <>
+                You&apos;re coding <strong>{SOURCE_TIER_META[sourceType].label.toLowerCase()}</strong> sources.
+                {' '}{SOURCE_TIER_META[sourceType].blurb} Switch tiers here anytime.
+              </>
+            ),
+          },
+          {
+            title: '1 · Add codes',
+            anchor: '.ca-ws-tour-codes',
+            body: (
+              <>
+                Add documents to this workspace, then build your code system: <strong>+ Root</strong> for a
+                theme, the <strong>+</strong> on any code to nest a child. Codes you add here belong to this
+                project and extend the shared master library.
+              </>
+            ),
+          },
+          {
+            title: '2 · Select a code & tag text',
+            anchor: '.ca-ws-tour-doc',
+            body: (
+              <>
+                Click a code to make it active, then highlight a passage to tag it. No code active?
+                Highlighting pops a toolbar to <strong>create a code and apply it</strong> at once.
+              </>
+            ),
+          },
+          {
+            title: '3 · Write a summary',
+            anchor: '.ca-ws-tour-summary',
+            body: (
+              <>
+                Capture the gist of each document — plain text plus optional <strong>slides</strong>
+                {' '}(flowcharts, screenshots, diagrams). Summaries are shared, so other projects&apos; takes
+                show here read-only too.
+              </>
+            ),
+          },
+          {
+            title: '4 · Change lenses',
+            anchor: '.ca-ws-tour-lens',
+            body: (
+              <>
+                A <strong>lens</strong> decides whose tags you see. Keep the master library on, then toggle
+                this or sibling projects to compare what each has coded.
+              </>
+            ),
+          },
+          {
+            title: '5 · Analyse the results',
+            anchor: '.ca-ws-tour-views',
+            body: (
+              <>
+                Switch to <strong>Analyse</strong> to cluster and chart every coded segment in your corpus,
+                through the lenses you&apos;ve turned on.
+              </>
+            ),
+          },
+        ]}
+      />
       {/* Header + source switch + view toggle */}
       <header className="flex items-start justify-between gap-3 flex-wrap">
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Content analysis</h2>
-          <div className="flex items-center gap-1.5 mt-1.5 flex-wrap">
+          <div className="ca-ws-tour-source flex items-center gap-1.5 mt-1.5 flex-wrap">
             <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">Source:</span>
             {SOURCE_TYPES.map(s => (
               <button
                 key={s.id}
                 type="button"
                 onClick={() => { setSourceType(s.id); setSelectedDocumentId(null); }}
+                title={SOURCE_TIER_META[s.id].hint}
                 className={`text-[11px] px-2 py-1 rounded border transition ${
                   sourceType === s.id
                     ? 'bg-primary text-white border-primary'
@@ -695,9 +753,17 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 {s.title}
               </button>
             ))}
+            <button
+              type="button"
+              onClick={() => setTourReplay(t => t + 1)}
+              className="ml-1 text-[11px] px-2 py-1 rounded border border-grey-200 text-secondary hover:border-secondary inline-flex items-center gap-1"
+              title="Replay the guided walkthrough"
+            >
+              <span aria-hidden>🧭</span> Guided tour
+            </button>
           </div>
         </div>
-        <div className="flex rounded border border-grey-200 overflow-hidden text-[11px]">
+        <div className="ca-ws-tour-views flex rounded border border-grey-200 overflow-hidden text-[11px]">
           <button
             type="button"
             onClick={() => setView('code')}
@@ -716,7 +782,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       </header>
 
       {/* Lens selector — shared by Code + Analyse views */}
-      <div className="bg-grey-50 border border-grey-200 rounded-lg p-2.5">
+      <div className="ca-ws-tour-lens bg-grey-50 border border-grey-200 rounded-lg p-2.5">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold" title="Whose tags are shown — toggle to compare what other projects are coding">
             Lens:
@@ -842,7 +908,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
               )}
             </div>
 
-            <div className="border border-grey-200 rounded-lg bg-white">
+            <div className="ca-ws-tour-codes border border-grey-200 rounded-lg bg-white">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
                 <span className="text-[11px] font-semibold text-tertiary-dark">Tag system</span>
                 <button
@@ -879,7 +945,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           </aside>
 
           {/* CENTRE: document viewer */}
-          <section className="border border-grey-200 rounded-lg bg-white min-h-[50vh] flex flex-col min-w-0">
+          <section className="ca-ws-tour-doc border border-grey-200 rounded-lg bg-white min-h-[50vh] flex flex-col min-w-0">
             {!selectedDocument ? (
               <div className="flex-1 flex items-center justify-center p-8 text-center">
                 <p className="text-sm text-tertiary max-w-sm">
@@ -1107,6 +1173,7 @@ function DocumentViewer({
         projectNameById={projectNameById}
         onSave={onSaveSummary}
         onLoadBlocks={onLoadSummaryBlocks}
+        anchorClassName="ca-ws-tour-summary"
       />
 
       {!hasText ? (
@@ -1220,247 +1287,6 @@ function DocumentViewer({
           />
         </div>
       )}
-    </div>
-  );
-}
-
-// ── Whole-document summary panel ─────────────────────────────────────────────
-/**
- * A collapsible "comment for the entire paper" attached to the document as a
- * whole — distinct from the passage-level notes on coded segments. Shown for
- * every document kind. The current project's summary is editable; summaries
- * authored under other projects are shown read-only for context, so the whole
- * team can see each report's take on the same paper.
- *
- * Beyond a plain-text lead, a summary is a little presentation: a deck of
- * slides mixing text, SmartArt-style flowcharts and screenshots. Those slides
- * are heavy, so they are **lazy-loaded** — the panel ships closed and only
- * fetches the deck (`onLoadBlocks`) when the user opens "Show summary".
- */
-function DocumentSummaryPanel({
-  summary,
-  otherSummaries,
-  projectNameById,
-  onSave,
-  onLoadBlocks,
-}: {
-  summary: DocumentSummary | null;
-  otherSummaries: DocumentSummary[];
-  projectNameById: Map<string | null, string>;
-  onSave: (text: string, blocks: SummaryBlock[]) => void;
-  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
-}) {
-  const leadText = summary?.text?.trim() ?? '';
-  const slideCount = summary?.blockCount ?? summary?.blocks?.length ?? 0;
-  const hasContent = Boolean(leadText) || slideCount > 0;
-
-  // Closed by default — the deck (and its screenshots) is only fetched once the
-  // user explicitly opens the summary, so the workbench stays snappy.
-  const [open, setOpen] = useState(false);
-  const [editing, setEditing] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [draftText, setDraftText] = useState('');
-  const [draftBlocks, setDraftBlocks] = useState<SummaryBlock[]>([]);
-
-  // Re-sync when the selected document (and thus its summary) changes.
-  const summaryKey = summary?.id ?? 'none';
-  useEffect(() => {
-    setOpen(false);
-    setEditing(false);
-  }, [summaryKey]);
-
-  // Lazy-hydrate the deck the first time the panel is opened for viewing.
-  useEffect(() => {
-    if (!open || editing || !summary) return;
-    if (summary.blocks === undefined && slideCount > 0) {
-      setLoading(true);
-      onLoadBlocks(summary.id).finally(() => setLoading(false));
-    }
-  }, [open, editing, summaryKey, summary?.blocks, slideCount]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  const startEditing = async () => {
-    setOpen(true);
-    let blocks = summary?.blocks;
-    if (summary && blocks === undefined) {
-      setLoading(true);
-      blocks = await onLoadBlocks(summary.id);
-      setLoading(false);
-    }
-    setDraftText(summary?.text ?? '');
-    setDraftBlocks(blocks ?? []);
-    setEditing(true);
-  };
-
-  const save = () => {
-    onSave(draftText, draftBlocks);
-    setEditing(false);
-    if (!draftText.trim() && draftBlocks.length === 0) setOpen(false);
-  };
-
-  const updatedLabel = summary?.updatedAt
-    ? new Date(summary.updatedAt).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-    : null;
-
-  return (
-    <div className="border-b border-grey-200 bg-grey-50/60">
-      <div className="w-full px-3 py-1.5 flex items-center justify-between gap-2">
-        <button
-          type="button"
-          onClick={() => setOpen(o => !o)}
-          className="flex items-center gap-1.5 text-left min-w-0"
-        >
-          <span className="text-[11px] font-semibold text-tertiary-dark flex items-center gap-1.5">
-            <span aria-hidden>▤</span>
-            Summary
-            {hasContent && (
-              <span className="text-[9px] font-normal text-white bg-secondary rounded-full px-1.5 py-0.5">
-                {slideCount > 0 ? `${slideCount} slide${slideCount === 1 ? '' : 's'}` : '1'}
-              </span>
-            )}
-            {otherSummaries.length > 0 && (
-              <span className="text-[9px] font-normal text-tertiary-light">
-                +{otherSummaries.length} other project{otherSummaries.length === 1 ? '' : 's'}
-              </span>
-            )}
-          </span>
-          <span className="text-[10px] text-secondary font-semibold">
-            {open ? 'Hide ▴' : (hasContent ? 'Show summary ▾' : '▾')}
-          </span>
-        </button>
-        {!editing && (
-          <button
-            type="button"
-            onClick={startEditing}
-            className="shrink-0 px-2 py-0.5 rounded border border-secondary text-secondary text-[11px] font-semibold hover:bg-secondary hover:text-white transition"
-          >
-            {hasContent ? 'Edit summary' : '+ Add summary'}
-          </button>
-        )}
-      </div>
-
-      {open && (
-        <div className="px-3 pb-3 space-y-2">
-          {editing ? (
-            <div className="space-y-2">
-              <textarea
-                value={draftText}
-                onChange={e => setDraftText(e.target.value)}
-                rows={3}
-                autoFocus
-                placeholder="Summarise this paper for the team — key findings, relevance, how to use it…"
-                className="w-full px-2 py-1.5 border border-grey-200 rounded text-[12px] leading-snug resize-y"
-              />
-              <SummaryDeckEditor blocks={draftBlocks} onChange={setDraftBlocks} />
-              <div className="flex items-center gap-2 pt-1 border-t border-grey-200">
-                <button
-                  type="button"
-                  onClick={save}
-                  className="px-3 py-1 rounded-md bg-primary text-white text-[11px] font-semibold hover:bg-primary-dark"
-                >
-                  Save summary
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setEditing(false)}
-                  className="text-[11px] text-tertiary-light hover:text-tertiary"
-                >
-                  Cancel
-                </button>
-                <span className="text-[10px] text-tertiary-light ml-auto">Shared with the team</span>
-              </div>
-            </div>
-          ) : hasContent ? (
-            <div className="space-y-2">
-              {leadText && (
-                <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">{leadText}</p>
-              )}
-              {loading && summary?.blocks === undefined ? (
-                <p className="text-[11px] text-tertiary-light italic">Loading slides…</p>
-              ) : (
-                <SummaryDeckViewer blocks={summary?.blocks ?? []} />
-              )}
-              <div className="flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={startEditing}
-                  className="text-[11px] text-secondary hover:underline"
-                >
-                  Edit
-                </button>
-                {updatedLabel && (
-                  <span className="text-[10px] text-tertiary-light">Updated {updatedLabel}</span>
-                )}
-              </div>
-            </div>
-          ) : (
-            <button
-              type="button"
-              onClick={startEditing}
-              className="text-[11px] text-secondary hover:underline"
-            >
-              + Add summary
-            </button>
-          )}
-
-          {otherSummaries.length > 0 && (
-            <div className="pt-2 border-t border-grey-200 space-y-3">
-              {otherSummaries.map(s => (
-                <OtherProjectSummary
-                  key={s.id}
-                  summary={s}
-                  projectName={projectNameById.get(s.projectId) ?? 'Other project'}
-                  onLoadBlocks={onLoadBlocks}
-                />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
-/** Read-only view of another project's summary of the same paper. The slide
- *  deck is lazy: shown only when the reader clicks "Show N slides". */
-function OtherProjectSummary({
-  summary,
-  projectName,
-  onLoadBlocks,
-}: {
-  summary: DocumentSummary;
-  projectName: string;
-  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
-}) {
-  const [shown, setShown] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const slideCount = summary.blockCount ?? summary.blocks?.length ?? 0;
-
-  const show = async () => {
-    setShown(true);
-    if (summary.blocks === undefined && slideCount > 0) {
-      setLoading(true);
-      await onLoadBlocks(summary.id);
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="space-y-1">
-      <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">{projectName}</p>
-      {summary.text && (
-        <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{summary.text}</p>
-      )}
-      {slideCount > 0 && !shown && (
-        <button
-          type="button"
-          onClick={show}
-          className="text-[11px] text-secondary hover:underline"
-        >
-          Show {slideCount} slide{slideCount === 1 ? '' : 's'}
-        </button>
-      )}
-      {shown && loading && <p className="text-[11px] text-tertiary-light italic">Loading slides…</p>}
-      {shown && summary.blocks && <SummaryDeckViewer blocks={summary.blocks} />}
     </div>
   );
 }

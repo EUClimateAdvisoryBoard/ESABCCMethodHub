@@ -23,6 +23,9 @@ export interface GuidedStep {
   /** CSS selector for the element this step is about. Omit for a centred,
    *  anchorless step (e.g. a welcome panel). */
   anchor?: string;
+  /** Fired when the step becomes active — e.g. to switch the host page to the
+   *  tab this step describes before its anchor is measured. */
+  onEnter?: () => void;
 }
 
 interface Props {
@@ -78,6 +81,14 @@ export default function GuidedSession({ moduleKey, steps, active, replayToken = 
     const r = el.getBoundingClientRect();
     setRect({ top: r.top, left: r.left, width: r.width, height: r.height });
   }, [step, steps]);
+
+  // Fire the step's onEnter (e.g. switch the host page's tab) once per entry,
+  // before measuring so the anchor exists by the time we look for it.
+  useEffect(() => {
+    if (!open) return;
+    steps[step]?.onEnter?.();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, step]);
 
   useEffect(() => {
     if (!open) return;
