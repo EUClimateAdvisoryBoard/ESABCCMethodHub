@@ -1,9 +1,15 @@
 {
   "date": "2026-06-04",
-  "generatedAt": "2026-06-04T08:52:22.548Z",
+  "generatedAt": "2026-06-04T13:59:54.875Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 4 June 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260526PHT43924/20260526PHT43924-ms.png\" width=\"180\" alt=\"Circular economy\" title=\"Circular economy hearing © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on th",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Analysis: China’s CO2 climbs 2% in early 2026 due to ‘wasted’ wind and solar",
       "summary": "China’s carbon dioxide (CO2) emissions grew by 2% in the first quarter of 2026, after... The post Analysis: China’s CO2 climbs 2% in early 2026 due to ‘wasted’ wind and solar appeared first on Carbon Brief.",
@@ -11,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
-      "summary": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
+      "headline": "Commission decides to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment Directive regarding peat cutting projects",
+      "summary": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment (EIA) Directive (Directive 2011/92/EU as amended by Directive 2014/52/EU).",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -27,7 +33,24 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Hearings - Public Hearing on Less waste, more value: Towards an EU Circular Economy Act - 23-06-2026 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260519CHE14204",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260526PHT43924/20260526PHT43924-ms.png\" width=\"180\" alt=\"Circular economy\" title=\"Circular economy hearing © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, the ENVI Committee is organising a public hearing on circular economy, with the title “Less waste, more value: Towards an EU Circular Economy Act”. The hearing will focus on th",
+          "published": "2026-06-04T09:14:26.000Z",
+          "score": 27
+        },
+        {
+          "title": "Commission decides to refer Spain and Poland to the Court of Justice of the European Union for not transposing agreed rules to strengthen the EU emissions trading system",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1181",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer Spain to the Court of Justice of the European Union for failing to transpose the revised EU Emissions Trading System (EU ETS) Directive (Directive (EU) 2023/959) into national law.",
+          "published": "2026-06-03T22:00:00.000Z",
+          "score": 24
+        }
+      ]
     },
     {
       "id": "energy",
@@ -50,27 +73,19 @@
           "score": 7
         },
         {
-          "title": "North Korea unveils nuclear weapons fuel production plant",
-          "link": "https://www.dw.com/en/north-korea-unveils-nuclear-weapons-fuel-production-plant/a-77414339?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Kim Jong Un called for North Korea&#039;s capacity to produce weapons-grade uranium to grow at an &quot;exponential rate.&quot;",
-          "published": "2026-06-04T03:44:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Trump says Iran has agreed to not have a nuclear weapon - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNclpNOGV6ZDdVV04yTGFpTW9NaG9peGpnRTNuYkM2dmg1dmctSEJnRl80a01OZjgydVdueURjUVpMLVJZbWlzVWxxZ3BkSi03b0RsaThqdnk0bzJsaEhkdzhZbE52OTFCd1N4bWdKc3hfMnNBVlYtTTgwV0FMYXgxd1BCdU1MRi1MX0huLW93M2RqNWZjczgyUlhERmZrcEdPS3RjZ2Z6UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNclpNOGV6ZDdVV04yTGFpTW9NaG9peGpnRTNuYkM2dmg1dmctSEJnRl80a01OZjgydVdueURjUVpMLVJZbWlzVWxxZ3BkSi03b0RsaThqdnk0bzJsaEhkdzhZbE52OTFCd1N4bWdKc3hfMnNBVlYtTTgwV0FMYXgxd1BCdU1MRi1MX0huLW93M2RqNWZjczgyUlhERmZrcEdPS3RjZ2Z6UQ?oc=5\" target=\"_blank\"&gt;Trump says Iran has agreed to not have a nuclear weapon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T12:39:51.000Z",
-          "score": 7
-        },
-        {
           "title": "‘Waste colonialism’: Fiji says no to Australian billionaire’s incineration plan",
           "link": "https://www.theguardian.com/world/2026/jun/04/fiji-offshore-rubbish-waste-government-rejects-australian-billionaire-pacific-ashtray-plan",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Government rejects offshore rubbish being shipped to Fiji and burned after opposition from traditional landowners and tourism operators&lt;/p&gt;&lt;p&gt;The Fijian government has rejected a &lt;a href=\"https://www.theguardian.com/world/2026/apr/23/waste-incinerator-fiji-plan-australians-ian-malouf-rob-cromb-kookai\"&gt;plan by an Australian billionaire to burn rubbish for energy&lt;/a&gt; in Fiji after backlash from traditional landowners and tourism operators.&lt;/p&gt;&lt;p&gt;The pla",
           "published": "2026-06-04T03:53:22.000Z",
+          "score": 4
+        },
+        {
+          "title": "Stuck on oil: Can Hawaii power itself?",
+          "link": "https://www.dw.com/en/stuck-on-oil-can-hawaii-power-itself/a-76967079?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Hawaii imports much of its fuel — and pays the price. From solar to geothermal, the state is searching for a way out of fossil fuel dependence.",
+          "published": "2026-06-04T10:54:00.000Z",
           "score": 4
         }
       ]
@@ -80,28 +95,20 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1245",
+          "title": "Commission decides to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment Directive regarding peat cutting projects",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1179",
           "source": "European Commission",
-          "description": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
-          "published": "2026-06-03T11:25:23.000Z",
-          "score": 18
+          "description": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment (EIA) Directive (Directive 2011/92/EU as amended by Directive 2014/52/EU).",
+          "published": "2026-06-03T22:00:00.000Z",
+          "score": 22
         },
         {
-          "title": "Commissioner Roswall's keynote address at the LIFE Awards",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1260",
+          "title": "Commission decides to refer France to the Court of Justice of the European Union over restrictions on veterinary companies and vets that violate EU law",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1173",
           "source": "European Commission",
-          "description": "European Commission Speech Brussels, 03 Jun 2026 Good evening, everyone.\r\nIt is a real pleasure to be here among so many people who dedicate their talent, expertise and energy to protecting our environment and ...",
-          "published": "2026-06-03T17:51:56.000Z",
-          "score": 16
-        },
-        {
-          "title": "Daily News 03 / 06 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1246",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 03 Jun 2026 Eurobarometer shows continued public support for biodiversity protection across Europe\r\nPublished at the start of the EU Green Week, the Special Eurobarometer su...",
-          "published": "2026-06-03T11:51:00.000Z",
-          "score": 16
+          "description": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer France to the Court of Justice of the European Union for failing to comply with the rules on the freedom of establishment and the free movement of services, as set out in the Treaty on the functioning of the European Union (TFEU) and the Services Directive (Directive 2006/123/EC), with regard to national rules governing veterinary companies and veterinarians.",
+          "published": "2026-06-03T22:00:00.000Z",
+          "score": 22
         },
         {
           "title": "Cropped 3 June 2026: Highway through the Amazon &#124; El Niño impact &#124; State of CO2 removal",
@@ -118,6 +125,14 @@
           "description": "&lt;p&gt;​The first heatwaves of the season reveal how ​ill-prepared governments across the continent are to protect people from increasingly dangerous temperatures&lt;/p&gt;&lt;p&gt;&lt;strong&gt;• &lt;/strong&gt;&lt;a href=\"https://www.theguardian.com/commentisfree/2018/mar/22/this-is-europe-sign-up-guardian-email-updates\"&gt;&lt;strong&gt;Don’t get This Is Europe delivered to your inbox? Sign up here&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Meteorological summer has begun",
           "published": "2026-06-03T14:25:26.000Z",
           "score": 8
+        },
+        {
+          "title": "Bathing warning lifted after pollution investigation",
+          "link": "https://www.bbc.com/news/articles/ckgprrmmzj9o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Officials say the water at Portstewart Strand does not pose a risk to the public.",
+          "published": "2026-06-04T13:23:23.000Z",
+          "score": 7
         }
       ]
     },
@@ -142,11 +157,11 @@
           "score": 2
         },
         {
-          "title": "India approves $1 billion fund to help airlines weather fuel cost surge - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTEc0OFpZUk5uQkc0RWdiSEFoamM0eXVMaU5tTlM5b3lfWFlwU0R6em9CMVBzZF9RR3Z1YmdQb3hWdmp0eG0telZETlpuS1lzbjk5NmZ6T3p6TFhpd25PU2ZpSEJkbkZVM2NwM2RFZDdhc1NFUEFmcWFwcjc1VlZzTzFFdmRYN3lYVDFNQTl5ZTZLSHpkUVFCN3pwaGVINlhtVWplU1lOc3U?oc=5",
+          "title": "Physical investment to surpass jewellery as top gold demand category, consultancy Metals Focus says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOVHdnUUlWdkgxcEpxS1ZRRUFQUnpKLVhEYVFjMUlzT2k4YjNWUzJxcTZGNzBVQ3VHN1ZuMmczOG9EOVBzdTdQUktWQWlfMjA3R1hwbEpXcG1tS0tta05HTm1ZU1dZZ2FMa3dHTzBCRWJQeW03UkpCVDJjVjB3YjFmVE96cDFKTVBlcjZsRXJPUmhZMTJCWXk1T1hnOU9UdDJMLTBhX3J2bXNnR2tpUFdrSWtmVkNCbnZjaG4yRFQwbw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOTEc0OFpZUk5uQkc0RWdiSEFoamM0eXVMaU5tTlM5b3lfWFlwU0R6em9CMVBzZF9RR3Z1YmdQb3hWdmp0eG0telZETlpuS1lzbjk5NmZ6T3p6TFhpd25PU2ZpSEJkbkZVM2NwM2RFZDdhc1NFUEFmcWFwcjc1VlZzTzFFdmRYN3lYVDFNQTl5ZTZLSHpkUVFCN3pwaGVINlhtVWplU1lOc3U?oc=5\" target=\"_blank\"&gt;India approves $1 billion fund to help airlines weather fuel cost surge&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-03T10:38:55.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOVHdnUUlWdkgxcEpxS1ZRRUFQUnpKLVhEYVFjMUlzT2k4YjNWUzJxcTZGNzBVQ3VHN1ZuMmczOG9EOVBzdTdQUktWQWlfMjA3R1hwbEpXcG1tS0tta05HTm1ZU1dZZ2FMa3dHTzBCRWJQeW03UkpCVDJjVjB3YjFmVE96cDFKTVBlcjZsRXJPUmhZMTJCWXk1T1hnOU9UdDJMLTBhX3J2bXNnR2tpUFdrSWtmVkNCbnZjaG4yRFQwbw?oc=5\" target=\"_blank\"&gt;Physical investment to surpass jewellery as top gold demand category, consultancy Metals Focus says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuter",
+          "published": "2026-06-04T07:10:16.000Z",
           "score": 2
         }
       ]
@@ -156,27 +171,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "DRAFT OPINION on the proposal for a regulation of the European Parliament and of the Council establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act) - PE788.881v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-788881_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT OPINION on the proposal for a regulation of the European Parliament and of the Council establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Nicolás González Casares&lt;br /&gt; ",
-          "published": "2026-06-03T13:11:58.000Z",
-          "score": 22
-        },
-        {
           "title": "Video of a committee meeting - Wednesday, 3 June 2026 - 13:30 - Committee on the Environment, Public Health and Food Safety - Committee on the Internal Market and Consumer Protection - Committee on Transport and Tourism",
           "link": "https://multimedia.europarl.europa.eu/en/committees_20260603-1530-COMMITTEE-TRAN-ENVI-IMCO_vd",
           "source": "EU Parliament ENVI Committee",
           "description": "Length of video : 60'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-06-03T14:54:32.000Z",
-          "score": 18
-        },
-        {
-          "title": "Highlights - ENVI-TRAN Joint consideration of draft report on Clean Corporate Vehicles - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260601CAN78571",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230215PHT75307/20230215PHT75307-ms.jpg\" width=\"180\" alt=\"Electric car charging in a parking slot\" title=\"CO2 Emissions for cars and vans © Michael Flippo / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 3 June 2026, ENVI and TRAN Members discussed the draft report on the Commission proposal on Clean Corporate Vehicles, which is part of the Automotive Package. The proposal aim",
-          "published": "2026-06-03T10:18:00.000Z",
           "score": 18
         },
         {
@@ -194,6 +193,22 @@
           "description": "Budapest will likely drop its veto on Kyiv joining the EU after reaching a deal on rights for Ukraine&#039;s ethnic Hungarian minority. But it remains opposed to Ukraine&#039;s accession being fast-tracked.",
           "published": "2026-06-04T06:23:00.000Z",
           "score": 8
+        },
+        {
+          "title": "All EU members greenlight first step in accession talks, Ukraine PM says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ05YVkg4eVFvSHlKUV9ERUNZMWJ2bHNsYVZjXzNhc01PamhuVG5NREZpaldXWWlSbmc0azVqbC1wYVBhc29pMFV0dGRzYjF1T3RSU3lFWmxCamI0RlRfYmxfU3pQMU5tYWZQMmRzV1BQUVg5Z1QzVUFzbEUzVngwZjVnMENzaDJEUmpuOElVOXl4dkFURnlFelVVQXhsM0tTTm8tZWlYTmVEUExFTDllQzlqR1VtdkV4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ05YVkg4eVFvSHlKUV9ERUNZMWJ2bHNsYVZjXzNhc01PamhuVG5NREZpaldXWWlSbmc0azVqbC1wYVBhc29pMFV0dGRzYjF1T3RSU3lFWmxCamI0RlRfYmxfU3pQMU5tYWZQMmRzV1BQUVg5Z1QzVUFzbEUzVngwZjVnMENzaDJEUmpuOElVOXl4dkFURnlFelVVQXhsM0tTTm8tZWlYTmVEUExFTDllQzlqR1VtdkV4?oc=5\" target=\"_blank\"&gt;All EU members greenlight first step in accession talks, Ukraine PM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T22:42:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Hungary and Ukraine agree on minority rights, paving way for EU talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQZ0dPdkFzZ1RLYnlVV0F2YWJsTE11M3BrWFdaWEk1b2s5b2xIN3ZVT2M2OUo5a1prTGdxclZlWEt1Z3dvMmRxOXBoajlVQW9td3JOMXNnQ0dXeTJCUWVoS1drX1o3VVREWkFDVUNRc0RPY2VOOW1UQTdVZ1VQLWhHVXpyR28zd3ZNMGpqT3RZSmlqaUtZWHIzR1RnS0dyejdMaEE2UDFoMlM2a256OWdyVXV3?oc=5\" target=\"_blank\"&gt;Hungary and Ukraine agree on minority rights, paving way for EU talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-03T20:01:30.000Z",
+          "score": 8
         }
       ]
     },
@@ -201,14 +216,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5\" target=\"_blank\"&gt;EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
-          "published": "2026-06-03T11:58:05.000Z",
-          "score": 13
-        },
         {
           "title": "EU plans energy standards for data centres amid concerns over soaring power use - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOWWFHOHNwNmxoNEdTZUd3YzdXVlc2RklQOXMwVXhGbGNZc1U5VHhROGxWSWtQYmNRNGxlcUJCNEVNSnJRSUtBYmt2NzFIRm91ck5uTWU0ZXhNNmVJTVZYX1kwUDE4M0I1S3JBaHhGUl9zdFZRaXNYcWdsbzZnVmN6T1R5cWVsSklnNXJRNXgyeUVhSTJsUU1hZ0ozdE9udDd1LVlRYUc1dzlSTUxrcEFkMldncGNUeHdhTHBzeGpQdmVOWmxLVHc?oc=5",
@@ -218,11 +225,11 @@
           "score": 13
         },
         {
-          "title": "Germany loses vote for UN Security Council seat",
-          "link": "https://www.dw.com/en/germany-loses-vote-for-un-security-council-seat/a-77409955?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU concerns grow over Albania&#039;s Trump-linked megaproject",
+          "link": "https://www.dw.com/en/eu-concerns-grow-over-albania-s-trump-linked-megaproject/a-77409540?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Fifteen of the 193 UN member states sit on the UN Security Council. Germany was in competition with Austria and Portugal for two seats in the &quot;Western Europe and Others&quot; group.",
-          "published": "2026-06-03T17:01:00.000Z",
+          "description": "A huge luxury resort on Albania&#039;s protected coast linked to Jared Kushner, son-in-law of US President Donald Trump, is sparking protests, environmental concerns and scrutiny as the country advances toward EU membership.",
+          "published": "2026-06-04T09:11:00.000Z",
           "score": 12
         },
         {
@@ -231,6 +238,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPR3pzeVppLXpJYjVaRXhQWWZ4YzBLYkZCWWZILUFVTk5IOGNIcWNURVFCaUdtQjBPOXA0Rmk0Wnlnekt4MDZ0VlBVN3k5bjRibkJIeEZ0d2pVYU5FVE03T3pSdUM4VnVEOGRndmVBajdDMWtjcU85QkxRS2tzR0NMd1ZnT3NydjRxb0FEMXdYZlhYUENldV9pZ1BLS28xYmhRY2ZzakJ4eXdLQQ?oc=5\" target=\"_blank\"&gt;How US, Europe and Britain target goods made with forced labour&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-03T16:17:22.000Z",
+          "score": 8
+        },
+        {
+          "title": "Serbia's security agency advises Vucic not to travel to EU summit in Montenegro - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOc2pYWE1TR3VrV3hVdWpKeFpBZWlGYzJQRlR5ZHFIeDJ3cjkwaDc1dW9rdjNrYm51aWZiS0IyeG9qWDNqOG1YQjJ2X2pOdm1SblE5QUktZk9QbUtNbUJYLU9rU3RpanRKNzlSZENxTDJkQXMwSkVGWjNxVkw1N1dtNWpGQTBPS2UtSUMyVHFrVk5JanBtYWpSNzRCNE1hSm5UYXZpOHlnenhmbXlDNVo4dg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOc2pYWE1TR3VrV3hVdWpKeFpBZWlGYzJQRlR5ZHFIeDJ3cjkwaDc1dW9rdjNrYm51aWZiS0IyeG9qWDNqOG1YQjJ2X2pOdm1SblE5QUktZk9QbUtNbUJYLU9rU3RpanRKNzlSZENxTDJkQXMwSkVGWjNxVkw1N1dtNWpGQTBPS2UtSUMyVHFrVk5JanBtYWpSNzRCNE1hSm5UYXZpOHlnenhmbXlDNVo4dg?oc=5\" target=\"_blank\"&gt;Serbia's security agency advises Vucic not to travel to EU summit in Montenegro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-04T06:58:09.000Z",
           "score": 8
         },
         {
@@ -245,9 +260,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 390,
-    "articlesLast24h": 169,
-    "afterDedup": 161,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 166,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
