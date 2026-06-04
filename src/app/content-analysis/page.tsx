@@ -53,6 +53,7 @@ import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
+import ProjectSummariesView from '@/components/content-analysis/ProjectSummariesView';
 import AiClassificationsList from '@/components/content-analysis/AiClassificationsList';
 import CodeEditorModal, {
   type CodeEditorPayload,
@@ -97,7 +98,7 @@ const TAB_LABELS: Array<{
   { id: 'horizontal',   label: 'Compare',      subtitle: 'Across policies',       kind: 'primary' },
   { id: 'vertical',     label: 'Trace',        subtitle: 'Implementation chain',  kind: 'beta'    },
   { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'beta'    },
-  { id: 'outcomes',     label: 'Summarise',    subtitle: 'Outcomes & narrative',  kind: 'beta'    },
+  { id: 'outcomes',     label: 'Summarise',    subtitle: 'Document summaries',     kind: 'primary' },
 ];
 
 const DEFAULT_CODE_COLORS = [
@@ -145,6 +146,7 @@ function ContentAnalysisPageInner() {
     resetAll,
     restoreCodesAndSegments,
     setDocumentSummary,
+    loadSummaryBlocks,
   } = useContentAnalysis();
 
   // Top-level navigation across the module:
@@ -365,13 +367,30 @@ function ContentAnalysisPageInner() {
     [sourceFilter, selectedDocument],
   );
 
-  // Whole-document summary for the current (project, document). Keyed exactly
-  // as the store keys it so re-saving updates the same row.
-  const currentSummary = useMemo(() => {
-    if (!selectedDocument) return null;
-    const id = `summary-${activeProjectId ?? 'master'}-${selectedDocument.id}`;
-    return snapshot.summaries.find(s => s.id === id) ?? null;
-  }, [snapshot.summaries, activeProjectId, selectedDocument]);
+  // Whole-document summary for the current (project, document). The store
+  // keys a summary by (project, document); the active project here is the
+  // master library (null) unless a real project is open.
+  const summaryProjectId = activeProjectId === 'project-master' ? null : activeProjectId;
+  const allDocSummaries = useMemo(
+    () => (selectedDocument ? snapshot.summaries.filter(s => s.documentId === selectedDocument.id) : []),
+    [snapshot.summaries, selectedDocument],
+  );
+  const currentSummary = useMemo(
+    () => allDocSummaries.find(s => s.projectId === summaryProjectId) ?? null,
+    [allDocSummaries, summaryProjectId],
+  );
+  /** Summaries authored under other projects — shown read-only for context. */
+  const otherDocSummaries = useMemo(
+    () => allDocSummaries.filter(s => s.projectId !== summaryProjectId),
+    [allDocSummaries, summaryProjectId],
+  );
+  /** Map a summary's projectId (null = master library) to a display name. */
+  const summaryProjectNames = useMemo(() => {
+    const m = new Map<string | null, string>();
+    m.set(null, 'Master library');
+    for (const p of snapshot.projects) m.set(p.id, p.name);
+    return m;
+  }, [snapshot.projects]);
 
   // Auto-dismiss is now handled centrally by the typed ToastHost
   // (default 5s for info/success, 9s for danger).
@@ -1895,28 +1914,18 @@ function ContentAnalysisPageInner() {
               )}
 
               {selectedDocument && (
-                <Panel
-                  title="Document summary"
-                  accent={currentSummary ? 'saved' : 'optional'}
-                  anchorClassName="ca-tour-summary"
-                  bodyClassName="p-0"
-                  collapsible
-                  defaultCollapsed={!currentSummary}
-                >
-                  <DocumentSummaryPanel
-                    value={currentSummary?.text ?? ''}
-                    updatedAt={currentSummary?.updatedAt}
-                    readOnly={lockMode === 'watcher'}
-                    onSave={(text) => {
-                      if (!guardEdit()) return;
-                      setDocumentSummary(
-                        selectedDocument.id,
-                        activeProjectId === 'project-master' ? null : activeProjectId,
-                        text,
-                      );
-                    }}
-                  />
-                </Panel>
+                <DocumentSummaryPanel
+                  anchorClassName="ca-tour-summary border border-[#E6E7E8] rounded-sm overflow-hidden"
+                  summary={currentSummary}
+                  otherSummaries={otherDocSummaries}
+                  projectNameById={summaryProjectNames}
+                  readOnly={lockMode === 'watcher'}
+                  onSave={(text, blocks) => {
+                    if (!guardEdit()) return;
+                    setDocumentSummary(selectedDocument.id, summaryProjectId, text, blocks);
+                  }}
+                  onLoadBlocks={loadSummaryBlocks}
+                />
               )}
 
               {selectedDocument && (
@@ -2063,6 +2072,34 @@ function ContentAnalysisPageInner() {
           <p className="mt-1 text-[12.5px] text-[#3D5265]/75 max-w-3xl leading-relaxed">
             Cross-document view across the current project scope. Each cell counts tagged segments under a top-level concept.
           </p>
+          {/* Source-tier filter — scope the matrix columns to policy /
+              scientific / grey (or all). Shares the same `sourceFilter` state
+              as the coding view so the two surfaces stay in step. */}
+          <div className="mt-3 flex items-center gap-1.5 flex-wrap">
+            <span className="text-[10px] uppercase tracking-[0.14em] text-[#8A95A3] font-mono mr-1">Source</span>
+            {SOURCE_FILTER_OPTIONS.map(opt => {
+              const count = docsInProjectScope.filter(d =>
+                opt.id === 'all' ? true : sourceTierOf(d) === opt.id,
+              ).length;
+              const active = sourceFilter === opt.id;
+              return (
+                <button
+                  key={opt.id}
+                  type="button"
+                  onClick={() => setSourceFilter(opt.id)}
+                  title={opt.hint}
+                  className={`px-2 py-0.5 rounded-sm text-[11px] font-medium transition ${
+                    active ? 'bg-[#3D5265] text-white' : 'text-[#3D5265] border border-[#E6E7E8] hover:bg-[#F3F4F6]'
+                  }`}
+                >
+                  {opt.label}
+                  <span className={`ml-1 font-mono tabular-nums ${active ? 'text-white/80' : 'text-[#8A95A3]'}`}>
+                    {count}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
           <div className="mt-4 border border-[#E6E7E8] rounded-sm bg-white p-3 sm:p-4">
             <HorizontalCoherenceView
               documents={docsInScope}
@@ -2085,13 +2122,24 @@ function ContentAnalysisPageInner() {
       )}
       {activeTab === 'outcomes' && (
         <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
-          <AnalysisPlaceholder mode="outcomes" />
+          <ProjectSummariesView
+            documents={docsInProjectScope}
+            summaries={snapshot.summaries}
+            activeProjectId={summaryProjectId}
+            projectNameById={summaryProjectNames}
+            onLoadBlocks={loadSummaryBlocks}
+            onOpenDocument={(id) => {
+              setActiveTab('workbench');
+              setSelectedDocumentId(id);
+              setHighlightedSegmentId(null);
+            }}
+          />
         </section>
       )}
 
       <footer className="mt-6 border-t border-[#E6E7E8] bg-[#FBFBFA]">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-5 text-[11.5px] text-[#8A95A3] leading-relaxed">
-          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). Add vertical, longitudinal and outcomes views once the required document kinds and indicator joins are in place.
+          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). Add the Trace and Timeline views once the required document-link kinds and indicator joins are in place (the Summarise read-across is live).
         </div>
       </footer>
         </>
