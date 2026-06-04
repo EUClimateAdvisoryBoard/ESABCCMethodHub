@@ -62,7 +62,7 @@ import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
-import WorkspaceAnalysis from '@/components/content-analysis/WorkspaceAnalysis';
+import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
 import CodeEditorModal, {
@@ -198,8 +198,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
   const [view, setView] = useState<'code' | 'analyse'>('code');
-  /** Bumped by the "Guided tour" button to replay the walkthrough. */
+  /** Bumped by the "Guided tour" button to replay the Code-view walkthrough. */
   const [tourReplay, setTourReplay] = useState(0);
+  /** Bumped to replay the Analyse-view walkthrough. */
+  const [analysisTourReplay, setAnalysisTourReplay] = useState(0);
+  /** Active Analyse-view lens — lifted so the analysis tour can drive it. */
+  const [analysisTab, setAnalysisTab] = useState<AnalysisTab>('outline');
 
   // The lens set — whose tags are visible. Always seeded with the master
   // library + this project so an analyst never starts from a blank canvas.
@@ -732,6 +736,95 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           },
         ]}
       />
+      {/* Analyse-view walkthrough — the "how to use the analysis" intro. Auto-
+          opens the first time an analyst switches to the Analyse view, and
+          drives the analysis sub-tabs as it goes so each lens is explained on
+          its own surface. Replayable from the "Guided tour" button while the
+          Analyse view is showing (bumps `analysisTourReplay`). */}
+      <GuidedSession
+        moduleKey="content-analysis-workspace-analysis"
+        active={sourceType != null && view === 'analyse'}
+        replayToken={analysisTourReplay}
+        steps={[
+          {
+            title: 'From coding to analysis',
+            anchor: '.ca-ws-tour-views',
+            body: (
+              <>
+                <strong>Code</strong> is where you tag; <strong>Analyse</strong> turns those tags into a
+                literature-review write-up — without changing anything. Everything here reflects the lenses
+                you&apos;ve turned on above.
+              </>
+            ),
+          },
+          {
+            title: 'Readiness at a glance',
+            anchor: '.ca-ws-an-scorecard',
+            body: (
+              <>
+                A quick &ldquo;can we start drafting?&rdquo; check: how many <strong>sources</strong> you&apos;ve coded,
+                how many <strong>quotes</strong> you have, which themes carry evidence, and which are
+                {' '}<strong>triangulated</strong> (≥3 sources). <strong>Evidence gaps</strong> flags themes with nothing yet.
+              </>
+            ),
+          },
+          {
+            title: 'Four analysis lenses',
+            anchor: '.ca-ws-an-tabs',
+            body: (
+              <>
+                The same coded segments, four ways. Switch between them up here — we&apos;ll walk through each
+                next.
+              </>
+            ),
+          },
+          {
+            title: 'Report outline',
+            anchor: '.ca-ws-an-panel',
+            onEnter: () => setAnalysisTab('outline'),
+            body: (
+              <>
+                The bridge to your draft: map report <strong>sections</strong> to tags and see which documents
+                belong where — and where the gaps are.
+              </>
+            ),
+          },
+          {
+            title: 'Synthesis matrix',
+            anchor: '.ca-ws-an-panel',
+            onEnter: () => setAnalysisTab('matrix'),
+            body: (
+              <>
+                The classic themes × sources grid. Each cell shows the tagged segments, so you can see at a
+                glance which themes are well-evidenced and where a theme is <strong>triangulated</strong> across
+                enough sources.
+              </>
+            ),
+          },
+          {
+            title: 'Evidence base',
+            anchor: '.ca-ws-an-panel',
+            onEnter: () => setAnalysisTab('evidence'),
+            body: (
+              <>
+                A citation-ready <strong>quote bank</strong> grouped by theme — the passages you tagged, with
+                their sources, ready to <strong>export to Word</strong> for the write-up.
+              </>
+            ),
+          },
+          {
+            title: 'Tag distribution',
+            anchor: '.ca-ws-an-panel',
+            onEnter: () => setAnalysisTab('distribution'),
+            body: (
+              <>
+                See how coding effort is spread across <strong>tags</strong> and <strong>documents</strong> — handy
+                for spotting over- or under-coded themes before you draft.
+              </>
+            ),
+          },
+        ]}
+      />
       {/* Header + source switch + view toggle */}
       <header className="flex items-start justify-between gap-3 flex-wrap">
         <div>
@@ -755,11 +848,15 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             ))}
             <button
               type="button"
-              onClick={() => setTourReplay(t => t + 1)}
+              onClick={() =>
+                view === 'analyse'
+                  ? setAnalysisTourReplay(t => t + 1)
+                  : setTourReplay(t => t + 1)
+              }
               className="ml-1 text-[11px] px-2 py-1 rounded border border-grey-200 text-secondary hover:border-secondary inline-flex items-center gap-1"
-              title="Replay the guided walkthrough"
+              title={view === 'analyse' ? 'Replay the analysis walkthrough' : 'Replay the guided walkthrough'}
             >
-              <span aria-hidden>🧭</span> Guided tour
+              <span aria-hidden>🧭</span> {view === 'analyse' ? 'How to analyse' : 'Guided tour'}
             </button>
           </div>
         </div>
@@ -836,6 +933,8 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           codes={visibleCodes}
           segments={analysisSegments}
           sourceLabel={activeSourceMeta.title}
+          tab={analysisTab}
+          onTabChange={setAnalysisTab}
         />
       ) : (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px]">

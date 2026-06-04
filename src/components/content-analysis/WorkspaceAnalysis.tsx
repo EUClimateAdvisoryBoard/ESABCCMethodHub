@@ -23,9 +23,14 @@ interface Props {
   segments: CodedSegment[];
   /** Human label for the active source type ("Scientific literature", …). */
   sourceLabel: string;
+  /** Optional controlled active tab — lets a parent (e.g. the guided tour)
+   *  drive which analysis lens is showing. Omit for self-managed state. */
+  tab?: AnalysisTab;
+  /** Fired when the user (or the tour) switches lens. */
+  onTabChange?: (tab: AnalysisTab) => void;
 }
 
-type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution';
+export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution';
 
 const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'outline', label: 'Report outline', blurb: 'Map sections to tags — see which articles belong where, and where the gaps are.' },
@@ -54,8 +59,17 @@ export default function WorkspaceAnalysis({
   codes,
   segments,
   sourceLabel,
+  tab: controlledTab,
+  onTabChange,
 }: Props) {
-  const [tab, setTab] = useState<AnalysisTab>('outline');
+  const [internalTab, setInternalTab] = useState<AnalysisTab>('outline');
+  // Controlled when a parent supplies `tab`; otherwise self-managed. Either
+  // way, switching notifies `onTabChange` so the guided tour stays in sync.
+  const tab = controlledTab ?? internalTab;
+  const setTab = (next: AnalysisTab) => {
+    if (controlledTab === undefined) setInternalTab(next);
+    onTabChange?.(next);
+  };
 
   // ── Readiness scorecard — a "can we start drafting?" overview ───────────
   const score = useMemo(() => {
@@ -92,7 +106,7 @@ export default function WorkspaceAnalysis({
   return (
     <div className="space-y-4">
       {/* Readiness scorecard */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+      <div className="ca-ws-an-scorecard grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
         <ScoreCard
           label="Sources coded"
           value={`${score.codedSources}`}
@@ -126,7 +140,7 @@ export default function WorkspaceAnalysis({
       </div>
 
       {/* Sub-nav */}
-      <div className="border-b border-[#E6E7E8] flex items-center gap-1 flex-wrap">
+      <div className="ca-ws-an-tabs border-b border-[#E6E7E8] flex items-center gap-1 flex-wrap">
         {TABS.map(t => (
           <button
             key={t.id}
@@ -145,26 +159,28 @@ export default function WorkspaceAnalysis({
       <p className="text-[11.5px] text-[#8A95A3] -mt-2">{activeTab.blurb}</p>
 
       {/* Active lens */}
-      {tab === 'outline' && (
-        <ReportOutlineBuilder
-          projectId={projectId}
-          projectName={projectName}
-          documents={documents}
-          codes={codes}
-          segments={segments}
-        />
-      )}
-      {tab === 'matrix' && (
-        <SynthesisMatrix documents={documents} codes={codes} segments={segments} />
-      )}
-      {tab === 'evidence' && (
-        <EvidenceBasePanel documents={documents} codes={codes} segments={segments} />
-      )}
-      {tab === 'distribution' && (
-        <div className="border border-[#E6E7E8] rounded-md">
-          <TagDistributionPanel documents={documents} codes={codes} segments={segments} />
-        </div>
-      )}
+      <div className="ca-ws-an-panel">
+        {tab === 'outline' && (
+          <ReportOutlineBuilder
+            projectId={projectId}
+            projectName={projectName}
+            documents={documents}
+            codes={codes}
+            segments={segments}
+          />
+        )}
+        {tab === 'matrix' && (
+          <SynthesisMatrix documents={documents} codes={codes} segments={segments} />
+        )}
+        {tab === 'evidence' && (
+          <EvidenceBasePanel documents={documents} codes={codes} segments={segments} />
+        )}
+        {tab === 'distribution' && (
+          <div className="border border-[#E6E7E8] rounded-md">
+            <TagDistributionPanel documents={documents} codes={codes} segments={segments} />
+          </div>
+        )}
+      </div>
 
       <p className="text-[10.5px] text-[#8A95A3]">
         Analysing {segments.length} coded segment{segments.length === 1 ? '' : 's'} across {documents.length}{' '}
