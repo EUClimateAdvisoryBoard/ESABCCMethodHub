@@ -223,19 +223,17 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">Past recommendations tracker</h2>
           <p className="text-sm text-tertiary mt-1 max-w-2xl">
-            Recommendations from every ESABCC{' '}
+            Every recommendation the Board has made in its{' '}
             <a
               href="https://climate-advisory-board.europa.eu/reports-and-publications"
               target="_blank"
               rel="noreferrer"
               className="underline hover:text-primary"
             >
-              report and advice
-            </a>{' '}
-            published to date, each labelled with the source publication and
-            grouped below by report. Edit text, change status, set the source
-            report, log dated uptake events, or add and remove recommendations
-            as new advice is published.
+              reports and advice
+            </a>, grouped by report below. Click a recommendation to open it, then
+            set how far it has been taken up and add dated <em>uptake events</em>{' '}
+            — a note each time it is acted on in EU law or policy.
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
@@ -412,12 +410,15 @@ export default function RecommendationsModule({ projectId, initial }: Props) {
                 />
 
                 <div>
-                  <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-2">
+                  <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold mb-0.5">
                     Uptake events
+                  </p>
+                  <p className="text-[11px] text-tertiary-light mb-2">
+                    A dated note each time this recommendation is acted on.
                   </p>
                   {r.uptakeEvents.length === 0 && (
                     <p className="text-xs text-tertiary-light italic">
-                      No events recorded.
+                      No events recorded yet.
                     </p>
                   )}
                   <ul className="space-y-1.5">
