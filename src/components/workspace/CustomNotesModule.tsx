@@ -70,9 +70,10 @@ export default function CustomNotesModule({
         <div>
           <h2 className="text-lg font-bold text-tertiary-dark">{moduleName}</h2>
           <p className="text-xs text-tertiary mt-1 max-w-2xl">
-            Free-form notes for this module. Supports basic Markdown
-            (<code>#</code> headings, <code>**bold**</code>, <code>-</code> lists,
-            <code>[links](url)</code>). Saved automatically.
+            A free-form space to write. Type on the left and see it formatted on
+            the right. For a heading start a line with <code>#</code>, wrap text
+            in <code>**stars**</code> for <strong>bold</strong>, and begin a line
+            with <code>-</code> for a bullet list. Everything saves on its own.
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -93,18 +94,28 @@ export default function CustomNotesModule({
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
-        <textarea
-          value={content}
-          onChange={e => setContent(e.target.value)}
-          placeholder="Start typing your notes…"
-          spellCheck
-          className="w-full min-h-[420px] px-3 py-2 border border-grey-200 rounded text-sm font-mono leading-relaxed bg-white focus:outline-none focus:border-primary"
-        />
-        <div
-          className="min-h-[420px] px-4 py-3 bg-white border border-grey-200 rounded text-sm leading-relaxed prose-pw"
-          aria-label="Preview"
-          dangerouslySetInnerHTML={{ __html: preview }}
-        />
+        <div className="flex flex-col">
+          <span className="text-[10px] uppercase tracking-wide font-semibold text-tertiary-light mb-1">
+            Write
+          </span>
+          <textarea
+            value={content}
+            onChange={e => setContent(e.target.value)}
+            placeholder="Start typing your notes…"
+            spellCheck
+            className="w-full min-h-[420px] px-3 py-2 border border-grey-200 rounded text-sm font-mono leading-relaxed bg-white focus:outline-none focus:border-primary"
+          />
+        </div>
+        <div className="flex flex-col">
+          <span className="text-[10px] uppercase tracking-wide font-semibold text-tertiary-light mb-1">
+            Preview
+          </span>
+          <div
+            className="min-h-[420px] px-4 py-3 bg-white border border-grey-200 rounded text-sm leading-relaxed prose-pw"
+            aria-label="Preview"
+            dangerouslySetInnerHTML={{ __html: preview }}
+          />
+        </div>
       </div>
 
       <div className="bg-white rounded-xl border border-grey-200 p-4">

@@ -108,12 +108,12 @@ export default function MemberStatesModule({
               </>
             ) : (
               <>
-                EEA-style profile for each EU member state — emissions
-                trajectories, renewables progress, energy efficiency, air, water,
-                biodiversity, circular economy, adaptation and NECP delivery. Use
-                the map to pivot between indicators; the heatmap below sorts
-                countries by their status on any indicator; clicking a country
-                opens the full profile.
+                A profile for each of the 27 EU countries — emissions, renewables,
+                energy efficiency, air, water, biodiversity, the circular economy,
+                adaptation and national energy &amp; climate plans. Use the{' '}
+                <strong>map</strong> to switch between topics, read the{' '}
+                <strong>heatmap</strong> below to rank countries, and click any
+                country to open its full profile.
               </>
             )}
           </p>
@@ -174,7 +174,8 @@ export default function MemberStatesModule({
       </section>
 
       <section>
-        <h3 className="text-sm font-bold text-tertiary-dark mb-2">Directory</h3>
+        <h3 className="text-sm font-bold text-tertiary-dark mb-0.5">Browse countries</h3>
+        <p className="text-xs text-tertiary mb-2">Click a country to open its full profile.</p>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {profiles
             .slice()
