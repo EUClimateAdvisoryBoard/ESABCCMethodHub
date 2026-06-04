@@ -16,12 +16,19 @@ is promoted out of beta. Data lives in `src/data/beta-indicators.ts`.
 
 - **Indicator Database sidebar** — two new groups: *New beta indicators* and
   *Beta adaptation indicators*. Beta entries carry a `β beta` badge.
-- **Flow charts (report)** — the previously empty mitigation levers/outcomes
-  now show a white indicator chip (β-marked when it links to a beta series).
-- **Flow charts (beta)** — a copy of the six report frameworks with an added
-  adaptation outcome, adaptation lever and adaptation enabling condition per
-  sector (all marked `⛨ adapt`, teal cards), wired to the beta adaptation
-  indicators and to fitting existing ECNO series.
+- **Flow charts** view — a *registry of flow-chart versions* (version selector
+  at the top of the view; the beta board is no longer a separate top-level tab).
+  Two versions ship built in:
+  - **ESABCC report (default)** — the published frameworks; the previously empty
+    mitigation levers/outcomes now show a white indicator chip (β-marked when it
+    links to a beta series).
+  - **Beta — adaptation & resilience** — a copy of the six report frameworks
+    with an added adaptation outcome, adaptation lever and adaptation enabling
+    condition per sector (all marked `⛨ adapt`, teal cards), wired to the beta
+    adaptation indicators and to fitting existing ECNO series.
+  Users can create further versions by copying any existing version as a
+  foundation, rename any version, and delete custom ones. Versions persist per
+  project in localStorage (see `src/lib/project-workspace/flowchart-versions.ts`).
 
 ## New mitigation indicators (group `beta`)
 
