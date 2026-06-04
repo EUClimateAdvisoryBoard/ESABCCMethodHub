@@ -5,9 +5,10 @@
  * edit, start a new version from an existing one (its "foundation" is copied),
  * rename any version, and delete custom ones.
  *
- * Two versions ship built in — the published ESABCC report frameworks and the
- * beta board (report + adaptation & resilience layer). Everything else is a
- * user-created copy, stored per project in localStorage by
+ * Three versions ship built in — the report-faithful ESABCC frameworks (the
+ * default), the "enhanced" board (every lever/outcome given an indicator), and
+ * the beta board (enhanced + adaptation & resilience layer). Everything else is
+ * a user-created copy, stored per project in localStorage by
  * `@/lib/project-workspace/flowchart-versions`.
  */
 'use client';
@@ -32,7 +33,7 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
   // SSR-safe initial: the built-ins only. The full (possibly renamed + custom)
   // list is loaded from localStorage on mount.
   const [versions, setVersions] = useState<FlowChartVersion[]>(() => loadVersions(''));
-  const [activeId, setActiveId] = useState<string>('report');
+  const [activeId, setActiveId] = useState<string>('report-faithful');
   const [creating, setCreating] = useState(false);
   const [renaming, setRenaming] = useState(false);
 
@@ -63,7 +64,7 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
     if (active.builtIn) return;
     if (!confirm(`Delete the flow-chart version “${active.name}”? This cannot be undone.`)) return;
     deleteVersion(projectId, active);
-    reload('report');
+    reload('report-faithful');
   };
 
   return (

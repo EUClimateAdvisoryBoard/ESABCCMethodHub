@@ -18,6 +18,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import {
   defaultFrameworkBoard,
+  defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
@@ -54,13 +55,16 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   const isBeta = version.variant === 'beta';
   const boardVersion = boardSchemaVersion(version);
   const storageKey = boardStorageKey(version, projectId);
-  // Initial state is the variant's published default so server and first client
+  // Initial state is the version's published default so server and first client
   // render match (the saved board / custom-version content is loaded on mount,
   // mirroring how built-in boards already flash from default to saved edits).
-  const pureDefault = useCallback(
-    () => (isBeta ? defaultFrameworkBoardBeta() : defaultFrameworkBoard()),
-    [isBeta],
-  );
+  // The two 'report'-variant built-ins differ: 'report-faithful' is the board
+  // 1:1 with the report figures, 'report' is the enhanced board.
+  const pureDefault = useCallback(() => {
+    if (isBeta) return defaultFrameworkBoardBeta();
+    if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
+    return defaultFrameworkBoard();
+  }, [isBeta, version.id]);
   const [mounted, setMounted] = useState(false);
   const [board, setBoard] = useState<Board>(() => pureDefault());
   const [editing, setEditing] = useState(false);
@@ -159,7 +163,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
     const msg = version.builtIn
       ? isBeta
         ? 'Reset the beta flow charts (report frameworks + adaptation layer)? Your edits will be lost.'
-        : 'Reset all sector frameworks to the published report version? Your edits will be lost.'
+        : `Reset “${version.name}” to its published version? Your edits will be lost.`
       : `Reset “${version.name}” to the copy it started from${
           version.basedOnName ? ` (${version.basedOnName})` : ''
         }? Your edits to this version will be lost.`;
@@ -194,6 +198,23 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
           indicators in this database — click any chip to open the data behind it. Dashed{' '}
           <span className="text-tertiary-light">no&nbsp;data</span> boxes are concepts the report names but
           for which no time series is curated yet; link one to an indicator in edit mode.
+          {version.id === 'report' ? (
+            <>
+              {' '}
+              <span className="font-semibold">Enhanced:</span> this version goes beyond the report by also
+              giving every mitigation lever and outcome an indicator — the levers the report drew without one
+              are filled with a provisional <span className="font-semibold">beta</span> (β) or fitting
+              existing series. The default <span className="font-semibold">ESABCC report</span> version leaves
+              those levers blank, exactly as drawn.
+            </>
+          ) : (
+            <>
+              {' '}
+              This is the default view — 1:1 with the report figures, so some mitigation levers carry no
+              indicator. The <span className="font-semibold">Enhanced flow charts</span> version fills those
+              gaps with provisional series.
+            </>
+          )}
         </p>
       )}
 
