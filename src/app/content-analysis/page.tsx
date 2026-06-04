@@ -195,6 +195,8 @@ function ContentAnalysisPageInner() {
   const [sourceFilter, setSourceFilter] = useState<'all' | SourceTier>('policy');
   /** Bumped by the "Guided tour" button to replay the workbench walkthrough. */
   const [tourReplay, setTourReplay] = useState(0);
+  /** Bumped by the "How to analyse" button to replay the analysis walkthrough. */
+  const [analysisTourReplay, setAnalysisTourReplay] = useState(0);
   /** When set, the viewer shows this archived version instead of the live doc. */
   const [viewingVersionId, setViewingVersionId] = useState<string | null>(null);
   const [pdfOnly, setPdfOnly] = useState(false);
@@ -1187,6 +1189,74 @@ function ContentAnalysisPageInner() {
           },
         ]}
       />
+      {/* Analysis-section walkthrough. Auto-opens the first time an analyst
+          leaves the Code tab for one of the analysis lenses, and drives the
+          tabs as it goes so each lens is explained on its own surface.
+          Replayable from the "How to analyse" button. */}
+      <GuidedSession
+        moduleKey="content-analysis-analysis"
+        active={viewMode === 'workbench' && activeTab !== 'workbench'}
+        replayToken={analysisTourReplay}
+        steps={[
+          {
+            title: 'The analysis lenses',
+            anchor: '.ca-tour-lenses',
+            body: (
+              <>
+                <strong>Code</strong> is where you tag. The other four tabs <em>analyse</em> what you and the
+                team have tagged — without changing anything. Let&apos;s walk through each.
+              </>
+            ),
+          },
+          {
+            title: 'Compare — cross-document matrix',
+            anchor: '.ca-tour-compare',
+            onEnter: () => setActiveTab('horizontal'),
+            body: (
+              <>
+                Rows are your top-level codes, columns are documents, and each cell counts the tagged
+                segments — a heat-map of which themes show up where. Use the <strong>Source</strong> filter
+                above the matrix to scope it to policy, scientific or grey sources.
+              </>
+            ),
+          },
+          {
+            title: 'Timeline — versions over time',
+            anchor: '.ca-tour-timeline',
+            onEnter: () => setActiveTab('longitudinal'),
+            body: (
+              <>
+                For each act with a version history, every frozen snapshot plus the current body lines up
+                left-to-right, with the <strong>size change</strong> between versions. Click a point to
+                preview that version in the reader.
+              </>
+            ),
+          },
+          {
+            title: 'Summarise — corpus read-across',
+            anchor: '.ca-tour-summarise',
+            onEnter: () => setActiveTab('outcomes'),
+            body: (
+              <>
+                Every whole-document <strong>summary</strong> in the project, in one place — this project&apos;s
+                take expanded, other projects&apos; read-only. Open a card to jump back to its document.
+              </>
+            ),
+          },
+          {
+            title: 'Trace — coming next',
+            anchor: '.ca-tour-trace',
+            onEnter: () => setActiveTab('vertical'),
+            body: (
+              <>
+                <strong>Trace</strong> will follow a target through to its budgets and implementation
+                documents. It needs cross-document links that aren&apos;t in place yet — the panel lists what
+                it&apos;s waiting on.
+              </>
+            ),
+          },
+        ]}
+      />
       <PageHero
         title="Content Analysis"
         subtitle={
@@ -1331,6 +1401,16 @@ function ContentAnalysisPageInner() {
           >
             <span aria-hidden>🧭</span> Guided tour
           </button>
+          {activeTab !== 'workbench' && (
+            <button
+              type="button"
+              onClick={() => setAnalysisTourReplay(t => t + 1)}
+              className="text-[11.5px] font-medium text-[#00928F] hover:text-[#006F6C] inline-flex items-center gap-1"
+              title="Walk through the analysis lenses"
+            >
+              <span aria-hidden>📊</span> How to analyse
+            </button>
+          )}
           <div className="ca-tour-lenses ml-auto flex items-stretch gap-1 flex-wrap">
             {TAB_LABELS.map(t => (
               <button
@@ -2068,7 +2148,7 @@ function ContentAnalysisPageInner() {
       )}
 
       {activeTab === 'horizontal' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-compare max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <h2 className="text-[18px] font-bold text-[#3D5265]">Horizontal policy coherence</h2>
           <p className="mt-1 text-[12.5px] text-[#3D5265]/75 max-w-3xl leading-relaxed">
             Cross-document view across the current project scope. Each cell counts tagged segments under a top-level concept.
@@ -2112,12 +2192,12 @@ function ContentAnalysisPageInner() {
       )}
 
       {activeTab === 'vertical' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-trace max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <AnalysisPlaceholder mode="vertical" />
         </section>
       )}
       {activeTab === 'longitudinal' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-timeline max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <LongitudinalTimelineView
             documents={docsInProjectScope}
             onOpenVersion={(documentId, versionId) => {
@@ -2133,7 +2213,7 @@ function ContentAnalysisPageInner() {
         </section>
       )}
       {activeTab === 'outcomes' && (
-        <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
+        <section className="ca-tour-summarise max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <ProjectSummariesView
             documents={docsInProjectScope}
             summaries={snapshot.summaries}
