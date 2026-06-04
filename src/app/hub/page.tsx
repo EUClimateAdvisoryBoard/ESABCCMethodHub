@@ -78,7 +78,7 @@ const apps: App[] = [
   {
     id: 'documentation',
     title: 'Documentation',
-    description: 'Five-module deep-dives, infrastructure topology, deployment topology, vision and tech-stack reference. Built from MkDocs Material; served as a subpage of the MethodHub.',
+    description: 'Eight-module deep-dives, infrastructure topology, deployment topology, vision and tech-stack reference. Built from MkDocs Material; served as a subpage of the MethodHub.',
     href: '/docs/',
     external: true,
     cta: 'Open Docs',

@@ -2,7 +2,7 @@
 /**
  * /profile/workbench — cross-module landing dashboard (#1).
  *
- * Aggregates everything an analyst is working on across all five modules
+ * Aggregates everything an analyst is working on across the core modules
  * into a single Monday-morning view.
  */
 import { useEffect, useState } from 'react';

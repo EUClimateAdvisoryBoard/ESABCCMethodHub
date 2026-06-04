@@ -6,10 +6,10 @@
  * glance, three questions:
  *
  *   1. What is this?                       ← internal Secretariat tool
- *   2. What is shipped today?              ← the five production modules
+ *   2. What is shipped today?              ← the eight production modules
  *   3. Who runs / maintains it?            ← CCE5 (code) · EEA IT (host)
  *
- * It also renders a ribbon of nine beta modules routed under `/beta/<slug>`.
+ * It also renders a ribbon of eleven beta modules routed under `/beta/<slug>`.
  *
  * All numbers on the page are real: they are read at render time from the
  * bundled data stores (`src/data/*`), the custom-references store, and the
@@ -355,17 +355,17 @@ export default async function HomePage() {
   ];
 
   const experimentalModules = [
-    { code: 'M · 07', title: 'Energy System Modelling', href: '/beta/energy-system',     tags: ['PyPSA', 'NUTS-2'] },
-    { code: 'M · 08', title: 'Climate Adaptation',      href: '/beta/climate-adaptation', tags: ['CLIMADA', 'CMIP6'] },
-    { code: 'M · 09', title: 'Maritime & Aviation',     href: '/beta/maritime-aviation',  tags: ['SEAMAPS', 'OAG'] },
-    { code: 'M · 10', title: 'Climate Finance',         href: '/beta/climate-finance',    tags: ['NGFS v5', 'EIB'] },
-    { code: 'M · 11', title: 'Media Monitoring',        href: '/beta/media-monitoring',   tags: ['GDELT', 'MEDIAC'] },
-    { code: 'M · 13', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
-    { code: 'M · 14', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
-    { code: 'M · 15', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
-    { code: 'M · 16', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
-    { code: 'M · 17', title: 'EU Climate Councils',     href: '/beta/eu-climate-councils', tags: ['67 bodies', 'Leaflet map'] },
-    { code: 'M · 18', title: 'Project Management',      href: '/beta/project-management',  tags: ['5 Phases', 'Gantt', 'Manual v2.1'] },
+    { code: 'M · 09', title: 'Energy System Modelling', href: '/beta/energy-system',     tags: ['PyPSA', 'NUTS-2'] },
+    { code: 'M · 10', title: 'Climate Adaptation',      href: '/beta/climate-adaptation', tags: ['CLIMADA', 'CMIP6'] },
+    { code: 'M · 11', title: 'Maritime & Aviation',     href: '/beta/maritime-aviation',  tags: ['SEAMAPS', 'OAG'] },
+    { code: 'M · 12', title: 'Climate Finance',         href: '/beta/climate-finance',    tags: ['NGFS v5', 'EIB'] },
+    { code: 'M · 13', title: 'Media Monitoring',        href: '/beta/media-monitoring',   tags: ['GDELT', 'MEDIAC'] },
+    { code: 'M · 14', title: 'Fact Sheet Builder',      href: '/beta/fact-sheets',        tags: ['Templates', 'LaTeX'] },
+    { code: 'M · 15', title: 'FAQ & Prebunking',        href: '/beta/faq',                tags: [`${faqCount} entries`, 'Prebunking'] },
+    { code: 'M · 16', title: 'Funding Sources',         href: '/beta/funding-sources',    tags: ['Horizon', 'DG DIGIT'] },
+    { code: 'M · 17', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
+    { code: 'M · 18', title: 'EU Climate Councils',     href: '/beta/eu-climate-councils', tags: ['67 bodies', 'Leaflet map'] },
+    { code: 'M · 19', title: 'Project Management',      href: '/beta/project-management',  tags: ['5 Phases', 'Gantt', 'Manual v2.1'] },
   ];
 
   return (
@@ -398,7 +398,7 @@ export default async function HomePage() {
           </h1>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] lg:text-[17px] text-[#3D5265]/80 max-w-3xl leading-relaxed">
             An integrated, internal research workspace for the European Scientific Advisory Board on Climate Change Secretariat.
-            Six production modules — references, data &amp; scenarios, news, policy, content analysis and voting — packaged as a single
+            Eight production modules — references, data &amp; scenarios, news, policy, content analysis, voting, the project workspace and recommendations — packaged as a single
             self-contained Next.js service. It is <strong className="text-[#3D5265]">hosted on Vercel (EU region) today</strong>{' '}
             and built to be redeployed onto <strong className="text-[#3D5265]">EEA infrastructure</strong>, with the codebase
             stewarded by <strong className="text-[#3D5265]">CCE5</strong>.
@@ -409,7 +409,7 @@ export default async function HomePage() {
               href="#modules"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-3 sm:py-2.5 text-[14px] sm:text-[13px] font-semibold text-white bg-[#00928F] border border-[#00928F] rounded-sm hover:bg-[#007a77] transition-colors touch-target shadow-sm"
             >
-              The six modules
+              The eight modules
               <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 5v14M5 12h14" />
               </svg>
@@ -434,7 +434,7 @@ export default async function HomePage() {
           {/* Quick facts row */}
           <dl className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden max-w-4xl">
             {[
-              { k: 'Production modules', v: '6', sub: 'stable, shipped' },
+              { k: 'Production modules', v: '8', sub: 'stable, shipped' },
               { k: 'Policies tracked',   v: fmt(policyCount), sub: `${domainCount} domains` },
               { k: 'Scenarios',          v: fmt(scenarioCount), sub: `${fmt(datapointCount)} datapoints` },
               { k: 'References',         v: fmt(refsTotal), sub: 'DOI-indexed' },
@@ -452,10 +452,10 @@ export default async function HomePage() {
       <div id="modules" className="scroll-mt-20" />
 
       {/* ─────────────────────────────────────────────────────────
-          PRODUCTION MODULES  (M·01 – M·06)
-          The five surfaces shipped to the Secretariat. Any beta module
+          PRODUCTION MODULES  (M·01 – M·08)
+          The eight surfaces shipped to the Secretariat. Any beta module
           under `beta/modules/` must not appear here — that separation is
-          the whole point of the v1.0 scope lock.
+          the whole point of the scope lock.
           ───────────────────────────────────────────────────────── */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
         <div className="flex items-end justify-between gap-4 flex-wrap">
@@ -465,7 +465,7 @@ export default async function HomePage() {
               Scope · v1.0
             </p>
             <h2 className="mt-3 text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#3D5265] leading-[1.15]">
-              The six production modules.
+              The eight production modules.
             </h2>
             <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
               Everything in this row is <strong className="text-[#3D5265]">stable</strong>, covered by migrations,
@@ -533,12 +533,13 @@ export default async function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          BETA MODULES  (M·07 – M·17, minus M·12)
-          Nine experimental modules routed under `/beta/<slug>`. Each card
+          BETA MODULES  (M·09 – M·19)
+          Eleven experimental modules routed under `/beta/<slug>`. Each card
           links to its own page; the source lives at `beta/modules/<slug>`
           and is wired into Next.js via a thin re-export under
-          `src/app/beta/<slug>/page.tsx`. M·12 (Brussels Bulletin) was
-          promoted to production and now lives under `/news-feed/brussels-bulletin`.
+          `src/app/beta/<slug>/page.tsx`. The Brussels Bulletin pipeline was
+          promoted into News (`/news-feed/brussels-bulletin`); the Project
+          Workspace and Recommendations modules graduated to core as M·07/M·08.
           ───────────────────────────────────────────────────────── */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
         <div className="flex items-end justify-between gap-4 flex-wrap">

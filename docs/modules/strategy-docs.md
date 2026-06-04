@@ -1,4 +1,4 @@
-# M · 15 — Strategy & Framework Docs
+# M · 17 — Strategy & Framework Docs
 
 !!! tip "Status"
     Beta · parked under [`beta/modules/strategy-docs/`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/tree/main/beta/modules/strategy-docs) · the Next.js route at `/beta/strategy-docs` re-exports the beta page so it is reachable when manually navigated.
@@ -22,8 +22,9 @@ the technical handbook.
 
 ## Why a separate module
 
-The six production modules cover **research outputs**: literature,
-scenarios, news, policies, qualitative coding. Strategy & Framework
+The eight production modules cover **research outputs and project
+delivery**: literature, scenarios, news, policies, qualitative coding,
+voting, workspaces and recommendations. Strategy & Framework
 Docs covers the **rules of engagement**: how the Secretariat decides,
 runs and reports on the work that produces those outputs. Keeping
 this corpus on its own surface — with the same look as the docs site

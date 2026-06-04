@@ -3,7 +3,7 @@
 This folder is a **deliberate parking lot**. It contains the Next.js page
 folders for the modules that are *not* part of the v1.0 handoff to EEA IT.
 
-The production deployment ships the **five stable modules** under
+The production deployment ships the **eight stable modules** under
 [`src/app/`](../src/app). Nothing in this folder is routed by the live app:
 the files live outside the Next.js `app/` tree, so the build simply ignores
 them. Dropping a folder back into `src/app/` re-activates its route — that is
@@ -17,15 +17,17 @@ production and which are still prototypes. The file system itself communicates
 that:
 
 ```
-src/app/           ← production routes (the six modules + utilities)
+src/app/           ← production routes (the eight modules + utilities)
 beta/modules/      ← experimental prototypes, unrouted
 ```
 
-The six production modules have been hardened: schema migrations, RLS
+The eight production modules have been hardened: schema migrations, RLS
 policies, GDPR retention, data-pipeline tests, IT handoff scripts. The beta
 modules are useful demos of *where this platform can go* — energy-system
 optimisation, climate-risk chains, media monitoring — but they are not yet at
-the quality bar we ship to the Secretariat.
+the quality bar we ship to the Secretariat. (The Project Workspace and
+Recommendations modules made exactly this journey: they were promoted out of
+`beta/` into the core once hardened.)
 
 ## What is in here
 
@@ -40,6 +42,8 @@ the quality bar we ship to the Secretariat.
 | `maritime-aviation/`          | Maritime & Aviation  | SEAMAPS / OAG data requires procurement.                           |
 | `media-monitoring/`           | Media Monitoring     | GDELT pipeline works; dashboard UX and consent flow WIP.           |
 | `strategy-docs/`              | Strategy & Framework | Documentation overlay for internal strategy and PIRs; files pending upload. |
+| `eu-climate-councils/`        | EU Climate Councils  | Leaflet map of ~67 national advisory bodies; mapping being verified. |
+| `project-management/`         | Project Management   | Phase / Gantt board against the Project Manual; UX iterating.      |
 
 ## Promoting a beta module to production
 

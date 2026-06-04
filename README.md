@@ -19,19 +19,21 @@ under the app on Vercel, which is the single source of truth.
 
 A Next.js 14 application that bundles the Secretariat's day-to-day
 research tooling — reference management, scenario data, news
-monitoring, EU policy tracking, content analysis and anonymous
-voting — behind a single sign-in. Six production modules ship in
-`src/`; eight experimental
+monitoring, EU policy tracking, content analysis, anonymous
+voting, per-project workspaces and recommendation tracking — behind a
+single sign-in. Eight production modules ship in
+`src/`; eleven experimental
 modules sit unrouted in `beta/` and are pulled into production once
-the science team signs off.
+the science team signs off (Project Workspace and Recommendations were
+the two most recent promotions).
 
 Read more:
 [What is MethodHub?](https://methodhub.vercel.app/docs/overview/what-is-methodhub/) ·
-[The six modules](https://methodhub.vercel.app/docs/overview/the-six-modules/) ·
+[The eight modules](https://methodhub.vercel.app/docs/overview/the-eight-modules/) ·
 [Beta parking lot](https://methodhub.vercel.app/docs/overview/beta/) ·
 [FAQ (non-technical)](https://methodhub.vercel.app/docs/FAQ-NON-TECHNICAL/).
 
-## The six production modules
+## The eight production modules
 
 | # | Module | What it does | Docs |
 | --- | --- | --- | --- |
@@ -41,6 +43,8 @@ Read more:
 | M·04 | EU Policy Navigator | Search and timeline over EU climate legislation. | [policy navigator](https://methodhub.vercel.app/docs/modules/policy-navigator/) |
 | M·05 | Content Analysis | LLM-assisted analysis of long documents. | [content analysis](https://methodhub.vercel.app/docs/modules/content-analysis/) |
 | M·06 | Voting Tool | Anonymous Advisory-Board ballots with seven voting systems and live analysis. | [voting tool](https://methodhub.vercel.app/docs/modules/voting-tool/) |
+| M·07 | Project Workspace | Per-project binder: indicator DB, member-state matrix, recommendation tracker, meetings. | [project workspace](https://methodhub.vercel.app/docs/modules/project-workspace/) |
+| M·08 | Recommendations | Advisory-Board recommendation tracker — status and dated uptake events vs. EU law. | [recommendations](https://methodhub.vercel.app/docs/modules/recommendations/) |
 
 Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 
@@ -48,8 +52,8 @@ Module index: [modules overview](https://methodhub.vercel.app/docs/modules/).
 
 | Path | Contents |
 | --- | --- |
-| `src/` | Next.js 14 application — six production modules. |
-| `beta/` | Eight experimental modules, intentionally unrouted. |
+| `src/` | Next.js 14 application — eight production modules. |
+| `beta/` | Eleven experimental modules, intentionally unrouted. |
 | `docs/` | MkDocs source for the `/docs/` documentation subpage. |
 | `scripts/` | Data pipelines, migration tooling, IT handoff kit. |
 | `supabase/` | Postgres migrations. |
