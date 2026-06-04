@@ -1,33 +1,33 @@
 [
   {
-    "title": "Commissioner Roswall's keynote address at the LIFE Awards",
-    "summary": "European Commission Speech Brussels, 03 Jun 2026 Good evening, everyone.\r\nIt is a real pleasure to be here among so many people who dedicate their talent, expertise and energy to protecting our environment and ...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1260",
+    "title": "Commission decides to refer Spain and Poland to the Court of Justice of the European Union for not transposing agreed rules to strengthen the EU emissions trading system",
+    "summary": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer Spain to the Court of Justice of the European Union for failing to transpose the revised EU Emissions Trading System (EU ETS) Directive (Directive (EU) 2023/959) into national law.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1181",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-03T17:51:56.000Z",
+    "publishedDate": "2026-06-03T22:00:00.000Z",
     "tags": [
-      "energy"
+      "emissions"
     ]
   },
   {
-    "title": "Daily News 03 / 06 / 2026",
-    "summary": "European Commission Daily news Brussels, 03 Jun 2026 Eurobarometer shows continued public support for biodiversity protection across Europe\r\nPublished at the start of the EU Green Week, the Special Eurobarometer su...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1246",
+    "title": "Commission decides to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment Directive regarding peat cutting projects",
+    "summary": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer Ireland to the Court of Justice of the European Union for failing to comply with the Environmental Impact Assessment (EIA) Directive (Directive 2011/92/EU as amended by Directive 2014/52/EU).",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1179",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-03T11:51:00.000Z",
-    "tags": [
-      "biodiversity"
-    ]
-  },
-  {
-    "title": "Remarks by Executive Vice-President Mînzatu and Commissioner Dombrovskis at the press conference presenting the European Semester Spring Package",
-    "summary": "European Commission Speech Brussels, 03 Jun 2026 Executive Vice-President Mînzatu\r\nThis Spring Package comes as the world is navigating a very complex economic and geopolitical environment.\r\nEurope is facing pre...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1245",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-03T11:25:23.000Z",
+    "publishedDate": "2026-06-03T22:00:00.000Z",
     "tags": []
+  },
+  {
+    "title": "Commission decides to refer France to the Court of Justice of the European Union over restrictions on veterinary companies and vets that violate EU law",
+    "summary": "European Commission Press release Brussels, 04 Jun 2026 Today, the European Commission decided to refer France to the Court of Justice of the European Union for failing to comply with the rules on the freedom of establishment and the free movement of services, as set out in the Treaty on the functioning of the European Union (TFEU) and the Services Directive (Directive 2006/123/EC), with regard to national rules governing veterinary companies and veterinarians.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1173",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-03T22:00:00.000Z",
+    "tags": [
+      "emissions"
+    ]
   }
 ]
