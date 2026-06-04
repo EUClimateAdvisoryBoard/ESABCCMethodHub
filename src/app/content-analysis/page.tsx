@@ -54,6 +54,7 @@ import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsP
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
 import ProjectSummariesView from '@/components/content-analysis/ProjectSummariesView';
+import LongitudinalTimelineView from '@/components/content-analysis/LongitudinalTimelineView';
 import AiClassificationsList from '@/components/content-analysis/AiClassificationsList';
 import CodeEditorModal, {
   type CodeEditorPayload,
@@ -97,7 +98,7 @@ const TAB_LABELS: Array<{
   { id: 'workbench',    label: 'Code',         subtitle: 'Tag segments',          kind: 'primary' },
   { id: 'horizontal',   label: 'Compare',      subtitle: 'Across policies',       kind: 'primary' },
   { id: 'vertical',     label: 'Trace',        subtitle: 'Implementation chain',  kind: 'beta'    },
-  { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'beta'    },
+  { id: 'longitudinal', label: 'Timeline',     subtitle: 'Versions over time',    kind: 'primary' },
   { id: 'outcomes',     label: 'Summarise',    subtitle: 'Document summaries',     kind: 'primary' },
 ];
 
@@ -2117,7 +2118,18 @@ function ContentAnalysisPageInner() {
       )}
       {activeTab === 'longitudinal' && (
         <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
-          <AnalysisPlaceholder mode="longitudinal" />
+          <LongitudinalTimelineView
+            documents={docsInProjectScope}
+            onOpenVersion={(documentId, versionId) => {
+              setActiveTab('workbench');
+              // Make sure the target doc is visible in the corpus list whatever
+              // tier filter is active, so the reader can resolve it.
+              setSourceFilter('all');
+              setSelectedDocumentId(documentId);
+              setHighlightedSegmentId(null);
+              setViewingVersionId(versionId);
+            }}
+          />
         </section>
       )}
       {activeTab === 'outcomes' && (
@@ -2139,7 +2151,7 @@ function ContentAnalysisPageInner() {
 
       <footer className="mt-6 border-t border-[#E6E7E8] bg-[#FBFBFA]">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 py-5 text-[11.5px] text-[#8A95A3] leading-relaxed">
-          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). Add the Trace and Timeline views once the required document-link kinds and indicator joins are in place (the Summarise read-across is live).
+          <strong className="text-[#3D5265]">Roadmap.</strong> Ingest direct EUR-Lex PDFs (not just extracted plaintext) so successive versions render faithfully and line numbering is stable across exports. AI-assign master tags at ingestion so the whole corpus is pre-tagged before project scoping. Wire segments as an exportable dataset (CSV done; JSON + Excel planned). The Summarise read-across and the Timeline version-history view are live; Trace (target → budget → implementation) lands once the cross-document link kinds are in place.
         </div>
       </footer>
         </>
