@@ -429,7 +429,11 @@ export async function listProjects(): Promise<DBProject[]> {
 export async function getProject(projectId: string): Promise<DBProject | null> {
   noStore();
   const sb = getServerSupabase();
-  if (!sb) return null;
+  // Preview mode (no database configured): fall back to the seed projects so
+  // the demo is browsable end-to-end. The landing page already lists these
+  // read-only; returning them here means clicking a card opens the project
+  // instead of hitting a 404. Per-tab data fetchers degrade to empty.
+  if (!sb) return SEED_PROJECTS.find(p => p.id === projectId) ?? null;
   await ensureSeedDataFor(projectId);
   const { data: p } = await sb.from('pw_projects').select('*').eq('id', projectId).maybeSingle();
   if (!p) return null;
