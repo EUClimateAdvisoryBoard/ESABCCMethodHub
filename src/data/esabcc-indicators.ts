@@ -125,7 +125,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'fossil-power-share',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.5183 }, { year: 2006, value: 0.5190 }, { year: 2007, value: 0.5260 }, { year: 2008, value: 0.5092 }, { year: 2009, value: 0.4933 }, { year: 2010, value: 0.4785 }, { year: 2011, value: 0.4801 }, { year: 2012, value: 0.4593 }, { year: 2013, value: 0.4307 }, { year: 2014, value: 0.4055 }, { year: 2015, value: 0.4174 }, { year: 2016, value: 0.4224 }, { year: 2017, value: 0.4300 }, { year: 2018, value: 0.4043 }, { year: 2019, value: 0.3831 }, { year: 2020, value: 0.3563 }, { year: 2021, value: 0.3618 }, { year: 2022, value: 0.3876 }],
+    data: [{ year: 2005, value: 51.83 }, { year: 2006, value: 51.90 }, { year: 2007, value: 52.60 }, { year: 2008, value: 50.92 }, { year: 2009, value: 49.33 }, { year: 2010, value: 47.85 }, { year: 2011, value: 48.01 }, { year: 2012, value: 45.93 }, { year: 2013, value: 43.07 }, { year: 2014, value: 40.55 }, { year: 2015, value: 41.74 }, { year: 2016, value: 42.24 }, { year: 2017, value: 43.00 }, { year: 2018, value: 40.43 }, { year: 2019, value: 38.31 }, { year: 2020, value: 35.63 }, { year: 2021, value: 36.18 }, { year: 2022, value: 38.76 }],
   },
   {
     id: 'esabcc-e2-res-noBio-power-share',
@@ -203,7 +203,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'end-use-electrification',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.2123 }, { year: 2006, value: 0.2161 }, { year: 2007, value: 0.2220 }, { year: 2008, value: 0.2210 }, { year: 2009, value: 0.2200 }, { year: 2010, value: 0.2218 }, { year: 2011, value: 0.2279 }, { year: 2012, value: 0.2289 }, { year: 2013, value: 0.2272 }, { year: 2014, value: 0.2328 }, { year: 2015, value: 0.2318 }, { year: 2016, value: 0.2301 }, { year: 2017, value: 0.2292 }, { year: 2018, value: 0.2287 }, { year: 2019, value: 0.2274 }, { year: 2020, value: 0.2316 }, { year: 2021, value: 0.2275 }],
+    data: [{ year: 2005, value: 21.23 }, { year: 2006, value: 21.61 }, { year: 2007, value: 22.20 }, { year: 2008, value: 22.10 }, { year: 2009, value: 22.00 }, { year: 2010, value: 22.18 }, { year: 2011, value: 22.79 }, { year: 2012, value: 22.89 }, { year: 2013, value: 22.72 }, { year: 2014, value: 23.28 }, { year: 2015, value: 23.18 }, { year: 2016, value: 23.01 }, { year: 2017, value: 22.92 }, { year: 2018, value: 22.87 }, { year: 2019, value: 22.74 }, { year: 2020, value: 23.16 }, { year: 2021, value: 22.75 }],
   },
   {
     id: 'esabcc-e6-energy-ch4',
@@ -327,7 +327,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'industry-electrification',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.3171 }, { year: 2006, value: 0.3235 }, { year: 2007, value: 0.3222 }, { year: 2008, value: 0.3254 }, { year: 2009, value: 0.3242 }, { year: 2010, value: 0.3264 }, { year: 2011, value: 0.3296 }, { year: 2012, value: 0.3301 }, { year: 2013, value: 0.3292 }, { year: 2014, value: 0.3354 }, { year: 2015, value: 0.3365 }, { year: 2016, value: 0.3348 }, { year: 2017, value: 0.3376 }, { year: 2018, value: 0.3353 }, { year: 2019, value: 0.3354 }, { year: 2020, value: 0.3293 }, { year: 2021, value: 0.3322 }, { year: 2022, value: 0.333, afterReport: true }, { year: 2023, value: 0.326, afterReport: true }],
+    data: [{ year: 2005, value: 31.71 }, { year: 2006, value: 32.35 }, { year: 2007, value: 32.22 }, { year: 2008, value: 32.54 }, { year: 2009, value: 32.42 }, { year: 2010, value: 32.64 }, { year: 2011, value: 32.96 }, { year: 2012, value: 33.01 }, { year: 2013, value: 32.92 }, { year: 2014, value: 33.54 }, { year: 2015, value: 33.65 }, { year: 2016, value: 33.48 }, { year: 2017, value: 33.76 }, { year: 2018, value: 33.53 }, { year: 2019, value: 33.54 }, { year: 2020, value: 32.93 }, { year: 2021, value: 33.22 }, { year: 2022, value: 33.30, afterReport: true }, { year: 2023, value: 32.60, afterReport: true }],
   },
   {
     id: 'esabcc-t1-transport-ghg',
@@ -388,7 +388,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'road-passenger-share',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.8128 }, { year: 2006, value: 0.8123 }, { year: 2007, value: 0.8113 }, { year: 2008, value: 0.8082 }, { year: 2009, value: 0.8163 }, { year: 2010, value: 0.8162 }, { year: 2011, value: 0.8135 }, { year: 2012, value: 0.8117 }, { year: 2013, value: 0.8134 }, { year: 2014, value: 0.8154 }, { year: 2015, value: 0.8154 }, { year: 2016, value: 0.8165 }, { year: 2017, value: 0.8183 }, { year: 2018, value: 0.8169 }, { year: 2019, value: 0.8159 }, { year: 2020, value: 0.8650 }],
+    data: [{ year: 2005, value: 81.28 }, { year: 2006, value: 81.23 }, { year: 2007, value: 81.13 }, { year: 2008, value: 80.82 }, { year: 2009, value: 81.63 }, { year: 2010, value: 81.62 }, { year: 2011, value: 81.35 }, { year: 2012, value: 81.17 }, { year: 2013, value: 81.34 }, { year: 2014, value: 81.54 }, { year: 2015, value: 81.54 }, { year: 2016, value: 81.65 }, { year: 2017, value: 81.83 }, { year: 2018, value: 81.69 }, { year: 2019, value: 81.59 }, { year: 2020, value: 86.50 }],
   },
   {
     id: 'esabcc-t3b-air-passenger',
@@ -438,7 +438,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     duplicateOf: 'ev-share-new-cars',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 0.0001 }, { year: 2011, value: 0.0007 }, { year: 2012, value: 0.0013 }, { year: 2013, value: 0.0022 }, { year: 2014, value: 0.0033 }, { year: 2015, value: 0.0046 }, { year: 2016, value: 0.0047 }, { year: 2017, value: 0.0068 }, { year: 2018, value: 0.0106 }, { year: 2019, value: 0.0190 }, { year: 2020, value: 0.0539 }, { year: 2021, value: 0.0887 }, { year: 2022, value: 0.1341 }, { year: 2023, value: 0.146, afterReport: true }, { year: 2024, value: 0.136, afterReport: true }],
+    data: [{ year: 2010, value: 0.0100 }, { year: 2011, value: 0.0700 }, { year: 2012, value: 0.1300 }, { year: 2013, value: 0.2200 }, { year: 2014, value: 0.3300 }, { year: 2015, value: 0.4600 }, { year: 2016, value: 0.4700 }, { year: 2017, value: 0.6800 }, { year: 2018, value: 1.060 }, { year: 2019, value: 1.900 }, { year: 2020, value: 5.390 }, { year: 2021, value: 8.870 }, { year: 2022, value: 13.41 }, { year: 2023, value: 14.60, afterReport: true }, { year: 2024, value: 13.60, afterReport: true }],
   },
   {
     id: 'esabcc-t5b-zev-lorries-stock',
@@ -1520,12 +1520,12 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     source: 'Climate Target Plan impact assessment + Eurostat',
     sourceUrl: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020SC0176',
     direction: 'up',
-    targetValue: 0.018,
+    targetValue: 1.8,
     targetYear: 2030,
     duplicateOf: 'building-renovation-rate',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2020, value: 0.0100 }],
+    data: [{ year: 2020, value: 1.000 }],
   },
   {
     id: 'esabcc-b3-commercial-renovation-rate',
