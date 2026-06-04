@@ -132,7 +132,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
       <div className="relative z-10 space-y-8">
         {/* ── Goal ───────────────────────────────────────────────────────────── */}
         <Row label="GHG emission reductions" bg={sector.color} text="#fff">
-          <div className="flex items-stretch gap-2">
+          <div className="flex flex-col sm:flex-row sm:items-stretch gap-2">
             <div
               ref={register('goal')}
               className="flex-1 min-w-0 rounded px-3 py-2 text-white shadow-sm flex items-center"
@@ -145,7 +145,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 onChange={(goal) => patch({ goal })}
               />
             </div>
-            <div className="flex flex-col justify-center gap-1 shrink-0">
+            <div className="flex flex-row sm:flex-col justify-start sm:justify-center gap-1 shrink-0">
               <ChipRow
                 refs={sector.goalIndicators}
                 editing={editing}
@@ -181,7 +181,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
         <Row label={isBeta ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
-          <div className="flex gap-2 items-stretch overflow-x-auto pb-1">
+          <div className="flex gap-2 items-stretch flex-wrap sm:flex-nowrap sm:overflow-x-auto pb-1">
             {sector.levers.map((l) => (
               <NodeCard
                 key={l.id}
@@ -299,19 +299,22 @@ function Row({
   onAdd?: () => void;
 }) {
   return (
-    <div className="grid grid-cols-[84px_minmax(0,1fr)] gap-2 items-stretch">
+    <div className="grid grid-cols-1 sm:grid-cols-[84px_minmax(0,1fr)] gap-1.5 sm:gap-2 items-stretch">
       <div
-        className="rounded px-2 py-1 text-[10px] font-semibold leading-tight flex flex-col justify-center"
+        className="rounded px-2 py-1.5 sm:py-1 text-[10px] font-semibold leading-tight flex flex-row sm:flex-col items-center sm:items-stretch justify-between sm:justify-center gap-2"
         style={{ background: bg, color: text }}
       >
-        {label}
+        <span>{label}</span>
         {onAdd && (
-          <button onClick={onAdd} className="mt-1 text-[9px] font-normal underline opacity-90 hover:opacity-100 text-left">
+          <button
+            onClick={onAdd}
+            className="shrink-0 text-[9px] font-normal underline opacity-90 hover:opacity-100 sm:mt-1 sm:text-left"
+          >
             + add
           </button>
         )}
       </div>
-      <div>{children}</div>
+      <div className="min-w-0">{children}</div>
     </div>
   );
 }
@@ -409,7 +412,7 @@ function ChipRow({
             title={r.label}
           >
             <span className="font-mono font-semibold">{r.code}</span>
-            <span className="max-w-[120px] truncate">{r.label}</span>
+            <span className="max-w-[200px] sm:max-w-[120px] truncate">{r.label}</span>
             {isBetaRef && (
               <span className="text-teal-700 font-bold" title="Beta indicator">
                 β
