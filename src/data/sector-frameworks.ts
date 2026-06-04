@@ -22,6 +22,15 @@
  * series was curated into the database (e.g. I2, B3, B4) are kept as
  * `indicatorIds: []` refs — they show up as "no series linked yet" nodes that
  * a user can wire up or fill in later.
+ *
+ * Some mitigation levers/outcomes were drawn in the report figures *without*
+ * any white-box progress indicator at all. To make the board fully tracked we
+ * added a chip to each of those, linking either a provisional "beta" series
+ * (β-coded) or a fitting existing ECNO series. Those chips are flagged
+ * `enhanced: true` so the two built-in boards can diverge:
+ *   • the *enhanced* board (`defaultFrameworkBoard`) keeps them; and
+ *   • the report-faithful board (`defaultFrameworkBoardReport`) strips them,
+ *     so those levers read exactly as the report drew them — no indicator.
  */
 import { ESABCC_REPORT_INDICATORS } from './esabcc-indicators';
 import { ECNO_INDICATORS, type Indicator } from './ecno-indicators';
@@ -46,6 +55,13 @@ export interface IndicatorRef {
   label: string;
   /** Links into the indicator database (esabcc-indicators ids). May be empty. */
   indicatorIds: string[];
+  /**
+   * True when this chip is an *enhancement* on top of the published report —
+   * a lever/outcome the report figure drew without any progress indicator,
+   * which we filled with a beta or reused ECNO series. The report-faithful
+   * built-in board strips these (see `defaultFrameworkBoardReport`).
+   */
+  enhanced?: boolean;
 }
 
 /** An outcome or mitigation-lever card. */
@@ -130,6 +146,15 @@ function ref(code: string, label: string, indicatorIds: string[] = []): Indicato
   return { refId: `ref-${++_ref}`, code, label, indicatorIds };
 }
 
+/**
+ * Like `ref`, but marks the chip as an *enhancement* the report itself did not
+ * draw (an otherwise-empty lever/outcome we filled with a beta or reused ECNO
+ * series). The report-faithful board strips every `enhanced` chip.
+ */
+function refX(code: string, label: string, indicatorIds: string[] = []): IndicatorRef {
+  return { refId: `ref-${++_ref}`, code, label, indicatorIds, enhanced: true };
+}
+
 // ── The six sector frameworks ────────────────────────────────────────────────
 
 export const SECTOR_FRAMEWORKS: SectorFramework[] = [
@@ -172,7 +197,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Fossil fuel phase-out',
         parents: ['en-o1'],
-        indicators: [ref('E7β', 'Fossil share of gross available energy', ['beta-fossil-share-gae'])],
+        indicators: [refX('E7β', 'Fossil share of gross available energy', ['beta-fossil-share-gae'])],
       },
       {
         id: 'en-l2',
@@ -196,7 +221,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Targeted CCU/CCS',
         parents: ['en-o1'],
-        indicators: [ref('E8β', 'CO₂ capture & storage capacity', ['beta-ccs-capacity'])],
+        indicators: [refX('E8β', 'CO₂ capture & storage capacity', ['beta-ccs-capacity'])],
       },
       {
         id: 'en-l5',
@@ -210,7 +235,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Energy efficiency',
         parents: ['en-o2'],
-        indicators: [ref('E9β', 'Energy intensity of the economy', ['beta-energy-intensity'])],
+        indicators: [refX('E9β', 'Energy intensity of the economy', ['beta-energy-intensity'])],
       },
     ],
     enabling: [
@@ -266,14 +291,14 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Product demand reduction',
         parents: ['in-o1'],
-        indicators: [ref('I8β', 'Material consumption per capita', ['beta-dmc-per-capita'])],
+        indicators: [refX('I8β', 'Material consumption per capita', ['beta-dmc-per-capita'])],
       },
       {
         id: 'in-l2',
         layer: 'lever',
         label: 'Material efficiency and substitution',
         parents: ['in-o1'],
-        indicators: [ref('I9β', 'Resource productivity (GDP/DMC)', ['beta-resource-productivity'])],
+        indicators: [refX('I9β', 'Resource productivity (GDP/DMC)', ['beta-resource-productivity'])],
       },
       {
         id: 'in-l3',
@@ -299,7 +324,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['in-o2'],
         // Links to the existing ECNO electrolyser-capacity series (hydrogen-based
         // direct reduction etc. is the headline new low-carbon process).
-        indicators: [ref('H2', 'Installed electrolyser capacity', ['hydrogen-electrolyser-capacity'])],
+        indicators: [refX('H2', 'Installed electrolyser capacity', ['hydrogen-electrolyser-capacity'])],
       },
       {
         id: 'in-l6',
@@ -341,7 +366,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Reduce demand for energy-intensive transport',
         parents: ['goal'],
-        indicators: [ref('T7β', 'Transport final energy consumption', ['beta-transport-fec'])],
+        indicators: [refX('T7β', 'Transport final energy consumption', ['beta-transport-fec'])],
       },
       {
         id: 'tr-o2',
@@ -380,7 +405,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Vehicle efficiency',
         parents: ['tr-o2'],
-        indicators: [ref('T8β', 'Average CO₂ of new cars (WLTP)', ['beta-new-car-co2'])],
+        indicators: [refX('T8β', 'Average CO₂ of new cars (WLTP)', ['beta-new-car-co2'])],
       },
       {
         id: 'tr-l5',
@@ -442,7 +467,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         parents: ['bu-o1'],
         // Existing ECNO series: per-capita household final energy use is the
         // clearest sufficiency proxy.
-        indicators: [ref('HH', 'Household energy use per capita', ['household-energy-per-capita'])],
+        indicators: [refX('HH', 'Household energy use per capita', ['household-energy-per-capita'])],
       },
       {
         id: 'bu-l2',
@@ -456,7 +481,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Zero-emission new builds',
         parents: ['bu-o1'],
-        indicators: [ref('B7β', 'nZEB / class-A share of new dwellings', ['beta-nzeb-new-share'])],
+        indicators: [refX('B7β', 'nZEB / class-A share of new dwellings', ['beta-nzeb-new-share'])],
       },
       {
         id: 'bu-l4',
@@ -537,7 +562,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         label: 'Reduced production',
         parents: ['ag-o2'],
         // Existing ECNO series: EU cattle herd size proxies livestock production.
-        indicators: [ref('A8', 'EU cattle herd size', ['cattle-population'])],
+        indicators: [refX('A8', 'EU cattle herd size', ['cattle-population'])],
       },
       {
         id: 'ag-l4',
@@ -593,7 +618,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'outcome',
         label: 'Reduce emissions and increase removals within land-use categories',
         parents: ['goal'],
-        indicators: [ref('L9β', 'Net flux from cropland & grassland', ['beta-cropland-grassland-flux'])],
+        indicators: [refX('L9β', 'Net flux from cropland & grassland', ['beta-cropland-grassland-flux'])],
       },
     ],
     levers: [
@@ -616,7 +641,7 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
         layer: 'lever',
         label: 'Wetland conservation and restoration',
         parents: ['lu-o2'],
-        indicators: [ref('L10β', 'Net GHG emissions from wetlands', ['beta-wetlands-flux'])],
+        indicators: [refX('L10β', 'Net GHG emissions from wetlands', ['beta-wetlands-flux'])],
       },
       {
         id: 'lu-l4',
@@ -654,12 +679,33 @@ export const SECTOR_FRAMEWORKS: SectorFramework[] = [
   },
 ];
 
-/** A fresh, deep copy of the default board (used as the editable starting point). */
+/**
+ * A fresh, deep copy of the *enhanced* board — every mitigation lever/outcome
+ * carries an indicator chip, including the ones the report drew empty (those
+ * are flagged `enhanced`). Used as the editable starting point of the
+ * "Enhanced flow charts" built-in version.
+ */
 export function defaultFrameworkBoard(): FrameworkBoard {
   return {
     version: FRAMEWORK_BOARD_VERSION,
     sectors: JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[],
   };
+}
+
+/**
+ * A fresh, deep copy of the board exactly as the report 'Towards EU climate
+ * neutrality' (2024) draws it: the `enhanced` chips we added to otherwise-empty
+ * levers/outcomes are stripped, so those nodes carry no indicator — 1:1 with
+ * the published figures. This is the default ("ESABCC report") built-in version.
+ */
+export function defaultFrameworkBoardReport(): FrameworkBoard {
+  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
+  for (const sector of sectors) {
+    for (const node of [...sector.outcomes, ...sector.levers]) {
+      node.indicators = node.indicators.filter((r) => !r.enhanced);
+    }
+  }
+  return { version: FRAMEWORK_BOARD_VERSION, sectors };
 }
 
 // ── Beta board: report frameworks + a per-sector adaptation framework ─────

@@ -18,12 +18,17 @@ is promoted out of beta. Data lives in `src/data/beta-indicators.ts`.
   *Beta adaptation indicators*. Beta entries carry a `β beta` badge.
 - **Flow charts** view — a *registry of flow-chart versions* (version selector
   at the top of the view; the beta board is no longer a separate top-level tab).
-  Two versions ship built in:
-  - **ESABCC report (default)** — the published frameworks; the previously empty
-    mitigation levers/outcomes now show a white indicator chip (β-marked when it
-    links to a beta series).
-  - **Beta — adaptation & resilience** — a copy of the six report frameworks
-    with an added adaptation outcome, adaptation lever and adaptation enabling
+  Three versions ship built in:
+  - **ESABCC report (default)** — 1:1 with the published report figures. The
+    mitigation levers/outcomes the report drew *without* a progress indicator
+    stay blank, exactly as drawn. Built by `defaultFrameworkBoardReport()`,
+    which strips every chip flagged `enhanced` in `src/data/sector-frameworks.ts`.
+  - **Enhanced flow charts** — the same frameworks, but every previously empty
+    mitigation lever/outcome now shows a white indicator chip (β-marked when it
+    links to a beta series, or a reused ECNO series). Those chips are the
+    `enhanced: true` refs in the data. Built by `defaultFrameworkBoard()`.
+  - **Beta — adaptation & resilience** — a copy of the enhanced frameworks with
+    an added adaptation outcome, adaptation lever and adaptation enabling
     condition per sector (all marked `⛨ adapt`, teal cards), wired to the beta
     adaptation indicators and to fitting existing ECNO series.
   Users can create further versions by copying any existing version as a

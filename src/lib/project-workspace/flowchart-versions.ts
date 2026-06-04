@@ -4,8 +4,9 @@
  * The "Flow charts" view of the Indicator module is no longer a fixed pair of
  * boards (report + beta). Instead it is a *registry* of named versions:
  *
- *   • two built-in versions — the published ESABCC report frameworks and the
- *     beta board (report + adaptation & resilience layer); and
+ *   • three built-in versions — the report-faithful ESABCC frameworks (the
+ *     default), the "enhanced" board (every lever/outcome given an indicator),
+ *     and the beta board (enhanced + adaptation & resilience layer); and
  *   • any number of user-created versions, each one started by copying an
  *     existing version (its "foundation") and then edited freely.
  *
@@ -15,13 +16,16 @@
  * operations. The board *content* model and the published defaults still live
  * in `@/data/sector-frameworks`.
  *
- * Built-in board keys are kept identical to the pre-registry scheme so existing
- * saved edits survive the upgrade:
- *   report → `esabcc-framework-board:<project>`
+ * The enhanced + beta board keys are kept identical to the pre-registry scheme
+ * so existing saved edits survive the upgrade; the report-faithful default gets
+ * its own key:
+ *   report-faithful → `esabcc-framework-board-report:<project>`
+ *   report (enhanced) → `esabcc-framework-board:<project>`
  *   beta   → `esabcc-framework-board-beta:<project>`
  */
 import {
   defaultFrameworkBoard,
+  defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
   FRAMEWORK_BOARD_VERSION,
   FRAMEWORK_BOARD_BETA_VERSION,
@@ -32,7 +36,7 @@ import {
 export type FlowChartVariant = 'report' | 'beta';
 
 export interface FlowChartVersion {
-  /** Stable id. Built-ins use 'report' / 'beta'; custom versions use a uid. */
+  /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
   id: string;
   /** Display name shown in the registry. */
   name: string;
@@ -47,9 +51,18 @@ export interface FlowChartVersion {
   createdAt?: number;
 }
 
-/** The two published versions, in the order they appear in the registry. */
+/**
+ * The published versions, in the order they appear in the registry. The first
+ * one is the default selection:
+ *   • 'report-faithful' — 1:1 the report figures (some levers carry no
+ *     indicator, exactly as drawn);
+ *   • 'report'          — the *enhanced* board, where every lever/outcome was
+ *     given an indicator chip (beta or reused ECNO series); and
+ *   • 'beta'            — the enhanced board + the adaptation & resilience layer.
+ */
 const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
-  { id: 'report', name: 'ESABCC report (default)', variant: 'report', builtIn: true },
+  { id: 'report-faithful', name: 'ESABCC report (default)', variant: 'report', builtIn: true },
+  { id: 'report', name: 'Enhanced flow charts', variant: 'report', builtIn: true },
   { id: 'beta', name: 'Beta — adaptation & resilience', variant: 'beta', builtIn: true },
 ];
 
@@ -64,6 +77,7 @@ const registryKey = (projectId: string) => `esabcc-flowchart-registry:${projectI
 
 /** localStorage key holding a given version's editable board. */
 export function boardStorageKey(version: FlowChartVersion, projectId: string): string {
+  if (version.id === 'report-faithful') return `esabcc-framework-board-report:${projectId}`;
   if (version.id === 'report') return `esabcc-framework-board:${projectId}`;
   if (version.id === 'beta') return `esabcc-framework-board-beta:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
@@ -109,6 +123,7 @@ function writeBoard(key: string, board: FrameworkBoard): void {
  *     if the seed was lost.
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
+  if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
   if (version.id === 'report') return defaultFrameworkBoard();
   if (version.id === 'beta') return defaultFrameworkBoardBeta();
   return (
