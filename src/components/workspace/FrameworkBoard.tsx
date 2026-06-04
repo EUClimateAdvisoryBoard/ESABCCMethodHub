@@ -19,12 +19,16 @@ import type { Indicator } from '@/data/ecno-indicators';
 import {
   defaultFrameworkBoard,
   defaultFrameworkBoardBeta,
-  FRAMEWORK_BOARD_VERSION,
-  FRAMEWORK_BOARD_BETA_VERSION,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
   type SectorFramework,
 } from '@/data/sector-frameworks';
+import {
+  boardSchemaVersion,
+  boardStorageKey,
+  defaultBoardFor,
+  type FlowChartVersion,
+} from '@/lib/project-workspace/flowchart-versions';
 import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/SectorFlow';
 import OverviewFigure from '@/components/frameworks/OverviewFigure';
 import IndicatorDetail from '@/components/frameworks/IndicatorDetail';
@@ -38,24 +42,27 @@ interface Props {
   /** Distinct localStorage namespace (per project). */
   projectId: string;
   /**
-   * 'report' (default) renders the six published ESABCC assessment frameworks.
-   * 'beta' renders a copy of those frameworks with an added
-   * adaptation-and-resilience layer (extra outcomes, levers and enabling
-   * conditions tagged as adaptation, plus the beta adaptation indicators).
+   * The flow-chart version this board renders. Built-in versions are the
+   * published report frameworks ('report') and the report + adaptation-layer
+   * beta board ('beta'); custom versions are copies a user has started from one
+   * of those (or from another custom version) and edited freely.
    */
-  variant?: 'report' | 'beta';
+  version: FlowChartVersion;
 }
 
-export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, variant = 'report' }: Props) {
-  const isBeta = variant === 'beta';
-  const boardVersion = isBeta ? FRAMEWORK_BOARD_BETA_VERSION : FRAMEWORK_BOARD_VERSION;
-  const makeDefault = useCallback(
+export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, version }: Props) {
+  const isBeta = version.variant === 'beta';
+  const boardVersion = boardSchemaVersion(version);
+  const storageKey = boardStorageKey(version, projectId);
+  // Initial state is the variant's published default so server and first client
+  // render match (the saved board / custom-version content is loaded on mount,
+  // mirroring how built-in boards already flash from default to saved edits).
+  const pureDefault = useCallback(
     () => (isBeta ? defaultFrameworkBoardBeta() : defaultFrameworkBoard()),
     [isBeta],
   );
-  const storageKey = `esabcc-framework-board${isBeta ? '-beta' : ''}:${projectId}`;
   const [mounted, setMounted] = useState(false);
-  const [board, setBoard] = useState<Board>(() => makeDefault());
+  const [board, setBoard] = useState<Board>(() => pureDefault());
   const [editing, setEditing] = useState(false);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
@@ -78,11 +85,17 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
       const raw = localStorage.getItem(storageKey);
       if (raw) {
         const parsed = JSON.parse(raw) as Board;
-        if (parsed.version === boardVersion && Array.isArray(parsed.sectors)) setBoard(parsed);
+        if (parsed.version === boardVersion && Array.isArray(parsed.sectors)) {
+          setBoard(parsed);
+          return;
+        }
       }
     } catch {
       /* ignore */
     }
+    // No (valid) saved board yet. Custom versions start from their seed
+    // snapshot; built-ins keep the published default already in state.
+    if (!version.builtIn) setBoard(defaultBoardFor(version, projectId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [storageKey]);
 
@@ -143,10 +156,14 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   const expandAll = () => setExpanded(new Set(allExpanded ? [] : board.sectors.map((s) => s.id)));
 
   const resetBoard = () => {
-    const msg = isBeta
-      ? 'Reset the beta flow charts (report frameworks + adaptation layer)? Your edits will be lost.'
-      : 'Reset all sector frameworks to the published report version? Your edits will be lost.';
-    if (confirm(msg)) setBoard(makeDefault());
+    const msg = version.builtIn
+      ? isBeta
+        ? 'Reset the beta flow charts (report frameworks + adaptation layer)? Your edits will be lost.'
+        : 'Reset all sector frameworks to the published report version? Your edits will be lost.'
+      : `Reset “${version.name}” to the copy it started from${
+          version.basedOnName ? ` (${version.basedOnName})` : ''
+        }? Your edits to this version will be lost.`;
+    if (confirm(msg)) setBoard(defaultBoardFor(version, projectId));
   };
 
   const drawerIndicators = useMemo(() => (drawer ? resolve(drawer.indicatorIds) : []), [drawer, resolve]);
@@ -205,8 +222,13 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
         <button
           onClick={resetBoard}
           className="text-xs font-semibold px-3 py-1.5 rounded-md border border-grey-200 text-red-600 hover:border-red-300"
+          title={
+            version.builtIn
+              ? 'Restore this version to its published content'
+              : 'Restore this version to the copy it was created from'
+          }
         >
-          Reset to report
+          {version.builtIn ? 'Reset to published' : 'Reset to original copy'}
         </button>
       </div>
 
@@ -286,7 +308,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
                     allIndicators={allIndicators}
                     onChange={updateSector}
                     onOpenIndicator={setDrawer}
-                    variant={variant}
+                    variant={version.variant}
                   />
                 </div>
               )}

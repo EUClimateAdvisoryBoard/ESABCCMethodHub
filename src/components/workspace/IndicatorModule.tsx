@@ -39,7 +39,7 @@ import IndicatorDataEditor from './IndicatorDataEditor';
 import IndicatorHistory from './IndicatorHistory';
 import DownloadMenu from './DownloadMenu';
 import CollaborationPanel from './CollaborationPanel';
-import FrameworkBoard from './FrameworkBoard';
+import FlowChartVersions from './FlowChartVersions';
 import { buildExportProvenance, type SheetSpec, type DocBlock } from '@/lib/exports';
 
 ChartJS.register(
@@ -107,8 +107,9 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   // project id broke when the project was created with a different id.)
   const showFrameworks = initial.some((i) => i.id.startsWith('esabcc-'));
   // The flow-chart overview is the landing view — the frameworks are what
-  // motivate the indicators, so users see them first.
-  const [view, setView] = useState<'indicators' | 'flowcharts' | 'flowcharts-beta'>(
+  // motivate the indicators, so users see them first. The beta board is no
+  // longer a separate tab: it is one of the versions in the flow-chart registry.
+  const [view, setView] = useState<'indicators' | 'flowcharts'>(
     showFrameworks ? 'flowcharts' : 'indicators'
   );
   const [editorOpen, setEditorOpen] = useState(false);
@@ -365,30 +366,11 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
           >
             Flow charts
           </button>
-          <button
-            type="button"
-            onClick={() => setView('flowcharts-beta')}
-            className={`px-3 py-1.5 rounded-md text-xs font-semibold inline-flex items-center gap-1 ${
-              view === 'flowcharts-beta' ? 'bg-primary text-white' : 'text-tertiary-dark hover:bg-grey-50'
-            }`}
-            title="Copy of the report flow charts with an added adaptation & resilience layer"
-          >
-            Flow charts (beta)
-            <span
-              className={`text-[9px] uppercase font-bold rounded px-1 ${
-                view === 'flowcharts-beta' ? 'bg-white/25 text-white' : 'bg-teal-100 text-teal-700'
-              }`}
-            >
-              β
-            </span>
-          </button>
         </div>
       )}
 
-      {showFrameworks && (view === 'flowcharts' || view === 'flowcharts-beta') ? (
-        <FrameworkBoard
-          key={view}
-          variant={view === 'flowcharts-beta' ? 'beta' : 'report'}
+      {showFrameworks && view === 'flowcharts' ? (
+        <FlowChartVersions
           projectId={projectId}
           allIndicators={indicators}
           onOpenInList={(id) => {
