@@ -1,6 +1,6 @@
 {
   "date": "2026-06-05",
-  "generatedAt": "2026-06-05T13:56:56.777Z",
+  "generatedAt": "2026-06-05T18:59:22.917Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 5 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -23,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Global equity fund inflows at 3-week high as AI optimism boosts sentiment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPNElMN1p4Mml3cHliU2ZkbnR6Ni1fYXZyam1nRGF5NGdCOWZiQTZ1QzdLYUpLeko0TkpXemJzVnpFV1FNbDRhRkdTN25uVmJ4UjZ5S1dpZ2xWa05VenEzT2trM2tvZC1Wcm55U1N0V1AwUUZyUjdEYzZGOGhSakJ0cFpn?oc=5\" target=\"_blank\"&gt;Global equity fund inflows at 3-week high as AI optimism boosts sentiment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "EU-Western Balkans Summit highlights enlargement as a strategic investment in Europe's peace, stability and security",
+      "summary": "European Commission Press release Tivat, 05 Jun 2026 Today, President of the European Commission Ursula von der Leyen, President of the European Council António Costa and President of the European Parliament Roberta Metsola joined leaders from Member States and the six Western Balkan partners at the EU-Western Balkans Summit. The Summit was hosted by Montenegro in Tivat. Leaders took stock of the region's progress on its European path and discussed the priorities ahead.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -65,14 +65,6 @@
           "score": 13
         },
         {
-          "title": "California and New York weaken climate rules as red states ramp up green energy",
-          "link": "https://www.theguardian.com/environment/2026/jun/04/climate-crisis-blue-states-california-new-york",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Republican-led states growing renewable capabilities at faster rate as Texas emerges as clean-energy leader&lt;/p&gt;&lt;p&gt;Democratic-led states are eroding their climate policies, as red states are scaling up their clean energy deployment.&lt;/p&gt;&lt;p&gt;California on Friday scaled back its cap-and-invest program, offering more than $3bn in free pollution allowances to polluting companies. Earlier the same week, New York weakened its groundbreaking climate law, delaying a plan to",
-          "published": "2026-06-04T16:00:10.000Z",
-          "score": 11
-        },
-        {
           "title": "Scramble for biofuel as oil prices rise ‘could push world closer to food crisis’",
           "link": "https://www.theguardian.com/environment/2026/jun/05/biofuel-alternatives-oil-price-rises-world-food-crisis",
           "source": "The Guardian - Energy",
@@ -85,7 +77,15 @@
           "link": "https://www.dw.com/en/north-korea-quietly-ramps-up-its-nuclear-program/a-77438060?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "With Washington&#039;s attention elsewhere, North Korea has slowly been building up its nuclear weapons program. This week, Kim Jong Un took a publicity tour of a new nuclear fuel facility while promising to build more bombs.",
-          "published": "2026-06-05T13:47:00.000Z",
+          "published": "2026-06-05T15:25:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Egypt to cut red tape for business and list up to four state firms, minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSUtNRGQ5RWVSSFAycGF5YktJeGlENHdoMGZhMWFmcTNmYWNWeWxZNmpwYU91aUFHdnpQY1U2ZmUtT1dja0pMT19uRXBFdTB6dDNRdDBrbnZHcVJoQmFocXZFMHhMYjhJWmU1Q3F2SjV4Q3lWQXpaQUk5SWxwWHlGT2NOTFBkVVdneDhKYXpfbXloRjFIUXF4dmR0YnMxM1NZR0FaUGI3UWJDZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSUtNRGQ5RWVSSFAycGF5YktJeGlENHdoMGZhMWFmcTNmYWNWeWxZNmpwYU91aUFHdnpQY1U2ZmUtT1dja0pMT19uRXBFdTB6dDNRdDBrbnZHcVJoQmFocXZFMHhMYjhJWmU1Q3F2SjV4Q3lWQXpaQUk5SWxwWHlGT2NOTFBkVVdneDhKYXpfbXloRjFIUXF4dmR0YnMxM1NZR0FaUGI3UWJDZw?oc=5\" target=\"_blank\"&gt;Egypt to cut red tape for business and list up to four state firms, minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-05T06:19:00.000Z",
           "score": 7
         }
       ]
@@ -111,6 +111,14 @@
           "score": 16
         },
         {
+          "title": "IPCC at the 2026 June Climate Meetings",
+          "link": "https://www.ipcc.ch/2026/06/05/ipcc-at-sb64-unfccc/",
+          "source": "IPCC",
+          "description": "GENEVA, June 5 &#8211; The Intergovernmental Panel on Climate Change (IPCC) will participate in the 64th session of the Subsidiary Bodies (SBs) of the United Nations Framework Convention on Climate Change (UNFCCC), also known as the June Climate Meetings. &#160;The meetings are taking place in Bonn, Germany, from 8 to 18 June 2026. &#160; The [&#8230;]",
+          "published": "2026-06-05T15:22:05.000Z",
+          "score": 11
+        },
+        {
           "title": "A disease of deforestation: how Ebola is linked to the smartphone in your pocket",
           "link": "https://www.theguardian.com/world/2026/jun/05/ebola-mineral-mining-smartphones-congo",
           "source": "The Guardian - Climate",
@@ -125,14 +133,6 @@
           "description": "The four chicks, which hatched from the eggs, are being cared for until they are old and strong enough to be released.",
           "published": "2026-06-05T05:15:48.000Z",
           "score": 7
-        },
-        {
-          "title": "Kushner-backed luxury resort plan sparks protests in Albania",
-          "link": "https://www.bbc.com/news/articles/c3r2rdjv2n1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Demonstrators say the project backed by Donald Trump's son-in-law would harm a protected environment.",
-          "published": "2026-06-04T14:33:21.000Z",
-          "score": 6
         }
       ]
     },
@@ -141,19 +141,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
+          "title": "EU-Western Balkans Summit highlights enlargement as a strategic investment in Europe's peace, stability and security",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1275",
+          "source": "European Commission",
+          "description": "European Commission Press release Tivat, 05 Jun 2026 Today, President of the European Commission Ursula von der Leyen, President of the European Council António Costa and President of the European Parliament Roberta Metsola joined leaders from Member States and the six Western Balkan partners at the EU-Western Balkans Summit. The Summit was hosted by Montenegro in Tivat. Leaders took stock of the region's progress on its European path and discussed the priorities ahead.",
+          "published": "2026-06-05T08:14:44.000Z",
+          "score": 18
+        },
+        {
           "title": "Global equity fund inflows at 3-week high as AI optimism boosts sentiment - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNElMN1p4Mml3cHliU2ZkbnR6Ni1fYXZyam1nRGF5NGdCOWZiQTZ1QzdLYUpLeko0TkpXemJzVnpFV1FNbDRhRkdTN25uVmJ4UjZ5S1dpZ2xWa05VenEzT2trM2tvZC1Wcm55U1N0V1AwUUZyUjdEYzZGOGhSakJ0cFpn?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPNElMN1p4Mml3cHliU2ZkbnR6Ni1fYXZyam1nRGF5NGdCOWZiQTZ1QzdLYUpLeko0TkpXemJzVnpFV1FNbDRhRkdTN25uVmJ4UjZ5S1dpZ2xWa05VenEzT2trM2tvZC1Wcm55U1N0V1AwUUZyUjdEYzZGOGhSakJ0cFpn?oc=5\" target=\"_blank\"&gt;Global equity fund inflows at 3-week high as AI optimism boosts sentiment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-05T10:37:05.000Z",
-          "score": 2
-        },
-        {
-          "title": "UK running out of time to boost defence as investment plan stalls, military chief warns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQWY1MnZnQTVqRm5QNWpaY05UbjluaTQwUFpSQk9scmQxQU5IMEozcWNCNERTNW1CM2lPdjFXNkNwNEc4aGJoVDBTTFRhZ3BtNm03bTNEaDRqVXhxU0JYcGQ5Qnpqbmtabklka1h4bThNSnZwNkltbG1RZWZtXzZBYVlWOTZJM3JiNFhBeWJUTU00ZndtaklwZDg1QnlhZ2d6d3ZPZjIxRHRhTjRNbGNxWl96SDRQNEpCV3MzN21BQjVlQWx2cFkxOUV5VFdSUXdScGJlazFIQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQWY1MnZnQTVqRm5QNWpaY05UbjluaTQwUFpSQk9scmQxQU5IMEozcWNCNERTNW1CM2lPdjFXNkNwNEc4aGJoVDBTTFRhZ3BtNm03bTNEaDRqVXhxU0JYcGQ5Qnpqbmtabklka1h4bThNSnZwNkltbG1RZWZtXzZBYVlWOTZJM3JiNFhBeWJUTU00ZndtaklwZDg1QnlhZ2d6d3ZPZjIxRHRhTjRNbGNxWl96SDRQNEpCV3MzN21BQjVlQWx2cFkxOUV5VFdSUXdScGJlazFIQQ?oc=5\" target=\"_blank\"&gt;UK running out of time to boost defence as investment plan stalls, military chief warns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color",
-          "published": "2026-06-05T10:05:53.000Z",
           "score": 2
         }
       ]
@@ -163,12 +163,12 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "German asylum benefits cuts violate EU law, top court rules",
-          "link": "https://www.dw.com/en/german-asylum-benefits-cuts-violate-eu-law-top-court-rules/a-77424233?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "In a victory for rejected asylum-seekers, the European Court of Justice has ruled they must be given more than just the bare minimum to survive. But as the EU&#039;s new migration pact kicks in, will relief be short-lived?",
-          "published": "2026-06-04T16:13:00.000Z",
-          "score": 12
+          "title": "Minutes - Tuesday, 24 March 2026 - PE787.795v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-03-24-1_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-05T12:03:01.000Z",
+          "score": 18
         },
         {
           "title": "EU to advance expansion plans at Balkans summit",
@@ -179,11 +179,11 @@
           "score": 8
         },
         {
-          "title": "Ukraine's Zelenskiy pledges clear timetable of talks on EU membership - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPUVk0TGYwT1RXYlhXMVdlZHVlcmxWTEd4cXl2TW13Um9yZGU5RGlhWFZ4VDdYWlFDUlFQV2NVYzY2ZVdWMGNIS2ZpLUZySXNEaG4wUHFyWEZ3T1hzTW1ZYXBFU0VjdVg1TldnTWcyM0pQRkJfdE5GZTh6OGluNlVQMm5nUWp6R1laOWxETkQyYUxGZTdMbThwVEU2ZHNSY3FRSVQ2WDRxYw?oc=5",
+          "title": "All EU members greenlight first step in accession talks, Ukraine PM says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ05YVkg4eVFvSHlKUV9ERUNZMWJ2bHNsYVZjXzNhc01PamhuVG5NREZpaldXWWlSbmc0azVqbC1wYVBhc29pMFV0dGRzYjF1T3RSU3lFWmxCamI0RlRfYmxfU3pQMU5tYWZQMmRzV1BQUVg5Z1QzVUFzbEUzVngwZjVnMENzaDJEUmpuOElVOXl4dkFURnlFelVVQXhsM0tTTm8tZWlYTmVEUExFTDllQzlqR1VtdkV4?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPUVk0TGYwT1RXYlhXMVdlZHVlcmxWTEd4cXl2TW13Um9yZGU5RGlhWFZ4VDdYWlFDUlFQV2NVYzY2ZVdWMGNIS2ZpLUZySXNEaG4wUHFyWEZ3T1hzTW1ZYXBFU0VjdVg1TldnTWcyM0pQRkJfdE5GZTh6OGluNlVQMm5nUWp6R1laOWxETkQyYUxGZTdMbThwVEU2ZHNSY3FRSVQ2WDRxYw?oc=5\" target=\"_blank\"&gt;Ukraine's Zelenskiy pledges clear timetable of talks on EU membership&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-04T19:04:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQQ05YVkg4eVFvSHlKUV9ERUNZMWJ2bHNsYVZjXzNhc01PamhuVG5NREZpaldXWWlSbmc0azVqbC1wYVBhc29pMFV0dGRzYjF1T3RSU3lFWmxCamI0RlRfYmxfU3pQMU5tYWZQMmRzV1BQUVg5Z1QzVUFzbEUzVngwZjVnMENzaDJEUmpuOElVOXl4dkFURnlFelVVQXhsM0tTTm8tZWlYTmVEUExFTDllQzlqR1VtdkV4?oc=5\" target=\"_blank\"&gt;All EU members greenlight first step in accession talks, Ukraine PM says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-05T05:49:37.000Z",
           "score": 8
         }
       ]
@@ -209,14 +209,6 @@
           "score": 8
         },
         {
-          "title": "EU seeking ways to speed up Western Balkans membership",
-          "link": "https://www.dw.com/en/eu-seeking-ways-to-speed-up-western-balkans-membership/a-77424398?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "European Council President Antonio Costa said new ways need to be found to speed up Western Balkans membership in the EU. His comments come ahead of an upcoming summit in Montenegro.",
-          "published": "2026-06-04T15:00:00.000Z",
-          "score": 8
-        },
-        {
           "title": "White House to replace National Security Council's Europe chief amid broader shake-up - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOE13SXcyeUcwVFVRU2JEOUhCX2o3QXdQUnR5VllDRWp6bGpUeGtaeDN0SW03WENieW5Xc0xnLVBINk5KVG44MWZZXzJDS25NVnVmaS1fSThkZG9mLVZVUmQtcnBoOFZzMWRwOWxhZHplUXdTaklNNTllTEtXMTNnVjhEb19uQVdGR2R3WU5VR0dSX1pZb2Z3RzUwZ1FvSG9KQ3laV0o3cm1NZWJNMk00ODNMRW5zalJCUmFSVw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -231,14 +223,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxONkhrX3BaeUsxQ0lvQ09tWGFNQ01MWUExQ2YyeEtFV3VQVHEtSFpsbUFSWTlQZEVZTkZoc2lHSm8tU19kSDF0dzdNSEtqRTFmeVBDTkFCX2p0cTZ0NjhXSGxJTVpNNmZ3MXFsOFExamdKaG1pYTR6WXJsMHFWNC1XSnFWQV9WZjVnSWFtMzFvOFpNOWVkcGVmMkdXcEFCRlhXMXNB?oc=5\" target=\"_blank\"&gt;EU considers limiting protection for Ukrainian men of fighting age&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-04T22:12:04.000Z",
           "score": 8
+        },
+        {
+          "title": "EU weighs rules to cut reliance on China through broader supply chains - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEtXOEp1UWFPTWdvYTJmU1R0Wk1GU3RVNk9WYmhUMVNRY2ZpMXFKb3JPYUVtT0U2TWExN0tadnA5cnktZXllb0l0NWp5eGVqaENfNFlWM2t1MVdKV19xaDN3UENlZHJKYU5yZV9mb2pIaEZLalJ0TmlKYzloQ1NveFhRMVRqbmtOZ0hSX09uTFlxekU1OGVDbHdyVG56dHNHNXd1TjBFbFZrV20xUGZqeU1R?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEtXOEp1UWFPTWdvYTJmU1R0Wk1GU3RVNk9WYmhUMVNRY2ZpMXFKb3JPYUVtT0U2TWExN0tadnA5cnktZXllb0l0NWp5eGVqaENfNFlWM2t1MVdKV19xaDN3UENlZHJKYU5yZV9mb2pIaEZLalJ0TmlKYzloQ1NveFhRMVRqbmtOZ0hSX09uTFlxekU1OGVDbHdyVG56dHNHNXd1TjBFbFZrV20xUGZqeU1R?oc=5\" target=\"_blank\"&gt;EU weighs rules to cut reliance on China through broader supply chains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-05T15:51:54.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 372,
-    "articlesLast24h": 165,
-    "afterDedup": 156,
+    "totalArticlesScanned": 398,
+    "articlesLast24h": 169,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
