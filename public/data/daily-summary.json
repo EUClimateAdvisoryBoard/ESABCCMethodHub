@@ -1,6 +1,6 @@
 {
   "date": "2026-06-05",
-  "generatedAt": "2026-06-05T00:12:56.110Z",
+  "generatedAt": "2026-06-05T08:47:50.058Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 5 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,10 +17,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Bathing warning lifted after pollution investigation",
-      "summary": "Officials say the water at Portstewart Strand does not pose a risk to the public.",
+      "headline": "'It's a very big deal' - curlew eggs hatch after being saved from wildfire",
+      "summary": "The four chicks, which hatched from the eggs, are being cared for until they are old and strong enough to be released.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Blackstone private credit fund caps withdrawals as redemption requests jump - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxON1huNXhLMFFvODlLdHlNeXlQMkdld1FlbUM0MGswOHdTbjMzTFRKci1neXlLdGh1RG1Ra3ZqdXJKTXJaQWpFUk44dHlyTFhiRHdWOG5jTk9QSzlCY0xnUTByNEJvWVBIVjRrM0RqRUhLYmdpeEk3dFlkcnlmLTR0aFJFSW5DekVrX2RuUWktOGdrVFlwUy0yX2ZyX0NmNWxFaGdn?oc=5\" target=\"_blank\"&gt;Blackstone private credit fund caps withdrawals as redemption requests jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -51,19 +57,27 @@
           "score": 11
         },
         {
+          "title": "Scramble for biofuel as oil prices rise ‘could push world closer to food crisis’",
+          "link": "https://www.theguardian.com/environment/2026/jun/05/biofuel-alternatives-oil-price-rises-world-food-crisis",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Experts say increased use of crops for fuel is ‘dangerous game’ that could send food price inflation soaring&lt;/p&gt;&lt;p&gt;Demand for biofuels is likely to leap by nearly a third this year, which could send food price inflation soaring further and push the world closer to a &lt;a href=\"https://www.theguardian.com/global-development/2026/may/19/fertiliser-supplies-global-food-crisis-yvette-cooper\"&gt;global food crisis&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;More countries are opting to increas",
+          "published": "2026-06-05T04:00:26.000Z",
+          "score": 7
+        },
+        {
+          "title": "Chinese battery maker CATL expects energy storage to make up half of global sales by 2030 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQc0h2SWtZckhIbjQ1V2VLZTVVQUhfeVNid3hxZ0xVR1RoWnl5TmhGajJWQ2l5bExiUGhMdVd2ZkJYRGJxLURhc19FcnhfOWpJUEV0VHlBZ0dESWFtTlpfN1VrMVJZNndUTXNjREY4Q0QwR1NteTZPM1BOcTdMVnhGQTZjT1FqbUU0Rk5pV0ZoX09kODczNWRGUDRNU29qVEJINGZ2YWpYcHBCeHFWM0xXS3FxSGtZQVVUaVliYm9BX2R2ZHp1RzVaX0JR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQc0h2SWtZckhIbjQ1V2VLZTVVQUhfeVNid3hxZ0xVR1RoWnl5TmhGajJWQ2l5bExiUGhMdVd2ZkJYRGJxLURhc19FcnhfOWpJUEV0VHlBZ0dESWFtTlpfN1VrMVJZNndUTXNjREY4Q0QwR1NteTZPM1BOcTdMVnhGQTZjT1FqbUU0Rk5pV0ZoX09kODczNWRGUDRNU29qVEJINGZ2YWpYcHBCeHFWM0xXS3FxSGtZQVVUaVliYm9BX2R2ZHp1RzVaX0JR?oc=5\" target=\"_blank\"&gt;Chinese battery maker CATL expects energy storage to make up half of global sales by 2030&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Re",
+          "published": "2026-06-04T09:59:59.000Z",
+          "score": 7
+        },
+        {
           "title": "Trump uses wartime powers to dole out $700m to ‘clean, beautiful’ coal",
           "link": "https://www.theguardian.com/us-news/2026/jun/04/trump-coal-defense-production-act",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;US president announces plans for two new coal plants, in Alaska and West Virginia, using Defense Production Act&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt; is using wartime presidential authority to hand $700m to coal-fired power plants in the US, the latest move by the president to bolster what he called “clean, beautiful coal”, despite it being the dirtiest of fossil fuels.&lt;/p&gt;&lt;p&gt;“Today, we’re taking historic act",
           "published": "2026-06-04T20:22:10.000Z",
-          "score": 4
-        },
-        {
-          "title": "‘Waste colonialism’: Fiji says no to Australian billionaire’s incineration plan",
-          "link": "https://www.theguardian.com/world/2026/jun/04/fiji-offshore-rubbish-waste-government-rejects-australian-billionaire-pacific-ashtray-plan",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Government rejects offshore rubbish being shipped to Fiji and burned after opposition from traditional landowners and tourism operators&lt;/p&gt;&lt;p&gt;The Fijian government has rejected a &lt;a href=\"https://www.theguardian.com/world/2026/apr/23/waste-incinerator-fiji-plan-australians-ian-malouf-rob-cromb-kookai\"&gt;plan by an Australian billionaire to burn rubbish for energy&lt;/a&gt; in Fiji after backlash from traditional landowners and tourism operators.&lt;/p&gt;&lt;p&gt;The pla",
-          "published": "2026-06-04T03:53:22.000Z",
           "score": 4
         },
         {
@@ -81,11 +95,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Bathing warning lifted after pollution investigation",
-          "link": "https://www.bbc.com/news/articles/ckgprrmmzj9o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "'It's a very big deal' - curlew eggs hatch after being saved from wildfire",
+          "link": "https://www.bbc.com/news/articles/c4g0nj9pg60o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Officials say the water at Portstewart Strand does not pose a risk to the public.",
-          "published": "2026-06-04T13:23:23.000Z",
+          "description": "The four chicks, which hatched from the eggs, are being cared for until they are old and strong enough to be released.",
+          "published": "2026-06-05T05:15:48.000Z",
           "score": 7
         },
         {
@@ -105,27 +119,36 @@
           "score": 4
         },
         {
-          "title": "‘An equal and habitable world is possible’: academics set out sweeping vision for planetary survival",
-          "link": "https://www.theguardian.com/environment/2026/jun/04/world-inequality-lab-equality-academics-planetary-survival",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Global report provides an alternative to climate breakdown, political extremism and economic tensions&lt;/p&gt;&lt;p&gt;• &lt;a href=\"https://www.theguardian.com/environment/2026/jun/04/happiness-is-not-just-about-gdp-ambitious-plan-or-utopia\"&gt;‘Happiness is not just about GDP’: ambitious plan or utopia?&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Humanity can raise living standards, reduce inequality and keep global heating within a 2C rise, according to a sweeping vision for planetary survival.&lt;",
-          "published": "2026-06-04T06:00:28.000Z",
-          "score": 4
-        },
-        {
           "title": "Mangrove forests are healing after decades of human destruction",
           "link": "https://www.bbc.com/news/articles/cn4pk07npvvo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Swampy mangrove forests are staging a surprise comeback - which is good news for coastal communities and the climate.",
           "published": "2026-06-04T23:11:15.000Z",
           "score": 4
+        },
+        {
+          "title": "Henry Moore works to be unveiled at botanic garden",
+          "link": "https://www.bbc.com/news/articles/ce3pdd4qkdqo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The botanic garden says the pieces aim to encourage visitors to reflect on nature and humanity.",
+          "published": "2026-06-05T05:22:21.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Blackstone private credit fund caps withdrawals as redemption requests jump - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxON1huNXhLMFFvODlLdHlNeXlQMkdld1FlbUM0MGswOHdTbjMzTFRKci1neXlLdGh1RG1Ra3ZqdXJKTXJaQWpFUk44dHlyTFhiRHdWOG5jTk9QSzlCY0xnUTByNEJvWVBIVjRrM0RqRUhLYmdpeEk3dFlkcnlmLTR0aFJFSW5DekVrX2RuUWktOGdrVFlwUy0yX2ZyX0NmNWxFaGdn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxON1huNXhLMFFvODlLdHlNeXlQMkdld1FlbUM0MGswOHdTbjMzTFRKci1neXlLdGh1RG1Ra3ZqdXJKTXJaQWpFUk44dHlyTFhiRHdWOG5jTk9QSzlCY0xnUTByNEJvWVBIVjRrM0RqRUhLYmdpeEk3dFlkcnlmLTR0aFJFSW5DekVrX2RuUWktOGdrVFlwUy0yX2ZyX0NmNWxFaGdn?oc=5\" target=\"_blank\"&gt;Blackstone private credit fund caps withdrawals as redemption requests jump&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-04T17:08:10.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -138,14 +161,6 @@
           "description": "In a victory for rejected asylum-seekers, the European Court of Justice has ruled they must be given more than just the bare minimum to survive. But as the EU&#039;s new migration pact kicks in, will relief be short-lived?",
           "published": "2026-06-04T16:13:00.000Z",
           "score": 12
-        },
-        {
-          "title": "Germany blames Russia for 'bitter defeat' in UN Security Council bid",
-          "link": "https://www.bbc.com/news/articles/cgmp3pg71edo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Johann Wadephul said it was \"no secret\" Russia had stirred up sentiment against Germany over its support for Ukraine.",
-          "published": "2026-06-04T01:02:24.000Z",
-          "score": 8
         }
       ]
     },
@@ -153,6 +168,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNd2d6OElSLW9aQzVoaTVmZUFjSVhkUzB6bWxVcHpiQ2JyYnNmRUFjWmhsUDFfczFNalkwMERzbnNpSXFBQjhjRnFHV242RElYdDFZdFBDemUzc1hsSU40WmloSkxCRDFwWTh6OTcwa1pNblQyanh5UDNPQUk0TWZVV3BVSDZMODlXQnhqU1FvclRlcHJUclYtY3RmenN1OTRKM3JoNEFWYkt2SVQxdHR1aDZqeGxUSDZlU0hZWWNTTFp6MDFMWUxuQ1VqYzB6Y3I2dnRsbg?oc=5\" target=\"_blank\"&gt;EU could lose 1.3 million jobs due to energy price surge linked to Iran war, Commission says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font colo",
+          "published": "2026-06-04T21:22:21.000Z",
+          "score": 13
+        },
+        {
+          "title": "What are EU social media alternatives to Instagram, TikTok?",
+          "link": "https://www.dw.com/en/what-are-eu-social-media-alternatives-to-instagram-tiktok/a-77398242?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Opaque algorithms, too little legal protection for minors, a lot of hate speech and disinformation: in Europe, US and Chinese social media platforms have long drawn criticism. Europe wants to go its own way — but how?",
+          "published": "2026-06-05T04:50:00.000Z",
+          "score": 8
+        },
         {
           "title": "EU seeking ways to speed up Western Balkans membership",
           "link": "https://www.dw.com/en/eu-seeking-ways-to-speed-up-western-balkans-membership/a-77424398?maca=en-rss-en-all-1573-xml-mrss",
@@ -176,30 +207,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOOWZ3dDFpUkhvdFBGei1tQ1lTYWhVRHpNbE5reHludXYydVh1Y1hyWUY1QlJnNjBpM211MFhrS3JET2o2VEFFUEdPQ3c2UDd4T1V1OUhWN0tONmRfYjE5MGF5UUNsbWh0azFoU0otdHBkN0t0b1ctVkViS3ljWWFJSW5BeEtBYllaV0czT0M4bFpLZC1WYU5CT0Y5Q09GTGEtZ3huUFlVNklOdW9IbFZ4dF84VQ?oc=5\" target=\"_blank\"&gt;EU preparing economic support package for Armenia after Russian pressure on it&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-04T10:24:09.000Z",
           "score": 8
-        },
-        {
-          "title": "Wall Street ends mixed as Broadcom drags tech, European stocks gain; oil dips - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPMGphS3NPLVBWc1FHMDZFdklTMS1VQ2tzOE5zQnlOaXJaUTdwcW13VjNfUkowNnljUmhDTUhuNy0xS05sdVNkTmZqS1F0dDVCYkoyR053M05IR1c5QWFyR0RrY3BDcEtFS0NaRFZxTkhER0N6eHByMlJLTzdBeW8yOFFYSQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPMGphS3NPLVBWc1FHMDZFdklTMS1VQ2tzOE5zQnlOaXJaUTdwcW13VjNfUkowNnljUmhDTUhuNy0xS05sdVNkTmZqS1F0dDVCYkoyR053M05IR1c5QWFyR0RrY3BDcEtFS0NaRFZxTkhER0N6eHByMlJLTzdBeW8yOFFYSQ?oc=5\" target=\"_blank\"&gt;Wall Street ends mixed as Broadcom drags tech, European stocks gain; oil dips&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-04T00:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "White House to replace National Security Council's Europe chief amid broader shake-up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQOE13SXcyeUcwVFVRU2JEOUhCX2o3QXdQUnR5VllDRWp6bGpUeGtaeDN0SW03WENieW5Xc0xnLVBINk5KVG44MWZZXzJDS25NVnVmaS1fSThkZG9mLVZVUmQtcnBoOFZzMWRwOWxhZHplUXdTaklNNTllTEtXMTNnVjhEb19uQVdGR2R3WU5VR0dSX1pZb2Z3RzUwZ1FvSG9KQ3laV0o3cm1NZWJNMk00ODNMRW5zalJCUmFSVw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQOE13SXcyeUcwVFVRU2JEOUhCX2o3QXdQUnR5VllDRWp6bGpUeGtaeDN0SW03WENieW5Xc0xnLVBINk5KVG44MWZZXzJDS25NVnVmaS1fSThkZG9mLVZVUmQtcnBoOFZzMWRwOWxhZHplUXdTaklNNTllTEtXMTNnVjhEb19uQVdGR2R3WU5VR0dSX1pZb2Z3RzUwZ1FvSG9KQ3laV0o3cm1NZWJNMk00ODNMRW5zalJCUmFSVw?oc=5\" target=\"_blank\"&gt;White House to replace National Security Council's Europe chief amid broader shake-up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-04T20:59:44.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 176,
-    "afterDedup": 159,
+    "totalArticlesScanned": 402,
+    "articlesLast24h": 165,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
