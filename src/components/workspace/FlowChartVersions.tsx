@@ -108,6 +108,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               β
             </span>
           )}
+          {active.variant === 'advanced' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-indigo-100 text-indigo-700">
+              adv
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
