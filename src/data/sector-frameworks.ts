@@ -35,6 +35,7 @@
 import { ESABCC_REPORT_INDICATORS } from './esabcc-indicators';
 import { ECNO_INDICATORS, type Indicator } from './ecno-indicators';
 import { ALL_BETA_INDICATORS } from './beta-indicators';
+import { ALL_ADVANCED_INDICATORS } from './advanced-indicators';
 
 export type EnablingKind = 'sector-specific' | 'cross-cutting' | 'not-assessed';
 
@@ -122,6 +123,14 @@ export const FRAMEWORK_BOARD_VERSION = 2;
  */
 export const FRAMEWORK_BOARD_BETA_VERSION = 1;
 
+/**
+ * Schema version of the "Advanced version 1" board (enhanced mitigation +
+ * a first-class, equal-weight adaptation track, wired to the high-quality
+ * advanced indicator set). Stored under its own localStorage key; bump to
+ * invalidate saved edits of the advanced board specifically.
+ */
+export const FRAMEWORK_BOARD_ADVANCED_VERSION = 1;
+
 // ── Indicator lookup ────────────────────────────────────────────────────────
 
 /**
@@ -132,7 +141,12 @@ export const FRAMEWORK_BOARD_BETA_VERSION = 1;
  * chance of a collision since they are listed first.
  */
 export const FRAMEWORK_INDICATOR_INDEX: Record<string, Indicator> = Object.fromEntries(
-  [...ECNO_INDICATORS, ...ALL_BETA_INDICATORS, ...ESABCC_REPORT_INDICATORS].map((i) => [i.id, i]),
+  [
+    ...ECNO_INDICATORS,
+    ...ALL_BETA_INDICATORS,
+    ...ALL_ADVANCED_INDICATORS,
+    ...ESABCC_REPORT_INDICATORS,
+  ].map((i) => [i.id, i]),
 );
 
 /** Resolve a list of indicator ids to the full indicator records. */
@@ -1002,6 +1016,430 @@ export function defaultFrameworkBoardBeta(): FrameworkBoard {
   // Deep-clone so the shared ADAPTATION_LAYERS objects aren't aliased into the
   // returned (editable) board.
   return JSON.parse(JSON.stringify({ version: FRAMEWORK_BOARD_BETA_VERSION, sectors })) as FrameworkBoard;
+}
+
+// ── Advanced board ("Advanced version 1") ─────────────────────────────────
+//
+// The advanced board deepens the enhanced report frameworks in two ways:
+//
+//   1. MITIGATION — it adds high-quality, long-historic-series indicator chips
+//      (the `advanced` group, e.g. the 2004– renewable share, the 2005– EU ETS
+//      series, the 2010– circular-material-use rate, EEA new-car CO₂, the
+//      declining Nature-2025 forest carbon sink) to existing outcomes/levers,
+//      and a few new mitigation levers; and
+//
+//   2. ADAPTATION — it grafts a RICHER per-sector adaptation & resilience
+//      sub-framework than the beta board: one or two adaptation outcomes plus
+//      two-to-three adaptation levers and an adaptation enabling condition per
+//      sector, wired to the high-quality `advanced-adaptation` series (economic
+//      losses 1980–, sea-level rise 1993–, EFFIS burnt area, heat mortality,
+//      West Nile cases, crop-loss severity, …). Adaptation therefore reads as a
+//      first-class track of equal weight to mitigation.
+//
+// All adaptation cards carry `track: 'adaptation'`; the advanced variant of the
+// board UI relabels the outcome/lever rows accordingly.
+
+/** Append-only advanced mitigation chips + new mitigation levers, per sector. */
+interface AdvancedMitigation {
+  /** extra chips appended to the sector goal. */
+  goal?: IndicatorRef[];
+  /** extra chips appended to specific outcomes, keyed by outcome id. */
+  outcomes?: Record<string, IndicatorRef[]>;
+  /** chips appended to specific levers, keyed by lever id. */
+  leversAdd?: Record<string, IndicatorRef[]>;
+  /** levers whose chips are REPLACED wholesale (supersede a weaker beta chip). */
+  leversSet?: Record<string, IndicatorRef[]>;
+  /** brand-new mitigation levers introduced by the advanced board. */
+  extraLevers?: FrameworkNode[];
+}
+
+function advancedMitigation(): Record<string, AdvancedMitigation> {
+  return {
+    energy: {
+      outcomes: {
+        'en-o1': [
+          refX('A-E2', 'Wind & solar share of electricity', ['adv-wind-solar-share']),
+          refX('A-E3', 'Fossil share of electricity', ['adv-fossil-power-share']),
+          refX('A-E4', 'Grid CO₂ intensity', ['adv-grid-co2-intensity']),
+        ],
+      },
+      leversAdd: {
+        'en-l2': [refX('A-E5', 'Energy-sector methane', ['adv-energy-methane'])],
+      },
+      extraLevers: [
+        {
+          id: 'en-adv-l1',
+          layer: 'lever',
+          label: 'Scale-up of renewable supply',
+          parents: ['en-o1'],
+          indicators: [refX('A-E1', 'Renewable share of final energy', ['adv-res-share-fec'])],
+        },
+      ],
+    },
+    industry: {
+      leversAdd: {
+        'in-l3': [refX('A-I2', 'Circular material use rate', ['adv-circular-material-use'])],
+      },
+      extraLevers: [
+        {
+          id: 'in-adv-l1',
+          layer: 'lever',
+          label: 'Carbon pricing & ETS coverage',
+          parents: ['in-o2'],
+          indicators: [refX('A-I1', 'EU ETS verified emissions', ['adv-eu-ets-emissions'])],
+        },
+      ],
+    },
+    transport: {
+      outcomes: {
+        'tr-o2': [refX('A-T2', 'BEV share of new cars', ['adv-bev-share'])],
+      },
+      leversAdd: {
+        'tr-l2': [refX('A-T4', 'Rail share of inland freight', ['adv-freight-rail-share'])],
+        'tr-l3': [refX('A-T2', 'BEV share of new cars', ['adv-bev-share'])],
+        'tr-l5': [refX('A-T3', 'Renewable energy in transport', ['adv-res-transport'])],
+      },
+      // The advanced EEA new-car CO₂ series supersedes the beta WLTP chip.
+      leversSet: {
+        'tr-l4': [refX('A-T1', 'Average CO₂ of new cars (WLTP)', ['adv-new-car-co2'])],
+      },
+    },
+    buildings: {
+      leversAdd: {
+        'bu-l5': [refX('A-B2', 'Annual heat pump sales', ['adv-heat-pump-sales'])],
+      },
+      extraLevers: [
+        {
+          id: 'bu-adv-l1',
+          layer: 'lever',
+          label: 'Tackle energy poverty (just transition)',
+          parents: ['bu-o1'],
+          indicators: [refX('A-B1', 'Inability to keep home warm', ['adv-energy-poverty'])],
+        },
+      ],
+    },
+    agriculture: {
+      leversAdd: {
+        'ag-l2': [refX('A-A2', 'Gross nitrogen balance', ['adv-nitrogen-balance'])],
+      },
+      extraLevers: [
+        {
+          id: 'ag-adv-l1',
+          layer: 'lever',
+          label: 'Organic & low-input farming',
+          parents: ['ag-o2'],
+          indicators: [refX('A-A1', 'Organic farming area share', ['adv-organic-farming'])],
+        },
+      ],
+    },
+    lulucf: {
+      goal: [refX('A-L1', 'Net LULUCF sink', ['adv-lulucf-net'])],
+      leversAdd: {
+        'lu-l4': [refX('A-L2', 'Forest carbon sink (declining)', ['adv-forest-sink-decline'])],
+      },
+      extraLevers: [
+        {
+          id: 'lu-adv-l1',
+          layer: 'lever',
+          label: 'Restore peatlands & organic soils',
+          parents: ['lu-o2'],
+          indicators: [refX('A-L3', 'Drained-peatland emissions', ['adv-peatland-emissions'])],
+        },
+      ],
+    },
+  };
+}
+
+/** Richer per-sector adaptation sub-frameworks for the advanced board. */
+function advancedAdaptationLayers(): Record<string, AdaptationLayer> {
+  return {
+    energy: {
+      outcomes: [
+        {
+          id: 'en-ad-o1',
+          label: 'Energy supply resilient to heat, drought & water stress',
+          note: 'EUCRA infrastructure cluster — risks to generation, transmission & cooling water (more action needed)',
+          indicators: [
+            ref('A-X10', 'Cooling degree days', ['adv-adapt-cooling-degree-days']),
+            ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei']),
+            ref('A-X2', 'Global temperature anomaly', ['adv-adapt-global-temp']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'en-ad-l1',
+          label: 'Cooling-water & drought management for thermal/hydropower',
+          parent: 'en-ad-o1',
+          indicators: [ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei'])],
+        },
+        {
+          id: 'en-ad-l2',
+          label: 'Grid & generation resilience to heat extremes',
+          parent: 'en-ad-o1',
+          indicators: [ref('A-X10', 'Cooling degree days', ['adv-adapt-cooling-degree-days'])],
+        },
+      ],
+      enabling: [
+        {
+          id: 'en-ad-e1',
+          kind: 'cross-cutting',
+          label: 'Climate-risk assessment & insurance of energy assets',
+          indicatorIds: ['adv-adapt-insurance-gap'],
+        },
+      ],
+    },
+    industry: {
+      outcomes: [
+        {
+          id: 'in-ad-o1',
+          label: 'Water- & climate-resilient production and supply chains',
+          note: 'EUCRA economy & finance cluster — risks to industrial output & supply chains',
+          indicators: [
+            ref('A-X1', 'Economic losses (long run)', ['adv-adapt-economic-losses']),
+            ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'in-ad-l1',
+          label: 'Industrial water-stress management',
+          parent: 'in-ad-o1',
+          indicators: [ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei'])],
+        },
+        {
+          id: 'in-ad-l2',
+          label: 'Risk transfer & insurance for climate losses',
+          parent: 'in-ad-o1',
+          indicators: [ref('A-X13', 'Insurance protection gap', ['adv-adapt-insurance-gap'])],
+        },
+      ],
+      enabling: [
+        { id: 'in-ad-e1', kind: 'cross-cutting', label: 'Supply-chain climate-risk management' },
+      ],
+    },
+    transport: {
+      outcomes: [
+        {
+          id: 'tr-ad-o1',
+          label: 'Climate-resilient transport infrastructure',
+          note: 'EUCRA infrastructure cluster — inland & coastal flooding among the 8 "urgent action needed" risks',
+          indicators: [
+            ref('A-X11', 'Coastal flood damage to transport', ['adv-adapt-coastal-transport-damage']),
+            ref('A-X3', 'Mean sea-level rise', ['adv-adapt-sea-level']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'tr-ad-l1',
+          label: 'Climate-proofing & maintenance of rail, road & ports',
+          parent: 'tr-ad-o1',
+          indicators: [ref('A-X11', 'Coastal flood damage to transport', ['adv-adapt-coastal-transport-damage'])],
+        },
+        {
+          id: 'tr-ad-l2',
+          label: 'Flood- & heat-risk reduction on networks',
+          parent: 'tr-ad-o1',
+          indicators: [ref('A-X12', 'River-flood damage', ['adv-adapt-river-flood-damage'])],
+        },
+      ],
+      enabling: [
+        { id: 'tr-ad-e1', kind: 'cross-cutting', label: 'Resilience standards in TEN-T planning' },
+      ],
+    },
+    buildings: {
+      outcomes: [
+        {
+          id: 'bu-ad-o1',
+          label: 'Heat-resilient buildings & population',
+          note: 'EUCRA health cluster — heat on human health is one of 8 "urgent action needed" risks',
+          indicators: [
+            ref('A-X4', 'Heat-related mortality', ['adv-adapt-heat-mortality']),
+            ref('A-X10', 'Cooling degree days', ['adv-adapt-cooling-degree-days']),
+          ],
+        },
+        {
+          id: 'bu-ad-o2',
+          label: 'Flood-safe built environment',
+          note: 'EUCRA infrastructure cluster — river & pluvial flooding (urgent action needed)',
+          indicators: [
+            ref('A-X12', 'River-flood damage', ['adv-adapt-river-flood-damage']),
+            ref('A-X1', 'Economic losses (long run)', ['adv-adapt-economic-losses']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'bu-ad-l1',
+          label: 'Passive cooling, shading & green infrastructure',
+          parent: 'bu-ad-o1',
+          indicators: [ref('A-X10', 'Cooling degree days', ['adv-adapt-cooling-degree-days'])],
+        },
+        {
+          id: 'bu-ad-l2',
+          label: 'Heat action plans & protection of vulnerable groups',
+          parent: 'bu-ad-o1',
+          indicators: [ref('A-X4', 'Heat-related mortality', ['adv-adapt-heat-mortality'])],
+        },
+        {
+          id: 'bu-ad-l3',
+          label: 'Flood-risk reduction & risk-informed siting',
+          parent: 'bu-ad-o2',
+          indicators: [ref('A-X12', 'River-flood damage', ['adv-adapt-river-flood-damage'])],
+        },
+        {
+          id: 'bu-ad-l4',
+          label: 'Vector-borne disease surveillance & early warning',
+          parent: 'bu-ad-o1',
+          indicators: [ref('A-X5', 'West Nile virus cases', ['adv-adapt-west-nile'])],
+        },
+      ],
+      enabling: [
+        {
+          id: 'bu-ad-e1',
+          kind: 'sector-specific',
+          label: 'Overheating & flood standards in building codes; local adaptation plans',
+          indicatorIds: ['adv-adapt-cities-plans'],
+        },
+      ],
+    },
+    agriculture: {
+      outcomes: [
+        {
+          id: 'ag-ad-o1',
+          label: 'Drought- & heat-resilient farming and food systems',
+          note: 'EUCRA food cluster — crop production is one of 8 "urgent action needed" risks',
+          indicators: [
+            ref('A-X8', 'Crop-loss severity (drought/heat)', ['adv-adapt-crop-loss']),
+            ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'ag-ad-l1',
+          label: 'Water-efficient irrigation & drought management',
+          parent: 'ag-ad-o1',
+          indicators: [ref('A-X7', 'Water scarcity (WEI+)', ['adv-adapt-wei'])],
+        },
+        {
+          id: 'ag-ad-l2',
+          label: 'Drought-/heat-tolerant crops & soil-moisture management',
+          parent: 'ag-ad-o1',
+          indicators: [ref('A-X8', 'Crop-loss severity (drought/heat)', ['adv-adapt-crop-loss'])],
+        },
+      ],
+      enabling: [
+        {
+          id: 'ag-ad-e1',
+          kind: 'sector-specific',
+          label: 'Crop diversification, insurance & early warning',
+          indicatorIds: ['adv-adapt-insurance-gap'],
+        },
+      ],
+    },
+    lulucf: {
+      outcomes: [
+        {
+          id: 'lu-ad-o1',
+          label: 'Resilient forests & ecosystems',
+          note: 'EUCRA ecosystems cluster — wildfire is one of 8 "urgent action needed" risks',
+          indicators: [
+            ref('A-X6', 'Area burnt by wildfires', ['adv-adapt-burnt-area']),
+            ref('A-X9', 'Forest canopy mortality', ['adv-adapt-forest-disturbance']),
+          ],
+        },
+      ],
+      levers: [
+        {
+          id: 'lu-ad-l1',
+          label: 'Wildfire risk management & early warning (EFFIS)',
+          parent: 'lu-ad-o1',
+          indicators: [ref('A-X6', 'Area burnt by wildfires', ['adv-adapt-burnt-area'])],
+        },
+        {
+          id: 'lu-ad-l2',
+          label: 'Climate-adapted species & ecosystem restoration',
+          parent: 'lu-ad-o1',
+          indicators: [ref('A-X9', 'Forest canopy mortality', ['adv-adapt-forest-disturbance'])],
+        },
+      ],
+      enabling: [
+        { id: 'lu-ad-e1', kind: 'sector-specific', label: 'Climate-adapted forest management & restoration' },
+      ],
+    },
+  };
+}
+
+/**
+ * A fresh, deep copy of the "Advanced version 1" board: the enhanced report
+ * frameworks, augmented with high-quality advanced mitigation indicators and a
+ * full, equal-weight adaptation & resilience track per sector.
+ */
+export function defaultFrameworkBoardAdvancedV1(): FrameworkBoard {
+  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
+  const mit = advancedMitigation();
+  const adapt = advancedAdaptationLayers();
+
+  for (const sector of sectors) {
+    const m = mit[sector.id];
+    if (m) {
+      if (m.goal) sector.goalIndicators.push(...m.goal);
+      if (m.outcomes) {
+        for (const o of sector.outcomes) {
+          const add = m.outcomes[o.id];
+          if (add) o.indicators.push(...add);
+        }
+      }
+      for (const l of sector.levers) {
+        if (m.leversSet?.[l.id]) l.indicators = m.leversSet[l.id];
+        else if (m.leversAdd?.[l.id]) l.indicators.push(...m.leversAdd[l.id]);
+      }
+      if (m.extraLevers) sector.levers.push(...m.extraLevers);
+    }
+
+    const layer = adapt[sector.id];
+    if (layer) {
+      for (const o of layer.outcomes) {
+        sector.outcomes.push({
+          id: o.id,
+          layer: 'outcome',
+          track: 'adaptation',
+          label: o.label,
+          note: o.note,
+          parents: ['goal'],
+          indicators: o.indicators,
+        });
+      }
+      for (const l of layer.levers) {
+        sector.levers.push({
+          id: l.id,
+          layer: 'lever',
+          track: 'adaptation',
+          label: l.label,
+          parents: [l.parent],
+          indicators: l.indicators,
+        });
+      }
+      for (const e of layer.enabling) {
+        sector.enabling.push({
+          id: e.id,
+          kind: e.kind,
+          track: 'adaptation',
+          label: e.label,
+          indicatorIds: e.indicatorIds,
+        });
+      }
+    }
+  }
+
+  // Deep-clone so the shared helper objects aren't aliased into the (editable)
+  // returned board.
+  return JSON.parse(
+    JSON.stringify({ version: FRAMEWORK_BOARD_ADVANCED_VERSION, sectors }),
+  ) as FrameworkBoard;
 }
 
 export const ENABLING_KIND_LABEL: Record<EnablingKind, string> = {
