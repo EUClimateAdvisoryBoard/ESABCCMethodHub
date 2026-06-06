@@ -1,6 +1,6 @@
 {
   "date": "2026-06-06",
-  "generatedAt": "2026-06-06T07:47:31.082Z",
+  "generatedAt": "2026-06-06T12:07:04.971Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 6 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Daily News 05 / 06 / 2026",
-      "summary": "European Commission Daily news Brussels, 05 Jun 2026 Commission endorses Lithuania's €884 million Social Climate Plan to support vulnerable households and small enterprises in the clean transition \r\nThe European Co...",
+      "headline": "IPCC at the 2026 June Climate Meetings",
+      "summary": "GENEVA, June 5 &#8211; The Intergovernmental Panel on Climate Change (IPCC) will participate in the 64th session of the Subsidiary Bodies (SBs) of the United Nations Framework Convention on Climate Change (UNFCCC), also known as the June Climate Meetings. &#160;The meetings are taking place in Bonn, Germany, from 8 to 18 June 2026. &#160; The [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "EU-Western Balkans Summit highlights enlargement as a strategic investment in Europe's peace, stability and security",
-      "summary": "European Commission Press release Tivat, 05 Jun 2026 Today, President of the European Commission Ursula von der Leyen, President of the European Council António Costa and President of the European Parliament Roberta Metsola joined leaders from Member States and the six Western Balkan partners at the EU-Western Balkans Summit. The Summit was hosted by Montenegro in Tivat. Leaders took stock of the region's progress on its European path and discussed the priorities ahead.",
+      "headline": "Trump to meet AI leaders to discuss US investment in their companies",
+      "summary": "The US president said on Friday he expects to meet the leaders of top AI companies next week.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -80,28 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Daily News 05 / 06 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1273",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 05 Jun 2026 Commission endorses Lithuania's €884 million Social Climate Plan to support vulnerable households and small enterprises in the clean transition \r\nThe European Co...",
-          "published": "2026-06-05T08:33:22.000Z",
-          "score": 16
-        },
-        {
           "title": "IPCC at the 2026 June Climate Meetings",
           "link": "https://www.ipcc.ch/2026/06/05/ipcc-at-sb64-unfccc/",
           "source": "IPCC",
           "description": "GENEVA, June 5 &#8211; The Intergovernmental Panel on Climate Change (IPCC) will participate in the 64th session of the Subsidiary Bodies (SBs) of the United Nations Framework Convention on Climate Change (UNFCCC), also known as the June Climate Meetings. &#160;The meetings are taking place in Bonn, Germany, from 8 to 18 June 2026. &#160; The [&#8230;]",
           "published": "2026-06-05T15:22:05.000Z",
           "score": 11
-        },
-        {
-          "title": "A disease of deforestation: how Ebola is linked to the smartphone in your pocket",
-          "link": "https://www.theguardian.com/world/2026/jun/05/ebola-mineral-mining-smartphones-congo",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;As demand for cobalt, gold and other minerals grows, mining is accelerating deforestation in the Congo basin – and increasing the risk of deadly Ebola outbreaks&lt;/p&gt;&lt;p&gt;For decades after the discovery of Ebolavirus in 1976, outbreaks of the disease were relatively small and contained, affecting a few hundred people at most.&lt;/p&gt;&lt;p&gt;Not any more. In recent years, outbreaks of Ebola have been much larger, affecting thousands and even tens of thousands of people across ",
-          "published": "2026-06-05T09:00:30.000Z",
-          "score": 7
         },
         {
           "title": "Climate Focus: El Nino heats up on Environment Day - Reuters",
@@ -118,6 +102,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNdV9id25yVjJTOGtoNGJuZFNmZkRXeFFSbEVMVjNBQnZjNkFZU2ZJZUR0NjFRZ0l0MWlJRkx1alotY1Fma0ItVk9NX2Jja3Z3SElINExhR1JDTlcxZ0RPUS1iRHBfZURMYUlNa1BGZnQ1V2dMcUlYOTlfb0I3dkg1OWN6ZzJUcnZTelU0YUNKU2U3aEJibkk1VDBVdDRhNXV2M0l6aFk4dGc3aHF0bmMtZHBkUQ?oc=5\" target=\"_blank\"&gt;Study warns biodiversity loss could trigger wave of debt crises&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-05T16:56:47.000Z",
           "score": 7
+        },
+        {
+          "title": "‘Immediate national priority’: Ministers accused of complacency over UK food supply",
+          "link": "https://www.theguardian.com/business/2026/jun/06/ministers-uk-food-supply-immediate-national-priority-trade-body-urges",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
+          "published": "2026-06-06T12:00:27.000Z",
+          "score": 2
+        },
+        {
+          "title": "Australian snow season begins amid El Niño fears",
+          "link": "https://www.theguardian.com/australia-news/2026/jun/06/australian-snow-season-begins-thredbo-perisher-falls-creek-hotham-el-nino-fears",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Webcams showed snow blanketing the ground in some areas. In others, it was patchy or nonexistent&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Australia’s sn",
+          "published": "2026-06-06T06:40:55.000Z",
+          "score": 2
         }
       ]
     },
@@ -126,27 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EU-Western Balkans Summit highlights enlargement as a strategic investment in Europe's peace, stability and security",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1275",
-          "source": "European Commission",
-          "description": "European Commission Press release Tivat, 05 Jun 2026 Today, President of the European Commission Ursula von der Leyen, President of the European Council António Costa and President of the European Parliament Roberta Metsola joined leaders from Member States and the six Western Balkan partners at the EU-Western Balkans Summit. The Summit was hosted by Montenegro in Tivat. Leaders took stock of the region's progress on its European path and discussed the priorities ahead.",
-          "published": "2026-06-05T08:14:44.000Z",
-          "score": 18
-        },
-        {
           "title": "Trump to meet AI leaders to discuss US investment in their companies",
           "link": "https://www.bbc.com/news/articles/c98r8r7dz5no?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The US president said on Friday he expects to meet the leaders of top AI companies next week.",
           "published": "2026-06-05T19:36:30.000Z",
-          "score": 2
-        },
-        {
-          "title": "Global equity fund inflows at 3-week high as AI optimism boosts sentiment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPNElMN1p4Mml3cHliU2ZkbnR6Ni1fYXZyam1nRGF5NGdCOWZiQTZ1QzdLYUpLeko0TkpXemJzVnpFV1FNbDRhRkdTN25uVmJ4UjZ5S1dpZ2xWa05VenEzT2trM2tvZC1Wcm55U1N0V1AwUUZyUjdEYzZGOGhSakJ0cFpn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiggFBVV95cUxPNElMN1p4Mml3cHliU2ZkbnR6Ni1fYXZyam1nRGF5NGdCOWZiQTZ1QzdLYUpLeko0TkpXemJzVnpFV1FNbDRhRkdTN25uVmJ4UjZ5S1dpZ2xWa05VenEzT2trM2tvZC1Wcm55U1N0V1AwUUZyUjdEYzZGOGhSakJ0cFpn?oc=5\" target=\"_blank\"&gt;Global equity fund inflows at 3-week high as AI optimism boosts sentiment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-05T10:37:05.000Z",
           "score": 2
         }
       ]
@@ -155,14 +139,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "Minutes - Tuesday, 24 March 2026 - PE787.795v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-03-24-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-05T12:03:01.000Z",
-          "score": 18
-        },
         {
           "title": "EU leaders at Balkan summit optimistic about rapid expansion",
           "link": "https://www.dw.com/en/eu-leaders-at-balkan-summit-optimistic-about-rapid-expansion/a-77432224?maca=en-rss-en-all-1573-xml-mrss",
@@ -210,20 +186,20 @@
           "score": 6
         },
         {
-          "title": "Pope Leo to focus on immigration, social justice in Spain",
-          "link": "https://www.dw.com/en/pope-leo-to-focus-on-immigration-social-justice-in-spain/a-77443185?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Pope Leo XIV will begin a weeklong trip to Spain, turning papal attention back to Europe and its Christian roots. The pope will also meet with some victims of sexual abuse by Catholic clergy.",
-          "published": "2026-06-06T06:16:00.000Z",
-          "score": 4
+          "title": "Indonesia issues regulation to bring strategic commodity exports under central control - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOeWZNU294QU9VeHFFRW93eEZoRjdUQ3Y1bGc3WC1EMzhjcEhiclZNV1pkVzl4eG5VcU9FN2hxdTdJVjlDU1BhUE5aZHBVb3ZuRElEbHhFWnRhMXhLVTM1Q1V6YlVaS3RIYU5DU2ljQllMeExQRFVfT3hRcFhYVzdSVmFKcVVoa3lFWG1aaWwtMjFhNnFxTjdJMWpLeXpoamxTdTU4MEdGeTR2OTktYUo4YnRocllrVVJYS3gxcjFnR0JXT29CMVR5VW1n?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOeWZNU294QU9VeHFFRW93eEZoRjdUQ3Y1bGc3WC1EMzhjcEhiclZNV1pkVzl4eG5VcU9FN2hxdTdJVjlDU1BhUE5aZHBVb3ZuRElEbHhFWnRhMXhLVTM1Q1V6YlVaS3RIYU5DU2ljQllMeExQRFVfT3hRcFhYVzdSVmFKcVVoa3lFWG1aaWwtMjFhNnFxTjdJMWpLeXpoamxTdTU4MEdGeTR2OTktYUo4YnRocllrVVJYS3gxcjFnR0JXT29CMVR5VW1n?oc=5\" target=\"_blank\"&gt;Indonesia issues regulation to bring strategic commodity exports under central control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-06-05T13:04:43.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 407,
-    "articlesLast24h": 168,
-    "afterDedup": 162,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 158,
+    "afterDedup": 154,
     "feedsQueried": 19
   }
 }
