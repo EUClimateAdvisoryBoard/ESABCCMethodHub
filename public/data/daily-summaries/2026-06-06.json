@@ -1,18 +1,18 @@
 {
   "date": "2026-06-06",
-  "generatedAt": "2026-06-06T12:07:04.971Z",
+  "generatedAt": "2026-06-06T18:07:22.668Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 6 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "DeBriefed 5 June 2026: UK eyes 2040 emissions cut &#124; US ‘dismantling’ oceans research &#124; China’s solar slump",
-      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 5 June 2026: UK eyes 2040 emissions cut | US ‘dismantling’ oceans research | China’s solar slump appeared first on Carbon Brief.",
+      "headline": "As hot summer, blackouts loom, Iraq looks to solar power",
+      "summary": "With so much sunlight, Iraq is very well-positioned to use solar power to help fix its annual summer electricity crisis. So why is it that Iraq&#039;s government has only recently started to take solar power seriously?",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "IPCC at the 2026 June Climate Meetings",
-      "summary": "GENEVA, June 5 &#8211; The Intergovernmental Panel on Climate Change (IPCC) will participate in the 64th session of the Subsidiary Bodies (SBs) of the United Nations Framework Convention on Climate Change (UNFCCC), also known as the June Climate Meetings. &#160;The meetings are taking place in Bonn, Germany, from 8 to 18 June 2026. &#160; The [&#8230;]",
+      "headline": "‘Immediate national priority’: ministers accused of complacency over UK food supply",
+      "summary": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,35 +34,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "DeBriefed 5 June 2026: UK eyes 2040 emissions cut &#124; US ‘dismantling’ oceans research &#124; China’s solar slump",
-          "link": "https://www.carbonbrief.org/debriefed-5-june-2026-uk-eyes-2040-emissions-cut-us-dismantling-oceans-research-chinas-solar-slump/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 5 June 2026: UK eyes 2040 emissions cut | US ‘dismantling’ oceans research | China’s solar slump appeared first on Carbon Brief.",
-          "published": "2026-06-05T13:35:57.000Z",
-          "score": 13
-        },
-        {
-          "title": "Chart: Why China&#8217;s solar boom is slowing down",
-          "link": "https://www.carbonbrief.org/chart-why-chinas-solar-boom-is-slowing-down/",
-          "source": "Carbon Brief",
-          "description": "Solar power has been a major element of China’s renewables buildout since the mid-2010s.&#160; The... The post Chart: Why China&#8217;s solar boom is slowing down appeared first on Carbon Brief.",
-          "published": "2026-06-05T12:36:55.000Z",
-          "score": 13
-        },
-        {
           "title": "As hot summer, blackouts loom, Iraq looks to solar power",
           "link": "https://www.dw.com/en/as-hot-summer-blackouts-loom-iraq-looks-to-solar-power/a-77438162?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "With so much sunlight, Iraq is very well-positioned to use solar power to help fix its annual summer electricity crisis. So why is it that Iraq&#039;s government has only recently started to take solar power seriously?",
           "published": "2026-06-06T06:15:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "North Korea quietly ramps up its nuclear program",
-          "link": "https://www.dw.com/en/north-korea-quietly-ramps-up-its-nuclear-program/a-77438060?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "With Washington&#039;s attention elsewhere, North Korea has slowly been building up its nuclear weapons program. This week, Kim Jong Un took a publicity tour of a new nuclear fuel facility while promising to build more bombs.",
-          "published": "2026-06-05T15:25:00.000Z",
           "score": 7
         },
         {
@@ -72,6 +48,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNU0hDX051dHVaUU9zWm80VnU2Wk1jTk9iSjVFSGdfSnFLQVFHQjc5a2ZSMzNvcFprS051UTd5RkdZbTlXWXNJMTZlOTlwblBnVWlpOF9FZEFiYmktdVZDU05GbnVic0JRWUpwbXNpS3daV1hUeEFVV1NWQXpRTnpnYjYzNnhwbDdWU0Z4WDZDVjk5c1laUGp6SXNXVy1zZWM0NmFwbTEwM2t4eFJNSjVnVmd1cw?oc=5\" target=\"_blank\"&gt;Witkoff, Kushner meet nuclear experts at national lab in Tennessee, source says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-05T20:01:11.000Z",
           "score": 7
+        },
+        {
+          "title": "US energy secretary says lower gas prices will ultimately take resolution with Iran - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNc3FvTkdEREtLeURERnlZVDBVT0JwTFV1TWhGNnNmUVFmSzcwUW9uU2YyQVQxdjI1bWFEMzA0aEh0dS05UlhuS1AxX2VGZEFVZ2pHRURCOFVUdlc4a0VtMkVhRDd5ZlBGWkhLNmxaaFBRTERTR3l0SU9OekxXWkRHSExYVFNLR3h2dURSVkc2MnV6dVRrWjg3d3lqT0luNVI3bU5vYkRSTW9xWlNWc0hsbmNXV3h5SGNiZVEyd0draGJyNDVYZnYxZkRB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNc3FvTkdEREtLeURERnlZVDBVT0JwTFV1TWhGNnNmUVFmSzcwUW9uU2YyQVQxdjI1bWFEMzA0aEh0dS05UlhuS1AxX2VGZEFVZ2pHRURCOFVUdlc4a0VtMkVhRDd5ZlBGWkhLNmxaaFBRTERTR3l0SU9OekxXWkRHSExYVFNLR3h2dURSVkc2MnV6dVRrWjg3d3lqT0luNVI3bU5vYkRSTW9xWlNWc0hsbmNXV3h5SGNiZVEyd0draGJyNDVYZnYxZkRB?oc=5\" target=\"_blank\"&gt;US energy secretary says lower gas prices will ultimately take resolution with Iran&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-06-05T23:51:50.000Z",
+          "score": 7
+        },
+        {
+          "title": "Getting into your comfort zone: easy steps to an electric, snug and sustainable abode",
+          "link": "https://www.theguardian.com/australia-news/2026/jun/06/sustainable-energy-efficient-home-electric-appliances-solar-panels-batteries-australia-",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Australians are world leaders in rooftop solar and home batteries - but greater energy efficiency could make them a triple threat&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/series/change-by-degrees\"&gt;Change by degrees&lt;/a&gt; offers life hacks and sustainable living tips each Saturday to help reduce your household’s carbon footprint&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Got a question or tip for reducing household emissions? Email u",
+          "published": "2026-06-06T00:00:13.000Z",
+          "score": 4
         }
       ]
     },
@@ -80,31 +72,7 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "IPCC at the 2026 June Climate Meetings",
-          "link": "https://www.ipcc.ch/2026/06/05/ipcc-at-sb64-unfccc/",
-          "source": "IPCC",
-          "description": "GENEVA, June 5 &#8211; The Intergovernmental Panel on Climate Change (IPCC) will participate in the 64th session of the Subsidiary Bodies (SBs) of the United Nations Framework Convention on Climate Change (UNFCCC), also known as the June Climate Meetings. &#160;The meetings are taking place in Bonn, Germany, from 8 to 18 June 2026. &#160; The [&#8230;]",
-          "published": "2026-06-05T15:22:05.000Z",
-          "score": 11
-        },
-        {
-          "title": "Climate Focus: El Nino heats up on Environment Day - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQQXFZcm9uc2dMUmpFQkJyYlQ1M2xRRHgwd0hZdElTbW1FcGp2SER0aDd1WWp5dXRHWmE5MWZWTWNPNmlKX2hBV0J1Mm92S3FoX3dZSlJ2SzdINUxDa3lGVnI3enZlbnJRWV92eDlJUkxGcWNrZU5tTUNQYXRuWmFmLTZIWU13YTAxVFJOM1d1MXdUOUhrYkpxaUVPdTRJUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxQQXFZcm9uc2dMUmpFQkJyYlQ1M2xRRHgwd0hZdElTbW1FcGp2SER0aDd1WWp5dXRHWmE5MWZWTWNPNmlKX2hBV0J1Mm92S3FoX3dZSlJ2SzdINUxDa3lGVnI3enZlbnJRWV92eDlJUkxGcWNrZU5tTUNQYXRuWmFmLTZIWU13YTAxVFJOM1d1MXdUOUhrYkpxaUVPdTRJUQ?oc=5\" target=\"_blank\"&gt;Climate Focus: El Nino heats up on Environment Day&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-05T13:00:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Study warns biodiversity loss could trigger wave of debt crises - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNdV9id25yVjJTOGtoNGJuZFNmZkRXeFFSbEVMVjNBQnZjNkFZU2ZJZUR0NjFRZ0l0MWlJRkx1alotY1Fma0ItVk9NX2Jja3Z3SElINExhR1JDTlcxZ0RPUS1iRHBfZURMYUlNa1BGZnQ1V2dMcUlYOTlfb0I3dkg1OWN6ZzJUcnZTelU0YUNKU2U3aEJibkk1VDBVdDRhNXV2M0l6aFk4dGc3aHF0bmMtZHBkUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNdV9id25yVjJTOGtoNGJuZFNmZkRXeFFSbEVMVjNBQnZjNkFZU2ZJZUR0NjFRZ0l0MWlJRkx1alotY1Fma0ItVk9NX2Jja3Z3SElINExhR1JDTlcxZ0RPUS1iRHBfZURMYUlNa1BGZnQ1V2dMcUlYOTlfb0I3dkg1OWN6ZzJUcnZTelU0YUNKU2U3aEJibkk1VDBVdDRhNXV2M0l6aFk4dGc3aHF0bmMtZHBkUQ?oc=5\" target=\"_blank\"&gt;Study warns biodiversity loss could trigger wave of debt crises&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-05T16:56:47.000Z",
-          "score": 7
-        },
-        {
-          "title": "‘Immediate national priority’: Ministers accused of complacency over UK food supply",
+          "title": "‘Immediate national priority’: ministers accused of complacency over UK food supply",
           "link": "https://www.theguardian.com/business/2026/jun/06/ministers-uk-food-supply-immediate-national-priority-trade-body-urges",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
@@ -117,6 +85,22 @@
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Webcams showed snow blanketing the ground in some areas. In others, it was patchy or nonexistent&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Australia’s sn",
           "published": "2026-06-06T06:40:55.000Z",
+          "score": 2
+        },
+        {
+          "title": "Astronauts return to ISS after sheltering during air leak repair attempt",
+          "link": "https://www.bbc.com/news/articles/c5y7yryg01mo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Russian attempt to repair tunnel area sparks safe-haven procedure for five other astronauts onboard.",
+          "published": "2026-06-05T21:35:55.000Z",
+          "score": 2
+        },
+        {
+          "title": "Mountain path repairs 'first big work' since 1980s",
+          "link": "https://www.bbc.com/news/articles/c4g4ngxe51zo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A helicopter is used to transport more than 100 tonnes of stone to the site at Helvellyn.",
+          "published": "2026-06-06T06:13:49.000Z",
           "score": 2
         }
       ]
@@ -131,6 +115,14 @@
           "source": "BBC Science & Environment",
           "description": "The US president said on Friday he expects to meet the leaders of top AI companies next week.",
           "published": "2026-06-05T19:36:30.000Z",
+          "score": 2
+        },
+        {
+          "title": "China urges fund managers to support innovation, warns against concept hype - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5\" target=\"_blank\"&gt;China urges fund managers to support innovation, warns against concept hype&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-06T08:49:43.000Z",
           "score": 2
         }
       ]
@@ -154,11 +146,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU weighs rules to cut reliance on China through broader supply chains - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEtXOEp1UWFPTWdvYTJmU1R0Wk1GU3RVNk9WYmhUMVNRY2ZpMXFKb3JPYUVtT0U2TWExN0tadnA5cnktZXllb0l0NWp5eGVqaENfNFlWM2t1MVdKV19xaDN3UENlZHJKYU5yZV9mb2pIaEZLalJ0TmlKYzloQ1NveFhRMVRqbmtOZ0hSX09uTFlxekU1OGVDbHdyVG56dHNHNXd1TjBFbFZrV20xUGZqeU1R?oc=5",
+          "title": "Hegseth, at D-Day event, says Europe faces 'invasion' of dangerous ideologies - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNS3RDSkpOUzhsc0FkQXZVaHBJQlA2dHVKMDZrNTdjWXhsMmhvNlJ4Nm9TbkMwbjQxcGVBVGxmU0JkenZZTE11ZUxfWW92UTlydVg1b3l4ZG5aVzhvRHkwdzQzMWkxcG5tdURoazFzX0VsaE9kZHZPM1cxVncxbWdRNkR0dzJuM3lIdC12NnVLWWw4cU1rS0JzU2xnNndHVG5oUEdHejlIem1xYS1YSWloc1pKZ0EwZksxRENpNWZuamwwZl9Ndlg5UmJn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPSEtXOEp1UWFPTWdvYTJmU1R0Wk1GU3RVNk9WYmhUMVNRY2ZpMXFKb3JPYUVtT0U2TWExN0tadnA5cnktZXllb0l0NWp5eGVqaENfNFlWM2t1MVdKV19xaDN3UENlZHJKYU5yZV9mb2pIaEZLalJ0TmlKYzloQ1NveFhRMVRqbmtOZ0hSX09uTFlxekU1OGVDbHdyVG56dHNHNXd1TjBFbFZrV20xUGZqeU1R?oc=5\" target=\"_blank\"&gt;EU weighs rules to cut reliance on China through broader supply chains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-05T15:51:54.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNS3RDSkpOUzhsc0FkQXZVaHBJQlA2dHVKMDZrNTdjWXhsMmhvNlJ4Nm9TbkMwbjQxcGVBVGxmU0JkenZZTE11ZUxfWW92UTlydVg1b3l4ZG5aVzhvRHkwdzQzMWkxcG5tdURoazFzX0VsaE9kZHZPM1cxVncxbWdRNkR0dzJuM3lIdC12NnVLWWw4cU1rS0JzU2xnNndHVG5oUEdHejlIem1xYS1YSWloc1pKZ0EwZksxRENpNWZuamwwZl9Ndlg5UmJn?oc=5\" target=\"_blank\"&gt;Hegseth, at D-Day event, says Europe faces 'invasion' of dangerous ideologies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-06-06T16:44:45.000Z",
+          "score": 8
+        },
+        {
+          "title": "Musk's SpaceX IPO jolts life back into European retail investing - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOd3BhSzBzQU9lSHlpeGd1TmxaQXJINEpNMHBKNzI1RjhhTF9zMEtuN2tkQ2lTZTNpSW94OWZySXpkaWdhLXZpZUJuQTNmVkp6ak5jejF0dmpxWmtBclhGcnh1dFR6WGVOZW0wdi1ZMUJ2a3lsaVdjcjNXd3ozd1lJZ01tbzV5c0REVDRCWDcwNU5KRlNDZHRHSkFiSXlRbHRaYVBoYUtmdGZJS2dTaVR6bHdVSFFMcnY0STZV?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOd3BhSzBzQU9lSHlpeGd1TmxaQXJINEpNMHBKNzI1RjhhTF9zMEtuN2tkQ2lTZTNpSW94OWZySXpkaWdhLXZpZUJuQTNmVkp6ak5jejF0dmpxWmtBclhGcnh1dFR6WGVOZW0wdi1ZMUJ2a3lsaVdjcjNXd3ozd1lJZ01tbzV5c0REVDRCWDcwNU5KRlNDZHRHSkFiSXlRbHRaYVBoYUtmdGZJS2dTaVR6bHdVSFFMcnY0STZV?oc=5\" target=\"_blank\"&gt;Musk's SpaceX IPO jolts life back into European retail investing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-06T06:54:00.000Z",
           "score": 8
         },
         {
@@ -178,19 +178,11 @@
           "score": 6
         },
         {
-          "title": "US Senate passes $70 billion funding for ICE, Border Patrol",
-          "link": "https://www.dw.com/en/us-senate-passes-70-billion-funding-for-ice-border-patrol/a-77435289?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Senators voted 52-47 to approve funds to finance the immigration forces for another three years, through the rest of Donald Trump&#039;s term. The bill still needs to clear the House; that vote is expected next week.",
-          "published": "2026-06-05T13:19:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Indonesia issues regulation to bring strategic commodity exports under central control - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOeWZNU294QU9VeHFFRW93eEZoRjdUQ3Y1bGc3WC1EMzhjcEhiclZNV1pkVzl4eG5VcU9FN2hxdTdJVjlDU1BhUE5aZHBVb3ZuRElEbHhFWnRhMXhLVTM1Q1V6YlVaS3RIYU5DU2ljQllMeExQRFVfT3hRcFhYVzdSVmFKcVVoa3lFWG1aaWwtMjFhNnFxTjdJMWpLeXpoamxTdTU4MEdGeTR2OTktYUo4YnRocllrVVJYS3gxcjFnR0JXT29CMVR5VW1n?oc=5",
+          "title": "Armenia arrests six candidates for pro-Russian opposition day before vote - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNLTE2bnktN2dfXzlnVnBYelExVjhuMC12WHl5NjFNMkdYRjdJVlkwODRNMEVlMnh2cFBlTFRQb1ZlNEVRT0pJaUs3NEJPXzl6anNVUE1fTlp5Zko0NXpUTGVONzRIM3RKN1RXVFg3czJXVzB6d0hjX1JPeFZ2TlhSZzlmQndrdGRveXNZTThSdkhySDQ3S3dsNElULVpxcFd0UWJfcjE1RzVVb2ZVSFlDSw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOeWZNU294QU9VeHFFRW93eEZoRjdUQ3Y1bGc3WC1EMzhjcEhiclZNV1pkVzl4eG5VcU9FN2hxdTdJVjlDU1BhUE5aZHBVb3ZuRElEbHhFWnRhMXhLVTM1Q1V6YlVaS3RIYU5DU2ljQllMeExQRFVfT3hRcFhYVzdSVmFKcVVoa3lFWG1aaWwtMjFhNnFxTjdJMWpLeXpoamxTdTU4MEdGeTR2OTktYUo4YnRocllrVVJYS3gxcjFnR0JXT29CMVR5VW1n?oc=5\" target=\"_blank\"&gt;Indonesia issues regulation to bring strategic commodity exports under central control&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-06-05T13:04:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNLTE2bnktN2dfXzlnVnBYelExVjhuMC12WHl5NjFNMkdYRjdJVlkwODRNMEVlMnh2cFBlTFRQb1ZlNEVRT0pJaUs3NEJPXzl6anNVUE1fTlp5Zko0NXpUTGVONzRIM3RKN1RXVFg3czJXVzB6d0hjX1JPeFZ2TlhSZzlmQndrdGRveXNZTThSdkhySDQ3S3dsNElULVpxcFd0UWJfcjE1RzVVb2ZVSFlDSw?oc=5\" target=\"_blank\"&gt;Armenia arrests six candidates for pro-Russian opposition day before vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-06T13:21:45.000Z",
           "score": 6
         }
       ]
@@ -198,8 +190,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 406,
-    "articlesLast24h": 158,
-    "afterDedup": 154,
+    "articlesLast24h": 144,
+    "afterDedup": 140,
     "feedsQueried": 19
   }
 }
