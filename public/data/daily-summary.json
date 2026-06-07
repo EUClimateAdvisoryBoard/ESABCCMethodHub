@@ -1,18 +1,18 @@
 {
   "date": "2026-06-07",
-  "generatedAt": "2026-06-07T00:05:29.080Z",
+  "generatedAt": "2026-06-07T08:24:51.206Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 7 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "As hot summer, blackouts loom, Iraq looks to solar power",
-      "summary": "With so much sunlight, Iraq is very well-positioned to use solar power to help fix its annual summer electricity crisis. So why is it that Iraq&#039;s government has only recently started to take solar power seriously?",
+      "headline": "Village solar system model shows planets and stars",
+      "summary": "How a Kent village created a scale model of the solar system to help people understand space.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "‘Immediate national priority’: ministers accused of complacency over UK food supply",
-      "summary": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
+      "headline": "Ecologist calls for plastics ban in cemetery",
+      "summary": "Alison Fure is asking the council to begin phasing out plastic decorative items, including flowers.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,11 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "As hot summer, blackouts loom, Iraq looks to solar power",
-          "link": "https://www.dw.com/en/as-hot-summer-blackouts-loom-iraq-looks-to-solar-power/a-77438162?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Village solar system model shows planets and stars",
+          "link": "https://www.bbc.com/news/articles/cjdpdlv3zp7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "How a Kent village created a scale model of the solar system to help people understand space.",
+          "published": "2026-06-07T06:15:04.000Z",
+          "score": 7
+        },
+        {
+          "title": "North Korea says nuclear program &#039;absolutely nonnegotiable&#039;",
+          "link": "https://www.dw.com/en/north-korea-says-nuclear-program-absolutely-nonnegotiable/a-77446889?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "With so much sunlight, Iraq is very well-positioned to use solar power to help fix its annual summer electricity crisis. So why is it that Iraq&#039;s government has only recently started to take solar power seriously?",
-          "published": "2026-06-06T06:15:00.000Z",
+          "description": "Kim Yo Jong, the sister of North Korean leader Kim Jong Un, has reaffirmed the country&#039;s nuclear ambitions ahead of a visit by Chinese President Xi Jinping.",
+          "published": "2026-06-07T01:16:00.000Z",
           "score": 7
         },
         {
@@ -46,7 +54,7 @@
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVjIxc3JQdWJBUHNieVRPZjF0RUlyZjBBdVJjSFNrdEVJRTEwakEydDJjaEtNc0d6WE5BY3JhbkE5ZXlvc3ZkYUxzVW8tQzhoSklGNE9jMmZEcnk3dU1lZ0prd3ZBc2VqUGMtdlN2eUNVVFlvSkd0OHR4RlBvb05oaE9DbkRFT2JMaGVjQzRoTWYtcmdIdWM5TEJ4c3NicFFzZG5YdjVzODFJeUZ1TDR2d1otbVF4YXM?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOVjIxc3JQdWJBUHNieVRPZjF0RUlyZjBBdVJjSFNrdEVJRTEwakEydDJjaEtNc0d6WE5BY3JhbkE5ZXlvc3ZkYUxzVW8tQzhoSklGNE9jMmZEcnk3dU1lZ0prd3ZBc2VqUGMtdlN2eUNVVFlvSkd0OHR4RlBvb05oaE9DbkRFT2JMaGVjQzRoTWYtcmdIdWM5TEJ4c3NicFFzZG5YdjVzODFJeUZ1TDR2d1otbVF4YXM?oc=5\" target=\"_blank\"&gt;North Korea reaffirms nuclear status a day before Chinese president's visit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T23:14:51.000Z",
+          "published": "2026-06-06T23:21:40.000Z",
           "score": 7
         },
         {
@@ -58,12 +66,12 @@
           "score": 7
         },
         {
-          "title": "Domestic cooking gas rates in Delhi increased by 29 rupees per cylinder - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQdENEVUdhbzQ5QW5fWDFCMTRPdTJaOGlDMy1QWXg2Mk9aM3FadHRfcG1qalNrbVNiUk9QV1lyQWJNbWJMazdIQ1JNSmtMQ3h0clB4ZksxRDdDblVfRGtTTngyTHNEbW43bVgwdV9PeEpDMHIwODZyZDc2M1JORUNLVWlURzBSSmtPMC1kaF9mcHJWdTVJX25xS3dwWkdDcnB6R1BZWWFiaDNLeUNQay1JM244R0FaQzg?oc=5",
+          "title": "Russian drone hit nuclear-fuel storage facility near Chornobyl, Ukraine says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQdENEVUdhbzQ5QW5fWDFCMTRPdTJaOGlDMy1QWXg2Mk9aM3FadHRfcG1qalNrbVNiUk9QV1lyQWJNbWJMazdIQ1JNSmtMQ3h0clB4ZksxRDdDblVfRGtTTngyTHNEbW43bVgwdV9PeEpDMHIwODZyZDc2M1JORUNLVWlURzBSSmtPMC1kaF9mcHJWdTVJX25xS3dwWkdDcnB6R1BZWWFiaDNLeUNQay1JM244R0FaQzg?oc=5\" target=\"_blank\"&gt;Domestic cooking gas rates in Delhi increased by 29 rupees per cylinder&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T21:23:45.000Z",
-          "score": 2
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5\" target=\"_blank\"&gt;Russian drone hit nuclear-fuel storage facility near Chornobyl, Ukraine says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-07T08:19:42.000Z",
+          "score": 7
         }
       ]
     },
@@ -72,27 +80,19 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Ecologist calls for plastics ban in cemetery",
+          "link": "https://www.bbc.com/news/articles/c3r25edye9do?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Alison Fure is asking the council to begin phasing out plastic decorative items, including flowers.",
+          "published": "2026-06-07T07:17:45.000Z",
+          "score": 4
+        },
+        {
           "title": "‘Immediate national priority’: ministers accused of complacency over UK food supply",
           "link": "https://www.theguardian.com/business/2026/jun/06/ministers-uk-food-supply-immediate-national-priority-trade-body-urges",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
           "published": "2026-06-06T12:00:27.000Z",
-          "score": 2
-        },
-        {
-          "title": "Australian snow season begins amid El Niño fears",
-          "link": "https://www.theguardian.com/australia-news/2026/jun/06/australian-snow-season-begins-thredbo-perisher-falls-creek-hotham-el-nino-fears",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Webcams showed snow blanketing the ground in some areas. In others, it was patchy or nonexistent&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Australia’s sn",
-          "published": "2026-06-06T06:40:55.000Z",
-          "score": 2
-        },
-        {
-          "title": "Mountain path repairs 'first big work' since 1980s",
-          "link": "https://www.bbc.com/news/articles/c4g4ngxe51zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A helicopter is used to transport more than 100 tonnes of stone to the site at Helvellyn.",
-          "published": "2026-06-06T06:13:49.000Z",
           "score": 2
         }
       ]
@@ -120,7 +120,7 @@
           "link": "https://www.bbc.com/news/articles/c802e7jk458o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US defence secretary was speaking in Normandy, 82 years after allied forces launched their operation to liberate Nazi-occupied north-western Europe.",
-          "published": "2026-06-06T23:52:07.000Z",
+          "published": "2026-06-07T05:47:28.000Z",
           "score": 8
         }
       ]
@@ -129,6 +129,22 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Armenia, once Russia&#039;s reliable ally, considers an EU future",
+          "link": "https://www.dw.com/en/armenia-once-russia-s-reliable-ally-considers-an-eu-future/a-77400608?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Armenians are set to vote on the country&#039;s future geopolitical direction on June 7. The election will be a test of public opinion in the long-standing Russia ally, where the population is increasingly eyeing the EU.",
+          "published": "2026-06-07T06:58:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "Armenia goes to polls, with Russia and EU looking on",
+          "link": "https://www.dw.com/en/armenia-goes-to-polls-with-russia-and-eu-looking-on/a-77447079?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Armenians are voting in elections that pit pro-EU Prime Minister Nikol Pashinyan against the pro-Russia opposition. Peace efforts with longtime foe Azerbaijan are also a main election issue.",
+          "published": "2026-06-07T06:10:00.000Z",
+          "score": 8
+        },
         {
           "title": "Hegseth, at D-Day event, says Europe faces 'invasion' of dangerous ideologies - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNS3RDSkpOUzhsc0FkQXZVaHBJQlA2dHVKMDZrNTdjWXhsMmhvNlJ4Nm9TbkMwbjQxcGVBVGxmU0JkenZZTE11ZUxfWW92UTlydVg1b3l4ZG5aVzhvRHkwdzQzMWkxcG5tdURoazFzX0VsaE9kZHZPM1cxVncxbWdRNkR0dzJuM3lIdC12NnVLWWw4cU1rS0JzU2xnNndHVG5oUEdHejlIem1xYS1YSWloc1pKZ0EwZksxRENpNWZuamwwZl9Ndlg5UmJn?oc=5",
@@ -146,36 +162,20 @@
           "score": 8
         },
         {
-          "title": "Fire at warehouse in Brussels suburb brought under control - VRT - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNX1lPbERwWk9CaFhWSDI5RVpLbV9RaEM5MUtJZWZnUUhkaldlU2NJX1NyMWQzVTlNQ29GZmVCMXhoeTFDODFEVjU3NmI4UDF3RlEwaWgzM0ZTemJJNC02eUdxOHA4Rk1wQ1FMZ3FnTVlaaGxONTl5Z3R6VkplMDJoRDg2TXZ1di1wRFN6TkJrb2lxLXpJc1hkLThQS2hVTk0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNX1lPbERwWk9CaFhWSDI5RVpLbV9RaEM5MUtJZWZnUUhkaldlU2NJX1NyMWQzVTlNQ29GZmVCMXhoeTFDODFEVjU3NmI4UDF3RlEwaWgzM0ZTemJJNC02eUdxOHA4Rk1wQ1FMZ3FnTVlaaGxONTl5Z3R6VkplMDJoRDg2TXZ1di1wRFN6TkJrb2lxLXpJc1hkLThQS2hVTk0?oc=5\" target=\"_blank\"&gt;Fire at warehouse in Brussels suburb brought under control - VRT&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T10:27:55.000Z",
-          "score": 8
-        },
-        {
-          "title": "Fujimori or Sanchez? Peru vote marks 10 years of turmoil",
-          "link": "https://www.dw.com/en/fujimori-or-sanchez-peru-vote-marks-10-years-of-turmoil/a-77420777?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Taiwan deploys vessels in response to Chinese operation",
+          "link": "https://www.dw.com/en/taiwan-deploys-vessels-in-response-to-chinese-operation/a-77447525?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Sunday&#039;s presidential runoff in Peru pits Keiko Fujimori against Roberto Sanchez in an election marked by social tension, rising crime and declining confidence in political institutions.",
-          "published": "2026-06-06T06:33:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Armenia arrests six candidates for pro-Russian opposition day before vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNLTE2bnktN2dfXzlnVnBYelExVjhuMC12WHl5NjFNMkdYRjdJVlkwODRNMEVlMnh2cFBlTFRQb1ZlNEVRT0pJaUs3NEJPXzl6anNVUE1fTlp5Zko0NXpUTGVONzRIM3RKN1RXVFg3czJXVzB6d0hjX1JPeFZ2TlhSZzlmQndrdGRveXNZTThSdkhySDQ3S3dsNElULVpxcFd0UWJfcjE1RzVVb2ZVSFlDSw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNLTE2bnktN2dfXzlnVnBYelExVjhuMC12WHl5NjFNMkdYRjdJVlkwODRNMEVlMnh2cFBlTFRQb1ZlNEVRT0pJaUs3NEJPXzl6anNVUE1fTlp5Zko0NXpUTGVONzRIM3RKN1RXVFg3czJXVzB6d0hjX1JPeFZ2TlhSZzlmQndrdGRveXNZTThSdkhySDQ3S3dsNElULVpxcFd0UWJfcjE1RzVVb2ZVSFlDSw?oc=5\" target=\"_blank\"&gt;Armenia arrests six candidates for pro-Russian opposition day before vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T13:21:45.000Z",
+          "description": "Taiwan&#039;s coast guard confronts Chinese vessels near the island after Beijing launched what it called a &quot;law enforcement operation.&quot;",
+          "published": "2026-06-07T06:39:00.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 391,
-    "articlesLast24h": 131,
-    "afterDedup": 125,
+    "totalArticlesScanned": 394,
+    "articlesLast24h": 132,
+    "afterDedup": 126,
     "feedsQueried": 19
   }
 }
