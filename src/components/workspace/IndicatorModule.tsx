@@ -474,6 +474,21 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
                 <p className="text-xs text-tertiary mt-0.5 max-w-xl">
                   {selected.description}
                 </p>
+                {selected.storyline && (
+                  <div className="mt-2 max-w-xl rounded-lg border border-indigo-200 bg-indigo-50/70 px-3 py-2">
+                    <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-indigo-700 mb-0.5">
+                      <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 100 2 1 1 0 000-2z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      Why it matters — the storyline
+                    </div>
+                    <p className="text-[11px] text-indigo-900/90 leading-relaxed">{selected.storyline}</p>
+                  </div>
+                )}
                 <p className="text-[10px] text-tertiary-light mt-1">
                   Source:{' '}
                   {selected.sourceUrl ? (

@@ -711,6 +711,88 @@ export const ADVANCED_ADAPTATION_INDICATORS: Indicator[] = [
   },
 ];
 
+// ── Storylines ────────────────────────────────────────────────────────────────
+// One short narrative per advanced indicator — WHY it matters and how it
+// contributes to the overall climate-neutrality / resilience storyline. Kept in
+// a central map (rather than inline) so the motivation reads as a coherent set,
+// and applied to each indicator's `storyline` field at module load. Surfaced in
+// the UI behind an info (ⓘ) button on the flow-chart chips and as a callout in
+// the indicator drawer and database detail panel.
+const STORYLINES: Record<string, string> = {
+  // Mitigation ────────────────────────────────────────────────────────────────
+  'adv-res-share-fec':
+    'Decarbonising energy supply is the backbone of the whole transition: renewables displacing fossil fuels across power, heat and transport is what ultimately drives every sector’s emissions down. This headline share is the clearest single test of whether the EU is on the RED III pathway (42.5% by 2030) — progress here unlocks cuts everywhere downstream.',
+  'adv-wind-solar-share':
+    'Wind and solar are the cheapest, fastest-scaling clean-power sources, so their share of generation shows how quickly the grid itself is decarbonising. Their 2025 overtaking of fossil generation is the visible tipping point behind falling grid CO₂ intensity and the pay-off from electrifying everything.',
+  'adv-fossil-power-share':
+    'Every percentage point of fossil generation retired is a durable emission cut and less exposure to fuel-price shocks. Falling fossil share is the mirror image of the wind+solar rise and the precondition for clean electrification of transport, heat and industry.',
+  'adv-grid-co2-intensity':
+    'Electrification only cuts emissions if the electricity is clean — so grid CO₂ intensity is the multiplier that sets the climate value of every EV, heat pump and electric furnace. A falling intensity is what makes the “electrify everything” strategy actually pay off.',
+  'adv-energy-methane':
+    'Methane is short-lived but potent, so plugging energy-sector leakage and coal-mine emissions buys fast near-term warming relief. It is among the cheapest abatement available and the key test of the 2024 EU Methane Regulation.',
+  'adv-eu-ets-emissions':
+    'The EU ETS is the policy engine of the transition: its carbon price pushes power and industry to abate, and its verified emissions are the most direct read-out of whether the traded sectors are tracking the −62%-by-2030 cap. The record 2023 drop shows the mechanism biting.',
+  'adv-circular-material-use':
+    'Making materials from recycled rather than virgin feedstock skips the most energy- and emission-intensive processing steps, so circularity cuts industrial emissions while reducing raw-material dependence. It is the demand-side complement to clean production processes.',
+  'adv-new-car-co2':
+    'New-car CO₂ standards are the main lever pulling the road fleet to zero; because a car stays on the road ~15 years, today’s new-car average locks in a decade of tailpipe emissions. The glide path to 0 g/km in 2035 is what makes road decarbonisation inevitable.',
+  'adv-bev-share':
+    'Battery-electric sales are the leading indicator of fleet turnover — every BEV sold is a fossil car not sold, compounding into falling transport emissions as the stock turns over, while pulling demand for clean power and batteries.',
+  'adv-res-transport':
+    'Transport is the hardest sector to decarbonise and the only one whose emissions have risen since 1990; the renewable-energy-in-transport share tracks the combined push of electrification and clean fuels toward the 29%-by-2030 target.',
+  'adv-freight-rail-share':
+    'Shifting freight from road to rail and waterway cuts energy use per tonne-km several-fold, so the rail share is the clearest structural (modal-shift) lever for freight — one that does not depend on new vehicle technology.',
+  'adv-energy-poverty':
+    'A transition that leaves households unable to heat their homes loses public consent, so energy poverty is the just-transition guardrail: it shows whether efficiency, electrification and the Social Climate Fund are protecting vulnerable people as fossil heating is priced out.',
+  'adv-heat-pump-sales':
+    'Heat pumps are the key technology for decarbonising building heat, replacing gas and oil boilers with efficient electric heat. Annual sales are the leading indicator of how fast the stock is switching away from fossil heating.',
+  'adv-organic-farming':
+    'Organic and low-input farming cuts synthetic-fertiliser demand (and its N₂O emissions) while supporting soil carbon and biodiversity, so its area share tracks the agro-ecological shift behind lower farm emissions and the 25%-by-2030 target.',
+  'adv-nitrogen-balance':
+    'Excess nitrogen drives potent N₂O emissions, water pollution and energy-intensive fertiliser use; shrinking the nitrogen surplus is the core efficiency lever that lowers agricultural emissions without cutting output.',
+  'adv-lulucf-net':
+    'Land is the EU’s only large natural carbon sink and the linchpin of net zero — removals here offset the residual emissions that cannot be eliminated elsewhere. The weakening sink is the single biggest threat to the 2050 target and shows why the −310 Mt 2030 goal is off track.',
+  'adv-forest-sink-decline':
+    'Forests do most of the heavy lifting in the land sink, but the Nature-2025 evidence of a ~27% decline — from ageing stands, harvesting, drought and pests — means the EU may have to cut harder elsewhere to stay on the net-zero path. This is the flagship “sink at risk” signal.',
+  'adv-peatland-emissions':
+    'A tiny area of drained peat emits a huge share of land-use emissions, so rewetting peatlands is one of the highest-leverage, lowest-cost mitigation options — and the science suggests inventories may even understate the prize.',
+
+  // Adaptation & resilience ────────────────────────────────────────────────────
+  'adv-adapt-economic-losses':
+    'Mitigation limits how bad climate change gets; adaptation manages the damage already locked in. The long-run rise in economic losses is the bottom-line reason resilience now sits beside mitigation — losses are accelerating faster than Europe is adapting.',
+  'adv-adapt-global-temp':
+    'Every risk in the adaptation track is ultimately driven by warming, so the global temperature anomaly is the master driver. Because Europe is warming about twice as fast as the world, this curve sets the pace at which all the resilience challenges intensify.',
+  'adv-adapt-sea-level':
+    'Sea-level rise is the slow-onset hazard that puts coastal cities, ports and transport at permanent risk; its accelerating, locked-in trajectory is why coastal adaptation must start now even under strong mitigation.',
+  'adv-adapt-heat-mortality':
+    'Heat is the deadliest climate hazard in Europe and the most direct human cost of warming, so heat mortality is the headline test of whether health systems, cities and buildings are adapting fast enough to keep people alive.',
+  'adv-adapt-west-nile':
+    'Warming is pushing disease-carrying mosquitoes northward into new EU regions; the rise of locally-acquired West Nile cases is an early-warning signal that climate change is creating entirely new public-health risks that need surveillance and prevention.',
+  'adv-adapt-burnt-area':
+    'Wildfire is the most visible ecosystem climate risk: it destroys the very carbon stocks the land sink depends on, and threatens lives and property. Burnt area tracks both the rising hazard and the effectiveness of fire management.',
+  'adv-adapt-wei':
+    'Water links farming, power-plant cooling and industry, so the Water Exploitation Index shows where demand is outrunning supply — flagging the scarcity that drought and heat will intensify across several sectors at once.',
+  'adv-adapt-crop-loss':
+    'Food security is a core resilience concern; the tripling of drought- and heat-driven crop losses quantifies how extremes are already eroding yields, motivating drought-tolerant crops, efficient irrigation and diversified food systems.',
+  'adv-adapt-forest-disturbance':
+    'Climate-driven fire, windthrow and bark-beetle outbreaks are killing trees faster, which harms ecosystems and undermines the forest carbon sink — making forest resilience a prerequisite for the land-based removals net zero relies on.',
+  'adv-adapt-cooling-degree-days':
+    'Rising cooling demand stresses the grid exactly when heat threatens health, tying the energy and health risk clusters together. Cooling degree days is the clean, long climate signal behind both peak-demand resilience and overheating in buildings.',
+  'adv-adapt-coastal-transport-damage':
+    'Critical infrastructure underpins the whole economy; this Nature-2025 measure shows how coastal flooding will sharply raise damage to Europe’s roads and railways, quantifying the case for climate-proofing the TEN-T network.',
+  'adv-adapt-river-flood-damage':
+    'River and pluvial flooding is among EUCRA’s most urgent risks; expected annual flood damage shows the scale of avoidable losses and why flood defences and risk-informed planning are high-return adaptation investments.',
+  'adv-adapt-insurance-gap':
+    'When losses are uninsured, households and public budgets absorb the shock — so the protection gap is the economy-and-finance resilience measure. A widening gap signals systemic financial vulnerability to climate extremes.',
+  'adv-adapt-cities-plans':
+    'Adaptation ultimately happens locally, so the share of cities with adaptation plans tracks whether the governance and response capacity is being built to turn risk awareness into action on the ground.',
+};
+
+for (const ind of [...ADVANCED_INDICATORS, ...ADVANCED_ADAPTATION_INDICATORS]) {
+  const s = STORYLINES[ind.id];
+  if (s) ind.storyline = s;
+}
+
 /** All advanced indicators (mitigation + adaptation), for index/seed convenience. */
 export const ALL_ADVANCED_INDICATORS: Indicator[] = [
   ...ADVANCED_INDICATORS,
