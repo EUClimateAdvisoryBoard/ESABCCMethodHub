@@ -107,17 +107,12 @@ export default async function ProjectWorkspaceIndex() {
                     <h3 className="text-base font-bold text-tertiary-dark group-hover:text-primary transition-colors">
                       {p.name}
                     </h3>
-                    {p.isSeed && (
-                      <span className="shrink-0 text-[10px] uppercase tracking-wide text-secondary border border-secondary/30 px-2 py-0.5 rounded-full">
-                        example
-                      </span>
-                    )}
                   </div>
                   <p className="text-sm text-tertiary leading-relaxed">
                     {p.shortDescription}
                   </p>
 
-                  {/* Tool chips — same icons & labels as the project tab bar. */}
+                  {/* Tool chips — labels shared with the project tab bar. */}
                   {p.modules.length > 0 && (
                     <div className="mt-4 flex flex-wrap gap-1.5">
                       {p.modules.map(m => {
@@ -125,14 +120,8 @@ export default async function ProjectWorkspaceIndex() {
                         return (
                           <span
                             key={m.id}
-                            className="inline-flex items-center gap-1.5 rounded-full border border-grey-200 bg-grey-50 pl-1.5 pr-2.5 py-1 text-[11px] font-medium text-tertiary-dark"
+                            className="inline-flex items-center rounded-full border border-grey-200 bg-grey-50 px-2.5 py-1 text-[11px] font-medium text-tertiary-dark"
                           >
-                            <span
-                              className="inline-flex items-center justify-center w-4 h-4 rounded-full"
-                              style={{ color: meta.accent }}
-                            >
-                              <meta.Icon className="w-3.5 h-3.5" />
-                            </span>
                             {meta.label}
                           </span>
                         );
