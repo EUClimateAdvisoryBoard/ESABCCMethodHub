@@ -576,6 +576,7 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       group: meta?.group ?? (isEsabcc ? 'esabcc' : 'additional'),
       beta: meta?.beta,
       code: meta?.code,
+      storyline: meta?.storyline,
       duplicateOf: meta?.duplicateOf ?? ECNO_TO_ESABCC_DUPLICATE[r.id],
       data,
     };

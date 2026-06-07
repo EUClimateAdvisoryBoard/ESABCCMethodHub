@@ -37,9 +37,14 @@ per project under `esabcc-framework-board-advanced:<project>`.
 
 ## How "high quality" is defined here (and its honest limits)
 
-Unlike the `beta` set (explicitly provisional), every advanced indicator is
-chosen for a real, multi-year, well-sourced series. Three honest caveats apply
-and are recorded in each indicator's `description`:
+Every series is filled to a **complete annual resolution** (381 data points
+across the 32 indicators: ~172 taken directly from the publisher, ~209
+interpolated/reconstructed between confirmed anchors). Interpolated points carry
+`estimated: true` and render as **hollow** markers (real values are solid), and
+each indicator's `description` names the exact dataset code to re-pull for the
+estimated years. Unlike the `beta` set (explicitly provisional), every advanced
+indicator is chosen for a real, multi-year, well-sourced series. Three honest
+caveats apply and are recorded in each indicator's `description`:
 
 - **Portal extraction.** The EEA / Eurostat / EMBER / EFFIS / Copernicus portals
   block automated extraction, so where a value could only be cross-confirmed for

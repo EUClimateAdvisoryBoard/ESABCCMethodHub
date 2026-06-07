@@ -50,6 +50,14 @@ export interface IndicatorDataPoint {
    * updates rather than original report figures.
    */
   afterReport?: boolean;
+  /**
+   * True for values that are interpolated/estimated between published
+   * anchor years rather than taken directly from the source dataset. Used
+   * by the "advanced" indicator set, whose series are filled to a complete
+   * annual resolution: confirmed years carry the real published figure,
+   * `estimated` years are linearly interpolated and rendered distinctly.
+   */
+  estimated?: boolean;
 }
 
 export interface Indicator {
@@ -110,6 +118,14 @@ export interface Indicator {
   beta?: boolean;
   /** ESABCC report indicator code (e.g. "O1", "E4a"). */
   code?: string;
+  /**
+   * Short narrative — WHY this indicator matters and how it contributes to the
+   * overall climate-neutrality / resilience storyline. Surfaced in the UI
+   * behind an info button (and as a callout in the indicator drawer/detail) so
+   * a reader understands the role each indicator plays in the framework rather
+   * than just its numbers. Set for the curated "advanced" indicator set.
+   */
+  storyline?: string;
   /**
    * Id of an indicator measuring the same concept. Used by the UI to
    * surface duplicates between the two groups (ESABCC ↔ additional).

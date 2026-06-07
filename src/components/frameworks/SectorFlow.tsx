@@ -20,6 +20,7 @@ import {
   type SectorFramework,
 } from '@/data/sector-frameworks';
 import { useConnectors, type Edge } from './useConnectors';
+import { Tooltip } from '@/components/ui/Tooltip';
 
 export interface OpenIndicatorPayload {
   title: string;
@@ -406,6 +407,9 @@ function ChipRow({
       {refs.map((r) => {
         const linked = r.indicatorIds.length > 0;
         const isBetaRef = r.indicatorIds.some((id) => allIndicators.find((i) => i.id === id)?.beta);
+        const storyline = r.indicatorIds
+          .map((id) => allIndicators.find((i) => i.id === id)?.storyline)
+          .find((s): s is string => !!s);
         return (
           <span
             key={r.refId}
@@ -423,6 +427,30 @@ function ChipRow({
               <span className="text-teal-700 font-bold" title="Beta indicator">
                 β
               </span>
+            )}
+            {storyline && (
+              <Tooltip
+                content={
+                  <span className="block">
+                    <span className="block font-semibold mb-0.5">Why it matters — the storyline</span>
+                    {storyline}
+                  </span>
+                }
+              >
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    // Let the tooltip do the talking on hover; on click fall
+                    // through to opening the full data drawer.
+                    e.stopPropagation();
+                    onOpen({ title: r.label, code: r.code, indicatorIds: r.indicatorIds });
+                  }}
+                  className="text-indigo-600 hover:text-indigo-800 leading-none"
+                  aria-label="Why this indicator matters"
+                >
+                  <InfoGlyph />
+                </button>
+              </Tooltip>
             )}
             {!linked && <span className="italic">no data</span>}
             {editing && (
@@ -502,6 +530,19 @@ function ParentPicker({
         ))}
       </div>
     </div>
+  );
+}
+
+/** Small ⓘ glyph used on chips that carry a "storyline" motivation. */
+function InfoGlyph() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className="w-3 h-3" aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 100 2 1 1 0 000-2z"
+        clipRule="evenodd"
+      />
+    </svg>
   );
 }
 

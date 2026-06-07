@@ -25,6 +25,18 @@ function latest(ind: Indicator) {
   return sorted[0];
 }
 
+function InfoIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className={className} aria-hidden="true">
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM9 9a1 1 0 012 0v4a1 1 0 11-2 0V9zm1-4a1 1 0 100 2 1 1 0 000-2z"
+        clipRule="evenodd"
+      />
+    </svg>
+  );
+}
+
 export default function IndicatorDetail({ title, code, indicators, onClose, onOpenInList }: Props) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -68,6 +80,18 @@ export default function IndicatorDetail({ title, code, indicators, onClose, onOp
                   {ind.code && <span className="text-[11px] font-mono text-gray-400">{ind.code}</span>}
                 </div>
                 <p className="text-xs text-gray-500 mb-3">{ind.description}</p>
+
+                {ind.storyline && (
+                  <div className="mb-3 rounded-lg border border-indigo-200 bg-indigo-50/70 dark:bg-indigo-950/30 dark:border-indigo-900 px-3 py-2">
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wide text-indigo-700 dark:text-indigo-300 mb-1">
+                      <InfoIcon className="w-3.5 h-3.5" />
+                      Why it matters — the storyline
+                    </div>
+                    <p className="text-xs text-indigo-900/90 dark:text-indigo-100/90 leading-relaxed">
+                      {ind.storyline}
+                    </p>
+                  </div>
+                )}
 
                 {breakdown ? <BreakdownChart spec={breakdown} height={210} /> : <IndicatorChart indicator={ind} height={150} />}
 
