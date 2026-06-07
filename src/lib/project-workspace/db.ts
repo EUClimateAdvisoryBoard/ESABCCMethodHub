@@ -24,6 +24,7 @@ import {
   ECNO_TO_ESABCC_DUPLICATE,
 } from '@/data/esabcc-indicators';
 import { BETA_INDICATORS, BETA_ADAPTATION_INDICATORS } from '@/data/beta-indicators';
+import { ADVANCED_INDICATORS, ADVANCED_ADAPTATION_INDICATORS } from '@/data/advanced-indicators';
 import {
   ALL_ESABCC_RECOMMENDATIONS,
   type PastRecommendation,
@@ -384,6 +385,8 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
       ...ECNO_INDICATORS,
       ...BETA_INDICATORS,
       ...BETA_ADAPTATION_INDICATORS,
+      ...ADVANCED_INDICATORS,
+      ...ADVANCED_ADAPTATION_INDICATORS,
     ], backfillPoints);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
@@ -474,6 +477,9 @@ function seedIndicators(projectId: string): DBIndicator[] {
     // Beta indicators carry their own group ('beta' / 'beta-adaptation').
     ...BETA_INDICATORS.map(i => ({ ...i, group: 'beta' as const })),
     ...BETA_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'beta-adaptation' as const })),
+    // Advanced indicators carry their own group ('advanced' / 'advanced-adaptation').
+    ...ADVANCED_INDICATORS.map(i => ({ ...i, group: 'advanced' as const })),
+    ...ADVANCED_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'advanced-adaptation' as const })),
   ];
 }
 
@@ -507,6 +513,8 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       ...ESABCC_REPORT_INDICATORS,
       ...BETA_INDICATORS,
       ...BETA_ADAPTATION_INDICATORS,
+      ...ADVANCED_INDICATORS,
+      ...ADVANCED_ADAPTATION_INDICATORS,
       ...ECNO_INDICATORS,
     ].map(i => [i.id, i]),
   );

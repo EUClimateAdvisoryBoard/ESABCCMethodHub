@@ -20,6 +20,7 @@ import {
   defaultFrameworkBoard,
   defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
+  defaultFrameworkBoardAdvancedV1,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
   type SectorFramework,
@@ -53,6 +54,9 @@ interface Props {
 
 export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, version }: Props) {
   const isBeta = version.variant === 'beta';
+  const isAdvanced = version.variant === 'advanced';
+  // Both the beta and advanced boards present adaptation as a first-class track.
+  const hasAdaptation = isBeta || isAdvanced;
   const boardVersion = boardSchemaVersion(version);
   const storageKey = boardStorageKey(version, projectId);
   // Initial state is the version's published default so server and first client
@@ -61,10 +65,11 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   // The two 'report'-variant built-ins differ: 'report-faithful' is the board
   // 1:1 with the report figures, 'report' is the enhanced board.
   const pureDefault = useCallback(() => {
+    if (isAdvanced) return defaultFrameworkBoardAdvancedV1();
     if (isBeta) return defaultFrameworkBoardBeta();
     if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
     return defaultFrameworkBoard();
-  }, [isBeta, version.id]);
+  }, [isAdvanced, isBeta, version.id]);
   const [mounted, setMounted] = useState(false);
   const [board, setBoard] = useState<Board>(() => pureDefault());
   const [editing, setEditing] = useState(false);
@@ -179,7 +184,25 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
 
   return (
     <div>
-      {isBeta ? (
+      {isAdvanced ? (
+        <p className="text-sm text-tertiary mb-4 max-w-3xl">
+          <span className="font-semibold text-indigo-700">Advanced version 1:</span> a deeper, higher-data-quality
+          build of the six frameworks. Each mitigation outcome and lever is enriched with{' '}
+          <span className="font-semibold">long, well-sourced indicator series</span> (e.g. the 2004– renewable
+          share, the 2005– EU ETS series, the 2010– circular-material-use rate, EEA new-car CO₂, and the
+          declining Nature-2025 forest carbon sink). Crucially,{' '}
+          <span className="font-semibold">adaptation &amp; resilience is a first-class track of equal weight to
+          mitigation</span>: every sector carries its own adaptation outcomes, levers and enabling conditions
+          (marked{' '}
+          <span className="align-middle inline-flex items-center rounded bg-teal-100 text-teal-800 px-1 text-[10px] font-semibold">
+            ⛨ adapt
+          </span>
+          ), anchored in the EEA European Climate Risk Assessment (EUCRA 2024) and wired to high-quality
+          resilience series from the EEA, Copernicus, JRC, EFFIS, ECDC and the Nature / Lancet literature
+          (economic losses since 1980, sea-level rise since 1993, wildfire burnt area, heat mortality, West
+          Nile cases, crop-loss severity, …). Click any chip to open the data behind it.
+        </p>
+      ) : isBeta ? (
         <p className="text-sm text-tertiary mb-4 max-w-3xl">
           <span className="font-semibold text-teal-700">Beta:</span> a copy of the six report flow charts
           with an added <span className="font-semibold">adaptation &amp; resilience</span> layer. Alongside

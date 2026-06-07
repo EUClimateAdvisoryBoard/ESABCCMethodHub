@@ -4,9 +4,11 @@
  * The "Flow charts" view of the Indicator module is no longer a fixed pair of
  * boards (report + beta). Instead it is a *registry* of named versions:
  *
- *   • three built-in versions — the report-faithful ESABCC frameworks (the
+ *   • four built-in versions — the report-faithful ESABCC frameworks (the
  *     default), the "enhanced" board (every lever/outcome given an indicator),
- *     and the beta board (enhanced + adaptation & resilience layer); and
+ *     the beta board (enhanced + adaptation & resilience layer), and the
+ *     "Advanced version 1" board (high-quality indicators + a first-class,
+ *     equal-weight adaptation track); and
  *   • any number of user-created versions, each one started by copying an
  *     existing version (its "foundation") and then edited freely.
  *
@@ -27,13 +29,21 @@ import {
   defaultFrameworkBoard,
   defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
+  defaultFrameworkBoardAdvancedV1,
   FRAMEWORK_BOARD_VERSION,
   FRAMEWORK_BOARD_BETA_VERSION,
+  FRAMEWORK_BOARD_ADVANCED_VERSION,
   type FrameworkBoard,
 } from '@/data/sector-frameworks';
 
-/** Controls adaptation wording in the board UI; inherited from the foundation. */
-export type FlowChartVariant = 'report' | 'beta';
+/**
+ * Controls adaptation wording in the board UI; inherited from the foundation.
+ *  - 'report'   — plain mitigation layout (report-faithful / enhanced boards);
+ *  - 'beta'     — report frameworks + the provisional beta adaptation layer;
+ *  - 'advanced' — the high-quality "Advanced version 1" board, where adaptation
+ *                 is a first-class track of equal weight to mitigation.
+ */
+export type FlowChartVariant = 'report' | 'beta' | 'advanced';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -57,13 +67,18 @@ export interface FlowChartVersion {
  *   • 'report-faithful' — 1:1 the report figures (some levers carry no
  *     indicator, exactly as drawn);
  *   • 'report'          — the *enhanced* board, where every lever/outcome was
- *     given an indicator chip (beta or reused ECNO series); and
- *   • 'beta'            — the enhanced board + the adaptation & resilience layer.
+ *     given an indicator chip (beta or reused ECNO series);
+ *   • 'beta'            — the enhanced board + the adaptation & resilience layer;
+ *     and
+ *   • 'advanced-v1'     — "Advanced version 1": the enhanced board enriched with
+ *     high-quality, long-historic-series mitigation indicators and a richer,
+ *     equal-weight per-sector adaptation & resilience track.
  */
 const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'report-faithful', name: 'ESABCC report (default)', variant: 'report', builtIn: true },
   { id: 'report', name: 'Enhanced flow charts', variant: 'report', builtIn: true },
   { id: 'beta', name: 'Beta — adaptation & resilience', variant: 'beta', builtIn: true },
+  { id: 'advanced-v1', name: 'Advanced version 1', variant: 'advanced', builtIn: true },
 ];
 
 interface RegistryData {
@@ -80,6 +95,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'report-faithful') return `esabcc-framework-board-report:${projectId}`;
   if (version.id === 'report') return `esabcc-framework-board:${projectId}`;
   if (version.id === 'beta') return `esabcc-framework-board-beta:${projectId}`;
+  if (version.id === 'advanced-v1') return `esabcc-framework-board-advanced:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -90,7 +106,9 @@ function seedStorageKey(version: FlowChartVersion, projectId: string): string {
 
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
-  return version.variant === 'beta' ? FRAMEWORK_BOARD_BETA_VERSION : FRAMEWORK_BOARD_VERSION;
+  if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
+  if (version.variant === 'beta') return FRAMEWORK_BOARD_BETA_VERSION;
+  return FRAMEWORK_BOARD_VERSION;
 }
 
 function readBoard(key: string): FrameworkBoard | null {
@@ -126,9 +144,14 @@ export function defaultBoardFor(version: FlowChartVersion, projectId: string): F
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
   if (version.id === 'report') return defaultFrameworkBoard();
   if (version.id === 'beta') return defaultFrameworkBoardBeta();
+  if (version.id === 'advanced-v1') return defaultFrameworkBoardAdvancedV1();
   return (
     readBoard(seedStorageKey(version, projectId)) ??
-    (version.variant === 'beta' ? defaultFrameworkBoardBeta() : defaultFrameworkBoard())
+    (version.variant === 'advanced'
+      ? defaultFrameworkBoardAdvancedV1()
+      : version.variant === 'beta'
+        ? defaultFrameworkBoardBeta()
+        : defaultFrameworkBoard())
   );
 }
 

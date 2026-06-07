@@ -33,8 +33,12 @@ interface Props {
   allIndicators: Indicator[];
   onChange: (next: SectorFramework) => void;
   onOpenIndicator: (p: OpenIndicatorPayload) => void;
-  /** 'beta' relabels the lever row and lets adaptation-tracked cards render. */
-  variant?: 'report' | 'beta';
+  /**
+   * 'report' is the plain mitigation layout. 'beta' and 'advanced' both
+   * relabel the outcome/lever rows to show adaptation alongside mitigation and
+   * let adaptation-tracked cards read as a first-class track.
+   */
+  variant?: 'report' | 'beta' | 'advanced';
 }
 
 // Uniform per-level palette mirroring the report figures.
@@ -56,7 +60,9 @@ function nodeBg(layer: 'outcome' | 'lever', track?: FrameworkTrack): string {
 const uid = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 
 export default function SectorFlow({ sector, editing, allIndicators, onChange, onOpenIndicator, variant = 'report' }: Props) {
-  const isBeta = variant === 'beta';
+  // Both the beta and the advanced boards present adaptation as a first-class
+  // track alongside mitigation, so the outcome/lever rows are relabelled.
+  const showAdaptation = variant !== 'report';
   const edges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const o of sector.outcomes) e.push({ from: o.id, to: 'goal' });
@@ -159,7 +165,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
         </Row>
 
         {/* ── Outcomes ───────────────────────────────────────────────────────── */}
-        <Row label={isBeta ? 'Outcomes (mitigation & adaptation)' : 'Outcomes'} bg={OUTCOME_BG} text="#fff" onAdd={editing ? () => addNode('outcome') : undefined}>
+        <Row label={showAdaptation ? 'Outcomes (mitigation & adaptation)' : 'Outcomes'} bg={OUTCOME_BG} text="#fff" onAdd={editing ? () => addNode('outcome') : undefined}>
           <div className="flex gap-2 items-stretch flex-wrap">
             {sector.outcomes.map((o) => (
               <NodeCard
@@ -180,7 +186,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
         </Row>
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
-        <Row label={isBeta ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
+        <Row label={showAdaptation ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
           <div className="flex gap-2 items-stretch flex-wrap sm:flex-nowrap sm:overflow-x-auto pb-1">
             {sector.levers.map((l) => (
               <NodeCard

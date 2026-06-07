@@ -86,10 +86,21 @@ export interface Indicator {
    *                   indicators that power the adaptation-and-resilience
    *                   layer of the "Flow charts (beta)" view. Shown in
    *                   their own "Beta adaptation indicators" group.
+   *  - `advanced`   — high-quality, long-historic-series MITIGATION
+   *                   indicators curated from primary statistics (EEA,
+   *                   Eurostat, EMBER, EAFO, EHPA, JRC) and the peer-reviewed
+   *                   literature (Nature Climate Change, ESSD, …) for the
+   *                   "Advanced version 1" flow chart. Unlike `beta`, these
+   *                   carry multi-year, well-sourced series and are not
+   *                   flagged provisional. Shown in their own group.
+   *  - `advanced-adaptation` — high-quality climate-ADAPTATION & resilience
+   *                   indicators (long observed series wherever possible)
+   *                   powering the first-class adaptation track of the
+   *                   "Advanced version 1" flow chart. Shown in their own group.
    * Defaults to `additional` if not set, so legacy entries don't have to
    * be touched one by one.
    */
-  group?: 'esabcc' | 'additional' | 'beta' | 'beta-adaptation';
+  group?: 'esabcc' | 'additional' | 'beta' | 'beta-adaptation' | 'advanced' | 'advanced-adaptation';
   /**
    * Marks a provisional "beta" indicator (see `group: 'beta'`). The UI
    * renders a small β badge wherever the indicator appears (sidebar list

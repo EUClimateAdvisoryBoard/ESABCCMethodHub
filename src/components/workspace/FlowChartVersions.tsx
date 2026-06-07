@@ -5,11 +5,12 @@
  * edit, start a new version from an existing one (its "foundation" is copied),
  * rename any version, and delete custom ones.
  *
- * Three versions ship built in — the report-faithful ESABCC frameworks (the
- * default), the "enhanced" board (every lever/outcome given an indicator), and
- * the beta board (enhanced + adaptation & resilience layer). Everything else is
- * a user-created copy, stored per project in localStorage by
- * `@/lib/project-workspace/flowchart-versions`.
+ * Four versions ship built in — the report-faithful ESABCC frameworks (the
+ * default), the "enhanced" board (every lever/outcome given an indicator), the
+ * beta board (enhanced + adaptation & resilience layer), and "Advanced version
+ * 1" (high-quality long-series indicators + a first-class, equal-weight
+ * adaptation track). Everything else is a user-created copy, stored per project
+ * in localStorage by `@/lib/project-workspace/flowchart-versions`.
  */
 'use client';
 import { useEffect, useState } from 'react';
@@ -106,6 +107,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
           {active.variant === 'beta' && (
             <span className="text-[9px] uppercase font-bold rounded px-1 bg-teal-100 text-teal-700">
               β
+            </span>
+          )}
+          {active.variant === 'advanced' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-indigo-100 text-indigo-700">
+              adv
             </span>
           )}
           <button

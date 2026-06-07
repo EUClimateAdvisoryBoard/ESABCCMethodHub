@@ -80,9 +80,21 @@ const GROUPS = [
     label: 'Beta adaptation indicators',
     help: 'Provisional climate-adaptation & resilience indicators powering the adaptation layer of the Flow charts (beta) view. Drawn from EEA, JRC, Eurostat and the ECNO adaptation building block.',
   },
+  {
+    id: 'advanced' as const,
+    label: 'Advanced mitigation indicators',
+    help: 'High-quality, long-historic-series mitigation indicators curated for the Advanced version 1 flow chart from primary statistics (EEA, Eurostat, EMBER, EAFO, EHPA, JRC) and peer-reviewed literature (Nature Climate Change, ESSD). Not provisional — these carry multi-year, well-sourced series.',
+  },
+  {
+    id: 'advanced-adaptation' as const,
+    label: 'Advanced adaptation indicators',
+    help: 'High-quality climate-adaptation & resilience indicators with long observed series wherever possible, powering the first-class adaptation track of the Advanced version 1 flow chart. Anchored in the EEA European Climate Risk Assessment (EUCRA 2024), Copernicus (C3S/EDO/EFFIS), JRC PESETA and the Lancet Countdown / Nature literature.',
+  },
 ];
 
-function groupOf(i: Indicator): 'esabcc' | 'additional' | 'beta' | 'beta-adaptation' {
+function groupOf(
+  i: Indicator,
+): 'esabcc' | 'additional' | 'beta' | 'beta-adaptation' | 'advanced' | 'advanced-adaptation' {
   if (i.group) return i.group;
   if (i.beta) return 'beta';
   return i.id.startsWith('esabcc-') ? 'esabcc' : 'additional';
