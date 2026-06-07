@@ -1,6 +1,6 @@
 {
   "date": "2026-06-07",
-  "generatedAt": "2026-06-07T08:24:51.206Z",
+  "generatedAt": "2026-06-07T12:22:44.132Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 7 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "Ecologist calls for plastics ban in cemetery",
-      "summary": "Alison Fure is asking the council to begin phasing out plastic decorative items, including flowers.",
+      "headline": "Dining across the divide: ‘I’m not a climate denier, but aiming for net zero by 2050 is unrealistic’",
+      "summary": "&lt;p&gt;An ‘apolitical’ retired IT manager and a ‘far left’ biologist disagree over tackling global heating – but are they in harmony over truth and reconciliation?&lt;/p&gt;&lt;p&gt;• Want to meet someone from across the divide? Click &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/mar/18/would-you-like-to-take-part-in-dining-across-the-divide\"&gt;here&lt;/a&gt; to find out how&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Don, 74, Farnham&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Occupation&",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "China urges fund managers to support innovation, warns against concept hype - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5\" target=\"_blank\"&gt;China urges fund managers to support innovation, warns against concept hype&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -39,6 +33,14 @@
           "source": "BBC Science & Environment",
           "description": "How a Kent village created a scale model of the solar system to help people understand space.",
           "published": "2026-06-07T06:15:04.000Z",
+          "score": 7
+        },
+        {
+          "title": "Ukraine: Russian drone hits nuclear-fuel storage facility",
+          "link": "https://www.dw.com/en/ukraine-russian-drone-hits-nuclear-fuel-storage-facility/a-77448846?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ukrainian President Volodymyr Zelenskyy has called a Russian attack on a nuclear storage facility near Chernobyl &quot;vile.&quot; The UN&#039;s nuclear watchdog said no increased radiation had been registered at the site.",
+          "published": "2026-06-07T10:35:00.000Z",
           "score": 7
         },
         {
@@ -64,14 +66,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNMXFRS2djVDNTWnotd2xBSVlORFN5MWlkeDFYTHR0TjhyN29lQmdkZzF3YlFtNVlkYUVmVTFoWGM3NzZJOUc0U2tRTTV4eGNJenNaeV8yeXV0X2Zhd2xyOXNWV0RQS2haQ3JtNFUwelU1RzhuaDA3c2tObE9lem1qbU1MUHdFd05OTks3MndVcG0xMHRxeTRURHJfdjdRc1RzX2FodkRzTTNTVE5OaTh2azN4bDA2blU3LU03ZjFiNE9lU0hP?oc=5\" target=\"_blank\"&gt;Russian-run Zaporizhzhia nuclear plant says power supply has been restored&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-06T13:52:09.000Z",
           "score": 7
-        },
-        {
-          "title": "Russian drone hit nuclear-fuel storage facility near Chornobyl, Ukraine says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5\" target=\"_blank\"&gt;Russian drone hit nuclear-fuel storage facility near Chornobyl, Ukraine says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-07T08:19:42.000Z",
-          "score": 7
         }
       ]
     },
@@ -79,6 +73,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Dining across the divide: ‘I’m not a climate denier, but aiming for net zero by 2050 is unrealistic’",
+          "link": "https://www.theguardian.com/lifeandstyle/2026/jun/07/dining-across-the-divide-don-david-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;An ‘apolitical’ retired IT manager and a ‘far left’ biologist disagree over tackling global heating – but are they in harmony over truth and reconciliation?&lt;/p&gt;&lt;p&gt;• Want to meet someone from across the divide? Click &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/mar/18/would-you-like-to-take-part-in-dining-across-the-divide\"&gt;here&lt;/a&gt; to find out how&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Don, 74, Farnham&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Occupation&",
+          "published": "2026-06-07T11:00:31.000Z",
+          "score": 7
+        },
         {
           "title": "Ecologist calls for plastics ban in cemetery",
           "link": "https://www.bbc.com/news/articles/c3r25edye9do?at_medium=RSS&amp;at_campaign=rss",
@@ -88,11 +90,11 @@
           "score": 4
         },
         {
-          "title": "‘Immediate national priority’: ministers accused of complacency over UK food supply",
-          "link": "https://www.theguardian.com/business/2026/jun/06/ministers-uk-food-supply-immediate-national-priority-trade-body-urges",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Cold storage and logistics body warns food supplies at risk from fuel shortages, cyber attacks and extreme weather&lt;/p&gt;&lt;p&gt;Ministers have been accused of being complacent about the risks to vital supplies of food into the UK amid concerns over fuel shortages, cyber attacks and extreme weather.&lt;/p&gt;&lt;p&gt;The trade body for cold storage and logistics has urged the government to make potential disruption to the UK’s food system an “immediate national priority”.&lt;/p&gt; ",
-          "published": "2026-06-06T12:00:27.000Z",
+          "title": "Residents' health fears over plan to burn more waste",
+          "link": "https://www.bbc.com/news/articles/c1eypqxd928o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The Environment Agency has permitted for an extra 10% of waste to be burned at the Beddington incinerator.",
+          "published": "2026-06-07T12:07:17.000Z",
           "score": 2
         }
       ]
@@ -100,16 +102,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "China urges fund managers to support innovation, warns against concept hype - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPN2VVRFp1QS14eTNTeElwd0NGTjRNa0xySDd5NjFlV2xadmhvWXc3SzRaS1FRU2dCRHNiczNGLUtYb3V2UEJQN2N2RlF3Z21hR3NGRzVCbDJseExrSnE3eDhXRGJUYUdOX2hHdGNnTDVPaHBtYXFCQkZiSTBKRzRBR05sZC1LM1ZRdXAzdmxlcmJqMENoZ3k1NkdIcERQemNoZHRuc0hUQnBfYUNYSnNUalljeEVKemdBZ0NXZ3Vycm5KZw?oc=5\" target=\"_blank\"&gt;China urges fund managers to support innovation, warns against concept hype&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T08:49:43.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -120,7 +113,15 @@
           "link": "https://www.bbc.com/news/articles/c802e7jk458o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US defence secretary was speaking in Normandy, 82 years after allied forces launched their operation to liberate Nazi-occupied north-western Europe.",
-          "published": "2026-06-07T05:47:28.000Z",
+          "published": "2026-06-07T10:35:25.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU conservative chief urges tougher China trade stance, Bild am Sonntag reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMUdpbWFtUm41OGJQNl9zSWh4SE5GXzhINXBOb1djT2Vjb1o3eUxmeHVROGFDLXhsX3lrY1Q1YUQwUGhtSmZOelFSbS1fbkpoNmZjdzlTb1hpSGxPM3BZMW5YSVFpY3ZRMzN3TFJqbURWdDFMU29PN2ljdG1JdUx4WUdHMlB4QmQ3bXZSdlFaTGZha0xWOVo3UHVSamZ1WVg4ZldzV2plTWtDeUZmNV9ONXNVQW15WWE4UkxETmd6NVpDOVQw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQMUdpbWFtUm41OGJQNl9zSWh4SE5GXzhINXBOb1djT2Vjb1o3eUxmeHVROGFDLXhsX3lrY1Q1YUQwUGhtSmZOelFSbS1fbkpoNmZjdzlTb1hpSGxPM3BZMW5YSVFpY3ZRMzN3TFJqbURWdDFMU29PN2ljdG1JdUx4WUdHMlB4QmQ3bXZSdlFaTGZha0xWOVo3UHVSamZ1WVg4ZldzV2plTWtDeUZmNV9ONXNVQW15WWE4UkxETmd6NVpDOVQw?oc=5\" target=\"_blank\"&gt;EU conservative chief urges tougher China trade stance, Bild am Sonntag reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-07T09:41:43.000Z",
           "score": 8
         }
       ]
@@ -154,12 +155,12 @@
           "score": 8
         },
         {
-          "title": "Musk's SpaceX IPO jolts life back into European retail investing - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOd3BhSzBzQU9lSHlpeGd1TmxaQXJINEpNMHBKNzI1RjhhTF9zMEtuN2tkQ2lTZTNpSW94OWZySXpkaWdhLXZpZUJuQTNmVkp6ak5jejF0dmpxWmtBclhGcnh1dFR6WGVOZW0wdi1ZMUJ2a3lsaVdjcjNXd3ozd1lJZ01tbzV5c0REVDRCWDcwNU5KRlNDZHRHSkFiSXlRbHRaYVBoYUtmdGZJS2dTaVR6bHdVSFFMcnY0STZV?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOd3BhSzBzQU9lSHlpeGd1TmxaQXJINEpNMHBKNzI1RjhhTF9zMEtuN2tkQ2lTZTNpSW94OWZySXpkaWdhLXZpZUJuQTNmVkp6ak5jejF0dmpxWmtBclhGcnh1dFR6WGVOZW0wdi1ZMUJ2a3lsaVdjcjNXd3ozd1lJZ01tbzV5c0REVDRCWDcwNU5KRlNDZHRHSkFiSXlRbHRaYVBoYUtmdGZJS2dTaVR6bHdVSFFMcnY0STZV?oc=5\" target=\"_blank\"&gt;Musk's SpaceX IPO jolts life back into European retail investing&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-06T09:15:48.000Z",
-          "score": 8
+          "title": "Kosovo holds third election in 16 months",
+          "link": "https://www.dw.com/en/kosovo-holds-third-election-in-16-months/a-77447536?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Voters in Kosovo are heading to the polls in a snap vote called to resolve a parliamentary stalemate. The country&#039;s prolonged political crisis has further debilitated an already ailing economy.",
+          "published": "2026-06-07T08:12:00.000Z",
+          "score": 6
         },
         {
           "title": "Taiwan deploys vessels in response to Chinese operation",
@@ -174,8 +175,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 394,
-    "articlesLast24h": 132,
-    "afterDedup": 126,
+    "articlesLast24h": 134,
+    "afterDedup": 125,
     "feedsQueried": 19
   }
 }
