@@ -80,14 +80,21 @@ export default function IndicatorChart({ indicator, height = 160, spark = false 
       {/* series */}
       <path d={path} fill="none" stroke={accent} strokeWidth={1.8} strokeLinejoin="round" />
       {data.map((d, i) => (
+        // Interpolated/estimated points render hollow (white fill, accent ring)
+        // so the filled-in values are visually distinct from source figures;
+        // post-report points stay amber.
         <circle
           key={i}
           cx={sx(d.year)}
           cy={sy(d.value)}
           r={spark ? 1.4 : 2.4}
-          fill={d.afterReport ? '#f59e0b' : accent}
+          fill={d.estimated ? '#ffffff' : d.afterReport ? '#f59e0b' : accent}
+          stroke={d.estimated ? accent : 'none'}
+          strokeWidth={d.estimated ? 1 : 0}
         >
-          {!spark && <title>{`${d.year}: ${d.value.toLocaleString()} ${indicator.unit}`}</title>}
+          {!spark && (
+            <title>{`${d.year}: ${d.value.toLocaleString()} ${indicator.unit}${d.estimated ? ' (interpolated)' : ''}`}</title>
+          )}
         </circle>
       ))}
 
