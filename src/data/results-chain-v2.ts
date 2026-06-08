@@ -65,6 +65,15 @@ export interface ResultsChainItem {
   track: ResultsTrack;
   /** Sector / category tag for sub-clustering (e.g. 'energy-supply'). */
   sector?: string;
+  /**
+   * True for a *policy-process* indicator — one that measures the qualitative
+   * policy machinery (strategies adopted, plans delivered, coordination,
+   * mainstreaming) rather than a purely physical/quantitative outcome. These
+   * fill the early rungs of the adaptation track, where (unlike mitigation)
+   * action is still mostly about building the governance and process, so the
+   * board pairs the quantitative side with the qualitative policy side.
+   */
+  policy?: boolean;
 }
 
 /** One rung of the results chain. */
@@ -336,6 +345,18 @@ const ADAPTATION: Record<ResultsGroupId, string[]> = {
   ],
 };
 
+/**
+ * Ids that are *policy-process* indicators — the qualitative policy machinery
+ * (strategies adopted, plans delivered, risk assessments, coordination,
+ * mainstreaming, finance committed). They dominate the early rungs of the
+ * adaptation track, where action is still mostly about building governance and
+ * process, so the board pairs the quantitative side with the qualitative side.
+ */
+const POLICY_PROCESS_IDS = new Set<string>([
+  'national-adaptation-strategies',
+  'adv-adapt-cities-plans',
+]);
+
 // ── Builder ──────────────────────────────────────────────────────────────────
 
 let _ref = 0;
@@ -362,6 +383,7 @@ function buildItems(ids: string[], track: ResultsTrack): ResultsChainItem[] {
       indicatorIds: ind ? [id] : [],
       track,
       sector: ind?.category,
+      policy: POLICY_PROCESS_IDS.has(id) || undefined,
     };
   });
 }

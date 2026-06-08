@@ -188,6 +188,13 @@ function Chip({
         {item.code}
       </span>
       <span className="max-w-[150px] truncate">{item.label}</span>
+      {item.policy && (
+        <Tooltip content="Policy-process indicator — tracks the qualitative policy machinery (strategies, plans, coordination, mainstreaming), pairing the quantitative side with the qualitative policy side.">
+          <span className="shrink-0 inline-flex items-center rounded bg-amber-100 text-amber-800 px-1 text-[8px] font-bold uppercase tracking-wide">
+            policy
+          </span>
+        </Tooltip>
+      )}
       {isNew && (
         <Tooltip content="New indicator — not part of the original ESABCC report's indicator database.">
           <span className="shrink-0 inline-flex items-center rounded bg-emerald-100 text-emerald-700 px-1 text-[8px] font-bold uppercase tracking-wide">
