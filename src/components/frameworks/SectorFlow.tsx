@@ -60,6 +60,19 @@ function nodeBg(layer: 'outcome' | 'lever', track?: FrameworkTrack): string {
 
 const uid = (p: string) => `${p}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
 
+/**
+ * An indicator belongs to the original ESABCC report's indicator database when
+ * its effective group is `esabcc` (mirrors the grouping logic in
+ * IndicatorModule). Everything else — advanced, beta, adaptation, additional
+ * ECNO mappings and user-added series — is "new", i.e. not part of the original
+ * report, and gets a small "new" badge on the flow-chart chips.
+ */
+function isOriginalReportIndicator(ind?: Indicator): boolean {
+  if (!ind) return false;
+  const group = ind.group ?? (ind.beta ? 'beta' : ind.id.startsWith('esabcc-') ? 'esabcc' : 'additional');
+  return group === 'esabcc';
+}
+
 export default function SectorFlow({ sector, editing, allIndicators, onChange, onOpenIndicator, variant = 'report' }: Props) {
   // Both the beta and the advanced boards present adaptation as a first-class
   // track alongside mitigation, so the outcome/lever rows are relabelled.
@@ -433,6 +446,11 @@ function ChipRow({
       {refs.map((r) => {
         const linked = r.indicatorIds.length > 0;
         const isBetaRef = r.indicatorIds.some((id) => allIndicators.find((i) => i.id === id)?.beta);
+        // "New": linked to data that is not part of the original ESABCC report's
+        // indicator database (none of its linked series are `esabcc` indicators).
+        const isNewRef =
+          linked &&
+          r.indicatorIds.every((id) => !isOriginalReportIndicator(allIndicators.find((i) => i.id === id)));
         const storyline = r.indicatorIds
           .map((id) => allIndicators.find((i) => i.id === id)?.storyline)
           .find((s): s is string => !!s);
@@ -459,6 +477,17 @@ function ChipRow({
             >
               {r.label}
             </span>
+            {isNewRef && (
+              <Tooltip content="New indicator — not part of the original ESABCC report's indicator database.">
+                <span
+                  className="shrink-0 inline-flex items-center rounded bg-emerald-100 text-emerald-700 px-1 text-[8px] font-bold uppercase leading-[1.4] tracking-wide"
+                  aria-label="New indicator, not in the original ESABCC report"
+                >
+                  <NewGlyph />
+                  <span className="ml-0.5">new</span>
+                </span>
+              </Tooltip>
+            )}
             {isBetaRef && (
               <span className="text-teal-700 font-bold" title="Beta indicator">
                 β
@@ -566,6 +595,15 @@ function ParentPicker({
         ))}
       </div>
     </div>
+  );
+}
+
+/** Small sparkle glyph marking a "new" indicator (not in the original report). */
+function NewGlyph() {
+  return (
+    <svg viewBox="0 0 20 20" fill="currentColor" className="w-2.5 h-2.5" aria-hidden="true">
+      <path d="M10 1.5l1.9 4.8 4.8 1.9-4.8 1.9L10 14.9 8.1 10.1 3.3 8.2l4.8-1.9L10 1.5zM4.5 13.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8.8-2z" />
+    </svg>
   );
 }
 
