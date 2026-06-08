@@ -30,6 +30,7 @@ import {
   defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
   defaultFrameworkBoardAdvancedV1,
+  defaultFrameworkBoardAdvancedV3,
   FRAMEWORK_BOARD_VERSION,
   FRAMEWORK_BOARD_BETA_VERSION,
   FRAMEWORK_BOARD_ADVANCED_VERSION,
@@ -84,6 +85,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'beta', name: 'Beta — adaptation & resilience', variant: 'beta', builtIn: true },
   { id: 'advanced-v1', name: 'Advanced version 1', variant: 'advanced', builtIn: true },
   { id: 'advanced-v2', name: 'Advanced version 2', variant: 'advanced-v2', builtIn: true },
+  { id: 'advanced-v3', name: 'Advanced version 3', variant: 'advanced', builtIn: true },
 ];
 
 interface RegistryData {
@@ -102,6 +104,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'beta') return `esabcc-framework-board-beta:${projectId}`;
   if (version.id === 'advanced-v1') return `esabcc-framework-board-advanced:${projectId}`;
   if (version.id === 'advanced-v2') return `esabcc-framework-board-advanced-v2:${projectId}`;
+  if (version.id === 'advanced-v3') return `esabcc-framework-board-advanced-v3:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -158,6 +161,7 @@ export function defaultBoardFor(version: FlowChartVersion, projectId: string): F
   if (version.id === 'report') return defaultFrameworkBoard();
   if (version.id === 'beta') return defaultFrameworkBoardBeta();
   if (version.id === 'advanced-v1') return defaultFrameworkBoardAdvancedV1();
+  if (version.id === 'advanced-v3') return defaultFrameworkBoardAdvancedV3();
   return (
     readBoard(seedStorageKey(version, projectId)) ??
     (version.variant === 'advanced'

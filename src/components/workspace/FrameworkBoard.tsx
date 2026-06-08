@@ -21,6 +21,7 @@ import {
   defaultFrameworkBoardReport,
   defaultFrameworkBoardBeta,
   defaultFrameworkBoardAdvancedV1,
+  defaultFrameworkBoardAdvancedV3,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
   type SectorFramework,
@@ -55,6 +56,9 @@ interface Props {
 export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, version }: Props) {
   const isBeta = version.variant === 'beta';
   const isAdvanced = version.variant === 'advanced';
+  // Advanced version 3 is the *integrated* board: the advanced sectors under one
+  // overarching goal, plus a consolidated equal-weight adaptation system.
+  const isAdvancedV3 = version.id === 'advanced-v3';
   // Both the beta and advanced boards present adaptation as a first-class track.
   const hasAdaptation = isBeta || isAdvanced;
   const boardVersion = boardSchemaVersion(version);
@@ -65,6 +69,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   // The two 'report'-variant built-ins differ: 'report-faithful' is the board
   // 1:1 with the report figures, 'report' is the enhanced board.
   const pureDefault = useCallback(() => {
+    if (version.id === 'advanced-v3') return defaultFrameworkBoardAdvancedV3();
     if (isAdvanced) return defaultFrameworkBoardAdvancedV1();
     if (isBeta) return defaultFrameworkBoardBeta();
     if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
@@ -184,7 +189,49 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
 
   return (
     <div>
-      {isAdvanced ? (
+      {board.overarchingGoal && (
+        <div className="rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-3 mb-4">
+          <div className="text-[10px] uppercase tracking-wide text-emerald-700 font-semibold mb-0.5">
+            One overarching goal
+          </div>
+          <div className="text-base font-bold text-tertiary-dark leading-snug">{board.overarchingGoal}</div>
+          {board.overarchingNote && (
+            <p className="text-xs text-tertiary mt-1 max-w-3xl">{board.overarchingNote}</p>
+          )}
+          <div className="mt-2 flex flex-wrap gap-2 text-[11px]">
+            <span className="inline-flex items-center gap-1.5 rounded-md bg-white border border-grey-200 px-2 py-1">
+              <span className="w-2 h-2 rounded-full" style={{ background: '#9E4A46' }} />
+              <span className="font-semibold text-tertiary-dark">Mitigation</span>
+              <span className="text-tertiary-light">— cut emissions to net zero</span>
+            </span>
+            <span className="inline-flex items-center gap-1.5 rounded-md bg-white border border-grey-200 px-2 py-1">
+              <span className="w-2 h-2 rounded-full" style={{ background: '#2E7D74' }} />
+              <span className="font-semibold text-tertiary-dark">⛨ Adaptation &amp; resilience</span>
+              <span className="text-tertiary-light">— reduce risk, loss &amp; vulnerability</span>
+            </span>
+            <span className="text-tertiary-light self-center">equal-weight branches of the same goal</span>
+          </div>
+        </div>
+      )}
+      {isAdvancedV3 ? (
+        <p className="text-sm text-tertiary mb-4 max-w-3xl">
+          <span className="font-semibold text-emerald-700">Advanced version 3 — integrated framework:</span> the
+          advanced sectors brought under <span className="font-semibold">one overarching goal</span>, with{' '}
+          <span className="font-semibold">mitigation and adaptation as equal-weight branches</span>. Every
+          sector keeps its adaptation track (marked{' '}
+          <span className="align-middle inline-flex items-center rounded bg-teal-100 text-teal-800 px-1 text-[10px] font-semibold">
+            ⛨ adapt
+          </span>
+          ), and a consolidated <span className="font-semibold">Climate adaptation &amp; resilience</span> flow
+          chart is added as its own first-class system — structured like the report frameworks (outcomes →
+          levers → enabling) and wired to the high-quality resilience series plus the{' '}
+          <span className="font-semibold">policy-process / governance</span> indicators (National Adaptation
+          Strategies &amp; Plans, risk assessments, adaptation in climate law, EU Adaptation Strategy actions,
+          Mission-Charter &amp; Covenant-of-Mayors uptake, EFAS early-warning reach, EU &amp; EIB adaptation
+          finance), so the qualitative policy side sits beside the quantitative risk side. Click any chip to
+          open the data behind it.
+        </p>
+      ) : isAdvanced ? (
         <p className="text-sm text-tertiary mb-4 max-w-3xl">
           <span className="font-semibold text-indigo-700">Advanced version 1:</span> a deeper, higher-data-quality
           build of the six frameworks. Each mitigation outcome and lever is enriched with{' '}
