@@ -35,6 +35,10 @@ import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
 import type { Meeting, Milestone, Phase } from '@/lib/project-workspace/client';
 import ProjectShell from '@/components/workspace/ProjectShell';
+import WorkspaceCommentProvider, {
+  CommentMarker,
+  commentTarget,
+} from '@/components/workspace/WorkspaceCommentProvider';
 
 export const dynamic = 'force-dynamic';
 
@@ -96,25 +100,41 @@ export default async function ProjectPage({
           <span className="mx-1">/</span>
           <span className="text-tertiary-dark font-medium">{project.name}</span>
         </nav>
-        <header className="mb-6">
-          <h1 className="text-2xl font-bold text-tertiary-dark">{project.name}</h1>
-          <p className="text-sm text-tertiary mt-2 max-w-3xl">
-            {project.shortDescription}
-          </p>
-        </header>
+        <WorkspaceCommentProvider projectId={project.id}>
+          <header className="mb-6" {...commentTarget('project', project.id, project.name)}>
+            <div className="flex items-start justify-between gap-3 flex-wrap">
+              <h1 className="text-2xl font-bold text-tertiary-dark">{project.name}</h1>
+              <CommentMarker
+                kind="project"
+                id={project.id}
+                label={project.name}
+                className="mt-1.5"
+              />
+            </div>
+            <p className="text-sm text-tertiary mt-2 max-w-3xl">
+              {project.shortDescription}
+            </p>
+            <p className="text-[11px] text-tertiary-light mt-2 flex items-center gap-1">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+              </svg>
+              Tip: right-click the intro, a tool or the indicator table to leave a comment.
+            </p>
+          </header>
 
-        <ProjectShell
-          project={project}
-          activeModule={activeModule}
-          indicators={indicators}
-          indicatorSheets={indicatorSheets}
-          recommendations={recommendations}
-          memberStateCells={memberStateCells}
-          customContent={customContent}
-          meetings={meetings}
-          milestones={milestones}
-          phases={phases}
-        />
+          <ProjectShell
+            project={project}
+            activeModule={activeModule}
+            indicators={indicators}
+            indicatorSheets={indicatorSheets}
+            recommendations={recommendations}
+            memberStateCells={memberStateCells}
+            customContent={customContent}
+            meetings={meetings}
+            milestones={milestones}
+            phases={phases}
+          />
+        </WorkspaceCommentProvider>
       </main>
       <SiteFooter />
     </div>

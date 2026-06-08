@@ -29,9 +29,11 @@ interface Props {
   title?: string;
   /** Tighter spacing for use inside a row/cell drawer. */
   compact?: boolean;
+  /** Notified whenever the loaded comment count changes (for badges/markers). */
+  onCountChange?: (count: number) => void;
 }
 
-export default function WorkspaceComments({ projectId, target, title = 'Discussion', compact }: Props) {
+export default function WorkspaceComments({ projectId, target, title = 'Discussion', compact, onCountChange }: Props) {
   const { user, displayName, requireAuth } = useAuth();
   const [comments, setComments] = useState<WorkspaceComment[]>([]);
   const [people, setPeople] = useState<Person[]>([]);
@@ -52,6 +54,12 @@ export default function WorkspaceComments({ projectId, target, title = 'Discussi
   useEffect(() => {
     pwApi.listPeople().then(setPeople);
   }, []);
+
+  // Bubble the live count up so right-click markers can show an unread badge
+  // without each maintaining its own fetch.
+  useEffect(() => {
+    if (!loading) onCountChange?.(comments.length);
+  }, [comments.length, loading, onCountChange]);
 
   const roots = useMemo(() => comments.filter(c => !c.parentId), [comments]);
   const repliesOf = useCallback(
