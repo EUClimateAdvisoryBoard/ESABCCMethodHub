@@ -50,6 +50,31 @@ export default function ResultsChainBoardView({ allIndicators, onOpenInList }: P
 
   return (
     <div>
+      <div className="rounded-xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-3 mb-4">
+        <div className="text-[10px] uppercase tracking-wide text-emerald-700 font-semibold mb-0.5">
+          One overarching goal
+        </div>
+        <div className="text-base font-bold text-tertiary-dark leading-snug">
+          A climate-neutral and climate-resilient EU by 2050
+        </div>
+        <p className="text-xs text-tertiary mt-1 max-w-3xl">
+          Mitigation and adaptation are equal-weight branches of one goal: cut emissions to net zero, and
+          reduce the risk, loss and vulnerability from the warming already locked in.
+        </p>
+        <div className="mt-2 flex flex-wrap gap-2 text-[11px]">
+          <span className="inline-flex items-center gap-1.5 rounded-md bg-white border border-grey-200 px-2 py-1">
+            <span className="w-2 h-2 rounded-full" style={{ background: '#9E4A46' }} />
+            <span className="font-semibold text-tertiary-dark">Mitigation</span>
+            <span className="text-tertiary-light">— cut emissions to net zero</span>
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-md bg-white border border-grey-200 px-2 py-1">
+            <span className="w-2 h-2 rounded-full" style={{ background: '#2E7D74' }} />
+            <span className="font-semibold text-tertiary-dark">⛨ Adaptation &amp; resilience</span>
+            <span className="text-tertiary-light">— reduce risk, loss &amp; vulnerability</span>
+          </span>
+          <span className="text-tertiary-light self-center">equal-weight branches of the same goal</span>
+        </div>
+      </div>
       <p className="text-sm text-tertiary mb-4 max-w-3xl">
         <span className="font-semibold text-purple-700">Advanced version 2:</span> the whole indicator
         catalogue re-clustered along a six-rung{' '}
