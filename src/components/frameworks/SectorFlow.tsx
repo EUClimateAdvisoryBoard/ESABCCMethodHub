@@ -194,7 +194,17 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
         <Row label={showAdaptation ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
-          <div className="flex gap-2 items-stretch flex-wrap sm:flex-nowrap sm:overflow-x-auto pb-1">
+          <div
+            className={
+              // The advanced board fits all levers on one row by letting the
+              // cards shrink to share the available width (see min-w-0 below),
+              // so nothing is clipped and there's no horizontal scroll. Other
+              // variants keep the report-faithful single scrolling row.
+              wrapChips
+                ? 'flex gap-2 items-stretch pb-1'
+                : 'flex gap-2 items-stretch flex-wrap sm:flex-nowrap sm:overflow-x-auto pb-1'
+            }
+          >
             {sector.levers.map((l) => (
               <NodeCard
                 key={l.id}
@@ -364,7 +374,9 @@ function NodeCard({
     <div
       ref={registerRef}
       className={`relative rounded shadow-sm group flex-1 flex flex-col ${
-        wrapChips ? 'min-w-[150px]' : 'min-w-[118px]'
+        // In the advanced board cards shrink (min-w-0) so the whole lever row
+        // fits on one page; elsewhere they hold a comfortable minimum width.
+        wrapChips ? 'min-w-0' : 'min-w-[118px]'
       }`}
       style={{ background: bg }}
     >
