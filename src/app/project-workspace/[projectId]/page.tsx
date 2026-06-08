@@ -49,7 +49,16 @@ export default async function ProjectPage({
   params: { projectId: string };
   searchParams: { module?: string };
 }) {
-  const project = await getProject(params.projectId);
+  // TEMP DIAGNOSTIC (remove after triage): the production workspace page throws
+  // a server-side exception (digest 2064600908, "m is not a function") that does
+  // not reproduce locally. Capture the real error + stack server-side and render
+  // it, since production strips the message before it reaches the error boundary.
+  let project: Awaited<ReturnType<typeof getProject>>;
+  try {
+    project = await getProject(params.projectId);
+  } catch (err) {
+    return <WorkspaceDebugPanel stage="getProject" err={err} />;
+  }
   if (!project) notFound();
 
   const activeModule =
@@ -70,23 +79,28 @@ export default async function ProjectPage({
   let phases: Phase[] = [];
   const customContent: Record<string, string> = {};
 
-  if (kind === 'indicators') {
-    [indicators, indicatorSheets] = await Promise.all([
-      listIndicators(params.projectId),
-      listIndicatorSheets(params.projectId),
-    ]);
-  } else if (kind === 'recommendations') {
-    recommendations = await listRecommendations(params.projectId);
-  } else if (kind === 'member-states') {
-    memberStateCells = await listMemberStateCells(params.projectId);
-  } else if (kind === 'meetings') {
-    [meetings, milestones, phases] = await Promise.all([
-      listMeetings(params.projectId),
-      listMilestones(params.projectId),
-      listPhases(params.projectId),
-    ]);
-  } else if (kind === 'custom' && current) {
-    customContent[current.id] = await getCustomModuleContent(project.id, current.id);
+  try {
+    if (kind === 'indicators') {
+      [indicators, indicatorSheets] = await Promise.all([
+        listIndicators(params.projectId),
+        listIndicatorSheets(params.projectId),
+      ]);
+    } else if (kind === 'recommendations') {
+      recommendations = await listRecommendations(params.projectId);
+    } else if (kind === 'member-states') {
+      memberStateCells = await listMemberStateCells(params.projectId);
+    } else if (kind === 'meetings') {
+      [meetings, milestones, phases] = await Promise.all([
+        listMeetings(params.projectId),
+        listMilestones(params.projectId),
+        listPhases(params.projectId),
+      ]);
+    } else if (kind === 'custom' && current) {
+      customContent[current.id] = await getCustomModuleContent(project.id, current.id);
+    }
+  } catch (err) {
+    // TEMP DIAGNOSTIC (remove after triage): see note above.
+    return <WorkspaceDebugPanel stage={`fetch:${kind ?? 'none'}`} err={err} />;
   }
 
   return (
@@ -137,6 +151,28 @@ export default async function ProjectPage({
         </WorkspaceCommentProvider>
       </main>
       <SiteFooter />
+    </div>
+  );
+}
+
+/**
+ * TEMP DIAGNOSTIC (remove after triage). Renders the real server-side error
+ * (message + stack) for the workspace page, which production otherwise strips
+ * before it reaches the error boundary (leaving only an opaque digest).
+ */
+function WorkspaceDebugPanel({ stage, err }: { stage: string; err: unknown }) {
+  const e = err as { message?: string; stack?: string; name?: string } | undefined;
+  return (
+    <div style={{ padding: 24, fontFamily: 'monospace', fontSize: 12, whiteSpace: 'pre-wrap' }}>
+      <h1 style={{ fontSize: 16, fontWeight: 700, color: '#b91c1c' }}>
+        Workspace debug — failed at: {stage}
+      </h1>
+      <p style={{ marginTop: 8 }}>
+        <strong>{e?.name ?? 'Error'}:</strong> {e?.message ?? String(err)}
+      </p>
+      <pre style={{ marginTop: 12, padding: 12, background: '#f3f4f6', overflow: 'auto' }}>
+        {e?.stack ?? '(no stack)'}
+      </pre>
     </div>
   );
 }
