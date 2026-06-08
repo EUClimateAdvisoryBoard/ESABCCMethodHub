@@ -399,9 +399,14 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
                     allIndicators={allIndicators}
                     onChange={updateSector}
                     onOpenIndicator={setDrawer}
-                    // advanced-v2 is handled by an early return above and never
-                    // reaches SectorFlow; the guard keeps the prop type narrow.
-                    variant={version.variant === 'advanced-v2' ? 'advanced' : version.variant}
+                    // advanced-v2 / advanced-v4 are computed views handled before
+                    // SectorFlow is ever reached; the guard keeps the prop type
+                    // narrow to the sector-board variants.
+                    variant={
+                      version.variant === 'advanced-v2' || version.variant === 'advanced-v4'
+                        ? 'advanced'
+                        : version.variant
+                    }
                   />
                 </div>
               )}

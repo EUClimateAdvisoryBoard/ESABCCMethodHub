@@ -45,7 +45,24 @@
  */
 import { FRAMEWORK_INDICATOR_INDEX } from './sector-frameworks';
 
-export type ResultsGroupId = 'input' | 'process' | 'output' | 'outcome' | 'impact' | 'context';
+export type ResultsGroupId =
+  // Advanced version 2 — the six M&E results-chain rungs.
+  | 'input'
+  | 'process'
+  | 'output'
+  | 'outcome'
+  | 'impact'
+  | 'context'
+  // Advanced version 4 — the four monitoring-map layers (reuses 'outcome').
+  | 'enabler'
+  | 'delivery'
+  | 'risk';
+
+/** The six Advanced-version-2 results-chain rungs (the subset v2 itself uses). */
+export type ResultsRungId = Extract<
+  ResultsGroupId,
+  'input' | 'process' | 'output' | 'outcome' | 'impact' | 'context'
+>;
 export type ResultsTrack = 'mitigation' | 'adaptation';
 
 /** Current schema version of the results-chain board (bump to invalidate edits). */
@@ -97,7 +114,7 @@ export interface ResultsChainBoard {
 // ── Group metadata (the six rungs, in chain order) ───────────────────────────
 
 interface GroupMeta {
-  id: ResultsGroupId;
+  id: ResultsRungId;
   index: number;
   name: string;
   blurb: string;
@@ -155,7 +172,7 @@ const GROUP_META: readonly GroupMeta[] = [
 // deployed/built capacity = Output · shares/rates/intensities = Outcome ·
 // emissions/sinks = Impact · macro & socio-economic conditions = Context.
 
-const MITIGATION: Record<ResultsGroupId, string[]> = {
+const MITIGATION: Record<ResultsRungId, string[]> = {
   input: [
     'clean-tech-investment',
     'eu-ets-price',
@@ -305,7 +322,7 @@ const MITIGATION: Record<ResultsGroupId, string[]> = {
 // financial resilience = Outcome · realised losses, mortality, damages = Impact ·
 // the climate signal & baseline pressures = Context.
 
-const ADAPTATION: Record<ResultsGroupId, string[]> = {
+const ADAPTATION: Record<ResultsRungId, string[]> = {
   input: [
     'national-adaptation-strategies',
     'adapt-gov-cra-completed',
