@@ -17,7 +17,7 @@
  */
 'use client';
 
-import { useState } from 'react';
+import { useState, Component, type ReactNode } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import type { WorkspaceProject, WorkspaceModuleKind } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
@@ -149,11 +149,13 @@ export default function ProjectShell({
       {!currentMeta && <div className="mb-6" />}
 
       {current?.kind === 'indicators' && (
-        <IndicatorModule
-          projectId={project.id}
-          initial={indicators}
-          initialLayouts={indicatorSheets}
-        />
+        <RenderErrorBoundary label="IndicatorModule">
+          <IndicatorModule
+            projectId={project.id}
+            initial={indicators}
+            initialLayouts={indicatorSheets}
+          />
+        </RenderErrorBoundary>
       )}
       {current?.kind === 'recommendations' && (
         <RecommendationsModule projectId={project.id} initial={recommendations} />
@@ -349,4 +351,36 @@ function AddModuleDialog({
       </div>
     </div>
   );
+}
+
+/**
+ * TEMP DIAGNOSTIC (remove after triage). Catches render errors in a module
+ * subtree — including during SSR — and renders the real message + stack, which
+ * production otherwise replaces with an opaque digest. Used to pinpoint the
+ * "<x> is not a function" crash on the workspace indicators page.
+ */
+class RenderErrorBoundary extends Component<
+  { label: string; children: ReactNode },
+  { err: Error | null }
+> {
+  constructor(props: { label: string; children: ReactNode }) {
+    super(props);
+    this.state = { err: null };
+  }
+  static getDerivedStateFromError(err: Error) {
+    return { err };
+  }
+  render() {
+    const { err } = this.state;
+    if (!err) return this.props.children;
+    return (
+      <div style={{ padding: 16, fontFamily: 'monospace', fontSize: 12, whiteSpace: 'pre-wrap', border: '2px solid #b91c1c', borderRadius: 8 }}>
+        <strong style={{ color: '#b91c1c' }}>Render error in {this.props.label}:</strong>
+        {'\n'}
+        <strong>{err.name}: {err.message}</strong>
+        {'\n\n'}
+        {err.stack ?? '(no stack)'}
+      </div>
+    );
+  }
 }
