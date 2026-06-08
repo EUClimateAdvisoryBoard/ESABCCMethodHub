@@ -1,11 +1,11 @@
 {
   "date": "2026-06-08",
-  "generatedAt": "2026-06-08T14:53:51.046Z",
+  "generatedAt": "2026-06-08T19:23:20.445Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 8 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production",
+      "headline": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production*",
       "summary": "European Commission Press release Brussels, 08 Jun 2026 The European Commission has approved a €23 billion Italian State aid scheme to support electricity production from renewable energy sources, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy and reaching the renewable energy target set at EU level for 2030. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commi",
       "tag": "EU POLICY",
       "color": "#007B6C"
@@ -21,6 +21,12 @@
       "summary": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "South Korea flags new big investment project as tax revenue swells on AI boom - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5\" target=\"_blank\"&gt;South Korea flags new big investment project as tax revenue swells on AI boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -29,7 +35,7 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production",
+          "title": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production*",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1270",
           "source": "European Commission",
           "description": "European Commission Press release Brussels, 08 Jun 2026 The European Commission has approved a €23 billion Italian State aid scheme to support electricity production from renewable energy sources, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy and reaching the renewable energy target set at EU level for 2030. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commi",
@@ -59,14 +65,6 @@
           "score": 7
         },
         {
-          "title": "Russian drone hits nuclear-fuel storage facility near Chornobyl, Ukraine says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxObHBWaFhyaGpwQXhrT3RaUGtWN2lwV0lJX1FEWVV1Tno5NDFOdVpWQUVIdjJrSlNXOTBmclZLX1J6RDNGYWhwcXVJNHVrWjNaazgzY19uZHFvR0pLNzBROTA2aTJOSWxFZ3k4Ry00OW9vSl9NeHIxWmtnVzN5Y1Q1RmYtTHZrVVh5cWJqT2FIQ1FkUm85NFcyQjZPR0dFakE1OFpjNldvNjUyX0dqaFpVbXJqWGZ6OW9XaHY1aXlWSG05dw?oc=5\" target=\"_blank\"&gt;Russian drone hits nuclear-fuel storage facility near Chornobyl, Ukraine says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-07T18:27:19.000Z",
-          "score": 7
-        },
-        {
           "title": "Panasonic to start US data centre battery production by fiscal 2028 - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQkNjaVZxeGliTFlOd1plNEY4RF91Sk9KczZtMDJ4U2ZKd1huNVJnNXM1LTdEVFFNMVBkZ3hEVGRhSWVjT01MTlBBMEpOdTFMSWlJT0JKcXlOakkxN3BlQ3BqSGc0ZHcyVVVMc2JVUnkwYTEtVmZNZXU3RTRpeFN1bjRuaFhSX3ZxR2xSNWUxbXBJaHhqU1h6UVJRSE5JZHZERlBiT2hFTzlULW85Z0QwOGFHc05haEszVE1v?oc=5",
           "source": "Reuters World (via Google News)",
@@ -80,6 +78,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWxJeXJBNklmZEtETkg1d3ZTRkY2NUh4dlNXcy11Y0FYXzVoXzZ2anNoSHhuUTdSSUFvN2V4TzdfTlAwc0NLWEFYZFRuLWx3cUtUNEJmN1dkMVE1bHJhYXJJOW1VVEJZZFRtTTMzUUExNHlKNmtyQWlGbHAxY24xd0ptRnk5MWh5UHNNVmFaRUppckQ0WjlteHFPTHNVa0cxdll4cjdiVmE0dzVwWkhERXFONzM?oc=5\" target=\"_blank\"&gt;Yemen's Iran-backed Houthis threaten Israeli shipping in the Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-08T13:17:31.000Z",
+          "score": 7
+        },
+        {
+          "title": "Why the Iran-aligned Houthis threatening Red Sea shipping could mean more for the oil market this time - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZndSZ05Ec0xibk5xQ0JPWjFrM2ZzOGhyTDgtR01HOVhuY3J6THhKMVU3UXZxbnlKOUJma041dUJmcTlTNlJ2Q19PREcxWmc3b2pyV2dXVGFNSTJ5aXVTMG9RdDVEUk5CU0luTE9Hc19ESnBBMm5KWVZOblR6NzU0ejdJX1JPSzNQS0tlUzZLYXh3c1FRMjdYbUZ2dmJ5ajE0UU16eTBtYW9vQm9pQXJvM213RWVhLWpURkxPSDNkd1lmUEE1TXc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOZndSZ05Ec0xibk5xQ0JPWjFrM2ZzOGhyTDgtR01HOVhuY3J6THhKMVU3UXZxbnlKOUJma041dUJmcTlTNlJ2Q19PREcxWmc3b2pyV2dXVGFNSTJ5aXVTMG9RdDVEUk5CU0luTE9Hc19ESnBBMm5KWVZOblR6NzU0ejdJX1JPSzNQS0tlUzZLYXh3c1FRMjdYbUZ2dmJ5ajE0UU16eTBtYW9vQm9pQXJvM213RWVhLWpURkxPSDNkd1lmUEE1TXc?oc=5\" target=\"_blank\"&gt;Why the Iran-aligned Houthis threatening Red Sea shipping could mean more for the oil market this time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
+          "published": "2026-06-08T14:33:47.000Z",
           "score": 7
         }
       ]
@@ -97,6 +103,14 @@
           "score": 19
         },
         {
+          "title": "‘Severe’ stress on oceans as rate of sea level rise doubles in 10 years, UN warns",
+          "link": "https://www.theguardian.com/environment/2026/jun/08/un-world-ocean-assessment-severe-stress-sea-level-rise-doubles-pollution-fishing-climate",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Global effort needed to limit effects of pollution, industrial fishing and climate crisis, World Ocean Assessment says&lt;/p&gt;&lt;p&gt;The world’s oceans are under “severe and accelerating” pressure from human activities, with the rate of sea-level rise double that of a decade ago, according to a damning assessment from the United Nations.&lt;/p&gt;&lt;p&gt;The “intensifying” stressors, which include pollution and large-scale industrial fishing, are cumulative, &lt;a href=\"https://www",
+          "published": "2026-06-08T16:45:01.000Z",
+          "score": 7
+        },
+        {
           "title": "Majority of US’s new AI datacenters to be built on drought-hit land",
           "link": "https://www.theguardian.com/us-news/2026/jun/08/datacenter-ai-drought-water",
           "source": "The Guardian - Climate",
@@ -105,27 +119,36 @@
           "score": 7
         },
         {
-          "title": "The fight to save Australia’s ‘incredibly captivating’ endangered spiny crayfish",
-          "link": "https://www.theguardian.com/environment/2026/jun/08/australia-endangered-spiny-crayfish-protection",
+          "title": "The Guardian view on climate equality: a richer life and real public abundance, not just more stuff | Editorial",
+          "link": "https://www.theguardian.com/commentisfree/2026/jun/08/the-guardian-view-on-climate-equality-a-richer-life-and-real-public-abundance-not-just-more-stuff",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Global heating is destroying creeks the crayfish call home. They’re the canary in the coalmine for other species living in the delicate ecosystems&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/science/live/2026/jun/08/australia-news-live-anthony-albanese-labor-one-nation-coalition-housing-crisis-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.th",
-          "published": "2026-06-07T15:00:03.000Z",
-          "score": 2
+          "description": "&lt;p&gt;The Global Justice Report offers a hopeful bargain: tax extreme wealth and replace consumer excess with social and economic security for all&lt;/p&gt;&lt;p&gt;Humanity can raise living standards, reduce inequality and keep global heating within a 2C rise, according to a sweeping vision for planetary survival, the Guardian &lt;a href=\"https://www.theguardian.com/environment/2026/jun/04/world-inequality-lab-equality-academics-planetary-survival\"&gt;reported&lt;/a&gt; last week. In an age ",
+          "published": "2026-06-08T17:28:05.000Z",
+          "score": 7
         },
         {
-          "title": "Rare footage captured of Great White shark in Mediterranean Sea",
-          "link": "https://www.bbc.com/news/videos/cd6p6zqzj6do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A volunteer diver has described shaking as he filmed his encounter with an endangered Great White shark between Tunisia and Sicily.",
-          "published": "2026-06-08T06:09:53.000Z",
-          "score": 2
+          "title": "China dominates low-carbon industrial projects, US lags, report says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXJEQk53a0swRWUydEVuYk5FZXVVWEZndFdMQWc4NTlaNDFOZUxCcFRSMy1zN2ROX3RSdU04NEoxcTBCczJRTHR1dUJ6RVd6b1QwR0FVaHdMdkR2WmdkUGlmSFpYNWxzbF9KeGpsaXBaN0d5QThoUjFsTDBJUU9rU0x4M2pLNFVDM3BxdVdFMUxGazVWWnQ1TUJEeTZrbnhEWDhWZUhJelh1Ml9lSkZ3YW5LTGZRb21JQnc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXJEQk53a0swRWUydEVuYk5FZXVVWEZndFdMQWc4NTlaNDFOZUxCcFRSMy1zN2ROX3RSdU04NEoxcTBCczJRTHR1dUJ6RVd6b1QwR0FVaHdMdkR2WmdkUGlmSFpYNWxzbF9KeGpsaXBaN0d5QThoUjFsTDBJUU9rU0x4M2pLNFVDM3BxdVdFMUxGazVWWnQ1TUJEeTZrbnhEWDhWZUhJelh1Ml9lSkZ3YW5LTGZRb21JQnc?oc=5\" target=\"_blank\"&gt;China dominates low-carbon industrial projects, US lags, report says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-07T23:06:00.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "South Korea flags new big investment project as tax revenue swells on AI boom - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5\" target=\"_blank\"&gt;South Korea flags new big investment project as tax revenue swells on AI boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-06-08T01:23:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -166,15 +189,7 @@
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5\" target=\"_blank\"&gt;Pope Leo warns Spain's parliament the world is in 'profound' crisis&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T10:59:45.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU sanctions Iranians over restricting naval traffic in Hormuz - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5\" target=\"_blank\"&gt;EU sanctions Iranians over restricting naval traffic in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T11:52:45.000Z",
+          "published": "2026-06-08T16:37:02.000Z",
           "score": 8
         },
         {
@@ -182,16 +197,24 @@
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5\" target=\"_blank\"&gt;From Australia to Europe, countries move to curb children's social media access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T11:44:46.000Z",
+          "published": "2026-06-08T16:11:22.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU sanctions Iranians over restricting naval traffic in Hormuz - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5\" target=\"_blank\"&gt;EU sanctions Iranians over restricting naval traffic in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T16:56:00.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 145,
-    "afterDedup": 140,
+    "totalArticlesScanned": 401,
+    "articlesLast24h": 155,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
