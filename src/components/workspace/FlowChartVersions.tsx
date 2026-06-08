@@ -23,6 +23,7 @@ import {
   type FlowChartVersion,
 } from '@/lib/project-workspace/flowchart-versions';
 import FrameworkBoard from './FrameworkBoard';
+import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView';
 
 interface Props {
   projectId: string;
@@ -114,6 +115,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv
             </span>
           )}
+          {active.variant === 'advanced-v2' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-purple-100 text-purple-700">
+              adv 2 · M&amp;E
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -138,13 +144,24 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         </div>
       </div>
 
-      <FrameworkBoard
-        key={active.id}
-        version={active}
-        projectId={projectId}
-        allIndicators={allIndicators}
-        onOpenInList={onOpenInList}
-      />
+      {active.variant === 'advanced-v2' ? (
+        // The results-chain board is a computed, read-only re-clustering of the
+        // whole catalogue along the six M&E groups — it has its own view rather
+        // than the sector goal→outcome→lever boards.
+        <ResultsChainBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : (
+        <FrameworkBoard
+          key={active.id}
+          version={active}
+          projectId={projectId}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      )}
 
       {creating && (
         <NewVersionDialog
