@@ -457,7 +457,11 @@ function ChipRow({
           <span
             key={r.refId}
             className={`group/chip inline-flex gap-1 rounded px-1.5 py-0.5 text-[10px] ${
-              wrap ? 'items-start' : 'items-center'
+              // In wrap mode let the chip's own items (code, label, NEW badge)
+              // wrap onto multiple lines and allow the chip to shrink (min-w-0),
+              // so nothing — especially the NEW badge — spills out of a narrow
+              // card and gets clipped by the board's overflow-hidden frame.
+              wrap ? 'items-start flex-wrap min-w-0' : 'items-center'
             } ${
               linked
                 ? 'bg-white text-gray-800 cursor-pointer hover:ring-1 hover:ring-white'
