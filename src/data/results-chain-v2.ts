@@ -308,10 +308,20 @@ const MITIGATION: Record<ResultsGroupId, string[]> = {
 const ADAPTATION: Record<ResultsGroupId, string[]> = {
   input: [
     'national-adaptation-strategies',
+    'adapt-gov-cra-completed',
+    'adapt-gov-climate-law-adaptation',
+    'adapt-fin-mff-climate-mainstreaming',
+    'adapt-fin-eib-adaptation-share',
   ],
-  process: [],
+  process: [
+    'adapt-gov-nap-adopted',
+    'adapt-gov-eu-strategy-actions',
+  ],
   output: [
     'adv-adapt-cities-plans',
+    'adapt-out-mission-charter-signatories',
+    'adapt-out-com-adaptation-signatories',
+    'adapt-out-ews-efas-coverage',
   ],
   outcome: [
     'adv-adapt-insurance-gap',
@@ -355,6 +365,12 @@ const ADAPTATION: Record<ResultsGroupId, string[]> = {
 const POLICY_PROCESS_IDS = new Set<string>([
   'national-adaptation-strategies',
   'adv-adapt-cities-plans',
+  'adapt-gov-cra-completed',
+  'adapt-gov-climate-law-adaptation',
+  'adapt-gov-nap-adopted',
+  'adapt-gov-eu-strategy-actions',
+  'adapt-out-mission-charter-signatories',
+  'adapt-out-com-adaptation-signatories',
 ]);
 
 // ── Builder ──────────────────────────────────────────────────────────────────

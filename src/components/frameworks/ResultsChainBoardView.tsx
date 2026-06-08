@@ -69,6 +69,22 @@ export default function ResultsChainBoardView({ allIndicators, onOpenInList }: P
         shares, rates and intensities are Outcomes; realised emissions, sinks, losses and mortality are
         Impacts; and the climate signal itself sits in Context. Click any chip to open the data behind it.
       </p>
+      <p className="text-sm text-tertiary mb-4 max-w-3xl">
+        Because <span className="font-semibold">adaptation is at an earlier stage than mitigation</span> —
+        mitigation already has rich Outcome-level series (shares, rates, intensities), whereas adaptation
+        action is still mostly about building the governance and process — the adaptation track is
+        deliberately built out on the <span className="font-semibold">early rungs (Input → Process →
+        Output)</span> with <span className="font-semibold">policy-process indicators</span> (marked{' '}
+        <span className="align-middle inline-flex items-center rounded bg-amber-100 text-amber-800 px-1 text-[10px] font-semibold">
+          policy
+        </span>
+        ): National Adaptation Strategies and Plans adopted, national climate-risk assessments, adaptation
+        anchored in climate law, EU Adaptation Strategy actions, Mission-Charter and Covenant-of-Mayors
+        uptake, early-warning reach and adaptation finance (EU budget mainstreaming, EIB share). This pairs
+        the <span className="font-semibold">quantitative indicator side with the qualitative policy-making
+        side</span>, so the chain is tracked end-to-end on both tracks rather than only where the numbers
+        are already plentiful.
+      </p>
 
       <div className="flex flex-wrap items-center gap-2 mb-4 text-[11px]">
         <span className="inline-flex items-center gap-1.5 rounded-md border border-grey-200 px-2 py-1">
