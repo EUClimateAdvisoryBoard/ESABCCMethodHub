@@ -226,6 +226,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 editing={editing}
                 allIndicators={allIndicators}
                 wrapChips={wrapChips}
+                compactChips={wrapChips}
                 registerRef={register(l.id)}
                 onOpen={onOpenIndicator}
                 onLabel={(label) => updateNode('lever', l.id, (n) => ({ ...n, label }))}
@@ -362,6 +363,7 @@ function NodeCard({
   editing,
   allIndicators,
   wrapChips,
+  compactChips,
   registerRef,
   onOpen,
   onLabel,
@@ -375,6 +377,7 @@ function NodeCard({
   editing: boolean;
   allIndicators: Indicator[];
   wrapChips?: boolean;
+  compactChips?: boolean;
   registerRef: (el: HTMLElement | null) => void;
   onOpen: (p: OpenIndicatorPayload) => void;
   onLabel: (v: string) => void;
@@ -414,6 +417,7 @@ function NodeCard({
           editing={editing}
           allIndicators={allIndicators}
           wrap={wrapChips}
+          compact={compactChips}
           onOpen={onOpen}
           onRemove={onRemoveRef}
           onAdd={onAddRef}
@@ -429,6 +433,7 @@ function ChipRow({
   editing,
   allIndicators,
   wrap,
+  compact,
   onOpen,
   onRemove,
   onAdd,
@@ -437,6 +442,13 @@ function ChipRow({
   editing: boolean;
   allIndicators: Indicator[];
   wrap?: boolean;
+  /**
+   * In compact mode the chip shows only the indicator code (plus the NEW
+   * badge); the full name is hidden inline and revealed on hover. Used for the
+   * narrow lever cards in the advanced board so everything stays on one row
+   * without the names overflowing.
+   */
+  compact?: boolean;
   onOpen: (p: OpenIndicatorPayload) => void;
   onRemove: (refId: string) => void;
   onAdd: (indId: string) => void;
@@ -457,7 +469,11 @@ function ChipRow({
           <span
             key={r.refId}
             className={`group/chip inline-flex gap-1 rounded px-1.5 py-0.5 text-[10px] ${
-              wrap ? 'items-start' : 'items-center'
+              // In wrap mode let the chip's own items (code, label, NEW badge)
+              // wrap onto multiple lines and allow the chip to shrink (min-w-0),
+              // so nothing — especially the NEW badge — spills out of a narrow
+              // card and gets clipped by the board's overflow-hidden frame.
+              wrap ? 'items-start flex-wrap min-w-0' : 'items-center'
             } ${
               linked
                 ? 'bg-white text-gray-800 cursor-pointer hover:ring-1 hover:ring-white'
@@ -466,16 +482,24 @@ function ChipRow({
             onClick={() => onOpen({ title: r.label, code: r.code, indicatorIds: r.indicatorIds })}
             title={r.label}
           >
-            <span className="font-mono font-semibold shrink-0">{r.code}</span>
-            <span
-              className={
-                wrap
-                  ? 'max-w-[150px] leading-tight break-words [hyphens:auto]'
-                  : 'max-w-[200px] sm:max-w-[120px] truncate'
-              }
-            >
-              {r.label}
-            </span>
+            {compact ? (
+              <Tooltip content={r.label}>
+                <span className="font-mono font-semibold shrink-0 cursor-help">{r.code}</span>
+              </Tooltip>
+            ) : (
+              <span className="font-mono font-semibold shrink-0">{r.code}</span>
+            )}
+            {!compact && (
+              <span
+                className={
+                  wrap
+                    ? 'max-w-[150px] leading-tight break-words [hyphens:auto]'
+                    : 'max-w-[200px] sm:max-w-[120px] truncate'
+                }
+              >
+                {r.label}
+              </span>
+            )}
             {isNewRef && (
               <Tooltip content="New indicator — not part of the original ESABCC report's indicator database.">
                 <span
