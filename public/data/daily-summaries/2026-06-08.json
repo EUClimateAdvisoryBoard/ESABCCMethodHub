@@ -1,9 +1,15 @@
 {
   "date": "2026-06-08",
-  "generatedAt": "2026-06-08T09:27:07.151Z",
+  "generatedAt": "2026-06-08T14:53:51.046Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 8 June 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production",
+      "summary": "European Commission Press release Brussels, 08 Jun 2026 The European Commission has approved a €23 billion Italian State aid scheme to support electricity production from renewable energy sources, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy and reaching the renewable energy target set at EU level for 2030. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commi",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "SIPRI: With peace elusive, nuclear weapons make a comeback",
       "summary": "Governments are increasingly turning to nuclear deterrence. As the global arms buildup intensifies, so do the risks, the Stockholm International Peace Research Institute warns.",
@@ -15,19 +21,22 @@
       "summary": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "China says 'illegal' outbound investment crackdown won't lead to forced liquidation - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNNkZNc3hHZm5BOExXUGJpclRGNFpxMnQ2LWlyY1lRNkd1cGdvZUMwRWR4dU1qbW16Q01ZZDBDTUpBRUVTbWVDWVFwQXU3UWdJWDZ0dHBONVJVcjFOR09GU3gtdDNFQ0c1UGtxN0V3eFNOTUp0VFlsRmpxcEJDMWlJOWxudHpEa0d1SWJJVk5VbWdZLTVnUzZ1aUs5MDhVWTJ3QUJrRzBOWWIyQmJVLXhienNOcEIyY3NxeHBvclliMUF4U09hWmo5NFVR?oc=5\" target=\"_blank\"&gt;China says 'illegal' outbound investment crackdown won't lead to forced liquidation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Commission approves €23 billion Italian State aid scheme to support renewable electricity production",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1270",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 08 Jun 2026 The European Commission has approved a €23 billion Italian State aid scheme to support electricity production from renewable energy sources, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy and reaching the renewable energy target set at EU level for 2030. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commi",
+          "published": "2026-06-07T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -58,12 +67,20 @@
           "score": 7
         },
         {
-          "title": "Middle East updates: Israel and Iran trade fresh strikes",
-          "link": "https://www.dw.com/en/middle-east-updates-israel-and-iran-trade-fresh-strikes/live-77452499?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iran and Israel have exchanged missile fire in the most serious confrontation since a ceasefire agreed in April. Meanwhile, Yemen&#039;s Houthi rebels have threatened to target ships in the Red Sea. Follow DW for the latest.",
-          "published": "2026-06-08T01:55:00.000Z",
-          "score": 4
+          "title": "Panasonic to start US data centre battery production by fiscal 2028 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQkNjaVZxeGliTFlOd1plNEY4RF91Sk9KczZtMDJ4U2ZKd1huNVJnNXM1LTdEVFFNMVBkZ3hEVGRhSWVjT01MTlBBMEpOdTFMSWlJT0JKcXlOakkxN3BlQ3BqSGc0ZHcyVVVMc2JVUnkwYTEtVmZNZXU3RTRpeFN1bjRuaFhSX3ZxR2xSNWUxbXBJaHhqU1h6UVJRSE5JZHZERlBiT2hFTzlULW85Z0QwOGFHc05haEszVE1v?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQkNjaVZxeGliTFlOd1plNEY4RF91Sk9KczZtMDJ4U2ZKd1huNVJnNXM1LTdEVFFNMVBkZ3hEVGRhSWVjT01MTlBBMEpOdTFMSWlJT0JKcXlOakkxN3BlQ3BqSGc0ZHcyVVVMc2JVUnkwYTEtVmZNZXU3RTRpeFN1bjRuaFhSX3ZxR2xSNWUxbXBJaHhqU1h6UVJRSE5JZHZERlBiT2hFTzlULW85Z0QwOGFHc05haEszVE1v?oc=5\" target=\"_blank\"&gt;Panasonic to start US data centre battery production by fiscal 2028&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T08:04:36.000Z",
+          "score": 7
+        },
+        {
+          "title": "Yemen's Iran-backed Houthis threaten Israeli shipping in the Red Sea - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWxJeXJBNklmZEtETkg1d3ZTRkY2NUh4dlNXcy11Y0FYXzVoXzZ2anNoSHhuUTdSSUFvN2V4TzdfTlAwc0NLWEFYZFRuLWx3cUtUNEJmN1dkMVE1bHJhYXJJOW1VVEJZZFRtTTMzUUExNHlKNmtyQWlGbHAxY24xd0ptRnk5MWh5UHNNVmFaRUppckQ0WjlteHFPTHNVa0cxdll4cjdiVmE0dzVwWkhERXFONzM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWxJeXJBNklmZEtETkg1d3ZTRkY2NUh4dlNXcy11Y0FYXzVoXzZ2anNoSHhuUTdSSUFvN2V4TzdfTlAwc0NLWEFYZFRuLWx3cUtUNEJmN1dkMVE1bHJhYXJJOW1VVEJZZFRtTTMzUUExNHlKNmtyQWlGbHAxY24xd0ptRnk5MWh5UHNNVmFaRUppckQ0WjlteHFPTHNVa0cxdll4cjdiVmE0dzVwWkhERXFONzM?oc=5\" target=\"_blank\"&gt;Yemen's Iran-backed Houthis threaten Israeli shipping in the Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T13:17:31.000Z",
+          "score": 7
         }
       ]
     },
@@ -80,19 +97,11 @@
           "score": 19
         },
         {
-          "title": "Dining across the divide: ‘I’m not a climate denier, but aiming for net zero by 2050 is unrealistic’",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/jun/07/dining-across-the-divide-don-david-climate-crisis",
+          "title": "Majority of US’s new AI datacenters to be built on drought-hit land",
+          "link": "https://www.theguardian.com/us-news/2026/jun/08/datacenter-ai-drought-water",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;An ‘apolitical’ retired IT manager and a ‘far left’ biologist disagree over tackling global heating – but are they in harmony over truth and reconciliation?&lt;/p&gt;&lt;p&gt;• Want to meet someone from across the divide? Click &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/mar/18/would-you-like-to-take-part-in-dining-across-the-divide\"&gt;here&lt;/a&gt; to find out how&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Don, 74, Farnham&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Occupation&",
-          "published": "2026-06-07T11:00:31.000Z",
-          "score": 7
-        },
-        {
-          "title": "China dominates low-carbon industrial projects, US lags, report says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXJEQk53a0swRWUydEVuYk5FZXVVWEZndFdMQWc4NTlaNDFOZUxCcFRSMy1zN2ROX3RSdU04NEoxcTBCczJRTHR1dUJ6RVd6b1QwR0FVaHdMdkR2WmdkUGlmSFpYNWxzbF9KeGpsaXBaN0d5QThoUjFsTDBJUU9rU0x4M2pLNFVDM3BxdVdFMUxGazVWWnQ1TUJEeTZrbnhEWDhWZUhJelh1Ml9lSkZ3YW5LTGZRb21JQnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXJEQk53a0swRWUydEVuYk5FZXVVWEZndFdMQWc4NTlaNDFOZUxCcFRSMy1zN2ROX3RSdU04NEoxcTBCczJRTHR1dUJ6RVd6b1QwR0FVaHdMdkR2WmdkUGlmSFpYNWxzbF9KeGpsaXBaN0d5QThoUjFsTDBJUU9rU0x4M2pLNFVDM3BxdVdFMUxGazVWWnQ1TUJEeTZrbnhEWDhWZUhJelh1Ml9lSkZ3YW5LTGZRb21JQnc?oc=5\" target=\"_blank\"&gt;China dominates low-carbon industrial projects, US lags, report says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-07T23:06:00.000Z",
+          "description": "&lt;p&gt;Guardian analysis finds facilities to be built in some of the driest areas as outcry grows over water needed to power AI&lt;/p&gt;&lt;p&gt;A record-shattering drought has racked much of the US. But the &lt;a href=\"https://www.theguardian.com/technology/artificialintelligenceai\"&gt;artificial intelligence&lt;/a&gt; industry is pushing ahead regardless, with the majority of planned datacenters set to be built in drought-ridden locations, a Guardian analysis has found.&lt;/p&gt;&lt;p&gt;Ab",
+          "published": "2026-06-08T11:00:23.000Z",
           "score": 7
         },
         {
@@ -116,29 +125,12 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "China says 'illegal' outbound investment crackdown won't lead to forced liquidation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNNkZNc3hHZm5BOExXUGJpclRGNFpxMnQ2LWlyY1lRNkd1cGdvZUMwRWR4dU1qbW16Q01ZZDBDTUpBRUVTbWVDWVFwQXU3UWdJWDZ0dHBONVJVcjFOR09GU3gtdDNFQ0c1UGtxN0V3eFNOTUp0VFlsRmpxcEJDMWlJOWxudHpEa0d1SWJJVk5VbWdZLTVnUzZ1aUs5MDhVWTJ3QUJrRzBOWWIyQmJVLXhienNOcEIyY3NxeHBvclliMUF4U09hWmo5NFVR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNNkZNc3hHZm5BOExXUGJpclRGNFpxMnQ2LWlyY1lRNkd1cGdvZUMwRWR4dU1qbW16Q01ZZDBDTUpBRUVTbWVDWVFwQXU3UWdJWDZ0dHBONVJVcjFOR09GU3gtdDNFQ0c1UGtxN0V3eFNOTUp0VFlsRmpxcEJDMWlJOWxudHpEa0d1SWJJVk5VbWdZLTVnUzZ1aUs5MDhVWTJ3QUJrRzBOWWIyQmJVLXhienNOcEIyY3NxeHBvclliMUF4U09hWmo5NFVR?oc=5\" target=\"_blank\"&gt;China says 'illegal' outbound investment crackdown won't lead to forced liquidation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-06-07T23:28:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "EU conservative chief urges tougher China trade stance, Bild am Sonntag reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMUdpbWFtUm41OGJQNl9zSWh4SE5GXzhINXBOb1djT2Vjb1o3eUxmeHVROGFDLXhsX3lrY1Q1YUQwUGhtSmZOelFSbS1fbkpoNmZjdzlTb1hpSGxPM3BZMW5YSVFpY3ZRMzN3TFJqbURWdDFMU29PN2ljdG1JdUx4WUdHMlB4QmQ3bXZSdlFaTGZha0xWOVo3UHVSamZ1WVg4ZldzV2plTWtDeUZmNV9ONXNVQW15WWE4UkxETmd6NVpDOVQw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQMUdpbWFtUm41OGJQNl9zSWh4SE5GXzhINXBOb1djT2Vjb1o3eUxmeHVROGFDLXhsX3lrY1Q1YUQwUGhtSmZOelFSbS1fbkpoNmZjdzlTb1hpSGxPM3BZMW5YSVFpY3ZRMzN3TFJqbURWdDFMU29PN2ljdG1JdUx4WUdHMlB4QmQ3bXZSdlFaTGZha0xWOVo3UHVSamZ1WVg4ZldzV2plTWtDeUZmNV9ONXNVQW15WWE4UkxETmd6NVpDOVQw?oc=5\" target=\"_blank\"&gt;EU conservative chief urges tougher China trade stance, Bild am Sonntag reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-07T09:41:43.000Z",
-          "score": 8
-        },
         {
           "title": "UK, Germany, France back ceasefire talks between Ukraine and Russia",
           "link": "https://www.dw.com/en/uk-germany-france-back-ceasefire-talks-between-ukraine-and-russia/a-77448846?maca=en-rss-en-all-1573-xml-mrss",
@@ -170,36 +162,36 @@
           "score": 8
         },
         {
-          "title": "Sweden mulls prison for young teens as violent crime rises",
-          "link": "https://www.dw.com/en/sweden-mulls-prison-for-young-teens-as-violent-crime-rises/a-77435410?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "In the fight against escalating gang crime, Sweden&#039;s parliament will vote on plans to hold 13-year-olds criminally responsible and, in serious cases, imprison them. Other European nations are also lowering age limits.",
-          "published": "2026-06-07T13:50:00.000Z",
+          "title": "Pope Leo warns Spain's parliament the world is in 'profound' crisis - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5\" target=\"_blank\"&gt;Pope Leo warns Spain's parliament the world is in 'profound' crisis&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T10:59:45.000Z",
           "score": 8
         },
         {
-          "title": "Armenia's pro-West government wins election despite Russian pressure",
-          "link": "https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Prime Minister Nikol Pashinyan's Civil Contract Party secures nearly 50% of the vote, comfortably beating the other contenders.",
-          "published": "2026-06-08T08:34:57.000Z",
-          "score": 6
+          "title": "EU sanctions Iranians over restricting naval traffic in Hormuz - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5\" target=\"_blank\"&gt;EU sanctions Iranians over restricting naval traffic in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T11:52:45.000Z",
+          "score": 8
         },
         {
-          "title": "Peru election result close as vote counting continues",
-          "link": "https://www.bbc.com/news/articles/cewq151pw78o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The race between right-wing Keiko Fujimori and left-wing Roberto Sánchez has been dominated by concerns over crime and political instability.",
-          "published": "2026-06-08T08:48:37.000Z",
-          "score": 6
+          "title": "From Australia to Europe, countries move to curb children's social media access - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5\" target=\"_blank\"&gt;From Australia to Europe, countries move to curb children's social media access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T11:44:46.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 396,
-    "articlesLast24h": 139,
-    "afterDedup": 135,
+    "articlesLast24h": 145,
+    "afterDedup": 140,
     "feedsQueried": 19
   }
 }
