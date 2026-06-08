@@ -31,6 +31,7 @@ import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
 import { moduleMeta } from './moduleMeta';
+import { CommentMarker, commentTarget } from './WorkspaceCommentProvider';
 import { Tooltip, TooltipProvider } from '@/components/ui/Tooltip';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 
@@ -137,54 +138,67 @@ export default function ProjectShell({
         </div>
       </TooltipProvider>
 
-      {/* Plain-language helper: what the open tool is for. */}
-      {currentMeta && (
-        <p className="mt-3 mb-6 flex items-start gap-2 text-xs text-tertiary leading-relaxed">
-          <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
-            <currentMeta.Icon className="w-4 h-4" />
-          </span>
-          <span>{currentMeta.blurb}</span>
-        </p>
-      )}
-      {!currentMeta && <div className="mb-6" />}
-
-      {current?.kind === 'indicators' && (
-        <RenderErrorBoundary label="IndicatorModule">
-          <IndicatorModule
-            projectId={project.id}
-            initial={indicators}
-            initialLayouts={indicatorSheets}
+      {/* Plain-language helper: what the open tool is for, plus a comment marker. */}
+      {currentMeta && current ? (
+        <div className="mt-3 mb-6 flex items-start justify-between gap-3">
+          <p className="flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+            <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
+              <currentMeta.Icon className="w-4 h-4" />
+            </span>
+            <span>{currentMeta.blurb}</span>
+          </p>
+          <CommentMarker
+            kind="module"
+            id={current.id}
+            label={current.name}
+            className="shrink-0 mt-px"
           />
-        </RenderErrorBoundary>
+        </div>
+      ) : (
+        <div className="mb-6" />
       )}
-      {current?.kind === 'recommendations' && (
-        <RecommendationsModule projectId={project.id} initial={recommendations} />
-      )}
-      {current?.kind === 'member-states' && (
-        <MemberStatesModule projectId={project.id} industryFocus={industryFocus} />
-      )}
-      {(current?.kind === 'content-analysis' || current?.kind === 'policy-analysis') && (
-        <ContentAnalysisModule
-          projectId={project.id}
-          projectName={project.name}
-          industryFocus={industryFocus}
-        />
-      )}
-      {current?.kind === 'meetings' && (
-        <MeetingsModule
-          projectId={project.id}
-          initialMeetings={meetings}
-          initialMilestones={milestones}
-          initialPhases={phases}
-        />
-      )}
-      {current?.kind === 'custom' && (
-        <CustomNotesModule
-          projectId={project.id}
-          moduleId={current.id}
-          moduleName={current.name}
-          initialContent={customContent[current.id] ?? ''}
-        />
+
+      {current && (
+        <div {...commentTarget('module', current.id, current.name)}>
+          {current.kind === 'indicators' && (
+            <RenderErrorBoundary label="IndicatorModule">
+              <IndicatorModule
+                projectId={project.id}
+                initial={indicators}
+                initialLayouts={indicatorSheets}
+              />
+            </RenderErrorBoundary>
+          )}
+          {current.kind === 'recommendations' && (
+            <RecommendationsModule projectId={project.id} initial={recommendations} />
+          )}
+          {current.kind === 'member-states' && (
+            <MemberStatesModule projectId={project.id} industryFocus={industryFocus} />
+          )}
+          {(current.kind === 'content-analysis' || current.kind === 'policy-analysis') && (
+            <ContentAnalysisModule
+              projectId={project.id}
+              projectName={project.name}
+              industryFocus={industryFocus}
+            />
+          )}
+          {current.kind === 'meetings' && (
+            <MeetingsModule
+              projectId={project.id}
+              initialMeetings={meetings}
+              initialMilestones={milestones}
+              initialPhases={phases}
+            />
+          )}
+          {current.kind === 'custom' && (
+            <CustomNotesModule
+              projectId={project.id}
+              moduleId={current.id}
+              moduleName={current.name}
+              initialContent={customContent[current.id] ?? ''}
+            />
+          )}
+        </div>
       )}
       {!current && (
         <div className="rounded-xl border border-dashed border-grey-300 bg-grey-50 px-6 py-12 text-center">

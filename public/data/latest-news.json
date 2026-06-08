@@ -1,5 +1,14 @@
 [
   {
+    "title": "Commissioner Roswall's opening address at Venice Climate Week 2026",
+    "summary": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1293",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-08T08:44:40.000Z",
+    "tags": []
+  },
+  {
     "title": "Daily News 05 / 06 / 2026",
     "summary": "European Commission Daily news Brussels, 05 Jun 2026 Commission endorses Lithuania's €884 million Social Climate Plan to support vulnerable households and small enterprises in the clean transition \r\nThe European Co...",
     "url": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1273",
@@ -18,17 +27,6 @@
     "tags": [
       "emissions",
       "finance"
-    ]
-  },
-  {
-    "title": "Commission approves €100 million Austrian State aid scheme to support cleantech manufacturing capacity",
-    "summary": "European Commission Press release Brussels, 05 Jun 2026 The European Commission has approved a €100 million Austrian scheme to support clean technology ('cleantech') manufacturing capacity, in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commission on 25 June 2025.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1254",
-    "source": "european_commission",
-    "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-04T22:00:00.000Z",
-    "tags": [
-      "industry"
     ]
   }
 ]
