@@ -31,6 +31,8 @@ import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
 import { moduleMeta } from './moduleMeta';
+import { CommentMarker } from './WorkspaceCommentProvider';
+import { commentTarget } from './comment-target';
 import { Tooltip, TooltipProvider } from '@/components/ui/Tooltip';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 
@@ -137,20 +139,28 @@ export default function ProjectShell({
         </div>
       </TooltipProvider>
 
-      {/* Plain-language helper: what the open tool is for. */}
-      {currentMeta ? (
-        <p className="mt-3 mb-6 flex items-start gap-2 text-xs text-tertiary leading-relaxed">
-          <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
-            <currentMeta.Icon className="w-4 h-4" />
-          </span>
-          <span>{currentMeta.blurb}</span>
-        </p>
+      {/* Plain-language helper: what the open tool is for, plus a comment marker. */}
+      {currentMeta && current ? (
+        <div className="mt-3 mb-6 flex items-start justify-between gap-3">
+          <p className="flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+            <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
+              <currentMeta.Icon className="w-4 h-4" />
+            </span>
+            <span>{currentMeta.blurb}</span>
+          </p>
+          <CommentMarker
+            kind="module"
+            id={current.id}
+            label={current.name}
+            className="shrink-0 mt-px"
+          />
+        </div>
       ) : (
         <div className="mb-6" />
       )}
 
       {current && (
-        <div>
+        <div {...commentTarget('module', current.id, current.name)}>
           {current.kind === 'indicators' && (
             <IndicatorModule
               projectId={project.id}

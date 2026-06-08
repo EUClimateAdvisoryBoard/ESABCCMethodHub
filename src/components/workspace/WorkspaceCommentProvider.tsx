@@ -33,29 +33,20 @@ import {
 } from 'react';
 import { pwApi } from '@/lib/project-workspace/client';
 import WorkspaceComments from './WorkspaceComments';
-
-export interface CommentTarget {
-  kind: string;
-  id: string;
-}
+import type { CommentTarget } from './comment-target';
 
 /** Stable key for the per-target count map. */
 function keyOf(kind: string, id: string) {
   return `${kind}:${id}`;
 }
 
-/**
- * Spread onto any element to make it right-clickable for comments. The
- * data-attributes are read by the provider's context-menu handler, so this
- * works on server-rendered elements that can't take React props/hooks.
- */
-export function commentTarget(kind: string, id: string, label: string) {
-  return {
-    'data-comment-kind': kind,
-    'data-comment-id': id,
-    'data-comment-label': label,
-  } as const;
-}
+// `commentTarget` (the helper spread onto right-clickable elements) and its
+// `CommentTarget` type live in the server-safe `./comment-target` module so the
+// Server Component page can call the helper — see that file's note. We import
+// the type for internal use and re-export it for existing importers (types are
+// erased, so this is safe even from a 'use client' module; the function itself
+// must be imported directly from './comment-target').
+export type { CommentTarget };
 
 interface Ctx {
   projectId: string;
