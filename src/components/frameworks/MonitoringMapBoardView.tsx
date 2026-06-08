@@ -86,20 +86,83 @@ export default function MonitoringMapBoardView({ allIndicators, onOpenInList }: 
         catalogue folded into <span className="font-semibold">four thematic monitoring-map layers</span> —{' '}
         <span className="font-semibold">Enablers &amp; inputs → Delivery on the ground → Outcomes → Risk,
         harm &amp; climate signal</span> — with <span className="font-semibold">no sector split at all</span>.
-        Every indicator is placed by <span className="font-semibold">what kind of signal it is</span> rather
-        than which sector it sits in, and every layer carries{' '}
-        <span className="font-semibold">both pillars of equal weight</span>, so each layer pairs mitigation
-        indicators with adaptation &amp; resilience indicators (marked{' '}
+        The four layers are a <span className="font-semibold">causal pipeline read left-to-right</span>: did
+        we set the conditions, did delivery follow, did the outcomes move, and is the harm the system exists
+        to reduce actually falling? Every indicator is placed by{' '}
+        <span className="font-semibold">what kind of signal it is</span> rather than which sector it sits in,
+        and every layer carries <span className="font-semibold">both pillars of equal weight</span>, pairing
+        mitigation indicators with adaptation &amp; resilience indicators (marked{' '}
         <span className="align-middle inline-flex items-center rounded bg-teal-100 text-teal-800 px-1 text-[10px] font-semibold">
           ⛨ adapt
         </span>
         ).
       </p>
+
+      {/* Why a monitoring map instead of the sectoral view — the core rationale. */}
+      <div className="rounded-xl border border-indigo-200 bg-indigo-50/40 px-4 py-3 mb-4 max-w-3xl">
+        <div className="text-[11px] uppercase tracking-wide text-indigo-700 font-semibold mb-2">
+          Why a monitoring map, not the sectoral view?
+        </div>
+        <p className="text-[13px] text-tertiary leading-relaxed mb-3">
+          The default ESABCC boards read <span className="font-semibold">down a sector</span> (Energy,
+          Industry, Transport, …). That mirrors how policy is owned and how the report is written — the
+          right lens for a sector lead — but it is a poor lens for judging progress{' '}
+          <span className="font-semibold">as a whole system</span>, for three structural reasons. This map
+          fixes each one:
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2.5 text-[12px]">
+          <div>
+            <div className="font-semibold text-tertiary-dark mb-0.5">The sectoral view</div>
+            <ul className="list-disc pl-4 space-y-1.5 text-tertiary">
+              <li>
+                <span className="font-semibold">Hides where progress stalls.</span> Each column mixes
+                finance, built capacity, shares and realised emissions together, so you can&apos;t tell if a
+                blockage is upstream or down.
+              </li>
+              <li>
+                <span className="font-semibold">No home for cross-cutting signals.</span> Carbon price,
+                finance, R&amp;D and almost all of adaptation risk belong to no single sector — so they get
+                scattered or dropped.
+              </li>
+              <li>
+                <span className="font-semibold">Adaptation is an afterthought.</span> The columns are built
+                around emissions; risk &amp; resilience are bolted on rather than weighed equally.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div className="font-semibold text-tertiary-dark mb-0.5">This monitoring map</div>
+            <ul className="list-disc pl-4 space-y-1.5 text-tertiary">
+              <li>
+                <span className="font-semibold">Reads the causal chain, not the org chart.</span> A stall
+                shows up as a <span className="font-semibold">break in the pipeline</span> — enablers green
+                but delivery flat is an implementation gap.
+              </li>
+              <li>
+                <span className="font-semibold">One home for each signal type.</span> Finance, price and law
+                sit together in Enablers; the hazard signal and realised harm sit together in Risk —
+                whatever sector they touch.
+              </li>
+              <li>
+                <span className="font-semibold">Adaptation is a full, equal pillar</span> in every layer, and
+                every chip in a layer is the <span className="font-semibold">same kind of signal</span>, so
+                you weigh like with like.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <p className="text-[11.5px] text-tertiary-light leading-relaxed mt-3">
+          So the two are complements, not rivals: keep the sectoral view as the owner&apos;s board, and use
+          this as the <span className="font-semibold">board-level &ldquo;are we on track, and where is it
+          stuck?&rdquo;</span> view. Read across the layers — a healthy system shows movement propagating
+          left&nbsp;→&nbsp;right; the layer where it dies is where to look.
+        </p>
+      </div>
+
       <p className="text-sm text-tertiary mb-4 max-w-3xl">
         The layered <span className="font-semibold">enabler → delivery → outcome → risk</span> reading is{' '}
         <span className="font-semibold">inspired by</span> the monitoring-map approach national climate
-        advisory bodies use to judge progress — are the enablers in place, is delivery following, are the
-        outcomes and the residual risk moving? It is an{' '}
+        advisory bodies use to judge progress. It is an{' '}
         <span className="font-semibold">original synthesis, not a copy</span> of any one body&apos;s
         framework: the layer names, descriptions and indicator placement are our own, and every chip links
         only to indicators already curated in this platform. As in Advanced version 2, the{' '}
