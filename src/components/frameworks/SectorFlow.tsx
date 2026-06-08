@@ -64,6 +64,10 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
   // Both the beta and the advanced boards present adaptation as a first-class
   // track alongside mitigation, so the outcome/lever rows are relabelled.
   const showAdaptation = variant !== 'report';
+  // The advanced board packs the most (and longest-named) indicators in. Let its
+  // chip labels wrap onto multiple lines instead of truncating with an ellipsis,
+  // which reads far better than "CO₂ capture & stora…".
+  const wrapChips = variant === 'advanced';
   const edges = useMemo<Edge[]>(() => {
     const e: Edge[] = [];
     for (const o of sector.outcomes) e.push({ from: o.id, to: 'goal' });
@@ -157,6 +161,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 refs={sector.goalIndicators}
                 editing={editing}
                 allIndicators={allIndicators}
+                wrap={wrapChips}
                 onOpen={onOpenIndicator}
                 onRemove={(refId) => removeRef('goal', refId)}
                 onAdd={(indId) => addRefTo('goal', indId)}
@@ -175,6 +180,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 bg={nodeBg('outcome', o.track)}
                 editing={editing}
                 allIndicators={allIndicators}
+                wrapChips={wrapChips}
                 registerRef={register(o.id)}
                 onOpen={onOpenIndicator}
                 onLabel={(label) => updateNode('outcome', o.id, (n) => ({ ...n, label }))}
@@ -196,6 +202,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 bg={nodeBg('lever', l.track)}
                 editing={editing}
                 allIndicators={allIndicators}
+                wrapChips={wrapChips}
                 registerRef={register(l.id)}
                 onOpen={onOpenIndicator}
                 onLabel={(label) => updateNode('lever', l.id, (n) => ({ ...n, label }))}
@@ -331,6 +338,7 @@ function NodeCard({
   bg,
   editing,
   allIndicators,
+  wrapChips,
   registerRef,
   onOpen,
   onLabel,
@@ -343,6 +351,7 @@ function NodeCard({
   bg: string;
   editing: boolean;
   allIndicators: Indicator[];
+  wrapChips?: boolean;
   registerRef: (el: HTMLElement | null) => void;
   onOpen: (p: OpenIndicatorPayload) => void;
   onLabel: (v: string) => void;
@@ -354,7 +363,9 @@ function NodeCard({
   return (
     <div
       ref={registerRef}
-      className="relative rounded shadow-sm group flex-1 min-w-[118px] flex flex-col"
+      className={`relative rounded shadow-sm group flex-1 flex flex-col ${
+        wrapChips ? 'min-w-[150px]' : 'min-w-[118px]'
+      }`}
       style={{ background: bg }}
     >
       <div className="p-2 flex flex-col gap-1.5 h-full">
@@ -377,6 +388,7 @@ function NodeCard({
           refs={node.indicators}
           editing={editing}
           allIndicators={allIndicators}
+          wrap={wrapChips}
           onOpen={onOpen}
           onRemove={onRemoveRef}
           onAdd={onAddRef}
@@ -391,6 +403,7 @@ function ChipRow({
   refs,
   editing,
   allIndicators,
+  wrap,
   onOpen,
   onRemove,
   onAdd,
@@ -398,6 +411,7 @@ function ChipRow({
   refs: IndicatorRef[];
   editing: boolean;
   allIndicators: Indicator[];
+  wrap?: boolean;
   onOpen: (p: OpenIndicatorPayload) => void;
   onRemove: (refId: string) => void;
   onAdd: (indId: string) => void;
@@ -413,7 +427,9 @@ function ChipRow({
         return (
           <span
             key={r.refId}
-            className={`group/chip inline-flex items-center gap-1 rounded px-1.5 py-0.5 text-[10px] ${
+            className={`group/chip inline-flex gap-1 rounded px-1.5 py-0.5 text-[10px] ${
+              wrap ? 'items-start' : 'items-center'
+            } ${
               linked
                 ? 'bg-white text-gray-800 cursor-pointer hover:ring-1 hover:ring-white'
                 : 'bg-white/20 text-white/80 border border-dashed border-white/50'
@@ -421,8 +437,16 @@ function ChipRow({
             onClick={() => onOpen({ title: r.label, code: r.code, indicatorIds: r.indicatorIds })}
             title={r.label}
           >
-            <span className="font-mono font-semibold">{r.code}</span>
-            <span className="max-w-[200px] sm:max-w-[120px] truncate">{r.label}</span>
+            <span className="font-mono font-semibold shrink-0">{r.code}</span>
+            <span
+              className={
+                wrap
+                  ? 'max-w-[150px] leading-tight break-words [hyphens:auto]'
+                  : 'max-w-[200px] sm:max-w-[120px] truncate'
+              }
+            >
+              {r.label}
+            </span>
             {isBetaRef && (
               <span className="text-teal-700 font-bold" title="Beta indicator">
                 β
