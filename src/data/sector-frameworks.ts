@@ -111,6 +111,16 @@ export interface SectorFramework {
 export interface FrameworkBoard {
   version: number;
   sectors: SectorFramework[];
+  /**
+   * Optional single overarching goal that unifies every sector flow chart under
+   * one banner — used by the "Advanced version 3" integrated board, where
+   * mitigation and adaptation are equal-weight branches of one EU climate goal
+   * (neutral *and* resilient). When unset, each sector stands on its own goal,
+   * exactly as the report draws them.
+   */
+  overarchingGoal?: string;
+  /** One-line elaboration shown under the overarching goal banner. */
+  overarchingNote?: string;
 }
 
 /** Current schema version of the default board (bump to invalidate saved edits). */
@@ -1439,6 +1449,163 @@ export function defaultFrameworkBoardAdvancedV1(): FrameworkBoard {
   // returned board.
   return JSON.parse(
     JSON.stringify({ version: FRAMEWORK_BOARD_ADVANCED_VERSION, sectors }),
+  ) as FrameworkBoard;
+}
+
+/**
+ * "Advanced version 3" — the *integrated* assessment framework.
+ *
+ * Takes the Advanced version 1 board (every sector already carrying an
+ * equal-weight adaptation track) and (a) puts a single overarching goal over
+ * the whole board — climate-neutral *and* climate-resilient — and (b) adds one
+ * consolidated, cross-cutting **Climate adaptation & resilience** flow chart so
+ * adaptation stands as its own first-class system alongside the mitigation
+ * sectors, not only as a track within them. The adaptation flow chart is wired
+ * to the high-quality adaptation series and the policy-process / governance
+ * indicators (National Adaptation Strategies & Plans, risk assessments,
+ * adaptation in climate law, EU Adaptation Strategy actions, Mission-Charter and
+ * Covenant-of-Mayors uptake, EFAS early-warning reach, EU & EIB adaptation
+ * finance), so the qualitative policy side sits beside the quantitative risk
+ * side.
+ */
+export function defaultFrameworkBoardAdvancedV3(): FrameworkBoard {
+  const base = defaultFrameworkBoardAdvancedV1();
+
+  const adaptationSystem: SectorFramework = {
+    id: 'adaptation-system',
+    name: 'Climate adaptation & resilience',
+    figure: 'Cross-cutting',
+    color: '#2E7D74',
+    goal: 'A climate-resilient EU — reduced climate risk, loss and vulnerability',
+    goalIndicators: [
+      ref('A-X1', 'Economic losses from weather & climate extremes', ['adv-adapt-economic-losses']),
+    ],
+    outcomes: [
+      {
+        id: 'ad-o1',
+        layer: 'outcome',
+        track: 'adaptation',
+        label: 'Reduced climate risk, losses & mortality',
+        parents: ['goal'],
+        indicators: [
+          ref('A-X4', 'Heat-related mortality', ['adv-adapt-heat-mortality']),
+          ref('A-X12', 'Expected annual river-flood damage', ['adv-adapt-river-flood-damage']),
+          ref('A-X8', 'Crop-loss severity from drought & heat', ['adv-adapt-crop-loss']),
+        ],
+      },
+      {
+        id: 'ad-o2',
+        layer: 'outcome',
+        track: 'adaptation',
+        label: 'Stronger adaptive capacity & preparedness',
+        parents: ['goal'],
+        indicators: [
+          ref('A-X14', 'Cities with a dedicated adaptation plan', ['adv-adapt-cities-plans']),
+          ref('AO1', 'Mission-Charter signatory regions', ['adapt-out-mission-charter-signatories']),
+          ref('AO4', 'EFAS early-warning reach', ['adapt-out-ews-efas-coverage']),
+        ],
+      },
+      {
+        id: 'ad-o3',
+        layer: 'outcome',
+        track: 'adaptation',
+        label: 'Risk-informed planning, finance & insurance',
+        parents: ['goal'],
+        indicators: [
+          ref('A-X13', 'Climate insurance protection gap', ['adv-adapt-insurance-gap']),
+          ref('AF1', 'EU budget climate-mainstreaming share', ['adapt-fin-mff-climate-mainstreaming']),
+          ref('AF2', 'EIB adaptation finance share', ['adapt-fin-eib-adaptation-share']),
+        ],
+      },
+    ],
+    levers: [
+      {
+        id: 'ad-l1',
+        layer: 'lever',
+        track: 'adaptation',
+        label: 'Early warning & emergency preparedness',
+        parents: ['ad-o2'],
+        indicators: [ref('AO4', 'EFAS early-warning reach', ['adapt-out-ews-efas-coverage'])],
+      },
+      {
+        id: 'ad-l2',
+        layer: 'lever',
+        track: 'adaptation',
+        label: 'Resilient infrastructure & climate-proofing',
+        parents: ['ad-o1'],
+        indicators: [
+          ref('A-X11', 'Coastal-flood damage to transport', ['adv-adapt-coastal-transport-damage']),
+        ],
+      },
+      {
+        id: 'ad-l3',
+        layer: 'lever',
+        track: 'adaptation',
+        label: 'Nature-based solutions & ecosystem restoration',
+        parents: ['ad-o1'],
+        indicators: [
+          ref('A-X9', 'Forest disturbance from climate', ['adv-adapt-forest-disturbance']),
+          ref('A-X6', 'Area burnt by wildfires', ['adv-adapt-burnt-area']),
+        ],
+      },
+      {
+        id: 'ad-l4',
+        layer: 'lever',
+        track: 'adaptation',
+        label: 'Risk finance & insurance',
+        parents: ['ad-o3'],
+        indicators: [
+          ref('A-X13', 'Climate insurance protection gap', ['adv-adapt-insurance-gap']),
+          ref('AF2', 'EIB adaptation finance share', ['adapt-fin-eib-adaptation-share']),
+        ],
+      },
+      {
+        id: 'ad-l5',
+        layer: 'lever',
+        track: 'adaptation',
+        label: 'Adaptation governance & mainstreaming',
+        parents: ['ad-o3'],
+        indicators: [
+          ref('AG2', 'National Adaptation Plans adopted', ['adapt-gov-nap-adopted']),
+          ref('AG4', 'Adaptation in national climate law', ['adapt-gov-climate-law-adaptation']),
+          ref('AG7', 'EU Adaptation Strategy actions', ['adapt-gov-eu-strategy-actions']),
+        ],
+      },
+    ],
+    enabling: [
+      {
+        id: 'ad-e1',
+        kind: 'cross-cutting',
+        track: 'adaptation',
+        label: 'National Adaptation Strategies & Plans (Gov. Reg. Art. 19 reporting)',
+        indicatorIds: ['national-adaptation-strategies', 'adapt-gov-nap-adopted'],
+      },
+      {
+        id: 'ad-e2',
+        kind: 'cross-cutting',
+        track: 'adaptation',
+        label: 'National climate risk assessments (EUCRA-aligned)',
+        indicatorIds: ['adapt-gov-cra-completed'],
+      },
+      {
+        id: 'ad-e3',
+        kind: 'cross-cutting',
+        track: 'adaptation',
+        label: 'Adaptation finance (EU budget mainstreaming, EIB)',
+        indicatorIds: ['adapt-fin-mff-climate-mainstreaming', 'adapt-fin-eib-adaptation-share'],
+      },
+    ],
+  };
+
+  const sectors = [...base.sectors, adaptationSystem];
+  return JSON.parse(
+    JSON.stringify({
+      version: FRAMEWORK_BOARD_ADVANCED_VERSION,
+      overarchingGoal: 'A climate-neutral and climate-resilient EU by 2050',
+      overarchingNote:
+        'Mitigation and adaptation are equal-weight branches of one goal: cut emissions to net zero, and reduce the risk, loss and vulnerability from the warming already locked in.',
+      sectors,
+    }),
   ) as FrameworkBoard;
 }
 

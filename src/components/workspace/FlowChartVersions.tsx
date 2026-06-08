@@ -23,6 +23,8 @@ import {
   type FlowChartVersion,
 } from '@/lib/project-workspace/flowchart-versions';
 import FrameworkBoard from './FrameworkBoard';
+import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView';
+import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardView';
 
 interface Props {
   projectId: string;
@@ -114,6 +116,16 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv
             </span>
           )}
+          {active.variant === 'advanced-v2' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-purple-100 text-purple-700">
+              adv 2 · M&amp;E
+            </span>
+          )}
+          {active.variant === 'advanced-v4' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-indigo-100 text-indigo-700">
+              adv 4 · map
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -138,13 +150,32 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         </div>
       </div>
 
-      <FrameworkBoard
-        key={active.id}
-        version={active}
-        projectId={projectId}
-        allIndicators={allIndicators}
-        onOpenInList={onOpenInList}
-      />
+      {active.variant === 'advanced-v2' ? (
+        // The results-chain board is a computed, read-only re-clustering of the
+        // whole catalogue along the six M&E groups — it has its own view rather
+        // than the sector goal→outcome→lever boards.
+        <ResultsChainBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'advanced-v4' ? (
+        // The monitoring-map board is likewise a computed, read-only view — the
+        // whole catalogue folded into four thematic layers with no sectors.
+        <MonitoringMapBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : (
+        <FrameworkBoard
+          key={active.id}
+          version={active}
+          projectId={projectId}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      )}
 
       {creating && (
         <NewVersionDialog

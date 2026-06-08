@@ -974,6 +974,186 @@ export const ADVANCED_ADAPTATION_INDICATORS: Indicator[] = [
       { year: 2022, value: 51 },
     ],
   },
+
+  // ── Adaptation POLICY-PROCESS & finance build-out ────────────────────────────
+  // Adaptation is at an earlier stage than mitigation, so the early rungs of the
+  // results chain are tracked by the *policy machinery* (strategies, plans, risk
+  // assessments, coordination, finance) as much as by physical outcomes. These
+  // indicators populate the Input / Process / Output rungs of the adaptation
+  // track. EEA reporting is biennial (2021, 2023, 2025), so anchor years are
+  // sparse by nature — no dense annual series is fabricated.
+  {
+    id: 'adapt-gov-cra-completed',
+    code: 'AG3',
+    name: 'Member States with a comprehensive national climate risk assessment',
+    category: 'adaptation',
+    unit: 'count (of 27 MS)',
+    description:
+      'POLICY-PROCESS (Input — the evidence base). Number of EU Member States with a comprehensive, country-wide national climate risk assessment (CRA) in place — the analytical foundation that should make adaptation planning risk-informed. EEA (2025) reports 21 MS now have one, up from ≈15 in 2023 (six MS completed new/updated comprehensive CRAs over 2023–2025). A CRA is the national counterpart to the EU-level EUCRA (2024).',
+    source: 'European Environment Agency / EUCRA',
+    sourceUrl:
+      'https://www.eea.europa.eu/en/newsroom/news/europes-adaptation-policies-advance-but-stronger-action-is-needed-to-address-growing-climate-risks',
+    direction: 'up',
+    targetValue: 27,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2023, value: 15 },
+      { year: 2025, value: 21 },
+    ],
+  },
+  {
+    id: 'adapt-gov-climate-law-adaptation',
+    code: 'AG4',
+    name: 'Countries anchoring adaptation in a national climate law',
+    category: 'adaptation',
+    unit: 'count (of 32 EEA countries)',
+    description:
+      'POLICY-PROCESS (Input — legal mandate). Number of countries that anchor adaptation in a binding national/federal climate law (beyond a strategy), giving it a durable mandate, governance and accountability. EEA (2025): 17 of the 32 EEA-member countries, up from 10 in 2023. NOTE the denominator is the EEA-32 (EU-27 + IS, LI, NO, CH, TR), not EU-27.',
+    source: 'European Environment Agency',
+    sourceUrl:
+      'https://www.eea.europa.eu/en/analysis/publications/from-adaptation-planning-to-action/national-adaptation-policies-in-2025-in-the-eea-32',
+    direction: 'up',
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2023, value: 10 },
+      { year: 2025, value: 17 },
+    ],
+  },
+  {
+    id: 'adapt-gov-nap-adopted',
+    code: 'AG2',
+    name: 'Member States with an adopted National Adaptation Plan (NAP)',
+    category: 'adaptation',
+    unit: 'count (of 27 MS)',
+    description:
+      'POLICY-PROCESS (Process — strategy → actionable plan). Number of EU Member States with an adopted National Adaptation Plan that operationalises strategy into concrete measures and responsibilities. EEA (2025) names 16 EU MS with a NAP (AT, BG, CY, CZ, DK, EE, FI, FR, DE, IE, IT, LV, LT, LU, MT, NL). The gap to the ≈24 MS with a National Adaptation Strategy marks where strategy has not yet become an actionable plan.',
+    source: 'European Environment Agency',
+    sourceUrl:
+      'https://www.eea.europa.eu/en/analysis/publications/from-adaptation-planning-to-action/national-adaptation-policies-in-2025-in-the-eea-32',
+    direction: 'up',
+    targetValue: 27,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2025, value: 16 },
+    ],
+  },
+  {
+    id: 'adapt-gov-eu-strategy-actions',
+    code: 'AG7',
+    name: 'EU Adaptation Strategy (2021) flagship actions under way',
+    category: 'adaptation',
+    unit: 'actions (of 8)',
+    description:
+      'POLICY-PROCESS (Process — EU-level machinery). Delivery of the eight flagship actions of the EU Adaptation Strategy (adopted 24 Feb 2021) that frame and enable national adaptation under the European Green Deal (e.g. Covenant of Mayors, Climate-ADAPT, climate-proofing of EU policies, the EUCRA). The Commission’s implementation evaluation records progress against all eight — "progress on all 8", not necessarily eight fully closed.',
+    source: 'European Commission (DG CLIMA) — EU Adaptation Strategy evaluation',
+    sourceUrl:
+      'https://climate.ec.europa.eu/eu-action/adaptation-and-resilience-climate-change/eu-adaptation-strategy_en',
+    direction: 'up',
+    targetValue: 8,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2021, value: 0 },
+      { year: 2024, value: 8 },
+    ],
+  },
+  {
+    id: 'adapt-fin-mff-climate-mainstreaming',
+    code: 'AF1',
+    name: 'EU budget climate-mainstreaming share (MFF + NextGenerationEU)',
+    category: 'adaptation',
+    unit: '% of EU budget',
+    description:
+      'FINANCE (Input). Share of the EU budget that is climate-relevant. The 2021–2027 MFF + NextGenerationEU carry a ≥30% climate-spending target, which the Commission projects to reach ≈34.3%. CAVEAT: the European Court of Auditors found the 2014–2020 figure overstated (≈13% real vs 20.1% reported), and adaptation is not separately broken out of the headline — so read this as total climate finance with limited adaptation visibility, not an adaptation-only number.',
+    source: 'European Commission (climate mainstreaming) / European Court of Auditors',
+    sourceUrl:
+      'https://commission.europa.eu/strategy-and-policy/eu-budget/performance-and-reporting/horizontal-priorities/green-budgeting/climate-mainstreaming_en',
+    direction: 'up',
+    targetValue: 30,
+    targetYear: 2027,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 20.1 },
+      { year: 2027, value: 34.3 },
+    ],
+  },
+  {
+    id: 'adapt-fin-eib-adaptation-share',
+    code: 'AF2',
+    name: 'EIB Group adaptation finance as a share of climate finance',
+    category: 'adaptation',
+    unit: '% of EIB climate finance',
+    description:
+      'FINANCE (Input). Adaptation finance as a share of the EIB Group’s total climate finance — a direct read-out of the mitigation-vs-adaptation imbalance in EU public climate investment. The EIB reports 6.4% (≈€2.7 bn) in 2023, up ≈40% in volume year-on-year from ≈€1.9 bn in 2022, but still well below its 15%-by-2025 (Phase 1) target; a new ≈€30 bn adaptation envelope is set for 2026–2030.',
+    source: 'European Investment Bank — Climate Bank Roadmap progress report',
+    sourceUrl: 'https://www.eib.org/en/publications/the-eib-group-climate-bank-roadmap',
+    direction: 'up',
+    targetValue: 15,
+    targetYear: 2025,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2023, value: 6.4 },
+    ],
+  },
+  {
+    id: 'adapt-out-mission-charter-signatories',
+    code: 'AO1',
+    name: 'EU Mission Adaptation — regions/authorities signing the Mission Charter',
+    category: 'adaptation',
+    unit: 'signatory regions / local authorities',
+    description:
+      'OUTPUT (local-action uptake). Regions and local authorities that have signed the Charter of the EU Mission "Adaptation to Climate Change". Uptake has more than doubled the Mission’s target of 150: ≈118 in mid-2022, "over 300" by March 2023, and ≈326 by May 2025 — a strong signal of political commitment to local adaptation. Intermediate points rest on Commission press coverage (the Mission portal returned 403 to automated fetches); worth a manual cross-check.',
+    source: 'European Commission — EU Mission on Adaptation to Climate Change',
+    sourceUrl: 'https://mission-adaptation-portal.ec.europa.eu/about/regions-local-authorities_en',
+    direction: 'up',
+    targetValue: 150,
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2022, value: 118 },
+      { year: 2023, value: 301 },
+      { year: 2025, value: 326 },
+    ],
+  },
+  {
+    id: 'adapt-out-com-adaptation-signatories',
+    code: 'AO2',
+    name: 'Covenant of Mayors local authorities with an adaptation commitment',
+    category: 'adaptation',
+    unit: 'local authorities',
+    description:
+      'OUTPUT (local-action uptake). Local authorities under the EU Covenant of Mayors that have made a climate-adaptation commitment. The cleanest single grounded anchor is the EEA’s 2020 figure of ≈2,600 local authorities (covering ≈123 million people). NOTE counts differ across the EU Covenant of Mayors vs the Global Covenant frameworks and the headline ≈10,000+ signatories include mitigation-only commitments — one framework should be held constant.',
+    source: 'EEA / EU Covenant of Mayors',
+    sourceUrl: 'https://eu-mayors.ec.europa.eu/en/key_figures',
+    direction: 'up',
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2020, value: 2600 },
+    ],
+  },
+  {
+    id: 'adapt-out-ews-efas-coverage',
+    code: 'AO4',
+    name: 'Early-warning reach — national services receiving EFAS flood forecasts',
+    category: 'adaptation',
+    unit: 'national hydro / civil-protection services',
+    description:
+      'OUTPUT (preparedness infrastructure). Reach of EU-level multi-hazard early warning, proxied by the European Flood Awareness System (EFAS): since 2012 EFAS has delivered flood forecasts to ≈116 national hydrological and civil-protection services, with a domain spanning ~66 countries and >900 registered users (Meteoalarm separately aggregates 38 national met services). No clean "people covered by multi-hazard EWS" EU series exists, so partner-service reach is the defensible anchor.',
+    source: 'JRC / Copernicus EMS — European Flood Awareness System (EFAS)',
+    sourceUrl: 'https://european-flood.emergency.copernicus.eu/',
+    direction: 'up',
+    group: 'advanced-adaptation',
+    isSeed: true,
+    data: [
+      { year: 2024, value: 116 },
+    ],
+  },
 ];
 
 // ── Storylines ────────────────────────────────────────────────────────────────
@@ -1051,6 +1231,24 @@ const STORYLINES: Record<string, string> = {
     'When losses are uninsured, households and public budgets absorb the shock — so the protection gap is the economy-and-finance resilience measure. A widening gap signals systemic financial vulnerability to climate extremes.',
   'adv-adapt-cities-plans':
     'Adaptation ultimately happens locally, so the share of cities with adaptation plans tracks whether the governance and response capacity is being built to turn risk awareness into action on the ground.',
+  'adapt-gov-cra-completed':
+    'You cannot prioritise what you have not assessed — a national climate risk assessment is the evidence base that makes adaptation planning risk-informed rather than guesswork, which is why the spread from ~15 to 21 Member States is the quiet foundation of everything downstream.',
+  'adapt-gov-climate-law-adaptation':
+    'A strategy can be quietly shelved; a binding climate law cannot. Anchoring adaptation in law gives it a durable mandate, dedicated governance and accountability — so the count of countries doing so measures how permanent the adaptation commitment really is.',
+  'adapt-gov-nap-adopted':
+    'A National Adaptation Plan is where strategy becomes concrete measures, budgets and named responsibilities. The gap between Member States with a strategy and those with an actual plan is the single clearest measure of the planning-to-action shortfall.',
+  'adapt-gov-eu-strategy-actions':
+    'The EU Adaptation Strategy is the EU-level machinery that frames and bankrolls national action; tracking delivery of its eight flagship actions shows whether Brussels is holding up its side of the multilevel adaptation bargain.',
+  'adapt-fin-mff-climate-mainstreaming':
+    'Adaptation only scales when it is funded, so the climate share of the EU budget is the headline money signal — but the auditors’ caveat (and the near-invisibility of adaptation within it) is itself the story: what gets measured loosely gets under-delivered.',
+  'adapt-fin-eib-adaptation-share':
+    'The EIB’s adaptation share is the sharpest single read-out of the mitigation-vs-adaptation imbalance in EU public finance: rising fast in volume yet still far below target, it quantifies exactly how much catching up the resilience side has to do.',
+  'adapt-out-mission-charter-signatories':
+    'Adaptation is delivered on the ground, so regions signing the Mission Charter are the leading indicator of local political will — overshooting the 150 target two-fold shows the appetite is there even where national plans lag.',
+  'adapt-out-com-adaptation-signatories':
+    'Thousands of municipalities formally committing to adaptation turns national strategy into local action; the count (and the people it covers) is the breadth measure of how far adaptation governance reaches below the national level.',
+  'adapt-out-ews-efas-coverage':
+    'Early warning is the highest-return, most life-saving adaptation output there is. EFAS’s reach across national services measures whether the EU can actually get a flood forecast to the people who must act on it in time.',
 };
 
 for (const ind of [...ADVANCED_INDICATORS, ...ADVANCED_ADAPTATION_INDICATORS]) {
