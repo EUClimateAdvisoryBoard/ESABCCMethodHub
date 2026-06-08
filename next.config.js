@@ -9,6 +9,10 @@ const nextConfig = {
   // Bundle the Brussels Bulletin Word template into the serverless function
   // so the docx-export route can read it via fs.readFile at runtime.
   experimental: {
+    // TEMP DIAGNOSTIC (remove after triage): keep server function names
+    // readable in production stack traces so the workspace-page crash
+    // ("m is not a function") names the real function instead of "m"/"v".
+    serverMinification: false,
     // Keep pdfjs-dist and the native canvas package external so webpack
     // doesn't bundle them into the serverless function. Bundling pdfjs
     // rewrites its dynamic worker import to a /chunks/pdf.worker.mjs path
