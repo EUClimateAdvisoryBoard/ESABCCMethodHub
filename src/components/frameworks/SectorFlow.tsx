@@ -445,7 +445,6 @@ function ChipRow({
     <div className="flex flex-wrap gap-1 mt-auto">
       {refs.map((r) => {
         const linked = r.indicatorIds.length > 0;
-        const isBetaRef = r.indicatorIds.some((id) => allIndicators.find((i) => i.id === id)?.beta);
         // "New": linked to data that is not part of the original ESABCC report's
         // indicator database (none of its linked series are `esabcc` indicators).
         const isNewRef =
@@ -487,11 +486,6 @@ function ChipRow({
                   <span className="ml-0.5">new</span>
                 </span>
               </Tooltip>
-            )}
-            {isBetaRef && (
-              <span className="text-teal-700 font-bold" title="Beta indicator">
-                β
-              </span>
             )}
             {storyline && (
               <Tooltip
