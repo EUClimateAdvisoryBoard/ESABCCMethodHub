@@ -17,7 +17,7 @@
  */
 'use client';
 
-import { useState, Component, type ReactNode } from 'react';
+import { useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import type { WorkspaceProject, WorkspaceModuleKind } from '@/data/project-workspace';
 import type { Indicator } from '@/data/ecno-indicators';
@@ -31,7 +31,6 @@ import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
 import { moduleMeta } from './moduleMeta';
-import { CommentMarker, commentTarget } from './WorkspaceCommentProvider';
 import { Tooltip, TooltipProvider } from '@/components/ui/Tooltip';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
 
@@ -138,36 +137,26 @@ export default function ProjectShell({
         </div>
       </TooltipProvider>
 
-      {/* Plain-language helper: what the open tool is for, plus a comment marker. */}
-      {currentMeta && current ? (
-        <div className="mt-3 mb-6 flex items-start justify-between gap-3">
-          <p className="flex items-start gap-2 text-xs text-tertiary leading-relaxed">
-            <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
-              <currentMeta.Icon className="w-4 h-4" />
-            </span>
-            <span>{currentMeta.blurb}</span>
-          </p>
-          <CommentMarker
-            kind="module"
-            id={current.id}
-            label={current.name}
-            className="shrink-0 mt-px"
-          />
-        </div>
+      {/* Plain-language helper: what the open tool is for. */}
+      {currentMeta ? (
+        <p className="mt-3 mb-6 flex items-start gap-2 text-xs text-tertiary leading-relaxed">
+          <span className="shrink-0 mt-px" style={{ color: currentMeta.accent }}>
+            <currentMeta.Icon className="w-4 h-4" />
+          </span>
+          <span>{currentMeta.blurb}</span>
+        </p>
       ) : (
         <div className="mb-6" />
       )}
 
       {current && (
-        <div {...commentTarget('module', current.id, current.name)}>
+        <div>
           {current.kind === 'indicators' && (
-            <RenderErrorBoundary label="IndicatorModule">
-              <IndicatorModule
-                projectId={project.id}
-                initial={indicators}
-                initialLayouts={indicatorSheets}
-              />
-            </RenderErrorBoundary>
+            <IndicatorModule
+              projectId={project.id}
+              initial={indicators}
+              initialLayouts={indicatorSheets}
+            />
           )}
           {current.kind === 'recommendations' && (
             <RecommendationsModule projectId={project.id} initial={recommendations} />
@@ -365,36 +354,4 @@ function AddModuleDialog({
       </div>
     </div>
   );
-}
-
-/**
- * TEMP DIAGNOSTIC (remove after triage). Catches render errors in a module
- * subtree — including during SSR — and renders the real message + stack, which
- * production otherwise replaces with an opaque digest. Used to pinpoint the
- * "<x> is not a function" crash on the workspace indicators page.
- */
-class RenderErrorBoundary extends Component<
-  { label: string; children: ReactNode },
-  { err: Error | null }
-> {
-  constructor(props: { label: string; children: ReactNode }) {
-    super(props);
-    this.state = { err: null };
-  }
-  static getDerivedStateFromError(err: Error) {
-    return { err };
-  }
-  render() {
-    const { err } = this.state;
-    if (!err) return this.props.children;
-    return (
-      <div style={{ padding: 16, fontFamily: 'monospace', fontSize: 12, whiteSpace: 'pre-wrap', border: '2px solid #b91c1c', borderRadius: 8 }}>
-        <strong style={{ color: '#b91c1c' }}>Render error in {this.props.label}:</strong>
-        {'\n'}
-        <strong>{err.name}: {err.message}</strong>
-        {'\n\n'}
-        {err.stack ?? '(no stack)'}
-      </div>
-    );
-  }
 }

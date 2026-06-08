@@ -35,10 +35,6 @@ import type { Indicator } from '@/data/ecno-indicators';
 import type { PastRecommendation } from '@/data/esabcc-recommendations';
 import type { Meeting, Milestone, Phase } from '@/lib/project-workspace/client';
 import ProjectShell from '@/components/workspace/ProjectShell';
-import WorkspaceCommentProvider, {
-  CommentMarker,
-  commentTarget,
-} from '@/components/workspace/WorkspaceCommentProvider';
 
 export const dynamic = 'force-dynamic';
 
@@ -49,16 +45,7 @@ export default async function ProjectPage({
   params: { projectId: string };
   searchParams: { module?: string };
 }) {
-  // TEMP DIAGNOSTIC (remove after triage): the production workspace page throws
-  // a server-side exception (digest 2064600908, "m is not a function") that does
-  // not reproduce locally. Capture the real error + stack server-side and render
-  // it, since production strips the message before it reaches the error boundary.
-  let project: Awaited<ReturnType<typeof getProject>>;
-  try {
-    project = await getProject(params.projectId);
-  } catch (err) {
-    return <WorkspaceDebugPanel stage="getProject" err={err} />;
-  }
+  const project = await getProject(params.projectId);
   if (!project) notFound();
 
   const activeModule =
@@ -79,28 +66,23 @@ export default async function ProjectPage({
   let phases: Phase[] = [];
   const customContent: Record<string, string> = {};
 
-  try {
-    if (kind === 'indicators') {
-      [indicators, indicatorSheets] = await Promise.all([
-        listIndicators(params.projectId),
-        listIndicatorSheets(params.projectId),
-      ]);
-    } else if (kind === 'recommendations') {
-      recommendations = await listRecommendations(params.projectId);
-    } else if (kind === 'member-states') {
-      memberStateCells = await listMemberStateCells(params.projectId);
-    } else if (kind === 'meetings') {
-      [meetings, milestones, phases] = await Promise.all([
-        listMeetings(params.projectId),
-        listMilestones(params.projectId),
-        listPhases(params.projectId),
-      ]);
-    } else if (kind === 'custom' && current) {
-      customContent[current.id] = await getCustomModuleContent(project.id, current.id);
-    }
-  } catch (err) {
-    // TEMP DIAGNOSTIC (remove after triage): see note above.
-    return <WorkspaceDebugPanel stage={`fetch:${kind ?? 'none'}`} err={err} />;
+  if (kind === 'indicators') {
+    [indicators, indicatorSheets] = await Promise.all([
+      listIndicators(params.projectId),
+      listIndicatorSheets(params.projectId),
+    ]);
+  } else if (kind === 'recommendations') {
+    recommendations = await listRecommendations(params.projectId);
+  } else if (kind === 'member-states') {
+    memberStateCells = await listMemberStateCells(params.projectId);
+  } else if (kind === 'meetings') {
+    [meetings, milestones, phases] = await Promise.all([
+      listMeetings(params.projectId),
+      listMilestones(params.projectId),
+      listPhases(params.projectId),
+    ]);
+  } else if (kind === 'custom' && current) {
+    customContent[current.id] = await getCustomModuleContent(project.id, current.id);
   }
 
   return (
@@ -114,65 +96,27 @@ export default async function ProjectPage({
           <span className="mx-1">/</span>
           <span className="text-tertiary-dark font-medium">{project.name}</span>
         </nav>
-        <WorkspaceCommentProvider projectId={project.id}>
-          <header className="mb-6" {...commentTarget('project', project.id, project.name)}>
-            <div className="flex items-start justify-between gap-3 flex-wrap">
-              <h1 className="text-2xl font-bold text-tertiary-dark">{project.name}</h1>
-              <CommentMarker
-                kind="project"
-                id={project.id}
-                label={project.name}
-                className="mt-1.5"
-              />
-            </div>
-            <p className="text-sm text-tertiary mt-2 max-w-3xl">
-              {project.shortDescription}
-            </p>
-            <p className="text-[11px] text-tertiary-light mt-2 flex items-center gap-1">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-              </svg>
-              Tip: right-click the intro, a tool or the indicator table to leave a comment.
-            </p>
-          </header>
+        <header className="mb-6">
+          <h1 className="text-2xl font-bold text-tertiary-dark">{project.name}</h1>
+          <p className="text-sm text-tertiary mt-2 max-w-3xl">
+            {project.shortDescription}
+          </p>
+        </header>
 
-          <ProjectShell
-            project={project}
-            activeModule={activeModule}
-            indicators={indicators}
-            indicatorSheets={indicatorSheets}
-            recommendations={recommendations}
-            memberStateCells={memberStateCells}
-            customContent={customContent}
-            meetings={meetings}
-            milestones={milestones}
-            phases={phases}
-          />
-        </WorkspaceCommentProvider>
+        <ProjectShell
+          project={project}
+          activeModule={activeModule}
+          indicators={indicators}
+          indicatorSheets={indicatorSheets}
+          recommendations={recommendations}
+          memberStateCells={memberStateCells}
+          customContent={customContent}
+          meetings={meetings}
+          milestones={milestones}
+          phases={phases}
+        />
       </main>
       <SiteFooter />
-    </div>
-  );
-}
-
-/**
- * TEMP DIAGNOSTIC (remove after triage). Renders the real server-side error
- * (message + stack) for the workspace page, which production otherwise strips
- * before it reaches the error boundary (leaving only an opaque digest).
- */
-function WorkspaceDebugPanel({ stage, err }: { stage: string; err: unknown }) {
-  const e = err as { message?: string; stack?: string; name?: string } | undefined;
-  return (
-    <div style={{ padding: 24, fontFamily: 'monospace', fontSize: 12, whiteSpace: 'pre-wrap' }}>
-      <h1 style={{ fontSize: 16, fontWeight: 700, color: '#b91c1c' }}>
-        Workspace debug — failed at: {stage}
-      </h1>
-      <p style={{ marginTop: 8 }}>
-        <strong>{e?.name ?? 'Error'}:</strong> {e?.message ?? String(err)}
-      </p>
-      <pre style={{ marginTop: 12, padding: 12, background: '#f3f4f6', overflow: 'auto' }}>
-        {e?.stack ?? '(no stack)'}
-      </pre>
     </div>
   );
 }
