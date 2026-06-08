@@ -194,7 +194,14 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
         <Row label={showAdaptation ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
-          <div className="flex gap-2 items-stretch flex-wrap sm:flex-nowrap sm:overflow-x-auto pb-1">
+          <div
+            className={`flex gap-2 items-stretch flex-wrap pb-1 ${
+              // The advanced board has many levers; wrap them onto multiple rows
+              // so none get clipped behind a horizontal scrollbar. Other variants
+              // keep the report-faithful single scrolling row.
+              wrapChips ? '' : 'sm:flex-nowrap sm:overflow-x-auto'
+            }`}
+          >
             {sector.levers.map((l) => (
               <NodeCard
                 key={l.id}
