@@ -49,7 +49,7 @@ import {
   referencePdfCacheKey,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
-import { useOverallTags, effectiveOverallTags } from '@/lib/content-analysis/useOverallTags';
+import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
 import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import {
   sourceTierOf,
@@ -302,12 +302,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
     if (browseTagFilter.length > 0) {
       const wanted = new Set(browseTagFilter);
-      out = out.filter(d =>
-        effectiveOverallTags(d, overallTags.getOverride(d.id)).some(t => wanted.has(t)),
-      );
+      const editable = sourceType !== 'policy';
+      out = out.filter(d => {
+        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
+        return tags.some(t => wanted.has(t));
+      });
     }
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, overallTags.getOverride]);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags]);
 
   // ── Overall (document-level) tags ─────────────────────────────────────────
   // The shared master taxonomy is the pool of selectable overall tags — the
@@ -318,17 +320,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     [snapshot.codes],
   );
 
-  /** Resolved overall tags for every corpus document, for the list dots. */
-  const overallTagsByDoc = useMemo(() => {
-    const m: Record<string, string[]> = {};
-    for (const d of corpusDocs) m[d.id] = effectiveOverallTags(d, overallTags.getOverride(d.id));
-    return m;
-  }, [corpusDocs, overallTags.getOverride]);
-
   /** Whether the active source tier supports manual overall tagging. Policy
    *  documents carry an AI-curated baseline managed elsewhere; scientific &
    *  grey literature are tagged by hand here. */
   const canEditOverallTags = sourceType !== 'policy';
+
+  /** Resolved overall tags for every corpus document, for the list dots.
+   *  Editable tiers show the analyst-curated set (shared via the server);
+   *  the policy corpus shows its AI baseline. */
+  const overallTagsByDoc = useMemo(() => {
+    const m: Record<string, string[]> = {};
+    for (const d of corpusDocs) {
+      m[d.id] = canEditOverallTags ? overallTags.getTags(d.id) : d.aiCodeIds;
+    }
+    return m;
+  }, [corpusDocs, canEditOverallTags, overallTags.getTags]);
 
   // ── Codes visible in this workspace (master + this project's own) ─────────
   const visibleCodes = useMemo(
@@ -1123,10 +1129,8 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 ingestState={ingestState}
                 showOverallTags={canEditOverallTags}
                 overallTagCodes={masterCodes}
-                overallTagSelected={overallTagsByDoc[selectedDocument.id] ?? selectedDocument.aiCodeIds}
-                onToggleOverallTag={codeId =>
-                  overallTags.toggleTag(selectedDocument.id, codeId, selectedDocument.aiCodeIds)
-                }
+                overallTagSelected={overallTags.getTags(selectedDocument.id)}
+                onToggleOverallTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
                 summary={ownSummary}
                 otherSummaries={otherSummaries}
                 projectNameById={projectNameById}

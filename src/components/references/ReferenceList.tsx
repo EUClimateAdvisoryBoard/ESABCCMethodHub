@@ -283,7 +283,7 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             const { plain: plainTags, projects: projectTags } = splitTags(ref.tags);
             // Resolve the analyst-curated overall tags (master-code ids) to
             // coloured labels. Only manually-set tags surface here.
-            const overallTagCodes = (overallTags.getOverride(`ref-doc-${ref.id}`) ?? [])
+            const overallTagCodes = overallTags.getTags(`ref-doc-${ref.id}`)
               .map(getMasterCode)
               .filter(Boolean) as NonNullable<ReturnType<typeof getMasterCode>>[];
             return (
