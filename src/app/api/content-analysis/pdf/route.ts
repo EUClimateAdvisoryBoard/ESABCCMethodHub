@@ -28,7 +28,10 @@ function pdfResponse(bytes: Buffer): NextResponse {
     headers: {
       'Content-Type': 'application/pdf',
       'Content-Length': String(body.byteLength),
-      'Cache-Control': 'private, max-age=3600',
+      // Don't cache: a re-ingest (Replace PDF) must be reflected immediately.
+      // A long max-age previously let the browser keep serving a stale empty /
+      // 404 response for up to an hour after the PDF had been re-uploaded.
+      'Cache-Control': 'no-store, must-revalidate',
     },
   });
 }
