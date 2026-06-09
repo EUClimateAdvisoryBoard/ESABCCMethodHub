@@ -15,10 +15,11 @@ import {
   citationLabel,
   evidenceStrength,
   expandCodeIds,
+  fetchOutline,
   fullCitation,
   loadOutline,
   makeSection,
-  saveOutline,
+  pushOutline,
   STRENGTH_META,
 } from '@/lib/content-analysis/report-structure';
 
@@ -80,16 +81,25 @@ export default function ReportOutlineBuilder({
 
   // Load the saved outline once per project (and seed the default from the
   // live root codes the first time, so a brand-new report opens pre-mapped).
+  // Paint instantly from the localStorage cache, then override with the shared
+  // server outline so every collaborator converges on the same structure.
   useEffect(() => {
     if (loadedFor.current === projectId) return;
     loadedFor.current = projectId;
     setOutline(loadOutline(projectId, rootCodes));
+    let cancelled = false;
+    void fetchOutline(projectId).then(server => {
+      if (!cancelled && server) setOutline(server);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [projectId, rootCodes]);
 
   const persist = useCallback(
     (next: ReportOutline) => {
       setOutline(next);
-      saveOutline(projectId, next);
+      void pushOutline(projectId, next);
     },
     [projectId],
   );

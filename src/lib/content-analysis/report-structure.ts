@@ -119,7 +119,49 @@ export function saveOutline(projectId: string, outline: ReportOutline): void {
   try {
     localStorage.setItem(outlineKey(projectId), JSON.stringify(outline));
   } catch {
-    /* quota — ignore in the beta */
+    /* quota — ignore */
+  }
+}
+
+/**
+ * Fetch the shared outline from the server (the source of truth across
+ * collaborators). Returns null on a miss / when the API is unreachable so the
+ * caller can fall back to its localStorage cache or the seeded default.
+ */
+export async function fetchOutline(projectId: string): Promise<ReportOutline | null> {
+  if (typeof window === 'undefined') return null;
+  try {
+    const resp = await fetch(
+      `/api/content-analysis/outline?projectId=${encodeURIComponent(projectId)}`,
+    );
+    if (!resp.ok) return null;
+    const data = (await resp.json()) as { outline?: Partial<ReportOutline> | null };
+    const o = data.outline;
+    if (o && o.version === OUTLINE_VERSION && Array.isArray(o.sections)) {
+      return { version: OUTLINE_VERSION, sections: o.sections };
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Persist the outline to the shared server store so every collaborator sees it.
+ * Also writes the localStorage cache for instant reloads. Best-effort on the
+ * network side — the cache keeps the editing session consistent meanwhile.
+ */
+export async function pushOutline(projectId: string, outline: ReportOutline): Promise<void> {
+  saveOutline(projectId, outline);
+  if (typeof window === 'undefined') return;
+  try {
+    await fetch('/api/content-analysis/outline', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ projectId, outline }),
+    });
+  } catch {
+    /* best-effort — the cache already reflects the change this session */
   }
 }
 
