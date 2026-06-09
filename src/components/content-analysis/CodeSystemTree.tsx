@@ -319,43 +319,51 @@ export default function CodeSystemTree({
 
   return (
     <>
-      {/* Sticky breadcrumb (M·05 #10) — only renders when a code is selected
-          and lives more than one level deep, so shallow trees don't gain
-          chrome they don't need. */}
-      {breadcrumb && (
-        <div
-          className="sticky top-0 z-10 bg-[var(--mh-card)]/95 backdrop-blur supports-[backdrop-filter]:bg-[var(--mh-card)]/85 border-b border-[var(--mh-border)] px-3 py-1.5"
-          style={{ fontSize: 'var(--mh-text-2xs)' }}
-        >
-          <ol className="flex items-center gap-1 flex-wrap text-[var(--mh-muted)]">
-            {breadcrumb.map((c, i) => (
-              <li key={c.id} className="inline-flex items-center gap-1">
-                {i > 0 && <span aria-hidden="true">›</span>}
-                <button
-                  type="button"
-                  onClick={() => onSelect(c.id)}
-                  className={`mh-focus hover:underline ${i === breadcrumb.length - 1 ? 'text-[var(--mh-fg)] font-semibold' : ''}`}
-                >
-                  <span aria-hidden="true" className="inline-block w-2 h-2 rounded-sm align-middle mr-1" style={{ backgroundColor: c.color }} />
-                  {c.name}
-                </button>
-              </li>
-            ))}
-          </ol>
-        </div>
-      )}
-      {/* Sub-toolbar — only renders when there are collapsible nodes,
-          so flat code books don't gain chrome they can't use. */}
-      {collapsibleIds.length > 0 && (
-        <div className="flex items-center justify-end gap-2 px-2 pt-1.5 pb-1 border-b border-[var(--mh-border)] bg-[#FBFBFA]">
-          <button
-            type="button"
-            onClick={allCollapsed ? expandAll : collapseAll}
-            className="text-[10.5px] font-medium text-[#3D5265] hover:text-[#00928F]"
-            title={allCollapsed ? 'Expand every parent tag' : 'Collapse every parent tag to its root'}
-          >
-            {allCollapsed ? 'Expand all' : 'Collapse all'}
-          </button>
+      {/* Pinned header band — the breadcrumb and the collapse/expand control
+          stay put while the tag list scrolls beneath them. The background is
+          fully opaque so the coloured code-tag squares don't ghost through it
+          while scrolling. */}
+      {(breadcrumb || collapsibleIds.length > 0) && (
+        <div className="sticky top-0 z-20 bg-[var(--mh-card)]">
+          {/* Sticky breadcrumb (M·05 #10) — only renders when a code is
+              selected and lives more than one level deep, so shallow trees
+              don't gain chrome they don't need. */}
+          {breadcrumb && (
+            <div
+              className="border-b border-[var(--mh-border)] px-3 py-1.5"
+              style={{ fontSize: 'var(--mh-text-2xs)' }}
+            >
+              <ol className="flex items-center gap-1 flex-wrap text-[var(--mh-muted)]">
+                {breadcrumb.map((c, i) => (
+                  <li key={c.id} className="inline-flex items-center gap-1">
+                    {i > 0 && <span aria-hidden="true">›</span>}
+                    <button
+                      type="button"
+                      onClick={() => onSelect(c.id)}
+                      className={`mh-focus hover:underline ${i === breadcrumb.length - 1 ? 'text-[var(--mh-fg)] font-semibold' : ''}`}
+                    >
+                      <span aria-hidden="true" className="inline-block w-2 h-2 rounded-sm align-middle mr-1" style={{ backgroundColor: c.color }} />
+                      {c.name}
+                    </button>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+          {/* Sub-toolbar — only renders when there are collapsible nodes,
+              so flat code books don't gain chrome they can't use. */}
+          {collapsibleIds.length > 0 && (
+            <div className="flex items-center justify-end gap-2 px-2 pt-1.5 pb-1 border-b border-[var(--mh-border)] bg-[#FBFBFA]">
+              <button
+                type="button"
+                onClick={allCollapsed ? expandAll : collapseAll}
+                className="text-[10.5px] font-medium text-[#3D5265] hover:text-[#00928F]"
+                title={allCollapsed ? 'Expand every parent tag' : 'Collapse every parent tag to its root'}
+              >
+                {allCollapsed ? 'Expand all' : 'Collapse all'}
+              </button>
+            </div>
+          )}
         </div>
       )}
       {/* Root drop zone — drop a tag here to promote it to a root tag.
