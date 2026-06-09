@@ -54,50 +54,44 @@ ChartJS.register(
 );
 
 /**
- * Two top-level groups in the sidebar. ESABCC indicators (rebuilt from
- * the 2024 progress report's underlying-data workbook) are listed first
- * as the "existing" set; everything else (ECNO mapping + user-added)
- * follows as additional.
+ * Two top-level groups in the sidebar, mirroring the NEW marking on the
+ * flow-chart chips. Everything beyond the original 2024 ESABCC progress report
+ * — the ECNO mapping, the beta and advanced series and any user-added
+ * indicators — is collected first under one "New indicators" heading; the
+ * original report set follows as the "existing" group. Within each group the
+ * indicators are still sub-grouped by category, and the per-indicator badges
+ * (β beta, custom) keep the finer provenance visible.
  */
 const GROUPS = [
+  {
+    id: 'new' as const,
+    label: 'New indicators',
+    help: 'Everything added beyond the original 2024 ESABCC progress report — the ECNO progress-tracker mapping, the provisional beta series, the high-quality advanced series and any user-added indicators. These are the indicators marked NEW on the flow-chart chips.',
+  },
   {
     id: 'esabcc' as const,
     label: 'Existing indicators',
     help: 'Rebuilt from the 2024 ESABCC progress report (Towards EU climate neutrality).',
   },
-  {
-    id: 'additional' as const,
-    label: 'Additional indicators',
-    help: 'ECNO progress-tracker mapping plus any user-added indicators.',
-  },
-  {
-    id: 'beta' as const,
-    label: 'New beta indicators',
-    help: 'Provisional indicators added so every mitigation lever and outcome in the sector flow charts has a linked series. Sources are real; values are best-available and may be revised.',
-  },
-  {
-    id: 'beta-adaptation' as const,
-    label: 'Beta adaptation indicators',
-    help: 'Provisional climate-adaptation & resilience indicators powering the adaptation layer of the Flow charts (beta) view. Drawn from EEA, JRC, Eurostat and the ECNO adaptation building block.',
-  },
-  {
-    id: 'advanced' as const,
-    label: 'Advanced mitigation indicators',
-    help: 'High-quality, long-historic-series mitigation indicators curated for the Advanced version 1 flow chart from primary statistics (EEA, Eurostat, EMBER, EAFO, EHPA, JRC) and peer-reviewed literature (Nature Climate Change, ESSD). Not provisional — these carry multi-year, well-sourced series.',
-  },
-  {
-    id: 'advanced-adaptation' as const,
-    label: 'Advanced adaptation indicators',
-    help: 'High-quality climate-adaptation & resilience indicators with long observed series wherever possible, powering the first-class adaptation track of the Advanced version 1 flow chart. Anchored in the EEA European Climate Risk Assessment (EUCRA 2024), Copernicus (C3S/EDO/EFFIS), JRC PESETA and the Lancet Countdown / Nature literature.',
-  },
 ];
 
+/** The detailed provenance group of an indicator (used for duplicate hints). */
 function groupOf(
   i: Indicator,
 ): 'esabcc' | 'additional' | 'beta' | 'beta-adaptation' | 'advanced' | 'advanced-adaptation' {
   if (i.group) return i.group;
   if (i.beta) return 'beta';
   return i.id.startsWith('esabcc-') ? 'esabcc' : 'additional';
+}
+
+/**
+ * Which top-level sidebar group an indicator belongs to. Mirrors the
+ * `isOriginalReportIndicator` logic behind the flow-chart NEW badge: only the
+ * original report set (effective group `esabcc`) is "existing"; everything else
+ * is collected under the single "New indicators" heading.
+ */
+function listGroupOf(i: Indicator): 'new' | 'esabcc' {
+  return groupOf(i) === 'esabcc' ? 'esabcc' : 'new';
 }
 
 interface Props {
@@ -394,7 +388,7 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
       <div className="grid grid-cols-1 lg:grid-cols-[280px,1fr] gap-6">
         <aside className="bg-white rounded-xl border border-grey-200 p-3 max-h-[640px] overflow-y-auto">
           {GROUPS.map(g => {
-            const inGroup = indicators.filter(i => groupOf(i) === g.id);
+            const inGroup = indicators.filter(i => listGroupOf(i) === g.id);
             if (inGroup.length === 0) return null;
             return (
               <div key={g.id} className="mb-4">
