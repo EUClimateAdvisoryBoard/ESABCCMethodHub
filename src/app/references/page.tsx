@@ -226,11 +226,17 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
   } catch { return []; }
 }
 
-// Post a new reference to the shared API
+// Post a new reference to the shared API.
+//
+// `id` and `pdfUrl` are forwarded so the API row lands under the *same* id the
+// client just stored in localStorage. Without the id the POST route mints its
+// own (`custom-<Date.now()>`), so the local copy (with PDF) and the API copy
+// (without) end up as two ids and survive the id-based dedup on reload as a
+// visible duplicate — one row with the PDF, one without.
 async function postRefToApi(ref: {
-  doi: string; title: string; authors: string; year: string;
+  id?: string; doi: string; title: string; authors: string; year: string;
   journal: string; type: string; volume: string; issue: string;
-  pages: string; url: string; fullCitation: string;
+  pages: string; url: string; fullCitation: string; pdfUrl?: string;
   funding?: FundingEntry[] | null; tags?: string[];
 }) {
   try {
@@ -932,8 +938,11 @@ export default function ReferencesPage() {
                       const custom = loadLocalCustomRefs();
                       custom.unshift(ref);
                       saveLocalCustomRefs(custom);
-                      // Also sync to shared API
+                      // Also sync to shared API. Pass the client-generated id
+                      // (and pdfUrl) so the API row matches the localStorage
+                      // copy instead of getting a fresh id and showing up twice.
                       postRefToApi({
+                        id: ref.id,
                         doi: ref.doi || '',
                         title: ref.title,
                         authors: ref.authors?.[0]?.literal || '',
@@ -945,6 +954,7 @@ export default function ReferencesPage() {
                         pages: ref.csl_json?.page || '',
                         url: ref.csl_json?.URL || '',
                         fullCitation: '',
+                        pdfUrl: ref.pdf_url || '',
                         funding: ref.funding,
                         tags: ref.tags || [],
                       });
