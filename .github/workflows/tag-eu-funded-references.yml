@@ -1,0 +1,55 @@
+name: Tag EU-funded references
+
+# Runs scripts/tag-eu-funded-references.mjs on a GitHub-hosted runner (which can
+# reach api.crossref.org, unlike the restricted dev sandbox), then commits the
+# resulting tag map + report back to the branch the workflow is triggered from.
+#
+# Runs automatically when the script or this workflow changes on the working
+# branch, and can also be triggered manually from the Actions tab. The runner's
+# commit-back uses GITHUB_TOKEN, which (by GitHub design) does not re-trigger
+# this workflow, so there's no risk of a loop; the path filter keeps it from
+# firing on the generated outputs too.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/lucid-cori-31lar7
+    paths:
+      - scripts/tag-eu-funded-references.mjs
+      - .github/workflows/tag-eu-funded-references.yml
+
+permissions:
+  contents: write
+
+jobs:
+  tag-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The script only uses Node built-ins + global fetch, so no install step.
+      - name: Tag EU-funded references from CrossRef
+        run: node scripts/tag-eu-funded-references.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain src/data/reference-funding-tags.json docs/reference/eu-funding-tags.md)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates to current branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/reference-funding-tags.json docs/reference/eu-funding-tags.md
+          git commit -m "chore: tag EU-funded references from CrossRef [automated]"
+          git push origin HEAD:${GITHUB_REF#refs/heads/}

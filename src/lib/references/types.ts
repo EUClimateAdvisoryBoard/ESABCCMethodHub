@@ -173,10 +173,15 @@ export interface ReferenceFormData {
 export const EU_FUNDER_DOI_PREFIXES = new Set<string>([
   '10.13039/501100000780', // European Commission
   '10.13039/100010661',    // Horizon 2020
+  '10.13039/501100007601', // Horizon 2020 (R&I framework programme)
   '10.13039/100018693',    // Horizon Europe
-  '10.13039/501100007601', // European Research Council (ERC)
+  '10.13039/501100000781', // European Research Council (ERC)
   '10.13039/501100008530', // European Regional Development Fund
-  '10.13039/501100002347', // LIFE Programme
+  // NB: 10.13039/501100002347 was previously listed here as "LIFE Programme",
+  // but that CrossRef prefix is Germany's Bundesministerium für Bildung und
+  // Forschung (BMBF) — a national funder, not EU. Removed so BMBF-funded work
+  // is no longer mis-counted as EU funded. LIFE-funded references are still
+  // matched by the "life programme" name hint below.
 ]);
 
 /** Loose name match for funders that may not carry a DOI prefix in CrossRef. */

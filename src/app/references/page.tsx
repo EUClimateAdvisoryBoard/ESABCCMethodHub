@@ -38,6 +38,7 @@ import {
   subscribeToLibrary,
 } from '@/lib/references/reference-service';
 import { references as staticReferencesRaw } from '@/data/references';
+import fundingTagsData from '@/data/reference-funding-tags.json';
 import { getPolicyCitationsAsReferences } from '@/lib/policy-citations';
 import LibrarySelector from '@/components/references/LibrarySelector';
 import ReferenceList from '@/components/references/ReferenceList';
@@ -66,6 +67,27 @@ import {
 // Map the static references (old format) to the Supabase Reference type so
 // ReferenceList can render them without changes.
 const STATIC_LIBRARY_ID = '__static_fallback__';
+
+// EU-funding tags, keyed by reference id. Generated offline by
+// `scripts/tag-eu-funded-references.mjs` from CrossRef's funder[] metadata (the
+// structured form of each paper's funding acknowledgment). Empty until that
+// script is run where CrossRef is reachable — merged into the static library so
+// "eu-funded" / "horizon-europe" etc. render and filter like any other tag.
+const FUNDING_TAGS: Record<string, string[]> = (fundingTagsData.tags ?? {}) as Record<string, string[]>;
+
+function mergeFundingTags(id: string, existing?: string[]): string[] | null {
+  const funding = FUNDING_TAGS[id];
+  if (!funding || funding.length === 0) return existing && existing.length ? existing : null;
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const t of [...(existing ?? []), ...funding]) {
+    const v = (t || '').trim();
+    if (!v || seen.has(v.toLowerCase())) continue;
+    seen.add(v.toLowerCase());
+    out.push(v);
+  }
+  return out;
+}
 
 function mapStaticTypeToCSL(t: string): string {
   const map: Record<string, string> = {
@@ -105,7 +127,7 @@ const staticReferences: Reference[] = staticReferencesRaw.map((r) => {
     abstract: null,
     container_title: r.journal || null,
     citation_key: null,
-    tags: r.tags || null,
+    tags: mergeFundingTags(r.id, r.tags),
     notes: r.notes || null,
     pdf_url: null,
     funding: null,
@@ -160,7 +182,7 @@ async function loadApiCustomRefs(): Promise<Reference[]> {
       // reload even though they were persisted.
       const mergedTags: string[] = [];
       const seenTag = new Set<string>();
-      for (const t of [...(Array.isArray(r.tags) ? r.tags : []), sourceTag]) {
+      for (const t of [...(Array.isArray(r.tags) ? r.tags : []), ...(FUNDING_TAGS[r.id] ?? []), sourceTag]) {
         const v = (t || '').trim();
         if (!v) continue;
         const k = v.toLowerCase();
