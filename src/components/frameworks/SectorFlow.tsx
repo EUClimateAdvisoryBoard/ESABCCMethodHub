@@ -12,11 +12,14 @@ import { useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import {
   ENABLING_KIND_LABEL,
+  POLICY_STATUS_LABEL,
   type EnablingItem,
   type EnablingKind,
   type FrameworkNode,
   type FrameworkTrack,
   type IndicatorRef,
+  type PolicyRef,
+  type PolicyStatus,
   type SectorFramework,
 } from '@/data/sector-frameworks';
 import { useConnectors, type Edge } from './useConnectors';
@@ -179,6 +182,9 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
                 onRemove={(refId) => removeRef('goal', refId)}
                 onAdd={(indId) => addRefTo('goal', indId)}
               />
+              {sector.goalPolicies && sector.goalPolicies.length > 0 && (
+                <PolicyTags policies={sector.goalPolicies} />
+              )}
             </div>
           </div>
         </Row>
@@ -422,7 +428,54 @@ function NodeCard({
           onRemove={onRemoveRef}
           onAdd={onAddRef}
         />
+        {node.policies && node.policies.length > 0 && (
+          <PolicyTags policies={node.policies} />
+        )}
       </div>
+    </div>
+  );
+}
+
+/** Dot colour for each policy status. */
+const POLICY_STATUS_DOT: Record<PolicyStatus, string> = {
+  'addressed': 'bg-green-400',
+  'partially-addressed': 'bg-yellow-400',
+  'in-progress': 'bg-blue-400',
+  'not-addressed': 'bg-red-500',
+};
+
+/**
+ * A row of small policy-instrument tags shown on nodes in the
+ * "Policy Gap Report 2.0" version. Each tag shows a status dot
+ * and the short instrument name; a tooltip reveals the full name,
+ * recommendation code, and status label.
+ */
+function PolicyTags({ policies }: { policies: PolicyRef[] }) {
+  return (
+    <div className="flex flex-wrap gap-1 mt-1">
+      {policies.map((p) => (
+        <Tooltip
+          key={p.id}
+          content={
+            <span className="block max-w-[220px]">
+              <span className="block font-semibold leading-snug">{p.fullName}</span>
+              {p.recCode && (
+                <span className="block text-[10px] opacity-80 mt-0.5">
+                  ESABCC rec. {p.recCode}
+                </span>
+              )}
+              <span className="block text-[10px] mt-0.5 font-medium">
+                {POLICY_STATUS_LABEL[p.status]}
+              </span>
+            </span>
+          }
+        >
+          <span className="inline-flex items-center gap-0.5 rounded px-1 py-0.5 text-[9px] font-medium bg-white/15 text-white border border-white/25 cursor-help leading-none">
+            <span className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${POLICY_STATUS_DOT[p.status]}`} />
+            {p.shortName}
+          </span>
+        </Tooltip>
+      ))}
     </div>
   );
 }

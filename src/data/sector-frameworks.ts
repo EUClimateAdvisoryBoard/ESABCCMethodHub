@@ -46,6 +46,41 @@ export type EnablingKind = 'sector-specific' | 'cross-cutting' | 'not-assessed';
  */
 export type FrameworkTrack = 'mitigation' | 'adaptation';
 
+/**
+ * Implementation status of an EU policy instrument, used in the
+ * "Policy Gap Report 2.0" flow chart version.
+ */
+export type PolicyStatus =
+  | 'addressed'
+  | 'partially-addressed'
+  | 'in-progress'
+  | 'not-addressed';
+
+/** Human-readable labels for policy status values. */
+export const POLICY_STATUS_LABEL: Record<PolicyStatus, string> = {
+  'addressed': 'Addressed',
+  'partially-addressed': 'Partially addressed',
+  'in-progress': 'In progress',
+  'not-addressed': 'Not addressed (policy gap)',
+};
+
+/**
+ * An EU policy instrument tag attached to a framework node in the
+ * "Policy Gap Report 2.0" version. Shows which legislation addresses (or
+ * fails to address) each mitigation lever, outcome, or GHG reduction goal.
+ */
+export interface PolicyRef {
+  id: string;
+  /** Short label shown on the tag, e.g. "RED III", "CBAM". */
+  shortName: string;
+  /** Full official instrument name, shown in tooltip. */
+  fullName: string;
+  /** ESABCC sectoral recommendation code this instrument maps to (e.g. "E4", "I1"). */
+  recCode?: string;
+  /** Implementation status at time of the ESABCC report assessment. */
+  status: PolicyStatus;
+}
+
 /** A white-box indicator chip attached to a framework node. */
 export interface IndicatorRef {
   /** Stable id for this chip within the board. */
@@ -79,6 +114,8 @@ export interface FrameworkNode {
    */
   parents: string[];
   indicators: IndicatorRef[];
+  /** EU policy instruments relevant to this node (Policy Gap Report 2.0 only). */
+  policies?: PolicyRef[];
 }
 
 /** An enabling-condition bullet (sector-specific, cross-cutting, not assessed). */
@@ -98,6 +135,8 @@ export interface SectorFramework {
   name: string;
   /** Report figure number, e.g. "Figure 33". */
   figure: string;
+  /** EU policies relevant to the sector GHG-reduction goal (Policy Gap Report 2.0). */
+  goalPolicies?: PolicyRef[];
   /** Accent colour (hex) used for the sector's cards and spine. */
   color: string;
   /** Text of the dark top box (the sector goal). */
@@ -1614,3 +1653,155 @@ export const ENABLING_KIND_LABEL: Record<EnablingKind, string> = {
   'cross-cutting': 'Cross-cutting',
   'not-assessed': 'Not assessed',
 };
+
+// ── Policy Gap Report 2.0 — policy mappings per sector node ──────────────────
+//
+// Source: ESABCC (2024) "Towards EU climate neutrality: progress, policy gaps
+// and opportunities", sectoral recommendations E1–L6 mapped to EU instruments.
+// Status assessed against legislation in force / proposals as of the report.
+// Instruments whose recommendation is "Not addressed" represent policy gaps.
+//
+// Short helper for policy refs.
+function pol(
+  id: string,
+  shortName: string,
+  fullName: string,
+  status: PolicyStatus,
+  recCode?: string,
+): PolicyRef {
+  return { id, shortName, fullName, status, recCode };
+}
+
+// ── Shared policy instruments (reused across sectors) ──────────────────────
+const P = {
+  RED_III: pol('red-iii', 'RED III', 'Renewable Energy Directive III (Dir (EU) 2023/2413)', 'partially-addressed', 'E4'),
+  ETS: pol('ets', 'EU ETS', 'EU ETS Directive as revised by Dir (EU) 2023/959', 'in-progress', 'E1'),
+  ETS2: pol('ets2', 'ETS 2', 'EU ETS2 — buildings & road transport (Dir (EU) 2023/959)', 'partially-addressed', 'B1'),
+  EED: pol('eed', 'EED', 'Energy Efficiency Directive recast (Dir (EU) 2023/1791)', 'in-progress', 'E2'),
+  EED_EFF_FIRST: pol('eed-eff-first', 'EED Art. 3', "Energy efficiency first — EED Art. 3 investment threshold (Dir (EU) 2023/1791)", 'partially-addressed', 'E3'),
+  TEN_E: pol('ten-e', 'TEN-E', 'Trans-European Energy Networks Regulation (Reg (EU) 2022/869)', 'in-progress', 'E1'),
+  METHANE_REG: pol('methane-reg', 'Methane Reg', 'Methane Regulation (Reg (EU) 2024/1787)', 'partially-addressed', 'E9'),
+  NZIA: pol('nzia', 'NZIA', 'Net-Zero Industry Act (Reg (EU) 2024/1735)', 'in-progress', 'E8'),
+  EMD: pol('emd', 'Elec. Market Design', 'Electricity Market Design reform (Reg (EU) 2024/1747 + Dir (EU) 2024/1711)', 'in-progress', 'E5'),
+  ICMS: pol('icms', 'Carbon Mgmt Strategy', 'Industrial Carbon Management Strategy (COM(2024) 62)', 'in-progress', 'E7'),
+  CBAM: pol('cbam', 'CBAM', 'Carbon Border Adjustment Mechanism (Reg (EU) 2023/956)', 'in-progress', 'I2'),
+  CEAP2: pol('ceap2', 'CEAP2', 'Circular Economy Action Plan 2 / Ecodesign for Sustainable Products (Reg (EU) 2024/1781)', 'in-progress', 'I1'),
+  INNO_FUND: pol('inno-fund', 'Innovation Fund', 'EU Innovation Fund (under EU ETS Dir)', 'in-progress', 'I3'),
+  CO2_CARS: pol('co2-cars', 'CO₂ cars/vans', 'CO₂ standards for cars & vans — 2035 ICE end (Reg (EU) 2023/851)', 'in-progress', 'T3'),
+  CO2_HDV: pol('co2-hdv', 'CO₂ HDVs', 'CO₂ standards for heavy-duty vehicles (Reg (EU) 2024/1610)', 'in-progress', 'T3'),
+  AFIR: pol('afir', 'AFIR', 'Alternative Fuels Infrastructure Regulation (Reg (EU) 2023/1804)', 'in-progress', 'T3'),
+  REFUELEU: pol('refueleu', 'ReFuelEU', 'ReFuelEU Aviation — SAF mandates (Reg (EU) 2023/2405)', 'partially-addressed', 'T4'),
+  FUELEU: pol('fueleu', 'FuelEU Maritime', 'FuelEU Maritime — shipping fuel GHG (Reg (EU) 2023/1805)', 'partially-addressed', 'T4'),
+  ETD: pol('etd', 'ETD (blocked)', 'Energy Taxation Directive revision (COM(2021) 563) — blocked at ECOFIN Nov 2025', 'not-addressed', 'T5'),
+  RAIL_CAP: pol('rail-cap', 'Rail Capacity Reg', 'Rail Capacity Regulation (pending)', 'not-addressed', 'T2'),
+  COMB_TRANS: pol('comb-trans', 'Combined Transport Dir', 'Combined Transport Directive (pending)', 'not-addressed', 'T2'),
+  EU_DEMAND_T: pol('eu-demand-transport', 'No EU demand policy', 'No dedicated EU instrument for transport demand moderation', 'not-addressed', 'T1'),
+  EPBD: pol('epbd', 'EPBD recast', 'Energy Performance of Buildings Directive recast (Dir (EU) 2024/1275)', 'partially-addressed', 'B1'),
+  EPBD_LTR: pol('epbd-ltr', 'EPBD — LTRSs', 'EPBD recast — long-term renovation strategies (Dir (EU) 2024/1275 + Governance Reg)', 'in-progress', 'B2'),
+  SUFFICIENCY_GAP: pol('sufficiency-gap', 'No sufficiency policy', 'No dedicated EU demand-reduction / sufficiency instrument for buildings', 'not-addressed', 'B4'),
+  CAP: pol('cap', 'CAP 2023–27', 'Common Agricultural Policy Strategic Plans (Reg (EU) 2021/2115)', 'not-addressed', 'A1'),
+  CAP_POST27: pol('cap-post27', 'Post-2027 CAP', 'Post-2027 CAP proposal (COM(2025) package) — no standalone GHG target', 'not-addressed', 'A1'),
+  CRCF: pol('crcf', 'CRCF', 'Carbon Removals Certification Framework (Reg (EU) 2024/3012)', 'partially-addressed', 'A2'),
+  SFS_GAP: pol('sfs-gap', 'No food-system policy', 'Sustainable Food Systems framework — unproposed', 'not-addressed', 'A3'),
+  AGRI_PRICE_GAP: pol('agri-price-gap', 'No agri GHG pricing', 'No EU instrument to estimate or price agricultural emissions at source', 'not-addressed', 'A2'),
+  ESR: pol('esr', 'ESR', 'Effort Sharing Regulation (Reg (EU) 2023/857)', 'in-progress', 'A2'),
+  LULUCF_REG: pol('lulucf-reg', 'LULUCF Reg', 'LULUCF Regulation amendment — −310 Mt sink 2030 (Reg (EU) 2023/839)', 'partially-addressed', 'L1'),
+  NATURE_REST: pol('nature-rest', 'Nature Restoration', 'Nature Restoration Regulation (Reg (EU) 2024/1991)', 'in-progress', 'L1'),
+  LULUCF_PRICE_GAP: pol('lulucf-price-gap', 'No LULUCF pricing', 'No GHG pricing instrument for LULUCF sector removals and reductions', 'not-addressed', 'L3'),
+  LULUCF_CONTINGENCY_GAP: pol('lulucf-contingency-gap', 'No contingency strategy', 'No LULUCF-sink contingency strategy under climate-change scenarios', 'not-addressed', 'L6'),
+};
+
+/** Per-node policy mappings for the Policy Gap Report 2.0 board. */
+const PG2_NODE_POLICIES: Record<string, PolicyRef[]> = {
+  // ── Energy supply ────────────────────────────────────────────────────────
+  'en-o1': [P.RED_III, P.METHANE_REG, P.TEN_E],
+  'en-o2': [P.EED, P.EED_EFF_FIRST],
+  'en-l1': [P.TEN_E, P.ETD],
+  'en-l2': [P.METHANE_REG],
+  'en-l3': [P.RED_III, P.EMD, P.NZIA],
+  'en-l4': [P.ICMS, P.NZIA],
+  'en-l5': [P.EMD, P.TEN_E],
+  'en-l6': [P.EED, P.EED_EFF_FIRST],
+  // ── Industry ─────────────────────────────────────────────────────────────
+  'in-o1': [P.CEAP2, P.CBAM],
+  'in-o2': [P.ETS, P.CBAM, P.INNO_FUND],
+  'in-l1': [P.CEAP2],
+  'in-l2': [P.CEAP2],
+  'in-l3': [P.CEAP2],
+  'in-l4': [P.ETS, P.CBAM],
+  'in-l5': [P.INNO_FUND, P.NZIA],
+  'in-l6': [P.ICMS, P.INNO_FUND, P.NZIA],
+  // ── Transport ────────────────────────────────────────────────────────────
+  'tr-o1': [P.EU_DEMAND_T, P.RAIL_CAP],
+  'tr-o2': [P.CO2_CARS, P.CO2_HDV, P.AFIR],
+  'tr-l1': [P.EU_DEMAND_T],
+  'tr-l2': [P.RAIL_CAP, P.COMB_TRANS],
+  'tr-l3': [P.CO2_CARS, P.CO2_HDV, P.AFIR],
+  'tr-l4': [P.CO2_CARS, P.ETD],
+  'tr-l5': [P.REFUELEU, P.FUELEU, P.RED_III],
+  // ── Buildings ────────────────────────────────────────────────────────────
+  'bu-o1': [P.EPBD, P.EED, P.SUFFICIENCY_GAP],
+  'bu-o2': [P.EPBD, P.ETS2, P.ETD],
+  'bu-l1': [P.SUFFICIENCY_GAP, P.CEAP2],
+  'bu-l2': [P.EPBD_LTR],
+  'bu-l3': [P.EPBD],
+  'bu-l4': [P.EPBD, P.ETS2],
+  'bu-l5': [P.EPBD, P.EED, P.ETD],
+  // ── Agriculture ──────────────────────────────────────────────────────────
+  'ag-o1': [P.CAP, P.AGRI_PRICE_GAP, P.CRCF],
+  'ag-o2': [P.SFS_GAP, P.RED_III],
+  'ag-l1': [P.CAP, P.AGRI_PRICE_GAP],
+  'ag-l2': [P.CAP, P.CRCF],
+  'ag-l3': [P.CAP_POST27, P.AGRI_PRICE_GAP],
+  'ag-l4': [P.SFS_GAP],
+  'ag-l5': [P.SFS_GAP],
+  'ag-l6': [P.RED_III],
+  // ── LULUCF ───────────────────────────────────────────────────────────────
+  'lu-o1': [P.LULUCF_REG, P.NATURE_REST, P.CAP],
+  'lu-o2': [P.CRCF, P.CAP, P.LULUCF_PRICE_GAP],
+  'lu-l1': [P.LULUCF_REG, P.NATURE_REST],
+  'lu-l2': [P.LULUCF_REG, P.NATURE_REST, P.CAP],
+  'lu-l3': [P.NATURE_REST, P.CRCF, P.LULUCF_PRICE_GAP],
+  'lu-l4': [P.LULUCF_REG, P.CRCF, P.RED_III],
+  'lu-l5': [P.CAP, P.CRCF, P.LULUCF_PRICE_GAP],
+};
+
+/** Per-sector goal-level policy mappings for the Policy Gap Report 2.0 board. */
+const PG2_GOAL_POLICIES: Record<string, PolicyRef[]> = {
+  energy: [P.RED_III, P.ETS, P.EED, P.NZIA],
+  industry: [P.ETS, P.CBAM, P.CEAP2, P.INNO_FUND],
+  transport: [P.CO2_CARS, P.CO2_HDV, P.AFIR, P.EU_DEMAND_T],
+  buildings: [P.EPBD, P.ETS2, P.EED],
+  agriculture: [P.CAP, P.AGRI_PRICE_GAP, P.CRCF, P.ESR],
+  lulucf: [P.LULUCF_REG, P.NATURE_REST, P.CRCF, P.LULUCF_PRICE_GAP],
+};
+
+/**
+ * "Policy Gap Report 2.0" board — the ESABCC report (default) framework
+ * enriched with EU policy instruments from each sector chapter.
+ *
+ * Each mitigation lever, outcome, and GHG-reduction goal carries a set of
+ * `PolicyRef` tags showing which EU legislation addresses (or fails to address)
+ * that part of the framework, together with the ESABCC recommendation code and
+ * implementation status (addressed / partially addressed / in progress / not
+ * addressed). "Not addressed" tags represent explicit policy gaps.
+ *
+ * Source: ESABCC (2024) sectoral recommendations E1–L6 and their mapping to
+ * EU instruments (tracker source 2024-01-18).
+ */
+export function defaultFrameworkBoardPolicyGap2(): FrameworkBoard {
+  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
+  for (const sector of sectors) {
+    // Strip enhanced indicator chips — stay 1:1 with the report figures.
+    for (const node of [...sector.outcomes, ...sector.levers]) {
+      node.indicators = node.indicators.filter((r) => !r.enhanced);
+    }
+    // Wire goal-level policies.
+    sector.goalPolicies = PG2_GOAL_POLICIES[sector.id] ?? [];
+    // Wire node-level policies.
+    for (const node of [...sector.outcomes, ...sector.levers]) {
+      node.policies = PG2_NODE_POLICIES[node.id] ?? [];
+    }
+  }
+  return { version: FRAMEWORK_BOARD_VERSION, sectors };
+}
