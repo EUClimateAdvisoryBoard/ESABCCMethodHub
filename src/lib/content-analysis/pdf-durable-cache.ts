@@ -47,14 +47,15 @@ export async function putDurablePdf(
 ): Promise<void> {
   const sb = getServerSupabase();
   if (!sb) return;
-  const body =
-    bytes instanceof Buffer
-      ? bytes
-      : bytes instanceof ArrayBuffer
-        ? Buffer.from(bytes)
-        : Buffer.from(bytes);
+  // Normalise to a fresh Uint8Array backed by a real ArrayBuffer, then wrap it
+  // in a Blob. Passing a raw Node `Buffer` to the Supabase storage client can
+  // persist as a zero-byte object across runtimes (undici body handling) — the
+  // reference manager's proven uploader always wraps in a Blob, so we match it.
+  const u8 = bytes instanceof ArrayBuffer ? new Uint8Array(bytes) : new Uint8Array(bytes);
+  if (u8.byteLength === 0) return; // never store an empty object
+  const blob = new Blob([u8], { type: 'application/pdf' });
   try {
-    await sb.storage.from(BUCKET).upload(objectKey(celex), body, {
+    await sb.storage.from(BUCKET).upload(objectKey(celex), blob, {
       contentType: 'application/pdf',
       upsert: true,
       cacheControl: '3600',
@@ -75,7 +76,10 @@ export async function getDurablePdf(celex: string): Promise<Buffer | null> {
   try {
     const { data, error } = await sb.storage.from(BUCKET).download(objectKey(celex));
     if (error || !data) return null;
-    return Buffer.from(await data.arrayBuffer());
+    const buf = Buffer.from(await data.arrayBuffer());
+    // Treat a zero-byte object as a miss so the caller 404s (prompting a
+    // re-ingest) instead of serving an empty PDF the viewer can't render.
+    return buf.byteLength > 0 ? buf : null;
   } catch {
     return null;
   }
