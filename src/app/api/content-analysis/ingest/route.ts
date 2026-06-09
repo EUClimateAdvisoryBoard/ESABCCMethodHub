@@ -17,6 +17,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import type { Block, BlockKind } from '@/lib/content-analysis/types';
 import { ensurePdfNodeGlobals } from '@/lib/content-analysis/pdf-node-globals';
+import { putDurablePdf } from '@/lib/content-analysis/pdf-durable-cache';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -193,6 +194,10 @@ async function handleIngest(req: NextRequest, fallbackText: string | null) {
   } catch {
     // cache write is best-effort
   }
+  // Mirror the PDF into durable Supabase storage so the PDF pane still resolves
+  // after this serverless instance is recycled (the local `.cache` is
+  // ephemeral on Vercel).
+  await putDurablePdf(celex, pdfBytes);
 
   return NextResponse.json({ cached: false, ...extracted });
 }
