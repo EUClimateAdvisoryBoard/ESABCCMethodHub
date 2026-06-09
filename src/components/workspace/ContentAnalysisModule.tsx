@@ -1453,6 +1453,36 @@ function DocumentViewer({
               {ingestState.status === 'loading' ? 'Loading…' : ingestState.message}
             </span>
           )}
+          {/* Re-ingest controls — always available, not just in the empty
+              state. This is the escape hatch when a PDF pane fails to load
+              (e.g. an older upload whose bytes were lost from the ephemeral
+              server cache): re-uploading re-extracts the document and stores
+              the PDF durably so it renders on every later visit. */}
+          {hasLibraryPdf && (
+            <button
+              type="button"
+              onClick={onLoadReferencePdf}
+              disabled={ingestState.status === 'loading'}
+              className="text-[10px] text-tertiary-light hover:text-secondary disabled:opacity-50"
+              title="Re-fetch the PDF attached to this reference in the library"
+            >
+              Reload PDF
+            </button>
+          )}
+          {(isReference || doc.celexNumber) && (
+            <label
+              className="text-[10px] text-tertiary-light hover:text-secondary cursor-pointer"
+              title="Re-ingest / replace the PDF for this document"
+            >
+              Replace PDF
+              <input
+                type="file"
+                accept="application/pdf"
+                className="hidden"
+                onChange={e => { const f = e.target.files?.[0]; if (f) onUpload(f); e.currentTarget.value = ''; }}
+              />
+            </label>
+          )}
           <button
             type="button"
             onClick={onRemoveFromCorpus}
