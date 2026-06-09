@@ -7,6 +7,9 @@
  *
  * It reads the live outbox status from the store hook:
  *   • pending > 0       → writes are queued and being retried ("Saving…").
+ *   • dead > 0          → the server rejected writes as non-retryable; they are
+ *                         parked in the recovery ledger, not lost ("N changes
+ *                         need attention").
  *   • persistent false  → the server has no durable backend configured; work is
  *                         staying in this browser only ("Not saved to server").
  *   • otherwise         → everything is confirmed; the pill stays hidden so it
@@ -20,7 +23,7 @@ import { useContentAnalysis } from '@/lib/content-analysis/store';
 
 export default function SyncStatusPill() {
   const { syncStatus } = useContentAnalysis();
-  const { pending, persistent } = syncStatus;
+  const { pending, dead, persistent } = syncStatus;
 
   // No durable backend at all — the most serious case to surface.
   if (!persistent) {
@@ -30,6 +33,18 @@ export default function SyncStatusPill() {
         title="The server has no durable store configured, so this work is saved in this browser only and is not shared with the team. Contact an administrator."
       >
         <span aria-hidden>⚠️</span> Not saved to server
+      </span>
+    );
+  }
+
+  // Writes the server rejected — parked in the recovery ledger, never deleted.
+  if (dead > 0) {
+    return (
+      <span
+        className="inline-flex items-center gap-1 rounded-full border border-[#C0392B]/40 bg-[#FDEDEC] px-2 py-[2px] text-[11px] font-medium text-[#922B21]"
+        title={`${dead} change${dead === 1 ? '' : 's'} were rejected by the server and are parked safely in this browser. Nothing is lost — contact an administrator so they can be recovered.`}
+      >
+        <span aria-hidden>⚠️</span> {dead} change{dead === 1 ? '' : 's'} need attention
       </span>
     );
   }

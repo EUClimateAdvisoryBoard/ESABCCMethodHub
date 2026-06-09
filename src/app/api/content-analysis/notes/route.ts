@@ -140,7 +140,19 @@ export async function POST(req: NextRequest) {
     })
     .select(COLS)
     .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
+  if (error) {
+    // Idempotent retry: the client retries failed posts through its durable
+    // outbox, and the first attempt may have landed even though its response
+    // was lost. A duplicate id means the note is already saved — confirm it
+    // instead of erroring, so the retry settles instead of dead-lettering.
+    if (error.code === '23505') {
+      const { data: existing } = await sb.from(TABLE).select(COLS).eq('id', body.id).single();
+      if (existing) {
+        return NextResponse.json({ note: shape([existing as NoteRow], u.user.id)[0] });
+      }
+    }
+    return NextResponse.json({ error: error.message }, { status: 400 });
+  }
   return NextResponse.json({ note: shape([data as NoteRow], u.user.id)[0] });
 }
 

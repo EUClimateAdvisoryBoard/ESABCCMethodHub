@@ -1,0 +1,131 @@
+# Nightly off-site backup of all content-analysis & project-workspace data.
+#
+# Exports every content_analysis_* and pw_* table from Supabase (segments,
+# summaries, general notes, overall tags, codes, workspace corpus, ingested
+# documents, and the whole project workspace) and keeps the snapshot in TWO
+# independent places:
+#
+#   1. The `data-backups` branch of this repository — every nightly snapshot
+#      is a commit, so the full history of the data is kept forever and any
+#      past day can be recovered with `git checkout`.
+#   2. A workflow artifact (90-day retention) — survives even if the branch
+#      is force-pushed or deleted.
+#
+# Restore: scripts/restore-content-analysis-backup.mjs <snapshot-dir>
+#
+# Required repository secrets:
+#   SUPABASE_URL                (or NEXT_PUBLIC_SUPABASE_URL)
+#   SUPABASE_SERVICE_ROLE_KEY   (service-role — RLS must not hide rows from a backup)
+#
+# The job FAILS LOUDLY if secrets are missing or any existing table cannot be
+# read in full — a backup that silently skips data is worse than no backup.
+
+name: Content Analysis Daily Backup
+
+on:
+  schedule:
+    # 03:30 UTC nightly — after the working day in all EU timezones, away from
+    # the busy on-the-hour scheduling slots (less GitHub-side delay).
+    - cron: '30 3 * * *'
+  workflow_dispatch: # manual trigger, e.g. right before a risky migration
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Export all content-analysis & workspace tables
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node scripts/backup-content-analysis.mjs backup-out
+
+      - name: Upload snapshot as workflow artifact (90-day retention)
+        uses: actions/upload-artifact@v4
+        with:
+          name: content-analysis-backup-${{ github.run_id }}
+          path: backup-out/
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Commit snapshot to the data-backups branch
+        run: |
+          set -euo pipefail
+
+          # Check out the dedicated backup branch in a worktree (create it as
+          # an orphan on first run so backup history stays out of main).
+          if git fetch origin data-backups 2>/dev/null; then
+            git worktree add -B data-backups wt-backup origin/data-backups
+          else
+            git worktree add --detach wt-backup
+            git -C wt-backup checkout --orphan data-backups
+            git -C wt-backup rm -rfq . 2>/dev/null || true
+          fi
+
+          # Shrink guard: compare row counts against the previous snapshot.
+          # Large drops are committed anyway (the current state must still be
+          # captured, and yesterday's data stays in git history) but flagged
+          # prominently so a mass-deletion is noticed the next morning.
+          WARN=""
+          if [ -f wt-backup/content-analysis/manifest.json ]; then
+            WARN=$(node -e '
+              const fs = require("fs");
+              const prev = JSON.parse(fs.readFileSync("wt-backup/content-analysis/manifest.json", "utf8"));
+              const next = JSON.parse(fs.readFileSync("backup-out/manifest.json", "utf8"));
+              const drops = [];
+              for (const [t, p] of Object.entries(prev.tables ?? {})) {
+                const n = next.tables?.[t];
+                if (!p || p.missing || !n) continue;
+                const before = p.rows ?? 0, after = n.missing ? 0 : (n.rows ?? 0);
+                if (before >= 20 && after < before * 0.7) drops.push(`${t}: ${before} -> ${after}`);
+              }
+              process.stdout.write(drops.join("; "));
+            ')
+          fi
+          if [ -n "$WARN" ]; then
+            echo "::warning title=Backup row counts dropped sharply::$WARN — check for accidental data loss; previous snapshots remain in the data-backups branch history."
+          fi
+
+          mkdir -p wt-backup/content-analysis
+          rsync -a --delete backup-out/ wt-backup/content-analysis/
+
+          cat > wt-backup/README.md <<'EOF'
+          # Data backups (automated)
+
+          Nightly snapshots of every `content_analysis_*` and `pw_*` Supabase
+          table, written by `.github/workflows/content-analysis-backup.yml`.
+          One JSON-Lines file per table under `content-analysis/`, plus a
+          `manifest.json` with row counts.
+
+          Each night is a commit — use `git log -- content-analysis` to find a
+          date and `git checkout <sha> -- content-analysis` to pull that day's
+          state. Restore into Supabase (or any PostgREST-fronted Postgres) with:
+
+              SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... \
+                node scripts/restore-content-analysis-backup.mjs content-analysis
+
+          Do not edit this branch by hand.
+          EOF
+
+          cd wt-backup
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No data changes since the last snapshot."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          SUFFIX=""
+          if [ -n "$WARN" ]; then SUFFIX=" [ROW COUNTS DROPPED — REVIEW]"; fi
+          git commit -m "backup: content-analysis & workspace snapshot $(date -u +%Y-%m-%d)${SUFFIX} [automated]"
+          git push origin data-backups
