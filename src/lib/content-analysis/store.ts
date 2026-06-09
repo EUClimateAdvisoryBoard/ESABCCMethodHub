@@ -135,13 +135,24 @@ function deleteSummaryRemote(id: string): void {
   enqueue({ key: `summ:${id}`, method: 'DELETE', url: `/api/content-analysis/summaries?id=${enc(id)}` });
 }
 
-let serverSynced = false;
+// ── Live server sync ──────────────────────────────────────────────────────
+// The workbench is multi-user: segments, codes, comments and summaries written
+// by one analyst must show up for the others. We pull from Supabase on first
+// mount, then keep refreshing — on an interval and whenever the tab regains
+// focus or the browser reconnects — so a teammate's work appears without a
+// manual reload. The merge is additive (server wins on id collision, local-only
+// items are preserved), so an in-flight local write still queued in the outbox
+// is never clobbered by a refresh.
+const RESYNC_INTERVAL_MS = 25_000;
+let initialSyncDone = false;
+let pullInFlight = false;
+let resyncStarted = false;
 
-/** Merge server-side segments + suggestions into local state. Server
- *  rows win on id collision so refreshes pick up other users' work. */
-async function syncFromServer(): Promise<void> {
-  if (serverSynced) return;
-  serverSynced = true;
+/** Fetch all content-analysis resources from the server and merge them into
+ *  local state. `initial` triggers the one-time backfill of local-only work. */
+async function pullFromServer(opts?: { initial?: boolean }): Promise<void> {
+  if (pullInFlight) return;
+  pullInFlight = true;
   try {
     const [segResp, suggResp, codesResp, summResp] = await Promise.all([
       fetch('/api/content-analysis/segments', { cache: 'no-store' }),
@@ -188,11 +199,34 @@ async function syncFromServer(): Promise<void> {
         summaries: Array.from(byIdSumm.values()),
       };
     });
-    backfillLocalOnly(preLocal, { serverSegs, serverCodes, serverSumms, segResp, codesResp, summResp });
+    if (opts?.initial) {
+      backfillLocalOnly(preLocal, { serverSegs, serverCodes, serverSumms, segResp, codesResp, summResp });
+    }
   } catch (err) {
-    serverSynced = false;
-    logApiError('syncFromServer', err);
+    logApiError('pullFromServer', err);
+  } finally {
+    pullInFlight = false;
   }
+}
+
+/** Run the first sync once, then start the periodic + focus/online refresh so
+ *  the workbench keeps converging with other users' work. Safe to call from
+ *  every component mount — the guards make it idempotent. */
+function startServerSync(): void {
+  if (!initialSyncDone) {
+    initialSyncDone = true;
+    void pullFromServer({ initial: true });
+  }
+  if (resyncStarted || typeof window === 'undefined') return;
+  resyncStarted = true;
+  window.setInterval(() => {
+    if (document.visibilityState === 'visible') void pullFromServer();
+  }, RESYNC_INTERVAL_MS);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') void pullFromServer();
+  });
+  window.addEventListener('online', () => void pullFromServer());
+  window.addEventListener('focus', () => void pullFromServer());
 }
 
 /**
@@ -259,7 +293,7 @@ function persist(): void {
     // demand, so persisting them would blow the quota for no benefit. We keep
     // `blockCount` so the "Show summary (N slides)" affordance still renders.
     // Coded-segment figure `screenshot`s get the same treatment: they're saved
-    // server-side (via postSegments) and re-fetched by syncFromServer, so a
+    // server-side (via postSegments) and re-fetched by pullFromServer, so a
     // base64 figure per segment would needlessly eat the localStorage quota.
     const lean: ContentAnalysisSnapshot = {
       ...state,
@@ -369,11 +403,12 @@ export function useContentAnalysis() {
   // Guard against stale state after a HMR reload with an empty key.
   useEffect(() => { if (!hydrated) hydrate(); }, []);
 
-  // Reconcile with Supabase on first mount so accepted segments and
-  // pending suggestions created by other users show up here. Also drain any
-  // writes the outbox persisted from a previous session.
+  // Reconcile with Supabase on first mount and keep refreshing (interval +
+  // tab focus) so segments, codes, comments and summaries created by other
+  // users show up here without a manual reload. Also drain any writes the
+  // outbox persisted from a previous session.
   useEffect(() => {
-    void syncFromServer();
+    startServerSync();
     void flushOutbox();
   }, []);
 
