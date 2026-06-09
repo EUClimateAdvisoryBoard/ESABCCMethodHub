@@ -13,7 +13,7 @@ library can be filtered (e.g. to just Horizon Europe).
 - **Total references:** 2631
 - **With a DOI (checkable against CrossRef):** 1083
 - **Scanned this run:** 1083
-- **EU-funded (tagged):** 181
+- **EU-funded (tagged):** 165
 
 
 ## Tags applied
@@ -23,12 +23,11 @@ programme tag is added alongside it.
 
 | Tag | References |
 | --- | --- |
-| `eu-funded` | 180 |
-| `horizon-2020` | 75 |
+| `eu-funded` | 164 |
+| `horizon-2020` | 91 |
 | `european-commission` | 66 |
-| `erc` | 37 |
-| `life` | 22 |
 | `horizon-europe` | 20 |
+| `erc` | 18 |
 | `erdf` | 4 |
 
 ## Sample of tagged references
@@ -53,13 +52,13 @@ programme tag is added alongside it.
 | `ref-315` | eu-funded, erc | European Research Council (647224) |
 | `ref-318` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (862695) |
 | `ref-375` | eu-funded, european-commission | European Commission |
-| `ref-465` | eu-funded, european-commission, erdf, erc, life | European Commission; European Regional Development Fund (P_40_382); European Regional Development Fund (K23AG056638); Horizon 2020 (654221); Horizon 2020 (676536); Bundesministerium für Bildung und Forschung; European Research Council |
+| `ref-465` | eu-funded, european-commission, erdf, horizon-2020, erc | European Commission; European Regional Development Fund (P_40_382); European Regional Development Fund (K23AG056638); Horizon 2020 (654221); Horizon 2020 (676536); European Research Council |
 | `ref-492` | eu-funded, european-commission | European Commission |
 | `ref-501` | eu-funded, horizon-europe | HORIZON EUROPE European Research Council ((424-933)) |
-| `ref-506` | eu-funded, erc, european-commission | Horizon 2020; European Commission (817949) |
-| `ref-514` | eu-funded, life | Bundesministerium für Bildung und Forschung (01LS2101A); Bundesministerium für Bildung und Forschung (03F0898C) |
+| `ref-506` | eu-funded, horizon-2020, european-commission | Horizon 2020; European Commission (817949) |
 | `ref-515` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (773682) |
 | `ref-524` | eu-funded, european-commission | European Commission (613520) |
+| `ref-525` | eu-funded, european-commission | European Commission (773901) |
 
 The full per-reference map is in `src/data/reference-funding-tags.json`, which
 the Reference Manager imports so the tags render in the UI.
