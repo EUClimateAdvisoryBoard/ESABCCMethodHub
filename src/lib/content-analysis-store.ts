@@ -204,6 +204,9 @@ export async function getSegments(): Promise<CodedSegment[]> {
   const { data, error } = await sb
     .from('content_analysis_segments')
     .select('*')
+    // Workspace-corpus membership rows stored via the segments fallback (see
+    // the corpus section below) must never surface as coded segments.
+    .neq('code_id', CORPUS_SENTINEL_CODE)
     .order('created_at', { ascending: true })
     .limit(MAX_ROWS);
   if (error) failDurable('getSegments', error);
@@ -735,6 +738,108 @@ export async function upsertCaDocuments(docs: SharedIngestedDocument[]): Promise
 // The set of document ids an analyst has added to a project workspace (the
 // "In this workspace" list). Shared per project so every collaborator sees the
 // same documents.
+//
+// Primary backend: the `content_analysis_corpus` table (migrations 062 + 065).
+// Fallback backend: sentinel rows in `content_analysis_segments` (migration
+// 017). The corpus table only exists once the operator has applied the newer
+// migrations to the production database — and when it doesn't, every corpus
+// write used to 500 forever, which both lost the membership AND wedged the
+// client's FIFO outbox so the coded-segment writes queued behind it stopped
+// syncing too. The segments table is the one store proven to persist in every
+// deployment (it's where the annotations that *do* sync live), so corpus
+// membership degrades to it instead of failing: code_id is a reserved sentinel,
+// project_id/document_id carry the membership, and `text` carries the JSON
+// display metadata. Sentinel rows are filtered out of getSegments() and are
+// migrated into the real table automatically the first time it is seen to
+// exist.
+
+/** Reserved code id marking a workspace-corpus membership row stored in the
+ *  segments table. Never a real code; excluded from all segment reads. */
+const CORPUS_SENTINEL_CODE = '__ws_corpus__';
+
+function corpusSentinelId(projectId: string, documentId: string): string {
+  return `wscorpus:${projectId}:${documentId}`;
+}
+
+/** Whether a PostgREST error means the `content_analysis_corpus` table itself
+ *  is absent (migration 062 not applied), as opposed to any other failure. */
+function isMissingCorpusTable(error: { code?: string; message: string }): boolean {
+  if (error.code === '42P01' || error.code === 'PGRST205') {
+    return true;
+  }
+  return (
+    /content_analysis_corpus/i.test(error.message) &&
+    /does not exist|schema cache|could not find/i.test(error.message)
+  );
+}
+
+function parseSentinelMeta(text: string | null, documentId: string): CorpusDocMeta | null {
+  if (!text) return null;
+  try {
+    const m = JSON.parse(text) as CorpusDocMeta;
+    if (m && typeof m === 'object' && typeof m.title === 'string' && m.title) {
+      return { ...m, id: documentId };
+    }
+  } catch {
+    // Garbled meta — the membership itself still counts.
+  }
+  return null;
+}
+
+interface CorpusSentinelRow {
+  document_id: string;
+  text: string | null;
+}
+
+/** Corpus entries persisted as sentinel rows in the segments table, oldest
+ *  first. Returns null when the read itself failed (so callers can tell "no
+ *  fallback rows" apart from "couldn't look"). */
+async function getCorpusSentinels(
+  sb: NonNullable<ReturnType<typeof getServerSupabase>>,
+  projectId: string,
+): Promise<WorkspaceCorpusEntry[] | null> {
+  const { data, error } = await sb
+    .from('content_analysis_segments')
+    .select('document_id, text')
+    .eq('code_id', CORPUS_SENTINEL_CODE)
+    .eq('project_id', projectId)
+    .order('created_at', { ascending: true })
+    .limit(MAX_ROWS);
+  if (error) {
+    console.error('[content-analysis-store] corpus sentinel read failed:', error.message);
+    return null;
+  }
+  return (data as CorpusSentinelRow[]).map(r => ({
+    documentId: r.document_id,
+    meta: parseSentinelMeta(r.text, r.document_id),
+  }));
+}
+
+/** Persist one corpus membership as a sentinel segment row. Throws (durable
+ *  failure) if even the segments table can't take the write. */
+async function addCorpusSentinel(
+  sb: NonNullable<ReturnType<typeof getServerSupabase>>,
+  projectId: string,
+  documentId: string,
+  meta?: CorpusDocMeta | null,
+): Promise<void> {
+  const { error } = await sb
+    .from('content_analysis_segments')
+    .upsert(
+      {
+        id: corpusSentinelId(projectId, documentId),
+        document_id: documentId,
+        code_id: CORPUS_SENTINEL_CODE,
+        start_char: 0,
+        end_char: 0,
+        text: meta ? JSON.stringify(meta) : '',
+        note: '',
+        project_id: projectId,
+      },
+      { onConflict: 'id' },
+    );
+  if (error) failDurable('addToCaCorpus(segments fallback)', error);
+}
 
 function memCorpus(projectId: string): Map<string, CorpusDocMeta | null> {
   let map = g.__caCorpus!.get(projectId);
@@ -754,39 +859,78 @@ interface CorpusRow {
   doc_meta: CorpusDocMeta | null;
 }
 
+/** Union primary-table entries with sentinel-fallback entries. Primary wins on
+ *  a duplicate id (it's richer/newer); sentinel-only entries are appended. */
+function mergeCorpusEntries(
+  primary: WorkspaceCorpusEntry[],
+  sentinels: WorkspaceCorpusEntry[] | null,
+): { merged: WorkspaceCorpusEntry[]; sentinelOnly: WorkspaceCorpusEntry[] } {
+  if (!sentinels || sentinels.length === 0) return { merged: primary, sentinelOnly: [] };
+  const seen = new Set(primary.map(e => e.documentId));
+  const sentinelOnly = sentinels.filter(e => !seen.has(e.documentId));
+  return { merged: [...primary, ...sentinelOnly], sentinelOnly };
+}
+
 /** Entries (document id + self-describing metadata) in a project's workspace
  *  corpus, oldest first. */
 export async function getCaCorpus(projectId: string): Promise<WorkspaceCorpusEntry[]> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
+  if (!sb) return memCorpusEntries(projectId);
+
+  // Fallback rows written while the corpus table was missing (or by an older
+  // deploy). Read unconditionally: cheap (indexed), once per workbench mount.
+  const sentinels = await getCorpusSentinels(sb, projectId);
+
+  const { data, error } = await sb
+    .from('content_analysis_corpus')
+    .select('document_id, doc_meta')
+    .eq('project_id', projectId)
+    .order('added_at', { ascending: true })
+    .limit(MAX_ROWS);
+  if (!error) {
+    const primary = (data as CorpusRow[]).map(r => ({ documentId: r.document_id, meta: r.doc_meta ?? null }));
+    const { merged, sentinelOnly } = mergeCorpusEntries(primary, sentinels);
+    // The real table exists: move any fallback rows into it so the sentinel
+    // mechanism retires itself. Best-effort — on failure the sentinels stay
+    // and the next read tries again.
+    if (sentinels && sentinels.length > 0) {
+      try {
+        for (const e of sentinelOnly) await addToCaCorpus(projectId, e.documentId, e.meta);
+        await sb
+          .from('content_analysis_segments')
+          .delete()
+          .eq('code_id', CORPUS_SENTINEL_CODE)
+          .eq('project_id', projectId);
+      } catch {
+        /* keep sentinels; retried on the next read */
+      }
+    }
+    return merged;
+  }
+  // Graceful degradation: before migration 065 the `doc_meta` column doesn't
+  // exist, so re-read the membership ids alone rather than returning nothing.
+  if (/doc_meta/.test(error.message)) {
+    const { data: idsData, error: idsError } = await sb
       .from('content_analysis_corpus')
-      .select('document_id, doc_meta')
+      .select('document_id')
       .eq('project_id', projectId)
       .order('added_at', { ascending: true })
       .limit(MAX_ROWS);
-    if (!error) {
-      return (data as CorpusRow[]).map(r => ({ documentId: r.document_id, meta: r.doc_meta ?? null }));
+    if (!idsError) {
+      const primary = (idsData as { document_id: string }[]).map(r => ({ documentId: r.document_id, meta: null }));
+      return mergeCorpusEntries(primary, sentinels).merged;
     }
-    // Graceful degradation: before migration 065 the `doc_meta` column doesn't
-    // exist, so re-read the membership ids alone rather than returning nothing.
-    if (/doc_meta/.test(error.message)) {
-      const { data: idsData, error: idsError } = await sb
-        .from('content_analysis_corpus')
-        .select('document_id')
-        .eq('project_id', projectId)
-        .order('added_at', { ascending: true })
-        .limit(MAX_ROWS);
-      if (!idsError) {
-        return (idsData as { document_id: string }[]).map(r => ({ documentId: r.document_id, meta: null }));
-      }
-      console.error('[content-analysis-store] getCaCorpus failed:', idsError.message);
-      return memCorpusEntries(projectId);
-    }
-    console.error('[content-analysis-store] getCaCorpus failed:', error.message);
-    return memCorpusEntries(projectId);
+    console.error('[content-analysis-store] getCaCorpus failed:', idsError.message);
+    return sentinels ?? memCorpusEntries(projectId);
   }
-  return memCorpusEntries(projectId);
+  // Graceful degradation: the corpus table itself is absent (migration 062 not
+  // applied to this database) — the sentinel rows in the segments table ARE
+  // the corpus.
+  if (isMissingCorpusTable(error)) {
+    return sentinels ?? memCorpusEntries(projectId);
+  }
+  console.error('[content-analysis-store] getCaCorpus failed:', error.message);
+  return sentinels ?? memCorpusEntries(projectId);
 }
 
 /** Add a document to a project's workspace corpus, with its self-describing
@@ -819,7 +963,18 @@ export async function addToCaCorpus(
         .from('content_analysis_corpus')
         .upsert(base, { onConflict: 'project_id,document_id' });
       if (!retryError) return;
-      failDurable('addToCaCorpus', retryError);
+      if (!isMissingCorpusTable(retryError)) failDurable('addToCaCorpus', retryError);
+      await addCorpusSentinel(sb, projectId, documentId, meta);
+      return;
+    }
+    // Graceful degradation: the corpus table itself is absent (migration 062
+    // not applied to this database). Persist the membership as a sentinel row
+    // in the segments table — the store annotations provably sync through —
+    // instead of 500ing forever, which also wedged the client outbox and
+    // stalled every queued segment write behind it.
+    if (isMissingCorpusTable(error)) {
+      await addCorpusSentinel(sb, projectId, documentId, meta);
+      return;
     }
     failDurable('addToCaCorpus', error);
   }
@@ -830,12 +985,20 @@ export async function addToCaCorpus(
 export async function removeFromCaCorpus(projectId: string, documentId: string): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
+    // Clear any sentinel-fallback row first so a remove can't resurrect via
+    // the sentinel merge on the next read. Idempotent; throws only if even
+    // the segments table refuses the write.
+    const { error: sentinelError } = await sb
+      .from('content_analysis_segments')
+      .delete()
+      .eq('id', corpusSentinelId(projectId, documentId));
+    if (sentinelError) failDurable('removeFromCaCorpus(segments fallback)', sentinelError);
     const { error } = await sb
       .from('content_analysis_corpus')
       .delete()
       .eq('project_id', projectId)
       .eq('document_id', documentId);
-    if (!error) return;
+    if (!error || isMissingCorpusTable(error)) return;
     failDurable('removeFromCaCorpus', error);
   }
   memCorpus(projectId).delete(documentId);
