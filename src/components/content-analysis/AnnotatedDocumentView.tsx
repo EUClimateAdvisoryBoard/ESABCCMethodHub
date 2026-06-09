@@ -217,6 +217,16 @@ export default function AnnotatedDocumentView({
     selection.removeAllRanges();
   };
 
+  // Click directly on a highlighted tag in the body text → open the same
+  // actions menu (including Delete) right at the cursor. Saves the user from
+  // hunting for the thin gutter bracket or scrolling up to the Code System
+  // tree just to remove a tag. Only fired on a plain click (the renderer
+  // ignores clicks that are part of a drag-selection).
+  const openSegmentMenu = (segmentId: string, x: number, y: number) => {
+    onSelectSegment(segmentId);
+    setContextMenu({ segmentId, x, y });
+  };
+
   const gutterWidth = Math.max(bracketLanes.laneCount, 1) * 10;
 
   return (
@@ -298,7 +308,7 @@ export default function AnnotatedDocumentView({
             data-char-offset={line.startChar}
             className="flex-1 pl-2 border-l border-[#F0F1F2] py-[1px]"
           >
-            {renderLineWithSpans(line, segments, codeById, highlightedSegmentId, searchMatches, searchHitIndex)}
+            {renderLineWithSpans(line, segments, codeById, highlightedSegmentId, searchMatches, searchHitIndex, openSegmentMenu)}
           </span>
         </div>
         );
@@ -437,6 +447,7 @@ function renderLineWithSpans(
   highlightedSegmentId?: string | null,
   searchMatches?: Array<{ start: number; end: number }>,
   searchHitIndex?: number,
+  onSegmentClick?: (segmentId: string, x: number, y: number) => void,
 ): React.ReactNode {
   // Find the search matches that intersect this line, paired with their
   // global index (so the active hit gets a brighter highlight).
@@ -484,11 +495,21 @@ function renderLineWithSpans(
       node = (
         <mark
           key={`seg-${from}-${to}`}
+          onClick={onSegmentClick ? e => {
+            // Ignore the click when the user just finished selecting text
+            // (so dragging across a tag to create a new one still works).
+            const sel = window.getSelection();
+            if (sel && !sel.isCollapsed) return;
+            e.stopPropagation();
+            onSegmentClick(narrowest.id, e.clientX, e.clientY);
+          } : undefined}
+          title={onSegmentClick ? `${codeById.get(narrowest.codeId)?.name ?? 'tag'} — click for actions (comment · delete)` : undefined}
           style={{
             backgroundColor: `${color}${isHi ? '55' : '22'}`,
             borderBottom: `1.5px solid ${color}`,
             padding: '0 1px',
             borderRadius: 2,
+            cursor: onSegmentClick ? 'pointer' : undefined,
           }}
         >
           {slice}
