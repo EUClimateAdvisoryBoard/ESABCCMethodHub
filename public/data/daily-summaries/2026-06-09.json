@@ -1,20 +1,26 @@
 {
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T08:35:10.757Z",
+  "generatedAt": "2026-06-09T13:49:25.314Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 9 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "World’s largest banks pledged $906bn to fossil fuel companies in ‘unfathomable’ increase in 2025, report finds",
-      "summary": "&lt;p&gt;JPMorgan Chase leads 65 banks making decisions incompatible with restraining rising temperatures, researchers say&lt;/p&gt;&lt;p&gt;The world’s largest banks committed $906bn in financing to the fossil fuel industry last year, an “unfathomable” increase in investment locking in years more of coal, oil and gas production as the world continues to overheat, a new report has found.&lt;/p&gt;&lt;p&gt;The surge in new fossil fuel lending, up $64bn or nearly 8% on 2024, shows that the world’s",
+      "headline": "EU to mobilise up to €25 billion for renewable energy and clean technology by 2035 through Pact for the Mediterranean initiative",
+      "summary": "European Commission Press release Brussels, 09 Jun 2026 Today, the European Union launches the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation (T-MED) – a flagship initiative under the Pact for the Mediterranean. T-MED aims to accelerate the development of renewable energy, hydrogen, clean technology manufacturing and modern electricity networks across the Mediterranean region, supporting a more integrated, sustainable and interconnected Mediterranean energy market.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Commissioner Roswall's opening address at Venice Climate Week 2026",
-      "summary": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
+      "headline": "Remarks by Commissioner Brunner on the launch of the 2026 Drug Report",
+      "summary": "European Commission Speech Brussels, 09 Jun 2026 Executive director Lorraine Nolan, Chair of the Management Board Franz Pietsch\r\nFirst of all: welcome to Lorraine in her new role as Executive Director\r\nAnd to al...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5\" target=\"_blank\"&gt;China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -27,6 +33,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "EU to mobilise up to €25 billion for renewable energy and clean technology by 2035 through Pact for the Mediterranean initiative",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1301",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 09 Jun 2026 Today, the European Union launches the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation (T-MED) – a flagship initiative under the Pact for the Mediterranean. T-MED aims to accelerate the development of renewable energy, hydrogen, clean technology manufacturing and modern electricity networks across the Mediterranean region, supporting a more integrated, sustainable and interconnected Mediterranean energy market.",
+          "published": "2026-06-08T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "A third of world’s energy needs should come from electricity by 2035, says Cop31 host",
+          "link": "https://www.theguardian.com/environment/2026/jun/09/third-of-world-energy-electricity-by-2035-says-turkey-cop31-host",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Turkish minister Murat Kurum says ‘electrifying daily life’ will be priority for this year’s UN climate summit&lt;/p&gt;&lt;p&gt;The world should aim to meet a third of its energy needs from electricity within a decade to cut greenhouse gas emissions, the host of the next UN climate summit has said.&lt;/p&gt;&lt;p&gt;While about a third of global electricity generation already comes from renewable sources, other energy-intensive sectors – chiefly transport, heating and industries – have",
+          "published": "2026-06-09T11:00:49.000Z",
+          "score": 7
+        },
         {
           "title": "World’s largest banks pledged $906bn to fossil fuel companies in ‘unfathomable’ increase in 2025, report finds",
           "link": "https://www.theguardian.com/environment/2026/jun/09/world-banks-pledge-billions-fossil-fuel-industry-2025",
@@ -50,22 +72,6 @@
           "description": "&lt;p&gt;Australia leads world in residential solar per capita with 22GW installed but commercial and industrial sector has deployed only a quarter of that&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/09/anthony-albanese-labor-one-nation-pauline-hanson-coalition-angus-taylor-ndis-jacinta-allan-victoria-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=",
           "published": "2026-06-08T14:01:26.000Z",
           "score": 7
-        },
-        {
-          "title": "Yemen's Iran-backed Houthis threaten Israeli shipping in the Red Sea - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWxJeXJBNklmZEtETkg1d3ZTRkY2NUh4dlNXcy11Y0FYXzVoXzZ2anNoSHhuUTdSSUFvN2V4TzdfTlAwc0NLWEFYZFRuLWx3cUtUNEJmN1dkMVE1bHJhYXJJOW1VVEJZZFRtTTMzUUExNHlKNmtyQWlGbHAxY24xd0ptRnk5MWh5UHNNVmFaRUppckQ0WjlteHFPTHNVa0cxdll4cjdiVmE0dzVwWkhERXFONzM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOLWxJeXJBNklmZEtETkg1d3ZTRkY2NUh4dlNXcy11Y0FYXzVoXzZ2anNoSHhuUTdSSUFvN2V4TzdfTlAwc0NLWEFYZFRuLWx3cUtUNEJmN1dkMVE1bHJhYXJJOW1VVEJZZFRtTTMzUUExNHlKNmtyQWlGbHAxY24xd0ptRnk5MWh5UHNNVmFaRUppckQ0WjlteHFPTHNVa0cxdll4cjdiVmE0dzVwWkhERXFONzM?oc=5\" target=\"_blank\"&gt;Yemen's Iran-backed Houthis threaten Israeli shipping in the Red Sea&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T13:17:31.000Z",
-          "score": 7
-        },
-        {
-          "title": "US leads record rise in spending on nuclear arsenals, campaign group says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5\" target=\"_blank\"&gt;US leads record rise in spending on nuclear arsenals, campaign group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T22:06:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -74,12 +80,12 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commissioner Roswall's opening address at Venice Climate Week 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1293",
+          "title": "Remarks by Commissioner Brunner on the launch of the 2026 Drug Report",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1308",
           "source": "European Commission",
-          "description": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
-          "published": "2026-06-08T08:44:40.000Z",
-          "score": 19
+          "description": "European Commission Speech Brussels, 09 Jun 2026 Executive director Lorraine Nolan, Chair of the Management Board Franz Pietsch\r\nFirst of all: welcome to Lorraine in her new role as Executive Director\r\nAnd to al...",
+          "published": "2026-06-09T09:05:54.000Z",
+          "score": 14
         },
         {
           "title": "'Short, sharp and more strategic': the EU's new approach to climate talks - Reuters",
@@ -90,27 +96,27 @@
           "score": 13
         },
         {
+          "title": "IPCC Chair&#8217;s Remarks at the 18th Meeting of the Research Dialogue",
+          "link": "https://www.ipcc.ch/2026/06/09/ipcc-chair-jim-skea-18th-research-dialogue/",
+          "source": "IPCC",
+          "description": "64th Session of the Subsidiary Body for Scientific and Technological Advice (SBSTA64), 9 June 2026, Bonn, Germany. Your Excellencies, distinguished delegates and colleagues, ladies and gentlemen, On behalf of the Intergovernmental Panel on Climate Change, the IPCC, thank you for the opportunity to address the 18th Research Dialogue. Before focusing on the themes of the [&#8230;]",
+          "published": "2026-06-09T09:24:26.000Z",
+          "score": 11
+        },
+        {
+          "title": "'Value of trees' in council's healthy spaces plan",
+          "link": "https://www.bbc.com/news/articles/cdxd9552l2wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The authority wants a more consistent approach to trees and woodlands with more protections.",
+          "published": "2026-06-09T11:40:27.000Z",
+          "score": 8
+        },
+        {
           "title": "Christian leaders alarmed by climate crisis raise questions over GB News owner’s £28m church donations",
           "link": "https://www.theguardian.com/environment/2026/jun/09/christian-leaders-alarmed-by-climate-crisis-raise-questions-over-gb-news-owners-28m-church-donations",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Exclusive: Sir Paul Marshall’s climate views and those broadcast on GB News said to be ‘in direct opposition’ to those of Church of England&lt;/p&gt;&lt;p&gt;The co-owner of GB News, a British TV channel accused of broadcasting climate change denial, has donated £28m to influential Church of England institutions that support climate action.&lt;/p&gt;&lt;p&gt;This raises “serious questions”, say Christian leaders, given that Sir Paul Marshall’s views on the climate crisis and those frequ",
           "published": "2026-06-09T06:00:46.000Z",
-          "score": 7
-        },
-        {
-          "title": "‘Severe’ stress on oceans as rate of sea level rise doubles in 10 years, UN warns",
-          "link": "https://www.theguardian.com/environment/2026/jun/08/un-world-ocean-assessment-severe-stress-sea-level-rise-doubles-pollution-fishing-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Global effort needed to limit effects of pollution, industrial fishing and climate crisis, World Ocean Assessment says&lt;/p&gt;&lt;p&gt;The world’s oceans are under “severe and accelerating” pressure from human activities, with the rate of sea-level rise double that of a decade ago, according to a damning assessment from the United Nations.&lt;/p&gt;&lt;p&gt;The “intensifying” stressors, which include pollution and large-scale industrial fishing, are cumulative, &lt;a href=\"https://www",
-          "published": "2026-06-08T16:45:01.000Z",
-          "score": 7
-        },
-        {
-          "title": "Majority of US’s new AI datacenters to be built on drought-hit land",
-          "link": "https://www.theguardian.com/us-news/2026/jun/08/datacenter-ai-drought-water",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Guardian analysis finds facilities to be built in some of the driest areas as outcry grows over water needed to power AI&lt;/p&gt;&lt;p&gt;A record-shattering drought has racked much of the US. But the &lt;a href=\"https://www.theguardian.com/technology/artificialintelligenceai\"&gt;artificial intelligence&lt;/a&gt; industry is pushing ahead regardless, with the majority of planned datacenters set to be built in drought-ridden locations, a Guardian analysis has found.&lt;/p&gt;&lt;p&gt;Ab",
-          "published": "2026-06-08T11:00:23.000Z",
           "score": 7
         }
       ]
@@ -118,7 +124,24 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5\" target=\"_blank\"&gt;China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-06-09T09:24:09.000Z",
+          "score": 2
+        },
+        {
+          "title": "South Korea's cabinet approves decree on $350 bln US investment plan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcTg2Vmh3Vzk0YVVTcVR3Sk8wYnBEbU5Wa3hadU4wbUExZktwalZJTE5wV1dkb2dhVVJFRC1IMzBWODZBbGdRNDVaQml4NF9SUEhJd2liOEVwQ1JEZkxOSG1QZk9qanRYVTBzOUNGdXlmdUxzU00tdEVtU1lFcVczTGRueFFycy1YRjIxUEtCdGZDLWZkNTA2YXRTMTZlcUU5WFpIbFB5SzJ0WVBwS3owWmFwWjdNd2hqN3c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPcTg2Vmh3Vzk0YVVTcVR3Sk8wYnBEbU5Wa3hadU4wbUExZktwalZJTE5wV1dkb2dhVVJFRC1IMzBWODZBbGdRNDVaQml4NF9SUEhJd2liOEVwQ1JEZkxOSG1QZk9qanRYVTBzOUNGdXlmdUxzU00tdEVtU1lFcVczTGRueFFycy1YRjIxUEtCdGZDLWZkNTA2YXRTMTZlcUU5WFpIbFB5SzJ0WVBwS3owWmFwWjdNd2hqN3c?oc=5\" target=\"_blank\"&gt;South Korea's cabinet approves decree on $350 bln US investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-09T02:46:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -146,6 +169,14 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
+        {
+          "title": "Indonesia parliament amends law to allow police to serve in civilian government - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRk1XbTMxU3hJbG9DQXF2WGtmb2VJYjY0X0lLZWVCRGtBeEpKUUN5dVMxZjBvYmdDaTJmdWEwSUY3YUdURjlWWURzQ0FQSlRnZEozbW1pZ092VUVyLW1FQXBZY0pOMEhnY1gtVmtrSEptdG9hbklPT0VBRUpNMWtFRGFYR1FneUFBeUkyVXg0U0hKQkZ2eE8yZEVCRGdfWjJhSEh3a3pGRk5RemltVFRNZzdTT21xYXRLUnE5cl9tSFNQRjA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPRk1XbTMxU3hJbG9DQXF2WGtmb2VJYjY0X0lLZWVCRGtBeEpKUUN5dVMxZjBvYmdDaTJmdWEwSUY3YUdURjlWWURzQ0FQSlRnZEozbW1pZ092VUVyLW1FQXBZY0pOMEhnY1gtVmtrSEptdG9hbklPT0VBRUpNMWtFRGFYR1FneUFBeUkyVXg0U0hKQkZ2eE8yZEVCRGdfWjJhSEh3a3pGRk5RemltVFRNZzdTT21xYXRLUnE5cl9tSFNQRjA?oc=5\" target=\"_blank\"&gt;Indonesia parliament amends law to allow police to serve in civilian government&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-09T05:47:00.000Z",
+          "score": 12
+        },
         {
           "title": "Pope Leo warns Spain's parliament the world is in 'profound' crisis - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5",
@@ -177,22 +208,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQNVJVQWJVbW5PRlNYYlluR3BKUWN3dmpfZGFQa2ZfZTlFMEhPeXg2NlNJOEEtZU1qMm0xWkYzZG93TjBsMWxkbXJIcEFHYXdrbm14UUx1WHNHSmVuT2JCSWpSRzBqdU9ONEhmclI2ckJpQWF4WXg3TG9CRWlzU2lkNnBadXl5dl92d0h6NzlVU09obHQxNU1ic2FnWTY?oc=5\" target=\"_blank\"&gt;China car sales downturn extends into May as VW tests EV revamp&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-08T16:49:33.000Z",
           "score": 7
-        },
-        {
-          "title": "Armenia's pro-West government wins election despite Russian pressure",
-          "link": "https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Prime Minister Nikol Pashinyan's Civil Contract Party secures nearly 50% of the vote, comfortably beating the other contenders.",
-          "published": "2026-06-08T10:28:40.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 160,
-    "afterDedup": 155,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 173,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
