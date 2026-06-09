@@ -237,9 +237,25 @@ export default function SegmentsList({
                       ×
                     </button>
                   </div>
-                  <p className="mt-1 text-[11.5px] italic text-[#3D5265] leading-snug line-clamp-3">
-                    “{seg.text.trim()}”
-                  </p>
+                  {seg.text.trim() ? (
+                    <p className="mt-1 text-[11.5px] italic text-[#3D5265] leading-snug line-clamp-3">
+                      “{seg.text.trim()}”
+                    </p>
+                  ) : seg.screenshot ? (
+                    <p className="mt-1 text-[11.5px] italic text-[#8A95A3] leading-snug">
+                      Captured figure
+                    </p>
+                  ) : null}
+
+                  {/* Captured figure — the screenshot boxed from the PDF page. */}
+                  {seg.screenshot && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={seg.screenshot}
+                      alt="Captured figure"
+                      className="mt-1.5 max-h-40 w-auto max-w-full rounded border border-[#E6E7E8]"
+                    />
+                  )}
 
                   {/* Shared comment — readable by everyone in the project. */}
                   {onUpdateNote ? (

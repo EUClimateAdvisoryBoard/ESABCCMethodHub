@@ -60,6 +60,7 @@ interface SegmentRow {
   project_id: string | null;
   created_at: string | null;
   pdf_anchor: PdfAnchor | null;
+  screenshot: string | null;
 }
 
 /** Defensively validate a `pdf_anchor` jsonb value read back from the DB (or
@@ -85,6 +86,7 @@ function rowToSegment(r: SegmentRow): CodedSegment {
     codeId: r.code_id,
     blockId: r.block_id ?? undefined,
     pdfAnchor: coercePdfAnchor(r.pdf_anchor),
+    screenshot: typeof r.screenshot === 'string' && r.screenshot ? r.screenshot : undefined,
     startChar: r.start_char,
     endChar: r.end_char,
     text: r.text ?? '',
@@ -113,6 +115,7 @@ function segmentToRow(s: CodedSegment): SegmentRow {
     project_id: s.projectId,
     created_at: s.createdAt,
     pdf_anchor: s.pdfAnchor ?? null,
+    screenshot: s.screenshot ?? null,
   };
 }
 
@@ -195,13 +198,14 @@ export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
     let { error } = await sb
       .from('content_analysis_segments')
       .upsert(rows, { onConflict: 'id' });
-    // `pdf_anchor` is added by migration 057. If the deploy reaches a database
-    // where the migration hasn't been applied yet, PostgREST rejects the
-    // unknown column — so retry once without it rather than failing every
-    // segment save (the precise highlight just falls back to the block tint
-    // until the column lands). Detected by the column name in the error.
-    if (error && /pdf_anchor/.test(error.message)) {
-      const legacyRows = rows.map(({ pdf_anchor: _drop, ...rest }) => rest);
+    // `pdf_anchor` (migration 057) and `screenshot` (migration 060) are newer
+    // columns. If the deploy reaches a database where a migration hasn't been
+    // applied yet, PostgREST rejects the unknown column — so retry once without
+    // the newer columns rather than failing every segment save (the precise
+    // highlight falls back to the block tint, and the figure screenshot to
+    // localStorage, until the columns land). Detected by the column name.
+    if (error && /(pdf_anchor|screenshot)/.test(error.message)) {
+      const legacyRows = rows.map(({ pdf_anchor: _a, screenshot: _b, ...rest }) => rest);
       ({ error } = await sb
         .from('content_analysis_segments')
         .upsert(legacyRows, { onConflict: 'id' }));

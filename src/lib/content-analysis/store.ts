@@ -225,8 +225,14 @@ function persist(): void {
     // to localStorage — they live in the durable store and are re-hydrated on
     // demand, so persisting them would blow the quota for no benefit. We keep
     // `blockCount` so the "Show summary (N slides)" affordance still renders.
+    // Coded-segment figure `screenshot`s get the same treatment: they're saved
+    // server-side (via postSegments) and re-fetched by syncFromServer, so a
+    // base64 figure per segment would needlessly eat the localStorage quota.
     const lean: ContentAnalysisSnapshot = {
       ...state,
+      segments: state.segments.map(s =>
+        s.screenshot === undefined ? s : { ...s, screenshot: undefined },
+      ),
       summaries: state.summaries.map(s =>
         s.blocks === undefined
           ? s
@@ -509,6 +515,9 @@ export function useContentAnalysis() {
     /** Precise PDF selection anchor — present for passages marked on a PDF
      *  page, so the highlight sticks to the exact selected text. */
     pdfAnchor?: import('./types').PdfAnchor;
+    /** Captured figure screenshot (PNG data-URL) when the segment marks a
+     *  chart/figure boxed with the "Capture figure" tool. */
+    screenshot?: string;
     /** Mixed-methods payload (number + unit + year + label). */
     numeric?: import('./types').NumericExtraction;
   }): CodedSegment => {
@@ -518,6 +527,7 @@ export function useContentAnalysis() {
       codeId: input.codeId,
       blockId: input.blockId,
       pdfAnchor: input.pdfAnchor,
+      screenshot: input.screenshot,
       startChar: input.startChar,
       endChar: input.endChar,
       text: input.text,

@@ -25,6 +25,10 @@ export interface ToolbarSelection {
    *  on a rendered PDF page, so the resulting segment highlights the exact
    *  selected text rather than the whole enclosing block. */
   pdfAnchor?: PdfAnchor;
+  /** Captured figure (PNG data-URL) — set when the selection comes from the
+   *  "Capture figure" tool rather than a text selection. The same tag actions
+   *  apply; the resulting segment carries the screenshot. */
+  screenshot?: string;
   startChar: number;
   endChar: number;
   text: string;
@@ -102,6 +106,10 @@ export default function FloatingCodeToolbar({
 
   if (!mounted || !selection) return null;
 
+  // A figure capture (vs. a text selection): the "Split here" / "Extract
+  // number" actions don't apply, and we show a thumbnail of what was grabbed.
+  const isFigure = Boolean(selection.screenshot);
+
   return createPortal(
     <div
       role="toolbar"
@@ -111,6 +119,14 @@ export default function FloatingCodeToolbar({
       // Clicks inside the toolbar shouldn't collapse the text selection.
       onMouseDown={e => e.preventDefault()}
     >
+      {isFigure && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={selection.screenshot}
+          alt="Captured figure"
+          className="h-7 w-auto max-w-[80px] rounded-sm border border-white/30 object-cover"
+        />
+      )}
       {activeCode ? (
         <button
           type="button"
@@ -142,7 +158,7 @@ export default function FloatingCodeToolbar({
       {onCreateAndApply && selection && (
         <button
           type="button"
-          onClick={() => onCreateAndApply(selection.text.replace(/\s+/g, ' ').trim().slice(0, 60))}
+          onClick={() => onCreateAndApply(selection.text.replace(/\s+/g, ' ').trim().slice(0, 60) || (isFigure ? 'Figure' : ''))}
           className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
           title="Create a new tag from the selected text and apply it"
         >
@@ -150,7 +166,7 @@ export default function FloatingCodeToolbar({
         </button>
       )}
 
-      {onExtractNumber && selection && /\d/.test(selection.text) && (
+      {!isFigure && onExtractNumber && selection && /\d/.test(selection.text) && (
         <button
           type="button"
           onClick={onExtractNumber}
@@ -161,14 +177,16 @@ export default function FloatingCodeToolbar({
         </button>
       )}
 
-      <button
-        type="button"
-        onClick={onSplit}
-        className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
-        title="Split this block at the selection start"
-      >
-        Split here
-      </button>
+      {!isFigure && (
+        <button
+          type="button"
+          onClick={onSplit}
+          className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
+          title="Split this block at the selection start"
+        >
+          Split here
+        </button>
+      )}
 
       <span className="w-px h-4 bg-white/20" aria-hidden />
 
