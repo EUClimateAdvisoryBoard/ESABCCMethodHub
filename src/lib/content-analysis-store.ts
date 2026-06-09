@@ -535,14 +535,35 @@ function stripBlocks(s: DocumentSummary): DocumentSummary {
   return { ...rest, blockCount: Array.isArray(blocks) ? blocks.length : (s.blockCount ?? 0) };
 }
 
+// Light list columns minus `block_count` — the fallback select for a database
+// where the summary-decks migration (055_content_analysis_summary_decks) hasn't
+// landed yet, so `blocks`/`block_count` don't exist.
+const SUMMARY_LIST_COLUMNS_LEGACY = 'id,document_id,project_id,text,created_at,updated_at';
+
 export async function getSummaries(): Promise<DocumentSummary[]> {
   const sb = getServerSupabase();
   if (sb) {
-    const { data, error } = await sb
+    const primary = await sb
       .from('content_analysis_summaries')
       .select(SUMMARY_LIST_COLUMNS)
       .order('updated_at', { ascending: true })
       .limit(MAX_ROWS);
+    let data: unknown = primary.data;
+    let error = primary.error;
+    // `block_count` (migration 055) is a newer column. On a database that
+    // hasn't applied it yet, PostgREST rejects the unknown column — retry
+    // without it so summaries still load (decks degrade to text-only) rather
+    // than silently falling back to the per-process in-memory store, which is
+    // never shared across users.
+    if (error && /block_count/.test(error.message)) {
+      const legacy = await sb
+        .from('content_analysis_summaries')
+        .select(SUMMARY_LIST_COLUMNS_LEGACY)
+        .order('updated_at', { ascending: true })
+        .limit(MAX_ROWS);
+      data = legacy.data;
+      error = legacy.error;
+    }
     if (error) {
       console.error('[content-analysis-store] getSummaries failed:', error.message);
       return g.__caSummaries!.map(stripBlocks);
@@ -577,9 +598,23 @@ export async function upsertSummaries(summaries: DocumentSummary[]): Promise<voi
   const sb = getServerSupabase();
   if (sb) {
     const rows = summaries.map(summaryToRow);
-    const { error } = await sb
+    let { error } = await sb
       .from('content_analysis_summaries')
       .upsert(rows, { onConflict: 'id' });
+    // `blocks` and `block_count` (migration 055_content_analysis_summary_decks)
+    // are newer columns. If the deploy reaches a database where that migration
+    // hasn't been applied yet, PostgREST rejects the unknown columns — so retry
+    // once without them rather than failing every summary save (and silently
+    // dropping to the per-process in-memory store, which is never shared across
+    // users). The plain-text lead still persists durably; the rich slide deck
+    // falls back to localStorage until the columns land. Same pattern as
+    // upsertSegments above.
+    if (error && /(blocks|block_count)/.test(error.message)) {
+      const legacyRows = rows.map(({ blocks: _b, block_count: _c, ...rest }) => rest);
+      ({ error } = await sb
+        .from('content_analysis_summaries')
+        .upsert(legacyRows, { onConflict: 'id' }));
+    }
     if (error) {
       console.error('[content-analysis-store] upsertSummaries failed:', error.message);
     } else {
