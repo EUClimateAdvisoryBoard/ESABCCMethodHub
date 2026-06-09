@@ -543,22 +543,26 @@ const SUMMARY_LIST_COLUMNS_LEGACY = 'id,document_id,project_id,text,created_at,u
 export async function getSummaries(): Promise<DocumentSummary[]> {
   const sb = getServerSupabase();
   if (sb) {
-    let { data, error } = await sb
+    const primary = await sb
       .from('content_analysis_summaries')
       .select(SUMMARY_LIST_COLUMNS)
       .order('updated_at', { ascending: true })
       .limit(MAX_ROWS);
+    let data: unknown = primary.data;
+    let error = primary.error;
     // `block_count` (migration 055) is a newer column. On a database that
     // hasn't applied it yet, PostgREST rejects the unknown column — retry
     // without it so summaries still load (decks degrade to text-only) rather
     // than silently falling back to the per-process in-memory store, which is
     // never shared across users.
     if (error && /block_count/.test(error.message)) {
-      ({ data, error } = await sb
+      const legacy = await sb
         .from('content_analysis_summaries')
         .select(SUMMARY_LIST_COLUMNS_LEGACY)
         .order('updated_at', { ascending: true })
-        .limit(MAX_ROWS));
+        .limit(MAX_ROWS);
+      data = legacy.data;
+      error = legacy.error;
     }
     if (error) {
       console.error('[content-analysis-store] getSummaries failed:', error.message);
