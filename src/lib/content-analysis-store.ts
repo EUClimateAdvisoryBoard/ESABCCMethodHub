@@ -795,3 +795,45 @@ export async function removeFromCaCorpus(projectId: string, documentId: string):
   }
   memCorpus(projectId).delete(documentId);
 }
+
+// Report outline ------------------------------------------------------------
+// One JSON outline (the report section skeleton) per project workspace, shared
+// so every collaborator edits the same structure. Stored opaquely as JSON here;
+// the shape is owned by `content-analysis/report-structure.ts`.
+
+const g2 = globalThis as unknown as { __caOutlines?: Map<string, unknown> };
+if (!g2.__caOutlines) g2.__caOutlines = new Map();
+
+/** The saved outline for a project, or null if none has been saved yet. */
+export async function getCaOutline(projectId: string): Promise<unknown | null> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_outlines')
+      .select('outline')
+      .eq('project_id', projectId)
+      .maybeSingle();
+    if (error) {
+      console.error('[content-analysis-store] getCaOutline failed:', error.message);
+      return g2.__caOutlines!.get(projectId) ?? null;
+    }
+    return data ? (data as { outline: unknown }).outline : null;
+  }
+  return g2.__caOutlines!.get(projectId) ?? null;
+}
+
+/** Upsert the outline for a project. */
+export async function setCaOutline(projectId: string, outline: unknown): Promise<void> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { error } = await sb
+      .from('content_analysis_outlines')
+      .upsert(
+        { project_id: projectId, outline, updated_at: new Date().toISOString() },
+        { onConflict: 'project_id' },
+      );
+    if (!error) return;
+    failDurable('setCaOutline', error);
+  }
+  g2.__caOutlines!.set(projectId, outline);
+}
