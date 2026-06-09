@@ -1258,7 +1258,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           onTabChange={setAnalysisTab}
         />
       ) : (
-        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px] xl:grid-cols-[260px_minmax(0,1fr)_300px_280px]">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
           {/* LEFT: corpus + add documents */}
           <aside className="flex flex-col gap-3 min-h-0 min-w-0">
             <div className="border border-grey-200 rounded-lg bg-white">
@@ -1432,58 +1432,63 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             )}
           </section>
 
-          {/* RIGHT: coded segments */}
-          <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
-            <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
-              <span className="text-[11px] font-semibold text-tertiary-dark">Coded segments</span>
-              <span className="text-[10px] font-mono text-tertiary-light">{docSegments.length}</span>
-            </div>
-            <div className="max-h-[60vh] overflow-y-auto">
-              <SegmentsList
-                segments={docSegments}
-                codes={visibleCodes}
-                documents={corpusDocs}
-                selectedSegmentId={highlightedSegmentId}
-                onOpenSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
-                onDelete={deleteSegment}
-                onUpdateNote={handleUpdateNote}
-                onUpdateTitle={updateSegmentText}
-                requestCommentForId={commentForSegmentId}
-                onCommentRequestConsumed={() => setCommentForSegmentId(null)}
-                requestTitleForId={titleForSegmentId}
-                onTitleRequestConsumed={() => setTitleForSegmentId(null)}
-              />
-            </div>
-          </aside>
+          {/* RIGHT RAIL: coded segments + general notes, stacked. Kept in a
+              single column so the notes panel always sits directly beneath the
+              segments instead of wrapping to its own row on narrower screens. */}
+          <div className="flex flex-col gap-4 min-h-0 min-w-0">
+            {/* Coded segments */}
+            <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
+              <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
+                <span className="text-[11px] font-semibold text-tertiary-dark">Coded segments</span>
+                <span className="text-[10px] font-mono text-tertiary-light">{docSegments.length}</span>
+              </div>
+              <div className="max-h-[45vh] overflow-y-auto">
+                <SegmentsList
+                  segments={docSegments}
+                  codes={visibleCodes}
+                  documents={corpusDocs}
+                  selectedSegmentId={highlightedSegmentId}
+                  onOpenSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
+                  onDelete={deleteSegment}
+                  onUpdateNote={handleUpdateNote}
+                  onUpdateTitle={updateSegmentText}
+                  requestCommentForId={commentForSegmentId}
+                  onCommentRequestConsumed={() => setCommentForSegmentId(null)}
+                  requestTitleForId={titleForSegmentId}
+                  onTitleRequestConsumed={() => setTitleForSegmentId(null)}
+                />
+              </div>
+            </aside>
 
-          {/* FAR RIGHT: general notes — free-form comments on the whole
-              document, separate from the passage-pinned coded segments. */}
-          <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
-            <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
-              <span
-                className="text-[11px] font-semibold text-tertiary-dark"
-                title="Free-form notes on this document — not pinned to any passage"
-              >
-                General notes
-              </span>
-            </div>
-            {selectedDocument ? (
-              <GeneralNotesPanel
-                notes={generalNotes.notes}
-                loading={generalNotes.loading}
-                canDelete={generalNotes.canDelete}
-                onAddNote={generalNotes.addNote}
-                onDeleteNote={generalNotes.deleteNote}
-                pendingSelection={pendingNoteSel}
-                onPendingConsumed={() => setPendingNoteSel(null)}
-                onJumpToNote={note => { if (note.blockId) { setHighlightedSegmentId(null); setNoteJumpBlockId(note.blockId); } }}
-              />
-            ) : (
-              <p className="px-3 py-3 text-[11px] text-tertiary-light italic">
-                Select a document to add general notes.
-              </p>
-            )}
-          </aside>
+            {/* General notes — free-form comments on the whole document,
+                separate from the passage-pinned coded segments. */}
+            <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
+              <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
+                <span
+                  className="text-[11px] font-semibold text-tertiary-dark"
+                  title="Free-form notes on this document — not pinned to any passage"
+                >
+                  General notes
+                </span>
+              </div>
+              {selectedDocument ? (
+                <GeneralNotesPanel
+                  notes={generalNotes.notes}
+                  loading={generalNotes.loading}
+                  canDelete={generalNotes.canDelete}
+                  onAddNote={generalNotes.addNote}
+                  onDeleteNote={generalNotes.deleteNote}
+                  pendingSelection={pendingNoteSel}
+                  onPendingConsumed={() => setPendingNoteSel(null)}
+                  onJumpToNote={note => { if (note.blockId) { setHighlightedSegmentId(null); setNoteJumpBlockId(note.blockId); } }}
+                />
+              ) : (
+                <p className="px-3 py-3 text-[11px] text-tertiary-light italic">
+                  Select a document to add general notes.
+                </p>
+              )}
+            </aside>
+          </div>
         </div>
       )}
 
