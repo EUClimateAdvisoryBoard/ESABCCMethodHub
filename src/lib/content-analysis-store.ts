@@ -37,6 +37,8 @@ interface GlobalCache {
   __caCodes?: CodeNode[];
   __caSummaries?: DocumentSummary[];
   __caDocuments?: SharedIngestedDocument[];
+  /** project id → set of document ids in that workspace corpus. */
+  __caCorpus?: Map<string, Set<string>>;
 }
 const g = globalThis as unknown as GlobalCache;
 if (!g.__caSegments) g.__caSegments = [];
@@ -44,6 +46,7 @@ if (!g.__caSuggestions) g.__caSuggestions = [];
 if (!g.__caCodes) g.__caCodes = [];
 if (!g.__caSummaries) g.__caSummaries = [];
 if (!g.__caDocuments) g.__caDocuments = [];
+if (!g.__caCorpus) g.__caCorpus = new Map();
 
 const MAX_ROWS = 20000;
 
@@ -723,4 +726,72 @@ export async function upsertCaDocuments(docs: SharedIngestedDocument[]): Promise
     if (idx >= 0) bag[idx] = d;
     else bag.push(d);
   }
+}
+
+// Workspace corpus ----------------------------------------------------------
+// The set of document ids an analyst has added to a project workspace (the
+// "In this workspace" list). Shared per project so every collaborator sees the
+// same documents.
+
+function memCorpus(projectId: string): Set<string> {
+  let set = g.__caCorpus!.get(projectId);
+  if (!set) {
+    set = new Set();
+    g.__caCorpus!.set(projectId, set);
+  }
+  return set;
+}
+
+interface CorpusRow {
+  document_id: string;
+}
+
+/** Document ids in a project's workspace corpus. */
+export async function getCaCorpus(projectId: string): Promise<string[]> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_corpus')
+      .select('document_id')
+      .eq('project_id', projectId)
+      .order('added_at', { ascending: true })
+      .limit(MAX_ROWS);
+    if (error) {
+      console.error('[content-analysis-store] getCaCorpus failed:', error.message);
+      return [...memCorpus(projectId)];
+    }
+    return (data as CorpusRow[]).map(r => r.document_id);
+  }
+  return [...memCorpus(projectId)];
+}
+
+/** Add a document to a project's workspace corpus. Idempotent. */
+export async function addToCaCorpus(projectId: string, documentId: string): Promise<void> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { error } = await sb
+      .from('content_analysis_corpus')
+      .upsert(
+        { project_id: projectId, document_id: documentId, added_at: new Date().toISOString() },
+        { onConflict: 'project_id,document_id' },
+      );
+    if (!error) return;
+    failDurable('addToCaCorpus', error);
+  }
+  memCorpus(projectId).add(documentId);
+}
+
+/** Remove a document from a project's workspace corpus. Idempotent. */
+export async function removeFromCaCorpus(projectId: string, documentId: string): Promise<void> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { error } = await sb
+      .from('content_analysis_corpus')
+      .delete()
+      .eq('project_id', projectId)
+      .eq('document_id', documentId);
+    if (!error) return;
+    failDurable('removeFromCaCorpus', error);
+  }
+  memCorpus(projectId).delete(documentId);
 }

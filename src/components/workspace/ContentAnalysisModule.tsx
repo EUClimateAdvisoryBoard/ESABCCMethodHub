@@ -181,9 +181,36 @@ interface Props {
   industryFocus?: boolean;
 }
 
-/** localStorage key holding the per-workspace corpus (document allow-list). */
+/** localStorage key holding the per-workspace corpus (document allow-list).
+ *  Kept as an offline cache; the shared source of truth is the corpus API. */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
+}
+
+/** Add a document to the shared workspace corpus. Best-effort: local state and
+ *  the localStorage cache already reflect the change this session. */
+async function postCorpus(projectId: string, documentId: string): Promise<void> {
+  try {
+    await fetch('/api/content-analysis/corpus', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ projectId, documentId }),
+    });
+  } catch {
+    /* best-effort — retried on next add or via the local cache */
+  }
+}
+
+/** Remove a document from the shared workspace corpus. Best-effort. */
+async function deleteCorpus(projectId: string, documentId: string): Promise<void> {
+  try {
+    await fetch(
+      `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}&documentId=${encodeURIComponent(documentId)}`,
+      { method: 'DELETE' },
+    );
+  } catch {
+    /* best-effort */
+  }
 }
 
 /**
@@ -335,14 +362,49 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const [ingestState, setIngestState] = useState<{ status: 'idle' | 'loading' | 'error' | 'ok'; message?: string }>({ status: 'idle' });
 
   // ── Load / persist the workspace corpus ───────────────────────────────────
+  // The corpus is shared per project via /api/content-analysis/corpus so every
+  // collaborator sees the same "In this workspace" list. localStorage is kept
+  // only as an offline cache and as the migration source for documents added
+  // before the corpus was synced server-side.
   useEffect(() => {
+    let cancelled = false;
+    // Read any local-only corpus first (instant paint + migration source).
+    let local: string[] = [];
     try {
       const raw = localStorage.getItem(corpusKey(projectId));
-      if (raw) setCorpusIds(JSON.parse(raw) as string[]);
+      if (raw) local = JSON.parse(raw) as string[];
     } catch {
       /* ignore corrupt storage */
     }
-    setCorpusLoaded(true);
+    if (local.length) setCorpusIds(local);
+
+    (async () => {
+      try {
+        const resp = await fetch(
+          `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}`,
+        );
+        if (!resp.ok) throw new Error(String(resp.status));
+        const data = (await resp.json()) as { documentIds?: string[] };
+        const server = Array.isArray(data.documentIds) ? data.documentIds : [];
+        // Union server + local so neither side's documents are lost while the
+        // world migrates from per-browser localStorage to the shared store.
+        const merged = Array.from(new Set([...server, ...local]));
+        if (!cancelled) setCorpusIds(merged);
+        // Push any local-only ids up to the shared store (one-time migration).
+        const serverSet = new Set(server);
+        for (const id of local) {
+          if (!serverSet.has(id)) void postCorpus(projectId, id);
+        }
+      } catch {
+        // Server unreachable / Supabase unconfigured — keep the local list.
+      } finally {
+        if (!cancelled) setCorpusLoaded(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [projectId]);
 
   useEffect(() => {
@@ -607,11 +669,13 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const addToCorpus = (id: string) => {
     setCorpusIds(prev => (prev.includes(id) ? prev : [...prev, id]));
     setSelectedDocumentId(id);
+    void postCorpus(projectId, id);
     const doc = allDocuments.find(d => d.id === id);
     if (doc) syncReferenceProject(doc, 'add');
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
+    void deleteCorpus(projectId, id);
     const doc = allDocuments.find(d => d.id === id);
     if (doc) syncReferenceProject(doc, 'remove');
   };
