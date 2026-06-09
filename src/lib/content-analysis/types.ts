@@ -104,6 +104,24 @@ export interface DocumentVersion {
  *  ESABCC reference library. Defaults to 'policy' on older snapshots. */
 export type DocumentSourceKind = 'policy' | 'reference';
 
+/** The ingestion output of a document, persisted server-side so it is shared
+ *  across users (see `content_analysis_documents`). Keyed by document id. The
+ *  bulk list omits the heavy `text` / `blocks` (they arrive empty) and they are
+ *  lazy-loaded per document. */
+export interface SharedIngestedDocument {
+  id: string;
+  title: string;
+  celexNumber: string | null;
+  pageCount: number;
+  ingestSource: AnalysisDocument['ingestSource'];
+  pdfUrl: string;
+  ingestedAt: string;
+  /** Empty in the bulk list; populated by the single-document fetch. */
+  text: string;
+  /** Empty in the bulk list; populated by the single-document fetch. */
+  blocks: Block[];
+}
+
 export interface AnalysisDocument {
   id: string;
   title: string;

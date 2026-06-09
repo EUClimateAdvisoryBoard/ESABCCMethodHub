@@ -232,6 +232,37 @@ async function persistReferenceToLibrary(
   }
 }
 
+/**
+ * Persist a document's extracted substrate (text + block boxes) to the shared
+ * server store so every user sees it without re-uploading the PDF. Best-effort:
+ * the ingesting user already has it locally; this only benefits teammates.
+ */
+async function shareIngestedDocument(
+  doc: AnalysisDocument,
+  ingest: { text: string; blocks: import('@/lib/content-analysis/types').Block[]; pageCount: number; pdfUrl: string; ingestedAt: string },
+): Promise<void> {
+  if (!ingest.text.trim()) return;
+  try {
+    await fetch('/api/content-analysis/documents', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        id: doc.id,
+        title: doc.title,
+        celexNumber: doc.celexNumber ?? null,
+        pageCount: ingest.pageCount,
+        ingestSource: 'manual-upload',
+        pdfUrl: ingest.pdfUrl,
+        ingestedAt: ingest.ingestedAt,
+        text: ingest.text,
+        blocks: ingest.blocks,
+      }),
+    });
+  } catch {
+    /* best-effort — local state already has the document this session */
+  }
+}
+
 export default function ContentAnalysisModule({ projectId, projectName }: Props) {
   const {
     snapshot,
@@ -438,6 +469,40 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       setSelectedDocumentId(null);
     }
   }, [selectedDocument, selectedDocumentId]);
+
+  // Hydrate from the shared store: when a selected document has no local text
+  // yet, pull the extracted text/blocks another user already ingested so it
+  // opens fully coded without re-uploading the PDF. No-op when nothing is
+  // stored (the empty state then offers Load/Upload as before).
+  const selDocId = selectedDocument?.id ?? null;
+  const selHasText = (selectedDocument?.text ?? '').trim().length > 50;
+  useEffect(() => {
+    if (!selDocId || selHasText) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const r = await fetch(
+          `/api/content-analysis/documents?id=${encodeURIComponent(selDocId)}`,
+          { cache: 'no-store' },
+        );
+        if (!r.ok) return;
+        const j = await r.json();
+        const item = j.item as import('@/lib/content-analysis/types').SharedIngestedDocument | undefined;
+        if (cancelled || !item || !(item.text ?? '').trim()) return;
+        const doc = corpusDocs.find(d => d.id === selDocId);
+        if (doc) upsertDocument(doc);
+        applyIngestion(selDocId, {
+          pdfUrl: item.pdfUrl || '', pageCount: item.pageCount, blocks: item.blocks,
+          text: item.text, ingestedAt: item.ingestedAt,
+          archiveSource: item.ingestSource ?? 'manual-upload',
+        });
+      } catch {
+        /* best-effort — fall back to the Load/Upload empty state */
+      }
+    })();
+    return () => { cancelled = true; };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selDocId, selHasText]);
 
   const docSegments = useMemo(
     () => (selectedDocument ? lensSegments.filter(s => s.documentId === selectedDocument.id) : []),
@@ -699,35 +764,75 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   ) => {
     upsertDocument(doc);
     setIngestState({ status: 'loading', message: `Loading ${opts.label}…` });
+    const isRef = (doc.sourceKind ?? 'policy') === 'reference';
+    const refId = doc.id.replace(/^ref-doc-/, '');
+    const celexKey = doc.celexNumber ?? referencePdfCacheKey(doc.id);
     try {
-      const celex = encodeURIComponent(doc.celexNumber ?? referencePdfCacheKey(doc.id));
+      // ── Preferred path: extract the PDF in the *browser*. Server-side
+      //    extraction of a large report (16 MB / hundreds of pages) overruns
+      //    the serverless time/memory budget and the request dies before it can
+      //    respond. The browser has no such limit. The bytes go to durable
+      //    Supabase storage and are viewed back through the reference proxy, and
+      //    the (small) extracted text/blocks are shared so teammates don't have
+      //    to re-upload. References only — policy PDFs keep the server path,
+      //    which their CELEX-keyed PDF route depends on.
+      if (isRef) {
+        let viewUrl = opts.sourceUrl;
+        let bytes: ArrayBuffer | null = null;
+        if (opts.blob) {
+          setIngestState({ status: 'loading', message: `Uploading ${opts.label}…` });
+          const up = await uploadPdf(refId, opts.blob);
+          if (up.ok && up.publicUrl) {
+            viewUrl = up.publicUrl;
+            bytes = await opts.blob.arrayBuffer();
+          }
+        } else if (opts.sourceUrl) {
+          // Pull the bytes through the same-origin reference proxy (which sends
+          // permissive CORS) rather than fetching the storage URL cross-origin.
+          const r = await fetch(`/api/references/pdf?id=${encodeURIComponent(refId)}`, { cache: 'no-store' });
+          if (r.ok) bytes = await r.arrayBuffer();
+        }
+        if (bytes && viewUrl) {
+          try {
+            setIngestState({ status: 'loading', message: `Reading ${opts.label}…` });
+            const { extractPdfClient } = await import('@/lib/content-analysis/extract-pdf-client');
+            const extracted = await extractPdfClient(bytes, celexKey);
+            const ingestedAt = new Date().toISOString();
+            // Register the reference in the shared library *first* so the PDF
+            // proxy can serve the bytes the instant the pane renders (otherwise
+            // the first load races the row write and 404s).
+            await persistReferenceToLibrary(doc, { sourceUrl: viewUrl });
+            applyIngestion(doc.id, {
+              pdfUrl: viewUrl, pageCount: extracted.pageCount, blocks: extracted.blocks,
+              text: extracted.text, ingestedAt, archiveSource: 'manual-upload',
+            });
+            // Share the extracted substrate so other users don't re-upload.
+            void shareIngestedDocument(doc, { ...extracted, pdfUrl: viewUrl, ingestedAt });
+            setIngestState({ status: 'ok', message: 'PDF loaded' });
+            return;
+          } catch {
+            // Browser extraction failed (e.g. an unusual/corrupt PDF) — fall
+            // through to the server path as a safety net.
+          }
+        }
+        // Couldn't get bytes / a view URL (e.g. Supabase not configured) — fall
+        // through to the server path below.
+      }
+
+      // ── Fallback path: server-side ingestion. Small policy PDFs, and the
+      //    safety net when the browser path is unavailable. Keeps prior
+      //    behaviour, including the multipart upload for small files.
+      const celex = encodeURIComponent(celexKey);
       let url = `/api/content-analysis/ingest-upload?celex=${celex}`;
       const init: RequestInit = { method: 'POST' };
-      // The durable URL we ultimately ingest from and persist to the library.
       let resolvedSourceUrl = opts.sourceUrl;
       if (opts.blob) {
-        // Upload the file straight to Supabase storage from the browser, then
-        // ingest from that URL. This sidesteps Vercel's ~4.5 MB serverless
-        // request-body limit, which silently rejects larger PDFs at the edge
-        // (a 16 MB report never reaches the function at all). Keyed by the
-        // reference id so the same object also backs the reference library's
-        // "Load PDF" path.
-        const isRef = (doc.sourceKind ?? 'policy') === 'reference';
-        const storageKey = isRef
-          ? doc.id.replace(/^ref-doc-/, '')
-          : doc.celexNumber ?? referencePdfCacheKey(doc.id);
-        setIngestState({ status: 'loading', message: `Uploading ${opts.label}…` });
-        const up = await uploadPdf(storageKey, opts.blob);
+        const up = await uploadPdf(isRef ? refId : celexKey, opts.blob);
         if (up.ok && up.publicUrl) {
           resolvedSourceUrl = up.publicUrl;
           url += `&url=${encodeURIComponent(up.publicUrl)}`;
-          setIngestState({ status: 'loading', message: `Processing ${opts.label}…` });
         } else {
-          // Storage unavailable (e.g. Supabase not configured) — fall back to
-          // the multipart path, which still works for small files.
           const form = new FormData();
-          // The route reads the `file` field; a third arg gives it a filename so
-          // it is treated as a File rather than a string.
           form.append('file', opts.blob, 'document.pdf');
           init.body = form;
         }
@@ -735,9 +840,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         url += `&url=${encodeURIComponent(opts.sourceUrl)}`;
       }
       const resp = await fetch(url, init);
-      const data = await resp.json();
-      if (!resp.ok) {
-        const message = [data?.error, data?.detail].filter(Boolean).join(' — ') || `HTTP ${resp.status}`;
+      // The function can die (timeout/OOM) on a big PDF and return an empty
+      // body — guard the JSON parse so we surface a clear error, not a raw
+      // "Unexpected end of JSON input".
+      const data = await resp.json().catch(() => null);
+      if (!resp.ok || !data) {
+        const message =
+          (data && [data.error, data.detail].filter(Boolean).join(' — ')) ||
+          `The server couldn’t process this PDF (HTTP ${resp.status}). It may be too large — try a smaller file.`;
         setIngestState({ status: 'error', message });
         return;
       }
@@ -745,17 +855,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         pdfUrl: data.pdfUrl || '', pageCount: data.pageCount, blocks: data.blocks,
         text: data.text, ingestedAt: data.ingestedAt, archiveSource: 'manual-upload',
       });
+      if (isRef) void persistReferenceToLibrary(doc, { sourceUrl: resolvedSourceUrl });
+      void shareIngestedDocument(doc, {
+        text: data.text, blocks: data.blocks, pageCount: data.pageCount,
+        pdfUrl: data.pdfUrl || resolvedSourceUrl || '', ingestedAt: data.ingestedAt,
+      });
       setIngestState({ status: 'ok', message: 'PDF loaded' });
-
-      // Promote references into the shared library so the durable PDF proxy
-      // resolves them next session — not just from this instance's ephemeral
-      // ingest cache. The bytes are already in storage (uploaded above or
-      // supplied as a sourceUrl), so this only writes the library row. Best-
-      // effort and non-blocking; policies are server-managed by CELEX and
-      // don't go through this path.
-      if ((doc.sourceKind ?? 'policy') === 'reference') {
-        void persistReferenceToLibrary(doc, { sourceUrl: resolvedSourceUrl });
-      }
     } catch (err) {
       setIngestState({ status: 'error', message: String(err) });
     }
