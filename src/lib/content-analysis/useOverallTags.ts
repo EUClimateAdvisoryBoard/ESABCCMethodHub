@@ -23,6 +23,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/lib/auth-context';
+import { enqueue } from './outbox';
 
 async function authHeader(): Promise<Record<string, string>> {
   if (!supabase) return {};
@@ -37,7 +38,9 @@ export interface OverallTagsApi {
   /** The overall-tag code ids stored for a document (empty when none). */
   getTags: (docId: string) => string[];
   /** Add or remove a single overall tag on a document. Persists to the shared
-   *  table; prompts sign-in if needed. Optimistic, with rollback on failure. */
+   *  table; prompts sign-in if needed. Optimistic; a failed write is handed to
+   *  the durable outbox and retried until it lands, so a toggle is never lost
+   *  to a transient error. */
   toggleTag: (docId: string, codeId: string) => Promise<void>;
 }
 
@@ -107,17 +110,20 @@ export function useOverallTags(): OverallTagsApi {
               headers: { 'content-type': 'application/json', ...(await authHeader()) },
               body: JSON.stringify({ documentId: docId, codeId }),
             });
-        if (!res.ok) throw new Error(`${res.status}`);
+        if (!res.ok && !(had && res.status === 404)) throw new Error(`${res.status}`);
       } catch {
-        // Roll back to the pre-toggle state.
-        setMap(prev => {
-          const next = new Map(prev);
-          const set = new Set(next.get(docId) ?? []);
-          if (had) set.add(codeId);
-          else set.delete(codeId);
-          if (set.size) next.set(docId, set);
-          else next.delete(docId);
-          return next;
+        // Keep the optimistic state and queue the write durably. One key per
+        // (document, code) so an add→remove flurry collapses to the last
+        // intent; the POST is an upsert and the DELETE tolerates 404, so
+        // retries are idempotent.
+        enqueue({
+          key: `otag:${docId}:${codeId}`,
+          method: had ? 'DELETE' : 'POST',
+          url: had
+            ? `/api/content-analysis/overall-tags?documentId=${encodeURIComponent(docId)}&codeId=${encodeURIComponent(codeId)}`
+            : '/api/content-analysis/overall-tags',
+          body: had ? undefined : { documentId: docId, codeId },
+          auth: true,
         });
       }
     },

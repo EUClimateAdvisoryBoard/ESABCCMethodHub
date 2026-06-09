@@ -360,8 +360,11 @@ function persist(): void {
       ),
     };
     localStorage.setItem(LS_KEY, JSON.stringify(lean));
-  } catch {
-    // quota exceeded — silently drop in the beta
+  } catch (err) {
+    // Quota exceeded. Only the local CACHE failed to persist — durable writes
+    // ride the outbox and the next pullFromServer re-hydrates — but log it so
+    // a quota problem is diagnosable rather than invisible.
+    logApiError('persist local snapshot (storage quota?)', err);
   }
 }
 
