@@ -1479,8 +1479,10 @@ function ContentAnalysisPageInner() {
                 reader scrolls through it. `self-start` keeps the sticky box
                 sized to its content rather than stretched to the grid row, and
                 the capped height + overflow lets the column scroll internally
-                when search + documents + tags together exceed the viewport. */}
-            <aside className="flex flex-col gap-4 min-h-0 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-1.5rem)] lg:overflow-y-auto">
+                when search + documents + tags together exceed the viewport.
+                `top-[80px]` clears the 72px sticky SiteHeader (z-40) plus a
+                small gap so the pinned column never tucks under it. */}
+            <aside className="flex flex-col gap-4 min-h-0 lg:sticky lg:top-[80px] lg:self-start lg:max-h-[calc(100vh-88px)] lg:overflow-y-auto">
               <Panel title="Search all policy text">
                 <FullTextSearch
                   documents={allDocuments}
