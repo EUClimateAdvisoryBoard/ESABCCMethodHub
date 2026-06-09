@@ -1,12 +1,12 @@
 {
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T00:07:32.135Z",
+  "generatedAt": "2026-06-09T08:35:10.757Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 9 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Australia homes leads the world in solar. But businesses are falling behind",
-      "summary": "&lt;p&gt;Australia leads world in residential solar per capita with 22GW installed but commercial and industrial sector has deployed only a quarter of that&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/09/anthony-albanese-labor-one-nation-pauline-hanson-coalition-angus-taylor-ndis-jacinta-allan-victoria-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=",
+      "headline": "World’s largest banks pledged $906bn to fossil fuel companies in ‘unfathomable’ increase in 2025, report finds",
+      "summary": "&lt;p&gt;JPMorgan Chase leads 65 banks making decisions incompatible with restraining rising temperatures, researchers say&lt;/p&gt;&lt;p&gt;The world’s largest banks committed $906bn in financing to the fossil fuel industry last year, an “unfathomable” increase in investment locking in years more of coal, oil and gas production as the world continues to overheat, a new report has found.&lt;/p&gt;&lt;p&gt;The surge in new fossil fuel lending, up $64bn or nearly 8% on 2024, shows that the world’s",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "European Commission Speech Venice, 08 Jun 2026 Distinguished guests, ladies and gentlemen, colleagues, friends,\r\nWelcome to the final day of Venice Climate Week.\r\nI'm sure you agree, there could hardly be a mo...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "South Korea flags new big investment project as tax revenue swells on AI boom - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5\" target=\"_blank\"&gt;South Korea flags new big investment project as tax revenue swells on AI boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,7 +28,23 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Australia homes leads the world in solar. But businesses are falling behind",
+          "title": "World’s largest banks pledged $906bn to fossil fuel companies in ‘unfathomable’ increase in 2025, report finds",
+          "link": "https://www.theguardian.com/environment/2026/jun/09/world-banks-pledge-billions-fossil-fuel-industry-2025",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;JPMorgan Chase leads 65 banks making decisions incompatible with restraining rising temperatures, researchers say&lt;/p&gt;&lt;p&gt;The world’s largest banks committed $906bn in financing to the fossil fuel industry last year, an “unfathomable” increase in investment locking in years more of coal, oil and gas production as the world continues to overheat, a new report has found.&lt;/p&gt;&lt;p&gt;The surge in new fossil fuel lending, up $64bn or nearly 8% on 2024, shows that the world’s",
+          "published": "2026-06-09T08:00:48.000Z",
+          "score": 7
+        },
+        {
+          "title": "World’s first wind-powered underwater datacentre starts operating in China",
+          "link": "https://www.theguardian.com/world/2026/jun/09/worlds-first-wind-powered-underwater-datacentre-starts-operating-in-china",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Datacentre off Shanghai coast uses less power and water than land-based equivalent &lt;/p&gt;&lt;p&gt;The world’s first wind-powered underwater datacentre has started operations off the coast of Shanghai, as China presses forwards with solutions for energy challenges created by the country’s artificial intelligence boom.&lt;/p&gt;&lt;p&gt;The Shanghai Lingang undersea datacentre demonstration project, which launched in May, has a capacity of 24 megawatts. It is a joint effort between Hi",
+          "published": "2026-06-09T05:00:45.000Z",
+          "score": 7
+        },
+        {
+          "title": "Australian homes lead the world in solar. But businesses are falling behind",
           "link": "https://www.theguardian.com/environment/2026/jun/09/australia-rooftop-solar-panels-households-business",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Australia leads world in residential solar per capita with 22GW installed but commercial and industrial sector has deployed only a quarter of that&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/09/anthony-albanese-labor-one-nation-pauline-hanson-coalition-angus-taylor-ndis-jacinta-allan-victoria-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=",
@@ -50,27 +60,11 @@
           "score": 7
         },
         {
-          "title": "Panasonic to start US data centre battery production by fiscal 2028 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQkNjaVZxeGliTFlOd1plNEY4RF91Sk9KczZtMDJ4U2ZKd1huNVJnNXM1LTdEVFFNMVBkZ3hEVGRhSWVjT01MTlBBMEpOdTFMSWlJT0JKcXlOakkxN3BlQ3BqSGc0ZHcyVVVMc2JVUnkwYTEtVmZNZXU3RTRpeFN1bjRuaFhSX3ZxR2xSNWUxbXBJaHhqU1h6UVJRSE5JZHZERlBiT2hFTzlULW85Z0QwOGFHc05haEszVE1v?oc=5",
+          "title": "US leads record rise in spending on nuclear arsenals, campaign group says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQkNjaVZxeGliTFlOd1plNEY4RF91Sk9KczZtMDJ4U2ZKd1huNVJnNXM1LTdEVFFNMVBkZ3hEVGRhSWVjT01MTlBBMEpOdTFMSWlJT0JKcXlOakkxN3BlQ3BqSGc0ZHcyVVVMc2JVUnkwYTEtVmZNZXU3RTRpeFN1bjRuaFhSX3ZxR2xSNWUxbXBJaHhqU1h6UVJRSE5JZHZERlBiT2hFTzlULW85Z0QwOGFHc05haEszVE1v?oc=5\" target=\"_blank\"&gt;Panasonic to start US data centre battery production by fiscal 2028&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T08:04:36.000Z",
-          "score": 7
-        },
-        {
-          "title": "Workers to escalate strike at Inpex's Ichthys LNG sites after talks fail - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQeXIxN1J4RUkzaURfbHRtd1pqWXdqTWU4cENjN2xuV3ZfRFRLTlpSbzBjZlRkTnlYWWlYeldJTGhIQWpiVmN6Q2xDOUViT3BtZG95dl9VRDQ2VFpmVnZRNnl3YXFiX2VSblRjMkV1ZWQ1cUVnRDhBaEw3QlY4dzJyWlVyeVBtLUdSb1ltZXl3T054Rm5IVW1KZTVLQ2NHRWdlZHVybmhvU3BFcFprczAxQjNYOG5OWEpobFpmNDEzcDFpdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQeXIxN1J4RUkzaURfbHRtd1pqWXdqTWU4cENjN2xuV3ZfRFRLTlpSbzBjZlRkTnlYWWlYeldJTGhIQWpiVmN6Q2xDOUViT3BtZG95dl9VRDQ2VFpmVnZRNnl3YXFiX2VSblRjMkV1ZWQ1cUVnRDhBaEw3QlY4dzJyWlVyeVBtLUdSb1ltZXl3T054Rm5IVW1KZTVLQ2NHRWdlZHVybmhvU3BFcFprczAxQjNYOG5OWEpobFpmNDEzcDFpdw?oc=5\" target=\"_blank\"&gt;Workers to escalate strike at Inpex's Ichthys LNG sites after talks fail&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T03:57:03.000Z",
-          "score": 7
-        },
-        {
-          "title": "Why the Iran-aligned Houthis threatening Red Sea shipping could mean more for the oil market this time - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZndSZ05Ec0xibk5xQ0JPWjFrM2ZzOGhyTDgtR01HOVhuY3J6THhKMVU3UXZxbnlKOUJma041dUJmcTlTNlJ2Q19PREcxWmc3b2pyV2dXVGFNSTJ5aXVTMG9RdDVEUk5CU0luTE9Hc19ESnBBMm5KWVZOblR6NzU0ejdJX1JPSzNQS0tlUzZLYXh3c1FRMjdYbUZ2dmJ5ajE0UU16eTBtYW9vQm9pQXJvM213RWVhLWpURkxPSDNkd1lmUEE1TXc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOZndSZ05Ec0xibk5xQ0JPWjFrM2ZzOGhyTDgtR01HOVhuY3J6THhKMVU3UXZxbnlKOUJma041dUJmcTlTNlJ2Q19PREcxWmc3b2pyV2dXVGFNSTJ5aXVTMG9RdDVEUk5CU0luTE9Hc19ESnBBMm5KWVZOblR6NzU0ejdJX1JPSzNQS0tlUzZLYXh3c1FRMjdYbUZ2dmJ5ajE0UU16eTBtYW9vQm9pQXJvM213RWVhLWpURkxPSDNkd1lmUEE1TXc?oc=5\" target=\"_blank\"&gt;Why the Iran-aligned Houthis threatening Red Sea shipping could mean more for the oil market this time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6",
-          "published": "2026-06-08T14:33:47.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5\" target=\"_blank\"&gt;US leads record rise in spending on nuclear arsenals, campaign group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T22:06:00.000Z",
           "score": 7
         }
       ]
@@ -88,6 +82,22 @@
           "score": 19
         },
         {
+          "title": "'Short, sharp and more strategic': the EU's new approach to climate talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeTF2OENlY3JnTnRrY3draHY0TUExSkxnYVRlSDZ1SXZqaVg1bFRoV1lkdl9MdnZTeEtHX2NrNnhGV2lNekRKNjBTVkhPeWo3cEZLdllEdXJBRG9ER0tsV1ZaTXdZSUNqY0lraTVrR3ZMMXhMRk5ZWEhZN3dkMFlJOVNWM2NOZ3RKLXZ0cTdSREJPT09LNjZuVXl3Y2ZWNDBJM3l1MTlsdTlYVXFjV0hZZW5B?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQeTF2OENlY3JnTnRrY3draHY0TUExSkxnYVRlSDZ1SXZqaVg1bFRoV1lkdl9MdnZTeEtHX2NrNnhGV2lNekRKNjBTVkhPeWo3cEZLdllEdXJBRG9ER0tsV1ZaTXdZSUNqY0lraTVrR3ZMMXhMRk5ZWEhZN3dkMFlJOVNWM2NOZ3RKLXZ0cTdSREJPT09LNjZuVXl3Y2ZWNDBJM3l1MTlsdTlYVXFjV0hZZW5B?oc=5\" target=\"_blank\"&gt;'Short, sharp and more strategic': the EU's new approach to climate talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T16:38:14.000Z",
+          "score": 13
+        },
+        {
+          "title": "Christian leaders alarmed by climate crisis raise questions over GB News owner’s £28m church donations",
+          "link": "https://www.theguardian.com/environment/2026/jun/09/christian-leaders-alarmed-by-climate-crisis-raise-questions-over-gb-news-owners-28m-church-donations",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Sir Paul Marshall’s climate views and those broadcast on GB News said to be ‘in direct opposition’ to those of Church of England&lt;/p&gt;&lt;p&gt;The co-owner of GB News, a British TV channel accused of broadcasting climate change denial, has donated £28m to influential Church of England institutions that support climate action.&lt;/p&gt;&lt;p&gt;This raises “serious questions”, say Christian leaders, given that Sir Paul Marshall’s views on the climate crisis and those frequ",
+          "published": "2026-06-09T06:00:46.000Z",
+          "score": 7
+        },
+        {
           "title": "‘Severe’ stress on oceans as rate of sea level rise doubles in 10 years, UN warns",
           "link": "https://www.theguardian.com/environment/2026/jun/08/un-world-ocean-assessment-severe-stress-sea-level-rise-doubles-pollution-fishing-climate",
           "source": "The Guardian - Climate",
@@ -102,49 +112,32 @@
           "description": "&lt;p&gt;Guardian analysis finds facilities to be built in some of the driest areas as outcry grows over water needed to power AI&lt;/p&gt;&lt;p&gt;A record-shattering drought has racked much of the US. But the &lt;a href=\"https://www.theguardian.com/technology/artificialintelligenceai\"&gt;artificial intelligence&lt;/a&gt; industry is pushing ahead regardless, with the majority of planned datacenters set to be built in drought-ridden locations, a Guardian analysis has found.&lt;/p&gt;&lt;p&gt;Ab",
           "published": "2026-06-08T11:00:23.000Z",
           "score": 7
-        },
-        {
-          "title": "The Guardian view on climate equality: a richer life and real public abundance, not just more stuff | Editorial",
-          "link": "https://www.theguardian.com/commentisfree/2026/jun/08/the-guardian-view-on-climate-equality-a-richer-life-and-real-public-abundance-not-just-more-stuff",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The Global Justice Report offers a hopeful bargain: tax extreme wealth and replace consumer excess with social and economic security for all&lt;/p&gt;&lt;p&gt;Humanity can raise living standards, reduce inequality and keep global heating within a 2C rise, according to a sweeping vision for planetary survival, the Guardian &lt;a href=\"https://www.theguardian.com/environment/2026/jun/04/world-inequality-lab-equality-academics-planetary-survival\"&gt;reported&lt;/a&gt; last week. In an age ",
-          "published": "2026-06-08T17:28:05.000Z",
-          "score": 7
-        },
-        {
-          "title": "Rare footage captured of Great White shark in Mediterranean Sea",
-          "link": "https://www.bbc.com/news/videos/cd6p6zqzj6do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A volunteer diver has described shaking as he filmed his encounter with an endangered Great White shark between Tunisia and Sicily.",
-          "published": "2026-06-08T06:09:53.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "South Korea flags new big investment project as tax revenue swells on AI boom - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxONUlGbGlVYjRldjN4YzdEQkExSkpPbHJsZzNmM21DYmNyM0hiaVFJSDdoQ0plUTQwSTFGUFF1SVQ4X1hLaHl0dEl1enVUZXd4ZWJ0eUtOS19CenBhU1hhRm84VUg3YV95TkxOOUMtcTBPTldKMFdMLS1MVUhsbXk5S2hUWEJPWDJJT01NS0Y3ckVEYUZEa3RMcG9jejJqWEgyZnZ1YzMzYjRmUVBOYURLY0JuQy1aeDBXS1dXZDBoT0hPQnBKcWJz?oc=5\" target=\"_blank\"&gt;South Korea flags new big investment project as tax revenue swells on AI boom&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-06-08T01:23:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "UK, Germany, France back ceasefire talks between Ukraine and Russia",
-          "link": "https://www.dw.com/en/uk-germany-france-back-ceasefire-talks-between-ukraine-and-russia/a-77448846?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The British, German and French leaders backed a call by Ukraine&#039;s Zelenskyy for direct talks with Russian President Putin. The European leaders met Zelenskyy in London.",
-          "published": "2026-06-08T02:18:00.000Z",
+          "title": "Australia, Canada, Japan trade bodies fret over being left out in made-in-Europe drive - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNUGFJWjdWTVpRdnRsN25pZ0FsMi1nNzlIMS1BU0R4WC1KOUdIRGxwNk1McGROT3RpcFV0aWszN010RVZwMldGclRmQnZuYzFrQzE1Z2stTEFXMWNKS29XYlQ1UFhxcU5BYVFlNTBjdktKbFEyY0NQaXVNSjVvVzFlcUZmTjRSbW1lbnNDY2lZRmVMU3BvRWl2WnhiVkpMNi01cjhPcjRISGV0X01lelNqZmlpWTZzRzVyQUc0ZUhjNWtIaENEZnFjX0xR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNUGFJWjdWTVpRdnRsN25pZ0FsMi1nNzlIMS1BU0R4WC1KOUdIRGxwNk1McGROT3RpcFV0aWszN010RVZwMldGclRmQnZuYzFrQzE1Z2stTEFXMWNKS29XYlQ1UFhxcU5BYVFlNTBjdktKbFEyY0NQaXVNSjVvVzFlcUZmTjRSbW1lbnNDY2lZRmVMU3BvRWl2WnhiVkpMNi01cjhPcjRISGV0X01lelNqZmlpWTZzRzVyQUc0ZUhjNWtIaENEZnFjX0xR?oc=5\" target=\"_blank\"&gt;Australia, Canada, Japan trade bodies fret over being left out in made-in-Europe drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-06-08T16:45:32.000Z",
+          "score": 8
+        },
+        {
+          "title": "Water voles return to reserve after 40 years",
+          "link": "https://www.bbc.com/news/articles/cjwgdvnddw5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The town council says the rodent has returned to Batford Springs after 40 years.",
+          "published": "2026-06-09T06:18:02.000Z",
           "score": 4
         }
       ]
@@ -153,14 +146,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Armenia's ruling party secures 49.81% of vote in elections, commission says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNakRjUnpxMG52ZE5Qc2hiUkJnMDFNZERkOVJtX3kzVTd3eFFqTlJxeTNoY1IwbUN4ME91bC1GcjlyZEpTUXoxTTRyZS10ZmtvbzRoYUtiN1pHdVRfSE1FSy1GZmxCLXlPSmpkRDBkam85U05xeXR3OHM0akFNWXc1WnBvb29lWTNDX2Z4RWo1TnJVbHNpMWZaeWFyZkNtLU1uZklsQW95cEtlRlk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNakRjUnpxMG52ZE5Qc2hiUkJnMDFNZERkOVJtX3kzVTd3eFFqTlJxeTNoY1IwbUN4ME91bC1GcjlyZEpTUXoxTTRyZS10ZmtvbzRoYUtiN1pHdVRfSE1FSy1GZmxCLXlPSmpkRDBkam85U05xeXR3OHM0akFNWXc1WnBvb29lWTNDX2Z4RWo1TnJVbHNpMWZaeWFyZkNtLU1uZklsQW95cEtlRlk?oc=5\" target=\"_blank\"&gt;Armenia's ruling party secures 49.81% of vote in elections, commission says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T06:17:44.000Z",
-          "score": 12
-        },
         {
           "title": "Pope Leo warns Spain's parliament the world is in 'profound' crisis - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5",
@@ -192,14 +177,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQNVJVQWJVbW5PRlNYYlluR3BKUWN3dmpfZGFQa2ZfZTlFMEhPeXg2NlNJOEEtZU1qMm0xWkYzZG93TjBsMWxkbXJIcEFHYXdrbm14UUx1WHNHSmVuT2JCSWpSRzBqdU9ONEhmclI2ckJpQWF4WXg3TG9CRWlzU2lkNnBadXl5dl92d0h6NzlVU09obHQxNU1ic2FnWTY?oc=5\" target=\"_blank\"&gt;China car sales downturn extends into May as VW tests EV revamp&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-08T16:49:33.000Z",
           "score": 7
+        },
+        {
+          "title": "Armenia's pro-West government wins election despite Russian pressure",
+          "link": "https://www.bbc.com/news/articles/cvgel990n51o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Prime Minister Nikol Pashinyan's Civil Contract Party secures nearly 50% of the vote, comfortably beating the other contenders.",
+          "published": "2026-06-08T10:28:40.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 375,
-    "articlesLast24h": 151,
-    "afterDedup": 145,
+    "totalArticlesScanned": 400,
+    "articlesLast24h": 160,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
