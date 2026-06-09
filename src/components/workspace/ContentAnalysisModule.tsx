@@ -77,6 +77,7 @@ import CodeEditorModal, {
 } from '@/components/content-analysis/CodeEditorModal';
 import { showToast } from '@/components/ui/ToastHost';
 import { uploadPdf } from '@/lib/references/pdf-storage';
+import { enqueue as enqueueOutbox } from '@/lib/content-analysis/outbox';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
@@ -188,30 +189,34 @@ function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
 }
 
-/** Add a document to the shared workspace corpus. Best-effort: local state and
- *  the localStorage cache already reflect the change this session. */
-async function postCorpus(projectId: string, documentId: string): Promise<void> {
-  try {
-    await fetch('/api/content-analysis/corpus', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ projectId, documentId }),
-    });
-  } catch {
-    /* best-effort — retried on next add or via the local cache */
-  }
+/** Dedupe key so an add then a remove of the same document collapse to the
+ *  latest op in the outbox (a DELETE supersedes a pending POST). */
+function corpusOutboxKey(projectId: string, documentId: string): string {
+  return `corpus:${projectId}:${documentId}`;
 }
 
-/** Remove a document from the shared workspace corpus. Best-effort. */
-async function deleteCorpus(projectId: string, documentId: string): Promise<void> {
-  try {
-    await fetch(
-      `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}&documentId=${encodeURIComponent(documentId)}`,
-      { method: 'DELETE' },
-    );
-  } catch {
-    /* best-effort */
-  }
+/** Add a document to the shared workspace corpus. Routed through the durable
+ *  outbox — persisted to localStorage and retried on interval / focus / online
+ *  until the server confirms — so workspace membership syncs to teammates as
+ *  reliably as coded segments do. A bare fire-and-forget `fetch` here was the
+ *  reason the corpus appeared "not synced": any transient failure was swallowed
+ *  and the document only ever reached the adding browser. */
+function postCorpus(projectId: string, documentId: string): void {
+  enqueueOutbox({
+    key: corpusOutboxKey(projectId, documentId),
+    method: 'POST',
+    url: '/api/content-analysis/corpus',
+    body: { projectId, documentId },
+  });
+}
+
+/** Remove a document from the shared workspace corpus, durably (same outbox). */
+function deleteCorpus(projectId: string, documentId: string): void {
+  enqueueOutbox({
+    key: corpusOutboxKey(projectId, documentId),
+    method: 'DELETE',
+    url: `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}&documentId=${encodeURIComponent(documentId)}`,
+  });
 }
 
 /**
