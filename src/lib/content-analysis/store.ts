@@ -46,49 +46,42 @@ import type {
 } from './types';
 import type { Block, AiClassification } from './types';
 import { buildSeedSnapshot, deriveBlocksFromText } from './seed';
+import { enqueue, flush as flushOutbox, getOutboxStatus, subscribeOutbox } from './outbox';
 
 const LS_KEY = 'esabcc_content_analysis_v1';
+// One-time flag: on first run with the durable outbox, re-push any local items
+// the server is missing (work that failed to sync before the outbox existed).
+const BACKFILL_KEY = 'esabcc_ca_backfill_v1';
 
 // ── Server sync ─────────────────────────────────────────────────────────
-// All calls are fire-and-forget: the UI updates local state immediately
-// and we log (but don't surface) errors from the API. If the API is down
-// the segment stays in localStorage and the user keeps working; on the
-// next successful mutation or page load the local state reconciles with
-// the server.
+// Every server write goes through the durable outbox (./outbox): the UI
+// updates local state instantly, the write is queued in localStorage, and the
+// outbox retries until Supabase confirms it. Nothing is fire-and-forget — a
+// failed write stays queued and self-heals on reconnect, so content is never
+// silently lost.
 
 function logApiError(label: string, err: unknown): void {
   // eslint-disable-next-line no-console
   console.error(`[content-analysis] ${label} failed:`, err);
 }
 
-function postSegments(segments: CodedSegment[]): void {
-  if (segments.length === 0) return;
-  fetch('/api/content-analysis/segments', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ segments }),
-    keepalive: true,
-  }).catch(err => logApiError('postSegments', err));
-}
+const enc = encodeURIComponent;
 
-function patchSegmentNote(
-  id: string,
-  note: string,
-  author?: { name?: string; id?: string },
-): void {
-  fetch('/api/content-analysis/segments', {
-    method: 'PATCH',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ id, note, noteAuthor: author?.name, noteAuthorId: author?.id }),
-    keepalive: true,
-  }).catch(err => logApiError('patchSegmentNote', err));
+function postSegments(segments: CodedSegment[]): void {
+  // Per-segment so the outbox can dedupe/collapse by id.
+  for (const s of segments) {
+    enqueue({
+      key: `seg:${s.id}`,
+      method: 'POST',
+      url: '/api/content-analysis/segments',
+      body: { segments: [s] },
+    });
+  }
 }
 
 function deleteSegmentRemote(id: string): void {
-  fetch(`/api/content-analysis/segments?id=${encodeURIComponent(id)}`, {
-    method: 'DELETE',
-    keepalive: true,
-  }).catch(err => logApiError('deleteSegment', err));
+  // Same key as the upsert so a delete supersedes a not-yet-sent create.
+  enqueue({ key: `seg:${id}`, method: 'DELETE', url: `/api/content-analysis/segments?id=${enc(id)}` });
 }
 
 /** Persist a runtime code to the server. Only project-scoped codes are
@@ -96,58 +89,50 @@ function deleteSegmentRemote(id: string): void {
  *  so we never push the whole bundled taxonomy. */
 function postCode(code: CodeNode): void {
   if (code.scope !== 'project') return;
-  fetch('/api/content-analysis/codes', {
+  enqueue({
+    key: `code:${code.id}`,
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ codes: [code] }),
-    keepalive: true,
-  }).catch(err => logApiError('postCode', err));
+    url: '/api/content-analysis/codes',
+    body: { codes: [code] },
+  });
 }
 
 function deleteCodeRemote(id: string): void {
-  fetch(`/api/content-analysis/codes?id=${encodeURIComponent(id)}`, {
-    method: 'DELETE',
-    keepalive: true,
-  }).catch(err => logApiError('deleteCode', err));
+  enqueue({ key: `code:${id}`, method: 'DELETE', url: `/api/content-analysis/codes?id=${enc(id)}` });
 }
 
 function postSuggestions(documentId: string, suggestions: CodeSuggestion[]): void {
-  fetch('/api/content-analysis/suggestions', {
+  enqueue({
+    key: `suggdoc:${documentId}`,
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ documentId, suggestions }),
-    keepalive: true,
-  }).catch(err => logApiError('postSuggestions', err));
+    url: '/api/content-analysis/suggestions',
+    body: { documentId, suggestions },
+  });
 }
 
 function deleteSuggestionRemote(id: string): void {
-  fetch(`/api/content-analysis/suggestions?id=${encodeURIComponent(id)}`, {
-    method: 'DELETE',
-    keepalive: true,
-  }).catch(err => logApiError('deleteSuggestion', err));
+  enqueue({ key: `sugg:${id}`, method: 'DELETE', url: `/api/content-analysis/suggestions?id=${enc(id)}` });
 }
 
 function clearDocumentSuggestionsRemote(documentId: string): void {
-  fetch(
-    `/api/content-analysis/suggestions?documentId=${encodeURIComponent(documentId)}`,
-    { method: 'DELETE', keepalive: true },
-  ).catch(err => logApiError('clearDocumentSuggestions', err));
+  enqueue({
+    key: `suggdoc:${documentId}`,
+    method: 'DELETE',
+    url: `/api/content-analysis/suggestions?documentId=${enc(documentId)}`,
+  });
 }
 
 function postSummary(summary: DocumentSummary): void {
-  fetch('/api/content-analysis/summaries', {
+  enqueue({
+    key: `summ:${summary.id}`,
     method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ summaries: [summary] }),
-    keepalive: true,
-  }).catch(err => logApiError('postSummary', err));
+    url: '/api/content-analysis/summaries',
+    body: { summaries: [summary] },
+  });
 }
 
 function deleteSummaryRemote(id: string): void {
-  fetch(`/api/content-analysis/summaries?id=${encodeURIComponent(id)}`, {
-    method: 'DELETE',
-    keepalive: true,
-  }).catch(err => logApiError('deleteSummary', err));
+  enqueue({ key: `summ:${id}`, method: 'DELETE', url: `/api/content-analysis/summaries?id=${enc(id)}` });
 }
 
 let serverSynced = false;
@@ -173,6 +158,10 @@ async function syncFromServer(): Promise<void> {
     const serverSuggs: CodeSuggestion[] = Array.isArray(suggJson.items) ? suggJson.items : [];
     const serverCodes: CodeNode[] = Array.isArray(codesJson.items) ? codesJson.items : [];
     const serverSumms: DocumentSummary[] = Array.isArray(summJson.items) ? summJson.items : [];
+    // Capture the pre-merge local state so the one-time backfill can tell which
+    // local items the server is missing (work that never synced before the
+    // outbox existed).
+    const preLocal = state;
     update(s => {
       const byIdSeg = new Map<string, CodedSegment>();
       for (const x of s.segments) byIdSeg.set(x.id, x);
@@ -199,9 +188,53 @@ async function syncFromServer(): Promise<void> {
         summaries: Array.from(byIdSumm.values()),
       };
     });
+    backfillLocalOnly(preLocal, { serverSegs, serverCodes, serverSumms, segResp, codesResp, summResp });
   } catch (err) {
     serverSynced = false;
     logApiError('syncFromServer', err);
+  }
+}
+
+/**
+ * One-time rescue of local-only work. Before the durable outbox existed, a
+ * mirror write that failed left the item only in this browser. On the first
+ * sync after the upgrade, re-push any local item the server is missing so it
+ * lands durably. Runs once (guarded by BACKFILL_KEY) to avoid re-creating rows
+ * another user has since deleted; all *new* writes are guaranteed by the outbox.
+ */
+function backfillLocalOnly(
+  local: ContentAnalysisSnapshot,
+  ctx: {
+    serverSegs: CodedSegment[];
+    serverCodes: CodeNode[];
+    serverSumms: DocumentSummary[];
+    segResp: Response;
+    codesResp: Response;
+    summResp: Response;
+  },
+): void {
+  if (typeof window === 'undefined') return;
+  try {
+    if (localStorage.getItem(BACKFILL_KEY)) return;
+    // Only act on resources whose list actually loaded, so we never mistake a
+    // failed GET for "the server has nothing" and re-push everything.
+    if (ctx.segResp.ok) {
+      const onServer = new Set(ctx.serverSegs.map(x => x.id));
+      for (const s of local.segments) if (!onServer.has(s.id)) postSegments([s]);
+    }
+    if (ctx.codesResp.ok) {
+      const onServer = new Set(ctx.serverCodes.map(x => x.id));
+      for (const c of local.codes) if (c.scope === 'project' && !onServer.has(c.id)) postCode(c);
+    }
+    if (ctx.summResp.ok) {
+      const onServer = new Set(ctx.serverSumms.map(x => x.id));
+      for (const sm of local.summaries) {
+        if (!onServer.has(sm.id) && (sm.text.trim() || (sm.blockCount ?? 0) > 0)) postSummary(sm);
+      }
+    }
+    localStorage.setItem(BACKFILL_KEY, new Date().toISOString());
+  } catch (err) {
+    logApiError('backfillLocalOnly', err);
   }
 }
 
@@ -324,12 +357,25 @@ export function useContentAnalysis() {
 
   const snapshot = useSyncExternalStore(subscribe, () => state, () => state);
 
+  // Live durability status from the outbox (pending writes / last error /
+  // whether the server has a durable backend) so the UI can warn when work
+  // hasn't reached Supabase yet.
+  const syncStatus = useSyncExternalStore(
+    subscribeOutbox,
+    getOutboxStatus,
+    getOutboxStatus,
+  );
+
   // Guard against stale state after a HMR reload with an empty key.
   useEffect(() => { if (!hydrated) hydrate(); }, []);
 
   // Reconcile with Supabase on first mount so accepted segments and
-  // pending suggestions created by other users show up here.
-  useEffect(() => { void syncFromServer(); }, []);
+  // pending suggestions created by other users show up here. Also drain any
+  // writes the outbox persisted from a previous session.
+  useEffect(() => {
+    void syncFromServer();
+    void flushOutbox();
+  }, []);
 
   // ── Code operations ────────────────────────────────────────────────
   const addCode = useCallback((input: {
@@ -576,21 +622,25 @@ export function useContentAnalysis() {
     author?: { name?: string; id?: string },
   ) => {
     const now = new Date().toISOString();
+    let updated: CodedSegment | null = null;
     update(s => ({
       ...s,
-      segments: s.segments.map(seg =>
-        seg.id === id
-          ? {
-              ...seg,
-              note,
-              noteAuthor: author?.name,
-              noteAuthorId: author?.id,
-              noteUpdatedAt: now,
-            }
-          : seg,
-      ),
+      segments: s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        updated = {
+          ...seg,
+          note,
+          noteAuthor: author?.name,
+          noteAuthorId: author?.id,
+          noteUpdatedAt: now,
+        };
+        return updated;
+      }),
     }));
-    patchSegmentNote(id, note, author);
+    // Persist as a full segment upsert (carries note + author) through the
+    // outbox, so a note edit on a not-yet-synced segment can't race a PATCH
+    // against a row the server doesn't have yet — and is collapsed by id.
+    if (updated) postSegments([updated]);
   }, []);
 
   /** Set the title/caption on a segment — its `text`. Used by figure-capture
@@ -1245,6 +1295,7 @@ export function useContentAnalysis() {
 
   return {
     snapshot,
+    syncStatus,
     rootCodes,
     addCode,
     renameCode,
