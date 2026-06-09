@@ -132,6 +132,73 @@ function seedStorageKey(version: FlowChartVersion, projectId: string): string {
   return `${boardStorageKey(version, projectId)}:seed`;
 }
 
+// ── Shared server sync ──────────────────────────────────────────────────────
+// localStorage stays a synchronous cache; the pw_flowchart_state table is the
+// shared source of truth. We hydrate the cache from the server on mount and
+// write through to the server on every edit, so collaborators converge on the
+// same boards and versions. All network calls are best-effort — the cache keeps
+// the editing session consistent if a request fails.
+
+const STATE_API = '/api/project-workspace/flowchart-state';
+
+/** Push one key→JSON entry to the shared store. */
+function pushState(projectId: string, storageKey: string, data: unknown): void {
+  if (typeof window === 'undefined' || !projectId) return;
+  void fetch(STATE_API, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ projectId, storageKey, data }),
+  }).catch(() => {
+    /* best-effort — retried on next edit; the local cache still holds it */
+  });
+}
+
+/** Delete one entry from the shared store. */
+function removeState(projectId: string, storageKey: string): void {
+  if (typeof window === 'undefined' || !projectId) return;
+  void fetch(
+    `${STATE_API}?projectId=${encodeURIComponent(projectId)}&storageKey=${encodeURIComponent(storageKey)}`,
+    { method: 'DELETE' },
+  ).catch(() => {
+    /* best-effort */
+  });
+}
+
+/**
+ * Pull every flow-chart state row for a project from the shared store into the
+ * localStorage cache, so the synchronous loaders below render server content.
+ * Call once on mount before reading versions/boards. Resolves when the cache
+ * has been populated (or on failure, leaving the existing cache untouched).
+ */
+export async function hydrateFlowchartState(projectId: string): Promise<void> {
+  if (typeof window === 'undefined' || !projectId) return;
+  try {
+    const resp = await fetch(`${STATE_API}?projectId=${encodeURIComponent(projectId)}`);
+    if (!resp.ok) return;
+    const body = (await resp.json()) as { items?: Array<{ storageKey: string; data: unknown }> };
+    for (const it of body.items ?? []) {
+      if (!it?.storageKey) continue;
+      try {
+        localStorage.setItem(it.storageKey, JSON.stringify(it.data));
+      } catch {
+        /* quota — skip this entry */
+      }
+    }
+  } catch {
+    /* offline / unconfigured — keep the existing local cache */
+  }
+}
+
+/**
+ * Persist a version's edited board: update the localStorage cache and write
+ * through to the shared store. Used by the board editor on every change.
+ */
+export function saveBoard(projectId: string, version: FlowChartVersion, board: FrameworkBoard): void {
+  const key = boardStorageKey(version, projectId);
+  writeBoard(key, board);
+  pushState(projectId, key, board);
+}
+
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
@@ -227,6 +294,7 @@ function writeRegistry(projectId: string, data: RegistryData): void {
   } catch {
     /* quota / private mode */
   }
+  pushState(projectId, registryKey(projectId), data);
 }
 
 /** All versions for a project: the (possibly renamed) built-ins, then custom ones. */
@@ -261,8 +329,12 @@ export function createVersion(
     basedOnName: foundation.name,
     createdAt: Date.now(),
   };
-  writeBoard(boardStorageKey(version, projectId), source);
-  writeBoard(seedStorageKey(version, projectId), source);
+  const boardKey = boardStorageKey(version, projectId);
+  const seedKey = seedStorageKey(version, projectId);
+  writeBoard(boardKey, source);
+  writeBoard(seedKey, source);
+  pushState(projectId, boardKey, source);
+  pushState(projectId, seedKey, source);
   const reg = readRegistry(projectId);
   reg.versions.push(version);
   writeRegistry(projectId, reg);
@@ -294,10 +366,14 @@ export function deleteVersion(projectId: string, version: FlowChartVersion): voi
   reg.versions = reg.versions.filter((v) => v.id !== version.id);
   writeRegistry(projectId, reg);
   if (typeof window === 'undefined') return;
+  const boardKey = boardStorageKey(version, projectId);
+  const seedKey = seedStorageKey(version, projectId);
   try {
-    localStorage.removeItem(boardStorageKey(version, projectId));
-    localStorage.removeItem(seedStorageKey(version, projectId));
+    localStorage.removeItem(boardKey);
+    localStorage.removeItem(seedKey);
   } catch {
     /* ignore */
   }
+  removeState(projectId, boardKey);
+  removeState(projectId, seedKey);
 }

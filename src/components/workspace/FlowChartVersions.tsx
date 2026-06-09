@@ -18,6 +18,7 @@ import type { Indicator } from '@/data/ecno-indicators';
 import {
   createVersion,
   deleteVersion,
+  hydrateFlowchartState,
   loadVersions,
   renameVersion,
   type FlowChartVersion,
@@ -40,9 +41,25 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
   const [activeId, setActiveId] = useState<string>('report-faithful');
   const [creating, setCreating] = useState(false);
   const [renaming, setRenaming] = useState(false);
+  // Bumped once the shared store has been pulled into the localStorage cache, so
+  // the board below remounts and renders the synced content rather than the
+  // cache's pre-hydration state.
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    // Paint instantly from the local cache, then hydrate from the shared store
+    // and re-read so every collaborator converges on the same versions/boards.
     setVersions(loadVersions(projectId));
+    setHydrated(false);
+    let cancelled = false;
+    void hydrateFlowchartState(projectId).then(() => {
+      if (cancelled) return;
+      setVersions(loadVersions(projectId));
+      setHydrated(true);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [projectId]);
 
   const reload = (nextActiveId?: string) => {
@@ -188,6 +205,7 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
           projectId={projectId}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          hydrated={hydrated}
         />
       )}
 
