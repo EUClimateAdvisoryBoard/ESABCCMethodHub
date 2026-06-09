@@ -23,10 +23,12 @@ import type {
   CodedSegment,
   CodeSuggestion,
   CodeNode,
+  CorpusDocMeta,
   DocumentSummary,
   PdfAnchor,
   SharedIngestedDocument,
   SummaryBlock,
+  WorkspaceCorpusEntry,
 } from './content-analysis/types';
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
@@ -37,8 +39,9 @@ interface GlobalCache {
   __caCodes?: CodeNode[];
   __caSummaries?: DocumentSummary[];
   __caDocuments?: SharedIngestedDocument[];
-  /** project id → set of document ids in that workspace corpus. */
-  __caCorpus?: Map<string, Set<string>>;
+  /** project id → (document id → its corpus metadata, or null for legacy
+   *  id-only entries) in that workspace corpus. */
+  __caCorpus?: Map<string, Map<string, CorpusDocMeta | null>>;
 }
 const g = globalThis as unknown as GlobalCache;
 if (!g.__caSegments) g.__caSegments = [];
@@ -733,52 +736,94 @@ export async function upsertCaDocuments(docs: SharedIngestedDocument[]): Promise
 // "In this workspace" list). Shared per project so every collaborator sees the
 // same documents.
 
-function memCorpus(projectId: string): Set<string> {
-  let set = g.__caCorpus!.get(projectId);
-  if (!set) {
-    set = new Set();
-    g.__caCorpus!.set(projectId, set);
+function memCorpus(projectId: string): Map<string, CorpusDocMeta | null> {
+  let map = g.__caCorpus!.get(projectId);
+  if (!map) {
+    map = new Map();
+    g.__caCorpus!.set(projectId, map);
   }
-  return set;
+  return map;
+}
+
+function memCorpusEntries(projectId: string): WorkspaceCorpusEntry[] {
+  return [...memCorpus(projectId)].map(([documentId, meta]) => ({ documentId, meta: meta ?? null }));
 }
 
 interface CorpusRow {
   document_id: string;
+  doc_meta: CorpusDocMeta | null;
 }
 
-/** Document ids in a project's workspace corpus. */
-export async function getCaCorpus(projectId: string): Promise<string[]> {
+/** Entries (document id + self-describing metadata) in a project's workspace
+ *  corpus, oldest first. */
+export async function getCaCorpus(projectId: string): Promise<WorkspaceCorpusEntry[]> {
   const sb = getServerSupabase();
   if (sb) {
     const { data, error } = await sb
       .from('content_analysis_corpus')
-      .select('document_id')
+      .select('document_id, doc_meta')
       .eq('project_id', projectId)
       .order('added_at', { ascending: true })
       .limit(MAX_ROWS);
-    if (error) {
-      console.error('[content-analysis-store] getCaCorpus failed:', error.message);
-      return [...memCorpus(projectId)];
+    if (!error) {
+      return (data as CorpusRow[]).map(r => ({ documentId: r.document_id, meta: r.doc_meta ?? null }));
     }
-    return (data as CorpusRow[]).map(r => r.document_id);
+    // Graceful degradation: before migration 065 the `doc_meta` column doesn't
+    // exist, so re-read the membership ids alone rather than returning nothing.
+    if (/doc_meta/.test(error.message)) {
+      const { data: idsData, error: idsError } = await sb
+        .from('content_analysis_corpus')
+        .select('document_id')
+        .eq('project_id', projectId)
+        .order('added_at', { ascending: true })
+        .limit(MAX_ROWS);
+      if (!idsError) {
+        return (idsData as { document_id: string }[]).map(r => ({ documentId: r.document_id, meta: null }));
+      }
+      console.error('[content-analysis-store] getCaCorpus failed:', idsError.message);
+      return memCorpusEntries(projectId);
+    }
+    console.error('[content-analysis-store] getCaCorpus failed:', error.message);
+    return memCorpusEntries(projectId);
   }
-  return [...memCorpus(projectId)];
+  return memCorpusEntries(projectId);
 }
 
-/** Add a document to a project's workspace corpus. Idempotent. */
-export async function addToCaCorpus(projectId: string, documentId: string): Promise<void> {
+/** Add a document to a project's workspace corpus, with its self-describing
+ *  display metadata. Idempotent; re-adding refreshes the stored metadata. */
+export async function addToCaCorpus(
+  projectId: string,
+  documentId: string,
+  meta?: CorpusDocMeta | null,
+): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
+    const base = {
+      project_id: projectId,
+      document_id: documentId,
+      added_at: new Date().toISOString(),
+    };
+    // Only overwrite doc_meta when we actually have it, so a metadata-less
+    // re-add (e.g. a legacy migration push) can't blank out a richer existing row.
+    const row: Record<string, unknown> = meta ? { ...base, doc_meta: meta } : { ...base };
     const { error } = await sb
       .from('content_analysis_corpus')
-      .upsert(
-        { project_id: projectId, document_id: documentId, added_at: new Date().toISOString() },
-        { onConflict: 'project_id,document_id' },
-      );
+      .upsert(row, { onConflict: 'project_id,document_id' });
     if (!error) return;
+    // Graceful degradation: if the `doc_meta` column hasn't been migrated yet
+    // (migration 065), persist the membership row without it rather than wedging
+    // the write. The workspace still syncs; it just lacks the richer metadata
+    // until the column exists.
+    if (meta && /doc_meta/.test(error.message)) {
+      const { error: retryError } = await sb
+        .from('content_analysis_corpus')
+        .upsert(base, { onConflict: 'project_id,document_id' });
+      if (!retryError) return;
+      failDurable('addToCaCorpus', retryError);
+    }
     failDurable('addToCaCorpus', error);
   }
-  memCorpus(projectId).add(documentId);
+  memCorpus(projectId).set(documentId, meta ?? memCorpus(projectId).get(documentId) ?? null);
 }
 
 /** Remove a document from a project's workspace corpus. Idempotent. */
