@@ -634,6 +634,41 @@ export default function ReferencesPage() {
     });
   }, [requireAuth, displayName]);
 
+  // Bulk delete for fallback mode. The displayed references come from the
+  // shared-API custom store (plus static/policy entries), so deletion has to
+  // go through `deleteRefFromApi` — not the reference-service, which targets
+  // Supabase. Mirrors the single-delete path used by the edit form: best-effort
+  // PDF cleanup, remove from the local custom-ref cache, then drop from state.
+  const handleDeleteReferencesFallback = useCallback(async (ids: string[]) => {
+    const idSet = new Set(ids);
+    const targets = references.filter(r => idSet.has(r.id));
+    const failures: string[] = [];
+    for (const ref of targets) {
+      if (ref.pdf_url) {
+        // Best-effort — a missing/failed PDF delete shouldn't block the row.
+        try { await deletePdf(ref.id); } catch { /* ignore */ }
+      }
+      const result = await deleteRefFromApi(ref.id);
+      if (!result.ok) failures.push(ref.title);
+    }
+    // Prune the local custom-ref cache so deletions survive a reload.
+    saveLocalCustomRefs(loadLocalCustomRefs().filter(r => !idSet.has(r.id)));
+    // Optimistically remove every selected row from the rendered list.
+    setReferences(prev => prev.filter(r => !idSet.has(r.id)));
+    if (failures.length > 0) {
+      showToast({
+        tone: 'danger',
+        message: `Couldn't delete ${failures.length} reference${failures.length !== 1 ? 's' : ''}`,
+        description: failures.slice(0, 3).join('; ') + (failures.length > 3 ? '…' : ''),
+      });
+    } else {
+      showToast({
+        tone: 'success',
+        message: `Deleted ${targets.length} reference${targets.length !== 1 ? 's' : ''}`,
+      });
+    }
+  }, [references]);
+
   const selectedLibrary = libraries.find(l => l.id === selectedLibraryId);
 
   // In fallback mode we render content directly without requiring a library selection
@@ -878,6 +913,7 @@ export default function ReferencesPage() {
                     onRefreshNeeded={() => {}}
                     onEditReference={(ref) => setFallbackEditingRef(ref)}
                     onAddToReadingList={handleAddToReadingList}
+                    onDeleteReferences={handleDeleteReferencesFallback}
                   />
                 )}
               </>
