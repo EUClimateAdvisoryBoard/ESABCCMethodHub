@@ -15,6 +15,10 @@ interface Props {
   /** When provided, each row exposes a remove control that takes the
       document out of this workspace's corpus (coded segments are kept). */
   onRemove?: (id: string) => void;
+  /** Per-document overall-tag override (manual document-level tags). When a
+      document id has an entry, its colour dots come from here instead of the
+      AI baseline (`doc.aiCodeIds`). */
+  overallTagsByDoc?: Record<string, string[]>;
 }
 
 /**
@@ -29,6 +33,7 @@ export default function DocumentList({
   counts,
   coveredBlocks,
   onRemove,
+  overallTagsByDoc,
 }: Props) {
   const codeById = new Map(codes.map(c => [c.id, c]));
 
@@ -106,7 +111,7 @@ export default function DocumentList({
                 {doc.shortTitle}
               </p>
               <div className="mt-1 flex items-center gap-1 flex-wrap">
-                {doc.aiCodeIds.slice(0, 6).map(id => {
+                {(overallTagsByDoc?.[doc.id] ?? doc.aiCodeIds).slice(0, 6).map(id => {
                   const c = codeById.get(id);
                   if (!c) return null;
                   return (

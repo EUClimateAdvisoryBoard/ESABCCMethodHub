@@ -49,6 +49,7 @@ import {
   referencePdfCacheKey,
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
+import { useOverallTags, effectiveOverallTags } from '@/lib/content-analysis/useOverallTags';
 import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import {
   sourceTierOf,
@@ -60,6 +61,7 @@ import DocumentSummaryPanel from '@/components/content-analysis/DocumentSummaryP
 import GuidedSession from '@/components/content-analysis/GuidedSession';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
+import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
@@ -186,6 +188,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     loadSummaryBlocks,
   } = useContentAnalysis();
   const liveRefs = useLiveReferences();
+  const overallTags = useOverallTags();
   const { user, displayName } = useAuth();
 
   /** Stamp a saved tag comment with the signed-in author so the segments
@@ -215,6 +218,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const [corpusLoaded, setCorpusLoaded] = useState(false);
   const [browseOpen, setBrowseOpen] = useState(false);
   const [browseQuery, setBrowseQuery] = useState('');
+  // Overall-tag filter for the "Add documents" browser — narrows the library
+  // to documents carrying at least one of the chosen document-level tags.
+  const [browseTagFilter, setBrowseTagFilter] = useState<string[]>([]);
 
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
   const [selectedCodeId, setSelectedCodeId] = useState<string | null>(null);
@@ -294,8 +300,35 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         (d.referenceAuthors ?? '').toLowerCase().includes(q),
       );
     }
+    if (browseTagFilter.length > 0) {
+      const wanted = new Set(browseTagFilter);
+      out = out.filter(d =>
+        effectiveOverallTags(d, overallTags.getOverride(d.id)).some(t => wanted.has(t)),
+      );
+    }
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery]);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, overallTags.getOverride]);
+
+  // ── Overall (document-level) tags ─────────────────────────────────────────
+  // The shared master taxonomy is the pool of selectable overall tags — the
+  // same codes policy documents are tagged with — so the dots stay comparable
+  // across every source tier.
+  const masterCodes = useMemo(
+    () => snapshot.codes.filter(c => c.scope === 'master'),
+    [snapshot.codes],
+  );
+
+  /** Resolved overall tags for every corpus document, for the list dots. */
+  const overallTagsByDoc = useMemo(() => {
+    const m: Record<string, string[]> = {};
+    for (const d of corpusDocs) m[d.id] = effectiveOverallTags(d, overallTags.getOverride(d.id));
+    return m;
+  }, [corpusDocs, overallTags.getOverride]);
+
+  /** Whether the active source tier supports manual overall tagging. Policy
+   *  documents carry an AI-curated baseline managed elsewhere; scientific &
+   *  grey literature are tagged by hand here. */
+  const canEditOverallTags = sourceType !== 'policy';
 
   // ── Codes visible in this workspace (master + this project's own) ─────────
   const visibleCodes = useMemo(
@@ -959,6 +992,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setIngestState({ status: 'idle' }); }}
                     counts={docCounts}
                     onRemove={confirmRemoveFromCorpus}
+                    overallTagsByDoc={overallTagsByDoc}
                   />
                 </div>
               )}
@@ -984,6 +1018,28 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     placeholder={`Search ${activeSourceMeta.title.toLowerCase()}…`}
                     className="w-full px-2 py-1 border border-grey-200 rounded text-[12px] mb-2"
                   />
+                  {/* Filter the library by overall (document-level) tag. */}
+                  <div className="flex items-center justify-between gap-2 mb-2">
+                    <OverallTagPicker
+                      codes={masterCodes}
+                      selected={browseTagFilter}
+                      onToggle={codeId =>
+                        setBrowseTagFilter(prev =>
+                          prev.includes(codeId) ? prev.filter(c => c !== codeId) : [...prev, codeId],
+                        )
+                      }
+                      label="Filter by tag"
+                    />
+                    {browseTagFilter.length > 0 && (
+                      <button
+                        type="button"
+                        onClick={() => setBrowseTagFilter([])}
+                        className="text-[10px] text-tertiary-light hover:text-secondary"
+                      >
+                        Clear
+                      </button>
+                    )}
+                  </div>
                   <ul className="max-h-[34vh] overflow-y-auto space-y-1">
                     {filteredBrowse.map(d => (
                       <li key={d.id}>
@@ -1009,7 +1065,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
             <div className="ca-ws-tour-codes border border-grey-200 rounded-lg bg-white">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
-                <span className="text-[11px] font-semibold text-tertiary-dark">Tag system</span>
+                <span
+                  className="text-[11px] font-semibold text-tertiary-dark"
+                  title="Tags you pin to passages inside a document — distinct from a document's overall tags"
+                >
+                  In-text tags
+                </span>
                 <button
                   type="button"
                   onClick={() => handleAddCode(null)}
@@ -1060,6 +1121,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 activeCodeId={selectedCodeId}
                 highlightedSegmentId={highlightedSegmentId}
                 ingestState={ingestState}
+                showOverallTags={canEditOverallTags}
+                overallTagCodes={masterCodes}
+                overallTagSelected={overallTagsByDoc[selectedDocument.id] ?? selectedDocument.aiCodeIds}
+                onToggleOverallTag={codeId =>
+                  overallTags.toggleTag(selectedDocument.id, codeId, selectedDocument.aiCodeIds)
+                }
                 summary={ownSummary}
                 otherSummaries={otherSummaries}
                 projectNameById={projectNameById}
@@ -1151,6 +1218,10 @@ function DocumentViewer({
   activeCodeId,
   highlightedSegmentId,
   ingestState,
+  showOverallTags,
+  overallTagCodes,
+  overallTagSelected,
+  onToggleOverallTag,
   summary,
   otherSummaries,
   projectNameById,
@@ -1172,6 +1243,10 @@ function DocumentViewer({
   activeCodeId: string | null;
   highlightedSegmentId: string | null;
   ingestState: { status: 'idle' | 'loading' | 'error' | 'ok'; message?: string };
+  showOverallTags: boolean;
+  overallTagCodes: CodeNode[];
+  overallTagSelected: string[];
+  onToggleOverallTag: (codeId: string) => void;
   summary: DocumentSummary | null;
   otherSummaries: DocumentSummary[];
   projectNameById: Map<string | null, string>;
@@ -1263,6 +1338,44 @@ function DocumentViewer({
           </button>
         </div>
       </div>
+
+      {/* Overall (document-level) tags — the coloured dots that describe the
+          whole source, distinct from the in-text tags pinned to passages.
+          Editable by hand for scientific & grey literature via a dropdown. */}
+      {showOverallTags && (
+        <div className="px-3 py-2 border-b border-grey-200 flex items-center gap-2 flex-wrap">
+          <span
+            className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold"
+            title="Document-level tags that describe this whole source — separate from the in-text tags you pin to passages"
+          >
+            Overall tags
+          </span>
+          {overallTagSelected.length > 0 ? (
+            overallTagSelected.map(id => {
+              const c = overallTagCodes.find(x => x.id === id);
+              if (!c) return null;
+              return (
+                <span
+                  key={id}
+                  className="inline-flex items-center gap-1 text-[10px] text-tertiary-dark bg-grey-50 border border-grey-200 rounded-full px-1.5 py-0.5"
+                >
+                  <span className="w-1.5 h-1.5 rounded-sm" style={{ backgroundColor: c.color }} aria-hidden />
+                  {c.name}
+                </span>
+              );
+            })
+          ) : (
+            <span className="text-[10px] text-tertiary-light italic">None yet</span>
+          )}
+          <OverallTagPicker
+            codes={overallTagCodes}
+            selected={overallTagSelected}
+            onToggle={onToggleOverallTag}
+            label="Edit"
+            align="right"
+          />
+        </div>
+      )}
 
       {/* Whole-document summary — a "comment for the entire paper", available
           for every document kind (policy, grey or scientific literature). */}
