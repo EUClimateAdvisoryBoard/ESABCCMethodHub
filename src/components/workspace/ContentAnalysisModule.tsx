@@ -1525,19 +1525,28 @@ function DocumentViewer({
   // reference id) — the ephemeral ingest cache can 404 on a different
   // serverless instance, and we already have the file in storage.
   const refId = isReference ? doc.id.replace(/^ref-doc-/, '') : null;
+  // When a reference's PDF lives in the public Supabase `reference-pdfs` bucket
+  // (every browser-ingested upload does), load it *directly* from that durable
+  // URL. It's the exact object we just stored, so it sidesteps the library
+  // proxy / row lookup that can 404 right after an upload. A DOI / landing-page
+  // `pdfUrl` is not a PDF, so only trust Supabase-hosted ones here.
+  const directPdfUrl =
+    isReference && doc.pdfUrl && /supabase\.(co|in)/.test(doc.pdfUrl) ? doc.pdfUrl : null;
   const pdfSrcUrl = doc.celexNumber
     ? `/api/content-analysis/pdf?celex=${encodeURIComponent(doc.celexNumber)}`
-    : refId
-      ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
-      : '';
-  // Fallback for reference PDFs: the durable references proxy above only knows
-  // references stored in the shared library (custom_references). References
-  // that aren't there — notably the bundled static library — 404 on that proxy
-  // even after their PDF has been ingested. Fall back to the content-analysis
-  // ingest cache (keyed by the document id, exactly as `ingestPdf` stored it
-  // this session) so the freshly-loaded PDF still renders.
+    : directPdfUrl
+      ? directPdfUrl
+      : refId
+        ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
+        : '';
+  // One fallback (react-pdf retries the primary once): if we loaded the direct
+  // storage URL, fall back to the library proxy; otherwise fall back to the
+  // content-analysis ingest cache (keyed by document id) for older uploads and
+  // static-library references the proxy doesn't know.
   const pdfFallbackUrl = refId
-    ? `/api/content-analysis/pdf?celex=${encodeURIComponent(referencePdfCacheKey(doc.id))}`
+    ? directPdfUrl
+      ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
+      : `/api/content-analysis/pdf?celex=${encodeURIComponent(referencePdfCacheKey(doc.id))}`
     : undefined;
   const hasPdfPane = Boolean(
     pdfSrcUrl && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
