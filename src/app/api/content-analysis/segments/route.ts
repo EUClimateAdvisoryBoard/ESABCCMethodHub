@@ -97,12 +97,20 @@ function coerceSegment(raw: unknown): CodedSegment | null {
 }
 
 export async function GET() {
-  const items = await getSegments();
-  return NextResponse.json({
-    items,
-    total: items.length,
-    persistent: isPersistent(),
-  });
+  try {
+    const items = await getSegments();
+    return NextResponse.json({
+      items,
+      total: items.length,
+      persistent: isPersistent(),
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return NextResponse.json(
+      { error: `Failed to load segments: ${message}` },
+      { status: 500 },
+    );
+  }
 }
 
 export async function POST(request: NextRequest) {

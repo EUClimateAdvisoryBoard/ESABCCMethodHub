@@ -121,19 +121,27 @@ function coerceSummary(raw: unknown): DocumentSummary | null {
 }
 
 export async function GET(request: NextRequest) {
-  const id = request.nextUrl.searchParams.get('id');
-  if (id) {
-    // Lazy-load path: a single summary hydrated with its full `blocks` deck.
-    const item = await getSummary(id);
-    if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 });
-    return NextResponse.json({ item, persistent: isPersistent() });
+  try {
+    const id = request.nextUrl.searchParams.get('id');
+    if (id) {
+      // Lazy-load path: a single summary hydrated with its full `blocks` deck.
+      const item = await getSummary(id);
+      if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+      return NextResponse.json({ item, persistent: isPersistent() });
+    }
+    const items = await getSummaries();
+    return NextResponse.json({
+      items,
+      total: items.length,
+      persistent: isPersistent(),
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return NextResponse.json(
+      { error: `Failed to load summaries: ${message}` },
+      { status: 500 },
+    );
   }
-  const items = await getSummaries();
-  return NextResponse.json({
-    items,
-    total: items.length,
-    persistent: isPersistent(),
-  });
 }
 
 export async function POST(request: NextRequest) {

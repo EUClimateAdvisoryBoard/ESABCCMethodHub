@@ -48,6 +48,7 @@ import SnapshotsPanel from '@/components/content-analysis/SnapshotsPanel';
 import NumericExtractionsPanel from '@/components/content-analysis/NumericExtractionsPanel';
 import DocumentSummaryPanel from '@/components/content-analysis/DocumentSummaryPanel';
 import ProjectLockPill from '@/components/content-analysis/ProjectLockPill';
+import SyncStatusPill from '@/components/content-analysis/SyncStatusPill';
 import { useProjectLock } from '@/lib/content-analysis/useProjectLock';
 import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
@@ -1381,6 +1382,11 @@ function ContentAnalysisPageInner() {
               {activeProject.description || '—'}
             </span>
           )}
+
+          {/* Durability pill — shows when work is still syncing to Supabase
+              or when no durable backend is configured. Hidden in the happy
+              path. */}
+          <SyncStatusPill />
 
           {/* Soft-lock pill — only visible on real projects (the master
               library is a shared workspace, not a per-analyst lock). */}

@@ -52,8 +52,13 @@ function coerceCode(raw: unknown): CodeNode | null {
 }
 
 export async function GET() {
-  const items = await getCodes();
-  return NextResponse.json({ items, total: items.length, persistent: isPersistent() });
+  try {
+    const items = await getCodes();
+    return NextResponse.json({ items, total: items.length, persistent: isPersistent() });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return NextResponse.json({ error: `Failed to load codes: ${message}` }, { status: 500 });
+  }
 }
 
 export async function POST(request: NextRequest) {

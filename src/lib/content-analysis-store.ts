@@ -175,57 +175,64 @@ export function isPersistent(): boolean {
   return getServerSupabase() !== null;
 }
 
+/**
+ * A durable write failed while Supabase *was* configured. We must NOT pretend
+ * it succeeded by silently dropping to the volatile in-memory cache (which is
+ * per-lambda-instance on serverless and never shared across users) — that is
+ * how content was being lost. Throw so the API route returns a non-OK status
+ * and the client keeps the item queued in its outbox to retry until it lands.
+ *
+ * The in-memory bag stays in use *only* when Supabase is not configured at all
+ * (local dev without env vars), reached by the `if (!sb)` branches below.
+ */
+function failDurable(op: string, error: { message: string }): never {
+  console.error(`[content-analysis-store] ${op} failed:`, error.message);
+  throw new Error(`${op} failed: ${error.message}`);
+}
+
 // Segments ------------------------------------------------------------------
 
 export async function getSegments(): Promise<CodedSegment[]> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('content_analysis_segments')
-      .select('*')
-      .order('created_at', { ascending: true })
-      .limit(MAX_ROWS);
-    if (error) {
-      console.error('[content-analysis-store] getSegments failed:', error.message);
-      return g.__caSegments!;
-    }
-    return (data as SegmentRow[]).map(rowToSegment);
-  }
-  return g.__caSegments!;
+  if (!sb) return g.__caSegments!;
+  const { data, error } = await sb
+    .from('content_analysis_segments')
+    .select('*')
+    .order('created_at', { ascending: true })
+    .limit(MAX_ROWS);
+  if (error) failDurable('getSegments', error);
+  return (data as SegmentRow[]).map(rowToSegment);
 }
 
 export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
   if (segs.length === 0) return;
   const sb = getServerSupabase();
-  if (sb) {
-    const rows = segs.map(segmentToRow);
-    let { error } = await sb
+  if (!sb) {
+    const bag = g.__caSegments!;
+    for (const s of segs) {
+      const idx = bag.findIndex(x => x.id === s.id);
+      if (idx >= 0) bag[idx] = s;
+      else bag.push(s);
+    }
+    return;
+  }
+  const rows = segs.map(segmentToRow);
+  let { error } = await sb
+    .from('content_analysis_segments')
+    .upsert(rows, { onConflict: 'id' });
+  // `pdf_anchor` (migration 057) and `screenshot` (migration 060) are newer
+  // columns. If the deploy reaches a database where a migration hasn't been
+  // applied yet, PostgREST rejects the unknown column — so retry once without
+  // the newer columns rather than failing every segment save (the precise
+  // highlight falls back to the block tint, and the figure screenshot to
+  // localStorage, until the columns land). Detected by the column name.
+  if (error && /(pdf_anchor|screenshot)/.test(error.message)) {
+    const legacyRows = rows.map(({ pdf_anchor: _a, screenshot: _b, ...rest }) => rest);
+    ({ error } = await sb
       .from('content_analysis_segments')
-      .upsert(rows, { onConflict: 'id' });
-    // `pdf_anchor` (migration 057) and `screenshot` (migration 060) are newer
-    // columns. If the deploy reaches a database where a migration hasn't been
-    // applied yet, PostgREST rejects the unknown column — so retry once without
-    // the newer columns rather than failing every segment save (the precise
-    // highlight falls back to the block tint, and the figure screenshot to
-    // localStorage, until the columns land). Detected by the column name.
-    if (error && /(pdf_anchor|screenshot)/.test(error.message)) {
-      const legacyRows = rows.map(({ pdf_anchor: _a, screenshot: _b, ...rest }) => rest);
-      ({ error } = await sb
-        .from('content_analysis_segments')
-        .upsert(legacyRows, { onConflict: 'id' }));
-    }
-    if (error) {
-      console.error('[content-analysis-store] upsertSegments failed:', error.message);
-    } else {
-      return;
-    }
+      .upsert(legacyRows, { onConflict: 'id' }));
   }
-  const bag = g.__caSegments!;
-  for (const s of segs) {
-    const idx = bag.findIndex(x => x.id === s.id);
-    if (idx >= 0) bag[idx] = s;
-    else bag.push(s);
-  }
+  if (error) failDurable('upsertSegments', error);
 }
 
 export async function updateSegmentNote(
@@ -235,53 +242,47 @@ export async function updateSegmentNote(
 ): Promise<boolean> {
   const now = new Date().toISOString();
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_segments')
-      .update({
-        note,
-        note_author: author?.name ?? null,
-        note_author_id: author?.id ?? null,
-        note_updated_at: now,
-        updated_at: now,
-      })
-      .eq('id', id);
-    if (error) {
-      console.error('[content-analysis-store] updateSegmentNote failed:', error.message);
-      return false;
-    }
+  if (!sb) {
+    const bag = g.__caSegments!;
+    const idx = bag.findIndex(x => x.id === id);
+    if (idx < 0) return false;
+    bag[idx] = {
+      ...bag[idx],
+      note,
+      noteAuthor: author?.name,
+      noteAuthorId: author?.id,
+      noteUpdatedAt: now,
+    };
     return true;
   }
-  const bag = g.__caSegments!;
-  const idx = bag.findIndex(x => x.id === id);
-  if (idx < 0) return false;
-  bag[idx] = {
-    ...bag[idx],
-    note,
-    noteAuthor: author?.name,
-    noteAuthorId: author?.id,
-    noteUpdatedAt: now,
-  };
+  const { error } = await sb
+    .from('content_analysis_segments')
+    .update({
+      note,
+      note_author: author?.name ?? null,
+      note_author_id: author?.id ?? null,
+      note_updated_at: now,
+      updated_at: now,
+    })
+    .eq('id', id);
+  if (error) failDurable('updateSegmentNote', error);
   return true;
 }
 
 export async function deleteSegment(id: string): Promise<boolean> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_segments')
-      .delete()
-      .eq('id', id);
-    if (error) {
-      console.error('[content-analysis-store] deleteSegment failed:', error.message);
-      return false;
-    }
+  if (!sb) {
+    const bag = g.__caSegments!;
+    const idx = bag.findIndex(x => x.id === id);
+    if (idx < 0) return false;
+    bag.splice(idx, 1);
     return true;
   }
-  const bag = g.__caSegments!;
-  const idx = bag.findIndex(x => x.id === id);
-  if (idx < 0) return false;
-  bag.splice(idx, 1);
+  const { error } = await sb
+    .from('content_analysis_segments')
+    .delete()
+    .eq('id', id);
+  if (error) failDurable('deleteSegment', error);
   return true;
 }
 
@@ -289,19 +290,14 @@ export async function deleteSegment(id: string): Promise<boolean> {
 
 export async function getSuggestions(): Promise<CodeSuggestion[]> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('content_analysis_suggestions')
-      .select('*')
-      .order('created_at', { ascending: true })
-      .limit(MAX_ROWS);
-    if (error) {
-      console.error('[content-analysis-store] getSuggestions failed:', error.message);
-      return g.__caSuggestions!;
-    }
-    return (data as SuggestionRow[]).map(rowToSuggestion);
-  }
-  return g.__caSuggestions!;
+  if (!sb) return g.__caSuggestions!;
+  const { data, error } = await sb
+    .from('content_analysis_suggestions')
+    .select('*')
+    .order('created_at', { ascending: true })
+    .limit(MAX_ROWS);
+  if (error) failDurable('getSuggestions', error);
+  return (data as SuggestionRow[]).map(rowToSuggestion);
 }
 
 /** Replace all pending suggestions for a document with a fresh batch. */
@@ -310,53 +306,40 @@ export async function replaceDocumentSuggestions(
   suggestions: CodeSuggestion[],
 ): Promise<void> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error: delError } = await sb
-      .from('content_analysis_suggestions')
-      .delete()
-      .eq('document_id', documentId);
-    if (delError) {
-      console.error(
-        '[content-analysis-store] replaceDocumentSuggestions delete failed:',
-        delError.message,
-      );
-    }
-    if (suggestions.length > 0) {
-      const { error: insError } = await sb
-        .from('content_analysis_suggestions')
-        .insert(suggestions.map(suggestionToRow));
-      if (insError) {
-        console.error(
-          '[content-analysis-store] replaceDocumentSuggestions insert failed:',
-          insError.message,
-        );
-      }
-    }
+  if (!sb) {
+    const bag = g.__caSuggestions!;
+    const kept = bag.filter(x => x.documentId !== documentId);
+    kept.push(...suggestions);
+    g.__caSuggestions = kept;
     return;
   }
-  const bag = g.__caSuggestions!;
-  const kept = bag.filter(x => x.documentId !== documentId);
-  kept.push(...suggestions);
-  g.__caSuggestions = kept;
+  const { error: delError } = await sb
+    .from('content_analysis_suggestions')
+    .delete()
+    .eq('document_id', documentId);
+  if (delError) failDurable('replaceDocumentSuggestions (delete)', delError);
+  if (suggestions.length > 0) {
+    const { error: insError } = await sb
+      .from('content_analysis_suggestions')
+      .insert(suggestions.map(suggestionToRow));
+    if (insError) failDurable('replaceDocumentSuggestions (insert)', insError);
+  }
 }
 
 export async function deleteSuggestion(id: string): Promise<boolean> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_suggestions')
-      .delete()
-      .eq('id', id);
-    if (error) {
-      console.error('[content-analysis-store] deleteSuggestion failed:', error.message);
-      return false;
-    }
+  if (!sb) {
+    const bag = g.__caSuggestions!;
+    const idx = bag.findIndex(x => x.id === id);
+    if (idx < 0) return false;
+    bag.splice(idx, 1);
     return true;
   }
-  const bag = g.__caSuggestions!;
-  const idx = bag.findIndex(x => x.id === id);
-  if (idx < 0) return false;
-  bag.splice(idx, 1);
+  const { error } = await sb
+    .from('content_analysis_suggestions')
+    .delete()
+    .eq('id', id);
+  if (error) failDurable('deleteSuggestion', error);
   return true;
 }
 
@@ -364,20 +347,15 @@ export async function clearDocumentSuggestions(
   documentId: string,
 ): Promise<void> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_suggestions')
-      .delete()
-      .eq('document_id', documentId);
-    if (error) {
-      console.error(
-        '[content-analysis-store] clearDocumentSuggestions failed:',
-        error.message,
-      );
-    }
+  if (!sb) {
+    g.__caSuggestions = g.__caSuggestions!.filter(x => x.documentId !== documentId);
     return;
   }
-  g.__caSuggestions = g.__caSuggestions!.filter(x => x.documentId !== documentId);
+  const { error } = await sb
+    .from('content_analysis_suggestions')
+    .delete()
+    .eq('document_id', documentId);
+  if (error) failDurable('clearDocumentSuggestions', error);
 }
 
 // Codes ---------------------------------------------------------------------
@@ -423,59 +401,48 @@ function codeToRow(c: CodeNode): CodeRow {
 
 export async function getCodes(): Promise<CodeNode[]> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('content_analysis_codes')
-      .select('*')
-      .limit(MAX_ROWS);
-    if (error) {
-      console.error('[content-analysis-store] getCodes failed:', error.message);
-      return g.__caCodes!;
-    }
-    return (data as CodeRow[]).map(rowToCode);
-  }
-  return g.__caCodes!;
+  if (!sb) return g.__caCodes!;
+  const { data, error } = await sb
+    .from('content_analysis_codes')
+    .select('*')
+    .limit(MAX_ROWS);
+  if (error) failDurable('getCodes', error);
+  return (data as CodeRow[]).map(rowToCode);
 }
 
 export async function upsertCodes(codes: CodeNode[]): Promise<void> {
   if (codes.length === 0) return;
   const sb = getServerSupabase();
-  if (sb) {
-    const rows = codes.map(codeToRow);
-    const { error } = await sb
-      .from('content_analysis_codes')
-      .upsert(rows, { onConflict: 'id' });
-    if (error) {
-      console.error('[content-analysis-store] upsertCodes failed:', error.message);
-    } else {
-      return;
+  if (!sb) {
+    const bag = g.__caCodes!;
+    for (const c of codes) {
+      const idx = bag.findIndex(x => x.id === c.id);
+      if (idx >= 0) bag[idx] = c;
+      else bag.push(c);
     }
+    return;
   }
-  const bag = g.__caCodes!;
-  for (const c of codes) {
-    const idx = bag.findIndex(x => x.id === c.id);
-    if (idx >= 0) bag[idx] = c;
-    else bag.push(c);
-  }
+  const rows = codes.map(codeToRow);
+  const { error } = await sb
+    .from('content_analysis_codes')
+    .upsert(rows, { onConflict: 'id' });
+  if (error) failDurable('upsertCodes', error);
 }
 
 export async function deleteCode(id: string): Promise<boolean> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_codes')
-      .delete()
-      .eq('id', id);
-    if (error) {
-      console.error('[content-analysis-store] deleteCode failed:', error.message);
-      return false;
-    }
+  if (!sb) {
+    const bag = g.__caCodes!;
+    const idx = bag.findIndex(x => x.id === id);
+    if (idx < 0) return false;
+    bag.splice(idx, 1);
     return true;
   }
-  const bag = g.__caCodes!;
-  const idx = bag.findIndex(x => x.id === id);
-  if (idx < 0) return false;
-  bag.splice(idx, 1);
+  const { error } = await sb
+    .from('content_analysis_codes')
+    .delete()
+    .eq('id', id);
+  if (error) failDurable('deleteCode', error);
   return true;
 }
 
@@ -546,35 +513,28 @@ const SUMMARY_LIST_COLUMNS_LEGACY = 'id,document_id,project_id,text,created_at,u
 
 export async function getSummaries(): Promise<DocumentSummary[]> {
   const sb = getServerSupabase();
-  if (sb) {
-    const primary = await sb
+  if (!sb) return g.__caSummaries!.map(stripBlocks);
+  const primary = await sb
+    .from('content_analysis_summaries')
+    .select(SUMMARY_LIST_COLUMNS)
+    .order('updated_at', { ascending: true })
+    .limit(MAX_ROWS);
+  let data: unknown = primary.data;
+  let error = primary.error;
+  // `block_count` (migration 055) is a newer column. On a database that
+  // hasn't applied it yet, PostgREST rejects the unknown column — retry
+  // without it so summaries still load (decks degrade to text-only).
+  if (error && /block_count/.test(error.message)) {
+    const legacy = await sb
       .from('content_analysis_summaries')
-      .select(SUMMARY_LIST_COLUMNS)
+      .select(SUMMARY_LIST_COLUMNS_LEGACY)
       .order('updated_at', { ascending: true })
       .limit(MAX_ROWS);
-    let data: unknown = primary.data;
-    let error = primary.error;
-    // `block_count` (migration 055) is a newer column. On a database that
-    // hasn't applied it yet, PostgREST rejects the unknown column — retry
-    // without it so summaries still load (decks degrade to text-only) rather
-    // than silently falling back to the per-process in-memory store, which is
-    // never shared across users.
-    if (error && /block_count/.test(error.message)) {
-      const legacy = await sb
-        .from('content_analysis_summaries')
-        .select(SUMMARY_LIST_COLUMNS_LEGACY)
-        .order('updated_at', { ascending: true })
-        .limit(MAX_ROWS);
-      data = legacy.data;
-      error = legacy.error;
-    }
-    if (error) {
-      console.error('[content-analysis-store] getSummaries failed:', error.message);
-      return g.__caSummaries!.map(stripBlocks);
-    }
-    return (data as SummaryRow[]).map(rowToSummaryLight);
+    data = legacy.data;
+    error = legacy.error;
   }
-  return g.__caSummaries!.map(stripBlocks);
+  if (error) failDurable('getSummaries', error);
+  return (data as SummaryRow[]).map(rowToSummaryLight);
 }
 
 /** Fetch a single summary with its full `blocks` deck hydrated. Returns
@@ -582,79 +542,66 @@ export async function getSummaries(): Promise<DocumentSummary[]> {
  *  called when the user opens "Show summary". */
 export async function getSummary(id: string): Promise<DocumentSummary | null> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('content_analysis_summaries')
-      .select('*')
-      .eq('id', id)
-      .maybeSingle();
-    if (error) {
-      console.error('[content-analysis-store] getSummary failed:', error.message);
-      return g.__caSummaries!.find(s => s.id === id) ?? null;
-    }
-    return data ? rowToSummaryFull(data as SummaryRow) : null;
-  }
-  return g.__caSummaries!.find(s => s.id === id) ?? null;
+  if (!sb) return g.__caSummaries!.find(s => s.id === id) ?? null;
+  const { data, error } = await sb
+    .from('content_analysis_summaries')
+    .select('*')
+    .eq('id', id)
+    .maybeSingle();
+  if (error) failDurable('getSummary', error);
+  return data ? rowToSummaryFull(data as SummaryRow) : null;
 }
 
 export async function upsertSummaries(summaries: DocumentSummary[]): Promise<void> {
   if (summaries.length === 0) return;
   const sb = getServerSupabase();
-  if (sb) {
-    const rows = summaries.map(summaryToRow);
-    let { error } = await sb
+  if (!sb) {
+    const bag = g.__caSummaries!;
+    for (const s of summaries) {
+      const withCount: DocumentSummary = {
+        ...s,
+        blocks: Array.isArray(s.blocks) ? s.blocks : [],
+        blockCount: Array.isArray(s.blocks) ? s.blocks.length : 0,
+      };
+      const idx = bag.findIndex(x => x.id === s.id);
+      if (idx >= 0) bag[idx] = withCount;
+      else bag.push(withCount);
+    }
+    return;
+  }
+  const rows = summaries.map(summaryToRow);
+  let { error } = await sb
+    .from('content_analysis_summaries')
+    .upsert(rows, { onConflict: 'id' });
+  // `blocks` and `block_count` (migration 055_content_analysis_summary_decks)
+  // are newer columns. If the deploy reaches a database where that migration
+  // hasn't been applied yet, PostgREST rejects the unknown columns — so retry
+  // once without them rather than failing every summary save. The plain-text
+  // lead still persists durably; the rich slide deck falls back to localStorage
+  // until the columns land. Same pattern as upsertSegments above.
+  if (error && /(blocks|block_count)/.test(error.message)) {
+    const legacyRows = rows.map(({ blocks: _b, block_count: _c, ...rest }) => rest);
+    ({ error } = await sb
       .from('content_analysis_summaries')
-      .upsert(rows, { onConflict: 'id' });
-    // `blocks` and `block_count` (migration 055_content_analysis_summary_decks)
-    // are newer columns. If the deploy reaches a database where that migration
-    // hasn't been applied yet, PostgREST rejects the unknown columns — so retry
-    // once without them rather than failing every summary save (and silently
-    // dropping to the per-process in-memory store, which is never shared across
-    // users). The plain-text lead still persists durably; the rich slide deck
-    // falls back to localStorage until the columns land. Same pattern as
-    // upsertSegments above.
-    if (error && /(blocks|block_count)/.test(error.message)) {
-      const legacyRows = rows.map(({ blocks: _b, block_count: _c, ...rest }) => rest);
-      ({ error } = await sb
-        .from('content_analysis_summaries')
-        .upsert(legacyRows, { onConflict: 'id' }));
-    }
-    if (error) {
-      console.error('[content-analysis-store] upsertSummaries failed:', error.message);
-    } else {
-      return;
-    }
+      .upsert(legacyRows, { onConflict: 'id' }));
   }
-  const bag = g.__caSummaries!;
-  for (const s of summaries) {
-    const withCount: DocumentSummary = {
-      ...s,
-      blocks: Array.isArray(s.blocks) ? s.blocks : [],
-      blockCount: Array.isArray(s.blocks) ? s.blocks.length : 0,
-    };
-    const idx = bag.findIndex(x => x.id === s.id);
-    if (idx >= 0) bag[idx] = withCount;
-    else bag.push(withCount);
-  }
+  if (error) failDurable('upsertSummaries', error);
 }
 
 export async function deleteSummary(id: string): Promise<boolean> {
   const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('content_analysis_summaries')
-      .delete()
-      .eq('id', id);
-    if (error) {
-      console.error('[content-analysis-store] deleteSummary failed:', error.message);
-      return false;
-    }
+  if (!sb) {
+    const bag = g.__caSummaries!;
+    const idx = bag.findIndex(x => x.id === id);
+    if (idx < 0) return false;
+    bag.splice(idx, 1);
     return true;
   }
-  const bag = g.__caSummaries!;
-  const idx = bag.findIndex(x => x.id === id);
-  if (idx < 0) return false;
-  bag.splice(idx, 1);
+  const { error } = await sb
+    .from('content_analysis_summaries')
+    .delete()
+    .eq('id', id);
+  if (error) failDurable('deleteSummary', error);
   return true;
 }
 

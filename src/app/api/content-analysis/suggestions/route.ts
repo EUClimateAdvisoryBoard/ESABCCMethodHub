@@ -59,12 +59,20 @@ function coerceSuggestion(raw: unknown): CodeSuggestion | null {
 }
 
 export async function GET() {
-  const items = await getSuggestions();
-  return NextResponse.json({
-    items,
-    total: items.length,
-    persistent: isPersistent(),
-  });
+  try {
+    const items = await getSuggestions();
+    return NextResponse.json({
+      items,
+      total: items.length,
+      persistent: isPersistent(),
+    });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return NextResponse.json(
+      { error: `Failed to load suggestions: ${message}` },
+      { status: 500 },
+    );
+  }
 }
 
 export async function POST(request: NextRequest) {
