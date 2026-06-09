@@ -31,6 +31,9 @@ export interface CodeEditorPayload {
     text: string;
     blockId?: string;
     pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor;
+    /** Captured figure (PNG data-URL) to attach to the segment created once
+     *  the new tag is added. */
+    screenshot?: string;
   };
 }
 

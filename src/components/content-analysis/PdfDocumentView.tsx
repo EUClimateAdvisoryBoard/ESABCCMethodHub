@@ -29,6 +29,20 @@ export interface PdfTextSelection {
   rect: DOMRect;
 }
 
+/** A figure boxed on a rendered PDF page with the "Capture figure" tool. The
+ *  parent attaches the cropped image to a coded segment so a tag can carry the
+ *  *picture* of a chart/figure, not just a text quote. */
+export interface PdfRegionCapture {
+  page: number;
+  /** Region rectangle in PDF user-space points (`[[x, y, w, h]]`), so the
+   *  capture can be re-highlighted on the page like a text selection. */
+  rects: number[][];
+  /** PNG data-URL cropped from the rendered page canvas. */
+  imageDataUrl: string;
+  /** Client rect of the captured region, for anchoring the floating toolbar. */
+  rect: DOMRect;
+}
+
 interface Props {
   document: AnalysisDocument;
   /** URL the browser can fetch from. Typically `/api/content-analysis/pdf?celex=…` */
@@ -50,6 +64,9 @@ interface Props {
    *  the page text layer is made selectable and block overlays are
    *  non-interactive (so they don't swallow the selection). */
   onSelectText?: (sel: PdfTextSelection) => void;
+  /** Fired when the user boxes a figure with the "Capture figure" tool. When
+   *  provided, a toggle to enter capture mode is shown above the pages. */
+  onCaptureRegion?: (cap: PdfRegionCapture) => void;
   /** Legacy click-to-highlight a block. Used by the standalone content
    *  analysis page. Ignored when `onSelectText` is set. */
   onSelectBlock?: (blockId: string) => void;
@@ -97,11 +114,13 @@ export default function PdfDocumentView({
   highlightedBlockId,
   highlightedSegmentId,
   onSelectText,
+  onCaptureRegion,
   onSelectBlock,
 }: Props) {
   const [numPages, setNumPages] = useState(0);
   const [pageWidth, setPageWidth] = useState(780);
   const [loadError, setLoadError] = useState<string | null>(null);
+  const [captureMode, setCaptureMode] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // The URL currently handed to react-pdf. Starts at the primary source; if
@@ -208,9 +227,29 @@ export default function PdfDocumentView({
   return (
     <div ref={containerRef} className="flex flex-col items-center">
       {onSelectText && (
-        <p className="self-stretch px-1 pb-1 text-[10px] text-tertiary-light">
-          Select any text on the page to tag it.
-        </p>
+        <div className="self-stretch flex items-center justify-between gap-2 px-1 pb-1">
+          <p className="text-[10px] text-tertiary-light">
+            {captureMode
+              ? 'Drag a box around a figure to capture it as a tag.'
+              : 'Select any text on the page to tag it.'}
+          </p>
+          {onCaptureRegion && (
+            <button
+              type="button"
+              onClick={() => setCaptureMode(m => !m)}
+              aria-pressed={captureMode}
+              title="Box a chart or figure and attach the screenshot to a tag"
+              className={`shrink-0 inline-flex items-center gap-1 rounded px-2 py-0.5 text-[10.5px] font-medium transition ${
+                captureMode
+                  ? 'bg-[#E87722] text-white hover:bg-[#c45f14]'
+                  : 'bg-white border border-[#E6E7E8] text-[#3D5265] hover:border-[#E87722] hover:text-[#E87722]'
+              }`}
+            >
+              <span aria-hidden>▣</span>
+              {captureMode ? 'Capturing figure — cancel' : 'Capture figure'}
+            </button>
+          )}
+        </div>
       )}
       <Document
         file={file}
@@ -243,6 +282,12 @@ export default function PdfDocumentView({
             highlightedBlockId={highlightedBlockId ?? null}
             highlightedSegmentId={highlightedSegmentId ?? null}
             onSelectText={onSelectText}
+            captureMode={captureMode}
+            onCaptureRegion={
+              onCaptureRegion
+                ? cap => { onCaptureRegion(cap); setCaptureMode(false); }
+                : undefined
+            }
             onSelectBlock={onSelectText ? undefined : onSelectBlock}
           />
         ))}
@@ -267,6 +312,9 @@ interface PageProps {
   highlightedBlockId: string | null;
   highlightedSegmentId: string | null;
   onSelectText?: (sel: PdfTextSelection) => void;
+  /** When true, dragging on the page boxes a figure instead of selecting text. */
+  captureMode?: boolean;
+  onCaptureRegion?: (cap: PdfRegionCapture) => void;
   onSelectBlock?: (blockId: string) => void;
 }
 
@@ -280,6 +328,8 @@ function PdfPageOverlay({
   highlightedBlockId,
   highlightedSegmentId,
   onSelectText,
+  captureMode,
+  onCaptureRegion,
   onSelectBlock,
 }: PageProps) {
   // pdfjs viewport is in PDF user-space units at scale 1. Our bboxes were
@@ -288,6 +338,75 @@ function PdfPageOverlay({
   // which we read from the Page's onRenderSuccess callback.
   const [scale, setScale] = useState<number | null>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
+
+  // ── Figure capture ───────────────────────────────────────────────────────
+  // Live marquee rectangle (wrap-relative client px) while dragging in capture
+  // mode; the drag start anchor is kept in a ref so the window listeners read a
+  // stable value.
+  const [marquee, setMarquee] = useState<{ x0: number; y0: number; x1: number; y1: number } | null>(null);
+  const captureStartRef = useRef<{ x: number; y: number } | null>(null);
+
+  function wrapRelPoint(clientX: number, clientY: number) {
+    const r = wrapRef.current!.getBoundingClientRect();
+    return { x: clientX - r.left, y: clientY - r.top };
+  }
+
+  function handleCaptureMouseDown(e: React.MouseEvent) {
+    if (!captureMode || !onCaptureRegion || scale == null) return;
+    e.preventDefault();
+    const p = wrapRelPoint(e.clientX, e.clientY);
+    captureStartRef.current = p;
+    setMarquee({ x0: p.x, y0: p.y, x1: p.x, y1: p.y });
+    const onMove = (ev: MouseEvent) => {
+      const q = wrapRelPoint(ev.clientX, ev.clientY);
+      setMarquee(m => (m ? { ...m, x1: q.x, y1: q.y } : m));
+    };
+    const onUp = (ev: MouseEvent) => {
+      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mouseup', onUp);
+      finishCapture(ev);
+    };
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+  }
+
+  function finishCapture(ev: MouseEvent) {
+    const start = captureStartRef.current;
+    captureStartRef.current = null;
+    setMarquee(null);
+    const wrap = wrapRef.current;
+    if (!start || !wrap || scale == null || !onCaptureRegion) return;
+    const end = wrapRelPoint(ev.clientX, ev.clientY);
+    const left = Math.min(start.x, end.x);
+    const top = Math.min(start.y, end.y);
+    const w = Math.abs(end.x - start.x);
+    const h = Math.abs(end.y - start.y);
+    // Ignore stray clicks / tiny drags.
+    if (w < 6 || h < 6) return;
+    const canvas = wrap.querySelector('canvas');
+    if (!canvas) return;
+    // The page canvas is rendered at device-pixel resolution, so scale the
+    // wrap-relative crop rectangle into source-canvas pixels before cropping.
+    const sx = canvas.width / canvas.clientWidth;
+    const sy = canvas.height / canvas.clientHeight;
+    const out = window.document.createElement('canvas');
+    out.width = Math.max(1, Math.round(w * sx));
+    out.height = Math.max(1, Math.round(h * sy));
+    const ctx = out.getContext('2d');
+    if (!ctx) return;
+    ctx.drawImage(canvas, left * sx, top * sy, w * sx, h * sy, 0, 0, out.width, out.height);
+    let imageDataUrl: string;
+    try {
+      imageDataUrl = out.toDataURL('image/png');
+    } catch {
+      // Tainted canvas (shouldn't happen for same-origin PDFs) — bail quietly.
+      return;
+    }
+    const rects = [[left / scale, top / scale, w / scale, h / scale]];
+    const wrapRect = wrap.getBoundingClientRect();
+    const rect = new DOMRect(wrapRect.left + left, wrapRect.top + top, w, h);
+    onCaptureRegion({ page: pageNumber, rects, imageDataUrl, rect });
+  }
 
   // When several tags mark the same passage, their precise highlights would
   // otherwise stack exactly on top of each other and only the last-painted
@@ -312,7 +431,7 @@ function PdfPageOverlay({
   // selectable; we hit-test the selection anchor against the block boxes to
   // attribute it to a block.
   function handleMouseUp() {
-    if (!onSelectText) return;
+    if (!onSelectText || captureMode) return;
     const sel = window.getSelection();
     if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
     const text = sel.toString().replace(/\s+/g, ' ').trim();
@@ -396,6 +515,30 @@ function PdfPageOverlay({
               isHighlighted={highlightedSegmentId === seg.id}
             />
           ))}
+        </div>
+      )}
+      {/* Figure-capture surface — sits above the text layer so a drag boxes a
+          region instead of selecting text. */}
+      {captureMode && onCaptureRegion && scale != null && (
+        <div
+          className="absolute inset-0 z-10"
+          style={{ cursor: 'crosshair' }}
+          onMouseDown={handleCaptureMouseDown}
+        >
+          {marquee && (
+            <div
+              style={{
+                position: 'absolute',
+                left: Math.min(marquee.x0, marquee.x1),
+                top: Math.min(marquee.y0, marquee.y1),
+                width: Math.abs(marquee.x1 - marquee.x0),
+                height: Math.abs(marquee.y1 - marquee.y0),
+                border: '1.5px solid #E87722',
+                background: 'rgba(232, 119, 34, 0.12)',
+                pointerEvents: 'none',
+              }}
+            />
+          )}
         </div>
       )}
     </div>

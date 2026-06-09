@@ -68,7 +68,7 @@ import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/conte
 import { useGeneralNotes } from '@/lib/content-analysis/useGeneralNotes';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
-import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
+import type { PdfTextSelection, PdfRegionCapture } from '@/components/content-analysis/PdfDocumentView';
 import CodeEditorModal, {
   type CodeEditorPayload,
   type CodeEditorResult,
@@ -246,6 +246,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     addSegment,
     deleteSegment,
     updateSegmentNote,
+    updateSegmentText,
     upsertDocument,
     applyIngestion,
     setDocumentSummary,
@@ -292,6 +293,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // When set, the segments panel opens an inline comment editor for this
   // segment — used by the "Add comment" toast action straight after tagging.
   const [commentForSegmentId, setCommentForSegmentId] = useState<string | null>(null);
+  const [titleForSegmentId, setTitleForSegmentId] = useState<string | null>(null);
   const [toolbarSel, setToolbarSel] = useState<ToolbarSelection | null>(null);
   // A passage handed to the General notes panel for a tag-free comment, plus
   // the block a note wants to jump back to in the document.
@@ -564,7 +566,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
   };
 
-  const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }, codeId: string) => {
+  const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor; screenshot?: string }, codeId: string) => {
     if (!selectedDocument) return;
     upsertDocument(selectedDocument);
     const seg = addSegment({
@@ -575,6 +577,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       text: input.text,
       blockId: input.blockId,
       pdfAnchor: input.pdfAnchor,
+      screenshot: input.screenshot,
       // Stamp with this workspace's project id so the tag is attributable
       // to the project — this is what powers the lens comparison.
       projectId,
@@ -582,6 +585,23 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     setNoteJumpBlockId(null);
     setHighlightedSegmentId(seg.id);
     const code = snapshot.codes.find(c => c.id === codeId);
+    // A captured figure has no text quote — nudge the analyst to title it
+    // instead of commenting, and jump straight into the title editor.
+    if (input.screenshot) {
+      showToast({
+        tone: 'success',
+        message: `Figure tagged as "${code?.name ?? 'tag'}"`,
+        description: 'Give the figure a title so it reads in the list and exports.',
+        actionLabel: 'Add title',
+        onAction: () => {
+          setView('code');
+          setHighlightedSegmentId(seg.id);
+          setTitleForSegmentId(seg.id);
+        },
+        timeoutMs: 8000,
+      });
+      return;
+    }
     showToast({
       tone: 'success',
       message: `Tagged as "${code?.name ?? 'tag'}"`,
@@ -596,7 +616,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     });
   };
 
-  const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }) => {
+  const handleCreateSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor; screenshot?: string }) => {
     if (!selectedCodeId || !selectedDocument) return;
     createSegment(input, selectedCodeId);
   };
@@ -1288,8 +1308,11 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onOpenSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
                 onDelete={deleteSegment}
                 onUpdateNote={handleUpdateNote}
+                onUpdateTitle={updateSegmentText}
                 requestCommentForId={commentForSegmentId}
                 onCommentRequestConsumed={() => setCommentForSegmentId(null)}
+                requestTitleForId={titleForSegmentId}
+                onTitleRequestConsumed={() => setTitleForSegmentId(null)}
               />
             </div>
           </aside>
@@ -1333,14 +1356,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         codes={visibleCodes}
         onApply={() => {
           if (!toolbarSel || !selectedCodeId) return;
-          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor }, selectedCodeId);
+          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor, screenshot: toolbarSel.screenshot }, selectedCodeId);
           setToolbarSel(null);
         }}
         onSplit={() => setToolbarSel(null)}
         onPickCode={codeId => {
           if (!toolbarSel) return;
           setSelectedCodeId(codeId);
-          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor }, codeId);
+          createSegment({ startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor, screenshot: toolbarSel.screenshot }, codeId);
           setToolbarSel(null);
         }}
         onClear={() => setToolbarSel(null)}
@@ -1362,7 +1385,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             mode: 'add',
             targetId: null,
             seedName: suggestedName,
-            pendingSegmentInput: { startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor },
+            pendingSegmentInput: { startChar: toolbarSel.startChar, endChar: toolbarSel.endChar, text: toolbarSel.text, blockId: toolbarSel.blockId, pdfAnchor: toolbarSel.pdfAnchor, screenshot: toolbarSel.screenshot },
           });
           setToolbarSel(null);
         }}
@@ -1425,7 +1448,7 @@ function DocumentViewer({
   projectNameById: Map<string | null, string>;
   onSaveSummary: (text: string, blocks: SummaryBlock[]) => void;
   onLoadSummaryBlocks: (id: string) => Promise<SummaryBlock[]>;
-  onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor }) => void;
+  onCreateSegment: (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor; screenshot?: string }) => void;
   onSelectSegment: (id: string) => void;
   onDeleteSegment: (id: string) => void;
   onCommentSegment: (id: string) => void;
@@ -1643,6 +1666,18 @@ function DocumentViewer({
                 endChar,
                 text: sel.text,
                 rect: sel.rect,
+              });
+            }}
+            onCaptureRegion={(cap: PdfRegionCapture) => {
+              // A boxed figure has no text anchor — carry the screenshot and a
+              // precise region anchor so the tag marks the figure on the page.
+              onSelectionWithoutCode({
+                pdfAnchor: { page: cap.page, rects: cap.rects },
+                screenshot: cap.imageDataUrl,
+                startChar: 0,
+                endChar: 0,
+                text: '',
+                rect: cap.rect,
               });
             }}
           />

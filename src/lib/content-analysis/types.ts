@@ -196,6 +196,11 @@ export interface CodedSegment {
   /** Precise PDF selection anchor — present for passages marked directly on
    *  a PDF page. Drives exact-position highlighting and click-to-jump. */
   pdfAnchor?: PdfAnchor;
+  /** Captured figure — a PNG data-URL cropped from the rendered PDF page when
+   *  the analyst boxes a chart/figure with the "Capture figure" tool. Lets a
+   *  tag carry the *image* of a figure (the screenshot) alongside, or instead
+   *  of, a verbatim text quote. Absent for ordinary text-only segments. */
+  screenshot?: string;
   /** Inclusive start / exclusive end. */
   startChar: number;
   endChar: number;

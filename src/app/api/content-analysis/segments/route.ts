@@ -30,6 +30,11 @@ const MAX_NAME_LEN = 200;
 const MAX_BATCH = 500;
 
 const MAX_ANCHOR_RECTS = 200;
+// A captured figure is a PNG data-URL. Generously cap it (~4 MB of base64) so a
+// reasonable chart screenshot round-trips while a runaway payload can't bloat a
+// row. Oversized or non-image values are dropped (the client copy in
+// localStorage still renders).
+const MAX_SCREENSHOT_LEN = 4_000_000;
 
 function clampString(v: unknown, max: number): string {
   if (typeof v !== 'string') return '';
@@ -71,6 +76,12 @@ function coerceSegment(raw: unknown): CodedSegment | null {
     codeId: r.codeId,
     blockId: typeof r.blockId === 'string' ? r.blockId : undefined,
     pdfAnchor: coercePdfAnchor(r.pdfAnchor),
+    screenshot:
+      typeof r.screenshot === 'string' &&
+      r.screenshot.startsWith('data:image/') &&
+      r.screenshot.length <= MAX_SCREENSHOT_LEN
+        ? r.screenshot
+        : undefined,
     startChar: r.startChar,
     endChar: r.endChar,
     text: clampString(r.text, MAX_TEXT_LEN),
