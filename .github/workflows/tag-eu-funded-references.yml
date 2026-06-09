@@ -4,11 +4,20 @@ name: Tag EU-funded references
 # reach api.crossref.org, unlike the restricted dev sandbox), then commits the
 # resulting tag map + report back to the branch the workflow is triggered from.
 #
-# Trigger this manually from the Actions tab (Run workflow) on the branch where
-# you want the tags committed.
+# Runs automatically when the script or this workflow changes on the working
+# branch, and can also be triggered manually from the Actions tab. The runner's
+# commit-back uses GITHUB_TOKEN, which (by GitHub design) does not re-trigger
+# this workflow, so there's no risk of a loop; the path filter keeps it from
+# firing on the generated outputs too.
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - claude/lucid-cori-31lar7
+    paths:
+      - scripts/tag-eu-funded-references.mjs
+      - .github/workflows/tag-eu-funded-references.yml
 
 permissions:
   contents: write
