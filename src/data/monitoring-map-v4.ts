@@ -28,6 +28,22 @@
  * the placement of indicators below are our own, and the chips link only to
  * indicators already curated in this platform.
  *
+ * Why this, and not the sectoral view? The default ESABCC boards read *down a
+ * sector* (Energy, Industry, Transport, …), which mirrors how policy is owned
+ * and how the report is written. That is the right lens for a sector lead, but
+ * it is a poor lens for judging progress *as a system*, because each sector
+ * column silently mixes every stage of the causal chain — the finance, the
+ * built capacity, the shares and the realised emissions all sit together — so
+ * you cannot see *where* progress is stuck, and the cross-cutting signals that
+ * belong to no single sector (carbon price, finance, R&D, and almost the whole
+ * of adaptation risk: heat mortality, wildfire, drought, sea level, flood
+ * damage, the insurance gap) have nowhere to live. The four layers here are a
+ * causal pipeline read left-to-right, so a stall shows up as a *break* in the
+ * chain: enablers green but delivery flat is an implementation gap; delivery up
+ * but risk still climbing means the locked-in warming is outrunning us. It is a
+ * complement to the sectoral view — the system-level "are we on track, and
+ * where is it stuck?" board — not a replacement for it.
+ *
  * To stay in lock-step with the curated catalogue (and avoid re-listing ~100
  * indicator ids by hand), the board is *derived* from the Advanced version 2
  * results-chain board: each of its six rungs maps onto one of the four layers
@@ -69,7 +85,7 @@ const LAYER_META: readonly LayerMeta[] = [
     index: 1,
     name: 'Enablers & inputs',
     blurb:
-      'Are the conditions for action in place? Finance, carbon pricing, laws, R&D, skills and the strategies & plans that have to be set before anything can be delivered.',
+      'Are the conditions for action in place? Finance, carbon pricing, laws, R&D, skills and the strategies & plans that come before anything is delivered. If this layer is flat, nothing downstream can move.',
     color: '#6D5BD0',
   },
   {
@@ -77,7 +93,7 @@ const LAYER_META: readonly LayerMeta[] = [
     index: 2,
     name: 'Delivery on the ground',
     blurb:
-      'Is action actually happening? Capacity installed, assets built and measures rolled out — the physical roll-out the enablers are meant to unlock.',
+      'Is action actually happening? Capacity installed, assets built and measures rolled out. Enablers in place but this layer flat is the tell-tale of an implementation gap.',
     color: '#2563A6',
   },
   {
@@ -85,7 +101,7 @@ const LAYER_META: readonly LayerMeta[] = [
     index: 3,
     name: 'Outcomes',
     blurb:
-      'Is delivery showing up in the numbers that matter — shares, rates and intensities, and ultimately the realised emissions and removals?',
+      'Is delivery showing up in the numbers that matter — shares, rates and intensities, and ultimately the realised emissions and removals the whole pipeline exists to bend?',
     color: '#3F8F5B',
   },
   {
@@ -93,7 +109,7 @@ const LAYER_META: readonly LayerMeta[] = [
     index: 4,
     name: 'Risk, harm & climate signal',
     blurb:
-      'Is residual risk, loss and vulnerability actually falling? The hazard signal we operate in and the realised harm the system exists to reduce.',
+      'Is residual risk, loss and vulnerability actually falling? The hazard signal we operate in and the realised harm the system reduces. Outcomes improving but this layer still climbing means locked-in warming is outrunning us.',
     color: '#B5524C',
   },
 ];
