@@ -1,6 +1,7 @@
 'use client';
 
 import type { AnalysisDocument, CodeNode } from '@/lib/content-analysis/types';
+import { documentKindLabel } from '@/lib/content-analysis/source-tier';
 
 interface Props {
   documents: AnalysisDocument[];
@@ -63,7 +64,7 @@ export default function DocumentList({
             >
               <div className="flex items-baseline justify-between gap-2">
                 <span className="font-mono text-[10px] tracking-[0.1em] uppercase text-[#8A95A3]">
-                  {doc.kind}
+                  {documentKindLabel(doc)}
                 </span>
                 <span className="flex items-center gap-1.5">
                   {/* Only flare when the doc is truly empty (no blocks AND

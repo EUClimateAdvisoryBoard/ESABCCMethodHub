@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import type { AnalysisDocument, CodeNode, AnalysisMode } from '@/lib/content-analysis/types';
+import { documentKindLabel } from '@/lib/content-analysis/source-tier';
 
 interface Props {
   /** Top-level (parentId === null) master codes. The user ticks these to
@@ -253,7 +254,7 @@ export default function NewProjectWizard({
                         <span className="flex-1 min-w-0">
                           <span className="block text-[12px] font-medium text-[#3D5265] truncate">{d.shortTitle}</span>
                           <span className="block font-mono text-[10px] text-[#8A95A3] truncate">
-                            {d.celexNumber ?? '—'} · {d.kind}
+                            {d.celexNumber ?? '—'} · {documentKindLabel(d)}
                           </span>
                         </span>
                       </label>

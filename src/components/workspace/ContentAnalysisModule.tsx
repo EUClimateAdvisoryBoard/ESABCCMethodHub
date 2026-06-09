@@ -53,6 +53,7 @@ import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
 import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import {
   sourceTierOf,
+  documentKindLabel,
   SOURCE_TIER_META,
   SOURCE_TIERS,
   type SourceTier,
@@ -1675,7 +1676,7 @@ function DocumentViewer({
               ? [doc.referenceAuthors, doc.referenceYear].filter(Boolean).join(' · ') || 'Reference'
               : doc.celexNumber
                 ? `CELEX ${doc.celexNumber}`
-                : doc.kind}
+                : documentKindLabel(doc)}
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
