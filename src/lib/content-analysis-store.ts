@@ -19,11 +19,13 @@
 
 import { getServerSupabase } from './supabase-server';
 import type {
+  Block,
   CodedSegment,
   CodeSuggestion,
   CodeNode,
   DocumentSummary,
   PdfAnchor,
+  SharedIngestedDocument,
   SummaryBlock,
 } from './content-analysis/types';
 
@@ -34,12 +36,14 @@ interface GlobalCache {
   __caSuggestions?: CodeSuggestion[];
   __caCodes?: CodeNode[];
   __caSummaries?: DocumentSummary[];
+  __caDocuments?: SharedIngestedDocument[];
 }
 const g = globalThis as unknown as GlobalCache;
 if (!g.__caSegments) g.__caSegments = [];
 if (!g.__caSuggestions) g.__caSuggestions = [];
 if (!g.__caCodes) g.__caCodes = [];
 if (!g.__caSummaries) g.__caSummaries = [];
+if (!g.__caDocuments) g.__caDocuments = [];
 
 const MAX_ROWS = 20000;
 
@@ -652,4 +656,124 @@ export async function deleteSummary(id: string): Promise<boolean> {
   if (idx < 0) return false;
   bag.splice(idx, 1);
   return true;
+}
+
+// Documents ------------------------------------------------------------------
+// Ingested document substrate (extracted text + block boxes), keyed by the
+// document id, so once anyone ingests a PDF its text/blocks are shared with
+// every user — they no longer have to re-upload it. The heavy `text`/`blocks`
+// are excluded from the bulk list and lazy-loaded per document.
+
+interface DocumentRow {
+  id: string;
+  title: string | null;
+  celex_number: string | null;
+  page_count: number | null;
+  ingest_source: string | null;
+  pdf_url: string | null;
+  text?: string | null;
+  blocks?: Block[] | null;
+  ingested_at: string | null;
+  updated_at?: string | null;
+}
+
+const DOCUMENT_LIST_COLUMNS =
+  'id,title,celex_number,page_count,ingest_source,pdf_url,ingested_at,updated_at';
+
+function rowToDocumentLight(r: DocumentRow): SharedIngestedDocument {
+  return {
+    id: r.id,
+    title: r.title ?? '',
+    celexNumber: r.celex_number,
+    pageCount: typeof r.page_count === 'number' ? r.page_count : 0,
+    ingestSource: (r.ingest_source as SharedIngestedDocument['ingestSource']) ?? undefined,
+    pdfUrl: r.pdf_url ?? '',
+    ingestedAt: r.ingested_at ?? new Date().toISOString(),
+    text: '',
+    blocks: [],
+  };
+}
+
+function rowToDocumentFull(r: DocumentRow): SharedIngestedDocument {
+  return {
+    ...rowToDocumentLight(r),
+    text: r.text ?? '',
+    blocks: Array.isArray(r.blocks) ? r.blocks : [],
+  };
+}
+
+function documentToRow(d: SharedIngestedDocument): DocumentRow {
+  return {
+    id: d.id,
+    title: d.title,
+    celex_number: d.celexNumber,
+    page_count: d.pageCount,
+    ingest_source: d.ingestSource ?? null,
+    pdf_url: d.pdfUrl,
+    text: d.text ?? '',
+    blocks: Array.isArray(d.blocks) ? d.blocks : [],
+    ingested_at: d.ingestedAt,
+    updated_at: new Date().toISOString(),
+  };
+}
+
+function stripDocBody(d: SharedIngestedDocument): SharedIngestedDocument {
+  return { ...d, text: '', blocks: [] };
+}
+
+export async function getCaDocuments(): Promise<SharedIngestedDocument[]> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_documents')
+      .select(DOCUMENT_LIST_COLUMNS)
+      .order('updated_at', { ascending: true })
+      .limit(MAX_ROWS);
+    if (error) {
+      console.error('[content-analysis-store] getCaDocuments failed:', error.message);
+      return g.__caDocuments!.map(stripDocBody);
+    }
+    return (data as DocumentRow[]).map(rowToDocumentLight);
+  }
+  return g.__caDocuments!.map(stripDocBody);
+}
+
+/** Fetch one document with its full text + blocks hydrated. */
+export async function getCaDocument(id: string): Promise<SharedIngestedDocument | null> {
+  const sb = getServerSupabase();
+  if (sb) {
+    const { data, error } = await sb
+      .from('content_analysis_documents')
+      .select('*')
+      .eq('id', id)
+      .maybeSingle();
+    if (error) {
+      console.error('[content-analysis-store] getCaDocument failed:', error.message);
+      return g.__caDocuments!.find(d => d.id === id) ?? null;
+    }
+    return data ? rowToDocumentFull(data as DocumentRow) : null;
+  }
+  return g.__caDocuments!.find(d => d.id === id) ?? null;
+}
+
+export async function upsertCaDocuments(docs: SharedIngestedDocument[]): Promise<void> {
+  if (docs.length === 0) return;
+  const sb = getServerSupabase();
+  if (sb) {
+    const rows = docs.map(documentToRow);
+    const { error } = await sb
+      .from('content_analysis_documents')
+      .upsert(rows, { onConflict: 'id' });
+    if (error) {
+      console.error('[content-analysis-store] upsertCaDocuments failed:', error.message);
+    } else {
+      return;
+    }
+  }
+  const bag = g.__caDocuments!;
+  for (const d of docs) {
+    const idx = bag.findIndex(x => x.id === d.id);
+    if (idx >= 0) bag[idx] = d;
+    else bag.push(d);
+  }
 }
