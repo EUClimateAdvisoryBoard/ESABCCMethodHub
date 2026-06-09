@@ -65,6 +65,7 @@ import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
+import { useGeneralNotes } from '@/lib/content-analysis/useGeneralNotes';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
@@ -169,12 +170,6 @@ interface Props {
 /** localStorage key holding the per-workspace corpus (document allow-list). */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
-}
-
-/** localStorage key holding a document's free-form general notes, scoped to
- *  this workspace project so notes don't bleed across projects. */
-function generalNotesKey(projectId: string, documentId: string): string {
-  return `ca:ws-notes:${projectId}:${documentId}`;
 }
 
 export default function ContentAnalysisModule({ projectId, projectName }: Props) {
@@ -378,6 +373,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     () => corpusDocs.find(d => d.id === selectedDocumentId) ?? corpusDocs[0] ?? null,
     [corpusDocs, selectedDocumentId],
   );
+
+  // Shared general notes for the open document — passage-anchored comments,
+  // tag-free, persisted to Supabase so the whole team sees them.
+  const generalNotes = useGeneralNotes(projectId, selectedDocument?.id ?? null);
 
   // Keep the selection valid as the corpus changes.
   useEffect(() => {
@@ -1196,9 +1195,11 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             </div>
             {selectedDocument ? (
               <GeneralNotesPanel
-                key={selectedDocument.id}
-                storageKey={generalNotesKey(projectId, selectedDocument.id)}
-                authorName={displayName}
+                notes={generalNotes.notes}
+                loading={generalNotes.loading}
+                canDelete={generalNotes.canDelete}
+                onAddNote={generalNotes.addNote}
+                onDeleteNote={generalNotes.deleteNote}
                 pendingSelection={pendingNoteSel}
                 onPendingConsumed={() => setPendingNoteSel(null)}
                 onJumpToNote={note => { if (note.blockId) { setHighlightedSegmentId(null); setNoteJumpBlockId(note.blockId); } }}
