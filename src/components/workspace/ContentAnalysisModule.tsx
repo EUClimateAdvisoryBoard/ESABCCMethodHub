@@ -64,6 +64,8 @@ import DocumentList from '@/components/content-analysis/DocumentList';
 import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
+import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
+import { useGeneralNotes } from '@/lib/content-analysis/useGeneralNotes';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection, PdfRegionCapture } from '@/components/content-analysis/PdfDocumentView';
@@ -72,6 +74,7 @@ import CodeEditorModal, {
   type CodeEditorResult,
 } from '@/components/content-analysis/CodeEditorModal';
 import { showToast } from '@/components/ui/ToastHost';
+import { uploadPdf } from '@/lib/references/pdf-storage';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
@@ -138,6 +141,18 @@ const DEFAULT_CODE_COLORS = [
   '#65A30D', '#B83230', '#14B8A6', '#0EA5E9', '#A855F7',
 ];
 
+// Map the workbench's closed reference-type union onto the CSL item types the
+// Reference Manager store uses, so a paper filed into a project's corpus is
+// created with the right type if it doesn't yet have a custom-store row.
+const REF_TYPE_TO_CSL: Record<string, string> = {
+  article: 'article-journal',
+  report: 'report',
+  web: 'webpage',
+  chapter: 'chapter',
+  legislation: 'legislation',
+  book: 'book',
+};
+
 // ── Source types ────────────────────────────────────────────────────────────
 // The three source tiers (policy / scientific / grey) and their labels come
 // from the shared `source-tier` module, so this in-workspace surface and the
@@ -168,6 +183,55 @@ interface Props {
 /** localStorage key holding the per-workspace corpus (document allow-list). */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
+}
+
+/**
+ * Promote a freshly-ingested reference PDF into the shared reference library
+ * (`custom_references`) so the durable proxy `/api/references/pdf?id=…` can
+ * serve it on later visits and from any serverless instance — not only from
+ * this instance's ephemeral content-analysis ingest cache.
+ *
+ * Bundled static-library references (and browser-local ones) have no row in
+ * the shared store, so without this their workspace PDF would 404 on a fresh
+ * instance even after a successful upload. For an uploaded file we first push
+ * the bytes to durable Supabase storage; a library "Load PDF" already has a
+ * durable URL we reuse. Best-effort: failures are swallowed because the ingest
+ * cache still serves the PDF for the current session.
+ */
+async function persistReferenceToLibrary(
+  doc: AnalysisDocument,
+  opts: { blob?: Blob; sourceUrl?: string },
+): Promise<void> {
+  const refId = doc.id.replace(/^ref-doc-/, '');
+  if (!refId || !doc.title) return;
+  try {
+    // Resolve a durable, allow-listed (Supabase-hosted) PDF URL the proxy can
+    // stream from. An uploaded file is pushed to storage here; a "Load PDF"
+    // already carries one in `sourceUrl`.
+    let pdfUrl = opts.sourceUrl ?? doc.pdfUrl ?? '';
+    if (opts.blob) {
+      const up = await uploadPdf(refId, opts.blob);
+      if (!up.ok || !up.publicUrl) return;
+      pdfUrl = up.publicUrl;
+    }
+    if (!pdfUrl) return;
+
+    // Only send fields we actually have; omitting the rest lets the PUT
+    // handler keep any richer metadata already on an existing row.
+    const body: Record<string, string> = { id: refId, title: doc.title, pdfUrl, source: 'web' };
+    if (doc.referenceAuthors) body.authors = doc.referenceAuthors;
+    if (doc.referenceYear) body.year = doc.referenceYear;
+    if (doc.referenceType) body.type = doc.referenceType;
+    if (doc.referenceUrl) body.url = doc.referenceUrl;
+
+    await fetch('/api/references/library', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    /* best-effort — the ingest cache still serves the PDF this session */
+  }
 }
 
 export default function ContentAnalysisModule({ projectId, projectName }: Props) {
@@ -231,6 +295,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const [commentForSegmentId, setCommentForSegmentId] = useState<string | null>(null);
   const [titleForSegmentId, setTitleForSegmentId] = useState<string | null>(null);
   const [toolbarSel, setToolbarSel] = useState<ToolbarSelection | null>(null);
+  // A passage handed to the General notes panel for a tag-free comment, plus
+  // the block a note wants to jump back to in the document.
+  const [pendingNoteSel, setPendingNoteSel] = useState<PendingNoteSelection | null>(null);
+  const [noteJumpBlockId, setNoteJumpBlockId] = useState<string | null>(null);
   const [codeEditor, setCodeEditor] = useState<CodeEditorPayload | null>(null);
   const [ingestState, setIngestState] = useState<{ status: 'idle' | 'loading' | 'error' | 'ok'; message?: string }>({ status: 'idle' });
 
@@ -370,6 +438,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     [corpusDocs, selectedDocumentId],
   );
 
+  // Shared general notes for the open document — passage-anchored comments,
+  // tag-free, persisted to Supabase so the whole team sees them.
+  const generalNotes = useGeneralNotes(projectId, selectedDocument?.id ?? null);
+
   // Keep the selection valid as the corpus changes.
   useEffect(() => {
     if (selectedDocument && selectedDocument.id !== selectedDocumentId) {
@@ -428,12 +500,54 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   }, [lensSegments]);
 
   // ── Mutating handlers ─────────────────────────────────────────────────────
+  // Keep the shared Reference Manager's "Project view" in sync with this
+  // project's corpus: filing a paper here files it under the project (a
+  // `project:<name>` tag — see lib/references/projects), and removing it
+  // un-files it. Only references have a row in the library; policy documents
+  // don't, so they are skipped. Best-effort: a failed sync never blocks the
+  // local corpus change, and the tag merges with — or is removed from — any
+  // other tags the reference already carries.
+  const syncReferenceProject = useCallback(
+    (doc: AnalysisDocument, action: 'add' | 'remove') => {
+      if ((doc.sourceKind ?? 'policy') !== 'reference') return;
+      const refId = doc.id.replace(/^ref-doc-/, '');
+      void fetch('/api/references/library', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(
+          action === 'add'
+            ? {
+                id: refId,
+                addProjects: [projectName],
+                // Supplied so a paper that only lives in the bundled static
+                // library can be created as an editable row to carry the tag.
+                meta: {
+                  title: doc.title,
+                  authors: doc.referenceAuthors ?? '',
+                  year: doc.referenceYear ?? '',
+                  url: doc.referenceUrl ?? '',
+                  type: REF_TYPE_TO_CSL[doc.referenceType ?? ''] ?? 'article-journal',
+                },
+              }
+            // No `meta` on removal: there's nothing to create — if the paper has
+            // no library row there's no tag to drop, and the endpoint no-ops.
+            : { id: refId, removeProjects: [projectName] },
+        ),
+      }).catch(() => { /* best effort — corpus membership is the source of truth */ });
+    },
+    [projectName],
+  );
+
   const addToCorpus = (id: string) => {
     setCorpusIds(prev => (prev.includes(id) ? prev : [...prev, id]));
     setSelectedDocumentId(id);
+    const doc = allDocuments.find(d => d.id === id);
+    if (doc) syncReferenceProject(doc, 'add');
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
+    const doc = allDocuments.find(d => d.id === id);
+    if (doc) syncReferenceProject(doc, 'remove');
   };
 
   /** Remove a document from this workspace's corpus, with a confirm — the
@@ -468,6 +582,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       // to the project — this is what powers the lens comparison.
       projectId,
     });
+    setNoteJumpBlockId(null);
     setHighlightedSegmentId(seg.id);
     const code = snapshot.codes.find(c => c.id === codeId);
     // A captured figure has no text quote — nudge the analyst to title it
@@ -640,6 +755,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         text: data.text, ingestedAt: data.ingestedAt, archiveSource: 'manual-upload',
       });
       setIngestState({ status: 'ok', message: 'PDF loaded' });
+
+      // Promote references into the shared library so the durable PDF proxy
+      // resolves them next session — not just from this instance's ephemeral
+      // ingest cache. Best-effort and non-blocking; policies are server-managed
+      // by CELEX and don't go through this path.
+      if ((doc.sourceKind ?? 'policy') === 'reference') {
+        void persistReferenceToLibrary(doc, { blob: opts.blob, sourceUrl: opts.sourceUrl });
+      }
     } catch (err) {
       setIngestState({ status: 'error', message: String(err) });
     }
@@ -996,7 +1119,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           onTabChange={setAnalysisTab}
         />
       ) : (
-        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px] xl:grid-cols-[260px_minmax(0,1fr)_300px_280px]">
           {/* LEFT: corpus + add documents */}
           <aside className="flex flex-col gap-3 min-h-0 min-w-0">
             <div className="border border-grey-200 rounded-lg bg-white">
@@ -1015,7 +1138,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     documents={corpusDocs}
                     codes={visibleCodes}
                     selectedDocumentId={selectedDocument?.id ?? null}
-                    onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setIngestState({ status: 'idle' }); }}
+                    onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setNoteJumpBlockId(null); setIngestState({ status: 'idle' }); }}
                     counts={docCounts}
                     onRemove={confirmRemoveFromCorpus}
                     overallTagsByDoc={overallTagsByDoc}
@@ -1146,6 +1269,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 codes={visibleCodes}
                 activeCodeId={selectedCodeId}
                 highlightedSegmentId={highlightedSegmentId}
+                forcedHighlightBlockId={noteJumpBlockId}
                 ingestState={ingestState}
                 showOverallTags={canEditOverallTags}
                 overallTagCodes={masterCodes}
@@ -1157,9 +1281,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onSaveSummary={handleSaveSummary}
                 onLoadSummaryBlocks={loadSummaryBlocks}
                 onCreateSegment={handleCreateSegment}
-                onSelectSegment={setHighlightedSegmentId}
+                onSelectSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
                 onDeleteSegment={deleteSegment}
-                onCommentSegment={id => { setHighlightedSegmentId(id); setCommentForSegmentId(id); }}
+                onCommentSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); setCommentForSegmentId(id); }}
                 onSelectionWithoutCode={sel => setToolbarSel(sel)}
                 onRemoveFromCorpus={() => removeFromCorpus(selectedDocument.id)}
                 onLoadText={() => handleLoadText(selectedDocument)}
@@ -1181,7 +1305,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 codes={visibleCodes}
                 documents={corpusDocs}
                 selectedSegmentId={highlightedSegmentId}
-                onOpenSegment={setHighlightedSegmentId}
+                onOpenSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
                 onDelete={deleteSegment}
                 onUpdateNote={handleUpdateNote}
                 onUpdateTitle={updateSegmentText}
@@ -1191,6 +1315,35 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onTitleRequestConsumed={() => setTitleForSegmentId(null)}
               />
             </div>
+          </aside>
+
+          {/* FAR RIGHT: general notes — free-form comments on the whole
+              document, separate from the passage-pinned coded segments. */}
+          <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
+            <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
+              <span
+                className="text-[11px] font-semibold text-tertiary-dark"
+                title="Free-form notes on this document — not pinned to any passage"
+              >
+                General notes
+              </span>
+            </div>
+            {selectedDocument ? (
+              <GeneralNotesPanel
+                notes={generalNotes.notes}
+                loading={generalNotes.loading}
+                canDelete={generalNotes.canDelete}
+                onAddNote={generalNotes.addNote}
+                onDeleteNote={generalNotes.deleteNote}
+                pendingSelection={pendingNoteSel}
+                onPendingConsumed={() => setPendingNoteSel(null)}
+                onJumpToNote={note => { if (note.blockId) { setHighlightedSegmentId(null); setNoteJumpBlockId(note.blockId); } }}
+              />
+            ) : (
+              <p className="px-3 py-3 text-[11px] text-tertiary-light italic">
+                Select a document to add general notes.
+              </p>
+            )}
           </aside>
         </div>
       )}
@@ -1214,6 +1367,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           setToolbarSel(null);
         }}
         onClear={() => setToolbarSel(null)}
+        onComment={() => {
+          if (!toolbarSel) return;
+          // Hand the selected passage to the General notes panel as a
+          // tag-free comment target, then dismiss the toolbar.
+          setPendingNoteSel({
+            quote: toolbarSel.text,
+            blockId: toolbarSel.blockId,
+            startChar: toolbarSel.startChar,
+            endChar: toolbarSel.endChar,
+          });
+          setToolbarSel(null);
+        }}
         onCreateAndApply={suggestedName => {
           if (!toolbarSel) return;
           setCodeEditor({
@@ -1244,6 +1409,7 @@ function DocumentViewer({
   codes,
   activeCodeId,
   highlightedSegmentId,
+  forcedHighlightBlockId,
   ingestState,
   showOverallTags,
   overallTagCodes,
@@ -1269,6 +1435,9 @@ function DocumentViewer({
   codes: CodeNode[];
   activeCodeId: string | null;
   highlightedSegmentId: string | null;
+  /** A block to scroll to & highlight on demand — e.g. jumping to a note's
+   *  passage — independent of the selected coded segment. */
+  forcedHighlightBlockId: string | null;
   ingestState: { status: 'idle' | 'loading' | 'error' | 'ok'; message?: string };
   showOverallTags: boolean;
   overallTagCodes: CodeNode[];
@@ -1302,6 +1471,15 @@ function DocumentViewer({
     : refId
       ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
       : '';
+  // Fallback for reference PDFs: the durable references proxy above only knows
+  // references stored in the shared library (custom_references). References
+  // that aren't there — notably the bundled static library — 404 on that proxy
+  // even after their PDF has been ingested. Fall back to the content-analysis
+  // ingest cache (keyed by the document id, exactly as `ingestPdf` stored it
+  // this session) so the freshly-loaded PDF still renders.
+  const pdfFallbackUrl = refId
+    ? `/api/content-analysis/pdf?celex=${encodeURIComponent(referencePdfCacheKey(doc.id))}`
+    : undefined;
   const hasPdfPane = Boolean(
     pdfSrcUrl && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
   );
@@ -1329,12 +1507,15 @@ function DocumentViewer({
   // so don't also tint the whole enclosing block — that's the imprecise
   // behaviour we're moving away from. Only fall back to a block highlight for
   // legacy / flat-text segments.
-  const highlightedBlockId = highlightedSeg?.pdfAnchor
-    ? null
-    : highlightedSeg?.blockId ??
-      (highlightedSeg
-        ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
-        : null);
+  // A note jump (forcedHighlightBlockId) wins — it's an explicit "take me to
+  // this passage" action — otherwise fall back to the selected segment's block.
+  const highlightedBlockId = forcedHighlightBlockId
+    ?? (highlightedSeg?.pdfAnchor
+      ? null
+      : highlightedSeg?.blockId ??
+        (highlightedSeg
+          ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
+          : null));
 
   return (
     <div className="flex flex-col min-h-0">
@@ -1468,6 +1649,7 @@ function DocumentViewer({
           <PdfDocumentView
             document={doc}
             pdfSrcUrl={pdfSrcUrl}
+            fallbackSrcUrl={pdfFallbackUrl}
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedBlockId}

@@ -27,7 +27,7 @@
  * to `@/components/references/*`. Keep it thin.
  */
 
-import { useState, useEffect, useCallback, useMemo } from 'react';
+import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { ReferenceLibrary, Reference, FundingEntry, isEuFunder } from '@/lib/references/types';
@@ -326,11 +326,24 @@ export default function ReferencesPage() {
     }
   }, [editingRef?.id]);
 
-  // Mirror state → URL whenever the three persisted selectors change.
-  // `replace` keeps the back-button history clean; navigations the user
-  // explicitly took create entries on their own.
+  // Tracks the previous view so the URL-sync effect can tell an "enter the
+  // detail view" transition (list → add/edit/import) apart from a filter tweak.
+  // Opening a detail should create a real history entry so the browser Back
+  // button returns to the filtered list; everything else just replaces the
+  // current entry to keep history clean.
+  const prevViewRef = useRef<View>(initialUrl.view);
+  // Set while we are programmatically restoring state from a popstate event, so
+  // the state→URL effect below doesn't try to write the URL straight back.
+  const restoringFromUrlRef = useRef(false);
+
+  // Mirror state → URL whenever the persisted selectors change. Entering a
+  // detail view pushes a new history entry; filter/search/library tweaks
+  // replace the current one.
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    const enteringDetail = prevViewRef.current === 'list' && view !== 'list';
+    prevViewRef.current = view;
+    if (restoringFromUrlRef.current) return; // popstate already moved the URL
     const params = new URLSearchParams(window.location.search);
     if (selectedLibraryId) params.set('lib', selectedLibraryId);
     else params.delete('lib');
@@ -343,12 +356,64 @@ export default function ReferencesPage() {
     const qs = params.toString();
     const next = qs ? `${pathname}?${qs}` : pathname;
     if (window.location.pathname + window.location.search !== next) {
-      router.replace(next, { scroll: false });
+      if (enteringDetail) router.push(next, { scroll: false });
+      else router.replace(next, { scroll: false });
     }
   }, [selectedLibraryId, view, searchQuery, projectFilter, pathname, router]);
   const [usingFallback, setUsingFallback] = useState(false);
   const [showAddForm, setShowAddForm] = useState(false);
   const [fallbackEditingRef, setFallbackEditingRef] = useState<Reference | null>(null);
+
+  // In fallback mode the "open reference" / "add reference" views are plain
+  // local state that never round-tripped through the URL, so the browser Back
+  // button skipped straight out of the Reference Manager. We push a real
+  // history entry (?ref=<id> or ?add=1) when a detail opens and pop it on
+  // close, so Back returns to the filtered list. `detailPushedRef` records
+  // whether the currently-open detail owns a pushed entry (it doesn't when the
+  // user arrived via a shared deep link), so close() knows whether to pop.
+  const detailPushedRef = useRef(false);
+
+  const openFallbackRef = useCallback((ref: Reference) => {
+    setShowAddForm(false);
+    setFallbackEditingRef(ref);
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('add');
+      params.set('ref', ref.id);
+      window.history.pushState({ mhRefDetail: true }, '', `${window.location.pathname}?${params}`);
+      detailPushedRef.current = true;
+    }
+  }, []);
+
+  const openFallbackAdd = useCallback(() => {
+    setFallbackEditingRef(null);
+    setShowAddForm(true);
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('ref');
+      params.set('add', '1');
+      window.history.pushState({ mhRefDetail: true }, '', `${window.location.pathname}?${params}`);
+      detailPushedRef.current = true;
+    }
+  }, []);
+
+  const closeFallbackDetail = useCallback(() => {
+    setFallbackEditingRef(null);
+    setShowAddForm(false);
+    if (typeof window === 'undefined') return;
+    if (detailPushedRef.current) {
+      // Pop the entry we pushed; the popstate handler clears the flag.
+      window.history.back();
+    } else {
+      // Opened via a deep link (no entry of ours to pop) — just strip the
+      // detail params in place so we stay on the page.
+      const params = new URLSearchParams(window.location.search);
+      params.delete('ref');
+      params.delete('add');
+      const qs = params.toString();
+      window.history.replaceState({}, '', window.location.pathname + (qs ? `?${qs}` : ''));
+    }
+  }, []);
 
   // Load libraries -- fall back to static data when Supabase returns nothing
   const loadLibraries = useCallback(async () => {
@@ -486,14 +551,66 @@ export default function ReferencesPage() {
     if (!target) return;
     if (usingFallback) {
       setFallbackEditingRef(target);
+      // In fallback mode `?ref=` is the source of truth for the open reference
+      // (so Back/Forward can restore it), so keep it in the URL. Only strip the
+      // legacy `policy` alias.
+      if (usedKey === 'policy') {
+        params.delete('policy');
+        const newUrl = window.location.pathname + (params.toString() ? `?${params}` : '');
+        window.history.replaceState({}, '', newUrl);
+      }
     } else {
       setEditingRef(target);
       setView('edit');
+      params.delete(usedKey);
+      const newUrl = window.location.pathname + (params.toString() ? `?${params}` : '');
+      window.history.replaceState({}, '', newUrl);
     }
-    params.delete(usedKey);
-    const newUrl = window.location.pathname + (params.toString() ? `?${params}` : '');
-    window.history.replaceState({}, '', newUrl);
   }, [loading, references, usingFallback]);
+
+  // Back / Forward support. The page reads its view-state from the URL only on
+  // first render, so without this the browser Back button would change the URL
+  // but leave the rendered view untouched (the user would appear "stuck"). On
+  // every popstate we re-read the URL and restore the list/detail state from
+  // it, which is what makes Back return to the filtered list instead of leaving
+  // the Reference Manager entirely.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    function syncFromUrl() {
+      const sp = new URLSearchParams(window.location.search);
+      restoringFromUrlRef.current = true;
+      const lib = sp.get('lib');
+      if (lib) setSelectedLibraryId(lib);
+      setSearchQuery(sp.get('q') || '');
+      setProjectFilter(sp.get('project') || '');
+      if (usingFallback) {
+        const refId = sp.get('ref');
+        const isAdd = sp.get('add') === '1';
+        detailPushedRef.current = !!(refId || isAdd);
+        if (isAdd) {
+          setShowAddForm(true);
+          setFallbackEditingRef(null);
+        } else if (refId) {
+          setShowAddForm(false);
+          setFallbackEditingRef(references.find(r => r.id === refId) ?? null);
+        } else {
+          setShowAddForm(false);
+          setFallbackEditingRef(null);
+        }
+      } else {
+        const v = sp.get('view');
+        const nextView: View =
+          v === 'list' || v === 'add' || v === 'edit' || v === 'import' ? (v as View) : 'list';
+        setView(nextView);
+        if (nextView !== 'edit') setEditingRef(null);
+      }
+      // Release the guard after this tick so the state→URL effect doesn't echo
+      // the URL we just navigated to back into history.
+      setTimeout(() => { restoringFromUrlRef.current = false; }, 0);
+    }
+    window.addEventListener('popstate', syncFromUrl);
+    return () => window.removeEventListener('popstate', syncFromUrl);
+  }, [usingFallback, references]);
 
   // Keyboard shortcut: `n` opens the add-reference form (in either fallback
   // or Supabase mode). Drives the keyboard-first add flow from the brief.
@@ -505,7 +622,7 @@ export default function ReferencesPage() {
         const u = await requireAuth('Sign in to add references.');
         if (!u) return;
         if (usingFallback) {
-          setShowAddForm(true);
+          openFallbackAdd();
         } else if (selectedLibraryId) {
           setEditingRef(null);
           setView('add');
@@ -514,7 +631,7 @@ export default function ReferencesPage() {
     }
     window.addEventListener('mh:shortcut', onShortcut as EventListener);
     return () => window.removeEventListener('mh:shortcut', onShortcut as EventListener);
-  }, [usingFallback, selectedLibraryId, requireAuth]);
+  }, [usingFallback, selectedLibraryId, requireAuth, openFallbackAdd]);
 
   // Realtime subscription (Supabase mode only)
   useEffect(() => {
@@ -796,7 +913,7 @@ export default function ReferencesPage() {
                       Audit a report
                     </Link>
                     <button
-                      onClick={async () => { const u = await requireAuth('Sign in to add references.'); if (u) setShowAddForm(true); }}
+                      onClick={async () => { const u = await requireAuth('Sign in to add references.'); if (u) openFallbackAdd(); }}
                       className="px-3 py-2 bg-primary hover:bg-primary-dark text-white text-sm rounded-lg"
                     >
                       + Add Reference
@@ -828,9 +945,9 @@ export default function ReferencesPage() {
                         tags: ref.tags || [],
                       });
                       setReferences([ref, ...references]);
-                      setShowAddForm(false);
+                      closeFallbackDetail();
                     }}
-                    onCancel={() => setShowAddForm(false)}
+                    onCancel={closeFallbackDetail}
                     knownProjects={knownProjectNames}
                     defaultProject={projectFilter}
                   />
@@ -864,7 +981,7 @@ export default function ReferencesPage() {
                         return;
                       }
                       setReferences(prev => prev.map(r => r.id === ref.id ? ref : r));
-                      setFallbackEditingRef(null);
+                      closeFallbackDetail();
                     }}
                     onDelete={async () => {
                       if (!fallbackEditingRef) return;
@@ -879,7 +996,7 @@ export default function ReferencesPage() {
                         return;
                       }
                       setReferences(prev => prev.filter(r => r.id !== fallbackEditingRef.id));
-                      setFallbackEditingRef(null);
+                      closeFallbackDetail();
                     }}
                     onShare={() => {
                       if (!fallbackEditingRef) return;
@@ -892,7 +1009,7 @@ export default function ReferencesPage() {
                         },
                       );
                     }}
-                    onCancel={() => setFallbackEditingRef(null)}
+                    onCancel={closeFallbackDetail}
                   />
                 )}
 
@@ -911,7 +1028,7 @@ export default function ReferencesPage() {
                   <ReferenceList
                     references={displayedReferences}
                     onRefreshNeeded={() => {}}
-                    onEditReference={(ref) => setFallbackEditingRef(ref)}
+                    onEditReference={openFallbackRef}
                     onAddToReadingList={handleAddToReadingList}
                     onDeleteReferences={handleDeleteReferencesFallback}
                   />

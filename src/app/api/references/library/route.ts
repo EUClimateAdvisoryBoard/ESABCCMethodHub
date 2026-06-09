@@ -21,6 +21,7 @@ import {
   listRefs,
   upsertRef,
 } from '@/lib/references/custom-store';
+import { combineTags, splitTags } from '@/lib/references/projects';
 
 // Force the route to run on the Node.js runtime (pg/supabase client) and
 // always evaluate fresh (no edge caching of mutations).
@@ -196,6 +197,99 @@ export async function PUT(request: NextRequest) {
       persistence: PERSISTENCE,
     },
     { status: result.ok ? (previous ? 200 : 201) : 500 },
+  );
+}
+
+// PATCH – add and/or remove *project tags* on a reference, merging with its
+// existing tags instead of replacing them. This is what files a paper under a
+// report ("project:Policy Gap 2.0") when it's added to that project's Content
+// Analysis corpus in the Project Workspace, so the same membership shows up in
+// the Reference Manager's "Project view".
+//
+// Upserts: when the paper only exists in the bundled static library (no custom
+// row yet), a custom-store row is created from the supplied `meta` so the
+// project tag has somewhere durable to live. Plain tags and any other project
+// tags already on the reference are preserved.
+export async function PATCH(request: NextRequest) {
+  let body: {
+    id?: string;
+    addProjects?: string[];
+    removeProjects?: string[];
+    meta?: Partial<CustomRef>;
+  };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: 'Invalid JSON body' }, { status: 400 });
+  }
+
+  if (!body.id) {
+    return NextResponse.json({ error: 'id is required' }, { status: 400 });
+  }
+
+  const add = (body.addProjects ?? []).map((s) => s.trim()).filter(Boolean);
+  const remove = (body.removeProjects ?? []).map((s) => s.trim()).filter(Boolean);
+  if (add.length === 0 && remove.length === 0) {
+    return NextResponse.json(
+      { error: 'addProjects or removeProjects is required' },
+      { status: 400 },
+    );
+  }
+
+  const previous = (await listRefs()).find((r) => r.id === body.id);
+  const meta = body.meta ?? {};
+
+  // No existing row and nothing to identify it by → can't create one.
+  if (!previous && !meta.title && !meta.doi) {
+    return NextResponse.json(
+      { error: 'Reference not found and no metadata supplied to create it' },
+      { status: 404 },
+    );
+  }
+
+  const base: CustomRef = previous ?? {
+    id: body.id,
+    doi: meta.doi || '',
+    title: meta.title || '',
+    authors: meta.authors || '',
+    year: meta.year || '',
+    journal: meta.journal || '',
+    type: meta.type || 'article-journal',
+    volume: meta.volume || '',
+    issue: meta.issue || '',
+    pages: meta.pages || '',
+    url: meta.url || '',
+    fullCitation: meta.fullCitation || '',
+    addedAt: new Date().toISOString(),
+    source: meta.source || 'web',
+    pdfUrl: meta.pdfUrl || '',
+    funding: meta.funding,
+    tags: meta.tags,
+  };
+
+  // Merge project membership into the existing tag set, case-insensitively,
+  // leaving plain tags untouched.
+  const { plain, projects } = splitTags(base.tags);
+  const removeLc = new Set(remove.map((p) => p.toLowerCase()));
+  const nextProjects = projects.filter((p) => !removeLc.has(p.toLowerCase()));
+  for (const p of add) {
+    if (!nextProjects.some((x) => x.toLowerCase() === p.toLowerCase())) {
+      nextProjects.push(p);
+    }
+  }
+
+  const updated: CustomRef = { ...base, tags: combineTags(plain, nextProjects) };
+  const result = await upsertRef(updated);
+  return NextResponse.json(
+    {
+      message: previous ? 'Reference tags updated' : 'Reference created with project tag',
+      id: updated.id,
+      reference: updated,
+      persisted: result.ok,
+      persistError: result.error,
+      persistence: PERSISTENCE,
+    },
+    { status: result.ok ? 200 : 500 },
   );
 }
 
