@@ -18,12 +18,21 @@ interface Props {
    *  The comment is the segment's shared `note`, persisted through the store
    *  so everyone in the project can read it. */
   onUpdateNote?: (segmentId: string, note: string) => void;
+  /** When provided, figure-capture segments (which carry a screenshot instead
+   *  of a text quote) expose an editable title. The title is stored as the
+   *  segment's `text`, so it reads in this list and flows into the exports. */
+  onUpdateTitle?: (segmentId: string, title: string) => void;
   /** Set to a segment id to open its comment editor (e.g. straight after
    *  tagging, from the "Add comment" toast action). */
   requestCommentForId?: string | null;
   /** Called once the requested comment editor has been opened, so the
    *  parent can clear its request state and allow re-triggering. */
   onCommentRequestConsumed?: () => void;
+  /** Set to a figure segment id to open its title editor (e.g. straight after
+   *  capturing the figure, from the "Add title" toast action). */
+  requestTitleForId?: string | null;
+  /** Called once the requested title editor has been opened. */
+  onTitleRequestConsumed?: () => void;
 }
 
 /**
@@ -39,8 +48,11 @@ export default function SegmentsList({
   onOpenSegment,
   onDelete,
   onUpdateNote,
+  onUpdateTitle,
   requestCommentForId,
   onCommentRequestConsumed,
+  requestTitleForId,
+  onTitleRequestConsumed,
 }: Props) {
   const codeById = new Map(codes.map(c => [c.id, c]));
   const docById = new Map(documents.map(d => [d.id, d]));
@@ -49,6 +61,40 @@ export default function SegmentsList({
   const [editingId, setEditingId] = useState<string | null>(null);
   const [draft, setDraft] = useState('');
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  // Inline figure-title editor — mirrors the comment editor but a single line.
+  const [titleEditingId, setTitleEditingId] = useState<string | null>(null);
+  const [titleDraft, setTitleDraft] = useState('');
+  const titleInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (titleEditingId) titleInputRef.current?.focus();
+  }, [titleEditingId]);
+
+  // Open the title editor when the parent requests it (e.g. just after
+  // capturing a figure).
+  useEffect(() => {
+    if (!requestTitleForId) return;
+    const seg = segments.find(s => s.id === requestTitleForId);
+    if (!seg) return;
+    setTitleEditingId(seg.id);
+    setTitleDraft(seg.text ?? '');
+    onTitleRequestConsumed?.();
+  }, [requestTitleForId, segments, onTitleRequestConsumed]);
+
+  const openTitleEditor = (seg: CodedSegment) => {
+    setTitleEditingId(seg.id);
+    setTitleDraft(seg.text ?? '');
+  };
+  const saveTitleEditor = () => {
+    if (titleEditingId && onUpdateTitle) onUpdateTitle(titleEditingId, titleDraft.trim());
+    setTitleEditingId(null);
+    setTitleDraft('');
+  };
+  const cancelTitleEditor = () => {
+    setTitleEditingId(null);
+    setTitleDraft('');
+  };
 
   // Open the editor when the parent requests it (e.g. just after tagging).
   useEffect(() => {
@@ -237,13 +283,45 @@ export default function SegmentsList({
                       ×
                     </button>
                   </div>
-                  {seg.text.trim() ? (
+                  {seg.screenshot ? (
+                    /* Figure capture — an editable title stands in for the
+                       missing text quote. */
+                    onUpdateTitle && titleEditingId === seg.id ? (
+                      <div className="mt-1" onClick={e => e.stopPropagation()}>
+                        <input
+                          ref={titleInputRef}
+                          value={titleDraft}
+                          onChange={e => setTitleDraft(e.target.value)}
+                          onKeyDown={e => {
+                            if (e.key === 'Enter') { e.preventDefault(); saveTitleEditor(); }
+                            else if (e.key === 'Escape') { e.preventDefault(); cancelTitleEditor(); }
+                          }}
+                          onBlur={saveTitleEditor}
+                          placeholder="Add a figure title…"
+                          className="w-full px-2 py-1 border border-[#E6E7E8] rounded text-[11.5px] text-[#3D5265] focus:outline-none focus:border-[#00928F]"
+                        />
+                      </div>
+                    ) : onUpdateTitle ? (
+                      <button
+                        type="button"
+                        onClick={e => { e.stopPropagation(); openTitleEditor(seg); }}
+                        title="Edit figure title"
+                        className={`mt-1 block w-full text-left text-[11.5px] leading-snug ${
+                          seg.text.trim()
+                            ? 'font-medium text-[#3D5265] hover:text-[#00928F]'
+                            : 'italic text-[#8A95A3] hover:text-[#00928F]'
+                        }`}
+                      >
+                        {seg.text.trim() || '+ Add a figure title'}
+                      </button>
+                    ) : (
+                      <p className="mt-1 text-[11.5px] font-medium text-[#3D5265] leading-snug">
+                        {seg.text.trim() || 'Captured figure'}
+                      </p>
+                    )
+                  ) : seg.text.trim() ? (
                     <p className="mt-1 text-[11.5px] italic text-[#3D5265] leading-snug line-clamp-3">
                       “{seg.text.trim()}”
-                    </p>
-                  ) : seg.screenshot ? (
-                    <p className="mt-1 text-[11.5px] italic text-[#8A95A3] leading-snug">
-                      Captured figure
                     </p>
                   ) : null}
 
@@ -252,7 +330,7 @@ export default function SegmentsList({
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={seg.screenshot}
-                      alt="Captured figure"
+                      alt={seg.text.trim() || 'Captured figure'}
                       className="mt-1.5 max-h-40 w-auto max-w-full rounded border border-[#E6E7E8]"
                     />
                   )}

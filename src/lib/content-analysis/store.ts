@@ -593,6 +593,23 @@ export function useContentAnalysis() {
     patchSegmentNote(id, note, author);
   }, []);
 
+  /** Set the title/caption on a segment — its `text`. Used by figure-capture
+   *  segments, which have no verbatim quote: the analyst types the figure's
+   *  title so it reads in the segments list and flows into CSV/Word exports.
+   *  Persisted via a full upsert (POST), which carries `text`. */
+  const updateSegmentText = useCallback((id: string, text: string) => {
+    let updated: CodedSegment | null = null;
+    update(s => ({
+      ...s,
+      segments: s.segments.map(seg => {
+        if (seg.id !== id) return seg;
+        updated = { ...seg, text };
+        return updated;
+      }),
+    }));
+    if (updated) postSegments([updated]);
+  }, []);
+
   /** Resize a coded segment in place — used by the bracket-gutter context
    *  menu in the document view (expand to next sentence, shrink, etc.).
    *  The caller passes a function that maps the existing offsets to new
@@ -1238,6 +1255,7 @@ export function useContentAnalysis() {
     addSegment,
     deleteSegment,
     updateSegmentNote,
+    updateSegmentText,
     updateSegmentRange,
     updateSegmentNumeric,
     replaceDocumentSuggestions,
