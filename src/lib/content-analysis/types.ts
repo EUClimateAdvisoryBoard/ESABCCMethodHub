@@ -122,6 +122,45 @@ export interface SharedIngestedDocument {
   blocks: Block[];
 }
 
+/**
+ * The lightweight, self-describing snapshot of a document stored *with* its
+ * workspace-corpus row (the `doc_meta` JSONB column). It carries everything
+ * needed to render the "In this workspace" list row and resolve the document's
+ * source tier — title, kind and (for references) author/year/type — without
+ * depending on the heavy substrate (text/blocks) or on the document already
+ * being present in the viewer's local library or reference list.
+ *
+ * This is what makes a shared workspace actually shared: whatever one analyst
+ * adds shows up for every collaborator, because the membership row carries its
+ * own display data instead of pointing at a document the other user may not
+ * have loaded yet.
+ */
+export interface CorpusDocMeta {
+  id: string;
+  title: string;
+  shortTitle: string;
+  kind: DocumentKind;
+  sourceKind: DocumentSourceKind;
+  celexNumber?: string | null;
+  pdfUrl?: string;
+  pageCount?: number;
+  ingestSource?: AnalysisDocument['ingestSource'];
+  ingestedAt?: string;
+  aiCodeIds?: string[];
+  referenceType?: AnalysisDocument['referenceType'];
+  referenceAuthors?: string;
+  referenceYear?: string;
+  referenceUrl?: string;
+}
+
+/** One entry in a project's workspace corpus: the document id plus the
+ *  self-describing metadata captured when it was added. `meta` is null for rows
+ *  written before the metadata column existed (legacy id-only rows). */
+export interface WorkspaceCorpusEntry {
+  documentId: string;
+  meta: CorpusDocMeta | null;
+}
+
 export interface AnalysisDocument {
   id: string;
   title: string;

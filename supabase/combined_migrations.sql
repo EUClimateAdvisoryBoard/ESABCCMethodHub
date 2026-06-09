@@ -1,5 +1,5 @@
 -- ============================================================================
--- COMBINED MIGRATIONS (base schema + 001 -> 064)
+-- COMBINED MIGRATIONS (base schema + 001 -> 065)
 -- Auto-generated for one-shot Supabase SQL Editor runs.
 -- Base schema first (defines core tables like public.annotations that later
 -- migrations alter), then every numbered migration in apply order.
@@ -7090,3 +7090,16 @@ drop policy if exists "Flow-chart state is viewable by everyone" on public.pw_fl
 create policy "Flow-chart state is viewable by everyone"
   on public.pw_flowchart_state for select using (true);
 
+
+
+-- ----------------------------------------------------------------------------
+-- 065_content_analysis_corpus_doc_meta.sql
+-- ----------------------------------------------------------------------------
+
+-- Self-describing workspace-corpus rows: carry the lightweight document
+-- metadata (title, kind, source tier, reference author/year/type) alongside the
+-- (project_id, document_id) membership row so the "In this workspace" list
+-- renders for every collaborator without depending on the viewer already having
+-- the document in their local library. Idempotent.
+alter table public.content_analysis_corpus
+  add column if not exists doc_meta jsonb;
