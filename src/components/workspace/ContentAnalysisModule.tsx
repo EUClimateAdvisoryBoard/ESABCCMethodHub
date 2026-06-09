@@ -734,12 +734,34 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       const celex = encodeURIComponent(doc.celexNumber ?? referencePdfCacheKey(doc.id));
       let url = `/api/content-analysis/ingest-upload?celex=${celex}`;
       const init: RequestInit = { method: 'POST' };
+      // The durable URL we ultimately ingest from and persist to the library.
+      let resolvedSourceUrl = opts.sourceUrl;
       if (opts.blob) {
-        const form = new FormData();
-        // The route reads the `file` field; a third arg gives it a filename so
-        // it is treated as a File rather than a string.
-        form.append('file', opts.blob, 'document.pdf');
-        init.body = form;
+        // Upload the file straight to Supabase storage from the browser, then
+        // ingest from that URL. This sidesteps Vercel's ~4.5 MB serverless
+        // request-body limit, which silently rejects larger PDFs at the edge
+        // (a 16 MB report never reaches the function at all). Keyed by the
+        // reference id so the same object also backs the reference library's
+        // "Load PDF" path.
+        const isRef = (doc.sourceKind ?? 'policy') === 'reference';
+        const storageKey = isRef
+          ? doc.id.replace(/^ref-doc-/, '')
+          : doc.celexNumber ?? referencePdfCacheKey(doc.id);
+        setIngestState({ status: 'loading', message: `Uploading ${opts.label}…` });
+        const up = await uploadPdf(storageKey, opts.blob);
+        if (up.ok && up.publicUrl) {
+          resolvedSourceUrl = up.publicUrl;
+          url += `&url=${encodeURIComponent(up.publicUrl)}`;
+          setIngestState({ status: 'loading', message: `Processing ${opts.label}…` });
+        } else {
+          // Storage unavailable (e.g. Supabase not configured) — fall back to
+          // the multipart path, which still works for small files.
+          const form = new FormData();
+          // The route reads the `file` field; a third arg gives it a filename so
+          // it is treated as a File rather than a string.
+          form.append('file', opts.blob, 'document.pdf');
+          init.body = form;
+        }
       } else if (opts.sourceUrl) {
         url += `&url=${encodeURIComponent(opts.sourceUrl)}`;
       }
@@ -758,10 +780,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
       // Promote references into the shared library so the durable PDF proxy
       // resolves them next session — not just from this instance's ephemeral
-      // ingest cache. Best-effort and non-blocking; policies are server-managed
-      // by CELEX and don't go through this path.
+      // ingest cache. The bytes are already in storage (uploaded above or
+      // supplied as a sourceUrl), so this only writes the library row. Best-
+      // effort and non-blocking; policies are server-managed by CELEX and
+      // don't go through this path.
       if ((doc.sourceKind ?? 'policy') === 'reference') {
-        void persistReferenceToLibrary(doc, { blob: opts.blob, sourceUrl: opts.sourceUrl });
+        void persistReferenceToLibrary(doc, { sourceUrl: resolvedSourceUrl });
       }
     } catch (err) {
       setIngestState({ status: 'error', message: String(err) });
@@ -1666,6 +1690,18 @@ function DocumentViewer({
               />
             </label>
           </div>
+          {/* Surface ingest progress / failure prominently. Previously the
+              only feedback was 10px text in the header, so a failed "Load PDF"
+              looked like nothing happened at all. */}
+          {ingestState.status === 'loading' && (
+            <p className="text-[12px] text-tertiary-light">{ingestState.message ?? 'Loading…'}</p>
+          )}
+          {ingestState.status === 'error' && (
+            <p className="text-[12px] text-red-700 max-w-sm break-words">
+              Couldn’t load the PDF: {ingestState.message}.{' '}
+              {hasLibraryPdf && 'Try “Upload PDF” to send the file from your computer instead.'}
+            </p>
+          )}
           {doc.referenceUrl && (
             <a href={doc.referenceUrl} target="_blank" rel="noopener noreferrer" className="text-[11px] text-secondary hover:underline">
               Open source ↗
