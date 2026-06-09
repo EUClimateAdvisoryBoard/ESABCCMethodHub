@@ -1275,6 +1275,15 @@ function DocumentViewer({
     : refId
       ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
       : '';
+  // Fallback for reference PDFs: the durable references proxy above only knows
+  // references stored in the shared library (custom_references). References
+  // that aren't there — notably the bundled static library — 404 on that proxy
+  // even after their PDF has been ingested. Fall back to the content-analysis
+  // ingest cache (keyed by the document id, exactly as `ingestPdf` stored it
+  // this session) so the freshly-loaded PDF still renders.
+  const pdfFallbackUrl = refId
+    ? `/api/content-analysis/pdf?celex=${encodeURIComponent(referencePdfCacheKey(doc.id))}`
+    : undefined;
   const hasPdfPane = Boolean(
     pdfSrcUrl && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
   );
@@ -1441,6 +1450,7 @@ function DocumentViewer({
           <PdfDocumentView
             document={doc}
             pdfSrcUrl={pdfSrcUrl}
+            fallbackSrcUrl={pdfFallbackUrl}
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedBlockId}

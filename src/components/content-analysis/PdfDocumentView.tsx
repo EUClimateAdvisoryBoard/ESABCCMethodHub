@@ -33,6 +33,12 @@ interface Props {
   document: AnalysisDocument;
   /** URL the browser can fetch from. Typically `/api/content-analysis/pdf?celex=…` */
   pdfSrcUrl: string;
+  /** Secondary URL tried once if the primary fails to load. References use
+   *  this to fall back from the durable storage proxy (which only knows
+   *  references in the shared library store) to the freshly-ingested
+   *  content-analysis cache — so a PDF that lives in only one of the two
+   *  stores still renders instead of dead-ending on a 404. */
+  fallbackSrcUrl?: string;
   segments: CodedSegment[];
   codes: CodeNode[];
   highlightedBlockId?: string | null;
@@ -70,6 +76,7 @@ function aggBbox(block: Block): [number, number, number, number] | null {
 export default function PdfDocumentView({
   document: doc,
   pdfSrcUrl,
+  fallbackSrcUrl,
   segments,
   codes,
   highlightedBlockId,
@@ -82,11 +89,25 @@ export default function PdfDocumentView({
   const [loadError, setLoadError] = useState<string | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Remount the <Document> whenever the source URL changes.
-  const file = useMemo(() => ({ url: pdfSrcUrl }), [pdfSrcUrl]);
+  // The URL currently handed to react-pdf. Starts at the primary source; if
+  // that fails to load and a fallback is provided, we switch to it once (see
+  // onLoadError below) so a reference PDF that only exists in the other store
+  // still renders.
+  const [activeUrl, setActiveUrl] = useState(pdfSrcUrl);
+  const [triedFallback, setTriedFallback] = useState(false);
+
+  // Remount the <Document> whenever the active source URL changes.
+  const file = useMemo(() => ({ url: activeUrl }), [activeUrl]);
+
+  // Reset to the primary source whenever it changes (a new document was
+  // selected) so a later document never gets stranded on a previous fallback.
+  useEffect(() => {
+    setActiveUrl(pdfSrcUrl);
+    setTriedFallback(false);
+    setLoadError(null);
+  }, [pdfSrcUrl]);
 
   useEffect(() => {
-    setLoadError(null);
     if (!containerRef.current) return;
     const measure = () => {
       if (!containerRef.current) return;
@@ -96,7 +117,7 @@ export default function PdfDocumentView({
     measure();
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
-  }, [pdfSrcUrl]);
+  }, [activeUrl]);
 
   const blocksByPage = useMemo(() => {
     const map = new Map<number, Block[]>();
@@ -179,7 +200,19 @@ export default function PdfDocumentView({
       <Document
         file={file}
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
-        onLoadError={err => setLoadError(err?.message ?? 'Failed to load PDF')}
+        onLoadError={err => {
+          // First failure with a fallback still untried: switch to it silently
+          // rather than surfacing the error. Only show the error once the
+          // fallback has also failed (or there is none) — e.g. a static-library
+          // reference whose PDF lives in the ingest cache but not the durable
+          // storage proxy the primary URL points at.
+          if (fallbackSrcUrl && !triedFallback && activeUrl !== fallbackSrcUrl) {
+            setTriedFallback(true);
+            setActiveUrl(fallbackSrcUrl);
+            return;
+          }
+          setLoadError(err?.message ?? 'Failed to load PDF');
+        }}
         loading={<div className="p-4 text-[12px] text-[#8A95A3]">Loading PDF…</div>}
         error={<div className="p-4 text-[12px] text-[#B83230]">Couldn&apos;t load PDF. Re-ingest the document.</div>}
       >
