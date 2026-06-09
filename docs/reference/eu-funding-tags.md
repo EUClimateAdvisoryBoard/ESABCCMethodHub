@@ -8,39 +8,58 @@ CrossRef's `funder[]` metadata — the structured form of the paper's funding
 acknowledgment. References funded by an EU research programme are tagged so the
 library can be filtered (e.g. to just Horizon Europe).
 
-## Status
-
-**Not yet generated.** The tagger calls `api.crossref.org`, which is blocked in
-the restricted Claude Code sandbox. Run it where CrossRef is reachable (Vercel,
-a developer machine, or CI):
-
-```sh
-node scripts/tag-eu-funded-references.mjs
-```
-
-That populates `src/data/reference-funding-tags.json` (imported by the Reference
-Manager so the tags render in the UI) and rewrites this report with the results.
-
-## Corpus to scan
+## Corpus
 
 - **Total references:** 2631
 - **With a DOI (checkable against CrossRef):** 1083
+- **Scanned this run:** 1083
+- **EU-funded (tagged):** 181
+
 
 ## Tags applied
 
 `eu-funded` is added to any reference with a matching EU funder; a specific
-programme tag is added alongside it:
+programme tag is added alongside it.
 
-| Tag | Funder | DOI prefix |
+| Tag | References |
+| --- | --- |
+| `eu-funded` | 180 |
+| `horizon-2020` | 75 |
+| `european-commission` | 66 |
+| `erc` | 37 |
+| `life` | 22 |
+| `horizon-europe` | 20 |
+| `erdf` | 4 |
+
+## Sample of tagged references
+
+| Reference | Tags | Funder (award) |
 | --- | --- | --- |
-| `eu-funded` | any EU funder below | — |
-| `horizon-europe` | Horizon Europe (2021–2027) | 10.13039/100018693 |
-| `horizon-2020` | Horizon 2020 | 10.13039/100010661 |
-| `erc` | European Research Council | 10.13039/501100007601 |
-| `european-commission` | European Commission | 10.13039/501100000780 |
-| `erdf` | European Regional Development Fund | 10.13039/501100008530 |
-| `life` | LIFE Programme | 10.13039/501100002347 |
+| `ref-2` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (730053) |
+| `ref-15` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (101000828) |
+| `ref-32` | eu-funded, horizon-2020 | European Union’s Horizon 2020 research and innovation programme (677407) |
+| `ref-34` | eu-funded, european-commission | European Commission Joint Research Centre |
+| `ref-43` | eu-funded, horizon-europe, european-commission | Horizon 2020 (773785); European Commission |
+| `ref-60` | eu-funded, european-commission, horizon-2020 | European Commission; H2020 Marie Skłodowska-Curie Actions (101031139) |
+| `ref-85` | eu-funded, horizon-2020 | EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104); EC | Horizon 2020 Framework Programme (101037104) |
+| `ref-115` | eu-funded, erdf | European Regional Development Fund (EAPA \u2013 272/2016) |
+| `ref-203` | eu-funded, horizon-2020 | EC | Horizon 2020 Framework Programme (641811); EC | Horizon 2020 Framework Programme (820712) |
+| `ref-204` | eu-funded, european-commission | European Commissiont (036822); European Commissiont (244012); European Commissiont (283093) |
+| `ref-266` | eu-funded, horizon-europe | HORIZON EUROPE Framework Programme (101060464) |
+| `ref-275` | eu-funded, horizon-2020 | H2020 Environment (773499) |
+| `ref-295` | eu-funded, european-commission | European Commission |
+| `ref-301` | eu-funded, horizon-2020 | H2020 European Research Council (786643) |
+| `ref-310` | eu-funded, erdf | EC | European Regional Development Fund |
+| `ref-315` | eu-funded, erc | European Research Council (647224) |
+| `ref-318` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (862695) |
+| `ref-375` | eu-funded, european-commission | European Commission |
+| `ref-465` | eu-funded, european-commission, erdf, erc, life | European Commission; European Regional Development Fund (P_40_382); European Regional Development Fund (K23AG056638); Horizon 2020 (654221); Horizon 2020 (676536); Bundesministerium für Bildung und Forschung; European Research Council |
+| `ref-492` | eu-funded, european-commission | European Commission |
+| `ref-501` | eu-funded, horizon-europe | HORIZON EUROPE European Research Council ((424-933)) |
+| `ref-506` | eu-funded, erc, european-commission | Horizon 2020; European Commission (817949) |
+| `ref-514` | eu-funded, life | Bundesministerium für Bildung und Forschung (01LS2101A); Bundesministerium für Bildung und Forschung (03F0898C) |
+| `ref-515` | eu-funded, horizon-2020 | Horizon 2020 Framework Programme (773682) |
+| `ref-524` | eu-funded, european-commission | European Commission (613520) |
 
-The matching rule mirrors `EU_FUNDER_DOI_PREFIXES` / `isEuFunder` in
-`src/lib/references/types.ts`. The full per-reference map lives in
-`src/data/reference-funding-tags.json`.
+The full per-reference map is in `src/data/reference-funding-tags.json`, which
+the Reference Manager imports so the tags render in the UI.

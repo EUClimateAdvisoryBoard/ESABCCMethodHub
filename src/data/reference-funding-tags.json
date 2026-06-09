@@ -1,8 +1,3865 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-06-09T07:13:48.880Z",
   "source": "scripts/tag-eu-funded-references.mjs",
-  "description": "Maps reference id -> funding tags, derived from CrossRef funder[] metadata (the structured form of each paper's funding acknowledgment). Empty until the script is run in an environment where api.crossref.org is reachable. Regenerate with: node scripts/tag-eu-funded-references.mjs",
-  "summary": { "total": 2631, "withDoi": 1083, "scanned": 0, "euFunded": 0, "byTag": {} },
-  "tags": {},
-  "funders": {}
+  "description": "Maps reference id -> funding tags, derived from CrossRef funder[] metadata (the structured form of each paper's funding acknowledgment). Regenerate with: node scripts/tag-eu-funded-references.mjs",
+  "summary": {
+    "total": 2631,
+    "withDoi": 1083,
+    "scanned": 1083,
+    "euFunded": 181,
+    "networkFailures": 0,
+    "byTag": {
+      "eu-funded": 180,
+      "horizon-2020": 75,
+      "european-commission": 66,
+      "horizon-europe": 20,
+      "erdf": 4,
+      "erc": 37,
+      "life": 22
+    }
+  },
+  "tags": {
+    "ref-2": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-15": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-32": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-34": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-43": [
+      "eu-funded",
+      "horizon-europe",
+      "european-commission"
+    ],
+    "ref-60": [
+      "eu-funded",
+      "european-commission",
+      "horizon-2020"
+    ],
+    "ref-85": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-115": [
+      "eu-funded",
+      "erdf"
+    ],
+    "ref-203": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-204": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-266": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-275": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-295": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-301": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-310": [
+      "eu-funded",
+      "erdf"
+    ],
+    "ref-315": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-318": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-375": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-465": [
+      "eu-funded",
+      "european-commission",
+      "erdf",
+      "erc",
+      "life"
+    ],
+    "ref-492": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-501": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-506": [
+      "eu-funded",
+      "erc",
+      "european-commission"
+    ],
+    "ref-514": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-515": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-524": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-525": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-527": [
+      "eu-funded",
+      "european-commission",
+      "horizon-europe",
+      "life"
+    ],
+    "ref-530": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-539": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-549": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-593": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-615": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-619": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-635": [
+      "eu-funded",
+      "erc",
+      "european-commission",
+      "horizon-2020"
+    ],
+    "ref-650": [
+      "eu-funded",
+      "erc",
+      "european-commission"
+    ],
+    "ref-651": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-661": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-669": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-673": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-676": [
+      "eu-funded",
+      "european-commission",
+      "horizon-europe"
+    ],
+    "ref-687": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-688": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-694": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-705": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-722": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-735": [
+      "eu-funded",
+      "european-commission",
+      "horizon-2020"
+    ],
+    "ref-748": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-864": [
+      "eu-funded",
+      "horizon-europe",
+      "horizon-2020"
+    ],
+    "ref-866": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-902": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-903": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-907": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-909": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-910": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-942": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-944": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-946": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-952": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-958": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-974": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1001": [
+      "eu-funded",
+      "horizon-europe",
+      "european-commission"
+    ],
+    "ref-1017": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1032": [
+      "eu-funded",
+      "horizon-2020",
+      "erc"
+    ],
+    "ref-1034": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1037": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1039": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1050": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1056": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1085": [
+      "eu-funded",
+      "horizon-europe",
+      "erc",
+      "horizon-2020"
+    ],
+    "ref-1089": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1093": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1095": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1101": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1113": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1144": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1149": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1151": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1152": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1162": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1169": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1171": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1244": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1328": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1354": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1405": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1416": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1424": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1441": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1451": [
+      "eu-funded",
+      "erc",
+      "horizon-2020",
+      "erdf",
+      "european-commission"
+    ],
+    "ref-1452": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1453": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1456": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1460": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1495": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1500": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1513": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1524": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1527": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1528": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1533": [
+      "eu-funded",
+      "horizon-europe",
+      "erc",
+      "life"
+    ],
+    "ref-1539": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1547": [
+      "eu-funded",
+      "european-commission",
+      "horizon-2020"
+    ],
+    "ref-1549": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1556": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1557": [
+      "eu-funded",
+      "life",
+      "horizon-2020"
+    ],
+    "ref-1558": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1563": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1564": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1565": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1576": [
+      "eu-funded",
+      "horizon-2020",
+      "erc"
+    ],
+    "ref-1582": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1589": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1591": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1594": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1596": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1610": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1615": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1633": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1634": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1637": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1648": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1651": [
+      "eu-funded",
+      "erc",
+      "horizon-2020"
+    ],
+    "ref-1654": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1665": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1692": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1693": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1708": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1709": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1719": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1723": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1738": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1742": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1746": [
+      "eu-funded",
+      "horizon-2020",
+      "horizon-europe",
+      "erc"
+    ],
+    "ref-1750": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1794": [
+      "eu-funded",
+      "horizon-europe",
+      "erc"
+    ],
+    "ref-1799": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-1825": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1829": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-1838": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1850": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-1856": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-1863": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2074": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2080": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2091": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2202": [
+      "eu-funded",
+      "erc",
+      "horizon-europe"
+    ],
+    "ref-2204": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-2207": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2209": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2210": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2269": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2294": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2328": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2330": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2333": [
+      "eu-funded",
+      "life"
+    ],
+    "ref-2334": [
+      "eu-funded",
+      "erc",
+      "european-commission"
+    ],
+    "ref-2348": [
+      "eu-funded",
+      "erc",
+      "horizon-europe"
+    ],
+    "ref-2352": [
+      "eu-funded",
+      "european-commission"
+    ],
+    "ref-2354": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2393": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2397": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-2421": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2424": [
+      "eu-funded",
+      "horizon-2020",
+      "life"
+    ],
+    "ref-2426": [
+      "eu-funded",
+      "horizon-europe"
+    ],
+    "ref-2429": [
+      "eu-funded",
+      "erc"
+    ],
+    "ref-2454": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2458": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2485": [
+      "eu-funded",
+      "life",
+      "horizon-2020"
+    ],
+    "ref-2502": [
+      "eu-funded",
+      "erc",
+      "horizon-2020",
+      "european-commission"
+    ],
+    "ref-2520": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2551": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "ref-2580": [
+      "eu-funded",
+      "life"
+    ],
+    "doi-10.1088-1748-9326-ae55b9": [
+      "eu-funded",
+      "erc"
+    ],
+    "doi-10.1016-j.enpol.2024.114083": [
+      "eu-funded",
+      "erc",
+      "horizon-2020"
+    ],
+    "doi-10.1088-1748-9326-ac65a4": [
+      "eu-funded",
+      "horizon-2020"
+    ],
+    "doi-10.1016-j.agsy.2026.104738": [
+      "eu-funded",
+      "european-commission",
+      "horizon-europe"
+    ],
+    "doi-10.1038-s44168-026-00364-4": [
+      "eu-funded",
+      "horizon-europe",
+      "erc"
+    ],
+    "doi-10.1016-j.jenvman.2026.129449": [
+      "eu-funded",
+      "horizon-2020",
+      "erc"
+    ],
+    "doi-10.1016-j.jclepro.2023.137614": [
+      "eu-funded",
+      "horizon-europe",
+      "european-commission",
+      "horizon-2020"
+    ],
+    "doi-10.1038-s41558-026-02602-3": [
+      "eu-funded",
+      "horizon-2020",
+      "european-commission"
+    ]
+  },
+  "funders": {
+    "ref-2": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "730053"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-15": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101000828"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-32": [
+      {
+        "name": "European Union’s Horizon 2020 research and innovation programme",
+        "doi": "",
+        "awards": [
+          "677407"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-34": [
+      {
+        "name": "European Commission Joint Research Centre",
+        "doi": "10.13039/501100000900",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-43": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "773785"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-60": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "H2020 Marie Skłodowska-Curie Actions",
+        "doi": "10.13039/100010665",
+        "awards": [
+          "101031139"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-85": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037104"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-115": [
+      {
+        "name": "European Regional Development Fund",
+        "doi": "10.13039/501100008530",
+        "awards": [
+          "EAPA \\u2013 272/2016"
+        ],
+        "tag": "erdf"
+      }
+    ],
+    "ref-203": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "641811"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "820712"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-204": [
+      {
+        "name": "European Commissiont",
+        "doi": "",
+        "awards": [
+          "036822"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commissiont",
+        "doi": "",
+        "awards": [
+          "244012"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commissiont",
+        "doi": "",
+        "awards": [
+          "283093"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-266": [
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101060464"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-275": [
+      {
+        "name": "H2020 Environment",
+        "doi": "10.13039/100010681",
+        "awards": [
+          "773499"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-295": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-301": [
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "786643"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-310": [
+      {
+        "name": "EC | European Regional Development Fund",
+        "doi": "10.13039/501100008530",
+        "awards": [],
+        "tag": "erdf"
+      }
+    ],
+    "ref-315": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "647224"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-318": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "862695"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-375": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-465": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Regional Development Fund",
+        "doi": "10.13039/501100008530",
+        "awards": [
+          "P_40_382"
+        ],
+        "tag": "erdf"
+      },
+      {
+        "name": "European Regional Development Fund",
+        "doi": "10.13039/501100008530",
+        "awards": [
+          "K23AG056638"
+        ],
+        "tag": "erdf"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "654221"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "676536"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [],
+        "tag": "life"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-492": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-501": [
+      {
+        "name": "HORIZON EUROPE European Research Council",
+        "doi": "10.13039/100019180",
+        "awards": [
+          "(424-933)"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-506": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "817949"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-514": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LS2101A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03F0898C"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-515": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "773682"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-524": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "613520"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-525": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "773901"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-527": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "LIFE18PRE/NL002"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "HORIZON EUROPE European Research Council",
+        "doi": "10.13039/100019180",
+        "awards": [
+          "101060816"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "CAP4GI"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01UT2102A"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-530": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "245123-FP7-KBBE- 2009-3"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-539": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "ERC-2010-Stg-263522 LUISE"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-549": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "817903"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-593": [
+      {
+        "name": "Horizon Europe",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "209734/Z/17/Z"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "Horizon Europe",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101057690"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-615": [
+      {
+        "name": "European Commissions",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-619": [
+      {
+        "name": "European Commission for the NitroEurope IP, ÉCLAIRE, Legume Futures and AnimalChange projects",
+        "doi": "",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-635": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "603542"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "Horizon 2020 Research and Innovation",
+        "doi": "",
+        "awards": [
+          "633838"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-650": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "101039429"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "CEX2021- 001201-M"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "MICIU/AEI/10.13039/501100011033"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-651": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "776848"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-661": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821010"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-669": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "956396"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "865564"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101069213"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101123382"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-673": [
+      {
+        "name": "FP7 Ideas: European Research Council",
+        "doi": "10.13039/100011199",
+        "awards": [
+          "603416"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-676": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "Horizon Europe",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101093921"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-687": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037424"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101037084"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101036683"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101036560"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-688": [
+      {
+        "name": "Federal Ministry of Education and Research Bonn Office",
+        "doi": "10.13039/501100002347",
+        "awards": [],
+        "tag": "life"
+      }
+    ],
+    "ref-694": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "869304"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-705": [
+      {
+        "name": "Horizon Europe Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101137207"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-722": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "820712"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-735": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101022791"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-748": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-864": [
+      {
+        "name": "HORIZON EUROPE Innovative Europe",
+        "doi": "10.13039/100019186",
+        "awards": [
+          "820829"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "HORIZON EUROPE Innovative Europe",
+        "doi": "10.13039/100019186",
+        "awards": [
+          "101081395"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "HORIZON EUROPE Innovative Europe",
+        "doi": "10.13039/100019186",
+        "awards": [
+          "821003"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "951542"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-866": [
+      {
+        "name": "Federal Ministry of Education and Research Bonn Office",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "031B0751"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-902": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003276"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "820712"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "820712"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003276"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-903": [
+      {
+        "name": "FP7 European Commission under the Seventh Framework Programme",
+        "doi": "",
+        "awards": [
+          "308438"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-907": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "308438"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-909": [
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "776479"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-910": [
+      {
+        "name": "European Comission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-942": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "FKZ 01LR1709B1"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-944": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821010"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-946": [
+      {
+        "name": "European Union's Horizon 2020 research and innovation program",
+        "doi": "10.13039/100010681",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-952": [
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101059662"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "10039588"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-958": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-974": [
+      {
+        "name": "H2020 Marie Skłodowska-Curie Actions",
+        "doi": "10.13039/100010665",
+        "awards": [
+          "801199"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1001": [
+      {
+        "name": "HORIZON EUROPE Civil security for society",
+        "doi": "10.13039/100018698",
+        "awards": [],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101073978"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1017": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "No. 101036458"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "No. 101019707"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "No. 869395"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1032": [
+      {
+        "name": "H2020 COACCH",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "776479]"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "European Union’s Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "756194]"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1034": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "PHUSICOS project No. 776681"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1037": [
+      {
+        "name": "European Commission Joint Research Centre",
+        "doi": "10.13039/501100000900",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1039": [
+      {
+        "name": "HORIZON 2020 MYRIAD-EU Project",
+        "doi": "",
+        "awards": [
+          "101003276"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1050": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1056": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1085": [
+      {
+        "name": "HORIZON EUROPE Climate, Energy and Mobility",
+        "doi": "10.13039/100018700",
+        "awards": [
+          "101081377"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "",
+        "awards": [
+          "101076909"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "820655"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1089": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "101003598"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1093": [
+      {
+        "name": "H2020 Marie Skłodowska-Curie Actions",
+        "doi": "10.13039/100010665",
+        "awards": [
+          "Grant agreement 101060840"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1095": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1101": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101003276"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1113": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "GA‐101036849"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1144": [
+      {
+        "name": "European Research Council",
+        "doi": "",
+        "awards": [
+          "ERC-2010-Stg-263522 LUISE"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1149": [
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1151": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "776810"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1152": [
+      {
+        "name": "H2020",
+        "doi": "10.13039/100014028",
+        "awards": [
+          "730053"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1162": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "208659"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "208659"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "208659"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1169": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1171": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1244": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5S0"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5S0"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1328": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056868"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056868"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056868"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056873"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056873"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101056868"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1354": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "754382"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1405": [
+      {
+        "name": "Bundesministerium fr Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "FKZ 03F0608A"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1416": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LS1610B"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03EK3046B"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1424": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "730403"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1441": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1451": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "869300"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Regional Development Fund",
+        "doi": "10.13039/501100008530",
+        "awards": [],
+        "tag": "erdf"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1452": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "869192"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1453": [
+      {
+        "name": "European Commission Seventh Framework Programme for Research and Technological Development Energy",
+        "doi": "10.13039/100011267",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1456": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LS2108B"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1460": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "ENGAGE Grant No. 821471"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1495": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "226299"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1500": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821205"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1513": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "613520"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "FP7-Marie Curie-COFUND program of the European Commission",
+        "doi": "",
+        "awards": [
+          "ACA17-02"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1524": [
+      {
+        "name": "European Union’s Horizon 2020 research and innovation programme",
+        "doi": "",
+        "awards": [
+          "869192"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1527": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1528": [
+      {
+        "name": "EC",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "EuropeAid/134638/C/SER/Multi"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "EC",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "308329"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "EC",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "642147"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1533": [
+      {
+        "name": "HORIZON EUROPE Framework Programme",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "‘UPTAKE’ (101081521)"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "",
+        "awards": [
+          "ERC-2020-SyG ‘GENIE’ (951542)"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "‘CDRSynTra’ (01LS2101F)"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1539": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "IMPRESSIONS project (Grant Agreement 603416)"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1547": [
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "EU H2020 PEGASUS",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "633814"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EU H2020 Simwood",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "613762"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Union's Horizon 2020",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1549": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "244065"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1556": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "951542-GENIE-ERC-2020-SyG"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1557": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LA1809A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LA1809A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LA1809A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "821124"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821124"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821471"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1558": [
+      {
+        "name": "European Commission DG Agriculture's CAPRESE-SOILS project",
+        "doi": "",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1563": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "869192"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1564": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101060415"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1565": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "764799"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1576": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "776810"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "958927"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "SyG-2013-610028 IMBALANCE-P"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "ESM2025"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1582": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "PI/2017/388‐178"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1589": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "ERC Grant 306933"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1591": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LS1610B"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03EK3046B"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1594": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1596": [
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "306933"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1610": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "730053"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1615": [
+      {
+        "name": "European Union’s Horizon 2020 Research &amp; Innovation Programme",
+        "doi": "",
+        "awards": [
+          "696356"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1633": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "031B0511A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "031B0511B"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "031B0511C"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1634": [
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "677232"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1637": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1648": [
+      {
+        "name": "bundesministerium für bildung und forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "JPI Climate Axis: LAMACLIMA"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "bundesministerium für bildung und forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "JPI Climate Axis: LAMACLIMA"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1651": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1654": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101081521"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101081521"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003687"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1665": [
+      {
+        "name": "European Union's Horizon 2020 Research and Innovation Programme",
+        "doi": "",
+        "awards": [
+          "654091"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1692": [
+      {
+        "name": "Horizon 2020 Marie Skłodowska-Curie Actions",
+        "doi": "10.13039/100010665",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1693": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1708": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "951542-GENIE-ERC-2020-SyG"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1709": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1719": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "FKZ 03SFK5A"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1723": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "613520"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1738": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "031B0227"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1742": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "635201"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1746": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "730427"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1750": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1794": [
+      {
+        "name": "Horizon Europe",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "837752"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-1799": [
+      {
+        "name": "H2020 Science with and for Society",
+        "doi": "10.13039/100010685",
+        "awards": [
+          "741402"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-1825": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1829": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "884418"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-1838": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1850": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "FKZ 011G1806A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "FKZ 011G1806A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5J0"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LG1910A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03SFK5J0"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-1856": [
+      {
+        "name": "European Commission through Commission Regulation (EEC)",
+        "doi": "",
+        "awards": [
+          "926/93"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission through Commission Regulation (EEC)",
+        "doi": "",
+        "awards": [
+          "CEC 1993"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission Forest Focus Regulation (EC)",
+        "doi": "",
+        "awards": [
+          "2152/2003"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission Forest Focus Regulation (EC)",
+        "doi": "",
+        "awards": [
+          "EC 2003"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-1863": [
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2074": [
+      {
+        "name": "European Commission Joint Research Centre",
+        "doi": "10.13039/501100000900",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2080": [
+      {
+        "name": "H2020 Marie Skłodowska-Curie Actions",
+        "doi": "10.13039/100010665",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2091": [
+      {
+        "name": "European Commission Joint Research Centre",
+        "doi": "10.13039/501100000900",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2202": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "730403"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-2204": [
+      {
+        "name": "Horizon 2020 Research and Innovation Programme",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-2207": [
+      {
+        "name": "European Union’s Horizon 2020 research and innovation programme",
+        "doi": "",
+        "awards": [
+          "696140"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2209": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "730403"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2210": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2269": [
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "101001905"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2294": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2328": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2330": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "LIFE15 GIC/IT/000051"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2333": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01UN1214B"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01UN1214A"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-2334": [
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "313478"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "785125"
+        ],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2348": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "817612"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-2352": [
+      {
+        "name": "EU LIFE Programme of the European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2354": [
+      {
+        "name": "H2020",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "730053 REINVENT"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2393": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821471"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2397": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "869192"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "ref-2421": [
+      {
+        "name": "H2020 Excellent Science",
+        "doi": "10.13039/100010662",
+        "awards": [
+          "820829"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "H2020 Excellent Science",
+        "doi": "10.13039/100010662",
+        "awards": [
+          "821003"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "H2020 European Research Council",
+        "doi": "10.13039/100010663",
+        "awards": [
+          "951542"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2424": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Bundesministerium für Forschung, Technologie und Raumfahrt",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "03F0857C"
+        ],
+        "tag": "life"
+      }
+    ],
+    "ref-2426": [
+      {
+        "name": "HORIZON EUROPE European Research Council",
+        "doi": "10.13039/100019180",
+        "awards": [],
+        "tag": "horizon-europe"
+      }
+    ],
+    "ref-2429": [
+      {
+        "name": "European Research Council",
+        "doi": "",
+        "awards": [],
+        "tag": "erc"
+      }
+    ],
+    "ref-2454": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "948220"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "948220"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2458": [
+      {
+        "name": "European Union's Horizon 2020 research and innovation programme",
+        "doi": "",
+        "awards": [
+          "730403"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2485": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [
+          "01LS1907A"
+        ],
+        "tag": "life"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821124"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "821471"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2502": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [
+          "821124"
+        ],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Union",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      }
+    ],
+    "ref-2520": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "633477"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "723747"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "723391"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "723829"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2551": [
+      {
+        "name": "Horizon 2020",
+        "doi": "",
+        "awards": [
+          "864537"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "ref-2580": [
+      {
+        "name": "Bundesministerium für Bildung und Forschung",
+        "doi": "10.13039/501100002347",
+        "awards": [],
+        "tag": "life"
+      }
+    ],
+    "doi-10.1088-1748-9326-ae55b9": [
+      {
+        "name": "European Research Council - project PICASSO",
+        "doi": "",
+        "awards": [
+          "819566"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "doi-10.1016-j.enpol.2024.114083": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/501100007601",
+        "awards": [],
+        "tag": "erc"
+      },
+      {
+        "name": "Horizon 2020 MSCA",
+        "doi": "10.13039/100010665",
+        "awards": [
+          "956433"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "doi-10.1088-1748-9326-ac65a4": [
+      {
+        "name": "European Union’s Horizon 2020",
+        "doi": "",
+        "awards": [
+          "821124"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Union’s Horizon 2020",
+        "doi": "",
+        "awards": [
+          "821471"
+        ],
+        "tag": "horizon-2020"
+      }
+    ],
+    "doi-10.1016-j.agsy.2026.104738": [
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "101091268"
+        ],
+        "tag": "horizon-europe"
+      }
+    ],
+    "doi-10.1038-s44168-026-00364-4": [
+      {
+        "name": "European Union’s Horizon Europe Research and Innovation Programme",
+        "doi": "",
+        "awards": [
+          "No. 821371"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Union’s Horizon Europe Research and Innovation Programme",
+        "doi": "",
+        "awards": [
+          "No. 101081521"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Union’s Horizon Europe Research and Innovation Programme",
+        "doi": "",
+        "awards": [
+          "No. 101081521"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Research Council Grant Agreement",
+        "doi": "",
+        "awards": [
+          "No. 951542-GENIE-ERC-2020-SyG"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "doi-10.1016-j.jenvman.2026.129449": [
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Research Council",
+        "doi": "10.13039/501100000781",
+        "awards": [
+          "850717"
+        ],
+        "tag": "erc"
+      }
+    ],
+    "doi-10.1016-j.jclepro.2023.137614": [
+      {
+        "name": "Horizon 2020",
+        "doi": "10.13039/100018693",
+        "awards": [
+          "847121"
+        ],
+        "tag": "horizon-europe"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [],
+        "tag": "european-commission"
+      },
+      {
+        "name": "Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [],
+        "tag": "horizon-2020"
+      }
+    ],
+    "doi-10.1038-s41558-026-02602-3": [
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003866"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "EC | Horizon 2020 Framework Programme",
+        "doi": "10.13039/100010661",
+        "awards": [
+          "101003866"
+        ],
+        "tag": "horizon-2020"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101184374"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101184374"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101184374"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101184374"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101056306"
+        ],
+        "tag": "european-commission"
+      },
+      {
+        "name": "European Commission",
+        "doi": "10.13039/501100000780",
+        "awards": [
+          "101081179"
+        ],
+        "tag": "european-commission"
+      }
+    ]
+  }
 }
