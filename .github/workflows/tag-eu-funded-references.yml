@@ -25,6 +25,10 @@ permissions:
 jobs:
   tag-and-commit:
     runs-on: ubuntu-latest
+    # Opt the bundled actions (checkout, setup-node) into the Node 24 runtime;
+    # Node 20 is deprecated on GitHub runners from mid-June 2026.
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
     steps:
       - uses: actions/checkout@v4
         with:
@@ -52,4 +56,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/data/reference-funding-tags.json docs/reference/eu-funding-tags.md
           git commit -m "chore: tag EU-funded references from CrossRef [automated]"
-          git push origin HEAD:${GITHUB_REF#refs/heads/}
+          branch="${GITHUB_REF#refs/heads/}"
+          # The target branch (especially a busy main) can advance between
+          # checkout and push, which rejects the push as non-fast-forward.
+          # Rebase the single automated commit onto the latest tip and retry.
+          for attempt in 1 2 3 4 5; do
+            if git push origin "HEAD:${branch}"; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing onto origin/${branch} and retrying."
+            git pull --rebase origin "${branch}"
+            sleep $((attempt * 3))
+          done
+          echo "::error::Failed to push automated tag update after 5 attempts."
+          exit 1
+
