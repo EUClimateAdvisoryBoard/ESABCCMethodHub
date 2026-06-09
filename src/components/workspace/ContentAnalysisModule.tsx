@@ -64,6 +64,7 @@ import DocumentList from '@/components/content-analysis/DocumentList';
 import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
+import GeneralNotesPanel from '@/components/content-analysis/GeneralNotesPanel';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
@@ -168,6 +169,12 @@ interface Props {
 /** localStorage key holding the per-workspace corpus (document allow-list). */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
+}
+
+/** localStorage key holding a document's free-form general notes, scoped to
+ *  this workspace project so notes don't bleed across projects. */
+function generalNotesKey(projectId: string, documentId: string): string {
+  return `ca:ws-notes:${projectId}:${documentId}`;
 }
 
 export default function ContentAnalysisModule({ projectId, projectName }: Props) {
@@ -976,7 +983,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           onTabChange={setAnalysisTab}
         />
       ) : (
-        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px]">
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_300px] xl:grid-cols-[260px_minmax(0,1fr)_300px_280px]">
           {/* LEFT: corpus + add documents */}
           <aside className="flex flex-col gap-3 min-h-0 min-w-0">
             <div className="border border-grey-200 rounded-lg bg-white">
@@ -1168,6 +1175,30 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onCommentRequestConsumed={() => setCommentForSegmentId(null)}
               />
             </div>
+          </aside>
+
+          {/* FAR RIGHT: general notes — free-form comments on the whole
+              document, separate from the passage-pinned coded segments. */}
+          <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
+            <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
+              <span
+                className="text-[11px] font-semibold text-tertiary-dark"
+                title="Free-form notes on this document — not pinned to any passage"
+              >
+                General notes
+              </span>
+            </div>
+            {selectedDocument ? (
+              <GeneralNotesPanel
+                key={selectedDocument.id}
+                storageKey={generalNotesKey(projectId, selectedDocument.id)}
+                authorName={displayName}
+              />
+            ) : (
+              <p className="px-3 py-3 text-[11px] text-tertiary-light italic">
+                Select a document to add general notes.
+              </p>
+            )}
           </aside>
         </div>
       )}
