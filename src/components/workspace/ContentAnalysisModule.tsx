@@ -64,7 +64,7 @@ import DocumentList from '@/components/content-analysis/DocumentList';
 import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
-import GeneralNotesPanel from '@/components/content-analysis/GeneralNotesPanel';
+import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
 import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
 import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
 import type { PdfTextSelection } from '@/components/content-analysis/PdfDocumentView';
@@ -236,6 +236,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // segment — used by the "Add comment" toast action straight after tagging.
   const [commentForSegmentId, setCommentForSegmentId] = useState<string | null>(null);
   const [toolbarSel, setToolbarSel] = useState<ToolbarSelection | null>(null);
+  // A passage handed to the General notes panel for a tag-free comment, plus
+  // the block a note wants to jump back to in the document.
+  const [pendingNoteSel, setPendingNoteSel] = useState<PendingNoteSelection | null>(null);
+  const [noteJumpBlockId, setNoteJumpBlockId] = useState<string | null>(null);
   const [codeEditor, setCodeEditor] = useState<CodeEditorPayload | null>(null);
   const [ingestState, setIngestState] = useState<{ status: 'idle' | 'loading' | 'error' | 'ok'; message?: string }>({ status: 'idle' });
 
@@ -472,6 +476,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       // to the project — this is what powers the lens comparison.
       projectId,
     });
+    setNoteJumpBlockId(null);
     setHighlightedSegmentId(seg.id);
     const code = snapshot.codes.find(c => c.id === codeId);
     showToast({
@@ -1002,7 +1007,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     documents={corpusDocs}
                     codes={visibleCodes}
                     selectedDocumentId={selectedDocument?.id ?? null}
-                    onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setIngestState({ status: 'idle' }); }}
+                    onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setNoteJumpBlockId(null); setIngestState({ status: 'idle' }); }}
                     counts={docCounts}
                     onRemove={confirmRemoveFromCorpus}
                     overallTagsByDoc={overallTagsByDoc}
@@ -1133,6 +1138,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 codes={visibleCodes}
                 activeCodeId={selectedCodeId}
                 highlightedSegmentId={highlightedSegmentId}
+                forcedHighlightBlockId={noteJumpBlockId}
                 ingestState={ingestState}
                 showOverallTags={canEditOverallTags}
                 overallTagCodes={masterCodes}
@@ -1144,9 +1150,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 onSaveSummary={handleSaveSummary}
                 onLoadSummaryBlocks={loadSummaryBlocks}
                 onCreateSegment={handleCreateSegment}
-                onSelectSegment={setHighlightedSegmentId}
+                onSelectSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
                 onDeleteSegment={deleteSegment}
-                onCommentSegment={id => { setHighlightedSegmentId(id); setCommentForSegmentId(id); }}
+                onCommentSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); setCommentForSegmentId(id); }}
                 onSelectionWithoutCode={sel => setToolbarSel(sel)}
                 onRemoveFromCorpus={() => removeFromCorpus(selectedDocument.id)}
                 onLoadText={() => handleLoadText(selectedDocument)}
@@ -1168,7 +1174,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 codes={visibleCodes}
                 documents={corpusDocs}
                 selectedSegmentId={highlightedSegmentId}
-                onOpenSegment={setHighlightedSegmentId}
+                onOpenSegment={id => { setNoteJumpBlockId(null); setHighlightedSegmentId(id); }}
                 onDelete={deleteSegment}
                 onUpdateNote={handleUpdateNote}
                 requestCommentForId={commentForSegmentId}
@@ -1193,6 +1199,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 key={selectedDocument.id}
                 storageKey={generalNotesKey(projectId, selectedDocument.id)}
                 authorName={displayName}
+                pendingSelection={pendingNoteSel}
+                onPendingConsumed={() => setPendingNoteSel(null)}
+                onJumpToNote={note => { if (note.blockId) { setHighlightedSegmentId(null); setNoteJumpBlockId(note.blockId); } }}
               />
             ) : (
               <p className="px-3 py-3 text-[11px] text-tertiary-light italic">
@@ -1222,6 +1231,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           setToolbarSel(null);
         }}
         onClear={() => setToolbarSel(null)}
+        onComment={() => {
+          if (!toolbarSel) return;
+          // Hand the selected passage to the General notes panel as a
+          // tag-free comment target, then dismiss the toolbar.
+          setPendingNoteSel({
+            quote: toolbarSel.text,
+            blockId: toolbarSel.blockId,
+            startChar: toolbarSel.startChar,
+            endChar: toolbarSel.endChar,
+          });
+          setToolbarSel(null);
+        }}
         onCreateAndApply={suggestedName => {
           if (!toolbarSel) return;
           setCodeEditor({
@@ -1252,6 +1273,7 @@ function DocumentViewer({
   codes,
   activeCodeId,
   highlightedSegmentId,
+  forcedHighlightBlockId,
   ingestState,
   showOverallTags,
   overallTagCodes,
@@ -1277,6 +1299,9 @@ function DocumentViewer({
   codes: CodeNode[];
   activeCodeId: string | null;
   highlightedSegmentId: string | null;
+  /** A block to scroll to & highlight on demand — e.g. jumping to a note's
+   *  passage — independent of the selected coded segment. */
+  forcedHighlightBlockId: string | null;
   ingestState: { status: 'idle' | 'loading' | 'error' | 'ok'; message?: string };
   showOverallTags: boolean;
   overallTagCodes: CodeNode[];
@@ -1337,12 +1362,15 @@ function DocumentViewer({
   // so don't also tint the whole enclosing block — that's the imprecise
   // behaviour we're moving away from. Only fall back to a block highlight for
   // legacy / flat-text segments.
-  const highlightedBlockId = highlightedSeg?.pdfAnchor
-    ? null
-    : highlightedSeg?.blockId ??
-      (highlightedSeg
-        ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
-        : null);
+  // A note jump (forcedHighlightBlockId) wins — it's an explicit "take me to
+  // this passage" action — otherwise fall back to the selected segment's block.
+  const highlightedBlockId = forcedHighlightBlockId
+    ?? (highlightedSeg?.pdfAnchor
+      ? null
+      : highlightedSeg?.blockId ??
+        (highlightedSeg
+          ? blockRanges.find(r => highlightedSeg.startChar >= r.start && highlightedSeg.startChar < r.end)?.id ?? null
+          : null));
 
   return (
     <div className="flex flex-col min-h-0">

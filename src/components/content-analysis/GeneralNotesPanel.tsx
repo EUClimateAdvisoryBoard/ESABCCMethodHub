@@ -3,21 +3,38 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 
 /**
- * General notes — a free-form scratchpad for a document, distinct from the
- * coded segments (which are pinned to specific passages) and the whole-document
- * summary (one shared write-up). Notes are quick, timestamped comments an
- * analyst jots while reading: questions, reminders, "follow up on X".
+ * General notes — lightweight comments tied to a passage, without applying a
+ * tag. The analyst selects text in the document and hits "Comment" in the
+ * floating toolbar; the selected passage is captured as the note's quote and
+ * they type a remark against it. It's the "just leave a comment" path that
+ * sits alongside full coding: no code has to be picked, but the note still
+ * points at the exact passage it's about.
  *
- * Each note carries the author and the time it was written. They persist to
- * localStorage keyed by (project, document) — the same lightweight, no-backend
- * approach the workspace corpus uses — so they survive reloads on this machine
- * without a schema change.
+ * A note can also be written with no passage attached (a free-form remark on
+ * the whole document). Notes persist to localStorage keyed by (project,
+ * document) — the same no-backend approach the workspace corpus uses — so they
+ * survive reloads on this machine without a schema change.
  */
 export interface GeneralNote {
   id: string;
+  /** The comment text. */
   text: string;
+  /** The passage the comment is about, when anchored to a selection. */
+  quote?: string;
+  /** Block the passage lives in, used to jump back to it in the document. */
+  blockId?: string;
+  startChar?: number;
+  endChar?: number;
   author: string | null;
   createdAt: string;
+}
+
+/** A passage the parent has handed over to be commented on. */
+export interface PendingNoteSelection {
+  quote: string;
+  blockId?: string;
+  startChar?: number;
+  endChar?: number;
 }
 
 interface Props {
@@ -25,6 +42,12 @@ interface Props {
   storageKey: string;
   /** Name stamped on new notes, when the analyst is signed in. */
   authorName?: string | null;
+  /** When set, the composer attaches the comment to this passage and focuses
+   *  the input. Cleared via `onPendingConsumed` once picked up. */
+  pendingSelection?: PendingNoteSelection | null;
+  onPendingConsumed?: () => void;
+  /** Jump back to a note's passage in the document (highlights its block). */
+  onJumpToNote?: (note: GeneralNote) => void;
 }
 
 function loadNotes(key: string): GeneralNote[] {
@@ -38,9 +61,17 @@ function loadNotes(key: string): GeneralNote[] {
   }
 }
 
-export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
+export default function GeneralNotesPanel({
+  storageKey,
+  authorName,
+  pendingSelection,
+  onPendingConsumed,
+  onJumpToNote,
+}: Props) {
   const [notes, setNotes] = useState<GeneralNote[]>([]);
   const [draft, setDraft] = useState('');
+  // The passage the in-progress comment is attached to (if any).
+  const [anchor, setAnchor] = useState<PendingNoteSelection | null>(null);
   const [loaded, setLoaded] = useState(false);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -48,6 +79,7 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
   useEffect(() => {
     setNotes(loadNotes(storageKey));
     setDraft('');
+    setAnchor(null);
     setLoaded(true);
   }, [storageKey]);
 
@@ -62,17 +94,32 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
     }
   }, [notes, loaded, storageKey]);
 
+  // Pick up a passage handed over from the selection toolbar: attach it and
+  // focus the composer so the analyst can type straight away.
+  useEffect(() => {
+    if (!pendingSelection) return;
+    setAnchor(pendingSelection);
+    onPendingConsumed?.();
+    // Focus on the next tick so the textarea is mounted.
+    setTimeout(() => textareaRef.current?.focus(), 0);
+  }, [pendingSelection, onPendingConsumed]);
+
   const addNote = () => {
     const text = draft.trim();
     if (!text) return;
     const note: GeneralNote = {
       id: `note-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
       text,
+      quote: anchor?.quote?.replace(/\s+/g, ' ').trim() || undefined,
+      blockId: anchor?.blockId,
+      startChar: anchor?.startChar,
+      endChar: anchor?.endChar,
       author: authorName ?? null,
       createdAt: new Date().toISOString(),
     };
     setNotes(prev => [note, ...prev]);
     setDraft('');
+    setAnchor(null);
     textareaRef.current?.focus();
   };
 
@@ -89,6 +136,29 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
     <div className="flex flex-col min-h-0">
       {/* Composer */}
       <div className="px-3 py-2.5 border-b border-grey-200">
+        {anchor?.quote ? (
+          <div className="mb-1.5 flex items-start gap-1.5 rounded border border-primary/30 bg-primary/5 px-2 py-1">
+            <span aria-hidden className="text-primary text-[11px] leading-tight mt-px">“</span>
+            <p className="flex-1 min-w-0 text-[11px] italic text-tertiary leading-snug line-clamp-2">
+              {anchor.quote.replace(/\s+/g, ' ').trim()}
+            </p>
+            <button
+              type="button"
+              onClick={() => setAnchor(null)}
+              className="text-tertiary-light hover:text-red-700 text-[13px] leading-none"
+              aria-label="Detach passage"
+              title="Comment on the whole document instead"
+            >
+              ×
+            </button>
+          </div>
+        ) : (
+          <p className="mb-1.5 text-[10px] text-tertiary-light leading-snug">
+            Select text in the document and choose <strong>💬 Comment</strong> to
+            tie a note to that passage — no tag needed. Or just write a note on
+            the whole document below.
+          </p>
+        )}
         <textarea
           ref={textareaRef}
           value={draft}
@@ -99,7 +169,7 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
               addNote();
             }
           }}
-          placeholder="Jot a general note on this document — a question, a reminder, something to follow up…"
+          placeholder={anchor?.quote ? 'Comment on this passage…' : 'Add a note on this document…'}
           className="w-full h-20 px-2 py-1.5 border border-grey-200 rounded text-[11.5px] text-tertiary-dark focus:outline-none focus:border-primary resize-y"
         />
         <div className="flex items-center justify-between mt-1.5">
@@ -110,7 +180,7 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
             disabled={!draft.trim()}
             className="text-[11px] font-semibold text-white bg-primary hover:bg-primary-dark rounded px-2.5 py-1 disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            Add note
+            {anchor?.quote ? 'Add comment' : 'Add note'}
           </button>
         </div>
       </div>
@@ -118,8 +188,8 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
       {/* Notes list */}
       {sorted.length === 0 ? (
         <p className="px-3 py-4 text-[11px] italic text-tertiary-light">
-          No general notes yet. Use this space for free-form comments on the
-          whole document — they&apos;re separate from the tagged segments.
+          No notes yet. Highlight a passage and click <strong>Comment</strong>,
+          or jot a free-form note above.
         </p>
       ) : (
         <ul className="flex-1 overflow-y-auto divide-y divide-grey-200 max-h-[40vh]">
@@ -128,11 +198,24 @@ export default function GeneralNotesPanel({ storageKey, authorName }: Props) {
               year: 'numeric', month: 'short', day: 'numeric',
             });
             const byline = [note.author, when].filter(Boolean).join(' · ');
+            const canJump = !!note.quote && !!onJumpToNote;
             return (
               <li key={note.id} className="px-3 py-2 group">
                 <div className="flex items-start gap-1.5">
                   <span aria-hidden className="text-primary text-[11px] leading-tight mt-px">💬</span>
                   <div className="flex-1 min-w-0">
+                    {note.quote && (
+                      <button
+                        type="button"
+                        onClick={() => canJump && onJumpToNote?.(note)}
+                        title={canJump ? 'Jump to this passage' : undefined}
+                        className={`block w-full text-left text-[11px] italic text-tertiary leading-snug line-clamp-2 border-l-2 border-primary/40 pl-1.5 mb-0.5 ${
+                          canJump ? 'cursor-pointer hover:text-primary' : 'cursor-default'
+                        }`}
+                      >
+                        “{note.quote}”
+                      </button>
+                    )}
                     <p className="text-[11.5px] text-tertiary-dark leading-snug whitespace-pre-wrap break-words">
                       {note.text}
                     </p>
