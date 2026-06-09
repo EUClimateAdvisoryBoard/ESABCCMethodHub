@@ -69,10 +69,12 @@ const USE_CACHE = !flag('--no-cache');
 const EU_FUNDER_DOI_TAGS = new Map([
   ['10.13039/501100000780', 'european-commission'], // European Commission
   ['10.13039/100010661', 'horizon-2020'], // Horizon 2020
+  ['10.13039/501100007601', 'horizon-2020'], // Horizon 2020 (R&I framework programme)
   ['10.13039/100018693', 'horizon-europe'], // Horizon Europe
-  ['10.13039/501100007601', 'erc'], // European Research Council
+  ['10.13039/501100000781', 'erc'], // European Research Council
   ['10.13039/501100008530', 'erdf'], // European Regional Development Fund
-  ['10.13039/501100002347', 'life'], // LIFE Programme
+  // 10.13039/501100002347 intentionally NOT mapped: it is Germany's BMBF
+  // (national funder), not the EU LIFE Programme. LIFE is caught by name hint.
 ]);
 
 // Loose name match for funders that may not carry a DOI prefix in CrossRef.
