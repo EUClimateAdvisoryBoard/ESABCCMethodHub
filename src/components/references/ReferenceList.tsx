@@ -19,9 +19,19 @@ interface ReferenceListProps {
   onRefreshNeeded: () => void;
   onEditReference: (ref: Reference) => void;
   onAddToReadingList?: (ref: Reference) => void;
+  /**
+   * Bulk-delete handler owned by the parent page. When provided, it is used
+   * instead of calling the reference-service directly — this matters in
+   * fallback mode, where the displayed references live in the shared-API
+   * custom store rather than the Supabase `references` table the service
+   * targets. The parent is responsible for removing the rows from the correct
+   * store and updating the rendered list. Falls back to the service-level
+   * `deleteReference` + `onRefreshNeeded` when omitted (Supabase mode).
+   */
+  onDeleteReferences?: (ids: string[]) => Promise<void> | void;
 }
 
-export default function ReferenceList({ references, onRefreshNeeded, onEditReference, onAddToReadingList }: ReferenceListProps) {
+export default function ReferenceList({ references, onRefreshNeeded, onEditReference, onAddToReadingList, onDeleteReferences }: ReferenceListProps) {
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [sortField, setSortField] = useState<'title' | 'year' | 'created_at' | 'authors'>('created_at');
   const [sortAsc, setSortAsc] = useState(false);
@@ -92,11 +102,18 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
 
   const handleDeleteSelected = async () => {
     if (!confirm(`Delete ${selectedIds.size} reference(s)?`)) return;
-    for (const id of selectedIds) {
-      await deleteReference(id);
+    const ids = [...selectedIds];
+    if (onDeleteReferences) {
+      // Parent owns deletion (fallback mode targets the shared-API store and
+      // updates the list itself).
+      await onDeleteReferences(ids);
+    } else {
+      for (const id of ids) {
+        await deleteReference(id);
+      }
+      onRefreshNeeded();
     }
     setSelectedIds(new Set());
-    onRefreshNeeded();
   };
 
   // #8 — bulk-add to a personal collection. Prompts for the collection
