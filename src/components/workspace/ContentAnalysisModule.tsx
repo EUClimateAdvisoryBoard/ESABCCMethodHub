@@ -787,10 +787,20 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             bytes = await opts.blob.arrayBuffer();
           }
         } else if (opts.sourceUrl) {
-          // Pull the bytes through the same-origin reference proxy (which sends
-          // permissive CORS) rather than fetching the storage URL cross-origin.
-          const r = await fetch(`/api/references/pdf?id=${encodeURIComponent(refId)}`, { cache: 'no-store' });
-          if (r.ok) bytes = await r.arrayBuffer();
+          // Pull the bytes into the browser so we can extract here. Try the
+          // same-origin reference proxy first (CORS-safe), then the storage URL
+          // directly — the proxy-by-id can 404 when the reference has no library
+          // row yet, but the durable storage URL still serves the file.
+          for (const u of [`/api/references/pdf?id=${encodeURIComponent(refId)}`, opts.sourceUrl]) {
+            try {
+              const r = await fetch(u, { cache: 'no-store' });
+              if (!r.ok) continue;
+              const b = await r.arrayBuffer();
+              if (b.byteLength > 100) { bytes = b; break; }
+            } catch {
+              /* try the next source */
+            }
+          }
         }
         if (bytes && viewUrl) {
           try {
