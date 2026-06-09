@@ -72,6 +72,7 @@ import CodeEditorModal, {
   type CodeEditorResult,
 } from '@/components/content-analysis/CodeEditorModal';
 import { showToast } from '@/components/ui/ToastHost';
+import { uploadPdf } from '@/lib/references/pdf-storage';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
@@ -168,6 +169,55 @@ interface Props {
 /** localStorage key holding the per-workspace corpus (document allow-list). */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
+}
+
+/**
+ * Promote a freshly-ingested reference PDF into the shared reference library
+ * (`custom_references`) so the durable proxy `/api/references/pdf?id=…` can
+ * serve it on later visits and from any serverless instance — not only from
+ * this instance's ephemeral content-analysis ingest cache.
+ *
+ * Bundled static-library references (and browser-local ones) have no row in
+ * the shared store, so without this their workspace PDF would 404 on a fresh
+ * instance even after a successful upload. For an uploaded file we first push
+ * the bytes to durable Supabase storage; a library "Load PDF" already has a
+ * durable URL we reuse. Best-effort: failures are swallowed because the ingest
+ * cache still serves the PDF for the current session.
+ */
+async function persistReferenceToLibrary(
+  doc: AnalysisDocument,
+  opts: { blob?: Blob; sourceUrl?: string },
+): Promise<void> {
+  const refId = doc.id.replace(/^ref-doc-/, '');
+  if (!refId || !doc.title) return;
+  try {
+    // Resolve a durable, allow-listed (Supabase-hosted) PDF URL the proxy can
+    // stream from. An uploaded file is pushed to storage here; a "Load PDF"
+    // already carries one in `sourceUrl`.
+    let pdfUrl = opts.sourceUrl ?? doc.pdfUrl ?? '';
+    if (opts.blob) {
+      const up = await uploadPdf(refId, opts.blob);
+      if (!up.ok || !up.publicUrl) return;
+      pdfUrl = up.publicUrl;
+    }
+    if (!pdfUrl) return;
+
+    // Only send fields we actually have; omitting the rest lets the PUT
+    // handler keep any richer metadata already on an existing row.
+    const body: Record<string, string> = { id: refId, title: doc.title, pdfUrl, source: 'web' };
+    if (doc.referenceAuthors) body.authors = doc.referenceAuthors;
+    if (doc.referenceYear) body.year = doc.referenceYear;
+    if (doc.referenceType) body.type = doc.referenceType;
+    if (doc.referenceUrl) body.url = doc.referenceUrl;
+
+    await fetch('/api/references/library', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+  } catch {
+    /* best-effort — the ingest cache still serves the PDF this session */
+  }
 }
 
 export default function ContentAnalysisModule({ projectId, projectName }: Props) {
@@ -620,6 +670,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         text: data.text, ingestedAt: data.ingestedAt, archiveSource: 'manual-upload',
       });
       setIngestState({ status: 'ok', message: 'PDF loaded' });
+
+      // Promote references into the shared library so the durable PDF proxy
+      // resolves them next session — not just from this instance's ephemeral
+      // ingest cache. Best-effort and non-blocking; policies are server-managed
+      // by CELEX and don't go through this path.
+      if ((doc.sourceKind ?? 'policy') === 'reference') {
+        void persistReferenceToLibrary(doc, { blob: opts.blob, sourceUrl: opts.sourceUrl });
+      }
     } catch (err) {
       setIngestState({ status: 'error', message: String(err) });
     }
@@ -1279,6 +1337,15 @@ function DocumentViewer({
     : refId
       ? `/api/references/pdf?id=${encodeURIComponent(refId)}`
       : '';
+  // Fallback for reference PDFs: the durable references proxy above only knows
+  // references stored in the shared library (custom_references). References
+  // that aren't there — notably the bundled static library — 404 on that proxy
+  // even after their PDF has been ingested. Fall back to the content-analysis
+  // ingest cache (keyed by the document id, exactly as `ingestPdf` stored it
+  // this session) so the freshly-loaded PDF still renders.
+  const pdfFallbackUrl = refId
+    ? `/api/content-analysis/pdf?celex=${encodeURIComponent(referencePdfCacheKey(doc.id))}`
+    : undefined;
   const hasPdfPane = Boolean(
     pdfSrcUrl && (doc.ingestSource === 'eurlex-pdf' || doc.ingestSource === 'manual-upload'),
   );
@@ -1445,6 +1512,7 @@ function DocumentViewer({
           <PdfDocumentView
             document={doc}
             pdfSrcUrl={pdfSrcUrl}
+            fallbackSrcUrl={pdfFallbackUrl}
             segments={segments}
             codes={codes}
             highlightedBlockId={highlightedBlockId}
