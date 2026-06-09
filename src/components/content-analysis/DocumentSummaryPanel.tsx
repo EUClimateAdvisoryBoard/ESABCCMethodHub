@@ -20,8 +20,57 @@
  * same paper.
  */
 import { useEffect, useState } from 'react';
+import type { ReactNode } from 'react';
 import type { DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import { SummaryDeckViewer, SummaryDeckEditor } from './SummaryDeck';
+
+/** Turn plain-text URLs in a summary's lead text into clickable links, so a
+ *  pasted reference (e.g. a SharePoint doc) shows as a tidy hyperlink rather
+ *  than a long raw URL. */
+const URL_RE = /https?:\/\/[^\s<>"')\]]+/g;
+function linkifyText(text: string): ReactNode[] {
+  const parts: ReactNode[] = [];
+  let lastIndex = 0;
+  let match: RegExpExecArray | null;
+  const re = new RegExp(URL_RE.source, 'g');
+  while ((match = re.exec(text)) !== null) {
+    if (match.index > lastIndex) parts.push(text.slice(lastIndex, match.index));
+    const url = match[0];
+    parts.push(
+      <a
+        key={match.index}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-secondary hover:underline break-all"
+      >
+        {linkLabel(url)}
+      </a>,
+    );
+    lastIndex = re.lastIndex;
+  }
+  if (lastIndex < text.length) parts.push(text.slice(lastIndex));
+  return parts.length > 0 ? parts : [text];
+}
+
+/** A readable label for a URL: the document/file name when we can recover one
+ *  (SharePoint's `?file=` param, or the last path segment), otherwise the host.
+ *  Keeps long, query-heavy links from dominating the summary. */
+function linkLabel(url: string): string {
+  try {
+    const u = new URL(url);
+    const fileParam = u.searchParams.get('file');
+    if (fileParam) return decodeURIComponent(fileParam);
+    const segments = u.pathname.split('/').filter(Boolean);
+    const last = segments[segments.length - 1];
+    if (last && last.includes('.') && !last.endsWith('.aspx')) {
+      return decodeURIComponent(last);
+    }
+    return u.hostname.replace(/^www\./, '');
+  } catch {
+    return url;
+  }
+}
 
 export default function DocumentSummaryPanel({
   summary,
@@ -168,7 +217,7 @@ export default function DocumentSummaryPanel({
           ) : hasContent ? (
             <div className="space-y-2">
               {leadText && (
-                <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">{leadText}</p>
+                <p className="text-[12px] text-tertiary-dark whitespace-pre-wrap leading-snug">{linkifyText(leadText)}</p>
               )}
               {loading && summary?.blocks === undefined ? (
                 <p className="text-[11px] text-tertiary-light italic">Loading slides…</p>
@@ -248,7 +297,7 @@ function OtherProjectSummary({
     <div className="space-y-1">
       <p className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold">{projectName}</p>
       {summary.text && (
-        <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{summary.text}</p>
+        <p className="text-[12px] text-tertiary whitespace-pre-wrap leading-snug">{linkifyText(summary.text)}</p>
       )}
       {slideCount > 0 && !shown && (
         <button
