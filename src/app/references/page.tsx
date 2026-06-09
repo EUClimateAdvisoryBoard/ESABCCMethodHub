@@ -638,7 +638,11 @@ export default function ReferencesPage() {
     if (usingFallback || !selectedLibraryId) return;
     const unsub = subscribeToLibrary(
       selectedLibraryId,
-      (ref) => setReferences(prev => [ref, ...prev]),
+      // Idempotent insert: a freshly-added reference also arrives via the
+      // loadReferences() refetch that add/import flows trigger, so prepending
+      // unconditionally here would race that refetch and render the row twice.
+      // Skip the prepend when the id is already present.
+      (ref) => setReferences(prev => prev.some(r => r.id === ref.id) ? prev : [ref, ...prev]),
       (ref) => setReferences(prev => prev.map(r => r.id === ref.id ? ref : r)),
       (id) => setReferences(prev => prev.filter(r => r.id !== id)),
     );
