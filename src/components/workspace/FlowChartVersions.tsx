@@ -25,6 +25,7 @@ import {
 import FrameworkBoard from './FrameworkBoard';
 import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView';
 import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardView';
+import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
 
 interface Props {
   projectId: string;
@@ -126,6 +127,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 4 · map
             </span>
           )}
+          {active.variant === 'advanced-v5' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-purple-100 text-purple-700">
+              adv 5 · sectors
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -163,6 +169,14 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         // The monitoring-map board is likewise a computed, read-only view — the
         // whole catalogue folded into four thematic layers with no sectors.
         <MonitoringMapBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'advanced-v5' ? (
+        // The sectored results-chain board is the v2 chain with sectors folded
+        // in as a sub-layer — also a computed, read-only view.
+        <SectoredResultsChainBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}

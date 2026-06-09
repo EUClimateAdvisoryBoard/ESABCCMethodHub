@@ -50,14 +50,20 @@ import {
  *  - 'advanced-v4' — the "Advanced version 4" monitoring-map board: the whole
  *                 catalogue folded into four thematic layers (Enablers →
  *                 Delivery → Outcomes → Risk) with no sector split, each layer
- *                 pairing a mitigation and an adaptation pillar of equal weight.
+ *                 pairing a mitigation and an adaptation pillar of equal weight;
+ *                 and
+ *  - 'advanced-v5' — the "Advanced version 5" sectored results-chain board: the
+ *                 same six-rung M&E chain as Advanced version 2, but with the
+ *                 sector folded in as a sub-layer inside every rung and track,
+ *                 so each rung shows which sectors it covers.
  */
 export type FlowChartVariant =
   | 'report'
   | 'beta'
   | 'advanced'
   | 'advanced-v2'
-  | 'advanced-v4';
+  | 'advanced-v4'
+  | 'advanced-v5';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -96,6 +102,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v2', name: 'Advanced version 2', variant: 'advanced-v2', builtIn: true },
   { id: 'advanced-v3', name: 'Advanced version 3', variant: 'advanced', builtIn: true },
   { id: 'advanced-v4', name: 'Advanced version 4', variant: 'advanced-v4', builtIn: true },
+  { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
 ];
 
 interface RegistryData {
@@ -116,6 +123,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v2') return `esabcc-framework-board-advanced-v2:${projectId}`;
   if (version.id === 'advanced-v3') return `esabcc-framework-board-advanced-v3:${projectId}`;
   if (version.id === 'advanced-v4') return `esabcc-framework-board-advanced-v4:${projectId}`;
+  if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -126,10 +134,14 @@ function seedStorageKey(version: FlowChartVersion, projectId: string): string {
 
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
-  // The advanced-v2 results-chain and advanced-v4 monitoring-map boards are
-  // computed/read-only and not stored as sectors boards, so they have no
-  // sectors schema to validate against.
-  if (version.variant === 'advanced-v2' || version.variant === 'advanced-v4')
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
+  // sectored results-chain boards are computed/read-only and not stored as
+  // sectors boards, so they have no sectors schema to validate against.
+  if (
+    version.variant === 'advanced-v2' ||
+    version.variant === 'advanced-v4' ||
+    version.variant === 'advanced-v5'
+  )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
   if (version.variant === 'beta') return FRAMEWORK_BOARD_BETA_VERSION;
@@ -166,11 +178,15 @@ function writeBoard(key: string, board: FrameworkBoard): void {
  *     if the seed was lost.
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
-  // The advanced-v2 results-chain and advanced-v4 monitoring-map boards are
-  // computed in their own views and are not sectors boards; hand back an empty
-  // sectors board so callers that expect the `{ sectors }` shape (e.g.
-  // duplicating a version) never crash.
-  if (version.variant === 'advanced-v2' || version.variant === 'advanced-v4')
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
+  // sectored results-chain boards are computed in their own views and are not
+  // sectors boards; hand back an empty sectors board so callers that expect the
+  // `{ sectors }` shape (e.g. duplicating a version) never crash.
+  if (
+    version.variant === 'advanced-v2' ||
+    version.variant === 'advanced-v4' ||
+    version.variant === 'advanced-v5'
+  )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
   if (version.id === 'report') return defaultFrameworkBoard();
