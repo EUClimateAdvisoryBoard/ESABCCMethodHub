@@ -27,6 +27,7 @@ import FrameworkBoard from './FrameworkBoard';
 import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView';
 import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardView';
 import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
+import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
 
 interface Props {
   projectId: string;
@@ -149,6 +150,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 5 · sectors
             </span>
           )}
+          {active.variant === 'advanced-v6' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-rose-100 text-rose-700">
+              adv 6 · loop
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -194,6 +200,15 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         // The sectored results-chain board is the v2 chain with sectors folded
         // in as a sub-layer — also a computed, read-only view.
         <SectoredResultsChainBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'advanced-v6' ? (
+        // The adaptive-policy-loop board reads each sector as a closed control
+        // loop (scenario corridor → instruments → twin-track delivery →
+        // observed results → ratchet) — also a computed, read-only view.
+        <PolicyLoopBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}

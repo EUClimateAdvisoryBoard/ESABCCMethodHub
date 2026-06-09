@@ -55,7 +55,13 @@ import {
  *  - 'advanced-v5' — the "Advanced version 5" sectored results-chain board: the
  *                 same six-rung M&E chain as Advanced version 2, but with the
  *                 sector folded in as a sub-layer inside every rung and track,
- *                 so each rung shows which sectors it covers.
+ *                 so each rung shows which sectors it covers; and
+ *  - 'advanced-v6' — the "Advanced version 6" adaptive-policy-loop board: each
+ *                 sector as a closed five-station control loop (scenario
+ *                 corridor → policy instruments → twin-track delivery →
+ *                 observed results → gap & ratchet), with mitigation and
+ *                 adaptation as equal lanes inside every sector, scenario
+ *                 benchmarks as station 1 and the policy side as stations 2/5.
  */
 export type FlowChartVariant =
   | 'report'
@@ -63,7 +69,8 @@ export type FlowChartVariant =
   | 'advanced'
   | 'advanced-v2'
   | 'advanced-v4'
-  | 'advanced-v5';
+  | 'advanced-v5'
+  | 'advanced-v6';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -103,6 +110,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v3', name: 'Advanced version 3', variant: 'advanced', builtIn: true },
   { id: 'advanced-v4', name: 'Advanced version 4', variant: 'advanced-v4', builtIn: true },
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
+  { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
 ];
 
 interface RegistryData {
@@ -124,6 +132,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v3') return `esabcc-framework-board-advanced-v3:${projectId}`;
   if (version.id === 'advanced-v4') return `esabcc-framework-board-advanced-v4:${projectId}`;
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
+  if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -201,13 +210,15 @@ export function saveBoard(projectId: string, version: FlowChartVersion, board: F
 
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
-  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
-  // sectored results-chain boards are computed/read-only and not stored as
-  // sectors boards, so they have no sectors schema to validate against.
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
+  // sectored results-chain and advanced-v6 policy-loop boards are
+  // computed/read-only and not stored as sectors boards, so they have no
+  // sectors schema to validate against.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
-    version.variant === 'advanced-v5'
+    version.variant === 'advanced-v5' ||
+    version.variant === 'advanced-v6'
   )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
@@ -245,14 +256,16 @@ function writeBoard(key: string, board: FrameworkBoard): void {
  *     if the seed was lost.
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
-  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
-  // sectored results-chain boards are computed in their own views and are not
-  // sectors boards; hand back an empty sectors board so callers that expect the
-  // `{ sectors }` shape (e.g. duplicating a version) never crash.
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
+  // sectored results-chain and advanced-v6 policy-loop boards are computed in
+  // their own views and are not sectors boards; hand back an empty sectors
+  // board so callers that expect the `{ sectors }` shape (e.g. duplicating a
+  // version) never crash.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
-    version.variant === 'advanced-v5'
+    version.variant === 'advanced-v5' ||
+    version.variant === 'advanced-v6'
   )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
