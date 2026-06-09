@@ -2,6 +2,7 @@
 
 import type { AnalysisDocument, CodeNode } from '@/lib/content-analysis/types';
 import { documentKindLabel } from '@/lib/content-analysis/source-tier';
+import { resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
 
 interface Props {
   documents: AnalysisDocument[];
@@ -113,7 +114,7 @@ export default function DocumentList({
               </p>
               <div className="mt-1 flex items-center gap-1 flex-wrap">
                 {(overallTagsByDoc?.[doc.id] ?? doc.aiCodeIds).slice(0, 6).map(id => {
-                  const c = codeById.get(id);
+                  const c = codeById.get(id) ?? resolveOverallTag(id);
                   if (!c) return null;
                   return (
                     <span

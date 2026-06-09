@@ -63,6 +63,7 @@ import GuidedSession from '@/components/content-analysis/GuidedSession';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
+import { resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
@@ -1744,7 +1745,7 @@ function DocumentViewer({
           </span>
           {overallTagSelected.length > 0 ? (
             overallTagSelected.map(id => {
-              const c = overallTagCodes.find(x => x.id === id);
+              const c = overallTagCodes.find(x => x.id === id) ?? resolveOverallTag(id);
               if (!c) return null;
               return (
                 <span
@@ -1765,6 +1766,7 @@ function DocumentViewer({
             onToggle={onToggleOverallTag}
             label="Edit"
             align="right"
+            allowCustom
           />
         </div>
       )}
