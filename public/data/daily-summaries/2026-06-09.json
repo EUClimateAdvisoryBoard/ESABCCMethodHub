@@ -1,18 +1,18 @@
 {
   "date": "2026-06-09",
-  "generatedAt": "2026-06-09T13:49:25.314Z",
+  "generatedAt": "2026-06-09T19:15:24.057Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 9 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "EU to mobilise up to €25 billion for renewable energy and clean technology by 2035 through Pact for the Mediterranean initiative",
-      "summary": "European Commission Press release Brussels, 09 Jun 2026 Today, the European Union launches the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation (T-MED) – a flagship initiative under the Pact for the Mediterranean. T-MED aims to accelerate the development of renewable energy, hydrogen, clean technology manufacturing and modern electricity networks across the Mediterranean region, supporting a more integrated, sustainable and interconnected Mediterranean energy market.",
+      "headline": "Speech by Commissioner Šuica at the EU's Sustainable Energy Week - launch of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED)",
+      "summary": "European Commission Speech Brussels, 09 Jun 2026 Dear colleagues,\r\nLadies and gentlemen,\r\nGood afternoon.\r\nToday, we are launching the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative – ...",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Remarks by Commissioner Brunner on the launch of the 2026 Drug Report",
-      "summary": "European Commission Speech Brussels, 09 Jun 2026 Executive director Lorraine Nolan, Chair of the Management Board Franz Pietsch\r\nFirst of all: welcome to Lorraine in her new role as Executive Director\r\nAnd to al...",
+      "headline": "Cited 9 June 2026: Europe’s ‘exceptional’ heatwave &#124; Warming forecast &#124; AMOC observations ‘at risk’",
+      "summary": "Welcome to Cited, your essential guide to new climate research. In the news SPRING HEATWAVE:... The post Cited 9 June 2026: Europe’s ‘exceptional’ heatwave | Warming forecast | AMOC observations ‘at risk’ appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,20 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "EU to mobilise up to €25 billion for renewable energy and clean technology by 2035 through Pact for the Mediterranean initiative",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1301",
+          "title": "Speech by Commissioner Šuica at the EU's Sustainable Energy Week - launch of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED)",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1319",
           "source": "European Commission",
-          "description": "European Commission Press release Brussels, 09 Jun 2026 Today, the European Union launches the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation (T-MED) – a flagship initiative under the Pact for the Mediterranean. T-MED aims to accelerate the development of renewable energy, hydrogen, clean technology manufacturing and modern electricity networks across the Mediterranean region, supporting a more integrated, sustainable and interconnected Mediterranean energy market.",
-          "published": "2026-06-08T22:00:00.000Z",
+          "description": "European Commission Speech Brussels, 09 Jun 2026 Dear colleagues,\r\nLadies and gentlemen,\r\nGood afternoon.\r\nToday, we are launching the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative – ...",
+          "published": "2026-06-09T13:50:36.000Z",
           "score": 23
-        },
-        {
-          "title": "A third of world’s energy needs should come from electricity by 2035, says Cop31 host",
-          "link": "https://www.theguardian.com/environment/2026/jun/09/third-of-world-energy-electricity-by-2035-says-turkey-cop31-host",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Turkish minister Murat Kurum says ‘electrifying daily life’ will be priority for this year’s UN climate summit&lt;/p&gt;&lt;p&gt;The world should aim to meet a third of its energy needs from electricity within a decade to cut greenhouse gas emissions, the host of the next UN climate summit has said.&lt;/p&gt;&lt;p&gt;While about a third of global electricity generation already comes from renewable sources, other energy-intensive sectors – chiefly transport, heating and industries – have",
-          "published": "2026-06-09T11:00:49.000Z",
-          "score": 7
         },
         {
           "title": "World’s largest banks pledged $906bn to fossil fuel companies in ‘unfathomable’ increase in 2025, report finds",
@@ -66,11 +58,19 @@
           "score": 7
         },
         {
-          "title": "Australian homes lead the world in solar. But businesses are falling behind",
-          "link": "https://www.theguardian.com/environment/2026/jun/09/australia-rooftop-solar-panels-households-business",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Australia leads world in residential solar per capita with 22GW installed but commercial and industrial sector has deployed only a quarter of that&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/09/anthony-albanese-labor-one-nation-pauline-hanson-coalition-angus-taylor-ndis-jacinta-allan-victoria-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=",
-          "published": "2026-06-08T14:01:26.000Z",
+          "title": "Scotland's greenhouse gas emissions fall slightly as progress slows",
+          "link": "https://www.bbc.com/news/articles/cg748xd7vpjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The amount of planet-warming gases produced in 2024 fell by 1% compared to the previous year.",
+          "published": "2026-06-09T11:42:03.000Z",
+          "score": 7
+        },
+        {
+          "title": "US leads record rise in spending on nuclear arsenals, campaign group says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPb0pyRzlRNWZ1a29lT3Rpc3NDVjNGcUQxMDZnS2czbzZSUFhlbFY2ZkF3alZtQWQ0Vkg2QklYYVV1RURxZlFsVTFpbEd4QnhqVU1uZTlDbVRYaDJfa2pIbmxEb3NBQ25vc2JEaW5LX0xQdHV3Y2JqNi0zTEo2UENDYVloNzAwNUJaRVN3bm9vZklqUURIbGdlQnU0N1lrZEJtSzg2Sy1pZnRUWFc2dmUyUi1yaGY?oc=5\" target=\"_blank\"&gt;US leads record rise in spending on nuclear arsenals, campaign group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-08T22:06:00.000Z",
           "score": 7
         }
       ]
@@ -80,20 +80,20 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Cited 9 June 2026: Europe’s ‘exceptional’ heatwave &#124; Warming forecast &#124; AMOC observations ‘at risk’",
+          "link": "https://www.carbonbrief.org/cited-9-june-2026-europes-exceptional-heatwave-warming-forecast-amoc-observations-at-risk/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Cited, your essential guide to new climate research. In the news SPRING HEATWAVE:... The post Cited 9 June 2026: Europe’s ‘exceptional’ heatwave | Warming forecast | AMOC observations ‘at risk’ appeared first on Carbon Brief.",
+          "published": "2026-06-09T14:44:36.000Z",
+          "score": 16
+        },
+        {
           "title": "Remarks by Commissioner Brunner on the launch of the 2026 Drug Report",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1308",
           "source": "European Commission",
           "description": "European Commission Speech Brussels, 09 Jun 2026 Executive director Lorraine Nolan, Chair of the Management Board Franz Pietsch\r\nFirst of all: welcome to Lorraine in her new role as Executive Director\r\nAnd to al...",
           "published": "2026-06-09T09:05:54.000Z",
           "score": 14
-        },
-        {
-          "title": "'Short, sharp and more strategic': the EU's new approach to climate talks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQeTF2OENlY3JnTnRrY3draHY0TUExSkxnYVRlSDZ1SXZqaVg1bFRoV1lkdl9MdnZTeEtHX2NrNnhGV2lNekRKNjBTVkhPeWo3cEZLdllEdXJBRG9ER0tsV1ZaTXdZSUNqY0lraTVrR3ZMMXhMRk5ZWEhZN3dkMFlJOVNWM2NOZ3RKLXZ0cTdSREJPT09LNjZuVXl3Y2ZWNDBJM3l1MTlsdTlYVXFjV0hZZW5B?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQeTF2OENlY3JnTnRrY3draHY0TUExSkxnYVRlSDZ1SXZqaVg1bFRoV1lkdl9MdnZTeEtHX2NrNnhGV2lNekRKNjBTVkhPeWo3cEZLdllEdXJBRG9ER0tsV1ZaTXdZSUNqY0lraTVrR3ZMMXhMRk5ZWEhZN3dkMFlJOVNWM2NOZ3RKLXZ0cTdSREJPT09LNjZuVXl3Y2ZWNDBJM3l1MTlsdTlYVXFjV0hZZW5B?oc=5\" target=\"_blank\"&gt;'Short, sharp and more strategic': the EU's new approach to climate talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T16:38:14.000Z",
-          "score": 13
         },
         {
           "title": "IPCC Chair&#8217;s Remarks at the 18th Meeting of the Research Dialogue",
@@ -148,11 +148,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Australia, Canada, Japan trade bodies fret over being left out in made-in-Europe drive - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNUGFJWjdWTVpRdnRsN25pZ0FsMi1nNzlIMS1BU0R4WC1KOUdIRGxwNk1McGROT3RpcFV0aWszN010RVZwMldGclRmQnZuYzFrQzE1Z2stTEFXMWNKS29XYlQ1UFhxcU5BYVFlNTBjdktKbFEyY0NQaXVNSjVvVzFlcUZmTjRSbW1lbnNDY2lZRmVMU3BvRWl2WnhiVkpMNi01cjhPcjRISGV0X01lelNqZmlpWTZzRzVyQUc0ZUhjNWtIaENEZnFjX0xR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNUGFJWjdWTVpRdnRsN25pZ0FsMi1nNzlIMS1BU0R4WC1KOUdIRGxwNk1McGROT3RpcFV0aWszN010RVZwMldGclRmQnZuYzFrQzE1Z2stTEFXMWNKS29XYlQ1UFhxcU5BYVFlNTBjdktKbFEyY0NQaXVNSjVvVzFlcUZmTjRSbW1lbnNDY2lZRmVMU3BvRWl2WnhiVkpMNi01cjhPcjRISGV0X01lelNqZmlpWTZzRzVyQUc0ZUhjNWtIaENEZnFjX0xR?oc=5\" target=\"_blank\"&gt;Australia, Canada, Japan trade bodies fret over being left out in made-in-Europe drive&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-06-08T16:45:32.000Z",
+          "title": "EU proposes entry ban for Russian Ukraine combatants in new sanctions package",
+          "link": "https://www.dw.com/en/eu-proposes-entry-ban-for-russian-ukraine-combatants-in-new-sanctions-package/a-77474536?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU&#039;s 21st sanctions package includes a provision to deny entry to anyone who has served in Russia&#039;s armed forces amid the invasion of Ukraine. It will also target the so-called shadow fleet, banks and cryptocurrency.",
+          "published": "2026-06-09T17:14:00.000Z",
           "score": 8
         },
         {
@@ -178,6 +178,14 @@
           "score": 12
         },
         {
+          "title": "EU: Youth involvement in synthetic opioids smuggling rises",
+          "link": "https://www.dw.com/en/eu-youth-involvement-in-synthetic-opioids-smuggling-rises/a-77478901?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europe&#039;s illicit drug market is rapidly evolving, according to a new report, with cartels increasingly employing young people to traffic dangerous synthetic opioids.",
+          "published": "2026-06-09T17:13:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Pope Leo warns Spain's parliament the world is in 'profound' crisis - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOSURUWU1lUlo2VlNaR0kwX2ViWlpzMUdadWJUV25hYXd2NEF2U09aRVNEY1JSVU14VTZjMjQtNURrNDdCQ01pQ0R2aDF3aGxtNm5vNENVSlJXNG9PaWpaVnlNUGdIbDlEb1VEdExTY3pHZER5ZFJtYng0b0xjSlFHLW85MFItdVpMSWxYTThKcERiWFBreVV5VFpJTnpldlJ1eWZJLW1JQ2Fodw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -186,36 +194,28 @@
           "score": 8
         },
         {
-          "title": "From Australia to Europe, countries move to curb children's social media access - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5",
+          "title": "Meta ordered by EU to allow rival AI chatbots back on WhatsApp for free - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOcXp3X1FBSF9FaFhHYXROV2RXZGlhSm5QemljMlBHQ25xbmpZM3I1dGtuc20tQmN5ME9SN2hTS09aZjVzZjdiU0RZQ3Fsb3QwS2I5UHdWc2VMTHpPdU9DWEx3YndGV2tza3dsQUJIZUpsUXNwOE1vVV8wRzZBQ1AwQkNlbnBDazNpMmZ0OHBjVk4yRTdyUThpdEg1ZGIyYkpZWUhNdm5LdF8yeHlHN2w3Tg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPVVZ2enE3VUs0X1BpZWlMLTYzMXJ5LTZKTlRTZ25uOGgxRE9idG1GS3dRM1g0d2VZM3JLTDF6TGg1TmJaX3p5dG1ERXBjdlhLV3JNUUZZdGo4RU05d2hqZU1BVU5PNGl1c09HUmxHRkxwY09MTlNQQWNjMnk2X2RCeVhyTVZYR3Z2YnJ3QVFjMS1GaW53bE1YRjJhU3VXVm9YOTQ2Q0IyTk9ka0ZTMUl5azl4aDJMTld4Qi0w?oc=5\" target=\"_blank\"&gt;From Australia to Europe, countries move to curb children's social media access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T16:11:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOcXp3X1FBSF9FaFhHYXROV2RXZGlhSm5QemljMlBHQ25xbmpZM3I1dGtuc20tQmN5ME9SN2hTS09aZjVzZjdiU0RZQ3Fsb3QwS2I5UHdWc2VMTHpPdU9DWEx3YndGV2tza3dsQUJIZUpsUXNwOE1vVV8wRzZBQ1AwQkNlbnBDazNpMmZ0OHBjVk4yRTdyUThpdEg1ZGIyYkpZWUhNdm5LdF8yeHlHN2w3Tg?oc=5\" target=\"_blank\"&gt;Meta ordered by EU to allow rival AI chatbots back on WhatsApp for free&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-09T16:38:01.000Z",
           "score": 8
         },
         {
-          "title": "EU sanctions Iranians over restricting naval traffic in Hormuz - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5",
+          "title": "US energy chief says oil exports through Strait of Hormuz, Gulf will 'continue to rise' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUkQ0OXA4S3Q1RUVWUm9sMmdoUExjQ1diMnpNNHJWSUhtbkZNbm5DemxTWUF2NF9aVVBtQ0RrWE5Ya3dzRlZSeENVWDlJU091N1ZEWm80WlV5UDdkOHYzU2xiWXpMZDVMeUYzMTVSVTRQemplNG8yUlkteDV0VUtMSVdfLVJVZVhJd3dyTTlsV2ROaGprNHZFQlNjNU9EVUhLWXk4MzBybk9qTmhhV1RXSW5pb1F4UmVNX3ZtQnh5Z2pNWTQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNR1lTSXVKQ2pJQlEzZTg4Z3FvUjdzMEg5QlhuTFo1R2NWZGgwMWw3REhuODBIUjN4VWFCMV9ZZzhXTlpZaVBXZGJodUFVbkU0ME1Ib2hVblljSUtuNXdKZ0gwOVFZRHRCcHJlckYzM193WUZFUkFHSl9KV3ZCb25DM1RxMGhkSnZqMzJpSndTZFZ4czR4RFFMelpjUGZsS2FlYXlFaEV1WFRLbmx1Z1BwV0FGbw?oc=5\" target=\"_blank\"&gt;EU sanctions Iranians over restricting naval traffic in Hormuz&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T16:56:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "China car sales downturn extends into May as VW tests EV revamp - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxQNVJVQWJVbW5PRlNYYlluR3BKUWN3dmpfZGFQa2ZfZTlFMEhPeXg2NlNJOEEtZU1qMm0xWkYzZG93TjBsMWxkbXJIcEFHYXdrbm14UUx1WHNHSmVuT2JCSWpSRzBqdU9ONEhmclI2ckJpQWF4WXg3TG9CRWlzU2lkNnBadXl5dl92d0h6NzlVU09obHQxNU1ic2FnWTY?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxQNVJVQWJVbW5PRlNYYlluR3BKUWN3dmpfZGFQa2ZfZTlFMEhPeXg2NlNJOEEtZU1qMm0xWkYzZG93TjBsMWxkbXJIcEFHYXdrbm14UUx1WHNHSmVuT2JCSWpSRzBqdU9ONEhmclI2ckJpQWF4WXg3TG9CRWlzU2lkNnBadXl5dl92d0h6NzlVU09obHQxNU1ic2FnWTY?oc=5\" target=\"_blank\"&gt;China car sales downturn extends into May as VW tests EV revamp&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-08T16:49:33.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOUkQ0OXA4S3Q1RUVWUm9sMmdoUExjQ1diMnpNNHJWSUhtbkZNbm5DemxTWUF2NF9aVVBtQ0RrWE5Ya3dzRlZSeENVWDlJU091N1ZEWm80WlV5UDdkOHYzU2xiWXpMZDVMeUYzMTVSVTRQemplNG8yUlkteDV0VUtMSVdfLVJVZVhJd3dyTTlsV2ROaGprNHZFQlNjNU9EVUhLWXk4MzBybk9qTmhhV1RXSW5pb1F4UmVNX3ZtQnh5Z2pNWTQ?oc=5\" target=\"_blank\"&gt;US energy chief says oil exports through Strait of Hormuz, Gulf will 'continue to rise'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/f",
+          "published": "2026-06-09T15:43:54.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 406,
-    "articlesLast24h": 173,
-    "afterDedup": 164,
+    "totalArticlesScanned": 410,
+    "articlesLast24h": 174,
+    "afterDedup": 162,
     "feedsQueried": 19
   }
 }
