@@ -12,7 +12,7 @@ import { isPolicyCitation } from '@/lib/policy-citations';
 import { splitTags } from '@/lib/references/projects';
 import { linkToPolicyNavigator, linkToContentAnalysis } from '@/lib/cross-module-links';
 import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
-import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
+import { resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
 
 interface ReferenceListProps {
   references: Reference[];
@@ -301,8 +301,8 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             // Resolve the analyst-curated overall tags (master-code ids) to
             // coloured labels. Only manually-set tags surface here.
             const overallTagCodes = overallTags.getTags(`ref-doc-${ref.id}`)
-              .map(getMasterCode)
-              .filter(Boolean) as NonNullable<ReturnType<typeof getMasterCode>>[];
+              .map(resolveOverallTag)
+              .filter(Boolean) as NonNullable<ReturnType<typeof resolveOverallTag>>[];
             return (
             <div
               key={ref.id}
