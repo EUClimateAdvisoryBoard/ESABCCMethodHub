@@ -49,6 +49,21 @@ interface Props {
   onSelectBlock?: (blockId: string) => void;
 }
 
+/** True when any rectangle in `a` visually intersects any rectangle in `b`.
+ *  Rects are `[x, y, w, h]` in PDF user-space points. Used to detect when two
+ *  precisely-anchored segments mark the same passage so their highlights can
+ *  be nested rather than drawn on top of one another. */
+function rectsOverlap(a: number[][], b: number[][]): boolean {
+  for (const [ax, ay, aw, ah] of a) {
+    for (const [bx, by, bw, bh] of b) {
+      if (ax < bx + bw && ax + aw > bx && ay < by + bh && ay + ah > by) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 /** Outer rectangle [minX, minY, maxX, maxY] covering all of a block's lines. */
 function aggBbox(block: Block): [number, number, number, number] | null {
   if (!block.bboxes.length) return null;
@@ -241,6 +256,24 @@ function PdfPageOverlay({
   const [scale, setScale] = useState<number | null>(null);
   const wrapRef = useRef<HTMLDivElement>(null);
 
+  // When several tags mark the same passage, their precise highlights would
+  // otherwise stack exactly on top of each other and only the last-painted
+  // colour would show. Give each segment a "stack depth" = how many already
+  // placed segments it overlaps, so SegmentHighlight can inflate its frame by
+  // that depth and every tag's colour stays visible as a concentric outline.
+  const anchoredWithDepth = useMemo(() => {
+    const placed: number[][][] = [];
+    return anchoredSegments.map(seg => {
+      const rects = seg.pdfAnchor?.rects ?? [];
+      let depth = 0;
+      for (const prev of placed) {
+        if (rectsOverlap(rects, prev)) depth++;
+      }
+      placed.push(rects);
+      return { seg, depth };
+    });
+  }, [anchoredSegments]);
+
   // Capture a text selection made on this page and hand it up. The block
   // overlays are pointer-events:none so the pdfjs text layer underneath stays
   // selectable; we hit-test the selection anchor against the block boxes to
@@ -319,12 +352,14 @@ function PdfPageOverlay({
               onClick={onSelectBlock ? () => onSelectBlock(block.id) : undefined}
             />
           ))}
-          {anchoredSegments.map(seg => (
+          {anchoredWithDepth.map(({ seg, depth }) => (
             <SegmentHighlight
               key={seg.id}
               segment={seg}
               scale={scale}
               color={codeById.get(seg.codeId)?.color ?? '#8A95A3'}
+              codeName={codeById.get(seg.codeId)?.name}
+              stackDepth={depth}
               isHighlighted={highlightedSegmentId === seg.id}
             />
           ))}
@@ -416,8 +451,19 @@ interface SegmentHighlightProps {
   segment: CodedSegment;
   scale: number;
   color: string;
+  /** Tag name — shown in the hover tooltip so overlapping frames are
+   *  identifiable. */
+  codeName?: string;
+  /** How many other highlights this one shares the same passage with. Each
+   *  level inflates the frame outward by a few pixels so co-located tags nest
+   *  as concentric coloured outlines instead of hiding one another. */
+  stackDepth?: number;
   isHighlighted: boolean;
 }
+
+// Pixels each overlap level pushes the frame outward, so a passage carrying
+// several tags shows one coloured outline per tag.
+const STACK_GAP = 3;
 
 /**
  * Draws one outlined rectangle per selection rect captured at marking time, so
@@ -426,30 +472,46 @@ interface SegmentHighlightProps {
  * underneath readable. The first rect carries the `data-segment-id` anchor the
  * sidebar scrolls to. Inert (pointer-events:none) so the pdfjs text layer
  * underneath stays selectable for further tagging.
+ *
+ * When `stackDepth` > 0 the frame is inflated outward so multiple tags on the
+ * same text render as concentric coloured outlines — both (or all) colours
+ * stay visible rather than the last-painted one winning.
  */
-function SegmentHighlight({ segment, scale, color, isHighlighted }: SegmentHighlightProps) {
+function SegmentHighlight({
+  segment,
+  scale,
+  color,
+  codeName,
+  stackDepth = 0,
+  isHighlighted,
+}: SegmentHighlightProps) {
   const rects = segment.pdfAnchor?.rects ?? [];
   if (!rects.length) return null;
+  const gap = stackDepth * STACK_GAP;
+  const title = codeName ? `${codeName} — ${segment.text}` : segment.text;
   return (
     <>
       {rects.map(([x, y, w, h], i) => (
         <span
           key={i}
           data-segment-id={i === 0 ? segment.id : undefined}
-          title={segment.text}
+          title={title}
           style={{
             position: 'absolute',
-            left: x * scale,
-            top: y * scale,
-            width: w * scale,
-            height: h * scale,
+            left: x * scale - gap,
+            top: y * scale - gap,
+            width: w * scale + gap * 2,
+            height: h * scale + gap * 2,
             // Frame, not fill — a faint tint only when selected, so the text
             // stays legible. Selection emphasis is carried by a thicker, fully
-            // opaque border rather than a darker wash.
+            // opaque border rather than a darker wash. Nested frames keep the
+            // solid border even unselected so each colour reads clearly.
             background: isHighlighted ? `${color}1F` : 'transparent',
-            border: isHighlighted ? `1.5px solid ${color}` : `1px solid ${color}99`,
+            border: isHighlighted
+              ? `1.5px solid ${color}`
+              : `${stackDepth > 0 ? 1.5 : 1}px solid ${stackDepth > 0 ? color : `${color}99`}`,
             pointerEvents: 'none',
-            borderRadius: 2,
+            borderRadius: 2 + gap,
           }}
         />
       ))}
