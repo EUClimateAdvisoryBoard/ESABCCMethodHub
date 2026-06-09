@@ -77,6 +77,31 @@ export const SOURCE_TIER_META: Record<SourceTier, SourceTierMeta> = {
   },
 };
 
+/** Human labels for a reference's original reference-manager type. Used for the
+ *  small "kind" badge on document rows: the coarse `AnalysisDocument.kind` union
+ *  has no entry for journal articles / books / chapters, so every reference was
+ *  mapped to `report` and mislabelled as "REPORT" (a journal article showed up
+ *  as a report). For reference docs we label by `referenceType` instead, which
+ *  preserves the true kind. */
+const REFERENCE_TYPE_LABELS: Record<NonNullable<AnalysisDocument['referenceType']>, string> = {
+  article: 'Journal article',
+  book: 'Book',
+  chapter: 'Book chapter',
+  report: 'Report',
+  web: 'Web',
+  legislation: 'Legislation',
+};
+
+/** The kind label to show on a document row. For reference documents this comes
+ *  from the preserved `referenceType` (so a journal article reads "Journal
+ *  article", not "Report"); policy / legal texts keep their `kind`. */
+export function documentKindLabel(doc: AnalysisDocument): string {
+  if ((doc.sourceKind ?? 'policy') === 'reference' && doc.referenceType) {
+    return REFERENCE_TYPE_LABELS[doc.referenceType];
+  }
+  return doc.kind;
+}
+
 /** The three tiers in display order — handy for rendering choosers/switchers. */
 export const SOURCE_TIERS: readonly SourceTier[] = ['policy', 'scientific', 'grey'];
 

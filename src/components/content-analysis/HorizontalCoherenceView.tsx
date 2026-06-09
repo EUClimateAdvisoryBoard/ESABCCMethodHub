@@ -7,6 +7,7 @@ import type {
   CodedSegment,
 } from '@/lib/content-analysis/types';
 import { descendantCodeIds } from '@/lib/content-analysis/store';
+import { documentKindLabel } from '@/lib/content-analysis/source-tier';
 
 interface Props {
   documents: AnalysisDocument[];
@@ -70,7 +71,7 @@ export default function HorizontalCoherenceView({ documents, codes, segments }: 
                 style={{ minWidth: 90, maxWidth: 120 }}
               >
                 <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#8A95A3] mb-0.5">
-                  {d.kind}
+                  {documentKindLabel(d)}
                 </div>
                 <div className="font-semibold text-[11px] leading-tight line-clamp-3">
                   {d.shortTitle}
