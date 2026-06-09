@@ -66,6 +66,17 @@ Private m_ResDois() As String
 Private m_ResUrls() As String
 Private m_ResCount As Long
 
+' Workspace citation state ("Cite from Project Workspace")
+Private m_WsProjIds() As String     ' workspace ids from facet=projects
+Private m_WsProjNames() As String   ' display names (with doc counts)
+Private m_WsProjCount As Long
+Private m_WsTagNames() As String    ' tag facet of the last workspace fetch
+Private m_WsTagCount As Long
+Private m_WsRowMap() As Long        ' form list row -> result index (0 = tier header)
+Private m_WsRowCount As Long
+Private m_ResTiers() As String      ' per-result source tier (policy/scientific/grey)
+Private m_ResTags() As String       ' per-result joined tag names
+
 ' ============================================================================
 ' AUTO-RUN HOOKS (no manual setup needed after import)
 ' ============================================================================
@@ -160,6 +171,26 @@ Public Sub ESABCC_BuildForms()
         If f > 0 Then Print #f, "    frmESABCC_Edit OK"
     ElseIf f > 0 Then
         Print #f, "  frmESABCC_Edit already present"
+    End If
+
+    Dim addedWorkspaceForm As Boolean: addedWorkspaceForm = False
+    If Not CompExists(proj, "frmESABCC_Workspace") Then
+        If f > 0 Then Print #f, "  building frmESABCC_Workspace..."
+        If Not BuildWorkspaceForm(proj) Then
+            Err.Raise 515, "ESABCC_BuildForms", "BuildWorkspaceForm failed."
+        End If
+        addedWorkspaceForm = True
+        If f > 0 Then Print #f, "    frmESABCC_Workspace OK"
+    ElseIf f > 0 Then
+        Print #f, "  frmESABCC_Workspace already present"
+    End If
+
+    ' A helper module from an older install predates ESABCCHelper_ShowWorkspace.
+    ' Whenever the workspace form was just added, rebuild the helper so the
+    ' dispatcher knows the new form.
+    If addedWorkspaceForm And CompExists(proj, "ESABCCHelper") Then
+        proj.VBComponents.Remove proj.VBComponents("ESABCCHelper")
+        If f > 0 Then Print #f, "  removed stale ESABCCHelper for rebuild"
     End If
 
     If Not CompExists(proj, "ESABCCHelper") Then
@@ -395,6 +426,9 @@ Private Function GetCustomUIXml() As String
     x = x & "        <button id=""btnGroup"" label=""Group Citation"" size=""large"""
     x = x & " imageMso=""ContentControlBuildingBlockGallery"" onAction=""Ribbon_GroupCitation"""
     x = x & " screentip=""Build a multi-author citation""/>" & vbCrLf
+    x = x & "        <button id=""btnWorkspace"" label=""Cite from Workspace"" size=""large"""
+    x = x & " imageMso=""Folder"" onAction=""Ribbon_CiteFromWorkspace"""
+    x = x & " screentip=""Cite literature from a project workspace - clustered by policy / scientific / grey, searchable and filterable by tags""/>" & vbCrLf
     x = x & "        <button id=""btnDOI"" label=""Add by DOI"" size=""normal"""
     x = x & " imageMso=""HyperlinkCreate"" onAction=""Ribbon_AddByDOI"""
     x = x & " screentip=""Look up a reference by DOI""/>" & vbCrLf
@@ -479,6 +513,10 @@ Public Sub Ribbon_GroupCitation(control As IRibbonControl)
     ESABCC_GroupCitation
 End Sub
 
+Public Sub Ribbon_CiteFromWorkspace(control As IRibbonControl)
+    ESABCC_CiteFromWorkspace
+End Sub
+
 Public Sub Ribbon_InsertBibliography(control As IRibbonControl)
     ESABCC_InsertBibliography
 End Sub
@@ -555,6 +593,12 @@ Private Sub EnsureToolbar()
     btn.Style = msoButtonCaption
     btn.OnAction = "ESABCC_GroupCitation"
     btn.TooltipText = "Build a multi-author citation"
+
+    Set btn = cbar.Controls.Add(Type:=msoControlButton)
+    btn.Caption = "Workspace"
+    btn.Style = msoButtonCaption
+    btn.OnAction = "ESABCC_CiteFromWorkspace"
+    btn.TooltipText = "Cite literature from a project workspace (policy / scientific / grey, filter by tags)"
 
     Set btn = cbar.Controls.Add(Type:=msoControlButton)
     btn.Caption = "Biblio"
@@ -768,6 +812,309 @@ Public Sub ESABCC_InsertShortCitation()
 
     Application.StatusBar = "ESABCC: Inserted " & citeText
 End Sub
+
+' ============================================================================
+' 1c) CITE FROM PROJECT WORKSPACE
+'     Browse the literature added to a project workspace's Content Analysis
+'     corpus - clustered by source type (policy documents / scientific
+'     literature / grey literature & reports) with the documents' overall
+'     tags, searchable and tag-filterable directly inside Word.
+' ============================================================================
+
+Public Sub ESABCC_CiteFromWorkspace()
+    EnsureInit
+    g_GroupMode = False
+    g_SelectedIndex = 0
+
+    Dim shown As Boolean
+    shown = TryShowWorkspaceForm("ESABCC - Cite from Project Workspace")
+    If Not shown Then
+        If EnsureFormsReady() Then
+            shown = TryShowWorkspaceForm("ESABCC - Cite from Project Workspace")
+        End If
+    End If
+
+    Dim pick As Long
+    If shown Then
+        pick = g_SelectedIndex
+    Else
+        pick = WorkspaceFallbackPick()
+    End If
+    If pick < 1 Or pick > m_ResCount Then Exit Sub
+
+    Dim citeText As String
+    citeText = FormatInlineCite(m_ResAuthors(pick), m_ResYears(pick))
+
+    ' Build reference link (DOI preferred, then URL / EUR-Lex)
+    Dim refLink As String: refLink = ""
+    If m_ResDois(pick) <> "" Then
+        refLink = "https://doi.org/" & m_ResDois(pick)
+    ElseIf m_ResUrls(pick) <> "" Then
+        refLink = m_ResUrls(pick)
+    End If
+
+    InsertCitationAtCursor m_ResIds(pick), m_ResCiteKeys(pick), citeText, refLink
+    StoreCiteVar m_ResIds(pick), m_ResCitations(pick)
+
+    ' Store metadata for year disambiguation and update all citations
+    StoreRefMeta m_ResIds(pick), GetCiteAuthorLabel(m_ResAuthors(pick)), m_ResYears(pick)
+    DisambiguateAllCitations
+
+    Application.StatusBar = "ESABCC: Inserted " & citeText
+End Sub
+
+' Fallback picker when the UserForm isn't available: workspace popup ->
+' optional keyword InputBox -> the standard results popup. Returns the
+' picked result index (1..m_ResCount) or 0 when cancelled.
+Private Function WorkspaceFallbackPick() As Long
+    WorkspaceFallbackPick = 0
+
+    If Not LoadWorkspaceProjects() Then
+        MsgBox "No project workspaces with documents found." & vbCrLf & vbCrLf & _
+               "Add literature to a workspace's Content Analysis module first.", _
+               vbInformation, "ESABCC - Cite from Workspace"
+        Exit Function
+    End If
+
+    Dim projPick As Long
+    projPick = ShowWorkspaceProjectPicker()
+    If projPick < 1 Or projPick > m_WsProjCount Then Exit Function
+
+    Dim query As String
+    query = InputBox("Filter by keyword or tag (leave empty to list everything):", _
+                     "ESABCC - " & m_WsProjNames(projPick))
+    If StrPtr(query) = 0 Then Exit Function  ' Cancel pressed
+
+    Application.StatusBar = "ESABCC: Loading workspace literature..."
+    DoEvents
+    FetchWorkspaceItems m_WsProjIds(projPick), "", "", Trim(query)
+    Application.StatusBar = ""
+
+    If m_ResCount = 0 Then
+        MsgBox "No documents matched in this workspace.", vbInformation, _
+               "ESABCC - No Results"
+        Exit Function
+    End If
+
+    WorkspaceFallbackPick = ShowResultsPicker()
+End Function
+
+' Popup menu listing the project workspaces. Returns 1-based pick or 0.
+Private Function ShowWorkspaceProjectPicker() As Long
+    ShowWorkspaceProjectPicker = 0
+    If m_WsProjCount = 0 Then Exit Function
+
+    m_PickedResult = 0
+    On Error Resume Next
+    Application.CommandBars("ESABCC_Picker").Delete
+    On Error GoTo 0
+
+    Dim popup As CommandBar
+    Set popup = Application.CommandBars.Add("ESABCC_Picker", msoBarPopup, , True)
+
+    Dim hdr As CommandBarButton
+    Set hdr = popup.Controls.Add(msoControlButton)
+    hdr.Caption = "   Pick a project workspace"
+    hdr.Enabled = False
+
+    Dim i As Long
+    For i = 1 To m_WsProjCount
+        Dim item As CommandBarButton
+        Set item = popup.Controls.Add(msoControlButton)
+        If i = 1 Then item.BeginGroup = True
+        item.Caption = "   " & Replace(m_WsProjNames(i), "&", "&&")
+        item.Parameter = CStr(i)
+        item.OnAction = "ESABCC_OnPickResult"
+    Next i
+
+    popup.ShowPopup
+    On Error Resume Next
+    Application.CommandBars("ESABCC_Picker").Delete
+    On Error GoTo 0
+
+    ShowWorkspaceProjectPicker = m_PickedResult
+End Function
+
+' Load the workspace list (facet=projects) into m_WsProjIds/m_WsProjNames.
+' Returns True when at least one workspace with documents exists.
+Private Function LoadWorkspaceProjects() As Boolean
+    LoadWorkspaceProjects = False
+    m_WsProjCount = 0
+    On Error GoTo LoadErr
+
+    Dim http As Object
+    Set http = CreateHttpObject()
+    http.Open "GET", WEBAPP_URL & "/api/references/project-workspace?facet=projects", False
+    http.setRequestHeader "Accept", "application/json"
+    http.send
+    If http.Status <> 200 Then Exit Function
+
+    Dim arr As String
+    arr = ExtractJsonArray(http.responseText, "projects")
+    Dim n As Long
+    n = CountJsonObjects(arr)
+    If n = 0 Then Exit Function
+
+    ReDim m_WsProjIds(1 To n)
+    ReDim m_WsProjNames(1 To n)
+
+    Dim pos As Long: pos = 1
+    Dim idx As Long: idx = 0
+    Do
+        Dim objStart As Long
+        objStart = InStr(pos, arr, "{")
+        If objStart = 0 Then Exit Do
+        Dim objEnd As Long
+        objEnd = FindClosingBrace(arr, objStart)
+        If objEnd = 0 Then Exit Do
+
+        Dim obj As String
+        obj = Mid(arr, objStart, objEnd - objStart + 1)
+        idx = idx + 1
+        If idx > n Then Exit Do
+
+        m_WsProjIds(idx) = JsonVal(obj, "id")
+        Dim nm As String: nm = JsonVal(obj, "name")
+        If nm = "" Then nm = m_WsProjIds(idx)
+        Dim cnt As String: cnt = JsonVal(obj, "count")
+        If cnt <> "" Then nm = nm & "  (" & cnt & " docs)"
+        m_WsProjNames(idx) = nm
+
+        pos = objEnd + 1
+    Loop
+    m_WsProjCount = idx
+    LoadWorkspaceProjects = (m_WsProjCount > 0)
+    Exit Function
+
+LoadErr:
+    LoadWorkspaceProjects = False
+End Function
+
+' Fetch one workspace's literature into the m_Res* arrays (plus m_ResTiers /
+' m_ResTags) and its tag facet into m_WsTagNames. tier is ""/policy/
+' scientific/grey; tagName "" means no tag filter.
+Private Sub FetchWorkspaceItems(projectId As String, tier As String, tagName As String, query As String)
+    m_ResCount = 0
+    m_WsTagCount = 0
+    On Error GoTo FetchErr
+
+    Dim url As String
+    url = WEBAPP_URL & "/api/references/project-workspace?projectId=" & _
+          UrlEncode(projectId) & "&limit=500"
+    If tier <> "" Then url = url & "&tier=" & tier
+    If tagName <> "" Then url = url & "&tag=" & UrlEncode(tagName)
+    If Trim(query) <> "" Then url = url & "&q=" & UrlEncode(Trim(query))
+
+    Dim http As Object
+    Set http = CreateHttpObject()
+    http.Open "GET", url, False
+    http.setRequestHeader "Accept", "application/json"
+    http.send
+    If http.Status <> 200 Then Exit Sub
+
+    Dim resp As String: resp = http.responseText
+    ParseWorkspaceTagFacet ExtractJsonArray(resp, "tags")
+    ParseWorkspaceItems ExtractJsonArray(resp, "items")
+    Exit Sub
+
+FetchErr:
+    m_ResCount = 0
+End Sub
+
+' Parse the tag facet array [{ "name": "...", "count": N }, ...].
+Private Sub ParseWorkspaceTagFacet(arr As String)
+    m_WsTagCount = 0
+    Dim n As Long: n = CountJsonObjects(arr)
+    If n = 0 Then Exit Sub
+    ReDim m_WsTagNames(1 To n)
+
+    Dim pos As Long: pos = 1
+    Dim idx As Long: idx = 0
+    Do
+        Dim objStart As Long: objStart = InStr(pos, arr, "{")
+        If objStart = 0 Then Exit Do
+        Dim objEnd As Long: objEnd = FindClosingBrace(arr, objStart)
+        If objEnd = 0 Then Exit Do
+        idx = idx + 1
+        If idx > n Then Exit Do
+        m_WsTagNames(idx) = JsonVal(Mid(arr, objStart, objEnd - objStart + 1), "name")
+        pos = objEnd + 1
+    Loop
+    m_WsTagCount = idx
+End Sub
+
+' Parse workspace items into the shared m_Res* arrays so the existing
+' insert / view / picker machinery works unchanged, plus the workspace-only
+' tier and tag columns.
+Private Sub ParseWorkspaceItems(json As String)
+    m_ResCount = 0
+
+    Dim objCount As Long
+    objCount = CountJsonObjects(json)
+    If objCount = 0 Then Exit Sub
+
+    ReDim m_ResIds(1 To objCount)
+    ReDim m_ResTitles(1 To objCount)
+    ReDim m_ResAuthors(1 To objCount)
+    ReDim m_ResYears(1 To objCount)
+    ReDim m_ResCiteKeys(1 To objCount)
+    ReDim m_ResCitations(1 To objCount)
+    ReDim m_ResDois(1 To objCount)
+    ReDim m_ResUrls(1 To objCount)
+    ReDim m_ResTiers(1 To objCount)
+    ReDim m_ResTags(1 To objCount)
+
+    Dim pos As Long: pos = 1
+    Dim idx As Long: idx = 0
+
+    Do
+        Dim objStart As Long
+        objStart = InStr(pos, json, "{")
+        If objStart = 0 Then Exit Do
+
+        Dim objEnd As Long
+        objEnd = FindClosingBrace(json, objStart)
+        If objEnd = 0 Then Exit Do
+
+        Dim obj As String
+        obj = Mid(json, objStart, objEnd - objStart + 1)
+
+        idx = idx + 1
+        If idx > objCount Then Exit Do
+
+        m_ResIds(idx) = JsonVal(obj, "id")
+        m_ResTitles(idx) = JsonVal(obj, "title")
+        m_ResAuthors(idx) = JsonVal(obj, "authors")
+        m_ResYears(idx) = JsonVal(obj, "year")
+        m_ResCiteKeys(idx) = JsonVal(obj, "citation_key")
+        m_ResCitations(idx) = JsonVal(obj, "fullCitation")
+        m_ResDois(idx) = JsonVal(obj, "doi")
+        m_ResUrls(idx) = JsonVal(obj, "url")
+        m_ResTiers(idx) = JsonVal(obj, "tier")
+        m_ResTags(idx) = JsonVal(obj, "tagsText")
+
+        If m_ResCitations(idx) = "" Then
+            m_ResCitations(idx) = m_ResAuthors(idx) & " (" & m_ResYears(idx) & "). " & m_ResTitles(idx) & "."
+        End If
+        If m_ResCiteKeys(idx) = "" Then
+            m_ResCiteKeys(idx) = m_ResIds(idx)
+        End If
+
+        pos = objEnd + 1
+    Loop
+
+    m_ResCount = idx
+End Sub
+
+' Short display label for a source tier id.
+Private Function WorkspaceTierLabel(tier As String) As String
+    Select Case tier
+        Case "policy": WorkspaceTierLabel = "Policy"
+        Case "scientific": WorkspaceTierLabel = "Scientific"
+        Case "grey": WorkspaceTierLabel = "Grey"
+        Case Else: WorkspaceTierLabel = tier
+    End Select
+End Function
 
 ' ============================================================================
 ' 2) GROUP CITATION (multi-select)
@@ -2384,6 +2731,15 @@ Private Function TryShowDOIForm(formTitle As String) As Boolean
     Err.Clear
 End Function
 
+Private Function TryShowWorkspaceForm(formTitle As String) As Boolean
+    TryShowWorkspaceForm = False
+    On Error Resume Next
+    g_SelectedIndex = 0
+    Application.Run "ESABCCHelper_ShowWorkspace", formTitle
+    If Err.Number = 0 Then TryShowWorkspaceForm = True
+    Err.Clear
+End Function
+
 ' Returns picked index (1..N) or 0 if cancelled.
 Private Function SearchAndPick(formTitle As String, fallbackPrompt As String, _
                                 fallbackTitle As String) As Long
@@ -2658,6 +3014,122 @@ LookupErr:
     g_DOIData = ""
 End Sub
 
+' ── Workspace form bridges (called by frmESABCC_Workspace event handlers) ──
+
+' Populate the workspace combo from the live project-workspace facet.
+Public Sub FormBridge_WS_LoadProjects(cmb As Object, lblStatus As Object)
+    cmb.Clear
+    If Not LoadWorkspaceProjects() Then
+        lblStatus.Caption = "No project workspaces with documents found."
+        lblStatus.ForeColor = RGB(180, 60, 60)
+        Exit Sub
+    End If
+    Dim i As Long
+    For i = 1 To m_WsProjCount
+        cmb.AddItem m_WsProjNames(i)
+    Next i
+    cmb.ListIndex = 0
+End Sub
+
+' Run a workspace search and render the clustered results. projIndex /
+' tierIndex are the combos' 0-based ListIndex; tagChoice is the tag combo
+' text ("(All tags)" or blank = no filter). The tag combo is refreshed from
+' the response facet so it always lists the tags present in the workspace.
+Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice As String, _
+                                query As String, lst As Object, lblStatus As Object, cmbTag As Object)
+    lst.Clear
+    m_WsRowCount = 0
+    If projIndex < 0 Or projIndex >= m_WsProjCount Then
+        lblStatus.Caption = "Pick a project workspace first."
+        lblStatus.ForeColor = RGB(180, 60, 60)
+        Exit Sub
+    End If
+
+    Dim tier As String
+    Select Case tierIndex
+        Case 1: tier = "policy"
+        Case 2: tier = "scientific"
+        Case 3: tier = "grey"
+        Case Else: tier = ""
+    End Select
+
+    Dim tagName As String: tagName = Trim(tagChoice)
+    If tagName = "(All tags)" Then tagName = ""
+
+    Application.StatusBar = "ESABCC: Loading workspace literature..."
+    DoEvents
+    FetchWorkspaceItems m_WsProjIds(projIndex + 1), tier, tagName, query
+    Application.StatusBar = ""
+
+    FillWorkspaceTagCombo cmbTag, tagChoice
+
+    If m_ResCount = 0 Then
+        lblStatus.Caption = "No documents matched."
+        lblStatus.ForeColor = RGB(180, 60, 60)
+        Exit Sub
+    End If
+
+    lblStatus.Caption = m_ResCount & " document(s)"
+    lblStatus.ForeColor = RGB(40, 120, 40)
+
+    ' Render clustered: a disabled-looking header row opens each source tier;
+    ' m_WsRowMap translates list rows back to result indices (0 = header).
+    ReDim m_WsRowMap(1 To m_ResCount + 6)
+
+    Dim lastTier As String: lastTier = Chr(1)
+    Dim i As Long
+    For i = 1 To m_ResCount
+        If m_ResTiers(i) <> lastTier Then
+            lastTier = m_ResTiers(i)
+            lst.AddItem ""
+            lst.List(lst.ListCount - 1, 1) = "--- " & UCase(WorkspaceTierLabel(lastTier)) & " ---"
+            m_WsRowCount = m_WsRowCount + 1
+            m_WsRowMap(m_WsRowCount) = 0
+        End If
+
+        Dim authorYr As String: authorYr = m_ResAuthors(i)
+        If Len(authorYr) > 20 Then authorYr = Left(authorYr, 17) & "..."
+        authorYr = authorYr & " (" & m_ResYears(i) & ")"
+
+        Dim ttl As String: ttl = m_ResTitles(i)
+        If Len(ttl) > 40 Then ttl = Left(ttl, 37) & "..."
+
+        Dim tg As String: tg = m_ResTags(i)
+        If Len(tg) > 26 Then tg = Left(tg, 23) & "..."
+
+        lst.AddItem WorkspaceTierLabel(m_ResTiers(i))
+        lst.List(lst.ListCount - 1, 1) = authorYr
+        lst.List(lst.ListCount - 1, 2) = ttl
+        lst.List(lst.ListCount - 1, 3) = tg
+        m_WsRowCount = m_WsRowCount + 1
+        m_WsRowMap(m_WsRowCount) = i
+    Next i
+End Sub
+
+' Translate a workspace list row (1-based) to a result index; 0 for headers.
+Public Function FormBridge_WS_RowToResult(rowIndex As Long) As Long
+    FormBridge_WS_RowToResult = 0
+    If rowIndex < 1 Or rowIndex > m_WsRowCount Then Exit Function
+    FormBridge_WS_RowToResult = m_WsRowMap(rowIndex)
+End Function
+
+' (Re)fill the tag combo from the last fetched facet, keeping the current
+' selection when that tag still exists in the workspace.
+Private Sub FillWorkspaceTagCombo(cmbTag As Object, currentChoice As String)
+    On Error Resume Next
+    Dim keep As String: keep = Trim(currentChoice)
+    cmbTag.Clear
+    cmbTag.AddItem "(All tags)"
+    Dim selIdx As Long: selIdx = 0
+    Dim i As Long
+    For i = 1 To m_WsTagCount
+        cmbTag.AddItem m_WsTagNames(i)
+        If m_WsTagNames(i) = keep Then selIdx = i
+    Next i
+    cmbTag.ListIndex = selIdx
+    On Error GoTo 0
+End Sub
+
 ' ============================================================================
 ' DYNAMIC USERFORM CREATION  (requires VBA project trust)
 ' ============================================================================
@@ -2724,6 +3196,7 @@ Private Function EnsureFormsReady() As Boolean
 
     If CompExists(proj, "frmESABCC_Search") _
        And CompExists(proj, "frmESABCC_DOI") _
+       And CompExists(proj, "frmESABCC_Workspace") _
        And CompExists(proj, "ESABCCHelper") Then
         EnsureFormsReady = True
         Exit Function
@@ -2772,6 +3245,12 @@ Private Function BuildHelperModule(proj As Object) As Boolean
            "    frmESABCC_Edit.Show 1" & vbCrLf & _
            "    On Error Resume Next" & vbCrLf & _
            "    Unload frmESABCC_Edit" & vbCrLf & _
+           "End Sub" & vbCrLf & vbCrLf & _
+           "Public Sub ESABCCHelper_ShowWorkspace(ByVal formTitle As String)" & vbCrLf & _
+           "    frmESABCC_Workspace.Caption = formTitle" & vbCrLf & _
+           "    frmESABCC_Workspace.Show 1" & vbCrLf & _
+           "    On Error Resume Next" & vbCrLf & _
+           "    Unload frmESABCC_Workspace" & vbCrLf & _
            "End Sub"
     m.CodeModule.AddFromString code
 
@@ -2993,6 +3472,220 @@ BuildErr:
     proj.VBComponents.Remove proj.VBComponents("frmESABCC_Search")
     On Error GoTo 0
     BuildSearchForm = False
+End Function
+
+' "Cite from Project Workspace" picker: workspace combo + source-type and tag
+' filters + search box over a clustered result list (policy / scientific /
+' grey literature headers). Built once at install time like the search form.
+Private Function BuildWorkspaceForm(proj As Object) As Boolean
+    On Error GoTo BuildErr
+    BuildWorkspaceForm = False
+
+    Dim frm As Object
+    Set frm = proj.VBComponents.Add(3)  ' vbext_ct_MSForm
+    frm.Name = "frmESABCC_Workspace"
+
+    frm.Properties("Caption") = "ESABCC - Cite from Project Workspace"
+    frm.Properties("Width") = 534
+    frm.Properties("Height") = 520
+    frm.Properties("StartUpPosition") = 1
+
+    Dim d As Object: Set d = frm.Designer
+    Dim c As Object
+
+    ' ── ESABCC branded banner ──
+    Set c = d.Controls.Add("Forms.Label.1", "lblBanner", True)
+    c.Caption = ""
+    c.Left = 0: c.Top = 0: c.Width = 534: c.Height = 46
+    c.BackStyle = 1: c.BackColor = RGB(55, 95, 105)
+
+    Set c = d.Controls.Add("Forms.Label.1", "lblBrand", True)
+    c.Caption = "ESABCC"
+    c.Left = 14: c.Top = 4: c.Width = 200: c.Height = 22
+    c.Font.Size = 14: c.Font.Bold = True
+    c.ForeColor = RGB(255, 255, 255): c.BackStyle = 0
+
+    Set c = d.Controls.Add("Forms.Label.1", "lblOrg", True)
+    c.Caption = "Cite from a project workspace - literature clustered by source type"
+    c.Left = 14: c.Top = 26: c.Width = 480: c.Height = 14
+    c.Font.Size = 8
+    c.ForeColor = RGB(190, 210, 215): c.BackStyle = 0
+
+    ' Workspace picker
+    Set c = d.Controls.Add("Forms.Label.1", "lblProject", True)
+    c.Caption = "Workspace:"
+    c.Left = 14: c.Top = 58: c.Width = 62: c.Height = 16
+    c.Font.Size = 9: c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    Set c = d.Controls.Add("Forms.ComboBox.1", "cmbProject", True)
+    c.Left = 80: c.Top = 56: c.Width = 436: c.Height = 20
+    c.Font.Size = 9
+    c.Style = 2  ' fmStyleDropDownList - pick from the list only
+
+    ' Source-type (tier) filter
+    Set c = d.Controls.Add("Forms.Label.1", "lblTier", True)
+    c.Caption = "Type:"
+    c.Left = 14: c.Top = 86: c.Width = 32: c.Height = 16
+    c.Font.Size = 9: c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    Set c = d.Controls.Add("Forms.ComboBox.1", "cmbTier", True)
+    c.Left = 50: c.Top = 84: c.Width = 182: c.Height = 20
+    c.Font.Size = 9
+    c.Style = 2
+
+    ' Tag filter
+    Set c = d.Controls.Add("Forms.Label.1", "lblTag", True)
+    c.Caption = "Tag:"
+    c.Left = 242: c.Top = 86: c.Width = 26: c.Height = 16
+    c.Font.Size = 9: c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    Set c = d.Controls.Add("Forms.ComboBox.1", "cmbTag", True)
+    c.Left = 272: c.Top = 84: c.Width = 244: c.Height = 20
+    c.Font.Size = 9
+    c.Style = 2
+
+    ' Search box
+    Set c = d.Controls.Add("Forms.TextBox.1", "txtSearch", True)
+    c.Left = 14: c.Top = 112: c.Width = 400: c.Height = 22
+    c.Font.Size = 10
+
+    ' Search button
+    Set c = d.Controls.Add("Forms.CommandButton.1", "btnSearch", True)
+    c.Caption = "Search"
+    c.Left = 420: c.Top = 110: c.Width = 96: c.Height = 26
+    c.Font.Size = 10: c.Font.Bold = True
+
+    ' Hint
+    Set c = d.Controls.Add("Forms.Label.1", "lblHint", True)
+    c.Caption = "Documents are clustered by source: policy / scientific / grey literature - with their overall tags"
+    c.Left = 14: c.Top = 140: c.Width = 504: c.Height = 14
+    c.Font.Size = 8: c.ForeColor = RGB(120, 120, 120): c.BackStyle = 0
+
+    ' Status
+    Set c = d.Controls.Add("Forms.Label.1", "lblStatus", True)
+    c.Caption = ""
+    c.Left = 14: c.Top = 156: c.Width = 504: c.Height = 16
+    c.Font.Size = 9: c.Font.Bold = True
+    c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    ' Results list (4-column: source, author/year, title, tags)
+    Set c = d.Controls.Add("Forms.ListBox.1", "lstResults", True)
+    c.Left = 14: c.Top = 176: c.Width = 504: c.Height = 250
+    c.Font.Size = 10
+    c.ColumnCount = 4
+    c.ColumnWidths = "56;132;218;90"
+
+    ' Insert button
+    Set c = d.Controls.Add("Forms.CommandButton.1", "btnInsert", True)
+    c.Caption = "Insert Citation"
+    c.Left = 14: c.Top = 438: c.Width = 130: c.Height = 32
+    c.Font.Size = 10: c.Font.Bold = True
+
+    ' View button
+    Set c = d.Controls.Add("Forms.CommandButton.1", "btnView", True)
+    c.Caption = "View in Browser"
+    c.Left = 152: c.Top = 438: c.Width = 120: c.Height = 32
+    c.Font.Size = 10
+
+    ' Cancel button
+    Set c = d.Controls.Add("Forms.CommandButton.1", "btnCancel", True)
+    c.Caption = "Cancel"
+    c.Left = 428: c.Top = 438: c.Width = 90: c.Height = 32
+    c.Font.Size = 10
+    c.Cancel = True
+
+    ' Inject event handler code
+    Dim s As String
+    s = "Private mReady As Boolean" & vbCrLf & _
+        "Private mBusy As Boolean" & vbCrLf & vbCrLf & _
+        "Private Sub UserForm_Initialize()" & vbCrLf & _
+        "    mBusy = True" & vbCrLf & _
+        "    Me.cmbTier.Clear" & vbCrLf & _
+        "    Me.cmbTier.AddItem ""(All types)""" & vbCrLf & _
+        "    Me.cmbTier.AddItem ""Policy documents""" & vbCrLf & _
+        "    Me.cmbTier.AddItem ""Scientific literature""" & vbCrLf & _
+        "    Me.cmbTier.AddItem ""Grey literature & reports""" & vbCrLf & _
+        "    Me.cmbTier.ListIndex = 0" & vbCrLf & _
+        "    Me.cmbTag.Clear" & vbCrLf & _
+        "    Me.cmbTag.AddItem ""(All tags)""" & vbCrLf & _
+        "    Me.cmbTag.ListIndex = 0" & vbCrLf & _
+        "    ESABCC_RefManager.FormBridge_WS_LoadProjects Me.cmbProject, Me.lblStatus" & vbCrLf & _
+        "    mBusy = False" & vbCrLf & _
+        "    mReady = True" & vbCrLf & _
+        "    If Me.cmbProject.ListCount > 0 Then RunSearch" & vbCrLf & _
+        "    Me.txtSearch.SetFocus" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub RunSearch()" & vbCrLf & _
+        "    If mBusy Then Exit Sub" & vbCrLf & _
+        "    mBusy = True" & vbCrLf & _
+        "    Me.lblStatus.Caption = ""Loading...""" & vbCrLf & _
+        "    Me.lblStatus.ForeColor = &H808080" & vbCrLf & _
+        "    DoEvents" & vbCrLf & _
+        "    ESABCC_RefManager.FormBridge_WS_Search Me.cmbProject.ListIndex, Me.cmbTier.ListIndex, " & _
+                 "Me.cmbTag.Value & """", Me.txtSearch.Value, Me.lstResults, Me.lblStatus, Me.cmbTag" & vbCrLf & _
+        "    mBusy = False" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub btnSearch_Click()" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub cmbProject_Change()" & vbCrLf & _
+        "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
+        "    mBusy = True" & vbCrLf & _
+        "    Me.cmbTag.Clear" & vbCrLf & _
+        "    Me.cmbTag.AddItem ""(All tags)""" & vbCrLf & _
+        "    Me.cmbTag.ListIndex = 0" & vbCrLf & _
+        "    mBusy = False" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub cmbTier_Change()" & vbCrLf & _
+        "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub cmbTag_Change()" & vbCrLf & _
+        "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub txtSearch_KeyDown(ByVal KeyCode As MSForms.ReturnInteger, ByVal Shift As Integer)" & vbCrLf & _
+        "    If KeyCode = 13 Then RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub btnInsert_Click()" & vbCrLf & _
+        "    If Me.lstResults.ListIndex < 0 Then Exit Sub" & vbCrLf & _
+        "    Dim r As Long" & vbCrLf & _
+        "    r = ESABCC_RefManager.FormBridge_WS_RowToResult(Me.lstResults.ListIndex + 1)" & vbCrLf & _
+        "    If r < 1 Then Exit Sub" & vbCrLf & _
+        "    ESABCC_RefManager.g_SelectedIndex = r" & vbCrLf & _
+        "    Me.Hide" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub lstResults_DblClick(ByVal Cancel As MSForms.ReturnBoolean)" & vbCrLf & _
+        "    btnInsert_Click" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub btnView_Click()" & vbCrLf & _
+        "    If Me.lstResults.ListIndex < 0 Then Exit Sub" & vbCrLf & _
+        "    Dim r As Long" & vbCrLf & _
+        "    r = ESABCC_RefManager.FormBridge_WS_RowToResult(Me.lstResults.ListIndex + 1)" & vbCrLf & _
+        "    If r >= 1 Then ESABCC_RefManager.FormBridge_ViewInBrowser r" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub btnCancel_Click()" & vbCrLf & _
+        "    ESABCC_RefManager.g_SelectedIndex = 0" & vbCrLf & _
+        "    Me.Hide" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)" & vbCrLf & _
+        "    If CloseMode = 0 Then" & vbCrLf & _
+        "        Cancel = True" & vbCrLf & _
+        "        ESABCC_RefManager.g_SelectedIndex = 0" & vbCrLf & _
+        "        Me.Hide" & vbCrLf & _
+        "    End If" & vbCrLf & _
+        "End Sub"
+
+    frm.CodeModule.InsertLines frm.CodeModule.CountOfLines + 1, s
+
+    BuildWorkspaceForm = True
+    Exit Function
+BuildErr:
+    On Error Resume Next
+    proj.VBComponents.Remove proj.VBComponents("frmESABCC_Workspace")
+    On Error GoTo 0
+    BuildWorkspaceForm = False
 End Function
 
 Private Function BuildDOIForm(proj As Object) As Boolean
@@ -3815,7 +4508,23 @@ Private Function FetchFullCitationById(refId As String) As String
         Exit Function
     End If
 
-    ' Non-DOI: pull the library and match by id
+    ' Non-DOI ids: try the exact-id lookup first. It resolves everything the
+    ' flat reference list serves - including the policy-* entries (EU policies
+    ' as special reference-manager entries) and workspace-cited references.
+    http.Open "GET", WEBAPP_URL & "/api/references?id=" & UrlEncode(refId), False
+    http.setRequestHeader "Accept", "application/json"
+    http.send
+    If http.Status = 200 Then
+        Dim idCite As String
+        idCite = JsonVal(http.responseText, "fullCitation")
+        If idCite <> "" Then
+            FetchFullCitationById = idCite
+            Exit Function
+        End If
+    End If
+
+    ' Fall back: pull the library and match by id
+    Set http = CreateHttpObject()
     http.Open "GET", WEBAPP_URL & "/api/references/library", False
     http.setRequestHeader "Accept", "application/json"
     http.send
@@ -3973,6 +4682,44 @@ Private Function FindClosingBrace(s As String, startPos As Long) As Long
         End If
     Next i
     FindClosingBrace = 0
+End Function
+
+' Pull the JSON array value of `key` out of a response body ("key": [ ... ]).
+' Bracket-matching and string-aware, so nested arrays inside the objects
+' (e.g. each item's "tags" list) don't truncate the extraction.
+Private Function ExtractJsonArray(json As String, key As String) As String
+    ExtractJsonArray = "[]"
+    Dim kp As Long
+    kp = InStr(json, """" & key & """")
+    If kp = 0 Then Exit Function
+    Dim arrStart As Long
+    arrStart = InStr(kp, json, "[")
+    If arrStart = 0 Then Exit Function
+
+    Dim depth As Long: depth = 0
+    Dim insideStr As Boolean: insideStr = False
+    Dim i As Long
+    Dim c As String
+    For i = arrStart To Len(json)
+        c = Mid(json, i, 1)
+        If c = """" Then
+            If i = 1 Then
+                insideStr = Not insideStr
+            ElseIf Mid(json, i - 1, 1) <> "\" Then
+                insideStr = Not insideStr
+            End If
+        End If
+        If Not insideStr Then
+            If c = "[" Then depth = depth + 1
+            If c = "]" Then
+                depth = depth - 1
+                If depth = 0 Then
+                    ExtractJsonArray = Mid(json, arrStart, i - arrStart + 1)
+                    Exit Function
+                End If
+            End If
+        End If
+    Next i
 End Function
 
 Private Function JsonVal(obj As String, key As String) As String

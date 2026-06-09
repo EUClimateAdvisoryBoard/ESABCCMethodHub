@@ -24,6 +24,7 @@ import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
 import type { CSLName } from '@/lib/references/types';
 import { aggregateProjects, referenceInProject } from '@/lib/references/projects';
+import { getPolicyFlatRefs } from '@/lib/references/policy-entries';
 
 // Flat shape the Word add-in / VBA consume.
 interface FlatRef {
@@ -191,6 +192,7 @@ function scoreReference(
 
 export async function GET(request: NextRequest) {
   const search = request.nextUrl.searchParams.get('q') || '';
+  const exactId = request.nextUrl.searchParams.get('id') || '';
   const type = request.nextUrl.searchParams.get('type') || '';
   const project = request.nextUrl.searchParams.get('project') || '';
   const facet = request.nextUrl.searchParams.get('facet') || '';
@@ -222,13 +224,50 @@ export async function GET(request: NextRequest) {
   // project tags users assign), best-effort and deduped by id.
   const supabaseRefs = await getSupabaseReferences();
 
-  // Deduplicate by id, in priority order: custom store → Supabase → static.
+  // Deduplicate by id, in priority order: custom store → Supabase → static →
+  // policy entries. The tracked EU policy corpus rides along as `legislation`
+  // entries (`policy-*` ids, tagged `project:EU policies`) so policies are
+  // citable from the Word add-in like any other reference.
   const seen = new Set<string>();
   const allRefs: Array<Record<string, any>> = [];
-  for (const r of [...customRefs, ...supabaseRefs, ...references]) {
+  for (const r of [...customRefs, ...supabaseRefs, ...references, ...getPolicyFlatRefs()]) {
     if (seen.has(r.id)) continue;
     seen.add(r.id);
     allRefs.push(r);
+  }
+
+  // Exact-id lookup: resolve one reference (including policy-* entries) for
+  // the Word add-in's bibliography builder. Returns the same items shape.
+  if (exactId) {
+    const hit = allRefs.find(r => r.id === exactId);
+    const items = hit ? [hit] : [];
+    return NextResponse.json({
+      total: items.length,
+      offset: 0,
+      limit: 1,
+      items: items.map(r => ({
+        id: r.id,
+        authors: sanitize(r.authors),
+        year: r.year,
+        title: sanitize(r.title),
+        journal: r.journal ? sanitize(r.journal) : null,
+        volume: r.volume,
+        issue: r.issue,
+        pages: r.pages,
+        doi: r.doi,
+        url: r.url,
+        type: r.type,
+        citation_key: r.id,
+        fullCitation: sanitize(r.fullCitation || `${r.authors} (${r.year}). ${r.title}.${r.journal ? ' ' + r.journal : ''}${r.doi ? ' DOI: ' + r.doi : ''}`),
+        tags: Array.isArray(r.tags) ? r.tags.map((t: string) => sanitize(String(t))) : [],
+      })),
+    }, {
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET',
+        'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=600',
+      },
+    });
   }
 
   // Facet mode: return just the distinct project list (name + count) so the

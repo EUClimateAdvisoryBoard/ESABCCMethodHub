@@ -1004,6 +1004,44 @@ export async function removeFromCaCorpus(projectId: string, documentId: string):
   memCorpus(projectId).delete(documentId);
 }
 
+/** Distinct project ids that have a workspace corpus, with document counts —
+ *  used by the Word add-in's "Cite from project workspace" picker. Unions the
+ *  primary corpus table with sentinel-fallback rows, deduped per
+ *  (project, document) pair. Best-effort: a failed read contributes nothing. */
+export async function listCaCorpusProjects(): Promise<Array<{ projectId: string; count: number }>> {
+  const sb = getServerSupabase();
+  if (!sb) {
+    return [...g.__caCorpus!]
+      .map(([projectId, docs]) => ({ projectId, count: docs.size }))
+      .filter(p => p.count > 0);
+  }
+  const pairs = new Set<string>();
+  const counts = new Map<string, number>();
+  const tally = (rows: Array<{ project_id: string; document_id: string }> | null) => {
+    for (const r of rows ?? []) {
+      const key = `${r.project_id} ${r.document_id}`;
+      if (pairs.has(key)) continue;
+      pairs.add(key);
+      counts.set(r.project_id, (counts.get(r.project_id) ?? 0) + 1);
+    }
+  };
+  const { data: primary, error } = await sb
+    .from('content_analysis_corpus')
+    .select('project_id, document_id')
+    .limit(MAX_ROWS);
+  if (error && !isMissingCorpusTable(error)) {
+    console.error('[content-analysis-store] listCaCorpusProjects failed:', error.message);
+  }
+  tally(primary as Array<{ project_id: string; document_id: string }> | null);
+  const { data: sentinels } = await sb
+    .from('content_analysis_segments')
+    .select('project_id, document_id')
+    .eq('code_id', CORPUS_SENTINEL_CODE)
+    .limit(MAX_ROWS);
+  tally(sentinels as Array<{ project_id: string; document_id: string }> | null);
+  return [...counts.entries()].map(([projectId, count]) => ({ projectId, count }));
+}
+
 // Report outline ------------------------------------------------------------
 // One JSON outline (the report section skeleton) per project workspace, shared
 // so every collaborator edits the same structure. Stored opaquely as JSON here;
