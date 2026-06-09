@@ -49,6 +49,9 @@ interface Props {
    *  creates a coded segment + attaches a numeric payload parsed from the
    *  text. Only rendered when supplied. */
   onExtractNumber?: () => void;
+  /** "Comment" — attach a free-form note to the selected passage without
+   *  applying a tag. Only rendered when supplied. */
+  onComment?: () => void;
 }
 
 export default function FloatingCodeToolbar({
@@ -61,6 +64,7 @@ export default function FloatingCodeToolbar({
   onClear,
   onCreateAndApply,
   onExtractNumber,
+  onComment,
 }: Props) {
   const [mounted, setMounted] = useState(false);
   const [pickerOpen, setPickerOpen] = useState(false);
@@ -147,6 +151,17 @@ export default function FloatingCodeToolbar({
           title="Create a new tag from the selected text and apply it"
         >
           + New tag
+        </button>
+      )}
+
+      {onComment && selection && (
+        <button
+          type="button"
+          onClick={onComment}
+          className="text-[11.5px] text-white/85 hover:text-white px-1.5 py-1 transition"
+          title="Attach a comment to this passage — no tag needed"
+        >
+          💬 Comment
         </button>
       )}
 
