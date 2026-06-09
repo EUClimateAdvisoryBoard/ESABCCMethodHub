@@ -13,10 +13,12 @@ create table if not exists public.connection_assignments (
 alter table public.connection_assignments enable row level security;
 
 -- All authenticated users can read assignments (shared editorial view).
+drop policy if exists "conn_assign_read" on public.connection_assignments;
 create policy "conn_assign_read" on public.connection_assignments
   for select using (auth.role() = 'authenticated');
 
 -- All authenticated users can insert / update / delete assignments.
+drop policy if exists "conn_assign_write" on public.connection_assignments;
 create policy "conn_assign_write" on public.connection_assignments
   for all using (auth.role() = 'authenticated');
 

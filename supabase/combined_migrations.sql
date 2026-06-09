@@ -1,12 +1,10 @@
 -- ============================================================================
 -- COMBINED MIGRATIONS (base schema + 001 -> 064)
 -- Auto-generated for one-shot Supabase SQL Editor runs.
---
--- Includes supabase-schema.sql FIRST (it defines core tables such as
--- public.annotations that later migrations alter), then every numbered
--- migration in apply order. Wrap is intentionally absent: every statement
--- is idempotent (CREATE ... IF NOT EXISTS / DROP ... IF EXISTS), so
--- re-running against an existing database is safe.
+-- Base schema first (defines core tables like public.annotations that later
+-- migrations alter), then every numbered migration in apply order.
+-- Fully idempotent (CREATE ... IF NOT EXISTS / DROP ... IF EXISTS, every
+-- policy & trigger guarded), so re-running on an existing database is safe.
 -- ============================================================================
 
 
@@ -160,9 +158,11 @@ drop policy if exists "Users can insert own annotations" on public.annotations;
 create policy "Users can insert own annotations"
   on public.annotations for insert with check (auth.uid() = user_id);
 drop policy if exists "Users can update own annotations" on public.annotations;
+drop policy if exists "Authenticated users can update annotations" on public.annotations;
 create policy "Authenticated users can update annotations"
   on public.annotations for update using (auth.uid() is not null);
 drop policy if exists "Users can delete own annotations" on public.annotations;
+drop policy if exists "Authenticated users can delete annotations" on public.annotations;
 create policy "Authenticated users can delete annotations"
   on public.annotations for delete using (auth.uid() is not null);
 create index if not exists idx_annotations_policy on public.annotations(policy_id);
@@ -575,6 +575,7 @@ CREATE TABLE IF NOT EXISTS public.library_members (
 
 ALTER TABLE public.library_members ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "Users can view own libraries" on public.libraries;
 CREATE POLICY "Users can view own libraries"
   ON public.libraries FOR SELECT
   USING (
@@ -583,15 +584,19 @@ CREATE POLICY "Users can view own libraries"
     OR is_shared = true
   );
 
+drop policy if exists "Authenticated users can create libraries" on public.libraries;
 CREATE POLICY "Authenticated users can create libraries"
   ON public.libraries FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
 
+drop policy if exists "Owners can update libraries" on public.libraries;
 CREATE POLICY "Owners can update libraries"
   ON public.libraries FOR UPDATE USING (owner_id = auth.uid());
 
+drop policy if exists "Owners can delete libraries" on public.libraries;
 CREATE POLICY "Owners can delete libraries"
   ON public.libraries FOR DELETE USING (owner_id = auth.uid());
 
+drop policy if exists "Members can view membership" on public.library_members;
 CREATE POLICY "Members can view membership"
   ON public.library_members FOR SELECT
   USING (
@@ -599,6 +604,7 @@ CREATE POLICY "Members can view membership"
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "Library owners/admins can manage members" on public.library_members;
 CREATE POLICY "Library owners/admins can manage members"
   ON public.library_members FOR INSERT
   WITH CHECK (
@@ -609,6 +615,7 @@ CREATE POLICY "Library owners/admins can manage members"
     )
   );
 
+drop policy if exists "Library owners/admins can update members" on public.library_members;
 CREATE POLICY "Library owners/admins can update members"
   ON public.library_members FOR UPDATE
   USING (
@@ -619,6 +626,7 @@ CREATE POLICY "Library owners/admins can update members"
     )
   );
 
+drop policy if exists "Library owners/admins can remove members" on public.library_members;
 CREATE POLICY "Library owners/admins can remove members"
   ON public.library_members FOR DELETE
   USING (
@@ -660,6 +668,7 @@ CREATE INDEX IF NOT EXISTS references_year_idx ON public.references(year);
 
 ALTER TABLE public.references ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "read_references" on public.references;
 CREATE POLICY "read_references" ON public.references FOR SELECT
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid())
@@ -667,18 +676,21 @@ CREATE POLICY "read_references" ON public.references FOR SELECT
     OR library_id IN (SELECT id FROM public.libraries WHERE is_shared = true)
   );
 
+drop policy if exists "write_references" on public.references;
 CREATE POLICY "write_references" ON public.references FOR INSERT
   WITH CHECK (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "update_references" on public.references;
 CREATE POLICY "update_references" ON public.references FOR UPDATE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "delete_references" on public.references;
 CREATE POLICY "delete_references" ON public.references FOR DELETE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
@@ -707,9 +719,11 @@ CREATE TABLE IF NOT EXISTS public.csl_styles (
 
 ALTER TABLE public.csl_styles ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "CSL styles are viewable by everyone" on public.csl_styles;
 CREATE POLICY "CSL styles are viewable by everyone"
   ON public.csl_styles FOR SELECT USING (true);
 
+drop policy if exists "Authenticated users can add styles" on public.csl_styles;
 CREATE POLICY "Authenticated users can add styles"
   ON public.csl_styles FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
 
@@ -3326,10 +3340,12 @@ create table if not exists public.connection_assignments (
 alter table public.connection_assignments enable row level security;
 
 -- All authenticated users can read assignments (shared editorial view).
+drop policy if exists "conn_assign_read" on public.connection_assignments;
 create policy "conn_assign_read" on public.connection_assignments
   for select using (auth.role() = 'authenticated');
 
 -- All authenticated users can insert / update / delete assignments.
+drop policy if exists "conn_assign_write" on public.connection_assignments;
 create policy "conn_assign_write" on public.connection_assignments
   for all using (auth.role() = 'authenticated');
 
@@ -3395,11 +3411,13 @@ alter table public.climate_councils
 -- edits to the original author makes them unwieldy in practice.
 
 drop policy if exists "Users can update own annotations" on public.annotations;
+drop policy if exists "Authenticated users can update annotations" on public.annotations;
 create policy "Authenticated users can update annotations"
   on public.annotations for update
   using (auth.uid() is not null);
 
 drop policy if exists "Users can delete own annotations" on public.annotations;
+drop policy if exists "Authenticated users can delete annotations" on public.annotations;
 create policy "Authenticated users can delete annotations"
   on public.annotations for delete
   using (auth.uid() is not null);
@@ -3469,39 +3487,49 @@ alter table public.recommendation_policy_links enable row level security;
 alter table public.recommendation_indicator_links enable row level security;
 
 -- recommendations
+drop policy if exists "Authenticated users can read recommendations" on public.recommendations;
 create policy "Authenticated users can read recommendations"
   on public.recommendations for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert recommendations" on public.recommendations;
 create policy "Authenticated users can insert recommendations"
   on public.recommendations for insert to authenticated
   with check (auth.uid() is not null);
 
+drop policy if exists "Authenticated users can update recommendations" on public.recommendations;
 create policy "Authenticated users can update recommendations"
   on public.recommendations for update to authenticated
   using (true) with check (true);
 
+drop policy if exists "Authenticated users can delete recommendations" on public.recommendations;
 create policy "Authenticated users can delete recommendations"
   on public.recommendations for delete to authenticated using (true);
 
 -- policy links
+drop policy if exists "Authenticated users can read policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can read policy links"
   on public.recommendation_policy_links for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can insert policy links"
   on public.recommendation_policy_links for insert to authenticated
   with check (true);
 
+drop policy if exists "Authenticated users can delete policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can delete policy links"
   on public.recommendation_policy_links for delete to authenticated using (true);
 
 -- indicator links
+drop policy if exists "Authenticated users can read indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can read indicator links"
   on public.recommendation_indicator_links for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can insert indicator links"
   on public.recommendation_indicator_links for insert to authenticated
   with check (true);
 
+drop policy if exists "Authenticated users can delete indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can delete indicator links"
   on public.recommendation_indicator_links for delete to authenticated using (true);
 

@@ -23,6 +23,7 @@ CREATE TABLE IF NOT EXISTS public.library_members (
 
 ALTER TABLE public.library_members ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "Users can view own libraries" on public.libraries;
 CREATE POLICY "Users can view own libraries"
   ON public.libraries FOR SELECT
   USING (
@@ -31,15 +32,19 @@ CREATE POLICY "Users can view own libraries"
     OR is_shared = true
   );
 
+drop policy if exists "Authenticated users can create libraries" on public.libraries;
 CREATE POLICY "Authenticated users can create libraries"
   ON public.libraries FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
 
+drop policy if exists "Owners can update libraries" on public.libraries;
 CREATE POLICY "Owners can update libraries"
   ON public.libraries FOR UPDATE USING (owner_id = auth.uid());
 
+drop policy if exists "Owners can delete libraries" on public.libraries;
 CREATE POLICY "Owners can delete libraries"
   ON public.libraries FOR DELETE USING (owner_id = auth.uid());
 
+drop policy if exists "Members can view membership" on public.library_members;
 CREATE POLICY "Members can view membership"
   ON public.library_members FOR SELECT
   USING (
@@ -47,6 +52,7 @@ CREATE POLICY "Members can view membership"
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "Library owners/admins can manage members" on public.library_members;
 CREATE POLICY "Library owners/admins can manage members"
   ON public.library_members FOR INSERT
   WITH CHECK (
@@ -57,6 +63,7 @@ CREATE POLICY "Library owners/admins can manage members"
     )
   );
 
+drop policy if exists "Library owners/admins can update members" on public.library_members;
 CREATE POLICY "Library owners/admins can update members"
   ON public.library_members FOR UPDATE
   USING (
@@ -67,6 +74,7 @@ CREATE POLICY "Library owners/admins can update members"
     )
   );
 
+drop policy if exists "Library owners/admins can remove members" on public.library_members;
 CREATE POLICY "Library owners/admins can remove members"
   ON public.library_members FOR DELETE
   USING (
@@ -108,6 +116,7 @@ CREATE INDEX IF NOT EXISTS references_year_idx ON public.references(year);
 
 ALTER TABLE public.references ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "read_references" on public.references;
 CREATE POLICY "read_references" ON public.references FOR SELECT
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid())
@@ -115,18 +124,21 @@ CREATE POLICY "read_references" ON public.references FOR SELECT
     OR library_id IN (SELECT id FROM public.libraries WHERE is_shared = true)
   );
 
+drop policy if exists "write_references" on public.references;
 CREATE POLICY "write_references" ON public.references FOR INSERT
   WITH CHECK (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "update_references" on public.references;
 CREATE POLICY "update_references" ON public.references FOR UPDATE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
     OR library_id IN (SELECT id FROM public.libraries WHERE owner_id = auth.uid())
   );
 
+drop policy if exists "delete_references" on public.references;
 CREATE POLICY "delete_references" ON public.references FOR DELETE
   USING (
     library_id IN (SELECT library_id FROM public.library_members WHERE user_id = auth.uid() AND role IN ('editor', 'admin'))
@@ -155,8 +167,10 @@ CREATE TABLE IF NOT EXISTS public.csl_styles (
 
 ALTER TABLE public.csl_styles ENABLE ROW LEVEL SECURITY;
 
+drop policy if exists "CSL styles are viewable by everyone" on public.csl_styles;
 CREATE POLICY "CSL styles are viewable by everyone"
   ON public.csl_styles FOR SELECT USING (true);
 
+drop policy if exists "Authenticated users can add styles" on public.csl_styles;
 CREATE POLICY "Authenticated users can add styles"
   ON public.csl_styles FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
