@@ -138,6 +138,18 @@ const DEFAULT_CODE_COLORS = [
   '#65A30D', '#B83230', '#14B8A6', '#0EA5E9', '#A855F7',
 ];
 
+// Map the workbench's closed reference-type union onto the CSL item types the
+// Reference Manager store uses, so a paper filed into a project's corpus is
+// created with the right type if it doesn't yet have a custom-store row.
+const REF_TYPE_TO_CSL: Record<string, string> = {
+  article: 'article-journal',
+  report: 'report',
+  web: 'webpage',
+  chapter: 'chapter',
+  legislation: 'legislation',
+  book: 'book',
+};
+
 // ── Source types ────────────────────────────────────────────────────────────
 // The three source tiers (policy / scientific / grey) and their labels come
 // from the shared `source-tier` module, so this in-workspace surface and the
@@ -426,9 +438,42 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   }, [lensSegments]);
 
   // ── Mutating handlers ─────────────────────────────────────────────────────
+  // Filing a paper into this project's corpus should also file it under the
+  // project in the shared Reference Manager, so the same membership shows up in
+  // its "Project view" (a `project:<name>` tag — see lib/references/projects).
+  // Only references have a row in the library; policy documents don't, so they
+  // are skipped. Best-effort: a failed sync never blocks the local corpus
+  // change, and tagging merges with any tags the reference already carries.
+  const addReferenceToProject = useCallback(
+    (doc: AnalysisDocument) => {
+      if ((doc.sourceKind ?? 'policy') !== 'reference') return;
+      const refId = doc.id.replace(/^ref-doc-/, '');
+      void fetch('/api/references/library', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          id: refId,
+          addProjects: [projectName],
+          // Supplied so a paper that only lives in the bundled static library
+          // can be created as an editable row to carry the project tag.
+          meta: {
+            title: doc.title,
+            authors: doc.referenceAuthors ?? '',
+            year: doc.referenceYear ?? '',
+            url: doc.referenceUrl ?? '',
+            type: REF_TYPE_TO_CSL[doc.referenceType ?? ''] ?? 'article-journal',
+          },
+        }),
+      }).catch(() => { /* best effort — corpus membership is the source of truth */ });
+    },
+    [projectName],
+  );
+
   const addToCorpus = (id: string) => {
     setCorpusIds(prev => (prev.includes(id) ? prev : [...prev, id]));
     setSelectedDocumentId(id);
+    const doc = allDocuments.find(d => d.id === id);
+    if (doc) addReferenceToProject(doc);
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
