@@ -1473,8 +1473,14 @@ function ContentAnalysisPageInner() {
       {activeTab === 'workbench' && (
         <section className="max-w-[1600px] mx-auto px-4 sm:px-6 py-4">
           <div className="grid gap-4 lg:grid-cols-[280px_minmax(0,1fr)_320px] xl:grid-cols-[320px_minmax(0,1fr)_360px]">
-            {/* LEFT: search + documents + code system */}
-            <aside className="flex flex-col gap-4 min-h-0">
+            {/* LEFT: search + documents + code system.
+                Sticks to the top on large screens so the in-text coding
+                structure (tag system) stays beside the document/PDF while the
+                reader scrolls through it. `self-start` keeps the sticky box
+                sized to its content rather than stretched to the grid row, and
+                the capped height + overflow lets the column scroll internally
+                when search + documents + tags together exceed the viewport. */}
+            <aside className="flex flex-col gap-4 min-h-0 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-1.5rem)] lg:overflow-y-auto">
               <Panel title="Search all policy text">
                 <FullTextSearch
                   documents={allDocuments}
