@@ -20,6 +20,9 @@ import { putDurablePdf } from '@/lib/content-analysis/pdf-durable-cache';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+// Extracting a large (multi-hundred-page) PDF can take a while; give the
+// function more headroom than the default. Vercel caps this to the plan limit.
+export const maxDuration = 120;
 
 const CACHE_DIR = path.join(process.cwd(), '.cache', 'content-analysis');
 const MAX_BYTES = 40 * 1024 * 1024;
