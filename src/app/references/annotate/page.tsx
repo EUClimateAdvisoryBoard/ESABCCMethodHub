@@ -213,6 +213,102 @@ function AnnotatePage() {
     }, 0);
   }
 
+  // ── Export annotations ──
+  // Both exports are fully self-contained: they carry the highlighted PDF
+  // text (the quote) AND the user's note, so the annotation set is useful on
+  // its own without re-opening the original PDF. CSV is the analyst-friendly
+  // dataset; Word is a formatted memo you can paste into a chapter.
+  const colorName = (value: string) =>
+    ANNOTATION_COLORS.find(c => c.value === value)?.name ?? value;
+
+  // Filesystem-safe stem built from the reference title.
+  const exportStem = () => {
+    const base = (ref?.title || 'reference')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '')
+      .slice(0, 60) || 'reference';
+    return `${base}-annotations-${new Date().toISOString().slice(0, 10)}`;
+  };
+
+  const sortedForExport = () =>
+    annotations
+      .slice()
+      .sort((a, b) => a.page - b.page || a.created_at.localeCompare(b.created_at));
+
+  function triggerDownload(blob: Blob, filename: string) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function exportCsv() {
+    if (!ref || annotations.length === 0) return;
+    const header = ['page', 'quote', 'note', 'highlight', 'created_at'];
+    const rows = [header];
+    for (const a of sortedForExport()) {
+      rows.push([
+        String(a.page),
+        a.quote.replace(/\s+/g, ' ').trim(),
+        a.note.replace(/\s+/g, ' ').trim(),
+        colorName(a.color),
+        a.created_at,
+      ]);
+    }
+    const csv = rows
+      .map(r => r.map(c => `"${String(c).replace(/"/g, '""')}"`).join(','))
+      .join('\n');
+    // Lead with a BOM so Excel reads the unicode quote marks as UTF-8.
+    const blob = new Blob(['﻿', csv], { type: 'text/csv;charset=utf-8;' });
+    triggerDownload(blob, `${exportStem()}.csv`);
+  }
+
+  function exportWord() {
+    if (!ref || annotations.length === 0) return;
+    const escape = (v: string) =>
+      v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const citation = [
+      ref.authors,
+      ref.year && `(${ref.year})`,
+      ref.title,
+      ref.journal,
+    ]
+      .filter(Boolean)
+      .join(' · ');
+    const rows = sortedForExport()
+      .map(a => {
+        const note = a.note.trim()
+          ? `<p style="margin:4pt 0 0 0;">${escape(a.note.trim())}</p>`
+          : '<p style="margin:4pt 0 0 0;color:#888;font-style:italic;">No note.</p>';
+        return `<tr>
+  <td style="text-align:center;white-space:nowrap;">${a.page}</td>
+  <td><span style="display:inline-block;width:9pt;height:9pt;border:0.5pt solid #888;background-color:${a.color};vertical-align:middle;"></span></td>
+  <td><blockquote style="margin:0;font-style:italic;border-left:2pt solid ${a.color};padding-left:6pt;">${escape(a.quote.trim())}</blockquote>${note}</td>
+</tr>`;
+      })
+      .join('');
+    const html = `<!DOCTYPE html><html><head><meta charset="utf-8"><title>Annotations — ${escape(ref.title)}</title>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 0.5pt solid #888; padding: 5pt 7pt; vertical-align: top; }
+  th { background-color: #F2F2F2; text-align: left; }
+</style></head><body>
+<h2>Annotations — ${escape(ref.title)}</h2>
+<p style="color:#444;">${escape(citation)}</p>
+<p>${annotations.length} annotation(s).</p>
+<table>
+  <tr><th style="width:8%;">Page</th><th style="width:6%;"></th><th>Quote &amp; note</th></tr>
+  ${rows}
+</table>
+</body></html>`;
+    const blob = new Blob(['﻿', html], { type: 'application/msword' });
+    triggerDownload(blob, `${exportStem()}.doc`);
+  }
+
   if (!loaded) {
     return <div className="p-10 text-tertiary text-sm">Loading…</div>;
   }
@@ -401,9 +497,34 @@ function AnnotatePage() {
 
           {/* Annotation list */}
           <div className="border border-grey-200 rounded-lg bg-white">
-            <div className="px-4 py-3 border-b border-grey-100 flex items-center justify-between">
-              <h2 className="font-semibold text-sm text-tertiary-dark">Annotations</h2>
-              <span className="text-xs text-tertiary">{annotations.length}</span>
+            <div className="px-4 py-3 border-b border-grey-100">
+              <div className="flex items-center justify-between">
+                <h2 className="font-semibold text-sm text-tertiary-dark">Annotations</h2>
+                <span className="text-xs text-tertiary">{annotations.length}</span>
+              </div>
+              {/* Self-contained exports — the quote (text from the PDF) plus the
+                  note travel together, so the annotations are usable without the
+                  PDF itself. */}
+              <div className="flex items-center gap-3 mt-2">
+                <button
+                  type="button"
+                  onClick={exportCsv}
+                  disabled={annotations.length === 0}
+                  title="Download every annotation (highlighted text + note) as a CSV — no PDF needed"
+                  className="text-[11px] font-medium text-primary hover:underline disabled:text-grey-300 disabled:no-underline disabled:cursor-not-allowed"
+                >
+                  Export CSV
+                </button>
+                <button
+                  type="button"
+                  onClick={exportWord}
+                  disabled={annotations.length === 0}
+                  title="Download a Word-compatible memo of the highlighted text and notes"
+                  className="text-[11px] font-medium text-primary hover:underline disabled:text-grey-300 disabled:no-underline disabled:cursor-not-allowed"
+                >
+                  Export Word
+                </button>
+              </div>
             </div>
 
             {annotations.length === 0 ? (
