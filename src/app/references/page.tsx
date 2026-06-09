@@ -36,10 +36,11 @@ import {
   getReferences,
   searchReferences,
   subscribeToLibrary,
+  deleteReference,
 } from '@/lib/references/reference-service';
 import { references as staticReferencesRaw } from '@/data/references';
 import fundingTagsData from '@/data/reference-funding-tags.json';
-import { getPolicyCitationsAsReferences } from '@/lib/policy-citations';
+import { getPolicyCitationsAsReferences, isPolicyCitation } from '@/lib/policy-citations';
 import LibrarySelector from '@/components/references/LibrarySelector';
 import ReferenceList from '@/components/references/ReferenceList';
 import ReferenceForm from '@/components/references/ReferenceForm';
@@ -761,22 +762,35 @@ export default function ReferencesPage() {
     });
   }, [requireAuth, displayName]);
 
-  // Bulk delete for fallback mode. The displayed references come from the
-  // shared-API custom store (plus static/policy entries), so deletion has to
-  // go through `deleteRefFromApi` — not the reference-service, which targets
-  // Supabase. Mirrors the single-delete path used by the edit form: best-effort
-  // PDF cleanup, remove from the local custom-ref cache, then drop from state.
-  const handleDeleteReferencesFallback = useCallback(async (ids: string[]) => {
+  // Bulk delete used in BOTH fallback and Supabase mode. The displayed list is
+  // a merge of several stores, and each reference has to be deleted from the
+  // store it actually lives in:
+  //   • shared-API custom refs (library_id === STATIC_LIBRARY_ID) → the
+  //     `/api/references/library` store (custom_references). This is the store
+  //     the Content Analysis "Add documents" browser also reads, so routing
+  //     these through the Supabase reference-service (as Supabase mode did
+  //     before) left the row behind — it kept re-appearing here on reload and
+  //     never disappeared from Content Analysis.
+  //   • Supabase library refs → the reference-service.
+  //   • policy citations are virtual (no backing row) → skip.
+  // Mirrors the single-delete path used by the edit form: best-effort PDF
+  // cleanup, remove from the local custom-ref cache, then drop from state.
+  const handleDeleteReferences = useCallback(async (ids: string[]) => {
     const idSet = new Set(ids);
     const targets = references.filter(r => idSet.has(r.id));
     const failures: string[] = [];
     for (const ref of targets) {
+      if (isPolicyCitation(ref)) continue; // virtual entry — nothing to delete
       if (ref.pdf_url) {
         // Best-effort — a missing/failed PDF delete shouldn't block the row.
         try { await deletePdf(ref.id); } catch { /* ignore */ }
       }
-      const result = await deleteRefFromApi(ref.id);
-      if (!result.ok) failures.push(ref.title);
+      if (ref.library_id === STATIC_LIBRARY_ID) {
+        const result = await deleteRefFromApi(ref.id);
+        if (!result.ok) failures.push(ref.title);
+      } else {
+        try { await deleteReference(ref.id); } catch { failures.push(ref.title); }
+      }
     }
     // Prune the local custom-ref cache so deletions survive a reload.
     saveLocalCustomRefs(loadLocalCustomRefs().filter(r => !idSet.has(r.id)));
@@ -1009,6 +1023,12 @@ export default function ReferencesPage() {
                         alert(`Failed to delete: ${result.error}`);
                         return;
                       }
+                      // Prune the local custom-ref cache too, otherwise the row
+                      // is re-merged from localStorage on the next reload and the
+                      // deletion appears to be undone.
+                      saveLocalCustomRefs(
+                        loadLocalCustomRefs().filter(r => r.id !== fallbackEditingRef.id),
+                      );
                       setReferences(prev => prev.filter(r => r.id !== fallbackEditingRef.id));
                       closeFallbackDetail();
                     }}
@@ -1044,7 +1064,7 @@ export default function ReferencesPage() {
                     onRefreshNeeded={() => {}}
                     onEditReference={openFallbackRef}
                     onAddToReadingList={handleAddToReadingList}
-                    onDeleteReferences={handleDeleteReferencesFallback}
+                    onDeleteReferences={handleDeleteReferences}
                   />
                 )}
               </>
@@ -1133,6 +1153,7 @@ export default function ReferencesPage() {
                       onRefreshNeeded={loadReferences}
                       onEditReference={handleEditReference}
                       onAddToReadingList={handleAddToReadingList}
+                      onDeleteReferences={handleDeleteReferences}
                     />
                   )
                 )}
