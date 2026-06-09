@@ -1583,6 +1583,18 @@ function DocumentViewer({
               />
             </label>
           </div>
+          {/* Surface ingest progress / failure prominently. Previously the
+              only feedback was 10px text in the header, so a failed "Load PDF"
+              looked like nothing happened at all. */}
+          {ingestState.status === 'loading' && (
+            <p className="text-[12px] text-tertiary-light">{ingestState.message ?? 'Loading…'}</p>
+          )}
+          {ingestState.status === 'error' && (
+            <p className="text-[12px] text-red-700 max-w-sm break-words">
+              Couldn’t load the PDF: {ingestState.message}.{' '}
+              {hasLibraryPdf && 'Try “Upload PDF” to send the file from your computer instead.'}
+            </p>
+          )}
           {doc.referenceUrl && (
             <a href={doc.referenceUrl} target="_blank" rel="noopener noreferrer" className="text-[11px] text-secondary hover:underline">
               Open source ↗
