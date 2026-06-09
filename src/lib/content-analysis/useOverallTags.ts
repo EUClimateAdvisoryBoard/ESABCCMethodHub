@@ -11,83 +11,118 @@
 //      dots shown on each corpus card. Policy documents ship an AI-assigned
 //      baseline (`AnalysisDocument.aiCodeIds`, see policy-master-tags.ts);
 //      scientific & grey literature, which arrive live from the reference
-//      manager, only ever had a single placeholder tag. This hook lets an
-//      analyst curate that overall-tag set by hand for any document.
+//      manager, are tagged by hand here.
 //
-// Persistence mirrors the per-workspace corpus (`ca:ws-corpus:*`): client-side
-// localStorage during the beta, JSON-friendly so a future server store can take
-// over without touching the UI. Overall tags describe the document itself, so
-// they are stored globally (one set per document id) rather than per project.
+// Persistence is the GLOBAL, shared `content_analysis_overall_tags` table
+// (migration 059) via /api/content-analysis/overall-tags — so an overall tag
+// added by one analyst is visible to EVERY user, in both the workbench and the
+// reference library. Overall tags describe the document itself, so they are
+// stored globally (one set per document id) rather than per project.
 // ---------------------------------------------------------------------------
 
 import { useCallback, useEffect, useState } from 'react';
-import type { AnalysisDocument } from './types';
+import { supabase } from '@/lib/supabase';
+import { useAuth } from '@/lib/auth-context';
 
-const STORAGE_KEY = 'ca:overall-tags';
-
-/** Per-document override of the overall-tag set, keyed by document id. A
- *  document with no entry falls back to its AI baseline (`aiCodeIds`). */
-type OverallTagMap = Record<string, string[]>;
-
-/** The overall tags actually in effect for a document: the analyst's manual
- *  override when present, otherwise the AI baseline shipped on the document. */
-export function effectiveOverallTags(
-  doc: Pick<AnalysisDocument, 'aiCodeIds'>,
-  override: string[] | undefined,
-): string[] {
-  return override ?? doc.aiCodeIds ?? [];
+async function authHeader(): Promise<Record<string, string>> {
+  if (!supabase) return {};
+  const { data } = await supabase.auth.getSession();
+  const tok = data.session?.access_token;
+  return tok ? { authorization: `Bearer ${tok}` } : {};
 }
 
 export interface OverallTagsApi {
-  /** True once the persisted map has been read from storage. */
+  /** True once the shared table has been read. */
   loaded: boolean;
-  /** Manual override for a document, or `undefined` when untouched. */
-  getOverride: (docId: string) => string[] | undefined;
-  /** Toggle a single overall tag on a document. `baseline` seeds the set the
-   *  first time a document is touched, so unchecking an AI tag works too. */
-  toggleTag: (docId: string, codeId: string, baseline: string[]) => void;
-  /** Replace a document's whole overall-tag set. */
-  setTags: (docId: string, codeIds: string[]) => void;
+  /** The overall-tag code ids stored for a document (empty when none). */
+  getTags: (docId: string) => string[];
+  /** Add or remove a single overall tag on a document. Persists to the shared
+   *  table; prompts sign-in if needed. Optimistic, with rollback on failure. */
+  toggleTag: (docId: string, codeId: string) => Promise<void>;
 }
 
 export function useOverallTags(): OverallTagsApi {
-  const [map, setMap] = useState<OverallTagMap>({});
+  const { user, requireAuth } = useAuth();
+  // docId → set of code ids.
+  const [map, setMap] = useState<Map<string, Set<string>>>(new Map());
   const [loaded, setLoaded] = useState(false);
 
-  useEffect(() => {
+  const load = useCallback(async () => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw) setMap(JSON.parse(raw) as OverallTagMap);
+      const res = await fetch('/api/content-analysis/overall-tags');
+      if (res.ok) {
+        const { tags } = (await res.json()) as { tags: { documentId: string; codeId: string }[] };
+        const m = new Map<string, Set<string>>();
+        for (const t of tags ?? []) {
+          let set = m.get(t.documentId);
+          if (!set) { set = new Set(); m.set(t.documentId, set); }
+          set.add(t.codeId);
+        }
+        setMap(m);
+      }
     } catch {
-      /* ignore corrupt storage */
+      /* offline / not configured — fall back to empty (policy AI baseline only) */
+    } finally {
+      setLoaded(true);
     }
-    setLoaded(true);
   }, []);
 
   useEffect(() => {
-    if (!loaded) return;
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
-    } catch {
-      /* quota — ignore */
-    }
-  }, [map, loaded]);
+    void load();
+  }, [load]);
 
-  const getOverride = useCallback((docId: string): string[] | undefined => map[docId], [map]);
+  const getTags = useCallback(
+    (docId: string): string[] => {
+      const set = map.get(docId);
+      return set ? [...set] : [];
+    },
+    [map],
+  );
 
-  const toggleTag = useCallback((docId: string, codeId: string, baseline: string[]) => {
-    setMap(prev => {
-      const current = prev[docId] ?? baseline;
-      const next = current.includes(codeId)
-        ? current.filter(c => c !== codeId)
-        : [...current, codeId];
-      return { ...prev, [docId]: next };
-    });
-  }, []);
+  const toggleTag = useCallback(
+    async (docId: string, codeId: string) => {
+      const u = user ?? (await requireAuth('Sign in to edit overall tags.'));
+      if (!u) return;
+      const had = map.get(docId)?.has(codeId) ?? false;
 
-  const setTags = useCallback((docId: string, codeIds: string[]) => {
-    setMap(prev => ({ ...prev, [docId]: codeIds }));
-  }, []);
+      // Optimistic update.
+      setMap(prev => {
+        const next = new Map(prev);
+        const set = new Set(next.get(docId) ?? []);
+        if (had) set.delete(codeId);
+        else set.add(codeId);
+        if (set.size) next.set(docId, set);
+        else next.delete(docId);
+        return next;
+      });
 
-  return { loaded, getOverride, toggleTag, setTags };
+      try {
+        const res = had
+          ? await fetch(
+              `/api/content-analysis/overall-tags?documentId=${encodeURIComponent(docId)}&codeId=${encodeURIComponent(codeId)}`,
+              { method: 'DELETE', headers: { ...(await authHeader()) } },
+            )
+          : await fetch('/api/content-analysis/overall-tags', {
+              method: 'POST',
+              headers: { 'content-type': 'application/json', ...(await authHeader()) },
+              body: JSON.stringify({ documentId: docId, codeId }),
+            });
+        if (!res.ok) throw new Error(`${res.status}`);
+      } catch {
+        // Roll back to the pre-toggle state.
+        setMap(prev => {
+          const next = new Map(prev);
+          const set = new Set(next.get(docId) ?? []);
+          if (had) set.add(codeId);
+          else set.delete(codeId);
+          if (set.size) next.set(docId, set);
+          else next.delete(docId);
+          return next;
+        });
+      }
+    },
+    [user, requireAuth, map],
+  );
+
+  return { loaded, getTags, toggleTag };
 }

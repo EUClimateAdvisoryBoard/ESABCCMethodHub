@@ -11,6 +11,8 @@ import { usePreferences } from '@/lib/preferences-context';
 import { isPolicyCitation } from '@/lib/policy-citations';
 import { splitTags } from '@/lib/references/projects';
 import { linkToPolicyNavigator, linkToContentAnalysis } from '@/lib/cross-module-links';
+import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
+import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
 
 interface ReferenceListProps {
   references: Reference[];
@@ -25,6 +27,10 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
   const [sortAsc, setSortAsc] = useState(false);
   const [filterType, setFilterType] = useState<string>('');
   const [annotationCounts, setAnnotationCounts] = useState<Record<string, number>>({});
+  // Overall (document-level) tags an analyst curated in the Content Analysis
+  // workbench. They're keyed there by the synthetic doc id `ref-doc-<refId>`,
+  // so we surface them back on the library card here too.
+  const overallTags = useOverallTags();
   // Citation-style switcher (M·01 #7). Defaults to the user's preference;
   // a per-page override (state below) lets the user toggle without changing
   // the global default. Pref maps 'bibtex' → 'esabcc' for display purposes.
@@ -275,6 +281,11 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
           {sorted.map(ref => {
             const isPolicy = isPolicyCitation(ref);
             const { plain: plainTags, projects: projectTags } = splitTags(ref.tags);
+            // Resolve the analyst-curated overall tags (master-code ids) to
+            // coloured labels. Only manually-set tags surface here.
+            const overallTagCodes = overallTags.getTags(`ref-doc-${ref.id}`)
+              .map(getMasterCode)
+              .filter(Boolean) as NonNullable<ReturnType<typeof getMasterCode>>[];
             return (
             <div
               key={ref.id}
@@ -402,6 +413,20 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
                     ))}
                     {plainTags.map(tag => (
                       <span key={tag} className="mh-badge mh-badge-info">{tag}</span>
+                    ))}
+                    {/* Overall (document-level) tags from Content Analysis —
+                        a coloured dot + master-code name, so the analytical
+                        classification is visible right on the library card. */}
+                    {overallTagCodes.map(c => (
+                      <span
+                        key={`overall:${c.id}`}
+                        className="mh-badge inline-flex items-center gap-1"
+                        style={{ background: 'var(--mh-bg)', color: 'var(--mh-fg)', borderColor: 'var(--mh-border)' }}
+                        title={`Overall tag (Content Analysis): ${c.name}`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-sm" style={{ backgroundColor: c.color }} aria-hidden />
+                        {c.name}
+                      </span>
                     ))}
 
                     {/* Add to reading list */}
