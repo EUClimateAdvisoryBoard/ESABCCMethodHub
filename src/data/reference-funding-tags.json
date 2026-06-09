@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T07:20:03.257Z",
+  "generatedAt": "2026-06-09T09:54:29.653Z",
   "source": "scripts/tag-eu-funded-references.mjs",
   "description": "Maps reference id -> funding tags, derived from CrossRef funder[] metadata (the structured form of each paper's funding acknowledgment). Regenerate with: node scripts/tag-eu-funded-references.mjs",
   "summary": {
