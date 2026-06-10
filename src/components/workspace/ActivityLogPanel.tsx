@@ -11,12 +11,19 @@
  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
 import {
   pwApi,
   type WorkspaceActivityEntry,
   type WorkspaceActivityStatus,
 } from '@/lib/project-workspace/client';
+import {
+  getDeadLetters,
+  getOutboxStatus,
+  requeueDeadLetters,
+  subscribeOutbox,
+  type OutboxStatus,
+} from '@/lib/content-analysis/outbox';
 import { supabase } from '@/lib/supabase';
 
 const PAGE_SIZE = 50;
@@ -49,6 +56,18 @@ function timeOfDay(iso: string): string {
   return new Date(iso).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
+/** Friendly name for the API a failed save was headed to. */
+function describeSaveTarget(url: string): string {
+  if (url.includes('/corpus')) return 'adding/removing a document';
+  if (url.includes('/segments')) return 'saving tags';
+  if (url.includes('/summaries')) return 'saving a summary';
+  if (url.includes('/codes')) return 'saving codes';
+  return 'a workspace save';
+}
+
+const EMPTY_OUTBOX: OutboxStatus = { pending: 0, dead: 0, lastError: null, persistent: true };
+const getServerOutbox = () => EMPTY_OUTBOX;
+
 export default function ActivityLogPanel({
   projectId,
   onClose,
@@ -64,18 +83,27 @@ export default function ActivityLogPanel({
   // True while the last page came back full — there may be older entries.
   const [hasMore, setHasMore] = useState(false);
 
+  // Unsaved / rejected writes still sitting in this browser's outbox — the
+  // change looks present on the page but never reached the database, so it
+  // can't be in the log. Live-updates while the dialog is open.
+  const outbox = useSyncExternalStore(subscribeOutbox, getOutboxStatus, getServerOutbox);
+  const [retrying, setRetrying] = useState(false);
+
+  const reload = useCallback(async () => {
+    const { entries: first, status: st } = await pwApi.activityLog(projectId, {
+      limit: PAGE_SIZE,
+    });
+    setEntries(first);
+    setStatus(st);
+    setHasMore(first.length === PAGE_SIZE);
+    setLoading(false);
+  }, [projectId]);
+
   useEffect(() => {
     let cancelled = false;
-    (async () => {
-      const { entries: first, status: st } = await pwApi.activityLog(projectId, {
-        limit: PAGE_SIZE,
-      });
-      if (cancelled) return;
-      setEntries(first);
-      setStatus(st);
-      setHasMore(first.length === PAGE_SIZE);
-      setLoading(false);
-    })();
+    reload().catch(() => {
+      if (!cancelled) setLoading(false);
+    });
     if (supabase) {
       supabase.auth.getSession().then(({ data }) => {
         if (!cancelled) setSignedIn(!!data.session);
@@ -84,7 +112,23 @@ export default function ActivityLogPanel({
     return () => {
       cancelled = true;
     };
-  }, [projectId]);
+  }, [reload]);
+
+  // After a "retry failed saves", reload the log once the queue drains — the
+  // retried writes fire the triggers, so their entries should appear now.
+  useEffect(() => {
+    if (retrying && outbox.pending === 0) {
+      setRetrying(false);
+      void reload();
+    }
+  }, [retrying, outbox.pending, reload]);
+
+  function retryFailedSaves() {
+    setRetrying(true);
+    requeueDeadLetters();
+  }
+
+  const lastDead = outbox.dead > 0 ? getDeadLetters().slice(-1)[0] : null;
 
   // Tables that exist but have no change-tracking trigger — the one state
   // where edits silently go unrecorded (migration 067/068 not fully applied).
@@ -140,6 +184,39 @@ export default function ActivityLogPanel({
           Every change made in this project — who did what, and when. The log is stored in the
           database and included in the nightly backup.
         </p>
+
+        {/* Changes stuck in THIS browser that never reached the database. */}
+        {(outbox.dead > 0 || outbox.pending > 0) && (
+          <div className="mb-3 rounded-lg border border-red-300 bg-red-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-red-900">
+              {outbox.dead > 0
+                ? `${outbox.dead} change${outbox.dead === 1 ? '' : 's'} from this browser never reached the database`
+                : `${outbox.pending} change${outbox.pending === 1 ? '' : 's'} still saving…`}
+            </p>
+            {outbox.dead > 0 && (
+              <p className="text-[11px] text-red-800 mt-0.5 leading-snug">
+                They still show on the page from the local copy, but they were never saved or
+                logged
+                {lastDead
+                  ? ` — the server rejected ${describeSaveTarget(lastDead.url)} with error ${lastDead.status}${
+                      lastDead.status === 401 ? ' (you were signed out when it tried to save)' : ''
+                    }`
+                  : ''}
+                . Make sure you are signed in, then retry.
+              </p>
+            )}
+            {outbox.dead > 0 && (
+              <button
+                type="button"
+                onClick={retryFailedSaves}
+                disabled={retrying}
+                className="mt-2 px-2.5 py-1 rounded-md bg-red-700 text-white text-[11px] font-semibold hover:bg-red-800 disabled:opacity-50"
+              >
+                {retrying ? 'Retrying…' : 'Retry failed saves now'}
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Setup / sign-in problems that explain a silent or incomplete log. */}
         {!loading && status && !status.installed && (
