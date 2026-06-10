@@ -26,6 +26,7 @@
 
 import type { AnalysisDocument, CodeNode, CodedSegment } from './types';
 import { descendantCodeIds } from './store';
+import { supabase } from '@/lib/supabase';
 
 /** One section of the report skeleton. A section "owns" the evidence coded
  *  under any of its `codeIds` (each expanded to its full subtree). */
@@ -155,9 +156,17 @@ export async function pushOutline(projectId: string, outline: ReportOutline): Pr
   saveOutline(projectId, outline);
   if (typeof window === 'undefined') return;
   try {
+    // The bearer token attributes the save to the signed-in user (the server
+    // requires it and stamps `updated_by` for the project activity log).
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (supabase) {
+      const { data } = await supabase.auth.getSession();
+      const tok = data.session?.access_token;
+      if (tok) headers.authorization = `Bearer ${tok}`;
+    }
     await fetch('/api/content-analysis/outline', {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers,
       body: JSON.stringify({ projectId, outline }),
     });
   } catch {

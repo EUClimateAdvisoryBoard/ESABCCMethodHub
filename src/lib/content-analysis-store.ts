@@ -196,6 +196,37 @@ function failDurable(op: string, error: { message: string }): never {
   throw new Error(`${op} failed: ${error.message}`);
 }
 
+/** The signed-in user behind a write, stamped onto rows (`author_id` /
+ *  `added_by` / `updated_by`) so the activity-log triggers (migration 068)
+ *  can attribute the change to a person. */
+export interface StoreActor {
+  id: string;
+}
+
+type Supa = NonNullable<ReturnType<typeof getServerSupabase>>;
+
+/**
+ * Stamp the deleter onto a row just before deleting it, so the DELETE trigger
+ * sees who removed it (the service-role connection carries no auth.uid()).
+ * The triggers ignore updates that only touch attribution columns, so this
+ * never produces a spurious "edited" log entry. Best-effort by design.
+ */
+async function stampBeforeDelete(
+  sb: Supa,
+  table: string,
+  patch: Record<string, string>,
+  match: Record<string, string>,
+): Promise<void> {
+  let q = sb.from(table).update(patch);
+  for (const [col, val] of Object.entries(match)) q = q.eq(col, val);
+  const { error } = await q;
+  if (error) {
+    // Attribution column not migrated yet (or similar) — the delete itself
+    // must still go ahead, just unattributed.
+    console.warn(`[content-analysis-store] delete-stamp on ${table} skipped:`, error.message);
+  }
+}
+
 // Segments ------------------------------------------------------------------
 
 export async function getSegments(): Promise<CodedSegment[]> {
@@ -213,7 +244,7 @@ export async function getSegments(): Promise<CodedSegment[]> {
   return (data as SegmentRow[]).map(rowToSegment);
 }
 
-export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
+export async function upsertSegments(segs: CodedSegment[], actor?: StoreActor): Promise<void> {
   if (segs.length === 0) return;
   const sb = getServerSupabase();
   if (!sb) {
@@ -225,7 +256,11 @@ export async function upsertSegments(segs: CodedSegment[]): Promise<void> {
     }
     return;
   }
-  const rows = segs.map(segmentToRow);
+  // `author_id` records who last wrote the row; only touched when the route
+  // resolved a signed-in user, so internal writers can't blank it out.
+  const rows = segs.map(s =>
+    actor ? { ...segmentToRow(s), author_id: actor.id } : segmentToRow(s),
+  );
   let { error } = await sb
     .from('content_analysis_segments')
     .upsert(rows, { onConflict: 'id' });
@@ -270,6 +305,8 @@ export async function updateSegmentNote(
       note,
       note_author: author?.name ?? null,
       note_author_id: author?.id ?? null,
+      // The note author is also the last person who touched the row.
+      ...(author?.id ? { author_id: author.id } : {}),
       note_updated_at: now,
       updated_at: now,
     })
@@ -278,7 +315,7 @@ export async function updateSegmentNote(
   return true;
 }
 
-export async function deleteSegment(id: string): Promise<boolean> {
+export async function deleteSegment(id: string, actor?: StoreActor): Promise<boolean> {
   const sb = getServerSupabase();
   if (!sb) {
     const bag = g.__caSegments!;
@@ -286,6 +323,9 @@ export async function deleteSegment(id: string): Promise<boolean> {
     if (idx < 0) return false;
     bag.splice(idx, 1);
     return true;
+  }
+  if (actor) {
+    await stampBeforeDelete(sb, 'content_analysis_segments', { author_id: actor.id }, { id });
   }
   const { error } = await sb
     .from('content_analysis_segments')
@@ -419,7 +459,7 @@ export async function getCodes(): Promise<CodeNode[]> {
   return (data as CodeRow[]).map(rowToCode);
 }
 
-export async function upsertCodes(codes: CodeNode[]): Promise<void> {
+export async function upsertCodes(codes: CodeNode[], actor?: StoreActor): Promise<void> {
   if (codes.length === 0) return;
   const sb = getServerSupabase();
   if (!sb) {
@@ -431,14 +471,14 @@ export async function upsertCodes(codes: CodeNode[]): Promise<void> {
     }
     return;
   }
-  const rows = codes.map(codeToRow);
+  const rows = codes.map(c => (actor ? { ...codeToRow(c), author_id: actor.id } : codeToRow(c)));
   const { error } = await sb
     .from('content_analysis_codes')
     .upsert(rows, { onConflict: 'id' });
   if (error) failDurable('upsertCodes', error);
 }
 
-export async function deleteCode(id: string): Promise<boolean> {
+export async function deleteCode(id: string, actor?: StoreActor): Promise<boolean> {
   const sb = getServerSupabase();
   if (!sb) {
     const bag = g.__caCodes!;
@@ -446,6 +486,9 @@ export async function deleteCode(id: string): Promise<boolean> {
     if (idx < 0) return false;
     bag.splice(idx, 1);
     return true;
+  }
+  if (actor) {
+    await stampBeforeDelete(sb, 'content_analysis_codes', { author_id: actor.id }, { id });
   }
   const { error } = await sb
     .from('content_analysis_codes')
@@ -561,7 +604,10 @@ export async function getSummary(id: string): Promise<DocumentSummary | null> {
   return data ? rowToSummaryFull(data as SummaryRow) : null;
 }
 
-export async function upsertSummaries(summaries: DocumentSummary[]): Promise<void> {
+export async function upsertSummaries(
+  summaries: DocumentSummary[],
+  actor?: StoreActor,
+): Promise<void> {
   if (summaries.length === 0) return;
   const sb = getServerSupabase();
   if (!sb) {
@@ -578,7 +624,9 @@ export async function upsertSummaries(summaries: DocumentSummary[]): Promise<voi
     }
     return;
   }
-  const rows = summaries.map(summaryToRow);
+  const rows = summaries.map(s =>
+    actor ? { ...summaryToRow(s), author_id: actor.id } : summaryToRow(s),
+  );
   let { error } = await sb
     .from('content_analysis_summaries')
     .upsert(rows, { onConflict: 'id' });
@@ -597,7 +645,7 @@ export async function upsertSummaries(summaries: DocumentSummary[]): Promise<voi
   if (error) failDurable('upsertSummaries', error);
 }
 
-export async function deleteSummary(id: string): Promise<boolean> {
+export async function deleteSummary(id: string, actor?: StoreActor): Promise<boolean> {
   const sb = getServerSupabase();
   if (!sb) {
     const bag = g.__caSummaries!;
@@ -605,6 +653,9 @@ export async function deleteSummary(id: string): Promise<boolean> {
     if (idx < 0) return false;
     bag.splice(idx, 1);
     return true;
+  }
+  if (actor) {
+    await stampBeforeDelete(sb, 'content_analysis_summaries', { author_id: actor.id }, { id });
   }
   const { error } = await sb
     .from('content_analysis_summaries')
@@ -939,20 +990,31 @@ export async function addToCaCorpus(
   projectId: string,
   documentId: string,
   meta?: CorpusDocMeta | null,
+  actor?: StoreActor,
 ): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
-    const base = {
+    const base: Record<string, unknown> = {
       project_id: projectId,
       document_id: documentId,
       added_at: new Date().toISOString(),
     };
+    if (actor) base.added_by = actor.id;
     // Only overwrite doc_meta when we actually have it, so a metadata-less
     // re-add (e.g. a legacy migration push) can't blank out a richer existing row.
     const row: Record<string, unknown> = meta ? { ...base, doc_meta: meta } : { ...base };
-    const { error } = await sb
+    let { error } = await sb
       .from('content_analysis_corpus')
       .upsert(row, { onConflict: 'project_id,document_id' });
+    // Graceful degradation: `added_by` is a newer column (migration 068) —
+    // retry without it rather than wedging the write until the column lands.
+    if (error && actor && /added_by/.test(error.message)) {
+      const { added_by: _ab, ...rowNoActor } = row;
+      delete base.added_by;
+      ({ error } = await sb
+        .from('content_analysis_corpus')
+        .upsert(rowNoActor, { onConflict: 'project_id,document_id' }));
+    }
     if (!error) return;
     // Graceful degradation: if the `doc_meta` column hasn't been migrated yet
     // (migration 065), persist the membership row without it rather than wedging
@@ -982,7 +1044,11 @@ export async function addToCaCorpus(
 }
 
 /** Remove a document from a project's workspace corpus. Idempotent. */
-export async function removeFromCaCorpus(projectId: string, documentId: string): Promise<void> {
+export async function removeFromCaCorpus(
+  projectId: string,
+  documentId: string,
+  actor?: StoreActor,
+): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
     // Clear any sentinel-fallback row first so a remove can't resurrect via
@@ -993,6 +1059,14 @@ export async function removeFromCaCorpus(projectId: string, documentId: string):
       .delete()
       .eq('id', corpusSentinelId(projectId, documentId));
     if (sentinelError) failDurable('removeFromCaCorpus(segments fallback)', sentinelError);
+    if (actor) {
+      await stampBeforeDelete(
+        sb,
+        'content_analysis_corpus',
+        { added_by: actor.id },
+        { project_id: projectId, document_id: documentId },
+      );
+    }
     const { error } = await sb
       .from('content_analysis_corpus')
       .delete()
@@ -1069,15 +1143,30 @@ export async function getCaOutline(projectId: string): Promise<unknown | null> {
 }
 
 /** Upsert the outline for a project. */
-export async function setCaOutline(projectId: string, outline: unknown): Promise<void> {
+export async function setCaOutline(
+  projectId: string,
+  outline: unknown,
+  actor?: StoreActor,
+): Promise<void> {
   const sb = getServerSupabase();
   if (sb) {
-    const { error } = await sb
+    const row: Record<string, unknown> = {
+      project_id: projectId,
+      outline,
+      updated_at: new Date().toISOString(),
+    };
+    if (actor) row.updated_by = actor.id;
+    let { error } = await sb
       .from('content_analysis_outlines')
-      .upsert(
-        { project_id: projectId, outline, updated_at: new Date().toISOString() },
-        { onConflict: 'project_id' },
-      );
+      .upsert(row, { onConflict: 'project_id' });
+    // `updated_by` is a newer column (migration 068) — retry without it
+    // rather than wedging the write until the column lands.
+    if (error && actor && /updated_by/.test(error.message)) {
+      const { updated_by: _ub, ...legacyRow } = row;
+      ({ error } = await sb
+        .from('content_analysis_outlines')
+        .upsert(legacyRow, { onConflict: 'project_id' }));
+    }
     if (!error) return;
     failDurable('setCaOutline', error);
   }
