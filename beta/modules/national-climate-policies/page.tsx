@@ -7,60 +7,27 @@
  * states, sourced from Climate Change Laws of the World (climate-laws.org,
  * Grantham Research Institute at LSE / Climate Policy Radar, CC-BY 4.0).
  *
- * The page reads a committed snapshot from
- * `public/data/national-climate-policies.json`. The snapshot is refreshed
- * from Climate Policy Radar's public REST API with:
+ * Data loading order:
+ *   1. `/api/national-climate-policies` — the last refresh persisted in
+ *      Supabase (migration 066);
+ *   2. fallback: the committed snapshot in
+ *      `public/data/national-climate-policies.json`.
  *
- *   node scripts/fetch-climate-laws.mjs
- *
- * (The current snapshot was derived from CPR's open-data release because
- * the API host is not reachable from the build sandbox; the script hits
- * the live API and overwrites it with current data when run on a normal
- * network.)
+ * Signed-in users can press "Refresh" to have the server pull the current
+ * corpus from Climate Policy Radar's public REST API (15–30 s) and persist
+ * it — no local tooling needed. The same refresh exists as a CLI for
+ * development: `node scripts/fetch-climate-laws.mjs`.
  *
  * Features: per-country coverage grid, search, country / category /
  * sector / response filters, sortable list grouped by member state, and
  * deep links to the source document PDF and climate-laws.org.
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-
-interface ClimatePolicy {
-  id: string;
-  countryCode: string;
-  countryName: string;
-  title: string;
-  summary: string;
-  category: string; // 'Law' (legislative) | 'Policy' (executive)
-  type: string;
-  date: string;
-  year: number | null;
-  sectors: string[];
-  instruments: string[];
-  frameworks: string[];
-  responses: string[];
-  keywords: string[];
-  hazards: string[];
-  language: string;
-  documentUrl: string;
-  climateLawsUrl: string;
-}
-
-interface PolicyDataset {
-  snapshotDate: string;
-  generatedFrom: string;
-  source: {
-    name: string;
-    publisher: string;
-    url: string;
-    license: string;
-    licenseUrl: string;
-  };
-  refresh: string;
-  policies: ClimatePolicy[];
-}
+import { useAuth } from '@/lib/auth-context';
+import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
 
 const CATEGORY_COLORS: Record<string, string> = {
   Law: '#1B5E20',    // legislative — passed by parliament
@@ -77,9 +44,12 @@ const RESPONSE_LABELS: Record<string, string> = {
 type SortKey = 'newest' | 'oldest' | 'title';
 
 export default function NationalClimatePoliciesPage() {
+  const { user, requireAuth } = useAuth();
   const [data, setData] = useState<PolicyDataset | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [refreshing, setRefreshing] = useState(false);
+  const [refreshMsg, setRefreshMsg] = useState<string | null>(null);
 
   const [search, setSearch] = useState('');
   const [country, setCountry] = useState<string>('all');
@@ -89,16 +59,60 @@ export default function NationalClimatePoliciesPage() {
   const [sortKey, setSortKey] = useState<SortKey>('newest');
   const [visible, setVisible] = useState(80);
 
+  const load = useCallback(async () => {
+    // Prefer the server-side refresh stored in Supabase; fall back to the
+    // committed snapshot so the page also works without a database.
+    try {
+      const res = await fetch('/api/national-climate-policies', { cache: 'no-store' });
+      if (res.ok) {
+        const json = (await res.json()) as { dataset: PolicyDataset | null };
+        if (json.dataset?.policies?.length) {
+          setData(json.dataset);
+          return;
+        }
+      }
+    } catch {
+      // API unavailable (e.g. static preview) — use the snapshot below.
+    }
+    const res = await fetch('/data/national-climate-policies.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    setData((await res.json()) as PolicyDataset);
+  }, []);
+
   useEffect(() => {
-    fetch('/data/national-climate-policies.json', { cache: 'no-store' })
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json() as Promise<PolicyDataset>;
-      })
-      .then(setData)
+    load()
       .catch((e) => setError(e instanceof Error ? e.message : 'Failed to load'))
       .finally(() => setLoading(false));
-  }, []);
+  }, [load]);
+
+  const handleRefresh = useCallback(async () => {
+    if (!user) {
+      requireAuth('Sign in to refresh the catalogue from climate-laws.org.');
+      return;
+    }
+    setRefreshing(true);
+    setRefreshMsg(null);
+    try {
+      const res = await fetch('/api/national-climate-policies', { method: 'POST' });
+      const json = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+        policyCount?: number;
+        snapshotDate?: string;
+        dataset?: PolicyDataset;
+      };
+      if (!res.ok || !json.ok) throw new Error(json.error || `HTTP ${res.status}`);
+      if (json.dataset) setData(json.dataset); // Supabase absent — session-only result
+      else await load();
+      setRefreshMsg(`Refreshed: ${json.policyCount} laws & policies as of ${json.snapshotDate}.`);
+    } catch (e) {
+      setRefreshMsg(
+        `Refresh failed: ${e instanceof Error ? e.message : 'unknown error'}`,
+      );
+    } finally {
+      setRefreshing(false);
+    }
+  }, [user, requireAuth, load]);
 
   const policies = useMemo(() => data?.policies ?? [], [data]);
 
@@ -203,12 +217,25 @@ export default function NationalClimatePoliciesPage() {
             ).
           </p>
           {data && (
-            <p className="mt-1 text-xs text-tertiary">
-              Snapshot of {data.snapshotDate} — refresh with{' '}
-              <code className="bg-grey-50 border border-grey-200 rounded px-1">
-                node scripts/fetch-climate-laws.mjs
-              </code>
-            </p>
+            <div className="mt-2 flex flex-wrap items-center gap-3">
+              <span className="text-xs text-tertiary">
+                Snapshot of {data.snapshotDate}
+              </span>
+              <button
+                onClick={handleRefresh}
+                disabled={refreshing}
+                className="px-3 py-1.5 text-xs font-medium text-white bg-primary rounded hover:bg-primary-dark disabled:opacity-50"
+              >
+                {refreshing ? 'Refreshing from climate-laws.org… (~30 s)' : '↻ Refresh from climate-laws.org'}
+              </button>
+              {refreshMsg && (
+                <span
+                  className={`text-xs ${refreshMsg.startsWith('Refresh failed') ? 'text-red-700' : 'text-primary'}`}
+                >
+                  {refreshMsg}
+                </span>
+              )}
+            </div>
           )}
         </section>
 
