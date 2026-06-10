@@ -359,6 +359,25 @@ export const pwApi = {
     const json = (await res.json()) as { entries?: WorkspaceActivityEntry[] };
     return json.entries ?? [];
   },
+  /** First page of the change log plus the tracking installation health, so
+   *  the dialog can explain an empty log (missing migration / triggers). */
+  async activityLog(
+    projectId: string,
+    opts?: { limit?: number }
+  ): Promise<{ entries: WorkspaceActivityEntry[]; status: WorkspaceActivityStatus | null }> {
+    const qs = new URLSearchParams({ status: '1' });
+    if (opts?.limit) qs.set('limit', String(opts.limit));
+    const res = await fetch(
+      `${BASE}/projects/${encodeURIComponent(projectId)}/activity?${qs.toString()}`,
+      { headers: { ...(await authHeader()) } }
+    );
+    if (!res.ok) return { entries: [], status: null };
+    const json = (await res.json()) as {
+      entries?: WorkspaceActivityEntry[];
+      status?: WorkspaceActivityStatus;
+    };
+    return { entries: json.entries ?? [], status: json.status ?? null };
+  },
 
   // ── Meetings ─────────────────────────────────────────────────────────────
   async listMeetings(projectId: string): Promise<Meeting[]> {
@@ -526,6 +545,21 @@ export interface WorkspaceActivityEntry {
   actorId: string | null;
   actorName: string;
   createdAt: string;
+}
+
+/** Mirror of the server `ActivityLogStatus` shape (see activity-log.ts). */
+export interface WorkspaceActivityStatus {
+  installed: boolean;
+  entryCount: number | null;
+  tables: Record<string, 'ok' | 'no-trigger' | 'table-missing'> | null;
+  selftest:
+    | 'ok'
+    | 'log-table-missing'
+    | 'project-not-in-db'
+    | 'trigger-did-not-fire'
+    | 'probe-write-failed'
+    | 'selftest-missing'
+    | null;
 }
 
 /** Mirror of the server `WorkspaceComment` shape (see collaboration.ts). */
