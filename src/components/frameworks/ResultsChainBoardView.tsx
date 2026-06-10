@@ -2,28 +2,50 @@
  * Advanced version 2 — results-chain board view.
  *
  * The container for the results-chain flow chart (ResultsChainFlow): the intro
- * blurb, the six-rung board, and the shared indicator data drawer. Unlike the
- * sector boards this is a computed, read-only analytical view — the whole
- * indicator catalogue re-clustered along the M&E results chain — so it carries
- * no edit mode; clicking a chip opens its data, and "Open in indicator list"
- * hands the id back to the parent module.
+ * blurb, the six-rung board, and the shared indicator data drawer. The board is
+ * seeded from a computed default — the whole indicator catalogue re-clustered
+ * along the M&E results chain — but is then editable and persisted per version
+ * (groups and chips can be relabelled, added, deleted and re-tracked), exactly
+ * like the sector boards. Clicking a chip opens its data, and "Open in indicator
+ * list" hands the id back to the parent module.
  */
 'use client';
 import { useCallback, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import { FRAMEWORK_INDICATOR_INDEX } from '@/data/sector-frameworks';
-import { defaultResultsChainBoardV2 } from '@/data/results-chain-v2';
+import { defaultResultsChainBoardV2, type ResultsChainBoard } from '@/data/results-chain-v2';
+import type { FlowChartVersion } from '@/lib/project-workspace/flowchart-versions';
+import { useEditableBoard } from '@/lib/project-workspace/useEditableBoard';
 import ResultsChainFlow from './ResultsChainFlow';
 import IndicatorDetail from './IndicatorDetail';
+import { BoardEditToolbar, EditModeHint } from './BoardEditControls';
 import type { OpenIndicatorPayload } from './SectorFlow';
 
 interface Props {
   allIndicators: Indicator[];
   onOpenInList?: (id: string) => void;
+  projectId: string;
+  version: FlowChartVersion;
+  hydrated?: boolean;
 }
 
-export default function ResultsChainBoardView({ allIndicators, onOpenInList }: Props) {
-  const board = useMemo(() => defaultResultsChainBoardV2(), []);
+const isResultsChainBoard = (b: unknown): boolean =>
+  !!b && typeof b === 'object' && Array.isArray((b as ResultsChainBoard).groups);
+
+export default function ResultsChainBoardView({
+  allIndicators,
+  onOpenInList,
+  projectId,
+  version,
+  hydrated = true,
+}: Props) {
+  const { board, setBoard, editing, setEditing, reset } = useEditableBoard<ResultsChainBoard>({
+    projectId,
+    version,
+    hydrated,
+    makeDefault: useCallback(() => defaultResultsChainBoardV2(), []),
+    validate: isResultsChainBoard,
+  });
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
 
   const lookup = useMemo(() => {
@@ -122,10 +144,30 @@ export default function ResultsChainBoardView({ allIndicators, onOpenInList }: P
           <span className="font-semibold text-tertiary-dark">⛨ Adaptation &amp; resilience</span>
           <span className="text-tertiary-light">· {totals.adaptation} indicators</span>
         </span>
-        <span className="text-tertiary-light">across 6 results-chain groups</span>
+        <span className="text-tertiary-light">across {board.groups.length} results-chain groups</span>
       </div>
 
-      <ResultsChainFlow board={board} allIndicators={allIndicators} onOpenIndicator={setDrawer} />
+      <BoardEditToolbar
+        editing={editing}
+        onToggleEditing={() => setEditing((e) => !e)}
+        onReset={reset}
+        builtIn={version.builtIn}
+      />
+      {editing && (
+        <EditModeHint>
+          Edit mode: rename groups (and their colour/description), add or delete groups, link new
+          indicator chips, relabel chips, move a chip between the mitigation and adaptation tracks
+          (↔), or remove a chip (×). Changes are saved to this version automatically.
+        </EditModeHint>
+      )}
+
+      <ResultsChainFlow
+        board={board}
+        allIndicators={allIndicators}
+        onOpenIndicator={setDrawer}
+        editing={editing}
+        onChange={setBoard}
+      />
 
       {drawer && (
         <IndicatorDetail

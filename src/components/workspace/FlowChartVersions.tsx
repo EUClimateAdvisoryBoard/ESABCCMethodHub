@@ -186,38 +186,51 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
       </div>
 
       {active.variant === 'advanced-v2' ? (
-        // The results-chain board is a computed, read-only re-clustering of the
-        // whole catalogue along the six M&E groups — it has its own view rather
-        // than the sector goal→outcome→lever boards.
+        // The results-chain board re-clusters the whole catalogue along the six
+        // M&E groups. It seeds from that computed default but is editable and
+        // persisted per version, like the sector boards.
         <ResultsChainBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          projectId={projectId}
+          version={active}
+          hydrated={hydrated}
         />
       ) : active.variant === 'advanced-v4' ? (
-        // The monitoring-map board is likewise a computed, read-only view — the
-        // whole catalogue folded into four thematic layers with no sectors.
+        // The monitoring-map board folds the catalogue into four thematic layers
+        // with no sectors — seeded from its computed default, then editable.
         <MonitoringMapBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          projectId={projectId}
+          version={active}
+          hydrated={hydrated}
         />
       ) : active.variant === 'advanced-v5' ? (
         // The sectored results-chain board is the v2 chain with sectors folded
-        // in as a sub-layer — also a computed, read-only view.
+        // in as a sub-layer — seeded from its computed default, then editable.
         <SectoredResultsChainBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          projectId={projectId}
+          version={active}
+          hydrated={hydrated}
         />
       ) : active.variant === 'advanced-v6' ? (
         // The adaptive-policy-loop board reads each sector as a closed control
         // loop (scenario corridor → instruments → twin-track delivery →
-        // observed results → ratchet) — also a computed, read-only view.
+        // observed results → ratchet) — seeded from its computed default, then
+        // editable.
         <PolicyLoopBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          projectId={projectId}
+          version={active}
+          hydrated={hydrated}
         />
       ) : active.variant === 'advanced-v7' ? (
         // The structured-assessment-matrix board is the methodology view: five
