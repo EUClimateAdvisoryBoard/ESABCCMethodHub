@@ -176,6 +176,36 @@ export default function ActivityLogPanel({
             </p>
           </div>
         )}
+        {!loading && status?.selftest === 'ok' && (
+          <div className="mb-3 rounded-lg border border-emerald-300 bg-emerald-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-emerald-900">
+              Self-test passed just now
+            </p>
+            <p className="text-[11px] text-emerald-800 mt-0.5 leading-snug">
+              A probe change was written to the database, recorded by the log, and cleaned up
+              again — tracking demonstrably works. An empty log means no changes have been made
+              since tracking was installed; earlier work can’t be shown retroactively. Make any
+              change (add a note, tag a passage, add a document) and it will appear here.
+            </p>
+          </div>
+        )}
+        {!loading && status?.selftest && status.selftest !== 'ok' && (
+          <div className="mb-3 rounded-lg border border-red-300 bg-red-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-red-900">Self-test failed</p>
+            <p className="text-[11px] text-red-800 mt-0.5 leading-snug">
+              {status.selftest === 'project-not-in-db' &&
+                'This project has no row in pw_projects, so its changes are skipped by the log. Open the project page once while the database is connected (it self-seeds), then retry.'}
+              {status.selftest === 'trigger-did-not-fire' &&
+                'A probe change was written but no log entry appeared — the trigger is not firing. Re-run supabase/migrations/067 and 068 in the Supabase SQL editor.'}
+              {status.selftest === 'probe-write-failed' &&
+                'The probe write itself failed — the database rejected the change. Check the Supabase logs.'}
+              {status.selftest === 'log-table-missing' &&
+                'The pw_activity_log table is missing — run supabase/migrations/067_pw_activity_log.sql.'}
+              {status.selftest === 'selftest-missing' &&
+                'The self-test function is missing — run supabase/migrations/069_activity_log_selftest.sql in the Supabase SQL editor.'}
+            </p>
+          </div>
+        )}
 
         <div className="flex-1 overflow-y-auto -mx-1 px-1">
           {loading && <p className="text-xs text-tertiary py-6 text-center">Loading…</p>}
