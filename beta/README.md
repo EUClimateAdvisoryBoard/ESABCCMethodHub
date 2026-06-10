@@ -46,7 +46,7 @@ Recommendations modules made exactly this journey: they were promoted out of
 | `project-management/`         | Project Management   | Phase / Gantt board against the Project Manual; UX iterating.      |
 | `national-climate-policies/`  | National Level Climate Policies | EU-27 laws & policies from climate-laws.org (CC-BY 4.0); in-module refresh via Climate Policy Radar API + Supabase snapshot. |
 | `transition-panorama/`        | EU Transition Panorama | Panorama-Sweden-style radial explorer of EU emissions vs the AR6-based 2040 advice scenarios; will be re-based on the AR7 scenario database once published. |
-| `climate-iceberg/`            | EU Carbon Iceberg | Illustrative 3D melting-iceberg metaphor on the real emissions record (facets = sectors, melt = cumulative emissions, WAM vs 2040-advice futures); outreach piece, not an analysis surface. |
+| `transition-stories/`         | Transition Stories | Cinematic scroll-driven data essay on real ESABCC report photography: scrollytelling pathway chart, parallax chapters, sector ledger. Imagery sourced from the published report covers. |
 
 ## Promoting a beta module to production
 
