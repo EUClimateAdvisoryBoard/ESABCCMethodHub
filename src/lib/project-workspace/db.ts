@@ -31,6 +31,7 @@ import {
   type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
+import { BPIE_BUILDINGS_INDICATORS } from '@/data/bpie-buildings-indicators';
 
 /** Recommendations seeded into the Policy Gap project, with their report label. */
 const SEED_RECOMMENDATIONS: PastRecommendation[] = [...ALL_ESABCC_RECOMMENDATIONS];
@@ -387,6 +388,7 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
       ...BETA_ADAPTATION_INDICATORS,
       ...ADVANCED_INDICATORS,
       ...ADVANCED_ADAPTATION_INDICATORS,
+      ...BPIE_BUILDINGS_INDICATORS,
     ], backfillPoints);
     await ensureSeedRecommendations(sb, projectId, SEED_RECOMMENDATIONS);
   } else if (projectId === 'industry-project') {
@@ -480,6 +482,9 @@ function seedIndicators(projectId: string): DBIndicator[] {
     // Advanced indicators carry their own group ('advanced' / 'advanced-adaptation').
     ...ADVANCED_INDICATORS.map(i => ({ ...i, group: 'advanced' as const })),
     ...ADVANCED_ADAPTATION_INDICATORS.map(i => ({ ...i, group: 'advanced-adaptation' as const })),
+    // BPIE EU Buildings Climate Tracker indicators — listed with the other
+    // "additional" indicators under the Buildings category.
+    ...BPIE_BUILDINGS_INDICATORS.map(i => ({ ...i, group: 'additional' as const })),
   ];
 }
 
@@ -515,6 +520,7 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       ...BETA_ADAPTATION_INDICATORS,
       ...ADVANCED_INDICATORS,
       ...ADVANCED_ADAPTATION_INDICATORS,
+      ...BPIE_BUILDINGS_INDICATORS,
       ...ECNO_INDICATORS,
     ].map(i => [i.id, i]),
   );
