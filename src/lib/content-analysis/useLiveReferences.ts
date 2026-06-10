@@ -9,9 +9,12 @@
 //      and the web ingestion flows (the "live stack"),
 //   3. Supabase-backed libraries (user-authenticated).
 //
-// For the workbench we mirror (1) + (2) — the two sources every user can see
-// without signing in — and map each entry onto a minimal AnalysisDocument
-// so the existing DocumentList / segment pipeline works unchanged.
+// For the workbench we mirror (1) + (2) + (3) — `/api/references/library`
+// is called with `?includeManager=1`, which folds the Supabase `references`
+// table into the same response as `custom_references`, so a reference added
+// through the Reference Manager in either mode is addable here. Each entry is
+// mapped onto a minimal AnalysisDocument so the existing DocumentList /
+// segment pipeline works unchanged.
 // ---------------------------------------------------------------------------
 
 import { useEffect, useState } from 'react';
@@ -62,7 +65,11 @@ export function useLiveReferences(): LiveReferencesState {
       setState(s => ({ ...s, docs: baseDocs, total: baseDocs.length, withPdf: baseWithPdf }));
 
       try {
-        const resp = await fetch('/api/references/library', { cache: 'no-store' });
+        // `includeManager=1` merges the Supabase `references` table (the web
+        // Reference Manager's store) into the response, so a reference added
+        // through the Reference Manager — not just the VBA / fallback
+        // `custom_references` store — is addable to a workspace here too.
+        const resp = await fetch('/api/references/library?includeManager=1', { cache: 'no-store' });
         if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
         const data = (await resp.json()) as { references?: ApiRef[] };
         const liveRefs = Array.isArray(data.references) ? data.references : [];
