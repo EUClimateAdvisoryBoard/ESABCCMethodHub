@@ -12,6 +12,7 @@
 'use client';
 
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   pwApi,
   type WorkspaceActivityEntry,
@@ -68,13 +69,84 @@ function describeSaveTarget(url: string): string {
 const EMPTY_OUTBOX: OutboxStatus = { pending: 0, dead: 0, lastError: null, persistent: true };
 const getServerOutbox = () => EMPTY_OUTBOX;
 
+/** The slice of the project's modules the link builder needs. */
+export interface ActivityLogModule {
+  id: string;
+  kind: string;
+}
+
+/**
+ * Destination for one entry: the module tab it belongs to and, for
+ * content-analysis changes, the document itself (via `?doc=`).
+ */
+function entryHref(
+  e: WorkspaceActivityEntry,
+  projectId: string,
+  modules: ActivityLogModule[]
+): string {
+  const base = `/project-workspace/${encodeURIComponent(projectId)}`;
+  const byKind = (...kinds: string[]) =>
+    modules.find(m => kinds.includes(m.kind))?.id ?? null;
+  const toModule = (id: string | null, doc?: string) =>
+    id
+      ? `${base}?module=${encodeURIComponent(id)}${doc ? `&doc=${encodeURIComponent(doc)}` : ''}`
+      : base;
+
+  switch (e.tableName) {
+    case 'pw_projects':
+      return base;
+    case 'pw_modules':
+    case 'pw_custom_module_content':
+      return toModule(e.entityId);
+    case 'pw_indicator_revisions':
+    case 'pw_flowchart_state': // flow charts live inside the Indicator module
+      return toModule(byKind('indicators'));
+    case 'pw_recommendations':
+    case 'pw_recommendation_events':
+      return toModule(byKind('recommendations'));
+    case 'pw_member_state_cells':
+      return toModule(byKind('member-states'));
+    case 'pw_meetings':
+    case 'pw_meeting_milestones':
+    case 'pw_project_phases':
+      return toModule(byKind('meetings'));
+    case 'pw_policy_annotations':
+    case 'pw_policy_codes':
+      return toModule(byKind('policy-analysis', 'content-analysis'));
+    case 'pw_comments':
+    case 'pw_verifications': {
+      // entity_id is "<targetKind>:<targetId>" — route by the target's kind.
+      const kind = e.entityId.split(':', 1)[0];
+      if (kind === 'indicator') return toModule(byKind('indicators'));
+      if (kind === 'recommendation') return toModule(byKind('recommendations'));
+      if (kind === 'member-state-cell') return toModule(byKind('member-states'));
+      if (kind === 'policy') return toModule(byKind('policy-analysis', 'content-analysis'));
+      return base;
+    }
+    case 'content_analysis_corpus':
+    case 'content_analysis_segments':
+    case 'content_analysis_summaries':
+    case 'content_analysis_notes':
+    case 'content_analysis_overall_tags':
+      return toModule(byKind('content-analysis', 'policy-analysis'), e.entityId);
+    case 'content_analysis_outlines':
+    case 'content_analysis_codes':
+      return toModule(byKind('content-analysis', 'policy-analysis'));
+    default:
+      return base;
+  }
+}
+
 export default function ActivityLogPanel({
   projectId,
+  modules,
   onClose,
 }: {
   projectId: string;
+  modules: ActivityLogModule[];
   onClose: () => void;
 }) {
+  const router = useRouter();
   const [entries, setEntries] = useState<WorkspaceActivityEntry[]>([]);
   const [status, setStatus] = useState<WorkspaceActivityStatus | null>(null);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
@@ -318,23 +390,40 @@ export default function ActivityLogPanel({
                 {group.items.map(e => {
                   const op = OP_STYLE[e.op] ?? OP_STYLE.update;
                   return (
-                    <li key={e.id} className="flex items-start gap-2.5 rounded-md px-2 py-1.5 hover:bg-grey-50">
-                      <span
-                        className={`shrink-0 mt-1.5 w-2 h-2 rounded-full ${op.dot}`}
-                        title={op.label}
-                        aria-hidden
-                      />
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-xs text-tertiary-dark leading-snug">
-                          <span className="font-semibold">{e.actorName || 'System'}</span>
-                          {' — '}
-                          {e.summary}
+                    <li key={e.id}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          router.push(entryHref(e, projectId, modules));
+                          onClose();
+                        }}
+                        title="Go to this change"
+                        className="group w-full flex items-start gap-2.5 rounded-md px-2 py-1.5 text-left hover:bg-grey-50"
+                      >
+                        <span
+                          className={`shrink-0 mt-1.5 w-2 h-2 rounded-full ${op.dot}`}
+                          title={op.label}
+                          aria-hidden
+                        />
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-xs text-tertiary-dark leading-snug">
+                            <span className="font-semibold">{e.actorName || 'System'}</span>
+                            {' — '}
+                            {e.summary}
+                          </span>
+                          <span className="block text-[11px] text-tertiary-light mt-0.5">
+                            {timeOfDay(e.createdAt)}
+                            {e.entityKind ? ` · ${e.entityKind}` : ''}
+                          </span>
                         </span>
-                        <span className="block text-[11px] text-tertiary-light mt-0.5">
-                          {timeOfDay(e.createdAt)}
-                          {e.entityKind ? ` · ${e.entityKind}` : ''}
-                        </span>
-                      </span>
+                        <svg
+                          className="shrink-0 mt-1 w-3.5 h-3.5 text-tertiary-light opacity-0 group-hover:opacity-100 transition-opacity"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                          strokeLinecap="round" strokeLinejoin="round" aria-hidden
+                        >
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </button>
                     </li>
                   );
                 })}

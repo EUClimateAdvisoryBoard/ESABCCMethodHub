@@ -86,6 +86,9 @@ export default function ProjectShell({
   function setActive(id: string) {
     const params = new URLSearchParams(search.toString());
     params.set('module', id);
+    // Deep-link params (e.g. the Activity log's ?doc=…) belong to one
+    // navigation, not to the tab — drop them on a manual tab switch.
+    params.delete('doc');
     router.push(`${pathname}?${params.toString()}`);
   }
 
@@ -215,7 +218,11 @@ export default function ProjectShell({
       )}
 
       {showLog && (
-        <ActivityLogPanel projectId={project.id} onClose={() => setShowLog(false)} />
+        <ActivityLogPanel
+          projectId={project.id}
+          modules={project.modules}
+          onClose={() => setShowLog(false)}
+        />
       )}
 
       {adding && (
