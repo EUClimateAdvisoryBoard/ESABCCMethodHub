@@ -40,8 +40,9 @@
  */
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
+import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
 import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
@@ -552,6 +553,25 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
     return out;
   }, [allDocuments, corpusIds, corpusMeta, sourceType]);
+
+  // Deep link: `?doc=<id>` (used by the Activity log's click-through) opens
+  // that document directly — switching to its source tier so the selection
+  // sticks. Re-applies whenever the param changes (e.g. a second log entry is
+  // clicked while this module is already mounted).
+  const searchParams = useSearchParams();
+  const requestedDocId = searchParams?.get('doc') ?? null;
+  const appliedDocParam = useRef<string | null>(null);
+  useEffect(() => {
+    if (!requestedDocId || appliedDocParam.current === requestedDocId || !corpusLoaded) return;
+    const meta = corpusMeta[requestedDocId];
+    const doc =
+      allDocuments.find(d => d.id === requestedDocId) ??
+      (meta ? corpusMetaToDoc(meta) : undefined);
+    appliedDocParam.current = requestedDocId;
+    if (!doc) return; // unknown / deleted document — stay on the chooser
+    setSourceType(sourceTierOf(doc));
+    setSelectedDocumentId(requestedDocId);
+  }, [requestedDocId, corpusLoaded, corpusMeta, allDocuments]);
 
   // ── Overall (document-level) tags ─────────────────────────────────────────
   // The shared master taxonomy is the pool of selectable overall tags — the
