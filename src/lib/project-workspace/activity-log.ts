@@ -81,12 +81,26 @@ export interface ActivityLogStatus {
   /** Total entries across all projects (null when unknown). */
   entryCount: number | null;
   tables: Record<string, 'ok' | 'no-trigger' | 'table-missing'> | null;
+  /**
+   * Result of the end-to-end probe (migration 069): a real write is made,
+   * checked against the log and cleaned up. 'ok' = the pipeline demonstrably
+   * works; anything else is the exact failure. Null = not run (e.g. the
+   * caller wasn't signed in, or entries already prove the log works).
+   */
+  selftest:
+    | 'ok'
+    | 'log-table-missing'
+    | 'project-not-in-db'
+    | 'trigger-did-not-fire'
+    | 'probe-write-failed'
+    | 'selftest-missing'
+    | null;
 }
 
 export async function getActivityLogStatus(): Promise<ActivityLogStatus> {
   noStore();
   const sb = getServerSupabase();
-  if (!sb) return { installed: false, entryCount: null, tables: null };
+  if (!sb) return { installed: false, entryCount: null, tables: null, selftest: null };
   const { data, error } = await sb.rpc('pw_activity_log_status');
   if (!error && data && typeof data === 'object') {
     const d = data as { tables?: ActivityLogStatus['tables']; entryCount?: number };
@@ -94,11 +108,39 @@ export async function getActivityLogStatus(): Promise<ActivityLogStatus> {
       installed: true,
       entryCount: typeof d.entryCount === 'number' ? d.entryCount : null,
       tables: d.tables ?? null,
+      selftest: null,
     };
   }
   // The status function is part of migration 068 — if it's absent, probe the
   // log table directly so we can at least distinguish "067 applied" from
   // "nothing applied".
   const { error: tblErr } = await sb.from('pw_activity_log').select('id').limit(1);
-  return { installed: !tblErr, entryCount: null, tables: null };
+  return { installed: !tblErr, entryCount: null, tables: null, selftest: null };
+}
+
+/**
+ * End-to-end probe: makes a real (self-cleaning) change in the project and
+ * verifies the trigger logged it. Definitive — if this returns 'ok', the
+ * activity log demonstrably works and an empty log just means nothing has
+ * happened since installation.
+ */
+export async function runActivitySelftest(
+  projectId: string
+): Promise<NonNullable<ActivityLogStatus['selftest']>> {
+  noStore();
+  const sb = getServerSupabase();
+  if (!sb) return 'probe-write-failed';
+  const { data, error } = await sb.rpc('pw_activity_log_selftest', { p_project: projectId });
+  if (error) return 'selftest-missing';
+  const d = (data ?? {}) as { ok?: boolean; reason?: string };
+  if (d.ok) return 'ok';
+  switch (d.reason) {
+    case 'log-table-missing':
+    case 'project-not-in-db':
+    case 'trigger-did-not-fire':
+    case 'probe-write-failed':
+      return d.reason;
+    default:
+      return 'trigger-did-not-fire';
+  }
 }

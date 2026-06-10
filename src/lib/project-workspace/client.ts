@@ -552,6 +552,14 @@ export interface WorkspaceActivityStatus {
   installed: boolean;
   entryCount: number | null;
   tables: Record<string, 'ok' | 'no-trigger' | 'table-missing'> | null;
+  selftest:
+    | 'ok'
+    | 'log-table-missing'
+    | 'project-not-in-db'
+    | 'trigger-did-not-fire'
+    | 'probe-write-failed'
+    | 'selftest-missing'
+    | null;
 }
 
 /** Mirror of the server `WorkspaceComment` shape (see collaboration.ts). */
