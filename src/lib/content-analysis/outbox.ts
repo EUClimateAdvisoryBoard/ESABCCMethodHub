@@ -187,7 +187,9 @@ export function requeueDeadLetters(): void {
   for (const d of deadLetters) {
     const { status: _s, diedAt: _d, ...op } = d;
     queue = queue.filter(o => o.key !== op.key);
-    queue.push({ ...op, ts: Date.now() });
+    // Every parked op is a write, and writes require a signed-in user — mark
+    // it so a 401 (still signed out) waits for sign-in instead of dying again.
+    queue.push({ ...op, auth: true, ts: Date.now() });
   }
   deadLetters = [];
   save();
@@ -238,7 +240,11 @@ async function sendOne(op: OutboxOp): Promise<SendResult> {
   try {
     const headers: Record<string, string> = {};
     if (op.body !== undefined) headers['content-type'] = 'application/json';
-    if (op.auth) Object.assign(headers, await authHeader());
+    // Always send the bearer token when a session exists: workspace writes
+    // require a signed-in user server-side, and ops queued or dead-lettered
+    // by older builds (before `auth` was set on write ops) must still carry
+    // the token when retried, or they 401 forever.
+    Object.assign(headers, await authHeader());
     const resp = await fetch(op.url, {
       method: op.method,
       headers: Object.keys(headers).length > 0 ? headers : undefined,
