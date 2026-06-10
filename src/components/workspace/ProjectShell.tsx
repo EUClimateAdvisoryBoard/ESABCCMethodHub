@@ -30,6 +30,7 @@ import MemberStatesModule from './MemberStatesModule';
 import ContentAnalysisModule from './ContentAnalysisModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
+import ActivityLogPanel from './ActivityLogPanel';
 import { moduleMeta } from './moduleMeta';
 import { Tooltip, TooltipProvider } from '@/components/ui/Tooltip';
 import { pwApi, type Meeting, type Milestone, type Phase } from '@/lib/project-workspace/client';
@@ -75,6 +76,7 @@ export default function ProjectShell({
   const current = project.modules.find(m => m.id === active);
   const currentMeta = current ? moduleMeta(current.kind) : null;
   const [adding, setAdding] = useState(false);
+  const [showLog, setShowLog] = useState(false);
 
   // The seed Industry Project scopes its copied tools to industry: policies
   // pre-filter to the industry sector and the member-state space is framed
@@ -124,10 +126,24 @@ export default function ProjectShell({
               </Tooltip>
             );
           })}
+          <Tooltip content="Every change made in this project — who did what, and when.">
+            <button
+              type="button"
+              onClick={() => setShowLog(true)}
+              className="shrink-0 ml-auto inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M3 12a9 9 0 1 0 3-6.7L3 8" />
+                <path d="M3 3v5h5" />
+                <path d="M12 7v5l3 3" />
+              </svg>
+              Activity log
+            </button>
+          </Tooltip>
           <button
             type="button"
             onClick={() => setAdding(true)}
-            className="shrink-0 ml-auto inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
+            className="shrink-0 inline-flex items-center gap-1 px-3 py-2.5 text-xs font-medium text-secondary hover:text-primary"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
               <path d="M12 5v14M5 12h14" />
@@ -196,6 +212,10 @@ export default function ProjectShell({
             Click <em>Add tool</em> above to add the first tool to this project.
           </p>
         </div>
+      )}
+
+      {showLog && (
+        <ActivityLogPanel projectId={project.id} onClose={() => setShowLog(false)} />
       )}
 
       {adding && (
