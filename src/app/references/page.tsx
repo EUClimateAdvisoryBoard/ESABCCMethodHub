@@ -778,29 +778,53 @@ export default function ReferencesPage() {
   const handleDeleteReferences = useCallback(async (ids: string[]) => {
     const idSet = new Set(ids);
     const targets = references.filter(r => idSet.has(r.id));
-    const failures: string[] = [];
-    for (const ref of targets) {
-      if (isPolicyCitation(ref)) continue; // virtual entry — nothing to delete
-      if (ref.pdf_url) {
-        // Best-effort — a missing/failed PDF delete shouldn't block the row.
-        try { await deletePdf(ref.id); } catch { /* ignore */ }
-      }
-      if (ref.library_id === STATIC_LIBRARY_ID) {
-        const result = await deleteRefFromApi(ref.id);
-        if (!result.ok) failures.push(ref.title);
-      } else {
-        try { await deleteReference(ref.id); } catch { failures.push(ref.title); }
-      }
-    }
-    // Prune the local custom-ref cache so deletions survive a reload.
-    saveLocalCustomRefs(loadLocalCustomRefs().filter(r => !idSet.has(r.id)));
-    // Optimistically remove every selected row from the rendered list.
+    if (targets.length === 0) return;
+
+    // Optimistic up front: drop the rows from the rendered list and the local
+    // cache *immediately*, before any network call. Previously the UI only
+    // updated after every (sequential) API round-trip finished, so deleting a
+    // reference felt frozen until the server replied. Now it's instant; the
+    // network deletes run in the background and we only re-insert a row if its
+    // delete actually fails.
     setReferences(prev => prev.filter(r => !idSet.has(r.id)));
-    if (failures.length > 0) {
+    saveLocalCustomRefs(loadLocalCustomRefs().filter(r => !idSet.has(r.id)));
+
+    // Run the deletes in parallel rather than one-at-a-time — a bulk delete of
+    // N rows used to take N sequential round-trips.
+    const failedRefs = (
+      await Promise.all(
+        targets.map(async (ref): Promise<Reference | null> => {
+          if (isPolicyCitation(ref)) return null; // virtual entry — nothing to delete
+          if (ref.pdf_url) {
+            // Best-effort — a missing/failed PDF delete shouldn't block the row.
+            try { await deletePdf(ref.id); } catch { /* ignore */ }
+          }
+          if (ref.library_id === STATIC_LIBRARY_ID) {
+            const result = await deleteRefFromApi(ref.id);
+            return result.ok ? null : ref;
+          }
+          try { await deleteReference(ref.id); return null; }
+          catch { return ref; }
+        }),
+      )
+    ).filter((r): r is Reference => r !== null);
+
+    if (failedRefs.length > 0) {
+      // Re-insert the rows whose delete failed so the list reflects reality.
+      const failedIds = new Set(failedRefs.map(r => r.id));
+      saveLocalCustomRefs([
+        ...failedRefs.filter(r => r.library_id === STATIC_LIBRARY_ID),
+        ...loadLocalCustomRefs().filter(r => !failedIds.has(r.id)),
+      ]);
+      setReferences(prev => {
+        const present = new Set(prev.map(r => r.id));
+        const restore = failedRefs.filter(r => !present.has(r.id));
+        return restore.length ? [...restore, ...prev] : prev;
+      });
       showToast({
         tone: 'danger',
-        message: `Couldn't delete ${failures.length} reference${failures.length !== 1 ? 's' : ''}`,
-        description: failures.slice(0, 3).join('; ') + (failures.length > 3 ? '…' : ''),
+        message: `Couldn't delete ${failedRefs.length} reference${failedRefs.length !== 1 ? 's' : ''}`,
+        description: failedRefs.slice(0, 3).map(r => r.title).join('; ') + (failedRefs.length > 3 ? '…' : ''),
       });
     } else {
       showToast({
