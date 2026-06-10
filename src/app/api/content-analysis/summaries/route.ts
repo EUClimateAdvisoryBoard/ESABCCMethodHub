@@ -6,6 +6,7 @@ import {
   isPersistent,
   upsertSummaries,
 } from '@/lib/content-analysis-store';
+import { actorRequired, resolveActor } from '@/lib/content-analysis/actor';
 import type {
   DocumentSummary,
   SummaryBlock,
@@ -146,6 +147,11 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Writes must be attributable to an account (reads stay public).
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to save summaries' }, { status: 401 });
+    }
     const body = await request.json();
     const rawBatch: unknown[] = Array.isArray(body?.summaries)
       ? body.summaries
@@ -166,7 +172,7 @@ export async function POST(request: NextRequest) {
     if (summaries.length === 0) {
       return NextResponse.json({ error: 'No valid summaries' }, { status: 400 });
     }
-    await upsertSummaries(summaries);
+    await upsertSummaries(summaries, actor ?? undefined);
     return NextResponse.json({
       status: 'ok',
       count: summaries.length,
@@ -183,6 +189,10 @@ export async function POST(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to delete summaries' }, { status: 401 });
+    }
     let id = request.nextUrl.searchParams.get('id') || '';
     if (!id) {
       try {
@@ -193,7 +203,7 @@ export async function DELETE(request: NextRequest) {
     if (!id) {
       return NextResponse.json({ error: 'id is required' }, { status: 400 });
     }
-    const ok = await deleteSummary(id);
+    const ok = await deleteSummary(id, actor ?? undefined);
     if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json({ status: 'deleted', id });
   } catch (err) {

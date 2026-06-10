@@ -6,6 +6,7 @@ import {
   updateSegmentNote,
   upsertSegments,
 } from '@/lib/content-analysis-store';
+import { actorRequired, resolveActor } from '@/lib/content-analysis/actor';
 import type { CodedSegment, PdfAnchor } from '@/lib/content-analysis/types';
 
 /**
@@ -115,6 +116,11 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   try {
+    // Writes must be attributable to an account (reads stay public).
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to save tags' }, { status: 401 });
+    }
     const body = await request.json();
     const rawBatch: unknown[] = Array.isArray(body?.segments)
       ? body.segments
@@ -135,7 +141,7 @@ export async function POST(request: NextRequest) {
     if (segs.length === 0) {
       return NextResponse.json({ error: 'No valid segments' }, { status: 400 });
     }
-    await upsertSegments(segs);
+    await upsertSegments(segs, actor ?? undefined);
     return NextResponse.json({
       status: 'ok',
       count: segs.length,
@@ -152,6 +158,10 @@ export async function POST(request: NextRequest) {
 
 export async function PATCH(request: NextRequest) {
   try {
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to edit notes' }, { status: 401 });
+    }
     const body = await request.json();
     const id = typeof body?.id === 'string' ? body.id : '';
     if (!id) {
@@ -165,7 +175,8 @@ export async function PATCH(request: NextRequest) {
         typeof body.noteAuthor === 'string'
           ? clampString(body.noteAuthor, MAX_NAME_LEN)
           : undefined,
-      id: typeof body.noteAuthorId === 'string' ? body.noteAuthorId : undefined,
+      // The verified account id wins over whatever name the client claims.
+      id: actor?.id ?? (typeof body.noteAuthorId === 'string' ? body.noteAuthorId : undefined),
     };
     const ok = await updateSegmentNote(id, clampString(body.note, MAX_NOTE_LEN), author);
     if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
@@ -181,6 +192,10 @@ export async function PATCH(request: NextRequest) {
 
 export async function DELETE(request: NextRequest) {
   try {
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to delete tags' }, { status: 401 });
+    }
     let id = request.nextUrl.searchParams.get('id') || '';
     if (!id) {
       try {
@@ -191,7 +206,7 @@ export async function DELETE(request: NextRequest) {
     if (!id) {
       return NextResponse.json({ error: 'id is required' }, { status: 400 });
     }
-    const ok = await deleteSegment(id);
+    const ok = await deleteSegment(id, actor ?? undefined);
     if (!ok) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     return NextResponse.json({ status: 'deleted', id });
   } catch (err) {
