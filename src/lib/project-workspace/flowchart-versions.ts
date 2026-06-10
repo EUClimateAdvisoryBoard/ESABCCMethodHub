@@ -39,6 +39,10 @@ import {
   FRAMEWORK_BOARD_ADVANCED_VERSION,
   type FrameworkBoard,
 } from '@/data/sector-frameworks';
+import { defaultResultsChainBoardV2 } from '@/data/results-chain-v2';
+import { defaultMonitoringMapBoardV4 } from '@/data/monitoring-map-v4';
+import { defaultResultsChainBoardV5 } from '@/data/results-chain-v5';
+import { defaultPolicyLoopBoardV6 } from '@/data/policy-loop-v6';
 
 /**
  * Controls adaptation wording in the board UI; inherited from the foundation.
@@ -64,7 +68,14 @@ import {
  *                 corridor → policy instruments → twin-track delivery →
  *                 observed results → gap & ratchet), with mitigation and
  *                 adaptation as equal lanes inside every sector, scenario
- *                 benchmarks as station 1 and the policy side as stations 2/5.
+ *                 benchmarks as station 1 and the policy side as stations 2/5;
+ *                 and
+ *  - 'advanced-v7' — the "Advanced version 7" structured-assessment-matrix
+ *                 board: the monitoring-report methodology made explicit as
+ *                 five structural dimensions (mitigation by emission sector,
+ *                 adaptation by adaptation area, main policies, crosscutting
+ *                 themes, societal-objective lenses) plus the eight-step
+ *                 assessment protocol that turns a matrix cell into a finding.
  */
 export type FlowChartVariant =
   | 'report'
@@ -73,7 +84,8 @@ export type FlowChartVariant =
   | 'advanced-v2'
   | 'advanced-v4'
   | 'advanced-v5'
-  | 'advanced-v6';
+  | 'advanced-v6'
+  | 'advanced-v7';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -114,6 +126,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v4', name: 'Advanced version 4', variant: 'advanced-v4', builtIn: true },
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
   { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
+  { id: 'advanced-v7', name: 'Advanced version 7', variant: 'advanced-v7', builtIn: true },
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
@@ -139,6 +152,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v4') return `esabcc-framework-board-advanced-v4:${projectId}`;
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
   if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
+  if (version.id === 'advanced-v7') return `esabcc-framework-board-advanced-v7:${projectId}`;
   if (version.id === 'policy-gap-2') return `esabcc-framework-board-policy-gap-2:${projectId}`;
   if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
   if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
@@ -217,17 +231,76 @@ export function saveBoard(projectId: string, version: FlowChartVersion, board: F
   pushState(projectId, key, board);
 }
 
+// ── Generic (any-shape) board state ──────────────────────────────────────────
+// The four "Advanced" computed views (v2 results-chain, v4 monitoring-map, v5
+// sectored results-chain, v6 policy-loop) each persist their own board shape,
+// not the sectors `FrameworkBoard`. These helpers store/read arbitrary JSON
+// under the version's board key (and seed key) so those views can be edited and
+// the edits synced exactly like the sector boards.
+
+/** The computed published default for a *computed* variant, else null. */
+export function computedDefaultBoard(version: FlowChartVersion): unknown | null {
+  switch (version.variant) {
+    case 'advanced-v2':
+      return defaultResultsChainBoardV2();
+    case 'advanced-v4':
+      return defaultMonitoringMapBoardV4();
+    case 'advanced-v5':
+      return defaultResultsChainBoardV5();
+    case 'advanced-v6':
+      return defaultPolicyLoopBoardV6();
+    default:
+      return null;
+  }
+}
+
+/** Parse a stored board as arbitrary JSON, with no shape validation. */
+function readAnyBoard(key: string): unknown | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw) as unknown;
+  } catch {
+    return null;
+  }
+}
+
+/** Read a version's stored board as arbitrary JSON (computed views). */
+export function readVersionBoard(projectId: string, version: FlowChartVersion): unknown | null {
+  return readAnyBoard(boardStorageKey(version, projectId));
+}
+
+/** Read a custom computed version's reset seed (the foundation snapshot). */
+export function readVersionSeed(projectId: string, version: FlowChartVersion): unknown | null {
+  return readAnyBoard(seedStorageKey(version, projectId));
+}
+
+/** Persist any-shape board state for a version (cache + shared store). */
+export function saveVersionBoard(projectId: string, version: FlowChartVersion, board: unknown): void {
+  const key = boardStorageKey(version, projectId);
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem(key, JSON.stringify(board));
+    } catch {
+      /* quota / private mode */
+    }
+  }
+  pushState(projectId, key, board);
+}
+
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain and advanced-v6 policy-loop boards are
-  // computed/read-only and not stored as sectors boards, so they have no
-  // sectors schema to validate against.
+  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
+  // assessment-matrix boards are computed/read-only and not stored as sectors
+  // boards, so they have no sectors schema to validate against.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
-    version.variant === 'advanced-v6'
+    version.variant === 'advanced-v6' ||
+    version.variant === 'advanced-v7'
   )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
@@ -249,6 +322,11 @@ function readBoard(key: string): FrameworkBoard | null {
 }
 
 function writeBoard(key: string, board: FrameworkBoard): void {
+  writeAnyBoard(key, board);
+}
+
+/** Write any-shape board JSON to the localStorage cache. */
+function writeAnyBoard(key: string, board: unknown): void {
   if (typeof window === 'undefined') return;
   try {
     localStorage.setItem(key, JSON.stringify(board));
@@ -266,15 +344,16 @@ function writeBoard(key: string, board: FrameworkBoard): void {
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain and advanced-v6 policy-loop boards are computed in
-  // their own views and are not sectors boards; hand back an empty sectors
-  // board so callers that expect the `{ sectors }` shape (e.g. duplicating a
-  // version) never crash.
+  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
+  // assessment-matrix boards are computed in their own views and are not
+  // sectors boards; hand back an empty sectors board so callers that expect
+  // the `{ sectors }` shape (e.g. duplicating a version) never crash.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
-    version.variant === 'advanced-v6'
+    version.variant === 'advanced-v6' ||
+    version.variant === 'advanced-v7'
   )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
@@ -343,8 +422,14 @@ export function createVersion(
   name: string,
 ): FlowChartVersion {
   const id = `fcv-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+  // Snapshot the foundation's *current* board. For the computed views this is an
+  // any-shape board (results-chain / policy-loop), so read it generically and
+  // fall back to that variant's computed default; sector boards keep their
+  // existing default path.
   const source =
-    readBoard(boardStorageKey(foundation, projectId)) ?? defaultBoardFor(foundation, projectId);
+    readAnyBoard(boardStorageKey(foundation, projectId)) ??
+    computedDefaultBoard(foundation) ??
+    defaultBoardFor(foundation, projectId);
   const version: FlowChartVersion = {
     id,
     name: name.trim() || 'Untitled flow charts',
@@ -356,8 +441,9 @@ export function createVersion(
   };
   const boardKey = boardStorageKey(version, projectId);
   const seedKey = seedStorageKey(version, projectId);
-  writeBoard(boardKey, source);
-  writeBoard(seedKey, source);
+  // `source` is any-shape (sector or computed board); write it verbatim.
+  writeAnyBoard(boardKey, source);
+  writeAnyBoard(seedKey, source);
   pushState(projectId, boardKey, source);
   pushState(projectId, seedKey, source);
   const reg = readRegistry(projectId);

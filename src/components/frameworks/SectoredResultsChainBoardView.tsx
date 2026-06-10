@@ -4,28 +4,50 @@
  * The container for the sectored results-chain flow chart
  * (SectoredResultsChainFlow): the intro blurb, the sector-coverage legend, the
  * six-rung board, and the shared indicator data drawer. Like Advanced version 2
- * this is a computed, read-only analytical view — the whole indicator catalogue
+ * the board is seeded from a computed default — the whole indicator catalogue
  * re-clustered along the M&E results chain — but here every rung/track is also
  * sub-clustered by sector, and the legend reports how many sectors the chain
- * covers. Clicking a chip opens its data; "Open in indicator list" hands the id
- * back to the parent module.
+ * covers. The board is editable and persisted per version. Clicking a chip opens
+ * its data; "Open in indicator list" hands the id back to the parent module.
  */
 'use client';
 import { useCallback, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import { FRAMEWORK_INDICATOR_INDEX } from '@/data/sector-frameworks';
 import { defaultResultsChainBoardV5, sectorCoverage } from '@/data/results-chain-v5';
+import type { ResultsChainBoard } from '@/data/results-chain-v2';
+import type { FlowChartVersion } from '@/lib/project-workspace/flowchart-versions';
+import { useEditableBoard } from '@/lib/project-workspace/useEditableBoard';
 import SectoredResultsChainFlow from './SectoredResultsChainFlow';
 import IndicatorDetail from './IndicatorDetail';
+import { BoardEditToolbar, EditModeHint } from './BoardEditControls';
 import type { OpenIndicatorPayload } from './SectorFlow';
 
 interface Props {
   allIndicators: Indicator[];
   onOpenInList?: (id: string) => void;
+  projectId: string;
+  version: FlowChartVersion;
+  hydrated?: boolean;
 }
 
-export default function SectoredResultsChainBoardView({ allIndicators, onOpenInList }: Props) {
-  const board = useMemo(() => defaultResultsChainBoardV5(), []);
+const isResultsChainBoard = (b: unknown): boolean =>
+  !!b && typeof b === 'object' && Array.isArray((b as ResultsChainBoard).groups);
+
+export default function SectoredResultsChainBoardView({
+  allIndicators,
+  onOpenInList,
+  projectId,
+  version,
+  hydrated = true,
+}: Props) {
+  const { board, setBoard, editing, setEditing, reset } = useEditableBoard<ResultsChainBoard>({
+    projectId,
+    version,
+    hydrated,
+    makeDefault: useCallback(() => defaultResultsChainBoardV5(), []),
+    validate: isResultsChainBoard,
+  });
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
 
   const lookup = useMemo(() => {
@@ -139,7 +161,28 @@ export default function SectoredResultsChainBoardView({ allIndicators, onOpenInL
         </div>
       </div>
 
-      <SectoredResultsChainFlow board={board} allIndicators={allIndicators} onOpenIndicator={setDrawer} />
+      <BoardEditToolbar
+        editing={editing}
+        onToggleEditing={() => setEditing((e) => !e)}
+        onReset={reset}
+        builtIn={version.builtIn}
+      />
+      {editing && (
+        <EditModeHint>
+          Edit mode: rename rungs (and their colour/description), add or delete rungs, link new
+          indicator chips (the chip&apos;s sector follows the indicator), relabel chips, move a chip
+          between the mitigation and adaptation tracks (↔), or remove a chip (×). Changes are saved
+          to this version automatically.
+        </EditModeHint>
+      )}
+
+      <SectoredResultsChainFlow
+        board={board}
+        allIndicators={allIndicators}
+        onOpenIndicator={setDrawer}
+        editing={editing}
+        onChange={setBoard}
+      />
 
       {drawer && (
         <IndicatorDetail

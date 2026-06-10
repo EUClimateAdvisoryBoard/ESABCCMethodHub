@@ -3,11 +3,11 @@
  *
  * The container for the monitoring-map flow chart: the overarching-goal banner,
  * the intro blurb, the four-layer board and the shared indicator data drawer.
- * Like Advanced version 2 this is a computed, read-only analytical view — the
- * whole catalogue re-clustered, here into four thematic monitoring-map layers
- * (Enablers → Delivery → Outcomes → Risk) with no sector split — so it carries
- * no edit mode; clicking a chip opens its data, and "Open in indicator list"
- * hands the id back to the parent module.
+ * Like Advanced version 2 the board is seeded from a computed default — the
+ * whole catalogue re-clustered into four thematic monitoring-map layers
+ * (Enablers → Delivery → Outcomes → Risk) with no sector split — but is then
+ * editable and persisted per version; clicking a chip opens its data, and "Open
+ * in indicator list" hands the id back to the parent module.
  *
  * It reuses the version-2 ResultsChainFlow renderer because the board shape is
  * identical (numbered layers, each split into a mitigation and an adaptation
@@ -18,17 +18,39 @@ import { useCallback, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import { FRAMEWORK_INDICATOR_INDEX } from '@/data/sector-frameworks';
 import { defaultMonitoringMapBoardV4 } from '@/data/monitoring-map-v4';
+import type { ResultsChainBoard } from '@/data/results-chain-v2';
+import type { FlowChartVersion } from '@/lib/project-workspace/flowchart-versions';
+import { useEditableBoard } from '@/lib/project-workspace/useEditableBoard';
 import ResultsChainFlow from './ResultsChainFlow';
 import IndicatorDetail from './IndicatorDetail';
+import { BoardEditToolbar, EditModeHint } from './BoardEditControls';
 import type { OpenIndicatorPayload } from './SectorFlow';
 
 interface Props {
   allIndicators: Indicator[];
   onOpenInList?: (id: string) => void;
+  projectId: string;
+  version: FlowChartVersion;
+  hydrated?: boolean;
 }
 
-export default function MonitoringMapBoardView({ allIndicators, onOpenInList }: Props) {
-  const board = useMemo(() => defaultMonitoringMapBoardV4(), []);
+const isResultsChainBoard = (b: unknown): boolean =>
+  !!b && typeof b === 'object' && Array.isArray((b as ResultsChainBoard).groups);
+
+export default function MonitoringMapBoardView({
+  allIndicators,
+  onOpenInList,
+  projectId,
+  version,
+  hydrated = true,
+}: Props) {
+  const { board, setBoard, editing, setEditing, reset } = useEditableBoard<ResultsChainBoard>({
+    projectId,
+    version,
+    hydrated,
+    makeDefault: useCallback(() => defaultMonitoringMapBoardV4(), []),
+    validate: isResultsChainBoard,
+  });
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
 
   const lookup = useMemo(() => {
@@ -185,10 +207,30 @@ export default function MonitoringMapBoardView({ allIndicators, onOpenInList }: 
           <span className="font-semibold text-tertiary-dark">⛨ Adaptation &amp; resilience</span>
           <span className="text-tertiary-light">· {totals.adaptation} indicators</span>
         </span>
-        <span className="text-tertiary-light">across 4 monitoring-map layers</span>
+        <span className="text-tertiary-light">across {board.groups.length} monitoring-map layers</span>
       </div>
 
-      <ResultsChainFlow board={board} allIndicators={allIndicators} onOpenIndicator={setDrawer} />
+      <BoardEditToolbar
+        editing={editing}
+        onToggleEditing={() => setEditing((e) => !e)}
+        onReset={reset}
+        builtIn={version.builtIn}
+      />
+      {editing && (
+        <EditModeHint>
+          Edit mode: rename layers (and their colour/description), add or delete layers, link new
+          indicator chips, relabel chips, move a chip between the mitigation and adaptation pillars
+          (↔), or remove a chip (×). Changes are saved to this version automatically.
+        </EditModeHint>
+      )}
+
+      <ResultsChainFlow
+        board={board}
+        allIndicators={allIndicators}
+        onOpenIndicator={setDrawer}
+        editing={editing}
+        onChange={setBoard}
+      />
 
       {drawer && (
         <IndicatorDetail

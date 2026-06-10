@@ -68,7 +68,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'documentId, codeId required' }, { status: 400 });
   }
 
-  const { data, error } = await sb
+  // Insert-or-ignore rather than upsert: a tag's presence is all that matters,
+  // so there is nothing to update on a re-add. ON CONFLICT DO NOTHING also only
+  // needs the INSERT row-level-security policy (migration 059 defines no UPDATE
+  // policy), so a second add of the same tag can't be silently rejected.
+  const { error } = await sb
     .from(TABLE)
     .upsert(
       {
@@ -77,12 +81,15 @@ export async function POST(req: NextRequest) {
         created_by: u.user.id,
         created_at: new Date().toISOString(),
       },
-      { onConflict: 'document_id,code_id' },
-    )
-    .select('document_id, code_id')
-    .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
-  return NextResponse.json({ tag: shape([data as TagRow])[0] });
+      { onConflict: 'document_id,code_id', ignoreDuplicates: true },
+    );
+  // The payload was validated above, so a DB error here is infrastructure-level
+  // (e.g. the shared table not migrated yet, or a transient DB failure), not a
+  // bad request. Return 503 so the client's durable outbox keeps RETRYING the
+  // write until it lands and the tag reaches the whole team — rather than 4xx,
+  // which the outbox treats as permanent and parks in the dead-letter ledger.
+  if (error) return NextResponse.json({ error: error.message }, { status: 503 });
+  return NextResponse.json({ tag: { documentId: body.documentId, codeId: body.codeId } });
 }
 
 export async function DELETE(req: NextRequest) {
@@ -103,6 +110,8 @@ export async function DELETE(req: NextRequest) {
     .delete()
     .eq('document_id', documentId)
     .eq('code_id', codeId);
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
+  // Infrastructure-level failure (params were validated) — 503 so the outbox
+  // retries the removal until it propagates to the team, instead of parking it.
+  if (error) return NextResponse.json({ error: error.message }, { status: 503 });
   return NextResponse.json({ ok: true });
 }

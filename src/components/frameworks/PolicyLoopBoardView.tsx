@@ -4,29 +4,54 @@
  * The container for the policy-loop flow chart (PolicyLoopFlow): the
  * overarching-goal banner, the intro blurb, the "why a loop" rationale box,
  * the loop legend, the per-sector loop cards and the shared indicator data
- * drawer. Like Advanced versions 2/4/5 this is a computed, read-only
- * analytical view — here the synthesis spans three registries at once
- * (scenario benchmarks, sectoral policies and the indicator catalogue) — so
- * it carries no edit mode; clicking an indicator chip opens its data, policy
- * chips deep-link into the Policy Navigator, and "Open in indicator list"
- * hands the id back to the parent module.
+ * drawer. Like Advanced versions 2/4/5 the board is seeded from a computed
+ * default — here the synthesis spans three registries at once (scenario
+ * benchmarks, sectoral policies and the indicator catalogue) — but is then
+ * editable and persisted per version; clicking an indicator chip opens its
+ * data, policy chips deep-link into the Policy Navigator, and "Open in indicator
+ * list" hands the id back to the parent module.
  */
 'use client';
 import { useCallback, useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import { FRAMEWORK_INDICATOR_INDEX } from '@/data/sector-frameworks';
-import { defaultPolicyLoopBoardV6, LOOP_STATIONS } from '@/data/policy-loop-v6';
+import {
+  defaultPolicyLoopBoardV6,
+  LOOP_STATIONS,
+  type PolicyLoopBoard,
+} from '@/data/policy-loop-v6';
+import type { FlowChartVersion } from '@/lib/project-workspace/flowchart-versions';
+import { useEditableBoard } from '@/lib/project-workspace/useEditableBoard';
 import PolicyLoopFlow from './PolicyLoopFlow';
 import IndicatorDetail from './IndicatorDetail';
+import { BoardEditToolbar, EditModeHint } from './BoardEditControls';
 import type { OpenIndicatorPayload } from './SectorFlow';
 
 interface Props {
   allIndicators: Indicator[];
   onOpenInList?: (id: string) => void;
+  projectId: string;
+  version: FlowChartVersion;
+  hydrated?: boolean;
 }
 
-export default function PolicyLoopBoardView({ allIndicators, onOpenInList }: Props) {
-  const board = useMemo(() => defaultPolicyLoopBoardV6(), []);
+const isPolicyLoopBoard = (b: unknown): boolean =>
+  !!b && typeof b === 'object' && Array.isArray((b as PolicyLoopBoard).sectors);
+
+export default function PolicyLoopBoardView({
+  allIndicators,
+  onOpenInList,
+  projectId,
+  version,
+  hydrated = true,
+}: Props) {
+  const { board, setBoard, editing, setEditing, reset } = useEditableBoard<PolicyLoopBoard>({
+    projectId,
+    version,
+    hydrated,
+    makeDefault: useCallback(() => defaultPolicyLoopBoardV6(), []),
+    validate: isPolicyLoopBoard,
+  });
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
 
   const lookup = useMemo(() => {
@@ -185,7 +210,29 @@ export default function PolicyLoopBoardView({ allIndicators, onOpenInList }: Pro
         <span className="text-tertiary-light">across {board.sectors.length} sector loops</span>
       </div>
 
-      <PolicyLoopFlow board={board} onOpenIndicator={setDrawer} />
+      <BoardEditToolbar
+        editing={editing}
+        onToggleEditing={() => setEditing((e) => !e)}
+        onReset={reset}
+        builtIn={version.builtIn}
+      />
+      {editing && (
+        <EditModeHint>
+          Edit mode: rename / recolour / delete a sector loop, add or remove scenario benchmarks (①)
+          and policy instruments (②) from the registries, link / relabel / re-track / remove indicator
+          chips on the delivery (③) and observed (④) lanes, edit the adaptation monitoring-gap note,
+          and add / edit / remove the named ratchet mechanisms (⑤). Changes are saved to this version
+          automatically.
+        </EditModeHint>
+      )}
+
+      <PolicyLoopFlow
+        board={board}
+        onOpenIndicator={setDrawer}
+        editing={editing}
+        allIndicators={allIndicators}
+        onChange={setBoard}
+      />
 
       {drawer && (
         <IndicatorDetail

@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Reference, ITEM_TYPE_LABELS, CSLItemType, isEuFunder } from '@/lib/references/types';
 import { formatAuthors } from '@/lib/references/citation-utils';
 import { deleteReference, exportBibTeX } from '@/lib/references/reference-service';
@@ -65,24 +65,32 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
     setAnnotationCounts(getAllPdfAnnotationCounts());
   }, [references]);
 
-  const sorted = [...references]
-    .filter(r => !filterType || r.item_type === filterType)
-    .sort((a, b) => {
-      let cmp = 0;
-      if (sortField === 'title') cmp = a.title.localeCompare(b.title);
-      else if (sortField === 'year') cmp = (a.year || 0) - (b.year || 0);
-      else if (sortField === 'authors') {
-        const ka = authorSortKey(a);
-        const kb = authorSortKey(b);
-        // Push entries without an author to the end regardless of direction.
-        if (!ka && !kb) cmp = 0;
-        else if (!ka) return 1;
-        else if (!kb) return -1;
-        else cmp = ka.localeCompare(kb);
-      }
-      else cmp = a.created_at.localeCompare(b.created_at);
-      return sortAsc ? cmp : -cmp;
-    });
+  // Filtering + sorting is O(n log n) over the whole library (which can run to
+  // a few thousand references). Memoise it so it only recomputes when the
+  // inputs that actually affect order change — not on every unrelated render
+  // (selection toggles, citation-style switches, "show more", …), which used
+  // to re-copy and re-sort the entire list each time.
+  const sorted = useMemo(() => {
+    return [...references]
+      .filter(r => !filterType || r.item_type === filterType)
+      .sort((a, b) => {
+        let cmp = 0;
+        if (sortField === 'title') cmp = a.title.localeCompare(b.title);
+        else if (sortField === 'year') cmp = (a.year || 0) - (b.year || 0);
+        else if (sortField === 'authors') {
+          const ka = authorSortKey(a);
+          const kb = authorSortKey(b);
+          // Push entries without an author to the end regardless of direction.
+          if (!ka && !kb) cmp = 0;
+          else if (!ka) return 1;
+          else if (!kb) return -1;
+          else cmp = ka.localeCompare(kb);
+        }
+        else cmp = a.created_at.localeCompare(b.created_at);
+        return sortAsc ? cmp : -cmp;
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [references, filterType, sortField, sortAsc]);
 
   const toggleSelect = (id: string) => {
     setSelectedIds(prev => {
@@ -167,7 +175,41 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
     else { setSortField(field); setSortAsc(field !== 'created_at'); }
   };
 
-  const uniqueTypes = [...new Set(references.map(r => r.item_type))];
+  const uniqueTypes = useMemo(
+    () => [...new Set(references.map(r => r.item_type))],
+    [references],
+  );
+
+  // Windowed rendering. The full library can be a few thousand references;
+  // mounting that many cards (each with multiple nested nodes, SVGs and badges)
+  // is what made the list feel sluggish. We render an initial page and grow it
+  // as the user scrolls (or via the "Show more" button), so the DOM stays small
+  // while every reference is still reachable. Bulk select-all / export continue
+  // to operate on the full `sorted` list, not just what's mounted.
+  const PAGE = 60;
+  const [visibleCount, setVisibleCount] = useState(PAGE);
+  // Reset the window whenever the ordering / filtering inputs change so the
+  // user always sees the top of the freshly-ordered list.
+  useEffect(() => { setVisibleCount(PAGE); }, [references, filterType, sortField, sortAsc]);
+  const visible = useMemo(() => sorted.slice(0, visibleCount), [sorted, visibleCount]);
+  const hasMore = visibleCount < sorted.length;
+
+  // Auto-load the next page when a sentinel near the end of the list scrolls
+  // into view, so growing the window feels seamless (the button is the
+  // keyboard / no-IntersectionObserver fallback).
+  const sentinelRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el || !hasMore) return;
+    if (typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        setVisibleCount(c => Math.min(c + PAGE, sorted.length));
+      }
+    }, { rootMargin: '600px' });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [hasMore, sorted.length]);
 
   return (
     <div>
@@ -295,7 +337,7 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             <span>{sorted.length} reference{sorted.length !== 1 ? 's' : ''}</span>
           </div>
 
-          {sorted.map(ref => {
+          {visible.map(ref => {
             const isPolicy = isPolicyCitation(ref);
             const { plain: plainTags, projects: projectTags } = splitTags(ref.tags);
             // Resolve the analyst-curated overall tags (master-code ids) to
@@ -529,6 +571,24 @@ export default function ReferenceList({ references, onRefreshNeeded, onEditRefer
             </div>
             );
           })}
+
+          {/* Grow the window as the user nears the end (sentinel) and offer an
+              explicit control for keyboard users / when IntersectionObserver
+              isn't available. */}
+          {hasMore && (
+            <>
+              <div ref={sentinelRef} aria-hidden className="h-px" />
+              <div className="flex justify-center py-3">
+                <button
+                  type="button"
+                  onClick={() => setVisibleCount(c => Math.min(c + PAGE, sorted.length))}
+                  className="px-4 py-1.5 text-sm rounded-md border border-grey-200 bg-grey-100 hover:bg-grey-200 text-tertiary-dark"
+                >
+                  Show more ({(sorted.length - visibleCount).toLocaleString()} more)
+                </button>
+              </div>
+            </>
+          )}
         </div>
       )}
     </div>

@@ -1,12 +1,18 @@
 {
   "date": "2026-06-10",
-  "generatedAt": "2026-06-10T08:53:36.593Z",
+  "generatedAt": "2026-06-10T14:26:41.405Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 10 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Speech by Commissioner Šuica at the EU's Sustainable Energy Week - launch of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED)",
-      "summary": "European Commission Speech Brussels, 09 Jun 2026 Dear colleagues,\r\nLadies and gentlemen,\r\nGood afternoon.\r\nToday, we are launching the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative – ...",
+      "headline": "Press release - MEPs strike a deal to strengthen Europe’s defence readiness",
+      "summary": "On Wednesday, Parliament and Council negotiators agreed on proposals to accelerate defence investment and improve the EU’s responsiveness to security challenges.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on the Internal Market and Consumer Protection&lt;br/&gt;Committee on Industry, Research and Energy&lt;br/&gt;Committee on Security and Defence&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© Euro",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Nothing says stupidity like Reform's obsession with destroying British jobs | George Monbiot",
+      "summary": "&lt;p&gt;The net zero economy is booming, so claims that prosperity depends on oil and gas are bunkum – unless you’re a Reform backer with fossil fuel interests, of course&lt;/p&gt;&lt;p&gt;Really? You want to destroy a million jobs? Vote Reform UK for mass unemployment: is that your pitch? Hammer these questions home whenever you meet a supporter of the party. Or, for that matter, a Conservative, as their party now takes an almost identical line.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.thegua",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5\" target=\"_blank\"&gt;China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+      "headline": "US House passes $70 billion bill to fund ICE, Border Patrol - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxONGpxYlQwWjMwYzh5VHBVMGRqblZYUkliTEl3Y184bmtaS3dUVllTRE5UT0lrZ2FMQU9wcG16VjFPVWgwOERQd3lwU040Sm1TcXBXLWtDUUpMRThGUGNWVFc0UXNuMWhvbnhXREhlY3dzZVV5TW1XMHozUFl4cDF1QS1DZjNSZnoycWxxcUNUUnM3QnNIQUdDRWtFZ290eXlq?oc=5\" target=\"_blank\"&gt;US House passes $70 billion bill to fund ICE, Border Patrol&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,20 +33,21 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Press release - MEPs strike a deal to strengthen Europe’s defence readiness",
+          "link": "https://www.europarl.europa.eu/news/en/press-room/20260608IPR44910/",
+          "source": "EU Parliament ENVI Committee",
+          "description": "On Wednesday, Parliament and Council negotiators agreed on proposals to accelerate defence investment and improve the EU’s responsiveness to security challenges.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on the Internal Market and Consumer Protection&lt;br/&gt;Committee on Industry, Research and Energy&lt;br/&gt;Committee on Security and Defence&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© Euro",
+          "published": "2026-06-10T10:04:53.000Z",
+          "score": 24
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Speech by Commissioner Šuica at the EU's Sustainable Energy Week - launch of the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative (T-MED)",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1319",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 09 Jun 2026 Dear colleagues,\r\nLadies and gentlemen,\r\nGood afternoon.\r\nToday, we are launching the Trans-Mediterranean Renewable Energy and Clean Tech Cooperation Initiative – ...",
-          "published": "2026-06-09T13:50:36.000Z",
-          "score": 23
-        },
         {
           "title": "Nothing says stupidity like Reform's obsession with destroying British jobs | George Monbiot",
           "link": "https://www.theguardian.com/commentisfree/2026/jun/10/reform-obsession-british-jobs-net-zero-oil-and-gas-fossil-fuel",
@@ -48,6 +55,14 @@
           "description": "&lt;p&gt;The net zero economy is booming, so claims that prosperity depends on oil and gas are bunkum – unless you’re a Reform backer with fossil fuel interests, of course&lt;/p&gt;&lt;p&gt;Really? You want to destroy a million jobs? Vote Reform UK for mass unemployment: is that your pitch? Hammer these questions home whenever you meet a supporter of the party. Or, for that matter, a Conservative, as their party now takes an almost identical line.&lt;/p&gt;&lt;p&gt;&lt;a href=\"https://www.thegua",
           "published": "2026-06-10T07:00:14.000Z",
           "score": 8
+        },
+        {
+          "title": "Households could save £200 on energy bills in plan to break link between gas and electricity prices, says thinktank",
+          "link": "https://www.theguardian.com/environment/2026/jun/10/public-procurement-electricity-could-save-households",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Government plan to de-link gas and electricity prices aims to reduce bills for consumers after global surge in prices&lt;/p&gt;&lt;p&gt;Households in England, Scotland and Wales could save nearly £200 a year on their energy bills if the government stepped into the market to act as the sole buyer of electricity, according to a thinktank.&lt;/p&gt;&lt;p&gt;The research found that public procurement of electricity, meaning the government would become the “single buyer” of power before it i",
+          "published": "2026-06-10T06:00:13.000Z",
+          "score": 7
         },
         {
           "title": "More than half of clean energy schemes needed for Labour’s 2030 target offered grid connection",
@@ -58,19 +73,11 @@
           "score": 7
         },
         {
-          "title": "Scotland's greenhouse gas emissions fall slightly as progress slows",
-          "link": "https://www.bbc.com/news/articles/cg748xd7vpjo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The amount of planet-warming gases produced in 2024 fell by 1% compared to the previous year.",
-          "published": "2026-06-09T11:42:03.000Z",
-          "score": 7
-        },
-        {
-          "title": "Climate summit host Turkey proposes 2035 global electricity target - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTGE5Ql8xQjJhT2NsZGtlTjFUa3BjaU91ZlYxbFBDTldCNzE3dXFFUWFfeEFQbmJmLVlCQXhKa0hHamRoZjBUR3haaDRtMVlNWFl5bmpqQUx4OXgzT3BKQlFuUi1mUEg0NnFrVmI4QlJJSy1XaWdrdVlaVGxIRHd2Mk1DUFBaSjcxcXpfV3M5X3c4d1U5djRiSXdyd3BHdmxlNDhqdVVaU1ROMjRpdTlHYUJDb3JHV3lPQTMzVkln?oc=5",
+          "title": "LNG demand in Asia recovers from Iran shock as China buys - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPME8tR25BVGlpS1lPR09idGVCV2dUQ205eXM5SmdaRGlWMjZ5WWswRjdsLVY1R183Nmk5ZkEzOWNUTUtJSFc2VHEtdU5qTmRLS0RxeXZXVlBTTEpnaGI1VWRlOE1UdkxBbmxZcWkwSzJZMlNobFZKTFZPdUdLZjBYN000ZnExcE1BQkUxYWdKQWVkdlRoUUhwcnVlbWtpVHFJQWQwakxwTjFYZ1NsTzNFaXQwSk41QQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQTGE5Ql8xQjJhT2NsZGtlTjFUa3BjaU91ZlYxbFBDTldCNzE3dXFFUWFfeEFQbmJmLVlCQXhKa0hHamRoZjBUR3haaDRtMVlNWFl5bmpqQUx4OXgzT3BKQlFuUi1mUEg0NnFrVmI4QlJJSy1XaWdrdVlaVGxIRHd2Mk1DUFBaSjcxcXpfV3M5X3c4d1U5djRiSXdyd3BHdmxlNDhqdVVaU1ROMjRpdTlHYUJDb3JHV3lPQTMzVkln?oc=5\" target=\"_blank\"&gt;Climate summit host Turkey proposes 2035 global electricity target&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-09T11:18:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPME8tR25BVGlpS1lPR09idGVCV2dUQ205eXM5SmdaRGlWMjZ5WWswRjdsLVY1R183Nmk5ZkEzOWNUTUtJSFc2VHEtdU5qTmRLS0RxeXZXVlBTTEpnaGI1VWRlOE1UdkxBbmxZcWkwSzJZMlNobFZKTFZPdUdLZjBYN000ZnExcE1BQkUxYWdKQWVkdlRoUUhwcnVlbWtpVHFJQWQwakxwTjFYZ1NsTzNFaXQwSk41QQ?oc=5\" target=\"_blank\"&gt;LNG demand in Asia recovers from Iran shock as China buys&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-09T22:01:03.000Z",
           "score": 7
         }
       ]
@@ -88,20 +95,12 @@
           "score": 16
         },
         {
-          "title": "IPCC Chair&#8217;s Remarks at the 18th Meeting of the Research Dialogue",
-          "link": "https://www.ipcc.ch/2026/06/09/ipcc-chair-jim-skea-18th-research-dialogue/",
-          "source": "IPCC",
-          "description": "64th Session of the Subsidiary Body for Scientific and Technological Advice (SBSTA64), 9 June 2026, Bonn, Germany. Your Excellencies, distinguished delegates and colleagues, ladies and gentlemen, On behalf of the Intergovernmental Panel on Climate Change, the IPCC, thank you for the opportunity to address the 18th Research Dialogue. Before focusing on the themes of the [&#8230;]",
-          "published": "2026-06-09T09:24:26.000Z",
-          "score": 11
-        },
-        {
-          "title": "'Value of trees' in council's healthy spaces plan",
-          "link": "https://www.bbc.com/news/articles/cdxd9552l2wo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The authority wants a more consistent approach to trees and woodlands with more protections.",
-          "published": "2026-06-09T11:40:27.000Z",
-          "score": 8
+          "title": "Trump targeting immigrants from countries hit most by climate shocks",
+          "link": "https://www.theguardian.com/us-news/2026/jun/10/trump-administration-immigrants-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;A Guardian analysis reveals how most of 39 countries facing US entry restrictions are most vulnerable environmentally&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/2026/jun/10/climate-change-crisis-refugees\"&gt;‘Every day it’s more barriers’: how the US is shutting out climate refugees&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt;’s immigration crackdown is ",
+          "published": "2026-06-10T13:00:20.000Z",
+          "score": 7
         },
         {
           "title": "Super-rich’s assets cause outsized amount of climate harm, study says",
@@ -112,11 +111,19 @@
           "score": 7
         },
         {
-          "title": "What&#039;s holding US pastors back from preaching on climate",
-          "link": "https://www.dw.com/en/what-s-holding-us-pastors-back-from-preaching-on-climate/a-77173938?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As the White House undoes scores of environmental regulations and protections, some Christian leaders are inviting their congregations to do as the Bible asks, and be good stewards of the land.",
-          "published": "2026-06-10T07:40:00.000Z",
+          "title": "‘Every day it’s more barriers’: how the US is shutting out climate refugees",
+          "link": "https://www.theguardian.com/us-news/2026/jun/10/climate-change-crisis-refugees",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;As the US shuts its doors to most refugees, there’s little hope of a new system to help those forced from home by climate impacts&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/us-news/2026/jun/10/trump-administration-immigrants-climate-crisis\"&gt;Trump targets migrants from countries hit most by climate shocks&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Millions of people around the world are having their lives upended by floods, storms and heatwave",
+          "published": "2026-06-10T13:00:21.000Z",
+          "score": 7
+        },
+        {
+          "title": "The rightwing campaign to control how US judges view the climate crisis",
+          "link": "https://www.theguardian.com/us-news/2026/jun/10/judges-climate-crisis-energy-secretary",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;US energy secretary Chris Wright featured in seminars to judges when he was a fracking executive&lt;/p&gt;&lt;p&gt;As cities and states sue big &lt;a href=\"https://www.theguardian.com/business/oil\"&gt;oil&lt;/a&gt; for billions in damages over allegations that it covered up the dangers of its products, rightwing organizations are attempting to discredit the wave of litigation. They claim the lawyers behind it are teaming up with an environmentally focused legal education non-profit to b",
+          "published": "2026-06-10T12:00:19.000Z",
           "score": 7
         }
       ]
@@ -125,14 +132,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQLVc1MVBsYnkwTWZPT2FCMy14QjFGYnc3ZzBhSmdSTGdCRTlfM1dkY3RoXzJvbjRVc0U1dXRnUC1QalZvalE1eUpoRllIOVZhN2hMSmxTaFdWMGViRF9QSS16NXN0VjRkS01NMXdMc0t6ZVNsMEc5dXRsaGNpNDRjQUl3NFNZRzN0YWxmVjJ0ZEtORG5tTnYyYU1weFctbGJwM3R1NEFWcVZ5TllWUm1NakR1elE3X3hJMVN4RUlldw?oc=5\" target=\"_blank\"&gt;China prepares $295 billion plan to fund nationwide AI buildout, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-06-09T09:24:09.000Z",
-          "score": 2
-        },
         {
           "title": "US House passes $70 billion bill to fund ICE, Border Patrol - Reuters",
           "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxONGpxYlQwWjMwYzh5VHBVMGRqblZYUkliTEl3Y184bmtaS3dUVllTRE5UT0lrZ2FMQU9wcG16VjFPVWgwOERQd3lwU040Sm1TcXBXLWtDUUpMRThGUGNWVFc0UXNuMWhvbnhXREhlY3dzZVV5TW1XMHozUFl4cDF1QS1DZjNSZnoycWxxcUNUUnM3QnNIQUdDRWtFZ290eXlq?oc=5",
@@ -148,8 +147,16 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "EU proposes entry ban for Russian Ukraine combatants in new sanctions package",
-          "link": "https://www.dw.com/en/eu-proposes-entry-ban-for-russian-ukraine-combatants-in-new-sanctions-package/a-77474536?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "DRAFT RECOMMENDATION FOR SECOND READING on the Council position at first reading with a view to the adoption of a regulation of the European Parliament and of the Council on plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625 - PE789.924v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PR-789924_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "DRAFT RECOMMENDATION FOR SECOND READING on the Council position at first reading with a view to the adoption of a regulation of the European Parliament and of the Council on plants obtained by certain new genomic techniques and their food and feed, and amending Regulation (EU) 2017/625&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Jessica Polfjärd&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, ",
+          "published": "2026-06-10T10:16:35.000Z",
+          "score": 22
+        },
+        {
+          "title": "EU proposes entry ban for Russians who fought in Ukraine",
+          "link": "https://www.dw.com/en/eu-proposes-entry-ban-for-russians-who-fought-in-ukraine/a-77474536?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "The EU&#039;s 21st sanctions package includes a provision to deny entry to anyone who has served in Russia&#039;s armed forces amid the invasion of Ukraine. It will also target the so-called shadow fleet, banks and cryptocurrency.",
           "published": "2026-06-09T17:14:00.000Z",
@@ -174,8 +181,16 @@
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPNy1nZTVNMUZMQlhyM29BSk5MZlVhaTkzR01pVklreVp2NV9maGlKc09vTWx3SE5rT2llZ01MN3loRmxQX3VsLXBHSk9pakU0ZjNTVWljS3c3c2ZHdUNJSmJLMG1laFFWSWY2NGU0YzNOYUxHQ01MQzJSYmE2WllhYnRZY1FnT3d4X2F4RTg2ZDQzOU1ydkJvNGg0cUlhNndzM3puQTNOX1BvVzVHbmpyQTVISm42MGJsc2c?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPNy1nZTVNMUZMQlhyM29BSk5MZlVhaTkzR01pVklreVp2NV9maGlKc09vTWx3SE5rT2llZ01MN3loRmxQX3VsLXBHSk9pakU0ZjNTVWljS3c3c2ZHdUNJSmJLMG1laFFWSWY2NGU0YzNOYUxHQ01MQzJSYmE2WllhYnRZY1FnT3d4X2F4RTg2ZDQzOU1ydkJvNGg0cUlhNndzM3puQTNOX1BvVzVHbmpyQTVISm42MGJsc2c?oc=5\" target=\"_blank\"&gt;Brussels presses Albania as Kushner resort threatens to flout EU environmental law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-09T21:56:09.000Z",
+          "published": "2026-06-09T14:56:00.000Z",
           "score": 12
+        },
+        {
+          "title": "Rising cyberscam losses expose gaps in EU response",
+          "link": "https://www.dw.com/en/rising-cyberscam-losses-expose-gaps-in-eu-response/a-77487321?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europeans are losing billions to online scams, yet the EU has been slower than the US, the UK and China in targeting the Southeast Asian networks behind many of them.",
+          "published": "2026-06-10T11:46:00.000Z",
+          "score": 8
         },
         {
           "title": "NASA picks first European astronaut for Artemis mission",
@@ -183,14 +198,6 @@
           "source": "Deutsche Welle World",
           "description": "Italian astronaut Luca Parmitano will be the lead pilot for the Artemis III test flight. The NASA mission is expected to launch in 2027 to test technology for a future moon landing.",
           "published": "2026-06-10T05:06:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU: Youth involvement in synthetic opioids smuggling rises",
-          "link": "https://www.dw.com/en/eu-youth-involvement-in-synthetic-opioids-smuggling-rises/a-77478901?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Europe&#039;s illicit drug market is rapidly evolving, according to a new report, with cartels increasingly employing young people to traffic dangerous synthetic opioids.",
-          "published": "2026-06-09T17:13:00.000Z",
           "score": 8
         },
         {
@@ -213,8 +220,8 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 413,
-    "articlesLast24h": 172,
+    "totalArticlesScanned": 417,
+    "articlesLast24h": 171,
     "afterDedup": 161,
     "feedsQueried": 19
   }

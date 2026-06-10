@@ -11,12 +11,20 @@
  */
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useSyncExternalStore } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   pwApi,
   type WorkspaceActivityEntry,
   type WorkspaceActivityStatus,
 } from '@/lib/project-workspace/client';
+import {
+  getDeadLetters,
+  getOutboxStatus,
+  requeueDeadLetters,
+  subscribeOutbox,
+  type OutboxStatus,
+} from '@/lib/content-analysis/outbox';
 import { supabase } from '@/lib/supabase';
 
 const PAGE_SIZE = 50;
@@ -49,13 +57,96 @@ function timeOfDay(iso: string): string {
   return new Date(iso).toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' });
 }
 
+/** Friendly name for the API a failed save was headed to. */
+function describeSaveTarget(url: string): string {
+  if (url.includes('/corpus')) return 'adding/removing a document';
+  if (url.includes('/segments')) return 'saving tags';
+  if (url.includes('/summaries')) return 'saving a summary';
+  if (url.includes('/codes')) return 'saving codes';
+  return 'a workspace save';
+}
+
+const EMPTY_OUTBOX: OutboxStatus = { pending: 0, dead: 0, lastError: null, persistent: true };
+const getServerOutbox = () => EMPTY_OUTBOX;
+
+/** The slice of the project's modules the link builder needs. */
+export interface ActivityLogModule {
+  id: string;
+  kind: string;
+}
+
+/**
+ * Destination for one entry: the module tab it belongs to and, for
+ * content-analysis changes, the document itself (via `?doc=`).
+ */
+function entryHref(
+  e: WorkspaceActivityEntry,
+  projectId: string,
+  modules: ActivityLogModule[]
+): string {
+  const base = `/project-workspace/${encodeURIComponent(projectId)}`;
+  const byKind = (...kinds: string[]) =>
+    modules.find(m => kinds.includes(m.kind))?.id ?? null;
+  const toModule = (id: string | null, doc?: string) =>
+    id
+      ? `${base}?module=${encodeURIComponent(id)}${doc ? `&doc=${encodeURIComponent(doc)}` : ''}`
+      : base;
+
+  switch (e.tableName) {
+    case 'pw_projects':
+      return base;
+    case 'pw_modules':
+    case 'pw_custom_module_content':
+      return toModule(e.entityId);
+    case 'pw_indicator_revisions':
+    case 'pw_flowchart_state': // flow charts live inside the Indicator module
+      return toModule(byKind('indicators'));
+    case 'pw_recommendations':
+    case 'pw_recommendation_events':
+      return toModule(byKind('recommendations'));
+    case 'pw_member_state_cells':
+      return toModule(byKind('member-states'));
+    case 'pw_meetings':
+    case 'pw_meeting_milestones':
+    case 'pw_project_phases':
+      return toModule(byKind('meetings'));
+    case 'pw_policy_annotations':
+    case 'pw_policy_codes':
+      return toModule(byKind('policy-analysis', 'content-analysis'));
+    case 'pw_comments':
+    case 'pw_verifications': {
+      // entity_id is "<targetKind>:<targetId>" — route by the target's kind.
+      const kind = e.entityId.split(':', 1)[0];
+      if (kind === 'indicator') return toModule(byKind('indicators'));
+      if (kind === 'recommendation') return toModule(byKind('recommendations'));
+      if (kind === 'member-state-cell') return toModule(byKind('member-states'));
+      if (kind === 'policy') return toModule(byKind('policy-analysis', 'content-analysis'));
+      return base;
+    }
+    case 'content_analysis_corpus':
+    case 'content_analysis_segments':
+    case 'content_analysis_summaries':
+    case 'content_analysis_notes':
+    case 'content_analysis_overall_tags':
+      return toModule(byKind('content-analysis', 'policy-analysis'), e.entityId);
+    case 'content_analysis_outlines':
+    case 'content_analysis_codes':
+      return toModule(byKind('content-analysis', 'policy-analysis'));
+    default:
+      return base;
+  }
+}
+
 export default function ActivityLogPanel({
   projectId,
+  modules,
   onClose,
 }: {
   projectId: string;
+  modules: ActivityLogModule[];
   onClose: () => void;
 }) {
+  const router = useRouter();
   const [entries, setEntries] = useState<WorkspaceActivityEntry[]>([]);
   const [status, setStatus] = useState<WorkspaceActivityStatus | null>(null);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);
@@ -64,18 +155,27 @@ export default function ActivityLogPanel({
   // True while the last page came back full — there may be older entries.
   const [hasMore, setHasMore] = useState(false);
 
+  // Unsaved / rejected writes still sitting in this browser's outbox — the
+  // change looks present on the page but never reached the database, so it
+  // can't be in the log. Live-updates while the dialog is open.
+  const outbox = useSyncExternalStore(subscribeOutbox, getOutboxStatus, getServerOutbox);
+  const [retrying, setRetrying] = useState(false);
+
+  const reload = useCallback(async () => {
+    const { entries: first, status: st } = await pwApi.activityLog(projectId, {
+      limit: PAGE_SIZE,
+    });
+    setEntries(first);
+    setStatus(st);
+    setHasMore(first.length === PAGE_SIZE);
+    setLoading(false);
+  }, [projectId]);
+
   useEffect(() => {
     let cancelled = false;
-    (async () => {
-      const { entries: first, status: st } = await pwApi.activityLog(projectId, {
-        limit: PAGE_SIZE,
-      });
-      if (cancelled) return;
-      setEntries(first);
-      setStatus(st);
-      setHasMore(first.length === PAGE_SIZE);
-      setLoading(false);
-    })();
+    reload().catch(() => {
+      if (!cancelled) setLoading(false);
+    });
     if (supabase) {
       supabase.auth.getSession().then(({ data }) => {
         if (!cancelled) setSignedIn(!!data.session);
@@ -84,7 +184,23 @@ export default function ActivityLogPanel({
     return () => {
       cancelled = true;
     };
-  }, [projectId]);
+  }, [reload]);
+
+  // After a "retry failed saves", reload the log once the queue drains — the
+  // retried writes fire the triggers, so their entries should appear now.
+  useEffect(() => {
+    if (retrying && outbox.pending === 0) {
+      setRetrying(false);
+      void reload();
+    }
+  }, [retrying, outbox.pending, reload]);
+
+  function retryFailedSaves() {
+    setRetrying(true);
+    requeueDeadLetters();
+  }
+
+  const lastDead = outbox.dead > 0 ? getDeadLetters().slice(-1)[0] : null;
 
   // Tables that exist but have no change-tracking trigger — the one state
   // where edits silently go unrecorded (migration 067/068 not fully applied).
@@ -140,6 +256,50 @@ export default function ActivityLogPanel({
           Every change made in this project — who did what, and when. The log is stored in the
           database and included in the nightly backup.
         </p>
+
+        {/* Changes stuck in THIS browser that never reached the database. */}
+        {(outbox.dead > 0 || outbox.pending > 0) && (
+          <div className="mb-3 rounded-lg border border-red-300 bg-red-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-red-900">
+              {outbox.dead > 0
+                ? `${outbox.dead} change${outbox.dead === 1 ? '' : 's'} from this browser never reached the database`
+                : `${outbox.pending} change${outbox.pending === 1 ? '' : 's'} still saving…`}
+            </p>
+            {outbox.dead > 0 && (
+              <p className="text-[11px] text-red-800 mt-0.5 leading-snug">
+                They still show on the page from the local copy, but they were never saved or
+                logged. Failed saves are kept across sessions, so these can be old.
+                {lastDead
+                  ? ` Most recent: ${describeSaveTarget(lastDead.url)} rejected with error ${
+                      lastDead.status
+                    } on ${new Date(lastDead.diedAt).toLocaleString(undefined, {
+                      day: 'numeric',
+                      month: 'short',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}${
+                      lastDead.status === 401
+                        ? ' — this browser had no valid login at that moment (e.g. an expired session), even if the page looked signed in'
+                        : ''
+                    }.`
+                  : ''}{' '}
+                {signedIn === false
+                  ? 'Sign in first, then retry.'
+                  : 'You are signed in now, so retrying will save them.'}
+              </p>
+            )}
+            {outbox.dead > 0 && (
+              <button
+                type="button"
+                onClick={retryFailedSaves}
+                disabled={retrying}
+                className="mt-2 px-2.5 py-1 rounded-md bg-red-700 text-white text-[11px] font-semibold hover:bg-red-800 disabled:opacity-50"
+              >
+                {retrying ? 'Retrying…' : 'Retry failed saves now'}
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Setup / sign-in problems that explain a silent or incomplete log. */}
         {!loading && status && !status.installed && (
@@ -230,23 +390,40 @@ export default function ActivityLogPanel({
                 {group.items.map(e => {
                   const op = OP_STYLE[e.op] ?? OP_STYLE.update;
                   return (
-                    <li key={e.id} className="flex items-start gap-2.5 rounded-md px-2 py-1.5 hover:bg-grey-50">
-                      <span
-                        className={`shrink-0 mt-1.5 w-2 h-2 rounded-full ${op.dot}`}
-                        title={op.label}
-                        aria-hidden
-                      />
-                      <span className="min-w-0 flex-1">
-                        <span className="block text-xs text-tertiary-dark leading-snug">
-                          <span className="font-semibold">{e.actorName || 'System'}</span>
-                          {' — '}
-                          {e.summary}
+                    <li key={e.id}>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          router.push(entryHref(e, projectId, modules));
+                          onClose();
+                        }}
+                        title="Go to this change"
+                        className="group w-full flex items-start gap-2.5 rounded-md px-2 py-1.5 text-left hover:bg-grey-50"
+                      >
+                        <span
+                          className={`shrink-0 mt-1.5 w-2 h-2 rounded-full ${op.dot}`}
+                          title={op.label}
+                          aria-hidden
+                        />
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-xs text-tertiary-dark leading-snug">
+                            <span className="font-semibold">{e.actorName || 'System'}</span>
+                            {' — '}
+                            {e.summary}
+                          </span>
+                          <span className="block text-[11px] text-tertiary-light mt-0.5">
+                            {timeOfDay(e.createdAt)}
+                            {e.entityKind ? ` · ${e.entityKind}` : ''}
+                          </span>
                         </span>
-                        <span className="block text-[11px] text-tertiary-light mt-0.5">
-                          {timeOfDay(e.createdAt)}
-                          {e.entityKind ? ` · ${e.entityKind}` : ''}
-                        </span>
-                      </span>
+                        <svg
+                          className="shrink-0 mt-1 w-3.5 h-3.5 text-tertiary-light opacity-0 group-hover:opacity-100 transition-opacity"
+                          viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                          strokeLinecap="round" strokeLinejoin="round" aria-hidden
+                        >
+                          <path d="M9 18l6-6-6-6" />
+                        </svg>
+                      </button>
                     </li>
                   );
                 })}

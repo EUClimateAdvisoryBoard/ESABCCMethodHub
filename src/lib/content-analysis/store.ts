@@ -75,13 +75,14 @@ function postSegments(segments: CodedSegment[]): void {
       method: 'POST',
       url: '/api/content-analysis/segments',
       body: { segments: [s] },
+      auth: true,
     });
   }
 }
 
 function deleteSegmentRemote(id: string): void {
   // Same key as the upsert so a delete supersedes a not-yet-sent create.
-  enqueue({ key: `seg:${id}`, method: 'DELETE', url: `/api/content-analysis/segments?id=${enc(id)}` });
+  enqueue({ key: `seg:${id}`, method: 'DELETE', url: `/api/content-analysis/segments?id=${enc(id)}`, auth: true });
 }
 
 /** Persist a runtime code to the server. Only project-scoped codes are
@@ -94,11 +95,12 @@ function postCode(code: CodeNode): void {
     method: 'POST',
     url: '/api/content-analysis/codes',
     body: { codes: [code] },
+    auth: true,
   });
 }
 
 function deleteCodeRemote(id: string): void {
-  enqueue({ key: `code:${id}`, method: 'DELETE', url: `/api/content-analysis/codes?id=${enc(id)}` });
+  enqueue({ key: `code:${id}`, method: 'DELETE', url: `/api/content-analysis/codes?id=${enc(id)}`, auth: true });
 }
 
 function postSuggestions(documentId: string, suggestions: CodeSuggestion[]): void {
@@ -128,11 +130,12 @@ function postSummary(summary: DocumentSummary): void {
     method: 'POST',
     url: '/api/content-analysis/summaries',
     body: { summaries: [summary] },
+    auth: true,
   });
 }
 
 function deleteSummaryRemote(id: string): void {
-  enqueue({ key: `summ:${id}`, method: 'DELETE', url: `/api/content-analysis/summaries?id=${enc(id)}` });
+  enqueue({ key: `summ:${id}`, method: 'DELETE', url: `/api/content-analysis/summaries?id=${enc(id)}`, auth: true });
 }
 
 // ── Live server sync ──────────────────────────────────────────────────────

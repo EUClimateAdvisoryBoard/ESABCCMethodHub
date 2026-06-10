@@ -18,6 +18,16 @@
 // added by one analyst is visible to EVERY user, in both the workbench and the
 // reference library. Overall tags describe the document itself, so they are
 // stored globally (one set per document id) rather than per project.
+//
+// Durability: like the rest of the workbench, overall tags are localStorage-
+// FIRST. Every toggle is mirrored to a local cache, and the cache is hydrated
+// before — and merged with — the shared table on load. This guarantees a tag
+// you add is stored permanently from the moment you add it: it survives a
+// reload or a document switch even if the Supabase write is delayed, the device
+// is offline, or the shared table is briefly unreachable. The durable outbox
+// keeps retrying the remote write in the background until it lands, so the tag
+// also reaches teammates; the local cache just makes sure it is never lost to a
+// transient failure in the meantime.
 // ---------------------------------------------------------------------------
 
 import { useCallback, useEffect, useState } from 'react';
@@ -30,6 +40,66 @@ async function authHeader(): Promise<Record<string, string>> {
   const { data } = await supabase.auth.getSession();
   const tok = data.session?.access_token;
   return tok ? { authorization: `Bearer ${tok}` } : {};
+}
+
+// --- Local cache --------------------------------------------------------------
+// This browser's own tag toggles, mirrored to localStorage so an added tag
+// survives reloads and remounts regardless of whether the remote write has
+// landed yet. Hydrated on load and merged with the shared table.
+const CACHE_KEY = 'esabcc_ca_overall_tags_v1';
+
+type TagMap = Map<string, Set<string>>;
+
+function readCache(): TagMap {
+  const m: TagMap = new Map();
+  if (typeof window === 'undefined') return m;
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return m;
+    const obj = JSON.parse(raw) as Record<string, string[]>;
+    for (const [docId, ids] of Object.entries(obj)) {
+      if (Array.isArray(ids) && ids.length) m.set(docId, new Set(ids));
+    }
+  } catch {
+    /* corrupt cache — start empty */
+  }
+  return m;
+}
+
+function writeCache(map: TagMap): void {
+  if (typeof window === 'undefined') return;
+  try {
+    const obj: Record<string, string[]> = {};
+    for (const [docId, set] of map) if (set.size) obj[docId] = [...set];
+    localStorage.setItem(CACHE_KEY, JSON.stringify(obj));
+  } catch {
+    /* quota / unavailable — the in-memory map + outbox still hold the state */
+  }
+}
+
+/** Persist a single document's tags to the durable cache, leaving every other
+ *  document untouched. The cache therefore holds only the tags THIS browser has
+ *  added/removed — the shared table stays authoritative for everyone else's, so
+ *  a tag another user later removes still disappears here on the next load. */
+function cacheDoc(docId: string, ids: Set<string>): void {
+  const cache = readCache();
+  if (ids.size) cache.set(docId, new Set(ids));
+  else cache.delete(docId);
+  writeCache(cache);
+}
+
+/** Union of two tag maps. The local cache is this browser's intended state; the
+ *  server contributes tags added by other users/devices. Unioning preserves a
+ *  tag this browser added even when the shared table hasn't caught up yet. */
+function mergeMaps(a: TagMap, b: TagMap): TagMap {
+  const out: TagMap = new Map();
+  for (const [docId, set] of a) out.set(docId, new Set(set));
+  for (const [docId, set] of b) {
+    const existing = out.get(docId);
+    if (existing) for (const id of set) existing.add(id);
+    else out.set(docId, new Set(set));
+  }
+  return out;
 }
 
 export interface OverallTagsApi {
@@ -47,24 +117,31 @@ export interface OverallTagsApi {
 export function useOverallTags(): OverallTagsApi {
   const { user, requireAuth } = useAuth();
   // docId → set of code ids.
-  const [map, setMap] = useState<Map<string, Set<string>>>(new Map());
+  const [map, setMap] = useState<TagMap>(new Map());
   const [loaded, setLoaded] = useState(false);
 
   const load = useCallback(async () => {
+    // Hydrate from the local cache first — a previously-added tag is shown
+    // immediately and survives even when the shared table is unreachable.
+    const cached = readCache();
+    if (cached.size) setMap(prev => mergeMaps(prev, cached));
+
     try {
       const res = await fetch('/api/content-analysis/overall-tags');
       if (res.ok) {
         const { tags } = (await res.json()) as { tags: { documentId: string; codeId: string }[] };
-        const m = new Map<string, Set<string>>();
+        const server: TagMap = new Map();
         for (const t of tags ?? []) {
-          let set = m.get(t.documentId);
-          if (!set) { set = new Set(); m.set(t.documentId, set); }
+          let set = server.get(t.documentId);
+          if (!set) { set = new Set(); server.set(t.documentId, set); }
           set.add(t.codeId);
         }
-        setMap(m);
+        // Merge the shared table in without dropping locally-added tags that
+        // may not have synced yet.
+        setMap(prev => mergeMaps(prev, server));
       }
     } catch {
-      /* offline / not configured — fall back to empty (policy AI baseline only) */
+      /* offline / not configured — keep the cached map (no remote overwrite) */
     } finally {
       setLoaded(true);
     }
@@ -87,6 +164,14 @@ export function useOverallTags(): OverallTagsApi {
       const u = user ?? (await requireAuth('Sign in to edit overall tags.'));
       if (!u) return;
       const had = map.get(docId)?.has(codeId) ?? false;
+
+      // Write to the durable local cache up front, so the tag is stored
+      // permanently the instant it is toggled — it survives a reload or a
+      // document switch even if the remote write below never lands.
+      const nextSet = new Set(map.get(docId) ?? []);
+      if (had) nextSet.delete(codeId);
+      else nextSet.add(codeId);
+      cacheDoc(docId, nextSet);
 
       // Optimistic update.
       setMap(prev => {
