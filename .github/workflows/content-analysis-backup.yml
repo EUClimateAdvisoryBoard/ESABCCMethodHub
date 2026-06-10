@@ -117,6 +117,17 @@ jobs:
           Do not edit this branch by hand.
           EOF
 
+          # Vercel auto-builds every pushed branch; this one is data-only (no
+          # Next.js app), so tell Vercel not to deploy it — otherwise each
+          # nightly push produces a red failed-deployment notification.
+          cat > wt-backup/vercel.json <<'EOF'
+          {
+            "git": {
+              "deploymentEnabled": false
+            }
+          }
+          EOF
+
           cd wt-backup
           git add -A
           if git diff --cached --quiet; then
