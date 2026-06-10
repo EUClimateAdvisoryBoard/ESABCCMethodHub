@@ -191,6 +191,7 @@ $ribbonXml = @'
           <button id="btnInsert" label="Insert Citation" size="large" imageMso="FootnoteInsert" onAction="Ribbon_InsertCitation" screentip="Search and insert a citation at cursor"/>
           <button id="btnShort" label="Short Citation" size="large" imageMso="BibliographyStyle" onAction="Ribbon_InsertShortCitation" screentip="Insert short citation: Author et al. (Year)"/>
           <button id="btnGroup" label="Group Citation" size="large" imageMso="ContentControlBuildingBlockGallery" onAction="Ribbon_GroupCitation" screentip="Build a multi-author citation"/>
+          <button id="btnWorkspace" label="Cite from Workspace" size="large" imageMso="Folder" onAction="Ribbon_CiteFromWorkspace" screentip="Cite literature from a project workspace - clustered by policy / scientific / grey, searchable and filterable by tags"/>
           <button id="btnDOI" label="Add by DOI" size="normal" imageMso="HyperlinkCreate" onAction="Ribbon_AddByDOI" screentip="Look up a reference by DOI"/>
           <button id="btnEdit" label="Edit Citation" size="normal" imageMso="ReviewEditDocument" onAction="Ribbon_EditCitation" screentip="Edit the citation at the cursor: convert short/long, add references, replace, or delete"/>
         </group>
