@@ -141,7 +141,7 @@ function mapFamily(fam: ApiFamily, iso3: string): ClimatePolicy {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-async function fetchAllFamilies(): Promise<ApiFamily[]> {
+async function fetchAllFamilies(): Promise<{ families: ApiFamily[]; pagesFetched: number }> {
   const pageUrl = (page: number) =>
     `${API_BASE}/families/?corpus.import_id=${CCLW_CORPUS}&page=${page}&page_size=${PAGE_SIZE}`;
 
@@ -153,6 +153,8 @@ async function fetchAllFamilies(): Promise<ApiFamily[]> {
   const families: ApiFamily[] = [];
   let page = 1;
   let done = false;
+  let pagesFetched = 0;
+  let prevPageFirstId = '';
 
   while (!done && page <= MAX_PAGES) {
     const pages: number[] = [];
@@ -160,7 +162,16 @@ async function fetchAllFamilies(): Promise<ApiFamily[]> {
     const batches = await Promise.all(pages.map((p) => fetchJson(pageUrl(p))));
     for (const b of batches) {
       const batch = b.data ?? b.families ?? [];
+      // If the service ever ignores the page parameter we would loop over
+      // identical pages until MAX_PAGES — detect and bail instead.
+      const firstId = String(batch[0]?.import_id ?? '');
+      if (firstId && firstId === prevPageFirstId) {
+        done = true;
+        break;
+      }
+      prevPageFirstId = firstId;
       families.push(...batch);
+      pagesFetched += 1;
       if (batch.length < PAGE_SIZE) done = true;
     }
     page += CONCURRENCY;
@@ -168,12 +179,13 @@ async function fetchAllFamilies(): Promise<ApiFamily[]> {
 
   // Pages are ordered by last_modified, which can shift mid-crawl — dedupe.
   const seen = new Set<string>();
-  return families.filter((f) => {
+  const deduped = families.filter((f) => {
     const id = String(f.import_id ?? f.slug ?? '');
     if (!id || seen.has(id)) return false;
     seen.add(id);
     return true;
   });
+  return { families: deduped, pagesFetched };
 }
 
 export interface RefreshResult {
@@ -182,7 +194,7 @@ export interface RefreshResult {
 }
 
 export async function refreshFromClimateLaws(): Promise<RefreshResult> {
-  const families = await fetchAllFamilies();
+  const { families, pagesFetched } = await fetchAllFamilies();
 
   const policies: ClimatePolicy[] = [];
   for (const fam of families) {
@@ -201,8 +213,12 @@ export async function refreshFromClimateLaws(): Promise<RefreshResult> {
   // with an empty or untitled one.
   const untitled = policies.filter((p) => !p.title).length;
   if (policies.length < 200 || untitled > policies.length / 10) {
+    // Diagnostic shape of the message matters: "1 page" → the deployment
+    // is running code that trusted the API's broken `total` field;
+    // "many pages, few EU policies" → the geography mapping broke.
     throw new Error(
-      `Refresh aborted: result looks broken (${policies.length} policies, ${untitled} untitled). ` +
+      `Refresh aborted: result looks broken (${policies.length} EU policies, ${untitled} untitled, ` +
+        `from ${families.length} families across ${pagesFetched} pages). ` +
         'The climatepolicyradar.org API schema may have changed.',
     );
   }
