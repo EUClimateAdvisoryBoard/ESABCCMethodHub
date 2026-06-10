@@ -22,6 +22,7 @@ import {
   defaultFrameworkBoardBeta,
   defaultFrameworkBoardAdvancedV1,
   defaultFrameworkBoardAdvancedV3,
+  defaultFrameworkBoardPolicyGap2,
   FRAMEWORK_INDICATOR_INDEX,
   type FrameworkBoard as Board,
   type SectorFramework,
@@ -78,6 +79,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
     if (isAdvanced) return defaultFrameworkBoardAdvancedV1();
     if (isBeta) return defaultFrameworkBoardBeta();
     if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
+    if (version.id === 'policy-gap-2') return defaultFrameworkBoardPolicyGap2();
     return defaultFrameworkBoard();
   }, [isAdvanced, isBeta, version.id]);
   const [mounted, setMounted] = useState(false);
