@@ -1,0 +1,127 @@
+{
+  "generatedAt": "2026-06-10T07:40:53.275Z",
+  "source": "https://ncezswssnjrigjqwzwnq.supabase.co",
+  "format": "jsonl-per-table (PostgREST rows)",
+  "tables": {
+    "content_analysis_codes": {
+      "rows": 12,
+      "bytes": 3460
+    },
+    "content_analysis_segments": {
+      "rows": 159,
+      "bytes": 108199
+    },
+    "content_analysis_suggestions": {
+      "rows": 15,
+      "bytes": 10305
+    },
+    "content_analysis_summaries": {
+      "rows": 12,
+      "bytes": 5525
+    },
+    "content_analysis_notes": {
+      "rows": 2,
+      "bytes": 627
+    },
+    "content_analysis_overall_tags": {
+      "rows": 29,
+      "bytes": 5026
+    },
+    "content_analysis_documents": {
+      "rows": 8,
+      "bytes": 4132858
+    },
+    "content_analysis_corpus": {
+      "rows": 0,
+      "missing": true
+    },
+    "content_analysis_outlines": {
+      "rows": 0,
+      "missing": true
+    },
+    "content_analysis_master_tag_status": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "content_analysis_project_locks": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "pw_projects": {
+      "rows": 2,
+      "bytes": 805
+    },
+    "pw_modules": {
+      "rows": 5,
+      "bytes": 2021
+    },
+    "pw_indicators": {
+      "rows": 228,
+      "bytes": 170779
+    },
+    "pw_indicator_points": {
+      "rows": 2204,
+      "bytes": 256139
+    },
+    "pw_recommendations": {
+      "rows": 187,
+      "bytes": 181055
+    },
+    "pw_recommendation_events": {
+      "rows": 1751,
+      "bytes": 617906
+    },
+    "pw_member_state_cells": {
+      "rows": 1,
+      "bytes": 200
+    },
+    "pw_policy_annotations": {
+      "rows": 1,
+      "bytes": 285
+    },
+    "pw_indicator_refreshes": {
+      "rows": 7,
+      "bytes": 1759
+    },
+    "pw_custom_module_content": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "pw_policy_codes": {
+      "rows": 3,
+      "bytes": 1197
+    },
+    "pw_indicator_sheets": {
+      "rows": 45,
+      "bytes": 200109
+    },
+    "pw_comments": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "pw_verifications": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "pw_indicator_revisions": {
+      "rows": 1,
+      "bytes": 2191
+    },
+    "pw_meetings": {
+      "rows": 3,
+      "bytes": 1213
+    },
+    "pw_meeting_milestones": {
+      "rows": 1,
+      "bytes": 406
+    },
+    "pw_project_phases": {
+      "rows": 0,
+      "bytes": 0
+    },
+    "pw_flowchart_state": {
+      "rows": 0,
+      "missing": true
+    }
+  }
+}
