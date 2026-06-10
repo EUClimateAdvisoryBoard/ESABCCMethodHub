@@ -18,6 +18,7 @@ import type { Indicator } from '@/data/ecno-indicators';
 import {
   createVersion,
   deleteVersion,
+  hydrateFlowchartState,
   loadVersions,
   renameVersion,
   type FlowChartVersion,
@@ -26,6 +27,7 @@ import FrameworkBoard from './FrameworkBoard';
 import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView';
 import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardView';
 import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
+import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
 
 interface Props {
   projectId: string;
@@ -40,9 +42,25 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
   const [activeId, setActiveId] = useState<string>('report-faithful');
   const [creating, setCreating] = useState(false);
   const [renaming, setRenaming] = useState(false);
+  // Bumped once the shared store has been pulled into the localStorage cache, so
+  // the board below remounts and renders the synced content rather than the
+  // cache's pre-hydration state.
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
+    // Paint instantly from the local cache, then hydrate from the shared store
+    // and re-read so every collaborator converges on the same versions/boards.
     setVersions(loadVersions(projectId));
+    setHydrated(false);
+    let cancelled = false;
+    void hydrateFlowchartState(projectId).then(() => {
+      if (cancelled) return;
+      setVersions(loadVersions(projectId));
+      setHydrated(true);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, [projectId]);
 
   const reload = (nextActiveId?: string) => {
@@ -132,6 +150,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 5 · sectors
             </span>
           )}
+          {active.variant === 'advanced-v6' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-rose-100 text-rose-700">
+              adv 6 · loop
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -181,6 +204,15 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
         />
+      ) : active.variant === 'advanced-v6' ? (
+        // The adaptive-policy-loop board reads each sector as a closed control
+        // loop (scenario corridor → instruments → twin-track delivery →
+        // observed results → ratchet) — also a computed, read-only view.
+        <PolicyLoopBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
       ) : (
         <FrameworkBoard
           key={active.id}
@@ -188,6 +220,7 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
           projectId={projectId}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
+          hydrated={hydrated}
         />
       )}
 

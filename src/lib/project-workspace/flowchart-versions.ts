@@ -56,7 +56,13 @@ import {
  *  - 'advanced-v5' — the "Advanced version 5" sectored results-chain board: the
  *                 same six-rung M&E chain as Advanced version 2, but with the
  *                 sector folded in as a sub-layer inside every rung and track,
- *                 so each rung shows which sectors it covers.
+ *                 so each rung shows which sectors it covers; and
+ *  - 'advanced-v6' — the "Advanced version 6" adaptive-policy-loop board: each
+ *                 sector as a closed five-station control loop (scenario
+ *                 corridor → policy instruments → twin-track delivery →
+ *                 observed results → gap & ratchet), with mitigation and
+ *                 adaptation as equal lanes inside every sector, scenario
+ *                 benchmarks as station 1 and the policy side as stations 2/5.
  */
 export type FlowChartVariant =
   | 'report'
@@ -64,7 +70,8 @@ export type FlowChartVariant =
   | 'advanced'
   | 'advanced-v2'
   | 'advanced-v4'
-  | 'advanced-v5';
+  | 'advanced-v5'
+  | 'advanced-v6';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -104,6 +111,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v3', name: 'Advanced version 3', variant: 'advanced', builtIn: true },
   { id: 'advanced-v4', name: 'Advanced version 4', variant: 'advanced-v4', builtIn: true },
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
+  { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
 ];
 
@@ -126,6 +134,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v3') return `esabcc-framework-board-advanced-v3:${projectId}`;
   if (version.id === 'advanced-v4') return `esabcc-framework-board-advanced-v4:${projectId}`;
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
+  if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
   if (version.id === 'policy-gap-2') return `esabcc-framework-board-policy-gap-2:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
@@ -135,15 +144,84 @@ function seedStorageKey(version: FlowChartVersion, projectId: string): string {
   return `${boardStorageKey(version, projectId)}:seed`;
 }
 
+// ── Shared server sync ──────────────────────────────────────────────────────
+// localStorage stays a synchronous cache; the pw_flowchart_state table is the
+// shared source of truth. We hydrate the cache from the server on mount and
+// write through to the server on every edit, so collaborators converge on the
+// same boards and versions. All network calls are best-effort — the cache keeps
+// the editing session consistent if a request fails.
+
+const STATE_API = '/api/project-workspace/flowchart-state';
+
+/** Push one key→JSON entry to the shared store. */
+function pushState(projectId: string, storageKey: string, data: unknown): void {
+  if (typeof window === 'undefined' || !projectId) return;
+  void fetch(STATE_API, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ projectId, storageKey, data }),
+  }).catch(() => {
+    /* best-effort — retried on next edit; the local cache still holds it */
+  });
+}
+
+/** Delete one entry from the shared store. */
+function removeState(projectId: string, storageKey: string): void {
+  if (typeof window === 'undefined' || !projectId) return;
+  void fetch(
+    `${STATE_API}?projectId=${encodeURIComponent(projectId)}&storageKey=${encodeURIComponent(storageKey)}`,
+    { method: 'DELETE' },
+  ).catch(() => {
+    /* best-effort */
+  });
+}
+
+/**
+ * Pull every flow-chart state row for a project from the shared store into the
+ * localStorage cache, so the synchronous loaders below render server content.
+ * Call once on mount before reading versions/boards. Resolves when the cache
+ * has been populated (or on failure, leaving the existing cache untouched).
+ */
+export async function hydrateFlowchartState(projectId: string): Promise<void> {
+  if (typeof window === 'undefined' || !projectId) return;
+  try {
+    const resp = await fetch(`${STATE_API}?projectId=${encodeURIComponent(projectId)}`);
+    if (!resp.ok) return;
+    const body = (await resp.json()) as { items?: Array<{ storageKey: string; data: unknown }> };
+    for (const it of body.items ?? []) {
+      if (!it?.storageKey) continue;
+      try {
+        localStorage.setItem(it.storageKey, JSON.stringify(it.data));
+      } catch {
+        /* quota — skip this entry */
+      }
+    }
+  } catch {
+    /* offline / unconfigured — keep the existing local cache */
+  }
+}
+
+/**
+ * Persist a version's edited board: update the localStorage cache and write
+ * through to the shared store. Used by the board editor on every change.
+ */
+export function saveBoard(projectId: string, version: FlowChartVersion, board: FrameworkBoard): void {
+  const key = boardStorageKey(version, projectId);
+  writeBoard(key, board);
+  pushState(projectId, key, board);
+}
+
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
-  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
-  // sectored results-chain boards are computed/read-only and not stored as
-  // sectors boards, so they have no sectors schema to validate against.
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
+  // sectored results-chain and advanced-v6 policy-loop boards are
+  // computed/read-only and not stored as sectors boards, so they have no
+  // sectors schema to validate against.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
-    version.variant === 'advanced-v5'
+    version.variant === 'advanced-v5' ||
+    version.variant === 'advanced-v6'
   )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
@@ -181,14 +259,16 @@ function writeBoard(key: string, board: FrameworkBoard): void {
  *     if the seed was lost.
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
-  // The advanced-v2 results-chain, advanced-v4 monitoring-map and advanced-v5
-  // sectored results-chain boards are computed in their own views and are not
-  // sectors boards; hand back an empty sectors board so callers that expect the
-  // `{ sectors }` shape (e.g. duplicating a version) never crash.
+  // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
+  // sectored results-chain and advanced-v6 policy-loop boards are computed in
+  // their own views and are not sectors boards; hand back an empty sectors
+  // board so callers that expect the `{ sectors }` shape (e.g. duplicating a
+  // version) never crash.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
-    version.variant === 'advanced-v5'
+    version.variant === 'advanced-v5' ||
+    version.variant === 'advanced-v6'
   )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
@@ -231,6 +311,7 @@ function writeRegistry(projectId: string, data: RegistryData): void {
   } catch {
     /* quota / private mode */
   }
+  pushState(projectId, registryKey(projectId), data);
 }
 
 /** All versions for a project: the (possibly renamed) built-ins, then custom ones. */
@@ -265,8 +346,12 @@ export function createVersion(
     basedOnName: foundation.name,
     createdAt: Date.now(),
   };
-  writeBoard(boardStorageKey(version, projectId), source);
-  writeBoard(seedStorageKey(version, projectId), source);
+  const boardKey = boardStorageKey(version, projectId);
+  const seedKey = seedStorageKey(version, projectId);
+  writeBoard(boardKey, source);
+  writeBoard(seedKey, source);
+  pushState(projectId, boardKey, source);
+  pushState(projectId, seedKey, source);
   const reg = readRegistry(projectId);
   reg.versions.push(version);
   writeRegistry(projectId, reg);
@@ -298,10 +383,14 @@ export function deleteVersion(projectId: string, version: FlowChartVersion): voi
   reg.versions = reg.versions.filter((v) => v.id !== version.id);
   writeRegistry(projectId, reg);
   if (typeof window === 'undefined') return;
+  const boardKey = boardStorageKey(version, projectId);
+  const seedKey = seedStorageKey(version, projectId);
   try {
-    localStorage.removeItem(boardStorageKey(version, projectId));
-    localStorage.removeItem(seedStorageKey(version, projectId));
+    localStorage.removeItem(boardKey);
+    localStorage.removeItem(seedKey);
   } catch {
     /* ignore */
   }
+  removeState(projectId, boardKey);
+  removeState(projectId, seedKey);
 }

@@ -50,7 +50,7 @@ import {
 } from '@/lib/content-analysis/useLiveReferences';
 import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
 import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
-import type { AnalysisDocument, CodeNode, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
+import type { AnalysisDocument, CodeNode, CorpusDocMeta, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import {
   sourceTierOf,
   documentKindLabel,
@@ -77,6 +77,7 @@ import CodeEditorModal, {
 } from '@/components/content-analysis/CodeEditorModal';
 import { showToast } from '@/components/ui/ToastHost';
 import { uploadPdf } from '@/lib/references/pdf-storage';
+import { enqueue as enqueueOutbox } from '@/lib/content-analysis/outbox';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
@@ -182,9 +183,96 @@ interface Props {
   industryFocus?: boolean;
 }
 
-/** localStorage key holding the per-workspace corpus (document allow-list). */
+/** localStorage key holding the per-workspace corpus (document allow-list).
+ *  Kept as an offline cache; the shared source of truth is the corpus API. */
 function corpusKey(projectId: string): string {
   return `ca:ws-corpus:${projectId}`;
+}
+
+/** localStorage key holding the cached corpus document metadata (id → meta),
+ *  so the workspace list paints instantly before the server round-trip. */
+function corpusMetaKey(projectId: string): string {
+  return `ca:ws-corpus-meta:${projectId}`;
+}
+
+/** Dedupe key so an add then a remove of the same document collapse to the
+ *  latest op in the outbox (a DELETE supersedes a pending POST). */
+function corpusOutboxKey(projectId: string, documentId: string): string {
+  return `corpus:${projectId}:${documentId}`;
+}
+
+/** The self-describing snapshot stored with a corpus row, so a teammate can see
+ *  the document in the workspace list even before its substrate reaches them. */
+function docToCorpusMeta(doc: AnalysisDocument): CorpusDocMeta {
+  return {
+    id: doc.id,
+    title: doc.title,
+    shortTitle: doc.shortTitle,
+    kind: doc.kind,
+    sourceKind: doc.sourceKind ?? 'policy',
+    celexNumber: doc.celexNumber,
+    pdfUrl: doc.pdfUrl,
+    pageCount: doc.pageCount,
+    ingestSource: doc.ingestSource,
+    ingestedAt: doc.ingestedAt,
+    aiCodeIds: doc.aiCodeIds,
+    referenceType: doc.referenceType,
+    referenceAuthors: doc.referenceAuthors,
+    referenceYear: doc.referenceYear,
+    referenceUrl: doc.referenceUrl,
+  };
+}
+
+/** Rebuild a renderable AnalysisDocument from stored corpus metadata, for
+ *  documents not (yet) present in this browser's local library / reference
+ *  list. Carries no body text — the full substrate loads on demand when the
+ *  document is opened. */
+function corpusMetaToDoc(meta: CorpusDocMeta): AnalysisDocument {
+  return {
+    id: meta.id,
+    title: meta.title,
+    shortTitle: meta.shortTitle || meta.title,
+    kind: meta.kind,
+    celexNumber: meta.celexNumber ?? null,
+    eurlexUrl: null,
+    adoptionDate: null,
+    text: '',
+    aiCodeIds: meta.aiCodeIds ?? [],
+    pdfUrl: meta.pdfUrl,
+    pageCount: meta.pageCount,
+    ingestedAt: meta.ingestedAt,
+    ingestSource: meta.ingestSource,
+    sourceKind: meta.sourceKind,
+    referenceType: meta.referenceType,
+    referenceAuthors: meta.referenceAuthors,
+    referenceYear: meta.referenceYear,
+    referenceUrl: meta.referenceUrl,
+  };
+}
+
+/** Add a document to the shared workspace corpus. Routed through the durable
+ *  outbox — persisted to localStorage and retried on interval / focus / online
+ *  until the server confirms — so workspace membership syncs to teammates as
+ *  reliably as coded segments do. A bare fire-and-forget `fetch` here was the
+ *  reason the corpus appeared "not synced": any transient failure was swallowed
+ *  and the document only ever reached the adding browser. The document's
+ *  metadata travels with the row so the list renders for everyone. */
+function postCorpus(projectId: string, documentId: string, meta?: CorpusDocMeta): void {
+  enqueueOutbox({
+    key: corpusOutboxKey(projectId, documentId),
+    method: 'POST',
+    url: '/api/content-analysis/corpus',
+    body: meta ? { projectId, documentId, meta } : { projectId, documentId },
+  });
+}
+
+/** Remove a document from the shared workspace corpus, durably (same outbox). */
+function deleteCorpus(projectId: string, documentId: string): void {
+  enqueueOutbox({
+    key: corpusOutboxKey(projectId, documentId),
+    method: 'DELETE',
+    url: `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}&documentId=${encodeURIComponent(documentId)}`,
+  });
 }
 
 /**
@@ -313,6 +401,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
   // The per-workspace corpus (documents the analyst has added to this project).
   const [corpusIds, setCorpusIds] = useState<string[]>([]);
+  // Self-describing metadata per corpus document id, so the list renders for
+  // every collaborator even when the document itself hasn't reached this
+  // browser's local library / reference list yet.
+  const [corpusMeta, setCorpusMeta] = useState<Record<string, CorpusDocMeta>>({});
   const [corpusLoaded, setCorpusLoaded] = useState(false);
   const [browseOpen, setBrowseOpen] = useState(false);
   const [browseQuery, setBrowseQuery] = useState('');
@@ -336,15 +428,71 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const [ingestState, setIngestState] = useState<{ status: 'idle' | 'loading' | 'error' | 'ok'; message?: string }>({ status: 'idle' });
 
   // ── Load / persist the workspace corpus ───────────────────────────────────
+  // The corpus is shared per project via /api/content-analysis/corpus so every
+  // collaborator sees the same "In this workspace" list. localStorage is kept
+  // only as an offline cache and as the migration source for documents added
+  // before the corpus was synced server-side.
   useEffect(() => {
+    let cancelled = false;
+    // Read any locally-cached corpus first (instant paint + migration source).
+    let local: string[] = [];
+    let localMeta: Record<string, CorpusDocMeta> = {};
     try {
       const raw = localStorage.getItem(corpusKey(projectId));
-      if (raw) setCorpusIds(JSON.parse(raw) as string[]);
+      if (raw) local = JSON.parse(raw) as string[];
+      const rawMeta = localStorage.getItem(corpusMetaKey(projectId));
+      if (rawMeta) localMeta = JSON.parse(rawMeta) as Record<string, CorpusDocMeta>;
     } catch {
       /* ignore corrupt storage */
     }
-    setCorpusLoaded(true);
+    if (local.length) setCorpusIds(local);
+    if (Object.keys(localMeta).length) setCorpusMeta(localMeta);
+
+    (async () => {
+      try {
+        const resp = await fetch(
+          `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}`,
+        );
+        if (!resp.ok) throw new Error(String(resp.status));
+        const data = (await resp.json()) as { documentIds?: string[]; documents?: CorpusDocMeta[] };
+        const server = Array.isArray(data.documentIds) ? data.documentIds : [];
+        const serverDocs = Array.isArray(data.documents) ? data.documents : [];
+        // Union server + local so neither side's documents are lost while the
+        // world migrates from per-browser localStorage to the shared store.
+        const merged = Array.from(new Set([...server, ...local]));
+        if (!cancelled) {
+          setCorpusIds(merged);
+          // Server metadata wins; fall back to any locally-cached meta.
+          const mergedMeta: Record<string, CorpusDocMeta> = { ...localMeta };
+          for (const m of serverDocs) if (m && m.id) mergedMeta[m.id] = m;
+          setCorpusMeta(mergedMeta);
+        }
+        // Push any local-only ids up to the shared store (one-time migration),
+        // carrying whatever metadata we cached for them.
+        const serverSet = new Set(server);
+        for (const id of local) {
+          if (!serverSet.has(id)) postCorpus(projectId, id, localMeta[id]);
+        }
+      } catch {
+        // Server unreachable / Supabase unconfigured — keep the local list.
+      } finally {
+        if (!cancelled) setCorpusLoaded(true);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
   }, [projectId]);
+
+  useEffect(() => {
+    if (!corpusLoaded) return;
+    try {
+      localStorage.setItem(corpusMetaKey(projectId), JSON.stringify(corpusMeta));
+    } catch {
+      /* quota — ignore */
+    }
+  }, [corpusMeta, corpusLoaded, projectId]);
 
   useEffect(() => {
     if (!corpusLoaded) return;
@@ -387,11 +535,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     [allDocuments, matchesSource],
   );
 
-  /** The workspace corpus for the active source type. */
+  /** The workspace corpus for the active source type. Resolves each corpus id
+   *  from this browser's local document universe when available (richer / has
+   *  body text), and otherwise rebuilds a renderable document from the metadata
+   *  stored with the corpus row — so a document one analyst added shows up for
+   *  every collaborator even before its substrate has propagated to them. */
   const corpusDocs = useMemo(() => {
-    const inCorpus = new Set(corpusIds);
-    return candidateDocs.filter(d => inCorpus.has(d.id));
-  }, [candidateDocs, corpusIds]);
+    const byId = new Map(allDocuments.map(d => [d.id, d] as const));
+    const out: AnalysisDocument[] = [];
+    for (const id of corpusIds) {
+      const meta = corpusMeta[id];
+      const doc = byId.get(id) ?? (meta ? corpusMetaToDoc(meta) : undefined);
+      if (doc && sourceType != null && sourceTierOf(doc) === sourceType) out.push(doc);
+    }
+    return out;
+  }, [allDocuments, corpusIds, corpusMeta, sourceType]);
 
   const filteredBrowse = useMemo(() => {
     const q = browseQuery.trim().toLowerCase();
@@ -609,10 +767,22 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     setCorpusIds(prev => (prev.includes(id) ? prev : [...prev, id]));
     setSelectedDocumentId(id);
     const doc = allDocuments.find(d => d.id === id);
+    // Capture the document's display metadata so it travels with the shared
+    // corpus row and renders in every collaborator's workspace list.
+    const meta = doc ? docToCorpusMeta(doc) : undefined;
+    if (meta) setCorpusMeta(prev => ({ ...prev, [id]: meta }));
+    postCorpus(projectId, id, meta);
     if (doc) syncReferenceProject(doc, 'add');
   };
   const removeFromCorpus = (id: string) => {
     setCorpusIds(prev => prev.filter(x => x !== id));
+    setCorpusMeta(prev => {
+      if (!(id in prev)) return prev;
+      const next = { ...prev };
+      delete next[id];
+      return next;
+    });
+    deleteCorpus(projectId, id);
     const doc = allDocuments.find(d => d.id === id);
     if (doc) syncReferenceProject(doc, 'remove');
   };

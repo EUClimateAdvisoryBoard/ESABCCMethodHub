@@ -14,7 +14,7 @@
  * frameworks.
  */
 'use client';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import {
   defaultFrameworkBoard,
@@ -30,6 +30,7 @@ import {
   boardSchemaVersion,
   boardStorageKey,
   defaultBoardFor,
+  saveBoard,
   type FlowChartVersion,
 } from '@/lib/project-workspace/flowchart-versions';
 import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/SectorFlow';
@@ -51,9 +52,13 @@ interface Props {
    * of those (or from another custom version) and edited freely.
    */
   version: FlowChartVersion;
+  /** True once the shared store has been pulled into the localStorage cache.
+   *  Persistence is held off until then so this browser never writes the
+   *  published default over a colleague's saved board before it has loaded. */
+  hydrated?: boolean;
 }
 
-export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, version }: Props) {
+export default function FrameworkBoard({ allIndicators, onOpenInList, projectId, version, hydrated = true }: Props) {
   const isBeta = version.variant === 'beta';
   const isAdvanced = version.variant === 'advanced';
   // Advanced version 3 is the *integrated* board: the advanced sectors under one
@@ -77,6 +82,9 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   }, [isAdvanced, isBeta, version.id]);
   const [mounted, setMounted] = useState(false);
   const [board, setBoard] = useState<Board>(() => pureDefault());
+  // The next board change came from (re)loading, not a user edit — don't write
+  // it back. Prevents echoing the just-loaded board to the shared store.
+  const skipPersist = useRef(true);
   const [editing, setEditing] = useState(false);
   const [expanded, setExpanded] = useState<Set<string>>(new Set());
   const [drawer, setDrawer] = useState<OpenIndicatorPayload | null>(null);
@@ -93,8 +101,13 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
     [lookup],
   );
 
+  // Load the board from the localStorage cache, and re-load once `hydrated`
+  // flips true (the shared store has been pulled into the cache by the parent),
+  // so this browser shows the colleague-synced board. Each load marks the next
+  // board change as non-persisting so we don't echo it back to the server.
   useEffect(() => {
     setMounted(true);
+    skipPersist.current = true;
     try {
       const raw = localStorage.getItem(storageKey);
       if (raw) {
@@ -111,16 +124,23 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
     // snapshot; built-ins keep the published default already in state.
     if (!version.builtIn) setBoard(defaultBoardFor(version, projectId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [storageKey]);
+  }, [storageKey, hydrated]);
 
   useEffect(() => {
     if (!mounted) return;
-    try {
-      localStorage.setItem(storageKey, JSON.stringify(board));
-    } catch {
-      /* quota / private mode */
+    // Hold off persisting until the shared store has been hydrated, so this
+    // browser never overwrites a colleague's saved board with the published
+    // default before it has loaded.
+    if (!hydrated) return;
+    // The board change from a (re)load is not a user edit — skip it once.
+    if (skipPersist.current) {
+      skipPersist.current = false;
+      return;
     }
-  }, [board, mounted, storageKey]);
+    // Write through to the shared store (and the localStorage cache) so every
+    // collaborator sees the edit, not just this browser.
+    saveBoard(projectId, version, board);
+  }, [board, mounted, hydrated, projectId, version]);
 
   const updateSector = useCallback((next: SectorFramework) => {
     setBoard((b) => ({ ...b, sectors: b.sectors.map((s) => (s.id === next.id ? next : s)) }));
@@ -399,13 +419,15 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
                     allIndicators={allIndicators}
                     onChange={updateSector}
                     onOpenIndicator={setDrawer}
-                    // advanced-v2 / advanced-v4 / advanced-v5 are computed views
-                    // handled before SectorFlow is ever reached; the guard keeps
-                    // the prop type narrow to the sector-board variants.
+                    // advanced-v2 / advanced-v4 / advanced-v5 / advanced-v6 are
+                    // computed views handled before SectorFlow is ever reached;
+                    // the guard keeps the prop type narrow to the sector-board
+                    // variants.
                     variant={
                       version.variant === 'advanced-v2' ||
                       version.variant === 'advanced-v4' ||
-                      version.variant === 'advanced-v5'
+                      version.variant === 'advanced-v5' ||
+                      version.variant === 'advanced-v6'
                         ? 'advanced'
                         : version.variant
                     }

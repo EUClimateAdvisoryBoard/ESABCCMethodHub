@@ -58,38 +58,48 @@ alter table public.recommendation_policy_links enable row level security;
 alter table public.recommendation_indicator_links enable row level security;
 
 -- recommendations
+drop policy if exists "Authenticated users can read recommendations" on public.recommendations;
 create policy "Authenticated users can read recommendations"
   on public.recommendations for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert recommendations" on public.recommendations;
 create policy "Authenticated users can insert recommendations"
   on public.recommendations for insert to authenticated
   with check (auth.uid() is not null);
 
+drop policy if exists "Authenticated users can update recommendations" on public.recommendations;
 create policy "Authenticated users can update recommendations"
   on public.recommendations for update to authenticated
   using (true) with check (true);
 
+drop policy if exists "Authenticated users can delete recommendations" on public.recommendations;
 create policy "Authenticated users can delete recommendations"
   on public.recommendations for delete to authenticated using (true);
 
 -- policy links
+drop policy if exists "Authenticated users can read policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can read policy links"
   on public.recommendation_policy_links for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can insert policy links"
   on public.recommendation_policy_links for insert to authenticated
   with check (true);
 
+drop policy if exists "Authenticated users can delete policy links" on public.recommendation_policy_links;
 create policy "Authenticated users can delete policy links"
   on public.recommendation_policy_links for delete to authenticated using (true);
 
 -- indicator links
+drop policy if exists "Authenticated users can read indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can read indicator links"
   on public.recommendation_indicator_links for select to authenticated using (true);
 
+drop policy if exists "Authenticated users can insert indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can insert indicator links"
   on public.recommendation_indicator_links for insert to authenticated
   with check (true);
 
+drop policy if exists "Authenticated users can delete indicator links" on public.recommendation_indicator_links;
 create policy "Authenticated users can delete indicator links"
   on public.recommendation_indicator_links for delete to authenticated using (true);

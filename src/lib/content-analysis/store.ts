@@ -44,7 +44,7 @@ import type {
   Project,
   SummaryBlock,
 } from './types';
-import type { Block, AiClassification } from './types';
+import type { Block, AiClassification, SharedIngestedDocument } from './types';
 import { buildSeedSnapshot, deriveBlocksFromText } from './seed';
 import { enqueue, flush as flushOutbox, getOutboxStatus, subscribeOutbox } from './outbox';
 
@@ -148,27 +148,71 @@ let initialSyncDone = false;
 let pullInFlight = false;
 let resyncStarted = false;
 
+/**
+ * Build a lightweight `AnalysisDocument` from a shared ingested-document list
+ * row. Only metadata is present — the full text/blocks load on demand the first
+ * time the document is opened (see the selected-document hydration in
+ * `ContentAnalysisModule`). This is what lets a *policy* document one analyst
+ * added to a workspace appear in every collaborator's document universe, so the
+ * synced corpus id resolves to a real, selectable document. Reference documents
+ * are deliberately skipped by the caller because they are already shared through
+ * the reference library (`useLiveReferences`), which carries richer metadata
+ * (authors, year, reference type) we must not shadow with a stub.
+ */
+function sharedDocToAnalysisDoc(d: SharedIngestedDocument): AnalysisDocument {
+  const title = d.title || d.id;
+  const shortTitle = title.length > 90 ? `${title.slice(0, 87)}…` : title;
+  return {
+    id: d.id,
+    title,
+    shortTitle,
+    // Best-effort default; the badge only shows for teammates who didn't ingest
+    // the doc themselves (the ingesting user keeps their richer local copy).
+    kind: 'communication',
+    celexNumber: d.celexNumber ?? null,
+    eurlexUrl: null,
+    adoptionDate: null,
+    text: '',
+    aiCodeIds: [],
+    pdfUrl: d.pdfUrl || undefined,
+    pageCount: d.pageCount || undefined,
+    ingestedAt: d.ingestedAt || undefined,
+    ingestSource: d.ingestSource,
+    sourceKind: 'policy',
+  };
+}
+
 /** Fetch all content-analysis resources from the server and merge them into
  *  local state. `initial` triggers the one-time backfill of local-only work. */
 async function pullFromServer(opts?: { initial?: boolean }): Promise<void> {
   if (pullInFlight) return;
   pullInFlight = true;
   try {
-    const [segResp, suggResp, codesResp, summResp] = await Promise.all([
+    const [segResp, suggResp, codesResp, summResp, docsResp] = await Promise.all([
       fetch('/api/content-analysis/segments', { cache: 'no-store' }),
       fetch('/api/content-analysis/suggestions', { cache: 'no-store' }),
       fetch('/api/content-analysis/codes', { cache: 'no-store' }),
       fetch('/api/content-analysis/summaries', { cache: 'no-store' }),
+      fetch('/api/content-analysis/documents', { cache: 'no-store' }),
     ]);
-    if (!segResp.ok && !suggResp.ok && !codesResp.ok && !summResp.ok) return;
+    if (!segResp.ok && !suggResp.ok && !codesResp.ok && !summResp.ok && !docsResp.ok) return;
     const segJson = segResp.ok ? await segResp.json() : { items: [] };
     const suggJson = suggResp.ok ? await suggResp.json() : { items: [] };
     const codesJson = codesResp.ok ? await codesResp.json() : { items: [] };
     const summJson = summResp.ok ? await summResp.json() : { items: [] };
+    const docsJson = docsResp.ok ? await docsResp.json() : { items: [] };
     const serverSegs: CodedSegment[] = Array.isArray(segJson.items) ? segJson.items : [];
     const serverSuggs: CodeSuggestion[] = Array.isArray(suggJson.items) ? suggJson.items : [];
     const serverCodes: CodeNode[] = Array.isArray(codesJson.items) ? codesJson.items : [];
     const serverSumms: DocumentSummary[] = Array.isArray(summJson.items) ? summJson.items : [];
+    // Shared ingested documents — the substrate any analyst added to a workspace.
+    // References already arrive via the reference library, so we only backfill
+    // non-reference (policy) docs here, where there is no other shared source.
+    const serverDocs: SharedIngestedDocument[] = Array.isArray(docsJson.items)
+      ? docsJson.items.filter(
+          (d: SharedIngestedDocument) => d && typeof d.id === 'string' && !d.id.startsWith('ref-doc-'),
+        )
+      : [];
     // Capture the pre-merge local state so the one-time backfill can tell which
     // local items the server is missing (work that never synced before the
     // outbox existed).
@@ -191,8 +235,17 @@ async function pullFromServer(opts?: { initial?: boolean }): Promise<void> {
       const byIdSumm = new Map<string, DocumentSummary>();
       for (const x of s.summaries) byIdSumm.set(x.id, x);
       for (const x of serverSumms) byIdSumm.set(x.id, x);
+      // Backfill any shared document this browser hasn't ingested locally so the
+      // workspace corpus (a synced list of document ids) can resolve every id to
+      // a real, openable document. Local docs win on id collision — they hold the
+      // full text/blocks and any user-set fields, which the light stub lacks.
+      const haveDoc = new Set(s.documents.map(d => d.id));
+      const addedDocs = serverDocs
+        .filter(d => !haveDoc.has(d.id))
+        .map(sharedDocToAnalysisDoc);
       return {
         ...s,
+        documents: addedDocs.length ? [...s.documents, ...addedDocs] : s.documents,
         segments: Array.from(byIdSeg.values()),
         suggestions: Array.from(bySuggId.values()),
         codes: Array.from(byIdCode.values()),
@@ -307,8 +360,11 @@ function persist(): void {
       ),
     };
     localStorage.setItem(LS_KEY, JSON.stringify(lean));
-  } catch {
-    // quota exceeded — silently drop in the beta
+  } catch (err) {
+    // Quota exceeded. Only the local CACHE failed to persist — durable writes
+    // ride the outbox and the next pullFromServer re-hydrates — but log it so
+    // a quota problem is diagnosable rather than invisible.
+    logApiError('persist local snapshot (storage quota?)', err);
   }
 }
 

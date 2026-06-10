@@ -9,13 +9,18 @@
 // to the `content_analysis_notes` table (migration 060) via
 // /api/content-analysis/notes, scoped by (document, project) like summaries.
 //
-// This hook owns load / add / delete for the currently-open document, with
-// optimistic updates and rollback on failure, mirroring useOverallTags.
+// This hook owns load / add / delete for the currently-open document. Writes
+// are DURABLE: the happy path is a direct fetch (so the server's canonical row
+// reconciles immediately), but any failure — offline, a 5xx, a flaky network —
+// hands the write to the content-analysis outbox, which persists it in
+// localStorage and retries until it lands. A note someone typed is never
+// rolled away because of a transient error.
 // ---------------------------------------------------------------------------
 
 import { useCallback, useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/lib/auth-context';
+import { enqueue } from './outbox';
 
 export interface GeneralNote {
   id: string;
@@ -122,29 +127,37 @@ export function useGeneralNotes(
       setNotes(prev => [note, ...prev]);
       setOwnIds(prev => new Set(prev).add(note.id));
 
+      const body = {
+        id: note.id,
+        documentId,
+        projectId,
+        text: note.text,
+        quote: note.quote,
+        blockId: note.blockId,
+        startChar: note.startChar,
+        endChar: note.endChar,
+        author: note.author,
+      };
       try {
         const res = await fetch('/api/content-analysis/notes', {
           method: 'POST',
           headers: { 'content-type': 'application/json', ...(await authHeader()) },
-          body: JSON.stringify({
-            id: note.id,
-            documentId,
-            projectId,
-            text: note.text,
-            quote: note.quote,
-            blockId: note.blockId,
-            startChar: note.startChar,
-            endChar: note.endChar,
-            author: note.author,
-          }),
+          body: JSON.stringify(body),
         });
         if (!res.ok) throw new Error(`${res.status}`);
         const { note: saved } = (await res.json()) as { note: GeneralNote };
         // Reconcile with the server's canonical row.
         if (saved) setNotes(prev => prev.map(n => (n.id === note.id ? saved : n)));
       } catch {
-        // Roll back the optimistic insert.
-        setNotes(prev => prev.filter(n => n.id !== note.id));
+        // Keep the note on screen and hand the write to the durable outbox,
+        // which retries (with a fresh auth token) until the server confirms.
+        enqueue({
+          key: `note:${note.id}`,
+          method: 'POST',
+          url: '/api/content-analysis/notes',
+          body,
+          auth: true,
+        });
       }
     },
     [documentId, projectId, user, displayName, requireAuth],
@@ -154,20 +167,25 @@ export function useGeneralNotes(
     async (id: string) => {
       const u = user ?? (await requireAuth('Sign in to delete a note.'));
       if (!u) return;
-      const removed = notes.find(n => n.id === id);
       setNotes(prev => prev.filter(n => n.id !== id));
       try {
         const res = await fetch(
           `/api/content-analysis/notes?id=${encodeURIComponent(id)}`,
           { method: 'DELETE', headers: { ...(await authHeader()) } },
         );
-        if (!res.ok) throw new Error(`${res.status}`);
+        if (!res.ok && res.status !== 404) throw new Error(`${res.status}`);
       } catch {
-        // Restore on failure.
-        if (removed) setNotes(prev => [removed, ...prev].sort((a, b) => b.createdAt.localeCompare(a.createdAt)));
+        // Queue the delete durably (same key as a pending create, so deleting
+        // a note that never reached the server collapses to a no-op).
+        enqueue({
+          key: `note:${id}`,
+          method: 'DELETE',
+          url: `/api/content-analysis/notes?id=${encodeURIComponent(id)}`,
+          auth: true,
+        });
       }
     },
-    [user, requireAuth, notes],
+    [user, requireAuth],
   );
 
   // The server flags the caller's own notes (`mine`); fall back to ids added

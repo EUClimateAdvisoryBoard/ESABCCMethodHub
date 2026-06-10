@@ -196,6 +196,22 @@ export default function WordAddinSetupPage() {
             </div>
 
             <div className="bg-gray-800 rounded-lg p-4">
+              <h3 className="font-medium text-teal-300 mb-1">Cite from Workspace</h3>
+              <p className="text-sm text-gray-400">
+                Browse the literature added to a project workspace&apos;s Content Analysis corpus,
+                clustered by source type &mdash; policy documents, scientific literature, grey
+                literature &amp; reports &mdash; with each document&apos;s overall tags shown.
+                Search and filter by tag directly in Word, then insert the citation. EU policies
+                are served as special <em>legislation</em> entries in the reference manager, so
+                legal acts are citable like any other reference. A built-in citation tracker
+                marks each workspace reference already cited in the open document with a{' '}
+                <code className="bg-gray-700 px-1.5 py-0.5 rounded">✓</code>, shows a cited /
+                not-yet-cited count, and a &ldquo;Not yet cited only&rdquo; filter lists what&apos;s
+                still left to cite.
+              </p>
+            </div>
+
+            <div className="bg-gray-800 rounded-lg p-4">
               <h3 className="font-medium text-blue-300 mb-1">Bibliography</h3>
               <p className="text-sm text-gray-400">
                 Scans the document for all citations you&apos;ve inserted, then generates a formatted
