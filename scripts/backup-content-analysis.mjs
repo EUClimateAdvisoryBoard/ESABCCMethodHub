@@ -80,6 +80,7 @@ const TABLES = {
   pw_meeting_milestones: ['id'],
   pw_project_phases: ['id'],
   pw_flowchart_state: ['project_id', 'storage_key'],
+  pw_activity_log: ['id'],
   // Reference manager — references, the work hung off them, and the personal
   // organisation around them. Contains personal data (see PRIVACY above).
   profiles: ['id'],
