@@ -22,6 +22,8 @@ import {
   upsertRef,
 } from '@/lib/references/custom-store';
 import { combineTags, splitTags } from '@/lib/references/projects';
+import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
+import type { CSLName } from '@/lib/references/types';
 
 // Force the route to run on the Node.js runtime (pg/supabase client) and
 // always evaluate fresh (no edge caching of mutations).
@@ -38,9 +40,88 @@ const normalizeDoi = (d: string | undefined): string =>
     .replace(/^doi:\s*/, '')
     .trim();
 
-// GET – return all custom references
-export async function GET() {
-  const references = await listRefs();
+// Render a CSL author array ("Family, Given; …") to the flat string the
+// custom-references shape uses.
+function authorsToString(authors: CSLName[] | null | undefined): string {
+  if (!Array.isArray(authors)) return '';
+  return authors
+    .map((a) => a.literal || [a.family, a.given].filter(Boolean).join(', '))
+    .filter(Boolean)
+    .join('; ');
+}
+
+// Pull rows from the Supabase `references` table — the web Reference Manager's
+// primary store, written by `reference-service` when a library exists — and
+// map them onto the custom-reference shape. The Content Analysis workbench
+// reads this endpoint to populate its "Add documents" browse list, so without
+// this a reference added through the Reference Manager (Supabase mode) would
+// never appear there: the workbench only ever saw `custom_references` (the
+// VBA / fallback store) and the bundled static library. Best-effort: returns
+// an empty list when no service-role key is configured.
+async function getManagerReferences(): Promise<CustomRef[]> {
+  if (!hasServiceRole()) return [];
+  try {
+    const supabase = createAdminClient();
+    const { data, error } = await supabase
+      .from('references')
+      .select(
+        'id, title, authors, year, doi, container_title, item_type, tags, csl_json, pdf_url, created_at',
+      );
+    if (error || !data) return [];
+    return (data as Array<Record<string, any>>).map((r): CustomRef => ({
+      id: r.id,
+      doi: r.doi || '',
+      title: r.title || '',
+      authors: authorsToString(r.authors),
+      year: r.year ? String(r.year) : '',
+      journal: r.container_title || '',
+      type: r.item_type || 'article-journal',
+      volume: r.csl_json?.volume || '',
+      issue: r.csl_json?.issue || '',
+      pages: r.csl_json?.page || '',
+      url: r.csl_json?.URL || '',
+      fullCitation: '',
+      addedAt: r.created_at || '',
+      source: 'web',
+      pdfUrl: r.pdf_url || undefined,
+      tags: Array.isArray(r.tags) ? r.tags : undefined,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+// GET – return all custom references.
+//
+// `?includeManager=1` additionally merges in the Supabase `references` table
+// (the web Reference Manager's store), deduped by id and normalized DOI with
+// the custom-reference store winning. The Content Analysis workbench passes
+// this so every reference a user can see in the Reference Manager is also
+// addable to a workspace; other consumers omit it and keep the plain
+// custom-references list.
+export async function GET(request: NextRequest) {
+  const includeManager =
+    request.nextUrl.searchParams.get('includeManager') === '1' ||
+    request.nextUrl.searchParams.get('merge') === '1';
+
+  const custom = await listRefs();
+  let references = custom;
+
+  if (includeManager) {
+    const manager = await getManagerReferences();
+    const seenId = new Set(custom.map((r) => r.id));
+    const seenDoi = new Set(
+      custom.map((r) => normalizeDoi(r.doi)).filter(Boolean),
+    );
+    const extra = manager.filter((r) => {
+      if (seenId.has(r.id)) return false;
+      const d = normalizeDoi(r.doi);
+      if (d && seenDoi.has(d)) return false;
+      return true;
+    });
+    references = [...custom, ...extra];
+  }
+
   return NextResponse.json({
     count: references.length,
     references,
