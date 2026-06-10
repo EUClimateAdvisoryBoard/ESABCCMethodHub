@@ -27,9 +27,11 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { references as staticReferences } from '@/data/references';
+import { policies } from '@/data/policies';
+import { SEED_PROJECTS } from '@/data/project-workspace';
 import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { findPolicyFlatRef, POLICY_REF_PREFIX } from '@/lib/references/policy-entries';
-import { getCaCorpus, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
+import { getCaCorpus, getCaDocuments, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
 import { POLICY_TAG_ASSIGNMENTS } from '@/lib/content-analysis/policy-master-tags';
 import { listProjects } from '@/lib/project-workspace/db';
@@ -146,13 +148,38 @@ function prettifyProjectId(id: string): string {
     .join(' ');
 }
 
-async function loadProjectNames(): Promise<Map<string, string>> {
+interface WorkspaceProjectLite {
+  id: string;
+  name: string;
+  hasContentAnalysis: boolean;
+}
+
+/** Project workspaces with names + whether they carry a Content Analysis
+ *  module. Server list first; the bundled seed projects fill in when the
+ *  database is unreachable (and any seed project missing from the DB). */
+async function loadWorkspaceProjects(): Promise<WorkspaceProjectLite[]> {
+  const out = new Map<string, WorkspaceProjectLite>();
   try {
-    const projects = await listProjects();
-    return new Map(projects.map(p => [p.id, p.name]));
+    for (const p of await listProjects()) {
+      out.set(p.id, {
+        id: p.id,
+        name: p.name,
+        hasContentAnalysis: p.modules.some(m => m.kind === 'content-analysis'),
+      });
+    }
   } catch {
-    return new Map();
+    // fall through to the seed list
   }
+  for (const p of SEED_PROJECTS) {
+    if (!out.has(p.id)) {
+      out.set(p.id, {
+        id: p.id,
+        name: p.name,
+        hasContentAnalysis: p.modules.some(m => m.kind === 'content-analysis'),
+      });
+    }
+  }
+  return [...out.values()];
 }
 
 /** Overall (document-level) tags for a set of documents, as codeId lists.
@@ -189,6 +216,101 @@ async function buildCodeNameResolver(): Promise<(codeId: string) => string | nul
     // master taxonomy still resolves
   }
   return (codeId: string) => getMasterCode(codeId)?.name ?? custom.get(codeId) ?? null;
+}
+
+/** Map a reference's stored `type` (closed union or CSL item type) onto the
+ *  closed union the tier split understands (mirrors `normaliseRefType` in
+ *  `useLiveReferences`, which is client-only). */
+function normaliseRefType(t: string | undefined): NonNullable<CorpusDocMeta['referenceType']> {
+  switch (t) {
+    case 'article':
+    case 'report':
+    case 'web':
+    case 'chapter':
+    case 'legislation':
+    case 'book':
+      return t;
+    case 'article-journal':
+    case 'paper-conference':
+      return 'article';
+    case 'entry-encyclopedia':
+      return 'chapter';
+    case 'webpage':
+    case 'article-newspaper':
+    case 'article-magazine':
+      return 'web';
+    default:
+      return 'report';
+  }
+}
+
+const POLICY_KINDS = new Set(['regulation', 'directive', 'decision', 'communication', 'strategy']);
+
+let policyByIdOrCelex: Map<string, (typeof policies)[number]> | null = null;
+function lookupPolicy(idOrCelex: string): (typeof policies)[number] | undefined {
+  if (!policyByIdOrCelex) {
+    policyByIdOrCelex = new Map();
+    for (const p of policies) {
+      policyByIdOrCelex.set(p.id, p);
+      if (p.celex_number) policyByIdOrCelex.set(p.celex_number, p);
+    }
+  }
+  return policyByIdOrCelex.get(idOrCelex);
+}
+
+/** Rebuild display metadata for a legacy (meta-less) corpus row, the same way
+ *  the web workspace resolves bare ids against its document universe. Returns
+ *  null only when the id is unknown to every store. */
+function synthesizeMeta(
+  documentId: string,
+  refById: Map<string, FlatRefLike>,
+  caDocsById: Map<string, { title: string; celexNumber: string | null; pdfUrl: string; pageCount: number }>,
+): CorpusDocMeta | null {
+  const short = (title: string) => (title.length > 90 ? `${title.slice(0, 87)}…` : title);
+
+  if (documentId.startsWith(REF_DOC_PREFIX)) {
+    const ref = refById.get(documentId.slice(REF_DOC_PREFIX.length));
+    if (!ref?.title) return null;
+    return {
+      id: documentId,
+      title: ref.title,
+      shortTitle: short(ref.title),
+      kind: 'report',
+      sourceKind: 'reference',
+      referenceType: normaliseRefType(ref.type),
+      referenceAuthors: ref.authors || undefined,
+      referenceYear: ref.year || undefined,
+      referenceUrl: ref.url ?? (ref.doi ? `https://doi.org/${ref.doi}` : undefined),
+    };
+  }
+
+  const policy = lookupPolicy(documentId);
+  if (policy) {
+    return {
+      id: documentId,
+      title: policy.title,
+      shortTitle: policy.short_title || short(policy.title),
+      kind: (POLICY_KINDS.has(policy.document_type) ? policy.document_type : 'regulation') as CorpusDocMeta['kind'],
+      sourceKind: 'policy',
+      celexNumber: policy.celex_number,
+    };
+  }
+
+  const shared = caDocsById.get(documentId);
+  if (shared?.title) {
+    return {
+      id: documentId,
+      title: shared.title,
+      shortTitle: short(shared.title),
+      kind: 'report',
+      sourceKind: 'policy',
+      celexNumber: shared.celexNumber,
+      pdfUrl: shared.pdfUrl || undefined,
+      pageCount: shared.pageCount,
+    };
+  }
+
+  return null;
 }
 
 function buildItem(
@@ -300,12 +422,20 @@ export async function GET(request: NextRequest) {
   const limit = Math.min(parseInt(params.get('limit') || '500') || 500, 2000);
 
   if (facet === 'projects') {
-    const [corpusProjects, names] = await Promise.all([listCaCorpusProjects(), loadProjectNames()]);
-    const projects = corpusProjects
-      .map(p => ({
-        id: p.projectId,
-        name: sanitize(names.get(p.projectId) ?? prettifyProjectId(p.projectId)),
-        count: p.count,
+    const [corpusProjects, wsProjects] = await Promise.all([listCaCorpusProjects(), loadWorkspaceProjects()]);
+    const counts = new Map(corpusProjects.map(p => [p.projectId, p.count]));
+    // Workspaces with a Content Analysis module are selectable even before
+    // any of their corpus rows have synced server-side (documents added in a
+    // browser before the shared corpus shipped migrate up on the next visit).
+    for (const p of wsProjects) {
+      if (p.hasContentAnalysis && !counts.has(p.id)) counts.set(p.id, 0);
+    }
+    const names = new Map(wsProjects.map(p => [p.id, p.name]));
+    const projects = [...counts.entries()]
+      .map(([id, count]) => ({
+        id,
+        name: sanitize(names.get(id) ?? prettifyProjectId(id)),
+        count,
       }))
       .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
     return NextResponse.json({ projects }, { headers: CORS_HEADERS });
@@ -319,21 +449,40 @@ export async function GET(request: NextRequest) {
   }
 
   await ensureSeedLoaded();
-  const entries = (await getCaCorpus(projectId)).filter(e => e.meta);
+  const rawEntries = await getCaCorpus(projectId);
 
   const refById = new Map<string, FlatRefLike>();
   for (const r of [...getStore(), ...staticReferences] as FlatRefLike[]) {
     if (!refById.has(r.id)) refById.set(r.id, r);
   }
 
-  const [overallTags, resolveCodeName, names] = await Promise.all([
+  // Legacy corpus rows (added before metadata travelled with the membership)
+  // have meta = null. The web workspace still renders them by resolving the
+  // id against its local document universe — mirror that here so the add-in
+  // shows the same list: reference library, tracked policy corpus, then the
+  // shared ingested-documents store.
+  const needsSynthesis = rawEntries.some(e => !e.meta);
+  const caDocsById = new Map<string, { title: string; celexNumber: string | null; pdfUrl: string; pageCount: number }>();
+  if (needsSynthesis) {
+    try {
+      for (const d of await getCaDocuments()) caDocsById.set(d.id, d);
+    } catch {
+      // shared documents unavailable — the other resolvers still apply
+    }
+  }
+  const entries = rawEntries
+    .map(e => ({ documentId: e.documentId, meta: e.meta ?? synthesizeMeta(e.documentId, refById, caDocsById) }))
+    .filter((e): e is { documentId: string; meta: CorpusDocMeta } => !!e.meta);
+
+  const [overallTags, resolveCodeName, wsProjects] = await Promise.all([
     loadOverallTags(entries.map(e => e.documentId)),
     buildCodeNameResolver(),
-    loadProjectNames(),
+    loadWorkspaceProjects(),
   ]);
+  const names = new Map(wsProjects.map(p => [p.id, p.name]));
 
   const allItems = entries.map(e =>
-    buildItem(e.meta as CorpusDocMeta, e.documentId, refById, overallTags, resolveCodeName),
+    buildItem(e.meta, e.documentId, refById, overallTags, resolveCodeName),
   );
   allItems.sort(
     (a, b) =>
