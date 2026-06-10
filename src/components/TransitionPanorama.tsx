@@ -350,24 +350,34 @@ function PathwayChart() {
 // Detail panel
 // ─────────────────────────────────────────────────────────────────────────────
 
-function DetailPanel({
+export function DetailPanel({
   selectedId,
   onSelect,
+  introTitle,
+  intro,
 }: {
   selectedId: string | null;
   onSelect: (id: string | null) => void;
+  introTitle?: string;
+  intro?: React.ReactNode;
 }) {
   const found = findNode(selectedId);
 
   if (!found) {
     return (
       <div className="space-y-3">
-        <h3 className="text-sm font-semibold text-tertiary-dark">How to read the panorama</h3>
+        <h3 className="text-sm font-semibold text-tertiary-dark">
+          {introTitle ?? 'How to read the panorama'}
+        </h3>
         <p className="text-[12.5px] text-tertiary leading-relaxed">
-          Each arc is sized by its latest net emissions. The inner ring shows the seven
-          sectors of the European Climate Law scope; the outer ring shows their subsectors.
-          Hatched arcs are <strong>net removals</strong> (the LULUCF sink). Click a sector
-          to open its panorama, or any arc to see its trend, benchmarks and transition levers.
+          {intro ?? (
+            <>
+              Each arc is sized by its latest net emissions. The inner ring shows the seven
+              sectors of the European Climate Law scope; the outer ring shows their subsectors.
+              Hatched arcs are <strong>net removals</strong> (the LULUCF sink). Click a sector
+              to open its panorama, or any arc to see its trend, benchmarks and transition levers.
+            </>
+          )}
         </p>
         <ul className="space-y-1.5">
           {PANORAMA_SECTORS.map(s => {
