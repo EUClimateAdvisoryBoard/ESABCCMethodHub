@@ -1730,6 +1730,11 @@ const P = {
   SFS_GAP: polGap('sfs-gap', 'No food-system policy', 'Sustainable Food Systems regulatory framework — not proposed (rec. A3)', 'A3'),
   LULUCF_PRICE_GAP: polGap('lulucf-price-gap', 'No LULUCF pricing', 'No GHG pricing instrument for LULUCF reductions and removals (rec. L3)', 'L3'),
   LULUCF_CONTINGENCY_GAP: polGap('lulucf-contingency-gap', 'No contingency strategy', 'No LULUCF-sink contingency strategy under climate-change scenarios (rec. L6)', 'L6'),
+  // ── Adaptation / climate resilience instruments (used in climate-risk boards)
+  CER_DIR: pol('cer-dir', 'CER Directive', 'Critical Entities Resilience Directive (Dir (EU) 2022/2557)'),
+  NIS2: pol('nis2', 'NIS2', 'Network and Information Security Directive 2 (Dir (EU) 2022/2555)'),
+  CLIMATE_VULN_GAP: polGap('climate-vuln-gap', 'No climate screening', 'No binding EU climate-vulnerability screening requirement for energy infrastructure assets (EUCRA gap)'),
+  WATER_ENERGY_GAP: polGap('water-energy-gap', 'No water-energy policy', 'No dedicated EU water-energy nexus policy to protect hydropower and water-cooled power plants from drought (EUCRA gap)'),
 };
 
 /** Per-node policy mappings for the Policy Gap Report 2.0 board. */
@@ -1850,66 +1855,118 @@ export function defaultFrameworkBoardPolicyGap2(): FrameworkBoard {
 // Arrow direction follows the same convention as the rest of the chart: each
 // node's `parents` list the nodes it feeds into (i.e. points upward to).
 
-/** Energy supply sector with two climate-risk nodes (minimal test). */
-function energySectorWithTestRisks(): SectorFramework {
+/**
+ * "Energy supply test" board — energy supply sector with a climate-impacts layer
+ * (drawn from EUCRA Chapter 8 / Figure 8.1) inserted between the Outcomes and
+ * Mitigation levers rows, plus four adaptation levers that address those impacts.
+ *
+ * Climate impacts (riskKind: 'impact') link upward to the outcome they threaten:
+ *   → en-o2 (Reduced energy demand): increased cooling demand; increased desalination energy
+ *   → en-o1 (Reduced GHG from energy supply): decreased hydro/thermal production;
+ *                 infrastructure damage; RES disruption
+ *
+ * Adaptation levers (layer: 'lever') link upward to the impacts they address and
+ * carry EU policy tags based on EUCRA policy analysis.
+ *
+ * Mitigation levers are unchanged from the report-faithful board.
+ *
+ * Source: EEA (2024) European Climate Risk Assessment, Chapter 8 (Energy system).
+ */
+export function defaultFrameworkBoardEnergyTest(): FrameworkBoard {
   const base = JSON.parse(
     JSON.stringify(SECTOR_FRAMEWORKS.find((s) => s.id === 'energy')!),
   ) as SectorFramework;
-  // Strip enhanced indicator chips.
+  // Strip enhanced indicator chips — stay 1:1 with report figures.
   for (const node of [...base.outcomes, ...base.levers]) {
     node.indicators = node.indicators.filter((r) => !r.enhanced);
   }
+
+  // ── Climate impacts layer (EUCRA Chapter 8) ────────────────────────────────
   base.risks = [
+    // Impacts on en-o2: Reduced energy demand
     {
-      id: 'en-r1',
+      id: 'en-ci1',
       layer: 'risk',
-      riskKind: 'risk',
-      label: 'Increased energy demand',
+      riskKind: 'impact',
+      label: 'Increased cooling energy demand',
       parents: ['en-o2'],
       indicators: [],
     },
     {
-      id: 'en-r2',
+      id: 'en-ci2',
       layer: 'risk',
-      riskKind: 'risk',
-      label: 'Increased power outages and disruptions to renewable generation',
+      riskKind: 'impact',
+      label: 'Increased desalination and water treatment energy',
+      parents: ['en-o2'],
+      indicators: [],
+    },
+    // Impacts on en-o1: Reduced GHG from energy supply
+    {
+      id: 'en-ci3',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Decreased hydropower and thermal power production (heat & drought)',
+      parents: ['en-o1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci4',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Damage to energy transport and storage infrastructure (flooding & wildfires)',
+      parents: ['en-o1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci5',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Damage to and disruption of renewable energy sources (extreme weather)',
       parents: ['en-o1'],
       indicators: [],
     },
   ];
-  base.levers = [
-    ...base.levers,
+
+  // ── Adaptation levers ──────────────────────────────────────────────────────
+  // These sit in the levers row alongside the mitigation levers and link
+  // upward to the climate impact nodes they address.
+  const adaptLevers: FrameworkNode[] = [
     {
-      id: 'en-adapt-l1',
+      id: 'en-al1',
       layer: 'lever',
-      label: 'Adaptation response (placeholder)',
-      parents: ['en-r1'],
+      label: 'Cooling demand reduction (buildings & industry)',
+      parents: ['en-ci1'],
       indicators: [],
+      policies: [P.EED, P.EPBD],
     },
     {
-      id: 'en-adapt-l2',
+      id: 'en-al2',
       layer: 'lever',
-      label: 'Adaptation response (placeholder)',
-      parents: ['en-r2'],
+      label: 'Water management for energy / water-efficient power production',
+      parents: ['en-ci2', 'en-ci3'],
       indicators: [],
+      policies: [P.WATER_ENERGY_GAP, P.NATURE_REST],
+    },
+    {
+      id: 'en-al3',
+      layer: 'lever',
+      label: 'Climate-proofing energy infrastructure',
+      parents: ['en-ci4'],
+      indicators: [],
+      policies: [P.TEN_E, P.CER_DIR, P.NIS2, P.CLIMATE_VULN_GAP],
+    },
+    {
+      id: 'en-al4',
+      layer: 'lever',
+      label: 'Diversification of RES and energy storage',
+      parents: ['en-ci5', 'en-ci3'],
+      indicators: [],
+      policies: [P.RED_III, P.EMD, P.NZIA],
     },
   ];
-  return base;
-}
 
-/**
- * "Energy supply test" board — one sector (energy supply) with two climate-risk
- * nodes inserted between the Outcomes and Mitigation levers rows.
- *
- * Risk 1 "Increased energy demand" links to outcome `en-o2` (Reduced energy demand).
- * Risk 2 "Increased power outages" links to outcome `en-o1` (Reduced GHG from energy supply).
- * Two placeholder adaptation-response boxes at lever level link up to each risk.
- */
-export function defaultFrameworkBoardEnergyTest(): FrameworkBoard {
-  return {
-    version: FRAMEWORK_BOARD_VERSION,
-    sectors: [energySectorWithTestRisks()],
-  };
+  base.levers = [...base.levers, ...adaptLevers];
+  return { version: FRAMEWORK_BOARD_VERSION, sectors: [base] };
 }
 
 /**
