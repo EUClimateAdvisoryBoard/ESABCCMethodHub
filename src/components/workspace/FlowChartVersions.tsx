@@ -28,6 +28,7 @@ import ResultsChainBoardView from '@/components/frameworks/ResultsChainBoardView
 import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardView';
 import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
 import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
+import AssessmentMatrixBoardView from '@/components/frameworks/AssessmentMatrixBoardView';
 
 interface Props {
   projectId: string;
@@ -155,6 +156,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 6 · loop
             </span>
           )}
+          {active.variant === 'advanced-v7' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-emerald-100 text-emerald-700">
+              adv 7 · matrix
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -209,6 +215,16 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         // loop (scenario corridor → instruments → twin-track delivery →
         // observed results → ratchet) — also a computed, read-only view.
         <PolicyLoopBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'advanced-v7' ? (
+        // The structured-assessment-matrix board is the methodology view: five
+        // structural dimensions (sectors, adaptation areas, main policies,
+        // themes, objective lenses) plus the eight-step assessment protocol —
+        // also a computed, read-only view.
+        <AssessmentMatrixBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
