@@ -83,7 +83,12 @@ export async function POST(req: NextRequest) {
       },
       { onConflict: 'document_id,code_id', ignoreDuplicates: true },
     );
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
+  // The payload was validated above, so a DB error here is infrastructure-level
+  // (e.g. the shared table not migrated yet, or a transient DB failure), not a
+  // bad request. Return 503 so the client's durable outbox keeps RETRYING the
+  // write until it lands and the tag reaches the whole team — rather than 4xx,
+  // which the outbox treats as permanent and parks in the dead-letter ledger.
+  if (error) return NextResponse.json({ error: error.message }, { status: 503 });
   return NextResponse.json({ tag: { documentId: body.documentId, codeId: body.codeId } });
 }
 
@@ -105,6 +110,8 @@ export async function DELETE(req: NextRequest) {
     .delete()
     .eq('document_id', documentId)
     .eq('code_id', codeId);
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 });
+  // Infrastructure-level failure (params were validated) — 503 so the outbox
+  // retries the removal until it propagates to the team, instead of parking it.
+  if (error) return NextResponse.json({ error: error.message }, { status: 503 });
   return NextResponse.json({ ok: true });
 }
