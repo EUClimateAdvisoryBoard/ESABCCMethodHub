@@ -12,7 +12,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { pwApi, type WorkspaceActivityEntry } from '@/lib/project-workspace/client';
+import {
+  pwApi,
+  type WorkspaceActivityEntry,
+  type WorkspaceActivityStatus,
+} from '@/lib/project-workspace/client';
+import { supabase } from '@/lib/supabase';
 
 const PAGE_SIZE = 50;
 
@@ -52,6 +57,8 @@ export default function ActivityLogPanel({
   onClose: () => void;
 }) {
   const [entries, setEntries] = useState<WorkspaceActivityEntry[]>([]);
+  const [status, setStatus] = useState<WorkspaceActivityStatus | null>(null);
+  const [signedIn, setSignedIn] = useState<boolean | null>(null);
   const [loading, setLoading] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   // True while the last page came back full — there may be older entries.
@@ -60,16 +67,30 @@ export default function ActivityLogPanel({
   useEffect(() => {
     let cancelled = false;
     (async () => {
-      const first = await pwApi.listActivity(projectId, { limit: PAGE_SIZE });
+      const { entries: first, status: st } = await pwApi.activityLog(projectId, {
+        limit: PAGE_SIZE,
+      });
       if (cancelled) return;
       setEntries(first);
+      setStatus(st);
       setHasMore(first.length === PAGE_SIZE);
       setLoading(false);
     })();
+    if (supabase) {
+      supabase.auth.getSession().then(({ data }) => {
+        if (!cancelled) setSignedIn(!!data.session);
+      });
+    }
     return () => {
       cancelled = true;
     };
   }, [projectId]);
+
+  // Tables that exist but have no change-tracking trigger — the one state
+  // where edits silently go unrecorded (migration 067/068 not fully applied).
+  const untracked = Object.entries(status?.tables ?? {})
+    .filter(([, st]) => st === 'no-trigger')
+    .map(([t]) => t);
 
   async function loadMore() {
     const oldest = entries[entries.length - 1];
@@ -120,6 +141,42 @@ export default function ActivityLogPanel({
           database and included in the nightly backup.
         </p>
 
+        {/* Setup / sign-in problems that explain a silent or incomplete log. */}
+        {!loading && status && !status.installed && (
+          <div className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-amber-900">
+              Change tracking is not installed in the database yet
+            </p>
+            <p className="text-[11px] text-amber-800 mt-0.5 leading-snug">
+              Run <code>supabase/migrations/067_pw_activity_log.sql</code> and{' '}
+              <code>068_content_analysis_activity_log.sql</code> in the Supabase SQL editor.
+              Until then, no changes are recorded.
+            </p>
+          </div>
+        )}
+        {!loading && status?.installed && untracked.length > 0 && (
+          <div className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-amber-900">
+              Some tools are not being tracked
+            </p>
+            <p className="text-[11px] text-amber-800 mt-0.5 leading-snug">
+              No change-tracking trigger on: {untracked.join(', ')}. Re-run{' '}
+              <code>supabase/migrations/067_pw_activity_log.sql</code> and{' '}
+              <code>068_content_analysis_activity_log.sql</code> in the Supabase SQL editor
+              (both are safe to re-run).
+            </p>
+          </div>
+        )}
+        {signedIn === false && (
+          <div className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2.5">
+            <p className="text-xs font-semibold text-amber-900">You are not signed in</p>
+            <p className="text-[11px] text-amber-800 mt-0.5 leading-snug">
+              Changes you make can’t be saved to the shared workspace or attributed to you.
+              Sign in first, then redo the change.
+            </p>
+          </div>
+        )}
+
         <div className="flex-1 overflow-y-auto -mx-1 px-1">
           {loading && <p className="text-xs text-tertiary py-6 text-center">Loading…</p>}
 
@@ -127,8 +184,9 @@ export default function ActivityLogPanel({
             <div className="rounded-lg border border-dashed border-grey-300 bg-grey-50 px-4 py-8 text-center">
               <p className="text-sm font-semibold text-tertiary-dark">No changes recorded yet</p>
               <p className="text-xs text-tertiary mt-1">
-                Changes made from now on — edits, additions and deletions across every tool —
-                will appear here.
+                {status?.installed && untracked.length === 0
+                  ? 'Tracking is installed and active — changes made from now on (edits, additions and deletions across every tool) will appear here.'
+                  : 'Changes made from now on — edits, additions and deletions across every tool — will appear here.'}
               </p>
             </div>
           )}

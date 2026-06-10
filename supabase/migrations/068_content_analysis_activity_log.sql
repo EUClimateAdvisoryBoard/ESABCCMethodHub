@@ -23,44 +23,83 @@
 -- summaries and notes carry one too (nullable — master-library annotations
 -- fall back to every project whose corpus contains the document). Overall
 -- tags are document-scoped only and always fan out via the corpus.
+--
+-- Robustness: every reference to a content_analysis_* table is guarded, so
+-- this file applies cleanly even on a database where some of those
+-- migrations (061–065) have not landed — the matching triggers are simply
+-- skipped and reported by pw_activity_log_status() below. Idempotent; safe
+-- to re-run.
 -- ─────────────────────────────────────────────────────────────────────────────
 
-alter table public.content_analysis_corpus
-  add column if not exists added_by uuid references auth.users(id) on delete set null;
-
-alter table public.content_analysis_outlines
-  add column if not exists updated_by uuid references auth.users(id) on delete set null;
+do $$
+begin
+  if to_regclass('public.content_analysis_corpus') is not null then
+    alter table public.content_analysis_corpus
+      add column if not exists added_by uuid references auth.users(id) on delete set null;
+  end if;
+  if to_regclass('public.content_analysis_outlines') is not null then
+    alter table public.content_analysis_outlines
+      add column if not exists updated_by uuid references auth.users(id) on delete set null;
+  end if;
+end $$;
 
 -- ── Helpers ──────────────────────────────────────────────────────────────────
+-- (plpgsql with per-statement guards so they exist — and work — even where
+-- the content-analysis tables don't.)
+
 -- Friendly display label for a document: corpus metadata title → ingested
 -- document title → the raw id.
-create or replace function public.pw_activity_doc_label(p_doc text)
+drop function if exists public.pw_activity_doc_label(text);
+create function public.pw_activity_doc_label(p_doc text)
 returns text
-language sql stable
+language plpgsql stable
 security definer
 set search_path = public
 as $$
-  select coalesce(
-    (select coalesce(c.doc_meta->>'shortTitle', c.doc_meta->>'title')
-       from public.content_analysis_corpus c
-      where c.document_id = p_doc and c.doc_meta is not null
-      limit 1),
-    (select d.title from public.content_analysis_documents d where d.id = p_doc),
-    p_doc
-  );
+declare
+  v text;
+begin
+  begin
+    select coalesce(c.doc_meta->>'shortTitle', c.doc_meta->>'title') into v
+      from public.content_analysis_corpus c
+     where c.document_id = p_doc and c.doc_meta is not null
+     limit 1;
+  exception when undefined_table or undefined_column then
+    v := null;
+  end;
+  if v is null then
+    begin
+      select d.title into v
+        from public.content_analysis_documents d where d.id = p_doc;
+    exception when undefined_table then
+      v := null;
+    end;
+  end if;
+  return coalesce(v, p_doc);
+end;
 $$;
 
 -- Every project whose workspace corpus contains the document (for changes
 -- that don't carry their own project id).
-create or replace function public.pw_activity_doc_projects(p_doc text)
+drop function if exists public.pw_activity_doc_projects(text);
+create function public.pw_activity_doc_projects(p_doc text)
 returns text[]
-language sql stable
+language plpgsql stable
 security definer
 set search_path = public
 as $$
-  select coalesce(array_agg(distinct c.project_id), '{}'::text[])
-    from public.content_analysis_corpus c
-   where c.document_id = p_doc;
+declare
+  v text[];
+begin
+  begin
+    select coalesce(array_agg(distinct c.project_id), '{}'::text[]) into v
+      from public.content_analysis_corpus c
+     where c.document_id = p_doc;
+  exception when undefined_table then
+    v := '{}'::text[];
+  end;
+  return coalesce(v, '{}'::text[]);
+end;
 $$;
 
 -- ── Trigger function (full replacement of 067's version) ─────────────────────
@@ -223,21 +262,40 @@ begin
       end;
 
     when 'content_analysis_segments' then
-      -- Sentinel rows are corpus membership in disguise (pre-062 fallback).
-      if rec.code_id = '__ws_corpus__' then return null; end if;
-      v_kind := 'tag'; v_id := rec.document_id;
-      v_label := public.pw_activity_doc_label(rec.document_id);
-      v_actor := coalesce(rec.author_id, rec.note_author_id);
-      if rec.project_id is not null then
-        v_projects := array[rec.project_id];
+      if rec.code_id = '__ws_corpus__' then
+        -- Corpus membership stored via the segments fallback (used while the
+        -- corpus table's migration is missing): log it as the document
+        -- add/remove it really is. The row's `text` carries the doc metadata.
+        if TG_OP = 'UPDATE' then return null; end if;
+        v_project := rec.project_id; v_kind := 'document';
+        v_id := rec.document_id;
+        begin
+          v_label := coalesce(
+            rec.text::jsonb->>'shortTitle', rec.text::jsonb->>'title');
+        exception when others then
+          v_label := null;
+        end;
+        v_label := coalesce(v_label, public.pw_activity_doc_label(rec.document_id));
+        v_actor := rec.author_id;
+        v_summary := case v_op
+          when 'insert' then 'Added document “' || v_label || '” to the workspace'
+          else 'Removed document “' || v_label || '” from the workspace'
+        end;
       else
-        v_projects := public.pw_activity_doc_projects(rec.document_id);
+        v_kind := 'tag'; v_id := rec.document_id;
+        v_label := public.pw_activity_doc_label(rec.document_id);
+        v_actor := coalesce(rec.author_id, rec.note_author_id);
+        if rec.project_id is not null then
+          v_projects := array[rec.project_id];
+        else
+          v_projects := public.pw_activity_doc_projects(rec.document_id);
+        end if;
+        v_summary := case v_op
+          when 'insert' then 'Added a tag in document “' || v_label || '”'
+          when 'update' then 'Edited tags in document “' || v_label || '”'
+          else 'Removed a tag from document “' || v_label || '”'
+        end;
       end if;
-      v_summary := case v_op
-        when 'insert' then 'Added a tag in document “' || v_label || '”'
-        when 'update' then 'Edited tags in document “' || v_label || '”'
-        else 'Removed a tag from document “' || v_label || '”'
-      end;
 
     when 'content_analysis_summaries' then
       v_kind := 'summary'; v_id := rec.document_id;
@@ -367,7 +425,7 @@ exception when others then
 end;
 $$;
 
--- ── Attach the trigger to the content-analysis tables ────────────────────────
+-- ── Attach the trigger to the content-analysis tables that exist ─────────────
 do $$
 declare
   t text;
@@ -379,6 +437,10 @@ declare
   ];
 begin
   foreach t in array tbls loop
+    if to_regclass('public.' || t) is null then
+      raise notice 'pw activity: table % not present — trigger skipped', t;
+      continue;
+    end if;
     execute format('drop trigger if exists trg_%s_activity on public.%I', t, t);
     execute format(
       'create trigger trg_%s_activity
@@ -388,3 +450,50 @@ begin
     );
   end loop;
 end $$;
+
+-- ── Self-diagnosis ────────────────────────────────────────────────────────────
+-- Reports, for every table the log is supposed to watch, whether its trigger
+-- is installed ('ok'), the table exists but the trigger is missing
+-- ('no-trigger' → re-run 067/068), or the table itself is absent
+-- ('table-missing' → that feature's migration hasn't been applied; harmless).
+-- Surfaced in the Activity log dialog so "the log shows nothing" is
+-- diagnosable from the UI instead of silently empty.
+create or replace function public.pw_activity_log_status()
+returns jsonb
+language plpgsql stable
+security definer
+set search_path = public
+as $$
+declare
+  tables jsonb;
+  cnt    bigint;
+begin
+  select jsonb_object_agg(s.tbl, s.st) into tables from (
+    select tbl,
+      case
+        when to_regclass('public.' || tbl) is null then 'table-missing'
+        when exists (
+          select 1 from pg_trigger t
+           where t.tgrelid = to_regclass('public.' || tbl)
+             and t.tgname = 'trg_' || tbl || '_activity'
+             and not t.tgisinternal
+        ) then 'ok'
+        else 'no-trigger'
+      end as st
+    from unnest(array[
+      'pw_projects','pw_modules','pw_recommendations','pw_recommendation_events',
+      'pw_member_state_cells','pw_policy_annotations','pw_policy_codes',
+      'pw_custom_module_content','pw_comments','pw_verifications',
+      'pw_meetings','pw_meeting_milestones','pw_project_phases','pw_flowchart_state',
+      'pw_indicator_revisions',
+      'content_analysis_corpus','content_analysis_segments','content_analysis_summaries',
+      'content_analysis_notes','content_analysis_overall_tags','content_analysis_outlines',
+      'content_analysis_codes'
+    ]) tbl
+  ) s;
+  select count(*) into cnt from public.pw_activity_log;
+  return jsonb_build_object('tables', tables, 'entryCount', cnt);
+end;
+$$;
+
+grant execute on function public.pw_activity_log_status() to anon, authenticated, service_role;
