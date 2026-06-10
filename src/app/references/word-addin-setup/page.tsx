@@ -203,7 +203,11 @@ export default function WordAddinSetupPage() {
                 literature &amp; reports &mdash; with each document&apos;s overall tags shown.
                 Search and filter by tag directly in Word, then insert the citation. EU policies
                 are served as special <em>legislation</em> entries in the reference manager, so
-                legal acts are citable like any other reference.
+                legal acts are citable like any other reference. A built-in citation tracker
+                marks each workspace reference already cited in the open document with a{' '}
+                <code className="bg-gray-700 px-1.5 py-0.5 rounded">✓</code>, shows a cited /
+                not-yet-cited count, and a &ldquo;Not yet cited only&rdquo; filter lists what&apos;s
+                still left to cite.
               </p>
             </div>
 

@@ -896,6 +896,16 @@ Private Function WorkspaceFallbackPick() As Long
         Exit Function
     End If
 
+    ' Citation tracker for the popup fallback: tick the titles of references
+    ' already cited in this document. Display-only - inserts use ids/authors.
+    Dim citedSet As String: citedSet = BuildCitedIdSet()
+    Dim i As Long
+    For i = 1 To m_ResCount
+        If InStr(citedSet, "|" & m_ResIds(i) & "|") > 0 Then
+            m_ResTitles(i) = ChrW(10003) & " " & m_ResTitles(i)
+        End If
+    Next i
+
     WorkspaceFallbackPick = ShowResultsPicker()
 End Function
 
@@ -3035,8 +3045,12 @@ End Sub
 ' tierIndex are the combos' 0-based ListIndex; tagChoice is the tag combo
 ' text ("(All tags)" or blank = no filter). The tag combo is refreshed from
 ' the response facet so it always lists the tags present in the workspace.
+' Each row carries a citation-tracker mark: a check in the first column
+' means that reference is already cited somewhere in the active document.
+' onlyUncited hides the already-cited rows ("what's left to cite" view).
 Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice As String, _
-                                query As String, lst As Object, lblStatus As Object, cmbTag As Object)
+                                query As String, lst As Object, lblStatus As Object, cmbTag As Object, _
+                                Optional onlyUncited As Boolean = False)
     lst.Clear
     m_WsRowCount = 0
     If projIndex < 0 Or projIndex >= m_WsProjCount Then
@@ -3044,6 +3058,13 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         lblStatus.ForeColor = RGB(180, 60, 60)
         Exit Sub
     End If
+
+    ' Citation-tracker column lives at index 0; configure the list at runtime
+    ' so a form built by an older install picks the new layout up too.
+    On Error Resume Next
+    lst.ColumnCount = 5
+    lst.ColumnWidths = "20;52;124;212;88"
+    On Error GoTo 0
 
     Dim tier As String
     Select Case tierIndex
@@ -3069,20 +3090,47 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Exit Sub
     End If
 
-    lblStatus.Caption = m_ResCount & " document(s)"
+    ' Citation tracker: which of these references are already cited in the
+    ' active document?
+    Dim citedSet As String
+    citedSet = BuildCitedIdSet()
+
+    Dim citedCount As Long: citedCount = 0
+    Dim i As Long
+    For i = 1 To m_ResCount
+        If InStr(citedSet, "|" & m_ResIds(i) & "|") > 0 Then citedCount = citedCount + 1
+    Next i
+
+    If onlyUncited And citedCount = m_ResCount Then
+        lblStatus.Caption = "All " & m_ResCount & " matching document(s) are already cited."
+        lblStatus.ForeColor = RGB(40, 120, 40)
+        Exit Sub
+    End If
+
+    If onlyUncited Then
+        lblStatus.Caption = (m_ResCount - citedCount) & " not yet cited (of " & m_ResCount & " matching)"
+    Else
+        lblStatus.Caption = m_ResCount & " document(s) - " & citedCount & " cited, " & _
+                            (m_ResCount - citedCount) & " not yet cited"
+    End If
     lblStatus.ForeColor = RGB(40, 120, 40)
 
     ' Render clustered: a disabled-looking header row opens each source tier;
     ' m_WsRowMap translates list rows back to result indices (0 = header).
     ReDim m_WsRowMap(1 To m_ResCount + 6)
 
+    Dim checkMark As String: checkMark = ChrW(10003)  ' "already cited" tick
+
     Dim lastTier As String: lastTier = Chr(1)
-    Dim i As Long
     For i = 1 To m_ResCount
+        Dim isCited As Boolean
+        isCited = (InStr(citedSet, "|" & m_ResIds(i) & "|") > 0)
+        If onlyUncited And isCited Then GoTo NextItem
+
         If m_ResTiers(i) <> lastTier Then
             lastTier = m_ResTiers(i)
             lst.AddItem ""
-            lst.List(lst.ListCount - 1, 1) = "--- " & UCase(WorkspaceTierLabel(lastTier)) & " ---"
+            lst.List(lst.ListCount - 1, 2) = "--- " & UCase(WorkspaceTierLabel(lastTier)) & " ---"
             m_WsRowCount = m_WsRowCount + 1
             m_WsRowMap(m_WsRowCount) = 0
         End If
@@ -3097,14 +3145,47 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Dim tg As String: tg = m_ResTags(i)
         If Len(tg) > 26 Then tg = Left(tg, 23) & "..."
 
-        lst.AddItem WorkspaceTierLabel(m_ResTiers(i))
-        lst.List(lst.ListCount - 1, 1) = authorYr
-        lst.List(lst.ListCount - 1, 2) = ttl
-        lst.List(lst.ListCount - 1, 3) = tg
+        Dim mark As String: mark = ""
+        If isCited Then mark = checkMark
+
+        lst.AddItem mark
+        lst.List(lst.ListCount - 1, 1) = WorkspaceTierLabel(m_ResTiers(i))
+        lst.List(lst.ListCount - 1, 2) = authorYr
+        lst.List(lst.ListCount - 1, 3) = ttl
+        lst.List(lst.ListCount - 1, 4) = tg
         m_WsRowCount = m_WsRowCount + 1
         m_WsRowMap(m_WsRowCount) = i
+NextItem:
     Next i
 End Sub
+
+' Pipe-delimited set of every reference id cited in the active document
+' ("|id1|id2|") - the citation tracker's source of truth. Group citations
+' (comma-joined CITE: tags) are unpacked into their individual ids. Returns
+' just "|" when there is no document / no citations, so InStr probes on
+' "|id|" stay safe.
+Private Function BuildCitedIdSet() As String
+    Dim citedSet As String: citedSet = "|"
+    On Error GoTo Done
+    Dim cc As ContentControl
+    For Each cc In ActiveDocument.ContentControls
+        If Left(cc.Tag, Len(CITE_TAG_PREFIX)) = CITE_TAG_PREFIX Then
+            Dim ids() As String
+            ids = Split(Mid(cc.Tag, Len(CITE_TAG_PREFIX) + 1), ",")
+            Dim i As Long
+            For i = LBound(ids) To UBound(ids)
+                Dim oneId As String: oneId = Trim(ids(i))
+                If oneId <> "" Then
+                    If InStr(citedSet, "|" & oneId & "|") = 0 Then
+                        citedSet = citedSet & oneId & "|"
+                    End If
+                End If
+            Next i
+        End If
+    Next cc
+Done:
+    BuildCitedIdSet = citedSet
+End Function
 
 ' Translate a workspace list row (1-based) to a result index; 0 for headers.
 Public Function FormBridge_WS_RowToResult(rowIndex As Long) As Long
@@ -3546,8 +3627,15 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
 
     ' Search box
     Set c = d.Controls.Add("Forms.TextBox.1", "txtSearch", True)
-    c.Left = 14: c.Top = 112: c.Width = 400: c.Height = 22
+    c.Left = 14: c.Top = 112: c.Width = 296: c.Height = 22
     c.Font.Size = 10
+
+    ' Citation-tracker filter: hide the rows already cited in this document
+    Set c = d.Controls.Add("Forms.CheckBox.1", "chkUncited", True)
+    c.Caption = "Not yet cited only"
+    c.Left = 318: c.Top = 113: c.Width = 96: c.Height = 18
+    c.Font.Size = 8
+    c.Value = False
 
     ' Search button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnSearch", True)
@@ -3555,9 +3643,9 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     c.Left = 420: c.Top = 110: c.Width = 96: c.Height = 26
     c.Font.Size = 10: c.Font.Bold = True
 
-    ' Hint
+    ' Hint (citation-tracker legend)
     Set c = d.Controls.Add("Forms.Label.1", "lblHint", True)
-    c.Caption = "Documents are clustered by source: policy / scientific / grey literature - with their overall tags"
+    c.Caption = ChrW(10003) & " = already cited in this document - clustered by policy / scientific / grey, with overall tags"
     c.Left = 14: c.Top = 140: c.Width = 504: c.Height = 14
     c.Font.Size = 8: c.ForeColor = RGB(120, 120, 120): c.BackStyle = 0
 
@@ -3568,12 +3656,12 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     c.Font.Size = 9: c.Font.Bold = True
     c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
 
-    ' Results list (4-column: source, author/year, title, tags)
+    ' Results list (5-column: cited mark, source, author/year, title, tags)
     Set c = d.Controls.Add("Forms.ListBox.1", "lstResults", True)
     c.Left = 14: c.Top = 176: c.Width = 504: c.Height = 250
     c.Font.Size = 10
-    c.ColumnCount = 4
-    c.ColumnWidths = "56;132;218;90"
+    c.ColumnCount = 5
+    c.ColumnWidths = "20;52;124;212;88"
 
     ' Insert button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnInsert", True)
@@ -3622,7 +3710,8 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    Me.lblStatus.ForeColor = &H808080" & vbCrLf & _
         "    DoEvents" & vbCrLf & _
         "    ESABCC_RefManager.FormBridge_WS_Search Me.cmbProject.ListIndex, Me.cmbTier.ListIndex, " & _
-                 "Me.cmbTag.Value & """", Me.txtSearch.Value, Me.lstResults, Me.lblStatus, Me.cmbTag" & vbCrLf & _
+                 "Me.cmbTag.Value & """", Me.txtSearch.Value, Me.lstResults, Me.lblStatus, Me.cmbTag, " & _
+                 "(Me.chkUncited.Value = True)" & vbCrLf & _
         "    mBusy = False" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub btnSearch_Click()" & vbCrLf & _
@@ -3642,6 +3731,10 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    RunSearch" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub cmbTag_Change()" & vbCrLf & _
+        "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub chkUncited_Click()" & vbCrLf & _
         "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
         "    RunSearch" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
