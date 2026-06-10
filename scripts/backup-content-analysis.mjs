@@ -1,14 +1,22 @@
 #!/usr/bin/env node
 /**
- * Off-site backup of every content-analysis & project-workspace table.
+ * Off-site backup of every content-analysis, project-workspace and
+ * reference-manager table.
  * ---------------------------------------------------------------------------
  *
  * Exports the full contents of the Supabase tables that hold the team's
  * hand-made work — coded segments (in-text tags), per-document summaries,
  * general notes, overall tags, the code system, workspace corpus membership,
- * ingested documents, and all pw_* project-workspace tables — so that a
+ * ingested documents, all pw_* project-workspace tables, and the reference
+ * manager (references, annotations, comments, collections, …) — so that a
  * Supabase-side incident (accidental deletion, project loss, billing lapse)
  * can never take the work with it.
+ *
+ * PRIVACY: several reference-manager tables (profiles, annotations, comments,
+ * activity_log) contain personal data protected by RLS in the app. The export
+ * runs with the service-role key and sees all of it, so snapshots must only
+ * ever be stored PRIVATELY (the workflow pushes to a private backup repo) —
+ * never committed to a public branch or uploaded as a public-repo artifact.
  *
  * Output: one JSON-Lines file per table (one row per line — git-friendly
  * diffs, stream-friendly restores) plus a manifest.json with row counts.
@@ -72,6 +80,30 @@ const TABLES = {
   pw_meeting_milestones: ['id'],
   pw_project_phases: ['id'],
   pw_flowchart_state: ['project_id', 'storage_key'],
+  // Reference manager — references, the work hung off them, and the personal
+  // organisation around them. Contains personal data (see PRIVACY above).
+  profiles: ['id'],
+  libraries: ['id'],
+  library_members: ['library_id', 'user_id'],
+  references: ['id'],
+  annotations: ['id'],
+  text_annotations: ['id'],
+  comments: ['id'],
+  activity_log: ['id'],
+  custom_tags: ['name'],
+  custom_references: ['id'],
+  citations_used: ['id'],
+  connection_overrides: ['connection_id'],
+  connection_verifications: ['connection_id'],
+  connection_additions: ['id'],
+  connection_assignments: ['connection_id'],
+  workspaces: ['id'],
+  workspace_members: ['workspace_id', 'user_id'],
+  workspace_items: ['id'],
+  collections: ['id'],
+  collection_items: ['id'],
+  artefact_history: ['id'],
+  csl_styles: ['id'],
 };
 
 const PAGE_SIZE = 500;

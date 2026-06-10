@@ -53,19 +53,29 @@ Residual risks, stated honestly:
 ## Nightly backups (set up once, then automatic)
 
 `.github/workflows/content-analysis-backup.yml` exports **every**
-`content_analysis_*` and `pw_*` table nightly (03:30 UTC) and on demand
-(workflow_dispatch — run it manually before any risky migration). Each
-snapshot goes to two independent places:
+`content_analysis_*`, `pw_*` and reference-manager table (references,
+annotations, comments, collections, profiles, …) nightly (03:30 UTC) and on
+demand (workflow_dispatch — run it manually before any risky migration).
 
-1. **`data-backups` branch** of this repo — one commit per night, history
-   kept forever. Any past day is recoverable via `git checkout <sha>`.
-2. **Workflow artifact**, 90-day retention — survives even branch deletion.
+**Privacy**: the export runs with the service-role key and includes tables
+holding personal data (profiles, annotation/comment authorship, activity
+log), while the app repo is public. Snapshots therefore go **only to a
+private backup repository** — one commit per night, history kept forever,
+any past day recoverable via `git checkout <sha>`. They are never committed
+to a public branch and never uploaded as artifacts (public-repo artifacts
+are downloadable by any GitHub user).
 
-One-time setup: add two repository secrets in GitHub → Settings → Secrets
-and variables → Actions:
+One-time setup:
 
-- `SUPABASE_URL` (or reuse `NEXT_PUBLIC_SUPABASE_URL`)
-- `SUPABASE_SERVICE_ROLE_KEY`
+1. Create a **private** repo, e.g. `EUClimateAdvisoryBoard/methodhub-data-backups`.
+2. Create a fine-grained personal access token with **Contents: read & write**
+   on that repo only.
+3. Add four repository secrets in the app repo (GitHub → Settings → Secrets
+   and variables → Actions):
+   - `SUPABASE_URL` (or reuse `NEXT_PUBLIC_SUPABASE_URL`)
+   - `SUPABASE_SERVICE_ROLE_KEY`
+   - `BACKUP_REPO` — e.g. `EUClimateAdvisoryBoard/methodhub-data-backups`
+   - `BACKUP_REPO_TOKEN` — the token from step 2
 
 The job fails loudly if secrets are missing or any table can't be exported in
 full, and warns in the commit message + job annotations if any table's row
