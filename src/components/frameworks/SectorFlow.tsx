@@ -12,14 +12,12 @@ import { useMemo, useState } from 'react';
 import type { Indicator } from '@/data/ecno-indicators';
 import {
   ENABLING_KIND_LABEL,
-  POLICY_STATUS_LABEL,
   type EnablingItem,
   type EnablingKind,
   type FrameworkNode,
   type FrameworkTrack,
   type IndicatorRef,
   type PolicyRef,
-  type PolicyStatus,
   type SectorFramework,
 } from '@/data/sector-frameworks';
 import { useConnectors, type Edge } from './useConnectors';
@@ -436,19 +434,12 @@ function NodeCard({
   );
 }
 
-/** Dot colour for each policy status. */
-const POLICY_STATUS_DOT: Record<PolicyStatus, string> = {
-  'addressed': 'bg-green-400',
-  'partially-addressed': 'bg-yellow-400',
-  'in-progress': 'bg-blue-400',
-  'not-addressed': 'bg-red-500',
-};
-
 /**
- * A row of small policy-instrument tags shown on nodes in the
- * "Policy Gap Report 2.0" version. Each tag shows a status dot
- * and the short instrument name; a tooltip reveals the full name,
- * recommendation code, and status label.
+ * A row of policy-instrument tags shown on nodes in the "Policy Gap Report 2.0"
+ * version. Regular policies are shown as plain white tags; identified policy
+ * gaps (ESABCC recommendations not addressed in EU law) are shown with an
+ * orange tint and a "gap" badge. A tooltip reveals the full instrument name
+ * and the relevant ESABCC recommendation code.
  */
 function PolicyTags({ policies }: { policies: PolicyRef[] }) {
   return (
@@ -464,15 +455,27 @@ function PolicyTags({ policies }: { policies: PolicyRef[] }) {
                   ESABCC rec. {p.recCode}
                 </span>
               )}
-              <span className="block text-[10px] mt-0.5 font-medium">
-                {POLICY_STATUS_LABEL[p.status]}
-              </span>
+              {p.gap && (
+                <span className="block text-[10px] text-orange-300 font-medium mt-0.5">
+                  Policy gap — not addressed in EU law
+                </span>
+              )}
             </span>
           }
         >
-          <span className="inline-flex items-center gap-0.5 rounded px-1 py-0.5 text-[9px] font-medium bg-white/15 text-white border border-white/25 cursor-help leading-none">
-            <span className={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${POLICY_STATUS_DOT[p.status]}`} />
+          <span
+            className={`inline-flex items-center gap-0.5 rounded px-1 py-0.5 text-[9px] font-medium cursor-help leading-none ${
+              p.gap
+                ? 'bg-orange-500/30 text-white border border-orange-400/60'
+                : 'bg-white/15 text-white border border-white/25'
+            }`}
+          >
             {p.shortName}
+            {p.gap && (
+              <span className="ml-0.5 inline-flex items-center rounded bg-orange-400/40 px-0.5 text-[8px] font-bold uppercase tracking-wide">
+                gap
+              </span>
+            )}
           </span>
         </Tooltip>
       ))}
