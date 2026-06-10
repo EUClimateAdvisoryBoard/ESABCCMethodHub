@@ -141,22 +141,51 @@ function mapFamily(fam: ApiFamily, iso3: string): ClimatePolicy {
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */
 
-async function fetchAllFamilies(): Promise<ApiFamily[]> {
+async function fetchAllFamilies(): Promise<{ families: ApiFamily[]; pagesFetched: number }> {
   const pageUrl = (page: number) =>
     `${API_BASE}/families/?corpus.import_id=${CCLW_CORPUS}&page=${page}&page_size=${PAGE_SIZE}`;
 
-  const first = await fetchJson(pageUrl(1));
-  const families: ApiFamily[] = [...(first.data ?? first.families ?? [])];
-  const total: number = first.total ?? families.length;
-  const lastPage = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  // The API's `total` field is unreliable — the upstream router returns
+  // `total = len(page items)` (see navigator-backend families-api/app/
+  // router.py), so it can never be used to compute the page count. Fetch
+  // waves of pages until one comes back short or empty.
+  const MAX_PAGES = 400; // runaway guard (~40k families)
+  const families: ApiFamily[] = [];
+  let page = 1;
+  let done = false;
+  let pagesFetched = 0;
+  let prevPageFirstId = '';
 
-  for (let start = 2; start <= lastPage; start += CONCURRENCY) {
-    const pages = [];
-    for (let p = start; p < start + CONCURRENCY && p <= lastPage; p++) pages.push(p);
+  while (!done && page <= MAX_PAGES) {
+    const pages: number[] = [];
+    for (let p = page; p < page + CONCURRENCY && p <= MAX_PAGES; p++) pages.push(p);
     const batches = await Promise.all(pages.map((p) => fetchJson(pageUrl(p))));
-    for (const b of batches) families.push(...(b.data ?? b.families ?? []));
+    for (const b of batches) {
+      const batch = b.data ?? b.families ?? [];
+      // If the service ever ignores the page parameter we would loop over
+      // identical pages until MAX_PAGES — detect and bail instead.
+      const firstId = String(batch[0]?.import_id ?? '');
+      if (firstId && firstId === prevPageFirstId) {
+        done = true;
+        break;
+      }
+      prevPageFirstId = firstId;
+      families.push(...batch);
+      pagesFetched += 1;
+      if (batch.length < PAGE_SIZE) done = true;
+    }
+    page += CONCURRENCY;
   }
-  return families;
+
+  // Pages are ordered by last_modified, which can shift mid-crawl — dedupe.
+  const seen = new Set<string>();
+  const deduped = families.filter((f) => {
+    const id = String(f.import_id ?? f.slug ?? '');
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
+  return { families: deduped, pagesFetched };
 }
 
 export interface RefreshResult {
@@ -165,7 +194,7 @@ export interface RefreshResult {
 }
 
 export async function refreshFromClimateLaws(): Promise<RefreshResult> {
-  const families = await fetchAllFamilies();
+  const { families, pagesFetched } = await fetchAllFamilies();
 
   const policies: ClimatePolicy[] = [];
   for (const fam of families) {
@@ -184,8 +213,12 @@ export async function refreshFromClimateLaws(): Promise<RefreshResult> {
   // with an empty or untitled one.
   const untitled = policies.filter((p) => !p.title).length;
   if (policies.length < 200 || untitled > policies.length / 10) {
+    // Diagnostic shape of the message matters: "1 page" → the deployment
+    // is running code that trusted the API's broken `total` field;
+    // "many pages, few EU policies" → the geography mapping broke.
     throw new Error(
-      `Refresh aborted: result looks broken (${policies.length} policies, ${untitled} untitled). ` +
+      `Refresh aborted: result looks broken (${policies.length} EU policies, ${untitled} untitled, ` +
+        `from ${families.length} families across ${pagesFetched} pages). ` +
         'The climatepolicyradar.org API schema may have changed.',
     );
   }
