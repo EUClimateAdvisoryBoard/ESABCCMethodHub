@@ -18,6 +18,7 @@ import {
   type FrameworkTrack,
   type IndicatorRef,
   type PolicyRef,
+  type RiskKind,
   type SectorFramework,
 } from '@/data/sector-frameworks';
 import { useConnectors, type Edge } from './useConnectors';
@@ -46,6 +47,22 @@ interface Props {
 // Uniform per-level palette mirroring the report figures.
 const OUTCOME_BG = '#4E8595';
 const LEVER_BG = '#9E4A46';
+
+// Climate-risk row colours (EUCRA impact chain).
+const RISK_KIND_BG: Record<RiskKind, string> = {
+  risk: '#9D174D',    // rose/pink — major climate risks
+  impact: '#C2410C',  // orange — direct/indirect impacts
+  driver: '#B45309',  // amber — non-climatic risk drivers
+  hazard: '#1E40AF',  // blue — climate hazards
+};
+const RISK_KIND_LABEL: Record<RiskKind, string> = {
+  risk: 'Major climate risks',
+  impact: 'Climate change impacts',
+  driver: 'Non-climatic risk drivers',
+  hazard: 'Climate hazards',
+};
+// Render order: closest to outcomes first, then drilling down to origin.
+const RISK_KIND_ORDER: RiskKind[] = ['risk', 'impact', 'driver', 'hazard'];
 // Adaptation-track cards use a distinct teal family in the beta board.
 const ADAPT_OUTCOME_BG = '#2E7D74';
 const ADAPT_LEVER_BG = '#3F8C7F';
@@ -86,6 +103,7 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
     const e: Edge[] = [];
     for (const o of sector.outcomes) e.push({ from: o.id, to: 'goal' });
     for (const l of sector.levers) for (const p of l.parents) e.push({ from: l.id, to: p });
+    for (const r of (sector.risks ?? [])) for (const p of r.parents) e.push({ from: r.id, to: p });
     return e;
   }, [sector]);
 
@@ -208,6 +226,28 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
             ))}
           </div>
         </Row>
+
+        {/* ── Climate risk rows (EUCRA impact chain) ─────────────────────────── */}
+        {(sector.risks ?? []).length > 0 && RISK_KIND_ORDER.map((kind) => {
+          const nodes = (sector.risks ?? []).filter((n) => (n.riskKind ?? 'risk') === kind);
+          if (nodes.length === 0) return null;
+          return (
+            <Row key={kind} label={RISK_KIND_LABEL[kind]} bg={RISK_KIND_BG[kind]} text="#fff">
+              <div className="flex gap-2 items-stretch flex-wrap">
+                {nodes.map((r) => (
+                  <div
+                    key={r.id}
+                    ref={register(r.id)}
+                    className="relative rounded shadow-sm flex-1 min-w-[118px] p-2"
+                    style={{ background: RISK_KIND_BG[kind] }}
+                  >
+                    <div className="text-[11px] font-semibold leading-tight text-white">{r.label}</div>
+                  </div>
+                ))}
+              </div>
+            </Row>
+          );
+        })}
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
         <Row label={showAdaptation ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>

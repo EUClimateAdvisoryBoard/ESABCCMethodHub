@@ -32,6 +32,8 @@ import {
   defaultFrameworkBoardAdvancedV1,
   defaultFrameworkBoardAdvancedV3,
   defaultFrameworkBoardPolicyGap2,
+  defaultFrameworkBoardEnergyTest,
+  defaultFrameworkBoardV3,
   FRAMEWORK_BOARD_VERSION,
   FRAMEWORK_BOARD_BETA_VERSION,
   FRAMEWORK_BOARD_ADVANCED_VERSION,
@@ -113,6 +115,8 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
   { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
+  { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
+  { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
 ];
 
 interface RegistryData {
@@ -136,6 +140,8 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
   if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
   if (version.id === 'policy-gap-2') return `esabcc-framework-board-policy-gap-2:${projectId}`;
+  if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
+  if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -277,6 +283,8 @@ export function defaultBoardFor(version: FlowChartVersion, projectId: string): F
   if (version.id === 'advanced-v1') return defaultFrameworkBoardAdvancedV1();
   if (version.id === 'advanced-v3') return defaultFrameworkBoardAdvancedV3();
   if (version.id === 'policy-gap-2') return defaultFrameworkBoardPolicyGap2();
+  if (version.id === 'energy-supply-test') return defaultFrameworkBoardEnergyTest();
+  if (version.id === 'v3') return defaultFrameworkBoardV3();
   return (
     readBoard(seedStorageKey(version, projectId)) ??
     (version.variant === 'advanced'

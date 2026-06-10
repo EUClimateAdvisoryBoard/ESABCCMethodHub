@@ -88,11 +88,26 @@ export interface IndicatorRef {
   enhanced?: boolean;
 }
 
-/** An outcome or mitigation-lever card. */
+/**
+ * Kind of climate-risk node, used in the "climate adaptation test" flow chart
+ * versions. Each kind renders in a distinct row with its own colour.
+ *   'hazard'  — climate hazard driver (e.g. warming, floods)
+ *   'driver'  — non-climatic risk driver (e.g. inadequate infrastructure design)
+ *   'impact'  — direct/indirect climate impact (e.g. decreased hydropower production)
+ *   'risk'    — major climate risk (the aggregated, named risk)
+ */
+export type RiskKind = 'hazard' | 'driver' | 'impact' | 'risk';
+
+/** An outcome, mitigation-lever, or climate-risk card. */
 export interface FrameworkNode {
   id: string;
-  layer: 'outcome' | 'lever';
+  layer: 'outcome' | 'lever' | 'risk';
   label: string;
+  /**
+   * For `layer: 'risk'` nodes — which kind of risk element this is.
+   * Determines the row it is grouped into and the colour used.
+   */
+  riskKind?: RiskKind;
   /** Mitigation (default) or adaptation. Adaptation cards only appear in the beta board. */
   track?: FrameworkTrack;
   note?: string;
@@ -125,6 +140,12 @@ export interface SectorFramework {
   figure: string;
   /** EU policies relevant to the sector GHG-reduction goal (Policy Gap Report 2.0). */
   goalPolicies?: PolicyRef[];
+  /**
+   * Climate-risk nodes shown between the Outcomes row and the Mitigation levers
+   * row. Used in the "climate adaptation test" flow chart versions. Each node
+   * carries a `riskKind` that places it into the correct coloured sub-row.
+   */
+  risks?: FrameworkNode[];
   /** Accent colour (hex) used for the sector's cards and spine. */
   color: string;
   /** Text of the dark top box (the sector goal). */
@@ -1811,4 +1832,262 @@ export function defaultFrameworkBoardPolicyGap2(): FrameworkBoard {
     }
   }
   return { version: FRAMEWORK_BOARD_VERSION, sectors };
+}
+
+// ── Climate adaptation test boards ──────────────────────────────────────────
+//
+// These boards extend the report-faithful energy supply framework with
+// climate-risk nodes drawn from the EUCRA (EU Climate Risk Assessment) impact
+// chain for the energy system (Figure 8.1 of the EUCRA).
+//
+// Risk nodes sit between the Outcomes row and the Mitigation levers row and are
+// grouped by `riskKind` into coloured sub-rows:
+//   'risk'   (pink)  — major named climate risks
+//   'impact' (orange)— direct/indirect climate impacts
+//   'driver' (amber) — non-climatic risk drivers
+//   'hazard' (blue)  — climate hazards (origin of the chain)
+//
+// Arrow direction follows the same convention as the rest of the chart: each
+// node's `parents` list the nodes it feeds into (i.e. points upward to).
+
+/** Energy supply sector with two climate-risk nodes (minimal test). */
+function energySectorWithTestRisks(): SectorFramework {
+  const base = JSON.parse(
+    JSON.stringify(SECTOR_FRAMEWORKS.find((s) => s.id === 'energy')!),
+  ) as SectorFramework;
+  // Strip enhanced indicator chips.
+  for (const node of [...base.outcomes, ...base.levers]) {
+    node.indicators = node.indicators.filter((r) => !r.enhanced);
+  }
+  base.risks = [
+    {
+      id: 'en-r1',
+      layer: 'risk',
+      riskKind: 'risk',
+      label: 'Increased energy demand',
+      parents: ['en-o2'],
+      indicators: [],
+    },
+    {
+      id: 'en-r2',
+      layer: 'risk',
+      riskKind: 'risk',
+      label: 'Increased power outages and disruptions to renewable generation',
+      parents: ['en-o1'],
+      indicators: [],
+    },
+  ];
+  base.levers = [
+    ...base.levers,
+    {
+      id: 'en-adapt-l1',
+      layer: 'lever',
+      label: 'Adaptation response (placeholder)',
+      parents: ['en-r1'],
+      indicators: [],
+    },
+    {
+      id: 'en-adapt-l2',
+      layer: 'lever',
+      label: 'Adaptation response (placeholder)',
+      parents: ['en-r2'],
+      indicators: [],
+    },
+  ];
+  return base;
+}
+
+/**
+ * "Energy supply test" board — one sector (energy supply) with two climate-risk
+ * nodes inserted between the Outcomes and Mitigation levers rows.
+ *
+ * Risk 1 "Increased energy demand" links to outcome `en-o2` (Reduced energy demand).
+ * Risk 2 "Increased power outages" links to outcome `en-o1` (Reduced GHG from energy supply).
+ * Two placeholder adaptation-response boxes at lever level link up to each risk.
+ */
+export function defaultFrameworkBoardEnergyTest(): FrameworkBoard {
+  return {
+    version: FRAMEWORK_BOARD_VERSION,
+    sectors: [energySectorWithTestRisks()],
+  };
+}
+
+/**
+ * "v3" board — energy supply sector with the full EUCRA climate change impact
+ * chain (Figure 8.1) added as four stacked risk rows between Outcomes and
+ * Mitigation levers:
+ *   Major climate risks → Climate change impacts → Non-climatic drivers → Climate hazards
+ */
+export function defaultFrameworkBoardV3(): FrameworkBoard {
+  const base = JSON.parse(
+    JSON.stringify(SECTOR_FRAMEWORKS.find((s) => s.id === 'energy')!),
+  ) as SectorFramework;
+  for (const node of [...base.outcomes, ...base.levers]) {
+    node.indicators = node.indicators.filter((r) => !r.enhanced);
+  }
+
+  // ── Major climate risks (pink) ─────────────────────────────────────────────
+  const majorRisks: FrameworkNode[] = [
+    {
+      id: 'en-cr1',
+      layer: 'risk',
+      riskKind: 'risk',
+      label:
+        'Risk of electricity disruption due to heat and drought impacts on energy production and peak demand',
+      parents: ['en-o1'],
+      indicators: [],
+    },
+    {
+      id: 'en-cr2',
+      layer: 'risk',
+      riskKind: 'risk',
+      label:
+        'Risk of energy disruption due to damage to energy transportation or storage infrastructure following coastal or inland flooding',
+      parents: ['en-o1'],
+      indicators: [],
+    },
+  ];
+
+  // ── Climate change impacts (orange) ────────────────────────────────────────
+  const impacts: FrameworkNode[] = [
+    {
+      id: 'en-ci1',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Increased cooling energy demand',
+      parents: ['en-cr1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci2',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Decreased capacity of power lines / transformers',
+      parents: ['en-cr1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci3',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Decreased hydropower production',
+      parents: ['en-cr1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci4',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Decreased thermal power production',
+      parents: ['en-cr1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci5',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Increased need for desalination',
+      parents: ['en-cr1'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci6',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Damage to energy transport / storage infrastructure',
+      parents: ['en-cr2'],
+      indicators: [],
+    },
+    {
+      id: 'en-ci7',
+      layer: 'risk',
+      riskKind: 'impact',
+      label: 'Damage to renewable energy sources',
+      parents: ['en-cr1', 'en-cr2'],
+      indicators: [],
+    },
+  ];
+
+  // ── Non-climatic risk drivers (amber) ──────────────────────────────────────
+  const drivers: FrameworkNode[] = [
+    {
+      id: 'en-cd1',
+      layer: 'risk',
+      riskKind: 'driver',
+      label: 'Increased electricity demand',
+      parents: ['en-ci1', 'en-ci2'],
+      indicators: [],
+    },
+    {
+      id: 'en-cd2',
+      layer: 'risk',
+      riskKind: 'driver',
+      label: 'Lack of technology for resilient energy infrastructure',
+      parents: ['en-ci6', 'en-ci7'],
+      indicators: [],
+    },
+    {
+      id: 'en-cd3',
+      layer: 'risk',
+      riskKind: 'driver',
+      label: 'Limited capacity for resilient water management',
+      parents: ['en-ci3', 'en-ci5'],
+      indicators: [],
+    },
+    {
+      id: 'en-cd4',
+      layer: 'risk',
+      riskKind: 'driver',
+      label: 'Inadequate power plant design',
+      parents: ['en-ci3', 'en-ci4'],
+      indicators: [],
+    },
+  ];
+
+  // ── Climate hazards (blue) ─────────────────────────────────────────────────
+  const hazards: FrameworkNode[] = [
+    {
+      id: 'en-ch1',
+      layer: 'risk',
+      riskKind: 'hazard',
+      label: 'Warming / heatwaves',
+      parents: ['en-cd1', 'en-ci1', 'en-ci2', 'en-ci4'],
+      indicators: [],
+    },
+    {
+      id: 'en-ch2',
+      layer: 'risk',
+      riskKind: 'hazard',
+      label: 'Decrease in precipitation / droughts',
+      parents: ['en-cd3', 'en-cd4', 'en-ci3', 'en-ci5'],
+      indicators: [],
+    },
+    {
+      id: 'en-ch3',
+      layer: 'risk',
+      riskKind: 'hazard',
+      label: 'Wildfires',
+      parents: ['en-ci6', 'en-ci7'],
+      indicators: [],
+    },
+    {
+      id: 'en-ch4',
+      layer: 'risk',
+      riskKind: 'hazard',
+      label: 'Floods / landslides',
+      parents: ['en-cd2', 'en-ci6'],
+      indicators: [],
+    },
+    {
+      id: 'en-ch5',
+      layer: 'risk',
+      riskKind: 'hazard',
+      label: 'Extreme weather events',
+      parents: ['en-cd2', 'en-ci2', 'en-ci7'],
+      indicators: [],
+    },
+  ];
+
+  base.risks = [...majorRisks, ...impacts, ...drivers, ...hazards];
+  return { version: FRAMEWORK_BOARD_VERSION, sectors: [base] };
 }
