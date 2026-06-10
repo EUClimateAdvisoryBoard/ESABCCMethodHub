@@ -67,12 +67,37 @@ export default function OverallTagPicker({
   const byId = useMemo(() => new Map(codes.map(c => [c.id, c])), [codes]);
   const selectedSet = useMemo(() => new Set(selected), [selected]);
 
+  // The master pool contains some codes that share a display name (e.g. the
+  // root "Finance" and the domain-derived "Finance"). The checklist collapses
+  // each name to a single row; this map records every id behind a name so the
+  // row can reflect — and untoggle — whichever duplicate a document actually
+  // carries. Nothing is deleted from the pool, so tags already applied under
+  // a duplicate id keep resolving everywhere.
+  const idsByName = useMemo(() => {
+    const m = new Map<string, string[]>();
+    for (const c of codes) {
+      const key = c.name.trim().toLowerCase();
+      const ids = m.get(key);
+      if (ids) ids.push(c.id);
+      else m.set(key, [c.id]);
+    }
+    return m;
+  }, [codes]);
+
   // Master codes in tree order (already the order they're declared), filtered
   // by the search box. When searching, drop the indentation so hits read flat.
+  // Duplicate names collapse to their first (canonical) occurrence.
   const visible = useMemo(() => {
+    const seen = new Set<string>();
+    const pool = codes.filter(c => {
+      const key = c.name.trim().toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
     const q = query.trim().toLowerCase();
-    if (!q) return codes.map(c => ({ code: c, depth: depthOf(c, byId) }));
-    return codes
+    if (!q) return pool.map(c => ({ code: c, depth: depthOf(c, byId) }));
+    return pool
       .filter(c => c.name.toLowerCase().includes(q))
       .map(c => ({ code: c, depth: 0 }));
   }, [codes, byId, query]);
@@ -92,10 +117,21 @@ export default function OverallTagPicker({
     };
   }, [open]);
 
-  const selectedCodes = useMemo(
-    () => selected.map(id => byId.get(id) ?? parseCustomTag(id)).filter(Boolean) as CodeNode[],
-    [selected, byId],
-  );
+  // Resolved selected tags, collapsed by name so a document carrying two
+  // same-named ids (root + domain duplicates) counts as one tag.
+  const selectedCodes = useMemo(() => {
+    const out: CodeNode[] = [];
+    const seen = new Set<string>();
+    for (const id of selected) {
+      const c = byId.get(id) ?? parseCustomTag(id);
+      if (!c) continue;
+      const key = c.name.trim().toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(c);
+    }
+    return out;
+  }, [selected, byId]);
 
   // Already-selected custom tags — they aren't in the master pool, so surface
   // them at the top of the checklist where they can be toggled back off.
@@ -141,7 +177,7 @@ export default function OverallTagPicker({
           </span>
         )}
         <span className="font-semibold">{label}</span>
-        <span className="font-mono text-tertiary-light">{selected.length}</span>
+        <span className="font-mono text-tertiary-light">{selectedCodes.length}</span>
         <span className="text-tertiary-light" aria-hidden>{open ? '▴' : '▾'}</span>
       </button>
 
@@ -196,12 +232,18 @@ export default function OverallTagPicker({
                 </li>
               ))}
             {visible.map(({ code, depth }) => {
-              const on = selectedSet.has(code.id);
+              // A row stands for every code sharing its name. It reads as
+              // checked when any of them is applied; toggling off removes the
+              // id the document actually carries, toggling on adds the
+              // canonical (first-declared) one.
+              const groupIds = idsByName.get(code.name.trim().toLowerCase()) ?? [code.id];
+              const selectedId = groupIds.find(id => selectedSet.has(id));
+              const on = selectedId !== undefined;
               return (
                 <li key={code.id}>
                   <button
                     type="button"
-                    onClick={() => onToggle(code.id)}
+                    onClick={() => onToggle(selectedId ?? code.id)}
                     className={`w-full flex items-center gap-1.5 text-left px-1.5 py-1 rounded text-[11px] transition ${
                       on ? 'bg-secondary/10 text-tertiary-dark' : 'hover:bg-grey-50 text-tertiary'
                     }`}
@@ -229,6 +271,11 @@ export default function OverallTagPicker({
               <li className="text-[11px] text-tertiary-light px-2 py-1">No matching tags.</li>
             )}
           </ul>
+          {allowCustom && !trimmedQuery && (
+            <p className="text-[10px] text-tertiary-light px-1.5 pt-1.5 mt-1.5 border-t border-grey-100">
+              + Type a new name above to create your own tag.
+            </p>
+          )}
         </div>
       )}
     </div>

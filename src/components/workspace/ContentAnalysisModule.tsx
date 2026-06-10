@@ -551,6 +551,15 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     return out;
   }, [allDocuments, corpusIds, corpusMeta, sourceType]);
 
+  // ── Overall (document-level) tags ─────────────────────────────────────────
+  // The shared master taxonomy is the pool of selectable overall tags — the
+  // same codes policy documents are tagged with — so the dots stay comparable
+  // across every source tier.
+  const masterCodes = useMemo(
+    () => snapshot.codes.filter(c => c.scope === 'master'),
+    [snapshot.codes],
+  );
+
   const filteredBrowse = useMemo(() => {
     const q = browseQuery.trim().toLowerCase();
     const inCorpus = new Set(corpusIds);
@@ -571,7 +580,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       );
     }
     if (browseTagFilter.length > 0) {
+      // Codes sharing a display name (e.g. the root "Finance" and the
+      // domain-derived "Finance") collapse to one row in the picker, so the
+      // filter must match every id behind a chosen name.
       const wanted = new Set(browseTagFilter);
+      const wantedNames = new Set(
+        masterCodes
+          .filter(c => wanted.has(c.id))
+          .map(c => c.name.trim().toLowerCase()),
+      );
+      for (const c of masterCodes) {
+        if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
+      }
       const editable = sourceType !== 'policy';
       out = out.filter(d => {
         const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
@@ -590,16 +610,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       .sort((a, b) => (b.t - a.t) || (a.i - b.i))
       .map(x => x.d);
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags, liveRefs]);
-
-  // ── Overall (document-level) tags ─────────────────────────────────────────
-  // The shared master taxonomy is the pool of selectable overall tags — the
-  // same codes policy documents are tagged with — so the dots stay comparable
-  // across every source tier.
-  const masterCodes = useMemo(
-    () => snapshot.codes.filter(c => c.scope === 'master'),
-    [snapshot.codes],
-  );
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags, liveRefs, masterCodes]);
 
   /** Whether the active source tier supports manual overall tagging. Policy
    *  documents carry an AI-curated baseline managed elsewhere; scientific &
@@ -1934,9 +1945,15 @@ function DocumentViewer({
             Overall tags
           </span>
           {overallTagSelected.length > 0 ? (
-            overallTagSelected.map(id => {
+            overallTagSelected.map((id, i, all) => {
               const c = overallTagCodes.find(x => x.id === id) ?? resolveOverallTag(id);
               if (!c) return null;
+              // Same-named codes (e.g. root + domain "Finance") read as one
+              // tag — show a single chip for the pair.
+              const nameOf = (tagId: string) =>
+                (overallTagCodes.find(x => x.id === tagId) ?? resolveOverallTag(tagId))?.name.trim().toLowerCase();
+              const lc = c.name.trim().toLowerCase();
+              if (all.slice(0, i).some(prev => nameOf(prev) === lc)) return null;
               return (
                 <span
                   key={id}
