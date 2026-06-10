@@ -196,13 +196,24 @@ export default function ActivityLogPanel({
             {outbox.dead > 0 && (
               <p className="text-[11px] text-red-800 mt-0.5 leading-snug">
                 They still show on the page from the local copy, but they were never saved or
-                logged
+                logged. Failed saves are kept across sessions, so these can be old.
                 {lastDead
-                  ? ` — the server rejected ${describeSaveTarget(lastDead.url)} with error ${lastDead.status}${
-                      lastDead.status === 401 ? ' (you were signed out when it tried to save)' : ''
-                    }`
-                  : ''}
-                . Make sure you are signed in, then retry.
+                  ? ` Most recent: ${describeSaveTarget(lastDead.url)} rejected with error ${
+                      lastDead.status
+                    } on ${new Date(lastDead.diedAt).toLocaleString(undefined, {
+                      day: 'numeric',
+                      month: 'short',
+                      hour: '2-digit',
+                      minute: '2-digit',
+                    })}${
+                      lastDead.status === 401
+                        ? ' — this browser had no valid login at that moment (e.g. an expired session), even if the page looked signed in'
+                        : ''
+                    }.`
+                  : ''}{' '}
+                {signedIn === false
+                  ? 'Sign in first, then retry.'
+                  : 'You are signed in now, so retrying will save them.'}
               </p>
             )}
             {outbox.dead > 0 && (
