@@ -555,6 +555,15 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     const q = browseQuery.trim().toLowerCase();
     const inCorpus = new Set(corpusIds);
     let out = candidateDocs.filter(d => !inCorpus.has(d.id));
+    // The reference library is the source of truth for which references exist.
+    // This browser's snapshot may still hold a local copy of a reference that
+    // was since deleted in the reference manager (the server doc pull skips
+    // `ref-doc-` ids, so nothing ever reconciles those local copies) — drop
+    // them from the browse list once the library has loaded.
+    if (!liveRefs.loading && !liveRefs.error) {
+      const inLibrary = new Set(liveRefs.docs.map(d => d.id));
+      out = out.filter(d => !d.id.startsWith('ref-doc-') || inLibrary.has(d.id));
+    }
     if (q) {
       out = out.filter(d =>
         d.title.toLowerCase().includes(q) ||
@@ -569,8 +578,19 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         return tags.some(t => wanted.has(t));
       });
     }
+    // Newest-added references first. The added-at timestamp lives on the
+    // library copy of each doc (snapshot copies win the `allDocuments` dedupe
+    // and lack it), so resolve it by id. Static-library refs have no
+    // timestamp and stay below the live ones, in their bundled order.
+    const addedAtById = new Map(
+      liveRefs.docs.map(d => [d.id, d.referenceAddedAt ? Date.parse(d.referenceAddedAt) : 0] as const),
+    );
+    out = out
+      .map((d, i) => ({ d, i, t: addedAtById.get(d.id) || 0 }))
+      .sort((a, b) => (b.t - a.t) || (a.i - b.i))
+      .map(x => x.d);
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags]);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags, liveRefs]);
 
   // ── Overall (document-level) tags ─────────────────────────────────────────
   // The shared master taxonomy is the pool of selectable overall tags — the

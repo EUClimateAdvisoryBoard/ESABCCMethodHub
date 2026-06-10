@@ -210,6 +210,11 @@ export interface AnalysisDocument {
    *  literature & reports" (report / web / legislation). Only set for
    *  `sourceKind === 'reference'`. */
   referenceType?: 'article' | 'report' | 'web' | 'chapter' | 'legislation' | 'book';
+  /** ISO timestamp of when the reference was added to the live reference
+   *  library (`custom_references.added_at`). Absent for the bundled static
+   *  library and non-reference docs. Drives newest-first ordering in the
+   *  "Add documents" browse list. */
+  referenceAddedAt?: string;
 }
 
 /** Optional structured payload attached to a "numeric extraction" segment.
