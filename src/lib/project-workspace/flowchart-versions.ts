@@ -37,6 +37,10 @@ import {
   FRAMEWORK_BOARD_ADVANCED_VERSION,
   type FrameworkBoard,
 } from '@/data/sector-frameworks';
+import { defaultResultsChainBoardV2 } from '@/data/results-chain-v2';
+import { defaultMonitoringMapBoardV4 } from '@/data/monitoring-map-v4';
+import { defaultResultsChainBoardV5 } from '@/data/results-chain-v5';
+import { defaultPolicyLoopBoardV6 } from '@/data/policy-loop-v6';
 
 /**
  * Controls adaptation wording in the board UI; inherited from the foundation.
@@ -211,6 +215,64 @@ export function saveBoard(projectId: string, version: FlowChartVersion, board: F
   pushState(projectId, key, board);
 }
 
+// ── Generic (any-shape) board state ──────────────────────────────────────────
+// The four "Advanced" computed views (v2 results-chain, v4 monitoring-map, v5
+// sectored results-chain, v6 policy-loop) each persist their own board shape,
+// not the sectors `FrameworkBoard`. These helpers store/read arbitrary JSON
+// under the version's board key (and seed key) so those views can be edited and
+// the edits synced exactly like the sector boards.
+
+/** The computed published default for a *computed* variant, else null. */
+export function computedDefaultBoard(version: FlowChartVersion): unknown | null {
+  switch (version.variant) {
+    case 'advanced-v2':
+      return defaultResultsChainBoardV2();
+    case 'advanced-v4':
+      return defaultMonitoringMapBoardV4();
+    case 'advanced-v5':
+      return defaultResultsChainBoardV5();
+    case 'advanced-v6':
+      return defaultPolicyLoopBoardV6();
+    default:
+      return null;
+  }
+}
+
+/** Parse a stored board as arbitrary JSON, with no shape validation. */
+function readAnyBoard(key: string): unknown | null {
+  if (typeof window === 'undefined') return null;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return null;
+    return JSON.parse(raw) as unknown;
+  } catch {
+    return null;
+  }
+}
+
+/** Read a version's stored board as arbitrary JSON (computed views). */
+export function readVersionBoard(projectId: string, version: FlowChartVersion): unknown | null {
+  return readAnyBoard(boardStorageKey(version, projectId));
+}
+
+/** Read a custom computed version's reset seed (the foundation snapshot). */
+export function readVersionSeed(projectId: string, version: FlowChartVersion): unknown | null {
+  return readAnyBoard(seedStorageKey(version, projectId));
+}
+
+/** Persist any-shape board state for a version (cache + shared store). */
+export function saveVersionBoard(projectId: string, version: FlowChartVersion, board: unknown): void {
+  const key = boardStorageKey(version, projectId);
+  if (typeof window !== 'undefined') {
+    try {
+      localStorage.setItem(key, JSON.stringify(board));
+    } catch {
+      /* quota / private mode */
+    }
+  }
+  pushState(projectId, key, board);
+}
+
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
@@ -243,6 +305,11 @@ function readBoard(key: string): FrameworkBoard | null {
 }
 
 function writeBoard(key: string, board: FrameworkBoard): void {
+  writeAnyBoard(key, board);
+}
+
+/** Write any-shape board JSON to the localStorage cache. */
+function writeAnyBoard(key: string, board: unknown): void {
   if (typeof window === 'undefined') return;
   try {
     localStorage.setItem(key, JSON.stringify(board));
@@ -335,8 +402,14 @@ export function createVersion(
   name: string,
 ): FlowChartVersion {
   const id = `fcv-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`;
+  // Snapshot the foundation's *current* board. For the computed views this is an
+  // any-shape board (results-chain / policy-loop), so read it generically and
+  // fall back to that variant's computed default; sector boards keep their
+  // existing default path.
   const source =
-    readBoard(boardStorageKey(foundation, projectId)) ?? defaultBoardFor(foundation, projectId);
+    readAnyBoard(boardStorageKey(foundation, projectId)) ??
+    computedDefaultBoard(foundation) ??
+    defaultBoardFor(foundation, projectId);
   const version: FlowChartVersion = {
     id,
     name: name.trim() || 'Untitled flow charts',
@@ -348,8 +421,9 @@ export function createVersion(
   };
   const boardKey = boardStorageKey(version, projectId);
   const seedKey = seedStorageKey(version, projectId);
-  writeBoard(boardKey, source);
-  writeBoard(seedKey, source);
+  // `source` is any-shape (sector or computed board); write it verbatim.
+  writeAnyBoard(boardKey, source);
+  writeAnyBoard(seedKey, source);
   pushState(projectId, boardKey, source);
   pushState(projectId, seedKey, source);
   const reg = readRegistry(projectId);
