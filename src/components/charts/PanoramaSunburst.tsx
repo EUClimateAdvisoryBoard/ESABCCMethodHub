@@ -9,10 +9,17 @@
  * (ClimateView): clicking a sector animates it open to the full circle,
  * clicking the centre zooms back out.
  *
- * Showpiece feature: a time-lapse play button that morphs the wheel
- * continuously through the 2005–2022 record (arc weights are interpolated
- * per animation frame), plus restrained hover pop-out and a pulse ring on
- * selection. All motion is suppressed under `prefers-reduced-motion`.
+ * Showpiece features:
+ *   - time-lapse: a play button morphs the wheel continuously through the
+ *     2005–2022 record (arc weights are interpolated per animation frame);
+ *   - a true 3D scene: orbit rings with drifting particles float on a
+ *     depth plane behind the wheel, a frosted-glass HUD puck floats in
+ *     front, and a pointer-tracked tilt parallaxes the layers;
+ *   - radial depth gradients, sector-coloured hover glow + pop-out with
+ *     dimming, a one-off light sweep on entry, an ambient glow that tints
+ *     to the hovered sector, and a pulse ring on selection.
+ *
+ * All motion is suppressed under `prefers-reduced-motion`.
  */
 
 import { useEffect, useRef, useState } from 'react';
@@ -52,7 +59,8 @@ const R1_IN = 104;
 const R1_OUT = 196;
 const R2_IN = 202;
 const R2_OUT = 286;
-const HOVER_POP = 7;
+const HOVER_POP = 10;
+const TILT_DEG = 9;
 
 function formatMt(v: number): string {
   const abs = Math.abs(v);
@@ -134,6 +142,7 @@ function computeLayout(
     overview.set(s.id, { x0: cursor, x1: cursor + span });
     cursor += span + SECTOR_PAD;
   });
+
   sectors.forEach(s => {
     const children = arcs.filter(a => a.parentId === s.id);
     if (children.length === 0) return;
@@ -188,6 +197,8 @@ export default function PanoramaSunburst({
   onSelect: (id: string | null) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sceneRef = useRef<HTMLDivElement>(null);
+  const backLayerRef = useRef<HTMLDivElement>(null);
   const wheelWrapRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
   const centerValueRef = useRef<HTMLDivElement>(null);
@@ -211,8 +222,10 @@ export default function PanoramaSunburst({
 
   useEffect(() => {
     const container = containerRef.current;
+    const scene = sceneRef.current;
+    const backLayer = backLayerRef.current;
     const wheelWrapEl = wheelWrapRef.current;
-    if (!container || !wheelWrapEl) return;
+    if (!container || !scene || !backLayer || !wheelWrapEl) return;
 
     const reduceMotion =
       typeof window !== 'undefined' &&
@@ -250,20 +263,67 @@ export default function PanoramaSunburst({
       .attr('fill', '#ffffff')
       .attr('opacity', 0.45);
 
-    // Single soft lift shadow for hovered / selected arcs.
-    defs
-      .append('filter')
-      .attr('id', 'pano-lift')
-      .attr('x', '-40%')
-      .attr('y', '-40%')
-      .attr('width', '180%')
-      .attr('height', '180%')
-      .append('feDropShadow')
-      .attr('dx', 0)
-      .attr('dy', 0)
-      .attr('stdDeviation', 5)
-      .attr('flood-color', '#2c2d2d')
-      .attr('flood-opacity', 0.28);
+    PANORAMA_SECTORS.forEach((s, i) => {
+      const grad = defs
+        .append('radialGradient')
+        .attr('id', `pano-grad-${i}`)
+        .attr('gradientUnits', 'userSpaceOnUse')
+        .attr('cx', 0)
+        .attr('cy', 0)
+        .attr('r', R2_OUT);
+      grad.append('stop').attr('offset', '34%').attr('stop-color', d3.color(s.color)!.brighter(0.45).formatHex());
+      grad.append('stop').attr('offset', '70%').attr('stop-color', s.color);
+      grad.append('stop').attr('offset', '100%').attr('stop-color', d3.color(s.color)!.darker(0.35).formatHex());
+
+      defs
+        .append('filter')
+        .attr('id', `pano-glow-${i}`)
+        .attr('x', '-40%')
+        .attr('y', '-40%')
+        .attr('width', '180%')
+        .attr('height', '180%')
+        .append('feDropShadow')
+        .attr('dx', 0)
+        .attr('dy', 0)
+        .attr('stdDeviation', 7)
+        .attr('flood-color', s.color)
+        .attr('flood-opacity', 0.55);
+    });
+
+    // ── back depth layer: counter-rotating orbit rings + particles ──────────
+    const orbitSvg = d3
+      .select(backLayer)
+      .append('svg')
+      .attr('viewBox', '-340 -340 680 680')
+      .attr('aria-hidden', 'true')
+      .style('width', '100%')
+      .style('height', 'auto')
+      .style('display', 'block');
+    const rng = d3.randomLcg(42);
+    ([
+      { cls: 'pano-orbit', r: 302, dash: '1 9', particles: 12 },
+      { cls: 'pano-orbit pano-orbit-rev', r: 318, dash: '1 14', particles: 9 },
+    ] as const).forEach(cfg => {
+      const g = orbitSvg.append('g').attr('class', cfg.cls);
+      g.append('circle')
+        .attr('r', cfg.r)
+        .attr('fill', 'none')
+        .attr('stroke', '#3D5265')
+        .attr('stroke-opacity', 0.2)
+        .attr('stroke-width', 1)
+        .attr('stroke-dasharray', cfg.dash)
+        .attr('stroke-linecap', 'round');
+      for (let p = 0; p < cfg.particles; p++) {
+        const angle = rng() * 2 * Math.PI;
+        const radius = cfg.r + (rng() - 0.5) * 14;
+        g.append('circle')
+          .attr('cx', Math.sin(angle) * radius)
+          .attr('cy', -Math.cos(angle) * radius)
+          .attr('r', 1.3 + rng() * 1.5)
+          .attr('fill', PANORAMA_SECTORS[Math.floor(rng() * PANORAMA_SECTORS.length)].color)
+          .attr('opacity', 0.35 + rng() * 0.3);
+      }
+    });
 
     // Pulse ring fired on selection.
     const pulse = svg
@@ -317,7 +377,7 @@ export default function PanoramaSunburst({
     const paths = groups
       .append('path')
       .attr('class', 'arc-main')
-      .attr('fill', d => d.color)
+      .attr('fill', d => (d.depth === 1 ? `url(#pano-grad-${d.sectorIndex})` : d.color))
       .attr('stroke', '#ffffff')
       .attr('stroke-width', 1)
       .attr('tabindex', 0)
@@ -445,7 +505,9 @@ export default function PanoramaSunburst({
       paths
         .attr('stroke', d => (d.id === currentSelection ? '#2c2d2d' : '#ffffff'))
         .attr('stroke-width', d => (d.id === currentSelection ? 2.5 : 1))
-        .attr('filter', d => (d.id === currentSelection ? 'url(#pano-lift)' : null));
+        .attr('filter', d =>
+          d.id === currentSelection ? `url(#pano-glow-${d.sectorIndex})` : null,
+        );
     }
 
     function firePulse(color: string) {
@@ -461,6 +523,10 @@ export default function PanoramaSunburst({
         .attr('r', R_HOLE + 22)
         .attr('opacity', 0)
         .attr('stroke-width', 0.5);
+    }
+
+    function setGlow(color: string | null) {
+      container!.style.setProperty('--pano-glow', color ? `${color}2e` : 'transparent');
     }
 
     // ── layout animation ────────────────────────────────────────────────────
@@ -561,8 +627,8 @@ export default function PanoramaSunburst({
       const dy = out ? -Math.cos(mid) * HOVER_POP : 0;
       d3.select(this.parentElement)
         .transition('hover')
-        .duration(reduceMotion ? 0 : 240)
-        .ease(out ? d3.easeBackOut : d3.easeCubicOut)
+        .duration(reduceMotion ? 0 : 260)
+        .ease(out ? d3.easeBackOut.overshoot(2.4) : d3.easeCubicOut)
         .attr('transform', `translate(${dx},${dy})`);
     }
 
@@ -575,15 +641,16 @@ export default function PanoramaSunburst({
           if (!hovered) return 1;
           const related =
             d.id === hovered.id || d.id === hovered.parentId || d.parentId === hovered.id;
-          return related ? 1 : 0.55;
+          return related ? 1 : 0.5;
         });
     }
 
     function hoverEnter(this: SVGPathElement, event: PointerEvent, d: ArcDatum) {
       if (d.current.x1 - d.current.x0 < 1e-4) return;
       popOut.call(this, d, true);
-      d3.select(this).attr('filter', 'url(#pano-lift)');
+      d3.select(this).attr('filter', `url(#pano-glow-${d.sectorIndex})`);
       dimOthers(d);
+      setGlow(PANORAMA_SECTORS[d.sectorIndex].color);
       showTooltip(event, d);
     }
 
@@ -591,6 +658,7 @@ export default function PanoramaSunburst({
       popOut.call(this, d, false);
       if (d.id !== currentSelection) d3.select(this).attr('filter', null);
       dimOthers(null);
+      setGlow(null);
       hideTooltip();
     }
 
@@ -641,6 +709,32 @@ export default function PanoramaSunburst({
         onSelectRef.current(null);
       });
 
+    // ── 3D pointer tilt with springy follow (rAF lerp) ──────────────────────
+    let tiltRaf = 0;
+    const tilt = { rx: 0, ry: 0, txr: 0, tyr: 0 };
+    function tiltLoop() {
+      tilt.rx += (tilt.txr - tilt.rx) * 0.1;
+      tilt.ry += (tilt.tyr - tilt.ry) * 0.1;
+      scene!.style.transform = `rotateX(${tilt.rx.toFixed(3)}deg) rotateY(${tilt.ry.toFixed(3)}deg)`;
+      tiltRaf = requestAnimationFrame(tiltLoop);
+    }
+    function onTiltMove(event: PointerEvent) {
+      const rect = scene!.getBoundingClientRect();
+      const nx = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      const ny = ((event.clientY - rect.top) / rect.height) * 2 - 1;
+      tilt.txr = -ny * TILT_DEG;
+      tilt.tyr = nx * TILT_DEG;
+    }
+    function onTiltLeave() {
+      tilt.txr = 0;
+      tilt.tyr = 0;
+    }
+    if (!reduceMotion) {
+      container.addEventListener('pointermove', onTiltMove);
+      container.addEventListener('pointerleave', onTiltLeave);
+      tiltRaf = requestAnimationFrame(tiltLoop);
+    }
+
     // ── initial paint + entry animation ─────────────────────────────────────
     const initial = computeLayout(arcs, null, yearF);
     arcs.forEach(a => {
@@ -654,6 +748,18 @@ export default function PanoramaSunburst({
       groups.each(function () {
         d3.select(this).select('text.arc-label').style('opacity', 0);
       });
+      wheel
+        .attr('transform', 'rotate(-16)')
+        .transition('entry')
+        .duration(1100)
+        .ease(d3.easeCubicOut)
+        .attr('transform', 'rotate(0)');
+      orbitSvg
+        .style('opacity', 0)
+        .transition('entry')
+        .delay(500)
+        .duration(900)
+        .style('opacity', 1);
       groups
         .transition('sweep')
         .duration(900)
@@ -712,8 +818,12 @@ export default function PanoramaSunburst({
 
     return () => {
       playTimer?.stop();
+      cancelAnimationFrame(tiltRaf);
+      container.removeEventListener('pointermove', onTiltMove);
+      container.removeEventListener('pointerleave', onTiltLeave);
       apiRef.current = null;
       svg.remove();
+      orbitSvg.remove();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -723,28 +833,74 @@ export default function PanoramaSunburst({
   }, [selectedId]);
 
   return (
-    <div ref={containerRef} className="relative w-full max-w-[640px] mx-auto select-none">
-      <div ref={wheelWrapRef} className="relative">
-        {/* Centre overlay (HTML for clean wrapping); clicks fall through to the SVG hit-area */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[26%] text-center">
-            <div className="text-[10px] uppercase tracking-[0.12em] text-tertiary leading-tight">
-              {center.focused ? 'Sector focus' : 'EU-27'}
-              {' · '}
-              <span ref={centerYearRef} className="tabular-nums">{YEAR_MAX}</span>
+    <div
+      ref={containerRef}
+      className="relative w-full max-w-[640px] mx-auto select-none"
+      style={{ perspective: '1200px', ['--pano-glow' as string]: 'transparent' }}
+    >
+      {/* ambient glow that tints to the hovered sector */}
+      <div
+        aria-hidden
+        className="absolute inset-[-8%] pointer-events-none transition-[background] duration-500"
+        style={{
+          background: 'radial-gradient(closest-side, var(--pano-glow), transparent 70%)',
+        }}
+      />
+
+      {/* 3D scene: orbit rings behind, wheel in the middle, HUD puck in front */}
+      <div
+        ref={sceneRef}
+        className="relative will-change-transform"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        {/* depth shadow behind everything */}
+        <div
+          aria-hidden
+          className="absolute inset-[5%] rounded-full pointer-events-none"
+          style={{
+            transform: 'translateZ(-72px)',
+            background: 'radial-gradient(circle, rgba(44,45,45,0.12), transparent 68%)',
+          }}
+        />
+        {/* orbit ring layer */}
+        <div
+          ref={backLayerRef}
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{ transform: 'translateZ(-44px)' }}
+        />
+
+        {/* the wheel */}
+        <div ref={wheelWrapRef} className="relative">
+          {/* one-off light sweep across the rings after entry */}
+          <div aria-hidden className="pano-sweep absolute inset-0 z-10 pointer-events-none" />
+        </div>
+
+        {/* frosted HUD puck floating in front of the wheel */}
+        <div
+          className="absolute inset-0 flex items-center justify-center pointer-events-none"
+          style={{ transform: 'translateZ(58px)' }}
+        >
+          <div className="w-[27.5%] aspect-square rounded-full bg-white/75 backdrop-blur-[3px] ring-1 ring-white/70 shadow-[0_22px_55px_-14px_rgba(44,45,45,0.4)] flex items-center justify-center">
+            <div className="w-[88%] text-center">
+              <div className="text-[10px] uppercase tracking-[0.12em] text-tertiary leading-tight">
+                {center.focused ? 'Sector focus' : 'EU-27'}
+                {' · '}
+                <span ref={centerYearRef} className="tabular-nums">{YEAR_MAX}</span>
+              </div>
+              <div className="mt-1 text-[13px] font-semibold text-tertiary-dark leading-snug">
+                {center.title}
+              </div>
+              <div ref={centerValueRef} className="mt-1 text-[15px] font-bold text-tertiary-dark tabular-nums" />
+              <div className="mt-1 text-[10.5px] text-tertiary leading-tight">{center.sub}</div>
             </div>
-            <div className="mt-1 text-[13px] font-semibold text-tertiary-dark leading-snug">
-              {center.title}
-            </div>
-            <div ref={centerValueRef} className="mt-1 text-[15px] font-bold text-tertiary-dark tabular-nums" />
-            <div className="mt-1 text-[10.5px] text-tertiary leading-tight">{center.sub}</div>
           </div>
         </div>
       </div>
 
       <div
         ref={tooltipRef}
-        className="absolute z-10 pointer-events-none bg-white border border-grey-200 rounded shadow-lg px-2.5 py-1.5 text-[11.5px] text-tertiary-dark transition-opacity duration-150"
+        className="absolute z-20 pointer-events-none bg-white border border-grey-200 rounded shadow-lg px-2.5 py-1.5 text-[11.5px] text-tertiary-dark transition-opacity duration-150"
         style={{ opacity: 0 }}
       />
 
@@ -786,6 +942,55 @@ export default function PanoramaSunburst({
       <p className="mt-1.5 px-2 text-center text-[10.5px] text-tertiary">
         Press play to watch the wheel reshape through the 2005–2022 emissions record.
       </p>
+
+      <style jsx global>{`
+        @keyframes pano-spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .pano-orbit {
+          transform-origin: 0 0;
+          animation: pano-spin 140s linear infinite;
+        }
+        .pano-orbit-rev {
+          animation-direction: reverse;
+          animation-duration: 95s;
+        }
+        .pano-sweep {
+          opacity: 0;
+          border-radius: 50%;
+          background: conic-gradient(
+            from 0deg,
+            transparent 0deg,
+            rgba(255, 255, 255, 0.4) 16deg,
+            transparent 38deg
+          );
+          -webkit-mask: radial-gradient(circle, transparent 29%, black 31%, black 84%, transparent 86%);
+          mask: radial-gradient(circle, transparent 29%, black 31%, black 84%, transparent 86%);
+          animation: pano-sweep-spin 1.7s ease-out 1s 1 both;
+        }
+        @keyframes pano-sweep-spin {
+          from {
+            transform: rotate(-130deg);
+            opacity: 0;
+          }
+          18% {
+            opacity: 1;
+          }
+          to {
+            transform: rotate(230deg);
+            opacity: 0;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .pano-orbit,
+          .pano-orbit-rev,
+          .pano-sweep {
+            animation: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }
