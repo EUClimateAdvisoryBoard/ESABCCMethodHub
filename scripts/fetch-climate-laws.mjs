@@ -157,22 +157,35 @@ function mapFamily(fam, iso3) {
 }
 
 async function main() {
+  // NOTE: the API's `total` field is unreliable — the upstream router
+  // returns `total = len(page items)`, so the only way to know we're done
+  // is a page that comes back short or empty.
+  const MAX_PAGES = 400; // runaway guard
   const families = [];
   let page = 1;
-  let total = Infinity;
 
-  while ((page - 1) * PAGE_SIZE < total) {
+  while (page <= MAX_PAGES) {
     const url = `${API_BASE}/families/?corpus.import_id=${CCLW_CORPUS}&page=${page}&page_size=${PAGE_SIZE}`;
     const json = await fetchJson(url);
     const batch = json.data ?? json.families ?? [];
-    total = json.total ?? (batch.length < PAGE_SIZE ? families.length + batch.length : total);
     families.push(...batch);
-    process.stdout.write(`\rpage ${page} — ${families.length}/${Number.isFinite(total) ? total : '?'} families`);
-    if (batch.length === 0) break;
+    process.stdout.write(`\rpage ${page} — ${families.length} families`);
+    if (batch.length < PAGE_SIZE) break;
     page += 1;
     await sleep(THROTTLE_MS);
   }
   console.log();
+
+  // Pages are ordered by last_modified, which can shift mid-crawl — dedupe.
+  const seenIds = new Set();
+  const deduped = families.filter((f) => {
+    const id = String(f.import_id ?? f.slug ?? '');
+    if (!id || seenIds.has(id)) return false;
+    seenIds.add(id);
+    return true;
+  });
+  families.length = 0;
+  families.push(...deduped);
 
   if (DEBUG) {
     await fs.writeFile(path.join(ROOT, 'families-raw.json'), JSON.stringify(families, null, 1));

@@ -145,18 +145,35 @@ async function fetchAllFamilies(): Promise<ApiFamily[]> {
   const pageUrl = (page: number) =>
     `${API_BASE}/families/?corpus.import_id=${CCLW_CORPUS}&page=${page}&page_size=${PAGE_SIZE}`;
 
-  const first = await fetchJson(pageUrl(1));
-  const families: ApiFamily[] = [...(first.data ?? first.families ?? [])];
-  const total: number = first.total ?? families.length;
-  const lastPage = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  // The API's `total` field is unreliable — the upstream router returns
+  // `total = len(page items)` (see navigator-backend families-api/app/
+  // router.py), so it can never be used to compute the page count. Fetch
+  // waves of pages until one comes back short or empty.
+  const MAX_PAGES = 400; // runaway guard (~40k families)
+  const families: ApiFamily[] = [];
+  let page = 1;
+  let done = false;
 
-  for (let start = 2; start <= lastPage; start += CONCURRENCY) {
-    const pages = [];
-    for (let p = start; p < start + CONCURRENCY && p <= lastPage; p++) pages.push(p);
+  while (!done && page <= MAX_PAGES) {
+    const pages: number[] = [];
+    for (let p = page; p < page + CONCURRENCY && p <= MAX_PAGES; p++) pages.push(p);
     const batches = await Promise.all(pages.map((p) => fetchJson(pageUrl(p))));
-    for (const b of batches) families.push(...(b.data ?? b.families ?? []));
+    for (const b of batches) {
+      const batch = b.data ?? b.families ?? [];
+      families.push(...batch);
+      if (batch.length < PAGE_SIZE) done = true;
+    }
+    page += CONCURRENCY;
   }
-  return families;
+
+  // Pages are ordered by last_modified, which can shift mid-crawl — dedupe.
+  const seen = new Set<string>();
+  return families.filter((f) => {
+    const id = String(f.import_id ?? f.slug ?? '');
+    if (!id || seen.has(id)) return false;
+    seen.add(id);
+    return true;
+  });
 }
 
 export interface RefreshResult {
