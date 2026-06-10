@@ -263,6 +263,7 @@ function postCorpus(projectId: string, documentId: string, meta?: CorpusDocMeta)
     method: 'POST',
     url: '/api/content-analysis/corpus',
     body: meta ? { projectId, documentId, meta } : { projectId, documentId },
+    auth: true,
   });
 }
 
@@ -272,6 +273,7 @@ function deleteCorpus(projectId: string, documentId: string): void {
     key: corpusOutboxKey(projectId, documentId),
     method: 'DELETE',
     url: `/api/content-analysis/corpus?projectId=${encodeURIComponent(projectId)}&documentId=${encodeURIComponent(documentId)}`,
+    auth: true,
   });
 }
 
