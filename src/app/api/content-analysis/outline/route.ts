@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCaOutline, isPersistent, setCaOutline } from '@/lib/content-analysis-store';
+import { actorRequired, resolveActor } from '@/lib/content-analysis/actor';
 
 /**
  * Shared per-workspace report outline API.
@@ -42,6 +43,11 @@ export async function GET(request: NextRequest) {
 
 export async function PUT(request: NextRequest) {
   try {
+    // Writes must be attributable to an account (reads stay public).
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to save the outline' }, { status: 401 });
+    }
     const body = await request.json();
     const projectId = body?.projectId;
     const outline = body?.outline;
@@ -51,7 +57,7 @@ export async function PUT(request: NextRequest) {
     if (!validOutline(outline)) {
       return NextResponse.json({ error: 'invalid outline' }, { status: 400 });
     }
-    await setCaOutline(projectId, outline);
+    await setCaOutline(projectId, outline, actor ?? undefined);
     return NextResponse.json({ status: 'ok', persistent: isPersistent() });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';

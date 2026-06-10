@@ -551,27 +551,6 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     return out;
   }, [allDocuments, corpusIds, corpusMeta, sourceType]);
 
-  const filteredBrowse = useMemo(() => {
-    const q = browseQuery.trim().toLowerCase();
-    const inCorpus = new Set(corpusIds);
-    let out = candidateDocs.filter(d => !inCorpus.has(d.id));
-    if (q) {
-      out = out.filter(d =>
-        d.title.toLowerCase().includes(q) ||
-        (d.referenceAuthors ?? '').toLowerCase().includes(q),
-      );
-    }
-    if (browseTagFilter.length > 0) {
-      const wanted = new Set(browseTagFilter);
-      const editable = sourceType !== 'policy';
-      out = out.filter(d => {
-        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
-        return tags.some(t => wanted.has(t));
-      });
-    }
-    return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags]);
-
   // ── Overall (document-level) tags ─────────────────────────────────────────
   // The shared master taxonomy is the pool of selectable overall tags — the
   // same codes policy documents are tagged with — so the dots stay comparable
@@ -580,6 +559,58 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     () => snapshot.codes.filter(c => c.scope === 'master'),
     [snapshot.codes],
   );
+
+  const filteredBrowse = useMemo(() => {
+    const q = browseQuery.trim().toLowerCase();
+    const inCorpus = new Set(corpusIds);
+    let out = candidateDocs.filter(d => !inCorpus.has(d.id));
+    // The reference library is the source of truth for which references exist.
+    // This browser's snapshot may still hold a local copy of a reference that
+    // was since deleted in the reference manager (the server doc pull skips
+    // `ref-doc-` ids, so nothing ever reconciles those local copies) — drop
+    // them from the browse list once the library has loaded.
+    if (!liveRefs.loading && !liveRefs.error) {
+      const inLibrary = new Set(liveRefs.docs.map(d => d.id));
+      out = out.filter(d => !d.id.startsWith('ref-doc-') || inLibrary.has(d.id));
+    }
+    if (q) {
+      out = out.filter(d =>
+        d.title.toLowerCase().includes(q) ||
+        (d.referenceAuthors ?? '').toLowerCase().includes(q),
+      );
+    }
+    if (browseTagFilter.length > 0) {
+      // Codes sharing a display name (e.g. the root "Finance" and the
+      // domain-derived "Finance") collapse to one row in the picker, so the
+      // filter must match every id behind a chosen name.
+      const wanted = new Set(browseTagFilter);
+      const wantedNames = new Set(
+        masterCodes
+          .filter(c => wanted.has(c.id))
+          .map(c => c.name.trim().toLowerCase()),
+      );
+      for (const c of masterCodes) {
+        if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
+      }
+      const editable = sourceType !== 'policy';
+      out = out.filter(d => {
+        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
+        return tags.some(t => wanted.has(t));
+      });
+    }
+    // Newest-added references first. The added-at timestamp lives on the
+    // library copy of each doc (snapshot copies win the `allDocuments` dedupe
+    // and lack it), so resolve it by id. Static-library refs have no
+    // timestamp and stay below the live ones, in their bundled order.
+    const addedAtById = new Map(
+      liveRefs.docs.map(d => [d.id, d.referenceAddedAt ? Date.parse(d.referenceAddedAt) : 0] as const),
+    );
+    out = out
+      .map((d, i) => ({ d, i, t: addedAtById.get(d.id) || 0 }))
+      .sort((a, b) => (b.t - a.t) || (a.i - b.i))
+      .map(x => x.d);
+    return out.slice(0, 200);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags, liveRefs, masterCodes]);
 
   /** Whether the active source tier supports manual overall tagging. Policy
    *  documents carry an AI-curated baseline managed elsewhere; scientific &
@@ -1914,9 +1945,15 @@ function DocumentViewer({
             Overall tags
           </span>
           {overallTagSelected.length > 0 ? (
-            overallTagSelected.map(id => {
+            overallTagSelected.map((id, i, all) => {
               const c = overallTagCodes.find(x => x.id === id) ?? resolveOverallTag(id);
               if (!c) return null;
+              // Same-named codes (e.g. root + domain "Finance") read as one
+              // tag — show a single chip for the pair.
+              const nameOf = (tagId: string) =>
+                (overallTagCodes.find(x => x.id === tagId) ?? resolveOverallTag(tagId))?.name.trim().toLowerCase();
+              const lc = c.name.trim().toLowerCase();
+              if (all.slice(0, i).some(prev => nameOf(prev) === lc)) return null;
               return (
                 <span
                   key={id}

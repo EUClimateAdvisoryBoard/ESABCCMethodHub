@@ -148,6 +148,7 @@ function apiToAnalysisDoc(r: ApiRef): AnalysisDocument | null {
     // separate from `referenceUrl`, which may point at a DOI / landing page.
     pdfUrl: r.pdfUrl || undefined,
     referenceType: normaliseRefType(r.type),
+    referenceAddedAt: r.addedAt || undefined,
   };
 }
 

@@ -1,21 +1,27 @@
-# Nightly off-site backup of all content-analysis & project-workspace data.
+# Nightly off-site backup of all content-analysis, project-workspace and
+# reference-manager data.
 #
-# Exports every content_analysis_* and pw_* table from Supabase (segments,
-# summaries, general notes, overall tags, codes, workspace corpus, ingested
-# documents, and the whole project workspace) and keeps the snapshot in TWO
-# independent places:
+# Exports every content_analysis_*, pw_* and reference-manager table from
+# Supabase (segments, summaries, general notes, overall tags, codes, workspace
+# corpus, ingested documents, references, annotations, comments, collections,
+# profiles, …) and commits the snapshot to a PRIVATE backup repository — one
+# commit per night, so the full history of the data is kept forever and any
+# past day can be recovered with `git checkout`.
 #
-#   1. The `data-backups` branch of this repository — every nightly snapshot
-#      is a commit, so the full history of the data is kept forever and any
-#      past day can be recovered with `git checkout`.
-#   2. A workflow artifact (90-day retention) — survives even if the branch
-#      is force-pushed or deleted.
+# PRIVACY: the export runs with the service-role key and includes tables that
+# hold personal data (profiles, annotations, comments, activity_log). This
+# repository is public, so snapshots are NEVER committed to a branch here and
+# NEVER uploaded as workflow artifacts (public-repo artifacts are downloadable
+# by any GitHub user). The private backup repo is the only destination.
 #
 # Restore: scripts/restore-content-analysis-backup.mjs <snapshot-dir>
 #
 # Required repository secrets:
 #   SUPABASE_URL                (or NEXT_PUBLIC_SUPABASE_URL)
 #   SUPABASE_SERVICE_ROLE_KEY   (service-role — RLS must not hide rows from a backup)
+#   BACKUP_REPO                 private repo for snapshots, e.g. "EUClimateAdvisoryBoard/methodhub-data-backups"
+#   BACKUP_REPO_TOKEN           token with contents:write on BACKUP_REPO
+#                               (fine-grained PAT or org token)
 #
 # The job FAILS LOUDLY if secrets are missing or any existing table cannot be
 # read in full — a backup that silently skips data is worse than no backup.
@@ -30,7 +36,7 @@ on:
   workflow_dispatch: # manual trigger, e.g. right before a risky migration
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   backup:
@@ -44,43 +50,38 @@ jobs:
         with:
           node-version: 20
 
-      - name: Export all content-analysis & workspace tables
+      - name: Export all backed-up tables
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL || secrets.NEXT_PUBLIC_SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: node scripts/backup-content-analysis.mjs backup-out
 
-      - name: Upload snapshot as workflow artifact (90-day retention)
-        uses: actions/upload-artifact@v4
-        with:
-          name: content-analysis-backup-${{ github.run_id }}
-          path: backup-out/
-          retention-days: 90
-          if-no-files-found: error
-
-      - name: Commit snapshot to the data-backups branch
+      - name: Commit snapshot to the private backup repository
+        env:
+          BACKUP_REPO: ${{ secrets.BACKUP_REPO }}
+          BACKUP_REPO_TOKEN: ${{ secrets.BACKUP_REPO_TOKEN }}
         run: |
           set -euo pipefail
-
-          # Check out the dedicated backup branch in a worktree (create it as
-          # an orphan on first run so backup history stays out of main).
-          if git fetch origin data-backups 2>/dev/null; then
-            git worktree add -B data-backups wt-backup origin/data-backups
-          else
-            git worktree add --detach wt-backup
-            git -C wt-backup checkout --orphan data-backups
-            git -C wt-backup rm -rfq . 2>/dev/null || true
+          if [ -z "${BACKUP_REPO:-}" ] || [ -z "${BACKUP_REPO_TOKEN:-}" ]; then
+            echo "::error title=Backup destination not configured::Set the BACKUP_REPO (e.g. org/methodhub-data-backups, must be PRIVATE) and BACKUP_REPO_TOKEN secrets. The snapshot contains personal data and is never committed to this public repository."
+            exit 1
           fi
+
+          git clone --depth 1 "https://x-access-token:${BACKUP_REPO_TOKEN}@github.com/${BACKUP_REPO}.git" wt-backup
+          cd wt-backup
+          # A brand-new backup repo may have no commits yet — start main fresh.
+          git checkout main 2>/dev/null || git checkout -b main
+          cd ..
 
           # Shrink guard: compare row counts against the previous snapshot.
           # Large drops are committed anyway (the current state must still be
           # captured, and yesterday's data stays in git history) but flagged
           # prominently so a mass-deletion is noticed the next morning.
           WARN=""
-          if [ -f wt-backup/content-analysis/manifest.json ]; then
+          if [ -f wt-backup/tables/manifest.json ]; then
             WARN=$(node -e '
               const fs = require("fs");
-              const prev = JSON.parse(fs.readFileSync("wt-backup/content-analysis/manifest.json", "utf8"));
+              const prev = JSON.parse(fs.readFileSync("wt-backup/tables/manifest.json", "utf8"));
               const next = JSON.parse(fs.readFileSync("backup-out/manifest.json", "utf8"));
               const drops = [];
               for (const [t, p] of Object.entries(prev.tables ?? {})) {
@@ -93,28 +94,33 @@ jobs:
             ')
           fi
           if [ -n "$WARN" ]; then
-            echo "::warning title=Backup row counts dropped sharply::$WARN — check for accidental data loss; previous snapshots remain in the data-backups branch history."
+            echo "::warning title=Backup row counts dropped sharply::$WARN — check for accidental data loss; previous snapshots remain in the backup repo history."
           fi
 
-          mkdir -p wt-backup/content-analysis
-          rsync -a --delete backup-out/ wt-backup/content-analysis/
+          mkdir -p wt-backup/tables
+          rsync -a --delete backup-out/ wt-backup/tables/
 
           cat > wt-backup/README.md <<'EOF'
-          # Data backups (automated)
+          # Method Hub data backups (automated, PRIVATE)
 
-          Nightly snapshots of every `content_analysis_*` and `pw_*` Supabase
-          table, written by `.github/workflows/content-analysis-backup.yml`.
-          One JSON-Lines file per table under `content-analysis/`, plus a
+          Nightly snapshots of every content_analysis_*, pw_* and
+          reference-manager Supabase table, written by the
+          `content-analysis-backup.yml` workflow in the ESABCCMethodHub repo.
+          One JSON-Lines file per table under `tables/`, plus a
           `manifest.json` with row counts.
 
-          Each night is a commit — use `git log -- content-analysis` to find a
-          date and `git checkout <sha> -- content-analysis` to pull that day's
-          state. Restore into Supabase (or any PostgREST-fronted Postgres) with:
+          These snapshots contain personal data (profiles, annotation and
+          comment authorship, activity log). KEEP THIS REPOSITORY PRIVATE.
+
+          Each night is a commit — use `git log -- tables` to find a date and
+          `git checkout <sha> -- tables` to pull that day's state. Restore
+          into Supabase (or any PostgREST-fronted Postgres) with the script
+          from the main repo:
 
               SUPABASE_URL=... SUPABASE_SERVICE_ROLE_KEY=... \
-                node scripts/restore-content-analysis-backup.mjs content-analysis
+                node scripts/restore-content-analysis-backup.mjs tables
 
-          Do not edit this branch by hand.
+          Do not edit this repository by hand.
           EOF
 
           cd wt-backup
@@ -127,5 +133,5 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           SUFFIX=""
           if [ -n "$WARN" ]; then SUFFIX=" [ROW COUNTS DROPPED — REVIEW]"; fi
-          git commit -m "backup: content-analysis & workspace snapshot $(date -u +%Y-%m-%d)${SUFFIX} [automated]"
-          git push origin data-backups
+          git commit -m "backup: method hub data snapshot $(date -u +%Y-%m-%d)${SUFFIX} [automated]"
+          git push origin main

@@ -5,6 +5,7 @@ import {
   isPersistent,
   removeFromCaCorpus,
 } from '@/lib/content-analysis-store';
+import { actorRequired, resolveActor } from '@/lib/content-analysis/actor';
 import type { CorpusDocMeta } from '@/lib/content-analysis/types';
 
 /**
@@ -110,6 +111,11 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    // Writes must be attributable to an account (reads stay public).
+    const actor = await resolveActor(request);
+    if (!actor && actorRequired()) {
+      return NextResponse.json({ error: 'Sign in to add documents' }, { status: 401 });
+    }
     const body = await request.json();
     const projectId = body?.projectId;
     const documentId = body?.documentId;
@@ -117,7 +123,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'projectId and documentId required' }, { status: 400 });
     }
     const meta = coerceMeta(body?.meta, documentId);
-    await addToCaCorpus(projectId, documentId, meta);
+    await addToCaCorpus(projectId, documentId, meta, actor ?? undefined);
     return NextResponse.json({ status: 'ok', persistent: isPersistent() });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
@@ -126,13 +132,17 @@ export async function POST(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
+  const actor = await resolveActor(request);
+  if (!actor && actorRequired()) {
+    return NextResponse.json({ error: 'Sign in to remove documents' }, { status: 401 });
+  }
   const projectId = request.nextUrl.searchParams.get('projectId');
   const documentId = request.nextUrl.searchParams.get('documentId');
   if (!validId(projectId) || !validId(documentId)) {
     return NextResponse.json({ error: 'projectId and documentId required' }, { status: 400 });
   }
   try {
-    await removeFromCaCorpus(projectId, documentId);
+    await removeFromCaCorpus(projectId, documentId, actor ?? undefined);
     return NextResponse.json({ status: 'ok', persistent: isPersistent() });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';

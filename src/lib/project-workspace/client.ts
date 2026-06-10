@@ -341,6 +341,25 @@ export const pwApi = {
     return send(`${BASE}/verifications?${qs.toString()}`, 'DELETE');
   },
 
+  // ── Activity log ─────────────────────────────────────────────────────────
+  /** One page of the project's change log, newest first (paged via `before`). */
+  async listActivity(
+    projectId: string,
+    opts?: { before?: number; limit?: number }
+  ): Promise<WorkspaceActivityEntry[]> {
+    const qs = new URLSearchParams();
+    if (opts?.before) qs.set('before', String(opts.before));
+    if (opts?.limit) qs.set('limit', String(opts.limit));
+    const q = qs.toString();
+    const res = await fetch(
+      `${BASE}/projects/${encodeURIComponent(projectId)}/activity${q ? `?${q}` : ''}`,
+      { headers: { ...(await authHeader()) } }
+    );
+    if (!res.ok) return [];
+    const json = (await res.json()) as { entries?: WorkspaceActivityEntry[] };
+    return json.entries ?? [];
+  },
+
   // ── Meetings ─────────────────────────────────────────────────────────────
   async listMeetings(projectId: string): Promise<Meeting[]> {
     const res = await fetch(`${BASE}/meetings?projectId=${encodeURIComponent(projectId)}`, {
@@ -493,6 +512,21 @@ export const REVISION_ACTION_LABELS: Record<IndicatorRevisionAction, string> = {
   restore: 'Restored a previous version',
   delete: 'Deleted indicator',
 };
+
+/** Mirror of the server `ActivityEntry` shape (see activity-log.ts). */
+export interface WorkspaceActivityEntry {
+  id: number;
+  projectId: string;
+  tableName: string;
+  op: 'insert' | 'update' | 'delete';
+  entityKind: string;
+  entityId: string;
+  entityLabel: string;
+  summary: string;
+  actorId: string | null;
+  actorName: string;
+  createdAt: string;
+}
 
 /** Mirror of the server `WorkspaceComment` shape (see collaboration.ts). */
 export interface WorkspaceComment {
