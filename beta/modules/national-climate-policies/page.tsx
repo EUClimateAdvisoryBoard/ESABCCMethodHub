@@ -20,11 +20,15 @@
  *
  * Features: EU-27 choropleth (framework-law status, catalogue depth,
  * legislative share, adaptation attention, recency) with click-to-filter,
- * a "deep insights" panel computed live from the catalogue, chart.js
- * illustrations (adoption timeline, member-state mix, sector coverage,
- * instrument types), per-country coverage grid, search, country /
- * category / sector / response filters, sortable list grouped by member
- * state, and deep links to the source document PDF and climate-laws.org.
+ * an EU-level instrument layer (MethodHub Policy Navigator + supplement,
+ * shown as the "European Union" geography alongside the member states),
+ * a solution-space gap matrix flagging areas where the EU and/or member
+ * states are silent, a "deep insights" panel computed live from the
+ * catalogue, chart.js illustrations (adoption timeline, geography mix,
+ * sector coverage, instrument types), per-country coverage grid, search,
+ * country / category / sector / response filters, sortable list grouped
+ * by geography, and deep links to the source document PDF and
+ * climate-laws.org / EUR-Lex.
  */
 
 import dynamic from 'next/dynamic';
@@ -32,9 +36,11 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import NationalClimatePoliciesCharts from '@/components/NationalClimatePoliciesCharts';
+import ClimateSolutionSpace from '@/components/ClimateSolutionSpace';
 import { useAuth } from '@/lib/auth-context';
 import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
 import { computeCountryMetrics, computeInsights, PolicyInsight } from '@/lib/climate-policy-insights';
+import { euLevelPolicies, EU_GEOGRAPHY_NAME } from '@/lib/eu-climate-policies';
 
 const NationalClimatePoliciesMap = dynamic(
   () => import('@/components/NationalClimatePoliciesMap'),
@@ -133,32 +139,38 @@ export default function NationalClimatePoliciesPage() {
     }
   }, [user, requireAuth, load]);
 
+  // Member-state catalogue (climate-laws.org) + the in-repo EU-level layer,
+  // merged so the EU shows up as a 28th geography in the list and filters.
   const policies = useMemo(() => data?.policies ?? [], [data]);
+  const euPolicies = useMemo(() => euLevelPolicies(), []);
+  const allPolicies = useMemo(() => [...euPolicies, ...policies], [euPolicies, policies]);
 
   const countries = useMemo(() => {
     const map = new Map<string, { name: string; count: number }>();
-    policies.forEach((p) => {
+    allPolicies.forEach((p) => {
       const cur = map.get(p.countryCode);
       if (cur) cur.count += 1;
       else map.set(p.countryCode, { name: p.countryName, count: 1 });
     });
     return Array.from(map.entries())
       .map(([code, v]) => ({ code, ...v }))
-      .sort((a, b) => a.name.localeCompare(b.name));
-  }, [policies]);
+      .sort((a, b) =>
+        a.name === EU_GEOGRAPHY_NAME ? -1 : b.name === EU_GEOGRAPHY_NAME ? 1 : a.name.localeCompare(b.name),
+      );
+  }, [allPolicies]);
 
   const sectors = useMemo(
-    () => Array.from(new Set(policies.flatMap((p) => p.sectors))).sort(),
-    [policies],
+    () => Array.from(new Set(allPolicies.flatMap((p) => p.sectors))).sort(),
+    [allPolicies],
   );
   const responses = useMemo(
-    () => Array.from(new Set(policies.flatMap((p) => p.responses))).sort(),
-    [policies],
+    () => Array.from(new Set(allPolicies.flatMap((p) => p.responses))).sort(),
+    [allPolicies],
   );
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    const list = policies.filter((p) => {
+    const list = allPolicies.filter((p) => {
       if (country !== 'all' && p.countryCode !== country) return false;
       if (category !== 'all' && p.category !== category) return false;
       if (sector !== 'all' && !p.sectors.includes(sector)) return false;
@@ -178,13 +190,14 @@ export default function NationalClimatePoliciesPage() {
     if (sortKey === 'oldest') list.sort(byDate);
     if (sortKey === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
     return list;
-  }, [policies, search, country, category, sector, response, sortKey]);
+  }, [allPolicies, search, country, category, sector, response, sortKey]);
 
   const stats = useMemo(() => {
-    const laws = policies.filter((p) => p.category === 'Law').length;
-    const pols = policies.filter((p) => p.category === 'Policy').length;
-    return { total: policies.length, laws, policies: pols, countries: countries.length };
-  }, [policies, countries]);
+    const laws = allPolicies.filter((p) => p.category === 'Law').length;
+    const pols = allPolicies.filter((p) => p.category === 'Policy').length;
+    const msCountries = countries.filter((c) => c.code !== 'EU').length;
+    return { total: allPolicies.length, laws, policies: pols, countries: msCountries };
+  }, [allPolicies, countries]);
 
   // Per-country metrics drive the choropleth; the narrative insights are
   // recomputed from the live catalogue so they survive every refresh.
@@ -226,9 +239,11 @@ export default function NationalClimatePoliciesPage() {
             National Level Climate Policies
           </h1>
           <p className="mt-2 text-sm sm:text-base text-tertiary max-w-3xl">
-            The national climate laws and policies of all 27 EU member states,
-            from framework climate acts to sectoral strategies and decrees.
-            Data:{' '}
+            The climate laws and policies of all 27 EU member states — from
+            framework climate acts to sectoral strategies and decrees — side
+            by side with the EU-level instruments that frame them, plus a
+            solution-space gap analysis showing where the EU and/or member
+            states are silent. Member-state data:{' '}
             <a
               href="https://climate-laws.org/"
               target="_blank"
@@ -285,7 +300,7 @@ export default function NationalClimatePoliciesPage() {
               <StatCard
                 label="Laws & policies"
                 value={stats.total.toString()}
-                sub={`Across ${stats.countries} member states`}
+                sub={`${stats.countries} member states + EU level`}
                 active={category === 'all'}
                 onClick={() => { setCategory('all'); resetPaging(); }}
               />
@@ -340,10 +355,27 @@ export default function NationalClimatePoliciesPage() {
               </div>
             </section>
 
-            {/* Coverage grid — one chip per member state */}
+            {/* Solution space — EU vs member-state gap matrix */}
+            <section className="mb-6">
+              <div className="flex items-baseline justify-between mb-2">
+                <h2 className="text-lg font-semibold text-tertiary-dark">
+                  Solution space &amp; policy gaps
+                </h2>
+                <span className="text-[11px] text-tertiary">
+                  Where the EU and the member states act — and where nobody does
+                </span>
+              </div>
+              <ClimateSolutionSpace
+                msPolicies={policies}
+                euPolicies={euPolicies}
+                onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
+              />
+            </section>
+
+            {/* Coverage grid — one chip per geography */}
             <section className="mb-6">
               <h2 className="text-lg font-semibold text-tertiary-dark mb-2">
-                Coverage by member state
+                Coverage by member state &amp; EU level
               </h2>
               <div className="flex flex-wrap gap-1.5">
                 {countries.map((c) => (
@@ -423,7 +455,7 @@ export default function NationalClimatePoliciesPage() {
                 </span>
               </h2>
               <NationalClimatePoliciesCharts
-                policies={policies}
+                policies={allPolicies}
                 filtered={filtered}
                 scopeLabel={scopeLabel}
               />
@@ -474,7 +506,9 @@ export default function NationalClimatePoliciesPage() {
               >
                 climate-laws.org
               </a>{' '}
-              before citing.
+              before citing. EU-level instruments are curated in-repo (MethodHub
+              Policy Navigator + supplement) and link to the authoritative
+              EUR-Lex record.
             </p>
           </>
         )}
@@ -614,7 +648,7 @@ function PolicyCard({ policy: p }: { policy: ClimatePolicy }) {
       )}
 
       <div className="flex flex-wrap gap-3 items-center text-[11px]">
-        {p.documentUrl && (
+        {p.documentUrl && p.documentUrl !== p.climateLawsUrl && (
           <a
             href={p.documentUrl}
             target="_blank"
@@ -630,7 +664,7 @@ function PolicyCard({ policy: p }: { policy: ClimatePolicy }) {
           rel="noopener noreferrer"
           className="text-primary hover:underline"
         >
-          climate-laws.org ↗
+          {p.climateLawsUrl.includes('climate-laws.org') ? 'climate-laws.org' : 'EUR-Lex'} ↗
         </a>
         {p.instruments.length > 0 && (
           <span className="ml-auto text-tertiary/70 truncate max-w-[50%]" title={p.instruments.join(', ')}>

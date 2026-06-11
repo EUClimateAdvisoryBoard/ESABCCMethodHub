@@ -7,8 +7,9 @@
  * Four chart.js canvases derived live from the climate-laws.org catalogue:
  *   1. Adoption timeline — laws vs policies per year, with the cumulative
  *      acquis overlaid (follows the page's active filters).
- *   2. Member-state mix — laws vs policies per country, sorted by depth
- *      (always EU-27 wide, so the country filter has a stable reference).
+ *   2. Geography mix — laws vs policies per geography (EU level + member
+ *      states), sorted by depth (always catalogue-wide, so the country
+ *      filter has a stable reference).
  *   3. Sector coverage — instruments per sector, split by category
  *      (follows the active filters).
  *   4. Policy instruments — the ten most used instrument types
@@ -151,7 +152,7 @@ export default function NationalClimatePoliciesCharts({ policies, filtered, scop
         maintainAspectRatio: false,
         indexAxis: 'y' as const,
         plugins: {
-          title: { display: true, text: 'Catalogue per member state — laws vs policies', font: { size: 13 } },
+          title: { display: true, text: 'Catalogue per geography (EU level + member states) — laws vs policies', font: { size: 13 } },
           legend: { position: 'bottom' as const, labels: { boxWidth: 10, font: { size: 10 } } },
         },
         scales: {
