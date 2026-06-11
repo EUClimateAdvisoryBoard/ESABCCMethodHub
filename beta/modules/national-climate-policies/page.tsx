@@ -24,7 +24,9 @@
  * shown as the "European Union" geography alongside the member states),
  * a solution-space gap matrix flagging areas where the EU and/or member
  * states are silent, a "deep insights" panel computed live from the
- * catalogue, chart.js illustrations (adoption timeline, geography mix,
+ * catalogue, a cluster-analysis section (pre-computed K-Means policy
+ * families + Ward country typology, see `analysis/`; clicking a family
+ * filters the catalogue), chart.js illustrations (adoption timeline, geography mix,
  * sector coverage, instrument types), per-country coverage grid, search,
  * country / category / sector / response filters, sortable list grouped
  * by geography, and deep links to the source document PDF and
@@ -41,6 +43,7 @@ import { useAuth } from '@/lib/auth-context';
 import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
 import { computeCountryMetrics, computeInsights, PolicyInsight } from '@/lib/climate-policy-insights';
 import { euLevelPolicies, EU_GEOGRAPHY_NAME } from '@/lib/eu-climate-policies';
+import ClusterAnalysisPanel, { ClusterDataset } from './ClusterAnalysisPanel';
 
 const NationalClimatePoliciesMap = dynamic(
   () => import('@/components/NationalClimatePoliciesMap'),
@@ -84,6 +87,11 @@ export default function NationalClimatePoliciesPage() {
   const [sortKey, setSortKey] = useState<SortKey>('newest');
   const [visible, setVisible] = useState(80);
 
+  // Pre-computed cluster analysis (committed artifact; see analysis/).
+  // Absence of the file just hides the section — the module works without it.
+  const [clusterData, setClusterData] = useState<ClusterDataset | null>(null);
+  const [cluster, setCluster] = useState<number | 'all'>('all');
+
   const load = useCallback(async () => {
     // Prefer the server-side refresh stored in Supabase; fall back to the
     // committed snapshot so the page also works without a database.
@@ -108,6 +116,10 @@ export default function NationalClimatePoliciesPage() {
     load()
       .catch((e) => setError(e instanceof Error ? e.message : 'Failed to load'))
       .finally(() => setLoading(false));
+    fetch('/data/national-climate-policies-clusters.json')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json) => setClusterData(json as ClusterDataset | null))
+      .catch(() => setClusterData(null));
   }, [load]);
 
   const handleRefresh = useCallback(async () => {
@@ -175,6 +187,10 @@ export default function NationalClimatePoliciesPage() {
       if (category !== 'all' && p.category !== category) return false;
       if (sector !== 'all' && !p.sectors.includes(sector)) return false;
       if (response !== 'all' && !p.responses.includes(response)) return false;
+      // Cluster assignments only exist for the committed snapshot; entries
+      // unknown to the analysis (EU layer, post-refresh additions) drop out
+      // of a cluster-filtered view.
+      if (cluster !== 'all' && clusterData?.assignments[p.id] !== cluster) return false;
       if (!q) return true;
       return (
         p.title.toLowerCase().includes(q) ||
@@ -190,7 +206,7 @@ export default function NationalClimatePoliciesPage() {
     if (sortKey === 'oldest') list.sort(byDate);
     if (sortKey === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
     return list;
-  }, [allPolicies, search, country, category, sector, response, sortKey]);
+  }, [allPolicies, search, country, category, sector, response, sortKey, cluster, clusterData]);
 
   const stats = useMemo(() => {
     const laws = allPolicies.filter((p) => p.category === 'Law').length;
@@ -372,6 +388,27 @@ export default function NationalClimatePoliciesPage() {
               />
             </section>
 
+            {/* Cluster analysis — pre-computed K-Means/Ward artifact */}
+            {clusterData && (
+              <section className="mb-6">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h2 className="text-lg font-semibold text-tertiary-dark">
+                    Cluster analysis
+                  </h2>
+                  <span className="text-[11px] text-tertiary">
+                    Unsupervised structure of the {clusterData.snapshotDate} snapshot — 12
+                    policy families, {clusterData.countryGroups.length} country types
+                  </span>
+                </div>
+                <ClusterAnalysisPanel
+                  data={clusterData}
+                  selectedCluster={cluster}
+                  onSelectCluster={(id) => { setCluster(id); resetPaging(); }}
+                  onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
+                />
+              </section>
+            )}
+
             {/* Coverage grid — one chip per geography */}
             <section className="mb-6">
               <h2 className="text-lg font-semibold text-tertiary-dark mb-2">
@@ -443,6 +480,15 @@ export default function NationalClimatePoliciesPage() {
                 <option value="oldest">Oldest first</option>
                 <option value="title">Title A–Z</option>
               </select>
+              {cluster !== 'all' && clusterData && (
+                <button
+                  onClick={() => { setCluster('all'); resetPaging(); }}
+                  title="Clear the cluster filter"
+                  className="px-3 py-2 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition"
+                >
+                  Family: {clusterData.clusters.find((c) => c.id === cluster)?.label ?? cluster} ✕
+                </button>
+              )}
             </section>
 
             {/* Illustrations — follow the active filters (except the

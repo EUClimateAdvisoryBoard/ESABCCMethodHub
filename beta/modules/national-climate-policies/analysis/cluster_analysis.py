@@ -369,3 +369,107 @@ with open(os.path.join(OUT, "cluster_stats.json"), "w") as f:
     )
 
 print("\nDone. Outputs in", OUT)
+
+# ----------------------------------------------------------------- web export
+# Compact, labelled export consumed by the beta module page
+# (beta/modules/national-climate-policies/page.tsx). The human-readable
+# labels below describe the clusters produced by THIS run (RNG=42 on the
+# 2022-11-02 snapshot); re-running on refreshed data may shuffle cluster
+# numbering, so re-check the labels against the printed summaries above.
+
+CLUSTER_LABELS = {
+    0: "Adaptation & natural resources",
+    1: "Multi-sector decarbonisation strategies",
+    2: "Renewable electricity & power market",
+    3: "Building energy performance",
+    4: "Biofuel & fuel-quality obligations",
+    5: "Clean mobility plans",
+    6: "Integrated energy & climate plans (NECPs)",
+    7: "Climate & vehicle taxation",
+    8: "Framework climate laws & governance",
+    9: "Energy-production regulation",
+    10: "Disaster risk management",
+    11: "Purchase subsidies & e-mobility",
+}
+GROUP_LABELS = {
+    1: ("Broad portfolios, renewables-led",
+        "Large catalogues tilted to renewable-electricity law and purchase "
+        "subsidies; below-average adaptation share."),
+    2: ("Early movers, biofuel-obligation era",
+        "Older portfolios with a strong biofuel/fuel-quality obligation "
+        "signature and few post-2015 entries."),
+    3: ("Standards & risk-management led",
+        "High law share; outsized disaster-risk, building-standards and "
+        "mobility-plan components."),
+    4: ("Adaptation & taxation tilted",
+        "Adaptation-heavy portfolios with strong vehicle/CO2 taxation and "
+        "little renewable-electricity legislation in the snapshot."),
+    5: ("Strategy-led Baltics",
+        "Small portfolios dominated by overarching strategies and the NECP; "
+        "lowest law share."),
+    6: ("Limited coverage",
+        "Too few records in the snapshot for a meaningful profile — a "
+        "coverage artifact rather than a typology."),
+}
+FIGURES = [
+    ("02_policy_clusters_tsne.png", "t-SNE map of the 12 policy clusters"),
+    ("03_cluster_sector_lift.png", "Cluster x sector (lift vs corpus average)"),
+    ("04_cluster_instrument_lift.png", "Cluster x instrument (lift vs corpus average)"),
+    ("05_timeline_by_cluster.png", "Adoption timeline by cluster, 1990-2022"),
+    ("06_country_dendrogram.png", "Country typology - Ward dendrogram"),
+    ("07_country_profiles_heatmap.png", "Country portfolios across the clusters"),
+]
+
+import shutil
+
+WEB_DIR = os.path.join(REPO, "public", "data", "national-climate-policies-clusters")
+os.makedirs(WEB_DIR, exist_ok=True)
+for fname, _ in FIGURES:
+    shutil.copy(os.path.join(OUT, fname), os.path.join(WEB_DIR, fname))
+
+web = {
+    "generatedFrom": "beta/modules/national-climate-policies/analysis/cluster_analysis.py",
+    "snapshotDate": payload["snapshotDate"],
+    "method": {
+        "policyLevel": "K-Means (k=12, silhouette-selected) on TF-IDF of "
+                       "title+summary (120 SVD dims) + one-hot sectors/"
+                       "instruments/responses/hazards",
+        "countryLevel": f"Ward hierarchical clustering of portfolio "
+                        f"composition across the 12 clusters, cut at "
+                        f"{N_COUNTRY_CLUSTERS} groups",
+        "caveat": "Clusters are interpretable tendencies with soft "
+                  "boundaries (silhouette ≈ 0.07, typical for sparse "
+                  "text). Assignments refer to the committed snapshot, not "
+                  "to live refreshes.",
+    },
+    "clusters": [
+        {
+            "id": ci["cluster"],
+            "label": CLUSTER_LABELS[ci["cluster"]],
+            "n": ci["n"],
+            "lawShare": round(ci["share_law"], 2),
+            "medianYear": int(ci["median_year"]),
+            "topTerms": ci["top_terms"][:8],
+            "examples": ci["examples"],
+        }
+        for ci in cluster_info
+    ],
+    "assignments": dict(zip(df["id"], df["cluster"].astype(int))),
+    "countryGroups": [
+        {
+            "id": int(t),
+            "label": GROUP_LABELS[t][0],
+            "description": GROUP_LABELS[t][1],
+            "countries": sub.index.tolist(),
+        }
+        for t, sub in cdf.groupby("cluster")
+    ],
+    "figures": [
+        {"file": f"/data/national-climate-policies-clusters/{f}", "title": t}
+        for f, t in FIGURES
+    ],
+}
+with open(os.path.join(REPO, "public", "data",
+                       "national-climate-policies-clusters.json"), "w") as f:
+    json.dump(web, f, indent=1)
+print("Web export:", WEB_DIR)
