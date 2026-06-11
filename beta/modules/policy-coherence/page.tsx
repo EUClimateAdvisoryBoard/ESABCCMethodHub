@@ -105,10 +105,18 @@ export default function PolicyCoherencePage() {
             re-verification.
           </p>
           <p>
-            The four steps are also registered as taggable codes under{' '}
-            <span className="font-mono">Policy coherence (beta)</span> in the Content Analysis
-            master code system, so coherence evidence can be pinned to text segments in the
-            master library and the same lens appears inside the workspace analysis workbench.
+            <span className="font-bold text-tertiary-dark">Text provenance.</span> Every curated
+            assessment is anchored in the acts&apos; own words: the step views quote the exact
+            provisions each grade stems from — verbatim from the policy-text library where the
+            (consolidated) text is shipped, and clearly flagged as a paraphrase where it is not
+            (e.g. the library still carries the 2003 ETS Directive, the 2018 ESR, RED II and the
+            2019 CO₂-cars Regulation, none of which contain their 2023 amendments). The same
+            passages are seeded into the Content Analysis master library as coded segments under
+            the four <span className="font-mono">coh-*</span> codes, alongside a ready-made
+            project — <span className="font-semibold">Policy coherence — master library</span> —
+            scoping exactly the assessed corpus. Open any assessed act in the workbench and the
+            coherence evidence appears as in-text highlights, word for word, next to the
+            objective–delivery checklist annotations.
           </p>
         </section>
       </main>

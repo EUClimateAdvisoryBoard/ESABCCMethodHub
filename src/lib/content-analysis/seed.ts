@@ -10,6 +10,8 @@
 import { policies } from '@/data/policies';
 import { POLICY_MASTER_TAGS } from './policy-master-tags';
 import { POLICY_OBJECTIVE_CHECKLISTS } from './policy-objective-checklist';
+import { coherenceAssessedIds } from './policy-coherence';
+import { buildCoherenceSegmentsFor } from './policy-coherence-evidence';
 import type {
   AiClassification,
   AnalysisDocument,
@@ -783,6 +785,13 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     buildChecklistSegmentsFor(d, codeNameById, now),
   );
 
+  // In-text coherence annotations: every curated coherence anchor (verbatim
+  // provision quotes for steps ① ② ④) plus the derived ③/④ roll-ups, tagged
+  // under the `coh-*` master codes — the "policy coherence" master library.
+  const coherenceSegments = documents.flatMap(d =>
+    buildCoherenceSegmentsFor(d, codeNameById, now),
+  );
+
   // ── Projects ─────────────────────────────────────────────────────────
   const projects: Project[] = [
     {
@@ -807,13 +816,26 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
       createdAt: now,
       updatedAt: now,
     },
+    {
+      id: 'project-policy-coherence',
+      name: 'Policy coherence — master library',
+      description:
+        'Every policy with a coherence signal in the four-step model, with the assessment pinned to the acts’ own text: verbatim provision quotes tagged under the ①–④ coherence codes (assumption bases, interaction-creating provisions, in-act targets) plus the derived goals↔means and evaluation-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
+      mode: 'horizontal',
+      masterCodeSelection: [],
+      documentAllowList: coherenceAssessedIds().filter(id =>
+        policies.some(p => p.id === id),
+      ),
+      createdAt: now,
+      updatedAt: now,
+    },
   ];
 
   return {
     version: 1,
     codes,
     documents,
-    segments: checklistSegments,
+    segments: [...checklistSegments, ...coherenceSegments],
     projects,
     suggestions: [],
     summaries: [],
