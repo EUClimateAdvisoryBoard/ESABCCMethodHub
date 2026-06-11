@@ -46,6 +46,7 @@ import type {
 } from './types';
 import type { Block, AiClassification, SharedIngestedDocument } from './types';
 import { buildSeedSnapshot, buildChecklistSegmentsFor, deriveBlocksFromText } from './seed';
+import { buildCoherenceSegmentsFor } from './policy-coherence-evidence';
 import { enqueue, flush as flushOutbox, getOutboxStatus, subscribeOutbox } from './outbox';
 
 const LS_KEY = 'esabcc_content_analysis_v1';
@@ -406,17 +407,29 @@ function hydrate(): void {
         const missing = seed.codes.filter(
           c => c.scope === 'master' && !known.has(c.id),
         );
-        // Seeded in-text annotations (checklist evidence, `seg-check-…`) are
-        // backfilled ONCE: only when the snapshot has none at all. Re-merging
+        // Seeded in-text annotations (checklist evidence `seg-check-…`,
+        // coherence evidence `seg-coh-…`) are backfilled ONCE per family:
+        // only when the snapshot has none of that family at all. Re-merging
         // per id would resurrect segments an analyst deliberately deleted.
-        const missingSegs = state.segments.some(s => s.id.startsWith('seg-check-'))
+        const missingSegs = [
+          ...(state.segments.some(s => s.id.startsWith('seg-check-'))
+            ? []
+            : seed.segments.filter(s => s.id.startsWith('seg-check-'))),
+          ...(state.segments.some(s => s.id.startsWith('seg-coh-'))
+            ? []
+            : seed.segments.filter(s => s.id.startsWith('seg-coh-'))),
+        ];
+        // Same one-shot treatment for the seeded "Policy coherence — master
+        // library" project, so snapshots persisted before it shipped get it.
+        const missingProjects = state.projects.some(p => p.id === 'project-policy-coherence')
           ? []
-          : seed.segments.filter(s => s.id.startsWith('seg-check-'));
-        if (missing.length > 0 || missingSegs.length > 0) {
+          : seed.projects.filter(p => p.id === 'project-policy-coherence');
+        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0) {
           state = {
             ...state,
             codes: [...state.codes, ...missing],
             segments: [...state.segments, ...missingSegs],
+            projects: [...state.projects, ...missingProjects],
           };
           persist();
         }
@@ -446,12 +459,13 @@ function childrenOf(codes: CodeNode[], parentId: string | null): CodeNode[] {
   return codes.filter(c => c.parentId === parentId);
 }
 
-/** Re-anchor the seeded objective-checklist annotations (`seg-check-…`) for
- *  the given documents against their CURRENT blocks. Called whenever a
- *  document's substrate is replaced (lazy-loaded EUR-Lex body, PDF ingest):
- *  block ids are positional, so the old anchors would dangle — and a policy
- *  that previously only had a metadata stub gains its annotations the moment
- *  real text arrives. Analyst-authored segments are untouched. */
+/** Re-anchor the seeded annotations — objective-checklist (`seg-check-…`)
+ *  and coherence-evidence (`seg-coh-…`) — for the given documents against
+ *  their CURRENT blocks. Called whenever a document's substrate is replaced
+ *  (lazy-loaded EUR-Lex body, PDF ingest): block ids are positional, so the
+ *  old anchors would dangle — and a policy that previously only had a
+ *  metadata stub gains its annotations the moment real text arrives.
+ *  Analyst-authored segments are untouched. */
 function reanchorChecklistSegments(
   s: ContentAnalysisSnapshot,
   docIds: Set<string>,
@@ -460,11 +474,18 @@ function reanchorChecklistSegments(
   const codeNameById = new Map(s.codes.map(c => [c.id, c.name] as const));
   const now = new Date().toISOString();
   const kept = s.segments.filter(
-    seg => !(seg.id.startsWith('seg-check-') && docIds.has(seg.documentId)),
+    seg =>
+      !(
+        (seg.id.startsWith('seg-check-') || seg.id.startsWith('seg-coh-')) &&
+        docIds.has(seg.documentId)
+      ),
   );
   const fresh = s.documents
     .filter(d => docIds.has(d.id))
-    .flatMap(d => buildChecklistSegmentsFor(d, codeNameById, now));
+    .flatMap(d => [
+      ...buildChecklistSegmentsFor(d, codeNameById, now),
+      ...buildCoherenceSegmentsFor(d, codeNameById, now),
+    ]);
   return fresh.length || kept.length !== s.segments.length ? [...kept, ...fresh] : s.segments;
 }
 

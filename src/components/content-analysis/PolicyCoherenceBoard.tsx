@@ -36,6 +36,13 @@ import {
   type GoalInteraction,
   type PolicyCoherenceProfile,
 } from '@/lib/content-analysis/policy-coherence';
+import {
+  coherenceEvidenceStats,
+  evidenceForExAnte,
+  evidenceForInteraction,
+  evidenceForOutcome,
+  type PolicyTextEvidence,
+} from '@/lib/content-analysis/policy-coherence-evidence';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
 import { policies } from '@/data/policies';
 
@@ -174,6 +181,7 @@ export default function PolicyCoherenceBoard({ scopeIds, scopeLabel }: Props) {
         )}
       </div>
 
+      {tab === 'overview' && <ProvenanceNote />}
       {tab === 'overview' && <SynthesisView profiles={overview.profiles} />}
       {tab === 'ex-ante' && <ExAnteView ids={activeIds} />}
       {tab === 'horizontal' && <InteractionsView interactions={overview.interactions} />}
@@ -407,6 +415,11 @@ function SynthesisRow({
                       <span className="font-semibold">Observed:</span> {p.exAnte.observation}{' '}
                       <span className="italic">({p.exAnte.source})</span>
                     </p>
+                    {evidenceForExAnte(p.policyId).map(ev => (
+                      <div key={ev.id} className="mt-1">
+                        <ProvisionQuote ev={ev} />
+                      </div>
+                    ))}
                   </>
                 ) : (
                   <p className="italic">No assumption audit yet.</p>
@@ -477,6 +490,11 @@ function SynthesisRow({
                     {paceSentence(p)}
                   </p>
                 )}
+                {evidenceForOutcome(p.policyId).map(ev => (
+                  <div key={ev.id} className="mt-1">
+                    <ProvisionQuote ev={ev} />
+                  </div>
+                ))}
               </div>
             </div>
           </td>
@@ -490,6 +508,57 @@ function paceSentence(p: PolicyCoherenceProfile): string {
   const m = p.evaluation.measurement!;
   const r = m.pace.ratio;
   return `${m.latest.value} ${m.unit} (${m.latest.year}) vs target ${m.target.value} (${m.target.year}); pace ratio ${r === null ? '—' : r.toFixed(2)} → ${READING_STYLE[m.pace.reading].label}.`;
+}
+
+/** Where-it-stems-from banner: the corpus-level provenance contract. */
+function ProvenanceNote() {
+  const stats = coherenceEvidenceStats();
+  return (
+    <p className="text-[11px] text-tertiary bg-violet-50 border border-violet-200 rounded px-3 py-2 leading-relaxed">
+      <span className="font-bold">Anchored in the acts’ own text:</span> the curated steps are
+      pinned to {stats.total} provision anchors — {stats.verbatim} verbatim quotes from the
+      policy-text library and {stats.glossed} flagged paraphrases where the library lacks the
+      (consolidated) act. Each step view shows the passages inline, and the same passages are
+      tagged in the Content Analysis master library under the ①–④ coherence codes (project{' '}
+      <span className="font-semibold">“Policy coherence — master library”</span>), so every grade
+      can be walked back to the words it stems from.
+    </p>
+  );
+}
+
+/** One provision anchor: the verbatim passage (or flagged paraphrase) the
+ *  assessment stems from, with the citation and the one-line reading. */
+function ProvisionQuote({ ev, showPolicy }: { ev: PolicyTextEvidence; showPolicy?: boolean }) {
+  return (
+    <div
+      className="rounded border-l-2 bg-grey-50 px-2.5 py-1.5"
+      style={{ borderLeftColor: ev.quote !== null ? '#6D28D9' : '#9CA3AF' }}
+    >
+      <p className="flex items-center gap-1.5 flex-wrap font-mono text-[8.5px] uppercase tracking-[0.1em] text-tertiary">
+        {showPolicy && <span className="font-bold">{titleOf(ev.policyId)}</span>}
+        <span>{ev.provision}</span>
+        {ev.quote !== null ? (
+          <span className="px-1 rounded-sm bg-violet-100 text-violet-800 normal-case tracking-normal font-sans font-semibold">
+            verbatim
+          </span>
+        ) : (
+          <span
+            className="px-1 rounded-sm bg-grey-200 text-tertiary-dark normal-case tracking-normal font-sans font-semibold"
+            title={ev.textNote}
+          >
+            paraphrase — text not in library
+          </span>
+        )}
+      </p>
+      <p className="mt-0.5 text-[10.5px] leading-relaxed text-tertiary-dark italic">
+        “{ev.quote ?? ev.gloss}”
+      </p>
+      <p className="mt-0.5 text-[10px] leading-relaxed text-tertiary">{ev.reading}</p>
+      {ev.textNote && (
+        <p className="mt-0.5 text-[9px] leading-relaxed text-amber-700">{ev.textNote}</p>
+      )}
+    </div>
+  );
 }
 
 function VerdictDot({ verdict }: { verdict: string }) {
@@ -570,6 +639,16 @@ function ExAnteView({ ids }: { ids: string[] }) {
                   {e.observation} <span className="italic text-tertiary">({e.source})</span>
                 </p>
               </div>
+              {evidenceForExAnte(e.policyId).length > 0 && (
+                <div className="space-y-1">
+                  <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary px-0.5">
+                    In the act — where the assumption stems from
+                  </p>
+                  {evidenceForExAnte(e.policyId).map(ev => (
+                    <ProvisionQuote key={ev.id} ev={ev} />
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         );
@@ -661,6 +740,13 @@ function InteractionsView({ interactions }: { interactions: GoalInteraction[] })
             </div>
             <p className="mt-1.5 text-[11px] text-tertiary-dark leading-relaxed">{i.rationale}</p>
             <p className="mt-1 text-[9.5px] font-mono text-tertiary">Basis: {i.legalBasis}</p>
+            {evidenceForInteraction(i.id).length > 0 && (
+              <div className="mt-1.5 grid sm:grid-cols-2 gap-1.5">
+                {evidenceForInteraction(i.id).map(ev => (
+                  <ProvisionQuote key={ev.id} ev={ev} showPolicy />
+                ))}
+              </div>
+            )}
           </div>
         ))}
       </div>
@@ -850,6 +936,13 @@ function EvaluationView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
             >
               <span className="font-bold text-tertiary-dark">{titleOf(p.policyId)} — policy change (output side): </span>
               {m.policyChange}
+              {evidenceForOutcome(p.policyId).length > 0 && (
+                <div className="mt-1.5 space-y-1">
+                  {evidenceForOutcome(p.policyId).map(ev => (
+                    <ProvisionQuote key={ev.id} ev={ev} />
+                  ))}
+                </div>
+              )}
             </div>
           );
         })}
