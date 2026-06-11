@@ -233,3 +233,56 @@ in the Content Analysis module:
   user-authored); the new child codes merge in via the standard
   missing-master-code path, and `getMasterCode` resolves them everywhere
   since the catalog derives from the seed.
+
+---
+
+## 7. Adversarial fact-check round (June 2026)
+
+Two verification agents tried to falsify every load-bearing claim against
+EUR-Lex, EEA, Eurostat, Commission and ACEA sources.
+
+**Legal instruments — all regulation numbers and dates verified** (2026/667,
+2026/470, 2025/794, 2025/2083, 2025/1214, 2024/3234 + 2025/2650, 2025/1561,
+2024/1785, COM(2025) 187, ECA SR 02/2026, CRCF DA of 3 Feb 2026, CBAM first
+certificate price €75.36). Three substantive refinements applied:
+
+- *Taxonomy*: the Jul 2025 delegated act cut datapoints **~64% for
+  non-financial undertakings** (more for banks); reporting voluntariness
+  below the 1,000-employee/€450m threshold flows from the **Omnibus
+  level-1** CSRD changes, not the DA. Observation re-attributed.
+- *Social Climate Fund*: the ETS2 delay was enacted by Reg. 2026/667
+  Art. 2 **declaring the Art. 30k postponement rules applicable** — which
+  arguably triggers the SCF's own fallback clause cutting the Fund to
+  €54.6 bn (legally unsettled; Reg. 2026/667 is silent on the SCF). New
+  verbatim anchor quotes that fallback subparagraph: the act prices in its
+  own failure mode. Lithuania's plan approval (8 Jun 2026) recorded.
+- *EUDR*: all dates verified incl. the rejected "no-risk" tier.
+
+**Data points — five errors found and corrected** in the pace-ratio inputs:
+
+| Series | Was | Corrected | Source |
+|---|---|---|---|
+| ETS stationary 2019 (index, 2005=100) | 67 | **65** (−35%) | Carbon Market Report 2020 |
+| ETS 2024 yoy | −7% | **−5.8%** | CAPR 2025 |
+| ESR 2019 (index) | 88 | **90** (−10%) | CAPR 2020 |
+| Final energy 2019 | 935 Mtoe | **984 Mtoe** | Eurostat |
+| LULUCF 2019 sink | −240 Mt | **−249 Mt** | EEA (revision-sensitive) |
+
+Plus refreshes: net GHG 2018 index 78; latest points moved to 2024/2025
+(net GHG 2024 provisional −37.2%; new-car CO₂ **106.8 g/km 2024 — up from
+106.4 in 2023, the first reversal of the WLTP series**; organic share 10.8%
+in 2023; Russian gas 19% 2024 → ~13% 2025, with the stepwise import ban now
+law as **Reg. (EU) 2026/261**). The ESR Member-State lists were wrong and
+were replaced with the CAPR 2025 lists (2023 exceedances: HR, CY, DK, IE,
+IT, MT; projected 2026–30: AT, EE, DE, IE, MT, SE). The data-centre claim
+was tightened (IEA: ~+65% by 2030; doubling only in market estimates).
+
+**Corrected readings (mechanical ripple):** the fixes flipped four pace
+readings — Climate Law on-track → **lagging (0.83)**, ESR off-track →
+**lagging (0.60)**, EED off-track → **lagging (0.74)**, CO₂ cars stays
+off-track but at **0.26**. The corrected board now matches the EEA's own
+T&P 2025 readings (WEM −47% / WAM −54% vs −55%) — a good sign the
+distance-to-target machinery reproduces the official method when fed clean
+inputs. Residual weak points flagged by the verifiers: the 2019 LULUCF
+level is revision-sensitive, and the 2018 net-GHG index is inferred from
+the CAPR 2020 anchor rather than a current published figure.

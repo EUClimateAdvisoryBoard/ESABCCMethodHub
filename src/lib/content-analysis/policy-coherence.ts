@@ -204,7 +204,7 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if verified emissions exceed the cap path or TNAC sits outside the MSR band for two consecutive years; under pressure if abatement is shown to be dominated by output loss rather than investment.',
     observation:
-      'Stationary verified emissions fell a further 7% in 2024 to ~51% below 2005, below the cap path; TNAC remains within the MSR band; power-sector decarbonisation dominates the decline (2025 Carbon Market Report), with EUA prices ranging ~€60–92 through 2025–H1 2026.',
+      'Stationary verified emissions fell a further 5.8% in 2024 to ~51% below 2005, below the cap path; TNAC remains within the MSR band; power-sector decarbonisation dominates the decline (2025 Carbon Market Report), with EUA prices ranging ~€60–92 through 2025–H1 2026.',
     source: 'EEA ETS data viewer; Commission 2025 Carbon Market Report (Dec 2025).',
     tier: 'A',
     status: 'valid',
@@ -218,7 +218,7 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if aggregate projections show a 2030 gap with the flexibility pools exhausted; under pressure if multiple Member States project AEA deficits.',
     observation:
-      'ESR emissions were ~−19.8% vs 2005 by 2023 with virtually no decrease in 2024 (provisional); projections deliver ~29.7% (existing) / ~38.1% (planned measures) against −40%, and the Commission finds ~10 Member States exceeding their limits in at least one year, with CY, HR, IT, RO (and IE from 2026) facing first-period excesses.',
+      'ESR emissions were −19.8% vs 2005 by 2023 and virtually flat in 2024 — the first year aggregate emissions exceeded the EU-wide limit (+1.6%); projections deliver ~29.7% (existing) / ~38.1% (planned measures) against −40%; six Member States exceeded their 2023 allocations (HR, CY, DK, IE, IT, MT) and AT, EE, DE, IE, MT, SE project 2026–30 excesses, with DE and IE the largest gaps.',
     source: 'Climate Action Progress Report 2025 (COM(2025) 735); EEA Trends & Projections 2025.',
     tier: 'B',
     status: 'under-pressure',
@@ -260,7 +260,7 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if final consumption rebounds above the linear path to 763 Mtoe for two consecutive years; under pressure if observed cuts are attributed mainly to price-driven demand response.',
     observation:
-      'Final consumption rebounded in 2024 (+0.7% to 900 Mtoe — 18% above the 763 Mtoe cap) as crisis-era demand response unwound; NECP ambition aggregates to only ~8.1% vs the 11.7% required; data-centre demand (~70 TWh in 2024, ~3% of EU electricity) is projected to roughly double by 2030. One more rebound year triggers the violation criterion.',
+      'Final consumption rebounded in 2024 (+0.7% to 900 Mtoe — 18% above the 763 Mtoe cap) as crisis-era demand response unwound; NECP ambition aggregates to only ~8.1% vs the 11.7% required; data-centre demand (~70 TWh in 2024, ~3% of EU electricity) is projected to grow by roughly two-thirds by 2030 on IEA figures, with market estimates running to a doubling. One more rebound year triggers the violation criterion.',
     source: 'Eurostat energy balances (2024); Commission final-NECP assessment; Commission data-centre focus (Nov 2025).',
     tier: 'B',
     status: 'under-pressure',
@@ -456,8 +456,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if rationing occurs or the Russian share fails to fall materially below its 2021 level.',
     observation:
-      'The Russian share fell from ~45% (2021) to under 20% and falling; storage targets were met every season; voluntary demand-reduction targets were achieved; no rationing occurred.',
-    source: 'Eurostat; ACER market monitoring.',
+      'The Russian share fell from ~45% (2021) to 19% (2024) and ~13% (2025) after the end of Ukraine transit; storage targets were met every season; no rationing occurred; a stepwise import ban is now law (Reg. (EU) 2026/261: short-term LNG from Apr 2026, long-term contracts from 2027, pipeline by autumn 2027).',
+    source: 'Eurostat; Commission REPowerEU roadmap; Reg. (EU) 2026/261 (OJ 2.2.2026).',
     tier: 'A',
     status: 'valid',
   },
@@ -1153,22 +1153,22 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'EU net GHG emissions (index, 1990 = 100)',
     unit: 'index',
     baseline: { year: 1990, value: 100 },
-    recent: { year: 2018, value: 77 },
-    latest: { year: 2023, value: 63 },
+    recent: { year: 2018, value: 78 },
+    latest: { year: 2024, value: 63 },
     target: { year: 2030, value: 45 },
     policyChange:
       'The Fit-for-55 acts the law required were essentially all adopted; the mandated 2040-target proposal slipped ~20 months past its deadline but was enacted as Reg. (EU) 2026/667 (−90% net by 2040, ≥85% domestic, ≤5 pp international credits from 2036) — a ratchet, late.',
     source: 'EEA GHG inventory; Reg. (EU) 2026/667 (OJ).',
     tier: 'A',
     notes:
-      'Recent pace includes the COVID dip and rebound; Commission projections reach ~−54% by 2030 only with full implementation of adopted measures.',
+      '2024 is provisional (−37.2%, virtually flat vs 2023); recent pace includes the COVID dip and rebound. EEA T&P 2025 projects −47% by 2030 with existing measures, −54% with additional measures — just short of −55%.',
   },
   'eu-ets-directive': {
     policyId: 'eu-ets-directive',
     indicator: 'Verified stationary ETS emissions (index, 2005 = 100)',
     unit: 'index',
     baseline: { year: 2005, value: 100 },
-    recent: { year: 2019, value: 67 },
+    recent: { year: 2019, value: 65 },
     latest: { year: 2024, value: 49 },
     target: { year: 2030, value: 38 },
     policyChange:
@@ -1182,7 +1182,7 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'ESR-sector emissions (index, 2005 = 100)',
     unit: 'index',
     baseline: { year: 2005, value: 100 },
-    recent: { year: 2019, value: 88 },
+    recent: { year: 2019, value: 90 },
     latest: { year: 2024, value: 80 },
     target: { year: 2030, value: 60 },
     policyChange: 'Ratcheted from −30% to −40% by Reg. 2023/857; compliance machinery unchanged.',
@@ -1195,7 +1195,7 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'Net LULUCF sink',
     unit: 'Mt CO₂eq (negative = removals)',
     baseline: { year: 2015, value: -310 },
-    recent: { year: 2019, value: -240 },
+    recent: { year: 2019, value: -249 },
     latest: { year: 2024, value: -212 },
     target: { year: 2030, value: -310 },
     policyChange: 'The 2023 amendment set the 310 Mt 2030 target with per-MS contributions in Annex IIa.',
@@ -1220,7 +1220,7 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'Final energy consumption',
     unit: 'Mtoe',
     baseline: { year: 2020, value: 907 },
-    recent: { year: 2019, value: 935 },
+    recent: { year: 2019, value: 984 },
     latest: { year: 2024, value: 900 },
     target: { year: 2030, value: 763 },
     policyChange: 'The 2023 recast made −11.7% binding and stepped up the savings obligation.',
@@ -1234,13 +1234,14 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: 'g CO₂/km',
     baseline: { year: 2021, value: 114 },
     recent: { year: 2021, value: 114 },
-    latest: { year: 2023, value: 107 },
+    latest: { year: 2024, value: 106.8 },
     target: { year: 2030, value: 51 },
     policyChange:
       'The 2025 step was converted into 2025–27 averaging (Reg. 2025/1214) and the advanced review proposed cutting the 2035 step to 90% (Dec 2025, in negotiation) — the act was weakened at first market contact, with deeper relief on the table.',
     source: 'EEA new-vehicle CO₂ monitoring; Reg. (EU) 2025/1214 (OJ).',
     tier: 'A',
-    notes: 'WLTP series starts 2021, so the recent window equals the baseline window.',
+    notes:
+      'WLTP series starts 2021, so the recent window equals the baseline window; 2024 ticked UP from 106.4 g/km in 2023 — the first reversal of the series.',
   },
   'farm-to-fork-strategy': {
     policyId: 'farm-to-fork-strategy',
@@ -1248,7 +1249,7 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: '%',
     baseline: { year: 2020, value: 9.1 },
     recent: { year: 2018, value: 8.0 },
-    latest: { year: 2022, value: 10.5 },
+    latest: { year: 2023, value: 10.8 },
     target: { year: 2030, value: 25 },
     policyChange:
       'Measured policy change is negative: the SUR was withdrawn (2024) and the framework law never tabled — the targets lost their instruments.',
@@ -1262,11 +1263,11 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: '%',
     baseline: { year: 2021, value: 45 },
     recent: { year: 2021, value: 45 },
-    latest: { year: 2024, value: 18 },
+    latest: { year: 2025, value: 13 },
     target: { year: 2027, value: 0 },
     policyChange:
-      'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed; a phase-out instrument for remaining imports followed.',
-    source: 'Eurostat; ACER market monitoring.',
+      'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed; the phase-out is now law — Reg. (EU) 2026/261 bans remaining imports stepwise through 2027.',
+    source: 'Eurostat; Commission REPowerEU roadmap; Reg. (EU) 2026/261 (OJ).',
     tier: 'A',
   },
 };
