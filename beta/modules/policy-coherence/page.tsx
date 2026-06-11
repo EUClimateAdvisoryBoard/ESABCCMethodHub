@@ -109,8 +109,10 @@ export default function PolicyCoherencePage() {
             assessment is anchored in the acts&apos; own words: the step views quote the exact
             provisions each grade stems from — verbatim from the policy-text library where the
             (consolidated) text is shipped, and clearly flagged as a paraphrase where it is not
-            (e.g. the library still carries the 2003 ETS Directive, the 2018 ESR, RED II and the
-            2019 CO₂-cars Regulation, none of which contain their 2023 amendments). The same
+            (e.g. the library still carries the 2003 ETS Directive, the 2018 ESR, RED II, the
+            2019 CO₂-cars Regulation and the pre-postponement EUDR — none of which contain
+            their later amendments). Observations were re-verified against primary sources in
+            June 2026. The same
             passages are seeded into the Content Analysis master library as coded segments under
             the four <span className="font-mono">coh-*</span> codes, alongside a ready-made
             project — <span className="font-semibold">Policy coherence — master library</span> —

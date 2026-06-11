@@ -53,6 +53,8 @@ import { useProjectLock } from '@/lib/content-analysis/useProjectLock';
 import { guessNumericExtraction } from '@/lib/content-analysis/numeric';
 import CodeSuggestionsPanel from '@/components/content-analysis/CodeSuggestionsPanel';
 import HorizontalCoherenceView from '@/components/content-analysis/HorizontalCoherenceView';
+import ObjectiveChecklistMatrix from '@/components/content-analysis/ObjectiveChecklistMatrix';
+import PolicyCoherenceBoard from '@/components/content-analysis/PolicyCoherenceBoard';
 import { AnalysisPlaceholder } from '@/components/content-analysis/AnalysisPlaceholders';
 import ProjectSummariesView from '@/components/content-analysis/ProjectSummariesView';
 import LongitudinalTimelineView from '@/components/content-analysis/LongitudinalTimelineView';
@@ -181,6 +183,10 @@ function ContentAnalysisPageInner() {
     return () => { cancelled = true; };
   }, [viewMode]);
   const [activeTab, setActiveTab] = useState<typeof TAB_LABELS[number]['id']>('workbench');
+  // Compare-tab lens: the segment-count matrix, the per-act objective–delivery
+  // checklist, or the four-step coherence model (with its in-text provision
+  // quotes) — all scoped to the active project corpus.
+  const [compareLens, setCompareLens] = useState<'matrix' | 'checklist' | 'coherence'>('matrix');
   const [activeProjectId, setActiveProjectId] = useState<string>('project-master');
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
   const [selectedCodeId, setSelectedCodeId] = useState<string | null>(null);
@@ -2165,42 +2171,91 @@ function ContentAnalysisPageInner() {
         <section className="ca-tour-compare max-w-[1600px] mx-auto px-4 sm:px-6 py-6">
           <h2 className="text-[18px] font-bold text-[#3D5265]">Horizontal policy coherence</h2>
           <p className="mt-1 text-[12.5px] text-[#3D5265]/75 max-w-3xl leading-relaxed">
-            Cross-document view across the current project scope. Each cell counts tagged segments under a top-level concept.
+            {compareLens === 'matrix' &&
+              'Cross-document view across the current project scope. Each cell counts tagged segments under a top-level concept.'}
+            {compareLens === 'checklist' &&
+              'Per-act objective–delivery checklist across the project scope: can each act deliver its own stated objective?'}
+            {compareLens === 'coherence' &&
+              'The four-step coherence model over the project scope — every grade anchored to the provisions it stems from, with verbatim quotes. The same passages are tagged in the documents under the ①–④ coherence codes.'}
           </p>
+          {/* Lens switcher — the mechanical tag matrix vs the two assessment
+              lenses (checklist, four-step coherence model). The assessment
+              lenses are the same boards as the beta modules / workspace
+              Content Analysis, scoped to this project's corpus. */}
+          <div className="mt-3 flex items-center gap-1.5 flex-wrap">
+            <span className="text-[10px] uppercase tracking-[0.14em] text-[#8A95A3] font-mono mr-1">Lens</span>
+            {(
+              [
+                { id: 'matrix', label: 'Tag matrix', hint: 'Tagged segments per document × concept' },
+                { id: 'checklist', label: 'Objective checklist', hint: 'Objective–delivery verdicts per act' },
+                { id: 'coherence', label: 'Coherence model', hint: 'Four-step coherence model with in-act provision quotes' },
+              ] as const
+            ).map(opt => (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => setCompareLens(opt.id)}
+                title={opt.hint}
+                className={`px-2 py-0.5 rounded-sm text-[11px] font-medium transition ${
+                  compareLens === opt.id ? 'bg-[#3D5265] text-white' : 'text-[#3D5265] border border-[#E6E7E8] hover:bg-[#F3F4F6]'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
           {/* Source-tier filter — scope the matrix columns to policy /
               scientific / grey (or all). Shares the same `sourceFilter` state
-              as the coding view so the two surfaces stay in step. */}
-          <div className="mt-3 flex items-center gap-1.5 flex-wrap">
-            <span className="text-[10px] uppercase tracking-[0.14em] text-[#8A95A3] font-mono mr-1">Source</span>
-            {SOURCE_FILTER_OPTIONS.map(opt => {
-              const count = docsInProjectScope.filter(d =>
-                opt.id === 'all' ? true : sourceTierOf(d) === opt.id,
-              ).length;
-              const active = sourceFilter === opt.id;
-              return (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => setSourceFilter(opt.id)}
-                  title={opt.hint}
-                  className={`px-2 py-0.5 rounded-sm text-[11px] font-medium transition ${
-                    active ? 'bg-[#3D5265] text-white' : 'text-[#3D5265] border border-[#E6E7E8] hover:bg-[#F3F4F6]'
-                  }`}
-                >
-                  {opt.label}
-                  <span className={`ml-1 font-mono tabular-nums ${active ? 'text-white/80' : 'text-[#8A95A3]'}`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
+              as the coding view so the two surfaces stay in step. Only the
+              tag matrix mixes source tiers; the assessment lenses cover the
+              policy corpus by construction. */}
+          {compareLens === 'matrix' && (
+            <div className="mt-3 flex items-center gap-1.5 flex-wrap">
+              <span className="text-[10px] uppercase tracking-[0.14em] text-[#8A95A3] font-mono mr-1">Source</span>
+              {SOURCE_FILTER_OPTIONS.map(opt => {
+                const count = docsInProjectScope.filter(d =>
+                  opt.id === 'all' ? true : sourceTierOf(d) === opt.id,
+                ).length;
+                const active = sourceFilter === opt.id;
+                return (
+                  <button
+                    key={opt.id}
+                    type="button"
+                    onClick={() => setSourceFilter(opt.id)}
+                    title={opt.hint}
+                    className={`px-2 py-0.5 rounded-sm text-[11px] font-medium transition ${
+                      active ? 'bg-[#3D5265] text-white' : 'text-[#3D5265] border border-[#E6E7E8] hover:bg-[#F3F4F6]'
+                    }`}
+                  >
+                    {opt.label}
+                    <span className={`ml-1 font-mono tabular-nums ${active ? 'text-white/80' : 'text-[#8A95A3]'}`}>
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          )}
           <div className="mt-4 border border-[#E6E7E8] rounded-sm bg-white p-3 sm:p-4">
-            <HorizontalCoherenceView
-              documents={docsInScope}
-              codes={snapshot.codes}
-              segments={projectSegments}
-            />
+            {compareLens === 'matrix' && (
+              <HorizontalCoherenceView
+                documents={docsInScope}
+                codes={snapshot.codes}
+                segments={projectSegments}
+              />
+            )}
+            {compareLens === 'checklist' && (
+              <ObjectiveChecklistMatrix
+                scopeIds={docsInProjectScope.map(d => d.id)}
+                scopeLabel="This project"
+              />
+            )}
+            {compareLens === 'coherence' && (
+              <PolicyCoherenceBoard
+                scopeIds={docsInProjectScope.map(d => d.id)}
+                scopeLabel="This project"
+              />
+            )}
           </div>
         </section>
       )}

@@ -116,3 +116,90 @@ quotes verify, but it should be re-fetched clean.
 - Seed smoke test: 96 `seg-coh-*` segments across `coh-exante` (14),
   `coh-horizontal` (19), `coh-means` (30), `coh-evaluation` (33); project
   seeded with the assessed corpus.
+
+---
+
+## 5. Update — June 2026 deep-research pass
+
+A second round: a web-verified research pass over the whole assessment
+(two parallel research agents, ~80 sources; key URLs in the PR description
+and inline in the observation `source` fields), plus the Content Analysis
+integration that makes the tags first-class inside the module.
+
+### 5.1 What the research changed in the assessment
+
+**Status flips and observation refreshes** (every curated observation now
+reflects June 2026):
+
+- *EU Climate Law*: the 2040 target is adopted law — **Reg. (EU) 2026/667**
+  (−90 % net by 2040, ≥85 % domestic, ≤5 pp Article-6 credits from 2036; in
+  force 7 Apr 2026). Ex-ante stays *under pressure* by its own criterion
+  (the H1 2024 deadline was missed) but the observation now records the
+  ratchet delivering, late.
+- *Social Climate Fund*: flipped **under pressure → violated** — the same
+  Reg. 2026/667 postpones ETS2 to 2028 *in law*, which is exactly the
+  violation criterion declared ex ante. Only Sweden's Plan was approved by
+  spring 2026.
+- *CSRD / Taxonomy*: Omnibus I is now adopted (Dir. (EU) 2026/470, in force
+  18 Mar 2026; >1,000 employees AND >€450m turnover; first reports FY2027)
+  — observations updated from "proposal" to enacted law.
+- *CBAM*: definitive regime started **on schedule** 1 Jan 2026 (first
+  certificate price €75.36/t); de-minimis enacted as Reg. (EU) 2025/2083;
+  downstream extension proposed Dec 2025.
+- *CO₂ cars*: averaging enacted as Reg. (EU) 2025/1214; the Dec 2025
+  proposal to cut the 2035 step to 90 % is recorded as a live proposal, not
+  law. BEV share 17.4 % (2025), 19.4 % (Q1 2026).
+- Data refresh to 2024 across the step-④ measurements (ETS −51 % vs 2005;
+  ESR flat at index 80; LULUCF −212 Mt proxy; RES share 25.2 %; final
+  energy 900 Mtoe — first rebound year against the EED cap).
+
+**New coverage** — five ex-ante audits (EUDR *violated* — postponed twice,
+Reg. 2025/2650; Batteries *violated* — stop-the-clock Reg. 2025/1561 +
+missing carbon-footprint delegated acts; IED 2.0 *under pressure* —
+transposition deadline 1 Jul 2026; TEN-T *violated* — ECA: 2030 core
+completion "will not be met"; ESPR *valid* — working plan on schedule) and
+six goal interactions (EUDR×CAP −1; Batteries×CRMA +2; Cars×Batteries +1;
+IED×ETS 0 by-design demarcation; TEN-T×AFIR +2; ESPR×NZIA +1). All carry
+text anchors; the evidence layer now holds **100 anchors (72 verbatim,
+verified, 0 failures)**.
+
+**Systemic finding** recorded in the model header: post-adoption softening
+(scope cuts, date slips, step-averaging after first contact with compliance
+costs) recurs across CSRD, CBAM, CO₂ cars, EUDR, Batteries, ETS2/SCF and
+CAP — a property of the 2025–26 simplification wave, not act-specific
+noise. Also noted: the Energy Taxation Directive revision is blocked
+(ECOFIN Nov 2025) — a standing fossil-pricing coherence gap the corpus
+cannot express because the ETD is not a tracked policy.
+
+**New vintage findings**: the shipped EUDR text still carries the original
+30 Dec 2024 application date (predates both postponements); the IED text is
+Dir. 2010/75/EU without the 2024 revision; `ten-t-regulation.txt` is a page
+stub, not legal text.
+
+### 5.2 Content Analysis integration ("see exactly where it comes from")
+
+- **Full-text substrate**: `scripts/build-policy-bodies-from-texts.mjs`
+  (wired into `prebuild`) now generates the long-missing
+  `public/content-analysis/policy-bodies.json` from the shipped policy
+  texts — 55 documents, annex-trimmed, ~10 MB lazy-fetched asset. The
+  module's existing `applyPolicyBodies` merge finally has something to
+  merge: documents swap their 24 kB stubs for the real legal text and the
+  seeded coherence/checklist annotations re-anchor to **exact word-level
+  spans** (59 of 72 verbatim anchors; the rest highlight the cited article
+  block).
+- **localStorage discipline**: merged bodies are marked `staticBody` and
+  `persist()` strips them back to the seed cap (same pattern as screenshot
+  stripping) — the full text lives in memory and re-merges on every mount,
+  so the quota is never at risk.
+- **Compare tab lenses**: the standalone Content Analysis module's Compare
+  tab now has a lens switcher — *Tag matrix* (existing) · *Objective
+  checklist* · *Coherence model* — mounting the same boards as the beta
+  module/workspace, scoped to the active project corpus, quotes included.
+
+### 5.3 Verification (this round)
+
+- 100 anchors, 72 verbatim — all verified against the text library, 0
+  failures.
+- Bodies smoke test: 59 exact word-level spans, 11 article-block anchors,
+  53 derived ③/④ roll-ups across the assessed corpus.
+- `tsc --noEmit` and `next build` (including the new prebuild step) pass.

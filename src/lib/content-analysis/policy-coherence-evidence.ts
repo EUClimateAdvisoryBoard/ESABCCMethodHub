@@ -91,6 +91,11 @@ const NOTE_RED_II =
 const NOTE_CARS_2019 =
   'The text library ships Reg. (EU) 2019/631 as adopted; the cited provision was inserted by Reg. (EU) 2023/851 and is not in the shipped text.';
 const NOTE_NOT_IN_LIBRARY = 'This act is not in the policy-text library.';
+const NOTE_EUDR_ORIGINAL =
+  'The text library ships the original EUDR; the application date it states was moved to 30 Dec 2025 by Reg. (EU) 2024/3234 and to 30 Dec 2026 by Reg. (EU) 2025/2650 — neither amendment is in the shipped text.';
+const NOTE_IED_2010 =
+  'The text library ships Dir. 2010/75/EU without the 2024 revision (Dir. (EU) 2024/1785); the cited IED 2.0 provision is not in the shipped text.';
+const NOTE_TENT_STUB = 'The text library carries only a page stub for this act, not the legal text.';
 
 // ── Curated anchors ─────────────────────────────────────────────────────────
 // Step ① (ex-ante): the provision that fixes the design assumption in law.
@@ -108,7 +113,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
     quote:
       'first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target, taking into account the conclusions of the assessments referred to in Articles 6 and 7 of this Regulation and the outcomes of the global stocktake.',
     reading:
-      'The ratchet clause the assumption rests on: a 2040-target proposal was due within six months of the first global stocktake (i.e. H1 2024) — the deadline that has now slipped.',
+      'The ratchet clause the assumption rests on: a 2040-target proposal was due within six months of the first global stocktake (i.e. H1 2024). The deadline slipped ~20 months, but the clause ultimately delivered — Reg. (EU) 2026/667 enacted the −90% 2040 target in March 2026.',
   },
   {
     id: 'exante-eu-ets-directive',
@@ -236,7 +241,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
     quote:
       'A maximum amount of EUR 65 000 000 000 for the period from 1 January 2026 to 31 December 2032 in current prices shall be made available, in accordance with Articles 10a(8b), 30d(3) and 30d(4) of Directive 2003/87/EC, for implementation of the Fund.',
     reading:
-      'The fund size is wired to ETS2 auction revenue under Directive 2003/87/EC — so an ETS2 delay or price softening directly undercuts the capitalisation assumption.',
+      'The fund size is wired to ETS2 auction revenue under Directive 2003/87/EC — which is why the ETS2 postponement to 2028 (Reg. (EU) 2026/667) violates the capitalisation assumption written into this provision.',
   },
   {
     id: 'exante-methane-regulation',
@@ -396,6 +401,67 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
       'The interlocking-whole design claim the assumption tests — borne out: all major files were adopted 2022–24 with the calibration intact.',
   },
 
+  {
+    id: 'exante-deforestation-regulation',
+    policyId: 'deforestation-regulation',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Art. 38(2)',
+    quote:
+      'Subject to paragraph 3 of this Article, Articles 3 to 13, Articles 16 to 24 and Articles 26, 31 and 32 shall apply from 30 December 2024.',
+    reading:
+      'The original application date the readiness assumption was fixed to — postponed twice in law (to 30 Dec 2025, then 30 Dec 2026) before the prohibition ever applied.',
+    textNote: NOTE_EUDR_ORIGINAL,
+  },
+  {
+    id: 'exante-batteries-regulation',
+    policyId: 'batteries-regulation',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Art. 7(1)',
+    quote:
+      '18 February 2025 or 12 months after the date of entry into force either of the delegated act or of the implementing act respectively referred to in the fourth subparagraph, points (a) and (b), whichever is the latest, for electric vehicle batteries',
+    reading:
+      'The act gates its own carbon-footprint dates on Commission delegated acts — which had still not been adopted by mid-2026, de-facto suspending the declaration duty this clause schedules.',
+  },
+  {
+    id: 'exante-industrial-emissions-directive',
+    policyId: 'industrial-emissions-directive',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Art. 15(3) (IED 2.0) + Art. 26 transposition',
+    quote: null,
+    gloss:
+      'Under the 2024 revision, permits must set emission limit values at the strictest end of the BAT-AEL ranges unless the operator demonstrates that only less strict values are achievable; Member States must transpose by 1 July 2026.',
+    reading:
+      'The transposition deadline and strictest-end discipline the assumption tests — national drafts were still pending weeks before the deadline.',
+    textNote: NOTE_IED_2010,
+  },
+  {
+    id: 'exante-ten-t-regulation',
+    policyId: 'ten-t-regulation',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Reg. 2024/1679 (network deadlines)',
+    quote: null,
+    gloss:
+      'The core network must be completed by 31 December 2030, the extended core network by 2040 and the comprehensive network by 2050.',
+    reading:
+      'The dated completion duty the ECA has now assessed as “will not be met” for 2030 — the audit that flips the assumption to violated.',
+    textNote: NOTE_TENT_STUB,
+  },
+  {
+    id: 'exante-ecodesign-sustainable-products',
+    policyId: 'ecodesign-sustainable-products',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Art. 1(1)',
+    quote:
+      'This Regulation also establishes a digital product passport, provides for the setting of mandatory green public procurement requirements and creates a framework to prevent unsold consumer products from being destroyed.',
+    reading:
+      'The framework machinery (DPP, procurement) whose 2025–30 delegated-act schedule the assumption tracks — the working plan landed on time; the delivery test is ahead.',
+  },
+
   // ═══ Step ② · Coherence across policy goals ═════════════════════════════
   // RED biomass × LULUCF sink
   {
@@ -477,9 +543,9 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
     provision: 'Chapter IVa (as amended 2023)',
     quote: null,
     gloss:
-      'The 2023 revision adds a separate emissions trading system (ETS2) for fuel combustion in buildings, road transport and additional sectors, applying from 2027.',
+      'The 2023 revision adds a separate emissions trading system (ETS2) for fuel combustion in buildings, road transport and additional sectors — originally from 2027, postponed to 2028 by Reg. (EU) 2026/667.',
     reading:
-      'ETS2 bridges the buildings/road seam between the two coverage halves from 2027.',
+      'ETS2 bridges the buildings/road seam between the two coverage halves — now from 2028.',
     textNote: NOTE_ETS_2003,
   },
   {
@@ -972,6 +1038,147 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
       'Any undertaking which is subject to an obligation to publish non-financial information pursuant to Article 19a or Article 29a of Directive 2013/34/EU shall include in its non-financial statement or consolidated non-financial statement information on how and to what extent the undertaking’s activities are associated with economic activities that qualify as environmentally sustainable under Articles 3 and 9 of this Regulation.',
     reading:
       'The classification-and-disclosure machinery whose credibility the EuGB label rises and falls with.',
+  },
+
+  // EUDR prohibition × CAP coupled support
+  {
+    id: 'int-eudr-cap-a',
+    policyId: 'deforestation-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-eudr-cap' },
+    provision: 'Art. 3',
+    quote:
+      'Relevant commodities and relevant products shall not be placed or made available on the market or exported, unless all the following conditions are fulfilled: (a) they are deforestation-free; (b) they have been produced in accordance with the relevant legislation of the country of production; and (c) they are covered by a due diligence statement.',
+    reading:
+      'The prohibition covers soy and cattle (Annex I) — the imported feed base of the livestock systems CAP coupled support stabilises.',
+  },
+  {
+    id: 'int-eudr-cap-b',
+    policyId: 'cap-strategic-plans',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-eudr-cap' },
+    provision: 'Art. 32(1)',
+    quote:
+      'Member States may grant coupled income support to active farmers under the conditions set out in this Subsection and as further specified in their CAP Strategic Plans.',
+    reading:
+      'The support that holds livestock volumes — and with them, demand for the feed supply chains the EUDR disciplines.',
+  },
+  // Batteries recycled content × CRMA recycling benchmark
+  {
+    id: 'int-batt-crma-a',
+    policyId: 'batteries-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-batt-crma' },
+    provision: 'Art. 8(1)',
+    quote:
+      'From 18 August 2028 or 24 months after the date of entry into force of the delegated act referred to in the third subparagraph, whichever is the latest, industrial batteries with a capacity greater than 2 kWh, except those with exclusively external storage, electric vehicle batteries and SLI batteries that contain cobalt, lead, lithium or nickel in active materials, shall be accompanied by documentation containing information about the percentage share of cobalt, lithium or nickel that is present in active materials and that has been recovered from battery manufacturing waste',
+    reading:
+      'The recycled-content documentation duty that disciplines the feedstock loop the CRMA recycling benchmark draws on.',
+  },
+  {
+    id: 'int-batt-crma-b',
+    policyId: 'critical-raw-materials-act',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-batt-crma' },
+    provision: 'Recital (benchmarks) / Art. 5(1)(a)(iii)',
+    quote:
+      'Union recycling capacity should therefore be able to produce at least 25 % of the Union’s annual consumption of strategic raw materials and the Union should be able to recycle significantly increasing amounts of each strategic raw material from waste.',
+    reading:
+      'The 25 % recycling benchmark whose largest single feedstock stream is end-of-life and production-scrap batteries.',
+  },
+  // CO₂ cars ZEV mandate × Batteries Regulation
+  {
+    id: 'int-cars-batteries-a',
+    policyId: 'co2-cars-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-cars-batteries' },
+    provision: 'Art. 1(5a) (2023 amendment)',
+    quote: null,
+    gloss:
+      'The 100 % ZEV step from 2035 creates the EV battery fleet whose footprint, recycled content and supply chains the Batteries Regulation governs.',
+    reading: 'The demand side of the clean-battery pairing.',
+    textNote: NOTE_CARS_2019,
+  },
+  {
+    id: 'int-cars-batteries-b',
+    policyId: 'batteries-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-cars-batteries' },
+    provision: 'Art. 7(1)',
+    quote:
+      '18 February 2025 or 12 months after the date of entry into force either of the delegated act or of the implementing act respectively referred to in the fourth subparagraph, points (a) and (b), whichever is the latest, for electric vehicle batteries',
+    reading:
+      'The EV-battery carbon-footprint declaration that is supposed to make the mandated electrification clean — still waiting on its delegated acts.',
+  },
+  // IED ↔ ETS demarcation
+  {
+    id: 'int-ied-ets-a',
+    policyId: 'industrial-emissions-directive',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-ied-ets' },
+    provision: 'Art. 9(1)',
+    quote:
+      'Where emissions of a greenhouse gas from an installation are specified in Annex I to Directive 2003/87/EC in relation to an activity carried out in that installation, the permit shall not include an emission limit value for direct emissions of that gas, unless necessary to ensure that no significant local pollution is caused.',
+    reading:
+      'The demarcation clause itself: IED permits stand down on ETS-covered greenhouse gases so the carbon price does the GHG work — coherence by design.',
+  },
+  {
+    id: 'int-ied-ets-b',
+    policyId: 'eu-ets-directive',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-ied-ets' },
+    provision: 'Art. 2(1)',
+    quote:
+      'This Directive shall apply to emissions from the activities listed in Annex I and greenhouse gases listed in Annex II.',
+    reading:
+      'The scope the IED demarcation is defined against — the same Annex I activity list partitions the two regimes.',
+  },
+  // TEN-T network × AFIR coverage
+  {
+    id: 'int-tent-afir-a',
+    policyId: 'ten-t-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-tent-afir' },
+    provision: 'Reg. 2024/1679 (network deadlines)',
+    quote: null,
+    gloss:
+      'The TEN-T core network — with its binding 31 December 2030 completion deadline — is the map AFIR’s charging and refuelling targets are written onto.',
+    reading: 'The network whose slippage propagates into the fuelling-infrastructure duties.',
+    textNote: NOTE_TENT_STUB,
+  },
+  {
+    id: 'int-tent-afir-b',
+    policyId: 'afir-regulation',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-tent-afir' },
+    provision: 'Art. 3(1)',
+    quote:
+      'Member States shall ensure that, in their territory, publicly accessible recharging stations dedicated to light-duty electric vehicles are deployed in a way that is commensurate with the uptake of light-duty electric vehicles and that they provide sufficient power output for those vehicles.',
+    reading:
+      'AFIR’s coverage duties (here the fleet formula; Arts. 3–6 add TEN-T corridor milestones) bind along the network TEN-T defines.',
+  },
+  // ESPR lead markets × NZIA manufacturing benchmark
+  {
+    id: 'int-espr-nzia-a',
+    policyId: 'ecodesign-sustainable-products',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-espr-nzia' },
+    provision: 'Art. 1(1)',
+    quote:
+      'This Regulation also establishes a digital product passport, provides for the setting of mandatory green public procurement requirements and creates a framework to prevent unsold consumer products from being destroyed.',
+    reading:
+      'Mandatory green procurement plus the steel/aluminium delegated acts of the 2025–30 working plan build the lead markets for clean EU-made materials.',
+  },
+  {
+    id: 'int-espr-nzia-b',
+    policyId: 'net-zero-industry-act',
+    stepId: 'horizontal',
+    assessment: { kind: 'interaction', interactionId: 'coh-int-espr-nzia' },
+    provision: 'Art. 5(1)(a)',
+    quote:
+      'a benchmark of at least 40 % of the Union’s annual deployment needs for the corresponding technologies necessary to achieve the Union’s 2030 climate and energy targets',
+    reading:
+      'The supply-side benchmark those demand-side lead markets are meant to underwrite.',
   },
 
   // ═══ Step ④ · In-act targets behind the measured outcomes ═══════════════

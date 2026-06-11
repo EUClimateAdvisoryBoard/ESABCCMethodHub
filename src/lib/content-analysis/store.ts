@@ -352,8 +352,20 @@ function persist(): void {
     // Coded-segment figure `screenshot`s get the same treatment: they're saved
     // server-side (via postSegments) and re-fetched by pullFromServer, so a
     // base64 figure per segment would needlessly eat the localStorage quota.
+    // Static policy bodies (merged from the lazy-fetched policy-bodies.json,
+    // ~10 MB of legal text across the corpus) get the same treatment: they
+    // are re-merged on every mount, so the cache only keeps a seed-sized
+    // stub. Blocks are dropped with the text — they are re-derived from the
+    // merged body, and keeping blocks for a truncated text would desync the
+    // two. Seeded annotations re-anchor right after the merge.
+    const BODY_CACHE_CAP = 24_000;
     const lean: ContentAnalysisSnapshot = {
       ...state,
+      documents: state.documents.map(d =>
+        d.staticBody && d.text.length > BODY_CACHE_CAP
+          ? { ...d, text: d.text.slice(0, BODY_CACHE_CAP), blocks: undefined, staticBody: undefined }
+          : d,
+      ),
       segments: state.segments.map(s =>
         s.screenshot === undefined ? s : { ...s, screenshot: undefined },
       ),
@@ -1006,6 +1018,7 @@ export function useContentAnalysis() {
           ...d,
           text: incoming,
           blocks: blocks.length > 0 ? blocks : d.blocks,
+          staticBody: true,
         };
       });
       const next = { ...s, documents };
