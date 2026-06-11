@@ -47,6 +47,7 @@ Recommendations modules made exactly this journey: they were promoted out of
 | `national-climate-policies/`  | National Level Climate Policies | EU-27 laws & policies from climate-laws.org (CC-BY 4.0); in-module refresh via Climate Policy Radar API + Supabase snapshot. |
 | `transition-panorama/`        | EU Transition Panorama | Panorama-Sweden-style radial explorer of EU emissions vs the AR6-based 2040 advice scenarios; will be re-based on the AR7 scenario database once published. |
 | `transition-stories/`         | Transition Stories | Cinematic scroll-driven data essay on real ESABCC report photography: scrollytelling pathway chart, parallax chapters, sector ledger. Imagery sourced from the published report covers. |
+| `policy-coherence/`           | Policy Coherence Assessment | Beta four-step coherence model over the policy corpus (ex-ante vs world development, across policy goals, goals vs means, evaluation of change + outcomes). Steps 3–4 derive from the objective–delivery checklist; curated steps 1–2 are AI baselines pending review. |
 
 ## Promoting a beta module to production
 

@@ -369,6 +369,7 @@ export default async function HomePage() {
     { code: 'M · 20', title: 'National Climate Policies', href: '/beta/national-climate-policies', tags: ['EU-27', 'climate-laws.org'] },
     { code: 'M · 21', title: 'EU Transition Panorama',  href: '/beta/transition-panorama', tags: ['AR6 pathways', '2040 advice'] },
     { code: 'M · 22', title: 'Transition Stories',     href: '/beta/transition-stories',  tags: ['Cinematic', 'Real photography'] },
+    { code: 'M · 23', title: 'Policy Coherence',       href: '/beta/policy-coherence',    tags: ['4-step model', 'Coherence lens'] },
   ];
 
   return (
