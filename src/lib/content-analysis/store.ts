@@ -401,12 +401,23 @@ function hydrate(): void {
         // otherwise hide the new master codes forever — merge in any seed
         // master code this snapshot doesn't know yet. User codes, renames and
         // recolors win: only ids absent from the snapshot are appended.
+        const seed = buildSeedSnapshot();
         const known = new Set(state.codes.map(c => c.id));
-        const missing = buildSeedSnapshot().codes.filter(
+        const missing = seed.codes.filter(
           c => c.scope === 'master' && !known.has(c.id),
         );
-        if (missing.length > 0) {
-          state = { ...state, codes: [...state.codes, ...missing] };
+        // Seeded in-text annotations (checklist evidence, `seg-check-…`) are
+        // backfilled ONCE: only when the snapshot has none at all. Re-merging
+        // per id would resurrect segments an analyst deliberately deleted.
+        const missingSegs = state.segments.some(s => s.id.startsWith('seg-check-'))
+          ? []
+          : seed.segments.filter(s => s.id.startsWith('seg-check-'));
+        if (missing.length > 0 || missingSegs.length > 0) {
+          state = {
+            ...state,
+            codes: [...state.codes, ...missing],
+            segments: [...state.segments, ...missingSegs],
+          };
           persist();
         }
         return;
