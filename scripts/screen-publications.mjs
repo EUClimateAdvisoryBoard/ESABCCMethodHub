@@ -255,7 +255,7 @@ function renderReport(today, suggestions, stats) {
   lines.push(
     `Automated screening of ${RELEVANT_JOURNALS.length} journals via Crossref ` +
     `(articles registered in the last ${LOOKBACK_DAYS} days). ` +
-    `${stats.fetched} new articles screened, ${suggestions.length} matched a workspace project.`,
+    `${stats.fetched} new articles screened today, ${suggestions.length} matched a workspace project.`,
   );
   lines.push('');
 
@@ -367,12 +367,6 @@ async function main() {
     if (!FIXTURES_DIR) await new Promise(r => setTimeout(r, 1000)); // be polite
   }
 
-  // Daily markdown report — written every day, including no-match days, so
-  // the workflow has a fresh file to commit and the reading trail is complete.
-  const reportPath = path.join(REPORTS_DIR, `${today}.md`);
-  fs.writeFileSync(reportPath, renderReport(today, suggestions, stats));
-  console.log(`Wrote ${path.relative(process.cwd(), reportPath)} (${suggestions.length} suggestions)`);
-
   // Rolling suggestions archive for the Literature-watch module.
   const archiveFile = path.join(OUT_DIR, 'suggestions.json');
   const cutoff = isoDate(new Date(now.getTime() - KEEP_DAYS * 86_400_000));
@@ -382,6 +376,31 @@ async function main() {
     ...suggestions,
     ...previous.filter(s => s.suggestedOn >= cutoff && !keptDois.has(s.doi)),
   ];
+
+  // Daily markdown report — written every day, including no-match days, so
+  // the workflow has a fresh file to commit and the reading trail is complete.
+  //
+  // The report covers EVERY suggestion made today, not just this run's fresh
+  // ones, and the screening counts accumulate across same-day runs (persisted
+  // in run-stats.json). Otherwise a manual re-run of the workflow would find
+  // nothing new — every DOI already screened minutes earlier — and overwrite
+  // the day's report with an empty "0 new articles" version.
+  const statsFile = path.join(OUT_DIR, 'run-stats.json');
+  const prevStats = readJson(statsFile, null);
+  if (prevStats && prevStats.date === today) {
+    stats.fetched += prevStats.fetched ?? 0;
+    for (const [issn, n] of Object.entries(prevStats.perJournal ?? {})) {
+      stats.perJournal[issn] = (stats.perJournal[issn] ?? 0) + n;
+    }
+  }
+  fs.writeFileSync(
+    statsFile,
+    JSON.stringify({ date: today, fetched: stats.fetched, perJournal: stats.perJournal }, null, 2),
+  );
+  const todaysSuggestions = merged.filter(s => s.suggestedOn === today);
+  const reportPath = path.join(REPORTS_DIR, `${today}.md`);
+  fs.writeFileSync(reportPath, renderReport(today, todaysSuggestions, stats));
+  console.log(`Wrote ${path.relative(process.cwd(), reportPath)} (${todaysSuggestions.length} suggestions today, ${suggestions.length} new this run)`);
   fs.writeFileSync(
     archiveFile,
     JSON.stringify(
