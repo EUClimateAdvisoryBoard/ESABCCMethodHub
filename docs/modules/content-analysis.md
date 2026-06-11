@@ -28,6 +28,7 @@ reference PDFs via M·01.
 | `NumericExtractionsPanel`     | Right-rail panel: structured numeric segments (value · unit · year · label) with sort, inline edit, jump-to-source, Word/CSV export. |
 | `SnapshotsPanel`              | Manual + auto (every 5 min) snapshots of the code tree and segments, restore-from-snapshot with safety snapshot first. |
 | `NewProjectWizard`            | Two-step wizard: (1) corpus scope by master tag or explicit documents; (2) project details + analysis mode. |
+| `SectorFlowBoard`             | Analyse-view lens: per-sector flow chart wiring ① progress reporting → ② policy analysis → ③ ESABCC recommendations, with a co-benefits lane (health, air, water, biodiversity…) and live indicator chips. |
 | `ProjectLockPill`             | Header pill — "You are editing" / "Read-only — Alice is editing" with Request / Hand-off actions. |
 
 ## Data flow
@@ -231,6 +232,37 @@ the parser produces a structured payload `{ value, unit, year, label }`:
 - The right-rail **Numeric extractions** panel is a sortable
   mini-table with inline edit, jump-to-source, and **Word / CSV
   export** (CSV is BOM-prefixed so Excel opens it as UTF-8).
+
+### Sector flow lens
+
+The Analyse view's **Sector flow** tab draws the reasoning chain the
+Secretariat works along when drafting, one flow chart per report
+sector (Energy supply, Industry, Transport, Buildings, Agriculture,
+LULUCF):
+
+- **① Progress reporting** — live indicator cards from the shared
+  indicator database (sparkline, latest value, % change, and an
+  on-track / too-slow / off-track signal computed against the legal
+  target's required pace).
+- **② Policy analysis** — the EU instruments responding to each
+  signal, from the Policy Navigator's sectoral library. When the
+  active workspace corpus contains the act (CELEX or acronym match),
+  the card shows how many coded passages the workspace holds on it.
+- **③ Recommendations** — the ESABCC 2024 advice that closes the
+  remaining gap, with the tracker's uptake status; advice with no
+  instrument to flow through renders as a dashed **identified gap**
+  card (e.g. agricultural emissions pricing, the ETD revision).
+- **Co-benefits lane** — health, air quality, water, biodiversity,
+  equity, jobs, energy security and resilience nodes hang off the
+  indicator / policy / recommendation they spring from, with a data
+  series of their own where one exists (e.g. nitrogen-use efficiency
+  for water quality).
+
+Edges are measured SVG beziers between the real cards; hovering any
+node highlights its chain and fades the rest. Only the *wiring* is
+curated (`src/lib/content-analysis/sector-flow.ts`) — values,
+statuses and policy metadata resolve from the shared databases at
+render time, so the chart never drifts from the tracker modules.
 
 ### Snapshots
 

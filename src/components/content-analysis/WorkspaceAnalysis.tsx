@@ -13,6 +13,7 @@ import EvidenceBasePanel from './EvidenceBasePanel';
 import ReportOutlineBuilder from './ReportOutlineBuilder';
 import ObjectiveChecklistMatrix from './ObjectiveChecklistMatrix';
 import PolicyCoherenceBoard from './PolicyCoherenceBoard';
+import SectorFlowBoard from './SectorFlowBoard';
 
 interface Props {
   projectId: string;
@@ -32,7 +33,7 @@ interface Props {
   onTabChange?: (tab: AnalysisTab) => void;
 }
 
-export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution' | 'checklist' | 'coherence';
+export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution' | 'checklist' | 'coherence' | 'flow';
 
 const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'outline', label: 'Report outline', blurb: 'Map sections to tags — see which articles belong where, and where the gaps are.' },
@@ -41,6 +42,7 @@ const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'distribution', label: 'Tag distribution', blurb: 'How coding effort is spread across tags and documents.' },
   { id: 'checklist', label: 'Objective checklist', blurb: 'Policies × delivery criteria — can each act deliver its own objective, and where are the inconsistencies (incl. consistency for adaptation)?' },
   { id: 'coherence', label: 'Policy coherence (beta)', blurb: 'Four-step coherence model: ① ex-ante design vs world development, ② across all policy goals, ③ goals vs means (derived from the objective checklist), ④ evaluation of policy change and outcomes.' },
+  { id: 'flow', label: 'Sector flow', blurb: 'Per-sector flow chart linking ① progress reporting → ② policy analysis → ③ ESABCC recommendations, with co-benefits (health, air, water, biodiversity…) and live data indicators on every node.' },
 ];
 
 /**
@@ -195,6 +197,9 @@ export default function WorkspaceAnalysis({
             scopeIds={documents.map(d => d.id)}
             scopeLabel="This workspace"
           />
+        )}
+        {tab === 'flow' && (
+          <SectorFlowBoard documents={documents} codes={codes} segments={segments} />
         )}
       </div>
 
