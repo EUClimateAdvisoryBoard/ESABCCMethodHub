@@ -1423,12 +1423,10 @@ function SLRCodeFilter({
   totalCount: number;
 }) {
   const [openRoot, setOpenRoot] = useState<string | null>(null);
-  // The assessment-checklist branch is a per-policy review lens, not a
-  // thematic code — it lives in NavigatorObjectiveChecklist, not here.
-  const roots = useMemo(
-    () => getRootCodes().filter(r => r.id !== 'root-assessment'),
-    []
-  );
+  // Includes the assessment-checklist branch: a `check-*` tag is present on a
+  // policy when the criterion is MET, so filtering by e.g. "Consistency:
+  // adaptation" lists the policies that fulfil it.
+  const roots = useMemo(() => getRootCodes(), []);
 
   function policyCountFor(codeId: string): number {
     const desc = getDescendantIds(codeId);

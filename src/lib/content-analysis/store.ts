@@ -396,6 +396,19 @@ function hydrate(): void {
           // `summaries` was added later still — same defaulting strategy.
           summaries: parsed.summaries ?? [],
         };
+        // The master taxonomy grows over releases (e.g. the objective-delivery
+        // checklist branch). A persisted snapshot predating an addition would
+        // otherwise hide the new master codes forever — merge in any seed
+        // master code this snapshot doesn't know yet. User codes, renames and
+        // recolors win: only ids absent from the snapshot are appended.
+        const known = new Set(state.codes.map(c => c.id));
+        const missing = buildSeedSnapshot().codes.filter(
+          c => c.scope === 'master' && !known.has(c.id),
+        );
+        if (missing.length > 0) {
+          state = { ...state, codes: [...state.codes, ...missing] };
+          persist();
+        }
         return;
       }
     }
