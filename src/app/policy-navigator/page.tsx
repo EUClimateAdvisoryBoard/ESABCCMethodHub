@@ -59,6 +59,7 @@ import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
 import PolicyAnnotationsPanel from '@/components/workspace/PolicyAnnotationsBadge';
 import { usePromotedPolicyEdits } from '@/lib/project-workspace/usePromotedPolicyEdits';
 import NavigatorMasterCodes from '@/components/NavigatorMasterCodes';
+import NavigatorObjectiveChecklist from '@/components/NavigatorObjectiveChecklist';
 import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
 import {
   getDescendantIds,
@@ -1228,6 +1229,7 @@ function SectorPolicyCard({
             activeCodeId={activeCodeId}
             onCodeFilter={onCodeFilter}
           />
+          <NavigatorObjectiveChecklist policyId={policy.id} />
           <div>
             <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
               What it means
@@ -1386,7 +1388,12 @@ function SLRCodeFilter({
   totalCount: number;
 }) {
   const [openRoot, setOpenRoot] = useState<string | null>(null);
-  const roots = useMemo(() => getRootCodes(), []);
+  // The assessment-checklist branch is a per-policy review lens, not a
+  // thematic code — it lives in NavigatorObjectiveChecklist, not here.
+  const roots = useMemo(
+    () => getRootCodes().filter(r => r.id !== 'root-assessment'),
+    []
+  );
 
   function policyCountFor(codeId: string): number {
     const desc = getDescendantIds(codeId);

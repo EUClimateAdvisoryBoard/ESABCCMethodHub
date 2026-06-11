@@ -59,6 +59,7 @@ const ROOT_CODES: Array<{ id: string; name: string; description: string; color: 
   { id: 'root-finance',    name: 'Finance',    description: 'Budgets, green finance, disclosure, investment steering.', color: PALETTE.finance },
   { id: 'root-sector',     name: 'Sectoral policy', description: 'Sector-specific legislation (energy, transport, agriculture…).', color: PALETTE.energy },
   { id: 'root-crosscut',   name: 'Cross-cutting', description: 'Governance, monitoring, reporting, just-transition.', color: PALETTE.default },
+  { id: 'root-assessment', name: 'Objective–delivery checklist', description: 'Assessment criteria: can the act deliver its own stated objective? (ESABCC-style consistency check, Climate Law Arts. 5–7).', color: '#0F766E' },
 ];
 
 const DOMAIN_TO_ROOT: Record<string, { rootId: string; color: string }> = {
@@ -580,6 +581,28 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     { id: 'code-env-soil',        parentId: 'code-environment',  name: 'Soil health',              description: 'Soil strategy, soil monitoring.',                     color: PALETTE.forest,      scope: 'master', createdAt: now },
     { id: 'code-env-noise',       parentId: 'code-environment',  name: 'Noise',                    description: 'Environmental noise directive.',                      color: PALETTE.ecology,     scope: 'master', createdAt: now },
     { id: 'code-env-light',       parentId: 'code-environment',  name: 'Light pollution',          description: 'Astronomical & ecological impacts.',                  color: PALETTE.ecology,     scope: 'master', createdAt: now },
+
+    // ── Objective–delivery checklist ─────────────────────────────────
+    // Assessment criteria, not thematic codes: each code is one question
+    // in a structured "can this act deliver its own stated objective?"
+    // review, mirroring the ESABCC consistency assessments mandated by
+    // Climate Law Arts. 5–7 (incl. consistency with climate neutrality
+    // and with ensuring progress on adaptation). The description is the
+    // rubric an assessor applies. Per-policy verdicts (met / partial /
+    // not met / n.a.) live in policy-objective-checklist.ts; annotators
+    // can also apply these codes to text segments to pin the evidence.
+    { id: 'check-objective',      parentId: 'root-assessment',   name: 'Objective clearly stated', description: 'Met when the act states a specific, verifiable objective (subject-matter article / recitals), not just broad aims.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-target-quant',   parentId: 'root-assessment',   name: 'Quantified targets',       description: 'Met when numeric targets with baseline and date operationalise the objective.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-timeline',       parentId: 'root-assessment',   name: 'Timeline & milestones',    description: 'Met when dated milestones / deadlines pace delivery of the objective.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-instruments',    parentId: 'root-assessment',   name: 'Instruments match objective', description: 'Met when binding obligations or mechanisms are plausibly sufficient to deliver the stated objective — the core objective–content consistency test.', color: '#B45309', scope: 'master', createdAt: now },
+    { id: 'check-coverage',       parentId: 'root-assessment',   name: 'Coverage & loopholes',     description: 'Met when scope covers what the objective requires and exemptions / derogations do not undermine it.', color: '#B45309', scope: 'master', createdAt: now },
+    { id: 'check-monitoring',     parentId: 'root-assessment',   name: 'Monitoring & reporting',   description: 'Met when MRV / reporting provisions can show whether the objective is on track.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-enforcement',    parentId: 'root-assessment',   name: 'Enforcement & correction', description: 'Met when penalties or corrective mechanisms kick in if delivery is off-track.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-financing',      parentId: 'root-assessment',   name: 'Financing identified',     description: 'Met when resources / funding commensurate with the objective are identified.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-cons-neutrality',parentId: 'root-assessment',   name: 'Consistency: climate neutrality', description: 'Met when the act is consistent with (or actively contributes to) the 2050 climate-neutrality objective — Climate Law Arts. 2, 6–7.', color: '#1B7339', scope: 'master', createdAt: now },
+    { id: 'check-cons-adaptation',parentId: 'root-assessment',   name: 'Consistency: adaptation',  description: 'Met when the act is consistent with ensuring progress on adaptation and climate resilience (climate-proofing) — Climate Law Art. 5.', color: '#0E7490', scope: 'master', createdAt: now },
+    { id: 'check-just-transition',parentId: 'root-assessment',   name: 'Just-transition safeguards', description: 'Met when distributional impacts of pursuing the objective are assessed and cushioned.', color: '#9333EA', scope: 'master', createdAt: now },
+    { id: 'check-review',         parentId: 'root-assessment',   name: 'Review & ratchet',         description: 'Met when a scheduled review can strengthen the act if the objective is at risk.', color: '#0F766E', scope: 'master', createdAt: now },
   ];
 
   const codes: CodeNode[] = [...rootCodes, ...domainCodes, ...handPicked];
