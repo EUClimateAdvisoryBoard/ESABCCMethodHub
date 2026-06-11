@@ -29,7 +29,7 @@ import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardVi
 import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
 import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
 import AssessmentMatrixBoardView from '@/components/frameworks/AssessmentMatrixBoardView';
-import HeadlineFigureBoardView from '@/components/frameworks/HeadlineFigureBoardView';
+import BurnMapBoardView from '@/components/frameworks/BurnMapBoardView';
 
 interface Props {
   projectId: string;
@@ -163,8 +163,8 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
             </span>
           )}
           {active.variant === 'advanced-v8' && (
-            <span className="text-[9px] uppercase font-bold rounded px-1 bg-sky-100 text-sky-700">
-              adv 8 · panorama
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-red-100 text-red-700">
+              adv 8 · burn map
             </span>
           )}
           <button
@@ -249,11 +249,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
           onOpenInList={onOpenInList}
         />
       ) : active.variant === 'advanced-v8' ? (
-        // The steering-panorama board is the headline figure: three stacked
-        // layers (progress → policy → recommendations) pierced by one thread
-        // per sector, each expandable into its full derivation chain — also a
-        // computed, read-only view.
-        <HeadlineFigureBoardView
+        // The burn-map board is the headline figure: the per-sector progress
+        // heat map joined to the policy-coherence heat map (computed live
+        // from the beta four-step model), with the burning cells of both
+        // collected into one recommendation — also a computed, read-only view.
+        <BurnMapBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
