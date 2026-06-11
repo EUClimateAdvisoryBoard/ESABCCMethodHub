@@ -1,88 +1,82 @@
-# Advanced version 8 — the steering panorama (the headline figure)
+# Advanced version 8 — the burn map (twin heat maps → one recommendation)
 
 This note documents **"Advanced version 8"**, the headline-figure board in the
 Indicator module's *Flow charts* view. It sits alongside the report-faithful
 default, the enhanced and beta boards, and Advanced versions 1–7.
 
-Where versions 1–7 each answered one question well — how a sector transforms
-(1, 3), where an indicator sits in the results chain (2, 5), the whole
-monitoring map (4), the closed governance loop (6), the report's method
-structure (7) — version 8 answers the question a **report cover figure** must
-answer in one glance:
+Where versions 1–7 each proposed a geometry (chains, maps, loops, the method
+matrix), version 8 is built to be the **major figure of a report**: two heat
+maps joined per sector, and a single derivation from their hot cells —
 
-> *Is each sector on track — do its policies explain why — and what does the
-> Board therefore recommend?*
+> *Where does the monitoring burn, where does the policy analysis burn — and
+> what is the one recommendation that tackles the burns?*
 
-## The geometry: three layers, one thread per sector
+## The geometry: two heat maps, one band per sector
 
-The figure is a stack of three layers, pierced by one vertical thread per
-sector (EU economy-wide, Energy supply, Industry, Transport, Buildings,
-Agriculture & food, LULUCF & forests):
-
-| Layer | What | Vocabulary | Source registry |
+| Zone | What | Vocabulary | Source |
 |---|---|---|---|
-| **① Progress** | per-sector pace against the scenario corridor: benchmarks, observed results, delivery drivers, and the gap stated as one finding | pace — on track · mixed · too slow · off track | `POLICY_GAP_INDICATORS` (benchmarks), `FRAMEWORK_INDICATOR_INDEX` (chips) |
-| **② Policy** | the EU instruments aiming the sector at the corridor, each with the next milestone that bites — and each scored for whether it *explains* the pace above | contribution — delivering · partial · lagging | `SECTOR_POLICIES` (laws + milestones), deep-linked into the Policy Navigator |
-| **③ Recommendations** | the ESABCC's own advice for the sector, each chip naming the gap in ①/② it responds to | uptake — addressed · partially · in progress · not addressed (**resolved live from the tracker seed**) | `ESABCC_2024_RECOMMENDATIONS` |
+| **A · Progress heat map** | one row per sector (EU economy-wide + the six sectors), four fixed monitoring lenses — *emissions & removals · technology & delivery · demand & activity · investment & enablers* — each cell a reading with its observation and source stated | on track · lagging · off track (the EEA pace trichotomy) | curated readings in `burn-map-v8.ts`, each carrying basis + source; cells with linked indicators open the data drawer |
+| **B · Policy-coherence heat map** | the same sector bands, rows = the band's EU acts, columns = the four steps of the **beta policy-coherence model** (PR #306): ex-ante assumptions vs world development · coherence across goals · goals ↔ means · evaluation | coherent · partial · incoherent (the model's grades) | **computed live** by `buildCoherenceProfile` from `src/lib/content-analysis/policy-coherence.ts` — map B cannot drift from the coherence assessment |
+| **🔥 Burn ledger** | every hot cell on either map: `off-track` (A) and `incoherent` (B), each chip carrying its evidence line | — | computed by `computeBurnLedger` |
+| **⇒ The recommendation** | ONE headline recommendation; its three fronts between them claim every burn | front ① steer the land system · ② regulate demand, not only technology · ③ protect the ratchet | authored headline + fronts; each front backed by ESABCC recommendation chips resolved live from the tracker seed |
 
-The design claim — and why it can carry a report — is the **derivation**:
-reading any sector top-to-bottom is an argument, not a collage. The measured
-gap (①) is explained by the instrument mix (②), and the explanation points at
-the advice (③). Each sector chain states that argument in one line (e.g.
-agriculture: *"an off-track sector whose main instrument does not steer ⇒ the
-advice is structural — objectives, pricing, demand — and none of it is yet
-addressed"*). Transport is the demonstration thread: strong standards, late
-prices, off-track line, and the demand-side advice not addressed.
+The two maps are **physically joined**: each sector band holds its four
+progress cells on the left and its acts × four coherence steps on the right,
+so monitoring and policy analysis are read in one glance per sector. Every
+coherence-assessed act is assigned to exactly one band (its centre of
+gravity), so the joined map counts each act once.
 
-## The two coupled representations
+## The burn-assignment rule (declared, mechanical)
 
-1. **The panorama (hero).** A CSS-3D stack of the three layers
-   (`perspective` + `rotateX/rotateZ` on one container, so the slabs and the
-   per-sector connector threads stay column-aligned), with per-layer depth
-   shadows. A toggle flattens it to a print-friendly 2-D figure. Hovering a
-   sector dims every other thread; clicking a sector cell opens and scrolls to
-   its full chain. All chips on the slabs are compact tags with tooltips
-   (benchmark 2030 targets, instrument assessments, recommendation titles +
-   status + responds-to).
-2. **The seven threads, expanded.** One collapsible chain per sector:
-   *Where the sector stands* (pace verdict + gap statement + corridor +
-   observed + drivers) ⇒ *What steers it* (instrument cards with contribution
-   badge, assessment, next milestone, Policy Navigator link) ⇒ *What the
-   Board advises* (recommendation cards with live status and the gap each
-   responds to). The chain header carries the derivation tally
-   (benchmarks · instrument mix → recommendations).
+1. any burn in the **land system** (Agriculture & food, LULUCF & forests)
+   → front ① — land burns on *both* maps at once;
+2. any remaining **monitoring burn** (map A) → front ② — outside the land
+   system, the progress map burns where demand is unregulated (transport
+   demand, electrification, sufficiency, the investment gap);
+3. any remaining **coherence burn** (map B) → front ③ — outside the land
+   system, the coherence map burns where acts were weakened at first contact
+   (CO₂-standards averaging, omnibus de-scoping, GAEC relaxation, persistent
+   NECP gap cycles).
+
+The asymmetry between the two maps is itself the figure's finding, and the
+rule turns it into the structure of the advice: the recommendation covers the
+board **by construction**, and the ledger shows every claim.
 
 ## What is computed and what is curated
 
-Like versions 2/4/5/6/7 this is a **computed, read-only analytical view**:
-every chip resolves at build time against the platform's registries, so the
-figure cannot drift from the underlying data — indicator chips open the shared
-data drawer, instrument chips deep-link into the Policy Navigator, benchmark
-chips carry the Policy Gap targets, and recommendation statuses come straight
-from the tracker seed (assessed 2026-06).
-
-The **pace and contribution verdicts are the curated editorial layer** — the
-ESABCC 2024 report's own sector findings, written into the sector specs in
-`headline-figure-v8.ts` with a one-line justification each. They are the one
-thing a future edition re-scores by hand (protocol step 4 of version 7);
-everything they score is linked, inspectable data.
+- **Computed**: all of map B (grades, evidence lines, pace ratios — straight
+  from the coherence model's mechanistic rules), the burn ledger, the
+  front assignment, and the ESABCC recommendation statuses (tracker seed,
+  assessed 2026-06).
+- **Curated**: map A's readings (each cell states the observation and source
+  the reading follows from, mirroring the coherence model's evidence
+  discipline) and the recommendation's headline / front actions (grounded in
+  the ESABCC recommendations each front cites).
 
 ## Where it lives in the code
 
 | Concern | Location |
 |---|---|
-| Board factory, layer/verdict models, curated sector specs | `src/data/headline-figure-v8.ts` (`defaultHeadlineFigureBoardV8`, `PANORAMA_LAYERS`, `PACE_META`, `CONTRIBUTION_META`, `REC_STATUS_META`) |
-| Source registries | `POLICY_GAP_INDICATORS`, `SECTOR_POLICIES`, `FRAMEWORK_INDICATOR_INDEX`, `ESABCC_2024_RECOMMENDATIONS` — nothing re-listed by hand |
-| View / rationale / legend UI | `src/components/frameworks/HeadlineFigureBoardView.tsx` |
-| Rendering (3-D panorama + expandable chains) | `src/components/frameworks/HeadlineFigureFlow.tsx` |
+| Board factory, lenses, map-A readings, sector→acts mapping, burn ledger, the recommendation | `src/data/burn-map-v8.ts` (`defaultBurnMapBoardV8`, `buildBoardProfiles`, `computeBurnLedger`, `BIG_RECOMMENDATION`) |
+| Coherence engine (map B) | `src/lib/content-analysis/policy-coherence.ts` (`buildCoherenceProfile`, `COHERENCE_STEPS`) — reused, never re-assessed |
+| Other source registries | `FRAMEWORK_INDICATOR_INDEX` (drawer links), `policies` (act titles), `ESABCC_2024_RECOMMENDATIONS` (advice chips) |
+| View / rationale / legend UI | `src/components/frameworks/BurnMapBoardView.tsx` |
+| Rendering (twin heat maps, band evidence, ledger, recommendation) | `src/components/frameworks/BurnMapFlow.tsx` |
 | Version registration | `src/lib/project-workspace/flowchart-versions.ts` (built-in id `advanced-v8`, variant `advanced-v8`) |
+
+Like versions 2/4/5/6/7 it is a computed, read-only analytical view. Map-B
+cells and act labels deep-link into the beta Policy Coherence board
+(`/beta/policy-coherence`); progress cells with linked indicators open the
+shared data drawer; clicking a sector label expands the band's full evidence
+(every reading's basis + every act's four-step evidence lines).
 
 ## Provenance
 
-The sector set, corridor benchmarks (Climate Law / Fit-for-55 MIX) and policy
-registry follow the platform's existing structures (shared with Advanced
-version 6); the recommendations and their uptake statuses are the ESABCC's own
-(January 2024 report, tracker assessment 2026-06). The synthesis — the
-three-layer stack, the contribution scoring of instruments against the pace
-verdict, and the per-recommendation "responds to" derivation — is an
-**original figure design, not a reproduction** of any published ESABCC figure.
+The sector set and indicator links follow the platform's existing structures;
+map B is the beta four-step coherence model verbatim (Assumption-Based
+Planning · Nilsson goal-interaction scale · Howlett & Rayner goals/means ·
+EEA distance-to-target); the recommendations and uptake statuses are the
+ESABCC's own (January 2024 report, tracker assessment 2026-06). The synthesis
+— the joined twin heat maps, the burn ledger and the declared
+burn-assignment rule deriving one recommendation — is an **original figure
+design, not a reproduction** of any published ESABCC figure.

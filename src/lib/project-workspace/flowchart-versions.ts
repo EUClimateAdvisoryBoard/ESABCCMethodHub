@@ -77,13 +77,15 @@ import { defaultPolicyLoopBoardV6 } from '@/data/policy-loop-v6';
  *                 themes, societal-objective lenses) plus the eight-step
  *                 assessment protocol that turns a matrix cell into a finding;
  *                 and
- *  - 'advanced-v8' — the "Advanced version 8" steering-panorama board: the
- *                 headline figure. Three stacked layers (per-sector progress
- *                 verdicts → policy instruments scored for contribution →
- *                 ESABCC recommendations with live uptake status) pierced by
- *                 one vertical thread per sector, viewable as a 3-D stack or
- *                 flat, with each sector expandable into its full
- *                 gap-⇒-instruments-⇒-advice chain.
+ *  - 'advanced-v8' — the "Advanced version 8" burn-map board: the headline
+ *                 figure. Per sector band, the progress heat map (four
+ *                 monitoring lenses, curated readings) is joined to the
+ *                 policy-coherence heat map (the band's EU acts × the four
+ *                 steps of the beta coherence model, computed live); the
+ *                 burning cells of both — off track / incoherent — are
+ *                 collected into a burn ledger and answered by one single
+ *                 recommendation with three fronts, each backed by ESABCC
+ *                 recommendations with live uptake status.
  */
 export type FlowChartVariant =
   | 'report'
