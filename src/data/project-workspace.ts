@@ -24,6 +24,7 @@ export type WorkspaceModuleKind =
   | 'policy-analysis'
   | 'content-analysis'
   | 'meetings'
+  | 'literature-watch'
   | 'custom';
 
 export interface WorkspaceModule {
@@ -104,6 +105,16 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'Recommendations from every ESABCC report, with status and dated ' +
           'uptake events.',
       },
+      {
+        id: 'literature-watch',
+        kind: 'literature-watch',
+        name: 'Literature watch',
+        beta: true,
+        description:
+          'New peer-reviewed publications from the relevant journals, ' +
+          'screened every morning and matched to this project. Read the ' +
+          'daily screening report and pick the papers worth a closer look.',
+      },
     ],
   },
   {
@@ -126,6 +137,16 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'ETS2, CBAM, IED, Net-Zero Industry Act, CRMA …), scientific literature ' +
           'or grey literature & reports — then mark passages and attach tags & ' +
           'codes. Tags save live and build on the shared master library.',
+      },
+      {
+        id: 'literature-watch',
+        kind: 'literature-watch',
+        name: 'Literature watch',
+        beta: true,
+        description:
+          'New peer-reviewed publications on industrial decarbonisation — ' +
+          'steel, cement, hydrogen, CBAM, CCS/CCU — screened every morning ' +
+          'from the relevant journals and matched to this project.',
       },
     ],
   },
