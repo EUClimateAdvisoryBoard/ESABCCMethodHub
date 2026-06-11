@@ -45,7 +45,7 @@ import type {
   SummaryBlock,
 } from './types';
 import type { Block, AiClassification, SharedIngestedDocument } from './types';
-import { buildSeedSnapshot, deriveBlocksFromText } from './seed';
+import { buildSeedSnapshot, buildChecklistSegmentsFor, deriveBlocksFromText } from './seed';
 import { enqueue, flush as flushOutbox, getOutboxStatus, subscribeOutbox } from './outbox';
 
 const LS_KEY = 'esabcc_content_analysis_v1';
@@ -444,6 +444,28 @@ function newId(prefix: string): string {
 
 function childrenOf(codes: CodeNode[], parentId: string | null): CodeNode[] {
   return codes.filter(c => c.parentId === parentId);
+}
+
+/** Re-anchor the seeded objective-checklist annotations (`seg-check-…`) for
+ *  the given documents against their CURRENT blocks. Called whenever a
+ *  document's substrate is replaced (lazy-loaded EUR-Lex body, PDF ingest):
+ *  block ids are positional, so the old anchors would dangle — and a policy
+ *  that previously only had a metadata stub gains its annotations the moment
+ *  real text arrives. Analyst-authored segments are untouched. */
+function reanchorChecklistSegments(
+  s: ContentAnalysisSnapshot,
+  docIds: Set<string>,
+): CodedSegment[] {
+  if (docIds.size === 0) return s.segments;
+  const codeNameById = new Map(s.codes.map(c => [c.id, c.name] as const));
+  const now = new Date().toISOString();
+  const kept = s.segments.filter(
+    seg => !(seg.id.startsWith('seg-check-') && docIds.has(seg.documentId)),
+  );
+  const fresh = s.documents
+    .filter(d => docIds.has(d.id))
+    .flatMap(d => buildChecklistSegmentsFor(d, codeNameById, now));
+  return fresh.length || kept.length !== s.segments.length ? [...kept, ...fresh] : s.segments;
 }
 
 /** Returns the full descendant set (inclusive) of a code, across scopes. */
@@ -944,23 +966,33 @@ export function useContentAnalysis() {
    *  the user has already ingested a PDF for that doc we preserve
    *  their work. */
   const applyPolicyBodies = useCallback((bodies: Record<string, { text: string }>) => {
-    update(s => ({
-      ...s,
-      documents: s.documents.map(d => {
+    update(s => {
+      const changed = new Set<string>();
+      const documents = s.documents.map(d => {
         const incoming = bodies[d.id]?.text;
         if (!incoming || incoming.trim().length < 200) return d;
+        // Already carrying exactly this body (bodies re-merge on every
+        // mount) — skip so checklist annotations an analyst deleted
+        // aren't resurrected by a no-op merge.
+        if (d.text === incoming) return d;
         // Skip if the doc already has PDF-sourced blocks with bboxes
         // (real ingestion), or real policy text ≥2× the incoming.
         const hasRealBlocks = Array.isArray(d.blocks) && d.blocks.some(b => b.bboxes.length > 0);
         if (hasRealBlocks) return d;
         const blocks = deriveBlocksFromText(d.id, incoming);
+        changed.add(d.id);
         return {
           ...d,
           text: incoming,
           blocks: blocks.length > 0 ? blocks : d.blocks,
         };
-      }),
-    }));
+      });
+      const next = { ...s, documents };
+      // The block ids just changed for every merged body — re-anchor the
+      // checklist annotations (and create them for policies that only now
+      // gained real text).
+      return { ...next, segments: reanchorChecklistSegments(next, changed) };
+    });
   }, []);
 
   /** Replace the blocks of a document with an AI-resegmented list,
@@ -1103,6 +1135,12 @@ export function useContentAnalysis() {
           versions,
         };
       }),
+    }));
+    // The ingest replaced the document's blocks — re-anchor its checklist
+    // annotations against the new substrate (the old block ids are gone).
+    update(s => ({
+      ...s,
+      segments: reanchorChecklistSegments(s, new Set([documentId])),
     }));
   }, []);
 

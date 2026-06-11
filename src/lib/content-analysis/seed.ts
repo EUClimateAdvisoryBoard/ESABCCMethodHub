@@ -206,8 +206,21 @@ const CHECKLIST_VERDICT_LABEL: Record<string, string> = {
   'not-applicable': 'N/A',
 };
 
-/** The first article / recital a rationale cites that exists in the blocks. */
+/** The first article / recital a rationale cites that exists in the blocks.
+ *  When the citation resolves to a bare heading line ("Article 6 — …"), the
+ *  anchor extends to the article's first substantive paragraph so the
+ *  highlight covers evidence, not just a title. */
 function findCitedBlock(blocks: Block[], rationale: string): Block | undefined {
+  const substantive = (hit: Block): Block => {
+    if (hit.text.length >= 160) return hit;
+    const next = blocks.find(b => b.order === hit.order + 1);
+    // Prefer the following body paragraph over a short heading — unless the
+    // next block opens another article/heading (an empty article).
+    if (next && next.kind !== 'article' && next.kind !== 'heading' && next.text.length > hit.text.length) {
+      return next;
+    }
+    return hit;
+  };
   // "Art. 4", "Arts. 6-7", "Article 10a", "Art. 4(2)(d)" …
   const artRefs = [...rationale.matchAll(/Art(?:icle)?s?\.?\s*(\d+[a-z]?)/gi)].map(m =>
     m[1].toLowerCase(),
@@ -215,7 +228,7 @@ function findCitedBlock(blocks: Block[], rationale: string): Block | undefined {
   for (const ref of artRefs) {
     const re = new RegExp(`^Article\\s+${ref}\\b`, 'i');
     const hit = blocks.find(b => b.kind === 'article' && re.test(b.text));
-    if (hit) return hit;
+    if (hit) return substantive(hit);
   }
   // "recital 3" → recital blocks start "(3) …".
   const recRefs = [...rationale.matchAll(/recitals?\s+(\d+)/gi)].map(m => m[1]);
@@ -226,8 +239,12 @@ function findCitedBlock(blocks: Block[], rationale: string): Block | undefined {
   return undefined;
 }
 
-/** In-text checklist annotations for one seeded policy document. */
-function checklistSegmentsFor(
+/** In-text checklist annotations for one policy document, anchored against
+ *  its CURRENT blocks. Pure: called at seed time for the shipped texts, and
+ *  again by the store whenever a document's substrate changes (lazy-loaded
+ *  EUR-Lex bodies, PDF ingestion) so the anchors never go stale and every
+ *  policy with real text gets its annotations. */
+export function buildChecklistSegmentsFor(
   doc: AnalysisDocument,
   codeNameById: Map<string, string>,
   now: string,
@@ -750,7 +767,7 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
   // recital as a master-library segment in the policies that ship full text.
   const codeNameById = new Map(codes.map(c => [c.id, c.name] as const));
   const checklistSegments = documents.flatMap(d =>
-    checklistSegmentsFor(d, codeNameById, now),
+    buildChecklistSegmentsFor(d, codeNameById, now),
   );
 
   // ── Projects ─────────────────────────────────────────────────────────
