@@ -9,11 +9,13 @@
 
 import { policies } from '@/data/policies';
 import { POLICY_MASTER_TAGS } from './policy-master-tags';
+import { POLICY_OBJECTIVE_CHECKLISTS } from './policy-objective-checklist';
 import type {
   AiClassification,
   AnalysisDocument,
   Block,
   BlockKind,
+  CodedSegment,
   CodeNode,
   ContentAnalysisSnapshot,
   DocumentKind,
@@ -185,6 +187,96 @@ function inferBlockKind(text: string): BlockKind {
   if (text.length < 90 && /^\d+\s*\/\s*\d+\s*$/.test(text.trim())) return 'footer';
   if (/^Page\s+\d+/i.test(text) || /^OJ\b/.test(text)) return 'footer';
   return 'paragraph';
+}
+
+// ── Checklist verdicts as in-text annotations ──────────────────────────────
+// Every objective-checklist rationale cites the article / recital it rests
+// on (e.g. "Art. 4 sets binding -55% …"). Where the policy ships with real
+// legal text, that citation is resolved to its block and seeded as a
+// master-library coded segment — so the workbench shows the checklist
+// evidence as in-text highlights under the `check-*` codes, with the
+// verdict + rationale as the tag comment. Deterministic ids (`seg-check-…`)
+// keep the seed stable across browsers and let the store's hydrate
+// migration backfill them into older persisted snapshots.
+
+const CHECKLIST_VERDICT_LABEL: Record<string, string> = {
+  met: 'Met',
+  partial: 'Partial',
+  'not-met': 'Not met',
+  'not-applicable': 'N/A',
+};
+
+/** The first article / recital a rationale cites that exists in the blocks.
+ *  When the citation resolves to a bare heading line ("Article 6 — …"), the
+ *  anchor extends to the article's first substantive paragraph so the
+ *  highlight covers evidence, not just a title. */
+function findCitedBlock(blocks: Block[], rationale: string): Block | undefined {
+  const substantive = (hit: Block): Block => {
+    if (hit.text.length >= 160) return hit;
+    const next = blocks.find(b => b.order === hit.order + 1);
+    // Prefer the following body paragraph over a short heading — unless the
+    // next block opens another article/heading (an empty article).
+    if (next && next.kind !== 'article' && next.kind !== 'heading' && next.text.length > hit.text.length) {
+      return next;
+    }
+    return hit;
+  };
+  // "Art. 4", "Arts. 6-7", "Article 10a", "Art. 4(2)(d)" …
+  const artRefs = [...rationale.matchAll(/Art(?:icle)?s?\.?\s*(\d+[a-z]?)/gi)].map(m =>
+    m[1].toLowerCase(),
+  );
+  for (const ref of artRefs) {
+    const re = new RegExp(`^Article\\s+${ref}\\b`, 'i');
+    const hit = blocks.find(b => b.kind === 'article' && re.test(b.text));
+    if (hit) return substantive(hit);
+  }
+  // "recital 3" → recital blocks start "(3) …".
+  const recRefs = [...rationale.matchAll(/recitals?\s+(\d+)/gi)].map(m => m[1]);
+  for (const ref of recRefs) {
+    const hit = blocks.find(b => b.kind === 'recital' && b.text.startsWith(`(${ref})`));
+    if (hit) return hit;
+  }
+  return undefined;
+}
+
+/** In-text checklist annotations for one policy document, anchored against
+ *  its CURRENT blocks. Pure: called at seed time for the shipped texts, and
+ *  again by the store whenever a document's substrate changes (lazy-loaded
+ *  EUR-Lex bodies, PDF ingestion) so the anchors never go stale and every
+ *  policy with real text gets its annotations. */
+export function buildChecklistSegmentsFor(
+  doc: AnalysisDocument,
+  codeNameById: Map<string, string>,
+  now: string,
+): CodedSegment[] {
+  const entries = POLICY_OBJECTIVE_CHECKLISTS[doc.id];
+  if (!entries || !doc.blocks || doc.blocks.length === 0) return [];
+  // Only anchor into real legal text — highlighting the synthesized metadata
+  // stub would be meaningless.
+  if (!doc.blocks.some(b => b.kind === 'article')) return [];
+  const out: CodedSegment[] = [];
+  for (const e of entries) {
+    if (e.verdict === 'not-applicable') continue;
+    const block = findCitedBlock(doc.blocks, e.rationale);
+    if (!block) continue;
+    // Cap very long articles so the segment list stays readable; offsets are
+    // block-relative (`blockId` is set), so the slice stays anchored.
+    const quote = block.text.length > 600 ? block.text.slice(0, 600) : block.text;
+    out.push({
+      id: `seg-check-${doc.id}-${e.codeId}`,
+      documentId: doc.id,
+      codeId: e.codeId,
+      blockId: block.id,
+      startChar: 0,
+      endChar: quote.length,
+      text: quote,
+      note: `${codeNameById.get(e.codeId) ?? e.codeId}: ${CHECKLIST_VERDICT_LABEL[e.verdict]} — ${e.rationale}`,
+      noteAuthor: 'AI checklist assessment',
+      projectId: null,
+      createdAt: now,
+    });
+  }
+  return out;
 }
 
 export function buildSeedSnapshot(): ContentAnalysisSnapshot {
@@ -671,6 +763,13 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
   // when the user adds a new paper from the Word add-in.
   const documents: AnalysisDocument[] = policyDocs;
 
+  // In-text checklist annotations: anchor each verdict's cited article /
+  // recital as a master-library segment in the policies that ship full text.
+  const codeNameById = new Map(codes.map(c => [c.id, c.name] as const));
+  const checklistSegments = documents.flatMap(d =>
+    buildChecklistSegmentsFor(d, codeNameById, now),
+  );
+
   // ── Projects ─────────────────────────────────────────────────────────
   const projects: Project[] = [
     {
@@ -701,7 +800,7 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     version: 1,
     codes,
     documents,
-    segments: [],
+    segments: checklistSegments,
     projects,
     suggestions: [],
     summaries: [],
