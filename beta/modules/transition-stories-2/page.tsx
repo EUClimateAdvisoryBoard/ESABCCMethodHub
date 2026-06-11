@@ -5,11 +5,11 @@
  *
  * "Mind the Gap": a cinematic landing page for the Advisory Board's policy
  * gap report, "Towards EU climate neutrality: Progress, policy gaps and
- * opportunities" (2024). Builds on Transition Stories (M·22): the same real
- * report photography and data series, with living animated scenes — flowing
- * water, rising embers, grazing cattle, a pedalling cyclist, turning wind
- * turbines — staged through one continuous scroll over the report's big
- * messages and its 13 key recommendations.
+ * opportunities" (2024). Builds on Transition Stories (M·22) with the same
+ * data series, staged over real stock photography (Pexels licence) in an
+ * oryzo.ai-inspired scroll: inertia-smoothed scrolly choreography, clip-path
+ * image reveals, living animated scenes — flowing water, rising embers,
+ * grazing cattle, a pedalling cyclist — and the 13 key recommendations.
  */
 
 import dynamic from 'next/dynamic';

@@ -9,19 +9,22 @@
  * the widening gap to the advice corridor, the thinning sink, the unpriced
  * sectors and the 13 key recommendations — through one continuous scroll.
  *
- * It builds on Transition Stories (M·22): the same real photography from
- * the Advisory Board's own report covers and the same real series
+ * It builds on Transition Stories (M·22) with the same real series
  * (`src/data/transition-panorama.ts`, `src/lib/scenarios/policy-gap.ts`),
- * but pushes the staging further: living SVG scenes (flowing water, rising
- * embers, grazing cattle, a pedalling cyclist, gliding trams, turning wind
- * turbines) layered over the photographs, a scroll-driven gap chart that
- * shades THE GAP itself, a depleting carbon-budget bar, and a typographic
- * finale of all 13 recommendations.
+ * staged over real stock photography (Pexels licence, IDs credited in the
+ * closing section and in `public/essay2/`): a winding forest road, the Saar
+ * loop in fog, a burning forest, cattle at dusk, factory chimneys at night,
+ * a solar farm, the Lisbon tram. Living SVG scenes (flowing water, rising
+ * embers, grazing cattle, a pedalling cyclist, gliding trams) are layered
+ * over the photographs; a scroll-driven gap chart shades THE GAP itself; a
+ * depleting carbon-budget bar; a typographic finale of 13 recommendations.
  *
- * Visual direction is inspired by oryzo.ai (Awwwards SOTD): a warm
- * near-black canvas, a single cream ink, hairline + dashed rules as the
- * only ornament, theatrical display type, and one burnt accent — here the
- * ESABCC signal orange, reserved for the gap.
+ * Visual direction is inspired by oryzo.ai (Awwwards SOTD, by Lusion): a
+ * warm near-black canvas, a single cream ink, hairline + dashed rules as
+ * the only ornament, theatrical display type, one burnt accent — here the
+ * ESABCC signal orange, reserved for the gap — and scroll that behaves
+ * like a camera: an inertia-smoothed dolly on the hero, lerped scrolly
+ * choreography, and clip-path image reveals as each scene enters.
  *
  * Every figure is real. Where a number is computed it is computed from the
  * imported series, not typed in. All motion is suppressed under
@@ -112,32 +115,51 @@ function useCountUp(target: number, start: boolean, decimals = 0, duration = 140
   });
 }
 
-/** Scroll progress (0..1) of a tall section as it passes the viewport. */
-function useScrollProgress<T extends HTMLElement>(): [React.RefObject<T>, number] {
+/**
+ * Scroll progress (0..1) of a tall section as it passes the viewport,
+ * lerp-smoothed so scrolly choreography moves with inertia rather than
+ * snapping to the scrollbar (the Oryzo "camera" feel).
+ */
+function useScrollProgress<T extends HTMLElement>(smoothing = 0.14): [React.RefObject<T>, number] {
   const ref = useRef<T>(null);
   const [p, setP] = useState(0);
+  const target = useRef(0);
+  const current = useRef(0);
   useEffect(() => {
     let raf = 0;
+    let running = false;
+    const tick = () => {
+      const delta = target.current - current.current;
+      if (Math.abs(delta) < 0.0005) {
+        current.current = target.current;
+        setP(current.current);
+        running = false;
+        return;
+      }
+      current.current += delta * smoothing;
+      setP(current.current);
+      raf = requestAnimationFrame(tick);
+    };
     const measure = () => {
       const el = ref.current;
       if (!el) return;
       const rect = el.getBoundingClientRect();
       const total = el.offsetHeight - window.innerHeight;
-      setP(Math.min(1, Math.max(0, -rect.top / Math.max(total, 1))));
-    };
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(measure);
+      target.current = Math.min(1, Math.max(0, -rect.top / Math.max(total, 1)));
+      if (!running) {
+        running = true;
+        raf = requestAnimationFrame(tick);
+      }
     };
     measure();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', onScroll);
+    window.addEventListener('scroll', measure, { passive: true });
+    window.addEventListener('resize', measure);
     return () => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onScroll);
+      window.removeEventListener('scroll', measure);
+      window.removeEventListener('resize', measure);
       cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [smoothing]);
   return [ref, p];
 }
 
@@ -186,6 +208,51 @@ function Grain() {
       className="absolute inset-0 pointer-events-none opacity-[0.07] mix-blend-overlay"
       style={{ backgroundImage: GRAIN }}
     />
+  );
+}
+
+/**
+ * Awwwards-style image reveal: the frame unmasks (clip-path) while the
+ * photograph settles from an over-zoom — fired once, as it enters view.
+ */
+function RevealImage({
+  src,
+  alt,
+  className = '',
+  imgStyle,
+  delay = 0,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  imgStyle?: React.CSSProperties;
+  delay?: number;
+}) {
+  const reduced = usePrefersReducedMotion();
+  const [ref, inView] = useInView<HTMLDivElement>(0.22);
+  const open = reduced || inView;
+  return (
+    <div ref={ref} className={`overflow-hidden ${className}`}>
+      <div
+        className="w-full h-full"
+        style={{
+          clipPath: open ? 'inset(0 0 0 0)' : 'inset(14% 7% 14% 7%)',
+          transition: reduced ? 'none' : `clip-path 1200ms cubic-bezier(0.2, 0, 0, 1) ${delay}ms`,
+        }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          className="w-full h-full object-cover"
+          style={{
+            transform: open ? 'scale(1.03)' : 'scale(1.24)',
+            transition: reduced ? 'none' : `transform 1700ms cubic-bezier(0.2, 0, 0, 1) ${delay}ms`,
+            ...imgStyle,
+          }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -543,47 +610,52 @@ function Car() {
   );
 }
 
-/** A turning wind turbine. */
-function Turbine({ h = 180, dur = 6, delay = 0 }: { h?: number; dur?: number; delay?: number }) {
-  return (
-    <svg viewBox="0 0 120 200" style={{ height: h }} className="w-auto" aria-hidden>
-      <path d="M57,60 L63,60 L66,196 L54,196 Z" fill={INK} />
-      <g
-        className="ts2-rotor"
-        style={{ transformOrigin: '60px 56px', animationDuration: `${dur}s`, animationDelay: `${delay}s` }}
-      >
-        {[0, 120, 240].map(a => (
-          <path
-            key={a}
-            d="M60,56 C57,38 57,20 60,4 C63,20 63,38 60,56 Z"
-            fill={INK}
-            transform={`rotate(${a} 60 56)`}
-          />
-        ))}
-      </g>
-      <circle cx={60} cy={56} r={5} fill={INK} />
-      <circle cx={60} cy={56} r={1.6} fill={EMBER} className="ts2-beacon" />
-    </svg>
-  );
-}
-
 // ─────────────────────────────────────────────────────────────────────────────
 // Hero — winding road through the forest, the report as a marquee.
 // ─────────────────────────────────────────────────────────────────────────────
 
 function Hero() {
+  const reduced = usePrefersReducedMotion();
   const [ref, inView] = useInView<HTMLDivElement>(0.2);
   const vsText = useCountUp(VS_1990, inView, 0);
   const paceText = useCountUp(PACE_RATIO, inView, 1);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const veilRef = useRef<HTMLDivElement>(null);
+
+  // Scroll dolly: leaving the hero pushes the camera down the road — the
+  // photograph zooms and sinks while an ink veil closes over it.
+  useEffect(() => {
+    if (reduced) return;
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const p = Math.min(1, Math.max(0, window.scrollY / window.innerHeight));
+        if (imgRef.current) {
+          imgRef.current.style.transform = `scale(${(1.06 + p * 0.22).toFixed(4)}) translateY(${(p * 6).toFixed(2)}%)`;
+        }
+        if (veilRef.current) veilRef.current.style.opacity = (p * 0.85).toFixed(3);
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, [reduced]);
 
   return (
     <section id="ts2-hero" className="relative h-[100svh] min-h-[640px] overflow-hidden" style={{ background: INK }}>
       <img
-        src="/essay/pathway-road.jpg"
-        alt="Aerial photograph of a road curving through dense European forest, a single car on the asphalt"
-        className="absolute inset-0 w-full h-full object-cover ts2-kenburns"
+        ref={imgRef}
+        src="/essay2/hero-road.jpg"
+        alt="Aerial photograph of an empty road winding through dense green forest"
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
+        style={{ transform: 'scale(1.06)' }}
       />
       <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK}99 0%, ${INK}33 40%, ${INK} 96%)` }} />
+      <div ref={veilRef} aria-hidden className="absolute inset-0 pointer-events-none" style={{ background: INK, opacity: 0 }} />
       <Grain />
 
       <div ref={ref} className="relative h-full max-w-[1180px] mx-auto px-6 flex flex-col justify-end pb-[16vh]">
@@ -591,12 +663,17 @@ function Hero() {
           Transition Stories · Part II — the policy gap report
         </p>
         <h1
-          className="ts2-rise mt-4 font-bold leading-[0.92] tracking-tight"
-          style={{ fontSize: 'clamp(52px, 10.5vw, 148px)', color: CREAM, animationDelay: '120ms' }}
+          className="mt-4 font-bold leading-[0.92] tracking-tight"
+          style={{ fontSize: 'clamp(52px, 10.5vw, 148px)', color: CREAM }}
         >
-          Mind
-          <br />
-          the&nbsp;<span style={{ color: EMBER }}>gap</span>.
+          <span className="block overflow-hidden">
+            <span className="block ts2-maskrise" style={{ animationDelay: '140ms' }}>Mind</span>
+          </span>
+          <span className="block overflow-hidden">
+            <span className="block ts2-maskrise" style={{ animationDelay: '300ms' }}>
+              the&nbsp;<span style={{ color: EMBER }}>gap</span>.
+            </span>
+          </span>
         </h1>
         <p
           className="ts2-rise mt-6 max-w-xl text-[15px] sm:text-[17px] leading-relaxed"
@@ -738,7 +815,7 @@ function GapScrolly() {
   return (
     <section id="ts2-gap" ref={ref} className="relative" style={{ height: '380vh', background: INK }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
-        <img src="/essay/hero-arctic.jpg" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-[0.12]" />
+        <img src="/essay2/gap-road.jpg" alt="" aria-hidden className="absolute inset-0 w-full h-full object-cover opacity-[0.15]" />
         <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK} 4%, transparent 50%, ${INK} 96%)` }} />
         <Grain />
 
@@ -920,8 +997,8 @@ function WaterChapter() {
     <section id="ts2-water" className="relative min-h-[96vh] overflow-hidden flex items-end" style={{ background: INK }}>
       <img
         ref={img}
-        src="/essay2/forest-water.jpg"
-        alt="Aerial photograph of water flowing between trees in a flooded European forest"
+        src="/essay2/water-saar.jpg"
+        alt="Aerial photograph of the Saar river looping through misty autumn forest"
         className="absolute inset-0 w-full h-full object-cover"
         loading="lazy"
       />
@@ -1006,9 +1083,9 @@ function FireChapter() {
     <section id="ts2-fire" className="relative overflow-hidden" style={{ background: INK }}>
       <div className="relative h-[88vh] min-h-[520px] overflow-hidden">
         <img
-          src="/essay/stakes-wildfire.jpg"
-          alt="Two firefighters hosing down a grass fire at the edge of a reed bed"
-          className="absolute inset-0 w-full h-full object-cover"
+          src="/essay2/fire-forest.jpg"
+          alt="A forest floor burning, flames climbing between birch trunks through the smoke"
+          className="absolute inset-0 w-full h-full object-cover ts2-kenburns-slow"
           loading="lazy"
         />
         {/* embers */}
@@ -1041,9 +1118,9 @@ function FireChapter() {
             The budget is already burning.
           </h2>
           <p className="mt-3 max-w-xl text-[14px] leading-relaxed" style={{ color: 'rgba(244,234,216,0.75)' }}>
-            These two people are holding a line. So is the number below: the greenhouse-gas
-            budget the Advisory Board recommends for 2030–2050 is a fraction of what the EU
-            has already emitted since 2005.
+            A forest burns in hours what it stored over decades. The number below behaves the
+            same way: the greenhouse-gas budget the Advisory Board recommends for 2030–2050
+            is a fraction of what the EU has already emitted since 2005.
           </p>
         </div>
       </div>
@@ -1101,8 +1178,8 @@ function FieldsChapter() {
       <div className="relative h-[70vh] min-h-[440px] overflow-hidden">
         <img
           ref={img}
-          src="/essay/stakes-flood.jpg"
-          alt="A maize field standing in flood water after heavy rain"
+          src="/essay2/pasture-dusk.jpg"
+          alt="Two cows grazing in tall grass as the sun sets behind a line of trees"
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
         />
@@ -1157,8 +1234,10 @@ function WorksChapter() {
   const energy = sectorById('energy-supply');
   const iLatest = industry.series[industry.series.length - 1];
   const eLatest = energy.series[energy.series.length - 1];
+  const eChange = sectorChange(energy);
   const iText = useCountUp(iLatest.value, inView);
   const eText = useCountUp(eLatest.value, inView);
+  const eChangeText = useCountUp(Math.abs(eChange), inView, 0);
 
   const levers = [
     { name: 'Solar PV build-out', status: 'on track', color: TEAL },
@@ -1168,61 +1247,80 @@ function WorksChapter() {
     { name: 'Low-carbon steel & cement projects', status: 'mixed', color: CREAM },
   ];
 
+  const panels: {
+    src: string;
+    alt: string;
+    stat: React.ReactNode;
+    label: string;
+    extra?: React.ReactNode;
+  }[] = [
+    {
+      src: '/essay2/industry-night.jpg',
+      alt: 'Red-and-white striped factory chimneys venting steam into the night sky',
+      stat: (
+        <>
+          {iText} <span className="text-[15px] font-normal" style={{ color: 'rgba(244,234,216,0.5)' }}>Mt</span>
+        </>
+      ),
+      label: `industry · ${iLatest.year}`,
+      extra: (
+        /* thinning steam plumes */
+        <div className="absolute inset-0 pointer-events-none" aria-hidden>
+          {[18, 38, 62].map((l, i) => (
+            <span
+              key={l}
+              className="ts2-plume absolute bottom-[30%] rounded-full"
+              style={{
+                left: `${l}%`,
+                width: 26 + i * 8,
+                height: 26 + i * 8,
+                background: CREAM,
+                filter: 'blur(14px)',
+                animationDelay: `${i * 2.1}s`,
+              }}
+            />
+          ))}
+        </div>
+      ),
+    },
+    {
+      src: '/essay2/solar-farm.jpg',
+      alt: 'Aerial photograph of solar panel rows stretching across farmland',
+      stat: <span style={{ color: TEAL }}>−{eChangeText} %</span>,
+      label: 'energy supply vs 2005 — the deepest cut',
+    },
+    {
+      src: '/essay2/wind-forest.jpg',
+      alt: 'Wind turbines rising out of low cloud above a dense conifer forest',
+      stat: (
+        <>
+          {eText} <span className="text-[15px] font-normal" style={{ color: 'rgba(244,234,216,0.5)' }}>Mt</span>
+        </>
+      ),
+      label: `energy supply · ${eLatest.year}`,
+    },
+  ];
+
   return (
     <section id="ts2-works" className="relative overflow-hidden" style={{ background: INK }}>
-      <div className="grid lg:grid-cols-2">
-        <div className="relative min-h-[52vh] overflow-hidden">
-          <img
-            src="/essay/closing-industry.jpg"
-            alt="Industrial processing facility photographed at night"
-            className="absolute inset-0 w-full h-full object-cover ts2-kenburns-slow"
-            loading="lazy"
-          />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK}66, ${INK}e6)` }} />
-          {/* thinning steam plumes */}
-          <div className="absolute inset-0 pointer-events-none" aria-hidden>
-            {[18, 38, 62].map((l, i) => (
-              <span
-                key={l}
-                className="ts2-plume absolute bottom-[30%] rounded-full"
-                style={{
-                  left: `${l}%`,
-                  width: 26 + i * 8,
-                  height: 26 + i * 8,
-                  background: CREAM,
-                  filter: 'blur(14px)',
-                  animationDelay: `${i * 2.1}s`,
-                }}
-              />
-            ))}
+      <div className="grid md:grid-cols-3">
+        {panels.map((panel, i) => (
+          <div key={panel.src} className="relative min-h-[44vh] md:min-h-[56vh] overflow-hidden">
+            <RevealImage
+              src={panel.src}
+              alt={panel.alt}
+              className="absolute inset-0"
+              delay={i * 140}
+            />
+            <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK}66, ${INK}e6)` }} />
+            {panel.extra}
+            <Grain />
+            <div className="relative h-full flex flex-col justify-end p-8 sm:p-10">
+              <div className="text-[40px] sm:text-[46px] font-bold tabular-nums leading-none" style={{ color: CREAM }}>{panel.stat}</div>
+              <div className="mt-1.5 text-[11px] tracking-[0.18em] uppercase" style={{ color: 'rgba(244,234,216,0.55)' }}>{panel.label}</div>
+            </div>
           </div>
-          <Grain />
-          <div className="relative h-full flex flex-col justify-end p-8 sm:p-10">
-            <div className="text-[40px] sm:text-[50px] font-bold tabular-nums leading-none" style={{ color: CREAM }}>{iText} <span className="text-[15px] font-normal" style={{ color: 'rgba(244,234,216,0.5)' }}>Mt</span></div>
-            <div className="mt-1.5 text-[11px] tracking-[0.18em] uppercase" style={{ color: 'rgba(244,234,216,0.55)' }}>industry · {iLatest.year}</div>
-          </div>
-        </div>
-        <div className="relative min-h-[52vh] overflow-hidden">
-          <img
-            src="/essay/sink-rivers.jpg"
-            alt="Aerial photograph of wind farms strung along forested mountain ridges"
-            className="absolute inset-0 w-full h-full object-cover ts2-kenburns-slow"
-            loading="lazy"
-            style={{ animationDelay: '-11s' }}
-          />
-          <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK}66, ${INK}e6)` }} />
-          {/* turning turbines on the ridge */}
-          <div className="absolute inset-x-0 bottom-[18%] flex justify-around items-end pointer-events-none" aria-hidden>
-            <Turbine h={130} dur={6} />
-            <Turbine h={180} dur={4.8} delay={-2} />
-            <Turbine h={110} dur={7.2} delay={-4} />
-          </div>
-          <Grain />
-          <div className="relative h-full flex flex-col justify-end p-8 sm:p-10">
-            <div className="text-[40px] sm:text-[50px] font-bold tabular-nums leading-none" style={{ color: CREAM }}>{eText} <span className="text-[15px] font-normal" style={{ color: 'rgba(244,234,216,0.5)' }}>Mt</span></div>
-            <div className="mt-1.5 text-[11px] tracking-[0.18em] uppercase" style={{ color: 'rgba(244,234,216,0.55)' }}>energy supply · {eLatest.year}</div>
-          </div>
-        </div>
+        ))}
       </div>
 
       <div ref={ref} className="max-w-[1180px] mx-auto px-6 py-16">
@@ -1271,11 +1369,19 @@ function MobilityChapter() {
   return (
     <section id="ts2-mobility" ref={ref} className="relative" style={{ height: '300vh', background: INK }}>
       <div className="sticky top-0 h-screen overflow-hidden flex flex-col">
+        {/* the street changes its mind: night tram fades into daylight cyclists */}
         <img
-          src="/essay/sectors-rail.jpg"
-          alt="Aerial photograph of a railway line crossing dense forest"
+          src="/essay2/mobility-tram.jpg"
+          alt="A Lisbon tram at night, its windows glowing over wet cobbles and rails"
           className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: 0.34 + shift * 0.18, transition: 'opacity 400ms ease' }}
+          style={{ opacity: (1 - shift) * 0.42, transition: 'opacity 400ms ease' }}
+          loading="lazy"
+        />
+        <img
+          src="/essay2/mobility-cyclists.jpg"
+          alt="Cyclists waiting at a red light on a city street full of bicycles"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: shift * 0.5, transition: 'opacity 400ms ease' }}
           loading="lazy"
         />
         <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK}e6 0%, ${INK}66 45%, ${INK} 100%)` }} />
@@ -1418,14 +1524,23 @@ function Ledger() {
   return (
     <section id="ts2-ledger" className="py-20 sm:py-28" style={{ background: INK }}>
       <div className="max-w-[1180px] mx-auto px-6">
-        <p className="text-[11px] tracking-[0.3em] uppercase font-semibold" style={{ color: TEAL }}>Chapter 07 · The ledger</p>
-        <h2 className="mt-2 font-bold tracking-tight leading-none" style={{ fontSize: 'clamp(30px, 4.6vw, 56px)', color: CREAM }}>
-          Seven sectors, one deadline.
-        </h2>
-        <p className="mt-3 max-w-xl text-[14px] leading-relaxed" style={{ color: 'rgba(244,234,216,0.7)' }}>
-          Where each sector stands today against its 2030 benchmark — cream is the present,
-          teal is the obligation, the badge is the distance between them.
-        </p>
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_300px] gap-x-12 gap-y-6 items-end">
+          <div>
+            <p className="text-[11px] tracking-[0.3em] uppercase font-semibold" style={{ color: TEAL }}>Chapter 07 · The ledger</p>
+            <h2 className="mt-2 font-bold tracking-tight leading-none" style={{ fontSize: 'clamp(30px, 4.6vw, 56px)', color: CREAM }}>
+              Seven sectors, one deadline.
+            </h2>
+            <p className="mt-3 max-w-xl text-[14px] leading-relaxed" style={{ color: 'rgba(244,234,216,0.7)' }}>
+              Where each sector stands today against its 2030 benchmark — cream is the present,
+              teal is the obligation, the badge is the distance between them.
+            </p>
+          </div>
+          <RevealImage
+            src="/essay2/fields-harvest.jpg"
+            alt="Aerial photograph of a field half harvested, a tractor working the last rows"
+            className="hidden lg:block h-[200px] rounded-2xl"
+          />
+        </div>
         <div className="mt-8">
           {rows.map(s => (
             <LedgerRow key={s.id} sector={s} maxAbs={maxAbs} />
@@ -1510,9 +1625,9 @@ function Closing() {
     <section id="ts2-closing" className="pb-10" style={{ background: INK }}>
       <div className="relative overflow-hidden">
         <img
-          src="/essay2/energy-turbine.jpg"
-          alt="Aerial photograph looking straight down a wind turbine beside a solar-roofed factory"
-          className="absolute inset-0 w-full h-full object-cover opacity-35 ts2-kenburns-slow"
+          src="/essay2/closing-turbines.jpg"
+          alt="Two wind turbines silhouetted against a deep red sunset over the coast"
+          className="absolute inset-0 w-full h-full object-cover opacity-50 ts2-kenburns-slow"
           loading="lazy"
         />
         <div className="absolute inset-0" style={{ background: `linear-gradient(180deg, ${INK} 0%, transparent 50%, ${INK} 100%)` }} />
@@ -1576,10 +1691,12 @@ function Closing() {
           <div>
             <h3 className="text-[10.5px] tracking-[0.2em] uppercase mb-2" style={{ color: 'rgba(244,234,216,0.45)' }}>Photography &amp; scenes</h3>
             <p className="text-[12px] leading-relaxed" style={{ color: 'rgba(244,234,216,0.6)' }}>
-              All photography is taken from the published covers and pages of ESABCC reports
-              (2040-target advice, energy-infrastructure advice, CDR report, adaptation report,
-              agri-food report, progress report, TEN-E advice). The animated pasture, street and
-              turbine vignettes are original silhouette illustrations — no stock, no clip-art.
+              All photography is real stock photography, free to use under the{' '}
+              <a href="https://www.pexels.com/license/" className="underline" target="_blank" rel="noreferrer">Pexels licence</a>{' '}
+              (photo IDs 2876511, 12488674, 34676607, 51951, 19662181, 18900720, 13990607,
+              16659262, 12733229, 1545510, 23882589, 19185783 — each photographer credited at
+              pexels.com/photo/&lt;id&gt;). The animated pasture and street vignettes are
+              original silhouette illustrations — no clip-art.
             </p>
           </div>
         </div>
@@ -1706,7 +1823,6 @@ export default function TransitionStories2() {
           from { transform: scale(1); }
           to { transform: scale(1.09) translateY(-1.5%); }
         }
-        .ts2-kenburns { animation: ts2-kenburns-kf 22s ease-in-out infinite alternate; }
         .ts2-kenburns-slow { animation: ts2-kenburns-kf 34s ease-in-out infinite alternate; }
 
         @keyframes ts2-rise-kf {
@@ -1714,6 +1830,12 @@ export default function TransitionStories2() {
           to { opacity: 1; transform: translateY(0); }
         }
         .ts2-rise { animation: ts2-rise-kf 900ms cubic-bezier(0.2, 0, 0, 1) both; }
+
+        @keyframes ts2-maskrise-kf {
+          from { transform: translateY(112%); }
+          to { transform: translateY(0); }
+        }
+        .ts2-maskrise { animation: ts2-maskrise-kf 1000ms cubic-bezier(0.2, 0, 0, 1) both; }
 
         @keyframes ts2-scrollcue-kf {
           0% { transform: translateY(-16px); }
@@ -1791,18 +1913,6 @@ export default function TransitionStories2() {
         }
         .ts2-spin { animation: ts2-spin-kf 1.7s linear infinite; }
 
-        @keyframes ts2-rotor-kf {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-        .ts2-rotor { animation: ts2-rotor-kf 6s linear infinite; }
-
-        @keyframes ts2-beacon-kf {
-          0%, 88%, 100% { opacity: 0.15; }
-          94% { opacity: 1; }
-        }
-        .ts2-beacon { animation: ts2-beacon-kf 2.8s linear infinite; }
-
         @keyframes ts2-poseA-kf {
           0%, 49.9% { opacity: 1; }
           50%, 100% { opacity: 0; }
@@ -1839,15 +1949,16 @@ export default function TransitionStories2() {
         .ts2-stroll { animation: ts2-stroll-kf 46s linear infinite; }
 
         @media (prefers-reduced-motion: reduce) {
-          .ts2-kenburns, .ts2-kenburns-slow, .ts2-scrollcue, .ts2-marquee,
+          .ts2-kenburns-slow, .ts2-scrollcue, .ts2-marquee,
           .ts2-flow, .ts2-glint, .ts2-ember, .ts2-glow, .ts2-plume,
           .ts2-cloud, .ts2-sway, .ts2-tail, .ts2-graze, .ts2-spin,
-          .ts2-rotor, .ts2-beacon, .ts2-poseA, .ts2-poseB,
+          .ts2-poseA, .ts2-poseB,
           .ts2-drive, .ts2-ride, .ts2-glide, .ts2-stroll {
             animation: none;
           }
           .ts2-poseB { opacity: 0; }
           .ts2-rise { animation: none; opacity: 1; }
+          .ts2-maskrise { animation: none; }
           .ts2-drive, .ts2-ride { left: 30%; }
           .ts2-stroll { left: 60%; }
           .ts2-glide { right: 20%; }
