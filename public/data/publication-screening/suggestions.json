@@ -1,6 +1,105 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-06-11T08:26:18.977Z",
   "windowDays": 60,
-  "journals": [],
-  "suggestions": []
+  "journals": [
+    "Nature Climate Change",
+    "Nature Energy",
+    "Nature Sustainability",
+    "npj Climate Action",
+    "Climate Policy",
+    "Climatic Change",
+    "Environmental Research Letters",
+    "Global Environmental Change",
+    "Energy Policy",
+    "Energy Research & Social Science",
+    "Environmental Science & Policy",
+    "Ecological Economics",
+    "One Earth",
+    "Joule",
+    "WIREs Climate Change",
+    "Mitigation and Adaptation Strategies for Global Change"
+  ],
+  "suggestions": [
+    {
+      "doi": "10.1038/s41558-026-02607-y",
+      "title": "Early signs that the EU carbon border adjustment mechanism is reshaping EU–India steel trade",
+      "journal": "Nature Climate Change",
+      "authors": "Gian Luca Vriz, Theodor Cojoianu, Carolyn Fischer, Luca Taschini",
+      "published": "2026-06",
+      "url": "https://doi.org/10.1038/s41558-026-02607-y",
+      "abstract": "The EU Carbon Border Adjustment Mechanism (CBAM) aims to level carbon-related costs between domestic and foreign producers to avoid carbon leakage. Although most existing CBAM studies focus on country-level or sector-level aggregates, the policy is applied to individual goods, where emissions performance and trade strategies vary widely across producers. Item-level compliance therefore depends on facility-level characteristics, making firm-level analysis critical to understanding actual exposure and early behavioural adjustments. Here early signals of the CBAM on India’s iron and steel exporters are investigated by integrating firm-level export data with independent estimates of manufacturers’ emissions and production. The analysis reveals that high-emission firms significantly reduced both export quantities and revenues to the EU during the CBAM reporting phase, whereas low-emission firms maintained their export levels. Such supply chain adjustments are in line with EU policy intentions, creating opportunities for low-emission producers while reducing reliance on high-emission suppliers to the EU.",
+      "suggestedOn": "2026-06-11",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 12.5,
+          "matched": [
+            "steel",
+            "carbon leakage",
+            "cbam",
+            "carbon border adjustment"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/ae7a92",
+      "title": "Projected futures for the consumption of metals and non-metallic minerals",
+      "journal": "Environmental Research Letters",
+      "authors": "Anke Frederike Arp, Vassilis Daioglou, Luja von Köckritz et al.",
+      "published": "2026-06-09",
+      "url": "https://doi.org/10.1088/1748-9326/ae7a92",
+      "abstract": "While material resources form a critical foundation for human society, their extraction, processing, and use are also a major driver of environmental pressures. Understanding future material consumption is therefore vital. This study presents a comprehensive assessment of future global bulk material consumption, covering metals (steel, aluminium, copper) and non-metallic minerals (cement, sand, limestone, clay). We use the Integrated Assessment Model IMAGE, combined with a stock-driven dynamic material flow analysis model, to provide full coverage of global and regional material flows. We project material consumption for a current-policy baseline, a climate policy scenario (1.5°C) and two scenarios that add resource efficiency measures on top of the climate policies. Following current policies, by 2050 consumption of steel, aluminium, copper are expected to increase by 25%, 97%, and 84% respectively. Cement, sand, limestone and clay increase by 5-23%. The climate policy scenario shows increases compared to baseline across all metals and cement, especially in the 2030/2040 period driven by required electricity and vehicle system transformations. The largest relative increase is projected for copper and aluminium, i.e. 22% and 9%, compared to current policies in 2050. Combining climate policies and resource efficiency, however, can reduce the use of non-metallic minerals below current levels and stabilize steel consumption, thus enabling growth in housing, transport, and decarb",
+      "suggestedOn": "2026-06-11",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 6,
+          "matched": [
+            "steel",
+            "cement"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/ae7a91",
+      "title": "Near-optimal solutions for carbon capture, conversion, storage, and removal strategies",
+      "journal": "Environmental Research Letters",
+      "authors": "Sina Kalweit, Ricardo Fernandes, Alberto Alamia, Marta Victoria",
+      "published": "2026-06-09",
+      "url": "https://doi.org/10.1088/1748-9326/ae7a91",
+      "abstract": "Achieving climate neutrality in Europe requires rapid electrification alongside carbon management strategies for residual emissions. Existing analyses of the European energy system often focus on collocated carbon capture and geological sequestration, with limited attention to the interactions among carbon capture and utilization, transport, sequestration, and diverse carbon dioxide removal (CDR) options. Moreover, existing literature focuses on discussing the optimal, neglecting that near-optimal solutions might provide very different system configurations at a marginal higher cost. Here, we integrate afforestation, biochar, enhanced rock weathering, and perennialization into a sector-coupled European energy system model (PyPSA-Eur) clustered to 39 nodes with 750 aggregated time steps. We explore their contributions using a Modelling to Generate Alternatives (MGA) approach. Our method combines minimization, maximization, and random vectors to explore the near-optimal solution space. Our results show that, in a carbon-neutral system, multiple configurations of carbon management options can achieve net-zero emissions with only marginal cost increases. We find that a 5% total system cost increase is sufficient to accommodate the full spectrum from zero to full deployment of most individual CDR options, as well as a wide range of synthetic fuel use across different fuel types. Increased reliance on CDR options offers no clear cost advantage compared to greater utilization of syn",
+      "suggestedOn": "2026-06-11",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 6,
+          "matched": [
+            "carbon capture"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/ae7987",
+      "title": "Assessing fair effort-sharing of Paris-compliant mitigation futures in transport",
+      "journal": "Environmental Research Letters",
+      "authors": "David Sturgess, Neil Stirling Ferguson, James Dixon",
+      "published": "2026-06-08",
+      "url": "https://doi.org/10.1088/1748-9326/ae7987",
+      "abstract": "Globally, the transport sector accounts for 15% of annual CO2 emissions, with land transport comprising the vast majority, making mitigation in this sub-sector critical to achieving the Paris Agreement. This article applies five established effort-sharing approaches to allocate the remaining global land transport carbon budget across countries in alignment with 1.5°C and 2°C scenarios that prioritize sustainable and equitable development. The results serve as transparent, scientific and comparable evidence for countries and civil society to evaluate the fairness and significance of mitigation commitments against. For most developed countries, even if domestic emissions reductions achieved an established practical maximum rate of 5% annually, this would remain insufficient to meet their allocated fair mitigation burden. Fulfilling these fair burdens, which exceed domestic capacity, will necessitate vastly scaled-up international support for mitigation in less-developed countries which have rights to larger shares of the remaining global carbon budget. Without universally accepted effort-sharing mechanisms, countries' self-determined equity interpretations will likely favour their least stringent allocations. Our results indicate this would result in potential global carbon budget overshoot of 489% in the 1.5°C scenario, or 123% in the 2°C scenario, rendering land transport's adherence to equitable, Paris-compliant scenarios unattainable.",
+      "suggestedOn": "2026-06-11",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "carbon budget",
+            "paris agreement"
+          ]
+        }
+      ]
+    }
+  ]
 }
