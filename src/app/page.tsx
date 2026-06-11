@@ -366,7 +366,7 @@ export default async function HomePage() {
     { code: 'M · 17', title: 'Strategy & Framework',    href: '/beta/strategy-docs',      tags: ['Strategy', 'PIRs'] },
     { code: 'M · 18', title: 'EU Climate Councils',     href: '/beta/eu-climate-councils', tags: ['67 bodies', 'Leaflet map'] },
     { code: 'M · 19', title: 'Project Management',      href: '/beta/project-management',  tags: ['5 Phases', 'Gantt', 'Manual v2.1'] },
-    { code: 'M · 20', title: 'National Climate Policies', href: '/beta/national-climate-policies', tags: ['EU-27', 'climate-laws.org'] },
+    { code: 'M · 20', title: 'National Climate Policies', href: '/beta/national-climate-policies', tags: ['EU-27', 'climate-laws.org', 'Cluster analysis'] },
     { code: 'M · 21', title: 'EU Transition Panorama',  href: '/beta/transition-panorama', tags: ['AR6 pathways', '2040 advice'] },
     { code: 'M · 22', title: 'Transition Stories',     href: '/beta/transition-stories',  tags: ['Cinematic', 'Real photography'] },
     { code: 'M · 23', title: 'Policy Coherence',       href: '/beta/policy-coherence',    tags: ['4-step model', 'Coherence lens'] },
