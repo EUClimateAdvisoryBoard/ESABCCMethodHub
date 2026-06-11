@@ -62,6 +62,7 @@ const ROOT_CODES: Array<{ id: string; name: string; description: string; color: 
   { id: 'root-sector',     name: 'Sectoral policy', description: 'Sector-specific legislation (energy, transport, agriculture…).', color: PALETTE.energy },
   { id: 'root-crosscut',   name: 'Cross-cutting', description: 'Governance, monitoring, reporting, just-transition.', color: PALETTE.default },
   { id: 'root-assessment', name: 'Objective–delivery checklist', description: 'Assessment criteria: can the act deliver its own stated objective? (ESABCC-style consistency check, Climate Law Arts. 5–7).', color: '#0F766E' },
+  { id: 'root-coherence',  name: 'Policy coherence (beta)', description: 'Four-step coherence model over the policy space: ① ex-ante design vs world development, ② coherence across all policy goals, ③ goals vs means of implementation, ④ policy evaluation (measuring policy change and outcomes). Steps ③–④ derive from the objective–delivery checklist.', color: '#6D28D9' },
 ];
 
 const DOMAIN_TO_ROOT: Record<string, { rootId: string; color: string }> = {
@@ -695,6 +696,18 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     { id: 'check-cons-adaptation',parentId: 'root-assessment',   name: 'Consistency: adaptation',  description: 'Met when the act is consistent with ensuring progress on adaptation and climate resilience (climate-proofing) — Climate Law Art. 5.', color: '#0E7490', scope: 'master', createdAt: now },
     { id: 'check-just-transition',parentId: 'root-assessment',   name: 'Just-transition safeguards', description: 'Met when distributional impacts of pursuing the objective are assessed and cushioned.', color: '#9333EA', scope: 'master', createdAt: now },
     { id: 'check-review',         parentId: 'root-assessment',   name: 'Review & ratchet',         description: 'Met when a scheduled review can strengthen the act if the objective is at risk.', color: '#0F766E', scope: 'master', createdAt: now },
+
+    // ── Policy coherence (beta) ──────────────────────────────────────
+    // The four steps of the beta coherence model, as taggable codes: a
+    // SYSTEM-level lens (between policies, vs the world, vs the evidence)
+    // complementing the per-act checklist above. Steps ③ and ④ derive
+    // their verdicts from the `check-*` criteria (see
+    // policy-coherence.ts) — these codes exist so annotators can pin
+    // coherence evidence to text segments, not to re-score the criteria.
+    { id: 'coh-exante',     parentId: 'root-coherence', name: '① Ex ante vs world development', description: 'Assumption-Based Planning (Dewar et al., RAND): evidence that a falsifiable design assumption of the act is valid, under pressure or violated, tested via a signpost indicator against an explicit violation criterion.', color: '#6D28D9', scope: 'master', createdAt: now },
+    { id: 'coh-horizontal', parentId: 'root-coherence', name: '② Across policy goals',          description: 'Goal interactions on the Nilsson et al. (2016) seven-point scale (−3 cancelling … +3 indivisible), with the interaction mechanism and the legal provisions that create it.', color: '#7C3AED', scope: 'master', createdAt: now },
+    { id: 'coh-means',      parentId: 'root-coherence', name: '③ Goals vs means',               description: 'Goals/means congruence (Howlett & Rayner): whether instruments, coverage, enforcement, financing and timeline are commensurate with the goals — scored via the objective–delivery checklist.', color: '#8B5CF6', scope: 'master', createdAt: now },
+    { id: 'coh-evaluation', parentId: 'root-coherence', name: '④ Evaluation: change & outcomes', description: 'Distance-to-target evaluation (EEA Trends & Projections method): observed recent pace ÷ required pace against the act’s target, plus MRV/review machinery and policy-change facts.', color: '#A78BFA', scope: 'master', createdAt: now },
   ];
 
   const codes: CodeNode[] = [...rootCodes, ...domainCodes, ...handPicked];
