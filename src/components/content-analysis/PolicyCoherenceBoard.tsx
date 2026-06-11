@@ -2,15 +2,17 @@
  * Policy coherence board — the beta four-step coherence model.
  * ------------------------------------------------------------
  * One board, five surfaces: a synthesis matrix (policies × the four steps,
- * worst-first) plus a dedicated view per step:
+ * worst-first) plus a dedicated view per step. Every grade follows from a
+ * declared rule applied to citable evidence (see policy-coherence.ts):
  *
- *   ① Ex ante design vs world development   (curated assumption audits)
- *   ② Coherence across policy goals          (curated pairwise interactions)
- *   ③ Goals vs means of implementation       (derived from the objective–
- *                                             delivery checklist — reused,
- *                                             never re-assessed)
- *   ④ Policy evaluation: change + outcomes   (derived machinery + curated
- *                                             measured outcomes)
+ *   ① Ex ante design vs world development — Assumption-Based Planning:
+ *     falsifiable assumption + signpost + violation criterion → status.
+ *   ② Coherence across policy goals — Nilsson et al. (2016) seven-point
+ *     interaction scale with mechanism + legal basis per pair.
+ *   ③ Goals vs means — derived from the objective–delivery checklist
+ *     (reused, never re-assessed).
+ *   ④ Policy evaluation — distance-to-target pace ratio computed in code
+ *     (EEA Trends & Projections method) + derived MRV/review machinery.
  *
  * Reused in two homes, mirroring ObjectiveChecklistMatrix: the standalone
  * beta module page (full corpus) and the workspace Content Analysis module
@@ -23,13 +25,15 @@ import {
   buildCoherenceOverview,
   coherenceAssessedIds,
   COHERENCE_STEPS,
+  EVIDENCE_TIER_LABEL,
   EX_ANTE_ASSESSMENTS,
-  GOAL_INTERACTIONS,
+  INTERACTION_SCALE,
+  PACE_THRESHOLDS,
   type AssumptionStatus,
   type CoherenceGrade,
   type CoherenceStepId,
+  type EvidenceTier,
   type GoalInteraction,
-  type InteractionKind,
   type PolicyCoherenceProfile,
 } from '@/lib/content-analysis/policy-coherence';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
@@ -46,15 +50,20 @@ const GRADE_STYLE: Record<CoherenceGrade, { bg: string; fg: string; label: strin
 };
 
 const STATUS_STYLE: Record<AssumptionStatus, { bg: string; label: string }> = {
-  holds: { bg: '#16A34A', label: 'Holds' },
-  drifting: { bg: '#F59E0B', label: 'Drifting' },
-  broken: { bg: '#DC2626', label: 'Broken' },
+  valid: { bg: '#16A34A', label: 'Valid' },
+  'under-pressure': { bg: '#F59E0B', label: 'Under pressure' },
+  violated: { bg: '#DC2626', label: 'Violated' },
 };
 
-const KIND_STYLE: Record<InteractionKind, { bg: string; border: string; label: string }> = {
-  synergy: { bg: '#F0FDF4', border: '#16A34A', label: 'Synergy' },
-  tension: { bg: '#FFFBEB', border: '#F59E0B', label: 'Tension' },
-  conflict: { bg: '#FEF2F2', border: '#DC2626', label: 'Conflict' },
+/** Colour ramp for the Nilsson seven-point scale. */
+const SCORE_COLOR: Record<number, string> = {
+  3: '#15803D',
+  2: '#16A34A',
+  1: '#65A30D',
+  0: '#6B7280',
+  [-1]: '#F59E0B',
+  [-2]: '#DC2626',
+  [-3]: '#7F1D1D',
 };
 
 const CHECK_VERDICT_STYLE: Record<string, { bg: string; symbol: string }> = {
@@ -62,6 +71,12 @@ const CHECK_VERDICT_STYLE: Record<string, { bg: string; symbol: string }> = {
   partial: { bg: '#F59E0B', symbol: '◐' },
   'not-met': { bg: '#DC2626', symbol: '✗' },
   'not-applicable': { bg: '#D1D5DB', symbol: '—' },
+};
+
+const READING_STYLE: Record<string, { bg: string; label: string }> = {
+  'on-track': { bg: '#16A34A', label: 'On track' },
+  lagging: { bg: '#F59E0B', label: 'Lagging' },
+  'off-track': { bg: '#DC2626', label: 'Off track' },
 };
 
 type BoardTab = 'overview' | CoherenceStepId;
@@ -99,16 +114,16 @@ export default function PolicyCoherenceBoard({ scopeIds, scopeLabel }: Props) {
           tone="#3D5265"
         />
         <ScoreCard
-          label="Broken assumptions"
-          value={`${overview.brokenAssumptions}`}
-          sub="step ① ex-ante vs world"
-          tone={overview.brokenAssumptions > 0 ? '#DC2626' : '#16A34A'}
+          label="Assumptions violated"
+          value={`${overview.violatedAssumptions}`}
+          sub="step ① criterion met"
+          tone={overview.violatedAssumptions > 0 ? '#DC2626' : '#16A34A'}
         />
         <ScoreCard
-          label="Goal conflicts"
-          value={`${overview.conflicts}`}
-          sub={`+ ${overview.tensions} tensions · ${overview.synergies} synergies`}
-          tone={overview.conflicts > 0 ? '#DC2626' : '#16A34A'}
+          label="Counteracting pairs"
+          value={`${overview.counteracting}`}
+          sub={`score ≤ −2 · +${overview.constraining} constraining · ${overview.positive} positive`}
+          tone={overview.counteracting > 0 ? '#DC2626' : '#16A34A'}
         />
         <ScoreCard
           label="Means coherence"
@@ -121,9 +136,9 @@ export default function PolicyCoherenceBoard({ scopeIds, scopeLabel }: Props) {
           tone="#0065A4"
         />
         <ScoreCard
-          label="Outcomes off-track"
-          value={`${overview.profiles.filter(p => p.evaluation.outcome?.reading === 'off-track').length}`}
-          sub="step ④ measured outcomes"
+          label="Outcomes off track"
+          value={`${overview.outcomesOffTrack}`}
+          sub="step ④ pace ratio < 0.5"
           tone="#B83230"
         />
       </div>
@@ -167,16 +182,16 @@ export default function PolicyCoherenceBoard({ scopeIds, scopeLabel }: Props) {
 
       {tab !== 'overview' && (
         <p className="text-[10.5px] text-tertiary leading-relaxed max-w-3xl">
-          {COHERENCE_STEP_BLURB(tab)}
+          {stepBlurb(tab)}
         </p>
       )}
     </div>
   );
 }
 
-function COHERENCE_STEP_BLURB(id: CoherenceStepId): string {
+function stepBlurb(id: CoherenceStepId): string {
   const s = COHERENCE_STEPS.find(x => x.id === id)!;
-  return `Step ${s.ordinal} — ${s.question} Basis: ${s.basis}. ${s.method}`;
+  return `Step ${s.ordinal} — ${s.question} Framework: ${s.framework}. ${s.method}`;
 }
 
 function StepTabButton({
@@ -238,6 +253,31 @@ function GradeChip({ grade, title }: { grade: CoherenceGrade; title?: string }) 
   );
 }
 
+function TierChip({ tier }: { tier: EvidenceTier }) {
+  return (
+    <span
+      className="inline-flex items-center justify-center h-4 w-4 rounded-full border border-grey-200 bg-white text-[9px] font-bold text-tertiary"
+      title={`Evidence tier ${tier}: ${EVIDENCE_TIER_LABEL[tier]}`}
+    >
+      {tier}
+    </span>
+  );
+}
+
+function ScoreBadge({ score }: { score: number }) {
+  const scale = INTERACTION_SCALE[score as keyof typeof INTERACTION_SCALE];
+  return (
+    <span
+      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] font-bold text-white"
+      style={{ backgroundColor: SCORE_COLOR[score] }}
+      title={scale.definition}
+    >
+      <span className="font-mono">{score > 0 ? `+${score}` : score}</span>
+      {scale.name}
+    </span>
+  );
+}
+
 // ── Synthesis: policies × four steps ───────────────────────────────────────
 
 function SynthesisView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
@@ -268,7 +308,7 @@ function SynthesisView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
                 <th
                   key={s.id}
                   className="px-2 py-2 font-bold text-tertiary text-center whitespace-nowrap"
-                  title={`Step ${s.ordinal}: ${s.name}\n${s.question}`}
+                  title={`Step ${s.ordinal}: ${s.name}\n${s.framework}\n${s.question}`}
                 >
                   <span className="font-mono mr-1">{s.ordinal}</span>
                   {s.shortName}
@@ -307,8 +347,8 @@ function SynthesisView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
       <p className="text-[10px] text-tertiary">
         Rows sort worst-first (overall = weakest assessed step). Click a row for the underlying
         evidence per step. Grey cells mean no signal yet — steps ① and ② are curated for the
-        major acts only; steps ③ and ④ derive from the objective–delivery checklist and cover
-        every assessed policy.
+        major acts; steps ③ and ④ derive from the objective–delivery checklist and cover every
+        assessed policy.
       </p>
     </div>
   );
@@ -349,19 +389,27 @@ function SynthesisRow({
           <td colSpan={6} className="px-4 py-3">
             <div className="grid gap-2 lg:grid-cols-2 text-[10.5px] text-tertiary leading-relaxed">
               <div className="bg-white border border-grey-100 rounded px-2.5 py-2">
-                <p className="font-bold text-tertiary-dark text-[10px]">① Ex ante vs world</p>
+                <p className="font-bold text-tertiary-dark text-[10px]">
+                  ① Ex ante vs world{' '}
+                  {p.exAnte && <TierChip tier={p.exAnte.tier} />}
+                </p>
                 {p.exAnte ? (
                   <>
                     <p className="mt-0.5">
-                      <span className="font-semibold">Assumed ({p.exAnte.designYear}):</span>{' '}
+                      <span className="font-semibold">Assumption ({p.exAnte.designYear}):</span>{' '}
                       {p.exAnte.assumption}
                     </p>
                     <p className="mt-0.5">
-                      <span className="font-semibold">Developed:</span> {p.exAnte.development}
+                      <span className="font-semibold">Criterion:</span>{' '}
+                      {p.exAnte.violationCriterion}
+                    </p>
+                    <p className="mt-0.5">
+                      <span className="font-semibold">Observed:</span> {p.exAnte.observation}{' '}
+                      <span className="italic">({p.exAnte.source})</span>
                     </p>
                   </>
                 ) : (
-                  <p className="italic">No curated assumption audit yet.</p>
+                  <p className="italic">No assumption audit yet.</p>
                 )}
               </div>
               <div className="bg-white border border-grey-100 rounded px-2.5 py-2">
@@ -372,18 +420,16 @@ function SynthesisRow({
                   <ul className="mt-0.5 space-y-1">
                     {p.interactions.map(i => (
                       <li key={i.id}>
-                        <span
-                          className="font-bold"
-                          style={{ color: KIND_STYLE[i.kind].border }}
-                        >
-                          {KIND_STYLE[i.kind].label}
+                        <ScoreBadge score={i.score} /> with{' '}
+                        <span className="font-semibold">
+                          {titleOf(i.a === p.policyId ? i.b : i.a)}
                         </span>{' '}
-                        with {titleOf(i.a === p.policyId ? i.b : i.a)}: {i.rationale}
+                        ({i.mechanism}): {i.rationale}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="italic">No curated goal interactions touch this act yet.</p>
+                  <p className="italic">No scored goal interactions touch this act yet.</p>
                 )}
               </div>
               <div className="bg-white border border-grey-100 rounded px-2.5 py-2">
@@ -423,12 +469,12 @@ function SynthesisRow({
                     </li>
                   ))}
                 </ul>
-                {p.evaluation.outcome && (
+                {p.evaluation.measurement && (
                   <p className="mt-1">
                     <span className="font-semibold">
-                      Measured ({p.evaluation.outcome.indicator}):
+                      Measured ({p.evaluation.measurement.indicator}):
                     </span>{' '}
-                    {p.evaluation.outcome.measuredOutcome}
+                    {paceSentence(p)}
                   </p>
                 )}
               </div>
@@ -438,6 +484,12 @@ function SynthesisRow({
       )}
     </>
   );
+}
+
+function paceSentence(p: PolicyCoherenceProfile): string {
+  const m = p.evaluation.measurement!;
+  const r = m.pace.ratio;
+  return `${m.latest.value} ${m.unit} (${m.latest.year}) vs target ${m.target.value} (${m.target.year}); pace ratio ${r === null ? '—' : r.toFixed(2)} → ${READING_STYLE[m.pace.reading].label}.`;
 }
 
 function VerdictDot({ verdict }: { verdict: string }) {
@@ -452,22 +504,19 @@ function VerdictDot({ verdict }: { verdict: string }) {
   );
 }
 
-// ── Step 1 · ex-ante audits ────────────────────────────────────────────────
+// ── Step 1 · assumption audits (Assumption-Based Planning) ─────────────────
 
 function ExAnteView({ ids }: { ids: string[] }) {
   const inScope = new Set(ids);
+  const order: AssumptionStatus[] = ['violated', 'under-pressure', 'valid'];
   const entries = Object.values(EX_ANTE_ASSESSMENTS)
     .filter(e => inScope.has(e.policyId))
-    .sort(
-      (a, b) =>
-        ['broken', 'drifting', 'holds'].indexOf(a.status) -
-        ['broken', 'drifting', 'holds'].indexOf(b.status),
-    );
+    .sort((a, b) => order.indexOf(a.status) - order.indexOf(b.status));
 
   if (entries.length === 0) {
     return (
       <p className="text-[12px] text-tertiary italic px-1 py-4">
-        No curated ex-ante audits in the current scope yet.
+        No assumption audits in the current scope yet.
       </p>
     );
   }
@@ -477,9 +526,9 @@ function ExAnteView({ ids }: { ids: string[] }) {
         const s = STATUS_STYLE[e.status];
         return (
           <div key={e.policyId} className="border border-grey-200 rounded-lg bg-white p-3">
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span
-                className="inline-flex items-center h-4.5 px-2 py-0.5 rounded-full text-[9px] font-bold text-white"
+                className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold text-white"
                 style={{ backgroundColor: s.bg }}
               >
                 {s.label}
@@ -487,22 +536,39 @@ function ExAnteView({ ids }: { ids: string[] }) {
               <span className="text-[12px] font-bold text-tertiary-dark">
                 {titleOf(e.policyId)}
               </span>
+              <TierChip tier={e.tier} />
               <span className="ml-auto font-mono text-[9px] text-tertiary">
                 design vintage {e.designYear}
               </span>
             </div>
-            <div className="mt-2 grid sm:grid-cols-2 gap-2 text-[11px] leading-relaxed">
+            <div className="mt-2 space-y-1.5 text-[11px] leading-relaxed">
               <div className="bg-grey-50 rounded px-2.5 py-2">
                 <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
-                  Ex ante assumption
+                  Load-bearing assumption (falsifiable)
                 </p>
                 <p className="mt-0.5 text-tertiary-dark">{e.assumption}</p>
               </div>
+              <div className="grid sm:grid-cols-2 gap-1.5">
+                <div className="bg-grey-50 rounded px-2.5 py-2">
+                  <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
+                    Signpost indicator
+                  </p>
+                  <p className="mt-0.5 text-tertiary-dark">{e.signpost}</p>
+                </div>
+                <div className="bg-grey-50 rounded px-2.5 py-2">
+                  <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
+                    Violation criterion
+                  </p>
+                  <p className="mt-0.5 text-tertiary-dark">{e.violationCriterion}</p>
+                </div>
+              </div>
               <div className="bg-grey-50 rounded px-2.5 py-2">
                 <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
-                  World development
+                  Observation → status
                 </p>
-                <p className="mt-0.5 text-tertiary-dark">{e.development}</p>
+                <p className="mt-0.5 text-tertiary-dark">
+                  {e.observation} <span className="italic text-tertiary">({e.source})</span>
+                </p>
               </div>
             </div>
           </div>
@@ -512,79 +578,91 @@ function ExAnteView({ ids }: { ids: string[] }) {
   );
 }
 
-// ── Step 2 · goal interactions ─────────────────────────────────────────────
+// ── Step 2 · goal interactions (Nilsson scale) ─────────────────────────────
+
+type ScoreFilter = 'all' | 'counteracting' | 'constraining' | 'positive';
 
 function InteractionsView({ interactions }: { interactions: GoalInteraction[] }) {
-  const [kindFilter, setKindFilter] = useState<InteractionKind | 'all'>('all');
-  const shown =
-    kindFilter === 'all' ? interactions : interactions.filter(i => i.kind === kindFilter);
+  const [filter, setFilter] = useState<ScoreFilter>('all');
+  const matches = (i: GoalInteraction) =>
+    filter === 'all'
+      ? true
+      : filter === 'counteracting'
+        ? i.score <= -2
+        : filter === 'constraining'
+          ? i.score === -1
+          : i.score >= 1;
+  const shown = interactions.filter(matches).sort((a, b) => a.score - b.score);
   const counts = {
     all: interactions.length,
-    conflict: interactions.filter(i => i.kind === 'conflict').length,
-    tension: interactions.filter(i => i.kind === 'tension').length,
-    synergy: interactions.filter(i => i.kind === 'synergy').length,
+    counteracting: interactions.filter(i => i.score <= -2).length,
+    constraining: interactions.filter(i => i.score === -1).length,
+    positive: interactions.filter(i => i.score >= 1).length,
+  };
+  const FILTER_LABEL: Record<ScoreFilter, string> = {
+    all: 'All',
+    counteracting: '≤ −2 Counteracting',
+    constraining: '−1 Constraining',
+    positive: '≥ +1 Positive',
   };
 
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-1.5 flex-wrap">
-        {(['all', 'conflict', 'tension', 'synergy'] as const).map(k => (
+        {(['all', 'counteracting', 'constraining', 'positive'] as const).map(k => (
           <button
             key={k}
             type="button"
-            onClick={() => setKindFilter(k)}
+            onClick={() => setFilter(k)}
             className={`px-2.5 py-1 rounded-full text-[11px] font-medium border ${
-              kindFilter === k
+              filter === k
                 ? 'bg-primary text-white border-primary'
                 : 'bg-white text-tertiary border-grey-200 hover:text-tertiary-dark'
             }`}
           >
-            {k === 'all' ? 'All' : KIND_STYLE[k].label + 's'}{' '}
-            <span className="font-mono tabular-nums">({counts[k]})</span>
+            {FILTER_LABEL[k]} <span className="font-mono tabular-nums">({counts[k]})</span>
           </button>
         ))}
+        <span className="ml-auto text-[10px] text-tertiary">
+          Scale: Nilsson et al. (2016) — −3 cancelling … +3 indivisible
+        </span>
       </div>
       {shown.length === 0 && (
         <p className="text-[12px] text-tertiary italic px-1 py-4">
-          No goal interactions of this kind have both endpoints in the current scope.
+          No goal interactions in this band have both endpoints in the current scope.
         </p>
       )}
       <div className="space-y-2">
-        {shown.map(i => {
-          const k = KIND_STYLE[i.kind];
-          return (
-            <div
-              key={i.id}
-              className="rounded-lg border p-3"
-              style={{ backgroundColor: k.bg, borderColor: `${k.border}55` }}
-            >
-              <div className="flex items-center gap-2 flex-wrap text-[11.5px]">
-                <span
-                  className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold text-white"
-                  style={{ backgroundColor: k.border }}
-                >
-                  {k.label}
-                </span>
-                <span className="font-bold text-tertiary-dark">{titleOf(i.a)}</span>
-                <span className="text-tertiary">×</span>
-                <span className="font-bold text-tertiary-dark">{titleOf(i.b)}</span>
-              </div>
-              <div className="mt-1.5 grid sm:grid-cols-2 gap-x-4 gap-y-0.5 text-[10.5px] text-tertiary">
-                <p>
-                  <span className="font-semibold text-tertiary-dark">{titleOf(i.a)}:</span>{' '}
-                  {i.goalA}
-                </p>
-                <p>
-                  <span className="font-semibold text-tertiary-dark">{titleOf(i.b)}:</span>{' '}
-                  {i.goalB}
-                </p>
-              </div>
-              <p className="mt-1.5 text-[11px] text-tertiary-dark leading-relaxed">
-                {i.rationale}
+        {shown.map(i => (
+          <div
+            key={i.id}
+            className="rounded-lg border bg-white p-3"
+            style={{ borderColor: `${SCORE_COLOR[i.score]}55` }}
+          >
+            <div className="flex items-center gap-2 flex-wrap text-[11.5px]">
+              <ScoreBadge score={i.score} />
+              <span className="font-bold text-tertiary-dark">{titleOf(i.a)}</span>
+              <span className="text-tertiary">×</span>
+              <span className="font-bold text-tertiary-dark">{titleOf(i.b)}</span>
+              <span className="px-1.5 py-0.5 rounded-full border border-grey-200 text-[9px] text-tertiary">
+                {i.mechanism}
+              </span>
+              <TierChip tier={i.tier} />
+            </div>
+            <div className="mt-1.5 grid sm:grid-cols-2 gap-x-4 gap-y-0.5 text-[10.5px] text-tertiary">
+              <p>
+                <span className="font-semibold text-tertiary-dark">{titleOf(i.a)}:</span>{' '}
+                {i.goalA}
+              </p>
+              <p>
+                <span className="font-semibold text-tertiary-dark">{titleOf(i.b)}:</span>{' '}
+                {i.goalB}
               </p>
             </div>
-          );
-        })}
+            <p className="mt-1.5 text-[11px] text-tertiary-dark leading-relaxed">{i.rationale}</p>
+            <p className="mt-1 text-[9.5px] font-mono text-tertiary">Basis: {i.legalBasis}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -600,10 +678,11 @@ function MeansView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
   return (
     <div className="space-y-3">
       <p className="text-[11px] text-tertiary bg-amber-50 border border-amber-200 rounded px-3 py-2 leading-relaxed">
-        <span className="font-bold">Derived, not re-assessed:</span> this step rolls up the five
+        <span className="font-bold">Derived, not re-assessed:</span> this step rolls the five
         means-side criteria of the objective–delivery checklist — instruments, coverage,
-        enforcement, financing, timeline — into one means-coherence score per policy. Confirm or
-        revert the underlying verdicts in the Policy Navigator; this view follows automatically.
+        enforcement, financing, timeline — into one means-coherence score per policy (met = 1,
+        partial = ½, not-met = 0; thresholds: ≥75% coherent, ≥45% partial). Confirm or revert
+        the underlying verdicts in the Policy Navigator; this view follows automatically.
       </p>
       <div className="overflow-x-auto border border-grey-200 rounded-lg bg-white">
         <table className="w-full border-collapse text-[11px]">
@@ -644,7 +723,11 @@ function MeansView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
                   </td>
                   <td className="px-2 py-1.5 text-center whitespace-nowrap">
                     {p.means.entries.map(e => (
-                      <span key={e.codeId} className="inline-block mx-px" title={`${getMasterCode(e.codeId)?.name ?? e.codeId}: ${e.verdict}\n${e.rationale}`}>
+                      <span
+                        key={e.codeId}
+                        className="inline-block mx-px"
+                        title={`${getMasterCode(e.codeId)?.name ?? e.codeId}: ${e.verdict}\n${e.rationale}`}
+                      >
                         <VerdictDot verdict={e.verdict} />
                       </span>
                     ))}
@@ -659,67 +742,114 @@ function MeansView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
   );
 }
 
-// ── Step 4 · evaluation: change + outcomes ─────────────────────────────────
+// ── Step 4 · evaluation: pace ratio + machinery ────────────────────────────
 
 function EvaluationView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
-  const withOutcome = profiles.filter(p => p.evaluation.outcome);
+  const measured = profiles
+    .filter(p => p.evaluation.measurement)
+    .sort(
+      (a, b) =>
+        (a.evaluation.measurement!.pace.ratio ?? Infinity) -
+        (b.evaluation.measurement!.pace.ratio ?? Infinity),
+    );
   const machineryOnly = profiles.filter(
-    p => !p.evaluation.outcome && p.evaluation.machinery.entries.length > 0,
+    p => !p.evaluation.measurement && p.evaluation.machinery.entries.length > 0,
   );
 
   return (
     <div className="space-y-4">
-      <div className="space-y-2">
-        {withOutcome.map(p => {
-          const o = p.evaluation.outcome!;
-          const grade = GRADE_STYLE[p.evaluation.grade];
+      <p className="text-[11px] text-tertiary bg-amber-50 border border-amber-200 rounded px-3 py-2 leading-relaxed">
+        <span className="font-bold">Computed, not judged:</span> the reading is the pace ratio —
+        observed recent pace (≈ last five years) ÷ pace the target requires from the latest data
+        point — with declared thresholds: ≥ {PACE_THRESHOLDS.onTrack.toFixed(1)} on track, ≥{' '}
+        {PACE_THRESHOLDS.lagging.toFixed(1)} lagging, below (or wrong direction) off track. This
+        mirrors the distance-to-target method of the EEA Trends &amp; Projections reports.
+        Measured readings override machinery verdicts.
+      </p>
+
+      <div className="overflow-x-auto border border-grey-200 rounded-lg bg-white">
+        <table className="w-full border-collapse text-[11px]">
+          <thead>
+            <tr className="bg-grey-50 border-b border-grey-200">
+              <th className="text-left px-3 py-2 font-bold text-tertiary-dark min-w-[160px]">
+                Policy
+              </th>
+              <th className="text-left px-3 py-2 font-bold text-tertiary-dark">Indicator</th>
+              <th className="px-2 py-2 font-bold text-tertiary text-right whitespace-nowrap">
+                Baseline
+              </th>
+              <th className="px-2 py-2 font-bold text-tertiary text-right whitespace-nowrap">
+                Latest
+              </th>
+              <th className="px-2 py-2 font-bold text-tertiary text-right whitespace-nowrap">
+                Target
+              </th>
+              <th
+                className="px-2 py-2 font-bold text-tertiary-dark text-right whitespace-nowrap"
+                title="Observed recent pace ÷ required pace"
+              >
+                Pace ratio
+              </th>
+              <th className="px-2 py-2 font-bold text-tertiary-dark text-center">Reading</th>
+            </tr>
+          </thead>
+          <tbody>
+            {measured.map(p => {
+              const m = p.evaluation.measurement!;
+              const reading = READING_STYLE[m.pace.reading];
+              return (
+                <tr key={p.policyId} className="border-b border-grey-100 align-top">
+                  <td className="px-3 py-1.5 font-medium text-tertiary-dark">
+                    {titleOf(p.policyId)}
+                  </td>
+                  <td className="px-3 py-1.5 text-tertiary">
+                    {m.indicator}
+                    <span className="block text-[9px] italic">
+                      {m.source} <TierChip tier={m.tier} />
+                      {m.notes ? ` · ${m.notes}` : ''}
+                    </span>
+                  </td>
+                  <td className="px-2 py-1.5 text-right font-mono tabular-nums whitespace-nowrap text-tertiary">
+                    {m.baseline.value}
+                    <span className="text-[9px]"> ({m.baseline.year})</span>
+                  </td>
+                  <td className="px-2 py-1.5 text-right font-mono tabular-nums whitespace-nowrap text-tertiary-dark font-bold">
+                    {m.latest.value}
+                    <span className="text-[9px] font-normal"> ({m.latest.year})</span>
+                  </td>
+                  <td className="px-2 py-1.5 text-right font-mono tabular-nums whitespace-nowrap text-tertiary">
+                    {m.target.value}
+                    <span className="text-[9px]"> ({m.target.year})</span>
+                  </td>
+                  <td className="px-2 py-1.5 text-right font-mono tabular-nums font-bold text-tertiary-dark whitespace-nowrap">
+                    {m.pace.ratio === null ? '—' : m.pace.ratio.toFixed(2)}
+                  </td>
+                  <td className="px-2 py-1.5 text-center">
+                    <span
+                      className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold text-white whitespace-nowrap"
+                      style={{ backgroundColor: reading.bg }}
+                    >
+                      {reading.label}
+                    </span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Output side: policy change notes for the measured acts */}
+      <div className="grid gap-1.5 sm:grid-cols-2">
+        {measured.map(p => {
+          const m = p.evaluation.measurement!;
           return (
-            <div key={p.policyId} className="border border-grey-200 rounded-lg bg-white p-3">
-              <div className="flex items-center gap-2 flex-wrap">
-                <span
-                  className="inline-flex items-center px-2 py-0.5 rounded-full text-[9px] font-bold"
-                  style={{ backgroundColor: grade.bg, color: grade.fg }}
-                >
-                  {o.reading === 'delivering'
-                    ? 'Delivering'
-                    : o.reading === 'mixed'
-                      ? 'Mixed'
-                      : 'Off-track'}
-                </span>
-                <span className="text-[12px] font-bold text-tertiary-dark">
-                  {titleOf(p.policyId)}
-                </span>
-                <span className="ml-auto font-mono text-[9px] text-tertiary">
-                  {o.indicator} · as of {o.asOf}
-                </span>
-              </div>
-              <div className="mt-2 grid sm:grid-cols-2 gap-2 text-[11px] leading-relaxed">
-                <div className="bg-grey-50 rounded px-2.5 py-2">
-                  <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
-                    Policy change (output side)
-                  </p>
-                  <p className="mt-0.5 text-tertiary-dark">{o.policyChange}</p>
-                </div>
-                <div className="bg-grey-50 rounded px-2.5 py-2">
-                  <p className="font-mono text-[8.5px] uppercase tracking-[0.12em] text-tertiary">
-                    Measured outcome (impact side)
-                  </p>
-                  <p className="mt-0.5 text-tertiary-dark">{o.measuredOutcome}</p>
-                </div>
-              </div>
-              <div className="mt-1.5 flex items-center gap-1.5 text-[10px] text-tertiary">
-                <span className="font-semibold">Evaluation machinery (from checklist):</span>
-                {p.evaluation.machinery.entries.map(e => (
-                  <span
-                    key={e.codeId}
-                    className="inline-flex items-center gap-1"
-                    title={e.rationale}
-                  >
-                    <VerdictDot verdict={e.verdict} />
-                    {getMasterCode(e.codeId)?.name ?? e.codeId}
-                  </span>
-                ))}
-              </div>
+            <div
+              key={p.policyId}
+              className="border border-grey-100 rounded bg-white px-2.5 py-2 text-[10.5px] text-tertiary leading-relaxed"
+            >
+              <span className="font-bold text-tertiary-dark">{titleOf(p.policyId)} — policy change (output side): </span>
+              {m.policyChange}
             </div>
           );
         })}
@@ -728,7 +858,7 @@ function EvaluationView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
       {machineryOnly.length > 0 && (
         <div>
           <p className="text-[11px] font-bold text-tertiary-dark mb-1.5">
-            Machinery only — no curated outcome measurement yet ({machineryOnly.length})
+            Machinery only — no target-bearing measurement wired yet ({machineryOnly.length})
           </p>
           <div className="flex flex-wrap gap-1.5">
             {machineryOnly.map(p => {
@@ -752,8 +882,8 @@ function EvaluationView({ profiles }: { profiles: PolicyCoherenceProfile[] }) {
           </div>
           <p className="mt-1.5 text-[10px] text-tertiary">
             Dot colour = can this act&apos;s change and outcomes be measured at all (MRV + review
-            verdicts from the checklist)? Curated outcome audits above cover the major acts;
-            the rest follow as indicator data is wired in.
+            verdicts from the checklist)? Acts without a quantified in-act target are not forced
+            into the pace-ratio table — that absence is itself a finding.
           </p>
         </div>
       )}

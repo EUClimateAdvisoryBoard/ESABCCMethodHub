@@ -5,31 +5,47 @@
 // per-act objective–delivery checklist (policy-objective-checklist.ts):
 // where the checklist asks "can this act deliver its own objective?", this
 // model asks "does the policy SPACE cohere — with the world, with itself,
-// with its means, and with what we can measure?". Four steps:
+// with its means, and with what we can measure?".
 //
-//   1. Ex ante design vs world development — do the assumptions the act was
-//      designed on still hold against how the world actually developed?
-//      (curated, per policy)
-//   2. Coherence across policy goals — do the goals of the policies in the
-//      space reinforce or undercut each other? (curated, pairwise)
-//   3. Goals vs means of implementation — are the means commensurate with
-//      the goals? DERIVED from the objective–delivery checklist verdicts
-//      (instruments, coverage, enforcement, financing, timeline) so the two
-//      lenses never diverge and nothing is re-assessed twice.
-//   4. Policy evaluation — can policy change and policy outcomes be
-//      measured, and what do the measurements show? Machinery is DERIVED
-//      from the checklist (monitoring, review); observed policy change and
-//      outcomes are curated per policy.
+// Methodological design: every grade follows MECHANICALLY from a declared
+// rule applied to citable evidence. The analyst's judgment lives in the
+// ex-ante rule declarations (criteria, scales, thresholds — all printed in
+// this file and in the UI), never in per-entry vibes. The four steps each
+// borrow an established framework:
+//
+//   1. Ex ante design vs world development — Assumption-Based Planning
+//      (Dewar et al., RAND 1993): each load-bearing assumption is stated as
+//      a falsifiable proposition with a named SIGNPOST indicator and an
+//      explicit VIOLATION CRITERION; status (valid / under pressure /
+//      violated) is the criterion applied to a sourced observation.
+//   2. Coherence across policy goals — the seven-point goal-interaction
+//      scale of Nilsson, Griggs & Visbeck (2016, Nature 534:320) with the
+//      ICSU (2017) decision rules: −3 cancelling … +3 indivisible. Each
+//      score names the interaction mechanism and cites the legal provisions
+//      that create it.
+//   3. Goals vs means of implementation — goals/means congruence in the
+//      policy-mix sense (Howlett & Rayner 2007), DERIVED from the
+//      objective–delivery checklist's five means-side criteria
+//      (instruments, coverage, enforcement, financing, timeline). Nothing
+//      is re-assessed; the two lenses cannot diverge.
+//   4. Policy evaluation — the distance-to-target method used in the EEA
+//      Trends & Projections reports: required pace to target vs observed
+//      recent pace, computed in code with declared thresholds. Evaluation
+//      MACHINERY (MRV + review) is derived from the checklist; the
+//      measurements are sourced data points, the reading is arithmetic.
+//
+// Evidence quality uses a GRADE-style tier instead of pseudo-confidences:
+//   A — official statistics / registries / legal acts (Eurostat, EEA
+//       inventory, ETS Union Registry, OJ).
+//   B — official assessments (Commission, EEA, EMSA, EASA reports).
+//   C — secondary sources (industry trackers, NGO monitors).
 //
 // Redundancy note (deliberate design decision): steps 3 and 4 reuse the
 // (policyId, check-*) verdicts shipped in PR #302's checklist as their
 // evidence base instead of duplicating them. Only what the checklist cannot
-// express — assumptions vs world (1), cross-policy goal interactions (2)
-// and measured outcomes (4b) — is authored here.
-//
-// Like the master tags and checklist verdicts, every curated entry is an
-// AI-assessed baseline (origin 'ai'); prefer re-running the assessment
-// agents over hand-editing. Snapshot date for world developments: mid-2026.
+// express — assumption audits (1), cross-policy interactions (2) and
+// outcome measurements (4) — is authored here. Observation snapshot:
+// mid-2026; observations carry their sources so each can be re-verified.
 // ---------------------------------------------------------------------------
 
 import {
@@ -46,6 +62,15 @@ export type CoherenceStepId = 'ex-ante' | 'horizontal' | 'goals-means' | 'evalua
 /** Unified per-step grade, comparable across all four steps. */
 export type CoherenceGrade = 'coherent' | 'partial' | 'incoherent' | 'not-assessed';
 
+/** GRADE-style evidence-quality tier (see header). */
+export type EvidenceTier = 'A' | 'B' | 'C';
+
+export const EVIDENCE_TIER_LABEL: Record<EvidenceTier, string> = {
+  A: 'Official statistics / legal acts',
+  B: 'Official assessments',
+  C: 'Secondary sources',
+};
+
 export interface CoherenceStepMeta {
   id: CoherenceStepId;
   ordinal: 1 | 2 | 3 | 4;
@@ -54,6 +79,8 @@ export interface CoherenceStepMeta {
   name: string;
   shortName: string;
   question: string;
+  /** The published framework the step borrows. */
+  framework: string;
   /** Where the evidence comes from — surfaced in the UI for provenance. */
   basis: 'curated' | 'derived from objective–delivery checklist' | 'mixed';
   method: string;
@@ -68,9 +95,10 @@ export const COHERENCE_STEPS: CoherenceStepMeta[] = [
     shortName: 'Ex ante',
     question:
       'Do the assumptions the policy was designed on still hold against how the world actually developed?',
+    framework: 'Assumption-Based Planning (Dewar et al., RAND 1993)',
     basis: 'curated',
     method:
-      'For each act, the load-bearing design assumption (technology costs, political economy, baseline trends) is stated and confronted with the observed development. Status: holds / drifting / broken.',
+      'Each load-bearing assumption is stated as a falsifiable proposition with a signpost indicator and an explicit violation criterion. Status = the criterion applied to a sourced observation: valid / under pressure / violated.',
   },
   {
     id: 'horizontal',
@@ -80,9 +108,10 @@ export const COHERENCE_STEPS: CoherenceStepMeta[] = [
     shortName: 'Across goals',
     question:
       'Across all policy goals of all policies in the space — do they reinforce or undercut each other?',
+    framework: 'Seven-point goal-interaction scale (Nilsson et al. 2016; ICSU 2017)',
     basis: 'curated',
     method:
-      'Pairwise screening of goal interactions across the corpus: synergy (goals reinforce), tension (goals compete at the margin), conflict (one goal is served at the direct expense of another).',
+      'Pairwise goal interactions scored −3 (cancelling) to +3 (indivisible), each with a named mechanism and the legal provisions that create the interaction.',
   },
   {
     id: 'goals-means',
@@ -92,9 +121,10 @@ export const COHERENCE_STEPS: CoherenceStepMeta[] = [
     shortName: 'Goals ↔ means',
     question:
       'Are the means of implementation — instruments, coverage, enforcement, financing, timeline — commensurate with the stated goals?',
+    framework: 'Goals/means congruence in policy mixes (Howlett & Rayner 2007)',
     basis: 'derived from objective–delivery checklist',
     method:
-      'Derived, not re-assessed: the five means-side criteria of the objective–delivery checklist (instruments, coverage, enforcement, financing, timeline) are rolled into a means-coherence score per policy.',
+      'Derived, not re-assessed: the five means-side criteria of the objective–delivery checklist are rolled into a means-coherence score per policy (met = 1, partial = ½, not-met = 0, over applicable criteria).',
   },
   {
     id: 'evaluation',
@@ -103,10 +133,11 @@ export const COHERENCE_STEPS: CoherenceStepMeta[] = [
     name: 'Policy evaluation: measuring policy change and policy outcomes',
     shortName: 'Evaluation',
     question:
-      'Can policy change and policy outcomes be measured — and what do the measurements show so far?',
+      'Can policy change and policy outcomes be measured — and what does the measured pace say against the target?',
+    framework: 'Distance-to-target pace ratio (EEA Trends & Projections method)',
     basis: 'mixed',
     method:
-      'Evaluation machinery (MRV + review/ratchet) is derived from the checklist; observed policy change (output side) and measured outcomes (impact side) are curated against published indicator data.',
+      'Evaluation machinery (MRV + review) is derived from the checklist. Outcomes: observed recent pace ÷ required pace to target, computed in code. Thresholds: ≥ 1.0 on track · ≥ 0.5 lagging · < 0.5 (or wrong direction) off track.',
   },
 ];
 
@@ -116,20 +147,30 @@ export const COHERENCE_STEP_BY_ID: Record<CoherenceStepId, CoherenceStepMeta> =
     CoherenceStepMeta
   >;
 
-// ── Step 1 · Ex ante design vs world development ───────────────────────────
+// ── Step 1 · Ex ante design vs world development (Assumption-Based Planning)
 
-export type AssumptionStatus = 'holds' | 'drifting' | 'broken';
+export type AssumptionStatus = 'valid' | 'under-pressure' | 'violated';
 
 export interface ExAnteAssessment {
   policyId: string;
   /** Year the ex-ante design assumptions were fixed (adoption / last recast). */
   designYear: number;
-  /** The load-bearing assumption the act was designed on. */
+  /** The load-bearing assumption, stated as a falsifiable proposition. */
   assumption: string;
-  /** How the world actually developed against that assumption. */
-  development: string;
+  /** The signpost indicator monitored to test the assumption (ABP term). */
+  signpost: string;
+  /** Explicit rule: what observation falsifies the assumption ("violated"),
+   *  and — where useful — what counts as the intermediate band ("under
+   *  pressure"). The status below must follow from applying THIS rule to
+   *  the observation; reviewers audit the application, not a vibe. */
+  violationCriterion: string;
+  /** What the signpost currently shows, with figures where available. */
+  observation: string;
+  /** Citable source of the observation. */
+  source: string;
+  tier: EvidenceTier;
+  /** = violationCriterion applied to observation. */
   status: AssumptionStatus;
-  confidence: number;
 }
 
 export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
@@ -137,269 +178,395 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     policyId: 'eu-climate-law',
     designYear: 2021,
     assumption:
-      'A stable pro-climate legislative majority would translate the 2050 objective into successive ratchets on schedule — starting with a 2040 target proposed by H1 2024 (Art. 4(3)).',
-    development:
-      'The 2040 proposal slipped past its legal deadline into a contested negotiation (−90% with international-credit and other flexibilities) inside a Commission cycle reframed around competitiveness and simplification.',
-    status: 'drifting',
-    confidence: 0.8,
+      'The Art. 4(3) ratchet operates on schedule: a 2040 target is proposed by H1 2024 and adopted in time to anchor the post-2030 architecture.',
+    signpost: 'Dates of the Commission 2040 proposal and of co-legislator adoption, vs the Art. 4(3) deadline.',
+    violationCriterion:
+      'Violated if no 2040 target is in force when the post-2030 sectoral proposals are tabled; under pressure if the H1 2024 proposal deadline is missed or adoption stalls.',
+    observation:
+      'The proposal slipped past the H1 2024 deadline and remains in negotiation (−90% with flexibilities under discussion); no adopted 2040 target; post-2030 sectoral files not yet tabled.',
+    source: 'Commission work programmes 2024–26; legislative tracker.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'eu-ets-directive': {
     policyId: 'eu-ets-directive',
     designYear: 2023,
     assumption:
-      'A steadily rising carbon price under the tightened cap would drive industrial abatement investment while CBAM enables the free-allocation phase-out.',
-    development:
-      'The cap mechanics worked — covered emissions kept falling and the MSR absorbed surplus — but part of the recent industrial decline reflects energy-crisis output contraction rather than abatement investment, and prices have ranged €60–90 rather than ratcheting.',
-    status: 'holds',
-    confidence: 0.75,
+      'The tightened cap binds: verified emissions track at or below the cap trajectory and the MSR keeps the allowance surplus inside its band.',
+    signpost: 'Verified stationary emissions vs the cap path; total number of allowances in circulation (TNAC) vs the MSR thresholds.',
+    violationCriterion:
+      'Violated if verified emissions exceed the cap path or TNAC sits outside the MSR band for two consecutive years; under pressure if abatement is shown to be dominated by output loss rather than investment.',
+    observation:
+      'Stationary verified emissions fell to ~47% below 2005 by 2023, below the cap path; TNAC remains within the MSR band; attribution analyses assign part of the 2022–23 fall to crisis output contraction but investment-driven power-sector abatement dominates.',
+    source: 'EEA ETS data viewer; Commission carbon market reports.',
+    tier: 'A',
+    status: 'valid',
   },
   'effort-sharing-regulation': {
     policyId: 'effort-sharing-regulation',
     designYear: 2023,
     assumption:
-      'National measures in transport, buildings, agriculture and waste would bend trajectories to the −40% aggregate, with flexibilities as a thin buffer.',
-    development:
-      'Commission assessments project an aggregate gap to −40%; several Member States are on course to overshoot their annual allocations with the flexibility pools too small to cover everyone who needs them.',
-    status: 'drifting',
-    confidence: 0.8,
+      'National measures suffice to keep aggregate ESR emissions within the annual allocations (AEAs) down to −40% by 2030, with flexibilities as a thin buffer.',
+    signpost: 'Reported ESR emissions vs AEAs; aggregate WEM/WAM projection gap; number of Member States projecting cumulative deficits.',
+    violationCriterion:
+      'Violated if aggregate projections show a 2030 gap with the flexibility pools exhausted; under pressure if multiple Member States project AEA deficits.',
+    observation:
+      'Commission assessments project an aggregate gap to −40%; several Member States (incl. DE, IE, IT) project cumulative deficits exceeding their realistic flexibility access.',
+    source: 'Climate Action Progress Report; EEA Trends & Projections.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'lulucf-regulation': {
     policyId: 'lulucf-regulation',
     designYear: 2023,
     assumption:
-      'A roughly stable forest sink baseline from which targeted action could lift net removals to 310 Mt CO₂eq by 2030.',
-    development:
-      'The EU net sink collapsed — from around −310 Mt (2013–2016 average) to roughly −200 Mt — on harvest intensity, bark beetle, drought and fire. The baseline the target was calibrated on no longer exists.',
-    status: 'broken',
-    confidence: 0.85,
+      'The land sink stays near its 2013–2016 reference (~−310 Mt CO₂eq) so that targeted action can add the +42 Mt needed for the 2030 target.',
+    signpost: 'Net LULUCF flux in the EU GHG inventory.',
+    violationCriterion:
+      'Violated if the inventory sink falls more than 50 Mt below the reference for three or more consecutive years.',
+    observation:
+      'The reported net sink declined to roughly −200 Mt in recent inventory years — ~110 Mt below the reference, persistent across multiple years.',
+    source: 'EEA / UNFCCC EU GHG inventory.',
+    tier: 'A',
+    status: 'violated',
   },
   'renewable-energy-directive': {
     policyId: 'renewable-energy-directive',
     designYear: 2023,
     assumption:
-      'Continued cost declines plus permitting acceleration would carry the renewables share to 42.5% by 2030.',
-    development:
-      'Solar over-delivers on cost and volume, but onshore wind permitting, auction under-subscription and grid-connection queues lag; aggregated NECP trajectories land short of 42.5% without additional measures.',
-    status: 'drifting',
-    confidence: 0.75,
+      'Permitting acceleration plus technology cost declines yield additions consistent with a 42.5% renewables share by 2030.',
+    signpost: 'RES share (Eurostat SHARES) vs the linear 22.1% → 42.5% path; aggregated NECP contributions.',
+    violationCriterion:
+      'Violated if the share trails the linear path by more than 3 pp; under pressure if it trails at all or aggregated NECPs land short of 42.5%.',
+    observation:
+      'Share 24.5% in 2023 vs ~26.2% on the linear path (≈ −1.7 pp); aggregated NECP contributions land roughly 2–3 pp short of 42.5%.',
+    source: 'Eurostat SHARES; Commission NECP aggregate assessment.',
+    tier: 'A',
+    status: 'under-pressure',
   },
   'energy-efficiency-directive': {
     policyId: 'energy-efficiency-directive',
     designYear: 2023,
     assumption:
-      'Structural efficiency gains would pace final consumption down to the 763 Mtoe cap along the stepped savings obligation.',
-    development:
-      'The 2022–23 consumption fall was partly crisis demand destruction, not structural; electrification plus data-centre and AI load growth now press the cap from below as demand normalises.',
-    status: 'drifting',
-    confidence: 0.7,
+      'Reductions toward the 763 Mtoe cap are structural (efficiency-driven), not cyclical demand response.',
+    signpost: 'Final energy consumption (Eurostat), decomposed for weather and output effects; data-centre electricity demand.',
+    violationCriterion:
+      'Violated if final consumption rebounds above the linear path to 763 Mtoe for two consecutive years; under pressure if observed cuts are attributed mainly to price-driven demand response.',
+    observation:
+      'Consumption fell sharply in 2022–23 with official analyses attributing a substantial share to price-driven demand response; electrification and data-centre load growth press upward as prices normalise.',
+    source: 'Eurostat energy balances; EEA Trends & Projections.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'cbam-regulation': {
     policyId: 'cbam-regulation',
     designYear: 2023,
     assumption:
-      'Import-side carbon accounting would be administrable across the declarant base and accepted by trading partners as the price of open markets.',
-    development:
-      'The 2025 simplification raised the de-minimis to 50 t, removing the vast majority of declarants (while keeping ~99% of embedded emissions); the export side remains unsolved and partner-country friction and circumvention risks persist.',
-    status: 'drifting',
-    confidence: 0.7,
+      'Embedded-emissions accounting is administrable across the full declarant base and the definitive regime starts on schedule in 2026.',
+    signpost: 'Share of declarations using default values; legal changes to declarant scope; definitive-regime start date.',
+    violationCriterion:
+      'Violated if the definitive regime start slips or sectoral scope is cut; under pressure if the declarant base is materially redrawn or default values dominate reporting.',
+    observation:
+      'The 2025 simplification raised the de-minimis to 50 t, removing ~90% of declarants (while keeping ~99% of embedded emissions); default values dominate transitional reports; the 2026 start date stands.',
+    source: 'Omnibus simplification package 2025; Commission CBAM transitional-period reports.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'co2-cars-regulation': {
     policyId: 'co2-cars-regulation',
     designYear: 2023,
     assumption:
-      'EV cost parity and charging build-out would make 100% zero-emission new sales by 2035 a glide path, with 2025 targets as an early forcing point.',
-    development:
-      'EV uptake stalled in key markets in 2024, the 2025 compliance point was softened into 2025–27 averaging, and the 2035 review was pulled forward — the glide path is being renegotiated in flight.',
-    status: 'drifting',
-    confidence: 0.75,
+      'BEV uptake follows a trajectory consistent with the 2030 (−55%) and 2035 (100% ZEV) steps without compliance relief.',
+    signpost: 'BEV share of new registrations; amending acts touching compliance timing.',
+    violationCriterion:
+      'Violated if a compliance step is weakened in law; under pressure if the BEV share stalls below the trajectory the 2030 step implies.',
+    observation:
+      'BEV share stalled around the mid-teens in 2024; the 2025 step was converted into 2025–27 averaging by amending regulation and the 2035 review was advanced — compliance relief was enacted in law.',
+    source: 'ACEA registration statistics; amending regulation (2025, OJ).',
+    tier: 'A',
+    status: 'violated',
   },
   'afir-regulation': {
     policyId: 'afir-regulation',
     designYear: 2023,
     assumption:
-      'Fleet-based infrastructure targets would keep public charging ahead of EV uptake along the TEN-T network.',
-    development:
-      'Public charging growth broadly tracks the fleet-based targets; heavy-duty charging and hydrogen refuelling coverage lag but the light-duty design assumption is performing.',
-    status: 'holds',
-    confidence: 0.7,
+      'Fleet-indexed targets keep public charging at or above 1.3 kW per registered BEV, with TEN-T coverage milestones met in 2025/2027.',
+    signpost: 'Installed public charging capacity per registered BEV; TEN-T node and corridor coverage.',
+    violationCriterion:
+      'Violated if Member States broadly miss the fleet-based capacity formula or the dated TEN-T milestones.',
+    observation:
+      'Aggregate capacity per BEV exceeds the formula in most Member States and light-duty TEN-T coverage advances on schedule; heavy-duty pools and hydrogen stations lag their later milestones.',
+    source: 'European Alternative Fuels Observatory (EAFO).',
+    tier: 'B',
+    status: 'valid',
   },
   'epbd-recast': {
     policyId: 'epbd-recast',
     designYear: 2024,
     assumption:
-      'Affordable finance and national renovation plans would roughly double the renovation rate, with minimum standards pulling the worst stock first.',
-    development:
-      'Higher interest rates and political pushback on minimum-performance obligations have kept deep-renovation rates near 1%; the national plans due 2026 will show whether the trajectory can recover.',
-    status: 'drifting',
-    confidence: 0.7,
+      'Financing conditions and national renovation plans support a doubling of deep-renovation rates this decade.',
+    signpost: 'Deep-renovation rate; content of national building renovation plans (due 2026).',
+    violationCriterion:
+      'Violated if the deep-renovation rate remains at or below ~1%/yr after national plans take effect; under pressure while rates stagnate near 1% pre-plan.',
+    observation:
+      'Deep-renovation rates remain near 1%/yr amid higher financing costs; national plans are not yet due, so the post-plan test has not run.',
+    source: 'BPIE renovation monitors; Commission EPBD implementation reports.',
+    tier: 'C',
+    status: 'under-pressure',
   },
   'social-climate-fund': {
     policyId: 'social-climate-fund',
     designYear: 2023,
     assumption:
-      'ETS2 launches in 2027 with prices near the €45 soft cap, capitalising the fund at ~€65 bn in time to cushion vulnerable households before carbon costs bite.',
-    development:
-      'The ETS2 start is politically contested, with delay proposals and price-spike fears; the fund’s revenue base and its sequencing ahead of household carbon costs are both wobbling.',
-    status: 'drifting',
-    confidence: 0.7,
+      'ETS2 starts in 2027 with prices near the €45 soft cap, capitalising the fund (~€65 bn) before household carbon costs peak.',
+    signpost: 'ETS2 start date in law; auction/futures price expectations; Social Climate Plan submissions.',
+    violationCriterion:
+      'Violated if the ETS2 start is delayed in law or auction yield falls materially below plan; under pressure while delay or softening proposals are live in the legislature.',
+    observation:
+      'Delay/softening proposals are under active negotiation; price forecasts straddle the soft cap; Social Climate Plans were due 2025–26 with submissions uneven.',
+    source: 'Council/EP state of play; Commission SCF guidance.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'methane-regulation': {
     policyId: 'methane-regulation',
     designYear: 2024,
     assumption:
-      'Domestic MRV and LDAR duties first, then import standards by 2030, with exporter compliance commercially rational.',
-    development:
-      'Implementation proceeds on schedule; the open question is exporter-side compliance (notably US LNG after the 2025 deregulatory turn), which the import-standard design assumed would follow the market.',
-    status: 'holds',
-    confidence: 0.6,
+      'Exporters comply with MRV-equivalence and the 2030 import intensity standard rather than reroute cargoes.',
+    signpost: 'Importer MRV filings; supplier-country equivalence decisions; LNG trade-flow shifts.',
+    violationCriterion:
+      'Violated if major suppliers refuse equivalence and enforcement is waived; under pressure if supplier data becomes demonstrably unverifiable.',
+    observation:
+      'Domestic implementation proceeds on schedule; the 2025 US deregulatory turn raises verification questions for one major supplier but no equivalence refusal or enforcement waiver has occurred.',
+    source: 'Commission implementation reports.',
+    tier: 'B',
+    status: 'valid',
   },
   'nature-restoration-law': {
     policyId: 'nature-restoration-law',
     designYear: 2024,
     assumption:
-      'A durable consensus to restore 20% of EU land and sea by 2030, carried into national restoration plans by mid-2026.',
-    development:
-      'Adopted by the narrowest of margins after near-collapse; restoration financing is unresolved and several Member States signal minimalist plans — the consensus the timetable assumed is thin.',
-    status: 'drifting',
-    confidence: 0.75,
+      'Member States submit credible national restoration plans by September 2026 with financing identified.',
+    signpost: 'Plan submissions, their area coverage and financing sections.',
+    violationCriterion:
+      'Violated if plans are missing or facially non-compliant for a majority of Member States after the deadline; under pressure while dedicated financing remains unidentified and pre-submission signals are minimalist.',
+    observation:
+      'Adopted by the narrowest margin; no dedicated EU restoration fund was created; several Member States signal minimalist plans ahead of the 2026 deadline.',
+    source: 'Commission; Environment Council records.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   csrd: {
     policyId: 'csrd',
     designYear: 2022,
     assumption:
-      'Economy-wide, audited sustainability data arriving in successive waves from FY2024 would become the data backbone for SFDR, the Taxonomy and supervisory practice.',
-    development:
-      'The 2025 Omnibus removed roughly 80% of originally covered firms (raising thresholds to 1,000+ employees) and delayed later waves by two years — the designed data backbone was cut down mid-construction.',
-    status: 'broken',
-    confidence: 0.8,
+      'The wave-based scope (large + listed undertakings from ≥250 employees) holds, generating economy-wide audited data from FY2024.',
+    signpost: 'Legal scope of the reporting obligation; count of in-scope undertakings.',
+    violationCriterion:
+      'Violated if the legal scope is materially cut or reporting waves are deferred in law.',
+    observation:
+      'The 2025 Omnibus raised the threshold to 1,000+ employees and deferred later waves by two years — removing ~80% of originally in-scope firms by count.',
+    source: 'Omnibus simplification package 2025 (OJ).',
+    tier: 'A',
+    status: 'violated',
   },
   'fueleu-maritime': {
     policyId: 'fueleu-maritime',
     designYear: 2023,
     assumption:
-      'A GHG-intensity standard tightening from 2025 would pull fuel switching, with biofuels and LNG as bridge compliance and e-fuels rewarded later.',
-    development:
-      'Early compliance is happening via the expected bridge fuels; the e-fuel premium persists, and the IMO net-zero framework now adds a parallel global layer the act anticipated only loosely.',
-    status: 'holds',
-    confidence: 0.65,
+      'Bridge fuels (bio/LNG) cover the early GHG-intensity steps while the e-fuel cost premium narrows ahead of the 2034 RFNBO review.',
+    signpost: 'Fleet compliance balances against the 2025 step; e-fuel offtake contracting.',
+    violationCriterion:
+      'Violated if fleets fail the 2025 GHG-intensity step at scale; under pressure if the e-fuel premium widens with no offtake pipeline forming.',
+    observation:
+      'Early compliance proceeds via the expected bridge fuels; an e-fuel premium persists but offtake contracting has begun; the IMO net-zero framework adds a parallel global layer.',
+    source: 'EMSA / verifier compliance data.',
+    tier: 'B',
+    status: 'valid',
   },
   'refueleu-aviation': {
     policyId: 'refueleu-aviation',
     designYear: 2023,
     assumption:
-      'SAF supply would scale to the 6% blend by 2030 including the 1.2% synthetic-fuel sub-mandate.',
-    development:
-      'The 2% step is being met, but e-SAF projects face FID delays and cancellations; supply for the 2030 synthetic sub-target is genuinely uncertain.',
-    status: 'drifting',
-    confidence: 0.7,
+      'SAF supply scales to the 2030 6% blend including the 1.2% synthetic-fuel sub-mandate.',
+    signpost: 'SAF production capacity pipeline; e-SAF final investment decisions vs the volume the sub-mandate requires.',
+    violationCriterion:
+      'Violated if e-SAF capacity available by 2030 remains below the sub-mandate requirement on committed FIDs after 2027; under pressure as FIDs slip or cancel.',
+    observation:
+      'The 2% step is being met; multiple e-SAF projects have been delayed or cancelled and committed 2030 capacity currently sits below the sub-mandate requirement, with the post-2027 test still open.',
+    source: 'EASA SAF reporting; industry project trackers.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'governance-regulation': {
     policyId: 'governance-regulation',
     designYear: 2018,
     assumption:
-      'The NECP plan–assess–recommend cycle would discipline national planning enough to close ambition and implementation gaps without hard enforcement.',
-    development:
-      'Most updated NECPs arrived late; Commission gap assessments keep finding ambition and implementation shortfalls, and the soft-governance design has no further escalation step to deploy.',
-    status: 'drifting',
-    confidence: 0.75,
+      'The plan–assess–recommend cycle induces timely, gap-closing NECPs without hard enforcement.',
+    signpost: 'NECP submission timeliness; assessed ambition and implementation gaps across successive cycles.',
+    violationCriterion:
+      'Violated if assessed gaps persist across two consecutive planning cycles despite recommendations; under pressure if submissions are broadly late within a single cycle.',
+    observation:
+      'Most 2023–24 updates were late and the Commission aggregate assessment again finds ambition and implementation gaps — the second consecutive cycle with persistent gaps after recommendations.',
+    source: 'Commission NECP assessments (2020 and 2024–25 cycles).',
+    tier: 'B',
+    status: 'violated',
   },
   'net-zero-industry-act': {
     policyId: 'net-zero-industry-act',
     designYear: 2024,
     assumption:
-      'EU demand-pull (auctions with resilience criteria, permitting speed-ups) could carry domestic cleantech manufacturing toward the 40% benchmark.',
-    development:
-      'Chinese overcapacity pricing, the US subsidy pull and exits among European solar makers keep several segments far from the benchmark; demand-pull alone is proving too weak a lever.',
-    status: 'drifting',
-    confidence: 0.7,
+      'Demand-pull (resilience criteria in auctions, permitting speed-ups) suffices to move strategic-technology manufacturing toward the 40% benchmark without price support.',
+    signpost: 'EU manufacturing capacity shares by strategic technology; plant FIDs and exits.',
+    violationCriterion:
+      'Violated if domestic shares stagnate or fall across flagship segments two years after applicability; under pressure amid exits and persistent import price gaps.',
+    observation:
+      'Solar module share remains in low single digits with exits among EU makers; batteries mixed; wind holds. The two-year post-applicability test window is still running.',
+    source: 'JRC cleantech monitoring; SolarPower Europe.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'critical-raw-materials-act': {
     policyId: 'critical-raw-materials-act',
     designYear: 2024,
     assumption:
-      'A pipeline of strategic projects could be permitted on the accelerated 27/15-month tracks toward the 2030 extraction, processing and recycling benchmarks.',
-    development:
-      'Strategic-project designations have proceeded since 2025 broadly on schedule; the extraction benchmark remains the hardest, but the permitting design assumption is so far performing.',
-    status: 'holds',
-    confidence: 0.6,
+      'Strategic-project status plus 27/15-month permitting tracks mobilise a project pipeline toward the 2030 extraction, processing and recycling benchmarks.',
+    signpost: 'Strategic-project designations; realised permitting durations on designated projects.',
+    violationCriterion:
+      'Violated if designation rounds stall or realised permitting broadly exceeds the statutory tracks.',
+    observation:
+      'Designation rounds since 2025 have proceeded broadly on schedule; the statutory permitting clock is not yet tested at scale; the extraction benchmark remains the hardest.',
+    source: 'Commission / European Critical Raw Materials Board.',
+    tier: 'B',
+    status: 'valid',
   },
   'repowereu-plan': {
     policyId: 'repowereu-plan',
     designYear: 2022,
     assumption:
-      'Emergency demand reduction, supplier diversification and an accelerated renewables push could end dependence on Russian fossil gas without rationing.',
-    development:
-      'The design scenario materialised: Russian pipeline share collapsed from ~40% to under 10%, storage targets were met, and renewables plus LNG filled the gap — at a price cost the plan accepted.',
-    status: 'holds',
-    confidence: 0.85,
+      'Diversification, demand cuts and accelerated renewables can replace Russian fossil gas without rationing.',
+    signpost: 'Russian share of EU gas imports; storage-filling targets; gas demand-reduction outturn.',
+    violationCriterion:
+      'Violated if rationing occurs or the Russian share fails to fall materially below its 2021 level.',
+    observation:
+      'The Russian share fell from ~45% (2021) to under 20% and falling; storage targets were met every season; voluntary demand-reduction targets were achieved; no rationing occurred.',
+    source: 'Eurostat; ACER market monitoring.',
+    tier: 'A',
+    status: 'valid',
   },
   'eu-green-deal': {
     policyId: 'eu-green-deal',
     designYear: 2019,
     assumption:
-      'Climate would remain the organising frame of EU policy across political cycles, letting the growth strategy unfold as one coherent programme.',
-    development:
-      'The 2024–29 cycle reframed around competitiveness, security and simplification; the Clean Industrial Deal recasts the agenda and Omnibus packages trim several Green Deal instruments.',
-    status: 'drifting',
-    confidence: 0.8,
+      'Climate remains the organising frame across Commission cycles, keeping the announced instrument pipeline intact.',
+    signpost: 'Fate of announced Green Deal instruments across the 2024 cycle change; status of the core 2030/2050 targets.',
+    violationCriterion:
+      'Violated if the core 2030/2050 targets are reopened; under pressure if accompanying instruments are withdrawn or materially weakened.',
+    observation:
+      'Core targets stand, but the SUR was withdrawn and CSRD, CBAM and Taxonomy reporting were trimmed by Omnibus packages as the agenda was reframed around the Clean Industrial Deal.',
+    source: 'Commission work programmes 2024–26.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'taxonomy-regulation': {
     policyId: 'taxonomy-regulation',
     designYear: 2020,
     assumption:
-      'A single science-based classification would become the market’s common language for sustainable investment, with alignment reporting universal across large firms.',
-    development:
-      'Usability complaints led the 2025 Omnibus to make significant parts of taxonomy reporting voluntary and cut datapoints; litigation over the gas/nuclear criteria continues to contest the “science-based” core.',
-    status: 'drifting',
-    confidence: 0.75,
+      'A stable, science-based classification becomes the market’s common language, with mandatory alignment reporting across large firms.',
+    signpost: 'Scope of mandatory Art. 8 reporting; legal challenges to the screening criteria.',
+    violationCriterion:
+      'Violated if alignment reporting becomes substantially voluntary across the large-firm universe or criteria are annulled; under pressure amid simplification cuts and live litigation.',
+    observation:
+      'The 2025 Omnibus made taxonomy reporting voluntary below the new 1,000-employee threshold and cut datapoints; reporting remains mandatory for the largest firms; gas/nuclear criteria litigation continues.',
+    source: 'Omnibus simplification package 2025; CJEU docket.',
+    tier: 'B',
+    status: 'under-pressure',
   },
   'farm-to-fork-strategy': {
     policyId: 'farm-to-fork-strategy',
     designYear: 2020,
     assumption:
-      'The 2030 pesticide, organic and nutrient targets would be carried into law by a legislative wave — the SUR pesticide regulation and a sustainable food systems framework.',
-    development:
-      'The SUR was withdrawn in 2024 after farmer protests and the framework law was never tabled; the strategy’s targets are now orphaned aims with no delivery vehicle.',
-    status: 'broken',
-    confidence: 0.85,
+      'The 2030 pesticide, organic and nutrient targets are carried into binding law via the SUR and a sustainable food systems framework law.',
+    signpost: 'Legal status of the SUR proposal and of the framework-law proposal.',
+    violationCriterion:
+      'Violated if the SUR is withdrawn or the framework law is not tabled within the strategy window.',
+    observation: 'The SUR was withdrawn in February 2024; the framework law was never tabled.',
+    source: 'Commission work programme 2024.',
+    tier: 'A',
+    status: 'violated',
   },
   'cap-strategic-plans': {
     policyId: 'cap-strategic-plans',
     designYear: 2021,
     assumption:
-      'The green architecture — GAEC conditionality plus eco-schemes — would hold through the 2023–27 cycle and lift the environmental baseline of farm payments.',
-    development:
-      'The 2024 protests triggered rapid weakening of GAEC conditionality and new exemptions; the environmental baseline was lowered mid-period, inverting the design’s ratchet direction.',
-    status: 'drifting',
-    confidence: 0.75,
+      'The green architecture (GAEC conditionality + eco-schemes) holds for 2023–27, raising the environmental baseline of farm payments.',
+    signpost: 'Legal status of GAEC standards; eco-scheme budgets in approved plans.',
+    violationCriterion: 'Violated if GAEC standards are deleted or relaxed in law mid-period.',
+    observation:
+      'The 2024 amending regulation relaxed or deleted several GAEC obligations and exempted small farms (<10 ha) from conditionality controls — mid-period, in law.',
+    source: 'Reg. (EU) 2024/1468 (OJ).',
+    tier: 'A',
+    status: 'violated',
   },
   'fit-for-55': {
     policyId: 'fit-for-55',
     designYear: 2021,
     assumption:
-      'The package would be adopted as an interlocking whole — pricing, targets, standards and funds calibrated together to deliver −55%.',
-    development:
-      'Essentially all elements were adopted by 2023–24, an unusual legislative success; the interlock exists in law, and delivery risk has migrated into the individual acts and national implementation.',
-    status: 'holds',
-    confidence: 0.85,
+      'The package is adopted as an interlocking whole — pricing, targets, standards and funds calibrated together.',
+    signpost: 'Adoption status of the package files.',
+    violationCriterion: 'Violated if key files fail adoption or are decoupled from the calibration.',
+    observation: 'All major files were adopted 2022–24; the interlock exists in law.',
+    source: 'Legislative records (OJ).',
+    tier: 'A',
+    status: 'valid',
   },
 };
 
-// ── Step 2 · Coherence across policy goals ─────────────────────────────────
+// ── Step 2 · Coherence across policy goals (Nilsson et al. 2016 scale) ─────
 
-export type InteractionKind = 'synergy' | 'tension' | 'conflict';
+/** The seven-point goal-interaction scale of Nilsson, Griggs & Visbeck
+ *  (2016, Nature 534:320), definitions per the ICSU (2017) guide. */
+export type InteractionScore = -3 | -2 | -1 | 0 | 1 | 2 | 3;
+
+export const INTERACTION_SCALE: Record<
+  InteractionScore,
+  { name: string; definition: string }
+> = {
+  3: { name: 'Indivisible', definition: 'Inextricably linked to the achievement of the other goal.' },
+  2: { name: 'Reinforcing', definition: 'Aids the achievement of the other goal.' },
+  1: { name: 'Enabling', definition: 'Creates conditions that further the other goal.' },
+  0: { name: 'Consistent', definition: 'No significant positive or negative interaction.' },
+  [-1]: { name: 'Constraining', definition: 'Limits options on the other goal.' },
+  [-2]: { name: 'Counteracting', definition: 'Clashes with the other goal.' },
+  [-3]: { name: 'Cancelling', definition: 'Makes it impossible to reach the other goal.' },
+};
+
+/** The causal channel through which the interaction runs. */
+export type InteractionMechanism =
+  | 'resource competition'
+  | 'land/sea-use competition'
+  | 'regulatory dependency'
+  | 'data dependency'
+  | 'price signal'
+  | 'demand pull'
+  | 'timing & sequencing'
+  | 'distributional';
 
 export interface GoalInteraction {
   id: string;
   /** The two policies whose goals interact (order is presentational only). */
   a: string;
   b: string;
-  kind: InteractionKind;
+  /** Nilsson-scale score; the name/definition follow from INTERACTION_SCALE. */
+  score: InteractionScore;
+  mechanism: InteractionMechanism;
   /** The goal at stake on each side, stated as the act states it. */
   goalA: string;
   goalB: string;
+  /** The legal provisions that CREATE the interaction — the citable basis. */
+  legalBasis: string;
   rationale: string;
-  confidence: number;
+  tier: EvidenceTier;
 }
 
 export const GOAL_INTERACTIONS: GoalInteraction[] = [
@@ -407,276 +574,326 @@ export const GOAL_INTERACTIONS: GoalInteraction[] = [
     id: 'coh-int-red-lulucf',
     a: 'renewable-energy-directive',
     b: 'lulucf-regulation',
-    kind: 'conflict',
+    score: -2,
+    mechanism: 'resource competition',
     goalA: '42.5% renewables by 2030, with forest biomass counted as renewable',
     goalB: '310 Mt CO₂eq net removals by 2030',
+    legalBasis: 'RED Art. 29 + Annex IX (biomass eligibility); LULUCF Reg. Art. 4(2) + Annex IIa.',
     rationale:
-      'Energy-wood demand that RED rewards as zero-carbon renewable is harvested out of the very sink LULUCF needs left standing; every additional unit of primary woody biomass burned debits the 310 Mt target directly.',
-    confidence: 0.85,
+      'Energy-wood demand that RED rewards as zero-carbon is harvested out of the sink LULUCF needs left standing; additional primary woody biomass combustion debits the 310 Mt target directly.',
+    tier: 'B',
   },
   {
     id: 'coh-int-esr-lulucf',
     a: 'effort-sharing-regulation',
     b: 'lulucf-regulation',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'regulatory dependency',
     goalA: '−40% in non-ETS sectors by 2030',
     goalB: 'No-debit rule and rising net removals',
+    legalBasis: 'ESR Art. 7 (up to 280 Mt LULUCF flexibility); LULUCF Reg. Art. 13b.',
     rationale:
-      'Up to 280 Mt of LULUCF credits may substitute for real non-ETS cuts (ESR Art. 7) while LULUCF shortfalls are added back onto ESR totals — a two-way flexibility that softens both targets exactly when the sink is shrinking.',
-    confidence: 0.8,
+      'The two-way flexibility lets land credits substitute for real non-ETS cuts and pushes LULUCF shortfalls back onto ESR totals — softening both targets exactly when the sink is shrinking.',
+    tier: 'A',
   },
   {
     id: 'coh-int-ets-cbam',
     a: 'eu-ets-directive',
     b: 'cbam-regulation',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'price signal',
     goalA: 'Cost-effective reductions via a declining cap with full carbon pricing',
     goalB: 'Prevent carbon leakage on embedded imports',
+    legalBasis: 'ETS Dir. Art. 10a(1a) (free-allocation phase-out); CBAM Reg. Arts. 1, 36.',
     rationale:
-      'CBAM is what lets the ETS phase out free allocation without exporting its industrial base — restoring the full marginal price signal the cap-and-trade design always intended.',
-    confidence: 0.9,
+      'CBAM is what lets the ETS phase out free allocation without exporting its industrial base — restoring the full marginal price signal the cap-and-trade design intends.',
+    tier: 'A',
   },
   {
     id: 'coh-int-ets-esr',
     a: 'eu-ets-directive',
     b: 'effort-sharing-regulation',
-    kind: 'synergy',
+    score: 1,
+    mechanism: 'regulatory dependency',
     goalA: '−62% in ETS sectors by 2030 (vs 2005)',
     goalB: '−40% in non-ETS sectors by 2030 (vs 2005)',
+    legalBasis: 'ESR Art. 2(1) (scope defined as non-ETS); ETS Dir. Chapters IVa (ETS2).',
     rationale:
-      'Complementary coverage splits the economy into two calibrated halves of the −55% objective, with ETS2 designed to bridge the buildings/road-transport seam between them from 2027.',
-    confidence: 0.85,
+      'Complementary coverage partitions the economy into two calibrated halves of the −55% objective, with ETS2 designed to bridge the buildings/road seam between them from 2027.',
+    tier: 'A',
   },
   {
     id: 'coh-int-cars-afir',
     a: 'co2-cars-regulation',
     b: 'afir-regulation',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'demand pull',
     goalA: '100% zero-emission new cars by 2035',
     goalB: 'Fleet-paced public charging and refuelling coverage',
+    legalBasis: 'CO₂ standards Reg. Art. 1(5a); AFIR Art. 3 (fleet-based capacity formula).',
     rationale:
-      'A textbook demand-pull / infrastructure-push pair: the ZEV mandate creates the fleet AFIR’s fleet-based targets are indexed to, so the two ratchet together by construction.',
-    confidence: 0.9,
+      'A demand-pull / infrastructure-push pair: the ZEV mandate creates the fleet AFIR’s capacity formula is indexed to, so the two ratchet together by construction.',
+    tier: 'A',
   },
   {
     id: 'coh-int-cars-euro7',
     a: 'co2-cars-regulation',
     b: 'euro-7-regulation',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'timing & sequencing',
     goalA: 'Steer automotive capital into electrification toward 2035',
     goalB: 'Tighter pollutant limits for combustion vehicles in the interim',
+    legalBasis: 'CO₂ standards Reg. Art. 1(5a); Euro 7 Reg. Arts. 1–4 and application dates.',
     rationale:
-      'Euro 7 obliges continued engineering investment in ICE platforms that the CO₂ standards are simultaneously steering capital away from — a sequencing tension industry exploited in both negotiations.',
-    confidence: 0.7,
+      'Euro 7 obliges continued engineering investment in ICE platforms that the CO₂ standards simultaneously steer capital away from — a sequencing constraint both negotiations traded on.',
+    tier: 'B',
   },
   {
     id: 'coh-int-cars-aaq',
     a: 'co2-cars-regulation',
     b: 'air-quality-directive',
-    kind: 'synergy',
+    score: 1,
+    mechanism: 'demand pull',
     goalA: 'Fleet electrification via CO₂ standards',
     goalB: 'WHO-aligned air-quality limit values by 2030',
+    legalBasis: 'CO₂ standards Reg. Art. 1; AAQD Annex I limit values (NO₂, PM).',
     rationale:
-      'Fleet electrification is among the largest single levers for urban NO₂ compliance — the climate standard delivers the health directive’s hardest pollutant largely for free.',
-    confidence: 0.85,
+      'Fleet electrification is among the largest single levers for urban NO₂ compliance — the climate standard creates conditions that further the health directive’s hardest pollutant target.',
+    tier: 'B',
   },
   {
     id: 'coh-int-scf-epbd',
     a: 'social-climate-fund',
     b: 'epbd-recast',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'distributional',
     goalA: 'Cushion vulnerable households against carbon costs',
     goalB: 'Renovate the worst-performing building stock first',
+    legalBasis: 'SCF Reg. Arts. 3, 8 (target groups, eligible measures); EPBD Art. 9 (trajectories for worst stock).',
     rationale:
-      'The SCF targets precisely the households the EPBD’s worst-stock obligations would otherwise hit hardest — distributional cushion and renovation obligation are designed as two sides of one move.',
-    confidence: 0.8,
+      'The SCF targets precisely the households the EPBD’s worst-stock obligations would otherwise hit hardest — cushion and obligation are designed as two sides of one move.',
+    tier: 'A',
   },
   {
     id: 'coh-int-cap-methane',
     a: 'cap-strategic-plans',
     b: 'methane-regulation',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'regulatory dependency',
     goalA: 'Stabilise farm incomes, including livestock',
     goalB: 'Cut methane emissions across the energy chain',
+    legalBasis: 'Methane Reg. Art. 1 (scope limited to energy); CAP SP Reg. Arts. 32–34 (coupled income support).',
     rationale:
-      'The Methane Regulation exempts agriculture — the largest EU methane source — while CAP income support stabilises herd sizes; between them, the goal of cutting EU methane is left structurally unserved on its biggest front.',
-    confidence: 0.8,
+      'The Methane Regulation excludes agriculture — the largest EU methane source — while CAP coupled support stabilises herd sizes; between them, options for cutting EU methane on its biggest front are limited.',
+    tier: 'A',
   },
   {
     id: 'coh-int-cap-nrl',
     a: 'cap-strategic-plans',
     b: 'nature-restoration-law',
-    kind: 'conflict',
+    score: -2,
+    mechanism: 'land/sea-use competition',
     goalA: 'Payments tied to productive agricultural area',
     goalB: 'Restore drained peatlands and agricultural ecosystems by 2030–50',
+    legalBasis: 'NRL Arts. 4, 11 (agri-ecosystems, peatland rewetting); CAP SP Reg. Art. 4(4) (eligible hectare); Reg. 2024/1468 (GAEC relaxation).',
     rationale:
-      'NRL restoration targets on agricultural land (rewetting, landscape features) sit directly against CAP’s productive-area payment logic — and the 2024 weakening of GAEC conditionality moved the two further apart.',
-    confidence: 0.8,
+      'NRL restoration targets on agricultural land clash with CAP’s productive-area payment logic, and the 2024 weakening of conditionality moved the two acts further apart.',
+    tier: 'A',
   },
   {
     id: 'coh-int-f2f-cap',
     a: 'farm-to-fork-strategy',
     b: 'cap-strategic-plans',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'timing & sequencing',
     goalA: '−50% pesticides, 25% organic farming by 2030',
-    goalB: 'National CAP plans set before the targets had legal force',
+    goalB: 'National CAP plans fixed before the targets had legal force',
+    legalBasis: 'F2F COM(2020) 381 targets; CAP SP Reg. Art. 105 (plan approval cycle).',
     rationale:
-      'The strategy’s 2030 goals depended on CAP strategic plans as the delivery vehicle, but eco-scheme ambition was fixed before any target became binding — and the SUR’s withdrawal removed the legal bridge entirely.',
-    confidence: 0.8,
+      'The strategy’s 2030 goals depended on CAP strategic plans as delivery vehicle, but eco-scheme ambition was fixed before any target became binding — and the SUR’s withdrawal removed the intended legal bridge.',
+    tier: 'B',
   },
   {
     id: 'coh-int-nrl-red',
     a: 'nature-restoration-law',
     b: 'renewable-energy-directive',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'land/sea-use competition',
     goalA: 'Restore 20% of land and sea by 2030',
     goalB: 'Acceleration areas with presumed overriding public interest for renewables',
+    legalBasis: 'RED Arts. 15b–16f (acceleration areas, overriding public interest); NRL Arts. 4–5.',
     rationale:
-      'Restoration and renewables build-out compete for the same land and sea; RED’s overriding-public-interest presumption tilts permitting against the restoration goal, with carve-outs only partly reconciling the two.',
-    confidence: 0.75,
+      'Restoration and renewables build-out compete for the same land and sea; RED’s overriding-public-interest presumption tilts permitting against restoration, with carve-outs only partly reconciling the two.',
+    tier: 'B',
   },
   {
     id: 'coh-int-crma-habitats',
     a: 'critical-raw-materials-act',
     b: 'habitats-directive',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'timing & sequencing',
     goalA: '27-month permitting for strategic extraction projects',
     goalB: 'Favourable conservation status and strict Natura 2000 assessment',
+    legalBasis: 'CRMA Arts. 10–11 (permitting deadlines); Habitats Dir. Art. 6(3)–(4).',
     rationale:
-      'Accelerated mine permitting presses against appropriate-assessment timelines and Art. 6(4) derogation discipline; the CRMA asserts compatibility but the clock it imposes is the Habitats Directive’s scarcest resource.',
-    confidence: 0.75,
+      'Accelerated mine permitting limits the time available for appropriate assessment and derogation discipline; the CRMA asserts compatibility, but the clock it imposes is the Habitats Directive’s scarcest resource.',
+    tier: 'B',
   },
   {
     id: 'coh-int-nzia-crma',
     a: 'net-zero-industry-act',
     b: 'critical-raw-materials-act',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'regulatory dependency',
     goalA: '40% domestic cleantech manufacturing by 2030',
     goalB: 'Extraction / processing / recycling benchmarks for strategic raw materials',
+    legalBasis: 'NZIA Art. 5 (benchmark); CRMA Art. 5 (benchmarks); shared strategic-project machinery.',
     rationale:
       'Consecutive links of one supply chain: NZIA’s manufacturing benchmark is unreachable without CRMA’s upstream material benchmarks, and CRMA demand is anchored by NZIA factories.',
-    confidence: 0.85,
+    tier: 'A',
   },
   {
     id: 'coh-int-nzia-cbam',
     a: 'net-zero-industry-act',
     b: 'cbam-regulation',
-    kind: 'synergy',
+    score: 1,
+    mechanism: 'price signal',
     goalA: 'Rebuild energy-intensive cleantech manufacturing in the EU',
     goalB: 'Price embedded carbon at the border',
+    legalBasis: 'CBAM Reg. Annex I (steel, aluminium, hydrogen); NZIA Annex (strategic technologies).',
     rationale:
-      'CBAM protects exactly the energy-intensive upstream (steel, aluminium, hydrogen) whose fair carbon pricing the NZIA build-out depends on — leakage protection and reindustrialisation point the same way.',
-    confidence: 0.75,
+      'CBAM levels carbon costs on exactly the energy-intensive upstream the NZIA build-out depends on — leakage protection creates conditions for reindustrialisation, without guaranteeing it.',
+    tier: 'B',
   },
   {
     id: 'coh-int-refuel-fueleu',
     a: 'refueleu-aviation',
     b: 'fueleu-maritime',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'resource competition',
     goalA: 'SAF blending mandate incl. synthetic sub-target',
     goalB: 'Falling GHG-intensity of marine fuels with RFNBO incentives',
+    legalBasis: 'ReFuelEU Annex I (blend shares); FuelEU Arts. 4–5 + Art. 6 (RFNBO multiplier).',
     rationale:
-      'Both mandates draw on the same constrained pool of sustainable feedstocks and renewable hydrogen; at the margin, aviation’s e-SAF sub-target and shipping’s RFNBO multiplier bid against each other for identical molecules.',
-    confidence: 0.75,
+      'Both mandates draw on the same constrained pool of sustainable feedstocks and renewable hydrogen; at the margin, aviation’s e-SAF sub-target and shipping’s RFNBO multiplier bid for identical molecules.',
+    tier: 'B',
   },
   {
     id: 'coh-int-h2pkg-red',
     a: 'hydrogen-gas-package',
     b: 'renewable-energy-directive',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'demand pull',
     goalA: 'Market rules and infrastructure for a hydrogen economy',
     goalB: 'Binding RFNBO targets in industry and transport',
+    legalBasis: 'RED Arts. 22a, 25 (RFNBO targets); Gas/H₂ package market and network rules.',
     rationale:
-      'RED’s RFNBO targets create the demand the hydrogen market rules need to de-risk; the residual friction — low-carbon versus renewable hydrogen definitions — is real but second-order to the demand synergy.',
-    confidence: 0.7,
+      'RED’s RFNBO targets create the demand the hydrogen market rules need to de-risk; the residual definitional friction (low-carbon vs renewable hydrogen) is second-order to the demand link.',
+    tier: 'B',
   },
   {
     id: 'coh-int-eed-epbd',
     a: 'energy-efficiency-directive',
     b: 'epbd-recast',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'regulatory dependency',
     goalA: 'Cap final consumption at 763 Mtoe by 2030',
     goalB: 'Zero-emission building stock by 2050, worst stock first',
+    legalBasis: 'EED Arts. 5–6, 8 (public-sector duties, savings obligation); EPBD Art. 9 (stock trajectories).',
     rationale:
-      'Building renovation is the single largest lever for the EED consumption cap, and EED public-sector renovation duties (Arts. 5–6) operationalise the EPBD’s stock goals — the two acts share one delivery channel.',
-    confidence: 0.85,
+      'Building renovation is the largest single lever for the EED cap, and EED public-sector renovation duties operationalise the EPBD’s stock goals — the two acts share one delivery channel.',
+    tier: 'A',
   },
   {
     id: 'coh-int-csrd-sfdr',
     a: 'csrd',
     b: 'sfdr',
-    kind: 'tension',
+    score: 1,
+    mechanism: 'data dependency',
     goalA: 'Audited sustainability data from the real economy',
     goalB: 'Comparable adverse-impact disclosure by financial market participants',
+    legalBasis: 'SFDR Art. 4 + PAI RTS (indicators designed to be fed by CSRD/ESRS datapoints).',
     rationale:
-      'Designed as a synergy — SFDR’s PAI indicators were to be fed by CSRD data — the chain now runs as a tension: the Omnibus scope cut removed most of the reporting universe, leaving SFDR disclosures resting on estimates again.',
-    confidence: 0.8,
+      'CSRD data enables SFDR disclosure quality. The enabling link survives but over a much smaller universe after the Omnibus scope cut — for de-scoped investees, SFDR reverts to estimates.',
+    tier: 'B',
   },
   {
     id: 'coh-int-csrd-taxonomy',
     a: 'csrd',
     b: 'taxonomy-regulation',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'data dependency',
     goalA: 'Sustainability reporting under ESRS',
     goalB: 'Taxonomy-alignment KPIs (turnover / CapEx / OpEx)',
+    legalBasis: 'Taxonomy Reg. Art. 8 + Disclosures Delegated Act (KPIs reported within management reports under CSRD).',
     rationale:
-      'Taxonomy Art. 8 KPIs ride on CSRD reporting infrastructure — one audit trail serves both acts. The synergy survives the Omnibus but over a much smaller firm universe than designed.',
-    confidence: 0.75,
+      'Taxonomy Art. 8 KPIs ride on CSRD reporting infrastructure — one audit trail serves both acts, now over the reduced post-Omnibus universe.',
+    tier: 'A',
   },
   {
     id: 'coh-int-claims-csrd',
     a: 'green-claims-directive',
     b: 'csrd',
-    kind: 'synergy',
+    score: 1,
+    mechanism: 'data dependency',
     goalA: 'Substantiated, verified environmental claims to consumers',
     goalB: 'Audited corporate sustainability disclosure to markets',
+    legalBasis: 'Green Claims proposal Arts. 3–5 (substantiation); CSRD/ESRS datapoints as evidence base.',
     rationale:
-      'The two close the greenwashing loop from opposite ends — claim substantiation at the shelf, audited reporting at the filing — with shared evidence standards making each cheaper to enforce.',
-    confidence: 0.7,
+      'Claim substantiation at the shelf and audited reporting at the filing close the greenwashing loop from opposite ends, with shared evidence standards lowering enforcement cost.',
+    tier: 'B',
   },
   {
     id: 'coh-int-emr-red',
     a: 'electricity-market-regulation',
     b: 'renewable-energy-directive',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'price signal',
     goalA: 'Two-sided CfDs and PPA facilitation in market design',
     goalB: '42.5% renewables by 2030',
+    legalBasis: 'EMD reform Arts. 19a–19b (PPAs, two-sided CfDs); RED Art. 3.',
     rationale:
       'The reformed market design de-risks exactly the capital-intensive build-out RED mandates: CfD revenue stabilisation and PPA access are the financing rails under the renewables target.',
-    confidence: 0.8,
+    tier: 'A',
   },
   {
     id: 'coh-int-aiact-eed',
     a: 'ai-act',
     b: 'energy-efficiency-directive',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'resource competition',
     goalA: 'Trustworthy-AI rules silent on compute energy demand',
     goalB: 'Cap final energy consumption at 763 Mtoe',
+    legalBasis: 'AI Act (no energy provisions beyond Art. 95 voluntary codes); EED Art. 12 (data-centre reporting only).',
     rationale:
-      'Nothing in the AI Act constrains the energy footprint of the compute build-out it legitimises; data-centre load growth presses against the EED cap, which can only observe it through reporting (EED Art. 12).',
-    confidence: 0.7,
+      'Nothing in the AI Act constrains the energy footprint of the compute build-out it legitimises; data-centre load growth narrows the room under the EED cap, which can only observe it.',
+    tier: 'B',
   },
   {
     id: 'coh-int-fgas-epbd',
     a: 'f-gas-regulation',
     b: 'epbd-recast',
-    kind: 'tension',
+    score: -1,
+    mechanism: 'timing & sequencing',
     goalA: 'Accelerated HFC phase-down',
     goalB: 'Mass heat-pump deployment for building decarbonisation',
+    legalBasis: 'F-gas Reg. Annex VII (quota steps) + heat-pump equipment bans; EPBD heating decarbonisation pathway.',
     rationale:
-      'The HFC phase-down restricts the refrigerants most current heat pumps use just as the EPBD pathway requires their mass rollout — coherence depends on the natural-refrigerant transition outrunning the phase-down schedule.',
-    confidence: 0.75,
+      'The HFC phase-down restricts refrigerants most current heat pumps use just as the EPBD pathway requires their mass rollout — coherence depends on the natural-refrigerant transition outrunning the quota steps.',
+    tier: 'B',
   },
   {
     id: 'coh-int-eugb-taxonomy',
     a: 'green-bonds-regulation',
     b: 'taxonomy-regulation',
-    kind: 'synergy',
+    score: 2,
+    mechanism: 'regulatory dependency',
     goalA: 'A gold-standard EU green bond label',
     goalB: 'Stable, science-based activity criteria',
+    legalBasis: 'EuGB Reg. Arts. 4–8 (taxonomy-aligned use of proceeds).',
     rationale:
-      'The EuGB label is defined as taxonomy-aligned use of proceeds — its usability rises and falls with the stability and credibility of the taxonomy criteria it imports wholesale.',
-    confidence: 0.75,
+      'The EuGB label is defined as taxonomy-aligned use of proceeds — its usability rises and falls with the stability and credibility of the criteria it imports wholesale.',
+    tier: 'A',
   },
 ];
 
@@ -711,10 +928,13 @@ export interface DerivedStepResult {
   grade: CoherenceGrade;
 }
 
+/** Declared thresholds for the derived scores (documented in the UI). */
+export const DERIVED_SCORE_THRESHOLDS = { coherent: 0.75, partial: 0.45 } as const;
+
 function gradeFromScore(score: number | null): CoherenceGrade {
   if (score === null) return 'not-assessed';
-  if (score >= 0.75) return 'coherent';
-  if (score >= 0.45) return 'partial';
+  if (score >= DERIVED_SCORE_THRESHOLDS.coherent) return 'coherent';
+  if (score >= DERIVED_SCORE_THRESHOLDS.partial) return 'partial';
   return 'incoherent';
 }
 
@@ -742,186 +962,220 @@ export function meansCoherence(policyId: string): DerivedStepResult {
   return deriveFromChecklist(policyId, MEANS_CRITERIA);
 }
 
-// ── Step 4 · Policy evaluation: change + outcomes ──────────────────────────
+// ── Step 4 · Policy evaluation: distance-to-target pace ratio ──────────────
 
-export type OutcomeReading = 'delivering' | 'mixed' | 'off-track';
+export type OutcomeReading = 'on-track' | 'lagging' | 'off-track';
 
-export interface OutcomeEvidence {
+/** Declared thresholds for the pace ratio (EEA T&P-style trichotomy):
+ *  observed recent pace ÷ required pace ≥ 1 → on track; ≥ 0.5 → lagging;
+ *  below (or wrong direction) → off track. */
+export const PACE_THRESHOLDS = { onTrack: 1.0, lagging: 0.5 } as const;
+
+export interface OutcomeMeasurement {
   policyId: string;
-  /** The headline indicator the evaluation hangs on. */
+  /** The target-bearing indicator, taken from (or derived for) the act. */
   indicator: string;
-  /** Output side — what changed in the policy itself (strengthened, weakened, implemented). */
+  unit: string;
+  /** The act's own reference point. */
+  baseline: { year: number; value: number };
+  /** Start of the recent-pace window (≈ last five years, mirroring the EEA
+   *  convention of judging by recent historic pace, not the full record). */
+  recent: { year: number; value: number };
+  latest: { year: number; value: number };
+  target: { year: number; value: number };
+  /** Output side of step 4 — what changed in the policy itself (amendments,
+   *  withdrawals, ratchets). Legal facts, tier-A by nature. */
   policyChange: string;
-  /** Impact side — what the measurements show in the world. */
-  measuredOutcome: string;
-  reading: OutcomeReading;
-  /** Data vintage, e.g. '2026-06'. */
-  asOf: string;
+  source: string;
+  tier: EvidenceTier;
+  /** Honest caveats on the data (crisis effects, indicator criticisms…). */
+  notes?: string;
 }
 
-export const OUTCOME_EVIDENCE: Record<string, OutcomeEvidence> = {
+export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
   'eu-climate-law': {
     policyId: 'eu-climate-law',
-    indicator: 'EU net GHG emissions vs 1990',
+    indicator: 'EU net GHG emissions (index, 1990 = 100)',
+    unit: 'index',
+    baseline: { year: 1990, value: 100 },
+    recent: { year: 2018, value: 77 },
+    latest: { year: 2023, value: 63 },
+    target: { year: 2030, value: 45 },
     policyChange:
       'The Fit-for-55 acts the law required were essentially all adopted; the mandated 2040-target proposal slipped past its deadline and remains in negotiation.',
-    measuredOutcome:
-      'Net emissions are down roughly 37% on 1990; Commission projections reach ~−54% by 2030 only with full implementation of adopted measures — a small but closable gap to −55%.',
-    reading: 'mixed',
-    asOf: '2026-06',
+    source: 'EEA GHG inventory; Climate Action Progress Report.',
+    tier: 'A',
+    notes:
+      'Recent pace includes the COVID dip and rebound; Commission projections reach ~−54% by 2030 only with full implementation of adopted measures.',
   },
   'eu-ets-directive': {
     policyId: 'eu-ets-directive',
-    indicator: 'Verified emissions of stationary ETS installations vs 2005',
+    indicator: 'Verified stationary ETS emissions (index, 2005 = 100)',
+    unit: 'index',
+    baseline: { year: 2005, value: 100 },
+    recent: { year: 2018, value: 71 },
+    latest: { year: 2023, value: 53 },
+    target: { year: 2030, value: 38 },
     policyChange:
-      'The 2023 revision tightened the LRF to 4.3/4.4%, added maritime and locked the free-allocation phase-out to CBAM.',
-    measuredOutcome:
-      'Stationary verified emissions are down roughly half since 2005, with a record fall in 2023 — ahead of the cap trajectory, though partly on crisis-driven output decline.',
-    reading: 'delivering',
-    asOf: '2026-06',
+      'The 2023 revision tightened the LRF to 4.3/4.4%, added maritime and locked the free-allocation phase-out to CBAM — a ratchet, in law.',
+    source: 'EEA ETS data viewer (verified emissions).',
+    tier: 'A',
+    notes: 'Part of the 2022–23 fall reflects crisis-driven output decline in industry.',
   },
   'effort-sharing-regulation': {
     policyId: 'effort-sharing-regulation',
-    indicator: 'Aggregate ESR emissions vs annual allocations',
-    policyChange: 'Ratcheted from −30% to −40% in 2023; compliance machinery unchanged.',
-    measuredOutcome:
-      'Reported ESR emissions keep falling but more slowly than the allocation path; projections show an aggregate gap and several Member States heading for deficit positions.',
-    reading: 'mixed',
-    asOf: '2026-06',
+    indicator: 'ESR-sector emissions (index, 2005 = 100)',
+    unit: 'index',
+    baseline: { year: 2005, value: 100 },
+    recent: { year: 2018, value: 89 },
+    latest: { year: 2023, value: 82 },
+    target: { year: 2030, value: 60 },
+    policyChange: 'Ratcheted from −30% to −40% by Reg. 2023/857; compliance machinery unchanged.',
+    source: 'EEA Trends & Projections; EU GHG inventory.',
+    tier: 'A',
   },
   'lulucf-regulation': {
     policyId: 'lulucf-regulation',
-    indicator: 'EU net LULUCF sink (Mt CO₂eq)',
-    policyChange: '2023 amendment set the 310 Mt 2030 target with per-MS contributions.',
-    measuredOutcome:
-      'The net sink has shrunk from ~−310 Mt (2013–2016 average) to roughly −200 Mt and inventories carry large revisions — the measured trend points away from the target.',
-    reading: 'off-track',
-    asOf: '2026-06',
+    indicator: 'Net LULUCF sink',
+    unit: 'Mt CO₂eq (negative = removals)',
+    baseline: { year: 2015, value: -310 },
+    recent: { year: 2018, value: -265 },
+    latest: { year: 2023, value: -200 },
+    target: { year: 2030, value: -310 },
+    policyChange: 'The 2023 amendment set the 310 Mt 2030 target with per-MS contributions in Annex IIa.',
+    source: 'EEA / UNFCCC EU GHG inventory.',
+    tier: 'A',
+    notes: 'LULUCF inventories carry high uncertainty and recurrent revisions.',
   },
   'renewable-energy-directive': {
     policyId: 'renewable-energy-directive',
     indicator: 'Renewables share of gross final energy consumption',
-    policyChange: 'RED III raised the binding target to 42.5% and added permitting acceleration.',
-    measuredOutcome:
-      'The share reached ~24.5% in 2023 with record solar additions, but aggregated national trajectories land short of 42.5% — pace is historic yet still below the required slope.',
-    reading: 'mixed',
-    asOf: '2026-06',
+    unit: '%',
+    baseline: { year: 2020, value: 22.1 },
+    recent: { year: 2018, value: 18.0 },
+    latest: { year: 2023, value: 24.5 },
+    target: { year: 2030, value: 42.5 },
+    policyChange: 'RED III raised the binding target to 42.5% and added permitting acceleration (2023).',
+    source: 'Eurostat SHARES.',
+    tier: 'A',
   },
   'energy-efficiency-directive': {
     policyId: 'energy-efficiency-directive',
-    indicator: 'EU final energy consumption vs the 763 Mtoe 2030 cap',
-    policyChange: 'The 2023 recast made the −11.7% target binding and stepped up savings obligations.',
-    measuredOutcome:
-      'Consumption fell sharply in 2022–23, flattering the trajectory; how much survives demand normalisation and data-centre growth is the open evaluation question.',
-    reading: 'mixed',
-    asOf: '2026-06',
+    indicator: 'Final energy consumption',
+    unit: 'Mtoe',
+    baseline: { year: 2020, value: 907 },
+    recent: { year: 2018, value: 935 },
+    latest: { year: 2023, value: 894 },
+    target: { year: 2030, value: 763 },
+    policyChange: 'The 2023 recast made −11.7% binding and stepped up the savings obligation.',
+    source: 'Eurostat energy balances; EEA Trends & Projections.',
+    tier: 'A',
+    notes: 'The 2022–23 fall is partly crisis demand response; values are provisional.',
   },
   'co2-cars-regulation': {
     policyId: 'co2-cars-regulation',
-    indicator: 'New-car fleet CO₂ and battery-electric sales share',
+    indicator: 'New-car fleet average CO₂ (WLTP)',
+    unit: 'g CO₂/km',
+    baseline: { year: 2021, value: 114 },
+    recent: { year: 2021, value: 114 },
+    latest: { year: 2023, value: 107 },
+    target: { year: 2030, value: 51 },
     policyChange:
-      'The 2025 compliance point was softened into 2025–27 averaging and the 2035 review pulled forward — the act was weakened, not strengthened, at first contact with the market.',
-    measuredOutcome:
-      'Fleet CO₂ keeps falling and BEV share sits in the mid-teens, but the 2024 stall shows uptake is not yet self-sustaining at the pace the 2030/2035 steps assume.',
-    reading: 'mixed',
-    asOf: '2026-06',
-  },
-  'cbam-regulation': {
-    policyId: 'cbam-regulation',
-    indicator: 'Transitional-report coverage and data quality',
-    policyChange:
-      'The 2025 simplification cut the declarant base via the 50 t de-minimis while keeping ~99% of embedded emissions in scope; definitive regime starts 2026.',
-    measuredOutcome:
-      'Transitional reporting works but default values dominate and data quality is patchy — the mechanism is measurable on paper, unproven as a leakage shield.',
-    reading: 'mixed',
-    asOf: '2026-06',
-  },
-  'repowereu-plan': {
-    policyId: 'repowereu-plan',
-    indicator: 'Russian share of EU gas imports; storage-filling targets',
-    policyChange: 'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed.',
-    measuredOutcome:
-      'Russian pipeline share collapsed from ~40% to under 10%, storage targets were met every season, and demand reduction targets were broadly achieved — the plan’s headline outcome materialised.',
-    reading: 'delivering',
-    asOf: '2026-06',
+      'The 2025 step was converted into 2025–27 averaging and the 2035 review advanced — the act was weakened, not strengthened, at first market contact.',
+    source: 'EEA new-vehicle CO₂ monitoring.',
+    tier: 'A',
+    notes: 'WLTP series starts 2021, so the recent window equals the baseline window.',
   },
   'farm-to-fork-strategy': {
     policyId: 'farm-to-fork-strategy',
-    indicator: 'Pesticide-risk indicator (HRI 1), organic-farming share',
+    indicator: 'Organic share of utilised agricultural area',
+    unit: '%',
+    baseline: { year: 2020, value: 9.1 },
+    recent: { year: 2018, value: 8.0 },
+    latest: { year: 2022, value: 10.5 },
+    target: { year: 2030, value: 25 },
     policyChange:
-      'The SUR was withdrawn and the framework law never tabled — measured policy change is negative: the strategy lost its instruments.',
-    measuredOutcome:
-      'Organic area sits near 11% against the 25% aim and pesticide-risk reduction rides on a criticised indicator — the 2030 targets are not on any measured path.',
-    reading: 'off-track',
-    asOf: '2026-06',
+      'Measured policy change is negative: the SUR was withdrawn (2024) and the framework law never tabled — the targets lost their instruments.',
+    source: 'Eurostat organic farming statistics.',
+    tier: 'A',
+    notes: 'The pesticide target rides on the criticised HRI 1 indicator and is not scored here.',
   },
-  'afir-regulation': {
-    policyId: 'afir-regulation',
-    indicator: 'Public recharging points and TEN-T coverage',
-    policyChange: 'First fleet-based target checkpoints applied from 2025; no weakening to date.',
-    measuredOutcome:
-      'Public charging keeps roughly tracking the fleet-based formula and TEN-T light-duty coverage advances; heavy-duty and hydrogen coverage lag the dated targets.',
-    reading: 'delivering',
-    asOf: '2026-06',
-  },
-  'epbd-recast': {
-    policyId: 'epbd-recast',
-    indicator: 'Deep-renovation rate; national building renovation plans',
-    policyChange: 'Transposition under way; national renovation plans due 2026 will fix trajectories.',
-    measuredOutcome:
-      'Deep-renovation rates remain near 1% against the ~2% the pathway needs — the measured baseline starts the act in deficit.',
-    reading: 'off-track',
-    asOf: '2026-06',
-  },
-  'governance-regulation': {
-    policyId: 'governance-regulation',
-    indicator: 'NECP timeliness and assessed ambition gap',
-    policyChange: 'The plan–assess–recommend cycle ran a full round on the updated NECPs.',
-    measuredOutcome:
-      'Most updates were late and the Commission’s aggregate assessment keeps finding ambition and implementation gaps — the cycle measures well and corrects weakly.',
-    reading: 'mixed',
-    asOf: '2026-06',
-  },
-  'net-zero-industry-act': {
-    policyId: 'net-zero-industry-act',
-    indicator: 'EU manufacturing share of strategic net-zero technologies',
-    policyChange: 'Auction resilience criteria and permitting deadlines in force since 2024.',
-    measuredOutcome:
-      'Domestic shares in solar PV remain in single digits and several segments saw exits rather than build-out — measured movement toward the 40% benchmark is so far minimal.',
-    reading: 'off-track',
-    asOf: '2026-06',
+  'repowereu-plan': {
+    policyId: 'repowereu-plan',
+    indicator: 'Russian share of EU gas imports',
+    unit: '%',
+    baseline: { year: 2021, value: 45 },
+    recent: { year: 2021, value: 45 },
+    latest: { year: 2024, value: 18 },
+    target: { year: 2027, value: 0 },
+    policyChange:
+      'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed; a phase-out instrument for remaining imports followed.',
+    source: 'Eurostat; ACER market monitoring.',
+    tier: 'A',
   },
 };
 
-/** Step 4 for one policy: machinery (derived) + outcome evidence (curated). */
+export interface OutcomePace {
+  /** (latest − recent) / years — the observed recent pace. */
+  observedPerYear: number;
+  /** (target − latest) / years — the pace the target requires from here. */
+  requiredPerYear: number;
+  /** observed ÷ required; negative when moving the wrong way. */
+  ratio: number | null;
+  reading: OutcomeReading;
+}
+
+/** Pure function: the step-4 reading is arithmetic over the measurement. */
+export function computePace(m: OutcomeMeasurement): OutcomePace {
+  const obsYears = Math.max(1, m.latest.year - m.recent.year);
+  const reqYears = Math.max(1, m.target.year - m.latest.year);
+  const observedPerYear = (m.latest.value - m.recent.value) / obsYears;
+  const requiredPerYear = (m.target.value - m.latest.value) / reqYears;
+  // Already at / past target with no required movement → on track.
+  if (requiredPerYear === 0) {
+    return { observedPerYear, requiredPerYear, ratio: null, reading: 'on-track' };
+  }
+  const ratio = observedPerYear / requiredPerYear;
+  const reading: OutcomeReading =
+    ratio >= PACE_THRESHOLDS.onTrack
+      ? 'on-track'
+      : ratio >= PACE_THRESHOLDS.lagging
+        ? 'lagging'
+        : 'off-track';
+  return { observedPerYear, requiredPerYear, ratio, reading };
+}
+
 export interface EvaluationResult {
+  /** MRV + review verdicts, reused from the checklist. */
   machinery: DerivedStepResult;
-  outcome: OutcomeEvidence | null;
+  measurement: (OutcomeMeasurement & { pace: OutcomePace }) | null;
   grade: CoherenceGrade;
 }
 
 const READING_GRADE: Record<OutcomeReading, CoherenceGrade> = {
-  delivering: 'coherent',
-  mixed: 'partial',
+  'on-track': 'coherent',
+  lagging: 'partial',
   'off-track': 'incoherent',
 };
 
 export function evaluationCoherence(policyId: string): EvaluationResult {
   const machinery = deriveFromChecklist(policyId, EVALUATION_CRITERIA);
-  const outcome = OUTCOME_EVIDENCE[policyId] ?? null;
+  const raw = OUTCOME_MEASUREMENTS[policyId] ?? null;
+  const measurement = raw ? { ...raw, pace: computePace(raw) } : null;
   // Measured outcomes trump machinery: an act with perfect MRV that is
-  // measurably off-track is evaluatively incoherent, and vice versa an act
-  // whose outcomes deliver is coherent even with thin review clauses.
-  const grade: CoherenceGrade = outcome ? READING_GRADE[outcome.reading] : machinery.grade;
-  return { machinery, outcome, grade };
+  // measurably off track is evaluatively incoherent, and vice versa.
+  const grade: CoherenceGrade = measurement
+    ? READING_GRADE[measurement.pace.reading]
+    : machinery.grade;
+  return { machinery, measurement, grade };
 }
 
 // ── Per-policy roll-up + corpus overview ───────────────────────────────────
 
 const STATUS_GRADE: Record<AssumptionStatus, CoherenceGrade> = {
-  holds: 'coherent',
-  drifting: 'partial',
-  broken: 'incoherent',
+  valid: 'coherent',
+  'under-pressure': 'partial',
+  violated: 'incoherent',
 };
 
 export interface PolicyCoherenceProfile {
@@ -944,10 +1198,13 @@ const GRADE_RANK: Record<CoherenceGrade, number> = {
   'not-assessed': 3,
 };
 
+/** Step-2 rollup rule (declared): grade = the policy's worst interaction
+ *  score, mapped ≤ −2 → incoherent, −1 → partial, ≥ 0 → coherent. */
 function horizontalGrade(interactions: GoalInteraction[]): CoherenceGrade {
   if (interactions.length === 0) return 'not-assessed';
-  if (interactions.some(i => i.kind === 'conflict')) return 'incoherent';
-  if (interactions.some(i => i.kind === 'tension')) return 'partial';
+  const worst = Math.min(...interactions.map(i => i.score));
+  if (worst <= -2) return 'incoherent';
+  if (worst === -1) return 'partial';
   return 'coherent';
 }
 
@@ -993,7 +1250,7 @@ export function buildCoherenceProfile(policyId: string): PolicyCoherenceProfile 
 export function coherenceAssessedIds(): string[] {
   const ids = new Set<string>([
     ...Object.keys(EX_ANTE_ASSESSMENTS),
-    ...Object.keys(OUTCOME_EVIDENCE),
+    ...Object.keys(OUTCOME_MEASUREMENTS),
     ...GOAL_INTERACTIONS.flatMap(i => [i.a, i.b]),
   ]);
   // Steps 3–4 derive from the checklist, so every checklisted policy has at
@@ -1008,12 +1265,16 @@ export interface CoherenceOverview {
   stepCounts: Record<CoherenceStepId, Record<CoherenceGrade, number>>;
   /** Interactions whose BOTH endpoints are in scope. */
   interactions: GoalInteraction[];
-  conflicts: number;
-  tensions: number;
-  synergies: number;
-  brokenAssumptions: number;
+  /** Score ≤ −2 (counteracting / cancelling). */
+  counteracting: number;
+  /** Score = −1 (constraining). */
+  constraining: number;
+  /** Score ≥ +1 (enabling / reinforcing / indivisible). */
+  positive: number;
+  violatedAssumptions: number;
   /** Mean means-coherence score across scope (step 3); null if none. */
   meanMeansScore: number | null;
+  outcomesOffTrack: number;
 }
 
 export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
@@ -1035,10 +1296,13 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
   }
 
   const interactions = GOAL_INTERACTIONS.filter(i => inScope.has(i.a) && inScope.has(i.b));
-  const conflicts = interactions.filter(i => i.kind === 'conflict').length;
-  const tensions = interactions.filter(i => i.kind === 'tension').length;
-  const synergies = interactions.filter(i => i.kind === 'synergy').length;
-  const brokenAssumptions = profiles.filter(p => p.exAnte?.status === 'broken').length;
+  const counteracting = interactions.filter(i => i.score <= -2).length;
+  const constraining = interactions.filter(i => i.score === -1).length;
+  const positive = interactions.filter(i => i.score >= 1).length;
+  const violatedAssumptions = profiles.filter(p => p.exAnte?.status === 'violated').length;
+  const outcomesOffTrack = profiles.filter(
+    p => p.evaluation.measurement?.pace.reading === 'off-track',
+  ).length;
 
   const meansScores = profiles.map(p => p.means.score).filter((s): s is number => s !== null);
   const meanMeansScore =
@@ -1050,10 +1314,11 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
     profiles,
     stepCounts,
     interactions,
-    conflicts,
-    tensions,
-    synergies,
-    brokenAssumptions,
+    counteracting,
+    constraining,
+    positive,
+    violatedAssumptions,
     meanMeansScore,
+    outcomesOffTrack,
   };
 }

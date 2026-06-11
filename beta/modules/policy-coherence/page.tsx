@@ -67,7 +67,8 @@ export default function PolicyCoherencePage() {
                 {s.name}
               </p>
               <p className="mt-1 text-[10.5px] text-tertiary leading-relaxed">{s.question}</p>
-              <p className="mt-1.5 font-mono text-[8.5px] uppercase tracking-[0.1em] text-tertiary">
+              <p className="mt-1.5 text-[9px] text-tertiary leading-snug">{s.framework}</p>
+              <p className="mt-1 font-mono text-[8.5px] uppercase tracking-[0.1em] text-tertiary">
                 {s.basis}
               </p>
             </div>
@@ -79,15 +80,29 @@ export default function PolicyCoherencePage() {
         <section className="mt-8 border-t border-grey-200 pt-4 text-[11px] text-tertiary leading-relaxed max-w-3xl space-y-2">
           <p className="font-bold text-tertiary-dark text-[12px]">Method note</p>
           <p>
-            Steps ① and ② are curated AI-baseline assessments (world-development snapshot:
-            mid-2026) over the major acts of the corpus, reviewable like every other AI tag in
-            the platform. Steps ③ and ④ deliberately <em>derive</em> from the per-policy
+            The model is rule-based by construction: every grade follows mechanically from a
+            declared rule applied to citable evidence, so reviewers audit rule applications
+            rather than opinions. Step ① uses Assumption-Based Planning (Dewar et al., RAND
+            1993): each load-bearing assumption is a falsifiable proposition with a named
+            signpost indicator and an explicit violation criterion; the status is the criterion
+            applied to a sourced observation. Step ② scores pairwise goal interactions on the
+            seven-point scale of Nilsson, Griggs &amp; Visbeck (2016, <em>Nature</em> 534:320)
+            with the ICSU (2017) decision rules, each score carrying the interaction mechanism
+            and the legal provisions that create it. Step ④ outcomes use the distance-to-target
+            method of the EEA Trends &amp; Projections reports: observed recent pace ÷ required
+            pace, computed in code with declared thresholds (≥1.0 on track · ≥0.5 lagging ·
+            below off track). Evidence quality is graded A (official statistics / legal acts),
+            B (official assessments) or C (secondary sources).
+          </p>
+          <p>
+            Steps ③ and ④ (machinery) deliberately <em>derive</em> from the per-policy
             objective–delivery checklist — the five means-side criteria (instruments, coverage,
             enforcement, financing, timeline) and the two evaluation-machinery criteria
             (monitoring, review) — so the two lenses can never contradict each other and no
-            verdict is authored twice. Measured outcomes in step ④ are curated against published
-            indicator data and override machinery verdicts: perfect MRV on a measurably
-            off-track trajectory is still evaluative incoherence.
+            verdict is authored twice. Measured pace readings override machinery verdicts:
+            perfect MRV on a measurably off-track trajectory is still evaluative incoherence.
+            Observation snapshot: mid-2026; every observation carries its source for
+            re-verification.
           </p>
           <p>
             The four steps are also registered as taggable codes under{' '}
