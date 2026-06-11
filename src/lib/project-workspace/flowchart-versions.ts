@@ -75,7 +75,15 @@ import { defaultPolicyLoopBoardV6 } from '@/data/policy-loop-v6';
  *                 five structural dimensions (mitigation by emission sector,
  *                 adaptation by adaptation area, main policies, crosscutting
  *                 themes, societal-objective lenses) plus the eight-step
- *                 assessment protocol that turns a matrix cell into a finding.
+ *                 assessment protocol that turns a matrix cell into a finding;
+ *                 and
+ *  - 'advanced-v8' — the "Advanced version 8" steering-panorama board: the
+ *                 headline figure. Three stacked layers (per-sector progress
+ *                 verdicts → policy instruments scored for contribution →
+ *                 ESABCC recommendations with live uptake status) pierced by
+ *                 one vertical thread per sector, viewable as a 3-D stack or
+ *                 flat, with each sector expandable into its full
+ *                 gap-⇒-instruments-⇒-advice chain.
  */
 export type FlowChartVariant =
   | 'report'
@@ -85,7 +93,8 @@ export type FlowChartVariant =
   | 'advanced-v4'
   | 'advanced-v5'
   | 'advanced-v6'
-  | 'advanced-v7';
+  | 'advanced-v7'
+  | 'advanced-v8';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -127,6 +136,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
   { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
   { id: 'advanced-v7', name: 'Advanced version 7', variant: 'advanced-v7', builtIn: true },
+  { id: 'advanced-v8', name: 'Advanced version 8', variant: 'advanced-v8', builtIn: true },
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
@@ -153,6 +163,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
   if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
   if (version.id === 'advanced-v7') return `esabcc-framework-board-advanced-v7:${projectId}`;
+  if (version.id === 'advanced-v8') return `esabcc-framework-board-advanced-v8:${projectId}`;
   if (version.id === 'policy-gap-2') return `esabcc-framework-board-policy-gap-2:${projectId}`;
   if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
   if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
@@ -292,15 +303,17 @@ export function saveVersionBoard(projectId: string, version: FlowChartVersion, b
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
-  // assessment-matrix boards are computed/read-only and not stored as sectors
-  // boards, so they have no sectors schema to validate against.
+  // sectored results-chain, advanced-v6 policy-loop, advanced-v7
+  // assessment-matrix and advanced-v8 steering-panorama boards are
+  // computed/read-only and not stored as sectors boards, so they have no
+  // sectors schema to validate against.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
     version.variant === 'advanced-v6' ||
-    version.variant === 'advanced-v7'
+    version.variant === 'advanced-v7' ||
+    version.variant === 'advanced-v8'
   )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
@@ -344,16 +357,18 @@ function writeAnyBoard(key: string, board: unknown): void {
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
-  // assessment-matrix boards are computed in their own views and are not
-  // sectors boards; hand back an empty sectors board so callers that expect
-  // the `{ sectors }` shape (e.g. duplicating a version) never crash.
+  // sectored results-chain, advanced-v6 policy-loop, advanced-v7
+  // assessment-matrix and advanced-v8 steering-panorama boards are computed
+  // in their own views and are not sectors boards; hand back an empty sectors
+  // board so callers that expect the `{ sectors }` shape (e.g. duplicating a
+  // version) never crash.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
     version.variant === 'advanced-v6' ||
-    version.variant === 'advanced-v7'
+    version.variant === 'advanced-v7' ||
+    version.variant === 'advanced-v8'
   )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();

@@ -29,6 +29,7 @@ import MonitoringMapBoardView from '@/components/frameworks/MonitoringMapBoardVi
 import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResultsChainBoardView';
 import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
 import AssessmentMatrixBoardView from '@/components/frameworks/AssessmentMatrixBoardView';
+import HeadlineFigureBoardView from '@/components/frameworks/HeadlineFigureBoardView';
 
 interface Props {
   projectId: string;
@@ -161,6 +162,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 7 · matrix
             </span>
           )}
+          {active.variant === 'advanced-v8' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-sky-100 text-sky-700">
+              adv 8 · panorama
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -238,6 +244,16 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         // themes, objective lenses) plus the eight-step assessment protocol —
         // also a computed, read-only view.
         <AssessmentMatrixBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'advanced-v8' ? (
+        // The steering-panorama board is the headline figure: three stacked
+        // layers (progress → policy → recommendations) pierced by one thread
+        // per sector, each expandable into its full derivation chain — also a
+        // computed, read-only view.
+        <HeadlineFigureBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}
