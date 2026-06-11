@@ -9,7 +9,7 @@
  *   2. What is shipped today?              ← the eight production modules
  *   3. Who runs / maintains it?            ← CCE5 (code) · EEA IT (host)
  *
- * It also renders a ribbon of fourteen beta modules routed under `/beta/<slug>`.
+ * It also renders a ribbon of sixteen beta modules routed under `/beta/<slug>`.
  *
  * All numbers on the page are real: they are read at render time from the
  * bundled data stores (`src/data/*`), the custom-references store, and the
@@ -370,6 +370,7 @@ export default async function HomePage() {
     { code: 'M · 21', title: 'EU Transition Panorama',  href: '/beta/transition-panorama', tags: ['AR6 pathways', '2040 advice'] },
     { code: 'M · 22', title: 'Transition Stories',     href: '/beta/transition-stories',  tags: ['Cinematic', 'Real photography'] },
     { code: 'M · 23', title: 'Policy Coherence',       href: '/beta/policy-coherence',    tags: ['4-step model', 'Coherence lens'] },
+    { code: 'M · 24', title: 'Transition Stories 2',   href: '/beta/transition-stories-2', tags: ['Policy gap report', 'Mind the Gap'] },
   ];
 
   return (
@@ -537,8 +538,8 @@ export default async function HomePage() {
       </section>
 
       {/* ─────────────────────────────────────────────────────────
-          BETA MODULES  (M·09 – M·22)
-          Fourteen experimental modules routed under `/beta/<slug>`. Each card
+          BETA MODULES  (M·09 – M·24)
+          Sixteen experimental modules routed under `/beta/<slug>`. Each card
           links to its own page; the source lives at `beta/modules/<slug>`
           and is wired into Next.js via a thin re-export under
           `src/app/beta/<slug>/page.tsx`. The Brussels Bulletin pipeline was
@@ -556,7 +557,7 @@ export default async function HomePage() {
               Out of scope for v1.0 — but on the roadmap.
             </h2>
             <p className="mt-3 max-w-3xl text-[13px] text-[#3D5265]/75 leading-relaxed">
-              Fourteen experimental modules live under <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">beta/modules/</code> and are exposed at <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">/beta/&lt;slug&gt;</code>.
+              Sixteen experimental modules live under <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">beta/modules/</code> and are exposed at <code className="font-mono text-[12px] bg-[#FBFBFA] border border-[#E6E7E8] px-1.5 py-0.5 rounded-sm">/beta/&lt;slug&gt;</code>.
               Click any card to open the prototype.
             </p>
           </div>
