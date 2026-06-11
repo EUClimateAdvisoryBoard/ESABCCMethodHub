@@ -11,6 +11,7 @@ import TagDistributionPanel from './TagDistributionPanel';
 import SynthesisMatrix from './SynthesisMatrix';
 import EvidenceBasePanel from './EvidenceBasePanel';
 import ReportOutlineBuilder from './ReportOutlineBuilder';
+import ObjectiveChecklistMatrix from './ObjectiveChecklistMatrix';
 
 interface Props {
   projectId: string;
@@ -30,13 +31,14 @@ interface Props {
   onTabChange?: (tab: AnalysisTab) => void;
 }
 
-export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution';
+export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution' | 'checklist';
 
 const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'outline', label: 'Report outline', blurb: 'Map sections to tags — see which articles belong where, and where the gaps are.' },
   { id: 'matrix', label: 'Synthesis matrix', blurb: 'Themes × sources grid with triangulation — the classic literature-review overview.' },
   { id: 'evidence', label: 'Evidence base', blurb: 'A citation-ready quote bank per theme, exportable to Word.' },
   { id: 'distribution', label: 'Tag distribution', blurb: 'How coding effort is spread across tags and documents.' },
+  { id: 'checklist', label: 'Objective checklist', blurb: 'Policies × delivery criteria — can each act deliver its own objective, and where are the inconsistencies (incl. consistency for adaptation)?' },
 ];
 
 /**
@@ -179,6 +181,12 @@ export default function WorkspaceAnalysis({
           <div className="border border-[#E6E7E8] rounded-md">
             <TagDistributionPanel documents={documents} codes={codes} segments={segments} />
           </div>
+        )}
+        {tab === 'checklist' && (
+          <ObjectiveChecklistMatrix
+            scopeIds={documents.map(d => d.id)}
+            scopeLabel="This workspace"
+          />
         )}
       </div>
 
