@@ -40,6 +40,8 @@ import {
 } from '@/lib/references/reference-service';
 import { references as staticReferencesRaw } from '@/data/references';
 import fundingTagsData from '@/data/reference-funding-tags.json';
+import pdfLinksData from '@/data/reference-pdf-links.json';
+import correctionsData from '@/data/reference-corrections.json';
 import { getPolicyCitationsAsReferences, isPolicyCitation } from '@/lib/policy-citations';
 import LibrarySelector from '@/components/references/LibrarySelector';
 import ReferenceList from '@/components/references/ReferenceList';
@@ -76,6 +78,15 @@ const STATIC_LIBRARY_ID = '__static_fallback__';
 // "eu-funded" / "horizon-europe" etc. render and filter like any other tag.
 const FUNDING_TAGS: Record<string, string[]> = (fundingTagsData.tags ?? {}) as Record<string, string[]>;
 
+// Open-access PDF links and safe metadata fills for the static library,
+// keyed by reference id. Generated offline by
+// `scripts/audit-static-references.mjs` (Unpaywall/OpenAlex + CrossRef) —
+// same sidecar pattern as the funding tags, so the auto-generated
+// references.ts itself stays untouched and the data survives re-exports.
+const PDF_LINKS: Record<string, string> = (pdfLinksData.links ?? {}) as Record<string, string>;
+const FIELD_FILLS: Record<string, { volume?: string; issue?: string; pages?: string }> =
+  (correctionsData.fills ?? {}) as Record<string, { volume?: string; issue?: string; pages?: string }>;
+
 function mergeFundingTags(id: string, existing?: string[]): string[] | null {
   const funding = FUNDING_TAGS[id];
   if (!funding || funding.length === 0) return existing && existing.length ? existing : null;
@@ -104,6 +115,7 @@ function mapStaticTypeToCSL(t: string): string {
 
 const staticReferences: Reference[] = staticReferencesRaw.map((r) => {
   const cslType = mapStaticTypeToCSL(r.type);
+  const fill = FIELD_FILLS[r.id] ?? {};
   return {
     id: r.id,
     library_id: STATIC_LIBRARY_ID,
@@ -114,9 +126,9 @@ const staticReferences: Reference[] = staticReferencesRaw.map((r) => {
       author: [{ family: r.authors, given: '', literal: r.authors }],
       issued: r.year ? { 'date-parts': [[parseInt(r.year, 10)]] } : undefined,
       'container-title': r.journal || undefined,
-      volume: r.volume || undefined,
-      issue: r.issue || undefined,
-      page: r.pages || undefined,
+      volume: r.volume || fill.volume || undefined,
+      issue: r.issue || fill.issue || undefined,
+      page: r.pages || fill.pages || undefined,
       DOI: r.doi || undefined,
       URL: r.url || undefined,
     },
@@ -130,7 +142,7 @@ const staticReferences: Reference[] = staticReferencesRaw.map((r) => {
     citation_key: null,
     tags: mergeFundingTags(r.id, r.tags),
     notes: r.notes || null,
-    pdf_url: null,
+    pdf_url: PDF_LINKS[r.id] || null,
     funding: null,
     created_at: r.addedDate || '2024-01-01T00:00:00Z',
     updated_at: r.addedDate || '2024-01-01T00:00:00Z',
