@@ -80,6 +80,18 @@ EndNote dump via `/api/references/library/backfill`. There is no
 scheduled ingestion for M·01; everything that matters is user-entered or
 user-imported.
 
+One batch helper exists for PDFs:
+[`scripts/fetch-reference-pdfs.mjs`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/fetch-reference-pdfs.mjs)
+resolves a legal open-access copy for every custom reference without one
+(curated source map → Unpaywall → OpenAlex → `citation_pdf_url`),
+downloads it and attaches it — to the `reference-pdfs` bucket when
+Supabase credentials are present, otherwise committed under
+`public/reference-pdfs/` and served same-origin. It runs on a GitHub
+Actions runner (`.github/workflows/fetch-reference-pdfs.yml`) because
+the dev sandbox's network policy blocks the scholarly APIs; the attach
+report lands in `docs/reference/reference-pdfs.md`. Paywalled references
+are never fetched — they stay listed in the report for manual upload.
+
 ## Schema
 
 ```

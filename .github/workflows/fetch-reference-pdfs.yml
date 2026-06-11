@@ -1,0 +1,80 @@
+name: Fetch reference PDFs
+
+# Runs scripts/fetch-reference-pdfs.mjs on a GitHub-hosted runner (which can
+# reach Unpaywall / OpenAlex / publisher sites, unlike the restricted dev
+# sandbox), then commits the attached PDFs + updated reference store back to
+# the branch the workflow is triggered from.
+#
+# If the repository has Supabase secrets configured the PDFs land in the
+# `reference-pdfs` storage bucket (production behaviour, nothing committed
+# except the pdfUrl fields); without secrets they are committed under
+# public/reference-pdfs/ and served same-origin.
+#
+# The commit-back uses GITHUB_TOKEN, which (by GitHub design) does not
+# re-trigger this workflow, so there's no loop risk; the path filter keeps it
+# from firing on the generated outputs too.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/busy-ritchie-n4vl3l
+    paths:
+      - scripts/fetch-reference-pdfs.mjs
+      - scripts/data/reference-pdf-sources.json
+      - .github/workflows/fetch-reference-pdfs.yml
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-commit:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The script only uses Node built-ins + global fetch, so no install step.
+      - name: Fetch and attach open-access PDFs
+        run: node scripts/fetch-reference-pdfs.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/custom-references.json public/reference-pdfs docs/reference/reference-pdfs.md)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates to current branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/custom-references.json docs/reference/reference-pdfs.md
+          git add -A public/reference-pdfs || true
+          git commit -m "chore: attach open-access PDFs to references [automated]"
+          branch="${GITHUB_REF#refs/heads/}"
+          # The target branch can advance between checkout and push, which
+          # rejects the push as non-fast-forward. Rebase the single automated
+          # commit onto the latest tip and retry.
+          for attempt in 1 2 3 4 5; do
+            if git push origin "HEAD:${branch}"; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing onto origin/${branch} and retrying."
+            git pull --rebase origin "${branch}"
+            sleep $((attempt * 3))
+          done
+          echo "::error::Failed to push automated PDF update after 5 attempts."
+          exit 1

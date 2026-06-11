@@ -63,6 +63,12 @@ export async function GET(request: NextRequest) {
   if (!ref.pdfUrl) {
     return NextResponse.json({ error: 'No PDF for this reference' }, { status: 404 });
   }
+  // Same-origin paths (PDFs committed under public/reference-pdfs/ by
+  // scripts/fetch-reference-pdfs.mjs) don't need proxying at all — the file
+  // is already served from our own origin, so just redirect to it.
+  if (ref.pdfUrl.startsWith('/')) {
+    return NextResponse.redirect(new URL(ref.pdfUrl, request.nextUrl.origin), 302);
+  }
   if (!isAllowedHost(ref.pdfUrl)) {
     return NextResponse.json(
       { error: 'PDF host not allowed', host: new URL(ref.pdfUrl).hostname },
