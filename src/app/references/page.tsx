@@ -1303,6 +1303,11 @@ function AddReferenceForm({
   const [dragState, setDragState] = useState<'idle' | 'valid' | 'invalid'>('idle');
   const [pdfStatus, setPdfStatus] = useState<string>('');
   const [pdfBusy, setPdfBusy] = useState(false);
+  // A PDF picked before the reference has an id (no DOI yet, not saved).
+  // Held in memory and uploaded as part of the initial Save, so the user
+  // never has to save-then-reopen just to attach a PDF.
+  const [pendingPdf, setPendingPdf] = useState<File | null>(null);
+  const [saving, setSaving] = useState(false);
   // Smart-paste: peek at the clipboard for DOI/arXiv/ISBN when the DOI input
   // is focused. Suppresses the chip if the clipboard text already matches the
   // current value, so the chip never nags.
@@ -1438,7 +1443,9 @@ function AddReferenceForm({
       return;
     }
     if (!formRefId) {
-      setPdfStatus('Enter a title and DOI (or save the reference) before uploading a PDF.');
+      // No id to store the file under yet — stage it and upload on Save.
+      setPendingPdf(file);
+      setPdfStatus(`"${file.name}" will be uploaded when you save the reference.`);
       return;
     }
     setPdfBusy(true);
@@ -1449,6 +1456,7 @@ function AddReferenceForm({
       setPdfStatus(`Upload failed: ${result.error}`);
       return;
     }
+    setPendingPdf(null);
     setPdfUrl(result.publicUrl || '');
     setPdfStatus(isEditing ? 'PDF uploaded. Click Save Changes to persist.' : 'PDF uploaded. Click Save Reference to persist.');
   };
@@ -1552,13 +1560,32 @@ function AddReferenceForm({
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!title.trim()) return;
+    if (!title.trim() || saving) return;
 
     const id = editingRef?.id || 'custom-' + Date.now();
     const yearNum = year ? parseInt(year, 10) : null;
     const funding = parseFundingText(fundingText);
+
+    // Upload a staged PDF as part of this save. Prefer the doi-derived id
+    // (formRefId) when one exists so the storage key matches what the
+    // Annotate link and auto-fetch use; otherwise file it under the new id.
+    let finalPdfUrl = pdfUrl;
+    if (pendingPdf) {
+      setSaving(true);
+      setPdfStatus('Uploading PDF...');
+      const result = await uploadPdf(formRefId || id, pendingPdf);
+      setSaving(false);
+      if (!result.ok) {
+        setPdfStatus(`PDF upload failed: ${result.error}. The reference was not saved — try again or remove the PDF.`);
+        return;
+      }
+      finalPdfUrl = result.publicUrl || '';
+      setPendingPdf(null);
+      setPdfUrl(finalPdfUrl);
+      setPdfStatus('');
+    }
 
     const ref: Reference = {
       id,
@@ -1590,7 +1617,7 @@ function AddReferenceForm({
         return combined.length > 0 ? combined : null;
       })(),
       notes: notes || null,
-      pdf_url: pdfUrl || null,
+      pdf_url: finalPdfUrl || null,
       funding: funding.length > 0 ? funding : null,
       created_at: editingRef?.created_at || new Date().toISOString(),
       updated_at: new Date().toISOString(),
@@ -1783,10 +1810,37 @@ function AddReferenceForm({
             </button>
           </div>
         )}
-        {!pdfUrl && (
+        {!pdfUrl && pendingPdf && (
+          <div className="flex flex-wrap items-center gap-2 px-3 py-2 border border-grey-200 rounded-lg bg-grey-100/50 text-sm text-tertiary-dark">
+            <span aria-hidden="true">📄</span>
+            <span className="truncate max-w-[320px] font-medium">{pendingPdf.name}</span>
+            <span className="text-tertiary text-xs">
+              {(pendingPdf.size / (1024 * 1024)).toFixed(1)} MB · uploads on save
+            </span>
+            <label className="ml-auto px-3 py-1.5 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200 cursor-pointer">
+              Replace
+              <input
+                type="file"
+                accept="application/pdf"
+                className="hidden"
+                onChange={e => handlePdfFileChange(e.target.files?.[0] || null)}
+                disabled={saving}
+              />
+            </label>
+            <button
+              type="button"
+              onClick={() => { setPendingPdf(null); setPdfStatus(''); }}
+              disabled={saving}
+              className="px-3 py-1.5 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200"
+            >
+              Remove
+            </button>
+          </div>
+        )}
+        {!pdfUrl && !pendingPdf && (
           <label
             onDragOver={(e) => {
-              if (!formRefId || pdfBusy) return;
+              if (pdfBusy) return;
               e.preventDefault();
               const item = e.dataTransfer?.items?.[0];
               const isPdf = item ? (item.type === 'application/pdf') : true;
@@ -1796,37 +1850,33 @@ function AddReferenceForm({
             onDrop={(e) => {
               e.preventDefault();
               setDragState('idle');
-              if (!formRefId || pdfBusy) return;
+              if (pdfBusy) return;
               const file = e.dataTransfer?.files?.[0];
               if (file) handlePdfFileChange(file);
             }}
             className={`mh-motion-fast flex items-center justify-center gap-2 px-4 py-6 border-2 border-dashed rounded-lg text-sm ${
-              !formRefId
-                ? 'border-[var(--mh-border)] text-[var(--mh-muted)] cursor-not-allowed'
-                : dragState === 'valid'
-                  ? 'border-[var(--mh-status-success)] bg-[var(--mh-status-success-bg)] text-[var(--mh-status-success)] cursor-copy'
-                  : dragState === 'invalid'
-                    ? 'border-[var(--mh-status-warning)] bg-[var(--mh-status-warning-bg)] text-[var(--mh-status-warning)] cursor-not-allowed'
-                    : 'border-[var(--mh-border)] cursor-pointer hover:border-[var(--mh-status-primary)] text-[var(--mh-muted)]'
+              dragState === 'valid'
+                ? 'border-[var(--mh-status-success)] bg-[var(--mh-status-success-bg)] text-[var(--mh-status-success)] cursor-copy'
+                : dragState === 'invalid'
+                  ? 'border-[var(--mh-status-warning)] bg-[var(--mh-status-warning-bg)] text-[var(--mh-status-warning)] cursor-not-allowed'
+                  : 'border-[var(--mh-border)] cursor-pointer hover:border-[var(--mh-status-primary)] text-[var(--mh-muted)]'
             }`}
           >
             <span>
               {pdfBusy
                 ? 'Working…'
-                : !formRefId
-                  ? 'Enter a DOI or save the reference first'
-                  : dragState === 'valid'
-                    ? 'Release to import'
-                    : dragState === 'invalid'
-                      ? 'Only PDF files are accepted'
-                      : 'Drop a PDF here, or click to upload (max 50 MB)'}
+                : dragState === 'valid'
+                  ? 'Release to import'
+                  : dragState === 'invalid'
+                    ? 'Only PDF files are accepted'
+                    : 'Drop a PDF here, or click to upload (max 50 MB)'}
             </span>
             <input
               type="file"
               accept="application/pdf"
               className="hidden"
               onChange={e => handlePdfFileChange(e.target.files?.[0] || null)}
-              disabled={pdfBusy || !formRefId}
+              disabled={pdfBusy}
             />
           </label>
         )}
@@ -1945,8 +1995,8 @@ function AddReferenceForm({
             <button type="button" onClick={onCancel} className="px-4 py-2 bg-grey-100 hover:bg-grey-200 text-tertiary-dark text-sm rounded-lg border border-grey-200">
               Cancel
             </button>
-            <button type="submit" className="px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm rounded-lg">
-              {isEditing ? 'Save Changes' : 'Save Reference'}
+            <button type="submit" disabled={saving} className="px-4 py-2 bg-primary hover:bg-primary-dark disabled:opacity-60 text-white text-sm rounded-lg">
+              {saving ? 'Uploading PDF…' : isEditing ? 'Save Changes' : 'Save Reference'}
             </button>
           </div>
         </div>
