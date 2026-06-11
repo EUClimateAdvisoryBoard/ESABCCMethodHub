@@ -411,6 +411,17 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
       'The fund size is wired to ETS2 auction revenue under Directive 2003/87/EC — which is why the ETS2 postponement to 2028 (Reg. (EU) 2026/667) violates the capitalisation assumption written into this provision.',
   },
   {
+    id: 'exante-social-climate-fund-cut',
+    policyId: 'social-climate-fund',
+    stepId: 'ex-ante',
+    assessment: { kind: 'ex-ante' },
+    provision: 'Art. 10(1), third subpara',
+    quote:
+      'Where the emission trading system established in accordance with Chapter IVa of Directive 2003/87/EC is postponed until 2028 pursuant to Article 30k of that Directive, the maximum amount to be made available to the Fund shall be EUR 54 600 000 000',
+    reading:
+      'The act prices in its own failure mode: a 2028 postponement “pursuant to Article 30k” cuts the Fund to €54.6 bn. Reg. (EU) 2026/667 delayed ETS2 by declaring the Art. 30k rules applicable — whether this clause is thereby triggered is legally unsettled.',
+  },
+  {
     id: 'exante-methane-regulation',
     policyId: 'methane-regulation',
     stepId: 'ex-ante',

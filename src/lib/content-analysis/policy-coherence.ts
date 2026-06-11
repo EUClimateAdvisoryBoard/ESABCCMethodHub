@@ -330,8 +330,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the ETS2 start is delayed in law or auction yield falls materially below plan; under pressure while delay or softening proposals are live in the legislature.',
     observation:
-      'The ETS2 start was postponed to 2028 in law (Reg. (EU) 2026/667, Art. 2 — enacted with the 2040 target), pushing back the auction revenue the fund is wired to; a Nov 2025 MSR proposal would double price-containment releases at the ~€45 trigger; plan submissions are far behind, with only Sweden’s plan approved by spring 2026.',
-    source: 'Reg. (EU) 2026/667 (OJ 18.3.2026); Commission SCF state of play (2026).',
+      'The ETS2 start was postponed to 2028 in law — Reg. (EU) 2026/667 Art. 2 declares the Art. 30k postponement rules applicable, which arguably triggers the Fund’s own fallback clause cutting it to €54.6 bn (legally unsettled; Reg. 2026/667 is silent on the SCF); a Nov 2025 MSR proposal would double price-containment releases at the ~€45 trigger; plan approvals are far behind — Sweden (Dec 2025) and Lithuania (Jun 2026) only.',
+    source: 'Reg. (EU) 2026/667 (OJ 18.3.2026); SCF Reg. Art. 10(1); Commission plan endorsements.',
     tier: 'A',
     status: 'violated',
   },
@@ -484,8 +484,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if alignment reporting becomes substantially voluntary across the large-firm universe or criteria are annulled; under pressure amid simplification cuts and live litigation.',
     observation:
-      'The Jul 2025 simplification delegated act (in force since Jan 2026) cut reported datapoints by roughly two-thirds and made alignment reporting voluntary below the new 1,000-employee/€450m CSRD scope; reporting remains mandatory only for the largest firms; gas/nuclear criteria litigation continues.',
-    source: 'Taxonomy disclosures delegated act amendment (OJ 8.1.2026); CJEU docket.',
+      'The Jul 2025 simplification delegated act (in force since Jan 2026) cut reported datapoints by ~64% for non-financial undertakings (more for banks); separately, the Omnibus level-1 changes to the CSRD scope left alignment reporting voluntary below the new 1,000-employee/€450m threshold — mandatory only for the largest firms; gas/nuclear criteria litigation continues.',
+    source: 'Taxonomy disclosures delegated act amendment (OJ 8.1.2026); Dir. (EU) 2026/470; CJEU docket.',
     tier: 'B',
     status: 'under-pressure',
   },
