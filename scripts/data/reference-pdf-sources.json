@@ -1,0 +1,75 @@
+{
+  "_comment": "Hand-verified open-access PDF locations for custom references, keyed by reference id. Consumed by scripts/fetch-reference-pdfs.mjs, which tries these before Unpaywall/OpenAlex and validates every download by PDF magic bytes (a paywall HTML page is rejected, never attached). Verified against publisher pages, June 2026.",
+  "doi-10.1016-j.esr.2026.102211": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S2211467X2600177X/pdf",
+    "note": "CC licence on ScienceDirect (PII S2211467X2600177X)"
+  },
+  "doi-10.1088-1748-9326-ae55b9": {
+    "pdfUrl": "https://iopscience.iop.org/article/10.1088/1748-9326/ae55b9/pdf",
+    "note": "ERL, gold OA"
+  },
+  "doi-10.1080-14693062.2026.2653898": {
+    "pdfUrl": "https://www.tandfonline.com/doi/pdf/10.1080/14693062.2026.2653898",
+    "note": "Climate Policy editorial; free PDF served by T&F (licence unconfirmed)"
+  },
+  "doi-10.1016-j.enpol.2024.114083": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0301421524001034/pdf",
+    "note": "OA on ScienceDirect; green copy also on DTU Orbit"
+  },
+  "doi-10.1088-1748-9326-ac65a4": {
+    "pdfUrl": "https://iopscience.iop.org/article/10.1088/1748-9326/ac65a4/pdf",
+    "note": "ERL, gold OA; green copy at PIK repository"
+  },
+  "doi-10.1088-2753-3751-ae57b0": {
+    "pdfUrl": "https://iopscience.iop.org/article/10.1088/2753-3751/ae57b0/pdf",
+    "note": "Environmental Research: Energy, gold OA"
+  },
+  "doi-10.1016-j.agsy.2026.104738": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0308521X2600106X/pdf",
+    "note": "OA on ScienceDirect (PII S0308521X2600106X)"
+  },
+  "doi-10.1038-s44168-026-00364-4": {
+    "pdfUrl": "https://www.nature.com/articles/s44168-026-00364-4.pdf",
+    "note": "npj Climate Action, gold OA"
+  },
+  "doi-10.1016-j.jenvman.2026.129449": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0301479726009096/pdf",
+    "note": "CC licence on ScienceDirect (PII S0301479726009096)"
+  },
+  "doi-10.1016-j.apenergy.2026.127760": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0306261926004125/pdf",
+    "note": "CC licence on ScienceDirect (PII S0306261926004125)"
+  },
+  "doi-10.1016-j.eneco.2026.109280": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S0140988326001593/pdf",
+    "note": "CC licence on ScienceDirect (PII S0140988326001593)"
+  },
+  "doi-10.1038-s44168-025-00279-6": {
+    "pdfUrl": "https://www.nature.com/articles/s44168-025-00279-6.pdf",
+    "note": "npj Climate Action, gold OA (also PMC12289515); backup for the existing bucket copy"
+  },
+  "ref-1961": {
+    "pdfUrl": "https://www.cesifo.org/DocDL/cesifo1_wp10370.pdf",
+    "note": "Green OA preprint (CESifo WP 10370) of the FinanzArchiv 80(1) article"
+  },
+  "doi-10.1038-s41467-026-71159-8": {
+    "pdfUrl": "https://www.nature.com/articles/s41467-026-71159-8.pdf",
+    "note": "Nature Communications, gold OA"
+  },
+  "ref-1330": {
+    "pdfUrl": "https://www.degruyterbrill.com/document/doi/10.1515/pwp-2024-0028/pdf",
+    "note": "Perspektiven der Wirtschaftspolitik, CC BY 4.0"
+  },
+  "ref-568": {
+    "pdfUrl": "https://www.cell.com/action/showPdf?pii=S2542-4351%2826%2900079-6",
+    "note": "Joule, CC BY 4.0 (journal version of SSRN 4875550)"
+  },
+  "doi-10.1038-s41560-026-02021-w": {
+    "pdfUrl": "https://www.nature.com/articles/s41560-026-02021-w.pdf",
+    "note": "Nature Energy, CC BY 4.0; author correction 10.1038/s41560-026-02064-z"
+  },
+  "doi-10.1016-j.crm.2021.100357": {
+    "pdfUrl": "https://www.sciencedirect.com/science/article/pii/S2212096321000863/pdf",
+    "note": "Climate Risk Management is gold OA; backup for the existing bucket copy"
+  }
+}
