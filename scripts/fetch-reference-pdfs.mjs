@@ -283,9 +283,10 @@ async function main() {
     ? JSON.parse(readFileSync(SOURCES_PATH, 'utf8'))
     : {};
 
+  const curatedCount = Object.keys(sources).filter((k) => !k.startsWith('_')).length;
   console.log(
     `fetch-reference-pdfs: ${refs.length} refs, ` +
-      `${Object.keys(sources).length} curated sources, ` +
+      `${curatedCount} curated sources, ` +
       `attach target = ${HAVE_SUPABASE ? 'supabase bucket' : 'public/reference-pdfs/'}` +
       `${DRY_RUN ? ' [dry-run]' : ''}`,
   );

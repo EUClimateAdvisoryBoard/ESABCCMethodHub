@@ -211,6 +211,7 @@ nav:
       - API reference: reference/api.md
       - Scripts reference: reference/scripts.md
       - Reference classification batch: reference/classification-batch.md
+      - Reference metadata audit (June 2026): reference/reference-audit-2026-06.md
       - Component library: reference/components.md
       - "Clients & extensions": reference/clients.md
       - Design system: reference/design-system.md
