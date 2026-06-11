@@ -227,27 +227,8 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
           </div>
         </Row>
 
-        {/* ── Climate risk rows (EUCRA impact chain) ─────────────────────────── */}
-        {(sector.risks ?? []).length > 0 && RISK_KIND_ORDER.map((kind) => {
-          const nodes = (sector.risks ?? []).filter((n) => (n.riskKind ?? 'risk') === kind);
-          if (nodes.length === 0) return null;
-          return (
-            <Row key={kind} label={RISK_KIND_LABEL[kind]} bg={RISK_KIND_BG[kind]} text="#fff">
-              <div className="flex gap-2 items-stretch flex-wrap">
-                {nodes.map((r) => (
-                  <div
-                    key={r.id}
-                    ref={register(r.id)}
-                    className="relative rounded shadow-sm flex-1 min-w-[118px] p-2"
-                    style={{ background: RISK_KIND_BG[kind] }}
-                  >
-                    <div className="text-[11px] font-semibold leading-tight text-white">{r.label}</div>
-                  </div>
-                ))}
-              </div>
-            </Row>
-          );
-        })}
+        {/* ── Climate risk rows BEFORE levers (default) ──────────────────────── */}
+        {sector.risksPosition !== 'after-levers' && renderRiskRows(sector.risks, register)}
 
         {/* ── Mitigation (+ adaptation) levers ───────────────────────────────── */}
         <Row label={showAdaptation ? 'Mitigation & adaptation levers' : 'Mitigation levers'} bg={LEVER_BG} text="#fff" onAdd={editing ? () => addNode('lever') : undefined}>
@@ -295,6 +276,9 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
             ))}
           </div>
         </Row>
+
+        {/* ── Climate risk rows AFTER levers (EUCRA bottom-up chain) ────────── */}
+        {sector.risksPosition === 'after-levers' && renderRiskRows(sector.risks, register)}
 
         {/* ── Enabling conditions ────────────────────────────────────────────── */}
         <Row label="Enabling conditions (non-exhaustive)" bg={ENABLING_LABEL_BG} text="#3a3413">
@@ -362,6 +346,35 @@ export default function SectorFlow({ sector, editing, allIndicators, onChange, o
       </div>
     </div>
   );
+}
+
+// ── risk rows helper ──────────────────────────────────────────────────────────
+
+function renderRiskRows(
+  risks: FrameworkNode[] | undefined,
+  register: (id: string) => (el: HTMLElement | null) => void,
+) {
+  if (!risks || risks.length === 0) return null;
+  return RISK_KIND_ORDER.map((kind) => {
+    const nodes = risks.filter((n) => (n.riskKind ?? 'risk') === kind);
+    if (nodes.length === 0) return null;
+    return (
+      <Row key={kind} label={RISK_KIND_LABEL[kind]} bg={RISK_KIND_BG[kind]} text="#fff">
+        <div className="flex gap-2 items-stretch flex-wrap">
+          {nodes.map((r) => (
+            <div
+              key={r.id}
+              ref={register(r.id)}
+              className="relative rounded shadow-sm flex-1 min-w-[118px] p-2"
+              style={{ background: RISK_KIND_BG[kind] }}
+            >
+              <div className="text-[11px] font-semibold leading-tight text-white">{r.label}</div>
+            </div>
+          ))}
+        </div>
+      </Row>
+    );
+  });
 }
 
 // ── sub-components ────────────────────────────────────────────────────────────

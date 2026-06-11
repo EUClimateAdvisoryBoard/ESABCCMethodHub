@@ -146,6 +146,16 @@ export interface SectorFramework {
    * carries a `riskKind` that places it into the correct coloured sub-row.
    */
   risks?: FrameworkNode[];
+  /**
+   * Where the climate-risk rows are rendered relative to the Mitigation levers row.
+   * - 'before-levers' (default) — risk rows sit between Outcomes and Levers; risk
+   *   nodes typically have parents pointing at outcomes (they threaten outcomes).
+   * - 'after-levers' — risk rows sit below the Levers row; risk nodes have
+   *   parents pointing at levers (they feed into levers from below).
+   *   Used for the EUCRA-style impact chain where causation flows upward:
+   *   hazards → impacts → major risks → mitigation levers.
+   */
+  risksPosition?: 'before-levers' | 'after-levers';
   /** Accent colour (hex) used for the sector's cards and spine. */
   color: string;
   /** Text of the dark top box (the sector goal). */
@@ -1984,6 +1994,8 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
   }
 
   // ── Major climate risks (pink) ─────────────────────────────────────────────
+  // Major risks point UP to the mitigation levers they threaten / that must
+  // respond to them. No skip-level connections (not directly to outcomes).
   const majorRisks: FrameworkNode[] = [
     {
       id: 'en-cr1',
@@ -1991,7 +2003,9 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
       riskKind: 'risk',
       label:
         'Risk of electricity disruption due to heat and drought impacts on energy production and peak demand',
-      parents: ['en-o1'],
+      // Threatens: fossil fuel phase-out (urgency↑), RES roll-out (scale↑),
+      // targeted CCU/CCS, system integration, energy efficiency
+      parents: ['en-l1', 'en-l3', 'en-l4', 'en-l5', 'en-l6'],
       indicators: [],
     },
     {
@@ -2000,7 +2014,8 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
       riskKind: 'risk',
       label:
         'Risk of energy disruption due to damage to energy transportation or storage infrastructure following coastal or inland flooding',
-      parents: ['en-o1'],
+      // Threatens: RES roll-out (infrastructure resilience), system integration
+      parents: ['en-l3', 'en-l5'],
       indicators: [],
     },
   ];
@@ -2102,13 +2117,14 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
   ];
 
   // ── Climate hazards (blue) ─────────────────────────────────────────────────
+  // Hazards point only to impacts (no skip-level). Drivers row removed.
   const hazards: FrameworkNode[] = [
     {
       id: 'en-ch1',
       layer: 'risk',
       riskKind: 'hazard',
       label: 'Warming / heatwaves',
-      parents: ['en-cd1', 'en-ci1', 'en-ci2', 'en-ci4'],
+      parents: ['en-ci1', 'en-ci2', 'en-ci4'],
       indicators: [],
     },
     {
@@ -2116,7 +2132,7 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
       layer: 'risk',
       riskKind: 'hazard',
       label: 'Decrease in precipitation / droughts',
-      parents: ['en-cd3', 'en-cd4', 'en-ci3', 'en-ci5'],
+      parents: ['en-ci3', 'en-ci4', 'en-ci5'],
       indicators: [],
     },
     {
@@ -2132,7 +2148,7 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
       layer: 'risk',
       riskKind: 'hazard',
       label: 'Floods / landslides',
-      parents: ['en-cd2', 'en-ci6'],
+      parents: ['en-ci6'],
       indicators: [],
     },
     {
@@ -2140,11 +2156,12 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
       layer: 'risk',
       riskKind: 'hazard',
       label: 'Extreme weather events',
-      parents: ['en-cd2', 'en-ci2', 'en-ci7'],
+      parents: ['en-ci2', 'en-ci7'],
       indicators: [],
     },
   ];
 
-  base.risks = [...majorRisks, ...impacts, ...drivers, ...hazards];
+  base.risks = [...majorRisks, ...impacts, ...hazards];
+  base.risksPosition = 'after-levers';
   return { version: FRAMEWORK_BOARD_VERSION, sectors: [base] };
 }
