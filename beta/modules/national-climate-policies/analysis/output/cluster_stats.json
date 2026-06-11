@@ -1,0 +1,782 @@
+{
+  "n_policies": 535,
+  "best_k": 12,
+  "silhouette": {
+    "3": 0.054066084997392946,
+    "4": 0.056180784852624774,
+    "5": 0.05951021196599871,
+    "6": 0.05780388485832862,
+    "7": 0.05893823503426396,
+    "8": 0.05955962034248953,
+    "9": 0.06262693141187169,
+    "10": 0.0654243302921929,
+    "11": 0.062244043944590335,
+    "12": 0.06784688869694501
+  },
+  "clusters": [
+    {
+      "cluster": 0,
+      "n": 53,
+      "share_law": 0.33962264150943394,
+      "median_year": 2015.0,
+      "top_countries": {
+        "ES": 9,
+        "SE": 6,
+        "FR": 4,
+        "BG": 3,
+        "CZ": 3
+      },
+      "top_terms": [
+        "adaptation",
+        "change",
+        "climate",
+        "areas",
+        "water",
+        "forestry",
+        "effects",
+        "action",
+        "forest",
+        "agriculture",
+        "impacts",
+        "risks"
+      ],
+      "top_features": [
+        [
+          "haz:Wildfires",
+          9.4,
+          0.26
+        ],
+        [
+          "sec:Water",
+          4.7,
+          0.4
+        ],
+        [
+          "haz:Drought",
+          3.5,
+          0.32
+        ],
+        [
+          "haz:Flood",
+          3.4,
+          0.34
+        ],
+        [
+          "sec:LULUCF",
+          3.2,
+          0.4
+        ],
+        [
+          "resp:Adaptation",
+          3.1,
+          1.0
+        ],
+        [
+          "sec:Agriculture",
+          1.6,
+          0.32
+        ],
+        [
+          "inst:Research & Development, knowledge generation",
+          1.6,
+          0.26
+        ]
+      ],
+      "examples": [
+        "National Climate Change Strategy 2008-2025",
+        "Royal Decree 752/2010, of June 4, which approves the first sustainable rural development p",
+        "Environmental Code DS2000:61"
+      ]
+    },
+    {
+      "cluster": 1,
+      "n": 44,
+      "share_law": 0.3181818181818182,
+      "median_year": 2012.0,
+      "top_countries": {
+        "FR": 7,
+        "IT": 7,
+        "PL": 6,
+        "IE": 3,
+        "LV": 3
+      },
+      "top_terms": [
+        "2050",
+        "transportation",
+        "country",
+        "industry",
+        "2030",
+        "ppe",
+        "reduction",
+        "forestry",
+        "including",
+        "agriculture",
+        "20",
+        "sectors"
+      ],
+      "top_features": [
+        [
+          "sec:LULUCF",
+          5.2,
+          0.64
+        ],
+        [
+          "sec:Industry",
+          4.2,
+          0.52
+        ],
+        [
+          "sec:Residential and Commercial",
+          3.4,
+          0.55
+        ],
+        [
+          "sec:Agriculture",
+          3.1,
+          0.61
+        ],
+        [
+          "inst:Research & Development, knowledge generation",
+          2.1,
+          0.34
+        ],
+        [
+          "sec:Transportation",
+          2.0,
+          1.0
+        ],
+        [
+          "inst:Capacity building",
+          1.7,
+          0.41
+        ],
+        [
+          "sec:Energy",
+          1.6,
+          0.93
+        ]
+      ],
+      "examples": [
+        "Strategy for Energy Security and Environment (ESE)",
+        "Latvia's Strategic Development Plan 2010-2013",
+        "Latvian National Development Plan 2014-2020"
+      ]
+    },
+    {
+      "cluster": 2,
+      "n": 74,
+      "share_law": 0.6756756756756757,
+      "median_year": 2014.0,
+      "top_countries": {
+        "DE": 11,
+        "GR": 10,
+        "ES": 10,
+        "NL": 7,
+        "PL": 7
+      },
+      "top_terms": [
+        "electricity",
+        "power",
+        "wind",
+        "market",
+        "grid",
+        "generation",
+        "renewable",
+        "offshore",
+        "supply",
+        "2020",
+        "heat",
+        "installations"
+      ],
+      "top_features": [
+        [
+          "sec:Energy",
+          1.6,
+          0.97
+        ],
+        [
+          "inst:Processes, plans and strategies",
+          1.6,
+          1.0
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ]
+      ],
+      "examples": [
+        "Law on Renewable Energy Sources and Highly Effective Cogeneration",
+        "Act No. 314/2012 Coll. on regular inspection of heating systems and air conditioning syste",
+        "Law on the development and promotion of wind energy at sea (Windergie-on-Seee Act-Windseeg"
+      ]
+    },
+    {
+      "cluster": 3,
+      "n": 38,
+      "share_law": 0.6578947368421053,
+      "median_year": 2010.5,
+      "top_countries": {
+        "ES": 7,
+        "IT": 5,
+        "DE": 4,
+        "FR": 3,
+        "GR": 3
+      },
+      "top_terms": [
+        "buildings",
+        "efficiency",
+        "building",
+        "performance",
+        "systems",
+        "new",
+        "housing",
+        "certification",
+        "renovation",
+        "heating",
+        "requirements",
+        "standards"
+      ],
+      "top_features": [
+        [
+          "sec:Residential and Commercial",
+          6.1,
+          0.97
+        ],
+        [
+          "inst:Standards, obligations and norms",
+          1.9,
+          0.47
+        ],
+        [
+          "sec:Energy",
+          1.6,
+          0.97
+        ],
+        [
+          "inst:Processes, plans and strategies",
+          1.4,
+          0.87
+        ],
+        [
+          "resp:Mitigation",
+          1.0,
+          0.92
+        ],
+        [
+          "sec:Transportation",
+          0.6,
+          0.29
+        ]
+      ],
+      "examples": [
+        "Royal Decree 233/2013, on energy saving of rental housing, building restoration and urban ",
+        "Law 8/2013 on urban rehabilitation, regeneration and renovation",
+        "Energy Policy Framework (POPE, No. 2005-781)"
+      ]
+    },
+    {
+      "cluster": 4,
+      "n": 29,
+      "share_law": 0.6551724137931034,
+      "median_year": 2012.0,
+      "top_countries": {
+        "RO": 4,
+        "SK": 4,
+        "DK": 3,
+        "FR": 3,
+        "ES": 3
+      },
+      "top_terms": [
+        "biofuels",
+        "dioxide",
+        "storage",
+        "directive",
+        "petrol",
+        "biofuel",
+        "quota",
+        "amendment",
+        "diesel",
+        "fuels",
+        "obligation",
+        "transport"
+      ],
+      "top_features": [
+        [
+          "inst:Standards, obligations and norms",
+          4.0,
+          0.97
+        ],
+        [
+          "sec:Transportation",
+          1.7,
+          0.83
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ],
+        [
+          "sec:Energy",
+          0.7,
+          0.45
+        ]
+      ],
+      "examples": [
+        "Royal Decree 525/2014, on the subsidization of the Incentives Programme for Efficient Vehi",
+        "Decision no. 935 of 21/09/2011 regarding the promotion of the use of biocurients and bioli",
+        "Law of August 27, 2012 a) relating to the geological storage of carbon dioxide b) modifyin"
+      ]
+    },
+    {
+      "cluster": 5,
+      "n": 57,
+      "share_law": 0.49122807017543857,
+      "median_year": 2014.0,
+      "top_countries": {
+        "ES": 10,
+        "FI": 5,
+        "IE": 5,
+        "FR": 4,
+        "NL": 4
+      },
+      "top_terms": [
+        "alternative",
+        "vehicles",
+        "clean",
+        "mobility",
+        "transport",
+        "hydrogen",
+        "cycling",
+        "hungary",
+        "documents",
+        "forests",
+        "co2",
+        "fuels"
+      ],
+      "top_features": [
+        [
+          "sec:Transportation",
+          1.7,
+          0.82
+        ],
+        [
+          "inst:Processes, plans and strategies",
+          1.5,
+          0.95
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ],
+        [
+          "sec:Energy",
+          0.5,
+          0.3
+        ]
+      ],
+      "examples": [
+        "Law relating to the coordination of the federal sustainable development policy",
+        "Czech National Action Plan for Clean Mobility",
+        "Sustainable Development Strategy for Latvia until 2030"
+      ]
+    },
+    {
+      "cluster": 6,
+      "n": 48,
+      "share_law": 0.0,
+      "median_year": 2019.0,
+      "top_countries": {
+        "BE": 4,
+        "LU": 3,
+        "ES": 3,
+        "BG": 2,
+        "HR": 2
+      },
+      "top_terms": [
+        "union",
+        "integrated",
+        "encp",
+        "member",
+        "security",
+        "mandated",
+        "decarbonisation",
+        "internal",
+        "gases",
+        "overall",
+        "meet",
+        "dimensions"
+      ],
+      "top_features": [
+        [
+          "haz:Erosion",
+          8.0,
+          0.52
+        ],
+        [
+          "sec:Urban",
+          7.7,
+          0.42
+        ],
+        [
+          "sec:Buildings",
+          7.5,
+          0.77
+        ],
+        [
+          "sec:Health",
+          7.3,
+          0.52
+        ],
+        [
+          "haz:Drought",
+          7.3,
+          0.67
+        ],
+        [
+          "inst:International cooperation",
+          7.1,
+          0.29
+        ],
+        [
+          "haz:Flood",
+          6.9,
+          0.69
+        ],
+        [
+          "inst:Subnational and citizen participation",
+          5.9,
+          0.65
+        ]
+      ],
+      "examples": [
+        "Integrated National Energy and Climate Plan Luxembourg for the period 2021-2030",
+        "Integrated National Energy and Climate Plan for 2021 to 2030",
+        "National Energy And Climate Action Plan Of The Republic Of Lithuania For 2021-2030"
+      ]
+    },
+    {
+      "cluster": 7,
+      "n": 48,
+      "share_law": 0.8125,
+      "median_year": 2014.5,
+      "top_countries": {
+        "DE": 9,
+        "FR": 7,
+        "IT": 6,
+        "PT": 4,
+        "BE": 3
+      },
+      "top_terms": [
+        "tax",
+        "vehicles",
+        "introduces",
+        "euros",
+        "certificate",
+        "km",
+        "co2",
+        "bonus",
+        "federal",
+        "eur",
+        "2007",
+        "met"
+      ],
+      "top_features": [
+        [
+          "inst:Tax incentives",
+          4.0,
+          1.0
+        ],
+        [
+          "sec:Transportation",
+          1.4,
+          0.69
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ],
+        [
+          "sec:Energy",
+          0.8,
+          0.48
+        ]
+      ],
+      "examples": [
+        "Law 29 November 2007, n. 222 \"conversion into law, with modifications, of the decree-law 1",
+        "Law No. 82 D/2014 establishing a set of green fiscal rules",
+        "Finance Act 2013"
+      ]
+    },
+    {
+      "cluster": 8,
+      "n": 58,
+      "share_law": 0.3620689655172414,
+      "median_year": 2017.5,
+      "top_countries": {
+        "ES": 11,
+        "FR": 9,
+        "PT": 8,
+        "HR": 5,
+        "IE": 5
+      },
+      "top_terms": [
+        "change",
+        "climate",
+        "resolution",
+        "economy",
+        "mitigation",
+        "adaptation",
+        "circular",
+        "council",
+        "transition",
+        "2050",
+        "commission",
+        "protection"
+      ],
+      "top_features": [
+        [
+          "inst:Institutional mandates",
+          5.2,
+          0.31
+        ],
+        [
+          "sec:Economy-wide",
+          2.9,
+          0.74
+        ],
+        [
+          "resp:Adaptation",
+          2.2,
+          0.72
+        ],
+        [
+          "inst:Processes, plans and strategies",
+          1.3,
+          0.83
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          0.95
+        ]
+      ],
+      "examples": [
+        "Climate Change Law",
+        "Regulation on the adoption of the Plan for the air protection, protection of the ozone lay",
+        "Resolution of Council of Ministers 68/2005, establishes the National System for the Estima"
+      ]
+    },
+    {
+      "cluster": 9,
+      "n": 42,
+      "share_law": 0.6428571428571429,
+      "median_year": 2014.0,
+      "top_countries": {
+        "PT": 6,
+        "NL": 5,
+        "HR": 4,
+        "FR": 4,
+        "RO": 4
+      },
+      "top_terms": [
+        "amends",
+        "purposes",
+        "production",
+        "smart",
+        "legal",
+        "producers",
+        "electricity",
+        "biomass",
+        "regime",
+        "2004",
+        "certificates",
+        "use"
+      ],
+      "top_features": [
+        [
+          "inst:Standards, obligations and norms",
+          2.3,
+          0.55
+        ],
+        [
+          "sec:Energy",
+          1.6,
+          0.95
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ]
+      ],
+      "examples": [
+        "Decree-Law No. 23/2010",
+        "Law for the digitisation of the energy transition",
+        "Decree n \u00b0 2020-787 of 25 June 2020 relating to purchasers of last resort of biogas"
+      ]
+    },
+    {
+      "cluster": 10,
+      "n": 13,
+      "share_law": 0.8461538461538461,
+      "median_year": 2009.0,
+      "top_countries": {
+        "HU": 3,
+        "BG": 2,
+        "ES": 2,
+        "CZ": 1,
+        "DK": 1
+      },
+      "top_terms": [
+        "disaster",
+        "risk",
+        "protection",
+        "subnational",
+        "management",
+        "requires",
+        "civil",
+        "governments",
+        "emergency",
+        "response",
+        "disasters",
+        "local"
+      ],
+      "top_features": [
+        [
+          "inst:Early warning systems",
+          41.2,
+          0.46
+        ],
+        [
+          "resp:Disaster Risk Management",
+          28.5,
+          0.69
+        ],
+        [
+          "inst:Subnational and citizen participation",
+          3.5,
+          0.38
+        ],
+        [
+          "resp:Adaptation",
+          3.1,
+          1.0
+        ],
+        [
+          "inst:Capacity building",
+          1.6,
+          0.38
+        ]
+      ],
+      "examples": [
+        "Royal Decree 903/2010, on the Assessment and Management of Flood Risk",
+        "Act No. 225 establishment of the National Civil Protection Service",
+        "Early-warning system in case of disasters (Ordinance 26/2009 of the Council of Ministers)"
+      ]
+    },
+    {
+      "cluster": 11,
+      "n": 31,
+      "share_law": 0.3225806451612903,
+      "median_year": 2019.0,
+      "top_countries": {
+        "FR": 6,
+        "LU": 4,
+        "IT": 3,
+        "SE": 3,
+        "BG": 2
+      },
+      "top_terms": [
+        "charging",
+        "subsidies",
+        "mobility",
+        "electric",
+        "points",
+        "vehicles",
+        "march",
+        "2016",
+        "covid",
+        "incentivising",
+        "replaces",
+        "hydrogen"
+      ],
+      "top_features": [
+        [
+          "inst:Subsidies",
+          4.6,
+          0.97
+        ],
+        [
+          "inst:Research & Development, knowledge generation",
+          1.8,
+          0.29
+        ],
+        [
+          "resp:Mitigation",
+          1.1,
+          1.0
+        ],
+        [
+          "sec:Transportation",
+          1.1,
+          0.55
+        ],
+        [
+          "sec:Energy",
+          1.1,
+          0.65
+        ]
+      ],
+      "examples": [
+        "Royal Decree No. 425/2016 - Regulatory basis for the granting of subsidies from the Genera",
+        "Decree-law containing urgent measures on health, support for work and economy, as well as ",
+        "Decree-Law 39/2010 on electric mobility, last amended by Decree-Law 90/2014"
+      ]
+    }
+  ],
+  "country_typology": {
+    "T1": [
+      "BG",
+      "DE",
+      "ES",
+      "FR",
+      "GR",
+      "HR",
+      "IE",
+      "IT",
+      "LU",
+      "NL",
+      "PL",
+      "PT"
+    ],
+    "T2": [
+      "DK",
+      "RO",
+      "SK"
+    ],
+    "T3": [
+      "FI",
+      "HU"
+    ],
+    "T4": [
+      "AT",
+      "BE",
+      "CZ",
+      "MT",
+      "SE",
+      "SI"
+    ],
+    "T5": [
+      "EE",
+      "LT",
+      "LV"
+    ],
+    "T6": [
+      "CY"
+    ]
+  }
+}
