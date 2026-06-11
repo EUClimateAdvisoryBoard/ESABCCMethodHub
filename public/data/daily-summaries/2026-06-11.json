@@ -1,6 +1,6 @@
 {
   "date": "2026-06-11",
-  "generatedAt": "2026-06-11T14:41:19.432Z",
+  "generatedAt": "2026-06-11T19:37:23.725Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 11 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "China Briefing 11 June 2026: Tech clampdown &#124; Extreme weather &#124; Provinces’ energy plans",
-      "summary": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 11 June 2026: Tech clampdown | Extreme weather | Provinces’ energy plans appeared first on Carbon Brief.",
+      "headline": "Remarks by Commissioner Dombrovskis at the Eurogroup press conference",
+      "summary": "European Commission Statement Luxembourg, 11 Jun 2026 Thank you, Kyriakos. Good evening, everyone.\r\nFirst we had our regular exchange on the macroeconomic outlook, which focused on fiscal-related issues.\r\nThe energy ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "AMENDMENTS 1 - 168 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034 - PE789.083v01-00",
-      "summary": "AMENDMENTS 1 - 168 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pi",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -45,7 +39,7 @@
           "title": "Ukraine: Zaporizhzhia nuclear plant&#039;s power cut off",
           "link": "https://www.dw.com/en/ukraine-zaporizhzhia-nuclear-plant-s-power-cut-off/live-77498904?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "An attack near Europe&#039;s largest nuclear power plant in Russian-occupied Ukraine has caused an outage in the area. Meanwhile, a Ukrainian drone attack has sparked a fire at a refinery in southern Russia. DW has more.",
+          "description": "An attack near Europe&#039;s largest nuclear power plant in Russian-occupied Ukraine has caused an outage in the area. Meanwhile, a Ukrainian drone attack has sparked a fire at a refinery in southern Russia.",
           "published": "2026-06-11T10:11:00.000Z",
           "score": 9
         },
@@ -53,8 +47,16 @@
           "title": "Solar generates more energy in US than coal for first time",
           "link": "https://www.theguardian.com/us-news/2026/jun/11/solar-energy-us-coal",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Solar supplied 12.8% of US electricity in May even as Trump boosts coal over clean energy&lt;/p&gt;&lt;p&gt;Even as Donald Trump boosts coal over clean energy, solar power is hitting new milestones in the US and remains the leading source of new power.&lt;/p&gt;&lt;p&gt;Data released Wednesday by global energy thinktank Ember, along with a report by the Solar Energy Industries Association (Seia) and analytics firm Wood Mackenzie, show the continued growth of solar and decline of coal in",
+          "description": "&lt;p&gt;Solar supplied 12.8% of US electricity in May even as Trump boosts coal over clean energy&lt;/p&gt;&lt;p&gt;Even as Donald Trump boosts coal over clean energy, solar power is hitting new milestones in the US and remains the leading source of new power.&lt;/p&gt;&lt;p&gt;Data released on Wednesday by the global energy thinktank Ember, along with a report by the Solar Energy Industries Association (Seia) and analytics firm Wood Mackenzie, show the continued growth of solar and decline of ",
           "published": "2026-06-11T10:00:20.000Z",
+          "score": 7
+        },
+        {
+          "title": "Red-hot SpaceX IPO may burn retail buyers - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxONUMtRVhfWExtSVZoeGtqb0tDRDZCQlo4d0NWUXdUbFM2SWJXbWl0eHR5N3hHVEhnSnU5VlNFaW9SbDFkeWxaQVZxRndYeG5wZjRuRm1CQ0JhR0hGeHhKLWVQN1VHUmFnSXN1YUlMMVhpN0E4VTJqRzNSVFJhOUlua2hhUFR5N3NqYjJkRm1NSXRzRlBWZlA2RWdxRWNZNHEyLVA0dmhDNGRKOVlFTmVj?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxONUMtRVhfWExtSVZoeGtqb0tDRDZCQlo4d0NWUXdUbFM2SWJXbWl0eHR5N3hHVEhnSnU5VlNFaW9SbDFkeWxaQVZxRndYeG5wZjRuRm1CQ0JhR0hGeHhKLWVQN1VHUmFnSXN1YUlMMVhpN0E4VTJqRzNSVFJhOUlua2hhUFR5N3NqYjJkRm1NSXRzRlBWZlA2RWdxRWNZNHEyLVA0dmhDNGRKOVlFTmVj?oc=5\" target=\"_blank\"&gt;Red-hot SpaceX IPO may burn retail buyers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-11T13:05:40.000Z",
           "score": 7
         }
       ]
@@ -63,6 +65,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Remarks by Commissioner Dombrovskis at the Eurogroup press conference",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1336",
+          "source": "European Commission",
+          "description": "European Commission Statement Luxembourg, 11 Jun 2026 Thank you, Kyriakos. Good evening, everyone.\r\nFirst we had our regular exchange on the macroeconomic outlook, which focused on fiscal-related issues.\r\nThe energy ...",
+          "published": "2026-06-11T07:12:24.000Z",
+          "score": 16
+        },
         {
           "title": "China Briefing 11 June 2026: Tech clampdown &#124; Extreme weather &#124; Provinces’ energy plans",
           "link": "https://www.carbonbrief.org/china-briefing-11-june-2026-tech-clampdown-extreme-weather-provinces-energy-plans/",
@@ -80,88 +90,47 @@
           "score": 7
         },
         {
-          "title": "Record winter temperatures in Antarctic raise fears over speed of climate breakdown",
-          "link": "https://www.theguardian.com/environment/2026/jun/10/record-winter-temperatures-in-antarctic-raise-fears-over-speed-of-climate-breakdown",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Temperatures above 15C ‘very strange’ say scientists, as snow melts and rain falls on glaciers in usually frozen region&lt;/p&gt;&lt;p&gt;Temperatures in the Antarctic climbed above 15C this month, shattering the previous winter heat record for the usually frozen region and raising concerns about the speed of climate breakdown.&lt;/p&gt;&lt;p&gt;The new winter peak temperature was logged by the Argentinian Esperanza base on the Trinity peninsula on 6 June amid a protracted heatwave, whe",
-          "published": "2026-06-10T18:32:16.000Z",
-          "score": 7
-        },
-        {
-          "title": "When is rare good news on climate science actually bad? When News Corp misrepresents it | Temperature Check",
-          "link": "https://www.theguardian.com/environment/2026/jun/11/climate-crisis-science-emissions-good-news-corp-misrepresentation",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The worst-case scenario for a high-emissions scenario has been revised downward – but the best-case option is now implausible&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/11/australia-news-live-labor-coalition-one-nation-anthony-albanese-pauline-hanson-capital-gains-housing-peptides-arthritis-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"",
-          "published": "2026-06-10T15:00:51.000Z",
-          "score": 7
-        },
-        {
           "title": "Pollution rules criticised for raising new home costs",
           "link": "https://www.bbc.com/news/articles/c5yzrpp220lo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Developers claim the rules will stop them from hitting housebuilding targets.",
           "published": "2026-06-11T05:43:38.000Z",
           "score": 7
+        },
+        {
+          "title": "Subterranean fungi networks more than 100 quadrillion km in length, study finds",
+          "link": "https://www.theguardian.com/science/2026/jun/11/arbuscular-mycorrhizal-fungi-plant-life-climate-global-mapping-study",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;First ever global mapping of arbuscular mycorrhizal fungi shows scale of hyphal systems that sustain plant life&lt;/p&gt;&lt;p&gt;Our planet’s soils contain enough of the subterranean fungi that sustain plant life and help regulate the climate to stretch from the Earth to the sun almost three-quarters of a billion times, a groundbreaking new study has found.&lt;/p&gt;&lt;p&gt;Arbuscular mycorrhizal fungi are networks of tubular cells called hyphae that sustain life on Earth by forming c",
+          "published": "2026-06-11T18:00:22.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "AMENDMENTS 1 - 168 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034 - PE789.083v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789083_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 168 - Draft opinion Proposal for a Regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pi",
-          "published": "2026-06-11T13:03:15.000Z",
-          "score": 22
-        },
-        {
-          "title": "Pfizer CEO warns German investment at risk over drug pricing policies - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNRVhoWjVNSDBWYUNjSzNxLWRZV2RNU2FLWHdwdVFyR3dOb3FtNW9QTUkwd1M4Vk1YWDhWY19UaVJ2aXVjeVFuNDBMZ0ZWejc3M2lsREhBSHJZSFVrX1dkWG9PQWVlVS1aTmY3NDZ6d0I3OVI2UUFFU2pDNDZNcEEyTXVnR1paNWVpSzdyRFpNZWJ6bDBwMUpELTVUUXlNQlNfaHdxTHlJRGx2Mzdu?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNRVhoWjVNSDBWYUNjSzNxLWRZV2RNU2FLWHdwdVFyR3dOb3FtNW9QTUkwd1M4Vk1YWDhWY19UaVJ2aXVjeVFuNDBMZ0ZWejc3M2lsREhBSHJZSFVrX1dkWG9PQWVlVS1aTmY3NDZ6d0I3OVI2UUFFU2pDNDZNcEEyTXVnR1paNWVpSzdyRFpNZWJ6bDBwMUpELTVUUXlNQlNfaHdxTHlJRGx2Mzdu?oc=5\" target=\"_blank\"&gt;Pfizer CEO warns German investment at risk over drug pricing policies&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T14:52:20.000Z",
-          "score": 2
-        },
-        {
-          "title": "Trump signs $70 billion bill to fund ICE, Border Patrol - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPRVJUemtKZUdfdm5nVThTY1ZHZ3plTkZaZ0xZUkhJZ2d0OVlTbXdtR3VhSmFQVzlWUVVRaVhVWVZkWlAwOXV2WnRUc0NZZXA0bzhKNkFRbVNyVGc3bFFKTUxQVWJlN2NZWG5nbnQ3REJUWHFaNmlJQ2NPeDNfRE9CVEtPYWxkRXU3Qm5DNU44TVhYRVlSWHk2SDI2TQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxPRVJUemtKZUdfdm5nVThTY1ZHZ3plTkZaZ0xZUkhJZ2d0OVlTbXdtR3VhSmFQVzlWUVVRaVhVWVZkWlAwOXV2WnRUc0NZZXA0bzhKNkFRbVNyVGc3bFFKTUxQVWJlN2NZWG5nbnQ3REJUWHFaNmlJQ2NPeDNfRE9CVEtPYWxkRXU3Qm5DNU44TVhYRVlSWHk2SDI2TQ?oc=5\" target=\"_blank\"&gt;Trump signs $70 billion bill to fund ICE, Border Patrol&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T16:24:03.000Z",
-          "score": 2
-        },
-        {
-          "title": "UK, Australia and Canada launch $4 million fund for Israeli-Palestinian peace efforts - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRnFxZl9nNEI3bzZBckYtS0xObTF3eGxIeTZQTjVpa2lnWlBCNFYtUVg0LXR4Y093aWxNS1k4OEJCYm9BWGdjQlpNYk9fTWxoQXNTUmE5b282djI0TE02NHEtVGdZQnZPOUJrWmdHX28tV1JRNkFyM3d5REJqVW1FWWJ0b2ZGSk5aTHNVUi0zeHJibUhKZW01VWczSVZaak5MYmFZaGU0SUNyOUZlVkNZcVhEd3V2X3VfaHRDWQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxNRnFxZl9nNEI3bzZBckYtS0xObTF3eGxIeTZQTjVpa2lnWlBCNFYtUVg0LXR4Y093aWxNS1k4OEJCYm9BWGdjQlpNYk9fTWxoQXNTUmE5b282djI0TE02NHEtVGdZQnZPOUJrWmdHX28tV1JRNkFyM3d5REJqVW1FWWJ0b2ZGSk5aTHNVUi0zeHJibUhKZW01VWczSVZaak5MYmFZaGU0SUNyOUZlVkNZcVhEd3V2X3VfaHRDWQ?oc=5\" target=\"_blank\"&gt;UK, Australia and Canada launch $4 million fund for Israeli-Palestinian peace efforts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T23:47:03.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "ADDENDUM on the proposal for a regulation of the European Parliament and of the Council on circularity requirements for vehicle design and on management of end-of-life vehicles, amending Regulations (EU) 2018/858 and 2019/1020 and repealing Directives 2000/53/EC and 2005/64/EC (COM(2023)0451 ; C9-0308/2023 ; 2023/0284(COD)) - A10-0158/2025(ERR01)",
-          "link": "https://www.europarl.europa.eu/doceo/document/A-10-2025-0158-ERR01_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "ADDENDUM on the proposal for a regulation of the European Parliament and of the Council on circularity requirements for vehicle design and on management of end-of-life vehicles, amending Regulations (EU) 2018/858 and 2019/1020 and repealing Directives 2000/53/EC and 2005/64/EC (COM(2023)0451 ; C9-0308/2023 ; 2023/0284(COD))&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on the Internal Market and Consumer Protection&lt;br/&gt;Paulius Saudargas, Jens Gie",
-          "published": "2026-06-10T16:13:36.000Z",
-          "score": 22
+          "title": "CEAS comes into effect: How will it impact asylum seekers?",
+          "link": "https://www.dw.com/en/ceas-comes-into-effect-how-will-it-impact-asylum-seekers/a-77508144?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The German interior minister aims to further reduce the number of new asylum seekers. The reformed EU asylum law (CEAS) comes into effect Friday, but experts say it is unlikely to achieve all it sets out to do.",
+          "published": "2026-06-11T15:41:00.000Z",
+          "score": 8
         },
         {
-          "title": "EU and South Korea deepen ties with digital pact to bolster trade - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNaUo4a1VLSGQ0UjdxNW43ODZ3Rkc1RWRzMUdfM2NDSmtJckxGaUNlc0JELVFvb2todENiWlVNWkVyMjNIdlg4elQ2WVB0OHVuSzI2ck9QbE9EVTlSTHR2bXhIR1lyS3ZEYUZjOWFseW5jcmNLVlVtUjA4SGlTdTNKMmNMTVRtMzBhZmswX0hoTm5ldW9aRVRyYzZyTmFOTjVUcTc4R0RfdEVCY3dmcGdSRlo1MA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNaUo4a1VLSGQ0UjdxNW43ODZ3Rkc1RWRzMUdfM2NDSmtJckxGaUNlc0JELVFvb2todENiWlVNWkVyMjNIdlg4elQ2WVB0OHVuSzI2ck9QbE9EVTlSTHR2bXhIR1lyS3ZEYUZjOWFseW5jcmNLVlVtUjA4SGlTdTNKMmNMTVRtMzBhZmswX0hoTm5ldW9aRVRyYzZyTmFOTjVUcTc4R0RfdEVCY3dmcGdSRlo1MA?oc=5\" target=\"_blank\"&gt;EU and South Korea deepen ties with digital pact to bolster trade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T16:21:52.000Z",
-          "score": 8
+          "title": "Pope Leo bows to migrants&#039; &#039;dignity&#039; in Gran Canaria",
+          "link": "https://www.dw.com/en/pope-leo-bows-to-migrants-dignity-in-gran-canaria/a-77510830?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The pope visited the port of Arguineguin, a flashpoint of a migration crisis in the Canary Islands. He argued European leaders cannot claim human dignity while allowing the Mediterranean to become an &quot;unmarked grave.&quot;",
+          "published": "2026-06-11T16:32:00.000Z",
+          "score": 4
         },
         {
           "title": "Hungary makes major deal with Ukraine, its former enemy",
@@ -178,19 +147,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Head of Colombian legislative commission proposes suspension of president Petro - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbXJ4ekJET01zeUNabnpWXzJoeWRJQ1JqUi16dkxfNlFzdHZzaUQyVl9TS2pUVHhwRk1qa3Y5YTRub2lqZHh4OEZob0IzOEMxb3FmOG40TGo4WlQwUUVsWGlKaFVmRzZSc0J3ckVsZko5STRnSktfcHBiVVppS2E5NlczV0ZObjZQdUxiTno1cUN6WERvb2RpdUpQNFNfZS1ySi1fcXdPN1dHQTRKdTFKNnJCVWVvNFRydUM2elhEUDBmUQ?oc=5",
+          "title": "Wall Street rides tech rebound, Europe steady after ECB rate hike - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1iNlU3bUZXWVJpaVhJRXMwVG1LcUMyUmE1UWFvWTVlQnhqODM1bUZsM2txQmJZRzI4NUNYVlJFRVBkcnVpZHVLQnZaRDhGOV9xVTVnSU5PdEhfdVZJVm40ZU9SaExNWTFvMGZWWEI2dU1wTEwtTEZoVGxkTQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbXJ4ekJET01zeUNabnpWXzJoeWRJQ1JqUi16dkxfNlFzdHZzaUQyVl9TS2pUVHhwRk1qa3Y5YTRub2lqZHh4OEZob0IzOEMxb3FmOG40TGo4WlQwUUVsWGlKaFVmRzZSc0J3ckVsZko5STRnSktfcHBiVVppS2E5NlczV0ZObjZQdUxiTno1cUN6WERvb2RpdUpQNFNfZS1ySi1fcXdPN1dHQTRKdTFKNnJCVWVvNFRydUM2elhEUDBmUQ?oc=5\" target=\"_blank\"&gt;Head of Colombian legislative commission proposes suspension of president Petro&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T14:43:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1iNlU3bUZXWVJpaVhJRXMwVG1LcUMyUmE1UWFvWTVlQnhqODM1bUZsM2txQmJZRzI4NUNYVlJFRVBkcnVpZHVLQnZaRDhGOV9xVTVnSU5PdEhfdVZJVm40ZU9SaExNWTFvMGZWWEI2dU1wTEwtTEZoVGxkTQ?oc=5\" target=\"_blank\"&gt;Wall Street rides tech rebound, Europe steady after ECB rate hike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-11T01:03:00.000Z",
           "score": 8
         },
         {
-          "title": "Peace hopes steady Europe ahead of expected ECB rate hike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1iNlU3bUZXWVJpaVhJRXMwVG1LcUMyUmE1UWFvWTVlQnhqODM1bUZsM2txQmJZRzI4NUNYVlJFRVBkcnVpZHVLQnZaRDhGOV9xVTVnSU5PdEhfdVZJVm40ZU9SaExNWTFvMGZWWEI2dU1wTEwtTEZoVGxkTQ?oc=5",
+          "title": "China cancels high-level meetings with EU, FT reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNmtyajdSV0RyMWNER1JDb29BX3EwTFhWcG9DWjVhTnF0d1htR1dXazFRdnd2bENsQktqUVcyeEx6N1JfcGg4eHJmZ0tBSDN2b1pNMEVnRGdGNjJuc01UQlMxUjBOSVQ3ZF9fNk5FcWdfRkQ0LTNwR3ppRTNsR2ZwUWttOVNaZ1owTGFpNXExY1NTeU1tTXlXZm5VSHBJNlpqRHpuSC1LODd6QWc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1iNlU3bUZXWVJpaVhJRXMwVG1LcUMyUmE1UWFvWTVlQnhqODM1bUZsM2txQmJZRzI4NUNYVlJFRVBkcnVpZHVLQnZaRDhGOV9xVTVnSU5PdEhfdVZJVm40ZU9SaExNWTFvMGZWWEI2dU1wTEwtTEZoVGxkTQ?oc=5\" target=\"_blank\"&gt;Peace hopes steady Europe ahead of expected ECB rate hike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-11T01:03:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPNmtyajdSV0RyMWNER1JDb29BX3EwTFhWcG9DWjVhTnF0d1htR1dXazFRdnd2bENsQktqUVcyeEx6N1JfcGg4eHJmZ0tBSDN2b1pNMEVnRGdGNjJuc01UQlMxUjBOSVQ3ZF9fNk5FcWdfRkQ0LTNwR3ppRTNsR2ZwUWttOVNaZ1owTGFpNXExY1NTeU1tTXlXZm5VSHBJNlpqRHpuSC1LODd6QWc?oc=5\" target=\"_blank\"&gt;China cancels high-level meetings with EU, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-11T11:33:12.000Z",
           "score": 8
         },
         {
@@ -202,28 +171,28 @@
           "score": 8
         },
         {
-          "title": "Euro awaits ECB rate hike, dollar muted - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxObkUxSDl1cTN2SUI4UEZoRHJOOVVHajBCRDhwR19lN2ItLWRITmxOamJOQi1oaHZNSEFGNFF6RE9fWXF5ZEtBbkFzQ0NIY2lqOFhTZm1fTkgwXzhJVlQ1RFlzREx2eHN4VEw2RTJ0NlpnSktfWHFzQVN2UTNyU3dneDZHclFjTkdnX0NyS0JSLVFsWEVTWTZHRm1vQ1BjX0hHT2R3QWN4QjV3RXVXTVhF?oc=5",
+          "title": "'Global euro' needs more joint debt to pass muster - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPcVhrT1NHM2Q5djhuZ0NUS1NKYjZzbFBsY2FkeUJlVnMtWGw4bXZfdjNXR2dVdTdlMC1laG1MdUhoaUZicUwyMFoxOXkyVFZncGh3bS1RYmRldmJRcVJrSmMxZ3FTWWwwYWQyTnlHN1BTTENSRWRTUldqa0stVHNScXgxUmxhMVhOUW0ta1lZc2wzVHA0dkxKRWVBWjR2OG00ODhCd0F4elRiYlBJWXpIUFVzX2w?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxObkUxSDl1cTN2SUI4UEZoRHJOOVVHajBCRDhwR19lN2ItLWRITmxOamJOQi1oaHZNSEFGNFF6RE9fWXF5ZEtBbkFzQ0NIY2lqOFhTZm1fTkgwXzhJVlQ1RFlzREx2eHN4VEw2RTJ0NlpnSktfWHFzQVN2UTNyU3dneDZHclFjTkdnX0NyS0JSLVFsWEVTWTZHRm1vQ1BjX0hHT2R3QWN4QjV3RXVXTVhF?oc=5\" target=\"_blank\"&gt;Euro awaits ECB rate hike, dollar muted&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-11T01:44:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPcVhrT1NHM2Q5djhuZ0NUS1NKYjZzbFBsY2FkeUJlVnMtWGw4bXZfdjNXR2dVdTdlMC1laG1MdUhoaUZicUwyMFoxOXkyVFZncGh3bS1RYmRldmJRcVJrSmMxZ3FTWWwwYWQyTnlHN1BTTENSRWRTUldqa0stVHNScXgxUmxhMVhOUW0ta1lZc2wzVHA0dkxKRWVBWjR2OG00ODhCd0F4elRiYlBJWXpIUFVzX2w?oc=5\" target=\"_blank\"&gt;'Global euro' needs more joint debt to pass muster&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-11T06:03:00.000Z",
           "score": 8
         },
         {
-          "title": "US consumer inflation vaults above 4% as Iran war boosts energy prices - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQVWNSSWh5eDBlWmZCYkN5ZjVjSFNVaC1jVmUteC1pelBkR2ltcmpwYUhYa01sV3Y5dGpGUGNFMDZMeTFRT082Wk5yb1BiU3ZQMjZqR2ZpLV9zY25oOU5STURWR2xjZ0dDVTlhQnB4RFNuRTVxd3ZKbVlDVWpvT1pFMmp2Z2JNa2JlTGJsNFN3?oc=5",
+          "title": "Russian-held Sevastopol suspends fuel distribution as Zelenskiy praises attacks on energy assets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPQTdwVHNxRzlYMl9NZ0pQY1gza1BlbngtcWh0dWVQQ3BfTTAyNXJ2OFhBRXFWQW5kRUlOSDE2UkM2ZnhCR0liai03XzZfNExXbnFuT0M0NnVocUlabHVQTXg1YWgtWlo3YkdmR05VVy1yU2NRa2lNZXpFdzZWVjROLXRJUXFxZWIzMG1UcGc5S2l4R2E0cnR5cjI0XzBuY3I3Q3J2bGZkVTZRcWh5enJIRERaU0JHaU52N1E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxQVWNSSWh5eDBlWmZCYkN5ZjVjSFNVaC1jVmUteC1pelBkR2ltcmpwYUhYa01sV3Y5dGpGUGNFMDZMeTFRT082Wk5yb1BiU3ZQMjZqR2ZpLV9zY25oOU5STURWR2xjZ0dDVTlhQnB4RFNuRTVxd3ZKbVlDVWpvT1pFMmp2Z2JNa2JlTGJsNFN3?oc=5\" target=\"_blank\"&gt;US consumer inflation vaults above 4% as Iran war boosts energy prices&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-10T19:20:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPQTdwVHNxRzlYMl9NZ0pQY1gza1BlbngtcWh0dWVQQ3BfTTAyNXJ2OFhBRXFWQW5kRUlOSDE2UkM2ZnhCR0liai03XzZfNExXbnFuT0M0NnVocUlabHVQTXg1YWgtWlo3YkdmR05VVy1yU2NRa2lNZXpFdzZWVjROLXRJUXFxZWIzMG1UcGc5S2l4R2E0cnR5cjI0XzBuY3I3Q3J2bGZkVTZRcWh5enJIRERaU0JHaU52N1E?oc=5\" target=\"_blank\"&gt;Russian-held Sevastopol suspends fuel distribution as Zelenskiy praises attacks on energy assets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
+          "published": "2026-06-11T00:47:00.000Z",
           "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 421,
-    "articlesLast24h": 167,
-    "afterDedup": 155,
+    "totalArticlesScanned": 381,
+    "articlesLast24h": 161,
+    "afterDedup": 149,
     "feedsQueried": 19
   }
 }
