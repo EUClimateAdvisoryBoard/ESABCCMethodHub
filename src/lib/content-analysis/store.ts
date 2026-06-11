@@ -419,15 +419,32 @@ function hydrate(): void {
         const missing = seed.codes.filter(
           c => c.scope === 'master' && !known.has(c.id),
         );
+        // One-time taxonomy migration: early seeds tagged the coherence
+        // annotations with the four flat step codes; the master library now
+        // uses the granular verdict codes (assumption statuses, Nilsson
+        // scale points, means bands, pace readings). These segments are
+        // seed-generated, never user-authored, so when any of them still
+        // carries a flat step code the whole `seg-coh-` family is rebuilt
+        // from the current seed.
+        const FLAT_STEP_CODES = new Set(['coh-exante', 'coh-horizontal', 'coh-means', 'coh-evaluation']);
+        const staleCoherence = state.segments.some(
+          s => s.id.startsWith('seg-coh-') && FLAT_STEP_CODES.has(s.codeId),
+        );
+        const segments = staleCoherence
+          ? [
+              ...state.segments.filter(s => !s.id.startsWith('seg-coh-')),
+              ...seed.segments.filter(s => s.id.startsWith('seg-coh-')),
+            ]
+          : state.segments;
         // Seeded in-text annotations (checklist evidence `seg-check-…`,
         // coherence evidence `seg-coh-…`) are backfilled ONCE per family:
         // only when the snapshot has none of that family at all. Re-merging
         // per id would resurrect segments an analyst deliberately deleted.
         const missingSegs = [
-          ...(state.segments.some(s => s.id.startsWith('seg-check-'))
+          ...(segments.some(s => s.id.startsWith('seg-check-'))
             ? []
             : seed.segments.filter(s => s.id.startsWith('seg-check-'))),
-          ...(state.segments.some(s => s.id.startsWith('seg-coh-'))
+          ...(segments.some(s => s.id.startsWith('seg-coh-'))
             ? []
             : seed.segments.filter(s => s.id.startsWith('seg-coh-'))),
         ];
@@ -436,11 +453,11 @@ function hydrate(): void {
         const missingProjects = state.projects.some(p => p.id === 'project-policy-coherence')
           ? []
           : seed.projects.filter(p => p.id === 'project-policy-coherence');
-        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0) {
+        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0 || staleCoherence) {
           state = {
             ...state,
             codes: [...state.codes, ...missing],
-            segments: [...state.segments, ...missingSegs],
+            segments: [...segments, ...missingSegs],
             projects: [...state.projects, ...missingProjects],
           };
           persist();

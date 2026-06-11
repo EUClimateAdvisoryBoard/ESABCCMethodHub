@@ -203,3 +203,33 @@ stub, not legal text.
 - Bodies smoke test: 59 exact word-level spans, 11 article-block anchors,
   53 derived ③/④ roll-ups across the assessed corpus.
 - `tsc --noEmit` and `next build` (including the new prebuild step) pass.
+
+---
+
+## 6. The coherence master library (granular taxonomy seeding)
+
+The tags and annotations are now seeded as a first-class **master library**
+in the Content Analysis module:
+
+- **Granular verdict taxonomy** (`COHERENCE_CHILD_CODES`, defined next to
+  the model in `policy-coherence-evidence.ts` so codes and annotations
+  cannot drift): 17 child codes under the four step codes — the three
+  Assumption-Based-Planning statuses, the **full seven-point Nilsson
+  scale** (empty points stay in the tree as taggable categories), the
+  declared means-coherence bands, and the EEA pace readings plus the
+  derived MRV/review machinery code. Colors encode the verdict
+  (green/amber/red ramps).
+- **Every seeded annotation carries its verdict code**, not just its step:
+  104 segments at seed across 13 populated codes (e.g. `coh-exante-violated`
+  ×6, `coh-scale-m2` ×3, `coh-eval-offtrack` ×3, `coh-eval-machinery` ×29).
+  Filtering the code tree by a verdict now lists exactly the passages that
+  ground that verdict, corpus-wide.
+- **Landing**: the "Policy coherence — master library" project is pinned in
+  the Master row of the module landing (violet accent, own kind label,
+  not deletable), with its real annotation count (master-level segments
+  under the `root-coherence` subtree) instead of 0.
+- **Migration**: snapshots whose `seg-coh-` segments still carry the flat
+  step codes are rebuilt once at hydrate (seed-generated segments, never
+  user-authored); the new child codes merge in via the standard
+  missing-master-code path, and `getMasterCode` resolves them everywhere
+  since the catalog derives from the seed.

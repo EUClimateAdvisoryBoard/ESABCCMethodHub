@@ -525,12 +525,26 @@ function ContentAnalysisPageInner() {
   const projectSegmentCounts = useMemo(() => {
     const out: Record<string, number> = {};
     for (const p of snapshot.projects) out[p.id] = 0;
+    // The coherence master library's annotations are master-level segments
+    // (projectId null) tagged under the root-coherence subtree — count them
+    // toward that library's card too, so it doesn't read "0 segments".
+    const coherenceCodes = new Set<string>();
+    const walkCoherence = (id: string) => {
+      coherenceCodes.add(id);
+      for (const c of snapshot.codes) {
+        if (c.parentId === id && !coherenceCodes.has(c.id)) walkCoherence(c.id);
+      }
+    };
+    if ('project-policy-coherence' in out) walkCoherence('root-coherence');
     for (const s of snapshot.segments) {
       const key = s.projectId ?? 'project-master';
       out[key] = (out[key] ?? 0) + 1;
+      if (s.projectId === null && coherenceCodes.has(s.codeId)) {
+        out['project-policy-coherence'] += 1;
+      }
     }
     return out;
-  }, [snapshot.projects, snapshot.segments]);
+  }, [snapshot.projects, snapshot.codes, snapshot.segments]);
 
   const projectDocCounts = useMemo(() => {
     const out: Record<string, number> = {};

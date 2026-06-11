@@ -41,7 +41,10 @@ import {
   evaluationCoherence,
   meansCoherence,
   INTERACTION_SCALE,
+  type AssumptionStatus,
   type CoherenceStepId,
+  type InteractionScore,
+  type OutcomeReading,
 } from './policy-coherence';
 import { policies } from '@/data/policies';
 import type { AnalysisDocument, Block, CodedSegment } from './types';
@@ -76,6 +79,170 @@ export interface PolicyTextEvidence {
 /** Master code id for a step (the `coh-*` codes under `root-coherence`). */
 export function coherenceCodeId(stepId: CoherenceStepId): string {
   return COHERENCE_STEP_BY_ID[stepId].codeId;
+}
+
+// ── The coherence master-library taxonomy ───────────────────────────────────
+// Granular child codes under the four step codes, so every seeded annotation
+// is tagged with the VERDICT the passage grounds — not just the step. The
+// code tree thereby embodies the model itself: ① the three assumption
+// statuses of Assumption-Based Planning, ② the full seven-point Nilsson
+// scale (empty scale points stay in the tree so analysts can tag new
+// evidence into them), ③ the declared means-coherence bands, ④ the EEA
+// pace-ratio readings plus the derived MRV/review machinery. Seed.ts turns
+// these into master CodeNodes; the builder below assigns them to segments.
+
+export interface CoherenceChildCodeDef {
+  id: string;
+  parentId: string;
+  name: string;
+  description: string;
+  color: string;
+}
+
+const STATUS_CODE: Record<AssumptionStatus, string> = {
+  valid: 'coh-exante-valid',
+  'under-pressure': 'coh-exante-pressure',
+  violated: 'coh-exante-violated',
+};
+
+const SCALE_CODE: Record<InteractionScore, string> = {
+  3: 'coh-scale-p3',
+  2: 'coh-scale-p2',
+  1: 'coh-scale-p1',
+  0: 'coh-scale-0',
+  [-1]: 'coh-scale-m1',
+  [-2]: 'coh-scale-m2',
+  [-3]: 'coh-scale-m3',
+};
+
+const SCALE_COLOR: Record<InteractionScore, string> = {
+  3: '#15803D',
+  2: '#16A34A',
+  1: '#65A30D',
+  0: '#6B7280',
+  [-1]: '#F59E0B',
+  [-2]: '#DC2626',
+  [-3]: '#7F1D1D',
+};
+
+const MEANS_GRADE_CODE: Record<string, string> = {
+  coherent: 'coh-means-coherent',
+  partial: 'coh-means-partial',
+  incoherent: 'coh-means-incoherent',
+};
+
+const READING_CODE: Record<OutcomeReading, string> = {
+  'on-track': 'coh-eval-ontrack',
+  lagging: 'coh-eval-lagging',
+  'off-track': 'coh-eval-offtrack',
+};
+
+export const COHERENCE_CHILD_CODES: CoherenceChildCodeDef[] = [
+  // ① Assumption statuses (Assumption-Based Planning)
+  {
+    id: 'coh-exante-valid',
+    parentId: 'coh-exante',
+    name: '① Assumption valid',
+    description:
+      'The load-bearing design assumption holds: the declared violation criterion is not met by the sourced observation.',
+    color: '#16A34A',
+  },
+  {
+    id: 'coh-exante-pressure',
+    parentId: 'coh-exante',
+    name: '① Assumption under pressure',
+    description:
+      'The observation sits in the declared intermediate band: the assumption has not been falsified, but its signpost is moving against it.',
+    color: '#F59E0B',
+  },
+  {
+    id: 'coh-exante-violated',
+    parentId: 'coh-exante',
+    name: '① Assumption violated',
+    description:
+      'The declared violation criterion is met by the sourced observation: the world has falsified the design assumption.',
+    color: '#DC2626',
+  },
+  // ② The seven-point Nilsson goal-interaction scale
+  ...([3, 2, 1, 0, -1, -2, -3] as InteractionScore[]).map(score => ({
+    id: SCALE_CODE[score],
+    parentId: 'coh-horizontal',
+    name: `② ${score > 0 ? `+${score}` : score} ${INTERACTION_SCALE[score].name}`,
+    description: `Nilsson et al. (2016) scale point: ${INTERACTION_SCALE[score].definition}`,
+    color: SCALE_COLOR[score],
+  })),
+  // ③ Means-coherence bands (declared thresholds)
+  {
+    id: 'coh-means-coherent',
+    parentId: 'coh-means',
+    name: '③ Means coherent (≥ 75%)',
+    description:
+      'Roll-up of the five means-side checklist criteria scores at or above the declared 75% threshold.',
+    color: '#16A34A',
+  },
+  {
+    id: 'coh-means-partial',
+    parentId: 'coh-means',
+    name: '③ Means partially coherent (45–74%)',
+    description: 'Roll-up of the five means-side checklist criteria lands in the declared middle band.',
+    color: '#F59E0B',
+  },
+  {
+    id: 'coh-means-incoherent',
+    parentId: 'coh-means',
+    name: '③ Means incoherent (< 45%)',
+    description:
+      'Roll-up of the five means-side checklist criteria falls below the declared 45% threshold.',
+    color: '#DC2626',
+  },
+  // ④ Pace readings (EEA distance-to-target) + derived machinery
+  {
+    id: 'coh-eval-ontrack',
+    parentId: 'coh-evaluation',
+    name: '④ On track (pace ratio ≥ 1.0)',
+    description: 'Observed recent pace meets or exceeds the pace the in-act target requires.',
+    color: '#16A34A',
+  },
+  {
+    id: 'coh-eval-lagging',
+    parentId: 'coh-evaluation',
+    name: '④ Lagging (pace ratio ≥ 0.5)',
+    description: 'Observed recent pace covers at least half of what the in-act target requires.',
+    color: '#F59E0B',
+  },
+  {
+    id: 'coh-eval-offtrack',
+    parentId: 'coh-evaluation',
+    name: '④ Off track (pace ratio < 0.5)',
+    description:
+      'Observed recent pace covers less than half of what the in-act target requires, or moves the wrong way.',
+    color: '#DC2626',
+  },
+  {
+    id: 'coh-eval-machinery',
+    parentId: 'coh-evaluation',
+    name: '④ Evaluation machinery (MRV & review)',
+    description:
+      'Whether policy change and outcomes can be measured at all — monitoring and review verdicts derived from the objective–delivery checklist.',
+    color: '#A78BFA',
+  },
+];
+
+/** The granular code a curated anchor's segment is tagged with — the verdict
+ *  the passage grounds. Falls back to the step code when the linked
+ *  assessment is missing. */
+export function coherenceSegmentCodeId(ev: PolicyTextEvidence): string {
+  if (ev.assessment.kind === 'ex-ante') {
+    const a = EX_ANTE_ASSESSMENTS[ev.policyId];
+    return a ? STATUS_CODE[a.status] : coherenceCodeId(ev.stepId);
+  }
+  if (ev.assessment.kind === 'interaction') {
+    const interactionId = ev.assessment.interactionId;
+    const i = GOAL_INTERACTIONS.find(x => x.id === interactionId);
+    return i ? SCALE_CODE[i.score] : coherenceCodeId(ev.stepId);
+  }
+  const m = evaluationCoherence(ev.policyId).measurement;
+  return m ? READING_CODE[m.pace.reading] : coherenceCodeId(ev.stepId);
 }
 
 const TITLE_BY_ID = new Map(policies.map(p => [p.id, p.short_title] as const));
@@ -1472,7 +1639,7 @@ export function buildCoherenceSegmentsFor(
     out.push({
       id: `seg-coh-${ev.id}`,
       documentId: doc.id,
-      codeId: coherenceCodeId(ev.stepId),
+      codeId: coherenceSegmentCodeId(ev),
       blockId: anchor.block.id,
       startChar: anchor.startChar,
       endChar: anchor.endChar,
@@ -1500,7 +1667,7 @@ export function buildCoherenceSegmentsFor(
       out.push({
         id: `seg-coh-${doc.id}-means`,
         documentId: doc.id,
-        codeId: 'coh-means',
+        codeId: MEANS_GRADE_CODE[means.grade] ?? 'coh-means',
         blockId: block.id,
         startChar: 0,
         endChar: text.length,
@@ -1530,7 +1697,7 @@ export function buildCoherenceSegmentsFor(
       out.push({
         id: `seg-coh-${doc.id}-machinery`,
         documentId: doc.id,
-        codeId: 'coh-evaluation',
+        codeId: 'coh-eval-machinery',
         blockId: block.id,
         startChar: 0,
         endChar: text.length,

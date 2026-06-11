@@ -11,7 +11,7 @@ import { policies } from '@/data/policies';
 import { POLICY_MASTER_TAGS } from './policy-master-tags';
 import { POLICY_OBJECTIVE_CHECKLISTS } from './policy-objective-checklist';
 import { coherenceAssessedIds } from './policy-coherence';
-import { buildCoherenceSegmentsFor } from './policy-coherence-evidence';
+import { buildCoherenceSegmentsFor, COHERENCE_CHILD_CODES } from './policy-coherence-evidence';
 import type {
   AiClassification,
   AnalysisDocument,
@@ -710,6 +710,19 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     { id: 'coh-horizontal', parentId: 'root-coherence', name: '② Across policy goals',          description: 'Goal interactions on the Nilsson et al. (2016) seven-point scale (−3 cancelling … +3 indivisible), with the interaction mechanism and the legal provisions that create it.', color: '#7C3AED', scope: 'master', createdAt: now },
     { id: 'coh-means',      parentId: 'root-coherence', name: '③ Goals vs means',               description: 'Goals/means congruence (Howlett & Rayner): whether instruments, coverage, enforcement, financing and timeline are commensurate with the goals — scored via the objective–delivery checklist.', color: '#8B5CF6', scope: 'master', createdAt: now },
     { id: 'coh-evaluation', parentId: 'root-coherence', name: '④ Evaluation: change & outcomes', description: 'Distance-to-target evaluation (EEA Trends & Projections method): observed recent pace ÷ required pace against the act’s target, plus MRV/review machinery and policy-change facts.', color: '#A78BFA', scope: 'master', createdAt: now },
+    // Granular verdict codes under each step — assumption statuses, the full
+    // seven-point Nilsson scale, means-coherence bands and pace readings —
+    // defined next to the coherence model so the taxonomy and the seeded
+    // annotations can never drift apart (policy-coherence-evidence.ts).
+    ...COHERENCE_CHILD_CODES.map(c => ({
+      id: c.id,
+      parentId: c.parentId,
+      name: c.name,
+      description: c.description,
+      color: c.color,
+      scope: 'master' as const,
+      createdAt: now,
+    })),
   ];
 
   const codes: CodeNode[] = [...rootCodes, ...domainCodes, ...handPicked];
@@ -820,7 +833,7 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
       id: 'project-policy-coherence',
       name: 'Policy coherence — master library',
       description:
-        'Every policy with a coherence signal in the four-step model, with the assessment pinned to the acts’ own text: verbatim provision quotes tagged under the ①–④ coherence codes (assumption bases, interaction-creating provisions, in-act targets) plus the derived goals↔means and evaluation-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
+        'The four-step coherence assessment as a tagged corpus: every grade pinned to the acts’ own text under granular verdict codes — assumption valid / under pressure / violated, the seven-point Nilsson interaction scale, means-coherence bands and pace readings — plus the derived goals↔means and evaluation-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
       mode: 'horizontal',
       masterCodeSelection: [],
       documentAllowList: coherenceAssessedIds().filter(id =>
