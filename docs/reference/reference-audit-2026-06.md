@@ -82,14 +82,20 @@ al.) verified clean — no changes.
 Open-access PDF locations were verified for **18 of 30** entries and
 recorded in `scripts/data/reference-pdf-sources.json`. The companion
 workflow (`.github/workflows/fetch-reference-pdfs.yml` →
-`scripts/fetch-reference-pdfs.mjs`) downloads and attaches them where the
-sandbox cannot (it validates every download by PDF magic bytes, so a
-paywall page can never be attached). Confirmed-paywalled or
-licence-unconfirmed entries (Dass et al.; Zhang et al.; Huang et al.*;
-Van de Ven et al.; Hoehnke et al.; Deng et al.; Ceyhun et al.; Zhao et
-al.; Ayers†; Monaco et al. 2023) are left for manual upload through the
-Reference Manager UI.
+`scripts/fetch-reference-pdfs.mjs`) downloads and attaches them (it
+validates every download by PDF magic bytes, so a paywall page can never
+be attached).
 
-\* Huang et al. and three other entries already carry a user-uploaded PDF
-in the `reference-pdfs` bucket; those are kept as-is.
-† Ayers (2011) is in Project MUSE / MIT Press — institutional access only.
+**Outcome of the first runs (11 June 2026): 10 of 30 entries now carry a
+PDF** — 7 fetched and committed under `public/reference-pdfs/`
+(all Nature-family and IOP gold-OA articles, including the Van de Ven
+Nature Climate Change paper) plus the 3 pre-existing user uploads in the
+Supabase bucket. The remaining verified-OA copies (ScienceDirect, Taylor
+& Francis, Cell Press, De Gruyter, CESifo) are bot-blocked from GitHub
+runners (HTTP 403 / HTML interstitials); they are listed with reasons in
+the generated [attach report](reference-pdfs.md). For those, use the
+Reference Manager's own *fetch PDF* button (the in-app proxy runs from a
+different network and often succeeds) or upload manually. Paywalled
+entries (Dass et al.; Zhang et al.; Eiar/Zhao et al.; Ayers — Project
+MUSE/MIT Press; Monaco et al. 2023; the FinanzArchiv version of
+Edenhofer et al.) need a licensed copy uploaded by hand.
