@@ -43,7 +43,7 @@ import type {
   Pc2Unit,
 } from './types';
 
-export const GAP_VERSION = 'pc2-gaps-0.1.0';
+export const GAP_VERSION = 'pc2-gaps-0.2.0';
 
 export type GapType =
   | 'policy-gap'
@@ -52,6 +52,25 @@ export type GapType =
   | 'implementation-gap';
 
 export type GapSeverity = 'high' | 'medium' | 'low' | 'candidate';
+
+/** Confidence is QUALIFIED SEPARATELY from severity (GRADE-style): severity
+ *  says how much it matters if true; confidence says how sure the method is.
+ *  Derivation is declared and mechanical:
+ *    · base level by evidence source — curated tier-A/B audits and verbatim
+ *      text conflicts → high; rule-based detections → medium; statistical
+ *      (ML) discoveries and cross-act candidates → low;
+ *    · +1 level when two INDEPENDENT layers agree (triangulation, e.g. a
+ *      curated interaction matched by an ML contradiction) → corroborated;
+ *    · −1 level when an absence-based finding rests on an incomplete text
+ *      substrate (the absence may be the excerpt's, not the act's). */
+export type GapConfidence = 'corroborated' | 'high' | 'medium' | 'low';
+
+export const CONFIDENCE_LABEL: Record<GapConfidence, string> = {
+  corroborated: 'two independent layers agree',
+  high: 'verbatim text or tier-A/B evidence',
+  medium: 'declared rule on complete substrate',
+  low: 'statistical candidate / substrate-limited',
+};
 
 export const GAP_META: Record<
   GapType,
@@ -98,6 +117,7 @@ export interface GapFinding {
   id: string;
   gapType: GapType;
   severity: GapSeverity;
+  confidence: GapConfidence;
   /** Mitigation lever / enabling condition, for policy gaps. */
   leverId?: string;
   leverName?: string;
@@ -136,6 +156,10 @@ export interface GapAssessment {
   matrix: PolicyGapRow[];
   levers: LeverCoverage[];
   countsByType: Record<GapType, number>;
+  countsByConfidence: Record<GapConfidence, number>;
+  /** Acts whose shipped text scores below the completeness threshold —
+   *  absence-based findings on these are confidence-downgraded. */
+  substrateIncomplete: string[];
 }
 
 // ── Mitigation levers / enabling conditions (coverage scan) ────────────────
@@ -238,10 +262,25 @@ function evidenceOf(u: Pc2Unit): GapEvidence {
 
 const isOperative = (u: Pc2Unit) => u.blockKind !== 'recital';
 
+/** Substrate completeness per act, 0–1: does the shipped text look like the
+ *  (consolidated) act, or like an excerpt? Declared heuristic — articles
+ *  present (0.5), substantial block count (0.3), no truncation marker (0.2).
+ *  Below 0.7 the substrate counts as incomplete and absence-based findings
+ *  on it are confidence-downgraded. */
+export const SUBSTRATE_COMPLETE_THRESHOLD = 0.7;
+
+function substrateCompleteness(units: Pc2Unit[]): number {
+  const hasArticles = units.some(u => /^Article\s+\d+/i.test(u.path));
+  const substantial = units.length >= 60;
+  const truncated = units.some(u => /truncated|\[…/.test(u.text));
+  return (hasArticles ? 0.5 : 0) + (substantial ? 0.3 : 0) + (truncated ? 0 : 0.2);
+}
+
 function makeGap(
   gapType: GapType,
   key: string,
   severity: GapSeverity,
+  confidence: GapConfidence,
   units: Pc2Unit[],
   policyIds: string[],
   title: string,
@@ -255,6 +294,7 @@ function makeGap(
     id: `gap-${djb2(`${gapType}|${key}`)}`,
     gapType,
     severity,
+    confidence,
     leverId: lever?.id,
     leverName: lever?.name,
     policyIds: [...new Set(policyIds)].sort(),
@@ -301,6 +341,7 @@ function leverCoverage(run: Pc2Run): { levers: LeverCoverage[]; findings: GapFin
           'policy-gap',
           lever.id,
           severity,
+          'medium',
           hits.slice(0, 3),
           policies,
           `${lever.name}: no operative block in the tracked corpus drives this lever`,
@@ -328,6 +369,15 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
   const unitById = new Map(run.units.map(u => [u.id, u]));
   const analysed = new Set(run.policies.map(p => p.policyId));
 
+  // Triangulation index: policy pairs where the INDEPENDENT statistical
+  // layer also found a contradiction. Agreement between a curated audit and
+  // an unsupervised discovery upgrades confidence to "corroborated".
+  const mlContradictionPairs = new Set(
+    (ml?.pairs ?? [])
+      .filter(p => p.kind === 'contradiction-candidate')
+      .map(p => [p.policyA, p.policyB].sort().join('+')),
+  );
+
   // Curated counteracting interactions, block-anchored via the engine's
   // existing findings (which already resolved the cited articles to units).
   const anchorsByInteraction = new Map<string, Pc2Unit[]>();
@@ -342,12 +392,15 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
     if (gi.score > -1) continue;
     if (!analysed.has(gi.a) && !analysed.has(gi.b)) continue;
     const scale = INTERACTION_SCALE[gi.score];
-    const anchors = anchorsByInteraction.get([gi.a, gi.b].sort().join('+')) ?? [];
+    const pairKey = [gi.a, gi.b].sort().join('+');
+    const anchors = anchorsByInteraction.get(pairKey) ?? [];
+    const triangulated = mlContradictionPairs.has(pairKey);
     findings.push(
       makeGap(
         'policy-inconsistency',
         gi.id,
         gi.score <= -2 ? 'high' : 'medium',
+        triangulated ? 'corroborated' : 'high',
         anchors,
         [gi.a, gi.b],
         `${gi.a} ↔ ${gi.b}: ${scale.name.toLowerCase()} incentives (${gi.score} on the Nilsson scale)`,
@@ -357,7 +410,12 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
           `The incentive conflict is created in law, not in practice: ${gi.legalBasis}`,
           `Conclusion: policy inconsistency — one act rewards exactly what the other needs prevented (${scale.name}: ${scale.definition.toLowerCase()}) Evidence tier ${gi.tier}.`,
         ],
-        ['curated Nilsson goal-interaction, anchored to the cited provisions'],
+        [
+          'curated Nilsson goal-interaction, anchored to the cited provisions',
+          ...(triangulated
+            ? ['triangulated: the independent ML pass also finds a contradiction between these acts']
+            : []),
+        ],
       ),
     );
   }
@@ -370,6 +428,7 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
         'policy-inconsistency',
         f.id,
         'medium',
+        'high', // the conflicting numbers are quoted verbatim from the blocks
         f.unitIds.map(id => unitById.get(id)).filter((u): u is Pc2Unit => !!u),
         f.policyIds,
         `${f.policyIds[0]}: ${f.title.toLowerCase()}`,
@@ -391,6 +450,7 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
         'policy-inconsistency',
         f.id,
         'candidate',
+        'low',
         f.unitIds.map(id => unitById.get(id)).filter((u): u is Pc2Unit => !!u),
         f.policyIds,
         f.title,
@@ -415,6 +475,7 @@ function inconsistencies(run: Pc2Run, ml: Pc2MlResult | null): GapFinding[] {
           'policy-inconsistency',
           p.id,
           'candidate',
+          'low',
           [ua, ub],
           [p.policyA, p.policyB],
           `${p.policyA === p.policyB ? p.policyA : `${p.policyA} ↔ ${p.policyB}`}: discovered tension (${p.pathA} vs ${p.pathB})`,
@@ -446,25 +507,44 @@ const AMBITION_RULES: Partial<Record<Pc2RuleId, string>> = {
     'Without MRV in (or delegated by) the act, the enabling condition for steering delivery is missing.',
 };
 
-function ambitionGaps(run: Pc2Run): GapFinding[] {
+/** Rules whose verdict rests on something MISSING from the text — these are
+ *  the ones an incomplete substrate can fake, so they get downgraded there. */
+const ABSENCE_BASED: ReadonlySet<string> = new Set([
+  'pc2-orphan-goal',
+  'pc2-undated-target',
+  'pc2-unmeasurable-target',
+]);
+
+function ambitionGaps(run: Pc2Run, incompleteSubstrate: ReadonlySet<string>): GapFinding[] {
   const unitById = new Map(run.units.map(u => [u.id, u]));
   const findings: GapFinding[] = [];
   for (const f of run.findings) {
     const frame = AMBITION_RULES[f.ruleId];
     if (!frame) continue;
+    const absenceBased = ABSENCE_BASED.has(f.ruleId);
+    const substrateLimited = absenceBased && f.policyIds.some(pid => incompleteSubstrate.has(pid));
+    // Presence-based signals quote verbatim text → high; absence-based ones
+    // depend on the substrate → medium, low when the substrate is an excerpt.
+    const confidence: GapConfidence = !absenceBased
+      ? f.ruleId === 'pc2-soft-target' ? 'high' : 'medium'
+      : substrateLimited ? 'low' : 'medium';
+    const reasoning = [f.detail, `Why this is an ambition gap: ${frame}`];
+    if (substrateLimited) {
+      reasoning.push(
+        `Confidence downgraded: the shipped text of ${f.policyIds.join(', ')} scores below the completeness threshold (${SUBSTRATE_COMPLETE_THRESHOLD}) — the missing element may sit in a part of the act the substrate does not carry. Ingesting the full EUR-Lex text resolves this either way.`,
+      );
+    }
     findings.push(
       makeGap(
         'ambition-gap',
         f.id,
         f.severity === 'info' ? 'low' : f.severity,
+        confidence,
         f.unitIds.map(id => unitById.get(id)).filter((u): u is Pc2Unit => !!u),
         f.policyIds,
         `${f.policyIds.join(' · ')}: ${f.title}`,
-        [
-          f.detail,
-          `Why this is an ambition gap: ${frame}`,
-        ],
-        [`engine rule ${f.ruleId}`],
+        reasoning,
+        [`engine rule ${f.ruleId}`, absenceBased ? 'absence-based signal' : 'presence-based signal'],
       ),
     );
   }
@@ -504,16 +584,25 @@ function paceGaps(run: Pc2Run): GapFinding[] {
         : `Conclusion: ambition gap — the measured pace falls short AND the delivery mechanisms in the act are insufficient to close it; this is a design problem before it is a delivery problem.`,
     );
 
+    // Triangulation: measured pace (statistics) and the assumption audit
+    // (legal-development analysis) are independent layers — when both point
+    // the same way, the gap is corroborated.
+    const exAgrees = !!ex && ex.status !== 'valid';
     findings.push(
       makeGap(
         isImplementation ? 'implementation-gap' : 'ambition-gap',
         `pace-${pid}`,
         pace.reading === 'off-track' ? 'high' : 'medium',
+        exAgrees ? 'corroborated' : 'high',
         anchors,
         [pid],
         `${pid}: ${m.indicator} is ${pace.reading} (pace ratio ${pace.ratio === null ? 'n/a' : pace.ratio.toFixed(2)})`,
         reasoning,
-        ['EEA distance-to-target pace ratio', 'objective–delivery checklist means score'],
+        [
+          'EEA distance-to-target pace ratio (tier-A statistics)',
+          'objective–delivery checklist means score',
+          ...(exAgrees ? ['triangulated: the independent assumption audit points the same way'] : []),
+        ],
       ),
     );
   }
@@ -530,6 +619,7 @@ function paceGaps(run: Pc2Run): GapFinding[] {
         'implementation-gap',
         `exante-${pid}`,
         ex.status === 'violated' ? 'high' : 'medium',
+        ex.tier === 'C' ? 'medium' : 'high',
         anchors,
         [pid],
         `${pid}: design assumption ${ex.status === 'violated' ? 'violated' : 'under pressure'} — delivery diverges from design`,
@@ -563,11 +653,20 @@ export function runGapAssessment(run: Pc2Run, ml: Pc2MlResult | null): GapAssess
   const key = `${run.corpusHash}|${ml ? ml.mlVersion : 'no-ml'}`;
   if (cached && cached.key === key) return cached.value;
 
+  // Substrate completeness per act — qualifies absence-based findings.
+  const byPolicy = new Map<string, Pc2Unit[]>();
+  for (const u of run.units) (byPolicy.get(u.policyId) ?? byPolicy.set(u.policyId, []).get(u.policyId)!).push(u);
+  const incompleteSubstrate = new Set(
+    [...byPolicy.entries()]
+      .filter(([, us]) => substrateCompleteness(us) < SUBSTRATE_COMPLETE_THRESHOLD)
+      .map(([pid]) => pid),
+  );
+
   const { levers, findings: policyGapFindings } = leverCoverage(run);
   const findings = [
     ...policyGapFindings,
     ...inconsistencies(run, ml),
-    ...ambitionGaps(run),
+    ...ambitionGaps(run, incompleteSubstrate),
     ...paceGaps(run),
   ].sort(
     (a, b) =>
@@ -602,7 +701,16 @@ export function runGapAssessment(run: Pc2Run, ml: Pc2MlResult | null): GapAssess
     'ambition-gap': 0,
     'implementation-gap': 0,
   };
-  for (const f of findings) countsByType[f.gapType] += 1;
+  const countsByConfidence: Record<GapConfidence, number> = {
+    corroborated: 0,
+    high: 0,
+    medium: 0,
+    low: 0,
+  };
+  for (const f of findings) {
+    countsByType[f.gapType] += 1;
+    countsByConfidence[f.confidence] += 1;
+  }
 
   const value: GapAssessment = {
     version: GAP_VERSION,
@@ -612,6 +720,8 @@ export function runGapAssessment(run: Pc2Run, ml: Pc2MlResult | null): GapAssess
     matrix,
     levers,
     countsByType,
+    countsByConfidence,
+    substrateIncomplete: [...incompleteSubstrate].sort(),
   };
   cached = { key, value };
   return value;

@@ -20,8 +20,11 @@ import SiteFooter from '@/components/SiteFooter';
 import { PC2_RULES, runPolicyCoherence2 } from '@/lib/policy-coherence-2/engine';
 import { PC2_ML_VERSION, runMlAnalysis } from '@/lib/policy-coherence-2/ml';
 import {
+  CONFIDENCE_LABEL,
   GAP_META,
   runGapAssessment,
+  SUBSTRATE_COMPLETE_THRESHOLD,
+  type GapConfidence,
   type GapFinding,
   type GapSeverity,
   type GapType,
@@ -46,6 +49,13 @@ const STATE_LABEL: Record<UnitState, string> = {
   'flag-low': 'in a gap · low / candidate',
   'flag-medium': 'in a gap · medium',
   'flag-high': 'in a gap · high',
+};
+
+const CONF_DARK: Record<GapConfidence, string> = {
+  corroborated: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
+  high: 'bg-teal-500/10 text-teal-300 border-teal-500/30',
+  medium: 'bg-slate-500/15 text-slate-300 border-slate-500/40',
+  low: 'bg-slate-600/20 text-slate-400 border-slate-600/40',
 };
 
 const GAP_SEV_DARK: Record<GapSeverity, string> = {
@@ -95,6 +105,11 @@ const TOUR_STEPS: Array<{ target: string; title: string; body: string }> = [
     target: 'pc2-tour-hero',
     title: 'Sentences as data, gaps as the lens',
     body: 'Every policy text is decomposed into addressable data blocks. The Advisory Board’s consistency framework classifies what the blocks reveal: policy gaps, policy inconsistencies, ambition gaps and implementation gaps — each defined exactly as in the assessment report.',
+  },
+  {
+    target: 'pc2-tour-methodology',
+    title: 'The methodology, end to end',
+    body: 'Five declared stages: segment → extract → detect → classify → qualify, each showing its live numbers. Severity is qualified separately from confidence: triangulated findings (two independent layers agreeing) rank highest, substrate-limited ones lowest. Every parameter is printed.',
   },
   {
     target: 'pc2-tour-wall',
@@ -163,6 +178,17 @@ function SevBadge({ severity }: { severity: GapSeverity }) {
       className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${GAP_SEV_DARK[severity]}`}
     >
       {severity}
+    </span>
+  );
+}
+
+function ConfBadge({ confidence }: { confidence: GapConfidence }) {
+  return (
+    <span
+      title={CONFIDENCE_LABEL[confidence]}
+      className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${CONF_DARK[confidence]}`}
+    >
+      conf · {confidence}
     </span>
   );
 }
@@ -291,6 +317,7 @@ export default function PolicyCoherence2Page() {
   // Gap filters (driven by matrix clicks too)
   const [gapTypeFilter, setGapTypeFilter] = useState<GapType | ''>('');
   const [gapSeverityFilter, setGapSeverityFilter] = useState<GapSeverity | ''>('');
+  const [gapConfidenceFilter, setGapConfidenceFilter] = useState<GapConfidence | ''>('');
   const [gapPolicyFilter, setGapPolicyFilter] = useState('');
   const filteredGaps = useMemo(
     () =>
@@ -298,9 +325,10 @@ export default function PolicyCoherence2Page() {
         f =>
           (!gapTypeFilter || f.gapType === gapTypeFilter) &&
           (!gapSeverityFilter || f.severity === gapSeverityFilter) &&
+          (!gapConfidenceFilter || f.confidence === gapConfidenceFilter) &&
           (!gapPolicyFilter || f.policyIds.includes(gapPolicyFilter)),
       ),
-    [gaps, gapTypeFilter, gapSeverityFilter, gapPolicyFilter],
+    [gaps, gapTypeFilter, gapSeverityFilter, gapConfidenceFilter, gapPolicyFilter],
   );
   function focusCell(policyId: string, gapType: GapType) {
     setGapPolicyFilter(policyId);
@@ -456,6 +484,93 @@ export default function PolicyCoherence2Page() {
             {dbStatus && <p className="mt-2 text-[11px] text-[#9DAEC5]">{dbStatus}</p>}
           </section>
 
+          {/* ── Methodology overview ──────────────────────────────────── */}
+          <section
+            id="pc2-tour-methodology"
+            className={`mt-10 scroll-mt-24${tourClass('pc2-tour-methodology')}`}
+          >
+            <h2 className="text-[22px] font-bold">Methodology</h2>
+            <p className="mt-1 text-[12px] text-[#9DAEC5] max-w-3xl leading-relaxed">
+              Five declared stages, deterministic end to end: the same corpus always yields
+              the same ids, scores and findings (corpus{' '}
+              <span className="font-mono">{run.corpusHash}</span>). Every number below is
+              live from this run; every threshold is printed; nothing is graded by opinion.
+            </p>
+
+            <div className="mt-4 grid md:grid-cols-5 gap-2">
+              {[
+                {
+                  n: '①',
+                  name: 'Segment',
+                  out: `${run.stats.unitCount.toLocaleString('en-GB')} data blocks`,
+                  how: `${run.stats.policyCount} shipped policy texts split into ${run.stats.blockCount.toLocaleString('en-GB')} structural blocks, then into sentence units with stable ids (u-<act>-b<block>-s<sentence>), structural paths and char offsets — modular, yet always addressable inside the act.`,
+                },
+                {
+                  n: '②',
+                  name: 'Extract',
+                  out: `${run.stats.claimCount.toLocaleString('en-GB')} typed claims`,
+                  how: 'Nine claim kinds (targets with indicator family/year/baseline, deadlines, deontic obligations, instruments, financing, MRV, review, flexibility markers, resolved cross-references) extracted by printed patterns. Descriptive shares ("contributes over 75% of…") are guarded out. No model calls.',
+                },
+                {
+                  n: '③',
+                  name: 'Detect',
+                  out: `${run.findings.length} rule signals${ml ? ` + ${ml.pairs.length} ML pairs` : ' + ML on demand'}`,
+                  how: 'Three independent layers: 10 declared signal rules over the claims; an unsupervised statistical pass (TF-IDF vectors, cosine pair mining, clustering); and the curated layer (assumption audits, Nilsson interactions, EEA pace data) anchored down to blocks.',
+                },
+                {
+                  n: '④',
+                  name: 'Classify',
+                  out: `${gaps.findings.length} gap findings`,
+                  how: `Signals are mapped into the Advisory Board's consistency framework: ${gaps.countsByType['policy-gap']} policy gaps (lever-coverage scan) · ${gaps.countsByType['policy-inconsistency']} inconsistencies · ${gaps.countsByType['ambition-gap']} ambition gaps · ${gaps.countsByType['implementation-gap']} implementation gaps. Ambition vs implementation splits on the means score (≥ 0.45 = machinery in place).`,
+                },
+                {
+                  n: '⑤',
+                  name: 'Qualify',
+                  out: `${gaps.countsByConfidence.corroborated} corroborated · ${gaps.countsByConfidence.high} high conf.`,
+                  how: `Severity (impact if true) is qualified separately from confidence (how sure the method is). Triangulation upgrades — two independent layers agreeing — and incomplete substrates downgrade (${gaps.substrateIncomplete.length} act(s) below the ${SUBSTRATE_COMPLETE_THRESHOLD} completeness threshold: ${gaps.substrateIncomplete.join(', ') || 'none'}).`,
+                },
+              ].map((s, i, arr) => (
+                <div key={s.name} className={`${PANEL} p-3 relative`}>
+                  <p className="font-mono text-[15px] font-bold text-[#E87722] leading-none">
+                    {s.n} <span className="text-[12px] uppercase tracking-wide text-[#E6EBF2]">{s.name}</span>
+                  </p>
+                  <p className="mt-1 font-mono text-[10.5px] text-[#2DD4BF]">{s.out}</p>
+                  <p className="mt-1.5 text-[10px] text-[#9DAEC5] leading-relaxed">{s.how}</p>
+                  {i < arr.length - 1 && (
+                    <span className="hidden md:block absolute top-1/2 -right-[13px] text-[#3A4D6E] text-[14px]">→</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-3 grid md:grid-cols-2 gap-2">
+              <div className={`${PANEL} p-3.5`}>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+                  Transparency guarantees
+                </p>
+                <ul className="mt-1.5 space-y-1 text-[11px] text-[#9DAEC5] leading-relaxed list-disc pl-4">
+                  <li><span className="text-[#C6D2E2]">Deterministic:</span> same corpus → same ids, claims, scores and findings; the corpus hash on every artefact proves which snapshot produced it.</li>
+                  <li><span className="text-[#C6D2E2]">Every rule printed:</span> the signal rules, gap definitions, ML parameters and all thresholds (severity bands, means split 0.45, completeness {SUBSTRATE_COMPLETE_THRESHOLD}, ML cosine ≥ 0.3) are on this page — reviewers audit rule applications, not opinions.</li>
+                  <li><span className="text-[#C6D2E2]">Every finding cited:</span> verbatim block quotes with stable ids, a numbered reasoning chain, and a &ldquo;basis&rdquo; line naming the layer(s) it rests on.</li>
+                  <li><span className="text-[#C6D2E2]">Severity ≠ confidence:</span> impact-if-true and method-certainty are scored separately; triangulated findings rank highest{' '}({(Object.keys(CONFIDENCE_LABEL) as GapConfidence[]).map(c => `${c}: ${CONFIDENCE_LABEL[c]}`).join(' · ')}).</li>
+                  <li><span className="text-[#C6D2E2]">Reproducible:</span> the JSONL export carries the full chain — blocks, claims, signals, ML pairs, gap findings with reasoning — for independent re-analysis.</li>
+                </ul>
+              </div>
+              <div className={`${PANEL} p-3.5`}>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+                  Declared limitations
+                </p>
+                <ul className="mt-1.5 space-y-1 text-[11px] text-[#9DAEC5] leading-relaxed list-disc pl-4">
+                  <li><span className="text-[#C6D2E2]">Corpus-relative:</span> policy-gap verdicts assert silence of the {run.stats.policyCount}-act tracked corpus, not of EU law; ingesting more acts can clear or confirm them.</li>
+                  <li><span className="text-[#C6D2E2]">Substrate-bounded:</span> where shipped texts are excerpts, absence-based findings mark where the substrate ends — they are confidence-downgraded and say so.</li>
+                  <li><span className="text-[#C6D2E2]">Pattern precision:</span> claim extraction is rule-based; residual false positives surface as low-confidence candidates rather than being silently filtered.</li>
+                  <li><span className="text-[#C6D2E2]">Snapshot-dated:</span> the curated layer (pace data, assumption audits) reflects the mid-2026 observation snapshot and carries its sources for re-verification.</li>
+                  <li><span className="text-[#C6D2E2]">Candidates need disposal:</span> ML discoveries and cross-act divergences enter only as &ldquo;candidate&rdquo; severity / low confidence — statistics propose, the analyst disposes.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
           {/* ── Data wall + inspector ─────────────────────────────────── */}
           <section className="mt-10 grid lg:grid-cols-3 gap-5 items-start">
             <div
@@ -599,6 +714,7 @@ export default function PolicyCoherence2Page() {
                             <div className="flex flex-wrap items-center gap-1.5">
                               <GapBadge gapType={f.gapType} />
                               <SevBadge severity={f.severity} />
+                              <ConfBadge confidence={f.confidence} />
                             </div>
                             <p className="mt-1 text-[11px] font-bold text-[#C6D2E2] leading-snug">{f.title}</p>
                             <ReasoningChain steps={f.reasoning} />
@@ -799,6 +915,16 @@ export default function PolicyCoherence2Page() {
                   ))}
                 </select>
                 <select
+                  value={gapConfidenceFilter}
+                  onChange={e => setGapConfidenceFilter(e.target.value as GapConfidence | '')}
+                  className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]"
+                >
+                  <option value="">All confidence</option>
+                  {(['corroborated', 'high', 'medium', 'low'] as GapConfidence[]).map(c => (
+                    <option key={c} value={c}>{c} ({gaps.countsByConfidence[c]})</option>
+                  ))}
+                </select>
+                <select
                   value={gapPolicyFilter}
                   onChange={e => setGapPolicyFilter(e.target.value)}
                   className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2] max-w-[240px]"
@@ -810,9 +936,9 @@ export default function PolicyCoherence2Page() {
                     </option>
                   ))}
                 </select>
-                {(gapTypeFilter || gapPolicyFilter || gapSeverityFilter) && (
+                {(gapTypeFilter || gapPolicyFilter || gapSeverityFilter || gapConfidenceFilter) && (
                   <button
-                    onClick={() => { setGapTypeFilter(''); setGapPolicyFilter(''); setGapSeverityFilter(''); }}
+                    onClick={() => { setGapTypeFilter(''); setGapPolicyFilter(''); setGapSeverityFilter(''); setGapConfidenceFilter(''); }}
                     className="text-[11px] text-[#7E92AE] underline"
                   >
                     clear
@@ -830,6 +956,7 @@ export default function PolicyCoherence2Page() {
                     <div className="flex flex-wrap items-center gap-1.5">
                       <GapBadge gapType={f.gapType} />
                       <SevBadge severity={f.severity} />
+                      <ConfBadge confidence={f.confidence} />
                       {f.leverName && (
                         <span className="font-mono text-[9px] text-[#7E92AE]">lever: {f.leverName}</span>
                       )}
