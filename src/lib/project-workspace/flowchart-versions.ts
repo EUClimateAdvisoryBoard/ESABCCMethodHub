@@ -76,17 +76,7 @@ import { defaultPolicyLoopBoardV6 } from '@/data/policy-loop-v6';
  *                 five structural dimensions (mitigation by emission sector,
  *                 adaptation by adaptation area, main policies, crosscutting
  *                 themes, societal-objective lenses) plus the eight-step
- *                 assessment protocol that turns a matrix cell into a finding;
- *                 and
- *  - 'advanced-v8' — the "Advanced version 8" burn-map board: the headline
- *                 figure. Per sector band, the progress heat map (four
- *                 monitoring lenses, curated readings) is joined to the
- *                 policy-coherence heat map (the band's EU acts × the four
- *                 steps of the beta coherence model, computed live); the
- *                 burning cells of both — off track / incoherent — are
- *                 collected into a burn ledger and answered by one single
- *                 recommendation with three fronts, each backed by ESABCC
- *                 recommendations with live uptake status.
+ *                 assessment protocol that turns a matrix cell into a finding.
  */
 export type FlowChartVariant =
   | 'report'
@@ -143,7 +133,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
-  { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Theory of Change', variant: 'report', builtIn: true },
+  { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Assessment Framework', variant: 'report', builtIn: true },
   { id: 'adaptation-mitigation-toc-data', name: 'Adaptation–Mitigation ToC — with indicator data', variant: 'report', builtIn: true },
   { id: 'scenario-call', name: 'Scenario call — mitigation & adaptation, IAM-matched', variant: 'beta', builtIn: true },
 ];
@@ -312,10 +302,9 @@ export function saveVersionBoard(projectId: string, version: FlowChartVersion, b
 /** Schema version a version's board is validated against (matches its variant). */
 export function boardSchemaVersion(version: FlowChartVersion): number {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain, advanced-v6 policy-loop, advanced-v7
-  // assessment-matrix and advanced-v8 steering-panorama boards are
-  // computed/read-only and not stored as sectors boards, so they have no
-  // sectors schema to validate against.
+  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
+  // assessment-matrix boards are computed/read-only and not stored as sectors
+  // boards, so they have no sectors schema to validate against.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
@@ -366,18 +355,16 @@ function writeAnyBoard(key: string, board: unknown): void {
  */
 export function defaultBoardFor(version: FlowChartVersion, projectId: string): FrameworkBoard {
   // The advanced-v2 results-chain, advanced-v4 monitoring-map, advanced-v5
-  // sectored results-chain, advanced-v6 policy-loop, advanced-v7
-  // assessment-matrix and advanced-v8 steering-panorama boards are computed
-  // in their own views and are not sectors boards; hand back an empty sectors
-  // board so callers that expect the `{ sectors }` shape (e.g. duplicating a
-  // version) never crash.
+  // sectored results-chain, advanced-v6 policy-loop and advanced-v7
+  // assessment-matrix boards are computed in their own views and are not
+  // sectors boards; hand back an empty sectors board so callers that expect
+  // the `{ sectors }` shape (e.g. duplicating a version) never crash.
   if (
     version.variant === 'advanced-v2' ||
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
     version.variant === 'advanced-v6' ||
-    version.variant === 'advanced-v7' ||
-    version.variant === 'advanced-v8'
+    version.variant === 'advanced-v7'
   )
     return { version: FRAMEWORK_BOARD_VERSION, sectors: [] };
   if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
