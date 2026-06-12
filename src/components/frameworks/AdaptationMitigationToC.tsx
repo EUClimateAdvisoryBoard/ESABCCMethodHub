@@ -1,5 +1,61 @@
 'use client';
 import { useState } from 'react';
+import { Tooltip } from '@/components/ui/Tooltip';
+
+/** Inline indicator metadata for chips in activity boxes. */
+const INDICATOR_INFO: Record<string, { name: string; detail: string }> = {
+  E2:  { name: 'Fossil-fuel share',       detail: 'Share of fossil fuels in primary energy supply (gross inland consumption). Target: phase-out by 2040–50.' },
+  E3:  { name: 'Renewables share',         detail: 'Share of renewables in gross final energy consumption. EU target: ≥42.5 % by 2030 (RED III).' },
+  E6:  { name: 'Methane emissions',        detail: 'Methane emissions from fossil-fuel extraction, processing and distribution. Tracked under the EU Methane Regulation.' },
+  E4a: { name: 'Solar PV capacity',        detail: 'Installed solar PV capacity (GW). EU Solar Strategy target: 600 GW by 2030.' },
+  E4b: { name: 'Wind capacity',            detail: 'Installed onshore + offshore wind capacity (GW). REPowerEU target: 510 GW wind by 2030.' },
+  E5:  { name: 'Grid investment',          detail: 'Investment in electricity grids, storage and interconnectors enabling system integration of variable RES.' },
+  O2:  { name: 'Final energy demand',      detail: 'Final energy consumption and primary-energy intensity. EED 2023 target: −11.7 % final demand vs 2020 reference by 2030.' },
+  E1:  { name: 'GHG supply intensity',     detail: 'GHG intensity of the energy-supply sector (tCO₂eq/TJ). Tracks progress toward a net-zero electricity mix.' },
+  E7:  { name: 'Infrastructure resilience',detail: 'New adaptation indicator tracking physical resilience of energy infrastructure to climate hazards (EUCRA, EEA 2024).' },
+};
+
+function IndicatorChip({ codes, x, y, w }: { codes: string[]; x: number; y: number; w: number }) {
+  return (
+    <foreignObject x={x} y={y} width={w} height={22} overflow="visible">
+      <div
+        // @ts-expect-error – xmlns required for foreignObject HTML content
+        xmlns="http://www.w3.org/1999/xhtml"
+        style={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap' }}
+      >
+        {codes.map((code) => {
+          const info = INDICATOR_INFO[code];
+          return (
+            <Tooltip
+              key={code}
+              content={
+                info ? (
+                  <span style={{ display: 'block', maxWidth: 240 }}>
+                    <span style={{ display: 'block', fontWeight: 600, lineHeight: 1.3 }}>{code} — {info.name}</span>
+                    <span style={{ display: 'block', fontSize: 10, marginTop: 3, opacity: 0.9 }}>{info.detail}</span>
+                  </span>
+                ) : code
+              }
+            >
+              <span
+                style={{
+                  display: 'inline-flex', alignItems: 'center',
+                  background: '#fff', borderRadius: 4,
+                  padding: '1px 5px', fontSize: 10,
+                  fontFamily: 'monospace', fontWeight: 700,
+                  color: '#1a1a18', cursor: 'help',
+                  boxShadow: '0 0 0 1px rgba(0,0,0,0.12)',
+                }}
+              >
+                {code}
+              </span>
+            </Tooltip>
+          );
+        })}
+      </div>
+    </foreignObject>
+  );
+}
 
 /**
  * Adaptation–Mitigation Assessment Framework — EU Energy Supply Sector
@@ -39,6 +95,69 @@ export default function AdaptationMitigationToC() {
           </span>
         </div>
       </div>
+
+      {/* Explainer */}
+      <details className="rounded-xl border border-grey-200 bg-white">
+        <summary className="cursor-pointer px-5 py-3 text-sm font-semibold text-tertiary-dark select-none list-none flex items-center justify-between">
+          <span>How this framework was developed — methodology note</span>
+          <span className="text-tertiary text-xs font-normal ml-2 shrink-0">click to expand</span>
+        </summary>
+        <div className="px-5 pb-5 pt-1 space-y-3 text-xs text-tertiary max-w-4xl">
+          <p>
+            The EU energy-supply sector has a well-established mitigation policy framework, built
+            around five levers (fossil-fuel phase-out, methane reduction, fast RES roll-out, targeted
+            CCU/CCS, and system integration) that drive four outcomes (lower GHG from supply, lower
+            energy demand, energy affordability, and energy-system resilience) toward the overarching
+            impact goal of a decarbonised EU energy supply by 2050.
+          </p>
+          <p className="font-semibold text-tertiary-dark">Integrating adaptation — the WIRES framework</p>
+          <p>
+            Climate adaptation was integrated using the four interlinkage types from the WIRES
+            (Wiederkehr et al. 2018) adaptation–mitigation framework:
+          </p>
+          <ol className="list-decimal list-inside space-y-1.5 pl-2">
+            <li>
+              <span className="font-medium text-teal-800">Adaptation supports mitigation</span> — some
+              adaptation measures help the mitigation levers work better. Hardening energy
+              infrastructure (heat-proofing cables, cooling systems for thermal plant) protects the
+              physical assets through which the energy transition is delivered.
+            </li>
+            <li>
+              <span className="font-medium" style={{ color: '#712B13' }}>Mitigation supports adaptation</span> — the
+              Fast RES roll-out and System integration levers create distributed, weather-dependent
+              generation, which can{' '}
+              <span className="italic">increase</span> physical resilience by diversifying the
+              supply mix (teal synergy arrows).
+            </li>
+            <li>
+              <span className="font-medium text-red-800">Trade-offs / risks</span> — Targeted
+              CCU/CCS is water-intensive. Under hotter, drier conditions this creates a water-stress
+              risk that could undermine the lever's feasibility (red risk arrow). Similarly, cooling
+              and desalination demand driven by climate adaptation increases final energy demand,
+              creating pressure on the Energy demand outcome (red adaptation demand pressure box).
+            </li>
+            <li>
+              <span className="font-medium text-amber-800">Joint processes</span> — Affordability of
+              energy is a cross-cutting social dimension. Climate impacts (e.g., extreme-heat events)
+              increase cooling demand disproportionately for lower-income households, amplifying
+              energy-poverty risks — so the Affordability outcome feeds the adaptation demand
+              pressure box.
+            </li>
+          </ol>
+          <p>
+            The diagram shows the <span className="font-medium">existing mitigation framework</span> in
+            teal and all <span className="font-medium" style={{ color: '#712B13' }}>new adaptation
+            additions</span> in coral. Synergy arrows are teal-dashed; risk arrows are red-dashed.
+            Indicator chips (hover for details) show the ESABCC monitoring codes that track each
+            layer.
+          </p>
+          <p className="text-tertiary-light text-[11px]">
+            Source: ESABCC Advisory Board (2024) assessment framework; EEA European Climate Risk
+            Assessment (EUCRA, 2024); Wiederkehr et al. (2018) WIRES Climate Change adaptation–
+            mitigation interlinkage typology.
+          </p>
+        </div>
+      </details>
 
       {/* Toggles */}
       <div className="flex gap-2 flex-wrap">
@@ -89,10 +208,10 @@ export default function AdaptationMitigationToC() {
           viewBox: 0 0 680 510
         */}
         <svg
-          viewBox="0 0 680 510"
+          viewBox="0 0 730 510"
           xmlns="http://www.w3.org/2000/svg"
           className="toc-svg"
-          style={{ display: 'block', width: '100%', minWidth: 640 }}
+          style={{ display: 'block', width: '100%', minWidth: 680 }}
           role="img"
           aria-label="Adaptation–Mitigation Assessment Framework for EU energy supply"
         >
@@ -106,9 +225,9 @@ export default function AdaptationMitigationToC() {
           <line x1="88" y1="0" x2="88" y2="510" stroke="#d3d1c7" strokeWidth="0.5"/>
 
           {/* Horizontal layer dividers */}
-          <line x1="0" y1="80"  x2="680" y2="80"  stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="204" x2="680" y2="204" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="316" x2="680" y2="316" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
+          <line x1="0" y1="80"  x2="730" y2="80"  stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
+          <line x1="0" y1="204" x2="730" y2="204" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
+          <line x1="0" y1="316" x2="730" y2="316" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
 
           {/* LEFT RAIL LABELS */}
           <g className="toc-c-gray">
@@ -190,11 +309,11 @@ export default function AdaptationMitigationToC() {
               {/* Increased resilience outcome */}
               <g className="toc-c-coral">
                 <rect x="504" y="88" width="168" height="62" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="588" y="100" textAnchor="middle" dominantBaseline="central">Increased resilience</text>
-                <text className="toc-th" x="588" y="116" textAnchor="middle" dominantBaseline="central">of energy supply &amp;</text>
-                <text className="toc-th" x="588" y="132" textAnchor="middle" dominantBaseline="central">infrastructure</text>
-                <text className="toc-ts" x="588" y="147" textAnchor="middle" dominantBaseline="central">New: E7</text>
+                <text className="toc-th" x="588" y="102" textAnchor="middle" dominantBaseline="central">Increased resilience</text>
+                <text className="toc-th" x="588" y="118" textAnchor="middle" dominantBaseline="central">of energy supply &amp;</text>
+                <text className="toc-th" x="588" y="134" textAnchor="middle" dominantBaseline="central">infrastructure</text>
               </g>
+              <IndicatorChip codes={['E7']} x={544} y={146} w={88}/>
               {/* Resilience outcome → Adaptation impact */}
               <line x1="588" y1="88" x2="556" y2="70" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
             </>
@@ -229,38 +348,38 @@ export default function AdaptationMitigationToC() {
               {/* Fossil fuel phase-out [E2/E3] */}
               <g className="toc-c-gray">
                 <rect x="96" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="133" y="230" textAnchor="middle" dominantBaseline="central">Fossil fuel</text>
-                <text className="toc-th" x="133" y="246" textAnchor="middle" dominantBaseline="central">phase-out</text>
-                <text className="toc-ts" x="133" y="272" textAnchor="middle" dominantBaseline="central">E2/E3</text>
+                <text className="toc-th" x="133" y="232" textAnchor="middle" dominantBaseline="central">Fossil fuel</text>
+                <text className="toc-th" x="133" y="248" textAnchor="middle" dominantBaseline="central">phase-out</text>
               </g>
+              <IndicatorChip codes={['E2','E3']} x={97} y={268} w={73}/>
               {/* Methane reduction [E6] */}
               <g className="toc-c-gray">
                 <rect x="177" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="214" y="230" textAnchor="middle" dominantBaseline="central">Methane</text>
-                <text className="toc-th" x="214" y="246" textAnchor="middle" dominantBaseline="central">reduction</text>
-                <text className="toc-ts" x="214" y="272" textAnchor="middle" dominantBaseline="central">E6</text>
+                <text className="toc-th" x="214" y="232" textAnchor="middle" dominantBaseline="central">Methane</text>
+                <text className="toc-th" x="214" y="248" textAnchor="middle" dominantBaseline="central">reduction</text>
               </g>
+              <IndicatorChip codes={['E6']} x={178} y={268} w={73}/>
               {/* Fast RES roll-out [E4a/b] */}
               <g className="toc-c-gray">
                 <rect x="258" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="295" y="230" textAnchor="middle" dominantBaseline="central">Fast RES</text>
-                <text className="toc-th" x="295" y="246" textAnchor="middle" dominantBaseline="central">roll-out</text>
-                <text className="toc-ts" x="295" y="272" textAnchor="middle" dominantBaseline="central">E4a/b</text>
+                <text className="toc-th" x="295" y="232" textAnchor="middle" dominantBaseline="central">Fast RES</text>
+                <text className="toc-th" x="295" y="248" textAnchor="middle" dominantBaseline="central">roll-out</text>
               </g>
+              <IndicatorChip codes={['E4a','E4b']} x={259} y={268} w={73}/>
               {/* Targeted CCU/CCS [E1/E6] */}
               <g className="toc-c-gray">
                 <rect x="339" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="376" y="230" textAnchor="middle" dominantBaseline="central">Targeted</text>
-                <text className="toc-th" x="376" y="246" textAnchor="middle" dominantBaseline="central">CCU/CCS</text>
-                <text className="toc-ts" x="376" y="272" textAnchor="middle" dominantBaseline="central">E1/E6</text>
+                <text className="toc-th" x="376" y="232" textAnchor="middle" dominantBaseline="central">Targeted</text>
+                <text className="toc-th" x="376" y="248" textAnchor="middle" dominantBaseline="central">CCU/CCS</text>
               </g>
+              <IndicatorChip codes={['E1','E6']} x={340} y={268} w={73}/>
               {/* System integration [E5/O2] */}
               <g className="toc-c-gray">
                 <rect x="420" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
-                <text className="toc-th" x="457" y="230" textAnchor="middle" dominantBaseline="central">System</text>
-                <text className="toc-th" x="457" y="246" textAnchor="middle" dominantBaseline="central">integration</text>
-                <text className="toc-ts" x="457" y="272" textAnchor="middle" dominantBaseline="central">E5/O2</text>
+                <text className="toc-th" x="457" y="232" textAnchor="middle" dominantBaseline="central">System</text>
+                <text className="toc-th" x="457" y="248" textAnchor="middle" dominantBaseline="central">integration</text>
               </g>
+              <IndicatorChip codes={['E5','O2']} x={421} y={268} w={73}/>
 
               {/* Synergy / risk badges (y=290, h=20) */}
               <g className="toc-c-teal">
@@ -301,15 +420,29 @@ export default function AdaptationMitigationToC() {
           )}
 
           {/* Synergy/risk arrows from mitigation levers → Resilience outcome
-              Shown only when both tracks are visible */}
+              Route via right-side bypass lane (x≈695–715) to avoid crossing the
+              adaptation demand pressure box (x=228–502, y=158–194) and
+              Physical resilience lever (x=506–672, y=212–288). */}
           {showMitigation && showAdaptation && (
             <>
-              {/* Fast RES (↔ synergy) → Resilience outcome bottom */}
-              <path d="M295 290 C 330 255 510 178 572 150" fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
-              {/* System integration (↔ synergy) → Resilience outcome bottom */}
-              <path d="M457 290 C 490 255 545 178 585 150" fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
-              {/* CCU/CCS (⚠ water risk) → Resilience outcome bottom */}
-              <path d="M376 290 C 415 258 527 178 562 150" fill="none" stroke="#A32D2D" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
+              {/* Fast RES (↔ synergy) — sweeps right, comes in at top of Resilience box */}
+              <path
+                d="M295 310 C295 335 700 335 700 100 C700 88 685 88 672 88"
+                fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3"
+                markerEnd="url(#toc-arrow)"
+              />
+              {/* System integration (↔ synergy) — staggered right lane */}
+              <path
+                d="M457 310 C457 340 708 340 708 119 C708 108 690 108 672 108"
+                fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3"
+                markerEnd="url(#toc-arrow)"
+              />
+              {/* CCU/CCS (⚠ water risk) — outermost right lane, enters at bottom of Resilience box */}
+              <path
+                d="M376 310 C376 346 716 346 716 135 C716 124 693 124 672 124"
+                fill="none" stroke="#A32D2D" strokeWidth="0.8" strokeDasharray="5 3"
+                markerEnd="url(#toc-arrow)"
+              />
             </>
           )}
 
