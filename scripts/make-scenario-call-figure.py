@@ -110,7 +110,7 @@ ax2.tick_params(labelbottom=False)
 
 # ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
-panel_label(ax1, "a", "Current logic — Member State projections (WEM/WAM) and EC benchmarks only")
+panel_label(ax1, "a", "Policy Gap 1.0 logic — Member State projections (WEM/WAM) and EC benchmarks only")
 ax1.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0), **LEG_KW)
 ax1.annotate("official sources only —\nno independent check, no range", xy=(2040, by[1]),
              xytext=(2034.5, -0.24), fontsize=9, color=EC_RED, ha="left",
@@ -123,7 +123,7 @@ ax2.fill_between(mx, band_lo, band_hi, color=BAND, alpha=0.5, lw=0, zorder=1,
                  label="Range of submitted scenarios")
 ax2.plot(mx, my, color=ENS, lw=2.0, zorder=5, solid_capstyle="round",
          label="Ensemble median")
-panel_label(ax2, "b", "New logic — the open scenario call adds the modelled range")
+panel_label(ax2, "b", "Proposed new logic — the open scenario call adds the modelled range")
 handles, labels = ax2.get_legend_handles_labels()
 order = [labels.index(l) for l in [
     "Range of submitted scenarios", "Ensemble median",
@@ -305,13 +305,13 @@ pos_d = axc1.get_position()
 BAR_X = 0.020
 fig.add_artist(Line2D([BAR_X, BAR_X], [pos_a.y0, pos_a.y1], color="#b0b0b0",
                       lw=2.5, solid_capstyle="butt"))
-fig.text(BAR_X - 0.009, (pos_a.y0 + pos_a.y1) / 2, "CURRENT LOGIC",
+fig.text(BAR_X - 0.009, (pos_a.y0 + pos_a.y1) / 2, "POLICY GAP 1.0 LOGIC",
          rotation=90, ha="center", va="center", fontsize=8.5, color="#777777",
          fontweight="bold")
 fig.add_artist(Line2D([BAR_X, BAR_X], [pos_d.y0, pos_b.y1], color="#2F6E5B",
                       lw=2.5, solid_capstyle="butt"))
 fig.text(BAR_X - 0.009, (pos_d.y0 + pos_b.y1) / 2,
-         "NEW LOGIC — WHAT THE SCENARIO CALL ADDS", rotation=90, ha="center",
+         "PROPOSED NEW LOGIC — WHAT THE SCENARIO CALL ADDS", rotation=90, ha="center",
          va="center", fontsize=8.5, color="#2F6E5B", fontweight="bold")
 
 out = "project-documents/assets/scenario-call-logic-figure.png"

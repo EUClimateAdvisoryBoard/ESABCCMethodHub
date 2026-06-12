@@ -115,8 +115,8 @@ fig_p.add_run().add_picture("project-documents/assets/scenario-call-logic-figure
 cap = doc.add_paragraph()
 cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = cap.add_run(
-    "Figure 1 | Current vs new assessment logic (schematic). a, Current logic: official projections and EC "
-    "benchmarks only. b–d, the new logic the scenario call enables. b, The submitted ensemble (band: range; line: "
+    "Figure 1 | Policy Gap 1.0 logic vs the proposed new logic (schematic). a, Policy Gap 1.0 logic: official "
+    "projections and EC benchmarks only. b–d, the proposed new logic the scenario call enables. b, The submitted ensemble (band: range; line: "
     "median) makes official projections and EC benchmarks testable. c, The same pathway split into sectors, scaled "
     "to today's approximate EU27 emission shares (EEA inventory); the magnifiers mark the sectors zoomed below. "
     "d1–d3, what the magnifiers reveal — one sectoral-model output per sector: the industry electrolyser capacity "
@@ -130,7 +130,7 @@ cap.paragraph_format.space_after = Pt(2)
 
 # ── How to read the figure ───────────────────────────────────────────────────
 heading("What the figure shows")
-bullet("Panel a (today)", "Both forward-looking elements come from official sources only: the Member State "
+bullet("Panel a (Policy Gap 1.0 logic)", "Both forward-looking elements come from official sources only: the Member State "
        "WEM/WAM projections (reported under the Governance Regulation, aggregated by the EEA) answer 'will we meet "
        "the benchmark under current and planned policies?', and the EC-scenario benchmarks set the goal posts. "
        "There is no independent scientific check and no uncertainty range around either.")
@@ -138,12 +138,12 @@ bullet("Panel b (checking & context)", "Both elements are kept, but the submitte
        "alongside: the shaded band is the range across all submitted runs, the solid line their median. Where the "
        "official projections and benchmarks sit relative to the band shows at a glance whether they are optimistic "
        "or conservative against the scientific landscape.")
-bullet("Panel c (the sector split — part of the new logic)", "The headline pathway is the sum of very different "
+bullet("Panel c (the sector split — part of the proposed new logic)", "The headline pathway is the sum of very different "
        "sector transitions. Splitting it by today's actual emission shares (energy supply ~26%, transport ~24%, "
        "industry ~20%, buildings ~13%, agriculture ~11%, waste & other ~6%) shows the composition of remaining "
        "emissions shifting over time — energy decarbonises fastest, agriculture and transport linger. The "
        "magnifying glasses mark where we zoom in.")
-bullet("Panels d1–d3 (under the magnifier — also part of the new logic)", "One example per sector of the detailed outputs we want submitted: "
+bullet("Panels d1–d3 (under the magnifier — also part of the proposed new logic)", "One example per sector of the detailed outputs we want submitted: "
        "industry — the gap between the current electrolyser deployment trend and what pathways require; transport — "
        "biofuel demand running into the sustainable biomass supply that land-use models can certify, with "
        "competition across sectors; buildings — the heat-pump roll-out required versus a trend slowed by the old, "
