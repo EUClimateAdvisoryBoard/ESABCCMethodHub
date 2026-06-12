@@ -30,6 +30,7 @@ import SectoredResultsChainBoardView from '@/components/frameworks/SectoredResul
 import PolicyLoopBoardView from '@/components/frameworks/PolicyLoopBoardView';
 import AssessmentMatrixBoardView from '@/components/frameworks/AssessmentMatrixBoardView';
 import BurnMapBoardView from '@/components/frameworks/BurnMapBoardView';
+import AdaptationTocBoardView from '@/components/frameworks/AdaptationTocBoardView';
 
 interface Props {
   projectId: string;
@@ -167,6 +168,11 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
               adv 8 · burn map
             </span>
           )}
+          {active.variant === 'adaptation-toc' && (
+            <span className="text-[9px] uppercase font-bold rounded px-1 bg-orange-100 text-orange-700">
+              ToC · energy
+            </span>
+          )}
           <button
             type="button"
             onClick={() => setRenaming(true)}
@@ -244,6 +250,16 @@ export default function FlowChartVersions({ projectId, allIndicators, onOpenInLi
         // themes, objective lenses) plus the eight-step assessment protocol —
         // also a computed, read-only view.
         <AssessmentMatrixBoardView
+          key={active.id}
+          allIndicators={allIndicators}
+          onOpenInList={onOpenInList}
+        />
+      ) : active.variant === 'adaptation-toc' ? (
+        // The adaptation-ToC board renders the EUCRA Chapter 8 theory of
+        // change for the energy supply sector as expandable layer bands with
+        // live indicator chips plus a hazard-pathways band — a computed,
+        // read-only view like advanced-v7/v8.
+        <AdaptationTocBoardView
           key={active.id}
           allIndicators={allIndicators}
           onOpenInList={onOpenInList}

@@ -41,7 +41,6 @@ import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/S
 import OverviewFigure from '@/components/frameworks/OverviewFigure';
 import IndicatorDetail from '@/components/frameworks/IndicatorDetail';
 import AdaptationMitigationToC from '@/components/frameworks/AdaptationMitigationToC';
-import AdaptationMitigationToCData from '@/components/frameworks/AdaptationMitigationToCData';
 
 interface Props {
   /** The project's indicators — used both as the link targets in edit mode and
@@ -216,10 +215,6 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
 
   if (version.id === 'adaptation-mitigation-toc') {
     return <AdaptationMitigationToC />;
-  }
-
-  if (version.id === 'adaptation-mitigation-toc-data') {
-    return <AdaptationMitigationToCData />;
   }
 
   const counts = (s: SectorFramework) => {
@@ -439,19 +434,16 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
                     allIndicators={allIndicators}
                     onChange={updateSector}
                     onOpenIndicator={setDrawer}
-                    // advanced-v2 / advanced-v4 / advanced-v5 / advanced-v6 /
-                    // advanced-v7 / advanced-v8 are computed views handled
-                    // before SectorFlow is ever reached; the guard keeps the
-                    // prop type narrow to the sector-board variants.
+                    // The computed views (advanced-v2/v4/v5/v6/v7/v8 and
+                    // adaptation-toc) are handled before SectorFlow is ever
+                    // reached; the guard keeps the prop type narrow to the
+                    // sector-board variants.
                     variant={
-                      version.variant === 'advanced-v2' ||
-                      version.variant === 'advanced-v4' ||
-                      version.variant === 'advanced-v5' ||
-                      version.variant === 'advanced-v6' ||
-                      version.variant === 'advanced-v7' ||
-                      version.variant === 'advanced-v8'
-                        ? 'advanced'
-                        : version.variant
+                      version.variant === 'report' ||
+                      version.variant === 'beta' ||
+                      version.variant === 'advanced'
+                        ? version.variant
+                        : 'advanced'
                     }
                   />
                 </div>
