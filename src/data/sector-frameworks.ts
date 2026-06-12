@@ -70,36 +70,47 @@ export interface PolicyRef {
 }
 
 /**
- * How an indicator maps onto the reporting template of the IAM scenario
+ * How an indicator maps onto the reporting templates of the scenario
  * submission call, used in the "Scenario call" flow chart version.
- *   'matched'       — standard IAMC-template variable; every economy-wide IAM
- *                     submission reports it out of the box.
- *   'sectoral-only' — only the call's *sectoral* track (transport fleet,
- *                     building stock, agro-economic models, …) resolves it.
- *   'requested'     — not in the standard template; the call asks submitting
+ *   'matched'       — standard template variable (IAMC for the mitigation
+ *                     tracks, ISIMIP-style for the impact & adaptation track);
+ *                     submissions cover it out of the box.
+ *   'sectoral-only' — only a *detail-model* submission (transport fleet,
+ *                     building stock, agro-economic, infrastructure-exposure
+ *                     models, …) resolves it.
+ *   'requested'     — not in the standard templates; the call asks submitting
  *                     teams to add this variable to their reporting.
  */
 export type ScenarioMatchStatus = 'matched' | 'sectoral-only' | 'requested';
 
 export const SCENARIO_MATCH_STATUS_LABEL: Record<ScenarioMatchStatus, string> = {
-  matched: 'Matched — standard IAMC template variable',
-  'sectoral-only': 'Sectoral track — needs a sectoral-model submission',
+  matched: 'Matched — standard reporting-template variable (IAMC / ISIMIP)',
+  'sectoral-only': 'Sectoral track — needs a detail-model submission',
   requested: 'Requested — new reporting variable asked of submitting teams',
 };
 
 /**
  * A scenario-modelling match attached to an indicator chip in the
- * "Scenario call" flow chart version: the IAMC reporting-template variable the
+ * "Scenario call" flow chart version: the reporting-template variable the
  * indicator maps to, which submission track of the call covers it, and — where
  * results are already held in the MethodHub scenario snapshot — the
  * cross-scenario corridor those results span.
  */
 export interface ScenarioMatch {
-  /** IAMC reporting-template variable(s), e.g. "Capacity|Electricity|Solar|PV". */
+  /** Reporting-template variable(s), e.g. "Capacity|Electricity|Solar|PV". */
   variable: string;
   unit: string;
-  /** Which submission track of the call reports this variable. */
-  scope: 'economy-wide' | 'sectoral' | 'both';
+  /**
+   * Which submission track of the call reports this variable:
+   *  - 'economy-wide'      — economy-wide IAM scenarios (IAMC template);
+   *  - 'sectoral'          — sectoral detail models (fleet, stock, agro-economic);
+   *  - 'both'              — either mitigation track; and
+   *  - 'impact-adaptation' — climate impact & adaptation models (ISIMIP-style:
+   *                          CLIMADA, LISFLOOD, crop/health/fire models), the
+   *                          track that ties the adaptation side of the board
+   *                          to scenario results.
+   */
+  scope: 'economy-wide' | 'sectoral' | 'both' | 'impact-adaptation';
   status: ScenarioMatchStatus;
   /** Model families the call targets for this variable. */
   models: string[];
@@ -129,6 +140,17 @@ export interface IndicatorRef {
   enhanced?: boolean;
   /** Scenario-modelling match for this indicator ("Scenario call" version only). */
   scenario?: ScenarioMatch;
+  /**
+   * True for *system-change* indicators ("Scenario call" version): chips that
+   * capture how the system itself is changing — structure, equity & climate
+   * justice, inclusive governance, ecosystem condition — rather than
+   * incremental progress toward a fixed objective. They complement (not
+   * replace) the report's goal-linked progress indicators, following the
+   * monitoring-evaluation-and-learning guidance of the climate-resilient-
+   * development pathways literature (cf. Eriksen et al. 2024, Nat. Clim.
+   * Change 14, 1212–1215).
+   */
+  systemChange?: boolean;
 }
 
 /**
@@ -2211,18 +2233,33 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
 
 // ── Scenario call — IAM-matched indicators ────────────────────────────────────
 //
-// The "Scenario call" board is the ESABCC report (default) framework with every
-// indicator chip matched to the reporting template of the open scenario
-// submission call: IAM and sectoral modelling teams submit economy-wide or
-// sectoral EU scenarios directly to the MethodHub, and each submitted run is
-// resolved against these variable mappings so every indicator carries a
-// scenario benchmark corridor next to its observed series.
+// The "Scenario call" board is the ESABCC report (default) framework — plus the
+// per-sector adaptation & resilience layer — with every indicator chip matched
+// to the reporting templates of the open scenario submission call. Modelling
+// teams submit to one of three tracks:
+//   1. economy-wide IAM scenarios (IAMC template);
+//   2. sectoral detail models (fleet, building-stock, agro-economic, …); and
+//   3. climate impact & adaptation models (ISIMIP-style: CLIMADA, LISFLOOD,
+//      crop / health / fire models).
+// Each submitted run is resolved against these variable mappings so every
+// indicator carries a scenario benchmark corridor next to its observed series.
+//
+// Mitigation and adaptation are combined as one system, following the
+// climate-resilient-development framing (Eriksen et al. 2024, "Pathways for
+// urgent action towards climate resilient development", Nat. Clim. Change 14,
+// 1212–1215): adaptation outcomes and levers sit beside the mitigation chain in
+// every sector, track 3 ties them to scenario results, and each sector carries
+// (a) a *system-change* indicator chip — capturing structural shift, equity &
+// climate justice, inclusive governance or ecosystem condition, per the
+// monitoring-evaluation-and-learning guidance of the CRD-pathways literature —
+// and (b) an inclusive-governance enabling condition.
 //
 // Variable names follow the common IAMC reporting template used by the ESABCC
-// Scenario Explorer / AR6 and ECEMF vintages. The corridors quoted on the six
-// sector goals are the *economy-wide total* GHG corridor across the 63 EU27
-// runs (9 model versions) already bundled in `src/data/scenarios.ts` — the
-// sectoral split of that corridor is computed once call submissions arrive.
+// Scenario Explorer / AR6 and ECEMF vintages, and ISIMIP conventions for the
+// impact & adaptation track. The corridors quoted on the six sector goals are
+// the *economy-wide total* GHG corridor across the 63 EU27 runs (9 model
+// versions) already bundled in `src/data/scenarios.ts` — the sectoral split of
+// that corridor is computed once call submissions arrive.
 
 /** Short helper for scenario matches. */
 function sm(
@@ -2236,13 +2273,16 @@ function sm(
   return { variable, unit, scope, status, models, ...extra };
 }
 
-// Model families targeted by the two tracks of the call.
+// Model families targeted by the three tracks of the call.
 const IAMS = ['MESSAGEix-GLOBIOM', 'IMAGE', 'REMIND', 'GCAM-PR', 'WITCH'];
 const LAND_MODELS = ['GLOBIOM', 'MAgPIE', 'IMAGE'];
 const AGRI_MODELS = ['GLOBIOM', 'MAgPIE', 'CAPRI'];
 const TRANSPORT_MODELS = ['EDGE-Transport (REMIND)', 'IMAGE/TIMER transport', 'sectoral fleet models'];
 const BUILDING_MODELS = ['EDGE-Buildings (REMIND)', 'Invert-type stock models'];
 const INDUSTRY_MODELS = ['FORECAST-type industry models', 'REMIND', 'IMAGE'];
+// Track 3 — climate impact & adaptation models (ISIMIP-style).
+const IMPACT_MODELS = ['CLIMADA', 'ISIMIP sector models'];
+const WATER_MODELS = ['LISFLOOD', 'PCR-GLOBWB', 'ISIMIP water sector'];
 
 // The economy-wide total GHG corridor across the runs held in scenarios.ts
 // (variable "Diagnostics|Harmonized|Emissions|Kyoto Gases (AR4)", EU27).
@@ -2325,24 +2365,101 @@ const SC_INDICATOR_SCENARIOS: Record<string, ScenarioMatch> = {
   L3: sm('Land Cover|Forest|Afforestation and Reforestation', 'Mha/yr', 'both', 'matched', LAND_MODELS),
   L6: sm('Carbon Sequestration|Land Use|Forest', 'Mt CO2/yr', 'both', 'matched', LAND_MODELS),
   L7: sm('Emissions|CO2|AFOLU minus forest flux (cropland, grassland, wetlands)', 'Mt CO2/yr (derived)', 'sectoral', 'sectoral-only', LAND_MODELS),
+  // ── Adaptation & resilience layer (track 3 — impact & adaptation models) ──
+  'CDDβ': sm('Cooling Degree Days (population-weighted)', 'CDD/yr', 'impact-adaptation', 'matched', ['EURO-CORDEX ensemble', 'CLIMADA']),
+  'WEI+': sm('Water Exploitation Index Plus (WEI+), per river basin', '%', 'impact-adaptation', 'matched', WATER_MODELS),
+  'EDRβ': sm('Drought-attributable damage to power generation', '€bn/yr', 'impact-adaptation', 'sectoral-only', [...IMPACT_MODELS.slice(0, 1), 'energy-system resilience models']),
+  LOSS: sm('Direct economic damages from weather & climate extremes', '€bn/yr', 'impact-adaptation', 'matched', IMPACT_MODELS),
+  'INSβ': sm('Insured share of climate-related losses (protection gap)', '%', 'impact-adaptation', 'requested', IMPACT_MODELS, {
+    note: 'Observed via the EIOPA protection-gap dashboard; requested from damage-model teams as a scenario output.',
+  }),
+  'RAILβ': sm('Transport-network length exposed to weather extremes', 'km at risk', 'impact-adaptation', 'sectoral-only', ['CLIMADA infrastructure', 'network-exposure models']),
+  'COASTβ': sm('Coastal flood damage to transport infrastructure', '€bn/yr', 'impact-adaptation', 'sectoral-only', ['DIVA coastal', 'CLIMADA']),
+  'HEATβ': sm('Heat-attributable mortality', 'deaths per 100k/yr', 'impact-adaptation', 'matched', ['ISIMIP health-sector models']),
+  'FLOODβ': sm('Population in 1-in-100-year flood zones', 'million people', 'impact-adaptation', 'matched', ['LISFLOOD', 'GLOFRIS']),
+  'DRGTβ': sm('Cropland & ecosystem area under severe drought', 'Mha/yr', 'impact-adaptation', 'matched', ['ISIMIP agriculture & biomes sectors']),
+  'FIREβ': sm('Burnt area', 'kha/yr', 'impact-adaptation', 'matched', ['ISIMIP fire models', 'EFFIS-calibrated']),
+  // ── System-change chips (CRD monitoring-evaluation-and-learning guidance) ─
+  'SYS-E': sm('Energy expenditure share of low-income households; energy-poverty incidence', '%', 'economy-wide', 'requested', IAMS, {
+    note: 'Equity & climate justice — distributional outputs requested from IAM teams running inequality modules.',
+  }),
+  'SYS-I': sm('Secondary (recycled) share of total material throughput', '%', 'sectoral', 'requested', INDUSTRY_MODELS, {
+    note: 'Structural circularity of the material system, beyond year-on-year circular-use progress.',
+  }),
+  'SYS-T': sm('Non-car share of passenger-km; access to services without car ownership', '%', 'sectoral', 'sectoral-only', TRANSPORT_MODELS, {
+    note: 'Captures modal *system* shift rather than vehicle-fleet turnover.',
+  }),
+  'SYS-B': sm('Dwelling energy-performance distribution by income decile', 'shares by EPC class', 'sectoral', 'requested', BUILDING_MODELS, {
+    note: 'Equity of the renovation wave — who lives in the worst-performing stock as it shrinks.',
+  }),
+  'SYS-A': sm('Plant-based share of total protein supply (Food Demand|Crops vs |Livestock)', '%', 'both', 'matched', AGRI_MODELS, {
+    note: 'Dietary system shift — the structural driver behind herd size, fertiliser use and land demand.',
+  }),
+  'SYS-L': sm('Biodiversity intactness / ecosystem condition in land-use scenarios', 'index', 'sectoral', 'sectoral-only', LAND_MODELS, {
+    note: 'Biophysical & ecosystem condition — whether the sink is built on resilient, intact ecosystems.',
+  }),
 };
 
 /**
- * "Scenario call" board — the ESABCC report (default) framework with every
- * indicator chip matched to the reporting template of the open IAM scenario
- * submission call (economy-wide and sectoral tracks). Enhanced chips are
- * stripped so the board stays 1:1 with the report figures; each remaining chip
- * carries a `ScenarioMatch` resolving it to an IAMC variable, the submission
- * track that covers it, and the targeted model families.
+ * One *system-change* indicator chip per sector, attached to the sector goal in
+ * the "Scenario call" board. Factories (not constants) so each board gets fresh
+ * refIds. These capture how the system itself is changing — equity & climate
+ * justice (energy, buildings), structural shift (industry, transport,
+ * agriculture) and ecosystem condition (LULUCF) — complementing the report's
+ * goal-linked progress indicators per the CRD-pathways monitoring guidance.
+ */
+function sysRef(code: string, label: string, indicatorIds: string[] = []): IndicatorRef {
+  return { ...ref(code, label, indicatorIds), systemChange: true };
+}
+const SC_SYSTEM_CHANGE: Record<string, () => IndicatorRef> = {
+  energy: () => sysRef('SYS-E', 'Energy poverty & inclusive access to clean energy', ['energy-poverty-share']),
+  industry: () => sysRef('SYS-I', 'Material-system circularity (stock–flow)'),
+  transport: () => sysRef('SYS-T', 'Accessibility without car dependence'),
+  buildings: () => sysRef('SYS-B', 'Equitable access to efficient, climate-safe homes'),
+  agriculture: () => sysRef('SYS-A', 'Protein-system shift (plant-based share)'),
+  lulucf: () => sysRef('SYS-L', 'Ecosystem condition & biodiversity intactness'),
+};
+
+/**
+ * "Scenario call" board — mitigation and adaptation combined, every indicator
+ * matched to the reporting templates of the open scenario submission call.
+ *
+ * Built on the beta board (report frameworks + the per-sector adaptation &
+ * resilience layer) so mitigation and adaptation read as one system, per the
+ * climate-resilient-development framing (Eriksen et al. 2024, Nat. Clim.
+ * Change 14, 1212–1215). Enhanced mitigation chips are stripped so the
+ * mitigation chain stays 1:1 with the report (default) figures. On top:
+ *   • every chip — mitigation *and* adaptation — carries a `ScenarioMatch`
+ *     resolving it to a template variable and one of the call's three tracks
+ *     (economy-wide IAM / sectoral detail / impact & adaptation models);
+ *   • each sector goal gains one system-change indicator chip (structural
+ *     shift, equity & climate justice, governance, ecosystem condition),
+ *     complementing the goal-linked progress indicators per the CRD-pathways
+ *     monitoring-evaluation-and-learning guidance; and
+ *   • each sector gains a cross-cutting CRD enabling condition (inclusive
+ *     governance, equity & climate justice).
  */
 export function defaultFrameworkBoardScenarioCall(): FrameworkBoard {
-  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
-  for (const sector of sectors) {
-    // Strip enhanced indicator chips — stay 1:1 with the report figures.
+  const board = defaultFrameworkBoardBeta();
+  for (const sector of board.sectors) {
+    // Strip enhanced mitigation chips — the mitigation chain stays 1:1 with
+    // the report figures. Adaptation cards keep their (beta) chips: they ARE
+    // the adaptation layer, there is no report-faithful subset to fall back to.
     for (const node of [...sector.outcomes, ...sector.levers]) {
-      node.indicators = node.indicators.filter((r) => !r.enhanced);
+      if (node.track !== 'adaptation') {
+        node.indicators = node.indicators.filter((r) => !r.enhanced);
+      }
     }
-    // Match every remaining chip (goal + outcomes + levers) to the call template.
+    // One system-change chip on the sector goal.
+    const sys = SC_SYSTEM_CHANGE[sector.id];
+    if (sys) sector.goalIndicators.push(sys());
+    // CRD enabling condition.
+    sector.enabling.push({
+      id: `${sector.id}-crd-e1`,
+      kind: 'cross-cutting',
+      label: 'Inclusive governance, equity & climate justice in the sector transition (climate resilient development)',
+    });
+    // Match every chip (goal + outcomes + levers, both tracks) to the call.
     const chips = [
       ...sector.goalIndicators,
       ...sector.outcomes.flatMap((n) => n.indicators),
@@ -2353,5 +2470,7 @@ export function defaultFrameworkBoardScenarioCall(): FrameworkBoard {
       if (match) chip.scenario = match;
     }
   }
-  return { version: FRAMEWORK_BOARD_VERSION, sectors };
+  // Version stays FRAMEWORK_BOARD_BETA_VERSION (set by the beta factory) —
+  // the 'scenario-call' registry entry is a 'beta'-variant board.
+  return board;
 }

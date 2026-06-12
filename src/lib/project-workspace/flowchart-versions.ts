@@ -144,7 +144,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
   { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Theory of Change', variant: 'report', builtIn: true },
-  { id: 'scenario-call', name: 'Scenario call — IAM-matched indicators', variant: 'report', builtIn: true },
+  { id: 'scenario-call', name: 'Scenario call — mitigation & adaptation, IAM-matched', variant: 'beta', builtIn: true },
 ];
 
 interface RegistryData {
