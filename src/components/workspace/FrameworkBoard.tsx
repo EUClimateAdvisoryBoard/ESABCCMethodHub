@@ -39,6 +39,7 @@ import {
 import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/SectorFlow';
 import OverviewFigure from '@/components/frameworks/OverviewFigure';
 import IndicatorDetail from '@/components/frameworks/IndicatorDetail';
+import AdaptationMitigationToC from '@/components/frameworks/AdaptationMitigationToC';
 
 interface Props {
   /** The project's indicators — used both as the link targets in edit mode and
@@ -207,6 +208,10 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   };
 
   const drawerIndicators = useMemo(() => (drawer ? resolve(drawer.indicatorIds) : []), [drawer, resolve]);
+
+  if (version.id === 'adaptation-mitigation-toc') {
+    return <AdaptationMitigationToC />;
+  }
 
   const counts = (s: SectorFramework) => {
     const refs = [...s.goalIndicators, ...s.outcomes.flatMap((o) => o.indicators), ...s.levers.flatMap((l) => l.indicators)];
