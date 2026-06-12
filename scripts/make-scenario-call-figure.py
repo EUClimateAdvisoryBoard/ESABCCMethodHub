@@ -3,8 +3,8 @@
 
 Abstract / illustrative (no real numbers): panel a — current logic, historic
 data + EC projection and EC benchmarks only; panel b — the same, plus the
-scenario-call ensemble as one shaded range band with a median line. Journal
-styling, large readable type.
+scenario-call ensemble as one shaded range band with a median line;
+panel c — transition dynamics. Journal styling, large readable type.
 
 Output: project-documents/assets/scenario-call-logic-figure.png
 Re-run: python3 scripts/make-scenario-call-figure.py
@@ -91,8 +91,8 @@ def panel_label(ax, letter, text):
 LEG_KW = dict(fontsize=8.5, frameon=False, handlelength=1.9, labelspacing=0.4,
               borderaxespad=0.2)
 
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7.0, 5.0), dpi=300, sharex=True)
-fig.subplots_adjust(hspace=0.40, left=0.10, right=0.985, top=0.915, bottom=0.06)
+fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(7.0, 7.4), dpi=300, sharex=True)
+fig.subplots_adjust(hspace=0.46, left=0.10, right=0.985, top=0.94, bottom=0.045)
 
 # ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
@@ -121,6 +121,34 @@ ax2.annotate("EC benchmarks become testable\nagainst the modelled range",
              ha="left",
              arrowprops=dict(arrowstyle="->", color=ENS, lw=0.8,
                              shrinkA=2, shrinkB=4))
+
+# ── Panel c — the other side of the coin: transition dynamics ───────────────
+cx = np.linspace(2016, 2050, 100)
+ct = (cx - 2016) / 34
+easy = 0.85 * np.exp(-2.6 * ct)          # mature-tech share of remaining effort
+ax3.fill_between(cx, 0, easy, color="#7fb3a1", alpha=0.55, lw=0, zorder=1)
+ax3.fill_between(cx, easy, 1, color="#d9a05b", alpha=0.40, lw=0, zorder=1)
+ax3.plot(cx, easy, color="#3c7a66", lw=1.6, zorder=3)
+ax3.text(2017.0, 0.13, "mature technology roll-out\n('low-hanging fruit')",
+         fontsize=9, color="#1f4d3e", ha="left", va="bottom")
+ax3.text(2030.5, 0.80,
+         "structural & societal change — technology availability\nlimits, infrastructure, diets, consumption, demand",
+         fontsize=9, color="#7a4d12", ha="left", va="center")
+ax3.axvline(TODAY, color=GREY, lw=0.7, ls=(0, (1, 2)))
+ax3.text(TODAY + 0.3, 0.985, "today", fontsize=8.5, color=GREY, va="top", style="italic")
+ax3.annotate("2030 target can be met on easy options —\nwhat is left afterwards is the hard core",
+             xy=(2030, 0.30), xytext=(2036.5, 0.38), fontsize=9, color="#333333",
+             ha="left",
+             arrowprops=dict(arrowstyle="->", color="#333333", lw=0.8,
+                             shrinkA=2, shrinkB=3))
+ax3.set_xlim(2015, 2051)
+ax3.set_ylim(0, 1.0)
+ax3.set_yticks([])
+ax3.spines[["top", "right"]].set_visible(False)
+ax3.set_xticks([2030, 2040, 2050])
+ax3.tick_params(labelsize=9.5)
+ax3.set_ylabel("Composition of\nremaining effort", fontsize=9.5)
+panel_label(ax3, "c", "Understanding the inherent dynamics of the transition — beyond the GHG headline")
 
 out = "project-documents/assets/scenario-call-logic-figure.png"
 import os
