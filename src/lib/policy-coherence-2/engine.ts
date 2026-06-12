@@ -30,6 +30,7 @@ import { deriveBlocks, deriveUnits } from './segmentation';
 import type {
   Pc2Evidence,
   Pc2Finding,
+  Pc2MlResult,
   Pc2PolicyAnalysis,
   Pc2RuleId,
   Pc2RuleMeta,
@@ -562,9 +563,10 @@ export function runPolicyCoherence2(): Pc2Run {
 }
 
 /** ML-ready export: one JSON object per line — a run header, then every
- *  unit (with claims and step tags) and every finding. Deterministic ids
- *  let downstream pipelines join units ↔ findings ↔ policies. */
-export function buildJsonlExport(run: Pc2Run): string {
+ *  unit (with claims and step tags) and every finding; when the ML layer's
+ *  result is passed, its pairs and clusters are appended too. Deterministic
+ *  ids let downstream pipelines join units ↔ findings ↔ pairs ↔ policies. */
+export function buildJsonlExport(run: Pc2Run, ml?: Pc2MlResult): string {
   const lines: string[] = [];
   lines.push(
     JSON.stringify({
@@ -585,5 +587,18 @@ export function buildJsonlExport(run: Pc2Run): string {
   for (const p of run.policies) lines.push(JSON.stringify({ type: 'policy', ...p }));
   for (const u of run.units) lines.push(JSON.stringify({ type: 'unit', ...u }));
   for (const f of run.findings) lines.push(JSON.stringify({ type: 'finding', ...f }));
+  if (ml) {
+    lines.push(
+      JSON.stringify({
+        type: 'ml-run',
+        mlVersion: ml.mlVersion,
+        corpusHash: ml.corpusHash,
+        params: ml.params,
+        stats: ml.stats,
+      }),
+    );
+    for (const p of ml.pairs) lines.push(JSON.stringify({ type: 'ml-pair', ...p }));
+    for (const c of ml.clusters) lines.push(JSON.stringify({ type: 'ml-cluster', ...c }));
+  }
   return lines.join('\n') + '\n';
 }
