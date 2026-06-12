@@ -425,10 +425,16 @@ export default function PolicyCoherence2Page() {
 
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <button
-                onClick={() => setTourStep(0)}
-                className="px-3 py-1.5 rounded-lg border border-[#E87722] text-[12px] font-bold text-[#E87722] hover:bg-[#E87722]/10 transition"
+                onClick={() => setTourStep(tourStep === null ? 0 : null)}
+                className={`px-3 py-1.5 rounded-lg border border-[#E87722] text-[12px] font-bold transition ${
+                  tourStep === null
+                    ? 'text-[#E87722] hover:bg-[#E87722]/10'
+                    : 'bg-[#E87722] text-white'
+                }`}
               >
-                Guided tour
+                {tourStep === null
+                  ? 'Guided tour'
+                  : `Exit tour (${tourStep + 1}/${TOUR_STEPS.length})`}
               </button>
               <Link
                 href="/beta/policy-coherence-2/guide"
