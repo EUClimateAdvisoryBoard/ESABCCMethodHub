@@ -105,8 +105,8 @@ fig_p.add_run().add_picture("project-documents/assets/scenario-call-logic-figure
 cap = doc.add_paragraph()
 cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = cap.add_run(
-    "Figure 1 | Current (a) vs new (b) assessment logic. Shading: full range across the 63 EU27 runs (9 IAMs) "
-    "already held in the MethodHub; line: ensemble median."
+    "Figure 1 | Current (a) vs new (b) assessment logic (schematic). Shaded band: range across submitted "
+    "scenarios; solid line: ensemble median."
 )
 r.italic = True
 r.font.size = Pt(7.5)
@@ -120,10 +120,10 @@ bullet("Panel a (today)", "Both forward-looking elements come from a single sour
        "we simply continue?', and the EC benchmarks set the goal posts. There is no independent check and no "
        "uncertainty range around any of them.")
 bullet("Panel b (with the call)", "Both elements are kept, but the submitted scenario ensemble is added alongside: "
-       "the shaded band is the full range across all submitted runs, the solid line their median. Reading EC "
-       "projections and benchmarks against this band shows at a glance where they sit in the scientific landscape — "
-       "e.g. the 2030 benchmark lies at the upper edge of the modelled range, and by 2050 the ensemble explores "
-       "net-negative territory the EC trajectory never reaches.")
+       "the shaded band is the range across all submitted runs, the solid line their median. Where the EC "
+       "projection and benchmarks sit relative to the band shows at a glance whether they are optimistic or "
+       "conservative against the scientific landscape — and the ensemble reveals futures (such as net-negative "
+       "emissions) that a single EC trajectory never shows.")
 bullet("Why it matters", "The same comparison is repeated per indicator on the matched flow chart, giving every "
        "sector benchmark an independent, scientifically robust corridor — and a documented basis for judging whether "
        "EC scenarios are too optimistic or too pessimistic on specific points.")
