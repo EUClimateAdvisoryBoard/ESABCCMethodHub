@@ -101,19 +101,32 @@ fig_p = doc.add_paragraph()
 fig_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
 fig_p.paragraph_format.space_before = Pt(3)
 fig_p.paragraph_format.space_after = Pt(0)
-fig_p.add_run().add_picture("project-documents/assets/scenario-call-logic-figure.png", width=Cm(16.8))
+fig_p.add_run().add_picture("project-documents/assets/scenario-call-logic-figure.png", width=Cm(16.2))
 cap = doc.add_paragraph()
 cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = cap.add_run(
-    "Current vs new assessment logic. (A) Today: projections and future benchmarks come from EC scenarios alone — a "
-    "single source with no uncertainty range. (B) With the open call, the submitted ensemble (here: the 63 EU27 runs "
-    "from 9 IAMs already held, shown as 5–95% and 25–75% quantile bands with the median) places the EC trajectory in "
-    "the broader scientific landscape, so benchmarks that are too optimistic or pessimistic become visible."
+    "Figure 1 | Current (a) vs new (b) assessment logic. Shading: full range across the 63 EU27 runs (9 IAMs) "
+    "already held in the MethodHub; line: ensemble median."
 )
 r.italic = True
 r.font.size = Pt(7.5)
 r.font.color.rgb = GREY
-cap.paragraph_format.space_after = Pt(3)
+cap.paragraph_format.space_after = Pt(2)
+
+# ── How to read the figure ───────────────────────────────────────────────────
+heading("What the figure shows")
+bullet("Panel a (today)", "Both forward-looking elements come from a single source: WEM/WAM projections answer "
+       "'will we meet the benchmark under current and planned policies?', the trend extrapolation answers 'what if "
+       "we simply continue?', and the EC benchmarks set the goal posts. There is no independent check and no "
+       "uncertainty range around any of them.")
+bullet("Panel b (with the call)", "Both elements are kept, but the submitted scenario ensemble is added alongside: "
+       "the shaded band is the full range across all submitted runs, the solid line their median. Reading EC "
+       "projections and benchmarks against this band shows at a glance where they sit in the scientific landscape — "
+       "e.g. the 2030 benchmark lies at the upper edge of the modelled range, and by 2050 the ensemble explores "
+       "net-negative territory the EC trajectory never reaches.")
+bullet("Why it matters", "The same comparison is repeated per indicator on the matched flow chart, giving every "
+       "sector benchmark an independent, scientifically robust corridor — and a documented basis for judging whether "
+       "EC scenarios are too optimistic or too pessimistic on specific points.")
 
 # ── Workflow ─────────────────────────────────────────────────────────────────
 heading("What would the workflow be on our side?")

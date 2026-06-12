@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Generate the two-panel figure for the scenario-call one-pager.
 
-Panel A — current logic: historic data + EC-style projection and benchmarks only.
-Panel B — new logic: the same, plus the scenario-call ensemble drawn as a
-quantile fan (5-95% and 25-75%) with a median line, computed from the real
-63 EU27 runs bundled in src/data/scenarios.ts.
+Nature-journal style: panel letters a/b, Arial, outward ticks, minimal spines,
+muted palette. Panel a — current logic: historic data + EC-style projection
+and benchmarks only. Panel b — new logic: the same, plus the scenario-call
+ensemble drawn as a single shaded band (full range across runs) with a median
+line, computed from the real 63 EU27 runs bundled in src/data/scenarios.ts.
 
 Output: project-documents/assets/scenario-call-logic-figure.png
 Re-run: python3 scripts/make-scenario-call-figure.py
@@ -17,13 +18,27 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-GREEN = "#2F6E5B"   # MethodHub accent
-BLUE = "#1f4e79"    # ensemble median
-FAN_OUT = "#aecbe3" # 5-95% band
-FAN_IN = "#6f9fc8"  # 25-75% band
-EC_RED = "#c0392b"  # EC benchmarks
-EC_GREEN = "#5a9e6f" # EC projection
-EXTRAP = "#7f9cc4"  # linear extrapolation
+plt.rcParams.update({
+    "font.family": "sans-serif",
+    "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],
+    "font.size": 7,
+    "axes.linewidth": 0.6,
+    "xtick.direction": "out",
+    "ytick.direction": "out",
+    "xtick.major.width": 0.6,
+    "ytick.major.width": 0.6,
+    "xtick.major.size": 2.5,
+    "ytick.major.size": 2.5,
+})
+
+# Muted, print-safe palette.
+HIST = "#1a1a1a"     # historic data
+ENS = "#26547c"      # ensemble median
+BAND = "#9db9d1"     # ensemble range band
+EC_RED = "#b2432f"   # EC benchmarks
+EC_PROJ = "#4d8a66"  # EC projection (WEM/WAM)
+EXTRAP = "#8e9bb3"   # linear extrapolation
+GREY = "#6e6e6e"
 
 # ── Load the bundled ensemble (63 EU27 runs, harmonised Kyoto gases) ─────────
 src = open("src/data/scenarios.ts").read()
@@ -38,16 +53,18 @@ for raw in rows:
 data = np.array(runs)  # (n_runs, n_years)
 yrs = np.array(years)
 
-# Historic line: the harmonised common past, drawn to the latest data year.
+# Historic line: the harmonised common past, to the latest data year.
 LATEST = 2024
 hist_mask = yrs <= LATEST
 hist = np.median(data, axis=0)[hist_mask]
 
-# Ensemble fan from the latest data year onward.
+# Ensemble from the latest data year onward: full range + median.
 fan_mask = yrs >= LATEST
-q05, q25, q50, q75, q95 = np.percentile(data, [5, 25, 50, 75, 95], axis=0)
+lo = data.min(axis=0)
+hi = data.max(axis=0)
+med = np.median(data, axis=0)
 
-# Linear extrapolation of the 2014-2024 trend (blue dashed in the sketch).
+# Linear extrapolation of the 2014-2024 trend.
 fit_mask = (yrs >= 2014) & (yrs <= LATEST)
 slope, intercept = np.polyfit(yrs[fit_mask], np.median(data, axis=0)[fit_mask], 1)
 ext_years = np.array([LATEST, 2030, 2040, 2050])
@@ -63,69 +80,74 @@ proj_vals = 1650 + (start - 1650) * np.exp(-0.085 * (proj_years - LATEST))
 bm_years = np.array([2030, 2040, 2050])
 bm_vals = np.array([4700 * 0.45, 4700 * 0.10, 0.0])
 
-LEG_KW = dict(fontsize=6.8, frameon=False, handlelength=2.2, labelspacing=0.45)
-
 
 def draw_base(ax):
     """Elements shared by both panels (the 'current logic')."""
-    ax.plot(yrs[hist_mask], hist, color="#222222", lw=1.8, label="Historic data", zorder=5)
-    ax.plot(ext_years, ext_vals, ls=(0, (5, 3)), color=EXTRAP, lw=1.3,
-            label="Linear extrapolation from ref. period", zorder=3)
-    ax.plot(proj_years, proj_vals, ls=(0, (5, 3)), color=EC_GREEN, lw=1.4,
+    ax.plot(yrs[hist_mask], hist, color=HIST, lw=1.4, label="Historical emissions",
+            zorder=5, solid_capstyle="round")
+    ax.plot(ext_years, ext_vals, ls=(0, (4, 2.5)), color=EXTRAP, lw=0.9,
+            label="Linear extrapolation (2014–2024 trend)", zorder=3)
+    ax.plot(proj_years, proj_vals, ls=(0, (4, 2.5)), color=EC_PROJ, lw=1.0,
             label="EC projection (WEM/WAM)", zorder=3)
     interp_y = np.concatenate([[LATEST], bm_years])
     interp_v = np.concatenate([[hist[-1]], bm_vals])
-    ax.plot(interp_y, interp_v, ls=(0, (1.5, 2.2)), color=EC_RED, lw=1.2, zorder=4,
+    ax.plot(interp_y, interp_v, ls=(0, (1, 1.8)), color=EC_RED, lw=0.9, zorder=4,
             label="Linear interpolation")
-    ax.scatter(bm_years, bm_vals, color=EC_RED, s=26, zorder=6,
-               label="EC future benchmarks / targets")
-    ax.axvline(2026, color="#999999", lw=0.7, ls=":")
-    ax.text(2026, ax.get_ylim()[1] if False else 4750, " today", fontsize=6.5,
-            color="#777777", va="top")
-    ax.axhline(0, color="#bbbbbb", lw=0.7)
+    ax.scatter(bm_years, bm_vals, facecolor=EC_RED, edgecolor="white", lw=0.5,
+               s=18, zorder=6, label="EC benchmarks and targets")
+    ax.axvline(2026, color=GREY, lw=0.5, ls=(0, (1, 2)))
+    ax.text(2026.3, 4480, "today", fontsize=6, color=GREY, va="top", style="italic")
+    ax.axhline(0, color="#c8c8c8", lw=0.5, zorder=0)
     ax.set_xlim(2010, 2051)
-    ax.set_ylim(-1700, 4900)
+    ax.set_ylim(-1800, 4900)
     ax.spines[["top", "right"]].set_visible(False)
-    ax.tick_params(labelsize=7)
     ax.set_xticks([2010, 2020, 2030, 2040, 2050])
+    ax.set_yticks([-1000, 0, 1000, 2000, 3000, 4000])
+    ax.set_ylabel("EU27 net GHG emissions\n(Mt CO$_2$e yr$^{-1}$)", fontsize=7)
 
 
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7.6, 4.7), dpi=300, sharex=True)
-fig.subplots_adjust(hspace=0.38, left=0.085, right=0.99, top=0.92, bottom=0.075)
+def panel_label(ax, letter, text):
+    ax.text(-0.085, 1.12, letter, transform=ax.transAxes, fontsize=10,
+            fontweight="bold", va="top", ha="left")
+    ax.text(-0.0, 1.115, text, transform=ax.transAxes, fontsize=7.5,
+            va="top", ha="left", color="#333333")
 
-# ── Panel A — current logic ──────────────────────────────────────────────────
+
+LEG_KW = dict(fontsize=6, frameon=False, handlelength=2.0, labelspacing=0.4,
+              borderaxespad=0.2)
+
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(7.1, 4.8), dpi=300, sharex=True)
+fig.subplots_adjust(hspace=0.42, left=0.105, right=0.985, top=0.91, bottom=0.075)
+
+# ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
-ax1.set_title("A · Current logic — projections (WEM/WAM) and benchmarks from EC scenarios only",
-              fontsize=8.5, loc="left", color=GREEN, fontweight="bold", pad=5)
+panel_label(ax1, "a", "Current assessment logic: projections and benchmarks from EC scenarios only")
 ax1.legend(loc="lower left", ncol=2, **LEG_KW)
-ax1.annotate("single source, no uncertainty range",
-             xy=(2040, 470), xytext=(2031.5, -1150), fontsize=6.8, color=EC_RED,
-             arrowprops=dict(arrowstyle="-", color=EC_RED, lw=0.7))
+ax1.annotate("single source,\nno uncertainty range", xy=(2040, bm_vals[1]),
+             xytext=(2034, -1450), fontsize=6, color=EC_RED, ha="left",
+             arrowprops=dict(arrowstyle="-", color=EC_RED, lw=0.5,
+                             shrinkA=2, shrinkB=3))
 
-# ── Panel B — new logic with the scenario-call ensemble ─────────────────────
+# ── Panel b — new logic with the scenario-call ensemble ─────────────────────
 draw_base(ax2)
-ax2.fill_between(yrs[fan_mask], q05[fan_mask], q95[fan_mask], color=FAN_OUT,
-                 alpha=0.55, lw=0, zorder=1, label="Scenario ensemble, 5–95% range")
-ax2.fill_between(yrs[fan_mask], q25[fan_mask], q75[fan_mask], color=FAN_IN,
-                 alpha=0.55, lw=0, zorder=2, label="Scenario ensemble, 25–75% range")
-ax2.plot(yrs[fan_mask], q50[fan_mask], color=BLUE, lw=1.8, zorder=5,
-         label=f"Ensemble median ({data.shape[0]} runs, 9 IAMs)")
-ax2.set_title("B · New logic — open scenario call adds the modelled scientific landscape",
-              fontsize=8.5, loc="left", color=GREEN, fontweight="bold", pad=5)
+ax2.fill_between(yrs[fan_mask], lo[fan_mask], hi[fan_mask], color=BAND,
+                 alpha=0.45, lw=0, zorder=1,
+                 label=f"Submitted-scenario range (n = {data.shape[0]} runs, 9 IAMs)")
+ax2.plot(yrs[fan_mask], med[fan_mask], color=ENS, lw=1.4, zorder=5,
+         solid_capstyle="round", label="Ensemble median")
+panel_label(ax2, "b", "New assessment logic: open scenario call adds the modelled scientific landscape")
 handles, labels = ax2.get_legend_handles_labels()
 order = [labels.index(l) for l in [
-    "Historic data", "Linear extrapolation from ref. period", "EC projection (WEM/WAM)",
-    "EC future benchmarks / targets", "Linear interpolation",
-    f"Ensemble median ({data.shape[0]} runs, 9 IAMs)",
-    "Scenario ensemble, 25–75% range", "Scenario ensemble, 5–95% range"]]
+    "Historical emissions", "Linear extrapolation (2014–2024 trend)",
+    "EC projection (WEM/WAM)", "EC benchmarks and targets", "Linear interpolation",
+    "Ensemble median", f"Submitted-scenario range (n = {data.shape[0]} runs, 9 IAMs)"]]
 ax2.legend([handles[i] for i in order], [labels[i] for i in order],
            loc="lower left", ncol=2, **LEG_KW)
-ax2.annotate("EC benchmarks become testable against\nthe full range of submitted scenarios",
-             xy=(2030, bm_vals[0]), xytext=(2033.5, 3450), fontsize=6.8, color=BLUE,
-             arrowprops=dict(arrowstyle="->", color=BLUE, lw=0.8))
-
-fig.supylabel("EU27 net GHG emissions (Mt CO₂e/yr, harmonised intra-EU Kyoto gases)",
-              fontsize=7.5, x=0.012)
+ax2.annotate("EC benchmarks become testable\nagainst the modelled range",
+             xy=(2030, bm_vals[0]), xytext=(2033.5, 3400), fontsize=6, color=ENS,
+             ha="left",
+             arrowprops=dict(arrowstyle="->", color=ENS, lw=0.6,
+                             shrinkA=2, shrinkB=3))
 
 out = "project-documents/assets/scenario-call-logic-figure.png"
 import os
