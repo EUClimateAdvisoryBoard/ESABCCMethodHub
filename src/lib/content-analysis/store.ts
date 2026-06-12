@@ -352,8 +352,20 @@ function persist(): void {
     // Coded-segment figure `screenshot`s get the same treatment: they're saved
     // server-side (via postSegments) and re-fetched by pullFromServer, so a
     // base64 figure per segment would needlessly eat the localStorage quota.
+    // Static policy bodies (merged from the lazy-fetched policy-bodies.json,
+    // ~10 MB of legal text across the corpus) get the same treatment: they
+    // are re-merged on every mount, so the cache only keeps a seed-sized
+    // stub. Blocks are dropped with the text — they are re-derived from the
+    // merged body, and keeping blocks for a truncated text would desync the
+    // two. Seeded annotations re-anchor right after the merge.
+    const BODY_CACHE_CAP = 24_000;
     const lean: ContentAnalysisSnapshot = {
       ...state,
+      documents: state.documents.map(d =>
+        d.staticBody && d.text.length > BODY_CACHE_CAP
+          ? { ...d, text: d.text.slice(0, BODY_CACHE_CAP), blocks: undefined, staticBody: undefined }
+          : d,
+      ),
       segments: state.segments.map(s =>
         s.screenshot === undefined ? s : { ...s, screenshot: undefined },
       ),
@@ -407,15 +419,32 @@ function hydrate(): void {
         const missing = seed.codes.filter(
           c => c.scope === 'master' && !known.has(c.id),
         );
+        // One-time taxonomy migration: early seeds tagged the coherence
+        // annotations with the four flat step codes; the master library now
+        // uses the granular verdict codes (assumption statuses, Nilsson
+        // scale points, means bands, pace readings). These segments are
+        // seed-generated, never user-authored, so when any of them still
+        // carries a flat step code the whole `seg-coh-` family is rebuilt
+        // from the current seed.
+        const FLAT_STEP_CODES = new Set(['coh-exante', 'coh-horizontal', 'coh-means', 'coh-evaluation']);
+        const staleCoherence = state.segments.some(
+          s => s.id.startsWith('seg-coh-') && FLAT_STEP_CODES.has(s.codeId),
+        );
+        const segments = staleCoherence
+          ? [
+              ...state.segments.filter(s => !s.id.startsWith('seg-coh-')),
+              ...seed.segments.filter(s => s.id.startsWith('seg-coh-')),
+            ]
+          : state.segments;
         // Seeded in-text annotations (checklist evidence `seg-check-…`,
         // coherence evidence `seg-coh-…`) are backfilled ONCE per family:
         // only when the snapshot has none of that family at all. Re-merging
         // per id would resurrect segments an analyst deliberately deleted.
         const missingSegs = [
-          ...(state.segments.some(s => s.id.startsWith('seg-check-'))
+          ...(segments.some(s => s.id.startsWith('seg-check-'))
             ? []
             : seed.segments.filter(s => s.id.startsWith('seg-check-'))),
-          ...(state.segments.some(s => s.id.startsWith('seg-coh-'))
+          ...(segments.some(s => s.id.startsWith('seg-coh-'))
             ? []
             : seed.segments.filter(s => s.id.startsWith('seg-coh-'))),
         ];
@@ -424,11 +453,11 @@ function hydrate(): void {
         const missingProjects = state.projects.some(p => p.id === 'project-policy-coherence')
           ? []
           : seed.projects.filter(p => p.id === 'project-policy-coherence');
-        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0) {
+        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0 || staleCoherence) {
           state = {
             ...state,
             codes: [...state.codes, ...missing],
-            segments: [...state.segments, ...missingSegs],
+            segments: [...segments, ...missingSegs],
             projects: [...state.projects, ...missingProjects],
           };
           persist();
@@ -1006,6 +1035,7 @@ export function useContentAnalysis() {
           ...d,
           text: incoming,
           blocks: blocks.length > 0 ? blocks : d.blocks,
+          staticBody: true,
         };
       });
       const next = { ...s, documents };

@@ -45,7 +45,14 @@
 // evidence base instead of duplicating them. Only what the checklist cannot
 // express — assumption audits (1), cross-policy interactions (2) and
 // outcome measurements (4) — is authored here. Observation snapshot:
-// mid-2026; observations carry their sources so each can be re-verified.
+// June 2026, refreshed in a web-verified research pass (key vintage points:
+// Reg. (EU) 2026/667 adopting the 2040 target and delaying ETS2 to 2028;
+// Omnibus I Dir. (EU) 2026/470; the second EUDR postponement 2025/2650;
+// the batteries stop-the-clock 2025/1561). Observations carry their sources
+// so each can be re-verified. Cross-cutting pattern the audits surface:
+// post-adoption softening — scope cuts, date slips and step-averaging after
+// first contact with compliance costs — is systemic across the 2025–26
+// simplification wave, not act-specific noise.
 // ---------------------------------------------------------------------------
 
 import {
@@ -183,9 +190,9 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if no 2040 target is in force when the post-2030 sectoral proposals are tabled; under pressure if the H1 2024 proposal deadline is missed or adoption stalls.',
     observation:
-      'The proposal slipped past the H1 2024 deadline and remains in negotiation (−90% with flexibilities under discussion); no adopted 2040 target; post-2030 sectoral files not yet tabled.',
-    source: 'Commission work programmes 2024–26; legislative tracker.',
-    tier: 'B',
+      'The proposal slipped ~20 months past the H1 2024 deadline, but the target is now law: Reg. (EU) 2026/667 (in force 7 Apr 2026) sets −90% net by 2040 (≥85% domestic, ≤5 pp international credits from 2036) — adopted before the post-2030 sectoral files (ETS revision expected Jul 2026, ESR/LULUCF successors Q4 2026).',
+    source: 'Reg. (EU) 2026/667 (OJ 18.3.2026); Commission 2026 work programme.',
+    tier: 'A',
     status: 'under-pressure',
   },
   'eu-ets-directive': {
@@ -197,8 +204,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if verified emissions exceed the cap path or TNAC sits outside the MSR band for two consecutive years; under pressure if abatement is shown to be dominated by output loss rather than investment.',
     observation:
-      'Stationary verified emissions fell to ~47% below 2005 by 2023, below the cap path; TNAC remains within the MSR band; attribution analyses assign part of the 2022–23 fall to crisis output contraction but investment-driven power-sector abatement dominates.',
-    source: 'EEA ETS data viewer; Commission carbon market reports.',
+      'Stationary verified emissions fell a further 5.8% in 2024 to ~51% below 2005, below the cap path; TNAC remains within the MSR band; power-sector decarbonisation dominates the decline (2025 Carbon Market Report), with EUA prices ranging ~€60–92 through 2025–H1 2026.',
+    source: 'EEA ETS data viewer; Commission 2025 Carbon Market Report (Dec 2025).',
     tier: 'A',
     status: 'valid',
   },
@@ -211,8 +218,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if aggregate projections show a 2030 gap with the flexibility pools exhausted; under pressure if multiple Member States project AEA deficits.',
     observation:
-      'Commission assessments project an aggregate gap to −40%; several Member States (incl. DE, IE, IT) project cumulative deficits exceeding their realistic flexibility access.',
-    source: 'Climate Action Progress Report; EEA Trends & Projections.',
+      'ESR emissions were −19.8% vs 2005 by 2023 and virtually flat in 2024 — the first year aggregate emissions exceeded the EU-wide limit (+1.6%); projections deliver ~29.7% (existing) / ~38.1% (planned measures) against −40%; six Member States exceeded their 2023 allocations (HR, CY, DK, IE, IT, MT) and AT, EE, DE, IE, MT, SE project 2026–30 excesses, with DE and IE the largest gaps.',
+    source: 'Climate Action Progress Report 2025 (COM(2025) 735); EEA Trends & Projections 2025.',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -225,8 +232,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the inventory sink falls more than 50 Mt below the reference for three or more consecutive years.',
     observation:
-      'The reported net sink declined to roughly −200 Mt in recent inventory years — ~110 Mt below the reference, persistent across multiple years.',
-    source: 'EEA / UNFCCC EU GHG inventory.',
+      'The reported net sink was −198 Mt in 2023 (2025 inventory submission) with a ~−212 Mt proxy for 2024 — a persistent ~100–112 Mt shortfall against the −310 Mt reference across multiple years; Member State projections indicate the 2030 target will be missed on current and planned measures.',
+    source: 'EEA / UNFCCC EU GHG inventory (2025 submission); EEA approximated 2024 inventory.',
     tier: 'A',
     status: 'violated',
   },
@@ -239,8 +246,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the share trails the linear path by more than 3 pp; under pressure if it trails at all or aggregated NECPs land short of 42.5%.',
     observation:
-      'Share 24.5% in 2023 vs ~26.2% on the linear path (≈ −1.7 pp); aggregated NECP contributions land roughly 2–3 pp short of 42.5%.',
-    source: 'Eurostat SHARES; Commission NECP aggregate assessment.',
+      'Share 25.2% in 2024, still trailing the linear path; final NECPs aggregate to ~42.6% — nominally meeting the target — but delivery lags: EU-27 wind additions ran ~15 GW in 2025 vs the ~37 GW/yr the NECPs imply, and solar additions declined for the first time since 2016.',
+    source: 'Eurostat SHARES (2024); Commission final-NECP assessment (May 2025); WindEurope / SolarPower Europe.',
     tier: 'A',
     status: 'under-pressure',
   },
@@ -253,8 +260,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if final consumption rebounds above the linear path to 763 Mtoe for two consecutive years; under pressure if observed cuts are attributed mainly to price-driven demand response.',
     observation:
-      'Consumption fell sharply in 2022–23 with official analyses attributing a substantial share to price-driven demand response; electrification and data-centre load growth press upward as prices normalise.',
-    source: 'Eurostat energy balances; EEA Trends & Projections.',
+      'Final consumption rebounded in 2024 (+0.7% to 900 Mtoe — 18% above the 763 Mtoe cap) as crisis-era demand response unwound; NECP ambition aggregates to only ~8.1% vs the 11.7% required; data-centre demand (~70 TWh in 2024, ~3% of EU electricity) is projected to grow by roughly two-thirds by 2030 on IEA figures, with market estimates running to a doubling. One more rebound year triggers the violation criterion.',
+    source: 'Eurostat energy balances (2024); Commission final-NECP assessment; Commission data-centre focus (Nov 2025).',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -267,8 +274,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the definitive regime start slips or sectoral scope is cut; under pressure if the declarant base is materially redrawn or default values dominate reporting.',
     observation:
-      'The 2025 simplification raised the de-minimis to 50 t, removing ~90% of declarants (while keeping ~99% of embedded emissions); default values dominate transitional reports; the 2026 start date stands.',
-    source: 'Omnibus simplification package 2025; Commission CBAM transitional-period reports.',
+      'The definitive regime started on schedule on 1 Jan 2026 (first certificate price €75.36/t, Apr 2026); the CBAM Omnibus (Reg. (EU) 2025/2083) raised the de-minimis to 50 t — removing ~90% of declarants while keeping ~99% of embedded emissions; default values dominated transitional reports; a Dec 2025 proposal would extend scope to ~180 downstream products from 2028.',
+    source: 'Reg. (EU) 2025/2083 (OJ 17.10.2025); Commission CBAM reports 2025–26.',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -281,8 +288,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if a compliance step is weakened in law; under pressure if the BEV share stalls below the trajectory the 2030 step implies.',
     observation:
-      'BEV share stalled around the mid-teens in 2024; the 2025 step was converted into 2025–27 averaging by amending regulation and the 2035 review was advanced — compliance relief was enacted in law.',
-    source: 'ACEA registration statistics; amending regulation (2025, OJ).',
+      'BEV share recovered to 17.4% in 2025 and 19.4% in Q1 2026 — but the 2025 step was converted into 2025–27 averaging (Reg. (EU) 2025/1214) and the advanced review proposed (Dec 2025) cutting the 2035 step from 100% to 90%: compliance relief is enacted in law and deeper relief is on the table.',
+    source: 'ACEA registration statistics; Reg. (EU) 2025/1214 (OJ); COM automotive package (Dec 2025).',
     tier: 'A',
     status: 'violated',
   },
@@ -323,10 +330,10 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the ETS2 start is delayed in law or auction yield falls materially below plan; under pressure while delay or softening proposals are live in the legislature.',
     observation:
-      'Delay/softening proposals are under active negotiation; price forecasts straddle the soft cap; Social Climate Plans were due 2025–26 with submissions uneven.',
-    source: 'Council/EP state of play; Commission SCF guidance.',
-    tier: 'B',
-    status: 'under-pressure',
+      'The ETS2 start was postponed to 2028 in law — Reg. (EU) 2026/667 Art. 2 declares the Art. 30k postponement rules applicable, which arguably triggers the Fund’s own fallback clause cutting it to €54.6 bn (legally unsettled; Reg. 2026/667 is silent on the SCF); a Nov 2025 MSR proposal would double price-containment releases at the ~€45 trigger; plan approvals are far behind — Sweden (Dec 2025) and Lithuania (Jun 2026) only.',
+    source: 'Reg. (EU) 2026/667 (OJ 18.3.2026); SCF Reg. Art. 10(1); Commission plan endorsements.',
+    tier: 'A',
+    status: 'violated',
   },
   'methane-regulation': {
     policyId: 'methane-regulation',
@@ -337,8 +344,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if major suppliers refuse equivalence and enforcement is waived; under pressure if supplier data becomes demonstrably unverifiable.',
     observation:
-      'Domestic implementation proceeds on schedule; the 2025 US deregulatory turn raises verification questions for one major supplier but no equivalence refusal or enforcement waiver has occurred.',
-    source: 'Commission implementation reports.',
+      'First importer reports were filed by the 5 May 2025 deadline; sustained US pressure to soften LNG requirements (including unregistered EU–US talks revealed in 2026) has produced no equivalence refusal, waiver or amendment, and the act stayed out of the omnibus packages; the contractual MRV-equivalence cliff arrives 1 Jan 2027.',
+    source: 'Commission implementation reports; press investigations (2026).',
     tier: 'B',
     status: 'valid',
   },
@@ -351,8 +358,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if plans are missing or facially non-compliant for a majority of Member States after the deadline; under pressure while dedicated financing remains unidentified and pre-submission signals are minimalist.',
     observation:
-      'Adopted by the narrowest margin; no dedicated EU restoration fund was created; several Member States signal minimalist plans ahead of the 2026 deadline.',
-    source: 'Commission; Environment Council records.',
+      'Adopted by the narrowest margin; no dedicated EU restoration fund exists and the proposed 2028–34 MFF ring-fences none; the Dec 2025 mid-term review finds plan preparation “uneven and insufficient” across most Member States, with frontrunners (e.g. the German draft consultation, Apr–Jun 2026) the exception ahead of the 1 Sep 2026 deadline.',
+    source: 'Commission; BirdLife/EEB mid-term assessment (Dec 2025).',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -365,8 +372,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the legal scope is materially cut or reporting waves are deferred in law.',
     observation:
-      'The 2025 Omnibus raised the threshold to 1,000+ employees and deferred later waves by two years — removing ~80% of originally in-scope firms by count.',
-    source: 'Omnibus simplification package 2025 (OJ).',
+      'Enacted in two cuts: the “stop-the-clock” directive (Dir. (EU) 2025/794) deferred waves 2–3 by two years, and Omnibus I (Dir. (EU) 2026/470, in force 18 Mar 2026) raised the scope to undertakings with >1,000 employees AND >€450m turnover — removing the large majority of originally in-scope firms; remaining companies first report for FY2027.',
+    source: 'Dir. (EU) 2025/794; Dir. (EU) 2026/470 (OJ 26.2.2026).',
     tier: 'A',
     status: 'violated',
   },
@@ -407,7 +414,7 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if assessed gaps persist across two consecutive planning cycles despite recommendations; under pressure if submissions are broadly late within a single cycle.',
     observation:
-      'Most 2023–24 updates were late and the Commission aggregate assessment again finds ambition and implementation gaps — the second consecutive cycle with persistent gaps after recommendations.',
+      'Most 2023–24 updates were late; the final-NECP assessment (May 2025) finds renewables ambition nominally adequate (~42.6%) but an efficiency ambition gap (~8.1% vs 11.7%) and delivery gaps on both — the second consecutive cycle in which recommendations did not close the gaps.',
     source: 'Commission NECP assessments (2020 and 2024–25 cycles).',
     tier: 'B',
     status: 'violated',
@@ -449,8 +456,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if rationing occurs or the Russian share fails to fall materially below its 2021 level.',
     observation:
-      'The Russian share fell from ~45% (2021) to under 20% and falling; storage targets were met every season; voluntary demand-reduction targets were achieved; no rationing occurred.',
-    source: 'Eurostat; ACER market monitoring.',
+      'The Russian share fell from ~45% (2021) to 19% (2024) and ~13% (2025) after the end of Ukraine transit; storage targets were met every season; no rationing occurred; a stepwise import ban is now law (Reg. (EU) 2026/261: short-term LNG from Apr 2026, long-term contracts from 2027, pipeline by autumn 2027).',
+    source: 'Eurostat; Commission REPowerEU roadmap; Reg. (EU) 2026/261 (OJ 2.2.2026).',
     tier: 'A',
     status: 'valid',
   },
@@ -463,8 +470,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if the core 2030/2050 targets are reopened; under pressure if accompanying instruments are withdrawn or materially weakened.',
     observation:
-      'Core targets stand, but the SUR was withdrawn and CSRD, CBAM and Taxonomy reporting were trimmed by Omnibus packages as the agenda was reframed around the Clean Industrial Deal.',
-    source: 'Commission work programmes 2024–26.',
+      'Core targets stand — now extended by the adopted 2040 target (Reg. 2026/667) — but the SUR was withdrawn, CSRD/CBAM/Taxonomy reporting was trimmed by Omnibus packages, EUDR and batteries duties were postponed, and the agenda was reframed around the Clean Industrial Deal and its Industrial Accelerator Act (Mar 2026).',
+    source: 'Commission work programmes 2024–26; Omnibus packages 2025–26.',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -477,8 +484,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     violationCriterion:
       'Violated if alignment reporting becomes substantially voluntary across the large-firm universe or criteria are annulled; under pressure amid simplification cuts and live litigation.',
     observation:
-      'The 2025 Omnibus made taxonomy reporting voluntary below the new 1,000-employee threshold and cut datapoints; reporting remains mandatory for the largest firms; gas/nuclear criteria litigation continues.',
-    source: 'Omnibus simplification package 2025; CJEU docket.',
+      'The Jul 2025 simplification delegated act (in force since Jan 2026) cut reported datapoints by ~64% for non-financial undertakings (more for banks); separately, the Omnibus level-1 changes to the CSRD scope left alignment reporting voluntary below the new 1,000-employee/€450m threshold — mandatory only for the largest firms; gas/nuclear criteria litigation continues.',
+    source: 'Taxonomy disclosures delegated act amendment (OJ 8.1.2026); Dir. (EU) 2026/470; CJEU docket.',
     tier: 'B',
     status: 'under-pressure',
   },
@@ -503,8 +510,8 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     signpost: 'Legal status of GAEC standards; eco-scheme budgets in approved plans.',
     violationCriterion: 'Violated if GAEC standards are deleted or relaxed in law mid-period.',
     observation:
-      'The 2024 amending regulation relaxed or deleted several GAEC obligations and exempted small farms (<10 ha) from conditionality controls — mid-period, in law.',
-    source: 'Reg. (EU) 2024/1468 (OJ).',
+      'The 2024 amending regulation relaxed or deleted several GAEC obligations and exempted small farms (<10 ha) from conditionality controls — mid-period, in law; the Jul 2025 post-2027 proposal goes further, replacing GAEC standards with looser “farm stewardship” practices inside merged national plans.',
+    source: 'Reg. (EU) 2024/1468 (OJ); COM CAP 2028–34 proposal (Jul 2025).',
     tier: 'A',
     status: 'violated',
   },
@@ -518,6 +525,76 @@ export const EX_ANTE_ASSESSMENTS: Record<string, ExAnteAssessment> = {
     observation: 'All major files were adopted 2022–24; the interlock exists in law.',
     source: 'Legislative records (OJ).',
     tier: 'A',
+    status: 'valid',
+  },
+  'deforestation-regulation': {
+    policyId: 'deforestation-regulation',
+    designYear: 2023,
+    assumption:
+      'The Art. 38 application dates hold: operators, the information system and country benchmarking are ready for the 30 December 2024 start.',
+    signpost: 'Legal application dates in Art. 38; readiness of the IT system and benchmarking.',
+    violationCriterion:
+      'Violated if the application date is postponed in law; under pressure while readiness gaps are flagged without a legal change.',
+    observation:
+      'Postponed twice in law: Reg. (EU) 2024/3234 moved the start to 30 Dec 2025, and Reg. (EU) 2025/2650 (OJ 23.12.2025) to 30 Dec 2026 (micro/small: 30 Jun 2027), adding one-off simplified declarations for small low-risk operators; the proposed “no-risk” country tier was rejected, keeping the three-tier benchmarking.',
+    source: 'Reg. (EU) 2024/3234; Reg. (EU) 2025/2650 (OJ).',
+    tier: 'A',
+    status: 'violated',
+  },
+  'batteries-regulation': {
+    policyId: 'batteries-regulation',
+    designYear: 2023,
+    assumption:
+      'The staged obligations are deliverable on schedule: carbon-footprint delegated acts arrive in time for the Feb 2025 EV-battery declaration, and due-diligence systems (incl. notified bodies) stand up by Aug 2025.',
+    signpost: 'Adoption dates of the Art. 7 delegated/implementing acts; legal status of the Art. 48 ff. due-diligence application date.',
+    violationCriterion:
+      'Violated if obligations are deferred in law or the enabling delegated acts are still missing past the dates they gate; under pressure while individual acts slip.',
+    observation:
+      'Both failed: Reg. (EU) 2025/1561 (Omnibus IV) postponed due-diligence duties from Aug 2025 to Aug 2027 after ~half of Member States had designated no notified body, and the carbon-footprint methodology acts remained unadopted by mid-2026, de-facto suspending the declaration dates that are defined relative to them.',
+    source: 'Reg. (EU) 2025/1561 (OJ 30.7.2025); JRC CFB methodology status.',
+    tier: 'A',
+    status: 'violated',
+  },
+  'industrial-emissions-directive': {
+    policyId: 'industrial-emissions-directive',
+    designYear: 2024,
+    assumption:
+      'Member States transpose IED 2.0 by 1 July 2026 and permit-writers operationalise the new strictest-end BAT-AEL discipline.',
+    signpost: 'National transposition status vs the 1 Jul 2026 deadline; Commission transformation-plan format act (due 30 Jun 2026); INCITE output.',
+    violationCriterion:
+      'Violated if transposition broadly fails after the deadline; under pressure while national drafts lag pre-deadline.',
+    observation:
+      'Weeks before the deadline, national transposition is partial (e.g. the German draft has circulated since Nov 2024 without adoption); the Commission’s INCITE innovation centre is operational and published its first techniques report in May 2026; infringements after July 2026 are widely expected.',
+    source: 'Commission IED 2.0 implementation page; national legislative trackers.',
+    tier: 'B',
+    status: 'under-pressure',
+  },
+  'ten-t-regulation': {
+    policyId: 'ten-t-regulation',
+    designYear: 2024,
+    assumption:
+      'The core network — and the ERTMS and alternative-fuels infrastructure indexed to it — is completed by the binding 2030 deadline.',
+    signpost: 'ECA / Commission completion assessments; ERTMS deployment share; flagship cross-border project schedules.',
+    violationCriterion:
+      'Violated if an official audit or assessment concludes the 2030 core-network deadline will not be met, or flagship delays grow rather than shrink.',
+    observation:
+      'The ECA concluded in Jan 2026 that the 2030 core-network completion “will not be met” — five flagship cross-border projects average 17 years’ delay (up from 11 in 2020) with costs +24% since 2020; ETCS covers only ~10% of the network (end-2024), far behind the deployment targets.',
+    source: 'ECA special report (Jan 2026); Third ERTMS Work Plan (Feb 2026).',
+    tier: 'B',
+    status: 'violated',
+  },
+  'ecodesign-sustainable-products': {
+    policyId: 'ecodesign-sustainable-products',
+    designYear: 2024,
+    assumption:
+      'The delegated-act pipeline and Digital Product Passport infrastructure are delivered on the 2025–2030 working-plan schedule.',
+    signpost: 'Working-plan adoption; dates of the first product delegated acts (iron & steel 2026; textiles, tyres, aluminium 2027); DPP registry readiness.',
+    violationCriterion:
+      'Violated if the working plan is abandoned or first delegated acts are deferred in law; under pressure if they slip past their indicative years.',
+    observation:
+      'The first working plan was adopted on schedule (Apr 2025: textiles, furniture, mattresses, tyres, iron & steel, aluminium + horizontal repairability/recyclability); the first delegated acts and the DPP (mandatory ≥18 months after each act) are due from 2026–27 — the schedule is intact but the delivery test is still ahead.',
+    source: 'ESPR Working Plan 2025–2030 (COM(2025) 187).',
+    tier: 'B',
     status: 'valid',
   },
 };
@@ -619,7 +696,7 @@ export const GOAL_INTERACTIONS: GoalInteraction[] = [
     goalB: '−40% in non-ETS sectors by 2030 (vs 2005)',
     legalBasis: 'ESR Art. 2(1) (scope defined as non-ETS); ETS Dir. Chapters IVa (ETS2).',
     rationale:
-      'Complementary coverage partitions the economy into two calibrated halves of the −55% objective, with ETS2 designed to bridge the buildings/road seam between them from 2027.',
+      'Complementary coverage partitions the economy into two calibrated halves of the −55% objective, with ETS2 designed to bridge the buildings/road seam between them — now from 2028, after Reg. (EU) 2026/667 postponed its start by a year.',
     tier: 'A',
   },
   {
@@ -883,6 +960,84 @@ export const GOAL_INTERACTIONS: GoalInteraction[] = [
     tier: 'B',
   },
   {
+    id: 'coh-int-eudr-cap',
+    a: 'deforestation-regulation',
+    b: 'cap-strategic-plans',
+    score: -1,
+    mechanism: 'regulatory dependency',
+    goalA: 'Deforestation-free supply chains for cattle, soy, cocoa, palm oil, coffee, rubber and wood',
+    goalB: 'Stabilise farm incomes, including import-fed livestock systems',
+    legalBasis: 'EUDR Arts. 1, 3 + Annex I (soy/cattle in scope); CAP SP Reg. Arts. 32–34 (coupled support); Regs. 2024/3234 + 2025/2650 (postponements).',
+    rationale:
+      'EU livestock that CAP coupled support stabilises runs on imported feed soy the EUDR disciplines; the tension was resolved twice in agriculture’s favour — both postponements relieved exactly the supply chains the prohibition targets.',
+    tier: 'A',
+  },
+  {
+    id: 'coh-int-batt-crma',
+    a: 'batteries-regulation',
+    b: 'critical-raw-materials-act',
+    score: 2,
+    mechanism: 'regulatory dependency',
+    goalA: 'Recycled-content shares and recycling efficiencies for batteries',
+    goalB: '25% of strategic raw-material consumption from Union recycling by 2030',
+    legalBasis: 'Batteries Reg. Art. 8 (recycled content) + Annex XII (recycling efficiencies); CRMA Art. 5(1)(a)(iii).',
+    rationale:
+      'Battery recycled-content duties create the demand and the feedstock discipline the CRMA recycling benchmark needs — one circular loop written across two acts; the batteries-side delays (Reg. 2025/1561) now slow the loop’s front end.',
+    tier: 'A',
+  },
+  {
+    id: 'coh-int-cars-batteries',
+    a: 'co2-cars-regulation',
+    b: 'batteries-regulation',
+    score: 1,
+    mechanism: 'demand pull',
+    goalA: '100% zero-emission new cars by 2035',
+    goalB: 'Sustainable, low-carbon batteries with audited supply chains',
+    legalBasis: 'CO₂ standards Reg. Art. 1(5a); Batteries Reg. Arts. 7–8 (carbon footprint, recycled content).',
+    rationale:
+      'The ZEV mandate creates the battery fleet whose footprint and supply chains the Batteries Regulation governs; the pairing only delivers clean electrification if the batteries-side machinery (delegated acts, due diligence) actually arrives.',
+    tier: 'B',
+  },
+  {
+    id: 'coh-int-ied-ets',
+    a: 'industrial-emissions-directive',
+    b: 'eu-ets-directive',
+    score: 0,
+    mechanism: 'regulatory dependency',
+    goalA: 'Integrated prevention of industrial pollution via BAT-based permits',
+    goalB: 'Cost-effective GHG abatement via the carbon price',
+    legalBasis: 'IED Art. 9(1) (no ELVs for direct GHG emissions of ETS activities); ETS Dir. Annex I.',
+    rationale:
+      'A deliberate demarcation rather than an interaction: IED permits may not set limit values for ETS-covered greenhouse gases, routing GHG abatement through the price signal while the permit handles pollutants — coherence by design, kept in the 2024 recast.',
+    tier: 'A',
+  },
+  {
+    id: 'coh-int-tent-afir',
+    a: 'ten-t-regulation',
+    b: 'afir-regulation',
+    score: 2,
+    mechanism: 'regulatory dependency',
+    goalA: 'Core transport network completed by 2030',
+    goalB: 'Charging and refuelling coverage along that same network',
+    legalBasis: 'AFIR Arts. 3–6 (targets defined on the TEN-T core/comprehensive network); TEN-T Reg. 2024/1679 (network definition, 2030 core deadline).',
+    rationale:
+      'AFIR’s coverage duties are written onto the TEN-T map, so the two ratchet together — and TEN-T slippage (ECA: 2030 core completion will not be met) propagates directly into where and when the charging obligations bind.',
+    tier: 'B',
+  },
+  {
+    id: 'coh-int-espr-nzia',
+    a: 'ecodesign-sustainable-products',
+    b: 'net-zero-industry-act',
+    score: 1,
+    mechanism: 'demand pull',
+    goalA: 'Ecodesign requirements and green public procurement for steel, aluminium and other priority products',
+    goalB: '40% domestic cleantech manufacturing by 2030',
+    legalBasis: 'ESPR Arts. 1, 4 + Working Plan 2025–30 (iron & steel DA 2026, aluminium 2027); NZIA Art. 5 + Art. 25 (procurement resilience criteria).',
+    rationale:
+      'ESPR product requirements and mandatory green procurement build the lead markets for exactly the energy-intensive materials and technologies the NZIA wants made in Europe — demand-side conditions for the supply-side benchmark.',
+    tier: 'B',
+  },
+  {
     id: 'coh-int-eugb-taxonomy',
     a: 'green-bonds-regulation',
     b: 'taxonomy-regulation',
@@ -998,23 +1153,23 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'EU net GHG emissions (index, 1990 = 100)',
     unit: 'index',
     baseline: { year: 1990, value: 100 },
-    recent: { year: 2018, value: 77 },
-    latest: { year: 2023, value: 63 },
+    recent: { year: 2018, value: 78 },
+    latest: { year: 2024, value: 63 },
     target: { year: 2030, value: 45 },
     policyChange:
-      'The Fit-for-55 acts the law required were essentially all adopted; the mandated 2040-target proposal slipped past its deadline and remains in negotiation.',
-    source: 'EEA GHG inventory; Climate Action Progress Report.',
+      'The Fit-for-55 acts the law required were essentially all adopted; the mandated 2040-target proposal slipped ~20 months past its deadline but was enacted as Reg. (EU) 2026/667 (−90% net by 2040, ≥85% domestic, ≤5 pp international credits from 2036) — a ratchet, late.',
+    source: 'EEA GHG inventory; Reg. (EU) 2026/667 (OJ).',
     tier: 'A',
     notes:
-      'Recent pace includes the COVID dip and rebound; Commission projections reach ~−54% by 2030 only with full implementation of adopted measures.',
+      '2024 is provisional (−37.2%, virtually flat vs 2023); recent pace includes the COVID dip and rebound. EEA T&P 2025 projects −47% by 2030 with existing measures, −54% with additional measures — just short of −55%.',
   },
   'eu-ets-directive': {
     policyId: 'eu-ets-directive',
     indicator: 'Verified stationary ETS emissions (index, 2005 = 100)',
     unit: 'index',
     baseline: { year: 2005, value: 100 },
-    recent: { year: 2018, value: 71 },
-    latest: { year: 2023, value: 53 },
+    recent: { year: 2019, value: 65 },
+    latest: { year: 2024, value: 49 },
     target: { year: 2030, value: 38 },
     policyChange:
       'The 2023 revision tightened the LRF to 4.3/4.4%, added maritime and locked the free-allocation phase-out to CBAM — a ratchet, in law.',
@@ -1027,36 +1182,37 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'ESR-sector emissions (index, 2005 = 100)',
     unit: 'index',
     baseline: { year: 2005, value: 100 },
-    recent: { year: 2018, value: 89 },
-    latest: { year: 2023, value: 82 },
+    recent: { year: 2019, value: 90 },
+    latest: { year: 2024, value: 80 },
     target: { year: 2030, value: 60 },
     policyChange: 'Ratcheted from −30% to −40% by Reg. 2023/857; compliance machinery unchanged.',
-    source: 'EEA Trends & Projections; EU GHG inventory.',
+    source: 'EEA Trends & Projections 2025; EU GHG inventory.',
     tier: 'A',
+    notes: '2024 value is provisional — emissions were virtually flat vs 2023.',
   },
   'lulucf-regulation': {
     policyId: 'lulucf-regulation',
     indicator: 'Net LULUCF sink',
     unit: 'Mt CO₂eq (negative = removals)',
     baseline: { year: 2015, value: -310 },
-    recent: { year: 2018, value: -265 },
-    latest: { year: 2023, value: -200 },
+    recent: { year: 2019, value: -249 },
+    latest: { year: 2024, value: -212 },
     target: { year: 2030, value: -310 },
     policyChange: 'The 2023 amendment set the 310 Mt 2030 target with per-MS contributions in Annex IIa.',
-    source: 'EEA / UNFCCC EU GHG inventory.',
+    source: 'EEA / UNFCCC EU GHG inventory (2025 submission); EEA approximated 2024 inventory.',
     tier: 'A',
-    notes: 'LULUCF inventories carry high uncertainty and recurrent revisions.',
+    notes: 'LULUCF inventories carry high uncertainty and recurrent revisions; the 2024 value is the EEA proxy.',
   },
   'renewable-energy-directive': {
     policyId: 'renewable-energy-directive',
     indicator: 'Renewables share of gross final energy consumption',
     unit: '%',
     baseline: { year: 2020, value: 22.1 },
-    recent: { year: 2018, value: 18.0 },
-    latest: { year: 2023, value: 24.5 },
+    recent: { year: 2019, value: 19.9 },
+    latest: { year: 2024, value: 25.2 },
     target: { year: 2030, value: 42.5 },
     policyChange: 'RED III raised the binding target to 42.5% and added permitting acceleration (2023).',
-    source: 'Eurostat SHARES.',
+    source: 'Eurostat SHARES (2024 release).',
     tier: 'A',
   },
   'energy-efficiency-directive': {
@@ -1064,13 +1220,13 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     indicator: 'Final energy consumption',
     unit: 'Mtoe',
     baseline: { year: 2020, value: 907 },
-    recent: { year: 2018, value: 935 },
-    latest: { year: 2023, value: 894 },
+    recent: { year: 2019, value: 984 },
+    latest: { year: 2024, value: 900 },
     target: { year: 2030, value: 763 },
     policyChange: 'The 2023 recast made −11.7% binding and stepped up the savings obligation.',
-    source: 'Eurostat energy balances; EEA Trends & Projections.',
+    source: 'Eurostat energy balances (2024); EEA Trends & Projections.',
     tier: 'A',
-    notes: 'The 2022–23 fall is partly crisis demand response; values are provisional.',
+    notes: 'Consumption rebounded +0.7% in 2024 as crisis-era demand response unwound.',
   },
   'co2-cars-regulation': {
     policyId: 'co2-cars-regulation',
@@ -1078,13 +1234,14 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: 'g CO₂/km',
     baseline: { year: 2021, value: 114 },
     recent: { year: 2021, value: 114 },
-    latest: { year: 2023, value: 107 },
+    latest: { year: 2024, value: 106.8 },
     target: { year: 2030, value: 51 },
     policyChange:
-      'The 2025 step was converted into 2025–27 averaging and the 2035 review advanced — the act was weakened, not strengthened, at first market contact.',
-    source: 'EEA new-vehicle CO₂ monitoring.',
+      'The 2025 step was converted into 2025–27 averaging (Reg. 2025/1214) and the advanced review proposed cutting the 2035 step to 90% (Dec 2025, in negotiation) — the act was weakened at first market contact, with deeper relief on the table.',
+    source: 'EEA new-vehicle CO₂ monitoring; Reg. (EU) 2025/1214 (OJ).',
     tier: 'A',
-    notes: 'WLTP series starts 2021, so the recent window equals the baseline window.',
+    notes:
+      'WLTP series starts 2021, so the recent window equals the baseline window; 2024 ticked UP from 106.4 g/km in 2023 — the first reversal of the series.',
   },
   'farm-to-fork-strategy': {
     policyId: 'farm-to-fork-strategy',
@@ -1092,7 +1249,7 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: '%',
     baseline: { year: 2020, value: 9.1 },
     recent: { year: 2018, value: 8.0 },
-    latest: { year: 2022, value: 10.5 },
+    latest: { year: 2023, value: 10.8 },
     target: { year: 2030, value: 25 },
     policyChange:
       'Measured policy change is negative: the SUR was withdrawn (2024) and the framework law never tabled — the targets lost their instruments.',
@@ -1106,11 +1263,11 @@ export const OUTCOME_MEASUREMENTS: Record<string, OutcomeMeasurement> = {
     unit: '%',
     baseline: { year: 2021, value: 45 },
     recent: { year: 2021, value: 45 },
-    latest: { year: 2024, value: 18 },
+    latest: { year: 2025, value: 13 },
     target: { year: 2027, value: 0 },
     policyChange:
-      'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed; a phase-out instrument for remaining imports followed.',
-    source: 'Eurostat; ACER market monitoring.',
+      'Emergency regulations (storage, demand reduction, permitting) were adopted and largely sunset as designed; the phase-out is now law — Reg. (EU) 2026/261 bans remaining imports stepwise through 2027.',
+    source: 'Eurostat; Commission REPowerEU roadmap; Reg. (EU) 2026/261 (OJ).',
     tier: 'A',
   },
 };

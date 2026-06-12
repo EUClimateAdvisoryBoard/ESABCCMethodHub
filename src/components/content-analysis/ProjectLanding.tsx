@@ -40,8 +40,19 @@ export default function ProjectLanding({
   onCreate,
   onDelete,
 }: Props) {
-  const master = projects.find(p => p.id === 'project-master');
-  const others = projects.filter(p => p.id !== 'project-master');
+  // Seeded master libraries, pinned above user projects: the shared tag
+  // tree + full corpus, and the policy-coherence assessment library (the
+  // four-step model's evidence as in-text tags under verdict codes).
+  const MASTER_LIBRARIES: Array<{ id: string; accent: string; kindLabel: string }> = [
+    { id: 'project-master', accent: '#00928F', kindLabel: 'Master library' },
+    { id: 'project-policy-coherence', accent: '#6D28D9', kindLabel: 'Master library · Coherence' },
+  ];
+  const masters = MASTER_LIBRARIES.flatMap(m => {
+    const project = projects.find(p => p.id === m.id);
+    return project ? [{ ...m, project }] : [];
+  });
+  const masterIds = new Set(MASTER_LIBRARIES.map(m => m.id));
+  const others = projects.filter(p => !masterIds.has(p.id));
 
   return (
     <section className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8 lg:py-12">
@@ -55,21 +66,25 @@ export default function ProjectLanding({
         </p>
       </header>
 
-      {master && (
+      {masters.length > 0 && (
         <div className="mb-6">
           <p className="font-mono text-[10px] tracking-[0.18em] uppercase text-[#00928F] font-semibold mb-2">
             <span className="inline-block w-6 border-t border-[#00928F] align-middle mr-2" />
             Master
           </p>
           <div className="grid gap-3 sm:gap-4 sm:grid-cols-2 xl:grid-cols-3">
-            <ProjectCard
-              project={master}
-              segments={segmentCounts[master.id] ?? 0}
-              documents={documentCounts[master.id] ?? 0}
-              accent="#00928F"
-              lock={locksByProjectId?.[master.id]}
-              onOpen={() => onOpen(master.id)}
-            />
+            {masters.map(m => (
+              <ProjectCard
+                key={m.id}
+                project={m.project}
+                segments={segmentCounts[m.id] ?? 0}
+                documents={documentCounts[m.id] ?? 0}
+                accent={m.accent}
+                kindLabel={m.kindLabel}
+                lock={locksByProjectId?.[m.id]}
+                onOpen={() => onOpen(m.id)}
+              />
+            ))}
           </div>
         </div>
       )}
@@ -119,6 +134,7 @@ function ProjectCard({
   segments,
   documents,
   accent,
+  kindLabel,
   lock,
   onOpen,
   onDelete,
@@ -127,6 +143,8 @@ function ProjectCard({
   segments: number;
   documents: number;
   accent: string;
+  /** Overrides the mode label for pinned master-library cards. */
+  kindLabel?: string;
   lock?: ProjectLockSummary;
   onOpen: () => void;
   onDelete?: () => void;
@@ -142,7 +160,7 @@ function ProjectCard({
           className="font-mono text-[10px] tracking-[0.14em] uppercase font-semibold"
           style={{ color: accent }}
         >
-          {isMaster ? 'Master library' : project.mode.replace(/^./, c => c.toUpperCase())}
+          {kindLabel ?? (isMaster ? 'Master library' : project.mode.replace(/^./, c => c.toUpperCase()))}
         </span>
         <div className="flex items-center gap-1.5">
           {lock && (

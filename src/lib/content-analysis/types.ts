@@ -215,6 +215,12 @@ export interface AnalysisDocument {
    *  library and non-reference docs. Drives newest-first ordering in the
    *  "Add documents" browse list. */
   referenceAddedAt?: string;
+  /** True when the current `text`/`blocks` came from the static
+   *  `policy-bodies.json` merge (`applyPolicyBodies`). Those bodies are
+   *  re-merged from the lazy-fetched asset on every mount, so `persist()`
+   *  strips them back to the seed cap instead of writing megabytes of
+   *  static legal text into localStorage. */
+  staticBody?: boolean;
 }
 
 /** Optional structured payload attached to a "numeric extraction" segment.
