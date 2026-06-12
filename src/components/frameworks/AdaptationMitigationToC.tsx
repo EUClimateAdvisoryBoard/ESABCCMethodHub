@@ -1,29 +1,31 @@
 'use client';
+import { useState } from 'react';
 
 /**
- * Adaptation–Mitigation Theory of Change — EU Energy Supply Sector
+ * Adaptation–Mitigation Assessment Framework — EU Energy Supply Sector
  *
- * Two SVG diagrams adapted from EUCRA Chapter 8 analysis:
- *   1. Full Theory of Change: six-layer policy logic showing how adaptation
- *      considerations (coral) integrate with the existing mitigation framework
- *      (teal) without disrupting the causal chain.
- *   2. Hazard detail: zooms into the Activities row — five climate hazards flow
- *      through seven physical impacts to disrupt specific mitigation levers.
+ * Diagram 1: Full assessment framework (4 layers: impact → outcomes →
+ *   activities/levers → enablers). Indicators are embedded inside lever boxes.
+ *   Adaptation additions (coral) appear on the right of each layer. Toggle
+ *   shows/hides the mitigation and adaptation elements independently.
  *
- * Both diagrams use CSS custom properties so they respond to dark mode.
+ * Diagram 2: Hazard detail — five hazards → seven impacts → mitigation levers.
  */
 export default function AdaptationMitigationToC() {
+  const [showMitigation, setShowMitigation] = useState(true);
+  const [showAdaptation, setShowAdaptation] = useState(true);
+
   return (
     <div className="space-y-6">
-      {/* Description */}
+      {/* Header */}
       <div className="rounded-xl border border-grey-200 bg-white p-5">
         <h2 className="text-sm font-semibold text-tertiary-dark mb-1">
-          Adaptation–Mitigation Theory of Change — EU Energy Supply Sector
+          Adaptation–Mitigation Assessment Framework — EU Energy Supply Sector
         </h2>
         <p className="text-xs text-tertiary max-w-3xl mb-3">
           An integrated framework showing how climate adaptation considerations interact with the
-          existing mitigation policy logic. Based on EUCRA Chapter 8 (EEA, 2024) energy system
-          climate risk assessment.
+          existing mitigation policy logic. Based on EUCRA Chapter 8 (EEA, 2024). Read bottom-up:
+          enablers → activities → outcomes → impact.
         </p>
         <div className="flex flex-wrap gap-2 text-[11px]">
           <span className="inline-flex items-center gap-1.5 rounded-md bg-teal-50 border border-teal-200 px-2 py-1 text-teal-800 font-medium">
@@ -38,126 +40,350 @@ export default function AdaptationMitigationToC() {
         </div>
       </div>
 
-      {/* Diagram 1 */}
+      {/* Toggles */}
+      <div className="flex gap-2 flex-wrap">
+        <button
+          onClick={() => setShowMitigation((m) => !m)}
+          className={`px-3 py-1.5 rounded-md text-xs font-semibold border transition-colors ${
+            showMitigation
+              ? 'bg-teal-700 text-white border-teal-700'
+              : 'bg-white border-teal-300 text-teal-800 hover:bg-teal-50'
+          }`}
+        >
+          {showMitigation ? '✓ ' : ''}Mitigation framework
+        </button>
+        <button
+          onClick={() => setShowAdaptation((a) => !a)}
+          className={`px-3 py-1.5 rounded-md text-xs font-semibold border transition-colors ${
+            showAdaptation
+              ? 'bg-orange-700 text-white border-orange-700'
+              : 'bg-white border-orange-300 text-orange-800 hover:bg-orange-50'
+          }`}
+        >
+          {showAdaptation ? '✓ ' : ''}Adaptation additions
+        </button>
+      </div>
+
+      {/* ── Diagram 1: Full Assessment Framework ── */}
       <div className="rounded-xl border border-grey-200 bg-white p-5 overflow-x-auto">
-        <h3 className="text-sm font-semibold text-tertiary-dark mb-1">Theory of Change — full policy logic</h3>
+        <h3 className="text-sm font-semibold text-tertiary-dark mb-1">
+          Assessment framework — full policy logic
+        </h3>
         <p className="text-xs text-tertiary mb-4">
-          Read bottom-up: enabling conditions → levers → outputs → outcomes → impact. Adaptation is
-          integrated at each layer without disrupting the mitigation causal chain.
+          Read bottom-up: enablers → activities (with indicators) → outcomes → impact. Adaptation
+          elements sit to the right of their mitigation counterparts at each layer.
         </p>
         <style>{tocStyles}</style>
-        <svg viewBox="0 0 680 1010" xmlns="http://www.w3.org/2000/svg" className="toc-svg" style={{ display: 'block', width: '100%', minWidth: 640 }} role="img" aria-label="Adaptation-integrated Theory of Change for EU energy supply">
+        {/*
+          Row Y positions (top → bottom):
+            Impact:          y=18,  h=52  → bottom=70
+            HR at y=80
+            Outcomes:        y=88,  h=62  → bottom=150
+            Adapt. demand:   y=158, h=36  → bottom=194
+            HR at y=204
+            Activities:      y=212, h=76  → bottom=288
+            Badges:          y=290, h=20  → bottom=310
+            HR at y=316
+            Enablers:        y=324, h=90  → bottom=414
+            Legend:          y=422, h=82  → bottom=504
+          viewBox: 0 0 680 510
+        */}
+        <svg
+          viewBox="0 0 680 510"
+          xmlns="http://www.w3.org/2000/svg"
+          className="toc-svg"
+          style={{ display: 'block', width: '100%', minWidth: 640 }}
+          role="img"
+          aria-label="Adaptation–Mitigation Assessment Framework for EU energy supply"
+        >
           <defs>
             <marker id="toc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             </marker>
           </defs>
 
-          {/* LEFT RAIL */}
-          <g className="toc-c-gray"><rect x="2" y="20" width="82" height="52" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="40" textAnchor="middle" dominantBaseline="central">Impact</text><text className="toc-ts" x="43" y="58" textAnchor="middle" dominantBaseline="central">long-run goal</text></g>
-          <g className="toc-c-gray"><rect x="2" y="140" width="82" height="52" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="160" textAnchor="middle" dominantBaseline="central">Outcomes</text><text className="toc-ts" x="43" y="178" textAnchor="middle" dominantBaseline="central">intermediate</text></g>
-          <g className="toc-c-gray"><rect x="2" y="310" width="82" height="52" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="330" textAnchor="middle" dominantBaseline="central">Outputs</text><text className="toc-ts" x="43" y="348" textAnchor="middle" dominantBaseline="central">indicators</text></g>
-          <g className="toc-c-gray"><rect x="2" y="490" width="82" height="52" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="510" textAnchor="middle" dominantBaseline="central">Activities</text><text className="toc-ts" x="43" y="528" textAnchor="middle" dominantBaseline="central">levers</text></g>
-          <g className="toc-c-gray"><rect x="2" y="670" width="82" height="52" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="690" textAnchor="middle" dominantBaseline="central">Inputs</text><text className="toc-ts" x="43" y="708" textAnchor="middle" dominantBaseline="central">enabling</text></g>
-          <g className="toc-c-gray"><rect x="2" y="840" width="82" height="66" rx="6" strokeWidth="0.5"/><text className="toc-th" x="43" y="860" textAnchor="middle" dominantBaseline="central">Assump-</text><text className="toc-th" x="43" y="878" textAnchor="middle" dominantBaseline="central">tions</text><text className="toc-ts" x="43" y="896" textAnchor="middle" dominantBaseline="central">explicit</text></g>
+          {/* Vertical rail divider */}
+          <line x1="88" y1="0" x2="88" y2="510" stroke="#d3d1c7" strokeWidth="0.5"/>
 
-          {/* Dividers */}
-          <line x1="0" y1="110" x2="680" y2="110" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="280" x2="680" y2="280" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="460" x2="680" y2="460" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="640" x2="680" y2="640" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="0" y1="818" x2="680" y2="818" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
-          <line x1="88" y1="0" x2="88" y2="1010" stroke="#d3d1c7" strokeWidth="0.5"/>
+          {/* Horizontal layer dividers */}
+          <line x1="0" y1="80"  x2="680" y2="80"  stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
+          <line x1="0" y1="204" x2="680" y2="204" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
+          <line x1="0" y1="316" x2="680" y2="316" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 4"/>
 
-          {/* IMPACT */}
-          <g className="toc-c-teal"><rect x="96" y="20" width="276" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="234" y="40" textAnchor="middle" dominantBaseline="central">Decarbonised EU energy supply</text><text className="toc-ts" x="234" y="60" textAnchor="middle" dominantBaseline="central">E1: energy supply GHG → net zero by 2050</text></g>
-          <g className="toc-c-coral"><rect x="384" y="20" width="288" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="528" y="40" textAnchor="middle" dominantBaseline="central">Climate-resilient energy system</text><text className="toc-ts" x="528" y="60" textAnchor="middle" dominantBaseline="central">New: E7 infrastructure resilience → 2050</text></g>
-          <line x1="374" y1="46" x2="386" y2="46" stroke="#d3d1c7" strokeWidth="0.5" strokeDasharray="3 3"/>
+          {/* LEFT RAIL LABELS */}
+          <g className="toc-c-gray">
+            <rect x="2" y="18"  width="82" height="52"  rx="6" strokeWidth="0.5"/>
+            <text className="toc-th" x="43" y="37"  textAnchor="middle" dominantBaseline="central">Impact</text>
+            <text className="toc-ts" x="43" y="55"  textAnchor="middle" dominantBaseline="central">long-run goal</text>
+          </g>
+          <g className="toc-c-gray">
+            {/* spans outcome row + adaptation demand row */}
+            <rect x="2" y="88"  width="82" height="106" rx="6" strokeWidth="0.5"/>
+            <text className="toc-th" x="43" y="114" textAnchor="middle" dominantBaseline="central">Outcomes</text>
+            <text className="toc-ts" x="43" y="132" textAnchor="middle" dominantBaseline="central">intermediate</text>
+          </g>
+          <g className="toc-c-gray">
+            {/* spans activities + badge rows */}
+            <rect x="2" y="212" width="82" height="98"  rx="6" strokeWidth="0.5"/>
+            <text className="toc-th" x="43" y="238" textAnchor="middle" dominantBaseline="central">Activities</text>
+            <text className="toc-ts" x="43" y="256" textAnchor="middle" dominantBaseline="central">levers</text>
+          </g>
+          <g className="toc-c-gray">
+            <rect x="2" y="324" width="82" height="90"  rx="6" strokeWidth="0.5"/>
+            <text className="toc-th" x="43" y="350" textAnchor="middle" dominantBaseline="central">Enablers</text>
+            <text className="toc-ts" x="43" y="368" textAnchor="middle" dominantBaseline="central">enabling</text>
+            <text className="toc-ts" x="43" y="384" textAnchor="middle" dominantBaseline="central">conditions</text>
+          </g>
 
-          {/* OUTCOMES */}
-          <g className="toc-c-teal"><rect x="96" y="140" width="186" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="189" y="160" textAnchor="middle" dominantBaseline="central">↓ GHG from supply</text><text className="toc-ts" x="189" y="178" textAnchor="middle" dominantBaseline="central">E2, E3 indicators</text></g>
-          <g className="toc-c-teal"><rect x="292" y="140" width="174" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="379" y="160" textAnchor="middle" dominantBaseline="central">↓ Energy demand</text><text className="toc-ts" x="379" y="178" textAnchor="middle" dominantBaseline="central">O2: final + primary demand</text></g>
-          <g className="toc-c-coral"><rect x="476" y="140" width="196" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="574" y="160" textAnchor="middle" dominantBaseline="central">Resilient infrastructure</text><text className="toc-ts" x="574" y="178" textAnchor="middle" dominantBaseline="central">New: E7 adaptive capacity</text></g>
-          <line x1="189" y1="140" x2="200" y2="74" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="379" y1="140" x2="270" y2="74" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="574" y1="140" x2="530" y2="74" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+          {/* ══════════════ IMPACT ROW ══════════════ */}
+          {showMitigation && (
+            <g className="toc-c-teal">
+              <rect x="96" y="18" width="270" height="52" rx="8" strokeWidth="0.5"/>
+              <text className="toc-th" x="231" y="37" textAnchor="middle" dominantBaseline="central">Decarbonised EU energy supply</text>
+              <text className="toc-ts" x="231" y="55" textAnchor="middle" dominantBaseline="central">E1: energy supply GHG → net zero by 2050</text>
+            </g>
+          )}
+          {showAdaptation && (
+            <g className="toc-c-coral">
+              <rect x="374" y="18" width="298" height="52" rx="8" strokeWidth="0.5"/>
+              <text className="toc-th" x="523" y="37" textAnchor="middle" dominantBaseline="central">Climate-resilient energy system</text>
+              <text className="toc-ts" x="523" y="55" textAnchor="middle" dominantBaseline="central">New: E7 infrastructure resilience → 2050</text>
+            </g>
+          )}
 
-          {/* Adaptation demand pressure */}
-          <g className="toc-c-red"><rect x="292" y="202" width="174" height="38" rx="6" strokeWidth="0.5"/><text className="toc-th" x="379" y="218" textAnchor="middle" dominantBaseline="central">⚠ Adaptation demand</text><text className="toc-ts" x="379" y="232" textAnchor="middle" dominantBaseline="central">cooling, desalination ↑ O2</text></g>
-          <path d="M379 202 L379 194" stroke="#A32D2D" strokeWidth="0.5" strokeDasharray="3 3" markerEnd="url(#toc-arrow)"/>
+          {/* ══════════════ OUTCOMES ROW (y=88, h=62, bottom=150) ══════════════
+              4 boxes: GHG | Energy demand | Affordability | Resilience
+              widths: 130 | 130 | 130 | 168   (gaps of 6px)
+              x:       96   232   368   504
+          */}
 
-          {/* OUTPUTS */}
-          <g className="toc-c-purple"><rect x="96" y="300" width="138" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="165" y="320" textAnchor="middle" dominantBaseline="central">E2/E3: grid mix</text><text className="toc-ts" x="165" y="338" textAnchor="middle" dominantBaseline="central">Fossil share + intensity</text></g>
-          <g className="toc-c-purple"><rect x="244" y="300" width="126" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="307" y="320" textAnchor="middle" dominantBaseline="central">E4a/b: RES</text><text className="toc-ts" x="307" y="338" textAnchor="middle" dominantBaseline="central">Solar PV + wind cap.</text></g>
-          <g className="toc-c-purple"><rect x="380" y="300" width="110" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="435" y="320" textAnchor="middle" dominantBaseline="central">E6: methane</text><text className="toc-ts" x="435" y="338" textAnchor="middle" dominantBaseline="central">Fugitive emissions</text></g>
-          <g className="toc-c-purple"><rect x="500" y="300" width="100" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="550" y="320" textAnchor="middle" dominantBaseline="central">E5 + O2</text><text className="toc-ts" x="550" y="338" textAnchor="middle" dominantBaseline="central">Electrif. + demand</text></g>
-          <g className="toc-c-coral"><rect x="96" y="364" width="504" height="40" rx="8" strokeWidth="0.5"/><text className="toc-th" x="348" y="381" textAnchor="middle" dominantBaseline="central">New — E7: climate resilience of energy infrastructure</text><text className="toc-ts" x="348" y="396" textAnchor="middle" dominantBaseline="central">Physical risk exposure · adaptive capacity · disruption frequency of grid + generation assets</text></g>
-          <line x1="165" y1="300" x2="168" y2="194" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="307" y1="300" x2="220" y2="194" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="435" y1="300" x2="380" y2="194" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="550" y1="300" x2="430" y2="194" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="348" y1="364" x2="548" y2="194" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+          {showMitigation && (
+            <>
+              {/* ↓ GHG from supply */}
+              <g className="toc-c-teal">
+                <rect x="96" y="88" width="130" height="62" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="161" y="107" textAnchor="middle" dominantBaseline="central">↓ GHG from supply</text>
+                <text className="toc-ts" x="161" y="127" textAnchor="middle" dominantBaseline="central">E2, E3 indicators</text>
+              </g>
+              {/* ↓ Energy demand */}
+              <g className="toc-c-teal">
+                <rect x="232" y="88" width="130" height="62" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="297" y="107" textAnchor="middle" dominantBaseline="central">↓ Energy demand</text>
+                <text className="toc-ts" x="297" y="127" textAnchor="middle" dominantBaseline="central">O2: final + primary demand</text>
+              </g>
+              {/* Affordability — amber (cross-cutting social outcome) */}
+              <g className="toc-c-amber">
+                <rect x="368" y="88" width="130" height="62" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="433" y="103" textAnchor="middle" dominantBaseline="central">Affordability of</text>
+                <text className="toc-th" x="433" y="119" textAnchor="middle" dominantBaseline="central">energy</text>
+                <text className="toc-ts" x="433" y="138" textAnchor="middle" dominantBaseline="central">social vulnerability</text>
+              </g>
+              {/* Outcome → Impact arrows */}
+              <line x1="161" y1="88" x2="190" y2="70" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="297" y1="88" x2="245" y2="70" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="433" y1="88" x2="285" y2="70" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
 
-          {/* ACTIVITIES / LEVERS */}
-          <g className="toc-c-gray"><rect x="96" y="472" width="104" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="148" y="492" textAnchor="middle" dominantBaseline="central">Fossil fuel</text><text className="toc-th" x="148" y="510" textAnchor="middle" dominantBaseline="central">phase-out</text></g>
-          <g className="toc-c-gray"><rect x="210" y="472" width="104" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="262" y="492" textAnchor="middle" dominantBaseline="central">Methane</text><text className="toc-th" x="262" y="510" textAnchor="middle" dominantBaseline="central">reduction</text></g>
-          <g className="toc-c-gray"><rect x="324" y="472" width="94" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="371" y="492" textAnchor="middle" dominantBaseline="central">Fast RES</text><text className="toc-th" x="371" y="510" textAnchor="middle" dominantBaseline="central">roll-out</text></g>
-          <g className="toc-c-teal"><rect x="324" y="530" width="94" height="24" rx="5" strokeWidth="0.5"/><text className="toc-ts" x="371" y="542" textAnchor="middle" dominantBaseline="central">↔ synergy</text></g>
-          <g className="toc-c-gray"><rect x="428" y="472" width="92" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="474" y="492" textAnchor="middle" dominantBaseline="central">Targeted</text><text className="toc-th" x="474" y="510" textAnchor="middle" dominantBaseline="central">CCU/CCS</text></g>
-          <g className="toc-c-red"><rect x="428" y="530" width="92" height="24" rx="5" strokeWidth="0.5"/><text className="toc-ts" x="474" y="542" textAnchor="middle" dominantBaseline="central">⚠ water risk</text></g>
-          <g className="toc-c-gray"><rect x="530" y="472" width="100" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="580" y="492" textAnchor="middle" dominantBaseline="central">System</text><text className="toc-th" x="580" y="510" textAnchor="middle" dominantBaseline="central">integration</text></g>
-          <g className="toc-c-teal"><rect x="530" y="530" width="100" height="24" rx="5" strokeWidth="0.5"/><text className="toc-ts" x="580" y="542" textAnchor="middle" dominantBaseline="central">↔ synergy</text></g>
-          <g className="toc-c-coral"><rect x="96" y="564" width="504" height="38" rx="8" strokeWidth="0.5"/><text className="toc-th" x="348" y="580" textAnchor="middle" dominantBaseline="central">New lever — Physical resilience of energy infrastructure</text><text className="toc-ts" x="348" y="595" textAnchor="middle" dominantBaseline="central">Hardening assets · redundancy · climate-proofing grid + generation against hazard exposure</text></g>
-          <line x1="148" y1="472" x2="155" y2="354" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="262" y1="472" x2="415" y2="354" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="371" y1="472" x2="295" y2="354" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="474" y1="472" x2="542" y2="354" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="580" y1="472" x2="558" y2="354" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="348" y1="564" x2="348" y2="406" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+          {showAdaptation && (
+            <>
+              {/* Increased resilience outcome */}
+              <g className="toc-c-coral">
+                <rect x="504" y="88" width="168" height="62" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="588" y="100" textAnchor="middle" dominantBaseline="central">Increased resilience</text>
+                <text className="toc-th" x="588" y="116" textAnchor="middle" dominantBaseline="central">of energy supply &amp;</text>
+                <text className="toc-th" x="588" y="132" textAnchor="middle" dominantBaseline="central">infrastructure</text>
+                <text className="toc-ts" x="588" y="147" textAnchor="middle" dominantBaseline="central">New: E7</text>
+              </g>
+              {/* Resilience outcome → Adaptation impact */}
+              <line x1="588" y1="88" x2="556" y2="70" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
 
-          {/* INPUTS */}
-          <g className="toc-c-amber"><rect x="96" y="652" width="148" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="170" y="671" textAnchor="middle" dominantBaseline="central">Investor certainty</text><text className="toc-ts" x="170" y="689" textAnchor="middle" dominantBaseline="central">Market signals, price</text></g>
-          <g className="toc-c-amber"><rect x="254" y="652" width="126" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="317" y="671" textAnchor="middle" dominantBaseline="central">Infrastructure</text><text className="toc-ts" x="317" y="689" textAnchor="middle" dominantBaseline="central">Grid, storage, networks</text></g>
-          <g className="toc-c-amber"><rect x="390" y="652" width="210" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="495" y="671" textAnchor="middle" dominantBaseline="central">Cross-cutting conditions</text><text className="toc-ts" x="495" y="689" textAnchor="middle" dominantBaseline="central">Finance · skills · innovation</text></g>
-          <g className="toc-c-coral"><rect x="96" y="714" width="504" height="38" rx="8" strokeWidth="0.5"/><text className="toc-th" x="348" y="730" textAnchor="middle" dominantBaseline="central">New — Physical risk assessment + adaptive capacity planning</text><text className="toc-ts" x="348" y="745" textAnchor="middle" dominantBaseline="central">Climate hazard mapping of assets · resilience investment as co-condition alongside decarbonisation finance</text></g>
-          <line x1="170" y1="652" x2="180" y2="610" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="317" y1="652" x2="360" y2="610" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="495" y1="652" x2="530" y2="610" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
-          <line x1="348" y1="714" x2="348" y2="604" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+          {/* Adaptation demand pressure box (y=158, h=36) — shown when adaptation on */}
+          {showAdaptation && (
+            <g className="toc-c-red">
+              <rect x="228" y="158" width="274" height="36" rx="6" strokeWidth="0.5"/>
+              <text className="toc-th" x="365" y="170" textAnchor="middle" dominantBaseline="central">⚠ Adaptation demand pressure</text>
+              <text className="toc-ts" x="365" y="186" textAnchor="middle" dominantBaseline="central">cooling &amp; desalination ↑ O2 pressure</text>
+            </g>
+          )}
+          {/* Arrow: adaptation demand → energy demand outcome (only if both visible) */}
+          {showAdaptation && showMitigation && (
+            <>
+              <path d="M305 158 L297 150" fill="none" stroke="#A32D2D" strokeWidth="0.5" strokeDasharray="3 3" markerEnd="url(#toc-arrow)"/>
+              {/* Arrow: Affordability → adaptation demand pressure */}
+              <path d="M433 150 L415 158" fill="none" stroke="#A32D2D" strokeWidth="0.5" strokeDasharray="3 3" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
 
-          {/* ASSUMPTIONS */}
-          <g className="toc-c-gray"><rect x="96" y="826" width="240" height="60" rx="8" strokeWidth="0.5"/><text className="toc-th" x="216" y="847" textAnchor="middle" dominantBaseline="central">Existing (implicit)</text><text className="toc-ts" x="216" y="865" textAnchor="middle" dominantBaseline="central">Demand falls over time;</text><text className="toc-ts" x="216" y="879" textAnchor="middle" dominantBaseline="central">grid stays reliable; levers perform</text></g>
-          <g className="toc-c-red"><rect x="346" y="826" width="254" height="60" rx="8" strokeWidth="0.5"/><text className="toc-th" x="473" y="847" textAnchor="middle" dominantBaseline="central">New — explicit risk assumptions</text><text className="toc-ts" x="473" y="865" textAnchor="middle" dominantBaseline="central">Physical risks do not impair lever performance;</text><text className="toc-ts" x="473" y="879" textAnchor="middle" dominantBaseline="central">demand reduction not offset by adaptation needs</text></g>
+          {/* ══════════════ ACTIVITIES ROW (y=212, h=76, bottom=288) ══════════════
+              Mitigation levers (x=96 to x=498) + Adaptation lever (x=506 to x=672)
+              5 levers: w=76 each, gap=5
+              x: 96, 177, 258, 339, 420   (each w=75, gap=6)
+              Adaptation: x=506, w=166
+          */}
 
-          {/* LEGEND */}
-          <rect x="96" y="910" width="504" height="92" rx="8" fill="none" stroke="#d3d1c7" strokeWidth="0.5"/>
-          <text className="toc-th" x="112" y="928" dominantBaseline="central">Legend</text>
-          <rect x="112" y="938" width="12" height="12" rx="3" fill="#E1F5EE" stroke="#0F6E56" strokeWidth="0.5"/>
-          <text className="toc-ts" x="130" y="948" dominantBaseline="central">Existing mitigation framework</text>
-          <rect x="112" y="958" width="12" height="12" rx="3" fill="#FAECE7" stroke="#993C1D" strokeWidth="0.5"/>
-          <text className="toc-ts" x="130" y="968" dominantBaseline="central">New adaptation additions</text>
-          <rect x="112" y="978" width="12" height="12" rx="3" fill="#FCEBEB" stroke="#A32D2D" strokeWidth="0.5"/>
-          <text className="toc-ts" x="130" y="988" dominantBaseline="central">Adaptation risk / pressure</text>
-          <rect x="320" y="938" width="12" height="12" rx="3" fill="#EEEDFE" stroke="#534AB7" strokeWidth="0.5"/>
-          <text className="toc-ts" x="338" y="948" dominantBaseline="central">Indicators / outputs</text>
-          <rect x="320" y="958" width="12" height="12" rx="3" fill="#FAEEDA" stroke="#854F0B" strokeWidth="0.5"/>
-          <text className="toc-ts" x="338" y="968" dominantBaseline="central">Enabling conditions</text>
-          <rect x="320" y="978" width="12" height="12" rx="3" fill="#F1EFE8" stroke="#5F5E5A" strokeWidth="0.5"/>
-          <text className="toc-ts" x="338" y="988" dominantBaseline="central">Mitigation levers</text>
-          <text className="toc-ts" x="530" y="948" dominantBaseline="central">↔ = synergy</text>
-          <text className="toc-ts" x="530" y="968" dominantBaseline="central">⚠ = risk</text>
-          <text className="toc-ts" x="530" y="988" dominantBaseline="central">- - = adaptation link</text>
+          {showMitigation && (
+            <>
+              {/* Fossil fuel phase-out [E2/E3] */}
+              <g className="toc-c-gray">
+                <rect x="96" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="133" y="230" textAnchor="middle" dominantBaseline="central">Fossil fuel</text>
+                <text className="toc-th" x="133" y="246" textAnchor="middle" dominantBaseline="central">phase-out</text>
+                <text className="toc-ts" x="133" y="272" textAnchor="middle" dominantBaseline="central">E2/E3</text>
+              </g>
+              {/* Methane reduction [E6] */}
+              <g className="toc-c-gray">
+                <rect x="177" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="214" y="230" textAnchor="middle" dominantBaseline="central">Methane</text>
+                <text className="toc-th" x="214" y="246" textAnchor="middle" dominantBaseline="central">reduction</text>
+                <text className="toc-ts" x="214" y="272" textAnchor="middle" dominantBaseline="central">E6</text>
+              </g>
+              {/* Fast RES roll-out [E4a/b] */}
+              <g className="toc-c-gray">
+                <rect x="258" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="295" y="230" textAnchor="middle" dominantBaseline="central">Fast RES</text>
+                <text className="toc-th" x="295" y="246" textAnchor="middle" dominantBaseline="central">roll-out</text>
+                <text className="toc-ts" x="295" y="272" textAnchor="middle" dominantBaseline="central">E4a/b</text>
+              </g>
+              {/* Targeted CCU/CCS [E1/E6] */}
+              <g className="toc-c-gray">
+                <rect x="339" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="376" y="230" textAnchor="middle" dominantBaseline="central">Targeted</text>
+                <text className="toc-th" x="376" y="246" textAnchor="middle" dominantBaseline="central">CCU/CCS</text>
+                <text className="toc-ts" x="376" y="272" textAnchor="middle" dominantBaseline="central">E1/E6</text>
+              </g>
+              {/* System integration [E5/O2] */}
+              <g className="toc-c-gray">
+                <rect x="420" y="212" width="75" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="457" y="230" textAnchor="middle" dominantBaseline="central">System</text>
+                <text className="toc-th" x="457" y="246" textAnchor="middle" dominantBaseline="central">integration</text>
+                <text className="toc-ts" x="457" y="272" textAnchor="middle" dominantBaseline="central">E5/O2</text>
+              </g>
+
+              {/* Synergy / risk badges (y=290, h=20) */}
+              <g className="toc-c-teal">
+                <rect x="258" y="290" width="75" height="20" rx="5" strokeWidth="0.5"/>
+                <text className="toc-ts" x="295" y="300" textAnchor="middle" dominantBaseline="central">↔ synergy</text>
+              </g>
+              <g className="toc-c-red">
+                <rect x="339" y="290" width="75" height="20" rx="5" strokeWidth="0.5"/>
+                <text className="toc-ts" x="376" y="300" textAnchor="middle" dominantBaseline="central">⚠ water risk</text>
+              </g>
+              <g className="toc-c-teal">
+                <rect x="420" y="290" width="75" height="20" rx="5" strokeWidth="0.5"/>
+                <text className="toc-ts" x="457" y="300" textAnchor="middle" dominantBaseline="central">↔ synergy</text>
+              </g>
+
+              {/* Activity → Outcome arrows (solid gray) */}
+              <line x1="133" y1="212" x2="155" y2="150" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="214" y1="212" x2="163" y2="150" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="295" y1="212" x2="170" y2="150" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="376" y1="212" x2="177" y2="150" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="457" y1="212" x2="297" y2="150" stroke="#5F5E5A" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
+
+          {showAdaptation && (
+            <>
+              {/* Physical resilience lever */}
+              <g className="toc-c-coral">
+                <rect x="506" y="212" width="166" height="76" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="589" y="228" textAnchor="middle" dominantBaseline="central">Physical resilience</text>
+                <text className="toc-th" x="589" y="244" textAnchor="middle" dominantBaseline="central">of energy infra.</text>
+                <text className="toc-ts" x="589" y="261" textAnchor="middle" dominantBaseline="central">Hardening · redundancy</text>
+                <text className="toc-ts" x="589" y="277" textAnchor="middle" dominantBaseline="central">climate-proofing</text>
+              </g>
+              {/* Physical resilience → Resilience outcome */}
+              <line x1="589" y1="212" x2="588" y2="150" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
+
+          {/* Synergy/risk arrows from mitigation levers → Resilience outcome
+              Shown only when both tracks are visible */}
+          {showMitigation && showAdaptation && (
+            <>
+              {/* Fast RES (↔ synergy) → Resilience outcome bottom */}
+              <path d="M295 290 C 330 255 510 178 572 150" fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
+              {/* System integration (↔ synergy) → Resilience outcome bottom */}
+              <path d="M457 290 C 490 255 545 178 585 150" fill="none" stroke="#0F6E56" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
+              {/* CCU/CCS (⚠ water risk) → Resilience outcome bottom */}
+              <path d="M376 290 C 415 258 527 178 562 150" fill="none" stroke="#A32D2D" strokeWidth="0.8" strokeDasharray="5 3" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
+
+          {/* ══════════════ ENABLERS ROW (y=324, h=90, bottom=414) ══════════════ */}
+
+          {showMitigation && (
+            <>
+              <g className="toc-c-amber">
+                <rect x="96" y="324" width="402" height="90" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="104" y="340" dominantBaseline="central">Enabling conditions</text>
+                <text className="toc-ts" x="114" y="358">• Carbon pricing &amp; EU ETS</text>
+                <text className="toc-ts" x="114" y="374">• Grid, storage &amp; interconnectors</text>
+                <text className="toc-ts" x="114" y="390">• R&amp;D, innovation &amp; skills</text>
+                <text className="toc-ts" x="312" y="358">• Public &amp; private investment</text>
+                <text className="toc-ts" x="312" y="374">• Policy &amp; regulatory framework</text>
+                <text className="toc-ts" x="312" y="390">• Cross-sectoral coordination</text>
+              </g>
+              {/* Enablers → activity arrows */}
+              <line x1="200" y1="324" x2="147" y2="288" stroke="#854F0B" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+              <line x1="350" y1="324" x2="376" y2="288" stroke="#854F0B" strokeWidth="0.5" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
+
+          {showAdaptation && (
+            <>
+              <g className="toc-c-coral">
+                <rect x="506" y="324" width="166" height="90" rx="8" strokeWidth="0.5"/>
+                <text className="toc-th" x="514" y="340" dominantBaseline="central">Risk assessment</text>
+                <text className="toc-ts" x="514" y="358">&amp; adaptive capacity planning</text>
+                <text className="toc-ts" x="516" y="375">• Hazard mapping of assets</text>
+                <text className="toc-ts" x="516" y="391">• Resilience investment</text>
+                <text className="toc-ts" x="516" y="407">• Co-condition w/ decarb. finance</text>
+              </g>
+              {/* Adaptation enabler → physical resilience lever */}
+              <line x1="589" y1="324" x2="589" y2="288" stroke="#993C1D" strokeWidth="0.5" strokeDasharray="4 3" markerEnd="url(#toc-arrow)"/>
+            </>
+          )}
+
+          {/* ══════════════ LEGEND ══════════════ */}
+          <rect x="96" y="422" width="576" height="82" rx="8" fill="none" stroke="#d3d1c7" strokeWidth="0.5"/>
+          <text className="toc-th" x="112" y="438" dominantBaseline="central">Legend</text>
+          <rect x="112" y="450" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#0F6E56" strokeWidth="0.5"/>
+          <text className="toc-ts" x="128" y="455" dominantBaseline="central">Mitigation framework (teal)</text>
+          <rect x="112" y="468" width="10" height="10" rx="2" fill="#FAECE7" stroke="#993C1D" strokeWidth="0.5"/>
+          <text className="toc-ts" x="128" y="473" dominantBaseline="central">Adaptation additions (coral)</text>
+          <rect x="112" y="486" width="10" height="10" rx="2" fill="#FCEBEB" stroke="#A32D2D" strokeWidth="0.5"/>
+          <text className="toc-ts" x="128" y="491" dominantBaseline="central">Risk / pressure (red)</text>
+          <rect x="330" y="450" width="10" height="10" rx="2" fill="#FAEEDA" stroke="#854F0B" strokeWidth="0.5"/>
+          <text className="toc-ts" x="346" y="455" dominantBaseline="central">Enabling conditions (amber)</text>
+          <rect x="330" y="468" width="10" height="10" rx="2" fill="#F1EFE8" stroke="#5F5E5A" strokeWidth="0.5"/>
+          <text className="toc-ts" x="346" y="473" dominantBaseline="central">Mitigation levers (gray)</text>
+          <text className="toc-ts" x="530" y="455" dominantBaseline="central">↔  synergy with adaptation</text>
+          <text className="toc-ts" x="530" y="471" dominantBaseline="central">⚠  risk to adaptation</text>
+          <text className="toc-ts" x="530" y="487" dominantBaseline="central">- -  adaptation link</text>
         </svg>
       </div>
 
-      {/* Diagram 2 */}
+      {/* ── Diagram 2: Hazard detail ── */}
       <div className="rounded-xl border border-grey-200 bg-white p-5 overflow-x-auto">
-        <h3 className="text-sm font-semibold text-tertiary-dark mb-1">Detail: climate hazard pathways into mitigation levers</h3>
+        <h3 className="text-sm font-semibold text-tertiary-dark mb-1">
+          Detail: climate hazard pathways into mitigation levers
+        </h3>
         <p className="text-xs text-tertiary mb-4">
-          Zooms into the Activities row of the ToC above. Read bottom-up: climate hazards → physical
-          impacts → disruption of specific mitigation levers.
+          Zooms into the Activities row above. Read bottom-up: climate hazards → physical impacts →
+          disruption of specific mitigation levers.
         </p>
-        <svg viewBox="0 0 680 530" xmlns="http://www.w3.org/2000/svg" className="toc-svg" style={{ display: 'block', width: '100%', minWidth: 640 }} role="img" aria-label="Climate hazard pathways into energy supply mitigation levers">
+        <svg
+          viewBox="0 0 680 530"
+          xmlns="http://www.w3.org/2000/svg"
+          className="toc-svg"
+          style={{ display: 'block', width: '100%', minWidth: 640 }}
+          role="img"
+          aria-label="Climate hazard pathways into energy supply mitigation levers"
+        >
           <defs>
             <marker id="hazard-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -165,32 +391,32 @@ export default function AdaptationMitigationToC() {
           </defs>
 
           {/* LEVERS */}
-          <g className="toc-c-gray"><rect x="96" y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="145" y="40" textAnchor="middle" dominantBaseline="central">Fossil fuel</text><text className="toc-th" x="145" y="58" textAnchor="middle" dominantBaseline="central">phase-out</text></g>
+          <g className="toc-c-gray"><rect x="96"  y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="145" y="40" textAnchor="middle" dominantBaseline="central">Fossil fuel</text><text className="toc-th" x="145" y="58" textAnchor="middle" dominantBaseline="central">phase-out</text></g>
           <g className="toc-c-gray"><rect x="206" y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="255" y="40" textAnchor="middle" dominantBaseline="central">Methane</text><text className="toc-th" x="255" y="58" textAnchor="middle" dominantBaseline="central">reduction</text></g>
           <g className="toc-c-gray"><rect x="316" y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="365" y="40" textAnchor="middle" dominantBaseline="central">Fast RES</text><text className="toc-th" x="365" y="58" textAnchor="middle" dominantBaseline="central">roll-out</text></g>
           <g className="toc-c-gray"><rect x="426" y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="475" y="40" textAnchor="middle" dominantBaseline="central">Targeted</text><text className="toc-th" x="475" y="58" textAnchor="middle" dominantBaseline="central">CCU/CCS</text></g>
           <g className="toc-c-gray"><rect x="536" y="20" width="98" height="52" rx="8" strokeWidth="0.5"/><text className="toc-th" x="585" y="40" textAnchor="middle" dominantBaseline="central">System</text><text className="toc-th" x="585" y="58" textAnchor="middle" dominantBaseline="central">integration</text></g>
 
-          {/* Layer label: impacts */}
+          {/* Layer label: Impacts */}
           <text className="toc-ts" x="52" y="208" textAnchor="middle" dominantBaseline="central" fontWeight="600">Impacts</text>
 
           {/* IMPACTS */}
-          <g className="toc-c-red"><rect x="96" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="137" y="196" textAnchor="middle" dominantBaseline="central">↑ cooling</text><text className="toc-ts" x="137" y="212" textAnchor="middle" dominantBaseline="central">demand</text><text className="toc-ts" x="137" y="226" textAnchor="middle" dominantBaseline="central">↑ O2 pressure</text></g>
+          <g className="toc-c-red"><rect x="96"  y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="137" y="196" textAnchor="middle" dominantBaseline="central">↑ cooling</text><text className="toc-ts" x="137" y="212" textAnchor="middle" dominantBaseline="central">demand</text><text className="toc-ts" x="137" y="226" textAnchor="middle" dominantBaseline="central">↑ O2 pressure</text></g>
           <g className="toc-c-red"><rect x="186" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="227" y="196" textAnchor="middle" dominantBaseline="central">↓ grid</text><text className="toc-ts" x="227" y="212" textAnchor="middle" dominantBaseline="central">capacity</text><text className="toc-ts" x="227" y="226" textAnchor="middle" dominantBaseline="central">lines/transformers</text></g>
           <g className="toc-c-red"><rect x="276" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="317" y="196" textAnchor="middle" dominantBaseline="central">↓ hydro</text><text className="toc-ts" x="317" y="212" textAnchor="middle" dominantBaseline="central">production</text><text className="toc-ts" x="317" y="226" textAnchor="middle" dominantBaseline="central">drought risk</text></g>
           <g className="toc-c-red"><rect x="366" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="407" y="196" textAnchor="middle" dominantBaseline="central">↓ thermal</text><text className="toc-ts" x="407" y="212" textAnchor="middle" dominantBaseline="central">production</text><text className="toc-ts" x="407" y="226" textAnchor="middle" dominantBaseline="central">heat stress</text></g>
           <g className="toc-c-red"><rect x="456" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="497" y="196" textAnchor="middle" dominantBaseline="central">↑ desalin-</text><text className="toc-th" x="497" y="212" textAnchor="middle" dominantBaseline="central">ation need</text><text className="toc-ts" x="497" y="226" textAnchor="middle" dominantBaseline="central">energy demand</text></g>
           <g className="toc-c-red"><rect x="546" y="178" width="82" height="54" rx="6" strokeWidth="0.5"/><text className="toc-th" x="587" y="192" textAnchor="middle" dominantBaseline="central">Damage:</text><text className="toc-ts" x="587" y="208" textAnchor="middle" dominantBaseline="central">transport +</text><text className="toc-ts" x="587" y="222" textAnchor="middle" dominantBaseline="central">storage infra</text></g>
 
-          {/* Layer label: hazards */}
+          {/* Layer label: Hazards */}
           <text className="toc-ts" x="52" y="378" textAnchor="middle" dominantBaseline="central" fontWeight="600">Hazards</text>
 
           {/* HAZARDS */}
-          <g className="toc-c-blue"><rect x="96" y="360" width="108" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="150" y="378" textAnchor="middle" dominantBaseline="central">Warming / heatwaves</text></g>
+          <g className="toc-c-blue"><rect x="96"  y="360" width="108" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="150" y="378" textAnchor="middle" dominantBaseline="central">Warming / heatwaves</text></g>
           <g className="toc-c-blue"><rect x="214" y="360" width="108" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="268" y="378" textAnchor="middle" dominantBaseline="central">Drought / ↓ precip.</text></g>
-          <g className="toc-c-blue"><rect x="332" y="360" width="88" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="376" y="378" textAnchor="middle" dominantBaseline="central">Wildfires</text></g>
+          <g className="toc-c-blue"><rect x="332" y="360" width="88"  height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="376" y="378" textAnchor="middle" dominantBaseline="central">Wildfires</text></g>
           <g className="toc-c-blue"><rect x="430" y="360" width="108" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="484" y="378" textAnchor="middle" dominantBaseline="central">Floods / landslides</text></g>
-          <g className="toc-c-blue"><rect x="548" y="360" width="86" height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="591" y="378" textAnchor="middle" dominantBaseline="central">Extreme weather</text></g>
+          <g className="toc-c-blue"><rect x="548" y="360" width="86"  height="36" rx="6" strokeWidth="0.5"/><text className="toc-th" x="591" y="378" textAnchor="middle" dominantBaseline="central">Extreme weather</text></g>
 
           {/* Hazard → impact arrows */}
           <path d="M150 360 L137 234" fill="none" stroke="#E24B4A" strokeWidth="0.5" markerEnd="url(#hazard-arrow)"/>
@@ -216,7 +442,7 @@ export default function AdaptationMitigationToC() {
           <text className="toc-th" x="112" y="440" dominantBaseline="central">How to read this diagram</text>
           <text className="toc-ts" x="112" y="458" dominantBaseline="central">Solid red lines: hazard causes this impact</text>
           <text className="toc-ts" x="112" y="476" dominantBaseline="central">Dashed red lines: impact undermines this lever</text>
-          <text className="toc-ts" x="112" y="494" dominantBaseline="central">This zooms into the activities row of the full ToC above</text>
+          <text className="toc-ts" x="112" y="494" dominantBaseline="central">This zooms into the Activities row of the full framework above</text>
           <rect x="400" y="446" width="12" height="12" rx="3" fill="#E6F1FB" stroke="#185FA5" strokeWidth="0.5"/>
           <text className="toc-ts" x="418" y="452" dominantBaseline="central">Climate hazards</text>
           <rect x="400" y="466" width="12" height="12" rx="3" fill="#FCEBEB" stroke="#A32D2D" strokeWidth="0.5"/>
@@ -237,8 +463,8 @@ export default function AdaptationMitigationToC() {
 
 const tocStyles = `
   .toc-svg { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
-  .toc-th  { font-size: 14px; font-weight: 600; fill: #1a1a18; }
-  .toc-ts  { font-size: 12px; font-weight: 400; fill: #5F5E5A; }
+  .toc-th  { font-size: 13px; font-weight: 600; fill: #1a1a18; }
+  .toc-ts  { font-size: 11px; font-weight: 400; fill: #5F5E5A; }
 
   .toc-c-teal   rect { fill: #E1F5EE; stroke: #0F6E56; }
   .toc-c-teal   .toc-th { fill: #085041; }
@@ -251,10 +477,6 @@ const tocStyles = `
   .toc-c-red    rect { fill: #FCEBEB; stroke: #A32D2D; }
   .toc-c-red    .toc-th { fill: #791F1F; }
   .toc-c-red    .toc-ts { fill: #A32D2D; }
-
-  .toc-c-purple rect { fill: #EEEDFE; stroke: #534AB7; }
-  .toc-c-purple .toc-th { fill: #3C3489; }
-  .toc-c-purple .toc-ts { fill: #534AB7; }
 
   .toc-c-amber  rect { fill: #FAEEDA; stroke: #854F0B; }
   .toc-c-amber  .toc-th { fill: #633806; }
@@ -283,10 +505,6 @@ const tocStyles = `
     .toc-c-red    rect { fill: #791F1F; stroke: #E24B4A; }
     .toc-c-red    .toc-th { fill: #F7C1C1; }
     .toc-c-red    .toc-ts { fill: #F09595; }
-
-    .toc-c-purple rect { fill: #3C3489; stroke: #7F77DD; }
-    .toc-c-purple .toc-th { fill: #CECBF6; }
-    .toc-c-purple .toc-ts { fill: #AFA9EC; }
 
     .toc-c-amber  rect { fill: #633806; stroke: #BA7517; }
     .toc-c-amber  .toc-th { fill: #FAC775; }
