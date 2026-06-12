@@ -41,6 +41,7 @@ import SectorFlow, { type OpenIndicatorPayload } from '@/components/frameworks/S
 import OverviewFigure from '@/components/frameworks/OverviewFigure';
 import IndicatorDetail from '@/components/frameworks/IndicatorDetail';
 import AdaptationMitigationToC from '@/components/frameworks/AdaptationMitigationToC';
+import AdaptationMitigationToCData from '@/components/frameworks/AdaptationMitigationToCData';
 
 interface Props {
   /** The project's indicators — used both as the link targets in edit mode and
@@ -215,6 +216,10 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
 
   if (version.id === 'adaptation-mitigation-toc') {
     return <AdaptationMitigationToC />;
+  }
+
+  if (version.id === 'adaptation-mitigation-toc-data') {
+    return <AdaptationMitigationToCData />;
   }
 
   const counts = (s: SectorFramework) => {

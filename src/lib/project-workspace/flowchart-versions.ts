@@ -144,6 +144,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
   { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Theory of Change', variant: 'report', builtIn: true },
+  { id: 'adaptation-mitigation-toc-data', name: 'Adaptation–Mitigation ToC — with indicator data', variant: 'report', builtIn: true },
   { id: 'scenario-call', name: 'Scenario call — mitigation & adaptation, IAM-matched', variant: 'beta', builtIn: true },
 ];
 
@@ -173,6 +174,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
   if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
   if (version.id === 'adaptation-mitigation-toc') return `esabcc-framework-board-adaptation-toc:${projectId}`;
+  if (version.id === 'adaptation-mitigation-toc-data') return `esabcc-framework-board-adaptation-toc-data:${projectId}`;
   if (version.id === 'scenario-call') return `esabcc-framework-board-scenario-call:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
