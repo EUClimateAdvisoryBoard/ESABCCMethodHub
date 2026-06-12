@@ -1,7 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  // beta/ holds the unrouted experimental modules (re-exported via
+  // src/app/beta/*) — their classes must be scanned too.
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './beta/**/*.{js,ts,jsx,tsx,mdx}'],
   darkMode: 'class',
   theme: {
     fontFamily: {

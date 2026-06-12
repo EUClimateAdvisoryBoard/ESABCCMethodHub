@@ -373,6 +373,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     updateSegmentText,
     upsertDocument,
     applyIngestion,
+    applyPolicyBodies,
     setDocumentSummary,
     loadSummaryBlocks,
   } = useContentAnalysis();
@@ -505,6 +506,31 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       /* quota — ignore */
     }
   }, [corpusIds, corpusLoaded, projectId]);
+
+  // ── Lazy-load the prefetched EUR-Lex policy bodies ────────────────────────
+  // Same merge the standalone /content-analysis route does: the ~15 MB corpus
+  // lives as a static asset and fills in real legal text (and the anchored
+  // objective-checklist annotations) for every policy, replacing the metadata
+  // stubs. Without this, the workspace only ever saw the handful of policies
+  // whose full text ships in the bundle.
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      try {
+        const resp = await fetch('/content-analysis/policy-bodies.json', {
+          cache: 'force-cache',
+        });
+        if (!resp.ok) return;
+        const data = (await resp.json()) as Record<string, { text: string }>;
+        if (cancelled) return;
+        applyPolicyBodies(data);
+      } catch {
+        // Missing asset just means the prefetch workflow hasn't run yet —
+        // policy docs fall back to their shipped / stub bodies.
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [applyPolicyBodies]);
 
   // ── Discover sibling workspace projects for the lens chips ────────────────
   useEffect(() => {

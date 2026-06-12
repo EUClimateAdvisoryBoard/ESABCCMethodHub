@@ -1,0 +1,50 @@
+name: Daily Publication Screening
+
+# Screens the relevant scientific journals every morning for new publications
+# that could be aligned with the Project Workspace projects, writes the daily
+# markdown report under public/data/publication-screening/reports/ and commits
+# it together with the rolling suggestions archive. The Literature watch tab
+# in each workspace project reads these files.
+
+on:
+  schedule:
+    # 04:30 UTC — GitHub cron is typically delayed 15–90 min, so the report
+    # lands in the early European morning, before the working day starts.
+    - cron: '30 4 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  screen-publications:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # The script only uses Node built-ins (fetch, fs), no npm install needed.
+      - name: Screen journals for new publications
+        run: node scripts/screen-publications.mjs
+        env:
+          NODE_ENV: production
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain public/data/publication-screening/)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit daily screening report
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/publication-screening/
+          git commit -m "chore: daily scientific publication screening [automated]"
+          git pull --rebase origin main
+          git push

@@ -59,6 +59,8 @@ import { FilterPill, FilterPillRow } from '@/components/ui/FilterPill';
 import PolicyAnnotationsPanel from '@/components/workspace/PolicyAnnotationsBadge';
 import { usePromotedPolicyEdits } from '@/lib/project-workspace/usePromotedPolicyEdits';
 import NavigatorMasterCodes from '@/components/NavigatorMasterCodes';
+import NavigatorObjectiveChecklist from '@/components/NavigatorObjectiveChecklist';
+import ObjectiveChecklistMatrix from '@/components/content-analysis/ObjectiveChecklistMatrix';
 import { POLICY_MASTER_TAGS } from '@/lib/content-analysis/policy-master-tags';
 import {
   getDescendantIds,
@@ -1086,6 +1088,40 @@ export default function PolicyNavigatorPage() {
 
           {/* Main list */}
           <main className="space-y-3">
+            {/* Corpus-wide objective–delivery checklist matrix. Scoped to the
+                active sector / instrument / code filters so it answers "which
+                of THESE policies can't deliver their own objective?". */}
+            <details className="bg-white rounded-xl border border-grey-200 group">
+              <summary className="cursor-pointer list-none px-4 py-3 flex items-center justify-between gap-2">
+                <span>
+                  <span className="text-sm font-bold text-tertiary-dark">
+                    Objective–delivery checklist matrix
+                  </span>
+                  <span className="block text-[11px] text-tertiary mt-0.5">
+                    All filtered policies × 12 assessment criteria — verdict heatmap with
+                    consistency checks for climate neutrality and adaptation.
+                  </span>
+                </span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className="text-tertiary shrink-0 transition-transform group-open:rotate-180"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </summary>
+              <div className="px-4 pb-4">
+                <ObjectiveChecklistMatrix
+                  scopeIds={filteredSectorPolicies.map(p => p.id)}
+                  scopeLabel="Filtered"
+                />
+              </div>
+            </details>
+
             {filteredSectorPolicies.length === 0 && (
               <EmptyState
                 title="No policies match your filters"
@@ -1228,6 +1264,7 @@ function SectorPolicyCard({
             activeCodeId={activeCodeId}
             onCodeFilter={onCodeFilter}
           />
+          <NavigatorObjectiveChecklist policyId={policy.id} />
           <div>
             <p className="text-[10px] text-tertiary uppercase tracking-wide font-bold mb-1 flex items-center gap-1">
               What it means
@@ -1386,6 +1423,9 @@ function SLRCodeFilter({
   totalCount: number;
 }) {
   const [openRoot, setOpenRoot] = useState<string | null>(null);
+  // Includes the assessment-checklist branch: a `check-*` tag is present on a
+  // policy when the criterion is MET, so filtering by e.g. "Consistency:
+  // adaptation" lists the policies that fulfil it.
   const roots = useMemo(() => getRootCodes(), []);
 
   function policyCountFor(codeId: string): number {

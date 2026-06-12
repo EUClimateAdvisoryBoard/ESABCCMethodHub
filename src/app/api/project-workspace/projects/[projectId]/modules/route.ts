@@ -25,7 +25,7 @@ export async function POST(
     name?: string;
     description?: string;
   };
-  const allowed = ['indicators', 'recommendations', 'member-states', 'policy-analysis', 'content-analysis', 'meetings', 'custom'];
+  const allowed = ['indicators', 'recommendations', 'member-states', 'policy-analysis', 'content-analysis', 'meetings', 'literature-watch', 'custom'];
   const kind = (body.kind ?? '').trim();
   const name = (body.name ?? '').trim();
   if (!name || !allowed.includes(kind)) {

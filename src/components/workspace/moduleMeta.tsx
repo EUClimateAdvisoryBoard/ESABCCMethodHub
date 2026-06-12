@@ -78,6 +78,13 @@ const MeetingsIcon = ({ className }: { className?: string }) => (
   </IconBase>
 );
 
+const LiteratureWatchIcon = ({ className }: { className?: string }) => (
+  <IconBase className={className}>
+    <path d="M12 6c-1.5-1.3-3.5-2-6-2H4v14h2c2.5 0 4.5.7 6 2 1.5-1.3 3.5-2 6-2h2V4h-2c-2.5 0-4.5.7-6 2Z" />
+    <path d="M12 6v14" />
+  </IconBase>
+);
+
 const NotesIcon = ({ className }: { className?: string }) => (
   <IconBase className={className}>
     <path d="M12 20h9" />
@@ -136,6 +143,13 @@ export const MODULE_META: Record<WorkspaceModuleKind, ModuleMeta> = {
     accent: '#B86A00',
     accentBg: '#FFF4DB',
     Icon: MeetingsIcon,
+  },
+  'literature-watch': {
+    label: 'Literature watch',
+    blurb: 'New journal articles matched to this project every morning — browse the suggestions and read the daily screening report.',
+    accent: '#7A3E9D',
+    accentBg: '#F4EFF8',
+    Icon: LiteratureWatchIcon,
   },
   custom: {
     label: 'Notes',

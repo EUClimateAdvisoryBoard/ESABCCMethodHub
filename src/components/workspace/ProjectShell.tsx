@@ -28,6 +28,7 @@ import IndicatorModule from './IndicatorModule';
 import RecommendationsModule from './RecommendationsModule';
 import MemberStatesModule from './MemberStatesModule';
 import ContentAnalysisModule from './ContentAnalysisModule';
+import LiteratureWatchModule from './LiteratureWatchModule';
 import CustomNotesModule from './CustomNotesModule';
 import MeetingsModule from './MeetingsModule';
 import ActivityLogPanel from './ActivityLogPanel';
@@ -54,6 +55,7 @@ const MODULE_KIND_OPTIONS: { id: string; label: string; blurb: string }[] = [
   { id: 'member-states', label: 'Member states', blurb: 'Compare the 27 EU countries on a map.' },
   { id: 'recommendations', label: 'Recommendations', blurb: 'Track recommendations and their uptake.' },
   { id: 'meetings', label: 'Meetings & progress', blurb: 'Meetings, milestones and progress.' },
+  { id: 'literature-watch', label: 'Literature watch', blurb: 'Daily journal screening matched to this project.' },
   { id: 'custom', label: 'Notes', blurb: 'A free-form space for notes and write-ups.' },
 ];
 
@@ -189,6 +191,9 @@ export default function ProjectShell({
               projectName={project.name}
               industryFocus={industryFocus}
             />
+          )}
+          {current.kind === 'literature-watch' && (
+            <LiteratureWatchModule projectId={project.id} />
           )}
           {current.kind === 'meetings' && (
             <MeetingsModule

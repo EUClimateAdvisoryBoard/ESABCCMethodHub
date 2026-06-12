@@ -45,7 +45,8 @@ import type {
   SummaryBlock,
 } from './types';
 import type { Block, AiClassification, SharedIngestedDocument } from './types';
-import { buildSeedSnapshot, deriveBlocksFromText } from './seed';
+import { buildSeedSnapshot, buildChecklistSegmentsFor, deriveBlocksFromText } from './seed';
+import { buildCoherenceSegmentsFor } from './policy-coherence-evidence';
 import { enqueue, flush as flushOutbox, getOutboxStatus, subscribeOutbox } from './outbox';
 
 const LS_KEY = 'esabcc_content_analysis_v1';
@@ -351,8 +352,20 @@ function persist(): void {
     // Coded-segment figure `screenshot`s get the same treatment: they're saved
     // server-side (via postSegments) and re-fetched by pullFromServer, so a
     // base64 figure per segment would needlessly eat the localStorage quota.
+    // Static policy bodies (merged from the lazy-fetched policy-bodies.json,
+    // ~10 MB of legal text across the corpus) get the same treatment: they
+    // are re-merged on every mount, so the cache only keeps a seed-sized
+    // stub. Blocks are dropped with the text — they are re-derived from the
+    // merged body, and keeping blocks for a truncated text would desync the
+    // two. Seeded annotations re-anchor right after the merge.
+    const BODY_CACHE_CAP = 24_000;
     const lean: ContentAnalysisSnapshot = {
       ...state,
+      documents: state.documents.map(d =>
+        d.staticBody && d.text.length > BODY_CACHE_CAP
+          ? { ...d, text: d.text.slice(0, BODY_CACHE_CAP), blocks: undefined, staticBody: undefined }
+          : d,
+      ),
       segments: state.segments.map(s =>
         s.screenshot === undefined ? s : { ...s, screenshot: undefined },
       ),
@@ -396,6 +409,59 @@ function hydrate(): void {
           // `summaries` was added later still — same defaulting strategy.
           summaries: parsed.summaries ?? [],
         };
+        // The master taxonomy grows over releases (e.g. the objective-delivery
+        // checklist branch). A persisted snapshot predating an addition would
+        // otherwise hide the new master codes forever — merge in any seed
+        // master code this snapshot doesn't know yet. User codes, renames and
+        // recolors win: only ids absent from the snapshot are appended.
+        const seed = buildSeedSnapshot();
+        const known = new Set(state.codes.map(c => c.id));
+        const missing = seed.codes.filter(
+          c => c.scope === 'master' && !known.has(c.id),
+        );
+        // One-time taxonomy migration: early seeds tagged the coherence
+        // annotations with the four flat step codes; the master library now
+        // uses the granular verdict codes (assumption statuses, Nilsson
+        // scale points, means bands, pace readings). These segments are
+        // seed-generated, never user-authored, so when any of them still
+        // carries a flat step code the whole `seg-coh-` family is rebuilt
+        // from the current seed.
+        const FLAT_STEP_CODES = new Set(['coh-exante', 'coh-horizontal', 'coh-means', 'coh-evaluation']);
+        const staleCoherence = state.segments.some(
+          s => s.id.startsWith('seg-coh-') && FLAT_STEP_CODES.has(s.codeId),
+        );
+        const segments = staleCoherence
+          ? [
+              ...state.segments.filter(s => !s.id.startsWith('seg-coh-')),
+              ...seed.segments.filter(s => s.id.startsWith('seg-coh-')),
+            ]
+          : state.segments;
+        // Seeded in-text annotations (checklist evidence `seg-check-…`,
+        // coherence evidence `seg-coh-…`) are backfilled ONCE per family:
+        // only when the snapshot has none of that family at all. Re-merging
+        // per id would resurrect segments an analyst deliberately deleted.
+        const missingSegs = [
+          ...(segments.some(s => s.id.startsWith('seg-check-'))
+            ? []
+            : seed.segments.filter(s => s.id.startsWith('seg-check-'))),
+          ...(segments.some(s => s.id.startsWith('seg-coh-'))
+            ? []
+            : seed.segments.filter(s => s.id.startsWith('seg-coh-'))),
+        ];
+        // Same one-shot treatment for the seeded "Policy coherence — master
+        // library" project, so snapshots persisted before it shipped get it.
+        const missingProjects = state.projects.some(p => p.id === 'project-policy-coherence')
+          ? []
+          : seed.projects.filter(p => p.id === 'project-policy-coherence');
+        if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0 || staleCoherence) {
+          state = {
+            ...state,
+            codes: [...state.codes, ...missing],
+            segments: [...segments, ...missingSegs],
+            projects: [...state.projects, ...missingProjects],
+          };
+          persist();
+        }
         return;
       }
     }
@@ -420,6 +486,36 @@ function newId(prefix: string): string {
 
 function childrenOf(codes: CodeNode[], parentId: string | null): CodeNode[] {
   return codes.filter(c => c.parentId === parentId);
+}
+
+/** Re-anchor the seeded annotations — objective-checklist (`seg-check-…`)
+ *  and coherence-evidence (`seg-coh-…`) — for the given documents against
+ *  their CURRENT blocks. Called whenever a document's substrate is replaced
+ *  (lazy-loaded EUR-Lex body, PDF ingest): block ids are positional, so the
+ *  old anchors would dangle — and a policy that previously only had a
+ *  metadata stub gains its annotations the moment real text arrives.
+ *  Analyst-authored segments are untouched. */
+function reanchorChecklistSegments(
+  s: ContentAnalysisSnapshot,
+  docIds: Set<string>,
+): CodedSegment[] {
+  if (docIds.size === 0) return s.segments;
+  const codeNameById = new Map(s.codes.map(c => [c.id, c.name] as const));
+  const now = new Date().toISOString();
+  const kept = s.segments.filter(
+    seg =>
+      !(
+        (seg.id.startsWith('seg-check-') || seg.id.startsWith('seg-coh-')) &&
+        docIds.has(seg.documentId)
+      ),
+  );
+  const fresh = s.documents
+    .filter(d => docIds.has(d.id))
+    .flatMap(d => [
+      ...buildChecklistSegmentsFor(d, codeNameById, now),
+      ...buildCoherenceSegmentsFor(d, codeNameById, now),
+    ]);
+  return fresh.length || kept.length !== s.segments.length ? [...kept, ...fresh] : s.segments;
 }
 
 /** Returns the full descendant set (inclusive) of a code, across scopes. */
@@ -920,23 +1016,34 @@ export function useContentAnalysis() {
    *  the user has already ingested a PDF for that doc we preserve
    *  their work. */
   const applyPolicyBodies = useCallback((bodies: Record<string, { text: string }>) => {
-    update(s => ({
-      ...s,
-      documents: s.documents.map(d => {
+    update(s => {
+      const changed = new Set<string>();
+      const documents = s.documents.map(d => {
         const incoming = bodies[d.id]?.text;
         if (!incoming || incoming.trim().length < 200) return d;
+        // Already carrying exactly this body (bodies re-merge on every
+        // mount) — skip so checklist annotations an analyst deleted
+        // aren't resurrected by a no-op merge.
+        if (d.text === incoming) return d;
         // Skip if the doc already has PDF-sourced blocks with bboxes
         // (real ingestion), or real policy text ≥2× the incoming.
         const hasRealBlocks = Array.isArray(d.blocks) && d.blocks.some(b => b.bboxes.length > 0);
         if (hasRealBlocks) return d;
         const blocks = deriveBlocksFromText(d.id, incoming);
+        changed.add(d.id);
         return {
           ...d,
           text: incoming,
           blocks: blocks.length > 0 ? blocks : d.blocks,
+          staticBody: true,
         };
-      }),
-    }));
+      });
+      const next = { ...s, documents };
+      // The block ids just changed for every merged body — re-anchor the
+      // checklist annotations (and create them for policies that only now
+      // gained real text).
+      return { ...next, segments: reanchorChecklistSegments(next, changed) };
+    });
   }, []);
 
   /** Replace the blocks of a document with an AI-resegmented list,
@@ -1079,6 +1186,12 @@ export function useContentAnalysis() {
           versions,
         };
       }),
+    }));
+    // The ingest replaced the document's blocks — re-anchor its checklist
+    // annotations against the new substrate (the old block ids are gone).
+    update(s => ({
+      ...s,
+      segments: reanchorChecklistSegments(s, new Set([documentId])),
     }));
   }, []);
 

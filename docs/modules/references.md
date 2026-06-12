@@ -80,6 +80,29 @@ EndNote dump via `/api/references/library/backfill`. There is no
 scheduled ingestion for M·01; everything that matters is user-entered or
 user-imported.
 
+One batch helper exists for PDFs:
+[`scripts/fetch-reference-pdfs.mjs`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/fetch-reference-pdfs.mjs)
+resolves a legal open-access copy for every custom reference without one
+(curated source map → Unpaywall → OpenAlex → `citation_pdf_url`),
+downloads it and attaches it — to the `reference-pdfs` bucket when
+Supabase credentials are present, otherwise committed under
+`public/reference-pdfs/` and served same-origin. It runs on a GitHub
+Actions runner (`.github/workflows/fetch-reference-pdfs.yml`) because
+the dev sandbox's network policy blocks the scholarly APIs; the attach
+report lands in `docs/reference/reference-pdfs.md`. Paywalled references
+are never fetched — they stay listed in the report for manual upload.
+
+The bundled static library (~2,600 refs) has its own batch auditor:
+[`scripts/audit-static-references.mjs`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/scripts/audit-static-references.mjs)
+checks every DOI-carrying entry against CrossRef and resolves open-access
+PDF links via Unpaywall/OpenAlex. Because `references.ts` is
+auto-generated ("do not edit by hand"), results land in render-time
+sidecars — `src/data/reference-pdf-links.json` (PDF button + annotate
+viewer via the fetch-pdf proxy) and `src/data/reference-corrections.json`
+(safe volume/issue/pages fills) — plus a human-readable discrepancy
+report in `docs/reference/static-library-audit.md`. Runs on
+`.github/workflows/audit-static-references.yml`.
+
 ## Schema
 
 ```

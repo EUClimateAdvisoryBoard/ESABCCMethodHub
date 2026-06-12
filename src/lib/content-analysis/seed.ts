@@ -9,11 +9,15 @@
 
 import { policies } from '@/data/policies';
 import { POLICY_MASTER_TAGS } from './policy-master-tags';
+import { POLICY_OBJECTIVE_CHECKLISTS } from './policy-objective-checklist';
+import { coherenceAssessedIds } from './policy-coherence';
+import { buildCoherenceSegmentsFor, COHERENCE_CHILD_CODES } from './policy-coherence-evidence';
 import type {
   AiClassification,
   AnalysisDocument,
   Block,
   BlockKind,
+  CodedSegment,
   CodeNode,
   ContentAnalysisSnapshot,
   DocumentKind,
@@ -59,6 +63,8 @@ const ROOT_CODES: Array<{ id: string; name: string; description: string; color: 
   { id: 'root-finance',    name: 'Finance',    description: 'Budgets, green finance, disclosure, investment steering.', color: PALETTE.finance },
   { id: 'root-sector',     name: 'Sectoral policy', description: 'Sector-specific legislation (energy, transport, agriculture…).', color: PALETTE.energy },
   { id: 'root-crosscut',   name: 'Cross-cutting', description: 'Governance, monitoring, reporting, just-transition.', color: PALETTE.default },
+  { id: 'root-assessment', name: 'Objective–delivery checklist', description: 'Assessment criteria: can the act deliver its own stated objective? (ESABCC-style consistency check, Climate Law Arts. 5–7).', color: '#0F766E' },
+  { id: 'root-coherence',  name: 'Policy coherence (beta)', description: 'Four-step coherence model over the policy space: ① ex-ante design vs world development, ② coherence across all policy goals, ③ goals vs means of implementation, ④ policy evaluation (measuring policy change and outcomes). Steps ③–④ derive from the objective–delivery checklist.', color: '#6D28D9' },
 ];
 
 const DOMAIN_TO_ROOT: Record<string, { rootId: string; color: string }> = {
@@ -184,6 +190,96 @@ function inferBlockKind(text: string): BlockKind {
   if (text.length < 90 && /^\d+\s*\/\s*\d+\s*$/.test(text.trim())) return 'footer';
   if (/^Page\s+\d+/i.test(text) || /^OJ\b/.test(text)) return 'footer';
   return 'paragraph';
+}
+
+// ── Checklist verdicts as in-text annotations ──────────────────────────────
+// Every objective-checklist rationale cites the article / recital it rests
+// on (e.g. "Art. 4 sets binding -55% …"). Where the policy ships with real
+// legal text, that citation is resolved to its block and seeded as a
+// master-library coded segment — so the workbench shows the checklist
+// evidence as in-text highlights under the `check-*` codes, with the
+// verdict + rationale as the tag comment. Deterministic ids (`seg-check-…`)
+// keep the seed stable across browsers and let the store's hydrate
+// migration backfill them into older persisted snapshots.
+
+const CHECKLIST_VERDICT_LABEL: Record<string, string> = {
+  met: 'Met',
+  partial: 'Partial',
+  'not-met': 'Not met',
+  'not-applicable': 'N/A',
+};
+
+/** The first article / recital a rationale cites that exists in the blocks.
+ *  When the citation resolves to a bare heading line ("Article 6 — …"), the
+ *  anchor extends to the article's first substantive paragraph so the
+ *  highlight covers evidence, not just a title. */
+function findCitedBlock(blocks: Block[], rationale: string): Block | undefined {
+  const substantive = (hit: Block): Block => {
+    if (hit.text.length >= 160) return hit;
+    const next = blocks.find(b => b.order === hit.order + 1);
+    // Prefer the following body paragraph over a short heading — unless the
+    // next block opens another article/heading (an empty article).
+    if (next && next.kind !== 'article' && next.kind !== 'heading' && next.text.length > hit.text.length) {
+      return next;
+    }
+    return hit;
+  };
+  // "Art. 4", "Arts. 6-7", "Article 10a", "Art. 4(2)(d)" …
+  const artRefs = [...rationale.matchAll(/Art(?:icle)?s?\.?\s*(\d+[a-z]?)/gi)].map(m =>
+    m[1].toLowerCase(),
+  );
+  for (const ref of artRefs) {
+    const re = new RegExp(`^Article\\s+${ref}\\b`, 'i');
+    const hit = blocks.find(b => b.kind === 'article' && re.test(b.text));
+    if (hit) return substantive(hit);
+  }
+  // "recital 3" → recital blocks start "(3) …".
+  const recRefs = [...rationale.matchAll(/recitals?\s+(\d+)/gi)].map(m => m[1]);
+  for (const ref of recRefs) {
+    const hit = blocks.find(b => b.kind === 'recital' && b.text.startsWith(`(${ref})`));
+    if (hit) return hit;
+  }
+  return undefined;
+}
+
+/** In-text checklist annotations for one policy document, anchored against
+ *  its CURRENT blocks. Pure: called at seed time for the shipped texts, and
+ *  again by the store whenever a document's substrate changes (lazy-loaded
+ *  EUR-Lex bodies, PDF ingestion) so the anchors never go stale and every
+ *  policy with real text gets its annotations. */
+export function buildChecklistSegmentsFor(
+  doc: AnalysisDocument,
+  codeNameById: Map<string, string>,
+  now: string,
+): CodedSegment[] {
+  const entries = POLICY_OBJECTIVE_CHECKLISTS[doc.id];
+  if (!entries || !doc.blocks || doc.blocks.length === 0) return [];
+  // Only anchor into real legal text — highlighting the synthesized metadata
+  // stub would be meaningless.
+  if (!doc.blocks.some(b => b.kind === 'article')) return [];
+  const out: CodedSegment[] = [];
+  for (const e of entries) {
+    if (e.verdict === 'not-applicable') continue;
+    const block = findCitedBlock(doc.blocks, e.rationale);
+    if (!block) continue;
+    // Cap very long articles so the segment list stays readable; offsets are
+    // block-relative (`blockId` is set), so the slice stays anchored.
+    const quote = block.text.length > 600 ? block.text.slice(0, 600) : block.text;
+    out.push({
+      id: `seg-check-${doc.id}-${e.codeId}`,
+      documentId: doc.id,
+      codeId: e.codeId,
+      blockId: block.id,
+      startChar: 0,
+      endChar: quote.length,
+      text: quote,
+      note: `${codeNameById.get(e.codeId) ?? e.codeId}: ${CHECKLIST_VERDICT_LABEL[e.verdict]} — ${e.rationale}`,
+      noteAuthor: 'AI checklist assessment',
+      projectId: null,
+      createdAt: now,
+    });
+  }
+  return out;
 }
 
 export function buildSeedSnapshot(): ContentAnalysisSnapshot {
@@ -580,6 +676,53 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     { id: 'code-env-soil',        parentId: 'code-environment',  name: 'Soil health',              description: 'Soil strategy, soil monitoring.',                     color: PALETTE.forest,      scope: 'master', createdAt: now },
     { id: 'code-env-noise',       parentId: 'code-environment',  name: 'Noise',                    description: 'Environmental noise directive.',                      color: PALETTE.ecology,     scope: 'master', createdAt: now },
     { id: 'code-env-light',       parentId: 'code-environment',  name: 'Light pollution',          description: 'Astronomical & ecological impacts.',                  color: PALETTE.ecology,     scope: 'master', createdAt: now },
+
+    // ── Objective–delivery checklist ─────────────────────────────────
+    // Assessment criteria, not thematic codes: each code is one question
+    // in a structured "can this act deliver its own stated objective?"
+    // review, mirroring the ESABCC consistency assessments mandated by
+    // Climate Law Arts. 5–7 (incl. consistency with climate neutrality
+    // and with ensuring progress on adaptation). The description is the
+    // rubric an assessor applies. Per-policy verdicts (met / partial /
+    // not met / n.a.) live in policy-objective-checklist.ts; annotators
+    // can also apply these codes to text segments to pin the evidence.
+    { id: 'check-objective',      parentId: 'root-assessment',   name: 'Objective clearly stated', description: 'Met when the act states a specific, verifiable objective (subject-matter article / recitals), not just broad aims.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-target-quant',   parentId: 'root-assessment',   name: 'Quantified targets',       description: 'Met when numeric targets with baseline and date operationalise the objective.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-timeline',       parentId: 'root-assessment',   name: 'Timeline & milestones',    description: 'Met when dated milestones / deadlines pace delivery of the objective.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-instruments',    parentId: 'root-assessment',   name: 'Instruments match objective', description: 'Met when binding obligations or mechanisms are plausibly sufficient to deliver the stated objective — the core objective–content consistency test.', color: '#B45309', scope: 'master', createdAt: now },
+    { id: 'check-coverage',       parentId: 'root-assessment',   name: 'Coverage & loopholes',     description: 'Met when scope covers what the objective requires and exemptions / derogations do not undermine it.', color: '#B45309', scope: 'master', createdAt: now },
+    { id: 'check-monitoring',     parentId: 'root-assessment',   name: 'Monitoring & reporting',   description: 'Met when MRV / reporting provisions can show whether the objective is on track.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-enforcement',    parentId: 'root-assessment',   name: 'Enforcement & correction', description: 'Met when penalties or corrective mechanisms kick in if delivery is off-track.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-financing',      parentId: 'root-assessment',   name: 'Financing identified',     description: 'Met when resources / funding commensurate with the objective are identified.', color: '#0F766E', scope: 'master', createdAt: now },
+    { id: 'check-cons-neutrality',parentId: 'root-assessment',   name: 'Consistency: climate neutrality', description: 'Met when the act is consistent with (or actively contributes to) the 2050 climate-neutrality objective — Climate Law Arts. 2, 6–7.', color: '#1B7339', scope: 'master', createdAt: now },
+    { id: 'check-cons-adaptation',parentId: 'root-assessment',   name: 'Consistency: adaptation',  description: 'Met when the act is consistent with ensuring progress on adaptation and climate resilience (climate-proofing) — Climate Law Art. 5.', color: '#0E7490', scope: 'master', createdAt: now },
+    { id: 'check-just-transition',parentId: 'root-assessment',   name: 'Just-transition safeguards', description: 'Met when distributional impacts of pursuing the objective are assessed and cushioned.', color: '#9333EA', scope: 'master', createdAt: now },
+    { id: 'check-review',         parentId: 'root-assessment',   name: 'Review & ratchet',         description: 'Met when a scheduled review can strengthen the act if the objective is at risk.', color: '#0F766E', scope: 'master', createdAt: now },
+
+    // ── Policy coherence (beta) ──────────────────────────────────────
+    // The four steps of the beta coherence model, as taggable codes: a
+    // SYSTEM-level lens (between policies, vs the world, vs the evidence)
+    // complementing the per-act checklist above. Steps ③ and ④ derive
+    // their verdicts from the `check-*` criteria (see
+    // policy-coherence.ts) — these codes exist so annotators can pin
+    // coherence evidence to text segments, not to re-score the criteria.
+    { id: 'coh-exante',     parentId: 'root-coherence', name: '① Ex ante vs world development', description: 'Assumption-Based Planning (Dewar et al., RAND): evidence that a falsifiable design assumption of the act is valid, under pressure or violated, tested via a signpost indicator against an explicit violation criterion.', color: '#6D28D9', scope: 'master', createdAt: now },
+    { id: 'coh-horizontal', parentId: 'root-coherence', name: '② Across policy goals',          description: 'Goal interactions on the Nilsson et al. (2016) seven-point scale (−3 cancelling … +3 indivisible), with the interaction mechanism and the legal provisions that create it.', color: '#7C3AED', scope: 'master', createdAt: now },
+    { id: 'coh-means',      parentId: 'root-coherence', name: '③ Goals vs means',               description: 'Goals/means congruence (Howlett & Rayner): whether instruments, coverage, enforcement, financing and timeline are commensurate with the goals — scored via the objective–delivery checklist.', color: '#8B5CF6', scope: 'master', createdAt: now },
+    { id: 'coh-evaluation', parentId: 'root-coherence', name: '④ Evaluation: change & outcomes', description: 'Distance-to-target evaluation (EEA Trends & Projections method): observed recent pace ÷ required pace against the act’s target, plus MRV/review machinery and policy-change facts.', color: '#A78BFA', scope: 'master', createdAt: now },
+    // Granular verdict codes under each step — assumption statuses, the full
+    // seven-point Nilsson scale, means-coherence bands and pace readings —
+    // defined next to the coherence model so the taxonomy and the seeded
+    // annotations can never drift apart (policy-coherence-evidence.ts).
+    ...COHERENCE_CHILD_CODES.map(c => ({
+      id: c.id,
+      parentId: c.parentId,
+      name: c.name,
+      description: c.description,
+      color: c.color,
+      scope: 'master' as const,
+      createdAt: now,
+    })),
   ];
 
   const codes: CodeNode[] = [...rootCodes, ...domainCodes, ...handPicked];
@@ -648,6 +791,20 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
   // when the user adds a new paper from the Word add-in.
   const documents: AnalysisDocument[] = policyDocs;
 
+  // In-text checklist annotations: anchor each verdict's cited article /
+  // recital as a master-library segment in the policies that ship full text.
+  const codeNameById = new Map(codes.map(c => [c.id, c.name] as const));
+  const checklistSegments = documents.flatMap(d =>
+    buildChecklistSegmentsFor(d, codeNameById, now),
+  );
+
+  // In-text coherence annotations: every curated coherence anchor (verbatim
+  // provision quotes for steps ① ② ④) plus the derived ③/④ roll-ups, tagged
+  // under the `coh-*` master codes — the "policy coherence" master library.
+  const coherenceSegments = documents.flatMap(d =>
+    buildCoherenceSegmentsFor(d, codeNameById, now),
+  );
+
   // ── Projects ─────────────────────────────────────────────────────────
   const projects: Project[] = [
     {
@@ -672,13 +829,26 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
       createdAt: now,
       updatedAt: now,
     },
+    {
+      id: 'project-policy-coherence',
+      name: 'Policy coherence — master library',
+      description:
+        'The four-step coherence assessment as a tagged corpus: every grade pinned to the acts’ own text under granular verdict codes — assumption valid / under pressure / violated, the seven-point Nilsson interaction scale, means-coherence bands and pace readings — plus the derived goals↔means and evaluation-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
+      mode: 'horizontal',
+      masterCodeSelection: [],
+      documentAllowList: coherenceAssessedIds().filter(id =>
+        policies.some(p => p.id === id),
+      ),
+      createdAt: now,
+      updatedAt: now,
+    },
   ];
 
   return {
     version: 1,
     codes,
     documents,
-    segments: [],
+    segments: [...checklistSegments, ...coherenceSegments],
     projects,
     suggestions: [],
     summaries: [],

@@ -1,0 +1,69 @@
+name: Audit static reference library
+
+# Runs scripts/audit-static-references.mjs on a GitHub-hosted runner (which
+# can reach CrossRef / Unpaywall / OpenAlex, unlike the restricted dev
+# sandbox), then commits the sidecar files + audit report back to the branch
+# the workflow is triggered from.
+#
+# ~1,055 DOI lookups at polite pacing ≈ 15–20 minutes on a cold cache; the
+# scripts/.cache file makes re-runs cheap. The commit-back uses GITHUB_TOKEN,
+# which (by GitHub design) does not re-trigger this workflow; the path filter
+# keeps it from firing on the generated outputs too.
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/busy-ritchie-n4vl3l
+    paths:
+      - scripts/audit-static-references.mjs
+      - .github/workflows/audit-static-references.yml
+
+permissions:
+  contents: write
+
+jobs:
+  audit-and-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      # The script only uses Node built-ins + global fetch, so no install step.
+      - name: Audit static references against CrossRef + resolve OA PDFs
+        run: node scripts/audit-static-references.mjs
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [ -n "$(git status --porcelain src/data/reference-pdf-links.json src/data/reference-corrections.json docs/reference/static-library-audit.md)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push updates to current branch
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/reference-pdf-links.json src/data/reference-corrections.json docs/reference/static-library-audit.md
+          git commit -m "chore: audit static reference library against CrossRef [automated]"
+          branch="${GITHUB_REF#refs/heads/}"
+          for attempt in 1 2 3 4 5; do
+            if git push origin "HEAD:${branch}"; then
+              echo "Pushed on attempt ${attempt}."
+              exit 0
+            fi
+            echo "Push rejected (attempt ${attempt}); rebasing onto origin/${branch} and retrying."
+            git pull --rebase origin "${branch}"
+            sleep $((attempt * 3))
+          done
+          echo "::error::Failed to push automated audit update after 5 attempts."
+          exit 1

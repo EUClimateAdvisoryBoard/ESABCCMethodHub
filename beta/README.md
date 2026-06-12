@@ -46,6 +46,9 @@ Recommendations modules made exactly this journey: they were promoted out of
 | `project-management/`         | Project Management   | Phase / Gantt board against the Project Manual; UX iterating.      |
 | `national-climate-policies/`  | National Level Climate Policies | EU-27 laws & policies from climate-laws.org (CC-BY 4.0); in-module refresh via Climate Policy Radar API + Supabase snapshot. |
 | `transition-panorama/`        | EU Transition Panorama | Panorama-Sweden-style radial explorer of EU emissions vs the AR6-based 2040 advice scenarios; will be re-based on the AR7 scenario database once published. |
+| `transition-stories/`         | Transition Stories | Cinematic scroll-driven data essay on real ESABCC report photography: scrollytelling pathway chart, parallax chapters, sector ledger. Imagery sourced from the published report covers. |
+| `transition-stories-2/`       | Transition Stories 2 — Mind the Gap | Cinematic, oryzo.ai-inspired scroll experience for the policy gap report (*Towards EU climate neutrality*, 2024): inertia-smoothed scroll-shaded gap chart, clip-path photo reveals, living SVG scenes (water, embers, cattle, cyclist) over real stock photography (Pexels), sector gap ledger, the 13 key recommendations. |
+| `policy-coherence/`           | Policy Coherence Assessment | Rule-based four-step coherence model: Assumption-Based Planning audits (RAND), Nilsson et al. (2016) seven-point goal-interaction scores, goals/means congruence derived from the objective–delivery checklist, and EEA-style distance-to-target pace ratios. Observations are AI-collected baselines (snapshot mid-2026) pending source re-verification. |
 
 ## Promoting a beta module to production
 

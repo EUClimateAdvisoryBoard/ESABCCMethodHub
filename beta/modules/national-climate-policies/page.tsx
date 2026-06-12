@@ -18,16 +18,44 @@
  * it — no local tooling needed. The same refresh exists as a CLI for
  * development: `node scripts/fetch-climate-laws.mjs`.
  *
- * Features: per-country coverage grid, search, country / category /
- * sector / response filters, sortable list grouped by member state, and
- * deep links to the source document PDF and climate-laws.org.
+ * Features: EU-27 choropleth (framework-law status, catalogue depth,
+ * legislative share, adaptation attention, recency) with click-to-filter,
+ * an EU-level instrument layer (MethodHub Policy Navigator + supplement,
+ * shown as the "European Union" geography alongside the member states),
+ * a solution-space gap matrix flagging areas where the EU and/or member
+ * states are silent, a "deep insights" panel computed live from the
+ * catalogue, a cluster-analysis section (pre-computed K-Means policy
+ * families + Ward country typology, see `analysis/`; clicking a family
+ * filters the catalogue), chart.js illustrations (adoption timeline, geography mix,
+ * sector coverage, instrument types), per-country coverage grid, search,
+ * country / category / sector / response filters, sortable list grouped
+ * by geography, and deep links to the source document PDF and
+ * climate-laws.org / EUR-Lex.
  */
 
+import dynamic from 'next/dynamic';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import NationalClimatePoliciesCharts from '@/components/NationalClimatePoliciesCharts';
+import ClimateSolutionSpace from '@/components/ClimateSolutionSpace';
 import { useAuth } from '@/lib/auth-context';
 import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
+import { computeCountryMetrics, computeInsights, PolicyInsight } from '@/lib/climate-policy-insights';
+import { euLevelPolicies, EU_GEOGRAPHY_NAME } from '@/lib/eu-climate-policies';
+import ClusterAnalysisPanel, { ClusterDataset } from './ClusterAnalysisPanel';
+
+const NationalClimatePoliciesMap = dynamic(
+  () => import('@/components/NationalClimatePoliciesMap'),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[540px] rounded-lg border border-grey-200 bg-grey-50 flex items-center justify-center text-tertiary text-sm">
+        Loading map…
+      </div>
+    ),
+  },
+);
 
 const CATEGORY_COLORS: Record<string, string> = {
   Law: '#1B5E20',    // legislative — passed by parliament
@@ -59,6 +87,11 @@ export default function NationalClimatePoliciesPage() {
   const [sortKey, setSortKey] = useState<SortKey>('newest');
   const [visible, setVisible] = useState(80);
 
+  // Pre-computed cluster analysis (committed artifact; see analysis/).
+  // Absence of the file just hides the section — the module works without it.
+  const [clusterData, setClusterData] = useState<ClusterDataset | null>(null);
+  const [cluster, setCluster] = useState<number | 'all'>('all');
+
   const load = useCallback(async () => {
     // Prefer the server-side refresh stored in Supabase; fall back to the
     // committed snapshot so the page also works without a database.
@@ -83,6 +116,10 @@ export default function NationalClimatePoliciesPage() {
     load()
       .catch((e) => setError(e instanceof Error ? e.message : 'Failed to load'))
       .finally(() => setLoading(false));
+    fetch('/data/national-climate-policies-clusters.json')
+      .then((res) => (res.ok ? res.json() : null))
+      .then((json) => setClusterData(json as ClusterDataset | null))
+      .catch(() => setClusterData(null));
   }, [load]);
 
   const handleRefresh = useCallback(async () => {
@@ -114,36 +151,46 @@ export default function NationalClimatePoliciesPage() {
     }
   }, [user, requireAuth, load]);
 
+  // Member-state catalogue (climate-laws.org) + the in-repo EU-level layer,
+  // merged so the EU shows up as a 28th geography in the list and filters.
   const policies = useMemo(() => data?.policies ?? [], [data]);
+  const euPolicies = useMemo(() => euLevelPolicies(), []);
+  const allPolicies = useMemo(() => [...euPolicies, ...policies], [euPolicies, policies]);
 
   const countries = useMemo(() => {
     const map = new Map<string, { name: string; count: number }>();
-    policies.forEach((p) => {
+    allPolicies.forEach((p) => {
       const cur = map.get(p.countryCode);
       if (cur) cur.count += 1;
       else map.set(p.countryCode, { name: p.countryName, count: 1 });
     });
     return Array.from(map.entries())
       .map(([code, v]) => ({ code, ...v }))
-      .sort((a, b) => a.name.localeCompare(b.name));
-  }, [policies]);
+      .sort((a, b) =>
+        a.name === EU_GEOGRAPHY_NAME ? -1 : b.name === EU_GEOGRAPHY_NAME ? 1 : a.name.localeCompare(b.name),
+      );
+  }, [allPolicies]);
 
   const sectors = useMemo(
-    () => Array.from(new Set(policies.flatMap((p) => p.sectors))).sort(),
-    [policies],
+    () => Array.from(new Set(allPolicies.flatMap((p) => p.sectors))).sort(),
+    [allPolicies],
   );
   const responses = useMemo(
-    () => Array.from(new Set(policies.flatMap((p) => p.responses))).sort(),
-    [policies],
+    () => Array.from(new Set(allPolicies.flatMap((p) => p.responses))).sort(),
+    [allPolicies],
   );
 
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    const list = policies.filter((p) => {
+    const list = allPolicies.filter((p) => {
       if (country !== 'all' && p.countryCode !== country) return false;
       if (category !== 'all' && p.category !== category) return false;
       if (sector !== 'all' && !p.sectors.includes(sector)) return false;
       if (response !== 'all' && !p.responses.includes(response)) return false;
+      // Cluster assignments only exist for the committed snapshot; entries
+      // unknown to the analysis (EU layer, post-refresh additions) drop out
+      // of a cluster-filtered view.
+      if (cluster !== 'all' && clusterData?.assignments[p.id] !== cluster) return false;
       if (!q) return true;
       return (
         p.title.toLowerCase().includes(q) ||
@@ -159,13 +206,27 @@ export default function NationalClimatePoliciesPage() {
     if (sortKey === 'oldest') list.sort(byDate);
     if (sortKey === 'title') list.sort((a, b) => a.title.localeCompare(b.title));
     return list;
-  }, [policies, search, country, category, sector, response, sortKey]);
+  }, [allPolicies, search, country, category, sector, response, sortKey, cluster, clusterData]);
 
   const stats = useMemo(() => {
-    const laws = policies.filter((p) => p.category === 'Law').length;
-    const pols = policies.filter((p) => p.category === 'Policy').length;
-    return { total: policies.length, laws, policies: pols, countries: countries.length };
-  }, [policies, countries]);
+    const laws = allPolicies.filter((p) => p.category === 'Law').length;
+    const pols = allPolicies.filter((p) => p.category === 'Policy').length;
+    const msCountries = countries.filter((c) => c.code !== 'EU').length;
+    return { total: allPolicies.length, laws, policies: pols, countries: msCountries };
+  }, [allPolicies, countries]);
+
+  // Per-country metrics drive the choropleth; the narrative insights are
+  // recomputed from the live catalogue so they survive every refresh.
+  const countryMetrics = useMemo(() => computeCountryMetrics(policies), [policies]);
+  const insights = useMemo(
+    () => computeInsights(policies, countryMetrics),
+    [policies, countryMetrics],
+  );
+
+  const scopeLabel =
+    country === 'all'
+      ? 'EU-27'
+      : countries.find((c) => c.code === country)?.name ?? country;
 
   // Group the visible slice by member state so the list reads country by
   // country (mirrors the EU Climate Councils module).
@@ -194,9 +255,11 @@ export default function NationalClimatePoliciesPage() {
             National Level Climate Policies
           </h1>
           <p className="mt-2 text-sm sm:text-base text-tertiary max-w-3xl">
-            The national climate laws and policies of all 27 EU member states,
-            from framework climate acts to sectoral strategies and decrees.
-            Data:{' '}
+            The climate laws and policies of all 27 EU member states — from
+            framework climate acts to sectoral strategies and decrees — side
+            by side with the EU-level instruments that frame them, plus a
+            solution-space gap analysis showing where the EU and/or member
+            states are silent. Member-state data:{' '}
             <a
               href="https://climate-laws.org/"
               target="_blank"
@@ -253,7 +316,7 @@ export default function NationalClimatePoliciesPage() {
               <StatCard
                 label="Laws & policies"
                 value={stats.total.toString()}
-                sub={`Across ${stats.countries} member states`}
+                sub={`${stats.countries} member states + EU level`}
                 active={category === 'all'}
                 onClick={() => { setCategory('all'); resetPaging(); }}
               />
@@ -279,10 +342,77 @@ export default function NationalClimatePoliciesPage() {
               />
             </section>
 
-            {/* Coverage grid — one chip per member state */}
+            {/* Choropleth — one polygon per member state, metric switchable */}
+            <section className="mb-6">
+              <h2 className="text-lg font-semibold text-tertiary-dark mb-2">Map</h2>
+              <NationalClimatePoliciesMap
+                metrics={countryMetrics}
+                selected={country}
+                onSelect={(code) => { setCountry(code); resetPaging(); }}
+              />
+            </section>
+
+            {/* Deep insights — recomputed from the catalogue on every load */}
+            <section className="mb-6">
+              <div className="flex items-baseline justify-between mb-2">
+                <h2 className="text-lg font-semibold text-tertiary-dark">Deep insights</h2>
+                <span className="text-[11px] text-tertiary">
+                  Computed live from the {stats.total}-instrument catalogue — click a country chip to filter
+                </span>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+                {insights.map((ins) => (
+                  <InsightCard
+                    key={ins.id}
+                    insight={ins}
+                    onCountryClick={(code) => { setCountry(code); resetPaging(); }}
+                  />
+                ))}
+              </div>
+            </section>
+
+            {/* Solution space — EU vs member-state gap matrix */}
+            <section className="mb-6">
+              <div className="flex items-baseline justify-between mb-2">
+                <h2 className="text-lg font-semibold text-tertiary-dark">
+                  Solution space &amp; policy gaps
+                </h2>
+                <span className="text-[11px] text-tertiary">
+                  Where the EU and the member states act — and where nobody does
+                </span>
+              </div>
+              <ClimateSolutionSpace
+                msPolicies={policies}
+                euPolicies={euPolicies}
+                onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
+              />
+            </section>
+
+            {/* Cluster analysis — pre-computed K-Means/Ward artifact */}
+            {clusterData && (
+              <section className="mb-6">
+                <div className="flex items-baseline justify-between mb-2">
+                  <h2 className="text-lg font-semibold text-tertiary-dark">
+                    Cluster analysis
+                  </h2>
+                  <span className="text-[11px] text-tertiary">
+                    Unsupervised structure of the {clusterData.snapshotDate} snapshot — 12
+                    policy families, {clusterData.countryGroups.length} country types
+                  </span>
+                </div>
+                <ClusterAnalysisPanel
+                  data={clusterData}
+                  selectedCluster={cluster}
+                  onSelectCluster={(id) => { setCluster(id); resetPaging(); }}
+                  onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
+                />
+              </section>
+            )}
+
+            {/* Coverage grid — one chip per geography */}
             <section className="mb-6">
               <h2 className="text-lg font-semibold text-tertiary-dark mb-2">
-                Coverage by member state
+                Coverage by member state &amp; EU level
               </h2>
               <div className="flex flex-wrap gap-1.5">
                 {countries.map((c) => (
@@ -350,6 +480,31 @@ export default function NationalClimatePoliciesPage() {
                 <option value="oldest">Oldest first</option>
                 <option value="title">Title A–Z</option>
               </select>
+              {cluster !== 'all' && clusterData && (
+                <button
+                  onClick={() => { setCluster('all'); resetPaging(); }}
+                  title="Clear the cluster filter"
+                  className="px-3 py-2 text-xs font-medium rounded-full bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition"
+                >
+                  Family: {clusterData.clusters.find((c) => c.id === cluster)?.label ?? cluster} ✕
+                </button>
+              )}
+            </section>
+
+            {/* Illustrations — follow the active filters (except the
+                member-state mix, which keeps the EU-27 reference) */}
+            <section className="mb-6">
+              <h2 className="text-lg font-semibold text-tertiary-dark mb-2">
+                Illustrations
+                <span className="ml-2 text-xs font-normal text-tertiary">
+                  {scopeLabel} · {filtered.length} instruments in scope
+                </span>
+              </h2>
+              <NationalClimatePoliciesCharts
+                policies={allPolicies}
+                filtered={filtered}
+                scopeLabel={scopeLabel}
+              />
             </section>
 
             {/* List grouped by country */}
@@ -397,7 +552,9 @@ export default function NationalClimatePoliciesPage() {
               >
                 climate-laws.org
               </a>{' '}
-              before citing.
+              before citing. EU-level instruments are curated in-repo (MethodHub
+              Policy Navigator + supplement) and link to the authoritative
+              EUR-Lex record.
             </p>
           </>
         )}
@@ -435,6 +592,50 @@ function StatCard({
       <div className="text-2xl font-bold text-tertiary-dark mt-0.5">{value}</div>
       <div className="text-[11px] text-tertiary mt-1 leading-tight">{sub}</div>
     </button>
+  );
+}
+
+const INSIGHT_TONE_ACCENTS: Record<PolicyInsight['tone'], string> = {
+  green: 'border-l-[#1B5E20]',
+  amber: 'border-l-[#F9A825]',
+  red: 'border-l-[#C62828]',
+  neutral: 'border-l-primary',
+};
+
+function InsightCard({
+  insight: ins,
+  onCountryClick,
+}: {
+  insight: PolicyInsight;
+  onCountryClick: (code: string) => void;
+}) {
+  const shown = ins.countries?.slice(0, 8) ?? [];
+  const more = (ins.countries?.length ?? 0) - shown.length;
+  return (
+    <div
+      className={`bg-white border border-grey-200 border-l-4 ${INSIGHT_TONE_ACCENTS[ins.tone]} rounded p-3`}
+    >
+      <div className="text-2xl font-bold text-tertiary-dark">{ins.headline}</div>
+      <div className="text-xs font-semibold text-tertiary-dark mt-0.5">{ins.title}</div>
+      <p className="text-[12px] text-tertiary leading-snug mt-1.5">{ins.body}</p>
+      {shown.length > 0 && (
+        <div className="flex flex-wrap gap-1 mt-2">
+          {shown.map((c) => (
+            <button
+              key={c.code}
+              onClick={() => onCountryClick(c.code)}
+              title={`Filter the catalogue to ${c.name}`}
+              className="text-[10px] px-1.5 py-0.5 rounded-full border border-grey-200 text-tertiary hover:border-primary hover:text-primary transition"
+            >
+              {c.name}
+            </button>
+          ))}
+          {more > 0 && (
+            <span className="text-[10px] px-1.5 py-0.5 text-tertiary">+{more} more</span>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -493,7 +694,7 @@ function PolicyCard({ policy: p }: { policy: ClimatePolicy }) {
       )}
 
       <div className="flex flex-wrap gap-3 items-center text-[11px]">
-        {p.documentUrl && (
+        {p.documentUrl && p.documentUrl !== p.climateLawsUrl && (
           <a
             href={p.documentUrl}
             target="_blank"
@@ -509,7 +710,7 @@ function PolicyCard({ policy: p }: { policy: ClimatePolicy }) {
           rel="noopener noreferrer"
           className="text-primary hover:underline"
         >
-          climate-laws.org ↗
+          {p.climateLawsUrl.includes('climate-laws.org') ? 'climate-laws.org' : 'EUR-Lex'} ↗
         </a>
         {p.instruments.length > 0 && (
           <span className="ml-auto text-tertiary/70 truncate max-w-[50%]" title={p.instruments.join(', ')}>

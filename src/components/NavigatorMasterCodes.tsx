@@ -42,7 +42,12 @@ export default function NavigatorMasterCodes({
   activeCodeId,
   onCodeFilter,
 }: Props) {
-  const tagIds = POLICY_MASTER_TAGS[policyId] ?? [];
+  // Fulfilled checklist criteria (`check-*`) are real tags on the policy, but
+  // the chips stay thematic — the NavigatorObjectiveChecklist panel rendered
+  // directly below shows every criterion with its verdict and rationale.
+  const tagIds = (POLICY_MASTER_TAGS[policyId] ?? []).filter(
+    id => !id.startsWith('check-'),
+  );
   const { isConfirmed, confirm, revert, isSignedIn, busyKey, confirmed } =
     useMasterTagStatus(policyId);
 

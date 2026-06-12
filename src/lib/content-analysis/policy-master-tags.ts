@@ -19,6 +19,12 @@
 // Regenerate with: node scripts/retag-policies.mjs prepare → tag → compile
 // ---------------------------------------------------------------------------
 
+// Fulfilled objective-checklist criteria are merged in as tags below (after
+// the generated block) — see "Checklist criteria as policy tags".
+// `policy-objective-checklist.ts` only imports a *type* from this module, so
+// this runtime import is not circular.
+import { POLICY_OBJECTIVE_CHECKLISTS } from './policy-objective-checklist';
+
 /** Who put a tag on a policy: an AI agent, or a human who confirmed it. */
 export type TagOrigin = 'ai' | 'human';
 
@@ -1078,6 +1084,30 @@ export const POLICY_TAG_ASSIGNMENTS: Record<string, PolicyTagAssignment[]> = {
     { codeId: 'root-crosscut', origin: 'ai', confidence: 0.88, rationale: 'Cross-cutting access-to-justice mechanism covering over 60 EU directives including GDPR, energy, and financial services.' },
   ],
 };
+
+// ── Checklist criteria as policy tags ───────────────────────────────────
+// The objective–delivery checklist (policy-objective-checklist.ts) scores
+// every policy against the `check-*` criteria seeded under root-assessment.
+// A criterion a policy FULFILS is also a real tag on that policy — tag
+// present = criterion met (e.g. `check-cons-adaptation` on a policy means
+// "consistent with adaptation: met"). Partial / not-met verdicts are NOT
+// tags — a tag asserting an absence would be misleading — they surface in
+// the checklist panel and matrix instead. Merged here, before the flat
+// view below is derived, so every consumer (seed docs, policy-codes API,
+// workspace overlays, SLR filter) sees the checklist tags automatically.
+for (const [policyId, entries] of Object.entries(POLICY_OBJECTIVE_CHECKLISTS)) {
+  const list = (POLICY_TAG_ASSIGNMENTS[policyId] ??= []);
+  for (const e of entries) {
+    if (e.verdict !== 'met') continue;
+    if (list.some(a => a.codeId === e.codeId)) continue;
+    list.push({
+      codeId: e.codeId,
+      origin: 'ai',
+      confidence: e.confidence,
+      rationale: e.rationale,
+    });
+  }
+}
 
 /** Back-compat flat view: policy id → array of code ids. Derived from
  *  POLICY_TAG_ASSIGNMENTS so existing consumers (seed, navigator chips,
