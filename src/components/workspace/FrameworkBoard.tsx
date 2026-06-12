@@ -23,6 +23,7 @@ import {
   defaultFrameworkBoardAdvancedV1,
   defaultFrameworkBoardAdvancedV3,
   defaultFrameworkBoardPolicyGap2,
+  defaultFrameworkBoardScenarioCall,
   defaultFrameworkBoardEnergyTest,
   defaultFrameworkBoardV3,
   FRAMEWORK_INDICATOR_INDEX,
@@ -79,6 +80,9 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
   // 1:1 with the report figures, 'report' is the enhanced board.
   const pureDefault = useCallback(() => {
     if (version.id === 'advanced-v3') return defaultFrameworkBoardAdvancedV3();
+    // 'scenario-call' is a 'beta'-variant board with its own default, so it
+    // must resolve before the generic isBeta fallback.
+    if (version.id === 'scenario-call') return defaultFrameworkBoardScenarioCall();
     if (isAdvanced) return defaultFrameworkBoardAdvancedV1();
     if (isBeta) return defaultFrameworkBoardBeta();
     if (version.id === 'report-faithful') return defaultFrameworkBoardReport();

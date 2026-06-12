@@ -19,7 +19,9 @@ import {
   type IndicatorRef,
   type PolicyRef,
   type RiskKind,
+  type ScenarioMatch,
   type SectorFramework,
+  SCENARIO_MATCH_STATUS_LABEL,
 } from '@/data/sector-frameworks';
 import { useConnectors, type Edge } from './useConnectors';
 import { Tooltip } from '@/components/ui/Tooltip';
@@ -536,6 +538,83 @@ function PolicyTags({ policies }: { policies: PolicyRef[] }) {
   );
 }
 
+/**
+ * Badge for *system-change* indicators in the "Scenario call" flow chart
+ * version — chips that capture how the system itself is changing (structural
+ * shift, equity & climate justice, inclusive governance, ecosystem condition)
+ * rather than incremental progress toward a fixed objective. They complement
+ * the report's goal-linked progress indicators, following the monitoring-
+ * evaluation-and-learning guidance of the climate-resilient-development
+ * pathways literature (cf. Eriksen et al. 2024).
+ */
+function SystemChangeBadge() {
+  return (
+    <Tooltip
+      content={
+        <span className="block max-w-[240px]">
+          <span className="block font-semibold leading-snug">System-change indicator</span>
+          <span className="block text-[10px] opacity-90 mt-0.5">
+            Captures how the system itself is changing — structure, equity &amp; climate justice,
+            governance, ecosystem condition — rather than incremental progress toward a fixed
+            objective. Complements the goal-linked progress indicators (climate-resilient-development
+            monitoring literature; Eriksen et al. 2024).
+          </span>
+        </span>
+      }
+    >
+      <span className="shrink-0 inline-flex items-center rounded bg-teal-100 text-teal-700 px-1 text-[8px] font-bold uppercase leading-[1.4] tracking-wide cursor-help">
+        system
+      </span>
+    </Tooltip>
+  );
+}
+
+/**
+ * Scenario-match badge shown on indicator chips in the "Scenario call" flow
+ * chart version. Colour encodes how the indicator resolves against the call's
+ * reporting template: violet — standard IAMC variable (economy-wide IAM
+ * submissions cover it); sky — needs a sectoral-track submission; amber — a
+ * new reporting variable requested from submitting teams. The tooltip shows
+ * the matched variable, unit, targeted model families and — where results are
+ * already held — the cross-scenario corridor.
+ */
+function ScenarioBadge({ match }: { match: ScenarioMatch }) {
+  const style =
+    match.status === 'matched'
+      ? 'bg-violet-100 text-violet-700'
+      : match.status === 'sectoral-only'
+        ? 'bg-sky-100 text-sky-700'
+        : 'bg-amber-100 text-amber-700';
+  const label = match.status === 'matched' ? 'IAM ✓' : match.status === 'sectoral-only' ? 'sectoral' : 'requested';
+  return (
+    <Tooltip
+      content={
+        <span className="block max-w-[260px]">
+          <span className="block font-semibold leading-snug">{SCENARIO_MATCH_STATUS_LABEL[match.status]}</span>
+          <span className="block font-mono text-[10px] mt-0.5 break-words">{match.variable}</span>
+          <span className="block text-[10px] opacity-80">
+            {match.unit} · {match.scope} track
+          </span>
+          <span className="block text-[10px] opacity-80 mt-0.5">Models: {match.models.join(', ')}</span>
+          {(match.corridor2030 || match.corridor2050) && (
+            <span className="block text-[10px] mt-0.5">
+              Corridor: {match.corridor2030 ?? '—'} (2030) → {match.corridor2050 ?? '—'} (2050)
+            </span>
+          )}
+          {match.note && <span className="block text-[10px] opacity-80 mt-0.5">{match.note}</span>}
+        </span>
+      }
+    >
+      <span
+        className={`shrink-0 inline-flex items-center rounded px-1 text-[8px] font-bold uppercase leading-[1.4] tracking-wide cursor-help ${style}`}
+        aria-label={SCENARIO_MATCH_STATUS_LABEL[match.status]}
+      >
+        {label}
+      </span>
+    </Tooltip>
+  );
+}
+
 /** White indicator boxes that sit on the coloured cards (or beside the goal). */
 function ChipRow({
   refs,
@@ -644,6 +723,8 @@ function ChipRow({
                 </button>
               </Tooltip>
             )}
+            {r.systemChange && <SystemChangeBadge />}
+            {r.scenario && <ScenarioBadge match={r.scenario} />}
             {!linked && <span className="italic">no data</span>}
             {editing && (
               <button
