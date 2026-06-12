@@ -69,6 +69,47 @@ export interface PolicyRef {
   gap?: boolean;
 }
 
+/**
+ * How an indicator maps onto the reporting template of the IAM scenario
+ * submission call, used in the "Scenario call" flow chart version.
+ *   'matched'       — standard IAMC-template variable; every economy-wide IAM
+ *                     submission reports it out of the box.
+ *   'sectoral-only' — only the call's *sectoral* track (transport fleet,
+ *                     building stock, agro-economic models, …) resolves it.
+ *   'requested'     — not in the standard template; the call asks submitting
+ *                     teams to add this variable to their reporting.
+ */
+export type ScenarioMatchStatus = 'matched' | 'sectoral-only' | 'requested';
+
+export const SCENARIO_MATCH_STATUS_LABEL: Record<ScenarioMatchStatus, string> = {
+  matched: 'Matched — standard IAMC template variable',
+  'sectoral-only': 'Sectoral track — needs a sectoral-model submission',
+  requested: 'Requested — new reporting variable asked of submitting teams',
+};
+
+/**
+ * A scenario-modelling match attached to an indicator chip in the
+ * "Scenario call" flow chart version: the IAMC reporting-template variable the
+ * indicator maps to, which submission track of the call covers it, and — where
+ * results are already held in the MethodHub scenario snapshot — the
+ * cross-scenario corridor those results span.
+ */
+export interface ScenarioMatch {
+  /** IAMC reporting-template variable(s), e.g. "Capacity|Electricity|Solar|PV". */
+  variable: string;
+  unit: string;
+  /** Which submission track of the call reports this variable. */
+  scope: 'economy-wide' | 'sectoral' | 'both';
+  status: ScenarioMatchStatus;
+  /** Model families the call targets for this variable. */
+  models: string[];
+  /** Cross-scenario corridor of held results for 2030, e.g. "1 017–2 061". */
+  corridor2030?: string;
+  /** Cross-scenario corridor of held results for 2050. */
+  corridor2050?: string;
+  note?: string;
+}
+
 /** A white-box indicator chip attached to a framework node. */
 export interface IndicatorRef {
   /** Stable id for this chip within the board. */
@@ -86,6 +127,8 @@ export interface IndicatorRef {
    * built-in board strips these (see `defaultFrameworkBoardReport`).
    */
   enhanced?: boolean;
+  /** Scenario-modelling match for this indicator ("Scenario call" version only). */
+  scenario?: ScenarioMatch;
 }
 
 /**
@@ -2164,4 +2207,151 @@ export function defaultFrameworkBoardV3(): FrameworkBoard {
   base.risks = [...majorRisks, ...impacts, ...hazards];
   base.risksPosition = 'after-levers';
   return { version: FRAMEWORK_BOARD_VERSION, sectors: [base] };
+}
+
+// ── Scenario call — IAM-matched indicators ────────────────────────────────────
+//
+// The "Scenario call" board is the ESABCC report (default) framework with every
+// indicator chip matched to the reporting template of the open scenario
+// submission call: IAM and sectoral modelling teams submit economy-wide or
+// sectoral EU scenarios directly to the MethodHub, and each submitted run is
+// resolved against these variable mappings so every indicator carries a
+// scenario benchmark corridor next to its observed series.
+//
+// Variable names follow the common IAMC reporting template used by the ESABCC
+// Scenario Explorer / AR6 and ECEMF vintages. The corridors quoted on the six
+// sector goals are the *economy-wide total* GHG corridor across the 63 EU27
+// runs (9 model versions) already bundled in `src/data/scenarios.ts` — the
+// sectoral split of that corridor is computed once call submissions arrive.
+
+/** Short helper for scenario matches. */
+function sm(
+  variable: string,
+  unit: string,
+  scope: ScenarioMatch['scope'],
+  status: ScenarioMatchStatus,
+  models: string[],
+  extra?: Partial<ScenarioMatch>,
+): ScenarioMatch {
+  return { variable, unit, scope, status, models, ...extra };
+}
+
+// Model families targeted by the two tracks of the call.
+const IAMS = ['MESSAGEix-GLOBIOM', 'IMAGE', 'REMIND', 'GCAM-PR', 'WITCH'];
+const LAND_MODELS = ['GLOBIOM', 'MAgPIE', 'IMAGE'];
+const AGRI_MODELS = ['GLOBIOM', 'MAgPIE', 'CAPRI'];
+const TRANSPORT_MODELS = ['EDGE-Transport (REMIND)', 'IMAGE/TIMER transport', 'sectoral fleet models'];
+const BUILDING_MODELS = ['EDGE-Buildings (REMIND)', 'Invert-type stock models'];
+const INDUSTRY_MODELS = ['FORECAST-type industry models', 'REMIND', 'IMAGE'];
+
+// The economy-wide total GHG corridor across the runs held in scenarios.ts
+// (variable "Diagnostics|Harmonized|Emissions|Kyoto Gases (AR4)", EU27).
+const HELD_RUNS_NOTE =
+  'Context: across the 63 economy-wide EU27 runs already held in the MethodHub ' +
+  'snapshot, total net GHG span 1 017–2 061 Mt CO₂e/yr in 2030 and −1 459 to ' +
+  '+205 in 2050. The sectoral split is computed once call submissions arrive.';
+
+/**
+ * Per-indicator scenario matches, keyed by the indicator code drawn in the
+ * report figures (E1, T2, B5, …). Every chip of the report-faithful (default)
+ * board has an entry, so the whole board reads as fully matched.
+ */
+const SC_INDICATOR_SCENARIOS: Record<string, ScenarioMatch> = {
+  // ── Energy supply ──────────────────────────────────────────────────────────
+  E1: sm('Emissions|CO2|Energy|Supply', 'Mt CO2/yr', 'economy-wide', 'matched', IAMS, {
+    note: HELD_RUNS_NOTE,
+  }),
+  E2: sm('Secondary Energy|Electricity|Fossil / |Non-Biomass Renewables', 'EJ/yr (shares)', 'economy-wide', 'matched', IAMS),
+  E3: sm('Emissions|CO2|Energy|Supply|Electricity ÷ Secondary Energy|Electricity', 'g CO2/kWh (derived)', 'economy-wide', 'matched', IAMS),
+  O2: sm('Final Energy; Primary Energy', 'EJ/yr', 'economy-wide', 'matched', IAMS),
+  E6: sm('Emissions|CH4|Energy', 'Mt CH4/yr', 'economy-wide', 'matched', IAMS),
+  E4a: sm('Capacity|Electricity|Solar|PV', 'GW', 'economy-wide', 'matched', IAMS),
+  E4b: sm('Capacity|Electricity|Wind', 'GW', 'economy-wide', 'matched', IAMS),
+  E5: sm('Final Energy|Electricity ÷ Final Energy', '% (derived)', 'economy-wide', 'matched', IAMS),
+  // ── Industry ───────────────────────────────────────────────────────────────
+  I1: sm('Emissions|CO2|Energy|Demand|Industry + |Industrial Processes', 'Mt CO2/yr', 'economy-wide', 'matched', IAMS, {
+    note: HELD_RUNS_NOTE,
+  }),
+  I2: sm('Production|Steel; Production|Cement; Production|Chemicals', 'Mt/yr', 'both', 'matched', INDUSTRY_MODELS),
+  I4: sm('Emissions per unit production (steel, cement, chemicals)', 't CO2/t (derived)', 'sectoral', 'sectoral-only', INDUSTRY_MODELS),
+  I3: sm('Circular material use rate', '%', 'sectoral', 'requested', INDUSTRY_MODELS, {
+    note: 'Not in the standard IAMC template — the call asks industry-detail teams to report secondary-material shares.',
+  }),
+  I5: sm('Final Energy|Industry', 'EJ/yr', 'economy-wide', 'matched', IAMS),
+  I6: sm('Final Energy|Industry|Electricity / |Gases / |Liquids', 'EJ/yr (mix)', 'economy-wide', 'matched', IAMS),
+  I7: sm('Deployment of key low-carbon processes (H2-DRI, CCS, electrification)', 'count / Mt capacity', 'sectoral', 'requested', INDUSTRY_MODELS, {
+    note: 'Project counts are not a scenario output; the call requests reported technology-deployment capacities instead.',
+  }),
+  // ── Transport ──────────────────────────────────────────────────────────────
+  T1: sm('Emissions|CO2|Energy|Demand|Transportation', 'Mt CO2/yr', 'economy-wide', 'matched', IAMS, {
+    note: HELD_RUNS_NOTE,
+  }),
+  T2: sm('Energy Service|Transportation|Passenger; |Freight', 'bn pkm/yr; bn tkm/yr', 'economy-wide', 'matched', IAMS),
+  T3: sm('Energy Service|Transportation|Passenger|Road / |Rail / |Aviation', 'modal shares', 'sectoral', 'sectoral-only', TRANSPORT_MODELS),
+  T4: sm('GHG intensity of new vehicle registrations', 'g CO2/km', 'sectoral', 'sectoral-only', TRANSPORT_MODELS),
+  T5: sm('Sales share of zero-emission vehicles (new registrations)', '%', 'sectoral', 'sectoral-only', TRANSPORT_MODELS),
+  T6a: sm('Final Energy|Transportation|Liquids|Oil ÷ Final Energy|Transportation', '% (derived)', 'economy-wide', 'matched', IAMS),
+  T6b: sm('Final Energy|Transportation|Liquids|Biomass — food/feed-crop share', '%', 'sectoral', 'requested', [...LAND_MODELS], {
+    note: 'The biofuel feedstock-generation split is a new reporting variable requested from land-use teams.',
+  }),
+  // ── Buildings ──────────────────────────────────────────────────────────────
+  B1: sm('Emissions|CO2|Energy|Demand|Residential and Commercial', 'Mt CO2/yr', 'economy-wide', 'matched', IAMS, {
+    note: HELD_RUNS_NOTE,
+  }),
+  B2: sm('Final Energy|Residential and Commercial', 'EJ/yr', 'economy-wide', 'matched', IAMS),
+  B5: sm('Final Energy|Residential and Commercial|Electricity / |Gases / |Liquids', 'EJ/yr (mix)', 'economy-wide', 'matched', IAMS),
+  B4: sm('Energy Service|Residential and Commercial|Floor Space', 'bn m²', 'economy-wide', 'matched', [...IAMS.slice(0, 3), ...BUILDING_MODELS.slice(0, 1)]),
+  B3: sm('Renovation rate of the residential stock', '%/yr', 'sectoral', 'sectoral-only', BUILDING_MODELS),
+  B6: sm('Heat pump stock in service', 'million units', 'sectoral', 'sectoral-only', BUILDING_MODELS),
+  // ── Agriculture ────────────────────────────────────────────────────────────
+  A1: sm('Emissions|CH4|AFOLU|Agriculture + Emissions|N2O|AFOLU|Agriculture', 'Mt CO2e/yr', 'economy-wide', 'matched', [...IAMS.slice(0, 2), ...AGRI_MODELS.slice(0, 2)], {
+    note: HELD_RUNS_NOTE,
+  }),
+  A2: sm('Livestock emissions ÷ production (dairy, non-dairy cattle, swine)', 't CO2e/t (derived)', 'sectoral', 'sectoral-only', AGRI_MODELS),
+  A3: sm('Fertilizer Use|Nitrogen', 'Mt N/yr', 'both', 'matched', AGRI_MODELS),
+  'A3-NUE': sm('Nitrogen use efficiency (N output ÷ N input)', '%', 'sectoral', 'sectoral-only', AGRI_MODELS),
+  A4: sm('Agricultural Production|Livestock', 'Mt/yr', 'both', 'matched', AGRI_MODELS),
+  A5: sm('Food Demand|Livestock', 'kcal/cap/day', 'both', 'matched', AGRI_MODELS),
+  A6: sm('Food waste per capita', 'kg/cap/yr', 'sectoral', 'requested', AGRI_MODELS, {
+    note: 'Reported by MAgPIE-type food-system models only; requested as a new template variable.',
+  }),
+  A7: sm('Land Cover|Cropland|Energy Crops; Primary Energy|Biomass|Energy Crops', 'Mha; EJ/yr', 'both', 'matched', LAND_MODELS),
+  // ── LULUCF ─────────────────────────────────────────────────────────────────
+  L1: sm('Emissions|CO2|AFOLU; Carbon Sequestration|Land Use', 'Mt CO2/yr', 'economy-wide', 'matched', [...IAMS.slice(0, 2), ...LAND_MODELS.slice(0, 2)], {
+    note: HELD_RUNS_NOTE,
+  }),
+  L2: sm('Land Cover|Forest / |Cropland / |Pasture (changes)', 'Mha', 'both', 'matched', LAND_MODELS),
+  L4: sm('Land Cover|Forest — gross deforestation', 'Mha/yr', 'both', 'matched', LAND_MODELS),
+  L3: sm('Land Cover|Forest|Afforestation and Reforestation', 'Mha/yr', 'both', 'matched', LAND_MODELS),
+  L6: sm('Carbon Sequestration|Land Use|Forest', 'Mt CO2/yr', 'both', 'matched', LAND_MODELS),
+  L7: sm('Emissions|CO2|AFOLU minus forest flux (cropland, grassland, wetlands)', 'Mt CO2/yr (derived)', 'sectoral', 'sectoral-only', LAND_MODELS),
+};
+
+/**
+ * "Scenario call" board — the ESABCC report (default) framework with every
+ * indicator chip matched to the reporting template of the open IAM scenario
+ * submission call (economy-wide and sectoral tracks). Enhanced chips are
+ * stripped so the board stays 1:1 with the report figures; each remaining chip
+ * carries a `ScenarioMatch` resolving it to an IAMC variable, the submission
+ * track that covers it, and the targeted model families.
+ */
+export function defaultFrameworkBoardScenarioCall(): FrameworkBoard {
+  const sectors = JSON.parse(JSON.stringify(SECTOR_FRAMEWORKS)) as SectorFramework[];
+  for (const sector of sectors) {
+    // Strip enhanced indicator chips — stay 1:1 with the report figures.
+    for (const node of [...sector.outcomes, ...sector.levers]) {
+      node.indicators = node.indicators.filter((r) => !r.enhanced);
+    }
+    // Match every remaining chip (goal + outcomes + levers) to the call template.
+    const chips = [
+      ...sector.goalIndicators,
+      ...sector.outcomes.flatMap((n) => n.indicators),
+      ...sector.levers.flatMap((n) => n.indicators),
+    ];
+    for (const chip of chips) {
+      const match = SC_INDICATOR_SCENARIOS[chip.code];
+      if (match) chip.scenario = match;
+    }
+  }
+  return { version: FRAMEWORK_BOARD_VERSION, sectors };
 }

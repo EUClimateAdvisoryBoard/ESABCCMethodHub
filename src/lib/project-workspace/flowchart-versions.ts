@@ -32,6 +32,7 @@ import {
   defaultFrameworkBoardAdvancedV1,
   defaultFrameworkBoardAdvancedV3,
   defaultFrameworkBoardPolicyGap2,
+  defaultFrameworkBoardScenarioCall,
   defaultFrameworkBoardEnergyTest,
   defaultFrameworkBoardV3,
   FRAMEWORK_BOARD_VERSION,
@@ -143,6 +144,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
   { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Theory of Change', variant: 'report', builtIn: true },
+  { id: 'scenario-call', name: 'Scenario call — IAM-matched indicators', variant: 'report', builtIn: true },
 ];
 
 interface RegistryData {
@@ -171,6 +173,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
   if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
   if (version.id === 'adaptation-mitigation-toc') return `esabcc-framework-board-adaptation-toc:${projectId}`;
+  if (version.id === 'scenario-call') return `esabcc-framework-board-scenario-call:${projectId}`;
   return `esabcc-framework-board:v:${version.id}:${projectId}`;
 }
 
@@ -381,6 +384,7 @@ export function defaultBoardFor(version: FlowChartVersion, projectId: string): F
   if (version.id === 'advanced-v1') return defaultFrameworkBoardAdvancedV1();
   if (version.id === 'advanced-v3') return defaultFrameworkBoardAdvancedV3();
   if (version.id === 'policy-gap-2') return defaultFrameworkBoardPolicyGap2();
+  if (version.id === 'scenario-call') return defaultFrameworkBoardScenarioCall();
   if (version.id === 'energy-supply-test') return defaultFrameworkBoardEnergyTest();
   if (version.id === 'v3') return defaultFrameworkBoardV3();
   return (

@@ -23,6 +23,7 @@ import {
   defaultFrameworkBoardAdvancedV1,
   defaultFrameworkBoardAdvancedV3,
   defaultFrameworkBoardPolicyGap2,
+  defaultFrameworkBoardScenarioCall,
   defaultFrameworkBoardEnergyTest,
   defaultFrameworkBoardV3,
   FRAMEWORK_INDICATOR_INDEX,
@@ -83,6 +84,7 @@ export default function FrameworkBoard({ allIndicators, onOpenInList, projectId,
     if (isBeta) return defaultFrameworkBoardBeta();
     if (version.id === 'report-faithful') return defaultFrameworkBoardReport();
     if (version.id === 'policy-gap-2') return defaultFrameworkBoardPolicyGap2();
+    if (version.id === 'scenario-call') return defaultFrameworkBoardScenarioCall();
     if (version.id === 'energy-supply-test') return defaultFrameworkBoardEnergyTest();
     if (version.id === 'v3') return defaultFrameworkBoardV3();
     return defaultFrameworkBoard();
