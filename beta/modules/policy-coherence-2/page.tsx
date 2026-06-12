@@ -1,41 +1,35 @@
 'use client';
 
 /**
- * Policy Coherence 2.0 — beta module page ("data observatory" redesign).
+ * Policy Coherence 2.0 — beta module page (ESABCC gap-matrix edition).
  *
- * Design thesis: a policy text is not prose here — it is ~2,600 addressable
- * DATA BLOCKS that have to fit together like puzzle pieces. The page makes
- * that physical:
- *
- *   · The DATA WALL renders every sentence unit of every act as a tile,
- *     coloured by state (inert · data-bearing · flagged), so the sheer mass
- *     of blocks — and where the friction sits — is visible at a glance.
- *   · The BLOCK INSPECTOR shows any selected tile as structured data:
- *     extracted claims as fields, step tags, its neighbours in the act, and
- *     its puzzle links (findings + ML pairs that cite it).
- *   · Findings are MISFITS — pairs/sets of blocks that don't come together —
- *     and every evidence chip selects the actual tile on the wall.
- *
- * The module deliberately breaks with the site's light chrome (dark theme):
- * it is an instrument panel over the corpus, not a document page. The
- * analysis engine is unchanged (src/lib/policy-coherence-2/).
+ * The presentation lens is the Advisory Board's own consistency framework
+ * (report §2.1): every block-level signal is classified into POLICY GAPS,
+ * POLICY INCONSISTENCIES, AMBITION GAPS and IMPLEMENTATION GAPS, each with
+ * a numbered reasoning chain from required change → block evidence →
+ * conclusion. The page keeps the block as the unit of analysis (data wall +
+ * inspector) and connects micro to macro through the policy × gap-type
+ * matrix. The four-step engine still powers extraction underneath; gaps.ts
+ * does the classification.
  */
 
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
-import { COHERENCE_STEPS } from '@/lib/content-analysis/policy-coherence';
 import { PC2_RULES, runPolicyCoherence2 } from '@/lib/policy-coherence-2/engine';
 import { PC2_ML_VERSION, runMlAnalysis } from '@/lib/policy-coherence-2/ml';
-import type {
-  Pc2Finding,
-  Pc2MlPair,
-  Pc2MlPairKind,
-  Pc2RuleId,
-  Pc2Severity,
-  Pc2Unit,
-} from '@/lib/policy-coherence-2/types';
+import {
+  CONFIDENCE_LABEL,
+  GAP_META,
+  runGapAssessment,
+  SUBSTRATE_COMPLETE_THRESHOLD,
+  type GapConfidence,
+  type GapFinding,
+  type GapSeverity,
+  type GapType,
+} from '@/lib/policy-coherence-2/gaps';
+import type { Pc2MlPair, Pc2MlPairKind, Pc2Unit } from '@/lib/policy-coherence-2/types';
 
 // ── Visual vocabulary ──────────────────────────────────────────────────────
 
@@ -52,23 +46,23 @@ const STATE_COLOR: Record<UnitState, string> = {
 const STATE_LABEL: Record<UnitState, string> = {
   inert: 'inert text',
   data: 'data-bearing',
-  'flag-low': 'flagged · low / info',
-  'flag-medium': 'flagged · medium',
-  'flag-high': 'flagged · high',
+  'flag-low': 'in a gap · low / candidate',
+  'flag-medium': 'in a gap · medium',
+  'flag-high': 'in a gap · high',
 };
 
-const SEVERITY_DARK: Record<Pc2Severity, string> = {
+const CONF_DARK: Record<GapConfidence, string> = {
+  corroborated: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40',
+  high: 'bg-teal-500/10 text-teal-300 border-teal-500/30',
+  medium: 'bg-slate-500/15 text-slate-300 border-slate-500/40',
+  low: 'bg-slate-600/20 text-slate-400 border-slate-600/40',
+};
+
+const GAP_SEV_DARK: Record<GapSeverity, string> = {
   high: 'bg-red-500/15 text-red-300 border-red-500/40',
   medium: 'bg-amber-500/15 text-amber-300 border-amber-500/40',
   low: 'bg-sky-500/10 text-sky-300 border-sky-500/30',
-  info: 'bg-sky-500/10 text-sky-300 border-sky-500/30',
-};
-
-const SEVERITY_EDGE: Record<Pc2Severity, string> = {
-  high: '#EF4444',
-  medium: '#F59E0B',
-  low: '#38BDF8',
-  info: '#38BDF8',
+  candidate: 'bg-slate-500/15 text-slate-300 border-slate-500/40',
 };
 
 const CLAIM_DARK: Record<string, string> = {
@@ -102,44 +96,50 @@ const ML_CONNECTOR: Record<Pc2MlPairKind, { icon: string; label: string; color: 
 };
 
 const PANEL = 'rounded-xl border border-[#1E2C46] bg-[#101B30]';
+const GAP_TYPES = Object.keys(GAP_META) as GapType[];
 
 // ── Guided tour ────────────────────────────────────────────────────────────
 
 const TOUR_STEPS: Array<{ target: string; title: string; body: string }> = [
   {
     target: 'pc2-tour-hero',
-    title: 'Sentences as data',
-    body: 'Every policy text is decomposed into addressable data blocks — one per sentence, each with a stable id, structural path and extracted claims. The counters show the full mass of the corpus. The command bar persists the run to the database and exports JSONL for ML pipelines.',
+    title: 'Sentences as data, gaps as the lens',
+    body: 'Every policy text is decomposed into addressable data blocks. The Advisory Board’s consistency framework classifies what the blocks reveal: policy gaps, policy inconsistencies, ambition gaps and implementation gaps — each defined exactly as in the assessment report.',
+  },
+  {
+    target: 'pc2-tour-methodology',
+    title: 'The methodology, end to end',
+    body: 'Five declared stages: segment → extract → detect → classify → qualify, each showing its live numbers. Severity is qualified separately from confidence: triangulated findings (two independent layers agreeing) rank highest, substrate-limited ones lowest. Every parameter is printed.',
   },
   {
     target: 'pc2-tour-wall',
     title: 'The data wall',
-    body: 'Every tile is one sentence block of one act. Teal = carries extracted data; blue/amber/red = cited by a finding (worst severity wins); dark = inert text. Click any tile to open it in the inspector.',
+    body: 'Every tile is one sentence block of one act. Teal = carries extracted data; blue/amber/red = implicated in a gap finding (worst severity wins); dark = inert text. Click any tile to open it in the inspector.',
   },
   {
     target: 'pc2-tour-inspector',
     title: 'The block inspector',
-    body: 'The selected block as a piece of data: its claims as structured fields, the four-lens tags, its neighbours in the act, and its puzzle links — every finding and ML pair that cites it. Click any linked block to jump to it.',
+    body: 'The selected block as a piece of data: claims as structured fields, neighbours in the act, and every gap finding and ML pair that cites it — with full reasoning. Click any linked block to jump to it.',
   },
   {
     target: 'pc2-tour-findings',
-    title: 'Where pieces don’t fit',
-    body: 'Each misfit names the printed rule it followed and shows the exact blocks that fail to come together. Triage by severity (high first); click an evidence chip to select that block on the wall.',
+    title: 'The gap matrix',
+    body: 'Macro view: acts × gap types, plus the lever-coverage scan that detects policy gaps (levers no block in the corpus drives). Click a matrix cell to filter the findings below; every finding carries a numbered reasoning chain down to the blocks.',
   },
   {
     target: 'pc2-tour-ml',
     title: 'Discovered tensions (ML)',
-    body: 'The unsupervised pass learns a vector model from the corpus and mines block pairs that pull against each other: ⚡ contradictions, ⇄ trade-offs on contested resource axes, ≡ near-duplicates — plus cross-act theme clusters.',
+    body: 'The unsupervised pass mines block pairs that pull against each other: ⚡ contradictions (which feed the inconsistency column as candidates), ⇄ trade-offs, ≡ near-duplicates, and cross-act theme clusters.',
   },
   {
     target: 'pc2-tour-rules',
-    title: 'The rule book',
-    body: 'Every finding follows mechanically from one of these printed rules. Disagree with a flag? Audit the rule application — that is the point of declaring them.',
+    title: 'The signal rules',
+    body: 'The declared block-level rules whose outputs are classified into the four gap types. Disagree with a gap? Audit the rule application and the reasoning chain — both are printed.',
   },
   {
     target: 'pc2-tour-method',
     title: 'Method & caveats',
-    body: 'Where a shipped text is an excerpt, absence-based findings mark where the substrate ends, not where the act does. The full reference guide is linked in the hero.',
+    body: 'Policy-gap verdicts are corpus-relative; absence-based findings mark where the substrate ends. The full reference guide is linked in the hero.',
   },
 ];
 
@@ -160,18 +160,39 @@ function StatBig({ value, label, accent }: { value: number | string; label: stri
   );
 }
 
-function SeverityBadge({ severity }: { severity: Pc2Severity }) {
+function GapBadge({ gapType }: { gapType: GapType }) {
+  const m = GAP_META[gapType];
   return (
     <span
-      className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${SEVERITY_DARK[severity]}`}
+      className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em]"
+      style={{ color: m.color, borderColor: `${m.color}66`, background: `${m.color}1A` }}
+    >
+      {m.icon} {m.name}
+    </span>
+  );
+}
+
+function SevBadge({ severity }: { severity: GapSeverity }) {
+  return (
+    <span
+      className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${GAP_SEV_DARK[severity]}`}
     >
       {severity}
     </span>
   );
 }
 
-/** A clickable reference to one block — the "puzzle piece" chip used by
- *  findings, ML pairs and the inspector's link list. */
+function ConfBadge({ confidence }: { confidence: GapConfidence }) {
+  return (
+    <span
+      title={CONFIDENCE_LABEL[confidence]}
+      className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${CONF_DARK[confidence]}`}
+    >
+      conf · {confidence}
+    </span>
+  );
+}
+
 function BlockChip({
   unit,
   state,
@@ -208,38 +229,62 @@ function BlockChip({
   );
 }
 
+function ReasoningChain({ steps }: { steps: string[] }) {
+  return (
+    <ol className="mt-1.5 space-y-1">
+      {steps.map((s, i) => (
+        <li key={i} className="flex gap-2 text-[11px] text-[#9DAEC5] leading-relaxed">
+          <span className="font-mono text-[10px] text-[#E87722] shrink-0 tabular-nums">{i + 1}.</span>
+          <span className={i === steps.length - 1 ? 'text-[#C6D2E2] font-semibold' : undefined}>{s}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 // ── Page ───────────────────────────────────────────────────────────────────
 
 export default function PolicyCoherence2Page() {
   const run = useMemo(() => runPolicyCoherence2(), []);
 
-  // Selection + lookups
-  const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
+  // ML layer (on demand; gap assessment refreshes when it lands)
+  const [mlRequested, setMlRequested] = useState(false);
+  const [mlKind, setMlKind] = useState<Pc2MlPairKind>('contradiction-candidate');
+  const ml = useMemo(() => (mlRequested ? runMlAnalysis(run) : null), [run, mlRequested]);
+  const mlPairs = useMemo(() => (ml ? ml.pairs.filter(p => p.kind === mlKind) : []), [ml, mlKind]);
+
+  // Gap assessment — the page's primary output
+  const gaps = useMemo(() => runGapAssessment(run, ml), [run, ml]);
+
+  // Lookups
   const unitById = useMemo(() => new Map(run.units.map(u => [u.id, u])), [run]);
-  const findingsByUnit = useMemo(() => {
-    const map = new Map<string, Pc2Finding[]>();
-    for (const f of run.findings) {
+  const gapsByUnit = useMemo(() => {
+    const map = new Map<string, GapFinding[]>();
+    for (const f of gaps.findings) {
       for (const uid of f.unitIds) (map.get(uid) ?? map.set(uid, []).get(uid)!).push(f);
     }
     return map;
-  }, [run]);
+  }, [gaps]);
+  const mlPairsByUnit = useMemo(() => {
+    const map = new Map<string, Pc2MlPair[]>();
+    if (!ml) return map;
+    for (const p of ml.pairs) {
+      for (const uid of [p.unitA, p.unitB]) (map.get(uid) ?? map.set(uid, []).get(uid)!).push(p);
+    }
+    return map;
+  }, [ml]);
 
   const stateOf = useMemo(() => {
-    const cache = new Map<string, UnitState>();
-    const rank: Record<Pc2Severity, number> = { high: 3, medium: 2, low: 1, info: 1 };
-    for (const u of run.units) {
-      const fs = findingsByUnit.get(u.id);
+    const rank: Record<GapSeverity, number> = { high: 3, medium: 2, low: 1, candidate: 1 };
+    return (id: string): UnitState => {
+      const fs = gapsByUnit.get(id);
       if (fs && fs.length > 0) {
         const worst = Math.max(...fs.map(f => rank[f.severity]));
-        cache.set(u.id, worst === 3 ? 'flag-high' : worst === 2 ? 'flag-medium' : 'flag-low');
-      } else if (u.claims.length > 0) {
-        cache.set(u.id, 'data');
-      } else {
-        cache.set(u.id, 'inert');
+        return worst === 3 ? 'flag-high' : worst === 2 ? 'flag-medium' : 'flag-low';
       }
-    }
-    return (id: string): UnitState => cache.get(id) ?? 'inert';
-  }, [run, findingsByUnit]);
+      return (unitById.get(id)?.claims.length ?? 0) > 0 ? 'data' : 'inert';
+    };
+  }, [gapsByUnit, unitById]);
 
   const unitsByPolicy = useMemo(() => {
     const map = new Map<string, Pc2Unit[]>();
@@ -253,36 +298,44 @@ export default function PolicyCoherence2Page() {
     return [...counts.entries()].sort((a, b) => b[1] - a[1]);
   }, [run]);
 
-  // Findings filters
-  const [stepFilter, setStepFilter] = useState('');
-  const [ruleFilter, setRuleFilter] = useState('');
-  const [severityFilter, setSeverityFilter] = useState('');
-  const [policyFilter, setPolicyFilter] = useState('');
-  const filteredFindings = useMemo(
-    () =>
-      run.findings.filter(
-        f =>
-          (!stepFilter || f.stepId === stepFilter) &&
-          (!ruleFilter || f.ruleId === ruleFilter) &&
-          (!severityFilter || f.severity === severityFilter) &&
-          (!policyFilter || f.policyIds.includes(policyFilter)),
-      ),
-    [run, stepFilter, ruleFilter, severityFilter, policyFilter],
-  );
-
-  // ML layer
-  const [mlRequested, setMlRequested] = useState(false);
-  const [mlKind, setMlKind] = useState<Pc2MlPairKind>('contradiction-candidate');
-  const ml = useMemo(() => (mlRequested ? runMlAnalysis(run) : null), [run, mlRequested]);
-  const mlPairs = useMemo(() => (ml ? ml.pairs.filter(p => p.kind === mlKind) : []), [ml, mlKind]);
-  const mlPairsByUnit = useMemo(() => {
-    const map = new Map<string, Pc2MlPair[]>();
-    if (!ml) return map;
-    for (const p of ml.pairs) {
-      for (const uid of [p.unitA, p.unitB]) (map.get(uid) ?? map.set(uid, []).get(uid)!).push(p);
+  // Selection
+  const [selectedUnitId, setSelectedUnitId] = useState<string | null>(null);
+  function selectUnit(id: string, scrollWall = true) {
+    setSelectedUnitId(id);
+    if (scrollWall) {
+      document.getElementById(`tile-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
-    return map;
-  }, [ml]);
+  }
+  const selected = selectedUnitId ? unitById.get(selectedUnitId) ?? null : null;
+  const selectedNeighbours = useMemo(() => {
+    if (!selected) return [];
+    const units = unitsByPolicy.get(selected.policyId) ?? [];
+    const i = units.findIndex(u => u.id === selected.id);
+    return units.slice(Math.max(0, i - 2), i + 3).filter(u => u.id !== selected.id);
+  }, [selected, unitsByPolicy]);
+
+  // Gap filters (driven by matrix clicks too)
+  const [gapTypeFilter, setGapTypeFilter] = useState<GapType | ''>('');
+  const [gapSeverityFilter, setGapSeverityFilter] = useState<GapSeverity | ''>('');
+  const [gapConfidenceFilter, setGapConfidenceFilter] = useState<GapConfidence | ''>('');
+  const [gapPolicyFilter, setGapPolicyFilter] = useState('');
+  const filteredGaps = useMemo(
+    () =>
+      gaps.findings.filter(
+        f =>
+          (!gapTypeFilter || f.gapType === gapTypeFilter) &&
+          (!gapSeverityFilter || f.severity === gapSeverityFilter) &&
+          (!gapConfidenceFilter || f.confidence === gapConfidenceFilter) &&
+          (!gapPolicyFilter || f.policyIds.includes(gapPolicyFilter)),
+      ),
+    [gaps, gapTypeFilter, gapSeverityFilter, gapConfidenceFilter, gapPolicyFilter],
+  );
+  function focusCell(policyId: string, gapType: GapType) {
+    setGapPolicyFilter(policyId);
+    setGapTypeFilter(gapType);
+    setGapSeverityFilter('');
+    document.getElementById('pc2-gap-list')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 
   // Persistence
   const [dbStatus, setDbStatus] = useState('');
@@ -304,25 +357,6 @@ export default function PolicyCoherence2Page() {
       ? ' ring-2 ring-[#E87722] ring-offset-4 ring-offset-[#0B1322] rounded-xl'
       : '';
 
-  // Select a block: open inspector + scroll its tile into view.
-  const wallRef = useRef<HTMLDivElement>(null);
-  function selectUnit(id: string, scrollWall = true) {
-    setSelectedUnitId(id);
-    if (scrollWall) {
-      document
-        .getElementById(`tile-${id}`)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }
-
-  const selected = selectedUnitId ? unitById.get(selectedUnitId) ?? null : null;
-  const selectedNeighbours = useMemo(() => {
-    if (!selected) return [];
-    const units = unitsByPolicy.get(selected.policyId) ?? [];
-    const i = units.findIndex(u => u.id === selected.id);
-    return units.slice(Math.max(0, i - 2), i + 3).filter(u => u.id !== selected.id);
-  }, [selected, unitsByPolicy]);
-
   async function writeToDatabase() {
     setWriting(true);
     setDbStatus('Writing run to database…');
@@ -336,7 +370,7 @@ export default function PolicyCoherence2Page() {
       if (!res.ok) throw new Error(json?.error ?? `HTTP ${res.status}`);
       if (json.persisted === false) setDbStatus('Computed — Supabase not configured, nothing persisted.');
       else if (json.status === 'already-persisted') setDbStatus(`Already in the database — run ${json.runId}.`);
-      else setDbStatus(`Persisted run ${json.runId}: ${json.stats.unitCount} blocks, ${json.stats.findingCount} findings.`);
+      else setDbStatus(`Persisted run ${json.runId}: ${json.stats.unitCount} blocks, ${json.stats.findingCount} signal findings.`);
     } catch (err) {
       setDbStatus(`Failed: ${err instanceof Error ? err.message : 'unknown error'}`);
     } finally {
@@ -360,7 +394,9 @@ export default function PolicyCoherence2Page() {
     }
   }
 
-  const flaggedCount = run.units.filter(u => (findingsByUnit.get(u.id)?.length ?? 0) > 0).length;
+  const flaggedCount = run.units.filter(u => (gapsByUnit.get(u.id)?.length ?? 0) > 0).length;
+  const matrixRows = gaps.matrix.filter(r => r.total > 0);
+  const maxCell = Math.max(1, ...matrixRows.flatMap(r => GAP_TYPES.map(t => r.counts[t])));
 
   return (
     <>
@@ -370,43 +406,47 @@ export default function PolicyCoherence2Page() {
           {/* ── Hero ──────────────────────────────────────────────────── */}
           <section id="pc2-tour-hero" className={`scroll-mt-24${tourClass('pc2-tour-hero')}`}>
             <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#E87722] font-bold">
-              Beta · M·25 · block-level coherence
+              Beta · M·25 · block-level consistency assessment
             </p>
             <h1 className="mt-2 text-[30px] sm:text-[44px] font-bold leading-[1.05] tracking-tight">
               Every sentence is a piece of data.
               <br />
-              <span className="text-[#7E92AE]">Do the pieces fit together?</span>
+              <span className="text-[#7E92AE]">Where are the gaps?</span>
             </h1>
             <p className="mt-3 max-w-3xl text-[14px] text-[#9DAEC5] leading-relaxed">
               The corpus is decomposed into addressable blocks — one per sentence, each with a
-              stable id, a structural path and machine-extracted claims. The four coherence
-              lenses then test how the pieces interlock: inside each act and across the whole
-              policy space. Where they don&apos;t come together, that&apos;s not noise —
-              that&apos;s a finding.
+              stable id and machine-extracted claims. The Advisory Board&apos;s consistency
+              framework then classifies what the blocks reveal, at micro level but rolled up
+              per act: where no policy drives a lever, where policies counteract each other,
+              where ambition or implementation falls short.
             </p>
 
             <div className="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-x-6 gap-y-4">
               <StatBig value={run.stats.policyCount} label="acts" />
-              <StatBig value={run.stats.blockCount} label="text blocks" />
               <StatBig value={run.stats.unitCount} label="data blocks" accent />
               <StatBig value={run.stats.claimCount} label="extracted claims" />
-              <StatBig value={flaggedCount} label="blocks flagged" />
-              <StatBig value={run.stats.findingCount} label="misfits found" accent />
+              <StatBig value={flaggedCount} label="blocks in gaps" />
+              <StatBig value={gaps.findings.length} label="gap findings" accent />
+              <StatBig value={gaps.countsByType['policy-gap']} label="policy gaps (levers)" />
             </div>
 
-            {/* Lens strip */}
-            <div className="mt-6 grid sm:grid-cols-4 gap-2">
-              {COHERENCE_STEPS.map(s => (
-                <div key={s.id} className={`${PANEL} px-3 py-2.5`}>
-                  <p className="font-mono text-[14px] font-bold text-[#E87722] leading-none">
-                    {s.ordinal}
-                  </p>
-                  <p className="mt-1 text-[11px] font-bold text-[#E6EBF2] leading-snug">{s.name}</p>
-                  <p className="mt-0.5 font-mono text-[8.5px] uppercase tracking-[0.1em] text-[#7E92AE]">
-                    applied per block
-                  </p>
-                </div>
-              ))}
+            {/* The four gap types — definitions verbatim-close to the report */}
+            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+              {GAP_TYPES.map(t => {
+                const m = GAP_META[t];
+                return (
+                  <div key={t} className={`${PANEL} px-3 py-2.5`} style={{ borderTop: `2px solid ${m.color}` }}>
+                    <p className="font-mono text-[15px] font-bold leading-none" style={{ color: m.color }}>
+                      {m.icon}{' '}
+                      <span className="text-[12px] tracking-wide uppercase">{m.name}</span>
+                      <span className="ml-1.5 text-[12px] text-[#7E92AE]">
+                        {gaps.countsByType[t]}
+                      </span>
+                    </p>
+                    <p className="mt-1.5 text-[10.5px] text-[#9DAEC5] leading-relaxed">{m.definition}</p>
+                  </div>
+                );
+              })}
             </div>
 
             {/* Command bar */}
@@ -438,17 +478,103 @@ export default function PolicyCoherence2Page() {
                 ⬇ JSONL export
               </a>
               <span className="font-mono text-[9.5px] text-[#56688A]">
-                engine {run.engineVersion} · corpus {run.corpusHash}
+                engine {run.engineVersion} · gaps {gaps.version} · corpus {run.corpusHash}
               </span>
             </div>
             {dbStatus && <p className="mt-2 text-[11px] text-[#9DAEC5]">{dbStatus}</p>}
+          </section>
+
+          {/* ── Methodology overview ──────────────────────────────────── */}
+          <section
+            id="pc2-tour-methodology"
+            className={`mt-10 scroll-mt-24${tourClass('pc2-tour-methodology')}`}
+          >
+            <h2 className="text-[22px] font-bold">Methodology</h2>
+            <p className="mt-1 text-[12px] text-[#9DAEC5] max-w-3xl leading-relaxed">
+              Five declared stages, deterministic end to end: the same corpus always yields
+              the same ids, scores and findings (corpus{' '}
+              <span className="font-mono">{run.corpusHash}</span>). Every number below is
+              live from this run; every threshold is printed; nothing is graded by opinion.
+            </p>
+
+            <div className="mt-4 grid md:grid-cols-5 gap-2">
+              {[
+                {
+                  n: '①',
+                  name: 'Segment',
+                  out: `${run.stats.unitCount.toLocaleString('en-GB')} data blocks`,
+                  how: `${run.stats.policyCount} shipped policy texts split into ${run.stats.blockCount.toLocaleString('en-GB')} structural blocks, then into sentence units with stable ids (u-<act>-b<block>-s<sentence>), structural paths and char offsets — modular, yet always addressable inside the act.`,
+                },
+                {
+                  n: '②',
+                  name: 'Extract',
+                  out: `${run.stats.claimCount.toLocaleString('en-GB')} typed claims`,
+                  how: 'Nine claim kinds (targets with indicator family/year/baseline, deadlines, deontic obligations, instruments, financing, MRV, review, flexibility markers, resolved cross-references) extracted by printed patterns. Descriptive shares ("contributes over 75% of…") are guarded out. No model calls.',
+                },
+                {
+                  n: '③',
+                  name: 'Detect',
+                  out: `${run.findings.length} rule signals${ml ? ` + ${ml.pairs.length} ML pairs` : ' + ML on demand'}`,
+                  how: 'Three independent layers: 10 declared signal rules over the claims; an unsupervised statistical pass (TF-IDF vectors, cosine pair mining, clustering); and the curated layer (assumption audits, Nilsson interactions, EEA pace data) anchored down to blocks.',
+                },
+                {
+                  n: '④',
+                  name: 'Classify',
+                  out: `${gaps.findings.length} gap findings`,
+                  how: `Signals are mapped into the Advisory Board's consistency framework: ${gaps.countsByType['policy-gap']} policy gaps (lever-coverage scan) · ${gaps.countsByType['policy-inconsistency']} inconsistencies · ${gaps.countsByType['ambition-gap']} ambition gaps · ${gaps.countsByType['implementation-gap']} implementation gaps. Ambition vs implementation splits on the means score (≥ 0.45 = machinery in place).`,
+                },
+                {
+                  n: '⑤',
+                  name: 'Qualify',
+                  out: `${gaps.countsByConfidence.corroborated} corroborated · ${gaps.countsByConfidence.high} high conf.`,
+                  how: `Severity (impact if true) is qualified separately from confidence (how sure the method is). Triangulation upgrades — two independent layers agreeing — and incomplete substrates downgrade (${gaps.substrateIncomplete.length} act(s) below the ${SUBSTRATE_COMPLETE_THRESHOLD} completeness threshold: ${gaps.substrateIncomplete.join(', ') || 'none'}).`,
+                },
+              ].map((s, i, arr) => (
+                <div key={s.name} className={`${PANEL} p-3 relative`}>
+                  <p className="font-mono text-[15px] font-bold text-[#E87722] leading-none">
+                    {s.n} <span className="text-[12px] uppercase tracking-wide text-[#E6EBF2]">{s.name}</span>
+                  </p>
+                  <p className="mt-1 font-mono text-[10.5px] text-[#2DD4BF]">{s.out}</p>
+                  <p className="mt-1.5 text-[10px] text-[#9DAEC5] leading-relaxed">{s.how}</p>
+                  {i < arr.length - 1 && (
+                    <span className="hidden md:block absolute top-1/2 -right-[13px] text-[#3A4D6E] text-[14px]">→</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-3 grid md:grid-cols-2 gap-2">
+              <div className={`${PANEL} p-3.5`}>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+                  Transparency guarantees
+                </p>
+                <ul className="mt-1.5 space-y-1 text-[11px] text-[#9DAEC5] leading-relaxed list-disc pl-4">
+                  <li><span className="text-[#C6D2E2]">Deterministic:</span> same corpus → same ids, claims, scores and findings; the corpus hash on every artefact proves which snapshot produced it.</li>
+                  <li><span className="text-[#C6D2E2]">Every rule printed:</span> the signal rules, gap definitions, ML parameters and all thresholds (severity bands, means split 0.45, completeness {SUBSTRATE_COMPLETE_THRESHOLD}, ML cosine ≥ 0.3) are on this page — reviewers audit rule applications, not opinions.</li>
+                  <li><span className="text-[#C6D2E2]">Every finding cited:</span> verbatim block quotes with stable ids, a numbered reasoning chain, and a &ldquo;basis&rdquo; line naming the layer(s) it rests on.</li>
+                  <li><span className="text-[#C6D2E2]">Severity ≠ confidence:</span> impact-if-true and method-certainty are scored separately; triangulated findings rank highest{' '}({(Object.keys(CONFIDENCE_LABEL) as GapConfidence[]).map(c => `${c}: ${CONFIDENCE_LABEL[c]}`).join(' · ')}).</li>
+                  <li><span className="text-[#C6D2E2]">Reproducible:</span> the JSONL export carries the full chain — blocks, claims, signals, ML pairs, gap findings with reasoning — for independent re-analysis.</li>
+                </ul>
+              </div>
+              <div className={`${PANEL} p-3.5`}>
+                <p className="text-[11px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+                  Declared limitations
+                </p>
+                <ul className="mt-1.5 space-y-1 text-[11px] text-[#9DAEC5] leading-relaxed list-disc pl-4">
+                  <li><span className="text-[#C6D2E2]">Corpus-relative:</span> policy-gap verdicts assert silence of the {run.stats.policyCount}-act tracked corpus, not of EU law; ingesting more acts can clear or confirm them.</li>
+                  <li><span className="text-[#C6D2E2]">Substrate-bounded:</span> where shipped texts are excerpts, absence-based findings mark where the substrate ends — they are confidence-downgraded and say so.</li>
+                  <li><span className="text-[#C6D2E2]">Pattern precision:</span> claim extraction is rule-based; residual false positives surface as low-confidence candidates rather than being silently filtered.</li>
+                  <li><span className="text-[#C6D2E2]">Snapshot-dated:</span> the curated layer (pace data, assumption audits) reflects the mid-2026 observation snapshot and carries its sources for re-verification.</li>
+                  <li><span className="text-[#C6D2E2]">Candidates need disposal:</span> ML discoveries and cross-act divergences enter only as &ldquo;candidate&rdquo; severity / low confidence — statistics propose, the analyst disposes.</li>
+                </ul>
+              </div>
+            </div>
           </section>
 
           {/* ── Data wall + inspector ─────────────────────────────────── */}
           <section className="mt-10 grid lg:grid-cols-3 gap-5 items-start">
             <div
               id="pc2-tour-wall"
-              ref={wallRef}
               className={`lg:col-span-2 ${PANEL} p-4 scroll-mt-24${tourClass('pc2-tour-wall')}`}
             >
               <div className="flex flex-wrap items-baseline justify-between gap-2">
@@ -474,14 +600,13 @@ export default function PolicyCoherence2Page() {
               <div className="mt-4 space-y-3 max-h-[760px] overflow-y-auto pr-2">
                 {run.policies.map(p => {
                   const units = unitsByPolicy.get(p.policyId) ?? [];
+                  const row = gaps.matrix.find(r => r.policyId === p.policyId);
                   return (
                     <div key={p.policyId}>
                       <div className="flex items-baseline justify-between gap-2">
-                        <p className="text-[12px] font-bold text-[#C6D2E2] truncate">
-                          {p.shortTitle}
-                        </p>
+                        <p className="text-[12px] font-bold text-[#C6D2E2] truncate">{p.shortTitle}</p>
                         <p className="font-mono text-[9px] text-[#56688A] whitespace-nowrap">
-                          {p.unitCount} blocks · {p.claimCount} claims · {p.findingCount} misfits
+                          {p.unitCount} blocks · {p.claimCount} claims · {row?.total ?? 0} gaps
                         </p>
                       </div>
                       <div className="mt-1 flex flex-wrap gap-[3px]">
@@ -549,23 +674,12 @@ export default function PolicyCoherence2Page() {
                   <p className="mt-0.5 font-mono text-[10px] text-[#7E92AE]">
                     {selected.policyId} · {selected.path} · chars {selected.startChar}–{selected.endChar}
                   </p>
-                  <p className="mt-2 text-[13px] text-[#E6EBF2] leading-relaxed border-l-2 pl-3"
-                     style={{ borderColor: STATE_COLOR[stateOf(selected.id)] }}>
+                  <p
+                    className="mt-2 text-[13px] text-[#E6EBF2] leading-relaxed border-l-2 pl-3"
+                    style={{ borderColor: STATE_COLOR[stateOf(selected.id)] }}
+                  >
                     {selected.text}
                   </p>
-
-                  {selected.stepIds.length > 0 && (
-                    <div className="mt-3 flex flex-wrap gap-1">
-                      {selected.stepIds.map(s => (
-                        <span
-                          key={s}
-                          className="font-mono text-[9px] uppercase tracking-[0.08em] text-[#E87722] border border-[#E87722]/40 rounded px-1.5 py-0.5"
-                        >
-                          lens · {s}
-                        </span>
-                      ))}
-                    </div>
-                  )}
 
                   {selected.claims.length > 0 && (
                     <>
@@ -585,25 +699,25 @@ export default function PolicyCoherence2Page() {
                     </>
                   )}
 
-                  {(findingsByUnit.get(selected.id) ?? []).length > 0 && (
+                  {(gapsByUnit.get(selected.id) ?? []).length > 0 && (
                     <>
                       <p className="mt-4 text-[10px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
-                        Puzzle links — misfits citing this block
+                        Gap findings citing this block
                       </p>
                       <div className="mt-1.5 space-y-2">
-                        {(findingsByUnit.get(selected.id) ?? []).map(f => (
+                        {(gapsByUnit.get(selected.id) ?? []).map(f => (
                           <div
                             key={f.id}
                             className="rounded-lg border bg-[#0B1322] px-2.5 py-2"
-                            style={{ borderColor: `${SEVERITY_EDGE[f.severity]}55` }}
+                            style={{ borderColor: `${GAP_META[f.gapType].color}55` }}
                           >
-                            <div className="flex items-center gap-1.5">
-                              <SeverityBadge severity={f.severity} />
-                              <span className="font-mono text-[9px] text-[#7E92AE]">
-                                {PC2_RULES[f.ruleId].name}
-                              </span>
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <GapBadge gapType={f.gapType} />
+                              <SevBadge severity={f.severity} />
+                              <ConfBadge confidence={f.confidence} />
                             </div>
-                            <p className="mt-1 text-[11px] text-[#C6D2E2] leading-snug">{f.title}</p>
+                            <p className="mt-1 text-[11px] font-bold text-[#C6D2E2] leading-snug">{f.title}</p>
+                            <ReasoningChain steps={f.reasoning} />
                             {f.unitIds.filter(id => id !== selected.id).length > 0 && (
                               <div className="mt-1.5 space-y-1">
                                 {f.unitIds
@@ -663,101 +777,227 @@ export default function PolicyCoherence2Page() {
             </div>
           </section>
 
-          {/* ── Misfits (findings) ────────────────────────────────────── */}
+          {/* ── Gap matrix + lever coverage + findings ────────────────── */}
           <section
             id="pc2-tour-findings"
             className={`mt-10 scroll-mt-24${tourClass('pc2-tour-findings')}`}
           >
-            <h2 className="text-[22px] font-bold">
-              Where the pieces don&apos;t fit{' '}
-              <span className="text-[#7E92AE] font-normal text-[13px]">
-                — {filteredFindings.length} of {run.findings.length} misfits shown
-              </span>
-            </h2>
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              <select value={stepFilter} onChange={e => setStepFilter(e.target.value)}
-                className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]">
-                <option value="">All lenses</option>
-                {COHERENCE_STEPS.map(s => (
-                  <option key={s.id} value={s.id}>{s.ordinal} · {s.shortName}</option>
-                ))}
-              </select>
-              <select value={ruleFilter} onChange={e => setRuleFilter(e.target.value)}
-                className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2] max-w-[240px]">
-                <option value="">All rules</option>
-                {Object.values(PC2_RULES).map(r => (
-                  <option key={r.id} value={r.id}>
-                    {r.name} ({run.stats.byRule[r.id as Pc2RuleId] ?? 0})
-                  </option>
-                ))}
-              </select>
-              <select value={severityFilter} onChange={e => setSeverityFilter(e.target.value)}
-                className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]">
-                <option value="">All severities</option>
-                {['high', 'medium', 'low', 'info'].map(sv => <option key={sv} value={sv}>{sv}</option>)}
-              </select>
-              <select value={policyFilter} onChange={e => setPolicyFilter(e.target.value)}
-                className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2] max-w-[240px]">
-                <option value="">All acts</option>
-                {run.policies.map(p => (
-                  <option key={p.policyId} value={p.policyId}>{p.shortTitle} ({p.findingCount})</option>
-                ))}
-              </select>
+            <h2 className="text-[22px] font-bold">The gap matrix</h2>
+            <p className="mt-1 text-[12px] text-[#9DAEC5] max-w-3xl leading-relaxed">
+              Acts × gap types — click a cell to filter the findings below. Policy gaps have
+              no row: they are levers <em>no</em> act in the corpus drives (left panel).
+            </p>
+
+            <div className="mt-4 grid lg:grid-cols-3 gap-5 items-start">
+              {/* Lever coverage / policy gaps */}
+              <div className={`${PANEL} p-4`}>
+                <h3 className="text-[13px] font-bold" style={{ color: GAP_META['policy-gap'].color }}>
+                  ∅ Lever coverage — where are the policy gaps?
+                </h3>
+                <div className="mt-2 space-y-2 max-h-[520px] overflow-y-auto pr-1">
+                  {gaps.levers
+                    .slice()
+                    .sort((a, b) => a.targetBlocks + a.instrumentBlocks - (b.targetBlocks + b.instrumentBlocks))
+                    .map(l => {
+                      const isGap = gaps.findings.some(f => f.leverId === l.leverId);
+                      return (
+                        <div
+                          key={l.leverId}
+                          className="rounded-lg border bg-[#0B1322] px-2.5 py-2"
+                          style={{ borderColor: isGap ? `${GAP_META['policy-gap'].color}66` : '#1E2C46' }}
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <p className="text-[11.5px] font-bold text-[#C6D2E2]">{l.name}</p>
+                            {isGap && (
+                              <span
+                                className="font-mono text-[9px] uppercase px-1.5 py-0.5 rounded border"
+                                style={{
+                                  color: GAP_META['policy-gap'].color,
+                                  borderColor: `${GAP_META['policy-gap'].color}66`,
+                                }}
+                              >
+                                gap
+                              </span>
+                            )}
+                          </div>
+                          <p className="mt-0.5 font-mono text-[9px] text-[#7E92AE]">
+                            {l.targetBlocks} target · {l.instrumentBlocks} instrument · {l.mentionBlocks} mention blocks
+                          </p>
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+
+              {/* Matrix heatmap */}
+              <div className={`lg:col-span-2 ${PANEL} p-4 overflow-x-auto`}>
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr>
+                      <th className="text-left text-[10px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold pb-2 pr-2">
+                        Act
+                      </th>
+                      {GAP_TYPES.filter(t => t !== 'policy-gap').map(t => (
+                        <th key={t} className="text-center pb-2 px-1">
+                          <span
+                            className="font-mono text-[10px] uppercase tracking-[0.08em] font-bold"
+                            style={{ color: GAP_META[t].color }}
+                          >
+                            {GAP_META[t].icon} {GAP_META[t].name.replace('Policy ', '')}
+                          </span>
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {matrixRows.map(r => (
+                      <tr key={r.policyId} className="border-t border-[#1E2C46]">
+                        <td className="py-1.5 pr-2 text-[11.5px] text-[#C6D2E2] whitespace-nowrap max-w-[220px] truncate">
+                          {r.shortTitle}
+                        </td>
+                        {GAP_TYPES.filter(t => t !== 'policy-gap').map(t => {
+                          const n = r.counts[t];
+                          const m = GAP_META[t];
+                          return (
+                            <td key={t} className="py-1.5 px-1 text-center">
+                              <button
+                                onClick={() => n > 0 && focusCell(r.policyId, t)}
+                                disabled={n === 0}
+                                className={`w-full max-w-[120px] mx-auto block rounded-md py-1.5 font-mono text-[11px] tabular-nums transition ${
+                                  n > 0 ? 'hover:outline hover:outline-1 hover:outline-white/40 cursor-pointer' : 'cursor-default'
+                                }`}
+                                style={{
+                                  background: n === 0 ? '#0B1322' : `${m.color}${Math.round(20 + 60 * (n / maxCell)).toString(16).padStart(2, '0')}`,
+                                  color: n === 0 ? '#3A4D6E' : '#E6EBF2',
+                                }}
+                              >
+                                {n}
+                              </button>
+                            </td>
+                          );
+                        })}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
 
-            <div className="mt-4 grid md:grid-cols-2 gap-3">
-              {filteredFindings.slice(0, 60).map(f => (
-                <div
-                  key={f.id}
-                  className={`${PANEL} p-3.5`}
-                  style={{ borderLeft: `3px solid ${SEVERITY_EDGE[f.severity]}` }}
+            {/* Findings list */}
+            <div id="pc2-gap-list" className="mt-6 scroll-mt-24">
+              <div className="flex flex-wrap items-center gap-1.5">
+                <h3 className="text-[15px] font-bold mr-2">
+                  Gap findings{' '}
+                  <span className="text-[#7E92AE] font-normal text-[12px]">
+                    — {filteredGaps.length} of {gaps.findings.length}
+                  </span>
+                </h3>
+                <select
+                  value={gapTypeFilter}
+                  onChange={e => setGapTypeFilter(e.target.value as GapType | '')}
+                  className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]"
                 >
-                  <div className="flex flex-wrap items-center gap-1.5">
-                    <SeverityBadge severity={f.severity} />
-                    <span className="font-mono text-[9px] uppercase tracking-[0.08em] text-[#7E92AE] border border-[#1E2C46] rounded px-1.5 py-0.5">
-                      {f.scope}
-                    </span>
-                    <span className="font-mono text-[9px] text-[#7E92AE]">{PC2_RULES[f.ruleId].name}</span>
-                  </div>
-                  <p className="mt-1.5 text-[13px] font-bold text-[#E6EBF2] leading-snug">{f.title}</p>
-                  <p className="mt-1 text-[11px] text-[#9DAEC5] leading-relaxed">{f.detail}</p>
-                  {f.evidence.length > 0 && (
-                    <div className="mt-2 space-y-1">
-                      {f.evidence.slice(0, 3).map(ev => {
-                        const u = unitById.get(ev.unitId);
-                        return u ? (
-                          <BlockChip
-                            key={ev.unitId}
-                            unit={u}
-                            state={stateOf(ev.unitId)}
-                            onSelect={id => selectUnit(id)}
-                            active={ev.unitId === selectedUnitId}
-                          />
-                        ) : (
-                          <p key={ev.unitId} className="text-[10.5px] text-[#9DAEC5] pl-2 border-l border-[#1E2C46]">
-                            {ev.policyId} · {ev.path}: “{ev.quote.slice(0, 140)}…”
-                          </p>
-                        );
-                      })}
+                  <option value="">All gap types</option>
+                  {GAP_TYPES.map(t => (
+                    <option key={t} value={t}>
+                      {GAP_META[t].name} ({gaps.countsByType[t]})
+                    </option>
+                  ))}
+                </select>
+                <select
+                  value={gapSeverityFilter}
+                  onChange={e => setGapSeverityFilter(e.target.value as GapSeverity | '')}
+                  className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]"
+                >
+                  <option value="">All severities</option>
+                  {(['high', 'medium', 'low', 'candidate'] as GapSeverity[]).map(s => (
+                    <option key={s} value={s}>{s}</option>
+                  ))}
+                </select>
+                <select
+                  value={gapConfidenceFilter}
+                  onChange={e => setGapConfidenceFilter(e.target.value as GapConfidence | '')}
+                  className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2]"
+                >
+                  <option value="">All confidence</option>
+                  {(['corroborated', 'high', 'medium', 'low'] as GapConfidence[]).map(c => (
+                    <option key={c} value={c}>{c} ({gaps.countsByConfidence[c]})</option>
+                  ))}
+                </select>
+                <select
+                  value={gapPolicyFilter}
+                  onChange={e => setGapPolicyFilter(e.target.value)}
+                  className="bg-[#101B30] border border-[#1E2C46] rounded-lg px-2 py-1.5 text-[11px] text-[#C6D2E2] max-w-[240px]"
+                >
+                  <option value="">All acts</option>
+                  {matrixRows.map(r => (
+                    <option key={r.policyId} value={r.policyId}>
+                      {r.shortTitle} ({r.total})
+                    </option>
+                  ))}
+                </select>
+                {(gapTypeFilter || gapPolicyFilter || gapSeverityFilter || gapConfidenceFilter) && (
+                  <button
+                    onClick={() => { setGapTypeFilter(''); setGapPolicyFilter(''); setGapSeverityFilter(''); setGapConfidenceFilter(''); }}
+                    className="text-[11px] text-[#7E92AE] underline"
+                  >
+                    clear
+                  </button>
+                )}
+              </div>
+
+              <div className="mt-3 grid md:grid-cols-2 gap-3">
+                {filteredGaps.slice(0, 40).map(f => (
+                  <div
+                    key={f.id}
+                    className={`${PANEL} p-3.5`}
+                    style={{ borderLeft: `3px solid ${GAP_META[f.gapType].color}` }}
+                  >
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <GapBadge gapType={f.gapType} />
+                      <SevBadge severity={f.severity} />
+                      <ConfBadge confidence={f.confidence} />
+                      {f.leverName && (
+                        <span className="font-mono text-[9px] text-[#7E92AE]">lever: {f.leverName}</span>
+                      )}
                     </div>
-                  )}
-                </div>
-              ))}
+                    <p className="mt-1.5 text-[13px] font-bold text-[#E6EBF2] leading-snug">{f.title}</p>
+                    <ReasoningChain steps={f.reasoning} />
+                    {f.evidence.length > 0 && (
+                      <div className="mt-2 space-y-1">
+                        {f.evidence.slice(0, 3).map(ev => {
+                          const u = unitById.get(ev.unitId);
+                          return u ? (
+                            <BlockChip
+                              key={ev.unitId}
+                              unit={u}
+                              state={stateOf(ev.unitId)}
+                              onSelect={id => selectUnit(id)}
+                              active={ev.unitId === selectedUnitId}
+                            />
+                          ) : null;
+                        })}
+                      </div>
+                    )}
+                    <p className="mt-2 font-mono text-[9px] text-[#56688A]">basis: {f.basis.join(' · ')}</p>
+                  </div>
+                ))}
+              </div>
+              {filteredGaps.length > 40 && (
+                <p className="mt-2 text-[11px] text-[#7E92AE]">
+                  Showing 40 of {filteredGaps.length} — narrow the filters or use the JSONL export.
+                </p>
+              )}
             </div>
-            {filteredFindings.length > 60 && (
-              <p className="mt-2 text-[11px] text-[#7E92AE]">
-                Showing 60 of {filteredFindings.length} — narrow the filters or use the JSONL export.
-              </p>
-            )}
           </section>
 
           {/* ── ML layer ──────────────────────────────────────────────── */}
           <section id="pc2-tour-ml" className={`mt-10 scroll-mt-24${tourClass('pc2-tour-ml')}`}>
             <h2 className="text-[22px] font-bold">Discovered tensions</h2>
             <p className="mt-1 text-[12px] text-[#9DAEC5] max-w-3xl leading-relaxed">
-              The machine-learning pass learns a TF-IDF vector model from the blocks themselves
-              and mines pairs that pull against each other — beyond what any declared rule
-              names. Deterministic and recomputable; no external model.
+              The machine-learning pass learns a TF-IDF vector model from the blocks and mines
+              pairs that pull against each other. High-scoring ⚡ contradictions feed the
+              inconsistency column above as candidates. Deterministic and recomputable.
             </p>
             {!ml ? (
               <button
@@ -852,21 +1092,19 @@ export default function PolicyCoherence2Page() {
             )}
           </section>
 
-          {/* ── Rule book ─────────────────────────────────────────────── */}
+          {/* ── Signal rules ──────────────────────────────────────────── */}
           <section id="pc2-tour-rules" className={`mt-10 scroll-mt-24${tourClass('pc2-tour-rules')}`}>
-            <h2 className="text-[22px] font-bold">The rule book</h2>
+            <h2 className="text-[22px] font-bold">The signal rules</h2>
             <p className="mt-1 text-[12px] text-[#9DAEC5]">
-              Every misfit follows mechanically from one of these declared rules.
+              Block-level rules whose outputs are classified into the four gap types. Every gap
+              finding prints which rule(s) it rests on (the &ldquo;basis&rdquo; line).
             </p>
             <div className="mt-3 grid sm:grid-cols-2 gap-2">
               {Object.values(PC2_RULES).map(r => (
                 <div key={r.id} className={`${PANEL} p-3`}>
-                  <div className="flex items-center gap-1.5">
-                    <SeverityBadge severity={r.defaultSeverity} />
-                    <span className="font-mono text-[9px] text-[#7E92AE]">
-                      {r.id} · {r.stepId} · {r.scope}
-                    </span>
-                  </div>
+                  <p className="font-mono text-[9px] text-[#7E92AE]">
+                    {r.id} · {r.scope}
+                  </p>
                   <p className="mt-1 text-[12px] font-bold text-[#E6EBF2]">{r.name}</p>
                   <p className="mt-1 text-[10.5px] text-[#9DAEC5] leading-relaxed">{r.rule}</p>
                 </div>
@@ -881,19 +1119,21 @@ export default function PolicyCoherence2Page() {
           >
             <p className="font-bold text-[#E6EBF2] text-[12px]">Method note</p>
             <p>
-              Blocks reuse the Content Analysis block id space and split further into sentence
-              units with deterministic ids, so every tile is durably addressable. Claims are
-              extracted by declared, deterministic rules; findings follow mechanically from
-              the rule book; the curated act-level layer (ex-ante audits, Nilsson goal
-              interactions) is anchored down to the blocks carrying the cited provisions,
-              never re-authored. Candidate findings are deliberately over-inclusive on the
-              cross-policy side — undeclared scope differences are exactly where incoherence
-              hides. Where a shipped text is an excerpt of the consolidated act,
-              absence-based findings mark where the substrate ends, not necessarily where the
-              act does. The ML pass is classical unsupervised learning (TF-IDF vector space,
-              cosine pair mining, centroid clustering): fully deterministic and recomputable
-              from the printed parameters, with standard final provisions stop-listed so
-              drafting convention does not masquerade as coherence signal.
+              The classification follows the Advisory Board&apos;s consistency framework: the
+              assessment identifies policy gaps, policy inconsistencies, ambition gaps and
+              implementation gaps — here applied at the level of individual sentence blocks
+              and rolled up per act. Block extraction is deterministic; gap classification is
+              rule-mapped (each finding prints its basis); the ambition/implementation split
+              follows the report&apos;s own logic: measured pace shortfalls count as
+              implementation gaps where the delivery machinery is largely in place
+              (means score ≥ 0.45 from the objective–delivery checklist) and as ambition gaps
+              where the machinery itself is thin. Policy-gap verdicts are corpus-relative by
+              construction — they assert silence of the tracked corpus, not of EU law — and
+              say so in their reasoning chains. Where a shipped text is an excerpt,
+              absence-based findings mark where the substrate ends. The ML pass (TF-IDF
+              vector space, cosine pair mining, centroid clustering) is fully deterministic;
+              its contradiction candidates enter the inconsistency column only above a
+              printed score threshold and always as &ldquo;candidate&rdquo; severity.
             </p>
           </section>
 

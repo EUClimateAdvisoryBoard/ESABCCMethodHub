@@ -108,6 +108,12 @@ const TARGET_CUE = /\b(reduc|target|objective|achiev|increas|share|limit|contrib
 const YEAR_RE = /\b(19[5-9]\d|20\d{2})\b/g;
 const BASELINE_RE = /\b(?:compared (?:to|with)|below|relative to|against)\s+(?:the year\s+)?(19[5-9]\d|20\d{2})(?:\s+levels)?|\b(19[5-9]\d|20\d{2})\s+levels\b/i;
 
+/** Attribution verbs right before a percentage mark a DESCRIPTIVE share
+ *  ("the energy sector contributes over 75% of emissions"), not a target.
+ *  Without this guard, recital background facts masquerade as objectives. */
+const DESCRIPTIVE_SHARE_RE =
+  /(contribut\w*|accounts?\s+for|accounting\s+for|represent\w*|constitut\w*|responsible\s+for|amounts?\s+to|amounting\s+to|stood\s+at|stands?\s+at|equivalent\s+to|equal\s+to|cause[sd]?\b[^%]{0,20})\s*(?:over|more\s+than|approximately|around|about|nearly|some|up\s+to)?\s*$/i;
+
 function extractTargets(text: string): Pc2Claim[] {
   const out: Pc2Claim[] = [];
   if (!TARGET_CUE.test(text)) return out;
@@ -125,6 +131,8 @@ function extractTargets(text: string): Pc2Claim[] {
   while ((m = pctRe.exec(text)) !== null) {
     const value = parseFloat(m[1]);
     if (!Number.isFinite(value) || value > 100) continue;
+    const prefix = text.slice(Math.max(0, m.index - 70), m.index);
+    if (DESCRIPTIVE_SHARE_RE.test(prefix)) continue;
     out.push({
       kind: 'target',
       excerpt: excerptAround(text, m.index, m[0].length),

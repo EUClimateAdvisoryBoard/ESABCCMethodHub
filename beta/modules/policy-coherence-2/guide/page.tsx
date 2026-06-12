@@ -68,19 +68,23 @@ export default function PolicyCoherence2GuidePage() {
 
         <div className="space-y-10">
           <section>
-            <StepHeading n={1} color="bg-primary/10 text-primary">Understand the four lenses</StepHeading>
+            <StepHeading n={1} color="bg-primary/10 text-primary">Understand the four gap types</StepHeading>
             <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
               <p>
-                The four cards at the top are the same four steps as the act-level Policy
-                Coherence board — <strong>① ex-ante design vs world development, ② coherence
-                across policy goals, ③ goals vs means, ④ policy evaluation</strong> — but here
-                they are applied to every sentence instead of grading each act as one unit.
+                The module applies the Advisory Board&apos;s consistency framework (assessment
+                report §2.1) at block level. Every signal the blocks reveal is classified as
+                one of four gap types, defined as in the report:
               </p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li><strong>Policy gaps</strong> — no EU policies in place to drive the required change in a specific mitigation lever or enabling condition (detected via a lever-coverage scan over the whole corpus);</li>
+                <li><strong>Policy inconsistencies</strong> — policies providing incentives that counteract the required change (counteracting goal interactions, conflicting target blocks, discovered contradictions);</li>
+                <li><strong>Ambition gaps</strong> — policies in place, but objectives or delivery mechanisms insufficient (goals without means, weak deontics, derogation clusters, missing MRV);</li>
+                <li><strong>Implementation gaps</strong> — ambitious policies in place, but delivery ineffective so far (measured pace below the required pace while the machinery exists; violated design assumptions).</li>
+              </ul>
               <p>
-                Each sentence unit gets <strong>step tags</strong> showing which lenses it
-                feeds: a recital stating a design assumption feeds ①, a cross-reference to
-                another act feeds ②, a target or instrument feeds ③, an MRV or review clause
-                feeds ④.
+                Every gap finding carries a <strong>numbered reasoning chain</strong> — from
+                required change, through block-level evidence, to conclusion — and cites the
+                exact sentence blocks it rests on.
               </p>
             </div>
           </section>
@@ -148,8 +152,15 @@ export default function PolicyCoherence2GuidePage() {
           </section>
 
           <section>
-            <StepHeading n={4} color="bg-primary/10 text-primary">Triage the misfits</StepHeading>
+            <StepHeading n={4} color="bg-primary/10 text-primary">Read the gap matrix, triage the gaps</StepHeading>
             <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
+              <p>
+                The <strong>gap matrix</strong> is the bigger picture: acts as rows, the gap
+                types as columns, cell colour intensity by count — click any cell to filter
+                the findings list to that act and gap type. Policy gaps sit in their own{' '}
+                <strong>lever-coverage panel</strong> on the left: levers no act in the corpus
+                drives have no row to live in.
+              </p>
               <p>
                 Findings are pre-sorted worst-first. A practical triage: filter severity to{' '}
                 <Chip className="bg-red-50 text-red-700 border-red-200 font-mono uppercase">high</Chip>{' '}

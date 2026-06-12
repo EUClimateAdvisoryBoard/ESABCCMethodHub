@@ -78,7 +78,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
     stepId: 'evaluation',
     scope: 'within-policy',
     defaultSeverity: 'high',
-    rule: 'The act states at least one quantified target but contains zero monitoring/reporting clauses across all units.',
+    rule: 'The act states at least one OPERATIVE quantified target (recital restatements do not count) but contains zero monitoring/reporting clauses across all units. Downgraded to medium when the act cross-references a monitoring-rich act (MRV likely delegated, e.g. to the Governance Regulation).',
   },
   'pc2-undated-target': {
     id: 'pc2-undated-target',
@@ -195,6 +195,10 @@ interface TargetRef {
 function targetRefs(units: Pc2Unit[]): TargetRef[] {
   const out: TargetRef[] = [];
   for (const u of units) {
+    // Recitals restate history and other acts' numbers; only operative
+    // provisions state THIS act's targets, so only they enter the
+    // conflict/divergence comparisons.
+    if (u.blockKind === 'recital') continue;
     for (const c of u.claims) {
       if (c.kind !== 'target' || c.unit !== '%' || c.value === undefined) continue;
       if (!c.family || c.family === 'other' || !c.year) continue;
@@ -270,22 +274,48 @@ function articleGroups(units: Pc2Unit[]): Map<string, Pc2Unit[]> {
 
 function withinPolicyStructureRules(unitsByPolicy: Map<string, Pc2Unit[]>): Pc2Finding[] {
   const findings: Pc2Finding[] = [];
+
+  // Acts whose own shipped text is monitoring-rich can host MRV for acts
+  // that cross-reference them (the Governance Regulation pattern: energy
+  // targets are monitored via Reg. (EU) 2018/1999, not in RED/EED).
+  const mrvHosts = new Set(
+    [...unitsByPolicy.entries()]
+      .filter(([, us]) => us.filter(u => u.claims.some(c => c.kind === 'monitoring')).length >= 5)
+      .map(([pid]) => pid),
+  );
+
   for (const [policyId, units] of unitsByPolicy) {
     const actMeans = units.filter(u =>
       u.claims.some(c => c.kind === 'instrument' || c.kind === 'financing'),
     ).length;
     const actMonitoring = units.filter(u => u.claims.some(c => c.kind === 'monitoring'));
     const actTargets = units.filter(u => u.claims.some(c => c.kind === 'target'));
+    // Operative targets only: a recital restating a target is context, not
+    // an obligation this act must make measurable.
+    const operativeTargets = actTargets.filter(u => u.blockKind !== 'recital');
 
     // pc2-unmeasurable-target — act level.
-    if (actTargets.length > 0 && actMonitoring.length === 0) {
+    if (operativeTargets.length > 0 && actMonitoring.length === 0) {
+      const referencedHosts = [
+        ...new Set(
+          units.flatMap(u =>
+            u.claims
+              .filter(c => c.kind === 'crossref' && c.resolvedPolicyId && mrvHosts.has(c.resolvedPolicyId))
+              .map(c => c.resolvedPolicyId as string),
+          ),
+        ),
+      ];
       findings.push(
         makeFinding(
           'pc2-unmeasurable-target',
           policyId,
-          actTargets.slice(0, 4),
+          operativeTargets.slice(0, 4),
           `Targets without any MRV clause in the shipped text`,
-          `The act states ${actTargets.length} target unit(s) but its shipped text contains no monitoring/reporting clause — policy outcomes cannot be measured from the act's own machinery. (If the shipped text is an excerpt, the MRV articles may simply not be included; the finding marks where the substrate ends.)`,
+          `The act states ${operativeTargets.length} operative target unit(s) but its shipped text contains no monitoring/reporting clause — outcomes cannot be measured from the act's own machinery.` +
+            (referencedHosts.length > 0
+              ? ` Severity reduced to medium: the act cross-references ${referencedHosts.join(', ')}, whose shipped text is monitoring-rich — MRV is likely delegated there rather than absent.`
+              : ` (If the shipped text is an excerpt, the MRV articles may simply not be included; the finding marks where the substrate ends.)`),
+          referencedHosts.length > 0 ? 'medium' : undefined,
         ),
       );
     }
