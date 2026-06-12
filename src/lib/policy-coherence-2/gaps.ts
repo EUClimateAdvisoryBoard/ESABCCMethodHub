@@ -74,35 +74,31 @@ export const CONFIDENCE_LABEL: Record<GapConfidence, string> = {
 
 export const GAP_META: Record<
   GapType,
-  { name: string; definition: string; color: string; icon: string }
+  { name: string; definition: string; color: string }
 > = {
   'policy-gap': {
     name: 'Policy gap',
     definition:
       'No EU policies in place to drive the required change in the specific mitigation lever or enabling condition.',
     color: '#A78BFA',
-    icon: '∅',
   },
   'policy-inconsistency': {
     name: 'Policy inconsistency',
     definition:
       'EU policies are providing incentives that counteract the required change in the relevant mitigation levers or enabling conditions.',
     color: '#EF4444',
-    icon: '⚡',
   },
   'ambition-gap': {
     name: 'Ambition gap',
     definition:
       'EU policies are in place to target the relevant lever or condition, but their overall ambition level — objectives or delivery mechanisms — is insufficient to achieve the outcomes.',
     color: '#F59E0B',
-    icon: '◔',
   },
   'implementation-gap': {
     name: 'Implementation gap',
     definition:
       'Ambitious EU policies are in place, but implementation at the EU, national or subnational level has been ineffective so far.',
     color: '#38BDF8',
-    icon: '⏳',
   },
 };
 

@@ -89,10 +89,10 @@ const CLAIM_BAR: Record<string, string> = {
   crossref: '#94A3B8',
 };
 
-const ML_CONNECTOR: Record<Pc2MlPairKind, { icon: string; label: string; color: string }> = {
-  'contradiction-candidate': { icon: '⚡', label: 'contradiction', color: '#EF4444' },
-  'tradeoff-candidate': { icon: '⇄', label: 'trade-off', color: '#F59E0B' },
-  'duplication-overlap': { icon: '≡', label: 'overlap', color: '#38BDF8' },
+const ML_CONNECTOR: Record<Pc2MlPairKind, { label: string; color: string }> = {
+  'contradiction-candidate': { label: 'contradiction', color: '#EF4444' },
+  'tradeoff-candidate': { label: 'trade-off', color: '#F59E0B' },
+  'duplication-overlap': { label: 'overlap', color: '#38BDF8' },
 };
 
 const PANEL = 'rounded-xl border border-[#1E2C46] bg-[#101B30]';
@@ -129,7 +129,7 @@ const TOUR_STEPS: Array<{ target: string; title: string; body: string }> = [
   {
     target: 'pc2-tour-ml',
     title: 'Discovered tensions (ML)',
-    body: 'The unsupervised pass mines block pairs that pull against each other: ⚡ contradictions (which feed the inconsistency column as candidates), ⇄ trade-offs, ≡ near-duplicates, and cross-act theme clusters.',
+    body: 'The unsupervised pass mines block pairs that pull against each other: contradictions (which feed the inconsistency column as candidates), trade-offs and near-duplicates, plus cross-act theme clusters.',
   },
   {
     target: 'pc2-tour-rules',
@@ -145,21 +145,6 @@ const TOUR_STEPS: Array<{ target: string; title: string; body: string }> = [
 
 // ── Small building blocks ──────────────────────────────────────────────────
 
-function StatBig({ value, label, accent }: { value: number | string; label: string; accent?: boolean }) {
-  return (
-    <div>
-      <p
-        className={`font-mono text-[26px] sm:text-[34px] font-bold leading-none tabular-nums ${
-          accent ? 'text-[#E87722]' : 'text-[#E6EBF2]'
-        }`}
-      >
-        {typeof value === 'number' ? value.toLocaleString('en-GB') : value}
-      </p>
-      <p className="mt-1 text-[10px] uppercase tracking-[0.16em] text-[#7E92AE]">{label}</p>
-    </div>
-  );
-}
-
 function GapBadge({ gapType }: { gapType: GapType }) {
   const m = GAP_META[gapType];
   return (
@@ -167,7 +152,7 @@ function GapBadge({ gapType }: { gapType: GapType }) {
       className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em]"
       style={{ color: m.color, borderColor: `${m.color}66`, background: `${m.color}1A` }}
     >
-      {m.icon} {m.name}
+      {m.name}
     </span>
   );
 }
@@ -386,7 +371,7 @@ export default function PolicyCoherence2Page() {
       const json = await res.json();
       if (!res.ok) throw new Error(json?.error ?? `HTTP ${res.status}`);
       if (json.persisted === false) setMlDbStatus('Computed — Supabase not configured, nothing persisted.');
-      else setMlDbStatus(`Persisted: ${json.stats.contradictionCandidates} ⚡ · ${json.stats.tradeoffCandidates} ⇄ · ${json.stats.duplicationOverlaps} ≡ · ${json.stats.clusters} clusters.`);
+      else setMlDbStatus(`Persisted: ${json.stats.contradictionCandidates} contradiction, ${json.stats.tradeoffCandidates} trade-off and ${json.stats.duplicationOverlaps} overlap pairs, ${json.stats.clusters} clusters.`);
     } catch (err) {
       setMlDbStatus(`Failed: ${err instanceof Error ? err.message : 'unknown error'}`);
     } finally {
@@ -403,79 +388,69 @@ export default function PolicyCoherence2Page() {
       <SiteHeader />
       <main className="bg-[#0B1322] text-[#E6EBF2] min-h-screen">
         <div className="max-w-[1380px] mx-auto px-4 sm:px-6 py-8 sm:py-10">
-          {/* ── Hero ──────────────────────────────────────────────────── */}
+          {/* ── Header ────────────────────────────────────────────────── */}
           <section id="pc2-tour-hero" className={`scroll-mt-24${tourClass('pc2-tour-hero')}`}>
-            <p className="font-mono text-[11px] tracking-[0.22em] uppercase text-[#E87722] font-bold">
-              Beta · M·25 · block-level consistency assessment
+            <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#7E92AE]">
+              Beta module · M·25
             </p>
-            <h1 className="mt-2 text-[30px] sm:text-[44px] font-bold leading-[1.05] tracking-tight">
-              Every sentence is a piece of data.
-              <br />
-              <span className="text-[#7E92AE]">Where are the gaps?</span>
+            <h1 className="mt-1 text-[26px] sm:text-[32px] font-bold tracking-tight">
+              Policy Coherence 2.0
             </h1>
-            <p className="mt-3 max-w-3xl text-[14px] text-[#9DAEC5] leading-relaxed">
-              The corpus is decomposed into addressable blocks — one per sentence, each with a
-              stable id and machine-extracted claims. The Advisory Board&apos;s consistency
-              framework then classifies what the blocks reveal, at micro level but rolled up
-              per act: where no policy drives a lever, where policies counteract each other,
-              where ambition or implementation falls short.
+            <p className="mt-1 text-[13px] text-[#9DAEC5]">
+              Block-level consistency assessment of the tracked EU climate policy corpus.
+            </p>
+            <p className="mt-3 max-w-3xl text-[13px] text-[#9DAEC5] leading-relaxed">
+              Each shipped policy text is split into sentence-level blocks with stable
+              identifiers. Typed claims — targets, obligations, instruments, financing,
+              monitoring and review clauses, derogations, cross-references — are extracted
+              from every block, and the results are classified under the Advisory
+              Board&apos;s consistency framework (assessment report §2.1). Current run:{' '}
+              {run.stats.policyCount} acts · {run.stats.unitCount.toLocaleString('en-GB')}{' '}
+              blocks · {run.stats.claimCount.toLocaleString('en-GB')} claims ·{' '}
+              {gaps.findings.length} gap findings, implicating {flaggedCount} blocks.
             </p>
 
-            <div className="mt-6 grid grid-cols-3 sm:grid-cols-6 gap-x-6 gap-y-4">
-              <StatBig value={run.stats.policyCount} label="acts" />
-              <StatBig value={run.stats.unitCount} label="data blocks" accent />
-              <StatBig value={run.stats.claimCount} label="extracted claims" />
-              <StatBig value={flaggedCount} label="blocks in gaps" />
-              <StatBig value={gaps.findings.length} label="gap findings" accent />
-              <StatBig value={gaps.countsByType['policy-gap']} label="policy gaps (levers)" />
-            </div>
-
-            {/* The four gap types — definitions verbatim-close to the report */}
-            <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+            {/* The four gap types, as defined in the report */}
+            <div className="mt-5 grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-4xl">
               {GAP_TYPES.map(t => {
                 const m = GAP_META[t];
                 return (
-                  <div key={t} className={`${PANEL} px-3 py-2.5`} style={{ borderTop: `2px solid ${m.color}` }}>
-                    <p className="font-mono text-[15px] font-bold leading-none" style={{ color: m.color }}>
-                      {m.icon}{' '}
-                      <span className="text-[12px] tracking-wide uppercase">{m.name}</span>
-                      <span className="ml-1.5 text-[12px] text-[#7E92AE]">
-                        {gaps.countsByType[t]}
-                      </span>
-                    </p>
-                    <p className="mt-1.5 text-[10.5px] text-[#9DAEC5] leading-relaxed">{m.definition}</p>
-                  </div>
+                  <p key={t} className="text-[12px] leading-relaxed">
+                    <span className="font-bold" style={{ color: m.color }}>
+                      {m.name}
+                    </span>
+                    <span className="text-[#7E92AE]"> ({gaps.countsByType[t]})</span>
+                    <span className="text-[#9DAEC5]"> — {m.definition}</span>
+                  </p>
                 );
               })}
             </div>
 
-            {/* Command bar */}
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <button
                 onClick={() => setTourStep(0)}
-                className="px-3.5 py-2 rounded-lg bg-[#E87722] text-white text-[12px] font-bold hover:bg-[#F08A3C] transition"
+                className="px-3 py-1.5 rounded-lg border border-[#E87722] text-[12px] font-bold text-[#E87722] hover:bg-[#E87722]/10 transition"
               >
-                ▶ Guided tour
+                Guided tour
               </button>
               <Link
                 href="/beta/policy-coherence-2/guide"
-                className="px-3.5 py-2 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition"
+                className="px-3 py-1.5 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition"
               >
-                Full guide →
+                Guide
               </Link>
-              <span className="w-px h-6 bg-[#1E2C46] mx-1 hidden sm:block" />
               <button
                 onClick={writeToDatabase}
                 disabled={writing}
-                className="px-3.5 py-2 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition disabled:opacity-50"
+                className="px-3 py-1.5 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition disabled:opacity-50"
               >
-                {writing ? 'Writing…' : '⛁ Write run to database'}
+                {writing ? 'Writing…' : 'Write run to database'}
               </button>
               <a
                 href="/api/policy-coherence-2/export"
-                className="px-3.5 py-2 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition"
+                className="px-3 py-1.5 rounded-lg border border-[#2A3B5C] text-[12px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition"
               >
-                ⬇ JSONL export
+                JSONL export
               </a>
               <span className="font-mono text-[9.5px] text-[#56688A]">
                 engine {run.engineVersion} · gaps {gaps.version} · corpus {run.corpusHash}
@@ -750,7 +725,7 @@ export default function PolicyCoherence2Page() {
                           return u ? (
                             <div key={p.id}>
                               <p className="font-mono text-[9px]" style={{ color: conn.color }}>
-                                {conn.icon} {conn.label} · score {p.score.toFixed(2)}
+                                {conn.label} · score {p.score.toFixed(2)}
                               </p>
                               <BlockChip unit={u} state={stateOf(otherId)} onSelect={uid => selectUnit(uid)} />
                             </div>
@@ -792,7 +767,7 @@ export default function PolicyCoherence2Page() {
               {/* Lever coverage / policy gaps */}
               <div className={`${PANEL} p-4`}>
                 <h3 className="text-[13px] font-bold" style={{ color: GAP_META['policy-gap'].color }}>
-                  ∅ Lever coverage — where are the policy gaps?
+                  Lever coverage — policy gaps
                 </h3>
                 <div className="mt-2 space-y-2 max-h-[520px] overflow-y-auto pr-1">
                   {gaps.levers
@@ -843,7 +818,7 @@ export default function PolicyCoherence2Page() {
                             className="font-mono text-[10px] uppercase tracking-[0.08em] font-bold"
                             style={{ color: GAP_META[t].color }}
                           >
-                            {GAP_META[t].icon} {GAP_META[t].name.replace('Policy ', '')}
+                            {GAP_META[t].name.replace('Policy ', '')}
                           </span>
                         </th>
                       ))}
@@ -996,7 +971,7 @@ export default function PolicyCoherence2Page() {
             <h2 className="text-[22px] font-bold">Discovered tensions</h2>
             <p className="mt-1 text-[12px] text-[#9DAEC5] max-w-3xl leading-relaxed">
               The machine-learning pass learns a TF-IDF vector model from the blocks and mines
-              pairs that pull against each other. High-scoring ⚡ contradictions feed the
+              pairs that pull against each other. High-scoring contradictions feed the
               inconsistency column above as candidates. Deterministic and recomputable.
             </p>
             {!ml ? (
@@ -1004,7 +979,7 @@ export default function PolicyCoherence2Page() {
                 onClick={() => setMlRequested(true)}
                 className="mt-3 px-3.5 py-2 rounded-lg bg-[#E87722] text-white text-[12px] font-bold hover:bg-[#F08A3C] transition"
               >
-                ▶ Run ML pass ({PC2_ML_VERSION})
+                Run ML pass ({PC2_ML_VERSION})
               </button>
             ) : (
               <>
@@ -1019,7 +994,6 @@ export default function PolicyCoherence2Page() {
                           : 'border-[#1E2C46] text-[#9DAEC5] hover:border-[#3A4D6E]'
                       }`}
                     >
-                      <span style={{ color: ML_CONNECTOR[k].color }}>{ML_CONNECTOR[k].icon}</span>{' '}
                       {ML_CONNECTOR[k].label} ({ml.pairs.filter(p => p.kind === k).length})
                     </button>
                   ))}
@@ -1029,7 +1003,7 @@ export default function PolicyCoherence2Page() {
                     disabled={mlWriting}
                     className="px-3 py-1.5 rounded-lg border border-[#2A3B5C] text-[11px] font-bold text-[#C6D2E2] hover:border-[#3A4D6E] transition disabled:opacity-50"
                   >
-                    {mlWriting ? 'Writing…' : '⛁ Write ML results to database'}
+                    {mlWriting ? 'Writing…' : 'Write ML results to database'}
                   </button>
                   {mlDbStatus && <span className="text-[11px] text-[#9DAEC5]">{mlDbStatus}</span>}
                 </div>
@@ -1047,8 +1021,8 @@ export default function PolicyCoherence2Page() {
                               {ua && <BlockChip unit={ua} state={stateOf(p.unitA)} onSelect={id => selectUnit(id)} active={p.unitA === selectedUnitId} />}
                             </div>
                             <div className="flex flex-col items-center justify-center px-1">
-                              <span className="text-[20px] leading-none" style={{ color: conn.color }}>
-                                {conn.icon}
+                              <span className="font-mono text-[9px] uppercase tracking-[0.06em]" style={{ color: conn.color }}>
+                                {conn.label}
                               </span>
                               <span className="mt-1 font-mono text-[9px] text-[#7E92AE] tabular-nums">
                                 {p.score.toFixed(2)}
@@ -1174,7 +1148,7 @@ export default function PolicyCoherence2Page() {
                     onClick={() => setTourStep(null)}
                     className="px-2.5 py-1 rounded-lg bg-teal-500 text-white text-[11px] font-bold"
                   >
-                    Done ✓
+                    Done
                   </button>
                 )}
               </div>
