@@ -18,7 +18,8 @@
  * findings to Supabase as the durable, ML-ready substrate).
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { COHERENCE_STEPS } from '@/lib/content-analysis/policy-coherence';
@@ -101,6 +102,48 @@ function FindingCard({ finding }: { finding: Pc2Finding }) {
     </div>
   );
 }
+
+// ── Guided tour ────────────────────────────────────────────────────────────
+// In-place walkthrough: each step scrolls to one section and highlights it.
+// The reference version of the same content lives at ./guide.
+
+const TOUR_STEPS: Array<{ target: string; title: string; body: string }> = [
+  {
+    target: 'pc2-tour-steps',
+    title: 'The four lenses',
+    body: 'Same four steps as the act-level coherence board — ex-ante assumptions, coherence across goals, goals vs means, evaluation — but applied to every single sentence instead of grading each act as one unit.',
+  },
+  {
+    target: 'pc2-tour-run',
+    title: 'The run bar',
+    body: 'The corpus at a glance: policies with real text, the blocks and sentence units they split into, extracted claims, and findings by severity. "Write analysis to database" persists everything with stable ids; the JSONL export feeds external ML pipelines.',
+  },
+  {
+    target: 'pc2-tour-findings',
+    title: 'Triage the findings',
+    body: 'Pre-sorted worst-first. Start with severity HIGH, then MEDIUM; use the filters to slice by step, rule or policy. Every card names the rule it followed and quotes the exact provisions it rests on. INFO findings are deliberately over-inclusive candidates for human review.',
+  },
+  {
+    target: 'pc2-tour-explorer',
+    title: 'Block-by-block explorer',
+    body: 'Pick an act from the dropdown. Sentences are grouped by article/recital; groups with flagged units open automatically. Chips show step tags and extracted claims (hover for details) — rose "flexibility" chips mark discretion language, amber ⚑ flags mean a finding cites that exact sentence.',
+  },
+  {
+    target: 'pc2-tour-ml',
+    title: 'The machine-learning pass',
+    body: 'Learns a TF-IDF vector model from the corpus and mines related provisions by similarity: contradiction candidates, trade-off candidates on contested resource axes, cross-act duplication, and theme clusters. Discovered, not pattern-matched — and every score is recomputable.',
+  },
+  {
+    target: 'pc2-tour-rules',
+    title: 'The rule book',
+    body: 'Every finding follows mechanically from one of these printed rules. If you disagree with a finding, audit the rule application — that is the point of declaring them.',
+  },
+  {
+    target: 'pc2-tour-method',
+    title: 'Method & caveats',
+    body: 'The honest fine print: where a shipped text is an excerpt, absence-based findings mark where the substrate ends, not where the act does. Full reference guide: the "Read the full guide" link at the top.',
+  },
+];
 
 const ML_KIND_LABEL: Record<Pc2MlPairKind, string> = {
   'contradiction-candidate': 'Contradiction candidates',
@@ -217,6 +260,21 @@ export default function PolicyCoherence2Page() {
   const [mlKind, setMlKind] = useState<Pc2MlPairKind>('contradiction-candidate');
   const [mlDbStatus, setMlDbStatus] = useState<string>('');
   const [mlWriting, setMlWriting] = useState(false);
+  const [tourStep, setTourStep] = useState<number | null>(null);
+
+  // Scroll the highlighted section into view on each tour step; entering the
+  // ML step triggers the pass so the tour shows it live, not as a stub.
+  useEffect(() => {
+    if (tourStep === null) return;
+    if (TOUR_STEPS[tourStep].target === 'pc2-tour-ml') setMlRequested(true);
+    const el = document.getElementById(TOUR_STEPS[tourStep].target);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [tourStep]);
+
+  const tourClass = (id: string) =>
+    tourStep !== null && TOUR_STEPS[tourStep].target === id
+      ? ' rounded-lg ring-2 ring-[#E87722] ring-offset-4'
+      : '';
 
   // Computed lazily on request — the pass takes ~0.5 s over the full corpus.
   const ml = useMemo(() => (mlRequested ? runMlAnalysis(run) : null), [run, mlRequested]);
@@ -327,10 +385,27 @@ export default function PolicyCoherence2Page() {
             unit, claim and finding can be written to the database as a durable substrate for
             downstream machine-learning extraction.
           </p>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setTourStep(0)}
+              className="px-3 py-1.5 rounded bg-[#E87722] text-white text-[12px] font-bold"
+            >
+              ▶ Take the guided tour
+            </button>
+            <Link
+              href="/beta/policy-coherence-2/guide"
+              className="px-3 py-1.5 rounded border border-grey-200 bg-white text-[12px] font-bold text-tertiary-dark"
+            >
+              Read the full guide →
+            </Link>
+          </div>
         </section>
 
         {/* The four steps, applied block by block */}
-        <section className="mb-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+        <section
+          id="pc2-tour-steps"
+          className={`mb-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-2 scroll-mt-24${tourClass('pc2-tour-steps')}`}
+        >
           {COHERENCE_STEPS.map(s => (
             <div key={s.id} className="border border-grey-200 rounded-lg bg-white p-3">
               <p className="font-mono text-[18px] font-bold text-primary leading-none">
@@ -348,7 +423,10 @@ export default function PolicyCoherence2Page() {
         </section>
 
         {/* Run stats + persistence controls */}
-        <section className="mb-6 border border-grey-200 rounded-lg bg-grey-50 p-3">
+        <section
+          id="pc2-tour-run"
+          className={`mb-6 border border-grey-200 rounded-lg bg-grey-50 p-3 scroll-mt-24${tourClass('pc2-tour-run')}`}
+        >
           <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[12px] text-tertiary">
             <span>
               <span className="font-bold text-tertiary-dark">{run.stats.policyCount}</span>{' '}
@@ -404,7 +482,10 @@ export default function PolicyCoherence2Page() {
 
         <div className="grid lg:grid-cols-2 gap-5">
           {/* Findings explorer */}
-          <section>
+          <section
+            id="pc2-tour-findings"
+            className={`scroll-mt-24${tourClass('pc2-tour-findings')}`}
+          >
             <h2 className="text-lg font-bold text-tertiary-dark mb-2">
               Findings ({filteredFindings.length})
             </h2>
@@ -475,7 +556,10 @@ export default function PolicyCoherence2Page() {
           </section>
 
           {/* Block-by-block policy explorer */}
-          <section>
+          <section
+            id="pc2-tour-explorer"
+            className={`scroll-mt-24${tourClass('pc2-tour-explorer')}`}
+          >
             <h2 className="text-lg font-bold text-tertiary-dark mb-2">
               Block-by-block explorer
             </h2>
@@ -520,7 +604,7 @@ export default function PolicyCoherence2Page() {
         </div>
 
         {/* Machine-learning layer */}
-        <section className="mt-8">
+        <section id="pc2-tour-ml" className={`mt-8 scroll-mt-24${tourClass('pc2-tour-ml')}`}>
           <h2 className="text-lg font-bold text-tertiary-dark mb-1">
             Machine-learning layer
           </h2>
@@ -644,7 +728,7 @@ export default function PolicyCoherence2Page() {
         </section>
 
         {/* Rule book */}
-        <section className="mt-8">
+        <section id="pc2-tour-rules" className={`mt-8 scroll-mt-24${tourClass('pc2-tour-rules')}`}>
           <h2 className="text-lg font-bold text-tertiary-dark mb-2">Declared rules</h2>
           <div className="grid sm:grid-cols-2 gap-2">
             {Object.values(PC2_RULES).map(r => (
@@ -662,7 +746,10 @@ export default function PolicyCoherence2Page() {
           </div>
         </section>
 
-        <section className="mt-8 border-t border-grey-200 pt-4 text-[11px] text-tertiary leading-relaxed max-w-3xl space-y-2">
+        <section
+          id="pc2-tour-method"
+          className={`mt-8 border-t border-grey-200 pt-4 text-[11px] text-tertiary leading-relaxed max-w-3xl space-y-2 scroll-mt-24${tourClass('pc2-tour-method')}`}
+        >
           <p className="font-bold text-tertiary-dark text-[12px]">Method note</p>
           <p>
             Policy Coherence 2.0 reuses the four-step model of the act-level coherence board
@@ -701,6 +788,53 @@ export default function PolicyCoherence2Page() {
             not masquerade as coherence signal.
           </p>
         </section>
+        {/* Floating guided-tour card */}
+        {tourStep !== null && (
+          <div className="fixed bottom-4 right-4 z-50 w-[min(92vw,380px)] border border-grey-200 rounded-lg bg-white shadow-xl p-4">
+            <div className="flex items-start justify-between gap-2">
+              <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#E87722] font-bold">
+                Guided tour · {tourStep + 1} / {TOUR_STEPS.length}
+              </p>
+              <button
+                onClick={() => setTourStep(null)}
+                aria-label="End tour"
+                className="text-tertiary hover:text-tertiary-dark text-[14px] leading-none"
+              >
+                ✕
+              </button>
+            </div>
+            <p className="mt-1.5 text-[13px] font-bold text-tertiary-dark">
+              {TOUR_STEPS[tourStep].title}
+            </p>
+            <p className="mt-1 text-[11.5px] text-tertiary leading-relaxed">
+              {TOUR_STEPS[tourStep].body}
+            </p>
+            <div className="mt-3 flex items-center justify-between">
+              <button
+                onClick={() => setTourStep(Math.max(0, tourStep - 1))}
+                disabled={tourStep === 0}
+                className="px-2.5 py-1 rounded border border-grey-200 text-[11px] font-bold text-tertiary disabled:opacity-40"
+              >
+                ← Back
+              </button>
+              {tourStep < TOUR_STEPS.length - 1 ? (
+                <button
+                  onClick={() => setTourStep(tourStep + 1)}
+                  className="px-2.5 py-1 rounded bg-[#E87722] text-white text-[11px] font-bold"
+                >
+                  Next →
+                </button>
+              ) : (
+                <button
+                  onClick={() => setTourStep(null)}
+                  className="px-2.5 py-1 rounded bg-primary text-white text-[11px] font-bold"
+                >
+                  Done ✓
+                </button>
+              )}
+            </div>
+          </div>
+        )}
       </main>
       <SiteFooter />
     </>
