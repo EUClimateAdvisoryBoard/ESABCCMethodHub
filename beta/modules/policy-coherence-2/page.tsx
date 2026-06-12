@@ -603,7 +603,14 @@ export default function PolicyCoherence2Page() {
                                 {PC2_RULES[f.ruleId].name}
                               </span>
                             </div>
-                            <p className="mt-1 text-[11px] text-[#C6D2E2] leading-snug">{f.title}</p>
+                            <p className="mt-1 text-[11px] font-bold text-[#C6D2E2] leading-snug">{f.title}</p>
+                            <p className="mt-1 text-[10.5px] text-[#9DAEC5] leading-relaxed">
+                              <span className="font-bold text-[#C6D2E2]">Why flagged: </span>
+                              {f.detail}
+                            </p>
+                            <p className="mt-1 text-[9.5px] text-[#56688A] leading-relaxed italic">
+                              Rule applied: {PC2_RULES[f.ruleId].rule}
+                            </p>
                             {f.unitIds.filter(id => id !== selected.id).length > 0 && (
                               <div className="mt-1.5 space-y-1">
                                 {f.unitIds
