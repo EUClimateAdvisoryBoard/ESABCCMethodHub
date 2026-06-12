@@ -29,7 +29,7 @@ HIST = "#1a1a1a"     # historic data
 ENS = "#26547c"      # ensemble median
 BAND = "#9db9d1"     # ensemble range band
 EC_RED = "#b2432f"   # EC benchmarks
-EC_PROJ = "#4d8a66"  # EC projection (WEM/WAM)
+EC_PROJ = "#4d8a66"  # Member State projections (WEM/WAM, EEA-aggregated)
 GREY = "#6e6e6e"
 
 TODAY = 2026
@@ -42,7 +42,7 @@ hy = 0.92 - 0.014 * (hx - 2015) + 0.012 * np.sin((hx - 2015) * 2.1) \
      + np.cumsum(rng.normal(0, 0.0025, hx.size))
 y0 = hy[-1]  # latest data point
 
-# EC projection (WEM/WAM): effort fades, curve flattens.
+# Member State WEM/WAM projections (EEA-aggregated): effort fades, curve flattens.
 px = np.linspace(2025, 2050, 60)
 py = 0.46 + (y0 - 0.46) * np.exp(-0.11 * (px - 2025))
 
@@ -53,7 +53,7 @@ by = np.array([0.56, 0.17, 0.02])
 # Ensemble: median declining steeply past net zero; band widening with time.
 mx = np.linspace(2025, 2050, 60)
 t = (mx - 2025) / 25
-my = y0 * (1 - t) ** 1.35 - 0.05 * t          # median, slightly net-negative by 2050
+my = y0 * (1 - t) ** 1.35 - 0.02 * t          # median approaching (net) zero by 2050
 half = 0.025 + 0.20 * t ** 1.2                # growing spread
 band_lo, band_hi = my - half, my + 0.9 * half
 
@@ -62,7 +62,7 @@ def draw_base(ax):
     ax.plot(hx, hy, color=HIST, lw=2.0, solid_capstyle="round", zorder=5,
             label="Historical data")
     ax.plot(px, py, ls=(0, (4, 2.5)), color=EC_PROJ, lw=1.8, zorder=3,
-            label="EC projection (WEM/WAM)")
+            label="Member State projections (WEM/WAM)")
     ax.plot(np.r_[2025, bx], np.r_[y0, by], ls=(0, (1, 1.8)), color=EC_RED,
             lw=1.4, zorder=4, label="Linear interpolation")
     ax.scatter(bx, by, facecolor=EC_RED, edgecolor="white", lw=0.7, s=42,
@@ -78,7 +78,7 @@ def draw_base(ax):
     ax.spines[["top", "right"]].set_visible(False)
     ax.set_xticks([2030, 2040, 2050])
     ax.tick_params(labelsize=9.5)
-    ax.set_ylabel("Variable\n(e.g. net GHG emissions)", fontsize=9.5)
+    ax.set_ylabel("Variable\n(e.g. industry GHG emissions)", fontsize=9.5)
 
 
 def panel_label(ax, letter, text):
@@ -96,9 +96,9 @@ fig.subplots_adjust(hspace=0.40, left=0.10, right=0.985, top=0.915, bottom=0.06)
 
 # ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
-panel_label(ax1, "a", "Current logic — projections and benchmarks from EC scenarios only")
+panel_label(ax1, "a", "Current logic — Member State projections (WEM/WAM) and EC benchmarks only")
 ax1.legend(loc="upper right", bbox_to_anchor=(1.0, 1.0), **LEG_KW)
-ax1.annotate("single source —\nno uncertainty range", xy=(2040, by[1]),
+ax1.annotate("official sources only —\nno independent check, no range", xy=(2040, by[1]),
              xytext=(2034.5, -0.24), fontsize=9, color=EC_RED, ha="left",
              arrowprops=dict(arrowstyle="-", color=EC_RED, lw=0.7,
                              shrinkA=2, shrinkB=4))
@@ -113,7 +113,7 @@ panel_label(ax2, "b", "New logic — the open scenario call adds the modelled ra
 handles, labels = ax2.get_legend_handles_labels()
 order = [labels.index(l) for l in [
     "Range of submitted scenarios", "Ensemble median",
-    "EC projection (WEM/WAM)", "EC benchmarks / targets"]]
+    "Member State projections (WEM/WAM)", "EC benchmarks / targets"]]
 ax2.legend([handles[i] for i in order], [labels[i] for i in order],
            loc="upper right", bbox_to_anchor=(1.0, 1.0), **LEG_KW)
 ax2.annotate("EC benchmarks become testable\nagainst the modelled range",

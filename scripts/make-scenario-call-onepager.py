@@ -115,15 +115,15 @@ cap.paragraph_format.space_after = Pt(2)
 
 # ── How to read the figure ───────────────────────────────────────────────────
 heading("What the figure shows")
-bullet("Panel a (today)", "Both forward-looking elements come from a single source: WEM/WAM projections answer "
-       "'will we meet the benchmark under current and planned policies?', the trend extrapolation answers 'what if "
-       "we simply continue?', and the EC benchmarks set the goal posts. There is no independent check and no "
-       "uncertainty range around any of them.")
+bullet("Panel a (today)", "Both forward-looking elements come from official sources only: the Member State "
+       "WEM/WAM projections (reported under the Governance Regulation, aggregated by the EEA) answer 'will we meet "
+       "the benchmark under current and planned policies?', and the EC-scenario benchmarks set the goal posts. "
+       "There is no independent scientific check and no uncertainty range around either.")
 bullet("Panel b (with the call)", "Both elements are kept, but the submitted scenario ensemble is added alongside: "
-       "the shaded band is the range across all submitted runs, the solid line their median. Where the EC "
-       "projection and benchmarks sit relative to the band shows at a glance whether they are optimistic or "
-       "conservative against the scientific landscape — and the ensemble reveals futures (such as net-negative "
-       "emissions) that a single EC trajectory never shows.")
+       "the shaded band is the range across all submitted runs, the solid line their median. Where the official "
+       "projections and benchmarks sit relative to the band shows at a glance whether they are optimistic or "
+       "conservative against the scientific landscape — and the ensemble reveals futures (such as deeper-than-target "
+       "cuts) that a single official trajectory never shows.")
 bullet("Why it matters", "The same comparison is repeated per indicator on the matched flow chart, giving every "
        "sector benchmark an independent, scientifically robust corridor — and a documented basis for judging whether "
        "EC scenarios are too optimistic or too pessimistic on specific points.")
