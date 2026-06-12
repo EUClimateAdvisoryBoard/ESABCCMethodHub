@@ -130,7 +130,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
-  { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Theory of Change', variant: 'report', builtIn: true },
+  { id: 'adaptation-mitigation-toc', name: 'Adaptation–Mitigation Assessment Framework', variant: 'report', builtIn: true },
 ];
 
 interface RegistryData {
