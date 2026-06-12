@@ -116,9 +116,11 @@ cap = doc.add_paragraph()
 cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = cap.add_run(
     "Figure 1 | The two purposes of the call (schematic). a, Current assessment logic. b, The submitted ensemble "
-    "(band: range; line: median) makes official projections and EC benchmarks testable. c, Sectoral submissions "
-    "reveal the changing composition of the remaining effort — from mature-technology roll-out to structural and "
-    "societal change."
+    "(band: range; line: median) makes official projections and EC benchmarks testable. c, The gap to the net-zero "
+    "pathway is closed first by mature-technology roll-out, later by structural and societal change. d1–d3, zooming "
+    "into that hard core with one sectoral-model example per sector: the industry electrolyser capacity gap, "
+    "transport biomass demand vs sustainable availability, and buildings heat-pump roll-out slowed by the old, "
+    "unrenovated stock."
 )
 r.italic = True
 r.font.size = Pt(7.5)
@@ -141,6 +143,12 @@ bullet("Panel c (transition dynamics)", "Hitting a near-term target says little 
        "larger 2050 gap must come from the hard core: structural and societal change (technology availability "
        "limits, infrastructure, diets, consumption, demand). Sectoral-model submissions resolve this split per "
        "sector, bottom-up, beyond the GHG headline.")
+bullet("Panels d1–d3 (the sectoral zoom)", "One example per sector of the detailed outputs we want submitted: "
+       "industry — the gap between the current electrolyser deployment trend and what pathways require; transport — "
+       "biofuel demand running into the sustainable biomass supply that land-use models can certify, with "
+       "competition across sectors; buildings — the heat-pump roll-out required versus a trend slowed by the old, "
+       "unrenovated stock. This is the 'reading between the lines': each panel turns an invisible structural "
+       "constraint into a measurable gap.")
 
 # ── Workflow ─────────────────────────────────────────────────────────────────
 heading("What would the workflow be on our side?")

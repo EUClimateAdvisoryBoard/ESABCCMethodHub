@@ -4,7 +4,10 @@
 Abstract / illustrative (no real numbers): panel a — current logic, historic
 data + EC projection and EC benchmarks only; panel b — the same, plus the
 scenario-call ensemble as one shaded range band with a median line;
-panel c — transition dynamics. Journal styling, large readable type.
+panel c — transition dynamics, illustrated by three sectoral mini-panels
+(c1 electrolyser up-scaling, c2 biomass availability, c3 fuel efficiency)
+that show the kind of sectoral-model outputs enabling that view. Journal
+styling, large readable type.
 
 Output: project-documents/assets/scenario-call-logic-figure.png
 Re-run: python3 scripts/make-scenario-call-figure.py
@@ -78,7 +81,7 @@ def draw_base(ax):
     ax.spines[["top", "right"]].set_visible(False)
     ax.set_xticks([2030, 2040, 2050])
     ax.tick_params(labelsize=9.5)
-    ax.set_ylabel("Variable\n(e.g. industry GHG emissions)", fontsize=9.5)
+    ax.set_ylabel("GHG emissions", fontsize=9.5)
 
 
 def panel_label(ax, letter, text):
@@ -91,8 +94,16 @@ def panel_label(ax, letter, text):
 LEG_KW = dict(fontsize=8.5, frameon=False, handlelength=1.9, labelspacing=0.4,
               borderaxespad=0.2)
 
-fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(7.0, 7.4), dpi=300, sharex=True)
-fig.subplots_adjust(hspace=0.46, left=0.10, right=0.90, top=0.94, bottom=0.045)
+fig = plt.figure(figsize=(7.0, 9.3), dpi=300)
+gs = fig.add_gridspec(4, 3, height_ratios=[1.0, 1.0, 1.0, 0.82],
+                      hspace=0.58, wspace=0.34,
+                      left=0.10, right=0.90, top=0.955, bottom=0.04)
+ax1 = fig.add_subplot(gs[0, :])
+ax2 = fig.add_subplot(gs[1, :], sharex=ax1)
+ax3 = fig.add_subplot(gs[2, :], sharex=ax1)
+axc1, axc2, axc3 = (fig.add_subplot(gs[3, i]) for i in range(3))
+ax1.tick_params(labelbottom=False)
+ax2.tick_params(labelbottom=False)
 
 # ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
@@ -159,7 +170,7 @@ ax3.annotate("2030 gap — closed mostly\nby the easy options", xy=(2030, 0.66),
              arrowprops=dict(arrowstyle="->", color="#333333", lw=0.8,
                              shrinkA=2, shrinkB=4))
 ax3.annotate("2050 gap — what remains is the hard core:\nstructural & societal change (tech availability,\ninfrastructure, diets, consumption, demand)",
-             xy=(2043.5, 0.31), xytext=(2016.5, 0.235), fontsize=8.5,
+             xy=(2043.5, 0.31), xytext=(2016.5, 0.27), fontsize=8.5,
              color="#7a4d12", ha="left", va="top",
              arrowprops=dict(arrowstyle="->", color="#7a4d12", lw=0.8,
                              shrinkA=4, shrinkB=2))
@@ -174,8 +185,97 @@ ax3.set_yticks([])
 ax3.spines[["top", "right"]].set_visible(False)
 ax3.set_xticks([2030, 2040, 2050])
 ax3.tick_params(labelsize=9.5)
-ax3.set_ylabel("Variable\n(e.g. industry GHG emissions)", fontsize=9.5)
+ax3.set_ylabel("GHG emissions", fontsize=9.5)
 panel_label(ax3, "c", "Understanding the inherent dynamics of the transition — what closes the gap, and when")
+
+# ── Panels c1–c3 — the sectoral-model outputs behind panel c ────────────────
+# Three schematic examples of sectoral submissions: each contrasts where the
+# current trend leads with what the pathway requires, exposing a concrete gap
+# (or limit) that the headline GHG indicator hides.
+
+def mini(ax, num, title, ylab):
+    ax.set_xlim(2015, 2051)
+    ax.set_yticks([])
+    ax.spines[["top", "right"]].set_visible(False)
+    ax.set_xticks([2030, 2050])
+    ax.tick_params(labelsize=8)
+    ax.axvline(TODAY, color=GREY, lw=0.6, ls=(0, (1, 2)))
+    ax.set_ylabel(ylab, fontsize=8)
+    ax.text(-0.16, 1.22, num, transform=ax.transAxes, fontsize=11,
+            fontweight="bold", va="top", ha="left")
+    ax.text(0.02, 1.21, title, transform=ax.transAxes, fontsize=8.5,
+            va="top", ha="left", color="#333333")
+
+
+def gap_marker(ax, x, y_lo, y_hi, dx_text=1.2):
+    ax.annotate("", xy=(x, y_hi), xytext=(x, y_lo),
+                arrowprops=dict(arrowstyle="<->", color="#333333", lw=0.9,
+                                shrinkA=0, shrinkB=0))
+    ax.text(x + dx_text, (y_lo + y_hi) / 2, "gap", fontsize=8, color="#333333",
+            ha="left", va="center", fontweight="bold")
+
+
+sx = np.linspace(2025, 2050, 60)
+st = (sx - 2025) / 25
+
+# c1 — electrolyser up-scaling: required S-curve vs current trend.
+mini(axc1, "d1", "Industry — electrolyser gap", "Installed capacity")
+axc1.plot(np.linspace(2018, 2025, 20), 0.05 + 0.02 * np.linspace(0, 1, 20),
+          color=HIST, lw=1.6, solid_capstyle="round", zorder=5)
+req1 = 0.06 + 0.80 / (1 + np.exp(-(sx - 2038) / 4.0))
+sp1 = 0.02 + 0.10 * st
+axc1.fill_between(sx, req1 - sp1, req1 + sp1, color=BAND, alpha=0.5, lw=0)
+axc1.plot(sx, req1, color=ENS, lw=1.7, zorder=4)
+axc1.plot(sx, 0.07 + 0.10 * st, ls=(0, (4, 2.5)), color=GREY, lw=1.1, zorder=3)
+axc1.text(2049.5, 0.0, "current trend", fontsize=7, color=GREY, ha="right", va="bottom")
+axc1.text(2040.5, 0.78, "required in\npathways", fontsize=7.5, color=ENS,
+          ha="right", va="center")
+gap_marker(axc1, 2044, 0.07 + 0.10 * (19 / 25), 0.06 + 0.80 / (1 + np.exp(-(2044 - 2038) / 4.0)))
+axc1.set_ylim(0, 1.05)
+
+# c2 — biomass: pathway demand vs the sustainable-availability ceiling.
+mini(axc2, "d2", "Transport — biomass limits", "Primary biomass")
+axc2.axhspan(0.52, 0.70, color="#7fb3a1", alpha=0.40, lw=0)
+axc2.text(2016, 0.61, "sustainable supply\n(land-use models)", fontsize=7.5,
+          color="#1f4d3e", ha="left", va="center")
+axc2.plot(np.linspace(2018, 2025, 20), 0.28 + 0.04 * np.linspace(0, 1, 20),
+          color=HIST, lw=1.6, solid_capstyle="round", zorder=5)
+dem = 0.32 + 0.58 * st ** 1.1
+sp2 = 0.02 + 0.07 * st
+axc2.fill_between(sx, dem - sp2, dem + sp2, color=BAND, alpha=0.5, lw=0)
+axc2.plot(sx, dem, color=ENS, lw=1.7, zorder=4)
+axc2.text(2034, 0.30, "fuel demand in pathways\n(competing sectors)", fontsize=7.5, color=ENS,
+          ha="left", va="center")
+axc2.annotate("may exceed\nsustainable supply", xy=(2047, 0.80),
+              xytext=(2030, 0.97), fontsize=7.5, color="#7a4d12", ha="left",
+              va="center",
+              arrowprops=dict(arrowstyle="->", color="#7a4d12", lw=0.7,
+                              shrinkA=1, shrinkB=2))
+axc2.set_ylim(0, 1.05)
+
+# d3 — Buildings: heat-pump roll-out, slowed by the old, unrenovated stock.
+mini(axc3, "d3", "Buildings — heat pumps", "Heat-pump stock")
+axc3.plot(np.linspace(2018, 2025, 20), 0.06 + 0.04 * np.linspace(0, 1, 20),
+          color=HIST, lw=1.6, solid_capstyle="round", zorder=5)
+req3 = 0.10 + 0.72 / (1 + np.exp(-(sx - 2037) / 4.5))
+sp3 = 0.02 + 0.09 * st
+axc3.fill_between(sx, req3 - sp3, req3 + sp3, color=BAND, alpha=0.5, lw=0)
+axc3.plot(sx, req3, color=ENS, lw=1.7, zorder=4)
+axc3.plot(sx, 0.10 + 0.13 * st, ls=(0, (4, 2.5)), color=GREY, lw=1.1, zorder=3)
+axc3.text(2049.5, 0.02, "current trend", fontsize=7, color=GREY, ha="right",
+          va="bottom")
+gap_marker(axc3, 2045, 0.10 + 0.13 * (20 / 25),
+           0.10 + 0.72 / (1 + np.exp(-(2045 - 2037) / 4.5)), dx_text=1.0)
+axc3.annotate("roll-out slowed by old,\nunrenovated stock", xy=(2041.5, 0.42),
+              xytext=(2016.5, 0.85), fontsize=7.5, color="#7a4d12", ha="left",
+              va="center",
+              arrowprops=dict(arrowstyle="->", color="#7a4d12", lw=0.7,
+                              shrinkA=1, shrinkB=2))
+axc3.set_ylim(0, 1.05)
+
+fig.text(0.10, 0.232,
+         "d · Zooming into the hard core of panel c — one sectoral-model example per sector:",
+         fontsize=9.5, color="#333333", fontweight="bold")
 
 out = "project-documents/assets/scenario-call-logic-figure.png"
 import os
