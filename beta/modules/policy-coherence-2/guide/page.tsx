@@ -51,18 +51,19 @@ export default function PolicyCoherence2GuidePage() {
           How to use Policy Coherence 2.0
         </h1>
         <p className="text-tertiary mb-4 text-base leading-relaxed">
-          The module takes the actual policy texts from the corpus, splits them sentence by
-          sentence, and runs the four-step coherence model on every unit — so inconsistencies
-          inside an act and across acts surface at provision level, with the exact words
-          quoted. Prefer learning in place? Hit{' '}
-          <strong>&ldquo;Take the guided tour&rdquo;</strong> at the top of the module page —
-          it walks through every section live.
+          The module treats every sentence of every policy text as a <strong>piece of
+          data</strong> — a puzzle piece with a stable id, a structural path and extracted
+          claims. The dark &ldquo;data wall&rdquo; shows all ~2,600 pieces at once; the four
+          coherence lenses test whether they fit together, and where they don&apos;t, a
+          finding marks the misfit. Prefer learning in place? Hit{' '}
+          <strong>&ldquo;Guided tour&rdquo;</strong> at the top of the module page — it walks
+          through every section live.
         </p>
         <p className="text-tertiary mb-10 text-sm leading-relaxed">
-          The 30-second version: <strong>read the run bar → triage the findings (high
-          severity first) → drill into a policy block by block → run the ML pass for
-          discovered contradictions and trade-offs → write everything to the database and
-          export JSONL</strong>. Details below.
+          The 30-second version: <strong>read the hero counters → scan the data wall for
+          red/amber tiles → click a tile to inspect the block → triage the misfits (high
+          severity first) → run the ML pass for discovered contradictions and trade-offs →
+          write everything to the database and export JSONL</strong>. Details below.
         </p>
 
         <div className="space-y-10">
@@ -85,28 +86,69 @@ export default function PolicyCoherence2GuidePage() {
           </section>
 
           <section>
-            <StepHeading n={2} color="bg-secondary/10 text-secondary">Read the run bar</StepHeading>
+            <StepHeading n={2} color="bg-secondary/10 text-secondary">Read the hero and command bar</StepHeading>
             <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
               <p>
-                The grey bar shows the current run: how many <strong>policies</strong> ship
-                with real text, how many <strong>blocks</strong> (paragraphs, recitals,
-                articles) and <strong>sentence units</strong> they split into, how many{' '}
-                <strong>claims</strong> were extracted, and the <strong>findings</strong>{' '}
-                count broken down by severity. The <code className="font-mono text-[12px]">corpus</code>{' '}
+                The hero counters size the corpus: how many <strong>acts</strong> ship with
+                real text, the <strong>text blocks</strong> and <strong>data blocks</strong>{' '}
+                (sentence units) they split into, the extracted <strong>claims</strong>, how
+                many blocks are <strong>flagged</strong>, and the <strong>misfits</strong>{' '}
+                (findings) count. The <code className="font-mono text-[12px]">corpus</code>{' '}
                 hash identifies the exact text snapshot — same corpus, same results, always.
               </p>
               <p>
-                <strong>&ldquo;Write analysis to database&rdquo;</strong> persists the whole
-                run (every unit, claim and finding) to Supabase with stable ids, so blocks
-                stay referenceable forever. <strong>&ldquo;Download ML export
-                (JSONL)&rdquo;</strong> gives you the same substrate as one machine-readable
-                file for external pipelines.
+                In the command bar, <strong>&ldquo;Write run to database&rdquo;</strong>{' '}
+                persists the whole run (every block, claim and finding) to Supabase with
+                stable ids, so blocks stay referenceable forever.{' '}
+                <strong>&ldquo;JSONL export&rdquo;</strong> gives you the same substrate as
+                one machine-readable file for external pipelines.
               </p>
             </div>
           </section>
 
           <section>
-            <StepHeading n={3} color="bg-accent-violet/10 text-accent-violet">Triage the findings (left panel)</StepHeading>
+            <StepHeading n={3} color="bg-accent-violet/10 text-accent-violet">Scan the data wall, inspect blocks</StepHeading>
+            <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
+              <p>
+                The <strong>data wall</strong> renders every sentence block of every act as
+                one tile. The colours are the whole story at a glance:
+              </p>
+              <ul className="list-disc pl-5 space-y-1.5">
+                <li><strong className="text-slate-500">dark</strong> — inert text (no extracted data);</li>
+                <li><strong className="text-teal-600">teal</strong> — data-bearing (targets, obligations, instruments, MRV…);</li>
+                <li><strong className="text-sky-600">blue</strong> / <strong className="text-amber-600">amber</strong> / <strong className="text-red-600">red</strong> — cited by a finding (low/info, medium, high — worst severity wins).</li>
+              </ul>
+              <p>
+                <strong>Click any tile</strong> to open it in the <strong>block
+                inspector</strong>: the sentence with its id, structural path and char
+                offsets, its claims as structured fields, the four-lens tags, its
+                neighbouring blocks in the act, and its <strong>puzzle links</strong> — every
+                finding and ML pair that cites it, each with the other involved blocks as
+                clickable chips. Following chips from block to block is the fastest way to
+                trace an inconsistency through the corpus.
+              </p>
+              <p>
+                In the inspector, extracted data appears as colour-coded claim fields:{' '}
+                <Chip className="bg-emerald-50 text-emerald-700 border-emerald-200">target</Chip>{' '}
+                <Chip className="bg-indigo-50 text-indigo-700 border-indigo-200">deadline</Chip>{' '}
+                <Chip className="bg-blue-50 text-blue-700 border-blue-200">obligation</Chip>{' '}
+                <Chip className="bg-violet-50 text-violet-700 border-violet-200">instrument</Chip>{' '}
+                <Chip className="bg-orange-50 text-orange-700 border-orange-200">financing</Chip>{' '}
+                <Chip className="bg-teal-50 text-teal-700 border-teal-200">monitoring</Chip>{' '}
+                <Chip className="bg-cyan-50 text-cyan-700 border-cyan-200">review</Chip>{' '}
+                <Chip className="bg-rose-50 text-rose-700 border-rose-200">flexibility</Chip>{' '}
+                <Chip className="bg-grey-100 text-tertiary border-grey-200">crossref</Chip>.{' '}
+                <em>flexibility</em> marks discretion language — derogations, exemptions,
+                &ldquo;where appropriate&rdquo; — the raw material of loopholes. Block ids
+                (<code className="font-mono text-[12px]">u-&lt;policy&gt;-b&lt;block&gt;-s&lt;sentence&gt;</code>)
+                are deterministic: the same sentence keeps the same id across runs, which is
+                what makes citations and database rows durable.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <StepHeading n={4} color="bg-primary/10 text-primary">Triage the misfits</StepHeading>
             <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
               <p>
                 Findings are pre-sorted worst-first. A practical triage: filter severity to{' '}
@@ -131,48 +173,6 @@ export default function PolicyCoherence2GuidePage() {
                 e.g. divergent same-family targets across acts, where scopes may legitimately
                 differ. That over-inclusiveness is by design: undeclared scope differences
                 are exactly where cross-policy incoherence hides.
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <StepHeading n={4} color="bg-primary/10 text-primary">Drill into a policy block by block (right panel)</StepHeading>
-            <div className="ml-11 space-y-3 text-sm text-tertiary leading-relaxed">
-              <p>
-                Pick an act from the dropdown (sorted by finding count). The text appears
-                grouped by structural path — <strong>Preamble, Recital (n), Article n</strong> —
-                and groups containing flagged units open automatically. Every sentence is its
-                own row with its annotations:
-              </p>
-              <ul className="list-disc pl-5 space-y-1.5">
-                <li>
-                  <Chip className="font-mono uppercase tracking-[0.08em] text-primary border-grey-200 bg-white">goals-means</Chip>{' '}
-                  step tags — which of the four lenses the unit feeds.
-                </li>
-                <li>
-                  Claim chips, colour-coded by kind:{' '}
-                  <Chip className="bg-emerald-50 text-emerald-700 border-emerald-200">target 55% @2030</Chip>{' '}
-                  <Chip className="bg-blue-50 text-blue-700 border-blue-200">obligation</Chip>{' '}
-                  <Chip className="bg-violet-50 text-violet-700 border-violet-200">instrument</Chip>{' '}
-                  <Chip className="bg-orange-50 text-orange-700 border-orange-200">financing</Chip>{' '}
-                  <Chip className="bg-teal-50 text-teal-700 border-teal-200">monitoring</Chip>{' '}
-                  <Chip className="bg-cyan-50 text-cyan-700 border-cyan-200">review</Chip>{' '}
-                  <Chip className="bg-rose-50 text-rose-700 border-rose-200">flexibility</Chip>{' '}
-                  <Chip className="bg-grey-100 text-tertiary border-grey-200">crossref</Chip>.
-                  Hover any chip for the full reading (value, year, baseline, deontic
-                  strength, resolved act…). <em>flexibility</em> chips mark discretion
-                  language — derogations, exemptions, &ldquo;where appropriate&rdquo; — the
-                  raw material of loopholes.
-                </li>
-                <li>
-                  <Chip className="bg-amber-50 text-amber-700 border-amber-200">⚑ rule name</Chip>{' '}
-                  flags — this exact sentence is cited by a finding; the row is tinted amber.
-                </li>
-              </ul>
-              <p>
-                Unit ids (<code className="font-mono text-[12px]">u-&lt;policy&gt;-b&lt;block&gt;-s&lt;sentence&gt;</code>)
-                are deterministic: the same sentence keeps the same id across runs, which is
-                what makes citations and database rows durable.
               </p>
             </div>
           </section>
