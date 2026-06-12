@@ -85,7 +85,8 @@ export type FlowChartVariant =
   | 'advanced-v4'
   | 'advanced-v5'
   | 'advanced-v6'
-  | 'advanced-v7';
+  | 'advanced-v7'
+  | 'advanced-v8';
 
 export interface FlowChartVersion {
   /** Stable id. Built-ins use 'report-faithful' / 'report' / 'beta'; custom versions use a uid. */
@@ -127,6 +128,7 @@ const BUILTIN_VERSIONS: readonly FlowChartVersion[] = [
   { id: 'advanced-v5', name: 'Advanced version 5', variant: 'advanced-v5', builtIn: true },
   { id: 'advanced-v6', name: 'Advanced version 6', variant: 'advanced-v6', builtIn: true },
   { id: 'advanced-v7', name: 'Advanced version 7', variant: 'advanced-v7', builtIn: true },
+  { id: 'advanced-v8', name: 'Advanced version 8', variant: 'advanced-v8', builtIn: true },
   { id: 'policy-gap-2', name: 'Policy Gap Report 2.0', variant: 'report', builtIn: true },
   { id: 'energy-supply-test', name: 'Energy supply test', variant: 'report', builtIn: true },
   { id: 'v3', name: 'v3 — EUCRA climate risk chain', variant: 'report', builtIn: true },
@@ -154,6 +156,7 @@ export function boardStorageKey(version: FlowChartVersion, projectId: string): s
   if (version.id === 'advanced-v5') return `esabcc-framework-board-advanced-v5:${projectId}`;
   if (version.id === 'advanced-v6') return `esabcc-framework-board-advanced-v6:${projectId}`;
   if (version.id === 'advanced-v7') return `esabcc-framework-board-advanced-v7:${projectId}`;
+  if (version.id === 'advanced-v8') return `esabcc-framework-board-advanced-v8:${projectId}`;
   if (version.id === 'policy-gap-2') return `esabcc-framework-board-policy-gap-2:${projectId}`;
   if (version.id === 'energy-supply-test') return `esabcc-framework-board-energy-test:${projectId}`;
   if (version.id === 'v3') return `esabcc-framework-board-v3:${projectId}`;
@@ -302,7 +305,8 @@ export function boardSchemaVersion(version: FlowChartVersion): number {
     version.variant === 'advanced-v4' ||
     version.variant === 'advanced-v5' ||
     version.variant === 'advanced-v6' ||
-    version.variant === 'advanced-v7'
+    version.variant === 'advanced-v7' ||
+    version.variant === 'advanced-v8'
   )
     return FRAMEWORK_BOARD_VERSION;
   if (version.variant === 'advanced') return FRAMEWORK_BOARD_ADVANCED_VERSION;
