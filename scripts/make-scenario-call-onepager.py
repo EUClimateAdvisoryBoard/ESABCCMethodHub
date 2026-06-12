@@ -179,6 +179,11 @@ bullet("Low marginal cost", "Tooling is an extension of existing MethodHub infra
        "visibility of their scenarios in advisory-board assessments.")
 bullet("Transparency", "A documented, open call with published criteria strengthens the board's independence "
        "compared with selecting scenarios ad hoc.")
+bullet("Recurring and institutional", "The recurring progress report allows a recurring modelling call: each "
+       "assessment cycle opens with a call whose submissions inform all work of that cycle. Institutionalised this "
+       "way, the call strengthens the advisory board's standing in the modelling community and becomes a pillar of "
+       "the stakeholder-engagement strategy — a transparent, structured channel for researchers to interact with "
+       "the board and contribute work.")
 
 # ── Risks ────────────────────────────────────────────────────────────────────
 heading("Risks")
