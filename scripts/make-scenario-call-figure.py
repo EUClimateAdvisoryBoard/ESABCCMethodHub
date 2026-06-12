@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Generate the two-panel schematic figure for the scenario-call one-pager.
+"""Generate the schematic figure for the scenario-call one-pager.
 
-Abstract / illustrative (no real numbers): panel a — current logic, historic
-data + EC projection and EC benchmarks only; panel b — the same, plus the
-scenario-call ensemble as one shaded range band with a median line;
-panel c — transition dynamics, illustrated by three sectoral mini-panels
-(c1 electrolyser up-scaling, c2 biomass availability, c3 fuel efficiency)
-that show the kind of sectoral-model outputs enabling that view. Journal
-styling, large readable type.
+Abstract / illustrative (no real numbers on the y axis): panel a — current
+logic, historic data + Member State projections and EC benchmarks only;
+panel b — the same, plus the scenario-call ensemble as one shaded range band
+with a median line; panel c — the net-zero pathway decomposed into sectors
+(approximate EU27 emission shares today, EEA inventory), with magnifier
+lenses over industry, transport and buildings that connect to panels d1–d3,
+the sectoral-model zooms (electrolyser gap, biomass limits, heat pumps).
+Journal styling, large readable type.
 
 Output: project-documents/assets/scenario-call-logic-figure.png
 Re-run: python3 scripts/make-scenario-call-figure.py
@@ -17,6 +18,7 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from matplotlib.patches import ConnectionPatch
 
 plt.rcParams.update({
     "font.family": "sans-serif",
@@ -29,11 +31,12 @@ plt.rcParams.update({
 })
 
 HIST = "#1a1a1a"     # historic data
-ENS = "#26547c"      # ensemble median
+ENS = "#26547c"      # ensemble median / pathway
 BAND = "#9db9d1"     # ensemble range band
 EC_RED = "#b2432f"   # EC benchmarks
 EC_PROJ = "#4d8a66"  # Member State projections (WEM/WAM, EEA-aggregated)
 GREY = "#6e6e6e"
+LENS = "#333333"     # magnifier lenses
 
 TODAY = 2026
 rng = np.random.default_rng(7)
@@ -53,7 +56,7 @@ py = 0.46 + (y0 - 0.46) * np.exp(-0.11 * (px - 2025))
 bx = np.array([2030, 2040, 2050])
 by = np.array([0.56, 0.17, 0.02])
 
-# Ensemble: median declining steeply past net zero; band widening with time.
+# Ensemble: median declining steeply towards net zero; band widening with time.
 mx = np.linspace(2025, 2050, 60)
 t = (mx - 2025) / 25
 my = y0 * (1 - t) ** 1.35 - 0.02 * t          # median approaching (net) zero by 2050
@@ -133,47 +136,38 @@ ax2.annotate("EC benchmarks become testable\nagainst the modelled range",
              arrowprops=dict(arrowstyle="->", color=ENS, lw=0.8,
                              shrinkA=2, shrinkB=4))
 
-# ── Panel c — the other side of the coin: transition dynamics ───────────────
-# Abatement-wedge view: the gap between a current-effort baseline and the
-# net-zero pathway is filled by two wedges. The mature-technology wedge
-# ('low-hanging fruit') delivers early and saturates; the structural &
-# societal wedge must deliver everything that remains after 2030.
+# ── Panel c — the pathway split into sectors ─────────────────────────────────
+# The net-zero pathway decomposed into stacked sector wedges, scaled to the
+# approximate sector shares of EU27 GHG emissions today (EEA inventory,
+# excl. LULUCF): energy supply ~26 %, transport ~24 %, industry ~20 %,
+# buildings ~13 %, agriculture ~11 %, waste & other ~6 %. Sector decline
+# speeds differ (energy fastest, agriculture slowest), so the composition of
+# the remaining emissions shifts over time.
 cx = np.linspace(2025, 2050, 100)
 ctt = (cx - 2025) / 25
-c_base = y0 - 0.06 * ctt                      # current-effort baseline
-c_path = y0 * (1 - ctt) ** 1.35 + 0.02 * ctt  # pathway to (near) zero
-gap = c_base - c_path
-c_easy = np.minimum(0.26 * (1 - np.exp(-4.5 * ctt)), gap)  # saturating wedge
-bound = c_base - c_easy
+c_total = y0 * (1 - ctt) ** 1.35 + 0.012 * ctt   # total pathway to (near) zero
 
+SECTORS = [
+    # (name, share today, relative decline-speed factor, fill colour)
+    ("Energy supply", 0.26, 1.0 - 0.55 * ctt, "#9db9d1"),
+    ("Industry", 0.20, 1.0 - 0.10 * ctt, "#c69c93"),
+    ("Transport", 0.24, 1.0 + 0.10 * ctt, "#d9a05b"),
+    ("Buildings", 0.13, 1.0 - 0.20 * ctt, "#a89cc8"),
+    ("Agriculture", 0.11, 1.0 + 0.55 * ctt, "#8fbe8f"),
+    ("Waste & other", 0.06, 1.0 + 0.10 * ctt, "#c9c9c9"),
+]
+raw = np.array([share * speed for _, share, speed, _ in SECTORS])
+weights = raw / raw.sum(axis=0)                  # composition shifts over time
+levels = np.vstack([np.zeros_like(cx), np.cumsum(weights * c_total, axis=0)])
+
+for k, (name, share, _, color) in enumerate(SECTORS):
+    ax3.fill_between(cx, levels[k], levels[k + 1], color=color, alpha=0.75,
+                     lw=0.4, edgecolor="white", zorder=1,
+                     label=f"{name} ({share:.0%} today)")
+ax3.plot(cx, c_total, color=ENS, lw=2.0, zorder=5, solid_capstyle="round")
 ax3.plot(hx, hy, color=HIST, lw=2.0, solid_capstyle="round", zorder=5)
-ax3.plot(cx, c_base, ls=(0, (4, 2.5)), color=GREY, lw=1.2, zorder=3)
-ax3.plot(cx, c_path, color=ENS, lw=2.0, zorder=5, solid_capstyle="round")
-ax3.fill_between(cx, bound, c_base, color="#7fb3a1", alpha=0.65, lw=0, zorder=1)
-ax3.fill_between(cx, c_path, bound, color="#d9a05b", alpha=0.55, lw=0, zorder=1)
-ax3.text(2050.4, c_base[-1], "current-effort\nbaseline", fontsize=8, color=GREY,
+ax3.text(2050.4, c_total[-1] + 0.02, "net-zero\npathway", fontsize=8, color=ENS,
          ha="left", va="center")
-ax3.text(2050.4, c_path[-1], "net-zero\npathway", fontsize=8, color=ENS,
-         ha="left", va="center")
-ax3.text(2040, (c_base[60] + bound[60]) / 2 + 0.015,
-         "mature technology roll-out\n('low-hanging fruit')",
-         fontsize=8, color="#1f4d3e", ha="center", va="center")
-# Verticals comparing the composition of the gap in 2030 vs 2046.
-for yr in (2030, 2046):
-    i = np.argmin(np.abs(cx - yr))
-    ax3.plot([cx[i], cx[i]], [c_path[i], c_base[i]], color="#333333", lw=0.9,
-             zorder=6, solid_capstyle="butt")
-    ax3.plot([cx[i]], [c_base[i]], marker="v", ms=3.5, color="#333333", zorder=6)
-    ax3.plot([cx[i]], [c_path[i]], marker="^", ms=3.5, color="#333333", zorder=6)
-ax3.annotate("2030 gap — closed mostly\nby the easy options", xy=(2030, 0.66),
-             xytext=(2016.5, 0.38), fontsize=9, color="#333333", ha="left",
-             arrowprops=dict(arrowstyle="->", color="#333333", lw=0.8,
-                             shrinkA=2, shrinkB=4))
-ax3.annotate("2050 gap — what remains is the hard core:\nstructural & societal change (tech availability,\ninfrastructure, diets, consumption, demand)",
-             xy=(2043.5, 0.31), xytext=(2016.5, 0.27), fontsize=8.5,
-             color="#7a4d12", ha="left", va="top",
-             arrowprops=dict(arrowstyle="->", color="#7a4d12", lw=0.8,
-                             shrinkA=4, shrinkB=2))
 ax3.axvline(TODAY, color=GREY, lw=0.7, ls=(0, (1, 2)))
 ax3.text(TODAY + 0.3, 1.02, "today", fontsize=8.5, color=GREY, va="top",
          style="italic")
@@ -186,12 +180,38 @@ ax3.spines[["top", "right"]].set_visible(False)
 ax3.set_xticks([2030, 2040, 2050])
 ax3.tick_params(labelsize=9.5)
 ax3.set_ylabel("GHG emissions", fontsize=9.5)
-panel_label(ax3, "c", "Understanding the inherent dynamics of the transition — what closes the gap, and when")
+ax3.legend(loc="upper right", bbox_to_anchor=(1.0, 1.03), ncol=2, fontsize=7.5,
+           frameon=False, handlelength=1.3, labelspacing=0.35,
+           columnspacing=0.9, borderaxespad=0.2)
+panel_label(ax3, "c", "… and reveals the inherent dynamics — the pathway split into sectors")
 
-# ── Panels c1–c3 — the sectoral-model outputs behind panel c ────────────────
-# Three schematic examples of sectoral submissions: each contrasts where the
-# current trend leads with what the pathway requires, exposing a concrete gap
-# (or limit) that the headline GHG indicator hides.
+# Magnifier lenses over the three sectors that are zoomed in d1–d3.
+def band_mid(x, k):
+    i = np.argmin(np.abs(cx - x))
+    return (levels[k][i] + levels[k + 1][i]) / 2
+
+LENS_AT = [
+    (2030.5, 1, axc1),  # Industry  → d1
+    (2036.0, 2, axc2),  # Transport → d2
+    (2041.5, 3, axc3),  # Buildings → d3
+]
+for lx, k, target in LENS_AT:
+    ly = band_mid(lx, k)
+    ax3.plot([lx], [ly], marker="o", ms=17, mfc="none", mec=LENS, mew=1.6,
+             zorder=8)
+    # magnifier handle (short diagonal stroke at the lens rim)
+    ax3.annotate("", xy=(lx, ly), xytext=(16, -15), textcoords="offset points",
+                 arrowprops=dict(arrowstyle="-", color=LENS, lw=2.4,
+                                 shrinkA=0, shrinkB=8), zorder=8)
+    con = ConnectionPatch(xyA=(lx, ly), coordsA=ax3.transData,
+                          xyB=(0.5, 1.30), coordsB=target.transAxes,
+                          linestyle=(0, (2, 3)), color=GREY, lw=0.9, zorder=1)
+    fig.add_artist(con)
+
+# ── Panels d1–d3 — zooming into three sectors ────────────────────────────────
+# What the magnifiers reveal: one schematic sectoral-model output per sector,
+# each contrasting where the current trend leads with what the pathway
+# requires, exposing a concrete structural gap the GHG headline hides.
 
 def mini(ax, num, title, ylab):
     ax.set_xlim(2015, 2051)
@@ -218,7 +238,7 @@ def gap_marker(ax, x, y_lo, y_hi, dx_text=1.2):
 sx = np.linspace(2025, 2050, 60)
 st = (sx - 2025) / 25
 
-# c1 — electrolyser up-scaling: required S-curve vs current trend.
+# d1 — Industry: electrolyser up-scaling, required S-curve vs current trend.
 mini(axc1, "d1", "Industry — electrolyser gap", "Installed capacity")
 axc1.plot(np.linspace(2018, 2025, 20), 0.05 + 0.02 * np.linspace(0, 1, 20),
           color=HIST, lw=1.6, solid_capstyle="round", zorder=5)
@@ -227,25 +247,28 @@ sp1 = 0.02 + 0.10 * st
 axc1.fill_between(sx, req1 - sp1, req1 + sp1, color=BAND, alpha=0.5, lw=0)
 axc1.plot(sx, req1, color=ENS, lw=1.7, zorder=4)
 axc1.plot(sx, 0.07 + 0.10 * st, ls=(0, (4, 2.5)), color=GREY, lw=1.1, zorder=3)
-axc1.text(2049.5, 0.0, "current trend", fontsize=7, color=GREY, ha="right", va="bottom")
+axc1.text(2049.5, 0.0, "current trend", fontsize=7, color=GREY, ha="right",
+          va="bottom")
 axc1.text(2040.5, 0.78, "required in\npathways", fontsize=7.5, color=ENS,
           ha="right", va="center")
-gap_marker(axc1, 2044, 0.07 + 0.10 * (19 / 25), 0.06 + 0.80 / (1 + np.exp(-(2044 - 2038) / 4.0)))
+gap_marker(axc1, 2044, 0.07 + 0.10 * (19 / 25),
+           0.06 + 0.80 / (1 + np.exp(-(2044 - 2038) / 4.0)))
 axc1.set_ylim(0, 1.05)
 
-# c2 — biomass: pathway demand vs the sustainable-availability ceiling.
+# d2 — Transport: biofuel demand vs the sustainable-biomass ceiling.
 mini(axc2, "d2", "Transport — biomass limits", "Primary biomass")
 axc2.axhspan(0.52, 0.70, color="#7fb3a1", alpha=0.40, lw=0)
 axc2.text(2016, 0.61, "sustainable supply\n(land-use models)", fontsize=7.5,
-          color="#1f4d3e", ha="left", va="center")
+          color="#1f4d3e", ha="left", va="center", zorder=6,
+          bbox=dict(facecolor="white", alpha=0.45, edgecolor="none", pad=0.6))
 axc2.plot(np.linspace(2018, 2025, 20), 0.28 + 0.04 * np.linspace(0, 1, 20),
           color=HIST, lw=1.6, solid_capstyle="round", zorder=5)
 dem = 0.32 + 0.58 * st ** 1.1
 sp2 = 0.02 + 0.07 * st
 axc2.fill_between(sx, dem - sp2, dem + sp2, color=BAND, alpha=0.5, lw=0)
 axc2.plot(sx, dem, color=ENS, lw=1.7, zorder=4)
-axc2.text(2034, 0.30, "fuel demand in pathways\n(competing sectors)", fontsize=7.5, color=ENS,
-          ha="left", va="center")
+axc2.text(2034, 0.30, "fuel demand in pathways\n(competing sectors)",
+          fontsize=7.5, color=ENS, ha="left", va="center")
 axc2.annotate("may exceed\nsustainable supply", xy=(2047, 0.80),
               xytext=(2030, 0.97), fontsize=7.5, color="#7a4d12", ha="left",
               va="center",
@@ -273,9 +296,23 @@ axc3.annotate("roll-out slowed by old,\nunrenovated stock", xy=(2041.5, 0.42),
                               shrinkA=1, shrinkB=2))
 axc3.set_ylim(0, 1.05)
 
-fig.text(0.10, 0.232,
-         "d · Zooming into the hard core of panel c — one sectoral-model example per sector:",
-         fontsize=9.5, color="#333333", fontweight="bold")
+# ── Grouping brackets: panel a = current logic; panels b–d = the new logic ──
+from matplotlib.lines import Line2D
+
+pos_a = ax1.get_position()
+pos_b = ax2.get_position()
+pos_d = axc1.get_position()
+BAR_X = 0.020
+fig.add_artist(Line2D([BAR_X, BAR_X], [pos_a.y0, pos_a.y1], color="#b0b0b0",
+                      lw=2.5, solid_capstyle="butt"))
+fig.text(BAR_X - 0.009, (pos_a.y0 + pos_a.y1) / 2, "CURRENT LOGIC",
+         rotation=90, ha="center", va="center", fontsize=8.5, color="#777777",
+         fontweight="bold")
+fig.add_artist(Line2D([BAR_X, BAR_X], [pos_d.y0, pos_b.y1], color="#2F6E5B",
+                      lw=2.5, solid_capstyle="butt"))
+fig.text(BAR_X - 0.009, (pos_d.y0 + pos_b.y1) / 2,
+         "NEW LOGIC — WHAT THE SCENARIO CALL ADDS", rotation=90, ha="center",
+         va="center", fontsize=8.5, color="#2F6E5B", fontweight="bold")
 
 out = "project-documents/assets/scenario-call-logic-figure.png"
 import os

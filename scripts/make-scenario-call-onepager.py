@@ -115,12 +115,13 @@ fig_p.add_run().add_picture("project-documents/assets/scenario-call-logic-figure
 cap = doc.add_paragraph()
 cap.alignment = WD_ALIGN_PARAGRAPH.CENTER
 r = cap.add_run(
-    "Figure 1 | The two purposes of the call (schematic). a, Current assessment logic. b, The submitted ensemble "
-    "(band: range; line: median) makes official projections and EC benchmarks testable. c, The gap to the net-zero "
-    "pathway is closed first by mature-technology roll-out, later by structural and societal change. d1–d3, zooming "
-    "into that hard core with one sectoral-model example per sector: the industry electrolyser capacity gap, "
-    "transport biomass demand vs sustainable availability, and buildings heat-pump roll-out slowed by the old, "
-    "unrenovated stock."
+    "Figure 1 | Current vs new assessment logic (schematic). a, Current logic: official projections and EC "
+    "benchmarks only. b–d, the new logic the scenario call enables. b, The submitted ensemble (band: range; line: "
+    "median) makes official projections and EC benchmarks testable. c, The same pathway split into sectors, scaled "
+    "to today's approximate EU27 emission shares (EEA inventory); the magnifiers mark the sectors zoomed below. "
+    "d1–d3, what the magnifiers reveal — one sectoral-model output per sector: the industry electrolyser capacity "
+    "gap, transport biofuel demand vs sustainable biomass availability, and buildings heat-pump roll-out slowed by "
+    "the old, unrenovated stock."
 )
 r.italic = True
 r.font.size = Pt(7.5)
@@ -137,13 +138,12 @@ bullet("Panel b (checking & context)", "Both elements are kept, but the submitte
        "alongside: the shaded band is the range across all submitted runs, the solid line their median. Where the "
        "official projections and benchmarks sit relative to the band shows at a glance whether they are optimistic "
        "or conservative against the scientific landscape.")
-bullet("Panel c (transition dynamics)", "Hitting a near-term target says little about the road beyond it. The gap "
-       "between the current-effort baseline and the net-zero pathway is small in 2030 and closed mostly by "
-       "mature-technology roll-out — the low-hanging fruit, which delivers early and then saturates. The much "
-       "larger 2050 gap must come from the hard core: structural and societal change (technology availability "
-       "limits, infrastructure, diets, consumption, demand). Sectoral-model submissions resolve this split per "
-       "sector, bottom-up, beyond the GHG headline.")
-bullet("Panels d1–d3 (the sectoral zoom)", "One example per sector of the detailed outputs we want submitted: "
+bullet("Panel c (the sector split — part of the new logic)", "The headline pathway is the sum of very different "
+       "sector transitions. Splitting it by today's actual emission shares (energy supply ~26%, transport ~24%, "
+       "industry ~20%, buildings ~13%, agriculture ~11%, waste & other ~6%) shows the composition of remaining "
+       "emissions shifting over time — energy decarbonises fastest, agriculture and transport linger. The "
+       "magnifying glasses mark where we zoom in.")
+bullet("Panels d1–d3 (under the magnifier — also part of the new logic)", "One example per sector of the detailed outputs we want submitted: "
        "industry — the gap between the current electrolyser deployment trend and what pathways require; transport — "
        "biofuel demand running into the sustainable biomass supply that land-use models can certify, with "
        "competition across sectors; buildings — the heat-pump roll-out required versus a trend slowed by the old, "
