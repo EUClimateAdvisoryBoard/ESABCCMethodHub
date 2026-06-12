@@ -42,9 +42,6 @@ export default function PolicyCoherence2GuidePage() {
           href="/beta/policy-coherence-2"
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-secondary hover:text-primary transition mb-3"
         >
-          <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-            <path d="M15 19l-7-7 7-7" />
-          </svg>
           Back to Policy Coherence 2.0
         </Link>
         <h1 className="text-3xl font-bold text-tertiary-dark mb-2">
