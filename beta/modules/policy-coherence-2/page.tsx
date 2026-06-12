@@ -23,8 +23,11 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { COHERENCE_STEPS } from '@/lib/content-analysis/policy-coherence';
 import { PC2_RULES, runPolicyCoherence2 } from '@/lib/policy-coherence-2/engine';
+import { PC2_ML_VERSION, runMlAnalysis } from '@/lib/policy-coherence-2/ml';
 import type {
   Pc2Finding,
+  Pc2MlPair,
+  Pc2MlPairKind,
   Pc2RuleId,
   Pc2Severity,
   Pc2Unit,
@@ -99,6 +102,61 @@ function FindingCard({ finding }: { finding: Pc2Finding }) {
   );
 }
 
+const ML_KIND_LABEL: Record<Pc2MlPairKind, string> = {
+  'contradiction-candidate': 'Contradiction candidates',
+  'tradeoff-candidate': 'Trade-off candidates',
+  'duplication-overlap': 'Duplication / overlap',
+};
+
+const ML_KIND_STYLE: Record<Pc2MlPairKind, string> = {
+  'contradiction-candidate': 'bg-red-50 text-red-700 border-red-200',
+  'tradeoff-candidate': 'bg-amber-50 text-amber-700 border-amber-200',
+  'duplication-overlap': 'bg-sky-50 text-sky-700 border-sky-200',
+};
+
+function MlPairCard({ pair }: { pair: Pc2MlPair }) {
+  return (
+    <div className="border border-grey-200 rounded-lg bg-white p-3">
+      <div className="flex flex-wrap items-center gap-1.5">
+        <span
+          className={`inline-block px-1.5 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${ML_KIND_STYLE[pair.kind]}`}
+        >
+          score {pair.score.toFixed(2)}
+        </span>
+        <span className="font-mono text-[9px] text-tertiary border border-grey-200 rounded px-1.5 py-0.5">
+          {pair.scope}
+        </span>
+        {pair.axis && (
+          <span className="font-mono text-[9px] text-tertiary">axis: {pair.axis}</span>
+        )}
+        <span className="font-mono text-[9px] text-tertiary">cos {pair.cosine}</span>
+      </div>
+      <p className="mt-1.5 text-[11px] text-tertiary leading-relaxed">
+        {pair.signals.join(' · ')}
+      </p>
+      <div className="mt-2 grid sm:grid-cols-2 gap-2">
+        {([
+          [pair.policyA, pair.pathA, pair.quoteA, pair.unitA],
+          [pair.policyB, pair.pathB, pair.quoteB, pair.unitB],
+        ] as const).map(([pid, path, q, uid]) => (
+          <blockquote
+            key={uid}
+            className="border-l-2 border-grey-200 pl-2 text-[11px] text-tertiary leading-relaxed"
+          >
+            <span className="font-mono text-[9px] text-tertiary block">
+              {pid} · {path}
+            </span>
+            “{q}”
+          </blockquote>
+        ))}
+      </div>
+      <p className="mt-1.5 font-mono text-[9px] text-tertiary">
+        shared terms: {pair.sharedTerms.join(', ')}
+      </p>
+    </div>
+  );
+}
+
 function UnitRow({ unit, findings }: { unit: Pc2Unit; findings: Pc2Finding[] }) {
   return (
     <div
@@ -155,6 +213,17 @@ export default function PolicyCoherence2Page() {
   );
   const [dbStatus, setDbStatus] = useState<string>('');
   const [writing, setWriting] = useState(false);
+  const [mlRequested, setMlRequested] = useState(false);
+  const [mlKind, setMlKind] = useState<Pc2MlPairKind>('contradiction-candidate');
+  const [mlDbStatus, setMlDbStatus] = useState<string>('');
+  const [mlWriting, setMlWriting] = useState(false);
+
+  // Computed lazily on request — the pass takes ~0.5 s over the full corpus.
+  const ml = useMemo(() => (mlRequested ? runMlAnalysis(run) : null), [run, mlRequested]);
+  const mlPairs = useMemo(
+    () => (ml ? ml.pairs.filter(p => p.kind === mlKind) : []),
+    [ml, mlKind],
+  );
 
   const filteredFindings = useMemo(
     () =>
@@ -215,6 +284,27 @@ export default function PolicyCoherence2Page() {
       setDbStatus(`Failed: ${err instanceof Error ? err.message : 'unknown error'}`);
     } finally {
       setWriting(false);
+    }
+  }
+
+  async function writeMlToDatabase() {
+    setMlWriting(true);
+    setMlDbStatus('Writing ML results to database…');
+    try {
+      const res = await fetch('/api/policy-coherence-2/ml', { method: 'POST' });
+      const json = await res.json();
+      if (!res.ok) throw new Error(json?.error ?? `HTTP ${res.status}`);
+      if (json.persisted === false) {
+        setMlDbStatus('Computed, but Supabase is not configured — nothing persisted.');
+      } else {
+        setMlDbStatus(
+          `Persisted against run ${json.runId}: ${json.stats.contradictionCandidates} contradiction, ${json.stats.tradeoffCandidates} trade-off and ${json.stats.duplicationOverlaps} overlap pairs, ${json.stats.clusters} clusters.`,
+        );
+      }
+    } catch (err) {
+      setMlDbStatus(`Failed: ${err instanceof Error ? err.message : 'unknown error'}`);
+    } finally {
+      setMlWriting(false);
     }
   }
 
@@ -429,6 +519,130 @@ export default function PolicyCoherence2Page() {
           </section>
         </div>
 
+        {/* Machine-learning layer */}
+        <section className="mt-8">
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">
+            Machine-learning layer
+          </h2>
+          <p className="text-[11.5px] text-tertiary max-w-3xl mb-2 leading-relaxed">
+            An unsupervised pass over the unit substrate: a TF-IDF vector-space model is
+            learned from the corpus itself, related provisions are mined by cosine
+            similarity, and each high-similarity pair is typed by claim-level signals into
+            contradiction candidates, trade-off candidates (shared contested-resource axes)
+            and cross-act duplication. Classical and deterministic — every score is
+            recomputable; no external model.
+          </p>
+          {!ml ? (
+            <button
+              onClick={() => setMlRequested(true)}
+              className="px-3 py-1.5 rounded bg-primary text-white text-[12px] font-bold"
+            >
+              Run ML pass ({PC2_ML_VERSION})
+            </button>
+          ) : (
+            <>
+              <div className="border border-grey-200 rounded-lg bg-grey-50 p-3 mb-3">
+                <div className="flex flex-wrap items-center gap-x-5 gap-y-1 text-[12px] text-tertiary">
+                  <span>
+                    <span className="font-bold text-tertiary-dark">{ml.stats.unitVectors}</span>{' '}
+                    unit vectors
+                  </span>
+                  <span>
+                    <span className="font-bold text-tertiary-dark">{ml.stats.vocabulary}</span>{' '}
+                    learned terms
+                  </span>
+                  <span>
+                    <span className="font-bold text-tertiary-dark">
+                      {ml.stats.candidatePairs}
+                    </span>{' '}
+                    candidate pairs
+                  </span>
+                  <span>
+                    <span className="font-bold text-tertiary-dark">
+                      {ml.stats.contradictionCandidates}
+                    </span>{' '}
+                    contradictions ·{' '}
+                    <span className="font-bold text-tertiary-dark">
+                      {ml.stats.tradeoffCandidates}
+                    </span>{' '}
+                    trade-offs ·{' '}
+                    <span className="font-bold text-tertiary-dark">
+                      {ml.stats.duplicationOverlaps}
+                    </span>{' '}
+                    overlaps ·{' '}
+                    <span className="font-bold text-tertiary-dark">{ml.stats.clusters}</span>{' '}
+                    theme clusters
+                  </span>
+                  <span className="font-mono text-[9.5px]">{ml.mlVersion}</span>
+                </div>
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <button
+                    onClick={writeMlToDatabase}
+                    disabled={mlWriting}
+                    className="px-3 py-1.5 rounded bg-primary text-white text-[12px] font-bold disabled:opacity-50"
+                  >
+                    {mlWriting ? 'Writing…' : 'Write ML results to database'}
+                  </button>
+                  {mlDbStatus && (
+                    <span className="text-[11px] text-tertiary">{mlDbStatus}</span>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-3 gap-5">
+                <div className="lg:col-span-2">
+                  <div className="mb-2 flex flex-wrap gap-1.5">
+                    {(Object.keys(ML_KIND_LABEL) as Pc2MlPairKind[]).map(k => (
+                      <button
+                        key={k}
+                        onClick={() => setMlKind(k)}
+                        className={`px-2 py-1 rounded border text-[11px] font-bold ${
+                          mlKind === k
+                            ? 'bg-primary text-white border-primary'
+                            : 'bg-white text-tertiary border-grey-200'
+                        }`}
+                      >
+                        {ML_KIND_LABEL[k]} (
+                        {ml.pairs.filter(p => p.kind === k).length})
+                      </button>
+                    ))}
+                  </div>
+                  <div className="space-y-2 max-h-[700px] overflow-y-auto pr-1">
+                    {mlPairs.slice(0, 40).map(p => (
+                      <MlPairCard key={p.id} pair={p} />
+                    ))}
+                    {mlPairs.length > 40 && (
+                      <p className="text-[11px] text-tertiary">
+                        Showing 40 of {mlPairs.length} — the full set is in the JSONL
+                        export.
+                      </p>
+                    )}
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-[13px] font-bold text-tertiary-dark mb-2">
+                    Cross-act theme clusters
+                  </h3>
+                  <div className="space-y-2 max-h-[700px] overflow-y-auto pr-1">
+                    {ml.clusters.map(c => (
+                      <div key={c.id} className="border border-grey-200 rounded-lg bg-white p-3">
+                        <p className="text-[12px] font-bold text-tertiary-dark">{c.label}</p>
+                        <p className="mt-0.5 font-mono text-[9.5px] text-tertiary">
+                          {c.size} units · {c.policyIds.length} acts
+                          {c.axis ? ` · axis: ${c.axis}` : ''}
+                        </p>
+                        <p className="mt-1 text-[10.5px] text-tertiary leading-relaxed">
+                          {c.policyIds.join(' · ')}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </section>
+
         {/* Rule book */}
         <section className="mt-8">
           <h2 className="text-lg font-bold text-tertiary-dark mb-2">Declared rules</h2>
@@ -473,6 +687,18 @@ export default function PolicyCoherence2Page() {
             database” persists the full run (units, claims, findings) to Supabase with
             deterministic ids, so every block remains referenceable and the corpus can feed
             downstream machine-learning extraction via the JSONL export.
+          </p>
+          <p>
+            <span className="font-bold text-tertiary-dark">Machine-learning layer.</span>{' '}
+            The ML pass is classical unsupervised learning, chosen deliberately over a
+            language-model pass: a TF-IDF vector-space model with cosine-similarity pair
+            mining, claim-feature classification and greedy centroid clustering is fully
+            deterministic and auditable — the same corpus always yields the same vectors,
+            scores and ids, and every pair can be re-derived from the printed parameters.
+            Its outputs are candidates by design: statistical discovery proposes, the
+            analyst (or a stricter rule) disposes. Standard final provisions
+            (transposition, entry into force) are stop-listed so drafting convention does
+            not masquerade as coherence signal.
           </p>
         </section>
       </main>

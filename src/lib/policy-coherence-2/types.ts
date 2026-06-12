@@ -191,3 +191,72 @@ export interface Pc2Run {
   findings: Pc2Finding[];
   stats: Pc2Stats;
 }
+
+// ── Machine-learning layer ─────────────────────────────────────────────────
+// Unsupervised pass over the unit substrate: TF-IDF vector-space model,
+// cosine-similarity candidate pairing, signal-based relation classification
+// and greedy centroid clustering. Classical and deterministic — same corpus,
+// same output — so every score can be recomputed and audited.
+
+export type Pc2MlPairKind =
+  | 'contradiction-candidate' // numeric / deontic / directional tension
+  | 'tradeoff-candidate'      // same contested resource axis, different acts
+  | 'duplication-overlap';    // near-duplicate normative content across acts
+
+export interface Pc2MlPair {
+  /** Deterministic id over the two unit ids. */
+  id: string;
+  kind: Pc2MlPairKind;
+  /** Composite score in (0, 1]: cosine + weighted signals. */
+  score: number;
+  /** Cosine similarity of the two units' TF-IDF vectors. */
+  cosine: number;
+  scope: Pc2Scope;
+  policyA: string;
+  policyB: string;
+  unitA: string;
+  unitB: string;
+  pathA: string;
+  pathB: string;
+  quoteA: string;
+  quoteB: string;
+  /** Informative terms the two units share (the similarity carriers). */
+  sharedTerms: string[];
+  /** Human-readable feature signals that drove the classification. */
+  signals: string[];
+  /** Contested-resource axis, for trade-off pairs. */
+  axis?: string;
+}
+
+export interface Pc2MlCluster {
+  id: string;
+  /** Top centroid terms — the cluster's de-facto theme label. */
+  label: string;
+  size: number;
+  policyIds: string[];
+  unitIds: string[];
+  /** Resource axis the theme sits on, when its terms hit the lexicon. */
+  axis?: string;
+}
+
+export interface Pc2MlStats {
+  unitVectors: number;
+  vocabulary: number;
+  candidatePairs: number;
+  scoredPairs: number;
+  contradictionCandidates: number;
+  tradeoffCandidates: number;
+  duplicationOverlaps: number;
+  clusters: number;
+}
+
+export interface Pc2MlResult {
+  mlVersion: string;
+  corpusHash: string;
+  generatedAt: string;
+  /** Declared model parameters — printed so the pass is reproducible. */
+  params: Record<string, number>;
+  pairs: Pc2MlPair[];
+  clusters: Pc2MlCluster[];
+  stats: Pc2MlStats;
+}
