@@ -92,7 +92,7 @@ LEG_KW = dict(fontsize=8.5, frameon=False, handlelength=1.9, labelspacing=0.4,
               borderaxespad=0.2)
 
 fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(7.0, 7.4), dpi=300, sharex=True)
-fig.subplots_adjust(hspace=0.46, left=0.10, right=0.985, top=0.94, bottom=0.045)
+fig.subplots_adjust(hspace=0.46, left=0.10, right=0.90, top=0.94, bottom=0.045)
 
 # ── Panel a — current logic ──────────────────────────────────────────────────
 draw_base(ax1)
@@ -123,32 +123,59 @@ ax2.annotate("EC benchmarks become testable\nagainst the modelled range",
                              shrinkA=2, shrinkB=4))
 
 # ── Panel c — the other side of the coin: transition dynamics ───────────────
-cx = np.linspace(2016, 2050, 100)
-ct = (cx - 2016) / 34
-easy = 0.85 * np.exp(-2.6 * ct)          # mature-tech share of remaining effort
-ax3.fill_between(cx, 0, easy, color="#7fb3a1", alpha=0.55, lw=0, zorder=1)
-ax3.fill_between(cx, easy, 1, color="#d9a05b", alpha=0.40, lw=0, zorder=1)
-ax3.plot(cx, easy, color="#3c7a66", lw=1.6, zorder=3)
-ax3.text(2017.0, 0.13, "mature technology roll-out\n('low-hanging fruit')",
-         fontsize=9, color="#1f4d3e", ha="left", va="bottom")
-ax3.text(2030.5, 0.80,
-         "structural & societal change — technology availability\nlimits, infrastructure, diets, consumption, demand",
-         fontsize=9, color="#7a4d12", ha="left", va="center")
-ax3.axvline(TODAY, color=GREY, lw=0.7, ls=(0, (1, 2)))
-ax3.text(TODAY + 0.3, 0.985, "today", fontsize=8.5, color=GREY, va="top", style="italic")
-ax3.annotate("2030 target can be met on easy options —\nwhat is left afterwards is the hard core",
-             xy=(2030, 0.30), xytext=(2036.5, 0.38), fontsize=9, color="#333333",
-             ha="left",
+# Abatement-wedge view: the gap between a current-effort baseline and the
+# net-zero pathway is filled by two wedges. The mature-technology wedge
+# ('low-hanging fruit') delivers early and saturates; the structural &
+# societal wedge must deliver everything that remains after 2030.
+cx = np.linspace(2025, 2050, 100)
+ctt = (cx - 2025) / 25
+c_base = y0 - 0.06 * ctt                      # current-effort baseline
+c_path = y0 * (1 - ctt) ** 1.35 + 0.02 * ctt  # pathway to (near) zero
+gap = c_base - c_path
+c_easy = np.minimum(0.26 * (1 - np.exp(-4.5 * ctt)), gap)  # saturating wedge
+bound = c_base - c_easy
+
+ax3.plot(hx, hy, color=HIST, lw=2.0, solid_capstyle="round", zorder=5)
+ax3.plot(cx, c_base, ls=(0, (4, 2.5)), color=GREY, lw=1.2, zorder=3)
+ax3.plot(cx, c_path, color=ENS, lw=2.0, zorder=5, solid_capstyle="round")
+ax3.fill_between(cx, bound, c_base, color="#7fb3a1", alpha=0.65, lw=0, zorder=1)
+ax3.fill_between(cx, c_path, bound, color="#d9a05b", alpha=0.55, lw=0, zorder=1)
+ax3.text(2050.4, c_base[-1], "current-effort\nbaseline", fontsize=8, color=GREY,
+         ha="left", va="center")
+ax3.text(2050.4, c_path[-1], "net-zero\npathway", fontsize=8, color=ENS,
+         ha="left", va="center")
+ax3.text(2040, (c_base[60] + bound[60]) / 2 + 0.015,
+         "mature technology roll-out\n('low-hanging fruit')",
+         fontsize=8, color="#1f4d3e", ha="center", va="center")
+# Verticals comparing the composition of the gap in 2030 vs 2046.
+for yr in (2030, 2046):
+    i = np.argmin(np.abs(cx - yr))
+    ax3.plot([cx[i], cx[i]], [c_path[i], c_base[i]], color="#333333", lw=0.9,
+             zorder=6, solid_capstyle="butt")
+    ax3.plot([cx[i]], [c_base[i]], marker="v", ms=3.5, color="#333333", zorder=6)
+    ax3.plot([cx[i]], [c_path[i]], marker="^", ms=3.5, color="#333333", zorder=6)
+ax3.annotate("2030 gap — closed mostly\nby the easy options", xy=(2030, 0.66),
+             xytext=(2016.5, 0.38), fontsize=9, color="#333333", ha="left",
              arrowprops=dict(arrowstyle="->", color="#333333", lw=0.8,
-                             shrinkA=2, shrinkB=3))
+                             shrinkA=2, shrinkB=4))
+ax3.annotate("2050 gap — what remains is the hard core:\nstructural & societal change (tech availability,\ninfrastructure, diets, consumption, demand)",
+             xy=(2043.5, 0.31), xytext=(2016.5, 0.235), fontsize=8.5,
+             color="#7a4d12", ha="left", va="top",
+             arrowprops=dict(arrowstyle="->", color="#7a4d12", lw=0.8,
+                             shrinkA=4, shrinkB=2))
+ax3.axvline(TODAY, color=GREY, lw=0.7, ls=(0, (1, 2)))
+ax3.text(TODAY + 0.3, 1.02, "today", fontsize=8.5, color=GREY, va="top",
+         style="italic")
+ax3.axhline(0, color="#bbbbbb", lw=0.8, zorder=0)
+ax3.text(2015.2, 0.015, "net zero", fontsize=8, color="#999999", va="bottom")
 ax3.set_xlim(2015, 2051)
-ax3.set_ylim(0, 1.0)
+ax3.set_ylim(-0.05, 1.07)
 ax3.set_yticks([])
 ax3.spines[["top", "right"]].set_visible(False)
 ax3.set_xticks([2030, 2040, 2050])
 ax3.tick_params(labelsize=9.5)
-ax3.set_ylabel("Composition of\nremaining effort", fontsize=9.5)
-panel_label(ax3, "c", "Understanding the inherent dynamics of the transition — beyond the GHG headline")
+ax3.set_ylabel("Variable\n(e.g. industry GHG emissions)", fontsize=9.5)
+panel_label(ax3, "c", "Understanding the inherent dynamics of the transition — what closes the gap, and when")
 
 out = "project-documents/assets/scenario-call-logic-figure.png"
 import os

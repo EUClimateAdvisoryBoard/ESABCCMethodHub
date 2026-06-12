@@ -135,10 +135,12 @@ bullet("Panel b (checking & context)", "Both elements are kept, but the submitte
        "alongside: the shaded band is the range across all submitted runs, the solid line their median. Where the "
        "official projections and benchmarks sit relative to the band shows at a glance whether they are optimistic "
        "or conservative against the scientific landscape.")
-bullet("Panel c (transition dynamics)", "Hitting a near-term target says little about the road beyond it: the share "
-       "of remaining effort that mature technologies can deliver shrinks over time, while the hard core — "
-       "technology availability limits, infrastructure, diets, consumption, demand — grows. Sectoral-model "
-       "submissions resolve this split per sector, bottom-up, beyond the GHG headline.")
+bullet("Panel c (transition dynamics)", "Hitting a near-term target says little about the road beyond it. The gap "
+       "between the current-effort baseline and the net-zero pathway is small in 2030 and closed mostly by "
+       "mature-technology roll-out — the low-hanging fruit, which delivers early and then saturates. The much "
+       "larger 2050 gap must come from the hard core: structural and societal change (technology availability "
+       "limits, infrastructure, diets, consumption, demand). Sectoral-model submissions resolve this split per "
+       "sector, bottom-up, beyond the GHG headline.")
 
 # ── Workflow ─────────────────────────────────────────────────────────────────
 heading("What would the workflow be on our side?")
