@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T08:32:10.798Z",
+  "generatedAt": "2026-06-15T10:43:16.440Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41893-026-01869-w",
+      "title": "Human health effects of amine-based carbon capture and storage in the US electricity sector",
+      "journal": "Nature Sustainability",
+      "authors": "Wilson H. McNeil, Robert A. Harley, Chelsea V. Preble, Corinne D. Scown",
+      "published": "2026-06-15",
+      "url": "https://doi.org/10.1038/s41893-026-01869-w",
+      "abstract": "Postcombustion carbon capture and storage (CCS) can reduce CO 2 emissions from coal and natural gas combined cycle (NGCC) power plants. Integrating CCS affects other air pollutant emissions as well. Flue gas must be pretreated to avoid undesirable reactions between pollutants and solvents, whereas amine-based solvents can degrade, leading to NH 3 emissions. Here we explore the air pollution and CO 2 emissions impacts of national-scale postcombustion CCS adoption at coal and NGCC plants using monoethanolamine and a mixture of 2-amino-2-methyl-1 propanol and piperazine (CESAR1) as representative solvents. If CCS retrofits are only viable on newer facilities, 97% of NGCC plant emissions are addressable versus 27% of coal plant emissions. Potential human health benefits of CCS retrofits are concentrated at coal plants, where the net benefits of added flue gas pretreatment are substantial, regardless of solvent. NGCC plants, however, require NH 3 emissions controls and/or modern solvents, as using monoethanolamine without NH 3 emissions controls could increase net human health burdens fourfold. Thus, the human health impacts from adopting postcombustion CCS using amine-based solvents depend on solvent choice, fuel type, existing flue gas concentration and NH 3 emission controls. Careful consideration of such factors can maximize the climate and health benefits of postcombustion CCS deployment.",
+      "suggestedOn": "2026-06-15",
+      "projects": [
+        {
+          "projectId": "industry-project",
+          "score": 7,
+          "matched": [
+            "carbon capture",
+            "ccs"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41558-026-02607-y",
       "title": "Early signs that the EU carbon border adjustment mechanism is reshaping EU–India steel trade",
