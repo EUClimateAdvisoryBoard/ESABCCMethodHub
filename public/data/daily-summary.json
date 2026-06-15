@@ -1,20 +1,26 @@
 {
   "date": "2026-06-15",
-  "generatedAt": "2026-06-15T00:10:47.101Z",
+  "generatedAt": "2026-06-15T10:59:29.456Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 15 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Australia tribunal rejects move by Japan's Inpex to stop LNG strike - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPLW9zY1RzSWNMeXFibVdLelBvRGpvUkoxTF9GSEpHSlF1VXhwOE5hVXZjekpLTTZLZ0lNRFh4RTZDdngyZ1J4dC1WWFNhZzZ3cEwyVlhoMXdqbEFhek54aXdlZkFzOUxYbnJQb3BIUHROeGJ1Um81YjRzZHBNTWRadUxzcTZ2SVpGZlhicTNrRGV3Z25FQWJod0tlR2dmaWVVU3d4UklKSVA1a0ttZno3S2lkVVliTEFEbDg3T3lITQ?oc=5\" target=\"_blank\"&gt;Australia tribunal rejects move by Japan's Inpex to stop LNG strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Remote volunteers use CCTV to save red squirrels",
+      "summary": "The project will allow volunteers to help defend red squirrels by monitoring footage remotely.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Amoc collapse could change Europe’s climate 10x faster than expected. We aren’t ready",
-      "summary": "&lt;p&gt;The system of ocean current that moves heat in the Atlantic Ocean plays a key role in regulating climate. Today’s monitoring of it may be discontinued&lt;/p&gt;&lt;p&gt;Imagine we detect a large asteroid heading straight for Earth. We are able to intervene and prevent disaster, but instead we cut the funding needed to track it. A few million dollars, it was argued, was too expensive to have a chance to save society.&lt;/p&gt;&lt;p&gt;While this scenario isn’t real, the metaphor is alarm",
+      "headline": "‘The Antarctic is the last frontier’: the quest to save Shackleton’s Endurance",
+      "summary": "&lt;p&gt;Amid fears the wreck will be more accessible to explorers – and new species – as the climate warms, conservationists want to create the region’s first underwater protected area&lt;/p&gt;&lt;p&gt;The harsh temperatures, treacherous currents and shifting pack ice of the Antarctic’s Weddell Sea, which crushed and sank his ship, Endurance, in 1915, led Ernest Shackleton to describe it as the “worst portion of the worst sea in the world”.&lt;/p&gt;&lt;p&gt;For more than a century, the inhosp",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "India&#039;s Modi in Slovakia, seeks to strengthen trade and investment ties",
+      "summary": "Prime Minister Narendra Modi&#039;s visit to Bratislava marks the first by an Indian leader since Slovakia&#039;s &quot;velvet divorce&quot; from the Czech Republic.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,19 +34,27 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Australia tribunal rejects move by Japan's Inpex to stop LNG strike - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPLW9zY1RzSWNMeXFibVdLelBvRGpvUkoxTF9GSEpHSlF1VXhwOE5hVXZjekpLTTZLZ0lNRFh4RTZDdngyZ1J4dC1WWFNhZzZ3cEwyVlhoMXdqbEFhek54aXdlZkFzOUxYbnJQb3BIUHROeGJ1Um81YjRzZHBNTWRadUxzcTZ2SVpGZlhicTNrRGV3Z25FQWJod0tlR2dmaWVVU3d4UklKSVA1a0ttZno3S2lkVVliTEFEbDg3T3lITQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPLW9zY1RzSWNMeXFibVdLelBvRGpvUkoxTF9GSEpHSlF1VXhwOE5hVXZjekpLTTZLZ0lNRFh4RTZDdngyZ1J4dC1WWFNhZzZ3cEwyVlhoMXdqbEFhek54aXdlZkFzOUxYbnJQb3BIUHROeGJ1Um81YjRzZHBNTWRadUxzcTZ2SVpGZlhicTNrRGV3Z25FQWJod0tlR2dmaWVVU3d4UklKSVA1a0ttZno3S2lkVVliTEFEbDg3T3lITQ?oc=5\" target=\"_blank\"&gt;Australia tribunal rejects move by Japan's Inpex to stop LNG strike&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-14T05:15:00.000Z",
+          "title": "Remote volunteers use CCTV to save red squirrels",
+          "link": "https://www.bbc.com/news/articles/cj9g1mxkx2lo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The project will allow volunteers to help defend red squirrels by monitoring footage remotely.",
+          "published": "2026-06-15T05:03:18.000Z",
           "score": 7
         },
         {
-          "title": "Iran says draft US deal includes oil sanctions waiver, nuclear limits and asset release - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQTHJ5S3lQbnk2ck1TeGlCeGh2V0k3cXJQSnVwLVNSUEM3cDNIcUVFazFZazBSLW1oQzJQWHJldGo4RHp3b2NaQXQ2OUxJTjdPTVNjZEZQdUxPT1ZfaGVLWWt1MmtQa0taaUNfZnIzUVRqS3R4WFp2UUM1dFFUZlNkY3ZtZ2xOaDE3UW1uQVpFcGQ4MThHUGs4X3JETmg3SWRWdmEwa28zazRGR0dJX0VWMDBJWXd3Z2Izd19OLUNDb01OejE2?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQTHJ5S3lQbnk2ck1TeGlCeGh2V0k3cXJQSnVwLVNSUEM3cDNIcUVFazFZazBSLW1oQzJQWHJldGo4RHp3b2NaQXQ2OUxJTjdPTVNjZEZQdUxPT1ZfaGVLWWt1MmtQa0taaUNfZnIzUVRqS3R4WFp2UUM1dFFUZlNkY3ZtZ2xOaDE3UW1uQVpFcGQ4MThHUGs4X3JETmg3SWRWdmEwa28zazRGR0dJX0VWMDBJWXd3Z2Izd19OLUNDb01OejE2?oc=5\" target=\"_blank\"&gt;Iran says draft US deal includes oil sanctions waiver, nuclear limits and asset release&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-06-14T21:52:50.000Z",
+          "title": "Iran war: Will the global energy crisis end soon?",
+          "link": "https://www.dw.com/en/iran-war-will-the-global-energy-crisis-end-soon/a-77554342?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "A US-Iran deal to end the war and reopen the Strait of Hormuz could ease the global energy crunch, but oil prices and supplies may take months to stabilize as shipping restarts and infrastructure recovers.",
+          "published": "2026-06-15T10:45:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "The potential of geothermal energy for US homes",
+          "link": "https://www.dw.com/en/the-potential-of-geothermal-energy-for-us-homes/a-77098244?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Advancements in geothermal systems and sustained political support in the US provide an opportunity for this clean energy industry to scale.",
+          "published": "2026-06-15T09:02:00.000Z",
           "score": 7
         },
         {
@@ -52,19 +66,11 @@
           "score": 4
         },
         {
-          "title": "Protesters clash with police ahead of G7 summit in Geneva",
+          "title": "Protesters clash with police ahead of G7 summit in France",
           "link": "https://www.bbc.com/news/videos/crkvek3dnrgo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Swiss police deployed a water cannon and fired tear gas to disperse anti-G7 protesters after clashes.",
           "published": "2026-06-14T19:46:36.000Z",
-          "score": 2
-        },
-        {
-          "title": "Police fire tear gas at anti-G7 protesters in Geneva",
-          "link": "https://www.dw.com/en/police-fire-tear-gas-at-anti-g7-protesters-in-geneva/a-77548464?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Protesters in Geneva clashed with police, set a car on fire and smashed the windows of a bank to show their opposition to the G7 summit taking place across the border in France.",
-          "published": "2026-06-14T18:14:00.000Z",
           "score": 2
         }
       ]
@@ -74,35 +80,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Amoc collapse could change Europe’s climate 10x faster than expected. We aren’t ready",
-          "link": "https://www.theguardian.com/commentisfree/2026/jun/14/amoc-collapse-europe-climate",
+          "title": "‘The Antarctic is the last frontier’: the quest to save Shackleton’s Endurance",
+          "link": "https://www.theguardian.com/environment/2026/jun/15/shackleton-endurance-shipwrecks-global-heating-antarctic-underwater-protected-area",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The system of ocean current that moves heat in the Atlantic Ocean plays a key role in regulating climate. Today’s monitoring of it may be discontinued&lt;/p&gt;&lt;p&gt;Imagine we detect a large asteroid heading straight for Earth. We are able to intervene and prevent disaster, but instead we cut the funding needed to track it. A few million dollars, it was argued, was too expensive to have a chance to save society.&lt;/p&gt;&lt;p&gt;While this scenario isn’t real, the metaphor is alarm",
-          "published": "2026-06-14T10:00:40.000Z",
-          "score": 13
-        },
-        {
-          "title": "Knicks defeat Spurs to snap 53-year NBA title drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQdnJyeXdIVXlXcDVjaGxELXU5WHExZlUtdlZBV3hmMnFRbEM5bnpYWVBMUHdWX0ppdXBscmJyczhaRnJvSHZMc1o4Si03RFlpWXNQeWRZOHJJTWVHOF9CZFV1WEFxQ1JOa2NORnlIMkhsSFJUWjdRVU4xaUp0YnpkV09MUWxKank4QVZtUVg4WjFuTDNqQ3BVakN4dWxSMFVWcG15UUk0TUJGVkJUYjVXLUNjWkxObjh5RHE0?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQdnJyeXdIVXlXcDVjaGxELXU5WHExZlUtdlZBV3hmMnFRbEM5bnpYWVBMUHdWX0ppdXBscmJyczhaRnJvSHZMc1o4Si03RFlpWXNQeWRZOHJJTWVHOF9CZFV1WEFxQ1JOa2NORnlIMkhsSFJUWjdRVU4xaUp0YnpkV09MUWxKank4QVZtUVg4WjFuTDNqQ3BVakN4dWxSMFVWcG15UUk0TUJGVkJUYjVXLUNjWkxObjh5RHE0?oc=5\" target=\"_blank\"&gt;Knicks defeat Spurs to snap 53-year NBA title drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-14T03:31:00.000Z",
+          "description": "&lt;p&gt;Amid fears the wreck will be more accessible to explorers – and new species – as the climate warms, conservationists want to create the region’s first underwater protected area&lt;/p&gt;&lt;p&gt;The harsh temperatures, treacherous currents and shifting pack ice of the Antarctic’s Weddell Sea, which crushed and sank his ship, Endurance, in 1915, led Ernest Shackleton to describe it as the “worst portion of the worst sea in the world”.&lt;/p&gt;&lt;p&gt;For more than a century, the inhosp",
+          "published": "2026-06-15T06:00:04.000Z",
           "score": 7
         },
         {
-          "title": "Tartan Army elated as Scotland ends 36-year World Cup win drought - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1oMVdhaklTZmpzUmlTLXFxaVk1Vjh1a3ZqT1NGdUVXaGVvRVhGUk40eGJjTE5KV3VZS1ltRDIxNDVmQU54YnFzUUQ4UldtVUs5bzN4RVc4eFlDMnpUM3h2RWp2M1FSd0hISzEtdlhmQm4weW8waVYwMl9R?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiekFVX3lxTE1oMVdhaklTZmpzUmlTLXFxaVk1Vjh1a3ZqT1NGdUVXaGVvRVhGUk40eGJjTE5KV3VZS1ltRDIxNDVmQU54YnFzUUQ4UldtVUs5bzN4RVc4eFlDMnpUM3h2RWp2M1FSd0hISzEtdlhmQm4weW8waVYwMl9R?oc=5\" target=\"_blank\"&gt;Tartan Army elated as Scotland ends 36-year World Cup win drought&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-14T11:03:45.000Z",
-          "score": 7
+          "title": "New microplastics research examines River Thames",
+          "link": "https://www.bbc.com/news/articles/cq81qvdknv3o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Water samples are assessed for pollution levels and any impact climate pressures may be having on the river system.",
+          "published": "2026-06-15T05:14:23.000Z",
+          "score": 4
         },
         {
-          "title": "‘It’s going to be extremely hot’: workers imperiled as sweltering World Cup temperatures are forecast",
-          "link": "https://www.theguardian.com/us-news/2026/jun/14/world-cup-heat-workers",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;It could top 90F in several cities hosting World Cup games – and workers could pay the price with their health&lt;/p&gt;&lt;p&gt;As the &lt;a href=\"https://www.theguardian.com/football/world-cup-2026\"&gt;World Cup&lt;/a&gt; kicks off, labor advocates and scholars warn that the workers making the tournament possible could face serious heat-related risks.&lt;/p&gt;&lt;p&gt;“It’s going to be extremely hot, and you just cannot leave people unprotected or you’re going to deal with a lot of i",
-          "published": "2026-06-14T10:00:41.000Z",
+          "title": "Volunteers could revive scarce bog insect numbers",
+          "link": "https://www.bbc.com/news/articles/ce37l0qj4xgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The project's long-term goal is to reintroduce the wetland insect to more sites.",
+          "published": "2026-06-15T05:02:10.000Z",
           "score": 2
         },
         {
@@ -112,39 +110,55 @@
           "description": "It has been the worst year for dogs getting too close to the nesting birds, a wildlife trust says.",
           "published": "2026-06-14T15:09:13.000Z",
           "score": 2
+        },
+        {
+          "title": "Delhi's temperature showed 43.5C. Why did it feel hotter?",
+          "link": "https://www.bbc.com/news/articles/c62173jqd4wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "We spent a day out in the city with a thermal camera, recording surface temperatures indoors and outdoors.",
+          "published": "2026-06-15T02:04:29.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "India&#039;s Modi in Slovakia, seeks to strengthen trade and investment ties",
+          "link": "https://www.dw.com/en/india-s-modi-in-slovakia-seeks-to-strengthen-trade-and-investment-ties/a-77553213?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Prime Minister Narendra Modi&#039;s visit to Bratislava marks the first by an Indian leader since Slovakia&#039;s &quot;velvet divorce&quot; from the Czech Republic.",
+          "published": "2026-06-15T08:46:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "Italy: Thousands attend anti- and pro-migration rallies in Rome",
-          "link": "https://www.dw.com/en/italy-thousands-attend-anti-and-pro-migration-rallies-in-rome/a-77540136?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Tens of thousands of people demonstrated in the Italian capital for rival protests. The rallies took place after a proposed bill seeking measures against migrants secured enough support to be brought before parliament.",
-          "published": "2026-06-14T01:47:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU Commission looking at practical consequences of Anthropic decision, spokesperson says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMjV5UElrM0pwdjE0dkFUM09CRHd6elhGdTJuUXVkb29QWVNrU3lpQnBNSXpJT2lfUnppQVlzN0NZMHBienBaWWlub3lxTjItbm1FbFNSdnZtMUE4MndyMWVEV0FfVE9iYjBsbGJnNGVkT3kyNEN2NE04ZXI3WUN3a2dxSWV5bUh0aVBrLWFZVEpXOERDWU9Qc3NPbGlRQkZLZEtrR3ktb04tY2ZHRmM0NzlKVm5ITF8zNVM3TlpXSUFYc2dSQWRieA?oc=5",
+          "title": "Exclusive: Tesla presented misleading ‘Full Self-Driving’ safety data to European regulators - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ0hBU1N1QmFJWEswYVNlZE1HT0VOd1B0ME5lNFVsOHduTUxWREJpS3FLUHItOHB3aVRDaml3LURlRGY5dlNLV293bEFtMmlmaFh4eTZKSnJJWVZPZ1BQcS1zZDZ2RGpvc1ZjbjJMbnRTY21qZ2RINzhpQ0RvUFdWQWJnenR1aFo2WVNIZnFYcjJGT1dFZTNVdzc1aG9YM0F3R1cwd3BXeVQ2bXREbmM3TFNGcmlqZTlRZ0E?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPMjV5UElrM0pwdjE0dkFUM09CRHd6elhGdTJuUXVkb29QWVNrU3lpQnBNSXpJT2lfUnppQVlzN0NZMHBienBaWWlub3lxTjItbm1FbFNSdnZtMUE4MndyMWVEV0FfVE9iYjBsbGJnNGVkT3kyNEN2NE04ZXI3WUN3a2dxSWV5bUh0aVBrLWFZVEpXOERDWU9Qc3NPbGlRQkZLZEtrR3ktb04tY2ZHRmM0NzlKVm5ITF8zNVM3TlpXSUFYc2dSQWRieA?oc=5\" target=\"_blank\"&gt;EU Commission looking at practical consequences of Anthropic decision, spokesperson says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-06-14T13:47:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ0hBU1N1QmFJWEswYVNlZE1HT0VOd1B0ME5lNFVsOHduTUxWREJpS3FLUHItOHB3aVRDaml3LURlRGY5dlNLV293bEFtMmlmaFh4eTZKSnJJWVZPZ1BQcS1zZDZ2RGpvc1ZjbjJMbnRTY21qZ2RINzhpQ0RvUFdWQWJnenR1aFo2WVNIZnFYcjJGT1dFZTNVdzc1aG9YM0F3R1cwd3BXeVQ2bXREbmM3TFNGcmlqZTlRZ0E?oc=5\" target=\"_blank\"&gt;Exclusive: Tesla presented misleading ‘Full Self-Driving’ safety data to European regulators&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-15T08:07:59.000Z",
           "score": 8
+        },
+        {
+          "title": "UK losing jobs abroad due to high energy costs, manufacturers and union warn - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOHV6dWVLd21LZVZOTy1pUXZneHNzUWZwX3kySTJXQ2xmUFV1d3FkNWw1bjkweXE0Zy1pMHNuY2phRllDcExSUEUzQ3Y4MHVSVmpaaFFzM09FeTREVUN1ZXhiN0FyRV9mbTJtODlQbEpKeVRXaFBXbXNnNWhjb1ZsTTkxQTNLWF9JaDlJbjZ1VmVJa0FndWRpU1FZTlY2UXZobVZzMUZRNHVwVVlxWk04UjdmNEVla3RqVWhpN2JJa19iemhUYlE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOOHV6dWVLd21LZVZOTy1pUXZneHNzUWZwX3kySTJXQ2xmUFV1d3FkNWw1bjkweXE0Zy1pMHNuY2phRllDcExSUEUzQ3Y4MHVSVmpaaFFzM09FeTREVUN1ZXhiN0FyRV9mbTJtODlQbEpKeVRXaFBXbXNnNWhjb1ZsTTkxQTNLWF9JaDlJbjZ1VmVJa0FndWRpU1FZTlY2UXZobVZzMUZRNHVwVVlxWk04UjdmNEVla3RqVWhpN2JJa19iemhUYlE?oc=5\" target=\"_blank\"&gt;UK losing jobs abroad due to high energy costs, manufacturers and union warn&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-14T23:04:00.000Z",
+          "score": 7
         },
         {
           "title": "Swiss voters reject 10 million population cap",
@@ -155,36 +169,28 @@
           "score": 6
         },
         {
-          "title": "What's the possible impact of Switzerland's 'Swiss Brexit' vote? - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1wTWVLa1BJY3JzWnJSRjQxTUdVbnI2UzRubDhHRHctR00yR25ib3NVcXhYYlVXMDVRczNfcWRRVTlmZ0NDME9lUElpbUNCMHRxTmk5LXF5XzM2Z0hTU0JyNXdLd2tjMkk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1wTWVLa1BJY3JzWnJSRjQxTUdVbnI2UzRubDhHRHctR00yR25ib3NVcXhYYlVXMDVRczNfcWRRVTlmZ0NDME9lUElpbUNCMHRxTmk5LXF5XzM2Z0hTU0JyNXdLd2tjMkk?oc=5\" target=\"_blank\"&gt;What's the possible impact of Switzerland's 'Swiss Brexit' vote?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-14T13:41:15.000Z",
-          "score": 6
-        },
-        {
-          "title": "Teen shot and buses torched in Manhattan after historic NBA win for Knicks",
-          "link": "https://www.bbc.com/news/articles/c8623n5pq2vo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Oil prices fall and shares jump after US-Iran deal announced",
+          "link": "https://www.bbc.com/news/articles/c6217106px6o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "At least 63 people were arrested in the disorder after the Knicks beat the Spurs to clinch the title.",
-          "published": "2026-06-14T14:08:03.000Z",
+          "description": "Under the agreement, the key Strait of Hormuz waterway will be reopened, US President Donald Trump said.",
+          "published": "2026-06-15T07:38:09.000Z",
           "score": 2
         },
         {
-          "title": "Tourist train overturns and injures 17 during Cártama tapas festival",
-          "link": "https://www.bbc.com/news/articles/c14yn10jzyeo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Norwegian crown princess's son found guilty of two counts of rape",
+          "link": "https://www.bbc.com/news/articles/cly9d10l5p4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Nobody was seriously hurt as a result of the accident in the Spanish town, local authorities say.",
-          "published": "2026-06-14T12:04:54.000Z",
+          "description": "Marius Borg Høiby, the 29-year-old son of Norway's Crown Princess Mette Marit, has been found guilty of two counts of rape and given four years in jail.",
+          "published": "2026-06-15T10:27:20.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 392,
-    "articlesLast24h": 131,
-    "afterDedup": 116,
+    "totalArticlesScanned": 406,
+    "articlesLast24h": 145,
+    "afterDedup": 138,
     "feedsQueried": 19
   }
 }
