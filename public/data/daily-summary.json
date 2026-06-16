@@ -1,12 +1,12 @@
 {
   "date": "2026-06-16",
-  "generatedAt": "2026-06-16T01:46:03.277Z",
+  "generatedAt": "2026-06-16T10:11:44.264Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 16 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Remote volunteers use CCTV to save red squirrels",
-      "summary": "The project will allow volunteers to help defend red squirrels by monitoring footage remotely.",
+      "headline": "Spanish households save €10 a month thanks to renewables expansion, report finds",
+      "summary": "&lt;p&gt;Thinktank says decoupling electricity from gas prices has also helped shield Spain from hikes caused by Iran war&lt;/p&gt;&lt;p&gt;Spanish households save €10 a month on electricity bills because of wind turbines and solar panels installed in the last five years, a &lt;a href=\"https://ember-energy.org/latest-insights/renewables-shield-spanish-consumers-from-elevated-gas-prices\"&gt;report&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Typical energy bills would be 19% more expensive if electrici",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "Amid reports that the government could weaken the UK’s electric vehicle (EV) targets, Carbon Brief... The post Analysis: UK’s EV drivers are now saving £1,100 each a year – and £3bn in total appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Daimler Truck launches new defence brand backed by multimillion-euro investment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZU9vd2JpeHhHVDJLU1FOQjMzYnduNVhEeW1jYmIwcE8zcVVCMEFTQUJINkpTa2s4NC15WjEwZGFkSUs0eUIybHJ4bnBwUTZzRktZUHh5SXpsd2hYV2NLTDhfZ1V4bUtETHlMWHB6TXFxekE3N1BraFNPOXNiZUU5NmR5b2FhbjVqNFZ5ZUhqQXBjNmFLWmZnc0xVcWUxdDV5SzlQSWFEU0NiVEJlSFg1ZlVWSVFELUxHcEg4NVZxd0VhUDNTZTFnYXVaWEFsalBuOHlZck5IMjI1UQ?oc=5\" target=\"_blank\"&gt;Daimler Truck launches new defence brand backed by multimillion-euro investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,20 +28,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Remote volunteers use CCTV to save red squirrels",
-          "link": "https://www.bbc.com/news/articles/cj9g1mxkx2lo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The project will allow volunteers to help defend red squirrels by monitoring footage remotely.",
-          "published": "2026-06-15T05:03:18.000Z",
-          "score": 7
-        },
-        {
-          "title": "The potential of geothermal energy for US homes",
-          "link": "https://www.dw.com/en/the-potential-of-geothermal-energy-for-us-homes/a-77098244?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Advancements in geothermal systems and sustained political support in the US provide an opportunity for this clean energy industry to scale.",
-          "published": "2026-06-15T09:02:00.000Z",
-          "score": 7
+          "title": "Spanish households save €10 a month thanks to renewables expansion, report finds",
+          "link": "https://www.theguardian.com/world/2026/jun/16/spanish-households-save-renewables-expansion-electricity-gas-prices-iran-war",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Thinktank says decoupling electricity from gas prices has also helped shield Spain from hikes caused by Iran war&lt;/p&gt;&lt;p&gt;Spanish households save €10 a month on electricity bills because of wind turbines and solar panels installed in the last five years, a &lt;a href=\"https://ember-energy.org/latest-insights/renewables-shield-spanish-consumers-from-elevated-gas-prices\"&gt;report&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Typical energy bills would be 19% more expensive if electrici",
+          "published": "2026-06-16T07:00:47.000Z",
+          "score": 4
         }
       ]
     },
@@ -64,11 +50,19 @@
           "score": 13
         },
         {
-          "title": "‘The Antarctic is the last frontier’: the quest to save Shackleton’s Endurance",
-          "link": "https://www.theguardian.com/environment/2026/jun/15/shackleton-endurance-shipwrecks-global-heating-antarctic-underwater-protected-area",
+          "title": "BoM forecasts strong El Niño and warns climate change could amplify effects on Australia",
+          "link": "https://www.theguardian.com/environment/2026/jun/16/australia-el-nino-bom-bureau-of-meteorology-dry-hot-weather",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Amid fears the wreck will be more accessible to explorers – and new species – as the climate warms, conservationists want to create the region’s first underwater protected area&lt;/p&gt;&lt;p&gt;The harsh temperatures, treacherous currents and shifting pack ice of the Antarctic’s Weddell Sea, which crushed and sank his ship, Endurance, in 1915, led Ernest Shackleton to describe it as the “worst portion of the worst sea in the world”.&lt;/p&gt;&lt;p&gt;For more than a century, the inhosp",
-          "published": "2026-06-15T06:00:04.000Z",
+          "description": "&lt;p&gt;El Niño events linked with extreme weather around the world – and can increase risk of bushfires in Australia and coral bleaching on Great Barrier Reef&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/16/australia-news-live-victoria-wfh-work-from-home-labor-fuel-excise-budget-cost-of-living-albanese-chalmers-one-nation-hanson-rba-interest-rates-decision-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&l",
+          "published": "2026-06-16T07:20:26.000Z",
+          "score": 7
+        },
+        {
+          "title": "Half of world’s children exposed to at least three climate hazards, Unicef says",
+          "link": "https://www.theguardian.com/environment/2026/jun/16/half-of-worlds-children-exposed-to-at-least-three-climate-hazards-unicef-says",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Almost every child, including those from high-income countries, is now exposed to at least one hazard&lt;/p&gt;&lt;p&gt;Half of the world’s children are exposed to at least three overlapping climate hazards threatening their health, education and survival, according to a Unicef report.&lt;/p&gt;&lt;p&gt;Globally, children face increasing threats from heatwaves, storms, floods and droughts as the climate crisis worsens, with more than one billion facing at least three of these at once.&l",
+          "published": "2026-06-16T05:00:46.000Z",
           "score": 7
         },
         {
@@ -78,46 +72,13 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPUkhRYkp4MTRpYjRFV1ZEb2pEZW4waXFSREpvWG1qazJ5a1NkUkwwei1ucElVMkVFUnVNRzdQTFBTSHdXQkFhX0I2ajd5RDhHLUZ5SnBJNGlSa2ZZS3JyTjk1LUdfSUl1UU40LThvVUtPbWNTUmtkaFgwMExTckgzMU5SbVc1UlZGbzRTNGpsX3FIcGJzZ0dQTnFRVGtNNUFWaDNBTGtaU0oySVRjZE5rVlhjbjVFMjd0ejdoVQ?oc=5\" target=\"_blank\"&gt;Indian officials survey farms around Tata iPhone parts plant after water pollution warning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
           "published": "2026-06-15T12:13:24.000Z",
           "score": 7
-        },
-        {
-          "title": "New microplastics research examines River Thames",
-          "link": "https://www.bbc.com/news/articles/cq81qvdknv3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Water samples are assessed for pollution levels and any impact climate pressures may be having on the river system.",
-          "published": "2026-06-15T05:14:23.000Z",
-          "score": 4
-        },
-        {
-          "title": "Volunteers could revive scarce bog insect numbers",
-          "link": "https://www.bbc.com/news/articles/ce37l0qj4xgo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The project's long-term goal is to reintroduce the wetland insect to more sites.",
-          "published": "2026-06-15T05:02:10.000Z",
-          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Daimler Truck launches new defence brand backed by multimillion-euro investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZU9vd2JpeHhHVDJLU1FOQjMzYnduNVhEeW1jYmIwcE8zcVVCMEFTQUJINkpTa2s4NC15WjEwZGFkSUs0eUIybHJ4bnBwUTZzRktZUHh5SXpsd2hYV2NLTDhfZ1V4bUtETHlMWHB6TXFxekE3N1BraFNPOXNiZUU5NmR5b2FhbjVqNFZ5ZUhqQXBjNmFLWmZnc0xVcWUxdDV5SzlQSWFEU0NiVEJlSFg1ZlVWSVFELUxHcEg4NVZxd0VhUDNTZTFnYXVaWEFsalBuOHlZck5IMjI1UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi2gFBVV95cUxOZU9vd2JpeHhHVDJLU1FOQjMzYnduNVhEeW1jYmIwcE8zcVVCMEFTQUJINkpTa2s4NC15WjEwZGFkSUs0eUIybHJ4bnBwUTZzRktZUHh5SXpsd2hYV2NLTDhfZ1V4bUtETHlMWHB6TXFxekE3N1BraFNPOXNiZUU5NmR5b2FhbjVqNFZ5ZUhqQXBjNmFLWmZnc0xVcWUxdDV5SzlQSWFEU0NiVEJlSFg1ZlVWSVFELUxHcEg4NVZxd0VhUDNTZTFnYXVaWEFsalBuOHlZck5IMjI1UQ?oc=5\" target=\"_blank\"&gt;Daimler Truck launches new defence brand backed by multimillion-euro investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6",
-          "published": "2026-06-15T09:11:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "India&#039;s Modi in Slovakia, seeks to strengthen trade and investment ties",
-          "link": "https://www.dw.com/en/india-s-modi-in-slovakia-seeks-to-strengthen-trade-and-investment-ties/a-77553213?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Prime Minister Narendra Modi&#039;s visit to Bratislava marks the first by an Indian leader since Slovakia&#039;s &quot;velvet divorce&quot; from the Czech Republic.",
-          "published": "2026-06-15T08:46:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -132,19 +93,11 @@
           "score": 22
         },
         {
-          "title": "Video of a committee meeting - Monday, 15 June 2026 - 17:00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260615-1900-COMMITTEE-ENVI_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 90'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-15T18:00:25.000Z",
-          "score": 18
-        },
-        {
-          "title": "Minutes - Tuesday, 17 March 2026 - PE785.495v01-00 - Committee on Development , Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ37-PV-2026-03-17-1_EN.pdf",
+          "title": "Draft agenda - Tuesday, 23 June 2026 - PE789.999v01-00 - Committee on Development , Committee on the Environment, Public Health and Food Safety , Committee on Fisheries",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-06-23-2_EN.html",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-15T13:43:02.000Z",
+          "published": "2026-06-16T09:33:22.000Z",
           "score": 18
         },
         {
@@ -161,6 +114,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPdE5zblIyYkdmYlp4aG1EZ0I1MzB6SXFDaFhNNnVrOU00bWp3aUJCZlE5dEcxWnlrRU40WkdvSTlwQTlsMG5HSjBILUVMOTMyOHNlYzBReFZLRFB3MU9USGM1d2QxNVRuTFhkV2hiakNFa0FvWEZXT0xsazktcy1WdV9FMGVaR1htUUlvRThKLTBmUGgxQ0dpam9WcDNjRnR5SlhUWktn?oc=5\" target=\"_blank\"&gt;Ukraine starts first phase of EU membership talks in 'Rubicon' moment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-15T19:29:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Taiwan president says he 'won't give up' on defence spending after parliament cuts - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWnpHcVozZ2R3Q3g3T0dVZElBazNra3dKb21ndjg3RTZoeDd2UWJsRVQ5d2FiSTdKMnhKRHVMTWlHZkhGM3QzUnphSlBLV01SQ0RmbXl5MHZtT3NRU28yNktOZlR4SXJRM0w1azZGSG5rdms5YllXZzVLcTg5b2N4QmYwbXZTUFhrbWs2MVloMmlIU2YtOU8yTmJxWHBScWxneDA2bUpOTUk2VEF0WWlKSXVEeHpnTkI3cGVheEtrTlQ5Zw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQWnpHcVozZ2R3Q3g3T0dVZElBazNra3dKb21ndjg3RTZoeDd2UWJsRVQ5d2FiSTdKMnhKRHVMTWlHZkhGM3QzUnphSlBLV01SQ0RmbXl5MHZtT3NRU28yNktOZlR4SXJRM0w1azZGSG5rdms5YllXZzVLcTg5b2N4QmYwbXZTUFhrbWs2MVloMmlIU2YtOU8yTmJxWHBScWxneDA2bUpOTUk2VEF0WWlKSXVEeHpnTkI3cGVheEtrTlQ5Zw?oc=5\" target=\"_blank\"&gt;Taiwan president says he 'won't give up' on defence spending after parliament cuts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-06-16T06:31:00.000Z",
           "score": 8
         }
       ]
@@ -186,14 +147,6 @@
           "score": 8
         },
         {
-          "title": "From Australia to Europe, countries move to curb children's social media access - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZUNyUWtEMVQ1RTg5TDVROWtWbzctNWRPS1BOQ3FneWlNbXdmSW1KSFZfeFFPdU1sQXpMdnYxVkU1ZVNFZVJGbV9OaU5PN2h3RzdOaXlERHNmMnA3eGYxRWxCZGRtelROTVdaMVlXbkdCbFdVUUoyV1lPeTdHWm1tajJUMXhJSkFMMHRyaGE5RlU5bDhNTVdDdVlYUnRGWG4wS1huRzZnQlhoR29iNEJ4c25VTlBpRDhxLVdJ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPZUNyUWtEMVQ1RTg5TDVROWtWbzctNWRPS1BOQ3FneWlNbXdmSW1KSFZfeFFPdU1sQXpMdnYxVkU1ZVNFZVJGbV9OaU5PN2h3RzdOaXlERHNmMnA3eGYxRWxCZGRtelROTVdaMVlXbkdCbFdVUUoyV1lPeTdHWm1tajJUMXhJSkFMMHRyaGE5RlU5bDhNTVdDdVlYUnRGWG4wS1huRzZnQlhoR29iNEJ4c25VTlBpRDhxLVdJ?oc=5\" target=\"_blank\"&gt;From Australia to Europe, countries move to curb children's social media access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-15T08:04:23.000Z",
-          "score": 8
-        },
-        {
           "title": "UN Security Council extends Afghan mission, calls for review - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNFFUZUoyNldoZThTbkFneUJVcjZkazlGZWdsX2J5aHExLTNXbmlycThDZmlFanlPWW5VeThYTXAtWTVWaEpnRlBScXlnV2R0RXBIbXBFM0RrZkpFTjMzMmlKT1pKOUVRdzlUU3Ryd2M5YUZOYWQ1MGc4ZnhoMEt0ZHJPcnB4NzZMc1R1U3FhLWROQjNlN19LYw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -208,13 +161,21 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZVl5ellEcmNlUjNxWkxmLVdOcGdVY3Q5X0drZ3F6dTZZNHF1ZHVpc2NQbTNwNXJ6b0NDSm9wRDZEdkRoUWZFdHVISW03eVRWcEdrSFJtdFF4TUxMcGNyX3U1ZXRUMmJQaTJCcTBRVjJjS3pnUzg1R2t0M0tuYlBiUE1VYmo1ZTZHUUlZb3NsbGc0cFZlcmFQVnE0YkdMdTVXYmdvYlNzSURta0xYUVBNS256RWM1T1loX0V3Xw?oc=5\" target=\"_blank\"&gt;Russia's Lavrov says Moscow committed to U.S. proposals on peace, rejects Europe's ultimatums&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
           "published": "2026-06-15T10:13:43.000Z",
           "score": 8
+        },
+        {
+          "title": "UN calls for drone regulation in conflict zones",
+          "link": "https://www.dw.com/en/un-calls-for-drone-regulation-in-conflict-zones/a-77565880?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "UN rights chief Volker Türk said more than 1,000 civilians in Sudan have been killed this year by drone attacks. The UN has called for regulation and accountability to prevent similar atrocities.",
+          "published": "2026-06-15T17:30:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 400,
-    "articlesLast24h": 148,
+    "totalArticlesScanned": 396,
+    "articlesLast24h": 156,
     "afterDedup": 147,
     "feedsQueried": 19
   }
