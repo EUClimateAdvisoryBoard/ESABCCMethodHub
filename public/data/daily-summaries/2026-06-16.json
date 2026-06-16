@@ -1,20 +1,26 @@
 {
   "date": "2026-06-16",
-  "generatedAt": "2026-06-16T10:11:44.264Z",
+  "generatedAt": "2026-06-16T15:58:26.905Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 16 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Spanish households save €10 a month thanks to renewables expansion, report finds",
-      "summary": "&lt;p&gt;Thinktank says decoupling electricity from gas prices has also helped shield Spain from hikes caused by Iran war&lt;/p&gt;&lt;p&gt;Spanish households save €10 a month on electricity bills because of wind turbines and solar panels installed in the last five years, a &lt;a href=\"https://ember-energy.org/latest-insights/renewables-shield-spanish-consumers-from-elevated-gas-prices\"&gt;report&lt;/a&gt; has found.&lt;/p&gt;&lt;p&gt;Typical energy bills would be 19% more expensive if electrici",
+      "headline": "Retail giants join UK government drive to boost ‘plug-in’ balcony solar panels",
+      "summary": "&lt;p&gt;Asda, Amazon and B&amp;amp;Q among retailers in talks to sell devices that feed into household sockets and can cut electricity bills by 30%&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jun/16/spanish-households-save-renewables-expansion-electricity-gas-prices-iran-war\"&gt;Spanish homes save €10 a month via renewables expansion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Bosses of some of Britain’s biggest retailers are discussing plans w",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Analysis: UK’s EV drivers are now saving £1,100 each a year – and £3bn in total",
-      "summary": "Amid reports that the government could weaken the UK’s electric vehicle (EV) targets, Carbon Brief... The post Analysis: UK’s EV drivers are now saving £1,100 each a year – and £3bn in total appeared first on Carbon Brief.",
+      "headline": "Briefing - Environmental policy in Estonia - PE 167.618 - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div&gt;Briefing No. 5 - Following independence from the CIS, the environmental situation in Estonia has improved considerably because of the economic recession and high investments. Despite the very recent signing of the Association Agreement, Estonia has already made considerable progress in harmonization of environmental legislation. All White Paper legislation will probably have been transposed by the end of 1999. Adoption of the remaining acquis communautaire is planned for the end of 20",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Germany: 25 years since Nazi forced labor compensation began",
+      "summary": "A German fund set up to compensate the millions forced to work for the Nazi regime is marking 25 years since the first payments were made. But for many victims, it was much too late.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -27,6 +33,30 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Retail giants join UK government drive to boost ‘plug-in’ balcony solar panels",
+          "link": "https://www.theguardian.com/money/2026/jun/16/retail-giants-join-uk-government-drive-to-boost-plug-in-balcony-solar-panels",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Asda, Amazon and B&amp;amp;Q among retailers in talks to sell devices that feed into household sockets and can cut electricity bills by 30%&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jun/16/spanish-households-save-renewables-expansion-electricity-gas-prices-iran-war\"&gt;Spanish homes save €10 a month via renewables expansion&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Bosses of some of Britain’s biggest retailers are discussing plans w",
+          "published": "2026-06-16T14:01:36.000Z",
+          "score": 7
+        },
+        {
+          "title": "Venezuela signs deal with US energy giant to rebuild power grid",
+          "link": "https://www.bbc.com/news/articles/c0jyzpv52yyo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The deal with General Electric is the latest sign of co-operation between US firms and Venezuela's interim government.",
+          "published": "2026-06-16T15:19:52.000Z",
+          "score": 7
+        },
+        {
+          "title": "Trump says Iran deal to be public soon and will rule out nuclear weapon for Tehran - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQOE5uY1JidUpoS0Q1eDhUQ2RLMDJKSnppMV9RTkFQRGhqQ1ctT2VZMi16YUJIZjBzaFlWU2ZqOEdDZ3NvaUtUVXNHTWo1Q0xYcFItWHlZdVlrSVE5SDFOdmlfS1I3ZE5tZnlLVmVuQjNkbGhjN2pjZVdqVnZ2RTBia0xESzJqUDVqZV9hby1kbEZVTzM2WGktc2tLazFVVXVsVkJWVDNYT1h4RHkwampoMlZYWW5VbWM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQOE5uY1JidUpoS0Q1eDhUQ2RLMDJKSnppMV9RTkFQRGhqQ1ctT2VZMi16YUJIZjBzaFlWU2ZqOEdDZ3NvaUtUVXNHTWo1Q0xYcFItWHlZdVlrSVE5SDFOdmlfS1I3ZE5tZnlLVmVuQjNkbGhjN2pjZVdqVnZ2RTBia0xESzJqUDVqZV9hby1kbEZVTzM2WGktc2tLazFVVXVsVkJWVDNYT1h4RHkwampoMlZYWW5VbWM?oc=5\" target=\"_blank\"&gt;Trump says Iran deal to be public soon and will rule out nuclear weapon for Tehran&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-16T06:33:00.000Z",
+          "score": 7
+        },
         {
           "title": "Spanish households save €10 a month thanks to renewables expansion, report finds",
           "link": "https://www.theguardian.com/world/2026/jun/16/spanish-households-save-renewables-expansion-electricity-gas-prices-iran-war",
@@ -42,12 +72,36 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Analysis: UK’s EV drivers are now saving £1,100 each a year – and £3bn in total",
-          "link": "https://www.carbonbrief.org/analysis-uks-ev-drivers-are-now-saving-1100-each-a-year-and-3bn-in-total/",
+          "title": "Briefing - Environmental policy in Estonia - PE 167.618 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/RegData/etudes/BRIE/1998/167618/ECTI_BRI(1998)167618_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div&gt;Briefing No. 5 - Following independence from the CIS, the environmental situation in Estonia has improved considerably because of the economic recession and high investments. Despite the very recent signing of the Association Agreement, Estonia has already made considerable progress in harmonization of environmental legislation. All White Paper legislation will probably have been transposed by the end of 1999. Adoption of the remaining acquis communautaire is planned for the end of 20",
+          "published": "2026-06-15T22:00:00.000Z",
+          "score": 16
+        },
+        {
+          "title": "Analysis: Energy-efficient air conditioning could save Indian homes 69bn rupees a year",
+          "link": "https://www.carbonbrief.org/analysis-energy-efficient-air-conditioning-could-save-indian-homes-69bn-rupees-a-year/",
           "source": "Carbon Brief",
-          "description": "Amid reports that the government could weaken the UK’s electric vehicle (EV) targets, Carbon Brief... The post Analysis: UK’s EV drivers are now saving £1,100 each a year – and £3bn in total appeared first on Carbon Brief.",
-          "published": "2026-06-15T15:26:38.000Z",
+          "description": "More energy-efficient air-conditioning units could, together, save Indian households ₹69bn ($724m) a year, according to... The post Analysis: Energy-efficient air conditioning could save Indian homes 69bn rupees a year appeared first on Carbon Brief.",
+          "published": "2026-06-16T11:09:23.000Z",
           "score": 13
+        },
+        {
+          "title": "Iceland's finance minister says EU membership is vital as Arctic rivalry and trade wars intensify - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOU242Rk5YWlhENXhZZTBZaWl5TWg4aVdxRWQwdVFSY0QzOTdxeVg4a09LYmZTS0V4V1QtaG5FRnF0czRUNXgwUlRkNGdOdTlmeC13S2tBTGM1bU0yUWhzMW9rTVM5cEhpU25va2Vtd0NjYUUwcGxqM3hrbEF5TEN2YXpBakdlXzRmYWdrUFp0T1daN1MzeENNQUFFVjZIVlFGcXJEd2YwODR0WXJ2ZWFTOWprLVdhRUl6Tm16SzJpZWFnc3BHTG1j?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOU242Rk5YWlhENXhZZTBZaWl5TWg4aVdxRWQwdVFSY0QzOTdxeVg4a09LYmZTS0V4V1QtaG5FRnF0czRUNXgwUlRkNGdOdTlmeC13S2tBTGM1bU0yUWhzMW9rTVM5cEhpU25va2Vtd0NjYUUwcGxqM3hrbEF5TEN2YXpBakdlXzRmYWdrUFp0T1daN1MzeENNQUFFVjZIVlFGcXJEd2YwODR0WXJ2ZWFTOWprLVdhRUl6Tm16SzJpZWFnc3BHTG1j?oc=5\" target=\"_blank\"&gt;Iceland's finance minister says EU membership is vital as Arctic rivalry and trade wars intensify&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
+          "published": "2026-06-16T11:49:43.000Z",
+          "score": 13
+        },
+        {
+          "title": "‘At first, the idea does sound crazy’: meet the scientists trying to refreeze the Arctic",
+          "link": "https://www.theguardian.com/environment/2026/jun/16/arctic-sea-ice-rethickening-climate-geoengineering",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Sea ice is melting fast, worsening the climate crisis, but a bold attempt to rethicken it is showing early signs of success&lt;/p&gt;&lt;p&gt;‘This would have been a wild dream a year ago,” says Andrea Ceccolini, standing on Arctic sea ice just a 4-mile snowmobile ride from the Inuit town of Cambridge Bay, northern Canada. To his left are sky blue ponds of meltwater created in the last few days by a sun that no longer sets in the high north summer. To his right, the sea ice is still a b",
+          "published": "2026-06-16T14:00:01.000Z",
+          "score": 7
         },
         {
           "title": "BoM forecasts strong El Niño and warns climate change could amplify effects on Australia",
@@ -56,29 +110,30 @@
           "description": "&lt;p&gt;El Niño events linked with extreme weather around the world – and can increase risk of bushfires in Australia and coral bleaching on Great Barrier Reef&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/16/australia-news-live-victoria-wfh-work-from-home-labor-fuel-excise-budget-cost-of-living-albanese-chalmers-one-nation-hanson-rba-interest-rates-decision-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&l",
           "published": "2026-06-16T07:20:26.000Z",
           "score": 7
-        },
-        {
-          "title": "Half of world’s children exposed to at least three climate hazards, Unicef says",
-          "link": "https://www.theguardian.com/environment/2026/jun/16/half-of-worlds-children-exposed-to-at-least-three-climate-hazards-unicef-says",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Almost every child, including those from high-income countries, is now exposed to at least one hazard&lt;/p&gt;&lt;p&gt;Half of the world’s children are exposed to at least three overlapping climate hazards threatening their health, education and survival, according to a Unicef report.&lt;/p&gt;&lt;p&gt;Globally, children face increasing threats from heatwaves, storms, floods and droughts as the climate crisis worsens, with more than one billion facing at least three of these at once.&l",
-          "published": "2026-06-16T05:00:46.000Z",
-          "score": 7
-        },
-        {
-          "title": "Indian officials survey farms around Tata iPhone parts plant after water pollution warning - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPUkhRYkp4MTRpYjRFV1ZEb2pEZW4waXFSREpvWG1qazJ5a1NkUkwwei1ucElVMkVFUnVNRzdQTFBTSHdXQkFhX0I2ajd5RDhHLUZ5SnBJNGlSa2ZZS3JyTjk1LUdfSUl1UU40LThvVUtPbWNTUmtkaFgwMExTckgzMU5SbVc1UlZGbzRTNGpsX3FIcGJzZ0dQTnFRVGtNNUFWaDNBTGtaU0oySVRjZE5rVlhjbjVFMjd0ejdoVQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPUkhRYkp4MTRpYjRFV1ZEb2pEZW4waXFSREpvWG1qazJ5a1NkUkwwei1ucElVMkVFUnVNRzdQTFBTSHdXQkFhX0I2ajd5RDhHLUZ5SnBJNGlSa2ZZS3JyTjk1LUdfSUl1UU40LThvVUtPbWNTUmtkaFgwMExTckgzMU5SbVc1UlZGbzRTNGpsX3FIcGJzZ0dQTnFRVGtNNUFWaDNBTGtaU0oySVRjZE5rVlhjbjVFMjd0ejdoVQ?oc=5\" target=\"_blank\"&gt;Indian officials survey farms around Tata iPhone parts plant after water pollution warning&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-06-15T12:13:24.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Germany: 25 years since Nazi forced labor compensation began",
+          "link": "https://www.dw.com/en/germany-25-years-since-nazi-forced-labor-compensation-began/a-77577731?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "A German fund set up to compensate the millions forced to work for the Nazi regime is marking 25 years since the first payments were made. But for many victims, it was much too late.",
+          "published": "2026-06-16T13:31:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Exclusive: SoftBank Vision Fund CFO is leaving company, memo shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOaFNpbE9JNGhRQUFrWUIwaDY2MU1QSjExU1hlUldhWmdVMXM1Y3dYOFBmeDBJcF93djM0ZG1NWFN1Q1o5bUdmUlI4aGtPZFZwTGdkVG4wcW1jOGRfay1zX251T1hPUU9Wd1h1bmRUTG5lXzBuMF9yZ0N2N29pc0RGdUxBa1JjMVhaN2VqUnZ2akdsQzItVEdxcmtVSm1BYkp3T1pJWFpISnBPZ2hqRVJTT0JYNA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOaFNpbE9JNGhRQUFrWUIwaDY2MU1QSjExU1hlUldhWmdVMXM1Y3dYOFBmeDBJcF93djM0ZG1NWFN1Q1o5bUdmUlI4aGtPZFZwTGdkVG4wcW1jOGRfay1zX251T1hPUU9Wd1h1bmRUTG5lXzBuMF9yZ0N2N29pc0RGdUxBa1JjMVhaN2VqUnZ2akdsQzItVEdxcmtVSm1BYkp3T1pJWFpISnBPZ2hqRVJTT0JYNA?oc=5\" target=\"_blank\"&gt;Exclusive: SoftBank Vision Fund CFO is leaving company, memo shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-16T00:39:00.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -93,12 +148,20 @@
           "score": 22
         },
         {
-          "title": "Draft agenda - Tuesday, 23 June 2026 - PE789.999v01-00 - Committee on Development , Committee on the Environment, Public Health and Food Safety , Committee on Fisheries",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-06-23-2_EN.html",
+          "title": "Minutes - Monday, 27 April 2026 - PE787.883v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-04-27-1_EN.pdf",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-16T09:33:22.000Z",
+          "published": "2026-06-16T12:53:07.000Z",
           "score": 18
+        },
+        {
+          "title": "European Parliament approves US trade deal to lower tariffs",
+          "link": "https://www.dw.com/en/european-parliament-approves-us-trade-deal-to-lower-tariffs/a-77577033?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Parliament has approved cutting tariffs on many US imports to comply with a deal signed last year. US President Trump had given the bloc a July 4 deadline to meet its side of the deal.",
+          "published": "2026-06-16T11:09:00.000Z",
+          "score": 8
         },
         {
           "title": "EU, Ukraine start formal accession talks after Orban delay",
@@ -106,14 +169,6 @@
           "source": "Deutsche Welle World",
           "description": "The EU has formally opened the first stage of accession negotiations with Ukraine. This comes two years later than planned, as former Hungarian PM Viktor Orban was blocking the process prior to his election defeat.",
           "published": "2026-06-15T19:42:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ukraine starts first phase of EU membership talks in 'Rubicon' moment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPdE5zblIyYkdmYlp4aG1EZ0I1MzB6SXFDaFhNNnVrOU00bWp3aUJCZlE5dEcxWnlrRU40WkdvSTlwQTlsMG5HSjBILUVMOTMyOHNlYzBReFZLRFB3MU9USGM1d2QxNVRuTFhkV2hiakNFa0FvWEZXT0xsazktcy1WdV9FMGVaR1htUUlvRThKLTBmUGgxQ0dpam9WcDNjRnR5SlhUWktn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPdE5zblIyYkdmYlp4aG1EZ0I1MzB6SXFDaFhNNnVrOU00bWp3aUJCZlE5dEcxWnlrRU40WkdvSTlwQTlsMG5HSjBILUVMOTMyOHNlYzBReFZLRFB3MU9USGM1d2QxNVRuTFhkV2hiakNFa0FvWEZXT0xsazktcy1WdV9FMGVaR1htUUlvRThKLTBmUGgxQ0dpam9WcDNjRnR5SlhUWktn?oc=5\" target=\"_blank\"&gt;Ukraine starts first phase of EU membership talks in 'Rubicon' moment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-15T19:29:43.000Z",
           "score": 8
         },
         {
@@ -131,52 +186,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Exclusive: Tesla presented misleading ‘Full Self-Driving’ safety data to European regulators - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ0hBU1N1QmFJWEswYVNlZE1HT0VOd1B0ME5lNFVsOHduTUxWREJpS3FLUHItOHB3aVRDaml3LURlRGY5dlNLV293bEFtMmlmaFh4eTZKSnJJWVZPZ1BQcS1zZDZ2RGpvc1ZjbjJMbnRTY21qZ2RINzhpQ0RvUFdWQWJnenR1aFo2WVNIZnFYcjJGT1dFZTNVdzc1aG9YM0F3R1cwd3BXeVQ2bXREbmM3TFNGcmlqZTlRZ0E?oc=5",
+          "title": "Exclusive: Binance set to lose EU licence bid, permission to offer services in the bloc, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGE2UlVKWF90dTFvY0w1eDFlTEJMVFBYRnBULXB2d0NfajdKVllRS2dOLURKTVQ4M0RTOUFXTVFtaXU3R3ZXX2tMMXJLa0p1MlpQWVoybHY2VkVfZkItVHVIZnRzajF1N3lUVE83MWdwMFRGbWt4SGlzWXFibmZ0ZmQwWFRyYkEyRF9Kem5MZE85WXVvQ2VJbHotRy1BanZ4amFSdUE4ZnZzRHZsODJxT0JjaGRvQ0VJTnhQQTN0OTlsT0Q3SFE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPZ0hBU1N1QmFJWEswYVNlZE1HT0VOd1B0ME5lNFVsOHduTUxWREJpS3FLUHItOHB3aVRDaml3LURlRGY5dlNLV293bEFtMmlmaFh4eTZKSnJJWVZPZ1BQcS1zZDZ2RGpvc1ZjbjJMbnRTY21qZ2RINzhpQ0RvUFdWQWJnenR1aFo2WVNIZnFYcjJGT1dFZTNVdzc1aG9YM0F3R1cwd3BXeVQ2bXREbmM3TFNGcmlqZTlRZ0E?oc=5\" target=\"_blank\"&gt;Exclusive: Tesla presented misleading ‘Full Self-Driving’ safety data to European regulators&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-15T12:22:12.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQdGE2UlVKWF90dTFvY0w1eDFlTEJMVFBYRnBULXB2d0NfajdKVllRS2dOLURKTVQ4M0RTOUFXTVFtaXU3R3ZXX2tMMXJLa0p1MlpQWVoybHY2VkVfZkItVHVIZnRzajF1N3lUVE83MWdwMFRGbWt4SGlzWXFibmZ0ZmQwWFRyYkEyRF9Kem5MZE85WXVvQ2VJbHotRy1BanZ4amFSdUE4ZnZzRHZsODJxT0JjaGRvQ0VJTnhQQTN0OTlsT0Q3SFE?oc=5\" target=\"_blank\"&gt;Exclusive: Binance set to lose EU licence bid, permission to offer services in the bloc, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"",
+          "published": "2026-06-16T13:51:25.000Z",
           "score": 8
         },
         {
-          "title": "No consensus for EU sanctions against Israel's Ben-Gvir, top diplomat says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNU3Z6TGxLdERQY0ZFanNGaVIyTENlcTVnamxkck1fUmI4eVBmN3l2TDNNQmlRWlhNby0xODZERy04NkUxaTQ1MTNybEJ1ZXBIUjJaMHk5c3dRMmZ6T1lUa0tpYzFNTlU4TkYyazBJbEJoeFlubHFMYjdSZ21iRlo0aDhOODBEdWhqaGVEYnc0VnVEaFllVjEzd19qNnQ1YzN6amJuS0xOdG1ONnZKeExn?oc=5",
+          "title": "US, Mexican officials to discuss agriculture, energy as Trump casts doubt on trade deal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYW1SZmh3TG41YWk5bFNrVDJBTkppUnlEcWFzQ2JNbThIR19PZVV5RHItYm0yMDZhNE9BZHpveGdIQVVuVlJHT3dkV0ExODN2WjNqV0lta1FYY2tUZEdjQjJrNmRsSUpyMjVQakNDaWJ3TkJNcGpwOFlQWk54WEp3bFJsYUdueFRyMFhrRU13V1l4U1dsLVU0Sm9KZzlSNXhLdllMOWlvb18tNEYwdGxUSkNPbmZfUzJoZmRyOU5UcHZLQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxNU3Z6TGxLdERQY0ZFanNGaVIyTENlcTVnamxkck1fUmI4eVBmN3l2TDNNQmlRWlhNby0xODZERy04NkUxaTQ1MTNybEJ1ZXBIUjJaMHk5c3dRMmZ6T1lUa0tpYzFNTlU4TkYyazBJbEJoeFlubHFMYjdSZ21iRlo0aDhOODBEdWhqaGVEYnc0VnVEaFllVjEzd19qNnQ1YzN6amJuS0xOdG1ONnZKeExn?oc=5\" target=\"_blank\"&gt;No consensus for EU sanctions against Israel's Ben-Gvir, top diplomat says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-15T14:17:41.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQYW1SZmh3TG41YWk5bFNrVDJBTkppUnlEcWFzQ2JNbThIR19PZVV5RHItYm0yMDZhNE9BZHpveGdIQVVuVlJHT3dkV0ExODN2WjNqV0lta1FYY2tUZEdjQjJrNmRsSUpyMjVQakNDaWJ3TkJNcGpwOFlQWk54WEp3bFJsYUdueFRyMFhrRU13V1l4U1dsLVU0Sm9KZzlSNXhLdllMOWlvb18tNEYwdGxUSkNPbmZfUzJoZmRyOU5UcHZLQQ?oc=5\" target=\"_blank\"&gt;US, Mexican officials to discuss agriculture, energy as Trump casts doubt on trade deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-06-16T10:47:22.000Z",
+          "score": 7
         },
         {
-          "title": "UN Security Council extends Afghan mission, calls for review - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPNFFUZUoyNldoZThTbkFneUJVcjZkazlGZWdsX2J5aHExLTNXbmlycThDZmlFanlPWW5VeThYTXAtWTVWaEpnRlBScXlnV2R0RXBIbXBFM0RrZkpFTjMzMmlKT1pKOUVRdzlUU3Ryd2M5YUZOYWQ1MGc4ZnhoMEt0ZHJPcnB4NzZMc1R1U3FhLWROQjNlN19LYw?oc=5",
+          "title": "Is the Iran war just an energy shock - or a turning point? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPb0FRWE5MTXBpNWRsVmZGc0ZLUS1nbG56MXVZeEU2SlBqN2Z4VTVmNmlyRzF6TW96SlpfZkZXdFlycmFHalhaMy1OckdpajR2end5OXAzVUNzRTFaQURzQmw4ZWN5LVgweXVGRnB1ZndRREdOSl9NMFNJQjZoOXc5ZXliX0tpNENwVktxVU5kWTJRaTZTckhvMHc3ak1NTDF0OHNDZ3JrWEEyUkFQWm1LNmV4dFlLQS1Semc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimAFBVV95cUxPNFFUZUoyNldoZThTbkFneUJVcjZkazlGZWdsX2J5aHExLTNXbmlycThDZmlFanlPWW5VeThYTXAtWTVWaEpnRlBScXlnV2R0RXBIbXBFM0RrZkpFTjMzMmlKT1pKOUVRdzlUU3Ryd2M5YUZOYWQ1MGc4ZnhoMEt0ZHJPcnB4NzZMc1R1U3FhLWROQjNlN19LYw?oc=5\" target=\"_blank\"&gt;UN Security Council extends Afghan mission, calls for review&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-15T15:51:22.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxPb0FRWE5MTXBpNWRsVmZGc0ZLUS1nbG56MXVZeEU2SlBqN2Z4VTVmNmlyRzF6TW96SlpfZkZXdFlycmFHalhaMy1OckdpajR2end5OXAzVUNzRTFaQURzQmw4ZWN5LVgweXVGRnB1ZndRREdOSl9NMFNJQjZoOXc5ZXliX0tpNENwVktxVU5kWTJRaTZTckhvMHc3ak1NTDF0OHNDZ3JrWEEyUkFQWm1LNmV4dFlLQS1Semc?oc=5\" target=\"_blank\"&gt;Is the Iran war just an energy shock - or a turning point?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-16T01:58:48.000Z",
+          "score": 7
         },
         {
-          "title": "Russia's Lavrov says Moscow committed to U.S. proposals on peace, rejects Europe's ultimatums - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOZVl5ellEcmNlUjNxWkxmLVdOcGdVY3Q5X0drZ3F6dTZZNHF1ZHVpc2NQbTNwNXJ6b0NDSm9wRDZEdkRoUWZFdHVISW03eVRWcEdrSFJtdFF4TUxMcGNyX3U1ZXRUMmJQaTJCcTBRVjJjS3pnUzg1R2t0M0tuYlBiUE1VYmo1ZTZHUUlZb3NsbGc0cFZlcmFQVnE0YkdMdTVXYmdvYlNzSURta0xYUVBNS256RWM1T1loX0V3Xw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOZVl5ellEcmNlUjNxWkxmLVdOcGdVY3Q5X0drZ3F6dTZZNHF1ZHVpc2NQbTNwNXJ6b0NDSm9wRDZEdkRoUWZFdHVISW03eVRWcEdrSFJtdFF4TUxMcGNyX3U1ZXRUMmJQaTJCcTBRVjJjS3pnUzg1R2t0M0tuYlBiUE1VYmo1ZTZHUUlZb3NsbGc0cFZlcmFQVnE0YkdMdTVXYmdvYlNzSURta0xYUVBNS256RWM1T1loX0V3Xw?oc=5\" target=\"_blank\"&gt;Russia's Lavrov says Moscow committed to U.S. proposals on peace, rejects Europe's ultimatums&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font",
-          "published": "2026-06-15T10:13:43.000Z",
-          "score": 8
+          "title": "France's oldest female detainee, 79, goes on trial for in-law's grisly murder",
+          "link": "https://www.bbc.com/news/articles/cy498llene1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "A dismembered body found in a chain-bound trunk in the Seine in 1995 was only recently connected to the defendant by DNA evidence.",
+          "published": "2026-06-16T14:46:35.000Z",
+          "score": 6
         },
         {
-          "title": "UN calls for drone regulation in conflict zones",
-          "link": "https://www.dw.com/en/un-calls-for-drone-regulation-in-conflict-zones/a-77565880?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "UN rights chief Volker Türk said more than 1,000 civilians in Sudan have been killed this year by drone attacks. The UN has called for regulation and accountability to prevent similar atrocities.",
-          "published": "2026-06-15T17:30:00.000Z",
+          "title": "Hungary's MPs block return of Orbán, limiting rule of PM to eight years",
+          "link": "https://www.bbc.com/news/articles/c621zplqrrno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The vote fulfils a promise by new PM Péter Magyar to stop his predecessor from becoming prime minister again.",
+          "published": "2026-06-16T12:42:15.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 396,
-    "articlesLast24h": 156,
-    "afterDedup": 147,
+    "totalArticlesScanned": 395,
+    "articlesLast24h": 157,
+    "afterDedup": 146,
     "feedsQueried": 19
   }
 }
