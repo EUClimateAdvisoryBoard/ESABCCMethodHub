@@ -42,6 +42,7 @@
  */
 
 import { useMemo, useState, type ReactNode } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -224,29 +225,58 @@ function Slider(props: {
   max: number;
   step: number;
   unit?: string;
+  std?: number;
   display?: (v: number) => string;
   onChange: (v: number) => void;
 }) {
-  const { label, hint, value, min, max, step, unit, display, onChange } = props;
+  const { label, hint, value, min, max, step, unit, std, display, onChange } = props;
+  const fmtVal = (v: number) => (display ? display(v) : fmt(v));
+  const modified = std !== undefined && Math.abs(value - std) > step / 2;
+  const stdPct = std !== undefined ? ((std - min) / (max - min)) * 100 : null;
   return (
     <label className="block">
       <div className="flex items-baseline justify-between gap-2">
         <span className="text-[12px] font-semibold text-tertiary-dark">{label}</span>
-        <span className="font-mono text-[12px] text-primary tabular-nums">
-          {display ? display(value) : fmt(value)}
+        <span className={`font-mono text-[12px] tabular-nums ${modified ? 'text-accent-orange' : 'text-primary'}`}>
+          {fmtVal(value)}
           {unit ? <span className="text-tertiary"> {unit}</span> : null}
         </span>
       </div>
-      <input
-        type="range"
-        min={min}
-        max={max}
-        step={step}
-        value={value}
-        onChange={(e) => onChange(Number(e.target.value))}
-        className="mt-1.5 w-full accent-primary"
-      />
-      {hint ? <p className="mt-0.5 text-[10.5px] leading-snug text-tertiary">{hint}</p> : null}
+      <div className="relative mt-1.5">
+        <input
+          type="range"
+          min={min}
+          max={max}
+          step={step}
+          value={value}
+          onChange={(e) => onChange(Number(e.target.value))}
+          className="w-full accent-primary"
+        />
+        {stdPct !== null && (
+          <span
+            aria-hidden
+            title={`Standard: ${fmtVal(std!)}`}
+            className="pointer-events-none absolute -bottom-0.5 h-2 w-px bg-tertiary/50"
+            style={{ left: `calc(${stdPct}% )` }}
+          />
+        )}
+      </div>
+      <div className="mt-0.5 flex items-start justify-between gap-2">
+        {hint ? <p className="text-[10.5px] leading-snug text-tertiary">{hint}</p> : <span />}
+        {std !== undefined && (
+          modified ? (
+            <button
+              type="button"
+              onClick={() => onChange(std)}
+              className="shrink-0 whitespace-nowrap text-[10px] font-semibold text-accent-orange hover:underline"
+            >
+              ↺ standard {fmtVal(std)}
+            </button>
+          ) : (
+            <span className="shrink-0 whitespace-nowrap text-[10px] text-tertiary/70">standard</span>
+          )
+        )}
+      </div>
     </label>
   );
 }
@@ -499,6 +529,17 @@ export default function EtsCdrPricePage() {
             and with integrity safeguards. This module rebuilds that mechanism so you can move the assumptions and
             watch the future ETS price, the removals deployed, and the emissions balance respond live.
           </p>
+          <div className="mt-3 flex flex-wrap gap-2">
+            <Link
+              href="/beta/ets-cdr-price/status"
+              className="inline-flex items-center gap-1.5 rounded-md border border-primary bg-surface-blue px-3 py-1.5 text-[12px] font-semibold text-primary hover:bg-primary hover:text-white"
+            >
+              Reality check: the status quo of CDR in the EU →
+            </Link>
+            <span className="inline-flex items-center text-[11px] text-tertiary">
+              How big is the gap between today&rsquo;s pipeline and the 68–86 Mt/yr the valve needs?
+            </span>
+          </div>
         </section>
 
         {/* anchors / provenance */}
@@ -636,32 +677,42 @@ export default function EtsCdrPricePage() {
 
           {/* controls column */}
           <aside className="space-y-5 lg:order-2">
+            <div className="rounded-lg border border-grey-200 bg-grey-50 p-3 text-[11px] leading-relaxed text-tertiary">
+              <p>
+                <span className="font-bold text-tertiary-dark">Standard settings.</span> Every slider opens on the{' '}
+                <strong>Paper base case</strong> — the calibrated, recommended starting point. A small tick under each
+                track marks that standard value; any slider you move turns{' '}
+                <span className="font-semibold text-accent-orange">orange</span> with a{' '}
+                <span className="font-semibold text-accent-orange">↺ standard</span> button to snap it back. Use{' '}
+                <em>Reset to paper base case</em> below to restore everything at once.
+              </p>
+            </div>
             <ControlGroup title="Cap & 2040 target">
-              <Slider label="Year the cap reaches zero" hint="Current law: ETS1 cap hits zero ≈2039 (LRF 4.3→4.4%/yr). The 2040 target debate may soften this." value={p.netZeroYear} min={2037} max={2046} step={1} display={(v) => `${v}`} onChange={set('netZeroYear')} />
-              <Slider label="ETS1 cap in 2025" unit="Mt" value={p.cap2025} min={1100} max={1500} step={10} onChange={set('cap2025')} />
-              <Slider label="Banked budget headroom" hint="Cumulative surplus/bank that intertemporal trading can draw on. More headroom = flatter, lower price path." unit="Mt" value={p.bank0} min={0} max={3000} step={50} onChange={set('bank0')} />
+              <Slider label="Year the cap reaches zero" hint="Current law: ETS1 cap hits zero ≈2039 (LRF 4.3→4.4%/yr). The 2040 target debate may soften this." value={p.netZeroYear} std={DEFAULTS.netZeroYear} min={2037} max={2046} step={1} display={(v) => `${v}`} onChange={set('netZeroYear')} />
+              <Slider label="ETS1 cap in 2025" unit="Mt" value={p.cap2025} std={DEFAULTS.cap2025} min={1100} max={1500} step={10} onChange={set('cap2025')} />
+              <Slider label="Banked budget headroom" hint="Cumulative surplus/bank that intertemporal trading can draw on. More headroom = flatter, lower price path." unit="Mt" value={p.bank0} std={DEFAULTS.bank0} min={0} max={3000} step={50} onChange={set('bank0')} />
             </ControlGroup>
 
             <ControlGroup title="Real-economy abatement">
-              <Slider label="Counterfactual emissions 2025" hint="Emissions if the carbon price were zero." unit="Mt" value={p.bau2025} min={1000} max={1400} step={10} onChange={set('bau2025')} />
-              <Slider label="Counterfactual emissions 2050" hint="How far emissions fall on their own (cheap renewables, efficiency) without a price." unit="Mt" value={p.bau2050} min={300} max={900} step={10} onChange={set('bau2050')} />
-              <Slider label="Max abatement without removals" hint="Technical ceiling on conventional cuts. The lower this is, the bigger the endgame spike." value={p.phiMax} min={0.6} max={0.98} step={0.01} display={(v) => `${Math.round(v * 100)}%`} onChange={set('phiMax')} />
-              <Slider label="Abatement cost steepness" hint="Scale of the marginal abatement cost curve (€/t). Higher = pricier abatement." unit="€/t" value={p.pscale} min={100} max={600} step={5} onChange={set('pscale')} />
-              <Slider label="Intertemporal price rise" hint="Hotelling/discount rate — the speed allowance prices climb while the bank lasts." value={p.r} min={0.02} max={0.1} step={0.002} display={(v) => `${(v * 100).toFixed(1)}%`} onChange={set('r')} />
+              <Slider label="Counterfactual emissions 2025" hint="Emissions if the carbon price were zero." unit="Mt" value={p.bau2025} std={DEFAULTS.bau2025} min={1000} max={1400} step={10} onChange={set('bau2025')} />
+              <Slider label="Counterfactual emissions 2050" hint="How far emissions fall on their own (cheap renewables, efficiency) without a price." unit="Mt" value={p.bau2050} std={DEFAULTS.bau2050} min={300} max={900} step={10} onChange={set('bau2050')} />
+              <Slider label="Max abatement without removals" hint="Technical ceiling on conventional cuts. The lower this is, the bigger the endgame spike." value={p.phiMax} std={DEFAULTS.phiMax} min={0.6} max={0.98} step={0.01} display={(v) => `${Math.round(v * 100)}%`} onChange={set('phiMax')} />
+              <Slider label="Abatement cost steepness" hint="Scale of the marginal abatement cost curve (€/t). Higher = pricier abatement." unit="€/t" value={p.pscale} std={DEFAULTS.pscale} min={100} max={600} step={5} onChange={set('pscale')} />
+              <Slider label="Intertemporal price rise" hint="Hotelling/discount rate — the speed allowance prices climb while the bank lasts." value={p.r} std={DEFAULTS.r} min={0.02} max={0.1} step={0.002} display={(v) => `${(v * 100).toFixed(1)}%`} onChange={set('r')} />
             </ControlGroup>
 
             <ControlGroup title="CDR techno-economics">
-              <Slider label="Cheapest removal cost (BECCS floor)" unit="€/t" value={p.cfloor} min={40} max={160} step={5} onChange={set('cfloor')} />
-              <Slider label="Cost rise per Mt deployed" hint="Slope of the removal supply curve — scarcity of biomass/storage/DAC." unit="€/t·Mt" value={p.cslope} min={0.3} max={2.5} step={0.1} display={(v) => v.toFixed(1)} onChange={set('cslope')} />
-              <Slider label="Physical CDR availability by 2050" unit="Mt" value={p.cdrRmax} min={50} max={400} step={10} onChange={set('cdrRmax')} />
-              <Slider label="CDR capacity ramp starts" value={p.cdrRampStart} min={2028} max={2040} step={1} display={(v) => `${v}`} onChange={set('cdrRampStart')} />
+              <Slider label="Cheapest removal cost (BECCS floor)" unit="€/t" value={p.cfloor} std={DEFAULTS.cfloor} min={40} max={160} step={5} onChange={set('cfloor')} />
+              <Slider label="Cost rise per Mt deployed" hint="Slope of the removal supply curve — scarcity of biomass/storage/DAC." unit="€/t·Mt" value={p.cslope} std={DEFAULTS.cslope} min={0.3} max={2.5} step={0.1} display={(v) => v.toFixed(1)} onChange={set('cslope')} />
+              <Slider label="Physical CDR availability by 2050" unit="Mt" value={p.cdrRmax} std={DEFAULTS.cdrRmax} min={50} max={400} step={10} onChange={set('cdrRmax')} />
+              <Slider label="CDR capacity ramp starts" value={p.cdrRampStart} std={DEFAULTS.cdrRampStart} min={2028} max={2040} step={1} display={(v) => `${v}`} onChange={set('cdrRampStart')} />
             </ControlGroup>
 
             <ControlGroup title="Policy — the sequencing proposal" accent>
-              <Slider label="Year CDR is admitted to the ETS" hint="Stage 1 of the sequencing path. Earlier entry contains prices sooner but raises integrity risk." value={p.admStart} min={2028} max={2042} step={1} display={(v) => `${v}`} onChange={set('admStart')} />
-              <Slider label="Admitted volume ceiling by 2050" hint="The 'limited volume' lever — caps how many removal certificates may be surrendered each year." unit="Mt" value={p.admMax} min={0} max={300} step={5} onChange={set('admMax')} />
-              <Slider label="Integrity haircut on certificates" hint="Governance discount: 1 certificate counts as less than 1 t of compliance, to hedge non-permanence/MRV risk." value={p.haircut} min={0} max={0.5} step={0.02} display={(v) => `${Math.round(v * 100)}%`} onChange={set('haircut')} />
-              <Slider label="Price ceiling / penalty backstop" unit="€/t" value={p.Pceil} min={300} max={2000} step={50} onChange={set('Pceil')} />
+              <Slider label="Year CDR is admitted to the ETS" hint="Stage 1 of the sequencing path. Earlier entry contains prices sooner but raises integrity risk." value={p.admStart} std={DEFAULTS.admStart} min={2028} max={2042} step={1} display={(v) => `${v}`} onChange={set('admStart')} />
+              <Slider label="Admitted volume ceiling by 2050" hint="The 'limited volume' lever — caps how many removal certificates may be surrendered each year." unit="Mt" value={p.admMax} std={DEFAULTS.admMax} min={0} max={300} step={5} onChange={set('admMax')} />
+              <Slider label="Integrity haircut on certificates" hint="Governance discount: 1 certificate counts as less than 1 t of compliance, to hedge non-permanence/MRV risk." value={p.haircut} std={DEFAULTS.haircut} min={0} max={0.5} step={0.02} display={(v) => `${Math.round(v * 100)}%`} onChange={set('haircut')} />
+              <Slider label="Price ceiling / penalty backstop" unit="€/t" value={p.Pceil} std={DEFAULTS.Pceil} min={300} max={2000} step={50} onChange={set('Pceil')} />
             </ControlGroup>
 
             <button
