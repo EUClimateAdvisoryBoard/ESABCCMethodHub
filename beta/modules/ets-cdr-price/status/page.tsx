@@ -32,6 +32,7 @@ type Project = {
   status: Status;
   online: string;
   note: string;
+  url?: string; // official project / company / database page
 };
 
 const METHOD: Record<Method, { color: string; label: string; permanence: string; cost: string; blurb: string }> = {
@@ -80,18 +81,18 @@ const STATUS: Record<Status, { label: string; bg: string; text: string; ring: st
 
 // Curated snapshot — see header comment. Capacities in ktCO2/yr.
 const PROJECTS: Project[] = [
-  { name: 'Stockholm Exergi — Värtan CHP', country: 'SE', method: 'BECCS', cap: 800, status: 'fid', online: '2028', note: 'FID Mar 2025; offtake Microsoft & Frontier; €260m EIB loan. World’s first large-scale BECCS.' },
-  { name: 'Ørsted Kalundborg Hub (Asnæs + Avedøre)', country: 'DK', method: 'BECCS', cap: 430, status: 'fid', online: '2026', note: '20-yr Danish state contract (2023); biogenic CO₂ shipped to Northern Lights for storage.' },
-  { name: 'Vantaa Energy waste-to-energy BECCS', country: 'FI', method: 'BECCS', cap: 350, status: 'announced', online: '2030', note: 'Biogenic share of waste-to-energy capture (planned).' },
-  { name: 'Nordic pulp & bio-CHP BECCS (aggregate)', country: 'SE/FI', method: 'BECCS', cap: 3000, status: 'announced', online: '2030+', note: 'Stora Enso, UPM, Göteborg Energi and others exploring — illustrative pre-FID pipeline.' },
-  { name: 'Climeworks Mammoth', country: 'IS·EEA', method: 'DACCS', cap: 36, status: 'operational', online: '2024', note: 'Largest DAC plant operating; mineral storage with Carbfix.' },
-  { name: 'Climeworks Orca', country: 'IS·EEA', method: 'DACCS', cap: 4, status: 'operational', online: '2021', note: 'First commercial DAC + storage facility.' },
-  { name: 'European DAC pilots (~35 plants)', country: 'DE/NL/+', method: 'DACCS', cap: 7, status: 'operational', online: '2024', note: 'Many sub-kilotonne research & pilot units across the EU.' },
-  { name: 'Removr DAC scale-up', country: 'NO·EEA', method: 'DACCS', cap: 2, status: 'announced', online: '2026', note: 'Norwegian DAC demonstrator.' },
-  { name: 'Large EU DACCS projects (aggregate)', country: 'EU', method: 'DACCS', cap: 1000, status: 'announced', online: '2030+', note: 'Several pre-FID projects seeking offtake/subsidy — illustrative.' },
-  { name: 'European biochar (Puro.earth / Carbonfuture network)', country: 'EU', method: 'Biochar', cap: 150, status: 'operational', online: '2024', note: 'Largest delivered novel-CDR category in Europe; many distributed producers.' },
-  { name: 'InPlanet & EU enhanced-weathering trials', country: 'DE/+', method: 'ERW', cap: 10, status: 'announced', online: '2026', note: 'Field-trial scale; MRV maturing.' },
-  { name: 'Mineralisation & ocean CDR pilots', country: 'EU', method: 'Other', cap: 5, status: 'announced', online: '2027', note: 'Frontier approaches, early-stage.' },
+  { name: 'Stockholm Exergi — Värtan CHP', country: 'SE', method: 'BECCS', cap: 800, status: 'fid', online: '2028', note: 'FID Mar 2025; offtake Microsoft & Frontier; €260m EIB loan. World’s first large-scale BECCS.', url: 'https://www.stockholmexergi.se/en/beccs/' },
+  { name: 'Ørsted Kalundborg Hub (Asnæs + Avedøre)', country: 'DK', method: 'BECCS', cap: 430, status: 'fid', online: '2026', note: '20-yr Danish state contract (2023); biogenic CO₂ shipped to Northern Lights for storage.', url: 'https://orsted.com/en/other-energy-sources/bioenergy/carbon-capture-and-storage' },
+  { name: 'Vantaa Energy waste-to-energy BECCS', country: 'FI', method: 'BECCS', cap: 350, status: 'announced', online: '2030', note: 'Biogenic share of waste-to-energy capture (planned).', url: 'https://www.vantaanenergia.fi/en/about-us/projects/vantaa-carbon-capture/' },
+  { name: 'Nordic pulp & bio-CHP BECCS (aggregate)', country: 'SE/FI', method: 'BECCS', cap: 3000, status: 'announced', online: '2030+', note: 'Stora Enso, UPM, Göteborg Energi and others exploring — illustrative pre-FID pipeline.', url: 'https://www.iea.org/data-and-statistics/data-tools/ccus-projects-explorer' },
+  { name: 'Climeworks Mammoth', country: 'IS·EEA', method: 'DACCS', cap: 36, status: 'operational', online: '2024', note: 'Largest DAC plant operating; mineral storage with Carbfix.', url: 'https://climeworks.com/plant-mammoth' },
+  { name: 'Climeworks Orca', country: 'IS·EEA', method: 'DACCS', cap: 4, status: 'operational', online: '2021', note: 'First commercial DAC + storage facility.', url: 'https://climeworks.com/plant-orca' },
+  { name: 'European DAC pilots (~35 plants)', country: 'DE/NL/+', method: 'DACCS', cap: 7, status: 'operational', online: '2024', note: 'Many sub-kilotonne research & pilot units across the EU.', url: 'https://www.iea.org/energy-system/carbon-capture-utilisation-and-storage/direct-air-capture' },
+  { name: 'Removr DAC scale-up', country: 'NO·EEA', method: 'DACCS', cap: 2, status: 'announced', online: '2026', note: 'Norwegian DAC demonstrator.', url: 'https://www.removr.com/' },
+  { name: 'Large EU DACCS projects (aggregate)', country: 'EU', method: 'DACCS', cap: 1000, status: 'announced', online: '2030+', note: 'Several pre-FID projects seeking offtake/subsidy — illustrative.', url: 'https://www.iea.org/data-and-statistics/data-tools/ccus-projects-explorer' },
+  { name: 'European biochar (Puro.earth / Carbonfuture network)', country: 'EU', method: 'Biochar', cap: 150, status: 'operational', online: '2024', note: 'Largest delivered novel-CDR category in Europe; many distributed producers.', url: 'https://puro.earth/' },
+  { name: 'InPlanet & EU enhanced-weathering trials', country: 'DE/+', method: 'ERW', cap: 10, status: 'announced', online: '2026', note: 'Field-trial scale; MRV maturing.', url: 'https://inplanet.earth/' },
+  { name: 'Mineralisation & ocean CDR pilots', country: 'EU', method: 'Other', cap: 5, status: 'announced', online: '2027', note: 'Frontier approaches, early-stage.', url: 'https://cdr.fyi/' },
 ];
 
 // Land sink (kept separate — reversible, not the ETS valve).
@@ -307,6 +308,7 @@ export default function CdrStatusPage() {
           <p className="mt-1 text-[12px] text-tertiary">
             A curated, non-exhaustive snapshot. Capacities are nameplate (when fully operational); aggregate rows stand
             in for long tails of small projects. EEA = Iceland/Norway (in the carbon market&rsquo;s neighbourhood, not the EU-27).
+            Each project name links to its official page (↗); aggregate rows link to the IEA CCUS/DAC project databases.
           </p>
           <div className="mt-3 overflow-x-auto">
             <table className="w-full border-collapse text-[12px]">
@@ -324,7 +326,18 @@ export default function CdrStatusPage() {
                 {[...PROJECTS].sort((a, b) => b.cap - a.cap).map((pr) => (
                   <tr key={pr.name} className="border-b border-grey-100 align-top">
                     <td className="py-2 pr-3">
-                      <div className="font-semibold text-tertiary-dark">{pr.name}</div>
+                      {pr.url ? (
+                        <a
+                          href={pr.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="font-semibold text-primary underline decoration-grey-300 underline-offset-2 hover:decoration-primary"
+                        >
+                          {pr.name} ↗
+                        </a>
+                      ) : (
+                        <span className="font-semibold text-tertiary-dark">{pr.name}</span>
+                      )}
                       <div className="text-[10.5px] leading-snug text-tertiary">{pr.note}</div>
                     </td>
                     <td className="px-2 font-mono text-[11px] text-tertiary">{pr.country}</td>
