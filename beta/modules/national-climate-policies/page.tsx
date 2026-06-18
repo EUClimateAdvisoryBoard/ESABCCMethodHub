@@ -24,7 +24,11 @@
  * shown as the "European Union" geography alongside the member states),
  * a solution-space gap matrix flagging areas where the EU and/or member
  * states are silent, a "deep insights" panel computed live from the
- * catalogue, a cluster-analysis section (pre-computed K-Means policy
+ * catalogue, a member-state assessment & best-practice section (focused on
+ * the member states with an independent climate council — the ESABCC's
+ * peers — scored live on five documented policy-architecture dimensions;
+ * see src/lib/member-state-assessment.ts and
+ * analysis/MEMBER-STATE-BEST-PRACTICES.md), a cluster-analysis section (pre-computed K-Means policy
  * families + Ward country typology, see `analysis/`; clicking a family
  * filters the catalogue), chart.js illustrations (adoption timeline, geography mix,
  * sector coverage, instrument types), per-country coverage grid, search,
@@ -44,6 +48,7 @@ import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
 import { computeCountryMetrics, computeInsights, PolicyInsight } from '@/lib/climate-policy-insights';
 import { euLevelPolicies, EU_GEOGRAPHY_NAME } from '@/lib/eu-climate-policies';
 import ClusterAnalysisPanel, { ClusterDataset } from './ClusterAnalysisPanel';
+import MemberStateAssessmentPanel from './MemberStateAssessmentPanel';
 
 const NationalClimatePoliciesMap = dynamic(
   () => import('@/components/NationalClimatePoliciesMap'),
@@ -384,6 +389,24 @@ export default function NationalClimatePoliciesPage() {
               <ClimateSolutionSpace
                 msPolicies={policies}
                 euPolicies={euPolicies}
+                onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
+              />
+            </section>
+
+            {/* Member-state assessment & best-practice identification —
+                focused on the countries with an ESABCC counterpart council,
+                computed live in src/lib/member-state-assessment.ts */}
+            <section className="mb-6">
+              <div className="flex items-baseline justify-between mb-2">
+                <h2 className="text-lg font-semibold text-tertiary-dark">
+                  Member-state assessment &amp; best practices
+                </h2>
+                <span className="text-[11px] text-tertiary">
+                  Focused on member states with an independent climate council — the ESABCC&rsquo;s peers
+                </span>
+              </div>
+              <MemberStateAssessmentPanel
+                policies={policies}
                 onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
               />
             </section>
