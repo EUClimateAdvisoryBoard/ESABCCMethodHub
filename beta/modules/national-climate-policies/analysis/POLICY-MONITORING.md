@@ -33,12 +33,31 @@ learn from the leaders?*
 From the 40 EU instruments tracked by the Policy Navigator
 (`src/data/sectoral-policies.ts`) we include those that **(a)** genuinely
 require *national* implementation/transposition and **(b)** are observable in
-the national catalogue. Currently: **Effort Sharing Regulation, Renewable
-Energy Directive III, Energy Efficiency Directive, EPBD, AFIR, LULUCF
-Regulation, CAP, and the Waste/Landfill directives.** Deliberately excluded:
-centrally-operated instruments with no national transposition step (EU ETS,
-CBAM), and acts too recent to appear in the 2022 snapshot (e.g. the Nature
-Restoration Law). The list lives in `EU_IMPLEMENTATION_POLICIES`.
+the national catalogue. Currently **ten**: the **Governance Regulation
+(NECPs)**, the **Effort Sharing Regulation**, **Renewable Energy Directive
+III**, **Energy Efficiency Directive**, **EPBD**, the **Industrial Emissions
+Directive**, **AFIR**, the **LULUCF Regulation**, the **CAP**, and the
+**Waste/Landfill directives**.
+
+Deliberately excluded, with reasons:
+
+- **Centrally operated, no national transposition step** — EU ETS, CBAM.
+- **Too recent for the 2022 snapshot** — Nature Restoration Law, Methane
+  Regulation, Social Climate Fund national plans.
+- **National measures sit outside this catalogue** — air-quality programmes
+  under the National Emission Ceilings Directive, and road-charging under the
+  Eurovignette Directive, are real national-implementation duties but are not
+  recorded in a *climate* law database, so including them would manufacture
+  false "not implemented" verdicts.
+
+The list lives in `EU_IMPLEMENTATION_POLICIES`.
+
+**Plan-type vs measures-type.** Some duties are discharged by submitting a
+single national **plan** (the NECP under the Governance Regulation): having the
+plan *is* implementation, so a single document is not "lagging". Others are
+discharged through an evolving **body of measures** (RED, EED, EPBD, ESR…),
+where depth and statutory anchoring matter. Each EU policy is tagged `plan` or
+`measures` and rated accordingly (see A.4).
 
 ### A.3 How a national response is detected
 
@@ -55,13 +74,15 @@ For each member state × EU policy, from the matching instruments:
 
 | Level | Rule | Meaning |
 |-------|------|---------|
-| **3 Strong** | ≥ 2 matches **and** ≥ 1 is a Law | Substantive, statute-anchored response |
-| **2 Moderate** | ≥ 2 matches, or a single Law | Substantive response |
-| **1 Emerging** | exactly 1 soft (non-legislative) match | Thin response — **lagging** |
-| **0 Not evident** | no match in the catalogue | **lagging** |
+| **3 Implemented (in law)** | `measures`: ≥ 2 matches **and** ≥ 1 Law · `plan`: the plan exists as a Law | Substantive, statute-anchored response |
+| **2 Implemented** | `measures`: ≥ 2 matches, or a single Law · `plan`: the plan exists | Substantive response |
+| **1 Partial** | `measures`: exactly 1 soft (non-legislative) match | Thin response — **lagging** |
+| **0 Not implemented** | no match in the catalogue | **lagging** |
 
 A member state is **lagging** on a policy when it is at level ≤ 1. The overall
-score (0–100) is the mean level across the included policies.
+score (0–100) is the mean level across the included policies. (Plan-type
+duties never produce level 1: the plan is either present — implemented — or
+absent — not implemented.)
 
 ### A.5 Best practices for the laggards
 
