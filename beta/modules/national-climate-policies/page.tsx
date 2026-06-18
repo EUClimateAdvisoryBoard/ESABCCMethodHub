@@ -24,11 +24,13 @@
  * shown as the "European Union" geography alongside the member states),
  * a solution-space gap matrix flagging areas where the EU and/or member
  * states are silent, a "deep insights" panel computed live from the
- * catalogue, a member-state assessment & best-practice section (focused on
- * the member states with an independent climate council — the ESABCC's
- * peers — scored live on five documented policy-architecture dimensions;
- * see src/lib/member-state-assessment.ts and
- * analysis/MEMBER-STATE-BEST-PRACTICES.md), a cluster-analysis section (pre-computed K-Means policy
+ * catalogue, a member-state implementation section linking to the
+ * EU-policy → national implementation tracker subpage (/implementation: for
+ * each EU policy requiring national implementation, who is lagging and the
+ * best-practice national instruments to copy; see src/lib/eu-implementation.ts)
+ * plus an at-a-glance policy-architecture monitor (src/lib/policy-monitoring.ts;
+ * write-up in analysis/POLICY-MONITORING.md), a
+ * cluster-analysis section (pre-computed K-Means policy
  * families + Ward country typology, see `analysis/`; clicking a family
  * filters the catalogue), chart.js illustrations (adoption timeline, geography mix,
  * sector coverage, instrument types), per-country coverage grid, search,
@@ -38,6 +40,7 @@
  */
 
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -48,7 +51,7 @@ import type { ClimatePolicy, PolicyDataset } from '@/lib/climate-laws-types';
 import { computeCountryMetrics, computeInsights, PolicyInsight } from '@/lib/climate-policy-insights';
 import { euLevelPolicies, EU_GEOGRAPHY_NAME } from '@/lib/eu-climate-policies';
 import ClusterAnalysisPanel, { ClusterDataset } from './ClusterAnalysisPanel';
-import MemberStateAssessmentPanel from './MemberStateAssessmentPanel';
+import PolicyMonitoringPanel from './PolicyMonitoringPanel';
 
 const NationalClimatePoliciesMap = dynamic(
   () => import('@/components/NationalClimatePoliciesMap'),
@@ -393,19 +396,45 @@ export default function NationalClimatePoliciesPage() {
               />
             </section>
 
-            {/* Member-state assessment & best-practice identification —
-                focused on the countries with an ESABCC counterpart council,
-                computed live in src/lib/member-state-assessment.ts */}
+            {/* Member-state implementation — an update to the Policy Gap
+                report. The full EU-policy → national implementation tracker
+                (who is lagging, and best practices for them) lives on the
+                /implementation subpage; this is the at-a-glance monitor plus
+                a link in. */}
             <section className="mb-6">
               <div className="flex items-baseline justify-between mb-2">
                 <h2 className="text-lg font-semibold text-tertiary-dark">
-                  Member-state assessment &amp; best practices
+                  Member-state implementation &amp; best practices
                 </h2>
                 <span className="text-[11px] text-tertiary">
-                  Focused on member states with an independent climate council — the ESABCC&rsquo;s peers
+                  Policy Gap report update
                 </span>
               </div>
-              <MemberStateAssessmentPanel
+
+              {/* Link into the dedicated subpage */}
+              <Link
+                href="/national-climate-policies/implementation"
+                className="block mb-4 bg-white border border-grey-200 border-l-4 border-l-primary rounded p-3 hover:shadow-md hover:border-grey-300 transition"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div>
+                    <div className="text-sm font-semibold text-tertiary-dark">
+                      EU policy → national implementation tracker →
+                    </div>
+                    <p className="text-[12px] text-tertiary leading-snug mt-0.5 max-w-2xl">
+                      For every EU policy that requires national implementation
+                      (Effort Sharing, Renewable Energy Directive, EPBD, AFIR,
+                      LULUCF, CAP…), see how far each member state has built a
+                      national response — who is lagging behind, and the
+                      best-practice national instruments the laggards could copy.
+                    </p>
+                  </div>
+                  <span className="text-primary text-lg shrink-0">↗</span>
+                </div>
+              </Link>
+
+              {/* At-a-glance architecture monitor (all 27) */}
+              <PolicyMonitoringPanel
                 policies={policies}
                 onSelectCountry={(code) => { setCountry(code); resetPaging(); }}
               />

@@ -1,36 +1,38 @@
 'use client';
 
 /**
- * Member-state policy assessment & best-practice identification panel —
- * National Level Climate Policies beta module.
+ * Member-state policy-monitoring & best-practice panel — National Level
+ * Climate Policies beta module. An update to the Policy Gap report's
+ * Member State implementation monitoring.
  *
- * Renders the transparent, rule-based assessment computed live in
- * `src/lib/member-state-assessment.ts`:
+ * Renders the transparent, rule-based read computed live in
+ * `src/lib/policy-monitoring.ts`:
  *
- *   1. Scope rationale — which member states are in focus and why (the ones
- *      with an independent national climate council, the ESABCC's peers),
- *      stated up front so the selection is auditable rather than hand-picked.
- *   2. Best-practice cards — one exemplar per assessment dimension, each
- *      linking to the specific instrument (or council) that earns it.
- *   3. Per-country scorecards — every focus country's score on every
- *      dimension, with the rule on hover and the evidence one click away.
+ *   1. Coverage rationale — all 27 are monitored; best practices come only
+ *      from member states with a monitorable policy base, stated up front so
+ *      the selection is auditable rather than hand-picked.
+ *   2. Best-practice cards — one exemplar per monitored dimension, each
+ *      linking to the specific instrument that earns it.
+ *   3. Per-country monitor — every member state's score on every dimension,
+ *      with a monitoring-confidence flag and the evidence one click away.
  *   4. Method & caveats — what the scores do and do not mean, in the open.
  *
- * Nothing is hand-scored; everything traces to a catalogued instrument or a
- * catalogued council. Written methodology: `analysis/MEMBER-STATE-BEST-PRACTICES.md`.
+ * Nothing is hand-scored; everything traces to a catalogued instrument.
+ * Written methodology: `analysis/POLICY-MONITORING.md`.
  */
 
 import { useMemo, useState } from 'react';
 import type { ClimatePolicy } from '@/lib/climate-laws-types';
 import {
-  assessMemberStates,
-  COUNTERPART_TIER_LABELS,
-  type AssessmentResult,
+  monitorMemberStates,
+  MONITORING_CONFIDENCE_LABELS,
+  type MonitoringResult,
   type BestPractice,
-  type CountryAssessment,
+  type CountryMonitoring,
   type DimensionScore,
   type Evidence,
-} from '@/lib/member-state-assessment';
+  type MonitoringConfidence,
+} from '@/lib/policy-monitoring';
 
 /** Score → colour band (shared by bars and best-practice accents). */
 function scoreColor(score: number): string {
@@ -40,53 +42,63 @@ function scoreColor(score: number): string {
   return '#EF6C00';
 }
 
-export default function MemberStateAssessmentPanel({
+const CONFIDENCE_COLORS: Record<MonitoringConfidence, string> = {
+  high: '#1B5E20',
+  medium: '#F9A825',
+  low: '#9E9E9E',
+};
+
+export default function PolicyMonitoringPanel({
   policies,
   onSelectCountry,
 }: {
   policies: ClimatePolicy[];
   onSelectCountry: (code: string) => void;
 }) {
-  const result: AssessmentResult = useMemo(
-    () => assessMemberStates(policies),
+  const result: MonitoringResult = useMemo(
+    () => monitorMemberStates(policies),
     [policies],
   );
   const [showScope, setShowScope] = useState(false);
   const [showMethod, setShowMethod] = useState(false);
+  const [onlyMonitorable, setOnlyMonitorable] = useState(false);
 
-  if (result.focus.length === 0) {
+  if (result.monitoring.length === 0) {
     return (
       <p className="text-sm text-tertiary p-4 bg-grey-50 rounded">
-        No member state in the catalogue currently has an independent national
-        climate council on record, so the focus set is empty.
+        The catalogue is empty, so there is nothing to monitor yet.
       </p>
     );
   }
+
+  const rows = onlyMonitorable
+    ? result.monitoring.filter((c) => c.monitorable)
+    : result.monitoring;
 
   return (
     <div className="space-y-5">
       {/* Intro + scope rule */}
       <div className="text-[12px] text-tertiary max-w-3xl leading-snug space-y-2">
         <p>
-          A focused look at <strong>Member State implementation</strong>:
-          rather than scrutinise all 27, this assessment covers the{' '}
-          <strong>{result.scope.counterpartCount} member states that have an
-          independent national climate advisory council</strong> — the
-          ESABCC&rsquo;s peer bodies ({result.scope.statutoryCount} of them
-          anchored in statute). Each country is scored on{' '}
-          {result.dimensions.length} documented dimensions of its national
-          climate-policy architecture, and the strongest example of each is
-          flagged as a <strong>best practice</strong>, with a direct link to
-          the instrument that earns it.
+          An update to the <strong>Policy Gap report</strong>&rsquo;s
+          monitoring of <strong>Member State implementation</strong>: a
+          transparent, repeatable read of where each member state&rsquo;s
+          national climate-policy architecture stands. All{' '}
+          <strong>{result.scope.monitoredCount} member states</strong> are
+          scored on {result.dimensions.length} documented dimensions; the
+          strongest example of each — drawn only from the{' '}
+          {result.scope.monitorableCount} states with a monitorable policy base
+          — is flagged as a <strong>best practice</strong>, with a direct link
+          to the instrument that earns it.
         </p>
         <button
           onClick={() => setShowScope((v) => !v)}
           className="text-primary hover:underline text-[11px] font-medium"
         >
-          {showScope ? '▾ Hide' : '▸ Show'} why these countries — and how the
-          scope is drawn
+          {showScope ? '▾ Hide' : '▸ Show'} how the monitor is scoped &amp;
+          where to read it with care
         </button>
-        {showScope && <ScopePanel result={result} onSelectCountry={onSelectCountry} />}
+        {showScope && <ScopePanel result={result} />}
       </div>
 
       {/* Best practices */}
@@ -105,18 +117,29 @@ export default function MemberStateAssessmentPanel({
         </div>
       </div>
 
-      {/* Country scorecards */}
+      {/* Country monitor */}
       <div>
-        <div className="flex items-baseline justify-between mb-2">
+        <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
           <h3 className="text-sm font-semibold text-tertiary-dark">
-            Focus-set scorecards
+            Member-state monitor
           </h3>
-          <span className="text-[11px] text-tertiary">
-            Sorted by composite score · click a country to filter the catalogue
-          </span>
+          <div className="flex items-center gap-3">
+            <label className="text-[11px] text-tertiary flex items-center gap-1 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={onlyMonitorable}
+                onChange={(e) => setOnlyMonitorable(e.target.checked)}
+                className="accent-primary"
+              />
+              Monitorable only
+            </label>
+            <span className="text-[11px] text-tertiary">
+              Sorted by composite · click a country to filter
+            </span>
+          </div>
         </div>
         <div className="space-y-1.5">
-          {/* Dimension key/header */}
+          {/* Dimension header */}
           <div className="hidden md:grid grid-cols-[180px_repeat(5,1fr)_56px] gap-1 px-2 text-[10px] uppercase tracking-wide text-tertiary">
             <span>Member state</span>
             {result.dimensions.map((d) => (
@@ -126,8 +149,8 @@ export default function MemberStateAssessmentPanel({
             ))}
             <span className="text-right">Comp.</span>
           </div>
-          {result.focus.map((c) => (
-            <ScorecardRow key={c.code} c={c} onSelectCountry={onSelectCountry} />
+          {rows.map((c) => (
+            <MonitorRow key={c.code} c={c} onSelectCountry={onSelectCountry} />
           ))}
         </div>
       </div>
@@ -158,8 +181,8 @@ export default function MemberStateAssessmentPanel({
               <p className="mt-2">
                 The composite is the equal-weighted mean of these
                 {' '}{result.dimensions.length} dimensions. Best practice per
-                dimension = the focus country with the highest score; ties break
-                by catalogue depth, then alphabetically.
+                dimension = the monitorable member state with the highest score;
+                ties break by catalogue depth, then alphabetically.
               </p>
             </div>
             <div>
@@ -174,7 +197,7 @@ export default function MemberStateAssessmentPanel({
               <p className="mt-2">
                 Full written methodology:{' '}
                 <code className="bg-grey-100 px-1 rounded">
-                  analysis/MEMBER-STATE-BEST-PRACTICES.md
+                  analysis/POLICY-MONITORING.md
                 </code>
                 .
               </p>
@@ -203,6 +226,21 @@ function EvidenceLink({ evidence }: { evidence?: Evidence }) {
       {evidence.label}
       {evidence.year ? ` (${evidence.year})` : ''} ↗
     </a>
+  );
+}
+
+function ConfidenceBadge({ confidence }: { confidence: MonitoringConfidence }) {
+  return (
+    <span
+      className="inline-flex items-center gap-1 text-[10px] text-tertiary"
+      title={`Monitoring confidence: ${MONITORING_CONFIDENCE_LABELS[confidence]}`}
+    >
+      <span
+        className="inline-block w-2 h-2 rounded-full"
+        style={{ backgroundColor: CONFIDENCE_COLORS[confidence] }}
+      />
+      {MONITORING_CONFIDENCE_LABELS[confidence]}
+    </span>
   );
 }
 
@@ -246,11 +284,11 @@ function BestPracticeCard({
   );
 }
 
-function ScorecardRow({
+function MonitorRow({
   c,
   onSelectCountry,
 }: {
-  c: CountryAssessment;
+  c: CountryMonitoring;
   onSelectCountry: (code: string) => void;
 }) {
   const [open, setOpen] = useState(false);
@@ -265,9 +303,7 @@ function ScorecardRow({
           <div className="text-sm font-semibold text-tertiary-dark truncate">
             {open ? '▾' : '▸'} {c.name}
           </div>
-          <div className="text-[10px] text-tertiary truncate">
-            {COUNTERPART_TIER_LABELS[c.counterpart.tier]}
-          </div>
+          <ConfidenceBadge confidence={c.confidence} />
         </button>
         {/* Inline bars (md+) */}
         {c.dimensions.map((d) => (
@@ -276,10 +312,7 @@ function ScorecardRow({
           </div>
         ))}
         <div className="hidden md:block text-right">
-          <span
-            className="text-sm font-bold"
-            style={{ color: scoreColor(c.composite) }}
-          >
+          <span className="text-sm font-bold" style={{ color: scoreColor(c.composite) }}>
             {Math.round(c.composite)}
           </span>
         </div>
@@ -293,24 +326,6 @@ function ScorecardRow({
 
       {open && (
         <div className="border-t border-grey-100 px-3 py-2 space-y-1.5">
-          {c.counterpart.bodyName && (
-            <div className="text-[11px] text-tertiary">
-              <span className="font-medium text-tertiary-dark">Council:</span>{' '}
-              {c.counterpart.url ? (
-                <a
-                  href={c.counterpart.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  {c.counterpart.bodyName} ↗
-                </a>
-              ) : (
-                c.counterpart.bodyName
-              )}
-              {c.counterpart.established && ` · est. ${c.counterpart.established}`}
-            </div>
-          )}
           {c.dimensions.map((d) => (
             <DimensionDetail key={d.key} d={d} />
           ))}
@@ -361,74 +376,41 @@ function ScoreBar({ score }: { score: number }) {
   );
 }
 
-function ScopePanel({
-  result,
-  onSelectCountry,
-}: {
-  result: AssessmentResult;
-  onSelectCountry: (code: string) => void;
-}) {
+function ScopePanel({ result }: { result: MonitoringResult }) {
+  const { confidence } = result.scope;
   return (
     <div className="bg-grey-50 border border-grey-200 rounded p-3 space-y-2 text-[11px] text-tertiary">
       <p>
-        <span className="font-semibold text-tertiary-dark">Selection rule.</span>{' '}
-        {result.scope.rule} This is derived programmatically from the EU Climate
-        Councils dataset (the data behind the <em>EU Climate Councils</em>{' '}
-        module), so the focus set is reproducible and updates automatically as
-        that catalogue is curated — no country is hand-picked.
+        <span className="font-semibold text-tertiary-dark">Scope rule.</span>{' '}
+        {result.scope.rule} No country is hand-picked: monitoring is
+        comprehensive, and the best-practice threshold is the same
+        &ldquo;substantial catalogue&rdquo; cut-off the module&rsquo;s deep
+        insights already use.
       </p>
       <div>
-        <div className="font-semibold text-tertiary-dark mb-1">
-          Counterpart classification (all 27 member states)
-        </div>
-        <div className="flex flex-wrap gap-1">
-          {result.counterparts.map((c) => {
-            const inFocus = c.isCounterpart;
-            return (
-              <button
-                key={c.code}
-                onClick={() => inFocus && onSelectCountry(c.code)}
-                title={`${c.name}: ${COUNTERPART_TIER_LABELS[c.tier]}${
-                  c.bodyName ? ` — ${c.bodyName}` : ''
-                }`}
-                className={`text-[10px] px-1.5 py-0.5 rounded-full border transition ${
-                  inFocus
-                    ? 'border-primary/40 bg-primary/10 text-primary hover:bg-primary/20 cursor-pointer'
-                    : 'border-grey-200 text-tertiary/70 cursor-default'
-                }`}
-              >
-                {c.code}
-                <span className="ml-1 opacity-70">
-                  {c.tier === 'statutory'
-                    ? '★'
-                    : c.tier === 'independent'
-                    ? '●'
-                    : c.tier === 'proxy'
-                    ? '◐'
-                    : c.tier === 'pending'
-                    ? '○'
-                    : '–'}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-        <div className="text-[10px] text-tertiary/70 mt-1.5">
-          ★ statutory council · ● independent council · ◐ inter-ministerial /
-          proxy · ○ legislated, not operational · – none. Filled chips are in
-          the focus set.
+        <span className="font-semibold text-tertiary-dark">
+          Monitoring confidence.
+        </span>{' '}
+        How well-documented each portfolio is — about documentation depth, not
+        policy quality:
+        <div className="flex flex-wrap gap-3 mt-1">
+          {(['high', 'medium', 'low'] as MonitoringConfidence[]).map((k) => (
+            <span key={k} className="inline-flex items-center gap-1">
+              <span
+                className="inline-block w-2.5 h-2.5 rounded-full"
+                style={{ backgroundColor: CONFIDENCE_COLORS[k] }}
+              />
+              {MONITORING_CONFIDENCE_LABELS[k]}: {confidence[k]}
+            </span>
+          ))}
         </div>
       </div>
-      {result.scope.excluded.length > 0 && (
-        <p>
-          <span className="font-semibold text-tertiary-dark">Out of focus.</span>{' '}
-          {result.scope.excluded.length} member states are excluded for now
-          because they have no independent council on record (proxy bodies,
-          not-yet-operational councils, or none). Their policies are still in
-          the catalogue above — they are simply not part of this peer
-          comparison. Exclusion is about institutions, not a verdict on policy.
-        </p>
-      )}
+      <p>
+        Sparse portfolios are <em>monitored but not eligible</em> for a
+        best-practice highlight — a low count usually means
+        &ldquo;less documented&rdquo;, not &ldquo;less governed&rdquo;, so it
+        would be unfair to rank on it.
+      </p>
     </div>
   );
 }
