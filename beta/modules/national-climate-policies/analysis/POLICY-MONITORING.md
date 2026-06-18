@@ -3,6 +3,93 @@
 *Methodology note — National Level Climate Policies beta module (Module 20).
 An update to the Policy Gap report's monitoring of Member State implementation.*
 
+This note covers two related deliverables:
+
+- **Part A — EU policy → national implementation tracker** (the primary
+  deliverable; subpage `/national-climate-policies/implementation`). For each
+  EU policy that requires national implementation, how far has each member
+  state built a national response, who is lagging, and which national
+  instruments are best practices the laggards could copy.
+- **Part B — Member-state policy-architecture monitor** (the at-a-glance
+  section on the module page). A complementary read of each state's overall
+  policy architecture.
+
+---
+
+## Part A — EU policy → national implementation tracker
+
+### A.1 The question
+
+The Commission judges member states on **implementation** of EU climate law.
+Much of that law only bites once a member state acts: directives must be
+transposed, the **Effort Sharing Regulation** sets binding national non-ETS
+targets, the Governance Regulation requires national plans, and so on. The
+tracker asks, for each such instrument: *how far has every member state built a
+corresponding national response, who is lagging, and what can the laggards
+learn from the leaders?*
+
+### A.2 Which EU policies
+
+From the 40 EU instruments tracked by the Policy Navigator
+(`src/data/sectoral-policies.ts`) we include those that **(a)** genuinely
+require *national* implementation/transposition and **(b)** are observable in
+the national catalogue. Currently: **Effort Sharing Regulation, Renewable
+Energy Directive III, Energy Efficiency Directive, EPBD, AFIR, LULUCF
+Regulation, CAP, and the Waste/Landfill directives.** Deliberately excluded:
+centrally-operated instruments with no national transposition step (EU ETS,
+CBAM), and acts too recent to appear in the 2022 snapshot (e.g. the Nature
+Restoration Law). The list lives in `EU_IMPLEMENTATION_POLICIES`.
+
+### A.3 How a national response is detected
+
+Each EU policy carries an explicit, published **matcher** over the national
+catalogue — a combination of CCLW sector tags and keyword/text signals (e.g.
+RED matches Energy-sector instruments mentioning *renewable / wind / solar /
+biofuel / hydrogen …*). A national instrument "implements" an EU policy when it
+matches. This is a **proxy for a national response in that policy area** — not
+verified legal transposition.
+
+### A.4 Rating (0–3) and who counts as "lagging"
+
+For each member state × EU policy, from the matching instruments:
+
+| Level | Rule | Meaning |
+|-------|------|---------|
+| **3 Strong** | ≥ 2 matches **and** ≥ 1 is a Law | Substantive, statute-anchored response |
+| **2 Moderate** | ≥ 2 matches, or a single Law | Substantive response |
+| **1 Emerging** | exactly 1 soft (non-legislative) match | Thin response — **lagging** |
+| **0 Not evident** | no match in the catalogue | **lagging** |
+
+A member state is **lagging** on a policy when it is at level ≤ 1. The overall
+score (0–100) is the mean level across the included policies.
+
+### A.5 Best practices for the laggards
+
+For each EU policy, the **best practices** are the actual national instruments
+of the **Strong (level 3)** implementers — a recent law preferred — each linked
+to its source so a lagging member state (and a reviewer) can open it and adapt
+it. This is the point of the exercise: not to rank, but to give the laggards a
+short, concrete shortlist of models.
+
+### A.6 What this is NOT
+
+- **Not** verified transposition and **not** a compliance check against ESR /
+  NECP / sectoral targets. "Strong" = "the catalogue records a substantive
+  national response in this area".
+- **"Not evident" ≠ "nothing exists"** — it can mean "not in this 2022
+  snapshot". Much Fit-for-55 transposition post-dates the snapshot; refresh the
+  catalogue before drawing firm laggard conclusions.
+- Catalogue depth carries CCLW coverage bias; a thinly-documented member state
+  can look like a laggard on coverage alone.
+
+Read **alongside** the official transposition and ESR-compliance trackers, not
+instead of them. The whole computation is `assessImplementation(policies)` in
+`src/lib/eu-implementation.ts`.
+
+---
+
+## Part B — Member-state policy-architecture monitor
+
 ## 1. Why this exists
 
 The Board's policy-gap work (*Towards EU climate neutrality: assessing
