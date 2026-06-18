@@ -201,11 +201,24 @@ export const EU_IMPLEMENTATION_POLICIES: EuImplementationPolicy[] = [
 export type ImplementationLevel = 0 | 1 | 2 | 3;
 
 export const LEVEL_LABELS: Record<ImplementationLevel, string> = {
-  0: 'Not evident',
-  1: 'Emerging',
-  2: 'Moderate',
-  3: 'Strong',
+  0: 'Not implemented',
+  1: 'Partial',
+  2: 'Implemented',
+  3: 'Implemented (in law)',
 };
+
+/** Short status word for the per-country "who did what" breakdown. */
+export const LEVEL_STATUS: Record<ImplementationLevel, string> = {
+  0: 'Not implemented',
+  1: 'Partial',
+  2: 'Implemented',
+  3: 'Implemented',
+};
+
+/** True when a member state has a substantive (level ≥ 2) national response. */
+export function isImplemented(level: ImplementationLevel): boolean {
+  return level >= 2;
+}
 
 export const LEVEL_COLORS: Record<ImplementationLevel, string> = {
   0: '#E0E0E0', // grey — nothing in the catalogue
@@ -305,7 +318,7 @@ export function assessImplementation(policies: ClimatePolicy[]): ImplementationR
         count: matches.length,
         hasLaw: matches.some((m) => m.category === 'Law'),
         latestYear: years.length ? Math.max(...years) : null,
-        examples: refs.slice(0, 4),
+        examples: refs.slice(0, 8),
       };
     });
 

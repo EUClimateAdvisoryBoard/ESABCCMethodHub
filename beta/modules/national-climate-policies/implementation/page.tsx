@@ -27,6 +27,9 @@ import {
   EU_IMPLEMENTATION_POLICIES,
   LEVEL_COLORS,
   LEVEL_LABELS,
+  LEVEL_STATUS,
+  isImplemented,
+  type CountryImplementation,
   type ImplementationLevel,
   type ImplementationResult,
   type PolicyImplementation,
@@ -489,7 +492,79 @@ function PolicyDetail({
             </p>
           </div>
         </div>
+
+        {/* Who did what — full member-state breakdown */}
+        <div className="mt-5 border-t border-grey-100 pt-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+            <h3 className="text-sm font-semibold text-tertiary-dark">
+              Who did what — all 27 member states
+            </h3>
+            <span className="text-[11px] text-tertiary">
+              {pi.byCountry.filter((c) => isImplemented(c.level)).length} implemented ·{' '}
+              {pi.byCountry.filter((c) => c.level === 1).length} partial ·{' '}
+              {pi.byCountry.filter((c) => c.level === 0).length} not implemented
+            </span>
+          </div>
+          <div className="space-y-1.5">
+            {[...pi.byCountry]
+              .sort((a, b) => b.level - a.level || a.name.localeCompare(b.name))
+              .map((c) => (
+                <CountryRow key={c.code} c={c} />
+              ))}
+          </div>
+        </div>
       </div>
     </section>
+  );
+}
+
+function CountryRow({ c }: { c: CountryImplementation }) {
+  const more = c.count - c.examples.length;
+  return (
+    <div className="grid grid-cols-[150px_110px_1fr] gap-2 items-start border border-grey-100 rounded px-2 py-1.5 bg-white">
+      <span className="text-[12px] font-medium text-tertiary-dark truncate" title={c.name}>
+        {c.name}
+      </span>
+      <span className="flex items-center gap-1.5 text-[11px]" title={LEVEL_LABELS[c.level]}>
+        <span
+          className="inline-block w-2.5 h-2.5 rounded-sm shrink-0"
+          style={{ backgroundColor: LEVEL_COLORS[c.level] }}
+        />
+        <span
+          className="font-medium"
+          style={{ color: c.level === 0 ? '#9E9E9E' : c.level === 1 ? '#EF6C00' : '#1B5E20' }}
+        >
+          {LEVEL_STATUS[c.level]}
+        </span>
+      </span>
+      <div className="min-w-0 text-[11px]">
+        {c.examples.length === 0 ? (
+          <span className="text-tertiary/70 italic">
+            No matching national instrument in the catalogue.
+          </span>
+        ) : (
+          <ul className="space-y-0.5">
+            {c.examples.map((e) => (
+              <li key={e.id} className="leading-snug">
+                <a
+                  href={e.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                  title={e.title}
+                >
+                  {e.category === 'Law' ? '§ ' : ''}
+                  {e.title}
+                  {e.year ? ` (${e.year})` : ''} ↗
+                </a>
+              </li>
+            ))}
+            {more > 0 && (
+              <li className="text-tertiary/70">+{more} more in the catalogue</li>
+            )}
+          </ul>
+        )}
+      </div>
+    </div>
   );
 }
