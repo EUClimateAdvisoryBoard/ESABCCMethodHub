@@ -1,0 +1,236 @@
+{
+  "generated_at": "2026-06-15",
+  "note": "Curated, illustrative snapshot of recent developments per climate-policy file. Compiled from public EU sources (Commission press corner, Council, Parliament, EUR-Lex). The File Tracker merges fresh items from the live RSS feeds on top of this seed. Dates are the publication / decision date.",
+  "items": [
+    {
+      "id": "seed-climate-2040-prop",
+      "fileId": "eu-climate-law",
+      "date": "2025-07-02",
+      "kind": "proposal",
+      "title": "Commission proposes a 2040 climate target of −90%",
+      "summary": "The Commission tabled an amendment to the European Climate Law setting a net 90% greenhouse-gas reduction by 2040 versus 1990, with flexibilities including a limited role for international carbon credits from 2036. The proposal opens the ordinary legislative procedure with Parliament and Council.",
+      "source": "European Commission",
+      "url": "https://climate.ec.europa.eu/eu-action/climate-target-2040_en"
+    },
+    {
+      "id": "seed-climate-2040-council",
+      "fileId": "eu-climate-law",
+      "date": "2025-09-18",
+      "kind": "development",
+      "title": "Environment ministers split over 2040 flexibilities",
+      "summary": "At the Environment Council, member states debated whether the −90% headline should be softened by international credits and an enabling-conditions clause. Several capitals asked for a delay to align the 2040 figure with the EU's next NDC under the Paris Agreement.",
+      "source": "Council of the EU",
+      "url": "https://www.consilium.europa.eu/en/meetings/env/"
+    },
+    {
+      "id": "seed-lulucf-sink-report",
+      "fileId": "lulucf-regulation",
+      "date": "2025-03-26",
+      "kind": "publication",
+      "title": "EEA flags continued decline of the EU land sink",
+      "summary": "The European Environment Agency reported that net removals from the LULUCF sector have fallen well below the trajectory needed for the −310 MtCO₂e 2030 target, driven by ageing forests, drought, bark-beetle damage and rising harvest rates. The gap puts pressure on the Effort Sharing and overall −55% architecture.",
+      "source": "European Environment Agency",
+      "url": "https://www.eea.europa.eu/en/topics/in-depth/land-use-land-use-change-and-forestry"
+    },
+    {
+      "id": "seed-lulucf-review",
+      "fileId": "lulucf-regulation",
+      "date": "2025-11-12",
+      "kind": "consultation",
+      "title": "Commission opens review of the LULUCF Regulation",
+      "summary": "A public consultation launched on the 2025 review of the LULUCF Regulation, asking whether the −310 Mt target and member-state budgets remain achievable given the sink decline, and how land removals should interact with the post-2030 framework and certified carbon removals.",
+      "source": "European Commission",
+      "url": "https://climate.ec.europa.eu/eu-action/land-use-sector/land-use-and-forestry-regulation-2021-2030_en"
+    },
+    {
+      "id": "seed-lulucf-member-gaps",
+      "fileId": "lulucf-regulation",
+      "date": "2026-01-22",
+      "kind": "development",
+      "title": "Member states report shortfalls against 2021–2025 land budgets",
+      "summary": "Compliance data submitted under the governance cycle show that a majority of member states are off track against their first-period LULUCF budgets, raising the prospect of using ESR-to-LULUCF flexibilities and reopening debate on whether penalties are realistic.",
+      "source": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841"
+    },
+    {
+      "id": "seed-ets-price",
+      "fileId": "eu-ets-directive",
+      "date": "2025-05-08",
+      "kind": "development",
+      "title": "ETS allowance price and MSR review in focus",
+      "summary": "With the EUA price oscillating around €70–80/t, attention turned to the scheduled review of the Market Stability Reserve and the pace of free-allowance phase-out as CBAM ramps up. Industry groups warned about competitiveness; NGOs pushed for tighter supply.",
+      "source": "European Commission",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets_en"
+    },
+    {
+      "id": "seed-ets-aviation",
+      "fileId": "eu-ets-directive",
+      "date": "2025-10-01",
+      "kind": "milestone",
+      "title": "Aviation free allowances fully phased out",
+      "summary": "From 2026 the aviation sector under the ETS loses its remaining free allocation, completing the move to full auctioning agreed under Fit for 55 and increasing carbon costs for intra-EEA flights.",
+      "source": "EUR-Lex",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087"
+    },
+    {
+      "id": "seed-ets2-delay",
+      "fileId": "ets2-buildings-transport",
+      "date": "2026-02-04",
+      "kind": "development",
+      "title": "Debate over delaying ETS2 start to 2028",
+      "summary": "Amid concerns about fuel-price impacts on households, several member states and MEPs floated postponing the ETS2 carbon price for buildings and road transport by one year to 2028, and strengthening the price-stability mechanism. The Commission stressed the link to the Social Climate Fund timeline.",
+      "source": "Council of the EU",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets/ets2-buildings-road-transport-and-additional-sectors_en"
+    },
+    {
+      "id": "seed-ets2-prep",
+      "fileId": "ets2-buildings-transport",
+      "date": "2025-07-15",
+      "kind": "milestone",
+      "title": "ETS2 monitoring and reporting begins for fuel suppliers",
+      "summary": "Regulated entities (fuel suppliers) started the monitoring, reporting and verification phase ahead of the 2027 price, and must hold permits. Guidance on the price-stability mechanism that caps prices above €45/t was issued.",
+      "source": "European Commission",
+      "url": "https://climate.ec.europa.eu/eu-action/eu-emissions-trading-system-eu-ets/ets2-buildings-road-transport-and-additional-sectors_en"
+    },
+    {
+      "id": "seed-cars-review",
+      "fileId": "co2-cars-regulation",
+      "date": "2025-12-10",
+      "kind": "development",
+      "title": "2026 review of the 2035 car CO₂ standard brought forward",
+      "summary": "Following pressure from carmakers and several member states, the Commission signalled it would advance the review of the 100%-by-2035 CO₂ target, examining a possible role for plug-in hybrids, range-extenders and CO₂-neutral e-fuels rather than reopening the 2035 date itself.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0851"
+    },
+    {
+      "id": "seed-cars-flexibility",
+      "fileId": "co2-cars-regulation",
+      "date": "2025-04-03",
+      "kind": "vote",
+      "title": "Three-year averaging of 2025 car CO₂ targets adopted",
+      "summary": "Parliament and Council fast-tracked a targeted amendment letting manufacturers average their CO₂ compliance over 2025–2027 instead of meeting the target each year, easing near-term penalties while keeping the 2030 and 2035 trajectory intact.",
+      "source": "European Parliament",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0851"
+    },
+    {
+      "id": "seed-cbam-definitive",
+      "fileId": "cbam-regulation",
+      "date": "2026-01-01",
+      "kind": "milestone",
+      "title": "CBAM definitive regime starts",
+      "summary": "The Carbon Border Adjustment Mechanism entered its definitive phase: importers of iron & steel, aluminium, cement, fertilisers, electricity and hydrogen must now surrender CBAM certificates for embedded emissions, in parallel with the phase-out of corresponding free ETS allowances.",
+      "source": "European Commission",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+    },
+    {
+      "id": "seed-cbam-simplification",
+      "fileId": "cbam-regulation",
+      "date": "2025-02-26",
+      "kind": "proposal",
+      "title": "Omnibus simplification exempts small CBAM importers",
+      "summary": "As part of the first Omnibus simplification package, the Commission proposed a de-minimis threshold (≈50 tonnes/year) exempting around 90% of importers while still covering the bulk of embedded emissions, easing the administrative load on SMEs.",
+      "source": "European Commission",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en"
+    },
+    {
+      "id": "seed-epbd-transposition",
+      "fileId": "epbd-recast",
+      "date": "2025-05-29",
+      "kind": "milestone",
+      "title": "EPBD transposition deadline approaches",
+      "summary": "Member states worked towards transposing the recast Energy Performance of Buildings Directive, including national building-renovation plans, minimum energy-performance standards for the worst-performing non-residential stock, and the end of stand-alone fossil-boiler subsidies from 2025.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275"
+    },
+    {
+      "id": "seed-red3-transposition",
+      "fileId": "renewable-energy-directive",
+      "date": "2025-05-21",
+      "kind": "milestone",
+      "title": "RED III transposition deadline passes; infringements loom",
+      "summary": "The deadline to transpose the revised Renewable Energy Directive (42.5% by 2030) passed with many member states yet to fully notify measures, prompting the Commission to prepare infringement letters, particularly on renewables permitting and acceleration areas.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L2413"
+    },
+    {
+      "id": "seed-nrl-restoration-plans",
+      "fileId": "nature-restoration-law",
+      "date": "2026-03-05",
+      "kind": "milestone",
+      "title": "National Restoration Plans due under the Nature Restoration Regulation",
+      "summary": "Member states began preparing their first National Restoration Plans, including peatland rewetting targets that overlap with the LULUCF sink. Debate continued on funding sources and on safeguards for food production raised during the 2024 negotiations.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991"
+    },
+    {
+      "id": "seed-eudr-delay",
+      "fileId": "deforestation-regulation",
+      "date": "2025-12-30",
+      "kind": "development",
+      "title": "EUDR application postponed again for large operators",
+      "summary": "After 2024's one-year delay, co-legislators agreed a further postponement of the Deforestation Regulation's obligations amid readiness concerns over the traceability IT system and partner-country pushback, with simplified due-diligence for low-risk sourcing.",
+      "source": "European Parliament",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115"
+    },
+    {
+      "id": "seed-cap-reform",
+      "fileId": "cap-strategic-plans",
+      "date": "2025-07-16",
+      "kind": "proposal",
+      "title": "Post-2027 CAP and MFF reshape agri-climate spending",
+      "summary": "The Commission's proposals for the next Multiannual Financial Framework folded the CAP into broader national and regional partnership plans, raising concern among climate and farm groups about ring-fencing of environmental and climate spending and the future of eco-schemes.",
+      "source": "European Commission",
+      "url": "https://agriculture.ec.europa.eu/common-agricultural-policy/cap-overview/cap-strategic-plans_en"
+    },
+    {
+      "id": "seed-esr-gap",
+      "fileId": "effort-sharing-regulation",
+      "date": "2025-10-30",
+      "kind": "publication",
+      "title": "Effort Sharing progress: transport and buildings lagging",
+      "summary": "Progress reporting showed several member states off track against their Effort Sharing trajectories, with transport emissions proving especially sticky. Attention turned to how much the LULUCF shortfall and ETS2 introduction would affect ESR compliance and flexibilities.",
+      "source": "European Environment Agency",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842"
+    },
+    {
+      "id": "seed-scf-plans",
+      "fileId": "social-climate-fund",
+      "date": "2025-06-30",
+      "kind": "milestone",
+      "title": "Member states begin submitting Social Climate Plans",
+      "summary": "Ahead of the mid-2025 deadline, member states started submitting Social Climate Plans setting out how Social Climate Fund money (and ETS2 revenues) will shield vulnerable households and transport users from the new carbon price from 2026.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955"
+    },
+    {
+      "id": "seed-nzia-cid",
+      "fileId": "net-zero-industry-act",
+      "date": "2025-02-26",
+      "kind": "publication",
+      "title": "Clean Industrial Deal builds on the Net-Zero Industry Act",
+      "summary": "The Commission's Clean Industrial Deal set out measures on lead markets, affordable energy and circularity to operationalise the Net-Zero Industry Act's 40% domestic-manufacturing aim, including non-price criteria favouring EU-made clean tech in auctions and public procurement.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735"
+    },
+    {
+      "id": "seed-methane-imports",
+      "fileId": "methane-regulation",
+      "date": "2025-08-05",
+      "kind": "milestone",
+      "title": "Methane Regulation import requirements take shape",
+      "summary": "Implementing rules advanced on the methane-intensity methodology that will apply to oil and gas imported into the EU, alongside domestic measurement, reporting, verification and leak-detection-and-repair obligations for operators.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787"
+    },
+    {
+      "id": "seed-necp-assessment",
+      "fileId": "governance-regulation",
+      "date": "2025-05-28",
+      "kind": "publication",
+      "title": "Commission assesses final updated NECPs",
+      "summary": "The Commission published its assessment of member states' final updated National Energy and Climate Plans, finding the collective ambition broadly consistent with −55% by 2030 on paper but flagging implementation and financing gaps, especially in transport, buildings and the land sink.",
+      "source": "European Commission",
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999"
+    }
+  ]
+}
