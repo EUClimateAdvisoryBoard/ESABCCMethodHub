@@ -1,0 +1,634 @@
+'use client';
+
+/**
+ * Policy Analysis Cookbook — beta module page.
+ *
+ * A faithful, digestible visualisation of the internal position paper
+ * "Suggestion for a policy analysis cookbook" (CCE5). It is a 1-to-1
+ * rendering of that document: the three-phase workflow, the two scoping
+ * figures (sector/system options; the first/second/third-order policy
+ * onion), Box 1 "A bit of theory", Figure 1 (the three analysis steps
+ * matched to the first Policy Gap report's gap categories), Figure 2 (the
+ * policy cycle, adapted from Henstra 2015 and the Better Regulation
+ * toolbox), and the Step-2 coherence codebook with its key questions.
+ *
+ * Nothing here is invented: every label, example and question is taken
+ * from the paper. Where the paper shows a figure, it is re-drawn in HTML so
+ * the same content is searchable and on-brand rather than a flat image.
+ */
+
+import type { ReactNode } from 'react';
+import SiteHeader from '@/components/SiteHeader';
+import SiteFooter from '@/components/SiteFooter';
+
+/* --------------------------------------------------------------- content
+ * All strings below are quoted/condensed straight from the paper.
+ * ----------------------------------------------------------------------- */
+
+type Step = { id: string; title: string; body: string };
+type Phase = { num: string; title: string; tint: string; bar: string; steps: Step[] };
+
+const PHASES: Phase[] = [
+  {
+    num: '1',
+    title: 'Preparatory steps',
+    tint: 'bg-surface-blue',
+    bar: 'bg-primary',
+    steps: [
+      {
+        id: '1.1',
+        title: 'Agreeing on sectors or systems to be covered',
+        body: 'For a Policy Gap report covering both mitigation and adaptation, a few options are identified (see the three options below).',
+      },
+      {
+        id: '1.2',
+        title: 'Identifying key areas of synergies and trade-offs between mitigation and adaptation',
+        body: 'A scoping review of synergies and trade-offs — at the big-picture level (for progress and EU climate goals) and per sector. The output can be a comparative table from a literature review, e.g. comparing NECPs and NAPs/SAPs (national/sectoral adaptation plans), which helps refine the structure in step 1.1.',
+      },
+      {
+        id: '1.3',
+        title: 'Identifying relevant policies and classifying them',
+        body: 'Done jointly in the policy navigator tool of the MethodHub: identify core (first-order) climate policies and their instruments, then key sectoral policy portfolios, then supporting policies. Classify each policy and check the pre-assigned tags (sector, type of policy, relation to adaptation/mitigation). Define cut-offs for when a policy is less relevant to include.',
+      },
+      {
+        id: '1.4',
+        title: 'Linking policies to the indicator assessment framework and defining assumptions about attribution',
+        body: 'Assign assessment-framework indicators to the identified policies by creating a logic flow — the Better Regulation toolbox calls this the "logic of intervention": this policy responds to this problem and leads to this change we can observe and measure (stating causal assumptions). Identify "negative spaces" where a crucial indicator has no supporting policy — bearing in mind EU competencies and added value.',
+      },
+      {
+        id: '1.5',
+        title: 'Iterative steps: insights from literature and from indicator findings',
+        body: 'As more scientific papers are read and the indicator analysis progresses, collect insights on whether policies deliver at the pace and scale needed for the climate objectives — input for the policy coherence analysis.',
+      },
+    ],
+  },
+  {
+    num: '2',
+    title: 'Policy (coherence) analysis',
+    tint: 'bg-surface-teal',
+    bar: 'bg-secondary',
+    steps: [
+      {
+        id: '2.1',
+        title: 'Creating a framework for analysing the dimensions of policy coherence',
+        body: 'A comprehensive framework covers problem analysis, coherence and evaluation (steps 1–3 in Figure 1). The first Policy Gap report categories — policy gap, ambition gap, policy inconsistency and implementation gap — largely match this structure but need some refining, a more systematic identification of policies, and better integration with the indicator data.',
+      },
+      {
+        id: '2.2',
+        title: 'Piloting the framework on a subset of policies',
+        body: 'Finetuning the codebook is iterative. Pilot it jointly on a few policies — sitting together, going through a document and discussing where each piece of text belongs — to rearrange, add, group or delete codes. For example, one first-order and one second-order policy.',
+      },
+      {
+        id: '2.3',
+        title: 'Analysis of the rest of the policy dataset (and quality controls)',
+        body: 'Divide the reading and coding of the remaining documents. Half-way through, run a quality check where someone else re-codes some of the same documents to check consistency; repeat at the end and calculate an inter-coder agreement score (percentage agreement on using a given code per document).',
+      },
+    ],
+  },
+  {
+    num: '3',
+    title: 'Integration of analyses',
+    tint: 'bg-surface-yellow',
+    bar: 'bg-accent-orange',
+    steps: [
+      {
+        id: '3.1',
+        title: 'Integrating findings from the policy analysis and the indicator analysis',
+        body: 'Once all documents are coded, the text insights can be integrated with quantitative data — e.g. overall internal and external coherence scores per policy or sector, as part of each sector chapter’s overview. Other ways to integrate are discussed under Policy Evaluation (Step 3).',
+      },
+    ],
+  },
+];
+
+/* ---- Figure: sectors / systems options (step 1.1) -------------------- */
+
+const OPTIONS = [
+  {
+    n: '1',
+    head: 'Current mitigation structure with some considerations of how to make sectors more resilient.',
+    groups: [
+      {
+        title: 'Climate resilience of emission sectors',
+        items: ['Energy +', 'Industry +', 'Buildings +', 'Transport +', 'Agriculture +', 'LULUCF +'],
+      },
+    ],
+  },
+  {
+    n: '2',
+    head: 'Parallel structures reflecting emission sectors and main adaptation systems, perhaps with a framing chapter on synergies and trade-offs between mitigation and adaptation.',
+    groups: [
+      {
+        title: 'Part A · Emission sectors',
+        items: ['Energy', 'Industry', 'Buildings', 'Transport', 'Agriculture', 'LULUCF'],
+      },
+      {
+        title: 'Part B · Recurring adaptation systems',
+        items: [
+          'Energy',
+          'Built environment / cities, territories and infrastructure',
+          'Health',
+          'Food',
+          'Ecosystems and biodiversity',
+          'Marine and coastal ecosystems',
+          'Poverty and livelihoods',
+          'Water',
+        ],
+      },
+    ],
+  },
+  {
+    n: '3',
+    head: 'Keep option 1 but change headers to a system-level equivalent and add a few selected adaptation sections, focusing on synergies and trade-offs.',
+    groups: [
+      { title: 'Energy system', items: ['Energy', 'Resilience of infrastructure', 'Energy affordability'] },
+      { title: 'Economy', items: ['Industry', 'Livelihoods and poverty', 'Water resources'] },
+      {
+        title: 'Built environment',
+        items: ['Buildings', 'Critical infrastructure (including health)', 'Urban and spatial planning', 'Cultural heritage sites'],
+      },
+      { title: 'Transport system', items: ['Transport', 'Mobility'] },
+      { title: 'Agri-food system', items: ['Agriculture', 'Fisheries', 'Food security'] },
+      { title: 'Natural systems', items: ['Land use and land use change', 'Forestry', 'Marine ecosystems'] },
+    ],
+  },
+];
+
+/* ---- Figure: first / second / third-order policies (step 1.3) -------- */
+
+const ORDERS = [
+  {
+    order: 'First order',
+    sub: 'Climate-focus policies and instruments',
+    ring: 'Framework climate policies · Climate policy instruments',
+    examples: 'European Climate Law, EU Integrated Resilience Framework; EU ETS (1 & 2), Effort Sharing, LULUCF, EU Covenant of Mayors',
+    color: 'border-secondary bg-surface-teal',
+  },
+  {
+    order: 'Second order',
+    sub: 'Pre-existing sectors where climate objectives have been mainstreamed',
+    ring: 'Sectoral policy portfolios',
+    examples: 'CO₂ standards for vehicles, Renewable Energy Directive, F-gas regulation, CAP, Union Preparedness Mechanism, Water regulation framework',
+    color: 'border-primary-lighter bg-surface-blue',
+  },
+  {
+    order: 'Third order',
+    sub: 'Policies that enable progress and/or systemic changes',
+    ring: 'Supporting policies',
+    examples: 'Better Regulation, MFF, Horizon 2020 and LIFE programme, governance regulation, Cohesion Fund, ERDF, InvestEU',
+    color: 'border-accent-orange bg-surface-yellow',
+  },
+];
+
+/* ---- Figure 1: three steps matched to gap categories ----------------- */
+
+const FIGURE1 = [
+  {
+    step: '1',
+    method: 'Problem analysis',
+    methodNote: 'Ensuring a widely accepted and comprehensive understanding of the policy problem.',
+    gaps: [
+      'Policy gap: no policies in place to address the required change.',
+      'Ambition gap: the policies in place are not ambitious enough to deliver the required change.',
+    ],
+  },
+  {
+    step: '2a',
+    method: 'External coherence',
+    methodNote: 'Across relevant sectoral policies.',
+    gaps: ['Policy inconsistencies: policies provide counterproductive incentives.'],
+  },
+  {
+    step: '2b',
+    method: 'Internal coherence',
+    methodNote: 'Between policy goals and delivery mechanisms (e.g. instruments).',
+    gaps: ['Ambition gap / intervention logic is not sound and up-to-date.'],
+  },
+  {
+    step: '3',
+    method: 'Policy evaluation',
+    methodNote: 'Measuring policy change and policy outcomes (ex post).',
+    gaps: ['Implementation gap: policies are not implemented adequately / are not delivering at the required pace and scale.'],
+  },
+];
+
+/* ---- Figure 2: the policy cycle -------------------------------------- */
+
+const CYCLE = [
+  { label: 'Policy inputs', note: 'Knowledge, resources, actors that feed into policy making', zone: 'integration' },
+  { label: 'Policy goals', note: 'Strategic targets defined by policy actors (general level)', zone: 'integration' },
+  { label: 'Policy processes', note: 'e.g. sectoral emission reduction goals mandated', zone: 'integration' },
+  { label: 'Policy outputs — delivery mechanisms', note: 'e.g. creation of ETS; climate-proofing checks', zone: 'coherence' },
+  { label: 'Policy implementation', note: 'e.g. execution and management of ETS', zone: 'coherence' },
+  { label: 'Outcomes and impacts', note: 'e.g. % change of EV purchases; % GHG emission reduction by X', zone: 'evaluation' },
+];
+
+const CYCLE_CONCEPTS = [
+  ['Policy inputs', 'the knowledge, resources, actors that feed into policy making'],
+  ['Policy processes', 'the procedures and institutional arrangements that shape policy making'],
+  ['Policy goals', 'strategic targets defined by policy actors (at a general level)'],
+  ['Policy outputs', 'the decisions on objectives and instruments meant to achieve policy goals'],
+  ['Policy implementation', 'the arrangements by authorities and other actors for putting policy instruments into action'],
+  ['Outcomes', 'the behavioural changes and responses of actors in society, such as industry or households'],
+  ['Impacts', 'the environmental and other effects resulting from the outcomes'],
+];
+
+/* ---- Step 2 codebook: internal coherence ----------------------------- */
+
+const CODEBOOK = [
+  {
+    group: 'Coherence between mitigation and adaptation goals',
+    codes: ['Not linked', 'Trade-offs', 'Minimum coherence (DNSH)', 'Substantive coherence', 'Synergies'],
+  },
+  {
+    group: 'Coherence with delivery mechanisms',
+    codes: [
+      'Coherence in discourse (across articles)',
+      'Between targets and instruments',
+      'Between targets and resources',
+      'Between the target and the level / channel of intervention',
+      'Clearly assigned roles and responsibilities for target',
+    ],
+  },
+];
+
+const STEP1_QUESTIONS = [
+  'Is the problem sufficiently addressed by existing policies? Is the definition of "success" of a policy sound (e.g. its intervention logic)? Are there policy voids that the EU could address?',
+  'Has the problem changed since the policies were put in place (e.g. geopolitical risks jeopardising global climate goals and Europe’s pace and scale to deliver)?',
+];
+
+const STEP2_QUESTIONS = [
+  'To what extent are the various elements of the intervention coherent with one another? Does it comply with "do no significant harm"?',
+  'To what extent have the various elements generated synergies and/or compensated possible trade-offs among them?',
+  'To what extent is the intervention coherent with wider EU policies and priorities (e.g. environmental integrity, fairness, competitiveness, security)?',
+];
+
+const STEP2_ADAPTATION = [
+  'Are climate risks assessed? Are they based on a range of scenarios?',
+  'Are adaptation options and their limits identified, including transformational options? Are these prioritised?',
+  'Are there clearly assigned roles and responsibilities?',
+  'Maladaptation: does the policy risk increasing vulnerability or risk onto other populations (spillovers)? Can it limit future choices (lock-ins, erosion of resources/capacities)? Does it increase GHG emissions?',
+];
+
+/* --------------------------------------------------------------- helpers */
+
+function SectionLabel({ children }: { children: ReactNode }) {
+  return (
+    <div className="text-[11px] uppercase tracking-[0.12em] text-tertiary mb-2">{children}</div>
+  );
+}
+
+function Pill({ children }: { children: ReactNode }) {
+  return (
+    <span className="inline-block rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-tertiary-dark">
+      {children}
+    </span>
+  );
+}
+
+/* ------------------------------------------------------------------ page */
+
+export default function PolicyAnalysisCookbookPage() {
+  return (
+    <>
+      <SiteHeader />
+      <main className="max-w-[1120px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        {/* ---- intro ---- */}
+        <section className="mb-8">
+          <SectionLabel>Beta module · Method walkthrough</SectionLabel>
+          <h1 className="text-2xl sm:text-3xl font-bold text-tertiary-dark">Policy Analysis Cookbook</h1>
+          <p className="mt-2 text-sm sm:text-base text-tertiary max-w-3xl">
+            A digestible, one-to-one visualisation of the position paper{' '}
+            <em>&ldquo;Suggestion for a policy analysis cookbook&rdquo;</em> — a step-by-step recipe for
+            analysing EU climate policies for a Policy Gap report that covers both mitigation and
+            adaptation. Three phases: prepare the policy set, analyse coherence, then integrate the
+            findings with the indicator data.
+          </p>
+        </section>
+
+        {/* ---- overview roadmap ---- */}
+        <section className="mb-10">
+          <SectionLabel>Overview of steps</SectionLabel>
+          <div className="grid gap-3 lg:grid-cols-3">
+            {PHASES.map((p) => (
+              <div key={p.num} className={`rounded-lg border border-grey-200 overflow-hidden ${p.tint}`}>
+                <div className="flex items-center gap-3 px-4 py-3 bg-white/60 border-b border-grey-200">
+                  <span className={`flex h-7 w-7 items-center justify-center rounded-full text-white text-sm font-bold ${p.bar}`}>
+                    {p.num}
+                  </span>
+                  <h2 className="text-sm font-bold text-tertiary-dark">{p.title}</h2>
+                </div>
+                <ol className="divide-y divide-grey-200">
+                  {p.steps.map((s) => (
+                    <li key={s.id} className="px-4 py-3">
+                      <div className="flex gap-2">
+                        <span className="text-[12px] font-mono font-semibold text-tertiary shrink-0">{s.id}</span>
+                        <div>
+                          <div className="text-[13px] font-semibold text-tertiary-dark leading-snug">{s.title}</div>
+                          <p className="mt-1 text-[12px] text-tertiary leading-relaxed">{s.body}</p>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---- step 1.1: sector / system options ---- */}
+        <section className="mb-10">
+          <SectionLabel>Step 1.1 · Sectors or systems to be covered</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-3">Three options for structuring the report</h2>
+          <div className="grid gap-3 md:grid-cols-3">
+            {OPTIONS.map((o) => (
+              <div key={o.n} className="rounded-lg border border-grey-200 bg-white p-4">
+                <div className="flex items-baseline gap-2 mb-2">
+                  <span className="flex h-6 w-6 items-center justify-center rounded-full bg-tertiary text-white text-[12px] font-bold">
+                    {o.n}
+                  </span>
+                  <span className="text-[12px] font-semibold uppercase tracking-wide text-tertiary">Option {o.n}</span>
+                </div>
+                <p className="text-[12px] text-tertiary mb-3 leading-relaxed">{o.head}</p>
+                <div className="space-y-3">
+                  {o.groups.map((g) => (
+                    <div key={g.title}>
+                      <div className="text-[12px] font-bold text-primary-dark mb-1.5">{g.title}</div>
+                      <ul className="space-y-1">
+                        {g.items.map((it) => (
+                          <li key={it} className="text-[12px] text-tertiary-dark bg-grey-50 border border-grey-200 rounded px-2 py-1">
+                            {it}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---- step 1.3: policy orders ---- */}
+        <section className="mb-10">
+          <SectionLabel>Step 1.3 · Identifying and classifying policies</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">The policy &ldquo;onion&rdquo;: first, second and third order</h2>
+          <p className="text-[13px] text-tertiary mb-4 max-w-3xl">
+            In the policy navigator, identify core climate policies and instruments, then the sectoral
+            portfolios that mainstream them, then the supporting policies that enable progress.
+          </p>
+          <div className="space-y-3">
+            {ORDERS.map((o) => (
+              <div key={o.order} className={`rounded-lg border-l-4 ${o.color} border border-grey-200 p-4`}>
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+                  <div className="text-sm font-bold text-tertiary-dark whitespace-nowrap">{o.order}</div>
+                  <div className="text-[13px] text-tertiary">{o.sub}</div>
+                </div>
+                <div className="mt-1 text-[11px] uppercase tracking-wide text-tertiary-light">{o.ring}</div>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {o.examples.split(', ').map((e) => (
+                    <Pill key={e}>{e}</Pill>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ---- Box 1: a bit of theory ---- */}
+        <section className="mb-10">
+          <div className="rounded-lg border border-primary-lighter bg-surface-blue p-5">
+            <div className="text-[12px] font-bold uppercase tracking-wide text-primary-dark mb-2">Box 1 · A bit of theory</div>
+            <div className="space-y-2 text-[13px] text-tertiary-dark leading-relaxed max-w-3xl">
+              <p>
+                Climate objectives have to be retrofitted into existing sectoral policies (transport,
+                industry, agriculture) while new policies must account for climate objectives from
+                their design (&ldquo;climate-proofing&rdquo;). Aligning goals from different policy
+                domains and making them operational is called <strong>policy integration</strong> (or
+                mainstreaming).
+              </p>
+              <p>
+                Because sectors&rsquo; goals follow their own interests and internal logic,
+                mainstreaming climate policies onto other sectors may produce inconsistencies that
+                jeopardise the intended outcomes. Policies are therefore checked for{' '}
+                <strong>coherence</strong> — in its narrowest sense, avoiding conflicting outcomes
+                (the &lsquo;do no significant harm&rsquo; principle); in a broader sense, the
+                &lsquo;synergic and systematic support towards the achievement of common objectives
+                within and across individual policies&rsquo; (Henstra, 2015).
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ---- Figure 1: three steps matched to gap categories ---- */}
+        <section className="mb-10">
+          <SectionLabel>Figure 1 · The analysis framework</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-3">
+            Three analysis steps, matched to the first Policy Gap report&rsquo;s gap categories
+          </h2>
+          <div className="grid grid-cols-[auto_1fr_1fr] gap-px bg-grey-200 rounded-lg overflow-hidden border border-grey-200 text-[12px]">
+            <div className="bg-grey-50 px-3 py-2 font-semibold text-tertiary">Step</div>
+            <div className="bg-grey-50 px-3 py-2 font-semibold text-primary-dark">From the literature &amp; Better Regulation</div>
+            <div className="bg-grey-50 px-3 py-2 font-semibold text-accent-orange">Match to first Policy Gap report categories</div>
+            {FIGURE1.map((r) => (
+              <FigureOneRow key={r.step} row={r} />
+            ))}
+          </div>
+          <p className="mt-2 text-[11px] text-tertiary italic">
+            Step 1 = problem analysis · Step 2 = policy coherence (external + internal) · Step 3 =
+            policy evaluation. Categories in the right column are the gaps used in the first Policy Gap
+            report.
+          </p>
+        </section>
+
+        {/* ---- Figure 2: the policy cycle ---- */}
+        <section className="mb-10">
+          <SectionLabel>Figure 2 · The policy cycle</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">
+            Where integration, coherence and evaluation sit on the policy cycle
+          </h2>
+          <p className="text-[12px] text-tertiary italic mb-4">
+            Adapted from Henstra, 2015 and the Better Regulation toolbox, 2025.
+          </p>
+
+          <div className="flex flex-wrap items-stretch gap-2 mb-4">
+            {CYCLE.map((c, i) => (
+              <div key={c.label} className="flex items-stretch gap-2">
+                <div
+                  className={`w-44 rounded-lg border p-3 ${
+                    c.zone === 'coherence'
+                      ? 'border-accent-orange bg-surface-orange'
+                      : c.zone === 'evaluation'
+                        ? 'border-accent-yellow bg-surface-yellow'
+                        : 'border-secondary bg-surface-teal'
+                  }`}
+                >
+                  <div className="text-[12px] font-bold text-tertiary-dark leading-snug">{c.label}</div>
+                  <div className="mt-1 text-[11px] text-tertiary leading-snug">{c.note}</div>
+                </div>
+                {i < CYCLE.length - 1 && <div className="self-center text-grey-400 text-lg">&rarr;</div>}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid gap-2 sm:grid-cols-3 mb-4 text-[12px]">
+            <div className="rounded border border-secondary bg-surface-teal px-3 py-2">
+              <strong className="text-tertiary-dark">Policy integration / mainstreaming</strong> — climate
+              objectives pursued across sectoral policies.
+            </div>
+            <div className="rounded border border-accent-orange bg-surface-orange px-3 py-2">
+              <strong className="text-tertiary-dark">Policy coherence</strong> — internal (within a policy
+              domain) and external (across policies); a coherence or &lsquo;fitness&rsquo; check.
+            </div>
+            <div className="rounded border border-accent-yellow bg-surface-yellow px-3 py-2">
+              <strong className="text-tertiary-dark">Policy evaluation</strong> — judging the outcomes and
+              impacts actually achieved.
+            </div>
+          </div>
+
+          <div className="rounded border border-grey-200 bg-grey-50 p-3 text-[11px] text-tertiary mb-3">
+            Across it all: <strong>enablers</strong> (data, innovation, infrastructure, skilled
+            workforce), <strong>unforeseen events / confounders</strong> (e.g. a drop in emissions due
+            to the COVID crisis), and the wider <strong>contextual factors</strong>.
+          </div>
+
+          <details className="rounded border border-grey-200 bg-white">
+            <summary className="cursor-pointer px-3 py-2 text-[12px] font-semibold text-tertiary-dark">
+              Basic concepts in the figure
+            </summary>
+            <dl className="px-4 pb-3 pt-1 space-y-1.5 text-[12px]">
+              {CYCLE_CONCEPTS.map(([term, def]) => (
+                <div key={term} className="flex gap-2">
+                  <dt className="font-semibold text-tertiary-dark whitespace-nowrap">{term}</dt>
+                  <dd className="text-tertiary">— {def}</dd>
+                </div>
+              ))}
+            </dl>
+          </details>
+        </section>
+
+        {/* ---- Step 1: problem analysis questions ---- */}
+        <section className="mb-8">
+          <SectionLabel>Step 1 · Problem analysis</SectionLabel>
+          <p className="text-[13px] text-tertiary mb-3 max-w-3xl">
+            Matches the identification of needs in the needs–gaps–fixes approach; helps structure the
+            policy and ambition gaps. Answered using scientific literature and specialised data / grey
+            literature. Examples of key questions:
+          </p>
+          <QuestionList items={STEP1_QUESTIONS} accent="primary" />
+        </section>
+
+        {/* ---- Step 2: coherence codebook ---- */}
+        <section className="mb-8">
+          <SectionLabel>Step 2 · Policy coherence analysis</SectionLabel>
+          <p className="text-[13px] text-tertiary mb-4 max-w-3xl">
+            Export the classified policy documents from the policy navigator to the content analysis
+            tool, then build a <strong>codebook</strong> of a-priori categories (codes/tags) linked to
+            the text that answers the key questions. <em>Scope:</em> internal coherence on first-order
+            policies; external coherence on second-order (sectoral) policies.
+          </p>
+
+          <div className="grid gap-3 md:grid-cols-2 mb-5">
+            {CODEBOOK.map((c) => (
+              <div key={c.group} className="rounded-lg border border-grey-200 bg-white p-4">
+                <div className="text-[11px] uppercase tracking-wide text-secondary-dark font-bold mb-1">Internal coherence</div>
+                <div className="text-[13px] font-bold text-tertiary-dark mb-2">{c.group}</div>
+                <ul className="space-y-1">
+                  {c.codes.map((code) => (
+                    <li key={code} className="flex items-center gap-2 text-[12px] text-tertiary-dark">
+                      <span className="h-1.5 w-1.5 rounded-full bg-secondary shrink-0" />
+                      {code}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div>
+              <div className="text-[12px] font-bold text-tertiary-dark mb-2">Key coherence questions</div>
+              <QuestionList items={STEP2_QUESTIONS} accent="secondary" />
+            </div>
+            <div>
+              <div className="text-[12px] font-bold text-tertiary-dark mb-2">
+                Trade-offs &amp; synergies between mitigation and adaptation
+              </div>
+              <QuestionList items={STEP2_ADAPTATION} accent="orange" />
+            </div>
+          </div>
+        </section>
+
+        {/* ---- Step 3: evaluation ---- */}
+        <section className="mb-10">
+          <SectionLabel>Step 3 · Policy evaluation</SectionLabel>
+          <div className="rounded-lg border border-grey-200 bg-grey-50 p-5 max-w-3xl">
+            <p className="text-[13px] text-tertiary-dark leading-relaxed">
+              Evaluation is a <strong>retrospective</strong> analysis, possible once implementation data
+              exists (at least 3 years of M&amp;E data for EU interventions). It judges how well the
+              intervention has performed and <em>why</em>; how much change can be attributed to the EU
+              intervention; and whether that change meets the original expectations.
+            </p>
+            <p className="mt-2 text-[13px] text-tertiary-dark leading-relaxed">
+              This is the entry point to connect the indicator data with the policy analysis: using the
+              intervention logic to explain trends from the progress assessment, add an indication of
+              strong–weak attribution from policies to progress, and add caveats to expectations of
+              progress toward the 2040 / 2050 targets.
+            </p>
+          </div>
+        </section>
+
+        {/* ---- source note ---- */}
+        <section className="mb-4">
+          <p className="text-[11px] text-tertiary border-t border-grey-200 pt-4">
+            Faithful rendering of the internal position paper{' '}
+            <em>&ldquo;Suggestion for a policy analysis cookbook&rdquo;</em>. All labels, examples and
+            questions are taken from the document; the two scoping figures, Figure 1 and Figure 2 are
+            re-drawn from the paper. Figure references: Henstra (2015); Better Regulation toolbox
+            (2025).
+          </p>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
+  );
+}
+
+/* --------------------------------------------------------- sub-components */
+
+function FigureOneRow({ row }: { row: (typeof FIGURE1)[number] }) {
+  return (
+    <>
+      <div className="bg-white px-3 py-3 flex items-start">
+        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-accent-orange text-white text-[12px] font-bold">
+          {row.step}
+        </span>
+      </div>
+      <div className="bg-white px-3 py-3">
+        <div className="font-semibold text-primary-dark">{row.method}</div>
+        <div className="text-tertiary mt-0.5">{row.methodNote}</div>
+      </div>
+      <div className="bg-white px-3 py-3">
+        <ul className="space-y-1">
+          {row.gaps.map((g) => (
+            <li key={g} className="text-tertiary-dark">{g}</li>
+          ))}
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function QuestionList({ items, accent }: { items: string[]; accent: 'primary' | 'secondary' | 'orange' }) {
+  const dot =
+    accent === 'primary' ? 'bg-primary' : accent === 'secondary' ? 'bg-secondary' : 'bg-accent-orange';
+  return (
+    <ul className="space-y-2">
+      {items.map((q) => (
+        <li key={q} className="flex gap-2 text-[12px] text-tertiary-dark leading-relaxed">
+          <span className={`mt-1.5 h-1.5 w-1.5 rounded-full ${dot} shrink-0`} />
+          <span>{q}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
