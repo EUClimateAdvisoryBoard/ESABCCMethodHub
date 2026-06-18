@@ -390,11 +390,31 @@ const EU_ELECTRICITY_TWH = 2600;
 const REACTOR_TWH = 8;        // one large reactor ≈ 8 TWh/yr
 const HOUSEHOLD_KWH = 3500;   // average EU household ≈ 3,500 kWh/yr
 
+/* -------------------------------------------- "cost of building MethodHub"
+ * Measured from this very repository (git ls-files, 18 Jun 2026). "Authored
+ * source" excludes generated/vendored/data artefacts (lock-files, GeoJSON,
+ * extracted reference JSON, concatenated SQL dumps, built bundles). The token
+ * count converts the authored bytes at ≈ 3.5 characters per token (code is
+ * denser than prose). See the panel + method note for how the build multiplier
+ * turns a static artefact into an estimate of the tokens actually *processed*
+ * during agentic, iterative development.
+ */
+const HUB = {
+  allFiles: 1102,
+  allMB: 35.7,
+  authoredFiles: 865,
+  authoredLines: 210000,
+  authoredBytes: 9_631_910,
+  charsPerToken: 3.5,
+};
+const HUB_ARTIFACT_TOKENS = HUB.authoredBytes / HUB.charsPerToken; // ≈ 2.75 M tokens of committed code
+
 export default function AiEnvironmentalImpactPage() {
   const [p, setP] = useState<Params>({ ...DEFAULTS, ...PRESETS[0].over });
   const [activePreset, setActivePreset] = useState('eu-standard');
   const [taskId, setTaskId] = useState('simple');
   const [perDayMillions, setPerDayMillions] = useState(1000); // millions of THIS task per day
+  const [buildMult, setBuildMult] = useState(50); // tokens processed in development ÷ tokens of final committed code
 
   const set = (k: keyof Params) => (v: number) => {
     setP((prev) => ({ ...prev, [k]: v }));
@@ -448,6 +468,19 @@ export default function AiEnvironmentalImpactPage() {
   const euPct = (annualTWh / EU_ELECTRICITY_TWH) * 100;
 
   const tokensTotal = task.input + task.reasoning + task.output;
+
+  // "cost of building MethodHub": apply the page's own energy/grid model to an
+  // estimate of the total tokens processed while developing this codebase.
+  const buildEnergyWh = (mult: number) =>
+    ((HUB_ARTIFACT_TOKENS * mult) / 1000) * p.energyPer1k * p.pue;
+  const buildGrams = (mult: number) => (buildEnergyWh(mult) / 1000) * p.gridIntensity;
+  const buildTokens = HUB_ARTIFACT_TOKENS * buildMult;
+  const buildG = buildGrams(buildMult);
+  const buildLowG = buildGrams(20);
+  const buildHighG = buildGrams(100);
+  const buildKm = buildG / ANCHORS.find((a) => a.label === 'Driving 1 km, petrol car')!.grams;
+  const buildBurgers = buildG / ANCHORS.find((a) => a.label === 'A beef burger')!.grams;
+  const buildFlightHrs = buildG / ANCHORS.find((a) => a.label === 'One hour of flying (economy)')!.grams;
 
   return (
     <>
@@ -797,6 +830,74 @@ export default function AiEnvironmentalImpactPage() {
           </div>
         </section>
 
+        {/* cost of building MethodHub */}
+        <section className="mt-10 rounded-lg border border-primary/40 bg-surface-blue p-4 sm:p-5">
+          <div className="mb-1 text-[11px] uppercase tracking-[0.12em] text-tertiary">Putting it to work · a self-measurement</div>
+          <h2 className="text-lg font-bold text-tertiary-dark sm:text-xl">What did it cost to build MethodHub itself?</h2>
+          <p className="mt-2 max-w-3xl text-[12px] leading-relaxed text-tertiary">
+            This very platform was built largely with AI coding assistance, so it is a natural test case. Measuring the
+            repository directly (<code className="font-mono text-[11px]">git ls-files</code>, {HUB.allFiles.toLocaleString('en-GB')} text
+            files, ≈ {HUB.allMB} MB) and keeping only <strong>authored source</strong> — excluding generated data,
+            GeoJSON, lock-files, concatenated SQL dumps and built bundles — leaves{' '}
+            <strong>{HUB.authoredFiles.toLocaleString('en-GB')} files</strong>, about{' '}
+            <strong>{fmt(HUB.authoredLines / 1000)}k lines</strong> and{' '}
+            <strong>{fmt(HUB.authoredBytes / 1e6, 1)} MB</strong> of code. At ≈ {HUB.charsPerToken} characters per token
+            that committed artefact is ≈ <strong>{fmt(HUB_ARTIFACT_TOKENS / 1e6, 2)} million tokens</strong>.
+          </p>
+          <p className="mt-2 max-w-3xl text-[12px] leading-relaxed text-tertiary">
+            But you never process a codebase only once. Agentic development re-reads files as context dozens of times,
+            reasons, drafts, debugs, refactors and discards work — so the tokens actually <em>processed</em> are a large
+            multiple of the final size. That multiplier is the single most uncertain number here, so it is a slider.
+          </p>
+
+          <div className="mt-4 grid gap-4 lg:grid-cols-[1fr_320px]">
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+              {[
+                { label: 'Tokens processed', v: `${fmt(buildTokens / 1e6)} M`, sub: `${fmt(buildMult)}× the committed code` },
+                { label: 'Energy', v: energy(buildEnergyWh(buildMult)), sub: `at ${p.energyPer1k.toFixed(1)} Wh/1k · PUE ${p.pue.toFixed(2)}×` },
+                { label: 'CO₂e (central)', v: grams(buildG), sub: `at ${fmt(p.gridIntensity)} gCO₂e/kWh` },
+                { label: '≈ petrol-car driving', v: buildKm >= 1 ? `${fmt(buildKm)} km` : `${fmt(buildKm * 1000)} m`, sub: '@ 170 g/km' },
+                { label: '≈ beef burgers', v: fmt(buildBurgers, buildBurgers < 10 ? 1 : 0), sub: '@ 2.5 kg each' },
+                { label: '≈ hours of flying', v: buildFlightHrs < 1 ? buildFlightHrs.toFixed(2) : fmt(buildFlightHrs, 1), sub: '@ 90 kg/passenger-hr' },
+              ].map((c) => (
+                <div key={c.label} className="rounded-lg border border-grey-200 bg-white p-3">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-tertiary">{c.label}</p>
+                  <p className="mt-0.5 font-mono text-lg font-bold text-tertiary-dark tabular-nums">{c.v}</p>
+                  <p className="text-[10.5px] text-tertiary">{c.sub}</p>
+                </div>
+              ))}
+            </div>
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <Slider
+                label="Development overhead multiplier"
+                hint="Tokens processed during development ÷ tokens of final committed code. Light editing ≈ 10×; heavy agentic build with lots of context re-reading, debugging and refactors ≈ 100×."
+                value={buildMult}
+                min={5}
+                max={150}
+                step={5}
+                unit="×"
+                onChange={setBuildMult}
+              />
+              <p className="mt-3 text-[12px] leading-relaxed text-tertiary">
+                Plausible range (20×–100×): <strong>{grams(buildLowG)}</strong> to <strong>{grams(buildHighG)}</strong>{' '}
+                of CO₂e on the current grid setting.
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-tertiary">
+            So building this entire platform with AI cost on the order of <strong>{grams(buildG)}</strong> of CO₂e —
+            roughly <strong>{buildKm >= 1 ? `${fmt(buildKm)} km` : `${fmt(buildKm * 1000)} m`}</strong> in a petrol car,{' '}
+            <strong>{fmt(buildBurgers, buildBurgers < 10 ? 1 : 0)} beef burgers</strong>, or{' '}
+            <strong>{buildFlightHrs < 1 ? buildFlightHrs.toFixed(2) : fmt(buildFlightHrs, 1)} hours</strong> of flying.
+            That is the point in miniature: the footprint of <em>making</em> one product is genuinely modest — a single
+            return flight dwarfs it. The climate stakes are not this codebase but the billions of daily inferences it and
+            everything like it will serve, and the always-on data-centre capacity that has to be built to power them.
+            <span className="text-tertiary/80"> (Inference only — this excludes the energy of training the models used,
+            which is a separate, larger one-off cost.)</span>
+          </p>
+        </section>
+
         {/* method note + sources */}
         <section className="mt-8 max-w-3xl space-y-2 border-t border-grey-200 pt-4 text-[11px] leading-relaxed text-tertiary">
           <p className="text-[12px] font-bold text-tertiary-dark">Method &amp; honest limits</p>
@@ -810,6 +911,15 @@ export default function AiEnvironmentalImpactPage() {
             real tasks vary widely. Inference-energy figures are uncertain to within a factor of several and are falling
             over time — treat every output as an order of magnitude, and use the sliders to test how sensitive the
             conclusion is to each assumption.
+          </p>
+          <p>
+            The <strong>“cost of building MethodHub”</strong> panel measures this repository directly with{' '}
+            <code className="font-mono text-[10.5px]">git ls-files</code>, keeps only authored source (no generated data,
+            lock-files, GeoJSON, SQL dumps or built bundles), converts bytes to tokens at ≈ 3.5 chars/token, then
+            multiplies by a development-overhead factor to approximate the tokens actually processed during iterative,
+            agentic coding (re-reading context, reasoning, debugging, discarded drafts). It uses the same energy and grid
+            settings as the rest of the page and counts inference only — not the energy of training the underlying
+            models. The overhead multiplier is the dominant uncertainty, hence the explicit 20×–100× range.
           </p>
           <p className="text-[12px] font-bold text-tertiary-dark">Indicative sources</p>
           <ul className="space-y-1">
