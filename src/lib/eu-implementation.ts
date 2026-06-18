@@ -71,11 +71,37 @@ export interface EuImplementationPolicy {
   adopted: string;
   /** One-line summary of what national implementation has to deliver. */
   requires: string;
+  /**
+   * How the obligation is discharged, which changes how we rate it:
+   *  - `plan`     : satisfied by a national plan/programme — having it counts
+   *                 as implemented (e.g. the NECP under the Governance
+   *                 Regulation); a single document is not "lagging".
+   *  - `measures` : discharged through an evolving body of national measures —
+   *                 depth and statutory anchoring matter (the default).
+   */
+  kind?: 'plan' | 'measures';
   /** True for national instruments that respond to this EU policy. */
   match: (p: ClimatePolicy) => boolean;
 }
 
 export const EU_IMPLEMENTATION_POLICIES: EuImplementationPolicy[] = [
+  {
+    id: 'governance-necp',
+    shortName: 'Governance / NECPs',
+    fullName: 'Governance Regulation (national energy & climate plans)',
+    acronym: 'NECP',
+    eurlexUrl: eurlex('32018R1999'),
+    adopted: '2018',
+    requires:
+      'A complete integrated National Energy and Climate Plan (and long-term ' +
+      'strategy) setting national 2030 energy/climate contributions and the ' +
+      'policies to reach them.',
+    kind: 'plan',
+    match: (p) =>
+      /national energy and climate plan|\bnecp\b|integrated national energy|energy and climate plan|energy and climate strategy/.test(
+        combinedText(p),
+      ),
+  },
   {
     id: 'esr',
     shortName: 'Effort Sharing',
@@ -137,6 +163,23 @@ export const EU_IMPLEMENTATION_POLICIES: EuImplementationPolicy[] = [
     match: (p) =>
       hasSector(p, 'Buildings', 'Residential and Commercial') ||
       /building|renovation|energy performance|insulation|thermal/.test(combinedText(p)),
+  },
+  {
+    id: 'ied',
+    shortName: 'Industrial Emissions',
+    fullName: 'Industrial Emissions Directive',
+    acronym: 'IED',
+    eurlexUrl: eurlex('32010L0075'),
+    adopted: '2010, revised 2024',
+    requires:
+      'Transposition of integrated permitting with best-available-techniques ' +
+      '(BAT) emission limits for large industrial and intensive-livestock ' +
+      'installations.',
+    match: (p) =>
+      hasSector(p, 'Industry') &&
+      /industr|emission|permit|installation|\bbat\b|best available|pollution/.test(
+        combinedText(p),
+      ),
   },
   {
     id: 'afir',
@@ -201,11 +244,24 @@ export const EU_IMPLEMENTATION_POLICIES: EuImplementationPolicy[] = [
 export type ImplementationLevel = 0 | 1 | 2 | 3;
 
 export const LEVEL_LABELS: Record<ImplementationLevel, string> = {
-  0: 'Not evident',
-  1: 'Emerging',
-  2: 'Moderate',
-  3: 'Strong',
+  0: 'Not implemented',
+  1: 'Partial',
+  2: 'Implemented',
+  3: 'Implemented (in law)',
 };
+
+/** Short status word for the per-country "who did what" breakdown. */
+export const LEVEL_STATUS: Record<ImplementationLevel, string> = {
+  0: 'Not implemented',
+  1: 'Partial',
+  2: 'Implemented',
+  3: 'Implemented',
+};
+
+/** True when a member state has a substantive (level ≥ 2) national response. */
+export function isImplemented(level: ImplementationLevel): boolean {
+  return level >= 2;
+}
 
 export const LEVEL_COLORS: Record<ImplementationLevel, string> = {
   0: '#E0E0E0', // grey — nothing in the catalogue
@@ -217,10 +273,13 @@ export const LEVEL_COLORS: Record<ImplementationLevel, string> = {
 /** Levels at or below this are treated as "lagging behind". */
 export const LAGGING_AT_OR_BELOW: ImplementationLevel = 1;
 
-function rate(matches: ClimatePolicy[]): ImplementationLevel {
+function rate(matches: ClimatePolicy[], kind: 'plan' | 'measures' = 'measures'): ImplementationLevel {
   const n = matches.length;
   if (n === 0) return 0;
   const hasLaw = matches.some((m) => m.category === 'Law');
+  // Plan-type duties (e.g. the NECP): having the plan IS implementation; a
+  // single document is not "lagging". Statutory anchoring lifts it to Strong.
+  if (kind === 'plan') return hasLaw ? 3 : 2;
   if (n >= 2 && hasLaw) return 3;
   if (n >= 2 || hasLaw) return 2;
   return 1;
@@ -301,11 +360,11 @@ export function assessImplementation(policies: ClimatePolicy[]): ImplementationR
       return {
         code,
         name,
-        level: rate(matches),
+        level: rate(matches, eu.kind),
         count: matches.length,
         hasLaw: matches.some((m) => m.category === 'Law'),
         latestYear: years.length ? Math.max(...years) : null,
-        examples: refs.slice(0, 4),
+        examples: refs.slice(0, 8),
       };
     });
 
@@ -376,9 +435,13 @@ export function assessImplementation(policies: ClimatePolicy[]): ImplementationR
       '"Not evident" can mean "not in this 2022 snapshot" rather than "nothing ' +
         'exists" — much Fit-for-55 transposition post-dates the snapshot. Refresh ' +
         'the catalogue before drawing firm laggard conclusions.',
-      'EU instruments that are centrally operated (EU ETS, CBAM) or too recent ' +
-        'to appear (e.g. the Nature Restoration Law) are intentionally excluded ' +
-        'from this tracker.',
+      'The tracker covers the EU instruments that require national ' +
+        'implementation AND are observable in a climate-policy catalogue. ' +
+        'Intentionally excluded: centrally-operated instruments (EU ETS, CBAM); ' +
+        'acts too recent for the 2022 snapshot (Nature Restoration Law, Methane ' +
+        'Regulation, Social Climate Fund plans); and instruments whose national ' +
+        'measures sit outside this catalogue (air-quality programmes under the ' +
+        'NEC Directive, road-charging under the Eurovignette Directive).',
       'Catalogue depth reflects CCLW editorial coverage as well as real activity; ' +
         'a thinly-documented member state can look like a laggard on coverage alone.',
       'Best practices are exemplary national instruments in the policy area; read ' +
