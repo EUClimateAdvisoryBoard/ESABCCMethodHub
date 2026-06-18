@@ -413,7 +413,7 @@ export default function NationalClimatePoliciesPage() {
 
               {/* Link into the dedicated subpage */}
               <Link
-                href="/national-climate-policies/implementation"
+                href="/beta/national-climate-policies/implementation"
                 className="block mb-4 bg-white border border-grey-200 border-l-4 border-l-primary rounded p-3 hover:shadow-md hover:border-grey-300 transition"
               >
                 <div className="flex items-center justify-between gap-3">

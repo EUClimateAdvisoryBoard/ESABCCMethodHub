@@ -6,7 +6,7 @@ An update to the Policy Gap report's monitoring of Member State implementation.*
 This note covers two related deliverables:
 
 - **Part A — EU policy → national implementation tracker** (the primary
-  deliverable; subpage `/national-climate-policies/implementation`). For each
+  deliverable; subpage `/beta/national-climate-policies/implementation`). For each
   EU policy that requires national implementation, how far has each member
   state built a national response, who is lagging, and which national
   instruments are best practices the laggards could copy.

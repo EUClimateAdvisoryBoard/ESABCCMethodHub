@@ -75,7 +75,7 @@ export default function EuImplementationPage() {
         {/* Hero */}
         <section className="mb-6">
           <Link
-            href="/national-climate-policies"
+            href="/beta/national-climate-policies"
             className="text-[11px] text-primary hover:underline"
           >
             ← National Level Climate Policies
