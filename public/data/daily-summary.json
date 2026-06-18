@@ -1,15 +1,9 @@
 {
   "date": "2026-06-18",
-  "generatedAt": "2026-06-18T09:17:45.273Z",
+  "generatedAt": "2026-06-18T14:14:55.838Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 18 June 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Press release - New genomic techniques for plants to boost innovation in sustainable agriculture",
-      "summary": "&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260617PHT45612/20260617PHT45612-ms.jpg\" align=\"left\" width=\"125\" hspace=\"5\" vspace=\"0\" /&gt;Parliament has adopted new rules facilitating access to new plants that are climate and pest resistant, give higher yields and require fewer pesticides.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "EU parliament backs law allowing offshore detention centres - Reuters",
       "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxQaUFndzhKSXBmcWxBdUxJOEVGdUhMWmxyMVRNajNMOGFadDNXbVVfOFJDNTZmNlZhX2hpZGs0LWlXTWtkVmlDN3pxYXpsX0R1Z3VWc0cxUGd5UzJocjlfc2dkX2JfS2Z6SktHR3FLS2RGeXlQSV9ySTNEVm80NFh6aEw3NW9NQWtCcUFuRTZJc2FBZlB2MXg5VjRuWGVRbU5DbWE0?oc=5\" target=\"_blank\"&gt;EU parliament backs law allowing offshore detention centres&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
@@ -17,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Cropped 17 June 2026: Coral reef ‘hope’ &#124; Ocean talks &#124; Plant flowering times ‘shift’",
-      "summary": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 17 June 2026: Coral reef ‘hope’ | Ocean talks | Plant flowering times ‘shift’ appeared first on Carbon Brief.",
+      "headline": "Q&#038;A: What do China’s provincial five-year plans say about climate and energy?",
+      "summary": "China’s provincial-level governments have now all published their 15th five-year plans – economic and social... The post Q&amp;A: What do China’s provincial five-year plans say about climate and energy? appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,16 +21,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Press release - New genomic techniques for plants to boost innovation in sustainable agriculture",
-          "link": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45215/",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260617PHT45612/20260617PHT45612-ms.jpg\" align=\"left\" width=\"125\" hspace=\"5\" vspace=\"0\" /&gt;Parliament has adopted new rules facilitating access to new plants that are climate and pest resistant, give higher yields and require fewer pesticides.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union",
-          "published": "2026-06-17T10:53:02.000Z",
-          "score": 20
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -51,14 +36,6 @@
           "score": 12
         },
         {
-          "title": "The ocean has shielded us from the worst of climate change. Now it is running a fever | Karina Von Schuckmann",
-          "link": "https://www.theguardian.com/commentisfree/2026/jun/17/ocean-fever-climate-change",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Nearly every indicator of climate change is flashing red. But we still hold the tools available to bring the planet back into balance&lt;/p&gt;&lt;p&gt;The ocean is running a fever. In 2025, the number of days of marine heatwaves – prolonged spells when the sea turns abnormally, dangerously warm – was more than triple what it was in the early 1990s.&lt;/p&gt;&lt;p&gt;These are not abstract statistics. A severe and persistent marine heatwave bleaches coral reefs, strips away the kelp for",
-          "published": "2026-06-17T10:00:28.000Z",
-          "score": 7
-        },
-        {
           "title": "Verification is key in US-Iran nuclear talks, Saudi foreign minister says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxObWxyY2dUd1V5eVV5bXlGNmQybWNfZnlzV2NYQ3BpWFBEV1p6N3JMTXRoYWRrTEl6MGdPRm4yNEdZSGl2ZFNFOEtubDl1dTlqY2lDd1BsOS1kQkZMTjhrMlVKUVdJSHlDOXVydGltdTJVNXR1UVpxWEdRNDNqR1JmM3pacVNSWW9kRHBtNTNWazFMNy1nZE11QkNzSzBNVVhnSURUSmVLWDBCM1dJdWYwenJDTy11S2FKMHdiLUhxelI?oc=5",
           "source": "Reuters World (via Google News)",
@@ -67,19 +44,27 @@
           "score": 7
         },
         {
-          "title": "What's in the US-Iran agreement?",
-          "link": "https://www.bbc.com/news/articles/cvgmqzr6p9mo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The 14-paragraph memo includes an end to fighting, an agreement that Iran will never have a nuclear weapon, and a $300bn redevelopment package for Iran.",
-          "published": "2026-06-18T01:28:02.000Z",
-          "score": 4
+          "title": "NATO says it agrees to modernise nuclear capabilities - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOVkZqZGVPb3ZzYjBrcl9DQjV1UFNJNU5WcXFCdWdLeXo4VFJyOV9tTGRVSkE4VWE4UUlIQ1NuM1drT1dTRXpXUi0wOWxGdXlPaVhfQzhUclIwY0Qzbmw1Sk9Wd0Y1S3dJRFprVHRodXNzM1QwcDJldHFkakxuYjRDNkVTX1k5MUNPVTZ4eGRzTktSYlZ1d0hR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxOVkZqZGVPb3ZzYjBrcl9DQjV1UFNJNU5WcXFCdWdLeXo4VFJyOV9tTGRVSkE4VWE4UUlIQ1NuM1drT1dTRXpXUi0wOWxGdXlPaVhfQzhUclIwY0Qzbmw1Sk9Wd0Y1S3dJRFprVHRodXNzM1QwcDJldHFkakxuYjRDNkVTX1k5MUNPVTZ4eGRzTktSYlZ1d0hR?oc=5\" target=\"_blank\"&gt;NATO says it agrees to modernise nuclear capabilities&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-18T08:54:10.000Z",
+          "score": 7
         },
         {
-          "title": "US-Iran deal leaves core sticking points unresolved - and a $300bn question",
-          "link": "https://www.bbc.com/news/articles/cgmd8dgklzzo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Trump has insisted the deal ensures that Iran will never buy, develop or produce a nuclear weapon. But text of the agreement falls short of that.",
-          "published": "2026-06-18T01:29:32.000Z",
+          "title": "Germany deploys ship to Red Sea for possible Hormuz mission, minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNdnRkOFNldnVTcE9iQ2l2N0Jsc2FWRkRXNjc5YVFvbXNXVDRMTFNQelZNRDFMMUFIdVFWdndwenJNYWFYRUltRWVQXzlZanJVWDNEcENOdnZXYU5WMmY3VTJpVTBWR3BHUGVuXzlLclhoREtoby14Wlg3Y09PNm1ROVJnMDNlNmhQMDh0aXNzVUpoODVwNUloUlRpbkVUOXh2OFVWQXhJcFNwZE9T?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNdnRkOFNldnVTcE9iQ2l2N0Jsc2FWRkRXNjc5YVFvbXNXVDRMTFNQelZNRDFMMUFIdVFWdndwenJNYWFYRUltRWVQXzlZanJVWDNEcENOdnZXYU5WMmY3VTJpVTBWR3BHUGVuXzlLclhoREtoby14Wlg3Y09PNm1ROVJnMDNlNmhQMDh0aXNzVUpoODVwNUloUlRpbkVUOXh2OFVWQXhJcFNwZE9T?oc=5\" target=\"_blank\"&gt;Germany deploys ship to Red Sea for possible Hormuz mission, minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-18T06:07:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Drax cleared after investigation into sourcing of wood pellets",
+          "link": "https://www.theguardian.com/business/2026/jun/18/fca-closes-investigation-drax-biomass-fuel-sourcing-wood-pellets",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Generator’s shares rise as regulator finds no evidence of misleading statements about fuel’s sustainability&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/jun/18/bank-of-england-interest-rates-uk-unemployment-wages-oil-price-stock-markets-latest-news-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The City watchdog has closed an investigation into the owner of the Drax power plant after an alm",
+          "published": "2026-06-18T11:35:50.000Z",
           "score": 4
         }
       ]
@@ -89,28 +74,20 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Q&#038;A: What do China’s provincial five-year plans say about climate and energy?",
+          "link": "https://www.carbonbrief.org/qa-what-do-chinas-provincial-five-year-plans-say-about-climate-and-energy/",
+          "source": "Carbon Brief",
+          "description": "China’s provincial-level governments have now all published their 15th five-year plans – economic and social... The post Q&amp;A: What do China’s provincial five-year plans say about climate and energy? appeared first on Carbon Brief.",
+          "published": "2026-06-18T10:00:27.000Z",
+          "score": 13
+        },
+        {
           "title": "Cropped 17 June 2026: Coral reef ‘hope’ &#124; Ocean talks &#124; Plant flowering times ‘shift’",
           "link": "https://www.carbonbrief.org/cropped-17-june-2026-coral-reef-hope-ocean-talks-plant-flowering-times-shift/",
           "source": "Carbon Brief",
           "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 17 June 2026: Coral reef ‘hope’ | Ocean talks | Plant flowering times ‘shift’ appeared first on Carbon Brief.",
           "published": "2026-06-17T14:26:39.000Z",
           "score": 13
-        },
-        {
-          "title": "Rising temperatures may increase flood risk through river ‘whiplash’, study finds",
-          "link": "https://www.theguardian.com/environment/2026/jun/17/rising-temperatures-may-increase-flood-risk-through-river-whiplash-study-finds",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Sudden shifts from wet to dry weather, or vice versa, may foil typical drought- and flood-prevention measures&lt;/p&gt;&lt;p&gt;Rising temperatures may trigger a dangerous increase in “hydroclimatic whiplash” in rivers that would make traditional approaches to flood and drought planning insufficient, a study has found.&lt;/p&gt;&lt;p&gt;As temperatures rise owing to the worsening climate crisis, rivers will experience increasingly rapid transitions between heavy downpours and long dry s",
-          "published": "2026-06-17T13:24:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "US public still favours action on climate change despite Trump’s fossil fuel drive",
-          "link": "https://www.theguardian.com/environment/2026/jun/17/climate-change-public-opinion-trump-fossil-fuel",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Two-thirds of Americans say they are worried about climate but level of media coverage does not reflect this&lt;/p&gt;&lt;p&gt;US political and media discourse has drifted away from the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt; amid a frontal assault by &lt;a href=\"https://www.theguardian.com/us-news/donaldtrump\"&gt;Donald Trump&lt;/a&gt; upon policies to limit global heating and the president’s pugnacious demands to “drill, baby, dr",
-          "published": "2026-06-17T12:00:31.000Z",
-          "score": 7
         },
         {
           "title": "Weatherwatch: UK’s migrant waders feel the effects of a changing Arctic",
@@ -127,6 +104,14 @@
           "description": "The EU has eased restrictions on crops developed using novel genetic techniques. While supporters say the technology could help farmers adapt to climate change, critics argue its effects remain poorly understood.",
           "published": "2026-06-17T14:29:00.000Z",
           "score": 6
+        },
+        {
+          "title": "Apocalypse when? ‘Earth’s Black Box’ to be installed in remote Tasmanian airfield",
+          "link": "https://www.theguardian.com/australia-news/2026/jun/18/earth-black-box-climate-apocalypse-tasmania-australia",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Rouser Lab says the steel structure will record ‘every step’ humanity takes towards climate catastrophe&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/18/australia-news-live-non-stop-sydney-london-flights-qantas-one-nation-pauline-hanson-labor-anthony-albanese-economy-cost-of-living-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.",
+          "published": "2026-06-17T15:00:37.000Z",
+          "score": 4
         }
       ]
     },
@@ -139,6 +124,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Press release - New rules for a more sustainable EU automotive sector",
+          "link": "https://www.europarl.europa.eu/news/en/press-room/20260611IPR45210/",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260615PHT45404/20260615PHT45404-ms.jpg\" align=\"left\" width=\"125\" hspace=\"5\" vspace=\"0\" /&gt;On Thursday, Parliament gave its final approval of new EU circularity rules covering a vehicle’s entire lifecycle, from design to end-of-life treatment.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on the Internal Market and Consumer Protection&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"ht",
+          "published": "2026-06-18T10:22:25.000Z",
+          "score": 22
+        },
         {
           "title": "OPINION on the proposal for a directive of the European Parliament and of the Council amending Directives (EU) 2018/2001, (EU) 2019/944, (EU) 2024/1788 as regards acceleration of permit-granting procedures - PE786.680v02-00",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-786680_EN.pdf",
@@ -156,28 +149,20 @@
           "score": 22
         },
         {
+          "title": "AMENDMENTS 13 - 96 - Draft report Amending Directive 2007/2/EC as regards simplification of certain requirements for the establishment of the Infrastructure for Spatial Information in the Union - PE789.937v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789937_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 13 - 96 - Draft report Amending Directive 2007/2/EC as regards simplification of certain requirements for the establishment of the Infrastructure for Spatial Information in the Union&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Emma Wiesner&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-18T10:14:50.000Z",
+          "score": 18
+        },
+        {
           "title": "Draft agenda - Monday, 22 June 2026 - Tuesday, 23 June 2026 - PE790.000v02-00 - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-06-22-1_EN.html",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-06-17T14:54:30.000Z",
           "score": 18
-        },
-        {
-          "title": "EU lawmakers approve new tougher migrant policy",
-          "link": "https://www.dw.com/en/eu-lawmakers-approve-new-tougher-migrant-policy/a-77595342?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU is backing tougher migration policies that seek to ramp up deportations of failed asylum-seekers. Under the new legislation, EU states can establish &quot;return hubs.&quot;",
-          "published": "2026-06-17T19:33:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "Germany&#039;s foreign minister: &#039;European unity is decisive&#039;",
-          "link": "https://www.dw.com/en/germany-s-foreign-minister-european-unity-is-decisive/a-77594952?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "German Foreign Minister Johann Wadephul, in an interview with DW, underscores the trans-Atlantic partnership, close cooperation with Poland, continued support for Ukraine and European unity.",
-          "published": "2026-06-18T06:34:00.000Z",
-          "score": 8
         }
       ]
     },
@@ -185,14 +170,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Selling cheese to Hong Kong: UK exporters adapt to life outside the EU a decade after Brexit vote - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQMnVKZ2EtMnMwYm9IUm5oU2RhQVlrY2k1ZERMX2dqNVhjcnU0eTE5UzliaGtuVTBNbTRJclEyc1pnSTNpS2FUMFdIZDhndUJxRU13S3l5Mk9FWTg3OGRWWkVheE9wcHhldUYzeXhLYVc0Y01XdGZSaHZPSEVLZVlzRXNKZUNWaXdGS1llY1Q0bDlvQ3dfcXM1ZENDQTNWYmJEdXc2LUh0ek1pR1hQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxQMnVKZ2EtMnMwYm9IUm5oU2RhQVlrY2k1ZERMX2dqNVhjcnU0eTE5UzliaGtuVTBNbTRJclEyc1pnSTNpS2FUMFdIZDhndUJxRU13S3l5Mk9FWTg3OGRWWkVheE9wcHhldUYzeXhLYVc0Y01XdGZSaHZPSEVLZVlzRXNKZUNWaXdGS1llY1Q0bDlvQ3dfcXM1ZENDQTNWYmJEdXc2LUh0ek1pR1hQ?oc=5\" target=\"_blank\"&gt;Selling cheese to Hong Kong: UK exporters adapt to life outside the EU a decade after Brexit vote&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-17T19:22:19.000Z",
-          "score": 12
-        },
         {
           "title": "South Korea parliament launches probe into election ballot shortages - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOQ0xlQXN4OTlJaVpmbDdBNDJwQk9STnZ1T2JlWWRIU0VRdUZFLTlrbGhxaHJOTnZRNHFldWFRLTBrX3BycWp1SVdCNThWNGNGUHpubkpEVVdpVmIyeUV1QmkyMF9QeXFPU2pQSWpURURHT1lEWEE2RkF2b0hsbHJtbTBKeU13ekJQZHZVVmk2QlBMUW5qWllTUW9wa0Z0bTF5OXRUbXU4RWpuN3lrS3F1S3dkQ1QwVHgySlRXek5xR1g?oc=5",
@@ -210,28 +187,36 @@
           "score": 8
         },
         {
-          "title": "France's OVHcloud plans frontier AI models to become Europe's second LLM player - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSXVzUTFCWkxBeDRRWEItdmFYMGlQQ1BLcTlWRGM5THcxcFFULWQxaFVrOGhabzZqcGVqMWE3V3pwaU9SQzFzVGpJRE0xNm44NnpXcjhSaEFncUZKd2tEYkR6dW56bUR4SjVKaVBZd0Q4akxYdktlbThsOGgtTjBrZGdwRTJybnpMMDRZMVEtRXhIWHVOT21OcEFrM0lya0RmSG1EMWZlMTBIUlFCS2pNeEdWWXVDbllBb19uaTJrOUt1TlF2ajJTbg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOSXVzUTFCWkxBeDRRWEItdmFYMGlQQ1BLcTlWRGM5THcxcFFULWQxaFVrOGhabzZqcGVqMWE3V3pwaU9SQzFzVGpJRE0xNm44NnpXcjhSaEFncUZKd2tEYkR6dW56bUR4SjVKaVBZd0Q4akxYdktlbThsOGgtTjBrZGdwRTJybnpMMDRZMVEtRXhIWHVOT21OcEFrM0lya0RmSG1EMWZlMTBIUlFCS2pNeEdWWXVDbllBb19uaTJrOUt1TlF2ajJTbg?oc=5\" target=\"_blank\"&gt;France's OVHcloud plans frontier AI models to become Europe's second LLM player&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
-          "published": "2026-06-17T16:20:43.000Z",
-          "score": 8
-        },
-        {
           "title": "EU Council opening communication channels with Kremlin, official says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOU2hUZHA1R25Jb0dySktnRTd3dlg5LXo2VDZpRUVJREhvcHFEcGlvQWJ2ZTlnclVaTl8tZ3NMVE1ZX211Rm45akc2ZE1yRThvQVQ2WEFObzEwRTZ5ZVUxdDktZjhKRlRVUHRLRVpIWTRfbVBmYmVDVDJidC0wQWR2T191RzVMM0VjUE0xdjFWMmtUOGNac3FIZnpMQUdFSXl3ZlJHMU9rdEhkM1AycXhR?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOU2hUZHA1R25Jb0dySktnRTd3dlg5LXo2VDZpRUVJREhvcHFEcGlvQWJ2ZTlnclVaTl8tZ3NMVE1ZX211Rm45akc2ZE1yRThvQVQ2WEFObzEwRTZ5ZVUxdDktZjhKRlRVUHRLRVpIWTRfbVBmYmVDVDJidC0wQWR2T191RzVMM0VjUE0xdjFWMmtUOGNac3FIZnpMQUdFSXl3ZlJHMU9rdEhkM1AycXhR?oc=5\" target=\"_blank\"&gt;EU Council opening communication channels with Kremlin, official says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-17T16:06:21.000Z",
           "score": 8
+        },
+        {
+          "title": "Israeli foreign minister says he is severing contact with EU foreign policy chief - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNRDgzdlVfekNzNlhpQlJKRmlxSzdISUswZDVsQXc4NExjZF9NVTZQX2d0bUJYVGZjWW9vMHVhdWoyQ1g4SnJDTnBoZExvTjBoUVhWTWVEdFFqV0QzWVJpUXl1QWw4ZTNCQzJQR1dtLTdKYkZZMlZtRmFRTXVkLXRpd21kaU5DSWQtMGRaMmlTdlpVbHFBRDN3NmFfRlZfLTFua3E4bUxBNFBFMEZGa0hRQ240ODFlcUF2N2NGeERRZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNRDgzdlVfekNzNlhpQlJKRmlxSzdISUswZDVsQXc4NExjZF9NVTZQX2d0bUJYVGZjWW9vMHVhdWoyQ1g4SnJDTnBoZExvTjBoUVhWTWVEdFFqV0QzWVJpUXl1QWw4ZTNCQzJQR1dtLTdKYkZZMlZtRmFRTXVkLXRpd21kaU5DSWQtMGRaMmlTdlpVbHFBRDN3NmFfRlZfLTFua3E4bUxBNFBFMEZGa0hRQ240ODFlcUF2N2NGeERRZw?oc=5\" target=\"_blank\"&gt;Israeli foreign minister says he is severing contact with EU foreign policy chief&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-18T11:29:48.000Z",
+          "score": 8
+        },
+        {
+          "title": "US-Iran talks: Hope and skepticism in the Swiss alps",
+          "link": "https://www.dw.com/en/us-iran-talks-hope-and-skepticism-in-the-swiss-alps/a-77610766?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "An end to fighting and relief from a global energy crunch is a welcome development, but critics say the US may have rushed into a bad deal. US-Iran talks in Switzerland will reveal more.",
+          "published": "2026-06-18T14:12:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 405,
-    "articlesLast24h": 164,
-    "afterDedup": 159,
+    "totalArticlesScanned": 412,
+    "articlesLast24h": 163,
+    "afterDedup": 158,
     "feedsQueried": 19
   }
 }
