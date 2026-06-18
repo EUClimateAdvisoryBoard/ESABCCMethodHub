@@ -39,7 +39,7 @@
  * factor of several — which is exactly why they are exposed as sliders.
  */
 
-import { useMemo, useState, type ReactNode } from 'react';
+import { Fragment, useMemo, useState, type ReactNode } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -409,6 +409,121 @@ const HUB = {
 };
 const HUB_ARTIFACT_TOKENS = HUB.authoredBytes / HUB.charsPerToken; // ≈ 2.75 M tokens of committed code
 
+/* ------------------------------------------ corporate energy-per-revenue
+ * The macro signal from the hyperscalers' own CSR / sustainability reports:
+ * electricity drawn vs revenue earned, and how that ratio is moving. Figures
+ * are total/operational electricity consumption (TWh) from each company's
+ * sustainability reports and press analyses of them, and reported revenue
+ * ($bn). Microsoft is on a July–June fiscal year; Google and Meta on calendar
+ * years. Intermediate and latest-year electricity figures are approximate
+ * order-of-magnitude values as reported — the trend, not the third digit, is
+ * the point. Sources are listed in the method note.
+ */
+const COMPANY_YEARS = [2020, 2021, 2022, 2023, 2024];
+
+type Company = {
+  id: string;
+  label: string;
+  note: string;
+  color: string;
+  elec: number[]; // TWh of electricity, by COMPANY_YEARS
+  rev: number[];  // $bn revenue, by COMPANY_YEARS
+};
+
+const COMPANIES: Company[] = [
+  {
+    id: 'msft',
+    label: 'Microsoft',
+    note: 'fiscal year (Jul–Jun)',
+    color: '#0A3D61',
+    elec: [11, 14, 18, 24, 30],
+    rev: [143.0, 168.1, 198.3, 211.9, 245.1],
+  },
+  {
+    id: 'googl',
+    label: 'Google (Alphabet)',
+    note: 'data-centre electricity',
+    color: '#B83230',
+    elec: [14.4, 18.3, 21.8, 24.2, 30.8],
+    rev: [182.5, 257.6, 282.8, 307.4, 350.0],
+  },
+  {
+    id: 'meta',
+    label: 'Meta',
+    note: 'data-centre electricity',
+    color: '#007B6C',
+    elec: [7.17, 9.42, 11.56, 14.98, 18.0],
+    rev: [85.97, 117.9, 116.6, 134.9, 164.5],
+  },
+];
+
+// electricity intensity, MWh of electricity per $ million of revenue
+const intensityMWhPerM = (c: Company) => c.elec.map((e, i) => (e / c.rev[i]) * 1000);
+// indexed to 2020 = 100
+const intensityIndex = (c: Company) => {
+  const I = intensityMWhPerM(c);
+  return I.map((v) => (v / I[0]) * 100);
+};
+
+/* indexed multi-line chart for 2020–2024 ------------------------------- */
+
+function IndexChart(props: {
+  series: { label: string; color: string; values: number[] }[];
+  years: number[];
+  yMin: number;
+  yMax: number;
+  height?: number;
+}) {
+  const { series, years, yMin, yMax, height = 280 } = props;
+  const W = 720;
+  const H = height;
+  const m = { l: 44, r: 16, t: 14, b: 28 };
+  const iw = W - m.l - m.r;
+  const ih = H - m.t - m.b;
+  const sx = (i: number) => m.l + (i / (years.length - 1)) * iw;
+  const sy = (v: number) => m.t + ih - ((Math.min(Math.max(v, yMin), yMax) - yMin) / (yMax - yMin)) * ih;
+  const yTicks = 5;
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Energy intensity index">
+      {Array.from({ length: yTicks + 1 }, (_, i) => {
+        const v = yMin + ((yMax - yMin) / yTicks) * i;
+        const y = sy(v);
+        return (
+          <g key={i}>
+            <line x1={m.l} x2={W - m.r} y1={y} y2={y} stroke={v === 100 ? '#BCBEC0' : '#E6E7E8'} strokeWidth={1} strokeDasharray={v === 100 ? '4 3' : undefined} />
+            <text x={m.l - 6} y={y + 3} textAnchor="end" className="fill-grey-500" fontSize={10}>
+              {fmt(v)}
+            </text>
+          </g>
+        );
+      })}
+      {years.map((yr, i) => (
+        <text key={yr} x={sx(i)} y={H - 9} textAnchor="middle" className="fill-grey-500" fontSize={10}>
+          {yr}
+        </text>
+      ))}
+      <text x={m.l} y={m.t - 3} className="fill-tertiary" fontSize={10}>
+        Electricity per $ of revenue (index, 2020 = 100)
+      </text>
+      {series.map((s) => (
+        <g key={s.label}>
+          <path
+            d={s.values.map((v, i) => `${i === 0 ? 'M' : 'L'} ${sx(i).toFixed(1)} ${sy(v).toFixed(1)}`).join(' ')}
+            fill="none"
+            stroke={s.color}
+            strokeWidth={2.5}
+            strokeLinejoin="round"
+          />
+          {s.values.map((v, i) => (
+            <circle key={i} cx={sx(i)} cy={sy(v)} r={2.6} fill={s.color} />
+          ))}
+        </g>
+      ))}
+    </svg>
+  );
+}
+
 export default function AiEnvironmentalImpactPage() {
   const [p, setP] = useState<Params>({ ...DEFAULTS, ...PRESETS[0].over });
   const [activePreset, setActivePreset] = useState('eu-standard');
@@ -481,6 +596,18 @@ export default function AiEnvironmentalImpactPage() {
   const buildKm = buildG / ANCHORS.find((a) => a.label === 'Driving 1 km, petrol car')!.grams;
   const buildBurgers = buildG / ANCHORS.find((a) => a.label === 'A beef burger')!.grams;
   const buildFlightHrs = buildG / ANCHORS.find((a) => a.label === 'One hour of flying (economy)')!.grams;
+
+  // corporate energy-per-revenue trend
+  const companyStats = COMPANIES.map((c) => {
+    const I = intensityMWhPerM(c);
+    const idx = intensityIndex(c);
+    const change2024 = idx[idx.length - 1] - 100;
+    const elecGrowth = c.elec[c.elec.length - 1] / c.elec[0];
+    const revGrowth = c.rev[c.rev.length - 1] / c.rev[0];
+    // YoY change of intensity, last value = most recent year's acceleration
+    const yoy = I.map((v, i) => (i ? (v / I[i - 1] - 1) * 100 : 0));
+    return { c, I, idx, change2024, elecGrowth, revGrowth, yoyLatest: yoy[yoy.length - 1] };
+  });
 
   return (
     <>
@@ -802,6 +929,128 @@ export default function AiEnvironmentalImpactPage() {
           </aside>
         </div>
 
+        {/* corporate energy-per-revenue trend */}
+        <section className="mt-10">
+          <div className="mb-1 text-[11px] uppercase tracking-[0.12em] text-tertiary">The corporate signal · from the CSR reports</div>
+          <h2 className="text-lg font-bold text-tertiary-dark sm:text-xl">
+            Energy per dollar of revenue is rising — and the rise is accelerating
+          </h2>
+          <p className="mt-2 max-w-3xl text-[12px] leading-relaxed text-tertiary">
+            Per-prompt efficiency improving while the total still explodes is only half the story. The other half is
+            visible in the hyperscalers&rsquo; own sustainability reports: they are now burning <em>more</em> electricity
+            for every dollar they earn — the opposite of the &ldquo;growth decoupled from energy&rdquo; trend of the
+            2010s. Microsoft burned roughly <strong>60% more energy per $ of revenue in 2024 than in 2020</strong>; its
+            electricity grew {fmt(companyStats[0].elecGrowth, 1)}× while revenue grew only {fmt(companyStats[0].revGrowth, 1)}×.
+            And the rate of increase is itself increasing — the steepest year-on-year jumps land in the AI build-out
+            years, not the early ones. <strong>That is acceleration.</strong>
+          </p>
+
+          <div className="mt-4 grid gap-6 lg:grid-cols-[1fr_320px]">
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <h3 className="text-[13px] font-bold text-tertiary-dark">Electricity per $ of revenue, indexed to 2020 = 100</h3>
+              <p className="mb-1 text-[11px] text-tertiary">
+                Above the dashed 100 line means a company is using more energy per dollar than it did in 2020. All three
+                lines turn upward in the AI years.
+              </p>
+              <IndexChart
+                years={COMPANY_YEARS}
+                yMin={85}
+                yMax={170}
+                series={COMPANIES.map((c) => ({ label: c.label, color: c.color, values: intensityIndex(c) }))}
+              />
+              <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1.5">
+                {COMPANIES.map((c) => (
+                  <span key={c.id} className="inline-flex items-center gap-1.5 text-[11px] text-tertiary">
+                    <svg width="22" height="8" className="shrink-0">
+                      <line x1="0" y1="4" x2="22" y2="4" stroke={c.color} strokeWidth="3" />
+                    </svg>
+                    {c.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              {companyStats.map(({ c, change2024, yoyLatest }) => (
+                <div key={c.id} className="rounded-lg border border-grey-200 bg-grey-50 p-3">
+                  <div className="flex items-baseline justify-between">
+                    <span className="text-[12px] font-bold text-tertiary-dark">{c.label}</span>
+                    <span className="font-mono text-lg font-bold tabular-nums" style={{ color: c.color }}>
+                      {change2024 >= 0 ? '+' : ''}
+                      {fmt(change2024)}%
+                    </span>
+                  </div>
+                  <p className="text-[10.5px] text-tertiary">
+                    energy/$ revenue, 2024 vs 2020 · latest year {yoyLatest >= 0 ? '+' : ''}
+                    {fmt(yoyLatest)}% · {c.note}
+                  </p>
+                </div>
+              ))}
+              <p className="text-[10.5px] leading-snug text-tertiary">
+                Different denominators (Microsoft&rsquo;s figure is total electricity; Google and Meta quote data-centre
+                electricity), so compare the <em>direction and slope</em>, not the absolute levels.
+              </p>
+            </div>
+          </div>
+
+          {/* raw data table */}
+          <div className="mt-4 overflow-x-auto rounded-lg border border-grey-200 bg-white p-4">
+            <h3 className="mb-2 text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary">The underlying figures (from the reports)</h3>
+            <table className="w-full min-w-[640px] text-[11px]">
+              <thead>
+                <tr className="border-b border-grey-200 text-tertiary">
+                  <th className="py-1.5 pr-2 text-left font-semibold">Company · metric</th>
+                  {COMPANY_YEARS.map((y) => (
+                    <th key={y} className="px-2 py-1.5 text-right font-semibold">
+                      {y}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {companyStats.map(({ c, I }) => (
+                  <Fragment key={c.id}>
+                    <tr className="border-b border-grey-100">
+                      <td className="py-1.5 pr-2 font-semibold text-tertiary-dark">{c.label} — electricity (TWh)</td>
+                      {c.elec.map((v, i) => (
+                        <td key={i} className="px-2 py-1.5 text-right font-mono tabular-nums text-tertiary">
+                          {fmt(v, 1)}
+                        </td>
+                      ))}
+                    </tr>
+                    <tr className="border-b border-grey-100">
+                      <td className="py-1.5 pr-2 text-tertiary">— revenue ($bn)</td>
+                      {c.rev.map((v, i) => (
+                        <td key={i} className="px-2 py-1.5 text-right font-mono tabular-nums text-tertiary">
+                          {fmt(v)}
+                        </td>
+                      ))}
+                    </tr>
+                    <tr className="border-b-2 border-grey-200">
+                      <td className="py-1.5 pr-2 text-tertiary">— MWh per $M revenue</td>
+                      {I.map((v, i) => (
+                        <td key={i} className="px-2 py-1.5 text-right font-mono tabular-nums font-semibold" style={{ color: c.color }}>
+                          {fmt(v, 1)}
+                        </td>
+                      ))}
+                    </tr>
+                  </Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-tertiary">
+            <strong>So what will the 2025 reports say?</strong> Every leading indicator points the same way: capital
+            expenditure on AI data centres hit record highs in 2024–25, the new capacity runs flat-out, and the heaviest
+            tasks (agentic research and coding, video and reasoning models) are exactly the ones growing fastest. On this
+            trajectory the 2025 sustainability reports almost certainly show energy-per-revenue climbing again, with the
+            year-on-year jump as large as or larger than 2024&rsquo;s. The decoupling of digital growth from energy that
+            defined the last decade has, for now, gone into reverse — and that reversal, not any single chatbot answer,
+            is the real climate and grid-expansion challenge.
+          </p>
+        </section>
+
         {/* the two takeaways */}
         <section className="mt-10 grid gap-4 lg:grid-cols-2">
           <div className="rounded-lg border border-grey-200 bg-surface-teal p-4">
@@ -952,6 +1201,20 @@ export default function AiEnvironmentalImpactPage() {
               <a className="text-primary underline" href="https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference" target="_blank" rel="noreferrer">
                 cloud.google.com
               </a>
+            </li>
+            <li>
+              Corporate energy-per-revenue: each company&rsquo;s sustainability / environmental report and press
+              analyses of them — Microsoft (FY total electricity ≈ 11 TWh 2020 → ≈ 24 TWh 2023, rising further in
+              FY2024), Google/Alphabet (data-centre electricity ≈ 14.4 TWh 2020 → 30.8 TWh 2024) and Meta (≈ 7.2 TWh 2020
+              → ≈ 18 TWh 2024); revenue from the companies&rsquo; annual filings. See e.g.{' '}
+              <a className="text-primary underline" href="https://www.visualcapitalist.com/microsofts-electricity-use-has-doubled-between-2020-2023/" target="_blank" rel="noreferrer">
+                Visual Capitalist (Microsoft)
+              </a>{' '}
+              and{' '}
+              <a className="text-primary underline" href="https://techcrunch.com/2025/07/01/googles-data-center-energy-use-doubled-in-four-years/" target="_blank" rel="noreferrer">
+                TechCrunch (Google)
+              </a>
+              . Intermediate and latest-year figures are approximate as reported; the trend is the point.
             </li>
             <li>
               Everyday-anchor figures (driving, beef, flying, kettle) follow standard life-cycle ranges, e.g. Mike
