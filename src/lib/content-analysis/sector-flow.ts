@@ -710,6 +710,67 @@ export function policyCorpusEvidence(
   return { documents: matched.size, segments: segs };
 }
 
+// ── Sector filter — narrowing the analysis corpus to one or more sectors ─────
+
+export interface SectorOption {
+  id: SectorFlowId;
+  /** Display name from the report framework ("Energy supply", "Industry"…). */
+  name: string;
+  /** Sector accent colour, shared with the Sector flow lens. */
+  color: string;
+}
+
+/** The six report sectors as selectable filter options, with their framework
+ *  names and accent colours — the option set the workspace sector filter and
+ *  any other sector picker render from. */
+export const SECTOR_FILTER_OPTIONS: SectorOption[] = SECTOR_FLOW_DEFS.map(def => {
+  const fw = SECTOR_FRAMEWORKS.find(s => s.id === def.sectorId);
+  return {
+    id: def.sectorId,
+    name: fw?.name ?? def.sectorId,
+    color: fw?.color ?? '#3D5265',
+  };
+});
+
+/**
+ * Map every document to the set of report sectors it touches, using the same
+ * keyword heuristic as the Sector flow evidence counter: a document belongs to
+ * a sector when its title/short title — or the name of any code applied to it
+ * in the supplied segments — contains one of that sector's keywords. This is a
+ * soft, title/tag-driven signal, not a formal classification.
+ */
+export function sectorsByDocument(
+  documents: AnalysisDocument[],
+  codes: CodeNode[],
+  segments: CodedSegment[],
+): Map<string, Set<SectorFlowId>> {
+  const codeNameById = new Map(codes.map(c => [c.id, c.name.toLowerCase()]));
+  // Names of the codes applied to each document, via its coded segments.
+  const docCodeNames = new Map<string, Set<string>>();
+  for (const s of segments) {
+    const name = codeNameById.get(s.codeId);
+    if (name === undefined) continue;
+    let set = docCodeNames.get(s.documentId);
+    if (!set) { set = new Set(); docCodeNames.set(s.documentId, set); }
+    set.add(name);
+  }
+  const out = new Map<string, Set<SectorFlowId>>();
+  for (const d of documents) {
+    const title = `${d.title ?? ''} ${d.shortTitle ?? ''}`.toLowerCase();
+    const codeNames = docCodeNames.get(d.id);
+    const sectors = new Set<SectorFlowId>();
+    for (const def of SECTOR_FLOW_DEFS) {
+      const titleHit = def.keywords.some(k => title.includes(k));
+      const codeHit =
+        codeNames !== undefined &&
+        [...codeNames].some(n => def.keywords.some(k => n.includes(k)));
+      if (titleHit || codeHit) sectors.add(def.sectorId);
+    }
+    out.set(d.id, sectors);
+  }
+  return out;
+}
+
 /**
  * Soft sector-level counter: coded segments in the workspace whose code name
  * or document title matches the sector's keyword set. A heuristic signal —
