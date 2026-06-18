@@ -373,6 +373,7 @@ export default async function HomePage() {
     { code: 'M · 24', title: 'Transition Stories 2',   href: '/beta/transition-stories-2', tags: ['Policy gap report', 'Mind the Gap'] },
     { code: 'M · 25', title: 'Policy Coherence 2.0',   href: '/beta/policy-coherence-2',  tags: ['Sentence blocks', 'ML layer'] },
     { code: 'M · 26', title: 'ETS Endgame & CDR Safety Valve', href: '/beta/ets-cdr-price', tags: ['LIMES-EU', 'CDR price valve'] },
+    { code: 'M · 27', title: 'AI Environmental Impact',   href: '/beta/ai-environmental-impact', tags: ['gCO₂e/token', 'Grid demand'] },
   ];
 
   return (
