@@ -427,6 +427,26 @@ function AnchorCard({ h, b }: { h: string; b: string }) {
   );
 }
 
+/* Click-to-open info popover — explains the intuition in plain language. */
+function InfoButton({ title, children }: { title?: string; children: ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-block align-middle">
+      <button type="button" onClick={() => setOpen((o) => !o)} aria-label={title ? `What is: ${title}` : 'More information'}
+        className={`ml-1 inline-flex h-4 w-4 items-center justify-center rounded-full border text-[9px] font-bold leading-none transition-colors ${open ? 'border-primary bg-primary text-white' : 'border-grey-400 text-tertiary hover:border-primary hover:text-primary'}`}>i</button>
+      {open && (
+        <>
+          <span className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
+          <span className="absolute left-1/2 top-5 z-50 block w-64 -translate-x-1/2 rounded-lg border border-grey-200 bg-white p-3 text-left shadow-xl sm:w-72">
+            {title ? <span className="mb-1 block text-[11px] font-bold normal-case tracking-normal text-tertiary-dark">{title}</span> : null}
+            <span className="block text-[11px] font-normal normal-case leading-relaxed tracking-normal text-tertiary">{children}</span>
+          </span>
+        </>
+      )}
+    </span>
+  );
+}
+
 function MethodRow({ tag, color, formula, body, cites }: {
   tag: string; color: string; formula: string; body: string; cites: [string, string][];
 }) {
@@ -583,6 +603,7 @@ export default function EtsWishlistImpactPage() {
             <em> free allowances</em> mostly move rents, not the capped total — so they are modelled small and labelled
             &ldquo;indirect&rdquo;.
           </p>
+          <p className="mt-2 text-[12px] text-tertiary">New to the EU ETS? Tap the small <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full border border-grey-400 text-[8px] font-bold text-tertiary">i</span> buttons anywhere on the page for plain-language explanations of what is going on.</p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="inline-flex items-center rounded-md bg-secondary-light px-3 py-1.5 text-[12px] font-semibold text-white">Accounting model (this page)</span>
             <Link href="/beta/ets-wishlist-impact/market"
@@ -596,8 +617,9 @@ export default function EtsWishlistImpactPage() {
         <section className="mb-6 rounded-xl border border-accent-red/30 bg-surface-blue p-5">
           <div className="grid gap-5 sm:grid-cols-[auto,1fr] sm:items-center">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary">
+              <p className="flex items-center text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary">
                 Net setback to {p.endYear}
+                <InfoButton title="What this number is">The extra greenhouse gas the wishlist would let the EU emit, cumulatively, by {p.endYear} — adding up all ten demands and subtracting the one that helps (revenue earmarking). It is built bottom-up from per-demand volumes. For the version that also lets the carbon price respond, see the market model.</InfoButton>
               </p>
               <p className="mt-1 font-mono text-4xl font-bold tabular-nums text-accent-red sm:text-5xl">
                 {net.net >= 0 ? '+' : '−'}{fmt(Math.abs(net.net))} <span className="text-2xl">Mt CO₂e</span>
@@ -615,15 +637,19 @@ export default function EtsWishlistImpactPage() {
           </div>
           <div className="mt-4 grid gap-3 sm:grid-cols-4">
             {[
-              { k: 'Supply-side (#1–4)', v: net.supply, c: CAT_COLOR.supply, note: 'after overlap haircut' },
-              { k: 'Free allocation (#5–8)', v: net.freeAlloc, c: CAT_COLOR.freealloc, note: 'indirect / leakage' },
-              { k: 'Aviation (#10)', v: net.aviation, c: CAT_COLOR.aviation, note: 'forgone, uncapped' },
-              { k: 'Revenue earmark (#9)', v: net.gain, c: CAT_COLOR.gain, note: 'mitigation gain' },
+              { k: 'Supply-side (#1–4)', v: net.supply, c: CAT_COLOR.supply, note: 'after overlap haircut',
+                info: <>The demands that change the <strong>cap</strong> or add fungible <strong>supply</strong> — slower LRF, weaker MSR, removal &amp; international credits. Under a binding cap, extra allowances are extra emissions, so these bite hardest. This is the largest block, and the LRF dominates it.</> },
+              { k: 'Free allocation (#5–8)', v: net.freeAlloc, c: CAT_COLOR.freealloc, note: 'indirect / leakage',
+                info: <>Free allowances are handed out <em>within</em> the fixed cap, so giving away more does not change the capped total — it mostly transfers money to industry. The only emission effect is indirect (leakage, a weaker transition signal), which is why this block is small and uncertain.</> },
+              { k: 'Aviation (#10)', v: net.aviation, c: CAT_COLOR.aviation, note: 'forgone, uncapped',
+                info: <>Extra-EU flights sit <strong>outside</strong> the ETS cap (only the weak CORSIA scheme applies). Because these emissions are not capped, keeping them out is a genuine, non-offset loss — the abatement a real carbon price would have driven, forgone every year.</> },
+              { k: 'Revenue earmark (#9)', v: net.gain, c: CAT_COLOR.gain, note: 'mitigation gain',
+                info: <>The one demand that <strong>helps</strong>: spending ETS revenue on clean investment buys real abatement, shown as a negative (mitigation) bar. Under a binding ETS cap its benefit mostly lands outside the ETS or enables a tighter future cap.</> },
             ].map((x) => (
               <div key={x.k} className="rounded-lg border border-grey-200 bg-white p-3">
                 <div className="flex items-center gap-2">
                   <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: x.c }} />
-                  <p className="text-[10.5px] font-bold uppercase tracking-[0.08em] text-tertiary">{x.k}</p>
+                  <p className="flex items-center text-[10.5px] font-bold uppercase tracking-[0.08em] text-tertiary">{x.k}<InfoButton title={x.k}>{x.info}</InfoButton></p>
                 </div>
                 <p className="mt-1 font-mono text-xl font-bold tabular-nums text-tertiary-dark">{numFmt(x.v)} <span className="text-[11px] font-normal text-tertiary">Mt</span></p>
                 <p className="text-[10px] text-tertiary">{x.note}</p>
@@ -674,12 +700,16 @@ export default function EtsWishlistImpactPage() {
         {/* combined charts */}
         <section className="mb-8 grid gap-4 lg:grid-cols-2">
           <div className="rounded-lg border border-grey-200 bg-white p-4">
-            <h2 className="mb-1 text-[13px] font-bold text-tertiary-dark">Each demand, ranked by carbon impact</h2>
+            <h2 className="mb-1 flex items-center text-[13px] font-bold text-tertiary-dark">Each demand, ranked by carbon impact
+              <InfoButton title="Reading the bars">Each bar is one demand&apos;s cumulative effect, in Mt CO₂e. Bars to the right add emissions (a setback); the single green bar to the left is the demand that cuts them. Colour shows the channel — red supply demands move the capped total directly, so they are biggest; orange free-allocation demands barely move it.</InfoButton>
+            </h2>
             <p className="mb-2 text-[11px] text-tertiary">Cumulative {START}–{p.endYear}, Mt CO₂e. Red = direct extra supply · orange = indirect free-allocation · purple = forgone (uncapped) aviation · green = mitigation gain.</p>
             <DivergingBars rows={rows} />
           </div>
           <div className="rounded-lg border border-grey-200 bg-white p-4">
-            <h2 className="mb-1 text-[13px] font-bold text-tertiary-dark">The hole deepens over time</h2>
+            <h2 className="mb-1 flex items-center text-[13px] font-bold text-tertiary-dark">The hole deepens over time
+              <InfoButton title="Why it accelerates">Once the LRF is slowed, the cap stays permanently higher and the gap compounds: each extra year of a slower cap adds to the running total, and admitted credits ramp up too. So the curve steepens rather than rising in a straight line — the longer the wishlist is in force, the faster the damage accumulates.</InfoButton>
+            </h2>
             <p className="mb-2 text-[11px] text-tertiary">Cumulative net extra emissions as the slower cap and admitted credits build up year on year.</p>
             <CumulativeLine years={years} totals={totals} />
           </div>
@@ -697,7 +727,9 @@ export default function EtsWishlistImpactPage() {
 
         {/* cross-cutting realism */}
         <section className="mb-8 rounded-lg border border-primary/30 bg-surface-blue p-4">
-          <h2 className="mb-3 text-[13px] font-bold text-primary">Cross-cutting realism knobs</h2>
+          <h2 className="mb-3 flex items-center text-[13px] font-bold text-primary">Cross-cutting realism knobs
+            <InfoButton title="Why these two knobs exist">Real-world frictions that apply to all the supply demands at once. <strong>Bank pass-through</strong>: not every extra allowance is emitted — some is banked or cancelled by the MSR, so &lt;100% converts to emissions. <strong>Overlap haircut</strong>: demands #1–4 all loosen the same market, so naively adding them double-counts; the haircut trims the total to avoid that.</InfoButton>
+          </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <Slider label="Bank pass-through" hint="Share of extra allowances/supply that become real extra emissions rather than being banked or cancelled."
               value={p.bankPassThrough} min={0.5} max={1} step={0.05} std={DEFAULTS.bankPassThrough}
@@ -840,6 +872,9 @@ function DemandCard({ meta, mt, p, set }: {
         </div>
         <div className="text-right">
           <span className={`inline-block rounded-full px-2 py-0.5 text-[9px] font-bold tracking-wide ${tag.c}`}>{tag.t}</span>
+          <InfoButton title={`${tag.t} effect`}>{meta.direct === 'direct'
+            ? <><strong>Direct</strong>: this demand changes the cap or adds tradable supply, so under a binding cap it converts to extra emissions roughly tonne-for-tonne (the robust, well-understood channel).</>
+            : <><strong>Indirect</strong>: this demand does not change the capped total — its emission effect runs through softer channels (leakage, a weaker investment signal). Small and genuinely uncertain, so treat it as a sign-of-the-effect, not a precise figure.</>}</InfoButton>
           <p className={`mt-1 font-mono text-lg font-bold tabular-nums ${mt >= 0 ? 'text-accent-red' : 'text-secondary'}`}>
             {mt >= 0 ? '+' : '−'}{fmt(Math.abs(mt))}<span className="text-[10px] font-normal text-tertiary"> Mt</span>
           </p>

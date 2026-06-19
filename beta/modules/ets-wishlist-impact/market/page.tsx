@@ -237,10 +237,10 @@ function Slider(props: {
   );
 }
 
-function ControlGroup({ title, accent, children }: { title: string; accent?: boolean; children: React.ReactNode }) {
+function ControlGroup({ title, accent, info, children }: { title: string; accent?: boolean; info?: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className={`rounded-lg border p-4 ${accent ? 'border-primary/40 bg-surface-blue' : 'border-grey-200 bg-white'}`}>
-      <h3 className={`mb-3 text-[11px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-primary' : 'text-tertiary'}`}>{title}</h3>
+      <h3 className={`mb-3 flex items-center text-[11px] font-bold uppercase tracking-[0.1em] ${accent ? 'text-primary' : 'text-tertiary'}`}>{title}{info ? <InfoButton title={title}>{info}</InfoButton> : null}</h3>
       <div className="space-y-3.5">{children}</div>
     </div>
   );
@@ -289,13 +289,33 @@ function Legend({ series }: { series: Series[] }) {
   );
 }
 
-function Stat({ h, v, sub, accent }: { h: string; v: string; sub: string; accent?: string }) {
+function Stat({ h, v, sub, accent, info }: { h: string; v: string; sub: string; accent?: string; info?: React.ReactNode }) {
   return (
     <div className="rounded-lg border border-grey-200 bg-white p-3">
-      <p className="text-[10px] font-bold uppercase tracking-[0.08em] text-tertiary">{h}</p>
+      <p className="flex items-center text-[10px] font-bold uppercase tracking-[0.08em] text-tertiary">{h}{info ? <InfoButton title={h}>{info}</InfoButton> : null}</p>
       <p className="mt-0.5 font-mono text-lg font-bold tabular-nums" style={{ color: accent ?? '#2E3E4C' }}>{v}</p>
       <p className="text-[10px] leading-snug text-tertiary">{sub}</p>
     </div>
+  );
+}
+
+/* Click-to-open info popover — explains the intuition in plain language. */
+function InfoButton({ title, children }: { title?: string; children: React.ReactNode }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <span className="relative inline-block align-middle">
+      <button type="button" onClick={() => setOpen((o) => !o)} aria-label={title ? `What is: ${title}` : 'More information'}
+        className={`ml-1 inline-flex h-4 w-4 items-center justify-center rounded-full border text-[9px] font-bold leading-none transition-colors ${open ? 'border-primary bg-primary text-white' : 'border-grey-400 text-tertiary hover:border-primary hover:text-primary'}`}>i</button>
+      {open && (
+        <>
+          <span className="fixed inset-0 z-40" onClick={() => setOpen(false)} aria-hidden />
+          <span className="absolute left-1/2 top-5 z-50 block w-64 -translate-x-1/2 rounded-lg border border-grey-200 bg-white p-3 text-left shadow-xl sm:w-72">
+            {title ? <span className="mb-1 block text-[11px] font-bold normal-case tracking-normal text-tertiary-dark">{title}</span> : null}
+            <span className="block text-[11px] font-normal normal-case leading-relaxed tracking-normal text-tertiary">{children}</span>
+          </span>
+        </>
+      )}
+    </span>
   );
 }
 
@@ -352,6 +372,7 @@ export default function EtsWishlistMarketPage() {
             lowers the <em>carbon price</em>, so abatement weakens across the whole economy, not just where the extra
             allowances land.
           </p>
+          <p className="mt-2 text-[12px] text-tertiary">New to carbon markets? Tap the small <span className="inline-flex h-3.5 w-3.5 items-center justify-center rounded-full border border-grey-400 text-[8px] font-bold text-tertiary">i</span> buttons for plain-language explanations — why the price falls, what the bank is, and more.</p>
           <div className="mt-4 flex flex-wrap gap-2">
             <Link href="/beta/ets-wishlist-impact" className="inline-flex items-center rounded-md border border-secondary-light px-3 py-1.5 text-[12px] font-semibold text-secondary hover:bg-surface-teal">← Accounting model (per-demand volumes)</Link>
             <span className="inline-flex items-center rounded-md bg-secondary-light px-3 py-1.5 text-[12px] font-semibold text-white">Market model (this page)</span>
@@ -362,15 +383,21 @@ export default function EtsWishlistMarketPage() {
         <section className="mb-6 rounded-xl border border-accent-red/30 bg-surface-blue p-5">
           <div className="grid gap-5 sm:grid-cols-[auto,1fr] sm:items-center">
             <div>
-              <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary">Extra cumulative emissions to {horizon}</p>
+              <p className="flex items-center text-[11px] font-bold uppercase tracking-[0.1em] text-tertiary">Extra cumulative emissions to {horizon}
+                <InfoButton title="What this number is">The total extra tonnes the EU emits by {horizon} if the wishlist passes, versus the legislated rules — found by solving the market twice (with and without the wishlist) and subtracting. &ldquo;Cumulative&rdquo; matters for climate: it is the total added to the atmosphere, not a single year. Use the buttons below to change the cut-off year and the assumptions.</InfoButton>
+              </p>
               <p className="mt-1 font-mono text-4xl font-bold tabular-nums text-accent-red sm:text-5xl">+{fmt(setback)} <span className="text-2xl">Mt CO₂e</span></p>
               <p className="mt-1 text-[12px] text-tertiary">wishlist minus baseline, solved endogenously{base.spike || wish.spike ? ' · price hit the ceiling (endgame)' : ''}</p>
             </div>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
-              <Stat h="Carbon-price drop, 2040" accent="#B83230" v={`−€${fmt(priceDrop2040)}`} sub={`€${fmt(priceAt(base, 2040))} → €${fmt(priceAt(wish, 2040))}/t`} />
-              <Stat h="Bank depletes (base → wish)" v={`${base.bankDepletes ?? '>2050'} → ${wish.bankDepletes ?? '>2050'}`} sub="a longer-lived bank is extra emissions" />
-              <Stat h="≈ Years of EU progress" v={`${fmt(yearsLost, 1)} yr`} sub={`≈ ${fmt(budgetPct, 1)}% of the 2030–50 budget`} />
-              <Stat h="Of which (to 2050)" v={`${fmt(decomp.total)} Mt`} sub={`LRF ${fmt(decomp.dCap)} · credits ${fmt(decomp.dOff)} · MSR ${fmt(decomp.dMSR)}`} />
+              <Stat h="Carbon-price drop, 2040" accent="#B83230" v={`−€${fmt(priceDrop2040)}`} sub={`€${fmt(priceAt(base, 2040))} → €${fmt(priceAt(wish, 2040))}/t`}
+                info={<>The allowance price is a <strong>scarcity rent</strong>: it is whatever it takes to make firms abate down to the cap. The wishlist hands out more allowances (slower LRF, weaker MSR, admitted credits), so scarcity falls — firms no longer need to abate as much, and they bid less for each allowance. Less scarce → cheaper. In the extreme this re-creates the 2013–2017 ETS glut, when the price sat at €3–8.</>} />
+              <Stat h="Bank depletes (base → wish)" v={`${base.bankDepletes ?? '>2050'} → ${wish.bankDepletes ?? '>2050'}`} sub="a longer-lived bank is extra emissions"
+                info={<>The &ldquo;bank&rdquo; is the pile of unused allowances firms hold (the TNAC, ~1.1 Gt today). Firms emit them eventually. Extra supply makes the pile bigger and last longer, so it keeps being drawn down — i.e. emitted — for more years. A bank that empties later means more cumulative emissions before the system bites.</>} />
+              <Stat h="≈ Years of EU progress" v={`${fmt(yearsLost, 1)} yr`} sub={`≈ ${fmt(budgetPct, 1)}% of the 2030–50 budget`}
+                info={<>The extra emissions divided by the EU&apos;s recent average annual net cut (~130 Mt/yr, EEA). It answers &ldquo;how many years of hard-won progress does this wipe out?&rdquo; The % compares it to the ESABCC-advised 2030–2050 carbon budget (11–14 Gt; 12.5 Gt midpoint).</>} />
+              <Stat h="Of which (to 2050)" v={`${fmt(decomp.total)} Mt`} sub={`LRF ${fmt(decomp.dCap)} · credits ${fmt(decomp.dOff)} · MSR ${fmt(decomp.dMSR)}`}
+                info={<>Over the full horizon the extra emissions must equal the extra <strong>effective allowance supply</strong> (the banking identity — nothing else can be emitted). So the setback splits cleanly into three sources: allowances kept in the cap by the slower <strong>LRF</strong>, admitted removal + international <strong>credits</strong>, and surplus the weaker <strong>MSR</strong> no longer cancels.</>} />
             </div>
           </div>
           <p className="mt-3 text-[11px] leading-relaxed text-tertiary">
@@ -406,19 +433,25 @@ export default function EtsWishlistMarketPage() {
         {/* charts */}
         <section className="mb-8 grid gap-4 lg:grid-cols-2">
           <div className="rounded-lg border border-grey-200 bg-white p-4">
-            <h2 className="text-[13px] font-bold text-tertiary-dark">Allowance price path</h2>
+            <h2 className="flex items-center text-[13px] font-bold text-tertiary-dark">Allowance price path
+              <InfoButton title="Why the two lines diverge">The blue line rises smoothly because, while firms still hold a bank, no-arbitrage forces the price up at the discount rate (Hotelling&apos;s rule — holding an allowance must pay as well as selling it and banking the cash). The red wishlist line sits far below it: the extra supply means less scarcity, so the whole price path resets downward. A lower price is a weaker reason to abate — everywhere in the system, not just where the extra allowances were handed out.</InfoButton>
+            </h2>
             <p className="mb-1 text-[11px] text-tertiary">The wishlist loosens supply, so the equilibrium price falls — a weaker abatement incentive everywhere.</p>
             <LineChart years={YEARS} series={priceSeries} yLabel="€ / tCO₂e" />
             <Legend series={priceSeries} />
           </div>
           <div className="rounded-lg border border-grey-200 bg-white p-4">
-            <h2 className="text-[13px] font-bold text-tertiary-dark">Covered emissions vs the cap</h2>
+            <h2 className="flex items-center text-[13px] font-bold text-tertiary-dark">Covered emissions vs the cap
+              <InfoButton title="Why wishlist emissions are higher — and front-loaded">Two things push the red emissions line up. (1) The wishlist cap (orange) falls more slowly and stays well above the baseline cap, which nears zero by ~2040 — more allowances, more emissions. (2) Because the carbon price is lower, firms abate less <em>now</em> and lean on the bank, so emissions are pulled <strong>forward</strong> into earlier years. That front-loading is why the early-year gap looks even bigger than the pure supply difference.</InfoButton>
+            </h2>
             <p className="mb-1 text-[11px] text-tertiary">The wishlist cap (orange) stays well above the baseline cap (which nears zero by ~2040); emissions follow.</p>
             <LineChart years={YEARS} series={emSeries} yLabel="Mt CO₂e / yr" />
             <Legend series={emSeries} />
           </div>
           <div className="rounded-lg border border-grey-200 bg-white p-4 lg:col-span-2">
-            <h2 className="text-[13px] font-bold text-tertiary-dark">The bank (allowances in circulation, TNAC)</h2>
+            <h2 className="flex items-center text-[13px] font-bold text-tertiary-dark">The bank (allowances in circulation, TNAC)
+              <InfoButton title="What the bank is, and why it matters">Allowances don&apos;t expire — unused ones are &ldquo;banked&rdquo; and emitted later. The bank (officially the Total Number of Allowances in Circulation) is ~1.1 Gt today. Cumulative emissions = starting bank + everything issued − whatever is left in the bank at the end. So a bank that stays high and empties <em>later</em> literally is more cumulative emissions. The MSR exists to shrink this pile; weakening it leaves more in circulation.</InfoButton>
+            </h2>
             <p className="mb-1 text-[11px] text-tertiary">
               A slower LRF and admitted credits keep the bank alive longer
               ({wish.bankDepletes ? `wishlist bank ≈ 0 by ${wish.bankDepletes}` : 'wishlist bank still positive at 2050'};
@@ -431,7 +464,7 @@ export default function EtsWishlistMarketPage() {
 
         {/* controls */}
         <section className="mb-8 grid gap-4 lg:grid-cols-3">
-          <ControlGroup title="Wishlist levers" accent>
+          <ControlGroup title="Wishlist levers" accent info={<>The three EPP demands that actually move the carbon market: a slower cap (LRF), admitted offset/international credits, and a weaker MSR. These add fungible supply, which is what changes the price and the cumulative emissions. (The other demands — free allocation, aviation — are handled on the accounting page, because they barely move the capped total.)</>}>
             <Slider label="LRF slowdown 2031–2035" unit="pp" value={p.lrfDelta3135} min={0} max={2} step={0.1} std={DEFAULTS.lrfDelta3135} onChange={(v) => set('lrfDelta3135', v)} hint="≈19.5 Mt/yr of cap per pp." />
             <Slider label="LRF slowdown after 2035" unit="pp/yr" value={p.lrfDeltaPost35} min={0} max={1} step={0.05} std={DEFAULTS.lrfDeltaPost35} onChange={(v) => set('lrfDeltaPost35', v)} hint="Extra slowdown accumulating each year." />
             <Slider label="Admitted credits by 2040" unit="Mt/yr" value={p.offsetMax} min={0} max={250} step={10} std={DEFAULTS.offsetMax} onChange={(v) => set('offsetMax', v)} hint="CDR + international credits added as supply." />
@@ -443,7 +476,7 @@ export default function EtsWishlistMarketPage() {
             <Slider label="Starting bank (TNAC)" unit="Mt" value={p.bank0} min={600} max={1600} step={50} std={DEFAULTS.bank0} onChange={(v) => set('bank0', v)} />
             <Slider label="Baseline MSR cancellation" value={p.msrCancelBase} min={0} max={0.8} step={0.05} std={DEFAULTS.msrCancelBase} display={(v) => `${fmt(v * 100)}%`} onChange={(v) => set('msrCancelBase', v)} hint="Share of the starting surplus the current MSR cancels." />
           </ControlGroup>
-          <ControlGroup title="Abatement economics">
+          <ControlGroup title="Abatement economics" info={<>The marginal abatement cost (MAC) curve says how expensive it is to cut the next tonne. It is convex — cheap measures first, then ever-dearer ones. Firms cut emissions until that cost equals the carbon price. A steeper curve (dearer abatement) means a higher price and that extra allowances get emitted rather than abated away; a flatter curve lets a small price do a lot of work.</>}>
             <Slider label="Counterfactual emissions 2025" unit="Mt" value={p.bau2025} min={1100} max={1500} step={10} std={DEFAULTS.bau2025} onChange={(v) => set('bau2025', v)} />
             <Slider label="MAC curve steepness" unit="€/t" value={p.pscale} min={80} max={400} step={10} std={DEFAULTS.pscale} onChange={(v) => set('pscale', v)} hint="Higher = abatement is dearer → higher price, fuller pass-through." />
             <Slider label="Max abatable share" value={p.phiMax} min={0.6} max={0.95} step={0.01} std={DEFAULTS.phiMax} display={(v) => `${fmt(v * 100)}%`} onChange={(v) => set('phiMax', v)} />
