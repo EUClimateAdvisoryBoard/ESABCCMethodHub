@@ -375,7 +375,7 @@ export default async function HomePage() {
     { code: 'M · 26', title: 'ETS Endgame & CDR Safety Valve', href: '/beta/ets-cdr-price', tags: ['LIMES-EU', 'CDR price valve'] },
     { code: 'M · 27', title: 'AI Environmental Impact',   href: '/beta/ai-environmental-impact', tags: ['gCO₂e/token', 'Grid demand'] },
     { code: 'M · 28', title: 'Policy Analysis Cookbook', href: '/beta/policy-analysis-cookbook', tags: ['3-phase method', 'Coherence codebook'] },
-    { code: 'M · 29', title: 'ETS Wishlist — GHG Impact', href: '/beta/ets-wishlist-impact', tags: ['EPP demands', 'Mt CO₂e setback'] },
+    { code: 'M · 29', title: 'ETS Wishlist — GHG Impact', href: '/beta/ets-wishlist-impact', tags: ['EPP demands', 'Accounting + market model'] },
   ];
 
   return (

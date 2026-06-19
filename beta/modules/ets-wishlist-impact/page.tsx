@@ -110,18 +110,18 @@ const DEFAULTS: Params = {
   bankPassThrough: 0.9,
   interaction: 0.9,
 
-  lrfRef: 1570,
+  lrfRef: 1954,
   lrfDelta3135: 1.0,
   lrfDeltaPost35: 0.5,
 
-  msrAffectedMt: 600,
+  msrAffectedMt: 500,
   msrReleaseShare: 0.3,
 
   cdrAdmittedMt: 250,
   cdrIntegrityGap: 0.25,
 
   intlCreditsMt: 400,
-  intlNonAdditional: 0.7,
+  intlNonAdditional: 0.73,
 
   cbamFreeExtraMt: 300,
   freeBeyond2030Mt: 200,
@@ -133,7 +133,7 @@ const DEFAULTS: Params = {
   abatementCost: 250,
   investAdditionality: 0.5,
 
-  extraEuAviationMt: 90,
+  extraEuAviationMt: 107,
   aviationAbatementRate: 0.12,
 };
 
@@ -230,7 +230,7 @@ const SCENARIOS: Scenario[] = [
       cbamFreeExtraMt: 200, freeBeyond2030Mt: 120, benchmarkLooseningMt: 80,
       freeAllocDeterrence: 0.1, demand8Mt: 0,
       cleanInvestBn: 45, investAdditionality: 0.6,
-      extraEuAviationMt: 80, aviationAbatementRate: 0.08,
+      extraEuAviationMt: 95, aviationAbatementRate: 0.08,
       bankPassThrough: 0.8, interaction: 0.85,
     },
   },
@@ -254,7 +254,7 @@ const SCENARIOS: Scenario[] = [
       cbamFreeExtraMt: 450, freeBeyond2030Mt: 320, benchmarkLooseningMt: 250,
       freeAllocDeterrence: 0.35, demand8Mt: 40,
       cleanInvestBn: 15, investAdditionality: 0.4,
-      extraEuAviationMt: 110, aviationAbatementRate: 0.16,
+      extraEuAviationMt: 120, aviationAbatementRate: 0.16,
       bankPassThrough: 1.0, interaction: 0.95,
     },
   },
@@ -283,7 +283,7 @@ const DEMANDS: DemandMeta[] = [
     instrument: 'EU ETS Directive — Art. 9 (LRF), as revised by Directive (EU) 2023/959',
     url: 'https://eur-lex.europa.eu/eli/dir/2023/959/oj',
     mechanism:
-      'The LRF sets how fast the cap falls each year (4.3% → 4.4% of a fixed base under current law). Slowing it leaves more allowances in the cap every year; under a banked cap those extra allowances are extra cumulative emissions. This is the single biggest lever.',
+      'The LRF removes a fixed absolute amount from the cap each year: 4.3% (2024–27) then 4.4% (2028+) of the 2008–2012 average cap (~1.95 Gt) — i.e. ≈84 Mt/yr then ≈86 Mt/yr (UBA/DEHSt). So 1 pp of LRF ≈ 19.5 Mt/yr of foregone reduction, and the shortfall compounds: each year of a slower LRF leaves the cap permanently higher. Under a banked cap that extra headroom is extra cumulative emissions — the single biggest lever.',
     category: 'supply', direct: 'direct',
   },
   {
@@ -292,7 +292,7 @@ const DEMANDS: DemandMeta[] = [
     instrument: 'Market Stability Reserve — Decision (EU) 2015/1814 (amended by 2023/959)',
     url: 'https://eur-lex.europa.eu/eli/dec/2015/1814/oj',
     mechanism:
-      'The MSR withdraws surplus allowances and invalidates those above a threshold. A reform that releases reserves to damp price spikes re-injects (and stops cancelling) allowances — raising the cumulative supply that can be emitted.',
+      'The MSR withdraws 24% of the surplus (TNAC) each year and, since 2024, permanently invalidates holdings above 400 Mt (381.7 Mt were cancelled in Jan 2024). A reform that releases reserves to damp price spikes re-injects, and stops cancelling, allowances — raising the cumulative supply that can be emitted. The most uncertain lever, because the reform is undefined.',
     category: 'supply', direct: 'direct',
   },
   {
@@ -310,7 +310,7 @@ const DEMANDS: DemandMeta[] = [
     instrument: 'Paris Agreement Art. 6 (international credits); the EU ETS has excluded them since Phase 4',
     url: 'https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism',
     mechanism:
-      'Admitting international offsets adds supply to the EU market. Empirical work on the Kyoto-era CDM found a large majority of credits were unlikely to be additional (Cames et al., 2016). The non-additional share displaces real domestic abatement.',
+      'Admitting international offsets adds supply to the EU market. The DG CLIMA study by Cames et al. (2016) found 85% of CDM projects — 73% of the 2013–2020 CER supply — had a low likelihood of being additional and not over-credited. That non-additional share displaces real domestic abatement, tonne for tonne.',
     category: 'supply', direct: 'direct',
   },
   {
@@ -364,7 +364,7 @@ const DEMANDS: DemandMeta[] = [
     instrument: 'Aviation ETS — Directive (EU) 2023/958; extra-EU flights under ICAO CORSIA',
     url: 'https://eur-lex.europa.eu/eli/dir/2023/958/oj',
     mechanism:
-      'Extra-EU departing flights sit outside the ETS cap (covered only by the weaker CORSIA offsetting scheme). Keeping them out forgoes the abatement a full carbon price / SAF pull would have driven — a genuine, uncapped loss.',
+      'The ETS covers ~74 Mt of intra-EEA aviation; extending it to all departing flights would add ~107 Mt/yr (T&E, 2025) currently left to the far weaker CORSIA scheme (a 2022 CORSIA credit averaged €3.2/t vs €80/t in the ETS). Keeping extra-EU flights out forgoes the abatement a full carbon price / SAF pull would have driven — a genuine, uncapped loss.',
     category: 'aviation', direct: 'direct',
   },
 ];
@@ -381,10 +381,10 @@ const CAT_COLOR: Record<Category, string> = {
 /* ====================================================================== anchors */
 
 // ESABCC advised an EU GHG budget of 11–14 GtCO2e for 2030–2050 and a 2040
-// target of 90–95% net cut vs 1990. We use the midpoint as a reference scale.
+// target of 90–95% net cut vs 1990 (ESABCC, 2023). Midpoint used as scale.
 const BUDGET_2030_2050_MT = 12500; // Mt CO2e (12.5 Gt midpoint of 11–14 Gt)
-const EU_ANNUAL_CUT_MT = 110; // Mt/yr — recent EEA average annual net reduction
-const EU_NET_2023_MT = 3210; // Mt CO2e — EU-27 net emissions, 2023 (EEA)
+const EU_ANNUAL_CUT_MT = 130; // Mt/yr — recent EEA average annual net reduction (2018–2023); the pace needed to reach −90% by 2040 is ~165 Mt/yr
+const EU_NET_2023_MT = 3200; // Mt CO2e — EU-27 net GHG emissions, 2023 (EEA; −8.3% YoY)
 
 /* ====================================================================== UI bits */
 
@@ -423,6 +423,25 @@ function AnchorCard({ h, b }: { h: string; b: string }) {
     <div className="rounded-lg border border-grey-200 bg-white p-3">
       <p className="text-[10px] font-bold uppercase tracking-[0.1em] text-primary">{h}</p>
       <p className="mt-1 text-[12px] leading-relaxed text-tertiary">{b}</p>
+    </div>
+  );
+}
+
+function MethodRow({ tag, color, formula, body, cites }: {
+  tag: string; color: string; formula: string; body: string; cites: [string, string][];
+}) {
+  return (
+    <div className="rounded-lg border border-grey-200 bg-white p-4">
+      <div className="flex flex-wrap items-center gap-2">
+        <span className="inline-block rounded-full px-2 py-0.5 text-[10px] font-bold text-white" style={{ background: color }}>{tag}</span>
+        <code className="rounded bg-grey-100 px-2 py-0.5 font-mono text-[11px] text-tertiary-dark">{formula}</code>
+      </div>
+      <p className="mt-2 text-[11.5px] leading-relaxed text-tertiary">{body}</p>
+      <p className="mt-2 flex flex-wrap gap-x-3 gap-y-1 text-[10.5px]">
+        {cites.map(([label, url]) => (
+          <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{label} ↗</a>
+        ))}
+      </p>
     </div>
   );
 }
@@ -564,6 +583,13 @@ export default function EtsWishlistImpactPage() {
             <em> free allowances</em> mostly move rents, not the capped total — so they are modelled small and labelled
             &ldquo;indirect&rdquo;.
           </p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            <span className="inline-flex items-center rounded-md bg-secondary-light px-3 py-1.5 text-[12px] font-semibold text-white">Accounting model (this page)</span>
+            <Link href="/beta/ets-wishlist-impact/market"
+              className="inline-flex items-center rounded-md border border-secondary-light px-3 py-1.5 text-[12px] font-semibold text-secondary hover:bg-surface-teal">
+              Market model — solve the carbon price &amp; banking →
+            </Link>
+          </div>
         </section>
 
         {/* headline */}
@@ -682,6 +708,67 @@ export default function EtsWishlistImpactPage() {
           </div>
         </section>
 
+        {/* scientific methodology */}
+        <section className="mb-8">
+          <h2 className="mb-1 text-[15px] font-bold text-tertiary-dark">How each number is derived — the scientific basis</h2>
+          <p className="mb-4 max-w-3xl text-[12px] text-tertiary">
+            This page is an explicit, auditable accounting model. Below, every lever is tied to the equation it uses, the
+            calibrated value, and the primary source. The governing theory is the <strong>binding-cap (waterbed)</strong>
+            {' '}result: under a fixed, fully banked cap, cumulative emissions equal cumulative allowance supply minus the
+            bank left at the end (Ellerman &amp; Montero on banking; Perino 2018 on how the post-2023 MSR cancellation
+            <em> punctures</em> that waterbed). That is why cap- and supply-changing demands bite, and pure
+            free-allocation reshuffles do not.
+          </p>
+          <div className="space-y-3">
+            <MethodRow
+              tag="#1 · LRF" color={CAT_COLOR.supply}
+              formula="extra cap(t) = Σ (Δpp/100) × base ; base = 2008–2012 avg cap"
+              body="The linear reduction removes a fixed absolute volume each year — 4.3% (2024–27) and 4.4% (2028+) of the 2008–2012 average cap (~1.95 Gt), i.e. ≈84 then ≈86 Mt/yr. A Δpp slowdown foregoes Δpp×base/100 ≈ 19.5 Mt per pp, and because the cap never recovers, the gap compounds year on year. Summed over the horizon and multiplied by the bank pass-through."
+              cites={[['Dir. (EU) 2023/959 Art. 9', 'https://eur-lex.europa.eu/eli/dir/2023/959/oj'], ['UBA/DEHSt', 'https://www.dehst.de/EN/Topics/EU-ETS-1/EU-ETS-1-Information/Reform-Prospects/Climate-Protection-Ambition/climate-protection-ambition_node.html']]} />
+            <MethodRow
+              tag="#2 · MSR" color={CAT_COLOR.supply}
+              formula="setback = affected volume × release share × pass-through"
+              body="The MSR withdraws 24% of the TNAC (thresholds 833 / 1,096 Mt) and permanently invalidates holdings above 400 Mt — 381.7 Mt were cancelled in January 2024. A reform that re-releases reserves to damp prices both re-injects allowances and stops future cancellation. We model the cumulative volume that the current MSR would otherwise lock away/cancel and the share a weaker MSR lets back. Deliberately wide, because the proposed reform is undefined."
+              cites={[['Decision (EU) 2015/1814', 'https://eur-lex.europa.eu/eli/dec/2015/1814/oj'], ['EC MSR / TNAC', 'https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets/market-stability-reserve_en']]} />
+            <MethodRow
+              tag="#3 · CDR offsets" color={CAT_COLOR.supply}
+              formula="setback = admitted removals × integrity gap"
+              body="If a removal credit can be surrendered against an emission, each non-permanent, reversed or non-additional tonne is a net addition. With perfect, permanent removals (gap = 0) the term vanishes — this is a risk premium on integrity, not an objection to removals. The CRCF sets the certification rules the integrity gap is judged against."
+              cites={[['Reg. (EU) 2024/3012 (CRCF)', 'https://eur-lex.europa.eu/eli/reg/2024/3012/oj']]} />
+            <MethodRow
+              tag="#4 · Int'l credits" color={CAT_COLOR.supply}
+              formula="setback = admitted credits × non-additional share (0.73)"
+              body="Admitting international offsets adds fungible supply. The default non-additional share is the CER-supply-weighted finding of the DG CLIMA study: 73% of 2013–2020 CDM credit supply (85% of projects) had a low likelihood of being additional and not over-credited."
+              cites={[['Cames et al. 2016 (DG CLIMA)', 'https://www.oeko.de/en/publications/how-additional-is-the-clean-development-mechanism'], ['Paris Art. 6', 'https://unfccc.int/process-and-meetings/the-paris-agreement/article-64-mechanism']]} />
+            <MethodRow
+              tag="#5–8 · Free allocation" color={CAT_COLOR.freealloc}
+              formula="setback = extra free allowances × forgone-abatement share (indirect)"
+              body="Free allocation is distributed within the fixed cap, so it does not change the capped total (≈0 direct effect). Benchmark-based allocation also preserves the marginal price signal. The residual modelled effect is the indirect channel — leakage exposure and a weaker investment/transition signal — captured by a small forgone-abatement share. Genuinely uncertain and deliberately small."
+              cites={[['ETS Dir. Art. 10a', 'https://eur-lex.europa.eu/eli/dir/2003/87/oj'], ['CBAM Reg. (EU) 2023/956', 'https://eur-lex.europa.eu/eli/reg/2023/956/oj'], ['Impl. Reg. 2021/447', 'https://eur-lex.europa.eu/eli/reg_impl/2021/447/oj']]} />
+            <MethodRow
+              tag="#9 · Revenue earmark" color={CAT_COLOR.gain}
+              formula="gain = −(€bn × 1000 / (€/t)) × additionality"
+              body="Hypothecating revenue to additional clean investment buys abatement at an assumed lifecycle cost (€/t), discounted by the share that is genuinely additional (not business-as-usual). Shown as a negative (mitigation) bar. Under a binding ETS cap the benefit largely accrues outside the ETS or by enabling a tighter future cap — flagged accordingly."
+              cites={[['ETS Dir. Art. 10(3)', 'https://eur-lex.europa.eu/eli/dir/2003/87/oj'], ['Reg. (EU) 2023/955 (SCF)', 'https://eur-lex.europa.eu/eli/reg/2023/955/oj']]} />
+            <MethodRow
+              tag="#10 · Aviation" color={CAT_COLOR.aviation}
+              formula="forgone = Σ extra-EU Mt/yr × abatement rate (2027→horizon)"
+              body="Extra-EU departing flights (~107 Mt/yr, T&E 2025) sit outside the ETS cap, under the far weaker CORSIA (a 2022 CORSIA credit ≈ €3.2/t vs €80/t in the ETS). Because these emissions are uncapped, the abatement a full carbon price / SAF pull would have driven is a real, non-offset loss each year it is forgone."
+              cites={[['Dir. (EU) 2023/958', 'https://eur-lex.europa.eu/eli/dir/2023/958/oj'], ['T&E 2025', 'https://www.transportenvironment.org/articles/flying-blind-european-aviation-hits-new-emissions-high']]} />
+          </div>
+          <div className="mt-4 rounded-lg border border-primary/30 bg-surface-blue p-4">
+            <p className="text-[12px] font-bold text-primary">Combining the levers</p>
+            <p className="mt-1 text-[11.5px] leading-relaxed text-tertiary">
+              The headline is <span className="font-mono">net = interaction × (d1+d2+d3+d4) + (d5+…+d8) + d10 + d9</span>. The
+              overlap haircut on the additive supply-side demands avoids double-counting: more supply from one lever is
+              partly absorbed where another also loosens, and the shared bank smooths them. This linear accounting is a
+              first-order approximation — for the price-endogenous version, where the carbon price, banking and the MSR
+              are solved jointly, use the{' '}
+              <Link href="/beta/ets-wishlist-impact/market" className="font-semibold text-primary hover:underline">market model →</Link>.
+            </p>
+          </div>
+        </section>
+
         {/* method & limits */}
         <section className="mb-8 grid gap-4 lg:grid-cols-2">
           <div className="rounded-lg border border-grey-200 bg-grey-50 p-4">
@@ -707,9 +794,14 @@ export default function EtsWishlistImpactPage() {
                 ['Directive (EU) 2023/958 — Aviation ETS', 'https://eur-lex.europa.eu/eli/dir/2023/958/oj'],
                 ['Regulation (EU) 2023/955 — Social Climate Fund / revenue use', 'https://eur-lex.europa.eu/eli/reg/2023/955/oj'],
                 ['Impl. Reg. (EU) 2021/447 — benchmark values', 'https://eur-lex.europa.eu/eli/reg_impl/2021/447/oj'],
-                ['Cames et al. (2016) — How additional is the CDM?', 'https://climate.ec.europa.eu/document/download/0a91a127-c4f8-4e1c-8b25-1c1c52c9c92a_en'],
-                ['ESABCC — 2040 target & EU GHG budget advice', 'https://climate-advisory-board.europa.eu/reports-and-publications/scientific-advice-for-the-determination-of-an-eu-wide-2040'],
-                ['EEA — EU ETS data viewer & GHG inventory', 'https://www.eea.europa.eu/en/analysis/maps-and-charts/emissions-trading-viewer-1-dashboards'],
+                ['ICAP — EU ETS factsheet (cap & parameters)', 'https://icapcarbonaction.com/en/ets/eu-emissions-trading-system-eu-ets'],
+                ['UBA/DEHSt — climate-protection ambition (84/86 Mt LRF)', 'https://www.dehst.de/EN/Topics/EU-ETS-1/EU-ETS-1-Information/Reform-Prospects/Climate-Protection-Ambition/climate-protection-ambition_node.html'],
+                ['European Commission — MSR & 2024 TNAC publication', 'https://climate.ec.europa.eu/eu-action/carbon-markets/eu-emissions-trading-system-eu-ets/market-stability-reserve_en'],
+                ['Cames et al. (2016) — How additional is the CDM? (DG CLIMA)', 'https://www.oeko.de/en/publications/how-additional-is-the-clean-development-mechanism'],
+                ['Perino (2018) — New Phase-4 rules temporarily puncture the waterbed (Nat. Clim. Change)', 'https://www.nature.com/articles/s41558-018-0120-2'],
+                ['T&E (2025) — Flying blind: European aviation emissions (107 Mt uncovered)', 'https://www.transportenvironment.org/articles/flying-blind-european-aviation-hits-new-emissions-high'],
+                ['ESABCC — 2040 target & EU GHG budget advice (11–14 Gt)', 'https://climate-advisory-board.europa.eu/reports-and-publications/scientific-advice-for-the-determination-of-an-eu-wide-2040'],
+                ['EEA — EU ETS data viewer & GHG inventory (3.2 Gt, 2023)', 'https://www.eea.europa.eu/en/analysis/maps-and-charts/emissions-trading-viewer-1-dashboards'],
               ].map(([label, url]) => (
                 <li key={url}>
                   <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{label} ↗</a>
@@ -779,8 +871,8 @@ function DemandSliders({ id, p, set }: {
             std={DEFAULTS.lrfDelta3135} hint="The demand says ≥1 pp." onChange={(v) => set('lrfDelta3135', v)} />
           <Slider label="LRF slowdown after 2035" unit="pp" value={p.lrfDeltaPost35} min={0} max={1.5} step={0.05}
             std={DEFAULTS.lrfDeltaPost35} hint="The 'more moderate decline'." onChange={(v) => set('lrfDeltaPost35', v)} />
-          <Slider label="Linear reduction base" unit="Mt" value={p.lrfRef} min={1200} max={1800} step={10}
-            std={DEFAULTS.lrfRef} hint="Quantity the LRF % is applied to (≈ the 2024 cap base)." onChange={(v) => set('lrfRef', v)} />
+          <Slider label="Linear reduction base" unit="Mt" value={p.lrfRef} min={1700} max={2100} step={10}
+            std={DEFAULTS.lrfRef} hint="The 2008–2012 average cap the LRF % is applied to (≈1.95 Gt → ≈86 Mt/yr at 4.4%; 1 pp ≈ 19.5 Mt/yr)." onChange={(v) => set('lrfRef', v)} />
         </>
       );
     case 'd2':
@@ -806,8 +898,8 @@ function DemandSliders({ id, p, set }: {
         <>
           <Slider label="International credits admitted (cumulative)" unit="Mt" value={p.intlCreditsMt} min={0} max={1200} step={50}
             std={DEFAULTS.intlCreditsMt} onChange={(v) => set('intlCreditsMt', v)} />
-          <Slider label="Non-additional / low-quality share" value={p.intlNonAdditional} min={0} max={0.95} step={0.05}
-            std={DEFAULTS.intlNonAdditional} display={pct} hint="CDM evidence (Cames 2016): ~85% unlikely additional." onChange={(v) => set('intlNonAdditional', v)} />
+          <Slider label="Non-additional / low-quality share" value={p.intlNonAdditional} min={0} max={0.95} step={0.01}
+            std={DEFAULTS.intlNonAdditional} display={pct} hint="Cames et al. (2016): 73% of CDM CER supply unlikely additional." onChange={(v) => set('intlNonAdditional', v)} />
         </>
       );
     case 'd5':
