@@ -1,6 +1,6 @@
 {
   "date": "2026-06-21",
-  "generatedAt": "2026-06-21T08:58:43.974Z",
+  "generatedAt": "2026-06-21T13:07:24.134Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 21 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "The tiny highway helping the capital's hedgehogs",
-      "summary": "A hedgehog highway is a network of small holes and gaps that allows hedgehogs to move freely.",
+      "headline": "More trees and nature spaces in council green plan",
+      "summary": "Bradford Council set out plans to increase tree canopy cover and create more nature reserves.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -40,14 +40,6 @@
           "description": "Annual street parties attended by millions ordered to help “preserve” healthcare services in 40C (104F) heat.",
           "published": "2026-06-21T00:29:51.000Z",
           "score": 7
-        },
-        {
-          "title": "From coal to cabernet: the wine seller using a flooded mine to cut heating bills",
-          "link": "https://www.theguardian.com/environment/2026/jun/20/coal-to-cabernet-wine-seller-flooded-mine-cut-heating-bills",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Lanchester Wines in north-east England uses heat from a disused coalmine to maintain wine temperatures and with 23,000 flooded mines in the UK, there’s huge potential for more businesses and homes to follow its lead&lt;/p&gt;&lt;p&gt;Shove them in a fridge, stash them in a cellar – this is how most people store their favourite bottles of wine. But if you have warehouses full of thousands of vintages, you have to think a little differently.&lt;/p&gt;&lt;p&gt;For the last eight winters, L",
-          "published": "2026-06-20T09:00:05.000Z",
-          "score": 2
         }
       ]
     },
@@ -56,19 +48,27 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "More trees and nature spaces in council green plan",
+          "link": "https://www.bbc.com/news/articles/c4gy26l0gemo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Bradford Council set out plans to increase tree canopy cover and create more nature reserves.",
+          "published": "2026-06-21T10:52:44.000Z",
+          "score": 8
+        },
+        {
+          "title": "Record-breaking heat expected across UK this week, says Met Office",
+          "link": "https://www.theguardian.com/environment/2026/jun/21/record-breaking-extreme-heat-wave-humidity-uk-met-office-warning",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Health alerts are in place as very high humidity adds to danger of heat stress for the most vulnerable&lt;/p&gt;&lt;p&gt;The Met Office has expanded its extreme heat warning for the UK, predicting record-breaking highs of 38C (100.4F) this week.&lt;/p&gt;&lt;p&gt;The Met Office forecasts that extremely high temperatures could last from Monday until Thursday, leading to health concerns for elderly and vulnerable people. The forecaster said there was “growing confidence” that this week ma",
+          "published": "2026-06-21T12:42:27.000Z",
+          "score": 2
+        },
+        {
           "title": "The tiny highway helping the capital's hedgehogs",
           "link": "https://www.bbc.com/news/articles/cd0mlr14pd8o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "A hedgehog highway is a network of small holes and gaps that allows hedgehogs to move freely.",
           "published": "2026-06-21T07:10:01.000Z",
-          "score": 2
-        },
-        {
-          "title": "Exhibition explores moths' ability to adapt",
-          "link": "https://www.bbc.com/news/articles/cly7281n405o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "An exhibition examining how moths adapt to environmental changes has opened in Kestle Barton.",
-          "published": "2026-06-20T11:05:56.000Z",
           "score": 2
         }
       ]
@@ -105,12 +105,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe swelters under heatwave, France restricts alcohol consumption - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdEtVZWxoSnhzR3BkMnRVbjVlZ0tjdGduQXNpWDR1cVhXeDhsR21iUS1oT2pKS2dnYTRNaDg1TjJqSm42eURTRjB5dDZZZ2pxZzhXQVdsRVhVV180MHlJX3F4LWVDQjhHMmJjaXNud3d6NE5ENlBBd25LTmhhaG80ZEE0ZDU5U1M4VWgxdzM0N0NtaEZvaEtQWEdEVU53YWlkVnZrUE9NelYtaURsWW5SQ18wRHBxQ1RL?oc=5",
+          "title": "Germany could scrap law banning insults against politicians",
+          "link": "https://www.dw.com/en/germany-could-scrap-law-banning-insults-against-politicians/a-77630055?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s special law prohibiting the insulting of politicians has led to cases that many people consider absurd. Some members of the government want to abolish the law; others think there&#039;s a good reason to retain it.",
+          "published": "2026-06-21T09:40:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Colombia votes in runoff pitting leftist reformer against law-and-order newcomer - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTzdfcDJsNlpQWjdJTHlFMTRUdG04X2w5cnh2V1JlbERBTVZTN0NTZHF6TWloc3ktRU9lUDFrdEZGTEZjNmNoQ3JTaXQ5OWxBUFJmS0FXZ01oWWZaTzBzcWtmUVlEbHRFRlE1Yjh2dWRyVkYwSXJteVBhTVNPU0FBWHZYMkVaTGVSZHRyYjVpRXlSa3loTWw4QktsWDBUTDNDRFVGd0hxWWxycFhmOHd5Z21xWk1lZ0o2MEFIYkluSjA3N0NmWGw0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdEtVZWxoSnhzR3BkMnRVbjVlZ0tjdGduQXNpWDR1cVhXeDhsR21iUS1oT2pKS2dnYTRNaDg1TjJqSm42eURTRjB5dDZZZ2pxZzhXQVdsRVhVV180MHlJX3F4LWVDQjhHMmJjaXNud3d6NE5ENlBBd25LTmhhaG80ZEE0ZDU5U1M4VWgxdzM0N0NtaEZvaEtQWEdEVU53YWlkVnZrUE9NelYtaURsWW5SQ18wRHBxQ1RL?oc=5\" target=\"_blank\"&gt;Europe swelters under heatwave, France restricts alcohol consumption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-20T11:44:00.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOTzdfcDJsNlpQWjdJTHlFMTRUdG04X2w5cnh2V1JlbERBTVZTN0NTZHF6TWloc3ktRU9lUDFrdEZGTEZjNmNoQ3JTaXQ5OWxBUFJmS0FXZ01oWWZaTzBzcWtmUVlEbHRFRlE1Yjh2dWRyVkYwSXJteVBhTVNPU0FBWHZYMkVaTGVSZHRyYjVpRXlSa3loTWw4QktsWDBUTDNDRFVGd0hxWWxycFhmOHd5Z21xWk1lZ0o2MEFIYkluSjA3N0NmWGw0?oc=5\" target=\"_blank\"&gt;Colombia votes in runoff pitting leftist reformer against law-and-order newcomer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
+          "published": "2026-06-21T10:03:43.000Z",
+          "score": 6
         },
         {
           "title": "Sudan: UN warns of mass atrocities in El-Obeid",
@@ -121,7 +129,7 @@
           "score": 4
         },
         {
-          "title": "US-Iran talks to begin in Switzerland as Tehran says it closed Strait of Hormuz",
+          "title": "US-Iran talks begin in Switzerland as Tehran says it closed Strait of Hormuz",
           "link": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The US disputed Iran's claim the waterway is shut, a move Tehran says was a response to Israeli attacks in Lebanon.",
@@ -129,19 +137,11 @@
           "score": 2
         },
         {
-          "title": "BBC sees destroyed villages in Israeli-occupied southern Lebanon",
-          "link": "https://www.bbc.com/news/videos/c8r2pyv3e2po?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Fuel sales halted in occupied Crimea as Ukraine targets oil facilities",
+          "link": "https://www.bbc.com/news/articles/clyx2lk9d15o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Travelling with a humanitarian convoy, BBC's Hugo Bachega has been given rare access to a part of Lebanon under Israeli occupation.",
-          "published": "2026-06-20T16:37:03.000Z",
-          "score": 2
-        },
-        {
-          "title": "Lebanese turtle conservationist Mona Khalil killed by Israeli strike",
-          "link": "https://www.bbc.com/news/articles/cwylx1vq18zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Mona Khalil, who had refused to leave the beach she had spent years protecting, died after several days in hospital, an environmental group said.",
-          "published": "2026-06-20T17:40:43.000Z",
+          "description": "Fuel had already been rationed due to shortages caused by Kyiv's attacks against supply routes in Russian-occupied territories.",
+          "published": "2026-06-21T10:55:05.000Z",
           "score": 2
         }
       ]
@@ -149,8 +149,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 411,
-    "articlesLast24h": 133,
-    "afterDedup": 121,
+    "articlesLast24h": 132,
+    "afterDedup": 126,
     "feedsQueried": 19
   }
 }
