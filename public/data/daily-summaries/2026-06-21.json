@@ -1,12 +1,12 @@
 {
   "date": "2026-06-21",
-  "generatedAt": "2026-06-21T13:07:24.134Z",
+  "generatedAt": "2026-06-21T18:21:20.897Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 21 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "France bans alcohol at music festival events under red heatwave alert",
-      "summary": "Annual street parties attended by millions ordered to help “preserve” healthcare services in 40C (104F) heat.",
+      "headline": "Half of France under red heat alert as alcohol banned at street music festival",
+      "summary": "Temperatures are forecast to peak on Monday, and authorities warn they could match historic highs.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -34,11 +34,19 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "France bans alcohol at music festival events under red heatwave alert",
+          "title": "Half of France under red heat alert as alcohol banned at street music festival",
           "link": "https://www.bbc.com/news/articles/cgmdw4vn7y2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Annual street parties attended by millions ordered to help “preserve” healthcare services in 40C (104F) heat.",
-          "published": "2026-06-21T00:29:51.000Z",
+          "description": "Temperatures are forecast to peak on Monday, and authorities warn they could match historic highs.",
+          "published": "2026-06-21T15:22:14.000Z",
+          "score": 7
+        },
+        {
+          "title": "Parisians cool off in canal amid 'red alert' heatwave",
+          "link": "https://www.bbc.com/news/videos/c802denngxeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "France has issued red heatwave alerts for around half the country as temperatures soar to record levels.",
+          "published": "2026-06-21T17:15:56.000Z",
           "score": 7
         }
       ]
@@ -56,11 +64,19 @@
           "score": 8
         },
         {
+          "title": "El Niño is back with a vengeance – and fears of ‘Godzilla’ strength may be the least of our worries",
+          "link": "https://www.theguardian.com/environment/2026/jun/21/el-nino-fears-godzilla-strength-hunger-famine",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;UN’s Word Food Programme and agriculture agency issue joint appeal for funds to avert global hunger crisis before it happens&lt;/p&gt;&lt;p&gt;Adugna Woyessa was a little boy the first time drought tore his country apart. As harvests failed in rain-starved regions of Ethiopia in the early 1970s, and his school turned a classroom into a grain store for farmers to send aid, he had no idea that scientists were beginning to connect the force parching its fields with cyclical shifts in trade",
+          "published": "2026-06-21T13:00:33.000Z",
+          "score": 4
+        },
+        {
           "title": "Record-breaking heat expected across UK this week, says Met Office",
           "link": "https://www.theguardian.com/environment/2026/jun/21/record-breaking-extreme-heat-wave-humidity-uk-met-office-warning",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Health alerts are in place as very high humidity adds to danger of heat stress for the most vulnerable&lt;/p&gt;&lt;p&gt;The Met Office has expanded its extreme heat warning for the UK, predicting record-breaking highs of 38C (100.4F) this week.&lt;/p&gt;&lt;p&gt;The Met Office forecasts that extremely high temperatures could last from Monday until Thursday, leading to health concerns for elderly and vulnerable people. The forecaster said there was “growing confidence” that this week ma",
-          "published": "2026-06-21T12:42:27.000Z",
+          "published": "2026-06-21T15:04:34.000Z",
           "score": 2
         },
         {
@@ -84,14 +100,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNcmVnTDVwNkM2RHBnVjIwRVY2Y0J1cGxGeTlGdElOcnBPTU5qNS1RcU1HVmdjemZ4UGhrOVZjd2VPRFNiRkNocW9tMVgwZ0w1RG5pbVFyd3ZzX0s5ekpFLUZsekQxUGRQWHZzN21JV2NOMFN1emhZaGRkZ2dqRFBhNW8xTzVSSHp4YlNqcGt0UE1zVWNIdi0tWFdiZ1RPeUVXMTJmc2dPTVZBS0xjVUt0MWJmVnlnOWNxM3A0RWhoUU0?oc=5\" target=\"_blank\"&gt;German commission proposes older retirement age and state pension fund, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-20T21:53:43.000Z",
           "score": 8
-        },
-        {
-          "title": "Bangladesh's premier looks to China, Malaysia for investment, jobs in first trip - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNX09BaW04SEhINFFqNy1ZaWYzRFpsa0pvNWF3VUMtRVRVVTlKN2VvcHB6LW5Mb0hiTV8xVzY1Um0yNER1SGZTSTNzcXNwbWdhQjBZdHRjanRQTGRrMDhsT1ZWT0U4NFY1MkppTU5zZ05LTVlGdkoycHRfWnhhMVZ0OG94UW1GdEl1R3BrLXVqakx0a0tyRlcxMHBXSUQwYW5XYTdyNXhmb21XTDNEZG5ZRlRIWndZQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNX09BaW04SEhINFFqNy1ZaWYzRFpsa0pvNWF3VUMtRVRVVTlKN2VvcHB6LW5Mb0hiTV8xVzY1Um0yNER1SGZTSTNzcXNwbWdhQjBZdHRjanRQTGRrMDhsT1ZWT0U4NFY1MkppTU5zZ05LTVlGdkoycHRfWnhhMVZ0OG94UW1GdEl1R3BrLXVqakx0a0tyRlcxMHBXSUQwYW5XYTdyNXhmb21XTDNEZG5ZRlRIWndZQQ?oc=5\" target=\"_blank\"&gt;Bangladesh's premier looks to China, Malaysia for investment, jobs in first trip&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-20T13:23:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -105,6 +113,30 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Severe heat wave sweeps Europe, triggering alerts and disruptions",
+          "link": "https://www.dw.com/en/severe-heat-wave-sweeps-europe-triggering-alerts-and-disruptions/a-77648446?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Authorities accross Europe have warned of temperatures exceeding 39 and 40 degrees Celsius as a &#039;heat dome&#039; sets in. Germany also faces the threat of extreme thunderstorms.",
+          "published": "2026-06-21T18:05:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ethiopia&#039;s ruling party wins overwhelming majority in parliament",
+          "link": "https://www.dw.com/en/ethiopia-s-ruling-party-wins-overwhelming-majority-in-parliament/a-77647557?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Prime Minister Abiy Ahmed’s Prosperity Party comfortably secured another parliamentary majority, defeating a fragmented opposition.",
+          "published": "2026-06-21T15:45:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Europe braces for prolonged heatwave as temperatures approach 40C - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPY0RLSHJodUtkV2V5TEF2aVFlelFNbjY2QTNDakNsNnRQN2FLLThydHNpTDNmZm5Ta0szOEZqSVphSHJjQ2RveG9kY1Q0eVVJckpVeWw0eXNySF8xR2U0c1AydGgtbHViTEFac2U1SnZ1NWJMbHJJZEVvQ0Uyd1dyakZuekJJRk9oZ3AxWHpLNFdaXzFzSFh5b2FSdE5ZaElkYmozeU9YOGYyN2EzRV9OVWk5cER3Zw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPY0RLSHJodUtkV2V5TEF2aVFlelFNbjY2QTNDakNsNnRQN2FLLThydHNpTDNmZm5Ta0szOEZqSVphSHJjQ2RveG9kY1Q0eVVJckpVeWw0eXNySF8xR2U0c1AydGgtbHViTEFac2U1SnZ1NWJMbHJJZEVvQ0Uyd1dyakZuekJJRk9oZ3AxWHpLNFdaXzFzSFh5b2FSdE5ZaElkYmozeU9YOGYyN2EzRV9OVWk5cER3Zw?oc=5\" target=\"_blank\"&gt;Europe braces for prolonged heatwave as temperatures approach 40C&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-21T15:08:55.000Z",
+          "score": 8
+        },
+        {
           "title": "Germany could scrap law banning insults against politicians",
           "link": "https://www.dw.com/en/germany-could-scrap-law-banning-insults-against-politicians/a-77630055?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -117,40 +149,16 @@
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTzdfcDJsNlpQWjdJTHlFMTRUdG04X2w5cnh2V1JlbERBTVZTN0NTZHF6TWloc3ktRU9lUDFrdEZGTEZjNmNoQ3JTaXQ5OWxBUFJmS0FXZ01oWWZaTzBzcWtmUVlEbHRFRlE1Yjh2dWRyVkYwSXJteVBhTVNPU0FBWHZYMkVaTGVSZHRyYjVpRXlSa3loTWw4QktsWDBUTDNDRFVGd0hxWWxycFhmOHd5Z21xWk1lZ0o2MEFIYkluSjA3N0NmWGw0?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOTzdfcDJsNlpQWjdJTHlFMTRUdG04X2w5cnh2V1JlbERBTVZTN0NTZHF6TWloc3ktRU9lUDFrdEZGTEZjNmNoQ3JTaXQ5OWxBUFJmS0FXZ01oWWZaTzBzcWtmUVlEbHRFRlE1Yjh2dWRyVkYwSXJteVBhTVNPU0FBWHZYMkVaTGVSZHRyYjVpRXlSa3loTWw4QktsWDBUTDNDRFVGd0hxWWxycFhmOHd5Z21xWk1lZ0o2MEFIYkluSjA3N0NmWGw0?oc=5\" target=\"_blank\"&gt;Colombia votes in runoff pitting leftist reformer against law-and-order newcomer&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fon",
-          "published": "2026-06-21T10:03:43.000Z",
+          "published": "2026-06-21T17:22:01.000Z",
           "score": 6
-        },
-        {
-          "title": "Sudan: UN warns of mass atrocities in El-Obeid",
-          "link": "https://www.dw.com/en/sudan-un-warns-of-mass-atrocities-in-el-obeid/a-77642972?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The United Nations Security Council has called on the paramilitary RSF in Sudan to not launch an attack on the city of El-Obeid.",
-          "published": "2026-06-21T07:54:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "US-Iran talks begin in Switzerland as Tehran says it closed Strait of Hormuz",
-          "link": "https://www.bbc.com/news/articles/cwyekkwm1mmo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The US disputed Iran's claim the waterway is shut, a move Tehran says was a response to Israeli attacks in Lebanon.",
-          "published": "2026-06-21T04:34:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Fuel sales halted in occupied Crimea as Ukraine targets oil facilities",
-          "link": "https://www.bbc.com/news/articles/clyx2lk9d15o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Fuel had already been rationed due to shortages caused by Kyiv's attacks against supply routes in Russian-occupied territories.",
-          "published": "2026-06-21T10:55:05.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 411,
+    "totalArticlesScanned": 412,
     "articlesLast24h": 132,
-    "afterDedup": 126,
+    "afterDedup": 124,
     "feedsQueried": 19
   }
 }
