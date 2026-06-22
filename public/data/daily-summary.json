@@ -1,18 +1,24 @@
 {
   "date": "2026-06-22",
-  "generatedAt": "2026-06-22T00:13:31.948Z",
+  "generatedAt": "2026-06-22T10:42:08.923Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 22 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Half of France under red heat alert as alcohol banned at street music festival",
-      "summary": "Temperatures are forecast to peak on Monday, and authorities warn they could match historic highs.",
+      "headline": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will vote on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Schools close as more than half of France under red heat alerts",
+      "summary": "The health minister warns many citizens \"will suffer\", with temperatures set to peak on Monday.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "More trees and nature spaces in council green plan",
-      "summary": "Bradford Council set out plans to increase tree canopy cover and create more nature reserves.",
+      "headline": "Remarks by Commissioner Hoekstra at the 10th Ministerial on Climate Action",
+      "summary": "European Commission Speech Brussels, 22 Jun 2026 Dear colleagues, dear friends,\r\nIt is a great pleasure to welcome you to Brussels for the 10th session of the Ministerial on Climate Action, alongside my co-conv...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -21,18 +27,27 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79066",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will vote on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN",
+          "published": "2026-06-22T08:59:26.000Z",
+          "score": 20
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Half of France under red heat alert as alcohol banned at street music festival",
-          "link": "https://www.bbc.com/news/articles/cgmdw4vn7y2o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Schools close as more than half of France under red heat alerts",
+          "link": "https://www.bbc.com/news/articles/c0jy9g96086o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Temperatures are forecast to peak on Monday, and authorities warn they could match historic highs.",
-          "published": "2026-06-21T15:22:14.000Z",
+          "description": "The health minister warns many citizens \"will suffer\", with temperatures set to peak on Monday.",
+          "published": "2026-06-22T10:32:54.000Z",
           "score": 7
         },
         {
@@ -42,6 +57,30 @@
           "description": "France has issued red heatwave alerts for around half the country as temperatures soar to record levels.",
           "published": "2026-06-21T17:15:56.000Z",
           "score": 7
+        },
+        {
+          "title": "Dozens injured, 18 missing after blast during restart at giant Qatar LNG site - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPOUczSUFOMThyb2laVUpFcjg1OTF6bTdqM1VoZ0IwR1dCckxUR1RHQnB0bUIwSlcteVBOellQM09rQ0xfTmhhOWZxLS1uMDRGVG5WdGRfWmZnQVN0MlBPaGpHT1J0UXZuTEM1RXUtLUJfSnIxVXEwQUN0SnlyRTlQckdST3RjYzFBMnU1MDRoQmFHOWdYZ2c0NDFFcVdjNjJJdG52WmVNaXJTWlNjQUMxMkxUMUxseHdwb2pVNENCbTBjaUZK?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPOUczSUFOMThyb2laVUpFcjg1OTF6bTdqM1VoZ0IwR1dCckxUR1RHQnB0bUIwSlcteVBOellQM09rQ0xfTmhhOWZxLS1uMDRGVG5WdGRfWmZnQVN0MlBPaGpHT1J0UXZuTEM1RXUtLUJfSnIxVXEwQUN0SnlyRTlQckdST3RjYzFBMnU1MDRoQmFHOWdYZ2c0NDFFcVdjNjJJdG52WmVNaXJTWlNjQUMxMkxUMUxseHdwb2pVNENCbTBjaUZK?oc=5\" target=\"_blank\"&gt;Dozens injured, 18 missing after blast during restart at giant Qatar LNG site&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-21T20:07:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Qatar brings LNG tankers into Hormuz despite shipping slowdown - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPSW92ZEc3ZzRkZ3lVbEtGaWYyRUxWOG5XUDZTbWx6ay1nVUFETUFLSUs0LTVwNWJUeXNoaHlGU0R0aXlaai1MeEhucnZBVnRINWxXZGpqbDYtN2VjVnNlZXpRdVplRE1pUlY4RTRqTXV4TWRoNWlrS1BZbk1OV0o5OGVGUlk5U2dvWThiTktlWUp1aF9ERVJ3M3R2c0pVWjNweXdWdU5Ia2IwaWp0RTVxSm5lQmcxdGs?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPSW92ZEc3ZzRkZ3lVbEtGaWYyRUxWOG5XUDZTbWx6ay1nVUFETUFLSUs0LTVwNWJUeXNoaHlGU0R0aXlaai1MeEhucnZBVnRINWxXZGpqbDYtN2VjVnNlZXpRdVplRE1pUlY4RTRqTXV4TWRoNWlrS1BZbk1OV0o5OGVGUlk5U2dvWThiTktlWUp1aF9ERVJ3M3R2c0pVWjNweXdWdU5Ia2IwaWp0RTVxSm5lQmcxdGs?oc=5\" target=\"_blank\"&gt;Qatar brings LNG tankers into Hormuz despite shipping slowdown&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-21T23:40:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "EXCLUSIVE: China lines up second LNG terminal for sanctioned Russian cargoes, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNWpwdVV2M3FRaG0zQ1JXVEZESl9nam9pbzlfSXlFZ2JVR3g2R2VPU0p2QnpIOU8xQjFMQk1QaDB3dmtDckx1V0FWV3RTb2dmenBtcGt1MFUyWV8xN2dLbm4wbGJGZGluNWVCZ1F1ZHBHZlhQVFRjOHRxVkJFeHdPMEt4NnlpYVcyaE0xZzhIaGpSdzNHN3dtdm9mOUhMdkI5NXI2aW1LQkNqTld3N0ZwR2k1b0dGclNvOEdOaGpNQWxQM1k?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPNWpwdVV2M3FRaG0zQ1JXVEZESl9nam9pbzlfSXlFZ2JVR3g2R2VPU0p2QnpIOU8xQjFMQk1QaDB3dmtDckx1V0FWV3RTb2dmenBtcGt1MFUyWV8xN2dLbm4wbGJGZGluNWVCZ1F1ZHBHZlhQVFRjOHRxVkJFeHdPMEt4NnlpYVcyaE0xZzhIaGpSdzNHN3dtdm9mOUhMdkI5NXI2aW1LQkNqTld3N0ZwR2k1b0dGclNvOEdOaGpNQWxQM1k?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: China lines up second LNG terminal for sanctioned Russian cargoes, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-06-22T09:16:40.000Z",
+          "score": 7
         }
       ]
     },
@@ -49,6 +88,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Remarks by Commissioner Hoekstra at the 10th Ministerial on Climate Action",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1404",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 22 Jun 2026 Dear colleagues, dear friends,\r\nIt is a great pleasure to welcome you to Brussels for the 10th session of the Ministerial on Climate Action, alongside my co-conv...",
+          "published": "2026-06-22T08:20:40.000Z",
+          "score": 23
+        },
         {
           "title": "More trees and nature spaces in council green plan",
           "link": "https://www.bbc.com/news/articles/c4gy26l0gemo?at_medium=RSS&amp;at_campaign=rss",
@@ -58,36 +105,28 @@
           "score": 8
         },
         {
-          "title": "Reuters Climate Monitor - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5",
+          "title": "Climate fight will not stall because certain countries drop out, China says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNNE5HVEN0NTM4Umk0a0w2OWtqUHZTazE2TWRtSVVLU25XV1BiZE80MmtWMlNoWHVPVVhFbkxRVlpDdEhlLURGYmhvUkFTLTNCcFkzclRmS1V4SG5EOG85elBZZnI5VUh3c1lzVWdMcHBNNWliYXdibU56VE1MN292R216WWl1S2k5bEtiSWRCekRuMVExdFlNYnNvUEplMExya1JJTHc5T2tsbUNmbzVKSy1QRW9oNmc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5\" target=\"_blank\"&gt;Reuters Climate Monitor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-21T21:48:39.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNNE5HVEN0NTM4Umk0a0w2OWtqUHZTazE2TWRtSVVLU25XV1BiZE80MmtWMlNoWHVPVVhFbkxRVlpDdEhlLURGYmhvUkFTLTNCcFkzclRmS1V4SG5EOG85elBZZnI5VUh3c1lzVWdMcHBNNWliYXdibU56VE1MN292R216WWl1S2k5bEtiSWRCekRuMVExdFlNYnNvUEplMExya1JJTHc5T2tsbUNmbzVKSy1QRW9oNmc?oc=5\" target=\"_blank\"&gt;Climate fight will not stall because certain countries drop out, China says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-22T10:18:00.000Z",
           "score": 7
+        },
+        {
+          "title": "How India’s heatwaves are shutting schools – and pushing women out of the workforce",
+          "link": "https://www.theguardian.com/global-development/2026/jun/22/how-india-heatwaves-shutting-schools-pushing-women-out-of-the-workforce",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Forced to stay home or switch jobs, working mothers are bearing the brunt of the climate crisis as classes go online for weeks or months at a time&lt;/p&gt;&lt;p&gt;Outside, the temperature has passed 41C (105.8F). Inside Sakshi Katyal’s city apartment, the air conditioner is blasting but it does little to relieve the stress of balancing housework and helping her five-year-old log in on a laptop to online classes. Her daughter’s school closed in May and Katyal is not clear when it will ",
+          "published": "2026-06-22T03:00:47.000Z",
+          "score": 4
         },
         {
           "title": "El Niño is back with a vengeance – and fears of ‘Godzilla’ strength may be the least of our worries",
           "link": "https://www.theguardian.com/environment/2026/jun/21/el-nino-fears-godzilla-strength-hunger-famine",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;UN’s Word Food Programme and agriculture agency issue joint appeal for funds to avert global hunger crisis before it happens&lt;/p&gt;&lt;p&gt;Adugna Woyessa was a little boy the first time drought tore his country apart. As harvests failed in rain-starved regions of Ethiopia in the early 1970s, and his school turned a classroom into a grain store for farmers to send aid, he had no idea that scientists were beginning to connect the force parching its fields with cyclical shifts in trade",
+          "description": "&lt;p&gt;UN’s World Food Programme and agriculture agency issue joint appeal for funds to avert global hunger crisis before it happens&lt;/p&gt;&lt;p&gt;Adugna Woyessa was a little boy the first time drought tore his country apart. As harvests failed in rain-starved regions of Ethiopia in the early 1970s, and his school turned a classroom into a grain store for farmers to send aid, he had no idea that scientists were beginning to connect the force parching its fields with cyclical shifts in trad",
           "published": "2026-06-21T13:00:33.000Z",
           "score": 4
-        },
-        {
-          "title": "Record-breaking heat expected across UK this week, says Met Office",
-          "link": "https://www.theguardian.com/environment/2026/jun/21/record-breaking-extreme-heat-wave-humidity-uk-met-office-warning",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Health alerts are in place as very high humidity adds to danger of heat stress for the most vulnerable&lt;/p&gt;&lt;p&gt;The Met Office has expanded its extreme heat warning for the UK, predicting record-breaking highs of 38C (100.4F) this week.&lt;/p&gt;&lt;p&gt;The Met Office forecasts that extremely high temperatures could last from Monday until Thursday, leading to health concerns for elderly and vulnerable people. The forecaster said there was “growing confidence” that this week ma",
-          "published": "2026-06-21T15:04:34.000Z",
-          "score": 2
-        },
-        {
-          "title": "The tiny highway helping the capital's hedgehogs",
-          "link": "https://www.bbc.com/news/articles/cd0mlr14pd8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A hedgehog highway is a network of small holes and gaps that allows hedgehogs to move freely.",
-          "published": "2026-06-21T07:10:01.000Z",
-          "score": 2
         }
       ]
     },
@@ -99,7 +138,40 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Highlights - Exchange of views with Costas Kadis on the European Ocean Pact - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79063",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250610PHT28861/20250610PHT28861-ms.jpeg\" width=\"180\" alt=\"Life underwater\" title=\"UN ocean conference 2025.jpeg © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will hold an exchange of views during a joint ENVI-DEVE-PECH with Costas Kadis, Commissioner for Fisheries and Oceans, on the European Ocean Pact, one year afte",
+          "published": "2026-06-22T09:01:37.000Z",
+          "score": 22
+        },
+        {
+          "title": "Highlights - Consideration of draft reports on extended producer responsibility - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79060",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20231017PHT07495/20231017PHT07495-ms.jpeg\" width=\"180\" alt=\"Plastic bottles and container to recycle\" title=\"Plastic bottles © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 22 June 2026, ENVI Members will hold an exchange of views on two draft reports concerning the temporary suspension of authorised representative requirements under several exten",
+          "published": "2026-06-22T08:39:32.000Z",
+          "score": 18
+        },
+        {
+          "title": "Ukraine to decide who represents Europe in Russia talks, Zelenskiy says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQRk54VmRLM3VWa2Z6a29vMWZpck5nOXYyRzZGQXBjVzMxLWRaVDNqUnljQW5neF9fUEVvS2VDd2puTkVJSjRqaURZY2hmYjFjaDA0NEI2UmNiTmJZa1Q0Q3AzeTRJZjh0a0doOE1MZ0I5V25VbmhIeWQyQmhXekZjWktreEFpY3BLbjh6XzRWU0hPeTJ3RHA3akpBbWRvZnNxNEdOUGMxOHNNb19fclRpUVhoZXNqbFplX19KNUVvT1dEZmdVaEE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQRk54VmRLM3VWa2Z6a29vMWZpck5nOXYyRzZGQXBjVzMxLWRaVDNqUnljQW5neF9fUEVvS2VDd2puTkVJSjRqaURZY2hmYjFjaDA0NEI2UmNiTmJZa1Q0Q3AzeTRJZjh0a0doOE1MZ0I5V25VbmhIeWQyQmhXekZjWktreEFpY3BLbjh6XzRWU0hPeTJ3RHA3akpBbWRvZnNxNEdOUGMxOHNNb19fclRpUVhoZXNqbFplX19KNUVvT1dEZmdVaEE?oc=5\" target=\"_blank\"&gt;Ukraine to decide who represents Europe in Russia talks, Zelenskiy says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-22T08:25:25.000Z",
+          "score": 8
+        },
+        {
+          "title": "From mobile jungles to shadow art: how Dutch people try to beat the heat",
+          "link": "https://www.theguardian.com/world/2026/jun/22/from-mobile-jungles-to-shadow-art-how-dutch-people-try-to-beat-the-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;A national heatwave plan has been activated to help people stay cool during the Netherlands’ increasingly hot summers&lt;/p&gt;&lt;p&gt;Households in Amsterdam are being urged to hang their curtains outside their windows as health experts recommend simple hacks to moderate the heatwave rolling across the Netherlands, where homes were built for old-fashioned damp and coldish northern European weather.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.linkedin.com/posts/elinecoolen_gordijn-b",
+          "published": "2026-06-22T04:00:50.000Z",
+          "score": 4
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -122,36 +194,36 @@
           "score": 8
         },
         {
+          "title": "Ten years on, Brexit disputes still hold back Britain's reconciliation with EU - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5\" target=\"_blank\"&gt;Ten years on, Brexit disputes still hold back Britain's reconciliation with EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-22T06:03:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Europe braces for prolonged heatwave as temperatures approach 40C - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPY0RLSHJodUtkV2V5TEF2aVFlelFNbjY2QTNDakNsNnRQN2FLLThydHNpTDNmZm5Ta0szOEZqSVphSHJjQ2RveG9kY1Q0eVVJckpVeWw0eXNySF8xR2U0c1AydGgtbHViTEFac2U1SnZ1NWJMbHJJZEVvQ0Uyd1dyakZuekJJRk9oZ3AxWHpLNFdaXzFzSFh5b2FSdE5ZaElkYmozeU9YOGYyN2EzRV9OVWk5cER3Zw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPY0RLSHJodUtkV2V5TEF2aVFlelFNbjY2QTNDakNsNnRQN2FLLThydHNpTDNmZm5Ta0szOEZqSVphSHJjQ2RveG9kY1Q0eVVJckpVeWw0eXNySF8xR2U0c1AydGgtbHViTEFac2U1SnZ1NWJMbHJJZEVvQ0Uyd1dyakZuekJJRk9oZ3AxWHpLNFdaXzFzSFh5b2FSdE5ZaElkYmozeU9YOGYyN2EzRV9OVWk5cER3Zw?oc=5\" target=\"_blank\"&gt;Europe braces for prolonged heatwave as temperatures approach 40C&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-21T20:34:34.000Z",
+          "published": "2026-06-21T14:50:00.000Z",
           "score": 8
         },
         {
-          "title": "Germany could scrap law banning insults against politicians",
-          "link": "https://www.dw.com/en/germany-could-scrap-law-banning-insults-against-politicians/a-77630055?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s special law prohibiting the insulting of politicians has led to cases that many people consider absurd. Some members of the government want to abolish the law; others think there&#039;s a good reason to retain it.",
-          "published": "2026-06-21T09:40:00.000Z",
+          "title": "South Korea's ex-Justice Minister Park sentenced to 25 years in jail over martial law, Yonhap says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOZW1PUlpaeFhMV0pqVENqeWlidVMxMlYyd0wxNHVSYzIxdm5jR3BYRjJuaEpsZWE5cENEUU8tVVB0V2hoLUdpR3U5UTY0d2toOEhJd1lIV3VwRmtFN25iTVNwZkZjcTJPLUVSYVJfemJzWm9KcVFVdVk5Nk1sZkxibmxPVjVvUlRTOGlNYXk1cUJQUm9yLU1QWUtncWMtUWZOTU13d1Byc1hlQnEteVVCT1pHaUVGMlJBWGRzckVPQkg3aUpsY0QwUUpkYWJDQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOZW1PUlpaeFhMV0pqVENqeWlidVMxMlYyd0wxNHVSYzIxdm5jR3BYRjJuaEpsZWE5cENEUU8tVVB0V2hoLUdpR3U5UTY0d2toOEhJd1lIV3VwRmtFN25iTVNwZkZjcTJPLUVSYVJfemJzWm9KcVFVdVk5Nk1sZkxibmxPVjVvUlRTOGlNYXk1cUJQUm9yLU1QWUtncWMtUWZOTU13d1Byc1hlQnEteVVCT1pHaUVGMlJBWGRzckVPQkg3aUpsY0QwUUpkYWJDQQ?oc=5\" target=\"_blank\"&gt;South Korea's ex-Justice Minister Park sentenced to 25 years in jail over martial law, Yonhap says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=",
+          "published": "2026-06-22T06:17:00.000Z",
           "score": 6
-        },
-        {
-          "title": "Sudan: UN warns of mass atrocities in El-Obeid",
-          "link": "https://www.dw.com/en/sudan-un-warns-of-mass-atrocities-in-el-obeid/a-77642972?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The United Nations Security Council has called on the paramilitary RSF in Sudan to not launch an attack on the city of El-Obeid.",
-          "published": "2026-06-21T07:54:00.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 412,
-    "articlesLast24h": 126,
-    "afterDedup": 122,
+    "totalArticlesScanned": 416,
+    "articlesLast24h": 147,
+    "afterDedup": 137,
     "feedsQueried": 19
   }
 }
