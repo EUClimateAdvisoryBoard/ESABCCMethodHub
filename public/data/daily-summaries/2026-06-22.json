@@ -1,18 +1,18 @@
 {
   "date": "2026-06-22",
-  "generatedAt": "2026-06-22T15:56:17.920Z",
+  "generatedAt": "2026-06-22T20:13:02.459Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 22 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/308210/ENVI%2006%2022-33%20%2007%202%20(002)%20-%20FINAL.pdf\" target=\"_blank\"&gt;ENVI News Committee meetings on 22-23 June and 2 July 2026&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/307301/ENVI%2006%2001-03%20%2015%202026_Monday%201%20June.pdf\" target=\"_blank\"&gt;ENVI News 1-3 &amp; 15 June: ETS public hearing, biodiversity convention with Commissioner Roswall an",
+      "headline": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will vote on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "Met Office issues rare red weather warning for Wednesday and Thursday",
-      "summary": "&lt;p&gt;UK Health Security Agency also issues red heat alert for six English regions, indicating risk to life even for the healthy&lt;/p&gt;&lt;p&gt;Met Office forecasters have issued a rare red weather warning for Wednesday and Thursday in the face of extreme heat and humidity, while a red heat health alert has been issued in England indicating “a risk to life for even the healthy population”.&lt;/p&gt;&lt;p&gt;The weather warning covers southern Wales as far west as Swansea, and an area of En",
+      "headline": "Red heat alerts issued in France, Italy and Spain as 40C temperatures forecast",
+      "summary": "The heatwave conditions are forecast to intensify in the coming days across central and western Europe.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -29,11 +29,11 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Newsletters - ENVI News - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260116CNW20362",
+          "title": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79066",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/308210/ENVI%2006%2022-33%20%2007%202%20(002)%20-%20FINAL.pdf\" target=\"_blank\"&gt;ENVI News Committee meetings on 22-23 June and 2 July 2026&lt;/a&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/307301/ENVI%2006%2001-03%20%2015%202026_Monday%201%20June.pdf\" target=\"_blank\"&gt;ENVI News 1-3 &amp; 15 June: ETS public hearing, biodiversity convention with Commissioner Roswall an",
-          "published": "2026-06-22T13:47:11.000Z",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will vote on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN",
+          "published": "2026-06-22T08:59:26.000Z",
           "score": 20
         }
       ]
@@ -42,6 +42,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Red heat alerts issued in France, Italy and Spain as 40C temperatures forecast",
+          "link": "https://www.bbc.com/news/articles/c0jy9g96086o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The heatwave conditions are forecast to intensify in the coming days across central and western Europe.",
+          "published": "2026-06-22T16:42:23.000Z",
+          "score": 9
+        },
         {
           "title": "Met Office issues rare red weather warning for Wednesday and Thursday",
           "link": "https://www.theguardian.com/uk-news/2026/jun/22/uk-met-office-issues-rare-red-weather-warning-for-wednesday-and-thursday",
@@ -59,28 +67,20 @@
           "score": 7
         },
         {
-          "title": "Schools close as more than half of France under red heat alerts",
-          "link": "https://www.bbc.com/news/articles/c0jy9g96086o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The health minister warns many citizens \"will suffer\", with temperatures set to peak on Monday.",
-          "published": "2026-06-22T12:36:07.000Z",
-          "score": 7
-        },
-        {
-          "title": "Parisians cool off in canal amid 'red alert' heatwave",
-          "link": "https://www.bbc.com/news/videos/c802denngxeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "France has issued red heatwave alerts for around half the country as temperatures soar to record levels.",
-          "published": "2026-06-21T17:15:56.000Z",
-          "score": 7
-        },
-        {
-          "title": "Thirteen dead, dozens injured, after blast during restart at giant Qatar LNG site - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxPOUczSUFOMThyb2laVUpFcjg1OTF6bTdqM1VoZ0IwR1dCckxUR1RHQnB0bUIwSlcteVBOellQM09rQ0xfTmhhOWZxLS1uMDRGVG5WdGRfWmZnQVN0MlBPaGpHT1J0UXZuTEM1RXUtLUJfSnIxVXEwQUN0SnlyRTlQckdST3RjYzFBMnU1MDRoQmFHOWdYZ2c0NDFFcVdjNjJJdG52WmVNaXJTWlNjQUMxMkxUMUxseHdwb2pVNENCbTBjaUZK?oc=5",
+          "title": "Qatar says Ras Laffan LNG complex blast killed 13, injured 66 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPcTl0Y2NTbzZyNTVpSjVaeEJVU29iU1BIVE1wMF9aWmRWdGtCZVNTN0F0M0FDOFZ4akRoM1JlV1RibTNDdzh5V2o2SDNzSC15ZnRyaTdPN0YzZ2hhQ1hjTEd6R0pId19fQ0VxV0ZNVU55VnI2TnMxRG5zOGxjR3h0S0FyUnNNdGtHdTA5QkFIZEwzS0E3SmFyMXRXR3ZpQkR1UTlqUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxPOUczSUFOMThyb2laVUpFcjg1OTF6bTdqM1VoZ0IwR1dCckxUR1RHQnB0bUIwSlcteVBOellQM09rQ0xfTmhhOWZxLS1uMDRGVG5WdGRfWmZnQVN0MlBPaGpHT1J0UXZuTEM1RXUtLUJfSnIxVXEwQUN0SnlyRTlQckdST3RjYzFBMnU1MDRoQmFHOWdYZ2c0NDFFcVdjNjJJdG52WmVNaXJTWlNjQUMxMkxUMUxseHdwb2pVNENCbTBjaUZK?oc=5\" target=\"_blank\"&gt;Thirteen dead, dozens injured, after blast during restart at giant Qatar LNG site&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-06-21T20:07:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxPcTl0Y2NTbzZyNTVpSjVaeEJVU29iU1BIVE1wMF9aWmRWdGtCZVNTN0F0M0FDOFZ4akRoM1JlV1RibTNDdzh5V2o2SDNzSC15ZnRyaTdPN0YzZ2hhQ1hjTEd6R0pId19fQ0VxV0ZNVU55VnI2TnMxRG5zOGxjR3h0S0FyUnNNdGtHdTA5QkFIZEwzS0E3SmFyMXRXR3ZpQkR1UTlqUQ?oc=5\" target=\"_blank\"&gt;Qatar says Ras Laffan LNG complex blast killed 13, injured 66&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-22T13:23:00.000Z",
           "score": 7
+        },
+        {
+          "title": "At least 13 killed and dozens injured after Qatar gas explosion",
+          "link": "https://www.bbc.com/news/articles/cwy05llpjpno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The city's main liquified natural gas (LNG) processing site suffered a \"technical accident\" in the Ras Laffan industrial zone.",
+          "published": "2026-06-22T15:15:42.000Z",
+          "score": 4
         }
       ]
     },
@@ -121,12 +121,12 @@
           "score": 10
         },
         {
-          "title": "Two children found dead in family car in France as Europe suffers under extreme heatwave",
-          "link": "https://www.theguardian.com/environment/2026/jun/22/europe-record-heatwave-temperatures-forecast-reach-44c",
+          "title": "Trapped by floods and fearing death in the heat: the Australians taking legal action over the climate crisis",
+          "link": "https://www.theguardian.com/environment/2026/jun/22/trapped-by-floods-and-fearing-death-in-the-heat-the-australians-taking-legal-action-over-the-climate-crisis",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Rail services, schools and sports events hit as several cities experience record night-time temperatures of 25C&lt;/p&gt;&lt;p&gt;Two children aged four and two have been found dead in their family’s car in south-eastern France, the local prosecutor said, as a large swathe of western Europe suffers a ferocious heatwave forecast to shatter absolute temperature records.&lt;/p&gt;&lt;p&gt;“The causes of death are yet to be determined, but the heat is the leading line of inquiry,” said Hélè",
-          "published": "2026-06-22T15:22:05.000Z",
-          "score": 8
+          "description": "&lt;p&gt;Ten people affected in different ways by extreme weather are taking a case against the federal government to the UN&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;",
+          "published": "2026-06-22T15:00:18.000Z",
+          "score": 7
         }
       ]
     },
@@ -156,20 +156,28 @@
           "score": 22
         },
         {
+          "title": "Highlights - Exchange of views with Costas Kadis on the European Ocean Pact - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79063",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250610PHT28861/20250610PHT28861-ms.jpeg\" width=\"180\" alt=\"Life underwater\" title=\"UN ocean conference 2025.jpeg © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members will hold an exchange of views during a joint ENVI-DEVE-PECH with Costas Kadis, Commissioner for Fisheries and Oceans, on the European Ocean Pact, one year afte",
+          "published": "2026-06-22T09:01:37.000Z",
+          "score": 22
+        },
+        {
+          "title": "Video of a committee meeting - Monday, 22 June 2026 - 13:30 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260622-1500-COMMITTEE-ENVI_vd",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Length of video : 150'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-22T15:41:27.000Z",
+          "score": 18
+        },
+        {
           "title": "AMENDMENTS 1 - 8 - Draft report Implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum - PE786.741v01-00",
           "link": "https://www.europarl.europa.eu/doceo/document/CJ37-AM-786741_EN.pdf",
           "source": "EU Parliament ENVI Committee",
           "description": "AMENDMENTS 1 - 8 - Draft report Implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum&lt;br/&gt;Committee on Development&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lukas Mandl, Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-06-22T14:08:09.000Z",
           "score": 18
-        },
-        {
-          "title": "From mobile jungles to shadow art: how Dutch people try to beat the heat",
-          "link": "https://www.theguardian.com/world/2026/jun/22/from-mobile-jungles-to-shadow-art-how-dutch-people-try-to-beat-the-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;A national heatwave plan has been activated to help people stay cool during the Netherlands’ increasingly hot summers&lt;/p&gt;&lt;p&gt;Households in Amsterdam are being urged to hang their curtains outside their windows as health experts recommend simple hacks to moderate the heatwave rolling across the Netherlands, where homes were built for old-fashioned damp and coldish northern European weather.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.linkedin.com/posts/elinecoolen_gordijn-b",
-          "published": "2026-06-22T04:00:50.000Z",
-          "score": 4
         }
       ]
     },
@@ -178,10 +186,10 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe sizzles under heatwave with little relief in sight",
-          "link": "https://www.dw.com/en/europe-sizzles-under-heatwave-with-little-relief-in-sight/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe sizzles under heat wave with little relief in sight",
+          "link": "https://www.dw.com/en/europe-sizzles-under-heat-wave-with-little-relief-in-sight/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Germany, France, the UK and other European countries are witnessing scorching temperatures with it likely not cooling down until the weekend or next week. DW has the latest.",
+          "description": "Germany, France, the UK and other European countries are experiencing extreme heat, with cooler weather not expected until the weekend. Several deaths were reported in France, including two children. DW has the latest.",
           "published": "2026-06-22T15:44:00.000Z",
           "score": 8
         },
@@ -194,19 +202,19 @@
           "score": 8
         },
         {
-          "title": "EU reassesses whether to hold July UK summit after Starmer resignation announcement - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5\" target=\"_blank\"&gt;EU reassesses whether to hold July UK summit after Starmer resignation announcement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-06-22T11:06:29.000Z",
-          "score": 8
-        },
-        {
           "title": "Ten years on, Brexit disputes still hold back Britain's reconciliation with EU - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5\" target=\"_blank\"&gt;Ten years on, Brexit disputes still hold back Britain's reconciliation with EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-22T06:03:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU reassesses whether to hold July UK summit after Starmer resignation announcement - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5\" target=\"_blank\"&gt;EU reassesses whether to hold July UK summit after Starmer resignation announcement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-06-22T11:06:29.000Z",
           "score": 8
         },
         {
@@ -222,8 +230,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 417,
-    "articlesLast24h": 171,
-    "afterDedup": 156,
+    "articlesLast24h": 174,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
