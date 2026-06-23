@@ -415,6 +415,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // Overall-tag filter for the "Add documents" browser — narrows the library
   // to documents carrying at least one of the chosen document-level tags.
   const [browseTagFilter, setBrowseTagFilter] = useState<string[]>([]);
+  // Overall-tag filter for the "In this workspace" list — narrows the corpus
+  // already added to this project to documents carrying at least one of the
+  // chosen document-level tags, so analysts can zero in on a theme.
+  const [corpusTagFilter, setCorpusTagFilter] = useState<string[]>([]);
 
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
   const [selectedCodeId, setSelectedCodeId] = useState<string | null>(null);
@@ -675,6 +679,40 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
     return m;
   }, [corpusDocs, canEditOverallTags, overallTags.getTags]);
+
+  // ── "In this workspace" tag filter ────────────────────────────────────────
+  // The selectable pool is just the overall tags actually present on the docs
+  // already in this workspace (collapsed by display name), so the filter only
+  // ever offers themes the analyst can actually narrow to — including any
+  // custom tags they've coined.
+  const corpusTagPool = useMemo(() => {
+    const byName = new Map<string, CodeNode>();
+    for (const d of corpusDocs) {
+      for (const id of overallTagsByDoc[d.id] ?? []) {
+        const c = masterCodes.find(x => x.id === id) ?? resolveOverallTag(id);
+        if (!c) continue;
+        const key = c.name.trim().toLowerCase();
+        if (!byName.has(key)) byName.set(key, c);
+      }
+    }
+    return [...byName.values()];
+  }, [corpusDocs, overallTagsByDoc, masterCodes]);
+
+  // The corpus narrowed to the chosen overall tags — what the "In this
+  // workspace" list shows. Empty filter means show everything. Same name-
+  // collapsing the browse filter uses, so picking "Finance" matches a document
+  // tagged under any id sharing that display name.
+  const visibleCorpusDocs = useMemo(() => {
+    if (corpusTagFilter.length === 0) return corpusDocs;
+    const wanted = new Set(corpusTagFilter);
+    const wantedNames = new Set(
+      masterCodes.filter(c => wanted.has(c.id)).map(c => c.name.trim().toLowerCase()),
+    );
+    for (const c of masterCodes) {
+      if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
+    }
+    return corpusDocs.filter(d => (overallTagsByDoc[d.id] ?? []).some(t => wanted.has(t)));
+  }, [corpusDocs, corpusTagFilter, masterCodes, overallTagsByDoc]);
 
   // ── Codes visible in this workspace (master + this project's own) ─────────
   const visibleCodes = useMemo(
@@ -1407,7 +1445,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
               <button
                 key={s.id}
                 type="button"
-                onClick={() => { setSourceType(s.id); setSelectedDocumentId(null); }}
+                onClick={() => { setSourceType(s.id); setSelectedDocumentId(null); setCorpusTagFilter([]); }}
                 title={SOURCE_TIER_META[s.id].hint}
                 className={`text-[11px] px-2 py-1 rounded border transition ${
                   sourceType === s.id
@@ -1515,7 +1553,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             <div className="border border-grey-200 rounded-lg bg-white">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
                 <span className="text-[11px] font-semibold text-tertiary-dark">In this workspace</span>
-                <span className="text-[10px] font-mono text-tertiary-light">{corpusDocs.length}</span>
+                <span className="text-[10px] font-mono text-tertiary-light">
+                  {corpusTagFilter.length > 0 ? `${visibleCorpusDocs.length}/${corpusDocs.length}` : corpusDocs.length}
+                </span>
               </div>
               {corpusDocs.length === 0 ? (
                 <p className="px-3 py-3 text-[11px] text-tertiary">
@@ -1523,17 +1563,57 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                   “Add documents” below to bring them into this project.
                 </p>
               ) : (
-                <div className="max-h-[40vh] overflow-y-auto">
-                  <DocumentList
-                    documents={corpusDocs}
-                    codes={visibleCodes}
-                    selectedDocumentId={selectedDocument?.id ?? null}
-                    onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setNoteJumpBlockId(null); setIngestState({ status: 'idle' }); }}
-                    counts={docCounts}
-                    onRemove={confirmRemoveFromCorpus}
-                    overallTagsByDoc={overallTagsByDoc}
-                  />
-                </div>
+                <>
+                  {/* Filter the workspace corpus by overall (document-level) tag,
+                      so analysts can zero in on the documents carrying a theme. */}
+                  {corpusTagPool.length > 0 && (
+                    <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between gap-2">
+                      <OverallTagPicker
+                        codes={corpusTagPool}
+                        selected={corpusTagFilter}
+                        onToggle={codeId =>
+                          setCorpusTagFilter(prev =>
+                            prev.includes(codeId) ? prev.filter(c => c !== codeId) : [...prev, codeId],
+                          )
+                        }
+                        label="Filter by tag"
+                      />
+                      {corpusTagFilter.length > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => setCorpusTagFilter([])}
+                          className="text-[10px] text-tertiary-light hover:text-secondary"
+                        >
+                          Clear
+                        </button>
+                      )}
+                    </div>
+                  )}
+                  {visibleCorpusDocs.length === 0 ? (
+                    <p className="px-3 py-3 text-[11px] text-tertiary">
+                      No documents match the selected tag{corpusTagFilter.length === 1 ? '' : 's'}.{' '}
+                      <button
+                        type="button"
+                        onClick={() => setCorpusTagFilter([])}
+                        className="text-secondary hover:underline"
+                      >
+                        Clear filter
+                      </button>
+                    </p>
+                  ) : (
+                    <div className="max-h-[40vh] overflow-y-auto">
+                      <DocumentList
+                        documents={visibleCorpusDocs}
+                        codes={visibleCodes}
+                        selectedDocumentId={selectedDocument?.id ?? null}
+                        onSelect={id => { setSelectedDocumentId(id); setHighlightedSegmentId(null); setNoteJumpBlockId(null); setIngestState({ status: 'idle' }); }}
+                        counts={docCounts}
+                        onRemove={confirmRemoveFromCorpus}
+                        overallTagsByDoc={overallTagsByDoc}
+                      />
+                    </div>
+                  )}
+                </>
               )}
             </div>
 
