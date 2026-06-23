@@ -1,6 +1,6 @@
 {
   "date": "2026-06-23",
-  "generatedAt": "2026-06-23T00:07:56.175Z",
+  "generatedAt": "2026-06-23T08:33:20.238Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 23 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,22 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Red heat alerts issued in France, Italy and Spain as 40C temperatures forecast",
-      "summary": "The heatwave conditions are forecast to intensify in the coming days across central and western Europe.",
+      "headline": "Europe heatwave live: UK temperatures forecast to reach 38C; French PM to hold crisis meeting after heat deaths",
+      "summary": "&lt;p&gt;Temperatures could smash June record in England and Wales set in 1976; red alerts in France after 19 heat deaths&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/22/europe-record-heatwave-temperatures-forecast-reach-44c\"&gt;Two children found dead in car in France as heatwave hits Europe&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Italy’s health ministry has declared a red heatwave alert in 15 cities including Milan and Rome on Tue",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Remarks by Commissioner Hoekstra at the 10th Ministerial on Climate Action",
-      "summary": "European Commission Speech Brussels, 22 Jun 2026 Dear colleagues, dear friends,\r\nIt is a great pleasure to welcome you to Brussels for the 10th session of the Ministerial on Climate Action, alongside my co-conv...",
+      "headline": "Mapped: Inside Carbon Brief&#8217;s Cosmos database of 1.8 million climate studies",
+      "summary": "This is the vast “cosmos” of academic literature and evidence that underpins humanity’s knowledge of... The post Mapped: Inside Carbon Brief&#8217;s Cosmos database of 1.8 million climate studies appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Ed Miliband to say UK must stick to net zero targets to deliver jobs and growth",
+      "summary": "&lt;p&gt;Energy secretary expected to argue that UK clean economy is booming as private sector pledges over £100bn of investment&lt;/p&gt;&lt;p&gt;Ed Miliband is to say that the UK must stick to net zero targets to deliver jobs and growth, as speculation surrounds the energy secretary’s role under a new prime minister.&lt;/p&gt;&lt;p&gt;He will make the speech as data shows more than £100bn in green investment has been pledged by private sector companies in this parliament.&lt;/p&gt; &lt;a href=",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -43,6 +49,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Europe heatwave live: UK temperatures forecast to reach 38C; French PM to hold crisis meeting after heat deaths",
+          "link": "https://www.theguardian.com/world/live/2026/jun/23/europe-heatwave-live-news-updates-uk-red-temperature-warnings-40-degrees-france-heat-deaths-crisis-meeting",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Temperatures could smash June record in England and Wales set in 1976; red alerts in France after 19 heat deaths&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/22/europe-record-heatwave-temperatures-forecast-reach-44c\"&gt;Two children found dead in car in France as heatwave hits Europe&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Italy’s health ministry has declared a red heatwave alert in 15 cities including Milan and Rome on Tue",
+          "published": "2026-06-23T08:20:09.000Z",
+          "score": 10
+        },
+        {
           "title": "Red heat alerts issued in France, Italy and Spain as 40C temperatures forecast",
           "link": "https://www.bbc.com/news/articles/c0jy9g96086o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -59,11 +73,11 @@
           "score": 7
         },
         {
-          "title": "US eases oil sanctions as Iran denies Vance claim on nuclear inspectors",
+          "title": "Iran says no new commitments on nuclear sites after Vance says inspectors to be invited back",
           "link": "https://www.bbc.com/news/articles/c3vy3nr63gxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "Iran's foreign ministry says it made \"no new commitments\" on nuclear inspections after talks in Switzerland.",
-          "published": "2026-06-22T23:07:45.000Z",
+          "published": "2026-06-23T05:39:17.000Z",
           "score": 7
         },
         {
@@ -73,14 +87,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNRmZxSXVIVDhTMlNKQjlCcTU4QVBVUzM3RVFocTdrWkJDZlU1VFYzalYyZ2g0UzBCTEpySWJkRWdnQnQ2ejVUdk9pX0prX2NYLUg4UWVMcWRPaV9lZExnSlFReWhUT0VZLWVBVHZfU25laWJWRGJOV3VwOFRvVXp0UnRLeVp0Si0zQTQ4UUExNWNhaWJ0VVR6ZzhVUlJhNU5qS20xMlpWRXd1QVNPYVktNFNiOTVBZw?oc=5\" target=\"_blank\"&gt;Red Sox thank Scotland's Tartan Army for unforgettable Boston presence&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-22T15:04:26.000Z",
           "score": 7
-        },
-        {
-          "title": "Canada sets out plan for up to 10 new nuclear reactors - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPZTZDWGNsUFFEdVEycG5FMXJMd1Q0em9aeG5jSlVabFhoc0oxY1RjZVFoRXpELWtCRGdwNGRDam9FRXNpemVzeW94SlZBNTN3bjNoYlhtd3YyXzBUb2ZScjBDSzRMMG9xOVJvTEo1Vk1ReVdOV1AwTVcxOWRNNXhKSWdRWk50c2xJMGctY3ROa2pHTk00bXlnMWx0Z09Vbm44?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxPZTZDWGNsUFFEdVEycG5FMXJMd1Q0em9aeG5jSlVabFhoc0oxY1RjZVFoRXpELWtCRGdwNGRDam9FRXNpemVzeW94SlZBNTN3bjNoYlhtd3YyXzBUb2ZScjBDSzRMMG9xOVJvTEo1Vk1ReVdOV1AwTVcxOWRNNXhKSWdRWk50c2xJMGctY3ROa2pHTk00bXlnMWx0Z09Vbm44?oc=5\" target=\"_blank\"&gt;Canada sets out plan for up to 10 new nuclear reactors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-22T18:41:28.000Z",
-          "score": 7
         }
       ]
     },
@@ -88,14 +94,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Remarks by Commissioner Hoekstra at the 10th Ministerial on Climate Action",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1404",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 22 Jun 2026 Dear colleagues, dear friends,\r\nIt is a great pleasure to welcome you to Brussels for the 10th session of the Ministerial on Climate Action, alongside my co-conv...",
-          "published": "2026-06-22T08:20:40.000Z",
-          "score": 23
-        },
         {
           "title": "Mapped: Inside Carbon Brief&#8217;s Cosmos database of 1.8 million climate studies",
           "link": "https://www.carbonbrief.org/mapped-inside-carbon-briefs-cosmos-database-of-1-8-million-climate-studies/",
@@ -127,13 +125,30 @@
           "description": "&lt;p&gt;Number of countries issue alerts with sustained and rising temperatures expected to present danger to health&lt;/p&gt;&lt;p&gt;Two children aged four and two have been found dead in their family’s car in south-eastern France, the local prosecutor said, as a large swathe of western Europe suffers a ferocious heatwave forecast to shatter absolute temperature records.&lt;/p&gt;&lt;p&gt;“The causes of death are yet to be determined, but the heat is the leading line of inquiry,” said Hélène ",
           "published": "2026-06-22T15:22:05.000Z",
           "score": 8
+        },
+        {
+          "title": "Trapped by floods and fearing death in the heat: the Australians taking legal action over the climate crisis",
+          "link": "https://www.theguardian.com/environment/2026/jun/22/trapped-by-floods-and-fearing-death-in-the-heat-the-australians-taking-legal-action-over-the-climate-crisis",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Ten people affected in different ways by extreme weather are taking a case against the federal government to the UN&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/23/australia-politics-live-nsw-queensland-budget-capital-gains-tax-negative-gearing-ndis-senate-question-time-labor-coalition-anthony-albanese-angus-taylor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&",
+          "published": "2026-06-22T15:00:18.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Ed Miliband to say UK must stick to net zero targets to deliver jobs and growth",
+          "link": "https://www.theguardian.com/environment/2026/jun/23/ed-miliband-uk-must-stick-net-zero-targets-deliver-jobs-growth",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Energy secretary expected to argue that UK clean economy is booming as private sector pledges over £100bn of investment&lt;/p&gt;&lt;p&gt;Ed Miliband is to say that the UK must stick to net zero targets to deliver jobs and growth, as speculation surrounds the energy secretary’s role under a new prime minister.&lt;/p&gt;&lt;p&gt;He will make the speech as data shows more than £100bn in green investment has been pledged by private sector companies in this parliament.&lt;/p&gt; &lt;a href=",
+          "published": "2026-06-23T07:00:34.000Z",
+          "score": 9
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -164,11 +179,11 @@
           "score": 22
         },
         {
-          "title": "Video of a committee meeting - Monday, 22 June 2026 - 13:30 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260622-1500-COMMITTEE-ENVI_vd",
+          "title": "Video of a committee meeting - Tuesday, 23 June 2026 - 07:45 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260623-0945-COMMITTEE-ENVI-DEVE_vd",
           "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 150'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-22T15:41:27.000Z",
+          "description": "Length of video : 15'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-23T08:02:30.000Z",
           "score": 18
         },
         {
@@ -186,6 +201,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "EV demand powers Europe car market in May, Chinese rivals expand share - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5\" target=\"_blank\"&gt;EV demand powers Europe car market in May, Chinese rivals expand share&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-23T04:05:00.000Z",
+          "score": 13
+        },
+        {
           "title": "Europe sizzles under heat wave with little relief in sight",
           "link": "https://www.dw.com/en/europe-sizzles-under-heat-wave-with-little-relief-in-sight/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -202,36 +225,28 @@
           "score": 8
         },
         {
-          "title": "EU reassesses whether to hold July UK summit after Starmer resignation announcement - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5\" target=\"_blank\"&gt;EU reassesses whether to hold July UK summit after Starmer resignation announcement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-06-22T11:06:29.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ten years on, Brexit disputes still hold back Britain's reconciliation with EU - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOdEF2blZpSGxoVzhsRC0zT1BxV1phcjBVUm5LeG1XWFVoWFZIbm45T3l2VzFwLTFGMXBBLUVXcXU4VjY3eWZYcE91VkhXenVlSnctYkxXYUdmRWhnUl9yeXBEUDRRdnVuaGZWT0VBRUpCVU9DbkF3b091V1g0dkdBd1FEa28yZUpYdTRsdGlmT2g1aDFLWEhaTlpHd3paR2VDOVI5dmo2N1phUm11dldvYnlYT2xKTWcwTHc?oc=5\" target=\"_blank\"&gt;Ten years on, Brexit disputes still hold back Britain's reconciliation with EU&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-22T06:03:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU courts Brazil as strategic partner in global race for critical minerals - Reuters",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbTRWY0Y1UkZqa2ZJemJpZmRhWEQ0a1VkbVU1MmVtbWpnLXZ1dHVFbXlBY0JDSU1aOU1nZVBjTkVCRmVDcVN1dDkwczVSbUJYd19HeV9wSktTbU95Q2dlb3NMWHJmeUFyY2FHTFhiWmZIOGE2SVp0TGt6NEJHRlp0YjNwZUp1U20tQ2tMSTBlV25hQ1p3RTJuTVM5NjhnVGdMVHF5aTJOWnplNWQxSWNuZThB?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQbTRWY0Y1UkZqa2ZJemJpZmRhWEQ0a1VkbVU1MmVtbWpnLXZ1dHVFbXlBY0JDSU1aOU1nZVBjTkVCRmVDcVN1dDkwczVSbUJYd19HeV9wSktTbU95Q2dlb3NMWHJmeUFyY2FHTFhiWmZIOGE2SVp0TGt6NEJHRlp0YjNwZUp1U20tQ2tMSTBlV25hQ1p3RTJuTVM5NjhnVGdMVHF5aTJOWnplNWQxSWNuZThB?oc=5\" target=\"_blank\"&gt;EU courts Brazil as strategic partner in global race for critical minerals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-22T10:27:16.000Z",
           "score": 8
+        },
+        {
+          "title": "EU reassesses whether to hold July UK summit after Starmer resignation announcement - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMllNMFhOajZqTW9tUXVPUUp3YmtpbVhfX1lyMVIxYWFFbE1SU2Zfd1RUUFh4d1lkNkJmUzBmOEtHQTRNSHVJaExORFJuTE1hQmxxQ0drdlg4YURtOWR2M0VQVmZkNVAtRnRMeGt1aDlzUGFjVlVLcjlrRGFoMU5ZWVNxWkNpeVMxX2J5UWtzMjdNcmlVdUxRdDJFTWRsczdvWnVwdkZWbU5FZm5GWC1aYkF0S0Q1c3NkTFYtRmhlLWF2ZXM?oc=5\" target=\"_blank\"&gt;EU reassesses whether to hold July UK summit after Starmer resignation announcement&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-06-22T11:06:29.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 416,
-    "articlesLast24h": 171,
-    "afterDedup": 156,
+    "totalArticlesScanned": 418,
+    "articlesLast24h": 178,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
