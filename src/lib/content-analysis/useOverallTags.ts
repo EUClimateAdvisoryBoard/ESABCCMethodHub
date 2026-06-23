@@ -30,10 +30,11 @@
 // transient failure in the meantime.
 // ---------------------------------------------------------------------------
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/lib/auth-context';
 import { enqueue } from './outbox';
+import { isCustomTagId, parseCustomTag } from './custom-overall-tags';
 
 async function authHeader(): Promise<Record<string, string>> {
   if (!supabase) return {};
@@ -107,6 +108,14 @@ export interface OverallTagsApi {
   loaded: boolean;
   /** The overall-tag code ids stored for a document (empty when none). */
   getTags: (docId: string) => string[];
+  /** Every distinct custom (analyst-coined) overall-tag id used on ANY
+   *  document, deduplicated by name. A custom tag lives only as a code id on
+   *  the documents that carry it; this rolls those up into one reusable pool so
+   *  a tag coined on one paper is offered as a ready choice on every other
+   *  paper — and, because the underlying rows are the shared, durable
+   *  `content_analysis_overall_tags` table, that choice stays available
+   *  permanently and for every user. */
+  customTagPool: string[];
   /** Add or remove a single overall tag on a document. Persists to the shared
    *  table; prompts sign-in if needed. Optimistic; a failed write is handed to
    *  the durable outbox and retried until it lands, so a toggle is never lost
@@ -158,6 +167,29 @@ export function useOverallTags(): OverallTagsApi {
     },
     [map],
   );
+
+  // Roll every custom tag seen across all documents into one reusable pool,
+  // deduplicated by name (case-insensitive). A freshly-coined tag is in `map`
+  // optimistically the instant it is toggled, so it joins the pool immediately
+  // and the merge-on-load above keeps tags coined by other users in it too.
+  const customTagPool = useMemo(() => {
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const set of map.values()) {
+      for (const id of set) {
+        if (!isCustomTagId(id)) continue;
+        const parsed = parseCustomTag(id);
+        const key = (parsed ? parsed.name : id).trim().toLowerCase();
+        if (!key || seen.has(key)) continue;
+        seen.add(key);
+        out.push(id);
+      }
+    }
+    out.sort((a, b) =>
+      (parseCustomTag(a)?.name ?? a).localeCompare(parseCustomTag(b)?.name ?? b),
+    );
+    return out;
+  }, [map]);
 
   const toggleTag = useCallback(
     async (docId: string, codeId: string) => {
@@ -215,5 +247,5 @@ export function useOverallTags(): OverallTagsApi {
     [user, requireAuth, map],
   );
 
-  return { loaded, getTags, toggleTag };
+  return { loaded, getTags, customTagPool, toggleTag };
 }

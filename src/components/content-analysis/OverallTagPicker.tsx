@@ -133,11 +133,18 @@ export default function OverallTagPicker({
     return out;
   }, [selected, byId]);
 
-  // Already-selected custom tags — they aren't in the master pool, so surface
-  // them at the top of the checklist where they can be toggled back off.
+  // Already-selected custom tags that aren't in the pool — surface them at the
+  // top of the checklist where they can be toggled back off. Custom tags that
+  // ARE in the pool (the shared, reusable set coined across documents) already
+  // render as ordinary checklist rows below, so they're excluded here to avoid
+  // listing them twice.
   const selectedCustom = useMemo(
-    () => selected.filter(isCustomTagId).map(parseCustomTag).filter(Boolean) as CodeNode[],
-    [selected],
+    () =>
+      selected
+        .filter(id => isCustomTagId(id) && !byId.has(id))
+        .map(parseCustomTag)
+        .filter(Boolean) as CodeNode[],
+    [selected, byId],
   );
 
   // Offer a "+ Create" row when the search box holds a name that isn't already
