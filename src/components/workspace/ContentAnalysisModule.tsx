@@ -419,6 +419,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // already added to this project to documents carrying at least one of the
   // chosen document-level tags, so analysts can zero in on a theme.
   const [corpusTagFilter, setCorpusTagFilter] = useState<string[]>([]);
+  // Free-text search over the "In this workspace" list — matches on document
+  // title, so analysts can find a paper by name without scrolling the corpus.
+  const [corpusQuery, setCorpusQuery] = useState('');
 
   const [selectedDocumentId, setSelectedDocumentId] = useState<string | null>(null);
   const [selectedCodeId, setSelectedCodeId] = useState<string | null>(null);
@@ -711,21 +714,36 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     return [...byName.values()];
   }, [corpusDocs, overallTagsByDoc, masterCodes]);
 
-  // The corpus narrowed to the chosen overall tags — what the "In this
-  // workspace" list shows. Empty filter means show everything. Same name-
-  // collapsing the browse filter uses, so picking "Finance" matches a document
-  // tagged under any id sharing that display name.
+  // The corpus narrowed to the chosen overall tags and the title search — what
+  // the "In this workspace" list shows. An empty filter / query means show
+  // everything. Same name-collapsing the browse filter uses, so picking
+  // "Finance" matches a document tagged under any id sharing that display name.
   const visibleCorpusDocs = useMemo(() => {
-    if (corpusTagFilter.length === 0) return corpusDocs;
-    const wanted = new Set(corpusTagFilter);
-    const wantedNames = new Set(
-      masterCodes.filter(c => wanted.has(c.id)).map(c => c.name.trim().toLowerCase()),
-    );
-    for (const c of masterCodes) {
-      if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
+    let out = corpusDocs;
+    const q = corpusQuery.trim().toLowerCase();
+    if (q) {
+      out = out.filter(d =>
+        d.title.toLowerCase().includes(q) ||
+        (d.shortTitle ?? '').toLowerCase().includes(q),
+      );
     }
-    return corpusDocs.filter(d => (overallTagsByDoc[d.id] ?? []).some(t => wanted.has(t)));
-  }, [corpusDocs, corpusTagFilter, masterCodes, overallTagsByDoc]);
+    if (corpusTagFilter.length > 0) {
+      const wanted = new Set(corpusTagFilter);
+      const wantedNames = new Set(
+        masterCodes.filter(c => wanted.has(c.id)).map(c => c.name.trim().toLowerCase()),
+      );
+      for (const c of masterCodes) {
+        if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
+      }
+      out = out.filter(d => (overallTagsByDoc[d.id] ?? []).some(t => wanted.has(t)));
+    }
+    return out;
+  }, [corpusDocs, corpusQuery, corpusTagFilter, masterCodes, overallTagsByDoc]);
+
+  /** Whether the "In this workspace" list is currently narrowed by either the
+   *  title search or the overall-tag filter — drives the count badge and the
+   *  empty-state copy. */
+  const corpusFiltered = corpusTagFilter.length > 0 || corpusQuery.trim().length > 0;
 
   // ── Codes visible in this workspace (master + this project's own) ─────────
   const visibleCodes = useMemo(
@@ -1567,7 +1585,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
                 <span className="text-[11px] font-semibold text-tertiary-dark">In this workspace</span>
                 <span className="text-[10px] font-mono text-tertiary-light">
-                  {corpusTagFilter.length > 0 ? `${visibleCorpusDocs.length}/${corpusDocs.length}` : corpusDocs.length}
+                  {corpusFiltered ? `${visibleCorpusDocs.length}/${corpusDocs.length}` : corpusDocs.length}
                 </span>
               </div>
               {corpusDocs.length === 0 ? (
@@ -1577,10 +1595,17 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 </p>
               ) : (
                 <>
-                  {/* Filter the workspace corpus by overall (document-level) tag,
-                      so analysts can zero in on the documents carrying a theme. */}
-                  {corpusTagPool.length > 0 && (
-                    <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between gap-2">
+                  {/* Search the workspace corpus by title, alongside the
+                      overall (document-level) tag filter, so analysts can find a
+                      paper by name or zero in on the documents carrying a theme. */}
+                  <div className="px-3 py-2 border-b border-grey-200 flex items-center gap-2">
+                    <input
+                      value={corpusQuery}
+                      onChange={e => setCorpusQuery(e.target.value)}
+                      placeholder="Search by title…"
+                      className="flex-1 min-w-0 px-2 py-1 border border-grey-200 rounded text-[12px]"
+                    />
+                    {corpusTagPool.length > 0 && (
                       <OverallTagPicker
                         codes={corpusTagPool}
                         selected={corpusTagFilter}
@@ -1591,23 +1616,23 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                         }
                         label="Filter by tag"
                       />
-                      {corpusTagFilter.length > 0 && (
-                        <button
-                          type="button"
-                          onClick={() => setCorpusTagFilter([])}
-                          className="text-[10px] text-tertiary-light hover:text-secondary"
-                        >
-                          Clear
-                        </button>
-                      )}
-                    </div>
-                  )}
-                  {visibleCorpusDocs.length === 0 ? (
-                    <p className="px-3 py-3 text-[11px] text-tertiary">
-                      No documents match the selected tag{corpusTagFilter.length === 1 ? '' : 's'}.{' '}
+                    )}
+                    {corpusFiltered && (
                       <button
                         type="button"
-                        onClick={() => setCorpusTagFilter([])}
+                        onClick={() => { setCorpusTagFilter([]); setCorpusQuery(''); }}
+                        className="text-[10px] text-tertiary-light hover:text-secondary whitespace-nowrap"
+                      >
+                        Clear
+                      </button>
+                    )}
+                  </div>
+                  {visibleCorpusDocs.length === 0 ? (
+                    <p className="px-3 py-3 text-[11px] text-tertiary">
+                      No documents match your search.{' '}
+                      <button
+                        type="button"
+                        onClick={() => { setCorpusTagFilter([]); setCorpusQuery(''); }}
                         className="text-secondary hover:underline"
                       >
                         Clear filter
