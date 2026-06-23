@@ -20,7 +20,7 @@
  * deterministic reading — not an automated extraction).
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -38,9 +38,9 @@ import {
   type FindingSeverity,
 } from '@/data/digital-energy-roadmap';
 import {
-  ESABCC_2023_2040_TARGET_ADVICE,
-  ESABCC_2024_RECOMMENDATIONS,
+  ALL_ESABCC_RECOMMENDATIONS,
   type PastRecommendation,
+  type RecommendationStatus,
 } from '@/data/esabcc-recommendations';
 
 // ── Palette ──────────────────────────────────────────────────────────────────
@@ -62,11 +62,20 @@ const PILLAR_COLOR: Record<string, string> = {
 
 // ── Lookups ──────────────────────────────────────────────────────────────────
 
+// The full ESABCC corpus is bundled, so every cited recommendation resolves to
+// its actual report text offline — this module is its own "backup package".
 const REC_BY_ID = new Map<string, PastRecommendation>(
-  [...ESABCC_2024_RECOMMENDATIONS, ESABCC_2023_2040_TARGET_ADVICE].map(r => [r.id, r]),
+  ALL_ESABCC_RECOMMENDATIONS.map(r => [r.id, r]),
 );
 const MEASURE_BY_ID = new Map(ROADMAP_MEASURES.map(m => [m.id, m]));
 const GOAL_BY_ID = new Map(EU_CLIMATE_GOALS.map(g => [g.id, g]));
+
+const STATUS_META: Record<RecommendationStatus, { label: string; cls: string }> = {
+  'not-addressed': { label: 'Not addressed', cls: 'bg-red-500/15 text-red-300 border-red-500/40' },
+  'in-progress': { label: 'In progress', cls: 'bg-amber-500/15 text-amber-300 border-amber-500/40' },
+  partially: { label: 'Partially addressed', cls: 'bg-sky-500/15 text-sky-300 border-sky-500/40' },
+  addressed: { label: 'Addressed', cls: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/40' },
+};
 
 // ── Small building blocks ────────────────────────────────────────────────────
 
@@ -104,7 +113,7 @@ function ReasoningChain({ steps }: { steps: string[] }) {
   );
 }
 
-function FindingCard({ f }: { f: CoherenceFinding }) {
+function FindingCard({ f, onSelectRec }: { f: CoherenceFinding; onSelectRec: (id: string) => void }) {
   const meta = FINDING_KIND_META[f.kind];
   return (
     <div className={`${PANEL} p-3.5`} style={{ borderLeft: `3px solid ${meta.color}` }}>
@@ -135,24 +144,24 @@ function FindingCard({ f }: { f: CoherenceFinding }) {
 
       {/* ESABCC ask + linked recommendations */}
       <div className="mt-2.5 rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-2.5 py-2">
-        <p className="text-[9px] uppercase tracking-[0.12em] text-emerald-300/80 font-bold">ESABCC asks</p>
+        <p className="text-[9px] uppercase tracking-[0.12em] text-emerald-300/80 font-bold">
+          ESABCC asks <span className="text-emerald-300/50 normal-case tracking-normal">· click a code ↗ for the full recommendation text</span>
+        </p>
         <p className="mt-0.5 text-[11px] text-[#C6D2E2] leading-snug">{f.esabccAsk}</p>
         <div className="mt-1.5 flex flex-wrap gap-1">
           {f.esabccRecIds.map(id => {
             const rec = REC_BY_ID.get(id);
             const label = rec ? rec.area : id;
-            const url = rec?.report?.url;
-            const chip = (
-              <span className="inline-block px-1.5 py-0.5 rounded border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 font-mono text-[9px]">
+            return (
+              <button
+                key={id}
+                onClick={() => onSelectRec(id)}
+                title={rec ? `${rec.title} — click for the full recommendation text` : id}
+                className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 font-mono text-[9px] hover:bg-emerald-500/20 hover:border-emerald-400 transition cursor-pointer"
+              >
                 {label}
-              </span>
-            );
-            return url ? (
-              <a key={id} href={url} target="_blank" rel="noopener noreferrer" title={rec?.title}>
-                {chip}
-              </a>
-            ) : (
-              <span key={id} title={rec?.title}>{chip}</span>
+                <span className="text-emerald-400/70">↗</span>
+              </button>
             );
           })}
         </div>
@@ -180,12 +189,118 @@ function FindingCard({ f }: { f: CoherenceFinding }) {
   );
 }
 
+// ── Recommendation detail modal (the bundled "backup package") ───────────────
+
+function RecommendationModal({ recId, onClose }: { recId: string; onClose: () => void }) {
+  const rec = REC_BY_ID.get(recId);
+  if (!rec) return null;
+  const status = STATUS_META[rec.status];
+  const events = [...rec.uptakeEvents].sort((a, b) => (a.date < b.date ? 1 : -1));
+  return (
+    <div
+      className="fixed inset-0 z-[60] flex items-start justify-center bg-black/70 backdrop-blur-sm overflow-y-auto p-4 sm:p-8"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative w-full max-w-2xl my-auto rounded-2xl border border-[#2A3B5C] bg-[#101B30] shadow-2xl"
+        onClick={e => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-3 border-b border-[#1E2C46] px-5 py-4">
+          <div className="min-w-0">
+            <p className="font-mono text-[10px] uppercase tracking-[0.14em] text-emerald-300/80 font-bold">
+              ESABCC recommendation · {rec.area}
+            </p>
+            <h3 className="mt-1 text-[16px] font-bold text-[#E6EBF2] leading-snug">{rec.title}</h3>
+          </div>
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="shrink-0 rounded-lg border border-[#2A3B5C] px-2 py-1 font-mono text-[11px] text-[#9DAEC5] hover:text-[#E6EBF2] hover:border-[#3A4D6E] transition"
+          >
+            Esc ✕
+          </button>
+        </div>
+
+        <div className="px-5 py-4 max-h-[70vh] overflow-y-auto">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className={`inline-block px-2 py-0.5 rounded border font-mono text-[9px] uppercase tracking-[0.08em] ${status.cls}`}>
+              {status.label}
+            </span>
+            {rec.report && (
+              <span className="font-mono text-[10px] text-[#7E92AE]">source: {rec.report.label}</span>
+            )}
+          </div>
+
+          <p className="mt-3 text-[9px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+            Recommendation (as recorded from the report)
+          </p>
+          <p className="mt-1.5 text-[13px] text-[#C6D2E2] leading-relaxed whitespace-pre-line">
+            {rec.summary}
+          </p>
+
+          {events.length > 0 && (
+            <>
+              <p className="mt-4 text-[9px] uppercase tracking-[0.14em] text-[#7E92AE] font-bold">
+                Uptake / legislative milestones
+              </p>
+              <ol className="mt-1.5 space-y-1.5">
+                {events.map((ev, i) => (
+                  <li key={ev.id ?? i} className="rounded-lg border border-[#1E2C46] bg-[#0B1322] px-2.5 py-1.5">
+                    <p className="font-mono text-[9.5px] text-[#E87722]">{ev.date}</p>
+                    <p className="mt-0.5 text-[11px] text-[#9DAEC5] leading-snug">{ev.note}</p>
+                    {ev.sourceUrl && (
+                      <a
+                        href={ev.sourceUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-0.5 inline-block font-mono text-[9.5px] text-sky-300 hover:underline break-all"
+                      >
+                        {ev.sourceUrl}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ol>
+            </>
+          )}
+
+          {rec.report && (
+            <a
+              href={rec.report.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block px-3 py-1.5 rounded-lg border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 text-[12px] font-bold hover:bg-emerald-500/20 transition"
+            >
+              Open the source report ↗
+            </a>
+          )}
+
+          <p className="mt-4 font-mono text-[9px] text-[#56688A] leading-relaxed">
+            id: {rec.id} · text bundled from <span className="text-[#7E92AE]">src/data/esabcc-recommendations.ts</span> —
+            available offline; the link above goes to the original ESABCC publication.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ── Page ─────────────────────────────────────────────────────────────────────
 
 export default function DigitalEnergyRoadmapPage() {
   const counts = useMemo(() => countByKind(), []);
   const [kindFilter, setKindFilter] = useState<FindingKind | ''>('');
   const [sevFilter, setSevFilter] = useState<FindingSeverity | ''>('');
+  const [selectedRec, setSelectedRec] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!selectedRec) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setSelectedRec(null);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedRec]);
 
   const sevRank: Record<FindingSeverity, number> = { high: 3, medium: 2, low: 1 };
   const kindRank: Record<FindingKind, number> = { contradiction: 0, tension: 1, 'ambition-gap': 2, alignment: 3 };
@@ -372,7 +487,7 @@ export default function DigitalEnergyRoadmapPage() {
             </div>
 
             <div className="mt-3 grid md:grid-cols-2 gap-3">
-              {filtered.map(f => <FindingCard key={f.id} f={f} />)}
+              {filtered.map(f => <FindingCard key={f.id} f={f} onSelectRec={setSelectedRec} />)}
             </div>
           </section>
 
@@ -424,6 +539,7 @@ export default function DigitalEnergyRoadmapPage() {
         </div>
       </main>
       <SiteFooter />
+      {selectedRec && <RecommendationModal recId={selectedRec} onClose={() => setSelectedRec(null)} />}
     </>
   );
 }
