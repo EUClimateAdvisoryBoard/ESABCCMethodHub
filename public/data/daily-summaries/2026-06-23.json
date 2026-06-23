@@ -1,12 +1,18 @@
 {
   "date": "2026-06-23",
-  "generatedAt": "2026-06-23T13:47:32.130Z",
+  "generatedAt": "2026-06-23T19:13:28.814Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 23 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Europe on red alert for record-breaking heat",
-      "summary": "Dozens of people have drowned in France and Germany in recent days as people seek relief from &quot;oppressive&quot; heat. In Italy, more than a dozen cities are on high alert for extreme heat. DW has the latest.",
+      "headline": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members voted on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN-E),",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "China&#8217;s coal-chemicals boom risks repeating the mistakes of the past",
+      "summary": "By reviving the problematic industry in the name of energy security, China runs the risk of higher emissions, stranded assets and setting back its ambitions as a clean energy leader The post China&#8217;s coal-chemicals boom risks repeating the mistakes of the past appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -27,19 +33,36 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Highlights - Vote on ENVI opinion on the revised TEN-E Regulation - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79066",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250616PHT28960/20250616PHT28960-ms.jpg\" width=\"180\" alt=\"secure energy transport via high-voltage lines\" title=\"Electricity_Grids_AdobeStock_1092680687_Gruhl_web.jpg © Andreas Gruhl / Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members voted on the ENVI opinion on the Commission proposal for a revised Trans-European Network for Energy Regulation (TEN-E),",
+          "published": "2026-06-23T13:56:30.000Z",
+          "score": 20
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Europe on red alert for record-breaking heat",
-          "link": "https://www.dw.com/en/europe-on-red-alert-for-record-breaking-heat/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "China&#8217;s coal-chemicals boom risks repeating the mistakes of the past",
+          "link": "https://www.climatechangenews.com/2026/06/22/chinas-coal-chemicals-boom-risks-repeating-the-mistakes-of-the-past/",
+          "source": "Climate Home News",
+          "description": "By reviving the problematic industry in the name of energy security, China runs the risk of higher emissions, stranded assets and setting back its ambitions as a clean energy leader The post China&#8217;s coal-chemicals boom risks repeating the mistakes of the past appeared first on Climate Home News.",
+          "published": "2026-06-22T21:02:01.000Z",
+          "score": 10
+        },
+        {
+          "title": "Europe heat wave: France measures hottest-ever day",
+          "link": "https://www.dw.com/en/europe-heat-wave-france-measures-hottest-ever-day/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Dozens of people have drowned in France and Germany in recent days as people seek relief from &quot;oppressive&quot; heat. In Italy, more than a dozen cities are on high alert for extreme heat. DW has the latest.",
+          "description": "Monuments in Paris are working on reduced hours, and dozens of people in France have drowned during the heat wave. Britain, France, Italy and Spain have issued red alerts and health warnings. More on DW.",
           "published": "2026-06-23T11:51:00.000Z",
-          "score": 13
+          "score": 10
         },
         {
           "title": "Clean economy brings jobs and growth, says Miliband as £100bn invested in green energy",
@@ -50,27 +73,19 @@
           "score": 9
         },
         {
-          "title": "Red heat alerts issued in France, Italy and Spain as 40C temperatures forecast",
-          "link": "https://www.bbc.co.uk/news/articles/c0jy9g96086o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The heatwave conditions are forecast to intensify in the coming days across central and western Europe.",
-          "published": "2026-06-22T16:42:23.000Z",
-          "score": 9
-        },
-        {
-          "title": "Majority of datacenters are vulnerable to climate threats like floods and fires, study finds",
-          "link": "https://www.theguardian.com/us-news/2026/jun/23/datacenters-climate-hazards-study",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Study warns AI datacenters are vulnerable to the climate hazards that their global greenhouse gas emissions bolster&lt;/p&gt;&lt;p&gt;Amid rising concern that the &lt;a href=\"https://www.theguardian.com/technology/artificialintelligenceai\"&gt;artificial intelligence&lt;/a&gt; boom is fueling the climate crisis, a new report has found that nearly 80% of &lt;a href=\"https://www.theguardian.com/us-news/datacenters--us-\"&gt;datacenters&lt;/a&gt; are also exposed to extreme climate hazards, ",
-          "published": "2026-06-23T11:30:26.000Z",
-          "score": 7
-        },
-        {
           "title": "Red squirrel sickness reports under investigation",
           "link": "https://www.bbc.co.uk/news/articles/cy8wj842753o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Tests are being carried out to establish if there is an outbreak of squirrelpox in the Borders.",
           "published": "2026-06-23T10:52:41.000Z",
+          "score": 7
+        },
+        {
+          "title": "Iran says no new commitments on nuclear sites after Vance says inspectors to be invited back",
+          "link": "https://www.bbc.co.uk/news/articles/c3vy3nr63gxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Iran's foreign ministry says it made \"no new commitments\" on nuclear inspections after talks in Switzerland.",
+          "published": "2026-06-23T12:14:58.000Z",
           "score": 7
         }
       ]
@@ -96,28 +111,28 @@
           "score": 13
         },
         {
-          "title": "Europe heatwave live: ‘London is cooking,’ says UN chief as UK forecast to hit 38C; France has hottest night since records began",
-          "link": "https://www.theguardian.com/world/live/2026/jun/23/europe-heatwave-live-news-updates-uk-red-temperature-warnings-40-degrees-france-heat-deaths-crisis-meeting",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;António Guterres urges world to act on fossil fuels as continent braces for record-breaking heat; French PM to hold emergency meeting after heat deaths&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/22/tell-us-how-is-the-heatwave-in-europe-affecting-you\"&gt;Tell us: how is the heatwave in the UK and across Europe affecting you?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun",
-          "published": "2026-06-23T13:14:51.000Z",
+          "title": "Women in Jamaica are opening eyes with climate photography",
+          "link": "https://www.climatechangenews.com/2026/06/23/women-in-jamaica-are-opening-eyes-with-climate-photography/",
+          "source": "Climate Home News",
+          "description": "An innovative project is enabling women to chronicle untold stories of climate adaptation and influence policy with the stories they are documenting The post Women in Jamaica are opening eyes with climate photography appeared first on Climate Home News.",
+          "published": "2026-06-23T10:43:35.000Z",
+          "score": 13
+        },
+        {
+          "title": "UN chief says fossil fuel industry must cut methane for warming “relief”",
+          "link": "https://www.climatechangenews.com/2026/06/23/un-chief-fossil-fuel-industry-cut-methane-warming-relief/",
+          "source": "Climate Home News",
+          "description": "The UN Secretary-General urges drastic reductions in methane emissions, starting with the energy sector, to limit an expected overshoot of global warming beyond 1.5C The post UN chief says fossil fuel industry must cut methane for warming “relief” appeared first on Climate Home News.",
+          "published": "2026-06-23T08:42:51.000Z",
+          "score": 13
+        },
+        {
+          "title": "Cited 23 June 2026: Project Cosmos launch &#124; Science ‘under attack’ at Bonn &#124; Emissions inequality",
+          "link": "https://www.carbonbrief.org/cited-23-june-project-cosmos-launch-science-under-attack-at-bonn-emissions-inequality/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Cited, your essential guide to new climate research. In the news SCIENCE ‘UNDER... The post Cited 23 June 2026: Project Cosmos launch | Science ‘under attack’ at Bonn | Emissions inequality appeared first on Carbon Brief.",
+          "published": "2026-06-23T14:07:41.000Z",
           "score": 10
-        },
-        {
-          "title": "Two children found dead in car in France as heatwave hits Europe",
-          "link": "https://www.theguardian.com/environment/2026/jun/22/europe-record-heatwave-temperatures-forecast-reach-44c",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Number of countries issue alerts with sustained and rising temperatures expected to present danger to health&lt;/p&gt;&lt;p&gt;Two children aged four and two have been found dead in their family’s car in south-eastern France, the local prosecutor said, as a large swathe of western Europe suffers a ferocious heatwave forecast to shatter absolute temperature records.&lt;/p&gt;&lt;p&gt;“The causes of death are yet to be determined, but the heat is the leading line of inquiry,” said Hélène ",
-          "published": "2026-06-23T11:52:08.000Z",
-          "score": 8
-        },
-        {
-          "title": "‘Climate change is a form of oppression’: the voices affected most by environmental crisis",
-          "link": "https://www.theguardian.com/film/2026/jun/23/the-welcome-table-hbo-documentary",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;In HBO documentary The Welcome Table, director Josh Fox brings together people from across the world whose lives have been dramatically altered by the climate crisis&lt;/p&gt;&lt;p&gt;In an age of division, director Josh Fox is hoping to bring people of all kinds together. Specifically, he wants them to share a table – to break bread for a meal, and come together in exuberant song.&lt;/p&gt;&lt;p&gt;In his new documentary film The Welcome Table, the director of the the Emmy-winning Gasl",
-          "published": "2026-06-23T09:00:37.000Z",
-          "score": 7
         }
       ]
     },
@@ -140,6 +155,14 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "Highlights - Exchange of views with Costas Kadis on the European Ocean Pact - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79063",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20250610PHT28861/20250610PHT28861-ms.jpeg\" width=\"180\" alt=\"Life underwater\" title=\"UN ocean conference 2025.jpeg © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 23 June 2026, ENVI Members held an exchange of views during a joint ENVI-DEVE-PECH with Costas Kadis, Commissioner for Fisheries and Oceans, on the European Ocean Pact, one year after its",
+          "published": "2026-06-23T13:57:53.000Z",
+          "score": 22
+        },
+        {
           "title": "DRAFT MOTION FOR A RESOLUTION on the draft Commission Implementing decision authorising the placing on the market of products containing, consisting of or produced from genetically modified maize DP202216 x NK603 x DAS-40278-9 and its sub-combinations DP202216 x NK603, DP202216 x DAS-40278-9, pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council - PE789.025v01-00",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-RD-789025_EN.pdf",
           "source": "EU Parliament ENVI Committee",
@@ -148,34 +171,26 @@
           "score": 22
         },
         {
-          "title": "DRAFT MOTION FOR A RESOLUTION on the draft Commission regulation amending Annex XVII to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) as regards lead in certain fishing tackle - PE789.009v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-RD-789009_EN.pdf",
+          "title": "Video of a committee meeting - Tuesday, 23 June 2026 - 12:30 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260623-1430-COMMITTEE-ENVI_vd",
           "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT MOTION FOR A RESOLUTION on the draft Commission regulation amending Annex XVII to Regulation (EC) No 1907/2006 of the European Parliament and of the Council concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH) as regards lead in certain fishing tackle&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pietro Fiocchi&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European",
-          "published": "2026-06-22T14:24:39.000Z",
-          "score": 22
-        },
-        {
-          "title": "Video of a committee meeting - Tuesday, 23 June 2026 - 08:00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260623-1000-COMMITTEE-ENVI_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 75'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-23T09:18:04.000Z",
+          "description": "Length of video : 240'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-23T16:08:57.000Z",
           "score": 18
         },
         {
-          "title": "AMENDMENTS 1 - 8 - Draft report Implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum - PE786.741v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ37-AM-786741_EN.pdf",
+          "title": "Highlights - Consideration of draft reports on extended producer responsibility - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260622CAN79060",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 8 - Draft report Implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum&lt;br/&gt;Committee on Development&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lukas Mandl, Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-22T14:08:09.000Z",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20231017PHT07495/20231017PHT07495-ms.jpeg\" width=\"180\" alt=\"Plastic bottles and container to recycle\" title=\"Plastic bottles © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 22 June 2026, ENVI Members held an exchange of views on two draft reports concerning the temporary suspension of authorised representative requirements under several extended p",
+          "published": "2026-06-23T13:55:15.000Z",
           "score": 18
         },
         {
-          "title": "Europe&#039;s defense ambitions get reality check",
-          "link": "https://www.dw.com/en/europe-s-defense-ambitions-get-reality-check/a-77650976?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe is spending billions to rearm, so why the delays?",
+          "link": "https://www.dw.com/en/europe-is-spending-billions-to-rearm-so-why-the-delays/a-77650976?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "European countries have been trying to scale up and integrate their military capabilities, but their current defense production and procurement model is not fit for purpose, say experts.",
+          "description": "European countries have been trying to scale up their military capabilities, but their current defense production and procurement model is not fit for purpose, say experts.",
           "published": "2026-06-23T09:50:00.000Z",
           "score": 8
         }
@@ -190,16 +205,8 @@
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5\" target=\"_blank\"&gt;EV demand powers Europe car market in May, Chinese rivals expand share&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-23T04:05:00.000Z",
+          "published": "2026-06-23T04:19:14.000Z",
           "score": 13
-        },
-        {
-          "title": "Drowning deaths soar in France as Europe buckles in peak of heatwave",
-          "link": "https://www.bbc.co.uk/news/articles/c79yvw3j114o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Forty people have drowned in heatwave-related deaths in France since last Thursday, Prime Minister Sébastien Lecornu says.",
-          "published": "2026-06-23T13:16:09.000Z",
-          "score": 8
         },
         {
           "title": "UN commission of inquiry says Israel committing genocide in Gaza by deliberately targeting children",
@@ -210,28 +217,36 @@
           "score": 8
         },
         {
-          "title": "Why is Bulgaria threatening to veto EU&#039;s Russia sanctions?",
-          "link": "https://www.dw.com/en/why-is-bulgaria-threatening-to-veto-eu-s-russia-sanctions/a-77657628?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Bulgarian PM Rumen Radev has vowed to veto the EU&#039;s latest sanctions against Russia because they include Russian Orthodox Patriarch Kirill and former Lukoil president Vagit Alekperov. What&#039;s behind his opposition?",
-          "published": "2026-06-22T13:50:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Belgium issues visas to Taliban delegation for EU meeting - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVjJPM0lRaU93aElSV1JYNjNZcml2LU90bXcxeGZiN0NNcVZGU3B4NWFPbWRaTnVFcl92bFlrdkRwMjVoZzl3a1g5ejB2b1hGOHVYSFhhNXpHT0d1YTJxamhuSEN6LU8yM0xqSXEyOUctaE1IREtLQUZ3eUlNSFQ1NHBPVzUwc0dLb3g0d3V5UmpOdVFEWFQ5SzA4QnRVZUgxdlhMaGdNeHU?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVjJPM0lRaU93aElSV1JYNjNZcml2LU90bXcxeGZiN0NNcVZGU3B4NWFPbWRaTnVFcl92bFlrdkRwMjVoZzl3a1g5ejB2b1hGOHVYSFhhNXpHT0d1YTJxamhuSEN6LU8yM0xqSXEyOUctaE1IREtLQUZ3eUlNSFQ1NHBPVzUwc0dLb3g0d3V5UmpOdVFEWFQ5SzA4QnRVZUgxdlhMaGdNeHU?oc=5\" target=\"_blank\"&gt;Belgium issues visas to Taliban delegation for EU meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-22T20:43:47.000Z",
           "score": 8
+        },
+        {
+          "title": "EU hosts Taliban officials in Brussels for first time - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNS2dlc2hWX3FOTWZqQjNtUE5TODluRUtTVXY0OXQ2Y2x0bXh2bkRVZ1lwWmlQWnFUd08wQzAxeWFPNktoSzlBNTUzeDRzRjhTQ3A4cDVSZWV2Q1NGQ0FYaTk5dUtNa3R2aGpUMnYxM0xDUmlyakVNYnRnckRuMDZ1WldFZ2hNR2dabG55Y2pmMlBkb1ZsRHZtdXZid0JiY3k2Skt3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNS2dlc2hWX3FOTWZqQjNtUE5TODluRUtTVXY0OXQ2Y2x0bXh2bkRVZ1lwWmlQWnFUd08wQzAxeWFPNktoSzlBNTUzeDRzRjhTQ3A4cDVSZWV2Q1NGQ0FYaTk5dUtNa3R2aGpUMnYxM0xDUmlyakVNYnRnckRuMDZ1WldFZ2hNR2dabG55Y2pmMlBkb1ZsRHZtdXZid0JiY3k2Skt3?oc=5\" target=\"_blank\"&gt;EU hosts Taliban officials in Brussels for first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-23T17:23:45.000Z",
+          "score": 8
+        },
+        {
+          "title": "Amnesty calls EU complicit in new Libyan crackdown on migrants - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT21BQkU5dC1URHVUUjNfUzVfS2hSbnFiVURTcHo0dGYxZ3JDTkI0cmQ5azQ0RExPSXpNN3BWS01Zb21LdTNLX3FpZ3pseVVjRHNNYWNPSVV0NGJ4bFF5UXdIY0FMZUZRaXFONTJZZHQyZWFNMXFPZFRBVWkyeF9xUUI4RGJJMF9odjBKS1gwdWFpNUduOEtibnVQYVBNUG9ubVZHejdXano?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT21BQkU5dC1URHVUUjNfUzVfS2hSbnFiVURTcHo0dGYxZ3JDTkI0cmQ5azQ0RExPSXpNN3BWS01Zb21LdTNLX3FpZ3pseVVjRHNNYWNPSVV0NGJ4bFF5UXdIY0FMZUZRaXFONTJZZHQyZWFNMXFPZFRBVWkyeF9xUUI4RGJJMF9odjBKS1gwdWFpNUduOEtibnVQYVBNUG9ubVZHejdXano?oc=5\" target=\"_blank\"&gt;Amnesty calls EU complicit in new Libyan crackdown on migrants&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-23T10:45:30.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 403,
-    "articlesLast24h": 171,
-    "afterDedup": 161,
+    "totalArticlesScanned": 444,
+    "articlesLast24h": 188,
+    "afterDedup": 169,
     "feedsQueried": 19
   }
 }
