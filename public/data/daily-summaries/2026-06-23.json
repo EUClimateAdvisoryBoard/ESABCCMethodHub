@@ -1,6 +1,6 @@
 {
   "date": "2026-06-23",
-  "generatedAt": "2026-06-23T19:13:28.814Z",
+  "generatedAt": "2026-06-23T23:58:59.826Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 23 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#007B6C"
     },
     {
-      "headline": "China&#8217;s coal-chemicals boom risks repeating the mistakes of the past",
-      "summary": "By reviving the problematic industry in the name of energy security, China runs the risk of higher emissions, stranded assets and setting back its ambitions as a clean energy leader The post China&#8217;s coal-chemicals boom risks repeating the mistakes of the past appeared first on Climate Home News.",
+      "headline": "CCC: Faster electrification of UK will ‘put money back into people’s pockets’",
+      "summary": "Faster electrification is the best way to secure lower energy bills and stronger energy security,... The post CCC: Faster electrification of UK will ‘put money back into people’s pockets’ appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -49,11 +49,11 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "China&#8217;s coal-chemicals boom risks repeating the mistakes of the past",
-          "link": "https://www.climatechangenews.com/2026/06/22/chinas-coal-chemicals-boom-risks-repeating-the-mistakes-of-the-past/",
-          "source": "Climate Home News",
-          "description": "By reviving the problematic industry in the name of energy security, China runs the risk of higher emissions, stranded assets and setting back its ambitions as a clean energy leader The post China&#8217;s coal-chemicals boom risks repeating the mistakes of the past appeared first on Climate Home News.",
-          "published": "2026-06-22T21:02:01.000Z",
+          "title": "CCC: Faster electrification of UK will ‘put money back into people’s pockets’",
+          "link": "https://www.carbonbrief.org/ccc-faster-electrification-of-uk-will-put-money-back-into-peoples-pockets/",
+          "source": "Carbon Brief",
+          "description": "Faster electrification is the best way to secure lower energy bills and stronger energy security,... The post CCC: Faster electrification of UK will ‘put money back into people’s pockets’ appeared first on Carbon Brief.",
+          "published": "2026-06-23T23:01:00.000Z",
           "score": 10
         },
         {
@@ -73,19 +73,19 @@
           "score": 9
         },
         {
+          "title": "Heat pump growth stalls as government support cut, warns climate watchdog",
+          "link": "https://www.bbc.co.uk/news/articles/cn8k4pek3gzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The growth in sales has slowed significantly after a critical government grant programme was cut.",
+          "published": "2026-06-23T23:54:17.000Z",
+          "score": 7
+        },
+        {
           "title": "Red squirrel sickness reports under investigation",
           "link": "https://www.bbc.co.uk/news/articles/cy8wj842753o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Tests are being carried out to establish if there is an outbreak of squirrelpox in the Borders.",
           "published": "2026-06-23T10:52:41.000Z",
-          "score": 7
-        },
-        {
-          "title": "Iran says no new commitments on nuclear sites after Vance says inspectors to be invited back",
-          "link": "https://www.bbc.co.uk/news/articles/c3vy3nr63gxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Iran's foreign ministry says it made \"no new commitments\" on nuclear inspections after talks in Switzerland.",
-          "published": "2026-06-23T12:14:58.000Z",
           "score": 7
         }
       ]
@@ -127,12 +127,12 @@
           "score": 13
         },
         {
-          "title": "Cited 23 June 2026: Project Cosmos launch &#124; Science ‘under attack’ at Bonn &#124; Emissions inequality",
-          "link": "https://www.carbonbrief.org/cited-23-june-project-cosmos-launch-science-under-attack-at-bonn-emissions-inequality/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Cited, your essential guide to new climate research. In the news SCIENCE ‘UNDER... The post Cited 23 June 2026: Project Cosmos launch | Science ‘under attack’ at Bonn | Emissions inequality appeared first on Carbon Brief.",
-          "published": "2026-06-23T14:07:41.000Z",
-          "score": 10
+          "title": "Weakening UK net zero policy would damage economy, chief climate adviser says",
+          "link": "https://www.theguardian.com/environment/2026/jun/24/weakening-net-zero-policy-damage-economy-climate-change-committee",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Climate Change Committee chair Nigel Topping says U-turns damage investor confidence and disrupt businesses&lt;/p&gt;&lt;p&gt;Weakening the UK’s net zero policy would disrupt business and damage the economy, the UK’s chief climate adviser has warned.&lt;/p&gt;&lt;p&gt;Nigel Topping, chair of the Climate Change Committee (CCC), said: “The U-turns are really damaging to inward investor confidence. If we really want to grow the economy, then investing and getting good at building stuff is ",
+          "published": "2026-06-23T23:01:29.000Z",
+          "score": 11
         }
       ]
     },
@@ -146,6 +146,14 @@
           "source": "BBC World News",
           "description": "The money will come from the last allocation from the Irish government's Shared Island Fund.",
           "published": "2026-06-23T13:39:03.000Z",
+          "score": 2
+        },
+        {
+          "title": "US spectrum auction raises $3.5 billion, will fund replacing Chinese telecom equipment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNGIxV2hHOFViVWNsTkpXdk1tclNVWWE0Z3o2X0N6dHV3YWVNNTVZZDN1TC1nSW5wOGVYcjJSNlh5b1VfLURkcmNXQmVzZTRNdF8zSlFSNG9QTDBIZU9GN0F6RklrRnR2UVZDcU5sOTREUDVLNzU5b05KRzQwYU9vU0FNSVptaFA3cTZXWjd1ZFllMWFQdnBnSkFEZmFWQXFObHdqYkVxRy1SMFctM3k1a1BGbW5WdU91VFVyLTB3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQNGIxV2hHOFViVWNsTkpXdk1tclNVWWE0Z3o2X0N6dHV3YWVNNTVZZDN1TC1nSW5wOGVYcjJSNlh5b1VfLURkcmNXQmVzZTRNdF8zSlFSNG9QTDBIZU9GN0F6RklrRnR2UVZDcU5sOTREUDVLNzU5b05KRzQwYU9vU0FNSVptaFA3cTZXWjd1ZFllMWFQdnBnSkFEZmFWQXFObHdqYkVxRy1SMFctM3k1a1BGbW5WdU91VFVyLTB3?oc=5\" target=\"_blank\"&gt;US spectrum auction raises $3.5 billion, will fund replacing Chinese telecom equipment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-23T19:55:28.000Z",
           "score": 2
         }
       ]
@@ -205,7 +213,7 @@
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOMzZPc1psQnZsRThRODg2SzdjTm0xR2ZFakRyUHhXVnB0SUFCVDZKZWRGRzdWc1BZa2YzXy0wdHRPTzdMcXFfQS0tSklmeEd4ZFFfTGFrTklsU281elFTeVEyUDkxdWFMbWlzUFdaa21aVm1sMTRBS0ZZY296ZkJtZXQ5X0ZYODR1ZV95TldWeUU5YWZ2UW5wXy1sN0VrX3haWTRvQk5oa2t5TzRNNDJ0Rm14V2M?oc=5\" target=\"_blank\"&gt;EV demand powers Europe car market in May, Chinese rivals expand share&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-23T04:19:14.000Z",
+          "published": "2026-06-23T04:05:00.000Z",
           "score": 13
         },
         {
@@ -217,11 +225,19 @@
           "score": 8
         },
         {
-          "title": "Belgium issues visas to Taliban delegation for EU meeting - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVjJPM0lRaU93aElSV1JYNjNZcml2LU90bXcxeGZiN0NNcVZGU3B4NWFPbWRaTnVFcl92bFlrdkRwMjVoZzl3a1g5ejB2b1hGOHVYSFhhNXpHT0d1YTJxamhuSEN6LU8yM0xqSXEyOUctaE1IREtLQUZ3eUlNSFQ1NHBPVzUwc0dLb3g0d3V5UmpOdVFEWFQ5SzA4QnRVZUgxdlhMaGdNeHU?oc=5",
+          "title": "Temperatures hit record levels in western Europe",
+          "link": "https://www.bbc.co.uk/news/videos/c30y6qe2qqno?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "France, Spain and Italy, have been hardest hit by the heatwave so far.",
+          "published": "2026-06-23T21:46:34.000Z",
+          "score": 8
+        },
+        {
+          "title": "Belgium issues EU arrest warrant for ex-Commissioner Avramopoulos in Qatargate probe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxNMmF5NzdHYUppR3YxWGp2NnpRUGRMLUxQellMeEl2d0RHdWJGb3hFX1JvQTBrWFp2REo1eFUyTFItbnBOZURYajJBTTRReHpTb0RRekRuSXpqUzJCZFk0NXlPT085QVRvc3g4aW5hbTVlWVdlOFNqZnM0UFh1bkdXb1V5TDE0akhRV1VNN1lLRTUyTXk1YXU3R2toZ2ZPYmUzMDNDd3N0M0QwMHpHQU1PdUw1SzRTUHBZRFVSemhkV01lNXhybW16RjJrZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQVjJPM0lRaU93aElSV1JYNjNZcml2LU90bXcxeGZiN0NNcVZGU3B4NWFPbWRaTnVFcl92bFlrdkRwMjVoZzl3a1g5ejB2b1hGOHVYSFhhNXpHT0d1YTJxamhuSEN6LU8yM0xqSXEyOUctaE1IREtLQUZ3eUlNSFQ1NHBPVzUwc0dLb3g0d3V5UmpOdVFEWFQ5SzA4QnRVZUgxdlhMaGdNeHU?oc=5\" target=\"_blank\"&gt;Belgium issues visas to Taliban delegation for EU meeting&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-22T20:43:47.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxNMmF5NzdHYUppR3YxWGp2NnpRUGRMLUxQellMeEl2d0RHdWJGb3hFX1JvQTBrWFp2REo1eFUyTFItbnBOZURYajJBTTRReHpTb0RRekRuSXpqUzJCZFk0NXlPT085QVRvc3g4aW5hbTVlWVdlOFNqZnM0UFh1bkdXb1V5TDE0akhRV1VNN1lLRTUyTXk1YXU3R2toZ2ZPYmUzMDNDd3N0M0QwMHpHQU1PdUw1SzRTUHBZRFVSemhkV01lNXhybW16RjJrZw?oc=5\" target=\"_blank\"&gt;Belgium issues EU arrest warrant for ex-Commissioner Avramopoulos in Qatargate probe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-06-23T07:29:43.000Z",
           "score": 8
         },
         {
@@ -229,24 +245,16 @@
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNS2dlc2hWX3FOTWZqQjNtUE5TODluRUtTVXY0OXQ2Y2x0bXh2bkRVZ1lwWmlQWnFUd08wQzAxeWFPNktoSzlBNTUzeDRzRjhTQ3A4cDVSZWV2Q1NGQ0FYaTk5dUtNa3R2aGpUMnYxM0xDUmlyakVNYnRnckRuMDZ1WldFZ2hNR2dabG55Y2pmMlBkb1ZsRHZtdXZid0JiY3k2Skt3?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNS2dlc2hWX3FOTWZqQjNtUE5TODluRUtTVXY0OXQ2Y2x0bXh2bkRVZ1lwWmlQWnFUd08wQzAxeWFPNktoSzlBNTUzeDRzRjhTQ3A4cDVSZWV2Q1NGQ0FYaTk5dUtNa3R2aGpUMnYxM0xDUmlyakVNYnRnckRuMDZ1WldFZ2hNR2dabG55Y2pmMlBkb1ZsRHZtdXZid0JiY3k2Skt3?oc=5\" target=\"_blank\"&gt;EU hosts Taliban officials in Brussels for first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-23T17:23:45.000Z",
-          "score": 8
-        },
-        {
-          "title": "Amnesty calls EU complicit in new Libyan crackdown on migrants - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT21BQkU5dC1URHVUUjNfUzVfS2hSbnFiVURTcHo0dGYxZ3JDTkI0cmQ5azQ0RExPSXpNN3BWS01Zb21LdTNLX3FpZ3pseVVjRHNNYWNPSVV0NGJ4bFF5UXdIY0FMZUZRaXFONTJZZHQyZWFNMXFPZFRBVWkyeF9xUUI4RGJJMF9odjBKS1gwdWFpNUduOEtibnVQYVBNUG9ubVZHejdXano?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT21BQkU5dC1URHVUUjNfUzVfS2hSbnFiVURTcHo0dGYxZ3JDTkI0cmQ5azQ0RExPSXpNN3BWS01Zb21LdTNLX3FpZ3pseVVjRHNNYWNPSVV0NGJ4bFF5UXdIY0FMZUZRaXFONTJZZHQyZWFNMXFPZFRBVWkyeF9xUUI4RGJJMF9odjBKS1gwdWFpNUduOEtibnVQYVBNUG9ubVZHejdXano?oc=5\" target=\"_blank\"&gt;Amnesty calls EU complicit in new Libyan crackdown on migrants&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-23T10:45:30.000Z",
+          "published": "2026-06-23T21:19:38.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 444,
-    "articlesLast24h": 188,
-    "afterDedup": 169,
+    "totalArticlesScanned": 443,
+    "articlesLast24h": 194,
+    "afterDedup": 174,
     "feedsQueried": 19
   }
 }
