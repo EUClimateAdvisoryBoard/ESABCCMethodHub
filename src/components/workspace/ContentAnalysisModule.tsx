@@ -64,7 +64,7 @@ import GuidedSession from '@/components/content-analysis/GuidedSession';
 import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
 import DocumentList from '@/components/content-analysis/DocumentList';
 import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
-import { resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
+import { parseCustomTag, resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
 import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
 import SegmentsList from '@/components/content-analysis/SegmentsList';
 import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
@@ -607,6 +607,19 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     () => snapshot.codes.filter(c => c.scope === 'master'),
     [snapshot.codes],
   );
+
+  // The pool offered in the overall-tag picker: the shared master taxonomy plus
+  // every custom tag anyone has coined on any document. Surfacing the custom
+  // tags here is what makes a tag added to one paper reusable on all the others
+  // — instead of the analyst having to remember and retype the exact name. The
+  // custom tags come from the shared, durable overall-tags table, so the choice
+  // persists permanently and is visible to every user.
+  const overallTagPool = useMemo(() => {
+    const customs = overallTags.customTagPool
+      .map(parseCustomTag)
+      .filter(Boolean) as CodeNode[];
+    return [...masterCodes, ...customs];
+  }, [masterCodes, overallTags.customTagPool]);
 
   const filteredBrowse = useMemo(() => {
     const q = browseQuery.trim().toLowerCase();
@@ -1560,7 +1573,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                   {/* Filter the library by overall (document-level) tag. */}
                   <div className="flex items-center justify-between gap-2 mb-2">
                     <OverallTagPicker
-                      codes={masterCodes}
+                      codes={overallTagPool}
                       selected={browseTagFilter}
                       onToggle={codeId =>
                         setBrowseTagFilter(prev =>
@@ -1662,7 +1675,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 forcedHighlightBlockId={noteJumpBlockId}
                 ingestState={ingestState}
                 showOverallTags={canEditOverallTags}
-                overallTagCodes={masterCodes}
+                overallTagCodes={overallTagPool}
                 overallTagSelected={overallTags.getTags(selectedDocument.id)}
                 onToggleOverallTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
                 summary={ownSummary}
