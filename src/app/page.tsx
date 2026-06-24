@@ -378,6 +378,7 @@ export default async function HomePage() {
     { code: 'M · 29', title: 'ETS Wishlist — GHG Impact', href: '/beta/ets-wishlist-impact', tags: ['EPP demands', 'Mt CO₂e setback'] },
     { code: 'M · 30', title: 'Short Formats', href: '/beta/short-formats', tags: ['ETS · LULUCF', 'Energy crisis', 'Intl. flexibilities'] },
     { code: 'M · 31', title: 'Digital & AI Energy Roadmap — Coherence Check', href: '/beta/digital-energy-roadmap', tags: ['COM(2026) 501', 'ESABCC vs goals'] },
+    { code: 'M · 32', title: 'Ex-Post Policy Assessment', href: '/beta/ex-post-analysis', tags: ['Counterfactual grid', 'Quant vs qual'] },
   ];
 
   return (
