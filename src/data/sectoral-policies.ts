@@ -1129,7 +1129,7 @@ export const SECTOR_POLICIES: SectorPolicy[] = [
  * that differ are listed — if a sector-policy ID is absent here, it matches
  * the document ID as-is.
  */
-const SECTOR_TO_VIEWER_ID: Record<string, string> = {
+export const SECTOR_TO_VIEWER_ID: Record<string, string> = {
   'climate-law': 'eu-climate-law',
   'eu-ets': 'eu-ets-directive',
   'ets2': 'eu-ets-directive',            // ETS2 is part of Directive 2023/959 amending ETS
