@@ -37,8 +37,8 @@
  * a re-estimation on microdata.
  */
 
-import { useMemo, useState } from 'react';
-import type { ReactNode } from 'react';
+import { useMemo, useRef, useState } from 'react';
+import type { MouseEvent, ReactNode } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -452,25 +452,117 @@ const OPEN_DECISIONS = [
 ];
 
 /* ===================================================================== *
- *  PAGE
+ *  MIXED-METHOD INTEGRATION — the structured "how to combine"
  * ===================================================================== */
+
+// The integration sequence: one shared theory of change, two strands, one
+// triangulated judgement. This is the method spine.
+const INTEGRATION_STEPS: { n: string; head: string; body: string; strand: 'shared' | 'quant' | 'qual' | 'join' }[] = [
+  { n: '1', head: 'Reconstruct one theory of change', body: 'Both strands hang off the same causal chain (problem → instrument → output → outcome → impact). The ToC is the shared backbone — quant and qual answer different links of the same chain, not different questions.', strand: 'shared' },
+  { n: '2', head: 'Quant identification where a counterfactual exists', body: 'On links with exploitable treatment variation, estimate the causal effect (DiD / RD / bunching / synthetic control) and propagate a confidence interval into the attributed Mt CO₂e.', strand: 'quant' },
+  { n: '3', head: 'Qual contribution analysis on the links quant cannot reach', body: 'Leakage, the general-equilibrium price channel, innovation, mechanism, and every Tier-C instrument get theory-based contribution analysis with process-tracing evidence tests.', strand: 'qual' },
+  { n: '4', head: 'Lay both strands in a joint display', body: 'Put the quant estimate and the qual finding side by side, per instrument and per link — the mixed-methods "joint display". This is where integration actually happens, not in the write-up.', strand: 'join' },
+  { n: '5', head: 'Triangulate — converge, complement or diverge?', body: 'Classify each pairing: do the strands agree (confirmation), cover different parts of the chain (complementarity), or disagree (divergence)? Divergence triggers an active hunt for rival explanations before any conclusion.', strand: 'join' },
+  { n: '6', head: 'Write the integrated judgement + confidence', body: 'A single conclusion per instrument with an explicit evidence→conclusion chain and a confidence rating that reflects both strands — never a quant number presented as if it answered the whole policy question.', strand: 'join' },
+];
+
+type Convergence = 'converge' | 'complementary' | 'diverge' | 'qual-only';
+
+const CONV_STYLE: Record<Convergence, { label: string; cls: string }> = {
+  converge: { label: 'Converge', cls: 'bg-surface-green text-secondary-dark border-secondary-lighter' },
+  complementary: { label: 'Complementary', cls: 'bg-surface-blue text-primary-dark border-primary-lighter' },
+  diverge: { label: 'Diverge', cls: 'bg-surface-orange text-accent-red border-accent-orange' },
+  'qual-only': { label: 'Qual-only', cls: 'bg-grey-100 text-tertiary border-grey-300' },
+};
+
+// The joint display: the heart of the mixed-method integration.
+const JOINT_DISPLAY: { instrument: string; quant: string; qual: string; integrated: string; convergence: Convergence; confidence: Confidence }[] = [
+  {
+    instrument: 'EU ETS (ETS1)',
+    quant: '−10% on regulated installations (DiD); ≈1.2 Gt 2008–16 (synthetic control)',
+    qual: 'No leakage (Verde 2020); +10% low-carbon patents; GE price effect on uncovered emissions unmodelled',
+    integrated: 'Robust installation-level cut; economy-wide effect is larger once the price/innovation channels are added — the quant is a floor.',
+    convergence: 'complementary',
+    confidence: 'strong',
+  },
+  {
+    instrument: 'CO₂ car/van standards',
+    quant: '−14% type-approval CO₂ (structural/bunching, Reynaert)',
+    qual: 'Test gaming and PHEV real-world use; manufacturer pooling (Tesla pool)',
+    integrated: 'Real-world abatement ≈−5%, roughly half the headline — the strands diverge and the qual corrects the quant downward.',
+    convergence: 'diverge',
+    confidence: 'moderate',
+  },
+  {
+    instrument: 'F-gas Regulation',
+    quant: '−25% / ≈100 Mt by 2022 (interrupted time series on quota steps)',
+    qual: 'Illegal HFC imports ≈20–30% of the legal market (EIA); enforcement heterogeneity',
+    integrated: 'Largely real and policy-driven, but the realised atmospheric cut is eroded by the enforcement gap — qual sets the conservative band.',
+    convergence: 'complementary',
+    confidence: 'moderate',
+  },
+  {
+    instrument: 'EED (Art. 7)',
+    quant: 'Deemed engineering savings',
+    qual: 'Realisation ≈⅓ (Fowlie RCT); rebound, additionality, behavioural channel',
+    integrated: 'Engineering ≠ measured — the qual realisation haircut dominates; the deemed number alone would badly overstate the effect.',
+    convergence: 'diverge',
+    confidence: 'weak',
+  },
+  {
+    instrument: 'RED',
+    quant: 'Auction strike prices ≈−49% (scheme-design switches)',
+    qual: 'Permitting, social acceptance; counterfactual deployment unidentified',
+    integrated: 'Quant identifies support-cost efficiency, not the emission counterfactual — the emission question is answered qualitatively.',
+    convergence: 'qual-only',
+    confidence: 'weak',
+  },
+  {
+    instrument: 'ESR / LULUCF',
+    quant: 'None — every MS treated / natural variability swamps the signal',
+    qual: 'Contribution analysis vs modelled WEM/WAM baselines; management vs weather attribution',
+    integrated: 'No regression possible; the 2020 over-achievement is confounded by crisis/COVID. Conclusions are contribution claims, explicitly not identification.',
+    convergence: 'qual-only',
+    confidence: 'weak',
+  },
+  {
+    instrument: 'Adaptation (Strategy, mainstreaming, …)',
+    quant: 'Event-triggered islands only (Floods Directive BCR; Solidarity Fund disbursement)',
+    qual: 'Theory-of-change + realist CMO + process tracing on the upstream links',
+    integrated: 'Process and output assessed now, qualitatively; outcome deferred to a pre-committed event-triggered quant evaluation. The strands are sequenced in time.',
+    convergence: 'complementary',
+    confidence: 'moderate',
+  },
+];
+
+
+
+type Params = Record<string, { baseline: number; effect: Record<Scenario, number> }>;
+const defaultParams = (): Params =>
+  Object.fromEntries(ATTRIB.map((r) => [r.id, { baseline: r.baselineMt, effect: { ...r.effect } }]));
 
 export default function ExPostAnalysisPage() {
   const [domain, setDomain] = useState<'all' | Domain>('all');
   const [scenario, setScenario] = useState<Scenario>('central');
+  const [params, setParams] = useState<Params>(defaultParams);
 
   const tierA = ATTRIB.filter((r) => r.tier === 'A');
   const tierB = ATTRIB.filter((r) => r.tier === 'B');
   const tierC = ATTRIB.filter((r) => r.tier === 'C');
 
-  const attributableTotal = useMemo(
-    () => tierA.reduce((s, r) => s + r.baselineMt * r.effect[scenario], 0),
-    [scenario, tierA],
-  );
-  const partialTotal = useMemo(
-    () => tierB.reduce((s, r) => s + r.baselineMt * r.effect[scenario], 0),
-    [scenario, tierB],
-  );
+  // every displayed number is recomputed live from the editable params
+  const attr = (id: string) => params[id].baseline * params[id].effect[scenario];
+  const setBaseline = (id: string, v: number) =>
+    setParams((p) => ({ ...p, [id]: { ...p[id], baseline: v } }));
+  const setEffect = (id: string, v: number) =>
+    setParams((p) => ({ ...p, [id]: { ...p[id], effect: { ...p[id].effect, [scenario]: v } } }));
+  const isDirty = JSON.stringify(params) !== JSON.stringify(defaultParams());
+
+  const attributableTotal = useMemo(() => tierA.reduce((s, r) => s + attr(r.id), 0), [params, scenario, tierA]);
+  const partialTotal = useMemo(() => tierB.reduce((s, r) => s + attr(r.id), 0), [params, scenario, tierB]);
+
+  // chart rows reflect the live params
+  const liveRows = (rows: AttribRow[]) => rows.map((r) => ({ ...r, baselineMt: params[r.id].baseline, effect: params[r.id].effect }));
 
   return (
     <>
@@ -528,6 +620,54 @@ export default function ExPostAnalysisPage() {
           </div>
         </section>
 
+        {/* ================= MIXED-METHOD DESIGN ================= */}
+        <section className="mb-12">
+          <SectionLabel>The mixed-method design · how the two strands combine</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">One theory of change, two strands, one triangulated judgement</h2>
+          <p className="text-[13px] text-tertiary mb-4 max-w-3xl">
+            The method is explicit and sequenced. Quant attribution and qual contribution analysis are not
+            rival approaches picked by taste — they answer <strong>different links of the same causal
+            chain</strong> and are integrated in a joint display before any conclusion is written.
+          </p>
+
+          {/* strand diagram */}
+          <div className="rounded-lg border border-grey-200 bg-grey-50 p-4 mb-4">
+            <div className="grid gap-2 md:grid-cols-[1fr_auto_1fr_auto_1fr] items-center">
+              <div className="rounded-lg border border-secondary-lighter bg-surface-green p-3 text-center">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-secondary-dark">Quant strand</div>
+                <div className="text-[12px] text-tertiary-dark mt-0.5">DiD · RD · bunching · synthetic control → attributed Mt CO₂e + CI</div>
+              </div>
+              <div className="hidden md:block text-center text-grey-400 text-xl">&rarr;</div>
+              <div className="rounded-lg border border-primary-lighter bg-surface-blue p-3 text-center">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-primary-dark">Joint display</div>
+                <div className="text-[12px] text-tertiary-dark mt-0.5">strands laid side by side per instrument → triangulate</div>
+              </div>
+              <div className="hidden md:block text-center text-grey-400 text-xl">&larr;</div>
+              <div className="rounded-lg border border-accent-orange bg-surface-orange p-3 text-center">
+                <div className="text-[11px] font-bold uppercase tracking-wide text-accent-red">Qual strand</div>
+                <div className="text-[12px] text-tertiary-dark mt-0.5">contribution analysis · realist CMO · process tracing</div>
+              </div>
+            </div>
+            <div className="mt-2 text-center text-[11px] text-tertiary">Both strands hang off the same reconstructed theory of change.</div>
+          </div>
+
+          <ol className="grid gap-2 md:grid-cols-2">
+            {INTEGRATION_STEPS.map((s) => {
+              const tone =
+                s.strand === 'quant' ? 'border-l-secondary' : s.strand === 'qual' ? 'border-l-accent-orange' : s.strand === 'join' ? 'border-l-primary' : 'border-l-grey-400';
+              return (
+                <li key={s.n} className={`flex gap-3 rounded-lg border border-grey-200 border-l-4 ${tone} bg-white p-4`}>
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-tertiary text-white text-sm font-bold">{s.n}</span>
+                  <div>
+                    <div className="text-[13px] font-bold text-tertiary-dark leading-snug">{s.head}</div>
+                    <p className="mt-1 text-[12px] text-tertiary leading-relaxed">{s.body}</p>
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </section>
+
         {/* ================= MITIGATION: ATTRIBUTION ================= */}
         <section className="mb-6">
           <SectionLabel>Mitigation · quantitative attribution analysis</SectionLabel>
@@ -555,7 +695,14 @@ export default function ExPostAnalysisPage() {
               </p>
             </div>
             <div className="rounded-lg border border-grey-200 bg-white p-4 flex flex-col justify-center">
-              <div className="text-[11px] uppercase tracking-wide text-tertiary mb-2">Estimate band</div>
+              <div className="flex items-center justify-between mb-2">
+                <div className="text-[11px] uppercase tracking-wide text-tertiary">Estimate band</div>
+                {isDirty && (
+                  <button onClick={() => setParams(defaultParams())} className="text-[11px] font-semibold text-primary hover:text-primary-dark underline underline-offset-2">
+                    Reset to published defaults
+                  </button>
+                )}
+              </div>
               <div className="flex gap-1 rounded-lg border border-grey-200 bg-grey-50 p-0.5 text-[12px]">
                 {SCENARIOS.map((s) => (
                   <button
@@ -569,6 +716,10 @@ export default function ExPostAnalysisPage() {
                   </button>
                 ))}
               </div>
+              <p className="mt-2 text-[11px] text-tertiary leading-snug">
+                Every baseline and effect size below is <strong>editable</strong> — drag a slider to test
+                an assumption and the totals, bars and counterfactual all recompute live.
+              </p>
             </div>
           </div>
 
@@ -595,14 +746,14 @@ export default function ExPostAnalysisPage() {
               title="ETS — synthetic-control / DiD view"
               sub="Observed ETS-covered emissions vs the no-ETS counterfactual implied by the −10% effect; shaded = attributed reduction."
             >
-              <CounterfactualChart observed={ETS_OBSERVED} effect={ATTRIB[0].effect[scenario]} yMax={2200} yLabel="Mt CO₂e (ETS-covered, stationary)" xTicks={[2013, 2016, 2019, 2022]} />
+              <CounterfactualChart observed={ETS_OBSERVED} effect={params['ets'].effect[scenario]} yMax={2200} yLabel="Mt CO₂e (ETS-covered, stationary)" xTicks={[2013, 2016, 2019, 2022]} />
               <Legend items={[{ label: 'Observed', color: '#007B6C' }, { label: 'Counterfactual (no-ETS)', color: '#B83230', dash: true }, { label: 'Attributed reduction', color: '#B83230' }]} />
             </ChartCard>
             <ChartCard
               title="Attributed reduction by instrument"
-              sub={`Bar = current band (${SCENARIOS.find((s) => s.key === scenario)!.label}); whisker = conservative–high range. Green = Tier A (summed), orange = Tier B (shown, not summed).`}
+              sub={`Bar = current band (${SCENARIOS.find((s) => s.key === scenario)!.label}); whisker = conservative–high range. Green = Tier A (summed), orange = Tier B (shown, not summed). Updates live with your assumptions.`}
             >
-              <AttributionBars rows={[...tierA, ...tierB]} scenario={scenario} />
+              <AttributionBars rows={liveRows([...tierA, ...tierB])} scenario={scenario} />
             </ChartCard>
           </div>
         </section>
@@ -613,14 +764,18 @@ export default function ExPostAnalysisPage() {
             Tier A — identified attribution (summed)
           </div>
           <div className="space-y-2">
-            {tierA.map((r) => <AttribCard key={r.id} row={r} scenario={scenario} />)}
+            {tierA.map((r) => (
+              <AttribCard key={r.id} row={r} scenario={scenario} p={params[r.id]} onBaseline={(v) => setBaseline(r.id, v)} onEffect={(v) => setEffect(r.id, v)} />
+            ))}
           </div>
 
           <div className="text-[12px] font-bold uppercase tracking-wide text-accent-red mt-5 mb-2">
             Tier B — partial / haircut attribution (shown, not summed)
           </div>
           <div className="space-y-2">
-            {tierB.map((r) => <AttribCard key={r.id} row={r} scenario={scenario} />)}
+            {tierB.map((r) => (
+              <AttribCard key={r.id} row={r} scenario={scenario} p={params[r.id]} onBaseline={(v) => setBaseline(r.id, v)} onEffect={(v) => setEffect(r.id, v)} />
+            ))}
           </div>
         </section>
 
@@ -822,6 +977,62 @@ export default function ExPostAnalysisPage() {
           </div>
         </section>
 
+        {/* ================= INTEGRATION: JOINT DISPLAY ================= */}
+        <section className="mb-12">
+          <SectionLabel>Integration · the joint display</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">Quant strand, qual strand, one integrated judgement</h2>
+          <p className="text-[13px] text-tertiary mb-4 max-w-3xl">
+            This is where the mixed method actually integrates. For each instrument the two strands sit
+            side by side; the <strong>convergence</strong> tag records whether they confirm each other,
+            cover complementary links, diverge (qual corrects quant), or whether identification was
+            impossible and the conclusion is qualitative only.
+          </p>
+          <div className="space-y-2">
+            {/* header row */}
+            <div className="hidden lg:grid grid-cols-[1.1fr_1.4fr_1.4fr_1.6fr_auto] gap-2 px-3 text-[10px] font-bold uppercase tracking-wide text-tertiary-light">
+              <div>Instrument</div>
+              <div className="text-secondary-dark">Quant strand</div>
+              <div className="text-accent-red">Qual strand</div>
+              <div>Integrated judgement</div>
+              <div>Convergence</div>
+            </div>
+            {JOINT_DISPLAY.map((j) => {
+              const cv = CONV_STYLE[j.convergence];
+              const cf = CONF_STYLE[j.confidence];
+              return (
+                <div key={j.instrument} className="grid gap-2 lg:grid-cols-[1.1fr_1.4fr_1.4fr_1.6fr_auto] rounded-lg border border-grey-200 bg-white p-3 items-start">
+                  <div>
+                    <div className="text-[13px] font-bold text-tertiary-dark leading-snug">{j.instrument}</div>
+                    <span className={`mt-1 inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold ${cf.cls}`}>
+                      <span className={`h-1.5 w-1.5 rounded-full ${cf.dot}`} />{cf.label}
+                    </span>
+                  </div>
+                  <div className="lg:border-l lg:border-grey-200 lg:pl-2">
+                    <div className="lg:hidden text-[10px] font-bold uppercase text-secondary-dark mb-0.5">Quant</div>
+                    <p className="text-[12px] text-tertiary leading-relaxed">{j.quant}</p>
+                  </div>
+                  <div className="lg:border-l lg:border-grey-200 lg:pl-2">
+                    <div className="lg:hidden text-[10px] font-bold uppercase text-accent-red mb-0.5">Qual</div>
+                    <p className="text-[12px] text-tertiary leading-relaxed">{j.qual}</p>
+                  </div>
+                  <div className="lg:border-l lg:border-grey-200 lg:pl-2">
+                    <p className="text-[12px] text-tertiary-dark leading-relaxed font-medium">{j.integrated}</p>
+                  </div>
+                  <div>
+                    <span className={`inline-flex rounded-full border px-2.5 py-0.5 text-[11px] font-semibold ${cv.cls}`}>{cv.label}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <p className="mt-3 text-[11px] text-tertiary italic max-w-3xl">
+            Reading the column of convergence tags is the integrity check: where strands <em>diverge</em>
+            (CO₂ standards, EED) the qual corrects an over-optimistic quant; where the tag is{' '}
+            <em>qual-only</em> (ESR, LULUCF, RED emissions) no regression was defensible and the honest
+            output is a contribution claim, not an identified number.
+          </p>
+        </section>
+
         {/* ---- design rules ---- */}
         <section className="mb-12">
           <SectionLabel>Design rules · the deliverable's spine</SectionLabel>
@@ -926,10 +1137,23 @@ function Stat({ big, unit, label, tone }: { big: string; unit: string; label: st
   );
 }
 
-function AttribCard({ row, scenario }: { row: AttribRow; scenario: Scenario }) {
-  const eff = row.effect[scenario];
-  const attributed = row.baselineMt * eff;
+function AttribCard({
+  row,
+  scenario,
+  p,
+  onBaseline,
+  onEffect,
+}: {
+  row: AttribRow;
+  scenario: Scenario;
+  p: { baseline: number; effect: Record<Scenario, number> };
+  onBaseline: (v: number) => void;
+  onEffect: (v: number) => void;
+}) {
+  const eff = p.effect[scenario];
+  const attributed = p.baseline * eff;
   const c = CONF_STYLE[row.confidence];
+  const edited = p.baseline !== row.baselineMt || p.effect[scenario] !== row.effect[scenario];
   return (
     <div className="rounded-lg border border-grey-200 bg-white overflow-hidden">
       <div className="flex flex-col sm:flex-row sm:items-center gap-2 px-4 py-2.5 bg-grey-50 border-b border-grey-200">
@@ -949,12 +1173,20 @@ function AttribCard({ row, scenario }: { row: AttribRow; scenario: Scenario }) {
           <Field label="Caveat" value={row.caveat} accent />
         </div>
         <div className="rounded-lg border border-grey-200 bg-grey-50 p-4 flex flex-col justify-center">
-          <div className="text-[11px] uppercase tracking-wide text-tertiary-light mb-1">Attributed reduction</div>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="text-[11px] uppercase tracking-wide text-tertiary-light">Attributed reduction</div>
+            {edited && <span className="text-[9px] font-bold uppercase tracking-wide text-accent-orange border border-accent-orange rounded px-1">edited</span>}
+          </div>
           <div className="text-3xl font-bold text-tertiary-dark">
             {fmt(attributed)} <span className="text-base font-semibold text-tertiary">Mt CO₂e/yr</span>
           </div>
           <div className="mt-1 text-[12px] text-tertiary font-mono">
-            {fmt(row.baselineMt)} × {(eff * 100).toFixed(0)}%
+            {fmt(p.baseline)} × {(eff * 100).toFixed(0)}% (default {fmt(row.baselineMt)} × {(row.effect[scenario] * 100).toFixed(0)}%)
+          </div>
+          {/* transparent, editable assumptions */}
+          <div className="mt-3 space-y-2.5">
+            <Slider label={`Baseline (${scenario === 'central' ? 'Mt CO₂e' : 'Mt CO₂e'})`} value={p.baseline} min={Math.round(row.baselineMt * 0.5)} max={Math.round(row.baselineMt * 1.5)} step={5} suffix=" Mt" onChange={onBaseline} />
+            <Slider label={`Effect — ${SCENARIOS.find((s) => s.key === scenario)!.label}`} value={Math.round(eff * 100)} min={0} max={70} step={1} suffix="%" onChange={(v) => onEffect(v / 100)} />
           </div>
           {row.tier === 'B' && (
             <div className="mt-2 text-[11px] text-accent-red leading-snug">Partial — not summed into the headline total.</div>
@@ -962,6 +1194,26 @@ function AttribCard({ row, scenario }: { row: AttribRow; scenario: Scenario }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function Slider({ label, value, min, max, step, suffix, onChange }: { label: string; value: number; min: number; max: number; step: number; suffix: string; onChange: (v: number) => void }) {
+  return (
+    <label className="block">
+      <div className="flex items-center justify-between text-[11px] text-tertiary mb-0.5">
+        <span>{label}</span>
+        <span className="font-mono font-semibold text-tertiary-dark">{fmt(value)}{suffix}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full h-1.5 accent-primary cursor-pointer"
+      />
+    </label>
   );
 }
 
@@ -1023,6 +1275,9 @@ function LineChart(props: {
   const sx = (x: number) => m.l + ((x - x0) / (x1 - x0)) * iw;
   const sy = (y: number) => m.t + ih - ((Math.min(y, yMax) - yMin) / (yMax - yMin)) * ih;
   const yTicks = 4;
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [hx, setHx] = useState<number | null>(null);
+  const uniqX = Array.from(new Set(allX)).sort((a, b) => a - b);
 
   const pathFor = (s: Series) =>
     s.points
@@ -1033,8 +1288,21 @@ function LineChart(props: {
       })
       .join(' ');
 
+  const onMove = (e: MouseEvent<SVGSVGElement>) => {
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    const vx = ((e.clientX - rect.left) / rect.width) * W; // viewBox x
+    const dataX = x0 + ((vx - m.l) / iw) * (x1 - x0);
+    const nearest = uniqX.reduce((a, b) => (Math.abs(b - dataX) < Math.abs(a - dataX) ? b : a), uniqX[0]);
+    setHx(nearest);
+  };
+
+  const tipRows = hx == null ? [] : series.map((s) => ({ s, p: s.points.find((pt) => pt.x === hx) })).filter((r) => r.p);
+  const tipX = hx == null ? 0 : sx(hx);
+  const tipLeft = tipX > W / 2;
+
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={yLabel}>
+    <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={yLabel} onMouseMove={onMove} onMouseLeave={() => setHx(null)}>
       {Array.from({ length: yTicks + 1 }, (_, i) => {
         const v = yMin + ((yMax - yMin) / yTicks) * i;
         const y = sy(v);
@@ -1061,6 +1329,22 @@ function LineChart(props: {
           {s.points.map((p) => <circle key={p.x} cx={sx(p.x)} cy={sy(p.y)} r={2.4} fill={s.color} />)}
         </g>
       ))}
+      {/* hover guide + tooltip */}
+      {hx != null && tipRows.length > 0 && (
+        <g pointerEvents="none">
+          <line x1={tipX} x2={tipX} y1={m.t} y2={m.t + ih} stroke="#54728C" strokeWidth={1} strokeDasharray="3 3" />
+          {tipRows.map((r) => <circle key={r.s.label} cx={tipX} cy={sy(r.p!.y)} r={3.5} fill="#fff" stroke={r.s.color} strokeWidth={2} />)}
+          <g transform={`translate(${tipLeft ? tipX - 122 : tipX + 8}, ${m.t + 2})`}>
+            <rect width={114} height={16 + tipRows.length * 13} rx={3} fill="#fff" stroke="#DCDDDE" />
+            <text x={6} y={12} fontSize={10} fontWeight={700} className="fill-tertiary-dark">{hx}</text>
+            {tipRows.map((r, i) => (
+              <text key={r.s.label} x={6} y={26 + i * 13} fontSize={10} fill={r.s.color}>
+                {r.s.label}: {fmt(r.p!.y, Math.abs(r.p!.y) < 50 ? 1 : 0)}
+              </text>
+            ))}
+          </g>
+        </g>
+      )}
     </svg>
   );
 }
