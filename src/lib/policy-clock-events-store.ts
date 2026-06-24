@@ -15,7 +15,9 @@
  * without Supabase env vars. Lossy on cold start.
  */
 
-import { getServerSupabase } from './supabase-server';
+import { memoryCache, withBackend, isPersistent } from './db/store-factory';
+
+export { isPersistent };
 
 export type PolicyClockCategory =
   | 'revision'
@@ -64,13 +66,17 @@ export interface PolicyClockUserEvent {
   createdAt: string;
 }
 
-interface GlobalCache {
-  __policyClockUserEvents?: PolicyClockUserEvent[];
-}
-const g = globalThis as unknown as GlobalCache;
-if (!g.__policyClockUserEvents) g.__policyClockUserEvents = [];
+const cache = memoryCache<PolicyClockUserEvent>('__policyClockUserEvents');
 
 const MAX_EVENTS = 5000;
+
+function addMemory(event: PolicyClockUserEvent): void {
+  const list = cache.get();
+  const dup = list.findIndex(e => e.id === event.id);
+  if (dup >= 0) list.splice(dup, 1);
+  list.unshift(event);
+  if (list.length > MAX_EVENTS) list.length = MAX_EVENTS;
+}
 
 interface Row {
   id: string;
@@ -138,42 +144,34 @@ function eventToRow(e: PolicyClockUserEvent): Omit<Row, 'created_at'> {
   };
 }
 
-export function isPersistent(): boolean {
-  return getServerSupabase() !== null;
-}
-
 export async function getPolicyClockUserEvents(): Promise<PolicyClockUserEvent[]> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('policy_clock_events')
-      .select('*')
-      .order('event_date', { ascending: true })
-      .limit(MAX_EVENTS);
-    if (error) {
-      console.error('[policy-clock-events-store] Supabase select failed:', error.message);
-      return g.__policyClockUserEvents!;
-    }
-    return (data as Row[]).map(rowToEvent);
-  }
-  return g.__policyClockUserEvents!;
+  return withBackend(
+    async (sb) => {
+      const { data, error } = await sb
+        .from('policy_clock_events')
+        .select('*')
+        .order('event_date', { ascending: true })
+        .limit(MAX_EVENTS);
+      if (error) {
+        console.error('[policy-clock-events-store] Supabase select failed:', error.message);
+        return cache.get();
+      }
+      return (data as Row[]).map(rowToEvent);
+    },
+    () => cache.get(),
+  );
 }
 
 export async function addPolicyClockUserEvent(event: PolicyClockUserEvent): Promise<void> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('policy_clock_events')
-      .upsert(eventToRow(event), { onConflict: 'id' });
-    if (error) {
+  await withBackend<void>(
+    async (sb) => {
+      const { error } = await sb
+        .from('policy_clock_events')
+        .upsert(eventToRow(event), { onConflict: 'id' });
+      if (!error) return;
       console.error('[policy-clock-events-store] Supabase upsert failed:', error.message);
-    } else {
-      return;
-    }
-  }
-  const list = g.__policyClockUserEvents!;
-  const dup = list.findIndex(e => e.id === event.id);
-  if (dup >= 0) list.splice(dup, 1);
-  list.unshift(event);
-  if (list.length > MAX_EVENTS) list.length = MAX_EVENTS;
+      addMemory(event);
+    },
+    () => addMemory(event),
+  );
 }
