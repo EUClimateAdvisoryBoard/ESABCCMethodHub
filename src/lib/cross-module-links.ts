@@ -14,8 +14,13 @@
  * This file is the single source of truth for the URL contract that
  * stitches those modules together so call sites never hand-roll the
  * strings (which would drift the moment one of the routes changes).
+ *
+ * The `UniversalPolicyId` type itself is defined alongside the canonical
+ * policy type vocabulary in `@/lib/policies`; it is re-exported here so the
+ * many call sites that import it from this module keep working.
  */
-export type UniversalPolicyId = string;
+export type { UniversalPolicyId } from '@/lib/policies';
+import type { UniversalPolicyId } from '@/lib/policies';
 
 /** Open the Policy Navigator and scroll/pulse the matching card. */
 export function linkToPolicyNavigator(policyId: UniversalPolicyId): string {

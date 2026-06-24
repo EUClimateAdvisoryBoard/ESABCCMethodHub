@@ -19,7 +19,9 @@
  * backend is active.
  */
 
-import { getServerSupabase } from './supabase-server';
+import { memoryCache, withBackend, isPersistent } from './db/store-factory';
+
+export { isPersistent };
 
 export interface CustomPostItem {
   id: string;
@@ -40,13 +42,36 @@ export interface CustomPostItem {
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
 
-interface GlobalCache {
-  __customPostItems?: CustomPostItem[];
-}
-const g = globalThis as unknown as GlobalCache;
-if (!g.__customPostItems) g.__customPostItems = [];
+const cache = memoryCache<CustomPostItem>('__customPostItems');
 
 const MAX_ITEMS = 2000;
+
+// ── In-memory fallback operations (shared by the no-Supabase path and the
+// Supabase-error fall-through) ──────────────────────────────────────────────
+
+function addMemory(item: CustomPostItem): void {
+  const items = cache.get();
+  const dupIdx = items.findIndex(i => i.id === item.id);
+  if (dupIdx >= 0) items.splice(dupIdx, 1);
+  items.unshift(item);
+  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
+}
+
+function updateMemory(id: string, patch: Partial<CustomPostItem>): CustomPostItem | null {
+  const items = cache.get();
+  const idx = items.findIndex(i => i.id === id);
+  if (idx === -1) return null;
+  items[idx] = { ...items[idx], ...patch };
+  return items[idx];
+}
+
+function deleteMemory(id: string): boolean {
+  const items = cache.get();
+  const idx = items.findIndex(i => i.id === id);
+  if (idx === -1) return false;
+  items.splice(idx, 1);
+  return true;
+}
 
 // ── Row ↔ item conversion ──────────────────────────────────────────────────
 
@@ -113,116 +138,101 @@ function itemToRow(i: CustomPostItem): CustomPostRow {
 
 // ── Public API ─────────────────────────────────────────────────────────────
 
-export function isPersistent(): boolean {
-  return getServerSupabase() !== null;
-}
-
 export async function getCustomPosts(): Promise<CustomPostItem[]> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('custom_posts')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(MAX_ITEMS);
-    if (error) {
-      console.error('[custom-posts-store] Supabase getCustomPosts failed:', error.message);
-      return g.__customPostItems!;
-    }
-    return (data as CustomPostRow[]).map(rowToItem);
-  }
-  return g.__customPostItems!;
+  return withBackend(
+    async (sb) => {
+      const { data, error } = await sb
+        .from('custom_posts')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(MAX_ITEMS);
+      if (error) {
+        console.error('[custom-posts-store] Supabase getCustomPosts failed:', error.message);
+        return cache.get();
+      }
+      return (data as CustomPostRow[]).map(rowToItem);
+    },
+    () => cache.get(),
+  );
 }
 
 export async function addCustomPost(item: CustomPostItem): Promise<void> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb
-      .from('custom_posts')
-      .upsert(itemToRow(item), { onConflict: 'id' });
-    if (error) {
+  await withBackend<void>(
+    async (sb) => {
+      const { error } = await sb
+        .from('custom_posts')
+        .upsert(itemToRow(item), { onConflict: 'id' });
+      if (!error) return;
       console.error('[custom-posts-store] Supabase addCustomPost failed:', error.message);
       // Fall through to in-memory so the item isn't completely lost
-    } else {
-      return;
-    }
-  }
-
-  const items = g.__customPostItems!;
-  const dupIdx = items.findIndex(i => i.id === item.id);
-  if (dupIdx >= 0) items.splice(dupIdx, 1);
-  items.unshift(item);
-  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
+      addMemory(item);
+    },
+    () => addMemory(item),
+  );
 }
 
 export async function updateCustomPost(
   id: string,
   patch: Partial<CustomPostItem>,
 ): Promise<CustomPostItem | null> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const rowPatch: Partial<CustomPostRow> & { updated_at?: string } = {};
-    if (patch.title !== undefined) rowPatch.title = patch.title;
-    if (patch.summary !== undefined) rowPatch.summary = patch.summary;
-    if (patch.aiSummary !== undefined) rowPatch.ai_summary = patch.aiSummary || null;
-    if (patch.url !== undefined) rowPatch.url = patch.url;
-    if (patch.tags !== undefined) rowPatch.tags = patch.tags;
-    if (patch.type !== undefined) rowPatch.type = patch.type;
-    if (Object.keys(rowPatch).length === 0) {
-      return await findCustomPost(id);
-    }
-    rowPatch.updated_at = new Date().toISOString();
+  return withBackend(
+    async (sb) => {
+      const rowPatch: Partial<CustomPostRow> & { updated_at?: string } = {};
+      if (patch.title !== undefined) rowPatch.title = patch.title;
+      if (patch.summary !== undefined) rowPatch.summary = patch.summary;
+      if (patch.aiSummary !== undefined) rowPatch.ai_summary = patch.aiSummary || null;
+      if (patch.url !== undefined) rowPatch.url = patch.url;
+      if (patch.tags !== undefined) rowPatch.tags = patch.tags;
+      if (patch.type !== undefined) rowPatch.type = patch.type;
+      if (Object.keys(rowPatch).length === 0) {
+        return await findCustomPost(id);
+      }
+      rowPatch.updated_at = new Date().toISOString();
 
-    const { data, error } = await sb
-      .from('custom_posts')
-      .update(rowPatch)
-      .eq('id', id)
-      .select()
-      .maybeSingle();
-    if (error) {
-      console.error('[custom-posts-store] Supabase updateCustomPost failed:', error.message);
-      return null;
-    }
-    return data ? rowToItem(data as CustomPostRow) : null;
-  }
-
-  const items = g.__customPostItems!;
-  const idx = items.findIndex(i => i.id === id);
-  if (idx === -1) return null;
-  items[idx] = { ...items[idx], ...patch };
-  return items[idx];
+      const { data, error } = await sb
+        .from('custom_posts')
+        .update(rowPatch)
+        .eq('id', id)
+        .select()
+        .maybeSingle();
+      if (error) {
+        console.error('[custom-posts-store] Supabase updateCustomPost failed:', error.message);
+        return null;
+      }
+      return data ? rowToItem(data as CustomPostRow) : null;
+    },
+    () => updateMemory(id, patch),
+  );
 }
 
 export async function findCustomPost(id: string): Promise<CustomPostItem | null> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('custom_posts')
-      .select('*')
-      .eq('id', id)
-      .maybeSingle();
-    if (error) {
-      console.error('[custom-posts-store] Supabase findCustomPost failed:', error.message);
-      return null;
-    }
-    return data ? rowToItem(data as CustomPostRow) : null;
-  }
-  return g.__customPostItems!.find(i => i.id === id) || null;
+  return withBackend(
+    async (sb) => {
+      const { data, error } = await sb
+        .from('custom_posts')
+        .select('*')
+        .eq('id', id)
+        .maybeSingle();
+      if (error) {
+        console.error('[custom-posts-store] Supabase findCustomPost failed:', error.message);
+        return null;
+      }
+      return data ? rowToItem(data as CustomPostRow) : null;
+    },
+    () => cache.get().find(i => i.id === id) || null,
+  );
 }
 
 export async function deleteCustomPost(id: string): Promise<boolean> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb.from('custom_posts').delete().eq('id', id);
-    if (error) {
-      console.error('[custom-posts-store] Supabase deleteCustomPost failed:', error.message);
-      return false;
-    }
-    return true;
-  }
-  const items = g.__customPostItems!;
-  const idx = items.findIndex(i => i.id === id);
-  if (idx === -1) return false;
-  items.splice(idx, 1);
-  return true;
+  return withBackend(
+    async (sb) => {
+      const { error } = await sb.from('custom_posts').delete().eq('id', id);
+      if (error) {
+        console.error('[custom-posts-store] Supabase deleteCustomPost failed:', error.message);
+        return false;
+      }
+      return true;
+    },
+    () => deleteMemory(id),
+  );
 }

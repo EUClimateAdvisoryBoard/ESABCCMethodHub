@@ -10,6 +10,7 @@
  */
 
 import { getServerSupabase } from './supabase-server';
+import { memoryCache, withBackend } from './db/store-factory';
 import {
   ClimateCouncil,
   CouncilStatus,
@@ -78,12 +79,29 @@ function councilToRow(c: ClimateCouncil): DbRow {
   };
 }
 
-interface GlobalCache {
-  __climateCouncils?: ClimateCouncil[];
+const cache = memoryCache<ClimateCouncil>(
+  '__climateCouncils',
+  () => SEED_COUNCILS.map(c => ({ ...c })),
+);
+
+interface SeedFlag {
   __climateCouncilsSeeded?: boolean;
 }
-const g = globalThis as unknown as GlobalCache;
-if (!g.__climateCouncils) g.__climateCouncils = SEED_COUNCILS.map(c => ({ ...c }));
+const g = globalThis as unknown as SeedFlag;
+
+function upsertMemory(c: ClimateCouncil): ClimateCouncil {
+  const list = cache.get();
+  const idx = list.findIndex(x => x.id === c.id);
+  if (idx >= 0) list[idx] = c;
+  else list.push(c);
+  return c;
+}
+
+function deleteMemory(id: string): boolean {
+  const before = cache.get().length;
+  cache.set(cache.get().filter(c => c.id !== id));
+  return cache.get().length < before;
+}
 
 /**
  * Ensure the Supabase table is seeded once. Idempotent; uses upsert with
@@ -106,49 +124,48 @@ async function maybeSeedSupabase(): Promise<void> {
 }
 
 export async function listCouncils(): Promise<ClimateCouncil[]> {
-  const sb = getServerSupabase();
-  if (sb) {
-    await maybeSeedSupabase();
-    const { data, error } = await sb
-      .from('climate_councils')
-      .select('*')
-      .order('country_name', { ascending: true })
-      .order('level', { ascending: true });
-    if (!error && data) {
-      return (data as DbRow[]).map(rowToCouncil);
-    }
-  }
-  return [...(g.__climateCouncils || [])];
+  return withBackend(
+    async (sb) => {
+      await maybeSeedSupabase();
+      const { data, error } = await sb
+        .from('climate_councils')
+        .select('*')
+        .order('country_name', { ascending: true })
+        .order('level', { ascending: true });
+      if (!error && data) {
+        return (data as DbRow[]).map(rowToCouncil);
+      }
+      return [...cache.get()];
+    },
+    () => [...cache.get()],
+  );
 }
 
 export async function upsertCouncil(c: ClimateCouncil): Promise<ClimateCouncil> {
-  const sb = getServerSupabase();
-  if (sb) {
-    await maybeSeedSupabase();
-    const { data, error } = await sb
-      .from('climate_councils')
-      .upsert(councilToRow(c), { onConflict: 'id' })
-      .select('*')
-      .single();
-    if (!error && data) return rowToCouncil(data as DbRow);
-  }
-  // Fallback: update in-memory cache
-  const cache = g.__climateCouncils || [];
-  const idx = cache.findIndex(x => x.id === c.id);
-  if (idx >= 0) cache[idx] = c;
-  else cache.push(c);
-  return c;
+  return withBackend(
+    async (sb) => {
+      await maybeSeedSupabase();
+      const { data, error } = await sb
+        .from('climate_councils')
+        .upsert(councilToRow(c), { onConflict: 'id' })
+        .select('*')
+        .single();
+      if (!error && data) return rowToCouncil(data as DbRow);
+      // Fallback: update in-memory cache
+      return upsertMemory(c);
+    },
+    () => upsertMemory(c),
+  );
 }
 
 export async function deleteCouncil(id: string): Promise<boolean> {
-  const sb = getServerSupabase();
-  if (sb) {
-    await maybeSeedSupabase();
-    const { error } = await sb.from('climate_councils').delete().eq('id', id);
-    if (!error) return true;
-  }
-  const cache = g.__climateCouncils || [];
-  const before = cache.length;
-  g.__climateCouncils = cache.filter(c => c.id !== id);
-  return (g.__climateCouncils?.length || 0) < before;
+  return withBackend(
+    async (sb) => {
+      await maybeSeedSupabase();
+      const { error } = await sb.from('climate_councils').delete().eq('id', id);
+      if (!error) return true;
+      return deleteMemory(id);
+    },
+    () => deleteMemory(id),
+  );
 }

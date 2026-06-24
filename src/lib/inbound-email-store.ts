@@ -17,7 +17,9 @@
  * is active.
  */
 
-import { getServerSupabase } from './supabase-server';
+import { memoryCache, withBackend, isPersistent } from './db/store-factory';
+
+export { isPersistent };
 
 export interface InboundEmailItem {
   id: string;
@@ -41,13 +43,36 @@ export interface InboundEmailItem {
 
 // ── In-memory fallback ──────────────────────────────────────────────────────
 
-interface GlobalCache {
-  __inboundEmailItems?: InboundEmailItem[];
-}
-const g = globalThis as unknown as GlobalCache;
-if (!g.__inboundEmailItems) g.__inboundEmailItems = [];
+const cache = memoryCache<InboundEmailItem>('__inboundEmailItems');
 
 const MAX_ITEMS = 2000;
+
+// ── In-memory fallback operations (shared by the no-Supabase path and the
+// Supabase-error fall-through) ──────────────────────────────────────────────
+
+function addMemory(item: InboundEmailItem): void {
+  const items = cache.get();
+  const dupIdx = items.findIndex(i => i.title === item.title && i.from === item.from);
+  if (dupIdx >= 0) items.splice(dupIdx, 1);
+  items.unshift(item);
+  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
+}
+
+function updateMemory(id: string, patch: Partial<InboundEmailItem>): InboundEmailItem | null {
+  const items = cache.get();
+  const idx = items.findIndex(i => i.id === id);
+  if (idx === -1) return null;
+  items[idx] = { ...items[idx], ...patch };
+  return items[idx];
+}
+
+function removeMemory(id: string): boolean {
+  const items = cache.get();
+  const idx = items.findIndex(i => i.id === id);
+  if (idx === -1) return false;
+  items.splice(idx, 1);
+  return true;
+}
 
 // ── Row ↔ item conversion ──────────────────────────────────────────────────
 
@@ -117,155 +142,143 @@ function itemToRow(i: InboundEmailItem): InboundEmailRow {
 
 // ── Public API ─────────────────────────────────────────────────────────────
 
-export function isPersistent(): boolean {
-  return getServerSupabase() !== null;
-}
-
 export async function getInboundItems(): Promise<InboundEmailItem[]> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('inbound_emails')
-      .select('*')
-      .order('received_date', { ascending: false })
-      .limit(MAX_ITEMS);
-    if (error) {
-      console.error('[inbound-email-store] Supabase getInboundItems failed:', error.message);
-      return g.__inboundEmailItems!;
-    }
-    return (data as InboundEmailRow[]).map(rowToItem);
-  }
-  return g.__inboundEmailItems!;
+  return withBackend(
+    async (sb) => {
+      const { data, error } = await sb
+        .from('inbound_emails')
+        .select('*')
+        .order('received_date', { ascending: false })
+        .limit(MAX_ITEMS);
+      if (error) {
+        console.error('[inbound-email-store] Supabase getInboundItems failed:', error.message);
+        return cache.get();
+      }
+      return (data as InboundEmailRow[]).map(rowToItem);
+    },
+    () => cache.get(),
+  );
 }
 
 export async function addInboundItem(item: InboundEmailItem): Promise<void> {
-  const sb = getServerSupabase();
-  if (sb) {
-    // Deduplicate on (title, from_display) by deleting any earlier row that
-    // matches, then inserting this one. Upsert alone isn't enough because
-    // the dedupe key isn't the primary key.
-    try {
-      await sb
-        .from('inbound_emails')
-        .delete()
-        .eq('title', item.title)
-        .eq('from_display', item.from || '');
-    } catch (err) {
-      console.warn('[inbound-email-store] Dedupe delete failed (non-fatal):', err);
-    }
+  await withBackend<void>(
+    async (sb) => {
+      // Deduplicate on (title, from_display) by deleting any earlier row that
+      // matches, then inserting this one. Upsert alone isn't enough because
+      // the dedupe key isn't the primary key.
+      try {
+        await sb
+          .from('inbound_emails')
+          .delete()
+          .eq('title', item.title)
+          .eq('from_display', item.from || '');
+      } catch (err) {
+        console.warn('[inbound-email-store] Dedupe delete failed (non-fatal):', err);
+      }
 
-    const { error } = await sb
-      .from('inbound_emails')
-      .upsert(itemToRow(item), { onConflict: 'id' });
-    if (error) {
+      const { error } = await sb
+        .from('inbound_emails')
+        .upsert(itemToRow(item), { onConflict: 'id' });
+      if (!error) return;
       console.error('[inbound-email-store] Supabase addInboundItem failed:', error.message);
       // Fall through to also push into memory so the item isn't completely lost
-    } else {
-      return;
-    }
-  }
-
-  const items = g.__inboundEmailItems!;
-  const dupIdx = items.findIndex(i => i.title === item.title && i.from === item.from);
-  if (dupIdx >= 0) items.splice(dupIdx, 1);
-  items.unshift(item);
-  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
+      addMemory(item);
+    },
+    () => addMemory(item),
+  );
 }
 
 export async function updateInboundItem(
   id: string,
   patch: Partial<InboundEmailItem>,
 ): Promise<InboundEmailItem | null> {
-  const sb = getServerSupabase();
-  if (sb) {
-    // Only patch the snake_case columns that changed
-    const rowPatch: Partial<InboundEmailRow> = {};
-    if (patch.title !== undefined) rowPatch.title = patch.title;
-    if (patch.summary !== undefined) rowPatch.summary = patch.summary;
-    if (patch.fullText !== undefined) rowPatch.full_text = patch.fullText;
-    if (patch.aiSummary !== undefined) rowPatch.ai_summary = patch.aiSummary || null;
-    if (patch.detailedAnalysis !== undefined) rowPatch.detailed_analysis = patch.detailedAnalysis || null;
-    if (patch.isDailySpecial !== undefined) rowPatch.is_daily_special = patch.isDailySpecial;
-    if (patch.specialKind !== undefined) rowPatch.special_kind = patch.specialKind || null;
-    if (patch.tags !== undefined) rowPatch.tags = patch.tags;
-    if (Object.keys(rowPatch).length === 0) {
-      return await findInboundItem(id);
-    }
+  return withBackend(
+    async (sb) => {
+      // Only patch the snake_case columns that changed
+      const rowPatch: Partial<InboundEmailRow> = {};
+      if (patch.title !== undefined) rowPatch.title = patch.title;
+      if (patch.summary !== undefined) rowPatch.summary = patch.summary;
+      if (patch.fullText !== undefined) rowPatch.full_text = patch.fullText;
+      if (patch.aiSummary !== undefined) rowPatch.ai_summary = patch.aiSummary || null;
+      if (patch.detailedAnalysis !== undefined) rowPatch.detailed_analysis = patch.detailedAnalysis || null;
+      if (patch.isDailySpecial !== undefined) rowPatch.is_daily_special = patch.isDailySpecial;
+      if (patch.specialKind !== undefined) rowPatch.special_kind = patch.specialKind || null;
+      if (patch.tags !== undefined) rowPatch.tags = patch.tags;
+      if (Object.keys(rowPatch).length === 0) {
+        return await findInboundItem(id);
+      }
 
-    const { data, error } = await sb
-      .from('inbound_emails')
-      .update(rowPatch)
-      .eq('id', id)
-      .select()
-      .maybeSingle();
-    if (error) {
-      console.error('[inbound-email-store] Supabase updateInboundItem failed:', error.message);
-      return null;
-    }
-    return data ? rowToItem(data as InboundEmailRow) : null;
-  }
-
-  const items = g.__inboundEmailItems!;
-  const idx = items.findIndex(i => i.id === id);
-  if (idx === -1) return null;
-  items[idx] = { ...items[idx], ...patch };
-  return items[idx];
+      const { data, error } = await sb
+        .from('inbound_emails')
+        .update(rowPatch)
+        .eq('id', id)
+        .select()
+        .maybeSingle();
+      if (error) {
+        console.error('[inbound-email-store] Supabase updateInboundItem failed:', error.message);
+        return null;
+      }
+      return data ? rowToItem(data as InboundEmailRow) : null;
+    },
+    () => updateMemory(id, patch),
+  );
 }
 
 export async function findInboundItem(id: string): Promise<InboundEmailItem | null> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { data, error } = await sb
-      .from('inbound_emails')
-      .select('*')
-      .eq('id', id)
-      .maybeSingle();
-    if (error) {
-      console.error('[inbound-email-store] Supabase findInboundItem failed:', error.message);
-      return null;
-    }
-    return data ? rowToItem(data as InboundEmailRow) : null;
-  }
-  return g.__inboundEmailItems!.find(i => i.id === id) || null;
+  return withBackend(
+    async (sb) => {
+      const { data, error } = await sb
+        .from('inbound_emails')
+        .select('*')
+        .eq('id', id)
+        .maybeSingle();
+      if (error) {
+        console.error('[inbound-email-store] Supabase findInboundItem failed:', error.message);
+        return null;
+      }
+      return data ? rowToItem(data as InboundEmailRow) : null;
+    },
+    () => cache.get().find(i => i.id === id) || null,
+  );
 }
 
 export async function clearInboundItems(): Promise<void> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb.from('inbound_emails').delete().neq('id', '');
-    if (error) console.error('[inbound-email-store] Supabase clearInboundItems failed:', error.message);
-  }
-  g.__inboundEmailItems = [];
+  await withBackend<void>(
+    async (sb) => {
+      const { error } = await sb.from('inbound_emails').delete().neq('id', '');
+      if (error) console.error('[inbound-email-store] Supabase clearInboundItems failed:', error.message);
+    },
+    () => {},
+  );
+  // Memory cache is always cleared regardless of which backend is active.
+  cache.set([]);
 }
 
 export async function removeInboundItem(id: string): Promise<boolean> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb.from('inbound_emails').delete().eq('id', id);
-    if (error) {
-      console.error('[inbound-email-store] Supabase removeInboundItem failed:', error.message);
-      return false;
-    }
-    // Also strip from in-memory cache if present
-    const items = g.__inboundEmailItems!;
-    const idx = items.findIndex(i => i.id === id);
-    if (idx !== -1) items.splice(idx, 1);
-    return true;
-  }
-  const items = g.__inboundEmailItems!;
-  const idx = items.findIndex(i => i.id === id);
-  if (idx === -1) return false;
-  items.splice(idx, 1);
-  return true;
+  return withBackend(
+    async (sb) => {
+      const { error } = await sb.from('inbound_emails').delete().eq('id', id);
+      if (error) {
+        console.error('[inbound-email-store] Supabase removeInboundItem failed:', error.message);
+        return false;
+      }
+      // Also strip from in-memory cache if present
+      removeMemory(id);
+      return true;
+    },
+    () => removeMemory(id),
+  );
 }
 
 export async function countInboundItems(): Promise<number> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { count, error } = await sb
-      .from('inbound_emails')
-      .select('*', { count: 'exact', head: true });
-    if (!error && typeof count === 'number') return count;
-  }
-  return g.__inboundEmailItems!.length;
+  return withBackend(
+    async (sb) => {
+      const { count, error } = await sb
+        .from('inbound_emails')
+        .select('*', { count: 'exact', head: true });
+      if (!error && typeof count === 'number') return count;
+      return cache.get().length;
+    },
+    () => cache.get().length,
+  );
 }

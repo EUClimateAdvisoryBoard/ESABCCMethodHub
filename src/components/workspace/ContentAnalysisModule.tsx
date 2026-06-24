@@ -44,41 +44,50 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/lib/auth-context';
-import { useContentAnalysis } from '@/lib/content-analysis/store';
 import {
+  useContentAnalysis,
   useLiveReferences,
   referencePdfCacheKey,
-} from '@/lib/content-analysis/useLiveReferences';
-import { semanticColorFor, lightenedFromParent } from '@/lib/content-analysis/semantic-palette';
-import { useOverallTags } from '@/lib/content-analysis/useOverallTags';
-import type { AnalysisDocument, CodeNode, CorpusDocMeta, DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
-import {
+  useOverallTags,
+  useGeneralNotes,
+  semanticColorFor,
+  lightenedFromParent,
+  parseCustomTag,
+  resolveOverallTag,
   sourceTierOf,
   documentKindLabel,
   SOURCE_TIER_META,
   SOURCE_TIERS,
+  enqueueOutbox,
   type SourceTier,
-} from '@/lib/content-analysis/source-tier';
-import DocumentSummaryPanel from '@/components/content-analysis/DocumentSummaryPanel';
-import GuidedSession from '@/components/content-analysis/GuidedSession';
-import CodeSystemTree from '@/components/content-analysis/CodeSystemTree';
-import DocumentList from '@/components/content-analysis/DocumentList';
-import OverallTagPicker from '@/components/content-analysis/OverallTagPicker';
-import { parseCustomTag, resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
-import AnnotatedDocumentView from '@/components/content-analysis/AnnotatedDocumentView';
-import SegmentsList from '@/components/content-analysis/SegmentsList';
-import GeneralNotesPanel, { type PendingNoteSelection } from '@/components/content-analysis/GeneralNotesPanel';
-import { useGeneralNotes } from '@/lib/content-analysis/useGeneralNotes';
-import WorkspaceAnalysis, { type AnalysisTab } from '@/components/content-analysis/WorkspaceAnalysis';
-import FloatingCodeToolbar, { type ToolbarSelection } from '@/components/content-analysis/FloatingCodeToolbar';
-import type { PdfTextSelection, PdfRegionCapture } from '@/components/content-analysis/PdfDocumentView';
-import CodeEditorModal, {
+  type AnalysisDocument,
+  type CodeNode,
+  type CorpusDocMeta,
+  type DocumentSummary,
+  type SummaryBlock,
+} from '@/lib/content-analysis/service';
+import {
+  DocumentSummaryPanel,
+  GuidedSession,
+  CodeSystemTree,
+  DocumentList,
+  OverallTagPicker,
+  AnnotatedDocumentView,
+  SegmentsList,
+  GeneralNotesPanel,
+  WorkspaceAnalysis,
+  FloatingCodeToolbar,
+  CodeEditorModal,
+  type PendingNoteSelection,
+  type AnalysisTab,
+  type ToolbarSelection,
+  type PdfTextSelection,
+  type PdfRegionCapture,
   type CodeEditorPayload,
   type CodeEditorResult,
-} from '@/components/content-analysis/CodeEditorModal';
+} from '@/components/content-analysis';
 import { showToast } from '@/components/ui/ToastHost';
 import { uploadPdf } from '@/lib/references/pdf-storage';
-import { enqueue as enqueueOutbox } from '@/lib/content-analysis/outbox';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),

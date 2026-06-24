@@ -9,7 +9,7 @@
  * missing (e.g. local dev without `.env.local`).
  */
 
-import { getServerSupabase } from './supabase-server';
+import { memoryCache, withBackend } from './db/store-factory';
 
 export type ReviewStatus =
   | 'pending'
@@ -75,11 +75,35 @@ interface DbRow {
 const BUCKET = 'scenario-submissions';
 const MAX_ITEMS = 1000;
 
-interface GlobalCache {
-  __scenarioSubmissions?: ScenarioSubmission[];
+const cache = memoryCache<ScenarioSubmission>('__scenarioSubmissions');
+
+// ── In-memory fallback operations (shared by the no-Supabase path and the
+// Supabase-error fall-through) ──────────────────────────────────────────────
+
+function addMemory(item: ScenarioSubmission): void {
+  const items = cache.get();
+  items.unshift(item);
+  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
 }
-const g = globalThis as unknown as GlobalCache;
-if (!g.__scenarioSubmissions) g.__scenarioSubmissions = [];
+
+function listMemory(filter?: { status?: ReviewStatus; callSlug?: string }): ScenarioSubmission[] {
+  let items = cache.get().slice();
+  if (filter?.status) items = items.filter((i) => i.reviewStatus === filter.status);
+  if (filter?.callSlug) items = items.filter((i) => i.callSlug === filter.callSlug);
+  return items;
+}
+
+function updateMemory(
+  id: string,
+  patch: { reviewStatus?: ReviewStatus; reviewNotes?: string },
+): boolean {
+  const it = cache.get().find((i) => i.id === id);
+  if (!it) return false;
+  if (patch.reviewStatus !== undefined) it.reviewStatus = patch.reviewStatus;
+  if (patch.reviewNotes !== undefined) it.reviewNotes = patch.reviewNotes;
+  it.reviewedAt = new Date().toISOString();
+  return true;
+}
 
 function rowToItem(r: DbRow): ScenarioSubmission {
   return {
@@ -143,89 +167,87 @@ export async function uploadSubmissionFile(
   id: string,
   file: File,
 ): Promise<{ storagePath: string | null; publicUrl: string | null; error?: string }> {
-  const sb = getServerSupabase();
-  if (!sb) return { storagePath: null, publicUrl: null };
+  return withBackend<{ storagePath: string | null; publicUrl: string | null; error?: string }>(
+    async (sb) => {
+      const safeName = file.name.replace(/[^A-Za-z0-9._-]/g, '_').slice(0, 120);
+      const storagePath = `${id}/${safeName}`;
 
-  const safeName = file.name.replace(/[^A-Za-z0-9._-]/g, '_').slice(0, 120);
-  const storagePath = `${id}/${safeName}`;
-
-  const { error } = await sb.storage.from(BUCKET).upload(storagePath, file, {
-    contentType: file.type || 'application/octet-stream',
-    upsert: true,
-    cacheControl: '3600',
-  });
-  if (error) {
-    return { storagePath: null, publicUrl: null, error: error.message };
-  }
-  const { data } = sb.storage.from(BUCKET).getPublicUrl(storagePath);
-  return { storagePath, publicUrl: data.publicUrl };
+      const { error } = await sb.storage.from(BUCKET).upload(storagePath, file, {
+        contentType: file.type || 'application/octet-stream',
+        upsert: true,
+        cacheControl: '3600',
+      });
+      if (error) {
+        return { storagePath: null, publicUrl: null, error: error.message };
+      }
+      const { data } = sb.storage.from(BUCKET).getPublicUrl(storagePath);
+      return { storagePath, publicUrl: data.publicUrl };
+    },
+    () => ({ storagePath: null, publicUrl: null }),
+  );
 }
 
 export async function addSubmission(item: ScenarioSubmission): Promise<void> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const { error } = await sb.from('scenario_submissions').insert(itemToRow(item));
-    if (!error) return;
-    console.error(
-      'scenario_submissions insert failed, falling back to memory:',
-      error.message,
-    );
-  }
-  const items = g.__scenarioSubmissions!;
-  items.unshift(item);
-  if (items.length > MAX_ITEMS) items.length = MAX_ITEMS;
+  await withBackend<void>(
+    async (sb) => {
+      const { error } = await sb.from('scenario_submissions').insert(itemToRow(item));
+      if (!error) return;
+      console.error(
+        'scenario_submissions insert failed, falling back to memory:',
+        error.message,
+      );
+      addMemory(item);
+    },
+    () => addMemory(item),
+  );
 }
 
 export async function listSubmissions(
   filter?: { status?: ReviewStatus; callSlug?: string },
 ): Promise<ScenarioSubmission[]> {
-  const sb = getServerSupabase();
-  if (sb) {
-    let q = sb
-      .from('scenario_submissions')
-      .select('*')
-      .order('created_at', { ascending: false })
-      .limit(MAX_ITEMS);
-    if (filter?.status) q = q.eq('review_status', filter.status);
-    if (filter?.callSlug) q = q.eq('call_slug', filter.callSlug);
-    const { data, error } = await q;
-    if (!error && data) return (data as DbRow[]).map(rowToItem);
-    if (error) {
-      console.error(
-        'scenario_submissions select failed, falling back to memory:',
-        error.message,
-      );
-    }
-  }
-  let items = g.__scenarioSubmissions!.slice();
-  if (filter?.status) items = items.filter((i) => i.reviewStatus === filter.status);
-  if (filter?.callSlug) items = items.filter((i) => i.callSlug === filter.callSlug);
-  return items;
+  return withBackend(
+    async (sb) => {
+      let q = sb
+        .from('scenario_submissions')
+        .select('*')
+        .order('created_at', { ascending: false })
+        .limit(MAX_ITEMS);
+      if (filter?.status) q = q.eq('review_status', filter.status);
+      if (filter?.callSlug) q = q.eq('call_slug', filter.callSlug);
+      const { data, error } = await q;
+      if (!error && data) return (data as DbRow[]).map(rowToItem);
+      if (error) {
+        console.error(
+          'scenario_submissions select failed, falling back to memory:',
+          error.message,
+        );
+      }
+      return listMemory(filter);
+    },
+    () => listMemory(filter),
+  );
 }
 
 export async function updateSubmissionReview(
   id: string,
   patch: { reviewStatus?: ReviewStatus; reviewNotes?: string },
 ): Promise<boolean> {
-  const sb = getServerSupabase();
-  if (sb) {
-    const dbPatch: Record<string, unknown> = { reviewed_at: new Date().toISOString() };
-    if (patch.reviewStatus !== undefined) dbPatch.review_status = patch.reviewStatus;
-    if (patch.reviewNotes !== undefined) dbPatch.review_notes = patch.reviewNotes;
-    const { error } = await sb
-      .from('scenario_submissions')
-      .update(dbPatch)
-      .eq('id', id);
-    if (!error) return true;
-    console.error(
-      'scenario_submissions update failed, trying memory:',
-      error.message,
-    );
-  }
-  const it = g.__scenarioSubmissions!.find((i) => i.id === id);
-  if (!it) return false;
-  if (patch.reviewStatus !== undefined) it.reviewStatus = patch.reviewStatus;
-  if (patch.reviewNotes !== undefined) it.reviewNotes = patch.reviewNotes;
-  it.reviewedAt = new Date().toISOString();
-  return true;
+  return withBackend(
+    async (sb) => {
+      const dbPatch: Record<string, unknown> = { reviewed_at: new Date().toISOString() };
+      if (patch.reviewStatus !== undefined) dbPatch.review_status = patch.reviewStatus;
+      if (patch.reviewNotes !== undefined) dbPatch.review_notes = patch.reviewNotes;
+      const { error } = await sb
+        .from('scenario_submissions')
+        .update(dbPatch)
+        .eq('id', id);
+      if (!error) return true;
+      console.error(
+        'scenario_submissions update failed, trying memory:',
+        error.message,
+      );
+      return updateMemory(id, patch);
+    },
+    () => updateMemory(id, patch),
+  );
 }
