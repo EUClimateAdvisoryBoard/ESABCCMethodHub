@@ -1,13 +1,33 @@
 [
   {
-    "title": "Speech by Commissioner Albuquerque (by video message) for the BaFin - Bundesanstalt für Finanzdienstleistungsaufsicht second annual financial market conference",
-    "summary": "European Commission Speech Online, 23 Jun 2026 Good morning to all of you in Frankfurt, and many thanks for the opportunity to contribute to this year's BaFin Capital Markets Conference.\r\nUnfortunately, my sc...",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1432",
+    "title": "Press remarks by Commissioner Hoekstra on the tax simplification package",
+    "summary": "European Commission Speech Brussels, 24 Jun 2026 Ladies and gentlemen, a very good afternoon,\r\n \r\nIf there is one thing crystal clear to the Commission, it is that we need to advance our business climate.\r\nBusine...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1450",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-06-23T10:26:03.000Z",
+    "publishedDate": "2026-06-24T10:26:39.000Z",
+    "tags": []
+  },
+  {
+    "title": "Commission simplifies and makes energy and tyre labelling rules more accessible to European consumers",
+    "summary": "European Commission Press release Brussels, 24 Jun 2026 European consumers, suppliers and retailers of home appliances, electronic devices and tyres are set to benefit from simplified rules on labelling proposed by the European Commission today.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1388",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-23T22:00:00.000Z",
     "tags": [
-      "emissions"
+      "energy"
+    ]
+  },
+  {
+    "title": "Questions and answers on the simplification of energy and tyre labelling",
+    "summary": "European Commission Questions and answers Brussels, 24 Jun 2026 How will European consumers benefit from simplified rules on energy and tyre labelling?\r\nThe EU energy and tyre labelling rules are a mature and long-standing po...",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1389",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-06-23T22:00:00.000Z",
+    "tags": [
+      "energy"
     ]
   }
 ]
