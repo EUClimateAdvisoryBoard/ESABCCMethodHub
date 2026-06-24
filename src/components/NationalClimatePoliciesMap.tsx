@@ -19,9 +19,10 @@
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import type { CountryPolicyMetrics, MapMetric } from '@/lib/climate-policy-insights';
 import { buildMapMetrics } from '@/lib/climate-policy-insights';
+import { N3_TO_A2, useEu27Geojson } from '@/lib/geo/eu-choropleth';
 
 interface Props {
   metrics: CountryPolicyMetrics[];
@@ -32,46 +33,14 @@ interface Props {
   height?: number;
 }
 
-// ISO alpha-2 → ISO numeric N3 (the id used by the world-atlas topology).
-const EU_A2_TO_N3: Record<string, string> = {
-  AT: '040', BE: '056', BG: '100', CY: '196', CZ: '203',
-  DE: '276', DK: '208', EE: '233', ES: '724', FI: '246',
-  FR: '250', GR: '300', HR: '191', HU: '348', IE: '372',
-  IT: '380', LT: '440', LU: '442', LV: '428', MT: '470',
-  NL: '528', PL: '616', PT: '620', RO: '642', SE: '752',
-  SI: '705', SK: '703',
-};
-
-const N3_TO_A2: Record<string, string> = Object.fromEntries(
-  Object.entries(EU_A2_TO_N3).map(([k, v]) => [v, k]),
-);
-
-const EU27_GEOJSON_URL = '/data/eu27-boundaries.geojson';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnyGeo = any;
-
 export default function NationalClimatePoliciesMap({
   metrics, selected, onSelect, height = 540,
 }: Props) {
-  const [geo, setGeo] = useState<AnyGeo | null>(null);
-  const [geoError, setGeoError] = useState<string | null>(null);
+  const { geo, geoError } = useEu27Geojson();
 
   const mapMetrics = useMemo(() => buildMapMetrics(metrics), [metrics]);
   const [metricKey, setMetricKey] = useState(mapMetrics[0]?.key ?? 'framework');
   const metric: MapMetric = mapMetrics.find(m => m.key === metricKey) ?? mapMetrics[0];
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(EU27_GEOJSON_URL)
-      .then(r => {
-        if (!r.ok) throw new Error(`status ${r.status}`);
-        return r.json();
-      })
-      .then(fc => { if (!cancelled) setGeo(fc); })
-      .catch(e => { if (!cancelled) setGeoError(e instanceof Error ? e.message : 'load failed'); });
-    return () => { cancelled = true; };
-  }, []);
 
   const byCode = useMemo(() => {
     const m = new Map<string, CountryPolicyMetrics>();

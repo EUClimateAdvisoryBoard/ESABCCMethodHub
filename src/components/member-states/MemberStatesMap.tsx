@@ -18,13 +18,14 @@ import {
 } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import type { CountryProfile, HeatmapIndicatorKey } from '@/data/country-profiles/_types';
 import {
   STATUS_COLORS, STATUS_LABELS, HEATMAP_INDICATORS,
 } from '@/data/country-profiles/_types';
 import { heatmapStatus } from '@/data/country-profiles';
+import { N3_TO_A2, useEu27Geojson } from '@/lib/geo/eu-choropleth';
 
 interface Props {
   profiles: CountryProfile[];
@@ -33,45 +34,11 @@ interface Props {
   height?: number;
 }
 
-// ISO alpha-2 → ISO numeric N3 (the id used by world-atlas topojson).
-const EU_A2_TO_N3: Record<string, string> = {
-  AT: '040', BE: '056', BG: '100', CY: '196', CZ: '203',
-  DE: '276', DK: '208', EE: '233', ES: '724', FI: '246',
-  FR: '250', GR: '300', HR: '191', HU: '348', IE: '372',
-  IT: '380', LT: '440', LU: '442', LV: '428', MT: '470',
-  NL: '528', PL: '616', PT: '620', RO: '642', SE: '752',
-  SI: '705', SK: '703',
-};
-
-const N3_TO_A2: Record<string, string> = Object.fromEntries(
-  Object.entries(EU_A2_TO_N3).map(([k, v]) => [v, k]),
-);
-
-// Static asset produced by `scripts/build-eu27-geojson.mjs` (prebuild). Same
-// origin, so the site's CSP `connect-src` directive doesn't block it.
-const EU27_GEOJSON_URL = '/data/eu27-boundaries.geojson';
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type AnyGeo = any;
-
 export default function MemberStatesMap({
   profiles, defaultIndicator = 'ghg', height = 540,
 }: Props) {
   const [indicator, setIndicator] = useState<HeatmapIndicatorKey>(defaultIndicator);
-  const [geo, setGeo] = useState<AnyGeo | null>(null);
-  const [geoError, setGeoError] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(EU27_GEOJSON_URL)
-      .then(r => {
-        if (!r.ok) throw new Error(`status ${r.status}`);
-        return r.json();
-      })
-      .then(fc => { if (!cancelled) setGeo(fc); })
-      .catch(e => { if (!cancelled) setGeoError(e instanceof Error ? e.message : 'load failed'); });
-    return () => { cancelled = true; };
-  }, []);
+  const { geo, geoError } = useEu27Geojson();
 
   const byCode = useMemo(() => {
     const m = new Map<string, CountryProfile>();
