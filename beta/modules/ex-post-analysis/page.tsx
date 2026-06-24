@@ -247,6 +247,66 @@ const ATTRIB: AttribRow[] = [
 ];
 
 /* ===================================================================== *
+ *  TIME-SERIES DATA (for the charts)
+ *  All series are the published/observed values; flagged approximate where
+ *  inventory-vintage-sensitive. Sources match the attribution table above.
+ * ===================================================================== */
+
+type Pt = { x: number; y: number };
+
+// EU ETS annual-average EUA price, €/tCO2 (approx; ICAP/Ember). <€10 2013–17,
+// climbs to >€80, first >€100 Feb 2023, eases 2024.
+const ETS_PRICE: Pt[] = [
+  { x: 2013, y: 4.5 }, { x: 2014, y: 6.0 }, { x: 2015, y: 7.7 }, { x: 2016, y: 5.3 },
+  { x: 2017, y: 5.8 }, { x: 2018, y: 15.9 }, { x: 2019, y: 24.8 }, { x: 2020, y: 24.8 },
+  { x: 2021, y: 53.4 }, { x: 2022, y: 81.0 }, { x: 2023, y: 83.7 }, { x: 2024, y: 64.8 },
+];
+
+// ETS-covered (stationary) verified emissions, Mt CO2e (approx; EEA/EUTL).
+const ETS_OBSERVED: Pt[] = [
+  { x: 2013, y: 1908 }, { x: 2014, y: 1814 }, { x: 2015, y: 1803 }, { x: 2016, y: 1750 },
+  { x: 2017, y: 1755 }, { x: 2018, y: 1682 }, { x: 2019, y: 1527 }, { x: 2020, y: 1355 },
+  { x: 2021, y: 1425 }, { x: 2022, y: 1386 }, { x: 2023, y: 1189 },
+];
+
+// New passenger-car fleet-average CO2, g/km, NEDC basis (EEA). WLTP from 2021
+// is not comparable, so the clean series stops at 2020.
+const CAR_CO2: Pt[] = [
+  { x: 2007, y: 158.7 }, { x: 2010, y: 140.3 }, { x: 2012, y: 132.2 }, { x: 2014, y: 123.4 },
+  { x: 2015, y: 119.6 }, { x: 2017, y: 118.5 }, { x: 2018, y: 120.4 }, { x: 2019, y: 122.3 },
+  { x: 2020, y: 107.8 },
+];
+
+// EV (BEV+PHEV) share of EU new-car sales, % (ACEA).
+const EV_SHARE: Pt[] = [
+  { x: 2019, y: 3.0 }, { x: 2020, y: 10.5 }, { x: 2021, y: 18.0 }, { x: 2022, y: 21.6 }, { x: 2023, y: 22.3 },
+];
+
+// EU F-gas emissions, Mt CO2e (approx; EEA — peak 2014, −25% by 2022, −38% by 2023).
+const FGAS: Pt[] = [
+  { x: 2014, y: 110 }, { x: 2016, y: 105 }, { x: 2018, y: 100 }, { x: 2020, y: 92 },
+  { x: 2021, y: 90 }, { x: 2022, y: 83 }, { x: 2023, y: 68 },
+];
+
+// HFC quota phase-down, % of baseline (Reg. 517/2014 Annex V) — step series.
+const FGAS_QUOTA: Pt[] = [
+  { x: 2015, y: 100 }, { x: 2016, y: 93 }, { x: 2018, y: 63 }, { x: 2021, y: 45 },
+  { x: 2024, y: 31 }, { x: 2027, y: 24 }, { x: 2030, y: 21 },
+];
+
+// EU renewable share of gross final energy consumption, % (Eurostat).
+const RES_SHARE: Pt[] = [
+  { x: 2010, y: 14.4 }, { x: 2012, y: 16.0 }, { x: 2014, y: 17.4 }, { x: 2016, y: 18.0 },
+  { x: 2018, y: 19.9 }, { x: 2020, y: 22.1 }, { x: 2022, y: 23.0 }, { x: 2023, y: 24.5 },
+];
+
+// EU net LULUCF sink, magnitude of net removals, Mt CO2e (EEA — declining).
+const LULUCF: Pt[] = [
+  { x: 2013, y: 322 }, { x: 2015, y: 300 }, { x: 2017, y: 270 }, { x: 2019, y: 249 },
+  { x: 2021, y: 235 }, { x: 2022, y: 230 }, { x: 2023, y: 198 },
+];
+
+/* ===================================================================== *
  *  ADAPTATION — INTERVENTION LOGIC / THEORY OF CHANGE
  * ===================================================================== */
 
@@ -528,6 +588,23 @@ export default function ExPostAnalysisPage() {
             />
             <Stat big="1.2 Gt" unit="2008–2016" label="Independent ETS cross-check (Bayer & Aklin, synthetic control)" tone="blue" />
           </div>
+
+          {/* econometric visuals */}
+          <div className="mt-4 grid gap-3 lg:grid-cols-2">
+            <ChartCard
+              title="ETS — synthetic-control / DiD view"
+              sub="Observed ETS-covered emissions vs the no-ETS counterfactual implied by the −10% effect; shaded = attributed reduction."
+            >
+              <CounterfactualChart observed={ETS_OBSERVED} effect={ATTRIB[0].effect[scenario]} yMax={2200} yLabel="Mt CO₂e (ETS-covered, stationary)" xTicks={[2013, 2016, 2019, 2022]} />
+              <Legend items={[{ label: 'Observed', color: '#007B6C' }, { label: 'Counterfactual (no-ETS)', color: '#B83230', dash: true }, { label: 'Attributed reduction', color: '#B83230' }]} />
+            </ChartCard>
+            <ChartCard
+              title="Attributed reduction by instrument"
+              sub={`Bar = current band (${SCENARIOS.find((s) => s.key === scenario)!.label}); whisker = conservative–high range. Green = Tier A (summed), orange = Tier B (shown, not summed).`}
+            >
+              <AttributionBars rows={[...tierA, ...tierB]} scenario={scenario} />
+            </ChartCard>
+          </div>
         </section>
 
         {/* Tier A + B attribution cards */}
@@ -664,6 +741,84 @@ export default function ExPostAnalysisPage() {
                 <p className="mt-2 text-[11px] text-tertiary-light">Source: {q.source}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ================= THE DATA BEHIND THE ESTIMATES ================= */}
+        <section className="mb-12">
+          <SectionLabel>The data behind the estimates</SectionLabel>
+          <h2 className="text-lg font-bold text-tertiary-dark mb-1">The observed series each attribution rests on</h2>
+          <p className="text-[13px] text-tertiary mb-4 max-w-3xl">
+            The attribution arithmetic is only as good as the data feeding it. These are the observed
+            trajectories behind each instrument — the raw material the causal designs exploit.
+          </p>
+
+          <div className="grid gap-3 lg:grid-cols-2">
+            <ChartCard title="EU ETS — carbon price" sub="Annual-average EUA, €/tCO₂ (approx.). <€10 through 2013–17; first >€100 in Feb 2023.">
+              <LineChart series={[{ label: 'EUA €/t', color: '#004B7F', points: ETS_PRICE }]} yMax={100} yLabel="€/tCO₂" xTicks={[2013, 2016, 2019, 2022, 2024]} height={200} />
+            </ChartCard>
+
+            <ChartCard title="CO₂ car standards — fleet intensity & EV share" sub="New-car CO₂ g/km (NEDC; series stops at 2020 — WLTP not comparable) and EV (BEV+PHEV) sales share.">
+              <LineChart
+                series={[{ label: 'g CO₂/km', color: '#004B7F', points: CAR_CO2 }, { label: 'EV share %', color: '#FF9933', points: EV_SHARE }]}
+                yMax={170}
+                yLabel="g CO₂/km (blue) · EV share % (orange)"
+                xTicks={[2007, 2012, 2017, 2023]}
+                hlines={[{ y: 130, label: '2015 target 130', color: '#54728C' }, { y: 95, label: '2021 target 95', color: '#B83230' }]}
+                height={200}
+              />
+            </ChartCard>
+
+            <ChartCard title="F-gas — emissions vs the HFC quota phase-down" sub="F-gas emissions Mt CO₂e (approx.; −25% by 2022) against the statutory quota steps (% of baseline).">
+              <LineChart
+                series={[{ label: 'F-gas Mt CO₂e', color: '#007B6C', points: FGAS }, { label: 'Quota % of baseline', color: '#A530B8', points: FGAS_QUOTA, step: true }]}
+                yMax={120}
+                yLabel="Mt CO₂e (teal) · quota % (purple, stepped)"
+                xTicks={[2014, 2018, 2021, 2024, 2030]}
+                height={200}
+              />
+            </ChartCard>
+
+            <ChartCard title="RED — renewable share vs targets" sub="RES % of gross final energy consumption (Eurostat) against the 2020 and 2030 (RED III) targets.">
+              <LineChart
+                series={[{ label: 'RES %', color: '#007B6C', points: RES_SHARE }]}
+                yMax={45}
+                yLabel="RES share, %"
+                xTicks={[2010, 2014, 2018, 2023]}
+                hlines={[{ y: 20, label: '2020 target', color: '#54728C' }, { y: 42.5, label: '2030 RED III 42.5%', color: '#B83230' }]}
+                height={200}
+              />
+            </ChartCard>
+
+            <ChartCard title="LULUCF — the weakening net sink" sub="Magnitude of EU net removals, Mt CO₂e (EEA) — falling ~30% — against the −310 Mt 2030 target.">
+              <LineChart
+                series={[{ label: 'Net sink Mt', color: '#007B6C', points: LULUCF }]}
+                yMax={350}
+                yLabel="net removals, Mt CO₂e"
+                xTicks={[2013, 2017, 2021, 2023]}
+                hlines={[{ y: 310, label: '2030 target −310', color: '#B83230' }]}
+                height={200}
+              />
+            </ChartCard>
+
+            <div className="grid grid-cols-2 gap-3">
+              <ChartCard title="CO₂ standards — the gaming gap" sub="Reynaert (2021): real-world abatement is roughly half the type-approval figure.">
+                <CompareBars
+                  bars={[{ label: 'Type-approval', value: 14, color: '#BCBEC0' }, { label: 'Real-world', value: 5, color: '#007B6C' }]}
+                  yMax={16}
+                  unit="% CO₂ reduction"
+                  height={200}
+                />
+              </ChartCard>
+              <ChartCard title="EED — the efficiency gap" sub="Fowlie et al. (2018): realised savings ≈ ⅓ of the engineering projection.">
+                <CompareBars
+                  bars={[{ label: 'Engineering', value: 100, color: '#BCBEC0' }, { label: 'Realised', value: 33, color: '#FF9933' }]}
+                  yMax={110}
+                  unit="savings, index (projected = 100)"
+                  height={200}
+                />
+              </ChartCard>
+            </div>
           </div>
         </section>
 
@@ -836,6 +991,224 @@ function CmoRow({ tag, body, strong }: { tag: string; body: string; strong?: boo
     <div className="flex gap-2">
       <span className="shrink-0 w-[78px] text-[10px] font-bold uppercase tracking-wide text-tertiary-light pt-0.5">{tag}</span>
       <span className={`text-[12px] leading-relaxed ${strong ? 'font-semibold text-tertiary-dark' : 'text-tertiary'}`}>{body}</span>
+    </div>
+  );
+}
+
+/* ===================================================================== *
+ *  CHART PRIMITIVES (inline SVG — house style, no chart library)
+ * ===================================================================== */
+
+type Series = { label: string; color: string; points: Pt[]; dash?: boolean; step?: boolean };
+
+/** Generic year-axis line chart with optional horizontal reference lines + markers. */
+function LineChart(props: {
+  series: Series[];
+  yMax: number;
+  yLabel: string;
+  xTicks: number[];
+  hlines?: { y: number; label: string; color?: string }[];
+  height?: number;
+  yMin?: number;
+}) {
+  const { series, yMax, yLabel, xTicks, hlines = [], height = 220, yMin = 0 } = props;
+  const W = 720;
+  const H = height;
+  const m = { l: 46, r: 14, t: 18, b: 26 };
+  const iw = W - m.l - m.r;
+  const ih = H - m.t - m.b;
+  const allX = series.flatMap((s) => s.points.map((p) => p.x));
+  const x0 = Math.min(...allX, ...xTicks);
+  const x1 = Math.max(...allX, ...xTicks);
+  const sx = (x: number) => m.l + ((x - x0) / (x1 - x0)) * iw;
+  const sy = (y: number) => m.t + ih - ((Math.min(y, yMax) - yMin) / (yMax - yMin)) * ih;
+  const yTicks = 4;
+
+  const pathFor = (s: Series) =>
+    s.points
+      .map((p, i) => {
+        if (i === 0) return `M ${sx(p.x).toFixed(1)} ${sy(p.y).toFixed(1)}`;
+        if (s.step) return `H ${sx(p.x).toFixed(1)} V ${sy(p.y).toFixed(1)}`;
+        return `L ${sx(p.x).toFixed(1)} ${sy(p.y).toFixed(1)}`;
+      })
+      .join(' ');
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={yLabel}>
+      {Array.from({ length: yTicks + 1 }, (_, i) => {
+        const v = yMin + ((yMax - yMin) / yTicks) * i;
+        const y = sy(v);
+        return (
+          <g key={i}>
+            <line x1={m.l} x2={W - m.r} y1={y} y2={y} stroke="#E6E7E8" strokeWidth={1} />
+            <text x={m.l - 6} y={y + 3} textAnchor="end" className="fill-grey-500" fontSize={10}>{fmt(v)}</text>
+          </g>
+        );
+      })}
+      {xTicks.map((yr) => (
+        <text key={yr} x={sx(yr)} y={H - 8} textAnchor="middle" className="fill-grey-500" fontSize={10}>{yr}</text>
+      ))}
+      <text x={m.l} y={m.t - 4} className="fill-tertiary" fontSize={10}>{yLabel}</text>
+      {hlines.map((h) => (
+        <g key={h.label}>
+          <line x1={m.l} x2={W - m.r} y1={sy(h.y)} y2={sy(h.y)} stroke={h.color ?? '#B83230'} strokeWidth={1.25} strokeDasharray="5 4" />
+          <text x={W - m.r} y={sy(h.y) - 3} textAnchor="end" fontSize={9} fill={h.color ?? '#B83230'}>{h.label}</text>
+        </g>
+      ))}
+      {series.map((s) => (
+        <g key={s.label}>
+          <path d={pathFor(s)} fill="none" stroke={s.color} strokeWidth={2.25} strokeDasharray={s.dash ? '5 4' : undefined} strokeLinejoin="round" />
+          {s.points.map((p) => <circle key={p.x} cx={sx(p.x)} cy={sy(p.y)} r={2.4} fill={s.color} />)}
+        </g>
+      ))}
+    </svg>
+  );
+}
+
+/** Synthetic-control / DiD visual: observed vs implied counterfactual, with the
+ *  attributed reduction shaded between them. */
+function CounterfactualChart({ observed, effect, yMax, yLabel, xTicks }: { observed: Pt[]; effect: number; yMax: number; yLabel: string; xTicks: number[] }) {
+  const W = 720;
+  const H = 250;
+  const m = { l: 50, r: 14, t: 18, b: 26 };
+  const iw = W - m.l - m.r;
+  const ih = H - m.t - m.b;
+  const x0 = observed[0].x;
+  const x1 = observed[observed.length - 1].x;
+  const sx = (x: number) => m.l + ((x - x0) / (x1 - x0)) * iw;
+  const sy = (y: number) => m.t + ih - (Math.min(y, yMax) / yMax) * ih;
+  const counter = observed.map((p) => ({ x: p.x, y: p.y / (1 - effect) }));
+  const line = (pts: Pt[]) => pts.map((p, i) => `${i === 0 ? 'M' : 'L'} ${sx(p.x).toFixed(1)} ${sy(p.y).toFixed(1)}`).join(' ');
+  const band =
+    line(counter) + ' ' + observed.slice().reverse().map((p) => `L ${sx(p.x).toFixed(1)} ${sy(p.y).toFixed(1)}`).join(' ') + ' Z';
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={yLabel}>
+      {Array.from({ length: 5 }, (_, i) => {
+        const v = (yMax / 4) * i;
+        const y = sy(v);
+        return (
+          <g key={i}>
+            <line x1={m.l} x2={W - m.r} y1={y} y2={y} stroke="#E6E7E8" strokeWidth={1} />
+            <text x={m.l - 6} y={y + 3} textAnchor="end" className="fill-grey-500" fontSize={10}>{fmt(v)}</text>
+          </g>
+        );
+      })}
+      {xTicks.map((yr) => <text key={yr} x={sx(yr)} y={H - 8} textAnchor="middle" className="fill-grey-500" fontSize={10}>{yr}</text>)}
+      <text x={m.l} y={m.t - 4} className="fill-tertiary" fontSize={10}>{yLabel}</text>
+      <path d={band} fill="#B83230" fillOpacity={0.12} stroke="none" />
+      <path d={line(counter)} fill="none" stroke="#B83230" strokeWidth={2.25} strokeDasharray="5 4" strokeLinejoin="round" />
+      <path d={line(observed)} fill="none" stroke="#007B6C" strokeWidth={2.5} strokeLinejoin="round" />
+      <text x={sx(counter[counter.length - 1].x) - 4} y={sy(counter[counter.length - 1].y) - 6} textAnchor="end" fontSize={10} fill="#B83230" fontWeight={700}>
+        counterfactual (no-ETS)
+      </text>
+      <text x={sx(observed[observed.length - 1].x) - 4} y={sy(observed[observed.length - 1].y) + 14} textAnchor="end" fontSize={10} fill="#00665A" fontWeight={700}>
+        observed
+      </text>
+    </svg>
+  );
+}
+
+/** Horizontal attribution bars with conservative–high whiskers and a marker at
+ *  the current scenario. */
+function AttributionBars({ rows, scenario }: { rows: AttribRow[]; scenario: Scenario }) {
+  const W = 720;
+  const rowH = 38;
+  const m = { l: 150, r: 60, t: 10, b: 26 };
+  const H = m.t + m.b + rows.length * rowH;
+  const iw = W - m.l - m.r;
+  const xMax = Math.max(...rows.map((r) => r.baselineMt * r.effect.high)) * 1.1;
+  const sx = (v: number) => m.l + (v / xMax) * iw;
+  const xTicks = [0, 50, 100, 150, 200].filter((t) => t <= xMax);
+
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Attributed emission reductions by instrument">
+      {xTicks.map((t) => (
+        <g key={t}>
+          <line x1={sx(t)} x2={sx(t)} y1={m.t} y2={H - m.b} stroke="#E6E7E8" strokeWidth={1} />
+          <text x={sx(t)} y={H - 10} textAnchor="middle" className="fill-grey-500" fontSize={10}>{t}</text>
+        </g>
+      ))}
+      <text x={sx(0)} y={H - 10} textAnchor="middle" className="fill-grey-500" fontSize={10}>0</text>
+      {rows.map((r, i) => {
+        const y = m.t + i * rowH + rowH / 2;
+        const lo = r.baselineMt * r.effect.conservative;
+        const hi = r.baselineMt * r.effect.high;
+        const cur = r.baselineMt * r.effect[scenario];
+        const fill = r.tier === 'A' ? '#007B6C' : '#FF9933';
+        return (
+          <g key={r.id}>
+            <text x={m.l - 8} y={y + 3} textAnchor="end" className="fill-tertiary-dark" fontSize={11} fontWeight={600}>{r.name}</text>
+            {/* whisker low–high */}
+            <line x1={sx(lo)} x2={sx(hi)} y1={y} y2={y} stroke={fill} strokeOpacity={0.35} strokeWidth={8} strokeLinecap="round" />
+            {/* current-scenario bar */}
+            <rect x={sx(0)} y={y - 7} width={Math.max(0, sx(cur) - sx(0))} height={14} fill={fill} fillOpacity={0.9} rx={2} />
+            <text x={sx(hi) + 6} y={y + 3} fontSize={10} className="fill-tertiary" >{fmt(lo)}–{fmt(hi)}</text>
+            <text x={sx(cur) - 4} y={y + 3} textAnchor="end" fontSize={10} fill="#fff" fontWeight={700}>{cur >= 12 ? fmt(cur) : ''}</text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/** Simple paired comparison bars (e.g. type-approval vs real-world). */
+function CompareBars({ bars, yMax, unit, height = 200 }: { bars: { label: string; value: number; color: string }[]; yMax: number; unit: string; height?: number }) {
+  const W = 360;
+  const H = height;
+  const m = { l: 40, r: 14, t: 16, b: 40 };
+  const iw = W - m.l - m.r;
+  const ih = H - m.t - m.b;
+  const bw = iw / bars.length;
+  const sy = (v: number) => m.t + ih - (v / yMax) * ih;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label={unit}>
+      {Array.from({ length: 5 }, (_, i) => {
+        const v = (yMax / 4) * i;
+        return (
+          <g key={i}>
+            <line x1={m.l} x2={W - m.r} y1={sy(v)} y2={sy(v)} stroke="#E6E7E8" strokeWidth={1} />
+            <text x={m.l - 6} y={sy(v) + 3} textAnchor="end" className="fill-grey-500" fontSize={10}>{fmt(v)}</text>
+          </g>
+        );
+      })}
+      {bars.map((b, i) => {
+        const x = m.l + i * bw + bw * 0.2;
+        const w = bw * 0.6;
+        return (
+          <g key={b.label}>
+            <rect x={x} y={sy(b.value)} width={w} height={m.t + ih - sy(b.value)} fill={b.color} rx={2} />
+            <text x={x + w / 2} y={sy(b.value) - 5} textAnchor="middle" fontSize={11} fontWeight={700} className="fill-tertiary-dark">{fmt(b.value)}</text>
+            <text x={x + w / 2} y={H - 24} textAnchor="middle" fontSize={10} className="fill-tertiary">{b.label}</text>
+          </g>
+        );
+      })}
+      <text x={m.l} y={m.t - 4} className="fill-tertiary" fontSize={10}>{unit}</text>
+    </svg>
+  );
+}
+
+function ChartCard({ title, sub, children }: { title: string; sub?: string; children: ReactNode }) {
+  return (
+    <div className="rounded-lg border border-grey-200 bg-white p-4">
+      <div className="text-[13px] font-bold text-tertiary-dark">{title}</div>
+      {sub && <div className="text-[11px] text-tertiary mb-2">{sub}</div>}
+      <div className="mt-1">{children}</div>
+    </div>
+  );
+}
+
+function Legend({ items }: { items: { label: string; color: string; dash?: boolean }[] }) {
+  return (
+    <div className="flex flex-wrap gap-x-4 gap-y-1.5 mt-1">
+      {items.map((it) => (
+        <span key={it.label} className="inline-flex items-center gap-1.5 text-[11px] text-tertiary">
+          <svg width="22" height="8" className="shrink-0">
+            <line x1="0" y1="4" x2="22" y2="4" stroke={it.color} strokeWidth={2.5} strokeDasharray={it.dash ? '5 4' : undefined} />
+          </svg>
+          {it.label}
+        </span>
+      ))}
     </div>
   );
 }
