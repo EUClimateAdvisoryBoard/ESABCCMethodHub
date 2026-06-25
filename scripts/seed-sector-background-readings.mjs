@@ -25,7 +25,7 @@ import { dirname, join } from 'node:path';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dirname, '..', 'supabase', 'migrations', '073_sector_background_readings_seed.sql');
 
-const PROJECT_ID = 'project-policy-gap';
+const PROJECT_ID = 'policy-gap-2-0'; // the "Policy Gap 2.0" project workspace id (src/data/project-workspace.ts)
 const CHAPTER_INDUSTRY = 'chapter:#9C3B3B:Industry';
 const CHAPTER_TRANSPORT = 'chapter:#3D6E8C:Transport';
 
@@ -137,7 +137,7 @@ const sql = `-- 073_sector_background_readings_seed.sql
 -- — edit that script and re-run it, do not hand-edit this file.
 --
 --   1. custom_references          — the papers in the Reference Manager (DOI).
---   2. content_analysis_corpus    — added to the "Policy Gap" project workspace.
+--   2. content_analysis_corpus    — added to the "Policy Gap 2.0" project workspace.
 --   3. content_analysis_overall_tags — each tagged with its chapter (sector)
 --      tag, Industry (chapter:#9C3B3B:Industry) or Transport
 --      (chapter:#3D6E8C:Transport), matching src/lib/content-analysis/chapter-tags.ts.
