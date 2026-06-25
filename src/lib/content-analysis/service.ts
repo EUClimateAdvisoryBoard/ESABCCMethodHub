@@ -24,6 +24,14 @@ export { useGeneralNotes } from './useGeneralNotes';
 export { semanticColorFor, lightenedFromParent } from './semantic-palette';
 export { parseCustomTag, resolveOverallTag } from './custom-overall-tags';
 export {
+  CHAPTER_TAGS,
+  isChapterTagId,
+  formatChapterTagId,
+  chapterTagColor,
+  parseChapterTag,
+  splitTagIds,
+} from './chapter-tags';
+export {
   sourceTierOf,
   documentKindLabel,
   SOURCE_TIER_META,

@@ -16,7 +16,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CodeNode } from '@/lib/content-analysis/types';
-import { formatCustomTagId, isCustomTagId, parseCustomTag } from '@/lib/content-analysis/custom-overall-tags';
+import { formatCustomTagId, resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
 
 interface Props {
   /** Selectable pool — the master taxonomy. */
@@ -36,6 +36,12 @@ interface Props {
    *  dropdown offers a "+ Create" action for whatever you type in the search
    *  box. Off for the library filter, which can only match existing tags. */
   allowCustom?: boolean;
+  /** How a freshly-coined tag's id is built from its typed name. Defaults to a
+   *  custom overall tag (`custom:` namespace); the chapter picker passes a
+   *  formatter that mints a `chapter:` tag instead. */
+  formatCreateId?: (name: string) => string;
+  /** Placeholder for the create hint line. Defaults to a generic tag wording. */
+  createHint?: string;
 }
 
 /** Indentation depth of a code in the master hierarchy, for the checklist. */
@@ -59,6 +65,8 @@ export default function OverallTagPicker({
   align = 'left',
   showDots = false,
   allowCustom = false,
+  formatCreateId = formatCustomTagId,
+  createHint = '+ Type a new name above to create your own tag.',
 }: Props) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
@@ -123,7 +131,7 @@ export default function OverallTagPicker({
     const out: CodeNode[] = [];
     const seen = new Set<string>();
     for (const id of selected) {
-      const c = byId.get(id) ?? parseCustomTag(id);
+      const c = byId.get(id) ?? resolveOverallTag(id);
       if (!c) continue;
       const key = c.name.trim().toLowerCase();
       if (seen.has(key)) continue;
@@ -133,16 +141,16 @@ export default function OverallTagPicker({
     return out;
   }, [selected, byId]);
 
-  // Already-selected custom tags that aren't in the pool — surface them at the
-  // top of the checklist where they can be toggled back off. Custom tags that
-  // ARE in the pool (the shared, reusable set coined across documents) already
-  // render as ordinary checklist rows below, so they're excluded here to avoid
-  // listing them twice.
+  // Already-selected tags that aren't in the pool — surface them at the top of
+  // the checklist where they can be toggled back off. This covers custom tags
+  // coined on other documents and chapter tags coined outside the seeded
+  // catalog; tags that ARE in the pool already render as ordinary checklist
+  // rows below, so they're excluded here to avoid listing them twice.
   const selectedCustom = useMemo(
     () =>
       selected
-        .filter(id => isCustomTagId(id) && !byId.has(id))
-        .map(parseCustomTag)
+        .filter(id => !byId.has(id))
+        .map(resolveOverallTag)
         .filter(Boolean) as CodeNode[],
     [selected, byId],
   );
@@ -159,7 +167,7 @@ export default function OverallTagPicker({
   }, [allowCustom, trimmedQuery, codes, selectedCustom]);
 
   const createCustom = () => {
-    onToggle(formatCustomTagId(trimmedQuery));
+    onToggle(formatCreateId(trimmedQuery));
     setQuery('');
   };
 
@@ -280,7 +288,7 @@ export default function OverallTagPicker({
           </ul>
           {allowCustom && !trimmedQuery && (
             <p className="text-[10px] text-tertiary-light px-1.5 pt-1.5 mt-1.5 border-t border-grey-100">
-              + Type a new name above to create your own tag.
+              {createHint}
             </p>
           )}
         </div>

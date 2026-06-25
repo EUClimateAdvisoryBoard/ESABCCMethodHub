@@ -54,6 +54,11 @@ import {
   lightenedFromParent,
   parseCustomTag,
   resolveOverallTag,
+  CHAPTER_TAGS,
+  isChapterTagId,
+  formatChapterTagId,
+  chapterTagColor,
+  splitTagIds,
   sourceTierOf,
   documentKindLabel,
   SOURCE_TIER_META,
@@ -428,6 +433,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   // already added to this project to documents carrying at least one of the
   // chosen document-level tags, so analysts can zero in on a theme.
   const [corpusTagFilter, setCorpusTagFilter] = useState<string[]>([]);
+  // Chapter (report-chapter / sector) filters — the parallel dimension to the
+  // thematic overall-tag filters above. Narrow the library / corpus to the
+  // documents tagged for a chosen chapter, so the lead can see which papers
+  // they have lined up for which sector chapter.
+  const [browseChapterFilter, setBrowseChapterFilter] = useState<string[]>([]);
+  const [corpusChapterFilter, setCorpusChapterFilter] = useState<string[]>([]);
   // Free-text search over the "In this workspace" list — matches on document
   // title, so analysts can find a paper by name without scrolling the corpus.
   const [corpusQuery, setCorpusQuery] = useState('');
@@ -675,6 +686,15 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         return tags.some(t => wanted.has(t));
       });
     }
+    if (browseChapterFilter.length > 0) {
+      // Chapter tags are unique by id, so match them directly (no name-collapse).
+      const wanted = new Set(browseChapterFilter);
+      const editable = sourceType !== 'policy';
+      out = out.filter(d => {
+        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
+        return tags.some(t => wanted.has(t));
+      });
+    }
     // Newest-added references first. The added-at timestamp lives on the
     // library copy of each doc (snapshot copies win the `allDocuments` dedupe
     // and lack it), so resolve it by id. Static-library refs have no
@@ -687,7 +707,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       .sort((a, b) => (b.t - a.t) || (a.i - b.i))
       .map(x => x.d);
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, sourceType, overallTags.getTags, liveRefs, masterCodes]);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, browseChapterFilter, sourceType, overallTags.getTags, liveRefs, masterCodes]);
 
   /** Whether the active source tier supports manual overall tagging. Policy
    *  documents carry an AI-curated baseline managed elsewhere; scientific &
@@ -714,6 +734,9 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     const byName = new Map<string, CodeNode>();
     for (const d of corpusDocs) {
       for (const id of overallTagsByDoc[d.id] ?? []) {
+        // Chapter tags are filtered through their own "Chapter" picker, not the
+        // thematic tag filter — keep them out of this pool.
+        if (isChapterTagId(id)) continue;
         const c = masterCodes.find(x => x.id === id) ?? resolveOverallTag(id);
         if (!c) continue;
         const key = c.name.trim().toLowerCase();
@@ -722,6 +745,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     }
     return [...byName.values()];
   }, [corpusDocs, overallTagsByDoc, masterCodes]);
+
+  // Chapter (report-chapter / sector) tags offered in the filters: the seeded
+  // catalog plus any chapter coined by hand on a document in this workspace, so
+  // a custom chapter stays filterable once it has been applied.
+  const chapterFilterPool = useMemo(() => {
+    const byId = new Map<string, CodeNode>(CHAPTER_TAGS.map(c => [c.id, c]));
+    for (const d of corpusDocs) {
+      for (const id of overallTagsByDoc[d.id] ?? []) {
+        if (!isChapterTagId(id) || byId.has(id)) continue;
+        const c = resolveOverallTag(id);
+        if (c) byId.set(id, c);
+      }
+    }
+    return [...byId.values()];
+  }, [corpusDocs, overallTagsByDoc]);
 
   // The corpus narrowed to the chosen overall tags and the title search — what
   // the "In this workspace" list shows. An empty filter / query means show
@@ -746,13 +784,18 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       }
       out = out.filter(d => (overallTagsByDoc[d.id] ?? []).some(t => wanted.has(t)));
     }
+    if (corpusChapterFilter.length > 0) {
+      const wanted = new Set(corpusChapterFilter);
+      out = out.filter(d => (overallTagsByDoc[d.id] ?? []).some(t => wanted.has(t)));
+    }
     return out;
-  }, [corpusDocs, corpusQuery, corpusTagFilter, masterCodes, overallTagsByDoc]);
+  }, [corpusDocs, corpusQuery, corpusTagFilter, corpusChapterFilter, masterCodes, overallTagsByDoc]);
 
   /** Whether the "In this workspace" list is currently narrowed by either the
    *  title search or the overall-tag filter — drives the count badge and the
    *  empty-state copy. */
-  const corpusFiltered = corpusTagFilter.length > 0 || corpusQuery.trim().length > 0;
+  const corpusFiltered =
+    corpusTagFilter.length > 0 || corpusChapterFilter.length > 0 || corpusQuery.trim().length > 0;
 
   // ── Codes visible in this workspace (master + this project's own) ─────────
   const visibleCodes = useMemo(
@@ -1485,7 +1528,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
               <button
                 key={s.id}
                 type="button"
-                onClick={() => { setSourceType(s.id); setSelectedDocumentId(null); setCorpusTagFilter([]); }}
+                onClick={() => { setSourceType(s.id); setSelectedDocumentId(null); setCorpusTagFilter([]); setCorpusChapterFilter([]); }}
                 title={SOURCE_TIER_META[s.id].hint}
                 className={`text-[11px] px-2 py-1 rounded border transition ${
                   sourceType === s.id
@@ -1626,10 +1669,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                         label="Filter by tag"
                       />
                     )}
+                    <OverallTagPicker
+                      codes={chapterFilterPool}
+                      selected={corpusChapterFilter}
+                      onToggle={codeId =>
+                        setCorpusChapterFilter(prev =>
+                          prev.includes(codeId) ? prev.filter(c => c !== codeId) : [...prev, codeId],
+                        )
+                      }
+                      label="Chapter"
+                      showDots
+                    />
                     {corpusFiltered && (
                       <button
                         type="button"
-                        onClick={() => { setCorpusTagFilter([]); setCorpusQuery(''); }}
+                        onClick={() => { setCorpusTagFilter([]); setCorpusChapterFilter([]); setCorpusQuery(''); }}
                         className="text-[10px] text-tertiary-light hover:text-secondary whitespace-nowrap"
                       >
                         Clear
@@ -1641,7 +1695,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                       No documents match your search.{' '}
                       <button
                         type="button"
-                        onClick={() => { setCorpusTagFilter([]); setCorpusQuery(''); }}
+                        onClick={() => { setCorpusTagFilter([]); setCorpusChapterFilter([]); setCorpusQuery(''); }}
                         className="text-secondary hover:underline"
                       >
                         Clear filter
@@ -1684,8 +1738,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                     placeholder={`Search ${activeSourceMeta.title.toLowerCase()}…`}
                     className="w-full px-2 py-1 border border-grey-200 rounded text-[12px] mb-2"
                   />
-                  {/* Filter the library by overall (document-level) tag. */}
-                  <div className="flex items-center justify-between gap-2 mb-2">
+                  {/* Filter the library by overall (document-level) tag and by
+                      chapter / sector — so the lead can see which papers they
+                      have lined up for which report chapter. */}
+                  <div className="flex items-center gap-2 mb-2 flex-wrap">
                     <OverallTagPicker
                       codes={overallTagPool}
                       selected={browseTagFilter}
@@ -1696,10 +1752,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                       }
                       label="Filter by tag"
                     />
-                    {browseTagFilter.length > 0 && (
+                    <OverallTagPicker
+                      codes={chapterFilterPool}
+                      selected={browseChapterFilter}
+                      onToggle={codeId =>
+                        setBrowseChapterFilter(prev =>
+                          prev.includes(codeId) ? prev.filter(c => c !== codeId) : [...prev, codeId],
+                        )
+                      }
+                      label="Chapter"
+                      showDots
+                    />
+                    {(browseTagFilter.length > 0 || browseChapterFilter.length > 0) && (
                       <button
                         type="button"
-                        onClick={() => setBrowseTagFilter([])}
+                        onClick={() => { setBrowseTagFilter([]); setBrowseChapterFilter([]); }}
                         className="text-[10px] text-tertiary-light hover:text-secondary"
                       >
                         Clear
@@ -1790,8 +1857,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 ingestState={ingestState}
                 showOverallTags={canEditOverallTags}
                 overallTagCodes={overallTagPool}
-                overallTagSelected={overallTags.getTags(selectedDocument.id)}
+                overallTagSelected={splitTagIds(overallTags.getTags(selectedDocument.id)).others}
                 onToggleOverallTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
+                chapterTagSelected={splitTagIds(overallTags.getTags(selectedDocument.id)).chapters}
+                onToggleChapterTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
                 summary={ownSummary}
                 otherSummaries={otherSummaries}
                 projectNameById={projectNameById}
@@ -1937,6 +2006,8 @@ function DocumentViewer({
   overallTagCodes,
   overallTagSelected,
   onToggleOverallTag,
+  chapterTagSelected,
+  onToggleChapterTag,
   summary,
   otherSummaries,
   projectNameById,
@@ -1965,6 +2036,10 @@ function DocumentViewer({
   overallTagCodes: CodeNode[];
   overallTagSelected: string[];
   onToggleOverallTag: (codeId: string) => void;
+  /** Chapter (report-chapter / sector) tags applied to this document, and the
+   *  toggle to add/remove one. Same durable store as the overall tags. */
+  chapterTagSelected: string[];
+  onToggleChapterTag: (codeId: string) => void;
   summary: DocumentSummary | null;
   otherSummaries: DocumentSummary[];
   projectNameById: Map<string | null, string>;
@@ -2149,6 +2224,48 @@ function DocumentViewer({
             label="Edit"
             align="right"
             allowCustom
+          />
+        </div>
+      )}
+
+      {/* Chapter (report-chapter / sector) tags — which sector chapter this
+          paper is lined up for. A separate dimension from the thematic overall
+          tags above, sharing the same durable store, so the lead can later
+          filter the library/corpus down to a chapter. */}
+      {showOverallTags && (
+        <div className="px-3 py-2 border-b border-grey-200 flex items-center gap-2 flex-wrap">
+          <span
+            className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold"
+            title="Which report chapter / sector you intend to use this paper in"
+          >
+            Chapter
+          </span>
+          {chapterTagSelected.length > 0 ? (
+            chapterTagSelected.map(id => {
+              const c = resolveOverallTag(id);
+              if (!c) return null;
+              return (
+                <span
+                  key={id}
+                  className="inline-flex items-center gap-1 text-[10px] font-medium text-white rounded-full px-2 py-0.5"
+                  style={{ backgroundColor: c.color }}
+                >
+                  {c.name}
+                </span>
+              );
+            })
+          ) : (
+            <span className="text-[10px] text-tertiary-light italic">None yet</span>
+          )}
+          <OverallTagPicker
+            codes={CHAPTER_TAGS}
+            selected={chapterTagSelected}
+            onToggle={onToggleChapterTag}
+            label="Set chapter"
+            align="right"
+            allowCustom
+            formatCreateId={name => formatChapterTagId(name, chapterTagColor(name))}
+            createHint="+ Type a new chapter name above to create it."
           />
         </div>
       )}

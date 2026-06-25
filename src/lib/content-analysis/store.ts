@@ -448,11 +448,15 @@ function hydrate(): void {
             ? []
             : seed.segments.filter(s => s.id.startsWith('seg-coh-'))),
         ];
-        // Same one-shot treatment for the seeded "Policy coherence — master
-        // library" project, so snapshots persisted before it shipped get it.
-        const missingProjects = state.projects.some(p => p.id === 'project-policy-coherence')
-          ? []
-          : seed.projects.filter(p => p.id === 'project-policy-coherence');
+        // Same one-shot treatment for newly-seeded built-in projects (the
+        // "Policy coherence — master library" and "Policy Gap" projects), so
+        // snapshots persisted before they shipped get them too. Backfill by id:
+        // only add a seeded project the persisted snapshot is missing.
+        const SEEDED_PROJECT_IDS = ['project-policy-coherence', 'project-policy-gap'];
+        const havePid = new Set(state.projects.map(p => p.id));
+        const missingProjects = seed.projects.filter(
+          p => SEEDED_PROJECT_IDS.includes(p.id) && !havePid.has(p.id),
+        );
         if (missing.length > 0 || missingSegs.length > 0 || missingProjects.length > 0 || staleCoherence) {
           state = {
             ...state,
