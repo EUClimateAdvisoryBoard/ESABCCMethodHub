@@ -403,7 +403,9 @@ export default function SectorBackgroundPage() {
           <h2 className="text-lg font-bold text-tertiary-dark mb-1">A curated reading list</h2>
           <p className="text-[12px] text-tertiary-light max-w-3xl mb-3">
             An AI-curated starting point pending source re-verification by the lead — not report content.
-            Each entry links to the canonical source.
+            Each entry links to the canonical source. These readings are also seeded into the{' '}
+            <strong>Reference Manager</strong> (with DOI) and the <strong>Policy Gap</strong> project
+            workspace, each tagged with its sector chapter (Industry / Transport).
           </p>
           <div className="space-y-2">
             {cfg.references.map((r) => (

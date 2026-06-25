@@ -842,6 +842,17 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
       createdAt: now,
       updatedAt: now,
     },
+    {
+      id: 'project-policy-gap',
+      name: 'Policy Gap',
+      description:
+        'Working corpus for the next Policy Gap report. Scientific & grey literature is added here and given a chapter (sector) tag — Industry, Transport, … — so the lead can pull up exactly the papers lined up for each sector chapter. Seeded with the Sector Background reading lists for Industry and Transport.',
+      mode: 'horizontal',
+      masterCodeSelection: [],
+      documentAllowList: [],
+      createdAt: now,
+      updatedAt: now,
+    },
   ];
 
   return {
