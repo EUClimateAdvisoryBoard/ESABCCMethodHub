@@ -19,6 +19,7 @@
 
 import type { CodeNode } from './types';
 import { getMasterCode } from './master-code-catalog';
+import { isChapterTagId, parseChapterTag } from './chapter-tags';
 
 export const CUSTOM_TAG_PREFIX = 'custom:';
 
@@ -69,7 +70,10 @@ export function parseCustomTag(id: string): CodeNode | null {
   };
 }
 
-/** Resolve any overall-tag id — master or custom — to a CodeNode, or null. */
+/** Resolve any overall-tag id — chapter, custom or master — to a CodeNode, or
+ *  null. Chapter and custom tags are self-describing ids; master tags resolve
+ *  against the seeded catalog. */
 export function resolveOverallTag(id: string): CodeNode | null {
+  if (isChapterTagId(id)) return parseChapterTag(id);
   return isCustomTagId(id) ? parseCustomTag(id) : getMasterCode(id);
 }

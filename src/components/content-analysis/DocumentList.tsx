@@ -3,6 +3,7 @@
 import type { AnalysisDocument, CodeNode } from '@/lib/content-analysis/types';
 import { documentKindLabel } from '@/lib/content-analysis/source-tier';
 import { resolveOverallTag } from '@/lib/content-analysis/custom-overall-tags';
+import { splitTagIds } from '@/lib/content-analysis/chapter-tags';
 
 interface Props {
   documents: AnalysisDocument[];
@@ -112,26 +113,47 @@ export default function DocumentList({
               <p className="mt-0.5 text-[12.5px] font-semibold text-[#3D5265] leading-tight line-clamp-2">
                 {doc.shortTitle}
               </p>
-              <div className="mt-1 flex items-center gap-1 flex-wrap">
-                {(overallTagsByDoc?.[doc.id] ?? doc.aiCodeIds).slice(0, 6).map(id => {
-                  const c = codeById.get(id) ?? resolveOverallTag(id);
-                  if (!c) return null;
-                  return (
-                    <span
-                      key={id}
-                      title={c.name}
-                      className="inline-flex items-center gap-0.5 text-[10px] text-[#3D5265]"
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-sm"
-                        style={{ backgroundColor: c.color }}
-                        aria-hidden
-                      />
-                      {c.name}
-                    </span>
-                  );
-                })}
-              </div>
+              {(() => {
+                // Chapter tags render as their own filled chips; thematic
+                // overall tags keep the small coloured-dot style.
+                const { chapters, others } = splitTagIds(overallTagsByDoc?.[doc.id] ?? doc.aiCodeIds);
+                return (
+                  <div className="mt-1 flex items-center gap-1 flex-wrap">
+                    {chapters.map(id => {
+                      const c = resolveOverallTag(id);
+                      if (!c) return null;
+                      return (
+                        <span
+                          key={id}
+                          title={`Chapter: ${c.name}`}
+                          className="inline-flex items-center text-[9px] font-medium text-white rounded px-1 py-0.5"
+                          style={{ backgroundColor: c.color }}
+                        >
+                          {c.name}
+                        </span>
+                      );
+                    })}
+                    {others.slice(0, 6).map(id => {
+                      const c = codeById.get(id) ?? resolveOverallTag(id);
+                      if (!c) return null;
+                      return (
+                        <span
+                          key={id}
+                          title={c.name}
+                          className="inline-flex items-center gap-0.5 text-[10px] text-[#3D5265]"
+                        >
+                          <span
+                            className="w-1.5 h-1.5 rounded-sm"
+                            style={{ backgroundColor: c.color }}
+                            aria-hidden
+                          />
+                          {c.name}
+                        </span>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </button>
             {onRemove && (
               <button
