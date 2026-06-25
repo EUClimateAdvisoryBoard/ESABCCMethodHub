@@ -1,24 +1,30 @@
 {
   "date": "2026-06-25",
-  "generatedAt": "2026-06-25T08:27:25.298Z",
+  "generatedAt": "2026-06-25T13:22:58.590Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 25 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Did Colombia’s energy transition just come to a halt?",
-      "summary": "With promises to lift a ban on oil and gas exploration and scale back renewables support, Colombia’s new Tiger President could threaten the country’s clean energy shift The post Did Colombia’s energy transition just come to a halt? appeared first on Climate Home News.",
+      "headline": "Video of a committee meeting - Thursday, 25 June 2026 - 08:00 - Committee on the Environment, Public Health and Food Safety - Committee on Industry, Research and Energy - Committee on Security and Defence",
+      "summary": "Length of video : 15'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Guest post: How US renewable-energy growth persists despite federal policy uncertainty",
+      "summary": "Despite recent shifts in federal energy policies, our analysis shows that the US transition to... The post Guest post: How US renewable-energy growth persists despite federal policy uncertainty appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Press remarks by Commissioner Hoekstra on the tax simplification package",
-      "summary": "European Commission Speech Brussels, 24 Jun 2026 Ladies and gentlemen, a very good afternoon,\r\n \r\nIf there is one thing crystal clear to the Commission, it is that we need to advance our business climate.\r\nBusine...",
+      "headline": "EU, UK lead push for electrification as &#8220;powerful weapon&#8221; against fossil fuels",
+      "summary": "A group of dozens of countries seeks to build momentum for a COP31 pledge to electrify 35% of global energy use by 2035 as an alternative to fossil fuels The post EU, UK lead push for electrification as &#8220;powerful weapon&#8221; against fossil fuels appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Is xenophobia in South Africa risking investment?",
-      "summary": "Vigilante groups and right-wing populist forces are stoking anti-immigrant sentiment and demanding that they leave the country by June 30. Experts fear serious economic implications for the country and the region.",
+      "headline": "‘People shouldn’t expect there will be water in their taps every day’: why is St Lucia running out of water?",
+      "summary": "&lt;p&gt;Despite millions of dollars of investment, crumbling infrastructure and erratic rainfall are pushing the Caribbean island to the brink&lt;/p&gt;&lt;p&gt;When St Lucia’s rainy season began in May, Madeleine Solomon, 55, breathed a sigh of relief. For months, she had been feeling the squeeze of an intermittent water supply that disrupted normal hygiene and food preparation, forcing families like hers to rely on water tanks, rainwater harvesting and bottled water bought from private compan",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,12 +33,29 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Video of a committee meeting - Thursday, 25 June 2026 - 08:00 - Committee on the Environment, Public Health and Food Safety - Committee on Industry, Research and Energy - Committee on Security and Defence",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260625-0900-COMMITTEE-ITRE_vd",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Length of video : 15'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-25T08:19:12.000Z",
+          "score": 23
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Guest post: How US renewable-energy growth persists despite federal policy uncertainty",
+          "link": "https://www.carbonbrief.org/guest-post-how-us-renewable-energy-growth-persists-despite-federal-policy-uncertainty/",
+          "source": "Carbon Brief",
+          "description": "Despite recent shifts in federal energy policies, our analysis shows that the US transition to... The post Guest post: How US renewable-energy growth persists despite federal policy uncertainty appeared first on Carbon Brief.",
+          "published": "2026-06-25T08:38:25.000Z",
+          "score": 13
+        },
         {
           "title": "Did Colombia’s energy transition just come to a halt?",
           "link": "https://www.climatechangenews.com/2026/06/24/did-colombias-energy-transition-just-come-to-a-halt/",
@@ -42,35 +65,27 @@
           "score": 13
         },
         {
-          "title": "Live from LCAW &#8211; Raw diplomacy: Can new mineral alliances deliver a just energy transition?",
-          "link": "https://www.climatechangenews.com/2026/06/24/live-from-lcaw-raw-diplomacy-can-new-mineral-alliances-deliver-a-just-energy-transition/",
-          "source": "Climate Home News",
-          "description": "This event is co-hosted by the Business and Human Rights Resource Centre, Chatham House, Climate Home News and the Natural Resource Governance Institute. The post Live from LCAW &#8211; Raw diplomacy: Can new mineral alliances deliver a just energy transition? appeared first on Climate Home News.",
-          "published": "2026-06-24T13:22:57.000Z",
-          "score": 13
-        },
-        {
-          "title": "Europe heatwave live: UK breaks temperature record for June as parts of France hit 40C – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/jun/24/europe-heatwave-live-news-updates-uk-record-breaking-temperatures-italy-red-alert",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;West Sussex reports temperature of 35.8C, beating previous record from 1976; red weather alert extended to 72 of France’s 96 mainland departments&lt;/p&gt;&lt;p&gt;Grahame Madge, a Met Office spokesperson, said the agency is forecasting &lt;strong&gt;39C as a headline maximum temperature on Thursday&lt;/strong&gt; in the UK, most likely for somewhere in London or the south-east.&lt;/p&gt;&lt;p&gt;“It is possible we could see temperatures higher than the 39C if the final values are at th",
-          "published": "2026-06-24T16:51:29.000Z",
-          "score": 10
-        },
-        {
-          "title": "France, UK and Spain see record temperatures as heatwave grips western Europe",
-          "link": "https://www.bbc.co.uk/news/articles/c78y4102n1zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Tens of millions of people are grappling with punishing temperatures, which have led to red heat alerts across the continent.",
-          "published": "2026-06-24T21:39:18.000Z",
-          "score": 10
-        },
-        {
           "title": "Why are some Australian energy bills going up – and when will they come down?",
           "link": "https://www.theguardian.com/environment/2026/jun/25/australian-energy-prices-going-up-electricity-bills",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Power prices are expected to fall from 1 July – but the savings, touted by Chris Bowen, won’t be passed on to many households and businesses&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jun/25/australia-politics-live-aemo-power-grid-teal-independent-labor-coalition-question-time-anthony-albanese-angus-taylor-pauline-hanson-one-nation-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&",
           "published": "2026-06-24T15:00:47.000Z",
+          "score": 7
+        },
+        {
+          "title": "Heat pump growth stalls as government support cut, warns climate watchdog",
+          "link": "https://www.bbc.co.uk/news/articles/cn8k4pek3gzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The growth in sales has slowed significantly after a critical government grant programme was cut.",
+          "published": "2026-06-24T14:32:02.000Z",
+          "score": 7
+        },
+        {
+          "title": "First red squirrel kits born at sanctuary",
+          "link": "https://www.bbc.co.uk/news/articles/cly0xg8ezyzo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Sanctuary staff say the litter will help boost population numbers of an endangered British species.",
+          "published": "2026-06-25T12:37:05.000Z",
           "score": 7
         }
       ]
@@ -80,14 +95,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Press remarks by Commissioner Hoekstra on the tax simplification package",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1450",
-          "source": "European Commission",
-          "description": "European Commission Speech Brussels, 24 Jun 2026 Ladies and gentlemen, a very good afternoon,\r\n \r\nIf there is one thing crystal clear to the Commission, it is that we need to advance our business climate.\r\nBusine...",
-          "published": "2026-06-24T10:26:39.000Z",
-          "score": 20
-        },
-        {
           "title": "EU, UK lead push for electrification as &#8220;powerful weapon&#8221; against fossil fuels",
           "link": "https://www.climatechangenews.com/2026/06/24/governments-rally-behind-electrification-push-as-powerful-weapon-against-fossil-fuels/",
           "source": "Climate Home News",
@@ -96,12 +103,28 @@
           "score": 19
         },
         {
-          "title": "COP31 presidency &#8216;open&#8217; to reflecting Santa Marta in UN climate process, ministers say",
-          "link": "https://www.climatechangenews.com/2026/06/24/ministers-say-cop31-open-to-reflecting-santa-marta-conference-climate-talks/",
+          "title": "Can the circular economy win over big business?",
+          "link": "https://www.climatechangenews.com/2026/06/25/can-the-circular-economy-win-over-big-business/",
           "source": "Climate Home News",
-          "description": "The two co-hosts want the gathering of over 60 governments in Colombia to be reflected in the official UNFCCC climate process The post COP31 presidency &#8216;open&#8217; to reflecting Santa Marta in UN climate process, ministers say appeared first on Climate Home News.",
-          "published": "2026-06-24T10:07:49.000Z",
+          "description": "Policymakers and businesses are turning to the circular economy in a bid to increase self-reliance and reduce environmental impacts The post Can the circular economy win over big business? appeared first on Climate Home News.",
+          "published": "2026-06-25T11:49:13.000Z",
           "score": 13
+        },
+        {
+          "title": "Keynote address by the IPCC Chair, Jim Skea, at the World Climate Investment Summit",
+          "link": "https://www.ipcc.ch/2026/06/25/keynote-address-ipcc-chair-jim-skea-world-climate-investment-summit/",
+          "source": "IPCC",
+          "description": "London Climate Week 2026, 25 June 2026London Stock Exchange Sustaining Capital Flows to Clean Energy and Nature in a Different Global Context Check against delivery Ladies and gentlemen, As Chair of the Intergovernmental Panel on Climate Change, the IPCC, I thank you for this opportunity to address the opening of the World Climate Investment Summit. [&#8230;]",
+          "published": "2026-06-25T09:39:33.000Z",
+          "score": 11
+        },
+        {
+          "title": "Analysis: UK sales of electric vehicles just overtook petrol cars for the first time",
+          "link": "https://www.carbonbrief.org/analysis-uk-sales-of-electric-vehicles-just-overtook-petrol-cars-for-the-first-time/",
+          "source": "Carbon Brief",
+          "description": "For the first time in the UK, more new electric vehicles (EVs) have been sold... The post Analysis: UK sales of electric vehicles just overtook petrol cars for the first time appeared first on Carbon Brief.",
+          "published": "2026-06-25T10:15:58.000Z",
+          "score": 10
         },
         {
           "title": "Mombasa: Key outcomes from the Our Ocean Conference in Kenya",
@@ -109,14 +132,6 @@
           "source": "Carbon Brief",
           "description": "A major ocean conference has ended in Mombasa, Kenya, with just a handful of countries... The post Mombasa: Key outcomes from the Our Ocean Conference in Kenya appeared first on Carbon Brief.",
           "published": "2026-06-24T15:37:02.000Z",
-          "score": 10
-        },
-        {
-          "title": "European heat wave is not normal summer weather",
-          "link": "https://www.dw.com/en/european-heat-wave-is-not-normal-summer-weather/a-77693716?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Human-induced climate change has intensified temperatures, making this year&#039;s record heat wave up to 4 degrees Celsius hotter.",
-          "published": "2026-06-24T14:20:00.000Z",
           "score": 10
         }
       ]
@@ -126,27 +141,19 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Is xenophobia in South Africa risking investment?",
-          "link": "https://www.dw.com/en/is-xenophobia-in-south-africa-risking-investment/a-77687020?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Vigilante groups and right-wing populist forces are stoking anti-immigrant sentiment and demanding that they leave the country by June 30. Experts fear serious economic implications for the country and the region.",
-          "published": "2026-06-24T13:08:00.000Z",
+          "title": "‘People shouldn’t expect there will be water in their taps every day’: why is St Lucia running out of water?",
+          "link": "https://www.theguardian.com/global-development/2026/jun/25/st-lucia-running-out-of-water-scarcity-crisis-rainfall",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Despite millions of dollars of investment, crumbling infrastructure and erratic rainfall are pushing the Caribbean island to the brink&lt;/p&gt;&lt;p&gt;When St Lucia’s rainy season began in May, Madeleine Solomon, 55, breathed a sigh of relief. For months, she had been feeling the squeeze of an intermittent water supply that disrupted normal hygiene and food preparation, forcing families like hers to rely on water tanks, rainwater harvesting and bottled water bought from private compan",
+          "published": "2026-06-25T11:00:13.000Z",
           "score": 2
         },
         {
-          "title": "Trump offers Iran an economic lifeline — with strings",
-          "link": "https://www.dw.com/en/trump-offers-iran-an-economic-lifeline-with-strings/a-77621800?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Iran has seen a speedy rebound in oil exports after the US-Iran deal granted immediate waivers on US sanctions. Relief on frozen assets and a $300 billion reconstruction fund now hinge on Tehran meeting key conditions.",
-          "published": "2026-06-24T12:26:00.000Z",
-          "score": 2
-        },
-        {
-          "title": "Chile's Codelco to consider asset sales, partnerships in investment review - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOOE1fZjJzQTVqNEI2Z25EeTlnRHItb1hFUXREaVJRTGpJZ1lpS0xqRjJFaXliSGRjdGY4NkNzZHVVd243WG5DQ2JxMXY4ZUFtUU5oTEJIdDFtWjEySkVCcWdsb1lXLWlPWDZNT0NqV1VFN3B3ZDAzRjZpZ05oVE5ZRmduV3BYVlNGMjRJZFRhYzNfSHRXdG5RWXQ4NmFxQnFzM2h3?oc=5",
+          "title": "US DFC and World Bank's MIGA to set up political risk insurance for Ukraine fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUXNpTUtldzFTZ1NBdDgzMkVTNm85OEEwVWdTcU9vZ2pDVGdjWmZfZ0VXX0NfUW5NOWRRQzFfZHRqbW1HZkdBU0tMckhmSVZDWnhmbnlOcnczRk8tSTZ0ZjVQcFUxTHVTYU9SYXJhbTVlSU9mcGtGSElZQ0FtRDdpWmhHREZQbFFGSnFVU3hadGNDYjdQa01aUUtGOXk4cUVuWjY1bnVXN0pMaXl0Ulhn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOOE1fZjJzQTVqNEI2Z25EeTlnRHItb1hFUXREaVJRTGpJZ1lpS0xqRjJFaXliSGRjdGY4NkNzZHVVd243WG5DQ2JxMXY4ZUFtUU5oTEJIdDFtWjEySkVCcWdsb1lXLWlPWDZNT0NqV1VFN3B3ZDAzRjZpZ05oVE5ZRmduV3BYVlNGMjRJZFRhYzNfSHRXdG5RWXQ4NmFxQnFzM2h3?oc=5\" target=\"_blank\"&gt;Chile's Codelco to consider asset sales, partnerships in investment review&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-24T23:43:12.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOUXNpTUtldzFTZ1NBdDgzMkVTNm85OEEwVWdTcU9vZ2pDVGdjWmZfZ0VXX0NfUW5NOWRRQzFfZHRqbW1HZkdBU0tMckhmSVZDWnhmbnlOcnczRk8tSTZ0ZjVQcFUxTHVTYU9SYXJhbTVlSU9mcGtGSElZQ0FtRDdpWmhHREZQbFFGSnFVU3hadGNDYjdQa01aUUtGOXk4cUVuWjY1bnVXN0pMaXl0Ulhn?oc=5\" target=\"_blank\"&gt;US DFC and World Bank's MIGA to set up political risk insurance for Ukraine fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-25T13:05:43.000Z",
           "score": 2
         }
       ]
@@ -164,27 +171,27 @@
           "score": 22
         },
         {
-          "title": "Highlights - Vote on the draft opinion regarding the Budget expenditure tracking framework - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260624CAN79145",
+          "title": "Draft agenda - Thursday, 2 July 2026 - PE790.191v01-00 - Committee on Economic and Monetary Affairs , Committee on the Environment, Public Health and Food Safety , Committee on Civil Liberties, Justice and Home Affairs",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ58-OJ-2026-07-02-1_EN.html",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20251125PHT31570/20251125PHT31570-ms.jpeg\" width=\"180\" alt=\"Magnifying glass and pen analysing financial business charts on blue background\" title=\"Performance based-instruments © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 July 2026, ENVI Members will vote on the draft opinion to the proposed EU budget tracking and performance framework f",
-          "published": "2026-06-24T11:10:14.000Z",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-25T12:21:06.000Z",
           "score": 18
         },
         {
-          "title": "Highlights - Exchange of views on ecodesign and sustainable textiles - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260624CAN79143",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20240313PHT19312/20240313PHT19312-ms.jpg\" width=\"180\" alt=\"Banner: Recycling pressed bales from clothing\" title=\"Banner: Recycling pressed bales from clothing © AdobeStock_Fotoschlick\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 July 2026, ENVI Members will hold an exchange of views with the Commission and the authors of the Joint Research Centre (JRC) preparatory study on textile prod",
-          "published": "2026-06-24T11:09:56.000Z",
+          "title": "Commission reaches preliminary position that Amazon's and Microsoft's market leading cloud services should be designated under the DMA",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1444",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 25 Jun 2026 The Commission has informed Amazon and Microsoft of its preliminary view that they should be designated as gatekeepers under the Digital Markets Act (DMA), for their cloud computing services, Amazon Web Services (AWS) and Microsoft Azure (Azure) respectively.",
+          "published": "2026-06-24T22:00:00.000Z",
           "score": 18
         },
         {
-          "title": "Why are there holiday delay warnings over the EU's new border system?",
-          "link": "https://www.bbc.co.uk/news/articles/c39rkpe8mj2o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Europe's heatwave shifts east as France raises health alert to highest level",
+          "link": "https://www.bbc.co.uk/news/articles/cwy0pdq89zno?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The EU's much-delayed Entry/Exit System will change the way UK passengers travel to 29 countries.",
-          "published": "2026-06-24T09:47:35.000Z",
+          "description": "Temperatures in Germany could hit 40C in some areas while French officials say deaths linked to the heat are being seen among young people.",
+          "published": "2026-06-25T13:16:39.000Z",
           "score": 8
         },
         {
@@ -202,6 +209,22 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Europe heat wave: No respite as extreme heat continues",
+          "link": "https://www.dw.com/en/europe-heat-wave-no-respite-as-extreme-heat-continues/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Some 101 million people in Europe will likely see temperatures above 35 C on Thursday, an analysis shows. And Germany is expecting things to warm up even more. DW has the latest.",
+          "published": "2026-06-25T10:43:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Human rights expert Philippe Sands wins German Peace Prize",
+          "link": "https://www.dw.com/en/human-rights-expert-philippe-sands-wins-german-peace-prize/a-77702306?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "From advocating for the law of ecocide to representing Palestinian rights, the descendant of Holocaust survivors tirelessly fights against genocide and crimes against humanity.",
+          "published": "2026-06-25T12:38:00.000Z",
+          "score": 6
+        },
+        {
           "title": "Why Germans don&#039;t have air conditioning",
           "link": "https://www.dw.com/en/why-germans-don-t-have-air-conditioning/a-77685580?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -210,44 +233,28 @@
           "score": 4
         },
         {
-          "title": "'I thought building would fall on top of me' - Venezuelans describe earthquake panic",
+          "title": "'I thought I was going to die' - Venezuelans describe earthquake panic",
           "link": "https://www.bbc.co.uk/news/articles/czj8vjvmz38o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Two quakes hit the capital seconds apart, the first at a magnitude of 7.2 and the second at 7.5.",
-          "published": "2026-06-25T02:27:27.000Z",
+          "description": "Buildings were flattened in the capital Caracas, where voices have been heard calling from the rubble.",
+          "published": "2026-06-25T10:48:09.000Z",
           "score": 2
         },
         {
-          "title": "Trump asks Congress for $87bn, mostly for 'urgent' Iran war costs",
-          "link": "https://www.bbc.co.uk/news/articles/c1eydwldzdjo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Earthquake is devastating blow to Venezuela at time of uncertainty",
+          "link": "https://www.bbc.co.uk/news/articles/c3vynpw7rk4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "But the budget faces an uphill battle, coming a day after lawmakers rebuked Trump's military action.",
-          "published": "2026-06-25T00:51:28.000Z",
-          "score": 2
-        },
-        {
-          "title": "Air conditioning creates political divide after France records hottest day",
-          "link": "https://www.bbc.co.uk/news/articles/c4gyqldl3p5o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "France is being forced to re-think its longstanding reservations about air-conditioning as temperatures soar.",
-          "published": "2026-06-24T13:51:24.000Z",
-          "score": 2
-        },
-        {
-          "title": "Philippines bans video game played by alleged high school shooter",
-          "link": "https://www.bbc.co.uk/news/articles/c14y7738nm8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The rare school shooting that left three students killed and 20 others injured has shocked the country.",
-          "published": "2026-06-24T22:14:12.000Z",
+          "description": "The quake comes less than six months after Venezuela's then-leader Nicolás Maduro was seized by US forces.",
+          "published": "2026-06-25T13:09:58.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 435,
-    "articlesLast24h": 166,
-    "afterDedup": 139,
+    "totalArticlesScanned": 434,
+    "articlesLast24h": 167,
+    "afterDedup": 145,
     "feedsQueried": 19
   }
 }
