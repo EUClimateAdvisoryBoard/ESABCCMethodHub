@@ -10,7 +10,7 @@ the handoff punch list is visible, but not yet implemented.
 
 <figure class="mh-figure mh-figure--wide" markdown>
 <img src="../../assets/fig-repo-layout.svg" alt="Four-zone repository layout — src/ for the shipped Next.js app, beta/ for scope-parked modules, docs/ for the hosted documentation, scripts/ and supabase/ for ingestion and deployment.">
-<figcaption><span class="mh-figure__num">Figure 8.</span> Repository layout. A reviewer can read the scope off the folder names alone: the eight production modules live under <code>src/app/</code>, the eleven beta modules sit under <code>beta/modules/</code> outside the Next.js route tree, documentation ships from <code>docs/</code>, and the operational surface (pipelines, migrations, handoff scripts, container assets) is rooted at the repo root.</figcaption>
+<figcaption><span class="mh-figure__num">Figure 8.</span> Repository layout. A reviewer can read the scope off the folder names alone: the eight production modules live under <code>src/app/</code>, the beta modules sit under <code>beta/modules/</code> outside the Next.js route tree, documentation ships from <code>docs/</code>, and the operational surface (pipelines, migrations, handoff scripts, container assets) is rooted at the repo root.</figcaption>
 </figure>
 
 ## Runtime

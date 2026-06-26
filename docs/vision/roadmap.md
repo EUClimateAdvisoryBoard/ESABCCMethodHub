@@ -63,6 +63,7 @@ codebases instead of one.
 ## What is **not** on the roadmap
 
 - Rewriting the scope — the eight production modules are the locked core.
-- Adding new beta modules — the parking lot has eleven already; more
-  would dilute the signal.
+- Adding new beta modules to the locked core — the parking lot already
+  holds twenty-five; promoting more without hardening would dilute the
+  production signal.
 - Migrating off Next.js, Postgres or Docker — the stack is the value.

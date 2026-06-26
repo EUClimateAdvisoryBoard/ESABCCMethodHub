@@ -68,7 +68,7 @@ All state is externalised to Postgres and object storage. See
 | `src/lib/` | Business logic: data access, auth, the AI dispatcher, per-module `*-store.ts` modules, React hooks. | Where the non-trivial logic lives. |
 | `src/lib/db/` | The data-layer **façade** — provider selection + the lazy Postgres pool. | The cutover seam (see below). |
 | `src/data/` | Large static datasets (e.g. the curated reference corpus). | Compiled into the bundle; not user state. |
-| `beta/modules/` | Eleven experimental modules, **unrouted**. | Outside the `app/` tree, so the build ignores them. Promotion = move a folder back into `src/app/` (this is how M·07 and M·08 graduated). |
+| `beta/modules/` | Twenty-five experimental modules, **unrouted**. | Outside the `app/` tree, so the build ignores them. Promotion = move a folder back into `src/app/` (this is how M·07 and M·08 graduated). |
 | `supabase/migrations/` | 60-plus numbered SQL migrations — the schema, RLS, GDPR functions. | Applied in filename order; the source of truth for the DB. |
 | `scripts/` | Ingestion pipelines, the Postgres migration kit, the IT-handoff kit. | See [Scripts reference](../reference/scripts.md). |
 | `Dockerfile`, `docker-compose.yml` | Production image + one-command local stack. | |

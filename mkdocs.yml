@@ -188,6 +188,8 @@ nav:
       - "M·08 Recommendations":      modules/recommendations.md
       - "M·16 Funding Sources (beta)": modules/funding-sources.md
       - "M·17 Strategy & Framework Docs (beta)": modules/strategy-docs.md
+      - "M·32 Ex-Post Policy Assessment (beta)": modules/ex-post-analysis.md
+      - "M·33 Sector Background (beta)": modules/sector-background.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Architecture overview: infrastructure/architecture.md

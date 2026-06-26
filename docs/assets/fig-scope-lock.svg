@@ -6,8 +6,8 @@
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 1200 600"
      role="img"
-     aria-label="Scope lock — six production modules ship, eight beta modules are parked under beta/modules/.">
-  <title>Scope lock — 6 production + 8 beta</title>
+     aria-label="Scope lock — the production modules ship, the beta modules are parked under beta/modules/.">
+  <title>Scope lock — production modules vs. parked beta modules</title>
 
   <defs>
     <style>

@@ -91,5 +91,5 @@ the Secretariat used a handful daily and the rest weekly at best. Forcing the
 scope down makes the value proposition legible and keeps the IT handoff
 surface reviewable in an afternoon. The eight core modules are the ones that
 earned daily use; the rest are not deleted — they live under
-[`beta/modules/`](beta.md) (eleven of them) and are promoted one at a time as
+[`beta/modules/`](beta.md) (twenty-five of them) and are promoted one at a time as
 demand justifies. M·07 and M·08 are the two most recent promotions.

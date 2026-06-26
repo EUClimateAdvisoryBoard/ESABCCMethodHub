@@ -208,6 +208,47 @@ below are all wired into `src/app/content-analysis/page.tsx`:
   *current document only* (the corpus-wide view lives in the
   analytics route).
 
+### Chapter (sector) tags
+
+A second, parallel tagging dimension that runs alongside the thematic
+code tree: a **`chapter:` namespace** of *overall tags* seeded with the
+report chapters / sectors — **Energy, Industry, Transport, Buildings,
+Agriculture, LULUCF, Cross-cutting, Adaptation**. It lets the lead line
+up *which papers belong to which sector chapter*, independently of the
+thematic coding.
+
+- **No schema change.** Chapter tags are encoded self-describingly
+  (`chapter:<id>`) so they ride the **existing shared, durable
+  overall-tags store** — localStorage-first, with an outbox that syncs
+  to Supabase — exactly like custom overall tags. They are permanently
+  stored and synced, with no new table or migration.
+- **"Set chapter" picker** on each document in the Analysing section,
+  with an *add a new chapter* option. Chapter tags render as their own
+  **filled chips** — kept visually separate from thematic overall tags —
+  both on the document and on the corpus document cards.
+- **Chapter filters** in both the *In this workspace* corpus list and
+  the *Add documents* library browser, so the lead can narrow to the
+  papers lined up for a given sector chapter. The filter pool includes
+  any hand-coined chapter.
+- **Generalised `OverallTagPicker`** — a `formatCreateId` hook mints the
+  right id (`chapter:` vs `custom:`) and the picker resolves
+  already-selected tags that are absent from the current pool (chapters
+  or custom tags coined on other documents).
+
+The helpers live in
+[`src/lib/content-analysis/chapter-tags.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/content-analysis/chapter-tags.ts)
+(`CHAPTER_TAGS`, `isChapterTagId`, `formatChapterTagId`,
+`chapterTagColor`, `splitTagIds`). This is the **coding-side** counterpart
+to [M·33 Sector Background](sector-background.md), which reads a sector's
+framework, policies and literature together.
+
+!!! info "Where it surfaces"
+    Chapter tags are wired through the **Project Workspace** embed of
+    Content Analysis (`ContentAnalysisModule`), which reaches the module
+    through the public `lib/content-analysis/service` and
+    `components/content-analysis` barrels rather than deep-importing
+    internals — the same stable entry points a future module reuses.
+
 ### In-document Ctrl+F search
 
 `AnnotatedDocumentView` ships its own find bar — toggled with **⌘F /
