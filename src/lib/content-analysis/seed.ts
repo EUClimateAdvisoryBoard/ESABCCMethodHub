@@ -64,7 +64,7 @@ const ROOT_CODES: Array<{ id: string; name: string; description: string; color: 
   { id: 'root-sector',     name: 'Sectoral policy', description: 'Sector-specific legislation (energy, transport, agriculture…).', color: PALETTE.energy },
   { id: 'root-crosscut',   name: 'Cross-cutting', description: 'Governance, monitoring, reporting, just-transition.', color: PALETTE.default },
   { id: 'root-assessment', name: 'Objective–delivery checklist', description: 'Assessment criteria: can the act deliver its own stated objective? (ESABCC-style consistency check, Climate Law Arts. 5–7).', color: '#0F766E' },
-  { id: 'root-coherence',  name: 'Policy coherence (beta)', description: 'Four-step coherence model over the policy space: ① ex-ante design vs world development, ② coherence across all policy goals, ③ goals vs means of implementation, ④ policy evaluation (measuring policy change and outcomes). Steps ③–④ derive from the objective–delivery checklist.', color: '#6D28D9' },
+  { id: 'root-coherence',  name: 'Policy coherence (beta)', description: 'ESABCC coherence method over the policy space: ① overarching ambitions (vs the two 2050 ambitions), ② objectives & measures (the decomposition), ③ coherence check (across mitigation / adaptation / mitigation–adaptation), ④ critical assessment (fit for purpose, enablers & barriers). Lenses ② and ④ derive their measures/machinery verdicts from the objective–delivery checklist.', color: '#6D28D9' },
 ];
 
 const DOMAIN_TO_ROOT: Record<string, { rootId: string; color: string }> = {
@@ -700,17 +700,20 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
     { id: 'check-review',         parentId: 'root-assessment',   name: 'Review & ratchet',         description: 'Met when a scheduled review can strengthen the act if the objective is at risk.', color: '#0F766E', scope: 'master', createdAt: now },
 
     // ── Policy coherence (beta) ──────────────────────────────────────
-    // The four steps of the beta coherence model, as taggable codes: a
-    // SYSTEM-level lens (between policies, vs the world, vs the evidence)
-    // complementing the per-act checklist above. Steps ③ and ④ derive
-    // their verdicts from the `check-*` criteria (see
-    // policy-coherence.ts) — these codes exist so annotators can pin
+    // The four lenses of the beta coherence method (Moure logic), as
+    // taggable codes: every act read against the two 2050 ambitions,
+    // decomposed into objectives & measures, coherence-checked across
+    // mitigation/adaptation/mitigation–adaptation, then critically assessed.
+    // Code ids are kept stable across the rename (persisted segments depend
+    // on them); the lens ids map onto these `coh-*` codes. The decomposition
+    // and critical-assessment lenses derive measures/machinery verdicts from
+    // the `check-*` criteria — these codes exist so annotators can pin
     // coherence evidence to text segments, not to re-score the criteria.
-    { id: 'coh-exante',     parentId: 'root-coherence', name: '① Ex ante vs world development', description: 'Assumption-Based Planning (Dewar et al., RAND): evidence that a falsifiable design assumption of the act is valid, under pressure or violated, tested via a signpost indicator against an explicit violation criterion.', color: '#6D28D9', scope: 'master', createdAt: now },
-    { id: 'coh-horizontal', parentId: 'root-coherence', name: '② Across policy goals',          description: 'Goal interactions on the Nilsson et al. (2016) seven-point scale (−3 cancelling … +3 indivisible), with the interaction mechanism and the legal provisions that create it.', color: '#7C3AED', scope: 'master', createdAt: now },
-    { id: 'coh-means',      parentId: 'root-coherence', name: '③ Goals vs means',               description: 'Goals/means congruence (Howlett & Rayner): whether instruments, coverage, enforcement, financing and timeline are commensurate with the goals — scored via the objective–delivery checklist.', color: '#8B5CF6', scope: 'master', createdAt: now },
-    { id: 'coh-evaluation', parentId: 'root-coherence', name: '④ Evaluation: change & outcomes', description: 'Distance-to-target evaluation (EEA Trends & Projections method): observed recent pace ÷ required pace against the act’s target, plus MRV/review machinery and policy-change facts.', color: '#A78BFA', scope: 'master', createdAt: now },
-    // Granular verdict codes under each step — assumption statuses, the full
+    { id: 'coh-exante',     parentId: 'root-coherence', name: '① Overarching ambitions',   description: 'Does the act serve the two 2050 ambitions (climate neutrality, a climate-resilient society), and do its load-bearing design assumptions still hold? Tested with Assumption-Based Planning: a falsifiable assumption, a signpost indicator and an explicit violation criterion → valid / under pressure / violated.', color: '#6D28D9', scope: 'master', createdAt: now },
+    { id: 'coh-means',      parentId: 'root-coherence', name: '② Objectives & measures',    description: 'The act decomposed into its policy objectives (visions, targets, objectives, goals) and policy measures (regulations, plans, information, taxes, organisational committees), each tagged to a climate dimension, with measures-side congruence (Howlett & Rayner) scored via the objective–delivery checklist.', color: '#8B5CF6', scope: 'master', createdAt: now },
+    { id: 'coh-horizontal', parentId: 'root-coherence', name: '③ Coherence check',          description: 'Across mitigation / adaptation / mitigation–adaptation: are the objectives and measures aligned, or do they conflict? Cross-policy interactions on the Nilsson et al. (2016) seven-point scale (−3 cancelling … +3 indivisible), with mechanism, dimension and the legal provisions that create them.', color: '#7C3AED', scope: 'master', createdAt: now },
+    { id: 'coh-evaluation', parentId: 'root-coherence', name: '④ Critical assessment',      description: 'Why? Are these ambitious enough (fit for purpose), and what is the effect of the enablers/barriers? Anchored in the EEA distance-to-target pace ratio (observed ÷ required pace) plus named enablers, barriers and the MRV/review machinery.', color: '#A78BFA', scope: 'master', createdAt: now },
+    // Granular verdict codes under each lens — assumption statuses, the full
     // seven-point Nilsson scale, means-coherence bands and pace readings —
     // defined next to the coherence model so the taxonomy and the seeded
     // annotations can never drift apart (policy-coherence-evidence.ts).
@@ -799,8 +802,9 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
   );
 
   // In-text coherence annotations: every curated coherence anchor (verbatim
-  // provision quotes for steps ① ② ④) plus the derived ③/④ roll-ups, tagged
-  // under the `coh-*` master codes — the "policy coherence" master library.
+  // provision quotes for the ambitions, coherence-check and critical lenses)
+  // plus the derived objectives↔measures roll-ups, tagged under the `coh-*`
+  // master codes — the "policy coherence" master library.
   const coherenceSegments = documents.flatMap(d =>
     buildCoherenceSegmentsFor(d, codeNameById, now),
   );
@@ -833,7 +837,7 @@ export function buildSeedSnapshot(): ContentAnalysisSnapshot {
       id: 'project-policy-coherence',
       name: 'Policy coherence — master library',
       description:
-        'The four-step coherence assessment as a tagged corpus: every grade pinned to the acts’ own text under granular verdict codes — assumption valid / under pressure / violated, the seven-point Nilsson interaction scale, means-coherence bands and pace readings — plus the derived goals↔means and evaluation-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
+        'The four-lens ESABCC coherence assessment as a tagged corpus: every grade pinned to the acts’ own text under granular verdict codes — assumption valid / under pressure / violated, the seven-point Nilsson interaction scale, measures-congruence bands and pace readings — plus the derived objectives↔measures and critical-assessment-machinery roll-ups. Open any document to walk each grade back to the words it stems from.',
       mode: 'horizontal',
       masterCodeSelection: [],
       documentAllowList: coherenceAssessedIds().filter(id =>

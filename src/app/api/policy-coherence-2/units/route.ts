@@ -48,6 +48,7 @@ export async function GET(request: NextRequest) {
           endChar: r.end_char,
           text: r.text,
           stepIds: r.step_ids ?? [],
+          dimension: r.dimension ?? 'mitigation',
           claims: r.claims ?? [],
         }));
         return NextResponse.json({

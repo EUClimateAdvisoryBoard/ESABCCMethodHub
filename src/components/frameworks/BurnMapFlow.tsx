@@ -94,7 +94,7 @@ export default function BurnMapFlow({ board, profiles, onOpenIndicator }: Props)
             🔥 = a burn: <span className="font-semibold">off track</span> on the progress map,{' '}
             <span className="font-semibold">incoherent</span> on the coherence map. Hover any cell for
             its evidence; click a sector name to expand the band; click an act to open the full
-            four-step assessment in the Policy Coherence board.
+            four-lens assessment in the Policy Coherence board.
           </p>
         </div>
       </div>
@@ -176,7 +176,7 @@ function HeatMapHeader() {
         </div>
         <div />
         <div className="col-span-5 rounded-t-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-white" style={{ background: '#B45309' }}>
-          B · Policy coherence — four-step heat map
+          B · Policy coherence — four-lens heat map
         </div>
       </div>
       <div className="grid gap-x-1 mt-0.5" style={{ gridTemplateColumns: GRID }}>
@@ -386,7 +386,7 @@ function BandEvidence({
         </div>
         <div>
           <div className="text-[9px] uppercase tracking-wide font-bold text-tertiary-light mb-1">
-            B · the four-step evidence per act
+            B · the four-lens evidence per act
           </div>
           <div className="space-y-1">
             {sector.policyIds.map((pid) => {

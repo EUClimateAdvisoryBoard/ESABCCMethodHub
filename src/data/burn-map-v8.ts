@@ -9,10 +9,10 @@
  *     (on track / lagging / off track) with its basis and source stated.
  *   B · POLICY-COHERENCE HEAT MAP — the policy-analysis side. The same
  *     sector bands, but the rows are the sector's assessed EU acts and the
- *     columns are the four steps of the beta policy-coherence model
- *     (`src/lib/content-analysis/policy-coherence.ts`): ex ante assumptions
- *     vs world development · coherence across goals · goals ↔ means ·
- *     evaluation. Every cell grade is computed live by
+ *     columns are the four lenses of the beta policy-coherence method
+ *     (`src/lib/content-analysis/policy-coherence.ts`): overarching ambitions ·
+ *     objectives & measures · coherence check (mitigation / adaptation /
+ *     mitigation–adaptation) · critical assessment. Every cell grade is computed live by
  *     `buildCoherenceProfile`, so map B can never drift from the coherence
  *     assessment it visualises.
  *   🔥 THE BURNS — the hot cells: `off-track` on map A, `incoherent` on
@@ -620,23 +620,23 @@ export function coherenceCellBasis(
   step: CoherenceStepId,
 ): string {
   switch (step) {
-    case 'ex-ante':
+    case 'ambitions':
       return profile.exAnte
         ? `Assumption ${profile.exAnte.status.replace('-', ' ')}: ${profile.exAnte.observation}`
-        : 'No ex-ante assessment.';
-    case 'horizontal': {
+        : 'No assumption audit against the overarching ambitions.';
+    case 'coherence': {
       if (profile.interactions.length === 0) return 'No assessed goal interactions.';
       const worst = [...profile.interactions].sort((a, b) => a.score - b.score)[0];
       const other = worst.a === profile.policyId ? worst.b : worst.a;
       return `Worst interaction ${worst.score} with ${policyTitle(other)}: ${worst.rationale}`;
     }
-    case 'goals-means':
+    case 'decomposition':
       return profile.means.score === null
-        ? 'No means-side checklist verdicts.'
-        : `Means-coherence score ${Math.round(profile.means.score * 100)}% across the checklist's instruments / coverage / enforcement / financing / timeline criteria.`;
-    case 'evaluation': {
+        ? 'No measures-side checklist verdicts.'
+        : `Measures-congruence score ${Math.round(profile.means.score * 100)}% across the checklist's instruments / coverage / enforcement / financing / timeline criteria.`;
+    case 'critical': {
       const m = profile.evaluation.measurement;
-      if (!m) return 'No outcome measurement; grade reflects MRV/review machinery.';
+      if (!m) return 'No outcome measurement; grade reflects fit-for-purpose + MRV/review machinery.';
       const ratio = m.pace.ratio === null ? '—' : m.pace.ratio.toFixed(2);
       return `${m.indicator}: observed pace ÷ required pace = ${ratio} → ${m.pace.reading.replace('-', ' ')}.`;
     }
