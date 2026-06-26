@@ -87,10 +87,12 @@ underlying data so work flows between them:
 The most recent two — Project Workspace and Recommendations — started
 life in the experimental folder and were promoted once they proved
 useful. All other experimental functionality (energy-system modelling,
-media monitoring, a map of national climate councils, etc.) stays in a
-`beta/` folder within the repository: eleven modules that exist and work
-but are deliberately excluded from the core so the production scope
-remains tractable to review.
+media monitoring, a map of national climate councils, sector background
+briefs, ex-post policy assessment, etc.) stays in a
+`beta/` folder within the repository: twenty-five modules that exist and
+work but are deliberately excluded from the core so the production scope
+remains tractable to review. The list grows roughly weekly as new
+prototypes land.
 
 ### 5. Who built it, who will keep building it?
 

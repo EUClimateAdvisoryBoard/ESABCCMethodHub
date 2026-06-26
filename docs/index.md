@@ -34,7 +34,7 @@ EEA-managed infrastructure.
 </div>
 <div class="mh-fact" markdown>
 <p class="mh-fact__k">Beta parking lot</p>
-<p class="mh-fact__v">11</p>
+<p class="mh-fact__v">25</p>
 <p class="mh-fact__sub">intentionally unrouted</p>
 </div>
 <div class="mh-fact" markdown>
@@ -149,9 +149,9 @@ layer (M·07–M·08) hangs off them, and the Voting Tool keeps an isolated stor
 
 <li markdown>
 <a class="mh-module mh-module--beta" href="overview/beta/" markdown>
-<div class="mh-module__header"><span>BETA · ×11</span><span class="mh-module__num">β</span></div>
+<div class="mh-module__header"><span>BETA · ×25</span><span class="mh-module__num">β</span></div>
 <div class="mh-module__title">Beta parking lot</div>
-<p class="mh-module__desc">Eleven experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
+<p class="mh-module__desc">Twenty-five experimental modules, intentionally unrouted. Promotion is a single <code>git mv</code>.</p>
 <div class="mh-module__cta">Browse beta →</div>
 </a>
 </li>

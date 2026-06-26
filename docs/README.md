@@ -13,7 +13,7 @@ the rendered site is built by `scripts/build-docs.sh`.
 | [infrastructure/deployment.md](infrastructure/deployment.md)   | One-page IT handoff for self-hosted EEA deployment.               |
 | [infrastructure/tech-stack.md](infrastructure/tech-stack.md)   | How the eight modules and their supporting services connect.     |
 | [infrastructure/data-gdpr.md](infrastructure/data-gdpr.md)     | What's built into the code, what still needs DPO sign-off, and the operational schedule for retention / erasure jobs. |
-| [../beta/README.md](../beta/README.md)                         | Parking lot for the eleven experimental modules — what's there, why, and how to promote one to production. |
+| [../beta/README.md](../beta/README.md)                         | Parking lot for the experimental modules — what's there, why, and how to promote one to production. |
 
 ## Per-subsystem READMEs
 
