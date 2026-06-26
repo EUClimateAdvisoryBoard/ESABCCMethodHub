@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Policy coherence — text evidence layer.
 //
-// Makes the four-step coherence assessment (policy-coherence.ts) walkable
+// Makes the four-lens coherence assessment (policy-coherence.ts) walkable
 // back to the WORDS of the acts: every curated grade is grounded in one or
 // more verbatim passages from the policy-text library
 // (`public/data/policy-texts/<policyId>.txt` — the same texts the Policy
@@ -29,20 +29,20 @@
 // `buildCoherenceSegmentsFor`), so the tagged corpus doubles as a
 // "Policy coherence" master library: open any assessed act in the workbench
 // and the coherence evidence shows up as in-text highlights, exactly like
-// the objective–delivery checklist annotations. Steps ③ and ④ stay derived:
-// their in-text tags are generated from the checklist verdicts, never
-// re-authored here.
+// the objective–delivery checklist annotations. The objectives↔measures and
+// critical-assessment lenses stay derived: their in-text tags are generated
+// from the checklist verdicts, never re-authored here.
 // ---------------------------------------------------------------------------
 
 import {
-  COHERENCE_STEP_BY_ID,
+  COHERENCE_LENS_BY_ID,
   EX_ANTE_ASSESSMENTS,
   GOAL_INTERACTIONS,
   evaluationCoherence,
   meansCoherence,
   INTERACTION_SCALE,
   type AssumptionStatus,
-  type CoherenceStepId,
+  type CoherenceLensId,
   type InteractionScore,
   type OutcomeReading,
 } from './policy-coherence';
@@ -62,7 +62,7 @@ export type EvidenceAssessmentRef =
 export interface PolicyTextEvidence {
   id: string;
   policyId: string;
-  stepId: CoherenceStepId;
+  stepId: CoherenceLensId;
   assessment: EvidenceAssessmentRef;
   /** Cited provision (e.g. "Art. 4(2)") — also drives the in-text anchor. */
   provision: string;
@@ -77,8 +77,8 @@ export interface PolicyTextEvidence {
 }
 
 /** Master code id for a step (the `coh-*` codes under `root-coherence`). */
-export function coherenceCodeId(stepId: CoherenceStepId): string {
-  return COHERENCE_STEP_BY_ID[stepId].codeId;
+export function coherenceCodeId(stepId: CoherenceLensId): string {
+  return COHERENCE_LENS_BY_ID[stepId].codeId;
 }
 
 // ── The coherence master-library taxonomy ───────────────────────────────────
@@ -274,7 +274,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-eu-climate-law',
     policyId: 'eu-climate-law',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(3)',
     quote:
@@ -285,7 +285,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-eu-ets-directive',
     policyId: 'eu-ets-directive',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 9 (as amended 2023)',
     quote: null,
@@ -298,7 +298,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-effort-sharing-regulation',
     policyId: 'effort-sharing-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(1)',
     quote:
@@ -310,7 +310,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-lulucf-regulation',
     policyId: 'lulucf-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(2)',
     quote:
@@ -321,7 +321,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-renewable-energy-directive',
     policyId: 'renewable-energy-directive',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 3(1) (RED III)',
     quote: null,
@@ -334,7 +334,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-energy-efficiency-directive',
     policyId: 'energy-efficiency-directive',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(1)',
     quote:
@@ -345,7 +345,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-cbam-regulation-transition',
     policyId: 'cbam-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 32',
     quote:
@@ -356,7 +356,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-cbam-regulation-start',
     policyId: 'cbam-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 36(2)',
     quote:
@@ -367,7 +367,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-co2-cars-regulation',
     policyId: 'co2-cars-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 1(5a) (2023 amendment)',
     quote: null,
@@ -380,7 +380,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-afir-regulation',
     policyId: 'afir-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 3(1)',
     quote:
@@ -391,7 +391,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-epbd-recast',
     policyId: 'epbd-recast',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 3(1)',
     quote:
@@ -402,7 +402,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-social-climate-fund',
     policyId: 'social-climate-fund',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 10(1)',
     quote:
@@ -413,7 +413,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-social-climate-fund-cut',
     policyId: 'social-climate-fund',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 10(1), third subpara',
     quote:
@@ -424,7 +424,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-methane-regulation',
     policyId: 'methane-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 28(1)',
     quote:
@@ -435,7 +435,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-nature-restoration-law',
     policyId: 'nature-restoration-law',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 16(1)',
     quote:
@@ -446,7 +446,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-csrd',
     policyId: 'csrd',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 5(2)',
     quote:
@@ -457,7 +457,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-fueleu-maritime',
     policyId: 'fueleu-maritime',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(2)',
     quote:
@@ -468,7 +468,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-refueleu-aviation',
     policyId: 'refueleu-aviation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 4(1) + Annex I',
     quote:
@@ -479,7 +479,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-governance-regulation',
     policyId: 'governance-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 9(2)',
     quote:
@@ -490,7 +490,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-net-zero-industry-act',
     policyId: 'net-zero-industry-act',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 5(1)(a)',
     quote:
@@ -501,7 +501,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-critical-raw-materials-act',
     policyId: 'critical-raw-materials-act',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 11(1)',
     quote:
@@ -512,7 +512,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-repowereu-plan',
     policyId: 'repowereu-plan',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'COM(2022) 230',
     quote: null,
@@ -525,7 +525,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-eu-green-deal',
     policyId: 'eu-green-deal',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'COM(2019) 640, §1',
     quote:
@@ -536,7 +536,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-taxonomy-regulation',
     policyId: 'taxonomy-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 8(1)',
     quote:
@@ -547,7 +547,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-farm-to-fork-strategy',
     policyId: 'farm-to-fork-strategy',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'COM(2020) 381, §2',
     quote: null,
@@ -560,7 +560,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-cap-strategic-plans',
     policyId: 'cap-strategic-plans',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 12(1)',
     quote:
@@ -571,7 +571,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-fit-for-55',
     policyId: 'fit-for-55',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'COM(2021) 550, §2',
     quote: 'The Fit for 55 Package is a set of interconnected proposals that together deliver our ambition.',
@@ -582,7 +582,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-deforestation-regulation',
     policyId: 'deforestation-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 38(2)',
     quote:
@@ -594,7 +594,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-batteries-regulation',
     policyId: 'batteries-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 7(1)',
     quote:
@@ -605,7 +605,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-industrial-emissions-directive',
     policyId: 'industrial-emissions-directive',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 15(3) (IED 2.0) + Art. 26 transposition',
     quote: null,
@@ -618,7 +618,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-ten-t-regulation',
     policyId: 'ten-t-regulation',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Reg. 2024/1679 (network deadlines)',
     quote: null,
@@ -631,7 +631,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'exante-ecodesign-sustainable-products',
     policyId: 'ecodesign-sustainable-products',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     assessment: { kind: 'ex-ante' },
     provision: 'Art. 1(1)',
     quote:
@@ -645,7 +645,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-red-lulucf-a',
     policyId: 'renewable-energy-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-red-lulucf' },
     provision: 'Art. 29(1)',
     quote:
@@ -656,7 +656,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-red-lulucf-b',
     policyId: 'lulucf-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-red-lulucf' },
     provision: 'Art. 4(2)',
     quote:
@@ -668,7 +668,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-esr-lulucf-a',
     policyId: 'effort-sharing-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-esr-lulucf' },
     provision: 'Art. 7(1)',
     quote:
@@ -679,7 +679,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-esr-lulucf-b',
     policyId: 'lulucf-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-esr-lulucf' },
     provision: 'Art. 13b(2)',
     quote:
@@ -691,7 +691,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ets-cbam-a',
     policyId: 'eu-ets-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ets-cbam' },
     provision: 'Art. 10a(1a) (as amended 2023)',
     quote: null,
@@ -704,7 +704,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ets-cbam-b',
     policyId: 'cbam-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ets-cbam' },
     provision: 'Art. 1(3)',
     quote:
@@ -716,7 +716,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ets-esr-a',
     policyId: 'eu-ets-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ets-esr' },
     provision: 'Chapter IVa (as amended 2023)',
     quote: null,
@@ -729,7 +729,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ets-esr-b',
     policyId: 'effort-sharing-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ets-esr' },
     provision: 'Art. 2(1)',
     quote:
@@ -741,7 +741,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-afir-a',
     policyId: 'co2-cars-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-afir' },
     provision: 'Art. 1(5a) (2023 amendment)',
     quote: null,
@@ -753,7 +753,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-afir-b',
     policyId: 'afir-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-afir' },
     provision: 'Art. 3(1)',
     quote:
@@ -765,7 +765,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-euro7-a',
     policyId: 'co2-cars-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-euro7' },
     provision: 'Art. 1(5a) (2023 amendment)',
     quote: null,
@@ -777,7 +777,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-euro7-b',
     policyId: 'euro-7-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-euro7' },
     provision: 'Art. 1(1)',
     quote:
@@ -789,7 +789,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-aaq-b',
     policyId: 'air-quality-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-aaq' },
     provision: 'Annex I',
     quote: null,
@@ -803,7 +803,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-scf-epbd-a',
     policyId: 'social-climate-fund',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-scf-epbd' },
     provision: 'Art. 8(1)(a)',
     quote:
@@ -814,7 +814,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-scf-epbd-b',
     policyId: 'epbd-recast',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-scf-epbd' },
     provision: 'Art. 9(1)',
     quote:
@@ -826,7 +826,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cap-methane-a',
     policyId: 'cap-strategic-plans',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cap-methane' },
     provision: 'Art. 32(1)',
     quote:
@@ -837,7 +837,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cap-methane-b',
     policyId: 'methane-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cap-methane' },
     provision: 'Art. 1(1)',
     quote:
@@ -849,7 +849,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cap-nrl-a',
     policyId: 'cap-strategic-plans',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cap-nrl' },
     provision: 'Art. 4(1)',
     quote:
@@ -860,7 +860,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cap-nrl-b',
     policyId: 'nature-restoration-law',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cap-nrl' },
     provision: 'Art. 11(1)',
     quote:
@@ -872,7 +872,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-f2f-cap-a',
     policyId: 'farm-to-fork-strategy',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-f2f-cap' },
     provision: 'COM(2020) 381, §2',
     quote: null,
@@ -885,7 +885,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-f2f-cap-b',
     policyId: 'cap-strategic-plans',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-f2f-cap' },
     provision: 'Art. 1(1)(c)',
     quote:
@@ -897,7 +897,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nrl-red-a',
     policyId: 'nature-restoration-law',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nrl-red' },
     provision: 'Art. 1(2)',
     quote:
@@ -908,7 +908,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nrl-red-b',
     policyId: 'renewable-energy-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nrl-red' },
     provision: 'Arts. 15b–16f (RED III)',
     quote: null,
@@ -922,7 +922,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-crma-habitats-a',
     policyId: 'critical-raw-materials-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-crma-habitats' },
     provision: 'Art. 10(2)',
     quote:
@@ -933,7 +933,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-crma-habitats-b',
     policyId: 'habitats-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-crma-habitats' },
     provision: 'Art. 6(3)–(4)',
     quote: null,
@@ -947,7 +947,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nzia-crma-a',
     policyId: 'net-zero-industry-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nzia-crma' },
     provision: 'Art. 5(1)(a)',
     quote:
@@ -958,7 +958,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nzia-crma-b',
     policyId: 'critical-raw-materials-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nzia-crma' },
     provision: 'Art. 5(1)(a)(ii)',
     quote:
@@ -970,7 +970,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nzia-cbam-a',
     policyId: 'net-zero-industry-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nzia-cbam' },
     provision: 'Art. 1(1)',
     quote:
@@ -981,7 +981,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-nzia-cbam-b',
     policyId: 'cbam-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-nzia-cbam' },
     provision: 'Art. 1(1)',
     quote:
@@ -993,7 +993,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-refuel-fueleu-a',
     policyId: 'refueleu-aviation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-refuel-fueleu' },
     provision: 'Art. 4(1) + Annex I',
     quote:
@@ -1004,7 +1004,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-refuel-fueleu-b',
     policyId: 'fueleu-maritime',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-refuel-fueleu' },
     provision: 'Art. 5(1)',
     quote:
@@ -1016,7 +1016,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-h2pkg-red-a',
     policyId: 'hydrogen-gas-package',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-h2pkg-red' },
     provision: 'Market & network rules',
     quote: null,
@@ -1028,7 +1028,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-h2pkg-red-b',
     policyId: 'renewable-energy-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-h2pkg-red' },
     provision: 'Arts. 22a, 25 (RED III)',
     quote: null,
@@ -1041,7 +1041,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eed-epbd-a',
     policyId: 'energy-efficiency-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eed-epbd' },
     provision: 'Art. 6(1)',
     quote:
@@ -1052,7 +1052,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eed-epbd-b',
     policyId: 'epbd-recast',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eed-epbd' },
     provision: 'Art. 3(1)',
     quote:
@@ -1064,7 +1064,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-csrd-sfdr-a',
     policyId: 'csrd',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-csrd-sfdr' },
     provision: 'Recital 17',
     quote:
@@ -1075,7 +1075,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-csrd-sfdr-b',
     policyId: 'sfdr',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-csrd-sfdr' },
     provision: 'Art. 4(1)(a)',
     quote:
@@ -1087,7 +1087,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-csrd-taxonomy-a',
     policyId: 'csrd',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-csrd-taxonomy' },
     provision: 'Art. 5(2)',
     quote:
@@ -1098,7 +1098,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-csrd-taxonomy-b',
     policyId: 'taxonomy-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-csrd-taxonomy' },
     provision: 'Art. 8(2)',
     quote:
@@ -1110,7 +1110,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-claims-csrd-a',
     policyId: 'green-claims-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-claims-csrd' },
     provision: 'Proposal Arts. 3–5',
     quote: null,
@@ -1124,7 +1124,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-emr-red-a',
     policyId: 'electricity-market-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-emr-red' },
     provision: 'Arts. 19a–19b (2024 reform)',
     quote: null,
@@ -1137,7 +1137,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-emr-red-b',
     policyId: 'renewable-energy-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-emr-red' },
     provision: 'Art. 3(1) (RED III)',
     quote: null,
@@ -1150,7 +1150,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-aiact-eed-a',
     policyId: 'ai-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-aiact-eed' },
     provision: 'Art. 95(1)',
     quote:
@@ -1161,7 +1161,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-aiact-eed-b',
     policyId: 'energy-efficiency-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-aiact-eed' },
     provision: 'Art. 12(1)',
     quote:
@@ -1173,7 +1173,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-fgas-epbd-a',
     policyId: 'f-gas-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-fgas-epbd' },
     provision: 'Recital (heat pumps)',
     quote:
@@ -1184,7 +1184,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-fgas-epbd-b',
     policyId: 'epbd-recast',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-fgas-epbd' },
     provision: 'Art. 1(1)',
     quote:
@@ -1196,7 +1196,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eugb-taxonomy-a',
     policyId: 'green-bonds-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eugb-taxonomy' },
     provision: 'Arts. 4–8',
     quote: null,
@@ -1209,7 +1209,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eugb-taxonomy-b',
     policyId: 'taxonomy-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eugb-taxonomy' },
     provision: 'Art. 8(1)',
     quote:
@@ -1222,7 +1222,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eudr-cap-a',
     policyId: 'deforestation-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eudr-cap' },
     provision: 'Art. 3',
     quote:
@@ -1233,7 +1233,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-eudr-cap-b',
     policyId: 'cap-strategic-plans',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-eudr-cap' },
     provision: 'Art. 32(1)',
     quote:
@@ -1245,7 +1245,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-batt-crma-a',
     policyId: 'batteries-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-batt-crma' },
     provision: 'Art. 8(1)',
     quote:
@@ -1256,7 +1256,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-batt-crma-b',
     policyId: 'critical-raw-materials-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-batt-crma' },
     provision: 'Recital (benchmarks) / Art. 5(1)(a)(iii)',
     quote:
@@ -1268,7 +1268,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-batteries-a',
     policyId: 'co2-cars-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-batteries' },
     provision: 'Art. 1(5a) (2023 amendment)',
     quote: null,
@@ -1280,7 +1280,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-cars-batteries-b',
     policyId: 'batteries-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-cars-batteries' },
     provision: 'Art. 7(1)',
     quote:
@@ -1292,7 +1292,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ied-ets-a',
     policyId: 'industrial-emissions-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ied-ets' },
     provision: 'Art. 9(1)',
     quote:
@@ -1303,7 +1303,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-ied-ets-b',
     policyId: 'eu-ets-directive',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-ied-ets' },
     provision: 'Art. 2(1)',
     quote:
@@ -1315,7 +1315,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-tent-afir-a',
     policyId: 'ten-t-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-tent-afir' },
     provision: 'Reg. 2024/1679 (network deadlines)',
     quote: null,
@@ -1327,7 +1327,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-tent-afir-b',
     policyId: 'afir-regulation',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-tent-afir' },
     provision: 'Art. 3(1)',
     quote:
@@ -1339,7 +1339,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-espr-nzia-a',
     policyId: 'ecodesign-sustainable-products',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-espr-nzia' },
     provision: 'Art. 1(1)',
     quote:
@@ -1350,7 +1350,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'int-espr-nzia-b',
     policyId: 'net-zero-industry-act',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     assessment: { kind: 'interaction', interactionId: 'coh-int-espr-nzia' },
     provision: 'Art. 5(1)(a)',
     quote:
@@ -1363,7 +1363,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-eu-climate-law',
     policyId: 'eu-climate-law',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 4(1)',
     quote:
@@ -1374,7 +1374,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-eu-ets-directive',
     policyId: 'eu-ets-directive',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 9 (as amended 2023)',
     quote: null,
@@ -1386,7 +1386,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-effort-sharing-regulation',
     policyId: 'effort-sharing-regulation',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 4(1)',
     quote:
@@ -1398,7 +1398,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-lulucf-regulation',
     policyId: 'lulucf-regulation',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 4(2)',
     quote:
@@ -1409,7 +1409,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-renewable-energy-directive',
     policyId: 'renewable-energy-directive',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 3(1) (RED III)',
     quote: null,
@@ -1420,7 +1420,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-energy-efficiency-directive',
     policyId: 'energy-efficiency-directive',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 4(1)',
     quote:
@@ -1430,7 +1430,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-co2-cars-regulation',
     policyId: 'co2-cars-regulation',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'Art. 1(5) (2023 amendment)',
     quote: null,
@@ -1442,7 +1442,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-farm-to-fork-strategy',
     policyId: 'farm-to-fork-strategy',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'COM(2020) 381, §2',
     quote: null,
@@ -1453,7 +1453,7 @@ export const COHERENCE_TEXT_EVIDENCE: PolicyTextEvidence[] = [
   {
     id: 'outcome-repowereu-plan',
     policyId: 'repowereu-plan',
-    stepId: 'evaluation',
+    stepId: 'critical',
     assessment: { kind: 'outcome' },
     provision: 'COM(2022) 230',
     quote: null,
@@ -1583,11 +1583,11 @@ const EXANTE_STATUS_LABEL: Record<string, string> = {
   violated: 'Violated',
 };
 
-/** Tag-comment text for a curated anchor — step, grade and the reading, so
+/** Tag-comment text for a curated anchor — lens, grade and the reading, so
  *  the workbench shows the full chain: passage → rule → grade. */
 function noteFor(ev: PolicyTextEvidence): string {
-  const step = COHERENCE_STEP_BY_ID[ev.stepId];
-  const head = `${step.name} (step ${step.ordinal})`;
+  const step = COHERENCE_LENS_BY_ID[ev.stepId];
+  const head = `${step.name} (lens ${step.ordinal})`;
   if (ev.assessment.kind === 'ex-ante') {
     const a = EX_ANTE_ASSESSMENTS[ev.policyId];
     const status = a ? ` — ${EXANTE_STATUS_LABEL[a.status]}` : '';

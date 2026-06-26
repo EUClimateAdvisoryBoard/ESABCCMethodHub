@@ -1,16 +1,21 @@
 'use client';
 
 /**
- * Policy Coherence 2.0 — beta module page (ESABCC gap-matrix edition).
+ * Policy Coherence 2.0 — beta module page (block-level ESABCC method).
  *
- * The presentation lens is the Advisory Board's own consistency framework
- * (report §2.1): every block-level signal is classified into POLICY GAPS,
- * POLICY INCONSISTENCIES, AMBITION GAPS and IMPLEMENTATION GAPS, each with
- * a numbered reasoning chain from required change → block evidence →
- * conclusion. The page keeps the block as the unit of analysis (data wall +
- * inspector) and connects micro to macro through the policy × gap-type
- * matrix. The four-step engine still powers extraction underneath; gaps.ts
- * does the classification.
+ * The block-level companion to the act-level coherence board: it runs the
+ * same ESABCC method (Moure logic) sentence by sentence. Every act is read
+ * against the two 2050 ambitions (climate neutrality, a climate-resilient
+ * society); each sentence block is decomposed into objectives (targets) and
+ * measures (instruments, financing), tagged to a climate dimension
+ * (mitigation / adaptation / mitigation–adaptation) and to one of the four
+ * lenses (overarching ambitions, objectives & measures, coherence check,
+ * critical assessment). What the blocks reveal is then classified, using the
+ * Advisory Board's consistency framework (report §2.1), into POLICY GAPS,
+ * POLICY INCONSISTENCIES, AMBITION GAPS and IMPLEMENTATION GAPS, each with a
+ * numbered reasoning chain from required change → block evidence →
+ * conclusion. The block stays the unit of analysis (data wall + inspector),
+ * connected micro-to-macro through the policy × gap-type matrix.
  */
 
 import { useEffect, useMemo, useState } from 'react';
@@ -30,6 +35,11 @@ import {
   type GapType,
 } from '@/lib/policy-coherence-2/gaps';
 import type { Pc2MlPair, Pc2MlPairKind, Pc2RuleId, Pc2Unit } from '@/lib/policy-coherence-2/types';
+import {
+  CLIMATE_DIMENSIONS,
+  COHERENCE_LENSES,
+  OVERARCHING_AMBITIONS,
+} from '@/lib/content-analysis/policy-coherence';
 
 // ── Visual vocabulary ──────────────────────────────────────────────────────
 
@@ -397,8 +407,23 @@ export default function PolicyCoherence2Page() {
               Policy Coherence 2.0
             </h1>
             <p className="mt-1 text-[13px] text-[#9DAEC5]">
-              Block-level consistency assessment of the tracked EU climate policy corpus.
+              The ESABCC coherence method, block by block: every act read against the two 2050
+              ambitions, its sentences split into objectives and measures, tagged to a climate
+              dimension, then checked for coherence and gaps.
             </p>
+            {/* The two overarching ambitions — the anchor of the method */}
+            <div className="mt-3 flex flex-wrap gap-2">
+              {OVERARCHING_AMBITIONS.map(a => (
+                <span
+                  key={a.id}
+                  className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg border border-[#E8772255] bg-[#E8772214] text-[11px] text-[#F2C19A]"
+                  title={a.basis}
+                >
+                  <span className="text-[#E87722]">◆</span>
+                  {a.label}
+                </span>
+              ))}
+            </div>
             <p className="mt-3 font-mono text-[11px] text-[#9DAEC5]">
               {run.stats.policyCount} acts · {run.stats.unitCount.toLocaleString('en-GB')} blocks ·{' '}
               {run.stats.claimCount.toLocaleString('en-GB')} claims · {gaps.findings.length} gap
@@ -421,6 +446,37 @@ export default function PolicyCoherence2Page() {
                   </span>
                 );
               })}
+            </div>
+
+            {/* Climate dimensions of the coherence check + the four lenses */}
+            <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
+              <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-[#56688A]">
+                Dimensions
+              </span>
+              {CLIMATE_DIMENSIONS.map(d => (
+                <span
+                  key={d.id}
+                  className="inline-flex items-center gap-1.5 text-[11px] text-[#C6D2E2]"
+                  title={d.description}
+                >
+                  <span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: d.color }} />
+                  {d.label}
+                  <span className="font-mono text-[10px] text-[#7E92AE] tabular-nums">
+                    {run.stats.byDimension[d.id].toLocaleString('en-GB')}
+                  </span>
+                </span>
+              ))}
+              <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-[#56688A] ml-2">
+                Lenses
+              </span>
+              {COHERENCE_LENSES.map(l => (
+                <span key={l.id} className="text-[11px] text-[#9DAEC5]" title={l.question}>
+                  <span className="font-mono text-[#7E92AE]">{l.ordinal}</span> {l.shortName}
+                  <span className="font-mono text-[10px] text-[#7E92AE] tabular-nums ml-1">
+                    {run.stats.byStep[l.id]}
+                  </span>
+                </span>
+              ))}
             </div>
 
             <div className="mt-5 flex flex-wrap items-center gap-2">

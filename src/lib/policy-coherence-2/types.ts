@@ -21,7 +21,11 @@
 // referenceable substrate for downstream machine-learning extraction.
 // ---------------------------------------------------------------------------
 
-import type { CoherenceStepId, EvidenceTier } from '../content-analysis/policy-coherence';
+import type {
+  ClimateDimension,
+  CoherenceLensId,
+  EvidenceTier,
+} from '../content-analysis/policy-coherence';
 import type { BlockKind } from '../content-analysis/types';
 
 // ── Units ──────────────────────────────────────────────────────────────────
@@ -44,8 +48,11 @@ export interface Pc2Unit {
   startChar: number;
   endChar: number;
   text: string;
-  /** Which of the four coherence steps this unit feeds. */
-  stepIds: CoherenceStepId[];
+  /** Which of the four coherence lenses this unit feeds. */
+  stepIds: CoherenceLensId[];
+  /** Climate dimension the unit sits on — inherited from its act's place on
+   *  the mitigation / adaptation / mitigation–adaptation axis. */
+  dimension: ClimateDimension;
   claims: Pc2Claim[];
 }
 
@@ -119,7 +126,7 @@ export type Pc2Scope = 'within-policy' | 'cross-policy';
 export interface Pc2RuleMeta {
   id: Pc2RuleId;
   name: string;
-  stepId: CoherenceStepId;
+  stepId: CoherenceLensId;
   scope: Pc2Scope;
   defaultSeverity: Pc2Severity;
   /** The mechanical rule, stated so its application can be re-checked. */
@@ -137,7 +144,7 @@ export interface Pc2Finding {
   /** Deterministic id, stable across runs over the same corpus. */
   id: string;
   ruleId: Pc2RuleId;
-  stepId: CoherenceStepId;
+  stepId: CoherenceLensId;
   severity: Pc2Severity;
   scope: Pc2Scope;
   policyIds: string[];
@@ -179,7 +186,10 @@ export interface Pc2Stats {
   findingCount: number;
   bySeverity: Record<Pc2Severity, number>;
   byRule: Partial<Record<Pc2RuleId, number>>;
-  byStep: Record<CoherenceStepId, number>;
+  /** Findings per coherence lens (keyed by lens id). */
+  byStep: Record<CoherenceLensId, number>;
+  /** Units per climate dimension across the corpus. */
+  byDimension: Record<ClimateDimension, number>;
 }
 
 export interface Pc2Run {

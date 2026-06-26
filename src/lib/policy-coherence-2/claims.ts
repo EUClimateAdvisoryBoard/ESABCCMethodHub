@@ -16,7 +16,7 @@ import type {
   Pc2TargetFamily,
   Pc2Unit,
 } from './types';
-import type { CoherenceStepId } from '../content-analysis/policy-coherence';
+import type { CoherenceLensId } from '../content-analysis/policy-coherence';
 
 const EXCERPT_LEN = 240;
 
@@ -300,12 +300,17 @@ export function extractClaims(unit: Pc2Unit): void {
 
   unit.claims = claims;
 
-  const steps = new Set<CoherenceStepId>();
-  if (unit.blockKind === 'recital' && EXANTE_RE.test(text)) steps.add('ex-ante');
-  if (claims.some(c => c.kind === 'crossref')) steps.add('horizontal');
+  const steps = new Set<CoherenceLensId>();
+  // Lens 1 — overarching ambitions: recital units stating expectations.
+  if (unit.blockKind === 'recital' && EXANTE_RE.test(text)) steps.add('ambitions');
+  // Lens 3 — coherence check: cross-references to other acts.
+  if (claims.some(c => c.kind === 'crossref')) steps.add('coherence');
+  // Lens 2 — objectives & measures: targets (objectives) + instruments /
+  // financing (measures).
   if (claims.some(c => c.kind === 'target' || c.kind === 'instrument' || c.kind === 'financing')) {
-    steps.add('goals-means');
+    steps.add('decomposition');
   }
-  if (claims.some(c => c.kind === 'monitoring' || c.kind === 'review')) steps.add('evaluation');
+  // Lens 4 — critical assessment: monitoring & review (the evaluation machinery).
+  if (claims.some(c => c.kind === 'monitoring' || c.kind === 'review')) steps.add('critical');
   unit.stepIds = [...steps];
 }

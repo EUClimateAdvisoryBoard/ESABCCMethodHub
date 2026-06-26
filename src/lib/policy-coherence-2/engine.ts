@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // Policy Coherence 2.0 — block-level analysis engine.
 //
-// Runs the four-step coherence model sentence by sentence over every policy
+// Runs the four-lens coherence method sentence by sentence over every policy
 // that ships with real text: segmentation → claim extraction → finding rules.
 // Every finding follows mechanically from a declared rule (PC2_RULES, printed
 // in the UI) applied to extracted claims, and quotes the exact units it rests
@@ -19,11 +19,13 @@
 
 import { policies } from '@/data/policies';
 import {
-  COHERENCE_STEP_BY_ID,
+  COHERENCE_LENS_BY_ID,
   EX_ANTE_ASSESSMENTS,
   GOAL_INTERACTIONS,
   INTERACTION_SCALE,
-  type CoherenceStepId,
+  policyDimensions,
+  type ClimateDimension,
+  type CoherenceLensId,
 } from '../content-analysis/policy-coherence';
 import { extractClaims } from './claims';
 import { deriveBlocks, deriveUnits } from './segmentation';
@@ -51,7 +53,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-internal-target-conflict': {
     id: 'pc2-internal-target-conflict',
     name: 'Internal target conflict',
-    stepId: 'goals-means',
+    stepId: 'decomposition',
     scope: 'within-policy',
     defaultSeverity: 'high',
     rule: 'Two units of the SAME act state quantified targets of the same indicator family for the same target year with different values.',
@@ -59,7 +61,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-cross-target-divergence': {
     id: 'pc2-cross-target-divergence',
     name: 'Cross-policy target divergence (candidate)',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     scope: 'cross-policy',
     defaultSeverity: 'info',
     rule: 'Units of DIFFERENT acts state quantified targets of the same indicator family for the same target year with different values. Flagged for human review: differing scopes (e.g. economy-wide vs non-ETS) can make divergent numbers legitimate.',
@@ -67,7 +69,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-orphan-goal': {
     id: 'pc2-orphan-goal',
     name: 'Orphan goal (article level)',
-    stepId: 'goals-means',
+    stepId: 'decomposition',
     scope: 'within-policy',
     defaultSeverity: 'medium',
     rule: 'An article states a quantified target but contains no instrument or financing claim in any of its units.',
@@ -75,7 +77,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-unmeasurable-target': {
     id: 'pc2-unmeasurable-target',
     name: 'Unmeasurable target (no MRV in act)',
-    stepId: 'evaluation',
+    stepId: 'critical',
     scope: 'within-policy',
     defaultSeverity: 'high',
     rule: 'The act states at least one OPERATIVE quantified target (recital restatements do not count) but contains zero monitoring/reporting clauses across all units. Downgraded to medium when the act cross-references a monitoring-rich act (MRV likely delegated, e.g. to the Governance Regulation).',
@@ -83,7 +85,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-undated-target': {
     id: 'pc2-undated-target',
     name: 'Undated target',
-    stepId: 'evaluation',
+    stepId: 'critical',
     scope: 'within-policy',
     defaultSeverity: 'low',
     rule: 'A unit states a quantified target with no target year, and no deadline claim appears anywhere in the same article.',
@@ -91,7 +93,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-soft-target': {
     id: 'pc2-soft-target',
     name: 'Aspirational target (weak deontics)',
-    stepId: 'goals-means',
+    stepId: 'decomposition',
     scope: 'within-policy',
     defaultSeverity: 'medium',
     rule: 'A target unit in the enacting terms carries only weak deontic force (may / aim to / endeavour; no shall / must) — the goal is stated without a binding obligation.',
@@ -99,7 +101,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-discretion-cluster': {
     id: 'pc2-discretion-cluster',
     name: 'Discretion cluster (loophole density)',
-    stepId: 'goals-means',
+    stepId: 'decomposition',
     scope: 'within-policy',
     defaultSeverity: 'low',
     rule: 'An article contains ≥ 3 units with flexibility markers (derogation, exemption, "where appropriate"…), or ≥ 50% of its units carry such markers (min 5 units). ≥ 5 flagged units escalates to medium.',
@@ -107,7 +109,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-dangling-crossref': {
     id: 'pc2-dangling-crossref',
     name: 'Dangling cross-reference',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     scope: 'within-policy',
     defaultSeverity: 'info',
     rule: 'The act cites legal acts that are not in the tracked corpus — those dependencies cannot be checked for coherence here.',
@@ -115,7 +117,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-curated-counteraction': {
     id: 'pc2-curated-counteraction',
     name: 'Counteracting goal interaction (curated, block-anchored)',
-    stepId: 'horizontal',
+    stepId: 'coherence',
     scope: 'cross-policy',
     defaultSeverity: 'high',
     rule: 'A curated Nilsson-scale interaction with score ≤ −1 between two analysed acts, anchored to the units of the provisions its legal basis cites. Score ≤ −2 → high, −1 → medium.',
@@ -123,7 +125,7 @@ export const PC2_RULES: Record<Pc2RuleId, Pc2RuleMeta> = {
   'pc2-ex-ante-status': {
     id: 'pc2-ex-ante-status',
     name: 'Ex-ante assumption under pressure / violated (curated, block-anchored)',
-    stepId: 'ex-ante',
+    stepId: 'ambitions',
     scope: 'within-policy',
     defaultSeverity: 'medium',
     rule: 'A curated Assumption-Based-Planning audit reports the act’s load-bearing design assumption as under pressure or violated; anchored to the act’s assumption-bearing recitals and first target provision. Violated → high, under pressure → medium.',
@@ -470,7 +472,7 @@ function curatedAnchoredRules(unitsByPolicy: Map<string, Pc2Unit[]>): Pc2Finding
     if (ex.status === 'valid') continue;
     const units = unitsByPolicy.get(policyId);
     if (!units) continue;
-    const recitalAnchors = units.filter(u => u.stepIds.includes('ex-ante')).slice(0, 2);
+    const recitalAnchors = units.filter(u => u.stepIds.includes('ambitions')).slice(0, 2);
     const targetAnchor = units.find(
       u => isArticlePath(u.path) && u.claims.some(c => c.kind === 'target'),
     );
@@ -511,7 +513,13 @@ export function runPolicyCoherence2(): Pc2Run {
     const blocks = deriveBlocks(p.id, p.full_text!);
     blockCount += blocks.length;
     const units = deriveUnits(p.id, blocks);
-    for (const u of units) extractClaims(u);
+    // Place every unit of the act on the climate-dimension axis (the act's
+    // primary dimension from the coherence model's decomposition).
+    const primaryDim: ClimateDimension = policyDimensions(p.id)[0] ?? 'mitigation';
+    for (const u of units) {
+      extractClaims(u);
+      u.dimension = primaryDim;
+    }
     unitsByPolicy.set(p.id, units);
 
     const count = (pred: (u: Pc2Unit) => boolean) => units.filter(pred).length;
@@ -568,13 +576,15 @@ export function runPolicyCoherence2(): Pc2Run {
     findingCount: findings.length,
     bySeverity: { high: 0, medium: 0, low: 0, info: 0 },
     byRule: {},
-    byStep: { 'ex-ante': 0, horizontal: 0, 'goals-means': 0, evaluation: 0 },
+    byStep: { ambitions: 0, decomposition: 0, coherence: 0, critical: 0 },
+    byDimension: { mitigation: 0, adaptation: 0, 'mitigation-adaptation': 0 },
   };
   for (const f of findings) {
     stats.bySeverity[f.severity] += 1;
     stats.byRule[f.ruleId] = (stats.byRule[f.ruleId] ?? 0) + 1;
     stats.byStep[f.stepId] += 1;
   }
+  for (const u of units) stats.byDimension[u.dimension] += 1;
 
   const corpusHash = djb2(
     PC2_ENGINE_VERSION + analysed.map(p => `${p.id}:${p.full_text!.length}`).join('|'),
@@ -606,9 +616,9 @@ export function buildJsonlExport(run: Pc2Run, ml?: Pc2MlResult): string {
       generatedAt: run.generatedAt,
       stats: run.stats,
       steps: Object.fromEntries(
-        (Object.keys(run.stats.byStep) as CoherenceStepId[]).map(id => [
+        (Object.keys(run.stats.byStep) as CoherenceLensId[]).map(id => [
           id,
-          COHERENCE_STEP_BY_ID[id].name,
+          COHERENCE_LENS_BY_ID[id].name,
         ]),
       ),
       rules: Object.values(PC2_RULES),

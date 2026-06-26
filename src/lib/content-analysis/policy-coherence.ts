@@ -1,38 +1,44 @@
 // ---------------------------------------------------------------------------
-// Policy coherence assessment — beta four-step model.
+// Policy coherence assessment — ESABCC method (Moure logic).
 //
 // A SYSTEM-level lens over the tracked policy corpus, complementing the
-// per-act objective–delivery checklist (policy-objective-checklist.ts):
-// where the checklist asks "can this act deliver its own objective?", this
-// model asks "does the policy SPACE cohere — with the world, with itself,
-// with its means, and with what we can measure?".
+// per-act objective–delivery checklist (policy-objective-checklist.ts). It
+// follows the Advisory Board's worked coherence method (Mar Moure): every
+// act is read against the EU's two OVERARCHING AMBITIONS — climate
+// neutrality by 2050 and a climate-resilient society by 2050 — then
+// DECOMPOSED into its policy objectives (visions, targets, objectives,
+// goals) and its policy measures (regulations, plans/programmes,
+// information, taxes, organisational committees). The decomposition is then
+// run through a COHERENCE CHECK across three climate dimensions —
+// mitigation, adaptation, and the mitigation–adaptation interface ("are
+// these aligned? do they conflict?") — and finally a CRITICAL ASSESSMENT:
+// why, are these ambitious enough (fit for purpose), and what is the effect
+// of enablers and barriers?
 //
-// Methodological design: every grade follows MECHANICALLY from a declared
-// rule applied to citable evidence. The analyst's judgment lives in the
-// ex-ante rule declarations (criteria, scales, thresholds — all printed in
-// this file and in the UI), never in per-entry vibes. The four steps each
-// borrow an established framework:
+// The method is laid out as FOUR LENSES (the analytical pipeline):
 //
-//   1. Ex ante design vs world development — Assumption-Based Planning
-//      (Dewar et al., RAND 1993): each load-bearing assumption is stated as
-//      a falsifiable proposition with a named SIGNPOST indicator and an
-//      explicit VIOLATION CRITERION; status (valid / under pressure /
-//      violated) is the criterion applied to a sourced observation.
-//   2. Coherence across policy goals — the seven-point goal-interaction
-//      scale of Nilsson, Griggs & Visbeck (2016, Nature 534:320) with the
-//      ICSU (2017) decision rules: −3 cancelling … +3 indivisible. Each
-//      score names the interaction mechanism and cites the legal provisions
-//      that create it.
-//   3. Goals vs means of implementation — goals/means congruence in the
-//      policy-mix sense (Howlett & Rayner 2007), DERIVED from the
-//      objective–delivery checklist's five means-side criteria
-//      (instruments, coverage, enforcement, financing, timeline). Nothing
-//      is re-assessed; the two lenses cannot diverge.
-//   4. Policy evaluation — the distance-to-target method used in the EEA
-//      Trends & Projections reports: required pace to target vs observed
-//      recent pace, computed in code with declared thresholds. Evaluation
-//      MACHINERY (MRV + review) is derived from the checklist; the
-//      measurements are sourced data points, the reading is arithmetic.
+//   1. Overarching ambitions — does the act's design serve the two 2050
+//      ambitions, and do the load-bearing assumptions it was designed on
+//      still hold against how the world actually developed? Tested with
+//      Assumption-Based Planning (Dewar et al., RAND 1993): each assumption
+//      is a falsifiable proposition with a signpost indicator and an
+//      explicit violation criterion.
+//   2. Objectives & measures (decomposition) — the act's policy objectives
+//      and policy measures, each tagged to a climate dimension, and whether
+//      the measures are commensurate with the objectives (goals/means
+//      congruence, Howlett & Rayner 2007, derived from the objective–
+//      delivery checklist's five means-side criteria).
+//   3. Coherence check — across mitigation / adaptation / mitigation–
+//      adaptation: are the objectives and measures aligned, or do they
+//      conflict? Cross-policy conflicts are scored on the seven-point
+//      goal-interaction scale of Nilsson, Griggs & Visbeck (2016, Nature
+//      534:320) with the ICSU (2017) rules, each carrying the interaction
+//      mechanism, climate dimension, and the legal provisions that create it.
+//   4. Critical assessment — fit for purpose: are the objectives ambitious
+//      enough against the 2050 ambitions, and what is the effect of the
+//      enablers and barriers? Anchored in the EEA distance-to-target pace
+//      ratio (observed recent pace ÷ required pace) plus named enablers and
+//      barriers.
 //
 // Evidence quality uses a GRADE-style tier instead of pseudo-confidences:
 //   A — official statistics / registries / legal acts (Eurostat, EEA
@@ -40,19 +46,21 @@
 //   B — official assessments (Commission, EEA, EMSA, EASA reports).
 //   C — secondary sources (industry trackers, NGO monitors).
 //
-// Redundancy note (deliberate design decision): steps 3 and 4 reuse the
-// (policyId, check-*) verdicts shipped in PR #302's checklist as their
-// evidence base instead of duplicating them. Only what the checklist cannot
-// express — assumption audits (1), cross-policy interactions (2) and
-// outcome measurements (4) — is authored here. Observation snapshot:
-// June 2026, refreshed in a web-verified research pass (key vintage points:
-// Reg. (EU) 2026/667 adopting the 2040 target and delaying ETS2 to 2028;
-// Omnibus I Dir. (EU) 2026/470; the second EUDR postponement 2025/2650;
-// the batteries stop-the-clock 2025/1561). Observations carry their sources
-// so each can be re-verified. Cross-cutting pattern the audits surface:
-// post-adoption softening — scope cuts, date slips and step-averaging after
-// first contact with compliance costs — is systemic across the 2025–26
-// simplification wave, not act-specific noise.
+// Redundancy note (deliberate design decision): the decomposition's
+// measures-side congruence and the critical assessment's machinery reuse
+// the (policyId, check-*) verdicts shipped in the objective–delivery
+// checklist as their evidence base instead of duplicating them. Only what
+// the checklist cannot express — assumption audits, the objectives/measures
+// decomposition, cross-policy interactions and outcome measurements — is
+// authored here. Observation snapshot: June 2026, refreshed in a
+// web-verified research pass (key vintage points: Reg. (EU) 2026/667
+// adopting the 2040 target and delaying ETS2 to 2028; Omnibus I Dir. (EU)
+// 2026/470; the second EUDR postponement 2025/2650; the batteries
+// stop-the-clock 2025/1561). Observations carry their sources so each can
+// be re-verified. Cross-cutting pattern the audits surface: post-adoption
+// softening — scope cuts, date slips and step-averaging after first contact
+// with compliance costs — is systemic across the 2025–26 simplification
+// wave, not act-specific noise.
 // ---------------------------------------------------------------------------
 
 import {
@@ -64,9 +72,14 @@ import {
 
 // ── Model vocabulary ───────────────────────────────────────────────────────
 
-export type CoherenceStepId = 'ex-ante' | 'horizontal' | 'goals-means' | 'evaluation';
+/** The four analytical lenses of the ESABCC coherence method, in order. */
+export type CoherenceLensId = 'ambitions' | 'decomposition' | 'coherence' | 'critical';
 
-/** Unified per-step grade, comparable across all four steps. */
+/** Deprecated alias — the lenses were once called "steps". Kept so older
+ *  importers compile; new code should use {@link CoherenceLensId}. */
+export type CoherenceStepId = CoherenceLensId;
+
+/** Unified per-lens grade, comparable across all four lenses. */
 export type CoherenceGrade = 'coherent' | 'partial' | 'incoherent' | 'not-assessed';
 
 /** GRADE-style evidence-quality tier (see header). */
@@ -78,81 +91,177 @@ export const EVIDENCE_TIER_LABEL: Record<EvidenceTier, string> = {
   C: 'Secondary sources',
 };
 
-export interface CoherenceStepMeta {
-  id: CoherenceStepId;
+// ── Climate dimensions (the coherence-check axis) ───────────────────────────
+// The three lenses of the coherence check, straight from the worked example:
+// is the act coherent on mitigation, on adaptation, and across the
+// mitigation–adaptation interface?
+
+export type ClimateDimension = 'mitigation' | 'adaptation' | 'mitigation-adaptation';
+
+export interface ClimateDimensionMeta {
+  id: ClimateDimension;
+  /** Label as printed on the coherence-check panel. */
+  label: string;
+  shortLabel: string;
+  description: string;
+  color: string;
+}
+
+export const CLIMATE_DIMENSIONS: ClimateDimensionMeta[] = [
+  {
+    id: 'mitigation',
+    label: 'Mitigation',
+    shortLabel: 'Mit.',
+    description:
+      'Reducing greenhouse-gas emissions and increasing removals — the act works towards climate neutrality by 2050.',
+    color: '#0065A4',
+  },
+  {
+    id: 'adaptation',
+    label: 'Adaptation',
+    shortLabel: 'Adapt.',
+    description:
+      'Building resilience to climate impacts — the act works towards a climate-resilient society by 2050.',
+    color: '#0E7C7B',
+  },
+  {
+    id: 'mitigation-adaptation',
+    label: 'Mitigation – Adaptation',
+    shortLabel: 'Mit.–Adapt.',
+    description:
+      'The interface: objectives or measures that bear on both ambitions at once (e.g. sustainable land management), where synergies and trade-offs between the two live.',
+    color: '#7C3AED',
+  },
+];
+
+export const CLIMATE_DIMENSION_BY_ID: Record<ClimateDimension, ClimateDimensionMeta> =
+  Object.fromEntries(CLIMATE_DIMENSIONS.map(d => [d.id, d])) as Record<
+    ClimateDimension,
+    ClimateDimensionMeta
+  >;
+
+// ── Overarching ambitions (the anchor) ──────────────────────────────────────
+// Every act is read against these two: the coherence question is always
+// "does this serve them, and is it coherent with the rest of the space in
+// doing so?".
+
+export type OverarchingAmbitionId = 'neutrality-2050' | 'resilience-2050';
+
+export interface OverarchingAmbition {
+  id: OverarchingAmbitionId;
+  label: string;
+  dimension: ClimateDimension;
+  /** The legal/strategic anchor that fixes the ambition. */
+  basis: string;
+}
+
+export const OVERARCHING_AMBITIONS: OverarchingAmbition[] = [
+  {
+    id: 'neutrality-2050',
+    label: 'Climate neutrality by 2050',
+    dimension: 'mitigation',
+    basis: 'Regulation (EU) 2021/1119 (European Climate Law), Art. 2(1).',
+  },
+  {
+    id: 'resilience-2050',
+    label: 'A climate-resilient society by 2050',
+    dimension: 'adaptation',
+    basis:
+      'European Climate Law Art. 5 (adaptation); EU Strategy on Adaptation to Climate Change (COM/2021/82).',
+  },
+];
+
+export const OVERARCHING_AMBITION_BY_ID: Record<OverarchingAmbitionId, OverarchingAmbition> =
+  Object.fromEntries(OVERARCHING_AMBITIONS.map(a => [a.id, a])) as Record<
+    OverarchingAmbitionId,
+    OverarchingAmbition
+  >;
+
+// ── The four lenses ─────────────────────────────────────────────────────────
+
+export interface CoherenceLensMeta {
+  id: CoherenceLensId;
   ordinal: 1 | 2 | 3 | 4;
-  /** Master code id under `root-coherence` in seed.ts. */
+  /** Master code id under `root-coherence` in seed.ts. Kept stable across the
+   *  rename (persisted segment ids depend on these), so the lens ids map onto
+   *  the original `coh-*` codes rather than matching their own names. */
   codeId: string;
   name: string;
   shortName: string;
+  /** The question this lens asks of every act (from the worked method). */
   question: string;
-  /** The published framework the step borrows. */
+  /** The published framework the lens borrows. */
   framework: string;
   /** Where the evidence comes from — surfaced in the UI for provenance. */
   basis: 'curated' | 'derived from objective–delivery checklist' | 'mixed';
   method: string;
 }
 
-export const COHERENCE_STEPS: CoherenceStepMeta[] = [
+export const COHERENCE_LENSES: CoherenceLensMeta[] = [
   {
-    id: 'ex-ante',
+    id: 'ambitions',
     ordinal: 1,
     codeId: 'coh-exante',
-    name: 'Ex ante design vs world development',
-    shortName: 'Ex ante',
+    name: 'Overarching ambitions',
+    shortName: 'Ambitions',
     question:
-      'Do the assumptions the policy was designed on still hold against how the world actually developed?',
+      'Does the act serve the two 2050 ambitions — climate neutrality and a climate-resilient society — and do the assumptions it was designed on still hold against how the world developed?',
     framework: 'Assumption-Based Planning (Dewar et al., RAND 1993)',
     basis: 'curated',
     method:
-      'Each load-bearing assumption is stated as a falsifiable proposition with a signpost indicator and an explicit violation criterion. Status = the criterion applied to a sourced observation: valid / under pressure / violated.',
+      'The act is linked to the overarching ambitions it serves. Each load-bearing design assumption is stated as a falsifiable proposition with a signpost indicator and an explicit violation criterion; status (valid / under pressure / violated) = the criterion applied to a sourced observation.',
   },
   {
-    id: 'horizontal',
+    id: 'decomposition',
     ordinal: 2,
-    codeId: 'coh-horizontal',
-    name: 'Coherence across policy goals',
-    shortName: 'Across goals',
+    codeId: 'coh-means',
+    name: 'Objectives & measures',
+    shortName: 'Objectives & measures',
     question:
-      'Across all policy goals of all policies in the space — do they reinforce or undercut each other?',
+      'What are the act’s policy objectives (visions, targets, objectives, goals) and its policy measures (regulations, plans, information, taxes, organisational committees) — and are the measures commensurate with the objectives?',
+    framework: 'Policy decomposition + goals/means congruence (Howlett & Rayner 2007)',
+    basis: 'mixed',
+    method:
+      'The act is decomposed into objectives and measures, each tagged to a climate dimension. Measures-side congruence is derived, not re-assessed: the five means-side criteria of the objective–delivery checklist (instruments, coverage, enforcement, financing, timeline) roll into one score (met = 1, partial = ½, not-met = 0).',
+  },
+  {
+    id: 'coherence',
+    ordinal: 3,
+    codeId: 'coh-horizontal',
+    name: 'Coherence check',
+    shortName: 'Coherence check',
+    question:
+      'Across mitigation, adaptation and the mitigation–adaptation interface: are the act’s objectives and measures aligned with the ambitions and with the rest of the space, or do they conflict?',
     framework: 'Seven-point goal-interaction scale (Nilsson et al. 2016; ICSU 2017)',
     basis: 'curated',
     method:
-      'Pairwise goal interactions scored −3 (cancelling) to +3 (indivisible), each with a named mechanism and the legal provisions that create the interaction.',
+      'Per climate dimension: is the act aligned, in tension, or in conflict? Cross-policy interactions are scored −3 (cancelling) to +3 (indivisible), each with a named mechanism, climate dimension, and the legal provisions that create the interaction.',
   },
   {
-    id: 'goals-means',
-    ordinal: 3,
-    codeId: 'coh-means',
-    name: 'Between policy goals and means of implementation',
-    shortName: 'Goals ↔ means',
-    question:
-      'Are the means of implementation — instruments, coverage, enforcement, financing, timeline — commensurate with the stated goals?',
-    framework: 'Goals/means congruence in policy mixes (Howlett & Rayner 2007)',
-    basis: 'derived from objective–delivery checklist',
-    method:
-      'Derived, not re-assessed: the five means-side criteria of the objective–delivery checklist are rolled into a means-coherence score per policy (met = 1, partial = ½, not-met = 0, over applicable criteria).',
-  },
-  {
-    id: 'evaluation',
+    id: 'critical',
     ordinal: 4,
     codeId: 'coh-evaluation',
-    name: 'Policy evaluation: measuring policy change and policy outcomes',
-    shortName: 'Evaluation',
+    name: 'Critical assessment',
+    shortName: 'Critical assessment',
     question:
-      'Can policy change and policy outcomes be measured — and what does the measured pace say against the target?',
-    framework: 'Distance-to-target pace ratio (EEA Trends & Projections method)',
+      'Why? Are these ambitious enough (fit for purpose), and what is the effect of the enablers and barriers?',
+    framework: 'Distance-to-target pace ratio (EEA Trends & Projections) + enablers/barriers',
     basis: 'mixed',
     method:
-      'Evaluation machinery (MRV + review) is derived from the checklist. Outcomes: observed recent pace ÷ required pace to target, computed in code. Thresholds: ≥ 1.0 on track · ≥ 0.5 lagging · < 0.5 (or wrong direction) off track.',
+      'Fit for purpose is read against the 2050 ambitions: observed recent pace ÷ required pace to target, computed in code (≥ 1.0 on track · ≥ 0.5 lagging · < 0.5 off track), alongside named enablers and barriers and the MRV/review machinery derived from the checklist.',
   },
 ];
 
-export const COHERENCE_STEP_BY_ID: Record<CoherenceStepId, CoherenceStepMeta> =
-  Object.fromEntries(COHERENCE_STEPS.map(s => [s.id, s])) as Record<
-    CoherenceStepId,
-    CoherenceStepMeta
+export const COHERENCE_LENS_BY_ID: Record<CoherenceLensId, CoherenceLensMeta> =
+  Object.fromEntries(COHERENCE_LENSES.map(s => [s.id, s])) as Record<
+    CoherenceLensId,
+    CoherenceLensMeta
   >;
+
+/** Deprecated aliases (see {@link CoherenceLensId}). */
+export const COHERENCE_STEPS = COHERENCE_LENSES;
+export const COHERENCE_STEP_BY_ID = COHERENCE_LENS_BY_ID;
+export type CoherenceStepMeta = CoherenceLensMeta;
 
 // ── Step 1 · Ex ante design vs world development (Assumption-Based Planning)
 
@@ -637,6 +746,9 @@ export interface GoalInteraction {
   /** Nilsson-scale score; the name/definition follow from INTERACTION_SCALE. */
   score: InteractionScore;
   mechanism: InteractionMechanism;
+  /** Climate dimension the interaction sits on — the coherence-check lens it
+   *  belongs to. Optional; defaults via {@link interactionDimension}. */
+  dimension?: ClimateDimension;
   /** The goal at stake on each side, stated as the act states it. */
   goalA: string;
   goalB: string;
@@ -644,6 +756,29 @@ export interface GoalInteraction {
   legalBasis: string;
   rationale: string;
   tier: EvidenceTier;
+}
+
+/** Acts whose objectives bear on the adaptation / resilience ambition, used
+ *  to place an interaction (and a policy) on the climate-dimension axis. */
+const ADAPTATION_LEANING_POLICIES = new Set<string>([
+  'lulucf-regulation',
+  'nature-restoration-law',
+  'water-framework-directive',
+  'marine-strategy-framework-directive',
+  'cap-strategic-plans',
+  'farm-to-fork-strategy',
+  'forest-strategy',
+]);
+
+/** The climate dimension a goal interaction sits on (the coherence-check
+ *  lens): mitigation by default; the mitigation–adaptation interface when one
+ *  side is land/water/nature (where adaptation and mitigation goals meet). */
+export function interactionDimension(i: GoalInteraction): ClimateDimension {
+  if (i.dimension) return i.dimension;
+  if (ADAPTATION_LEANING_POLICIES.has(i.a) || ADAPTATION_LEANING_POLICIES.has(i.b)) {
+    return 'mitigation-adaptation';
+  }
+  return 'mitigation';
 }
 
 export const GOAL_INTERACTIONS: GoalInteraction[] = [
@@ -1327,6 +1462,418 @@ export function evaluationCoherence(policyId: string): EvaluationResult {
   return { machinery, measurement, grade };
 }
 
+// ── Lens 2 · Objectives & measures (the decomposition) ─────────────────────
+// Each act is laid out as the worked method does: its policy OBJECTIVES
+// (visions / targets / objectives / goals) and its policy MEASURES
+// (regulations / plans / information / taxes / organisational committees),
+// every item tagged to a climate dimension. The LULUCF entry reproduces the
+// worked example exactly.
+
+export type ObjectiveKind = 'vision' | 'target' | 'objective' | 'goal';
+export type MeasureKind =
+  | 'regulation'
+  | 'plan'
+  | 'information'
+  | 'tax'
+  | 'organisational';
+
+export const OBJECTIVE_KIND_LABEL: Record<ObjectiveKind, string> = {
+  vision: 'Vision',
+  target: 'Target',
+  objective: 'Objective',
+  goal: 'Goal',
+};
+
+export const MEASURE_KIND_LABEL: Record<MeasureKind, string> = {
+  regulation: 'Regulation',
+  plan: 'Plan / programme',
+  information: 'Information',
+  tax: 'Tax',
+  organisational: 'Organisational committee',
+};
+
+export interface PolicyObjective {
+  kind: ObjectiveKind;
+  text: string;
+  dimension: ClimateDimension;
+}
+
+export interface PolicyMeasure {
+  kind: MeasureKind;
+  text: string;
+  dimension: ClimateDimension;
+}
+
+export interface PolicyDecomposition {
+  policyId: string;
+  /** Overarching ambitions the act serves. */
+  ambitions: OverarchingAmbitionId[];
+  objectives: PolicyObjective[];
+  measures: PolicyMeasure[];
+}
+
+const M: ClimateDimension = 'mitigation';
+const A: ClimateDimension = 'adaptation';
+const MA: ClimateDimension = 'mitigation-adaptation';
+
+export const POLICY_DECOMPOSITIONS: Record<string, PolicyDecomposition> = {
+  // The worked example, verbatim from the method slide.
+  'lulucf-regulation': {
+    policyId: 'lulucf-regulation',
+    ambitions: ['neutrality-2050', 'resilience-2050'],
+    objectives: [
+      { kind: 'target', text: 'Net carbon-removal targets (310 Mt CO₂eq by 2030)', dimension: M },
+      { kind: 'objective', text: 'Emission reduction and the "no-debit rule"', dimension: M },
+      { kind: 'objective', text: 'Sustainable land management', dimension: MA },
+      { kind: 'objective', text: 'Monitoring, reporting and verification', dimension: M },
+      { kind: 'objective', text: 'Flexibility mechanisms', dimension: M },
+      { kind: 'goal', text: 'Resilience to natural disturbances', dimension: A },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding national targets', dimension: M },
+      { kind: 'regulation', text: 'Flexibility mechanisms', dimension: M },
+      { kind: 'information', text: 'Accounting rules (e.g. Union registry)', dimension: M },
+      {
+        kind: 'organisational',
+        text: 'Mandate to integrate national strategic plans under the CAP',
+        dimension: MA,
+      },
+    ],
+  },
+  'eu-climate-law': {
+    policyId: 'eu-climate-law',
+    ambitions: ['neutrality-2050', 'resilience-2050'],
+    objectives: [
+      { kind: 'vision', text: 'Climate neutrality across the Union by 2050', dimension: M },
+      { kind: 'target', text: 'Net −55% GHG by 2030; −90% net by 2040', dimension: M },
+      { kind: 'goal', text: 'Continuous progress on adaptive capacity and resilience', dimension: A },
+      { kind: 'objective', text: 'Negative emissions after 2050', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Legally binding economy-wide targets and a 2040 ratchet clause', dimension: M },
+      { kind: 'organisational', text: 'European Scientific Advisory Board on Climate Change', dimension: MA },
+      { kind: 'information', text: 'Five-yearly assessment of progress and of national measures', dimension: MA },
+      { kind: 'plan', text: 'Indicative GHG budget for 2030–2050', dimension: M },
+    ],
+  },
+  'eu-ets-directive': {
+    policyId: 'eu-ets-directive',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: '−62% in ETS sectors by 2030 vs 2005', dimension: M },
+      { kind: 'objective', text: 'A declining, economy-wide carbon price signal', dimension: M },
+      { kind: 'objective', text: 'Prevent carbon leakage during decarbonisation', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Cap-and-trade with a linear reduction factor (4.3/4.4%)', dimension: M },
+      { kind: 'tax', text: 'Auctioning of allowances; free-allocation phase-out to 2034', dimension: M },
+      { kind: 'plan', text: 'Innovation and Modernisation Funds', dimension: M },
+      { kind: 'information', text: 'MRV of installation emissions; Union Registry', dimension: M },
+    ],
+  },
+  'effort-sharing-regulation': {
+    policyId: 'effort-sharing-regulation',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: '−40% in non-ETS sectors by 2030 vs 2005', dimension: M },
+      { kind: 'objective', text: 'Binding annual national emission allocations', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding national targets with annual budgets', dimension: M },
+      { kind: 'regulation', text: 'Two-way flexibilities (banking, borrowing, LULUCF, ETS)', dimension: M },
+      { kind: 'information', text: 'Annual compliance check against allocated budgets', dimension: M },
+    ],
+  },
+  'renewable-energy-directive': {
+    policyId: 'renewable-energy-directive',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: '42.5% renewables in gross final energy by 2030', dimension: M },
+      { kind: 'objective', text: 'Sustainable bioenergy and renewable hydrogen ramp-up', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding Union target with national contributions', dimension: M },
+      { kind: 'regulation', text: 'Permitting acceleration and go-to areas', dimension: M },
+      { kind: 'information', text: 'Sustainability and GHG-saving criteria for biomass', dimension: MA },
+    ],
+  },
+  'energy-efficiency-directive': {
+    policyId: 'energy-efficiency-directive',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: '−11.7% final energy consumption by 2030', dimension: M },
+      { kind: 'objective', text: 'Energy-efficiency-first across the energy system', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding consumption ceiling and annual savings obligation', dimension: M },
+      { kind: 'organisational', text: 'Public-sector renovation and exemplary-role duties', dimension: M },
+      { kind: 'information', text: 'Energy audits and management systems', dimension: M },
+    ],
+  },
+  'cbam-regulation': {
+    policyId: 'cbam-regulation',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'objective', text: 'Equalise the carbon price on imports and EU production', dimension: M },
+      { kind: 'goal', text: 'Prevent carbon leakage as free allocation phases out', dimension: M },
+    ],
+    measures: [
+      { kind: 'tax', text: 'Carbon border levy on embedded emissions of imports', dimension: M },
+      { kind: 'information', text: 'Embedded-emissions reporting and verification', dimension: M },
+      { kind: 'organisational', text: 'CBAM authority and registry of declarants', dimension: M },
+    ],
+  },
+  'co2-cars-regulation': {
+    policyId: 'co2-cars-regulation',
+    ambitions: ['neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: '100% zero-emission new cars and vans by 2035', dimension: M },
+      { kind: 'objective', text: 'Falling fleet-average CO₂ on the way there', dimension: M },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding fleet-average CO₂ standards with penalties', dimension: M },
+      { kind: 'information', text: 'Real-world CO₂ and energy-consumption monitoring', dimension: M },
+      { kind: 'plan', text: 'Advanced review clause on the 2035 step', dimension: M },
+    ],
+  },
+  'epbd-recast': {
+    policyId: 'epbd-recast',
+    ambitions: ['neutrality-2050', 'resilience-2050'],
+    objectives: [
+      { kind: 'vision', text: 'A zero-emission building stock by 2050', dimension: M },
+      { kind: 'target', text: 'Zero-emission new buildings; worst-stock renovation', dimension: M },
+      { kind: 'goal', text: 'Healthy indoor climate and overheating resilience', dimension: A },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Minimum energy-performance standards and ZEB definition', dimension: M },
+      { kind: 'plan', text: 'National building-renovation plans', dimension: M },
+      { kind: 'information', text: 'Energy-performance certificates and renovation passports', dimension: M },
+    ],
+  },
+  'nature-restoration-law': {
+    policyId: 'nature-restoration-law',
+    ambitions: ['resilience-2050', 'neutrality-2050'],
+    objectives: [
+      { kind: 'target', text: 'Restoration measures on 20% of land and sea by 2030', dimension: MA },
+      { kind: 'goal', text: 'Rewetted peatlands and restored carbon-rich ecosystems', dimension: MA },
+      { kind: 'goal', text: 'Ecosystem-based resilience to climate impacts', dimension: A },
+    ],
+    measures: [
+      { kind: 'regulation', text: 'Binding restoration targets per ecosystem type', dimension: MA },
+      { kind: 'plan', text: 'National restoration plans', dimension: MA },
+      { kind: 'information', text: 'Monitoring of ecosystem condition and trends', dimension: A },
+    ],
+  },
+  'cap-strategic-plans': {
+    policyId: 'cap-strategic-plans',
+    ambitions: ['neutrality-2050', 'resilience-2050'],
+    objectives: [
+      { kind: 'objective', text: 'Climate action and sustainable land/natural-resource management', dimension: MA },
+      { kind: 'goal', text: 'Resilient farm incomes and landscapes', dimension: A },
+    ],
+    measures: [
+      { kind: 'tax', text: 'Conditionality and eco-scheme payments', dimension: MA },
+      { kind: 'plan', text: 'National CAP strategic plans', dimension: MA },
+      { kind: 'organisational', text: 'Managing authorities and monitoring committees', dimension: MA },
+    ],
+  },
+};
+
+/** The curated decomposition for an act, or null when none is authored. */
+export function decompositionFor(policyId: string): PolicyDecomposition | null {
+  return POLICY_DECOMPOSITIONS[policyId] ?? null;
+}
+
+/** Climate dimensions an act acts on, taken from its decomposition (falling
+ *  back to the dimensions of its scored interactions, else mitigation). */
+export function policyDimensions(policyId: string): ClimateDimension[] {
+  const d = POLICY_DECOMPOSITIONS[policyId];
+  const set = new Set<ClimateDimension>();
+  if (d) {
+    for (const o of d.objectives) set.add(o.dimension);
+    for (const m of d.measures) set.add(m.dimension);
+  }
+  if (set.size === 0) {
+    for (const i of interactionsFor(policyId)) set.add(interactionDimension(i));
+  }
+  if (set.size === 0) set.add('mitigation');
+  return CLIMATE_DIMENSIONS.map(x => x.id).filter(id => set.has(id));
+}
+
+// ── Lens 4 · Critical assessment (fit for purpose, enablers, barriers) ─────
+// "Why? Are these ambitious enough (fit for purpose)? What is the effect of
+// the enablers/barriers?" — a curated reading anchored in the measured pace.
+
+export type FitVerdict = 'fit' | 'partial' | 'unfit' | 'not-assessed';
+
+export const FIT_VERDICT_LABEL: Record<FitVerdict, string> = {
+  fit: 'Fit for purpose',
+  partial: 'Partly fit',
+  unfit: 'Not fit for purpose',
+  'not-assessed': 'Not assessed',
+};
+
+export interface CriticalAssessment {
+  policyId: string;
+  /** Ambition / fit-for-purpose verdict against the 2050 ambitions. */
+  fit: FitVerdict;
+  /** Why — the one-paragraph critical reading. */
+  rationale: string;
+  /** What helps delivery. */
+  enablers: string[];
+  /** What blocks delivery. */
+  barriers: string[];
+}
+
+export const CRITICAL_ASSESSMENTS: Record<string, CriticalAssessment> = {
+  'eu-climate-law': {
+    policyId: 'eu-climate-law',
+    fit: 'partial',
+    rationale:
+      'The architecture is fit for purpose — binding targets, a ratchet clause, an independent advisory board — but ambition delivery lags: with existing measures the EU tracks to ~−47% by 2030 (EEA T&P 2025), short of −55%, and the 2040-target proposal slipped ~20 months before adoption.',
+    enablers: [
+      'Independent scientific advisory board (this Board) with a statutory advisory role',
+      'Five-yearly progress and consistency assessments that this lens operationalises',
+    ],
+    barriers: [
+      'No binding intermediate enforcement between the 2030 and 2040 milestones',
+      'Implementation gap concentrated in transport, buildings and the land sink',
+    ],
+  },
+  'eu-ets-directive': {
+    policyId: 'eu-ets-directive',
+    fit: 'fit',
+    rationale:
+      'The strongest single instrument in the space: the cap is on a measured downward trajectory ahead of its 2030 line, the price signal is real, and CBAM lets free allocation phase out without exporting the industrial base.',
+    enablers: [
+      'A hard, declining cap with auctioning revenues recycled into the Innovation/Modernisation Funds',
+      'CBAM closing the leakage flank as free allocation ends',
+    ],
+    barriers: [
+      'Part of the recent fall is crisis-driven output decline, not structural abatement',
+      'ETS2 for buildings/road transport postponed to 2028, deferring the price signal where it is hardest',
+    ],
+  },
+  'effort-sharing-regulation': {
+    policyId: 'effort-sharing-regulation',
+    fit: 'partial',
+    rationale:
+      'Ambition was ratcheted to −40% but the sectors it governs — transport, buildings, agriculture, small industry — are the slowest-moving, and the LULUCF/ETS flexibilities can let land credits substitute for real non-ETS cuts.',
+    enablers: ['Binding annual national budgets with a transparent compliance check'],
+    barriers: [
+      'Two-way flexibilities soften the effective target',
+      'Delivery depends on national measures the ESR itself does not provide',
+    ],
+  },
+  'lulucf-regulation': {
+    policyId: 'lulucf-regulation',
+    fit: 'unfit',
+    rationale:
+      'Ambition rose (a 310 Mt sink by 2030) exactly as the measured sink shrank — net removals fell from ~310 Mt (2015) to ~212 Mt (2024). The objectives are sound but the means do not yet bend the trajectory, and bioenergy demand rewarded elsewhere harvests the sink LULUCF needs standing.',
+    enablers: [
+      'Binding per-Member-State 2030 contributions in Annex IIa',
+      'CAP strategic plans as a delivery channel for land measures',
+    ],
+    barriers: [
+      'A declining sink under climate and harvest pressure (the resilience-to-disturbances goal is itself at risk)',
+      'RED biomass incentives pulling against the no-debit rule',
+      'High inventory uncertainty masking whether measures are working',
+    ],
+  },
+  'renewable-energy-directive': {
+    policyId: 'renewable-energy-directive',
+    fit: 'fit',
+    rationale:
+      'Deployment is broadly on pace toward 42.5% and the permitting reforms attack the binding constraint; the main coherence risk is on the bioenergy flank, where the sustainability criteria meet the land sink.',
+    enablers: ['Permitting acceleration and go-to areas', 'A binding, ratcheted Union target'],
+    barriers: ['Grid and storage build-out lagging deployment', 'Primary-biomass demand in tension with LULUCF'],
+  },
+  'energy-efficiency-directive': {
+    policyId: 'energy-efficiency-directive',
+    fit: 'partial',
+    rationale:
+      'The −11.7% ceiling is now binding, but consumption rebounded in 2024 as crisis-era demand response unwound, so the measured pace is only lagging — the savings obligation has to do more work than it has so far.',
+    enablers: ['A binding consumption ceiling and a stepped-up savings obligation'],
+    barriers: ['Rebound as energy prices normalise', 'Split incentives in buildings and SMEs'],
+  },
+  'co2-cars-regulation': {
+    policyId: 'co2-cars-regulation',
+    fit: 'partial',
+    rationale:
+      'The 2035 ZEV endpoint is the clearest signal in transport, but the act was weakened at first market contact — the 2025 step became 2025–27 averaging and an advanced review proposes cutting the 2035 step to 90%. Fleet CO₂ even ticked up in 2024.',
+    enablers: ['A clear 2035 endpoint paired with AFIR infrastructure roll-out'],
+    barriers: ['Post-adoption softening of the interim steps', 'Charging build-out uneven across Member States'],
+  },
+  'farm-to-fork-strategy': {
+    policyId: 'farm-to-fork-strategy',
+    fit: 'unfit',
+    rationale:
+      'Measured policy change is negative: the headline instruments lost their legal vehicles — the SUR was withdrawn and the framework law never tabled — so the 25%-organic and pesticide ambitions now ride on voluntary CAP measures alone.',
+    enablers: ['Organic-area momentum where CAP eco-schemes reward it'],
+    barriers: ['Withdrawn/parked legislation', 'No binding instrument behind the targets'],
+  },
+  'repowereu-plan': {
+    policyId: 'repowereu-plan',
+    fit: 'fit',
+    rationale:
+      'A crisis plan that delivered: Russian gas fell from ~45% to ~13% of imports and the phase-out is now law (Reg. (EU) 2026/261). Coherence risk is that some emergency supply measures cut against the mitigation pathway.',
+    enablers: ['Emergency regulations that largely sunset as designed', 'A binding legal phase-out through 2027'],
+    barriers: ['New fossil-import infrastructure with lock-in risk', 'Speed-vs-decarbonisation tension in the response'],
+  },
+  'epbd-recast': {
+    policyId: 'epbd-recast',
+    fit: 'partial',
+    rationale:
+      'The zero-emission-stock vision is right and the instruments exist, but the binding bite was softened toward portfolio averages in negotiation, and renovation rates remain far below what 2050 requires.',
+    enablers: ['National renovation plans and EPC infrastructure'],
+    barriers: ['Weakened minimum standards', 'Financing and split-incentive barriers in worst-performing stock'],
+  },
+};
+
+export function criticalAssessmentFor(policyId: string): CriticalAssessment | null {
+  return CRITICAL_ASSESSMENTS[policyId] ?? null;
+}
+
+// ── Lens 3 · Coherence check (per climate dimension) ───────────────────────
+
+export type CheckVerdict = 'aligned' | 'tension' | 'conflict' | 'not-assessed';
+
+export const CHECK_VERDICT_LABEL: Record<CheckVerdict, string> = {
+  aligned: 'Aligned',
+  tension: 'In tension',
+  conflict: 'Conflicting',
+  'not-assessed': 'Not assessed',
+};
+
+export interface DimensionCheck {
+  dimension: ClimateDimension;
+  /** Does the act act on this dimension at all? */
+  present: boolean;
+  /** Aligned, in tension, or conflicting on this dimension. */
+  verdict: CheckVerdict;
+  /** Cross-policy interactions on this dimension that touch the act. */
+  interactions: GoalInteraction[];
+}
+
+/** The coherence check for one act: a verdict per climate dimension. The
+ *  worst interaction on a dimension sets its verdict (≤ −2 conflict, −1
+ *  tension, ≥ 0 aligned); a dimension the act acts on but has no scored
+ *  conflict on reads aligned. */
+export function coherenceCheck(policyId: string): DimensionCheck[] {
+  const dims = new Set(policyDimensions(policyId));
+  const acts = interactionsFor(policyId);
+  return CLIMATE_DIMENSIONS.map(meta => {
+    const onDim = acts.filter(i => interactionDimension(i) === meta.id);
+    const present = dims.has(meta.id) || onDim.length > 0;
+    let verdict: CheckVerdict = present ? 'aligned' : 'not-assessed';
+    if (onDim.length > 0) {
+      const worst = Math.min(...onDim.map(i => i.score));
+      verdict = worst <= -2 ? 'conflict' : worst === -1 ? 'tension' : 'aligned';
+    }
+    return { dimension: meta.id, present, verdict, interactions: onDim };
+  });
+}
+
 // ── Per-policy roll-up + corpus overview ───────────────────────────────────
 
 const STATUS_GRADE: Record<AssumptionStatus, CoherenceGrade> = {
@@ -1335,16 +1882,36 @@ const STATUS_GRADE: Record<AssumptionStatus, CoherenceGrade> = {
   violated: 'incoherent',
 };
 
+const FIT_GRADE: Record<FitVerdict, CoherenceGrade> = {
+  fit: 'coherent',
+  partial: 'partial',
+  unfit: 'incoherent',
+  'not-assessed': 'not-assessed',
+};
+
 export interface PolicyCoherenceProfile {
   policyId: string;
+  /** Lens 1 — overarching-ambitions / assumption audit. */
   exAnte: ExAnteAssessment | null;
-  interactions: GoalInteraction[];
+  ambitions: OverarchingAmbitionId[];
+  /** Lens 2 — objectives & measures. */
+  decomposition: PolicyDecomposition | null;
   means: DerivedStepResult;
+  /** Lens 3 — coherence check. */
+  interactions: GoalInteraction[];
+  dimensions: DimensionCheck[];
+  dimensionSet: ClimateDimension[];
+  /** Lens 4 — critical assessment + measured pace. */
   evaluation: EvaluationResult;
-  stepGrades: Record<CoherenceStepId, CoherenceGrade>;
-  /** Worst assessed step — coherence is a weakest-link property. */
+  critical: CriticalAssessment | null;
+  lensGrades: Record<CoherenceLensId, CoherenceGrade>;
+  /** Deprecated alias of {@link lensGrades}. */
+  stepGrades: Record<CoherenceLensId, CoherenceGrade>;
+  /** Worst assessed lens — coherence is a weakest-link property. */
   overall: CoherenceGrade;
-  /** Number of steps with an assessment (0–4). */
+  /** Number of lenses with an assessment (0–4). */
+  assessedLenses: number;
+  /** Deprecated alias of {@link assessedLenses}. */
   assessedSteps: number;
 }
 
@@ -1355,9 +1922,10 @@ const GRADE_RANK: Record<CoherenceGrade, number> = {
   'not-assessed': 3,
 };
 
-/** Step-2 rollup rule (declared): grade = the policy's worst interaction
- *  score, mapped ≤ −2 → incoherent, −1 → partial, ≥ 0 → coherent. */
-function horizontalGrade(interactions: GoalInteraction[]): CoherenceGrade {
+/** Coherence-check rollup rule (declared): grade = the policy's worst
+ *  interaction score, mapped ≤ −2 → incoherent, −1 → partial, ≥ 0 →
+ *  coherent. */
+function coherenceGrade(interactions: GoalInteraction[]): CoherenceGrade {
   if (interactions.length === 0) return 'not-assessed';
   const worst = Math.min(...interactions.map(i => i.score));
   if (worst <= -2) return 'incoherent';
@@ -1372,18 +1940,32 @@ export function interactionsFor(policyId: string): GoalInteraction[] {
 
 export function buildCoherenceProfile(policyId: string): PolicyCoherenceProfile {
   const exAnte = EX_ANTE_ASSESSMENTS[policyId] ?? null;
+  const decomposition = decompositionFor(policyId);
   const interactions = interactionsFor(policyId);
   const means = meansCoherence(policyId);
   const evaluation = evaluationCoherence(policyId);
+  const critical = criticalAssessmentFor(policyId);
+  const dimensions = coherenceCheck(policyId);
 
-  const stepGrades: Record<CoherenceStepId, CoherenceGrade> = {
-    'ex-ante': exAnte ? STATUS_GRADE[exAnte.status] : 'not-assessed',
-    horizontal: horizontalGrade(interactions),
-    'goals-means': means.grade,
-    evaluation: evaluation.grade,
+  // Lens 1 (ambitions): the assumption audit when present, else the act's
+  // declared ambition links carry a neutral signal.
+  const ambitionGrade: CoherenceGrade = exAnte
+    ? STATUS_GRADE[exAnte.status]
+    : decomposition
+      ? 'coherent'
+      : 'not-assessed';
+  // Lens 4 (critical): the curated fit verdict trumps the bare pace reading
+  // when authored; otherwise the measured/derived evaluation grade stands.
+  const criticalGrade: CoherenceGrade = critical ? FIT_GRADE[critical.fit] : evaluation.grade;
+
+  const lensGrades: Record<CoherenceLensId, CoherenceGrade> = {
+    ambitions: ambitionGrade,
+    decomposition: means.grade,
+    coherence: coherenceGrade(interactions),
+    critical: criticalGrade,
   };
 
-  const assessed = (Object.values(stepGrades) as CoherenceGrade[]).filter(
+  const assessed = (Object.values(lensGrades) as CoherenceGrade[]).filter(
     g => g !== 'not-assessed',
   );
   const overall: CoherenceGrade =
@@ -1394,11 +1976,18 @@ export function buildCoherenceProfile(policyId: string): PolicyCoherenceProfile 
   return {
     policyId,
     exAnte,
-    interactions,
+    ambitions: decomposition?.ambitions ?? (exAnte ? ['neutrality-2050'] : []),
+    decomposition,
     means,
+    interactions,
+    dimensions,
+    dimensionSet: policyDimensions(policyId),
     evaluation,
-    stepGrades,
+    critical,
+    lensGrades,
+    stepGrades: lensGrades,
     overall,
+    assessedLenses: assessed.length,
     assessedSteps: assessed.length,
   };
 }
@@ -1408,18 +1997,22 @@ export function coherenceAssessedIds(): string[] {
   const ids = new Set<string>([
     ...Object.keys(EX_ANTE_ASSESSMENTS),
     ...Object.keys(OUTCOME_MEASUREMENTS),
+    ...Object.keys(POLICY_DECOMPOSITIONS),
+    ...Object.keys(CRITICAL_ASSESSMENTS),
     ...GOAL_INTERACTIONS.flatMap(i => [i.a, i.b]),
   ]);
-  // Steps 3–4 derive from the checklist, so every checklisted policy has at
-  // least a means + machinery assessment.
+  // Lenses 2 & 4 derive from the checklist, so every checklisted policy has
+  // at least a measures-congruence + machinery assessment.
   for (const id of Object.keys(POLICY_OBJECTIVE_CHECKLISTS)) ids.add(id);
   return Array.from(ids);
 }
 
 export interface CoherenceOverview {
   profiles: PolicyCoherenceProfile[];
-  /** Per-step grade tallies across the scope. */
-  stepCounts: Record<CoherenceStepId, Record<CoherenceGrade, number>>;
+  /** Per-lens grade tallies across the scope. */
+  lensCounts: Record<CoherenceLensId, Record<CoherenceGrade, number>>;
+  /** Deprecated alias of {@link lensCounts}. */
+  stepCounts: Record<CoherenceLensId, Record<CoherenceGrade, number>>;
   /** Interactions whose BOTH endpoints are in scope. */
   interactions: GoalInteraction[];
   /** Score ≤ −2 (counteracting / cancelling). */
@@ -1429,9 +2022,17 @@ export interface CoherenceOverview {
   /** Score ≥ +1 (enabling / reinforcing / indivisible). */
   positive: number;
   violatedAssumptions: number;
-  /** Mean means-coherence score across scope (step 3); null if none. */
+  /** Mean measures-congruence score across scope (lens 2); null if none. */
   meanMeansScore: number | null;
   outcomesOffTrack: number;
+  /** Acts decomposed into objectives & measures. */
+  decomposed: number;
+  /** How many scoped acts touch each climate dimension. */
+  dimensionCoverage: Record<ClimateDimension, number>;
+  /** Conflicting interactions (score ≤ −2) by climate dimension. */
+  conflictsByDimension: Record<ClimateDimension, number>;
+  /** Acts judged not fit for purpose in the critical assessment. */
+  notFitForPurpose: number;
 }
 
 export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
@@ -1439,17 +2040,17 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
   const inScope = new Set(ids);
   const profiles = ids
     .map(buildCoherenceProfile)
-    .filter(p => p.assessedSteps > 0)
+    .filter(p => p.assessedLenses > 0)
     .sort((a, b) => GRADE_RANK[a.overall] - GRADE_RANK[b.overall]);
 
-  const stepCounts = Object.fromEntries(
-    COHERENCE_STEPS.map(s => [
+  const lensCounts = Object.fromEntries(
+    COHERENCE_LENSES.map(s => [
       s.id,
       { coherent: 0, partial: 0, incoherent: 0, 'not-assessed': 0 },
     ]),
-  ) as Record<CoherenceStepId, Record<CoherenceGrade, number>>;
+  ) as Record<CoherenceLensId, Record<CoherenceGrade, number>>;
   for (const p of profiles) {
-    for (const s of COHERENCE_STEPS) stepCounts[s.id][p.stepGrades[s.id]] += 1;
+    for (const s of COHERENCE_LENSES) lensCounts[s.id][p.lensGrades[s.id]] += 1;
   }
 
   const interactions = GOAL_INTERACTIONS.filter(i => inScope.has(i.a) && inScope.has(i.b));
@@ -1460,6 +2061,23 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
   const outcomesOffTrack = profiles.filter(
     p => p.evaluation.measurement?.pace.reading === 'off-track',
   ).length;
+  const decomposed = profiles.filter(p => p.decomposition).length;
+  const notFitForPurpose = profiles.filter(p => p.critical?.fit === 'unfit').length;
+
+  const dimensionCoverage = { mitigation: 0, adaptation: 0, 'mitigation-adaptation': 0 } as Record<
+    ClimateDimension,
+    number
+  >;
+  for (const p of profiles) for (const d of p.dimensionSet) dimensionCoverage[d] += 1;
+
+  const conflictsByDimension = {
+    mitigation: 0,
+    adaptation: 0,
+    'mitigation-adaptation': 0,
+  } as Record<ClimateDimension, number>;
+  for (const i of interactions.filter(x => x.score <= -2)) {
+    conflictsByDimension[interactionDimension(i)] += 1;
+  }
 
   const meansScores = profiles.map(p => p.means.score).filter((s): s is number => s !== null);
   const meanMeansScore =
@@ -1469,7 +2087,8 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
 
   return {
     profiles,
-    stepCounts,
+    lensCounts,
+    stepCounts: lensCounts,
     interactions,
     counteracting,
     constraining,
@@ -1477,5 +2096,9 @@ export function buildCoherenceOverview(scopeIds?: string[]): CoherenceOverview {
     violatedAssumptions,
     meanMeansScore,
     outcomesOffTrack,
+    decomposed,
+    dimensionCoverage,
+    conflictsByDimension,
+    notFitForPurpose,
   };
 }

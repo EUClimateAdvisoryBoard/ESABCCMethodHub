@@ -48,13 +48,16 @@ export default function PolicyCoherence2GuidePage() {
           How to use Policy Coherence 2.0
         </h1>
         <p className="text-tertiary mb-4 text-base leading-relaxed">
-          The module treats every sentence of every policy text as a <strong>piece of
-          data</strong> — a puzzle piece with a stable id, a structural path and extracted
-          claims. The dark &ldquo;data wall&rdquo; shows all ~2,600 pieces at once; the four
-          coherence lenses test whether they fit together, and where they don&apos;t, a
-          finding marks the misfit. Prefer learning in place? Hit{' '}
-          <strong>&ldquo;Guided tour&rdquo;</strong> at the top of the module page — it walks
-          through every section live.
+          This is the block-level companion to the act-level coherence board: it runs the same
+          ESABCC method sentence by sentence. Every act is read against the two 2050 ambitions —{' '}
+          <strong>climate neutrality</strong> and a <strong>climate-resilient society</strong> —
+          and every sentence becomes a <strong>piece of data</strong>: a puzzle piece with a
+          stable id, a structural path, extracted claims (its <em>objectives</em> and{' '}
+          <em>measures</em>), a climate dimension (mitigation / adaptation / mitigation–
+          adaptation) and one of the four lenses. The dark &ldquo;data wall&rdquo; shows all
+          ~2,600 pieces at once; where they don&apos;t fit, a finding marks the misfit. Prefer
+          learning in place? Hit <strong>&ldquo;Guided tour&rdquo;</strong> at the top of the
+          module page — it walks through every section live.
         </p>
         <p className="text-tertiary mb-10 text-sm leading-relaxed">
           The 30-second version: <strong>read the hero counters → scan the data wall for
