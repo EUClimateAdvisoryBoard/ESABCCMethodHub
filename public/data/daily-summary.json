@@ -1,30 +1,24 @@
 {
   "date": "2026-06-27",
-  "generatedAt": "2026-06-27T12:10:25.399Z",
+  "generatedAt": "2026-06-27T17:28:36.559Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 27 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Fact check: Throwing cold water on heat wave disinformation",
-      "summary": "An outdated air-conditioning law, a viral health myth about sleeping with the fan on and the age-old climate change hoax allegation: DW checked what&#039;s spreading in Europe&#039;s heat wave.",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "India news: Government sends help to quake-hit Venezuela",
-      "summary": "Two air force planes carrying supplies as well as a field hospital unit are on their way. Also making headlines: Qatar has repatriated the bodies of four Indians killed in a gas explosion. DW has more.",
+      "headline": "Appeals court rejects Trump EPA bid to abandon rule restricting deadly soot pollution",
+      "summary": "&lt;p&gt;Decision leaves in place Biden-era standard on pollution from coal-fired plants, factories and other industrial sources&lt;/p&gt;&lt;p&gt;A federal appeals court on Friday rejected the &lt;a href=\"https://www.theguardian.com/environment/epa\"&gt;Environmental Protection Agency&lt;/a&gt;’s attempt to abandon a &lt;a href=\"https://www.theguardian.com/us-news/joebiden\"&gt;Biden&lt;/a&gt;-era rule that sets tough standards for deadly soot pollution.&lt;/p&gt;&lt;p&gt;The unanimous ruling by ",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Remarks by Commissioner Jørgensen at the press conference of the Energy Council",
-      "summary": "European Commission Speech Luxembourg, 26 Jun 2026 \r\nThank you very much and let me start by congratulating the Presidency on your hard work and the very impressive results that you have managed to achieve. \r\n\r\n\r\nYo...",
+      "headline": "Doorstep Statement by Commissioner Lahbib at Budapest Pride",
+      "summary": "European Commission Statement Budapest, 27 Jun 2026 Last year we stood together in this city when Pride was banned, when people faced prosecution just for walking in the streets. Yet, you marched anyway, two hund...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security for the period 2028-2034 - PE782.326v03-00",
-      "summary": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security for the period 2028-2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Marta Temido&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "headline": "US judiciary to hike PACER fees to fund accelerated system upgrade - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPcWRYMTd3RER4Smt1LTNLallfcnRpa2k5X0VZcE05d3pvYjdiQmFjTXRuSVlmVHpGdXl1QkZteUo1NHFLMEVpODJUdkhNeEJTZUc2RmQ2NnVidWlIRkpEd01UMUtoclRGM0NSSnR1QXJReXpYMEZWbl9PTlpzYWROR2dfWDJzUVlTd3c1T2N5d0hEVXh4bFJoOEc2YlNaRjFxR0ljbjJ5V01WTVg0U3h3cDZKVQ?oc=5\" target=\"_blank\"&gt;US judiciary to hike PACER fees to fund accelerated system upgrade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,28 +27,19 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Fact check: Throwing cold water on heat wave disinformation",
-          "link": "https://www.dw.com/en/fact-check-throwing-cold-water-on-heat-wave-disinformation/a-77726297?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "An outdated air-conditioning law, a viral health myth about sleeping with the fan on and the age-old climate change hoax allegation: DW checked what&#039;s spreading in Europe&#039;s heat wave.",
-          "published": "2026-06-26T15:31:00.000Z",
-          "score": 10
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "India news: Government sends help to quake-hit Venezuela",
-          "link": "https://www.dw.com/en/india-news-government-sends-help-to-quake-hit-venezuela/live-77716985?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Two air force planes carrying supplies as well as a field hospital unit are on their way. Also making headlines: Qatar has repatriated the bodies of four Indians killed in a gas explosion. DW has more.",
-          "published": "2026-06-26T12:40:00.000Z",
-          "score": 2
+          "title": "Appeals court rejects Trump EPA bid to abandon rule restricting deadly soot pollution",
+          "link": "https://www.theguardian.com/environment/2026/jun/27/trump-epa-court-ruling-soot-pollution",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Decision leaves in place Biden-era standard on pollution from coal-fired plants, factories and other industrial sources&lt;/p&gt;&lt;p&gt;A federal appeals court on Friday rejected the &lt;a href=\"https://www.theguardian.com/environment/epa\"&gt;Environmental Protection Agency&lt;/a&gt;’s attempt to abandon a &lt;a href=\"https://www.theguardian.com/us-news/joebiden\"&gt;Biden&lt;/a&gt;-era rule that sets tough standards for deadly soot pollution.&lt;/p&gt;&lt;p&gt;The unanimous ruling by ",
+          "published": "2026-06-27T14:29:32.000Z",
+          "score": 7
         }
       ]
     },
@@ -62,30 +47,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Remarks by Commissioner Jørgensen at the press conference of the Energy Council",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1472",
-          "source": "European Commission",
-          "description": "European Commission Speech Luxembourg, 26 Jun 2026 \r\nThank you very much and let me start by congratulating the Presidency on your hard work and the very impressive results that you have managed to achieve. \r\n\r\n\r\nYo...",
-          "published": "2026-06-26T16:37:19.000Z",
-          "score": 23
-        },
-        {
-          "title": "DeBriefed 26 June 2026: Heat records broken across Europe &#124; London climate action week &#124; Introducing ‘Project Cosmos’",
-          "link": "https://www.carbonbrief.org/debriefed-26-june-2026-heat-records-broken-across-europe-london-climate-action-week-introducing-project-cosmos/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 26 June 2026: Heat records broken across Europe | London climate action week | Introducing ‘Project Cosmos’ appeared first on Carbon Brief.",
-          "published": "2026-06-26T14:27:07.000Z",
-          "score": 19
-        },
-        {
-          "title": "Media reaction: How climate change intensified Europe’s record-breaking June heat",
-          "link": "https://www.carbonbrief.org/media-reaction-how-climate-change-intensified-europes-record-breaking-june-heat/",
-          "source": "Carbon Brief",
-          "description": "For the second time in two months, western and central Europe has been hit by... The post Media reaction: How climate change intensified Europe’s record-breaking June heat appeared first on Carbon Brief.",
-          "published": "2026-06-26T12:44:22.000Z",
-          "score": 19
-        },
         {
           "title": "Doorstep Statement by Commissioner Lahbib at Budapest Pride",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1474",
@@ -95,12 +56,36 @@
           "score": 14
         },
         {
-          "title": "Q&#038;A: What change of power in Colombia could mean for world’s fossil-fuel transition",
-          "link": "https://www.carbonbrief.org/qa-what-change-of-power-in-colombia-could-mean-for-worlds-fossil-fuel-transition/",
-          "source": "Carbon Brief",
-          "description": "Over the last four years, Colombia has emerged as one of the most vocal advocates... The post Q&amp;A: What change of power in Colombia could mean for world’s fossil-fuel transition appeared first on Carbon Brief.",
-          "published": "2026-06-26T14:04:53.000Z",
+          "title": "Europe heatwave: drought fears in Italy as records tumble around Europe – as it happened",
+          "link": "https://www.theguardian.com/world/live/2026/jun/27/europe-heatwave-germany-poland-france-uk-temperature-heat-latest-news-updates",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Temperature records broken in Germany, Denmark and Slovakia as Europe remains gripped by heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;After decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Seawater is seeping into Italy’s longest river as the waterway starts to run dry in the heatwav",
+          "published": "2026-06-27T15:43:10.000Z",
           "score": 13
+        },
+        {
+          "title": "‘A sad inevitability’: after decades of climate warnings, why is Europe so unprepared for rising heat?",
+          "link": "https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Scorching summer of 2003 triggered first efforts to deal with the problem but heatwaves still have devastating impact&lt;/p&gt;&lt;p&gt;On Wednesday, Pierre Masselot received a text from his daughter’s nursery – less than 50 miles from the weather station that was the first this week to &lt;a href=\"https://www.theguardian.com/environment/2026/jun/24/uk-records-hottest-june-day\"&gt;break the UK June temperature record&lt;/a&gt; – asking parents to collect children early because the schoo",
+          "published": "2026-06-27T11:00:03.000Z",
+          "score": 13
+        },
+        {
+          "title": "EU warns Turkey over 'unacceptable' snub of Cyprus in climate summit preparations - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQU09VcVYyVi1reGdlWkwyMWQ3SHVRRENJdlB3VzRJcjF6VVVMRkZZWjhmWHE3bXlSc2dIbV9wajdPMzlaMTJkdEszSTEyVlNPVWk0MElPRlNyeG0wNjFVTUdobzJRS1A0cEZXVWhfSFhVVUg1ZVFibnNhaEVmZ255SjNpTUcybDZGam5GemowcHEtMzYwMmFSN05raHVndzVGM0VIRnE3ODNLYmFGdjk2X2hJVUlzUENRR2xDTzBMeE9lSnppV1BF?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxQU09VcVYyVi1reGdlWkwyMWQ3SHVRRENJdlB3VzRJcjF6VVVMRkZZWjhmWHE3bXlSc2dIbV9wajdPMzlaMTJkdEszSTEyVlNPVWk0MElPRlNyeG0wNjFVTUdobzJRS1A0cEZXVWhfSFhVVUg1ZVFibnNhaEVmZ255SjNpTUcybDZGam5GemowcHEtMzYwMmFSN05raHVndzVGM0VIRnE3ODNLYmFGdjk2X2hJVUlzUENRR2xDTzBMeE9lSnppV1BF?oc=5\" target=\"_blank\"&gt;EU warns Turkey over 'unacceptable' snub of Cyprus in climate summit preparations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-06-27T06:59:21.000Z",
+          "score": 13
+        },
+        {
+          "title": "Europe's deadly heatwave breaks German record and halts public events",
+          "link": "https://www.bbc.co.uk/news/articles/cx2knzzwprgo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Germany's highest ever temperature of 41.3C is recorded provisionally in Saarbrücken, over the border from France.",
+          "published": "2026-06-27T16:51:17.000Z",
+          "score": 8
         }
       ]
     },
@@ -109,12 +94,12 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security for the period 2028-2034 - PE782.326v03-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-782326_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the European Fund for economic, social and territorial cohesion, agriculture and rural, fisheries and maritime, prosperity and security for the period 2028-2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Marta Temido&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-26T12:13:01.000Z",
-          "score": 22
+          "title": "US judiciary to hike PACER fees to fund accelerated system upgrade - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPcWRYMTd3RER4Smt1LTNLallfcnRpa2k5X0VZcE05d3pvYjdiQmFjTXRuSVlmVHpGdXl1QkZteUo1NHFLMEVpODJUdkhNeEJTZUc2RmQ2NnVidWlIRkpEd01UMUtoclRGM0NSSnR1QXJReXpYMEZWbl9PTlpzYWROR2dfWDJzUVlTd3c1T2N5d0hEVXh4bFJoOEc2YlNaRjFxR0ljbjJ5V01WTVg0U3h3cDZKVQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPcWRYMTd3RER4Smt1LTNLallfcnRpa2k5X0VZcE05d3pvYjdiQmFjTXRuSVlmVHpGdXl1QkZteUo1NHFLMEVpODJUdkhNeEJTZUc2RmQ2NnVidWlIRkpEd01UMUtoclRGM0NSSnR1QXJReXpYMEZWbl9PTlpzYWROR2dfWDJzUVlTd3c1T2N5d0hEVXh4bFJoOEc2YlNaRjFxR0ljbjJ5V01WTVg0U3h3cDZKVQ?oc=5\" target=\"_blank\"&gt;US judiciary to hike PACER fees to fund accelerated system upgrade&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-26T20:31:44.000Z",
+          "score": 2
         }
       ]
     },
@@ -129,14 +114,6 @@
           "description": "The European Commission has suggested withdrawing protection status for military-age Ukrainian males. A number of EU countries support the move — and so does Kyiv.",
           "published": "2026-06-27T09:45:00.000Z",
           "score": 8
-        },
-        {
-          "title": "Luxembourg will be European headquarters of new multilateral defence bank, Carney says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNM3J1WGJKMDlTVnEzQ296Y2JMS0dzTFJIYWxOTmRscWxpYU9WZVc2bGVBZ1BOT1RKRU9KV1RQUnRMWk9mTndYaW8zYzhleGdIRUk4eDE5OVBuNV9mVkd5ekVEX1FXMmpjMHNYbTNxQTRrVUoxQ1Vwd24zZFpjRzR5YjRCSk9iT05qcDBrM1NZMzlzel9HYzhUY3UyckxTT0sxYV85T0ZQRmMxMVZwcTZHN0p5Z3J2U2Y5cklMYXRVMmNLS2hGeVowSFNB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNM3J1WGJKMDlTVnEzQ296Y2JMS0dzTFJIYWxOTmRscWxpYU9WZVc2bGVBZ1BOT1RKRU9KV1RQUnRMWk9mTndYaW8zYzhleGdIRUk4eDE5OVBuNV9mVkd5ekVEX1FXMmpjMHNYbTNxQTRrVUoxQ1Vwd24zZFpjRzR5YjRCSk9iT05qcDBrM1NZMzlzel9HYzhUY3UyckxTT0sxYV85T0ZQRmMxMVZwcTZHN0p5Z3J2U2Y5cklMYXRVMmNLS2hGeVowSFNB?oc=5\" target=\"_blank\"&gt;Luxembourg will be European headquarters of new multilateral defence bank, Carney says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-06-26T17:14:09.000Z",
-          "score": 8
         }
       ]
     },
@@ -145,27 +122,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Volkswagen Law: the unique structure behind Europe's biggest carmaker - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOODdHVkJfWm1qSUMxOUYtSTJTcUdrcU9SZ3M4WmtxT2IzVnNkT3BrcXUtbTZRRDg4OEdwcGdZZTFqeHhFcVlac0MweG9IYXY3M1pkM1J0N090cXMyQTBtaGE1bWx3SlpqblRvQlROSWdlQXFNTlhmRjRfZl9KRl9xNkk4NWlmODZLQVFkcEQzOVl4cFUzblNta3BKai1wTkFmSl9CVlJyemZXdHdZSEJxSWJQcWw1MnNXRzhndlZxdw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOODdHVkJfWm1qSUMxOUYtSTJTcUdrcU9SZ3M4WmtxT2IzVnNkT3BrcXUtbTZRRDg4OEdwcGdZZTFqeHhFcVlac0MweG9IYXY3M1pkM1J0N090cXMyQTBtaGE1bWx3SlpqblRvQlROSWdlQXFNTlhmRjRfZl9KRl9xNkk4NWlmODZLQVFkcEQzOVl4cFUzblNta3BKai1wTkFmSl9CVlJyemZXdHdZSEJxSWJQcWw1MnNXRzhndlZxdw?oc=5\" target=\"_blank\"&gt;Volkswagen Law: the unique structure behind Europe's biggest carmaker&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-26T13:07:04.000Z",
-          "score": 12
-        },
-        {
           "title": "Europe faces scorching weekend as heat wave moves east",
           "link": "https://www.dw.com/en/europe-faces-scorching-weekend-as-heat-wave-moves-east/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Europe&#039;s heat wave is expected to move east after causing record temperatures in several countries. But Germany still has a couple of torrid days ahead. DW has the latest.",
           "published": "2026-06-27T08:48:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hungary aims to meet euro entry conditions by around 2030, PM Magyar says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQYXVrdnljVk5lWDVIU0N4dGxNc0hBZzV4YVFkekFCQ2F4bFZjZzJwbk1YYko4dzEyeE9mcEo5aGFhOXNLYlhtUWluQ2hPMzN2MzUyM1IyRW95TWxCaEpGeGt2aWQzUEtyY0EtQ2ZjM1RhX2dCWTBMVVVOWVB0QnVWYmZXYUxudTFoem4zT0wzLUdWV3k5dWZnTXRjYm1VWkRDUkRuYm92VnRhZUVRSFY0UQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxQYXVrdnljVk5lWDVIU0N4dGxNc0hBZzV4YVFkekFCQ2F4bFZjZzJwbk1YYko4dzEyeE9mcEo5aGFhOXNLYlhtUWluQ2hPMzN2MzUyM1IyRW95TWxCaEpGeGt2aWQzUEtyY0EtQ2ZjM1RhX2dCWTBMVVVOWVB0QnVWYmZXYUxudTFoem4zT0wzLUdWV3k5dWZnTXRjYm1VWkRDUkRuYm92VnRhZUVRSFY0UQ?oc=5\" target=\"_blank\"&gt;Hungary aims to meet euro entry conditions by around 2030, PM Magyar says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-26T12:18:10.000Z",
           "score": 8
         },
         {
@@ -183,14 +144,30 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOM1dlY2NZdnFYeFhpa2xXT0k0bmluOTk2VjBuVmhpeERwUWcwdzNhelI4SmVGSTFWSWg0dEFHS3ktNXd3LUVOWmp5M19wQnV3Rm9JYkstcEVsaFQ3cm1wNGpVSUd4ZlVBaUoyU0N1TVBXbm9oSzEtV0ZwM3FWQ0M3ajZGQUgxY2hBOGRrNGVZWGZzLUYzX0hwMFpHNFJsYU1zeDhCaU1xXzlrZUVQWTJVZ2t3?oc=5\" target=\"_blank\"&gt;EU defends digital tax approach, says ready to act if Turmp takes measures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-26T19:05:39.000Z",
           "score": 8
+        },
+        {
+          "title": "On Assignment: Understanding Europe's heatwave - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPaVpHZmxCcnV0dmpwREI5OUJwNngxU1RHZTk2N2thWXdYQ0p1bFBwSEtnQ2h0RFFZcHIwSVBHUG03eUZwN3R0VjVOeUEyQk1qaGpaSkRMejZ5VDloV1l2clV3ckltckNCUjRvYWUtbGgzT3RLaGx6OWdSX3c4bFJfdTB6akpQMFk1X0xydW42NA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxPaVpHZmxCcnV0dmpwREI5OUJwNngxU1RHZTk2N2thWXdYQ0p1bFBwSEtnQ2h0RFFZcHIwSVBHUG03eUZwN3R0VjVOeUEyQk1qaGpaSkRMejZ5VDloV1l2clV3ckltckNCUjRvYWUtbGgzT3RLaGx6OWdSX3c4bFJfdTB6akpQMFk1X0xydW42NA?oc=5\" target=\"_blank\"&gt;On Assignment: Understanding Europe's heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-27T05:00:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany, Denmark gripped by record temperatures as European heatwave moves east - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNW4yWVJLNlBEUHVERnVYU0hDWHc0bE5Ua0psdk04TkRMTk9JZjZiRlRkWGhlR2ljZTV6Tmx2eXFiM09ZdjFZTkswTkczeG1iZGJzVDk5ZWRSckZrV2o3cGFxSjV1ZDNnZk45Rkw1ZXhZdm1uOXJVZTg2Z2l4Y1g0M1hsU1F5VWxqUnRSdjdOX3ZidV8yNnYwU05yRlV0VnVyNHVaZnQ1V19IQ2xpMjBjWEpRLTlwVE5MT0k0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPNW4yWVJLNlBEUHVERnVYU0hDWHc0bE5Ua0psdk04TkRMTk9JZjZiRlRkWGhlR2ljZTV6Tmx2eXFiM09ZdjFZTkswTkczeG1iZGJzVDk5ZWRSckZrV2o3cGFxSjV1ZDNnZk45Rkw1ZXhZdm1uOXJVZTg2Z2l4Y1g0M1hsU1F5VWxqUnRSdjdOX3ZidV8yNnYwU05yRlV0VnVyNHVaZnQ1V19IQ2xpMjBjWEpRLTlwVE5MT0k0?oc=5\" target=\"_blank\"&gt;Germany, Denmark gripped by record temperatures as European heatwave moves east&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-27T02:11:00.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 442,
-    "articlesLast24h": 169,
-    "afterDedup": 157,
+    "totalArticlesScanned": 444,
+    "articlesLast24h": 153,
+    "afterDedup": 144,
     "feedsQueried": 19
   }
 }
