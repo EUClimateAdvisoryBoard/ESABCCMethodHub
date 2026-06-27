@@ -1,18 +1,18 @@
 {
   "date": "2026-06-27",
-  "generatedAt": "2026-06-27T07:50:37.228Z",
+  "generatedAt": "2026-06-27T12:10:25.399Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 27 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Fact check: throwing cold water on heat wave disinformation",
+      "headline": "Fact check: Throwing cold water on heat wave disinformation",
       "summary": "An outdated air-conditioning law, a viral health myth about sleeping with the fan on and the age-old climate change hoax allegation: DW checked what&#039;s spreading in Europe&#039;s heat wave.",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "The abundant but expensive energy source that's under your feet",
-      "summary": "Start-ups are taking fresh approaches to geothermal energy, but will the economics work?",
+      "headline": "India news: Government sends help to quake-hit Venezuela",
+      "summary": "Two air force planes carrying supplies as well as a field hospital unit are on their way. Also making headlines: Qatar has repatriated the bodies of four Indians killed in a gas explosion. DW has more.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -35,7 +35,7 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Fact check: throwing cold water on heat wave disinformation",
+          "title": "Fact check: Throwing cold water on heat wave disinformation",
           "link": "https://www.dw.com/en/fact-check-throwing-cold-water-on-heat-wave-disinformation/a-77726297?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "An outdated air-conditioning law, a viral health myth about sleeping with the fan on and the age-old climate change hoax allegation: DW checked what&#039;s spreading in Europe&#039;s heat wave.",
@@ -48,30 +48,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "The abundant but expensive energy source that's under your feet",
-          "link": "https://www.bbc.co.uk/news/articles/cj3gj1n8yz8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Start-ups are taking fresh approaches to geothermal energy, but will the economics work?",
-          "published": "2026-06-26T10:12:42.000Z",
-          "score": 7
-        },
-        {
-          "title": "Norway's Equinor ends plans for offshore wind in Japan - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxOMktISHBoR2E1N2otMl9MWnVQRnQ0Qms1bV9OSDRkc0NQMjZzXzkyYng2ZTVEMDlpYk1Hc2U5bTRuZ0luYXpsUElLTXg0OTRuUFU0VHFGMkhmMG1lVnpMRDY2SjA5QndzZm5yNENHdGl3cjB1bzZoWURkU2Y4ODBld3g1aklGb0d2QVBKaFIyN2FBN0Mx?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxOMktISHBoR2E1N2otMl9MWnVQRnQ0Qms1bV9OSDRkc0NQMjZzXzkyYng2ZTVEMDlpYk1Hc2U5bTRuZ0luYXpsUElLTXg0OTRuUFU0VHFGMkhmMG1lVnpMRDY2SjA5QndzZm5yNENHdGl3cjB1bzZoWURkU2Y4ODBld3g1aklGb0d2QVBKaFIyN2FBN0Mx?oc=5\" target=\"_blank\"&gt;Norway's Equinor ends plans for offshore wind in Japan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-26T10:03:41.000Z",
-          "score": 7
-        },
-        {
-          "title": "First major hydropower projects in Great Britain in 40 years given go-ahead",
-          "link": "https://www.theguardian.com/environment/2026/jun/26/first-hydropower-projects-in-great-britain-in-40-years-given-go-ahead",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Three pumped storage hydroelectric power station sites in Scotland on list of 16 long-duration electricity storage plans&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/business/live/2026/jun/26/uk-food-drink-exports-fall-us-tariffs-brexit-trade-friction-stock-market-ftse-pound-oil-latest-news-updates\"&gt;Business live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Great Britain’s first new major hydropower projects in more than 40 years",
-          "published": "2026-06-26T09:18:47.000Z",
-          "score": 2
-        },
         {
           "title": "India news: Government sends help to quake-hit Venezuela",
           "link": "https://www.dw.com/en/india-news-government-sends-help-to-quake-hit-venezuela/live-77716985?maca=en-rss-en-all-1573-xml-mrss",
@@ -111,19 +87,19 @@
           "score": 19
         },
         {
+          "title": "Doorstep Statement by Commissioner Lahbib at Budapest Pride",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1474",
+          "source": "European Commission",
+          "description": "European Commission Statement Budapest, 27 Jun 2026 Last year we stood together in this city when Pride was banned, when people faced prosecution just for walking in the streets. Yet, you marched anyway, two hund...",
+          "published": "2026-06-27T10:54:14.000Z",
+          "score": 14
+        },
+        {
           "title": "Q&#038;A: What change of power in Colombia could mean for world’s fossil-fuel transition",
           "link": "https://www.carbonbrief.org/qa-what-change-of-power-in-colombia-could-mean-for-worlds-fossil-fuel-transition/",
           "source": "Carbon Brief",
           "description": "Over the last four years, Colombia has emerged as one of the most vocal advocates... The post Q&amp;A: What change of power in Colombia could mean for world’s fossil-fuel transition appeared first on Carbon Brief.",
           "published": "2026-06-26T14:04:53.000Z",
-          "score": 13
-        },
-        {
-          "title": "Climate adaptation in Africa needs investment, not imported solutions",
-          "link": "https://www.climatechangenews.com/2026/06/26/climate-adaptation-in-africa-needs-investment-not-imported-solutions/",
-          "source": "Climate Home News",
-          "description": "Across Africa, communities have implemented vital climate adaptation measures - but these need investment to scale The post Climate adaptation in Africa needs investment, not imported solutions appeared first on Climate Home News.",
-          "published": "2026-06-26T14:26:06.000Z",
           "score": 13
         }
       ]
@@ -147,12 +123,20 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Draft agenda - Thursday, 2 July 2026 - PE790.220v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-07-02-1_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-26T08:43:25.000Z",
-          "score": 18
+          "title": "Military-age Ukrainian men could lose EU protection",
+          "link": "https://www.dw.com/en/military-age-ukrainian-men-could-lose-eu-protection/a-77729285?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The European Commission has suggested withdrawing protection status for military-age Ukrainian males. A number of EU countries support the move — and so does Kyiv.",
+          "published": "2026-06-27T09:45:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Luxembourg will be European headquarters of new multilateral defence bank, Carney says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNM3J1WGJKMDlTVnEzQ296Y2JMS0dzTFJIYWxOTmRscWxpYU9WZVc2bGVBZ1BOT1RKRU9KV1RQUnRMWk9mTndYaW8zYzhleGdIRUk4eDE5OVBuNV9mVkd5ekVEX1FXMmpjMHNYbTNxQTRrVUoxQ1Vwd24zZFpjRzR5YjRCSk9iT05qcDBrM1NZMzlzel9HYzhUY3UyckxTT0sxYV85T0ZQRmMxMVZwcTZHN0p5Z3J2U2Y5cklMYXRVMmNLS2hGeVowSFNB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxNM3J1WGJKMDlTVnEzQ296Y2JMS0dzTFJIYWxOTmRscWxpYU9WZVc2bGVBZ1BOT1RKRU9KV1RQUnRMWk9mTndYaW8zYzhleGdIRUk4eDE5OVBuNV9mVkd5ekVEX1FXMmpjMHNYbTNxQTRrVUoxQ1Vwd24zZFpjRzR5YjRCSk9iT05qcDBrM1NZMzlzel9HYzhUY3UyckxTT0sxYV85T0ZQRmMxMVZwcTZHN0p5Z3J2U2Y5cklMYXRVMmNLS2hGeVowSFNB?oc=5\" target=\"_blank\"&gt;Luxembourg will be European headquarters of new multilateral defence bank, Carney says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
+          "published": "2026-06-26T17:14:09.000Z",
+          "score": 8
         }
       ]
     },
@@ -169,11 +153,11 @@
           "score": 12
         },
         {
-          "title": "Fact check: As Europe bakes, should you trust your sunscreen?",
-          "link": "https://www.dw.com/en/fact-check-as-europe-bakes-should-you-trust-your-sunscreen/a-77707226?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe faces scorching weekend as heat wave moves east",
+          "link": "https://www.dw.com/en/europe-faces-scorching-weekend-as-heat-wave-moves-east/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "As a heatwave sweeps across Europe, claims are resurfacing online questioning whether sunscreen is safe or linked to skin cancer risk.",
-          "published": "2026-06-26T10:28:00.000Z",
+          "description": "Europe&#039;s heat wave is expected to move east after causing record temperatures in several countries. But Germany still has a couple of torrid days ahead. DW has the latest.",
+          "published": "2026-06-27T08:48:00.000Z",
           "score": 8
         },
         {
@@ -185,28 +169,28 @@
           "score": 8
         },
         {
-          "title": "EU proposes extending Ukrainian protection to 2028, limit men of fighting age - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPS20zZ1VjNW52X01aWkVkOXNLWkFid1NOdDItU0lJZXBqLTUzTk44R0sxVTllbkE5ZW9HbFc0R2JUeG5lWFNVYnFQeWVrb0FFT1JwWC00Ums0ZG5aOF9xRllrQ3dkajNXVDJndjRYd09ZdW5HZC1qMVRkVlFrUmNYYU4xY1BCd0x1TFNvaDhmajc5a3BVWWpBMmpYNi1aQU5pRU1yUGMtZW9CV1g1aDZLcWN3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPS20zZ1VjNW52X01aWkVkOXNLWkFid1NOdDItU0lJZXBqLTUzTk44R0sxVTllbkE5ZW9HbFc0R2JUeG5lWFNVYnFQeWVrb0FFT1JwWC00Ums0ZG5aOF9xRllrQ3dkajNXVDJndjRYd09ZdW5HZC1qMVRkVlFrUmNYYU4xY1BCd0x1TFNvaDhmajc5a3BVWWpBMmpYNi1aQU5pRU1yUGMtZW9CV1g1aDZLcWN3?oc=5\" target=\"_blank\"&gt;EU proposes extending Ukrainian protection to 2028, limit men of fighting age&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-26T08:41:44.000Z",
-          "score": 8
-        },
-        {
           "title": "Europe on high alert as killer heat set to move east and south - Reuters",
           "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSFpyUUxIa0FodFcxY3p5aHVfTUJ4WUVmaXB0bnluSlVWNjZGTTlYY1pfOW5fUVRUUXQzeFpMb1ZndzlWVkkyV1ZZd0ZtM2NHNkU4QU9vVm1raUJwQmtEOWtfdjBaT0tvUlp3dkxPdnJtbGxydzRFTTZ0V1JTVEQ1NHI3ZHpUYUpaRnhOS25GSldLNzFzX2lVZl9R?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxNSFpyUUxIa0FodFcxY3p5aHVfTUJ4WUVmaXB0bnluSlVWNjZGTTlYY1pfOW5fUVRUUXQzeFpMb1ZndzlWVkkyV1ZZd0ZtM2NHNkU4QU9vVm1raUJwQmtEOWtfdjBaT0tvUlp3dkxPdnJtbGxydzRFTTZ0V1JTVEQ1NHI3ZHpUYUpaRnhOS25GSldLNzFzX2lVZl9R?oc=5\" target=\"_blank\"&gt;Europe on high alert as killer heat set to move east and south&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-26T18:19:04.000Z",
           "score": 8
+        },
+        {
+          "title": "EU defends digital tax approach, says ready to act if Turmp takes measures - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOM1dlY2NZdnFYeFhpa2xXT0k0bmluOTk2VjBuVmhpeERwUWcwdzNhelI4SmVGSTFWSWg0dEFHS3ktNXd3LUVOWmp5M19wQnV3Rm9JYkstcEVsaFQ3cm1wNGpVSUd4ZlVBaUoyU0N1TVBXbm9oSzEtV0ZwM3FWQ0M3ajZGQUgxY2hBOGRrNGVZWGZzLUYzX0hwMFpHNFJsYU1zeDhCaU1xXzlrZUVQWTJVZ2t3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOM1dlY2NZdnFYeFhpa2xXT0k0bmluOTk2VjBuVmhpeERwUWcwdzNhelI4SmVGSTFWSWg0dEFHS3ktNXd3LUVOWmp5M19wQnV3Rm9JYkstcEVsaFQ3cm1wNGpVSUd4ZlVBaUoyU0N1TVBXbm9oSzEtV0ZwM3FWQ0M3ajZGQUgxY2hBOGRrNGVZWGZzLUYzX0hwMFpHNFJsYU1zeDhCaU1xXzlrZUVQWTJVZ2t3?oc=5\" target=\"_blank\"&gt;EU defends digital tax approach, says ready to act if Turmp takes measures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-26T19:05:39.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 452,
-    "articlesLast24h": 174,
-    "afterDedup": 164,
+    "totalArticlesScanned": 442,
+    "articlesLast24h": 169,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
