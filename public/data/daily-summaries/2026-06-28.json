@@ -1,18 +1,18 @@
 {
   "date": "2026-06-28",
-  "generatedAt": "2026-06-28T11:38:13.572Z",
+  "generatedAt": "2026-06-28T17:30:58.734Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 28 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Appeals court rejects Trump EPA bid to abandon rule restricting deadly soot pollution",
-      "summary": "&lt;p&gt;Decision leaves in place Biden-era standard on pollution from coal-fired plants, factories and other industrial sources&lt;/p&gt;&lt;p&gt;A federal appeals court on Friday rejected the &lt;a href=\"https://www.theguardian.com/environment/epa\"&gt;Environmental Protection Agency&lt;/a&gt;’s attempt to abandon a &lt;a href=\"https://www.theguardian.com/us-news/joebiden\"&gt;Biden&lt;/a&gt;-era rule that sets tough standards for deadly soot pollution.&lt;/p&gt;&lt;p&gt;The unanimous ruling by ",
+      "headline": "Tanzania has nationwide blackout after power grid failure, Bloomberg News reports - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNkRLTHNZZlZ1RHNPNFBRa3cyeFhyRWpsci1WZ1ptbHU5U1VNdDJNQmN1ak1fSkhDVy02ZV9VWTdpcU1qX21NRFBFS0xvanhVRldWQ0otVXU2Z2JfcGVIQlFqeHhSSjdlMTdsVmVNZEJPUE5HeHRjVGtITE5DWjg4bnNmUU1yclRiaDd4VkQtTTlWSVp5aGJTRkRCaXVSNTZIZlIta0ZCd1lDbk0ycE9KYVF5ZUZJMU1Vck9VOEQ4ZFFLUi1DSHVVZA?oc=5\" target=\"_blank\"&gt;Tanzania has nationwide blackout after power grid failure, Bloomberg News reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Europe heatwave: drought fears in Italy as records tumble around Europe – as it happened",
-      "summary": "&lt;p&gt;Temperature records broken in Germany, Denmark and Slovakia as Europe remains gripped by heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;After decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Seawater is seeping into Italy’s longest river as the waterway starts to run dry in the heatwav",
+      "headline": "Europe's heatwave linked to 1,300 deaths, WHO says, as Germany hits record 41.7C",
+      "summary": "WHO chief Tedros Adhanom Ghebreyesus warned that Europe is not prepared for high temperatures.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Appeals court rejects Trump EPA bid to abandon rule restricting deadly soot pollution",
-          "link": "https://www.theguardian.com/environment/2026/jun/27/trump-epa-court-ruling-soot-pollution",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Decision leaves in place Biden-era standard on pollution from coal-fired plants, factories and other industrial sources&lt;/p&gt;&lt;p&gt;A federal appeals court on Friday rejected the &lt;a href=\"https://www.theguardian.com/environment/epa\"&gt;Environmental Protection Agency&lt;/a&gt;’s attempt to abandon a &lt;a href=\"https://www.theguardian.com/us-news/joebiden\"&gt;Biden&lt;/a&gt;-era rule that sets tough standards for deadly soot pollution.&lt;/p&gt;&lt;p&gt;The unanimous ruling by ",
-          "published": "2026-06-27T14:29:32.000Z",
-          "score": 7
-        },
         {
           "title": "Tanzania has nationwide blackout after power grid failure, Bloomberg News reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNkRLTHNZZlZ1RHNPNFBRa3cyeFhyRWpsci1WZ1ptbHU5U1VNdDJNQmN1ak1fSkhDVy02ZV9VWTdpcU1qX21NRFBFS0xvanhVRldWQ0otVXU2Z2JfcGVIQlFqeHhSSjdlMTdsVmVNZEJPUE5HeHRjVGtITE5DWjg4bnNmUU1yclRiaDd4VkQtTTlWSVp5aGJTRkRCaXVSNTZIZlIta0ZCd1lDbk0ycE9KYVF5ZUZJMU1Vck9VOEQ4ZFFLUi1DSHVVZA?oc=5",
@@ -58,19 +50,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Europe heatwave: drought fears in Italy as records tumble around Europe – as it happened",
-          "link": "https://www.theguardian.com/world/live/2026/jun/27/europe-heatwave-germany-poland-france-uk-temperature-heat-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Temperature records broken in Germany, Denmark and Slovakia as Europe remains gripped by heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;After decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Seawater is seeping into Italy’s longest river as the waterway starts to run dry in the heatwav",
-          "published": "2026-06-27T15:43:10.000Z",
-          "score": 13
-        },
-        {
-          "title": "Europe's deadly heatwave breaks German record and halts public events",
-          "link": "https://www.bbc.co.uk/news/articles/cx2knzzwprgo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Europe's heatwave linked to 1,300 deaths, WHO says, as Germany hits record 41.7C",
+          "link": "https://www.bbc.co.uk/news/articles/cn4d2vv935lo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Germany's highest ever temperature of 41.3C is recorded provisionally in Saarbrücken, over the border from France.",
-          "published": "2026-06-27T16:51:17.000Z",
+          "description": "WHO chief Tedros Adhanom Ghebreyesus warned that Europe is not prepared for high temperatures.",
+          "published": "2026-06-28T16:38:55.000Z",
           "score": 8
         },
         {
@@ -82,12 +66,12 @@
           "score": 7
         },
         {
-          "title": "Reuters Climate Monitor - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5\" target=\"_blank\"&gt;Reuters Climate Monitor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-28T09:13:25.000Z",
-          "score": 7
+          "title": "Germany, Czechia, Poland and Hungary swelter through hottest days on record",
+          "link": "https://www.theguardian.com/environment/2026/jun/28/temperature-records-tumble-across-europe-as-heatwave-moves-east",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Heat records of over 40C set as extreme weather spreads east, with more than 191m in Europe enduring 35C or above&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;‘A sad inevitability’: after decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Germany, Czechia, Poland and Hungary reached record temp",
+          "published": "2026-06-28T17:10:05.000Z",
+          "score": 6
         },
         {
           "title": "Why some trees might fall during extreme heat",
@@ -96,6 +80,14 @@
           "description": "Scientists are studying how trees respond to hotter, drier conditions caused by climate change.",
           "published": "2026-06-28T06:07:05.000Z",
           "score": 4
+        },
+        {
+          "title": "Body of boy, 15, recovered from Manchester reservoir amid UK heatwave",
+          "link": "https://www.theguardian.com/uk-news/2026/jun/28/body-boy-manchester-reservoir-uk-heatwave",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;At least seven people have died in water-related incidents during record-breaking June temperatures&lt;/p&gt;&lt;p&gt;The body of a 15-year-old boy has been recovered from a reservoir near Manchester, as police renewed warnings about the dangers of swimming in open water during soaring temperatures.&lt;/p&gt;&lt;p&gt;Greater Manchester police said officers had been called to reports of a boy getting into difficulty in the water near Cowbury reservoir in Stalybridge at about 6.30pm on Sa",
+          "published": "2026-06-28T15:02:08.000Z",
+          "score": 2
         }
       ]
     },
@@ -112,7 +104,7 @@
           "title": "Europe heat wave: 1,000 excess deaths recorded in France",
           "link": "https://www.dw.com/en/europe-heat-wave-1-000-excess-deaths-recorded-in-france/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The French Health Ministry noted a sharp increase in deaths especially in areas hit hardest by the heat wave. Germany is meanwhile breaking for another potentially record-breaking day. Follow DW for the latest.",
+          "description": "The French Health Ministry has noted a sharp increase in deaths especially in areas hit hardest by the heat wave. Germany is meanwhile breaking for another potentially record-breaking day. Follow DW for the latest.",
           "published": "2026-06-28T07:08:00.000Z",
           "score": 8
         }
@@ -131,6 +123,22 @@
           "score": 8
         },
         {
+          "title": "Record heatwave disrupts Europe as France warns death toll to rise - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQZDVEbTVfU2p5WkVGd1pQNno1SnhQZjViZHR2MmdvUmlRZlIwRFQyblpoc3dqSTNPckhaTFMtUXBoQWFKa3dEWDlxLWVyR1NNR3JyMFRXbC1IUDY4Q1FNY21PdVU3OXc1Y04tWlN0aE15dktTaGtrYmd6SWdibDJ2REpKRm9qaTNtMWxjS3BZb1UxbGN0ZlhhTUFEQzlaX09Rd3A2ZDZ5NXRlaUY3WC1lUV9COS1DSHRUWWR1V1RLOA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQZDVEbTVfU2p5WkVGd1pQNno1SnhQZjViZHR2MmdvUmlRZlIwRFQyblpoc3dqSTNPckhaTFMtUXBoQWFKa3dEWDlxLWVyR1NNR3JyMFRXbC1IUDY4Q1FNY21PdVU3OXc1Y04tWlN0aE15dktTaGtrYmd6SWdibDJ2REpKRm9qaTNtMWxjS3BZb1UxbGN0ZlhhTUFEQzlaX09Rd3A2ZDZ5NXRlaUY3WC1lUV9COS1DSHRUWWR1V1RLOA?oc=5\" target=\"_blank\"&gt;Record heatwave disrupts Europe as France warns death toll to rise&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-28T16:38:58.000Z",
+          "score": 8
+        },
+        {
+          "title": "Austria urges Europe to host Anthropic following US curbs on AI access - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5\" target=\"_blank\"&gt;Austria urges Europe to host Anthropic following US curbs on AI access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-28T13:49:38.000Z",
+          "score": 8
+        },
+        {
           "title": "New Caledonia heads to polls in vote delayed since 2024",
           "link": "https://www.dw.com/en/new-caledonia-heads-to-polls-in-vote-delayed-since-2024/a-77741001?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -145,30 +153,14 @@
           "description": "An estimated 150 million people have been experiencing temperatures of over 35C across Europe.",
           "published": "2026-06-27T20:48:16.000Z",
           "score": 4
-        },
-        {
-          "title": "Families calling out to loved ones trapped in rubble by Venezuela quakes",
-          "link": "https://www.bbc.co.uk/news/articles/cp8l451420zo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "In La Guaira, desperate families keep vigil at buildings where they fear their relatives are trapped, but face an impossible task to move heavy debris.",
-          "published": "2026-06-27T21:12:51.000Z",
-          "score": 2
-        },
-        {
-          "title": "In Caracas, this feels like the hardest moment in Venezuela's modern history",
-          "link": "https://www.bbc.co.uk/news/articles/cdjk8zwe7z3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Rescue teams are working ceaselessly to reach those trapped under rubble. But as hope fades, anger is growing.",
-          "published": "2026-06-27T14:22:37.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 440,
-    "articlesLast24h": 148,
-    "afterDedup": 138,
+    "totalArticlesScanned": 435,
+    "articlesLast24h": 149,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
