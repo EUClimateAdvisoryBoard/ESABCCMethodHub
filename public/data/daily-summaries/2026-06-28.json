@@ -1,6 +1,6 @@
 {
   "date": "2026-06-28",
-  "generatedAt": "2026-06-28T06:32:39.515Z",
+  "generatedAt": "2026-06-28T11:38:13.572Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 28 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Doorstep Statement by Commissioner Lahbib at Budapest Pride",
-      "summary": "European Commission Statement Budapest, 27 Jun 2026 Last year we stood together in this city when Pride was banned, when people faced prosecution just for walking in the streets. Yet, you marched anyway, two hund...",
+      "headline": "Europe heatwave: drought fears in Italy as records tumble around Europe – as it happened",
+      "summary": "&lt;p&gt;Temperature records broken in Germany, Denmark and Slovakia as Europe remains gripped by heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;After decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Seawater is seeping into Italy’s longest river as the waterway starts to run dry in the heatwav",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -58,27 +58,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Doorstep Statement by Commissioner Lahbib at Budapest Pride",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1474",
-          "source": "European Commission",
-          "description": "European Commission Statement Budapest, 27 Jun 2026 Last year we stood together in this city when Pride was banned, when people faced prosecution just for walking in the streets. Yet, you marched anyway, two hund...",
-          "published": "2026-06-27T10:54:14.000Z",
-          "score": 14
-        },
-        {
           "title": "Europe heatwave: drought fears in Italy as records tumble around Europe – as it happened",
           "link": "https://www.theguardian.com/world/live/2026/jun/27/europe-heatwave-germany-poland-france-uk-temperature-heat-latest-news-updates",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Temperature records broken in Germany, Denmark and Slovakia as Europe remains gripped by heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;After decades of climate warnings, why is Europe so unprepared for rising heat?&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Seawater is seeping into Italy’s longest river as the waterway starts to run dry in the heatwav",
           "published": "2026-06-27T15:43:10.000Z",
-          "score": 13
-        },
-        {
-          "title": "‘A sad inevitability’: after decades of climate warnings, why is Europe so unprepared for rising heat?",
-          "link": "https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Scorching summer of 2003 triggered first efforts to deal with the problem but heatwaves still have devastating impact&lt;/p&gt;&lt;p&gt;On Wednesday, Pierre Masselot received a text from his daughter’s nursery – less than 50 miles from the weather station that was the first this week to &lt;a href=\"https://www.theguardian.com/environment/2026/jun/24/uk-records-hottest-june-day\"&gt;break the UK June temperature record&lt;/a&gt; – asking parents to collect children early because the schoo",
-          "published": "2026-06-27T11:00:03.000Z",
           "score": 13
         },
         {
@@ -90,12 +74,28 @@
           "score": 8
         },
         {
+          "title": "Rising cost of insuring against climate crisis will have wider knock-on effects for UK economy | Heather Stewart",
+          "link": "https://www.theguardian.com/business/2026/jun/28/rising-cost-insuring-against-climate-crisis-knock-on-effects-for-uk-economy",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;As extreme weather events become more common, economists say government will need to take more active role to protect consumers&lt;/p&gt;&lt;p&gt;Anyone attempting to notch up a productive day’s work in the searing heat of southern England this last week was left in little doubt about the impact of &lt;a href=\"https://www.theguardian.com/environment/extreme-heat\"&gt;extreme weather&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;But the economic effects of the climate crisis for the UK are not confined to",
+          "published": "2026-06-28T09:34:06.000Z",
+          "score": 7
+        },
+        {
           "title": "Reuters Climate Monitor - Reuters",
           "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5\" target=\"_blank\"&gt;Reuters Climate Monitor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-28T06:12:55.000Z",
+          "published": "2026-06-28T09:13:25.000Z",
           "score": 7
+        },
+        {
+          "title": "Why some trees might fall during extreme heat",
+          "link": "https://www.bbc.co.uk/news/articles/c87241v13x8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Scientists are studying how trees respond to hotter, drier conditions caused by climate change.",
+          "published": "2026-06-28T06:07:05.000Z",
+          "score": 4
         }
       ]
     },
@@ -109,11 +109,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Military-age Ukrainian men could lose EU protection",
-          "link": "https://www.dw.com/en/military-age-ukrainian-men-could-lose-eu-protection/a-77729285?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Europe heat wave: 1,000 excess deaths recorded in France",
+          "link": "https://www.dw.com/en/europe-heat-wave-1-000-excess-deaths-recorded-in-france/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Commission has suggested withdrawing protection status for military-age Ukrainian males. A number of EU countries support the move — and so does Kyiv.",
-          "published": "2026-06-27T09:45:00.000Z",
+          "description": "The French Health Ministry noted a sharp increase in deaths especially in areas hit hardest by the heat wave. Germany is meanwhile breaking for another potentially record-breaking day. Follow DW for the latest.",
+          "published": "2026-06-28T07:08:00.000Z",
           "score": 8
         }
       ]
@@ -123,26 +123,34 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe faces scorching weekend as heat wave moves east",
-          "link": "https://www.dw.com/en/europe-faces-scorching-weekend-as-heat-wave-moves-east/live-77663026?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Fact check: As Europe bakes, should you trust your sunscreen?",
+          "link": "https://www.dw.com/en/fact-check-as-europe-bakes-should-you-trust-your-sunscreen/a-77707226?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Europe&#039;s heat wave is expected to move east after causing record temperatures in several countries. But Germany still has a couple of torrid days ahead. DW has the latest.",
-          "published": "2026-06-27T08:48:00.000Z",
+          "description": "As a heat wave sweeps across Europe, claims are resurfacing online questioning whether sunscreen is safe or linked to skin cancer risk.",
+          "published": "2026-06-28T10:06:00.000Z",
           "score": 8
+        },
+        {
+          "title": "New Caledonia heads to polls in vote delayed since 2024",
+          "link": "https://www.dw.com/en/new-caledonia-heads-to-polls-in-vote-delayed-since-2024/a-77741001?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Security has been high at polling stations as the South Pacific archipelago holds its first provincial elections since 2019. The vote in the French territory was originally set for 2024 but was delayed by violent unrest.",
+          "published": "2026-06-28T08:23:00.000Z",
+          "score": 6
         },
         {
           "title": "Heatwave breaks records in Germany, Denmark and Czech Republic",
           "link": "https://www.bbc.co.uk/news/articles/cx2vdydz31no?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "An estimated 150 million people are now experiencing temperatures of over 35C across Europe.",
+          "description": "An estimated 150 million people have been experiencing temperatures of over 35C across Europe.",
           "published": "2026-06-27T20:48:16.000Z",
           "score": 4
         },
         {
-          "title": "'Every person saved is a miracle': Families call to trapped loved ones in region devastated by Venezuela quakes",
+          "title": "Families calling out to loved ones trapped in rubble by Venezuela quakes",
           "link": "https://www.bbc.co.uk/news/articles/cp8l451420zo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Families keep vigil at buildings where they fear their loved ones are trapped, but face an impossible task to move heavy debris.",
+          "description": "In La Guaira, desperate families keep vigil at buildings where they fear their relatives are trapped, but face an impossible task to move heavy debris.",
           "published": "2026-06-27T21:12:51.000Z",
           "score": 2
         },
@@ -153,22 +161,14 @@
           "description": "Rescue teams are working ceaselessly to reach those trapped under rubble. But as hope fades, anger is growing.",
           "published": "2026-06-27T14:22:37.000Z",
           "score": 2
-        },
-        {
-          "title": "US and Iran exchange strikes and accuse each other of violating ceasefire",
-          "link": "https://www.bbc.co.uk/news/articles/cdxdwkgqgq0o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Iran says it has launched retaliatory attacks at US infrastructure in Kuwait and Bahrain after the US said it hit multiple targets across Iran.",
-          "published": "2026-06-28T04:54:50.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 437,
-    "articlesLast24h": 145,
-    "afterDedup": 134,
+    "totalArticlesScanned": 440,
+    "articlesLast24h": 148,
+    "afterDedup": 138,
     "feedsQueried": 19
   }
 }
