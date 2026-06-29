@@ -1,6 +1,6 @@
 {
   "date": "2026-06-29",
-  "generatedAt": "2026-06-29T12:37:49.305Z",
+  "generatedAt": "2026-06-29T17:53:52.742Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 29 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "European Investment Bank commits €3 billion to Airbus - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQcVNyaHM4OTdDODZHTEZ3TjJPRTFuWFV6MVh1ZV82cDJhQWdCVG5TUXBtWEE4TzY2a2hCWmJKenJSbnlvUENHS3BFb3pOeGMwSDRkVUVmY3pzb1YwMlE1YTdtbm92Rlh6MnJKV3lmTVRVMV9UcGFvWFRtVUdKRE81b1pOeUJUTm9nWUhEMGJWck4tZ25ZWWotcmhRX1hVanBleHNlYXpITWQwbGhydzdBbjFR?oc=5\" target=\"_blank\"&gt;European Investment Bank commits €3 billion to Airbus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "EIB announces largest-ever loan: €3 billion to Airbus",
+      "summary": "The European Investment Bank (EIB) has said the loan, the largest in its history, is aimed at helping boost the EU planemaker&#039;s research efforts. The money will be directed to commercial and defense projects.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -42,11 +42,19 @@
           "score": 13
         },
         {
+          "title": "Dangerous temperatures forecast for parts of Europe as heatwave moves east",
+          "link": "https://www.theguardian.com/environment/2026/jun/29/dangerous-temperatures-forecast-central-eastern-europe-heatwave",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Red warnings issued in Hungary, Poland, Romania and the Balkans, with authorities urging people to stay indoors&lt;/p&gt;&lt;p&gt;Parts of central, eastern and southern Europe sweltered on Monday as the “heat dome” behind &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/europe-heatwave-impossible-without-climate-crisis-scientists\"&gt;last week’s record-breaking temperatures&lt;/a&gt; shifted east, bringing dangerous conditions to a new swathe of the continent.&lt;/p&gt;&l",
+          "published": "2026-06-29T15:49:19.000Z",
+          "score": 10
+        },
+        {
           "title": "Five people killed in shooting in northern Germany, police say – Europe live",
           "link": "https://www.theguardian.com/world/live/2026/jun/29/extreme-heat-europe-germany-poland-czechia-hungary-serbia-heatwave-nato-rutte-starmer-eu-latest-news-updates",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;German police say the main suspect has been apprehended after ‘numerous’ shots were fired&lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;Ukraine is bracing to absorb the impact of the heatwave on its energy network, already pummelled by Russian attacks over more than four years of war,&lt;/strong&gt; AFP reported.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Grid operators in at least five regions&lt;/strong&gt; – from Ivano-Frankivsk in the west to Zaporizhzhia on the frontline in the south – &lt;stron",
-          "published": "2026-06-29T12:19:49.000Z",
+          "description": "&lt;p&gt;German police say two people were apprehended after ‘numerous’ shots were fired at a youth care facility in Stade&lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;Ukraine is bracing to absorb the impact of the heatwave on its energy network, already pummelled by Russian attacks over more than four years of war,&lt;/strong&gt; AFP reported.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Grid operators in at least five regions&lt;/strong&gt; – from Ivano-Frankivsk in the west to Zaporizhzhia on the frontline ",
+          "published": "2026-06-29T15:10:23.000Z",
           "score": 10
         },
         {
@@ -62,15 +70,7 @@
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVGJBQ1lVU1hnSkY3a1A2a1VpbGxHOUloSllQY3Ytajl1dlpvUnNfRXFKQy1EbE5NM3AzVm1acko4SEp3VmhGS21nUjdXMlU4Z0RtM2xydFBVOUNzT0ZxNWdwSTVNMmlEbEtpLUZubnVoanJ0SGFfVElwbzA1UHIwRk05ci0yczVqaEg0WUxUcDRrUFF0bXdQTy0tTjk2bGQ5YjhwSTFkNndyNGFHYUVyVnZDVUw2ek1IRXR3N3hTSUw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVGJBQ1lVU1hnSkY3a1A2a1VpbGxHOUloSllQY3Ytajl1dlpvUnNfRXFKQy1EbE5NM3AzVm1acko4SEp3VmhGS21nUjdXMlU4Z0RtM2xydFBVOUNzT0ZxNWdwSTVNMmlEbEtpLUZubnVoanJ0SGFfVElwbzA1UHIwRk05ci0yczVqaEg0WUxUcDRrUFF0bXdQTy0tTjk2bGQ5YjhwSTFkNndyNGFHYUVyVnZDVUw2ek1IRXR3N3hTSUw?oc=5\" target=\"_blank\"&gt;China will lead both renewable energy and coal consumption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T07:16:40.000Z",
-          "score": 7
-        },
-        {
-          "title": "Australian energy exploration hits 10-year high in hunt for gas - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNcHNrTzlMc0RRdlZtVWJ3R21nYk0zajBGcTlBTzBWTDFNWUp0RjJ1bXUzdEl4eEFXQTJ0UjdMSzlSNUppRnZONFE5cnNZRU5QUDZjVmJRQzVMQ1ltNTd2c3hSTWpaLUNwNHhmYmRSZlZQajRKNXNJRWJHZUxKTHJldkw0U0RkVFNpc25ibXoyc1hTUjQ5QWNWY2Z6WGFSWkRXNDFxaHhtSlpBV3FL?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxNcHNrTzlMc0RRdlZtVWJ3R21nYk0zajBGcTlBTzBWTDFNWUp0RjJ1bXUzdEl4eEFXQTJ0UjdMSzlSNUppRnZONFE5cnNZRU5QUDZjVmJRQzVMQ1ltNTd2c3hSTWpaLUNwNHhmYmRSZlZQajRKNXNJRWJHZUxKTHJldkw0U0RkVFNpc25ibXoyc1hTUjQ5QWNWY2Z6WGFSWkRXNDFxaHhtSlpBV3FL?oc=5\" target=\"_blank\"&gt;Australian energy exploration hits 10-year high in hunt for gas&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T00:01:00.000Z",
+          "published": "2026-06-29T12:09:38.000Z",
           "score": 7
         }
       ]
@@ -85,6 +85,14 @@
           "source": "Carbon Brief",
           "description": "The Pine Island glacier in West Antarctica is one of the fastest-changing glaciers in the... The post Guest post: Climate change has caused one-fifth of Pine Island glacier retreat appeared first on Carbon Brief.",
           "published": "2026-06-28T23:01:00.000Z",
+          "score": 13
+        },
+        {
+          "title": "Europe heatwave shows need to reject climate denial ‘lies’, says EU green chief",
+          "link": "https://www.theguardian.com/environment/2026/jun/29/europe-heatwave-shows-need-to-reject-climate-denial-lies-says-eu-green-chief",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Teresa Ribera blames ‘ideologically driven’ falsehoods, driven by those with vested interests in fossil fuels, for attacks on green policy&lt;/p&gt;&lt;p&gt;The heatwave &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/women-low-income-families-bear-brunt-climate-crisis-heatwave\"&gt;wreaking chaos across Europe&lt;/a&gt; is a “dramatic warning” to reject climate naysayers, a European Commission vice-president says.&lt;/p&gt;&lt;p&gt;Teresa Ribera, executive vice-president",
+          "published": "2026-06-29T14:00:45.000Z",
           "score": 13
         },
         {
@@ -110,14 +118,6 @@
           "description": "&lt;p&gt;Plan to limit scrutiny of polluters and shift financial risks to taxpayers is attack on democracy, advocates say&lt;/p&gt;&lt;p&gt;The Trump administration is attempting to shrink public comment periods for fossil fuel leasing on federal land while shifting the financial risks of cleanup to taxpayers and allowing for more planet-warming emissions. It’s part of a broader effort to dismantle public input processes and save polluting companies money, advocates say.&lt;/p&gt;&lt;p&gt;“By ig",
           "published": "2026-06-29T11:30:42.000Z",
           "score": 7
-        },
-        {
-          "title": "Compliant farmers could face fewer inspections under new water pollution proposals",
-          "link": "https://www.bbc.co.uk/news/articles/cewq8jvekqgo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The latest draft Nutrients Action Policy caused controversy when it was initially launched last year.",
-          "published": "2026-06-29T12:00:04.000Z",
-          "score": 7
         }
       ]
     },
@@ -126,18 +126,10 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "European Investment Bank commits €3 billion to Airbus - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQcVNyaHM4OTdDODZHTEZ3TjJPRTFuWFV6MVh1ZV82cDJhQWdCVG5TUXBtWEE4TzY2a2hCWmJKenJSbnlvUENHS3BFb3pOeGMwSDRkVUVmY3pzb1YwMlE1YTdtbm92Rlh6MnJKV3lmTVRVMV9UcGFvWFRtVUdKRE81b1pOeUJUTm9nWUhEMGJWck4tZ25ZWWotcmhRX1hVanBleHNlYXpITWQwbGhydzdBbjFR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQcVNyaHM4OTdDODZHTEZ3TjJPRTFuWFV6MVh1ZV82cDJhQWdCVG5TUXBtWEE4TzY2a2hCWmJKenJSbnlvUENHS3BFb3pOeGMwSDRkVUVmY3pzb1YwMlE1YTdtbm92Rlh6MnJKV3lmTVRVMV9UcGFvWFRtVUdKRE81b1pOeUJUTm9nWUhEMGJWck4tZ25ZWWotcmhRX1hVanBleHNlYXpITWQwbGhydzdBbjFR?oc=5\" target=\"_blank\"&gt;European Investment Bank commits €3 billion to Airbus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T09:35:44.000Z",
-          "score": 8
-        },
-        {
           "title": "EIB announces largest-ever loan: €3 billion to Airbus",
           "link": "https://www.dw.com/en/eib-announces-largest-ever-loan-€3-billion-to-airbus/a-77753537?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The European Investment Bank (EIB) has said the loan, the largest in its history, is aimed at helping boost the EU plane maker&#039;s research efforts. The money will be directed to commercial and defense projects.",
+          "description": "The European Investment Bank (EIB) has said the loan, the largest in its history, is aimed at helping boost the EU planemaker&#039;s research efforts. The money will be directed to commercial and defense projects.",
           "published": "2026-06-29T11:00:00.000Z",
           "score": 4
         }
@@ -148,6 +140,14 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "AMENDMENTS 538 - 560 - Draft report on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles - PE789.893v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-AM-789893_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 538 - 560 - Draft report on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Transport and Tourism&lt;br/&gt;Tiemo Wölken, François Kalfon&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-06-29T15:26:54.000Z",
+          "score": 22
+        },
+        {
           "title": "DRAFT OPINION General budget of the European Union for the financial year 2027 - all sections - PE789.974v01-00",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-789974_EN.pdf",
           "source": "EU Parliament ENVI Committee",
@@ -156,11 +156,11 @@
           "score": 22
         },
         {
-          "title": "Minutes - Tuesday, 5 May 2026 - PE789.170v01-00 - Committee on Agriculture and Rural Development , Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ14-PV-2026-05-05-1_EN.pdf",
+          "title": "Minutes - Monday, 4 May 2026 - Tuesday, 5 May 2026 - PE788.964v01-00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-05-04-1_EN.pdf",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-29T09:44:32.000Z",
+          "published": "2026-06-29T12:53:04.000Z",
           "score": 18
         },
         {
@@ -170,6 +170,14 @@
           "description": "REPORT on the implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum&lt;br/&gt;Committee on Development&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lukas Mandl, Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-06-29T08:44:58.000Z",
           "score": 18
+        },
+        {
+          "title": "India seeks EU scrap export relief as curbs threaten trade pact gains - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbFlmd2lPUHlvV3Q4ZVgwMnJBSGd2Q1pEMU52NGMwT1BUMExjdmtzRlpldHJ1bDNwbVByY1FsWTJILVhYYUVCX2JXaTNKTWdhblFXUkNuV3U0RGYxZEtCX0xLa3F1QmVabmk5ZERKVVh3Y1FNbURsRUp6NUw1Sm5oZS1VbWVNS09HbGxETlNEbXZweUhtdlNFbUtCM1V1Rk9UWF9hRUdNYXliVHg0S3NWZ0RHdTQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPbFlmd2lPUHlvV3Q4ZVgwMnJBSGd2Q1pEMU52NGMwT1BUMExjdmtzRlpldHJ1bDNwbVByY1FsWTJILVhYYUVCX2JXaTNKTWdhblFXUkNuV3U0RGYxZEtCX0xLa3F1QmVabmk5ZERKVVh3Y1FNbURsRUp6NUw1Sm5oZS1VbWVNS09HbGxETlNEbXZweUhtdlNFbUtCM1V1Rk9UWF9hRUdNYXliVHg0S3NWZ0RHdTQ?oc=5\" target=\"_blank\"&gt;India seeks EU scrap export relief as curbs threaten trade pact gains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-29T06:05:00.000Z",
+          "score": 8
         }
       ]
     },
@@ -178,36 +186,20 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe rethinks how it fights war as Russian threat looms - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQby0yR1pSWFR5QzJrSU44MHlzRFNXdWNFRmxCZ0c3NVpoUW1TVGx5ak5FOHlLZ0RuM3JndFU5bTVUSE1QcGMtZ0pfTnA3N3FfQzZkMHl4VE5NY2F6VnZsckRvM1R5NWQzNEN5UzZJaG94OVVBekMtNnFMWm9DYl9YWDFwUHNQcjlmVHVxYzZWZDZlZjdCeTIxbTFoYjduZTdBUUFYTklORWF3MHpJLXQ2SlpLeXhobTRT?oc=5",
+          "title": "Volkswagen tells workers current job cuts are not enough, works council says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSU02N0h3bWU5OHUzSWJUMlVyVFUySVZ3NkhQbkRiLWdUazM2LUJObjdSMkZUcTFEa0dCeEdBc1diUTBsVmtDZnMtMFdieWdfX1BqWEdVTDBSNGtFTEZfV3N0dFNNeGk0SjFjQklXN0U0ZXJkUVpEU3UzZ0N1MHRDZ3dvcXd5NGFON2RnOTdNVE9zQUYtZ2d0X19vOUstME1IOXVJNHNVUV9kWTVTYmdjejVhU0N2UWx4Q3pPNDhrS2puUkVmaVlXTUdPZjBMUnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQby0yR1pSWFR5QzJrSU44MHlzRFNXdWNFRmxCZ0c3NVpoUW1TVGx5ak5FOHlLZ0RuM3JndFU5bTVUSE1QcGMtZ0pfTnA3N3FfQzZkMHl4VE5NY2F6VnZsckRvM1R5NWQzNEN5UzZJaG94OVVBekMtNnFMWm9DYl9YWDFwUHNQcjlmVHVxYzZWZDZlZjdCeTIxbTFoYjduZTdBUUFYTklORWF3MHpJLXQ2SlpLeXhobTRT?oc=5\" target=\"_blank\"&gt;Europe rethinks how it fights war as Russian threat looms&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T09:50:42.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQSU02N0h3bWU5OHUzSWJUMlVyVFUySVZ3NkhQbkRiLWdUazM2LUJObjdSMkZUcTFEa0dCeEdBc1diUTBsVmtDZnMtMFdieWdfX1BqWEdVTDBSNGtFTEZfV3N0dFNNeGk0SjFjQklXN0U0ZXJkUVpEU3UzZ0N1MHRDZ3dvcXd5NGFON2RnOTdNVE9zQUYtZ2d0X19vOUstME1IOXVJNHNVUV9kWTVTYmdjejVhU0N2UWx4Q3pPNDhrS2puUkVmaVlXTUdPZjBMUnc?oc=5\" target=\"_blank\"&gt;Volkswagen tells workers current job cuts are not enough, works council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-06-29T11:15:58.000Z",
           "score": 8
         },
         {
-          "title": "Austria urges Europe to host Anthropic following US curbs on AI access - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOV2VmbzlqUks2ZDZGQ2xYcDk0ZEVFS0hCSXFxMUg2amtkOWJmSDkxSV9mb0xRelFJSUMteUJFaG5YS2pSZHJfdVEzeXRPY3dYd2lSejg0SnFvQjhXU0Noak1fSUxuVnUxdDBpWUNKc3BtVTFKTHNSbnFfRkQ0aUY4dENia0pmOGNVeUZDeVVuZWdpS1hqV0R6S3dGcjJEbkV4YVNMS19hMEg2WFFUbGx0UEUtcmRkX0hnWkZz?oc=5\" target=\"_blank\"&gt;Austria urges Europe to host Anthropic following US curbs on AI access&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-28T13:49:38.000Z",
-          "score": 8
-        },
-        {
-          "title": "Sovereign investors with $29 trillion pivot to energy assets, flag dollar fears - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPcTU1TGpUQS1nWm1VemNlanY2aXd4Z014UklJSE5ubTl2Z1BMclhzMHlES1dfYktWd212anFRSWVZRV9rSVlGN0JzR1NZSF9iMmc3Mlp3NHYyNnRJNUdCSlFmdEg1R3VmeG41a3hsc0lIbnRHdWdndmkzTkdDQVMwcmRKVHJudFNQT3Vzdmg3b1Z6VjJGUzNZZ3dJaWhZQXZwZXkyYkJKTDNlNGhyc29OcGtNZmw5XzQtYkJiV0tpc3dyTG1BTlE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPcTU1TGpUQS1nWm1VemNlanY2aXd4Z014UklJSE5ubTl2Z1BMclhzMHlES1dfYktWd212anFRSWVZRV9rSVlGN0JzR1NZSF9iMmc3Mlp3NHYyNnRJNUdCSlFmdEg1R3VmeG41a3hsc0lIbnRHdWdndmkzTkdDQVMwcmRKVHJudFNQT3Vzdmg3b1Z6VjJGUzNZZ3dJaWhZQXZwZXkyYkJKTDNlNGhyc29OcGtNZmw5XzQtYkJiV0tpc3dyTG1BTlE?oc=5\" target=\"_blank\"&gt;Sovereign investors with $29 trillion pivot to energy assets, flag dollar fears&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-06-28T23:07:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Germany&#039;s development aid strategy under fire",
-          "link": "https://www.dw.com/en/germany-s-development-aid-strategy-under-fire/a-77721928?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EV myths muddy the road to electrification",
+          "link": "https://www.dw.com/en/ev-myths-muddy-the-road-to-electrification/a-77651984?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Days ahead of the launch of the North-South Commission, development aid organizations have urged the German government to reverse billions in cuts to development aid.",
-          "published": "2026-06-28T17:06:00.000Z",
-          "score": 4
+          "description": "Claims that electric vehicle batteries are tainted by exploitative mineral supply chains are discrediting non-fossil cars as electrified road transport booms.",
+          "published": "2026-06-29T14:13:00.000Z",
+          "score": 7
         },
         {
           "title": "Mum rescued from Venezuela rubble with newborn baby tells BBC how he helped her survive",
@@ -216,14 +208,30 @@
           "description": "The \"miracle\" rescue of 18-day-old baby Juan David is a symbol of hope in Venezuela after the devastating earthquakes.",
           "published": "2026-06-29T07:51:05.000Z",
           "score": 2
+        },
+        {
+          "title": "Sixth person dies after shooting at youth welfare centre in Germany",
+          "link": "https://www.bbc.co.uk/news/articles/c17yzzw1vkjo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Four women and a man were shot dead at the scene while a sixth person died in hospital, police say.",
+          "published": "2026-06-29T16:24:07.000Z",
+          "score": 2
+        },
+        {
+          "title": "Trump's final appeal of E Jean Carroll sex abuse case rejected",
+          "link": "https://www.bbc.co.uk/news/articles/cn8q2z5wpn2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Supreme Court decision means the US president will now have to pay Carroll the $5m (£3.6m) in damages she had been awarded.",
+          "published": "2026-06-29T15:30:35.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 445,
-    "articlesLast24h": 166,
-    "afterDedup": 156,
+    "totalArticlesScanned": 447,
+    "articlesLast24h": 170,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
