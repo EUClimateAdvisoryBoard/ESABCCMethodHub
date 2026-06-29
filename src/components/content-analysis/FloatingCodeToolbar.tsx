@@ -290,25 +290,40 @@ function useToolbarPosition(rect: DOMRect | null): React.CSSProperties | undefin
     // re-read the live selection on every scroll/resize and the toolbar tracks
     // the passage down the page.
     const TOOLBAR_HEIGHT = 40;
+    const TOOLBAR_HALF_WIDTH = 150; // approx — used only to keep it on-screen
     const GAP = 8;
+    const MARGIN = 8;
     const place = (r: DOMRect) => {
-      const preferredTop = r.top - TOOLBAR_HEIGHT - GAP;
-      const top = preferredTop < 8 ? r.bottom + GAP : preferredTop;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // Prefer just above the selection; flip below if that clips the top.
+      let top = r.top - TOOLBAR_HEIGHT - GAP;
+      if (top < MARGIN) top = r.bottom + GAP;
+      // Clamp to the viewport so the bar is ALWAYS visible — even once the
+      // marked passage has been scrolled out of view it sticks to the nearest
+      // edge instead of riding the text off-screen, so the analyst can always
+      // reach Apply / Pick-a-tag.
+      top = Math.min(Math.max(top, MARGIN), vh - TOOLBAR_HEIGHT - MARGIN);
+      let left = r.left + r.width / 2;
+      left = Math.min(
+        Math.max(left, TOOLBAR_HALF_WIDTH + MARGIN),
+        vw - TOOLBAR_HALF_WIDTH - MARGIN,
+      );
       setPos({
         position: 'fixed',
         top,
-        left: r.left + r.width / 2,
+        left,
         transform: 'translateX(-50%)',
       });
     };
 
     place(rect);
 
-    // Follow the selection as any ancestor scrolls (capture phase catches the
-    // inner scroll containers, which don't bubble scroll to window). For a text
-    // selection we read the live range rectangle so the toolbar stays glued to
-    // the words; a figure capture has no live selection, so we keep its
-    // original viewport anchor.
+    // Re-place the bar as any ancestor scrolls (capture phase catches the inner
+    // overflow:auto containers, which don't bubble scroll to window) and on
+    // resize. For a text selection we read the live range rectangle so the bar
+    // tracks the words; a figure capture has no live selection, so we re-clamp
+    // its original viewport anchor.
     const track = () => {
       const sel = window.getSelection();
       if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
