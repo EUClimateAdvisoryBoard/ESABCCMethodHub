@@ -1631,8 +1631,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         />
       ) : (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
-          {/* LEFT: corpus + add documents */}
-          <aside className="flex flex-col gap-3 min-h-0 min-w-0">
+          {/* LEFT: corpus + add documents. Pinned to the viewport on wide
+              screens (`lg:sticky` + `self-start` so it sizes to its content
+              rather than stretching to the tall PDF column) so the In-text
+              tags tree stays visible the whole way down a long document — the
+              page scrolls the PDF, not this rail. */}
+          <aside className="flex flex-col gap-3 min-h-0 min-w-0 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
             <div className="border border-grey-200 rounded-lg bg-white">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
                 <span className="text-[11px] font-semibold text-tertiary-dark">In this workspace</span>
@@ -1881,8 +1885,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
 
           {/* RIGHT RAIL: coded segments + general notes, stacked. Kept in a
               single column so the notes panel always sits directly beneath the
-              segments instead of wrapping to its own row on narrower screens. */}
-          <div className="flex flex-col gap-4 min-h-0 min-w-0">
+              segments instead of wrapping to its own row on narrower screens.
+              Pinned to the viewport like the left rail so the coded-segments
+              list stays in view while the centre PDF scrolls. */}
+          <div className="flex flex-col gap-4 min-h-0 min-w-0 lg:sticky lg:top-4 lg:self-start lg:max-h-[calc(100vh-2rem)] lg:overflow-y-auto">
             {/* Coded segments */}
             <aside className="border border-grey-200 rounded-lg bg-white min-h-0 min-w-0">
               <div className="px-3 py-2 border-b border-grey-200 flex items-center justify-between">
