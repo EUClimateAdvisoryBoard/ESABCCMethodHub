@@ -224,7 +224,29 @@ async function pullFromServer(opts?: { initial?: boolean }): Promise<void> {
     update(s => {
       const byIdSeg = new Map<string, CodedSegment>();
       for (const x of s.segments) byIdSeg.set(x.id, x);
-      for (const x of serverSegs) byIdSeg.set(x.id, x);
+      for (const x of serverSegs) {
+        // Server wins on id collision so teammates' edits (notes, retags)
+        // propagate here. But a server copy can come back missing the precise
+        // PDF anchor / figure screenshot the analyst just made — e.g. the
+        // durable store ran its legacy fallback and dropped pdf_anchor /
+        // screenshot because those columns aren't present on this deployment's
+        // schema. Blindly overwriting then erases the on-page highlight a few
+        // seconds after tagging (while the sidebar entry, which only needs the
+        // text, stays) — the exact "highlight disappears" symptom. Keep the
+        // local anchor fields whenever the server omits them so the highlight
+        // survives the sync regardless of the backend's schema.
+        const local = byIdSeg.get(x.id);
+        if (local && (local.pdfAnchor || local.screenshot || local.blockId)) {
+          byIdSeg.set(x.id, {
+            ...x,
+            pdfAnchor: x.pdfAnchor ?? local.pdfAnchor,
+            screenshot: x.screenshot ?? local.screenshot,
+            blockId: x.blockId ?? local.blockId,
+          });
+        } else {
+          byIdSeg.set(x.id, x);
+        }
+      }
       const bySuggId = new Map<string, CodeSuggestion>();
       for (const x of s.suggestions) bySuggId.set(x.id, x);
       for (const x of serverSuggs) bySuggId.set(x.id, x);

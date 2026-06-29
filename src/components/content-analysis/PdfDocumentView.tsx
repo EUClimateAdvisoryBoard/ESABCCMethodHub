@@ -121,6 +121,12 @@ export default function PdfDocumentView({
   const [pageWidth, setPageWidth] = useState(780);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [captureMode, setCaptureMode] = useState(false);
+  // Zoom factor for the PDF pages themselves — multiplies the rendered page
+  // width so the analyst can magnify the document without zooming the whole
+  // browser (which would also blow up the sidebar, toolbar and chrome). The
+  // overlay `scale` is read back from the real rendered width, so block boxes,
+  // segment highlights and figure capture all stay aligned at any zoom.
+  const [zoom, setZoom] = useState(1);
   const containerRef = useRef<HTMLDivElement>(null);
 
   // The URL currently handed to react-pdf. Starts at the primary source; if
@@ -152,6 +158,16 @@ export default function PdfDocumentView({
     window.addEventListener('resize', measure);
     return () => window.removeEventListener('resize', measure);
   }, [activeUrl]);
+
+  // The width each page is actually rendered at = the fit-to-container width
+  // times the user's zoom factor. Clamped well above 0 so a page never
+  // collapses to nothing.
+  const renderWidth = Math.max(120, Math.round(pageWidth * zoom));
+  const zoomPct = Math.round(zoom * 100);
+  const ZOOM_MIN = 0.5;
+  const ZOOM_MAX = 4;
+  const zoomBy = (delta: number) =>
+    setZoom(z => Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round((z + delta) * 100) / 100)));
 
   const blocksByPage = useMemo(() => {
     const map = new Map<number, Block[]>();
@@ -226,14 +242,50 @@ export default function PdfDocumentView({
 
   return (
     <div ref={containerRef} className="flex flex-col items-center">
-      {onSelectText && (
-        <div className="self-stretch flex items-center justify-between gap-2 px-1 pb-1">
+      <div className="self-stretch sticky top-0 z-20 flex items-center justify-between gap-2 px-1 pb-1 pt-0.5 bg-white/90 backdrop-blur-sm">
+        {onSelectText ? (
           <p className="text-[10px] text-tertiary-light">
             {captureMode
               ? 'Drag a box around a figure to capture it as a tag.'
               : 'Select any text on the page to tag it.'}
           </p>
-          {onCaptureRegion && (
+        ) : (
+          <span />
+        )}
+        <div className="shrink-0 flex items-center gap-1.5">
+          {/* PDF zoom — magnifies the pages only, not the browser chrome. */}
+          <div className="inline-flex items-center rounded border border-[#E6E7E8] bg-white overflow-hidden">
+            <button
+              type="button"
+              onClick={() => zoomBy(-0.25)}
+              disabled={zoom <= ZOOM_MIN}
+              title="Zoom out"
+              aria-label="Zoom out"
+              className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:opacity-40 disabled:cursor-default"
+            >
+              −
+            </button>
+            <button
+              type="button"
+              onClick={() => setZoom(1)}
+              title="Reset zoom to fit width"
+              aria-label="Reset zoom"
+              className="px-1.5 py-0.5 text-[10.5px] font-medium tabular-nums text-[#3D5265] hover:bg-[#F3F4F6] border-x border-[#E6E7E8] min-w-[42px]"
+            >
+              {zoomPct}%
+            </button>
+            <button
+              type="button"
+              onClick={() => zoomBy(0.25)}
+              disabled={zoom >= ZOOM_MAX}
+              title="Zoom in"
+              aria-label="Zoom in"
+              className="px-1.5 py-0.5 text-[12px] text-[#3D5265] hover:bg-[#F3F4F6] disabled:opacity-40 disabled:cursor-default"
+            >
+              +
+            </button>
+          </div>
+          {onSelectText && onCaptureRegion && (
             <button
               type="button"
               onClick={() => setCaptureMode(m => !m)}
@@ -250,7 +302,7 @@ export default function PdfDocumentView({
             </button>
           )}
         </div>
-      )}
+      </div>
       <Document
         file={file}
         onLoadSuccess={({ numPages }) => setNumPages(numPages)}
@@ -274,7 +326,7 @@ export default function PdfDocumentView({
           <PdfPageOverlay
             key={pageNumber}
             pageNumber={pageNumber}
-            width={pageWidth}
+            width={renderWidth}
             blocks={blocksByPage.get(pageNumber) ?? []}
             segmentsByBlock={segmentsByBlock}
             anchoredSegments={anchoredByPage.get(pageNumber) ?? []}
