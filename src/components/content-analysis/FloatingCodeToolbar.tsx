@@ -280,22 +280,49 @@ function useToolbarPosition(rect: DOMRect | null): React.CSSProperties | undefin
   const [pos, setPos] = useState<React.CSSProperties | undefined>(undefined);
   useLayoutEffect(() => {
     if (!rect) { setPos(undefined); return; }
-    // Anchor above the selection; if that would clip the viewport, flip below.
+
+    // Position relative to the viewport (`position: fixed`) so the toolbar
+    // anchors correctly no matter which container scrolls. The coding surfaces
+    // (PDF pane, extracted-text pane) live inside their own `overflow:auto`
+    // boxes, so `window.scrollY` never changes when the analyst scrolls them —
+    // an absolute, document-space position would leave the toolbar stranded
+    // while the marked text scrolled away beneath it. With a fixed position we
+    // re-read the live selection on every scroll/resize and the toolbar tracks
+    // the passage down the page.
     const TOOLBAR_HEIGHT = 40;
     const GAP = 8;
-    const scrollX = window.scrollX;
-    const scrollY = window.scrollY;
-    const preferredTop = rect.top + scrollY - TOOLBAR_HEIGHT - GAP;
-    const centeredLeft = rect.left + scrollX + rect.width / 2;
-    const position: React.CSSProperties = { position: 'absolute' };
-    if (preferredTop < scrollY + 8) {
-      position.top = rect.bottom + scrollY + GAP;
-    } else {
-      position.top = preferredTop;
-    }
-    position.left = centeredLeft;
-    position.transform = 'translateX(-50%)';
-    setPos(position);
+    const place = (r: DOMRect) => {
+      const preferredTop = r.top - TOOLBAR_HEIGHT - GAP;
+      const top = preferredTop < 8 ? r.bottom + GAP : preferredTop;
+      setPos({
+        position: 'fixed',
+        top,
+        left: r.left + r.width / 2,
+        transform: 'translateX(-50%)',
+      });
+    };
+
+    place(rect);
+
+    // Follow the selection as any ancestor scrolls (capture phase catches the
+    // inner scroll containers, which don't bubble scroll to window). For a text
+    // selection we read the live range rectangle so the toolbar stays glued to
+    // the words; a figure capture has no live selection, so we keep its
+    // original viewport anchor.
+    const track = () => {
+      const sel = window.getSelection();
+      if (sel && !sel.isCollapsed && sel.rangeCount > 0) {
+        const live = sel.getRangeAt(0).getBoundingClientRect();
+        if (live && (live.width > 0 || live.height > 0)) { place(live); return; }
+      }
+      place(rect);
+    };
+    window.addEventListener('scroll', track, true);
+    window.addEventListener('resize', track);
+    return () => {
+      window.removeEventListener('scroll', track, true);
+      window.removeEventListener('resize', track);
+    };
   }, [rect]);
   return pos;
 }
