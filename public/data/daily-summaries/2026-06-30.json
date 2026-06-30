@@ -1,6 +1,6 @@
 {
   "date": "2026-06-30",
-  "generatedAt": "2026-06-30T17:39:55.662Z",
+  "generatedAt": "2026-06-30T23:32:43.846Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 30 June 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Six charts show how clean power was world’s largest source of new energy in 2025",
-      "summary": "Clean power added more to global energy supplies than any other source in 2025, according... The post Six charts show how clean power was world’s largest source of new energy in 2025 appeared first on Carbon Brief.",
+      "headline": "With extreme heat now a public health crisis, local data can save lives",
+      "summary": "The impacts of extreme heat vary widely across countries and cities, and approaches tailored using data can target solutions at vulnerable groups The post With extreme heat now a public health crisis, local data can save lives appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -50,20 +50,20 @@
           "score": 7
         },
         {
+          "title": "Many Australians can get three free hours of power from today. Here’s how",
+          "link": "https://www.theguardian.com/environment/2026/jun/30/solar-sharer-offer-sso-three-free-hours-electricity-power-energy-australia",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Residents of Queensland, New South Wales and South Australia with a smart meter can access the Solar Sharer offer from 1 July&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/01/australia-politics-live-labor-kpmg-daniel-mulino-jim-chalmers-anthony-albanese-question-time-coalition-angus-taylor-one-nation-pauline-hanson-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&g",
+          "published": "2026-06-30T15:00:13.000Z",
+          "score": 4
+        },
+        {
           "title": "China is a clear winner from Trump’s war in Middle East, report concludes",
           "link": "https://www.theguardian.com/world/2026/jun/30/china-clear-winner-trump-war-middle-east-report-iran-strait-of-hormuz",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Beijing, whose stockpiles and renewables industry allowed it to withstand energy shock, is now gaining from global solar and EV push&lt;/p&gt;&lt;p&gt;China has emerged as the sole winner in Asia from the strait of Hormuz crisis, according to &lt;a href=\"https://straitofhormuz.theasiagroup.com/about/\"&gt;a report&lt;/a&gt; published on Tuesday.&lt;/p&gt;&lt;p&gt;The report by the geopolitical consulting firm Asia Group concluded that China had weathered the storm of the global commoditi",
           "published": "2026-06-30T11:11:58.000Z",
           "score": 4
-        },
-        {
-          "title": "North Korea's sanctioned coal trade rebounds as UN monitoring lapses, rights group says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNS2VfYTB3bzh6WGNZTUZ5Q0ViS1ZFWVV5cWRjTWRGMm9SVGdGOS1obUxvWDdkMlh3THVuV0R0NXp1Z3gtN3N3VEpPNG8yaXdCMTV2RzF1XzBIRGpwSHRMc0JlekpCaUdLWWpxNERrVzNDQVJCRUY0THBlMlJYUFNfMi1UWlNnbVdUT1pxYktQNnFmLVF4VjQwTFNGMHpjUzdYRVRIbE8zenRxYS1nYWNaZ2NuUlV1cnhWbE5mUjZhWTJTaThrZXMycjhwSXU?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNS2VfYTB3bzh6WGNZTUZ5Q0ViS1ZFWVV5cWRjTWRGMm9SVGdGOS1obUxvWDdkMlh3THVuV0R0NXp1Z3gtN3N3VEpPNG8yaXdCMTV2RzF1XzBIRGpwSHRMc0JlekpCaUdLWWpxNERrVzNDQVJCRUY0THBlMlJYUFNfMi1UWlNnbVdUT1pxYktQNnFmLVF4VjQwTFNGMHpjUzdYRVRIbE8zenRxYS1nYWNaZ2NuUlV1cnhWbE5mUjZhWTJTaThrZXMycjhwSXU?oc=5\" target=\"_blank\"&gt;North Korea's sanctioned coal trade rebounds as UN monitoring lapses, rights group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
-          "published": "2026-06-29T21:07:30.000Z",
-          "score": 2
         }
       ]
     },
@@ -71,14 +71,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Six charts show how clean power was world’s largest source of new energy in 2025",
-          "link": "https://www.carbonbrief.org/six-charts-show-how-clean-power-was-worlds-largest-source-of-new-energy-in-2025/",
-          "source": "Carbon Brief",
-          "description": "Clean power added more to global energy supplies than any other source in 2025, according... The post Six charts show how clean power was world’s largest source of new energy in 2025 appeared first on Carbon Brief.",
-          "published": "2026-06-29T23:01:00.000Z",
-          "score": 13
-        },
         {
           "title": "With extreme heat now a public health crisis, local data can save lives",
           "link": "https://www.climatechangenews.com/2026/06/30/with-extreme-heat-now-a-public-health-crisis-local-data-can-save-lives/",
@@ -110,6 +102,14 @@
           "description": "&lt;p&gt;Climate campaigners question choice of James Evans for role given past criticism of green energy projects&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The appointment of a Reform UK member of the Senedd Cymru as the chair of a key Welsh environmental c",
           "published": "2026-06-30T11:00:05.000Z",
           "score": 8
+        },
+        {
+          "title": "World Cup matches played in potentially dangerous heat as players’ union makes climate warning",
+          "link": "https://www.theguardian.com/us-news/2026/jun/30/world-cup-matches-extreme-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Nine of the group stage games played in severe heat, analysis finds, as union points to lessons for the whole sport&lt;/p&gt;&lt;p&gt;Nine matches in the &lt;a href=\"https://www.theguardian.com/football/world-cup-football\"&gt;World Cup&lt;/a&gt; group stage were played amid potentially dangerous heat and humidity, a Guardian analysis shows, as the global players’ union Fifpro warned that heat would have to “play a bigger part” in the sport’s future scheduling decisions.&lt;/p&gt;&lt;p&g",
+          "published": "2026-06-30T16:00:10.000Z",
+          "score": 7
         }
       ]
     },
@@ -132,6 +132,14 @@
           "description": "&lt;p&gt;Critics debunk economic claims as research finds Rosebank development would produce estimated 250m tonnes of CO2&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Scores of Labour MPs have urged the prospective prime minister Andy Burnham to rule out the “t",
           "published": "2026-06-30T13:00:07.000Z",
           "score": 2
+        },
+        {
+          "title": "Oppenheimer makes rare cuts to top US investment banks, backs alternative asset managers - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGlqYm92N2FkWXFfRzhOY0ItZmhWTWV5a3hRdUw5WTBDcHdOWlpLc1ZIZEcwX2RtTVl3NDZVZ19KVzZXRnVIbHJ3SGZZcWNVUGxhT2d1MFc1RlJRVEtCVGZRSjRmVGZNZUVPalAzelc0VmlwYjc5enJiUHJZRWltTDFPcDdSOHc1NTREeVJwSlNQb1BBdDFFYktKa28zcXRIQW42OXdqMlNxNi1hMUlpaXZBOVdGWExJcE5EUm4weVBleC1TWnU0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGlqYm92N2FkWXFfRzhOY0ItZmhWTWV5a3hRdUw5WTBDcHdOWlpLc1ZIZEcwX2RtTVl3NDZVZ19KVzZXRnVIbHJ3SGZZcWNVUGxhT2d1MFc1RlJRVEtCVGZRSjRmVGZNZUVPalAzelc0VmlwYjc5enJiUHJZRWltTDFPcDdSOHc1NTREeVJwSlNQb1BBdDFFYktKa28zcXRIQW42OXdqMlNxNi1hMUlpaXZBOVdGWExJcE5EUm4weVBleC1TWnU0?oc=5\" target=\"_blank\"&gt;Oppenheimer makes rare cuts to top US investment banks, backs alternative asset managers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
+          "published": "2026-06-30T16:56:22.000Z",
+          "score": 2
         }
       ]
     },
@@ -145,11 +153,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "Australia sues Amazon for making allegedly unfair contracts with subscribers",
+          "link": "https://www.bbc.co.uk/news/articles/c20yz9rzwy0o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Australian Competition and Consumer Commission (ACCC) says Amazon has broken consumer protection law",
+          "published": "2026-06-30T18:59:19.000Z",
+          "score": 8
+        },
+        {
           "title": "EU opens antitrust probe into Align Technology over Invisalign, scanner tying - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOUpuQmE1dndGdDlXVG5pVDEyT2prdE5JM1hYMk5zUlVYZmZqUVBKaUtvcTJOMkl1bjVWM0pjZFJaVV9FeWxLc1AxT3FTcDNiU2ZqaDNIU2htQTAwSTZ5c0puRkw1YnhuRTZYREJVT3V1T2E2RDZuYnNKNURnWmJBeXRmS2pBSVQwTjVGQzJ6bVBPQkw5QW1xbndZQ3BzNldDMi1rNUhoeDZlNVpiTVRycWFfb2hrV1JLUlE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNOUpuQmE1dndGdDlXVG5pVDEyT2prdE5JM1hYMk5zUlVYZmZqUVBKaUtvcTJOMkl1bjVWM0pjZFJaVV9FeWxLc1AxT3FTcDNiU2ZqaDNIU2htQTAwSTZ5c0puRkw1YnhuRTZYREJVT3V1T2E2RDZuYnNKNURnWmJBeXRmS2pBSVQwTjVGQzJ6bVBPQkw5QW1xbndZQ3BzNldDMi1rNUhoeDZlNVpiTVRycWFfb2hrV1JLUlE?oc=5\" target=\"_blank\"&gt;EU opens antitrust probe into Align Technology over Invisalign, scanner tying&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T13:13:13.000Z",
+          "published": "2026-06-30T13:14:31.000Z",
           "score": 8
         },
         {
@@ -165,31 +181,23 @@
           "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTjRUbkswRkFxMTZLNTczbTROdXpJaXVabmFyb1F1Wl9FSzZhYVpCWXBkbXNmNkZjSmpZVXhuTXU3Z3YyOUJwZEtGendZTjJETzVlVlpRMDZ3U0ZoRVg5Tm1YWThjSndTMmRobGVHWjdIUE9talhwekRIUE9UYTFyUmJDYjVveFBwZTROdmVvSFNBaEtfekFtREhFcy1GTlRvbXM0a2FlbmFkN1U1bGc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOTjRUbkswRkFxMTZLNTczbTROdXpJaXVabmFyb1F1Wl9FSzZhYVpCWXBkbXNmNkZjSmpZVXhuTXU3Z3YyOUJwZEtGendZTjJETzVlVlpRMDZ3U0ZoRVg5Tm1YWThjSndTMmRobGVHWjdIUE9talhwekRIUE9UYTFyUmJDYjVveFBwZTROdmVvSFNBaEtfekFtREhFcy1GTlRvbXM0a2FlbmFkN1U1bGc?oc=5\" target=\"_blank\"&gt;France suspends 2-euro charge on low-value packages as EU fee kicks in&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T06:40:00.000Z",
+          "published": "2026-06-30T06:41:44.000Z",
           "score": 8
         },
         {
-          "title": "US birthright citizenship: What does Trump&#039;s loss mean?",
-          "link": "https://www.dw.com/en/us-birthright-citizenship-what-does-trump-s-loss-mean/a-77773604?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The US Supreme Court has blocked Donald Trump’s attempt to end birthright citizenship, leaving US law unchanged. But why was the issue so important to Donald Trump, and what does his loss really mean?",
-          "published": "2026-06-30T14:08:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "US House passes youth online safety legislation - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPWmtuRnNwMzdoOEVZdUltbUVQc2EtYzRocENuZF9rOHlCVzdsM3pvNkFuMDFXTEJ6cXJVRTR0V2hSWTFJQUNTdWtldXNMQWRrc0FhaGNGWXBnZVVMX1RjZkh3bWR1MEU5bGVDN0VJbHBlMHkxYnhzMURvV0c2NzR2b2FsX19ONUxldFgxcXVQQUc4UVk?oc=5",
+          "title": "Air Products to exit Louisiana clean energy project; flags $2.9 billion hit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNY2t6NnJvMFJtcGN0UjJkdnNOVlB4NXRqUE0tcm5HWmFUWFlYM0RVeU1MUXdSX09ZU3dpODhGT2dMempXQVlzZlpYaEp6OUV5RTF0OTREaFZ3cWMza0tuSXA1RTVldTVPWkYzMTlhRFc3REo4Z0h3bENrWERXRENrSnh0TGxPWHItTkQ1WHYwQ3RBQmY3QWlKSVlsQ3FCQi1Sb0U1cFU0eW4zemJvNlI1Y1JhZmpPaFZ3NGxOa05Law?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPWmtuRnNwMzdoOEVZdUltbUVQc2EtYzRocENuZF9rOHlCVzdsM3pvNkFuMDFXTEJ6cXJVRTR0V2hSWTFJQUNTdWtldXNMQWRrc0FhaGNGWXBnZVVMX1RjZkh3bWR1MEU5bGVDN0VJbHBlMHkxYnhzMURvV0c2NzR2b2FsX19ONUxldFgxcXVQQUc4UVk?oc=5\" target=\"_blank\"&gt;US House passes youth online safety legislation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T23:37:48.000Z",
-          "score": 6
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNY2t6NnJvMFJtcGN0UjJkdnNOVlB4NXRqUE0tcm5HWmFUWFlYM0RVeU1MUXdSX09ZU3dpODhGT2dMempXQVlzZlpYaEp6OUV5RTF0OTREaFZ3cWMza0tuSXA1RTVldTVPWkYzMTlhRFc3REo4Z0h3bENrWERXRENrSnh0TGxPWHItTkQ1WHYwQ3RBQmY3QWlKSVlsQ3FCQi1Sb0U1cFU0eW4zemJvNlI1Y1JhZmpPaFZ3NGxOa05Law?oc=5\" target=\"_blank\"&gt;Air Products to exit Louisiana clean energy project; flags $2.9 billion hit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T17:17:43.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 442,
-    "articlesLast24h": 169,
+    "totalArticlesScanned": 432,
+    "articlesLast24h": 167,
     "afterDedup": 161,
     "feedsQueried": 19
   }
