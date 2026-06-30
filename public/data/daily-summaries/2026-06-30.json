@@ -1,12 +1,12 @@
 {
   "date": "2026-06-30",
-  "generatedAt": "2026-06-30T06:33:30.671Z",
+  "generatedAt": "2026-06-30T11:58:10.692Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 30 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "We need no-go mining zones for the energy transition to be just: Here&#8217;s how it could work",
-      "summary": "As rising demand for critical minerals is compounding threats to fragile ecosystems, NGOs have mapped out areas that should be off-limits to mining The post We need no-go mining zones for the energy transition to be just: Here&#8217;s how it could work appeared first on Climate Home News.",
+      "headline": "Dangerous temperatures forecast for parts of Europe as heatwave moves east",
+      "summary": "&lt;p&gt;Red warnings issued in Hungary, Poland, Romania and the Balkans, with authorities urging people to stay indoors&lt;/p&gt;&lt;p&gt;Parts of central, eastern and southern Europe sweltered on Monday as the “heat dome” behind &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/europe-heatwave-impossible-without-climate-crisis-scientists\"&gt;last week’s record-breaking temperatures&lt;/a&gt; shifted east, bringing dangerous conditions to a new swathe of the continent.&lt;/p&gt;&l",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "Clean power added more to global energy supplies than any other source in 2025, according... The post Six charts show how clean power was world’s largest source of new energy in 2025 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "EIB announces largest-ever loan: €3 billion to Airbus",
-      "summary": "The European Investment Bank (EIB) has said the loan, the largest in its history, is aimed at helping boost the EU planemaker&#039;s research efforts. The money will be directed to commercial and defense projects.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "We need no-go mining zones for the energy transition to be just: Here&#8217;s how it could work",
-          "link": "https://www.climatechangenews.com/2026/06/29/we-need-no-go-mining-zones-for-the-energy-transition-to-be-just-heres-how-it-could-work/",
-          "source": "Climate Home News",
-          "description": "As rising demand for critical minerals is compounding threats to fragile ecosystems, NGOs have mapped out areas that should be off-limits to mining The post We need no-go mining zones for the energy transition to be just: Here&#8217;s how it could work appeared first on Climate Home News.",
-          "published": "2026-06-29T09:19:50.000Z",
-          "score": 13
-        },
         {
           "title": "Dangerous temperatures forecast for parts of Europe as heatwave moves east",
           "link": "https://www.theguardian.com/environment/2026/jun/29/dangerous-temperatures-forecast-central-eastern-europe-heatwave",
@@ -58,20 +44,20 @@
           "score": 10
         },
         {
-          "title": "China will lead both renewable energy and coal consumption - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVGJBQ1lVU1hnSkY3a1A2a1VpbGxHOUloSllQY3Ytajl1dlpvUnNfRXFKQy1EbE5NM3AzVm1acko4SEp3VmhGS21nUjdXMlU4Z0RtM2xydFBVOUNzT0ZxNWdwSTVNMmlEbEtpLUZubnVoanJ0SGFfVElwbzA1UHIwRk05ci0yczVqaEg0WUxUcDRrUFF0bXdQTy0tTjk2bGQ5YjhwSTFkNndyNGFHYUVyVnZDVUw2ek1IRXR3N3hTSUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVGJBQ1lVU1hnSkY3a1A2a1VpbGxHOUloSllQY3Ytajl1dlpvUnNfRXFKQy1EbE5NM3AzVm1acko4SEp3VmhGS21nUjdXMlU4Z0RtM2xydFBVOUNzT0ZxNWdwSTVNMmlEbEtpLUZubnVoanJ0SGFfVElwbzA1UHIwRk05ci0yczVqaEg0WUxUcDRrUFF0bXdQTy0tTjk2bGQ5YjhwSTFkNndyNGFHYUVyVnZDVUw2ek1IRXR3N3hTSUw?oc=5\" target=\"_blank\"&gt;China will lead both renewable energy and coal consumption&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T22:00:24.000Z",
-          "score": 7
-        },
-        {
           "title": "Stalled US permits threaten $121 billion in wind and solar investment, report shows - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMkdlLXZoSlM2TG5EZ1kyRmlxOHVrdVdfd3JvNXdWMlFIZU1TbjdfNzdZN0R1b3Z2RzJvTnQ4a2NYVW5uV2F3aVlaWE1ERUxOcXIzemRVdmJWYWxMN193MDcwTlhNZFFOclpxTm9Kb1JDcGFxV2poYms0dnQ5Mll1dTlpRDhpUG5ickotSHBONWFGSndWRlpnMmRza2VUTDhMcWRXcjZkemtwdGxoVXQzZ3lwZnBSalM1?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMkdlLXZoSlM2TG5EZ1kyRmlxOHVrdVdfd3JvNXdWMlFIZU1TbjdfNzdZN0R1b3Z2RzJvTnQ4a2NYVW5uV2F3aVlaWE1ERUxOcXIzemRVdmJWYWxMN193MDcwTlhNZFFOclpxTm9Kb1JDcGFxV2poYms0dnQ5Mll1dTlpRDhpUG5ickotSHBONWFGSndWRlpnMmRza2VUTDhMcWRXcjZkemtwdGxoVXQzZ3lwZnBSalM1?oc=5\" target=\"_blank\"&gt;Stalled US permits threaten $121 billion in wind and solar investment, report shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-29T15:15:59.000Z",
           "score": 7
+        },
+        {
+          "title": "China is a clear winner from Trump’s war in Middle East, report concludes",
+          "link": "https://www.theguardian.com/world/2026/jun/30/china-clear-winner-trump-war-middle-east-report-iran-strait-of-hormuz",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Beijing, whose stockpiles and renewables industry allowed it to withstand energy shock, is now gaining from global solar and EV push&lt;/p&gt;&lt;p&gt;China has emerged as the sole winner in Asia from the strait of Hormuz crisis, according to &lt;a href=\"https://straitofhormuz.theasiagroup.com/about/\"&gt;a report&lt;/a&gt; published on Tuesday.&lt;/p&gt;&lt;p&gt;The report by the Asia Group thinktank concluded that China had weathered the storm of the global commodities crisis resulting",
+          "published": "2026-06-30T11:11:58.000Z",
+          "score": 4
         }
       ]
     },
@@ -88,12 +74,20 @@
           "score": 13
         },
         {
-          "title": "Europe heatwave shows need to reject climate denial ‘lies’, says EU green chief",
-          "link": "https://www.theguardian.com/environment/2026/jun/29/europe-heatwave-shows-need-to-reject-climate-denial-lies-says-eu-green-chief",
+          "title": "UN plastics pact talks restart amid fears production curbs will be left out",
+          "link": "https://www.climatechangenews.com/2026/06/30/un-plastics-pact-talks-restart-amid-fears-production-curbs-will-be-left-out/",
+          "source": "Climate Home News",
+          "description": "Diplomats reconvene a year after negotiations collapsed, but campaigners fear the agenda risks burying tricky discussions on key elements The post UN plastics pact talks restart amid fears production curbs will be left out appeared first on Climate Home News.",
+          "published": "2026-06-30T09:06:14.000Z",
+          "score": 10
+        },
+        {
+          "title": "Reader Q&amp;A: ask Ajit Niranjan anything about Europe’s hellish week of heat",
+          "link": "https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Teresa Ribera blames ‘ideologically driven’ falsehoods, driven by those with vested interests in fossil fuels, for attacks on green policy&lt;/p&gt;&lt;p&gt;The heatwave &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/women-low-income-families-bear-brunt-climate-crisis-heatwave\"&gt;wreaking chaos across Europe&lt;/a&gt; is a “dramatic warning” to reject climate naysayers, a European Commission vice-president says.&lt;/p&gt;&lt;p&gt;Teresa Ribera, executive vice-president",
-          "published": "2026-06-29T14:00:45.000Z",
-          "score": 13
+          "description": "&lt;p&gt;Our European environment correspondent has been reporting on the shocking heatwave that continues to scorch its way across Europe, covering everything from the &lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;lack of preparation&lt;/a&gt; to &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/adapting-heat-ideas-from-european-cities\"&gt;ways to deal with the heat&lt;/a&gt;&lt;br&gt;&lt;br&gt;Pos",
+          "published": "2026-06-30T08:00:53.000Z",
+          "score": 10
         },
         {
           "title": "Trump administration targets California coastal agency in escalation of energy production fight",
@@ -104,36 +98,19 @@
           "score": 9
         },
         {
-          "title": "Trump officials to slash public input on fossil fuel drilling on federal lands",
-          "link": "https://www.theguardian.com/us-news/2026/jun/29/fossil-fuel-federal-lands-public-input",
+          "title": "Reform UK chair of Welsh environment committee may ‘undermine scrutiny’, says thinktank",
+          "link": "https://www.theguardian.com/environment/2026/jun/30/reform-mp-chair-of-welsh-environment-committee-may-undermine-scrutiny-says-thinktank",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Plan to limit scrutiny of polluters and shift financial risks to taxpayers is attack on democracy, advocates say&lt;/p&gt;&lt;p&gt;The Trump administration is attempting to shrink public comment periods for fossil fuel leasing on federal land while shifting the financial risks of cleanup to taxpayers and allowing for more planet-warming emissions. It’s part of a broader effort to dismantle public input processes and save polluting companies money, advocates say.&lt;/p&gt;&lt;p&gt;“By ig",
-          "published": "2026-06-29T11:30:42.000Z",
-          "score": 7
-        },
-        {
-          "title": "Compliant farmers could face fewer inspections under new pollution proposals",
-          "link": "https://www.bbc.co.uk/news/articles/cewq8jvekqgo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The latest draft Nutrients Action Policy caused controversy when it was initially launched last year.",
-          "published": "2026-06-29T12:00:04.000Z",
-          "score": 7
+          "description": "&lt;p&gt;Climate campaigners question choice of James Evans for role given past criticism of green energy projects&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The appointment of a Reform UK member of the Senedd Cymru as the chair of a key Welsh environmental c",
+          "published": "2026-06-30T11:00:05.000Z",
+          "score": 8
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "EIB announces largest-ever loan: €3 billion to Airbus",
-          "link": "https://www.dw.com/en/eib-announces-largest-ever-loan-€3-billion-to-airbus/a-77753537?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The European Investment Bank (EIB) has said the loan, the largest in its history, is aimed at helping boost the EU planemaker&#039;s research efforts. The money will be directed to commercial and defense projects.",
-          "published": "2026-06-29T11:00:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -148,36 +125,12 @@
           "score": 22
         },
         {
-          "title": "DRAFT OPINION General budget of the European Union for the financial year 2027 - all sections - PE789.974v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-789974_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT OPINION General budget of the European Union for the financial year 2027 - all sections&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-29T10:33:21.000Z",
-          "score": 22
-        },
-        {
           "title": "Minutes - Monday, 4 May 2026 - Tuesday, 5 May 2026 - PE788.964v01-00 - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-05-04-1_EN.pdf",
           "source": "EU Parliament ENVI Committee",
           "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
           "published": "2026-06-29T12:53:04.000Z",
           "score": 18
-        },
-        {
-          "title": "REPORT on the implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum - A10-0187/2026",
-          "link": "https://www.europarl.europa.eu/doceo/document/A-10-2026-0187_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "REPORT on the implementation and delivery of the Sustainable Development Goals in view of the 2026 High-Level Political Forum&lt;br/&gt;Committee on Development&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lukas Mandl, Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-29T08:44:58.000Z",
-          "score": 18
-        },
-        {
-          "title": "EU trade chief wants results on trade talks with China by October - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOZ3lfSHFWUkVsb2llaWhmd0w2OTU2dW1oNTFZYUVmcXY4c19GZ194LXJ5OUcxSnIwZWN5NVJRaHJLZnp5SHpZUFV6YW5MYzhoaWtzcVVMRDRDNmpTVHI2WDVHbzlBOXlQUHJNa0dydzdHRkhBUEFNSU4ybjBNa2U2cVNXU21JaFFpTC1RMEpseWNacUxnV2NndDRYdjZEMjRtRDBCeDlMNDRqemxORGs1OA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOZ3lfSHFWUkVsb2llaWhmd0w2OTU2dW1oNTFZYUVmcXY4c19GZ194LXJ5OUcxSnIwZWN5NVJRaHJLZnp5SHpZUFV6YW5MYzhoaWtzcVVMRDRDNmpTVHI2WDVHbzlBOXlQUHJNa0dydzdHRkhBUEFNSU4ybjBNa2U2cVNXU21JaFFpTC1RMEpseWNacUxnV2NndDRYdjZEMjRtRDBCeDlMNDRqemxORGs1OA?oc=5\" target=\"_blank\"&gt;EU trade chief wants results on trade talks with China by October&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T17:18:00.000Z",
-          "score": 8
         }
       ]
     },
@@ -186,19 +139,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Volkswagen tells workers current job cuts are not enough, works council says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQSU02N0h3bWU5OHUzSWJUMlVyVFUySVZ3NkhQbkRiLWdUazM2LUJObjdSMkZUcTFEa0dCeEdBc1diUTBsVmtDZnMtMFdieWdfX1BqWEdVTDBSNGtFTEZfV3N0dFNNeGk0SjFjQklXN0U0ZXJkUVpEU3UzZ0N1MHRDZ3dvcXd5NGFON2RnOTdNVE9zQUYtZ2d0X19vOUstME1IOXVJNHNVUV9kWTVTYmdjejVhU0N2UWx4Q3pPNDhrS2puUkVmaVlXTUdPZjBMUnc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQSU02N0h3bWU5OHUzSWJUMlVyVFUySVZ3NkhQbkRiLWdUazM2LUJObjdSMkZUcTFEa0dCeEdBc1diUTBsVmtDZnMtMFdieWdfX1BqWEdVTDBSNGtFTEZfV3N0dFNNeGk0SjFjQklXN0U0ZXJkUVpEU3UzZ0N1MHRDZ3dvcXd5NGFON2RnOTdNVE9zQUYtZ2d0X19vOUstME1IOXVJNHNVUV9kWTVTYmdjejVhU0N2UWx4Q3pPNDhrS2puUkVmaVlXTUdPZjBMUnc?oc=5\" target=\"_blank\"&gt;Volkswagen tells workers current job cuts are not enough, works council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-06-29T11:15:58.000Z",
-          "score": 8
-        },
-        {
           "title": "Jeep plans six-model range in Europe by 2030, including China-built large SUV - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOY2tjdHBEbjBhYjVadS1LWlZvNW9Uc0E2RWhxQmgxZUprQlpWMEd1d1dpSjlzbkNNTDhEekUzeExIbWNWRGFmY0JfOFFNYm9LVmdCem9iSmJEM2RsTGU3X3lCVFB2UjZLSDh5blh0Q01aeFZIYm1WRFk4SjJLb3h1NS0xam5Bb0FaUzZUeDRVRmVnMmNyUnpjUFFpa0x6UkNxYjFkRHJoSWV3RmdjYUNWRkZrcTdiOXZFdXdTNGhn?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOY2tjdHBEbjBhYjVadS1LWlZvNW9Uc0E2RWhxQmgxZUprQlpWMEd1d1dpSjlzbkNNTDhEekUzeExIbWNWRGFmY0JfOFFNYm9LVmdCem9iSmJEM2RsTGU3X3lCVFB2UjZLSDh5blh0Q01aeFZIYm1WRFk4SjJLb3h1NS0xam5Bb0FaUzZUeDRVRmVnMmNyUnpjUFFpa0x6UkNxYjFkRHJoSWV3RmdjYUNWRkZrcTdiOXZFdXdTNGhn?oc=5\" target=\"_blank\"&gt;Jeep plans six-model range in Europe by 2030, including China-built large SUV&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-29T17:06:26.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU unveils new steel import quotas to protect its industry from overcapacity - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5\" target=\"_blank\"&gt;EU unveils new steel import quotas to protect its industry from overcapacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T08:34:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Honda explores euro bond sales of over $2.5 billion to pay parts makers, Nikkei reports - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQM0NDY3g0WnJGQ3gxWElYQThLekwyTmdZQkpZYVhsdzlvLS1lWng4UldCZG90NGt3clZLNUxwVTF3V0p1Z0xnYWthUGc3MHJ0WDU2VE1wNEE2VWFLNDhyaHBlT3JLc0d4NTB5ODhROFFuNDdURWJjZzNib056bHdLRkZKeXpfck9SVGQyUTZXTVlNSWhoN2IwdkdJNi1pTXRjNWs2RTFzUGVPS0tYQzZ5MmtvQ25LSkkxLWpNdVVSc2dHUW5pTTZSaHNva3RlQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQM0NDY3g0WnJGQ3gxWElYQThLekwyTmdZQkpZYVhsdzlvLS1lWng4UldCZG90NGt3clZLNUxwVTF3V0p1Z0xnYWthUGc3MHJ0WDU2VE1wNEE2VWFLNDhyaHBlT3JLc0d4NTB5ODhROFFuNDdURWJjZzNib056bHdLRkZKeXpfck9SVGQyUTZXTVlNSWhoN2IwdkdJNi1pTXRjNWs2RTFzUGVPS0tYQzZ5MmtvQ25LSkkxLWpNdVVSc2dHUW5pTTZSaHNva3RlQQ?oc=5\" target=\"_blank\"&gt;Honda explores euro bond sales of over $2.5 billion to pay parts makers, Nikkei reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
+          "published": "2026-06-29T17:15:47.000Z",
           "score": 8
         },
         {
@@ -210,28 +171,20 @@
           "score": 7
         },
         {
-          "title": "Peru: Fujimori declared winner of presidential election",
-          "link": "https://www.dw.com/en/peru-fujimori-declared-winner-of-presidential-election/a-77760522?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "After weeks of reviewing the ballots, Peru’s electoral commission declared Keiko Fujimori the winner of the presidential election.",
-          "published": "2026-06-29T20:33:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Angry Venezuelans accuse government of negligence and apathy",
-          "link": "https://www.bbc.co.uk/news/articles/c5yzd18dxzxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "People in areas devastated by twin earthquakes say they need more support from the government.",
-          "published": "2026-06-30T03:53:48.000Z",
-          "score": 2
+          "title": "EXCLUSIVE: US House committee opens investigation into Merck, AbbVie China drug trials - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSXlTUDJFOVM5dHVaUlNqSmI2ekZMbUwzbk9LWll1cndIZDQ4S2VmaGRBdjFpVWVrTjRPT0RFUVVLelVnc0xlOG52b3p5S01KRHpvLUp0dDRvXzI4UjQ1dkIyRHBrRzVaM251eF93dVdlVERiRWZ5MzlSZXlITTd0S211RnRWT0xjTVl1dFdTWWRsTF9VQnV0VVVnRHZ2SFB1TzQ3bGhHSU83Ty1zZEt5Z1J6YlhMX1E?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQSXlTUDJFOVM5dHVaUlNqSmI2ekZMbUwzbk9LWll1cndIZDQ4S2VmaGRBdjFpVWVrTjRPT0RFUVVLelVnc0xlOG52b3p5S01KRHpvLUp0dDRvXzI4UjQ1dkIyRHBrRzVaM251eF93dVdlVERiRWZ5MzlSZXlITTd0S211RnRWT0xjTVl1dFdTWWRsTF9VQnV0VVVnRHZ2SFB1TzQ3bGhHSU83Ty1zZEt5Z1J6YlhMX1E?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US House committee opens investigation into Merck, AbbVie China drug trials&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T11:01:18.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 452,
-    "articlesLast24h": 176,
-    "afterDedup": 167,
+    "totalArticlesScanned": 450,
+    "articlesLast24h": 173,
+    "afterDedup": 164,
     "feedsQueried": 19
   }
 }
