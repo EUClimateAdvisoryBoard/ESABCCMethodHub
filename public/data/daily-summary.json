@@ -1,12 +1,12 @@
 {
   "date": "2026-06-30",
-  "generatedAt": "2026-06-30T11:58:10.692Z",
+  "generatedAt": "2026-06-30T17:39:55.662Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 30 June 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Dangerous temperatures forecast for parts of Europe as heatwave moves east",
-      "summary": "&lt;p&gt;Red warnings issued in Hungary, Poland, Romania and the Balkans, with authorities urging people to stay indoors&lt;/p&gt;&lt;p&gt;Parts of central, eastern and southern Europe sweltered on Monday as the “heat dome” behind &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/europe-heatwave-impossible-without-climate-crisis-scientists\"&gt;last week’s record-breaking temperatures&lt;/a&gt; shifted east, bringing dangerous conditions to a new swathe of the continent.&lt;/p&gt;&l",
+      "headline": "Ocean summit stays silent on new wave of offshore oil and gas expansion",
+      "summary": "At this month’s Our Ocean Conference in Mombasa, campaigners warned that ocean protection requires governments to halt new offshore fossil fuel projects The post Ocean summit stays silent on new wave of offshore oil and gas expansion appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,6 +15,12 @@
       "summary": "Clean power added more to global energy supplies than any other source in 2025, according... The post Six charts show how clean power was world’s largest source of new energy in 2025 appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "EU sends Ukraine €3.9 billion to fund drones under loan deal - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5\" target=\"_blank\"&gt;EU sends Ukraine €3.9 billion to fund drones under loan deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -28,36 +34,36 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Dangerous temperatures forecast for parts of Europe as heatwave moves east",
-          "link": "https://www.theguardian.com/environment/2026/jun/29/dangerous-temperatures-forecast-central-eastern-europe-heatwave",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Red warnings issued in Hungary, Poland, Romania and the Balkans, with authorities urging people to stay indoors&lt;/p&gt;&lt;p&gt;Parts of central, eastern and southern Europe sweltered on Monday as the “heat dome” behind &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/europe-heatwave-impossible-without-climate-crisis-scientists\"&gt;last week’s record-breaking temperatures&lt;/a&gt; shifted east, bringing dangerous conditions to a new swathe of the continent.&lt;/p&gt;&l",
-          "published": "2026-06-29T15:49:19.000Z",
+          "title": "Ocean summit stays silent on new wave of offshore oil and gas expansion",
+          "link": "https://www.climatechangenews.com/2026/06/30/ocean-summit-marine-protection-falls-silent-offshore-oil-and-gas-mombasa/",
+          "source": "Climate Home News",
+          "description": "At this month’s Our Ocean Conference in Mombasa, campaigners warned that ocean protection requires governments to halt new offshore fossil fuel projects The post Ocean summit stays silent on new wave of offshore oil and gas expansion appeared first on Climate Home News.",
+          "published": "2026-06-30T12:00:00.000Z",
           "score": 10
         },
         {
-          "title": "Five people killed in shooting in northern Germany, police say – Europe live",
-          "link": "https://www.theguardian.com/world/live/2026/jun/29/extreme-heat-europe-germany-poland-czechia-hungary-serbia-heatwave-nato-rutte-starmer-eu-latest-news-updates",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;German police say two people were apprehended after ‘numerous’ shots were fired at a youth care facility in Stade&lt;/p&gt;&lt;p&gt;Meanwhile, &lt;strong&gt;Ukraine is bracing to absorb the impact of the heatwave on its energy network, already pummelled by Russian attacks over more than four years of war,&lt;/strong&gt; AFP reported.&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Grid operators in at least five regions&lt;/strong&gt; – from Ivano-Frankivsk in the west to Zaporizhzhia on the frontline ",
-          "published": "2026-06-29T15:10:23.000Z",
-          "score": 10
-        },
-        {
-          "title": "Stalled US permits threaten $121 billion in wind and solar investment, report shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMkdlLXZoSlM2TG5EZ1kyRmlxOHVrdVdfd3JvNXdWMlFIZU1TbjdfNzdZN0R1b3Z2RzJvTnQ4a2NYVW5uV2F3aVlaWE1ERUxOcXIzemRVdmJWYWxMN193MDcwTlhNZFFOclpxTm9Kb1JDcGFxV2poYms0dnQ5Mll1dTlpRDhpUG5ickotSHBONWFGSndWRlpnMmRza2VUTDhMcWRXcjZkemtwdGxoVXQzZ3lwZnBSalM1?oc=5",
+          "title": "Estonia images show machine guns on Russian LNG carrier in Baltic - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYlV0T0ZHa1BhZ1lWa1Nfa25GWEg0Wmp4RzQ4WnZSb3FfQWZzMC0zZE5uNjAwWERmMGpDdktHODFKaDMwVEd5Y3JIVHJ3ZDNaa1hsdGhIaF9kajNqZzl1NXRROGx6UG9KZlhHejRNcTY2TXpTMUQ0b19XaW1fYkZ4cGd2NmJXdnlNeVhvV0MtZ1BXQkZNaVlpcDFNVUItem5qeFhJ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNMkdlLXZoSlM2TG5EZ1kyRmlxOHVrdVdfd3JvNXdWMlFIZU1TbjdfNzdZN0R1b3Z2RzJvTnQ4a2NYVW5uV2F3aVlaWE1ERUxOcXIzemRVdmJWYWxMN193MDcwTlhNZFFOclpxTm9Kb1JDcGFxV2poYms0dnQ5Mll1dTlpRDhpUG5ickotSHBONWFGSndWRlpnMmRza2VUTDhMcWRXcjZkemtwdGxoVXQzZ3lwZnBSalM1?oc=5\" target=\"_blank\"&gt;Stalled US permits threaten $121 billion in wind and solar investment, report shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T15:15:59.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNYlV0T0ZHa1BhZ1lWa1Nfa25GWEg0Wmp4RzQ4WnZSb3FfQWZzMC0zZE5uNjAwWERmMGpDdktHODFKaDMwVEd5Y3JIVHJ3ZDNaa1hsdGhIaF9kajNqZzl1NXRROGx6UG9KZlhHejRNcTY2TXpTMUQ0b19XaW1fYkZ4cGd2NmJXdnlNeVhvV0MtZ1BXQkZNaVlpcDFNVUItem5qeFhJ?oc=5\" target=\"_blank\"&gt;Estonia images show machine guns on Russian LNG carrier in Baltic&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T14:18:05.000Z",
           "score": 7
         },
         {
           "title": "China is a clear winner from Trump’s war in Middle East, report concludes",
           "link": "https://www.theguardian.com/world/2026/jun/30/china-clear-winner-trump-war-middle-east-report-iran-strait-of-hormuz",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Beijing, whose stockpiles and renewables industry allowed it to withstand energy shock, is now gaining from global solar and EV push&lt;/p&gt;&lt;p&gt;China has emerged as the sole winner in Asia from the strait of Hormuz crisis, according to &lt;a href=\"https://straitofhormuz.theasiagroup.com/about/\"&gt;a report&lt;/a&gt; published on Tuesday.&lt;/p&gt;&lt;p&gt;The report by the Asia Group thinktank concluded that China had weathered the storm of the global commodities crisis resulting",
+          "description": "&lt;p&gt;Beijing, whose stockpiles and renewables industry allowed it to withstand energy shock, is now gaining from global solar and EV push&lt;/p&gt;&lt;p&gt;China has emerged as the sole winner in Asia from the strait of Hormuz crisis, according to &lt;a href=\"https://straitofhormuz.theasiagroup.com/about/\"&gt;a report&lt;/a&gt; published on Tuesday.&lt;/p&gt;&lt;p&gt;The report by the geopolitical consulting firm Asia Group concluded that China had weathered the storm of the global commoditi",
           "published": "2026-06-30T11:11:58.000Z",
           "score": 4
+        },
+        {
+          "title": "North Korea's sanctioned coal trade rebounds as UN monitoring lapses, rights group says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNS2VfYTB3bzh6WGNZTUZ5Q0ViS1ZFWVV5cWRjTWRGMm9SVGdGOS1obUxvWDdkMlh3THVuV0R0NXp1Z3gtN3N3VEpPNG8yaXdCMTV2RzF1XzBIRGpwSHRMc0JlekpCaUdLWWpxNERrVzNDQVJCRUY0THBlMlJYUFNfMi1UWlNnbVdUT1pxYktQNnFmLVF4VjQwTFNGMHpjUzdYRVRIbE8zenRxYS1nYWNaZ2NuUlV1cnhWbE5mUjZhWTJTaThrZXMycjhwSXU?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNS2VfYTB3bzh6WGNZTUZ5Q0ViS1ZFWVV5cWRjTWRGMm9SVGdGOS1obUxvWDdkMlh3THVuV0R0NXp1Z3gtN3N3VEpPNG8yaXdCMTV2RzF1XzBIRGpwSHRMc0JlekpCaUdLWWpxNERrVzNDQVJCRUY0THBlMlJYUFNfMi1UWlNnbVdUT1pxYktQNnFmLVF4VjQwTFNGMHpjUzdYRVRIbE8zenRxYS1nYWNaZ2NuUlV1cnhWbE5mUjZhWTJTaThrZXMycjhwSXU?oc=5\" target=\"_blank\"&gt;North Korea's sanctioned coal trade rebounds as UN monitoring lapses, rights group says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
+          "published": "2026-06-29T21:07:30.000Z",
+          "score": 2
         }
       ]
     },
@@ -74,6 +80,14 @@
           "score": 13
         },
         {
+          "title": "With extreme heat now a public health crisis, local data can save lives",
+          "link": "https://www.climatechangenews.com/2026/06/30/with-extreme-heat-now-a-public-health-crisis-local-data-can-save-lives/",
+          "source": "Climate Home News",
+          "description": "The impacts of extreme heat vary widely across countries and cities, and approaches tailored using data can target solutions at vulnerable groups The post With extreme heat now a public health crisis, local data can save lives appeared first on Climate Home News.",
+          "published": "2026-06-30T13:43:58.000Z",
+          "score": 10
+        },
+        {
           "title": "UN plastics pact talks restart amid fears production curbs will be left out",
           "link": "https://www.climatechangenews.com/2026/06/30/un-plastics-pact-talks-restart-amid-fears-production-curbs-will-be-left-out/",
           "source": "Climate Home News",
@@ -82,20 +96,12 @@
           "score": 10
         },
         {
-          "title": "Reader Q&amp;A: ask Ajit Niranjan anything about Europe’s hellish week of heat",
+          "title": "‘Is there a way out of this mess?’: Your questions answered on Europe’s week of hellish heat",
           "link": "https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Our European environment correspondent has been reporting on the shocking heatwave that continues to scorch its way across Europe, covering everything from the &lt;a href=\"https://www.theguardian.com/environment/2026/jun/27/decades-climate-warnings-why-europe-so-unprepared-rising-heat\"&gt;lack of preparation&lt;/a&gt; to &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/adapting-heat-ideas-from-european-cities\"&gt;ways to deal with the heat&lt;/a&gt;&lt;br&gt;&lt;br&gt;Pos",
-          "published": "2026-06-30T08:00:53.000Z",
-          "score": 10
-        },
-        {
-          "title": "Trump administration targets California coastal agency in escalation of energy production fight",
-          "link": "https://www.theguardian.com/us-news/2026/jun/29/california-trump-administration-energy-production",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;US commerce department accuses state of ‘environmental terrorism’ and plans to evaluate its coastal agency&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/us-news/trump-administration\"&gt;Trump administration&lt;/a&gt; plans to evaluate the performance of the &lt;a href=\"https://www.theguardian.com/us-news/california\"&gt;California&lt;/a&gt; Coastal Commission, in the latest escalation of a dispute between the state’s Democratic leaders and the federal government over ener",
-          "published": "2026-06-29T12:00:44.000Z",
-          "score": 9
+          "description": "&lt;p&gt;As the the shocking heatwave continues, our European environment correspondent Ajit Niranjan answered your questions about which countries have responded best, who is being held to account, and why people are surprised after decades of warnings&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat#comment-175034906\"&gt;sloth_101&lt;/a&gt; asks&lt;/strong&gt;: Most reports",
+          "published": "2026-06-30T14:14:47.000Z",
+          "score": 8
         },
         {
           "title": "Reform UK chair of Welsh environment committee may ‘undermine scrutiny’, says thinktank",
@@ -110,40 +116,40 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "EU sends Ukraine €3.9 billion to fund drones under loan deal - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5\" target=\"_blank\"&gt;EU sends Ukraine €3.9 billion to fund drones under loan deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T10:47:44.000Z",
+          "score": 8
+        },
+        {
+          "title": "Labour MPs tell Burnham to ignore ‘deluded’ calls for more North Sea drilling",
+          "link": "https://www.theguardian.com/environment/2026/jun/30/labour-mps-tell-burnham-ignore-deluded-calls-more-north-sea-drilling",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Critics debunk economic claims as research finds Rosebank development would produce estimated 250m tonnes of CO2&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Scores of Labour MPs have urged the prospective prime minister Andy Burnham to rule out the “t",
+          "published": "2026-06-30T13:00:07.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "AMENDMENTS 538 - 560 - Draft report on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles - PE789.893v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-AM-789893_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 538 - 560 - Draft report on the proposal for a regulation of the European Parliament and of the Council on clean corporate vehicles&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Transport and Tourism&lt;br/&gt;Tiemo Wölken, François Kalfon&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-29T15:26:54.000Z",
-          "score": 22
-        },
-        {
-          "title": "Minutes - Monday, 4 May 2026 - Tuesday, 5 May 2026 - PE788.964v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PV-2026-05-04-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-06-29T12:53:04.000Z",
-          "score": 18
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Jeep plans six-model range in Europe by 2030, including China-built large SUV - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOY2tjdHBEbjBhYjVadS1LWlZvNW9Uc0E2RWhxQmgxZUprQlpWMEd1d1dpSjlzbkNNTDhEekUzeExIbWNWRGFmY0JfOFFNYm9LVmdCem9iSmJEM2RsTGU3X3lCVFB2UjZLSDh5blh0Q01aeFZIYm1WRFk4SjJLb3h1NS0xam5Bb0FaUzZUeDRVRmVnMmNyUnpjUFFpa0x6UkNxYjFkRHJoSWV3RmdjYUNWRkZrcTdiOXZFdXdTNGhn?oc=5",
+          "title": "EU opens antitrust probe into Align Technology over Invisalign, scanner tying - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNOUpuQmE1dndGdDlXVG5pVDEyT2prdE5JM1hYMk5zUlVYZmZqUVBKaUtvcTJOMkl1bjVWM0pjZFJaVV9FeWxLc1AxT3FTcDNiU2ZqaDNIU2htQTAwSTZ5c0puRkw1YnhuRTZYREJVT3V1T2E2RDZuYnNKNURnWmJBeXRmS2pBSVQwTjVGQzJ6bVBPQkw5QW1xbndZQ3BzNldDMi1rNUhoeDZlNVpiTVRycWFfb2hrV1JLUlE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOY2tjdHBEbjBhYjVadS1LWlZvNW9Uc0E2RWhxQmgxZUprQlpWMEd1d1dpSjlzbkNNTDhEekUzeExIbWNWRGFmY0JfOFFNYm9LVmdCem9iSmJEM2RsTGU3X3lCVFB2UjZLSDh5blh0Q01aeFZIYm1WRFk4SjJLb3h1NS0xam5Bb0FaUzZUeDRVRmVnMmNyUnpjUFFpa0x6UkNxYjFkRHJoSWV3RmdjYUNWRkZrcTdiOXZFdXdTNGhn?oc=5\" target=\"_blank\"&gt;Jeep plans six-model range in Europe by 2030, including China-built large SUV&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-29T17:06:26.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNOUpuQmE1dndGdDlXVG5pVDEyT2prdE5JM1hYMk5zUlVYZmZqUVBKaUtvcTJOMkl1bjVWM0pjZFJaVV9FeWxLc1AxT3FTcDNiU2ZqaDNIU2htQTAwSTZ5c0puRkw1YnhuRTZYREJVT3V1T2E2RDZuYnNKNURnWmJBeXRmS2pBSVQwTjVGQzJ6bVBPQkw5QW1xbndZQ3BzNldDMi1rNUhoeDZlNVpiTVRycWFfb2hrV1JLUlE?oc=5\" target=\"_blank\"&gt;EU opens antitrust probe into Align Technology over Invisalign, scanner tying&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T13:13:13.000Z",
           "score": 8
         },
         {
@@ -151,40 +157,40 @@
           "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5\" target=\"_blank\"&gt;EU unveils new steel import quotas to protect its industry from overcapacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T08:34:09.000Z",
+          "published": "2026-06-30T12:36:41.000Z",
           "score": 8
         },
         {
-          "title": "Honda explores euro bond sales of over $2.5 billion to pay parts makers, Nikkei reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQM0NDY3g0WnJGQ3gxWElYQThLekwyTmdZQkpZYVhsdzlvLS1lWng4UldCZG90NGt3clZLNUxwVTF3V0p1Z0xnYWthUGc3MHJ0WDU2VE1wNEE2VWFLNDhyaHBlT3JLc0d4NTB5ODhROFFuNDdURWJjZzNib056bHdLRkZKeXpfck9SVGQyUTZXTVlNSWhoN2IwdkdJNi1pTXRjNWs2RTFzUGVPS0tYQzZ5MmtvQ25LSkkxLWpNdVVSc2dHUW5pTTZSaHNva3RlQQ?oc=5",
+          "title": "France suspends 2-euro charge on low-value packages as EU fee kicks in - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOTjRUbkswRkFxMTZLNTczbTROdXpJaXVabmFyb1F1Wl9FSzZhYVpCWXBkbXNmNkZjSmpZVXhuTXU3Z3YyOUJwZEtGendZTjJETzVlVlpRMDZ3U0ZoRVg5Tm1YWThjSndTMmRobGVHWjdIUE9talhwekRIUE9UYTFyUmJDYjVveFBwZTROdmVvSFNBaEtfekFtREhFcy1GTlRvbXM0a2FlbmFkN1U1bGc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQM0NDY3g0WnJGQ3gxWElYQThLekwyTmdZQkpZYVhsdzlvLS1lWng4UldCZG90NGt3clZLNUxwVTF3V0p1Z0xnYWthUGc3MHJ0WDU2VE1wNEE2VWFLNDhyaHBlT3JLc0d4NTB5ODhROFFuNDdURWJjZzNib056bHdLRkZKeXpfck9SVGQyUTZXTVlNSWhoN2IwdkdJNi1pTXRjNWs2RTFzUGVPS0tYQzZ5MmtvQ25LSkkxLWpNdVVSc2dHUW5pTTZSaHNva3RlQQ?oc=5\" target=\"_blank\"&gt;Honda explores euro bond sales of over $2.5 billion to pay parts makers, Nikkei reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
-          "published": "2026-06-29T17:15:47.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxOTjRUbkswRkFxMTZLNTczbTROdXpJaXVabmFyb1F1Wl9FSzZhYVpCWXBkbXNmNkZjSmpZVXhuTXU3Z3YyOUJwZEtGendZTjJETzVlVlpRMDZ3U0ZoRVg5Tm1YWThjSndTMmRobGVHWjdIUE9talhwekRIUE9UYTFyUmJDYjVveFBwZTROdmVvSFNBaEtfekFtREhFcy1GTlRvbXM0a2FlbmFkN1U1bGc?oc=5\" target=\"_blank\"&gt;France suspends 2-euro charge on low-value packages as EU fee kicks in&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-30T06:40:00.000Z",
           "score": 8
         },
         {
-          "title": "EV myths muddy the road to electrification",
-          "link": "https://www.dw.com/en/ev-myths-muddy-the-road-to-electrification/a-77651984?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "US birthright citizenship: What does Trump&#039;s loss mean?",
+          "link": "https://www.dw.com/en/us-birthright-citizenship-what-does-trump-s-loss-mean/a-77773604?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Claims that electric vehicle batteries are tainted by exploitative mineral supply chains are discrediting non-fossil cars as electrified road transport booms.",
-          "published": "2026-06-29T14:13:00.000Z",
-          "score": 7
+          "description": "The US Supreme Court has blocked Donald Trump’s attempt to end birthright citizenship, leaving US law unchanged. But why was the issue so important to Donald Trump, and what does his loss really mean?",
+          "published": "2026-06-30T14:08:00.000Z",
+          "score": 6
         },
         {
-          "title": "EXCLUSIVE: US House committee opens investigation into Merck, AbbVie China drug trials - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQSXlTUDJFOVM5dHVaUlNqSmI2ekZMbUwzbk9LWll1cndIZDQ4S2VmaGRBdjFpVWVrTjRPT0RFUVVLelVnc0xlOG52b3p5S01KRHpvLUp0dDRvXzI4UjQ1dkIyRHBrRzVaM251eF93dVdlVERiRWZ5MzlSZXlITTd0S211RnRWT0xjTVl1dFdTWWRsTF9VQnV0VVVnRHZ2SFB1TzQ3bGhHSU83Ty1zZEt5Z1J6YlhMX1E?oc=5",
+          "title": "US House passes youth online safety legislation - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPWmtuRnNwMzdoOEVZdUltbUVQc2EtYzRocENuZF9rOHlCVzdsM3pvNkFuMDFXTEJ6cXJVRTR0V2hSWTFJQUNTdWtldXNMQWRrc0FhaGNGWXBnZVVMX1RjZkh3bWR1MEU5bGVDN0VJbHBlMHkxYnhzMURvV0c2NzR2b2FsX19ONUxldFgxcXVQQUc4UVk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQSXlTUDJFOVM5dHVaUlNqSmI2ekZMbUwzbk9LWll1cndIZDQ4S2VmaGRBdjFpVWVrTjRPT0RFUVVLelVnc0xlOG52b3p5S01KRHpvLUp0dDRvXzI4UjQ1dkIyRHBrRzVaM251eF93dVdlVERiRWZ5MzlSZXlITTd0S211RnRWT0xjTVl1dFdTWWRsTF9VQnV0VVVnRHZ2SFB1TzQ3bGhHSU83Ty1zZEt5Z1J6YlhMX1E?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: US House committee opens investigation into Merck, AbbVie China drug trials&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T11:01:18.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMikwFBVV95cUxPWmtuRnNwMzdoOEVZdUltbUVQc2EtYzRocENuZF9rOHlCVzdsM3pvNkFuMDFXTEJ6cXJVRTR0V2hSWTFJQUNTdWtldXNMQWRrc0FhaGNGWXBnZVVMX1RjZkh3bWR1MEU5bGVDN0VJbHBlMHkxYnhzMURvV0c2NzR2b2FsX19ONUxldFgxcXVQQUc4UVk?oc=5\" target=\"_blank\"&gt;US House passes youth online safety legislation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-06-29T23:37:48.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 450,
-    "articlesLast24h": 173,
-    "afterDedup": 164,
+    "totalArticlesScanned": 442,
+    "articlesLast24h": 169,
+    "afterDedup": 161,
     "feedsQueried": 19
   }
 }
