@@ -81,6 +81,7 @@ import {
   SegmentsList,
   GeneralNotesPanel,
   WorkspaceAnalysis,
+  WorkspaceChapterView,
   FloatingCodeToolbar,
   CodeEditorModal,
   type PendingNoteSelection,
@@ -404,7 +405,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   );
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
-  const [view, setView] = useState<'code' | 'analyse'>('code');
+  const [view, setView] = useState<'code' | 'analyse' | 'chapters'>('code');
   /** Bumped by the "Guided tour" button to replay the Code-view walkthrough. */
   const [tourReplay, setTourReplay] = useState(0);
   /** Bumped to replay the Analyse-view walkthrough. */
@@ -648,6 +649,23 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     return [...masterCodes, ...customs];
   }, [masterCodes, overallTags.customTagPool]);
 
+  /** The overall (document-level) tags resolved for a document — used for the
+   *  list dots, the browse/corpus filters and the chapter view. Every source
+   *  tier can now be hand-tagged (overall themes + chapter), so this returns the
+   *  analyst-curated set from the shared store. Policy documents also ship an
+   *  AI-assigned baseline (`aiCodeIds`); it is merged in so enabling manual
+   *  tagging for policy never hides the AI dots. */
+  const resolveOverallTagsFor = useCallback(
+    (d: AnalysisDocument): string[] => {
+      const manual = overallTags.getTags(d.id);
+      if (sourceTierOf(d) === 'policy') {
+        return Array.from(new Set([...d.aiCodeIds, ...manual]));
+      }
+      return manual;
+    },
+    [overallTags.getTags],
+  );
+
   const filteredBrowse = useMemo(() => {
     const q = browseQuery.trim().toLowerCase();
     const inCorpus = new Set(corpusIds);
@@ -680,20 +698,12 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       for (const c of masterCodes) {
         if (wantedNames.has(c.name.trim().toLowerCase())) wanted.add(c.id);
       }
-      const editable = sourceType !== 'policy';
-      out = out.filter(d => {
-        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
-        return tags.some(t => wanted.has(t));
-      });
+      out = out.filter(d => resolveOverallTagsFor(d).some(t => wanted.has(t)));
     }
     if (browseChapterFilter.length > 0) {
       // Chapter tags are unique by id, so match them directly (no name-collapse).
       const wanted = new Set(browseChapterFilter);
-      const editable = sourceType !== 'policy';
-      out = out.filter(d => {
-        const tags = editable ? overallTags.getTags(d.id) : d.aiCodeIds;
-        return tags.some(t => wanted.has(t));
-      });
+      out = out.filter(d => resolveOverallTagsFor(d).some(t => wanted.has(t)));
     }
     // Newest-added references first. The added-at timestamp lives on the
     // library copy of each doc (snapshot copies win the `allDocuments` dedupe
@@ -707,23 +717,46 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       .sort((a, b) => (b.t - a.t) || (a.i - b.i))
       .map(x => x.d);
     return out.slice(0, 200);
-  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, browseChapterFilter, sourceType, overallTags.getTags, liveRefs, masterCodes]);
+  }, [candidateDocs, corpusIds, browseQuery, browseTagFilter, browseChapterFilter, resolveOverallTagsFor, liveRefs, masterCodes]);
 
-  /** Whether the active source tier supports manual overall tagging. Policy
-   *  documents carry an AI-curated baseline managed elsewhere; scientific &
-   *  grey literature are tagged by hand here. */
-  const canEditOverallTags = sourceType !== 'policy';
-
-  /** Resolved overall tags for every corpus document, for the list dots.
-   *  Editable tiers show the analyst-curated set (shared via the server);
-   *  the policy corpus shows its AI baseline. */
+  /** Resolved overall tags for every corpus document, for the list dots. Shows
+   *  the analyst-curated set (shared via the server), merged with the AI
+   *  baseline for the policy corpus (see `resolveOverallTagsFor`). */
   const overallTagsByDoc = useMemo(() => {
     const m: Record<string, string[]> = {};
     for (const d of corpusDocs) {
-      m[d.id] = canEditOverallTags ? overallTags.getTags(d.id) : d.aiCodeIds;
+      m[d.id] = resolveOverallTagsFor(d);
     }
     return m;
-  }, [corpusDocs, canEditOverallTags, overallTags.getTags]);
+  }, [corpusDocs, resolveOverallTagsFor]);
+
+  // ── Cross-source corpus (every tier) — for the Chapter view ───────────────
+  // The Chapter view lists a document under whatever chapter it was tagged for,
+  // regardless of the source tier currently selected, so a chapter reads as one
+  // literature list spanning policy, scientific and grey sources. `corpusDocs`
+  // above is scoped to the active tier; this resolves every corpus id the same
+  // way but without that filter.
+  const allCorpusDocs = useMemo(() => {
+    const byId = new Map(allDocuments.map(d => [d.id, d] as const));
+    const out: AnalysisDocument[] = [];
+    for (const id of corpusIds) {
+      const meta = corpusMeta[id];
+      const doc = byId.get(id) ?? (meta ? corpusMetaToDoc(meta) : undefined);
+      if (doc) out.push(doc);
+    }
+    return out;
+  }, [allDocuments, corpusIds, corpusMeta]);
+
+  /** Chapter (report-chapter / sector) tag ids applied to each cross-source
+   *  corpus document. Chapter tags live only in the manual store, so this reads
+   *  the hand-curated set directly for every tier. */
+  const chapterIdsByDoc = useMemo(() => {
+    const m: Record<string, string[]> = {};
+    for (const d of allCorpusDocs) {
+      m[d.id] = splitTagIds(overallTags.getTags(d.id)).chapters;
+    }
+    return m;
+  }, [allCorpusDocs, overallTags.getTags]);
 
   // ── "In this workspace" tag filter ────────────────────────────────────────
   // The selectable pool is just the overall tags actually present on the docs
@@ -1362,7 +1395,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           and is replayable from the "Guided tour" button. */}
       <GuidedSession
         moduleKey="content-analysis-workspace"
-        active={sourceType != null}
+        active={sourceType != null && view === 'code'}
         replayToken={tourReplay}
         steps={[
           {
@@ -1541,11 +1574,16 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             ))}
             <button
               type="button"
-              onClick={() =>
-                view === 'analyse'
-                  ? setAnalysisTourReplay(t => t + 1)
-                  : setTourReplay(t => t + 1)
-              }
+              onClick={() => {
+                if (view === 'analyse') {
+                  setAnalysisTourReplay(t => t + 1);
+                } else {
+                  // The code walkthrough anchors to Code-view elements, so make
+                  // sure we're on it before replaying (e.g. from the Chapter view).
+                  setView('code');
+                  setTourReplay(t => t + 1);
+                }
+              }}
               className="ml-1 text-[11px] px-2 py-1 rounded border border-grey-200 text-secondary hover:border-secondary inline-flex items-center gap-1"
               title={view === 'analyse' ? 'Replay the analysis walkthrough' : 'Replay the guided walkthrough'}
             >
@@ -1568,10 +1606,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           >
             Analyse
           </button>
+          <button
+            type="button"
+            onClick={() => setView('chapters')}
+            className={`px-3 py-1 border-l border-grey-200 ${view === 'chapters' ? 'bg-primary text-white' : 'text-tertiary hover:bg-grey-50'}`}
+            title="See, per report chapter, every policy, scientific and grey-literature document lined up for it"
+          >
+            Chapter view
+          </button>
         </div>
       </header>
 
-      {/* Lens selector — shared by Code + Analyse views */}
+      {/* Lens selector — shared by Code + Analyse views. The Chapter view is
+          organised by document-level chapter tags, not segment lenses, so it
+          hides this control. */}
+      {view !== 'chapters' && (
       <div className="ca-ws-tour-lens bg-grey-50 border border-grey-200 rounded-lg p-2.5">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold" title="Whose tags are shown — toggle to compare what other projects are coding">
@@ -1617,6 +1666,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           attributed to <strong>{projectName}</strong>.
         </p>
       </div>
+      )}
 
       {view === 'analyse' ? (
         <WorkspaceAnalysis
@@ -1628,6 +1678,16 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           sourceLabel={activeSourceMeta.title}
           tab={analysisTab}
           onTabChange={setAnalysisTab}
+        />
+      ) : view === 'chapters' ? (
+        <WorkspaceChapterView
+          documents={allCorpusDocs}
+          chapterIdsByDoc={chapterIdsByDoc}
+          onOpenDocument={doc => {
+            setSourceType(sourceTierOf(doc));
+            setSelectedDocumentId(doc.id);
+            setView('code');
+          }}
         />
       ) : (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
@@ -1859,9 +1919,10 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
                 highlightedSegmentId={highlightedSegmentId}
                 forcedHighlightBlockId={noteJumpBlockId}
                 ingestState={ingestState}
-                showOverallTags={canEditOverallTags}
+                showOverallTags
                 overallTagCodes={overallTagPool}
                 overallTagSelected={splitTagIds(overallTags.getTags(selectedDocument.id)).others}
+                overallTagDisplay={splitTagIds(resolveOverallTagsFor(selectedDocument)).others}
                 onToggleOverallTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
                 chapterTagSelected={splitTagIds(overallTags.getTags(selectedDocument.id)).chapters}
                 onToggleChapterTag={codeId => { void overallTags.toggleTag(selectedDocument.id, codeId); }}
@@ -2011,6 +2072,7 @@ function DocumentViewer({
   showOverallTags,
   overallTagCodes,
   overallTagSelected,
+  overallTagDisplay,
   onToggleOverallTag,
   chapterTagSelected,
   onToggleChapterTag,
@@ -2040,7 +2102,13 @@ function DocumentViewer({
   ingestState: { status: 'idle' | 'loading' | 'error' | 'ok'; message?: string };
   showOverallTags: boolean;
   overallTagCodes: CodeNode[];
+  /** Thematic overall tags the picker toggles — the hand-curated set only, so a
+   *  policy document's AI baseline is not accidentally removed. */
   overallTagSelected: string[];
+  /** Thematic overall tags rendered as chips. Defaults to `overallTagSelected`;
+   *  policy documents pass their AI baseline merged with the manual tags so both
+   *  show even though only the manual ones are editable. */
+  overallTagDisplay?: string[];
   onToggleOverallTag: (codeId: string) => void;
   /** Chapter (report-chapter / sector) tags applied to this document, and the
    *  toggle to add/remove one. Same durable store as the overall tags. */
@@ -2191,7 +2259,8 @@ function DocumentViewer({
 
       {/* Overall (document-level) tags — the coloured dots that describe the
           whole source, distinct from the in-text tags pinned to passages.
-          Editable by hand for scientific & grey literature via a dropdown. */}
+          Editable by hand on every tier via a dropdown; policy documents also
+          show their AI-assigned baseline chips alongside the manual tags. */}
       {showOverallTags && (
         <div className="px-3 py-2 border-b border-grey-200 flex items-center gap-2 flex-wrap">
           <span
@@ -2200,8 +2269,10 @@ function DocumentViewer({
           >
             Overall tags
           </span>
-          {overallTagSelected.length > 0 ? (
-            overallTagSelected.map((id, i, all) => {
+          {(() => {
+          const shownOverallTags = overallTagDisplay ?? overallTagSelected;
+          return shownOverallTags.length > 0 ? (
+            shownOverallTags.map((id, i, all) => {
               const c = overallTagCodes.find(x => x.id === id) ?? resolveOverallTag(id);
               if (!c) return null;
               // Same-named codes (e.g. root + domain "Finance") read as one
@@ -2222,7 +2293,8 @@ function DocumentViewer({
             })
           ) : (
             <span className="text-[10px] text-tertiary-light italic">None yet</span>
-          )}
+          );
+          })()}
           <OverallTagPicker
             codes={overallTagCodes}
             selected={overallTagSelected}
