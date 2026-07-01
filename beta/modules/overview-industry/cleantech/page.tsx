@@ -39,6 +39,7 @@ import {
   EMISSIONS_SPLIT,
   EMISSIONS_SPLIT_TOTAL_MT,
   EMISSIONS_SPLIT_SOURCE,
+  SECTOR_MACC,
   type Source,
   type Sourced,
   type Project,
@@ -458,6 +459,79 @@ function TreeNode({
   );
 }
 
+/** Branch colour legend. */
+function BranchLegend() {
+  return (
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+      {BRANCHES.map(b => (
+        <span key={b} className="flex items-center gap-1.5 text-[11px] text-grey-600">
+          <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: BRANCH_COLORS[b] }} />
+          {b}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+/** Indicative sector marginal-abatement-cost curve (width = MtCO₂, height = €/tCO₂). */
+function MaccChart({ onSelect }: { onSelect: (id: string) => void }) {
+  const branchOf = (id: string) => CATALOGUE.find(s => s.id === id)?.branch;
+  const blocks = [...SECTOR_MACC].sort((a, b) => (a.macLow + a.macHigh) / 2 - (b.macLow + b.macHigh) / 2);
+  const totalMt = blocks.reduce((n, b) => n + b.potentialMt, 0);
+  const W = 960, H = 320, mL = 52, mB = 64, mT = 16, mR = 14;
+  const pw = W - mL - mR, ph = H - mT - mB;
+  const maxCost = 380;
+  const x = (mt: number) => mL + (mt / totalMt) * pw;
+  const y = (c: number) => mT + ph - (Math.min(c, maxCost) / maxCost) * ph;
+  let cum = 0;
+  const rects = blocks.map(b => {
+    const x0 = x(cum);
+    cum += b.potentialMt;
+    const x1 = x(cum);
+    const mid = (b.macLow + b.macHigh) / 2;
+    const branch = branchOf(b.subsectorId);
+    return { b, x0, x1, mid, color: branch ? BRANCH_COLORS[branch] : '#64748b' };
+  });
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Indicative sector marginal abatement cost curve">
+      {[0, 100, 200, 300].map(c => (
+        <g key={c}>
+          <line x1={mL} x2={W - mR} y1={y(c)} y2={y(c)} stroke="#eef1f4" />
+          <text x={mL - 6} y={y(c) + 3} textAnchor="end" fontSize="10" fill="#94a3b8">{c}</text>
+        </g>
+      ))}
+      <text x={14} y={mT + ph / 2} fontSize="10" fill="#64748b" transform={`rotate(-90 14 ${mT + ph / 2})`} textAnchor="middle">
+        €/tCO₂ (representative)
+      </text>
+      <line x1={mL} x2={W - mR} y1={y(0)} y2={y(0)} stroke="#cbd5e1" />
+      {rects.map(({ b, x0, x1, mid, color }) => {
+        const cx = (x0 + x1) / 2;
+        const wide = x1 - x0 > 44;
+        return (
+          <g key={b.subsectorId} className="cursor-pointer" onClick={() => onSelect(b.subsectorId)}>
+            <title>{`${b.label}: €${b.macLow}–${b.macHigh}/tCO₂ · ${b.potentialMt} Mt/yr · ${b.route}`}</title>
+            <rect x={x0 + 1} y={y(mid)} width={Math.max(x1 - x0 - 2, 1)} height={y(0) - y(mid)} fill={color} fillOpacity={0.82} rx={2} />
+            <line x1={cx} x2={cx} y1={y(b.macHigh)} y2={y(b.macLow)} stroke="#1e293b" strokeWidth={1} />
+            <line x1={cx - 3} x2={cx + 3} y1={y(b.macHigh)} y2={y(b.macHigh)} stroke="#1e293b" strokeWidth={1} />
+            <line x1={cx - 3} x2={cx + 3} y1={y(b.macLow)} y2={y(b.macLow)} stroke="#1e293b" strokeWidth={1} />
+            {wide ? (
+              <text x={cx} y={y(mid) - 4} textAnchor="middle" fontSize="9.5" fill="#334155" fontWeight="600">
+                €{b.macLow}–{b.macHigh}
+              </text>
+            ) : null}
+            <text x={cx} y={H - mB + 14} textAnchor="end" fontSize="9.5" fill="#475569" transform={`rotate(-35 ${cx} ${H - mB + 14})`}>
+              {b.label}
+            </text>
+          </g>
+        );
+      })}
+      <text x={mL + pw / 2} y={H - 6} textAnchor="middle" fontSize="10" fill="#64748b">
+        cumulative abatement potential (Mt CO₂/yr) →  ~{totalMt} Mt total
+      </text>
+    </svg>
+  );
+}
+
 /* --------------------------------------------------------------- page */
 
 export default function CleanTechPage() {
@@ -573,7 +647,9 @@ export default function CleanTechPage() {
             mitigation technology → its marginal abatement cost, technology readiness, real project pipeline
             (including Final Investment Decisions) and the reasons costs are high, readiness lags and scale is hard.
             Every data point carries a source link — nothing is invented. MAC/TRL bands are shown as reported by the
-            cited studies, not as settled single numbers.
+            cited studies, not as settled single numbers. Emission, cost and project figures were independently
+            fact-checked against their sources; where a source only partly supported a claim, the figure was corrected
+            or flagged.
           </p>
         </header>
 
@@ -651,6 +727,25 @@ export default function CleanTechPage() {
           </div>
         </section>
 
+        {/* ── SECTOR MACC ─────────────────────────────────────────────────── */}
+        <section className="mb-6 rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
+          <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-sm font-bold text-grey-900">
+              Indicative marginal abatement cost curve — EU industry by sector
+            </h2>
+            <span className="text-xs text-grey-500">width = 2050 abatement potential · height = €/tCO₂ · click a block</span>
+          </div>
+          <MaccChart onSelect={selectSub} />
+          <div className="mt-1 flex flex-wrap items-center justify-between gap-2">
+            <BranchLegend />
+            <p className="max-w-text text-[11px] text-grey-400">
+              Indicative: each sector shown by a single primary route (cheaper partial levers like scrap-EAF or clinker
+              substitution not drawn separately); cross-cutting levers omitted to avoid double-counting. Whiskers show the
+              sourced €/tCO₂ range; hover a block for its route &amp; sources. Baselines mix ETS-activity and sector scopes.
+            </p>
+          </div>
+        </section>
+
         {/* ── OVERVIEW FACTS ──────────────────────────────────────────────── */}
         <section className="mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {OVERVIEW_FACTS.map((f, i) => (
@@ -698,9 +793,9 @@ export default function CleanTechPage() {
         </section>
 
         {/* ── TREE EXPLORER ───────────────────────────────────────────────── */}
-        <section className="grid gap-4 lg:grid-cols-[320px_1fr]">
+        <section className="grid items-start gap-4 lg:grid-cols-[320px_1fr]">
           {/* Tree */}
-          <div className="rounded-xl border border-grey-200 bg-white p-3 shadow-sm">
+          <div className="rounded-xl border border-grey-200 bg-white p-3 shadow-sm lg:sticky lg:top-4 lg:max-h-[80vh] lg:overflow-auto">
             <div className="mb-2 flex items-center gap-2 rounded-md bg-primary/5 px-2 py-1.5">
               <span className="flex h-5 w-5 items-center justify-center rounded bg-primary text-xs font-bold text-white">▣</span>
               <span className="text-sm font-bold text-primary">EU industry</span>

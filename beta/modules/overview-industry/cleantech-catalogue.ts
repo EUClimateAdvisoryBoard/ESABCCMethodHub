@@ -313,7 +313,7 @@ export const CATALOGUE: Subsector[] = [
             location: 'Boden, Sweden',
             capacity: '2.1 Mt/yr DRI · 2.5 Mt/yr steel · 700 MW electrolyser (phase 1)',
             status: 'construction',
-            fid: 'FID taken January 2024; under construction, first steel targeted 2026; ~60% of output under offtake (Mercedes-Benz, Porsche, Volvo, IKEA)',
+            fid: 'FID 2023–24; under construction, ~60% complete (Oct 2025), first steel targeted 2026; ~60% of output under offtake (Mercedes-Benz, Porsche, Volvo, IKEA)',
             year: '2024',
             source: {
               org: 'Mission Possible Partnership',
@@ -323,19 +323,34 @@ export const CATALOGUE: Subsector[] = [
             },
           },
           {
-            name: 'ArcelorMittal EU DRI-EAF projects (Germany / France)',
+            name: 'SSAB Luleå green-steel mill',
+            company: 'SSAB',
+            location: 'Luleå, Sweden',
+            capacity: '2.5 Mt/yr (mini-mill, two EAFs; ≈€4.5bn)',
+            status: 'construction',
+            fid: 'FID April 2024; groundbreaking Sep 2025; start-up slipped 12 months to end-2029 on grid delays',
+            year: '2025',
+            source: { org: 'SteelOrbis', title: "Sweden's SSAB breaks ground for Luleå green steel mill", url: 'https://www.steelorbis.com/steel-news/latest-news/swedens-ssab-breaks-ground-for-lule-green-steel-mill-1410529.htm', year: '2025' },
+          },
+          {
+            name: 'thyssenkrupp tkH2Steel DRI plant',
+            company: 'thyssenkrupp Steel',
+            location: 'Duisburg, Germany',
+            capacity: '2.5 Mt/yr DRI (hydrogen-ready)',
+            status: 'construction',
+            fid: 'Under construction (~2027), but green-H₂ tender postponed indefinitely (Mar 2025); runs on natural gas until ~2028',
+            year: '2025',
+            source: { org: 'EUROMETAL', title: 'Thyssenkrupp Steel pauses German green hydrogen tender on high prices', url: 'https://eurometal.net/thyssenkrupp-steel-pauses-german-green-hydrogen-tender-on-high-prices/', year: '2025' },
+          },
+          {
+            name: 'ArcelorMittal EU DRI-EAF projects (Bremen & Eisenhüttenstadt)',
             company: 'ArcelorMittal',
-            location: 'EU (multiple sites)',
-            capacity: 'Multiple DRI-EAF units planned',
-            status: 'announced',
-            fid: 'FID postponed — Nov 2024 ArcelorMittal said it could not take FIDs on new EU DRI-EAF plants as energy, policy and market conditions had not developed as hoped',
-            year: '2024',
-            source: {
-              org: 'Fastmarkets',
-              title: 'European steel industry: ArcelorMittal halts EAF/DRI project',
-              url: 'https://www.fastmarkets.com/insights/european-steel-industry-arcelormittal-halts-eaf-dri-project/',
-              year: '2024',
-            },
+            location: 'Germany',
+            capacity: 'Planned H2-DRI + EAF',
+            status: 'cancelled',
+            fid: 'Cancelled June 2025 — forwent a €1.3bn German state grant, citing high power prices and lack of viable green hydrogen',
+            year: '2025',
+            source: { org: 'EUROMETAL', title: 'ArcelorMittal cancels DRI-EAF decarbonisation investment in Germany', url: 'https://eurometal.net/arcelormittal-cancels-dri-eaf-decarbonisation-investment-in-germany/', year: '2025' },
           },
           {
             name: 'European green-steel pipeline (SALCOS, thyssenkrupp, HYBRIT…)',
@@ -505,8 +520,8 @@ export const CATALOGUE: Subsector[] = [
       'Primary aluminium is dominated by (a) indirect emissions from the huge electricity draw of smelting and (b) direct process CO₂ from the consumable carbon anodes. Secondary (recycled) aluminium needs ~5% of the energy. EU aluminium GHG fell ~45% since 2005.',
     emissions: [
       {
-        value: '≈ 2.75 Mt CO₂ direct process (2022)',
-        note: 'anode process CO₂ only; far larger power-related emissions are indirect (EU smelting ≈93% hydropower). Sector ≈24 Mt CO₂e/yr incl. indirect',
+        value: '≈ 2.75 Mt CO₂ direct (2022)',
+        note: 'mainly anode process CO₂; far larger power-related emissions are indirect (EU smelting ≈93% hydropower). Sector ≈24 Mt CO₂e/yr incl. indirect',
         source: { org: 'JRC (European Commission)', title: 'Aluminium factsheet (JRC144120)', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf', year: '2026' },
       },
       { value: '−45% (2005–2023)', note: 'one of the three deepest EU cuts among energy-intensive industries', source: S.eeaBrief },
@@ -610,6 +625,7 @@ export const CATALOGUE: Subsector[] = [
     summary:
       'Copper, zinc and nickel production combines electricity-intensive electrolysis/smelting with process heat. Decarbonisation leans on electrification, clean power and recycling; a smaller EU emitter than steel/aluminium but strategically critical for the transition itself.',
     emissions: [
+      { value: '≈ 52 Mt CO₂e — whole EU non-ferrous sector', note: 'EU28+EFTA 2015, 18 Mt direct + 37 Mt indirect; INCLUDES aluminium (dominant) — a copper/zinc/nickel-only figure is not isolable in public data', source: { org: 'Eurometaux / VUB-IES', title: 'Metals for a Climate Neutral Europe — a 2050 Blueprint', url: 'https://eurometaux.eu/media/2005/full-report-8-56-17.pdf', year: '2019' } },
       { value: 'Part of the ~27% energy-intensive industry share', source: S.eeaBrief },
     ],
     technologies: [
@@ -640,7 +656,7 @@ export const CATALOGUE: Subsector[] = [
       'The hardest of the hard-to-abate: ~60% of cement CO₂ comes from calcining limestone (CaCO₃ → CaO + CO₂) — inherent to the chemistry. Fuel switching and efficiency only touch the other ~40%, so cement cannot reach near-zero without carbon capture, clinker substitution, or novel chemistries.',
     emissions: [
       {
-        value: '≈ 117 Mt CO₂ (EU ETS, 2023; cement clinker + lime combined)',
+        value: '≈ 124 Mt CO₂ (EU ETS, 2023; cement clinker + lime combined)',
         note: 'EUTL "cement clinker or lime" activity type',
         source: S.sandbag2023,
       },
@@ -775,7 +791,7 @@ export const CATALOGUE: Subsector[] = [
     emissions: [
       { value: 'Process-dominated (calcination of limestone)', source: S.eeaBrief },
       {
-        value: 'Reported with cement in the EU ETS (combined ≈ 117 Mt, 2023)',
+        value: 'Reported with cement in the EU ETS (combined ≈ 124 Mt, 2023)',
         note: 'lime is not split out as a standalone EUTL activity',
         source: S.sandbag2023,
       },
@@ -808,7 +824,7 @@ export const CATALOGUE: Subsector[] = [
     emissions: [
       {
         value: '≈ 22 Mt CO₂ direct/yr',
-        note: '~75% from melting-furnace combustion, ~25% process CO₂ from carbonate raw materials',
+        note: 'melting-furnace combustion plus process CO₂ from carbonate raw materials',
         source: { org: 'European Commission (CINEA)', title: 'How LIFE is reducing emissions from glass production', url: 'https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en', year: '2022' },
       },
       { value: 'Part of "glass & clay", within the ~27% share', source: S.eeaBrief },
@@ -1064,7 +1080,26 @@ export const CATALOGUE: Subsector[] = [
         trl: { value: 'TRL 7–8 (first commercial plants operating/building)', source: S.ieaEtpGuide },
         availability: { value: 'First commercial e-/bio-methanol plants online', source: S.ieaH2 },
         projects: [
-          { name: 'EU e-/bio-methanol projects', location: 'EU', status: 'construction', fid: 'Several FID/under construction', source: S.ieaH2 },
+          {
+            name: 'Kassø e-methanol facility',
+            company: 'European Energy & Mitsui',
+            location: 'Kassø, Denmark',
+            capacity: '42,000 t/yr e-methanol',
+            status: 'operational',
+            fid: "FID taken; world's first large-scale commercial e-methanol plant, inaugurated May 2025 (offtakers Maersk, LEGO, Novo Nordisk)",
+            year: '2025',
+            source: { org: 'European Energy', title: 'Kassø e-methanol facility officially inaugurated', url: 'https://europeanenergy.com/2025/05/13/kasso-e-methanol-facility-officially-inaugurated/', year: '2025' },
+          },
+          {
+            name: 'FlagshipONE e-methanol',
+            company: 'Ørsted',
+            location: 'Örnsköldsvik, Sweden',
+            capacity: '≈55,000 t/yr e-methanol (planned)',
+            status: 'cancelled',
+            fid: 'FID 2022 and under construction, but discontinued August 2024 (>$220m impairment) citing slow e-fuel demand',
+            year: '2024',
+            source: { org: 'The Maritime Executive', title: 'Ørsted Pulls Plug on Shipping E-Methanol Fuel Project', url: 'https://maritime-executive.com/article/oersted-pulls-plug-on-shipping-e-methanol-fuel-project-citing-slower-demand', year: '2025' },
+          },
         ],
         rationale: {
           costDrivers: { value: 'Green hydrogen and captured-CO₂ cost make e-methanol far dearer than fossil methanol.', source: S.ieaH2 },
@@ -1130,6 +1165,7 @@ export const CATALOGUE: Subsector[] = [
     summary:
       'Mostly medium-temperature heat and drying, much of it already biomass-fired (black liquor). The deepest EU cut of the six branches (−51% since 2005). Levers: electrification, high-temperature heat pumps, biomass and efficiency.',
     emissions: [
+      { value: '≈ 27 Mt CO₂ direct fossil (2022)', note: 'predominantly energy/combustion; down ~50% since 2005 (large biogenic share excluded)', source: { org: 'CEPI', title: 'Key Statistics 2022 — European pulp & paper industry', url: 'https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf', year: '2022' } },
       { value: 'EU pulp & paper GHG −51% since 2005', source: S.eeaBrief },
     ],
     technologies: [
@@ -1158,6 +1194,7 @@ export const CATALOGUE: Subsector[] = [
     summary:
       'Large, distributed sector dominated by low- and medium-temperature heat (washing, pasteurising, drying) — the most electrifiable heat demand in industry. Levers: heat pumps, electric boilers, mechanical vapour recompression, solar thermal and biomass/biogas.',
     emissions: [
+      { value: '≈ 94 Mt CO₂e/yr — EU food & drink manufacturing', note: '~5th-largest EU industrial emitter; ~two-thirds of energy is heat, one-third electricity', source: { org: 'FoodDrinkEurope (Ricardo roadmap)', title: 'Our climate journey: the road to net-zero', url: 'https://www.fooddrinkeurope.eu/our-climate-journey-the-road-to-net-zero/', year: '2021' } },
       { value: 'Distributed low/medium-temperature heat; broadly electrifiable', source: S.ieaHeatPumps },
     ],
     technologies: [
@@ -1451,6 +1488,26 @@ export const CATALOGUE: Subsector[] = [
               year: '2025',
             },
           },
+          {
+            name: 'Project Greensand',
+            company: 'INEOS, Harbour Energy, Nordsøfonden',
+            location: 'Danish North Sea (Nini field)',
+            capacity: '≈0.4 Mt/yr initially → up to 8 Mt/yr',
+            status: 'fid',
+            fid: 'FID on first commercial phase (2024/25); storage from end-2025/2026 — first full-scale CO₂ storage in the EU',
+            year: '2025',
+            source: { org: 'Clean Air Task Force', title: 'Carbon capture and storage in Europe: slow but significant progress in 2025', url: 'https://www.catf.us/2025/11/carbon-capture-storage-europe-slow-but-significant-progress-2025/', year: '2025' },
+          },
+          {
+            name: 'Stockholm Exergi BECCS',
+            company: 'Stockholm Exergi',
+            location: 'Stockholm, Sweden',
+            capacity: '≈0.8 Mt/yr biogenic CO₂',
+            status: 'fid',
+            fid: 'FID March 2025; construction underway',
+            year: '2025',
+            source: { org: 'Clean Air Task Force', title: 'Carbon capture and storage in Europe: slow but significant progress in 2025', url: 'https://www.catf.us/2025/11/carbon-capture-storage-europe-slow-but-significant-progress-2025/', year: '2025' },
+          },
         ],
         rationale: {
           costDrivers: { value: 'Pipelines/ships + offshore wells are large fixed-cost infrastructure; per-tonne fees stay high until volumes fill the network.', source: S.ieaCement },
@@ -1478,6 +1535,26 @@ export const CATALOGUE: Subsector[] = [
         trl: { value: 'Alkaline/PEM electrolysis TRL 8–9; scaling to GW class', source: S.ieaH2 },
         availability: { value: 'Available; project pipeline large but FIDs lag announcements', source: S.ieaH2 },
         projects: [
+          {
+            name: 'ELYgator (Air Liquide)',
+            company: 'Air Liquide',
+            location: 'Maasvlakte, Rotterdam, Netherlands',
+            capacity: '200 MW electrolyser (>€500m)',
+            status: 'fid',
+            fid: 'FID taken July 2025; operation expected end-2027, powered by OranjeWind offshore wind',
+            year: '2025',
+            source: { org: 'Argus Media', title: 'Air Liquide takes FID on Dutch 200MW green H₂ plant', url: 'https://www.argusmedia.com/en/news-and-insights/latest-market-news/2713299-air-liquide-takes-fid-on-dutch-200mw-green-h2-plant', year: '2025' },
+          },
+          {
+            name: 'Holland Hydrogen I (Shell)',
+            company: 'Shell',
+            location: 'Maasvlakte, Rotterdam, Netherlands',
+            capacity: '200 MW electrolyser (up to 80 t/day H₂)',
+            status: 'construction',
+            fid: 'FID 2022; under construction, commissioning due 2026',
+            year: '2025',
+            source: { org: 'Energy Institute (New Energy World)', title: 'Major hydrogen project advances in the Netherlands', url: 'https://knowledge.energyinst.org/new-energy-world/article?id=139775', year: '2025' },
+          },
           { name: 'EU electrolyser & hydrogen-valley projects', location: 'EU', status: 'announced', fid: 'Pipeline large; final investment decisions lagging on cost/offtake', source: S.ieaH2 },
         ],
         rationale: {
@@ -1565,13 +1642,18 @@ const MAC_SRC = {
   natureAmmonia: { org: 'Rosa & Gabrielli et al., Nature Communications (PMC)', title: 'Effects of emissions caps on low-carbon hydrogen in the European ammonia industry', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11069508/', year: '2024' } as Source,
   arxivMethanol: { org: 'arXiv (peer-reviewed preprint)', title: 'Scaling green hydrogen and CCUS via cement-methanol co-production', url: 'https://arxiv.org/pdf/2509.13674', year: '2025' } as Source,
   pmcBiogas: { org: 'Bioengineered (PMC)', title: 'Abatement cost for on-farm anaerobic digestion', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10506441/', year: '2023' } as Source,
+  agoraBreakthrough: { org: 'Agora Industry / Wuppertal Institute', title: 'Breakthrough strategies for climate-neutral industry in Europe', url: 'https://www.agora-industry.org/publications/breakthrough-strategies-for-climate-neutral-industry-in-europe-study', year: '2021' } as Source,
+  ieaghgRefining: { org: 'Frontiers in Chem. Eng. (citing IEAGHG 2017)', title: 'A pathway towards net-zero emissions in oil refineries', url: 'https://www.frontiersin.org/journals/chemical-engineering/articles/10.3389/fceng.2022.804163/full', year: '2022' } as Source,
+  natureBlueAmmonia: { org: 'IEA / Nature Communications', title: 'Cost of CO₂-free ammonia; emissions-cap effects on EU low-carbon hydrogen', url: 'https://www.nature.com/articles/s41467-024-48145-z', year: '2024' } as Source,
+  jco2uLime: { org: 'Journal of CO₂ Utilization (Hornberger et al.)', title: 'Efficient CO₂ capture from lime plants via indirectly-heated carbonate looping', url: 'https://www.sciencedirect.com/science/article/pii/S277265682300091X', year: '2023' } as Source,
+  lbnlHeatPump: { org: 'LBNL / Global Efficiency Intelligence', title: 'Electrification of manufacturing with industrial heat pumps', url: 'https://eta-publications.lbl.gov/sites/default/files/us_industrial_heat_pump-final.pdf', year: '2024' } as Source,
 };
 
 export const TECH_METRICS: Record<string, TechMetric> = {
-  'steel-h2dri': { macLowEur: 73, macHighEur: 166, trlLow: 6, trlHigh: 8, macSource: MAC_SRC.agoraSteel },
+  'steel-h2dri': { macLowEur: 73, macHighEur: 166, trlLow: 6, trlHigh: 8, macSource: S.eprsSteel },
   'steel-scrap-eaf': { macLowEur: -67, macHighEur: -42, trlLow: 9, trlHigh: 9, costNote: 'cost-saving', macSource: MAC_SRC.natureSteel },
   'steel-ng-dri': { trlLow: 9, trlHigh: 9 },
-  'steel-bf-ccs': { macLowEur: 24, macHighEur: 90, trlLow: 5, trlHigh: 7, macSource: MAC_SRC.natureSteel },
+  'steel-bf-ccs': { macLowEur: 24, macHighEur: 69, trlLow: 5, trlHigh: 7, macSource: MAC_SRC.natureSteel },
   'steel-electrolysis': { trlLow: 3, trlHigh: 5 },
   'alu-inert-anode': { macLowEur: 180, macHighEur: 300, trlLow: 6, trlHigh: 7, macSource: MAC_SRC.jrcAlu },
   'alu-secondary': { macLowEur: -30, macHighEur: 0, trlLow: 9, trlHigh: 9, costNote: 'cost-saving', macSource: S.matecon },
@@ -1580,22 +1662,22 @@ export const TECH_METRICS: Record<string, TechMetric> = {
   'cement-clinker-sub': { macLowEur: -30, macHighEur: 10, trlLow: 9, trlHigh: 9, costNote: 'cost-neutral to cheaper', macSource: S.matecon },
   'cement-ccs': { macLowEur: 40, macHighEur: 107, trlLow: 6, trlHigh: 9, costNote: 'oxyfuel ~€40 → post-comb EU ~€107', macSource: MAC_SRC.ieaghgCement },
   'cement-altfuels': { macLowEur: -20, macHighEur: 20, trlLow: 4, trlHigh: 9, costNote: 'often cost-saving', macSource: S.ieaCement },
-  'lime-ccs': { trlLow: 6, trlHigh: 8 },
-  'glass-electric-hybrid': { macLowEur: 200, macHighEur: 300, trlLow: 6, trlHigh: 9, costNote: 'incl. CO₂ capture', macSource: MAC_SRC.glassStudy },
+  'lime-ccs': { macLowEur: 33, macHighEur: 43, trlLow: 6, trlHigh: 8, costNote: 'carbonate looping', macSource: MAC_SRC.jco2uLime },
+  'glass-electric-hybrid': { macLowEur: 202, macHighEur: 300, trlLow: 6, trlHigh: 9, costNote: 'from ~€202 (large plant, incl. CCS); upper end estimated', macSource: MAC_SRC.glassStudy },
   'glass-cullet': { macLowEur: -20, macHighEur: 0, trlLow: 5, trlHigh: 9, costNote: 'cost-saving', macSource: S.ipcc11 },
   'ceramics-electrify-h2': { trlLow: 5, trlHigh: 9 },
   'ammonia-green-h2': { macLowEur: 183, macHighEur: 362, trlLow: 7, trlHigh: 8, macSource: MAC_SRC.natureAmmonia },
-  'ammonia-blue-h2': { trlLow: 7, trlHigh: 9 },
-  'hvc-ecracker': { trlLow: 6, trlHigh: 7 },
+  'ammonia-blue-h2': { macLowEur: 46, macHighEur: 187, trlLow: 7, trlHigh: 9, costNote: 'SMR/ATR + CCS', macSource: MAC_SRC.natureBlueAmmonia },
+  'hvc-ecracker': { macLowEur: 100, macHighEur: 170, trlLow: 6, trlHigh: 7, costNote: 'chem-sector proxy', macSource: MAC_SRC.agoraBreakthrough },
   'hvc-recycling': { trlLow: 6, trlHigh: 8 },
   'chloralkali-odc': { trlLow: 8, trlHigh: 9 },
-  'methanol-e-bio': { macLowEur: 110, macHighEur: 150, trlLow: 7, trlHigh: 8, macSource: MAC_SRC.arxivMethanol },
-  'refining-ccs-h2-elec': { trlLow: 6, trlHigh: 9 },
-  'pulppaper-electrify-hp': { trlLow: 6, trlHigh: 9 },
-  'food-heatpumps': { trlLow: 7, trlHigh: 9 },
+  'methanol-e-bio': { macLowEur: 120, macHighEur: 150, trlLow: 7, trlHigh: 8, costNote: 'over $120/tCO₂', macSource: MAC_SRC.arxivMethanol },
+  'refining-ccs-h2-elec': { macLowEur: 153, macHighEur: 170, trlLow: 6, trlHigh: 9, costNote: 'post-combustion CCS', macSource: MAC_SRC.ieaghgRefining },
+  'pulppaper-electrify-hp': { macLowEur: 45, macHighEur: 147, trlLow: 6, trlHigh: 9, costNote: 'US proxy (LBNL)', macSource: MAC_SRC.lbnlHeatPump },
+  'food-heatpumps': { macLowEur: 45, macHighEur: 147, trlLow: 7, trlHigh: 9, costNote: 'US proxy (LBNL)', macSource: MAC_SRC.lbnlHeatPump },
   'food-solar-thermal': { trlLow: 8, trlHigh: 9 },
   'food-biomass-biogas': { macLowEur: 100, macHighEur: 280, trlLow: 7, trlHigh: 9, macSource: MAC_SRC.pmcBiogas },
-  'x-heatpumps': { trlLow: 6, trlHigh: 9 },
+  'x-heatpumps': { macLowEur: 45, macHighEur: 147, trlLow: 6, trlHigh: 9, costNote: 'US proxy (LBNL)', macSource: MAC_SRC.lbnlHeatPump },
   'x-ccs-networks': { trlLow: 8, trlHigh: 9 },
   'x-electrolysers': { macLowEur: 183, macHighEur: 187, trlLow: 8, trlHigh: 9, costNote: 'green H₂ vs SMR', macSource: MAC_SRC.natureAmmonia },
   'x-circular': { macLowEur: -50, macHighEur: 10, trlLow: 8, trlHigh: 9, costNote: 'often negative-cost (demand-side)', macSource: S.matecon },
@@ -1634,9 +1716,9 @@ export const SUBSECTOR_IMAGES: Record<string, string> = {
  */
 export const EMISSIONS_SPLIT: { name: string; mt: number; color: string }[] = [
   { name: 'Iron & steel', mt: 96, color: BRANCH_COLORS.Metals },
-  { name: 'Cement & lime', mt: 117, color: BRANCH_COLORS['Non-metallic minerals'] },
+  { name: 'Cement & lime', mt: 124, color: BRANCH_COLORS['Non-metallic minerals'] },
   { name: 'Refineries', mt: 105, color: BRANCH_COLORS['Chemicals & refining'] },
-  { name: 'Other ETS industry (chemicals, etc.)', mt: 251, color: '#94A3B8' },
+  { name: 'Other ETS industry (chemicals, etc.)', mt: 244, color: '#94A3B8' },
 ];
 
 export const EMISSIONS_SPLIT_TOTAL_MT = 569;
@@ -1647,3 +1729,46 @@ export const EMISSIONS_SPLIT_SOURCE: Source = {
   url: 'https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/',
   year: '2024',
 };
+
+/**
+ * Indicative SECTOR-LEVEL marginal-abatement-cost curve (MACC): one block per
+ * subsector, WIDTH = 2050 abatement potential (~near-full decarbonisation of the
+ * sector baseline, Mt CO2/yr), HEIGHT = representative EUR/tCO2 cost of the
+ * sector's PRIMARY near-zero route. Sorted cheapest -> costliest it reads as a
+ * classic MACC. Each block cites its potential source AND its cost source.
+ *
+ * CAVEATS (shown in the UI): (1) simplified/indicative - each sector is a single
+ * primary route, so cheaper partial levers (steel scrap-EAF, clinker
+ * substitution) are not drawn separately; (2) cross-cutting levers
+ * (electrification, CCS, hydrogen, circularity) overlap and re-slice the same
+ * emissions, so they are NOT added here to avoid double-counting; (3) baselines
+ * mix EU-27 ETS-activity and sector-association scopes / base years.
+ */
+export interface MaccBlock {
+  subsectorId: string;
+  label: string;
+  potentialMt: number;
+  macLow: number;
+  macHigh: number;
+  route: string;
+  potentialSource: Source;
+  macSource: Source;
+}
+
+const POT_SRC = {
+  agoraSteel: { org: 'Agora Industry / Wuppertal', title: 'Breakthrough strategies for climate-neutral industry in Europe', url: 'https://www.agora-industry.org/publications/breakthrough-strategies-for-climate-neutral-industry-in-europe-study', year: '2021' } as Source,
+  jrcCapture: { org: 'JRC / CaptureMap', title: 'Industrial CO2 in Europe (point sources)', url: 'https://www.capturemap.no/industrial-co2-in-europe/', year: '2022' } as Source,
+  eeaChem: { org: 'EEA', title: 'Total GHG emissions in the chemical industry', url: 'https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/total-greenhouse-gas-emissions-in-the-chemical-industry', year: '2021' } as Source,
+  fertEurope: { org: 'Fertilizers Europe', title: 'Ammonia Roadmap for the European fertilizer industry', url: 'https://www.fertilizerseurope.com/wp-content/uploads/2023/11/Ammonia-Roadmap-Fertilizer-Europe-FINAL-Sept-22-2023.pdf', year: '2023' } as Source,
+  cepi: { org: 'CEPI', title: 'Key Statistics 2022 - European pulp & paper industry', url: 'https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf', year: '2022' } as Source,
+};
+
+export const SECTOR_MACC: MaccBlock[] = [
+  { subsectorId: 'cement', label: 'Cement', potentialMt: 110, macLow: 40, macHigh: 107, route: 'CCS (oxyfuel -> post-combustion)', potentialSource: POT_SRC.jrcCapture, macSource: MAC_SRC.ieaghgCement },
+  { subsectorId: 'pulppaper', label: 'Pulp & paper', potentialMt: 27, macLow: 45, macHigh: 147, route: 'electrification / heat pumps', potentialSource: POT_SRC.cepi, macSource: MAC_SRC.lbnlHeatPump },
+  { subsectorId: 'steel', label: 'Iron & steel', potentialMt: 145, macLow: 73, macHigh: 166, route: 'H2-DRI + EAF (primary)', potentialSource: POT_SRC.agoraSteel, macSource: S.eprsSteel },
+  { subsectorId: 'hvc', label: 'Chemicals (HVC)', potentialMt: 119, macLow: 100, macHigh: 170, route: 'electrification + recycling', potentialSource: POT_SRC.eeaChem, macSource: MAC_SRC.agoraBreakthrough },
+  { subsectorId: 'refining', label: 'Refining', potentialMt: 120, macLow: 153, macHigh: 170, route: 'CCS + clean H2 + electrification', potentialSource: POT_SRC.jrcCapture, macSource: MAC_SRC.ieaghgRefining },
+  { subsectorId: 'ammonia', label: 'Ammonia', potentialMt: 36, macLow: 183, macHigh: 362, route: 'electrolytic (green) hydrogen', potentialSource: POT_SRC.fertEurope, macSource: MAC_SRC.natureAmmonia },
+  { subsectorId: 'glass', label: 'Glass', potentialMt: 18, macLow: 202, macHigh: 300, route: 'electric/hybrid + CCS', potentialSource: POT_SRC.jrcCapture, macSource: MAC_SRC.glassStudy },
+];
