@@ -49,6 +49,7 @@ import {
   useLiveReferences,
   referencePdfCacheKey,
   useOverallTags,
+  useReadingAssignments,
   useGeneralNotes,
   semanticColorFor,
   lightenedFromParent,
@@ -82,6 +83,8 @@ import {
   GeneralNotesPanel,
   WorkspaceAnalysis,
   WorkspaceChapterView,
+  WorkspaceReadingView,
+  type PickableReference,
   FloatingCodeToolbar,
   CodeEditorModal,
   type PendingNoteSelection,
@@ -94,6 +97,8 @@ import {
 } from '@/components/content-analysis';
 import { showToast } from '@/components/ui/ToastHost';
 import { uploadPdf } from '@/lib/references/pdf-storage';
+import { pwApi } from '@/lib/project-workspace/client';
+import { supabase } from '@/lib/supabase';
 
 const PdfDocumentView = dynamic(
   () => import('@/components/content-analysis/PdfDocumentView'),
@@ -394,7 +399,32 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   } = useContentAnalysis();
   const liveRefs = useLiveReferences();
   const overallTags = useOverallTags();
-  const { user, displayName } = useAuth();
+  const reading = useReadingAssignments(projectId);
+  const { user, displayName, requireAuth } = useAuth();
+
+  // Team display names for the reading-responsibility reader picker. Combined
+  // with the reader names already used in this workspace (which include the
+  // seeded scoping-phase reviewers) so both are offered as suggestions.
+  const [teamPeople, setTeamPeople] = useState<string[]>([]);
+  useEffect(() => {
+    let alive = true;
+    void pwApi
+      .listPeople()
+      .then(list => { if (alive) setTeamPeople(list.map(p => p.name).filter(Boolean)); })
+      .catch(() => { /* picker still works from free text + used names */ });
+    return () => { alive = false; };
+  }, []);
+  const readerSuggestions = useMemo(() => {
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const name of [...teamPeople, ...reading.readerPool]) {
+      const key = name.trim().toLowerCase();
+      if (!key || seen.has(key)) continue;
+      seen.add(key);
+      out.push(name);
+    }
+    return out.sort((a, b) => a.localeCompare(b));
+  }, [teamPeople, reading.readerPool]);
 
   /** Stamp a saved tag comment with the signed-in author so the segments
    *  list can show "who said it". */
@@ -405,7 +435,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   );
 
   const [sourceType, setSourceType] = useState<SourceType | null>(null);
-  const [view, setView] = useState<'code' | 'analyse' | 'chapters'>('code');
+  const [view, setView] = useState<'code' | 'analyse' | 'chapters' | 'reading'>('code');
   /** Bumped by the "Guided tour" button to replay the Code-view walkthrough. */
   const [tourReplay, setTourReplay] = useState(0);
   /** Bumped to replay the Analyse-view walkthrough. */
@@ -747,6 +777,14 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     return out;
   }, [allDocuments, corpusIds, corpusMeta]);
 
+  /** Documents that already carry a written summary — surfaced in the Reading
+   *  responsibility view so the team can see "for which sources somebody already
+   *  made a brief summary". */
+  const summaryDocIds = useMemo(
+    () => new Set(snapshot.summaries.map(s => s.documentId)),
+    [snapshot.summaries],
+  );
+
   /** Chapter (report-chapter / sector) tag ids applied to each cross-source
    *  corpus document. Chapter tags live only in the manual store, so this reads
    *  the hand-curated set directly for every tier. */
@@ -1056,6 +1094,69 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
       removeFromCorpus(id);
     }
   };
+
+  // ── Reading responsibility: add literature + assign readers ────────────────
+  /** Bearer header for the reading "add" route (persists ref + corpus + reader
+   *  server-side in one call). */
+  const readingAuthHeader = useCallback(async (): Promise<Record<string, string>> => {
+    if (!supabase) return {};
+    const { data } = await supabase.auth.getSession();
+    const tok = data.session?.access_token;
+    return tok ? { authorization: `Bearer ${tok}` } : {};
+  }, []);
+
+  /** Reflect a server-side add into local state: show the document in the
+   *  workspace immediately and prime its reader. */
+  const absorbAddedDocument = useCallback(
+    (documentId: string, meta: CorpusDocMeta, readerName: string) => {
+      setCorpusIds(prev => (prev.includes(documentId) ? prev : [...prev, documentId]));
+      setCorpusMeta(prev => ({ ...prev, [documentId]: meta }));
+      if (readerName) reading.primeReaders([{ documentId, reader: readerName }]);
+    },
+    [reading],
+  );
+
+  const addLiteratureByDoi = useCallback(
+    async (doi: string, readerName: string): Promise<boolean> => {
+      const u = user ?? (await requireAuth('Sign in to add literature.'));
+      if (!u) return false;
+      try {
+        const res = await fetch('/api/content-analysis/reading/add', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', ...(await readingAuthHeader()) },
+          body: JSON.stringify({ projectId, projectName, doi, reader: readerName }),
+        });
+        if (!res.ok) return false;
+        const json = (await res.json()) as { documentId: string; meta: CorpusDocMeta; reader: string };
+        absorbAddedDocument(json.documentId, json.meta, json.reader);
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    [user, requireAuth, projectId, projectName, readingAuthHeader, absorbAddedDocument],
+  );
+
+  const addLiteratureReference = useCallback(
+    async (ref: PickableReference, readerName: string): Promise<boolean> => {
+      const u = user ?? (await requireAuth('Sign in to add literature.'));
+      if (!u) return false;
+      try {
+        const res = await fetch('/api/content-analysis/reading/add', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', ...(await readingAuthHeader()) },
+          body: JSON.stringify({ projectId, projectName, reference: ref, reader: readerName }),
+        });
+        if (!res.ok) return false;
+        const json = (await res.json()) as { documentId: string; meta: CorpusDocMeta; reader: string };
+        absorbAddedDocument(json.documentId, json.meta, json.reader);
+        return true;
+      } catch {
+        return false;
+      }
+    },
+    [user, requireAuth, projectId, projectName, readingAuthHeader, absorbAddedDocument],
+  );
 
   const createSegment = (input: { startChar: number; endChar: number; text: string; blockId?: string; pdfAnchor?: import('@/lib/content-analysis/types').PdfAnchor; screenshot?: string }, codeId: string) => {
     if (!selectedDocument) return;
@@ -1635,13 +1736,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           >
             Chapter view
           </button>
+          <button
+            type="button"
+            onClick={() => setView('reading')}
+            className={`px-3 py-1 border-l border-grey-200 ${view === 'reading' ? 'bg-primary text-white' : 'text-tertiary hover:bg-grey-50'}`}
+            title="Keep an overview of who is reading what — add literature by DOI or from the reference manager and assign a responsible reader"
+          >
+            Reading responsibility
+          </button>
         </div>
       </header>
 
-      {/* Lens selector — shared by Code + Analyse views. The Chapter view is
-          organised by document-level chapter tags, not segment lenses, so it
-          hides this control. */}
-      {view !== 'chapters' && (
+      {/* Lens selector — shared by Code + Analyse views. The Chapter and Reading
+          views are organised by document-level dimensions, not segment lenses,
+          so they hide this control. */}
+      {view !== 'chapters' && view !== 'reading' && (
       <div className="ca-ws-tour-lens bg-grey-50 border border-grey-200 rounded-lg p-2.5">
         <div className="flex items-center gap-2 flex-wrap">
           <span className="text-[10px] uppercase tracking-wide text-tertiary-light font-semibold" title="Whose tags are shown — toggle to compare what other projects are coding">
@@ -1714,6 +1823,21 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
             setSelectedDocumentId(doc.id);
             setView('code');
           }}
+        />
+      ) : view === 'reading' ? (
+        <WorkspaceReadingView
+          documents={allCorpusDocs}
+          getReader={reading.getReader}
+          people={readerSuggestions}
+          summaryDocIds={summaryDocIds}
+          onOpenDocument={doc => {
+            setSourceType(sourceTierOf(doc));
+            setSelectedDocumentId(doc.id);
+            setView('code');
+          }}
+          onSetReader={(docId, r) => { void reading.setReader(docId, r); }}
+          onAddByDoi={addLiteratureByDoi}
+          onAddReference={addLiteratureReference}
         />
       ) : (
         <div className="grid gap-4 grid-cols-1 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
