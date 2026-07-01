@@ -1,0 +1,386 @@
+/**
+ * Overview Industry — Clean Tech chapter reading list.
+ * ----------------------------------------------------
+ * The scientific (peer-reviewed) papers and high-quality grey-literature
+ * reports behind the Clean Tech decarbonisation catalogue
+ * (`beta/modules/overview-industry/cleantech-catalogue.ts`). Every entry has a
+ * real, working link — these are the actual sources cited in the catalogue.
+ *
+ * This list is seeded into the shared Reference Manager (custom_references) and
+ * the Industry Project Workspace corpus, and each row is tagged with the
+ * "Clean Tech" chapter tag, so the team can pull the reading up in the
+ * reading-responsibility / chapter views. See
+ * `src/lib/project-workspace/db.ts` → `ensureCleanTechReadingSeed`.
+ */
+
+export interface CleanTechReadingSeed {
+  /** Stable synthetic corpus/document id. */
+  id: string;
+  /** Publishing organisation / author group. */
+  source: string;
+  /** Document title. */
+  title: string;
+  /** Publication year, when known. */
+  year?: string;
+  /** Responsible reader; empty = unassigned. */
+  reader: string;
+  /** Source tier — academia reads as scientific literature, the rest as grey. */
+  tier: 'grey' | 'scientific';
+  /** Report-chapter / sector tag. Always "Clean Tech" for this list. */
+  chapter: 'Clean Tech';
+  /** Real link to the document. */
+  url: string;
+}
+
+const C = 'Clean Tech' as const;
+
+export const CLEAN_TECH_READING_LIST: CleanTechReadingSeed[] = [
+  // ---- EU official data & emission profile ----
+  {
+    id: 'reading-ct-01',
+    source: 'European Environment Agency (EEA)',
+    title: 'Zero pollution, decarbonisation and circular economy in energy-intensive industries',
+    year: '2026',
+    reader: 'Ciarán',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.eea.europa.eu/en/analysis/publications/zero-pollution-decarbonisation-and-circular-economy-in-energy-intensive-industries',
+  },
+  {
+    id: 'reading-ct-02',
+    source: 'European Environment Agency (EEA)',
+    title: 'Greenhouse gas emissions under the EU Emissions Trading System (indicator)',
+    year: '2025',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.eea.europa.eu/en/analysis/indicators/greenhouse-gas-emissions-under-the',
+  },
+  // ---- Scientific / assessment ----
+  {
+    id: 'reading-ct-03',
+    source: 'IPCC',
+    title: 'Climate Change 2022: Mitigation of Climate Change — AR6 WGIII, Chapter 11: Industry',
+    year: '2022',
+    reader: 'Elsa',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/',
+  },
+  {
+    id: 'reading-ct-04',
+    source: 'Material Economics',
+    title: 'Industrial Transformation 2050 — Pathways to Net-Zero Emissions from EU Heavy Industry',
+    year: '2019',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://materialeconomics.com/node/13',
+  },
+  {
+    id: 'reading-ct-05',
+    source: 'European Parliament (EPRS)',
+    title: 'Carbon-free steel production — Cost reduction options and usage of existing gas infrastructure',
+    year: '2021',
+    reader: 'Ciarán',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.europarl.europa.eu/RegData/etudes/STUD/2021/690008/EPRS_STU(2021)690008_EN.pdf',
+  },
+  // ---- IEA roadmaps & data tools ----
+  {
+    id: 'reading-ct-06',
+    source: 'IEA',
+    title: 'Iron and Steel Technology Roadmap — Towards more sustainable steelmaking',
+    year: '2020',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/iron-and-steel-technology-roadmap',
+  },
+  {
+    id: 'reading-ct-07',
+    source: 'IEA',
+    title: 'ETP Clean Energy Technology Guide (technology readiness levels)',
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/data-and-statistics/data-tools/etp-clean-energy-technology-guide',
+  },
+  {
+    id: 'reading-ct-08',
+    source: 'IEA',
+    title: 'The Future of Petrochemicals — Towards more sustainable plastics and fertilisers',
+    year: '2018',
+    reader: 'Pieter',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/the-future-of-petrochemicals',
+  },
+  {
+    id: 'reading-ct-09',
+    source: 'IEA',
+    title: 'Ammonia Technology Roadmap — Towards more sustainable nitrogen fertiliser production',
+    year: '2021',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/ammonia-technology-roadmap',
+  },
+  {
+    id: 'reading-ct-10',
+    source: 'IEA / CSI',
+    title: 'Technology Roadmap: Low-Carbon Transition in the Cement Industry',
+    year: '2018',
+    reader: 'Pieter',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry',
+  },
+  {
+    id: 'reading-ct-11',
+    source: 'IEA',
+    title: 'Global Hydrogen Review 2024',
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/global-hydrogen-review-2024',
+  },
+  {
+    id: 'reading-ct-12',
+    source: 'IEA',
+    title: 'The Future of Heat Pumps',
+    year: '2022',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/the-future-of-heat-pumps',
+  },
+  // ---- Trackers & project pipeline ----
+  {
+    id: 'reading-ct-13',
+    source: 'LeadIT (SEI)',
+    title: 'Green Steel Tracker',
+    year: '2026',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.industrytransition.org/green-steel-tracker/',
+  },
+  // ---- Peer-reviewed technology detail ----
+  {
+    id: 'reading-ct-14',
+    source: 'MDPI (Sustainability)',
+    title: 'Limestone Calcined Clay Cement (LC3): From Laboratory Innovation to Sustainable Industrial Application',
+    year: '2026',
+    reader: '',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://www.mdpi.com/2071-1050/18/7/3473',
+  },
+  {
+    id: 'reading-ct-15',
+    source: 'Bioengineered (PMC)',
+    title: 'A perspective on methodologies and system boundaries to develop abatement cost for on-farm anaerobic digestion',
+    year: '2023',
+    reader: 'Mar',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10506441/',
+  },
+  {
+    id: 'reading-ct-16',
+    source: 'IEA Bioenergy',
+    title: 'Decarbonizing industrial process heat: the role of biomass',
+    year: '2022',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.ieabioenergy.com/blog/publications/decarbonizing-industrial-process-heat-the-role-of-biomass/',
+  },
+  {
+    id: 'reading-ct-17',
+    source: 'Fraunhofer ISE',
+    title: 'Solar Thermal Energy Reduces Process Heat Costs for Industry',
+    year: '2025',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.ise.fraunhofer.de/en/press-media/press-releases/2025/new-study-by-fraunhofer-ise-solar-thermal-energy-reduces-process-heat-costs-for-industry.html',
+  },
+  // ---- Flagship projects (grey / disclosure) ----
+  {
+    id: 'reading-ct-18',
+    source: 'Heidelberg Materials',
+    title: 'World premiere: CCS cement facility opens in Norway (Brevik CCS)',
+    year: '2025',
+    reader: 'Pieter',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.heidelbergmaterials.com/en/pr-2025-06-18',
+  },
+  {
+    id: 'reading-ct-19',
+    source: 'Equinor (Northern Lights JV)',
+    title: 'First CO₂ volumes stored at Northern Lights',
+    year: '2025',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.equinor.com/news/20250825-first-co2-volumes-stored-at-northern-lights',
+  },
+  {
+    id: 'reading-ct-20',
+    source: 'BASF / SABIC / Linde',
+    title: "Start-up of the world's first large-scale electrically heated steam cracking furnace",
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.basf.com/global/en/media/news-releases/2024/04/p-24-177',
+  },
+  {
+    id: 'reading-ct-21',
+    source: 'ELYSIS (Rio Tinto + Alcoa)',
+    title: 'Carbon-free aluminium smelting advances commercial demonstration and operates at industrial scale',
+    year: '2021',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://elysis.com/en/carbon-free-aluminium-smelting-a-step-closer-elysis-advances-commercial-demonstration-and-operates',
+  },
+  {
+    id: 'reading-ct-22',
+    source: 'Porthos',
+    title: 'Porthos CO₂ transport & storage — project overview (FID October 2023)',
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.porthosco2.nl/en/project/',
+  },
+  // ---- Peer-reviewed literature ----
+  {
+    id: 'reading-ct-23',
+    source: 'Vogl, V., Åhman, M., Nilsson, L.J.',
+    title: 'Assessment of hydrogen direct reduction for fossil-free steelmaking (J. Cleaner Production)',
+    year: '2018',
+    reader: '',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://doi.org/10.1016/j.jclepro.2018.08.279',
+  },
+  {
+    id: 'reading-ct-24',
+    source: 'Bataille, C., Åhman, M., Neuhoff, K., Nilsson, L.J., Fischedick, M., et al.',
+    title: 'A review of technology and policy deep decarbonization pathway options for energy-intensive industry (J. Cleaner Production)',
+    year: '2018',
+    reader: '',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://doi.org/10.1016/j.jclepro.2018.03.107',
+  },
+  {
+    id: 'reading-ct-25',
+    source: 'Wang, P., Ryberg, M., Yang, Y., Feng, K., Kara, S., Hauschild, M., Chen, W.-Q., et al.',
+    title: 'Innovations to decarbonize materials industries (Nature Reviews Materials)',
+    year: '2021',
+    reader: '',
+    tier: 'scientific',
+    chapter: C,
+    url: 'https://doi.org/10.1038/s41578-021-00376-y',
+  },
+  // ---- Sector transition strategies & assessments (grey) ----
+  {
+    id: 'reading-ct-26',
+    source: 'Mission Possible Partnership / Energy Transitions Commission',
+    title: 'Net-Zero Steel — Sector Transition Strategy',
+    year: '2021',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.energy-transitions.org/wp-content/uploads/2021/12/MPP-Steel_Transition-Strategy.pdf',
+  },
+  {
+    id: 'reading-ct-27',
+    source: 'Mission Possible Partnership',
+    title: 'Making Net-Zero Concrete and Cement Possible — Sector transition strategy',
+    year: '2023',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://missionpossiblepartnership.org/real-world-roadmap-towards-net-zero-emissions-in-concrete-cement/',
+  },
+  {
+    id: 'reading-ct-28',
+    source: 'Agora Industry / Fraunhofer ISI',
+    title: 'Direct electrification of industrial process heat — technologies, potentials and prospects for the EU',
+    year: '2024',
+    reader: 'Kamila',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.agora-industry.org/publications/direct-electrification-of-industrial-process-heat',
+  },
+  {
+    id: 'reading-ct-29',
+    source: 'Joint Research Centre (JRC)',
+    title: 'Decarbonisation options for the cement industry',
+    year: '2023',
+    reader: 'Pieter',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://publications.jrc.ec.europa.eu/repository/handle/JRC131246',
+  },
+  {
+    id: 'reading-ct-30',
+    source: 'Global CCS Institute',
+    title: 'Global Status of CCS 2024 — Collaborating for a Net-Zero Future',
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.globalccsinstitute.com/wp-content/uploads/2024/10/Global-Status-Report-6-November.pdf',
+  },
+  {
+    id: 'reading-ct-31',
+    source: 'IEAGHG',
+    title: 'Cost of CO₂ capture in the industrial sector: cement and iron & steel industries (2018-TR03)',
+    year: '2018',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/',
+  },
+  {
+    id: 'reading-ct-32',
+    source: 'European Commission',
+    title: 'The Clean Industrial Deal — a joint roadmap for competitiveness and decarbonisation (COM(2025) 85)',
+    year: '2025',
+    reader: 'Pieter',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://commission.europa.eu/topics/competitiveness/clean-industrial-deal_en',
+  },
+  {
+    id: 'reading-ct-33',
+    source: 'IEA',
+    title: 'Energy Technology Perspectives 2024',
+    year: '2024',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/energy-technology-perspectives-2024',
+  },
+  {
+    id: 'reading-ct-34',
+    source: 'IEA',
+    title: 'Global Hydrogen Review 2025',
+    year: '2025',
+    reader: '',
+    tier: 'grey',
+    chapter: C,
+    url: 'https://www.iea.org/reports/global-hydrogen-review-2025',
+  },
+];

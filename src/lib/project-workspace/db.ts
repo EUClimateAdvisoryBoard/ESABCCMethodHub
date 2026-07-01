@@ -33,6 +33,8 @@ import {
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 import { BPIE_BUILDINGS_INDICATORS } from '@/data/bpie-buildings-indicators';
 import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
+import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
+import { CHAPTER_TAGS } from '@/lib/content-analysis/chapter-tags';
 import { addToCaCorpus, getCaCorpus, getCaReading, setCaReading } from '@/lib/content-analysis-store';
 import type { CorpusDocMeta } from '@/lib/content-analysis/types';
 
@@ -403,6 +405,10 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
     // shared corpus + reading-responsibility store, so the Reading view opens
     // pre-populated with who is reading what.
     await ensureIndustryReadingSeed();
+    // Seed the Overview Industry → Clean Tech catalogue's literature into the
+    // same corpus, tagged with the "Clean Tech" chapter so it can be pulled up
+    // per chapter and in the reference manager.
+    await ensureCleanTechReadingSeed();
   }
 });
 
@@ -478,6 +484,97 @@ async function ensureIndustryReadingSeed(): Promise<void> {
     // Reading table missing/unreadable (migration 074 not applied yet) — the
     // reader seed is retried on the next render once the table exists.
     console.error('[pw seed] industry reader seed skipped', {
+      error: err instanceof Error ? err.message : String(err),
+    });
+  }
+}
+
+/**
+ * Idempotently seed the Overview Industry → Clean Tech literature list into the
+ * Industry Project corpus AND tag every row with the "Clean Tech" chapter tag,
+ * so the reading appears in the workbench, the Chapter view (filtered to Clean
+ * Tech) and the reference library. Mirrors `ensureIndustryReadingSeed`:
+ *
+ *   1) corpus rows keyed by the reading id (self-healing, idempotent);
+ *   2) a Clean Tech chapter tag per row in `content_analysis_overall_tags`
+ *      (upsert on the (document_id, code_id) primary key — a no-op on re-run);
+ *   3) reader assignments, seeded once, never overriding a hand-set reader.
+ */
+async function ensureCleanTechReadingSeed(): Promise<void> {
+  const projectId = 'industry-project';
+  const cleanTechChapterId = CHAPTER_TAGS.find(c => c.name === 'Clean Tech')?.id;
+
+  // 1) Corpus rows.
+  let corpusPresent: Set<string>;
+  try {
+    corpusPresent = new Set((await getCaCorpus(projectId)).map(e => e.documentId));
+  } catch {
+    return;
+  }
+  for (const item of CLEAN_TECH_READING_LIST) {
+    if (corpusPresent.has(item.id)) continue;
+    const referenceType = item.tier === 'scientific' ? 'article' : 'report';
+    const meta: CorpusDocMeta = {
+      id: item.id,
+      title: item.title,
+      shortTitle: item.title.length > 90 ? `${item.title.slice(0, 87)}…` : item.title,
+      kind: 'report',
+      sourceKind: 'reference',
+      referenceType,
+      referenceAuthors: item.source || undefined,
+      referenceUrl: item.url || undefined,
+    };
+    try {
+      await addToCaCorpus(projectId, item.id, meta);
+    } catch (err) {
+      console.error('[pw seed] failed to seed clean-tech reading corpus row', {
+        id: item.id,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
+
+  // 2) Clean Tech chapter tag on every row (idempotent upsert).
+  if (cleanTechChapterId) {
+    const sb = getServerSupabase();
+    if (sb) {
+      const rows = CLEAN_TECH_READING_LIST.map(item => ({
+        document_id: item.id,
+        code_id: cleanTechChapterId,
+      }));
+      try {
+        await sb
+          .from('content_analysis_overall_tags')
+          .upsert(rows, { onConflict: 'document_id,code_id', ignoreDuplicates: true });
+      } catch (err) {
+        console.error('[pw seed] failed to seed clean-tech chapter tags', {
+          error: err instanceof Error ? err.message : String(err),
+        });
+      }
+    }
+  }
+
+  // 3) Reader assignments — seeded once, never overriding hand-set readers.
+  try {
+    const seedIds = new Set(CLEAN_TECH_READING_LIST.map(i => i.id));
+    const alreadyAssigned = (await getCaReading(projectId)).some(
+      a => a.reader && seedIds.has(a.documentId),
+    );
+    if (!alreadyAssigned) {
+      for (const item of CLEAN_TECH_READING_LIST) {
+        if (!item.reader) continue;
+        try {
+          await setCaReading(projectId, item.id, item.reader);
+        } catch (err) {
+          console.error('[pw seed] failed to seed clean-tech reader', {
+            id: item.id,
+            error: err instanceof Error ? err.message : String(err),
+          });
+        }
+      }
+    }
+  } catch (err) {
+    console.error('[pw seed] clean-tech reader seed skipped', {
       error: err instanceof Error ? err.message : String(err),
     });
   }
