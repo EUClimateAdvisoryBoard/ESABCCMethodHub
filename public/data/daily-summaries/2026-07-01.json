@@ -1,24 +1,24 @@
 {
   "date": "2026-07-01",
-  "generatedAt": "2026-07-01T12:07:35.294Z",
+  "generatedAt": "2026-07-01T17:40:30.434Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 1 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.910v01-00",
-      "summary": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "headline": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v01-00",
+      "summary": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "Can giant batteries unlock Africa&#8217;s green industrial future?",
-      "summary": "Battery energy storage systems (BESS) could drive clean tech manufacturing in Africa but shortfalls in finance and data are still limiting deployment at scale The post Can giant batteries unlock Africa&#8217;s green industrial future? appeared first on Climate Home News.",
+      "headline": "Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling",
+      "summary": "UK newspapers have already published 63 editorials this year calling for more oil and gas... The post Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling appeared first on Carbon Brief.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "With extreme heat now a public health crisis, local data can save lives",
-      "summary": "The impacts of extreme heat vary widely across countries and cities, and approaches tailored using data can target solutions at vulnerable groups The post With extreme heat now a public health crisis, local data can save lives appeared first on Climate Home News.",
+      "headline": "Statement by President von der Leyen with Azerbaijani President Aliyev",
+      "summary": "European Commission Statement Baku, 01 Jul 2026 President Aliyev,\r\nThank you for your warm welcome. It is good to be back in Baku. It is remarkable city, a place where a rich and ancient heritage meets strikin...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -35,12 +35,20 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.910v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789910_EN.pdf",
+          "title": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789913_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-01T11:31:06.000Z",
+          "description": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
+          "published": "2026-07-01T13:43:01.000Z",
           "score": 27
+        },
+        {
+          "title": "MOTION FOR A RESOLUTION on the Commission Implementing Decision renewing the authorisation for the placing on the market of products containing, consisting of or produced from genetically modified maize NK603 × T25 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council - B10-0335/2026",
+          "link": "https://www.europarl.europa.eu/doceo/document/B-10-2026-0335_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "MOTION FOR A RESOLUTION&lt;br/&gt;pursuant to Rule 115(2) and (3) of the Rules of Procedure&lt;br/&gt;on the Commission Implementing Decision renewing the authorisation for the placing on the market of products containing, consisting of or produced from genetically modified maize NK603 × T25 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council &lt;br/&gt;(D115002 - 2026/2745 (RSP))&lt;br/&gt;Committee on the Environment, Climate and Food Safety&lt;br /&gt; &lt;b",
+          "published": "2026-07-01T14:55:56.000Z",
+          "score": 24
         }
       ]
     },
@@ -48,6 +56,14 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling",
+          "link": "https://www.carbonbrief.org/analysis-uk-newspapers-have-already-printed-63-editorials-in-2026-backing-north-sea-drilling/",
+          "source": "Carbon Brief",
+          "description": "UK newspapers have already published 63 editorials this year calling for more oil and gas... The post Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling appeared first on Carbon Brief.",
+          "published": "2026-07-01T14:15:14.000Z",
+          "score": 10
+        },
         {
           "title": "Can giant batteries unlock Africa&#8217;s green industrial future?",
           "link": "https://www.climatechangenews.com/2026/07/01/can-giant-batteries-unlock-africas-green-industrial-future/",
@@ -73,20 +89,12 @@
           "score": 7
         },
         {
-          "title": "Estonia images show machine guns on Russian LNG carrier in Baltic - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNYlV0T0ZHa1BhZ1lWa1Nfa25GWEg0Wmp4RzQ4WnZSb3FfQWZzMC0zZE5uNjAwWERmMGpDdktHODFKaDMwVEd5Y3JIVHJ3ZDNaa1hsdGhIaF9kajNqZzl1NXRROGx6UG9KZlhHejRNcTY2TXpTMUQ0b19XaW1fYkZ4cGd2NmJXdnlNeVhvV0MtZ1BXQkZNaVlpcDFNVUItem5qeFhJ?oc=5",
+          "title": "Battery metals recovery runs into stop-start EV market - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVi1NZDROcmtpdDAzaGhwS1EtWWJKcnNQYTVTRGJWNFcwWEgwcV9lUzd3Z3JaRDlnbHhuNV9XRkhNelB5OGhhU0lXMEdNbnM3cTJqLWVSYnV6aURwbjVueGV1UkNzdjJPUmp0TXdVWXZnaFEtbGJuMXQxMkRJTkhabzF6Yk95VnE1ci1YVFdlSGhUVDRzNWV5REx0UDR0ejFESzdRVm9JVFFPcEhWVGk3WFF3aWxUUnhjQnFfTzNxSjA?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNYlV0T0ZHa1BhZ1lWa1Nfa25GWEg0Wmp4RzQ4WnZSb3FfQWZzMC0zZE5uNjAwWERmMGpDdktHODFKaDMwVEd5Y3JIVHJ3ZDNaa1hsdGhIaF9kajNqZzl1NXRROGx6UG9KZlhHejRNcTY2TXpTMUQ0b19XaW1fYkZ4cGd2NmJXdnlNeVhvV0MtZ1BXQkZNaVlpcDFNVUItem5qeFhJ?oc=5\" target=\"_blank\"&gt;Estonia images show machine guns on Russian LNG carrier in Baltic&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T14:18:05.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNVi1NZDROcmtpdDAzaGhwS1EtWWJKcnNQYTVTRGJWNFcwWEgwcV9lUzd3Z3JaRDlnbHhuNV9XRkhNelB5OGhhU0lXMEdNbnM3cTJqLWVSYnV6aURwbjVueGV1UkNzdjJPUmp0TXdVWXZnaFEtbGJuMXQxMkRJTkhabzF6Yk95VnE1ci1YVFdlSGhUVDRzNWV5REx0UDR0ejFESzdRVm9JVFFPcEhWVGk3WFF3aWxUUnhjQnFfTzNxSjA?oc=5\" target=\"_blank\"&gt;Battery metals recovery runs into stop-start EV market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-01T05:09:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Many Australians can get three free hours of power from today. Here’s how",
-          "link": "https://www.theguardian.com/environment/2026/jun/30/solar-sharer-offer-sso-three-free-hours-electricity-power-energy-australia",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Residents of Queensland, New South Wales and South Australia with a smart meter can access the Solar Sharer offer from 1 July&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/01/australia-politics-live-labor-kpmg-daniel-mulino-jim-chalmers-anthony-albanese-question-time-coalition-angus-taylor-one-nation-pauline-hanson-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&g",
-          "published": "2026-06-30T15:00:13.000Z",
-          "score": 4
         }
       ]
     },
@@ -95,27 +103,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "With extreme heat now a public health crisis, local data can save lives",
-          "link": "https://www.climatechangenews.com/2026/06/30/with-extreme-heat-now-a-public-health-crisis-local-data-can-save-lives/",
-          "source": "Climate Home News",
-          "description": "The impacts of extreme heat vary widely across countries and cities, and approaches tailored using data can target solutions at vulnerable groups The post With extreme heat now a public health crisis, local data can save lives appeared first on Climate Home News.",
-          "published": "2026-06-30T13:43:58.000Z",
-          "score": 10
+          "title": "Statement by President von der Leyen with Azerbaijani President Aliyev",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1503",
+          "source": "European Commission",
+          "description": "European Commission Statement Baku, 01 Jul 2026 President Aliyev,\r\nThank you for your warm welcome. It is good to be back in Baku. It is remarkable city, a place where a rich and ancient heritage meets strikin...",
+          "published": "2026-07-01T12:52:46.000Z",
+          "score": 18
         },
         {
-          "title": "‘Is there a way out of this mess?’: Your questions answered on Europe’s week of hellish heat",
-          "link": "https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;As the the shocking heatwave continues, our European environment correspondent Ajit Niranjan answered your questions about which countries have responded best, who is being held to account, and why people are surprised after decades of warnings&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat#comment-175034906\"&gt;sloth_101&lt;/a&gt; asks&lt;/strong&gt;: Most reports",
-          "published": "2026-06-30T14:14:47.000Z",
-          "score": 8
+          "title": "Cropped 1 July 2026: Heatwave scorches Europe &#124; UK 2050 farm plan &#124; What’s next for the High Seas Treaty",
+          "link": "https://www.carbonbrief.org/cropped-1-july-2026-heatwave-scorches-europe-uk-2050-farm-plan-whats-next-for-the-high-seas-treaty/",
+          "source": "Carbon Brief",
+          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 1 July 2026: Heatwave scorches Europe | UK 2050 farm plan | What’s next for the High Seas Treaty appeared first on Carbon Brief.",
+          "published": "2026-07-01T14:00:00.000Z",
+          "score": 16
         },
         {
-          "title": "World Cup matches played in potentially dangerous heat as players’ union makes climate warning",
-          "link": "https://www.theguardian.com/us-news/2026/jun/30/world-cup-matches-extreme-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Nine of the group stage games played in severe heat, analysis finds, as union points to lessons for the whole sport&lt;/p&gt;&lt;p&gt;Nine matches in the &lt;a href=\"https://www.theguardian.com/football/world-cup-football\"&gt;World Cup&lt;/a&gt; group stage were played amid potentially dangerous heat and humidity, a Guardian analysis shows, as the global players’ union Fifpro warned that heat would have to “play a bigger part” in the sport’s future scheduling decisions.&lt;/p&gt;&lt;p&g",
-          "published": "2026-06-30T16:00:10.000Z",
+          "title": "Demand for water use highest since 2022 drought",
+          "link": "https://www.bbc.co.uk/news/articles/c992j5y77j2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Islanders urged to use water \"wisely\" after demand soared in heatwave.",
+          "published": "2026-07-01T12:39:58.000Z",
           "score": 7
         },
         {
@@ -149,19 +157,11 @@
           "score": 8
         },
         {
-          "title": "Labour MPs tell Burnham to ignore ‘deluded’ calls for more North Sea drilling",
-          "link": "https://www.theguardian.com/environment/2026/jun/30/labour-mps-tell-burnham-ignore-deluded-calls-more-north-sea-drilling",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Critics debunk economic claims as research finds Rosebank development would produce estimated 250m tonnes of CO2&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Scores of Labour MPs have urged the prospective prime minister Andy Burnham to rule out the “t",
-          "published": "2026-06-30T13:00:07.000Z",
-          "score": 2
-        },
-        {
-          "title": "Oppenheimer makes rare cuts to top US investment banks, backs alternative asset managers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGlqYm92N2FkWXFfRzhOY0ItZmhWTWV5a3hRdUw5WTBDcHdOWlpLc1ZIZEcwX2RtTVl3NDZVZ19KVzZXRnVIbHJ3SGZZcWNVUGxhT2d1MFc1RlJRVEtCVGZRSjRmVGZNZUVPalAzelc0VmlwYjc5enJiUHJZRWltTDFPcDdSOHc1NTREeVJwSlNQb1BBdDFFYktKa28zcXRIQW42OXdqMlNxNi1hMUlpaXZBOVdGWExJcE5EUm4weVBleC1TWnU0?oc=5",
+          "title": "World Bank backs Nigeria 2026–2032 plan with $1.25 billion to spur jobs, private investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQVlpiX20ya1lzY1FVNkJlUE1MbHlseFpwcUZlVE0tbDRLTnh0VkZOSW5ySEJ6TFVOV1RZbmVZdTJJcXVqN1hzODlBamVZaGVld2FURUpJWXphbURLbi0tNE9pSVNOVXZ5bVZjRzYzcE1BX0Nvb1dQMHVZTk5VUFdPaUhXQ1c3NjI5amUzdlJCQVJCVXlCSExqbEJLSnZuaERVLXNaZFhJQUZPQnU5dTJ6U09XTHVRSVBjWnlqdTgtRQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOOGlqYm92N2FkWXFfRzhOY0ItZmhWTWV5a3hRdUw5WTBDcHdOWlpLc1ZIZEcwX2RtTVl3NDZVZ19KVzZXRnVIbHJ3SGZZcWNVUGxhT2d1MFc1RlJRVEtCVGZRSjRmVGZNZUVPalAzelc0VmlwYjc5enJiUHJZRWltTDFPcDdSOHc1NTREeVJwSlNQb1BBdDFFYktKa28zcXRIQW42OXdqMlNxNi1hMUlpaXZBOVdGWExJcE5EUm4weVBleC1TWnU0?oc=5\" target=\"_blank\"&gt;Oppenheimer makes rare cuts to top US investment banks, backs alternative asset managers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters",
-          "published": "2026-06-30T16:56:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxQVlpiX20ya1lzY1FVNkJlUE1MbHlseFpwcUZlVE0tbDRLTnh0VkZOSW5ySEJ6TFVOV1RZbmVZdTJJcXVqN1hzODlBamVZaGVld2FURUpJWXphbURLbi0tNE9pSVNOVXZ5bVZjRzYzcE1BX0Nvb1dQMHVZTk5VUFdPaUhXQ1c3NjI5amUzdlJCQVJCVXlCSExqbEJLSnZuaERVLXNaZFhJQUZPQnU5dTJ6U09XTHVRSVBjWnlqdTgtRQ?oc=5\" target=\"_blank\"&gt;World Bank backs Nigeria 2026–2032 plan with $1.25 billion to spur jobs, private investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
+          "published": "2026-07-01T09:23:36.000Z",
           "score": 2
         }
       ]
@@ -177,6 +177,14 @@
           "description": "AMENDMENTS 286 - 369 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&",
           "published": "2026-07-01T09:37:29.000Z",
           "score": 22
+        },
+        {
+          "title": "EU launches connectivity and communities support programmes for peace in the South Caucasus",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1494",
+          "source": "European Commission",
+          "description": "European Commission Press release Baku, 01 Jul 2026 Today in Baku, European Commission President Ursula von der Leyen, together with Commissioner for Enlargement Marta Kos, met with the President of Azerbaijan Ilham Aliyev to discuss ways to foster peace in the region through greater connectivity and support to border communities. They also discussed bilateral EU-Azerbaijan trade and energy partnerships.",
+          "published": "2026-06-30T22:00:00.000Z",
+          "score": 20
         },
         {
           "title": "Minutes - Wednesday, 15 April 2026 - PE787.874v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on the Internal Market and Consumer Protection",
@@ -209,11 +217,19 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Australia sues Amazon for making allegedly unfair contracts with subscribers",
-          "link": "https://www.bbc.co.uk/news/articles/c20yz9rzwy0o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Syria's president names final 70 lawmakers to new post-Assad parliament",
+          "link": "https://www.bbc.co.uk/news/articles/c1jyk4985xwo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The Australian Competition and Consumer Commission (ACCC) says Amazon has broken consumer protection law",
-          "published": "2026-07-01T01:04:16.000Z",
+          "description": "Fifteen women are appointed, after only six female candidates were selected by regional electoral colleges last October.",
+          "published": "2026-07-01T16:44:58.000Z",
+          "score": 8
+        },
+        {
+          "title": "Algeria&#039;s parliamentary vote raises questions on real change",
+          "link": "https://www.dw.com/en/algeria-s-parliamentary-vote-raises-questions-on-real-change/a-77787095?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Seven years after the pro-democracy Hirak protests, Algeria is electing a new parliament. Could the vote spark new political momentum or will it cement the status quo?",
+          "published": "2026-07-01T13:04:00.000Z",
           "score": 8
         },
         {
@@ -239,22 +255,14 @@
           "description": "The EU has moved to curb what it sees as unfair competition from mostly Chinese online retailers by imposing its levy. It follows a similar move from the US.",
           "published": "2026-07-01T06:18:00.000Z",
           "score": 8
-        },
-        {
-          "title": "EU unveils new steel import quotas to protect its industry from overcapacity - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5\" target=\"_blank\"&gt;EU unveils new steel import quotas to protect its industry from overcapacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T12:36:41.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 171,
-    "afterDedup": 160,
+    "totalArticlesScanned": 434,
+    "articlesLast24h": 179,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
