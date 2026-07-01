@@ -53,8 +53,12 @@ export interface WorkspaceReadingViewProps {
   people: string[];
   /** Ids of documents that already carry a written summary. */
   summaryDocIds: Set<string>;
+  /** Whether a document has been marked read (independent of its summary). */
+  isRead: (docId: string) => boolean;
   /** Open a document in the Code view. */
   onOpenDocument: (doc: AnalysisDocument) => void;
+  /** Mark a document read, or clear it with `false`. */
+  onToggleRead: (docId: string, read: boolean) => void;
   /** Assign (or clear, with '') the responsible reader for a document. */
   onSetReader: (docId: string, reader: string) => void;
   /** Add a paper by DOI. Returns true on success. */
@@ -114,7 +118,9 @@ export default function WorkspaceReadingView({
   getReader,
   people,
   summaryDocIds,
+  isRead,
   onOpenDocument,
+  onToggleRead,
   onSetReader,
   onAddByDoi,
   onAddReference,
@@ -152,9 +158,12 @@ export default function WorkspaceReadingView({
   }, [visibleDocuments, getReader]);
 
   function DocRow({ d }: { d: AnalysisDocument }) {
-    // "Done" means the document has been read AND a summary written for it — the
-    // summary is the artefact that proves both, so the state is derived from
-    // whether a summary exists rather than a separate, forgeable flag.
+    // Two independent signals per row:
+    //   • `read`  — a manual flag the reader toggles on this row (the pill).
+    //   • `done`  — derived from whether a summary has been written; the summary
+    //               is the artefact that proves the work, so this stays derived
+    //               rather than being a separate, forgeable flag.
+    const read = isRead(d.id);
     const done = summaryDocIds.has(d.id);
     const url = d.referenceUrl || d.pdfUrl || '';
     return (
@@ -188,26 +197,41 @@ export default function WorkspaceReadingView({
             )}
           </div>
         </div>
-        {/* Done status — read + summarised. Both states open the document: a
-            done row to review its summary, a pending row to read it and write
-            one (which is what flips it to Done). */}
+        {/* Read toggle — a manual flag, not navigation. Clicking flips the row
+            between "To read" and "Read"; the title link (above) is what opens
+            the document. */}
         <button
           type="button"
-          onClick={() => onOpenDocument(d)}
+          onClick={() => onToggleRead(d.id, !read)}
+          aria-pressed={read}
           className={`shrink-0 self-center inline-flex items-center gap-1 px-2 py-1 rounded-full border text-[10px] font-semibold transition ${
-            done
+            read
               ? 'bg-secondary/10 border-secondary/30 text-secondary hover:bg-secondary/20'
               : 'bg-white border-grey-200 text-tertiary-light hover:border-tertiary hover:text-tertiary'
           }`}
           title={
-            done
-              ? 'Done — read and a summary has been written. Open to view the summary.'
-              : 'Not done yet — open to read it and write a summary.'
+            read
+              ? 'Marked read — click to mark it unread again.'
+              : 'Click to mark this document read.'
           }
         >
-          <span aria-hidden>{done ? '✓' : '○'}</span>
-          {done ? 'Done' : 'To read'}
+          <span aria-hidden>{read ? '✓' : '○'}</span>
+          {read ? 'Read' : 'To read'}
         </button>
+        {/* Done marker — derived from the summary, shown alongside the read flag
+            so a row can be read and, separately, summarised. Opens the document
+            to review the summary. */}
+        {done && (
+          <button
+            type="button"
+            onClick={() => onOpenDocument(d)}
+            className="shrink-0 self-center inline-flex items-center gap-1 px-2 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-[10px] font-semibold transition hover:bg-primary/20"
+            title="Done — a summary has been written. Open to view it."
+          >
+            <span aria-hidden>✓</span>
+            Done
+          </button>
+        )}
         <div className="w-32 shrink-0">
           <ReaderInput
             value={getReader(d.id)}
@@ -264,6 +288,7 @@ export default function WorkspaceReadingView({
       )}
 
       {groups.map(({ reader, docs }) => {
+        const readCount = docs.reduce((n, d) => n + (isRead(d.id) ? 1 : 0), 0);
         const doneCount = docs.reduce((n, d) => n + (summaryDocIds.has(d.id) ? 1 : 0), 0);
         return (
         <section key={reader} className="border border-grey-200 rounded-lg bg-white overflow-hidden">
@@ -279,10 +304,16 @@ export default function WorkspaceReadingView({
             </span>
             <span className="inline-flex items-center gap-2 text-[10px] font-mono text-tertiary-light">
               <span
-                className={doneCount === docs.length ? 'text-secondary font-semibold' : ''}
-                title="Documents read and summarised"
+                className={readCount === docs.length ? 'text-secondary font-semibold' : ''}
+                title="Documents marked read"
               >
-                {doneCount}/{docs.length} done
+                {readCount}/{docs.length} read
+              </span>
+              <span
+                className={doneCount === docs.length ? 'text-primary font-semibold' : ''}
+                title="Documents with a written summary"
+              >
+                {doneCount} done
               </span>
               <span>
                 {docs.length} document{docs.length === 1 ? '' : 's'}

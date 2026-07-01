@@ -50,6 +50,7 @@ import {
   referencePdfCacheKey,
   useOverallTags,
   useReadingAssignments,
+  useReadStatus,
   useGeneralNotes,
   semanticColorFor,
   lightenedFromParent,
@@ -400,6 +401,7 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
   const liveRefs = useLiveReferences();
   const overallTags = useOverallTags();
   const reading = useReadingAssignments(projectId);
+  const readStatus = useReadStatus(projectId);
   const { user, displayName, requireAuth } = useAuth();
 
   // Team display names for the reading-responsibility reader picker. Combined
@@ -1830,11 +1832,13 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
           getReader={reading.getReader}
           people={readerSuggestions}
           summaryDocIds={summaryDocIds}
+          isRead={readStatus.isRead}
           onOpenDocument={doc => {
             setSourceType(sourceTierOf(doc));
             setSelectedDocumentId(doc.id);
             setView('code');
           }}
+          onToggleRead={(docId, read) => { void readStatus.setRead(docId, read); }}
           onSetReader={(docId, r) => { void reading.setReader(docId, r); }}
           onAddByDoi={addLiteratureByDoi}
           onAddReference={addLiteratureReference}

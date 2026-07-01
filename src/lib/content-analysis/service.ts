@@ -19,6 +19,7 @@ export { useContentAnalysis } from './store';
 export { useLiveReferences, referencePdfCacheKey } from './useLiveReferences';
 export { useOverallTags } from './useOverallTags';
 export { useReadingAssignments, type ReadingAssignmentsApi } from './useReadingAssignments';
+export { useReadStatus, type ReadStatusApi } from './useReadStatus';
 export { useGeneralNotes } from './useGeneralNotes';
 
 // Pure helpers ──────────────────────────────────────────────────────────────

@@ -1278,3 +1278,100 @@ export async function setCaReading(
   if (reader) memReading(projectId).set(documentId, reader);
   else memReading(projectId).delete(documentId);
 }
+
+// Reading progress ------------------------------------------------------------
+// Whether a document has been READ in a project workspace — independent of who
+// is responsible for it (setCaReading) and of whether a summary exists (the
+// "Done" marker is derived from summaries). A document id present in the set is
+// read; clearing it removes the id. Stored in `content_analysis_read`
+// (migration 075); falls back to an in-memory set when Supabase is not
+// configured. Mirrors the reading-responsibility store above.
+
+const g4 = globalThis as unknown as {
+  __caRead?: Map<string, Set<string>>;
+};
+if (!g4.__caRead) g4.__caRead = new Map();
+
+function memRead(projectId: string): Set<string> {
+  let s = g4.__caRead!.get(projectId);
+  if (!s) {
+    s = new Set();
+    g4.__caRead!.set(projectId, s);
+  }
+  return s;
+}
+
+/** True when the read table is missing (migration 075 not applied yet). */
+function isMissingReadTable(error: { message?: string; code?: string }): boolean {
+  const msg = error?.message ?? '';
+  return (
+    error?.code === '42P01' ||
+    (/content_analysis_read/.test(msg) && /(does not exist|not find|schema cache)/i.test(msg))
+  );
+}
+
+/** The ids of every document marked read in a project's workspace. */
+export async function getCaRead(projectId: string): Promise<string[]> {
+  const sb = getServerSupabase();
+  if (!sb) return [...memRead(projectId)];
+  const { data, error } = await sb
+    .from('content_analysis_read')
+    .select('document_id')
+    .eq('project_id', projectId)
+    .limit(MAX_ROWS);
+  if (error) {
+    if (!isMissingReadTable(error)) {
+      console.error('[content-analysis-store] getCaRead failed:', error.message);
+    }
+    return [...memRead(projectId)];
+  }
+  return (data as Array<{ document_id: string }>).map(r => r.document_id);
+}
+
+/** Mark a document read (`read = true`) or clear it (`read = false`).
+ *  Idempotent. */
+export async function setCaRead(
+  projectId: string,
+  documentId: string,
+  read: boolean,
+  actor?: StoreActor,
+): Promise<void> {
+  const sb = getServerSupabase();
+  if (sb) {
+    if (!read) {
+      const { error } = await sb
+        .from('content_analysis_read')
+        .delete()
+        .eq('project_id', projectId)
+        .eq('document_id', documentId);
+      if (!error || isMissingReadTable(error)) {
+        memRead(projectId).delete(documentId);
+        return;
+      }
+      failDurable('setCaRead(delete)', error);
+    }
+    const row: Record<string, unknown> = {
+      project_id: projectId,
+      document_id: documentId,
+      updated_at: new Date().toISOString(),
+    };
+    if (actor) row.updated_by = actor.id;
+    let { error } = await sb
+      .from('content_analysis_read')
+      .upsert(row, { onConflict: 'project_id,document_id' });
+    if (error && actor && /updated_by/.test(error.message)) {
+      const { updated_by: _ub, ...legacyRow } = row;
+      ({ error } = await sb
+        .from('content_analysis_read')
+        .upsert(legacyRow, { onConflict: 'project_id,document_id' }));
+    }
+    if (!error) return;
+    if (isMissingReadTable(error)) {
+      memRead(projectId).add(documentId);
+      return;
+    }
+    failDurable('setCaRead', error);
+  }
+  if (read) memRead(projectId).add(documentId);
+  else memRead(projectId).delete(documentId);
+}
