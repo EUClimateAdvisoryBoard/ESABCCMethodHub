@@ -33,7 +33,7 @@ import {
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 import { BPIE_BUILDINGS_INDICATORS } from '@/data/bpie-buildings-indicators';
 import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
-import { addToCaCorpus, getCaCorpus, setCaReading } from '@/lib/content-analysis-store';
+import { addToCaCorpus, getCaCorpus, getCaReading, setCaReading } from '@/lib/content-analysis-store';
 import type { CorpusDocMeta } from '@/lib/content-analysis/types';
 
 /** Recommendations seeded into the Policy Gap project, with their report label. */
@@ -409,24 +409,28 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
 /**
  * Idempotently seed the industry reading list (transcribed from the team's
  * scoping-phase Excel) into the workspace corpus and the reading-responsibility
- * store. Guarded on a marker id so the ~90 upserts run once, not on every render.
+ * store.
+ *
+ * The corpus rows and the reader assignments are seeded INDEPENDENTLY, on
+ * purpose: the corpus was seeded before the `content_analysis_reading` table
+ * (migration 074) existed, so its rows are already present while no reader was
+ * ever persisted. Coupling the two (only setting readers when adding a missing
+ * corpus row) meant the readers never landed once the corpus was in place. Each
+ * half now self-heals against its own store.
  */
 async function ensureIndustryReadingSeed(): Promise<void> {
   const projectId = 'industry-project';
-  let present: Set<string>;
+
+  // 1) Corpus: add any rows not already present (self-healing, idempotent).
+  let corpusPresent: Set<string>;
   try {
-    const existing = await getCaCorpus(projectId);
-    present = new Set(existing.map(e => e.documentId));
+    corpusPresent = new Set((await getCaCorpus(projectId)).map(e => e.documentId));
   } catch {
-    // If the corpus can't be read we skip seeding rather than risk duplicates.
+    // Corpus unreadable — skip this pass rather than risk duplicates.
     return;
   }
-  // Add only the rows not already present, so a partial seed (e.g. a first
-  // render that was interrupted mid-way) self-heals on the next visit, and a
-  // fully-seeded corpus costs just the read above.
-  const missing = INDUSTRY_READING_SEED.filter(i => !present.has(i.id));
-  if (missing.length === 0) return;
-  for (const item of missing) {
+  for (const item of INDUSTRY_READING_SEED) {
+    if (corpusPresent.has(item.id)) continue;
     const referenceType = item.tier === 'scientific' ? 'article' : 'report';
     const meta: CorpusDocMeta = {
       id: item.id,
@@ -440,13 +444,42 @@ async function ensureIndustryReadingSeed(): Promise<void> {
     };
     try {
       await addToCaCorpus(projectId, item.id, meta);
-      if (item.reader) await setCaReading(projectId, item.id, item.reader);
     } catch (err) {
-      console.error('[pw seed] failed to seed industry reading item', {
+      console.error('[pw seed] failed to seed industry reading corpus row', {
         id: item.id,
         error: err instanceof Error ? err.message : String(err),
       });
     }
+  }
+
+  // 2) Readers: seed the initial "who reads what" split ONCE — only when no seed
+  //    document carries a reader yet — so we populate it without ever overriding
+  //    a reader the team has since changed or cleared by hand. This runs even
+  //    when the corpus is already fully present (the case that hid the seed).
+  try {
+    const seedIds = new Set(INDUSTRY_READING_SEED.map(i => i.id));
+    const alreadyAssigned = (await getCaReading(projectId)).some(
+      a => a.reader && seedIds.has(a.documentId),
+    );
+    if (!alreadyAssigned) {
+      for (const item of INDUSTRY_READING_SEED) {
+        if (!item.reader) continue;
+        try {
+          await setCaReading(projectId, item.id, item.reader);
+        } catch (err) {
+          console.error('[pw seed] failed to seed industry reader', {
+            id: item.id,
+            error: err instanceof Error ? err.message : String(err),
+          });
+        }
+      }
+    }
+  } catch (err) {
+    // Reading table missing/unreadable (migration 074 not applied yet) — the
+    // reader seed is retried on the next render once the table exists.
+    console.error('[pw seed] industry reader seed skipped', {
+      error: err instanceof Error ? err.message : String(err),
+    });
   }
 }
 
