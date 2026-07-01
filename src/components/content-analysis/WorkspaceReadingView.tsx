@@ -27,6 +27,10 @@ import {
   SOURCE_TIER_META,
   type AnalysisDocument,
 } from '@/lib/content-analysis/service';
+import SourceTierFilter, {
+  filterBySourceTier,
+  type SourceTierFilterValue,
+} from './SourceTierFilter';
 
 /** A reference the user can pick from the Reference Manager to add here. */
 export interface PickableReference {
@@ -115,11 +119,20 @@ export default function WorkspaceReadingView({
   onAddByDoi,
   onAddReference,
 }: WorkspaceReadingViewProps) {
+  // Which source tier the list is narrowed to — the "differentiate by type of
+  // source" control the team wanted here, so you can see just the policy,
+  // scientific or grey reading without switching back to the Code view.
+  const [tierFilter, setTierFilter] = useState<SourceTierFilterValue>('all');
+  const visibleDocuments = useMemo(
+    () => filterBySourceTier(documents, tierFilter),
+    [documents, tierFilter],
+  );
+
   const { groups, unassigned, assignedCount } = useMemo(() => {
     const byReader = new Map<string, AnalysisDocument[]>();
     const none: AnalysisDocument[] = [];
     let assigned = 0;
-    for (const d of documents) {
+    for (const d of visibleDocuments) {
       const reader = getReader(d.id).trim();
       if (!reader) {
         none.push(d);
@@ -136,10 +149,13 @@ export default function WorkspaceReadingView({
       .map(([reader, docs]) => ({ reader, docs: docs.slice().sort(sortByTitle) }))
       .sort((a, b) => b.docs.length - a.docs.length || a.reader.localeCompare(b.reader));
     return { groups, unassigned: none.slice().sort(sortByTitle), assignedCount: assigned };
-  }, [documents, getReader]);
+  }, [visibleDocuments, getReader]);
 
   function DocRow({ d }: { d: AnalysisDocument }) {
-    const hasSummary = summaryDocIds.has(d.id);
+    // "Done" means the document has been read AND a summary written for it — the
+    // summary is the artefact that proves both, so the state is derived from
+    // whether a summary exists rather than a separate, forgeable flag.
+    const done = summaryDocIds.has(d.id);
     const url = d.referenceUrl || d.pdfUrl || '';
     return (
       <li className="flex items-start gap-2 px-2 py-1.5 rounded hover:bg-grey-50">
@@ -159,11 +175,6 @@ export default function WorkspaceReadingView({
             <span>
               {SOURCE_TIER_META[sourceTierOf(d)].label} · {documentKindLabel(d)}
             </span>
-            {hasSummary && (
-              <span className="normal-case tracking-normal text-secondary" title="A summary has been written for this document">
-                ✓ summary
-              </span>
-            )}
             {url && (
               <a
                 href={url}
@@ -177,6 +188,26 @@ export default function WorkspaceReadingView({
             )}
           </div>
         </div>
+        {/* Done status — read + summarised. Both states open the document: a
+            done row to review its summary, a pending row to read it and write
+            one (which is what flips it to Done). */}
+        <button
+          type="button"
+          onClick={() => onOpenDocument(d)}
+          className={`shrink-0 self-center inline-flex items-center gap-1 px-2 py-1 rounded-full border text-[10px] font-semibold transition ${
+            done
+              ? 'bg-secondary/10 border-secondary/30 text-secondary hover:bg-secondary/20'
+              : 'bg-white border-grey-200 text-tertiary-light hover:border-tertiary hover:text-tertiary'
+          }`}
+          title={
+            done
+              ? 'Done — read and a summary has been written. Open to view the summary.'
+              : 'Not done yet — open to read it and write a summary.'
+          }
+        >
+          <span aria-hidden>{done ? '✓' : '○'}</span>
+          {done ? 'Done' : 'To read'}
+        </button>
         <div className="w-32 shrink-0">
           <ReaderInput
             value={getReader(d.id)}
@@ -195,11 +226,21 @@ export default function WorkspaceReadingView({
       <div className="bg-grey-50 border border-grey-200 rounded-lg p-3">
         <h3 className="text-[13px] font-semibold text-tertiary-dark">Reading responsibility</h3>
         <p className="text-[11px] text-tertiary-light mt-1">
-          Every document in this workspace, grouped by who is responsible for
-          reading it. <strong>{assignedCount}</strong> of {documents.length}{' '}
-          document{documents.length === 1 ? '' : 's'} assigned. Assign or change a
-          reader in the field on the right of each row.
+          {tierFilter === 'all' ? 'Every document' : `Every ${SOURCE_TIER_META[tierFilter].label.toLowerCase()} document`}{' '}
+          in this workspace, grouped by who is responsible for reading it.{' '}
+          <strong>{assignedCount}</strong> of {visibleDocuments.length}{' '}
+          document{visibleDocuments.length === 1 ? '' : 's'} assigned. Filter by
+          source below to see just one tier, or assign a reader in the field on
+          the right of each row.
         </p>
+        {documents.length > 0 && (
+          <SourceTierFilter
+            documents={documents}
+            value={tierFilter}
+            onChange={setTierFilter}
+            className="mt-2"
+          />
+        )}
       </div>
 
       {documents.length === 0 && (
@@ -212,7 +253,19 @@ export default function WorkspaceReadingView({
         </div>
       )}
 
-      {groups.map(({ reader, docs }) => (
+      {documents.length > 0 && visibleDocuments.length === 0 && (
+        <div className="border border-grey-200 rounded-lg bg-white p-6 text-center">
+          <p className="text-[12px] text-tertiary max-w-md mx-auto">
+            No {SOURCE_TIER_META[tierFilter === 'all' ? 'policy' : tierFilter].label.toLowerCase()}{' '}
+            documents in this workspace. Pick another source above, or choose{' '}
+            <strong>All sources</strong> to see everything.
+          </p>
+        </div>
+      )}
+
+      {groups.map(({ reader, docs }) => {
+        const doneCount = docs.reduce((n, d) => n + (summaryDocIds.has(d.id) ? 1 : 0), 0);
+        return (
         <section key={reader} className="border border-grey-200 rounded-lg bg-white overflow-hidden">
           <div className="px-3 py-2 flex items-center justify-between gap-2 border-b border-grey-200 bg-secondary/5">
             <span className="inline-flex items-center gap-2 text-[12px] font-semibold text-tertiary-dark">
@@ -224,8 +277,16 @@ export default function WorkspaceReadingView({
               </span>
               {reader}
             </span>
-            <span className="text-[10px] font-mono text-tertiary-light">
-              {docs.length} document{docs.length === 1 ? '' : 's'}
+            <span className="inline-flex items-center gap-2 text-[10px] font-mono text-tertiary-light">
+              <span
+                className={doneCount === docs.length ? 'text-secondary font-semibold' : ''}
+                title="Documents read and summarised"
+              >
+                {doneCount}/{docs.length} done
+              </span>
+              <span>
+                {docs.length} document{docs.length === 1 ? '' : 's'}
+              </span>
             </span>
           </div>
           <ul className="px-1 py-1">
@@ -234,7 +295,8 @@ export default function WorkspaceReadingView({
             ))}
           </ul>
         </section>
-      ))}
+        );
+      })}
 
       {unassigned.length > 0 && (
         <section className="border border-dashed border-grey-300 rounded-lg bg-white overflow-hidden">
