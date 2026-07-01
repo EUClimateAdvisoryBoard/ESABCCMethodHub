@@ -11,12 +11,19 @@
 // Industry chapter" — so the report can be structured around its chapters from
 // the moment documents are tagged.
 //
+// Each document is more than a link: expand it to jot the paper's ANGLE — what
+// it argues and how it comes into the chapter — and to reveal its SUMMARY (the
+// whole-document summary written on the Analyse tab, shown here read-only). The
+// angle note is stored as the document's own-project summary lead text, so it
+// is the same shared artefact the Analyse tab reads and writes; a note added
+// here shows up there and vice-versa.
+//
 // Chapter tags are a document-level dimension stored in the shared overall-tags
 // table (see lib/content-analysis/chapter-tags.ts); this view only reads them,
 // the tagging happens in the Code view's document header.
 // ---------------------------------------------------------------------------
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import {
   CHAPTER_TAGS,
   resolveOverallTag,
@@ -25,13 +32,29 @@ import {
   SOURCE_TIER_META,
   SOURCE_TIERS,
   type AnalysisDocument,
+  type DocumentSummary,
+  type SummaryBlock,
 } from '@/lib/content-analysis/service';
+import DocumentSummaryPanel from './DocumentSummaryPanel';
 
 export interface WorkspaceChapterViewProps {
   /** Every document in the workspace corpus, across all source tiers. */
   documents: AnalysisDocument[];
   /** Chapter-tag ids applied to each document, keyed by document id. */
   chapterIdsByDoc: Record<string, string[]>;
+  /** Every whole-document summary in the store — the angle note (lead text) and
+   *  the rich slide deck. Filtered to the open document inside each row. */
+  summaries: DocumentSummary[];
+  /** The active workspace project id — its summary is the editable angle note;
+   *  other projects' summaries are shown read-only for context. */
+  activeProjectId: string;
+  /** Maps a summary's projectId (null = master) to a human label. */
+  projectNameById: Map<string | null, string>;
+  /** Lazy-load a summary's rich slide deck (see DocumentSummaryPanel). */
+  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
+  /** Save the paper's angle for a document — persisted as its own-project
+   *  summary lead text, preserving any existing slide deck. */
+  onSaveAngle: (doc: AnalysisDocument, text: string) => Promise<void> | void;
   /** Open a document in the Code view (switches to its source tier). */
   onOpenDocument: (doc: AnalysisDocument) => void;
 }
@@ -39,8 +62,24 @@ export interface WorkspaceChapterViewProps {
 export default function WorkspaceChapterView({
   documents,
   chapterIdsByDoc,
+  summaries,
+  activeProjectId,
+  projectNameById,
+  onLoadBlocks,
+  onSaveAngle,
   onOpenDocument,
 }: WorkspaceChapterViewProps) {
+  // Summaries grouped by document id, resolved once for every row below.
+  const summariesByDoc = useMemo(() => {
+    const m = new Map<string, DocumentSummary[]>();
+    for (const s of summaries) {
+      const arr = m.get(s.documentId);
+      if (arr) arr.push(s);
+      else m.set(s.documentId, [s]);
+    }
+    return m;
+  }, [summaries]);
+
   const { chapters, unassigned, assignedCount } = useMemo(() => {
     // Chapter order: the seeded ESABCC chapters first (report order), then any
     // custom chapters coined by hand, alphabetically.
@@ -122,8 +161,11 @@ export default function WorkspaceChapterView({
           Every document you have tagged with a chapter, grouped by report
           chapter and split into policy, scientific and grey sources.{' '}
           <strong>{assignedCount}</strong> of {documents.length} document
-          {documents.length === 1 ? '' : 's'} assigned to a chapter. Set a
-          document’s chapter from its header in the <strong>Code</strong> view.
+          {documents.length === 1 ? '' : 's'} assigned to a chapter. Open a
+          document to note its <strong>angle</strong> — how it comes into the
+          chapter — and to show its <strong>summary</strong> from the Analyse
+          tab. Set a document’s chapter from its header in the{' '}
+          <strong>Code</strong> view.
         </p>
       </div>
 
@@ -168,22 +210,16 @@ export default function WorkspaceChapterView({
                     </div>
                     <ul className="space-y-1">
                       {tierDocs.map(d => (
-                        <li key={d.id}>
-                          <button
-                            type="button"
-                            onClick={() => onOpenDocument(d)}
-                            className="w-full text-left px-2 py-1 rounded hover:bg-grey-50 text-[11px] text-tertiary-dark leading-snug"
-                            title={`Open “${d.title}” in the Code view`}
-                          >
-                            {d.shortTitle || d.title}
-                            {d.referenceYear && (
-                              <span className="text-tertiary-light ml-1">({d.referenceYear})</span>
-                            )}
-                            <span className="block text-[9px] uppercase tracking-wide text-tertiary-light mt-0.5">
-                              {documentKindLabel(d)}
-                            </span>
-                          </button>
-                        </li>
+                        <ChapterDocRow
+                          key={d.id}
+                          doc={d}
+                          summaries={summariesByDoc.get(d.id) ?? []}
+                          activeProjectId={activeProjectId}
+                          projectNameById={projectNameById}
+                          onLoadBlocks={onLoadBlocks}
+                          onSaveAngle={onSaveAngle}
+                          onOpenDocument={onOpenDocument}
+                        />
                       ))}
                     </ul>
                   </div>
@@ -210,23 +246,179 @@ export default function WorkspaceChapterView({
           </p>
           <ul className="px-3 py-2 grid gap-1 sm:grid-cols-3">
             {unassigned.map(d => (
-              <li key={d.id}>
-                <button
-                  type="button"
-                  onClick={() => onOpenDocument(d)}
-                  className="w-full text-left px-2 py-1 rounded hover:bg-grey-50 text-[11px] text-tertiary-dark leading-snug"
-                  title={`Open “${d.title}” in the Code view`}
-                >
-                  {d.shortTitle || d.title}
-                  <span className="block text-[9px] uppercase tracking-wide text-tertiary-light mt-0.5">
-                    {SOURCE_TIER_META[sourceTierOf(d)].label} · {documentKindLabel(d)}
-                  </span>
-                </button>
-              </li>
+              <ChapterDocRow
+                key={d.id}
+                doc={d}
+                summaries={summariesByDoc.get(d.id) ?? []}
+                activeProjectId={activeProjectId}
+                projectNameById={projectNameById}
+                onLoadBlocks={onLoadBlocks}
+                onSaveAngle={onSaveAngle}
+                onOpenDocument={onOpenDocument}
+                subtitle={`${SOURCE_TIER_META[sourceTierOf(d)].label} · ${documentKindLabel(d)}`}
+              />
             ))}
           </ul>
         </section>
       )}
     </div>
+  );
+}
+
+// ── One document in the chapter list ───────────────────────────────────────
+// Collapsed, it is the same compact title button as before. Expanded, it adds
+// two things the team asked for on the chapter view: a note for the paper's
+// ANGLE (how it comes into the chapter) and a "Show summary" toggle that
+// reveals the whole-document summary from the Analyse tab, read-only.
+function ChapterDocRow({
+  doc,
+  summaries,
+  activeProjectId,
+  projectNameById,
+  onLoadBlocks,
+  onSaveAngle,
+  onOpenDocument,
+  subtitle,
+}: {
+  doc: AnalysisDocument;
+  summaries: DocumentSummary[];
+  activeProjectId: string;
+  projectNameById: Map<string | null, string>;
+  onLoadBlocks: (id: string) => Promise<SummaryBlock[]>;
+  onSaveAngle: (doc: AnalysisDocument, text: string) => Promise<void> | void;
+  onOpenDocument: (doc: AnalysisDocument) => void;
+  /** Extra line under the title (used in the "No chapter yet" list). */
+  subtitle?: string;
+}) {
+  const own = summaries.find(s => s.projectId === activeProjectId) ?? null;
+  const others = summaries.filter(s => s !== own);
+  const angle = own?.text?.trim() ?? '';
+
+  const [expanded, setExpanded] = useState(false);
+  const [editingAngle, setEditingAngle] = useState(false);
+  const [draft, setDraft] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  const startEditing = () => {
+    setDraft(own?.text ?? '');
+    setEditingAngle(true);
+    setExpanded(true);
+  };
+
+  const save = async () => {
+    setSaving(true);
+    try {
+      await onSaveAngle(doc, draft);
+      setEditingAngle(false);
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <li className="rounded border border-transparent hover:border-grey-200">
+      <div className="flex items-start gap-1">
+        <button
+          type="button"
+          onClick={() => setExpanded(o => !o)}
+          className="flex-1 min-w-0 text-left px-2 py-1 rounded hover:bg-grey-50 text-[11px] text-tertiary-dark leading-snug"
+          title={expanded ? 'Collapse' : 'Expand to add an angle note or show the summary'}
+        >
+          <span className="inline-flex items-start gap-1">
+            <span aria-hidden className="text-tertiary-light mt-[1px]">{expanded ? '▾' : '▸'}</span>
+            <span className="min-w-0">
+              {doc.shortTitle || doc.title}
+              {doc.referenceYear && (
+                <span className="text-tertiary-light ml-1">({doc.referenceYear})</span>
+              )}
+              <span className="block text-[9px] uppercase tracking-wide text-tertiary-light mt-0.5">
+                {subtitle ?? documentKindLabel(doc)}
+              </span>
+            </span>
+          </span>
+        </button>
+      </div>
+
+      {expanded && (
+        <div className="px-2 pb-2 pl-5 space-y-2">
+          {/* Angle — what the paper argues and how it comes into the chapter. */}
+          <div className="space-y-1">
+            {editingAngle ? (
+              <div className="space-y-1">
+                <textarea
+                  value={draft}
+                  onChange={e => setDraft(e.target.value)}
+                  rows={3}
+                  autoFocus
+                  placeholder="What’s this paper’s angle — what does it argue, and how does it come into this chapter?"
+                  className="w-full px-2 py-1.5 border border-grey-200 rounded text-[11px] leading-snug resize-y"
+                />
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={save}
+                    disabled={saving}
+                    className="px-2 py-0.5 rounded bg-primary text-white text-[10px] font-semibold hover:bg-primary-dark disabled:opacity-60"
+                  >
+                    {saving ? 'Saving…' : 'Save angle'}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setEditingAngle(false)}
+                    className="text-[10px] text-tertiary-light hover:text-tertiary"
+                  >
+                    Cancel
+                  </button>
+                  <span className="text-[9px] text-tertiary-light ml-auto">Shared with the team</span>
+                </div>
+              </div>
+            ) : angle ? (
+              <div className="space-y-0.5">
+                <p className="text-[9px] uppercase tracking-wide text-tertiary-light font-semibold">Angle in this chapter</p>
+                <p className="text-[11px] text-tertiary-dark whitespace-pre-wrap leading-snug">{angle}</p>
+                <button
+                  type="button"
+                  onClick={startEditing}
+                  className="text-[10px] text-secondary hover:underline"
+                >
+                  Edit angle
+                </button>
+              </div>
+            ) : (
+              <button
+                type="button"
+                onClick={startEditing}
+                className="text-[10px] text-secondary hover:underline"
+              >
+                + Add angle note
+              </button>
+            )}
+          </div>
+
+          {/* Summary — the whole-document summary written on the Analyse tab.
+              The panel ships its own "Show summary" toggle and lazy-loads the
+              slide deck only when opened, so it stays cheap until used. */}
+          <div className="border border-grey-200 rounded overflow-hidden">
+            <DocumentSummaryPanel
+              summary={own}
+              otherSummaries={others}
+              projectNameById={projectNameById}
+              onSave={() => {}}
+              onLoadBlocks={onLoadBlocks}
+              readOnly
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => onOpenDocument(doc)}
+            className="text-[10px] text-secondary hover:underline"
+            title={`Open “${doc.title}” in the Code view`}
+          >
+            Open in Code view ↗
+          </button>
+        </div>
+      )}
+    </li>
   );
 }
