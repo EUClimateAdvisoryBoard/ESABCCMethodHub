@@ -505,10 +505,11 @@ export const CATALOGUE: Subsector[] = [
       'Primary aluminium is dominated by (a) indirect emissions from the huge electricity draw of smelting and (b) direct process CO₂ from the consumable carbon anodes. Secondary (recycled) aluminium needs ~5% of the energy. EU aluminium GHG fell ~45% since 2005.',
     emissions: [
       {
-        value: '−45% (2005–2023)',
-        note: 'one of the three deepest EU cuts among energy-intensive industries',
-        source: S.eeaBrief,
+        value: '≈ 2.75 Mt CO₂ direct process (2022)',
+        note: 'anode process CO₂ only; far larger power-related emissions are indirect (EU smelting ≈93% hydropower). Sector ≈24 Mt CO₂e/yr incl. indirect',
+        source: { org: 'JRC (European Commission)', title: 'Aluminium factsheet (JRC144120)', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf', year: '2026' },
       },
+      { value: '−45% (2005–2023)', note: 'one of the three deepest EU cuts among energy-intensive industries', source: S.eeaBrief },
     ],
     technologies: [
       {
@@ -805,6 +806,11 @@ export const CATALOGUE: Subsector[] = [
     summary:
       'Container, flat and fibre glass melt raw materials at ~1,500 °C. Emissions are mostly energy (melting) plus some process CO₂ from carbonate raw materials. Levers: electric/hybrid furnaces, oxy-fuel, hydrogen firing and higher recycled-cullet use.',
     emissions: [
+      {
+        value: '≈ 22 Mt CO₂ direct/yr',
+        note: '~75% from melting-furnace combustion, ~25% process CO₂ from carbonate raw materials',
+        source: { org: 'European Commission (CINEA)', title: 'How LIFE is reducing emissions from glass production', url: 'https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en', year: '2022' },
+      },
       { value: 'Part of "glass & clay", within the ~27% share', source: S.eeaBrief },
     ],
     technologies: [
@@ -849,6 +855,11 @@ export const CATALOGUE: Subsector[] = [
     summary:
       'Dispersed, mostly SME sector firing clay products in kilns. Emissions are energy-dominated with some process CO₂. Levers: electrification, hydrogen firing, heat recovery and efficiency.',
     emissions: [
+      {
+        value: '≈ 19 Mt CO₂/yr (~1% of EU ETS industry)',
+        note: '~64% combustion, ~19% indirect electricity, ~17% process (up to 30–60% process in bricks/heavy clay)',
+        source: { org: 'Cerame-Unie', title: 'Ceramic industry position on the EU ETS review', url: 'https://cerameunie.eu/topics/climate-energy/emissions-trading-system/ceramic-industry-position-the-eu-ets-review/', year: '2023' },
+      },
       { value: 'Part of "glass & clay", within the ~27% share', source: S.eeaBrief },
     ],
     technologies: [
@@ -1523,4 +1534,116 @@ export const BRANCH_COLORS: Record<(typeof BRANCHES)[number], string> = {
   'Chemicals & refining': '#6667AB',
   'Other manufacturing': '#007B6C',
   'Cross-cutting levers': '#FF9933',
+};
+
+/* ---------------------------------------------------------- chart metrics */
+
+/**
+ * Numeric metrics per technology (keyed by Technology.id) for the charts:
+ * marginal abatement cost band in €/tCO₂ and a technology-readiness band (1–9).
+ * Populated only where a numeric value is sourced in the catalogue above
+ * (EPRS, IEAGHG, arXiv, PMC, Material Economics, IEA ETP Guide …); `mac` is
+ * omitted where no defensible number exists (kept as qualitative text only).
+ * Cost-negative entries are demand-side / circular / efficiency levers.
+ */
+export interface TechMetric {
+  macLowEur?: number;
+  macHighEur?: number;
+  trlLow: number;
+  trlHigh: number;
+  costNote?: string;
+  /** Provenance for the numeric MAC band (shown next to the cost bar). */
+  macSource?: Source;
+}
+
+const MAC_SRC = {
+  agoraSteel: { org: 'Agora Industry', title: '15 insights on the global steel transformation', url: 'https://www.agora-industry.org/publications/15-insights-on-the-global-steel-transformation', year: '2024' } as Source,
+  natureSteel: { org: 'Wu et al., Nature (via PMC)', title: 'Technological pathways for cost-effective steel decarbonization', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12589104/', year: '2024' } as Source,
+  ieaghgCement: { org: 'IEAGHG', title: 'CO₂ capture in the cement industry — cost analysis', url: 'https://ieaghg.org/publications/co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/', year: '2018' } as Source,
+  jrcAlu: { org: 'JRC (Zore), EUR/JRC136525', title: 'Decarbonisation options for the aluminium industry', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC136525/JRC136525_01.pdf', year: '2024' } as Source,
+  glassStudy: { org: 'ScienceDirect (techno-economic study)', title: 'Glassmaking decarbonization via calcium looping & power-to-gas', url: 'https://www.sciencedirect.com/science/article/pii/S2352550923001859', year: '2023' } as Source,
+  natureAmmonia: { org: 'Rosa & Gabrielli et al., Nature Communications (PMC)', title: 'Effects of emissions caps on low-carbon hydrogen in the European ammonia industry', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11069508/', year: '2024' } as Source,
+  arxivMethanol: { org: 'arXiv (peer-reviewed preprint)', title: 'Scaling green hydrogen and CCUS via cement-methanol co-production', url: 'https://arxiv.org/pdf/2509.13674', year: '2025' } as Source,
+  pmcBiogas: { org: 'Bioengineered (PMC)', title: 'Abatement cost for on-farm anaerobic digestion', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10506441/', year: '2023' } as Source,
+};
+
+export const TECH_METRICS: Record<string, TechMetric> = {
+  'steel-h2dri': { macLowEur: 73, macHighEur: 166, trlLow: 6, trlHigh: 8, macSource: MAC_SRC.agoraSteel },
+  'steel-scrap-eaf': { macLowEur: -67, macHighEur: -42, trlLow: 9, trlHigh: 9, costNote: 'cost-saving', macSource: MAC_SRC.natureSteel },
+  'steel-ng-dri': { trlLow: 9, trlHigh: 9 },
+  'steel-bf-ccs': { macLowEur: 24, macHighEur: 90, trlLow: 5, trlHigh: 7, macSource: MAC_SRC.natureSteel },
+  'steel-electrolysis': { trlLow: 3, trlHigh: 5 },
+  'alu-inert-anode': { macLowEur: 180, macHighEur: 300, trlLow: 6, trlHigh: 7, macSource: MAC_SRC.jrcAlu },
+  'alu-secondary': { macLowEur: -30, macHighEur: 0, trlLow: 9, trlHigh: 9, costNote: 'cost-saving', macSource: S.matecon },
+  'alu-renewable-power': { trlLow: 9, trlHigh: 9 },
+  'nonferrous-electrification': { trlLow: 8, trlHigh: 9 },
+  'cement-clinker-sub': { macLowEur: -30, macHighEur: 10, trlLow: 9, trlHigh: 9, costNote: 'cost-neutral to cheaper', macSource: S.matecon },
+  'cement-ccs': { macLowEur: 40, macHighEur: 107, trlLow: 6, trlHigh: 9, costNote: 'oxyfuel ~€40 → post-comb EU ~€107', macSource: MAC_SRC.ieaghgCement },
+  'cement-altfuels': { macLowEur: -20, macHighEur: 20, trlLow: 4, trlHigh: 9, costNote: 'often cost-saving', macSource: S.ieaCement },
+  'lime-ccs': { trlLow: 6, trlHigh: 8 },
+  'glass-electric-hybrid': { macLowEur: 200, macHighEur: 300, trlLow: 6, trlHigh: 9, costNote: 'incl. CO₂ capture', macSource: MAC_SRC.glassStudy },
+  'glass-cullet': { macLowEur: -20, macHighEur: 0, trlLow: 5, trlHigh: 9, costNote: 'cost-saving', macSource: S.ipcc11 },
+  'ceramics-electrify-h2': { trlLow: 5, trlHigh: 9 },
+  'ammonia-green-h2': { macLowEur: 183, macHighEur: 362, trlLow: 7, trlHigh: 8, macSource: MAC_SRC.natureAmmonia },
+  'ammonia-blue-h2': { trlLow: 7, trlHigh: 9 },
+  'hvc-ecracker': { trlLow: 6, trlHigh: 7 },
+  'hvc-recycling': { trlLow: 6, trlHigh: 8 },
+  'chloralkali-odc': { trlLow: 8, trlHigh: 9 },
+  'methanol-e-bio': { macLowEur: 110, macHighEur: 150, trlLow: 7, trlHigh: 8, macSource: MAC_SRC.arxivMethanol },
+  'refining-ccs-h2-elec': { trlLow: 6, trlHigh: 9 },
+  'pulppaper-electrify-hp': { trlLow: 6, trlHigh: 9 },
+  'food-heatpumps': { trlLow: 7, trlHigh: 9 },
+  'food-solar-thermal': { trlLow: 8, trlHigh: 9 },
+  'food-biomass-biogas': { macLowEur: 100, macHighEur: 280, trlLow: 7, trlHigh: 9, macSource: MAC_SRC.pmcBiogas },
+  'x-heatpumps': { trlLow: 6, trlHigh: 9 },
+  'x-ccs-networks': { trlLow: 8, trlHigh: 9 },
+  'x-electrolysers': { macLowEur: 183, macHighEur: 187, trlLow: 8, trlHigh: 9, costNote: 'green H₂ vs SMR', macSource: MAC_SRC.natureAmmonia },
+  'x-circular': { macLowEur: -50, macHighEur: 10, trlLow: 8, trlHigh: 9, costNote: 'often negative-cost (demand-side)', macSource: S.matecon },
+};
+
+/**
+ * Representative photo per subsector (keyed by Subsector.id). Values are
+ * Wikimedia Commons file names; the component builds a stable Special:FilePath
+ * URL (resized) and links back to the Commons file page for attribution/licence.
+ */
+export const SUBSECTOR_IMAGES: Record<string, string> = {
+  steel: 'SteelMill_interior.jpg',
+  aluminium: 'Aluminum_smelter_-_near_Bellingham.jpg',
+  nonferrous: 'Chino_copper_mine.jpg',
+  cement: 'KilnBZ.JPG',
+  lime: 'Lime_plant,_Wyoming.jpg',
+  glass: 'Glass_bubble.jpg',
+  ceramics: 'Brickyard5.jpg',
+  ammonia: 'SMR+WGS-1.png',
+  hvc: 'TASNEE_001.jpg',
+  methanol: 'Methanol_by_Danny_S._-_001.JPG',
+  refining: 'Anacortes_Refinery_31911.JPG',
+  pulppaper: 'Canadian_Kraft_Paper_mill_(The_Pas,_MB).jpg',
+  fooddrink: '8210_Brewery_in_Abbaye_Notre-Dame_de_Saint-Remy_Rochefort_2007_Luca_Galuzzi.jpg',
+  'x-heat': 'Heat_pump_unit.webp',
+  'x-ccs': 'CBO-how-carbon-capture-works.png',
+  'x-hydrogen': 'Aa-battery-electrolysis.jpg',
+  'x-circular': 'RecyclingSymbolGreen.png',
+};
+
+/**
+ * Top-level EU ETS 2023 industry emissions split by activity (Mt CO₂), for the
+ * overview doughnut. Verified against Sandbag's read of the EEA EU ETS Data
+ * Viewer / EUTL. "Other ETS industry" is the residual of the 569 Mt industry
+ * total once steel, cement+lime and refining are removed (chemicals, etc.).
+ */
+export const EMISSIONS_SPLIT: { name: string; mt: number; color: string }[] = [
+  { name: 'Iron & steel', mt: 96, color: BRANCH_COLORS.Metals },
+  { name: 'Cement & lime', mt: 117, color: BRANCH_COLORS['Non-metallic minerals'] },
+  { name: 'Refineries', mt: 105, color: BRANCH_COLORS['Chemicals & refining'] },
+  { name: 'Other ETS industry (chemicals, etc.)', mt: 251, color: '#94A3B8' },
+];
+
+export const EMISSIONS_SPLIT_TOTAL_MT = 569;
+
+export const EMISSIONS_SPLIT_SOURCE: Source = {
+  org: 'Sandbag (EEA EU ETS Data Viewer / EUTL)',
+  title: 'A closer look at 2023 emissions — EU ETS industry by activity (569 Mt total)',
+  url: 'https://sandbag.be/2024/10/07/a-closer-look-at-2023-emissions/',
+  year: '2024',
 };
