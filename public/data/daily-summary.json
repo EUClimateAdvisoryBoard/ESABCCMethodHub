@@ -1,9 +1,15 @@
 {
   "date": "2026-07-01",
-  "generatedAt": "2026-07-01T06:37:38.589Z",
+  "generatedAt": "2026-07-01T12:07:35.294Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 1 July 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.910v01-00",
+      "summary": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "Can giant batteries unlock Africa&#8217;s green industrial future?",
       "summary": "Battery energy storage systems (BESS) could drive clean tech manufacturing in Africa but shortfalls in finance and data are still limiting deployment at scale The post Can giant batteries unlock Africa&#8217;s green industrial future? appeared first on Climate Home News.",
@@ -17,8 +23,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "EU sends Ukraine €3.9 billion to fund drones under loan deal - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5\" target=\"_blank\"&gt;EU sends Ukraine €3.9 billion to fund drones under loan deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Ukraine seeks €6.6 billion from EU's peace fund for military aid - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOQ3lFSmNGZG1HVE1DVHlPUGR3UXY1S21DMkE1WjV0VTBVUUdmdkEyeGlIaWZibUt5UEV3c1Y5ZUVUdEp2NlZKSm5jTVF1MkZpbld2WElzVWt5Uzc0QkY5Tk13VmFDSG9QZ1NnSEZqd0RKdVRDelllNHNrMUh6VklEV1N6Sm5aMVZ5WHU5OURmaHMzQUxFN1V0aDln?oc=5\" target=\"_blank\"&gt;Ukraine seeks €6.6 billion from EU's peace fund for military aid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -27,7 +33,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.910v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789910_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 56 - 354 - Draft report Amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-01T11:31:06.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
@@ -39,14 +54,6 @@
           "source": "Climate Home News",
           "description": "Battery energy storage systems (BESS) could drive clean tech manufacturing in Africa but shortfalls in finance and data are still limiting deployment at scale The post Can giant batteries unlock Africa&#8217;s green industrial future? appeared first on Climate Home News.",
           "published": "2026-07-01T06:00:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Ocean summit stays silent on new wave of offshore oil and gas expansion",
-          "link": "https://www.climatechangenews.com/2026/06/30/ocean-summit-marine-protection-falls-silent-offshore-oil-and-gas-mombasa/",
-          "source": "Climate Home News",
-          "description": "At this month’s Our Ocean Conference in Mombasa, campaigners warned that ocean protection requires governments to halt new offshore fossil fuel projects The post Ocean summit stays silent on new wave of offshore oil and gas expansion appeared first on Climate Home News.",
-          "published": "2026-06-30T12:00:00.000Z",
           "score": 10
         },
         {
@@ -72,6 +79,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxNYlV0T0ZHa1BhZ1lWa1Nfa25GWEg0Wmp4RzQ4WnZSb3FfQWZzMC0zZE5uNjAwWERmMGpDdktHODFKaDMwVEd5Y3JIVHJ3ZDNaa1hsdGhIaF9kajNqZzl1NXRROGx6UG9KZlhHejRNcTY2TXpTMUQ0b19XaW1fYkZ4cGd2NmJXdnlNeVhvV0MtZ1BXQkZNaVlpcDFNVUItem5qeFhJ?oc=5\" target=\"_blank\"&gt;Estonia images show machine guns on Russian LNG carrier in Baltic&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-30T14:18:05.000Z",
           "score": 7
+        },
+        {
+          "title": "Many Australians can get three free hours of power from today. Here’s how",
+          "link": "https://www.theguardian.com/environment/2026/jun/30/solar-sharer-offer-sso-three-free-hours-electricity-power-energy-australia",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Residents of Queensland, New South Wales and South Australia with a smart meter can access the Solar Sharer offer from 1 July&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/01/australia-politics-live-labor-kpmg-daniel-mulino-jim-chalmers-anthony-albanese-question-time-coalition-angus-taylor-one-nation-pauline-hanson-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&g",
+          "published": "2026-06-30T15:00:13.000Z",
+          "score": 4
         }
       ]
     },
@@ -88,27 +103,11 @@
           "score": 10
         },
         {
-          "title": "UN plastics pact talks restart amid fears production curbs will be left out",
-          "link": "https://www.climatechangenews.com/2026/06/30/un-plastics-pact-talks-restart-amid-fears-production-curbs-will-be-left-out/",
-          "source": "Climate Home News",
-          "description": "Diplomats reconvene a year after negotiations collapsed, but campaigners fear the agenda risks burying tricky discussions on key elements The post UN plastics pact talks restart amid fears production curbs will be left out appeared first on Climate Home News.",
-          "published": "2026-06-30T09:06:14.000Z",
-          "score": 10
-        },
-        {
           "title": "‘Is there a way out of this mess?’: Your questions answered on Europe’s week of hellish heat",
           "link": "https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;As the the shocking heatwave continues, our European environment correspondent Ajit Niranjan answered your questions about which countries have responded best, who is being held to account, and why people are surprised after decades of warnings&lt;/p&gt;&lt;p&gt;&lt;strong&gt;&lt;a href=\"https://www.theguardian.com/community/live/2026/jun/30/reader-qa-ask-ajit-niranjan-anything-about-europes-hellish-week-of-heat#comment-175034906\"&gt;sloth_101&lt;/a&gt; asks&lt;/strong&gt;: Most reports",
           "published": "2026-06-30T14:14:47.000Z",
-          "score": 8
-        },
-        {
-          "title": "Reform UK chair of Welsh environment committee may ‘undermine scrutiny’, says thinktank",
-          "link": "https://www.theguardian.com/environment/2026/jun/30/reform-mp-chair-of-welsh-environment-committee-may-undermine-scrutiny-says-thinktank",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Climate campaigners question choice of James Evans for role given past criticism of green energy projects&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/politics/live/2026/jun/30/defence-investment-plan-keir-starmer-dan-jarvis-labour-andy-burnham-uk-politics-latest-news\"&gt;UK politics live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The appointment of a Reform UK member of the Senedd Cymru as the chair of a key Welsh environmental c",
-          "published": "2026-06-30T11:00:05.000Z",
           "score": 8
         },
         {
@@ -118,6 +117,22 @@
           "description": "&lt;p&gt;Nine of the group stage games played in severe heat, analysis finds, as union points to lessons for the whole sport&lt;/p&gt;&lt;p&gt;Nine matches in the &lt;a href=\"https://www.theguardian.com/football/world-cup-football\"&gt;World Cup&lt;/a&gt; group stage were played amid potentially dangerous heat and humidity, a Guardian analysis shows, as the global players’ union Fifpro warned that heat would have to “play a bigger part” in the sport’s future scheduling decisions.&lt;/p&gt;&lt;p&g",
           "published": "2026-06-30T16:00:10.000Z",
           "score": 7
+        },
+        {
+          "title": "Firefighters struggle to contain deadly Greek wildfire",
+          "link": "https://www.bbc.co.uk/news/articles/c0qy3nkex0qo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "More than 100 firefighters are fighting a fire near Thessaloniki which has claimed at least two lives.",
+          "published": "2026-06-30T20:25:53.000Z",
+          "score": 7
+        },
+        {
+          "title": "Ocean surface temperatures hit a record high for June",
+          "link": "https://www.theguardian.com/environment/2026/jul/01/ocean-surface-temperatures-hit-a-record-high-for-june",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;European scientists warn of consequences for weather patterns, the global climate and marine life&lt;/p&gt;&lt;p&gt;Temperatures on the ocean surface have hit a record high, raising fears of another burst of extreme heat this summer.&lt;/p&gt;&lt;p&gt;On 21 June, temperatures outside the polar regions exceeded the extraordinary highs observed at the same time in 2023 and 2024, the Copernicus Climate Change Service said on Wednesday.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/envi",
+          "published": "2026-07-01T02:00:22.000Z",
+          "score": 6
         }
       ]
     },
@@ -126,11 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "EU sends Ukraine €3.9 billion to fund drones under loan deal - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5",
+          "title": "Ukraine seeks €6.6 billion from EU's peace fund for military aid - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOQ3lFSmNGZG1HVE1DVHlPUGR3UXY1S21DMkE1WjV0VTBVUUdmdkEyeGlIaWZibUt5UEV3c1Y5ZUVUdEp2NlZKSm5jTVF1MkZpbld2WElzVWt5Uzc0QkY5Tk13VmFDSG9QZ1NnSEZqd0RKdVRDelllNHNrMUh6VklEV1N6Sm5aMVZ5WHU5OURmaHMzQUxFN1V0aDln?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxOS3NVRGg0bGxqaGJxekVoU1hDTmh1RjJkRjFybDJnZXpYSThkaHE0eWwxYW8tM3pLUExnSElEeXFlUF9pSHlXNVVMX25IbUVIZWx3a0pMRHhyQVhlOHhWT1BxTWpCWjFWYmZQUmdhSThpT3V6S2NCWXNiNTBFR3FwV0dCS3ZUdEpidmF1NDdZVHVnZ21TcFJsakN6Z3IwUQ?oc=5\" target=\"_blank\"&gt;EU sends Ukraine €3.9 billion to fund drones under loan deal&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T10:47:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOQ3lFSmNGZG1HVE1DVHlPUGR3UXY1S21DMkE1WjV0VTBVUUdmdkEyeGlIaWZibUt5UEV3c1Y5ZUVUdEp2NlZKSm5jTVF1MkZpbld2WElzVWt5Uzc0QkY5Tk13VmFDSG9QZ1NnSEZqd0RKdVRDelllNHNrMUh6VklEV1N6Sm5aMVZ5WHU5OURmaHMzQUxFN1V0aDln?oc=5\" target=\"_blank\"&gt;Ukraine seeks €6.6 billion from EU's peace fund for military aid&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-01T05:57:00.000Z",
           "score": 8
         },
         {
@@ -154,7 +169,40 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "AMENDMENTS 286 - 369 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - PE789.167v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-AM-789167_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 286 - 369 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&",
+          "published": "2026-07-01T09:37:29.000Z",
+          "score": 22
+        },
+        {
+          "title": "Minutes - Wednesday, 15 April 2026 - PE787.874v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on the Internal Market and Consumer Protection",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ45-PV-2026-04-15-1_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-01T09:38:30.000Z",
+          "score": 18
+        },
+        {
+          "title": "AMENDMENTS 252 - 537 - Draft report Clean corporate vehicles - PE790.087v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-AM-790087_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 252 - 537 - Draft report Clean corporate vehicles&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Transport and Tourism&lt;br/&gt;Tiemo Wölken, François Kalfon&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-01T09:26:19.000Z",
+          "score": 18
+        },
+        {
+          "title": "Draft agenda - Monday, 6 July 2026 - PE790.752v01-00 - Committee on Agriculture and Rural Development , Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ14-OJ-2026-07-06-1_EN.html",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-01T09:25:30.000Z",
+          "score": 18
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -166,6 +214,22 @@
           "source": "BBC World News",
           "description": "The Australian Competition and Consumer Commission (ACCC) says Amazon has broken consumer protection law",
           "published": "2026-07-01T01:04:16.000Z",
+          "score": 8
+        },
+        {
+          "title": "Digital euro: The plan to Trump-proof the EU&#039;s economies",
+          "link": "https://www.dw.com/en/digital-euro-the-plan-to-trump-proof-the-eu-s-economies/a-77686564?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The EU’s central bank is preparing a digital euro to cut dependence on Visa, Mastercard and Apple Pay. Success hinges on giving consumers an easy-to-use payment system without prompting a flight from bank savings.",
+          "published": "2026-07-01T09:11:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Germany news: Raids on DFB, host cities over Euro 2024 perks",
+          "link": "https://www.dw.com/en/germany-news-raids-on-dfb-host-cities-over-euro-2024-perks/live-77779894?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Police have raided DFB offices and city halls in a probe into the alleged misappropriation of Euro 2024 tickets. Meanwhile, Germany’s coalition leaders are meeting to hammer out a reform package. Follow DW for more.",
+          "published": "2026-07-01T08:39:00.000Z",
           "score": 8
         },
         {
@@ -183,29 +247,13 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPdmY3YmQtR3k0TmxocjIzS3pXeVV6bkVaaHhYbUhpVld4UmlHa0MwLWtnaHlodTFrRzlGZ2ZLcWstZnhvS19rZXYxTC1tcU5USVp0QlJkc2dQTTJLaVpjQUc3bm9jN0tkTU4yZGtnM3VtSDdVenoxcjFCcEVTcVZhZTdvNlkxQW05VElyUkJUWWxZeTlHZThXWFR1bTVudmVmMllDMi1UWjktZUxFVF9DRW5SRjJJMWc?oc=5\" target=\"_blank\"&gt;EU unveils new steel import quotas to protect its industry from overcapacity&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-06-30T12:36:41.000Z",
           "score": 8
-        },
-        {
-          "title": "South Korea parliament confirms former Naver CEO Han Seong-sook as prime minister - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQR3NFOWgtcGhoLXpSYXI4QjRiTXJrMEpSLUppYXN6cFY5eWNwd1RBTWQtTVNkUmJGWW5SMVpCSkN3bGJfUWJseVYxWEMtc1ZKSlhaWHhReDljajlzMDF1eXNzQkFVYXFUYW1oRjB5dWtKSDMteGo4NTZXOVRXOU8wMzJGNHkycTFUSTlfNVdzeGZnWGxHNzhNSUhFbUprSmE1ZFVSZ2M3ZjRjZjhwdWpLaEhod0VPaG14X1V1a0ZpazJON0dmME90M2FvS043dw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxQR3NFOWgtcGhoLXpSYXI4QjRiTXJrMEpSLUppYXN6cFY5eWNwd1RBTWQtTVNkUmJGWW5SMVpCSkN3bGJfUWJseVYxWEMtc1ZKSlhaWHhReDljajlzMDF1eXNzQkFVYXFUYW1oRjB5dWtKSDMteGo4NTZXOVRXOU8wMzJGNHkycTFUSTlfNVdzeGZnWGxHNzhNSUhFbUprSmE1ZFVSZ2M3ZjRjZjhwdWpLaEhod0VPaG14X1V1a0ZpazJON0dmME90M2FvS043dw?oc=5\" target=\"_blank\"&gt;South Korea parliament confirms former Naver CEO Han Seong-sook as prime minister&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
-          "published": "2026-06-30T13:29:26.000Z",
-          "score": 8
-        },
-        {
-          "title": "Air Products to exit Louisiana clean energy project; flags $2.9 billion hit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNY2t6NnJvMFJtcGN0UjJkdnNOVlB4NXRqUE0tcm5HWmFUWFlYM0RVeU1MUXdSX09ZU3dpODhGT2dMempXQVlzZlpYaEp6OUV5RTF0OTREaFZ3cWMza0tuSXA1RTVldTVPWkYzMTlhRFc3REo4Z0h3bENrWERXRENrSnh0TGxPWHItTkQ1WHYwQ3RBQmY3QWlKSVlsQ3FCQi1Sb0U1cFU0eW4zemJvNlI1Y1JhZmpPaFZ3NGxOa05Law?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNY2t6NnJvMFJtcGN0UjJkdnNOVlB4NXRqUE0tcm5HWmFUWFlYM0RVeU1MUXdSX09ZU3dpODhGT2dMempXQVlzZlpYaEp6OUV5RTF0OTREaFZ3cWMza0tuSXA1RTVldTVPWkYzMTlhRFc3REo4Z0h3bENrWERXRENrSnh0TGxPWHItTkQ1WHYwQ3RBQmY3QWlKSVlsQ3FCQi1Sb0U1cFU0eW4zemJvNlI1Y1JhZmpPaFZ3NGxOa05Law?oc=5\" target=\"_blank\"&gt;Air Products to exit Louisiana clean energy project; flags $2.9 billion hit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-06-30T17:17:43.000Z",
-          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 430,
-    "articlesLast24h": 166,
+    "totalArticlesScanned": 431,
+    "articlesLast24h": 171,
     "afterDedup": 160,
     "feedsQueried": 19
   }
