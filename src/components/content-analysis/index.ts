@@ -23,6 +23,11 @@ export { default as AnnotatedDocumentView } from './AnnotatedDocumentView';
 export { default as SegmentsList } from './SegmentsList';
 export { default as GeneralNotesPanel, type PendingNoteSelection } from './GeneralNotesPanel';
 export { default as WorkspaceAnalysis, type AnalysisTab } from './WorkspaceAnalysis';
+export {
+  default as SourceTierFilter,
+  filterBySourceTier,
+  type SourceTierFilterValue,
+} from './SourceTierFilter';
 export { default as WorkspaceChapterView } from './WorkspaceChapterView';
 export {
   default as WorkspaceReadingView,

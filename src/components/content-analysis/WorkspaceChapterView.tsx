@@ -38,6 +38,10 @@ import {
   type SummaryBlock,
 } from '@/lib/content-analysis/service';
 import DocumentSummaryPanel from './DocumentSummaryPanel';
+import SourceTierFilter, {
+  filterBySourceTier,
+  type SourceTierFilterValue,
+} from './SourceTierFilter';
 
 export interface WorkspaceChapterViewProps {
   /** Every document in the workspace corpus, across all source tiers. */
@@ -82,6 +86,16 @@ export default function WorkspaceChapterView({
     return m;
   }, [summaries]);
 
+  // Source-tier focus. Each chapter already splits into policy / scientific /
+  // grey columns, but this lets you narrow the whole view to one tier — the
+  // same "differentiate by type of source" the Code view offers, without
+  // leaving the chapter overview.
+  const [tierFilter, setTierFilter] = useState<SourceTierFilterValue>('all');
+  const visibleDocuments = useMemo(
+    () => filterBySourceTier(documents, tierFilter),
+    [documents, tierFilter],
+  );
+
   const { chapters, unassigned, assignedCount } = useMemo(() => {
     // Chapter order: the seeded ESABCC chapters first (report order), then any
     // custom chapters coined by hand, alphabetically.
@@ -108,7 +122,7 @@ export default function WorkspaceChapterView({
     const byChapter = new Map<string, AnalysisDocument[]>();
     const noChapter: AnalysisDocument[] = [];
     let assigned = 0;
-    for (const d of documents) {
+    for (const d of visibleDocuments) {
       const chs = chapterIdsByDoc[d.id] ?? [];
       if (chs.length === 0) {
         noChapter.push(d);
@@ -138,7 +152,7 @@ export default function WorkspaceChapterView({
       unassigned: noChapter.slice().sort(sortByTitle),
       assignedCount: assigned,
     };
-  }, [documents, chapterIdsByDoc]);
+  }, [visibleDocuments, chapterIdsByDoc]);
 
   if (documents.length === 0) {
     return (
@@ -162,13 +176,20 @@ export default function WorkspaceChapterView({
         <p className="text-[11px] text-tertiary-light mt-1">
           Every document you have tagged with a chapter, grouped by report
           chapter and split into policy, scientific and grey sources.{' '}
-          <strong>{assignedCount}</strong> of {documents.length} document
-          {documents.length === 1 ? '' : 's'} assigned to a chapter. Use each
+          <strong>{assignedCount}</strong> of {visibleDocuments.length} document
+          {visibleDocuments.length === 1 ? '' : 's'} assigned to a chapter. Use each
           document’s <strong>Note</strong> button to jot its <strong>angle</strong>{' '}
           — how it comes into the chapter — and <strong>Summary</strong> to show
-          its whole-document summary from the Analyse tab. Set a document’s
+          its whole-document summary from the Analyse tab. Filter by source below
+          to focus on one tier. Set a document’s
           chapter from its header in the <strong>Code</strong> view.
         </p>
+        <SourceTierFilter
+          documents={documents}
+          value={tierFilter}
+          onChange={setTierFilter}
+          className="mt-2"
+        />
       </div>
 
       {chapters.length === 0 && (
