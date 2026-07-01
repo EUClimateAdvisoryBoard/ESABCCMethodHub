@@ -35,10 +35,23 @@ flowchart LR
   *Policy Gap 2.0*) to scope the list to just that report's literature —
   handy when you remember the report but not the exact paper title. The
   project list is pulled live from `/api/references?facet=projects`.
+- Offers a **Chapter view** in the "Cite from Project Workspace" dialog: the
+  workspace reading list is grouped by report chapter / sector (Energy,
+  Industry, Transport, …), with a **Chapter** filter to focus on one chapter.
+  Selecting a document shows its **angle note** (this report's reason to cite
+  it, right where you're drafting) and its **whole-document summary**,
+  read-only. Both are the *same* shared artefacts the web Content-analysis
+  **Chapter view** reads and writes — a note or summary added on the web
+  appears here, and stays in sync — served by
+  `/api/references/project-workspace` (fields `chaptersText`, `note`,
+  `summary`, `summarySlides`, plus a `chapters` facet). A ✎ marks documents
+  that already carry an angle note and a ☰ those with a summary.
 
-> **Note:** the search dialog is generated at install time. After updating
+> **Note:** the dialogs are generated at install time. After updating
 > `ESABCC_RefManager.bas`, re-run `install.cmd` (or re-embed) so the new
-> Project filter appears in Word.
+> UI appears in Word. Existing installs are upgraded automatically: the
+> macro detects a workspace dialog built before the Chapter view (it lacks
+> the chapter controls) and rebuilds it in place on next use.
 
 Relevant constants at the top of `ESABCC_RefManager.bas`:
 

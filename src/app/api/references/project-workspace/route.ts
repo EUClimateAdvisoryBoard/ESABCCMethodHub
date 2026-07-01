@@ -10,8 +10,9 @@
  *     → { projects: [{ id, name, count }] }
  *       Workspaces that have a corpus, with display names from `pw_projects`.
  *
- *   GET ?projectId=<id>[&tier=policy|scientific|grey][&tag=<name|codeId>][&q=…]
- *     → { project, total, tiers, tags, items }
+ *   GET ?projectId=<id>[&tier=policy|scientific|grey][&tag=<name|codeId>]
+ *          [&chapter=<name>][&q=…]
+ *     → { project, total, tiers, tags, chapters, items }
  *       `items` is a flat array (policy → scientific → grey, then year desc)
  *       where each row carries a citable reference id:
  *         - workspace policy documents resolve to the `policy-*` entries the
@@ -21,6 +22,13 @@
  *       `tags` aggregates the overall tags across the (unfiltered) corpus so
  *       the add-in can populate its tag-filter dropdown; `tagsText` on each
  *       item is pre-joined for the VBA JSON parser.
+ *       `chapters` aggregates the report-chapter / sector tags the same way so
+ *       the add-in can offer a Chapter view (group / filter the reading list by
+ *       chapter). Each item also carries the same shared, live-synced Chapter
+ *       view artefacts the web workbench reads and writes:
+ *         - `chaptersText` — the chapter(s) the doc is lined up for,
+ *         - `note` — this report's angle (why/where to cite it here),
+ *         - `summary` + `summarySlides` — the whole-document summary.
  *
  * Output strings are VBA-sanitised like /api/references; CORS is open the
  * same way because Word's HTTP stack calls this cross-origin.
@@ -31,12 +39,13 @@ import { policies } from '@/data/policies';
 import { SEED_PROJECTS } from '@/data/project-workspace';
 import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { findPolicyFlatRef, POLICY_REF_PREFIX } from '@/lib/references/policy-entries';
-import { getCaCorpus, getCaDocuments, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
+import { getCaCorpus, getCaDocuments, getCodes, getSummaries, listCaCorpusProjects } from '@/lib/content-analysis-store';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
 import { POLICY_TAG_ASSIGNMENTS } from '@/lib/content-analysis/policy-master-tags';
+import { CHAPTER_TAGS, isChapterTagId, parseChapterTag } from '@/lib/content-analysis/chapter-tags';
 import { listProjects } from '@/lib/project-workspace/db';
 import { getServerSupabase } from '@/lib/supabase-server';
-import type { CorpusDocMeta } from '@/lib/content-analysis/types';
+import type { CorpusDocMeta, DocumentSummary } from '@/lib/content-analysis/types';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -137,6 +146,23 @@ interface WorkspaceItem {
   fullCitation: string;
   tags: string[];
   tagsText: string;
+  /** Report-chapter / sector tags applied to the document, as display names
+   *  (e.g. "Industry"). The Chapter view groups the reading list by these. */
+  chapters: string[];
+  /** Pre-joined chapters for the VBA JSON parser ("Industry; Transport"). */
+  chaptersText: string;
+  /** The angle note for THIS workspace/report — how the document comes into
+   *  the chapter. Persisted as the active project's document-summary lead text,
+   *  the same shared artefact the web Chapter view reads and writes. */
+  note: string;
+  /** The whole-document summary (master or richest available), shown read-only
+   *  so an author drafting text sees the paper's gist alongside its angle. */
+  summary: string;
+  /** Number of rich summary slides authored on the web (screenshots, diagrams)
+   *  — surfaced as a hint since the add-in shows plain text only. */
+  summarySlides: number;
+  hasNote: boolean;
+  hasSummary: boolean;
 }
 
 /** Fallback display name for corpus project ids with no `pw_projects` row. */
@@ -319,12 +345,27 @@ function buildItem(
   refById: Map<string, FlatRefLike>,
   overallTags: Map<string, string[]>,
   resolveCodeName: (codeId: string) => string | null,
+  projectId: string,
+  summariesByDoc: Map<string, DocumentSummary[]>,
 ): WorkspaceItem {
   const tier = tierOf(meta);
 
+  // Chapter (report-chapter / sector) tags ride in the same overall-tags table
+  // but in their own self-describing `chapter:` namespace, so pull them out
+  // before name-resolution (they never resolve against the code taxonomy).
+  const rawTagIds = overallTags.get(documentId) ?? [];
+  const chapters = [
+    ...new Set(
+      rawTagIds
+        .filter(isChapterTagId)
+        .map(id => parseChapterTag(id)?.name)
+        .filter((n): n is string => !!n),
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+
   // Collect tag code-ids: manual overall tags, the AI baseline for policies,
   // and the AI codes snapshotted onto the corpus row when it was added.
-  const codeIds = new Set<string>(overallTags.get(documentId) ?? []);
+  const codeIds = new Set<string>(rawTagIds.filter(id => !isChapterTagId(id)));
   if (tier === 'policy') {
     for (const a of POLICY_TAG_ASSIGNMENTS[documentId] ?? []) codeIds.add(a.codeId);
   }
@@ -333,6 +374,25 @@ function buildItem(
     .map(resolveCodeName)
     .filter((n): n is string => !!n)
     .sort((a, b) => a.localeCompare(b));
+
+  // Angle note + whole-document summary from the shared summaries store, so an
+  // author drafting text sees "why we lined this up here" and the paper's gist.
+  // The angle note is the ACTIVE project's summary lead text (what the web
+  // Chapter view's Note button edits); the summary prefers the master take,
+  // falling back to the richest project summary available.
+  const docSummaries = summariesByDoc.get(documentId) ?? [];
+  const ownSummary = docSummaries.find(s => s.projectId === projectId);
+  const note = (ownSummary?.text ?? '').trim();
+  const masterSummary = docSummaries.find(s => s.projectId === null);
+  const summary = (
+    (masterSummary?.text ?? '').trim() ||
+    docSummaries
+      .map(s => (s.text ?? '').trim())
+      .filter(Boolean)
+      .sort((a, b) => b.length - a.length)[0] ||
+    ''
+  );
+  const summarySlides = docSummaries.reduce((n, s) => n + (s.blockCount ?? 0), 0);
 
   let citeId: string;
   let authors = meta.referenceAuthors || '';
@@ -400,6 +460,13 @@ function buildItem(
     fullCitation: sanitize(fullCitation),
     tags: tags.map(sanitize),
     tagsText: sanitize(tags.join('; ')),
+    chapters: chapters.map(sanitize),
+    chaptersText: sanitize(chapters.join('; ')),
+    note: sanitize(note),
+    summary: sanitize(summary),
+    summarySlides,
+    hasNote: note.length > 0,
+    hasSummary: summary.length > 0 || summarySlides > 0,
   };
 }
 
@@ -407,7 +474,7 @@ function buildItem(
 function matchesQuery(item: WorkspaceItem, tokens: string[]): boolean {
   if (tokens.length === 0) return true;
   const haystack = normalize(
-    [item.title, item.authors, item.year, item.kindLabel, item.tags.join(' ')].join(' '),
+    [item.title, item.authors, item.year, item.kindLabel, item.tags.join(' '), item.chapters.join(' '), item.note].join(' '),
   );
   return tokens.every(t => haystack.includes(t));
 }
@@ -418,6 +485,7 @@ export async function GET(request: NextRequest) {
   const projectId = params.get('projectId') || '';
   const tierFilter = params.get('tier') || '';
   const tagFilter = params.get('tag') || '';
+  const chapterFilter = params.get('chapter') || '';
   const query = params.get('q') || '';
   const limit = Math.min(parseInt(params.get('limit') || '500') || 500, 2000);
 
@@ -474,15 +542,25 @@ export async function GET(request: NextRequest) {
     .map(e => ({ documentId: e.documentId, meta: e.meta ?? synthesizeMeta(e.documentId, refById, caDocsById) }))
     .filter((e): e is { documentId: string; meta: CorpusDocMeta } => !!e.meta);
 
-  const [overallTags, resolveCodeName, wsProjects] = await Promise.all([
+  const [overallTags, resolveCodeName, wsProjects, allSummaries] = await Promise.all([
     loadOverallTags(entries.map(e => e.documentId)),
     buildCodeNameResolver(),
     loadWorkspaceProjects(),
+    getSummaries().catch(() => [] as DocumentSummary[]),
   ]);
   const names = new Map(wsProjects.map(p => [p.id, p.name]));
 
+  // Group the (light) summaries by document so each item can pick up its angle
+  // note and whole-document summary without a per-row lookup.
+  const summariesByDoc = new Map<string, DocumentSummary[]>();
+  for (const s of allSummaries) {
+    const list = summariesByDoc.get(s.documentId);
+    if (list) list.push(s);
+    else summariesByDoc.set(s.documentId, [s]);
+  }
+
   const allItems = entries.map(e =>
-    buildItem(e.meta, e.documentId, refById, overallTags, resolveCodeName),
+    buildItem(e.meta, e.documentId, refById, overallTags, resolveCodeName, projectId, summariesByDoc),
   );
   allItems.sort(
     (a, b) =>
@@ -494,12 +572,25 @@ export async function GET(request: NextRequest) {
   // Facets are aggregated over the whole corpus (not the filtered slice) so
   // the add-in's dropdowns stay stable while the user narrows the list.
   const tagCounts = new Map<string, number>();
+  const chapterCounts = new Map<string, number>();
   for (const item of allItems) {
     for (const t of item.tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+    for (const ch of item.chapters) chapterCounts.set(ch, (chapterCounts.get(ch) ?? 0) + 1);
   }
   const tagsFacet = [...tagCounts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  // Chapters facet keeps the seeded ESABCC chapter order (report order), then
+  // any hand-coined chapters, so the add-in's Chapter dropdown reads naturally.
+  const chapterOrder = CHAPTER_TAGS.map(c => c.name);
+  const chaptersFacet = [...chapterCounts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => {
+      const ia = chapterOrder.indexOf(a.name);
+      const ib = chapterOrder.indexOf(b.name);
+      if (ia !== -1 || ib !== -1) return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+      return a.name.localeCompare(b.name);
+    });
   const tiersFacet = TIER_ORDER.map(tier => ({
     id: tier,
     label: TIER_LABELS[tier],
@@ -514,6 +605,10 @@ export async function GET(request: NextRequest) {
     const wanted = normalize(tagFilter);
     filtered = filtered.filter(i => i.tags.some(t => normalize(t) === wanted));
   }
+  if (chapterFilter) {
+    const wanted = normalize(chapterFilter);
+    filtered = filtered.filter(i => i.chapters.some(c => normalize(c) === wanted));
+  }
   const tokens = normalize(query).split(/[\s,;:()\[\]"']+/).filter(t => t && /[a-z0-9]/.test(t));
   filtered = filtered.filter(i => matchesQuery(i, tokens));
 
@@ -526,6 +621,7 @@ export async function GET(request: NextRequest) {
       total: filtered.length,
       tiers: tiersFacet,
       tags: tagsFacet,
+      chapters: chaptersFacet,
       items: filtered.slice(0, limit),
     },
     { headers: CORS_HEADERS },

@@ -76,6 +76,12 @@ Private m_WsRowMap() As Long        ' form list row -> result index (0 = tier he
 Private m_WsRowCount As Long
 Private m_ResTiers() As String      ' per-result source tier (policy/scientific/grey)
 Private m_ResTags() As String       ' per-result joined tag names
+Private m_ResChapters() As String   ' per-result joined report-chapter tags ("Industry; Transport")
+Private m_ResNote() As String       ' per-result angle note (this report's reason to cite it)
+Private m_ResSummary() As String    ' per-result whole-document summary text
+Private m_ResSlides() As String     ' per-result rich-slide count authored on the web
+Private m_WsChapterNames() As String ' chapter facet of the last workspace fetch
+Private m_WsChapterCount As Long
 
 ' ============================================================================
 ' AUTO-RUN HOOKS (no manual setup needed after import)
@@ -171,6 +177,15 @@ Public Sub ESABCC_BuildForms()
         If f > 0 Then Print #f, "    frmESABCC_Edit OK"
     ElseIf f > 0 Then
         Print #f, "  frmESABCC_Edit already present"
+    End If
+
+    ' Upgrade path: a workspace form built before the Chapter view lacks the
+    ' cmbChapter control. Remove it so it is rebuilt below with the chapter
+    ' grouping, chapter filter and the angle-note / summary details panel.
+    If CompExists(proj, "frmESABCC_Workspace") _
+       And Not FormHasControl(proj, "frmESABCC_Workspace", "cmbChapter") Then
+        proj.VBComponents.Remove proj.VBComponents("frmESABCC_Workspace")
+        If f > 0 Then Print #f, "  removed stale frmESABCC_Workspace (pre-Chapter-view) for rebuild"
     End If
 
     Dim addedWorkspaceForm As Boolean: addedWorkspaceForm = False
@@ -826,6 +841,11 @@ Public Sub ESABCC_CiteFromWorkspace()
     g_GroupMode = False
     g_SelectedIndex = 0
 
+    ' Ensure the form is present AND up to date (Chapter view) before showing,
+    ' so an install that predates the Chapter view is upgraded in place rather
+    ' than showing its old, chapter-less workspace picker.
+    EnsureFormsReady
+
     Dim shown As Boolean
     shown = TryShowWorkspaceForm("ESABCC - Cite from Project Workspace")
     If Not shown Then
@@ -1003,9 +1023,11 @@ End Function
 ' Fetch one workspace's literature into the m_Res* arrays (plus m_ResTiers /
 ' m_ResTags) and its tag facet into m_WsTagNames. tier is ""/policy/
 ' scientific/grey; tagName "" means no tag filter.
-Private Sub FetchWorkspaceItems(projectId As String, tier As String, tagName As String, query As String)
+Private Sub FetchWorkspaceItems(projectId As String, tier As String, tagName As String, query As String, _
+                                Optional chapterName As String = "")
     m_ResCount = 0
     m_WsTagCount = 0
+    m_WsChapterCount = 0
     On Error GoTo FetchErr
 
     Dim url As String
@@ -1013,6 +1035,7 @@ Private Sub FetchWorkspaceItems(projectId As String, tier As String, tagName As 
           UrlEncode(projectId) & "&limit=500"
     If tier <> "" Then url = url & "&tier=" & tier
     If tagName <> "" Then url = url & "&tag=" & UrlEncode(tagName)
+    If chapterName <> "" Then url = url & "&chapter=" & UrlEncode(chapterName)
     If Trim(query) <> "" Then url = url & "&q=" & UrlEncode(Trim(query))
 
     Dim http As Object
@@ -1024,11 +1047,35 @@ Private Sub FetchWorkspaceItems(projectId As String, tier As String, tagName As 
 
     Dim resp As String: resp = http.responseText
     ParseWorkspaceTagFacet ExtractJsonArray(resp, "tags")
+    ParseWorkspaceChapterFacet ExtractJsonArray(resp, "chapters")
     ParseWorkspaceItems ExtractJsonArray(resp, "items")
     Exit Sub
 
 FetchErr:
     m_ResCount = 0
+End Sub
+
+' Parse the chapter facet array [{ "name": "...", "count": N }, ...] into
+' m_WsChapterNames, preserving the server's report-chapter order.
+Private Sub ParseWorkspaceChapterFacet(arr As String)
+    m_WsChapterCount = 0
+    Dim n As Long: n = CountJsonObjects(arr)
+    If n = 0 Then Exit Sub
+    ReDim m_WsChapterNames(1 To n)
+
+    Dim pos As Long: pos = 1
+    Dim idx As Long: idx = 0
+    Do
+        Dim objStart As Long: objStart = InStr(pos, arr, "{")
+        If objStart = 0 Then Exit Do
+        Dim objEnd As Long: objEnd = FindClosingBrace(arr, objStart)
+        If objEnd = 0 Then Exit Do
+        idx = idx + 1
+        If idx > n Then Exit Do
+        m_WsChapterNames(idx) = JsonVal(Mid(arr, objStart, objEnd - objStart + 1), "name")
+        pos = objEnd + 1
+    Loop
+    m_WsChapterCount = idx
 End Sub
 
 ' Parse the tag facet array [{ "name": "...", "count": N }, ...].
@@ -1073,6 +1120,10 @@ Private Sub ParseWorkspaceItems(json As String)
     ReDim m_ResUrls(1 To objCount)
     ReDim m_ResTiers(1 To objCount)
     ReDim m_ResTags(1 To objCount)
+    ReDim m_ResChapters(1 To objCount)
+    ReDim m_ResNote(1 To objCount)
+    ReDim m_ResSummary(1 To objCount)
+    ReDim m_ResSlides(1 To objCount)
 
     Dim pos As Long: pos = 1
     Dim idx As Long: idx = 0
@@ -1102,6 +1153,10 @@ Private Sub ParseWorkspaceItems(json As String)
         m_ResUrls(idx) = JsonVal(obj, "url")
         m_ResTiers(idx) = JsonVal(obj, "tier")
         m_ResTags(idx) = JsonVal(obj, "tagsText")
+        m_ResChapters(idx) = JsonVal(obj, "chaptersText")
+        m_ResNote(idx) = JsonVal(obj, "note")
+        m_ResSummary(idx) = JsonVal(obj, "summary")
+        m_ResSlides(idx) = JsonVal(obj, "summarySlides")
 
         If m_ResCitations(idx) = "" Then
             m_ResCitations(idx) = m_ResAuthors(idx) & " (" & m_ResYears(idx) & "). " & m_ResTitles(idx) & "."
@@ -3041,16 +3096,19 @@ Public Sub FormBridge_WS_LoadProjects(cmb As Object, lblStatus As Object)
     cmb.ListIndex = 0
 End Sub
 
-' Run a workspace search and render the clustered results. projIndex /
-' tierIndex are the combos' 0-based ListIndex; tagChoice is the tag combo
-' text ("(All tags)" or blank = no filter). The tag combo is refreshed from
-' the response facet so it always lists the tags present in the workspace.
-' Each row carries a citation-tracker mark: a check in the first column
-' means that reference is already cited somewhere in the active document.
-' onlyUncited hides the already-cited rows ("what's left to cite" view).
+' Run a workspace search and render the results as a CHAPTER VIEW: the reading
+' list grouped by report-chapter / sector, mirroring the web workbench so an
+' author drafting text sees "everything we lined up for the Industry chapter"
+' and, per document, its angle note and summary. projIndex / tierIndex are the
+' combos' 0-based ListIndex; tagChoice / chapterChoice are the filter combos'
+' text ("(All ...)" or blank = no filter). The tag and chapter combos are
+' refreshed from the response facets so they always list what's in the
+' workspace. Each row carries a citation-tracker mark (a check = already cited
+' in this document) and a note/summary flag; onlyUncited hides cited rows.
 Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice As String, _
                                 query As String, lst As Object, lblStatus As Object, cmbTag As Object, _
-                                Optional onlyUncited As Boolean = False)
+                                Optional onlyUncited As Boolean = False, _
+                                Optional chapterChoice As String = "", Optional cmbChapter As Object)
     lst.Clear
     m_WsRowCount = 0
     If projIndex < 0 Or projIndex >= m_WsProjCount Then
@@ -3059,11 +3117,12 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Exit Sub
     End If
 
-    ' Citation-tracker column lives at index 0; configure the list at runtime
-    ' so a form built by an older install picks the new layout up too.
+    ' Columns: cited mark, source tier, author/year, title, note/summary flags.
+    ' Configured at runtime so a form built by an older install adopts the
+    ' layout too. Chapters appear as group header rows, not a column.
     On Error Resume Next
     lst.ColumnCount = 5
-    lst.ColumnWidths = "20;52;124;212;88"
+    lst.ColumnWidths = "18;46;150;208;66"
     On Error GoTo 0
 
     Dim tier As String
@@ -3077,12 +3136,16 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
     Dim tagName As String: tagName = Trim(tagChoice)
     If tagName = "(All tags)" Then tagName = ""
 
+    Dim chapName As String: chapName = Trim(chapterChoice)
+    If chapName = "(All chapters)" Then chapName = ""
+
     Application.StatusBar = "ESABCC: Loading workspace literature..."
     DoEvents
-    FetchWorkspaceItems m_WsProjIds(projIndex + 1), tier, tagName, query
+    FetchWorkspaceItems m_WsProjIds(projIndex + 1), tier, tagName, query, chapName
     Application.StatusBar = ""
 
     FillWorkspaceTagCombo cmbTag, tagChoice
+    If Not cmbChapter Is Nothing Then FillWorkspaceChapterCombo cmbChapter, chapterChoice
 
     If m_ResCount = 0 Then
         lblStatus.Caption = "No documents matched."
@@ -3107,56 +3170,142 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Exit Sub
     End If
 
+    Dim noteCount As Long: noteCount = 0
+    For i = 1 To m_ResCount
+        If Trim(m_ResNote(i)) <> "" Then noteCount = noteCount + 1
+    Next i
+
     If onlyUncited Then
-        lblStatus.Caption = (m_ResCount - citedCount) & " not yet cited (of " & m_ResCount & " matching)"
+        lblStatus.Caption = (m_ResCount - citedCount) & " not yet cited (of " & m_ResCount & _
+                            " matching, " & noteCount & " with an angle note)"
     Else
         lblStatus.Caption = m_ResCount & " document(s) - " & citedCount & " cited, " & _
-                            (m_ResCount - citedCount) & " not yet cited"
+                            noteCount & " with an angle note"
     End If
     lblStatus.ForeColor = RGB(40, 120, 40)
 
-    ' Render clustered: a disabled-looking header row opens each source tier;
-    ' m_WsRowMap translates list rows back to result indices (0 = header).
-    ReDim m_WsRowMap(1 To m_ResCount + 6)
+    ' Ordered, first-seen list of chapter group keys (the full chapters text of
+    ' each document); documents with no chapter are collected under a trailing
+    ' "(No chapter yet)" group. m_WsRowMap translates list rows back to result
+    ' indices (0 = a header row).
+    Dim grpKeys() As String
+    ReDim grpKeys(1 To m_ResCount)
+    Dim grpCount As Long: grpCount = 0
+    Dim hasBlank As Boolean: hasBlank = False
+    For i = 1 To m_ResCount
+        If onlyUncited And (InStr(citedSet, "|" & m_ResIds(i) & "|") > 0) Then GoTo NextKey
+        Dim keyC As String: keyC = Trim(m_ResChapters(i))
+        If keyC = "" Then
+            hasBlank = True
+        Else
+            Dim found As Boolean: found = False
+            Dim k As Long
+            For k = 1 To grpCount
+                If grpKeys(k) = keyC Then found = True: Exit For
+            Next k
+            If Not found Then
+                grpCount = grpCount + 1
+                grpKeys(grpCount) = keyC
+            End If
+        End If
+NextKey:
+    Next i
 
+    ReDim m_WsRowMap(1 To m_ResCount + grpCount + 4)
     Dim checkMark As String: checkMark = ChrW(10003)  ' "already cited" tick
 
-    Dim lastTier As String: lastTier = Chr(1)
-    For i = 1 To m_ResCount
-        Dim isCited As Boolean
-        isCited = (InStr(citedSet, "|" & m_ResIds(i) & "|") > 0)
-        If onlyUncited And isCited Then GoTo NextItem
-
-        If m_ResTiers(i) <> lastTier Then
-            lastTier = m_ResTiers(i)
-            lst.AddItem ""
-            lst.List(lst.ListCount - 1, 2) = "--- " & UCase(WorkspaceTierLabel(lastTier)) & " ---"
-            m_WsRowCount = m_WsRowCount + 1
-            m_WsRowMap(m_WsRowCount) = 0
+    ' One header + its member rows per chapter group, blank chapter last.
+    Dim g As Long
+    For g = 1 To grpCount + IIf(hasBlank, 1, 0)
+        Dim grpLabel As String
+        Dim matchKey As String
+        If g <= grpCount Then
+            matchKey = grpKeys(g)
+            grpLabel = "=== " & UCase(matchKey) & " ==="
+        Else
+            matchKey = ""  ' the blank group
+            grpLabel = "=== NO CHAPTER YET ==="
         End If
 
-        Dim authorYr As String: authorYr = m_ResAuthors(i)
-        If Len(authorYr) > 20 Then authorYr = Left(authorYr, 17) & "..."
-        authorYr = authorYr & " (" & m_ResYears(i) & ")"
+        Dim headerEmitted As Boolean: headerEmitted = False
+        For i = 1 To m_ResCount
+            If Trim(m_ResChapters(i)) <> matchKey Then GoTo NextRow
+            Dim isCited As Boolean
+            isCited = (InStr(citedSet, "|" & m_ResIds(i) & "|") > 0)
+            If onlyUncited And isCited Then GoTo NextRow
 
-        Dim ttl As String: ttl = m_ResTitles(i)
-        If Len(ttl) > 40 Then ttl = Left(ttl, 37) & "..."
+            If Not headerEmitted Then
+                lst.AddItem ""
+                lst.List(lst.ListCount - 1, 3) = grpLabel
+                m_WsRowCount = m_WsRowCount + 1
+                m_WsRowMap(m_WsRowCount) = 0
+                headerEmitted = True
+            End If
 
-        Dim tg As String: tg = m_ResTags(i)
-        If Len(tg) > 26 Then tg = Left(tg, 23) & "..."
+            Dim authorYr As String: authorYr = m_ResAuthors(i)
+            If Len(authorYr) > 22 Then authorYr = Left(authorYr, 19) & "..."
+            authorYr = authorYr & " (" & m_ResYears(i) & ")"
 
-        Dim mark As String: mark = ""
-        If isCited Then mark = checkMark
+            Dim ttl As String: ttl = m_ResTitles(i)
+            If Len(ttl) > 40 Then ttl = Left(ttl, 37) & "..."
 
-        lst.AddItem mark
-        lst.List(lst.ListCount - 1, 1) = WorkspaceTierLabel(m_ResTiers(i))
-        lst.List(lst.ListCount - 1, 2) = authorYr
-        lst.List(lst.ListCount - 1, 3) = ttl
-        lst.List(lst.ListCount - 1, 4) = tg
-        m_WsRowCount = m_WsRowCount + 1
-        m_WsRowMap(m_WsRowCount) = i
-NextItem:
-    Next i
+            ' Note / summary flags so the analyst sees at a glance which
+            ' documents already carry an angle note or a summary.
+            Dim flags As String: flags = ""
+            If Trim(m_ResNote(i)) <> "" Then flags = ChrW(9998)          ' pencil = angle note
+            If Trim(m_ResSummary(i)) <> "" Or Val(m_ResSlides(i)) > 0 Then _
+                flags = Trim(flags & " " & ChrW(9776))                    ' trigram = summary
+
+            Dim mark As String: mark = ""
+            If isCited Then mark = checkMark
+
+            lst.AddItem mark
+            lst.List(lst.ListCount - 1, 1) = WorkspaceTierLabel(m_ResTiers(i))
+            lst.List(lst.ListCount - 1, 2) = authorYr
+            lst.List(lst.ListCount - 1, 3) = ttl
+            lst.List(lst.ListCount - 1, 4) = flags
+            m_WsRowCount = m_WsRowCount + 1
+            m_WsRowMap(m_WsRowCount) = i
+NextRow:
+        Next i
+    Next g
+End Sub
+
+' Populate the read-only details box with the selected row's chapter, angle
+' note and whole-document summary - the reason to cite it here plus its gist,
+' straight from the web Chapter view. rowIndex is the list's 1-based row.
+Public Sub FormBridge_WS_ShowDetails(rowIndex As Long, txt As Object)
+    On Error Resume Next
+    Dim r As Long
+    r = FormBridge_WS_RowToResult(rowIndex)
+    If r < 1 Then
+        txt.Value = "Select a document to see its chapter angle and summary."
+        Exit Sub
+    End If
+
+    Dim s As String
+    s = m_ResTitles(r)
+    If m_ResYears(r) <> "" Then s = s & " (" & m_ResYears(r) & ")"
+    s = s & vbCrLf
+    If Trim(m_ResChapters(r)) <> "" Then s = s & "Chapter: " & m_ResChapters(r) & vbCrLf
+    If Trim(m_ResTags(r)) <> "" Then s = s & "Tags: " & m_ResTags(r) & vbCrLf
+
+    Dim body As String: body = ""
+    If Trim(m_ResNote(r)) <> "" Then
+        body = body & vbCrLf & "ANGLE - why cite it here:" & vbCrLf & m_ResNote(r) & vbCrLf
+    End If
+    If Trim(m_ResSummary(r)) <> "" And Trim(m_ResSummary(r)) <> Trim(m_ResNote(r)) Then
+        body = body & vbCrLf & "SUMMARY:" & vbCrLf & m_ResSummary(r) & vbCrLf
+    End If
+    If Val(m_ResSlides(r)) > 0 Then
+        body = body & vbCrLf & "(" & m_ResSlides(r) & " summary slide(s) with visuals on the web)"
+    End If
+    If body = "" Then
+        body = vbCrLf & "No angle note or summary yet - add one in the web Content analysis " & _
+               "Chapter view (Note / Summary), and it syncs here."
+    End If
+
+    txt.Value = s & body
 End Sub
 
 ' Pipe-delimited set of every reference id cited in the active document
@@ -3211,6 +3360,23 @@ Private Sub FillWorkspaceTagCombo(cmbTag As Object, currentChoice As String)
     On Error GoTo 0
 End Sub
 
+' (Re)fill the chapter combo from the last fetched facet, keeping the current
+' selection when that chapter still exists in the workspace.
+Private Sub FillWorkspaceChapterCombo(cmbChapter As Object, currentChoice As String)
+    On Error Resume Next
+    Dim keep As String: keep = Trim(currentChoice)
+    cmbChapter.Clear
+    cmbChapter.AddItem "(All chapters)"
+    Dim selIdx As Long: selIdx = 0
+    Dim i As Long
+    For i = 1 To m_WsChapterCount
+        cmbChapter.AddItem m_WsChapterNames(i)
+        If m_WsChapterNames(i) = keep Then selIdx = i
+    Next i
+    cmbChapter.ListIndex = selIdx
+    On Error GoTo 0
+End Sub
+
 ' ============================================================================
 ' DYNAMIC USERFORM CREATION  (requires VBA project trust)
 ' ============================================================================
@@ -3239,6 +3405,21 @@ Private Function FormExists(proj As Object, formName As String) As Boolean
     Set comp = proj.VBComponents(formName)
     FormExists = (Not comp Is Nothing)
     On Error GoTo 0
+End Function
+
+' Whether a built UserForm carries a named control. Used to detect a form left
+' over from an older install (missing a control the current layout adds) so it
+' can be rebuilt. Returns False on any access error (control absent / no VBOM).
+Private Function FormHasControl(proj As Object, formName As String, controlName As String) As Boolean
+    On Error GoTo NoCtl
+    FormHasControl = False
+    If Not CompExists(proj, formName) Then Exit Function
+    Dim ctl As Object
+    Set ctl = proj.VBComponents(formName).Designer.Controls(controlName)
+    FormHasControl = (Not ctl Is Nothing)
+    Exit Function
+NoCtl:
+    FormHasControl = False
 End Function
 
 Private Function ShowFormByName(proj As Object, formName As String, formTitle As String) As Boolean
@@ -3275,9 +3456,13 @@ Private Function EnsureFormsReady() As Boolean
     Dim proj As Object: Set proj = GetVBProject()
     If proj Is Nothing Then GoTo FormErr
 
+    ' The workspace form must also carry the Chapter-view controls (cmbChapter /
+    ' txtDetails). An install that built it before the Chapter view lacks them,
+    ' so treat that as "not ready" and fall through to the rebuild path below.
     If CompExists(proj, "frmESABCC_Search") _
        And CompExists(proj, "frmESABCC_DOI") _
        And CompExists(proj, "frmESABCC_Workspace") _
+       And FormHasControl(proj, "frmESABCC_Workspace", "cmbChapter") _
        And CompExists(proj, "ESABCCHelper") Then
         EnsureFormsReady = True
         Exit Function
@@ -3568,7 +3753,7 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
 
     frm.Properties("Caption") = "ESABCC - Cite from Project Workspace"
     frm.Properties("Width") = 534
-    frm.Properties("Height") = 520
+    frm.Properties("Height") = 636
     frm.Properties("StartUpPosition") = 1
 
     Dim d As Object: Set d = frm.Designer
@@ -3587,8 +3772,8 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     c.ForeColor = RGB(255, 255, 255): c.BackStyle = 0
 
     Set c = d.Controls.Add("Forms.Label.1", "lblOrg", True)
-    c.Caption = "Cite from a project workspace - literature clustered by source type"
-    c.Left = 14: c.Top = 26: c.Width = 480: c.Height = 14
+    c.Caption = "Chapter view - the reading list grouped by report chapter, with each document's angle note & summary"
+    c.Left = 14: c.Top = 26: c.Width = 510: c.Height = 14
     c.Font.Size = 8
     c.ForeColor = RGB(190, 210, 215): c.BackStyle = 0
 
@@ -3625,60 +3810,90 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     c.Font.Size = 9
     c.Style = 2
 
+    ' Chapter (report-chapter / sector) filter - the heart of the Chapter view
+    Set c = d.Controls.Add("Forms.Label.1", "lblChapter", True)
+    c.Caption = "Chapter:"
+    c.Left = 14: c.Top = 114: c.Width = 48: c.Height = 16
+    c.Font.Size = 9: c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    Set c = d.Controls.Add("Forms.ComboBox.1", "cmbChapter", True)
+    c.Left = 64: c.Top = 112: c.Width = 452: c.Height = 20
+    c.Font.Size = 9
+    c.Style = 2
+
     ' Search box
     Set c = d.Controls.Add("Forms.TextBox.1", "txtSearch", True)
-    c.Left = 14: c.Top = 112: c.Width = 296: c.Height = 22
+    c.Left = 14: c.Top = 140: c.Width = 296: c.Height = 22
     c.Font.Size = 10
 
     ' Citation-tracker filter: hide the rows already cited in this document
     Set c = d.Controls.Add("Forms.CheckBox.1", "chkUncited", True)
     c.Caption = "Not yet cited only"
-    c.Left = 318: c.Top = 113: c.Width = 96: c.Height = 18
+    c.Left = 318: c.Top = 141: c.Width = 96: c.Height = 18
     c.Font.Size = 8
     c.Value = False
 
     ' Search button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnSearch", True)
     c.Caption = "Search"
-    c.Left = 420: c.Top = 110: c.Width = 96: c.Height = 26
+    c.Left = 420: c.Top = 138: c.Width = 96: c.Height = 26
     c.Font.Size = 10: c.Font.Bold = True
 
     ' Hint (citation-tracker legend)
     Set c = d.Controls.Add("Forms.Label.1", "lblHint", True)
-    c.Caption = ChrW(10003) & " = already cited in this document - clustered by policy / scientific / grey, with overall tags"
-    c.Left = 14: c.Top = 140: c.Width = 504: c.Height = 14
+    c.Caption = ChrW(10003) & " cited   " & ChrW(9998) & " angle note   " & ChrW(9776) & " summary   -   grouped by chapter; click a row for its notes below"
+    c.Left = 14: c.Top = 168: c.Width = 510: c.Height = 14
     c.Font.Size = 8: c.ForeColor = RGB(120, 120, 120): c.BackStyle = 0
 
     ' Status
     Set c = d.Controls.Add("Forms.Label.1", "lblStatus", True)
     c.Caption = ""
-    c.Left = 14: c.Top = 156: c.Width = 504: c.Height = 16
+    c.Left = 14: c.Top = 184: c.Width = 504: c.Height = 16
     c.Font.Size = 9: c.Font.Bold = True
     c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
 
-    ' Results list (5-column: cited mark, source, author/year, title, tags)
+    ' Results list (5-column: cited mark, source, author/year, title, note/summary flags)
     Set c = d.Controls.Add("Forms.ListBox.1", "lstResults", True)
-    c.Left = 14: c.Top = 176: c.Width = 504: c.Height = 250
+    c.Left = 14: c.Top = 204: c.Width = 504: c.Height = 190
     c.Font.Size = 10
     c.ColumnCount = 5
-    c.ColumnWidths = "20;52;124;212;88"
+    c.ColumnWidths = "18;46;150;208;66"
+
+    ' Details header for the selected document
+    Set c = d.Controls.Add("Forms.Label.1", "lblDetailsHdr", True)
+    c.Caption = "Angle note & summary for the selected document (from the web Chapter view):"
+    c.Left = 14: c.Top = 400: c.Width = 504: c.Height = 14
+    c.Font.Size = 8: c.Font.Bold = True
+    c.ForeColor = RGB(60, 60, 60): c.BackStyle = 0
+
+    ' Read-only, scrollable details box - shows the angle note and summary so an
+    ' author drafting text sees why the document was lined up here and its gist.
+    Set c = d.Controls.Add("Forms.TextBox.1", "txtDetails", True)
+    c.Left = 14: c.Top = 416: c.Width = 504: c.Height = 116
+    c.Font.Size = 9
+    c.MultiLine = True
+    c.WordWrap = True
+    c.ScrollBars = 2   ' fmScrollBarsVertical
+    c.Locked = True
+    c.BackColor = RGB(245, 246, 247)
+    c.Value = "Select a document to see its chapter angle and summary."
 
     ' Insert button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnInsert", True)
     c.Caption = "Insert Citation"
-    c.Left = 14: c.Top = 438: c.Width = 130: c.Height = 32
+    c.Left = 14: c.Top = 544: c.Width = 130: c.Height = 32
     c.Font.Size = 10: c.Font.Bold = True
 
     ' View button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnView", True)
     c.Caption = "View in Browser"
-    c.Left = 152: c.Top = 438: c.Width = 120: c.Height = 32
+    c.Left = 152: c.Top = 544: c.Width = 120: c.Height = 32
     c.Font.Size = 10
 
     ' Cancel button
     Set c = d.Controls.Add("Forms.CommandButton.1", "btnCancel", True)
     c.Caption = "Cancel"
-    c.Left = 428: c.Top = 438: c.Width = 90: c.Height = 32
+    c.Left = 428: c.Top = 544: c.Width = 90: c.Height = 32
     c.Font.Size = 10
     c.Cancel = True
 
@@ -3697,6 +3912,9 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    Me.cmbTag.Clear" & vbCrLf & _
         "    Me.cmbTag.AddItem ""(All tags)""" & vbCrLf & _
         "    Me.cmbTag.ListIndex = 0" & vbCrLf & _
+        "    Me.cmbChapter.Clear" & vbCrLf & _
+        "    Me.cmbChapter.AddItem ""(All chapters)""" & vbCrLf & _
+        "    Me.cmbChapter.ListIndex = 0" & vbCrLf & _
         "    ESABCC_RefManager.FormBridge_WS_LoadProjects Me.cmbProject, Me.lblStatus" & vbCrLf & _
         "    mBusy = False" & vbCrLf & _
         "    mReady = True" & vbCrLf & _
@@ -3711,7 +3929,8 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    DoEvents" & vbCrLf & _
         "    ESABCC_RefManager.FormBridge_WS_Search Me.cmbProject.ListIndex, Me.cmbTier.ListIndex, " & _
                  "Me.cmbTag.Value & """", Me.txtSearch.Value, Me.lstResults, Me.lblStatus, Me.cmbTag, " & _
-                 "(Me.chkUncited.Value = True)" & vbCrLf & _
+                 "(Me.chkUncited.Value = True), Me.cmbChapter.Value & """", Me.cmbChapter" & vbCrLf & _
+        "    Me.txtDetails.Value = ""Select a document to see its chapter angle and summary.""" & vbCrLf & _
         "    mBusy = False" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub btnSearch_Click()" & vbCrLf & _
@@ -3723,6 +3942,9 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    Me.cmbTag.Clear" & vbCrLf & _
         "    Me.cmbTag.AddItem ""(All tags)""" & vbCrLf & _
         "    Me.cmbTag.ListIndex = 0" & vbCrLf & _
+        "    Me.cmbChapter.Clear" & vbCrLf & _
+        "    Me.cmbChapter.AddItem ""(All chapters)""" & vbCrLf & _
+        "    Me.cmbChapter.ListIndex = 0" & vbCrLf & _
         "    mBusy = False" & vbCrLf & _
         "    RunSearch" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
@@ -3733,6 +3955,14 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     s = s & "Private Sub cmbTag_Change()" & vbCrLf & _
         "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
         "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub cmbChapter_Change()" & vbCrLf & _
+        "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
+        "    RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    s = s & "Private Sub lstResults_Change()" & vbCrLf & _
+        "    If Not mReady Then Exit Sub" & vbCrLf & _
+        "    ESABCC_RefManager.FormBridge_WS_ShowDetails Me.lstResults.ListIndex + 1, Me.txtDetails" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub chkUncited_Click()" & vbCrLf & _
         "    If Not mReady Or mBusy Then Exit Sub" & vbCrLf & _
