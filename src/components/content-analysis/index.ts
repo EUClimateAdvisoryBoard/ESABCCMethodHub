@@ -24,6 +24,10 @@ export { default as SegmentsList } from './SegmentsList';
 export { default as GeneralNotesPanel, type PendingNoteSelection } from './GeneralNotesPanel';
 export { default as WorkspaceAnalysis, type AnalysisTab } from './WorkspaceAnalysis';
 export { default as WorkspaceChapterView } from './WorkspaceChapterView';
+export {
+  default as WorkspaceReadingView,
+  type PickableReference,
+} from './WorkspaceReadingView';
 export { default as FloatingCodeToolbar, type ToolbarSelection } from './FloatingCodeToolbar';
 export { default as CodeEditorModal, type CodeEditorPayload, type CodeEditorResult } from './CodeEditorModal';
 export type { PdfTextSelection, PdfRegionCapture } from './PdfDocumentView';

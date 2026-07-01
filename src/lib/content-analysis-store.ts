@@ -1172,3 +1172,109 @@ export async function setCaOutline(
   }
   g2.__caOutlines!.set(projectId, outline);
 }
+
+// Reading responsibility ------------------------------------------------------
+// One responsible reader per (project, document), shared so every collaborator
+// sees who is reading what. Backs the Content Analysis "Reading responsibility"
+// view. Stored in `content_analysis_reading` (migration 074); falls back to an
+// in-memory map when Supabase is not configured.
+
+const g3 = globalThis as unknown as {
+  __caReading?: Map<string, Map<string, string>>;
+};
+if (!g3.__caReading) g3.__caReading = new Map();
+
+function memReading(projectId: string): Map<string, string> {
+  let m = g3.__caReading!.get(projectId);
+  if (!m) {
+    m = new Map();
+    g3.__caReading!.set(projectId, m);
+  }
+  return m;
+}
+
+export interface ReadingAssignment {
+  documentId: string;
+  reader: string;
+}
+
+/** True when the reading table is missing (migration 074 not applied yet). */
+function isMissingReadingTable(error: { message?: string; code?: string }): boolean {
+  const msg = error?.message ?? '';
+  return (
+    error?.code === '42P01' ||
+    /content_analysis_reading/.test(msg) && /(does not exist|not find|schema cache)/i.test(msg)
+  );
+}
+
+/** Every reader assignment in a project's workspace, keyed by document id. */
+export async function getCaReading(projectId: string): Promise<ReadingAssignment[]> {
+  const sb = getServerSupabase();
+  if (!sb) {
+    return [...memReading(projectId)].map(([documentId, reader]) => ({ documentId, reader }));
+  }
+  const { data, error } = await sb
+    .from('content_analysis_reading')
+    .select('document_id, reader')
+    .eq('project_id', projectId)
+    .limit(MAX_ROWS);
+  if (error) {
+    if (!isMissingReadingTable(error)) {
+      console.error('[content-analysis-store] getCaReading failed:', error.message);
+    }
+    return [...memReading(projectId)].map(([documentId, reader]) => ({ documentId, reader }));
+  }
+  return (data as Array<{ document_id: string; reader: string | null }>).map(r => ({
+    documentId: r.document_id,
+    reader: r.reader ?? '',
+  }));
+}
+
+/** Assign (or, with an empty reader, clear) the responsible reader for one
+ *  document. Idempotent. */
+export async function setCaReading(
+  projectId: string,
+  documentId: string,
+  reader: string,
+  actor?: StoreActor,
+): Promise<void> {
+  const sb = getServerSupabase();
+  if (sb) {
+    if (!reader) {
+      const { error } = await sb
+        .from('content_analysis_reading')
+        .delete()
+        .eq('project_id', projectId)
+        .eq('document_id', documentId);
+      if (!error || isMissingReadingTable(error)) {
+        memReading(projectId).delete(documentId);
+        return;
+      }
+      failDurable('setCaReading(delete)', error);
+    }
+    const row: Record<string, unknown> = {
+      project_id: projectId,
+      document_id: documentId,
+      reader,
+      updated_at: new Date().toISOString(),
+    };
+    if (actor) row.updated_by = actor.id;
+    let { error } = await sb
+      .from('content_analysis_reading')
+      .upsert(row, { onConflict: 'project_id,document_id' });
+    if (error && actor && /updated_by/.test(error.message)) {
+      const { updated_by: _ub, ...legacyRow } = row;
+      ({ error } = await sb
+        .from('content_analysis_reading')
+        .upsert(legacyRow, { onConflict: 'project_id,document_id' }));
+    }
+    if (!error) return;
+    if (isMissingReadingTable(error)) {
+      memReading(projectId).set(documentId, reader);
+      return;
+    }
+    failDurable('setCaReading', error);
+  }
+  if (reader) memReading(projectId).set(documentId, reader);
+  else memReading(projectId).delete(documentId);
+}

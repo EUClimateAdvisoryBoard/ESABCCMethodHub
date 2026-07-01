@@ -32,6 +32,9 @@ import {
 } from '@/data/esabcc-recommendations';
 import { INDUSTRY_INDICATORS } from '@/data/industry-indicators';
 import { BPIE_BUILDINGS_INDICATORS } from '@/data/bpie-buildings-indicators';
+import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
+import { addToCaCorpus, getCaCorpus, setCaReading } from '@/lib/content-analysis-store';
+import type { CorpusDocMeta } from '@/lib/content-analysis/types';
 
 /** Recommendations seeded into the Policy Gap project, with their report label. */
 const SEED_RECOMMENDATIONS: PastRecommendation[] = [...ALL_ESABCC_RECOMMENDATIONS];
@@ -396,8 +399,56 @@ const ensureSeedDataFor = cache(async function ensureSeedDataFor(
     // policy analysis. The indicator database, recommendations tracker and
     // member-state space were removed (see migration 047).
     await ensureSeedModules(sb, projectId);
+    // Seed the scoping-phase "Review of policy papers" reading list into the
+    // shared corpus + reading-responsibility store, so the Reading view opens
+    // pre-populated with who is reading what.
+    await ensureIndustryReadingSeed();
   }
 });
+
+/**
+ * Idempotently seed the industry reading list (transcribed from the team's
+ * scoping-phase Excel) into the workspace corpus and the reading-responsibility
+ * store. Guarded on a marker id so the ~90 upserts run once, not on every render.
+ */
+async function ensureIndustryReadingSeed(): Promise<void> {
+  const projectId = 'industry-project';
+  let present: Set<string>;
+  try {
+    const existing = await getCaCorpus(projectId);
+    present = new Set(existing.map(e => e.documentId));
+  } catch {
+    // If the corpus can't be read we skip seeding rather than risk duplicates.
+    return;
+  }
+  // Add only the rows not already present, so a partial seed (e.g. a first
+  // render that was interrupted mid-way) self-heals on the next visit, and a
+  // fully-seeded corpus costs just the read above.
+  const missing = INDUSTRY_READING_SEED.filter(i => !present.has(i.id));
+  if (missing.length === 0) return;
+  for (const item of missing) {
+    const referenceType = item.tier === 'scientific' ? 'article' : 'report';
+    const meta: CorpusDocMeta = {
+      id: item.id,
+      title: item.title,
+      shortTitle: item.title.length > 90 ? `${item.title.slice(0, 87)}…` : item.title,
+      kind: 'report',
+      sourceKind: 'reference',
+      referenceType,
+      referenceAuthors: item.source || undefined,
+      referenceUrl: item.url || undefined,
+    };
+    try {
+      await addToCaCorpus(projectId, item.id, meta);
+      if (item.reader) await setCaReading(projectId, item.id, item.reader);
+    } catch (err) {
+      console.error('[pw seed] failed to seed industry reading item', {
+        id: item.id,
+        error: err instanceof Error ? err.message : String(err),
+      });
+    }
+  }
+}
 
 export async function listProjects(): Promise<DBProject[]> {
   noStore();

@@ -136,7 +136,11 @@ export const SEED_PROJECTS: WorkspaceProject[] = [
           'the EU policy corpus (pre-filtered to industry-tagged policies: ETS, ' +
           'ETS2, CBAM, IED, Net-Zero Industry Act, CRMA …), scientific literature ' +
           'or grey literature & reports — then mark passages and attach tags & ' +
-          'codes. Tags save live and build on the shared master library.',
+          'codes. Tags save live and build on the shared master library. The ' +
+          'Chapter and Reading-responsibility views turn the corpus into a ' +
+          'literature list per chapter and an overview of who is reading what — ' +
+          'add papers by DOI (auto-tagged “industry” in the reference manager) ' +
+          'or pull reports in from the reference manager.',
       },
       {
         id: 'literature-watch',
