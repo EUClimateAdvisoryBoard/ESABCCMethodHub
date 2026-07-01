@@ -19,7 +19,7 @@
  * read-only for context, so the whole team can see each project's take on the
  * same paper.
  */
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import type { ReactNode } from 'react';
 import type { DocumentSummary, SummaryBlock } from '@/lib/content-analysis/types';
 import { SummaryDeckViewer, SummaryDeckEditor } from './SummaryDeck';
@@ -80,6 +80,7 @@ export default function DocumentSummaryPanel({
   onLoadBlocks,
   readOnly = false,
   anchorClassName,
+  initialOpen = false,
 }: {
   /** This project's own summary for the selected document — the editable one. */
   summary: DocumentSummary | null;
@@ -94,22 +95,32 @@ export default function DocumentSummaryPanel({
   readOnly?: boolean;
   /** Extra class on the panel root — used to anchor the guided tour. */
   anchorClassName?: string;
+  /** Open the deck on mount — lets a caller (e.g. a "Summary" button on a
+   *  chapter row) reveal the summary directly rather than showing it closed. */
+  initialOpen?: boolean;
 }) {
   const leadText = summary?.text?.trim() ?? '';
   const slideCount = summary?.blockCount ?? summary?.blocks?.length ?? 0;
   const hasContent = Boolean(leadText) || slideCount > 0;
 
   // Closed by default — the deck (and its screenshots) is only fetched once the
-  // user explicitly opens the summary, so the workbench stays snappy.
-  const [open, setOpen] = useState(false);
+  // user explicitly opens the summary, so the workbench stays snappy. Callers
+  // may seed it open (initialOpen) to reveal the summary directly.
+  const [open, setOpen] = useState(initialOpen);
   const [editing, setEditing] = useState(false);
   const [loading, setLoading] = useState(false);
   const [draftText, setDraftText] = useState('');
   const [draftBlocks, setDraftBlocks] = useState<SummaryBlock[]>([]);
 
-  // Re-sync when the selected document (and thus its summary) changes.
+  // Re-sync when the selected document (and thus its summary) changes — but not
+  // on the first mount, so a seeded initialOpen survives.
   const summaryKey = summary?.id ?? 'none';
+  const didMount = useRef(false);
   useEffect(() => {
+    if (!didMount.current) {
+      didMount.current = true;
+      return;
+    }
     setOpen(false);
     setEditing(false);
   }, [summaryKey]);

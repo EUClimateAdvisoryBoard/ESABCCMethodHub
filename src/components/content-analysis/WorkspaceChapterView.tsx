@@ -11,9 +11,11 @@
 // Industry chapter" — so the report can be structured around its chapters from
 // the moment documents are tagged.
 //
-// Each document is more than a link: expand it to jot the paper's ANGLE — what
-// it argues and how it comes into the chapter — and to reveal its SUMMARY (the
-// whole-document summary written on the Analyse tab, shown here read-only). The
+// Each document is more than a link: every row carries a NOTE button and a
+// SUMMARY button so the team can see at a glance which papers already have an
+// angle note or a summary. The Note button jots the paper's ANGLE — what it
+// argues and how it comes into the chapter — and the Summary button reveals its
+// whole-document summary (written on the Analyse tab, shown here read-only). The
 // angle note is stored as the document's own-project summary lead text, so it
 // is the same shared artefact the Analyse tab reads and writes; a note added
 // here shows up there and vice-versa.
@@ -175,10 +177,11 @@ export default function WorkspaceChapterView({
           Every document you have tagged with a chapter, grouped by report
           chapter and split into policy, scientific and grey sources.{' '}
           <strong>{assignedCount}</strong> of {visibleDocuments.length} document
-          {visibleDocuments.length === 1 ? '' : 's'} assigned to a chapter. Open a
-          document to note its <strong>angle</strong> — how it comes into the
-          chapter — and to show its <strong>summary</strong> from the Analyse
-          tab. Filter by source below to focus on one tier. Set a document’s
+          {visibleDocuments.length === 1 ? '' : 's'} assigned to a chapter. Use each
+          document’s <strong>Note</strong> button to jot its <strong>angle</strong>{' '}
+          — how it comes into the chapter — and <strong>Summary</strong> to show
+          its whole-document summary from the Analyse tab. Filter by source below
+          to focus on one tier. Set a document’s
           chapter from its header in the <strong>Code</strong> view.
         </p>
         <SourceTierFilter
@@ -314,14 +317,37 @@ function ChapterDocRow({
   const others = summaries.filter(s => s !== own);
   const angle = own?.text?.trim() ?? '';
 
+  // Does any project have a whole-document summary to show here? (The angle note
+  // is this project's summary lead text; a "summary" proper is a richer deck or
+  // another project's take, surfaced read-only.)
+  const summarySlideCount = summaries.reduce(
+    (n, s) => n + (s.blockCount ?? s.blocks?.length ?? 0),
+    0,
+  );
+  const hasSummary = summarySlideCount > 0 || others.some(s => (s.text ?? '').trim());
+
   const [expanded, setExpanded] = useState(false);
   const [editingAngle, setEditingAngle] = useState(false);
+  const [summaryOpen, setSummaryOpen] = useState(false);
   const [draft, setDraft] = useState('');
   const [saving, setSaving] = useState(false);
 
   const startEditing = () => {
     setDraft(own?.text ?? '');
     setEditingAngle(true);
+    setExpanded(true);
+  };
+
+  // The inline "Note" button on the collapsed row: expand and jump straight into
+  // the angle editor when there's nothing yet, otherwise reveal what's there.
+  const openNote = () => {
+    setExpanded(true);
+    if (!angle) startEditing();
+  };
+
+  // The inline "Summary" button: expand with the summary deck already open.
+  const openSummary = () => {
+    setSummaryOpen(true);
     setExpanded(true);
   };
 
@@ -357,6 +383,41 @@ function ChapterDocRow({
             </span>
           </span>
         </button>
+        {/* Note + Summary shortcuts, visible on the collapsed row so the team
+            can see at a glance which documents carry an angle note or a summary
+            — and add a note without hunting for the expander. A filled style
+            marks the ones that already have content. */}
+        <div className="shrink-0 flex items-center gap-1 pt-1">
+          <button
+            type="button"
+            onClick={openNote}
+            className={`inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[10px] font-semibold border transition ${
+              angle
+                ? 'border-secondary text-secondary bg-secondary/10 hover:bg-secondary hover:text-white'
+                : 'border-grey-200 text-tertiary-light hover:border-secondary hover:text-secondary'
+            }`}
+            title={angle ? 'Edit this paper’s angle note' : 'Add a note on how this comes into the chapter'}
+          >
+            <span aria-hidden>✎</span>
+            {angle ? 'Note' : '+ Note'}
+          </button>
+          <button
+            type="button"
+            onClick={openSummary}
+            className={`inline-flex items-center gap-0.5 rounded px-1.5 py-0.5 text-[10px] font-semibold border transition ${
+              hasSummary
+                ? 'border-secondary text-secondary bg-secondary/10 hover:bg-secondary hover:text-white'
+                : 'border-grey-200 text-tertiary-light hover:border-secondary hover:text-secondary'
+            }`}
+            title={hasSummary ? 'Show the whole-document summary' : 'No summary yet — written on the Analyse tab'}
+          >
+            <span aria-hidden>▤</span>
+            Summary
+            {summarySlideCount > 0 && (
+              <span className="font-mono">({summarySlideCount})</span>
+            )}
+          </button>
+        </div>
       </div>
 
       {expanded && (
@@ -420,12 +481,14 @@ function ChapterDocRow({
               slide deck only when opened, so it stays cheap until used. */}
           <div className="border border-grey-200 rounded overflow-hidden">
             <DocumentSummaryPanel
+              key={summaryOpen ? 'summary-open' : 'summary-closed'}
               summary={own}
               otherSummaries={others}
               projectNameById={projectNameById}
               onSave={() => {}}
               onLoadBlocks={onLoadBlocks}
               readOnly
+              initialOpen={summaryOpen}
             />
           </div>
 

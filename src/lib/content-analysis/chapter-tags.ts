@@ -80,6 +80,10 @@ const CHAPTER_SEED: { name: string; color: string }[] = [
   { name: 'LULUCF', color: '#6B7B3A' },
   { name: 'Cross-cutting', color: '#6667AB' },
   { name: 'Adaptation', color: '#2E7D74' },
+  // Sub-chapter tag for the Overview Industry → Clean Tech decarbonisation
+  // catalogue (beta/modules/overview-industry). Kept distinct from the sector
+  // "Industry" chapter so the clean-tech reading list can be filtered on its own.
+  { name: 'Clean Tech', color: '#C2410C' },
 ];
 
 /** The predefined chapter tags offered in every chapter picker / filter. */
