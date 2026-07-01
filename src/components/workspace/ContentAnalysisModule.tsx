@@ -944,6 +944,27 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
     setDocumentSummary(selectedDocument.id, projectId, text, blocks);
   };
 
+  /** Save a paper's "angle" note from the Chapter view. The angle is stored as
+   *  the document's own-project summary lead text — the same shared artefact
+   *  the Analyse tab and the Summary panel read/write — so a note added on the
+   *  Chapter view shows up everywhere the summary does. Any existing slide deck
+   *  is preserved: the bulk summary list ships `blocks` lazily (`undefined`
+   *  until hydrated), so we fetch the current deck before re-saving rather than
+   *  clobbering it with an empty array. */
+  const handleSaveChapterAngle = useCallback(
+    async (doc: AnalysisDocument, text: string) => {
+      const own =
+        snapshot.summaries.find(s => s.documentId === doc.id && s.projectId === projectId) ?? null;
+      let blocks = own?.blocks;
+      if (own && blocks === undefined && (own.blockCount ?? 0) > 0) {
+        blocks = await loadSummaryBlocks(own.id);
+      }
+      upsertDocument(doc);
+      setDocumentSummary(doc.id, projectId, text, blocks ?? []);
+    },
+    [snapshot.summaries, projectId, loadSummaryBlocks, upsertDocument, setDocumentSummary],
+  );
+
   // ── Counts (within the active lens) ──────────────────────────────────────
   const codeCountsDirect = useMemo(() => {
     const m: Record<string, number> = {};
@@ -1683,6 +1704,11 @@ export default function ContentAnalysisModule({ projectId, projectName }: Props)
         <WorkspaceChapterView
           documents={allCorpusDocs}
           chapterIdsByDoc={chapterIdsByDoc}
+          summaries={snapshot.summaries}
+          activeProjectId={projectId}
+          projectNameById={projectNameById}
+          onLoadBlocks={loadSummaryBlocks}
+          onSaveAngle={handleSaveChapterAngle}
           onOpenDocument={doc => {
             setSourceType(sourceTierOf(doc));
             setSelectedDocumentId(doc.id);
