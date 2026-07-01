@@ -1380,7 +1380,7 @@ export const CATALOGUE: Subsector[] = [
         description:
           'Move heat rather than burn fuel; commercial to ~150 °C with 150–200 °C models emerging. The most efficient way to electrify low/medium-temperature heat.',
         trl: {
-          value: 'TRL 8–9 to ~140–160 °C; 150–200 °C frontier at demonstration (TRL 6–8)',
+          value: 'TRL 8–9 to ~150 °C; higher-temperature models up to ~200 °C emerging (TRL 6–8)',
           source: { org: 'Agora Industry / Fraunhofer ISI', title: 'Direct electrification of industrial process heat', url: 'https://www.agora-industry.org/publications/direct-electrification-of-industrial-process-heat', year: '2024' },
         },
         availability: {
@@ -1482,9 +1482,9 @@ export const CATALOGUE: Subsector[] = [
             fid: 'FID not yet taken (expected 2026); €726m Dutch government support committed',
             year: '2026',
             source: {
-              org: 'TotalEnergies',
-              title: 'Partnership to develop the offshore Aramis CO₂ transport & storage project',
-              url: 'https://totalenergies.com/media/news/press-releases/partnership-to-develop-aramis-offshore-ccs-project',
+              org: 'Aramis CCS',
+              title: 'About the Aramis project (open-access CO₂ transport & storage; FID expected 2026)',
+              url: 'https://www.aramis-ccs.com/project/',
               year: '2025',
             },
           },
@@ -1636,7 +1636,7 @@ export interface TechMetric {
 const MAC_SRC = {
   agoraSteel: { org: 'Agora Industry', title: '15 insights on the global steel transformation', url: 'https://www.agora-industry.org/publications/15-insights-on-the-global-steel-transformation', year: '2024' } as Source,
   natureSteel: { org: 'Wu et al., Nature (via PMC)', title: 'Technological pathways for cost-effective steel decarbonization', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC12589104/', year: '2024' } as Source,
-  ieaghgCement: { org: 'IEAGHG', title: 'CO₂ capture in the cement industry — cost analysis', url: 'https://ieaghg.org/publications/co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/', year: '2018' } as Source,
+  ieaghgCement: { org: 'IEAGHG', title: 'Cost of CO₂ capture in the industrial sector: cement and iron & steel industries (2018-TR03)', url: 'https://ieaghg.org/publications/cost-of-co2-capture-in-the-industrial-sector-cement-and-iron-and-steel-industries/', year: '2018' } as Source,
   jrcAlu: { org: 'JRC (Zore), EUR/JRC136525', title: 'Decarbonisation options for the aluminium industry', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC136525/JRC136525_01.pdf', year: '2024' } as Source,
   glassStudy: { org: 'ScienceDirect (techno-economic study)', title: 'Glassmaking decarbonization via calcium looping & power-to-gas', url: 'https://www.sciencedirect.com/science/article/pii/S2352550923001859', year: '2023' } as Source,
   natureAmmonia: { org: 'Rosa & Gabrielli et al., Nature Communications (PMC)', title: 'Effects of emissions caps on low-carbon hydrogen in the European ammonia industry', url: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC11069508/', year: '2024' } as Source,
