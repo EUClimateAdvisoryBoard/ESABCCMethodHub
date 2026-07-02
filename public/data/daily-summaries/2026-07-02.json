@@ -1,30 +1,24 @@
 {
   "date": "2026-07-02",
-  "generatedAt": "2026-07-02T13:02:51.586Z",
+  "generatedAt": "2026-07-02T18:26:34.071Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 2 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v01-00",
-      "summary": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling",
-      "summary": "UK newspapers have already published 63 editorials this year calling for more oil and gas... The post Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling appeared first on Carbon Brief.",
+      "headline": "US coach Pochettino says Balogun did not deserve red card - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTDlpMEs3YncxSHBBTnE3VTVsUVBtVjg5SkRobzJRVkgtaWYzNXUxTGZQWl9sRWp4ejE2TkJTVzQtMHJxb0RPRnJ4blBTLXpOTG1hSHdUM2I2cEpJak1ORGdTRVZBM1pVRHB6ZkxrVTFUandHbW1ZZ0FwNkZQT0xZbHVaazVrTVJ1Y3A5VFd6VUVEVjYyU0NSYVJoaE1wZ0p4VGZiSmd2Rnd6TVE?oc=5\" target=\"_blank\"&gt;US coach Pochettino says Balogun did not deserve red card&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Cropped 1 July 2026: Heatwave scorches Europe &#124; UK 2050 farm plan &#124; What’s next for the High Seas Treaty",
-      "summary": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 1 July 2026: Heatwave scorches Europe | UK 2050 farm plan | What’s next for the High Seas Treaty appeared first on Carbon Brief.",
+      "headline": "Q&#038;A: Where do the UN secretary general candidates stand on climate change?",
+      "summary": "Candidates are being nominated to take over as the UN secretary general, when António Guterres... The post Q&#038;A: Where do the UN secretary general candidates stand on climate change? appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Joint press release: €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries",
-      "summary": "European Commission Press release Brussels, 02 Jul 2026 The European Commission and the European Investment Bank have announced today the disbursement of €2.5 billion from the Modernisation Fund to support 51 energy-related projects in 11 EU Member States.",
+      "headline": "Daily News 02 / 07 / 2026",
+      "summary": "European Commission Daily news Brussels, 02 Jul 2026 €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries \r\nThe European Commission and the European Investment Bank have today annou...",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,37 +27,12 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789913_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
-          "published": "2026-07-01T13:43:01.000Z",
-          "score": 27
-        },
-        {
-          "title": "MOTION FOR A RESOLUTION on the Commission Implementing Decision renewing the authorisation for the placing on the market of products containing, consisting of or produced from genetically modified maize NK603 × T25 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council - B10-0335/2026",
-          "link": "https://www.europarl.europa.eu/doceo/document/B-10-2026-0335_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "MOTION FOR A RESOLUTION&lt;br/&gt;pursuant to Rule 115(2) and (3) of the Rules of Procedure&lt;br/&gt;on the Commission Implementing Decision renewing the authorisation for the placing on the market of products containing, consisting of or produced from genetically modified maize NK603 × T25 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council &lt;br/&gt;(D115002 - 2026/2745 (RSP))&lt;br/&gt;Committee on the Environment, Climate and Food Safety&lt;br /&gt; &lt;b",
-          "published": "2026-07-01T14:55:56.000Z",
-          "score": 24
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling",
-          "link": "https://www.carbonbrief.org/analysis-uk-newspapers-have-already-printed-63-editorials-in-2026-backing-north-sea-drilling/",
-          "source": "Carbon Brief",
-          "description": "UK newspapers have already published 63 editorials this year calling for more oil and gas... The post Analysis: UK newspapers have already printed 63 editorials in 2026 backing North Sea drilling appeared first on Carbon Brief.",
-          "published": "2026-07-01T14:15:14.000Z",
-          "score": 10
-        },
         {
           "title": "US coach Pochettino says Balogun did not deserve red card - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTDlpMEs3YncxSHBBTnE3VTVsUVBtVjg5SkRobzJRVkgtaWYzNXUxTGZQWl9sRWp4ejE2TkJTVzQtMHJxb0RPRnJ4blBTLXpOTG1hSHdUM2I2cEpJak1ORGdTRVZBM1pVRHB6ZkxrVTFUandHbW1ZZ0FwNkZQT0xZbHVaazVrTVJ1Y3A5VFd6VUVEVjYyU0NSYVJoaE1wZ0p4VGZiSmd2Rnd6TVE?oc=5",
@@ -81,19 +50,27 @@
           "score": 7
         },
         {
-          "title": "England has just had its hottest June on record, Met Office data shows",
-          "link": "https://www.theguardian.com/environment/2026/jul/01/england-hottest-june-on-record-met-office-data",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Chief scientist says dangerous heatwaves, which are getting more likely, ‘bring home the implications of climate change’&lt;/p&gt;&lt;p&gt;The month of June was the hottest in England on record, driven by a searing heatwave in the final days of the month, which for the first time had red heat alerts for three days, according to Met Office data.&lt;/p&gt;&lt;p&gt;The Met Office said provisional statistics showed Wales and the UK as a whole had recorded their second-warmest June since 188",
-          "published": "2026-07-01T15:47:45.000Z",
-          "score": 4
+          "title": "Albanian police fire tear gas at &#039;Flamingo Revolution&#039; rally",
+          "link": "https://www.dw.com/en/albanian-police-fire-tear-gas-at-flamingo-revolution-rally/a-77807190?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Albanians have continued to protest against a planned luxury resort backed by Donald Trump&#039;s son-in-law, Jared Kushner. They say the resort threatens the coast&#039;s fragile ecosystems, including a flamingo habitat.",
+          "published": "2026-07-02T16:25:00.000Z",
+          "score": 6
         },
         {
-          "title": "We can live without AI, but can we live without clean water? | Letters",
-          "link": "https://www.theguardian.com/technology/2026/jul/01/we-can-live-without-ai-but-can-we-live-without-clean-water",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Readers respond to an article about Erin Brockovich’s battle against datacentres and voice their fears for the environment &lt;/p&gt;&lt;p&gt;What are the benefits obtained from AI’s massive use of electricity and water (&lt;a href=\"https://www.theguardian.com/environment/2026/jun/29/were-up-against-forces-that-have-all-the-money-in-the-world-erin-brockovich-on-her-battle-against-ai-datacentres\"&gt;‘We’re up against forces that have all the money in the world’: Erin Brockovich on her ba",
-          "published": "2026-07-01T16:12:05.000Z",
+          "title": "Nord Stream blast ordered by Ukraine, say German prosecutors",
+          "link": "https://www.dw.com/en/nord-stream-blast-ordered-by-ukraine-say-german-prosecutors/a-77798230?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "German prosecutors believe the Ukrainian national suspected of sabotaging Baltic Sea gas pipelines in 2022 acted &quot;on the orders of state authorities in Ukraine.&quot;",
+          "published": "2026-07-02T09:31:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "US rail boom still lags behind cars and planes",
+          "link": "https://www.dw.com/en/us-rail-boom-still-lags-behind-cars-and-planes/a-77430370?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "As gas prices fluctuate and flights get more expensive, travelers in the US are rediscovering trains — only to find a system built to move boxes, not people.",
+          "published": "2026-07-02T07:15:00.000Z",
           "score": 2
         }
       ]
@@ -102,14 +79,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Cropped 1 July 2026: Heatwave scorches Europe &#124; UK 2050 farm plan &#124; What’s next for the High Seas Treaty",
-          "link": "https://www.carbonbrief.org/cropped-1-july-2026-heatwave-scorches-europe-uk-2050-farm-plan-whats-next-for-the-high-seas-treaty/",
-          "source": "Carbon Brief",
-          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 1 July 2026: Heatwave scorches Europe | UK 2050 farm plan | What’s next for the High Seas Treaty appeared first on Carbon Brief.",
-          "published": "2026-07-01T14:00:00.000Z",
-          "score": 16
-        },
         {
           "title": "Q&#038;A: Where do the UN secretary general candidates stand on climate change?",
           "link": "https://www.carbonbrief.org/qa-where-do-the-un-secretary-general-candidates-stand-on-climate-change/",
@@ -135,11 +104,19 @@
           "score": 13
         },
         {
-          "title": "Voyage to the end of the world: floating lab to explore life in Arctic adrift in ice",
-          "link": "https://www.theguardian.com/environment/2026/jul/02/arctic-tara-ocean-foundation-expedition-floating-lab-explore-life-adrift-ice",
+          "title": "Donald Trump is the accidental hero of a real-life feelgood climate tale even as a creeping horror story plays alongside | Clear Air",
+          "link": "https://www.theguardian.com/environment/2026/jul/03/donald-trump-strait-of-hormuz-climate-crisis-europe-heatwave",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;An eight-month expedition will set off soon from Norway on a mission to find new species before the climate crisis and pollution changes the northern ocean for ever&lt;/p&gt;&lt;p&gt;Six scientists and six crew will travel next month to Kirkenes, a remote Arctic town in Norway near the Russian border, to begin an odyssey to one of the most inhospitable, inaccessible and least-studied regions on Earth. There, they will climb onboard a futuristic, floating laboratory – the French-built Ta",
-          "published": "2026-07-02T11:00:12.000Z",
+          "description": "&lt;p&gt;Despite a deadly heatwave sweeping through Europe, the US president’s ineptness has created reason for optimism on the climate crisis&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Two r",
+          "published": "2026-07-02T15:00:02.000Z",
+          "score": 9
+        },
+        {
+          "title": "‘I don’t just watch climate change happening’: the young Swedes being paid to make a difference",
+          "link": "https://www.theguardian.com/environment/2026/jul/02/climate-change-yps-sweden-young-planetary-stewards-green-project-jobs",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Participant-led YPS scheme creates green projects while providing summer jobs in country with high youth unemployment&lt;/p&gt;&lt;p&gt;Oona Verveld and Clara Vikberg have just secured their first paid summer jobs. While their peers are mostly limited to entry-level positions in retail or fast-food restaurants, the 18-year-olds are some of the first among their generation to have landed a new type of role: young planetary stewards.&lt;/p&gt;&lt;p&gt;“Someone came up with the simple idea",
+          "published": "2026-07-02T15:14:31.000Z",
           "score": 7
         }
       ]
@@ -148,14 +125,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "Joint press release: €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1501",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 02 Jul 2026 The European Commission and the European Investment Bank have announced today the disbursement of €2.5 billion from the Modernisation Fund to support 51 energy-related projects in 11 EU Member States.",
-          "published": "2026-07-01T22:00:00.000Z",
-          "score": 23
-        },
         {
           "title": "Daily News 02 / 07 / 2026",
           "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1507",
@@ -171,14 +140,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlNnT192WjhWamlHTVRDaWdoR1ZFYUVxQmdfLUdMNDFjVVVsdzY1RzZyWXZlR3VVX1BOQ0hRVTdaYUhqSXlVWk1vbi1GbzlJdXRiNU52dUZIY1pqc19YMmxZaEQzVjk0THRKUEQ4YURJc2FUc2R1SzBlR1RGeFVJOHNWbUlvQXp6WHgtekV4eTltM0FpYTJydFdLdFJNUjFHdE9BdVJzZkZLRzhRQTlES3dpZw?oc=5\" target=\"_blank\"&gt;SK Hynix to spend $64 billion on memory chip plants under broader AI investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-02T02:04:00.000Z",
           "score": 2
-        },
-        {
-          "title": "Google has exceeded $1 billion Africa investment target - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVy02SkgzMEJTZ0RJNGw3MFRZNGhsX2ZyQV9EcDNlbFRWcmdqTEN4bEVYWTRXMFk2SEZTZkthRWpqdTlPUjRsamZqbmhJaHpscE1YaW9oZmVLY2FNTWYtVlktS0gzRG9TVy1xOGRQU3llYVNIeWJjTUpHeEN5LXJHaGgzNENjazM1Z3h6XzVrNUVhcDFPaDBYRlJCeVBKQVh0aGJnWUNB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOVy02SkgzMEJTZ0RJNGw3MFRZNGhsX2ZyQV9EcDNlbFRWcmdqTEN4bEVYWTRXMFk2SEZTZkthRWpqdTlPUjRsamZqbmhJaHpscE1YaW9oZmVLY2FNTWYtVlktS0gzRG9TVy1xOGRQU3llYVNIeWJjTUpHeEN5LXJHaGgzNENjazM1Z3h6XzVrNUVhcDFPaDBYRlJCeVBKQVh0aGJnWUNB?oc=5\" target=\"_blank\"&gt;Google has exceeded $1 billion Africa investment target&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-01T16:07:43.000Z",
-          "score": 2
         }
       ]
     },
@@ -186,6 +147,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "DRAFT MOTION FOR A RESOLUTION on the draft Commission implementing decision authorising the placing on the market of products containing, consisting of or produced from genetically modified soybean GMB151 x DAS-44406-6 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council - PE790.148v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-RD-790148_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "DRAFT MOTION FOR A RESOLUTION on the draft Commission implementing decision authorising the placing on the market of products containing, consisting of or produced from genetically modified soybean GMB151 x DAS-44406-6 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Sirpa Pietikäinen, Martin Häusling, Biljana Borzan, Anja Hazekamp&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"htt",
+          "published": "2026-07-02T15:03:10.000Z",
+          "score": 22
+        },
         {
           "title": "DRAFT OPINION on the proposal for a Regulation of the European Parliament and of the Council establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors and amending Regulations (EU) 2018/1724, (EU) 2024/1735 and (EU) 2024/3110 - PE789.106v01-00",
           "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-789106_EN.pdf",
@@ -211,11 +180,11 @@
           "score": 18
         },
         {
-          "title": "EU border delays 'not bearable' over summer, warns airport boss",
+          "title": "Ryanair warns of 'queue chaos' from new EU border system",
           "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Holidaymakers face long waits under the EU's new Entry-Exit System, the head of Berlin's airport says.",
-          "published": "2026-07-02T10:15:47.000Z",
+          "description": "The airline calls on European governments to postpone the EES system until after the summer holiday period.",
+          "published": "2026-07-02T17:17:36.000Z",
           "score": 8
         }
       ]
@@ -225,52 +194,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Google must pay record €4.1 billion fine, top EU court rules",
-          "link": "https://www.dw.com/en/google-must-pay-record-€4-1-billion-fine-top-eu-court-rules/a-77794948?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU&#039;s highest court has thrown out an appeal by Google against a record antitrust fine. The tech giant had argued that the bloc was unfairly penalizing innovation.",
-          "published": "2026-07-02T05:30:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "With closer EU ties 'crucially important', Britain sets sights on new summit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVWJnTnhFWTZ2UTYxZmJCWDZFeXZjRUVqamxzUjRqbjNTVGdDZzZMMmhOYXV5Q3BtR2pTal9nM0o5Y19HVmtEZUlLeG9QVjNmZlBiUzNiQXZXOEFKX0dvd2dMajlCeW9ZUmJzQ002WGFaSHBqWFlXMTFNc0ZmdTkxMXNNNjVBNmhqc2lJUzhoNUtqNjJFWmJZX3puOEdiUng0dF9ZUGc0SDFaTGRwdlVDRkY3b0dOZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQVWJnTnhFWTZ2UTYxZmJCWDZFeXZjRUVqamxzUjRqbjNTVGdDZzZMMmhOYXV5Q3BtR2pTal9nM0o5Y19HVmtEZUlLeG9QVjNmZlBiUzNiQXZXOEFKX0dvd2dMajlCeW9ZUmJzQ002WGFaSHBqWFlXMTFNc0ZmdTkxMXNNNjVBNmhqc2lJUzhoNUtqNjJFWmJZX3puOEdiUng0dF9ZUGc0SDFaTGRwdlVDRkY3b0dOZw?oc=5\" target=\"_blank\"&gt;With closer EU ties 'crucially important', Britain sets sights on new summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-01T14:37:07.000Z",
-          "score": 8
-        },
-        {
           "title": "Google loses fight against record €4.1 billion EU antitrust fine - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5\" target=\"_blank\"&gt;Google loses fight against record €4.1 billion EU antitrust fine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T10:46:04.000Z",
+          "published": "2026-07-02T13:38:50.000Z",
           "score": 8
         },
         {
-          "title": "Firefighters battle blazes in southern France after European heatwave - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR2h4ZHBiMThiaTBnRzk1UHM5WEc1eU5lUkVhMGU0amhvVVpzeU9TTnFYR3RJQ2Y5TUZ3S1I5UVBXQWwwNHJoUG9aVUZHVWRsbldGSU5XYUJKQWJqWjVuZ3FMUEJMbTBFMVdRUE5mUngtTmJFTHotZGMzazh5ZXo1ZTdLWlBzNWxYaXNsZ1k5eUFLTzR6bE9RVDRaZFdGV19HcmU0?oc=5",
+          "title": "EU tells Armenia 'you can count on us' as Russia keeps up economic pressure - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTY3Wkl3VzVXdlVjdlF0REhFdl9fSGFWU1diTGhIb0wtdmtfcmRrSkt6Vk9EUklMdXNoMWRxNWd6NHE3QVNKSnRYMGZOaTZEb0NjaVhEREhGMTloclkyd29VQ01GWnJ5c1p0eWFZa05BSkM4ajF5STJGTXRqLW1uMFAwNlI0M2hqSlVVMXhNeGJ1QTMwNV9kQXVaamVKVTJwSUJnTjl2bC1pSkIyWlE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPR2h4ZHBiMThiaTBnRzk1UHM5WEc1eU5lUkVhMGU0amhvVVpzeU9TTnFYR3RJQ2Y5TUZ3S1I5UVBXQWwwNHJoUG9aVUZHVWRsbldGSU5XYUJKQWJqWjVuZ3FMUEJMbTBFMVdRUE5mUngtTmJFTHotZGMzazh5ZXo1ZTdLWlBzNWxYaXNsZ1k5eUFLTzR6bE9RVDRaZFdGV19HcmU0?oc=5\" target=\"_blank\"&gt;Firefighters battle blazes in southern France after European heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T06:57:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTY3Wkl3VzVXdlVjdlF0REhFdl9fSGFWU1diTGhIb0wtdmtfcmRrSkt6Vk9EUklMdXNoMWRxNWd6NHE3QVNKSnRYMGZOaTZEb0NjaVhEREhGMTloclkyd29VQ01GWnJ5c1p0eWFZa05BSkM4ajF5STJGTXRqLW1uMFAwNlI0M2hqSlVVMXhNeGJ1QTMwNV9kQXVaamVKVTJwSUJnTjl2bC1pSkIyWlE?oc=5\" target=\"_blank\"&gt;EU tells Armenia 'you can count on us' as Russia keeps up economic pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T10:17:44.000Z",
           "score": 8
         },
         {
-          "title": "EU to provide 200 million euros to boost South Caucasus connectivity, von der Leyen says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQVRYaVZrcGdfRW1nTlNVamJOeW1LbnlWcE9KbkFuM1JDZmZ5WU1ORFBLWXltWGxhUVZKRFpUVjBUamxjcUFzaUZrcGFwbVZFeGpSX2gwWU9NNEJGN3VMZkpyU0hNOTVfLXZfV0JnRUpoQ2x2SWVMN1czblJFQWRHUC1SS05MNE1tQjh4cE0tb1oxN21rQ2V0enJwVUZSRzJZVjNCN0lEbmtkS04xcERoZFcwMGhsS09Lejg4?oc=5",
+          "title": "India, Japan sign pacts on AI, metals and energy after Modi-Takaichi talks - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQdzFpMWZDTXlQMENEWENudWcwWThrNU00ZVp5UWQwWGp6QXd6d3ZBcmtjRnhLdFZzdFZvWjgxeWRLdDk0eEtiZWV1UGpEUWhhRlYtaHdtODVSNkdqdHlBR3lpYkpkOVNNWTdROHhEX0FlQzdlYTdmRThfd1ZVX2pkc3ZYYlVwdzVZUXU2TWh1c09NRGgyRVpWMEZ6RFhJVk5ld3pQLXlUdXZiRHE3WHBaTXZn?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQVRYaVZrcGdfRW1nTlNVamJOeW1LbnlWcE9KbkFuM1JDZmZ5WU1ORFBLWXltWGxhUVZKRFpUVjBUamxjcUFzaUZrcGFwbVZFeGpSX2gwWU9NNEJGN3VMZkpyU0hNOTVfLXZfV0JnRUpoQ2x2SWVMN1czblJFQWRHUC1SS05MNE1tQjh4cE0tb1oxN21rQ2V0enJwVUZSRzJZVjNCN0lEbmtkS04xcERoZFcwMGhsS09Lejg4?oc=5\" target=\"_blank\"&gt;EU to provide 200 million euros to boost South Caucasus connectivity, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-01T18:11:00.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQdzFpMWZDTXlQMENEWENudWcwWThrNU00ZVp5UWQwWGp6QXd6d3ZBcmtjRnhLdFZzdFZvWjgxeWRLdDk0eEtiZWV1UGpEUWhhRlYtaHdtODVSNkdqdHlBR3lpYkpkOVNNWTdROHhEX0FlQzdlYTdmRThfd1ZVX2pkc3ZYYlVwdzVZUXU2TWh1c09NRGgyRVpWMEZ6RFhJVk5ld3pQLXlUdXZiRHE3WHBaTXZn?oc=5\" target=\"_blank\"&gt;India, Japan sign pacts on AI, metals and energy after Modi-Takaichi talks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T11:02:25.000Z",
+          "score": 7
+        },
+        {
+          "title": "China Resources New Energy more than doubles in debut after Asia's biggest IPO of 2026 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOdlRsT2hDcmY4LVlSMk91ajBEc3ZXTTN6cWl2TXJEeHRpU29DalF1ODMxaE5JZTJkcXJhb2Z5WERWUHBnRHYybERfbG8wOFRleHhGUWpoRzRuOFRyTjVLcm1OYnV1VkctOVBMTUNVOEpCdHFWTTNCcnZMSEpDTjdFY2JTOHlfVUFhZzQ5MlpDaS0wTzJpODRzeE5uT3lHQnFpcG5wdS13RUFnZXZRMGJsUElJRnZsNlk3RmZ6MXl5NA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOdlRsT2hDcmY4LVlSMk91ajBEc3ZXTTN6cWl2TXJEeHRpU29DalF1ODMxaE5JZTJkcXJhb2Z5WERWUHBnRHYybERfbG8wOFRleHhGUWpoRzRuOFRyTjVLcm1OYnV1VkctOVBMTUNVOEpCdHFWTTNCcnZMSEpDTjdFY2JTOHlfVUFhZzQ5MlpDaS0wTzJpODRzeE5uT3lHQnFpcG5wdS13RUFnZXZRMGJsUElJRnZsNlk3RmZ6MXl5NA?oc=5\" target=\"_blank\"&gt;China Resources New Energy more than doubles in debut after Asia's biggest IPO of 2026&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-07-02T01:38:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Turkish police beat us with iron rods before we lost limbs to frostbite, Afghans say",
+          "link": "https://www.bbc.co.uk/news/articles/ce8k4pz91n5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The young migrants heading to Europe say they were stripped and had their hands tied in freezing temperatures.",
+          "published": "2026-07-01T22:13:03.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 435,
-    "articlesLast24h": 172,
-    "afterDedup": 163,
+    "totalArticlesScanned": 437,
+    "articlesLast24h": 179,
+    "afterDedup": 168,
     "feedsQueried": 19
   }
 }
