@@ -35,10 +35,20 @@ flowchart LR
   *Policy Gap 2.0*) to scope the list to just that report's literature —
   handy when you remember the report but not the exact paper title. The
   project list is pulled live from `/api/references?facet=projects`.
+- **Cite from Project Workspace** dialog: browse a workspace's literature
+  clustered by source type, with:
+  - a **Chapter** filter (report-chapter / sector classification) alongside
+    the tag filter,
+  - a read-only **summary panel** that shows the selected reference's
+    whole-document workspace summary plus its chapter and tags,
+  - the workspace selection **kept across insertions** — after citing, the
+    dialog reopens on the same workspace instead of resetting to the top one.
 
-> **Note:** the search dialog is generated at install time. After updating
+> **Note:** the dialogs are generated at install time. After updating
 > `ESABCC_RefManager.bas`, re-run `install.cmd` (or re-embed) so the new
-> Project filter appears in Word.
+> Chapter filter and summary panel appear in Word. (An existing workspace
+> dialog is detected as out-of-date and rebuilt automatically on next use when
+> VBA project trust is enabled.)
 
 Relevant constants at the top of `ESABCC_RefManager.bas`:
 
