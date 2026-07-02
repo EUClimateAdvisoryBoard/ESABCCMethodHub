@@ -10,12 +10,14 @@
  *           marginal-abatement-cost (MAC) and technology-readiness (TRL) charts,
  *           the real project pipeline (incl. FID) and a sourced rationale.
  * Up top: an emissions-split doughnut and an all-sector MAC summary curve.
+ * Down below: the COMPLETE official NACE Rev. 2.1 classification (browser),
+ * onto which every catalogue subsector is mapped (`../nace-2-1.ts`).
  *
  * Every data point carries a source link — nothing is invented. See
  * `../cleantech-catalogue.ts` for the data and its sourcing rule.
  */
 
-import { useMemo, useRef, useState } from 'react';
+import { useMemo, useRef, useState, type ReactNode } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -48,6 +50,15 @@ import {
   type Technology,
   type Subsector,
 } from '../cleantech-catalogue';
+import {
+  NACE_21,
+  NACE_21_COUNTS,
+  NACE_21_INDEX,
+  NACE_21_SOURCE,
+  naceAncestors,
+  naceUri,
+  type NaceItem,
+} from '../nace-2-1';
 import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, ArcElement, Tooltip, Legend);
@@ -192,6 +203,28 @@ function MacBar({ low, high, note }: { low: number; high: number; note?: string 
   );
 }
 
+/** One NACE Rev. 2.1 code chip, linking to its Publications Office concept URI. */
+function NaceChip({ code, accent }: { code: string; accent: string }) {
+  const item = NACE_21_INDEX[code];
+  if (!item) return null;
+  const path = [...naceAncestors(code), item].map(n => `${n.code} ${n.label}`).join(' → ');
+  return (
+    <a
+      href={naceUri(code)}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${path} (${item.level})`}
+      className="inline-flex max-w-full items-baseline gap-1 rounded-full border bg-white px-2 py-0.5 text-[11px] hover:shadow-sm"
+      style={{ borderColor: `${accent}66` }}
+    >
+      <span className="font-mono font-bold" style={{ color: accent }}>
+        {item.code}
+      </span>
+      <span className="truncate text-grey-700">{item.label}</span>
+    </a>
+  );
+}
+
 /** Representative photo for a subsector, with Commons attribution. */
 function SubImage({ subId, alt }: { subId: string; alt: string }) {
   const file = SUBSECTOR_IMAGES[subId];
@@ -267,6 +300,23 @@ function SubsectorDetail({ sub, onSelectTech }: { sub: Subsector; onSelectTech: 
           ))}
         </ul>
       </div>
+
+      {sub.nace.length ? (
+        <div className="mt-3 rounded-lg bg-grey-50 p-3">
+          <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+            <span className="text-[11px] font-semibold uppercase tracking-wide text-tertiary">
+              NACE Rev. 2.1 classification
+            </span>
+            <SourceLink source={NACE_21_SOURCE} />
+          </div>
+          <div className="flex flex-wrap gap-1.5">
+            {sub.nace.map(c => (
+              <NaceChip key={c} code={c} accent={accent} />
+            ))}
+          </div>
+          {sub.naceNote ? <p className="mt-1.5 text-[11px] text-grey-500">{sub.naceNote}</p> : null}
+        </div>
+      ) : null}
 
       {macTechs.length > 0 ? (
         <div className="mt-4">
@@ -434,6 +484,9 @@ function TreeNode({
         >
           {sub.name}
           <span className="ml-1 text-[10px] text-grey-400">({sub.technologies.length})</span>
+          <span className="ml-1 font-mono text-[9px] text-grey-400" title={`NACE Rev. 2.1: ${sub.nace.join(', ')}`}>
+            {sub.nace.join(' ')}
+          </span>
         </button>
       </div>
       {expanded ? (
@@ -601,11 +654,24 @@ function squarify(values: number[], x: number, y: number, w: number, h: number):
 const pctX = (v: number) => `${(v / TM_W) * 100}%`;
 const pctY = (v: number) => `${(v / TM_H) * 100}%`;
 
+/** All distinct NACE 2.1 codes of the subsectors a treemap block covers. */
+function blockNace(b: EmissionsMapBlock): string[] {
+  const codes: string[] = [];
+  b.subsectorIds.forEach(id => {
+    CATALOGUE.find(x => x.id === id)?.nace.forEach(c => {
+      if (!codes.includes(c)) codes.push(c);
+    });
+  });
+  return codes;
+}
+
 function blockTitle(b: EmissionsMapBlock): string {
   const share = b.etsBasis
     ? ` · ≈${Math.round((b.mt / EMISSIONS_SPLIT_TOTAL_MT) * 100)}% of EU ETS industry (${EMISSIONS_SPLIT_TOTAL_MT} Mt)`
     : '';
-  return `${b.label} — ≈${b.mt} Mt CO₂ (${b.scope})${share}${b.note ? ` — ${b.note}` : ''}`;
+  const nace = blockNace(b);
+  const naceStr = nace.length ? ` — NACE 2.1: ${nace.join(', ')}` : '';
+  return `${b.label} — ≈${b.mt} Mt CO₂ (${b.scope})${share}${b.note ? ` — ${b.note}` : ''}${naceStr}`;
 }
 
 /** One subsector tile of the emissions map. */
@@ -700,6 +766,12 @@ function TreemapTile({
               >
                 ↗ {block.source.org}
               </a>
+              <span
+                title={`NACE Rev. 2.1: ${blockNace(block).join(', ')}`}
+                className="rounded-full bg-black/30 px-1.5 py-px font-mono text-[8px] font-medium text-white/80"
+              >
+                NACE {blockNace(block).join(' · ')}
+              </span>
             </div>
           ) : null}
           {size === 'lg' && block.subsectorIds.length > 1 ? (
@@ -901,6 +973,220 @@ function EmissionsTreemap({ onSelectSub }: { onSelectSub: (id: string) => void }
   );
 }
 
+/* ------------------------------------------------------- NACE 2.1 browser */
+
+/**
+ * The COMPLETE official NACE Rev. 2.1 classification (22 sections, 87
+ * divisions, 287 groups, 651 classes — nothing omitted), expandable per node
+ * and searchable, with chips marking where each catalogue subsector sits.
+ */
+function NaceBrowser({ onSelectSub }: { onSelectSub: (id: string) => void }) {
+  const coverage = useMemo(() => {
+    const direct = new Map<string, Subsector[]>();
+    CATALOGUE.forEach(sub =>
+      sub.nace.forEach(code => {
+        const list = direct.get(code) ?? [];
+        list.push(sub);
+        direct.set(code, list);
+      }),
+    );
+    // every ancestor of a mapped code "contains mapped codes" (expansion hint)
+    const hasMappedBelow = new Set<string>();
+    direct.forEach((_subs, code) => naceAncestors(code).forEach(a => hasMappedBelow.add(a.code)));
+    return { direct, hasMappedBelow };
+  }, []);
+
+  const childrenOf = useMemo(() => {
+    const m = new Map<string | undefined, NaceItem[]>();
+    NACE_21.forEach(n => {
+      const list = m.get(n.parent) ?? [];
+      list.push(n);
+      m.set(n.parent, list);
+    });
+    return m;
+  }, []);
+
+  const [open, setOpen] = useState<Set<string>>(new Set(['C']));
+  const [q, setQ] = useState('');
+
+  const toggle = (code: string) =>
+    setOpen(prev => {
+      const next = new Set(prev);
+      next.has(code) ? next.delete(code) : next.add(code);
+      return next;
+    });
+
+  /** Subsectors mapped to an ancestor of this code (coverage by inheritance). */
+  const inheritedFor = (item: NaceItem): Subsector[] => {
+    const subs: Subsector[] = [];
+    naceAncestors(item.code).forEach(a =>
+      coverage.direct.get(a.code)?.forEach(s => {
+        if (!subs.includes(s)) subs.push(s);
+      }),
+    );
+    return subs;
+  };
+
+  const chipsFor = (item: NaceItem, isOpen: boolean) => {
+    const direct = coverage.direct.get(item.code) ?? [];
+    const inherited = inheritedFor(item).filter(s => !direct.includes(s));
+    return (
+      <span className="flex flex-wrap items-center gap-1">
+        {direct.map(s => (
+          <button
+            key={s.id}
+            type="button"
+            onClick={() => onSelectSub(s.id)}
+            title={`Mapped catalogue subsector — open ${s.name}`}
+            className="rounded-full px-1.5 py-px text-[9px] font-semibold text-white hover:brightness-110"
+            style={{ background: BRANCH_COLORS[s.branch] }}
+          >
+            {s.name} →
+          </button>
+        ))}
+        {direct.length === 0 &&
+          inherited.map(s => (
+            <button
+              key={s.id}
+              type="button"
+              onClick={() => onSelectSub(s.id)}
+              title={`Covered via a broader mapped code — open ${s.name}`}
+              className="rounded-full border px-1.5 py-px text-[9px] font-medium hover:shadow-sm"
+              style={{ borderColor: `${BRANCH_COLORS[s.branch]}88`, color: BRANCH_COLORS[s.branch] }}
+            >
+              {s.name} →
+            </button>
+          ))}
+        {!isOpen && coverage.hasMappedBelow.has(item.code) ? (
+          <span className="text-[9px] italic text-grey-400">contains mapped codes</span>
+        ) : null}
+      </span>
+    );
+  };
+
+  const LEVEL_STYLE: Record<NaceItem['level'], string> = {
+    section: 'text-[13px] font-bold text-grey-900',
+    division: 'text-[12px] font-semibold text-grey-800',
+    group: 'text-[12px] text-grey-700',
+    class: 'text-[12px] text-grey-600',
+  };
+
+  const renderNode = (item: NaceItem, depth: number): ReactNode => {
+    const kids = childrenOf.get(item.code) ?? [];
+    const isOpen = open.has(item.code);
+    return (
+      <div key={item.code}>
+        <div
+          className={`flex items-start gap-1.5 rounded px-1 py-0.5 hover:bg-grey-50 ${
+            item.level === 'section' ? 'bg-grey-100/70' : ''
+          }`}
+          style={{ marginLeft: depth * 18 }}
+        >
+          {kids.length ? (
+            <button
+              type="button"
+              onClick={() => toggle(item.code)}
+              aria-label={isOpen ? 'Collapse' : 'Expand'}
+              className="mt-0.5 flex h-4 w-4 flex-none items-center justify-center rounded bg-grey-200 text-[11px] font-bold text-tertiary hover:bg-grey-300"
+            >
+              {isOpen ? '−' : '+'}
+            </button>
+          ) : (
+            <span className="w-4 flex-none" aria-hidden />
+          )}
+          <a
+            href={naceUri(item.code)}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`${item.code} ${item.label} (${item.level}) — ${naceUri(item.code)}`}
+            className="mt-0.5 flex-none font-mono text-[11px] font-bold text-primary hover:underline"
+          >
+            {item.code}
+          </a>
+          <span className={`min-w-0 ${LEVEL_STYLE[item.level]}`}>{item.label}</span>
+          {chipsFor(item, isOpen)}
+        </div>
+        {isOpen ? kids.map(k => renderNode(k, depth + 1)) : null}
+      </div>
+    );
+  };
+
+  const query = q.trim().toLowerCase();
+  const matches = useMemo(() => {
+    if (!query) return [];
+    return NACE_21.filter(
+      n => n.code.toLowerCase().startsWith(query) || n.label.toLowerCase().includes(query),
+    ).slice(0, 80);
+  }, [query]);
+
+  return (
+    <div>
+      <div className="mb-2 flex flex-wrap items-center gap-2">
+        <input
+          type="search"
+          value={q}
+          onChange={e => setQ(e.target.value)}
+          placeholder={`Search all ${NACE_21_COUNTS.total} codes & labels…`}
+          className="w-64 rounded-md border border-grey-300 bg-white px-2 py-1 text-xs focus:border-primary focus:outline-none"
+        />
+        <button
+          type="button"
+          onClick={() => setOpen(new Set(coverage.hasMappedBelow))}
+          className="rounded border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-medium text-tertiary hover:bg-grey-100"
+        >
+          Expand to mapped codes
+        </button>
+        <button
+          type="button"
+          onClick={() => setOpen(new Set())}
+          className="rounded border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-medium text-tertiary hover:bg-grey-100"
+        >
+          Collapse all
+        </button>
+        <span className="ml-auto text-[11px] text-grey-500">
+          {NACE_21_COUNTS.sections} sections · {NACE_21_COUNTS.divisions} divisions · {NACE_21_COUNTS.groups} groups ·{' '}
+          {NACE_21_COUNTS.classes} classes <SourceLink source={NACE_21_SOURCE} />
+        </span>
+      </div>
+
+      <div className="max-h-[32rem] overflow-auto rounded-lg border border-grey-200 bg-white p-2">
+        {query ? (
+          matches.length ? (
+            <div className="space-y-0.5">
+              {matches.map(item => (
+                <div key={item.code} className="flex items-start gap-1.5 rounded px-1 py-0.5 hover:bg-grey-50">
+                  <a
+                    href={naceUri(item.code)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-0.5 flex-none font-mono text-[11px] font-bold text-primary hover:underline"
+                  >
+                    {item.code}
+                  </a>
+                  <span className={`min-w-0 ${LEVEL_STYLE[item.level]}`}>
+                    {item.label}
+                    <span className="ml-1.5 font-mono text-[9px] font-normal text-grey-400">
+                      {[...naceAncestors(item.code)].map(a => a.code).join(' → ') || item.level}
+                    </span>
+                  </span>
+                  {chipsFor(item, true)}
+                </div>
+              ))}
+              {matches.length === 80 ? (
+                <div className="px-1 py-0.5 text-[11px] italic text-grey-400">first 80 matches shown — refine the search</div>
+              ) : null}
+            </div>
+          ) : (
+            <div className="px-1 py-2 text-xs text-grey-400">No code or label matches “{q}”.</div>
+          )
+        ) : (
+          (childrenOf.get(undefined) ?? []).map(sec => renderNode(sec, 0))
+        )}
+      </div>
+    </div>
+  );
+}
+
 /* --------------------------------------------------------------- page */
 
 export default function CleanTechPage() {
@@ -1000,7 +1286,7 @@ export default function CleanTechPage() {
               Beta
             </span>
             <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
-              Catalogue v0.4
+              Catalogue v0.5
             </span>
           </div>
           <h1 className="mt-2 text-3xl font-bold text-grey-900">
@@ -1014,7 +1300,8 @@ export default function CleanTechPage() {
             Every data point carries a source link — nothing is invented. MAC/TRL bands are shown as reported by the
             cited studies, not as settled single numbers. Emission, cost and project figures were independently
             fact-checked against their sources; where a source only partly supported a claim, the figure was corrected
-            or flagged.
+            or flagged. Every subsector is classified under the official NACE Rev. 2.1 statistical classification
+            (Eurostat / EU Publications Office) — the complete classification is browsable at the bottom of the page.
           </p>
         </header>
 
@@ -1178,6 +1465,23 @@ export default function CleanTechPage() {
           </div>
         </section>
 
+        {/* ── NACE 2.1 CLASSIFICATION ─────────────────────────────────────── */}
+        <section className="mt-10">
+          <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-lg font-bold text-grey-900">
+              NACE Rev. 2.1 — the official classification behind the catalogue
+            </h2>
+          </div>
+          <p className="mb-3 max-w-text text-sm text-grey-600">
+            Every subsector above is mapped onto the Statistical Classification of Economic Activities in the
+            European Community, Rev. 2.1 (Regulation (EU) 2023/137, applicable from 2025) — retrieved in full from the
+            EU Publications Office ShowVoc dataset. Browse the complete classification below: coloured chips mark the
+            codes a catalogue subsector maps to directly; outlined chips mark codes covered via a broader mapped code.
+            Codes link to their official Publications Office concept URIs.
+          </p>
+          <NaceBrowser onSelectSub={selectSubScroll} />
+        </section>
+
         {/* ── BOTTLENECKS ─────────────────────────────────────────────────── */}
         <section className="mt-10">
           <h2 className="mb-2 text-lg font-bold text-grey-900">Recurring bottlenecks (for policy)</h2>
@@ -1232,9 +1536,10 @@ export default function CleanTechPage() {
         </section>
 
         <p className="mt-10 text-xs text-grey-400">
-          Catalogue v0.4 — interactive, fully-sourced. Photos via Wikimedia Commons (linked for licence/attribution).
-          Trade flows is the sibling subpage (details to follow). Contributions extend{' '}
-          <code>cleantech-catalogue.ts</code>; every new data point must carry a real source link.
+          Catalogue v0.5 — interactive, fully-sourced, NACE Rev. 2.1-classified. Photos via Wikimedia Commons (linked
+          for licence/attribution). Trade flows is the sibling subpage (details to follow). Contributions extend{' '}
+          <code>cleantech-catalogue.ts</code> (NACE data in <code>nace-2-1.ts</code>); every new data point must carry
+          a real source link.
         </p>
       </main>
 

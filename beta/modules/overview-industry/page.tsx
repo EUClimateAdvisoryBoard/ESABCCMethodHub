@@ -51,7 +51,9 @@ export default function OverviewIndustryPage() {
               subsector → every available mitigation technology → its abatement cost, technology
               readiness, availability, real project pipeline (incl. Final Investment Decisions) and
               the reasons costs are high, readiness lags and scale is hard. Every data point is
-              sourced. Mine it for recurring bottlenecks that can inform policy.
+              sourced, and every subsector is classified under the official NACE Rev. 2.1
+              classification (complete Eurostat classification browsable in-page). Mine it for
+              recurring bottlenecks that can inform policy.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-primary">
               Open the catalogue →
