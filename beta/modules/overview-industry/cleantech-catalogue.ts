@@ -98,6 +98,14 @@ export interface Subsector {
     | 'Cross-cutting levers';
   /** Short characterisation of the subsector. */
   summary: string;
+  /**
+   * NACE Rev. 2.1 codes (divisions/groups/classes) this subsector maps to,
+   * per the official Eurostat classification (see `nace-2-1.ts`, retrieved in
+   * full from the EU Publications Office ShowVoc dataset).
+   */
+  nace: string[];
+  /** Caveat on the NACE mapping where it is partial or indicative. */
+  naceNote?: string;
   /** Evidenced statements about this subsector's EU emissions profile. */
   emissions: Sourced[];
   technologies: Technology[];
@@ -270,6 +278,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Metals',
     summary:
       'The single largest industrial CO₂ source in the EU. Primary steel via the coal-based blast furnace / basic-oxygen-furnace (BF-BOF) route carries both energy and process (coke reduction) emissions; secondary steel via scrap + electric-arc furnace (EAF) is already low-carbon if powered by clean electricity.',
+    nace: ['24.1', '24.2', '24.3', '24.51', '24.52', '19.10'],
+    naceNote:
+      'core route = 24.10 (basic iron & steel and ferro-alloys); 24.2–24.3 first processing of steel; 24.51–24.52 casting of iron/steel; 19.10 coke oven products is the value-chain upstream',
     emissions: [
       {
         value: '≈ 96 Mt CO₂ (EU ETS, 2023)',
@@ -518,6 +529,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Metals',
     summary:
       'Primary aluminium is dominated by (a) indirect emissions from the huge electricity draw of smelting and (b) direct process CO₂ from the consumable carbon anodes. Secondary (recycled) aluminium needs ~5% of the energy. EU aluminium GHG fell ~45% since 2005.',
+    nace: ['24.42'],
+    naceNote: '24.42 covers both alumina refining and primary/secondary aluminium production',
     emissions: [
       {
         value: '≈ 2.75 Mt CO₂ direct (2022)',
@@ -624,6 +637,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Metals',
     summary:
       'Copper, zinc and nickel production combines electricity-intensive electrolysis/smelting with process heat. Decarbonisation leans on electrification, clean power and recycling; a smaller EU emitter than steel/aluminium but strategically critical for the transition itself.',
+    nace: ['24.43', '24.44', '24.45'],
+    naceNote:
+      'group 24.4 also contains precious metals (24.41), aluminium (24.42, own subsector) and nuclear-fuel processing (24.46)',
     emissions: [
       { value: '≈ 52 Mt CO₂e — whole EU non-ferrous sector', note: 'EU28+EFTA 2015, 18 Mt direct + 37 Mt indirect; INCLUDES aluminium (dominant) — a copper/zinc/nickel-only figure is not isolable in public data', source: { org: 'Eurometaux / VUB-IES', title: 'Metals for a Climate Neutral Europe — a 2050 Blueprint', url: 'https://eurometaux.eu/media/2005/full-report-8-56-17.pdf', year: '2019' } },
       { value: 'Part of the ~27% energy-intensive industry share', source: S.eeaBrief },
@@ -654,6 +670,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Non-metallic minerals',
     summary:
       'The hardest of the hard-to-abate: ~60% of cement CO₂ comes from calcining limestone (CaCO₃ → CaO + CO₂) — inherent to the chemistry. Fuel switching and efficiency only touch the other ~40%, so cement cannot reach near-zero without carbon capture, clinker substitution, or novel chemistries.',
+    nace: ['23.51'],
+    naceNote: 'downstream concrete, mortar and plaster products are 23.6 (outside this catalogue)',
     emissions: [
       {
         value: '≈ 124 Mt CO₂ (EU ETS, 2023; cement clinker + lime combined)',
@@ -788,6 +806,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Non-metallic minerals',
     summary:
       'Like cement, lime is a process-CO₂ sector: burning limestone to quicklime releases CO₂ from the rock itself. High-purity CO₂ off-gas actually makes lime a favourable early target for capture.',
+    nace: ['23.52'],
+    naceNote: '23.52 also includes plaster',
     emissions: [
       { value: 'Process-dominated (calcination of limestone)', source: S.eeaBrief },
       {
@@ -821,6 +841,7 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Non-metallic minerals',
     summary:
       'Container, flat and fibre glass melt raw materials at ~1,500 °C. Emissions are mostly energy (melting) plus some process CO₂ from carbonate raw materials. Levers: electric/hybrid furnaces, oxy-fuel, hydrogen firing and higher recycled-cullet use.',
+    nace: ['23.11', '23.12', '23.13', '23.14', '23.15'],
     emissions: [
       {
         value: '≈ 22 Mt CO₂ direct/yr',
@@ -870,6 +891,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Non-metallic minerals',
     summary:
       'Dispersed, mostly SME sector firing clay products in kilns. Emissions are energy-dominated with some process CO₂. Levers: electrification, hydrogen firing, heat recovery and efficiency.',
+    nace: ['23.2', '23.3', '23.4'],
+    naceNote: 'refractory products (23.2), clay building materials (23.3) and porcelain & other ceramics (23.4)',
     emissions: [
       {
         value: '≈ 19 Mt CO₂/yr (~1% of EU ETS industry)',
@@ -905,6 +928,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Chemicals & refining',
     summary:
       'Ammonia (for fertiliser) is made from hydrogen + nitrogen; today the hydrogen comes from natural gas via steam-methane reforming, emitting CO₂. Switch the hydrogen to electrolysis ("green") or add CCS to the reformer ("blue").',
+    nace: ['20.15'],
+    naceNote: 'ammonia synthesis and nitrogen fertilisers; merchant industrial-gas ammonia falls under 20.11',
     emissions: [
       { value: 'A defined "hard-to-abate" hydrogen/feedstock emitter', source: S.matecon },
     ],
@@ -964,6 +989,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Chemicals & refining',
     summary:
       'Steam crackers make ethylene, propylene and aromatics — the building blocks of plastics — by heating naphtha/gas to ~850 °C in fossil-fired furnaces. Levers: electric crackers, chemical/feedstock recycling, bio/renewable feedstock, and CCS.',
+    nace: ['20.14', '20.16', '20.17'],
+    naceNote:
+      'other organic basic chemicals (20.14, incl. olefins & aromatics), plastics (20.16) and synthetic rubber (20.17) in primary forms',
     emissions: [
       {
         value: '≈ 155.5 Mt CO₂e — whole EU chemical industry (2021; 67% combustion / 33% process)',
@@ -1040,6 +1068,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Chemicals & refining',
     summary:
       'Electrolysis of brine to chlorine, caustic soda and hydrogen — already electricity-based, so its footprint is essentially the grid plus efficiency. Levers: clean power, oxygen-depolarised cathodes and using the by-product hydrogen.',
+    nace: ['20.13'],
+    naceNote: 'chlorine, caustic soda and other inorganic basic chemicals',
     emissions: [
       { value: 'Emissions track the electricity grid (electro-intensive)', source: S.ipcc11 },
     ],
@@ -1068,6 +1098,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Chemicals & refining',
     summary:
       'A key chemical building block and emerging fuel. Low-carbon routes: e-methanol (captured CO₂ + green hydrogen) and bio-methanol, plus methanol-to-olefins as an alternative route to plastics feedstock.',
+    nace: ['20.14'],
+    naceNote: 'methanol is part of 20.14 (other organic basic chemicals) — it has no NACE class of its own',
     emissions: [
       { value: 'Feedstock/process CO₂ emitter within chemicals', source: S.matecon },
     ],
@@ -1115,6 +1147,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Chemicals & refining',
     summary:
       'Refineries emit from process furnaces, hydrogen production and utilities. As transport fuels decline, refineries pivot to petrochemicals, biofuels/HVO and hydrogen hubs. Levers: electrification of heat, clean hydrogen, CCS and co-processing.',
+    nace: ['19.20'],
+    naceNote: 'refined petroleum and fossil fuel products; on-site fuel-gas manufacture is also 19.20',
     emissions: [
       {
         value: '≈ 105 Mt CO₂ (EU ETS, 2023)',
@@ -1164,6 +1198,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Other manufacturing',
     summary:
       'Mostly medium-temperature heat and drying, much of it already biomass-fired (black liquor). The deepest EU cut of the six branches (−51% since 2005). Levers: electrification, high-temperature heat pumps, biomass and efficiency.',
+    nace: ['17.11', '17.12'],
+    naceNote: 'pulp (17.11) and paper & paperboard (17.12); converting into articles is 17.2',
     emissions: [
       { value: '≈ 27 Mt CO₂ direct fossil (2022)', note: 'predominantly energy/combustion; down ~50% since 2005 (large biogenic share excluded)', source: { org: 'CEPI', title: 'Key Statistics 2022 — European pulp & paper industry', url: 'https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf', year: '2022' } },
       { value: 'EU pulp & paper GHG −51% since 2005', source: S.eeaBrief },
@@ -1193,6 +1229,8 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Other manufacturing',
     summary:
       'Large, distributed sector dominated by low- and medium-temperature heat (washing, pasteurising, drying) — the most electrifiable heat demand in industry. Levers: heat pumps, electric boilers, mechanical vapour recompression, solar thermal and biomass/biogas.',
+    nace: ['10', '11', '12'],
+    naceNote: 'whole divisions: food products (10), beverages (11) and tobacco products (12)',
     emissions: [
       { value: '≈ 94 Mt CO₂e/yr — EU food & drink manufacturing', note: '~5th-largest EU industrial emitter; ~two-thirds of energy is heat, one-third electricity', source: { org: 'FoodDrinkEurope (Ricardo roadmap)', title: 'Our climate journey: the road to net-zero', url: 'https://www.fooddrinkeurope.eu/our-climate-journey-the-road-to-net-zero/', year: '2021' } },
       { value: 'Distributed low/medium-temperature heat; broadly electrifiable', source: S.ieaHeatPumps },
@@ -1370,6 +1408,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Cross-cutting levers',
     summary:
       'Roughly two-thirds of industrial energy is heat. Electric boilers, resistive/plasma heating and industrial heat pumps can decarbonise low- and medium-temperature heat directly; the high-temperature (>500 °C) frontier remains the hard part.',
+    nace: ['35.1', '35.30'],
+    naceNote:
+      'demand-side lever across all manufacturing divisions; supply side = electric power (35.1, incl. renewable generation 35.12 and storage 35.16) and steam & air conditioning supply (35.30)',
     emissions: [
       { value: 'Heat is ~two-thirds of industrial energy use — the master lever', source: S.ieaHeatPumps },
     ],
@@ -1423,6 +1464,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Cross-cutting levers',
     summary:
       'For process CO₂ (cement, lime, steel, chemicals) capture is only useful if the CO₂ can be transported and permanently stored. Shared open-access networks are the enabling infrastructure — and the common bottleneck.',
+    nace: ['49.50', '38.32'],
+    naceNote:
+      'per the NACE 2.1 explanatory notes: storage of captured CO₂ = 38.32 (landfilling or permanent storage); pipeline transport = 49.50; capture itself is classified with the emitting activity',
     emissions: [
       { value: 'The only near-zero route for unavoidable process CO₂', source: S.matecon },
     ],
@@ -1523,6 +1567,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Cross-cutting levers',
     summary:
       'Clean hydrogen underpins green steel, green ammonia, e-fuels and some high-temperature heat. The constraint is producing it cheaply from electrolysis + renewables at the scale industry needs.',
+    nace: ['20.11', '35.21'],
+    naceNote:
+      'per the NACE 2.1 explanatory notes: hydrogen production not for network energy supply = 20.11 (industrial gases); gaseous fuels incl. hydrogen for supply through a network = 35.21; hydrogen storage = 35.24',
     emissions: [
       { value: 'Enabling input for steel, ammonia, methanol, e-fuels', source: S.ieaH2 },
     ],
@@ -1571,6 +1618,9 @@ export const CATALOGUE: Subsector[] = [
     branch: 'Cross-cutting levers',
     summary:
       'The cheapest tonne of CO₂ is the material never made. Using less material, recycling more, extending product life and substituting materials cuts demand for primary steel, plastics, cement and aluminium — often at negative cost.',
+    nace: ['38.2'],
+    naceNote:
+      'waste recovery: materials recovery (38.21), energy recovery (38.22), other (38.23); demand-side material-efficiency measures span all manufacturing divisions',
     emissions: [
       { value: 'Circularity/material efficiency: 58–171 MtCO₂/yr by 2050 (EU heavy industry)', source: S.matecon },
     ],
