@@ -4,6 +4,11 @@ Office.js task-pane add-in for Microsoft Word that provides **ESABCC reference
 manager** functionality directly inside the document:
 
 - search references by title, author, DOI,
+- see each paper's project-workspace context while searching — the whole-document
+  summary, chapter (report-chapter / sector) classification and notes — and
+  filter results by chapter,
+- see how many times each paper is already cited in the document (a "cited N×"
+  badge on search results and a per-paper tally in the Bibliography tab),
 - insert formatted citations at the cursor,
 - generate and refresh a bibliography,
 - sync the local reference library from Supabase.

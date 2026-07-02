@@ -223,6 +223,74 @@ app.post('/api/references/batch', async (req, res) => {
   }
 });
 
+// ──── WORKSPACE METADATA (summary + chapter classification + notes) ────
+//
+// Returns the project-workspace context for a batch of references so the Word
+// add-in can show — at the point of citing — the whole-document summary, the
+// chapter (report-chapter / sector) classification and the reference note.
+// These live in the durable content-analysis tables, keyed by the workbench
+// document id `ref-doc-<referenceId>`, and are publicly readable.
+
+app.post('/api/references/workspace-meta', async (req, res) => {
+  const { ids } = req.body;
+
+  if (!Array.isArray(ids)) {
+    return res.status(400).json({ error: 'ids array is required' });
+  }
+
+  const summaries: Record<string, string> = {};
+  const chapters: Record<string, string[]> = {};
+  const notes: Record<string, string> = {};
+
+  if (!supabase || ids.length === 0) {
+    return res.json({ summaries, chapters, notes });
+  }
+
+  const docIds = ids.map((id: string) => `ref-doc-${id}`);
+  const docToRef = new Map<string, string>(ids.map((id: string) => [`ref-doc-${id}`, id]));
+
+  try {
+    const [summRes, tagRes, refRes] = await Promise.all([
+      supabase
+        .from('content_analysis_summaries')
+        .select('document_id, text')
+        .in('document_id', docIds),
+      supabase
+        .from('content_analysis_overall_tags')
+        .select('document_id, code_id')
+        .in('document_id', docIds)
+        .like('code_id', 'chapter:%'),
+      supabase
+        .from('references')
+        .select('id, notes')
+        .in('id', ids),
+    ]);
+
+    for (const row of (summRes.data || []) as any[]) {
+      const refId = docToRef.get(row.document_id);
+      const text = (row.text || '').trim();
+      if (!refId || !text) continue;
+      // Prefer the longest non-empty summary across projects.
+      if (!summaries[refId] || text.length > summaries[refId].length) summaries[refId] = text;
+    }
+
+    for (const row of (tagRes.data || []) as any[]) {
+      const refId = docToRef.get(row.document_id);
+      if (!refId || !row.code_id) continue;
+      (chapters[refId] ||= []).push(row.code_id);
+    }
+
+    for (const row of (refRes.data || []) as any[]) {
+      const n = (row.notes || '').trim();
+      if (n) notes[row.id] = n;
+    }
+
+    res.json({ summaries, chapters, notes });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 // ──── FORMAT CITATIONS ────
 
 app.post('/api/cite/format', (req, res) => {

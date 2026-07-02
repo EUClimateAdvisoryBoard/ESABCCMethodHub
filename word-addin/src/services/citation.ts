@@ -216,6 +216,40 @@ export async function getAllCitations(): Promise<DocumentCitation[]> {
   });
 }
 
+// ── Count Citations per Reference ──
+//
+// How many times each individual paper is cited in the document. A grouped
+// citation "(Smith, 2024; Jones, 2023)" counts once for Smith AND once for
+// Jones, so the tally reflects genuine per-paper usage. Drives the "cited N×"
+// badges in the task pane so the author can see, at a glance, how heavily any
+// one paper is leaned on.
+
+export interface CitationCount {
+  refId: string;
+  citationKey: string;
+  count: number;
+}
+
+export async function getCitationCounts(): Promise<Map<string, CitationCount>> {
+  const citations = await getAllCitations();
+  const counts = new Map<string, CitationCount>();
+
+  for (const c of citations) {
+    const ids = c.refId.split(',').map(s => s.trim()).filter(Boolean);
+    const keys = c.citationKey.split(',').map(s => s.trim());
+    ids.forEach((id, i) => {
+      const existing = counts.get(id);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        counts.set(id, { refId: id, citationKey: keys[i] || keys[0] || '', count: 1 });
+      }
+    });
+  }
+
+  return counts;
+}
+
 // ── Generate Bibliography ──
 
 export async function generateBibliography(styleId: string): Promise<number> {

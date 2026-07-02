@@ -28,6 +28,7 @@ Defined in [`src/server.ts`](src/server.ts).
 | GET    | `/api/libraries`                      | List reference libraries                         |
 | GET    | `/api/references/search?q=&library_id=` | Full-text search (cache first, Supabase fallback) |
 | POST   | `/api/references/batch`               | Batch fetch by ID                                |
+| POST   | `/api/references/workspace-meta`      | Workspace summary, chapter tags & notes for a batch of IDs |
 | POST   | `/api/cite/format`                    | Format one or more citations (CSL-JSON + style)  |
 | POST   | `/api/cite/bibliography`              | Build a bibliography                             |
 | POST   | `/api/sync`                           | Pull new refs from Supabase by `updated_at`      |
