@@ -1,6 +1,6 @@
 {
   "date": "2026-07-02",
-  "generatedAt": "2026-07-02T08:15:42.306Z",
+  "generatedAt": "2026-07-02T13:02:51.586Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 2 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,10 +17,16 @@
       "color": "#E87722"
     },
     {
-      "headline": "Statement by President von der Leyen with Azerbaijani President Aliyev",
-      "summary": "European Commission Statement Baku, 01 Jul 2026 President Aliyev,\r\nThank you for your warm welcome. It is good to be back in Baku. It is remarkable city, a place where a rich and ancient heritage meets strikin...",
+      "headline": "Cropped 1 July 2026: Heatwave scorches Europe &#124; UK 2050 farm plan &#124; What’s next for the High Seas Treaty",
+      "summary": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 1 July 2026: Heatwave scorches Europe | UK 2050 farm plan | What’s next for the High Seas Treaty appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Joint press release: €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries",
+      "summary": "European Commission Press release Brussels, 02 Jul 2026 The European Commission and the European Investment Bank have announced today the disbursement of €2.5 billion from the Modernisation Fund to support 51 energy-related projects in 11 EU Member States.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -59,6 +65,22 @@
           "score": 10
         },
         {
+          "title": "US coach Pochettino says Balogun did not deserve red card - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTDlpMEs3YncxSHBBTnE3VTVsUVBtVjg5SkRobzJRVkgtaWYzNXUxTGZQWl9sRWp4ejE2TkJTVzQtMHJxb0RPRnJ4blBTLXpOTG1hSHdUM2I2cEpJak1ORGdTRVZBM1pVRHB6ZkxrVTFUandHbW1ZZ0FwNkZQT0xZbHVaazVrTVJ1Y3A5VFd6VUVEVjYyU0NSYVJoaE1wZ0p4VGZiSmd2Rnd6TVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPTDlpMEs3YncxSHBBTnE3VTVsUVBtVjg5SkRobzJRVkgtaWYzNXUxTGZQWl9sRWp4ejE2TkJTVzQtMHJxb0RPRnJ4blBTLXpOTG1hSHdUM2I2cEpJak1ORGdTRVZBM1pVRHB6ZkxrVTFUandHbW1ZZ0FwNkZQT0xZbHVaazVrTVJ1Y3A5VFd6VUVEVjYyU0NSYVJoaE1wZ0p4VGZiSmd2Rnd6TVE?oc=5\" target=\"_blank\"&gt;US coach Pochettino says Balogun did not deserve red card&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T04:19:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Lithuania moves to end nuclear weapon ban as 'situation getting worse' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUmplNlV3ckJjbDhxWE1ZcXVkUTFZaENXenhBMWFwU3l0QWt0bUtVb3A2Sl9CNlBJVFR1d21VejBMMEszUHI2NkZXNUw1amxNMUlkb0x5Y1I0dlpLbUpfd2VGbVpJT2NPRnBlc1JmNFgtTTVwQXVZeHNCaG0xY0UyYjlRYlR3UXBlTEFuRFR3UU5RR1N1Vy1tdEZFaVVza1M2d2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOUmplNlV3ckJjbDhxWE1ZcXVkUTFZaENXenhBMWFwU3l0QWt0bUtVb3A2Sl9CNlBJVFR1d21VejBMMEszUHI2NkZXNUw1amxNMUlkb0x5Y1I0dlpLbUpfd2VGbVpJT2NPRnBlc1JmNFgtTTVwQXVZeHNCaG0xY0UyYjlRYlR3UXBlTEFuRFR3UU5RR1N1Vy1tdEZFaVVza1M2d2c?oc=5\" target=\"_blank\"&gt;Lithuania moves to end nuclear weapon ban as 'situation getting worse'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T11:35:17.000Z",
+          "score": 7
+        },
+        {
           "title": "England has just had its hottest June on record, Met Office data shows",
           "link": "https://www.theguardian.com/environment/2026/jul/01/england-hottest-june-on-record-met-office-data",
           "source": "The Guardian - Climate",
@@ -73,14 +95,6 @@
           "description": "&lt;p&gt;Readers respond to an article about Erin Brockovich’s battle against datacentres and voice their fears for the environment &lt;/p&gt;&lt;p&gt;What are the benefits obtained from AI’s massive use of electricity and water (&lt;a href=\"https://www.theguardian.com/environment/2026/jun/29/were-up-against-forces-that-have-all-the-money-in-the-world-erin-brockovich-on-her-battle-against-ai-datacentres\"&gt;‘We’re up against forces that have all the money in the world’: Erin Brockovich on her ba",
           "published": "2026-07-01T16:12:05.000Z",
           "score": 2
-        },
-        {
-          "title": "US rail boom still lags behind cars and planes",
-          "link": "https://www.dw.com/en/us-rail-boom-still-lags-behind-cars-and-planes/a-77430370?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As gas prices fluctuate and flights get more expensive, US Americans are rediscovering trains — only to find a system built to move boxes, not people.",
-          "published": "2026-07-02T07:15:00.000Z",
-          "score": 2
         }
       ]
     },
@@ -88,14 +102,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Statement by President von der Leyen with Azerbaijani President Aliyev",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/statement_26_1503",
-          "source": "European Commission",
-          "description": "European Commission Statement Baku, 01 Jul 2026 President Aliyev,\r\nThank you for your warm welcome. It is good to be back in Baku. It is remarkable city, a place where a rich and ancient heritage meets strikin...",
-          "published": "2026-07-01T12:52:46.000Z",
-          "score": 18
-        },
         {
           "title": "Cropped 1 July 2026: Heatwave scorches Europe &#124; UK 2050 farm plan &#124; What’s next for the High Seas Treaty",
           "link": "https://www.carbonbrief.org/cropped-1-july-2026-heatwave-scorches-europe-uk-2050-farm-plan-whats-next-for-the-high-seas-treaty/",
@@ -105,79 +111,112 @@
           "score": 16
         },
         {
-          "title": "Demand for water use highest since 2022 drought",
-          "link": "https://www.bbc.co.uk/news/articles/c992j5y77j2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Islanders urged to use water \"wisely\" after demand soared in heatwave.",
-          "published": "2026-07-01T12:39:58.000Z",
-          "score": 7
+          "title": "Q&#038;A: Where do the UN secretary general candidates stand on climate change?",
+          "link": "https://www.carbonbrief.org/qa-where-do-the-un-secretary-general-candidates-stand-on-climate-change/",
+          "source": "Carbon Brief",
+          "description": "Candidates are being nominated to take over as the UN secretary general, when António Guterres... The post Q&#038;A: Where do the UN secretary general candidates stand on climate change? appeared first on Carbon Brief.",
+          "published": "2026-07-02T12:01:37.000Z",
+          "score": 13
         },
         {
-          "title": "Loch Ness hydropower project will damage shoreline and ancient woodland | Letter",
-          "link": "https://www.theguardian.com/environment/2026/jul/01/loch-ness-hydropower-project-will-damage-shoreline-and-ancient-woodland",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;&lt;strong&gt;Neil Mackenzie &lt;/strong&gt;on the environmental impact of the Loch Kemp project&lt;/p&gt;&lt;p&gt;Your article (&lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/first-hydropower-projects-in-great-britain-in-40-years-given-go-ahead\"&gt;First major hydropower projects in Great Britain in 40 years given go-ahead, 26 June&lt;/a&gt;) describes the proposal to build three pumped storage schemes in the Scottish Highlands. But it does not mention the huge environ",
-          "published": "2026-07-01T16:12:09.000Z",
-          "score": 6
+          "title": "In Guatemala, Indigenous women build climate resilience with old and new farming methods",
+          "link": "https://www.climatechangenews.com/2026/07/02/in-guatemala-indigenous-women-build-climate-resilience-with-old-and-new-farming-methods/",
+          "source": "Climate Home News",
+          "description": "Ancestral knowledge combined with climate-smart techniques is boosting food security and increasing family incomes in the Lake Atitlán region The post In Guatemala, Indigenous women build climate resilience with old and new farming methods appeared first on Climate Home News.",
+          "published": "2026-07-02T10:41:22.000Z",
+          "score": 13
         },
         {
-          "title": "Global boom in livestock farming since 2006 is piling pressure on nature, report finds",
-          "link": "https://www.theguardian.com/environment/2026/jul/02/huge-rise-mammals-poultry-livestock-farming-worldwide-nature-report",
+          "title": "World Bank&#8217;s climate work can endure without finance target, experts say",
+          "link": "https://www.climatechangenews.com/2026/07/02/world-banks-climate-work-can-endure-without-finance-target-experts-say/",
+          "source": "Climate Home News",
+          "description": "Even though the global lender has ditched a headline goal for its financing with climate benefits, it has decided to continue its climate action plan in the face of US pressure The post World Bank&#8217;s climate work can endure without finance target, experts say appeared first on Climate Home News.",
+          "published": "2026-07-02T10:23:13.000Z",
+          "score": 13
+        },
+        {
+          "title": "Voyage to the end of the world: floating lab to explore life in Arctic adrift in ice",
+          "link": "https://www.theguardian.com/environment/2026/jul/02/arctic-tara-ocean-foundation-expedition-floating-lab-explore-life-adrift-ice",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Wildlife at risk as demand for cropland and water grows to feed 50% rise in farmed animals, campaign alliance says&lt;/p&gt;&lt;p&gt;The number of mammals and poultry farmed worldwide has increased by half in the last two decades, research shows, and the amount of cropland used for feeding livestock has increased by about a quarter.&lt;/p&gt;&lt;p&gt;These increases are putting rising pressure on natural systems, threatening wildlife and plant species and adding to the climate crisis.&l",
-          "published": "2026-07-02T05:00:04.000Z",
-          "score": 4
+          "description": "&lt;p&gt;An eight-month expedition will set off soon from Norway on a mission to find new species before the climate crisis and pollution changes the northern ocean for ever&lt;/p&gt;&lt;p&gt;Six scientists and six crew will travel next month to Kirkenes, a remote Arctic town in Norway near the Russian border, to begin an odyssey to one of the most inhospitable, inaccessible and least-studied regions on Earth. There, they will climb onboard a futuristic, floating laboratory – the French-built Ta",
+          "published": "2026-07-02T11:00:12.000Z",
+          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Joint press release: €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1501",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 02 Jul 2026 The European Commission and the European Investment Bank have announced today the disbursement of €2.5 billion from the Modernisation Fund to support 51 energy-related projects in 11 EU Member States.",
+          "published": "2026-07-01T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Daily News 02 / 07 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1507",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 02 Jul 2026 €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries \r\nThe European Commission and the European Investment Bank have today annou...",
+          "published": "2026-07-02T09:38:27.000Z",
+          "score": 16
+        },
+        {
+          "title": "SK Hynix to spend $64 billion on memory chip plants under broader AI investment plan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlNnT192WjhWamlHTVRDaWdoR1ZFYUVxQmdfLUdMNDFjVVVsdzY1RzZyWXZlR3VVX1BOQ0hRVTdaYUhqSXlVWk1vbi1GbzlJdXRiNU52dUZIY1pqc19YMmxZaEQzVjk0THRKUEQ4YURJc2FUc2R1SzBlR1RGeFVJOHNWbUlvQXp6WHgtekV4eTltM0FpYTJydFdLdFJNUjFHdE9BdVJzZkZLRzhRQTlES3dpZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxPYlNnT192WjhWamlHTVRDaWdoR1ZFYUVxQmdfLUdMNDFjVVVsdzY1RzZyWXZlR3VVX1BOQ0hRVTdaYUhqSXlVWk1vbi1GbzlJdXRiNU52dUZIY1pqc19YMmxZaEQzVjk0THRKUEQ4YURJc2FUc2R1SzBlR1RGeFVJOHNWbUlvQXp6WHgtekV4eTltM0FpYTJydFdLdFJNUjFHdE9BdVJzZkZLRzhRQTlES3dpZw?oc=5\" target=\"_blank\"&gt;SK Hynix to spend $64 billion on memory chip plants under broader AI investment plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T02:04:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "Google has exceeded $1 billion Africa investment target - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOVy02SkgzMEJTZ0RJNGw3MFRZNGhsX2ZyQV9EcDNlbFRWcmdqTEN4bEVYWTRXMFk2SEZTZkthRWpqdTlPUjRsamZqbmhJaHpscE1YaW9oZmVLY2FNTWYtVlktS0gzRG9TVy1xOGRQU3llYVNIeWJjTUpHeEN5LXJHaGgzNENjazM1Z3h6XzVrNUVhcDFPaDBYRlJCeVBKQVh0aGJnWUNB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxOVy02SkgzMEJTZ0RJNGw3MFRZNGhsX2ZyQV9EcDNlbFRWcmdqTEN4bEVYWTRXMFk2SEZTZkthRWpqdTlPUjRsamZqbmhJaHpscE1YaW9oZmVLY2FNTWYtVlktS0gzRG9TVy1xOGRQU3llYVNIeWJjTUpHeEN5LXJHaGgzNENjazM1Z3h6XzVrNUVhcDFPaDBYRlJCeVBKQVh0aGJnWUNB?oc=5\" target=\"_blank\"&gt;Google has exceeded $1 billion Africa investment target&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-01T16:07:43.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 286 - 369 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - PE789.167v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-AM-789167_EN.pdf",
+          "title": "DRAFT OPINION on the proposal for a Regulation of the European Parliament and of the Council establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors and amending Regulations (EU) 2018/1724, (EU) 2024/1735 and (EU) 2024/3110 - PE789.106v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-789106_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 286 - 369 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&",
-          "published": "2026-07-01T09:37:29.000Z",
+          "description": "DRAFT OPINION on the proposal for a Regulation of the European Parliament and of the Council establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors and amending Regulations (EU) 2018/1724, (EU) 2024/1735 and (EU) 2024/3110&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Mathilde Androuët&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Uni",
+          "published": "2026-07-02T09:33:50.000Z",
           "score": 22
         },
         {
-          "title": "Video of a committee meeting - Thursday, 2 July 2026 - 07:45 - Committee on Economic and Monetary Affairs - Committee on the Environment, Public Health and Food Safety - Committee on Civil Liberties, Justice and Home Affairs",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260702-0945-COMMITTEE-ENVI_vd",
+          "title": "Video of a committee meeting - Thursday, 2 July 2026 - 08:00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260702-1000-COMMITTEE-ENVI_vd",
           "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 15'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-02T07:52:58.000Z",
+          "description": "Length of video : 150'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-02T10:18:25.000Z",
           "score": 18
         },
         {
-          "title": "Minutes - Wednesday, 15 April 2026 - PE787.874v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on the Internal Market and Consumer Protection",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ45-PV-2026-04-15-1_EN.pdf",
+          "title": "AMENDMENTS 230 - 415 - Draft report Speeding-up environmental assessments - PE790.193v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790193_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-01T09:38:30.000Z",
+          "description": "AMENDMENTS 230 - 415 - Draft report Speeding-up environmental assessments&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Emma Wiesner&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-02T09:43:25.000Z",
           "score": 18
         },
         {
-          "title": "AMENDMENTS 252 - 537 - Draft report Clean corporate vehicles - PE790.087v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-AM-790087_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 252 - 537 - Draft report Clean corporate vehicles&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Transport and Tourism&lt;br/&gt;Tiemo Wölken, François Kalfon&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-01T09:26:19.000Z",
-          "score": 18
-        },
-        {
-          "title": "Draft agenda - Monday, 6 July 2026 - PE790.752v01-00 - Committee on Agriculture and Rural Development , Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ14-OJ-2026-07-06-1_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-01T09:25:30.000Z",
-          "score": 18
+          "title": "EU border delays 'not bearable' over summer, warns airport boss",
+          "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Holidaymakers face long waits under the EU's new Entry-Exit System, the head of Berlin's airport says.",
+          "published": "2026-07-02T10:15:47.000Z",
+          "score": 8
         }
       ]
     },
@@ -186,52 +225,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Syria's president names final 70 lawmakers to new post-Assad parliament",
-          "link": "https://www.bbc.co.uk/news/articles/c1jyk4985xwo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Fifteen women are appointed, after only six female candidates were selected by regional electoral colleges last October.",
-          "published": "2026-07-01T16:44:58.000Z",
-          "score": 8
-        },
-        {
-          "title": "Google faces EU top court ruling on record €4.1 billion fine",
-          "link": "https://www.dw.com/en/google-faces-eu-top-court-ruling-on-record-€4-1-billion-fine/a-77794948?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Google must pay record €4.1 billion fine, top EU court rules",
+          "link": "https://www.dw.com/en/google-must-pay-record-€4-1-billion-fine-top-eu-court-rules/a-77794948?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The EU&#039;s highest court will rule on Google&#039;s appeal against a record antitrust fine, after the tech giant argued the bloc unfairly penalized innovation.",
+          "description": "The EU&#039;s highest court has thrown out an appeal by Google against a record antitrust fine. The tech giant had argued that the bloc was unfairly penalizing innovation.",
           "published": "2026-07-02T05:30:00.000Z",
           "score": 8
         },
         {
-          "title": "Digital euro: The plan to Trump-proof the EU&#039;s economies",
-          "link": "https://www.dw.com/en/digital-euro-the-plan-to-trump-proof-the-eu-s-economies/a-77686564?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU’s central bank is preparing a digital euro to cut dependence on Visa, Mastercard and Apple Pay. Success hinges on giving consumers an easy-to-use payment system without prompting a flight from bank savings.",
-          "published": "2026-07-01T09:11:00.000Z",
+          "title": "With closer EU ties 'crucially important', Britain sets sights on new summit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQVWJnTnhFWTZ2UTYxZmJCWDZFeXZjRUVqamxzUjRqbjNTVGdDZzZMMmhOYXV5Q3BtR2pTal9nM0o5Y19HVmtEZUlLeG9QVjNmZlBiUzNiQXZXOEFKX0dvd2dMajlCeW9ZUmJzQ002WGFaSHBqWFlXMTFNc0ZmdTkxMXNNNjVBNmhqc2lJUzhoNUtqNjJFWmJZX3puOEdiUng0dF9ZUGc0SDFaTGRwdlVDRkY3b0dOZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQVWJnTnhFWTZ2UTYxZmJCWDZFeXZjRUVqamxzUjRqbjNTVGdDZzZMMmhOYXV5Q3BtR2pTal9nM0o5Y19HVmtEZUlLeG9QVjNmZlBiUzNiQXZXOEFKX0dvd2dMajlCeW9ZUmJzQ002WGFaSHBqWFlXMTFNc0ZmdTkxMXNNNjVBNmhqc2lJUzhoNUtqNjJFWmJZX3puOEdiUng0dF9ZUGc0SDFaTGRwdlVDRkY3b0dOZw?oc=5\" target=\"_blank\"&gt;With closer EU ties 'crucially important', Britain sets sights on new summit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-01T14:37:07.000Z",
           "score": 8
         },
         {
-          "title": "2 arrested after apparent Empire State Building proposal",
-          "link": "https://www.dw.com/en/2-arrested-after-apparent-empire-state-building-proposal/a-77792914?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Two people were arrested in Manhattan on Wednesday after conducting what appeared to be a daredevil marriage proposal at the very top of the iconic skyscraper.",
-          "published": "2026-07-01T19:11:00.000Z",
-          "score": 6
+          "title": "Google loses fight against record €4.1 billion EU antitrust fine - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5\" target=\"_blank\"&gt;Google loses fight against record €4.1 billion EU antitrust fine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T10:46:04.000Z",
+          "score": 8
         },
         {
-          "title": "Japan&#039;s new joint custody law reshapes divorce debate",
-          "link": "https://www.dw.com/en/japan-s-new-joint-custody-law-reshapes-divorce-debate/a-77789539?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As Japan introduces joint custody, some couples find it easier to part ways. But the reform sparks debate over whether children&#039;s interests are truly central in a system still led by parents.",
-          "published": "2026-07-01T14:25:00.000Z",
-          "score": 6
+          "title": "Firefighters battle blazes in southern France after European heatwave - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPR2h4ZHBiMThiaTBnRzk1UHM5WEc1eU5lUkVhMGU0amhvVVpzeU9TTnFYR3RJQ2Y5TUZ3S1I5UVBXQWwwNHJoUG9aVUZHVWRsbldGSU5XYUJKQWJqWjVuZ3FMUEJMbTBFMVdRUE5mUngtTmJFTHotZGMzazh5ZXo1ZTdLWlBzNWxYaXNsZ1k5eUFLTzR6bE9RVDRaZFdGV19HcmU0?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPR2h4ZHBiMThiaTBnRzk1UHM5WEc1eU5lUkVhMGU0amhvVVpzeU9TTnFYR3RJQ2Y5TUZ3S1I5UVBXQWwwNHJoUG9aVUZHVWRsbldGSU5XYUJKQWJqWjVuZ3FMUEJMbTBFMVdRUE5mUngtTmJFTHotZGMzazh5ZXo1ZTdLWlBzNWxYaXNsZ1k5eUFLTzR6bE9RVDRaZFdGV19HcmU0?oc=5\" target=\"_blank\"&gt;Firefighters battle blazes in southern France after European heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-02T06:57:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU to provide 200 million euros to boost South Caucasus connectivity, von der Leyen says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQVRYaVZrcGdfRW1nTlNVamJOeW1LbnlWcE9KbkFuM1JDZmZ5WU1ORFBLWXltWGxhUVZKRFpUVjBUamxjcUFzaUZrcGFwbVZFeGpSX2gwWU9NNEJGN3VMZkpyU0hNOTVfLXZfV0JnRUpoQ2x2SWVMN1czblJFQWRHUC1SS05MNE1tQjh4cE0tb1oxN21rQ2V0enJwVUZSRzJZVjNCN0lEbmtkS04xcERoZFcwMGhsS09Lejg4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQVRYaVZrcGdfRW1nTlNVamJOeW1LbnlWcE9KbkFuM1JDZmZ5WU1ORFBLWXltWGxhUVZKRFpUVjBUamxjcUFzaUZrcGFwbVZFeGpSX2gwWU9NNEJGN3VMZkpyU0hNOTVfLXZfV0JnRUpoQ2x2SWVMN1czblJFQWRHUC1SS05MNE1tQjh4cE0tb1oxN21rQ2V0enJwVUZSRzJZVjNCN0lEbmtkS04xcERoZFcwMGhsS09Lejg4?oc=5\" target=\"_blank\"&gt;EU to provide 200 million euros to boost South Caucasus connectivity, von der Leyen says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-01T18:11:00.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 344,
-    "articlesLast24h": 80,
-    "afterDedup": 69,
+    "totalArticlesScanned": 435,
+    "articlesLast24h": 172,
+    "afterDedup": 163,
     "feedsQueried": 19
   }
 }
