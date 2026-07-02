@@ -10,17 +10,20 @@
  *     → { projects: [{ id, name, count }] }
  *       Workspaces that have a corpus, with display names from `pw_projects`.
  *
- *   GET ?projectId=<id>[&tier=policy|scientific|grey][&tag=<name|codeId>][&q=…]
- *     → { project, total, tiers, tags, items }
+ *   GET ?projectId=<id>[&tier=policy|scientific|grey][&tag=<name|codeId>]
+ *          [&chapter=<name>][&q=…]
+ *     → { project, total, tiers, tags, chapters, items }
  *       `items` is a flat array (policy → scientific → grey, then year desc)
  *       where each row carries a citable reference id:
  *         - workspace policy documents resolve to the `policy-*` entries the
  *           reference list now serves (see `@/lib/references/policy-entries`),
  *         - reference documents (`ref-doc-<refId>`) resolve back to their
  *           reference-manager id.
- *       `tags` aggregates the overall tags across the (unfiltered) corpus so
- *       the add-in can populate its tag-filter dropdown; `tagsText` on each
- *       item is pre-joined for the VBA JSON parser.
+ *       `tags` aggregates the thematic overall tags across the (unfiltered)
+ *       corpus, and `chapters` the report-chapter / sector classification, so
+ *       the add-in can populate its tag- and chapter-filter dropdowns.
+ *       `tagsText`, `chaptersText` and `summary` on each item are pre-joined /
+ *       trimmed for the VBA JSON parser.
  *
  * Output strings are VBA-sanitised like /api/references; CORS is open the
  * same way because Word's HTTP stack calls this cross-origin.
@@ -33,6 +36,7 @@ import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { findPolicyFlatRef, POLICY_REF_PREFIX } from '@/lib/references/policy-entries';
 import { getCaCorpus, getCaDocuments, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
 import { getMasterCode } from '@/lib/content-analysis/master-code-catalog';
+import { isChapterTagId, parseChapterTag } from '@/lib/content-analysis/chapter-tags';
 import { POLICY_TAG_ASSIGNMENTS } from '@/lib/content-analysis/policy-master-tags';
 import { listProjects } from '@/lib/project-workspace/db';
 import { getServerSupabase } from '@/lib/supabase-server';
@@ -137,6 +141,13 @@ interface WorkspaceItem {
   fullCitation: string;
   tags: string[];
   tagsText: string;
+  /** Chapter (report-chapter / sector) classification names, e.g. "Industry".
+   *  A separate dimension from the thematic `tags` so the add-in can filter by
+   *  chapter independently. */
+  chapters: string[];
+  chaptersText: string;
+  /** Whole-document summary authored in the project workspace (trimmed). */
+  summary: string;
 }
 
 /** Fallback display name for corpus project ids with no `pw_projects` row. */
@@ -204,6 +215,40 @@ async function loadOverallTags(documentIds: string[]): Promise<Map<string, strin
     // tags stay empty
   }
   return out;
+}
+
+/** Whole-document summaries for a set of documents, as documentId → text.
+ *  Best-effort: no Supabase / no table → no summaries. When a document has
+ *  been summarised under more than one project, the longest (most fleshed-out)
+ *  summary wins. */
+async function loadSummaries(documentIds: string[]): Promise<Map<string, string>> {
+  const out = new Map<string, string>();
+  if (documentIds.length === 0) return out;
+  const sb = getServerSupabase();
+  if (!sb) return out;
+  try {
+    const { data, error } = await sb
+      .from('content_analysis_summaries')
+      .select('document_id, text')
+      .in('document_id', documentIds);
+    if (error || !data) return out;
+    for (const row of data as Array<{ document_id: string; text: string }>) {
+      const text = (row.text || '').trim();
+      if (!text) continue;
+      const prev = out.get(row.document_id);
+      if (!prev || text.length > prev.length) out.set(row.document_id, text);
+    }
+  } catch {
+    // summaries stay empty
+  }
+  return out;
+}
+
+/** Collapse whitespace and cap length so a summary stays compact in the VBA
+ *  add-in's JSON payload and read-only preview box. */
+function trimSummary(text: string, max = 600): string {
+  const clean = (text || '').replace(/\s+/g, ' ').trim();
+  return clean.length > max ? `${clean.slice(0, max - 1).trimEnd()}…` : clean;
 }
 
 /** codeId → display name across the master taxonomy and the shared custom
@@ -319,6 +364,7 @@ function buildItem(
   refById: Map<string, FlatRefLike>,
   overallTags: Map<string, string[]>,
   resolveCodeName: (codeId: string) => string | null,
+  summaries: Map<string, string>,
 ): WorkspaceItem {
   const tier = tierOf(meta);
 
@@ -329,10 +375,27 @@ function buildItem(
     for (const a of POLICY_TAG_ASSIGNMENTS[documentId] ?? []) codeIds.add(a.codeId);
   }
   for (const id of meta.aiCodeIds ?? []) codeIds.add(id);
-  const tags = [...codeIds]
+
+  // Chapter (report-chapter / sector) tags are a self-describing, separate
+  // dimension (`chapter:<color>:<name>`) that the master/custom resolver does
+  // not know about — so they were previously dropped. Split them out and
+  // resolve their names directly, exposing them as their own facet.
+  const chapterNames = new Set<string>();
+  const thematicIds: string[] = [];
+  for (const id of codeIds) {
+    if (isChapterTagId(id)) {
+      const c = parseChapterTag(id);
+      if (c) chapterNames.add(c.name);
+    } else {
+      thematicIds.push(id);
+    }
+  }
+  const tags = thematicIds
     .map(resolveCodeName)
     .filter((n): n is string => !!n)
     .sort((a, b) => a.localeCompare(b));
+  const chapters = [...chapterNames].sort((a, b) => a.localeCompare(b));
+  const summary = trimSummary(summaries.get(documentId) ?? '');
 
   let citeId: string;
   let authors = meta.referenceAuthors || '';
@@ -400,6 +463,9 @@ function buildItem(
     fullCitation: sanitize(fullCitation),
     tags: tags.map(sanitize),
     tagsText: sanitize(tags.join('; ')),
+    chapters: chapters.map(sanitize),
+    chaptersText: sanitize(chapters.join('; ')),
+    summary: sanitize(summary),
   };
 }
 
@@ -407,7 +473,7 @@ function buildItem(
 function matchesQuery(item: WorkspaceItem, tokens: string[]): boolean {
   if (tokens.length === 0) return true;
   const haystack = normalize(
-    [item.title, item.authors, item.year, item.kindLabel, item.tags.join(' ')].join(' '),
+    [item.title, item.authors, item.year, item.kindLabel, item.tags.join(' '), item.chapters.join(' '), item.summary].join(' '),
   );
   return tokens.every(t => haystack.includes(t));
 }
@@ -418,6 +484,7 @@ export async function GET(request: NextRequest) {
   const projectId = params.get('projectId') || '';
   const tierFilter = params.get('tier') || '';
   const tagFilter = params.get('tag') || '';
+  const chapterFilter = params.get('chapter') || '';
   const query = params.get('q') || '';
   const limit = Math.min(parseInt(params.get('limit') || '500') || 500, 2000);
 
@@ -474,15 +541,16 @@ export async function GET(request: NextRequest) {
     .map(e => ({ documentId: e.documentId, meta: e.meta ?? synthesizeMeta(e.documentId, refById, caDocsById) }))
     .filter((e): e is { documentId: string; meta: CorpusDocMeta } => !!e.meta);
 
-  const [overallTags, resolveCodeName, wsProjects] = await Promise.all([
+  const [overallTags, summaries, resolveCodeName, wsProjects] = await Promise.all([
     loadOverallTags(entries.map(e => e.documentId)),
+    loadSummaries(entries.map(e => e.documentId)),
     buildCodeNameResolver(),
     loadWorkspaceProjects(),
   ]);
   const names = new Map(wsProjects.map(p => [p.id, p.name]));
 
   const allItems = entries.map(e =>
-    buildItem(e.meta, e.documentId, refById, overallTags, resolveCodeName),
+    buildItem(e.meta, e.documentId, refById, overallTags, resolveCodeName, summaries),
   );
   allItems.sort(
     (a, b) =>
@@ -500,6 +568,13 @@ export async function GET(request: NextRequest) {
   const tagsFacet = [...tagCounts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+  const chapterCounts = new Map<string, number>();
+  for (const item of allItems) {
+    for (const c of item.chapters) chapterCounts.set(c, (chapterCounts.get(c) ?? 0) + 1);
+  }
+  const chaptersFacet = [...chapterCounts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
   const tiersFacet = TIER_ORDER.map(tier => ({
     id: tier,
     label: TIER_LABELS[tier],
@@ -514,6 +589,10 @@ export async function GET(request: NextRequest) {
     const wanted = normalize(tagFilter);
     filtered = filtered.filter(i => i.tags.some(t => normalize(t) === wanted));
   }
+  if (chapterFilter) {
+    const wanted = normalize(chapterFilter);
+    filtered = filtered.filter(i => i.chapters.some(c => normalize(c) === wanted));
+  }
   const tokens = normalize(query).split(/[\s,;:()\[\]"']+/).filter(t => t && /[a-z0-9]/.test(t));
   filtered = filtered.filter(i => matchesQuery(i, tokens));
 
@@ -526,6 +605,7 @@ export async function GET(request: NextRequest) {
       total: filtered.length,
       tiers: tiersFacet,
       tags: tagsFacet,
+      chapters: chaptersFacet,
       items: filtered.slice(0, limit),
     },
     { headers: CORS_HEADERS },
