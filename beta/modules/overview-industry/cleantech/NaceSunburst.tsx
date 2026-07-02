@@ -41,6 +41,7 @@ import {
   BRANCH_COLORS,
   type Subsector,
 } from '../cleantech-catalogue';
+import { naceEmissionFor, NACE_EMISSIONS_BACKBONE } from '../nace-emissions-layer';
 
 /* ----------------------------------------------------------------- types */
 
@@ -57,6 +58,23 @@ type SunNode = d3.HierarchyRectangularNode<TreeDatum> & {
 };
 
 const ROOT_CODE = '__root';
+
+/** Compact source pill (org + year) linking out to the evidence. */
+function SrcLink({ source }: { source: { org: string; title: string; url: string; year?: string } }) {
+  const label = [source.org, source.year].filter(Boolean).join(', ');
+  return (
+    <a
+      href={source.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      title={`${source.title}${source.year ? ` (${source.year})` : ''} — ${source.url}`}
+      className="inline-flex items-center gap-0.5 align-baseline text-[10.5px] font-medium text-primary-light hover:text-primary hover:underline"
+    >
+      <span aria-hidden>↗</span>
+      <span>{label || 'source'}</span>
+    </a>
+  );
+}
 
 const LEVEL_LABEL: Record<NaceLevel | 'root', string> = {
   root: 'Classification',
@@ -424,6 +442,7 @@ export default function NaceSunburst({ onSelectSub }: { onSelectSub: (id: string
   const ancestors = selected ? naceAncestors(selected.code) : [];
   const kids = selected ? naceChildren(selected.code) : [];
   const mapped = selected ? subsForCode(selected.code) : { direct: [], inherited: [] };
+  const emission = selected ? naceEmissionFor(selected.code) : null;
 
   const q = query.trim().toLowerCase();
   const matches = useMemo(() => {
@@ -531,6 +550,73 @@ export default function NaceSunburst({ onSelectSub }: { onSelectSub: (id: string
               </a>
             </div>
 
+            {/* emissions & marginal-abatement layer — whole-wheel coverage */}
+            {emission ? (
+              <div className="rounded-lg border border-grey-200 bg-grey-50 p-2.5">
+                <div className="mb-1.5 flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+                    Emissions &amp; abatement
+                  </span>
+                  {emission.inherited ? (
+                    <span
+                      className="rounded-full bg-grey-200 px-1.5 py-0.5 text-[9px] font-medium text-grey-600"
+                      title={`No figure is split out for ${selected.code}; showing the value for the broader activity ${emission.sourceCode}.`}
+                    >
+                      via {emission.sourceCode}
+                    </span>
+                  ) : null}
+                </div>
+
+                {/* GHG */}
+                <div className="text-[13px] font-semibold leading-snug text-grey-900">
+                  {emission.data.ghg.value}
+                </div>
+                {emission.data.ghg.note ? (
+                  <p className="mt-0.5 text-[11px] leading-snug text-grey-600">{emission.data.ghg.note}</p>
+                ) : null}
+                <div className="mt-0.5">
+                  <SrcLink source={emission.data.ghg.source} />
+                </div>
+
+                {/* trend */}
+                {emission.data.trend ? (
+                  <div className="mt-1.5 flex flex-wrap items-baseline gap-x-1.5 text-[11px]">
+                    <span className="font-semibold text-tertiary">Trend</span>
+                    <span className="text-grey-800">{emission.data.trend.value}</span>
+                    <SrcLink source={emission.data.trend.source} />
+                  </div>
+                ) : null}
+
+                {/* marginal abatement cost */}
+                {emission.data.mac ? (
+                  <div className="mt-1.5 rounded-md border border-grey-200 bg-white p-2">
+                    <div className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+                      Marginal abatement cost
+                    </div>
+                    <div className="mt-0.5 text-[12px] font-medium text-grey-900">{emission.data.mac.value}</div>
+                    {emission.data.mac.note ? (
+                      <p className="mt-0.5 text-[11px] leading-snug text-grey-600">{emission.data.mac.note}</p>
+                    ) : null}
+                    <div className="mt-0.5">
+                      <SrcLink source={emission.data.mac.source} />
+                    </div>
+                  </div>
+                ) : null}
+
+                {/* levers */}
+                {emission.data.levers ? (
+                  <p className="mt-1.5 text-[11px] leading-snug text-grey-700">
+                    <span className="font-semibold text-tertiary">Levers · </span>
+                    {emission.data.levers}
+                  </p>
+                ) : null}
+
+                {emission.data.note ? (
+                  <p className="mt-1 text-[10.5px] italic leading-snug text-grey-500">{emission.data.note}</p>
+                ) : null}
+              </div>
+            ) : null}
+
             {/* mapped catalogue subsectors — the connection back to the tree */}
             {mapped.direct.length || mapped.inherited.length ? (
               <div className="rounded-lg bg-primary/5 p-2.5">
@@ -611,6 +697,12 @@ export default function NaceSunburst({ onSelectSub }: { onSelectSub: (id: string
               {NACE_21_COUNTS.groups} groups and {NACE_21_COUNTS.classes} classes. Click any arc to zoom in; click the
               centre to zoom back out. Arcs outlined in black host a clean-tech catalogue subsector — open it to jump
               back into the tree explorer above.
+            </p>
+            <p className="rounded-lg bg-grey-50 p-2.5 text-[11px] leading-relaxed text-grey-600">
+              Select any activity to see its <strong>EU-27 greenhouse-gas emissions</strong>, trend and — where a
+              sectoral estimate exists — its <strong>marginal abatement cost</strong>. Emissions are anchored to{' '}
+              <SrcLink source={NACE_EMISSIONS_BACKBONE} />; finer activities inherit the figure of the broadest grouping
+              for which official data are split out.
             </p>
             <ul className="space-y-1">
               {naceChildren(undefined).map(sec => (
