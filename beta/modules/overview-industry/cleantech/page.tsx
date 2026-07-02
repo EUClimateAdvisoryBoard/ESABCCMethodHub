@@ -33,6 +33,8 @@ import {
 import { Bar } from 'react-chartjs-2';
 import {
   CATALOGUE,
+  CROSS_CUTTING_ENABLERS,
+  MANUFACTURING_SECTION,
   OVERVIEW_FACTS,
   BRANCHES,
   BRANCH_COLORS,
@@ -54,6 +56,7 @@ import {
   NACE_21_SOURCE,
   naceAncestors,
   naceUri,
+  type NaceItem,
 } from '../nace-2-1';
 import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
 import NaceSunburst from './NaceSunburst';
@@ -214,6 +217,237 @@ function NaceChip({ code, accent }: { code: string; accent: string }) {
       </span>
       <span className="truncate text-grey-700">{item.label}</span>
     </a>
+  );
+}
+
+/** The NACE Rev. 2.1 item at a given level for a code (self, else nearest ancestor). */
+function naceAt(code: string, level: NaceItem['level']): NaceItem | undefined {
+  const self = NACE_21_INDEX[code];
+  return [self, ...naceAncestors(code)].find(n => n?.level === level);
+}
+
+/** Distinct NACE sections a subsector's codes fall under (usually one). */
+function naceSectionsOf(sub: Subsector): NaceItem[] {
+  const seen = new Map<string, NaceItem>();
+  sub.nace.forEach(c => {
+    const sec = naceAt(c, 'section');
+    if (sec) seen.set(sec.code, sec);
+  });
+  return [...seen.values()];
+}
+
+/* ------------------------------------------------ NACE Section C scope card */
+
+/**
+ * The scope illustration: states that every subsector shown is a NACE Rev. 2.1
+ * Section C (Manufacturing) activity, and breaks the catalogue down by the
+ * Section C divisions it covers — with the official Eurostat source. This is
+ * the piece that "illustrates" the manufacturing boundary.
+ */
+function ManufacturingScope({ onSelectSub }: { onSelectSub: (id: string) => void }) {
+  const divisions = MANUFACTURING_SECTION.divisionsCovered.map(d => ({
+    ...d,
+    subs: CATALOGUE.filter(s => s.nace.some(c => naceAt(c, 'division')?.code === d.code)),
+  }));
+  return (
+    <section className="mb-6 rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
+      <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+        <h2 className="text-sm font-bold text-grey-900">
+          Scope — NACE Rev. 2.1 Section&nbsp;C “Manufacturing” (divisions {MANUFACTURING_SECTION.divisionRange})
+        </h2>
+        <span className="flex flex-wrap items-center gap-x-3 text-xs text-grey-500">
+          <SourceLink source={MANUFACTURING_SECTION.source} />
+          <SourceLink source={MANUFACTURING_SECTION.regulation} />
+        </span>
+      </div>
+      <p className="mb-3 max-w-text text-sm text-grey-600">
+        This explorer deliberately shows <strong>only</strong> subsectors that Eurostat classifies under NACE Rev. 2.1{' '}
+        <a
+          href={naceUri('C')}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-primary-light hover:text-primary hover:underline"
+        >
+          Section&nbsp;C — Manufacturing
+        </a>{' '}
+        (divisions {MANUFACTURING_SECTION.divisionRange}). Each of the {CATALOGUE.length} subsectors maps into one of the
+        eight manufacturing divisions below. Decarbonisation levers that are <em>not</em> manufacturing activities —
+        electricity, gas &amp; steam supply (Section&nbsp;D), waste recovery &amp; permanent CO₂ storage (Section&nbsp;E)
+        and pipeline transport (Section&nbsp;H) — are held out of the subsector tree and shown separately as{' '}
+        <a href="#cross-cutting-enablers" className="font-semibold text-primary-light hover:text-primary hover:underline">
+          cross-cutting enablers
+        </a>{' '}
+        further down.
+      </p>
+      <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+        {divisions.map(d => (
+          <div key={d.code} className="rounded-lg border border-grey-200 bg-grey-50 p-2.5">
+            <a
+              href={naceUri(d.code)}
+              target="_blank"
+              rel="noopener noreferrer"
+              title={`NACE Rev. 2.1 division ${d.code} — ${d.label}`}
+              className="flex items-baseline gap-1.5 hover:underline"
+            >
+              <span className="font-mono text-sm font-bold text-primary">{d.code}</span>
+              <span className="text-[12px] font-medium leading-tight text-grey-700">{d.label}</span>
+            </a>
+            <div className="mt-1.5 flex flex-wrap gap-1">
+              {d.subs.map(s => (
+                <button
+                  key={s.id}
+                  type="button"
+                  onClick={() => onSelectSub(s.id)}
+                  title={`Open ${s.name} in the tree explorer`}
+                  className="rounded-full px-2 py-0.5 text-[11px] font-semibold text-white hover:brightness-110"
+                  style={{ background: BRANCH_COLORS[s.branch] }}
+                >
+                  {s.name} →
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* --------------------------------------------- cross-cutting enablers (non-C) */
+
+/** One enabling technology rendered inline (self-contained, no explorer wiring). */
+function EnablerTech({ tech }: { tech: Technology }) {
+  const m = TECH_METRICS[tech.id];
+  return (
+    <div className="rounded-lg border border-grey-200 bg-grey-50 p-3">
+      <div className="text-sm font-semibold text-grey-900">{tech.name}</div>
+      <p className="mt-0.5 text-xs text-grey-600">{tech.description}</p>
+      <div className="mt-2 grid gap-2 sm:grid-cols-2">
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Technology readiness</div>
+          {m ? <div className="mt-0.5"><TrlScale low={m.trlLow} high={m.trlHigh} /></div> : null}
+          {tech.trl ? (
+            <div className="mt-0.5 flex flex-wrap items-baseline gap-x-2 text-[11px] text-grey-600">
+              <span>{tech.trl.value}</span>
+              <SourceLink source={tech.trl.source} />
+            </div>
+          ) : null}
+        </div>
+        <div>
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Marginal abatement cost</div>
+          {m?.macLowEur != null && m.macHighEur != null ? (
+            <div className="mt-0.5 text-[12px] font-semibold text-grey-900">
+              €{m.macLowEur}–{m.macHighEur}/tCO₂
+              {m.costNote ? <span className="ml-1 text-[11px] font-normal text-grey-500">({m.costNote})</span> : null}
+            </div>
+          ) : tech.mac ? (
+            <div className="mt-0.5 text-[12px] text-grey-900">{tech.mac.value}</div>
+          ) : (
+            <div className="mt-0.5 text-[11px] text-grey-400">Not quantified — see rationale.</div>
+          )}
+          <div className="mt-0.5 flex flex-wrap gap-x-2">
+            {m?.macSource ? <SourceLink source={m.macSource} /> : null}
+            {tech.mac && tech.mac.source.url !== m?.macSource?.url ? <SourceLink source={tech.mac.source} /> : null}
+          </div>
+        </div>
+      </div>
+      {tech.availability ? (
+        <div className="mt-2 text-[11px] text-grey-600">
+          <span className="font-semibold text-tertiary">Availability: </span>
+          {tech.availability.value} <SourceLink source={tech.availability.source} />
+        </div>
+      ) : null}
+      {tech.projects.length ? (
+        <div className="mt-2 grid gap-2 sm:grid-cols-2">
+          {tech.projects.map((p, i) => (
+            <ProjectRow key={i} project={p} />
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * The enablers that are NOT NACE Section C manufacturing activities, rendered
+ * as a clearly-separated appendix (so "only manufacturing subsectors" holds in
+ * the explorer) that still surfaces the sourced project pipeline behind them.
+ */
+function CrossCuttingEnablers() {
+  return (
+    <section id="cross-cutting-enablers" className="mt-10 scroll-mt-4">
+      <h2 className="mb-2 text-lg font-bold text-grey-900">
+        Cross-cutting enablers — outside NACE Section&nbsp;C (Manufacturing)
+      </h2>
+      <p className="mb-4 max-w-text text-sm text-grey-600">
+        These four levers cut across every manufacturing subsector above, but NACE does not classify them as
+        manufacturing (Section&nbsp;C) — they belong to <strong>electricity, gas &amp; steam supply</strong>{' '}
+        (Section&nbsp;D), <strong>waste recovery &amp; permanent CO₂ storage</strong> (Section&nbsp;E) and{' '}
+        <strong>pipeline transport</strong> (Section&nbsp;H). They are therefore kept out of the subsector tree and
+        listed here, with their NACE codes and the real sourced project pipeline, because manufacturing's deep
+        decarbonisation depends on them.
+      </p>
+      <div className="grid gap-4 lg:grid-cols-2">
+        {CROSS_CUTTING_ENABLERS.map(en => {
+          const accent = BRANCH_COLORS[en.branch];
+          const sections = naceSectionsOf(en);
+          return (
+            <div key={en.id} className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
+              <div className="mb-1 flex flex-wrap items-center gap-2">
+                <span
+                  className="rounded-full px-2 py-0.5 text-[10px] font-semibold text-white"
+                  style={{ background: accent }}
+                >
+                  Enabler · outside Section C
+                </span>
+                {sections.map(sec => (
+                  <a
+                    key={sec.code}
+                    href={naceUri(sec.code)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={`NACE Rev. 2.1 Section ${sec.code} — ${sec.label}`}
+                    className="rounded-full border border-grey-300 bg-grey-50 px-2 py-0.5 font-mono text-[10px] font-semibold text-tertiary hover:border-primary hover:text-primary"
+                  >
+                    Section {sec.code}
+                  </a>
+                ))}
+              </div>
+              <h3 className="text-base font-bold text-grey-900">{en.name}</h3>
+              <p className="mt-1 text-sm text-grey-700">{en.summary}</p>
+
+              <div className="mt-3 rounded-lg bg-grey-50 p-3">
+                <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+                  <span className="text-[11px] font-semibold uppercase tracking-wide text-tertiary">
+                    NACE Rev. 2.1 classification (non-manufacturing)
+                  </span>
+                  <SourceLink source={NACE_21_SOURCE} />
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {en.nace.map(c => (
+                    <NaceChip key={c} code={c} accent={accent} />
+                  ))}
+                </div>
+                {en.naceNote ? <p className="mt-1.5 text-[11px] text-grey-500">{en.naceNote}</p> : null}
+              </div>
+
+              {en.technologies.length ? (
+                <div className="mt-3">
+                  <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-tertiary">
+                    Enabling technologies ({en.technologies.length}) — readiness, cost &amp; project pipeline
+                  </div>
+                  <div className="grid gap-2">
+                    {en.technologies.map(t => (
+                      <EnablerTech key={t.id} tech={t} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    </section>
   );
 }
 
@@ -1021,7 +1255,10 @@ export default function CleanTechPage() {
               Beta
             </span>
             <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
-              Catalogue v0.6
+              Catalogue v0.7
+            </span>
+            <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+              NACE C · Manufacturing
             </span>
           </div>
           <h1 className="mt-2 text-3xl font-bold text-grey-900">
@@ -1035,11 +1272,16 @@ export default function CleanTechPage() {
             Every data point carries a source link — nothing is invented. MAC/TRL bands are shown as reported by the
             cited studies, not as settled single numbers. Emission, cost and project figures were independently
             fact-checked against their sources; where a source only partly supported a claim, the figure was corrected
-            or flagged. Every subsector is classified under the official NACE Rev. 2.1 statistical classification
-            (Eurostat / EU Publications Office) — the complete classification is explorable as a single zoomable wheel
-            at the bottom of the page.
+            or flagged. The explorer is scoped to <strong>NACE Rev. 2.1 Section&nbsp;C “Manufacturing”</strong>{' '}
+            (divisions {MANUFACTURING_SECTION.divisionRange}): every subsector is a manufacturing activity under the
+            official Eurostat classification, and the enablers that fall outside manufacturing (electricity &amp; steam
+            supply, CO₂ transport &amp; storage, hydrogen supply, waste recovery) are listed separately as cross-cutting
+            enablers. The complete classification is explorable as a single zoomable wheel at the bottom of the page.
           </p>
         </header>
+
+        {/* ── MANUFACTURING SCOPE (NACE Section C) ─────────────────────────── */}
+        <ManufacturingScope onSelectSub={selectSubScroll} />
 
         {/* ── EMISSIONS MAP (overview treemap) ────────────────────────────── */}
         <section className="mb-6 rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
@@ -1201,6 +1443,9 @@ export default function CleanTechPage() {
           </div>
         </section>
 
+        {/* ── CROSS-CUTTING ENABLERS (outside NACE Section C) ─────────────── */}
+        <CrossCuttingEnablers />
+
         {/* ── NACE 2.1 CLASSIFICATION (one connected radial figure) ───────── */}
         <section className="mt-10 rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
           <div className="mb-2 flex flex-wrap items-baseline justify-between gap-2">
@@ -1274,10 +1519,11 @@ export default function CleanTechPage() {
         </section>
 
         <p className="mt-10 text-xs text-grey-400">
-          Catalogue v0.6 — interactive, fully-sourced, NACE Rev. 2.1-classified. Trade flows is the sibling subpage
-          (details to follow). Contributions extend{' '}
-          <code>cleantech-catalogue.ts</code> (NACE data in <code>nace-2-1.ts</code>); every new data point must carry
-          a real source link.
+          Catalogue v0.7 — interactive, fully-sourced, scoped to NACE Rev. 2.1 Section&nbsp;C (Manufacturing,
+          divisions {MANUFACTURING_SECTION.divisionRange}). Trade flows is the sibling subpage (details to follow).
+          Contributions extend <code>cleantech-catalogue.ts</code> — manufacturing subsectors in{' '}
+          <code>CATALOGUE</code>, non-manufacturing levers in <code>CROSS_CUTTING_ENABLERS</code> (NACE data in{' '}
+          <code>nace-2-1.ts</code>); every new data point must carry a real source link.
         </p>
       </main>
 
