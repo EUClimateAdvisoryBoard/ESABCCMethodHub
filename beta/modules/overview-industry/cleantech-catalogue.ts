@@ -1731,6 +1731,140 @@ export const EMISSIONS_SPLIT_SOURCE: Source = {
 };
 
 /**
+ * EU industry EMISSIONS MAP — one block per subsector (or group of subsectors
+ * that public data cannot split), sized by the best available sourced Mt CO₂
+ * figure, for the proportional overview treemap. Blocks flagged `etsBasis`
+ * are on the EU ETS 2023 stationary-industry basis (569 Mt total) and get a
+ * "% of EU ETS industry" share; the rest carry their own scope label
+ * (sector-association or inventory figures, shown for scale with a caveat).
+ * Every block cites the source its Mt figure came from — nothing is invented.
+ */
+export interface EmissionsMapBlock {
+  /** Subsector ids covered by this block; the first is primary (image, click target). */
+  subsectorIds: string[];
+  label: string;
+  branch: (typeof BRANCHES)[number];
+  /** Best available sourced emissions figure, Mt CO₂(e)/yr. */
+  mt: number;
+  /** Scope of the Mt figure, shown as a badge, e.g. "EU ETS 2023". */
+  scope: string;
+  /** True when the figure is on the EU ETS 2023 industry basis (569 Mt total). */
+  etsBasis: boolean;
+  note?: string;
+  source: Source;
+}
+
+export const EMISSIONS_MAP: EmissionsMapBlock[] = [
+  {
+    subsectorIds: ['steel'],
+    label: 'Iron & steel',
+    branch: 'Metals',
+    mt: 96,
+    scope: 'EU ETS 2023',
+    etsBasis: true,
+    note: 'EUTL "pig iron or steel" activity; ~145 Mt on a value-chain basis incl. coke ovens & captive power',
+    source: S.sandbag2023,
+  },
+  {
+    subsectorIds: ['aluminium'],
+    label: 'Aluminium',
+    branch: 'Metals',
+    mt: 2.75,
+    scope: 'direct CO₂, 2022',
+    etsBasis: false,
+    note: 'direct (anode) process CO₂ only — the far larger power-related emissions (sector ≈24 Mt CO₂e incl. indirect) are not shown',
+    source: { org: 'JRC (European Commission)', title: 'Aluminium factsheet (JRC144120)', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf', year: '2026' },
+  },
+  {
+    subsectorIds: ['cement', 'lime'],
+    label: 'Cement & lime',
+    branch: 'Non-metallic minerals',
+    mt: 124,
+    scope: 'EU ETS 2023',
+    etsBasis: true,
+    note: 'EUTL "cement clinker or lime" activity — lime is not split out as a standalone EUTL activity, so this block covers both subsectors',
+    source: S.sandbag2023,
+  },
+  {
+    subsectorIds: ['glass'],
+    label: 'Glass',
+    branch: 'Non-metallic minerals',
+    mt: 22,
+    scope: 'direct CO₂',
+    etsBasis: false,
+    note: 'melting-furnace combustion plus process CO₂ from carbonate raw materials',
+    source: { org: 'European Commission (CINEA)', title: 'How LIFE is reducing emissions from glass production', url: 'https://cinea.ec.europa.eu/news-events/news/how-life-reducing-emissions-glass-production-2022-03-16_en', year: '2022' },
+  },
+  {
+    subsectorIds: ['ceramics'],
+    label: 'Ceramics',
+    branch: 'Non-metallic minerals',
+    mt: 19,
+    scope: 'sector, direct + indirect',
+    etsBasis: false,
+    note: '~64% combustion, ~19% indirect electricity, ~17% process CO₂',
+    source: { org: 'Cerame-Unie', title: 'Ceramic industry position on the EU ETS review', url: 'https://cerameunie.eu/topics/climate-energy/emissions-trading-system/ceramic-industry-position-the-eu-ets-review/', year: '2023' },
+  },
+  {
+    subsectorIds: ['refining'],
+    label: 'Petroleum refining',
+    branch: 'Chemicals & refining',
+    mt: 105,
+    scope: 'EU ETS 2023',
+    etsBasis: true,
+    note: 'EUTL "refining of mineral oil"; combustion-dominated',
+    source: S.sandbag2023,
+  },
+  {
+    subsectorIds: ['hvc', 'ammonia', 'chloralkali', 'methanol'],
+    label: 'Chemicals (HVC, ammonia, chlor-alkali, methanol)',
+    branch: 'Chemicals & refining',
+    mt: 98,
+    scope: 'EU ETS 2023 (derived)',
+    etsBasis: true,
+    note: 'derived: refining + chemicals ≈ 203 Mt (36% of EU ETS industry, 2023) minus 105 Mt refining; chemicals are not a single EUTL activity',
+    source: S.sandbagChem,
+  },
+  {
+    subsectorIds: ['pulppaper'],
+    label: 'Pulp & paper',
+    branch: 'Other manufacturing',
+    mt: 27,
+    scope: 'sector direct fossil CO₂, 2022',
+    etsBasis: false,
+    note: 'predominantly energy/combustion; down ~50% since 2005 (large biogenic share excluded)',
+    source: { org: 'CEPI', title: 'Key Statistics 2022 — European pulp & paper industry', url: 'https://www.cepi.org/wp-content/uploads/2023/07/2022-Key-Statistics-FINAL.pdf', year: '2022' },
+  },
+  {
+    subsectorIds: ['fooddrink'],
+    label: 'Food, beverages & tobacco',
+    branch: 'Other manufacturing',
+    mt: 94,
+    scope: 'sector CO₂e (incl. non-ETS sites)',
+    etsBasis: false,
+    note: '~5th-largest EU industrial emitter; many small sites fall outside the EU ETS, so this is a sector-wide figure, not an ETS one',
+    source: { org: 'FoodDrinkEurope (Ricardo roadmap)', title: 'Our climate journey: the road to net-zero', url: 'https://www.fooddrinkeurope.eu/our-climate-journey-the-road-to-net-zero/', year: '2021' },
+  },
+];
+
+/**
+ * Subsectors that cannot be sized in the map from public data, listed as
+ * chips under the treemap instead of being drawn with an invented number.
+ */
+export const EMISSIONS_MAP_UNSIZED: { subsectorId: string; label: string; reason: string }[] = [
+  {
+    subsectorId: 'nonferrous',
+    label: 'Other non-ferrous metals',
+    reason: 'no isolable copper/zinc/nickel-only EU figure — public data reports the non-ferrous sector incl. aluminium (≈52 Mt CO₂e, 2015, incl. indirect)',
+  },
+  {
+    subsectorId: 'x-heat',
+    label: 'Cross-cutting levers',
+    reason: 'electrification of heat, CCS networks, hydrogen and circularity act across all the blocks above — they have no emission baseline of their own',
+  },
+];
+
+/**
  * Indicative SECTOR-LEVEL marginal-abatement-cost curve (MACC): one block per
  * subsector, WIDTH = 2050 abatement potential (~near-full decarbonisation of the
  * sector baseline, Mt CO2/yr), HEIGHT = representative EUR/tCO2 cost of the

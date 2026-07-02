@@ -15,7 +15,7 @@
  * `../cleantech-catalogue.ts` for the data and its sourcing rule.
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
@@ -28,7 +28,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 import {
   CATALOGUE,
   OVERVIEW_FACTS,
@@ -36,10 +36,12 @@ import {
   BRANCH_COLORS,
   TECH_METRICS,
   SUBSECTOR_IMAGES,
-  EMISSIONS_SPLIT,
+  EMISSIONS_MAP,
+  EMISSIONS_MAP_UNSIZED,
   EMISSIONS_SPLIT_TOTAL_MT,
   EMISSIONS_SPLIT_SOURCE,
   SECTOR_MACC,
+  type EmissionsMapBlock,
   type Source,
   type Sourced,
   type Project,
@@ -532,6 +534,373 @@ function MaccChart({ onSelect }: { onSelect: (id: string) => void }) {
   );
 }
 
+/* ------------------------------------------------------ emissions treemap */
+
+interface TmRect {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
+
+/** Virtual coordinate space of the treemap (2:1, matches the rendered aspect). */
+const TM_W = 160;
+const TM_H = 80;
+
+/**
+ * Squarified treemap layout (Bruls, Huizing & van Wijk). `values` must be
+ * sorted descending; returns one rect per value, in the same order.
+ */
+function squarify(values: number[], x: number, y: number, w: number, h: number): TmRect[] {
+  const total = values.reduce((a, b) => a + b, 0);
+  const rects: TmRect[] = new Array(values.length);
+  if (!total || !values.length || w <= 0 || h <= 0) return rects;
+  const areas = values.map(v => (v / total) * w * h);
+  const worst = (row: number[], side: number) => {
+    const sum = row.reduce((a, b) => a + b, 0);
+    return Math.max(
+      (side * side * Math.max(...row)) / (sum * sum),
+      (sum * sum) / (side * side * Math.min(...row)),
+    );
+  };
+  let i = 0;
+  let cx = x,
+    cy = y,
+    cw = w,
+    ch = h;
+  while (i < areas.length) {
+    const side = Math.min(cw, ch);
+    const row = [areas[i]];
+    let j = i + 1;
+    while (j < areas.length && worst([...row, areas[j]], side) <= worst(row, side)) {
+      row.push(areas[j]);
+      j++;
+    }
+    const thickness = row.reduce((a, b) => a + b, 0) / side;
+    let offset = 0;
+    for (let k = i; k < j; k++) {
+      const len = areas[k] / thickness;
+      rects[k] =
+        cw >= ch
+          ? { x: cx, y: cy + offset, w: thickness, h: len }
+          : { x: cx + offset, y: cy, w: len, h: thickness };
+      offset += len;
+    }
+    if (cw >= ch) {
+      cx += thickness;
+      cw -= thickness;
+    } else {
+      cy += thickness;
+      ch -= thickness;
+    }
+    i = j;
+  }
+  return rects;
+}
+
+const pctX = (v: number) => `${(v / TM_W) * 100}%`;
+const pctY = (v: number) => `${(v / TM_H) * 100}%`;
+
+function blockTitle(b: EmissionsMapBlock): string {
+  const share = b.etsBasis
+    ? ` · ≈${Math.round((b.mt / EMISSIONS_SPLIT_TOTAL_MT) * 100)}% of EU ETS industry (${EMISSIONS_SPLIT_TOTAL_MT} Mt)`
+    : '';
+  return `${b.label} — ≈${b.mt} Mt CO₂ (${b.scope})${share}${b.note ? ` — ${b.note}` : ''}`;
+}
+
+/** One subsector tile of the emissions map. */
+function TreemapTile({
+  block,
+  rect,
+  onSelectSub,
+}: {
+  block: EmissionsMapBlock;
+  rect: TmRect;
+  onSelectSub: (id: string) => void;
+}) {
+  const accent = BRANCH_COLORS[block.branch];
+  const [imgBroken, setImgBroken] = useState(false);
+  const area = rect.w * rect.h; // of TM_W × TM_H = 12 800
+  const img = imgBroken ? undefined : SUBSECTOR_IMAGES[block.subsectorIds[0]];
+  const share = block.etsBasis ? Math.round((block.mt / EMISSIONS_SPLIT_TOTAL_MT) * 100) : null;
+  const size: 'lg' | 'md' | 'sm' | 'dot' = area >= 800 ? 'lg' : area >= 250 ? 'md' : area >= 60 ? 'sm' : 'dot';
+
+  return (
+    <div
+      role="button"
+      tabIndex={0}
+      title={blockTitle(block)}
+      onClick={() => onSelectSub(block.subsectorIds[0])}
+      onKeyDown={e => {
+        if (e.key === 'Enter' || e.key === ' ') onSelectSub(block.subsectorIds[0]);
+      }}
+      className="group absolute cursor-pointer overflow-hidden rounded-[3px] outline-offset-[-2px] transition-[filter] hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+      style={{
+        left: pctX(rect.x),
+        top: pctY(rect.y),
+        width: pctX(rect.w),
+        height: pctY(rect.h),
+        background: accent,
+      }}
+    >
+      {img && size !== 'dot' && size !== 'sm' ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={commonsImg(img)}
+          alt=""
+          loading="lazy"
+          onError={() => setImgBroken(true)}
+          className="absolute inset-0 h-full w-full object-cover opacity-70 transition-transform duration-300 group-hover:scale-105"
+        />
+      ) : null}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            size === 'dot' || size === 'sm'
+              ? `${accent}D9`
+              : `linear-gradient(to top, rgba(10,18,28,0.85) 0%, rgba(10,18,28,0.45) 45%, rgba(10,18,28,0.15) 100%)`,
+        }}
+      />
+      <div className="absolute inset-x-0 top-0 h-1" style={{ background: accent }} />
+
+      {size !== 'dot' ? (
+        <div className="absolute inset-0 flex flex-col justify-end p-1.5 sm:p-2">
+          <div
+            className={`font-bold leading-tight text-white drop-shadow ${
+              size === 'lg' ? 'text-sm sm:text-base' : size === 'md' ? 'text-[11px] sm:text-xs' : 'text-[9px]'
+            }`}
+          >
+            {block.label}
+          </div>
+          <div
+            className={`flex flex-wrap items-baseline gap-x-1.5 text-white/90 ${
+              size === 'sm' ? 'text-[8px]' : 'text-[10px] sm:text-[11px]'
+            }`}
+          >
+            <span className="font-extrabold">≈{block.mt} Mt</span>
+            {share != null ? <span className="font-semibold">· {share}% of EU ETS industry</span> : null}
+          </div>
+          {size === 'lg' ? (
+            <div className="mt-1 flex flex-wrap items-center gap-1">
+              <span
+                className={`rounded-full px-1.5 py-px text-[8px] font-semibold uppercase tracking-wide ${
+                  block.etsBasis ? 'bg-white/25 text-white' : 'bg-amber-300/90 text-amber-950'
+                }`}
+              >
+                {block.scope}
+              </span>
+              <a
+                href={block.source.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={e => e.stopPropagation()}
+                title={`${block.source.title} — ${block.source.url}`}
+                className="rounded-full bg-black/30 px-1.5 py-px text-[8px] font-medium text-white/90 hover:bg-black/50 hover:underline"
+              >
+                ↗ {block.source.org}
+              </a>
+            </div>
+          ) : null}
+          {size === 'lg' && block.subsectorIds.length > 1 ? (
+            <div className="mt-1 hidden flex-wrap gap-1 sm:flex">
+              {block.subsectorIds.map(id => {
+                const s = CATALOGUE.find(x => x.id === id);
+                if (!s) return null;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    onClick={e => {
+                      e.stopPropagation();
+                      onSelectSub(id);
+                    }}
+                    className="rounded bg-white/15 px-1.5 py-px text-[8px] font-medium text-white hover:bg-white/30"
+                  >
+                    {s.name} →
+                  </button>
+                );
+              })}
+            </div>
+          ) : null}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
+/**
+ * The overview figure: a collapsible, photo-illustrated treemap of EU industry
+ * emissions. Tile area = sourced Mt CO₂; branches collapse to a single block.
+ */
+function EmissionsTreemap({ onSelectSub }: { onSelectSub: (id: string) => void }) {
+  const [collapsed, setCollapsed] = useState<Set<string>>(new Set());
+
+  const branchGroups = useMemo(
+    () =>
+      BRANCHES.map(branch => {
+        const blocks = EMISSIONS_MAP.filter(b => b.branch === branch).sort((a, b) => b.mt - a.mt);
+        return { branch, blocks, total: blocks.reduce((n, b) => n + b.mt, 0) };
+      })
+        .filter(g => g.blocks.length > 0)
+        .sort((a, b) => b.total - a.total),
+    [],
+  );
+
+  const layout = useMemo(() => {
+    const rects = squarify(
+      branchGroups.map(g => g.total),
+      0,
+      0,
+      TM_W,
+      TM_H,
+    );
+    const PAD = 0.7;
+    const HEAD = 5.4;
+    return branchGroups.map((g, i) => {
+      const rect = rects[i];
+      const isCollapsed = collapsed.has(g.branch);
+      const children = isCollapsed
+        ? []
+        : squarify(
+            g.blocks.map(b => b.mt),
+            rect.x + PAD,
+            rect.y + HEAD,
+            Math.max(rect.w - 2 * PAD, 0.1),
+            Math.max(rect.h - HEAD - PAD, 0.1),
+          );
+      return { ...g, rect, isCollapsed, children };
+    });
+  }, [branchGroups, collapsed]);
+
+  const toggleBranch = (branch: string) =>
+    setCollapsed(prev => {
+      const next = new Set(prev);
+      next.has(branch) ? next.delete(branch) : next.add(branch);
+      return next;
+    });
+
+  const totalDrawn = Math.round(branchGroups.reduce((n, g) => n + g.total, 0));
+
+  return (
+    <div>
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
+        <p className="text-xs text-grey-500">
+          Tile area = sourced Mt CO₂ (≈{totalDrawn} Mt drawn). Blue badges are EU ETS 2023 figures with their share of
+          the {EMISSIONS_SPLIT_TOTAL_MT} Mt ETS-industry total; amber badges are sector-scope figures shown for scale.
+          Click a branch header to collapse it; click a tile to open the subsector.
+        </p>
+        <div className="flex gap-1">
+          <button
+            type="button"
+            onClick={() => setCollapsed(new Set())}
+            className="rounded border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-medium text-tertiary hover:bg-grey-100"
+          >
+            Expand all
+          </button>
+          <button
+            type="button"
+            onClick={() => setCollapsed(new Set(branchGroups.map(g => g.branch)))}
+            className="rounded border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-medium text-tertiary hover:bg-grey-100"
+          >
+            Collapse all
+          </button>
+        </div>
+      </div>
+
+      <div className="relative w-full overflow-hidden rounded-lg bg-grey-900 aspect-[4/3] sm:aspect-[2/1]">
+        {layout.map(g => (
+          <div key={g.branch}>
+            {/* branch container */}
+            <div
+              className="absolute rounded-[4px]"
+              style={{
+                left: pctX(g.rect.x),
+                top: pctY(g.rect.y),
+                width: pctX(g.rect.w),
+                height: pctY(g.rect.h),
+                background: g.isCollapsed ? BRANCH_COLORS[g.branch] : `${BRANCH_COLORS[g.branch]}26`,
+                boxShadow: `inset 0 0 0 1.5px ${BRANCH_COLORS[g.branch]}`,
+              }}
+            />
+            {/* branch header / collapsed tile */}
+            {g.isCollapsed ? (
+              <button
+                type="button"
+                onClick={() => toggleBranch(g.branch)}
+                title={`${g.branch} — ≈${Math.round(g.total)} Mt CO₂ across ${g.blocks.length} block${g.blocks.length > 1 ? 's' : ''} · click to expand`}
+                className="absolute flex flex-col items-center justify-center gap-0.5 p-1 text-center hover:brightness-110"
+                style={{
+                  left: pctX(g.rect.x),
+                  top: pctY(g.rect.y),
+                  width: pctX(g.rect.w),
+                  height: pctY(g.rect.h),
+                }}
+              >
+                <span className="text-[11px] font-bold leading-tight text-white drop-shadow sm:text-sm">{g.branch}</span>
+                <span className="text-[10px] font-extrabold text-white/90">≈{Math.round(g.total)} Mt</span>
+                <span className="rounded-full bg-white/20 px-1.5 py-px text-[8px] font-semibold text-white">
+                  + expand {g.blocks.length} block{g.blocks.length > 1 ? 's' : ''}
+                </span>
+              </button>
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => toggleBranch(g.branch)}
+                  title={`Collapse ${g.branch}`}
+                  className="absolute flex items-center gap-1 overflow-hidden whitespace-nowrap px-1.5 text-left hover:brightness-125"
+                  style={{
+                    left: pctX(g.rect.x),
+                    top: pctY(g.rect.y),
+                    width: pctX(g.rect.w),
+                    height: pctY(5.4),
+                  }}
+                >
+                  <span
+                    className="flex h-3 w-3 flex-none items-center justify-center rounded-sm text-[9px] font-bold leading-none text-white"
+                    style={{ background: BRANCH_COLORS[g.branch] }}
+                  >
+                    −
+                  </span>
+                  <span className="truncate text-[9px] font-bold uppercase tracking-wide text-white/90 sm:text-[10px]">
+                    {g.branch}
+                  </span>
+                  <span className="text-[9px] font-semibold text-white/60">≈{Math.round(g.total)} Mt</span>
+                </button>
+                {g.blocks.map((b, i) =>
+                  g.children[i] ? (
+                    <TreemapTile key={b.label} block={b} rect={g.children[i]} onSelectSub={onSelectSub} />
+                  ) : null,
+                )}
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-2 flex flex-wrap items-center gap-1.5">
+        <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Not drawn to scale:</span>
+        {EMISSIONS_MAP_UNSIZED.map(u => (
+          <button
+            key={u.subsectorId}
+            type="button"
+            onClick={() => onSelectSub(u.subsectorId)}
+            title={u.reason}
+            className="rounded-full border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-medium text-tertiary hover:border-primary hover:text-primary"
+          >
+            {u.label} →
+          </button>
+        ))}
+        <p className="w-full text-[11px] text-grey-400 sm:ml-auto sm:w-auto sm:max-w-md sm:text-right">
+          Indicative: baselines mix EU ETS 2023 activity data with sector-association scopes and base years — hover a
+          tile for its exact scope, note and source.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 /* --------------------------------------------------------------- page */
 
 export default function CleanTechPage() {
@@ -605,16 +974,11 @@ export default function CleanTechPage() {
     ],
   };
 
-  const emissionsChart = {
-    labels: EMISSIONS_SPLIT.map(e => e.name),
-    datasets: [
-      {
-        data: EMISSIONS_SPLIT.map(e => e.mt),
-        backgroundColor: EMISSIONS_SPLIT.map(e => e.color),
-        borderWidth: 1,
-        borderColor: '#fff',
-      },
-    ],
+  const explorerRef = useRef<HTMLElement | null>(null);
+  const selectSubScroll = (id: string) => {
+    setBranchFilter('all');
+    selectSub(id);
+    explorerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
   return (
@@ -636,14 +1000,15 @@ export default function CleanTechPage() {
               Beta
             </span>
             <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
-              Catalogue v0.2
+              Catalogue v0.4
             </span>
           </div>
           <h1 className="mt-2 text-3xl font-bold text-grey-900">
             Clean Tech — the EU industrial decarbonisation explorer
           </h1>
           <p className="mt-2 max-w-text text-grey-700">
-            An interactive tree of the EU-27 industry emission profile → each energy-intensive subsector → every
+            Start from the emissions map below — every subsector drawn to scale by its sourced share of EU industry
+            emissions, collapsible by branch — then drill into the tree: each energy-intensive subsector → every
             mitigation technology → its marginal abatement cost, technology readiness, real project pipeline
             (including Final Investment Decisions) and the reasons costs are high, readiness lags and scale is hard.
             Every data point carries a source link — nothing is invented. MAC/TRL bands are shown as reported by the
@@ -653,77 +1018,53 @@ export default function CleanTechPage() {
           </p>
         </header>
 
-        {/* ── OVERVIEW CHARTS ─────────────────────────────────────────────── */}
-        <section className="mb-8 grid gap-4 lg:grid-cols-2">
-          <div className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
-            <div className="mb-1 flex items-baseline justify-between">
-              <h2 className="text-sm font-bold text-grey-900">EU industry emissions by activity</h2>
-              <span className="text-xs text-grey-500">EU ETS 2023 · {EMISSIONS_SPLIT_TOTAL_MT} Mt CO₂</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <div style={{ width: 200, height: 200 }}>
-                <Doughnut
-                  data={emissionsChart}
-                  options={{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    cutout: '58%',
-                  }}
-                />
-              </div>
-              <ul className="flex-1 space-y-1 text-xs">
-                {EMISSIONS_SPLIT.map(e => (
-                  <li key={e.name} className="flex items-center gap-2">
-                    <span className="inline-block h-3 w-3 rounded-sm" style={{ background: e.color }} />
-                    <span className="flex-1 text-grey-700">{e.name}</span>
-                    <span className="font-semibold text-grey-900">{e.mt} Mt</span>
-                    <span className="w-10 text-right text-grey-400">
-                      {Math.round((e.mt / EMISSIONS_SPLIT_TOTAL_MT) * 100)}%
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="mt-2">
-              <SourceLink source={EMISSIONS_SPLIT_SOURCE} />
-            </div>
+        {/* ── EMISSIONS MAP (overview treemap) ────────────────────────────── */}
+        <section className="mb-6 rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
+          <div className="mb-1 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-sm font-bold text-grey-900">
+              EU industry emissions map — who emits how much
+            </h2>
+            <span className="text-xs text-grey-500">
+              EU ETS industry 2023: {EMISSIONS_SPLIT_TOTAL_MT} Mt CO₂ <SourceLink source={EMISSIONS_SPLIT_SOURCE} />
+            </span>
           </div>
+          <EmissionsTreemap onSelectSub={selectSubScroll} />
+        </section>
 
-          <div className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
-            <h2 className="text-sm font-bold text-grey-900">Marginal abatement cost — all sectors</h2>
-            <p className="mb-1 text-xs text-grey-500">
-              Sourced €/tCO₂ ranges, sorted cheapest → costliest. Green = cost-negative (demand-side / circular). Click
-              a bar to open the technology.
-            </p>
-            <div style={{ height: Math.max(180, macLadder.length * 24) }}>
-              <Bar
-                data={macChart as never}
-                options={{
-                  indexAxis: 'y' as const,
-                  responsive: true,
-                  maintainAspectRatio: false,
-                  onClick: (_e, els) => {
-                    if (els.length) selectTech(macLadder[els[0].index].id);
-                  },
-                  plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                      callbacks: {
-                        label: ctx => {
-                          const r = macLadder[ctx.dataIndex];
-                          return `€${r.low}–${r.high}/tCO₂ · ${r.branch}`;
-                        },
+        {/* ── MAC LADDER ──────────────────────────────────────────────────── */}
+        <section className="mb-6 rounded-xl border border-grey-200 bg-white p-4 shadow-sm">
+          <h2 className="text-sm font-bold text-grey-900">Marginal abatement cost — all sectors</h2>
+          <p className="mb-1 text-xs text-grey-500">
+            Sourced €/tCO₂ ranges, sorted cheapest → costliest. Green = cost-negative (demand-side / circular). Click
+            a bar to open the technology.
+          </p>
+          <div style={{ height: Math.max(180, macLadder.length * 24) }}>
+            <Bar
+              data={macChart as never}
+              options={{
+                indexAxis: 'y' as const,
+                responsive: true,
+                maintainAspectRatio: false,
+                onClick: (_e, els) => {
+                  if (els.length) selectTech(macLadder[els[0].index].id);
+                },
+                plugins: {
+                  legend: { display: false },
+                  tooltip: {
+                    callbacks: {
+                      label: ctx => {
+                        const r = macLadder[ctx.dataIndex];
+                        return `€${r.low}–${r.high}/tCO₂ · ${r.branch}`;
                       },
                     },
                   },
-                  scales: {
-                    x: { title: { display: true, text: '€/tCO₂' }, grid: { color: '#EEE' } },
-                    y: { grid: { display: false }, ticks: { font: { size: 10 } } },
-                  },
-                }}
-              />
-            </div>
+                },
+                scales: {
+                  x: { title: { display: true, text: '€/tCO₂' }, grid: { color: '#EEE' } },
+                  y: { grid: { display: false }, ticks: { font: { size: 10 } } },
+                },
+              }}
+            />
           </div>
         </section>
 
@@ -793,7 +1134,7 @@ export default function CleanTechPage() {
         </section>
 
         {/* ── TREE EXPLORER ───────────────────────────────────────────────── */}
-        <section className="grid items-start gap-4 lg:grid-cols-[320px_1fr]">
+        <section ref={explorerRef} className="grid scroll-mt-4 items-start gap-4 lg:grid-cols-[320px_1fr]">
           {/* Tree */}
           <div className="rounded-xl border border-grey-200 bg-white p-3 shadow-sm lg:sticky lg:top-4 lg:max-h-[80vh] lg:overflow-auto">
             <div className="mb-2 flex items-center gap-2 rounded-md bg-primary/5 px-2 py-1.5">
@@ -891,7 +1232,7 @@ export default function CleanTechPage() {
         </section>
 
         <p className="mt-10 text-xs text-grey-400">
-          Catalogue v0.2 — interactive, fully-sourced. Photos via Wikimedia Commons (linked for licence/attribution).
+          Catalogue v0.4 — interactive, fully-sourced. Photos via Wikimedia Commons (linked for licence/attribution).
           Trade flows is the sibling subpage (details to follow). Contributions extend{' '}
           <code>cleantech-catalogue.ts</code>; every new data point must carry a real source link.
         </p>
