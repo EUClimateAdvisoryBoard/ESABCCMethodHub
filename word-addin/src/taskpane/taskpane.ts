@@ -7,6 +7,8 @@ import {
   searchReferences,
   getLibraries,
   syncLibrary,
+  getWorkspaceMeta,
+  parseChapterTag,
   RefSearchResult,
 } from '../services/api';
 import {
@@ -15,7 +17,9 @@ import {
   generateBibliography as genBib,
   refreshAllCitations as refreshAll,
   getAllCitations,
+  getCitationCounts,
   CitationData,
+  CitationCount,
 } from '../services/citation';
 
 import './taskpane.css';
@@ -26,6 +30,13 @@ let currentLibraryId = '';
 let currentStyleId = 'apa';
 let citationBasket: CitationData[] = [];
 let searchTimeout: ReturnType<typeof setTimeout> | null = null;
+// Latest search results (already enriched with workspace metadata), kept so the
+// chapter filter can re-render without re-querying.
+let currentResults: RefSearchResult[] = [];
+// Active chapter filter — '' means "all chapters".
+let chapterFilter = '';
+// How many times each reference is cited in the document, keyed by refId.
+let citationCounts = new Map<string, CitationCount>();
 
 // ── Initialize ──
 
@@ -68,6 +79,16 @@ async function initializeAddin(): Promise<void> {
     searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') handleSearch(searchInput.value);
     });
+
+    // Set up chapter filter
+    const chapterFilterEl = document.getElementById('chapterFilter') as HTMLSelectElement;
+    chapterFilterEl.addEventListener('change', () => {
+      chapterFilter = chapterFilterEl.value;
+      renderSearchResults(currentResults);
+    });
+
+    // Load how many times each paper is already cited in the document.
+    await refreshCitationCounts();
 
     // Check URL params for initial view
     const params = new URLSearchParams(window.location.search);
@@ -126,6 +147,8 @@ async function loadLibraries(): Promise<void> {
 async function handleSearch(query: string): Promise<void> {
   // No query → keep the prompt-to-search empty state.
   if (!query.trim()) {
+    currentResults = [];
+    updateChapterFilterOptions();
     showEmptyState();
     return;
   }
@@ -137,35 +160,117 @@ async function handleSearch(query: string): Promise<void> {
 
   try {
     const results = await searchReferences(query, currentLibraryId);
+
+    // Enrich each result with the project-workspace context — the whole-
+    // document summary, chapter classification and notes — so the author can
+    // see why a paper is in the library and filter by chapter before citing.
+    try {
+      const meta = await getWorkspaceMeta(results.map(r => r.id));
+      for (const ref of results) {
+        ref.summary = meta.summaries[ref.id] ?? ref.summary ?? null;
+        ref.chapters = meta.chapters[ref.id] ?? [];
+        if (!ref.notes && meta.notes[ref.id]) ref.notes = meta.notes[ref.id];
+      }
+    } catch {
+      // Enrichment is best-effort; the core search results still render.
+    }
+
+    currentResults = results;
+    updateChapterFilterOptions();
     renderSearchResults(results);
   } catch (err) {
+    currentResults = [];
+    updateChapterFilterOptions();
     refList.innerHTML = `<li class="ref-empty">Search error: ${(err as Error).message}</li>`;
   } finally {
     spinner.classList.add('hidden');
   }
 }
 
+// Populate the chapter filter dropdown from the chapters present in the current
+// result set, so the filter only ever offers chapters the author can actually
+// select down to.
+function updateChapterFilterOptions(): void {
+  const wrap = document.getElementById('chapterFilterWrap')!;
+  const select = document.getElementById('chapterFilter') as HTMLSelectElement;
+
+  const seen = new Map<string, string>(); // id → display name
+  for (const ref of currentResults) {
+    for (const id of ref.chapters || []) {
+      const parsed = parseChapterTag(id);
+      if (parsed && !seen.has(id)) seen.set(id, parsed.name);
+    }
+  }
+
+  if (seen.size === 0) {
+    wrap.classList.add('hidden');
+    chapterFilter = '';
+    return;
+  }
+
+  wrap.classList.remove('hidden');
+  const sorted = Array.from(seen.entries()).sort((a, b) => a[1].localeCompare(b[1]));
+  // Preserve the current selection if it is still available.
+  if (chapterFilter && !seen.has(chapterFilter)) chapterFilter = '';
+
+  select.innerHTML =
+    `<option value="">All chapters</option>` +
+    sorted.map(([id, name]) => `<option value="${escapeAttr(id)}">${escapeHtml(name)}</option>`).join('');
+  select.value = chapterFilter;
+}
+
 function renderSearchResults(results: RefSearchResult[]): void {
   const refList = document.getElementById('refList')!;
+
+  const visible = chapterFilter
+    ? results.filter(r => (r.chapters || []).includes(chapterFilter))
+    : results;
 
   if (results.length === 0) {
     refList.innerHTML = '<li class="ref-empty">No references found</li>';
     return;
   }
 
-  refList.innerHTML = results.map(ref => {
+  if (visible.length === 0) {
+    refList.innerHTML = '<li class="ref-empty">No references in the selected chapter</li>';
+    return;
+  }
+
+  refList.innerHTML = visible.map(ref => {
     const authors = (ref.authors || [])
       .slice(0, 3)
       .map(a => a.family || a.given || '')
       .join(', ');
     const authorsDisplay = (ref.authors || []).length > 3 ? `${authors} et al.` : authors;
 
+    const count = citationCounts.get(ref.id)?.count || 0;
+    const countBadge = count > 0
+      ? `<span class="cite-count" title="Already cited ${count} time(s) in this document">cited ${count}×</span>`
+      : '';
+
+    const chapterChips = (ref.chapters || [])
+      .map(id => parseChapterTag(id))
+      .filter((c): c is { name: string; color: string } => c !== null)
+      .map(c => `<span class="chapter-chip" style="background:${escapeAttr(c.color)}1a;color:${escapeAttr(c.color)};border-color:${escapeAttr(c.color)}55">${escapeHtml(c.name)}</span>`)
+      .join('');
+
+    const summary = ref.summary || ref.abstract || '';
+    const summaryBlock = summary
+      ? `<div class="ref-summary"><span class="ref-block-label">Summary</span> ${escapeHtml(truncate(summary, 320))}</div>`
+      : '';
+    const notesBlock = ref.notes
+      ? `<div class="ref-notes"><span class="ref-block-label">Notes</span> ${escapeHtml(truncate(ref.notes, 320))}</div>`
+      : '';
+
     return `
       <li class="ref-item" data-id="${ref.id}">
         <div class="ref-item-content">
-          <div class="ref-title">${escapeHtml(ref.title)}</div>
+          <div class="ref-title">${escapeHtml(ref.title)}${countBadge}</div>
           <div class="ref-meta">${escapeHtml(authorsDisplay)}${ref.year ? ` (${ref.year})` : ''}</div>
           ${ref.container_title ? `<div class="ref-journal">${escapeHtml(ref.container_title)}</div>` : ''}
+          ${chapterChips ? `<div class="chapter-chips">${chapterChips}</div>` : ''}
+          ${summaryBlock}
+          ${notesBlock}
           <div class="ref-key">[${escapeHtml(ref.citation_key || '')}]</div>
         </div>
         <div class="ref-actions">
@@ -199,6 +304,8 @@ function showEmptyState(): void {
 
   try {
     await insertCitation({ refId, citationKey, cslJson, formattedText: fallbackText }, currentStyleId);
+    await refreshCitationCounts();
+    renderSearchResults(currentResults);
     showStatus('Citation inserted', 'connected');
   } catch (err) {
     showStatus(`Error: ${(err as Error).message}`, 'error');
@@ -249,6 +356,8 @@ function updateBasketUI(): void {
     await insertMultiCite(citationBasket, currentStyleId);
     citationBasket = [];
     updateBasketUI();
+    await refreshCitationCounts();
+    renderSearchResults(currentResults);
     showStatus('Group citation inserted', 'connected');
   } catch (err) {
     showStatus(`Error: ${(err as Error).message}`, 'error');
@@ -293,22 +402,48 @@ async function scanDocumentCitations(): Promise<void> {
 
   try {
     const citations = await getAllCitations();
+    await refreshCitationCounts();
+
     if (citations.length === 0) {
       container.innerHTML = '<p class="text-muted">No citations found in the document.</p>';
       return;
     }
 
+    // One row per unique paper, with how many times it is cited. Most-cited
+    // papers first so the heavily-leaned-on sources are obvious.
+    const perPaper = Array.from(citationCounts.values()).sort((a, b) => b.count - a.count);
+    // Best-effort formatted text per paper, pulled from the first citation that
+    // references it.
+    const textByRef = new Map<string, string>();
+    for (const c of citations) {
+      const ids = c.refId.split(',').map(s => s.trim());
+      for (const id of ids) if (!textByRef.has(id)) textByRef.set(id, c.formattedText);
+    }
+
+    const totalControls = citations.length;
     container.innerHTML = `
-      <p class="text-muted" style="margin-bottom:8px">${citations.length} citation(s) in document:</p>
-      ${citations.map(c => `
+      <p class="text-muted" style="margin-bottom:8px">${perPaper.length} paper(s) across ${totalControls} citation(s) in document:</p>
+      ${perPaper.map(p => `
         <div class="doc-cite-item">
-          <div class="doc-cite-key">${escapeHtml(c.citationKey)}</div>
-          <div class="doc-cite-text">${escapeHtml(c.formattedText)}</div>
+          <div class="doc-cite-head">
+            <span class="doc-cite-key">${escapeHtml(p.citationKey)}</span>
+            <span class="cite-count" title="Cited ${p.count} time(s)">cited ${p.count}×</span>
+          </div>
+          <div class="doc-cite-text">${escapeHtml(textByRef.get(p.refId) || '')}</div>
         </div>
       `).join('')}
     `;
   } catch (err) {
     container.innerHTML = `<p class="text-muted">Error scanning: ${(err as Error).message}</p>`;
+  }
+}
+
+// Recount how many times each paper is cited in the document and cache it.
+async function refreshCitationCounts(): Promise<void> {
+  try {
+    citationCounts = await getCitationCounts();
+  } catch {
+    // Keep the previous counts on failure rather than clearing the badges.
   }
 }
 
@@ -369,4 +504,9 @@ function escapeHtml(str: string): string {
 
 function escapeAttr(str: string): string {
   return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+}
+
+function truncate(str: string, max: number): string {
+  if (str.length <= max) return str;
+  return `${str.slice(0, max).replace(/\s+$/, '')}…`;
 }
