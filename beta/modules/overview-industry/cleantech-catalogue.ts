@@ -10,6 +10,20 @@
  * rationale for why costs are high, what holds readiness back, and what makes
  * scaling hard.
  *
+ * SCOPE (hard): the explorer catalogue (`CATALOGUE`) shows ONLY subsectors that
+ * are activities under NACE Rev. 2.1 **Section C — Manufacturing** (divisions
+ * 10–33, per Eurostat / Commission Delegated Regulation (EU) 2023/137). Every
+ * one of the 14 subsectors maps into a Section C division (10 food, 11
+ * beverages, 12 tobacco, 17 paper, 19 coke & refined petroleum, 20 chemicals,
+ * 23 non-metallic minerals, 24 basic metals). The four decarbonisation levers
+ * that are NOT manufacturing activities — electrification of heat & steam
+ * supply, CO₂ transport & storage, clean-hydrogen supply, and material
+ * efficiency / waste recovery — are classified by NACE in Sections D, E and H,
+ * so they are held OUT of the subsector catalogue and listed separately as
+ * `CROSS_CUTTING_ENABLERS` (see `MANUFACTURING_SECTION`). This keeps the tree a
+ * clean "NACE Manufacturing" object while still surfacing the enablers those
+ * manufacturing subsectors depend on.
+ *
  * SOURCING RULE (hard): every data point carries a `source` with a real,
  * working link. Nothing here is invented. Figures are drawn from EU official
  * data (EEA, EU ETS), the IPCC AR6 WG3 Industry chapter, IEA technology
@@ -86,16 +100,24 @@ export interface Technology {
   rationale: Rationale;
 }
 
+/**
+ * Industry branch grouping, for colour-coding the diagram. The first four are
+ * NACE Rev. 2.1 Section C (Manufacturing) branches shown in the explorer;
+ * 'Cross-cutting levers' is reserved for the enablers that sit OUTSIDE Section C
+ * (`CROSS_CUTTING_ENABLERS`) and never appears in the manufacturing tree.
+ */
+export type Branch =
+  | 'Metals'
+  | 'Non-metallic minerals'
+  | 'Chemicals & refining'
+  | 'Other manufacturing'
+  | 'Cross-cutting levers';
+
 export interface Subsector {
   id: string;
   name: string;
   /** Industry branch grouping, for colour-coding the diagram. */
-  branch:
-    | 'Metals'
-    | 'Non-metallic minerals'
-    | 'Chemicals & refining'
-    | 'Other manufacturing'
-    | 'Cross-cutting levers';
+  branch: Branch;
   /** Short characterisation of the subsector. */
   summary: string;
   /**
@@ -218,6 +240,20 @@ const S = {
     title: 'Total greenhouse gas emissions in the chemical industry (indicator)',
     url: 'https://www.eea.europa.eu/en/european-zero-pollution-dashboards/indicators/total-greenhouse-gas-emissions-in-the-chemical-industry',
     year: '2021',
+  } as Source,
+  naceSectionC: {
+    org: 'Eurostat',
+    title:
+      'NACE Rev. 2.1 — Statistical classification of economic activities in the European Union (2025 edition): Section C “Manufacturing” spans divisions 10–33',
+    url: 'https://ec.europa.eu/eurostat/web/products-manuals-and-guidelines/w/ks-gq-24-007',
+    year: '2025',
+  } as Source,
+  naceRegulation: {
+    org: 'European Commission (EUR-Lex)',
+    title:
+      'Commission Delegated Regulation (EU) 2023/137 establishing NACE Rev. 2.1 (applicable from 1 January 2025)',
+    url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=legissum:24030103_2',
+    year: '2023',
   } as Source,
 };
 
@@ -1400,8 +1436,21 @@ export const CATALOGUE: Subsector[] = [
       },
     ],
   },
+];
 
-  /* ============================================== CROSS-CUTTING LEVERS === */
+/* ======================================= CROSS-CUTTING ENABLERS (non-C) === */
+
+/**
+ * Cross-cutting decarbonisation ENABLERS that are NOT NACE Section C
+ * (Manufacturing) activities and therefore sit OUTSIDE the subsector catalogue
+ * above. NACE classifies them in other sections — Section D (electricity, gas &
+ * steam supply, incl. network hydrogen 35.21), Section E (waste recovery 38.2,
+ * permanent CO₂ storage 38.32) and Section H (pipeline transport 49.50). They
+ * are surfaced separately because every manufacturing subsector's deep
+ * decarbonisation depends on them. Same data shape as `Subsector`, all
+ * `branch: 'Cross-cutting levers'`.
+ */
+export const CROSS_CUTTING_ENABLERS: Subsector[] = [
   {
     id: 'x-heat',
     name: 'Electrification of heat & heat pumps',
@@ -1646,22 +1695,52 @@ export const CATALOGUE: Subsector[] = [
   },
 ];
 
-/** All distinct branches, for the diagram legend / colouring. */
+/**
+ * The NACE Section C (Manufacturing) branches shown in the explorer, for the
+ * diagram legend / colouring. 'Cross-cutting levers' is intentionally NOT here
+ * — those enablers sit outside Section C and are rendered separately.
+ */
 export const BRANCHES = [
   'Metals',
   'Non-metallic minerals',
   'Chemicals & refining',
   'Other manufacturing',
-  'Cross-cutting levers',
 ] as const;
 
-export const BRANCH_COLORS: Record<(typeof BRANCHES)[number], string> = {
+/** Colour per branch, incl. the out-of-scope 'Cross-cutting levers' enablers. */
+export const BRANCH_COLORS: Record<Branch, string> = {
   Metals: '#3D5265',
   'Non-metallic minerals': '#B83230',
   'Chemicals & refining': '#6667AB',
   'Other manufacturing': '#007B6C',
   'Cross-cutting levers': '#FF9933',
 };
+
+/**
+ * NACE Rev. 2.1 Section C — Manufacturing — the exact scope of the explorer.
+ * Section C spans divisions 10–33; every catalogue subsector is one of these
+ * manufacturing activities. Sourced to the official Eurostat classification and
+ * the Regulation that established it.
+ */
+export const MANUFACTURING_SECTION = {
+  code: 'C',
+  label: 'Manufacturing',
+  divisionRange: '10–33',
+  /** The Section C divisions the catalogue actually covers (code → label). */
+  divisionsCovered: [
+    { code: '10', label: 'Manufacture of food products' },
+    { code: '11', label: 'Manufacture of beverages' },
+    { code: '12', label: 'Manufacture of tobacco products' },
+    { code: '17', label: 'Manufacture of paper and paper products' },
+    { code: '19', label: 'Manufacture of coke and refined petroleum products' },
+    { code: '20', label: 'Manufacture of chemicals and chemical products' },
+    { code: '23', label: 'Manufacture of other non-metallic mineral products' },
+    { code: '24', label: 'Manufacture of basic metals' },
+  ] as const,
+  note: 'Every subsector in the explorer is a NACE Rev. 2.1 Section C (Manufacturing) activity, i.e. one of divisions 10–33. Enabling levers outside manufacturing — electricity, gas & steam supply (Section D), waste recovery & permanent CO₂ storage (Section E) and pipeline transport (Section H) — are shown separately as cross-cutting enablers, not as subsectors.',
+  source: S.naceSectionC,
+  regulation: S.naceRegulation,
+} as const;
 
 /* ---------------------------------------------------------- chart metrics */
 
@@ -1793,7 +1872,7 @@ export interface EmissionsMapBlock {
   /** Subsector ids covered by this block; the first is primary (image, click target). */
   subsectorIds: string[];
   label: string;
-  branch: (typeof BRANCHES)[number];
+  branch: Branch;
   /** Best available sourced emissions figure, Mt CO₂(e)/yr. */
   mt: number;
   /** Scope of the Mt figure, shown as a badge, e.g. "EU ETS 2023". */
@@ -1906,11 +1985,6 @@ export const EMISSIONS_MAP_UNSIZED: { subsectorId: string; label: string; reason
     subsectorId: 'nonferrous',
     label: 'Other non-ferrous metals',
     reason: 'no isolable copper/zinc/nickel-only EU figure — public data reports the non-ferrous sector incl. aluminium (≈52 Mt CO₂e, 2015, incl. indirect)',
-  },
-  {
-    subsectorId: 'x-heat',
-    label: 'Cross-cutting levers',
-    reason: 'electrification of heat, CCS networks, hydrogen and circularity act across all the blocks above — they have no emission baseline of their own',
   },
 ];
 
