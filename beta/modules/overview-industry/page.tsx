@@ -5,9 +5,9 @@
  * ---------------------------------------------
  * An overview surface for the industry lead's cross-cutting work, gathering
  * two sub-pages:
- *   • Clean Tech  — a collapsible, fully-sourced catalogue mapping the EU
- *                   industry emission profile → subsectors → mitigation
- *                   technologies → cost / readiness / projects / rationale.
+ *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
+ *                   (NACE Section C): total → divisions → subsectors → levers,
+ *                   with cost / readiness / barriers / investment decisions.
  *   • Trade flows — (placeholder; details to follow).
  */
 
@@ -47,16 +47,15 @@ export default function OverviewIndustryPage() {
               <h2 className="text-lg font-bold text-grey-900 group-hover:text-primary">Clean Tech</h2>
             </div>
             <p className="mt-2 text-sm text-grey-600">
-              A big collapsible catalogue: the EU-27 industry emission profile → each energy-intensive
-              subsector → every available mitigation technology → its abatement cost, technology
-              readiness, availability, real project pipeline (incl. Final Investment Decisions) and
-              the reasons costs are high, readiness lags and scale is hard. Every data point is
-              sourced, and every subsector is classified under the official NACE Rev. 2.1
-              classification (complete Eurostat classification browsable in-page). Mine it for
-              recurring bottlenecks that can inform policy.
+
+              One figure: EU manufacturing (NACE Rev. 2.1 Section&nbsp;C) as a collapsible emissions
+              sunburst — the sector total decomposing into NACE divisions, subsectors and their
+              decarbonisation levers, every arc sized by sourced Mt CO₂. Each lever carries its
+              marginal abatement cost, technology readiness, barriers, scale and the real investment
+              decisions (incl. FIDs), all with source links.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-primary">
-              Open the catalogue →
+              Open the wheel →
             </span>
           </Link>
 
