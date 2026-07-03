@@ -1,26 +1,20 @@
 {
   "date": "2026-07-03",
-  "generatedAt": "2026-07-03T08:13:22.916Z",
+  "generatedAt": "2026-07-03T13:00:31.392Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 3 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Lithuania moves to end nuclear weapon ban as 'situation getting worse' - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOUmplNlV3ckJjbDhxWE1ZcXVkUTFZaENXenhBMWFwU3l0QWt0bUtVb3A2Sl9CNlBJVFR1d21VejBMMEszUHI2NkZXNUw1amxNMUlkb0x5Y1I0dlpLbUpfd2VGbVpJT2NPRnBlc1JmNFgtTTVwQXVZeHNCaG0xY0UyYjlRYlR3UXBlTEFuRFR3UU5RR1N1Vy1tdEZFaVVza1M2d2c?oc=5\" target=\"_blank\"&gt;Lithuania moves to end nuclear weapon ban as 'situation getting worse'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Most Gulf markets in red as US-Iran negotiations show little headway - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXVRbEsycW1kbXBRRkRNSkViSjZDT2QtcFNURHFrMzczbEtpUmdmN0xlVUZHUjE0dUcwR2xYM210OFZsVVhQYVl2VU41RHQ0QlQ1ZS1hcmdWdlY0NXVJQmhLc0w0MnRKSTlQbzNyak9sdnVCWWZ2bTNVeUxFeEEtR2N1OEt6bzhtclBlQ3hHX2hsS3VqM3pHNmJ1cGZCbGJCNkg2U1dONDZBLUJaSnFtUVFLeWRCSjRCRkE?oc=5\" target=\"_blank\"&gt;Most Gulf markets in red as US-Iran negotiations show little headway&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: Where do the UN secretary general candidates stand on climate change?",
-      "summary": "Candidates are being nominated to take over as the UN secretary general, when António Guterres... The post Q&#038;A: Where do the UN secretary general candidates stand on climate change? appeared first on Carbon Brief.",
+      "headline": "Daily News 03 / 07 / 2026",
+      "summary": "European Commission Daily news Brussels, 03 Jul 2026 Commission adopts revised sustainability reporting standards to reduce administrative burdens for EU businesses while maintaining high-quality disclosures\r\nThe E...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "Daily News 02 / 07 / 2026",
-      "summary": "European Commission Daily news Brussels, 02 Jul 2026 €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries \r\nThe European Commission and the European Investment Bank have today annou...",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,14 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Lithuania moves to end nuclear weapon ban as 'situation getting worse' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOUmplNlV3ckJjbDhxWE1ZcXVkUTFZaENXenhBMWFwU3l0QWt0bUtVb3A2Sl9CNlBJVFR1d21VejBMMEszUHI2NkZXNUw1amxNMUlkb0x5Y1I0dlpLbUpfd2VGbVpJT2NPRnBlc1JmNFgtTTVwQXVZeHNCaG0xY0UyYjlRYlR3UXBlTEFuRFR3UU5RR1N1Vy1tdEZFaVVza1M2d2c?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxOUmplNlV3ckJjbDhxWE1ZcXVkUTFZaENXenhBMWFwU3l0QWt0bUtVb3A2Sl9CNlBJVFR1d21VejBMMEszUHI2NkZXNUw1amxNMUlkb0x5Y1I0dlpLbUpfd2VGbVpJT2NPRnBlc1JmNFgtTTVwQXVZeHNCaG0xY0UyYjlRYlR3UXBlTEFuRFR3UU5RR1N1Vy1tdEZFaVVza1M2d2c?oc=5\" target=\"_blank\"&gt;Lithuania moves to end nuclear weapon ban as 'situation getting worse'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T11:35:17.000Z",
-          "score": 7
-        },
         {
           "title": "Most Gulf markets in red as US-Iran negotiations show little headway - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXVRbEsycW1kbXBRRkRNSkViSjZDT2QtcFNURHFrMzczbEtpUmdmN0xlVUZHUjE0dUcwR2xYM210OFZsVVhQYVl2VU41RHQ0QlQ1ZS1hcmdWdlY0NXVJQmhLc0w0MnRKSTlQbzNyak9sdnVCWWZ2bTNVeUxFeEEtR2N1OEt6bzhtclBlQ3hHX2hsS3VqM3pHNmJ1cGZCbGJCNkg2U1dONDZBLUJaSnFtUVFLeWRCSjRCRkE?oc=5",
@@ -56,6 +42,14 @@
           "description": "Albanians have continued to protest against a planned luxury resort backed by Donald Trump&#039;s son-in-law Jared Kushner. They say the resort threatens the coast&#039;s fragile ecosystems, including a flamingo habitat.",
           "published": "2026-07-02T16:25:00.000Z",
           "score": 6
+        },
+        {
+          "title": "Grid operator PJM orders emergency steps to avoid large-scale US power outages - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNdlc1NXF6Nnc4Rkd4N1Jwc3V5TWZ4RlBGUWdEMGUybVBsOTNxckxudVhqajNvVmxHM3Jwa0V4RHY3N0I4dnJ1djZ3RHdycmNsV21kQ0Z3c0NyemFiZE9CMXdXUExDYVYxTmV3V0tGaFVnTDI4STdJRHlDTm10R3BzcXdCNU1adXlLZXAyVEtjZmhOaHZrSmVpa1VWeU9qVnhObUVwdE5PYzVMSElObDgtVGYzS0VsWW45bFRIcDZzUG5BLXRMaGc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNdlc1NXF6Nnc4Rkd4N1Jwc3V5TWZ4RlBGUWdEMGUybVBsOTNxckxudVhqajNvVmxHM3Jwa0V4RHY3N0I4dnJ1djZ3RHdycmNsV21kQ0Z3c0NyemFiZE9CMXdXUExDYVYxTmV3V0tGaFVnTDI4STdJRHlDTm10R3BzcXdCNU1adXlLZXAyVEtjZmhOaHZrSmVpa1VWeU9qVnhObUVwdE5PYzVMSElObDgtVGYzS0VsWW45bFRIcDZzUG5BLXRMaGc?oc=5\" target=\"_blank\"&gt;Grid operator PJM orders emergency steps to avoid large-scale US power outages&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
+          "published": "2026-07-02T23:48:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -64,28 +58,28 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Q&#038;A: Where do the UN secretary general candidates stand on climate change?",
-          "link": "https://www.carbonbrief.org/qa-where-do-the-un-secretary-general-candidates-stand-on-climate-change/",
-          "source": "Carbon Brief",
-          "description": "Candidates are being nominated to take over as the UN secretary general, when António Guterres... The post Q&#038;A: Where do the UN secretary general candidates stand on climate change? appeared first on Carbon Brief.",
-          "published": "2026-07-02T12:01:37.000Z",
+          "title": "Daily News 03 / 07 / 2026",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1515",
+          "source": "European Commission",
+          "description": "European Commission Daily news Brussels, 03 Jul 2026 Commission adopts revised sustainability reporting standards to reduce administrative burdens for EU businesses while maintaining high-quality disclosures\r\nThe E...",
+          "published": "2026-07-03T08:36:00.000Z",
+          "score": 16
+        },
+        {
+          "title": "Billions unlocked as Green Climate Fund agrees to spend more and save less",
+          "link": "https://www.climatechangenews.com/2026/07/03/billions-unlocked-as-green-climate-fund-agrees-to-spend-more-and-save-less/",
+          "source": "Climate Home News",
+          "description": "The board of the UN's flagship climate fund has agreed to allowed management to invest more of its money in projects in developing nations and keep less in reserve The post Billions unlocked as Green Climate Fund agrees to spend more and save less appeared first on Climate Home News.",
+          "published": "2026-07-03T08:25:38.000Z",
           "score": 13
         },
         {
-          "title": "In Guatemala, Indigenous women build climate resilience with old and new farming methods",
-          "link": "https://www.climatechangenews.com/2026/07/02/in-guatemala-indigenous-women-build-climate-resilience-with-old-and-new-farming-methods/",
+          "title": "As food shocks spread, citizens are showing more leadership than governments",
+          "link": "https://www.climatechangenews.com/2026/07/03/as-food-shocks-spread-citizens-are-showing-more-leadership-than-governments/",
           "source": "Climate Home News",
-          "description": "Ancestral knowledge combined with climate-smart techniques is boosting food security and increasing family incomes in the Lake Atitlán region The post In Guatemala, Indigenous women build climate resilience with old and new farming methods appeared first on Climate Home News.",
-          "published": "2026-07-02T10:41:22.000Z",
-          "score": 13
-        },
-        {
-          "title": "World Bank&#8217;s climate work can endure without finance target, experts say",
-          "link": "https://www.climatechangenews.com/2026/07/02/world-banks-climate-work-can-endure-without-finance-target-experts-say/",
-          "source": "Climate Home News",
-          "description": "Even though the global lender has ditched a headline goal for its financing with climate benefits, it has decided to continue its climate action plan in the face of US pressure The post World Bank&#8217;s climate work can endure without finance target, experts say appeared first on Climate Home News.",
-          "published": "2026-07-02T10:23:13.000Z",
-          "score": 13
+          "description": "People support efforts to protect forests and curb industrial food production, the results of the latest Global Citizens' Assembly show - but politicians have been slow to act The post As food shocks spread, citizens are showing more leadership than governments appeared first on Climate Home News.",
+          "published": "2026-07-03T10:16:33.000Z",
+          "score": 10
         },
         {
           "title": "Tropical forest protection fund at risk after UK stalls on pledge",
@@ -108,27 +102,26 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "Daily News 02 / 07 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1507",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 02 Jul 2026 €2.5 billion of EU ETS revenues invested in cleaner energy systems in 11 EU countries \r\nThe European Commission and the European Investment Bank have today annou...",
-          "published": "2026-07-02T09:38:27.000Z",
-          "score": 16
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "AMENDMENTS 171 - 285 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - PE789.089v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-AM-789089_EN.pdf",
+          "title": "AMENDMENTS 245 - 450 - Draft opinion Establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act) - PE790.222v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790222_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 171 - 285 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&",
-          "published": "2026-07-03T08:09:45.000Z",
+          "description": "AMENDMENTS 245 - 450 - Draft opinion Establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Nicolás González Casares&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.eu",
+          "published": "2026-07-03T08:54:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "AMENDMENTS 1 - 170 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - PE789.933v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-AM-789933_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 1 - 170 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt",
+          "published": "2026-07-03T08:43:57.000Z",
           "score": 22
         },
         {
@@ -140,28 +133,12 @@
           "score": 22
         },
         {
-          "title": "DRAFT OPINION on the proposal for a Regulation of the European Parliament and of the Council establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors and amending Regulations (EU) 2018/1724, (EU) 2024/1735 and (EU) 2024/3110 - PE789.106v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-PA-789106_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT OPINION on the proposal for a Regulation of the European Parliament and of the Council establishing a framework of measures for the acceleration of industrial capacity and decarbonisation in strategic sectors and amending Regulations (EU) 2018/1724, (EU) 2024/1735 and (EU) 2024/3110&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Mathilde Androuët&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Uni",
-          "published": "2026-07-02T09:33:50.000Z",
-          "score": 22
-        },
-        {
-          "title": "Video of a committee meeting - Thursday, 2 July 2026 - 08:00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260702-1000-COMMITTEE-ENVI_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 150'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-02T10:18:25.000Z",
-          "score": 18
-        },
-        {
-          "title": "AMENDMENTS 230 - 415 - Draft report Speeding-up environmental assessments - PE790.193v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790193_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 230 - 415 - Draft report Speeding-up environmental assessments&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Emma Wiesner&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-02T09:43:25.000Z",
-          "score": 18
+          "title": "Ryanair warns of 'queue chaos' from new EU border system",
+          "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The airline calls on European governments to postpone the EES system until after the summer holiday period.",
+          "published": "2026-07-02T17:17:36.000Z",
+          "score": 8
         }
       ]
     },
@@ -178,6 +155,14 @@
           "score": 12
         },
         {
+          "title": "China dismisses US, EU criticism of new ethnic law as 'malicious smear' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOX1d0Z2hWa0pScGlmS2tDNWFkd2ZVYm9lWXF3aDlGWlRnQ0lVYnlXTVZOSDZpdEx3NzBMVU5MWGU0a3hBYjkxNUtLNTk4Y2dKTU5qbjB1ZWVqSEo0ZE5fU243THlfUmVENEVzdHZtNUZCNkU1LWlwN0pxSUNZempVZ3gweUlNcldOYUxPN2c0NTBFWEhQcmtUY1hvSzVsLVdxZWhxNzVLOUdwNTVaaWZB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOX1d0Z2hWa0pScGlmS2tDNWFkd2ZVYm9lWXF3aDlGWlRnQ0lVYnlXTVZOSDZpdEx3NzBMVU5MWGU0a3hBYjkxNUtLNTk4Y2dKTU5qbjB1ZWVqSEo0ZE5fU243THlfUmVENEVzdHZtNUZCNkU1LWlwN0pxSUNZempVZ3gweUlNcldOYUxPN2c0NTBFWEhQcmtUY1hvSzVsLVdxZWhxNzVLOUdwNTVaaWZB?oc=5\" target=\"_blank\"&gt;China dismisses US, EU criticism of new ethnic law as 'malicious smear'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T08:18:43.000Z",
+          "score": 12
+        },
+        {
           "title": "Google loses fight against record €4.1 billion EU antitrust fine - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5",
           "source": "Reuters World (via Google News)",
@@ -186,11 +171,11 @@
           "score": 8
         },
         {
-          "title": "EU tells Armenia 'you can count on us' as Russia keeps up economic pressure - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTY3Wkl3VzVXdlVjdlF0REhFdl9fSGFWU1diTGhIb0wtdmtfcmRrSkt6Vk9EUklMdXNoMWRxNWd6NHE3QVNKSnRYMGZOaTZEb0NjaVhEREhGMTloclkyd29VQ01GWnJ5c1p0eWFZa05BSkM4ajF5STJGTXRqLW1uMFAwNlI0M2hqSlVVMXhNeGJ1QTMwNV9kQXVaamVKVTJwSUJnTjl2bC1pSkIyWlE?oc=5",
+          "title": "Researchers say EU lawmaker who investigated surveillance was hacked by Israeli spyware - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSXpnRVhYUFJmVkRtMkFfcEV0MW55b25EQWR0aENNZGt3cnVMcVMyVlhCZmVpRDQ5RUdkMnI0UHBwT051MjFWSThRZzY1Rm14RmFzZWRUQzN6T245Rks4dE5FNUU0ZEVEdmZUbGltX1lQOEEtNUVRM3BHdzZzV1JYRFc5ODJ4bTRCeC1VbE1iSGdPaXlrMFNTLWxoWkV5SURVRmQxTXdEMm9TcnE2U3k1cXdxQTF0UnRGWGQyYkRNUHZHanBLdTFidl84UDlJZw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPdTY3Wkl3VzVXdlVjdlF0REhFdl9fSGFWU1diTGhIb0wtdmtfcmRrSkt6Vk9EUklMdXNoMWRxNWd6NHE3QVNKSnRYMGZOaTZEb0NjaVhEREhGMTloclkyd29VQ01GWnJ5c1p0eWFZa05BSkM4ajF5STJGTXRqLW1uMFAwNlI0M2hqSlVVMXhNeGJ1QTMwNV9kQXVaamVKVTJwSUJnTjl2bC1pSkIyWlE?oc=5\" target=\"_blank\"&gt;EU tells Armenia 'you can count on us' as Russia keeps up economic pressure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T10:17:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOSXpnRVhYUFJmVkRtMkFfcEV0MW55b25EQWR0aENNZGt3cnVMcVMyVlhCZmVpRDQ5RUdkMnI0UHBwT051MjFWSThRZzY1Rm14RmFzZWRUQzN6T245Rks4dE5FNUU0ZEVEdmZUbGltX1lQOEEtNUVRM3BHdzZzV1JYRFc5ODJ4bTRCeC1VbE1iSGdPaXlrMFNTLWxoWkV5SURVRmQxTXdEMm9TcnE2U3k1cXdxQTF0UnRGWGQyYkRNUHZHanBLdTFidl84UDlJZw?oc=5\" target=\"_blank\"&gt;Researchers say EU lawmaker who investigated surveillance was hacked by Israeli spyware&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
+          "published": "2026-07-03T06:02:00.000Z",
           "score": 8
         },
         {
@@ -200,22 +185,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPcXA0VWZ6bU04R0dteWwzOHhEbFotelJMNl9FbUdWNWFtMXRLdzJXRHhacGR1Q3phVXdUR1loOUV4UFkxdjFKNUNaTl9iVEVxZnVnbGRPRmEyQlFDSGVCTjlmVlRhaWduVGN0bFpNZVJqdE1aUUJ4ZVNucVdQcmpWZURRRmI0N3B4anlXTjcySi1vc0UtbEpkYnJDUG5TRnE1SElEcG1ZUFRPci01bmpCQXUzbmhNTmdyRDhScg?oc=5\" target=\"_blank\"&gt;Brazil implements new regulations for meat exports to EU, Globo Rural reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-02T23:03:34.000Z",
           "score": 8
-        },
-        {
-          "title": "China's Great Wall Motor targets 3% to 5% market share in Europe by 2030 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNbEI4SVNnN1Znc05aY09HMjcyUXc1Mm9ySTUzYUV1NG12WGNkRlAwaUpGQktESk01ZU5oNll4NWt3cmh3dk91bmJuaUhmNF90dGZBdE0wQzREMDhydjg0UWx4bGJ3VUVvTkxjV3lVM1czZms5eV9wdTU1REtIYWFBWUVadlE5WG5Qc3NIdC15cW1nbnBiWF84NHNadEhhcXA1Tmp2TFlRcklwYWV0a3J6Yw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxNbEI4SVNnN1Znc05aY09HMjcyUXc1Mm9ySTUzYUV1NG12WGNkRlAwaUpGQktESk01ZU5oNll4NWt3cmh3dk91bmJuaUhmNF90dGZBdE0wQzREMDhydjg0UWx4bGJ3VUVvTkxjV3lVM1czZms5eV9wdTU1REtIYWFBWUVadlE5WG5Qc3NIdC15cW1nbnBiWF84NHNadEhhcXA1Tmp2TFlRcklwYWV0a3J6Yw?oc=5\" target=\"_blank\"&gt;China's Great Wall Motor targets 3% to 5% market share in Europe by 2030&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T21:38:49.000Z",
-          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 433,
-    "articlesLast24h": 178,
-    "afterDedup": 168,
+    "totalArticlesScanned": 448,
+    "articlesLast24h": 174,
+    "afterDedup": 159,
     "feedsQueried": 19
   }
 }
