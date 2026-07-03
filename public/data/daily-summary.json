@@ -1,12 +1,18 @@
 {
   "date": "2026-07-03",
-  "generatedAt": "2026-07-03T13:00:31.392Z",
+  "generatedAt": "2026-07-03T18:13:47.641Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 3 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Most Gulf markets in red as US-Iran negotiations show little headway - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXVRbEsycW1kbXBRRkRNSkViSjZDT2QtcFNURHFrMzczbEtpUmdmN0xlVUZHUjE0dUcwR2xYM210OFZsVVhQYVl2VU41RHQ0QlQ1ZS1hcmdWdlY0NXVJQmhLc0w0MnRKSTlQbzNyak9sdnVCWWZ2bTNVeUxFeEEtR2N1OEt6bzhtclBlQ3hHX2hsS3VqM3pHNmJ1cGZCbGJCNkg2U1dONDZBLUJaSnFtUVFLeWRCSjRCRkE?oc=5\" target=\"_blank\"&gt;Most Gulf markets in red as US-Iran negotiations show little headway&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31) - PE790.214v01-00",
+      "summary": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lynn Boylan, Heléne Fritzon, Pär Holmgren, Alexandr Vondra, Lídia Pereira, Emma Wiesner, Marie-Luce Brasier-Clain, Anja Arndt&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Far-right AfD threatens eastern Germany&#039;s energy transition",
+      "summary": "Germany&#039;s far-right AfD wants to revive coal and nuclear power and curb non-EU immigration. Businesses in eastern Germany warn that its policies could harm the economy.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,33 +21,64 @@
       "summary": "European Commission Daily news Brussels, 03 Jul 2026 Commission adopts revised sustainability reporting standards to reduce administrative burdens for EU businesses while maintaining high-quality disclosures\r\nThe E...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "India's Kerala state not consulted on MSC's $1.4 bln port investment, chief minister says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnRwcUpoZk1EdDk0RUNwcnRlTzN2eTVNeUFJbjQwS2d6ZDU4VHVMSnliQ1BaVWYxNTc3N2VGTTR0YTd5YWs5TllUYUFKb1ZudkZlQ2dYR29QeTdCNFA0MVBVYWU5UV9aYk1hOF9HZF91M1ZUUmJjR3NxdVBXUmdXZy1vVkh5aDJfRTMwV242S0tqeWl1bXpYY1BOdkZhVGpneWQ5RHN5VVNLbEo5amNBVnJXRmQ5Mnh0T1VUelktaWZfUQ?oc=5\" target=\"_blank\"&gt;India's Kerala state not consulted on MSC's $1.4 bln port investment, chief minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31) - PE790.214v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790214_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lynn Boylan, Heléne Fritzon, Pär Holmgren, Alexandr Vondra, Lídia Pereira, Emma Wiesner, Marie-Luce Brasier-Clain, Anja Arndt&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-03T15:23:02.000Z",
+          "score": 23
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Most Gulf markets in red as US-Iran negotiations show little headway - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXVRbEsycW1kbXBRRkRNSkViSjZDT2QtcFNURHFrMzczbEtpUmdmN0xlVUZHUjE0dUcwR2xYM210OFZsVVhQYVl2VU41RHQ0QlQ1ZS1hcmdWdlY0NXVJQmhLc0w0MnRKSTlQbzNyak9sdnVCWWZ2bTNVeUxFeEEtR2N1OEt6bzhtclBlQ3hHX2hsS3VqM3pHNmJ1cGZCbGJCNkg2U1dONDZBLUJaSnFtUVFLeWRCSjRCRkE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxNVXVRbEsycW1kbXBRRkRNSkViSjZDT2QtcFNURHFrMzczbEtpUmdmN0xlVUZHUjE0dUcwR2xYM210OFZsVVhQYVl2VU41RHQ0QlQ1ZS1hcmdWdlY0NXVJQmhLc0w0MnRKSTlQbzNyak9sdnVCWWZ2bTNVeUxFeEEtR2N1OEt6bzhtclBlQ3hHX2hsS3VqM3pHNmJ1cGZCbGJCNkg2U1dONDZBLUJaSnFtUVFLeWRCSjRCRkE?oc=5\" target=\"_blank\"&gt;Most Gulf markets in red as US-Iran negotiations show little headway&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T13:23:44.000Z",
+          "title": "Far-right AfD threatens eastern Germany&#039;s energy transition",
+          "link": "https://www.dw.com/en/far-right-afd-threatens-eastern-germany-s-energy-transition/a-77806872?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s far-right AfD wants to revive coal and nuclear power and curb non-EU immigration. Businesses in eastern Germany warn that its policies could harm the economy.",
+          "published": "2026-07-03T13:07:00.000Z",
+          "score": 9
+        },
+        {
+          "title": "Can inspectors return to Iran&#039;s nuclear sites?",
+          "link": "https://www.dw.com/en/can-inspectors-return-to-iran-s-nuclear-sites/a-77819688?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The UN nuclear watchdog says inspections of Iran&#039;s nuclear program are possible in principle. The bigger question is whether Tehran will allow meaningful access.",
+          "published": "2026-07-03T13:04:00.000Z",
           "score": 7
         },
         {
-          "title": "Albanian police fire tear gas at &#039;Flamingo Revolution&#039; rally",
-          "link": "https://www.dw.com/en/albanian-police-fire-tear-gas-at-flamingo-revolution-rally/a-77807190?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Free electricity in Australia, and the week&#039;s other eco wins",
+          "link": "https://www.dw.com/en/free-electricity-in-australia-and-the-week-s-other-eco-wins/a-77824448?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Albanians have continued to protest against a planned luxury resort backed by Donald Trump&#039;s son-in-law Jared Kushner. They say the resort threatens the coast&#039;s fragile ecosystems, including a flamingo habitat.",
-          "published": "2026-07-02T16:25:00.000Z",
-          "score": 6
+          "description": "Germans save an ancient woodland from coal mining, Australia gives away surplus solar power, and how one city became the world&#039;s best place for cyclists?",
+          "published": "2026-07-03T14:41:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Google, Amazon emissions rise sharply, driven by AI boom",
+          "link": "https://www.dw.com/en/google-amazon-emissions-rise-sharply-driven-by-ai-boom/a-77821598?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "US tech giants Google and Amazon have reported a strong increase in greenhouse gas emissions in 2025. AI data centers are behind the rise, challenging the companies&#039; climate pledges.",
+          "published": "2026-07-03T13:52:00.000Z",
+          "score": 4
         },
         {
           "title": "Grid operator PJM orders emergency steps to avoid large-scale US power outages - Reuters",
@@ -66,6 +103,22 @@
           "score": 16
         },
         {
+          "title": "DeBriefed 3 July 2026: US faces scorching Independence Day &#124; Record ocean temperatures &#124; Vietnam’s EV surge",
+          "link": "https://www.carbonbrief.org/debriefed-3-july-2026-us-faces-scorching-independence-day-record-ocean-temperatures-vietnams-ev-surge/",
+          "source": "Carbon Brief",
+          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 3 July 2026: US faces scorching Independence Day | Record ocean temperatures | Vietnam’s EV surge appeared first on Carbon Brief.",
+          "published": "2026-07-03T14:47:51.000Z",
+          "score": 13
+        },
+        {
+          "title": "Q&#038;A: How will the World Bank’s abandoned finance goal affect climate action?",
+          "link": "https://www.carbonbrief.org/qa-how-will-the-world-banks-abandoned-finance-goal-affect-climate-action/",
+          "source": "Carbon Brief",
+          "description": "The World Bank has abandoned a target for 45% of the funding it gives developing... The post Q&amp;A: How will the World Bank’s abandoned finance goal affect climate action? appeared first on Carbon Brief.",
+          "published": "2026-07-03T14:22:28.000Z",
+          "score": 13
+        },
+        {
           "title": "Billions unlocked as Green Climate Fund agrees to spend more and save less",
           "link": "https://www.climatechangenews.com/2026/07/03/billions-unlocked-as-green-climate-fund-agrees-to-spend-more-and-save-less/",
           "source": "Climate Home News",
@@ -80,29 +133,30 @@
           "description": "People support efforts to protect forests and curb industrial food production, the results of the latest Global Citizens' Assembly show - but politicians have been slow to act The post As food shocks spread, citizens are showing more leadership than governments appeared first on Climate Home News.",
           "published": "2026-07-03T10:16:33.000Z",
           "score": 10
-        },
-        {
-          "title": "Tropical forest protection fund at risk after UK stalls on pledge",
-          "link": "https://www.climatechangenews.com/2026/07/03/tropical-forest-protection-fund-at-risk-after-uk-stalls-on-pledge/",
-          "source": "Climate Home News",
-          "description": "The Brazil-led TFFF was launched at COP30 as an innovative financial model to keep rainforests standing, but is still short on startup cash The post Tropical forest protection fund at risk after UK stalls on pledge appeared first on Climate Home News.",
-          "published": "2026-07-03T07:04:20.000Z",
-          "score": 10
-        },
-        {
-          "title": "Donald Trump is the accidental hero of a real-life feelgood climate tale even as a creeping horror story plays alongside | Clear Air",
-          "link": "https://www.theguardian.com/environment/2026/jul/03/donald-trump-strait-of-hormuz-climate-crisis-europe-heatwave",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Despite a deadly heatwave sweeping through Europe, the US president’s ineptness has created reason for optimism on the climate crisis&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/environment/2025/mar/10/sign-up-for-the-clear-air-australia-environment-newsletter-with-adam-morton?CMP=cvau_sfl\"&gt;Sign up for climate and environment editor Adam Morton’s free Clear Air newsletter here&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;Two r",
-          "published": "2026-07-02T15:00:02.000Z",
-          "score": 9
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "India's Kerala state not consulted on MSC's $1.4 bln port investment, chief minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnRwcUpoZk1EdDk0RUNwcnRlTzN2eTVNeUFJbjQwS2d6ZDU4VHVMSnliQ1BaVWYxNTc3N2VGTTR0YTd5YWs5TllUYUFKb1ZudkZlQ2dYR29QeTdCNFA0MVBVYWU5UV9aYk1hOF9HZF91M1ZUUmJjR3NxdVBXUmdXZy1vVkh5aDJfRTMwV242S0tqeWl1bXpYY1BOdkZhVGpneWQ5RHN5VVNLbEo5amNBVnJXRmQ5Mnh0T1VUelktaWZfUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOVnRwcUpoZk1EdDk0RUNwcnRlTzN2eTVNeUFJbjQwS2d6ZDU4VHVMSnliQ1BaVWYxNTc3N2VGTTR0YTd5YWs5TllUYUFKb1ZudkZlQ2dYR29QeTdCNFA0MVBVYWU5UV9aYk1hOF9HZF91M1ZUUmJjR3NxdVBXUmdXZy1vVkh5aDJfRTMwV242S0tqeWl1bXpYY1BOdkZhVGpneWQ5RHN5VVNLbEo5amNBVnJXRmQ5Mnh0T1VUelktaWZfUQ?oc=5\" target=\"_blank\"&gt;India's Kerala state not consulted on MSC's $1.4 bln port investment, chief minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
+          "published": "2026-07-03T07:08:23.000Z",
+          "score": 2
+        },
+        {
+          "title": "Global equity fund inflows rise as investors add tech stocks after market dip - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPMmItRk9lb3pQT19RQTdlNlowOUpOM0pOM09JczhiSy13dGFGWV84RHFVUG5aVzU0VFQ4OUJpN2NRelFOa2lBYXVSM3Z1MTJGYmxMbmYwNXRYTzZnd01BMWFzdzc0eWNvVTZ5TEZ2OTg1c1FDN0dfNWNlUjFrNHdtaU9FdHhlNmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPMmItRk9lb3pQT19RQTdlNlowOUpOM0pOM09JczhiSy13dGFGWV84RHFVUG5aVzU0VFQ4OUJpN2NRelFOa2lBYXVSM3Z1MTJGYmxMbmYwNXRYTzZnd01BMWFzdzc0eWNvVTZ5TEZ2OTg1c1FDN0dfNWNlUjFrNHdtaU9FdHhlNmc?oc=5\" target=\"_blank\"&gt;Global equity fund inflows rise as investors add tech stocks after market dip&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T09:49:43.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -125,19 +179,19 @@
           "score": 22
         },
         {
-          "title": "DRAFT MOTION FOR A RESOLUTION on the draft Commission implementing decision authorising the placing on the market of products containing, consisting of or produced from genetically modified soybean GMB151 x DAS-44406-6 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council - PE790.148v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-RD-790148_EN.pdf",
+          "title": "Latest news - ENVI Committee meetings - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20200226CAL09791",
           "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT MOTION FOR A RESOLUTION on the draft Commission implementing decision authorising the placing on the market of products containing, consisting of or produced from genetically modified soybean GMB151 x DAS-44406-6 pursuant to Regulation (EC) No 1829/2003 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Sirpa Pietikäinen, Martin Häusling, Biljana Borzan, Anja Hazekamp&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"htt",
-          "published": "2026-07-02T15:03:10.000Z",
-          "score": 22
+          "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday 6 July 2026 from 19.00 to 22.00 (Strasbourg)&lt;/li&gt;&lt;li&gt;Tuesday 14 July from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;/div&gt;&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/308803/ENVI%20-%20Work%20in%20progress%20-%203%20July%",
+          "published": "2026-07-03T15:33:37.000Z",
+          "score": 18
         },
         {
-          "title": "Ryanair warns of 'queue chaos' from new EU border system",
-          "link": "https://www.bbc.co.uk/news/articles/c8x2y74wp9eo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The airline calls on European governments to postpone the EES system until after the summer holiday period.",
-          "published": "2026-07-02T17:17:36.000Z",
+          "title": "NATO summit: European members and Canada pledge long-term Ukraine aid",
+          "link": "https://www.dw.com/en/nato-summit-european-members-and-canada-pledge-long-term-ukraine-aid/a-77825447?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The NATO alliance&#039;s European members and Canada have signaled a readiness to fully take over the financing of Ukraine&#039;s fight against Russia.",
+          "published": "2026-07-03T17:29:00.000Z",
           "score": 8
         }
       ]
@@ -147,11 +201,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU and US concerned by China's new ethnic unity law which targets people overseas - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQNVlYcGtLSmlVQ3JtM09sRmZJbzBpUGl2ZWNwal9ESTdaWlhYUmV6QVptcDM2aUtzNnJrTjVUQVRiWUd2ZDVqLS1iZGFHSC05bFdsQWVrRkk0eXN3SjFUbEhUZjRNODZtM2F1NDVaUVFXZUZVcjRRc0p2MFNadHNSdFV4TnhITUVWZDlIVGtTdWpQVEh1eUd6WGJwbFZ6cHQzcXRIbDVWVXVhVGFTR2RNVXVzVWc4OEtpcHZqVTRB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQNVlYcGtLSmlVQ3JtM09sRmZJbzBpUGl2ZWNwal9ESTdaWlhYUmV6QVptcDM2aUtzNnJrTjVUQVRiWUd2ZDVqLS1iZGFHSC05bFdsQWVrRkk0eXN3SjFUbEhUZjRNODZtM2F1NDVaUVFXZUZVcjRRc0p2MFNadHNSdFV4TnhITUVWZDlIVGtTdWpQVEh1eUd6WGJwbFZ6cHQzcXRIbDVWVXVhVGFTR2RNVXVzVWc4OEtpcHZqVTRB?oc=5\" target=\"_blank\"&gt;EU and US concerned by China's new ethnic unity law which targets people overseas&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T15:11:24.000Z",
+          "title": "Heat wave: European countries report 3,700 excess deaths",
+          "link": "https://www.dw.com/en/heat-wave-european-countries-report-3-700-excess-deaths/a-77823303?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Thousands of excess fatalities have been recorded across Europe following last week&#039;s heat wave, especially among older people. In France, the prime minister is facing a no-confidence vote over the crisis.",
+          "published": "2026-07-03T14:19:00.000Z",
           "score": 12
         },
         {
@@ -163,36 +217,36 @@
           "score": 12
         },
         {
-          "title": "Google loses fight against record €4.1 billion EU antitrust fine - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxNeFFsalo3LWdiNVRiVnR2aGx3VEhYRm9JZW9XMFpWMTNzWENjczNPdG5JOUNrVWJYN3lVeFV6Q1RITnI5OUN3Y3Q4Sno4UlNoNGRybmppNGxVa3hOTXZyNGc4eV9JcUUzaE45cGhGWkRjNlhYSVpvcjR2TWtjZUN4TG9ZWjFOWllFcHBrNnBYM09pS19GYzVxdTFOVGJEUFNrdDJUTHNrWGcwVElWY3dNbGVuSmZSeVB3dGZBbUlR?oc=5\" target=\"_blank\"&gt;Google loses fight against record €4.1 billion EU antitrust fine&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T13:38:50.000Z",
+          "title": "EU sanctions Russian researchers involved in Navalny&#039;s death",
+          "link": "https://www.dw.com/en/eu-sanctions-russian-researchers-involved-in-navalny-s-death/a-77825077?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The six sanctioned Russian scientists were linked to the production of epibatidine — the deadly toxin identified in the body of Putin critic Alexei Navalny after his death.",
+          "published": "2026-07-03T16:18:00.000Z",
           "score": 8
         },
         {
-          "title": "Researchers say EU lawmaker who investigated surveillance was hacked by Israeli spyware - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOSXpnRVhYUFJmVkRtMkFfcEV0MW55b25EQWR0aENNZGt3cnVMcVMyVlhCZmVpRDQ5RUdkMnI0UHBwT051MjFWSThRZzY1Rm14RmFzZWRUQzN6T245Rks4dE5FNUU0ZEVEdmZUbGltX1lQOEEtNUVRM3BHdzZzV1JYRFc5ODJ4bTRCeC1VbE1iSGdPaXlrMFNTLWxoWkV5SURVRmQxTXdEMm9TcnE2U3k1cXdxQTF0UnRGWGQyYkRNUHZHanBLdTFidl84UDlJZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizgFBVV95cUxOSXpnRVhYUFJmVkRtMkFfcEV0MW55b25EQWR0aENNZGt3cnVMcVMyVlhCZmVpRDQ5RUdkMnI0UHBwT051MjFWSThRZzY1Rm14RmFzZWRUQzN6T245Rks4dE5FNUU0ZEVEdmZUbGltX1lQOEEtNUVRM3BHdzZzV1JYRFc5ODJ4bTRCeC1VbE1iSGdPaXlrMFNTLWxoWkV5SURVRmQxTXdEMm9TcnE2U3k1cXdxQTF0UnRGWGQyYkRNUHZHanBLdTFidl84UDlJZw?oc=5\" target=\"_blank\"&gt;Researchers say EU lawmaker who investigated surveillance was hacked by Israeli spyware&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&g",
-          "published": "2026-07-03T06:02:00.000Z",
+          "title": "Sick leave: Germany rising but not the worst in Europe",
+          "link": "https://www.dw.com/en/sick-leave-germany-rising-but-not-the-worst-in-europe/a-77815488?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Sick leave in Germany has hit a new record, with workers taking an average of nearly 20 days off per year. As Chancellor Merz cracks down, how does the country&#039;s absenteeism compare to other countries?",
+          "published": "2026-07-03T12:52:00.000Z",
           "score": 8
         },
         {
-          "title": "Brazil implements new regulations for meat exports to EU, Globo Rural reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPcXA0VWZ6bU04R0dteWwzOHhEbFotelJMNl9FbUdWNWFtMXRLdzJXRHhacGR1Q3phVXdUR1loOUV4UFkxdjFKNUNaTl9iVEVxZnVnbGRPRmEyQlFDSGVCTjlmVlRhaWduVGN0bFpNZVJqdE1aUUJ4ZVNucVdQcmpWZURRRmI0N3B4anlXTjcySi1vc0UtbEpkYnJDUG5TRnE1SElEcG1ZUFRPci01bmpCQXUzbmhNTmdyRDhScg?oc=5",
+          "title": "India insurance regulator plans overhaul of commission rules to curb mis-selling, sources say - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQZGhhVWdERVExNVdENmhWOVV4aWFMX3VpQ1V5YW1zU2dOVjUxZVVQSkU3TldLd2FKOVVyQkIxWWhjY2RLOXVNOUhBQzBfdl9WSFBVYzAzWGVGd1MzY1IzYXJOVi1MRTBrbFUtZXo5NG9XQzh5LUp0LWVqT2dqeXlCd2Z4d25pWkIzVm9OZnYwOHFnSkJJa1JFZG56OUw0STR3ejI3Vm1nV2FtWFZiX2liNEZuc2NUSlk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPcXA0VWZ6bU04R0dteWwzOHhEbFotelJMNl9FbUdWNWFtMXRLdzJXRHhacGR1Q3phVXdUR1loOUV4UFkxdjFKNUNaTl9iVEVxZnVnbGRPRmEyQlFDSGVCTjlmVlRhaWduVGN0bFpNZVJqdE1aUUJ4ZVNucVdQcmpWZURRRmI0N3B4anlXTjcySi1vc0UtbEpkYnJDUG5TRnE1SElEcG1ZUFRPci01bmpCQXUzbmhNTmdyRDhScg?oc=5\" target=\"_blank\"&gt;Brazil implements new regulations for meat exports to EU, Globo Rural reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-02T23:03:34.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxQZGhhVWdERVExNVdENmhWOVV4aWFMX3VpQ1V5YW1zU2dOVjUxZVVQSkU3TldLd2FKOVVyQkIxWWhjY2RLOXVNOUhBQzBfdl9WSFBVYzAzWGVGd1MzY1IzYXJOVi1MRTBrbFUtZXo5NG9XQzh5LUp0LWVqT2dqeXlCd2Z4d25pWkIzVm9OZnYwOHFnSkJJa1JFZG56OUw0STR3ejI3Vm1nV2FtWFZiX2liNEZuc2NUSlk?oc=5\" target=\"_blank\"&gt;India insurance regulator plans overhaul of commission rules to curb mis-selling, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T07:43:13.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 448,
-    "articlesLast24h": 174,
-    "afterDedup": 159,
+    "totalArticlesScanned": 450,
+    "articlesLast24h": 170,
+    "afterDedup": 157,
     "feedsQueried": 19
   }
 }
