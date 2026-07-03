@@ -409,12 +409,120 @@ function arcPath(r0: number, r1: number, a0: number, a1: number): string {
   return `M${x0},${y0}A${r1},${r1} 0 ${large} 1 ${x1},${y1}L${x2},${y2}A${r0},${r0} 0 ${large} 0 ${x3},${y3}Z`;
 }
 
-function labelTransform(a0: number, a1: number, rMid: number): string {
-  const deg = (((a0 + a1) / 2) * 180) / Math.PI;
-  return `rotate(${deg - 90}) translate(${rMid},0) rotate(${deg < 180 ? 0 : 180})`;
+const fmtMt = (mt: number) => (mt >= 10 ? Math.round(mt).toString() : mt.toFixed(mt >= 1 ? 1 : 2));
+
+/* ------------------------------------------------------------- arc labels */
+
+/**
+ * Labels follow their arc on a curved <textPath>, so their available length
+ * is the true arc length at the label radius — never the ring thickness.
+ * Text that cannot fit is ellipsized (full name in tooltip + panel), and
+ * dropped entirely when even a stub would not fit, so labels can no longer
+ * spill across ring boundaries or collide with neighbouring arcs.
+ */
+
+/**
+ * Rough text width in px (average glyph ≈ 0.58 em; semibold slightly wider).
+ * Deliberately generous: centred textPath text that overruns its path gets
+ * its leading glyphs clipped by SVG, so over- beats under-estimating.
+ */
+const textWidth = (s: string, fontSize: number, bold: boolean) =>
+  s.length * fontSize * (bold ? 0.64 : 0.58);
+
+/** Longest prefix (with ellipsis) that fits `maxPx`, or null if nothing sensible fits. */
+function fitText(text: string, maxPx: number, fontSize: number, bold = false): string | null {
+  if (maxPx <= 0) return null;
+  if (textWidth(text, fontSize, bold) <= maxPx) return text;
+  for (let n = text.length - 2; n >= 3; n--) {
+    const s = `${text.slice(0, n).trimEnd()}…`;
+    if (textWidth(s, fontSize, bold) <= maxPx) return s;
+  }
+  return null;
 }
 
-const fmtMt = (mt: number) => (mt >= 10 ? Math.round(mt).toString() : mt.toFixed(mt >= 1 ? 1 : 2));
+/**
+ * Circular arc at radius `r` from angle b0 → b1 (radians from 12 o'clock,
+ * clockwise). `reverse` flips the travel direction so labels on the lower
+ * half of the wheel read left-to-right instead of upside down.
+ */
+function curvedLabelPath(r: number, b0: number, b1: number, reverse: boolean): string {
+  const large = b1 - b0 > Math.PI ? 1 : 0;
+  const [x0, y0] = polar(r, reverse ? b1 : b0);
+  const [x1, y1] = polar(r, reverse ? b0 : b1);
+  return `M${x0},${y0}A${r},${r} 0 ${large} ${reverse ? 0 : 1} ${x1},${y1}`;
+}
+
+function ArcLabel({
+  node,
+  r0,
+  r1,
+  isCollapsed,
+}: {
+  node: WheelNode;
+  r0: number;
+  r1: number;
+  isCollapsed: boolean;
+}) {
+  const pad = Math.min(0.005, (node.a1 - node.a0) / 5) + 0.01;
+  const b0 = node.a0 + pad;
+  const b1 = node.a1 - pad;
+  if (b1 <= b0) return null;
+  const midDeg = ((((b0 + b1) / 2) * 180) / Math.PI + 360) % 360;
+  const flip = midDeg > 90 && midDeg < 270;
+  const rMid = (r0 + r1) / 2;
+  const textFill = luminance(node.color) > 0.6 ? '#1f2937' : '#ffffff';
+  const uid = node.id.replace(/[^a-zA-Z0-9_-]/g, '-');
+
+  const nameSize = node.kind === 'division' ? 11 : node.kind === 'subsector' ? 10 : 8.75;
+  const valueSize = 8.5;
+  const arcLenAt = (r: number) => (b1 - b0) * r;
+
+  const mtText = `${node.exact ? '≈' : '~'}${fmtMt(node.mt)} Mt${node.exact ? '' : '*'}`;
+  const foldMark = isCollapsed && node.children.length ? ' ▸' : '';
+
+  // name on the outer curved line, Mt value on the inner one; levers get a
+  // single centred line (their slices are layout-only, so no Mt is shown).
+  // A number is never ellipsized — the value renders whole or not at all
+  // (dropping the fold indicator first), so no "≈2…" fragments appear.
+  const lineGap = 11.5;
+  const rValue = rMid - lineGap / 2;
+  const valueRoom = arcLenAt(rValue) - 8;
+  const valueTxt =
+    node.kind === 'lever'
+      ? null
+      : textWidth(mtText + foldMark, valueSize, false) <= valueRoom
+        ? mtText + foldMark
+        : textWidth(mtText, valueSize, false) <= valueRoom
+          ? mtText
+          : null;
+
+  const rName = valueTxt ? rMid + lineGap / 2 : rMid;
+  const name = fitText(node.short, arcLenAt(rName) - 8, nameSize, true);
+  if (!name && !valueTxt) return null;
+
+  return (
+    <g pointerEvents="none" style={{ userSelect: 'none' }} aria-hidden>
+      <defs>
+        {name ? <path id={`sbl-${uid}-n`} d={curvedLabelPath(rName, b0, b1, flip)} /> : null}
+        {valueTxt ? <path id={`sbl-${uid}-v`} d={curvedLabelPath(rValue, b0, b1, flip)} /> : null}
+      </defs>
+      {name ? (
+        <text fontSize={nameSize} fontWeight={600} fill={textFill}>
+          <textPath href={`#sbl-${uid}-n`} startOffset="50%" textAnchor="middle" dominantBaseline="central">
+            {name}
+          </textPath>
+        </text>
+      ) : null}
+      {valueTxt ? (
+        <text fontSize={valueSize} fontWeight={500} fill={textFill} opacity={0.88}>
+          <textPath href={`#sbl-${uid}-v`} startOffset="50%" textAnchor="middle" dominantBaseline="central">
+            {valueTxt}
+          </textPath>
+        </text>
+      ) : null}
+    </g>
+  );
+}
 
 /* ------------------------------------------------------------ the figure */
 
@@ -527,17 +635,13 @@ export default function EmissionsSunburst() {
           {visible.map(node => {
             const r0 = R_AT(node.depth - 1);
             const r1 = R_AT(node.depth);
-            const rMid = (r0 + r1) / 2;
-            const spanPx = (node.a1 - node.a0) * rMid;
-            const fill = node.color;
             const isCollapsed = collapsed.has(node.id);
             const active = node.id === selectedId;
-            const textFill = luminance(fill) > 0.6 ? '#1f2937' : '#ffffff';
             return (
               <g key={node.id}>
                 <path
                   d={arcPath(r0, r1, node.a0, node.a1)}
-                  fill={fill}
+                  fill={node.color}
                   fillOpacity={node.kind === 'lever' ? 0.9 : 1}
                   stroke={active ? '#1f2937' : '#ffffff'}
                   strokeWidth={active ? 2 : 0.8}
@@ -548,36 +652,7 @@ export default function EmissionsSunburst() {
                   onPointerMove={moveTip}
                   onPointerLeave={hideTip}
                 />
-                {spanPx > 30 ? (
-                  <text
-                    pointerEvents="none"
-                    textAnchor="middle"
-                    transform={labelTransform(node.a0, node.a1, rMid)}
-                    fill={textFill}
-                    style={{ userSelect: 'none' }}
-                  >
-                    <tspan
-                      x={0}
-                      dy={node.kind === 'lever' || spanPx <= 52 ? '0.32em' : '-0.25em'}
-                      fontSize={node.kind === 'division' ? 11 : 9.5}
-                      fontWeight={600}
-                    >
-                      {node.kind === 'lever'
-                        ? spanPx > 64
-                          ? node.short.length > 26
-                            ? `${node.short.slice(0, 24)}…`
-                            : node.short
-                          : ''
-                        : node.short}
-                    </tspan>
-                    {node.kind !== 'lever' && spanPx > 52 ? (
-                      <tspan x={0} dy="1.15em" fontSize={8.5} fontWeight={500} opacity={0.85}>
-                        {node.exact ? `≈${fmtMt(node.mt)} Mt` : `~${fmtMt(node.mt)} Mt*`}
-                        {isCollapsed && node.children.length ? ' ▸' : ''}
-                      </tspan>
-                    ) : null}
-                  </text>
-                ) : null}
+                <ArcLabel node={node} r0={r0} r1={r1} isCollapsed={isCollapsed} />
               </g>
             );
           })}
