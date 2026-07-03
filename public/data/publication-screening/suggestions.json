@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T05:47:37.036Z",
+  "generatedAt": "2026-07-03T07:44:45.494Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,32 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1080/14693062.2026.2685655",
+      "title": "Decarbonization from the ground up: what Local Industrial Decarbonization Plans reveal about place-based approaches to decarbonizing industry in the UK",
+      "journal": "Climate Policy",
+      "authors": "Imogen Rattle, Peter G. Taylor",
+      "published": "2026-07-02",
+      "url": "https://doi.org/10.1080/14693062.2026.2685655",
+      "abstract": "",
+      "suggestedOn": "2026-07-03",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "decarbonization"
+          ]
+        },
+        {
+          "projectId": "industry-project",
+          "score": 4,
+          "matched": [
+            "industrial decarbonization"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1088/1748-9326/ae84e8",
       "title": "An assessment of the alignment of the COP28 energy pledges with the Paris Agreement Goals",
