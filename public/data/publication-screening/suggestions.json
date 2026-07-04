@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T07:44:45.494Z",
+  "generatedAt": "2026-07-04T07:20:47.899Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,26 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1016/j.enpol.2026.115467",
+      "title": "Evaluating the effectiveness of green recovery measures on sectoral energy transition pathways and employment opportunities towards net zero: Evidence from the Greek National Recovery and Resilience Plan",
+      "journal": "Energy Policy",
+      "authors": "Nikos Kleanthis, Vassilis Stavrakas, Dimitris Papantonis, Alexandros Flamos",
+      "published": "2026-10",
+      "url": "https://doi.org/10.1016/j.enpol.2026.115467",
+      "abstract": "",
+      "suggestedOn": "2026-07-04",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6,
+          "matched": [
+            "net zero",
+            "energy transition"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1080/14693062.2026.2685655",
       "title": "Decarbonization from the ground up: what Local Industrial Decarbonization Plans reveal about place-based approaches to decarbonizing industry in the UK",
