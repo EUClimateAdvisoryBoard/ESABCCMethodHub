@@ -1,24 +1,18 @@
 {
   "date": "2026-07-04",
-  "generatedAt": "2026-07-04T12:08:19.257Z",
+  "generatedAt": "2026-07-04T18:03:07.237Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 4 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31) - PE790.214v01-00",
-      "summary": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lynn Boylan, Heléne Fritzon, Pär Holmgren, Alexandr Vondra, Lídia Pereira, Emma Wiesner, Marie-Luce Brasier-Clain, Anja Arndt&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Far-right AfD threatens eastern Germany&#039;s energy transition",
-      "summary": "Germany&#039;s far-right AfD wants to revive coal and nuclear power and curb non-EU immigration. Businesses in eastern Germany warn that its policies could harm the economy.",
+      "headline": "Why can’t Britain turn its green revolution into cheap energy? A visual analysis",
+      "summary": "&lt;p&gt;Labour has approved a wave of renewable energy projects, but turning plans into power remains slow. Why is that?&lt;/p&gt;&lt;p&gt;Labour has a race on its hands if it is to lock in its promise to achieve a virtually zero-carbon electricity system by 2030.&lt;/p&gt;&lt;p&gt;Britain’s next prime minister will have to move fast: the &lt;a href=\"https://www.theguardian.com/environment/2026/jul/02/spain-france-new-heatwave-warning\"&gt;climate emergency is raging&lt;/a&gt;, high energy bills",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "DeBriefed 3 July 2026: US faces scorching Independence Day &#124; Record ocean temperatures &#124; Vietnam’s EV surge",
-      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 3 July 2026: US faces scorching Independence Day | Record ocean temperatures | Vietnam’s EV surge appeared first on Carbon Brief.",
+      "headline": "'Hotter and hotter and hotter' - Europe's new climate in seven charts",
+      "summary": "Temperature records were smashed in June - and scientists warn this is a sign of things to come.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,29 +27,12 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31) - PE790.214v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790214_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 201 - 377 - Draft motion for a resolution UN Climate Change Conference 2026 in Antalya, Turkey (COP31)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Lynn Boylan, Heléne Fritzon, Pär Holmgren, Alexandr Vondra, Lídia Pereira, Emma Wiesner, Marie-Luce Brasier-Clain, Anja Arndt&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-03T15:23:02.000Z",
-          "score": 23
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Far-right AfD threatens eastern Germany&#039;s energy transition",
-          "link": "https://www.dw.com/en/far-right-afd-threatens-eastern-germany-s-energy-transition/a-77806872?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s far-right AfD wants to revive coal and nuclear power and curb non-EU immigration. Businesses in eastern Germany warn that its policies could harm the economy.",
-          "published": "2026-07-03T13:07:00.000Z",
-          "score": 9
-        },
         {
           "title": "Why can’t Britain turn its green revolution into cheap energy? A visual analysis",
           "link": "https://www.theguardian.com/business/ng-interactive/2026/jul/04/britain-green-energy-revolution-a-visual-story",
@@ -95,27 +72,19 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "DeBriefed 3 July 2026: US faces scorching Independence Day &#124; Record ocean temperatures &#124; Vietnam’s EV surge",
-          "link": "https://www.carbonbrief.org/debriefed-3-july-2026-us-faces-scorching-independence-day-record-ocean-temperatures-vietnams-ev-surge/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 3 July 2026: US faces scorching Independence Day | Record ocean temperatures | Vietnam’s EV surge appeared first on Carbon Brief.",
-          "published": "2026-07-03T14:47:51.000Z",
-          "score": 13
-        },
-        {
-          "title": "Q&#038;A: How will the World Bank’s abandoned finance goal affect climate action?",
-          "link": "https://www.carbonbrief.org/qa-how-will-the-world-banks-abandoned-finance-goal-affect-climate-action/",
-          "source": "Carbon Brief",
-          "description": "The World Bank has abandoned a target for 45% of the funding it gives developing... The post Q&amp;A: How will the World Bank’s abandoned finance goal affect climate action? appeared first on Carbon Brief.",
-          "published": "2026-07-03T14:22:28.000Z",
-          "score": 13
-        },
-        {
           "title": "'Hotter and hotter and hotter' - Europe's new climate in seven charts",
           "link": "https://www.bbc.co.uk/news/articles/c8e2j0j87reo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Temperature records were smashed in June - and scientists warn this is a sign of things to come.",
           "published": "2026-07-04T00:57:05.000Z",
+          "score": 13
+        },
+        {
+          "title": "Portugal asks EU, Spain and Morocco for support as wildfire risk rises - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQY1Via2F6RnRjTXh4aVAzWW5WMlF4WjFrYmNmVFZER3ZXT3Fzb1ptb093Zk5SbzVOakxnSkpOMF9jSDFhZ3BJZEdqSlJVZHpGOXdsLWxobWY5OHBaenBFWloyRGFjSnVLMmt3bjZMMlpiSjhpQVBBTTJlcG1pZllSZmtWZmJGQ0V0cEZSWVJWVExINzRZZnBlQjdxV3JVMHFHaWNqR0dwU2h4U2MzLU93eU9SNGlldw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxQY1Via2F6RnRjTXh4aVAzWW5WMlF4WjFrYmNmVFZER3ZXT3Fzb1ptb093Zk5SbzVOakxnSkpOMF9jSDFhZ3BJZEdqSlJVZHpGOXdsLWxobWY5OHBaenBFWloyRGFjSnVLMmt3bjZMMlpiSjhpQVBBTTJlcG1pZllSZmtWZmJGQ0V0cEZSWVJWVExINzRZZnBlQjdxV3JVMHFHaWNqR0dwU2h4U2MzLU93eU9SNGlldw?oc=5\" target=\"_blank\"&gt;Portugal asks EU, Spain and Morocco for support as wildfire risk rises&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T19:21:26.000Z",
           "score": 13
         },
         {
@@ -127,12 +96,20 @@
           "score": 7
         },
         {
-          "title": "Climate Focus: Venezuela's Rodriguez defends earthquake response - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDBQcTRWOThjRXVSQ29rXzdKZ3BBZTV0TEVLM21oclFndXFXYmlILW90ZTZPbTJJMmM5QmlmOXV5aUt2VFpFY0RuSzh0OENLQXNJRVhKM1M4YThnVkNUV0RYdXhjbHIxMHVvOEZYcGY5TWdhaTdjWk5sVkVWSUlTOW9udFFQVDA5cmx6NUJ2b1VvUDhLRy16b1VxNUNNWEpOdjRCUjFaNUtQcHRLXzM1UVBpMA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDBQcTRWOThjRXVSQ29rXzdKZ3BBZTV0TEVLM21oclFndXFXYmlILW90ZTZPbTJJMmM5QmlmOXV5aUt2VFpFY0RuSzh0OENLQXNJRVhKM1M4YThnVkNUV0RYdXhjbHIxMHVvOEZYcGY5TWdhaTdjWk5sVkVWSUlTOW9udFFQVDA5cmx6NUJ2b1VvUDhLRy16b1VxNUNNWEpOdjRCUjFaNUtQcHRLXzM1UVBpMA?oc=5\" target=\"_blank\"&gt;Climate Focus: Venezuela's Rodriguez defends earthquake response&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T12:44:00.000Z",
-          "score": 7
+          "title": "Sydney records hottest June since 1859 as expert warns new high a ‘signature’ of global warming",
+          "link": "https://www.theguardian.com/australia-news/2026/jul/04/sydney-records-hottest-june-since-1859-as-expert-warns-new-high-a-signature-of-global-warming",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Bureau of Meteorology says city’s mean temperature reached 16.1C, surpassing the previous record of 15.7C set in 1991&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&l",
+          "published": "2026-07-04T04:37:24.000Z",
+          "score": 2
+        },
+        {
+          "title": "New heatwave likely to peak at 34C with week-long health alert issued",
+          "link": "https://www.bbc.co.uk/weather/articles/c621j44jwe1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Another heatwave is on its way and set to last significantly longer as Stav Danaos explains.",
+          "published": "2026-07-04T15:28:17.000Z",
+          "score": 2
         }
       ]
     },
@@ -155,35 +132,11 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Latest news - ENVI Committee meetings - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20200226CAL09791",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div&gt;&lt;p&gt;&lt;a name=\"_GoBack\"&gt;&lt;/a&gt;The next committee meetings will take place on:&lt;/p&gt;&lt;ul class=\"list_inbox\"&gt;&lt;li&gt;Monday 6 July 2026 from 19.00 to 22.00 (Strasbourg)&lt;/li&gt;&lt;li&gt;Tuesday 14 July from 14.30 to 18.30 (Brussels)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;&lt;/p&gt; &lt;/div&gt;&lt;div style=\"clear:both;float:none;\"&gt;&lt;br /&gt;&lt;a href=\"https://www.europarl.europa.eu/cmsdata/308803/ENVI%20-%20Work%20in%20progress%20-%203%20July%",
-          "published": "2026-07-03T15:33:37.000Z",
-          "score": 18
-        },
-        {
-          "title": "NATO summit: European members and Canada pledge long-term Ukraine aid",
-          "link": "https://www.dw.com/en/nato-summit-european-members-and-canada-pledge-long-term-ukraine-aid/a-77825447?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The NATO alliance&#039;s European members and Canada have signaled a readiness to fully take over the financing of Ukraine&#039;s fight against Russia.",
-          "published": "2026-07-03T17:29:00.000Z",
-          "score": 8
-        },
-        {
           "title": "Airbus CEO 'not necessarily optimistic' on European defence cooperation - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSW4wZWRGdGpLaGd0bVZxOVl0aXh2SERKcFJPRFFVRF9BclRPUFI2X05kNy1KTFNPZ0oySnplNTRkY3YtQUpvZ1J1WDZDU0tCdUJnTThoX1B5ZTd3eXZpcXducW5hT01hc3U3a3hwNGRxUEV4Y0ZoYWROMXV1YXVDQnVlSEVXc3U1ekhZNVpDMGZRMmpGNHlmNXZjZTdLX2Y4QW5sTXBYeVRrWTMwYlFibHBRdl9FS0dicG1sYnIwV3JHXzhlSTdpcw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSW4wZWRGdGpLaGd0bVZxOVl0aXh2SERKcFJPRFFVRF9BclRPUFI2X05kNy1KTFNPZ0oySnplNTRkY3YtQUpvZ1J1WDZDU0tCdUJnTThoX1B5ZTd3eXZpcXducW5hT01hc3U3a3hwNGRxUEV4Y0ZoYWROMXV1YXVDQnVlSEVXc3U1ekhZNVpDMGZRMmpGNHlmNXZjZTdLX2Y4QW5sTXBYeVRrWTMwYlFibHBRdl9FS0dicG1sYnIwV3JHXzhlSTdpcw?oc=5\" target=\"_blank\"&gt;Airbus CEO 'not necessarily optimistic' on European defence cooperation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-03T18:21:44.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU Commission proposes five major cross-border defence projects - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVG9LZzNsNnB3UVdlSWlad0ZLMnkyYmdUWVU3dWtVVTZKN3gzZG92dGhtUVpmX3ZIdjcwa3pJRy11c2lFRXNrN2duSDlXRjd6REkwUTdYTnA4UWxYX0RGZF9qdFd5dmNnLUh5cDhuT2VzaU9vRG9uRExxbk1fSG5DdzlrdTJXRDc3Tkp1NjlVTHlHRFpFeFVGR3I5U0U4MDhIcUZxRDlLLVNQYTNvMXExZVVVcmdaU1ZGQzBBX1R2aTdSOFNp?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOVG9LZzNsNnB3UVdlSWlad0ZLMnkyYmdUWVU3dWtVVTZKN3gzZG92dGhtUVpmX3ZIdjcwa3pJRy11c2lFRXNrN2duSDlXRjd6REkwUTdYTnA4UWxYX0RGZF9qdFd5dmNnLUh5cDhuT2VzaU9vRG9uRExxbk1fSG5DdzlrdTJXRDc3Tkp1NjlVTHlHRFpFeFVGR3I5U0U4MDhIcUZxRDlLLVNQYTNvMXExZVVVcmdaU1ZGQzBBX1R2aTdSOFNp?oc=5\" target=\"_blank\"&gt;EU Commission proposes five major cross-border defence projects&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T14:16:45.000Z",
           "score": 8
         }
       ]
@@ -193,7 +146,7 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Pope urges Europe to do more for migrants while visiting gateway island",
+          "title": "Pope urges Europe to do more for migrants as he visits gateway island",
           "link": "https://www.bbc.co.uk/news/articles/c5yz83n7q5no?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The pontiff pays tribute to migrants who lost their lives at sea at a cemetery on the Italian island of Lampedusa.",
@@ -201,44 +154,44 @@
           "score": 8
         },
         {
-          "title": "EU sanctions Russian researchers involved in Navalny&#039;s death",
-          "link": "https://www.dw.com/en/eu-sanctions-russian-researchers-involved-in-navalny-s-death/a-77825077?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The six sanctioned Russian scientists were linked to the production of epibatidine — the deadly toxin identified in the body of Putin critic Alexei Navalny after his death.",
-          "published": "2026-07-03T16:18:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Sick leave: Germany rising but not the worst in Europe",
-          "link": "https://www.dw.com/en/sick-leave-germany-rising-but-not-the-worst-in-europe/a-77815488?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Sick leave in Germany has hit a new record, with workers taking an average of nearly 20 days off per year. As Chancellor Merz cracks down, how does the country&#039;s absenteeism compare to other countries?",
-          "published": "2026-07-03T12:52:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "EU issues sanctions against six people involved in death of Navalny - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRG1UQ3Mxb2ExaDEwSGxqMVIwUTkxX1puZ1hYTHhxVDJCNlM4cTRrQXdZVkp2dnhZOGxETnpTajhfTVFwRHJ0OUxPUjYyOUEyYVlaeWg4N0lfbGlpMU9paXFpdnBmUENxT3FCeGQ5cDJCcGU0NmQ1YXg3TWFYT2JNcjJXNThvLXJmdHlhOEc2dEt4OXA2UnZuN3IxdUhPWFJvWE9OQ0ln?oc=5",
+          "title": "Egypt expects €1.5 billion from EU assistance package in coming days, minister says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOTE4TTVQSHI0aUg0bUtWaERHeGVmTVZfMzBpdFhfeEVUZEtDNEJERGk5a2cza1RXZHp3M2xCLUtyLUdMR0xxeVRvQTRNN1JLVXR2Vml6R2M2Mlpzem8wbkV4WU1Uc1BlN2kxS0hLYmNmVnYxell1VzZRTTFfakVJZTl4YTR1cFlHNkRiX3hXUXRvc2RfYzZHdlExMGRyTDA0Vzc1Q0F6Uk9PQXhxTGNSazNNdE1ZRUFRaUVNU0xhdFpEXzg?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNRG1UQ3Mxb2ExaDEwSGxqMVIwUTkxX1puZ1hYTHhxVDJCNlM4cTRrQXdZVkp2dnhZOGxETnpTajhfTVFwRHJ0OUxPUjYyOUEyYVlaeWg4N0lfbGlpMU9paXFpdnBmUENxT3FCeGQ5cDJCcGU0NmQ1YXg3TWFYT2JNcjJXNThvLXJmdHlhOEc2dEt4OXA2UnZuN3IxdUhPWFJvWE9OQ0ln?oc=5\" target=\"_blank\"&gt;EU issues sanctions against six people involved in death of Navalny&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T12:13:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOTE4TTVQSHI0aUg0bUtWaERHeGVmTVZfMzBpdFhfeEVUZEtDNEJERGk5a2cza1RXZHp3M2xCLUtyLUdMR0xxeVRvQTRNN1JLVXR2Vml6R2M2Mlpzem8wbkV4WU1Uc1BlN2kxS0hLYmNmVnYxell1VzZRTTFfakVJZTl4YTR1cFlHNkRiX3hXUXRvc2RfYzZHdlExMGRyTDA0Vzc1Q0F6Uk9PQXhxTGNSazNNdE1ZRUFRaUVNU0xhdFpEXzg?oc=5\" target=\"_blank\"&gt;Egypt expects €1.5 billion from EU assistance package in coming days, minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
+          "published": "2026-07-04T12:11:07.000Z",
           "score": 8
         },
         {
-          "title": "Swiss glaciers rapidly lose protective snow in punishing European heatwave - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeGUwcElDOUcyTVZVbkQybWxRNlJNMnBLT0stR2EwWXkzMUN3djNoTzE5ODJ2enpPZDJ5TVNYeWtrT3NJUVRYc1o5RHYzVjI3akoxSnlrM0dsXzJJd2hfRTZWSUxTdTVvV0ZOUEZRQWtOWHZxTm9NX2NWTGlLWlJNOXNXX3FKTktUUDZpYzNKN3ZRN2N5Z3VXcUJaOW9ybHVDSG92WnVqSmVYN1llRHZWcjg1Rk00NzExd3RGRUhaZkZUSjIwZklr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNeGUwcElDOUcyTVZVbkQybWxRNlJNMnBLT0stR2EwWXkzMUN3djNoTzE5ODJ2enpPZDJ5TVNYeWtrT3NJUVRYc1o5RHYzVjI3akoxSnlrM0dsXzJJd2hfRTZWSUxTdTVvV0ZOUEZRQWtOWHZxTm9NX2NWTGlLWlJNOXNXX3FKTktUUDZpYzNKN3ZRN2N5Z3VXcUJaOW9ybHVDSG92WnVqSmVYN1llRHZWcjg1Rk00NzExd3RGRUhaZkZUSjIwZklr?oc=5\" target=\"_blank\"&gt;Swiss glaciers rapidly lose protective snow in punishing European heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T16:28:35.000Z",
-          "score": 8
+          "title": "Keiko Fujimori declared winner of Peru's presidential election weeks after vote",
+          "link": "https://www.bbc.co.uk/news/articles/cr5jpvv06e1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The daughter of disgraced president Alberto Fujimori is declared winner of tight race nearly a month after voting took place.",
+          "published": "2026-07-04T07:52:55.000Z",
+          "score": 6
+        },
+        {
+          "title": "India news: Government lists 23 Pakistanis as &#039;terrorists&#039;",
+          "link": "https://www.dw.com/en/india-news-government-lists-23-pakistanis-as-terrorists/live-77830565?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Indian government has designated 23 Pakistan-based individuals as &quot;terrorists&quot; under its anti-terror law. Follow DW for more.",
+          "published": "2026-07-04T09:13:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "US: President Trump pardons 11 people, including Clean Air Act violators",
+          "link": "https://www.dw.com/en/us-president-trump-pardons-11-people-including-clean-air-act-violators/a-77829438?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Donald Trump has granted pardons to nine people convicted of violating a key environmental law. The US President has also pardoned an associate of convicted felon and former lobbyist Jack Abramoff.",
+          "published": "2026-07-04T04:05:00.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 162,
-    "afterDedup": 152,
+    "totalArticlesScanned": 427,
+    "articlesLast24h": 146,
+    "afterDedup": 133,
     "feedsQueried": 19
   }
 }
