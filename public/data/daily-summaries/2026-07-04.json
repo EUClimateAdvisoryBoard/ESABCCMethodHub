@@ -1,6 +1,6 @@
 {
   "date": "2026-07-04",
-  "generatedAt": "2026-07-04T07:47:27.741Z",
+  "generatedAt": "2026-07-04T12:08:19.257Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 4 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,14 +17,14 @@
       "color": "#E87722"
     },
     {
-      "headline": "Daily News 03 / 07 / 2026",
-      "summary": "European Commission Daily news Brussels, 03 Jul 2026 Commission adopts revised sustainability reporting standards to reduce administrative burdens for EU businesses while maintaining high-quality disclosures\r\nThe E...",
+      "headline": "DeBriefed 3 July 2026: US faces scorching Independence Day &#124; Record ocean temperatures &#124; Vietnam’s EV surge",
+      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 3 July 2026: US faces scorching Independence Day | Record ocean temperatures | Vietnam’s EV surge appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Global equity fund inflows rise as investors add tech stocks after market dip - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPMmItRk9lb3pQT19RQTdlNlowOUpOM0pOM09JczhiSy13dGFGWV84RHFVUG5aVzU0VFQ4OUJpN2NRelFOa2lBYXVSM3Z1MTJGYmxMbmYwNXRYTzZnd01BMWFzdzc0eWNvVTZ5TEZ2OTg1c1FDN0dfNWNlUjFrNHdtaU9FdHhlNmc?oc=5\" target=\"_blank\"&gt;Global equity fund inflows rise as investors add tech stocks after market dip&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Labour MPs call on water firms to save Britain’s lost lidos",
+      "summary": "&lt;p&gt;Group, whose constituencies have derelict or at-risk pools, are campaigning to make outdoor swimming available for all&lt;/p&gt;&lt;p&gt;Cooling, blue expanses of water have been a lifesaver for many lucky enough to live near a lido during the recent UK heatwave.&lt;/p&gt;&lt;p&gt;Now, a group of 20 MPs, along with the Fabian Society, are calling for this relief to be made accessible for all by getting water companies to fund the reopening of the country’s lost lidos.&lt;/p&gt; &lt;a hr",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -57,6 +57,14 @@
           "score": 9
         },
         {
+          "title": "Why can’t Britain turn its green revolution into cheap energy? A visual analysis",
+          "link": "https://www.theguardian.com/business/ng-interactive/2026/jul/04/britain-green-energy-revolution-a-visual-story",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Labour has approved a wave of renewable energy projects, but turning plans into power remains slow. Why is that?&lt;/p&gt;&lt;p&gt;Labour has a race on its hands if it is to lock in its promise to achieve a virtually zero-carbon electricity system by 2030.&lt;/p&gt;&lt;p&gt;Britain’s next prime minister will have to move fast: the &lt;a href=\"https://www.theguardian.com/environment/2026/jul/02/spain-france-new-heatwave-warning\"&gt;climate emergency is raging&lt;/a&gt;, high energy bills",
+          "published": "2026-07-04T09:00:09.000Z",
+          "score": 7
+        },
+        {
           "title": "Turbines turning from wind to sustainable products",
           "link": "https://www.bbc.co.uk/news/articles/cewqzrkvwvqo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -79,14 +87,6 @@
           "description": "The Swift telescope has been affected by recent solar storms and is sinking faster than ever, heading toward Earth. A NASA mission will try to capture it and boost its orbit.",
           "published": "2026-07-03T19:59:00.000Z",
           "score": 4
-        },
-        {
-          "title": "Free electricity in Australia, and the week&#039;s other eco wins",
-          "link": "https://www.dw.com/en/free-electricity-in-australia-and-the-week-s-other-eco-wins/a-77824448?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germans save an ancient woodland from coal mining, Australia gives away surplus solar power, and how one city became the world&#039;s best place for cyclists?",
-          "published": "2026-07-03T14:41:00.000Z",
-          "score": 4
         }
       ]
     },
@@ -94,14 +94,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Daily News 03 / 07 / 2026",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/mex_26_1515",
-          "source": "European Commission",
-          "description": "European Commission Daily news Brussels, 03 Jul 2026 Commission adopts revised sustainability reporting standards to reduce administrative burdens for EU businesses while maintaining high-quality disclosures\r\nThe E...",
-          "published": "2026-07-03T08:36:00.000Z",
-          "score": 16
-        },
         {
           "title": "DeBriefed 3 July 2026: US faces scorching Independence Day &#124; Record ocean temperatures &#124; Vietnam’s EV surge",
           "link": "https://www.carbonbrief.org/debriefed-3-july-2026-us-faces-scorching-independence-day-record-ocean-temperatures-vietnams-ev-surge/",
@@ -119,20 +111,28 @@
           "score": 13
         },
         {
-          "title": "Billions unlocked as Green Climate Fund agrees to spend more and save less",
-          "link": "https://www.climatechangenews.com/2026/07/03/billions-unlocked-as-green-climate-fund-agrees-to-spend-more-and-save-less/",
-          "source": "Climate Home News",
-          "description": "The board of the UN's flagship climate fund has agreed to allowed management to invest more of its money in projects in developing nations and keep less in reserve The post Billions unlocked as Green Climate Fund agrees to spend more and save less appeared first on Climate Home News.",
-          "published": "2026-07-03T08:25:38.000Z",
-          "score": 13
-        },
-        {
           "title": "'Hotter and hotter and hotter' - Europe's new climate in seven charts",
           "link": "https://www.bbc.co.uk/news/articles/c8e2j0j87reo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
-          "description": "Temperature records have tumbled across the UK and Europe as scientists warn it is a sign of things to come.",
+          "description": "Temperature records were smashed in June - and scientists warn this is a sign of things to come.",
           "published": "2026-07-04T00:57:05.000Z",
           "score": 13
+        },
+        {
+          "title": "Scientist dubbed The Bogfather is restoring peatland to fight climate change",
+          "link": "https://www.bbc.co.uk/news/articles/cy498d400pro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A childhood fascination with bogs led one Welsh scientist to try and help save the planet.",
+          "published": "2026-07-04T06:21:35.000Z",
+          "score": 7
+        },
+        {
+          "title": "Climate Focus: Venezuela's Rodriguez defends earthquake response - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDBQcTRWOThjRXVSQ29rXzdKZ3BBZTV0TEVLM21oclFndXFXYmlILW90ZTZPbTJJMmM5QmlmOXV5aUt2VFpFY0RuSzh0OENLQXNJRVhKM1M4YThnVkNUV0RYdXhjbHIxMHVvOEZYcGY5TWdhaTdjWk5sVkVWSUlTOW9udFFQVDA5cmx6NUJ2b1VvUDhLRy16b1VxNUNNWEpOdjRCUjFaNUtQcHRLXzM1UVBpMA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOcDBQcTRWOThjRXVSQ29rXzdKZ3BBZTV0TEVLM21oclFndXFXYmlILW90ZTZPbTJJMmM5QmlmOXV5aUt2VFpFY0RuSzh0OENLQXNJRVhKM1M4YThnVkNUV0RYdXhjbHIxMHVvOEZYcGY5TWdhaTdjWk5sVkVWSUlTOW9udFFQVDA5cmx6NUJ2b1VvUDhLRy16b1VxNUNNWEpOdjRCUjFaNUtQcHRLXzM1UVBpMA?oc=5\" target=\"_blank\"&gt;Climate Focus: Venezuela's Rodriguez defends earthquake response&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T12:44:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -141,11 +141,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Global equity fund inflows rise as investors add tech stocks after market dip - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPMmItRk9lb3pQT19RQTdlNlowOUpOM0pOM09JczhiSy13dGFGWV84RHFVUG5aVzU0VFQ4OUJpN2NRelFOa2lBYXVSM3Z1MTJGYmxMbmYwNXRYTzZnd01BMWFzdzc0eWNvVTZ5TEZ2OTg1c1FDN0dfNWNlUjFrNHdtaU9FdHhlNmc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMihwFBVV95cUxPMmItRk9lb3pQT19RQTdlNlowOUpOM0pOM09JczhiSy13dGFGWV84RHFVUG5aVzU0VFQ4OUJpN2NRelFOa2lBYXVSM3Z1MTJGYmxMbmYwNXRYTzZnd01BMWFzdzc0eWNvVTZ5TEZ2OTg1c1FDN0dfNWNlUjFrNHdtaU9FdHhlNmc?oc=5\" target=\"_blank\"&gt;Global equity fund inflows rise as investors add tech stocks after market dip&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T09:49:43.000Z",
+          "title": "Labour MPs call on water firms to save Britain’s lost lidos",
+          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/04/labour-campaign-save-britains-lost-lidos-swimming",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Group, whose constituencies have derelict or at-risk pools, are campaigning to make outdoor swimming available for all&lt;/p&gt;&lt;p&gt;Cooling, blue expanses of water have been a lifesaver for many lucky enough to live near a lido during the recent UK heatwave.&lt;/p&gt;&lt;p&gt;Now, a group of 20 MPs, along with the Fabian Society, are calling for this relief to be made accessible for all by getting water companies to fund the reopening of the country’s lost lidos.&lt;/p&gt; &lt;a hr",
+          "published": "2026-07-04T09:00:08.000Z",
           "score": 2
         }
       ]
@@ -154,22 +154,6 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "AMENDMENTS 245 - 450 - Draft opinion Establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act) - PE790.222v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790222_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 245 - 450 - Draft opinion Establishing a framework of measures for strengthening Union’s biotechnology and biomanufacturing sectors particularly in the area of health and amending Regulations (EC) No 178/2002, (EC) No 1394/2007, (EU) No 536/2014, (EU) 2019/6, (EU) 2024/795 and (EU) 2024/1938 (European Biotech Act)&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Nicolás González Casares&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.eu",
-          "published": "2026-07-03T08:54:00.000Z",
-          "score": 22
-        },
-        {
-          "title": "AMENDMENTS 1 - 170 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council - PE789.933v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ76-AM-789933_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 170 - Simplified procedure without draft report (Rule 52) Amending Regulations (EC) No 561/2006, (EU) 2018/858, (EU) 2019/2144 and (EU) 2024/1257 of the European Parliament and of the Council as regards the simplification of technical requirements and testing procedures for motor vehicles and repealing Council Directive 70/157/EEC and Regulation No 540/2014 of the European Parliament and of the Council&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt",
-          "published": "2026-07-03T08:43:57.000Z",
-          "score": 22
-        },
         {
           "title": "Latest news - ENVI Committee meetings - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20200226CAL09791",
@@ -187,6 +171,14 @@
           "score": 8
         },
         {
+          "title": "Airbus CEO 'not necessarily optimistic' on European defence cooperation - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSW4wZWRGdGpLaGd0bVZxOVl0aXh2SERKcFJPRFFVRF9BclRPUFI2X05kNy1KTFNPZ0oySnplNTRkY3YtQUpvZ1J1WDZDU0tCdUJnTThoX1B5ZTd3eXZpcXducW5hT01hc3U3a3hwNGRxUEV4Y0ZoYWROMXV1YXVDQnVlSEVXc3U1ekhZNVpDMGZRMmpGNHlmNXZjZTdLX2Y4QW5sTXBYeVRrWTMwYlFibHBRdl9FS0dicG1sYnIwV3JHXzhlSTdpcw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxPSW4wZWRGdGpLaGd0bVZxOVl0aXh2SERKcFJPRFFVRF9BclRPUFI2X05kNy1KTFNPZ0oySnplNTRkY3YtQUpvZ1J1WDZDU0tCdUJnTThoX1B5ZTd3eXZpcXducW5hT01hc3U3a3hwNGRxUEV4Y0ZoYWROMXV1YXVDQnVlSEVXc3U1ekhZNVpDMGZRMmpGNHlmNXZjZTdLX2Y4QW5sTXBYeVRrWTMwYlFibHBRdl9FS0dicG1sYnIwV3JHXzhlSTdpcw?oc=5\" target=\"_blank\"&gt;Airbus CEO 'not necessarily optimistic' on European defence cooperation&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T18:21:44.000Z",
+          "score": 8
+        },
+        {
           "title": "EU Commission proposes five major cross-border defence projects - Reuters",
           "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOVG9LZzNsNnB3UVdlSWlad0ZLMnkyYmdUWVU3dWtVVTZKN3gzZG92dGhtUVpmX3ZIdjcwa3pJRy11c2lFRXNrN2duSDlXRjd6REkwUTdYTnA4UWxYX0RGZF9qdFd5dmNnLUh5cDhuT2VzaU9vRG9uRExxbk1fSG5DdzlrdTJXRDc3Tkp1NjlVTHlHRFpFeFVGR3I5U0U4MDhIcUZxRDlLLVNQYTNvMXExZVVVcmdaU1ZGQzBBX1R2aTdSOFNp?oc=5",
           "source": "Reuters World (via Google News)",
@@ -201,20 +193,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Heat wave: European countries report 3,700 excess deaths",
-          "link": "https://www.dw.com/en/heat-wave-european-countries-report-3-700-excess-deaths/a-77823303?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Thousands of excess fatalities have been recorded across Europe following last week&#039;s heat wave, especially among older people. In France, the prime minister is facing a no-confidence vote over the crisis.",
-          "published": "2026-07-03T14:19:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "China dismisses US, EU criticism of new ethnic law as 'malicious smear' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOX1d0Z2hWa0pScGlmS2tDNWFkd2ZVYm9lWXF3aDlGWlRnQ0lVYnlXTVZOSDZpdEx3NzBMVU5MWGU0a3hBYjkxNUtLNTk4Y2dKTU5qbjB1ZWVqSEo0ZE5fU243THlfUmVENEVzdHZtNUZCNkU1LWlwN0pxSUNZempVZ3gweUlNcldOYUxPN2c0NTBFWEhQcmtUY1hvSzVsLVdxZWhxNzVLOUdwNTVaaWZB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOX1d0Z2hWa0pScGlmS2tDNWFkd2ZVYm9lWXF3aDlGWlRnQ0lVYnlXTVZOSDZpdEx3NzBMVU5MWGU0a3hBYjkxNUtLNTk4Y2dKTU5qbjB1ZWVqSEo0ZE5fU243THlfUmVENEVzdHZtNUZCNkU1LWlwN0pxSUNZempVZ3gweUlNcldOYUxPN2c0NTBFWEhQcmtUY1hvSzVsLVdxZWhxNzVLOUdwNTVaaWZB?oc=5\" target=\"_blank\"&gt;China dismisses US, EU criticism of new ethnic law as 'malicious smear'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-03T08:18:43.000Z",
-          "score": 12
+          "title": "Pope urges Europe to do more for migrants while visiting gateway island",
+          "link": "https://www.bbc.co.uk/news/articles/c5yz83n7q5no?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The pontiff pays tribute to migrants who lost their lives at sea at a cemetery on the Italian island of Lampedusa.",
+          "published": "2026-07-04T11:25:57.000Z",
+          "score": 8
         },
         {
           "title": "EU sanctions Russian researchers involved in Navalny&#039;s death",
@@ -233,20 +217,28 @@
           "score": 8
         },
         {
-          "title": "Extreme heat could change the mix for European drinks makers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wV0N6QWFMeHk4Q0ZrZHVUOHZoUnBibW9PRGg0TGlTTHlTemoxb1F5dHUzRmx3dGpTYWU3a3UzT1FoZ0dJMWRwNW9Odk9rUHZs?oc=5",
+          "title": "EU issues sanctions against six people involved in death of Navalny - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRG1UQ3Mxb2ExaDEwSGxqMVIwUTkxX1puZ1hYTHhxVDJCNlM4cTRrQXdZVkp2dnhZOGxETnpTajhfTVFwRHJ0OUxPUjYyOUEyYVlaeWg4N0lfbGlpMU9paXFpdnBmUENxT3FCeGQ5cDJCcGU0NmQ1YXg3TWFYT2JNcjJXNThvLXJmdHlhOEc2dEt4OXA2UnZuN3IxdUhPWFJvWE9OQ0ln?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wV0N6QWFMeHk4Q0ZrZHVUOHZoUnBibW9PRGg0TGlTTHlTemoxb1F5dHUzRmx3dGpTYWU3a3UzT1FoZ0dJMWRwNW9Odk9rUHZs?oc=5\" target=\"_blank\"&gt;Extreme heat could change the mix for European drinks makers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-04T06:48:09.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxNRG1UQ3Mxb2ExaDEwSGxqMVIwUTkxX1puZ1hYTHhxVDJCNlM4cTRrQXdZVkp2dnhZOGxETnpTajhfTVFwRHJ0OUxPUjYyOUEyYVlaeWg4N0lfbGlpMU9paXFpdnBmUENxT3FCeGQ5cDJCcGU0NmQ1YXg3TWFYT2JNcjJXNThvLXJmdHlhOEc2dEt4OXA2UnZuN3IxdUhPWFJvWE9OQ0ln?oc=5\" target=\"_blank\"&gt;EU issues sanctions against six people involved in death of Navalny&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T12:13:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Swiss glaciers rapidly lose protective snow in punishing European heatwave - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNeGUwcElDOUcyTVZVbkQybWxRNlJNMnBLT0stR2EwWXkzMUN3djNoTzE5ODJ2enpPZDJ5TVNYeWtrT3NJUVRYc1o5RHYzVjI3akoxSnlrM0dsXzJJd2hfRTZWSUxTdTVvV0ZOUEZRQWtOWHZxTm9NX2NWTGlLWlJNOXNXX3FKTktUUDZpYzNKN3ZRN2N5Z3VXcUJaOW9ybHVDSG92WnVqSmVYN1llRHZWcjg1Rk00NzExd3RGRUhaZkZUSjIwZklr?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNeGUwcElDOUcyTVZVbkQybWxRNlJNMnBLT0stR2EwWXkzMUN3djNoTzE5ODJ2enpPZDJ5TVNYeWtrT3NJUVRYc1o5RHYzVjI3akoxSnlrM0dsXzJJd2hfRTZWSUxTdTVvV0ZOUEZRQWtOWHZxTm9NX2NWTGlLWlJNOXNXX3FKTktUUDZpYzNKN3ZRN2N5Z3VXcUJaOW9ybHVDSG92WnVqSmVYN1llRHZWcjg1Rk00NzExd3RGRUhaZkZUSjIwZklr?oc=5\" target=\"_blank\"&gt;Swiss glaciers rapidly lose protective snow in punishing European heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-03T16:28:35.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 445,
-    "articlesLast24h": 171,
-    "afterDedup": 157,
+    "totalArticlesScanned": 431,
+    "articlesLast24h": 162,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
