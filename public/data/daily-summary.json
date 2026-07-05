@@ -1,12 +1,12 @@
 {
   "date": "2026-07-05",
-  "generatedAt": "2026-07-05T07:57:59.062Z",
+  "generatedAt": "2026-07-05T12:17:46.113Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 5 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Why can’t Britain turn its green revolution into cheap energy? A visual analysis",
-      "summary": "&lt;p&gt;Labour has approved a wave of renewable energy projects, but turning plans into power remains slow. Why is that?&lt;/p&gt;&lt;p&gt;Labour has a race on its hands if it is to lock in its promise to achieve a virtually zero-carbon electricity system by 2030.&lt;/p&gt;&lt;p&gt;Britain’s next prime minister will have to move fast: the &lt;a href=\"https://www.theguardian.com/environment/2026/jul/02/spain-france-new-heatwave-warning\"&gt;climate emergency is raging&lt;/a&gt;, high energy bills",
+      "headline": "Why US train travel lags behind Asia and Europe",
+      "summary": "As flights get pricier and gas prices stay high, more US travelers are turning to trains — and hitting a system built for freight, not people.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "Labour MPs call on water firms to save Britain’s lost lidos",
-      "summary": "&lt;p&gt;Group, whose constituencies have derelict or at-risk pools, are campaigning to make outdoor swimming available for all&lt;/p&gt;&lt;p&gt;Cooling, blue expanses of water have been a lifesaver for many lucky enough to live near a lido during the recent UK heatwave.&lt;/p&gt;&lt;p&gt;Now, a group of 20 MPs, along with the Fabian Society, are calling for this relief to be made accessible for all by getting water companies to fund the reopening of the country’s lost lidos.&lt;/p&gt; &lt;a hr",
+      "headline": "South Korea plans future fund fueled by chip boom",
+      "summary": "South Korea plans to channel windfall tax revenue from its booming semiconductor industry into a new future fund. The money would help finance major industrial projects and to support younger generations.",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -34,12 +34,12 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Why can’t Britain turn its green revolution into cheap energy? A visual analysis",
-          "link": "https://www.theguardian.com/business/ng-interactive/2026/jul/04/britain-green-energy-revolution-a-visual-story",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Labour has approved a wave of renewable energy projects, but turning plans into power remains slow. Why is that?&lt;/p&gt;&lt;p&gt;Labour has a race on its hands if it is to lock in its promise to achieve a virtually zero-carbon electricity system by 2030.&lt;/p&gt;&lt;p&gt;Britain’s next prime minister will have to move fast: the &lt;a href=\"https://www.theguardian.com/environment/2026/jul/02/spain-france-new-heatwave-warning\"&gt;climate emergency is raging&lt;/a&gt;, high energy bills",
-          "published": "2026-07-04T09:00:09.000Z",
-          "score": 7
+          "title": "Why US train travel lags behind Asia and Europe",
+          "link": "https://www.dw.com/en/why-us-train-travel-lags-behind-asia-and-europe/a-77430370?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "As flights get pricier and gas prices stay high, more US travelers are turning to trains — and hitting a system built for freight, not people.",
+          "published": "2026-07-05T10:43:00.000Z",
+          "score": 8
         },
         {
           "title": "India withdraws gas curbs as Middle East LNG supply resumes - Reuters",
@@ -64,6 +64,14 @@
           "score": 8
         },
         {
+          "title": "Evacuations in Guam as super typhoon Bavi approaches",
+          "link": "https://www.bbc.co.uk/news/articles/cr7xpgx50jxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The storm is forecast to bring winds in excess of 160mph and waves nearly 11m high when it makes landfall on Monday.",
+          "published": "2026-07-05T09:26:56.000Z",
+          "score": 2
+        },
+        {
           "title": "New heatwave likely to peak at 34C with week-long health alert issued",
           "link": "https://www.bbc.co.uk/weather/articles/c621j44jwe1o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -86,11 +94,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Labour MPs call on water firms to save Britain’s lost lidos",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/04/labour-campaign-save-britains-lost-lidos-swimming",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Group, whose constituencies have derelict or at-risk pools, are campaigning to make outdoor swimming available for all&lt;/p&gt;&lt;p&gt;Cooling, blue expanses of water have been a lifesaver for many lucky enough to live near a lido during the recent UK heatwave.&lt;/p&gt;&lt;p&gt;Now, a group of 20 MPs, along with the Fabian Society, are calling for this relief to be made accessible for all by getting water companies to fund the reopening of the country’s lost lidos.&lt;/p&gt; &lt;a hr",
-          "published": "2026-07-04T09:00:08.000Z",
+          "title": "South Korea plans future fund fueled by chip boom",
+          "link": "https://www.dw.com/en/south-korea-plans-future-fund-fueled-by-chip-boom/a-77836747?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "South Korea plans to channel windfall tax revenue from its booming semiconductor industry into a new future fund. The money would help finance major industrial projects and to support younger generations.",
+          "published": "2026-07-05T11:22:00.000Z",
           "score": 2
         }
       ]
@@ -105,22 +113,6 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Pope urges Europe to do more for migrants as he visits gateway island",
-          "link": "https://www.bbc.co.uk/news/articles/c5yz83n7q5no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The pontiff pays tribute to migrants who lost their lives at sea at a cemetery on the Italian island of Lampedusa.",
-          "published": "2026-07-04T11:25:57.000Z",
-          "score": 8
-        },
-        {
-          "title": "Extreme heat could change the mix for European drinks makers - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wV0N6QWFMeHk4Q0ZrZHVUOHZoUnBibW9PRGg0TGlTTHlTemoxb1F5dHUzRmx3dGpTYWU3a3UzT1FoZ0dJMWRwNW9Odk9rUHZs?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiUEFVX3lxTE4wV0N6QWFMeHk4Q0ZrZHVUOHZoUnBibW9PRGg0TGlTTHlTemoxb1F5dHUzRmx3dGpTYWU3a3UzT1FoZ0dJMWRwNW9Odk9rUHZs?oc=5\" target=\"_blank\"&gt;Extreme heat could change the mix for European drinks makers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-04T16:03:09.000Z",
-          "score": 8
-        },
-        {
           "title": "Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaWVmYTl5ZGlpY19WZWZxWE5KcTFEUXZUTFA1VmxDa2JWM0QyZ2hSdlo2N252cW1iNEdudlRUb184RDVyTU5jVVFsTWw3bzBtblFHdEdSemZOZXlTQVRuMWVyNU8yenJZTmhrcDZvLVY2TTYtT3M4SXZNMWFVUGNtZmhZUk9HTm5ZbWRtM2ZTa3hOaUlTTGF6dTJiNGRwWEp5V1BVZTNQQjF6QXY3d2s5VDdzVmNoblhtSVlnTw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -129,27 +121,43 @@
           "score": 8
         },
         {
-          "title": "Egypt expects €1.5 billion from EU assistance package in coming days, minister says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOTE4TTVQSHI0aUg0bUtWaERHeGVmTVZfMzBpdFhfeEVUZEtDNEJERGk5a2cza1RXZHp3M2xCLUtyLUdMR0xxeVRvQTRNN1JLVXR2Vml6R2M2Mlpzem8wbkV4WU1Uc1BlN2kxS0hLYmNmVnYxell1VzZRTTFfakVJZTl4YTR1cFlHNkRiX3hXUXRvc2RfYzZHdlExMGRyTDA0Vzc1Q0F6Uk9PQXhxTGNSazNNdE1ZRUFRaUVNU0xhdFpEXzg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxQOTE4TTVQSHI0aUg0bUtWaERHeGVmTVZfMzBpdFhfeEVUZEtDNEJERGk5a2cza1RXZHp3M2xCLUtyLUdMR0xxeVRvQTRNN1JLVXR2Vml6R2M2Mlpzem8wbkV4WU1Uc1BlN2kxS0hLYmNmVnYxell1VzZRTTFfakVJZTl4YTR1cFlHNkRiX3hXUXRvc2RfYzZHdlExMGRyTDA0Vzc1Q0F6Uk9PQXhxTGNSazNNdE1ZRUFRaUVNU0xhdFpEXzg?oc=5\" target=\"_blank\"&gt;Egypt expects €1.5 billion from EU assistance package in coming days, minister says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&",
-          "published": "2026-07-04T12:11:07.000Z",
-          "score": 8
+          "title": "Moment of destiny for France's Le Pen in verdict to decide her future in presidential race",
+          "link": "https://www.bbc.co.uk/news/articles/c5yzlwz34p7o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Far-right leader Marine Le Pen is appealing against a verdict which found her guilty of misusing EU funds.",
+          "published": "2026-07-04T23:17:24.000Z",
+          "score": 4
         },
         {
-          "title": "India news: Government lists 23 Pakistanis as &#039;terrorists&#039;",
-          "link": "https://www.dw.com/en/india-news-government-lists-23-pakistanis-as-terrorists/live-77830565?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Indian government has designated 23 Pakistan-based individuals as &quot;terrorists&quot; under its anti-terror law. Follow DW for more.",
-          "published": "2026-07-04T09:13:00.000Z",
-          "score": 6
+          "title": "US marks 250th birthday with fireworks, flyovers and extreme weather",
+          "link": "https://www.bbc.co.uk/news/articles/cp9lppvkmz5o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "US President Donald Trump's speech included some of his political agenda but also honoured war veterans and American history.",
+          "published": "2026-07-05T08:24:32.000Z",
+          "score": 2
+        },
+        {
+          "title": "Ukraine hits major oil terminal in Russia's St Petersburg",
+          "link": "https://www.bbc.co.uk/news/articles/c8j2vmzxezro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Ukrainian President Volodymyr Zelensky says the target is key infrastructure \"that generates revenue for Russia's war\".",
+          "published": "2026-07-04T18:41:25.000Z",
+          "score": 2
+        },
+        {
+          "title": "Chinese underground church figure Jin Mingri freed from prison",
+          "link": "https://www.bbc.co.uk/news/articles/c4gy51ky75vo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The Zion Church founder's release comes after a direct plea to Xi Jinping from Donald Trump.",
+          "published": "2026-07-05T05:58:21.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 425,
-    "articlesLast24h": 130,
+    "totalArticlesScanned": 424,
+    "articlesLast24h": 129,
     "afterDedup": 120,
     "feedsQueried": 19
   }
