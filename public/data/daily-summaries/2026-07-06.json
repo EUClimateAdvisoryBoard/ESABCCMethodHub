@@ -1,18 +1,18 @@
 {
   "date": "2026-07-06",
-  "generatedAt": "2026-07-06T14:30:23.272Z",
+  "generatedAt": "2026-07-06T18:56:05.241Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 6 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Highlights - Consideration of a draft report on the Market Stability Reserve - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230515PHT90005/20230515PHT90005-ms.jpeg\" width=\"180\" alt=\"Net Zero Industry Act hearing.jpeg\" title=\"Net Zero Industry Act hearing.jpeg © image used under the license from adobe stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 6 July 2026, ENVI Members will consider the draft report on the targeted amendment to the Market Stability Reserve (MSR) Decision. The Commission proposal, pre",
+      "headline": "Press release - MEPs strengthen the EU’s carbon border adjustment mechanism and close loopholes",
+      "summary": "Environment Committee MEPs have backed extending the EU's carbon border adjustment mechanism to downstream goods and setting up a fund to support industry's low-carbon transition.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "‘Why take those jobs away?’: the unionized workers decrying Trump’s war on wind",
-      "summary": "&lt;p&gt;Workers proud of their efforts to grow renewable energy say US president pursuing ‘personal vendetta’ at their expense&lt;/p&gt;&lt;p&gt;Donald Trump has blamed everything – from &lt;a href=\"https://www.reuters.com/business/energy/trump-administration-cites-national-security-halt-us-wind-farm-projects-ft-2026-05-03/\"&gt;“national security”&lt;/a&gt; issues, the deaths of &lt;a href=\"https://www.youtube.com/watch?v=t0R5_kWVuX0\"&gt;birds&lt;/a&gt; and &lt;a href=\"https://www.bbc.com/news/",
+      "headline": "Can India, Europe build a clean energy supply chain beyond China?",
+      "summary": "With China dominating every step of the solar energy production chain, governments in India and Europe are looking to reduce their overreliance on a single supplier.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -29,6 +29,22 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
+          "title": "Press release - MEPs strengthen the EU’s carbon border adjustment mechanism and close loopholes",
+          "link": "https://www.europarl.europa.eu/news/en/press-room/20260629IPR46212/",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Environment Committee MEPs have backed extending the EU's carbon border adjustment mechanism to downstream goods and setting up a fund to support industry's low-carbon transition.&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-06T17:23:00.000Z",
+          "score": 27
+        },
+        {
+          "title": "Study - The future of sustainable railway transport in Europe - PE 788.125 - Committee on Budgets - Committee on Regional Development - Committee on Transport and Tourism - Committee on the Environment, Public Health and Food Safety - Committee on Industry, Research and Energy - Committee on Budgetary Control",
+          "link": "https://www.europarl.europa.eu/RegData/etudes/STUD/2026/788125/EPRS_STU(2026)788125_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div&gt;This study examines the possible long‑term trajectories of the European railway system by analysing the trends, drivers, and uncertainties shaping its evolution towards 2050. It explores how emerging technological, regulatory, economic and societal developments may influence the role of rail within a sustainable, resilient, and competitive European transport system. The analysis considers a range of plausible future configurations for the sector, assessing their implications for mobil",
+          "published": "2026-07-05T22:00:00.000Z",
+          "score": 27
+        },
+        {
           "title": "Highlights - Consideration of a draft report on the Market Stability Reserve - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260706CAN79227",
           "source": "EU Parliament ENVI Committee",
@@ -43,6 +59,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Can India, Europe build a clean energy supply chain beyond China?",
+          "link": "https://www.dw.com/en/can-india-europe-build-a-clean-energy-supply-chain-beyond-china/a-77852031?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "With China dominating every step of the solar energy production chain, governments in India and Europe are looking to reduce their overreliance on a single supplier.",
+          "published": "2026-07-06T15:02:00.000Z",
+          "score": 13
+        },
+        {
           "title": "‘Why take those jobs away?’: the unionized workers decrying Trump’s war on wind",
           "link": "https://www.theguardian.com/environment/2026/jul/06/workers-unions-trump-wind-energy",
           "source": "The Guardian - Energy",
@@ -51,36 +75,28 @@
           "score": 7
         },
         {
-          "title": "Super Typhoon Bavi makes landfall on US Pacific islands with huge wind gusts",
-          "link": "https://www.bbc.co.uk/news/articles/cr7xpgx50jxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The storm, with winds of nearly 290km/h (180mph) and gusts of 350km/h, is lashing the island of Rota.",
-          "published": "2026-07-06T00:20:20.000Z",
+          "title": "FIFA defends Balogun decision, Trump calls red card U-turn 'brilliant' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQN3NjVVdGTFJLT21ZS19fcXhtcEdTRnlUSVFQV2xNY3ZUdDRLU0lzU1pDNHg0RzRpbzJZYUlRMlpDT3Q3ajh6YU5NRUVObGdXdUtBVmpfalU2VnJIVkxldFFIVFNGVnM3a3hWejZFR2QzR3dmUE1WNlFhWTlxY2E1OVEwNTJWU1k2NFRLWFRYM0JTZUZtMWZaMExDaXlXMG5QdTl2eXRZRkI5SHpIQk5XS24xSk9QSmUySEZPOQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxQN3NjVVdGTFJLT21ZS19fcXhtcEdTRnlUSVFQV2xNY3ZUdDRLU0lzU1pDNHg0RzRpbzJZYUlRMlpDT3Q3ajh6YU5NRUVObGdXdUtBVmpfalU2VnJIVkxldFFIVFNGVnM3a3hWejZFR2QzR3dmUE1WNlFhWTlxY2E1OVEwNTJWU1k2NFRLWFRYM0JTZUZtMWZaMExDaXlXMG5QdTl2eXRZRkI5SHpIQk5XS24xSk9QSmUySEZPOQ?oc=5\" target=\"_blank\"&gt;FIFA defends Balogun decision, Trump calls red card U-turn 'brilliant'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T16:54:59.000Z",
           "score": 7
         },
         {
-          "title": "Red card system in disarray over Trump, Fifa and Balogun decision",
-          "link": "https://www.bbc.co.uk/sport/football/articles/cly99dxjkxxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The decision to effectively overturn the red card shown to United States forward Folarin Balogun leaves many unanswered questions.",
-          "published": "2026-07-06T09:06:26.000Z",
+          "title": "Reaction to FIFA suspending Balogun red-card ban after Trump intervention - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPQVZhVm9lN3RRNDNpdDUtZVZscXlycl9zaUxtQS0yTFZ0TkNISVhPeXIwV2FvZ2NXMnVrWVhWWVVkWWx6YmRla3k0Y1ZnOHFUTjdoX1NnWFViZnJyYnpNeW5IQ0ZYMlM4UU84Tk1JNnZuc1BpWEZMN2FkaXJFdEFzMW9QWGVsRVl0Vi1kNVVNMlRPMkRNZFZQeWtqLS12RHJJWlhsQ1ZwYWh1MW9UNVVDMXRHUzRjSmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPQVZhVm9lN3RRNDNpdDUtZVZscXlycl9zaUxtQS0yTFZ0TkNISVhPeXIwV2FvZ2NXMnVrWVhWWVVkWWx6YmRla3k0Y1ZnOHFUTjdoX1NnWFViZnJyYnpNeW5IQ0ZYMlM4UU84Tk1JNnZuc1BpWEZMN2FkaXJFdEFzMW9QWGVsRVl0Vi1kNVVNMlRPMkRNZFZQeWtqLS12RHJJWlhsQ1ZwYWh1MW9UNVVDMXRHUzRjSmc?oc=5\" target=\"_blank\"&gt;Reaction to FIFA suspending Balogun red-card ban after Trump intervention&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T13:15:30.000Z",
           "score": 7
         },
         {
-          "title": "World Cup: Trump thanks FIFA for suspending Balogun&#039;s red card ban",
-          "link": "https://www.dw.com/en/world-cup-trump-thanks-fifa-for-suspending-balogun-s-red-card-ban/a-77840972?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "US President Donald Trump reportedly called Gianni Infantino to ask him to lift Falorin Balogun&#039;s red card ban to allow him to play against Belgium. The Belgian FA has called the decision &quot;astonishing.&quot;",
-          "published": "2026-07-05T22:01:00.000Z",
+          "title": "What is Article 27 of FIFA's Disciplinary Code that allows red-carded Balogun to play? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOTTJFOHBqUnRRZDZLeG9abmtOV0cyR1Vub0F4aERxVUxUUlNVNVNEekVtNjVBMzBhOUxMWjRHZWRQV19pQ2QtSjJmMHd2UUFBUWh6U2lvMFpZNENmWnhEVkRQRGdIS014OWcwdHpFQTlLSnNsZkRrVnFIMHBqdldQT3J4Tno5djFyWG1JRWgwQjdwa2w2ZWQtRDMwWHpMUXhHbUlmTUFjaVRWWXR4VDM3QUJocGtPUFZmeXEweWExbmQ2VktEeF9R?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOTTJFOHBqUnRRZDZLeG9abmtOV0cyR1Vub0F4aERxVUxUUlNVNVNEekVtNjVBMzBhOUxMWjRHZWRQV19pQ2QtSjJmMHd2UUFBUWh6U2lvMFpZNENmWnhEVkRQRGdIS014OWcwdHpFQTlLSnNsZkRrVnFIMHBqdldQT3J4Tno5djFyWG1JRWgwQjdwa2w2ZWQtRDMwWHpMUXhHbUlmTUFjaVRWWXR4VDM3QUJocGtPUFZmeXEweWExbmQ2VktEeF9R?oc=5\" target=\"_blank\"&gt;What is Article 27 of FIFA's Disciplinary Code that allows red-carded Balogun to play?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-07-06T02:20:00.000Z",
           "score": 7
-        },
-        {
-          "title": "‘It’s smoke and mirrors’: hope turns to fear in Scottish village chosen for AI datacentre",
-          "link": "https://www.theguardian.com/technology/2026/jul/06/scotland-lanarkshire-village-ai-datacentre",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Suspicions grow in Lanarkshire that local people have been misled on supposed benefits of the huge development&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/05/lanarkshire-scotland-ai-datacentre-project-renewable-energy\"&gt;Revealed: landmark Scottish AI project has no prospect of meeting renewables promise&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/britain-ai-growth-",
-          "published": "2026-07-06T07:00:06.000Z",
-          "score": 4
         }
       ]
     },
@@ -113,20 +129,20 @@
           "score": 7
         },
         {
-          "title": "Bomb the Arctic, dam the Mediterranean and build a second moon: five outlandish plans to remodel our climate",
-          "link": "https://www.theguardian.com/environment/2026/jul/06/five-outlandish-plans-to-remodel-earth-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Humans have long sought to geoengineer the Earth’s environment. &lt;strong&gt;Tim Flannery&lt;/strong&gt; outlines a few of the wildest ideas from the 20th century&lt;/p&gt;&lt;p&gt;An increasing number of scientists think we have let the climate crisis fester for so long that our only hope to stave off ever-intensifying catastrophes is to use technological interventions. Cloud brightening, injecting sulphur into the atmosphere and the use of tiny mirrors in space – all of which might r",
-          "published": "2026-07-05T15:00:31.000Z",
-          "score": 7
-        },
-        {
           "title": "Wildfire in southern France forces evacuation of 10,000 people",
           "link": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "Tour de France organisers ban spectators from stage three as a wildfire hits the Pyrénées-Orientales region.",
           "published": "2026-07-06T13:08:23.000Z",
           "score": 7
+        },
+        {
+          "title": "‘Better safe than sorry’: Greece installs floating barrier to ward off toxic fish",
+          "link": "https://www.theguardian.com/world/2026/jul/06/greece-floating-barrier-pufferfish-warming-waters",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Climate crisis and warming waters have attracted long-toothed pufferfish to new parts of the Mediterranean&lt;/p&gt;&lt;p&gt;From his deckchair, his arms thrown above his head, his feet sliding back and forth in the sand, Pavlos Beleyiannis watches his grandchildren bathe in his favourite bay. It’s an idyllic scene, infused with a serenity that the newly retired truck driver attributes squarely to a sense of security.&lt;/p&gt;&lt;p&gt;For the first time, a floating barrier has been ins",
+          "published": "2026-07-06T09:00:02.000Z",
+          "score": 4
         }
       ]
     },
@@ -139,6 +155,14 @@
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
+        {
+          "title": "Video of a committee meeting - Monday, 6 July 2026 - 17:00 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://multimedia.europarl.europa.eu/en/committees_20260706-1900-COMMITTEE-ENVI_vd",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Length of video : 90'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-06T16:48:36.000Z",
+          "score": 18
+        },
         {
           "title": "Highlights - Vote on the ENVI opinion on the CFP, Ocean Pact and aquaculture - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260706CAN79225",
@@ -160,7 +184,15 @@
           "link": "https://www.theguardian.com/world/2026/jul/06/wildfires-southern-europe-evacuations-tour-de-france-portugal-spain-greece-heatwave",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Tour de France spectator ban as country along with Spain, Portugal and Greece faces ‘powder keg’ after heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/06/ukraine-russia-zelenskyy-nato-summit-strikes-kyiv-europe-latest-news-updates\"&gt;Europe live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Wildfires raging across southern Europe have forced thousands to flee their homes and prompted officials to ban specta",
-          "published": "2026-07-06T10:01:31.000Z",
+          "published": "2026-07-06T15:32:52.000Z",
+          "score": 8
+        },
+        {
+          "title": "NATO defence push already strains Europe's budgets - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPV1BRTEZPQkdiN3JYZXdneVhrX2VDeWtVcW1kbDdYUk5ZSFE4bTc2ODZUSXpoby02cTJtOXFjUFFoWllpYkFsR1dwaVQ4bk9XOW1SNzJDd1hqX1k5enhjQVZWSVBVWXE0VmNBbnlxMXVReEV6LTRUMmxNVmJvbmVEWnFsVmhXZTlVRl9GQktmcTM1OE5MbFB5VXFIVjQwajQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPV1BRTEZPQkdiN3JYZXdneVhrX2VDeWtVcW1kbDdYUk5ZSFE4bTc2ODZUSXpoby02cTJtOXFjUFFoWllpYkFsR1dwaVQ4bk9XOW1SNzJDd1hqX1k5enhjQVZWSVBVWXE0VmNBbnlxMXVReEV6LTRUMmxNVmJvbmVEWnFsVmhXZTlVRl9GQktmcTM1OE5MbFB5VXFIVjQwajQ?oc=5\" target=\"_blank\"&gt;NATO defence push already strains Europe's budgets&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T11:30:09.000Z",
           "score": 8
         }
       ]
@@ -178,44 +210,44 @@
           "score": 8
         },
         {
+          "title": "Germany says TKMS submarine win would bring Canada closer to Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQVGRLYVJKR1RnSEVmQmpjTDNMUG04Mjl0c296MXB6V1BrZUM0RDFvUEZER1FsWDhnZGo4b21jQ19HenpjUVNwdHo1cVNHY0RKRklSZ2U1Uy1zV3hVc2Rsb185b0FSRkZvQ3kxSGhQUmh4dGtFempvTk4tZlZuakczdUtPUHNpSE4tM1VVdE1ValFDY2VZYUMzanotd3Buc2l3SXNEYlA2d2NOaGFhM2pR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxQVGRLYVJKR1RnSEVmQmpjTDNMUG04Mjl0c296MXB6V1BrZUM0RDFvUEZER1FsWDhnZGo4b21jQ19HenpjUVNwdHo1cVNHY0RKRklSZ2U1Uy1zV3hVc2Rsb185b0FSRkZvQ3kxSGhQUmh4dGtFempvTk4tZlZuakczdUtPUHNpSE4tM1VVdE1ValFDY2VZYUMzanotd3Buc2l3SXNEYlA2d2NOaGFhM2pR?oc=5\" target=\"_blank\"&gt;Germany says TKMS submarine win would bring Canada closer to Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T10:39:22.000Z",
+          "score": 8
+        },
+        {
+          "title": "UN rights council orders urgent Sudan al-Obeid inquiry - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWUd6dzJvSDJIa2I3WGk5QTBaM2w1MFRmeVEwQ2NjTVF2dHBoMVBfOTNERTdUeTBDSnQwV2I1QTQwSUxoSC1PQVgzTjdKak5oSjFFd3FwNWpBQkZZZ3dPQ3B1Mk5qSkhKekJTZUVCLUJkN3F4WFR3RzVMZVVRN2xfd2RMbG5Jc0paMVMwVDZQUllZaTRjS0FzR21JSGU2SGk5d0dhYmlB?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxQWUd6dzJvSDJIa2I3WGk5QTBaM2w1MFRmeVEwQ2NjTVF2dHBoMVBfOTNERTdUeTBDSnQwV2I1QTQwSUxoSC1PQVgzTjdKak5oSjFFd3FwNWpBQkZZZ3dPQ3B1Mk5qSkhKekJTZUVCLUJkN3F4WFR3RzVMZVVRN2xfd2RMbG5Jc0paMVMwVDZQUllZaTRjS0FzR21JSGU2SGk5d0dhYmlB?oc=5\" target=\"_blank\"&gt;UN rights council orders urgent Sudan al-Obeid inquiry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T14:42:53.000Z",
+          "score": 8
+        },
+        {
+          "title": "UK new car sales hit best June since 2019 as EV sales grow, SMMT data shows - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPY3dpY2Vlcks0VXBOOWVJS2txMkdxTTN5RV9oUHlEOWk5UGVmZU5IRXJFM1NRckc4R1ZOeVZvMURxS2FrdkYxU3pHdFlNelVibDVyZ3J1RFVmbDFJT0J1eWZzVVN4TjJvNGp5MmN1S2dpRFFTVjk0QXo1aUc1T0hjUGw3SExNd3BlM1FudTdDR1AxTGN3eXI3dERDaUpfdw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxPY3dpY2Vlcks0VXBOOWVJS2txMkdxTTN5RV9oUHlEOWk5UGVmZU5IRXJFM1NRckc4R1ZOeVZvMURxS2FrdkYxU3pHdFlNelVibDVyZ3J1RFVmbDFJT0J1eWZzVVN4TjJvNGp5MmN1S2dpRFFTVjk0QXo1aUc1T0hjUGw3SExNd3BlM1FudTdDR1AxTGN3eXI3dERDaUpfdw?oc=5\" target=\"_blank\"&gt;UK new car sales hit best June since 2019 as EV sales grow, SMMT data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T05:24:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Why an anti-sacrilege law in India's Punjab has sparked controversy",
           "link": "https://www.bbc.co.uk/news/articles/crlw1xrzd8yo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The dispute has revived one of Punjab's most sensitive political and religious issues ahead of state elections next year.",
           "published": "2026-07-06T08:35:56.000Z",
           "score": 6
-        },
-        {
-          "title": "Fashion against fascism: When trademarks deter neo-Nazis",
-          "link": "https://www.dw.com/en/fashion-against-fascism-when-trademarks-deter-neo-nazis/a-77770986?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "In Germany, where Nazi symbols are banned, activists are using trademark law to fight far-right merchandise.",
-          "published": "2026-07-06T08:32:00.000Z",
-          "score": 6
-        },
-        {
-          "title": "Why Ukrainian strikes on annexed Crimea are a blow to Putin",
-          "link": "https://www.bbc.co.uk/news/videos/c2dy21549w1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Eastern Europe correspondent Sarah Rainsford explains why Crimea is a target for Kyiv, and why the peninsula matters to Vladimir Putin.",
-          "published": "2026-07-06T06:00:05.000Z",
-          "score": 4
-        },
-        {
-          "title": "Wildfires rage in Portugal, Greece, France and Spain",
-          "link": "https://www.dw.com/en/wildfires-rage-in-portugal-greece-france-and-spain/a-77839526?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Six countries in southern Europe have been hit by wildfires. One of the blazes, in southwestern France, could affect Monday&#039;s third stage of the Tour de France, authorities warn.",
-          "published": "2026-07-05T18:02:00.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 323,
-    "articlesLast24h": 77,
-    "afterDedup": 59,
+    "totalArticlesScanned": 425,
+    "articlesLast24h": 182,
+    "afterDedup": 160,
     "feedsQueried": 19
   }
 }
