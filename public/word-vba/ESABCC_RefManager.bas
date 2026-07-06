@@ -181,12 +181,13 @@ Public Sub ESABCC_BuildForms()
     End If
 
     ' Rebuild the workspace form when it is missing OR when it predates the
-    ' chapter filter + summary preview (detected by the absence of the
-    ' txtSummary control), so existing installs pick the new layout up too.
+    ' chapter filter + summary preview (no txtSummary control) OR the per-row
+    ' citation count (narrow mark column), so existing installs pick the new
+    ' layout up too.
     Dim addedWorkspaceForm As Boolean: addedWorkspaceForm = False
     Dim needWorkspace As Boolean: needWorkspace = Not CompExists(proj, "frmESABCC_Workspace")
     If Not needWorkspace Then
-        If WorkspaceFormControlMissing(proj, "txtSummary") Then
+        If WorkspaceFormControlMissing(proj, "txtSummary") Or WorkspaceFormOutdated(proj) Then
             If f > 0 Then Print #f, "  removing stale frmESABCC_Workspace for rebuild"
             On Error Resume Next
             proj.VBComponents.Remove proj.VBComponents("frmESABCC_Workspace")
@@ -923,12 +924,14 @@ Private Function WorkspaceFallbackPick() As Long
     End If
 
     ' Citation tracker for the popup fallback: tick the titles of references
-    ' already cited in this document. Display-only - inserts use ids/authors.
-    Dim citedSet As String: citedSet = BuildCitedIdSet()
+    ' already cited in this document, with how many times. Display-only -
+    ' inserts use ids/authors.
+    Dim citedCounts As Object: Set citedCounts = BuildCitedCountMap()
     Dim i As Long
     For i = 1 To m_ResCount
-        If InStr(citedSet, "|" & m_ResIds(i) & "|") > 0 Then
-            m_ResTitles(i) = ChrW(10003) & " " & m_ResTitles(i)
+        Dim n As Long: n = CitedCountFor(citedCounts, m_ResIds(i))
+        If n > 0 Then
+            m_ResTitles(i) = ChrW(10003) & " " & n & " " & m_ResTitles(i)
         End If
     Next i
 
@@ -3163,15 +3166,15 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Exit Sub
     End If
 
-    ' Citation tracker: which of these references are already cited in the
-    ' active document?
-    Dim citedSet As String
-    citedSet = BuildCitedIdSet()
+    ' Citation tracker: how many times is each of these references already
+    ' cited in the active document? (0 = not yet cited.)
+    Dim citedCounts As Object
+    Set citedCounts = BuildCitedCountMap()
 
     Dim citedCount As Long: citedCount = 0
     Dim i As Long
     For i = 1 To m_ResCount
-        If InStr(citedSet, "|" & m_ResIds(i) & "|") > 0 Then citedCount = citedCount + 1
+        If CitedCountFor(citedCounts, m_ResIds(i)) > 0 Then citedCount = citedCount + 1
     Next i
 
     If onlyUncited And citedCount = m_ResCount Then
@@ -3196,8 +3199,8 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
 
     Dim lastTier As String: lastTier = Chr(1)
     For i = 1 To m_ResCount
-        Dim isCited As Boolean
-        isCited = (InStr(citedSet, "|" & m_ResIds(i) & "|") > 0)
+        Dim nCited As Long: nCited = CitedCountFor(citedCounts, m_ResIds(i))
+        Dim isCited As Boolean: isCited = (nCited > 0)
         If onlyUncited And isCited Then GoTo NextItem
 
         If m_ResTiers(i) <> lastTier Then
@@ -3218,8 +3221,10 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
         Dim tg As String: tg = m_ResTags(i)
         If Len(tg) > 26 Then tg = Left(tg, 23) & "..."
 
+        ' Mark column: the "already cited" tick plus how many times this exact
+        ' reference is cited in the open document (e.g. "checkmark 3").
         Dim mark As String: mark = ""
-        If isCited Then mark = checkMark
+        If isCited Then mark = checkMark & " " & nCited
 
         lst.AddItem mark
         lst.List(lst.ListCount - 1, 1) = WorkspaceTierLabel(m_ResTiers(i))
@@ -3232,32 +3237,46 @@ NextItem:
     Next i
 End Sub
 
-' Pipe-delimited set of every reference id cited in the active document
-' ("|id1|id2|") - the citation tracker's source of truth. Group citations
-' (comma-joined CITE: tags) are unpacked into their individual ids. Returns
-' just "|" when there is no document / no citations, so InStr probes on
-' "|id|" stay safe.
-Private Function BuildCitedIdSet() As String
-    Dim citedSet As String: citedSet = "|"
+' Map of reference id -> number of times it is cited in the active document,
+' the citation tracker's source of truth. Each citation content control counts
+' once for every distinct id it carries, so a reference appearing in three
+' separate citations (or in three group citations) reads as 3. Group citations
+' (comma-joined CITE: tags) are unpacked into their individual ids. Returns an
+' empty Scripting.Dictionary when there is no document / no citations.
+Private Function BuildCitedCountMap() As Object
+    Dim counts As Object: Set counts = CreateObject("Scripting.Dictionary")
     On Error GoTo Done
     Dim cc As ContentControl
     For Each cc In ActiveDocument.ContentControls
         If Left(cc.Tag, Len(CITE_TAG_PREFIX)) = CITE_TAG_PREFIX Then
             Dim ids() As String
             ids = Split(Mid(cc.Tag, Len(CITE_TAG_PREFIX) + 1), ",")
+            ' Count each id at most once per control, so a malformed tag that
+            ' repeats an id within one citation still reads as a single hit.
+            Dim seen As String: seen = "|"
             Dim i As Long
             For i = LBound(ids) To UBound(ids)
                 Dim oneId As String: oneId = Trim(ids(i))
-                If oneId <> "" Then
-                    If InStr(citedSet, "|" & oneId & "|") = 0 Then
-                        citedSet = citedSet & oneId & "|"
+                If oneId <> "" And InStr(seen, "|" & oneId & "|") = 0 Then
+                    seen = seen & oneId & "|"
+                    If counts.Exists(oneId) Then
+                        counts(oneId) = counts(oneId) + 1
+                    Else
+                        counts.Add oneId, 1
                     End If
                 End If
             Next i
         End If
     Next cc
 Done:
-    BuildCitedIdSet = citedSet
+    Set BuildCitedCountMap = counts
+End Function
+
+' Times reference `id` is cited in the active document (0 when uncited), read
+' safely from a BuildCitedCountMap dictionary.
+Private Function CitedCountFor(counts As Object, id As String) As Long
+    If counts Is Nothing Then Exit Function
+    If counts.Exists(id) Then CitedCountFor = counts(id)
 End Function
 
 ' Translate a workspace list row (1-based) to a result index; 0 for headers.
@@ -3399,6 +3418,35 @@ CleanExit:
     WorkspaceFormControlMissing = False
 End Function
 
+' True when the workspace form predates the per-row citation count: its mark
+' column is still the original narrow 20pt "tick only" width, too small for the
+' count. Detected by reading lstResults' first column width; the count build
+' widens it to 36pt. An unreadable designer returns False so we never force a
+' rebuild we could not perform anyway (mirrors WorkspaceFormControlMissing).
+Private Function WorkspaceFormOutdated(proj As Object) As Boolean
+    WorkspaceFormOutdated = False
+    On Error GoTo CleanExit
+    Dim comp As Object: Set comp = proj.VBComponents("frmESABCC_Workspace")
+    If comp Is Nothing Then Exit Function
+    Dim dsn As Object: Set dsn = comp.Designer
+    If dsn Is Nothing Then Exit Function
+    Dim lst As Object
+    On Error Resume Next
+    Set lst = dsn.Controls("lstResults")
+    On Error GoTo CleanExit
+    If lst Is Nothing Then Exit Function
+    Dim widths As String: widths = lst.ColumnWidths
+    Dim firstTok As String
+    Dim semi As Long: semi = InStr(widths, ";")
+    If semi > 0 Then firstTok = Left(widths, semi - 1) Else firstTok = widths
+    ' Val() reads the leading number and ignores any trailing " pt" unit.
+    Dim w As Double: w = Val(firstTok)
+    WorkspaceFormOutdated = (w > 0 And w <= 24)
+    Exit Function
+CleanExit:
+    WorkspaceFormOutdated = False
+End Function
+
 Private Function EnsureFormsReady() As Boolean
     ' Fast path: every piece already present (and the workspace form carries the
     ' chapter filter + summary preview) -> nothing to do.
@@ -3410,7 +3458,8 @@ Private Function EnsureFormsReady() As Boolean
        And CompExists(proj, "frmESABCC_DOI") _
        And CompExists(proj, "frmESABCC_Workspace") _
        And CompExists(proj, "ESABCCHelper") _
-       And Not WorkspaceFormControlMissing(proj, "txtSummary") Then
+       And Not WorkspaceFormControlMissing(proj, "txtSummary") _
+       And Not WorkspaceFormOutdated(proj) Then
         EnsureFormsReady = True
         Exit Function
     End If
@@ -3788,7 +3837,7 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
 
     ' Hint (citation-tracker legend)
     Set c = d.Controls.Add("Forms.Label.1", "lblHint", True)
-    c.Caption = ChrW(10003) & " = already cited - clustered by policy / scientific / grey. Filter by chapter or tag; click a row for its summary."
+    c.Caption = ChrW(10003) & " N = cited N times in this document - clustered by policy / scientific / grey. Filter by chapter or tag; click a row for its summary."
     c.Left = 14: c.Top = 170: c.Width = 504: c.Height = 14
     c.Font.Size = 8: c.ForeColor = RGB(120, 120, 120): c.BackStyle = 0
 
@@ -3804,7 +3853,8 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
     c.Left = 14: c.Top = 206: c.Width = 504: c.Height = 176
     c.Font.Size = 10
     c.ColumnCount = 5
-    c.ColumnWidths = "20;52;124;212;88"
+    ' Mark column is wide enough for the tick plus a citation count ("checkmark 12").
+    c.ColumnWidths = "36;52;124;196;88"
 
     ' Summary / chapter / tags preview for the selected row (read-only)
     Set c = d.Controls.Add("Forms.Label.1", "lblSummaryHdr", True)
