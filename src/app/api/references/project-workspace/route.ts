@@ -490,7 +490,16 @@ export async function GET(request: NextRequest) {
 
   if (facet === 'projects') {
     const [corpusProjects, wsProjects] = await Promise.all([listCaCorpusProjects(), loadWorkspaceProjects()]);
-    const counts = new Map(corpusProjects.map(p => [p.projectId, p.count]));
+    // Keep the citation picker in lock-step with the project workspace: only
+    // workspaces that currently exist are offered. A corpus can outlive the
+    // project it was added under — a renamed or deleted workspace leaves its
+    // documents behind — which would otherwise surface a phantom project (e.g.
+    // a stale `project-policy-gap` corpus id lingering next to the live
+    // `policy-gap-2-0`). Drop any corpus whose project is no longer real.
+    const wsIds = new Set(wsProjects.map(p => p.id));
+    const counts = new Map(
+      corpusProjects.filter(p => wsIds.has(p.projectId)).map(p => [p.projectId, p.count]),
+    );
     // Workspaces with a Content Analysis module are selectable even before
     // any of their corpus rows have synced server-side (documents added in a
     // browser before the shared corpus shipped migrate up on the next visit).
