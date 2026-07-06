@@ -1,18 +1,24 @@
 {
   "date": "2026-07-06",
-  "generatedAt": "2026-07-06T09:04:47.315Z",
+  "generatedAt": "2026-07-06T14:30:23.272Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 6 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Why US train travel lags behind Asia and Europe",
-      "summary": "As flights get pricier and gas prices stay high, more US travelers are turning to trains — and hitting a system built for freight, not people.",
+      "headline": "Highlights - Consideration of a draft report on the Market Stability Reserve - Committee on the Environment, Public Health and Food Safety",
+      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230515PHT90005/20230515PHT90005-ms.jpeg\" width=\"180\" alt=\"Net Zero Industry Act hearing.jpeg\" title=\"Net Zero Industry Act hearing.jpeg © image used under the license from adobe stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 6 July 2026, ENVI Members will consider the draft report on the targeted amendment to the Market Stability Reserve (MSR) Decision. The Commission proposal, pre",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "‘Why take those jobs away?’: the unionized workers decrying Trump’s war on wind",
+      "summary": "&lt;p&gt;Workers proud of their efforts to grow renewable energy say US president pursuing ‘personal vendetta’ at their expense&lt;/p&gt;&lt;p&gt;Donald Trump has blamed everything – from &lt;a href=\"https://www.reuters.com/business/energy/trump-administration-cites-national-security-halt-us-wind-farm-projects-ft-2026-05-03/\"&gt;“national security”&lt;/a&gt; issues, the deaths of &lt;a href=\"https://www.youtube.com/watch?v=t0R5_kWVuX0\"&gt;birds&lt;/a&gt; and &lt;a href=\"https://www.bbc.com/news/",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Bomb the Arctic, dam the Mediterranean and build a second moon: five outlandish plans to remodel our climate",
-      "summary": "&lt;p&gt;Humans have long sought to geoengineer the Earth’s environment. &lt;strong&gt;Tim Flannery&lt;/strong&gt; outlines a few of the wildest ideas from the 20th century&lt;/p&gt;&lt;p&gt;An increasing number of scientists think we have let the climate crisis fester for so long that our only hope to stave off ever-intensifying catastrophes is to use technological interventions. Cloud brightening, injecting sulphur into the atmosphere and the use of tiny mirrors in space – all of which might r",
+      "headline": "IPCC opens registration for experts to review First Order Draft of Working Group I contribution to the Seventh Assessment Report",
+      "summary": "GENEVA, 6 July – Registration is now open for experts to review the First Order Draft of the Working Group I contribution to the IPCC Seventh Assessment Report (AR7). The Working Group I contribution to AR7 is assessing the latest physical science basis of climate change, including observed and projected large-scale climate changes, climate processes [&#8230;]",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -21,26 +27,27 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Highlights - Consideration of a draft report on the Market Stability Reserve - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260706CAN79227",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230515PHT90005/20230515PHT90005-ms.jpeg\" width=\"180\" alt=\"Net Zero Industry Act hearing.jpeg\" title=\"Net Zero Industry Act hearing.jpeg © image used under the license from adobe stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 6 July 2026, ENVI Members will consider the draft report on the targeted amendment to the Market Stability Reserve (MSR) Decision. The Commission proposal, pre",
+          "published": "2026-07-06T09:50:37.000Z",
+          "score": 20
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
-          "title": "Why US train travel lags behind Asia and Europe",
-          "link": "https://www.dw.com/en/why-us-train-travel-lags-behind-asia-and-europe/a-77430370?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "As flights get pricier and gas prices stay high, more US travelers are turning to trains — and hitting a system built for freight, not people.",
-          "published": "2026-07-05T10:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Why put solar panels on green space when we could put them over car parks?",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/05/why-put-solar-panels-on-green-space-when-we-could-put-them-over-car-parks",
+          "title": "‘Why take those jobs away?’: the unionized workers decrying Trump’s war on wind",
+          "link": "https://www.theguardian.com/environment/2026/jul/06/workers-unions-trump-wind-energy",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;The long-running series in which readers answer other readers’ questions considers a hot topic within renewable energy&lt;/p&gt;&lt;p&gt;This week’s replies: &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/05/readers-reply-are-there-places-on-earth-where-humans-havent-been\"&gt;Are there places on Earth where humans haven’t been?&lt;/a&gt;&lt;/p&gt;&lt;p&gt;I would like to know why we build solar farms over green space, when we could just put them over massive car parks as ",
-          "published": "2026-07-05T13:00:27.000Z",
+          "description": "&lt;p&gt;Workers proud of their efforts to grow renewable energy say US president pursuing ‘personal vendetta’ at their expense&lt;/p&gt;&lt;p&gt;Donald Trump has blamed everything – from &lt;a href=\"https://www.reuters.com/business/energy/trump-administration-cites-national-security-halt-us-wind-farm-projects-ft-2026-05-03/\"&gt;“national security”&lt;/a&gt; issues, the deaths of &lt;a href=\"https://www.youtube.com/watch?v=t0R5_kWVuX0\"&gt;birds&lt;/a&gt; and &lt;a href=\"https://www.bbc.com/news/",
+          "published": "2026-07-06T11:00:01.000Z",
           "score": 7
         },
         {
@@ -52,6 +59,14 @@
           "score": 7
         },
         {
+          "title": "Red card system in disarray over Trump, Fifa and Balogun decision",
+          "link": "https://www.bbc.co.uk/sport/football/articles/cly99dxjkxxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The decision to effectively overturn the red card shown to United States forward Folarin Balogun leaves many unanswered questions.",
+          "published": "2026-07-06T09:06:26.000Z",
+          "score": 7
+        },
+        {
           "title": "World Cup: Trump thanks FIFA for suspending Balogun&#039;s red card ban",
           "link": "https://www.dw.com/en/world-cup-trump-thanks-fifa-for-suspending-balogun-s-red-card-ban/a-77840972?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -60,12 +75,12 @@
           "score": 7
         },
         {
-          "title": "Cargo ship reportedly attacked in Red Sea off Yemen",
-          "link": "https://www.dw.com/en/cargo-ship-reportedly-attacked-in-red-sea-off-yemen/a-77838529?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The UK Maritime Trade Office said a vessel was attacked 30 nautical miles southwest of Hodeida, which is under control of the Houthi rebels. The Iran-backed group recently vowed to resume attacks in the Red Sea.",
-          "published": "2026-07-05T14:06:00.000Z",
-          "score": 7
+          "title": "‘It’s smoke and mirrors’: hope turns to fear in Scottish village chosen for AI datacentre",
+          "link": "https://www.theguardian.com/technology/2026/jul/06/scotland-lanarkshire-village-ai-datacentre",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Suspicions grow in Lanarkshire that local people have been misled on supposed benefits of the huge development&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/05/lanarkshire-scotland-ai-datacentre-project-renewable-energy\"&gt;Revealed: landmark Scottish AI project has no prospect of meeting renewables promise&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/britain-ai-growth-",
+          "published": "2026-07-06T07:00:06.000Z",
+          "score": 4
         }
       ]
     },
@@ -73,6 +88,30 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "IPCC opens registration for experts to review First Order Draft of Working Group I contribution to the Seventh Assessment Report",
+          "link": "https://www.ipcc.ch/2026/07/06/ipcc-wg1ar7-expert-review/",
+          "source": "IPCC",
+          "description": "GENEVA, 6 July – Registration is now open for experts to review the First Order Draft of the Working Group I contribution to the IPCC Seventh Assessment Report (AR7). The Working Group I contribution to AR7 is assessing the latest physical science basis of climate change, including observed and projected large-scale climate changes, climate processes [&#8230;]",
+          "published": "2026-07-06T13:27:00.000Z",
+          "score": 11
+        },
+        {
+          "title": "A supercharged El Niño is coming &#8211; are we ready?",
+          "link": "https://www.climatechangenews.com/2026/07/06/a-supercharged-el-nino-is-coming-are-we-ready/",
+          "source": "Climate Home News",
+          "description": "We need to urgently build resilience to more extreme weather and rising seas, protecting nature as an ally in adapting to climate impacts The post A supercharged El Niño is coming &#8211; are we ready? appeared first on Climate Home News.",
+          "published": "2026-07-06T12:10:50.000Z",
+          "score": 10
+        },
+        {
+          "title": "GB News co-owner ‘cashing in on climate chaos’ after leap in fossil fuel investments, critics say",
+          "link": "https://www.theguardian.com/environment/2026/jul/06/gb-news-co-owner-cashing-in-on-climate-chaos-after-leap-in-fossil-fuel-investments-critics-say",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Exclusive: Campaigners argue news channel’s attacks on climate action ‘work in financial interests’ of Sir Paul Marshall&lt;/p&gt;&lt;p&gt;The hedge fund run by the co-owner of GB News almost tripled its investments in fossil fuel companies in the first quarter of 2026 to $2.8bn (£2.1bn), the Guardian can reveal.&lt;/p&gt;&lt;p&gt;Critics have accused Sir Paul Marshall of “cashing in on climate chaos” and have claimed the news channel, which frequently attacks climate science and action",
+          "published": "2026-07-06T14:00:05.000Z",
+          "score": 7
+        },
         {
           "title": "Bomb the Arctic, dam the Mediterranean and build a second moon: five outlandish plans to remodel our climate",
           "link": "https://www.theguardian.com/environment/2026/jul/06/five-outlandish-plans-to-remodel-earth-climate",
@@ -82,36 +121,12 @@
           "score": 7
         },
         {
-          "title": "Thousands evacuated from homes in southwest France as wildfire burns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbjVhdnhIVGhSckpLUUtKbmFzQ0tOLVNBMVBkLXdpQ1JzbmZCbENGVHZZV1N6ZWpRaE1ZbVlab2U0aFplc3NQdU1paVJYd1RNcVZnU0hXeE0yTFpaSllzbXEyU2EwODJmQ3AyZ1RGNXk2RnVvWHF4MElXTWk1V25yMEItYjcyT2NiT0p5eTc3bzZPWDRiM2plLUFIS2RjRk9wQUVtSFktakxmamhNaGpNV1BJWHE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPbjVhdnhIVGhSckpLUUtKbmFzQ0tOLVNBMVBkLXdpQ1JzbmZCbENGVHZZV1N6ZWpRaE1ZbVlab2U0aFplc3NQdU1paVJYd1RNcVZnU0hXeE0yTFpaSllzbXEyU2EwODJmQ3AyZ1RGNXk2RnVvWHF4MElXTWk1V25yMEItYjcyT2NiT0p5eTc3bzZPWDRiM2plLUFIS2RjRk9wQUVtSFktakxmamhNaGpNV1BJWHE?oc=5\" target=\"_blank\"&gt;Thousands evacuated from homes in southwest France as wildfire burns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-06T07:26:52.000Z",
+          "title": "Wildfire in southern France forces evacuation of 10,000 people",
+          "link": "https://www.bbc.co.uk/news/articles/crlwweye9glo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Tour de France organisers ban spectators from stage three as a wildfire hits the Pyrénées-Orientales region.",
+          "published": "2026-07-06T13:08:23.000Z",
           "score": 7
-        },
-        {
-          "title": "At least 25 people die in US as record heatwave scorches swaths of country",
-          "link": "https://www.theguardian.com/us-news/2026/jul/05/heatwave-deaths-weather",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;More than 20 states reported temperatures above 100F as heat dome sits over eastern US during holiday weekend&lt;/p&gt;&lt;p&gt;At least two dozen people have died amid the perilous &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;climate crisis-driven&lt;/a&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;heatwave&lt;/a&gt; that has scorched swaths of the US with record temperatu",
-          "published": "2026-07-05T18:49:28.000Z",
-          "score": 4
-        },
-        {
-          "title": "Empty reservoirs, ladybirds and sunstroke: remembering the UK heatwave of 1976",
-          "link": "https://www.theguardian.com/environment/2026/jul/05/readers-recall-heatwave-1976-uk-weather-climate",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;As Britain reached its hottest June temperature on record, readers recall the summer when temperatures hit 36C&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/uk-government-urged-to-act-on-devastating-impact-of-heatwaves\"&gt;recent heatwave in the UK&lt;/a&gt; broke the previous June record of 35.6C, recorded &lt;a href=\"https://www.theguardian.com/uk-news/2026/jun/23/heatwave-1976-extreme-heat-climate-crisis-new-normal\"&gt;during the 1976 heatwave&",
-          "published": "2026-07-05T13:00:27.000Z",
-          "score": 4
-        },
-        {
-          "title": "Revealed: landmark Scottish AI project has no prospect of meeting renewables promise",
-          "link": "https://www.theguardian.com/technology/2026/jul/06/lanarkshire-scotland-ai-datacentre-project-renewable-energy",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Exclusive: Government and developers privately acknowledged Lanarkshire datacentre site had power provision ‘issue’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/05/scotland-lanarkshire-village-ai-datacentre\"&gt;‘It’s smoke and mirrors’: hope turns to fear in Scottish village chosen for AI datacentre&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/britain-ai-growth-zones-e",
-          "published": "2026-07-06T07:00:05.000Z",
-          "score": 2
         }
       ]
     },
@@ -123,7 +138,32 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "Highlights - Vote on the ENVI opinion on the CFP, Ocean Pact and aquaculture - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260706CAN79225",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20230321PHT78005/20230321PHT78005-ms.jpg\" width=\"180\" alt=\"Sharks diving on the ocean floor in clear water\" title=\"Sharks © Image used under license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 6 July 2026, ENVI Members will vote on the draft opinion on the conditions for implementing Union support to the Common Fisheries Policy, the European Ocean Pact and the Union’s m",
+          "published": "2026-07-06T09:47:08.000Z",
+          "score": 18
+        },
+        {
+          "title": "Highlights - Exchange of views on ecodesign and sustainable textiles - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260624CAN79143",
+          "source": "EU Parliament ENVI Committee",
+          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20240313PHT19312/20240313PHT19312-ms.jpg\" width=\"180\" alt=\"Banner: Recycling pressed bales from clothing\" title=\"Banner: Recycling pressed bales from clothing © AdobeStock_Fotoschlick\"/&gt;&lt;/div&gt;&lt;div&gt;On 2 July 2026, ENVI Members held an exchange of views with the Commission and the authors of the Joint Research Centre (JRC) preparatory study on textile products.",
+          "published": "2026-07-06T09:04:57.000Z",
+          "score": 18
+        },
+        {
+          "title": "Wildfires rage across southern Europe, forcing thousands to flee homes",
+          "link": "https://www.theguardian.com/world/2026/jul/06/wildfires-southern-europe-evacuations-tour-de-france-portugal-spain-greece-heatwave",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Tour de France spectator ban as country along with Spain, Portugal and Greece faces ‘powder keg’ after heatwave&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/06/ukraine-russia-zelenskyy-nato-summit-strikes-kyiv-europe-latest-news-updates\"&gt;Europe live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Wildfires raging across southern Europe have forced thousands to flee their homes and prompted officials to ban specta",
+          "published": "2026-07-06T10:01:31.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
@@ -138,18 +178,18 @@
           "score": 8
         },
         {
-          "title": "Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaWVmYTl5ZGlpY19WZWZxWE5KcTFEUXZUTFA1VmxDa2JWM0QyZ2hSdlo2N252cW1iNEdudlRUb184RDVyTU5jVVFsTWw3bzBtblFHdEdSemZOZXlTQVRuMWVyNU8yenJZTmhrcDZvLVY2TTYtT3M4SXZNMWFVUGNtZmhZUk9HTm5ZbWRtM2ZTa3hOaUlTTGF6dTJiNGRwWEp5V1BVZTNQQjF6QXY3d2s5VDdzVmNoblhtSVlnTw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPaWVmYTl5ZGlpY19WZWZxWE5KcTFEUXZUTFA1VmxDa2JWM0QyZ2hSdlo2N252cW1iNEdudlRUb184RDVyTU5jVVFsTWw3bzBtblFHdEdSemZOZXlTQVRuMWVyNU8yenJZTmhrcDZvLVY2TTYtT3M4SXZNMWFVUGNtZmhZUk9HTm5ZbWRtM2ZTa3hOaUlTTGF6dTJiNGRwWEp5V1BVZTNQQjF6QXY3d2s5VDdzVmNoblhtSVlnTw?oc=5\" target=\"_blank\"&gt;Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-05T15:49:32.000Z",
-          "score": 8
+          "title": "Why an anti-sacrilege law in India's Punjab has sparked controversy",
+          "link": "https://www.bbc.co.uk/news/articles/crlw1xrzd8yo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The dispute has revived one of Punjab's most sensitive political and religious issues ahead of state elections next year.",
+          "published": "2026-07-06T08:35:56.000Z",
+          "score": 6
         },
         {
           "title": "Fashion against fascism: When trademarks deter neo-Nazis",
           "link": "https://www.dw.com/en/fashion-against-fascism-when-trademarks-deter-neo-nazis/a-77770986?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "In Germany, where Nazi symbols and propaganda are tightly restricted by law, a new and creative strategy is being used to challenge far-right merchandise sellers: trademarks.",
+          "description": "In Germany, where Nazi symbols are banned, activists are using trademark law to fight far-right merchandise.",
           "published": "2026-07-06T08:32:00.000Z",
           "score": 6
         },
@@ -173,9 +213,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 423,
-    "articlesLast24h": 147,
-    "afterDedup": 142,
+    "totalArticlesScanned": 323,
+    "articlesLast24h": 77,
+    "afterDedup": 59,
     "feedsQueried": 19
   }
 }
