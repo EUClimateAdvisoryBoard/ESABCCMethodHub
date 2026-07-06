@@ -78,6 +78,10 @@ Private m_ResTiers() As String      ' per-result source tier (policy/scientific/
 Private m_ResTags() As String       ' per-result joined tag names
 Private m_ResChapters() As String   ' per-result chapter (report-chapter / sector) names
 Private m_ResSummaries() As String  ' per-result whole-document workspace summary
+Private m_ResCitedCount() As Long   ' per-result: times cited in the active doc
+                                    ' (computed each search; drives the tick +
+                                    ' count column and the summary panel line)
+Private m_ResCitedReady As Boolean  ' True once m_ResCitedCount has been sized
 Private m_WsChapterNames() As String ' chapter facet of the last workspace fetch
 Private m_WsChapterCount As Long
 Private m_WsLastProjId As String     ' last-used workspace id, kept so the picker
@@ -3171,10 +3175,15 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
     Dim citedCounts As Object
     Set citedCounts = BuildCitedCountMap()
 
+    ' Cache the per-reference count so the summary panel (FormBridge_WS_RowSummary)
+    ' can show it too, in step with the tick column.
+    ReDim m_ResCitedCount(1 To m_ResCount)
+    m_ResCitedReady = True
     Dim citedCount As Long: citedCount = 0
     Dim i As Long
     For i = 1 To m_ResCount
-        If CitedCountFor(citedCounts, m_ResIds(i)) > 0 Then citedCount = citedCount + 1
+        m_ResCitedCount(i) = CitedCountFor(citedCounts, m_ResIds(i))
+        If m_ResCitedCount(i) > 0 Then citedCount = citedCount + 1
     Next i
 
     If onlyUncited And citedCount = m_ResCount Then
@@ -3199,7 +3208,7 @@ Public Sub FormBridge_WS_Search(projIndex As Long, tierIndex As Long, tagChoice 
 
     Dim lastTier As String: lastTier = Chr(1)
     For i = 1 To m_ResCount
-        Dim nCited As Long: nCited = CitedCountFor(citedCounts, m_ResIds(i))
+        Dim nCited As Long: nCited = m_ResCitedCount(i)
         Dim isCited As Boolean: isCited = (nCited > 0)
         If onlyUncited And isCited Then GoTo NextItem
 
@@ -3329,13 +3338,20 @@ Public Function FormBridge_WS_RowSummary(rowIndex As Long) As String
     If r < 1 Or r > m_ResCount Then Exit Function
 
     Dim out As String
-    If m_ResChapters(r) <> "" Then out = "Chapter: " & m_ResChapters(r) & vbCrLf
-    If m_ResTags(r) <> "" Then out = out & "Tags: " & m_ResTags(r) & vbCrLf
-    If m_ResSummaries(r) <> "" Then
-        out = out & vbCrLf & m_ResSummaries(r)
-    ElseIf out = "" Then
-        out = "(No workspace summary, chapter or tags for this reference.)"
+    ' Citation status first: how many times this exact reference is cited in the
+    ' open document (kept in step with the tick + count in the list's mark column).
+    Dim nCit As Long
+    If m_ResCitedReady Then nCit = m_ResCitedCount(r)
+    If nCit = 1 Then
+        out = "Cited 1 time in this document." & vbCrLf
+    ElseIf nCit > 1 Then
+        out = "Cited " & nCit & " times in this document." & vbCrLf
+    Else
+        out = "Not yet cited in this document." & vbCrLf
     End If
+    If m_ResChapters(r) <> "" Then out = out & "Chapter: " & m_ResChapters(r) & vbCrLf
+    If m_ResTags(r) <> "" Then out = out & "Tags: " & m_ResTags(r) & vbCrLf
+    If m_ResSummaries(r) <> "" Then out = out & vbCrLf & m_ResSummaries(r)
     FormBridge_WS_RowSummary = out
 End Function
 
