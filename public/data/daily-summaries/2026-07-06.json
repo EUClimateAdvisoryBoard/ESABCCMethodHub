@@ -1,6 +1,6 @@
 {
   "date": "2026-07-06",
-  "generatedAt": "2026-07-06T00:06:50.366Z",
+  "generatedAt": "2026-07-06T09:04:47.315Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 6 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,10 @@
       "color": "#E87722"
     },
     {
-      "headline": "From ‘heat panic’ to ‘sacrificed at the altar’: Europe’s air conditioning culture wars heat up",
-      "summary": "&lt;p&gt;Cooling down has become political amid record highs, as experts say row is distracting from work of protecting lives&lt;/p&gt;&lt;p&gt;As the afternoon heat rose to a dizzying 41.7C (107F) in eastern Brandenburg on Sunday, taking German temperatures to unprecedented highs, Mario, 65, took precautions but did not panic. Two years ago, a fierce heatwave had prompted him to buy a powerful device that few Germans own: an air conditioning unit.&lt;/p&gt;&lt;p&gt;“The summers are slowly getti",
+      "headline": "Bomb the Arctic, dam the Mediterranean and build a second moon: five outlandish plans to remodel our climate",
+      "summary": "&lt;p&gt;Humans have long sought to geoengineer the Earth’s environment. &lt;strong&gt;Tim Flannery&lt;/strong&gt; outlines a few of the wildest ideas from the 20th century&lt;/p&gt;&lt;p&gt;An increasing number of scientists think we have let the climate crisis fester for so long that our only hope to stave off ever-intensifying catastrophes is to use technological interventions. Cloud brightening, injecting sulphur into the atmosphere and the use of tiny mirrors in space – all of which might r",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "South Korea plans future fund fueled by chip boom",
-      "summary": "South Korea plans to channel windfall tax revenue from its booming semiconductor industry into a new future fund. The money would help finance major industrial projects and to support younger generations.",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -54,7 +48,7 @@
           "link": "https://www.bbc.co.uk/news/articles/cr7xpgx50jxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "The storm, with winds of nearly 290km/h (180mph) and gusts of 350km/h, is lashing the island of Rota.",
-          "published": "2026-07-05T21:39:12.000Z",
+          "published": "2026-07-06T00:20:20.000Z",
           "score": 7
         },
         {
@@ -80,14 +74,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "From ‘heat panic’ to ‘sacrificed at the altar’: Europe’s air conditioning culture wars heat up",
-          "link": "https://www.theguardian.com/environment/2026/jul/05/europe-air-conditioning-culture-wars-heat-up",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Cooling down has become political amid record highs, as experts say row is distracting from work of protecting lives&lt;/p&gt;&lt;p&gt;As the afternoon heat rose to a dizzying 41.7C (107F) in eastern Brandenburg on Sunday, taking German temperatures to unprecedented highs, Mario, 65, took precautions but did not panic. Two years ago, a fierce heatwave had prompted him to buy a powerful device that few Germans own: an air conditioning unit.&lt;/p&gt;&lt;p&gt;“The summers are slowly getti",
-          "published": "2026-07-05T05:00:18.000Z",
-          "score": 8
-        },
-        {
           "title": "Bomb the Arctic, dam the Mediterranean and build a second moon: five outlandish plans to remodel our climate",
           "link": "https://www.theguardian.com/environment/2026/jul/06/five-outlandish-plans-to-remodel-earth-climate",
           "source": "The Guardian - Climate",
@@ -96,18 +82,18 @@
           "score": 7
         },
         {
-          "title": "Overnight wildfire engulfs factories near Thessaloniki, Greece - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE82N2RXR1RvVjlnMUdUdGtXdlA1UnJiSDhScU5pRFJ6bHRSRnJBSmlDSkRyUE9hMWxmRUhTQl9mRWlkS214TmVoOWphc3pzcGZjaFY1NGwtaVhQOXNYU0lNcS1lZzB2Unc?oc=5",
+          "title": "Thousands evacuated from homes in southwest France as wildfire burns - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPbjVhdnhIVGhSckpLUUtKbmFzQ0tOLVNBMVBkLXdpQ1JzbmZCbENGVHZZV1N6ZWpRaE1ZbVlab2U0aFplc3NQdU1paVJYd1RNcVZnU0hXeE0yTFpaSllzbXEyU2EwODJmQ3AyZ1RGNXk2RnVvWHF4MElXTWk1V25yMEItYjcyT2NiT0p5eTc3bzZPWDRiM2plLUFIS2RjRk9wQUVtSFktakxmamhNaGpNV1BJWHE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE82N2RXR1RvVjlnMUdUdGtXdlA1UnJiSDhScU5pRFJ6bHRSRnJBSmlDSkRyUE9hMWxmRUhTQl9mRWlkS214TmVoOWphc3pzcGZjaFY1NGwtaVhQOXNYU0lNcS1lZzB2Unc?oc=5\" target=\"_blank\"&gt;Overnight wildfire engulfs factories near Thessaloniki, Greece&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-05T16:14:11.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPbjVhdnhIVGhSckpLUUtKbmFzQ0tOLVNBMVBkLXdpQ1JzbmZCbENGVHZZV1N6ZWpRaE1ZbVlab2U0aFplc3NQdU1paVJYd1RNcVZnU0hXeE0yTFpaSllzbXEyU2EwODJmQ3AyZ1RGNXk2RnVvWHF4MElXTWk1V25yMEItYjcyT2NiT0p5eTc3bzZPWDRiM2plLUFIS2RjRk9wQUVtSFktakxmamhNaGpNV1BJWHE?oc=5\" target=\"_blank\"&gt;Thousands evacuated from homes in southwest France as wildfire burns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-06T07:26:52.000Z",
           "score": 7
         },
         {
           "title": "At least 25 people die in US as record heatwave scorches swaths of country",
           "link": "https://www.theguardian.com/us-news/2026/jul/05/heatwave-deaths-weather",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;More than 20 states reported temperatures above 100F as heat dome sits over eastern US during holiday weekend&lt;/p&gt;&lt;p&gt;At least about two dozen people have died amid the perilous &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;climate crisis-driven&lt;/a&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;heatwave&lt;/a&gt; that has scorched swaths of the US with record tem",
+          "description": "&lt;p&gt;More than 20 states reported temperatures above 100F as heat dome sits over eastern US during holiday weekend&lt;/p&gt;&lt;p&gt;At least two dozen people have died amid the perilous &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;climate crisis-driven&lt;/a&gt; &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;heatwave&lt;/a&gt; that has scorched swaths of the US with record temperatu",
           "published": "2026-07-05T18:49:28.000Z",
           "score": 4
         },
@@ -118,22 +104,21 @@
           "description": "&lt;p&gt;As Britain reached its hottest June temperature on record, readers recall the summer when temperatures hit 36C&lt;/p&gt;&lt;p&gt;The &lt;a href=\"https://www.theguardian.com/environment/2026/jun/26/uk-government-urged-to-act-on-devastating-impact-of-heatwaves\"&gt;recent heatwave in the UK&lt;/a&gt; broke the previous June record of 35.6C, recorded &lt;a href=\"https://www.theguardian.com/uk-news/2026/jun/23/heatwave-1976-extreme-heat-climate-crisis-new-normal\"&gt;during the 1976 heatwave&",
           "published": "2026-07-05T13:00:27.000Z",
           "score": 4
+        },
+        {
+          "title": "Revealed: landmark Scottish AI project has no prospect of meeting renewables promise",
+          "link": "https://www.theguardian.com/technology/2026/jul/06/lanarkshire-scotland-ai-datacentre-project-renewable-energy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Exclusive: Government and developers privately acknowledged Lanarkshire datacentre site had power provision ‘issue’&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/05/scotland-lanarkshire-village-ai-datacentre\"&gt;‘It’s smoke and mirrors’: hope turns to fear in Scottish village chosen for AI datacentre&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/britain-ai-growth-zones-e",
+          "published": "2026-07-06T07:00:05.000Z",
+          "score": 2
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "South Korea plans future fund fueled by chip boom",
-          "link": "https://www.dw.com/en/south-korea-plans-future-fund-fueled-by-chip-boom/a-77836747?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "South Korea plans to channel windfall tax revenue from its booming semiconductor industry into a new future fund. The money would help finance major industrial projects and to support younger generations.",
-          "published": "2026-07-05T11:22:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -145,12 +130,36 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "European space telescope Euclid spots oldest quasars yet",
+          "link": "https://www.dw.com/en/european-space-telescope-euclid-spots-oldest-quasars-yet/a-77824462?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Think of quasars as time machines. Rare but revealing. They are light from the beginnings of the universe that let astronomers investigate how early galaxies formed.",
+          "published": "2026-07-06T06:30:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports - Reuters",
           "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaWVmYTl5ZGlpY19WZWZxWE5KcTFEUXZUTFA1VmxDa2JWM0QyZ2hSdlo2N252cW1iNEdudlRUb184RDVyTU5jVVFsTWw3bzBtblFHdEdSemZOZXlTQVRuMWVyNU8yenJZTmhrcDZvLVY2TTYtT3M4SXZNMWFVUGNtZmhZUk9HTm5ZbWRtM2ZTa3hOaUlTTGF6dTJiNGRwWEp5V1BVZTNQQjF6QXY3d2s5VDdzVmNoblhtSVlnTw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPaWVmYTl5ZGlpY19WZWZxWE5KcTFEUXZUTFA1VmxDa2JWM0QyZ2hSdlo2N252cW1iNEdudlRUb184RDVyTU5jVVFsTWw3bzBtblFHdEdSemZOZXlTQVRuMWVyNU8yenJZTmhrcDZvLVY2TTYtT3M4SXZNMWFVUGNtZmhZUk9HTm5ZbWRtM2ZTa3hOaUlTTGF6dTJiNGRwWEp5V1BVZTNQQjF6QXY3d2s5VDdzVmNoblhtSVlnTw?oc=5\" target=\"_blank\"&gt;Uber pauses Europe food delivery expansion as it pursues Delivery Hero deal, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-05T04:23:00.000Z",
+          "published": "2026-07-05T15:49:32.000Z",
           "score": 8
+        },
+        {
+          "title": "Fashion against fascism: When trademarks deter neo-Nazis",
+          "link": "https://www.dw.com/en/fashion-against-fascism-when-trademarks-deter-neo-nazis/a-77770986?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "In Germany, where Nazi symbols and propaganda are tightly restricted by law, a new and creative strategy is being used to challenge far-right merchandise sellers: trademarks.",
+          "published": "2026-07-06T08:32:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "Why Ukrainian strikes on annexed Crimea are a blow to Putin",
+          "link": "https://www.bbc.co.uk/news/videos/c2dy21549w1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Eastern Europe correspondent Sarah Rainsford explains why Crimea is a target for Kyiv, and why the peninsula matters to Vladimir Putin.",
+          "published": "2026-07-06T06:00:05.000Z",
+          "score": 4
         },
         {
           "title": "Wildfires rage in Portugal, Greece, France and Spain",
@@ -159,38 +168,14 @@
           "description": "Six countries in southern Europe have been hit by wildfires. One of the blazes, in southwestern France, could affect Monday&#039;s third stage of the Tour de France, authorities warn.",
           "published": "2026-07-05T18:02:00.000Z",
           "score": 4
-        },
-        {
-          "title": "UK Reform&#039;s Nigel Farage faces fresh misconduct allegations",
-          "link": "https://www.dw.com/en/uk-reform-s-nigel-farage-faces-fresh-misconduct-allegations/a-77837442?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Populist right leader Nigel Farage has been referred to the UK parliament&#039;s standards watchdog after a report that he failed to declare benefits. The Reform UK leader is already under investigation over a separate gift.",
-          "published": "2026-07-05T13:52:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Iran's supreme leader absent as senior officials attend ayatollah's funeral",
-          "link": "https://www.bbc.co.uk/news/articles/cevllyj9vv3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Mojtaba Khamenei has not been seen in public since the attack which killed his father at the outset of the US-Israel war with Iran.",
-          "published": "2026-07-05T17:58:01.000Z",
-          "score": 2
-        },
-        {
-          "title": "Watch: Lyse Doucet on emotion and politics at Tehran funeral of former supreme leader",
-          "link": "https://www.bbc.co.uk/news/videos/c4gyye3rplno?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The BBC's chief international correspondent reports from Tehran where funeral events are taking place in honour of Iran's former leader, Ayatollah Ali Khamenei.",
-          "published": "2026-07-05T17:54:47.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 423,
-    "articlesLast24h": 142,
-    "afterDedup": 127,
+    "articlesLast24h": 147,
+    "afterDedup": 142,
     "feedsQueried": 19
   }
 }
