@@ -246,7 +246,11 @@ export default function MethodologyPanel() {
             <span className="font-semibold">FIGARO names 23 partner countries; the rest is “Rest of the
             world”.</span> Taiwan is not separately identified — so the semiconductor dependency, one of the
             EU’s most acute, is <em>invisible</em> in the named-partner shares and appears only in the
-            curated layer. Rest-of-world is also large for fuels (OPEC states are not named).
+            curated layer. Rest-of-world is also large for fuels (OPEC states are not named). The FIGARO IO
+            data view therefore adds an <em>indicative</em> breakdown of that block from customs statistics
+            (<code className="rounded bg-grey-100 px-1">ext_tec03</code>, EU goods trade by partner country:
+            Taiwan, Viet Nam, Kazakhstan, the Gulf states, Ukraine, North Africa…) — a different attribution
+            (TEC/customs, goods only), shown separately and never mixed into the FIGARO figures.
           </li>
           <li>
             <span className="font-semibold">Current prices.</span> All values are € billion at current

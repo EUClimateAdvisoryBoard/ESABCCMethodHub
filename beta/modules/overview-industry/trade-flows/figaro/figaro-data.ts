@@ -35,6 +35,18 @@ export interface FigaroIoData {
   matrix: Record<FigaroYear, Record<string, number[][]>>;
 }
 
+export interface RestOfWorldPartner {
+  code: string;
+  name: string;
+  /** EU goods imports from this partner by year, € million (TEC, all activities). */
+  imp: Record<string, number>;
+  /** EU goods exports to this partner by year, € million. */
+  exp: Record<string, number>;
+  /** Same, restricted to industry (NACE B–E). */
+  impInd: Record<string, number>;
+  expInd: Record<string, number>;
+}
+
 export interface FigaroGlobalData {
   meta: { dataset: string; source: string; unit: string; years: string[]; generated: string; note: string };
   countries: string[];
@@ -46,7 +58,15 @@ export interface FigaroGlobalData {
   countryFlows: Record<FigaroYear, { int: number[][]; fin: number[][] }>;
   /** euExportsByIndustry[year].int|fin[industryIdx][extraDestIdx], € million. */
   euExportsByIndustry: Record<FigaroYear, { int: number[][]; fin: number[][] }>;
+  /** Customs-based breakdown of FIGARO's "Rest of the world" (ext_tec03). */
+  restOfWorld: {
+    meta: { dataset: string; title: string; source: string; unit: string; years: string[]; note: string };
+    partners: RestOfWorldPartner[];
+  };
 }
+
+export const EXT_TEC03_SOURCE_URL =
+  'https://ec.europa.eu/eurostat/databrowser/view/ext_tec03/default/table?lang=en';
 
 let ioPromise: Promise<FigaroIoData> | null = null;
 let globalPromise: Promise<FigaroGlobalData> | null = null;

@@ -104,6 +104,21 @@ function DataPanel({ data }: { data: FigaroIoData }) {
         {row('Unit', '€ million, current prices (basic prices); cells rounded to €0.1 m')}
         {row('Resolution', '64 NACE A*64 industries + 6 value-added rows × 64 industries + 5 final-demand categories × 24 origins')}
         {row('Aggregation', 'EU-27 destination countries summed (EU-27 treated as one economy); extra-EU↔extra-EU flows not included')}
+        {row('Rest-of-world breakdown', (
+          <>
+            FIGARO names only 23 partner areas; the analysis dashboard decomposes the &quot;Rest of the
+            world&quot; block indicatively with EU goods trade by partner country (
+            <a
+              href="https://ec.europa.eu/eurostat/databrowser/view/ext_tec03/default/table?lang=en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              ext_tec03 ↗
+            </a>
+            , TEC/customs attribution — Taiwan, Viet Nam, Gulf states, Ukraine…)
+          </>
+        ))}
         {row('Last regenerated', data.meta.generated)}
         {row('Download (hosted here)', (
           <span className="flex flex-wrap gap-3">
