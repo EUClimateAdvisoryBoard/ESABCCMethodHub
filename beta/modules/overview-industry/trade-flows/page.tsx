@@ -3,14 +3,17 @@
 /**
  * Overview Industry — Trade flows.
  * --------------------------------
- * An input–output view of EU-27 manufacturing trade (NACE Rev. 2.1 Section C,
+ * An input–output view of EU-27 manufacturing trade (NACE Rev. 2 Section C,
  * divisions 10–33): for every division, where the EU imports from and exports
- * to, the intra-EU vs extra-EU split, the granular imported inputs each supply
- * chain depends on, and the high-risk dependency hotspots where a single
- * foreign supplier dominates. One interactive figure (`TradeFlowExplorer`) with
- * four linked views. Trade backbone is REAL Eurostat data (ext_tec01, 2023);
- * dependency figures are sourced to the EC/JRC strategic-dependency reviews,
- * the Critical Raw Materials Act and OECD TiVA / FIGARO. Every value is linked.
+ * to, the intra-EU vs extra-EU split, the imported-intermediate-input mix
+ * straight out of the EU input–output use table, the origin countries of
+ * those imports (FIGARO), the foreign value added embedded in exports, and
+ * the high-risk dependency hotspots where a single foreign supplier
+ * dominates. One interactive figure (`TradeFlowExplorer`) with five linked
+ * views — the fifth being the full methodology. Statistical layers regenerate
+ * live from the Eurostat API (`scripts/fetch-trade-flows-io-data.mjs`);
+ * dependency figures are sourced to the EC/JRC strategic-dependency reviews
+ * and the Critical Raw Materials Act. Every value is linked.
  */
 
 import Link from 'next/link';
@@ -41,22 +44,26 @@ export default function TradeFlowsPage() {
               NACE C · Manufacturing
             </span>
             <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
-              Live Eurostat data
+              Live Eurostat data · IO tables
             </span>
           </div>
           <h1 className="mt-2 text-3xl font-bold text-grey-900">
             Trade flows — the input–output map of EU manufacturing
           </h1>
           <p className="mt-2 max-w-text text-grey-700">
-            An input–output reading of EU-27 manufacturing trade (NACE Rev. 2.1 Section&nbsp;C, divisions
-            10–33). For every division it shows the <span className="font-semibold">output</span> side — where
-            the EU sells, intra-EU vs extra-EU — and the <span className="font-semibold">input</span> side —
-            what it must import and from whom, down to the specific feedstocks, metals and materials each
-            supply chain runs on. The trade backbone is live Eurostat data; the dependency layer sits on the
-            Commission&apos;s strategic-dependency reviews, the Critical Raw Materials Act and OECD TiVA. The
-            last view pulls out the <span className="font-semibold text-accent-red">high-risk hotspots</span>:
-            where imports are both large and concentrated in a single supplier. Every number carries a source
-            link — nothing is invented.
+            An input–output reading of EU-27 manufacturing trade (NACE Rev. 2 Section&nbsp;C, divisions
+            10–33). For every division it shows the <span className="font-semibold">output</span> side —
+            where the EU sells, intra-EU vs extra-EU, real destination shares — and the{' '}
+            <span className="font-semibold">input</span> side at three depths: the imported-input mix
+            straight out of the EU-27 <span className="font-semibold">input–output use table</span> (which
+            products, how many € billion, what share of all inputs is imported), the origin countries of
+            those imports from the <span className="font-semibold">FIGARO</span> inter-country input–output
+            framework (incl. the foreign value added embedded in every euro of exports), and a curated
+            critical-materials layer naming the feedstocks below the statistics&apos; radar. The last data
+            view pulls out the <span className="font-semibold text-accent-red">high-risk hotspots</span>:
+            where imports are both large and concentrated in a single supplier. Every number carries a
+            source link, and the full method — datasets, attribution concepts, formulas, limits — is one
+            click away in the <span className="font-semibold">Methodology</span> view.
           </p>
         </header>
 
@@ -65,29 +72,32 @@ export default function TradeFlowsPage() {
         </section>
 
         <section className="mt-6 max-w-text text-sm text-grey-600">
-          <h2 className="text-base font-bold text-grey-800">How to read this — and its limits</h2>
+          <h2 className="text-base font-bold text-grey-800">How to read this — the short version</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-5">
             <li>
-              <span className="font-semibold">Trade values</span> (all 24 divisions) are real, from Eurostat{' '}
-              <code className="rounded bg-grey-100 px-1 text-[12px]">ext_tec01</code> (Trade by NACE Rev.&nbsp;2
-              activity), EU-27, 2023. This dataset attributes trade to the trading enterprise&apos;s NACE
-              activity, not to the product — which is why C19 (refined petroleum) carries the imported-energy
-              bill, and why totals differ from product/CN-based statistics.
+              <span className="font-semibold">Three data layers, kept apart on purpose.</span> A trade
+              backbone (Eurostat <code className="rounded bg-grey-100 px-1 text-[12px]">ext_tec01</code>,
+              all 24 divisions, 2023 + 2024), an input–output layer (EU-27 use table + FIGARO, 2023), and a
+              curated critical-materials layer (EC/JRC, &quot;as reported by&quot;).
             </li>
             <li>
-              <span className="font-semibold">Partner shares</span> are a proxy: Eurostat publishes no partner
-              breakdown at division level, so shares are taken from the SITC product section each division
-              belongs to and flagged accordingly.
+              <span className="font-semibold">&quot;Imports of division X&quot; is not one number.</span>{' '}
+              The backbone books trade to the enterprise&apos;s NACE code; the IO layer follows the product.
+              C19 is the worked example — refiners import ~€218 bn of crude (enterprise view), but crude is
+              a mining product, so the IO view shows it as an imported <em>input into</em> refining instead.
+              The Methodology view walks through it.
             </li>
             <li>
-              <span className="font-semibold">Import-reliance and supplier-concentration</span> figures are the
-              EC/JRC &quot;share of EU supply&quot; numbers; customs trade shares differ and are cross-checked
-              in the sources. Foreign value added is OECD TiVA with the EU-27 treated as one economy (so
-              intra-EU inputs count as domestic).
+              <span className="font-semibold">Import-reliance and supplier-concentration</span> figures in
+              the risk and materials views are the EC/JRC assessments (criticality methodology), not customs
+              arithmetic — quoted per source, with the formula documented.
             </li>
             <li>
-              It is a curated first build, meant to be mined for recurring dependency themes that inform CBAM,
-              the Critical Raw Materials Act and industrial-strategy policy — not a live customs feed.
+              <span className="font-semibold">Reproducible:</span>{' '}
+              <code className="rounded bg-grey-100 px-1 text-[12px]">
+                node scripts/fetch-trade-flows-io-data.mjs
+              </code>{' '}
+              regenerates every statistical number on this page from the public Eurostat API.
             </li>
           </ul>
         </section>
