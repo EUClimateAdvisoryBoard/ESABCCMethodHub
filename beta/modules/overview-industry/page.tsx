@@ -76,10 +76,12 @@ export default function OverviewIndustryPage() {
             </div>
             <p className="mt-2 text-sm text-grey-600">
               An input–output map of EU-27 manufacturing trade (all 24 NACE Section&nbsp;C divisions):
-              where the EU imports from and exports to, the granular supply-chain inputs each sector
-              depends on, and the high-risk import dependencies where one supplier dominates. Trade
-              backbone is live Eurostat data; the risk layer sits on the Critical Raw Materials Act and
-              the Commission&apos;s strategic-dependency reviews.
+              where the EU imports from and exports to, each division&apos;s imported-input mix straight
+              from the EU input–output use table and FIGARO (incl. foreign value added in exports, real
+              origin/destination shares), and the high-risk import dependencies where one supplier
+              dominates. Statistical layers regenerate from the Eurostat API; the risk layer sits on the
+              Critical Raw Materials Act and the Commission&apos;s strategic-dependency reviews — with a
+              full Methodology view.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
               Open the map →

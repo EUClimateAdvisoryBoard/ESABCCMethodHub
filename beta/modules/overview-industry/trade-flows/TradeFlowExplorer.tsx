@@ -3,49 +3,74 @@
 /**
  * Overview Industry — Trade flows — the explorer.
  * -----------------------------------------------
- * ONE interactive figure for the whole page, in four linked views:
- *   • Balance   — diverging bars of extra-EU imports vs exports for all 24
- *                 NACE Section C divisions (real Eurostat data), with a detail
- *                 drawer per division.
- *   • Supply    — an input→sector→output strip (mini-Sankey): imported inputs &
- *                 their origins, the sector, and where its output goes.
- *   • Risk      — the high-risk quadrant: import reliance × supplier
- *                 concentration; the top-right corner is where a single foreign
- *                 supplier can choke an EU value chain.
- *   • Materials — critical raw materials by EU import reliance & dominant
- *                 supplier (the China-concentration story, laid bare).
- * Every number carries a source link; the data lives in `./trade-data`.
+ * ONE interactive figure for the whole page, in five linked views:
+ *   • Balance     — diverging bars of extra-EU imports vs exports for all 24
+ *                   NACE Section C divisions (Eurostat ext_tec01, 2023/2024
+ *                   toggle), with a detail drawer per division.
+ *   • Supply      — the input–output chain: the division's REAL imported-input
+ *                   mix from the EU-27 use table (which products, € bn, share
+ *                   imported), import origins from FIGARO, the curated
+ *                   critical-materials layer, and where the output sells.
+ *   • Risk        — the high-risk quadrant: import reliance × supplier
+ *                   concentration; the top-right corner is where a single
+ *                   foreign supplier can choke an EU value chain.
+ *   • Materials   — critical raw materials by EU import reliance & dominant
+ *                   supplier (the China-concentration story, laid bare).
+ *   • Methodology — the full method write-up: datasets, attribution concepts,
+ *                   formulas, consistency gaps, reproducibility.
+ * Every number carries a source link; the statistical layers regenerate from
+ * `scripts/fetch-trade-flows-io-data.mjs` (see `./trade-data`).
  */
 
 import { useState } from 'react';
 import {
   DIVISION_TRADE,
-  DIVISION_TRADE_TOTAL,
   TRADE_BRANCH_COLORS,
   CRITICAL_MATERIALS,
   RISK_HOTSPOTS,
   SECTOR_IO_INPUTS,
-  SECTOR_IO_FVA,
   ENERGY_FEEDSTOCK_DEPENDENCY,
   HEADLINE_FACTS,
-  partnersFor,
-  PARTNER_SKEW_NOTES,
+  REFERENCE_YEAR,
+  LATEST_YEAR,
+  TEC_YEARS,
+  EUROSTAT_USE_TABLE,
+  EUROSTAT_FIGARO_IMPORTS,
+  EUROSTAT_FIGARO_EXPORTS,
+  EUROSTAT_FIGARO_FVA,
+  importOriginsFor,
+  exportDestinationsFor,
+  fvaFor,
+  inputMixFor,
+  isGroupedInIO,
+  figaroIndustryFor,
+  IO_GROUP_LABELS,
+  IO_GROUP_SKEW_NOTES,
   type Source,
   type DivisionTrade,
-  type PartnerShare,
+  type TecYear,
+  type FigaroPartner,
 } from './trade-data';
 import TradeBalanceFigure from './TradeBalanceFigure';
+import MethodologyPanel from './MethodologyPanel';
 
-type View = 'balance' | 'supply' | 'risk' | 'materials';
+type View = 'balance' | 'supply' | 'risk' | 'materials' | 'method';
 
 const VIEWS: { id: View; label: string; blurb: string }[] = [
   { id: 'balance', label: 'Trade balance', blurb: 'Imports vs exports, all 24 divisions' },
   { id: 'supply', label: 'Supply chains', blurb: 'Input → sector → output flows' },
   { id: 'risk', label: 'Import-risk map', blurb: 'Reliance × supplier concentration' },
   { id: 'materials', label: 'Critical materials', blurb: 'Who the EU depends on' },
+  { id: 'method', label: 'Methodology', blurb: 'Datasets, formulas, limits' },
 ];
 
 const fmt = (v: number) => (Math.abs(v) >= 100 ? v.toFixed(0) : v.toFixed(1));
+
+/** Shorten long CPA product names for the input-mix bars. */
+const shortProduct = (name: string) => {
+  const cut = name.split(/[;,]| except /)[0].trim();
+  return cut.length > 38 ? cut.slice(0, 37) + '…' : cut;
+};
 
 function SourceLink({ src }: { src: Source }) {
   return (
@@ -62,9 +87,23 @@ function SourceLink({ src }: { src: Source }) {
   );
 }
 
+function GroupBadge({ code }: { code: string }) {
+  if (!isGroupedInIO(code)) return null;
+  const group = figaroIndustryFor(code);
+  return (
+    <span
+      className="rounded bg-grey-100 px-1 py-0.5 text-[9px] font-semibold text-grey-500"
+      title={`The input–output layer publishes this division only as part of the group ${IO_GROUP_LABELS[group] ?? group}.`}
+    >
+      IO: {IO_GROUP_LABELS[group] ?? group}
+    </span>
+  );
+}
+
 export default function TradeFlowExplorer() {
   const [view, setView] = useState<View>('balance');
   const [showIntra, setShowIntra] = useState(false);
+  const [year, setYear] = useState<TecYear>(REFERENCE_YEAR);
   const [selected, setSelected] = useState<string | null>('C19');
   const [supplyCode, setSupplyCode] = useState<string>('C24');
 
@@ -110,21 +149,41 @@ export default function TradeFlowExplorer() {
       {view === 'balance' && (
         <div className="grid gap-4 lg:grid-cols-[1fr_320px]">
           <div className="rounded-lg border border-grey-200 bg-white p-3">
-            <div className="mb-2 flex items-center justify-between gap-2">
+            <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
               <p className="text-xs text-grey-600">
-                EU-27 extra-EU imports (red) vs exports (colour by branch), € bn, 2023. Sorted by net
+                EU-27 extra-EU imports (red) vs exports (colour by branch), € bn, {year}. Sorted by net
                 balance — top = biggest surplus, bottom = deficit. Click a bar for detail.
               </p>
-              <label className="flex shrink-0 items-center gap-1.5 text-[11px] text-grey-600">
-                <input
-                  type="checkbox"
-                  checked={showIntra}
-                  onChange={(e) => setShowIntra(e.target.checked)}
-                />
-                show intra-EU
-              </label>
+              <div className="flex shrink-0 items-center gap-3">
+                <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+                  {TEC_YEARS.map((y) => (
+                    <button
+                      key={y}
+                      onClick={() => setYear(y)}
+                      className={`px-2 py-0.5 font-semibold transition ${
+                        year === y ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                      }`}
+                      title={
+                        y === REFERENCE_YEAR
+                          ? 'Reference year — aligns with the input–output layer (FIGARO / use table)'
+                          : 'Latest trade data; the IO layer still refers to 2023'
+                      }
+                    >
+                      {y}
+                    </button>
+                  ))}
+                </div>
+                <label className="flex items-center gap-1.5 text-[11px] text-grey-600">
+                  <input
+                    type="checkbox"
+                    checked={showIntra}
+                    onChange={(e) => setShowIntra(e.target.checked)}
+                  />
+                  show intra-EU
+                </label>
+              </div>
             </div>
-            <TradeBalanceFigure selected={selected} onSelect={setSelected} showIntra={showIntra} />
+            <TradeBalanceFigure selected={selected} onSelect={setSelected} showIntra={showIntra} year={year} />
             <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-grey-500">
               {Object.entries(TRADE_BRANCH_COLORS).map(([b, c]) => (
                 <span key={b} className="inline-flex items-center gap-1">
@@ -134,7 +193,7 @@ export default function TradeFlowExplorer() {
               ))}
             </div>
           </div>
-          <DivisionDetail div={sel} onOpenSupply={(c) => { setSupplyCode(c); setView('supply'); }} />
+          <DivisionDetail div={sel} year={year} onOpenSupply={(c) => { setSupplyCode(c); setView('supply'); }} />
         </div>
       )}
 
@@ -148,6 +207,9 @@ export default function TradeFlowExplorer() {
 
       {/* ============================================ MATERIALS view */}
       {view === 'materials' && <MaterialsView />}
+
+      {/* ============================================ METHODOLOGY view */}
+      {view === 'method' && <MethodologyPanel />}
     </div>
   );
 }
@@ -156,9 +218,11 @@ export default function TradeFlowExplorer() {
 
 function DivisionDetail({
   div,
+  year,
   onOpenSupply,
 }: {
   div: DivisionTrade | null;
+  year: TecYear;
   onOpenSupply: (code: string) => void;
 }) {
   if (!div) {
@@ -168,24 +232,23 @@ function DivisionDetail({
       </div>
     );
   }
-  const netExt = div.expExt - div.impExt;
-  const totalTrade = div.impExt + div.expExt + div.impInt + div.expInt;
-  const extraShare = ((div.impExt + div.expExt) / totalTrade) * 100;
-  const importIntensity = (div.impExt / (div.impExt + div.expExt)) * 100;
+  const f = div.flows[year];
+  const fPrev = div.flows[REFERENCE_YEAR];
+  const fLatest = div.flows[LATEST_YEAR];
+  const netExt = f.expExt - f.impExt;
+  const netDelta = fLatest.expExt - fLatest.impExt - (fPrev.expExt - fPrev.impExt);
+  const totalTrade = f.impExt + f.expExt + f.impInt + f.expInt;
+  const extraShare = totalTrade > 0 ? ((f.impExt + f.expExt) / totalTrade) * 100 : 0;
   const io = SECTOR_IO_INPUTS.find((s) => s.code === div.code);
-  const fva = SECTOR_IO_FVA.find((s) => s.code === div.code);
-  const partners = partnersFor(div.code);
-  const skew = PARTNER_SKEW_NOTES[div.code];
+  const fva = fvaFor(div.code);
+  const mix = inputMixFor(div.code);
+  const origins = importOriginsFor(div.code);
+  const destinations = exportDestinationsFor(div.code);
+  const skew = IO_GROUP_SKEW_NOTES[div.code];
   const color = TRADE_BRANCH_COLORS[div.branch];
 
   const bar = (label: string, extra: number, intra: number, extraColor: string) => {
-    const max = Math.max(
-      DIVISION_TRADE_TOTAL.impExt,
-      ...DIVISION_TRADE.map((d) => d.impExt + d.impInt),
-      ...DIVISION_TRADE.map((d) => d.expExt + d.expInt),
-    );
-    const w = (v: number) => `${(v / (div.impExt + div.impInt + div.expExt + div.expInt)) * 100}%`;
-    void max;
+    const w = (v: number) => `${(v / (f.impExt + f.impInt + f.expExt + f.expInt)) * 100}%`;
     return (
       <div className="mb-1.5">
         <div className="flex justify-between text-[10px] text-grey-500">
@@ -204,11 +267,12 @@ function DivisionDetail({
 
   return (
     <div className="rounded-lg border border-grey-200 bg-white p-4">
-      <div className="flex items-center gap-2">
+      <div className="flex flex-wrap items-center gap-2">
         <span className="rounded px-1.5 py-0.5 text-[10px] font-bold text-white" style={{ background: color }}>
           {div.code}
         </span>
         <h3 className="text-base font-bold text-grey-900">{div.label}</h3>
+        <GroupBadge code={div.code} />
       </div>
       <p className="mt-1.5 text-xs leading-snug text-grey-600">{div.note}</p>
 
@@ -217,49 +281,70 @@ function DivisionDetail({
           <div className={`text-sm font-bold ${netExt >= 0 ? 'text-secondary' : 'text-accent-red'}`}>
             {netExt >= 0 ? '+' : ''}€{fmt(netExt)}bn
           </div>
-          <div className="text-[9px] text-grey-500">extra-EU balance</div>
-        </div>
-        <div className="rounded bg-grey-50 p-1.5">
-          <div className="text-sm font-bold text-grey-800">{importIntensity.toFixed(0)}%</div>
-          <div className="text-[9px] text-grey-500">imports / total trade</div>
+          <div className="text-[9px] text-grey-500">extra-EU balance {year}</div>
         </div>
         <div className="rounded bg-grey-50 p-1.5">
           <div className="text-sm font-bold text-grey-800">{extraShare.toFixed(0)}%</div>
-          <div className="text-[9px] text-grey-500">extra-EU share</div>
+          <div className="text-[9px] text-grey-500">extra-EU share of trade</div>
+        </div>
+        <div className="rounded bg-grey-50 p-1.5">
+          <div className="text-sm font-bold text-grey-800">{mix ? `${mix.importedShare.toFixed(0)}%` : '—'}</div>
+          <div className="text-[9px] text-grey-500">inputs imported (IO, 2023)</div>
         </div>
       </div>
+      <p className="mt-1 text-[9px] text-grey-400">
+        2023→2024 extra-EU balance: {netDelta >= 0 ? '+' : ''}€{fmt(netDelta)}bn (current prices — price and
+        volume effects mixed).
+      </p>
 
       <div className="mt-3">
-        {bar('Imports', div.impExt, div.impInt, '#B83230')}
-        {bar('Exports', div.expExt, div.expInt, color)}
-        <p className="text-[9px] text-grey-400">Solid = extra-EU · faded = intra-EU. Source: Eurostat ext_tec01, 2023.</p>
+        {bar('Imports', f.impExt, f.impInt, '#B83230')}
+        {bar('Exports', f.expExt, f.expInt, color)}
+        <p className="text-[9px] text-grey-400">
+          Solid = extra-EU · faded = intra-EU. Source: Eurostat ext_tec01, {year} (enterprise-based — see
+          Methodology).
+        </p>
       </div>
 
       {fva && (
         <div className="mt-3 rounded bg-surface-blue p-2 text-[11px] text-grey-700">
-          <span className="font-semibold">Foreign value added in exports: {fva.foreignValueAddedPct}%{fva.fvaApprox ? '≈' : ''}</span>{' '}
-          — {fva.fvaNote}. <SourceLink src={fva.fvaSrc} />
+          <span className="font-semibold">Foreign value added in exports: {fva.fvaPct}%</span> (FIGARO 2023)
+          {fva.origins.length > 0 && (
+            <>
+              {' '}
+              — of which{' '}
+              {fva.origins
+                .filter((o) => o.code !== 'WRL_REST')
+                .slice(0, 3)
+                .map((o) => `${o.name} ${o.pctOfExports.toFixed(1)}pp`)
+                .join(', ')}
+            </>
+          )}
+          . <SourceLink src={EUROSTAT_FIGARO_FVA} />
         </div>
       )}
 
-      {partners && (
+      {origins && destinations && (
         <div className="mt-3">
-          <div className="mb-1 text-[11px] font-semibold text-grey-700">Where extra-EU trade goes</div>
+          <div className="mb-1 text-[11px] font-semibold text-grey-700">
+            Extra-EU trade in this division&apos;s products (FIGARO, 2023)
+          </div>
           <div className="grid grid-cols-2 gap-2">
-            <PartnerColumn title="Imports from" partners={partners.importPartners} accent="#B83230" />
-            <PartnerColumn title="Exports to" partners={partners.exportPartners} accent={color} />
+            <PartnerColumn title="Imports from" partners={origins.partners} accent="#B83230" />
+            <PartnerColumn title="Exports to" partners={destinations.partners} accent={color} />
           </div>
           <p className="mt-1 text-[9px] leading-snug text-grey-400">
-            {partners.sitc} proxy ({partners.covers.length > 1 ? `covers ${partners.covers.join(', ')}` : 'division-level'}).{' '}
+            Shares of extra-EU flows; FIGARO names 23 partners, the remainder is &quot;Rest of the
+            world&quot;.{' '}
             {skew ? skew + ' ' : ''}
-            <SourceLink src={partners.src} />
+            <SourceLink src={EUROSTAT_FIGARO_IMPORTS} />
           </p>
         </div>
       )}
 
       {io && (
         <div className="mt-3">
-          <div className="mb-1 text-[11px] font-semibold text-grey-700">Critical imported inputs</div>
+          <div className="mb-1 text-[11px] font-semibold text-grey-700">Critical imported inputs (curated)</div>
           <ul className="space-y-1">
             {io.inputs.map((inp) => (
               <li key={inp.name} className="text-[11px] leading-snug text-grey-600">
@@ -268,14 +353,15 @@ function DivisionDetail({
               </li>
             ))}
           </ul>
-          <button
-            onClick={() => onOpenSupply(div.code)}
-            className="mt-2 text-[11px] font-semibold text-primary hover:underline"
-          >
-            See the supply-chain flow →
-          </button>
         </div>
       )}
+
+      <button
+        onClick={() => onOpenSupply(div.code)}
+        className="mt-3 text-[11px] font-semibold text-primary hover:underline"
+      >
+        See the full input–output chain →
+      </button>
     </div>
   );
 }
@@ -283,57 +369,127 @@ function DivisionDetail({
 /* ----------------------------------------------------------- supply-chain view */
 
 function SupplyChainView({ code, onSelect }: { code: string; onSelect: (c: string) => void }) {
-  const io = SECTOR_IO_INPUTS.find((s) => s.code === code);
   const div = DIVISION_TRADE.find((d) => d.code === code);
-  const fva = SECTOR_IO_FVA.find((s) => s.code === code);
-  const partners = partnersFor(code);
-  const withIo = SECTOR_IO_INPUTS.map((s) => s.code);
+  const io = SECTOR_IO_INPUTS.find((s) => s.code === code);
+  const fva = fvaFor(code);
+  const mix = inputMixFor(code);
+  const origins = importOriginsFor(code);
+  const destinations = exportDestinationsFor(code);
 
-  if (!io || !div) return null;
+  if (!div) return null;
 
-  // Output split: domestic use is a residual proxy we do NOT invent — we show
-  // the trade-observed split (intra-EU exports vs extra-EU exports) plus imports.
-  const outExtra = div.expExt;
-  const outIntra = div.expInt;
+  // Output split: the trade-observed destination split (intra-EU vs extra-EU
+  // exports); domestic own-use is not a trade flow and is not invented here.
+  const f = div.flows[REFERENCE_YEAR];
+  const outExtra = f.expExt;
+  const outIntra = f.expInt;
   const outTotal = outExtra + outIntra;
+  const maxInput = mix?.topImported[0]?.valueBn ?? 1;
 
   return (
     <div className="rounded-lg border border-grey-200 bg-white p-4">
-      <div className="mb-3 flex flex-wrap items-center gap-1.5">
-        <span className="mr-1 text-xs text-grey-500">Sector:</span>
-        {withIo.map((c) => {
-          const d = DIVISION_TRADE.find((x) => x.code === c)!;
-          return (
-            <button
-              key={c}
-              onClick={() => onSelect(c)}
-              className={`rounded border px-2 py-0.5 text-[11px] transition ${
-                c === code ? 'border-primary bg-surface-blue text-primary font-semibold' : 'border-grey-200 text-grey-600 hover:border-grey-400'
-              }`}
-            >
-              {c} · {d.label.length > 20 ? d.label.slice(0, 19) + '…' : d.label}
-            </button>
-          );
-        })}
+      <div className="mb-3 flex flex-wrap items-center gap-1">
+        <span className="mr-1 text-xs text-grey-500">Division:</span>
+        {DIVISION_TRADE.map((d) => (
+          <button
+            key={d.code}
+            onClick={() => onSelect(d.code)}
+            title={d.label}
+            className={`rounded border px-1.5 py-0.5 text-[11px] transition ${
+              d.code === code
+                ? 'border-primary bg-surface-blue font-semibold text-primary'
+                : 'border-grey-200 text-grey-600 hover:border-grey-400'
+            }`}
+          >
+            {d.code}
+          </button>
+        ))}
+      </div>
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <h3 className="text-sm font-bold text-grey-900">
+          {div.code} · {div.label}
+        </h3>
+        <GroupBadge code={div.code} />
       </div>
 
-      <div className="grid gap-3 md:grid-cols-[1fr_auto_1fr] md:items-stretch">
+      <div className="grid gap-3 md:grid-cols-[1.15fr_auto_1fr] md:items-stretch">
         {/* INPUTS */}
         <div className="rounded-lg border border-accent-red/30 bg-surface-orange/40 p-3">
           <div className="mb-2 text-[11px] font-bold uppercase tracking-wide text-accent-red">
-            ◄ Imported inputs (where they come from)
+            ◄ Imported inputs (what, how much, from where)
           </div>
-          <ul className="space-y-2">
-            {io.inputs.map((inp) => (
-              <li key={inp.name} className="rounded bg-white/70 p-2">
-                <div className="text-xs font-semibold text-grey-800">{inp.name}</div>
-                <div className="text-[11px] text-grey-600">{inp.suppliers}</div>
-                <div className="text-[9px]">
-                  <SourceLink src={inp.src} />
-                </div>
-              </li>
-            ))}
-          </ul>
+
+          {mix && mix.intermediateInputsBn > 0 && (
+            <div className="mb-3 rounded bg-white/80 p-2">
+              <div className="flex items-baseline justify-between">
+                <span className="text-[11px] font-semibold text-grey-800">
+                  Imported intermediate inputs (IO use table, 2023)
+                </span>
+                <span className="text-sm font-bold text-accent-red">{mix.importedShare}%</span>
+              </div>
+              <div className="text-[10px] text-grey-500">
+                €{fmt(mix.importedInputsBn)}bn of €{fmt(mix.intermediateInputsBn)}bn total inputs
+              </div>
+              <div className="mt-2 space-y-1">
+                {mix.topImported.slice(0, 6).map((t) => (
+                  <div key={t.product} className="flex items-center gap-1.5">
+                    <span className="w-40 shrink-0 truncate text-[10px] text-grey-700" title={t.name}>
+                      {shortProduct(t.name)}
+                    </span>
+                    <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-100">
+                      <div
+                        className="h-full bg-accent-red/80"
+                        style={{ width: `${(t.valueBn / maxInput) * 100}%` }}
+                      />
+                    </div>
+                    <span className="w-14 shrink-0 text-right text-[9px] font-semibold text-grey-600">
+                      €{fmt(t.valueBn)}bn
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-1 text-[9px]">
+                <SourceLink src={EUROSTAT_USE_TABLE} />
+              </div>
+            </div>
+          )}
+
+          {origins && origins.partners.length > 0 && (
+            <div className="mb-3 rounded bg-white/80 p-2">
+              <div className="text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+                Import origins of this division&apos;s products (FIGARO, 2023)
+              </div>
+              <div className="mt-1 flex flex-wrap gap-1">
+                {origins.partners.slice(0, 6).map((p) => (
+                  <span key={p.code} className="rounded bg-white px-1.5 py-0.5 text-[10px] text-grey-700 shadow-sm">
+                    {p.name} <span className="font-semibold text-accent-red">{p.pctOfExtra}%</span>
+                  </span>
+                ))}
+              </div>
+              <div className="mt-1 text-[9px]">
+                <SourceLink src={EUROSTAT_FIGARO_IMPORTS} />
+              </div>
+            </div>
+          )}
+
+          {io && (
+            <>
+              <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+                Named critical inputs (curated layer)
+              </div>
+              <ul className="space-y-2">
+                {io.inputs.map((inp) => (
+                  <li key={inp.name} className="rounded bg-white/70 p-2">
+                    <div className="text-xs font-semibold text-grey-800">{inp.name}</div>
+                    <div className="text-[11px] text-grey-600">{inp.suppliers}</div>
+                    <div className="text-[9px]">
+                      <SourceLink src={inp.src} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
 
         {/* SECTOR NODE */}
@@ -345,10 +501,11 @@ function SupplyChainView({ code, onSelect }: { code: string; onSelect: (c: strin
           >
             <div className="text-xs font-bold">{div.code}</div>
             <div className="text-sm font-semibold">{div.label}</div>
+            {mix && mix.intermediateInputsBn > 0 && (
+              <div className="mt-1 text-[10px] opacity-90">€{fmt(mix.intermediateInputsBn)}bn inputs consumed</div>
+            )}
             {fva && (
-              <div className="mt-1 text-[10px] opacity-90">
-                {fva.foreignValueAddedPct}%{fva.fvaApprox ? '≈' : ''} foreign value added
-              </div>
+              <div className="mt-0.5 text-[10px] opacity-90">{fva.fvaPct}% foreign value added in exports</div>
             )}
           </div>
           <div className="hidden text-2xl text-grey-300 md:block">→</div>
@@ -363,52 +520,58 @@ function SupplyChainView({ code, onSelect }: { code: string; onSelect: (c: strin
             <FlowBar label="Intra-EU exports (to other member states)" value={outIntra} total={outTotal} color="#00928F" />
             <FlowBar label="Extra-EU exports (to the world)" value={outExtra} total={outTotal} color="#007B6C" />
           </div>
-          {partners && (
+          {destinations && destinations.partners.length > 0 && (
             <div className="mt-3">
               <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500">
-                Top extra-EU destinations ({partners.sitc} proxy)
+                Top extra-EU destinations (FIGARO, 2023)
               </div>
               <div className="flex flex-wrap gap-1">
-                {partners.exportPartners.map((p) => (
-                  <span key={p.region} className="rounded bg-white px-1.5 py-0.5 text-[10px] text-grey-700">
-                    {p.region} <span className="font-semibold text-secondary">{p.pct}%</span>
+                {destinations.partners.slice(0, 6).map((p) => (
+                  <span key={p.code} className="rounded bg-white px-1.5 py-0.5 text-[10px] text-grey-700">
+                    {p.name} <span className="font-semibold text-secondary">{p.pctOfExtra}%</span>
                   </span>
                 ))}
+              </div>
+              <div className="mt-1 text-[9px]">
+                <SourceLink src={EUROSTAT_FIGARO_EXPORTS} />
               </div>
             </div>
           )}
           <p className="mt-3 text-[10px] leading-snug text-grey-500">
-            Split of observed exports, € bn, 2023. Extra-EU €{fmt(outExtra)}bn vs intra-EU €{fmt(outIntra)}bn.
-            Domestic own-use is not shown (not a trade flow). Source: Eurostat ext_tec01.
+            Split of observed exports, € bn, {REFERENCE_YEAR}. Extra-EU €{fmt(outExtra)}bn vs intra-EU €
+            {fmt(outIntra)}bn. Domestic own-use is not shown (not a trade flow). Source: Eurostat ext_tec01.
           </p>
         </div>
       </div>
 
       <p className="mt-3 text-[11px] leading-snug text-grey-500">
-        Reads left→right as an input–output chain: the red column is what this division must{' '}
-        <span className="font-semibold text-accent-red">import</span> and from whom; the green column is
-        where its <span className="font-semibold text-secondary">output</span> goes. The badge on the sector
-        node is its foreign value-added share (import content of exports) from OECD TiVA.
+        Reads left→right as an input–output chain. The red column stacks three depths of the{' '}
+        <span className="font-semibold text-accent-red">input</span> side: the imported-input mix straight
+        from the EU-27 use table (products and € bn), the origin countries of those imports (FIGARO), and
+        the named critical materials below the 2-digit radar (curated). The green column is where the{' '}
+        <span className="font-semibold text-secondary">output</span> goes. Attribution concepts differ by
+        design — see the Methodology view.
       </p>
     </div>
   );
 }
 
-function PartnerColumn({ title, partners, accent }: { title: string; partners: PartnerShare[]; accent: string }) {
-  const max = Math.max(...partners.map((p) => p.pct), 1);
+function PartnerColumn({ title, partners, accent }: { title: string; partners: FigaroPartner[]; accent: string }) {
+  const shown = partners.slice(0, 5);
+  const max = Math.max(...shown.map((p) => p.pctOfExtra), 1);
   return (
     <div className="rounded bg-grey-50 p-1.5">
       <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500">{title}</div>
       <div className="space-y-1">
-        {partners.map((p) => (
-          <div key={p.region} className="flex items-center gap-1">
-            <span className="w-16 shrink-0 truncate text-[10px] text-grey-700" title={p.region}>
-              {p.region}
+        {shown.map((p) => (
+          <div key={p.code} className="flex items-center gap-1">
+            <span className="w-16 shrink-0 truncate text-[10px] text-grey-700" title={p.name}>
+              {p.name}
             </span>
             <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-200">
-              <div style={{ width: `${(p.pct / max) * 100}%`, background: accent }} className="h-full" />
+              <div style={{ width: `${(p.pctOfExtra / max) * 100}%`, background: accent }} className="h-full" />
             </div>
-            <span className="w-7 shrink-0 text-right text-[9px] font-semibold text-grey-600">{p.pct}%</span>
+            <span className="w-8 shrink-0 text-right text-[9px] font-semibold text-grey-600">{p.pctOfExtra}%</span>
           </div>
         ))}
       </div>
@@ -529,7 +692,10 @@ function RiskQuadrant() {
         <span className="inline-flex items-center gap-1">
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-primary" /> Other single supplier
         </span>
-        <span>Axes: EC/JRC critical-materials shares & Eurostat energy dependency. Concentration = largest supplier&apos;s share (HHI proxy).</span>
+        <span>
+          x-axis: EC import reliance, IR = (M−X)/(P+M−X); y-axis: largest supplier&apos;s share of EU supply
+          (concentration proxy). Curated from EC/JRC sources — definitions &amp; caveats in Methodology.
+        </span>
       </div>
     </div>
   );
@@ -583,13 +749,16 @@ function MaterialsView() {
       <div className="rounded-lg border border-grey-200 bg-white p-4">
         <h3 className="text-sm font-bold text-grey-900">Energy &amp; feedstock reliance</h3>
         <p className="mt-1 text-[11px] text-grey-600">
-          The other input dependency — behind refining (C19) and chemicals (C20).
+          The other input dependency — behind refining (C19) and chemicals (C20). Live Eurostat{' '}
+          <code className="rounded bg-grey-100 px-1 text-[10px]">nrg_ind_id</code> values.
         </p>
         <ul className="mt-3 space-y-2.5">
           {ENERGY_FEEDSTOCK_DEPENDENCY.map((e) => (
             <li key={e.item}>
               <div className="flex items-baseline justify-between gap-2">
-                <span className="text-[11px] font-semibold text-grey-800">{e.item}</span>
+                <span className="text-[11px] font-semibold text-grey-800">
+                  {e.item} <span className="font-normal text-grey-400">({e.year})</span>
+                </span>
                 {e.dependencyPct != null && (
                   <span className="text-sm font-bold text-accent-red">{e.dependencyPct}%</span>
                 )}

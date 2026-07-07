@@ -4,13 +4,13 @@
  * Overview Industry — Trade flows — the balance & exposure figure.
  * ----------------------------------------------------------------
  * A diverging bar chart of all 24 NACE Section C divisions: extra-EU imports
- * (left, red) vs extra-EU exports (right, green), sorted by net balance, with
- * the intra-EU flows drawn faintly behind for context. Every value is REAL
- * Eurostat data (ext_tec01, EU-27, 2023). Click a division to drive the detail
- * panel in the parent explorer.
+ * (left, red) vs extra-EU exports (right, colour by branch), sorted by net
+ * balance, with the intra-EU flows drawn faintly behind for context. Every
+ * value is REAL Eurostat data (ext_tec01, EU-27) for the selected year.
+ * Click a division to drive the detail panel in the parent explorer.
  */
 
-import { DIVISION_TRADE, TRADE_BRANCH_COLORS, type DivisionTrade } from './trade-data';
+import { DIVISION_TRADE, TRADE_BRANCH_COLORS, type DivisionTrade, type TecYear } from './trade-data';
 
 const fmt = (v: number) => (v >= 100 ? v.toFixed(0) : v.toFixed(1));
 
@@ -18,20 +18,23 @@ export default function TradeBalanceFigure({
   selected,
   onSelect,
   showIntra,
+  year,
 }: {
   selected: string | null;
   onSelect: (code: string) => void;
   showIntra: boolean;
+  year: TecYear;
 }) {
   const rows = [...DIVISION_TRADE].sort(
-    (a, b) => b.expExt - b.impExt - (a.expExt - a.impExt),
+    (a, b) => b.flows[year].expExt - b.flows[year].impExt - (a.flows[year].expExt - a.flows[year].impExt),
   );
 
   // Symmetric axis: widest single bar on either side sets the scale.
   const maxSide = Math.max(
-    ...DIVISION_TRADE.flatMap((d) =>
-      showIntra ? [d.impExt + d.impInt, d.expExt + d.expInt] : [d.impExt, d.expExt],
-    ),
+    ...DIVISION_TRADE.flatMap((d) => {
+      const f = d.flows[year];
+      return showIntra ? [f.impExt + f.impInt, f.expExt + f.expInt] : [f.impExt, f.expExt];
+    }),
   );
 
   const ROW_H = 26;
@@ -50,7 +53,7 @@ export default function TradeBalanceFigure({
         className="w-full"
         style={{ minWidth: 720 }}
         role="img"
-        aria-label="EU-27 manufacturing extra-EU imports versus exports by NACE division, 2023"
+        aria-label={`EU-27 manufacturing extra-EU imports versus exports by NACE division, ${year}`}
       >
         {/* column headers */}
         <text x={mid - 8} y={14} textAnchor="end" className="fill-accent-red" fontSize={11} fontWeight={700}>
@@ -63,14 +66,15 @@ export default function TradeBalanceFigure({
         <line x1={mid} y1={22} x2={mid} y2={height - 6} stroke="#DCDDDE" strokeWidth={1} />
 
         {rows.map((d, i) => {
+          const f = d.flows[year];
           const y = 28 + i * (ROW_H + GAP);
           const isSel = selected === d.code;
           const color = TRADE_BRANCH_COLORS[d.branch];
-          const impW = scale(d.impExt);
-          const expW = scale(d.expExt);
-          const impIntW = scale(d.impInt);
-          const expIntW = scale(d.expInt);
-          const net = d.expExt - d.impExt;
+          const impW = scale(f.impExt);
+          const expW = scale(f.expExt);
+          const impIntW = scale(f.impInt);
+          const expIntW = scale(f.expInt);
+          const net = f.expExt - f.impExt;
           return (
             <g
               key={d.code}
@@ -110,14 +114,14 @@ export default function TradeBalanceFigure({
               <rect x={mid} y={y} width={expW} height={ROW_H - 4} rx={2} fill={color} opacity={0.92} />
 
               {/* value labels for the big ones */}
-              {d.impExt > maxSide * 0.08 && (
+              {f.impExt > maxSide * 0.08 && (
                 <text x={mid - impW + 4} y={y + ROW_H / 2 + 1} fontSize={9} fontWeight={700} fill="#fff">
-                  {fmt(d.impExt)}
+                  {fmt(f.impExt)}
                 </text>
               )}
-              {d.expExt > maxSide * 0.08 && (
+              {f.expExt > maxSide * 0.08 && (
                 <text x={mid + expW - 4} y={y + ROW_H / 2 + 1} textAnchor="end" fontSize={9} fontWeight={700} fill="#fff">
-                  {fmt(d.expExt)}
+                  {fmt(f.expExt)}
                 </text>
               )}
             </g>
