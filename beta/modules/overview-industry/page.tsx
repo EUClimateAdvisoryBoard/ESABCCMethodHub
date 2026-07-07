@@ -8,7 +8,9 @@
  *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
  *                   (NACE Section C): total → divisions → subsectors → levers,
  *                   with cost / readiness / barriers / investment decisions.
- *   • Trade flows — (placeholder; details to follow).
+ *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
+ *                   Section C divisions): imports/exports, supply-chain inputs
+ *                   and high-risk import dependencies, on live Eurostat data.
  */
 
 import Link from 'next/link';
@@ -73,11 +75,14 @@ export default function OverviewIndustryPage() {
               </h2>
             </div>
             <p className="mt-2 text-sm text-grey-600">
-              Trade exposure and flows for EU industry (carbon leakage, CBAM, import/export
-              dependencies). Scope and data to be defined — details to follow.
+              An input–output map of EU-27 manufacturing trade (all 24 NACE Section&nbsp;C divisions):
+              where the EU imports from and exports to, the granular supply-chain inputs each sector
+              depends on, and the high-risk import dependencies where one supplier dominates. Trade
+              backbone is live Eurostat data; the risk layer sits on the Critical Raw Materials Act and
+              the Commission&apos;s strategic-dependency reviews.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
-              Placeholder →
+              Open the map →
             </span>
           </Link>
         </div>
