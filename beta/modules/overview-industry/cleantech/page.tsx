@@ -48,7 +48,10 @@ export default function CleanTechPage() {
             the rings decompose it into NACE divisions, subsectors and their decarbonisation levers — every arc sized
             by sourced Mt CO₂, every level foldable so the figure combines upward to a single number and opens
             downward to each lever&apos;s marginal abatement cost, technology readiness, barriers, scale and real
-            investment decisions. Every data point carries a source link — nothing is invented.
+            investment decisions. Every data point carries a source link — nothing is invented. A{' '}
+            <strong>clean&nbsp;tech vs old&nbsp;tech</strong> overlay re-colours the levers to separate the near-zero
+            routes from the incumbent-based transitional bridges (gas/&ldquo;blue&rdquo; hydrogen, blast-furnace CCS,
+            fossil fuel-switching) — an analytical classification, clearly flagged, not a sourced datum.
           </p>
         </header>
 

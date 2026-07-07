@@ -32,12 +32,15 @@ import {
   EMISSIONS_MAP_UNSIZED,
   MANUFACTURING_SECTION,
   TECH_METRICS,
+  TECH_CLASSIFICATION,
+  TECH_CLASS_META,
   type EmissionsMapBlock,
   type Project,
   type Source,
   type Sourced,
   type Subsector,
   type Technology,
+  type TechClass,
 } from '../cleantech-catalogue';
 import {
   NACE_21_INDEX,
@@ -62,6 +65,21 @@ function SourceLink({ source }: { source: Source }) {
       <span aria-hidden>↗</span>
       <span>{label || 'source'}</span>
     </a>
+  );
+}
+
+/** Clean-tech vs old-tech pill (with the definition on hover). */
+function ClassBadge({ techClass, showDot = false }: { techClass: TechClass; showDot?: boolean }) {
+  const meta = TECH_CLASS_META[techClass];
+  return (
+    <span
+      title={meta.definition}
+      className="inline-flex items-center gap-1 whitespace-nowrap rounded-full border px-1.5 py-0.5 text-[9px] font-semibold"
+      style={{ color: meta.color, borderColor: meta.color, background: `${meta.color}14` }}
+    >
+      {showDot ? <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ background: meta.color }} aria-hidden /> : null}
+      {meta.label}
+    </span>
   );
 }
 
@@ -221,6 +239,8 @@ interface WheelNode {
   tech?: Technology;
   block?: EmissionsMapBlock;
   naceCode?: string;
+  /** Clean-tech vs old-tech class (levers only). */
+  techClass?: TechClass;
 }
 
 const SHORT_NAME: Record<string, string> = {
@@ -312,6 +332,7 @@ function buildWheel(): { root: WheelNode; index: Map<string, WheelNode> } {
           a1: 0,
           sub: e.sub,
           tech,
+          techClass: TECH_CLASSIFICATION[tech.id]?.class,
         }));
         return {
           id: `sub:${e.sub.id}`,
@@ -426,10 +447,26 @@ export default function EmissionsSunburst() {
     () => new Set([...index.values()].filter(n => n.kind === 'subsector').map(n => n.id)),
   );
   const [selectedId, setSelectedId] = useState<string>('root');
+  // colour the outer (lever) ring by NACE branch, or by clean-tech vs old-tech
+  const [colorMode, setColorMode] = useState<'branch' | 'class'>('branch');
   const wrapRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
   const selected = index.get(selectedId) ?? root;
+
+  // clean vs old tally across every lever drawn in the wheel
+  const classCounts = useMemo(() => {
+    let clean = 0;
+    let old = 0;
+    CATALOGUE.forEach(s =>
+      s.technologies.forEach(t => {
+        const c = TECH_CLASSIFICATION[t.id]?.class;
+        if (c === 'clean') clean += 1;
+        else if (c === 'old') old += 1;
+      }),
+    );
+    return { clean, old, total: clean + old };
+  }, []);
 
   const toggle = (id: string) =>
     setCollapsed(prev => {
@@ -472,9 +509,14 @@ export default function EmissionsSunburst() {
         : node.exact
           ? `≈${fmtMt(node.mt)} Mt CO₂`
           : `share of a ≈${fmtMt(node.block?.mt ?? node.mt)} Mt block (not split out in the source)`;
+    const classMeta = node.techClass ? TECH_CLASS_META[node.techClass] : undefined;
+    const classLine = classMeta
+      ? `<div class="text-[10px] font-semibold" style="color:${classMeta.color}">● ${classMeta.label}</div>`
+      : '';
     tip.innerHTML =
       `<div class="font-semibold text-[12px]">${node.kind === 'division' ? `${node.short} · ` : ''}${node.label}</div>` +
       `<div class="text-[10.5px] opacity-80">${mtLine}</div>` +
+      classLine +
       `<div class="text-[10px] opacity-60">${node.children.length ? (collapsed.has(node.id) ? 'click to expand' : 'click to collapse') : 'click for detail'}</div>`;
     tip.style.opacity = '1';
     moveTip(e);
@@ -517,6 +559,34 @@ export default function EmissionsSunburst() {
           ))}
         </div>
 
+        {/* colour the lever ring by NACE branch, or by clean-tech vs old-tech */}
+        <div className="mb-2 flex flex-wrap items-center justify-center gap-1">
+          <span className="mr-1 text-[10px] font-semibold uppercase tracking-wide text-tertiary">Colour levers</span>
+          {(
+            [
+              { m: 'branch' as const, label: 'By branch' },
+              { m: 'class' as const, label: 'Clean vs old' },
+            ]
+          ).map(o => {
+            const on = colorMode === o.m;
+            return (
+              <button
+                key={o.m}
+                type="button"
+                onClick={() => {
+                  setColorMode(o.m);
+                  if (o.m === 'class') foldTo(3); // open the lever ring so the split is visible
+                }}
+                className={`rounded-full border px-2.5 py-0.5 text-[11px] font-medium ${
+                  on ? 'border-primary bg-primary text-white' : 'border-grey-300 bg-white text-tertiary hover:border-primary hover:text-primary'
+                }`}
+              >
+                {o.label}
+              </button>
+            );
+          })}
+        </div>
+
         <svg
           viewBox={`${-V} ${-V} ${2 * V} ${2 * V}`}
           role="group"
@@ -529,7 +599,11 @@ export default function EmissionsSunburst() {
             const r1 = R_AT(node.depth);
             const rMid = (r0 + r1) / 2;
             const spanPx = (node.a1 - node.a0) * rMid;
-            const fill = node.color;
+            // in "clean vs old" mode, recolour the lever ring by class and let
+            // the branch-coloured context rings recede
+            const classColored = colorMode === 'class' && node.kind === 'lever' && node.techClass;
+            const fill = classColored ? TECH_CLASS_META[node.techClass!].color : node.color;
+            const dimmed = colorMode === 'class' && node.kind !== 'lever';
             const isCollapsed = collapsed.has(node.id);
             const active = node.id === selectedId;
             const textFill = luminance(fill) > 0.6 ? '#1f2937' : '#ffffff';
@@ -538,7 +612,7 @@ export default function EmissionsSunburst() {
                 <path
                   d={arcPath(r0, r1, node.a0, node.a1)}
                   fill={fill}
-                  fillOpacity={node.kind === 'lever' ? 0.9 : 1}
+                  fillOpacity={dimmed ? 0.4 : node.kind === 'lever' ? 0.9 : 1}
                   stroke={active ? '#1f2937' : '#ffffff'}
                   strokeWidth={active ? 2 : 0.8}
                   strokeLinejoin="round"
@@ -618,21 +692,34 @@ export default function EmissionsSunburst() {
         />
 
         {/* legend + honesty notes */}
-        <div className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
-          {(
-            [
-              ['Metals', BRANCH_COLORS.Metals],
-              ['Non-metallic minerals', BRANCH_COLORS['Non-metallic minerals']],
-              ['Chemicals & refining', BRANCH_COLORS['Chemicals & refining']],
-              ['Other manufacturing', BRANCH_COLORS['Other manufacturing']],
-            ] as const
-          ).map(([label, color]) => (
-            <span key={label} className="flex items-center gap-1.5 text-[10.5px] text-grey-600">
-              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: color }} />
-              {label}
+        {colorMode === 'branch' ? (
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            {(
+              [
+                ['Metals', BRANCH_COLORS.Metals],
+                ['Non-metallic minerals', BRANCH_COLORS['Non-metallic minerals']],
+                ['Chemicals & refining', BRANCH_COLORS['Chemicals & refining']],
+                ['Other manufacturing', BRANCH_COLORS['Other manufacturing']],
+              ] as const
+            ).map(([label, color]) => (
+              <span key={label} className="flex items-center gap-1.5 text-[10.5px] text-grey-600">
+                <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: color }} />
+                {label}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+            <span className="flex items-center gap-1.5 text-[10.5px] text-grey-700" title={TECH_CLASS_META.clean.definition}>
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: TECH_CLASS_META.clean.color }} />
+              <span className="font-semibold">{TECH_CLASS_META.clean.label}</span> — {classCounts.clean} levers
             </span>
-          ))}
-        </div>
+            <span className="flex items-center gap-1.5 text-[10.5px] text-grey-700" title={TECH_CLASS_META.old.definition}>
+              <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: TECH_CLASS_META.old.color }} />
+              <span className="font-semibold">{TECH_CLASS_META.old.label}</span> — {classCounts.old} levers
+            </span>
+          </div>
+        )}
         <p className="mt-1.5 text-center text-[10.5px] leading-relaxed text-grey-500">
           Arc size = sourced Mt CO₂ ({fmtMt(root.mt)} Mt drawn). Inner ring = NACE divisions · middle = subsectors ·
           outer = decarbonisation levers (equal slices, layout only). Click any arc to collapse or expand it — emissions
@@ -644,11 +731,26 @@ export default function EmissionsSunburst() {
             </span>
           ))}
         </p>
+        {colorMode === 'class' ? (
+          <p className="mt-1 text-center text-[10.5px] leading-relaxed text-grey-500">
+            <span className="font-semibold text-grey-600">Clean vs old is an analytical overlay</span> — the near-zero
+            endpoints ({classCounts.clean}) vs the incumbent-based transitional bridges ({classCounts.old}, gas/&ldquo;blue&rdquo;
+            routes, blast-furnace CCS, fossil fuel-switching). It is a MethodHub judgement layered on the sourced data, not
+            an external taxonomy; open a lever for its rationale.
+          </p>
+        ) : null}
       </div>
 
       {/* ── connected detail panel ────────────────────────────────────────── */}
       <aside className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm lg:sticky lg:top-4">
-        <DetailPanel node={selected} onSelect={setSelectedId} />
+        <DetailPanel
+          node={selected}
+          onSelect={setSelectedId}
+          onShowClasses={() => {
+            setColorMode('class');
+            foldTo(3);
+          }}
+        />
       </aside>
     </div>
   );
@@ -656,8 +758,25 @@ export default function EmissionsSunburst() {
 
 /* ------------------------------------------------------------ detail panel */
 
-function DetailPanel({ node, onSelect }: { node: WheelNode; onSelect: (id: string) => void }) {
+function DetailPanel({
+  node,
+  onSelect,
+  onShowClasses,
+}: {
+  node: WheelNode;
+  onSelect: (id: string) => void;
+  onShowClasses?: () => void;
+}) {
   if (node.kind === 'root') {
+    let clean = 0;
+    let old = 0;
+    CATALOGUE.forEach(s =>
+      s.technologies.forEach(t => {
+        const c = TECH_CLASSIFICATION[t.id]?.class;
+        if (c === 'clean') clean += 1;
+        else if (c === 'old') old += 1;
+      }),
+    );
     return (
       <div className="space-y-3">
         <div>
@@ -676,6 +795,39 @@ function DetailPanel({ node, onSelect }: { node: WheelNode; onSelect: (id: strin
           EU ETS 2023 activity data where it exists, sector-scope figures elsewhere; hover an arc for its exact scope.
           Click a division to open its subsectors, a subsector for its levers, and any arc again to fold it back in.
         </p>
+
+        {/* clean-tech vs old-tech split */}
+        <div className="rounded-lg border border-grey-200 bg-grey-50 p-2.5">
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Clean tech vs old tech</div>
+          <div className="mt-1.5 flex overflow-hidden rounded" title={`${clean} clean · ${old} old`}>
+            <div
+              className="flex items-center justify-center py-1 text-[10px] font-bold text-white"
+              style={{ width: `${(clean / (clean + old)) * 100}%`, background: TECH_CLASS_META.clean.color }}
+            >
+              {clean} clean
+            </div>
+            <div
+              className="flex items-center justify-center py-1 text-[10px] font-bold text-white"
+              style={{ width: `${(old / (clean + old)) * 100}%`, background: TECH_CLASS_META.old.color }}
+            >
+              {old} old
+            </div>
+          </div>
+          <p className="mt-1.5 text-[10.5px] leading-snug text-grey-600">
+            Of the {clean + old} decarbonisation levers, <span className="font-semibold" style={{ color: TECH_CLASS_META.clean.color }}>{clean} are near-zero &ldquo;clean tech&rdquo;</span> and{' '}
+            <span className="font-semibold" style={{ color: TECH_CLASS_META.old.color }}>{old} are incumbent-based &ldquo;old / transitional&rdquo;</span> routes (natural-gas &amp; &ldquo;blue&rdquo; hydrogen, blast-furnace CCS, fossil fuel-switching). An analytical overlay, not a sourced datum.
+          </p>
+          {onShowClasses ? (
+            <button
+              type="button"
+              onClick={onShowClasses}
+              className="mt-1.5 inline-block rounded-full border border-primary bg-white px-2.5 py-0.5 text-[11px] font-semibold text-primary hover:bg-primary hover:text-white"
+            >
+              Colour the wheel by clean vs old →
+            </button>
+          ) : null}
+        </div>
+
         <div>
           <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
             {node.children.length} divisions covered
@@ -827,6 +979,7 @@ function DetailPanel({ node, onSelect }: { node: WheelNode; onSelect: (id: strin
                 >
                   <span className="inline-block h-2.5 w-2.5 flex-none self-center rounded-sm" style={{ background: l.color }} />
                   <span className="min-w-0 flex-1 text-[12px] font-medium text-grey-800">{l.label}</span>
+                  {l.techClass ? <ClassBadge techClass={l.techClass} showDot /> : null}
                   <span className="whitespace-nowrap text-[10px] text-grey-500">
                     {m?.macLowEur != null ? `€${m.macLowEur}–${m.macHighEur}/t` : 'MAC: see detail'}
                     {m ? ` · TRL ${m.trlLow}–${m.trlHigh}` : ''}
@@ -856,6 +1009,22 @@ function DetailPanel({ node, onSelect }: { node: WheelNode; onSelect: (id: strin
         </button>
         <h3 className="text-base font-bold leading-snug text-grey-900">{tech.name}</h3>
         <p className="text-[12px] leading-relaxed text-grey-600">{tech.description}</p>
+
+        {node.techClass ? (
+          <div
+            className="rounded-lg border p-2.5"
+            style={{ borderColor: TECH_CLASS_META[node.techClass].color, background: `${TECH_CLASS_META[node.techClass].color}0d` }}
+          >
+            <div className="flex items-center gap-1.5">
+              <ClassBadge techClass={node.techClass} showDot />
+              <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Classification (analytical overlay)</span>
+            </div>
+            <p className="mt-1 text-[12px] leading-snug text-grey-800">{TECH_CLASSIFICATION[tech.id]?.note}</p>
+            <p className="mt-1 text-[10px] leading-snug text-grey-500">
+              {TECH_CLASS_META[node.techClass].definition} A MethodHub judgement layered on the sourced data below, not an external taxonomy.
+            </p>
+          </div>
+        ) : null}
 
         <div className="rounded-lg border border-grey-200 bg-white p-2.5">
           <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-tertiary">Marginal abatement cost</div>

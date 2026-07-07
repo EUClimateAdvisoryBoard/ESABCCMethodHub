@@ -52,7 +52,8 @@ export default function OverviewIndustryPage() {
               sunburst — the sector total decomposing into NACE divisions, subsectors and their
               decarbonisation levers, every arc sized by sourced Mt CO₂. Each lever carries its
               marginal abatement cost, technology readiness, barriers, scale and the real investment
-              decisions (incl. FIDs), all with source links.
+              decisions (incl. FIDs), all with source links — plus a clean-tech vs old-tech overlay
+              that splits the levers into near-zero routes and incumbent-based transitional bridges.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-primary">
               Open the wheel →
