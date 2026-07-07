@@ -24,9 +24,14 @@
  *   public/data/figaro/figaro-global-flows.json
  *     (a) the full 50×50 country-by-country flow matrix (all industries
  *         summed, split intermediate vs final use) — who supplies whom in the
- *         global economy, and
+ *         global economy,
  *     (b) EU-27 exports by supplying industry × extra-EU destination country
- *         (split intermediate vs final use).
+ *         (split intermediate vs final use), and
+ *     (c) a customs-based breakdown of FIGARO's "Rest of the world": EU
+ *         goods trade by partner country from `ext_tec03` (TEC, enterprise
+ *         attribution) for every partner FIGARO does NOT name — Taiwan,
+ *         Viet Nam, the Gulf states, Ukraine, North Africa… Indicative
+ *         composition only (different attribution, services not covered).
  *
  * The raw 61 MB bulk file is cached under .cache/figaro/ (gitignored) — rerun
  * with `--refresh` to force a fresh download.
@@ -101,6 +106,77 @@ async function fetchLabels() {
   return { industries, countries };
 }
 
+/**
+ * Customs-based breakdown of FIGARO's "Rest of the world" (WRL_REST): EU
+ * goods imports/exports by partner country from `ext_tec03` (trade by
+ * enterprise characteristics), for every real country partner that FIGARO
+ * does not name separately. TEC/customs attribution — indicative only.
+ */
+async function fetchRestOfWorld() {
+  console.log('Fetching ext_tec03 partner-country goods trade (Rest-of-world breakdown) …');
+  const years = ['2022', '2023', '2024'];
+  const url =
+    `${API}/ext_tec03?format=JSON&lang=EN&unit=THS_EUR&geo=EU&nace_r2=TOTAL&nace_r2=B-E&` +
+    years.map((y) => `time=${y}`).join('&');
+  const d = await fetchJson(url);
+  const dims = d.id;
+  const sizes = d.size;
+  const cat = Object.fromEntries(dims.map((k) => [k, d.dimension[k].category]));
+  const val = (kw) => {
+    let lin = 0;
+    for (let i = 0; i < dims.length; i++) lin = lin * sizes[i] + cat[dims[i]].index[kw[dims[i]]];
+    return d.value[String(lin)];
+  };
+
+  // Region aggregates and duplicates — everything else with a 2-letter code
+  // that is neither an EU member nor a FIGARO-named partner is a genuine
+  // "Rest of the world" country.
+  const AGGREGATES = new Set(['WORLD', 'INT_EU', 'INT_EU_NAL', 'EXT_EU', 'EXT_EU_NAL', 'EUR_OTH', 'AFR_N', 'AFR_OTH', 'AME_N', 'AME_C_CRB', 'AME_S', 'ASI_OTH', 'ASI_NME', 'OCE_PLR', 'UNK', 'CN_X_HK']);
+  const FIGARO_NAMED = new Set(EXTRA.filter((c) => c !== 'WRL_REST'));
+
+  const partners = [];
+  for (const p of Object.keys(cat.partner.index)) {
+    if (AGGREGATES.has(p) || EU27_SET.has(p) || FIGARO_NAMED.has(p) || p.length !== 2) continue;
+    const series = (flow, nace) =>
+      Object.fromEntries(
+        years
+          .map((y) => {
+            const v = val({ freq: 'A', unit: 'THS_EUR', stk_flow: flow, nace_r2: nace, partner: p, geo: 'EU', time: y });
+            return [y, typeof v === 'number' ? round1(v / 1000) : null]; // THS_EUR → MIO_EUR
+          })
+          .filter(([, v]) => v !== null),
+      );
+    const imp = series('IMP', 'TOTAL');
+    const exp = series('EXP', 'TOTAL');
+    if (Object.keys(imp).length === 0 && Object.keys(exp).length === 0) continue;
+    partners.push({
+      code: p,
+      name: cat.partner.label[p],
+      imp,
+      exp,
+      impInd: series('IMP', 'B-E'),
+      expInd: series('EXP', 'B-E'),
+    });
+  }
+  partners.sort((a, b) => (b.imp['2023'] ?? 0) - (a.imp['2023'] ?? 0));
+  console.log(`  ${partners.length} non-FIGARO partner countries (top: ${partners.slice(0, 3).map((p) => p.code).join(', ')})`);
+  return {
+    meta: {
+      dataset: 'ext_tec03',
+      title: 'Trade by partner country and NACE Rev. 2 activity (TEC)',
+      source: 'https://ec.europa.eu/eurostat/databrowser/view/ext_tec03/default/table?lang=en',
+      unit: 'MIO_EUR (current prices)',
+      years,
+      note:
+        'EU goods imports (imp) / exports (exp) by partner country, all activities (TOTAL) and industry ' +
+        '(B-E: mining, manufacturing, energy), for the partners FIGARO aggregates into "Rest of the world". ' +
+        'TEC/customs attribution — NOT comparable cell-by-cell with the FIGARO input–output figures ' +
+        '(different valuation, services not covered); use as an indicative composition of WRL_REST.',
+    },
+    partners,
+  };
+}
+
 async function main() {
   const refresh = process.argv.includes('--refresh');
   mkdirSync(CACHE_DIR, { recursive: true });
@@ -109,7 +185,7 @@ async function main() {
   if (refresh || !existsSync(CACHE_FILE)) await download(BULK_URL, CACHE_FILE);
   else console.log(`Using cached bulk file ${CACHE_FILE}`);
 
-  const { industries, countries } = await fetchLabels();
+  const [{ industries, countries }, restOfWorld] = await Promise.all([fetchLabels(), fetchRestOfWorld()]);
 
   // ---- index maps ----------------------------------------------------------
   const avaIdx = new Map(IND_AVA.map((c, i) => [c, i]));
@@ -263,6 +339,7 @@ async function main() {
     euExportsByIndustry: Object.fromEntries(
       YEARS.map((y) => [y, { int: toRows(euX[y].int, nExtra), fin: toRows(euX[y].fin, nExtra) }]),
     ),
+    restOfWorld,
   };
   const globalPath = join(OUT_DIR, 'figaro-global-flows.json');
   writeFileSync(globalPath, JSON.stringify(globalOut));

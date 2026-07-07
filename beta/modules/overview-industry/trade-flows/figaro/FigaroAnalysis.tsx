@@ -16,6 +16,7 @@ import {
   type FigaroGlobalData,
   type FigaroYear,
   FIGARO_MATRIX_YEARS,
+  EXT_TEC03_SOURCE_URL,
   matrixFor,
   sectionOf,
   shortLabel,
@@ -26,6 +27,7 @@ const BLUE = '#004B7F';
 const RED = '#B83230';
 const TEAL = '#007B6C';
 const GREY = '#BCBEC0';
+const SLATE = '#3D5265';
 
 function HBar({
   label,
@@ -57,6 +59,74 @@ function HBar({
         />
       </div>
       <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700">{valueLabel}</div>
+    </div>
+  );
+}
+
+/**
+ * Inside "Rest of the world": FIGARO only names 23 partner areas, so Taiwan,
+ * Viet Nam, the Gulf states, Ukraine, North Africa… all hide in WRL_REST.
+ * This panel breaks that block down with EU goods trade by partner country
+ * (ext_tec03) — a different attribution (customs/TEC, goods only), so it is
+ * shown as an indicative composition in its own colour, never mixed into the
+ * FIGARO bars above.
+ */
+function RestOfWorldBreakdown({
+  global,
+  year,
+  restTotal,
+}: {
+  global: FigaroGlobalData;
+  year: FigaroYear;
+  restTotal: number;
+}) {
+  const partners = global.restOfWorld.partners
+    .filter((p) => (p.imp[year] ?? 0) > 0)
+    .sort((a, b) => (b.imp[year] ?? 0) - (a.imp[year] ?? 0));
+  if (partners.length === 0) return null;
+  const shown = partners.slice(0, 12);
+  const max = shown[0].imp[year] ?? 1;
+  const shownSum = shown.reduce((s, p) => s + (p.imp[year] ?? 0), 0);
+
+  return (
+    <div className="mt-3 rounded border border-grey-200 bg-grey-50 p-2.5">
+      <div className="flex items-baseline justify-between gap-2">
+        <span className="text-[11px] font-bold text-grey-800">
+          Inside &quot;Rest of the world&quot; (€{fmtBn(restTotal)} above)
+        </span>
+        <span className="text-[9px] text-grey-500">customs goods trade, {year}</span>
+      </div>
+      <p className="mb-1.5 mt-0.5 text-[10px] leading-snug text-grey-500">
+        FIGARO names only 23 partners — everyone else is one block. EU goods imports by partner country
+        (different attribution, indicative composition only):
+      </p>
+      <div className="space-y-1">
+        {shown.map((p) => (
+          <HBar
+            key={p.code}
+            label={p.name}
+            value={p.imp[year] ?? 0}
+            max={max}
+            color={SLATE}
+            valueLabel={`€${fmtBn(p.imp[year] ?? 0)}`}
+            title={`${p.name}: €${fmtBn(p.imp[year] ?? 0)} EU goods imports (${year}, all activities); industry (NACE B–E) share €${fmtBn(p.impInd[year] ?? 0)}; EU exports there €${fmtBn(p.exp[year] ?? 0)}`}
+          />
+        ))}
+      </div>
+      <p className="mt-1.5 text-[9px] leading-snug text-grey-400">
+        Top {shown.length} of {partners.length} named countries, €{fmtBn(shownSum)} of goods imports. Source:
+        Eurostat TEC{' '}
+        <a
+          href={EXT_TEC03_SOURCE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary hover:underline"
+        >
+          ext_tec03 ↗
+        </a>{' '}
+        (enterprise attribution, goods only — services and valuation differences mean these do not sum to the
+        FIGARO block).
+      </p>
     </div>
   );
 }
@@ -305,6 +375,15 @@ export default function FigaroAnalysis({
               );
             })}
           </div>
+
+          {/* inside "Rest of the world" */}
+          {global?.restOfWorld && (
+            <RestOfWorldBreakdown
+              global={global}
+              year={year}
+              restTotal={stats.perOrigin.find((o) => o.code === 'WRL_REST')?.total ?? 0}
+            />
+          )}
         </div>
 
         {/* biggest imported flows */}
