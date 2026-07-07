@@ -75,13 +75,14 @@ export default function OverviewIndustryPage() {
               </h2>
             </div>
             <p className="mt-2 text-sm text-grey-600">
-              An input–output map of EU-27 manufacturing trade (all 24 NACE Section&nbsp;C divisions):
-              where the EU imports from and exports to, each division&apos;s imported-input mix straight
+              An input–output map of EU-27 manufacturing trade (all 24 NACE Section&nbsp;C divisions): one
+              summary dashboard, then a deep-dive per division — trade balance, imported-input mix straight
               from the EU input–output use table and FIGARO (incl. foreign value added in exports, real
-              origin/destination shares), and the high-risk import dependencies where one supplier
-              dominates. Statistical layers regenerate from the Eurostat API; the risk layer sits on the
-              Critical Raw Materials Act and the Commission&apos;s strategic-dependency reviews — with a
-              full Methodology view.
+              origin/destination shares), critical inputs and the high-risk import dependencies where one
+              supplier dominates. The full FIGARO inter-country input–output table is imported into the
+              MethodHub itself, with a table viewer and analysis dashboard. Statistical layers regenerate
+              from the Eurostat API; the risk layer sits on the Critical Raw Materials Act and the
+              Commission&apos;s strategic-dependency reviews — with a full Methodology view.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
               Open the map →

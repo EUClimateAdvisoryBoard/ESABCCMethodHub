@@ -74,6 +74,7 @@ const DATASETS: { code: string; src: Source; feeds: string; attribution: string;
   { code: 'naio_10_fgti', src: EUROSTAT_FIGARO_IMPORTS, feeds: 'Import-origin shares per division (detail drawer + supply view)', attribution: 'Product — extra-EU imports of each industry’s products, by origin country (FIGARO)', vintage: '2023' },
   { code: 'naio_10_fgte', src: EUROSTAT_FIGARO_EXPORTS, feeds: 'Export-destination shares per division', attribution: 'Product — extra-EU exports by destination country (FIGARO)', vintage: '2023' },
   { code: 'naio_10_fgfoee', src: EUROSTAT_FIGARO_FVA, feeds: 'Foreign value added in exports, incl. which country’s value added', attribution: 'Input–output — Leontief decomposition of the FIGARO inter-country tables', vintage: '2023' },
+  { code: 'naio_10_fcp_ii4', src: { org: 'Eurostat (FIGARO)', title: 'EU inter-country input–output table at basic prices, industry by industry (naio_10_fcp_ii4)', url: 'https://ec.europa.eu/eurostat/databrowser/view/naio_10_fcp_ii4/default/table?lang=en', year: '2023' }, feeds: 'FIGARO IO data view — the full table, imported into the MethodHub (table viewer + analysis dashboard)', attribution: 'Input–output — full inter-country matrix (~11 M cells), aggregated to EU-27 as one economy', vintage: '2022 + 2023' },
   { code: 'nrg_ind_id', src: EUROSTAT_ENERGY_DEP, feeds: 'Energy import dependency (materials view)', attribution: 'Energy balance — net imports / gross available energy', vintage: '2021–2024' },
 ];
 
@@ -279,6 +280,16 @@ export default function MethodologyPanel() {
           dependency), stamped with the generation date. The curated dependency layer lives in{' '}
           <code className="rounded bg-grey-100 px-1">trade-data.ts</code>, one source link per figure.
           Nothing is invented; if a number has no source, it does not appear.
+        </p>
+        <Formula>node scripts/fetch-figaro-io-dataset.mjs --refresh</Formula>
+        <p>
+          A second script imports the <em>entire</em> FIGARO inter-country input–output table
+          (<code className="rounded bg-grey-100 px-1">naio_10_fcp_ii4</code>, ~11 million cells, 2022–2023)
+          from the Eurostat bulk-download service and condenses it to the EU-27-as-one-economy account
+          served from <code className="rounded bg-grey-100 px-1">public/data/figaro/</code> — the dataset
+          behind the FIGARO IO data view lives in this repository, not behind an external link. Aggregation
+          choices (EU-27 destinations summed, value-added rows folded into the intra-EU origin, €0.1 m
+          rounding) are documented in the script header and in the view&apos;s &quot;The data&quot; panel.
         </p>
       </Section>
     </div>
