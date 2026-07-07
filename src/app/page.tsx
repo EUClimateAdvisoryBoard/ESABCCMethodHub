@@ -381,6 +381,7 @@ export default async function HomePage() {
     { code: 'M · 32', title: 'Ex-Post Policy Assessment', href: '/beta/ex-post-analysis', tags: ['Counterfactual grid', 'Quant vs qual'] },
     { code: 'M · 33', title: 'Sector Background', href: '/beta/sector-background', tags: ['Industry · Transport', 'Policies · papers'] },
     { code: 'M · 34', title: 'Overview Industry', href: '/beta/overview-industry', tags: ['Clean Tech', 'Trade flows'] },
+    { code: 'M · 35', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
   ];
 
   return (
