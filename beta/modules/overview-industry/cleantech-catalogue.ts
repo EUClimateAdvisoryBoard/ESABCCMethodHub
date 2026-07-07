@@ -1812,6 +1812,116 @@ export const TECH_METRICS: Record<string, TechMetric> = {
   'x-circular': { macLowEur: -50, macHighEur: 10, trlLow: 8, trlHigh: 9, costNote: 'often negative-cost (demand-side)', macSource: S.matecon },
 };
 
+/* ------------------------------------------------- clean-tech vs old-tech */
+
+/**
+ * CLEAN-TECH vs OLD-TECH classification of each decarbonisation lever.
+ * -------------------------------------------------------------------
+ * A binary read that separates the genuine near-zero endpoints from the
+ * incumbent-based transitional bridges — the policy-relevant question of
+ * "real decarbonisation vs prolonging the fossil incumbent":
+ *
+ *   'clean' — a transformational, near-zero route that STRUCTURALLY removes the
+ *             emissions: it switches the process to zero-carbon energy/feedstock
+ *             (electrification, green hydrogen, ore electrolysis, inert anodes),
+ *             recycles/reuses material, or captures the process CO₂ that is
+ *             chemically UNAVOIDABLE (cement/lime calcination). The genuine
+ *             destination of the transition.
+ *   'old'   — a route that KEEPS the incumbent fossil process running and cuts
+ *             emissions only partially: natural-gas / "blue" (SMR/ATR + CCS)
+ *             routes, blast-furnace CCS retrofits, fossil fuel-switching. Real
+ *             near-term cuts, but fossil lock-in / bridge risk — because a clean
+ *             substitute for the SAME process already exists.
+ *
+ * IMPORTANT — this is an EDITORIAL / analytical overlay by MethodHub, NOT a
+ * sourced external taxonomy. The underlying data points (MAC, TRL, projects…)
+ * are all sourced above; the clean/old call on top of them is a judgement, so
+ * each carries a one-line rationale and it is flagged as a classification in the
+ * UI, never presented as a datum. The distinguishing test is deliberately not
+ * "mature vs novel" (scrap-EAF and recycling are mature yet clean) but "moves
+ * the sector off its fossil incumbent vs prolongs it".
+ */
+export type TechClass = 'clean' | 'old';
+
+export interface TechClassMeta {
+  label: string;
+  short: string;
+  /** UI accent colour. */
+  color: string;
+  /** Plain-language definition, shown in the legend / detail panel. */
+  definition: string;
+}
+
+export const TECH_CLASS_META: Record<TechClass, TechClassMeta> = {
+  clean: {
+    label: 'Clean tech',
+    short: 'Clean',
+    color: '#15803D',
+    definition:
+      'Transformational near-zero route: switches the process to zero-carbon energy or feedstock (electrification, green hydrogen, ore electrolysis, inert anodes), recycles material, or captures chemically-unavoidable process CO₂ (cement/lime). The genuine destination of the transition.',
+  },
+  old: {
+    label: 'Old tech',
+    short: 'Old / transitional',
+    color: '#B45309',
+    definition:
+      'Keeps the incumbent fossil process running and cuts emissions only partially: natural-gas or "blue" (SMR/ATR + CCS) routes, blast-furnace CCS retrofits, fossil fuel-switching. Real near-term cuts, but fossil lock-in / bridge risk because a clean substitute for the same process already exists.',
+  },
+};
+
+/**
+ * Per-lever clean/old call (keyed by `Technology.id`), with a one-line
+ * rationale. Covers every technology in `CATALOGUE` and `CROSS_CUTTING_ENABLERS`.
+ */
+export const TECH_CLASSIFICATION: Record<string, { class: TechClass; note: string }> = {
+  /* Iron & steel */
+  'steel-h2dri': { class: 'clean', note: 'Reduces ore with green hydrogen — the reduction step emits water, not CO₂; near-zero on clean power.' },
+  'steel-scrap-eaf': { class: 'clean', note: 'Secondary steel from recycled scrap; ~4–5× less carbon-intensive than primary on a clean grid.' },
+  'steel-ng-dri': { class: 'old', note: 'Explicitly a transition asset — gas-based reduction cuts ~40–60% but keeps a fossil route and risks lock-in if the hydrogen switch is delayed.' },
+  'steel-bf-ccs': { class: 'old', note: 'Keeps the coal blast furnace and bolts on capture; the coal-reduction route is substitutable (H₂-DRI), so this prolongs the fossil incumbent.' },
+  'steel-electrolysis': { class: 'clean', note: 'Makes iron by electrolysis, skipping carbon entirely; earliest-stage of the primary routes.' },
+  /* Aluminium */
+  'alu-inert-anode': { class: 'clean', note: 'Inert anodes emit oxygen instead of CO₂, eliminating the direct process emissions of smelting.' },
+  'alu-secondary': { class: 'clean', note: 'Remelts scrap using ~5% of primary energy — a recycling lever.' },
+  'alu-renewable-power': { class: 'clean', note: 'Sources the dominant (indirect) smelter emissions from renewables.' },
+  /* Non-ferrous */
+  'nonferrous-electrification': { class: 'clean', note: 'Electrifies furnaces/electrowinning on clean power, plus recycling.' },
+  /* Cement */
+  'cement-clinker-sub': { class: 'clean', note: 'Cuts process CO₂ by replacing clinker with SCMs / calcined clay (LC3), fired at lower temperature.' },
+  'cement-ccs': { class: 'clean', note: 'Calcination CO₂ is chemically unavoidable, so capture is the only near-zero route — not an optional bolt-on to a substitutable process.' },
+  'cement-altfuels': { class: 'old', note: 'Switches fossil kiln fuel to waste/biomass — cuts only the ~40% energy emissions, cannot touch process CO₂; a fuel-switch bridge (electric calcination is the cleaner frontier).' },
+  /* Lime */
+  'lime-ccs': { class: 'clean', note: 'Like cement, lime calcination CO₂ is unavoidable, so capture is the genuine near-zero route.' },
+  /* Glass */
+  'glass-electric-hybrid': { class: 'clean', note: 'Shifts melting to electricity (all-electric / hybrid), decarbonising as the grid cleans up.' },
+  'glass-cullet': { class: 'clean', note: 'Recycled cullet plus hydrogen firing cut both energy and process CO₂.' },
+  /* Ceramics */
+  'ceramics-electrify-h2': { class: 'clean', note: 'Kiln electrification and hydrogen firing, plus heat recovery.' },
+  /* Ammonia */
+  'ammonia-green-h2': { class: 'clean', note: 'Electrolytic hydrogen removes the feedstock CO₂ entirely.' },
+  'ammonia-blue-h2': { class: 'old', note: 'Keeps gas-based (SMR/ATR) hydrogen with capture — a transitional route with residual methane and lock-in risk; green H₂ is the clean substitute.' },
+  /* High-value chemicals */
+  'hvc-ecracker': { class: 'clean', note: 'Electrifies the cracking furnace — up to ~90% CO₂ cut vs fuel firing.' },
+  'hvc-recycling': { class: 'clean', note: 'Chemical recycling / bio-naphtha displaces fossil feedstock and closes the carbon loop.' },
+  /* Chlor-alkali */
+  'chloralkali-odc': { class: 'clean', note: 'Already electricity-based; efficiency (ODC) plus clean power removes the footprint.' },
+  /* Methanol */
+  'methanol-e-bio': { class: 'clean', note: 'E-/bio-methanol from captured CO₂ + green hydrogen or biomass, displacing fossil methanol.' },
+  /* Refining */
+  'refining-ccs-h2-elec': { class: 'old', note: 'Decarbonises the existing fossil-refining process with capture, blue/green H₂ and electrification bolt-ons — prolongs a declining fossil sector rather than replacing it (its electrification / green-H₂ components are themselves clean).' },
+  /* Pulp & paper */
+  'pulppaper-electrify-hp': { class: 'clean', note: 'Electric boilers, high-temperature heat pumps and biomass replace fossil heat.' },
+  /* Food, beverages & tobacco */
+  'food-heatpumps': { class: 'clean', note: 'Heat pumps / electric boilers for low- and medium-temperature process heat.' },
+  'food-solar-thermal': { class: 'clean', note: 'Solar collectors supply process heat, paired with thermal storage.' },
+  'food-biomass-biogas': { class: 'clean', note: 'Non-fossil (biomass/biogas) heat — renewable, though capped by sustainable feedstock supply.' },
+  /* Cross-cutting enablers */
+  'x-heatpumps': { class: 'clean', note: 'Electrifies low- and medium-temperature heat — the master demand-side lever.' },
+  'x-ccs-networks': { class: 'clean', note: 'Shared transport & storage for otherwise-unavoidable process CO₂ — the enabling infrastructure for clean process routes.' },
+  'x-electrolysers': { class: 'clean', note: 'Clean-hydrogen production with no direct CO₂ — the input for green steel, ammonia and e-fuels.' },
+  'x-circular-levers': { class: 'clean', note: 'Demand-side material efficiency & circularity — the cheapest tonne is the one never made.' },
+};
+
 /**
  * Representative photo per subsector (keyed by Subsector.id). Values are
  * Wikimedia Commons file names; the component builds a stable Special:FilePath

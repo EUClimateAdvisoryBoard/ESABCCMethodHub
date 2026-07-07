@@ -8,7 +8,9 @@
  *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
  *                   (NACE Section C): total → divisions → subsectors → levers,
  *                   with cost / readiness / barriers / investment decisions.
- *   • Trade flows — (placeholder; details to follow).
+ *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
+ *                   Section C divisions): imports/exports, supply-chain inputs
+ *                   and high-risk import dependencies, on live Eurostat data.
  */
 
 import Link from 'next/link';
@@ -52,7 +54,8 @@ export default function OverviewIndustryPage() {
               sunburst — the sector total decomposing into NACE divisions, subsectors and their
               decarbonisation levers, every arc sized by sourced Mt CO₂. Each lever carries its
               marginal abatement cost, technology readiness, barriers, scale and the real investment
-              decisions (incl. FIDs), all with source links.
+              decisions (incl. FIDs), all with source links — plus a clean-tech vs old-tech overlay
+              that splits the levers into near-zero routes and incumbent-based transitional bridges.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-primary">
               Open the wheel →
