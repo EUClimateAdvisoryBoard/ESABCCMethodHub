@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T07:57:17.940Z",
+  "generatedAt": "2026-07-08T06:43:56.983Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,44 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1038/s41558-026-02685-y",
+      "title": "Future-proofing interpretations of the Paris Agreement’s limit of well below 2 °C",
+      "journal": "Nature Climate Change",
+      "authors": "Robin D. Lamboll, Joeri Rogelj",
+      "published": "2026-07-07",
+      "url": "https://doi.org/10.1038/s41558-026-02685-y",
+      "abstract": "The Paris Agreement’s ‘well below 2 °C’ target is often interpreted as holding warming below 2 °C with a probability in the 66–90% range. We argue that such interpretations are not future-proof as decreasing uncertainties with time will allow temperatures to approach 2 °C later in the century. We show how referring to median warming can resolve this issue and illustrate how past probabilistic target interpretations would translate to a median 1.65–1.8 °C warming limit range.",
+      "suggestedOn": "2026-07-08",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 4,
+          "matched": [
+            "paris agreement"
+          ]
+        }
+      ]
+    },
+    {
+      "doi": "10.1088/1748-9326/ae870c",
+      "title": "The abandonment of carbon pricing in North America: a short-sighted retreat analysed through ethical security economics",
+      "journal": "Environmental Research Letters",
+      "authors": "Farrukh A. Chishtie, Dr. Seeme Mallick",
+      "published": "2026-07-07",
+      "url": "https://doi.org/10.1088/1748-9326/ae870c",
+      "abstract": "North America is retreating from carbon pricing at the precise moment when its necessity is most acute. In March 2025, Canada eliminated its federal consumer carbon tax, and the United States has dismantled the regulatory architecture for greenhouse gas regulation, including revoking the foundational 2009 EPA endangerment finding. This paper asks three questions: (1) How does the North American retreat constitute an ethical failure when evaluated through ethical security economics? (2) What does international comparative evidence reveal about the conditions under which carbon pricing succeeds? (3) What structural reforms would render carbon pricing ethically grounded and politically durable? We apply ethical security economics, a values-based framework grounding economic evaluation in five interrelated principles (sustainability, justice, peace, compassion, and authenticity with accuracy), to analyse these concurrent policy reversals. We contrast North America’s retreat with European jurisdictions where carbon pricing has been associated with substantial emissions reductions alongside economic growth, and find that the retreat constitutes a comprehensive ethical failure across all five dimensions. We introduce the concept of reactive economics, situated within established scholarship on carbon lock-in and fiscal path dependency, to characterise the structural pattern of subsidising harm-generating activities while dismantling instruments designed to address their consequences",
+      "suggestedOn": "2026-07-08",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 6.5,
+          "matched": [
+            "carbon pricing"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1016/j.enpol.2026.115467",
       "title": "Evaluating the effectiveness of green recovery measures on sectoral energy transition pathways and employment opportunities towards net zero: Evidence from the Greek National Recovery and Resilience Plan",
