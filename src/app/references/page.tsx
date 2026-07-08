@@ -60,9 +60,7 @@ import Skeleton from '@/components/ui/Skeleton';
 import { showToast } from '@/components/ui/ToastHost';
 import { useClipboardIdentifier } from '@/lib/references/use-clipboard-identifier';
 import {
-  splitTags,
-  combineTags,
-  parseCommaList,
+  toProjectTag,
   referenceInProject,
   aggregateProjects,
 } from '@/lib/references/projects';
@@ -712,7 +710,6 @@ export default function ReferencesPage() {
 
   // Distinct projects (report contexts) across the loaded library, with counts.
   const projectSummaries = useMemo(() => aggregateProjects(references), [references]);
-  const knownProjectNames = useMemo(() => projectSummaries.map((p) => p.name), [projectSummaries]);
 
   // id → display title map for the recent-annotations feed.  The feed stores
   // references by id in localStorage, but only knows the id — so we hand it a
@@ -935,7 +932,7 @@ export default function ReferencesPage() {
                 </select>
                 {projectSummaries.length === 0 ? (
                   <span className="text-tertiary">
-                    No projects yet — open a reference and set its <strong className="font-medium">Report / Project</strong> to file it under a report (e.g. Policy Gap 2.0).
+                    No projects yet — file references under a report (e.g. Policy Gap 2.0) in the <strong className="font-medium">Project Workspace</strong>.
                   </span>
                 ) : projectFilter.trim() ? (
                   <>
@@ -1012,7 +1009,6 @@ export default function ReferencesPage() {
                       closeFallbackDetail();
                     }}
                     onCancel={closeFallbackDetail}
-                    knownProjects={knownProjectNames}
                     defaultProject={projectFilter}
                   />
                 )}
@@ -1021,7 +1017,6 @@ export default function ReferencesPage() {
                 {fallbackEditingRef && !showAddForm && (
                   <AddReferenceForm
                     editingRef={fallbackEditingRef}
-                    knownProjects={knownProjectNames}
                     onSave={async (ref) => {
                       const result = await putRefToApi({
                         id: ref.id,
@@ -1160,7 +1155,7 @@ export default function ReferencesPage() {
                     projectFilter.trim() ? (
                       <EmptyState
                         title="No references in this project"
-                        body={`Nothing in “${selectedLibrary?.name ?? 'this library'}” is tagged for “${projectFilter}” yet. Open a reference and add the project under “Report / Project”, or clear the project view.`}
+                        body={`Nothing in “${selectedLibrary?.name ?? 'this library'}” is tagged for “${projectFilter}” yet. Assign references to this project in the Project Workspace, or clear the project view.`}
                         primaryAction={{ label: 'Clear project view', onClick: () => setProjectFilter('') }}
                       />
                     ) : (
@@ -1201,7 +1196,6 @@ export default function ReferencesPage() {
                       editingRef={view === 'edit' ? editingRef : null}
                       onSaved={handleSaved}
                       onCancel={() => { setView('list'); setEditingRef(null); }}
-                      knownProjects={knownProjectNames}
                       defaultProject={view === 'add' ? projectFilter : ''}
                     />
                   </div>
@@ -1272,7 +1266,6 @@ function AddReferenceForm({
   editingRef,
   onDelete,
   onShare,
-  knownProjects = [],
   defaultProject = '',
 }: {
   onSave: (ref: Reference) => void;
@@ -1280,9 +1273,7 @@ function AddReferenceForm({
   editingRef?: Reference | null;
   onDelete?: () => void;
   onShare?: () => void;
-  /** Existing project names across the library, for autocomplete. */
-  knownProjects?: string[];
-  /** Pre-fill the project field when adding inside an active project view. */
+  /** File new references under this project when adding inside an active project view. */
   defaultProject?: string;
 }) {
   const isEditing = !!editingRef;
@@ -1296,13 +1287,6 @@ function AddReferenceForm({
   const [volume, setVolume] = useState(editingRef?.csl_json?.volume || '');
   const [issue, setIssue] = useState(editingRef?.csl_json?.issue || '');
   const [pages, setPages] = useState(editingRef?.csl_json?.page || '');
-  // Plain tags and project tags ("project:<report>") are edited separately so
-  // the report context stays a first-class field. See lib/references/projects.
-  const initialSplit = splitTags(editingRef?.tags);
-  const [tags, setTags] = useState(initialSplit.plain.join(', '));
-  const [projects, setProjects] = useState(
-    (editingRef ? initialSplit.projects : (defaultProject ? [defaultProject] : [])).join(', ')
-  );
   const [notes, setNotes] = useState(editingRef?.notes || '');
   const [fundingText, setFundingText] = useState(() =>
     (editingRef?.funding || []).map(formatFundingLine).join('\n')
@@ -1624,10 +1608,12 @@ function AddReferenceForm({
       abstract: editingRef?.abstract ?? null,
       container_title: journal || null,
       citation_key: editingRef?.citation_key ?? null,
-      tags: (() => {
-        const combined = combineTags(parseCommaList(tags), parseCommaList(projects));
-        return combined.length > 0 ? combined : null;
-      })(),
+      // Tags and project membership are managed in the Project Workspace, not
+      // here — preserve whatever the reference already carries. New references
+      // added inside an active project view are still filed under that report.
+      tags: editingRef
+        ? (editingRef.tags ?? null)
+        : (defaultProject.trim() ? [toProjectTag(defaultProject)] : null),
       notes: notes || null,
       pdf_url: finalPdfUrl || null,
       funding: funding.length > 0 ? funding : null,
@@ -1963,28 +1949,6 @@ function AddReferenceForm({
             {parseFundingText(fundingText).some(isEuFunder) && (
               <p className="mt-1 text-[10px] text-[#007B6C] font-semibold">EU-funded</p>
             )}
-          </div>
-          <div className="col-span-2">
-            <label className={labelClass}>
-              Report / Project{' '}
-              <span className="font-normal text-tertiary text-xs">
-                (comma-separated — the report this reference is used in, e.g. Policy Gap 2.0)
-              </span>
-            </label>
-            <input
-              className={inputClass}
-              value={projects}
-              onChange={e => setProjects(e.target.value)}
-              list="add-form-known-projects"
-              placeholder="Policy Gap 2.0"
-            />
-            <datalist id="add-form-known-projects">
-              {knownProjects.map(p => <option key={p} value={p} />)}
-            </datalist>
-          </div>
-          <div className="col-span-2">
-            <label className={labelClass}>Tags (comma-separated)</label>
-            <input className={inputClass} value={tags} onChange={e => setTags(e.target.value)} placeholder="climate, policy, adaptation" />
           </div>
           <div className="col-span-2">
             <label className={labelClass}>Notes</label>
