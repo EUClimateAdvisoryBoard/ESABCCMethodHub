@@ -428,15 +428,19 @@ async function ensureIndustryReadingSeed(): Promise<void> {
   const projectId = 'industry-project';
 
   // 1) Corpus: add any rows not already present (self-healing, idempotent).
-  let corpusPresent: Set<string>;
+  //    Rows that exist but carry no stored metadata (seeded before the
+  //    `doc_meta` column landed) are re-added too — the upsert refreshes
+  //    doc_meta, without which the Word add-in cannot resolve these synthetic
+  //    ids and silently drops the whole reading list from its picker.
+  let corpusMeta: Map<string, unknown>;
   try {
-    corpusPresent = new Set((await getCaCorpus(projectId)).map(e => e.documentId));
+    corpusMeta = new Map((await getCaCorpus(projectId)).map(e => [e.documentId, e.meta]));
   } catch {
     // Corpus unreadable — skip this pass rather than risk duplicates.
     return;
   }
   for (const item of INDUSTRY_READING_SEED) {
-    if (corpusPresent.has(item.id)) continue;
+    if (corpusMeta.get(item.id)) continue;
     const referenceType = item.tier === 'scientific' ? 'article' : 'report';
     const meta: CorpusDocMeta = {
       id: item.id,
@@ -504,15 +508,16 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
   const projectId = 'industry-project';
   const cleanTechChapterId = CHAPTER_TAGS.find(c => c.name === 'Clean Tech')?.id;
 
-  // 1) Corpus rows.
-  let corpusPresent: Set<string>;
+  // 1) Corpus rows. As in ensureIndustryReadingSeed, rows without stored
+  //    metadata are re-added so the upsert backfills doc_meta.
+  let corpusMeta: Map<string, unknown>;
   try {
-    corpusPresent = new Set((await getCaCorpus(projectId)).map(e => e.documentId));
+    corpusMeta = new Map((await getCaCorpus(projectId)).map(e => [e.documentId, e.meta]));
   } catch {
     return;
   }
   for (const item of CLEAN_TECH_READING_LIST) {
-    if (corpusPresent.has(item.id)) continue;
+    if (corpusMeta.get(item.id)) continue;
     const referenceType = item.tier === 'scientific' ? 'article' : 'report';
     const meta: CorpusDocMeta = {
       id: item.id,
@@ -522,6 +527,7 @@ async function ensureCleanTechReadingSeed(): Promise<void> {
       sourceKind: 'reference',
       referenceType,
       referenceAuthors: item.source || undefined,
+      referenceYear: item.year || undefined,
       referenceUrl: item.url || undefined,
     };
     try {
