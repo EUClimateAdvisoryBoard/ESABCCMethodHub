@@ -41,6 +41,14 @@ function env() {
   };
 }
 
+// Next.js patches the global fetch with a data cache that can persist across
+// requests — and on Vercel, across deployments. Database reads must never be
+// served from that cache: a cached Supabase response freezes a table snapshot
+// into the app until the cache is purged. Force every Supabase request to
+// bypass it.
+const noStoreFetch: typeof fetch = (input, init) =>
+  fetch(input, { ...init, cache: 'no-store' });
+
 export function getServerSupabase(): SupabaseClient | null {
   const { url, serviceKey, anonKey } = env();
   if (!url) return null;
@@ -48,6 +56,7 @@ export function getServerSupabase(): SupabaseClient | null {
   if (!key) return null;
   return createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
+    global: { fetch: noStoreFetch },
   });
 }
 
@@ -63,6 +72,7 @@ export function createAdminClient(): SupabaseClient {
   }
   return createClient(url, serviceKey, {
     auth: { persistSession: false, autoRefreshToken: false },
+    global: { fetch: noStoreFetch },
   });
 }
 
@@ -77,8 +87,8 @@ export function createServerClient(accessToken?: string): SupabaseClient {
   return createClient(url, key, {
     auth: { persistSession: false, autoRefreshToken: false },
     global: accessToken
-      ? { headers: { Authorization: `Bearer ${accessToken}` } }
-      : undefined,
+      ? { headers: { Authorization: `Bearer ${accessToken}` }, fetch: noStoreFetch }
+      : { fetch: noStoreFetch },
   });
 }
 
