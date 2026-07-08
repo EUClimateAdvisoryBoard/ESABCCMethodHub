@@ -1,6 +1,6 @@
 {
   "date": "2026-07-08",
-  "generatedAt": "2026-07-08T12:25:59.835Z",
+  "generatedAt": "2026-07-08T18:18:40.786Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 8 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,14 +11,14 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Four oil and gas tankers turn back from Hormuz strait after vessel attacks - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGg0M1U4ckhfRFJKQTRnZjUwSFFHZWlrX0U0dHJXT2hDMkE3NzItM19WT2d1QmZPdUg4c3hsQmJ1NFgzeTl1RnpUTlpYeUdKdTVLRnh1WUIzbFplcW1ESl9WOUMyOFpoNndlcmZ2czBzVXJJWTlVbjZ5U294SWMxdnhLaHpGNnE3UU1WR3dROC1oTkxXOEEwT0xYVnFzLXNpNnYxclc3UUoxd3REUkx2YWQzNWtqWm5JaFJF?oc=5\" target=\"_blank\"&gt;Four oil and gas tankers turn back from Hormuz strait after vessel attacks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Jackdaw owner says gas field will 'not materially influence' climate change",
+      "summary": "The new assessment was required by the industry regulator, after it found several areas had not been adequately addressed in a previous submission.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Cited 7 July 2026: ‘Impossible’ heat &#124; Global ocean record &#124; Climate change and the ozone hole",
-      "summary": "Welcome to Cited, your essential guide to new climate research. In the news ‘HEAT ALERT’:... The post Cited 7 July 2026: ‘Impossible’ heat | Global ocean record | Climate change and the ozone hole appeared first on Carbon Brief.",
+      "headline": "European countries top ‘scorecard’ on climate progress while US slips to 27th",
+      "summary": "&lt;p&gt;Estonia, Luxembourg and UK are the top three in biennial Yale University index in tackling pollution and other issues&lt;/p&gt;&lt;p&gt;Much of the world has made encouraging strides in reducing toxic problems such as water and air pollution that have long plagued communities. But there is still a widespread lack of progress among countries in dealing with the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt;, according to the latest edition",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -51,11 +51,19 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Jackdaw owner says gas field will 'not materially influence' climate change",
+          "link": "https://www.bbc.co.uk/news/articles/cly85e2z2n4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The new assessment was required by the industry regulator, after it found several areas had not been adequately addressed in a previous submission.",
+          "published": "2026-07-08T12:59:00.000Z",
+          "score": 7
+        },
+        {
           "title": "Four oil and gas tankers turn back from Hormuz strait after vessel attacks - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGg0M1U4ckhfRFJKQTRnZjUwSFFHZWlrX0U0dHJXT2hDMkE3NzItM19WT2d1QmZPdUg4c3hsQmJ1NFgzeTl1RnpUTlpYeUdKdTVLRnh1WUIzbFplcW1ESl9WOUMyOFpoNndlcmZ2czBzVXJJWTlVbjZ5U294SWMxdnhLaHpGNnE3UU1WR3dROC1oTkxXOEEwT0xYVnFzLXNpNnYxclc3UUoxd3REUkx2YWQzNWtqWm5JaFJF?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGg0M1U4ckhfRFJKQTRnZjUwSFFHZWlrX0U0dHJXT2hDMkE3NzItM19WT2d1QmZPdUg4c3hsQmJ1NFgzeTl1RnpUTlpYeUdKdTVLRnh1WUIzbFplcW1ESl9WOUMyOFpoNndlcmZ2czBzVXJJWTlVbjZ5U294SWMxdnhLaHpGNnE3UU1WR3dROC1oTkxXOEEwT0xYVnFzLXNpNnYxclc3UUoxd3REUkx2YWQzNWtqWm5JaFJF?oc=5\" target=\"_blank\"&gt;Four oil and gas tankers turn back from Hormuz strait after vessel attacks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T05:20:00.000Z",
+          "published": "2026-07-08T12:01:57.000Z",
           "score": 2
         }
       ]
@@ -65,14 +73,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Cited 7 July 2026: ‘Impossible’ heat &#124; Global ocean record &#124; Climate change and the ozone hole",
-          "link": "https://www.carbonbrief.org/cited-7-july-2026-impossible-heat-global-ocean-record-climate-change-and-the-ozone-hole/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Cited, your essential guide to new climate research. In the news ‘HEAT ALERT’:... The post Cited 7 July 2026: ‘Impossible’ heat | Global ocean record | Climate change and the ozone hole appeared first on Carbon Brief.",
-          "published": "2026-07-07T14:58:43.000Z",
-          "score": 13
-        },
-        {
           "title": "European countries top ‘scorecard’ on climate progress while US slips to 27th",
           "link": "https://www.theguardian.com/environment/2026/jul/08/climate-change-crisis-europe-us",
           "source": "The Guardian - Climate",
@@ -81,11 +81,19 @@
           "score": 13
         },
         {
-          "title": "Ugandan farmers launch UK court case against East African oil pipeline",
-          "link": "https://www.climatechangenews.com/2026/07/07/ugandan-farmers-launch-uk-court-case-against-east-african-oil-pipeline/",
+          "title": "As blue economy gathers pace, communities must benefit from ocean boom, activists say",
+          "link": "https://www.climatechangenews.com/2026/07/08/blue-economy-coastal-communities-mombasa-ocean-finance/",
           "source": "Climate Home News",
-          "description": "Crowdfunded lawsuit filed at London’s High Court seeks to enforce Uganda’s laws against EACOP Ltd, the pipeline project's ⁠UK-registered company The post Ugandan farmers launch UK court case against East African oil pipeline appeared first on Climate Home News.",
-          "published": "2026-07-07T17:03:38.000Z",
+          "description": "As governments turn to the ocean for jobs, growth and climate solutions, campaigners at the Our Ocean Conference in Mombasa warned coastal communities must not be left behind The post As blue economy gathers pace, communities must benefit from ocean boom, activists say appeared first on Climate Home News.",
+          "published": "2026-07-08T14:58:57.000Z",
+          "score": 10
+        },
+        {
+          "title": "AI governance debate silent on risks to nature, campaigners warn",
+          "link": "https://www.climatechangenews.com/2026/07/08/ai-governance-debate-silent-on-risks-to-nature-campaigners-warn/",
+          "source": "Climate Home News",
+          "description": "Global efforts to ensure AI does more good than harm must consider how it could fuel exploitation of biodiversity and ecosystems, conservationists say The post AI governance debate silent on risks to nature, campaigners warn appeared first on Climate Home News.",
+          "published": "2026-07-08T14:13:42.000Z",
           "score": 10
         },
         {
@@ -124,11 +132,11 @@
           "score": 22
         },
         {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Agriculture Policy for the period from 2028 to 2034 - PE784.303v02-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-784303_EN.pdf",
+          "title": "Briefing - Reforming the EU rules on genetically modified micro-organisms in the context of the proposed Directive accompanying the Biotech Act. Legal analysis and critical assessment of the Commission proposal. - PE 790.560 - Committee on the Environment, Public Health and Food Safety",
+          "link": "https://www.europarl.europa.eu/RegData/etudes/BRIE/2026/790560/ECTI_BRI(2026)790560_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Agriculture Policy for the period from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Seán Kelly&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-07T14:43:23.000Z",
+          "description": "&lt;div&gt;This briefing provides a legal analysis and critical assessment of the genetically modified micro-organisms (GMM) component of the Commission proposal for a Directive amending Directives 2001/18/EC and 2010/53/EU as regards the placing on the market of genetically modified micro-organisms and the processing of organs. This proposal was presented in December 2025 and accompanies the European Biotech Act. The briefing presents and analyses the proposed GMM-related amendments, situates t",
+          "published": "2026-07-07T22:00:00.000Z",
           "score": 22
         },
         {
@@ -146,14 +154,6 @@
           "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20200609PHT80818/20200609PHT80818-ms.bmp\" width=\"180\" alt=\"chemicals\" title=\"chemicals © AdobeStock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI and IMCO Members will vote on the provisional agreement resulting from interinstitutional negotiations on simplification of certain requirements and procedures for chemical products (Chemical Omnibus). &lt;/div&gt;&lt;br /&gt;",
           "published": "2026-07-08T07:09:25.000Z",
           "score": 18
-        },
-        {
-          "title": "Draft agenda - Tuesday, 14 July 2026 - PE790.855v01-00 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-OJ-2026-07-14-1_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-07T12:41:23.000Z",
-          "score": 18
         }
       ]
     },
@@ -162,11 +162,11 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Europe may face 'more deadly weeks' as new heatwave builds, WHO warns - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOaFN6Z2FBbHVubUk2ZGhVVEdGVlVuNmVLMlUtMmpKVDc2TDRieHc2b2pZVXhiS1dYcEZmVTVvbW5YYmhSSmJEYlpkSHpBTUs1U3ZjS2ZLRnY5YkJVQnRjdUYwUFAzelMwMEtob3d3NTc5U0w4OTcwclE0dUhhYVhWRHdCVGQ2YkNOOENXRzhBMXhpNUszTmU0RWpPdFRWSmtlR2Q3YzExTlF1WFRNa0x1UDRxQXRrak12VGI4SA?oc=5",
+          "title": "Apple loses challenges against EU rules to curb Big Tech - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOaFN6Z2FBbHVubUk2ZGhVVEdGVlVuNmVLMlUtMmpKVDc2TDRieHc2b2pZVXhiS1dYcEZmVTVvbW5YYmhSSmJEYlpkSHpBTUs1U3ZjS2ZLRnY5YkJVQnRjdUYwUFAzelMwMEtob3d3NTc5U0w4OTcwclE0dUhhYVhWRHdCVGQ2YkNOOENXRzhBMXhpNUszTmU0RWpPdFRWSmtlR2Q3YzExTlF1WFRNa0x1UDRxQXRrak12VGI4SA?oc=5\" target=\"_blank\"&gt;Europe may face 'more deadly weeks' as new heatwave builds, WHO warns&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-07T17:57:44.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5\" target=\"_blank\"&gt;Apple loses challenges against EU rules to curb Big Tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-08T12:09:14.000Z",
           "score": 8
         },
         {
@@ -178,36 +178,36 @@
           "score": 8
         },
         {
-          "title": "Britain's Farage quits parliament in protest, but will stand for re-election - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPWTRKNVhmeUp0alVJb2RSZi1IN29FLVpjRTBhY2VDYkowRURkbVo4bGIxb2YxM0l0UmdSSXFHX2JBQUFiV2RIcnN1dEF4QUs1aHVLeDJwbmFxTEJVRVB6NW4xaFotMllnU1IwUEpSZFZQVUJtalRMMEFFUHhRb011aVJ1cEk5TmFEQ2swbEVCUGJreTYyTTMw?oc=5",
+          "title": "French lawmakers back police shootings law dubbed 'licence to kill' by critics - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPY181anA5M3drQ2lvblRDSm9nZndkTS1BeFdpcmZVTXVCZ19SNGtzYXJMNGd2OWtfNWJfeWg5UEhfMHhjOV9IUzdvTV9wcHZFRkkzeDhGQngxY1N5eG03ajk2aVBhZVN5NHJJMVlZVWxfcXNZM21kUl9RWGpNUHNqcExoSGpDcE1IbGVVb0lSb095emxCQy13UUwtbDRGa2Ffd2hBc3VCY2psRzh6QmdBelh1ZHo0UQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxPWTRKNVhmeUp0alVJb2RSZi1IN29FLVpjRTBhY2VDYkowRURkbVo4bGIxb2YxM0l0UmdSSXFHX2JBQUFiV2RIcnN1dEF4QUs1aHVLeDJwbmFxTEJVRVB6NW4xaFotMllnU1IwUEpSZFZQVUJtalRMMEFFUHhRb011aVJ1cEk5TmFEQ2swbEVCUGJreTYyTTMw?oc=5\" target=\"_blank\"&gt;Britain's Farage quits parliament in protest, but will stand for re-election&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-07T14:27:12.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxPY181anA5M3drQ2lvblRDSm9nZndkTS1BeFdpcmZVTXVCZ19SNGtzYXJMNGd2OWtfNWJfeWg5UEhfMHhjOV9IUzdvTV9wcHZFRkkzeDhGQngxY1N5eG03ajk2aVBhZVN5NHJJMVlZVWxfcXNZM21kUl9RWGpNUHNqcExoSGpDcE1IbGVVb0lSb095emxCQy13UUwtbDRGa2Ffd2hBc3VCY2psRzh6QmdBelh1ZHo0UQ?oc=5\" target=\"_blank\"&gt;French lawmakers back police shootings law dubbed 'licence to kill' by critics&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-08T08:07:44.000Z",
+          "score": 6
         },
         {
-          "title": "Apple loses challenges against EU rules to curb Big Tech - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5",
+          "title": "Safaricom shareholders to vote on Vodafone's right to pick CEO - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxON1gzMWZLTEtKUDY1QXpwNVNkZm53LU5INmY2ekFQZDdSeDVNQXo2Q21hQ0xWcTZfN09GN3hoY0hPRks3cjZMX2hRV2hlTHpvOUE5Tk5GQXpFVlA4Tkh1d2JTRTdWaE1WMjczc29xUmZvMjNuN3B1TU9BZ2ZsblNWZFVZZ3V2X3pMVjZMeFRSeWV4Qm94OFlmU1hwV2lQNXJWSzln?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5\" target=\"_blank\"&gt;Apple loses challenges against EU rules to curb Big Tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T10:35:54.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxON1gzMWZLTEtKUDY1QXpwNVNkZm53LU5INmY2ekFQZDdSeDVNQXo2Q21hQ0xWcTZfN09GN3hoY0hPRks3cjZMX2hRV2hlTHpvOUE5Tk5GQXpFVlA4Tkh1d2JTRTdWaE1WMjczc29xUmZvMjNuN3B1TU9BZ2ZsblNWZFVZZ3V2X3pMVjZMeFRSeWV4Qm94OFlmU1hwV2lQNXJWSzln?oc=5\" target=\"_blank\"&gt;Safaricom shareholders to vote on Vodafone's right to pick CEO&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-08T06:21:00.000Z",
+          "score": 6
         },
         {
-          "title": "London's FTSE 100 ticks higher as Shell lifts energy stocks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPM3FwZy1zWlBaZmMzQnc4c3Y4TDRBejFwQ0szYWZVcGJZMHlkWi02cGZVMWZNSXB4U1pmY3BlUkh0SUV6emN1YmtabEZab0h3MWlzZUJyaERsVldpSk05dG5yNy1od3h4RV9KdDhNaGNQYVJ0V0ZUZk1xVldCN0JCaUZQWVc5Y1Y3eE1uYVFTbjBEYUVSYUhLRTMtazM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPM3FwZy1zWlBaZmMzQnc4c3Y4TDRBejFwQ0szYWZVcGJZMHlkWi02cGZVMWZNSXB4U1pmY3BlUkh0SUV6emN1YmtabEZab0h3MWlzZUJyaERsVldpSk05dG5yNy1od3h4RV9KdDhNaGNQYVJ0V0ZUZk1xVldCN0JCaUZQWVc5Y1Y3eE1uYVFTbjBEYUVSYUhLRTMtazM?oc=5\" target=\"_blank\"&gt;London's FTSE 100 ticks higher as Shell lifts energy stocks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-07T16:21:08.000Z",
-          "score": 7
+          "title": "How Iran uses the Strait of Hormuz to pressure the US",
+          "link": "https://www.dw.com/en/how-iran-uses-the-strait-of-hormuz-to-pressure-the-us/a-77870807?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Iran&#039;s latest attacks show it can easily disrupt shipping, energy markets and draw in Gulf neighbors. DW asks how much leverage Tehran really has over Washington and if its high-risk strategy could backfire.",
+          "published": "2026-07-08T12:55:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 424,
-    "articlesLast24h": 169,
-    "afterDedup": 153,
+    "totalArticlesScanned": 427,
+    "articlesLast24h": 172,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
