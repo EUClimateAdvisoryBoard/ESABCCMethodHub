@@ -32,6 +32,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { references as staticReferences } from '@/data/references';
 import { policies } from '@/data/policies';
 import { SEED_PROJECTS } from '@/data/project-workspace';
+import { INDUSTRY_READING_SEED } from '@/data/industry-reading-list';
+import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
 import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
 import { findPolicyFlatRef, POLICY_REF_PREFIX } from '@/lib/references/policy-entries';
 import { getCaCorpus, getCaDocuments, getCodes, listCaCorpusProjects } from '@/lib/content-analysis-store';
@@ -303,6 +305,44 @@ function lookupPolicy(idOrCelex: string): (typeof policies)[number] | undefined 
   return policyByIdOrCelex.get(idOrCelex);
 }
 
+/** Reading-list rows seeded into the industry corpus (see
+ *  `ensureIndustryReadingSeed` / `ensureCleanTechReadingSeed` in
+ *  `@/lib/project-workspace/db`), resolved by their synthetic `reading-*` ids.
+ *  Corpus rows seeded before the `doc_meta` column existed carry no stored
+ *  metadata and these ids exist in no other store, so without this fallback
+ *  the whole seeded reading list silently vanishes from the add-in while the
+ *  project facet still counts it. Rebuilt exactly as the seeder writes them. */
+interface ReadingSeedLike {
+  id: string;
+  source: string;
+  title: string;
+  tier: 'grey' | 'scientific';
+  year?: string;
+  url?: string;
+}
+
+let readingSeedMeta: Map<string, CorpusDocMeta> | null = null;
+function lookupReadingSeed(documentId: string): CorpusDocMeta | null {
+  if (!readingSeedMeta) {
+    const map = new Map<string, CorpusDocMeta>();
+    for (const item of [...INDUSTRY_READING_SEED, ...CLEAN_TECH_READING_LIST] as ReadingSeedLike[]) {
+      map.set(item.id, {
+        id: item.id,
+        title: item.title,
+        shortTitle: item.title.length > 90 ? `${item.title.slice(0, 87)}…` : item.title,
+        kind: 'report',
+        sourceKind: 'reference',
+        referenceType: item.tier === 'scientific' ? 'article' : 'report',
+        referenceAuthors: item.source || undefined,
+        referenceYear: item.year || undefined,
+        referenceUrl: item.url || undefined,
+      });
+    }
+    readingSeedMeta = map;
+  }
+  return readingSeedMeta.get(documentId) ?? null;
+}
+
 /** Rebuild display metadata for a legacy (meta-less) corpus row, the same way
  *  the web workspace resolves bare ids against its document universe. Returns
  *  null only when the id is unknown to every store. */
@@ -355,7 +395,7 @@ function synthesizeMeta(
     };
   }
 
-  return null;
+  return lookupReadingSeed(documentId);
 }
 
 function buildItem(
