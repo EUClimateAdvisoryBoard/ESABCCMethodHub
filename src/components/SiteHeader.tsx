@@ -11,14 +11,17 @@ import { useAuth } from '@/lib/auth-context';
 /**
  * Site-wide header for MethodHub.
  *
- * Shows only the **eight production modules** — beta modules live under
- * `beta/modules/` in the repository and are intentionally unrouted, so they
- * must not appear in navigation. Promoting a beta module to production means
- * `git mv`-ing it back into `src/app/` and re-adding an entry to `MODULES`.
+ * Navigation hierarchy (top to bottom):
+ * 1. The **two main modules** — Reference Manager and Project Workspace —
+ *    are the only module links in the always-visible top bar.
+ * 2. The **other six production modules** sit one level below: they are
+ *    reachable from the mobile drawer, the home page grid and the footer,
+ *    but not from the top bar.
+ * 3. **Beta modules** rank below those again: they are surfaced only on the
+ *    home page ribbon (`/beta/<slug>`), never in header navigation.
  *
  * Responsive layout:
- * - Desktop (xl+): full module strip on the right.
- * - Tablet (md–xl): condensed pill strip.
+ * - Desktop/tablet (md+): the two main-module links on the right.
  * - Mobile (<md): compact brand + hamburger opening a full-screen drawer
  *   with grouped sections and large tap targets.
  */
@@ -31,26 +34,29 @@ interface Module {
   /** Shortened label used in the space-constrained desktop/tablet strip. */
   short?: string;
   /** Grouping bucket used only in the mobile drawer accordion. */
-  group?: 'core';
+  group?: 'main' | 'core';
   /** Whether the module also renders in the always-visible top bar. */
   topBar?: boolean;
 }
 
 const MODULES: Module[] = [
-  { href: '/references',        label: 'References',        short: 'References',        group: 'core', topBar: true },
-  { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core', topBar: true },
-  { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core', topBar: true },
-  { href: '/policy-navigator',  label: 'Policy Navigator',  short: 'Policy Navigator',  group: 'core', topBar: true },
-  { href: '/content-analysis',  label: 'Content Analysis',  short: 'Content',           group: 'core', topBar: true },
-  { href: '/voting',            label: 'Voting',            short: 'Voting',            group: 'core', topBar: true },
-  { href: '/project-workspace', label: 'Project Workspace', short: 'Project Workspace', group: 'core', topBar: true },
-  { href: '/recommendations',   label: 'Recommendations',   short: 'Recommendations',   group: 'core', topBar: true },
+  // The two main modules — the only entries with topBar: true.
+  { href: '/references',        label: 'Reference Manager', short: 'Reference Manager', group: 'main', topBar: true },
+  { href: '/project-workspace', label: 'Project Workspace', short: 'Project Workspace', group: 'main', topBar: true },
+  // The other six production modules — drawer / home page / footer only.
+  { href: '/scenarios',         label: 'Data & Scenarios',  short: 'Data',              group: 'core' },
+  { href: '/news-feed',         label: 'News',              short: 'News',              group: 'core' },
+  { href: '/policy-navigator',  label: 'Policy Navigator',  short: 'Policy Navigator',  group: 'core' },
+  { href: '/content-analysis',  label: 'Content Analysis',  short: 'Content',           group: 'core' },
+  { href: '/voting',            label: 'Voting',            short: 'Voting',            group: 'core' },
+  { href: '/recommendations',   label: 'Recommendations',   short: 'Recommendations',   group: 'core' },
 ];
 
 const TOP_BAR_MODULES = MODULES.filter(m => m.topBar);
 
 const GROUP_LABELS: Record<NonNullable<Module['group']>, string> = {
-  core: 'Production modules',
+  main: 'Main modules',
+  core: 'More modules',
 };
 
 /**
@@ -146,30 +152,15 @@ export default function SiteHeader() {
           </span>
         </Link>
 
-        {/* Desktop module nav */}
-        <nav className="hidden xl:flex items-center gap-0.5 ml-auto text-[12px] text-[#3D5265] whitespace-nowrap">
+        {/* Top-bar module nav — only the two main modules live here.
+            With just two links there is no need for a separate condensed
+            tablet variant; one strip fits from md upwards. */}
+        <nav className="hidden md:flex items-center gap-1 ml-auto text-[13px] text-[#3D5265] whitespace-nowrap">
           {TOP_BAR_MODULES.map(m => (
             <Link
               key={m.href}
               href={m.href}
-              className={`px-2.5 py-1.5 rounded transition-colors ${
-                isActive(m.href)
-                  ? 'bg-[#EEF1F2] text-[#00928F] font-semibold'
-                  : 'hover:bg-[#EEF1F2] hover:text-[#00928F]'
-              }`}
-            >
-              {m.short || m.label}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Tablet nav — condensed pills, single line */}
-        <nav className="hidden md:flex xl:hidden items-center gap-0.5 ml-auto text-[11px] text-[#3D5265] whitespace-nowrap">
-          {TOP_BAR_MODULES.map(m => (
-            <Link
-              key={m.href}
-              href={m.href}
-              className={`px-1.5 py-1 rounded transition-colors ${
+              className={`px-3 py-2 rounded font-medium transition-colors ${
                 isActive(m.href)
                   ? 'bg-[#EEF1F2] text-[#00928F] font-semibold'
                   : 'hover:bg-[#EEF1F2] hover:text-[#00928F]'
@@ -263,7 +254,7 @@ export default function SiteHeader() {
 
             {/* Drawer links */}
             <div className="flex-1 overflow-y-auto">
-              {(['core'] as const).map(group => {
+              {(['main', 'core'] as const).map(group => {
                 const items = MODULES.filter(m => m.group === group);
                 if (items.length === 0) return null;
                 return (

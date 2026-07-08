@@ -10,19 +10,23 @@ import NotificationBell from './NotificationBell';
 
 // NOTE: SiteHeader is the live header since early 2026; this legacy component
 // is kept only because a few internal routes still import <Navigation />.
-// The list below mirrors SiteHeader: the eight production modules only. Beta
-// modules live under `beta/modules/` and are intentionally unreachable.
+// The list below mirrors SiteHeader: only the two main modules (Reference
+// Manager, Project Workspace) render in the top bar; the other six production
+// modules are drawer-only. Beta modules live under `beta/modules/` and are
+// intentionally unreachable.
 const NAV_ITEMS = [
-  { href: '/',                  label: 'Method Hub'        },
-  { href: '/references',        label: 'References'        },
-  { href: '/scenarios',         label: 'Scenarios'         },
-  { href: '/news-feed',         label: 'News Feed'         },
-  { href: '/policy-navigator',  label: 'Policy Navigator'  },
-  { href: '/content-analysis',  label: 'Content Analysis'  },
-  { href: '/voting',            label: 'Voting'            },
-  { href: '/project-workspace', label: 'Project Workspace' },
-  { href: '/recommendations',   label: 'Recommendations'   },
+  { href: '/',                  label: 'Method Hub',        topBar: true  },
+  { href: '/references',        label: 'Reference Manager', topBar: true  },
+  { href: '/project-workspace', label: 'Project Workspace', topBar: true  },
+  { href: '/scenarios',         label: 'Scenarios',         topBar: false },
+  { href: '/news-feed',         label: 'News Feed',         topBar: false },
+  { href: '/policy-navigator',  label: 'Policy Navigator',  topBar: false },
+  { href: '/content-analysis',  label: 'Content Analysis',  topBar: false },
+  { href: '/voting',            label: 'Voting',            topBar: false },
+  { href: '/recommendations',   label: 'Recommendations',   topBar: false },
 ];
+
+const TOP_BAR_ITEMS = NAV_ITEMS.filter(item => item.topBar);
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -83,9 +87,9 @@ export default function Navigation() {
             <span className="sm:hidden truncate">Method Hub</span>
           </Link>
 
-          {/* Desktop nav */}
+          {/* Desktop nav — only the two main modules (plus home) */}
           <div className="hidden md:flex items-center gap-1">
-            {NAV_ITEMS.map(item => (
+            {TOP_BAR_ITEMS.map(item => (
               <Link
                 key={item.href}
                 href={item.href}

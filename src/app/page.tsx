@@ -9,7 +9,11 @@
  *   2. What is shipped today?              ← the eight production modules
  *   3. Who runs / maintains it?            ← CCE5 (code) · EEA IT (host)
  *
- * It also renders a ribbon of eighteen beta modules routed under `/beta/<slug>`.
+ * Module hierarchy on the page, top to bottom:
+ *   1. The two MAIN modules — Reference Manager and Project Workspace —
+ *      featured first (and the only module links in the header top bar).
+ *   2. The other six production modules.
+ *   3. The beta-module ribbon, routed under `/beta/<slug>`.
  *
  * All numbers on the page are real: they are read at render time from the
  * bundled data stores (`src/data/*`), the custom-references store, and the
@@ -263,7 +267,10 @@ export default async function HomePage() {
   const domainCount = new Set(policies.map((p) => p.domain)).size;
   const recommendationCount = ALL_ESABCC_RECOMMENDATIONS.length;
 
-  const productionModules = [
+  // The two main modules — the pillars of the Hub. They get the featured
+  // section at the top of the page and are the only module links in the
+  // site header's top bar (see SiteHeader.tsx).
+  const mainModules = [
     {
       code: 'M · 01',
       title: 'Reference Manager',
@@ -275,6 +282,22 @@ export default async function HomePage() {
         { label: 'SYNCED', value: refsSyncedLabel },
       ],
     },
+    {
+      code: 'M · 07',
+      title: 'Project Workspace',
+      description:
+        'A workspace per analytical project. Bundles indicator databases, recommendation trackers, member-state space and policy analysis under Policy Gap 2.0 and other projects.',
+      href: '/project-workspace',
+      stats: [
+        { label: 'PROJECTS', value: '2 seed' },
+        { label: 'MODULES', value: 'User-extensible' },
+      ],
+    },
+  ];
+
+  // The other six production modules — stable and shipped, but one tier
+  // below the two main modules in the navigation hierarchy.
+  const coreModules = [
     {
       code: 'M · 02',
       title: 'Data & Scenario Explorer',
@@ -328,17 +351,6 @@ export default async function HomePage() {
       stats: [
         { label: 'ACCESS', value: 'Single-use links' },
         { label: 'ANALYSIS', value: 'Priority + tally' },
-      ],
-    },
-    {
-      code: 'M · 07',
-      title: 'Project Workspace',
-      description:
-        'A workspace per analytical project. Bundles indicator databases, recommendation trackers, member-state space and policy analysis under Policy Gap 2.0 and other projects.',
-      href: '/project-workspace',
-      stats: [
-        { label: 'PROJECTS', value: '2 seed' },
-        { label: 'MODULES', value: 'User-extensible' },
       ],
     },
     {
@@ -414,8 +426,9 @@ export default async function HomePage() {
           </h1>
           <p className="mt-4 sm:mt-5 text-[14px] sm:text-[15px] lg:text-[17px] text-[#3D5265]/80 max-w-3xl leading-relaxed">
             An integrated, internal research workspace for the European Scientific Advisory Board on Climate Change Secretariat.
-            Eight production modules — references, data &amp; scenarios, news, policy, content analysis, voting, the project workspace and recommendations — packaged as a single
-            self-contained Next.js service. It is <strong className="text-[#3D5265]">hosted on Vercel (EU region) today</strong>{' '}
+            Two main modules — the <strong className="text-[#3D5265]">Reference Manager</strong> and the{' '}
+            <strong className="text-[#3D5265]">Project Workspace</strong> — supported by six further production
+            modules and a ribbon of beta prototypes, packaged as a single self-contained Next.js service. It is <strong className="text-[#3D5265]">hosted on Vercel (EU region) today</strong>{' '}
             and built to be redeployed onto <strong className="text-[#3D5265]">EEA infrastructure</strong>, with the codebase
             stewarded by <strong className="text-[#3D5265]">CCE5</strong>.
           </p>
@@ -425,7 +438,7 @@ export default async function HomePage() {
               href="#modules"
               className="inline-flex items-center justify-center px-4 sm:px-5 py-3 sm:py-2.5 text-[14px] sm:text-[13px] font-semibold text-white bg-[#00928F] border border-[#00928F] rounded-sm hover:bg-[#007a77] transition-colors touch-target shadow-sm"
             >
-              The eight modules
+              The two main modules
               <svg className="ml-2" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="M12 5v14M5 12h14" />
               </svg>
@@ -450,7 +463,7 @@ export default async function HomePage() {
           {/* Quick facts row */}
           <dl className="mt-8 sm:mt-10 grid grid-cols-2 sm:grid-cols-4 gap-px bg-[#E6E7E8] border border-[#E6E7E8] rounded-sm overflow-hidden max-w-4xl">
             {[
-              { k: 'Production modules', v: '8', sub: 'stable, shipped' },
+              { k: 'Production modules', v: '8', sub: '2 main · 6 more' },
               { k: 'Policies tracked',   v: fmt(policyCount), sub: `${domainCount} domains` },
               { k: 'Scenarios',          v: fmt(scenarioCount), sub: `${fmt(datapointCount)} datapoints` },
               { k: 'References',         v: fmt(refsTotal), sub: 'DOI-indexed' },
@@ -468,25 +481,106 @@ export default async function HomePage() {
       <div id="modules" className="scroll-mt-20" />
 
       {/* ─────────────────────────────────────────────────────────
-          PRODUCTION MODULES  (M·01 – M·08)
-          The eight surfaces shipped to the Secretariat. Any beta module
-          under `beta/modules/` must not appear here — that separation is
-          the whole point of the scope lock.
+          MAIN MODULES  (Reference Manager · Project Workspace)
+          The two pillars of the Hub. They lead the page and are the only
+          module links in the site header's top bar (see SiteHeader.tsx).
           ───────────────────────────────────────────────────────── */}
       <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
         <div className="flex items-end justify-between gap-4 flex-wrap">
           <div>
             <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#00928F] font-semibold">
               <span className="inline-block w-6 border-t border-[#00928F] align-middle mr-2" />
-              Scope · v1.0
+              Main modules
             </p>
             <h2 className="mt-3 text-[22px] sm:text-[30px] lg:text-[36px] font-bold text-[#3D5265] leading-[1.15]">
-              The eight production modules.
+              The two main modules.
+            </h2>
+            <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
+              The <strong className="text-[#3D5265]">Reference Manager</strong> and the{' '}
+              <strong className="text-[#3D5265]">Project Workspace</strong> are the daily entry points
+              for Secretariat work — every other module feeds into or supports these two. They are the
+              only modules pinned to the top navigation bar.
+            </p>
+          </div>
+          <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.14em] uppercase text-[#3D5265]/70 inline-flex items-center gap-2 px-2 py-1 bg-white border border-[#00928F]/40 rounded-sm">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#00928F]" aria-hidden />
+            Stable · in production
+          </span>
+        </div>
+        <div className="mt-4 border-t border-[#3D5265]" />
+
+        <div className="mt-6 grid gap-4 sm:gap-5 md:grid-cols-2">
+          {mainModules.map((m, i) => (
+            <Link
+              key={m.href}
+              href={m.href}
+              className="group relative bg-white border-2 border-[#00928F]/30 p-5 sm:p-7 rounded-sm hover:border-[#00928F] hover:shadow-lg hover:-translate-y-[2px] transition flex flex-col"
+            >
+              {/* Always-on accent bar — main modules carry the accent even at rest */}
+              <span aria-hidden className="absolute inset-x-0 top-0 h-[4px] bg-gradient-to-r from-[#00928F] to-[#00928F]/10" />
+
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] tracking-[0.14em] text-[#8A95A3]">
+                  {m.code}
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-[10.5px] font-semibold text-[#00928F]">
+                  <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#00928F]" aria-hidden />
+                  Main module
+                </span>
+              </div>
+
+              <div className="mt-4 flex items-baseline gap-3">
+                <span className="font-mono text-[34px] font-bold text-[#00928F]/25 leading-none tabular-nums">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <h3 className="text-[19px] sm:text-[21px] font-bold text-[#3D5265] leading-snug group-hover:text-[#00928F] transition">
+                  {m.title}
+                </h3>
+              </div>
+              <p className="mt-3 text-[13px] text-[#3D5265]/75 leading-relaxed flex-1">
+                {m.description}
+              </p>
+
+              <dl className="mt-5 border-t border-[#E6E7E8] pt-3 font-mono text-[11px] text-[#3D5265]/80 divide-y divide-[#E6E7E8]/80">
+                {m.stats.map((s) => (
+                  <div key={s.label} className="flex justify-between py-1">
+                    <dt className="tracking-[0.1em] text-[#8A95A3]">{s.label}</dt>
+                    <dd className="tabular-nums text-[#3D5265]">{s.value}</dd>
+                  </div>
+                ))}
+              </dl>
+
+              <span className="mt-5 inline-flex items-center gap-1 text-[13px] font-semibold text-[#E87722] group-hover:gap-2 transition-all">
+                Open module
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ─────────────────────────────────────────────────────────
+          THE OTHER SIX PRODUCTION MODULES
+          Stable and shipped, but one tier below the two main modules.
+          Any beta module under `beta/modules/` must not appear here —
+          that separation is the whole point of the scope lock.
+          ───────────────────────────────────────────────────────── */}
+      <section className="max-w-[1280px] mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-16">
+        <div className="flex items-end justify-between gap-4 flex-wrap">
+          <div>
+            <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-[#00928F] font-semibold">
+              <span className="inline-block w-6 border-t border-[#00928F] align-middle mr-2" />
+              Scope · v1.0
+            </p>
+            <h2 className="mt-3 text-[20px] sm:text-[26px] lg:text-[30px] font-bold text-[#3D5265] leading-[1.15]">
+              Six more production modules.
             </h2>
             <p className="mt-3 max-w-2xl text-[13.5px] text-[#3D5265]/75 leading-relaxed">
               Everything in this row is <strong className="text-[#3D5265]">stable</strong>, covered by migrations,
-              RLS policies, retention jobs and IT handoff scripts. It is the only code path EEA IT needs to
-              care about on day one.
+              RLS policies, retention jobs and IT handoff scripts. Together with the two main modules above,
+              this is the only code path EEA IT needs to care about on day one.
             </p>
           </div>
           <span className="font-mono text-[10px] sm:text-[11px] tracking-[0.14em] uppercase text-[#3D5265]/70 inline-flex items-center gap-2 px-2 py-1 bg-white border border-[#00928F]/40 rounded-sm">
@@ -497,7 +591,7 @@ export default async function HomePage() {
         <div className="mt-4 border-t border-[#3D5265]" />
 
         <div className="mt-6 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {productionModules.map((m, i) => (
+          {coreModules.map((m, i) => (
             <Link
               key={m.href}
               href={m.href}

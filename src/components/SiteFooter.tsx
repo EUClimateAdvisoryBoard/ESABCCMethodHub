@@ -6,18 +6,23 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 /**
- * Production modules surfaced in the footer. Beta modules (Brussels Bulletin,
- * Energy System, Media Monitoring, Climate Adaptation/Finance, Maritime &
- * Aviation, FAQ, Fact Sheets) live under `beta/modules/` in the repo and are
- * intentionally not linked here.
+ * Production modules surfaced in the footer, split to mirror the site-wide
+ * navigation hierarchy: the two main modules first, then the other six.
+ * Beta modules live under `beta/modules/` in the repo and are intentionally
+ * not linked here.
  */
+const SECTION_MAIN = [
+  { href: '/references',        label: 'Reference Manager' },
+  { href: '/project-workspace', label: 'Project Workspace' },
+];
+
 const SECTION_MODULES = [
-  { href: '/references',       label: 'Reference Manager' },
-  { href: '/scenarios',        label: 'Data & Scenario Explorer' },
-  { href: '/news-feed',        label: 'Secretariat News' },
-  { href: '/policy-navigator', label: 'EU Policy Navigator' },
-  { href: '/content-analysis', label: 'Content Analysis' },
-  { href: '/voting',           label: 'Voting Tool' },
+  { href: '/scenarios',         label: 'Data & Scenario Explorer' },
+  { href: '/news-feed',         label: 'Secretariat News' },
+  { href: '/policy-navigator',  label: 'EU Policy Navigator' },
+  { href: '/content-analysis',  label: 'Content Analysis' },
+  { href: '/voting',            label: 'Voting Tool' },
+  { href: '/recommendations',   label: 'Recommendations' },
 ];
 
 const SECTION_MORE = [
@@ -79,7 +84,7 @@ export default function SiteFooter() {
     <footer className="bg-[#3D5265] text-white/80 mt-12 sm:mt-16 pb-safe">
       <div className="max-w-[1280px] mx-auto px-4 sm:px-6 py-8 sm:py-10">
         {/* Blurb */}
-        <div className="mb-6 sm:mb-0 sm:grid sm:grid-cols-3 sm:gap-6">
+        <div className="mb-6 sm:mb-0 sm:grid sm:grid-cols-4 sm:gap-6">
           <div className="sm:mb-0 mb-6">
             <p className="text-white font-semibold mb-1 text-[14px] sm:text-[13px]">
               ESABCC Secretariat MethodHub
@@ -88,7 +93,8 @@ export default function SiteFooter() {
               Internal toolbox of the ESABCC Secretariat — built and maintained by <span className="text-white/85">CCE5</span>, packaged for self-hosted deployment on <span className="text-white/85">EEA infrastructure</span>.
             </p>
           </div>
-          <FooterSection title="Production modules" items={SECTION_MODULES} />
+          <FooterSection title="Main modules" items={SECTION_MAIN} />
+          <FooterSection title="More modules" items={SECTION_MODULES} />
           <FooterSection title="Utilities" items={SECTION_MORE} />
         </div>
       </div>
