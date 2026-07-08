@@ -154,7 +154,20 @@ Public Sub ESABCC_BuildForms()
     End If
     If f > 0 Then Print #f, "  proj = " & proj.Name
 
-    If Not CompExists(proj, "frmESABCC_Search") Then
+    ' Rebuild the search form when it is missing OR when it still calls
+    ' SetFocus from UserForm_Initialize (no UserForm_Activate handler), which
+    ' raises run-time error 2110 on open because the form is not visible yet.
+    Dim needSearch As Boolean: needSearch = Not CompExists(proj, "frmESABCC_Search")
+    If Not needSearch Then
+        If FormMissingActivateHandler(proj, "frmESABCC_Search") Then
+            If f > 0 Then Print #f, "  removing stale frmESABCC_Search for rebuild"
+            On Error Resume Next
+            proj.VBComponents.Remove proj.VBComponents("frmESABCC_Search")
+            On Error GoTo Fail
+            needSearch = True
+        End If
+    End If
+    If needSearch Then
         If f > 0 Then Print #f, "  building frmESABCC_Search..."
         If Not BuildSearchForm(proj) Then
             Err.Raise 515, "ESABCC_BuildForms", "BuildSearchForm failed."
@@ -164,7 +177,18 @@ Public Sub ESABCC_BuildForms()
         Print #f, "  frmESABCC_Search already present"
     End If
 
-    If Not CompExists(proj, "frmESABCC_DOI") Then
+    ' Same 2110 staleness rebuild as the search form above.
+    Dim needDOI As Boolean: needDOI = Not CompExists(proj, "frmESABCC_DOI")
+    If Not needDOI Then
+        If FormMissingActivateHandler(proj, "frmESABCC_DOI") Then
+            If f > 0 Then Print #f, "  removing stale frmESABCC_DOI for rebuild"
+            On Error Resume Next
+            proj.VBComponents.Remove proj.VBComponents("frmESABCC_DOI")
+            On Error GoTo Fail
+            needDOI = True
+        End If
+    End If
+    If needDOI Then
         If f > 0 Then Print #f, "  building frmESABCC_DOI..."
         If Not BuildDOIForm(proj) Then
             Err.Raise 515, "ESABCC_BuildForms", "BuildDOIForm failed."
@@ -186,12 +210,14 @@ Public Sub ESABCC_BuildForms()
 
     ' Rebuild the workspace form when it is missing OR when it predates the
     ' chapter filter + summary preview (no txtSummary control) OR the per-row
-    ' citation count (narrow mark column), so existing installs pick the new
+    ' citation count (narrow mark column) OR it still calls SetFocus from
+    ' UserForm_Initialize (error 2110), so existing installs pick the new
     ' layout up too.
     Dim addedWorkspaceForm As Boolean: addedWorkspaceForm = False
     Dim needWorkspace As Boolean: needWorkspace = Not CompExists(proj, "frmESABCC_Workspace")
     If Not needWorkspace Then
-        If WorkspaceFormControlMissing(proj, "txtSummary") Or WorkspaceFormOutdated(proj) Then
+        If WorkspaceFormControlMissing(proj, "txtSummary") Or WorkspaceFormOutdated(proj) _
+           Or FormMissingActivateHandler(proj, "frmESABCC_Workspace") Then
             If f > 0 Then Print #f, "  removing stale frmESABCC_Workspace for rebuild"
             On Error Resume Next
             proj.VBComponents.Remove proj.VBComponents("frmESABCC_Workspace")
@@ -3463,9 +3489,32 @@ CleanExit:
     WorkspaceFormOutdated = False
 End Function
 
+' True only when the named form's code module is readable AND lacks a
+' UserForm_Activate handler. Pre-fix builds called SetFocus from
+' UserForm_Initialize, which raises run-time error 2110 because the form is
+' not visible yet; the fixed builds moved SetFocus into UserForm_Activate, so
+' its absence marks a stale form. An unreadable module returns False so we
+' never force a rebuild we could not perform anyway (mirrors
+' WorkspaceFormControlMissing).
+Private Function FormMissingActivateHandler(proj As Object, formName As String) As Boolean
+    FormMissingActivateHandler = False
+    On Error GoTo CleanExit
+    Dim comp As Object: Set comp = proj.VBComponents(formName)
+    If comp Is Nothing Then Exit Function
+    Dim cm As Object: Set cm = comp.CodeModule
+    If cm Is Nothing Then Exit Function
+    Dim sLine As Long, sCol As Long, eLine As Long, eCol As Long
+    sLine = 1: sCol = 1: eLine = -1: eCol = -1
+    FormMissingActivateHandler = Not cm.Find("UserForm_Activate", sLine, sCol, eLine, eCol, False, False, False)
+    Exit Function
+CleanExit:
+    FormMissingActivateHandler = False
+End Function
+
 Private Function EnsureFormsReady() As Boolean
-    ' Fast path: every piece already present (and the workspace form carries the
-    ' chapter filter + summary preview) -> nothing to do.
+    ' Fast path: every piece already present (the workspace form carries the
+    ' chapter filter + summary preview, and every form focuses from
+    ' UserForm_Activate rather than Initialize) -> nothing to do.
     On Error GoTo FormErr
     Dim proj As Object: Set proj = GetVBProject()
     If proj Is Nothing Then GoTo FormErr
@@ -3475,7 +3524,10 @@ Private Function EnsureFormsReady() As Boolean
        And CompExists(proj, "frmESABCC_Workspace") _
        And CompExists(proj, "ESABCCHelper") _
        And Not WorkspaceFormControlMissing(proj, "txtSummary") _
-       And Not WorkspaceFormOutdated(proj) Then
+       And Not WorkspaceFormOutdated(proj) _
+       And Not FormMissingActivateHandler(proj, "frmESABCC_Search") _
+       And Not FormMissingActivateHandler(proj, "frmESABCC_DOI") _
+       And Not FormMissingActivateHandler(proj, "frmESABCC_Workspace") Then
         EnsureFormsReady = True
         Exit Function
     End If
@@ -3682,8 +3734,14 @@ Private Function BuildSearchForm(proj As Object) As Boolean
         "        Me.btnDone.Visible = False" & vbCrLf & _
         "    End If" & vbCrLf & _
         "    ESABCC_RefManager.FormBridge_LoadProjects Me.cmbProject" & vbCrLf & _
-        "    Me.txtSearch.SetFocus" & vbCrLf & _
         "    mReady = True" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    ' SetFocus must wait for Activate: Initialize fires before the form is
+    ' visible (even a Caption assignment instantiates it), and focusing an
+    ' invisible control raises run-time error 2110.
+    s = s & "Private Sub UserForm_Activate()" & vbCrLf & _
+        "    On Error Resume Next" & vbCrLf & _
+        "    Me.txtSearch.SetFocus" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub btnSearch_Click()" & vbCrLf & _
         "    Me.lblStatus.Caption = ""Searching...""" & vbCrLf & _
@@ -3929,6 +3987,11 @@ Private Function BuildWorkspaceForm(proj As Object) As Boolean
         "    mBusy = False" & vbCrLf & _
         "    mReady = True" & vbCrLf & _
         "    If Me.cmbProject.ListCount > 0 Then RunSearch" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    ' SetFocus must wait for Activate: Initialize fires before the form is
+    ' visible, and focusing an invisible control raises run-time error 2110.
+    s = s & "Private Sub UserForm_Activate()" & vbCrLf & _
+        "    On Error Resume Next" & vbCrLf & _
         "    Me.txtSearch.SetFocus" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub RunSearch()" & vbCrLf & _
@@ -4106,8 +4169,13 @@ Private Function BuildDOIForm(proj As Object) As Boolean
     ' Inject event handler code
     Dim s As String
     s = "Private Sub UserForm_Initialize()" & vbCrLf & _
-        "    Me.txtDOI.SetFocus" & vbCrLf & _
         "    Me.btnInsert.Enabled = False" & vbCrLf & _
+        "End Sub" & vbCrLf & vbCrLf
+    ' SetFocus must wait for Activate: Initialize fires before the form is
+    ' visible, and focusing an invisible control raises run-time error 2110.
+    s = s & "Private Sub UserForm_Activate()" & vbCrLf & _
+        "    On Error Resume Next" & vbCrLf & _
+        "    Me.txtDOI.SetFocus" & vbCrLf & _
         "End Sub" & vbCrLf & vbCrLf
     s = s & "Private Sub btnLookup_Click()" & vbCrLf & _
         "    ESABCC_RefManager.FormBridge_DOILookup Me.txtDOI.Value, Me.txtPreview, Me.btnInsert, Me.lblStatus" & vbCrLf & _
