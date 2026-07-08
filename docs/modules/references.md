@@ -155,10 +155,10 @@ tag  "project:Policy Gap 2.0"   ⇄   project name  "Policy Gap 2.0"
 The helper module
 [`src/lib/references/projects.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/references/projects.ts)
 owns the convention (`splitTags`, `combineTags`, `aggregateProjects`,
-`referenceInProject`). Both reference forms surface a dedicated
-**Report / Project** field (separate from free tags, with autocomplete
-over existing projects), and adding a reference while a project view is
-active pre-fills that report.
+`referenceInProject`). Tags and project membership are edited in the
+**Project Workspace** rather than in the reference forms; adding a
+reference while a project view is active still files it under that
+report automatically.
 
 Three places consume it:
 

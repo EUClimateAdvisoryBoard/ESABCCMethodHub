@@ -4,16 +4,14 @@ import { useState } from 'react';
 import { Reference, CSLItem, CSLName, CSLItemType, ITEM_TYPE_LABELS, FundingEntry, isEuFunder } from '@/lib/references/types';
 import { buildCSLJson, fieldsForType } from '@/lib/references/citation-utils';
 import { addReference, updateReference } from '@/lib/references/reference-service';
-import { splitTags, combineTags, parseCommaList } from '@/lib/references/projects';
+import { toProjectTag } from '@/lib/references/projects';
 
 interface ReferenceFormProps {
   libraryId: string;
   editingRef?: Reference | null;
   onSaved: () => void;
   onCancel: () => void;
-  /** Existing project names across the library, for autocomplete. */
-  knownProjects?: string[];
-  /** Pre-fill the project field when adding inside an active project view. */
+  /** File new references under this project when adding inside an active project view. */
   defaultProject?: string;
 }
 
@@ -37,14 +35,8 @@ function parseDisplayedFunding(text: string): FundingEntry[] {
     .filter(f => f.name);
 }
 
-export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel, knownProjects = [], defaultProject = '' }: ReferenceFormProps) {
+export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel, defaultProject = '' }: ReferenceFormProps) {
   const csl = editingRef?.csl_json;
-  // Project tags ("project:<report>") are kept out of the free-tags field and
-  // edited in their own input, so the report context stays a first-class idea.
-  const initialTags = splitTags(editingRef?.tags);
-  // When adding inside an active project view, seed that report so new
-  // literature is filed under it by default.
-  const initialProjects = editingRef ? initialTags.projects : (defaultProject ? [defaultProject] : []);
 
   const [itemType, setItemType] = useState<CSLItemType>(csl?.type || 'article-journal');
   const [title, setTitle] = useState(csl?.title || '');
@@ -60,8 +52,6 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
   const [publisher, setPublisher] = useState(csl?.publisher || '');
   const [url, setUrl] = useState(csl?.URL || '');
   const [abstract, setAbstract] = useState(csl?.abstract || '');
-  const [tagsText, setTagsText] = useState(initialTags.plain.join(', '));
-  const [projectsText, setProjectsText] = useState(initialProjects.join(', '));
   const [notes, setNotes] = useState(editingRef?.notes || '');
   // ── Type-specific fields ──
   const [institution, setInstitution] = useState(
@@ -139,7 +129,12 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
         funding,
       });
 
-      const tags = combineTags(parseCommaList(tagsText), parseCommaList(projectsText));
+      // Tags and project membership are managed in the Project Workspace, not
+      // here — preserve whatever the reference already carries. New references
+      // added inside an active project view are still filed under that report.
+      const tags = editingRef
+        ? (editingRef.tags || [])
+        : (defaultProject.trim() ? [toProjectTag(defaultProject)] : []);
 
       if (editingRef) {
         cslJson.id = editingRef.citation_key || editingRef.id;
@@ -316,27 +311,6 @@ export default function ReferenceForm({ libraryId, editingRef, onSaved, onCancel
         </div>
 
         <div className="col-span-2">
-          <label className="block text-sm text-tertiary mb-1">
-            Report / Project{' '}
-            <span className="text-[10px] text-tertiary">
-              (comma-separated — the report this reference is used in, e.g. <code>Policy Gap 2.0</code>)
-            </span>
-          </label>
-          <input value={projectsText} onChange={e => setProjectsText(e.target.value)}
-            list="reference-form-known-projects"
-            className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-tertiary-dark"
-            placeholder="Policy Gap 2.0" />
-          <datalist id="reference-form-known-projects">
-            {knownProjects.map(p => <option key={p} value={p} />)}
-          </datalist>
-        </div>
-        <div>
-          <label className="block text-sm text-tertiary mb-1">Tags (comma-separated)</label>
-          <input value={tagsText} onChange={e => setTagsText(e.target.value)}
-            className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-tertiary-dark"
-            placeholder="climate, EU, emissions" />
-        </div>
-        <div>
           <label className="block text-sm text-tertiary mb-1">Notes</label>
           <input value={notes} onChange={e => setNotes(e.target.value)}
             className="w-full bg-grey-100 border border-grey-200 rounded px-3 py-2 text-tertiary-dark" />
