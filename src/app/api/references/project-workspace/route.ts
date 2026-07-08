@@ -46,6 +46,9 @@ import type { CorpusDocMeta } from '@/lib/content-analysis/types';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
+// Belt-and-braces with the no-store Supabase fetch: never let any fetch made
+// while serving this route be answered from the persistent data cache.
+export const fetchCache = 'force-no-store';
 
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
@@ -527,6 +530,50 @@ export async function GET(request: NextRequest) {
   const chapterFilter = params.get('chapter') || '';
   const query = params.get('q') || '';
   const limit = Math.min(parseInt(params.get('limit') || '500') || 500, 2000);
+
+  // Operational diagnostics: report what this deployment actually reads from
+  // the corpus store, so a "picker shows N docs but lists far fewer" report
+  // can be triaged against live data without dashboard access. Read-only and
+  // shape-stable; safe to expose (ids + counts only, no document content).
+  if (facet === 'debug') {
+    const pid = projectId || 'industry-project';
+    const debug: Record<string, unknown> = { marker: 'ws-debug-1', projectId: pid };
+    try {
+      const entries = await getCaCorpus(pid);
+      debug.rawCount = entries.length;
+      debug.metaCount = entries.filter(e => !!e.meta).length;
+      const byPrefix: Record<string, number> = {};
+      for (const e of entries) {
+        const b = e.documentId.startsWith('reading-') ? 'reading'
+          : e.documentId.startsWith(REF_DOC_PREFIX) ? 'ref-doc' : 'other';
+        byPrefix[b] = (byPrefix[b] ?? 0) + 1;
+      }
+      debug.byPrefix = byPrefix;
+      debug.firstIds = entries.slice(0, 3).map(e => e.documentId);
+      debug.lastIds = entries.slice(-3).map(e => e.documentId);
+    } catch (err) {
+      debug.getCaCorpusError = err instanceof Error ? err.message : String(err);
+    }
+    try {
+      const sb = getServerSupabase();
+      debug.hasSupabase = !!sb;
+      if (sb) {
+        const { data, error } = await sb
+          .from('content_analysis_corpus')
+          .select('document_id, doc_meta')
+          .eq('project_id', pid)
+          .limit(5000);
+        debug.directRows = data ? data.length : null;
+        debug.directMetaRows = data
+          ? (data as Array<{ doc_meta: unknown }>).filter(r => !!r.doc_meta).length
+          : null;
+        debug.directError = error ? error.message : null;
+      }
+    } catch (err) {
+      debug.directException = err instanceof Error ? err.message : String(err);
+    }
+    return NextResponse.json(debug, { headers: CORS_HEADERS });
+  }
 
   if (facet === 'projects') {
     const [corpusProjects, wsProjects] = await Promise.all([listCaCorpusProjects(), loadWorkspaceProjects()]);
