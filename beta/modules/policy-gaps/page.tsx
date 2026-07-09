@@ -18,6 +18,8 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
+import ExcelJS from 'exceljs';
+import { saveAs } from 'file-saver';
 import SiteHeader from '@/components/SiteHeader';
 import PageHero from '@/components/PageHero';
 import {
@@ -212,11 +214,6 @@ export default function PolicyGapsPage() {
   async function exportExcel() {
     setExporting(true);
     try {
-      const [{ default: ExcelJS }, { saveAs }] = await Promise.all([
-        import('exceljs'),
-        import('file-saver'),
-      ]);
-
       const wb = new ExcelJS.Workbook();
       wb.creator = 'ESABCC Method Hub — Policy Gap Tracker';
       wb.created = new Date();
@@ -301,12 +298,15 @@ export default function PolicyGapsPage() {
 
       const buffer = await wb.xlsx.writeBuffer();
       const stamp = new Date().toISOString().slice(0, 10);
-      saveAs(
-        new Blob([buffer], {
-          type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        }),
-        `esabcc-policy-gaps_${stamp}.xlsx`,
-      );
+      const blob = new Blob([buffer], {
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      });
+      saveAs(blob, `esabcc-policy-gaps_${stamp}.xlsx`);
+    } catch (err) {
+      console.error('Policy-gaps Excel export failed', err);
+      if (typeof window !== 'undefined') {
+        window.alert(`Excel export failed: ${(err as Error)?.message ?? 'unknown error'}`);
+      }
     } finally {
       setExporting(false);
     }
