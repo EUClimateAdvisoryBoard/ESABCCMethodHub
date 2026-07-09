@@ -77,7 +77,7 @@ const EMPTY_DRAFT: Omit<PolicyGap, 'reportStatus'> = {
   title: '',
   description: '',
   instrument: '',
-  recommendation: '',
+  quote: '',
   reference: '',
   currentStatus: 'open',
   statusNote: '',
@@ -148,7 +148,7 @@ export default function PolicyGapsPage() {
         g.title.toLowerCase().includes(needle) ||
         g.description.toLowerCase().includes(needle) ||
         g.instrument.toLowerCase().includes(needle) ||
-        g.recommendation.toLowerCase().includes(needle) ||
+        g.quote.toLowerCase().includes(needle) ||
         g.statusNote.toLowerCase().includes(needle)
       );
     });
@@ -227,10 +227,10 @@ export default function PolicyGapsPage() {
         { header: 'Sector', key: 'sector', width: 20 },
         { header: 'Gap type', key: 'type', width: 18 },
         { header: 'Title', key: 'title', width: 42 },
-        { header: 'Finding (report)', key: 'description', width: 70 },
+        { header: 'Finding', key: 'description', width: 60 },
+        { header: 'Exact report quote', key: 'quote', width: 75 },
         { header: 'EU instrument(s)', key: 'instrument', width: 40 },
-        { header: 'Board recommendation', key: 'recommendation', width: 55 },
-        { header: 'Report reference', key: 'reference', width: 26 },
+        { header: 'Report reference', key: 'reference', width: 30 },
         { header: 'Report baseline', key: 'reportStatus', width: 16 },
         { header: 'Still exists? (current)', key: 'currentStatus', width: 22 },
         { header: 'Status note', key: 'statusNote', width: 50 },
@@ -257,8 +257,8 @@ export default function PolicyGapsPage() {
           type: GAP_TYPE_META[g.type].label,
           title: g.title,
           description: g.description,
+          quote: g.quote,
           instrument: g.instrument,
-          recommendation: g.recommendation,
           reference: g.reference,
           reportStatus: 'Open (Jan 2025)',
           currentStatus: statusLabel[g.currentStatus],
@@ -526,10 +526,12 @@ export default function PolicyGapsPage() {
                 </select>
               </label>
               <label className="text-[12px] font-medium sm:col-span-2 lg:col-span-3">
-                Recommendation
-                <input
-                  value={draft.recommendation}
-                  onChange={(e) => setDraft({ ...draft, recommendation: e.target.value })}
+                Exact report quote (optional)
+                <textarea
+                  value={draft.quote}
+                  onChange={(e) => setDraft({ ...draft, quote: e.target.value })}
+                  rows={2}
+                  placeholder="Paste the verbatim sentence from the report, if any"
                   className="mt-1 w-full rounded border border-[#D6DAE0] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1.5 text-[13px] font-normal"
                 />
               </label>
@@ -584,13 +586,10 @@ export default function PolicyGapsPage() {
                       <div className="mt-1 text-[12px] text-[#3D5265]/80 dark:text-[var(--mh-muted)]">
                         {g.description}
                       </div>
-                      {g.recommendation && (
-                        <div className="mt-1 text-[12px]">
-                          <span className="text-[#007B6C] font-semibold">➔ </span>
-                          <span className="text-[#3D5265]/80 dark:text-[var(--mh-muted)]">
-                            {g.recommendation}
-                          </span>
-                        </div>
+                      {g.quote && (
+                        <blockquote className="mt-2 border-l-2 border-[#00928F]/60 pl-2 text-[12px] italic text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
+                          “{g.quote}”
+                        </blockquote>
                       )}
                       {g.reference && (
                         <div className="mt-1 text-[11px] uppercase tracking-wide text-[#3D5265]/50 dark:text-[var(--mh-muted)]">
@@ -676,10 +675,14 @@ export default function PolicyGapsPage() {
         </div>
 
         <p className="mt-4 text-[12px] text-[#3D5265]/60 dark:text-[var(--mh-muted)] max-w-3xl">
-          Baseline: the Advisory Board judged every listed gap <strong>open</strong> at the
-          January-2025 report. The “Still exists?” column and notes are a live working record —
-          edits and added rows are saved in your browser only. Use <em>Export Excel</em> to share a
-          snapshot, or <em>Reset</em> to return to the report baseline.
+          Provenance: every listed gap is a finding the report explicitly tags as a policy,
+          ambition or implementation gap (or inconsistency). The italic quote under each is the{' '}
+          <strong>verbatim sentence</strong> copied from the report, with the exact chapter and
+          page; the finding text is a light paraphrase of that quote. Baseline: the Board judged
+          every gap <strong>open</strong> at the January-2025 report. The “Still exists?” column and
+          notes are a live working record — edits and added rows are saved in your browser only. Use{' '}
+          <em>Export Excel</em> to share a snapshot, or <em>Reset</em> to return to the report
+          baseline.
         </p>
       </main>
     </div>
