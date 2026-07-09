@@ -1,26 +1,32 @@
 {
   "date": "2026-07-09",
-  "generatedAt": "2026-07-09T00:10:55.126Z",
+  "generatedAt": "2026-07-09T13:54:01.705Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 9 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Highlights - Exchange of views with the Commission on the environmental protection in Albania - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260701PHT46239/20260701PHT46239-ms.jpeg\" width=\"180\" alt=\"environmental protection areas\" title=\"picture flamingos.jpeg © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI members will hold an exchange of views on the ongoing accession negotiations of Chapter 27 dedicated to environment and climate change. This exchange of views",
+      "headline": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v02-00",
+      "summary": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "Sizewell B nuclear power plant granted a 20-year life extension",
-      "summary": "&lt;p&gt;Extension comes as government encourages first nuclear power projects in a generation to meet UK’s growing need for electricity&lt;/p&gt;&lt;p&gt;Britain’s most recently completed nuclear power plant will continue generating electricity until 2055 after the government granted the power plant, which was first synchronised with the National Grid in 1995, a 20-year life extension.&lt;/p&gt;&lt;p&gt;Sizewell B in Suffolk was due to shut down within the next decade, but under a deal with the",
+      "headline": "India looks to untapped graphite riches for slice of critical minerals boom",
+      "summary": "Clean energy demand for battery-grade graphite is surging, but India faces hurdles as it positions itself to compete with China's grip on the supply chain The post India looks to untapped graphite riches for slice of critical minerals boom appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "European countries top ‘scorecard’ on climate progress while US slips to 27th",
-      "summary": "&lt;p&gt;Estonia, Luxembourg and UK are the top three in biennial Yale University index in tackling pollution and other issues&lt;/p&gt;&lt;p&gt;Much of the world has made encouraging strides in reducing toxic problems such as water and air pollution that have long plagued communities. But there is still a widespread lack of progress among countries in dealing with the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt;, according to the latest edition",
+      "headline": "College of Commissioners meets with the Irish Presidency: “Europe needs to navigate change. Ireland can help chart the course”, says von der Leyen",
+      "summary": "European Commission News Brussels, 09 Jul 2026 \r\nPresident of the European Commission, Ursula von der Leyen, led the College of Commissioners to Cork on 2–3 July, the traditional College visit the Commission ...",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034 - PE790.778v01-00",
+      "summary": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -29,20 +35,12 @@
       "title": "EU Policy & Legislation",
       "items": [
         {
-          "title": "Highlights - Exchange of views with the Commission on the environmental protection in Albania - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79253",
+          "title": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v02-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789913_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260701PHT46239/20260701PHT46239-ms.jpeg\" width=\"180\" alt=\"environmental protection areas\" title=\"picture flamingos.jpeg © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI members will hold an exchange of views on the ongoing accession negotiations of Chapter 27 dedicated to environment and climate change. This exchange of views",
-          "published": "2026-07-08T07:09:40.000Z",
-          "score": 24
-        },
-        {
-          "title": "Highlights - ENVI vote on the opinion on the European Regional Development Fund - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79251",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20201124PHT92310/20201124PHT92310-ms.png\" width=\"180\" alt=\"environment, countryside, green deal\" title=\"Green Deal.png © image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July2026, ENVI Members will vote on the draft opinion on the future framework of the European Regional Development Fund (ERDF). The file was attributed to REGI as lead committ",
-          "published": "2026-07-08T07:09:30.000Z",
-          "score": 24
+          "description": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
+          "published": "2026-07-09T09:25:08.000Z",
+          "score": 27
         }
       ]
     },
@@ -51,27 +49,35 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "India looks to untapped graphite riches for slice of critical minerals boom",
+          "link": "https://www.climatechangenews.com/2026/07/09/india-looks-to-untapped-graphite-riches-for-slice-of-critical-minerals-boom/",
+          "source": "Climate Home News",
+          "description": "Clean energy demand for battery-grade graphite is surging, but India faces hurdles as it positions itself to compete with China's grip on the supply chain The post India looks to untapped graphite riches for slice of critical minerals boom appeared first on Climate Home News.",
+          "published": "2026-07-09T05:00:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "Experimental bathtub: the remote lake island trying wave power to boost energy security",
+          "link": "https://www.theguardian.com/environment/2026/jul/09/remote-island-wave-power-energy-security-beaver-island-lake-michigan",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Researchers on Beaver Island, in Lake Michigan, are trying to find a more reliable form of power using local resources&lt;/p&gt;&lt;p&gt;Beaver Island sits in the middle of the northernmost end of Lake Michigan, about 70 miles from the maritime border with Canada. The forested island, just a little bigger than San Francisco in size, is a popular summer destination for tourists and home to about 600 permanent residents. Getting there requires a boat or plane ride.&lt;/p&gt;&lt;p&gt;Getti",
+          "published": "2026-07-09T13:00:01.000Z",
+          "score": 7
+        },
+        {
           "title": "Sizewell B nuclear power plant granted a 20-year life extension",
           "link": "https://www.theguardian.com/environment/2026/jul/08/sizewell-b-nuclear-power-plant-granted-a-20-year-life-extension",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Extension comes as government encourages first nuclear power projects in a generation to meet UK’s growing need for electricity&lt;/p&gt;&lt;p&gt;Britain’s most recently completed nuclear power plant will continue generating electricity until 2055 after the government granted the power plant, which was first synchronised with the National Grid in 1995, a 20-year life extension.&lt;/p&gt;&lt;p&gt;Sizewell B in Suffolk was due to shut down within the next decade, but under a deal with the",
+          "description": "&lt;p&gt;Extension comes as government encourages first nuclear power projects in a generation to meet UK’s growing need for electricity&lt;/p&gt;&lt;p&gt;Britain’s most recently completed nuclear power plant will continue generating electricity until 2055 after the government granted the power plant a 20-year life extension.&lt;/p&gt;&lt;p&gt;Sizewell B in Suffolk was due to shut down within the next decade, but under a deal with the government its lifetime will be extended to 60 years to help ",
           "published": "2026-07-08T21:30:42.000Z",
           "score": 7
         },
         {
-          "title": "Jackdaw owner says gas field will 'not materially influence' climate change",
-          "link": "https://www.bbc.co.uk/news/articles/cly85e2z2n4o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The new assessment was required by the industry regulator, after it found several areas had not been adequately addressed in a previous submission.",
-          "published": "2026-07-08T12:59:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "US judge approves Elon Musk settlement with SEC despite misgivings, 'red flags' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNMWx6TmhtdlhCOU1YMkdmQWpLUkVkSl9DcjZUTnMyT01BYXVEdUtJX0pkRE40Y2ExZ01tTlpQR2pyUmFIdVBNRmJkNldadDZpTDl4OGZUNjVudUJCRVZaMlFIci1DMnVsRzdjcTgzbnJzUTB1aUJQODZSS3dOVVJENm43blFROS14cDFiVGhaVjk1RUpMYnhlVmdQUnN2SW5mdWxfOVE4aTZkVVkwSE1VUF9WREE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNMWx6TmhtdlhCOU1YMkdmQWpLUkVkSl9DcjZUTnMyT01BYXVEdUtJX0pkRE40Y2ExZ01tTlpQR2pyUmFIdVBNRmJkNldadDZpTDl4OGZUNjVudUJCRVZaMlFIci1DMnVsRzdjcTgzbnJzUTB1aUJQODZSS3dOVVJENm43blFROS14cDFiVGhaVjk1RUpMYnhlVmdQUnN2SW5mdWxfOVE4aTZkVVkwSE1VUF9WREE?oc=5\" target=\"_blank\"&gt;US judge approves Elon Musk settlement with SEC despite misgivings, 'red flags'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T21:41:48.000Z",
+          "title": "Iran launches more strikes after accusing US of striking near nuclear plant",
+          "link": "https://www.bbc.co.uk/news/articles/cz75zjj5wp8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Centcom says it hit 90 Iranian targets in the latest round of strikes, with the Iranian health ministry saying 14 people were killed since Tuesday.",
+          "published": "2026-07-09T13:29:56.000Z",
           "score": 7
         },
         {
@@ -79,16 +85,8 @@
           "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYzV1dno2TWdtTU5IX1BDbkNjU3lFVmpSRG1PM2FyX2hMNXZZQ2dsWkJHWGNtT3NLQUF0ZDVmaEZnLXlrdkZHRkh3Tjh3cVRTM0tZNDNJSDQzR092YlUxQnBLYm5vamxWanlDWG5RamNMYkRoV1d4R1R6bFAwcXRaNkN3d2NwS2thOXJTN0dnNWF0M2ZJUkxZMzJTRjJnVEhCQ0tFeFNMUGVBNlZSM0dieE05SzRDXzdfdEE?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxQYzV1dno2TWdtTU5IX1BDbkNjU3lFVmpSRG1PM2FyX2hMNXZZQ2dsWkJHWGNtT3NLQUF0ZDVmaEZnLXlrdkZHRkh3Tjh3cVRTM0tZNDNJSDQzR092YlUxQnBLYm5vamxWanlDWG5RamNMYkRoV1d4R1R6bFAwcXRaNkN3d2NwS2thOXJTN0dnNWF0M2ZJUkxZMzJTRjJnVEhCQ0tFeFNMUGVBNlZSM0dieE05SzRDXzdfdEE?oc=5\" target=\"_blank\"&gt;How Iran's 'golden weapon' of Hormuz became a bigger priority than its long-disputed nuclear programme&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt",
-          "published": "2026-07-08T16:21:39.000Z",
+          "published": "2026-07-08T16:17:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Four oil and gas tankers turn back from Hormuz strait after vessel attacks - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGg0M1U4ckhfRFJKQTRnZjUwSFFHZWlrX0U0dHJXT2hDMkE3NzItM19WT2d1QmZPdUg4c3hsQmJ1NFgzeTl1RnpUTlpYeUdKdTVLRnh1WUIzbFplcW1ESl9WOUMyOFpoNndlcmZ2czBzVXJJWTlVbjZ5U294SWMxdnhLaHpGNnE3UU1WR3dROC1oTkxXOEEwT0xYVnFzLXNpNnYxclc3UUoxd3REUkx2YWQzNWtqWm5JaFJF?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUGg0M1U4ckhfRFJKQTRnZjUwSFFHZWlrX0U0dHJXT2hDMkE3NzItM19WT2d1QmZPdUg4c3hsQmJ1NFgzeTl1RnpUTlpYeUdKdTVLRnh1WUIzbFplcW1ESl9WOUMyOFpoNndlcmZ2czBzVXJJWTlVbjZ5U294SWMxdnhLaHpGNnE3UU1WR3dROC1oTkxXOEEwT0xYVnFzLXNpNnYxclc3UUoxd3REUkx2YWQzNWtqWm5JaFJF?oc=5\" target=\"_blank\"&gt;Four oil and gas tankers turn back from Hormuz strait after vessel attacks&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T12:01:57.000Z",
-          "score": 2
         }
       ]
     },
@@ -97,11 +95,27 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "European countries top ‘scorecard’ on climate progress while US slips to 27th",
-          "link": "https://www.theguardian.com/environment/2026/jul/08/climate-change-crisis-europe-us",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Estonia, Luxembourg and UK are the top three in biennial Yale University index in tackling pollution and other issues&lt;/p&gt;&lt;p&gt;Much of the world has made encouraging strides in reducing toxic problems such as water and air pollution that have long plagued communities. But there is still a widespread lack of progress among countries in dealing with the &lt;a href=\"https://www.theguardian.com/environment/climate-crisis\"&gt;climate crisis&lt;/a&gt;, according to the latest edition",
-          "published": "2026-07-08T10:00:27.000Z",
+          "title": "College of Commissioners meets with the Irish Presidency: “Europe needs to navigate change. Ireland can help chart the course”, says von der Leyen",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ac_26_1574",
+          "source": "European Commission",
+          "description": "European Commission News Brussels, 09 Jul 2026 \r\nPresident of the European Commission, Ursula von der Leyen, led the College of Commissioners to Cork on 2–3 July, the traditional College visit the Commission ...",
+          "published": "2026-07-09T11:28:56.000Z",
+          "score": 18
+        },
+        {
+          "title": "Interview: Dr Sun Yixian on his new database tracking Chinese climate ‘leadership’",
+          "link": "https://www.carbonbrief.org/interview-dr-sun-yixian-on-his-new-database-tracking-chinese-climate-leadership/",
+          "source": "Carbon Brief",
+          "description": "The number of global climate initiatives launched or run by China has been growing since... The post Interview: Dr Sun Yixian on his new database tracking Chinese climate ‘leadership’ appeared first on Carbon Brief.",
+          "published": "2026-07-09T12:13:49.000Z",
+          "score": 13
+        },
+        {
+          "title": "The loss and damage fund needs far more finance to deliver climate justice",
+          "link": "https://www.climatechangenews.com/2026/07/09/the-loss-and-damage-fund-needs-far-more-finance-to-deliver-climate-justice/",
+          "source": "Climate Home News",
+          "description": "The fledgling fund must also help vulnerable communities take action to recover from disasters by giving them direct access to grants The post The loss and damage fund needs far more finance to deliver climate justice appeared first on Climate Home News.",
+          "published": "2026-07-09T09:11:34.000Z",
           "score": 13
         },
         {
@@ -119,57 +133,58 @@
           "description": "Global efforts to ensure AI does more good than harm must consider how it could fuel exploitation of biodiversity and ecosystems, conservationists say The post AI governance debate silent on risks to nature, campaigners warn appeared first on Climate Home News.",
           "published": "2026-07-08T14:13:42.000Z",
           "score": 10
-        },
-        {
-          "title": "Unions in Europe press for new worker protections to counter heat stress",
-          "link": "https://www.theguardian.com/environment/2026/jul/08/unions-europe-worker-protections-heat-stress-climate-crisis",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Climate crisis prompts calls for workplace temperature limits and rights to heat breaks and adjusted working hours&lt;/p&gt;&lt;p&gt;As Europe’s sweltering summer continues, trades unions are mounting a push for new laws to counter deadly heat stress that is linked to an estimated 230 workplace deaths a year.&lt;/p&gt;&lt;p&gt;This year’s toll may be even higher, with 1,300 excess European deaths already connected to the June heatwave &lt;a href=\"https://www.bbc.com/news/articles/cn4d2v",
-          "published": "2026-07-08T11:00:52.000Z",
-          "score": 10
-        },
-        {
-          "title": "‘We won’t give up, we’ll keep fighting’: activists in Colombia vow to resist far-right push for fossil fuels",
-          "link": "https://www.theguardian.com/global-development/2026/jul/08/activists-colombia-resist-far-right-fossil-fuels",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;As the newly elected president, Abelardo de la Espriella, pledges to exploit oil reserves, environmentalists prepare to defend climate progress&lt;/p&gt;&lt;p&gt;It is hard for Yuvelis Morales Blanco to pinpoint when her activism started. Now 25, she recalls getting involved in land rights and environmental issues in Santander, northern &lt;a href=\"https://www.theguardian.com/world/colombia\"&gt;Colombia&lt;/a&gt;, from a young age. Living near water, she says, has always shaped her conn",
-          "published": "2026-07-08T11:00:52.000Z",
-          "score": 7
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034 - PE790.778v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-790778_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council establishing the conditions for the implementation of the Union support to the Common Fisheries Policy, to the European Ocean Pact and of the Union’s maritime and aquaculture policy as part of the National and Regional Partnership Fund set out in Regulation (EU) […] [NRP Fund] for the period from 2028 to 2034&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt",
+          "published": "2026-07-09T09:03:01.000Z",
+          "score": 22
+        },
+        {
+          "title": "Australia's largest pension fund invests A$500 million in India's infrastructure fund - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNRldWYVFiNS1DWWxPaUZXbENRTDhlQzVTMkNmOW9sZjhUTk1NdnRGOEx4azZHWEp5Z1NyalZMZ1JBdXF0MUNGSGpJTEhOdFR0aktXZkRyNzNnMGZLaU1Ia0tOcHZ4STdURjBRbnZBc01wZGpobUNEVlphUnByTUZPcWZKVWNOMFBuS3lLS1dhX1MtWTNKLXBPbkRYRGVoRGlIT0ZBa1hzdEE1WUVsaU9zMkloOFg3bnlkM1dRUUxlMy1TTU9Jd3c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxNRldWYVFiNS1DWWxPaUZXbENRTDhlQzVTMkNmOW9sZjhUTk1NdnRGOEx4azZHWEp5Z1NyalZMZ1JBdXF0MUNGSGpJTEhOdFR0aktXZkRyNzNnMGZLaU1Ia0tOcHZ4STdURjBRbnZBc01wZGpobUNEVlphUnByTUZPcWZKVWNOMFBuS3lLS1dhX1MtWTNKLXBPbkRYRGVoRGlIT0ZBa1hzdEE1WUVsaU9zMkloOFg3bnlkM1dRUUxlMy1TTU9Jd3c?oc=5\" target=\"_blank\"&gt;Australia's largest pension fund invests A$500 million in India's infrastructure fund&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;",
+          "published": "2026-07-08T23:17:39.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Missions - Parliament delegation to join 2026 UN High-Level Political Forum - 13-07-2026 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260708MIS04223",
+          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council Establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities - PE790.742v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-790742_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20220601PHT31915/20220601PHT31915-ms.jpeg\" width=\"180\" alt=\"SDGs around plant\" title=\"Sustainable Development Goals.jpeg © Image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;A delegation of 10 Members of the European Parliament's Development (DEVE) and Environment (ENVI) Committees will travel to New York from 13 to 15 July to participate in the 2026 ",
-          "published": "2026-07-08T10:27:45.000Z",
+          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council Establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-09T04:43:03.000Z",
           "score": 22
         },
         {
-          "title": "AMENDMENTS 1 - 62 - Draft opinion Guidelines for the 2027 budget – Section III - PE790.844v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790844_EN.pdf",
+          "title": "AMENDMENTS 17 - 94 - Draft report Suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste - PE790.771v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790771_EN.pdf",
           "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 1 - 62 - Draft opinion Guidelines for the 2027 budget – Section III&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-08T07:33:02.000Z",
+          "description": "AMENDMENTS 17 - 94 - Draft report Suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Ingeborg Ter Laak&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-09T07:03:01.000Z",
           "score": 18
         },
         {
-          "title": "Highlights - Vote on the outcome of the negotiations on the Chemical Omnibus (together with IMCO) - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79250",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20200609PHT80818/20200609PHT80818-ms.bmp\" width=\"180\" alt=\"chemicals\" title=\"chemicals © AdobeStock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI and IMCO Members will vote on the provisional agreement resulting from interinstitutional negotiations on simplification of certain requirements and procedures for chemical products (Chemical Omnibus). &lt;/div&gt;&lt;br /&gt;",
-          "published": "2026-07-08T07:09:25.000Z",
-          "score": 18
+          "title": "Merz: Germany agreed to buy Tomahawk missiles at NATO summit",
+          "link": "https://www.dw.com/en/merz-germany-agreed-to-buy-tomahawk-missiles-at-nato-summit/a-77884596?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Chancellor Friedrich Merz has informed the Bundestag parliament of a deal to buy US Tomahawk cruise missiles and station them in Germany. He said this closed a &quot;important strategic ‌gap ​in our defense.&quot;",
+          "published": "2026-07-09T09:48:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -178,27 +193,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Apple loses challenges against EU rules to curb Big Tech - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5",
+          "title": "Binance maintains commitment to EU, seeking more licences in Asia - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOM0puYWdlUjdCX2NCbU1wTVZtcV91ekpvOGFWcDlObFE1OXdIYjZSaGczY3ZyRmRSbDRFcF9Pc2VOWV8xejlFR0poVWFjM3R5X29DRzhIcWtRRk1wUkFNanNyQkk5Z0ZmajFNMUtYZlNWN1dwTFdGN0xPZHRha1ZLelBIU1A3NjU1UFVjWHI3OVdYZE1qMXZCX3JsQzVoZWdGTUowUHJYN2g4WkRxZ25weThR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQazF0N18xbUhlbjE2c054Q20xRDJ1VEZUR3pyMHVqY09oMXNvZGJiNVNnMTJwNkx3ekplTU8tczR1MU9PM3pMTWNnN2VYeDVYc3dsYjJfalBiaGNWMVNxV0VQX3paeFlxYUdKeU1xSmtGNnVPcnVfcHFZUXdqc2thLThqbWluM3pHSFBsMndfNk9mUHpHOWNrQ2JzczhRajVOdElpSjBDaGE0U3VmNnc?oc=5\" target=\"_blank\"&gt;Apple loses challenges against EU rules to curb Big Tech&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T12:09:14.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOM0puYWdlUjdCX2NCbU1wTVZtcV91ekpvOGFWcDlObFE1OXdIYjZSaGczY3ZyRmRSbDRFcF9Pc2VOWV8xejlFR0poVWFjM3R5X29DRzhIcWtRRk1wUkFNanNyQkk5Z0ZmajFNMUtYZlNWN1dwTFdGN0xPZHRha1ZLelBIU1A3NjU1UFVjWHI3OVdYZE1qMXZCX3JsQzVoZWdGTUowUHJYN2g4WkRxZ25weThR?oc=5\" target=\"_blank\"&gt;Binance maintains commitment to EU, seeking more licences in Asia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-09T06:20:00.000Z",
           "score": 8
         },
         {
-          "title": "EU aviation agency tells operators to avoid Iran, Iraq and Lebanon airspaces until August 31 - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNUG9VaFJkWWFCR2NzcmJXbzBCUnN3UlEtRGFvV29RVEZ6NGRrUnhlcUtOcGJWVUJqSGREQ2h3cHJFU2Z0ODBmUl9sNmM0TEVqMHZZSXVocEplMzlUNVdyQmdMekNOTGZBV1hDSjl3NmtMUThlOTBBYjJQYkdLOUcwWDZYUWRLeC1wNkJYR2VhZFFpQlpWOXJ2bmhQUUM1bUpvV3d0elUwOExMNmNNOXYtWWw1RUdRRjhRR3pGQ3RlZ3dCaDhXOFNr?oc=5",
+          "title": "Europe steadies after fresh Middle East hostilities - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNU2dFb1NsRUVjbDhlRWp1VHVuZk9ud2JqcXdJbUxTOGhXLUpvcmJ1UzI4Zk45YmREYzlpVnRHS1dzMkxJemEtZmJRUHFHRm0tcTdqZlZxQXlvM2JKZE5Ed1VZT215aUxERjVGUk5reGZVamdYWXFLV3hfMnBuWXFYNVg3TQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNUG9VaFJkWWFCR2NzcmJXbzBCUnN3UlEtRGFvV29RVEZ6NGRrUnhlcUtOcGJWVUJqSGREQ2h3cHJFU2Z0ODBmUl9sNmM0TEVqMHZZSXVocEplMzlUNVdyQmdMekNOTGZBV1hDSjl3NmtMUThlOTBBYjJQYkdLOUcwWDZYUWRLeC1wNkJYR2VhZFFpQlpWOXJ2bmhQUUM1bUpvV3d0elUwOExMNmNNOXYtWWw1RUdRRjhRR3pGQ3RlZ3dCaDhXOFNr?oc=5\" target=\"_blank\"&gt;EU aviation agency tells operators to avoid Iran, Iraq and Lebanon airspaces until August 31&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reu",
-          "published": "2026-07-08T08:27:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxNU2dFb1NsRUVjbDhlRWp1VHVuZk9ud2JqcXdJbUxTOGhXLUpvcmJ1UzI4Zk45YmREYzlpVnRHS1dzMkxJemEtZmJRUHFHRm0tcTdqZlZxQXlvM2JKZE5Ed1VZT215aUxERjVGUk5reGZVamdYWXFLV3hfMnBuWXFYNVg3TQ?oc=5\" target=\"_blank\"&gt;Europe steadies after fresh Middle East hostilities&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-09T01:49:00.000Z",
           "score": 8
         },
         {
-          "title": "Safaricom shareholders to vote on Vodafone's right to pick CEO - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxON1gzMWZLTEtKUDY1QXpwNVNkZm53LU5INmY2ekFQZDdSeDVNQXo2Q21hQ0xWcTZfN09GN3hoY0hPRks3cjZMX2hRV2hlTHpvOUE5Tk5GQXpFVlA4Tkh1d2JTRTdWaE1WMjczc29xUmZvMjNuN3B1TU9BZ2ZsblNWZFVZZ3V2X3pMVjZMeFRSeWV4Qm94OFlmU1hwV2lQNXJWSzln?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxON1gzMWZLTEtKUDY1QXpwNVNkZm53LU5INmY2ekFQZDdSeDVNQXo2Q21hQ0xWcTZfN09GN3hoY0hPRks3cjZMX2hRV2hlTHpvOUE5Tk5GQXpFVlA4Tkh1d2JTRTdWaE1WMjczc29xUmZvMjNuN3B1TU9BZ2ZsblNWZFVZZ3V2X3pMVjZMeFRSeWV4Qm94OFlmU1hwV2lQNXJWSzln?oc=5\" target=\"_blank\"&gt;Safaricom shareholders to vote on Vodafone's right to pick CEO&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-08T06:21:00.000Z",
+          "title": "It was 'love at first sight' with their adopted baby. Then they were told he may have been trafficked",
+          "link": "https://www.bbc.co.uk/news/articles/czxq4ge246wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "When they adopted Marcus, David and Ally's dream of having a child was complete - but now they could lose him.",
+          "published": "2026-07-08T23:31:53.000Z",
           "score": 6
         },
         {
@@ -210,19 +225,19 @@
           "score": 6
         },
         {
-          "title": "Albanian PM defends €4 million Kanye West concert",
-          "link": "https://www.dw.com/en/albanian-pm-defends-€4-million-kanye-west-concert/a-77882223?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Germany: June heat wave linked to 5,000 excess deaths",
+          "link": "https://www.dw.com/en/germany-june-heat-wave-linked-to-5-000-excess-deaths/a-77885295?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Albania doubled down on hosting US rapper Kanye ⁠West, as several European countries have banned his performance. PM Edi Rama claimed the gig would generate €100 million in revenue for the country.",
-          "published": "2026-07-08T19:08:00.000Z",
+          "description": "Several other European Union countries reported thousands of additional deaths as June 2026 officially became the hottest on record for bloc.",
+          "published": "2026-07-09T09:10:00.000Z",
           "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 427,
-    "articlesLast24h": 173,
+    "totalArticlesScanned": 438,
+    "articlesLast24h": 171,
     "afterDedup": 160,
     "feedsQueried": 19
   }
