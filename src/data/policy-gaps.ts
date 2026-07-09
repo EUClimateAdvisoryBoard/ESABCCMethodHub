@@ -131,7 +131,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Understanding issues have led to insufficient operationalisation of the energy-efficiency-first principle so far.",
     instrument: "Energy Efficiency Directive (EED), Governance Regulation",
     quote: "Understanding issues also led to insufficient operationalisation of the energy efficiency first principle so far (implementation gap).",
-    reference: "Ch. 4 Energy supply, p. 48",
+    reference: "Ch. 4 Energy supply, p. 48, line 33",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -144,7 +144,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "While the EED aims to reinforce the application of the energy-efficiency-first principle, it sets a very high investment value (EUR 100 million) threshold, which means that many relevant projects will be exempted from assessment of energy efficiency solutions, including demand-side resources and system flexibilities.",
     instrument: "Energy Efficiency Directive (EED)",
     quote: "While the EED aims to reinforce the application of the energy efficiency first principle, it sets a very high investment value (EUR 100 million) threshold, which means that many relevant projects will be exempted from assessment of energy efficiency solutions, including demand-side resources and system flexibilities (ambition gap).",
-    reference: "Ch. 4 Energy supply, p. 48",
+    reference: "Ch. 4 Energy supply, p. 48, line 35",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -157,7 +157,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The RED III (including the newly adopted target of a 42.5% renewable energy share in final energy consumption) and the electricity market reform are mostly in place, but the RES value-chain reinforcement is still under negotiation.",
     instrument: "RED III, Electricity Market Design reform, Net-Zero Industry Act",
     quote: "The RED III, including the newly adopted target of a 42.5 % renewable energy share in final energy consumption and the electricity market reform are mostly in place, the RES value chain reinforcement is still under negotiation (policy gap).",
-    reference: "Ch. 4 Energy supply, p. 48",
+    reference: "Ch. 4 Energy supply, p. 49, line 15",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -170,7 +170,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Despite the European Commission's endorsement of system integration as a strategic direction in 2020, the EU still does not plan and operate the energy system as a whole.",
     instrument: "EU Energy System Integration Strategy, TEN-E",
     quote: "Despite the endorsement of the system integration as a strategic direction by the European Commission in 2020, the EU still does not plan and operate the energy system as a whole (implementation gap).",
-    reference: "Ch. 4 Energy supply, p. 50",
+    reference: "Ch. 4 Energy supply, p. 50, line 2",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -183,7 +183,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The EU's massive policy support to the hydrogen value chain does not sufficiently reflect the techno-economic limits of hydrogen and its role in the integrated and decarbonised energy systems.",
     instrument: "Hydrogen & Decarbonised Gas package, RED III, IPCEIs",
     quote: "The EU's massive policy support to the hydrogen value chain does not sufficiently reflect the techno-economic limits of hydrogen and its role in the integrated and decarbonised energy systems (policy gap).",
-    reference: "Ch. 4 Energy supply, p. 50",
+    reference: "Ch. 4 Energy supply, p. 50, line 14",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -196,7 +196,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Residual emissions (e.g. in agriculture or industry) that motivate the use of carbon capture and storage (CCS) are currently not defined at EU or Member State level.",
     instrument: "Net-Zero Industry Act, TEN-E Regulation, Innovation Fund (State-aid rules)",
     quote: "Residual emissions (e.g. in agriculture or industry) that motivate the use of carbon capture and storage (CCS) are currently not defined at the EU or Member State level (policy gap).",
-    reference: "Ch. 4 Energy supply, p. 50",
+    reference: "Ch. 4 Energy supply, p. 50, line 31",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -209,7 +209,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The Methane Regulation does not put a price on leaking upstream emissions and does not align with similar international initiatives.",
     instrument: "EU Methane Regulation",
     quote: "The regulation does not put a price on leaking upstream emissions and does not align with similar international initiatives (policy gap).",
-    reference: "Ch. 4 Energy supply, p. 51",
+    reference: "Ch. 4 Energy supply, p. 51, line 38",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -222,7 +222,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The 2015 Circular Economy Action Plan (CEAP 1) and the strategy on plastics mainly targeted recycling, with little focus on solutions upstream in the waste hierarchy.",
     instrument: "Circular Economy Action Plan, Plastics Strategy",
     quote: "The 2015 circular economy action plan (CEAP 1) and the strategy on plastics mainly targeted recycling, with little focus on solutions upstream in the waste hierarchy (policy gap).",
-    reference: "Ch. 5 Industry, p. 82",
+    reference: "Ch. 5 Industry, p. 82, line 16",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -235,7 +235,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The Ecodesign Directive has been mainly focused on energy efficiency; product circularity has been added only in recent years, and its scope remained limited to energy products.",
     instrument: "Ecodesign Directive",
     quote: "the Ecodesign Directive has been mainly focused on energy efficiency and, whereas product circularity has been added in recent years, its scope remained limited to energy products (policy gap).",
-    reference: "Ch. 5 Industry, p. 82",
+    reference: "Ch. 5 Industry, p. 82, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -248,7 +248,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Past EU policies have mainly focused on basic R&D (e.g. Horizon Europe), pilots and demonstration (NER 300 and the Innovation Fund) and large-scale diffusion of mature technologies (the EU ETS), but dedicated policies to support early deployment / market formation have been largely absent.",
     instrument: "Innovation Fund, EU ETS, (future) lead-market instruments",
     quote: "Past EU policies have been mainly focused on supporting basic R & D (e.g. Horizon Europe), pilots and demonstration (NER 300 and the Innovation Fund) and the large-scale diffusion of mature technologies (the EU ETS), but dedicated policies to support early deployment / market formation have been largely absent (policy gap).",
-    reference: "Ch. 5 Industry, p. 83",
+    reference: "Ch. 5 Industry, p. 83, line 17",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -261,7 +261,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Moderation of overall transport demand is not considered as an option in the EU's Sustainable and Smart Mobility Strategy.",
     instrument: "Sustainable and Smart Mobility Strategy",
     quote: "Moderation of overall transport demand is not considered as an option in the EU's Sustainable and Smart Mobility Strategy (policy gap).",
-    reference: "Ch. 6 Transport, p. 103",
+    reference: "Ch. 6 Transport, p. 103, line 11",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -274,7 +274,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "EU policies to support a modal shift (the Combined Transport Directive, the Rail Freight Corridors Regulation and the TEN-T regulation) have so far had little success owing to lack of ambition: outdated provisions in the Combined Transport Directive that prevent digitalised workflows, lack of adequate delivery mechanisms in the Rail Freight Corridors Regulation, and lack of an overview of current and future required capacities of intermodal terminals under the TEN-T regulation.",
     instrument: "Combined Transport Directive, Rail Freight Corridors Regulation, TEN-T",
     quote: "Furthermore, EU policies to support a modal shift (the Combined Transport Directive, the Rail Freight Corridors Regulation, the Trans-European Transport Network (TEN-T) regulation) have so far had little success owing to lack of ambition (e.g. outdated provisions in the Combined Transport directive that prevent digitalised workflows, lack of adequate delivery mechanisms in the Rail Freights Corridors Regulation, lack of an overview of current and future required capacities of intermodal terminals under the TEN-T regulation) (ambition gap)",
-    reference: "Ch. 6 Transport, p. 103",
+    reference: "Ch. 6 Transport, p. 103, line 12",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -286,8 +286,8 @@ export const POLICY_GAPS: PolicyGap[] = [
     title: "Heterogeneous Member-State freight-shift implementation",
     description: "Implementation of the modal-shift measures (notably the Rail Freight Corridor Regulation and the Combined Transport Directive) has been incomplete and heterogeneous across Member States.",
     instrument: "Rail Freight Corridors Regulation, Combined Transport Directive",
-    quote: "EU policies to support a modal shift ... have so far had little success owing to lack of ambition ... (ambition gap) and incomplete and heterogeneous implementation at the Member State level (implementation gap).",
-    reference: "Ch. 6 Transport, p. 103 (see also p. 127)",
+    quote: "EU policies to support a modal shift (the Combined Transport Directive, the Rail Freight Corridors Regulation, the Trans-European Transport Network (TEN-T) regulation) have so far had little success owing to lack of ambition (e.g. outdated provisions in the Combined Transport directive that prevent digitalised workflows, lack of adequate delivery mechanisms in the Rail Freights Corridors Regulation, lack of an overview of current and future required capacities of intermodal terminals under the TEN-T regulation) (ambition gap) and incomplete and heterogeneous implementation at the Member State level (implementation gap).",
+    reference: "Ch. 6 Transport, p. 103, line 12",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -300,7 +300,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "While CO₂ emission performance standards for cars and vans effectively accelerate ZEV uptake, they do not incentivise efficiency (smaller, more efficient vehicles) within the ZEV segment, and might even incentivise the uptake of larger, less-efficient ZEVs.",
     instrument: "CO₂ emission standards for cars and vans",
     quote: "Whereas these policies can effectively accelerate the uptake of ZEVs, they currently do not incentivise efficiency (smaller, more efficient vehicles) within the segment of ZEVs (ambition gap), and might even incentivise the uptake of larger, less-efficient ZEVs (policy inconsistency), increasing pressure on the already constrained availability of critical resources.",
-    reference: "Ch. 6 Transport, p. 103 (detailed pp. 116-119)",
+    reference: "Ch. 6 Transport, p. 103, line 41",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -313,7 +313,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The RED III, ReFuelEU Aviation and FuelEU Maritime continue to promote some biofuels with potentially high indirect effects, such as fuels made from food and feed crops (up to 7 %), intermediate crops and specific types of animal fats ('category 3 animal fats').",
     instrument: "RED III, ReFuelEU Aviation, FuelEU Maritime",
     quote: "Nevertheless, concerns remain, as these policies continue to promote some biofuels with potentially high indirect effects, such as fuels made from food and feed crops (up to 7 %), intermediate crops and specific types of animal fats (so-called “category 3 animal fats”) (ambition gap).",
-    reference: "Ch. 6 Transport, p. 104",
+    reference: "Ch. 6 Transport, p. 104, line 14",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -326,7 +326,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "There are well-founded suspicions of fraud in the labelling of transport biofuels as sustainable under RED III.",
     instrument: "RED III",
     quote: "Furthermore, there are well-founded suspicions of fraud in the labelling of biofuels as sustainable (implementation gap).",
-    reference: "Ch. 6 Transport, p. 104 (see also p. 127)",
+    reference: "Ch. 6 Transport, p. 104, line 17",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -339,7 +339,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Extra-EU aviation and half of extra-EU maritime transport remain exempt from the EU ETS.",
     instrument: "EU ETS (aviation & maritime)",
     quote: "Furthermore, extra-EU aviation and half of extra-EU maritime transport remains exempt from the EU ETS (policy gap).",
-    reference: "Ch. 6 Transport, p. 105",
+    reference: "Ch. 6 Transport, p. 105, line 5",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -352,7 +352,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "EU policies so far have not overcome the barriers to wide-scale and deep energy retrofits of the building stock. The EPBD recast aims to address this gap.",
     instrument: "Energy Performance of Buildings Directive (EPBD recast)",
     quote: "EU policies so far have not overcome barriers to wide-scale and deep energy retrofits of buildings (implementation gap).",
-    reference: "Ch. 7 Buildings, p. 129 (see also pp. 135-136)",
+    reference: "Ch. 7 Buildings, p. 129, line 8",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -365,7 +365,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The quality and ambition of the EU's long-term renovation strategies are not sufficient to guide the required building renovation towards the 2050 climate-neutrality objective (renamed 'national building renovation plans' under the EPBD recast).",
     instrument: "EPBD — National Building Renovation Plans",
     quote: "The quality and ambition of the EU’s long-term renovation strategies are not sufficient to guide the required building renovation towards the 2050 climate neutrality objective (implementation gap).",
-    reference: "Ch. 7 Buildings, p. 129 (see also p. 138)",
+    reference: "Ch. 7 Buildings, p. 129, line 14",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -378,7 +378,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Subsidies to fossil gas allowed under the Energy Taxation Directive and EU State-aid rules act as a policy inconsistency; separately, insufficiently robust EU standards lead to only incremental energy-efficiency improvements and lock-in effects.",
     instrument: "Energy Taxation Directive, EU State-aid rules",
     quote: "This is thanks to, among other factors, subsidies to fossil gas allowed under the ETD and EU State aid rules (policy inconsistency), a lack of system integration (see Chapter 4 ‘Energy supply’) and insufficiently robust EU standards leading to incremental energy efficiency improvements and lock-in effects (policy gap).",
-    reference: "Ch. 7 Buildings, p. 129",
+    reference: "Ch. 7 Buildings, p. 129, line 38",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -391,7 +391,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The EU does not prominently guide urban/spatial planning and taxation towards energy and material sufficiency.",
     instrument: "EU spatial-planning / taxation guidance",
     quote: "The EU does not prominently guide urban/spatial planning and taxation towards energy and material sufficiency (ambition gap).",
-    reference: "Ch. 7 Buildings, p. 130 (see also pp. 138-139)",
+    reference: "Ch. 7 Buildings, p. 130, line 22",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -404,7 +404,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Energy performance certificate (EPC) schemes are of uneven quality and have limited reliability, as they are based on data derived from the physical properties of buildings rather than energy demand driven by occupancy behaviour.",
     instrument: "EPBD — Energy Performance Certificates",
     quote: "The EPC schemes are of uneven quality and have limitations in terms of reliability, as they are based on data derived from the physical properties of buildings rather than energy demand driven by occupancy behaviour (ambition gap).",
-    reference: "Ch. 7 Buildings, p. 131 (see also p. 148)",
+    reference: "Ch. 7 Buildings, p. 131, line 2",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -417,7 +417,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Within the CAP, the aim of contributing to climate-change mitigation is largely qualitative and forms part of a broader set of agri-environmental objectives (also covering adaptation, soil and biodiversity preservation, and animal welfare).",
     instrument: "Common Agricultural Policy (CAP)",
     quote: "Within the CAP, the aim of contributing to climate change mitigation is largely qualitative and forms part of a broader set of agri-environmental objectives (also covering adaptation, soil and biodiversity preservation, and animal welfare) (ambition gap).",
-    reference: "Ch. 8 Agriculture, p. 154 (also Table 13, p. 180)",
+    reference: "Ch. 8 Agriculture, p. 154, line 7",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -430,7 +430,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The CAP's climate and environment aims are pursued by Member States in their CAP Strategic Plans (CSPs), where the emphasis given to climate-change mitigation is largely discretionary and difficult to quantify ex ante.",
     instrument: "CAP Strategic Plans",
     quote: "The CAP's climate and environment aims are pursued by Member States in their CAP Strategic Plans (CSPs), where the emphasis given to climate change mitigation is largely discretionary and difficult to quantify ex ante (ambition gap).",
-    reference: "Ch. 8 Agriculture, p. 154 (also Table 13, p. 180)",
+    reference: "Ch. 8 Agriculture, p. 154, line 9",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -443,7 +443,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Emissions from agriculture are not covered by a GHG emission-pricing regime.",
     instrument: "EU GHG-pricing framework (ETS family)",
     quote: "Emissions from agriculture are also not covered by a GHG emission-pricing regime (policy gap).",
-    reference: "Ch. 8 Agriculture, p. 154 (also Table 13, p. 180; Ch. 10, p. 211)",
+    reference: "Ch. 8 Agriculture, p. 154, line 14",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -456,7 +456,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Several initiatives announced in the Farm to Fork Strategy have not yet been adopted as final legislation; in particular, proposed legislation such as targets on food waste reduction has not yet been adopted by policymakers.",
     instrument: "Waste Framework Directive revision",
     quote: "In other cases, proposed legislation has not yet been adopted by policymakers (such as targets on food waste reduction) (policy gap).",
-    reference: "Ch. 8 Agriculture, p. 155 (also Table 13, p. 180)",
+    reference: "Ch. 8 Agriculture, p. 155, line 16",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -469,7 +469,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The CAP allows support mechanisms (eco-schemes) for the restoration of wetlands, but these are used to only a limited extent by Member States.",
     instrument: "CAP eco-schemes",
     quote: "The CAP also allows support mechanisms (eco-schemes) for the restoration of wetlands, but these are used to only a limited extent by Member States (implementation gap).",
-    reference: "Ch. 9 LULUCF, p. 182",
+    reference: "Ch. 9 LULUCF, p. 182, line 19",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -482,7 +482,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The Farm to Fork Strategy objectives to reduce fertiliser use (by 20%) and increase the share of organic farming (to 20%) have direct local environmental benefits, but risk reducing yields and therefore increasing demand for land (either in the EU or abroad) if demand for agricultural products is not reduced in parallel.",
     instrument: "Farm to Fork Strategy, CAP",
     quote: "The objectives of the Farm to Fork Strategy to reduce fertiliser use (by 20 %) and increase the share of organic farming (to 20 %) have direct local environmental benefits, but risk reducing yields and therefore increasing demand for land (either in the EU or abroad) if demand for agricultural products is not reduced in parallel (policy gap).",
-    reference: "Ch. 9 LULUCF, p. 182",
+    reference: "Ch. 9 LULUCF, p. 182, line 20",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -495,7 +495,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The Farm to Fork Strategy includes an ambitious (non-binding) objective to reduce food waste per capita by 50% by 2030, but the proposed legal objectives under the Waste Framework Directive fall short of achieving this.",
     instrument: "Waste Framework Directive revision",
     quote: "It also includes an ambitious (non-binding) objective to reduce food waste per capita by 50 % by 2030, but the proposed legal objectives under the Waste Framework Directive fall short of achieving this (ambition gap).",
-    reference: "Ch. 9 LULUCF, p. 182 (also Ch. 8, pp. 176-177)",
+    reference: "Ch. 9 LULUCF, p. 182, line 24",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -508,7 +508,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Under the RED III, specific exemptions (ambition gap) together with monitoring and compliance issues, including fraud (implementation gap), risk undermining the effectiveness of the sustainability criteria and the provisions on the cascading principle.",
     instrument: "RED III sustainability criteria",
     quote: "Firstly, specific exemptions (ambition gap) and monitoring and compliance issues (including fraud) (implementation gap) risk undermining the effectiveness of the sustainability criteria and provisions on the cascading principle under the RED III.",
-    reference: "Ch. 9 LULUCF, p. 183",
+    reference: "Ch. 9 LULUCF, p. 183, line 7",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -521,7 +521,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "So far, Member States have provided insufficient information for the European Commission to assess the compatibility between projected bioenergy demand and sustainably available supply.",
     instrument: "RED III, Governance Regulation reporting",
     quote: "Secondly, so far, Member States have provided insufficient information for the European Commission to assess the compatibility between projected bioenergy demand and sustainably available supply (implementation gap).",
-    reference: "Ch. 9 LULUCF, p. 183",
+    reference: "Ch. 9 LULUCF, p. 183, line 10",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -534,7 +534,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The incentives for using forest biomass for energy purposes versus maximising the LULUCF carbon sink continue to be unevenly distributed, in the absence of a financial incentive for land managers to reduce emissions and increase removals in the LULUCF sector.",
     instrument: "RED III, LULUCF Regulation, CAP",
     quote: "Furthermore, the incentives for using forest biomass for energy purposes versus maximising the LULUCF carbon sink continue to be unevenly distributed in the absence of a financial incentive for land managers to reduce emissions and increase removals in the LULUCF sector (policy gap).",
-    reference: "Ch. 9 LULUCF, p. 183",
+    reference: "Ch. 9 LULUCF, p. 183, line 12",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -547,7 +547,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Key EU policies such as the RED III do not differentiate incentives for bioenergy use as a function of the other available mitigation options for each end use.",
     instrument: "RED III",
     quote: "However, key EU policies such as the RED III do not differentiate incentives for bioenergy use as a function of other available mitigation options for each end use (policy gap).",
-    reference: "Ch. 9 LULUCF, p. 183",
+    reference: "Ch. 9 LULUCF, p. 183, line 20",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -560,7 +560,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The mandatory requirement to maintain grasslands (GAEC 1) does not prevent agricultural practices that lead to high soil carbon emissions from grasslands.",
     instrument: "CAP conditionality (GAEC 1)",
     quote: "The mandatory requirement on the maintenance of grasslands (GAEC 1) does not prevent agricultural practices that lead to high soil carbon emissions from grasslands (ambition gap).",
-    reference: "Ch. 9 LULUCF, p. 184 (detail p. 197)",
+    reference: "Ch. 9 LULUCF, p. 184, line 3",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -573,7 +573,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Although most Member States set carbon-storage targets for soil and biomass, only eight included voluntary eco-schemes to incentivise carbon farming, often with low levels of ambition.",
     instrument: "CAP eco-schemes, Carbon Removals Certification",
     quote: "Whereas most Member States have set targets on carbon storage in soil and biomass, only eight of them included voluntary eco-schemes to incentivise carbon farming, often with low levels of ambition (implementation gap).",
-    reference: "Ch. 9 LULUCF, p. 184 (detail p. 197)",
+    reference: "Ch. 9 LULUCF, p. 184, line 5",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -586,7 +586,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Agriculture and LULUCF are excluded from the EU GHG-pricing regime, which implies a lack of overall financial incentive for farmers and land managers to enhance carbon dioxide removal.",
     instrument: "EU GHG-pricing framework, Carbon Removals Certification",
     quote: "The agriculture and LULUCF sectors are currently still excluded from the EU GHG-pricing regime, which also implies a lack of an overall financial incentive for farmers and land managers to enhance CDR (policy gap).",
-    reference: "Ch. 9 LULUCF, p. 184 (detail p. 197)",
+    reference: "Ch. 9 LULUCF, p. 184, line 12",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -599,7 +599,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The assumptions underpinning the 2030 LULUCF objective did not account for the uncertain effects of climate change and related natural disturbances on the development of the carbon sink.",
     instrument: "LULUCF Regulation",
     quote: "The assumptions that underpin the LULUCF objective for 2030 did not account for the uncertain effects of climate change and related natural disturbances on the development of the sink (policy gap).",
-    reference: "Ch. 9 LULUCF, p. 184",
+    reference: "Ch. 9 LULUCF, p. 184, line 33",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -612,7 +612,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The Fit for 55 revision of the EU ETS Directive brings forward the end of the supply of allowances for stationary installations to 2040, but there is not yet a clear strategy to prepare the carbon market and relevant sectors for this.",
     instrument: "EU ETS",
     quote: "By further accelerating the decline in emissions, the latest (Fit for 55) revision of the EU ETS Directive brings forward the end of the supply of allowances for stationary installations to 2040. However, there is not yet a clear strategy to prepare the carbon market and relevant sectors for this (policy gap).",
-    reference: "Ch. 10 Pricing emissions, p. 208 (detail p. 218; Table 16, p. 227)",
+    reference: "Ch. 10 Pricing emissions, p. 208, line 24",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -625,7 +625,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "If the EU ETS 2 carbon price exceeds the EUR 45/t CO₂e soft price cap, additional allowances would be released onto the market, de facto weakening the emissions cap and jeopardising achievement of the target.",
     instrument: "EU ETS 2 (buildings & road transport)",
     quote: "Modelling studies suggest that the carbon price in these sectors could reach well in excess of the EUR 45/t CO₂e soft price cap agreed in the revised EU ETS Directive. This would cause additional allowances to be released on to the market, thereby de facto weakening the emissions cap and jeopardising achievement of the target (ambition gap).",
-    reference: "Ch. 10 Pricing emissions, p. 210 (detail p. 220; Table 16, p. 227)",
+    reference: "Ch. 10 Pricing emissions, p. 209, line 42",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -638,7 +638,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Around 26% of EU emissions (795 Mt CO₂e emissions and 230 Mt CO₂e removals in 2021) would remain excluded from any EU-wide carbon-pricing mechanism by 2030 — most of it due to the absence of pricing for agriculture and LULUCF, the remainder from partial exclusion of certain sectors (international aviation and maritime; non-CO₂ emissions; some smaller sectors).",
     instrument: "EU ETS, ETS2, Effort Sharing Regulation",
     quote: "However, the remaining 26 % (795 Mt CO₂e emissions and 230 Mt CO₂e removals in 2021) would remain excluded from any EU-wide carbon-pricing mechanism by 2030. Most of this carbon price gap, illustrated in Figure 74, is related to the absence of an EU carbon-pricing mechanism for the agriculture and LULUCF sectors, and the remainder is due to the partial exclusion of certain sectors (international aviation and maritime; non-CO₂ emissions from energy production, transport and combustion; and some smaller sectors including waste landfilling, wastewater treatment, etc.).",
-    reference: "Ch. 10 Pricing emissions, p. 224 (gap tagged p. 211; Table 16, p. 227)",
+    reference: "Ch. 10 Pricing emissions, p. 224, line 22",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -651,7 +651,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Despite the Better Regulation toolbox providing instructions on assessing distributional and wider socio-economic impacts, EU climate policies have not always been accompanied by systematic measurement of such impacts.",
     instrument: "Better Regulation toolbox, impact assessments",
     quote: "Despite the better regulation toolbox being equipped with instructions regarding the assessment of distributional and wider socioeconomic impacts, EU climate policies have not always been accompanied by systematic measurement of such impacts (implementation gap).",
-    reference: "Ch. 11 Whole-of-society, p. 228 (detail p. 230)",
+    reference: "Ch. 11 Whole-of-society, p. 228, line 22",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -664,7 +664,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Narratives surrounding climate policy instruments tend to focus on GHG emission reduction and cost-effectiveness, without due attention to their co-benefits or to local needs and values.",
     instrument: "EU climate communication / just-transition framing",
     quote: "The narratives surrounding climate policy instruments tend to be focused on GHG emission reduction and cost-effectiveness, without due attention paid to their co-benefits or to local needs and values (ambition gap).",
-    reference: "Ch. 11 Whole-of-society, p. 229 (detail pp. 230-231)",
+    reference: "Ch. 11 Whole-of-society, p. 229, line 4",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -677,7 +677,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Few EU climate policies are informed by ex-ante assessments of their possible socio-economic impacts, which may affect the design and funding of social compensation instruments.",
     instrument: "Impact-assessment framework",
     quote: "Few EU climate policies are informed by ex ante assessments of their possible socioeconomic impacts (policy gap).",
-    reference: "Ch. 11 Whole-of-society, p. 229",
+    reference: "Ch. 11 Whole-of-society, p. 229, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -690,7 +690,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "A knowledge gap on climate-related investment needs persists, mainly due to the lack of a harmonised methodology for identifying and estimating those needs.",
     instrument: "EU investment-needs monitoring",
     quote: "This knowledge gap is mainly due to the lack of a harmonised methodology for identifying and estimating climate-related investment needs (policy gap).",
-    reference: "Ch. 12 Finance & investment, p. 236 (detail pp. 240-241)",
+    reference: "Ch. 12 Finance & investment, p. 236, line 22",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -703,7 +703,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The 8th Environment Action Programme requires the Commission and Member States to set a deadline for phasing out fossil fuel subsidies consistent with the 1.5 °C objective, but so far only a few Member States have enacted laws or set out clear plans specifying how and by when this will be achieved.",
     instrument: "8th Environment Action Programme, NECPs",
     quote: "The 8th EAP requires the European Commission and Member States to set a deadline for the phasing out of fossil fuel subsidies consistent with the 1.5 °C objectives, but so far only a few Member States have enacted laws or set out clear plans that specify how and by when this will be achieved (implementation gap).",
-    reference: "Ch. 12 Finance & investment, p. 236 (detail pp. 244-245)",
+    reference: "Ch. 12 Finance & investment, p. 236, line 39",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -716,7 +716,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "There are substantial flaws in the methodology used to track EU-budget spending on climate action, which result in overestimating the EU budget's contribution towards the EU's climate objectives.",
     instrument: "EU budget (MFF) climate-tracking methodology",
     quote: "There are substantial flaws in the methodology applied to track the spending of the EU budget on climate action, which result in overestimating the EU budget's contribution towards the EU's climate objectives (ambition gap).",
-    reference: "Ch. 12 Finance & investment, p. 237 (detail pp. 245-247)",
+    reference: "Ch. 12 Finance & investment, p. 237, line 19",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -729,7 +729,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The RRF is expected to cease after 2026 and it is unclear whether it will be succeeded by a similar instrument, reflecting a lack of long-termism.",
     instrument: "Recovery and Resilience Facility (RRF)",
     quote: "Furthermore, the RRF itself is expected to cease after 2026 and it is not clear whether it will be succeeded by a similar instrument, reflecting a lack of long-termism (policy gap).",
-    reference: "Ch. 12 Finance & investment, p. 237",
+    reference: "Ch. 12 Finance & investment, p. 237, line 28",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -742,7 +742,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Despite calls to provide specific rules for climate-related public investment, the Commission's proposal to reform the Stability and Growth Pact does not differentiate investments related to the climate transition.",
     instrument: "Stability and Growth Pact",
     quote: "Despite calls from policymakers and experts to provide specific rules for climate-related public investments, the European Commission's recent proposal to reform the Stability and Growth Pact does not differentiate investments related to the climate transition (ambition gap).",
-    reference: "Ch. 12 Finance & investment, p. 238 (detail p. 248)",
+    reference: "Ch. 12 Finance & investment, p. 238, line 13",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -755,7 +755,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The proposed Strategic Technologies for Europe Platform, presented as a first step towards an EU Sovereignty Fund, carries too limited a budget (EUR 10 billion, versus more than EUR 300 billion per year in State aid in 2021) to be sufficiently effective in closing the investment gap.",
     instrument: "Strategic Technologies for Europe Platform (STEP)",
     quote: "Proposals from European Commission to address this (the proposed Strategic Technologies for Europe Platform, as a first step towards an EU Sovereignty Fund) include too limited a budget (EUR 10 billion compared with more than EUR 300 billion per year in State aid in 2021) to be sufficiently effective (ambition gap).",
-    reference: "Ch. 12 Finance & investment, p. 238 (detail p. 248)",
+    reference: "Ch. 12 Finance & investment, p. 238, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -768,7 +768,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Green bonds issued under NextGenerationEU are not necessarily aligned with the EU Taxonomy and the EU Green Bond Standard, which reduces transparency on the use of proceeds and can undermine credibility in the credit market, resulting in higher borrowing costs.",
     instrument: "NextGenerationEU green bonds, EU Green Bond Standard",
     quote: "So far, green bonds issued under NextGenerationEU are not necessarily aligned with the EU Taxonomy and the EU Green Bond Standard, which reduces transparency on the use of proceeds and can undermine credibility in the credit market, resulting in higher borrowing costs (ambition gap).",
-    reference: "Ch. 12 Finance & investment, p. 239 (detail p. 253)",
+    reference: "Ch. 12 Finance & investment, p. 239, line 19",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -781,7 +781,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The main EU instruments for catalysing private investment in climate technologies, Horizon Europe and the Innovation Fund, have an administrative complexity that hinders the crowding-in of private investment.",
     instrument: "Horizon Europe, Innovation Fund",
     quote: "The main EU policy instruments aiming to catalyse private investment are Horizon Europe and the Innovation Fund. One of their main focuses is climate-related technologies; however, their administrative complexity hinders the crowding-in of private investments (implementation gap).",
-    reference: "Ch. 13 Innovation, p. 255 (detail p. 258)",
+    reference: "Ch. 13 Innovation, p. 255, line 16",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -794,7 +794,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Public funding instruments can be slow to react to the fast-paced global clean-technology arena; this responsiveness should be monitored at EU level, particularly beyond early-stage research.",
     instrument: "Horizon Europe, Innovation Fund",
     quote: "Public funding instruments can sometimes be slow in reacting to the changing needs of the fast-paced global clean technology arena. This should be monitored at the EU level, particularly beyond early-stage research (policy gap).",
-    reference: "Ch. 13 Innovation, p. 255 (detail p. 261)",
+    reference: "Ch. 13 Innovation, p. 255, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -807,7 +807,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Current policy focuses support on the two ends of the RD&D process, leaving a funding gap for climate-technology manufacturing or deployment projects trying to complete piloting/demonstration and move towards early deployment (the 'valley of death').",
     instrument: "European Research Council, Horizon Europe; pricing/demand-pull incentives",
     quote: "This policy mix leaves a funding gap for climate technology manufacturing or deployment projects aiming to complete the piloting and demonstration stage and move towards the early deployment of clean technologies (policy gap).",
-    reference: "Ch. 13 Innovation, p. 256 (detail p. 262)",
+    reference: "Ch. 13 Innovation, p. 256, line 7",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -820,7 +820,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The funding gap is further widened by the relative lack of venture-capital support, as venture capital remains less developed in Europe than in, for example, the United States.",
     instrument: "Venture-capital / scale-up finance",
     quote: "This funding gap is further widened by the relative lack of support from venture capital, as this concept remains less developed in Europe than in the United States, for instance (policy gap).",
-    reference: "Ch. 13 Innovation, p. 256 (detail p. 262)",
+    reference: "Ch. 13 Innovation, p. 256, line 9",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -833,7 +833,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Innovation policy instruments need to foster stronger collaboration between private and public knowledge organisations, an opportunity currently under-exploited.",
     instrument: "Strategic Energy Technology (SET) Plan",
     quote: "Policy instruments on innovation need to foster collaborations between private and public knowledge organisations, creating opportunities for building stronger collaborations (policy gap).",
-    reference: "Ch. 13 Innovation, p. 257 (detail p. 263)",
+    reference: "Ch. 13 Innovation, p. 257, line 11",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -845,8 +845,8 @@ export const POLICY_GAPS: PolicyGap[] = [
     title: "Limited funding predictability beyond 2030",
     description: "The existing EU funding architecture offers limited predictability beyond 2030, which increases uncertainty for long-term projects.",
     instrument: "EU funding architecture",
-    quote: "The existing EU funding architecture offers limited predictability beyond 2030, which increases uncertainty for long-term projects (ambition gap).",
-    reference: "Ch. 13 Innovation, p. 266 (Table 20)",
+    quote: "The existing EU funding architecture offers limited predictability beyond 2030, which increases uncertainty for long-term projects.",
+    reference: "Ch. 13 Innovation, p. 266, line 27",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -858,8 +858,8 @@ export const POLICY_GAPS: PolicyGap[] = [
     title: "Weak reporting on Net-Zero Industry Act 40% target",
     description: "The Net-Zero Industry Act aims to reach at least 40% of domestic needs in strategic technologies, but the existing reporting mechanisms offer limited means to track progress towards achieving this target.",
     instrument: "Net-Zero Industry Act",
-    quote: "The Net-Zero Industry Act aims to increase the EU's manufacturing capacity in strategic technologies to reach at least 40 % of domestic needs; however, the existing reporting mechanisms offer limited means to track progress towards achieving this target (policy gap).",
-    reference: "Ch. 13 Innovation, p. 266 (Table 20)",
+    quote: "The Net-Zero Industry Act aims to increase the EU's manufacturing capacity in strategic technologies to reach at least 40 % of domestic needs; however, the existing reporting mechanisms offer limited means to track progress towards achieving this target.",
+    reference: "Ch. 13 Innovation, p. 266, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -872,7 +872,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The 10-year frame of the NECPs seems too short to ensure policy consistency with 2050 objectives, and the connection between the NECPs and LTSs is based on weak consistency processes.",
     instrument: "Governance Regulation (NECPs & LTSs)",
     quote: "The 10-year frame of the NECPs seems too short to ensure policy consistency with 2050 objectives, and the connection between the NECPs and LTSs is based on weak consistency processes (ambition gap).",
-    reference: "Ch. 14 Climate governance, p. 268",
+    reference: "Ch. 14 Climate governance, p. 267, line 16",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -885,7 +885,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The quality of information on some of the key net-zero milestones in the first NECPs submitted, and their updates so far, is insufficient to allow the European Commission to assess the consistency of national policies and measures with climate neutrality.",
     instrument: "Governance Regulation (NECPs)",
     quote: "The quality of information on some of the key milestones on the EU's path to net zero included in the first NECPs submitted, and their updates so far, is insufficient to allow the European Commission to assess the consistency of national policies and measures with climate neutrality (implementation gap).",
-    reference: "Ch. 14 Climate governance, p. 268",
+    reference: "Ch. 14 Climate governance, p. 267, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -898,7 +898,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Deficits in transparency and public engagement are observed in NECP preparation at national level; the Committee of the Regions notes that multilevel dialogues are often not permanent and NECPs are not always in tune with subnational climate policies.",
     instrument: "Governance Regulation, Aarhus Convention",
     quote: "Deficits in transparency and in public engagement are observed in NECP preparation at the national level (implementation gap). The Committee of the Regions points out that the dialogues are often not permanent and the NECPs are not always in tune with subnational climate policies (implementation gap).",
-    reference: "Ch. 14 Climate governance, pp. 268-269",
+    reference: "Ch. 14 Climate governance, pp. 268-269, p. 268, line 22",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -911,7 +911,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Despite improved impact-assessment practice in 2022, some far-reaching non-legislative acts - establishing taxonomy criteria for sustainable investment and defining some renewable transport fuels - were not accompanied by appropriate impact assessments including public consultation and climate-neutrality checks.",
     instrument: "Better Regulation, climate-neutrality checks",
     quote: "Moreover, despite the impact assessment practice having improved significantly in 2022 thanks to the climate neutrality checks, far-reaching non-legislative acts establishing taxonomy criteria for sustainable investment and defining some renewable transport fuels have not been accompanied by appropriate impact assessments including public consultation and climate neutrality checks (implementation gap).",
-    reference: "Ch. 14 Climate governance, p. 268",
+    reference: "Ch. 14 Climate governance, p. 268, line 23",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -924,7 +924,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The EU is in breach of the Aarhus Convention in relation to access to justice in State-aid matters and public engagement in the NECP process.",
     instrument: "Aarhus Convention, State-aid rules",
     quote: "In addition, the EU is in breach of the Aarhus Convention in relation to access to justice in state aid matters and public engagement in the NECP process (implementation gap).",
-    reference: "Ch. 14 Climate governance, p. 268",
+    reference: "Ch. 14 Climate governance, p. 268, line 27",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -937,7 +937,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "The European Climate Law only encourages Member States to establish national climate advisory bodies, without making them mandatory, and no link to such bodies is made in the procedural obligations of the NECPs (e.g. within the multilevel climate and energy dialogues).",
     instrument: "European Climate Law, Governance Regulation",
     quote: "The European Climate Law only encourages the Member States to establish national climate advisory bodies, without making such bodies mandatory and no link to such bodies is made in the procedural obligations of the NECPs, for example as part of the multilevel climate and energy dialogues (ambition gap).",
-    reference: "Ch. 14 Climate governance, p. 269",
+    reference: "Ch. 14 Climate governance, p. 269, line 25",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -950,7 +950,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Although education and training schemes are largely a Member-State competence, some policy gaps remain at EU level, particularly regarding workforce mobility and mutual recognition of qualifications in the construction sector.",
     instrument: "EU coordination (education/training is a Member-State competence)",
     quote: "Although design and implementation of education and training schemes is largely the responsibility of member states, there are some remaining policy gaps at a European level, particularly regarding workforce mobility and mutual recognition of qualifications in the construction sector (policy gap).",
-    reference: "Ch. 15 Labour, skills and capacity building, p. 278 (also Table 22, p. 285)",
+    reference: "Ch. 15 Labour, skills and capacity building, p. 278, line 18",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -963,7 +963,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Low participation in training in some key sectors (e.g. buildings, agriculture) limits the opportunities to upskill and enhance knowledge exchange relevant to the transition.",
     instrument: "Vocational training provision (Member-State competence)",
     quote: "Low participation in training in some key sectors (e.g. buildings, agriculture) also limits the opportunities to upskill and enhance knowledge exchange relevant to the transition (implementation gap).",
-    reference: "Ch. 15 Labour, skills and capacity building, p. 278 (also Table 22, p. 285)",
+    reference: "Ch. 15 Labour, skills and capacity building, p. 278, line 21",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""
@@ -976,7 +976,7 @@ export const POLICY_GAPS: PolicyGap[] = [
     description: "Transition schemes for workers in the fossil-gas sector are largely still absent at EU level.",
     instrument: "Just Transition Fund / mechanism",
     quote: "Transition schemes for workers in the fossil gas sector are also largely still absent at the EU level (policy gap).",
-    reference: "Ch. 15 Labour, skills and capacity building, p. 279 (also Table 22, p. 285)",
+    reference: "Ch. 15 Labour, skills and capacity building, p. 279, line 2",
     reportStatus: "open",
     currentStatus: "open",
     statusNote: ""

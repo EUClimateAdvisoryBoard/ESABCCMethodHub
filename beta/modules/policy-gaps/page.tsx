@@ -677,8 +677,9 @@ export default function PolicyGapsPage() {
         <p className="mt-4 text-[12px] text-[#3D5265]/60 dark:text-[var(--mh-muted)] max-w-3xl">
           Provenance: every listed gap is a finding the report explicitly tags as a policy,
           ambition or implementation gap (or inconsistency). The italic quote under each is the{' '}
-          <strong>verbatim sentence</strong> copied from the report, with the exact chapter and
-          page; the finding text is a light paraphrase of that quote. Baseline: the Board judged
+          <strong>verbatim sentence</strong> copied from the report, with the exact chapter, page
+          and line where it starts; the finding text is a light paraphrase of that quote. Every
+          quote was re-located in the source text to confirm it exists word-for-word. Baseline: the Board judged
           every gap <strong>open</strong> at the January-2025 report. The “Still exists?” column and
           notes are a live working record — edits and added rows are saved in your browser only. Use{' '}
           <em>Export Excel</em> to share a snapshot, or <em>Reset</em> to return to the report
