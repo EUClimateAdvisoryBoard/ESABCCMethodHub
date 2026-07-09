@@ -394,6 +394,7 @@ export default async function HomePage() {
     { code: 'M · 33', title: 'Sector Background', href: '/beta/sector-background', tags: ['Industry · Transport', 'Policies · papers'] },
     { code: 'M · 34', title: 'Overview Industry', href: '/beta/overview-industry', tags: ['Clean Tech', 'Trade flows'] },
     { code: 'M · 35', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
+    { code: 'M · 36', title: 'Policy Gap Tracker', href: '/beta/policy-gaps', tags: ['Gaps report', 'Editable · Excel'] },
   ];
 
   return (
