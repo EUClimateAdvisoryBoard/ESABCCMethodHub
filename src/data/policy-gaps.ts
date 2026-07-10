@@ -2,7 +2,7 @@
  * Policy-gap tracker — the gaps and inconsistencies identified by the
  * European Scientific Advisory Board on Climate Change (ESABCC) in its
  * report *"Towards EU climate neutrality: Progress, policy gaps and
- * opportunities"* (January 2025).
+ * opportunities"* (January 2024).
  *
  * Source PDF (checked into the repo and published by the Board):
  *   https://climate-advisory-board.europa.eu/reports-and-publications/
@@ -20,7 +20,7 @@
  * from the report that states the gap (`quote`) plus the exact page
  * (`reference`). The `description` is a light paraphrase of that quote; the
  * quote is the authoritative text. `reportStatus` records that the Board
- * judged the gap OPEN at the January-2025 baseline. `currentStatus` and
+ * judged the gap OPEN at the January-2024 baseline. `currentStatus` and
  * `statusNote` are the *live* assessment — whether the gap still exists —
  * which the Method-Hub UI lets the Secretariat update over time.
  *
@@ -987,6 +987,6 @@ export const POLICY_GAPS: PolicyGap[] = [
 export const GAP_REPORT_META = {
   title: 'Towards EU climate neutrality: Progress, policy gaps and opportunities',
   author: 'European Scientific Advisory Board on Climate Change (ESABCC)',
-  published: 'January 2025',
+  published: 'January 2024',
   url: 'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
 };
