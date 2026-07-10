@@ -1,10 +1,11 @@
 'use client';
 
 /**
- * Policy Gap Tracker (beta) — M · 36
+ * Policy Gap Tracker (beta) — Summer Prep sub-module (formerly stand-alone
+ * module M · 36; now part of M · 35 Summer Prep).
  *
  * Tracks every gap and inconsistency the European Scientific Advisory Board
- * on Climate Change identified in its January-2025 report *"Towards EU
+ * on Climate Change identified in its January-2024 report *"Towards EU
  * climate neutrality: Progress, policy gaps and opportunities"* and lets the
  * Secretariat record whether each gap **still exists** today.
  *

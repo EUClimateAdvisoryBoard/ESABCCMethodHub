@@ -1,16 +1,18 @@
 'use client';
 
 /**
- * Summer Prep — beta module M · 37 (password-gated).
- * ---------------------------------------------------
+ * Summer Prep — beta module M · 35 (password-gated; formerly M · 37).
+ * -------------------------------------------------------------------
  * A protected workspace that bundles the industry & transport preparation for
- * the next progress report. It combines two existing beta modules as
- * sub-modules — Overview Industry (M · 34) and the Policy Gap Tracker
- * (M · 36) — and adds three new internal notes:
+ * the next progress report. Overview Industry and the Policy Gap Tracker
+ * (formerly listed separately as M · 34 and M · 36) are folded in here as
+ * sub-modules — their routes stay alive but they no longer appear as
+ * stand-alone modules on the landing page. On top of them sit three
+ * internal notes:
  *
  *   • Indicator Check — what has moved, data-wise, since the last report.
  *   • Synergies & trade-offs (mitigation ↔ adaptation) for industry & transport.
- *   • Policy gaps for transport & industry (extends M · 36).
+ *   • Policy gaps for transport & industry (extends the Policy Gap Tracker).
  *
  * Everything sits behind the shared SummerPrepGate passphrase.
  */
@@ -36,7 +38,7 @@ const COMBINED: SubModule[] = [
   {
     href: '/beta/overview-industry',
     title: 'Overview Industry',
-    badge: 'M · 34',
+    badge: 'Sub-module 1 · was M · 34',
     icon: '⚙',
     accent: '#004B7F',
     blurb:
@@ -47,7 +49,7 @@ const COMBINED: SubModule[] = [
   {
     href: '/beta/policy-gaps',
     title: 'Policy Gap Tracker',
-    badge: 'M · 36',
+    badge: 'Sub-module 2 · was M · 36',
     icon: '▤',
     accent: '#B83230',
     blurb:
@@ -81,7 +83,7 @@ const NOTES: SubModule[] = [
   {
     href: '/beta/summer-prep/policy-gaps-sectors',
     title: 'Policy Gaps — Transport & Industry',
-    badge: 'Note 3 · extends M · 36',
+    badge: 'Note 3 · extends the gap tracker',
     icon: '◍',
     accent: '#FF9933',
     blurb:
@@ -161,8 +163,8 @@ export default function SummerPrepPage() {
               Combined modules
             </h2>
             <p className="mb-4 text-[13px] text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
-              The two existing beta modules this workspace pulls together — open in place, then use
-              the back control to return here.
+              Two former stand-alone modules now living inside this workspace — open in place, then
+              use the back control to return here.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               {COMBINED.map((m) => (

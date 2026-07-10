@@ -392,10 +392,12 @@ export default async function HomePage() {
     { code: 'M · 31', title: 'Digital & AI Energy Roadmap — Coherence Check', href: '/beta/digital-energy-roadmap', tags: ['COM(2026) 501', 'ESABCC vs goals'] },
     { code: 'M · 32', title: 'Ex-Post Policy Assessment', href: '/beta/ex-post-analysis', tags: ['Counterfactual grid', 'Quant vs qual'] },
     { code: 'M · 33', title: 'Sector Background', href: '/beta/sector-background', tags: ['Industry · Transport', 'Policies · papers'] },
-    { code: 'M · 34', title: 'Overview Industry', href: '/beta/overview-industry', tags: ['Clean Tech', 'Trade flows'] },
-    { code: 'M · 35', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
-    { code: 'M · 36', title: 'Policy Gap Tracker', href: '/beta/policy-gaps', tags: ['Gaps report', 'Editable · Excel'] },
-    { code: 'M · 37', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['🔒 Passphrase', 'Industry · Transport', 'Indicators · gaps'] },
+    // Overview Industry (ex M · 34) and the Policy Gap Tracker (ex M · 36) are
+    // no longer listed as stand-alone modules: they are sub-modules of Summer
+    // Prep. Their routes (/beta/overview-industry, /beta/policy-gaps) stay
+    // alive and are reached from the Summer Prep workspace.
+    { code: 'M · 34', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
+    { code: 'M · 35', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['🔒 Passphrase', 'Industry · Transport', 'Gap tracker · Indicators'] },
   ];
 
   return (

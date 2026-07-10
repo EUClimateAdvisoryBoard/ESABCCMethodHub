@@ -2,7 +2,7 @@
  * Summer Prep — Synergies & trade-offs between climate-change MITIGATION and
  * ADAPTATION for the INDUSTRY and TRANSPORT sectors.
  * ---------------------------------------------------------------------------
- * Internal note backing the M · 37 "Summer Prep" sub-module. It maps, subsector
+ * Internal note backing the M · 35 "Summer Prep" sub-module. It maps, subsector
  * by subsector, where a mitigation action also strengthens (or undermines)
  * climate resilience, and where an adaptation need pushes emissions the other
  * way. The subsector taxonomy deliberately mirrors the 2024 ESABCC progress
