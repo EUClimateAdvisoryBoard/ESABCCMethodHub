@@ -177,9 +177,21 @@ async function ensureSeedIndicators(
     });
   }
   const have = new Set((existing ?? []).map(r => r.id));
+  // Self-healing point top-up: when the bundled series carry years the DB was
+  // seeded before (the monthly Eurostat/EEA refresh appends new points to the
+  // TS files, but an already-seeded DB never received them — the gap the user
+  // sees as "the workspace chart stops at 2022"), run the insert-only backfill
+  // once per bundle generation. A tiny signature stamp (read below) keeps the
+  // per-render cost at one row; an explicit admin reseed still forces the pass.
+  const sig = seedPoolSignature(pool);
+  const runBackfill =
+    backfillPoints || (await seedPointsBackfillPending(sb, projectId, sig));
   const toInsert = pool.filter(i => !have.has(i.id));
   if (toInsert.length === 0) {
-    if (backfillPoints) await backfillExistingPoints(sb, pool, have);
+    if (runBackfill) {
+      const ok = await backfillExistingPoints(sb, pool, have);
+      if (ok) await recordSeedPointsSignature(sb, projectId, sig);
+    }
     return;
   }
   // UPSERT with onConflict makes the call resilient to PKs that survive the
@@ -227,7 +239,72 @@ async function ensureSeedIndicators(
 
   // Top up the series of the indicators that already existed (the ones skipped
   // above) with any years the refresh has added since they were first seeded.
-  if (backfillPoints) await backfillExistingPoints(sb, pool, have);
+  if (runBackfill) {
+    const ok = await backfillExistingPoints(sb, pool, have);
+    if (ok) await recordSeedPointsSignature(sb, projectId, sig);
+  }
+}
+
+/**
+ * Storage key for the seed-point backfill stamp in `pw_flowchart_state` (the
+ * generic per-project key→JSON store from migration 064). The stamp records
+ * which bundled-data generation the point backfill last ran against, so the
+ * lazy on-render path only pays the full points read once per refresh — and a
+ * point a user deliberately deleted afterwards is not resurrected on every
+ * render (only by the next data refresh or an explicit admin reseed, the same
+ * semantics as the SQL backfill migration).
+ */
+const SEED_POINTS_STATE_KEY = 'esabcc-seed-points-backfill';
+
+/** Cheap deterministic fingerprint of the bundled seed series (changes whenever the refresh adds/removes points). */
+function seedPoolSignature(pool: Indicator[]): string {
+  let points = 0;
+  let yearSum = 0;
+  for (const i of pool) {
+    points += i.data.length;
+    for (const p of i.data) yearSum += p.year;
+  }
+  return `v1:${pool.length}:${points}:${yearSum}`;
+}
+
+/** True when the stored stamp doesn't match the bundled data (or can't be read — the backfill is idempotent, so err on running it). */
+async function seedPointsBackfillPending(
+  sb: Supa,
+  projectId: string,
+  sig: string
+): Promise<boolean> {
+  try {
+    const { data, error } = await sb
+      .from('pw_flowchart_state')
+      .select('data')
+      .eq('project_id', projectId)
+      .eq('storage_key', SEED_POINTS_STATE_KEY)
+      .maybeSingle();
+    if (error) return true;
+    return (data?.data as { signature?: string } | null)?.signature !== sig;
+  } catch {
+    return true;
+  }
+}
+
+async function recordSeedPointsSignature(
+  sb: Supa,
+  projectId: string,
+  sig: string
+): Promise<void> {
+  try {
+    await sb.from('pw_flowchart_state').upsert(
+      {
+        project_id: projectId,
+        storage_key: SEED_POINTS_STATE_KEY,
+        data: { signature: sig, stampedAt: new Date().toISOString() },
+      },
+      { onConflict: 'project_id,storage_key' }
+    );
+  } catch {
+    // Stamp writes are best-effort: without it the backfill re-runs next
+    // render, which is correct (just less cheap).
+  }
 }
 
 /**
@@ -240,9 +317,9 @@ async function backfillExistingPoints(
   sb: Supa,
   pool: Indicator[],
   existingIds: Set<string>
-) {
+): Promise<boolean> {
   const ids = pool.filter(i => existingIds.has(i.id)).map(i => i.id);
-  if (ids.length === 0) return;
+  if (ids.length === 0) return true;
   const { data: existingPts, error: ptReadErr } = await sb
     .from('pw_indicator_points')
     .select('indicator_id, year')
@@ -251,7 +328,7 @@ async function backfillExistingPoints(
     console.error('[pw seed] failed to read existing indicator points', {
       error: ptReadErr.message,
     });
-    return;
+    return false;
   }
   const haveKey = new Set((existingPts ?? []).map(p => `${p.indicator_id}:${p.year}`));
   const missing = pool
@@ -261,7 +338,7 @@ async function backfillExistingPoints(
         .filter(p => !haveKey.has(`${i.id}:${p.year}`))
         .map(p => ({ indicator_id: i.id, year: p.year, value: p.value }))
     );
-  if (missing.length === 0) return;
+  if (missing.length === 0) return true;
   const { error } = await sb
     .from('pw_indicator_points')
     .upsert(missing, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
@@ -270,7 +347,10 @@ async function backfillExistingPoints(
       attempted: missing.length,
       error: error.message,
     });
+    return false;
   }
+  console.log('[pw seed] backfilled indicator points', { inserted: missing.length });
+  return true;
 }
 
 /**
