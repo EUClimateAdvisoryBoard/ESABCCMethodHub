@@ -1,18 +1,18 @@
 {
   "date": "2026-07-10",
-  "generatedAt": "2026-07-10T13:15:46.519Z",
+  "generatedAt": "2026-07-10T18:24:24.364Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 10 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "TotalEnergies divests its distributed solar generation activities in Europe - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQm05R251SG5qRi1Td01ZMmNJZER4OEJka1A0V3l6d1hvc3kwQTNwbVpPSnJMUDdwQlRTX1V6WExxZFMtZUlHNkE1aTgwNzU0N2pUVTFNZW1vR0c4UTBsaldsXy1qb0h4QTVjMk53Z29JblRzNl8yY09IMEtkNW1HdTZ4SUdScmZ2Q3ZycnVKX0laYWNEdnpMTmZ1REljSnJsUHBvcndONWRfU1QtZGVNbkJXWnEtUWZIM3o2d0dwdE5SQQ?oc=5\" target=\"_blank\"&gt;TotalEnergies divests its distributed solar generation activities in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
+      "summary": "Disruptions in the Strait of Hormuz have hit supplies of liquefied petroleum gas (LPG), seen as a cleaner cooking alternative to charcoal and wood The post Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "China Briefing 9 July 2026: Guangxi floods &#124; ‘Beautiful China’ plan &#124; New EU-China mechanism",
-      "summary": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 9 July 2026: Guangxi floods | ‘Beautiful China’ plan | New EU-China mechanism appeared first on Carbon Brief.",
+      "headline": "DeBriefed 10 July 2026: Deadly Europe heat &#124; EU electrification leak &#124; COP31 president interview",
+      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 10 July 2026: Deadly Europe heat | EU electrification leak | COP31 president interview appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -33,14 +33,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "TotalEnergies divests its distributed solar generation activities in Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQm05R251SG5qRi1Td01ZMmNJZER4OEJka1A0V3l6d1hvc3kwQTNwbVpPSnJMUDdwQlRTX1V6WExxZFMtZUlHNkE1aTgwNzU0N2pUVTFNZW1vR0c4UTBsaldsXy1qb0h4QTVjMk53Z29JblRzNl8yY09IMEtkNW1HdTZ4SUdScmZ2Q3ZycnVKX0laYWNEdnpMTmZ1REljSnJsUHBvcndONWRfU1QtZGVNbkJXWnEtUWZIM3o2d0dwdE5SQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPQm05R251SG5qRi1Td01ZMmNJZER4OEJka1A0V3l6d1hvc3kwQTNwbVpPSnJMUDdwQlRTX1V6WExxZFMtZUlHNkE1aTgwNzU0N2pUVTFNZW1vR0c4UTBsaldsXy1qb0h4QTVjMk53Z29JblRzNl8yY09IMEtkNW1HdTZ4SUdScmZ2Q3ZycnVKX0laYWNEdnpMTmZ1REljSnJsUHBvcndONWRfU1QtZGVNbkJXWnEtUWZIM3o2d0dwdE5SQQ?oc=5\" target=\"_blank\"&gt;TotalEnergies divests its distributed solar generation activities in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-09T16:46:00.000Z",
-          "score": 13
-        },
         {
           "title": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
           "link": "https://www.climatechangenews.com/2026/07/10/iran-war-fuel-shocks-threaten-africa-clean-cooking-push-iea-says/",
@@ -72,6 +64,14 @@
           "description": "&lt;p&gt;Plans to build a NZ$3.5bn datacentre in Makarewa in the country’s south has drawn concern about electricity and water use, and potential noise pollution&lt;/p&gt;&lt;p&gt;People living near the site of New Zealand’s first planned AI datacentre are calling for more transparency about the project, especially about how the centre’s huge electricity and water use and potential noise pollution could affect them.&lt;/p&gt;&lt;p&gt;Singapore-based company Datagrid has secured approval to build",
           "published": "2026-07-10T00:40:26.000Z",
           "score": 7
+        },
+        {
+          "title": "Missile test showcases sensitive Chinese submarine capabilities key to nuclear deterrent - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVjcyZE1SYjV1U1d1RE9janIxSEFCNEE4cWJxSWY0N3lIdF9vMnp0bUd1UFhtMHl3bDF3ZTd5cF8wVXpmZGJOcldFbjRxNWZfUngwdmpXOE5Dd0ZLZDZTSkUzaDJrSGc5TlhwMUFDTFlEckFsX0dZZHhodnhhRlBPeEVHSFIwZGV1YUdIUnhHR3pvc0dLSlJ6aE5ON0VMejJBQUQ5cXdCYVJIa2Z0Y1lkbHVFU0U0aTQ0aXNUeWFZMUpZR0s3TzEwQTJmbWlaekg1blhQVw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxNVjcyZE1SYjV1U1d1RE9janIxSEFCNEE4cWJxSWY0N3lIdF9vMnp0bUd1UFhtMHl3bDF3ZTd5cF8wVXpmZGJOcldFbjRxNWZfUngwdmpXOE5Dd0ZLZDZTSkUzaDJrSGc5TlhwMUFDTFlEckFsX0dZZHhodnhhRlBPeEVHSFIwZGV1YUdIUnhHR3pvc0dLSlJ6aE5ON0VMejJBQUQ5cXdCYVJIa2Z0Y1lkbHVFU0U0aTQ0aXNUeWFZMUpZR0s3TzEwQTJmbWlaekg1blhQVw?oc=5\" target=\"_blank\"&gt;Missile test showcases sensitive Chinese submarine capabilities key to nuclear deterrent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#",
+          "published": "2026-07-10T06:36:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -80,19 +80,35 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "China Briefing 9 July 2026: Guangxi floods &#124; ‘Beautiful China’ plan &#124; New EU-China mechanism",
-          "link": "https://www.carbonbrief.org/china-briefing-9-july-2026-guangxi-floods-beautiful-china-plan-new-eu-china-mechanism/",
+          "title": "DeBriefed 10 July 2026: Deadly Europe heat &#124; EU electrification leak &#124; COP31 president interview",
+          "link": "https://www.carbonbrief.org/debriefed-10-july-2026-deadly-europe-heat-eu-electrification-leak-cop31-president-interview/",
           "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s China Briefing. China Briefing handpicks and explains the most important climate... The post China Briefing 9 July 2026: Guangxi floods | ‘Beautiful China’ plan | New EU-China mechanism appeared first on Carbon Brief.",
-          "published": "2026-07-09T15:01:34.000Z",
+          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 10 July 2026: Deadly Europe heat | EU electrification leak | COP31 president interview appeared first on Carbon Brief.",
+          "published": "2026-07-10T15:30:00.000Z",
           "score": 16
         },
         {
-          "title": "UK swelters in third heatwave of the year as western Europe counts cost of hottest-ever June",
-          "link": "https://www.theguardian.com/environment/2026/jul/09/uk-swelters-third-heatwave-western-europe-counts-cost-hottest-ever-june",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Britain expands heat alerts while estimates suggest June’s death toll could surpass 20,000 across continent&lt;/p&gt;&lt;p&gt;The UK is sweltering through the peak of its third heatwave of the year as countries around Europe struggle to recover from an early onslaught of baking summer heat.&lt;/p&gt;&lt;p&gt;Punishing temperatures pushed higher by fossil fuel pollution have &lt;a href=\"https://www.theguardian.com/environment/2026/jun/24/uk-records-hottest-june-day\"&gt;broken records&lt;",
-          "published": "2026-07-09T17:39:03.000Z",
+          "title": "Eight facts about air conditioning amid an overheated global debate",
+          "link": "https://www.carbonbrief.org/eight-facts-about-air-conditioning-amid-an-overheated-global-debate/",
+          "source": "Carbon Brief",
+          "description": "As successive heatwaves hit Europe, air-conditioning (AC) has emerged as a new front in the... The post Eight facts about air conditioning amid an overheated global debate appeared first on Carbon Brief.",
+          "published": "2026-07-10T14:21:15.000Z",
+          "score": 12
+        },
+        {
+          "title": "Interview: COP31 president says electrification is ‘surest way to protect citizens’",
+          "link": "https://www.carbonbrief.org/interview-cop31-president-says-electrification-is-surest-way-to-protect-citizens/",
+          "source": "Carbon Brief",
+          "description": "Last month, COP31 president-designate Murat Kurum launched a target for 35% of the world’s final... The post Interview: COP31 president says electrification is ‘surest way to protect citizens’ appeared first on Carbon Brief.",
+          "published": "2026-07-10T15:40:00.000Z",
+          "score": 10
+        },
+        {
+          "title": "Loss and damage fund delays first project approvals as needs dwarf resources",
+          "link": "https://www.climatechangenews.com/2026/07/10/loss-and-damage-fund-delays-first-project-approvals-as-needs-dwarf-resources/",
+          "source": "Climate Home News",
+          "description": "The new Fund for Responding to Loss and Damage faces an overwhelming number of initial requests for its limited pot of money and board members decided to take more time to choose which to back first The post Loss and damage fund delays first project approvals as needs dwarf resources appeared first on Climate Home News.",
+          "published": "2026-07-10T13:59:06.000Z",
           "score": 10
         },
         {
@@ -102,22 +118,6 @@
           "description": "A lawsuit demands that the Port of Rotterdam moves faster to cut its dependence on fossil fuel firms.",
           "published": "2026-07-09T23:00:51.000Z",
           "score": 10
-        },
-        {
-          "title": "MPs call on UK government to host televised emergency briefing on climate emergency",
-          "link": "https://www.theguardian.com/environment/2026/jul/10/mps-government-televised-emergency-briefing-climate-emergency",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;As UK swelters in another heatwave, 50-minute Chris Packham film outlines threats to security, economy and health&lt;/p&gt;&lt;p&gt;MPs are calling on the UK government to host a televised national climate emergency briefing in response to what has been described as the most “insidious threat to our society”.&lt;/p&gt;&lt;p&gt;In November, in the “first-of-its-kind, national emergency briefing”, &lt;a href=\"https://www.theguardian.com/environment/2025/nov/27/limate-related-risks-uk-econ",
-          "published": "2026-07-10T12:00:20.000Z",
-          "score": 7
-        },
-        {
-          "title": "Spain battles deadly wildfire amid heat wave",
-          "link": "https://www.dw.com/en/spain-battles-deadly-wildfire-amid-heat-wave/a-77898335?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Spain has mobilized military emergency units to work with regional firefighters to control the blaze. The Spanish royal family and Prime Minister Pedro Sanchez expressed their deep sorrow over the loss of life.",
-          "published": "2026-07-10T02:41:00.000Z",
-          "score": 7
         }
       ]
     },
@@ -131,6 +131,14 @@
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5\" target=\"_blank\"&gt;VIEW Japan encourages GPIF to boost domestic investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-10T02:19:00.000Z",
+          "score": 2
+        },
+        {
+          "title": "India equity mutual fund inflows rebound from one-year low - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5\" target=\"_blank\"&gt;India equity mutual fund inflows rebound from one-year low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T09:33:44.000Z",
           "score": 2
         },
         {
@@ -153,20 +161,12 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU lawmakers pave way for &#039;digital euro&#039; negotiations",
-          "link": "https://www.dw.com/en/eu-lawmakers-pave-way-for-digital-euro-negotiations/a-77895581?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The digital euro has been touted as the EU&#039;s best chance at breaking its dependence on US payment systems like Visa and Mastercard, as well as Apple Pay and Google Pay.",
-          "published": "2026-07-09T17:20:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Carney pitches tighter Canada-Saudi mining and energy ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcUVidVlYZTlkZTZjSG5oenMyTm0yV3ZhVzlwM0NIdmZLMVdiY0pGUVpUSmFYbU9WaERxRkZnY0NBUjdaVmszZGlueEV1ZElvbXp0c3N5X2I0RXlFWld6QXRzTVlodGhyVHlJcnpvU3lZWk1CNzBTUHJlZEdOZHdRMWJIblYwTE5HTTloU1RSVjZkR2RNUHBTQ1poUVhxQWtCcktjTFhOejFGb1hi?oc=5",
+          "title": "EU tells Instagram, Facebook to change addictive features or risk fines - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRUxQS2dYSG5aVnI1cDJONzVVWURrcEE3MzhOZE5VaDBOTGgtR3RHWVAydDVlTUJTSVBDd01TMFp1ZGFiNV9aYXVsMW1hX2ZaamlVcUZQZHlOV3gwcjdXcHJTY2sxY1JOQVRZWGc0SlhXZHJ1M01rUTlkTDkzOFZrUWZNQWlLZGR5b1JHUjFvM0t1LW5NY2ZNUE5EZzJmVHRmc3A1Qmg4MzhQZVpDSlE?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPcUVidVlYZTlkZTZjSG5oenMyTm0yV3ZhVzlwM0NIdmZLMVdiY0pGUVpUSmFYbU9WaERxRkZnY0NBUjdaVmszZGlueEV1ZElvbXp0c3N5X2I0RXlFWld6QXRzTVlodGhyVHlJcnpvU3lZWk1CNzBTUHJlZEdOZHdRMWJIblYwTE5HTTloU1RSVjZkR2RNUHBTQ1poUVhxQWtCcktjTFhOejFGb1hi?oc=5\" target=\"_blank\"&gt;Carney pitches tighter Canada-Saudi mining and energy ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-09T15:31:54.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPRUxQS2dYSG5aVnI1cDJONzVVWURrcEE3MzhOZE5VaDBOTGgtR3RHWVAydDVlTUJTSVBDd01TMFp1ZGFiNV9aYXVsMW1hX2ZaamlVcUZQZHlOV3gwcjdXcHJTY2sxY1JOQVRZWGc0SlhXZHJ1M01rUTlkTDkzOFZrUWZNQWlLZGR5b1JHUjFvM0t1LW5NY2ZNUE5EZzJmVHRmc3A1Qmg4MzhQZVpDSlE?oc=5\" target=\"_blank\"&gt;EU tells Instagram, Facebook to change addictive features or risk fines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T10:31:13.000Z",
+          "score": 8
         },
         {
           "title": "US House to vote on bill to make daylight saving time permanent - Reuters",
@@ -177,28 +177,36 @@
           "score": 6
         },
         {
-          "title": "Huge crowds in Mashhad as Iran's late supreme leader is buried",
-          "link": "https://www.bbc.co.uk/news/articles/c5yzm8m4peeo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Germany: Bundestag passes controversial healthcare reform",
+          "link": "https://www.dw.com/en/germany-bundestag-passes-controversial-healthcare-reform/live-77899497?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The cost-cutting package has passed Germany&#039;s parliament despite fierce criticism from the opposition. Meanwhile, Alexander Zverev has become the first German man to reach the Wimbledon final since 1995. DW has more.",
+          "published": "2026-07-10T10:00:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Zulu king expresses regret after video captures tirade against his wife",
+          "link": "https://www.bbc.co.uk/news/articles/cy8dl9n1v3vo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Ali Khamenei was buried at the Imam Reza shrine, Iran's holiest Shia Muslim site, ending six days of public mourning ceremonies.",
-          "published": "2026-07-09T23:18:18.000Z",
+          "description": "In the footage widely shared in South Africa, King Misuzulu threatens to physically assault his wife and accuses her of cheating.",
+          "published": "2026-07-10T16:42:11.000Z",
           "score": 2
         },
         {
-          "title": "Ukrainian agent accused of murdering Monaco bomb suspect changes story",
-          "link": "https://www.bbc.co.uk/news/articles/cpv3e8y39j7o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "Man fatally shot by ICE in Houston was not intended target, DHS says",
+          "link": "https://www.bbc.co.uk/news/articles/cm2rm66xd17o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Two men with links to Ukraine's security services are accused of killing Anastasiia Berezovska and dumping her body in woods.",
-          "published": "2026-07-09T20:47:41.000Z",
+          "description": "Immigration agents were looking for a different person when they shot Lorenzo Salgado Araujo during a traffic stop, officials say.",
+          "published": "2026-07-10T12:51:46.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 430,
-    "articlesLast24h": 157,
-    "afterDedup": 150,
+    "totalArticlesScanned": 428,
+    "articlesLast24h": 164,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
