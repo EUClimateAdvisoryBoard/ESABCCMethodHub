@@ -1,5 +1,6 @@
 /**
- * Summer Prep — Policy gaps for TRANSPORT and INDUSTRY (extends M · 36).
+ * Summer Prep — Policy gaps for TRANSPORT and INDUSTRY (extends the Policy
+ * Gap Tracker sub-module, formerly M · 36).
  * ---------------------------------------------------------------------------
  * This note takes the transport- and industry-tagged findings from the Policy
  * Gap Tracker (the gaps the 2024 ESABCC report identified) and does three

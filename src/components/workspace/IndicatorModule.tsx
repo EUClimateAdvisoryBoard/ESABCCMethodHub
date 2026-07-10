@@ -11,8 +11,8 @@
  */
 'use client';
 
-import { useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { saveAs } from 'file-saver';
 import {
   Chart as ChartJS,
@@ -102,10 +102,17 @@ interface Props {
 
 export default function IndicatorModule({ projectId, initial, initialLayouts }: Props) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const chartRef = useRef<HTMLDivElement>(null);
   const [indicators, setIndicators] = useState<Indicator[]>(initial);
   const [layouts, setLayouts] = useState<Record<string, IndicatorSheetLayout>>(initialLayouts);
-  const [selectedId, setSelectedId] = useState<string>(initial[0]?.id ?? '');
+  // Deep link: `?indicator=<id>` (e.g. from the Summer Prep Indicator Check)
+  // pre-selects that indicator and lands on the indicator view instead of the
+  // flow-chart overview. Unknown ids fall back to the default landing.
+  const indicatorParam = searchParams?.get('indicator') ?? null;
+  const deepLinkedId =
+    indicatorParam && initial.some((i) => i.id === indicatorParam) ? indicatorParam : null;
+  const [selectedId, setSelectedId] = useState<string>(deepLinkedId ?? initial[0]?.id ?? '');
   const [chartType, setChartType] = useState<'line' | 'bar'>('line');
   // Show the sector flow-chart view wherever the indicator database contains
   // the ESABCC report cluster (ids prefixed `esabcc-`) — i.e. the report
@@ -115,9 +122,18 @@ export default function IndicatorModule({ projectId, initial, initialLayouts }: 
   // The flow-chart overview is the landing view — the frameworks are what
   // motivate the indicators, so users see them first. The beta board is no
   // longer a separate tab: it is one of the versions in the flow-chart registry.
+  // A deep-linked indicator overrides that and opens the indicator view.
   const [view, setView] = useState<'indicators' | 'flowcharts'>(
-    showFrameworks ? 'flowcharts' : 'indicators'
+    showFrameworks && !deepLinkedId ? 'flowcharts' : 'indicators'
   );
+  // Keep honouring the param on client-side navigations to the same page
+  // (e.g. clicking a second indicator link while the module is mounted).
+  useEffect(() => {
+    if (deepLinkedId) {
+      setSelectedId(deepLinkedId);
+      setView('indicators');
+    }
+  }, [deepLinkedId]);
   const [editorOpen, setEditorOpen] = useState(false);
   const [historyOpen, setHistoryOpen] = useState(false);
   const [adding, setAdding] = useState(false);

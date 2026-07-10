@@ -1,7 +1,8 @@
 'use client';
 
 /**
- * Summer Prep · Note 3 — Policy gaps for TRANSPORT & INDUSTRY (extends M · 36).
+ * Summer Prep · Note 3 — Policy gaps for TRANSPORT & INDUSTRY (extends the
+ * Policy Gap Tracker sub-module, formerly M · 36).
  * ---------------------------------------------------------------------------
  * Three things the base Policy Gap Tracker does not do:
  *   1. Re-assess whether each transport/industry gap STILL EXISTS after the

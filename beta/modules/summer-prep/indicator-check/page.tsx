@@ -17,6 +17,7 @@
  */
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -39,6 +40,16 @@ const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }>
 };
 
 const MAJOR_MOVE_PCT = 4; // |Δ| ≥ 4% since the report counts as a "major update"
+
+/**
+ * Deep link into the Policy Gap 2.0 Project Workspace: opens the Indicator
+ * Database module with this indicator pre-selected (the workspace seeds the
+ * same `esabcc-*` indicator ids as `esabcc-indicators.ts`).
+ */
+const WORKSPACE_PROJECT_ID = 'policy-gap-2-0';
+function workspaceIndicatorHref(indicatorId: string): string {
+  return `/project-workspace/${WORKSPACE_PROJECT_ID}?module=indicators&indicator=${encodeURIComponent(indicatorId)}`;
+}
 
 interface IndicatorRead {
   ind: Indicator;
@@ -189,7 +200,8 @@ function IndicatorCheckInner() {
           <>
             The old report’s progress indicators, read for movement. For every indicator that has
             gained data since January 2024, this shows the report baseline, the newest two–three
-            points, and whether the sector has improved or slipped. Data:{' '}
+            points, and whether the sector has improved or slipped. Click an indicator to open its
+            full series in the Policy Gap 2.0 Project Workspace. Data:{' '}
             <span className="font-mono text-[12px]">esabcc-indicators.ts</span>.
           </>
         }
@@ -296,7 +308,15 @@ function IndicatorCheckInner() {
                   <Sparkline ind={r.ind} improving={r.improving} />
                 </div>
 
-                <h3 className="mt-2 text-[13px] font-semibold leading-snug">{r.ind.name}</h3>
+                <h3 className="mt-2 text-[13px] font-semibold leading-snug">
+                  <Link
+                    href={workspaceIndicatorHref(r.ind.id)}
+                    title="Open this indicator's full series in the Policy Gap 2.0 Project Workspace"
+                    className="hover:text-[#00928F] hover:underline decoration-[#00928F] underline-offset-2"
+                  >
+                    {r.ind.name}
+                  </Link>
+                </h3>
 
                 {r.hasUpdate && r.baseline && r.latest ? (
                   <>
@@ -368,6 +388,13 @@ function IndicatorCheckInner() {
                       {r.ind.targetYear ? ` by ${r.ind.targetYear}` : ''}
                     </span>
                   )}
+                  <span> · </span>
+                  <Link
+                    href={workspaceIndicatorHref(r.ind.id)}
+                    className="font-semibold text-[#00928F] hover:underline"
+                  >
+                    Open in Project Workspace →
+                  </Link>
                 </div>
               </article>
             );

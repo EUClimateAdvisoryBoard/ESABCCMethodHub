@@ -2,7 +2,8 @@
 
 /**
  * SummerPrepGate — a lightweight client-side password gate for the
- * "Summer Prep" beta module (M · 37) and every one of its sub-modules.
+ * "Summer Prep" beta module (M · 35, formerly M · 37) and every one of its
+ * sub-modules.
  *
  * The Secretariat asked for a single shared passphrase to open the Summer
  * Prep workspace. Because the whole `beta/` tree is an internal prototype
@@ -76,7 +77,7 @@ export default function SummerPrepGate({ children }: { children: ReactNode }) {
               Beta
             </span>
             <span className="rounded bg-[#F3F5F7] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
-              M · 37 — Summer Prep
+              M · 35 — Summer Prep
             </span>
           </div>
 
