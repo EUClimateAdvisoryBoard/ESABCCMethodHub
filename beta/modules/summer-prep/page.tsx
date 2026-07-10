@@ -191,7 +191,9 @@ export default function SummerPrepPage() {
           </section>
 
           <p className="mt-10 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
-            Provenance: the Indicator Check reads the report’s own progress indicators; the
+            Provenance: the Indicator Check reads the report’s own progress indicators live from
+            the Policy Gap 2.0 Project Workspace indicator database (it shows nothing that is not
+            also in the workspace); the
             synergies and sector-gap notes are literature- and report-grounded working drafts, with
             AI-compiled framing flagged as pending verification inside each note. The synergies
             note’s citations were source-verified (Crossref/publisher records) in July 2026.

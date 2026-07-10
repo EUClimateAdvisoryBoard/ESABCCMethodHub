@@ -11,9 +11,13 @@
  *   • the two–three newer points added since publication; and
  *   • a direction-aware read of whether the sector improved or slipped.
  *
- * All numbers come straight from src/data/esabcc-indicators.ts — the
- * `afterReport` flag marks which points are newer than the report. Nothing is
- * invented here; the module only computes deltas and draws the series.
+ * The indicator series are NOT bundled here: the server wrapper
+ * (src/app/beta/summer-prep/indicator-check/page.tsx) reads them from the
+ * Policy Gap 2.0 Project Workspace indicator database (`listIndicators`) and
+ * passes them in as a prop. That is the same read the workspace's own
+ * Indicator Database tab renders from, so this dashboard can only ever show
+ * data that is also visible in the Project Workspace — nothing is invented
+ * or added on top; the module only computes deltas and draws the series.
  */
 
 import { useMemo, useState } from 'react';
@@ -22,7 +26,6 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 import SummerPrepGate from '@/components/SummerPrepGate';
-import { ESABCC_REPORT_INDICATORS } from '@/data/esabcc-indicators';
 import type { Indicator, IndicatorCategory } from '@/data/ecno-indicators';
 
 const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }> = {
@@ -144,10 +147,10 @@ function Sparkline({ ind, improving }: { ind: Indicator; improving: boolean | nu
 
 type SortKey = 'move' | 'sector' | 'code';
 
-function IndicatorCheckInner() {
+function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
   const reads = useMemo(
-    () => ESABCC_REPORT_INDICATORS.map(readIndicator),
-    [],
+    () => indicators.map(readIndicator),
+    [indicators],
   );
 
   const [onlyUpdates, setOnlyUpdates] = useState(true);
@@ -201,8 +204,8 @@ function IndicatorCheckInner() {
             The old report’s progress indicators, read for movement. For every indicator that has
             gained data since January 2024, this shows the report baseline, the newest two–three
             points, and whether the sector has improved or slipped. Click an indicator to open its
-            full series in the Policy Gap 2.0 Project Workspace. Data:{' '}
-            <span className="font-mono text-[12px]">esabcc-indicators.ts</span>.
+            full series in the Policy Gap 2.0 Project Workspace — every value shown here is read
+            from that workspace’s indicator database, so the two views always match.
           </>
         }
       />
@@ -420,13 +423,14 @@ function IndicatorCheckInner() {
         </div>
 
         <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
-          Provenance: every value is taken verbatim from the report’s underlying indicator series
-          (<span className="font-mono">esabcc-indicators.ts</span>). Points flagged{' '}
-          <span className="font-mono">afterReport</span> are figures the primary publisher (Eurostat
-          / EEA / EAFO / IRENA / EHPA) released after the January-2024 report; the “improving /
-          slipping” read is direction-aware (for a lower-is-better indicator, a fall counts as
-          improvement). A “major” move is a change of at least {MAJOR_MOVE_PCT}% from the report
-          baseline — a screen for attention, not a formal significance test.
+          Provenance: every value is read verbatim from the Policy Gap 2.0 Project Workspace
+          indicator database — the same series the workspace’s Indicator Database tab shows, so
+          nothing appears here that is not also in the workspace. Post-report points are figures
+          the primary publisher (Eurostat / EEA / EAFO / IRENA / EHPA) released after the
+          January-2024 report; the “improving / slipping” read is direction-aware (for a
+          lower-is-better indicator, a fall counts as improvement). A “major” move is a change of
+          at least {MAJOR_MOVE_PCT}% from the report baseline — a screen for attention, not a
+          formal significance test.
         </p>
       </main>
       <SiteFooter />
@@ -434,10 +438,10 @@ function IndicatorCheckInner() {
   );
 }
 
-export default function IndicatorCheckPage() {
+export default function IndicatorCheckPage({ indicators }: { indicators: Indicator[] }) {
   return (
     <SummerPrepGate>
-      <IndicatorCheckInner />
+      <IndicatorCheckInner indicators={indicators} />
     </SummerPrepGate>
   );
 }
