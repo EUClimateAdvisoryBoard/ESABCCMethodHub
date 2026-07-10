@@ -1,6 +1,6 @@
 {
   "date": "2026-07-10",
-  "generatedAt": "2026-07-10T00:06:23.561Z",
+  "generatedAt": "2026-07-10T08:27:14.478Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 10 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#007B6C"
     },
     {
-      "headline": "India looks to untapped graphite riches for slice of critical minerals boom",
-      "summary": "Clean energy demand for battery-grade graphite is surging, but India faces hurdles as it positions itself to compete with China's grip on the supply chain The post India looks to untapped graphite riches for slice of critical minerals boom appeared first on Climate Home News.",
+      "headline": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
+      "summary": "Disruptions in the Strait of Hormuz have hit supplies of liquefied petroleum gas (LPG), seen as a cleaner cooking alternative to charcoal and wood The post Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -49,12 +49,28 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "India looks to untapped graphite riches for slice of critical minerals boom",
-          "link": "https://www.climatechangenews.com/2026/07/09/india-looks-to-untapped-graphite-riches-for-slice-of-critical-minerals-boom/",
+          "title": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
+          "link": "https://www.climatechangenews.com/2026/07/10/iran-war-fuel-shocks-threaten-africa-clean-cooking-push-iea-says/",
           "source": "Climate Home News",
-          "description": "Clean energy demand for battery-grade graphite is surging, but India faces hurdles as it positions itself to compete with China's grip on the supply chain The post India looks to untapped graphite riches for slice of critical minerals boom appeared first on Climate Home News.",
-          "published": "2026-07-09T05:00:00.000Z",
+          "description": "Disruptions in the Strait of Hormuz have hit supplies of liquefied petroleum gas (LPG), seen as a cleaner cooking alternative to charcoal and wood The post Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says appeared first on Climate Home News.",
+          "published": "2026-07-10T08:01:20.000Z",
           "score": 10
+        },
+        {
+          "title": "Pollutionwatch: How harmful ozone builds up near ground in heatwaves",
+          "link": "https://www.theguardian.com/environment/2026/jul/10/pollutionwatch-ozone-air-pollution-heatwaves-europe",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Concentrations of gas were continuously raised in Europe during June hot spell, with potentially deadly effects&lt;/p&gt;&lt;p&gt;Widespread air pollution was a feature of June’s record-breaking heat across western Europe and is likely to increase again as the UK experiences its third heatwave of the summer.&lt;/p&gt;&lt;p&gt;UK weather warnings for extreme heat from 22 June were followed by a rare &lt;a href=\"https://www.london.gov.uk/mayor-london-issues-high-pollution-alert-1\"&gt;high",
+          "published": "2026-07-10T05:00:12.000Z",
+          "score": 9
+        },
+        {
+          "title": "‘A lot of red flags’: plans for New Zealand’s first datacentre spark concern as locals demand greater transparency",
+          "link": "https://www.theguardian.com/world/2026/jul/10/new-zealand-first-datacentre-concern-locals-makarewa-invercargill-datagrid",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Plans to build a NZ$3.5bn datacentre in Makarewa in the country’s south has drawn concern about electricity and water use, and potential noise pollution&lt;/p&gt;&lt;p&gt;People living near the site of New Zealand’s first planned AI datacentre are calling for more transparency about the project, especially about how the centre’s huge electricity and water use and potential noise pollution could affect them.&lt;/p&gt;&lt;p&gt;Singapore-based company Datagrid has secured approval to build",
+          "published": "2026-07-10T00:40:26.000Z",
+          "score": 7
         },
         {
           "title": "Experimental bathtub: the remote lake island trying wave power to boost energy security",
@@ -139,22 +155,6 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "OPINION on the proposal for a regulation of the European Parliament and of the Council Establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities - PE790.742v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AD-790742_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "OPINION on the proposal for a regulation of the European Parliament and of the Council Establishing a budget expenditure tracking and performance framework and other horizontal rules for the Union programmes and activities&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Pierfrancesco Maran&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-09T04:43:03.000Z",
-          "score": 22
-        },
-        {
-          "title": "AMENDMENTS 17 - 94 - Draft report Suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste - PE790.771v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-790771_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "AMENDMENTS 17 - 94 - Draft report Suspending the application of the rules on the appointment of an authorised representative for extended producer responsibility for batteries and waste batteries and packaging and packaging waste&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Ingeborg Ter Laak&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-09T07:03:01.000Z",
-          "score": 18
-        },
-        {
           "title": "Merz: Germany agreed to buy Tomahawk missiles at NATO summit",
           "link": "https://www.dw.com/en/merz-germany-agreed-to-buy-tomahawk-missiles-at-nato-summit/a-77884596?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
@@ -185,14 +185,6 @@
           "score": 8
         },
         {
-          "title": "Binance maintains commitment to EU, seeking more licences in Asia - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOM0puYWdlUjdCX2NCbU1wTVZtcV91ekpvOGFWcDlObFE1OXdIYjZSaGczY3ZyRmRSbDRFcF9Pc2VOWV8xejlFR0poVWFjM3R5X29DRzhIcWtRRk1wUkFNanNyQkk5Z0ZmajFNMUtYZlNWN1dwTFdGN0xPZHRha1ZLelBIU1A3NjU1UFVjWHI3OVdYZE1qMXZCX3JsQzVoZWdGTUowUHJYN2g4WkRxZ25weThR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxOM0puYWdlUjdCX2NCbU1wTVZtcV91ekpvOGFWcDlObFE1OXdIYjZSaGczY3ZyRmRSbDRFcF9Pc2VOWV8xejlFR0poVWFjM3R5X29DRzhIcWtRRk1wUkFNanNyQkk5Z0ZmajFNMUtYZlNWN1dwTFdGN0xPZHRha1ZLelBIU1A3NjU1UFVjWHI3OVdYZE1qMXZCX3JsQzVoZWdGTUowUHJYN2g4WkRxZ25weThR?oc=5\" target=\"_blank\"&gt;Binance maintains commitment to EU, seeking more licences in Asia&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-09T06:20:00.000Z",
-          "score": 8
-        },
-        {
           "title": "EU imposes anti-dumping duties on Chinese tyres - Reuters",
           "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxOR2FqREd2TFdYM19NSDhQajE4Z2RzZWZkNFREYVdlQy13bGxRZ01DR2xMRENyQnhoLU05QjRyZkRYTHhQQW11S01MSmVBamdmdFVwYVVoYVBESWtHb0lwb3FtOVc3WEdya0h1NTdMY2pFMTQxQ0NxVHRiMV9FUjZHTm9Ha2VWd0NrNGdaR3E5cm9GT1hMa29J?oc=5",
           "source": "Reuters World (via Google News)",
@@ -201,20 +193,28 @@
           "score": 8
         },
         {
-          "title": "Western Europe records hottest June on record, EU scientists say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOd3Izd05fakhiWTBkMy1GOVZpVGk0ZlhheWF6dE5CZnVQS05CRG0zLUNIaHZMOW9LbWNURWZBaGNZWHRIY3pzU21peFF4X1VQSXFCc2NEc3RPX24zbEZUSmFNQ092WFFsZldBVElXd2RyNUdsWmt1dWRCSVk0dUNZdnF1SGFuVUJsS0xqWW1pVW9TcnMybnIwanY2bFZxV0VWVFpobWlQblFCTkJjNExHQm9LSHJfZw?oc=5",
+          "title": "Carney pitches tighter Canada-Saudi mining and energy ties - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcUVidVlYZTlkZTZjSG5oenMyTm0yV3ZhVzlwM0NIdmZLMVdiY0pGUVpUSmFYbU9WaERxRkZnY0NBUjdaVmszZGlueEV1ZElvbXp0c3N5X2I0RXlFWld6QXRzTVlodGhyVHlJcnpvU3lZWk1CNzBTUHJlZEdOZHdRMWJIblYwTE5HTTloU1RSVjZkR2RNUHBTQ1poUVhxQWtCcktjTFhOejFGb1hi?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOd3Izd05fakhiWTBkMy1GOVZpVGk0ZlhheWF6dE5CZnVQS05CRG0zLUNIaHZMOW9LbWNURWZBaGNZWHRIY3pzU21peFF4X1VQSXFCc2NEc3RPX24zbEZUSmFNQ092WFFsZldBVElXd2RyNUdsWmt1dWRCSVk0dUNZdnF1SGFuVUJsS0xqWW1pVW9TcnMybnIwanY2bFZxV0VWVFpobWlQblFCTkJjNExHQm9LSHJfZw?oc=5\" target=\"_blank\"&gt;Western Europe records hottest June on record, EU scientists say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-09T02:02:00.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxPcUVidVlYZTlkZTZjSG5oenMyTm0yV3ZhVzlwM0NIdmZLMVdiY0pGUVpUSmFYbU9WaERxRkZnY0NBUjdaVmszZGlueEV1ZElvbXp0c3N5X2I0RXlFWld6QXRzTVlodGhyVHlJcnpvU3lZWk1CNzBTUHJlZEdOZHdRMWJIblYwTE5HTTloU1RSVjZkR2RNUHBTQ1poUVhxQWtCcktjTFhOejFGb1hi?oc=5\" target=\"_blank\"&gt;Carney pitches tighter Canada-Saudi mining and energy ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-09T15:31:54.000Z",
+          "score": 7
+        },
+        {
+          "title": "China aims to raise EV share of vehicle ownership to 30% by 2030 - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNZEpxaFZScWo2QnhzWE15eU5nczdRNDZfcHdIbktxTjNvZTJZVmFPaDNJUHJpUEN5Q0p2NlBYRkFSeEpaOGlUMkNoM3ZodzlCOTMzdUZ5WEN3VGdkY0FHejU0VGRNNzdlcFExYlM5NFY1LVVxOUlfSFVXNHlWMGN4WVU5UFRDNzFyTXRoczNBTTlUTnFpbWYzXzdjRnJUaFN5MkJSeVYzdzZvdUh3RVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNZEpxaFZScWo2QnhzWE15eU5nczdRNDZfcHdIbktxTjNvZTJZVmFPaDNJUHJpUEN5Q0p2NlBYRkFSeEpaOGlUMkNoM3ZodzlCOTMzdUZ5WEN3VGdkY0FHejU0VGRNNzdlcFExYlM5NFY1LVVxOUlfSFVXNHlWMGN4WVU5UFRDNzFyTXRoczNBTTlUTnFpbWYzXzdjRnJUaFN5MkJSeVYzdzZvdUh3RVE?oc=5\" target=\"_blank\"&gt;China aims to raise EV share of vehicle ownership to 30% by 2030&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-09T09:26:07.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 430,
-    "articlesLast24h": 165,
-    "afterDedup": 157,
+    "totalArticlesScanned": 434,
+    "articlesLast24h": 166,
+    "afterDedup": 160,
     "feedsQueried": 19
   }
 }
