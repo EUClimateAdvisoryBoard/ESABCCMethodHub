@@ -395,6 +395,7 @@ export default async function HomePage() {
     { code: 'M · 34', title: 'Overview Industry', href: '/beta/overview-industry', tags: ['Clean Tech', 'Trade flows'] },
     { code: 'M · 35', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
     { code: 'M · 36', title: 'Policy Gap Tracker', href: '/beta/policy-gaps', tags: ['Gaps report', 'Editable · Excel'] },
+    { code: 'M · 37', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['🔒 Passphrase', 'Industry · Transport', 'Indicators · gaps'] },
   ];
 
   return (
