@@ -1,6 +1,6 @@
 {
   "date": "2026-07-10",
-  "generatedAt": "2026-07-10T18:24:24.364Z",
+  "generatedAt": "2026-07-10T23:59:13.955Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 10 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -17,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "VIEW Japan encourages GPIF to boost domestic investment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5\" target=\"_blank\"&gt;VIEW Japan encourages GPIF to boost domestic investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "India equity mutual fund inflows rebound from one-year low - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5\" target=\"_blank\"&gt;India equity mutual fund inflows rebound from one-year low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -112,12 +112,12 @@
           "score": 10
         },
         {
-          "title": "Pressure builds on Europe's biggest port to be greener",
-          "link": "https://www.bbc.co.uk/news/articles/c39y78rwrmno?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A lawsuit demands that the Port of Rotterdam moves faster to cut its dependence on fossil fuel firms.",
-          "published": "2026-07-09T23:00:51.000Z",
-          "score": 10
+          "title": "Pacific gray whales facing ‘catastrophic’ die-off as climate crisis hits food supply",
+          "link": "https://www.theguardian.com/environment/2026/jul/10/pacific-gray-whales-population-climate-change",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Trump administration urged to relist a species in ‘very, very serious trouble’ under Endangered Species Act&lt;/p&gt;&lt;p&gt;Climate change is &lt;a href=\"https://www.fisheries.noaa.gov/feature-story/eastern-north-pacific-gray-whales-continue-decline-after-downturn-during-unusual\"&gt;driving&lt;/a&gt; a gray whale “catastrophic mortality event” in the Pacific Ocean as melting sea ice depletes food sources and the animals starve, &lt;a href=\"https://peer.org/gray-whales-suffering-catast",
+          "published": "2026-07-10T13:00:20.000Z",
+          "score": 7
         }
       ]
     },
@@ -125,14 +125,6 @@
       "id": "finance",
       "title": "Green Finance & Investment",
       "items": [
-        {
-          "title": "VIEW Japan encourages GPIF to boost domestic investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5\" target=\"_blank\"&gt;VIEW Japan encourages GPIF to boost domestic investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T02:19:00.000Z",
-          "score": 2
-        },
         {
           "title": "India equity mutual fund inflows rebound from one-year low - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5",
@@ -142,11 +134,11 @@
           "score": 2
         },
         {
-          "title": "Australia's NEXTDC signs $1.6 billion senior debt facilities to fund expansion - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSzZzZ250MEZjQlQ1N1c3VkxzdmhUbWp0RGY3V0ZQNkIyVTlDU3hwcTJ2c293ak9reXctUVB5bzQwdWQwaTNBTXRNS2R6LS1MeURYcE11eG55d3lGTUNOVGpPVGx1ang2dGwzakpRdzg3Wm8yMEt0VXg4X09PZnZfUkpPdkZLdTNRcGJTeTFnMmNyYUxNdVpnTGh4RkFZanp1bEVKT1VpSkZkTFhBajZ2Mkc1UV8zZVZlUzhGMnNaczNZV3FIWmc?oc=5",
+          "title": "VIEW Japan encourages GPIF to boost domestic investment - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPSzZzZ250MEZjQlQ1N1c3VkxzdmhUbWp0RGY3V0ZQNkIyVTlDU3hwcTJ2c293ak9reXctUVB5bzQwdWQwaTNBTXRNS2R6LS1MeURYcE11eG55d3lGTUNOVGpPVGx1ang2dGwzakpRdzg3Wm8yMEt0VXg4X09PZnZfUkpPdkZLdTNRcGJTeTFnMmNyYUxNdVpnTGh4RkFZanp1bEVKT1VpSkZkTFhBajZ2Mkc1UV8zZVZlUzhGMnNaczNZV3FIWmc?oc=5\" target=\"_blank\"&gt;Australia's NEXTDC signs $1.6 billion senior debt facilities to fund expansion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
-          "published": "2026-07-09T23:54:23.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxPaTZCY09lb1VZY0tMbnNLNGtpbUlpeDdBdFFIb3Z6VDgzSnJxbXJjbmxmMXhFS2FTakI4WUw3Um5vclRzaVFhTzRGYkVHREVzZEw5UWhFdHAtUWtlYVg5QnlvS0F0MmYzSXpOM2xZM2FyeDRnT1BaeXBUSm1IeVhMYWNxSnhxWTVDeGw0X2QxdkptTnZYRHROZUtoSERTNG10LVBmM1BJQm9zOXM?oc=5\" target=\"_blank\"&gt;VIEW Japan encourages GPIF to boost domestic investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T02:19:00.000Z",
           "score": 2
         }
       ]
@@ -161,6 +153,14 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "EU threatens Meta with hefty fine over &#039;addictive design&#039;",
+          "link": "https://www.dw.com/en/eu-threatens-meta-with-hefty-fine-over-addictive-design/a-77912229?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "A preliminary investigation by the bloc has found the social media giant is not doing enough to protect children using its platforms. Meta rejects the accusations, which could cost it 6% of its annual revenue in fines.",
+          "published": "2026-07-10T19:26:00.000Z",
+          "score": 8
+        },
+        {
           "title": "EU tells Instagram, Facebook to change addictive features or risk fines - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRUxQS2dYSG5aVnI1cDJONzVVWURrcEE3MzhOZE5VaDBOTGgtR3RHWVAydDVlTUJTSVBDd01TMFp1ZGFiNV9aYXVsMW1hX2ZaamlVcUZQZHlOV3gwcjdXcHJTY2sxY1JOQVRZWGc0SlhXZHJ1M01rUTlkTDkzOFZrUWZNQWlLZGR5b1JHUjFvM0t1LW5NY2ZNUE5EZzJmVHRmc3A1Qmg4MzhQZVpDSlE?oc=5",
           "source": "Reuters World (via Google News)",
@@ -169,44 +169,36 @@
           "score": 8
         },
         {
-          "title": "US House to vote on bill to make daylight saving time permanent - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYXBzWnEzdXRwekNtMUxmdThpLVo2X0VaTW10SDM5bXJsNU5INk9IN2lrMnhIcHF6dElmc0VyZHNwRFFiYXNBempSVFVVMEs3Wk9KSk5GOGM3dVBiQk9oOHRjY2VzLVVTMkhHUDZSUkFoQUc0WEZiMWxfTFBXdndFV0JlN1dGbk52SnZyMEVtT0xtVW1GdHlvLVAtNS05Vk8w?oc=5",
+          "title": "Senegal's top court calls parliament-backed reform 'unconstitutional' - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNX1FHWF9JYU5zQXlPR294emRUcndlTlFFODM3ZkVZWjJpdzhjNDNiZ1hBOWt1TmVLd3hHRDZmYTdlbEF1Xy1rMDdNeEM0RnJuSmMyQ0tSNWZON2ZEclM2RW9ORFFGc3dqcGI0QzZVWm1tRldBNkwzZTh4a1BzZjJHemxiWmljS18yWjBfNHVSb1dEak9tV0VLT1FvWEd1TlBBT3Y4c0ZYYTJhdXpXNTRQNGRNWDRWQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMioAFBVV95cUxNYXBzWnEzdXRwekNtMUxmdThpLVo2X0VaTW10SDM5bXJsNU5INk9IN2lrMnhIcHF6dElmc0VyZHNwRFFiYXNBempSVFVVMEs3Wk9KSk5GOGM3dVBiQk9oOHRjY2VzLVVTMkhHUDZSUkFoQUc0WEZiMWxfTFBXdndFV0JlN1dGbk52SnZyMEVtT0xtVW1GdHlvLVAtNS05Vk8w?oc=5\" target=\"_blank\"&gt;US House to vote on bill to make daylight saving time permanent&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-09T22:51:29.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNX1FHWF9JYU5zQXlPR294emRUcndlTlFFODM3ZkVZWjJpdzhjNDNiZ1hBOWt1TmVLd3hHRDZmYTdlbEF1Xy1rMDdNeEM0RnJuSmMyQ0tSNWZON2ZEclM2RW9ORFFGc3dqcGI0QzZVWm1tRldBNkwzZTh4a1BzZjJHemxiWmljS18yWjBfNHVSb1dEak9tV0VLT1FvWEd1TlBBT3Y4c0ZYYTJhdXpXNTRQNGRNWDRWQQ?oc=5\" target=\"_blank\"&gt;Senegal's top court calls parliament-backed reform 'unconstitutional'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T09:17:43.000Z",
+          "score": 8
+        },
+        {
+          "title": "Namibia secures China deals on infrastructure, mining and energy with state visit - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPd0hyc2hPVkduRXVkY2hhaG55eEFwaHdDTUhzR0xHeHg1ZGllRTF6RV96RThHLWZmMHUyQUpfbzM3T2d5TWx0MkFGNko0eTN1czZoSjZveVFNWjN6RFRtQTFRdEQ5Yk9TYWNmemZuQ2hyZGV2NkZETS1JY0pSWC1ER1AyWTAxTEdtYk1laHlFb01zRXczMkIzRlpUQlZ4alB3YlhMY0dDWWJoMDlZNnplM2lzSWJpNWZqMXlWckZn?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPd0hyc2hPVkduRXVkY2hhaG55eEFwaHdDTUhzR0xHeHg1ZGllRTF6RV96RThHLWZmMHUyQUpfbzM3T2d5TWx0MkFGNko0eTN1czZoSjZveVFNWjN6RFRtQTFRdEQ5Yk9TYWNmemZuQ2hyZGV2NkZETS1JY0pSWC1ER1AyWTAxTEdtYk1laHlFb01zRXczMkIzRlpUQlZ4alB3YlhMY0dDWWJoMDlZNnplM2lzSWJpNWZqMXlWckZn?oc=5\" target=\"_blank\"&gt;Namibia secures China deals on infrastructure, mining and energy with state visit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T14:47:47.000Z",
+          "score": 7
+        },
+        {
+          "title": "Meet the crypto billionaires building a world where money buys you a vote",
+          "link": "https://www.bbc.co.uk/news/articles/cly8eqyj8e2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "They think democracy has run its course - so they're setting up their own nations instead.",
+          "published": "2026-07-10T23:03:11.000Z",
           "score": 6
-        },
-        {
-          "title": "Germany: Bundestag passes controversial healthcare reform",
-          "link": "https://www.dw.com/en/germany-bundestag-passes-controversial-healthcare-reform/live-77899497?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The cost-cutting package has passed Germany&#039;s parliament despite fierce criticism from the opposition. Meanwhile, Alexander Zverev has become the first German man to reach the Wimbledon final since 1995. DW has more.",
-          "published": "2026-07-10T10:00:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Zulu king expresses regret after video captures tirade against his wife",
-          "link": "https://www.bbc.co.uk/news/articles/cy8dl9n1v3vo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "In the footage widely shared in South Africa, King Misuzulu threatens to physically assault his wife and accuses her of cheating.",
-          "published": "2026-07-10T16:42:11.000Z",
-          "score": 2
-        },
-        {
-          "title": "Man fatally shot by ICE in Houston was not intended target, DHS says",
-          "link": "https://www.bbc.co.uk/news/articles/cm2rm66xd17o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Immigration agents were looking for a different person when they shot Lorenzo Salgado Araujo during a traffic stop, officials say.",
-          "published": "2026-07-10T12:51:46.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 428,
-    "articlesLast24h": 164,
-    "afterDedup": 156,
+    "totalArticlesScanned": 426,
+    "articlesLast24h": 163,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
