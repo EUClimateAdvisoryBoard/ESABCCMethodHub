@@ -119,6 +119,48 @@ function EntryCard({ e }: { e: SynergyEntry }) {
   );
 }
 
+/** Download the full entry list (both sectors) as a CSV for offline work. */
+function exportCsv() {
+  const esc = (v: string) => `"${v.replace(/"/g, '""')}"`;
+  const header = [
+    'sector',
+    'subsector',
+    'kind',
+    'evidence_strength',
+    'title',
+    'mitigation',
+    'adaptation',
+    'mechanism',
+    'policy_implication',
+    'references',
+  ];
+  const rows = SYNERGIES.map((e) =>
+    [
+      e.sector,
+      e.subsector,
+      SYNERGY_KIND_META[e.kind].label,
+      STRENGTH_META[e.strength].label,
+      e.title,
+      e.mitigation,
+      e.adaptation,
+      e.mechanism,
+      e.implication,
+      e.references.map((r) => (r.url ? `${r.cite} <${r.url}>` : r.cite)).join(' | '),
+    ]
+      .map(esc)
+      .join(','),
+  );
+  const blob = new Blob(['﻿' + [header.join(','), ...rows].join('\n')], {
+    type: 'text/csv;charset=utf-8',
+  });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'summer-prep-synergies-tradeoffs.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 function SynergiesInner() {
   const [sector, setSector] = useState<SectorKey>('Industry');
   const [kindFilter, setKindFilter] = useState<InteractionKind | 'all'>('all');
@@ -169,27 +211,38 @@ function SynergiesInner() {
       />
 
       <main className="mx-auto max-w-[1080px] px-4 py-6 sm:px-6 sm:py-8">
-        {/* Sector switch */}
-        <div className="mb-4 inline-flex rounded-lg border border-[#E6E7E8] p-1 dark:border-[var(--mh-border)]">
-          {SECTORS.map((s) => (
-            <button
-              key={s}
-              onClick={() => setSector(s)}
-              className={`rounded-md px-4 py-1.5 text-[13px] font-semibold transition ${
-                sector === s
-                  ? 'bg-[#003399] text-white'
-                  : 'text-[#3D5265] hover:bg-[#F3F5F7] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-card)]'
-              }`}
-            >
-              {s}
-            </button>
-          ))}
+        {/* Sector switch + export */}
+        <div className="mb-4 flex flex-wrap items-center gap-3">
+          <div className="inline-flex rounded-lg border border-[#E6E7E8] p-1 dark:border-[var(--mh-border)]">
+            {SECTORS.map((s) => (
+              <button
+                key={s}
+                onClick={() => setSector(s)}
+                aria-pressed={sector === s}
+                className={`rounded-md px-4 py-1.5 text-[13px] font-semibold transition ${
+                  sector === s
+                    ? 'bg-[#003399] text-white'
+                    : 'text-[#3D5265] hover:bg-[#F3F5F7] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-card)]'
+                }`}
+              >
+                {s}
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={exportCsv}
+            className="ml-auto rounded-md border border-[#D6DAE0] px-3 py-1.5 text-[12px] font-semibold text-[#3D5265] hover:bg-[#F3F5F7] dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)] dark:hover:bg-[var(--mh-card)]"
+            title="Download every interaction (both sectors) with citations as CSV"
+          >
+            ⬇ Export CSV
+          </button>
         </div>
 
         {/* Kind filter chips (double as a count summary) */}
         <div className="mb-6 flex flex-wrap gap-2">
           <button
             onClick={() => setKindFilter('all')}
+            aria-pressed={kindFilter === 'all'}
             className={`rounded-full border px-3 py-1 text-[12px] font-semibold ${
               kindFilter === 'all'
                 ? 'border-[#003399] bg-[#003399] text-white'
@@ -205,6 +258,7 @@ function SynergiesInner() {
               <button
                 key={k}
                 onClick={() => setKindFilter(k)}
+                aria-pressed={active}
                 className="rounded-full border px-3 py-1 text-[12px] font-semibold"
                 style={{
                   borderColor: m.color,
@@ -241,10 +295,11 @@ function SynergiesInner() {
         <p className="mt-2 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
           Provenance: each interaction is a real, literature-grounded mechanism and cites the
           primary work it rests on (IPCC AR6 WGII/WGIII, the EEA European Climate Risk Assessment
-          2024, and peer-reviewed studies). The framing and the assignment of each mechanism to a
-          subsector were AI-compiled for this working note and are pending source re-verification by
-          the sector lead — treat the citations as leads to check, not a finished evidence base.
-          Nothing here is a Board position.
+          2024, and peer-reviewed studies). Every citation was source-verified against
+          Crossref/publisher records on {SYNERGY_REPORT_META.citationsVerifiedOn} — titles, authors,
+          journals, DOIs and the claim attributed to each source. The framing and the assignment of
+          each mechanism to a subsector remain AI-compiled working judgements pending sector-lead
+          sign-off. Nothing here is a Board position.
         </p>
       </main>
       <SiteFooter />

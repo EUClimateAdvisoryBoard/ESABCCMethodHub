@@ -6,7 +6,7 @@
  * things the base tracker does not:
  *
  *   1. RE-ASSESSES whether each gap still exists, given legislation adopted
- *      since the January-2025 report (a provisional mid-2026 read).
+ *      since the January-2024 report (a provisional mid-2026 read).
  *   2. Proposes CANDIDATE additional gaps — issues that look like policy /
  *      ambition / implementation gaps but are not (yet) tagged as such in the
  *      report, for the sector lead to accept or reject.
@@ -93,7 +93,7 @@ export const GAP_REASSESSMENTS: Record<string, GapReassessment> = {
   'transport-biofuels-indirect': {
     subsector: 'Cross-cutting',
     status: 'open',
-    note: 'RED III, ReFuelEU Aviation and FuelEU Maritime still admit food/feed-crop and category-3 biofuels within their limits. Assessed unchanged.',
+    note: 'The aviation and maritime instruments now largely shut out crop biofuels (ReFuelEU Aviation Art. 4(5) excludes food/feed crops from the SAF mandate; FuelEU Maritime assigns them fossil-equivalent emission factors), but RED III still admits food/feed-crop biofuels within Member-State caps for road transport and indirect land-use-change effects remain unpriced. Assessed still open, narrowed at the edges.',
   },
   'transport-biofuel-fraud': {
     subsector: 'Cross-cutting',
@@ -227,7 +227,7 @@ export const CANDIDATE_GAPS: CandidateGap[] = [
     type: 'policy',
     title: 'Non-CO₂ aviation effects still unregulated',
     rationale:
-      'Contrails and NOx account for roughly two-thirds of aviation’s effective warming, yet only an MRV step exists — there is no instrument that prices or operationally mitigates non-CO₂ effects, leaving most of aviation’s climate impact outside policy.',
+      'Contrails and NOx account for roughly two-thirds of aviation’s effective warming (Lee et al. 2021, Atmospheric Environment 244:117834: non-CO₂ terms are ~66% of aviation’s net effective radiative forcing), yet only an MRV step exists — there is no instrument that prices or operationally mitigates non-CO₂ effects, leaving most of aviation’s climate impact outside policy.',
     instrument: 'EU ETS aviation (non-CO₂ MRV), air-traffic-management measures',
     testToConfirm:
       'Confirmed if non-CO₂ effects remain only monitored, not acted on, after the MRV review; refuted if a mitigation/pricing measure is introduced.',
@@ -237,7 +237,7 @@ export const CANDIDATE_GAPS: CandidateGap[] = [
 /** Report metadata surfaced in the UI. */
 export const SECTOR_GAP_META = {
   reportTitle: 'Towards EU climate neutrality: Progress, policy gaps and opportunities',
-  reportPublished: 'January 2025',
+  reportPublished: 'January 2024',
   reassessmentAsOf: 'Provisional read, mid-2026',
   reportUrl:
     'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',

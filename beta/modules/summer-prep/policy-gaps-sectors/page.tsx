@@ -5,7 +5,7 @@
  * ---------------------------------------------------------------------------
  * Three things the base Policy Gap Tracker does not do:
  *   1. Re-assess whether each transport/industry gap STILL EXISTS after the
- *      legislation adopted since the January-2025 report.
+ *      legislation adopted since the January-2024 report.
  *   2. Surface CANDIDATE additional gaps for the lead to accept or reject.
  *   3. Draw the gap LANDSCAPE per sector — subsector × gap type.
  *
@@ -290,7 +290,7 @@ function SectorGapsInner() {
             Report gaps, reassessed — do they still exist? ({enriched.length})
           </h2>
           <p className="mb-3 text-[12px] text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
-            Baseline was <strong>open</strong> at the January-2025 report. The pill shows the
+            Baseline was <strong>open</strong> at the January-2024 report. The pill shows the
             provisional current read after legislation adopted since.
           </p>
           <div className="space-y-3">

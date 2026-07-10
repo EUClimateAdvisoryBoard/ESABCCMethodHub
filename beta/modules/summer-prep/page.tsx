@@ -191,8 +191,9 @@ export default function SummerPrepPage() {
           <p className="mt-10 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
             Provenance: the Indicator Check reads the report’s own progress indicators; the
             synergies and sector-gap notes are literature- and report-grounded working drafts, with
-            AI-compiled framing flagged as pending verification inside each note. Nothing here is a
-            Board position.
+            AI-compiled framing flagged as pending verification inside each note. The synergies
+            note’s citations were source-verified (Crossref/publisher records) in July 2026.
+            Nothing here is a Board position.
           </p>
         </main>
 

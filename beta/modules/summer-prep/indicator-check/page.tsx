@@ -6,7 +6,7 @@
  * "What has moved, data-wise, since the last report?" A dashboard over the
  * OLD report's progress indicators (the same series that back the Policy Gap
  * 2.0 indicator database). For every indicator that has gained data points
- * AFTER the January-2025 report, it shows:
+ * AFTER the January-2024 report, it shows:
  *   • the report baseline value (the latest figure the report itself carried);
  *   • the two–three newer points added since publication; and
  *   • a direction-aware read of whether the sector improved or slipped.
@@ -188,7 +188,7 @@ function IndicatorCheckInner() {
         subtitle={
           <>
             The old report’s progress indicators, read for movement. For every indicator that has
-            gained data since January 2025, this shows the report baseline, the newest two–three
+            gained data since January 2024, this shows the report baseline, the newest two–three
             points, and whether the sector has improved or slipped. Data:{' '}
             <span className="font-mono text-[12px]">esabcc-indicators.ts</span>.
           </>
@@ -396,7 +396,7 @@ function IndicatorCheckInner() {
           Provenance: every value is taken verbatim from the report’s underlying indicator series
           (<span className="font-mono">esabcc-indicators.ts</span>). Points flagged{' '}
           <span className="font-mono">afterReport</span> are figures the primary publisher (Eurostat
-          / EEA / EAFO / IRENA / EHPA) released after the January-2025 report; the “improving /
+          / EEA / EAFO / IRENA / EHPA) released after the January-2024 report; the “improving /
           slipping” read is direction-aware (for a lower-is-better indicator, a fall counts as
           improvement). A “major” move is a change of at least {MAJOR_MOVE_PCT}% from the report
           baseline — a screen for attention, not a formal significance test.

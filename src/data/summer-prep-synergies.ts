@@ -18,10 +18,16 @@
  * PROVENANCE — read before using in a Board product. Each entry states a real,
  * literature-grounded interaction and cites the primary work it rests on
  * (IPCC AR6 WGII/WGIII, the EEA European Climate Risk Assessment (EUCRA 2024),
- * and peer-reviewed studies). The *framing and the assignment of each mechanism
- * to a subsector* were AI-compiled for this note and are pending source
- * re-verification by the sector lead — treat the citations as leads to check,
- * not as a finished evidence base. Nothing here is a Board position.
+ * and peer-reviewed studies). On 10 July 2026 every citation was source-
+ * verified against Crossref/publisher records (titles, authors, journals,
+ * volumes, DOIs, and the claim attributed to each source). That pass fixed a
+ * wrong DOI (Palin et al. — the old link pointed to an unrelated paper), a
+ * dead publisher URL (Material Economics — now the Sitra mirror), an
+ * incomplete Rhine citation (now the peer-reviewed 2023 German Economic
+ * Review version), and the report's publication date (January 2024). The
+ * *framing and the assignment of each mechanism to a subsector* remain
+ * AI-compiled working judgements pending sector-lead sign-off. Nothing here
+ * is a Board position.
  */
 
 export type SectorKey = 'Industry' | 'Transport';
@@ -111,7 +117,7 @@ export const SUBSECTOR_ORDER: Record<SectorKey, string[]> = {
 
 // Shared references reused across several entries.
 const AR6_WG2: LitReference = {
-  cite: 'IPCC (2022) AR6 WGII, "Impacts, Adaptation and Vulnerability" — Ch. 13 (Europe) & cross-chapter box on climate-resilient development.',
+  cite: 'IPCC (2022) AR6 WGII, "Impacts, Adaptation and Vulnerability" — Ch. 13 (Europe) & Ch. 18 (Climate Resilient Development Pathways).',
   url: 'https://www.ipcc.ch/report/ar6/wg2/',
 };
 const AR6_WG3: LitReference = {
@@ -151,8 +157,12 @@ export const SYNERGIES: SynergyEntry[] = [
     references: [
       AR6_WG3,
       {
-        cite: 'Material Economics (2018) "The Circular Economy — a Powerful Force for Climate Mitigation".',
-        url: 'https://materialeconomics.com/publications/the-circular-economy-a-powerful-force-for-climate-mitigation',
+        cite: 'IEA (2020) "Iron and Steel Technology Roadmap" (direct intensities ≈2.2 tCO₂/t BF-BOF vs ≈0.3 tCO₂/t scrap-EAF).',
+        url: 'https://www.iea.org/reports/iron-and-steel-technology-roadmap',
+      },
+      {
+        cite: 'Material Economics (2018) "The Circular Economy — A Powerful Force for Climate Mitigation", Material Economics/Sitra.',
+        url: 'https://www.sitra.fi/wp-content/uploads/2018/06/the-circular-economy-a-powerful-force-for-climate-mitigation.pdf',
       },
     ],
   },
@@ -165,7 +175,7 @@ export const SYNERGIES: SynergyEntry[] = [
     mitigation: 'Hydrogen direct-reduced iron (H₂-DRI) powered by renewable electrolysis.',
     adaptation: 'Freshwater availability under more frequent and severe droughts.',
     mechanism:
-      'Water-electrolysis needs on the order of 9–10 litres of purified water per kg of H₂ (more once cooling and purification losses are counted). Siting large H₂-DRI plants in southern/Mediterranean regions that are attractive for cheap solar power can collide with declining summer water availability, creating a maladaptation risk unless desalination or reuse is planned in.',
+      'Water electrolysis needs ~9 litres of purified water per kg of H₂ stoichiometrically — roughly 24 litres once water treatment is counted, plus cooling water on top (Tonelli et al. 2023). Siting large H₂-DRI plants in southern/Mediterranean regions that are attractive for cheap solar power can collide with declining summer water availability, creating a maladaptation risk unless desalination or reuse is planned in.',
     implication:
       'Green-steel siting and Net-Zero Industry Act support should carry a water-stress screen; the EUCRA rates southern-European water scarcity as a high and rising risk.',
     strength: 'moderate',
@@ -173,6 +183,10 @@ export const SYNERGIES: SynergyEntry[] = [
       {
         cite: 'Tonelli, D. et al. (2023) "Global land and water limits to electrolytic hydrogen production using wind and solar resources", Nature Communications 14:5532.',
         url: 'https://doi.org/10.1038/s41467-023-41107-x',
+      },
+      {
+        cite: 'Vogl, V., Åhman, M. & Nilsson, L.J. (2018) "Assessment of hydrogen direct reduction for fossil-free steelmaking", Journal of Cleaner Production 203:736–745.',
+        url: 'https://doi.org/10.1016/j.jclepro.2018.08.279',
       },
       EUCRA,
     ],
@@ -220,6 +234,28 @@ export const SYNERGIES: SynergyEntry[] = [
         cite: 'Habert, G. et al. (2020) Nature Reviews Earth & Environment 1:559–573.',
         url: 'https://doi.org/10.1038/s43017-020-0093-3',
       },
+    ],
+  },
+  {
+    id: 'ind-cement-ccs-water',
+    sector: 'Industry',
+    subsector: 'Cement & lime',
+    kind: 'trade-off',
+    title: 'Cement CCS adds a water penalty in water-stressed basins',
+    mitigation:
+      'Post-combustion carbon capture on cement plants — the indispensable lever for the sector’s process emissions.',
+    adaptation: 'Freshwater availability for capture solvents and cooling under drought.',
+    mechanism:
+      'Carbon capture raises a plant’s water intensity — retrofitting post-combustion capture raises a coal plant’s water intensity by roughly 55%, and CCS water footprints span orders of magnitude (≈0.7–575 m³ per tCO₂) depending on capture and cooling technology. Cement CCS sited in drought-prone basins therefore adds water demand exactly where EUCRA sees scarcity rising; cooling choices (dry/hybrid) and reuse determine how sharp the conflict becomes.',
+    implication:
+      'CCS permitting and Net-Zero Industry Act support for cement should carry the same water-stress screen proposed for hydrogen, with capture/cooling configurations sized to local hydrology.',
+    strength: 'moderate',
+    references: [
+      {
+        cite: 'Rosa, L., Sanchez, D.L., Realmonte, G., Baldocchi, D. & D’Odorico, P. (2021) "The water footprint of carbon capture and storage technologies", Renewable and Sustainable Energy Reviews 138:110511.',
+        url: 'https://doi.org/10.1016/j.rser.2020.110511',
+      },
+      EUCRA,
     ],
   },
   // Chemicals & petrochemicals
@@ -347,6 +383,29 @@ export const SYNERGIES: SynergyEntry[] = [
       },
     ],
   },
+  {
+    id: 'tr-cars-v2g-flex',
+    sector: 'Transport',
+    subsector: 'Road passenger (cars & vans)',
+    kind: 'synergy',
+    title: 'EV fleets as distributed storage can back up a climate-stressed grid',
+    mitigation:
+      'Electrifying cars and vans with smart charging and vehicle-to-grid (V2G) capability.',
+    adaptation:
+      'Power-system flexibility and reserve capacity during heatwave demand peaks and climate-driven supply shocks.',
+    mechanism:
+      'A large EV fleet is also a large distributed battery: with smart charging and V2G it can shift load away from heatwave-driven peaks and provide reserve when extremes derate thermal, hydro or network capacity — turning the electrification lever into a resilience resource instead of only an added load. The benefit is conditional on chargers, market rules and aggregation actually enabling bidirectional participation.',
+    implication:
+      'AFIR roll-out and network codes should enable bidirectional charging and aggregation so the EV fleet contributes to, rather than burdens, system adequacy in extremes — the flip side of this note’s EV-exposure trade-off.',
+    strength: 'emerging',
+    references: [
+      {
+        cite: 'Kempton, W. & Tomić, J. (2005) "Vehicle-to-grid power implementation: From stabilizing the grid to supporting large-scale renewable energy", Journal of Power Sources 144(1):280–294.',
+        url: 'https://doi.org/10.1016/j.jpowsour.2004.12.022',
+      },
+      AR6_WG3,
+    ],
+  },
   // Road freight
   {
     id: 'tr-freight-modalshift-rail',
@@ -364,8 +423,8 @@ export const SYNERGIES: SynergyEntry[] = [
     strength: 'moderate',
     references: [
       {
-        cite: 'Palin, E.J. et al. (2021) "Implications of climate change for railways in Europe", (rail heat/flood vulnerability review).',
-        url: 'https://doi.org/10.1016/j.trd.2021.102974',
+        cite: 'Palin, E.J., Stipanovic Oslakovic, I., Gavin, K. & Quinn, A. (2021) "Implications of climate change for railway infrastructure", WIREs Climate Change 12(5):e728.',
+        url: 'https://doi.org/10.1002/wcc.728',
       },
       EUCRA,
     ],
@@ -387,8 +446,12 @@ export const SYNERGIES: SynergyEntry[] = [
     strength: 'strong',
     references: [
       {
-        cite: 'Dobney, K. et al. (2009) "Quantifying the effects of high summer temperatures due to climate change on buckling and rail-related delays in south-east UK", Meteorological Applications 16(2):245–251.',
+        cite: 'Dobney, K., Baker, C.J., Quinn, A.D. & Chapman, L. (2009) "Quantifying the effects of high summer temperatures due to climate change on buckling and rail related delays in south-east United Kingdom", Meteorological Applications 16(2):245–251.',
         url: 'https://doi.org/10.1002/met.114',
+      },
+      {
+        cite: 'Palin, E.J., Stipanovic Oslakovic, I., Gavin, K. & Quinn, A. (2021) "Implications of climate change for railway infrastructure", WIREs Climate Change 12(5):e728.',
+        url: 'https://doi.org/10.1002/wcc.728',
       },
       EUCRA,
     ],
@@ -399,14 +462,14 @@ export const SYNERGIES: SynergyEntry[] = [
     sector: 'Transport',
     subsector: 'Aviation',
     kind: 'trade-off',
-    title: 'Crop-based SAF competes with land, water and food resilience',
+    title: 'Biomass-based SAF competes with land, water and food resilience',
     mitigation: 'Sustainable aviation fuels (SAF) mandated under ReFuelEU Aviation.',
     adaptation:
       'Land/water competition and food-system resilience under climate stress.',
     mechanism:
-      'Where SAF is met from food/feed or intermediate crops (the biofuel indirect-effects concern the report raises), it competes for land and water and can erode food-system resilience — the trade-off is far smaller for waste-, residue- and e-fuel (power-to-liquid) pathways. Synthetic e-SAF instead shifts the pressure onto renewable electricity and water.',
+      'ReFuelEU Aviation (Art. 4(5)) excludes food- and feed-crop biofuels from the SAF mandate, but the eligible biomass pathways (RED Annex IX feedstocks, incl. certain intermediate crops added by Delegated Directive 2024/1405) still draw on a finite biomass, land and water base — the biofuel indirect-effects concern the report raises — so scaling them can erode food- and ecosystem resilience in a drying climate. The trade-off is smallest for genuine wastes/residues; synthetic e-SAF instead shifts the pressure onto renewable electricity and water.',
     implication:
-      'SAF sub-targets should steer hard toward residues and e-fuels; the report’s biofuel ambition/implementation gaps apply directly here.',
+      'SAF sub-targets should steer hard toward genuine residues and e-fuels; the report’s biofuel ambition/implementation gaps apply directly here.',
     strength: 'moderate',
     references: [
       AR6_WG3,
@@ -432,8 +495,12 @@ export const SYNERGIES: SynergyEntry[] = [
     strength: 'moderate',
     references: [
       {
-        cite: 'Coffel, E. & Horton, R. (2015) "Climate change and the impact of extreme temperatures on aviation", Weather, Climate, and Society 7(1):94–102.',
+        cite: 'Coffel, E. & Horton, R. (2015) "Climate Change and the Impact of Extreme Temperatures on Aviation", Weather, Climate, and Society 7(1):94–102.',
         url: 'https://doi.org/10.1175/WCAS-D-14-00026.1',
+      },
+      {
+        cite: 'Coffel, E.D., Thompson, T.R. & Horton, R.M. (2017) "The impacts of rising temperatures on aircraft takeoff performance", Climatic Change 144:381–388.',
+        url: 'https://doi.org/10.1007/s10584-017-2018-9',
       },
       EUCRA,
     ],
@@ -453,7 +520,14 @@ export const SYNERGIES: SynergyEntry[] = [
     implication:
       'FuelEU Maritime / AFIR port-infrastructure roll-out should be conditioned on climate-proofing of the port itself.',
     strength: 'moderate',
-    references: [EUCRA, AR6_WG2],
+    references: [
+      {
+        cite: 'Izaguirre, C., Losada, I.J., Camus, P., Vigh, J.L. & Stenek, V. (2021) "Climate change risk to global port operations", Nature Climate Change 11:14–20.',
+        url: 'https://doi.org/10.1038/s41558-020-00937-z',
+      },
+      EUCRA,
+      AR6_WG2,
+    ],
   },
   {
     id: 'tr-iww-lowflow',
@@ -470,7 +544,8 @@ export const SYNERGIES: SynergyEntry[] = [
     strength: 'strong',
     references: [
       {
-        cite: 'Ademmer, M. et al. (2020) "Low water and its impact on economic activity — evidence from the Rhine", (Kiel Institute working analysis of the 2018 low-water event).',
+        cite: 'Ademmer, M., Jannsen, N. & Meuchelböck, S. (2023) "Extreme Weather Events and Economic Activity: The Case of Low Water Levels on the Rhine River", German Economic Review 24(2):121–144.',
+        url: 'https://doi.org/10.1515/ger-2022-0077',
       },
       EUCRA,
     ],
@@ -513,7 +588,9 @@ export const SYNERGIES: SynergyEntry[] = [
 /** Report metadata surfaced in the UI. */
 export const SYNERGY_REPORT_META = {
   reportTitle: 'Towards EU climate neutrality: Progress, policy gaps and opportunities',
-  reportPublished: 'January 2025',
+  reportPublished: 'January 2024',
   reportUrl:
     'https://climate-advisory-board.europa.eu/reports-and-publications/towards-eu-climate-neutrality-progress-policy-gaps-and-opportunities',
+  /** Date of the last full citation-verification pass over this file. */
+  citationsVerifiedOn: '10 July 2026',
 };
