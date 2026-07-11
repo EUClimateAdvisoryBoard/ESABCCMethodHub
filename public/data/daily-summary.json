@@ -1,15 +1,9 @@
 {
   "date": "2026-07-11",
-  "generatedAt": "2026-07-11T17:56:02.434Z",
+  "generatedAt": "2026-07-11T23:56:23.658Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 11 July 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Cuba's power grid fails for second time this week, plunging country into darkness - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5\" target=\"_blank\"&gt;Cuba's power grid fails for second time this week, plunging country into darkness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "ENERGY",
-      "color": "#E87722"
-    },
     {
       "headline": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
       "summary": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
@@ -32,32 +26,7 @@
     {
       "id": "energy",
       "title": "Energy Transition",
-      "items": [
-        {
-          "title": "Cuba's power grid fails for second time this week, plunging country into darkness - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5\" target=\"_blank\"&gt;Cuba's power grid fails for second time this week, plunging country into darkness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T21:09:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Holtec Nuclear Corporation files for US IPO amid surging power demand - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRjVBR01zY3NaRG9DdjNMb3hZWUZVYWZoWm5TSEFycW5jaS14aGVUN1phU3ppNHc0M3NSRTJvWTFHSDR1R1JDeTFvQWlVS1pZaTM2b1g4Uy1sNVlndDZXczZSZlpMVk1keHdZX213ZnFxZXNtM0pQNHU1N2ZRaTQ4Y3BVQmtnUUp0bzQyWFdvTWt1SEVZanc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQRjVBR01zY3NaRG9DdjNMb3hZWUZVYWZoWm5TSEFycW5jaS14aGVUN1phU3ppNHc0M3NSRTJvWTFHSDR1R1JDeTFvQWlVS1pZaTM2b1g4Uy1sNVlndDZXczZSZlpMVk1keHdZX213ZnFxZXNtM0pQNHU1N2ZRaTQ4Y3BVQmtnUUp0bzQyWFdvTWt1SEVZanc?oc=5\" target=\"_blank\"&gt;Holtec Nuclear Corporation files for US IPO amid surging power demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T22:31:55.000Z",
-          "score": 7
-        },
-        {
-          "title": "Cuba suffers second nationwide blackout in five days",
-          "link": "https://www.dw.com/en/cuba-suffers-second-nationwide-blackout-in-five-days/a-77913285?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Cuba&#039;s electricity grid has crumbled amid a six-month US fuel blockade and already-dilapidated energy infrastructure.",
-          "published": "2026-07-10T23:27:00.000Z",
-          "score": 4
-        }
-      ]
+      "items": []
     },
     {
       "id": "climate",
@@ -88,20 +57,20 @@
           "score": 7
         },
         {
-          "title": "Spanish wildfire victims burned in cars as roads turned into death traps - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcVBDaWd1S2Q4M3JNVUZSWFhEbHpqaUFvQ2VEdzZTdERBOV93OVdKSUlHd0xNdDhYbFdWeW1wbERZRmlFVkhrc0RIWGpiUGZaRllmWUF5OXRBaHg2VjBvLU5QWElPaTd1NldLVTNwa1hlekhqVFNTUjJVaDFFRXY1RFBhdWVabkNfWnRvS0ppbFhmZGtDcE50ejFkeUs2ZkhtQ1BNNEtjVVA1MGVxZHR0RWlPbml2YW5TMnpUbzlKYmtkODRtRm9rYkkzb290V1ZnWHc?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcVBDaWd1S2Q4M3JNVUZSWFhEbHpqaUFvQ2VEdzZTdERBOV93OVdKSUlHd0xNdDhYbFdWeW1wbERZRmlFVkhrc0RIWGpiUGZaRllmWUF5OXRBaHg2VjBvLU5QWElPaTd1NldLVTNwa1hlekhqVFNTUjJVaDFFRXY1RFBhdWVabkNfWnRvS0ppbFhmZGtDcE50ejFkeUs2ZkhtQ1BNNEtjVVA1MGVxZHR0RWlPbml2YW5TMnpUbzlKYmtkODRtRm9rYkkzb290V1ZnWHc?oc=5\" target=\"_blank\"&gt;Spanish wildfire victims burned in cars as roads turned into death traps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-07-10T18:27:43.000Z",
+          "title": "Spain wildfire: Firefighters begin to contain deadly blaze",
+          "link": "https://www.dw.com/en/spain-wildfire-firefighters-begin-to-contain-deadly-blaze/a-77919977?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Firefighters have started to rein in the wildfire in Spain&#039;s southern Andalusia region that killed 12 people. The affected region is home to one of the largest expat communities.",
+          "published": "2026-07-11T22:10:00.000Z",
           "score": 7
         },
         {
-          "title": "The 13 biggest myths about heatwaves – and how to bust them",
-          "link": "https://www.theguardian.com/environment/2026/jul/11/the-13-biggest-myths-about-heatwaves-and-how-to-bust-them",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;With some still unable to accept humanity’s role in climate chaos, we tackle common misconceptions and deceptions&lt;/p&gt;&lt;p&gt;Some people – and media organisations – still have difficulty connecting the heatwaves currently gripping much of the world and human-caused climate chaos. Others are in outright denial. So how to address their evasions, distractions and lies?&lt;/p&gt;&lt;p&gt;The Guardian has trawled through climate sceptics’ claims and put their doubts to one of the UK’s",
-          "published": "2026-07-11T07:00:42.000Z",
-          "score": 4
+          "title": "British couple saved from Spanish ravine after deadly wildfire - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5\" target=\"_blank\"&gt;British couple saved from Spanish ravine after deadly wildfire&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-11T18:15:03.000Z",
+          "score": 7
         }
       ]
     },
@@ -137,22 +106,6 @@
           "score": 8
         },
         {
-          "title": "EU threatens Meta with hefty fine over &#039;addictive design&#039;",
-          "link": "https://www.dw.com/en/eu-threatens-meta-with-hefty-fine-over-addictive-design/a-77912229?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "A preliminary investigation by the EU found that the social media giant is not doing enough to protect children who use its platforms. Meta rejects the accusations, which could cost it 6% of its annual revenue in fines.",
-          "published": "2026-07-10T19:26:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "US energy firms add rigs for fourth week in a row, says Baker Hughes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaF81a3htTnFvS2FncE95TEpVRGdSeDhwNXpiNm1RaWNKaUxoT080dml1X3dMc2tuZjRTMTNUZW9hOG5tVzU0UUFSWG9MWDlZWmp5NkFncHpNQzRPOUJ6Mkotc1JnZVk5VkFSMDB1OTdRem11c1lFeDl5NjViOWNlRFFrQTJoQkNjU1VIMGNSZVJEc3RfMm5YY2RHN2x0eWdVZVk5emFqUUU0SVFxZG5V?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOaF81a3htTnFvS2FncE95TEpVRGdSeDhwNXpiNm1RaWNKaUxoT080dml1X3dMc2tuZjRTMTNUZW9hOG5tVzU0UUFSWG9MWDlZWmp5NkFncHpNQzRPOUJ6Mkotc1JnZVk5VkFSMDB1OTdRem11c1lFeDl5NjViOWNlRFFrQTJoQkNjU1VIMGNSZVJEc3RfMm5YY2RHN2x0eWdVZVk5emFqUUU0SVFxZG5V?oc=5\" target=\"_blank\"&gt;US energy firms add rigs for fourth week in a row, says Baker Hughes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T18:38:28.000Z",
-          "score": 7
-        },
-        {
           "title": "Landmark US housing bill becomes law despite Trump protest",
           "link": "https://www.bbc.co.uk/news/articles/cn8qwj611qxo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
@@ -161,20 +114,36 @@
           "score": 6
         },
         {
-          "title": "Meet the crypto billionaires building a world where money buys you a vote",
-          "link": "https://www.bbc.co.uk/news/articles/cly8eqyj8e2o?at_medium=RSS&amp;at_campaign=rss",
+          "title": "At Canada's biggest rodeo, the starting gun is fired in the fight over Alberta separation",
+          "link": "https://www.bbc.co.uk/news/articles/c3eykgln5eeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "They think democracy has run its course - so they're setting up their own nations instead.",
-          "published": "2026-07-10T23:03:11.000Z",
+          "description": "Canadian unity takes centre stage at the Calgary Stampede as fears of a Brexit-style upset looms over the October vote on Alberta's future.",
+          "published": "2026-07-11T00:00:42.000Z",
           "score": 6
+        },
+        {
+          "title": "US: Trump looked to bypass federal election agency before firings, says report",
+          "link": "https://www.dw.com/en/us-trump-looked-to-bypass-federal-election-agency-before-firings-says-report/a-77913362?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The White House explored declaring a national emergency to address alleged vulnerabilities in voting machines before Trump ousted leaders of the Election Assistance Commission, a report has found.",
+          "published": "2026-07-11T03:57:00.000Z",
+          "score": 4
+        },
+        {
+          "title": "Iran says Strait of Hormuz closed 'until further notice'",
+          "link": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The IRGC says it fired a warning shot at a vessel in the strait and is warning the US not to respond with \"aggression\".",
+          "published": "2026-07-11T23:14:18.000Z",
+          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 433,
-    "articlesLast24h": 162,
-    "afterDedup": 152,
+    "totalArticlesScanned": 435,
+    "articlesLast24h": 150,
+    "afterDedup": 134,
     "feedsQueried": 19
   }
 }
