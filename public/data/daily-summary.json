@@ -1,20 +1,26 @@
 {
   "date": "2026-07-11",
-  "generatedAt": "2026-07-11T11:53:16.654Z",
+  "generatedAt": "2026-07-11T17:56:02.434Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 11 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Cuba suffers second nationwide blackout in five days",
-      "summary": "Cuba&#039;s electricity grid has crumbled amid a six-month US fuel blockade and already-dilapidated energy infrastructure.",
+      "headline": "Cuba's power grid fails for second time this week, plunging country into darkness - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5\" target=\"_blank\"&gt;Cuba's power grid fails for second time this week, plunging country into darkness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "DeBriefed 10 July 2026: Deadly Europe heat &#124; EU electrification leak &#124; COP31 president interview",
-      "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 10 July 2026: Deadly Europe heat | EU electrification leak | COP31 president interview appeared first on Carbon Brief.",
+      "headline": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
+      "summary": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Wildlife conservation work to get £1m boost",
+      "summary": "Endangered rodents, birds and butterflies will be among the species benefitting from the investment.",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -27,6 +33,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Cuba's power grid fails for second time this week, plunging country into darkness - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNUnotWFFqbjVmNGhpaHZiLThKdGt4TDVyMnFjN1FLUDlZMkF0cXpKRzY3bzltQTN0Z2c3eThLU25BQS05SFJZWDlVd3ZXQURRR1F2SDN1TDJoMXkweEdBalVzb0VRQzlta21sSlNRdFU4aTM5Yk45Unljb0FLdk0tYzNJQWprVm9SRDJXdzJ0aXF0cVIxYVdBSTRPaFI?oc=5\" target=\"_blank\"&gt;Cuba's power grid fails for second time this week, plunging country into darkness&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T21:09:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Holtec Nuclear Corporation files for US IPO amid surging power demand - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQRjVBR01zY3NaRG9DdjNMb3hZWUZVYWZoWm5TSEFycW5jaS14aGVUN1phU3ppNHc0M3NSRTJvWTFHSDR1R1JDeTFvQWlVS1pZaTM2b1g4Uy1sNVlndDZXczZSZlpMVk1keHdZX213ZnFxZXNtM0pQNHU1N2ZRaTQ4Y3BVQmtnUUp0bzQyWFdvTWt1SEVZanc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilgFBVV95cUxQRjVBR01zY3NaRG9DdjNMb3hZWUZVYWZoWm5TSEFycW5jaS14aGVUN1phU3ppNHc0M3NSRTJvWTFHSDR1R1JDeTFvQWlVS1pZaTM2b1g4Uy1sNVlndDZXczZSZlpMVk1keHdZX213ZnFxZXNtM0pQNHU1N2ZRaTQ4Y3BVQmtnUUp0bzQyWFdvTWt1SEVZanc?oc=5\" target=\"_blank\"&gt;Holtec Nuclear Corporation files for US IPO amid surging power demand&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T22:31:55.000Z",
+          "score": 7
+        },
         {
           "title": "Cuba suffers second nationwide blackout in five days",
           "link": "https://www.dw.com/en/cuba-suffers-second-nationwide-blackout-in-five-days/a-77913285?maca=en-rss-en-all-1573-xml-mrss",
@@ -42,51 +64,60 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "DeBriefed 10 July 2026: Deadly Europe heat &#124; EU electrification leak &#124; COP31 president interview",
-          "link": "https://www.carbonbrief.org/debriefed-10-july-2026-deadly-europe-heat-eu-electrification-leak-cop31-president-interview/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 10 July 2026: Deadly Europe heat | EU electrification leak | COP31 president interview appeared first on Carbon Brief.",
-          "published": "2026-07-10T15:30:00.000Z",
-          "score": 16
-        },
-        {
-          "title": "Eight facts about air conditioning amid an overheated global debate",
-          "link": "https://www.carbonbrief.org/eight-facts-about-air-conditioning-amid-an-overheated-global-debate/",
-          "source": "Carbon Brief",
-          "description": "As successive heatwaves hit Europe, air-conditioning (AC) has emerged as a new front in the... The post Eight facts about air conditioning amid an overheated global debate appeared first on Carbon Brief.",
-          "published": "2026-07-10T14:21:15.000Z",
-          "score": 12
-        },
-        {
-          "title": "Interview: COP31 president says electrification is ‘surest way to protect citizens’",
-          "link": "https://www.carbonbrief.org/interview-cop31-president-says-electrification-is-surest-way-to-protect-citizens/",
-          "source": "Carbon Brief",
-          "description": "Last month, COP31 president-designate Murat Kurum launched a target for 35% of the world’s final... The post Interview: COP31 president says electrification is ‘surest way to protect citizens’ appeared first on Carbon Brief.",
-          "published": "2026-07-10T15:40:00.000Z",
-          "score": 10
-        },
-        {
-          "title": "Loss and damage fund delays first project approvals as needs dwarf resources",
-          "link": "https://www.climatechangenews.com/2026/07/10/loss-and-damage-fund-delays-first-project-approvals-as-needs-dwarf-resources/",
-          "source": "Climate Home News",
-          "description": "The new Fund for Responding to Loss and Damage faces an overwhelming number of initial requests for its limited pot of money and board members decided to take more time to choose which to back first The post Loss and damage fund delays first project approvals as needs dwarf resources appeared first on Climate Home News.",
-          "published": "2026-07-10T13:59:06.000Z",
-          "score": 10
-        },
-        {
           "title": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
           "link": "https://www.theguardian.com/us-news/2026/jul/11/microsoft-amazon-google-datacentre-carbon-emissions-france",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
           "published": "2026-07-11T11:00:49.000Z",
           "score": 7
+        },
+        {
+          "title": "Days of salted codfish and cabbage leaves are over: how climate crisis is shaping Tour de France’s future",
+          "link": "https://www.theguardian.com/sport/2026/jul/11/salted-codfish-cabbage-climate-crisis-tour-de-france-future",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Heatwaves have long been part of the Tour but temperatures now are pushing the riders to limit of human endurance&lt;/p&gt;&lt;p&gt;The Tour de France and the heat of the midday sun are old bedfellows, going back long before an era when the biggest catastrophe of the Tour’s opening week was a major fault in the Visma team bus’s air conditioning. Flip back 50 years to my favourite Tour read, the late Geoffrey Nicholson’s The Great Bike Race, and we find the doyen of cycling writers discu",
+          "published": "2026-07-11T07:00:42.000Z",
+          "score": 7
+        },
+        {
+          "title": "'We escaped Spanish wildfire, but our friends lost their lives'",
+          "link": "https://www.bbc.co.uk/news/videos/c07y357zvl1o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Hundreds of firefighters in Spain have been battling a deadly wildfire in the south of the country.",
+          "published": "2026-07-11T11:45:55.000Z",
+          "score": 7
+        },
+        {
+          "title": "Spanish wildfire victims burned in cars as roads turned into death traps - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcVBDaWd1S2Q4M3JNVUZSWFhEbHpqaUFvQ2VEdzZTdERBOV93OVdKSUlHd0xNdDhYbFdWeW1wbERZRmlFVkhrc0RIWGpiUGZaRllmWUF5OXRBaHg2VjBvLU5QWElPaTd1NldLVTNwa1hlekhqVFNTUjJVaDFFRXY1RFBhdWVabkNfWnRvS0ppbFhmZGtDcE50ejFkeUs2ZkhtQ1BNNEtjVVA1MGVxZHR0RWlPbml2YW5TMnpUbzlKYmtkODRtRm9rYkkzb290V1ZnWHc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxOcVBDaWd1S2Q4M3JNVUZSWFhEbHpqaUFvQ2VEdzZTdERBOV93OVdKSUlHd0xNdDhYbFdWeW1wbERZRmlFVkhrc0RIWGpiUGZaRllmWUF5OXRBaHg2VjBvLU5QWElPaTd1NldLVTNwa1hlekhqVFNTUjJVaDFFRXY1RFBhdWVabkNfWnRvS0ppbFhmZGtDcE50ejFkeUs2ZkhtQ1BNNEtjVVA1MGVxZHR0RWlPbml2YW5TMnpUbzlKYmtkODRtRm9rYkkzb290V1ZnWHc?oc=5\" target=\"_blank\"&gt;Spanish wildfire victims burned in cars as roads turned into death traps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-07-10T18:27:43.000Z",
+          "score": 7
+        },
+        {
+          "title": "The 13 biggest myths about heatwaves – and how to bust them",
+          "link": "https://www.theguardian.com/environment/2026/jul/11/the-13-biggest-myths-about-heatwaves-and-how-to-bust-them",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;With some still unable to accept humanity’s role in climate chaos, we tackle common misconceptions and deceptions&lt;/p&gt;&lt;p&gt;Some people – and media organisations – still have difficulty connecting the heatwaves currently gripping much of the world and human-caused climate chaos. Others are in outright denial. So how to address their evasions, distractions and lies?&lt;/p&gt;&lt;p&gt;The Guardian has trawled through climate sceptics’ claims and put their doubts to one of the UK’s",
+          "published": "2026-07-11T07:00:42.000Z",
+          "score": 4
         }
       ]
     },
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Wildlife conservation work to get £1m boost",
+          "link": "https://www.bbc.co.uk/news/articles/cp3xg2zkkv8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Endangered rodents, birds and butterflies will be among the species benefitting from the investment.",
+          "published": "2026-07-11T14:53:12.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
@@ -114,36 +145,36 @@
           "score": 8
         },
         {
+          "title": "US energy firms add rigs for fourth week in a row, says Baker Hughes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOaF81a3htTnFvS2FncE95TEpVRGdSeDhwNXpiNm1RaWNKaUxoT080dml1X3dMc2tuZjRTMTNUZW9hOG5tVzU0UUFSWG9MWDlZWmp5NkFncHpNQzRPOUJ6Mkotc1JnZVk5VkFSMDB1OTdRem11c1lFeDl5NjViOWNlRFFrQTJoQkNjU1VIMGNSZVJEc3RfMm5YY2RHN2x0eWdVZVk5emFqUUU0SVFxZG5V?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirwFBVV95cUxOaF81a3htTnFvS2FncE95TEpVRGdSeDhwNXpiNm1RaWNKaUxoT080dml1X3dMc2tuZjRTMTNUZW9hOG5tVzU0UUFSWG9MWDlZWmp5NkFncHpNQzRPOUJ6Mkotc1JnZVk5VkFSMDB1OTdRem11c1lFeDl5NjViOWNlRFFrQTJoQkNjU1VIMGNSZVJEc3RfMm5YY2RHN2x0eWdVZVk5emFqUUU0SVFxZG5V?oc=5\" target=\"_blank\"&gt;US energy firms add rigs for fourth week in a row, says Baker Hughes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-10T18:38:28.000Z",
+          "score": 7
+        },
+        {
+          "title": "Landmark US housing bill becomes law despite Trump protest",
+          "link": "https://www.bbc.co.uk/news/articles/cn8qwj611qxo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The president had wanted voter ID legislation passed before the housing law, which aims to reduce costs and increase supply.",
+          "published": "2026-07-11T13:35:09.000Z",
+          "score": 6
+        },
+        {
           "title": "Meet the crypto billionaires building a world where money buys you a vote",
           "link": "https://www.bbc.co.uk/news/articles/cly8eqyj8e2o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "They think democracy has run its course - so they're setting up their own nations instead.",
           "published": "2026-07-10T23:03:11.000Z",
           "score": 6
-        },
-        {
-          "title": "At Canada's biggest rodeo, the starting gun is fired in the fight over Alberta separation",
-          "link": "https://www.bbc.co.uk/news/articles/c3eykgln5eeo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Canadian unity takes centre stage at the Calgary Stampede as fears of a Brexit-style upset looms over the October vote on Alberta's future.",
-          "published": "2026-07-11T00:00:42.000Z",
-          "score": 6
-        },
-        {
-          "title": "US: Trump looked to bypass federal election agency before firings, says report",
-          "link": "https://www.dw.com/en/us-trump-looked-to-bypass-federal-election-agency-before-firings-says-report/a-77913362?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The White House explored declaring a national emergency to address alleged vulnerabilities in voting machines before Trump ousted leaders of the Election Assistance Commission, a report has found.",
-          "published": "2026-07-11T03:57:00.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 330,
-    "articlesLast24h": 72,
-    "afterDedup": 66,
+    "totalArticlesScanned": 433,
+    "articlesLast24h": 162,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
