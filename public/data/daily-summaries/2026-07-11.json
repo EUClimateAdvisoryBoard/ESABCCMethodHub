@@ -1,12 +1,12 @@
 {
   "date": "2026-07-11",
-  "generatedAt": "2026-07-11T07:12:49.136Z",
+  "generatedAt": "2026-07-11T11:53:16.654Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 11 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
-      "summary": "Disruptions in the Strait of Hormuz have hit supplies of liquefied petroleum gas (LPG), seen as a cleaner cooking alternative to charcoal and wood The post Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says appeared first on Climate Home News.",
+      "headline": "Cuba suffers second nationwide blackout in five days",
+      "summary": "Cuba&#039;s electricity grid has crumbled amid a six-month US fuel blockade and already-dilapidated energy infrastructure.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -15,12 +15,6 @@
       "summary": "Welcome to Carbon Brief’s DeBriefed. An essential guide to the week&#8217;s key developments relating to climate... The post DeBriefed 10 July 2026: Deadly Europe heat | EU electrification leak | COP31 president interview appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "India equity mutual fund inflows rebound from one-year low - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5\" target=\"_blank\"&gt;India equity mutual fund inflows rebound from one-year low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -33,30 +27,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says",
-          "link": "https://www.climatechangenews.com/2026/07/10/iran-war-fuel-shocks-threaten-africa-clean-cooking-push-iea-says/",
-          "source": "Climate Home News",
-          "description": "Disruptions in the Strait of Hormuz have hit supplies of liquefied petroleum gas (LPG), seen as a cleaner cooking alternative to charcoal and wood The post Iran war fuel shocks threaten Africa&#8217;s clean cooking push, IEA says appeared first on Climate Home News.",
-          "published": "2026-07-10T08:01:20.000Z",
-          "score": 10
-        },
-        {
-          "title": "‘He’s forcing higher bills’: Trump spends billions to kill clean energy and keep coal alive",
-          "link": "https://www.theguardian.com/us-news/2026/jul/10/bills-trump-clean-energy-coal",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Critics accuse president of ‘fattening the wallets of his cronies’ as working Americans face higher energy rates&lt;/p&gt;&lt;p&gt;The Trump administration has directly spent $2.7bn of taxpayer money on its crusade against wind power while pouring $1.125bn into boosting coal, which critics say is pushing up Americans’ bills.&lt;/p&gt;&lt;p&gt;They say the moves are evidence that the president aims to serve fossil-fuel companies like those which donated record sums to his &lt;a href=\"htt",
-          "published": "2026-07-10T11:30:19.000Z",
-          "score": 7
-        },
-        {
-          "title": "Relentless Sinner downs Djokovic to set up Wimbledon final with red-hot Zverev - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNNFBIeEJxTG9hdWYtRV9XWXFzbVAwblJJZ3NDU09sVHpUbGsyM0xFd2N0cDZvNmd1NDVaUnBBMVlEYWtpZjd4TXNfVHZySVhPTGlGZXB2MlhqSGRtVjM2aG54RjM2aTJTMWRqbC1ybHAwUW0xbk5VYzYxODl3WlluSG5nNVI3ZEkza184SnpRNXB5bDlWWEpwSGZmbUM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNNFBIeEJxTG9hdWYtRV9XWXFzbVAwblJJZ3NDU09sVHpUbGsyM0xFd2N0cDZvNmd1NDVaUnBBMVlEYWtpZjd4TXNfVHZySVhPTGlGZXB2MlhqSGRtVjM2aG54RjM2aTJTMWRqbC1ybHAwUW0xbk5VYzYxODl3WlluSG5nNVI3ZEkza184SnpRNXB5bDlWWEpwSGZmbUM?oc=5\" target=\"_blank\"&gt;Relentless Sinner downs Djokovic to set up Wimbledon final with red-hot Zverev&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T23:47:27.000Z",
-          "score": 7
-        },
         {
           "title": "Cuba suffers second nationwide blackout in five days",
           "link": "https://www.dw.com/en/cuba-suffers-second-nationwide-blackout-in-five-days/a-77913285?maca=en-rss-en-all-1573-xml-mrss",
@@ -104,11 +74,11 @@
           "score": 10
         },
         {
-          "title": "Pacific gray whales facing ‘catastrophic’ die-off as climate crisis hits food supply",
-          "link": "https://www.theguardian.com/environment/2026/jul/10/pacific-gray-whales-population-climate-change",
+          "title": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
+          "link": "https://www.theguardian.com/us-news/2026/jul/11/microsoft-amazon-google-datacentre-carbon-emissions-france",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Trump administration urged to relist a species in ‘very, very serious trouble’ under Endangered Species Act&lt;/p&gt;&lt;p&gt;Climate change is &lt;a href=\"https://www.fisheries.noaa.gov/feature-story/eastern-north-pacific-gray-whales-continue-decline-after-downturn-during-unusual\"&gt;driving&lt;/a&gt; a gray whale “catastrophic mortality event” in the Pacific Ocean as melting sea ice depletes food sources and the animals starve, &lt;a href=\"https://peer.org/gray-whales-suffering-catast",
-          "published": "2026-07-10T13:00:20.000Z",
+          "description": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
+          "published": "2026-07-11T11:00:49.000Z",
           "score": 7
         }
       ]
@@ -116,16 +86,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "India equity mutual fund inflows rebound from one-year low - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOeGYxbFkyVElUMHR3RFVIRFJhaDhyQlhqX2s2ak5nVTd5RkllTGJqU3ZnejVwa25NWHRnaVRjdkctYzU3QXlvUy1sQ1FuTURVV1JqMnBrWmg4OERCU2FOenJlT0htQllCczZJTnEwRXQ0M0oyZzVwSmJjUkZQNU5LV09acloxbkw2VmpVTHNBY282LUt0YXZwT2Z5MmJFQ0JyLW1R?oc=5\" target=\"_blank\"&gt;India equity mutual fund inflows rebound from one-year low&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T09:33:44.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -153,36 +114,36 @@
           "score": 8
         },
         {
-          "title": "EU tells Instagram, Facebook to change addictive features or risk fines - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPRUxQS2dYSG5aVnI1cDJONzVVWURrcEE3MzhOZE5VaDBOTGgtR3RHWVAydDVlTUJTSVBDd01TMFp1ZGFiNV9aYXVsMW1hX2ZaamlVcUZQZHlOV3gwcjdXcHJTY2sxY1JOQVRZWGc0SlhXZHJ1M01rUTlkTDkzOFZrUWZNQWlLZGR5b1JHUjFvM0t1LW5NY2ZNUE5EZzJmVHRmc3A1Qmg4MzhQZVpDSlE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPRUxQS2dYSG5aVnI1cDJONzVVWURrcEE3MzhOZE5VaDBOTGgtR3RHWVAydDVlTUJTSVBDd01TMFp1ZGFiNV9aYXVsMW1hX2ZaamlVcUZQZHlOV3gwcjdXcHJTY2sxY1JOQVRZWGc0SlhXZHJ1M01rUTlkTDkzOFZrUWZNQWlLZGR5b1JHUjFvM0t1LW5NY2ZNUE5EZzJmVHRmc3A1Qmg4MzhQZVpDSlE?oc=5\" target=\"_blank\"&gt;EU tells Instagram, Facebook to change addictive features or risk fines&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T10:31:13.000Z",
-          "score": 8
+          "title": "Meet the crypto billionaires building a world where money buys you a vote",
+          "link": "https://www.bbc.co.uk/news/articles/cly8eqyj8e2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "They think democracy has run its course - so they're setting up their own nations instead.",
+          "published": "2026-07-10T23:03:11.000Z",
+          "score": 6
         },
         {
-          "title": "Senegal's top court calls parliament-backed reform 'unconstitutional' - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNX1FHWF9JYU5zQXlPR294emRUcndlTlFFODM3ZkVZWjJpdzhjNDNiZ1hBOWt1TmVLd3hHRDZmYTdlbEF1Xy1rMDdNeEM0RnJuSmMyQ0tSNWZON2ZEclM2RW9ORFFGc3dqcGI0QzZVWm1tRldBNkwzZTh4a1BzZjJHemxiWmljS18yWjBfNHVSb1dEak9tV0VLT1FvWEd1TlBBT3Y4c0ZYYTJhdXpXNTRQNGRNWDRWQQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxNX1FHWF9JYU5zQXlPR294emRUcndlTlFFODM3ZkVZWjJpdzhjNDNiZ1hBOWt1TmVLd3hHRDZmYTdlbEF1Xy1rMDdNeEM0RnJuSmMyQ0tSNWZON2ZEclM2RW9ORFFGc3dqcGI0QzZVWm1tRldBNkwzZTh4a1BzZjJHemxiWmljS18yWjBfNHVSb1dEak9tV0VLT1FvWEd1TlBBT3Y4c0ZYYTJhdXpXNTRQNGRNWDRWQQ?oc=5\" target=\"_blank\"&gt;Senegal's top court calls parliament-backed reform 'unconstitutional'&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T09:17:43.000Z",
-          "score": 8
+          "title": "At Canada's biggest rodeo, the starting gun is fired in the fight over Alberta separation",
+          "link": "https://www.bbc.co.uk/news/articles/c3eykgln5eeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Canadian unity takes centre stage at the Calgary Stampede as fears of a Brexit-style upset looms over the October vote on Alberta's future.",
+          "published": "2026-07-11T00:00:42.000Z",
+          "score": 6
         },
         {
-          "title": "Namibia secures China deals on infrastructure, mining and energy with state visit - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPd0hyc2hPVkduRXVkY2hhaG55eEFwaHdDTUhzR0xHeHg1ZGllRTF6RV96RThHLWZmMHUyQUpfbzM3T2d5TWx0MkFGNko0eTN1czZoSjZveVFNWjN6RFRtQTFRdEQ5Yk9TYWNmemZuQ2hyZGV2NkZETS1JY0pSWC1ER1AyWTAxTEdtYk1laHlFb01zRXczMkIzRlpUQlZ4alB3YlhMY0dDWWJoMDlZNnplM2lzSWJpNWZqMXlWckZn?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPd0hyc2hPVkduRXVkY2hhaG55eEFwaHdDTUhzR0xHeHg1ZGllRTF6RV96RThHLWZmMHUyQUpfbzM3T2d5TWx0MkFGNko0eTN1czZoSjZveVFNWjN6RFRtQTFRdEQ5Yk9TYWNmemZuQ2hyZGV2NkZETS1JY0pSWC1ER1AyWTAxTEdtYk1laHlFb01zRXczMkIzRlpUQlZ4alB3YlhMY0dDWWJoMDlZNnplM2lzSWJpNWZqMXlWckZn?oc=5\" target=\"_blank\"&gt;Namibia secures China deals on infrastructure, mining and energy with state visit&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-10T14:47:47.000Z",
-          "score": 7
+          "title": "US: Trump looked to bypass federal election agency before firings, says report",
+          "link": "https://www.dw.com/en/us-trump-looked-to-bypass-federal-election-agency-before-firings-says-report/a-77913362?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The White House explored declaring a national emergency to address alleged vulnerabilities in voting machines before Trump ousted leaders of the Election Assistance Commission, a report has found.",
+          "published": "2026-07-11T03:57:00.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 425,
-    "articlesLast24h": 169,
-    "afterDedup": 160,
+    "totalArticlesScanned": 330,
+    "articlesLast24h": 72,
+    "afterDedup": 66,
     "feedsQueried": 19
   }
 }
