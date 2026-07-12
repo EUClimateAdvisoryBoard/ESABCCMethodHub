@@ -1,24 +1,24 @@
 {
   "date": "2026-07-12",
-  "generatedAt": "2026-07-12T12:02:45.243Z",
+  "generatedAt": "2026-07-12T17:59:13.584Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 12 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Embolo red card turns Swiss dream into heartbreak against Argentina - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQb08tSHdZNVR1TU9XQzVOMUk5YmdTWlR1ZjRUakZkSjE5R0dYUTVlX1lYTWRkal9jMlBtb0Q0NkRzWGxNWGVLUjhtRUUxd1BNNEVlemVleXFTb3BEenoxbEUybkRzWE5HYnlNM3ctWnlUSnlsaUMtbTVLRUFfSWx6VWtqb01kQVlpaXBXcG5EVE9EdjJPV1M5R0ZxdUc5dFNVWEVMZWNENUl2NllBREtrOS16SF9XRUNy?oc=5\" target=\"_blank\"&gt;Embolo red card turns Swiss dream into heartbreak against Argentina&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Britain’s biggest community solar farm forced to shut over grid overload fears",
+      "summary": "&lt;p&gt;Timing of Devon switchoff ‘could not be worse’, says board, as members face an estimated £2m in lost revenue &lt;/p&gt;&lt;p&gt;Britain’s biggest community solar project has been forced to shut for the duration of its first summer by the government’s energy system operator to avoid &lt;a href=\"https://www.theguardian.com/football/2026/jun/24/fans-power-demand-surges-england-viewers-heatwave-world-cup\"&gt;overloading the local grid&lt;/a&gt; with renewable energy.&lt;/p&gt;&lt;p&gt;The n",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
-      "summary": "A 67 million-year-old Tyrannosaurus rex will go on sale in New York with a pre-sale value of $30m.",
+      "headline": "Green MP Hannah Spencer to introduce bill on maximum workplace temperatures",
+      "summary": "&lt;p&gt;Byelection winner says heatwaves are causing ‘absolute chaos’ and workers need protection from unsafe conditions&lt;/p&gt;&lt;p&gt;The Green MP Hannah Spencer is to introduce a bill in parliament that would pave the way for a maximum workplace temperature in the UK, as the country grapples with increasingly frequent heatwaves.&lt;/p&gt;&lt;p&gt;If passed, the legislation will create an independent body to recommend maximum safe workplace temperatures and set out how those recommendation",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
     {
-      "headline": "Wildlife conservation work to get £1m boost",
-      "summary": "Endangered rodents, birds and butterflies will be among the species benefitting from the investment.",
+      "headline": "Japan to push its massive pension fund to boost alternative investments, Nikkei says - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNT3BCNEk4aVozc3pMcDBVN1lqYVRsT1B6VU5UOVNVdWJNWjU2Um9lZ1c2dURqREUtbDZsdzZrUVlsUVJ5MVVnbnV0b0FyWUJJRmR4WGsxZ1AzNzhwbzhUbmxiV1NOZzgwT0NWRmVPaTlLdnY5Z0t4SExITEVhQVlaNWRJQk1jUXdSTGpKTVdqdWpBUk5hbDBiLVRoZkNxSVZzc2o0WGY2RWFnQktlVHZvY0NOYXlsLXcyVGcxVkF4XzBvVmNMRm9OamZBVzc?oc=5\" target=\"_blank\"&gt;Japan to push its massive pension fund to boost alternative investments, Nikkei says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,6 +33,22 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Britain’s biggest community solar farm forced to shut over grid overload fears",
+          "link": "https://www.theguardian.com/environment/2026/jul/12/solar-farm-forced-to-shut-derril-water-biggest-grid-overload-fears",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Timing of Devon switchoff ‘could not be worse’, says board, as members face an estimated £2m in lost revenue &lt;/p&gt;&lt;p&gt;Britain’s biggest community solar project has been forced to shut for the duration of its first summer by the government’s energy system operator to avoid &lt;a href=\"https://www.theguardian.com/football/2026/jun/24/fans-power-demand-surges-england-viewers-heatwave-world-cup\"&gt;overloading the local grid&lt;/a&gt; with renewable energy.&lt;/p&gt;&lt;p&gt;The n",
+          "published": "2026-07-12T14:00:20.000Z",
+          "score": 7
+        },
+        {
+          "title": "Readers reply: Why put solar panels on green space when we could put them over car parks?",
+          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/12/readers-reply-why-put-solar-panels-on-green-space-when-we-could-put-them-over-car-parks",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;The long-running series in which readers answer other readers’ questions on subjects ranging from trivial flights of fancy to profound scientific and philosophical concepts&lt;/p&gt;&lt;p&gt;This week’s question: &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/12/why-is-there-no-rugby-culture-in-germany\"&gt;Why is there no rugby culture in Germany?&lt;/a&gt;&lt;/p&gt;&lt;p&gt;I would like to know why we build solar farms over green space, when we could just put them over m",
+          "published": "2026-07-12T13:00:19.000Z",
+          "score": 7
+        },
         {
           "title": "Embolo red card turns Swiss dream into heartbreak against Argentina - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQb08tSHdZNVR1TU9XQzVOMUk5YmdTWlR1ZjRUakZkSjE5R0dYUTVlX1lYTWRkal9jMlBtb0Q0NkRzWGxNWGVLUjhtRUUxd1BNNEVlemVleXFTb3BEenoxbEUybkRzWE5HYnlNM3ctWnlUSnlsaUMtbTVLRUFfSWx6VWtqb01kQVlpaXBXcG5EVE9EdjJPV1M5R0ZxdUc5dFNVWEVMZWNENUl2NllBREtrOS16SF9XRUNy?oc=5",
@@ -50,11 +66,11 @@
           "score": 4
         },
         {
-          "title": "Gas queues grow as Ukraine targets Russia&#039;s fuel supply",
-          "link": "https://www.dw.com/en/gas-queues-grow-as-ukraine-targets-russia-s-fuel-supply/a-77887704?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Attacks by Ukraine have triggered a fuel crisis in Russia. Reports from across Russia show how residents are dealing with the disruptions in their daily lives.",
-          "published": "2026-07-12T05:03:00.000Z",
+          "title": "Former Emir of Qatar Sheikh Hamad bin Khalifa Al Thani dies aged 74",
+          "link": "https://www.bbc.co.uk/news/articles/cql1qdq14xro?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "He took power in 1996 after staging a bloodless coup against his father, and went on to transform Qatar into the gas-rich power it is today.",
+          "published": "2026-07-12T16:35:50.000Z",
           "score": 2
         }
       ]
@@ -63,6 +79,30 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Green MP Hannah Spencer to introduce bill on maximum workplace temperatures",
+          "link": "https://www.theguardian.com/politics/2026/jul/12/green-mp-hannah-spencer-aims-to-pass-law-on-maximum-workplace-temperatures",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Byelection winner says heatwaves are causing ‘absolute chaos’ and workers need protection from unsafe conditions&lt;/p&gt;&lt;p&gt;The Green MP Hannah Spencer is to introduce a bill in parliament that would pave the way for a maximum workplace temperature in the UK, as the country grapples with increasingly frequent heatwaves.&lt;/p&gt;&lt;p&gt;If passed, the legislation will create an independent body to recommend maximum safe workplace temperatures and set out how those recommendation",
+          "published": "2026-07-12T13:56:27.000Z",
+          "score": 8
+        },
+        {
+          "title": "‘Huge wave’ of carbon storage projects causes alarm in small-town USA as oil firms eye billions in subsidies",
+          "link": "https://www.theguardian.com/us-news/2026/jul/12/carbon-sequestration-projects-oil-companies-subsidies",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Dozens of projects are in development across US despite concerns over environmental and health risks&lt;/p&gt;&lt;p&gt;The plan to bury carbon under remote &lt;a href=\"https://www.theguardian.com/us-news/indiana\"&gt;Indiana&lt;/a&gt; farmland is supposed to be a slam dunk for the climate, according to its supporters – all generously funded by US tax dollars.&lt;/p&gt;&lt;p&gt;But as far as Melissa Harrison and some other residents of Clymers, Indiana, are concerned, it just might be the",
+          "published": "2026-07-12T12:00:18.000Z",
+          "score": 7
+        },
+        {
+          "title": "Carbon capture is vital in tackling the climate crisis | Letters",
+          "link": "https://www.theguardian.com/environment/2026/jul/12/carbon-capture-is-vital-in-tackling-the-climate-crisis",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;&lt;strong&gt;Prof Myles Allen, Stephanie Loo and Toby Lockwood&lt;/strong&gt;, and &lt;strong&gt;Olivia Powis&lt;/strong&gt;, respond to an article by George Monbiot about ‘the great carbon capture con’&lt;/p&gt;&lt;p&gt;George Monbiot suggests that we can solve climate change without carbon capture and storage (&lt;a href=\"https://www.theguardian.com/commentisfree/2026/jul/08/carbon-capture-con-andy-burnham-fossil-fuels-renewables\"&gt;The great carbon capture con: behold the wasted bi",
+          "published": "2026-07-12T16:50:34.000Z",
+          "score": 7
+        },
         {
           "title": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
           "link": "https://www.bbc.co.uk/news/articles/c4gykgyn1r4o?at_medium=RSS&amp;at_campaign=rss",
@@ -78,30 +118,6 @@
           "description": "Firefighters have started to rein in the wildfire that killed 12 people in the southern Andalusia region, which is home to one of Spain&#039;s largest expat communities.",
           "published": "2026-07-11T22:10:00.000Z",
           "score": 7
-        },
-        {
-          "title": "Son of Belgian wildfire victim disputes Spanish officials' account of warnings - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5\" target=\"_blank\"&gt;Son of Belgian wildfire victim disputes Spanish officials' account of warnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-12T10:43:49.000Z",
-          "score": 7
-        },
-        {
-          "title": "British couple saved from Spanish ravine after deadly wildfire - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5\" target=\"_blank\"&gt;British couple saved from Spanish ravine after deadly wildfire&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-11T18:15:03.000Z",
-          "score": 7
-        },
-        {
-          "title": "Spanish wildfire victims burned in cars as roads turned into death traps - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcVpBNlNLY2VxQzcxbUlDUVpvdFlQNTB6V2g5OWtDZmd5WVQ1RGhUbE1RZ0FnTjFaWm1fZzdiWGF4UDZfSkJoSWlldk1LR0dtdkwzZGg2V0VrR1RXdEdlamhYcEZ6elloeGx2dmNPUnhRNU5XUE9ZYVRITzZwdDgwRUJGd3F6aUx0U3ZaMmIxLUhocVlHY2htZXJzZlJOVWh4MDA2Wm93RXpoRnVEemx5cUNwaWt6QWM0QUQ3T0JqTUw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcVpBNlNLY2VxQzcxbUlDUVpvdFlQNTB6V2g5OWtDZmd5WVQ1RGhUbE1RZ0FnTjFaWm1fZzdiWGF4UDZfSkJoSWlldk1LR0dtdkwzZGg2V0VrR1RXdEdlamhYcEZ6elloeGx2dmNPUnhRNU5XUE9ZYVRITzZwdDgwRUJGd3F6aUx0U3ZaMmIxLUhocVlHY2htZXJzZlJOVWh4MDA2Wm93RXpoRnVEemx5cUNwaWt6QWM0QUQ3T0JqTUw?oc=5\" target=\"_blank\"&gt;Spanish wildfire victims burned in cars as roads turned into death traps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-11T22:16:54.000Z",
-          "score": 7
         }
       ]
     },
@@ -110,19 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "Wildlife conservation work to get £1m boost",
-          "link": "https://www.bbc.co.uk/news/articles/cp3xg2zkkv8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Endangered rodents, birds and butterflies will be among the species benefitting from the investment.",
-          "published": "2026-07-11T14:53:12.000Z",
-          "score": 2
-        },
-        {
           "title": "Japan to push its massive pension fund to boost alternative investments, Nikkei says - Reuters",
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNT3BCNEk4aVozc3pMcDBVN1lqYVRsT1B6VU5UOVNVdWJNWjU2Um9lZ1c2dURqREUtbDZsdzZrUVlsUVJ5MVVnbnV0b0FyWUJJRmR4WGsxZ1AzNzhwbzhUbmxiV1NOZzgwT0NWRmVPaTlLdnY5Z0t4SExITEVhQVlaNWRJQk1jUXdSTGpKTVdqdWpBUk5hbDBiLVRoZkNxSVZzc2o0WGY2RWFnQktlVHZvY0NOYXlsLXcyVGcxVkF4XzBvVmNMRm9OamZBVzc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNT3BCNEk4aVozc3pMcDBVN1lqYVRsT1B6VU5UOVNVdWJNWjU2Um9lZ1c2dURqREUtbDZsdzZrUVlsUVJ5MVVnbnV0b0FyWUJJRmR4WGsxZ1AzNzhwbzhUbmxiV1NOZzgwT0NWRmVPaTlLdnY5Z0t4SExITEVhQVlaNWRJQk1jUXdSTGpKTVdqdWpBUk5hbDBiLVRoZkNxSVZzc2o0WGY2RWFnQktlVHZvY0NOYXlsLXcyVGcxVkF4XzBvVmNMRm9OamZBVzc?oc=5\" target=\"_blank\"&gt;Japan to push its massive pension fund to boost alternative investments, Nikkei says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
-          "published": "2026-07-12T04:19:33.000Z",
+          "published": "2026-07-12T04:19:00.000Z",
           "score": 2
         }
       ]
@@ -130,50 +138,59 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "EU defense remains heavily reliant on the United States",
+          "link": "https://www.dw.com/en/eu-defense-remains-heavily-reliant-on-the-united-states/a-77917972?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "There are many obstacles as EU governments seek to reduce their dependence on the US. DW looks at the European Unions&#039;s attempts to develop counterparts to Patriot and Tomahawk missiles, F-35 jets, and Starlink internet.",
+          "published": "2026-07-12T12:37:00.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Saudi Arabia adds industry, mineral resources portfolio to Energy Minister Prince Abdulaziz's role - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQN3hld3A4dWNJa3hsVm55NzMtTmtCWk0tamFxSllTcF9BanZpeU1WOGtHNEVOb2hMYU52UjluV0FzSG1vNVVLQ29sVmthQzlxV291a1lkNXNOa3pwYkNqLXpsOWN0OF9BN3VWS3gwTndXQ0RNdW10MlI4cERVNDBza1NEQXdPRU1WUGpZMWg0akladEg2WFNWbU1mOUkwUThwMi02bDhOanhHNXdCY1pCT1QzSGlHSVVvUTdEX3F1cVNJZks4THNyZg?oc=5",
+          "title": "New Syrian parliament meets for first time in Damascus - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOX2ZCcEtqYlFjUXpUaGF5UEZUZklqaDJMSGI5NXRUdGI1bERBcnpUaXlkQl9jZnIxeVBYYWpTN2lpdFJFZUd4UWhVenhrWmotcHhHNi1RMU4tUHV3N3g3UXNLd2cycDdoT1NWUWNsa1NmaURWSDVOZlQ3S2lhM2RJQnpIck1ZTlNlVnBVbVdtREhlaGMxcDIyZlhSY3BDd3N1WkVj?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQN3hld3A4dWNJa3hsVm55NzMtTmtCWk0tamFxSllTcF9BanZpeU1WOGtHNEVOb2hMYU52UjluV0FzSG1vNVVLQ29sVmthQzlxV291a1lkNXNOa3pwYkNqLXpsOWN0OF9BN3VWS3gwTndXQ0RNdW10MlI4cERVNDBza1NEQXdPRU1WUGpZMWg0akladEg2WFNWbU1mOUkwUThwMi02bDhOanhHNXdCY1pCT1QzSGlHSVVvUTdEX3F1cVNJZks4THNyZg?oc=5\" target=\"_blank\"&gt;Saudi Arabia adds industry, mineral resources portfolio to Energy Minister Prince Abdulaziz's role&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f",
-          "published": "2026-07-11T13:01:44.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOX2ZCcEtqYlFjUXpUaGF5UEZUZklqaDJMSGI5NXRUdGI1bERBcnpUaXlkQl9jZnIxeVBYYWpTN2lpdFJFZUd4UWhVenhrWmotcHhHNi1RMU4tUHV3N3g3UXNLd2cycDdoT1NWUWNsa1NmaURWSDVOZlQ3S2lhM2RJQnpIck1ZTlNlVnBVbVdtREhlaGMxcDIyZlhSY3BDd3N1WkVj?oc=5\" target=\"_blank\"&gt;New Syrian parliament meets for first time in Damascus&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-12T14:56:31.000Z",
+          "score": 8
         },
         {
-          "title": "US launches fresh strikes as Iran closes Strait of Hormuz",
+          "title": "US insists Strait of Hormuz is open as it exchanges strikes with Iran",
           "link": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The strikes follow an attack on a Cyprus -flagged vessel travelling through the critical waterway.",
-          "published": "2026-07-12T06:49:46.000Z",
+          "description": "Iranian forces earlier said the Strait was closed and launched wide-ranging attacks at US allies and bases in the region.",
+          "published": "2026-07-12T16:46:24.000Z",
           "score": 2
         },
         {
-          "title": "US Senator and close Trump ally Lindsey Graham dies after 'brief and sudden illness'",
+          "title": "US senator and close Trump ally Lindsey Graham dies after 'brief and sudden illness'",
           "link": "https://www.bbc.co.uk/news/articles/cvgj25j6nmeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The influential politician had just returned from Kyiv, where he met Ukraine's President Volodymyr Zelensky on Friday.",
-          "published": "2026-07-12T09:47:43.000Z",
+          "description": "Donald Trump pays tribute to the 71-year-old South Carolina senator, calling him a \"true American patriot\" who will be \"greatly missed\".",
+          "published": "2026-07-12T17:40:34.000Z",
           "score": 2
         },
         {
           "title": "Badly burned British couple rescued from ravine during Spain wildfires, reports say",
           "link": "https://www.bbc.co.uk/news/articles/cx2x7441762o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The unnamed pair were found semi-conscious with 40% burns after being trapped by the blazes raging through Almeria province, according to local media",
-          "published": "2026-07-12T11:23:09.000Z",
+          "description": "The unnamed pair were found semi-conscious with 40% burns after being trapped by the blazes raging through Almeria province, local media reports.",
+          "published": "2026-07-12T13:35:01.000Z",
           "score": 2
         },
         {
-          "title": "At least two killed in Toronto street festival shooting",
-          "link": "https://www.bbc.co.uk/news/articles/ce3e66e1x3go?at_medium=RSS&amp;at_campaign=rss",
+          "title": "David Willey, esteemed BBC Vatican correspondent, dies aged 93",
+          "link": "https://www.bbc.co.uk/news/articles/cn9403518jro?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "Police say there was an exchange of gunfire between two individuals at the festival, and two firearms had been recovered from the scene.",
-          "published": "2026-07-12T03:56:02.000Z",
+          "description": "One of the BBC's longest-serving foreign correspondents, he reported on five popes during his career.",
+          "published": "2026-07-12T15:22:52.000Z",
           "score": 2
         }
       ]
@@ -181,8 +198,8 @@
   ],
   "stats": {
     "totalArticlesScanned": 425,
-    "articlesLast24h": 142,
-    "afterDedup": 120,
+    "articlesLast24h": 146,
+    "afterDedup": 128,
     "feedsQueried": 19
   }
 }
