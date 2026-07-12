@@ -1,6 +1,6 @@
 {
   "date": "2026-07-12",
-  "generatedAt": "2026-07-12T07:29:56.009Z",
+  "generatedAt": "2026-07-12T12:02:45.243Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 12 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
-      "summary": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
+      "headline": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
+      "summary": "A 67 million-year-old Tyrannosaurus rex will go on sale in New York with a pre-sale value of $30m.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -38,8 +38,16 @@
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQb08tSHdZNVR1TU9XQzVOMUk5YmdTWlR1ZjRUakZkSjE5R0dYUTVlX1lYTWRkal9jMlBtb0Q0NkRzWGxNWGVLUjhtRUUxd1BNNEVlemVleXFTb3BEenoxbEUybkRzWE5HYnlNM3ctWnlUSnlsaUMtbTVLRUFfSWx6VWtqb01kQVlpaXBXcG5EVE9EdjJPV1M5R0ZxdUc5dFNVWEVMZWNENUl2NllBREtrOS16SF9XRUNy?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQb08tSHdZNVR1TU9XQzVOMUk5YmdTWlR1ZjRUakZkSjE5R0dYUTVlX1lYTWRkal9jMlBtb0Q0NkRzWGxNWGVLUjhtRUUxd1BNNEVlemVleXFTb3BEenoxbEUybkRzWE5HYnlNM3ctWnlUSnlsaUMtbTVLRUFfSWx6VWtqb01kQVlpaXBXcG5EVE9EdjJPV1M5R0ZxdUc5dFNVWEVMZWNENUl2NllBREtrOS16SF9XRUNy?oc=5\" target=\"_blank\"&gt;Embolo red card turns Swiss dream into heartbreak against Argentina&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-12T05:26:00.000Z",
+          "published": "2026-07-12T05:27:43.000Z",
           "score": 7
+        },
+        {
+          "title": "Germany&#039;s Ruhr Valley is on brink of financial collapse",
+          "link": "https://www.dw.com/en/germany-s-ruhr-valley-is-on-brink-of-financial-collapse/a-77905338?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "With tax revenues down and social spending up, more and more cities and towns in the Ruhrgebiet are struggling to make ends meet. One city that is particularly deep in the red is Oberhausen.",
+          "published": "2026-07-12T10:10:00.000Z",
+          "score": 4
         },
         {
           "title": "Gas queues grow as Ukraine targets Russia&#039;s fuel supply",
@@ -56,27 +64,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Datacentres drive up big tech’s carbon emissions to a third of those of France",
-          "link": "https://www.theguardian.com/us-news/2026/jul/11/microsoft-amazon-google-datacentre-carbon-emissions-france",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Microsoft, Amazon and Google say they still aim to achieve net zero output despite construction boom&lt;/p&gt;&lt;p&gt;Microsoft, Amazon and Google’s collective &lt;a href=\"https://www.theguardian.com/technology/2026/jul/06/ai-climate-crisis\"&gt;carbon emissions&lt;/a&gt; have increased by nearly a fifth in the past year, driven largely by datacentre construction.&lt;/p&gt;&lt;p&gt;In the financial year ending March 2026, the three tech companies emitted 119m mTCO₂e (metric tonnes of ca",
-          "published": "2026-07-11T11:00:49.000Z",
-          "score": 7
-        },
-        {
           "title": "T. rex could become most expensive fossil ever - but it's a ​problem for scientists",
           "link": "https://www.bbc.co.uk/news/articles/c4gykgyn1r4o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
           "description": "A 67 million-year-old Tyrannosaurus rex will go on sale in New York with a pre-sale value of $30m.",
           "published": "2026-07-11T23:58:40.000Z",
-          "score": 7
-        },
-        {
-          "title": "'We escaped Spanish wildfire, but our friends lost their lives'",
-          "link": "https://www.bbc.co.uk/news/videos/c07y357zvl1o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Hundreds of firefighters in Spain have been battling a deadly wildfire in the south of the country.",
-          "published": "2026-07-11T11:45:55.000Z",
           "score": 7
         },
         {
@@ -88,11 +80,27 @@
           "score": 7
         },
         {
+          "title": "Son of Belgian wildfire victim disputes Spanish officials' account of warnings - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5\" target=\"_blank\"&gt;Son of Belgian wildfire victim disputes Spanish officials' account of warnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-12T10:43:49.000Z",
+          "score": 7
+        },
+        {
           "title": "British couple saved from Spanish ravine after deadly wildfire - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxNeGxiS3BEWDM1MlRCOFB1Vi1tQXpvai0wbEJHODdYbUFNclJidWhkLXRxYXMtQlNzTU1NNlFQZWJneVFkN3poMFE1TnVPQVdmUEc4WldQVXhSaFE3c292VU45SEQ4eFBTcGI2LVN1ZlRtbzczWmhiM1BGeHBIVmMtX1F0a2xwQWpvWG5OWGVqY3U4dzhxYl9zU1hvODVHSjlIb1gzbm5LQmw5QnlBeGtrOVlMZw?oc=5\" target=\"_blank\"&gt;British couple saved from Spanish ravine after deadly wildfire&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-11T18:15:03.000Z",
+          "score": 7
+        },
+        {
+          "title": "Spanish wildfire victims burned in cars as roads turned into death traps - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcVpBNlNLY2VxQzcxbUlDUVpvdFlQNTB6V2g5OWtDZmd5WVQ1RGhUbE1RZ0FnTjFaWm1fZzdiWGF4UDZfSkJoSWlldk1LR0dtdkwzZGg2V0VrR1RXdEdlamhYcEZ6elloeGx2dmNPUnhRNU5XUE9ZYVRITzZwdDgwRUJGd3F6aUx0U3ZaMmIxLUhocVlHY2htZXJzZlJOVWh4MDA2Wm93RXpoRnVEemx5cUNwaWt6QWM0QUQ3T0JqTUw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcVpBNlNLY2VxQzcxbUlDUVpvdFlQNTB6V2g5OWtDZmd5WVQ1RGhUbE1RZ0FnTjFaWm1fZzdiWGF4UDZfSkJoSWlldk1LR0dtdkwzZGg2V0VrR1RXdEdlamhYcEZ6elloeGx2dmNPUnhRNU5XUE9ZYVRITzZwdDgwRUJGd3F6aUx0U3ZaMmIxLUhocVlHY2htZXJzZlJOVWh4MDA2Wm93RXpoRnVEemx5cUNwaWt6QWM0QUQ3T0JqTUw?oc=5\" target=\"_blank\"&gt;Spanish wildfire victims burned in cars as roads turned into death traps&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-11T22:16:54.000Z",
           "score": 7
         }
       ]
@@ -114,7 +122,7 @@
           "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNT3BCNEk4aVozc3pMcDBVN1lqYVRsT1B6VU5UOVNVdWJNWjU2Um9lZ1c2dURqREUtbDZsdzZrUVlsUVJ5MVVnbnV0b0FyWUJJRmR4WGsxZ1AzNzhwbzhUbmxiV1NOZzgwT0NWRmVPaTlLdnY5Z0t4SExITEVhQVlaNWRJQk1jUXdSTGpKTVdqdWpBUk5hbDBiLVRoZkNxSVZzc2o0WGY2RWFnQktlVHZvY0NOYXlsLXcyVGcxVkF4XzBvVmNMRm9OamZBVzc?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNT3BCNEk4aVozc3pMcDBVN1lqYVRsT1B6VU5UOVNVdWJNWjU2Um9lZ1c2dURqREUtbDZsdzZrUVlsUVJ5MVVnbnV0b0FyWUJJRmR4WGsxZ1AzNzhwbzhUbmxiV1NOZzgwT0NWRmVPaTlLdnY5Z0t4SExITEVhQVlaNWRJQk1jUXdSTGpKTVdqdWpBUk5hbDBiLVRoZkNxSVZzc2o0WGY2RWFnQktlVHZvY0NOYXlsLXcyVGcxVkF4XzBvVmNMRm9OamZBVzc?oc=5\" target=\"_blank\"&gt;Japan to push its massive pension fund to boost alternative investments, Nikkei says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reut",
-          "published": "2026-07-12T04:19:00.000Z",
+          "published": "2026-07-12T04:19:33.000Z",
           "score": 2
         }
       ]
@@ -137,19 +145,27 @@
           "score": 7
         },
         {
-          "title": "Landmark US housing bill becomes law despite Trump protest",
-          "link": "https://www.bbc.co.uk/news/articles/cn8qwj611qxo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The president had wanted voter ID legislation passed before the housing law, which aims to reduce costs and increase supply.",
-          "published": "2026-07-11T13:35:09.000Z",
-          "score": 6
-        },
-        {
           "title": "US launches fresh strikes as Iran closes Strait of Hormuz",
           "link": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The strikes follow an attack on a Cyprus -flagged vessel travelling through the critical waterway.",
           "published": "2026-07-12T06:49:46.000Z",
+          "score": 2
+        },
+        {
+          "title": "US Senator and close Trump ally Lindsey Graham dies after 'brief and sudden illness'",
+          "link": "https://www.bbc.co.uk/news/articles/cvgj25j6nmeo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The influential politician had just returned from Kyiv, where he met Ukraine's President Volodymyr Zelensky on Friday.",
+          "published": "2026-07-12T09:47:43.000Z",
+          "score": 2
+        },
+        {
+          "title": "Badly burned British couple rescued from ravine during Spain wildfires, reports say",
+          "link": "https://www.bbc.co.uk/news/articles/cx2x7441762o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The unnamed pair were found semi-conscious with 40% burns after being trapped by the blazes raging through Almeria province, according to local media",
+          "published": "2026-07-12T11:23:09.000Z",
           "score": 2
         },
         {
@@ -159,22 +175,14 @@
           "description": "Police say there was an exchange of gunfire between two individuals at the festival, and two firearms had been recovered from the scene.",
           "published": "2026-07-12T03:56:02.000Z",
           "score": 2
-        },
-        {
-          "title": "Trump administration subpoenas New York Times journalists over Air Force One reporting",
-          "link": "https://www.bbc.co.uk/news/articles/cpd3g8q51g7o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The reporters received the legal summons after they reported on alleged security issues with the president's new plane, which was gifted by Qatar.",
-          "published": "2026-07-11T16:11:33.000Z",
-          "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 153,
-    "afterDedup": 136,
+    "totalArticlesScanned": 425,
+    "articlesLast24h": 142,
+    "afterDedup": 120,
     "feedsQueried": 19
   }
 }
