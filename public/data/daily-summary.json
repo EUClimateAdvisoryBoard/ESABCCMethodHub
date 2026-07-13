@@ -1,39 +1,84 @@
 {
   "date": "2026-07-13",
-  "generatedAt": "2026-07-13T08:21:09.140Z",
+  "generatedAt": "2026-07-13T13:27:51.102Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 13 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Asia's LNG imports recover, drawing cargoes from needy Europe - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPX1lzZFB5dWJYWUVIZ0gwdkxlbnVELVNMWXVHY3N4dzhRUUVydmdoOW50eHhpdGI3M3N5ZDJ4WkRzUVhsRy1IU0N0eHZ6SEJaQXZmWGp6cmhTU2phZnV2MEo1U0NqZUZJNmUzMnYxS2E0OC1Uai1KUzNPZkNDS2VQUTBScU5jNHhRY0N3UUw5RTRMczBwVkhIQlgyWl9XdU94eFdFSFpTWFM0WXlleHFpdlBFejFxMklGZG5kMllvNko?oc=5\" target=\"_blank\"&gt;Asia's LNG imports recover, drawing cargoes from needy Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v03-00",
+      "summary": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Flash Eurobarometer: Europeans call for stronger action on children's online safety, democratic resilience, defence, and the energy transition",
+      "summary": "European Commission Press release Brussels, 13 Jul 2026 A new Eurobarometer survey released today shows that Europeans are overwhelmingly concerned about all the risks children face on social media. Against the backdrop of increasing reliance on social media, citizens see the need for better protection and tougher action to tackle disinformation.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Green MP Hannah Spencer to introduce bill on maximum workplace temperatures",
-      "summary": "&lt;p&gt;Byelection winner says heatwaves are causing ‘absolute chaos’ and workers need protection from unsafe conditions&lt;/p&gt;&lt;p&gt;The Green MP Hannah Spencer is to introduce a bill in parliament that would pave the way for a maximum workplace temperature in the UK, as the country grapples with increasingly frequent heatwaves.&lt;/p&gt;&lt;p&gt;If passed, the legislation will create an independent body to recommend maximum safe workplace temperatures and set out how those recommendation",
+      "headline": "Wildfire rages near Paris as heatwave scorches Europe - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOYm5sa1JvamNIZWFmYkJMNENoZElOUWpJbDJOanJFOG9xMzlTMy1BWVBMVU1pRlNfRnplbnRFZ2w3WVpkQ1A2b1JhRUtDQWlISFdYZVJnZ2VNb2RDUmxlSDhYVnBBTGZYa0tNRjB5SGs2ek1PRmFQNUdTcy14a2dtaFVNQlYyNk9vclZadjZ3cDRMYk0yWGYwSVlwLVpHWkZBeGhpUUJiaC16UldLMGRZempiQQ?oc=5\" target=\"_blank\"&gt;Wildfire rages near Paris as heatwave scorches Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "Intel announces $5.7 billion AI-driven capital investment in Ireland - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPdUpmMER1MXFvS29zY1R4cWY5N3pGQkR0bnFYeVFuY0NCWkFMWXBCQlBLWFh3Vk5VVDkwaTlwMWtxQm1jTG9MY0dRSVA4R2VmVmtxZ1o2eXlUVGl4Q1EwUjBwdjRlSWEtZW1TQVRUVkRYemJHWXYyamQwVmxHWUotVzhlRDltRXBLZURpdDhSYmM1ZmZYUVljcEtCSFo0c2szblRQQ0RDdThoT2NLZFdEREpjbVI?oc=5\" target=\"_blank\"&gt;Intel announces $5.7 billion AI-driven capital investment in Ireland&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC - PE789.913v03-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/ENVI-AM-789913_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "AMENDMENTS 913 - 1036 - Draft report on the proposal for a regulation of the European Parliament and of the Council amending Regulation (EU) 2019/631 as regards CO2 emission performance standards for new light duty vehicles and vehicle labelling and repealing Directive 1999/94/EC&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Massimiliano Salini&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 202",
+          "published": "2026-07-13T10:41:17.000Z",
+          "score": 27
+        },
+        {
+          "title": "Commission approves French State aid to support offshore wind energy",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1577",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 13 Jul 2026 The European Commission has approved a €63 billion French scheme to support offshore wind energy in line with the objectives of the Clean Industrial Deal. This measure will contribute to the transition towards a net-zero economy. The scheme was approved under the Clean Industrial Deal State Aid Framework (CISAF) adopted by the Commission on 25 June 2025.",
+          "published": "2026-07-12T22:00:00.000Z",
+          "score": 27
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Flash Eurobarometer: Europeans call for stronger action on children's online safety, democratic resilience, defence, and the energy transition",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1589",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 13 Jul 2026 A new Eurobarometer survey released today shows that Europeans are overwhelmingly concerned about all the risks children face on social media. Against the backdrop of increasing reliance on social media, citizens see the need for better protection and tougher action to tackle disinformation.",
+          "published": "2026-07-13T07:26:31.000Z",
+          "score": 19
+        },
+        {
           "title": "Asia's LNG imports recover, drawing cargoes from needy Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPX1lzZFB5dWJYWUVIZ0gwdkxlbnVELVNMWXVHY3N4dzhRUUVydmdoOW50eHhpdGI3M3N5ZDJ4WkRzUVhsRy1IU0N0eHZ6SEJaQXZmWGp6cmhTU2phZnV2MEo1U0NqZUZJNmUzMnYxS2E0OC1Uai1KUzNPZkNDS2VQUTBScU5jNHhRY0N3UUw5RTRMczBwVkhIQlgyWl9XdU94eFdFSFpTWFM0WXlleHFpdlBFejFxMklGZG5kMllvNko?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxPX1lzZFB5dWJYWUVIZ0gwdkxlbnVELVNMWXVHY3N4dzhRUUVydmdoOW50eHhpdGI3M3N5ZDJ4WkRzUVhsRy1IU0N0eHZ6SEJaQXZmWGp6cmhTU2phZnV2MEo1U0NqZUZJNmUzMnYxS2E0OC1Uai1KUzNPZkNDS2VQUTBScU5jNHhRY0N3UUw5RTRMczBwVkhIQlgyWl9XdU94eFdFSFpTWFM0WXlleHFpdlBFejFxMklGZG5kMllvNko?oc=5\" target=\"_blank\"&gt;Asia's LNG imports recover, drawing cargoes from needy Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-13T05:22:00.000Z",
+          "published": "2026-07-13T05:25:29.000Z",
           "score": 13
+        },
+        {
+          "title": "World Cup: Balogun red and expansion keep FIFA in spotlight",
+          "link": "https://www.dw.com/en/world-cup-balogun-red-and-expansion-keep-fifa-in-spotlight/a-77933944?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The fallout from Folarin Balogun&#039;s red card reversal continues as reports suggest the chairman of FIFA’s disciplinary committee made the decision unilaterally. Meanwhile, the World Cup could be set to expand once more.",
+          "published": "2026-07-13T12:03:00.000Z",
+          "score": 11
         },
         {
           "title": "Britain’s biggest community solar farm forced to shut over grid overload fears",
@@ -44,28 +89,12 @@
           "score": 7
         },
         {
-          "title": "Readers reply: Why put solar panels on green space when we could put them over car parks?",
-          "link": "https://www.theguardian.com/lifeandstyle/2026/jul/12/readers-reply-why-put-solar-panels-on-green-space-when-we-could-put-them-over-car-parks",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;The long-running series in which readers answer other readers’ questions on subjects ranging from trivial flights of fancy to profound scientific and philosophical concepts&lt;/p&gt;&lt;p&gt;This week’s question: &lt;a href=\"https://www.theguardian.com/lifeandstyle/2026/jul/12/why-is-there-no-rugby-culture-in-germany\"&gt;Why is there no rugby culture in Germany?&lt;/a&gt;&lt;/p&gt;&lt;p&gt;I would like to know why we build solar farms over green space, when we could just put them over m",
-          "published": "2026-07-12T13:00:19.000Z",
+          "title": "More French nuclear offline as heatwave persists - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxNbDZTcEYtT3ZudVF2S09lUUlUSHB0eWJEZVJTeGVjck5lTGg3NC1DREdzYVlva1Zucl80LS16WHExYTN0U1lKV2ZEVW8tSUVWU2o0QlFxS2NEN0kwSy0wZVV5TmJXZk9XaG9qZHRoSHAzVldrWmNBam5XTU95azA5S1htUHZ6SzgtNV8xZWJUdGhOb0doOGpoaEkxOHJCUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMingFBVV95cUxNbDZTcEYtT3ZudVF2S09lUUlUSHB0eWJEZVJTeGVjck5lTGg3NC1DREdzYVlva1Zucl80LS16WHExYTN0U1lKV2ZEVW8tSUVWU2o0QlFxS2NEN0kwSy0wZVV5TmJXZk9XaG9qZHRoSHAzVldrWmNBam5XTU95azA5S1htUHZ6SzgtNV8xZWJUdGhOb0doOGpoaEkxOHJCUQ?oc=5\" target=\"_blank\"&gt;More French nuclear offline as heatwave persists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-13T08:25:43.000Z",
           "score": 7
-        },
-        {
-          "title": "Germany&#039;s Ruhr Valley: Cities on brink of financial collapse",
-          "link": "https://www.dw.com/en/germany-s-ruhr-valley-cities-on-brink-of-financial-collapse/a-77905338?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "With tax revenues down and social spending up, more and more cities and towns in the Ruhrgebiet are struggling to make ends meet. One city that is particularly deep in the red is Oberhausen.",
-          "published": "2026-07-12T10:10:00.000Z",
-          "score": 4
-        },
-        {
-          "title": "Former Emir of Qatar Sheikh Hamad bin Khalifa Al Thani dies aged 74",
-          "link": "https://www.bbc.co.uk/news/articles/cql1qdq14xro?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "He took power in 1996 after staging a bloodless coup against his father, and went on to transform Qatar into the gas-rich power it is today.",
-          "published": "2026-07-12T16:35:50.000Z",
-          "score": 2
         }
       ]
     },
@@ -74,20 +103,28 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Wildfire rages near Paris as heatwave scorches Europe - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOYm5sa1JvamNIZWFmYkJMNENoZElOUWpJbDJOanJFOG9xMzlTMy1BWVBMVU1pRlNfRnplbnRFZ2w3WVpkQ1A2b1JhRUtDQWlISFdYZVJnZ2VNb2RDUmxlSDhYVnBBTGZYa0tNRjB5SGs2ek1PRmFQNUdTcy14a2dtaFVNQlYyNk9vclZadjZ3cDRMYk0yWGYwSVlwLVpHWkZBeGhpUUJiaC16UldLMGRZempiQQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOYm5sa1JvamNIZWFmYkJMNENoZElOUWpJbDJOanJFOG9xMzlTMy1BWVBMVU1pRlNfRnplbnRFZ2w3WVpkQ1A2b1JhRUtDQWlISFdYZVJnZ2VNb2RDUmxlSDhYVnBBTGZYa0tNRjB5SGs2ek1PRmFQNUdTcy14a2dtaFVNQlYyNk9vclZadjZ3cDRMYk0yWGYwSVlwLVpHWkZBeGhpUUJiaC16UldLMGRZempiQQ?oc=5\" target=\"_blank\"&gt;Wildfire rages near Paris as heatwave scorches Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-13T11:48:09.000Z",
+          "score": 13
+        },
+        {
+          "title": "Firefighting planes scrambled from south of France to tackle huge wildfire near Paris",
+          "link": "https://www.theguardian.com/world/2026/jul/13/france-fires-wildfires-fointaineblue-forest-paris",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Officials say blaze in Fontainebleau forest is of ‘exceptional scale’, with 900 homes evacuated and road and rail links hit&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/13/emmanuel-macron-keir-starmer-friedrich-merz-volodymyr-zelenskyy-coalition-of-the-willing-ukraine-russia-latest-news-updates\"&gt;Europe live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;French firefighters are tackling a blaze of unprecedented s",
+          "published": "2026-07-13T12:30:18.000Z",
+          "score": 9
+        },
+        {
           "title": "Green MP Hannah Spencer to introduce bill on maximum workplace temperatures",
           "link": "https://www.theguardian.com/politics/2026/jul/12/green-mp-hannah-spencer-aims-to-pass-law-on-maximum-workplace-temperatures",
           "source": "The Guardian - Climate",
           "description": "&lt;p&gt;Byelection winner says heatwaves are causing ‘absolute chaos’ and workers need protection from unsafe conditions&lt;/p&gt;&lt;p&gt;The Green MP Hannah Spencer is to introduce a bill in parliament that would pave the way for a maximum workplace temperature in the UK, as the country grapples with increasingly frequent heatwaves.&lt;/p&gt;&lt;p&gt;If passed, the legislation will create an independent body to recommend maximum safe workplace temperatures and set out how those recommendation",
           "published": "2026-07-12T13:56:27.000Z",
           "score": 8
-        },
-        {
-          "title": "‘Huge wave’ of carbon storage projects causes alarm in small-town USA as oil firms eye billions in subsidies",
-          "link": "https://www.theguardian.com/us-news/2026/jul/12/carbon-sequestration-projects-oil-companies-subsidies",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Dozens of projects are in development across US despite concerns over environmental and health risks&lt;/p&gt;&lt;p&gt;The plan to bury carbon under remote &lt;a href=\"https://www.theguardian.com/us-news/indiana\"&gt;Indiana&lt;/a&gt; farmland is supposed to be a slam dunk for the climate, according to its supporters – all generously funded by US tax dollars.&lt;/p&gt;&lt;p&gt;But as far as Melissa Harrison and some other residents of Clymers, Indiana, are concerned, it just might be the",
-          "published": "2026-07-12T12:00:18.000Z",
-          "score": 7
         },
         {
           "title": "Carbon capture is vital in tackling the climate crisis | Letters",
@@ -98,19 +135,11 @@
           "score": 7
         },
         {
-          "title": "British couple return to village at heart of deadly Spanish wildfire",
-          "link": "https://www.bbc.co.uk/news/articles/cx24e09x79no?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "At least 13 people, including five believed to be Britons, were killed by Thursday's wildfire in Spain's Almeria province.",
-          "published": "2026-07-13T00:29:21.000Z",
-          "score": 7
-        },
-        {
-          "title": "Son of Belgian wildfire victim disputes Spanish officials' account of warnings - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPdmVtcWZWczZUZnlGX1dvakNYX0pNZUFPdE1TaXBuZGJJTXJNUXFtSGFkQ0ozM09LQkJmd1gtU2t0VmYwTmRVYjIya0hMSG9BUjNOY01heUV2dEZCU0FmTUtGSzRFOE5CTUVjVF9zQlF0MHpXdWg1MjAtNk9Fam00aWNkdDJxZXcyT2JfeFo3UE5zSmgwZFkycFRBYVBQOE1pVzdUZjV1ckU4akNRTzlFcm5vMi1jUkFsMlZfRw?oc=5\" target=\"_blank\"&gt;Son of Belgian wildfire victim disputes Spanish officials' account of warnings&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-12T23:18:12.000Z",
+          "title": "Wildfire raging south of Paris could have been set deliberately, says minister",
+          "link": "https://www.bbc.co.uk/news/articles/clye4z168edo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "It was the first time firefighting planes had been sent up from the normally drier and hotter south of the country to tackle fires in the Paris region.",
+          "published": "2026-07-13T10:29:17.000Z",
           "score": 7
         }
       ]
@@ -118,20 +147,21 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "Intel announces $5.7 billion AI-driven capital investment in Ireland - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPdUpmMER1MXFvS29zY1R4cWY5N3pGQkR0bnFYeVFuY0NCWkFMWXBCQlBLWFh3Vk5VVDkwaTlwMWtxQm1jTG9MY0dRSVA4R2VmVmtxZ1o2eXlUVGl4Q1EwUjBwdjRlSWEtZW1TQVRUVkRYemJHWXYyamQwVmxHWUotVzhlRDltRXBLZURpdDhSYmM1ZmZYUVljcEtCSFo0c2szblRQQ0RDdThoT2NLZFdEREpjbVI?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPdUpmMER1MXFvS29zY1R4cWY5N3pGQkR0bnFYeVFuY0NCWkFMWXBCQlBLWFh3Vk5VVDkwaTlwMWtxQm1jTG9MY0dRSVA4R2VmVmtxZ1o2eXlUVGl4Q1EwUjBwdjRlSWEtZW1TQVRUVkRYemJHWXYyamQwVmxHWUotVzhlRDltRXBLZURpdDhSYmM1ZmZYUVljcEtCSFo0c2szblRQQ0RDdThoT2NLZFdEREpjbVI?oc=5\" target=\"_blank\"&gt;Intel announces $5.7 billion AI-driven capital investment in Ireland&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-13T12:41:49.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
-        {
-          "title": "EU defense remains heavily reliant on the United States",
-          "link": "https://www.dw.com/en/eu-defense-remains-heavily-reliant-on-the-united-states/a-77917972?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "There are many obstacles as EU governments seek to reduce their dependence on the US. DW looks at the European Unions&#039;s attempts to develop counterparts to Patriot and Tomahawk missiles, F-35 jets, and Starlink internet.",
-          "published": "2026-07-12T12:37:00.000Z",
-          "score": 8
-        },
         {
           "title": "EU ministers to debate curbing trade with Israeli settlements - Reuters",
           "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNWGFlR1FYd2t6MkZZWG1aZ1pvazJBY2x4cEtSVHhlTWVtRFZ5dmZ5eTdicEN2eUEyOVBCRUIwc1N3OGdnc2ZTemJWbmxUdGhESEw2ME1PbnpvdF8xYk5vcDVIak5QREcxX3hrTDhLQnpuXzVGVGJHeXpuV3BMZU1WS2xvcGpybXdmc0ZHMi1YQWdRRGxxT3UwaS1fVGFkM1EyMEFBcmM2cEZ1bkNTNUJhUGVB?oc=5",
@@ -139,6 +169,22 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxNWGFlR1FYd2t6MkZZWG1aZ1pvazJBY2x4cEtSVHhlTWVtRFZ5dmZ5eTdicEN2eUEyOVBCRUIwc1N3OGdnc2ZTemJWbmxUdGhESEw2ME1PbnpvdF8xYk5vcDVIak5QREcxX3hrTDhLQnpuXzVGVGJHeXpuV3BMZU1WS2xvcGpybXdmc0ZHMi1YQWdRRGxxT3UwaS1fVGFkM1EyMEFBcmM2cEZ1bkNTNUJhUGVB?oc=5\" target=\"_blank\"&gt;EU ministers to debate curbing trade with Israeli settlements&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-13T00:03:00.000Z",
           "score": 8
+        },
+        {
+          "title": "Europe's Helsing raises $1.8 billion, valuing defence group at $18 billion - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeHhERWl2djRkeEU2S3hLSVR0dXhRX3J0aV9mUms5ZThaWURqZmpBS2EyYTVPTW1hSThIX3FUaXhjdTRCeGc0a0F6QzBadXR5YlJaWTdVY0VMQkFwMTRBb2thYUVfTDNud3V3UzVoNDQ4bWlaMVJYczh3NGJCellxUHYzRDlteGlzSUxza2JWb0laUmF2ekJnUEVqNjdGM3ljVERLaW5UY1Zuem1jTlBGT2szdzlTS19pejE5Yk9CWnpNbE5TaWtURQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQeHhERWl2djRkeEU2S3hLSVR0dXhRX3J0aV9mUms5ZThaWURqZmpBS2EyYTVPTW1hSThIX3FUaXhjdTRCeGc0a0F6QzBadXR5YlJaWTdVY0VMQkFwMTRBb2thYUVfTDNud3V3UzVoNDQ4bWlaMVJYczh3NGJCellxUHYzRDlteGlzSUxza2JWb0laUmF2ekJnUEVqNjdGM3ljVERLaW5UY1Zuem1jTlBGT2szdzlTS19pejE5Yk9CWnpNbE5TaWtURQ?oc=5\" target=\"_blank\"&gt;Europe's Helsing raises $1.8 billion, valuing defence group at $18 billion&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
+          "published": "2026-07-13T07:44:28.000Z",
+          "score": 8
+        },
+        {
+          "title": "Ukraine updates: &#039;Coalition of the willing&#039; meeting in Paris",
+          "link": "https://www.dw.com/en/ukraine-updates-coalition-of-the-willing-meeting-in-paris/live-77927840?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Ukraine&#039;s allies are meeting in Paris for talks on continued military support for Kyiv. Meanwhile the EU&#039;s top diplomat said there&#039;s no consensus yet on more Russian sanctions. DW has more.",
+          "published": "2026-07-13T08:28:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -147,10 +193,18 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU set to approve air travel passenger rights package",
-          "link": "https://www.dw.com/en/eu-set-to-approve-air-travel-passenger-rights-package/a-77927050?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "EU experts urge social media restrictions for kids under 13",
+          "link": "https://www.dw.com/en/eu-experts-urge-social-media-restrictions-for-kids-under-13/a-77931424?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "EU ministers are expected to approve a set of reforms giving more rights to air travelers. Among other things, compensation claims are to be made easier.",
+          "description": "An expert panel has recommended limiting access to social media for young children across the EU. The European Commission is expected to present a proposal for legislation on the issue in the coming months.",
+          "published": "2026-07-13T10:38:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "EU approves new passenger rights for air travel",
+          "link": "https://www.dw.com/en/eu-approves-new-passenger-rights-for-air-travel/a-77927050?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "EU ministers have approved a set of reforms giving more rights to air travelers. Among other things, compensation claims are to be made easier.",
           "published": "2026-07-13T06:29:00.000Z",
           "score": 8
         },
@@ -163,36 +217,28 @@
           "score": 8
         },
         {
-          "title": "Europe recorded 10,000 excess deaths during late-June heatwave, data show - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOdHBJbVNOU1YwZVlzckc5bzdtRVU3bnJtRHRnckl1Yjk1TDdCSHZTTDNTdjJ4R1pSYjF6R3VLb0JVS1p3VWJOLVdHSlh5RHp1RkNWaGdrQWVGZDE2OWllenU4TF91c2lwWEdSdG9uX3g2VzNMZ2s0TGNuQldjemRrVy00UUwzNTdCcjJFVnhhR3JwbTJhYmZHWnotQlBIUjRuNlV0dWdKZ2QtTFZfOF85WEpsRlFSZVpGM2xIN2pHR19pRUVldnk0?oc=5",
+          "title": "EU launches $1 billion aid initiative for Gaza - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOeGI1VkFkR0VDbHY3VTJESEFyVjg4MFFleTRRVTRsODdrRlhHQ0N5RlZaaVJLdHl4OVBmVGprMXk0ZGRJZ0ppM2MtemNMTEt2ZWdyeDlVVVNxVmxpWW5Xa1Qzc1JqdmEzT0hTQXhWTTFUdllGTDAxYUV5aFl3cEtYOTlhbXhkTDhkX21nNzdtSzA5SlZkcG55TzRWUQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOdHBJbVNOU1YwZVlzckc5bzdtRVU3bnJtRHRnckl1Yjk1TDdCSHZTTDNTdjJ4R1pSYjF6R3VLb0JVS1p3VWJOLVdHSlh5RHp1RkNWaGdrQWVGZDE2OWllenU4TF91c2lwWEdSdG9uX3g2VzNMZ2s0TGNuQldjemRrVy00UUwzNTdCcjJFVnhhR3JwbTJhYmZHWnotQlBIUjRuNlV0dWdKZ2QtTFZfOF85WEpsRlFSZVpGM2xIN2pHR19pRUVldnk0?oc=5\" target=\"_blank\"&gt;Europe recorded 10,000 excess deaths during late-June heatwave, data show&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-12T23:10:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimwFBVV95cUxOeGI1VkFkR0VDbHY3VTJESEFyVjg4MFFleTRRVTRsODdrRlhHQ0N5RlZaaVJLdHl4OVBmVGprMXk0ZGRJZ0ppM2MtemNMTEt2ZWdyeDlVVVNxVmxpWW5Xa1Qzc1JqdmEzT0hTQXhWTTFUdllGTDAxYUV5aFl3cEtYOTlhbXhkTDhkX21nNzdtSzA5SlZkcG55TzRWUQ?oc=5\" target=\"_blank\"&gt;EU launches $1 billion aid initiative for Gaza&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-13T10:44:15.000Z",
           "score": 8
         },
         {
-          "title": "Less than a month's supply: Europe's jet fuel stocks are wafer thin as Iran tensions flare - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPR1lCYWdoRS1ZVjB4RTR3bHhleGU2aFlLOTdxckNDWXFtMGxQZVdTUklud0N1SXRXaG50LUk3dTBLZl8tV0FVVGg1cHNPZ3ZCOEFQY0FBUkhINUQzMEFDVUNqTzg2a3FsUkJiclZCZjJSbF9vd3AycW5ta1lNZHBObjF0Y1ZMV3UyUzVfR05iMmhLLTl2MmJ1YUhzX2pKZEZtMk14OEtHNVRPVFdYN1BkMDlscUlXRTAycjB1cGJ1Q1NYcTNyYTFr?oc=5",
+          "title": "No EU agreement yet on 21st Russian sanctions package, Kallas says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNOUhXLWdnMVNoLTEtT3lrUVdWZU51YnZGNGpoc2g1b3REZ2xhd3ZQTEU5R1dRU1d2TU9KZXdVRVV3OVo0LUFYTW1xUTQ1OWtPcmQwS2QzTnpPblRjeHF6VVd2Ti1GYzkwUXF6SUVaTjhqX1UyZHRCQTRwajl6dVhIMjQwME11aGZlQzIxbGZDcHpyQXpBaUdBcmtTUktuZmprU0JRY1ZXYw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPR1lCYWdoRS1ZVjB4RTR3bHhleGU2aFlLOTdxckNDWXFtMGxQZVdTUklud0N1SXRXaG50LUk3dTBLZl8tV0FVVGg1cHNPZ3ZCOEFQY0FBUkhINUQzMEFDVUNqTzg2a3FsUkJiclZCZjJSbF9vd3AycW5ta1lNZHBObjF0Y1ZMV3UyUzVfR05iMmhLLTl2MmJ1YUhzX2pKZEZtMk14OEtHNVRPVFdYN1BkMDlscUlXRTAycjB1cGJ1Q1NYcTNyYTFr?oc=5\" target=\"_blank\"&gt;Less than a month's supply: Europe's jet fuel stocks are wafer thin as Iran tensions flare&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reute",
-          "published": "2026-07-13T05:03:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Hungary parliament set to oust president in Magyar's power shake-up - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY01qMXV0dmtuN2pGZko3aUVzYm01Zng4WGlYTVZaaTUxdTVBRWx6SWtEWFBwaXl4VXZGQXhZRUU0VnlsVUlJazVJR3FYeE5IcUZDR042alowZDhUaE5KaVR2NnotZGJTQzB5RFpJdlctekxnUy1ZZGpuaUZrekFQWmJuZlhKVHVNUi1yWmloZ0xzbWFPWUdQWkFGVzdmck1LSUwxUmFyMHp2bURQbEtEODM5YTc2clF6aUR3?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQY01qMXV0dmtuN2pGZko3aUVzYm01Zng4WGlYTVZaaTUxdTVBRWx6SWtEWFBwaXl4VXZGQXhZRUU0VnlsVUlJazVJR3FYeE5IcUZDR042alowZDhUaE5KaVR2NnotZGJTQzB5RFpJdlctekxnUy1ZZGpuaUZrekFQWmJuZlhKVHVNUi1yWmloZ0xzbWFPWUdQWkFGVzdmck1LSUwxUmFyMHp2bURQbEtEODM5YTc2clF6aUR3?oc=5\" target=\"_blank\"&gt;Hungary parliament set to oust president in Magyar's power shake-up&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-13T00:41:05.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNOUhXLWdnMVNoLTEtT3lrUVdWZU51YnZGNGpoc2g1b3REZ2xhd3ZQTEU5R1dRU1d2TU9KZXdVRVV3OVo0LUFYTW1xUTQ1OWtPcmQwS2QzTnpPblRjeHF6VVd2Ti1GYzkwUXF6SUVaTjhqX1UyZHRCQTRwajl6dVhIMjQwME11aGZlQzIxbGZDcHpyQXpBaUdBcmtTUktuZmprU0JRY1ZXYw?oc=5\" target=\"_blank\"&gt;No EU agreement yet on 21st Russian sanctions package, Kallas says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-13T06:21:00.000Z",
           "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 432,
-    "articlesLast24h": 149,
-    "afterDedup": 139,
+    "totalArticlesScanned": 429,
+    "articlesLast24h": 156,
+    "afterDedup": 151,
     "feedsQueried": 19
   }
 }
