@@ -1,0 +1,49 @@
+{
+  "policy_id": "csrd",
+  "targets": [
+    {
+      "quote": "the plans of the undertaking, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement under the United Nations Framework Convention on Climate Change adopted on 12 December 2015 (the ‘Paris Agreement’) and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 of the European Parliament and of the Council (*8), and, where relevant, the exposure of the undertaking to coal-, oil- and gas-related activities;",
+      "article": "Article 1 — inserted Article 19a(2), point (a)(iii) of Directive 2013/34/EU",
+      "label": "commitment",
+      "timeline": "by 2050",
+      "indicators": [
+        "global warming limit of 1,5 °C",
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a description of the time-bound targets related to sustainability matters set by the undertaking, including, where appropriate, absolute greenhouse gas emission reduction targets at least for 2030 and 2050, a description of the progress the undertaking has made towards achieving those targets, and a statement of whether the undertaking’s targets related to environmental factors are based on conclusive scientific evidence;",
+      "article": "Article 1 — inserted Article 19a(2), point (b) of Directive 2013/34/EU",
+      "label": "target",
+      "timeline": "at least for 2030 and 2050",
+      "indicators": [
+        "absolute greenhouse gas emission reduction targets",
+        "time-bound targets related to sustainability matters"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the plans of the group, including implementing actions and related financial and investment plans, to ensure that its business model and strategy are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 °C in line with the Paris Agreement and the objective of achieving climate neutrality by 2050 as established in Regulation (EU) 2021/1119 and where relevant, the exposure of the group to coal-, oil- and gas-related activities;",
+      "article": "Article 1 — inserted Article 29a(2), point (a)(iii) of Directive 2013/34/EU",
+      "label": "commitment",
+      "timeline": "by 2050",
+      "indicators": [
+        "global warming limit of 1,5 °C",
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a description of the time-bound targets related to sustainability matters set by the group, including, where appropriate, absolute greenhouse gas emission reduction targets at least for 2030 and 2050, a description of the progress the group has made towards achieving those targets, and a statement of whether the group’s targets related to environmental factors are based on conclusive scientific evidence;",
+      "article": "Article 1 — inserted Article 29a(2), point (b) of Directive 2013/34/EU",
+      "label": "target",
+      "timeline": "at least for 2030 and 2050",
+      "indicators": [
+        "absolute greenhouse gas emission reduction targets",
+        "time-bound targets related to sustainability matters"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

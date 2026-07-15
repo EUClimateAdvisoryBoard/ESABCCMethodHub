@@ -1,0 +1,138 @@
+{
+  "policy_id": "methane-regulation",
+  "targets": [
+    {
+      "quote": "Operators shall take all appropriate mitigation measures to prevent and minimise methane emissions in their operations.",
+      "article": "Article 13 — General mitigation obligation",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "methane emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 5 May 2025 for existing sites and within 6 months from the date of start of operations for new sites, operators shall submit a leak detection and repair programme (‘LDAR programme’) to the competent authorities.",
+      "article": "Article 14(1) — Leak detection and repair",
+      "label": "obligation",
+      "timeline": "by 5 May 2025 for existing sites; within 6 months from start of operations for new sites",
+      "indicators": [
+        "leak detection and repair programme"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "In any event, operators shall carry out the first type 2 LDAR survey by 5 August 2025 for existing sites.",
+      "article": "Article 14(2) — Leak detection and repair",
+      "label": "obligation",
+      "timeline": "by 5 August 2025 for existing sites",
+      "indicators": [
+        "type 2 LDAR survey"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The repair or replacement of the components referred to in paragraph 8 shall take place immediately after detection. If the repair cannot be carried out immediately after detection, it shall be attempted as soon as possible and no later than 5 days after detection and shall be completed within 30 days after detection.",
+      "article": "Article 14(9) — Leak detection and repair",
+      "label": "obligation",
+      "timeline": "no later than 5 days after detection; completed within 30 days after detection",
+      "indicators": [
+        "repair of methane leaks"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Venting shall be prohibited except in the circumstances provided for in this Article. Routine flaring shall be prohibited.",
+      "article": "Article 15(1) — Restrictions on venting and flaring",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "methane venting",
+        "routine flaring"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Operators shall comply with this Article without delay and, in any case, not later than 5 February 2026 for existing sites and not later than 12 months from the date of start of operations for new sites.",
+      "article": "Article 15(8) — Restrictions on venting and flaring",
+      "label": "obligation",
+      "timeline": "not later than 5 February 2026 for existing sites; 12 months from start of operations for new sites",
+      "indicators": [
+        "venting and flaring restrictions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Where a site is built, replaced or refurbished in whole or in part, or where new flare stacks or other combustion devices are installed, operators shall install only flare stacks or combustion devices with an auto-igniter or continuous pilot burner and with a destruction and removal efficiency by design level of at least 99 %.",
+      "article": "Article 17(1) — Flaring efficiency requirements",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "flare destruction and removal efficiency"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 5 August 2025, Member States shall establish and make publicly available an inventory of all inactive wells, temporarily plugged wells and permanently plugged and abandoned wells on their territory or under their jurisdiction that are recorded or where information or evidence on their location is available or where their location can be identified with all reasonable efforts.",
+      "article": "Article 18(1) — Inactive wells, temporarily plugged wells and permanently plugged and abandoned wells",
+      "label": "obligation",
+      "timeline": "by 5 August 2025",
+      "indicators": [
+        "inventory of inactive, temporarily plugged and abandoned wells"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Flaring with a destruction and removal efficiency by design level below 99 % and venting of methane from drainage systems shall be prohibited from 1 January 2025, except in the case of an emergency or a malfunction, or where unavoidable and strictly necessary for maintenance and except venting in accordance with paragraph 2.",
+      "article": "Article 22(1) — Mitigation measures",
+      "label": "obligation",
+      "timeline": "from 1 January 2025",
+      "indicators": [
+        "flaring below 99% destruction efficiency",
+        "venting from drainage systems"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Venting of methane through ventilation shafts in coal mines emitting more than 5 tonnes of methane per kilotonne of coal mined, other than coking coal mines, shall be prohibited from 1 January 2027, except in the case of an emergency.",
+      "article": "Article 22(2) — Mitigation measures",
+      "label": "target",
+      "timeline": "from 1 January 2027",
+      "indicators": [
+        "methane venting through coal mine ventilation shafts (tonnes methane per kilotonne coal)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Venting of methane through ventilation shafts in coal mines emitting more than 3 tonnes of methane per kilotonne of coal mined, other than coking coal mines, shall be prohibited from 1 January 2031, except in the case of an emergency.",
+      "article": "Article 22(2) — Mitigation measures",
+      "label": "target",
+      "timeline": "from 1 January 2031",
+      "indicators": [
+        "methane venting through coal mine ventilation shafts (tonnes methane per kilotonne coal)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Venting and flaring from equipment referred to in Article 25(2) shall be prohibited from 1 January 2030, unless utilisation of methane or reduction of methane emissions is not technically feasible or risks endangering environmental safety, human safety, including that of the personnel, or health.",
+      "article": "Article 26(2) — Mitigation measures",
+      "label": "obligation",
+      "timeline": "from 1 January 2030",
+      "indicators": [
+        "venting and flaring from abandoned underground coal mines"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   By 5 August 2030 and every year thereafter, Union producers and importers placing crude oil, natural gas and coal on the Union market under supply contracts concluded or renewed after 5 August 2030 shall demonstrate to the competent authorities of the Member State in which they are established that the methane intensity of the production of crude oil, natural gas and coal placed by them on the Union market, calculated in accordance with the methodology set out pursuant to paragraph 4, is below the maximum methane intensity values established in accordance with paragraph 6 to promote the global methane emissions reductions for those products.",
+      "article": "Article 29(2) — Methane intensity of the production of crude oil, natural gas and coal",
+      "label": "target",
+      "timeline": "by 5 August 2030 and every year thereafter",
+      "indicators": [
+        "methane intensity of production",
+        "maximum methane intensity values"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

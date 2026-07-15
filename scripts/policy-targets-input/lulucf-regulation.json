@@ -1,0 +1,100 @@
+{
+  "policy_id": "lulucf-regulation",
+  "targets": [
+    {
+      "quote": "(a) commitments of Member States for the land use, land use change and forestry ('LULUCF') sector that contribute to achieving the objectives of the Paris Agreement and meeting the greenhouse gas emission reduction target of the Union for the period from 2021 to 2025;",
+      "article": "Article 1(a) — Subject matter",
+      "label": "commitment",
+      "timeline": "period from 2021 to 2025",
+      "indicators": [
+        "greenhouse gas emission reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(c) the setting of a Union net removal target for the LULUCF sector for the period from 2026 to 2030;",
+      "article": "Article 1(c) — Subject matter",
+      "label": "target",
+      "timeline": "period from 2026 to 2030",
+      "indicators": [
+        "net removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(d) targets for net greenhouse gas removals in the LULUCF sector for each Member State for the period from 2026 to 2030.",
+      "article": "Article 1(d) — Subject matter",
+      "label": "target",
+      "timeline": "period from 2026 to 2030",
+      "indicators": [
+        "net greenhouse gas removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1. For the period from 2021 to 2025, taking into account the flexibilities provided for in Articles 12, 13 and 13a, each Member State shall ensure that emissions do not exceed removals, calculated as the sum of total emissions and total removals on its territory in all of the land accounting categories referred to in Article 2 combined, as accounted for in accordance with this Regulation.",
+      "article": "Article 4(1) — Commitments and targets",
+      "label": "commitment",
+      "timeline": "period from 2021 to 2025",
+      "indicators": [
+        "emissions",
+        "removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2. The Union-wide target for net greenhouse gas removals shall be 310 million tonnes of CO2 equivalent as a sum of the Member State targets set out in Annex IIa for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.",
+      "article": "Article 4(2) — Commitments and targets",
+      "label": "target",
+      "timeline": "for the year 2030",
+      "indicators": [
+        "net greenhouse gas removals",
+        "310 million tonnes of CO2 equivalent"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3. Each Member State shall ensure that the sum of its total emissions and total removals on its territory, in all of the land reporting categories referred to in Article 2(1), results, by applying the accounting rules laid down in this Regulation, in net removals corresponding at least to the target set out in column C of Annex IIa in respect of that Member State for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.",
+      "article": "Article 4(3) — Commitments and targets",
+      "label": "target",
+      "timeline": "for the year 2030",
+      "indicators": [
+        "net removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "4. By 30 June 2024, each Member State shall submit to the Commission its intended trajectory towards the 2030 target set out in Annex IIa, expressed in terms of annual national targets. Such trajectory shall be consistent with that Member State's integrated national energy and climate plan and with the Union's greenhouse gas inventory data.",
+      "article": "Article 4(4) — Commitments and targets",
+      "label": "commitment",
+      "timeline": "by 30 June 2024 / towards the 2030 target",
+      "indicators": [
+        "annual national targets",
+        "net removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2. Where the result of the calculation referred to in paragraph 1 is negative in relation to the forest reference level, a Member State shall include in its managed forest land accounts total net removals of no more than the equivalent of 3.5 per cent of the emissions of that Member State in its base year or period as specified in Annex III, multiplied by five.",
+      "article": "Article 8(2) — Accounting for managed forest land",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "net removals",
+        "managed forest land"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1. A land flexibility mechanism, corresponding to a maximum quantity of 178 million tonnes of CO2 equivalent, shall be available in the Union as an additional flexibility to each Member State and shall cover net removals or emissions from the land reporting categories referred to in Article 2 of this Regulation. That land flexibility mechanism shall not affect the overall ambition of the targets for Member States as set out in Annex IIa.",
+      "article": "Article 13b(1) — Land flexibility mechanism for the period from 2026 to 2030",
+      "label": "target",
+      "timeline": "period from 2026 to 2030",
+      "indicators": [
+        "net removals",
+        "million tonnes of CO2 equivalent"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

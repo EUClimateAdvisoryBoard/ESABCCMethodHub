@@ -1,0 +1,57 @@
+{
+  "policy_id": "csddd",
+  "targets": [
+    {
+      "quote": "the obligation for companies to adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, compatibility of the business model and of the strategy of the company with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement.",
+      "article": "Article 1(1)(c) — Subject matter",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "global warming limit of 1,5 °C"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
+      "article": "Article 22(1) — Combating climate change",
+      "label": "commitment",
+      "timeline": "by 2050",
+      "indicators": [
+        "global warming limit of 1,5 °C",
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "time-bound targets related to climate change for 2030 and in five-year steps up to 2050 based on conclusive scientific evidence and, where appropriate, absolute emission reduction targets for greenhouse gas for scope 1, scope 2 and scope 3 greenhouse gas emissions for each significant category;",
+      "article": "Article 22(1), second subparagraph, point (a) — Combating climate change",
+      "label": "target",
+      "timeline": "for 2030 and in five-year steps up to 2050",
+      "indicators": [
+        "absolute greenhouse gas emission reduction targets",
+        "scope 1, scope 2 and scope 3 greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   Member States shall ensure that the transition plan for climate change mitigation referred to in paragraph 1 is updated every 12 months and contains a description of the progress the company has made towards achieving the targets referred to in paragraph 1, second subparagraph, point (a).",
+      "article": "Article 22(3) — Combating climate change",
+      "label": "obligation",
+      "timeline": "every 12 months",
+      "indicators": [
+        "progress towards climate targets"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that the supervisory authorities have adequate powers and resources to carry out the tasks assigned to them under this Directive, including the power to require companies to provide information and carry out investigations related to compliance with the obligations set out in Articles 7 to 16. Member States shall require the supervisory authorities to supervise the adoption and design of the transition plan for climate change mitigation in accordance with the requirements provided for in Article 22(1).",
+      "article": "Article 15(1) — Supervisory authorities",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "transition plan for climate change mitigation"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

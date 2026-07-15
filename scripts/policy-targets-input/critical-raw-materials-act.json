@@ -1,0 +1,139 @@
+{
+  "policy_id": "critical-raw-materials-act",
+  "targets": [
+    {
+      "quote": "The general objective of this Regulation is to improve the functioning of the internal market by establishing a framework to ensure the Union’s access to a secure, resilient and sustainable supply of critical raw materials, including by fostering efficiency and circularity throughout the value chain.",
+      "article": "Article 1(1) - Subject matter and objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "supply of critical raw materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Union extraction capacity is capable of extracting the ores, minerals or concentrates needed to produce at least 10 % of the Union’s annual consumption of strategic raw materials, to the extent possible in light of the Union’s reserves;",
+      "article": "Article 5(1)(a)(i) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "Union extraction capacity",
+        "annual consumption of strategic raw materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Union processing capacity, including for all intermediate processing steps, is capable of producing at least 40 % of the Union’s annual consumption of strategic raw materials;",
+      "article": "Article 5(1)(a)(ii) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "Union processing capacity",
+        "annual consumption of strategic raw materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Union recycling capacity, including for all intermediate recycling steps, is capable of producing at least 25 % of the Union’s annual consumption of strategic raw materials and is capable of recycling significantly increasing amounts of each strategic raw material from waste;",
+      "article": "Article 5(1)(a)(iii) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "Union recycling capacity",
+        "annual consumption of strategic raw materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "diversify the Union’s imports of strategic raw materials with a view to ensuring that, by 2030, the Union’s annual consumption of each strategic raw material at any relevant stage of processing can rely on imports from several third countries or from overseas countries or territories (OCTs) and that no third country accounts for more than 65 % of the Union’s annual consumption of such a strategic raw material.",
+      "article": "Article 5(1)(b) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "import diversification",
+        "annual consumption of strategic raw materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Commission and Member States shall undertake efforts to incentivise technological progress and resource efficiency in order to moderate the expected increase in Union consumption of critical raw materials below the reference projection referred to in Article 44(1) by means of the relevant measures set out in this Section and in Chapter 5, Section 1.",
+      "article": "Article 5(2) - Benchmarks",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "Union consumption of critical raw materials",
+        "resource efficiency"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 1 January 2027, the Commission shall adopt delegated acts in accordance with Article 38 to supplement this Regulation by providing for Union recycling capacity benchmarks expressed as a share of the strategic raw materials available in relevant waste streams.",
+      "article": "Article 5(3) - Benchmarks",
+      "label": "commitment",
+      "timeline": "by 1 January 2027",
+      "indicators": [
+        "Union recycling capacity benchmark"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 24 February 2025, Member States shall establish or designate one or more authorities as single points of contact.",
+      "article": "Article 8(1) - Single points of contact",
+      "label": "commitment",
+      "timeline": "by 24 February 2025",
+      "indicators": [],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "27 months for Strategic Projects involving extraction;",
+      "article": "Article 11(1)(a) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "15 months for Strategic Projects involving only processing or recycling.",
+      "article": "Article 11(1)(b) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "24 months for Strategic Projects involving extraction;",
+      "article": "Article 11(2)(a) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "12 months for Strategic Projects involving only processing or recycling.",
+      "article": "Article 11(2)(b) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "After the entry into force of the delegated act adopted pursuant to paragraph 2, and in any event by 31 December 2031, the Commission shall adopt delegated acts supplementing this Regulation by laying down minimum shares for neodymium, dysprosium, praseodymium, terbium, boron, samarium, nickel and cobalt recovered from post-consumer waste that must be present in the permanent magnet incorporated in the products referred to in paragraph 1.",
+      "article": "Article 29(3) - Recycled content of permanent magnets",
+      "label": "target",
+      "timeline": "by 31 December 2031",
+      "indicators": [
+        "recycled content share",
+        "post-consumer waste"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

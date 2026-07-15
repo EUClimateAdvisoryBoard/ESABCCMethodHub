@@ -1,0 +1,85 @@
+{
+  "policy_id": "single-use-plastics-directive",
+  "targets": [
+    {
+      "quote": "1.   Member States shall take the necessary measures to achieve an ambitious and sustained reduction in the consumption of the single-use plastic products listed in Part A of the Annex, in line with the overall objectives of the Union’s waste policy, in particular waste prevention, leading to a substantial reversal of increasing consumption trends. Those measures shall achieve a measurable quantitative reduction in the consumption of the single-use plastic products listed in Part A of the Annex on the territory of the Member State by 2026 compared to 2022.",
+      "article": "Article 4(1)",
+      "label": "target",
+      "timeline": "by 2026 compared to 2022",
+      "indicators": [
+        "consumption of single-use plastic products (Part A)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall prohibit the placing on the market of the single-use plastic products listed in Part B of the Annex and of products made from oxo-degradable plastic.",
+      "article": "Article 5",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "prohibited single-use plastic products (Part B)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that single-use plastic products listed in Part C of the Annex that have caps and lids made of plastic may be placed on the market only if the caps and lids remain attached to the containers during the products’ intended use stage.",
+      "article": "Article 6(1)",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "tethered caps and lids"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "from 2025, beverage bottles listed in Part F of the Annex which are manufactured from polyethylene terephthalate as the major component (‘PET bottles’) contain at least 25 % recycled plastic, calculated as an average for all PET bottles placed on the market on the territory of that Member State; and",
+      "article": "Article 6(5)(a)",
+      "label": "target",
+      "timeline": "from 2025",
+      "indicators": [
+        "recycled plastic content in PET bottles"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 2030, beverage bottles listed in Part F of the Annex contain at least 30 % recycled plastic, calculated as an average for all such beverage bottles placed on the market on the territory of that Member State.",
+      "article": "Article 6(5)(b)",
+      "label": "target",
+      "timeline": "from 2030",
+      "indicators": [
+        "recycled plastic content in beverage bottles"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States that have marine waters as defined in point 1 of Article 3 of Directive 2008/56/EC shall set a national minimum annual collection rate of waste fishing gear containing plastic for recycling.",
+      "article": "Article 8(8)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "national minimum annual collection rate of waste fishing gear"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "by 2025, of an amount of waste single-use plastic products listed in Part F of the Annex equal to 77 % of such single-use plastic products placed on the market in a given year by weight;",
+      "article": "Article 9(1)(a)",
+      "label": "target",
+      "timeline": "by 2025",
+      "indicators": [
+        "separate collection rate of single-use plastic products (Part F)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 2029, of an amount of waste single-use plastic products listed in Part F of the Annex equal to 90 % of such single-use plastic products placed on the market in a given year by weight.",
+      "article": "Article 9(1)(b)",
+      "label": "target",
+      "timeline": "by 2029",
+      "indicators": [
+        "separate collection rate of single-use plastic products (Part F)"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

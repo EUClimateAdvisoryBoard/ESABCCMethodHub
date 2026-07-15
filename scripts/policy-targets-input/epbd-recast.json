@@ -1,0 +1,194 @@
+{
+  "policy_id": "epbd-recast",
+  "targets": [
+    {
+      "quote": "1.   This Directive promotes the improvement of the energy performance of buildings and the reduction of greenhouse gas emissions from buildings within the Union, with a view to achieving a zero-emission building stock by 2050, taking into account the outdoor climatic conditions, the local conditions, the requirements for indoor environmental quality, and cost-effectiveness.",
+      "article": "Article 1(1) — Subject matter",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "energy performance of buildings",
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Each Member State shall establish a national building renovation plan to ensure the renovation of the national stock of residential and non-residential buildings, both public and private, into a highly energy-efficient and decarbonised building stock by 2050, with the objective to transform existing buildings into zero-emission buildings.",
+      "article": "Article 3(1) — National building renovation plan",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "building renovation",
+        "zero-emission buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The roadmap referred to in point (b) of this paragraph shall include national targets for 2030, 2040 and 2050 as regards the annual energy renovation rate, the primary and final energy consumption of the national building stock and its operational greenhouse gas emission reductions; specific timelines for non-residential buildings to comply with lower maximum energy performance thresholds pursuant to Article 9(1), by 2040 and 2050, in line with the pathway for transforming the national building stock into zero-emission buildings; and an evidence-based estimate of expected energy savings and wider benefits, including those related to indoor environmental quality.",
+      "article": "Article 3(2) — National building renovation plan",
+      "label": "target",
+      "timeline": "for 2030, 2040 and 2050",
+      "indicators": [
+        "annual energy renovation rate",
+        "primary and final energy consumption",
+        "operational greenhouse gas emission reductions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Notwithstanding the first subparagraph, Member States shall submit the first draft building renovation plan to the Commission by 31 December 2025.",
+      "article": "Article 3(3) — National building renovation plan",
+      "label": "commitment",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "national building renovation plan"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that new buildings are zero-emission buildings in accordance with Article 11:\n\n(a)\n\nfrom 1 January 2028, new buildings owned by public bodies; and\n\n(b)\n\nfrom 1 January 2030, all new buildings;",
+      "article": "Article 7(1) — New buildings",
+      "label": "target",
+      "timeline": "from 1 January 2028 / from 1 January 2030",
+      "indicators": [
+        "zero-emission buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "5.   By 1 January 2027, Member States shall publish and notify to the Commission a roadmap detailing the introduction of limit values on the total cumulative life-cycle GWP of all new buildings and set targets for new buildings from 2030, considering a progressive downward trend, as well as maximum limit values, detailed for different climatic zones and building typologies.",
+      "article": "Article 7(5) — New buildings",
+      "label": "target",
+      "timeline": "by 1 January 2027 / from 2030",
+      "indicators": [
+        "life-cycle GWP"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall take the necessary measures to ensure that, when buildings undergo major renovation, the energy performance of the building or the renovated part thereof is upgraded in order to meet minimum energy performance requirements set in accordance with Article 5 in so far as technically, functionally and economically feasible.",
+      "article": "Article 8(1) — Existing buildings",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "energy performance",
+        "minimum energy performance requirements"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Each Member State shall set a maximum energy performance threshold to the effect that 16 % of its national non-residential building stock is above that threshold (the ‘16 % threshold’). Each Member State shall also set a maximum energy performance threshold to the effect that 26 % of its national non-residential building stock is above that threshold (the ‘26 % threshold’). Member States may set the maximum energy performance thresholds with reference to the national non-residential building stock as a whole or per building type or category of building.",
+      "article": "Article 9(1) — Minimum energy performance standards for non-residential buildings",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "maximum energy performance threshold",
+        "non-residential building stock"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The minimum energy performance standards shall ensure, at least, that all non-residential buildings are below:\n\n(a)\n\nthe 16 % threshold from 2030; and\n\n(b)\n\nthe 26 % threshold from 2033.",
+      "article": "Article 9(1) — Minimum energy performance standards for non-residential buildings",
+      "label": "target",
+      "timeline": "from 2030 / from 2033",
+      "indicators": [
+        "energy performance threshold"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   By 29 May 2026, each Member State shall establish a national trajectory for the progressive renovation of the residential building stock in line with the national roadmap and the 2030, 2040 and 2050 targets contained in the Member State’s national building renovation plan and with the aim of transforming the national building stock into a zero-emission building stock by 2050. The national trajectory for the progressive renovation of the residential building stock shall be expressed as a decrease in the average primary energy use in kWh/(m2.y) of the entire residential building stock over the period from 2020 to 2050, and shall identify the number of residential buildings and residential building units or floor area to be renovated annually, including the number or floor area of the 43 % worst-performing residential buildings and residential building units.",
+      "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
+      "label": "target",
+      "timeline": "by 29 May 2026",
+      "indicators": [
+        "average primary energy use",
+        "residential building stock"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that the average primary energy use in kWh/(m2.y) of the entire residential building stock:\n\n(a)\n\ndecreases by at least 16 % compared to 2020 by 2030;\n\n(b)\n\ndecreases by at least 20-22 % compared to 2020 by 2035;\n\n(c)\n\nby 2040, and every 5 years thereafter, is equivalent to, or lower than the nationally determined value derived from a progressive decrease in the average primary energy use from 2030 to 2050, in line with the transformation of the residential building stock into a zero-emission building stock.",
+      "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
+      "label": "target",
+      "timeline": "by 2030 / by 2035 / by 2040",
+      "indicators": [
+        "average primary energy use"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that at least 55 % of the decrease in the average primary energy use referred to in the third subparagraph is achieved through the renovation of the 43 % worst-performing residential buildings. Member States may count the decrease in the average primary energy use achieved by the renovation of residential buildings affected by natural disasters such as earthquakes and floods towards the share achieved by means of the renovation of the 43 % worst-performing residential buildings.",
+      "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "average primary energy use",
+        "worst-performing residential buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   Member States shall ensure the deployment of suitable solar energy installations, if technically suitable and economically and functionally feasible, as follows:\n\n(a)\n\nby 31 December 2026, on all new public and non-residential buildings with useful floor area larger than 250 m2;\n\n(b)\n\non all existing public buildings with useful floor area larger than:\n\n(i)\n\n2 000 m2, by 31 December 2027;\n\n(ii)\n\n750 m2, by 31 December 2028;\n\n(iii)\n\n250 m2, by 31 December 2030;\n\n(c)\n\nby 31 December 2027, on existing non-residential buildings with useful floor area larger than 500 m2, where the building undergoes a major renovation or an action that requires an administrative permit for building renovations, works on the roof or the installation of a technical building system;\n\n(d)\n\nby 31 December 2029, on all new residential buildings; and\n\n(e)\n\nby 31 December 2029, on all new roofed car parks physically adjacent to buildings.",
+      "article": "Article 10(3) — Solar energy in buildings",
+      "label": "target",
+      "timeline": "by 31 December 2026 to 31 December 2030",
+      "indicators": [
+        "solar energy installations"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   A zero-emission building shall not cause any on-site carbon emissions from fossil fuels. A zero-emission building shall, where economically and technically feasible, offer the capacity to react to external signals and adapt its energy use, generation or storage.",
+      "article": "Article 11(1) — Zero-emission buildings",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "on-site carbon emissions from fossil fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   The maximum threshold for the energy demand of a zero-emission building shall be at least 10 % lower than the threshold for total primary energy use established at Member State level for nearly zero-energy buildings on 28 May 2024.",
+      "article": "Article 11(3) — Zero-emission buildings",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "primary energy use",
+        "energy demand"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 29 May 2026, Member States shall introduce a scheme for renovation passports based on the common framework set out in Annex VIII.",
+      "article": "Article 12(1) — Renovation passport",
+      "label": "commitment",
+      "timeline": "by 29 May 2026",
+      "indicators": [
+        "renovation passport"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "7.   Member States shall strive to replace stand-alone boilers powered by fossil fuels in existing buildings, in line with the national phase-out plans for fossil fuel boilers.",
+      "article": "Article 13(7) — Technical building systems",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "stand-alone boilers powered by fossil fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the installation of at least one recharging point for every five car parking spaces;",
+      "article": "Article 15(1) — Infrastructure for sustainable mobility",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "recharging point"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

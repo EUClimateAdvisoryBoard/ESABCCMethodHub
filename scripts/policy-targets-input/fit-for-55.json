@@ -1,0 +1,116 @@
+{
+  "policy_id": "fit-for-55",
+  "targets": [
+    {
+      "quote": "The EU has led by example in setting ambitious targets for reducing net emissions by at least 55% by 2030 compared to 1990 and for being the first climate neutral continent by 2050.",
+      "article": "1. ‘Fit for 55’: delivering the EU’s 2030 Climate Target on the way to climate neutrality",
+      "label": "target",
+      "timeline": "by 2030 / by 2050",
+      "indicators": [
+        "net emissions",
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The proposal should deliver an EU-wide reduction of 40% in emissions from these sectors by 2030, compared to the situation in 2005.",
+      "article": "2.2 A competitive transition: New opportunities through industrial and sectoral change",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "Effort Sharing Regulation emissions reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "will need to reduce their greenhouse gas emissions by 61%, compared to 2005 levels.",
+      "article": "2.2.1 Industrial transformation and carbon pricing",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "EU ETS greenhouse gas emissions reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "To reach the 2030 target, the updated Renewable Energy Directive proposes to increase the overall binding target from the current 32% to a new level of 40% of renewables in the EU energy mix.",
+      "article": "2.2.3 Energy",
+      "label": "target",
+      "timeline": "2030",
+      "indicators": [
+        "share of renewables in the EU energy mix"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections",
+      "article": "2.2.3 Energy",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "energy consumption reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "It proposes to set an EU target of net greenhouse gas removals in the LULUCF sector of 310 million tons of CO2 equivalent by 2030.",
+      "article": "2.3 A green transition: Protecting nature and increasing the EU’s natural carbon sink",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "net greenhouse gas removals in the LULUCF sector"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050",
+      "article": "2.2.2 Cleaner mobility and transport fuels",
+      "label": "target",
+      "timeline": "by 2050",
+      "indicators": [
+        "transport emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The Social Climate Fund will provide €72.2 billion in current prices for the period 2025-2032 in the EU budget from the new Emissions Trading System.",
+      "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action",
+      "label": "commitment",
+      "timeline": "for the period 2025-2032",
+      "indicators": [
+        "Social Climate Fund budget"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
+      "article": "2.2.1 Industrial transformation and carbon pricing",
+      "label": "commitment",
+      "timeline": "from 2026",
+      "indicators": [
+        "emissions trading for road transport and buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "30% of programmes under the 2021-2027 Multiannual Financial Framework are dedicated to support climate action, for example through cohesion policy, agriculture, and the LIFE programme for climate and environment.",
+      "article": "3. Opportunities and Incentives: Innovation and Investment for a competitive transition",
+      "label": "target",
+      "timeline": "2021-2027",
+      "indicators": [
+        "share of MFF for climate action"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "national recovery and resilience plans financed under the Recovery and Resilience Facility need to contribute to the green transition with measures accounting to at least 37% of the plans’ allocations.",
+      "article": "3. Opportunities and Incentives: Innovation and Investment for a competitive transition",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of recovery and resilience plan allocations for the green transition"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+{
+  "policy_id": "industrial-emissions-directive",
+  "targets": [
+    {
+      "quote": "the best available techniques are applied;",
+      "article": "Article 11(b) - General principles governing the basic obligations of the operator",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "best available techniques"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "energy is used efficiently;",
+      "article": "Article 11(f) - General principles governing the basic obligations of the operator",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "energy efficiency"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "emission limit values for polluting substances listed in Annex II, and for other polluting substances, which are likely to be emitted from the installation concerned in significant quantities, having regard to their nature and their potential to transfer pollution from one medium to another;",
+      "article": "Article 14(1)(a) - Permit conditions",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "BAT conclusions shall be the reference for setting the permit conditions.",
+      "article": "Article 14(3) - Permit conditions",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "BAT conclusions"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following:",
+      "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values",
+        "emission levels associated with the best available techniques"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The emission limit values set in accordance with the first subparagraph shall, however, not exceed the emission limit values set out in the Annexes to this Directive, where applicable.",
+      "article": "Article 15(4) - Emission limit values, equivalent parameters and technical measures",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Within 4 years of publication of decisions on BAT conclusions in accordance with Article 13(5) relating to the main activity of an installation, the competent authority shall ensure that:",
+      "article": "Article 21(3) - Reconsideration and updating of permit conditions by the competent authority",
+      "label": "obligation",
+      "timeline": "within 4 years of publication of decisions on BAT conclusions",
+      "indicators": [
+        "BAT conclusions",
+        "permit reconsideration"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "All permits for installations containing combustion plants which have been granted a permit before 7 January 2013, or the operators of which have submitted a complete application for a permit before that date, provided that such plants are put into operation no later than 7 January 2014, shall include conditions ensuring that emissions into air from these plants do not exceed the emission limit values set out in Part 1 of Annex V.",
+      "article": "Article 30(2) - Emission limit values",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values",
+        "combustion plants"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "All permits for installations containing combustion plants not covered by paragraph 2 shall include conditions ensuring that emissions into the air from these plants do not exceed the emission limit values set out in Part 2 of Annex V.",
+      "article": "Article 30(3) - Emission limit values",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values",
+        "combustion plants"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Emissions into air from waste incineration plants and waste co-incineration plants shall not exceed the emission limit values set out in parts 3 and 4 of Annex VI or determined in accordance with Part 4 of that Annex.",
+      "article": "Article 46(2) - Control of emissions",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values",
+        "waste incineration plants"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Waste incineration plants shall be operated in such a way as to achieve a level of incineration such that the total organic carbon content of slag and bottom ashes is less than 3 % or their loss on ignition is less than 5 % of the dry weight of the material.",
+      "article": "Article 50(1) - Operating conditions",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "total organic carbon content",
+        "loss on ignition"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Waste incineration plants shall be designed, equipped, built and operated in such a way that the gas resulting from the incineration of waste is raised, after the last injection of combustion air, in a controlled and homogeneous fashion and even under the most unfavourable conditions, to a temperature of at least 850 °C for at least two seconds.",
+      "article": "Article 50(2) - Operating conditions",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "combustion temperature",
+        "residence time"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "If hazardous waste with a content of more than 1 % of halogenated organic substances, expressed as chlorine, is incinerated or co-incinerated, the temperature required to comply with the first and second subparagraphs shall be at least 1 100 °C.",
+      "article": "Article 50(2) - Operating conditions",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "combustion temperature"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the emission of volatile organic compounds from installations shall not exceed the emission limit values in waste gases and the fugitive emission limit values, or the total emission limit values, and other requirements laid down in Parts 2 and 3 of Annex VII are complied with;",
+      "article": "Article 59(1)(a) - Control of emissions",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "volatile organic compounds",
+        "emission limit values"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Emissions from installations into water shall not exceed the emission limit values set out in Part 1 of Annex VIII.",
+      "article": "Article 68 - Control of emissions into water",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limit values",
+        "titanium dioxide installations"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

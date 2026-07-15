@@ -1,0 +1,115 @@
+{
+  "policy_id": "taxonomy-regulation",
+  "targets": [
+    {
+      "quote": "contributes substantially to one or more of the environmental objectives set out in Article 9 in accordance with Articles 10 to 16;",
+      "article": "Article 3(a) — Criteria for environmentally sustainable economic activities",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "substantial contribution to environmental objectives"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "does not significantly harm any of the environmental objectives set out in Article 9 in accordance with Article 17;",
+      "article": "Article 3(b) — Criteria for environmentally sustainable economic activities",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "do no significant harm (DNSH)"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "The description referred to in point (b) of the first subparagraph of this Article shall specify the proportion of investments in environmentally sustainable economic activities selected for the financial product, including details on the proportions of enabling and transitional activities referred to in Article 16 and Article 10(2), respectively, as a percentage of all investments selected for the financial product.",
+      "article": "Article 5 — Transparency of environmentally sustainable investments in pre-contractual disclosures and in periodic reports",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "proportion of investments in environmentally sustainable economic activities",
+        "percentage of all investments"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "1.   Any undertaking which is subject to an obligation to publish non-financial information pursuant to Article 19a or Article 29a of Directive 2013/34/EU shall include in its non-financial statement or consolidated non-financial statement information on how and to what extent the undertaking’s activities are associated with economic activities that qualify as environmentally sustainable under Articles 3 and 9 of this Regulation.",
+      "article": "Article 8(1) — Transparency of undertakings in non-financial statements",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "proportion of activities that are environmentally sustainable"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "For the purposes of this Regulation, the following shall be environmental objectives:",
+      "article": "Article 9 — Environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate change mitigation",
+        "climate change adaptation",
+        "water and marine resources",
+        "circular economy",
+        "pollution prevention and control",
+        "biodiversity and ecosystems"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "1.   An economic activity shall qualify as contributing substantially to climate change mitigation where that activity contributes substantially to the stabilisation of greenhouse gas concentrations in the atmosphere at a level which prevents dangerous anthropogenic interference with the climate system consistent with the long-term temperature goal of the Paris Agreement through the avoidance or reduction of greenhouse gas emissions or the increase of greenhouse gas removals, including through process innovations or product innovations, by:",
+      "article": "Article 10(1) — Substantial contribution to climate change mitigation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "avoidance or reduction of greenhouse gas emissions",
+        "increase of greenhouse gas removals"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   For the purposes of paragraph 1, an economic activity for which there is no technologically and economically feasible low-carbon alternative shall qualify as contributing substantially to climate change mitigation where it supports the transition to a climate-neutral economy consistent with a pathway to limit the temperature increase to 1,5 0C above pre-industrial levels, including by phasing out greenhouse gas emissions, in particular emissions from solid fossil fuels, and where that activity:",
+      "article": "Article 10(2) — Substantial contribution to climate change mitigation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "1,5 0C temperature pathway",
+        "phasing out greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   An economic activity shall qualify as contributing substantially to climate change adaptation where that activity:",
+      "article": "Article 11(1) — Substantial contribution to climate change adaptation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate risk adaptation solutions"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "includes adaptation solutions that either substantially reduce the risk of the adverse impact of the current climate and the expected future climate on that economic activity or substantially reduce that adverse impact, without increasing the risk of an adverse impact on people, nature or assets; or",
+      "article": "Article 11(1)(a) — Substantial contribution to climate change adaptation",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "adaptation solutions",
+        "climate risk reduction"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "1.   For the purposes of point (b) of Article 3, taking into account the life cycle of the products and services provided by an economic activity, including evidence from existing life-cycle assessments, that economic activity shall be considered to significantly harm:",
+      "article": "Article 17(1) — Significant harm to environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "do no significant harm (DNSH)",
+        "significant greenhouse gas emissions"
+      ],
+      "climate_relevance": "both"
+    }
+  ]
+}

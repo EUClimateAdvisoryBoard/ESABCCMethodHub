@@ -1,0 +1,176 @@
+{
+  "policy_id": "governance-regulation",
+  "targets": [
+    {
+      "quote": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, and for the first ten-year period, from 2021 to 2030, in particular the Union's 2030 targets for energy and climate;",
+      "article": "Article 1(1)(a) — Subject matter and scope",
+      "label": "objective",
+      "timeline": "from 2021 to 2030",
+      "indicators": [
+        "greenhouse gas emissions",
+        "Union's 2030 targets for energy and climate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "‘the Union's 2030 targets for energy and climate’ means the Union-wide binding target of at least 40 % domestic reduction in economy-wide greenhouse gas emissions as compared to 1990 to be achieved by 2030, the Union-level binding target of at least 32 % for the share of renewable energy consumed in the Union in 2030, the Union-level headline target of at least 32,5 % for improving energy efficiency in 2030, and the 15 % electricity interconnection target for 2030 or any subsequent targets in this regard agreed by the European Council or by the European Parliament and by the Council for 2030;",
+      "article": "Article 2(11) — Definitions",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "economy-wide greenhouse gas emissions",
+        "share of renewable energy",
+        "energy efficiency",
+        "electricity interconnection"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 31 December 2019, and subsequently by 1 January 2029 and every ten years thereafter, each Member State shall notify to the Commission an integrated national energy and climate plan. The plans shall contain the elements set out in paragraph 2 of this Article and in Annex I. The first plan shall cover the period from 2021 to 2030, taking into account the longer term perspective. The subsequent plans shall cover the ten-year period immediately following the end of the period covered by the previous plan.",
+      "article": "Article 3(1) — Integrated national energy and climate plans",
+      "label": "commitment",
+      "timeline": "By 31 December 2019, and subsequently by 1 January 2029 and every ten years thereafter",
+      "indicators": [
+        "integrated national energy and climate plan"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "In the event that a Member State finds, pursuant to point (d) of the first subparagraph, that it has a significant number of households in energy poverty, on the basis of its assessment of verifiable data, it shall include in its plan a national indicative objective to reduce energy poverty. The Member States concerned shall outline in their integrated national energy and climate plans, the policies and measures, which address energy poverty, if any, including social policy measures and other relevant national programmes.",
+      "article": "Article 3(3) — Integrated national energy and climate plans",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "households in energy poverty"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "the Member State's binding national target for greenhouse gas emissions and the annual binding national limits pursuant to Regulation (EU) 2018/842;",
+      "article": "Article 4(a)(1)(i) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emissions",
+        "annual binding national limits"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "With a view to achieving the Union's binding target of at least 32 % renewable energy in 2030 as referred to in Article 3 of Directive (EU) 2018/2001, a contribution to that target in terms of the Member State's share of energy from renewable sources in gross final consumption of energy in 2030, with an indicative trajectory for that contribution from 2021 onwards. By 2022, the indicative trajectory shall reach a reference point of at least 18 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target, and its contribution to the 2030 target. By 2025, the indicative trajectory shall reach a reference point of at least 43 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target. By 2027, the indicative trajectory shall reach a reference point of at least 65 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target.",
+      "article": "Article 4(a)(2) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "share of energy from renewable sources in gross final consumption of energy"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the indicative national energy efficiency contribution to achieving the Union's energy efficiency targets of at least 32,5 % in 2030 as referred to in Article 1(1) and Article 3(5) of Directive 2012/27/EU, based on either primary or final energy consumption, primary or final energy savings, or energy intensity.",
+      "article": "Article 4(b)(1) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "primary energy consumption",
+        "final energy consumption",
+        "energy intensity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the cumulative amount of end-use energy savings to be achieved over the period 2021-2030 under point (b) of Article 7(1) on the energy saving obligations pursuant to Directive 2012/27/EU;",
+      "article": "Article 4(b)(2) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "over the period 2021-2030",
+      "indicators": [
+        "cumulative end-use energy savings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the total floor area to be renovated or equivalent annual energy savings to be achieved from 2021 to 2030 under Article 5 of Directive 2012/27/EU on the exemplary role of public bodies' buildings;",
+      "article": "Article 4(b)(4) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "from 2021 to 2030",
+      "indicators": [
+        "total floor area renovated",
+        "annual energy savings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "the level of electricity interconnectivity that the Member State aims for in 2030 in consideration of the electricity interconnection target for 2030 of at least 15 %, with a strategy with the level from 2021 onwards defined in close cooperation with the Member States affected, taking into account the 2020 interconnection target of 10 % and the indicators of the urgency of action based on price differential in the wholesale market, nominal transmission capacity of interconnectors in relation to peak load and to installed renewable generation capacity as set out in point 2.4.1 of Section A of Part I of Annex I. Each new interconnector shall be subject to a socioeconomic and environmental cost-benefit analysis and implemented only if the potential benefits outweigh the costs;",
+      "article": "Article 4(d)(1) — National objectives, targets and contributions",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "level of electricity interconnectivity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "where available, national 2050 objectives related to the promotion of clean energy technologies.",
+      "article": "Article 4(e)(2) — National objectives, targets and contributions",
+      "label": "objective",
+      "timeline": "2050",
+      "indicators": [
+        "clean energy technologies"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 1 January 2020, and subsequently by 1 January 2029 and every 10 years thereafter, each Member State shall prepare and submit to the Commission its long-term strategy with a perspective of at least 30 years. Member States should, where necessary, update those strategies every five years.",
+      "article": "Article 15(1) — Long-term strategies",
+      "label": "commitment",
+      "timeline": "By 1 January 2020, and subsequently by 1 January 2029 and every 10 years thereafter",
+      "indicators": [
+        "long-term strategy"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "various scenarios for the Union's contribution towards the objectives set out in paragraph 3 inter alia a scenario on achieving net zero greenhouse gas emissions within the Union by 2050 and negative emissions thereafter;",
+      "article": "Article 15(2)(a) — Long-term strategies",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "net zero greenhouse gas emissions",
+        "negative emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "fulfilling the objective of the Paris Agreement of holding the increase in the global average temperature to well below 2 °C above pre-industrial levels and to pursue efforts to limit the temperature increase to 1,5 °C above pre-industrial levels;",
+      "article": "Article 15(3)(b) — Long-term strategies",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "global average temperature increase"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "achieving long-term greenhouse gas emission reductions and enhancements of removals by sinks in all sectors in accordance with the Union's objective, in the context of necessary reductions according to the Intergovernmental Panel on Climate Change (IPCC) to reduce the Union's greenhouse gas emissions in a cost-effective manner and enhance removals by sinks in pursuit of the temperature goals in the Paris Agreement so as to achieve a balance between anthropogenic emissions by sources and removals by sinks of greenhouse gases within the Union as early as possible and, as appropriate, achieve negative emissions thereafter;",
+      "article": "Article 15(3)(c) — Long-term strategies",
+      "label": "objective",
+      "timeline": "as early as possible",
+      "indicators": [
+        "greenhouse gas emission reductions",
+        "removals by sinks"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a highly energy efficient and highly renewables-based energy system within the Union.",
+      "article": "Article 15(3)(d) — Long-term strategies",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy efficiency",
+        "renewable energy system"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

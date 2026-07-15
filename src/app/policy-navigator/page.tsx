@@ -593,8 +593,8 @@ export default function PolicyNavigatorPage() {
           TOP TAB BAR — three primary sections
          ============================================================ */}
       <section className="sticky top-0 z-20 bg-white border-b border-grey-200 shadow-sm">
-        <div className="max-w-wide mx-auto px-6">
-          <div className="flex gap-1 overflow-x-auto" role="tablist" aria-label="Policy Navigator sections">
+        <div className="max-w-wide mx-auto px-6 flex items-center gap-3">
+          <div className="flex gap-1 overflow-x-auto flex-1" role="tablist" aria-label="Policy Navigator sections">
             {[
               { id: 'read' as const, label: 'Policies', desc: 'Browse and read policy text directly', badge: null as number | null },
               {
@@ -632,6 +632,14 @@ export default function PolicyNavigatorPage() {
               </button>
             ))}
           </div>
+          <Link
+            href="/beta/policy-targets"
+            className="shrink-0 inline-flex items-center gap-1.5 text-sm font-medium px-4 py-2 rounded-full bg-teal-50 text-primary border border-teal-200 hover:bg-teal-100 transition whitespace-nowrap"
+            title="Policy Targets Register — every target/goal/objective/commitment extracted verbatim, classified, and downloadable as Excel"
+          >
+            <svg width="15" height="15" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="0.5" fill="currentColor" /></svg>
+            Targets
+          </Link>
         </div>
       </section>
 

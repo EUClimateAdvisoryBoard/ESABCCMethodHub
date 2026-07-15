@@ -1,0 +1,99 @@
+{
+  "policy_id": "deforestation-regulation",
+  "targets": [
+    {
+      "quote": "minimising the Union’s contribution to deforestation and forest degradation worldwide, and thereby contributing to a reduction in global deforestation;",
+      "article": "Article 1(1)(a) — Subject matter and scope",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "Union contribution to deforestation and forest degradation"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "reducing the Union’s contribution to greenhouse gas emissions and global biodiversity loss.",
+      "article": "Article 1(1)(b) — Subject matter and scope",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emissions",
+        "global biodiversity loss"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "that the relevant products contain, have been fed with or have been made using, relevant commodities that were produced on land that has not been subject to deforestation after 31 December, 2020; and",
+      "article": "Article 2(13)(a) — Definitions (‘deforestation-free’)",
+      "label": "other",
+      "timeline": "after 31 December, 2020",
+      "indicators": [
+        "deforestation-free commodities",
+        "cut-off date 31 December 2020"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "in the case of relevant products that contain or have been made using wood, that the wood has been harvested from the forest without inducing forest degradation after 31 December, 2020;",
+      "article": "Article 2(13)(b) — Definitions (‘deforestation-free’)",
+      "label": "other",
+      "timeline": "after 31 December, 2020",
+      "indicators": [
+        "forest degradation-free wood",
+        "cut-off date 31 December 2020"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Relevant commodities and relevant products shall not be placed or made available on the market or exported, unless all the following conditions are fulfilled:",
+      "article": "Article 3 — Prohibition",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "deforestation-free",
+        "due diligence statement"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "they are deforestation-free;",
+      "article": "Article 3(a) — Prohibition",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "deforestation-free commodities and products"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "they have been produced in accordance with the relevant legislation of the country of production; and",
+      "article": "Article 3(b) — Prohibition",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "legality of production"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "they are covered by a due diligence statement.",
+      "article": "Article 3(c) — Prohibition",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "due diligence statement"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Operators shall exercise due diligence in accordance with Article 8 prior to placing relevant products on the market or exporting them in order to prove that the relevant products comply with Article 3.",
+      "article": "Article 4(1) — Obligations of operators",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "due diligence"
+      ],
+      "climate_relevance": "both"
+    }
+  ]
+}

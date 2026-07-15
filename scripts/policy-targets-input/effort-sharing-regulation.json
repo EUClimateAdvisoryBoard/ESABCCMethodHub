@@ -1,0 +1,327 @@
+{
+  "policy_id": "effort-sharing-regulation",
+  "targets": [
+    {
+      "quote": "This Regulation lays down obligations on Member States with respect to their minimum contributions for the period from 2021 to 2030 to fulfilling the Union’s target of reducing its greenhouse gas emissions by 30 % below 2005 levels in 2030 in the sectors covered by Article 2 of this Regulation and contributes to achieving the objectives of the Paris Agreement. This Regulation also lays down rules on determining annual emission allocations and for the evaluation of Member States’ progress towards meeting their minimum contributions.",
+      "article": "Article 1 — Subject matter",
+      "label": "target",
+      "timeline": "in 2030 / period from 2021 to 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Each Member State shall, in 2030, limit its greenhouse gas emissions at least by the percentage set for that Member State in Annex I in relation to its greenhouse gas emissions in 2005, determined pursuant to paragraph 3 of this Article.",
+      "article": "Article 4(1) — Annual emission levels for the period from 2021 to 2030",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Subject to the flexibilities provided for in Articles 5, 6 and 7 of this Regulation, to the adjustment pursuant to Article 10(2) of this Regulation and taking into account any deduction resulting from the application of Article 7 of Decision No 406/2009/EC, each Member State shall ensure that its greenhouse gas emissions in each year between 2021 and 2029 do not exceed the limit defined by a linear trajectory, starting on the average of its greenhouse gas emissions during 2016, 2017 and 2018 determined pursuant to paragraph 3 of this Article and ending in 2030 on the limit set for that Member State in Annex I to this Regulation. The linear trajectory of a Member State shall start either at five-twelfths of the distance from 2019 to 2020 or in 2020, whichever results in a lower allocation for that Member State.",
+      "article": "Article 4(2) — Annual emission levels for the period from 2021 to 2030",
+      "label": "target",
+      "timeline": "each year between 2021 and 2029",
+      "indicators": [
+        "greenhouse gas emissions",
+        "annual emission allocations",
+        "linear trajectory"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member State greenhouse gas emission reductions in 2030 in relation to their 2005 levels determined in accordance with Article 4(3)",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Belgium\n\n–35  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Bulgaria\n\n–0  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Czech Republic\n\n–14  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Denmark\n\n–39  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Germany\n\n–38  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Estonia\n\n–13  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Ireland\n\n–30  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Greece\n\n–16  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Spain\n\n–26  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "France\n\n–37  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Croatia\n\n–7  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Italy\n\n–33  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Cyprus\n\n–24  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Latvia\n\n–6  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Lithuania\n\n–9  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Luxembourg\n\n–40  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Hungary\n\n–7  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Malta\n\n–19  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Netherlands\n\n–36  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Austria\n\n–36  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Poland\n\n–7  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Portugal\n\n–17  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Romania\n\n–2  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Slovenia\n\n–15  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Slovakia\n\n–12  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Finland\n\n–39  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Sweden\n\n–40  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "United Kingdom\n\n–37  %",
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
+      "label": "target",
+      "timeline": "in 2030",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

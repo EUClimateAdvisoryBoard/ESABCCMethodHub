@@ -1,0 +1,112 @@
+{
+  "policy_id": "euro-7-regulation",
+  "targets": [
+    {
+      "quote": "‘not off-vehicle charging hybrid electric vehicle’ or ‘NOVC-HEV’ means a vehicle with at least two different energy converters and two different energy storage systems that are used for the purpose of vehicle propulsion and that cannot be charged from an external source;",
+      "article": "Article 4(1) — Obligations of the manufacturers concerning construction of vehicles",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "type-approval of new vehicles, systems and components"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(59)",
+      "article": "Article 4(2)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limits (Annex I)",
+        "lifetime of the vehicle (Annex IV)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(60)",
+      "article": "Article 4(4)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limits (Annex I)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "OBM systems capable of monitoring exhaust emissions;",
+      "article": "Article 6(1) — Durability requirements",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "emission limits (Annex I)",
+        "lifetime of the vehicle (Annex IV)",
+        "battery durability minimum performance requirements (Annex II)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(c)",
+      "article": "Article 6(2)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "CO2 emissions",
+        "fuel and electric energy consumption",
+        "energy efficiency",
+        "lifetime of the vehicle"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(f)",
+      "article": "Article 6(6)(a)",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "OBM monitoring of NOx, NH3, PM",
+        "exhaust emission limit exceedance threshold (2,5x)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   By 1 September 2031, on the basis of the information provided in accordance with paragraph 1, the Commission shall submit to the European Parliament and to the Council an evaluation report on the application of this Regulation, including an evaluation of the exhaust and non-exhaust emission reductions achieved.",
+      "article": "Article 21 — Entry into force and application",
+      "label": "other",
+      "timeline": "from 29 November 2026 / from 29 November 2027",
+      "indicators": [
+        "application dates for M1 and N1 vehicles"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   By 31 December 2025, the Commission shall submit to the European Parliament and to the Council a report assessing the durability performance of heavy-duty vehicles with regard to emissions.",
+      "article": "Article 21",
+      "label": "other",
+      "timeline": "from 29 May 2028 / from 29 May 2029",
+      "indicators": [
+        "application dates for M2, M3, N2, N3, O3, O4 vehicles"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "4.   By 31 December 2027, the Commission shall submit to the European Parliament and to the Council a report on battery durability reviewing the state of the art, as a basis for a review of the minimum performance requirements, with a view to the adoption of the delegated acts referred to in Article 15(2), point (c).",
+      "article": "Article 21",
+      "label": "other",
+      "timeline": "from 1 July 2028 / 1 April 2030 / 1 April 2032",
+      "indicators": [
+        "application dates for C1, C2, C3 class tyres"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "That report shall assess, inter alia, the appropriateness of setting out minimum performance requirements for vehicles up to at least 10 years or 200 000 km, whichever comes first.",
+      "article": "Article 21",
+      "label": "other",
+      "timeline": "from 1 July 2030 / from 1 July 2031",
+      "indicators": [
+        "application dates for small-volume manufacturers"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

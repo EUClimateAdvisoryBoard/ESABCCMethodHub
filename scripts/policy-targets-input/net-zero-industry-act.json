@@ -1,0 +1,161 @@
+{
+  "policy_id": "net-zero-industry-act",
+  "targets": [
+    {
+      "quote": "The general objective of this Regulation is to improve the functioning of the internal market by establishing a framework in order to ensure the Union’s access to a secure and sustainable supply of net-zero technologies, including by scaling up the manufacturing capacity of net-zero technologies and their supply chains to safeguard their resilience while contributing to achieving the Union’s climate targets and climate neutrality objective, as defined in Regulation (EU) 2021/1119, with a view to the decarbonisation of the Union’s economy and society, and by contributing to quality jobs in net-zero technologies, and thereby also improving the competitiveness of the Union.",
+      "article": "Article 1(1) - Subject matter",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "manufacturing capacity of net-zero technologies",
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a benchmark of at least 40 % of the Union’s annual deployment needs for the corresponding technologies necessary to achieve the Union’s 2030 climate and energy targets;",
+      "article": "Article 5(1)(a) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "net-zero technology manufacturing capacity",
+        "annual deployment needs"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "an increased Union share for the corresponding technologies with a view to reaching 15 % of world production by 2040 on the basis of monitoring pursuant to Article 42, except where the increased Union manufacturing capacity would be significantly higher than the Union’s deployment needs for the corresponding technologies necessary to achieve the Union’s 2040 climate and energy targets.",
+      "article": "Article 5(1)(b) - Benchmarks",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "Union share of world production",
+        "net-zero technology manufacturing capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 30 December 2024 Member States shall establish or designate one or more authorities as single points of contact at the relevant administrative level.",
+      "article": "Article 6(1) - Single points of contact",
+      "label": "commitment",
+      "timeline": "by 30 December 2024",
+      "indicators": [],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "12 months for the construction or expansion of net-zero technology manufacturing projects with a yearly manufacturing capacity of less than 1 GW;",
+      "article": "Article 9(1)(a) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration",
+        "manufacturing capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "18 months for the construction or expansion of net-zero technology manufacturing projects with a yearly manufacturing capacity of 1 GW or more.",
+      "article": "Article 9(1)(b) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration",
+        "manufacturing capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The permit-granting process for net-zero technology manufacturing projects for which a yearly manufacturing capacity is not measured in GW, shall not exceed a time limit of 18 months.",
+      "article": "Article 9(2) - Duration of the permit-granting process",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "9 months for the construction or expansion of net-zero strategic projects with a yearly manufacturing capacity of less than 1 GW;",
+      "article": "Article 16(1)(a) - Duration of the permit-granting process for net-zero strategic projects",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration",
+        "manufacturing capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "12 months for the construction or expansion of net-zero strategic projects with a yearly manufacturing capacity of 1 GW or more;",
+      "article": "Article 16(1)(b) - Duration of the permit-granting process for net-zero strategic projects",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration",
+        "manufacturing capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "18 months for all necessary permits to operate a storage site in accordance with Directive 2009/31/EC.",
+      "article": "Article 16(1)(c) - Duration of the permit-granting process for net-zero strategic projects",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration",
+        "CO2 storage site"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "For net-zero strategic projects for which a yearly manufacturing capacity is not measured in GW, the permit-granting process shall not exceed 12 months.",
+      "article": "Article 16(2) - Duration of the permit-granting process for net-zero strategic projects",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "permit-granting duration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "An annual injection capacity of at least 50 million tonnes of CO2 shall be achieved by 2030 in storage sites, meaning geological storage sites permitted under Directive 2009/31/EC including depleted oil and gas fields and saline aquifers, located in the territory of the Union, its exclusive economic zones or on its continental shelf within the meaning of the United Nations Convention on the Law of the Sea and which are not combined with Enhanced Hydrocarbon Recovery.",
+      "article": "Article 20(1) - Union level objective of CO2 injection capacity",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "annual CO2 injection capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 30 June 2027 and every two years thereafter, the Commission shall submit a report to the European Parliament and to the Council on the progress achieved towards meeting the Union annual injection capacity target, including the state of the market related to the injection capacity.",
+      "article": "Article 20(3) - Union level objective of CO2 injection capacity",
+      "label": "commitment",
+      "timeline": "by 30 June 2027 and every two years thereafter",
+      "indicators": [
+        "annual CO2 injection capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Each entity holding an authorisation as defined in Article 1, point 3, of Directive 94/22/EC shall be subject to an individual contribution to the Union-wide target for available CO2 injection capacity set in Article 20 of this Regulation.",
+      "article": "Article 23(1) - Contribution of authorised oil and gas producers",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "CO2 injection capacity"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 30 June 2025, the entities referred to in paragraph 1 shall submit to the Commission a plan specifying in detail how they intend to meet their contribution to Union CO2 injection capacity objective by 2030.",
+      "article": "Article 23(4) - Contribution of authorised oil and gas producers",
+      "label": "commitment",
+      "timeline": "by 30 June 2025",
+      "indicators": [
+        "CO2 injection capacity"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "policy_id": "nature-restoration-law",
+  "targets": [
+    {
+      "quote": "This Regulation establishes a framework within which Member States shall put in place effective and area-based restoration measures with the aim to jointly cover, as a Union target, throughout the areas and ecosystems within the scope of this Regulation, at least 20 % of land areas and at least 20 % of sea areas by 2030, and all ecosystems in need of restoration by 2050.",
+      "article": "Article 1(2) — Subject matter",
+      "label": "target",
+      "timeline": "by 2030, and all ecosystems in need of restoration by 2050",
+      "indicators": [
+        "share of land areas under restoration measures",
+        "share of sea areas under restoration measures"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "by 2030 on at least 30 % of the total area of all habitat types listed in Annex I that is not in good condition, as quantified in the national restoration plan referred to in Article 15;",
+      "article": "Article 4(1)(a) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "area of habitat types in good condition"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "by 2040 on at least 60 % and by 2050, on at least 90 % of the area of each group of habitat types listed in Annex I that is not in good condition, as quantified in the national restoration plan referred to in Article 15.",
+      "article": "Article 4(1)(b) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "target",
+      "timeline": "by 2040 ... by 2050",
+      "indicators": [
+        "area of habitat types in good condition"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Such measures shall be in place on areas representing at least 30 % of the additional surface needed to reach the total favourable reference area for each group of habitat types listed in Annex I, as quantified in the national restoration plan referred to in Article 15, by 2030, on areas representing at least 60 % of that surface by 2040, and on 100 % of that surface by 2050.",
+      "article": "Article 4(4) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "target",
+      "timeline": "by 2030 ... by 2040 ... by 2050",
+      "indicators": [
+        "favourable reference area",
+        "additional surface re-established"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure, by 2030 at the latest, that the condition of habitat types is known for at least 90 % of the area distributed over all habitat types listed in Annex I and that by 2040, the condition of all areas of habitat types listed in Annex I is known.",
+      "article": "Article 4(9) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "other",
+      "timeline": "by 2030 at the latest ... by 2040",
+      "indicators": [
+        "share of habitat area with known condition"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "an increase of the area in good condition for habitat types listed in Annex I until at least 90 % is in good condition and until the favourable reference area for each habitat type in each biogeographic region of the Member State concerned is reached;",
+      "article": "Article 4(17)(a) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "area of habitat types in good condition",
+        "favourable reference area"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "by 2030, on at least 30 % of the total area of groups 1 to 6 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15;",
+      "article": "Article 5(1)(a) — Restoration of marine ecosystems",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "area of marine habitat types in good condition"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "by 2040, on at least 60 % and, by 2050, on at least 90 % of the area of each of the groups 1 to 6 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15;",
+      "article": "Article 5(1)(b) — Restoration of marine ecosystems",
+      "label": "target",
+      "timeline": "by 2040 ... by 2050",
+      "indicators": [
+        "area of marine habitat types in good condition"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "By 31 December 2030, Member States shall ensure that there is no net loss in the total national area of urban green space and of urban tree canopy cover in urban ecosystem areas, determined in accordance with Article 14(4), compared to 2024.",
+      "article": "Article 8(1) — Restoration of urban ecosystems",
+      "label": "target",
+      "timeline": "By 31 December 2030",
+      "indicators": [
+        "total national area of urban green space",
+        "urban tree canopy cover"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall make an inventory of artificial barriers to the connectivity of surface waters and, taking into account the socio-economic functions of the artificial barriers, identify the barriers that need to be removed to contribute to meeting the restoration targets set out in Article 4 of this Regulation and fulfilling the objective of restoring at least 25 000 km of rivers into free-flowing rivers in the Union by 2030, without prejudice to Directive 2000/60/EC, in particular Article 4(3), (5) and (7) thereof, and Regulation (EU) No 1315/2013 of the European Parliament and of the Council (46), in particular Article 15 thereof.",
+      "article": "Article 9(1) — Restoration of the natural connectivity of rivers",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "kilometres of free-flowing rivers",
+        "number of artificial barriers removed"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall, by putting in place in a timely manner appropriate and effective measures, improve pollinator diversity and reverse the decline of pollinator populations at the latest by 2030 and thereafter achieve an increasing trend of pollinator populations, measured at least every six years from 2030, until satisfactory levels are achieved, as set in accordance with Article 14(5).",
+      "article": "Article 10(1) — Restoration of pollinator populations",
+      "label": "target",
+      "timeline": "at the latest by 2030 ... every six years from 2030",
+      "indicators": [
+        "pollinator diversity",
+        "pollinator populations trend"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "30 % of such areas by 2030, of which at least a quarter shall be rewetted;",
+      "article": "Article 11(4)(a) — Restoration of agricultural ecosystems",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "share of drained peatlands under restoration",
+        "share of peatlands rewetted"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "40 % of such areas by 2040, of which at least a third shall be rewetted;",
+      "article": "Article 11(4)(b) — Restoration of agricultural ecosystems",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "share of drained peatlands under restoration",
+        "share of peatlands rewetted"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "50 % of such areas by 2050, of which at least a third shall be rewetted.",
+      "article": "Article 11(4)(c) — Restoration of agricultural ecosystems",
+      "label": "target",
+      "timeline": "by 2050",
+      "indicators": [
+        "share of drained peatlands under restoration",
+        "share of peatlands rewetted"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "for Member States listed in Annex V with historically more depleted populations of farmland birds: 110 by 2030, 120 by 2040 and 130 by 2050;",
+      "article": "Article 11(3)(a) — Restoration of agricultural ecosystems",
+      "label": "target",
+      "timeline": "by 2030 ... by 2040 ... by 2050",
+      "indicators": [
+        "common farmland bird index"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "for Member States listed in Annex V with historically less depleted populations of farmland birds: 105 by 2030, 110 by 2040 and 115 by 2050.",
+      "article": "Article 11(3)(b) — Restoration of agricultural ecosystems",
+      "label": "target",
+      "timeline": "by 2030 ... by 2040 ... by 2050",
+      "indicators": [
+        "common farmland bird index"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "When identifying and implementing the restoration measures to fulfil the objectives and obligations set out in Articles 4 and 8 to 12, Member States shall aim to contribute to the commitment of planting at least three billion additional trees by 2030 at Union level.",
+      "article": "Article 13(1) — Planting three billion additional trees",
+      "label": "commitment",
+      "timeline": "by 2030",
+      "indicators": [
+        "number of additional trees planted"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "Without prejudice to Directive 92/43/EEC, Member States shall put in place measures which shall aim to ensure that areas in which good condition has been reached, and in which the sufficient quality of the habitats of the species has been reached, do not significantly deteriorate.",
+      "article": "Article 4(11) — Restoration of terrestrial, coastal and freshwater ecosystems",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "condition of habitat types",
+        "non-deterioration of restored areas"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

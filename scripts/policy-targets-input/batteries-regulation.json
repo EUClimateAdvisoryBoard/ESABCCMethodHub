@@ -1,0 +1,286 @@
+{
+  "policy_id": "batteries-regulation",
+  "targets": [
+    {
+      "quote": "1.   For electric vehicle batteries, rechargeable industrial batteries with a capacity greater than 2 kWh and LMT batteries a carbon footprint declaration shall be drawn up for each battery model per manufacturing plant, in accordance with the implementing act referred to in the fourth subparagraph and containing, at least, the following information:",
+      "article": "Article 7(1)",
+      "label": "other",
+      "timeline": "from 18 February 2025 (electric vehicle batteries), 18 February 2026, 18 August 2028 and 18 August 2030",
+      "indicators": [
+        "carbon footprint of the battery"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Electric vehicle batteries, rechargeable industrial batteries with a capacity greater than 2 kWh and LMT batteries shall bear a conspicuous, clearly legible and indelible label indicating the carbon footprint of the battery referred to in paragraph 1, first subparagraph, point (d) and declaring the carbon footprint performance class to which the relevant battery model per manufacturing plant corresponds.",
+      "article": "Article 7(2)",
+      "label": "other",
+      "timeline": "from 18 August 2026 (electric vehicle batteries) onwards",
+      "indicators": [
+        "carbon footprint performance class"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   For electric vehicle batteries, rechargeable industrial batteries with a capacity greater than 2 kWh and LMT batteries, the technical documentation referred to in Annex VIII shall demonstrate that the declared life cycle carbon footprint value for the relevant battery model per manufacturing plant, is below the maximum threshold established in the delegated act adopted pursuant to the third subparagraph.",
+      "article": "Article 7(3)",
+      "label": "target",
+      "timeline": "from 18 February 2028 (electric vehicle batteries) onwards",
+      "indicators": [
+        "maximum life cycle carbon footprint threshold"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   From 18 August 2031, for industrial batteries with a capacity greater than 2 kWh, except those with exclusively external storage, electric vehicle batteries and SLI batteries that contain cobalt, lead, lithium or nickel in active materials, the technical documentation referred to in Annex VIII shall demonstrate that those batteries contain, in active materials, the following minimum percentage share of, respectively, cobalt, lithium or nickel that has been recovered from battery manufacturing waste or post-consumer waste, and the minimum percentage share of lead that is present in the battery and that has been recovered from waste, for each battery model per year and per manufacturing plant:",
+      "article": "Article 8(2)",
+      "label": "target",
+      "timeline": "From 18 August 2031",
+      "indicators": [
+        "recycled content of cobalt, lithium, nickel and lead in active materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   From 18 August 2036, for industrial batteries with a capacity greater than 2 kWh, except those with exclusively external storage, electric vehicle batteries, LMT batteries and SLI batteries that contain cobalt, lead, lithium or nickel in active materials, the technical documentation referred to in Annex VIII shall demonstrate that those batteries contain, in the active materials, the following minimum percentage share of, respectively, cobalt, lithium or nickel that has been recovered from battery manufacturing waste or post-consumer waste, and the minimum percentage share of lead that is present in the battery and that has been recovered from waste, for each battery model per year and per manufacturing plant:",
+      "article": "Article 8(3)",
+      "label": "target",
+      "timeline": "From 18 August 2036",
+      "indicators": [
+        "recycled content of cobalt, lithium, nickel and lead in active materials"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "45 % by 31 December 2023;",
+      "article": "Article 59(3), point (a)",
+      "label": "target",
+      "timeline": "by 31 December 2023",
+      "indicators": [
+        "collection rate of waste portable batteries"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "63 % by 31 December 2027;",
+      "article": "Article 59(3), point (b)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "collection rate of waste portable batteries"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "73 % by 31 December 2030.",
+      "article": "Article 59(3), point (c)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "collection rate of waste portable batteries"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "51 % by 31 December 2028;",
+      "article": "Article 60(3), point (a)",
+      "label": "target",
+      "timeline": "by 31 December 2028",
+      "indicators": [
+        "collection rate of waste LMT batteries"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "61 % by 31 December 2031.",
+      "article": "Article 60(3), point (b)",
+      "label": "target",
+      "timeline": "by 31 December 2031",
+      "indicators": [
+        "collection rate of waste LMT batteries"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "2.   Recyclers shall ensure that recycling achieves the targets for recycling efficiency and the targets for recovery of materials set out in Parts B and C of Annex XII respectively.",
+      "article": "Article 71(2)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "recycling efficiency",
+        "recovery of materials"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 75 % by average weight of lead-acid batteries;",
+      "article": "Annex XII, Part B, point 1(a)",
+      "label": "target",
+      "timeline": "No later than 31 December 2025",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 65 % by average weight of lithium-based batteries;",
+      "article": "Annex XII, Part B, point 1(b)",
+      "label": "target",
+      "timeline": "No later than 31 December 2025",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 80 % by average weight of nickel-cadmium batteries;",
+      "article": "Annex XII, Part B, point 1(c)",
+      "label": "target",
+      "timeline": "No later than 31 December 2025",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 50 % by average weight of other waste batteries.",
+      "article": "Annex XII, Part B, point 1(d)",
+      "label": "target",
+      "timeline": "No later than 31 December 2025",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 80 % by average weight of lead-acid batteries;",
+      "article": "Annex XII, Part B, point 2(a)",
+      "label": "target",
+      "timeline": "No later than 31 December 2030",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "recycling of 70 % by average weight of lithium-based batteries.",
+      "article": "Annex XII, Part B, point 2(b)",
+      "label": "target",
+      "timeline": "No later than 31 December 2030",
+      "indicators": [
+        "recycling efficiency"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "90 % for cobalt;",
+      "article": "Annex XII, Part C, point 1(a)",
+      "label": "target",
+      "timeline": "No later than 31 December 2027",
+      "indicators": [
+        "recovery of materials",
+        "cobalt"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "90 % for copper;",
+      "article": "Annex XII, Part C, point 1(b)",
+      "label": "target",
+      "timeline": "No later than 31 December 2027",
+      "indicators": [
+        "recovery of materials",
+        "copper"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "90 % for lead;",
+      "article": "Annex XII, Part C, point 1(c)",
+      "label": "target",
+      "timeline": "No later than 31 December 2027",
+      "indicators": [
+        "recovery of materials",
+        "lead"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "50 % for lithium;",
+      "article": "Annex XII, Part C, point 1(d)",
+      "label": "target",
+      "timeline": "No later than 31 December 2027",
+      "indicators": [
+        "recovery of materials",
+        "lithium"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "90 % for nickel.",
+      "article": "Annex XII, Part C, point 1(e)",
+      "label": "target",
+      "timeline": "No later than 31 December 2027",
+      "indicators": [
+        "recovery of materials",
+        "nickel"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "95 % for cobalt;",
+      "article": "Annex XII, Part C, point 2(a)",
+      "label": "target",
+      "timeline": "No later than 31 December 2031",
+      "indicators": [
+        "recovery of materials",
+        "cobalt"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "95 % for copper;",
+      "article": "Annex XII, Part C, point 2(b)",
+      "label": "target",
+      "timeline": "No later than 31 December 2031",
+      "indicators": [
+        "recovery of materials",
+        "copper"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "95 % for lead;",
+      "article": "Annex XII, Part C, point 2(c)",
+      "label": "target",
+      "timeline": "No later than 31 December 2031",
+      "indicators": [
+        "recovery of materials",
+        "lead"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "80 % for lithium;",
+      "article": "Annex XII, Part C, point 2(d)",
+      "label": "target",
+      "timeline": "No later than 31 December 2031",
+      "indicators": [
+        "recovery of materials",
+        "lithium"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "95 % for nickel.",
+      "article": "Annex XII, Part C, point 2(e)",
+      "label": "target",
+      "timeline": "No later than 31 December 2031",
+      "indicators": [
+        "recovery of materials",
+        "nickel"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}
