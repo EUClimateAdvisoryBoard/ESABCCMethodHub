@@ -140,7 +140,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.1426 }, { year: 2006, value: 0.1449 }, { year: 2007, value: 0.1505 }, { year: 2008, value: 0.1609 }, { year: 2009, value: 0.1767 }, { year: 2010, value: 0.1914 }, { year: 2011, value: 0.1879 }, { year: 2012, value: 0.2125 }, { year: 2013, value: 0.2389 }, { year: 2014, value: 0.2527 }, { year: 2015, value: 0.2532 }, { year: 2016, value: 0.2559 }, { year: 2017, value: 0.2538 }, { year: 2018, value: 0.2761 }, { year: 2019, value: 0.2908 }, { year: 2020, value: 0.3323 }, { year: 2021, value: 0.3208 }, { year: 2022, value: 0.3376 }],
+    data: [{ year: 2005, value: 14.26 }, { year: 2006, value: 14.49 }, { year: 2007, value: 15.05 }, { year: 2008, value: 16.09 }, { year: 2009, value: 17.67 }, { year: 2010, value: 19.14 }, { year: 2011, value: 18.79 }, { year: 2012, value: 21.25 }, { year: 2013, value: 23.89 }, { year: 2014, value: 25.27 }, { year: 2015, value: 25.32 }, { year: 2016, value: 25.59 }, { year: 2017, value: 25.38 }, { year: 2018, value: 27.61 }, { year: 2019, value: 29.08 }, { year: 2020, value: 33.23 }, { year: 2021, value: 32.08 }, { year: 2022, value: 33.76 }],
   },
   {
     id: 'esabcc-e3-grid-co2-intensity',
@@ -251,7 +251,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     targetYear: 2030,
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 0.108 }, { year: 2011, value: 0.103 }, { year: 2012, value: 0.111 }, { year: 2013, value: 0.113 }, { year: 2014, value: 0.112 }, { year: 2015, value: 0.113 }, { year: 2016, value: 0.115 }, { year: 2017, value: 0.115 }, { year: 2018, value: 0.117 }, { year: 2019, value: 0.12 }, { year: 2020, value: 0.117 }, { year: 2021, value: 0.117 }, { year: 2022, value: 0.114, afterReport: true }, { year: 2023, value: 0.121, afterReport: true }, { year: 2024, value: 0.122, afterReport: true }],
+    data: [{ year: 2010, value: 10.8 }, { year: 2011, value: 10.3 }, { year: 2012, value: 11.1 }, { year: 2013, value: 11.3 }, { year: 2014, value: 11.2 }, { year: 2015, value: 11.3 }, { year: 2016, value: 11.5 }, { year: 2017, value: 11.5 }, { year: 2018, value: 11.7 }, { year: 2019, value: 12 }, { year: 2020, value: 11.7 }, { year: 2021, value: 11.7 }, { year: 2022, value: 11.4, afterReport: true }, { year: 2023, value: 12.1, afterReport: true }, { year: 2024, value: 12.2, afterReport: true }],
   },
   {
     id: 'esabcc-i4-steel-ghg-intensity',
@@ -469,7 +469,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.9769 }, { year: 2006, value: 0.9725 }, { year: 2007, value: 0.9678 }, { year: 2008, value: 0.9631 }, { year: 2009, value: 0.9572 }, { year: 2010, value: 0.9531 }, { year: 2011, value: 0.9508 }, { year: 2012, value: 0.9466 }, { year: 2013, value: 0.9500 }, { year: 2014, value: 0.9480 }, { year: 2015, value: 0.9486 }, { year: 2016, value: 0.9506 }, { year: 2017, value: 0.9484 }, { year: 2018, value: 0.9451 }, { year: 2019, value: 0.9440 }, { year: 2020, value: 0.9322 }, { year: 2021, value: 0.9344 }],
+    data: [{ year: 2005, value: 97.69 }, { year: 2006, value: 97.25 }, { year: 2007, value: 96.78 }, { year: 2008, value: 96.31 }, { year: 2009, value: 95.72 }, { year: 2010, value: 95.31 }, { year: 2011, value: 95.08 }, { year: 2012, value: 94.66 }, { year: 2013, value: 95.00 }, { year: 2014, value: 94.80 }, { year: 2015, value: 94.86 }, { year: 2016, value: 95.06 }, { year: 2017, value: 94.84 }, { year: 2018, value: 94.51 }, { year: 2019, value: 94.40 }, { year: 2020, value: 93.22 }, { year: 2021, value: 93.44 }],
   },
   {
     id: 'esabcc-t6b-foodcrop-biofuels',
@@ -530,7 +530,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.5661 }, { year: 2006, value: 0.5573 }, { year: 2007, value: 0.5174 }, { year: 2008, value: 0.5264 }, { year: 2009, value: 0.5188 }, { year: 2010, value: 0.5187 }, { year: 2011, value: 0.5036 }, { year: 2012, value: 0.4974 }, { year: 2013, value: 0.4965 }, { year: 2014, value: 0.4728 }, { year: 2015, value: 0.4799 }, { year: 2016, value: 0.4844 }, { year: 2017, value: 0.4789 }, { year: 2018, value: 0.4698 }, { year: 2019, value: 0.4653 }, { year: 2020, value: 0.4674 }, { year: 2021, value: 0.4558 }, { year: 2023, value: 0.42, afterReport: true }],
+    data: [{ year: 2005, value: 56.61 }, { year: 2006, value: 55.73 }, { year: 2007, value: 51.74 }, { year: 2008, value: 52.64 }, { year: 2009, value: 51.88 }, { year: 2010, value: 51.87 }, { year: 2011, value: 50.36 }, { year: 2012, value: 49.74 }, { year: 2013, value: 49.65 }, { year: 2014, value: 47.28 }, { year: 2015, value: 47.99 }, { year: 2016, value: 48.44 }, { year: 2017, value: 47.89 }, { year: 2018, value: 46.98 }, { year: 2019, value: 46.53 }, { year: 2020, value: 46.74 }, { year: 2021, value: 45.58 }, { year: 2023, value: 42, afterReport: true }],
   },
   {
     id: 'esabcc-b5b-tertiary-fossil-share',
@@ -545,7 +545,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.4698 }, { year: 2006, value: 0.4665 }, { year: 2007, value: 0.4285 }, { year: 2008, value: 0.4389 }, { year: 2009, value: 0.4326 }, { year: 2010, value: 0.4284 }, { year: 2011, value: 0.4080 }, { year: 2012, value: 0.4090 }, { year: 2013, value: 0.4242 }, { year: 2014, value: 0.3998 }, { year: 2015, value: 0.4036 }, { year: 2016, value: 0.4013 }, { year: 2017, value: 0.3897 }, { year: 2018, value: 0.3771 }, { year: 2019, value: 0.3713 }, { year: 2020, value: 0.3728 }, { year: 2021, value: 0.3874 }, { year: 2023, value: 0.322, afterReport: true }],
+    data: [{ year: 2005, value: 46.98 }, { year: 2006, value: 46.65 }, { year: 2007, value: 42.85 }, { year: 2008, value: 43.89 }, { year: 2009, value: 43.26 }, { year: 2010, value: 42.84 }, { year: 2011, value: 40.80 }, { year: 2012, value: 40.90 }, { year: 2013, value: 42.42 }, { year: 2014, value: 39.98 }, { year: 2015, value: 40.36 }, { year: 2016, value: 40.13 }, { year: 2017, value: 38.97 }, { year: 2018, value: 37.71 }, { year: 2019, value: 37.13 }, { year: 2020, value: 37.28 }, { year: 2021, value: 38.74 }, { year: 2023, value: 32.2, afterReport: true }],
   },
   {
     id: 'esabcc-b6-heat-pump-stock',
@@ -785,7 +785,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'up',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2012, value: 0.0008 }, { year: 2013, value: 0.0010 }, { year: 2014, value: 0.0083 }, { year: 2015, value: 0.0085 }, { year: 2016, value: 0.0169 }, { year: 2017, value: 0.0418 }, { year: 2018, value: 0.0319 }, { year: 2019, value: 0.0482 }, { year: 2020, value: 0.0457 }, { year: 2021, value: 0.0808 }, { year: 2022, value: 0.0674 }, { year: 2023, value: 0.053, afterReport: true }, { year: 2024, value: 0.069, afterReport: true }],
+    data: [{ year: 2012, value: 0.08 }, { year: 2013, value: 0.10 }, { year: 2014, value: 0.83 }, { year: 2015, value: 0.85 }, { year: 2016, value: 1.69 }, { year: 2017, value: 4.18 }, { year: 2018, value: 3.19 }, { year: 2019, value: 4.82 }, { year: 2020, value: 4.57 }, { year: 2021, value: 8.08 }, { year: 2022, value: 6.74 }, { year: 2023, value: 5.3, afterReport: true }, { year: 2024, value: 6.9, afterReport: true }],
   },
   {
     id: 'esabcc-f-gerd',
@@ -1538,11 +1538,11 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     source: 'Climate Target Plan impact assessment + Eurostat',
     sourceUrl: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52020SC0176',
     direction: 'up',
-    targetValue: 0.011,
+    targetValue: 1.1,
     targetYear: 2030,
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2020, value: 0.0060 }],
+    data: [{ year: 2020, value: 0.6 }],
   },
 
 ];

@@ -675,6 +675,19 @@ function seedIndicators(projectId: string): DBIndicator[] {
   ];
 }
 
+/**
+ * Thrown by `listIndicators` when the Supabase read itself fails (network
+ * blip, RLS error, bad credentials) — kept distinct from "the project
+ * genuinely has zero indicators" so callers can tell a backend outage apart
+ * from an empty database instead of both collapsing into `[]`.
+ */
+export class ListIndicatorsError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = 'ListIndicatorsError';
+  }
+}
+
 export async function listIndicators(projectId: string): Promise<DBIndicator[]> {
   // Disable Next.js's data cache for this read so a stale Supabase
   // response from a previous deploy can't keep masking newly-seeded
@@ -685,18 +698,32 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
   const sb = getServerSupabase();
   if (!sb) return seedIndicators(projectId);
   await ensureSeedDataFor(projectId);
-  const { data: rows } = await sb
+  const rowsResult = await sb
     .from('pw_indicators')
     .select('*')
     .eq('project_id', projectId)
     .order('is_seed', { ascending: false })
     .order('created_at', { ascending: true });
+  if (rowsResult.error) {
+    console.error('[listIndicators] failed to fetch pw_indicators', rowsResult.error);
+    throw new ListIndicatorsError(
+      `Failed to load indicators for project "${projectId}": ${rowsResult.error.message}`,
+    );
+  }
+  const rows = rowsResult.data;
   if (!rows || rows.length === 0) return [];
   const ids = rows.map(r => r.id);
-  const { data: points } = await sb
+  const pointsResult = await sb
     .from('pw_indicator_points')
     .select('*')
     .in('indicator_id', ids);
+  if (pointsResult.error) {
+    console.error('[listIndicators] failed to fetch pw_indicator_points', pointsResult.error);
+    throw new ListIndicatorsError(
+      `Failed to load indicator points for project "${projectId}": ${pointsResult.error.message}`,
+    );
+  }
+  const points = pointsResult.data;
   // Bundled metadata for every seeded indicator (ESABCC + beta + beta-adaptation
   // + ECNO). Used to restore fields the pw_indicators table doesn't store —
   // group, code, the beta flag, duplicateOf — and as the point self-heal source.

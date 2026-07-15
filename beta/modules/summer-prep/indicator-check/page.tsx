@@ -109,7 +109,6 @@ function Sparkline({ ind }: { ind: Indicator }) {
     return { x, y, after: !!d.afterReport };
   });
   const line = pts.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-  const stroke = '#004B7F';
   // index of first post-report point (where the "since report" tail begins)
   const firstAfter = pts.findIndex((p) => p.after);
   return (
@@ -124,10 +123,15 @@ function Sparkline({ ind }: { ind: Indicator }) {
           strokeDasharray="2 2"
         />
       )}
-      <polyline points={line} fill="none" stroke={stroke} strokeWidth={1.6} />
+      <polyline
+        points={line}
+        fill="none"
+        strokeWidth={1.6}
+        className="stroke-[#004B7F] dark:stroke-[#5B9BD5]"
+      />
       {pts.map((p, i) =>
         p.after ? (
-          <circle key={i} cx={p.x} cy={p.y} r={2.4} fill={stroke} />
+          <circle key={i} cx={p.x} cy={p.y} r={2.4} className="fill-[#004B7F] dark:fill-[#5B9BD5]" />
         ) : null,
       )}
     </svg>
@@ -136,7 +140,11 @@ function Sparkline({ ind }: { ind: Indicator }) {
 
 type SortKey = 'move' | 'sector' | 'code';
 
-function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
+/** Cap on the inline "new since report" points shown per card, for visual
+ * consistency with the Sparkline's own `slice(-10)` cap. */
+const MAX_INLINE_POST_POINTS = 3;
+
+function IndicatorCheckInner({ indicators, error }: { indicators: Indicator[]; error?: boolean }) {
   const reads = useMemo(
     () => indicators.map(readIndicator),
     [indicators],
@@ -205,16 +213,32 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
           className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4"
         >
           {[
-            { label: 'Indicators tracked', value: summary.total, color: '#3D5265' },
-            { label: 'With new data since report', value: summary.updated, color: '#004B7F' },
-            { label: 'Value rose vs report', value: summary.rose, color: '#54728C' },
-            { label: 'Value fell vs report', value: summary.fell, color: '#54728C' },
+            {
+              label: 'Indicators tracked',
+              value: summary.total,
+              className: 'text-[#3D5265] dark:text-[var(--mh-fg)]',
+            },
+            {
+              label: 'With new data since report',
+              value: summary.updated,
+              className: 'text-[#004B7F] dark:text-[#5B9BD5]',
+            },
+            {
+              label: 'Value rose vs report',
+              value: summary.rose,
+              className: 'text-[#54728C] dark:text-[var(--mh-muted)]',
+            },
+            {
+              label: 'Value fell vs report',
+              value: summary.fell,
+              className: 'text-[#54728C] dark:text-[var(--mh-muted)]',
+            },
           ].map((t) => (
             <div
               key={t.label}
               className="rounded-lg border border-[#E6E7E8] p-3 dark:border-[var(--mh-border)]"
             >
-              <div className="text-[24px] font-bold" style={{ color: t.color }}>
+              <div className={`text-[24px] font-bold ${t.className}`}>
                 {t.value}
               </div>
               <div className="text-[11px] uppercase tracking-wide text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
@@ -333,14 +357,20 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
 
                     <div className="mt-2 text-[11px] text-[#3D5265]/65 dark:text-[var(--mh-muted)]">
                       New since report:{' '}
-                      {r.post.map((p, i) => (
+                      {r.post.slice(0, MAX_INLINE_POST_POINTS).map((p, i) => (
                         <span key={p.year}>
                           {i > 0 && ' · '}
                           <span className="tabular-nums font-medium">
                             {p.year}: {fmtNum(p.value)}
                           </span>
                         </span>
-                      ))}{' '}
+                      ))}
+                      {r.post.length > MAX_INLINE_POST_POINTS && (
+                        <span className="font-medium">
+                          {' '}
+                          +{r.post.length - MAX_INLINE_POST_POINTS} more
+                        </span>
+                      )}{' '}
                       <span className="text-[#3D5265]/45">{r.ind.unit}</span>
                     </div>
                   </>
@@ -381,10 +411,16 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
           })}
         </section>
 
-        {rows.length === 0 && (
-          <div className="rounded-lg border border-[#E6E7E8] p-8 text-center text-[13px] text-[#3D5265]/60 dark:border-[var(--mh-border)]">
-            No indicators match the current filter.
+        {error ? (
+          <div className="rounded-lg border border-[#E6B8B6] bg-[#FDF3F2] p-8 text-center text-[13px] text-[#B83230] dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] dark:text-[var(--mh-fg)]">
+            Couldn’t load the indicator database — try again later.
           </div>
+        ) : (
+          rows.length === 0 && (
+            <div className="rounded-lg border border-[#E6E7E8] p-8 text-center text-[13px] text-[#3D5265]/60 dark:border-[var(--mh-border)]">
+              No indicators match the current filter.
+            </div>
+          )
         )}
 
         <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
@@ -411,6 +447,12 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
   );
 }
 
-export default function IndicatorCheckPage({ indicators }: { indicators: Indicator[] }) {
-  return <IndicatorCheckInner indicators={indicators} />;
+export default function IndicatorCheckPage({
+  indicators,
+  error,
+}: {
+  indicators: Indicator[];
+  error?: boolean;
+}) {
+  return <IndicatorCheckInner indicators={indicators} error={error} />;
 }

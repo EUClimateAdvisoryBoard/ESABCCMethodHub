@@ -10,8 +10,14 @@
  * (dev / preview) `listIndicators` falls back to the same bundled seed
  * series the workspace preview shows, keeping the two views aligned there
  * too.
+ *
+ * If the Supabase read itself fails (as opposed to the project genuinely
+ * having zero indicators), `listIndicators` throws `ListIndicatorsError`.
+ * That's caught here so the client dashboard can render a distinct
+ * "couldn't load the indicator database" message instead of the generic
+ * "no indicators match the current filter" empty state.
  */
-import { listIndicators } from '@/lib/project-workspace/db';
+import { listIndicators, ListIndicatorsError } from '@/lib/project-workspace/db';
 import type { Indicator } from '@/data/ecno-indicators';
 import IndicatorCheck from '../../../../../beta/modules/summer-prep/indicator-check/page';
 
@@ -31,7 +37,18 @@ function groupOf(i: Indicator): string {
 }
 
 export default async function Page() {
-  const all = await listIndicators(WORKSPACE_PROJECT_ID);
+  let all: Indicator[] = [];
+  let loadError = false;
+  try {
+    all = await listIndicators(WORKSPACE_PROJECT_ID);
+  } catch (err) {
+    if (err instanceof ListIndicatorsError) {
+      console.error('[indicator-check] indicator database read failed', err);
+      loadError = true;
+    } else {
+      throw err;
+    }
+  }
   const reportIndicators = all.filter(i => groupOf(i) === 'esabcc');
-  return <IndicatorCheck indicators={reportIndicators} />;
+  return <IndicatorCheck indicators={reportIndicators} error={loadError} />;
 }
