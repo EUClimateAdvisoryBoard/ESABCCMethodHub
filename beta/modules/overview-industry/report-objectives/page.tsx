@@ -52,22 +52,30 @@ import {
   type IrFigureBar,
 } from '@/data/industry-report-objectives';
 import { SCENARIO_SOURCES } from '@/data/industry-scenario-db';
-import { MultiScenarioFigure, SubsectorDrilldown, ScenarioDatabaseTable } from './ScenarioDatabase';
+import {
+  MultiScenarioFigure,
+  SubsectorDrilldown,
+  ScenarioDatabaseTable,
+  useChartTheme,
+  type ChartTheme,
+} from './ScenarioDatabase';
 import { scenarioSheets } from './scenario-export';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Tooltip, Legend);
 
 /* ── Chart palette — categorical, fixed assignment order, validated
-      (dataviz six-checks, light surface #FFFFFF/#F9FAFB) ─────────────── */
+      (dataviz six-checks, light surface #FFFFFF/#F9FAFB); kept fixed across
+      themes — only the chrome (grid/tick/point border) needs to adapt. ──── */
 const CAT = ['#2E5FCC', '#00976B', '#E08020', '#7367C9', '#C0392B'];
-const GRID = '#EDEEF0';
-const TICK = '#54728C';
 
-const BASE_SCALE_OPTS = {
-  grid: { color: GRID, drawTicks: false },
-  border: { color: GRID },
-  ticks: { color: TICK, font: { size: 11 } },
-};
+/** Chart.js scale defaults (grid/border/ticks) for the given resolved theme. */
+function baseScaleOpts(theme: ChartTheme) {
+  return {
+    grid: { color: theme.grid, drawTicks: false },
+    border: { color: theme.grid },
+    ticks: { color: theme.tick, font: { size: 11 } },
+  };
+}
 
 /** Wrap a category label onto multiple tick lines so it never truncates. */
 function wrapLabel(label: string, width = 26): string[] {
@@ -120,7 +128,7 @@ function FigureTable({
       <div className="mt-2 overflow-x-auto">
         <table className="w-full min-w-[540px] border-collapse text-xs">
           <thead>
-            <tr className="border-b border-grey-200 text-left text-grey-600">
+            <tr className="border-b border-grey-200 text-left text-grey-600 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
               {headers.map((h) => (
                 <th key={h} className="py-1.5 pr-4 font-semibold">
                   {h}
@@ -130,7 +138,7 @@ function FigureTable({
           </thead>
           <tbody>
             {rows.map((r, i) => (
-              <tr key={i} className="border-b border-grey-100 text-grey-700">
+              <tr key={i} className="border-b border-grey-100 text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)]">
                 {r.map((c, j) => (
                   <td key={j} className="py-1.5 pr-4 tabular-nums">
                     {typeof c === 'object' ? <SourceLink sourceId={c.sourceId} /> : c}
@@ -157,12 +165,12 @@ function FigureCard({
   children: React.ReactNode;
 }) {
   return (
-    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
-      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500">
+    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
         Figure {number}
       </div>
-      <h3 className="text-[15px] font-bold text-grey-900">{title}</h3>
-      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600">{subtitle}</p>
+      <h3 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">{title}</h3>
+      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">{subtitle}</p>
       {children}
     </section>
   );
@@ -171,6 +179,7 @@ function FigureCard({
 /* ── Figure 1: pathway trajectories (indexed to a common base) ─────── */
 
 function TrajectoriesFigure() {
+  const theme = useChartTheme();
   const years = useMemo(() => {
     const ys = new Set<number>();
     TRAJECTORIES.forEach((t) => t.series.forEach((p) => ys.add(p.year)));
@@ -192,13 +201,13 @@ function TrajectoriesFigure() {
           borderWidth: 2,
           pointRadius: 3,
           pointHoverRadius: 6,
-          pointBorderColor: '#FFFFFF',
+          pointBorderColor: theme.pointBorder,
           pointBorderWidth: 2,
           tension: 0.15,
         };
       }),
     }),
-    [],
+    [theme],
   );
 
   return (
@@ -217,7 +226,7 @@ function TrajectoriesFigure() {
             plugins: {
               legend: {
                 position: 'bottom',
-                labels: { boxWidth: 14, boxHeight: 3, color: TICK, font: { size: 11 } },
+                labels: { boxWidth: 14, boxHeight: 3, color: theme.tick, font: { size: 11 } },
               },
               tooltip: {
                 callbacks: {
@@ -228,18 +237,18 @@ function TrajectoriesFigure() {
             },
             scales: {
               y: {
-                ...BASE_SCALE_OPTS,
-                title: { display: true, text: 'Index (base year = 100)', color: TICK, font: { size: 11 } },
+                ...baseScaleOpts(theme),
+                title: { display: true, text: 'Index (base year = 100)', color: theme.tick, font: { size: 11 } },
                 min: 0,
               },
               x: {
-                ...BASE_SCALE_OPTS,
+                ...baseScaleOpts(theme),
                 type: 'linear' as const,
                 min: 2015,
                 max: 2070,
                 grid: { display: false },
                 ticks: {
-                  ...BASE_SCALE_OPTS.ticks,
+                  ...baseScaleOpts(theme).ticks,
                   stepSize: 5,
                   callback: (v) => String(v),
                 },
@@ -284,6 +293,7 @@ function BenchmarkFigure({
   axisLabel: string;
   suggestedMax?: number;
 }) {
+  const theme = useChartTheme();
   const data = useMemo(
     () => ({
       labels: items.map((b) => b.label),
@@ -330,15 +340,15 @@ function BenchmarkFigure({
             },
             scales: {
               x: {
-                ...BASE_SCALE_OPTS,
+                ...baseScaleOpts(theme),
                 suggestedMax,
-                title: { display: true, text: axisLabel, color: TICK, font: { size: 11 } },
+                title: { display: true, text: axisLabel, color: theme.tick, font: { size: 11 } },
               },
               y: {
-                ...BASE_SCALE_OPTS,
+                ...baseScaleOpts(theme),
                 grid: { display: false },
                 ticks: {
-                  ...BASE_SCALE_OPTS.ticks,
+                  ...baseScaleOpts(theme).ticks,
                   autoSkip: false,
                   font: { size: 10.5 },
                   callback: (_v, i) => wrapLabel(items[i].label),
@@ -551,16 +561,16 @@ export default function ReportObjectivesPage() {
   const cleantechRoadmaps = ROADMAPS.filter((r) => r.theme === 'cleantech');
 
   return (
-    <div className="min-h-screen bg-grey-50">
+    <div className="min-h-screen bg-grey-50 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
 
       <main className="mx-auto max-w-content px-4 py-8">
-        <nav className="mb-4 text-sm text-grey-500">
+        <nav className="mb-4 text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           <Link href="/beta/overview-industry" className="hover:underline">
             Overview Industry
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-grey-700">Industry report — objectives</span>
+          <span className="text-grey-700 dark:text-[var(--mh-fg)]">Industry report — objectives</span>
         </nav>
 
         <header className="mb-8">
@@ -572,10 +582,10 @@ export default function ReportObjectivesPage() {
               Working draft · not a Board position
             </span>
           </div>
-          <h1 className="mt-2 text-3xl font-bold text-grey-900">
+          <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             Industry report — objectives &amp; evidence base
           </h1>
-          <p className="mt-2 max-w-text text-grey-700">
+          <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             What the next report&apos;s industry work sets out to do, and the evidence it stands
             on: a synthesis of industrial decarbonisation pathways and roadmaps (including their
             investment timelines), a synthesis of the clean-tech industry&apos;s role in
@@ -589,7 +599,7 @@ export default function ReportObjectivesPage() {
           >
             ⬇ Download the full workbook (Excel)
           </button>
-          <p className="mt-1.5 text-xs text-grey-500">
+          <p className="mt-1.5 text-xs text-grey-500 dark:text-[var(--mh-muted)]">
             12 sheets: objectives · roadmap synthesis · all data points · scenario series · figure
             benchmarks · scenario database · scenario pathways · scenario ensembles · NACE-C
             subsectors · subsector pathways · industry history · source register — a clickable
@@ -599,10 +609,10 @@ export default function ReportObjectivesPage() {
 
         {/* 1 ── Objectives */}
         <section aria-labelledby="objectives-h" className="mb-10">
-          <h2 id="objectives-h" className="mb-1 text-lg font-bold text-grey-900">
+          <h2 id="objectives-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             1 · Overview of objectives
           </h2>
-          <p className="mb-4 max-w-text text-sm text-grey-600">
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             Three objectives frame the industry report; each maps to a section of this page and a
             sheet of the workbook.
           </p>
@@ -610,17 +620,17 @@ export default function ReportObjectivesPage() {
             {OBJECTIVES.map((o, i) => (
               <article
                 key={o.id}
-                className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm"
+                className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
                 style={{ borderTop: `3px solid ${CAT[i % CAT.length]}` }}
               >
-                <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500">
+                <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
                   Objective {i + 1}
                 </div>
-                <h3 className="text-[15px] font-bold leading-snug text-grey-900">{o.title}</h3>
-                <p className="mt-1.5 text-[13px] leading-relaxed text-grey-600">{o.description}</p>
+                <h3 className="text-[15px] font-bold leading-snug text-grey-900 dark:text-[var(--mh-fg)]">{o.title}</h3>
+                <p className="mt-1.5 text-[13px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">{o.description}</p>
                 <ul className="mt-2.5 space-y-1">
                   {o.deliverables.map((d) => (
-                    <li key={d} className="flex gap-1.5 text-xs leading-snug text-grey-600">
+                    <li key={d} className="flex gap-1.5 text-xs leading-snug text-grey-600 dark:text-[var(--mh-muted)]">
                       <span aria-hidden className="mt-0.5 text-secondary">
                         ✓
                       </span>
@@ -635,10 +645,10 @@ export default function ReportObjectivesPage() {
 
         {/* 2 ── Figures */}
         <section aria-labelledby="figures-h" className="mb-10">
-          <h2 id="figures-h" className="mb-1 text-lg font-bold text-grey-900">
+          <h2 id="figures-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             2 · Key overview figures
           </h2>
-          <p className="mb-4 max-w-text text-sm text-grey-600">
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             Aggregated from the roadmaps, the peer-reviewed pathway literature and the
             IIASA-hosted AR6 scenario ensemble. Figure&nbsp;6 puts every sourced pathway on one
             indexed plot with the computed ensemble median and the EU&apos;s own 2040 scenarios
@@ -692,10 +702,10 @@ export default function ReportObjectivesPage() {
 
         {/* 2b ── Scenario database */}
         <section aria-labelledby="scenariodb-h" className="mb-10">
-          <h2 id="scenariodb-h" className="mb-1 text-lg font-bold text-grey-900">
+          <h2 id="scenariodb-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             3 · The scenario database
           </h2>
-          <p className="mb-4 max-w-text text-sm text-grey-600">
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             The widened evidence base behind Figure 6: a browsable database of every industry
             emission pathway — from the IIASA-hosted AR6 ensemble, PIK (REMIND / Ariadne), the
             European Commission&apos;s 2040 Impact Assessment (S1/S2/S3, highlighted), the IEA, the
@@ -708,10 +718,10 @@ export default function ReportObjectivesPage() {
 
         {/* 3 ── Roadmap synthesis */}
         <section aria-labelledby="roadmaps-h" className="mb-10">
-          <h2 id="roadmaps-h" className="mb-1 text-lg font-bold text-grey-900">
+          <h2 id="roadmaps-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             4 · Synthesis of pathways, roadmaps &amp; the clean-tech evidence
           </h2>
-          <p className="mb-4 max-w-text text-sm text-grey-600">
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             One card per roadmap or study — its core finding, main levers, investment timeline and
             milestones. Grouped into the two syntheses the report objectives call for.
           </p>
@@ -730,48 +740,48 @@ export default function ReportObjectivesPage() {
           ].map((g) => (
             <div key={g.key} className="mb-6">
               <div className="mb-3 flex items-center gap-2">
-                <h3 className="text-[13px] font-bold uppercase tracking-wide text-grey-600">
+                <h3 className="text-[13px] font-bold uppercase tracking-wide text-grey-600 dark:text-[var(--mh-muted)]">
                   {g.heading}
                 </h3>
-                <span className="h-px flex-1 bg-grey-200" />
+                <span className="h-px flex-1 bg-grey-200 dark:bg-[var(--mh-border)]" />
               </div>
               <div className="grid gap-4 lg:grid-cols-2">
                 {g.items.map((r) => (
                   <article
                     key={r.id}
-                    className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm"
+                    className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
                   >
-                    <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
-                      <span className="rounded bg-grey-100 px-1.5 py-0.5">{r.publisher}</span>
-                      <span className="rounded bg-grey-100 px-1.5 py-0.5">{r.year}</span>
-                      <span className="rounded bg-grey-100 px-1.5 py-0.5">{r.region}</span>
+                    <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
+                      <span className="rounded bg-grey-100 px-1.5 py-0.5 dark:bg-[var(--mh-bg)]">{r.publisher}</span>
+                      <span className="rounded bg-grey-100 px-1.5 py-0.5 dark:bg-[var(--mh-bg)]">{r.year}</span>
+                      <span className="rounded bg-grey-100 px-1.5 py-0.5 dark:bg-[var(--mh-bg)]">{r.region}</span>
                       <span className="rounded bg-surface-blue px-1.5 py-0.5 text-primary">
                         {sourceById(r.sourceId)?.type}
                       </span>
                     </div>
-                    <h4 className="mt-1.5 text-[15px] font-bold leading-snug text-grey-900">
+                    <h4 className="mt-1.5 text-[15px] font-bold leading-snug text-grey-900 dark:text-[var(--mh-fg)]">
                       <SourceLink sourceId={r.sourceId}>{r.name}</SourceLink>
                     </h4>
-                    <p className="mt-1.5 text-[13px] leading-relaxed text-grey-700">{r.summary}</p>
+                    <p className="mt-1.5 text-[13px] leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">{r.summary}</p>
                     <div className="mt-2.5 flex flex-wrap gap-1.5">
                       {r.levers.map((l) => (
                         <span
                           key={l}
-                          className="rounded-full border border-grey-200 px-2 py-0.5 text-[11px] text-grey-600"
+                          className="rounded-full border border-grey-200 px-2 py-0.5 text-[11px] text-grey-600 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]"
                         >
                           {l}
                         </span>
                       ))}
                     </div>
-                    <p className="mt-2.5 text-[12.5px] leading-relaxed text-grey-700">
-                      <span className="font-semibold text-grey-900">Investment timeline: </span>
+                    <p className="mt-2.5 text-[12.5px] leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">
+                      <span className="font-semibold text-grey-900 dark:text-[var(--mh-fg)]">Investment timeline: </span>
                       {r.investmentTimeline}
                     </p>
                     {r.milestones.length > 0 && (
-                      <ol className="mt-2.5 space-y-1 border-l-2 border-grey-200 pl-3">
+                      <ol className="mt-2.5 space-y-1 border-l-2 border-grey-200 pl-3 dark:border-[var(--mh-border)]">
                         {r.milestones.map((m) => (
-                          <li key={m.period} className="text-xs leading-snug text-grey-600">
-                            <span className="font-bold text-grey-900">{m.period}</span> —{' '}
+                          <li key={m.period} className="text-xs leading-snug text-grey-600 dark:text-[var(--mh-muted)]">
+                            <span className="font-bold text-grey-900 dark:text-[var(--mh-fg)]">{m.period}</span> —{' '}
                             {m.milestone}
                           </li>
                         ))}
@@ -786,10 +796,10 @@ export default function ReportObjectivesPage() {
 
         {/* 4 ── Data points */}
         <section aria-labelledby="data-h" className="mb-10">
-          <h2 id="data-h" className="mb-1 text-lg font-bold text-grey-900">
+          <h2 id="data-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             5 · All extracted data points
           </h2>
-          <p className="mb-4 max-w-text text-sm text-grey-600">
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             The full extraction behind the figures and syntheses — every value with its scenario,
             region, year and the exact source link. The workbook carries the same table.
           </p>
@@ -801,7 +811,7 @@ export default function ReportObjectivesPage() {
               className={`rounded-full border px-3 py-1 text-xs font-semibold ${
                 topicFilter === 'all'
                   ? 'border-primary bg-primary text-white'
-                  : 'border-grey-300 text-grey-600 hover:bg-grey-100'
+                  : 'border-grey-300 text-grey-600 hover:bg-grey-100 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-bg)]'
               }`}
             >
               All ({DATA_POINTS.length})
@@ -817,7 +827,7 @@ export default function ReportObjectivesPage() {
                   className={`rounded-full border px-3 py-1 text-xs font-semibold ${
                     active
                       ? 'border-primary bg-primary text-white'
-                      : 'border-grey-300 text-grey-600 hover:bg-grey-100'
+                      : 'border-grey-300 text-grey-600 hover:bg-grey-100 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-bg)]'
                   }`}
                 >
                   {TOPIC_META[t].label} ({n})
@@ -826,10 +836,10 @@ export default function ReportObjectivesPage() {
             })}
           </div>
 
-          <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
             <table className="w-full min-w-[900px] border-collapse text-xs">
               <thead>
-                <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600">
+                <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
                   <th className="px-3 py-2 font-semibold">Topic</th>
                   <th className="px-3 py-2 font-semibold">Variable</th>
                   <th className="px-3 py-2 font-semibold">Value</th>
@@ -841,7 +851,7 @@ export default function ReportObjectivesPage() {
               </thead>
               <tbody>
                 {filteredPoints.map((d) => (
-                  <tr key={d.id} className="border-b border-grey-100 align-top text-grey-700">
+                  <tr key={d.id} className="border-b border-grey-100 align-top text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
                     <td className="whitespace-nowrap px-3 py-2">
                       <span
                         className="inline-block rounded-full px-2 py-0.5 text-[10px] font-bold"
@@ -855,9 +865,9 @@ export default function ReportObjectivesPage() {
                     </td>
                     <td className="px-3 py-2">
                       {d.variable}
-                      {d.note && <span className="block text-[11px] text-grey-500">{d.note}</span>}
+                      {d.note && <span className="block text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">{d.note}</span>}
                     </td>
-                    <td className="whitespace-nowrap px-3 py-2 font-semibold tabular-nums text-grey-900">
+                    <td className="whitespace-nowrap px-3 py-2 font-semibold tabular-nums text-grey-900 dark:text-[var(--mh-fg)]">
                       {d.value} {d.unit}
                     </td>
                     <td className="whitespace-nowrap px-3 py-2">{d.region}</td>
@@ -873,7 +883,7 @@ export default function ReportObjectivesPage() {
           </div>
         </section>
 
-        <p className="max-w-text text-xs leading-relaxed text-grey-500">
+        <p className="max-w-text text-xs leading-relaxed text-grey-500 dark:text-[var(--mh-muted)]">
           Provenance: every number on this page was extracted from the cited roadmap, paper,
           policy document or the AR6 scenario database hosted by IIASA, and each carries its exact
           source link (DOI where one exists) here and in the workbook. Scope differences between

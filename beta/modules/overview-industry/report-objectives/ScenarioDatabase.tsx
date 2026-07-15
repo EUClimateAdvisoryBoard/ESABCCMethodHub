@@ -34,11 +34,11 @@ import {
   type ChartOptions,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { usePreferences } from '@/lib/preferences-context';
 import {
   SCENARIOS,
   SUBSECTORS,
   ENSEMBLE_FAMILIES,
-  INDUSTRY_HISTORY,
   MEDIAN_YEARS,
   SUBSECTOR_YEARS,
   ensembleMedian,
@@ -51,12 +51,10 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
 
-const GRID = '#EDEEF0';
-const TICK = '#54728C';
-const MEDIAN_COLOR = '#111827';
-
 /* Highlight palette for the special (EU 2040) scenarios; muted grey for the
-   rest of the ensemble so the highlighted lines and the median read clearly. */
+   rest of the ensemble so the highlighted lines and the median read clearly.
+   Kept fixed across light/dark — only the chrome (grid/tick/median/point
+   border) needs to adapt, per the dataviz theme-aware-palette guidance. */
 const HIGHLIGHT_COLORS: Record<string, string> = {
   'sc-ec-ia-s1': '#7367C9',
   'sc-ec-ia-s2': '#E08020',
@@ -65,7 +63,8 @@ const HIGHLIGHT_COLORS: Record<string, string> = {
 };
 const MUTED = '#AEB6C2';
 
-/* 9-way categorical palette for the subsector stack (validated for light UI). */
+/* 9-way categorical palette for the subsector stack (validated for light UI;
+   kept fixed across themes — same rationale as HIGHLIGHT_COLORS above). */
 const SUB_COLORS = [
   '#2E5FCC', // steel
   '#C0392B', // cement & lime
@@ -78,11 +77,46 @@ const SUB_COLORS = [
   '#B0782A', // other manufacturing
 ];
 
-const BASE_SCALE = {
-  grid: { color: GRID, drawTicks: false },
-  border: { color: GRID },
-  ticks: { color: TICK, font: { size: 11 } },
-};
+/* ── Theme-aware chart chrome ──────────────────────────────────────────
+   Grid lines, ticks, the ensemble-median line and the hover point-border
+   are tuned for a white chart card and go illegible the moment the card
+   goes dark (near-white gridlines vanish; the near-black median line
+   disappears). This hook resolves the *live* preference-context theme —
+   not a one-shot read — so every chart consuming it re-renders on toggle.
+   Shared with `report-objectives/page.tsx` (imported from there). */
+export interface ChartTheme {
+  isDark: boolean;
+  grid: string;
+  tick: string;
+  median: string;
+  pointBorder: string;
+}
+
+export function useChartTheme(): ChartTheme {
+  const { resolvedTheme } = usePreferences();
+  const isDark = resolvedTheme === 'dark';
+  return useMemo(
+    () => ({
+      isDark,
+      grid: isDark ? '#2A3644' : '#EDEEF0',
+      tick: isDark ? '#8FA1B3' : '#54728C',
+      median: isDark ? '#E6EBF0' : '#111827',
+      // Hover-point border should match the card background so points read
+      // as "cut out" of the card, in both themes (var(--mh-card)).
+      pointBorder: isDark ? '#18222E' : '#FFFFFF',
+    }),
+    [isDark],
+  );
+}
+
+/** Chart.js scale defaults (grid/border/ticks) for the given resolved theme. */
+function baseScale(theme: ChartTheme) {
+  return {
+    grid: { color: theme.grid, drawTicks: false },
+    border: { color: theme.grid },
+    ticks: { color: theme.tick, font: { size: 11 } },
+  };
+}
 
 function SourceLink({ sourceId, children }: { sourceId: string; children?: React.ReactNode }) {
   const s = scenarioSourceById(sourceId);
@@ -105,6 +139,7 @@ function SourceLink({ sourceId, children }: { sourceId: string; children?: React
 const PLOT_YEARS = [2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2060, 2070];
 
 export function MultiScenarioFigure() {
+  const theme = useChartTheme();
   const median = useMemo(() => ensembleMedian(SCENARIOS), []);
 
   const data = useMemo<ChartData<'line'>>(() => {
@@ -123,7 +158,7 @@ export function MultiScenarioFigure() {
         borderDash: highlight ? [] : [],
         pointRadius: highlight ? 3 : 0,
         pointHoverRadius: 6,
-        pointBorderColor: '#FFFFFF',
+        pointBorderColor: theme.pointBorder,
         pointBorderWidth: 1.5,
         tension: 0.15,
         order: highlight ? 1 : 3,
@@ -134,21 +169,21 @@ export function MultiScenarioFigure() {
     const medianSet = {
       label: 'Ensemble median',
       data: median.map((m) => ({ x: m.year, y: m.index })),
-      borderColor: MEDIAN_COLOR,
-      backgroundColor: MEDIAN_COLOR,
+      borderColor: theme.median,
+      backgroundColor: theme.median,
       borderWidth: 3.5,
       borderDash: [7, 4],
       pointRadius: 4,
       pointHoverRadius: 7,
       pointStyle: 'rectRot' as const,
-      pointBackgroundColor: MEDIAN_COLOR,
+      pointBackgroundColor: theme.median,
       tension: 0,
       order: 0,
       spanGaps: true,
     };
 
     return { datasets: [...scenarioSets, medianSet] };
-  }, [median]);
+  }, [median, theme]);
 
   const options = useMemo<ChartOptions<'line'>>(
     () => ({
@@ -166,37 +201,37 @@ export function MultiScenarioFigure() {
       },
       scales: {
         y: {
-          ...BASE_SCALE,
-          title: { display: true, text: 'Index (base year = 100)', color: TICK, font: { size: 11 } },
+          ...baseScale(theme),
+          title: { display: true, text: 'Index (base year = 100)', color: theme.tick, font: { size: 11 } },
           min: 0,
           suggestedMax: 105,
         },
         x: {
-          ...BASE_SCALE,
+          ...baseScale(theme),
           type: 'linear' as const,
           min: 2015,
           max: 2072,
           grid: { display: false },
-          ticks: { ...BASE_SCALE.ticks, stepSize: 5, callback: (v) => String(v) },
+          ticks: { ...baseScale(theme).ticks, stepSize: 5, callback: (v) => String(v) },
         },
       },
     }),
-    [],
+    [theme],
   );
 
   const highlighted = SCENARIOS.filter((s) => s.highlight);
   const others = SCENARIOS.filter((s) => !s.highlight);
 
   return (
-    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
-      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500">Figure 6</div>
-      <h3 className="text-[15px] font-bold text-grey-900">
+    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Figure 6</div>
+      <h3 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
         Whole-industry emission pathways — the scenario ensemble &amp; its median
       </h3>
-      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600">
+      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
         Every sourced industry pathway indexed to 100 in its own base year, so the pace of decline
         is comparable across scopes that must never be summed (global vs EU; direct vs direct+indirect).
-        The <span className="font-semibold" style={{ color: MEDIAN_COLOR }}>ensemble median</span> is
+        The <span className="font-semibold" style={{ color: theme.median }}>ensemble median</span> is
         computed across the pathways at each year. The European Commission&apos;s 2040 Impact-Assessment
         scenarios and the ESABCC 2040 advice are highlighted — they are the EU&apos;s own 2040 target
         pathways. Hover any line for its value; absolute tonnages and source links are in the table
@@ -209,8 +244,8 @@ export function MultiScenarioFigure() {
 
       {/* Custom legend — highlighted pathways + median called out; ensemble muted */}
       <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-[11px]">
-        <span className="flex items-center gap-1.5 font-semibold text-grey-800">
-          <span className="inline-block h-0.5 w-5" style={{ backgroundColor: MEDIAN_COLOR, borderTop: `2px dashed ${MEDIAN_COLOR}` }} />
+        <span className="flex items-center gap-1.5 font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
+          <span className="inline-block h-0.5 w-5" style={{ backgroundColor: theme.median, borderTop: `2px dashed ${theme.median}` }} />
           Ensemble median
         </span>
         {highlighted.map((s) => (
@@ -219,7 +254,7 @@ export function MultiScenarioFigure() {
             {s.label}
           </span>
         ))}
-        <span className="flex items-center gap-1.5 text-grey-500">
+        <span className="flex items-center gap-1.5 text-grey-500 dark:text-[var(--mh-muted)]">
           <span className="inline-block h-0.5 w-5" style={{ backgroundColor: MUTED }} />
           {others.length} further pathways (ensemble)
         </span>
@@ -232,7 +267,7 @@ export function MultiScenarioFigure() {
         <div className="mt-2 overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-xs">
             <thead>
-              <tr className="border-b border-grey-200 text-left text-grey-600">
+              <tr className="border-b border-grey-200 text-left text-grey-600 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
                 <th className="py-1.5 pr-3 font-semibold">Pathway</th>
                 <th className="py-1.5 pr-3 font-semibold">Scope</th>
                 {MEDIAN_YEARS.map((y) => (
@@ -245,12 +280,12 @@ export function MultiScenarioFigure() {
             </thead>
             <tbody>
               {SCENARIOS.map((s) => (
-                <tr key={s.id} className="border-b border-grey-100 text-grey-700">
+                <tr key={s.id} className="border-b border-grey-100 text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)]">
                   <td className="py-1.5 pr-3">
                     {s.highlight && <span aria-hidden>★ </span>}
                     {s.label}
                   </td>
-                  <td className="py-1.5 pr-3 text-grey-500">{s.scope}</td>
+                  <td className="py-1.5 pr-3 text-grey-500 dark:text-[var(--mh-muted)]">{s.scope}</td>
                   {MEDIAN_YEARS.map((y) => {
                     const v = indexedValueAt(s, y);
                     return (
@@ -264,9 +299,9 @@ export function MultiScenarioFigure() {
                   </td>
                 </tr>
               ))}
-              <tr className="border-t-2 border-grey-300 font-semibold text-grey-900">
+              <tr className="border-t-2 border-grey-300 font-semibold text-grey-900 dark:border-[var(--mh-border)] dark:text-[var(--mh-fg)]">
                 <td className="py-1.5 pr-3">Ensemble median</td>
-                <td className="py-1.5 pr-3 text-grey-500">indexed</td>
+                <td className="py-1.5 pr-3 text-grey-500 dark:text-[var(--mh-muted)]">indexed</td>
                 {MEDIAN_YEARS.map((y) => {
                   const m = median.find((p) => p.year === y);
                   return (
@@ -275,7 +310,7 @@ export function MultiScenarioFigure() {
                     </td>
                   );
                 })}
-                <td className="py-1.5 pr-3 text-grey-500">computed</td>
+                <td className="py-1.5 pr-3 text-grey-500 dark:text-[var(--mh-muted)]">computed</td>
               </tr>
             </tbody>
           </table>
@@ -288,6 +323,7 @@ export function MultiScenarioFigure() {
 /* ═══════════════════════════ 2 · Subsector drill-down ════════════════════ */
 
 export function SubsectorDrilldown() {
+  const theme = useChartTheme();
   const [selected, setSelected] = useState<string | null>(null);
   const sub = SUBSECTORS.find((s) => s.id === selected) ?? null;
 
@@ -336,31 +372,31 @@ export function SubsectorDrilldown() {
       },
       scales: {
         y: {
-          ...BASE_SCALE,
+          ...baseScale(theme),
           stacked: true,
-          title: { display: true, text: 'EU-27 industry GHG (Mt CO₂e)', color: TICK, font: { size: 11 } },
+          title: { display: true, text: 'EU-27 industry GHG (Mt CO₂e)', color: theme.tick, font: { size: 11 } },
           min: 0,
         },
         x: {
-          ...BASE_SCALE,
+          ...baseScale(theme),
           type: 'linear' as const,
           min: 2019,
           max: 2050,
           grid: { display: false },
-          ticks: { ...BASE_SCALE.ticks, stepSize: 5, callback: (v) => String(v) },
+          ticks: { ...baseScale(theme).ticks, stepSize: 5, callback: (v) => String(v) },
         },
       },
     }),
-    [],
+    [theme],
   );
 
   return (
-    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
-      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500">Figure 7</div>
-      <h3 className="text-[15px] font-bold text-grey-900">
+    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Figure 7</div>
+      <h3 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
         Inside the curve — NACE Section-C subsectors &amp; their pathways
       </h3>
-      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600">
+      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
         The whole-industry curve decomposed into its manufacturing subsectors, sized by 2019 EU-27
         emissions (reconciled to the 760 Mt CO₂e industry total) and carried forward on each
         subsector&apos;s own sourced decarbonisation pathway. <span className="font-semibold">Click a
@@ -384,8 +420,8 @@ export function SubsectorDrilldown() {
                   aria-pressed={active}
                   className={`flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium transition ${
                     active
-                      ? 'border-grey-800 bg-grey-900 text-white'
-                      : 'border-grey-300 text-grey-600 hover:bg-grey-100'
+                      ? 'border-grey-800 bg-grey-900 text-white dark:border-[var(--mh-fg)] dark:bg-[var(--mh-fg)] dark:text-[var(--mh-bg)]'
+                      : 'border-grey-300 text-grey-600 hover:bg-grey-100 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-bg)]'
                   }`}
                 >
                   <span
@@ -393,7 +429,7 @@ export function SubsectorDrilldown() {
                     style={{ backgroundColor: SUB_COLORS[i % SUB_COLORS.length] }}
                   />
                   {s.label}
-                  <span className="tabular-nums text-grey-400">{Math.round(s.ghg2019)}</span>
+                  <span className="tabular-nums text-grey-400 dark:text-[var(--mh-muted)]">{Math.round(s.ghg2019)}</span>
                 </button>
               );
             })}
@@ -401,11 +437,11 @@ export function SubsectorDrilldown() {
         </div>
 
         {/* Detail panel */}
-        <div className="rounded-lg border border-grey-200 bg-grey-50 p-4">
+        <div className="rounded-lg border border-grey-200 bg-grey-50 p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]">
           {sub ? (
             <SubsectorDetail sub={sub} onClose={() => setSelected(null)} />
           ) : (
-            <div className="flex h-full min-h-[280px] flex-col items-center justify-center text-center text-sm text-grey-500">
+            <div className="flex h-full min-h-[280px] flex-col items-center justify-center text-center text-sm text-grey-500 dark:text-[var(--mh-muted)]">
               <span className="mb-2 text-2xl" aria-hidden>
                 ◔
               </span>
@@ -413,7 +449,7 @@ export function SubsectorDrilldown() {
                 Click a band or a chip to drill into a subsector&apos;s emission pathway and
                 decarbonisation story.
               </p>
-              <p className="mt-3 text-[11px] text-grey-400">
+              <p className="mt-3 text-[11px] text-grey-400 dark:text-[var(--mh-muted)]">
                 9 subsectors · {Math.round(SUBSECTORS.reduce((a, s) => a + s.ghg2019, 0))} Mt CO₂e in
                 2019
               </p>
@@ -426,6 +462,7 @@ export function SubsectorDrilldown() {
 }
 
 function SubsectorDetail({ sub, onClose }: { sub: Subsector; onClose: () => void }) {
+  const theme = useChartTheme();
   const pathData = useMemo<ChartData<'line'>>(
     () => ({
       datasets: [
@@ -451,19 +488,19 @@ function SubsectorDetail({ sub, onClose }: { sub: Subsector; onClose: () => void
     <div>
       <div className="mb-2 flex items-start justify-between gap-2">
         <div>
-          <h4 className="text-[15px] font-bold leading-tight text-grey-900">{sub.label}</h4>
-          <div className="mt-0.5 flex flex-wrap gap-1 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
-            <span className="rounded bg-grey-200 px-1.5 py-0.5">
+          <h4 className="text-[15px] font-bold leading-tight text-grey-900 dark:text-[var(--mh-fg)]">{sub.label}</h4>
+          <div className="mt-0.5 flex flex-wrap gap-1 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
+            <span className="rounded bg-grey-200 px-1.5 py-0.5 dark:bg-[var(--mh-border)]">
               NACE {sub.naceDivisions.join(', ')}
             </span>
-            <span className="rounded bg-grey-200 px-1.5 py-0.5 tabular-nums">
+            <span className="rounded bg-grey-200 px-1.5 py-0.5 tabular-nums dark:bg-[var(--mh-border)]">
               {sub.ghg2019} Mt · {share}%
             </span>
           </div>
         </div>
         <button
           onClick={onClose}
-          className="rounded p-1 text-grey-400 hover:bg-grey-200 hover:text-grey-700"
+          className="rounded p-1 text-grey-400 hover:bg-grey-200 hover:text-grey-700 dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-border)] dark:hover:text-[var(--mh-fg)]"
           aria-label="Close subsector detail"
         >
           ✕
@@ -478,40 +515,40 @@ function SubsectorDetail({ sub, onClose }: { sub: Subsector; onClose: () => void
             maintainAspectRatio: false,
             plugins: { legend: { display: false }, tooltip: { callbacks: { label: (c) => ` index ${c.parsed.y} (2019 = 100)` } } },
             scales: {
-              y: { ...BASE_SCALE, min: 0, suggestedMax: 105, title: { display: true, text: 'Index (2019 = 100)', color: TICK, font: { size: 10 } } },
-              x: { ...BASE_SCALE, type: 'linear' as const, min: 2019, max: 2050, grid: { display: false }, ticks: { ...BASE_SCALE.ticks, stepSize: 10 } },
+              y: { ...baseScale(theme), min: 0, suggestedMax: 105, title: { display: true, text: 'Index (2019 = 100)', color: theme.tick, font: { size: 10 } } },
+              x: { ...baseScale(theme), type: 'linear' as const, min: 2019, max: 2050, grid: { display: false }, ticks: { ...baseScale(theme).ticks, stepSize: 10 } },
             },
           }}
         />
       </div>
 
-      <p className="text-[12.5px] leading-relaxed text-grey-700">{sub.characterisedBy}</p>
+      <p className="text-[12.5px] leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">{sub.characterisedBy}</p>
 
       <div className="mt-2.5">
-        <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500">Near-zero levers</div>
+        <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Near-zero levers</div>
         <div className="mt-1 flex flex-wrap gap-1">
           {sub.levers.map((l) => (
-            <span key={l} className="rounded-full border border-grey-300 px-2 py-0.5 text-[11px] text-grey-600">
+            <span key={l} className="rounded-full border border-grey-300 px-2 py-0.5 text-[11px] text-grey-600 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
               {l}
             </span>
           ))}
         </div>
       </div>
 
-      <dl className="mt-2.5 space-y-1 text-[11.5px] text-grey-600">
+      <dl className="mt-2.5 space-y-1 text-[11.5px] text-grey-600 dark:text-[var(--mh-muted)]">
         {sub.processShare && (
           <div className="flex gap-1.5">
-            <dt className="font-semibold text-grey-800">Emission type:</dt>
+            <dt className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Emission type:</dt>
             <dd>{sub.processShare}</dd>
           </div>
         )}
         <div className="flex gap-1.5">
-          <dt className="font-semibold text-grey-800">Inventory (CRF):</dt>
+          <dt className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Inventory (CRF):</dt>
           <dd>{sub.crfCategories}</dd>
         </div>
       </dl>
 
-      <p className="mt-2.5 rounded border-l-2 border-grey-300 pl-2 text-[11.5px] leading-relaxed text-grey-600">
+      <p className="mt-2.5 rounded border-l-2 border-grey-300 pl-2 text-[11.5px] leading-relaxed text-grey-600 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
         {sub.pathwayNote} <SourceLink sourceId={sub.sourceId}>Source ↗</SourceLink>
       </p>
     </div>
@@ -530,7 +567,9 @@ export function ScenarioDatabaseTable() {
           onClick={() => setView('scenarios')}
           aria-pressed={view === 'scenarios'}
           className={`rounded-full border px-3 py-1 text-xs font-semibold ${
-            view === 'scenarios' ? 'border-primary bg-primary text-white' : 'border-grey-300 text-grey-600 hover:bg-grey-100'
+            view === 'scenarios'
+              ? 'border-primary bg-primary text-white'
+              : 'border-grey-300 text-grey-600 hover:bg-grey-100 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-bg)]'
           }`}
         >
           Scenarios ({SCENARIOS.length})
@@ -539,18 +578,20 @@ export function ScenarioDatabaseTable() {
           onClick={() => setView('ensembles')}
           aria-pressed={view === 'ensembles'}
           className={`rounded-full border px-3 py-1 text-xs font-semibold ${
-            view === 'ensembles' ? 'border-primary bg-primary text-white' : 'border-grey-300 text-grey-600 hover:bg-grey-100'
+            view === 'ensembles'
+              ? 'border-primary bg-primary text-white'
+              : 'border-grey-300 text-grey-600 hover:bg-grey-100 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)] dark:hover:bg-[var(--mh-bg)]'
           }`}
         >
           Ensembles &amp; databases ({ENSEMBLE_FAMILIES.length})
         </button>
       </div>
 
-      <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm">
+      <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
         {view === 'scenarios' ? (
           <table className="w-full min-w-[860px] border-collapse text-xs">
             <thead>
-              <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600">
+              <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
                 <th className="px-3 py-2 font-semibold">Scenario</th>
                 <th className="px-3 py-2 font-semibold">Ensemble</th>
                 <th className="px-3 py-2 font-semibold">Scope</th>
@@ -560,17 +601,17 @@ export function ScenarioDatabaseTable() {
             </thead>
             <tbody>
               {SCENARIOS.map((s) => (
-                <tr key={s.id} className="border-b border-grey-100 align-top text-grey-700">
-                  <td className="px-3 py-2 font-semibold text-grey-900">
+                <tr key={s.id} className="border-b border-grey-100 align-top text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
+                  <td className="px-3 py-2 font-semibold text-grey-900 dark:text-[var(--mh-fg)]">
                     {s.highlight && <span className="mr-1 text-accent-orange" aria-hidden>★</span>}
                     {s.label}
-                    {s.net2040 && <span className="block text-[10px] font-normal text-grey-500">{s.net2040}</span>}
+                    {s.net2040 && <span className="block text-[10px] font-normal text-grey-500 dark:text-[var(--mh-muted)]">{s.net2040}</span>}
                   </td>
                   <td className="px-3 py-2">{s.ensemble}</td>
-                  <td className="px-3 py-2 text-grey-500">{s.scope}</td>
+                  <td className="px-3 py-2 text-grey-500 dark:text-[var(--mh-muted)]">{s.scope}</td>
                   <td className="px-3 py-2">
-                    <span className="text-grey-700">{s.characterisedBy}</span>
-                    <span className="mt-1 block text-[11px] italic text-grey-500">Differs: {s.differsBy}</span>
+                    <span className="text-grey-700 dark:text-[var(--mh-fg)]">{s.characterisedBy}</span>
+                    <span className="mt-1 block text-[11px] italic text-grey-500 dark:text-[var(--mh-muted)]">Differs: {s.differsBy}</span>
                   </td>
                   <td className="px-3 py-2">
                     <SourceLink sourceId={s.sourceId} />
@@ -582,7 +623,7 @@ export function ScenarioDatabaseTable() {
         ) : (
           <table className="w-full min-w-[860px] border-collapse text-xs">
             <thead>
-              <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600">
+              <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
                 <th className="px-3 py-2 font-semibold">Ensemble / database</th>
                 <th className="px-3 py-2 font-semibold">Operator</th>
                 <th className="px-3 py-2 font-semibold">Scope</th>
@@ -593,13 +634,13 @@ export function ScenarioDatabaseTable() {
             </thead>
             <tbody>
               {ENSEMBLE_FAMILIES.map((e) => (
-                <tr key={e.id} className="border-b border-grey-100 align-top text-grey-700">
-                  <td className="px-3 py-2 font-semibold text-grey-900">{e.name}</td>
+                <tr key={e.id} className="border-b border-grey-100 align-top text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]">
+                  <td className="px-3 py-2 font-semibold text-grey-900 dark:text-[var(--mh-fg)]">{e.name}</td>
                   <td className="px-3 py-2">{e.operator}</td>
-                  <td className="px-3 py-2 text-grey-500">{e.scope}</td>
+                  <td className="px-3 py-2 text-grey-500 dark:text-[var(--mh-muted)]">{e.scope}</td>
                   <td className="px-3 py-2">
-                    <span className="text-grey-700">{e.characterisedBy}</span>
-                    <span className="mt-1 block text-[11px] italic text-grey-500">Differs: {e.differsBy}</span>
+                    <span className="text-grey-700 dark:text-[var(--mh-fg)]">{e.characterisedBy}</span>
+                    <span className="mt-1 block text-[11px] italic text-grey-500 dark:text-[var(--mh-muted)]">Differs: {e.differsBy}</span>
                   </td>
                   <td className="px-3 py-2">{e.plotted ? '✓' : '—'}</td>
                   <td className="px-3 py-2">

@@ -20,6 +20,8 @@
  * judgements pending sector-lead sign-off. Nothing here is a Board position.
  */
 
+import { AR6_DB_IIASA_BASE } from './shared-sources';
+
 export type IrSourceType =
   | 'peer-reviewed'
   | 'scenario database'
@@ -252,12 +254,8 @@ export const SOURCES: IrSource[] = [
     doi: '10.1017/9781009157926.005',
   },
   {
-    id: 'ar6-db-iiasa',
+    ...AR6_DB_IIASA_BASE,
     type: 'scenario database',
-    short: 'AR6 Scenario DB (IIASA)',
-    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database hosted by IIASA (release 1.1, Nov 2022; 3,131 scenarios, 188 modelling frameworks). International Institute for Applied Systems Analysis.',
-    url: 'https://data.ece.iiasa.ac.at/ar6/',
-    doi: '10.5281/zenodo.5886912',
   },
   {
     id: 'iea-nze-2023',

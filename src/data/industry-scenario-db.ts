@@ -33,6 +33,8 @@
  * a Board position.
  */
 
+import { AR6_DB_IIASA_BASE } from './shared-sources';
+
 /* ── Source register (extends the report-objectives register) ───────────── */
 
 export interface ScenarioSource {
@@ -188,11 +190,7 @@ export const INDUSTRY_BENCHMARKS: BenchmarkMarker[] = [
 export const SCENARIO_SOURCES: ScenarioSource[] = [
   // — scenario ensembles / databases —
   {
-    id: 'ar6-db-iiasa',
-    short: 'AR6 Scenario DB (IIASA)',
-    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database (release 1.1, Nov 2022) [Data set]. Zenodo. Hosted by IIASA — 3,131 scenarios, 188 modelling frameworks; 1,202 climate-classified (C1–C8).',
-    url: 'https://data.ece.iiasa.ac.at/ar6/',
-    doi: '10.5281/zenodo.5886912',
+    ...AR6_DB_IIASA_BASE,
     family: 'IIASA / AR6',
   },
   {
