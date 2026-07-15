@@ -124,14 +124,14 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
       {/* controls */}
       <div className="mb-3 flex flex-wrap items-end gap-3">
         <div>
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">Year</div>
-          <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Year</div>
+          <div className="flex overflow-hidden rounded border border-grey-200 dark:border-[var(--mh-border)] text-[11px]">
             {FIGARO_MATRIX_YEARS.map((y) => (
               <button
                 key={y}
                 onClick={() => setYear(y)}
                 className={`px-2.5 py-1 font-semibold transition ${
-                  year === y ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                  year === y ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
                 }`}
               >
                 {y}
@@ -140,13 +140,13 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </div>
         </div>
         <div>
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
             Origin of supply
           </div>
           <select
             value={origin}
             onChange={(e) => setOrigin(e.target.value)}
-            className="rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-grey-800"
+            className="rounded border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1 text-[12px] text-grey-800 dark:text-[var(--mh-fg)]"
           >
             {ORIGIN_SCOPES.map((s) => (
               <option key={s.id} value={s.id}>
@@ -165,11 +165,11 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </select>
         </div>
         <div>
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">Rows</div>
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Rows</div>
           <select
             value={rowScope}
             onChange={(e) => setRowScope(e.target.value as RowScope)}
-            className="rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-grey-800"
+            className="rounded border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1 text-[12px] text-grey-800 dark:text-[var(--mh-fg)]"
           >
             {ROW_SCOPES.map((s) => (
               <option key={s.id} value={s.id}>
@@ -179,11 +179,11 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </select>
         </div>
         <div>
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">Columns</div>
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Columns</div>
           <select
             value={colScope}
             onChange={(e) => setColScope(e.target.value as ColScope)}
-            className="rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-grey-800"
+            className="rounded border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1 text-[12px] text-grey-800 dark:text-[var(--mh-fg)]"
           >
             {COL_SCOPES.map((s) => (
               <option key={s.id} value={s.id}>
@@ -193,12 +193,12 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </select>
         </div>
         <div>
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">Values</div>
-          <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Values</div>
+          <div className="flex overflow-hidden rounded border border-grey-200 dark:border-[var(--mh-border)] text-[11px]">
             <button
               onClick={() => setUnit('bn')}
               className={`px-2.5 py-1 font-semibold transition ${
-                unit === 'bn' ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                unit === 'bn' ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
               }`}
             >
               € bn
@@ -206,7 +206,7 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
             <button
               onClick={() => setUnit('pct')}
               className={`px-2.5 py-1 font-semibold transition ${
-                unit === 'pct' ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                unit === 'pct' ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
               }`}
               title="Each cell as % of its column's total supply (all rows, current origin selection)"
             >
@@ -215,50 +215,50 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </div>
         </div>
         <div className="grow">
-          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+          <div className="mb-0.5 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
             Filter rows
           </div>
           <input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="e.g. C24, basic metals, pharma…"
-            className="w-full max-w-[240px] rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-grey-800"
+            className="w-full max-w-[240px] rounded border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1 text-[12px] text-grey-800 dark:text-[var(--mh-fg)]"
           />
         </div>
         <button
           onClick={downloadCsv}
-          className="rounded border border-primary px-2.5 py-1 text-[11px] font-semibold text-primary transition hover:bg-surface-blue"
+          className="rounded border border-primary px-2.5 py-1 text-[11px] font-semibold text-primary transition hover:bg-surface-blue dark:hover:bg-primary/15"
         >
           ⬇ CSV (this slice)
         </button>
       </div>
 
-      <p className="mb-2 text-[11px] text-grey-500">
-        <span className="font-semibold text-grey-700">{originLabel}</span>, {year} — rows supply, columns
+      <p className="mb-2 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+        <span className="font-semibold text-grey-700 dark:text-[var(--mh-muted)]">{originLabel}</span>, {year} — rows supply, columns
         use. {unit === 'bn' ? 'Values in € billion (current prices, basic prices).' : 'Each cell as a share of its column’s total supply under the current origin selection.'}{' '}
         Shading scales with the value. {rowIdxs.length} × {colIdxs.length} of 70 × 69 cells shown.
       </p>
 
       {/* the table */}
-      <div className="max-h-[560px] overflow-auto rounded border border-grey-200">
+      <div className="max-h-[560px] overflow-auto rounded border border-grey-200 dark:border-[var(--mh-border)]">
         <table className="border-collapse text-[10px]" style={{ minWidth: 640 }}>
           <thead>
             <tr>
-              <th className="sticky left-0 top-0 z-30 border-b border-r border-grey-200 bg-grey-50 px-2 py-1 text-left font-semibold text-grey-600">
+              <th className="sticky left-0 top-0 z-30 border-b border-r border-grey-200 dark:border-[var(--mh-border)] bg-grey-50 dark:bg-[var(--mh-bg)] px-2 py-1 text-left font-semibold text-grey-600 dark:text-[var(--mh-muted)]">
                 supplying ↓ · using →
               </th>
               {colIdxs.map((c) => (
                 <th
                   key={data.indUse[c]}
-                  className={`sticky top-0 z-20 border-b border-grey-200 px-1 py-1 text-right font-semibold ${
-                    c >= n ? 'bg-surface-teal text-tertiary' : 'bg-grey-50 text-grey-600'
+                  className={`sticky top-0 z-20 border-b border-grey-200 dark:border-[var(--mh-border)] px-1 py-1 text-right font-semibold ${
+                    c >= n ? 'bg-surface-teal dark:bg-secondary/15 text-tertiary' : 'bg-grey-50 dark:bg-[var(--mh-bg)] text-grey-600 dark:text-[var(--mh-muted)]'
                   }`}
                   title={shortLabel(data, data.indUse[c])}
                 >
                   {data.indUse[c]}
                 </th>
               ))}
-              <th className="sticky top-0 z-20 border-b border-l border-grey-200 bg-grey-100 px-1.5 py-1 text-right font-bold text-grey-700">
+              <th className="sticky top-0 z-20 border-b border-l border-grey-200 dark:border-[var(--mh-border)] bg-grey-100 dark:bg-[var(--mh-bg)] px-1.5 py-1 text-right font-bold text-grey-700 dark:text-[var(--mh-muted)]">
                 Σ row
               </th>
             </tr>
@@ -268,15 +268,15 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
               const code = data.indAva[r];
               const isVa = r >= n;
               return (
-                <tr key={code} className="hover:bg-surface-blue/60">
+                <tr key={code} className="hover:bg-surface-blue/60 dark:hover:bg-primary/15">
                   <th
-                    className={`sticky left-0 z-10 max-w-[220px] truncate border-r border-grey-200 px-2 py-0.5 text-left font-medium ${
-                      isVa ? 'bg-surface-yellow text-grey-700' : 'bg-white text-grey-800'
+                    className={`sticky left-0 z-10 max-w-[220px] truncate border-r border-grey-200 dark:border-[var(--mh-border)] px-2 py-0.5 text-left font-medium ${
+                      isVa ? 'bg-surface-yellow dark:bg-accent-yellow/15 text-grey-700 dark:text-[var(--mh-muted)]' : 'bg-white dark:bg-[var(--mh-card)] text-grey-800 dark:text-[var(--mh-fg)]'
                     }`}
                     title={shortLabel(data, code)}
                   >
                     <span className="font-semibold">{code}</span>{' '}
-                    <span className="font-normal text-grey-500">{shortLabel(data, code)}</span>
+                    <span className="font-normal text-grey-500 dark:text-[var(--mh-muted)]">{shortLabel(data, code)}</span>
                   </th>
                   {colIdxs.map((c, ci) => {
                     const v = matrix[r][c];
@@ -284,7 +284,7 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
                     return (
                       <td
                         key={c}
-                        className="px-1 py-0.5 text-right tabular-nums text-grey-800"
+                        className="px-1 py-0.5 text-right tabular-nums text-grey-800 dark:text-[var(--mh-fg)]"
                         style={{ background: heat(v) }}
                         title={`${code} → ${data.indUse[c]} (${shortLabel(data, data.indUse[c])}): €${fmtBn(v)} · ${pct.toFixed(1)}% of column`}
                       >
@@ -292,7 +292,7 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
                       </td>
                     );
                   })}
-                  <td className="border-l border-grey-200 bg-grey-50 px-1.5 py-0.5 text-right font-semibold tabular-nums text-grey-700">
+                  <td className="border-l border-grey-200 dark:border-[var(--mh-border)] bg-grey-50 dark:bg-[var(--mh-bg)] px-1.5 py-0.5 text-right font-semibold tabular-nums text-grey-700 dark:text-[var(--mh-muted)]">
                     {fmtCell(rowTotals[ri])}
                   </td>
                 </tr>
@@ -301,13 +301,13 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
           </tbody>
           <tfoot>
             <tr>
-              <th className="sticky bottom-0 left-0 z-30 border-r border-t border-grey-200 bg-grey-100 px-2 py-1 text-left font-bold text-grey-700">
+              <th className="sticky bottom-0 left-0 z-30 border-r border-t border-grey-200 dark:border-[var(--mh-border)] bg-grey-100 dark:bg-[var(--mh-bg)] px-2 py-1 text-left font-bold text-grey-700 dark:text-[var(--mh-muted)]">
                 Σ visible rows
               </th>
               {colTotalsVisible.map((t, ci) => (
                 <td
                   key={ci}
-                  className="sticky bottom-0 z-20 border-t border-grey-200 bg-grey-100 px-1 py-1 text-right font-semibold tabular-nums text-grey-700"
+                  className="sticky bottom-0 z-20 border-t border-grey-200 dark:border-[var(--mh-border)] bg-grey-100 dark:bg-[var(--mh-bg)] px-1 py-1 text-right font-semibold tabular-nums text-grey-700 dark:text-[var(--mh-muted)]"
                 >
                   {unit === 'pct'
                     ? colTotalsAll[ci] > 0
@@ -316,7 +316,7 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
                     : fmtCell(t)}
                 </td>
               ))}
-              <td className="sticky bottom-0 z-20 border-l border-t border-grey-200 bg-grey-200 px-1.5 py-1 text-right font-bold tabular-nums text-grey-900">
+              <td className="sticky bottom-0 z-20 border-l border-t border-grey-200 dark:border-[var(--mh-border)] bg-grey-200 dark:bg-[var(--mh-border)] px-1.5 py-1 text-right font-bold tabular-nums text-grey-900 dark:text-[var(--mh-fg)]">
                 {fmtCell(rowTotals.reduce((a, b) => a + b, 0))}
               </td>
             </tr>
@@ -324,10 +324,10 @@ export default function FigaroTableViewer({ data }: { data: FigaroIoData }) {
         </table>
       </div>
 
-      <p className="mt-2 text-[10px] leading-snug text-grey-400">
+      <p className="mt-2 text-[10px] leading-snug text-grey-400 dark:text-[var(--mh-muted)]">
         Rows C10-12 … C33 are NACE Section C. Yellow rows = value added &amp; adjustments (intra-EU view
         only); teal columns = final demand. &apos;·&apos; = below €50 m (or 0.05%). Hover any cell for the
-        exact value. Source: Eurostat FIGARO <code className="rounded bg-grey-100 px-1">naio_10_fcp_ii4</code>,
+        exact value. Source: Eurostat FIGARO <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">naio_10_fcp_ii4</code>,
         aggregated to EU-27 as one economy.
       </p>
     </div>

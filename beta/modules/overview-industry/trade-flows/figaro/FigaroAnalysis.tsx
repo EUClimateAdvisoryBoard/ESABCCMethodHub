@@ -48,17 +48,17 @@ function HBar({
 }) {
   return (
     <div className="grid grid-cols-[168px_1fr_66px] items-center gap-2" title={title}>
-      <div className="truncate text-[11px] text-grey-800">
+      <div className="truncate text-[11px] text-grey-800 dark:text-[var(--mh-fg)]">
         <span className="font-semibold">{label}</span>
-        {sub && <span className="ml-1 text-[10px] text-grey-500">{sub}</span>}
+        {sub && <span className="ml-1 text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">{sub}</span>}
       </div>
-      <div className="h-3.5 overflow-hidden rounded-sm bg-grey-100">
+      <div className="h-3.5 overflow-hidden rounded-sm bg-grey-100 dark:bg-[var(--mh-bg)]">
         <div
           className="h-full rounded-r-sm"
           style={{ width: `${max > 0 ? Math.max((value / max) * 100, 0.5) : 0}%`, background: color }}
         />
       </div>
-      <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700">{valueLabel}</div>
+      <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700 dark:text-[var(--mh-muted)]">{valueLabel}</div>
     </div>
   );
 }
@@ -89,14 +89,14 @@ function RestOfWorldBreakdown({
   const shownSum = shown.reduce((s, p) => s + (p.imp[year] ?? 0), 0);
 
   return (
-    <div className="mt-3 rounded border border-grey-200 bg-grey-50 p-2.5">
+    <div className="mt-3 rounded border border-grey-200 dark:border-[var(--mh-border)] bg-grey-50 dark:bg-[var(--mh-bg)] p-2.5">
       <div className="flex items-baseline justify-between gap-2">
-        <span className="text-[11px] font-bold text-grey-800">
+        <span className="text-[11px] font-bold text-grey-800 dark:text-[var(--mh-fg)]">
           Inside &quot;Rest of the world&quot; (€{fmtBn(restTotal)} above)
         </span>
-        <span className="text-[9px] text-grey-500">customs goods trade, {year}</span>
+        <span className="text-[9px] text-grey-500 dark:text-[var(--mh-muted)]">customs goods trade, {year}</span>
       </div>
-      <p className="mb-1.5 mt-0.5 text-[10px] leading-snug text-grey-500">
+      <p className="mb-1.5 mt-0.5 text-[10px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
         FIGARO names only 23 partners — everyone else is one block. EU goods imports by partner country
         (different attribution, indicative composition only):
       </p>
@@ -113,7 +113,7 @@ function RestOfWorldBreakdown({
           />
         ))}
       </div>
-      <p className="mt-1.5 text-[9px] leading-snug text-grey-400">
+      <p className="mt-1.5 text-[9px] leading-snug text-grey-400 dark:text-[var(--mh-muted)]">
         Top {shown.length} of {partners.length} named countries, €{fmtBn(shownSum)} of goods imports. Source:
         Eurostat TEC{' '}
         <a
@@ -254,30 +254,30 @@ export default function FigaroAnalysis({
   }, [stats.perIndustry, manufacturingOnly]);
 
   const kpi = (v: string, l: string, d: string) => (
-    <div className="rounded-lg border border-grey-200 bg-white p-3">
-      <div className="text-2xl font-bold text-grey-900">{v}</div>
-      <div className="mt-0.5 text-xs font-semibold text-grey-700">{l}</div>
-      <div className="mt-1 text-[11px] leading-snug text-grey-500">{d}</div>
+    <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
+      <div className="text-2xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">{v}</div>
+      <div className="mt-0.5 text-xs font-semibold text-grey-700 dark:text-[var(--mh-muted)]">{l}</div>
+      <div className="mt-1 text-[11px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">{d}</div>
     </div>
   );
 
   return (
     <div>
       <div className="mb-3 flex flex-wrap items-center gap-3">
-        <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+        <div className="flex overflow-hidden rounded border border-grey-200 dark:border-[var(--mh-border)] text-[11px]">
           {FIGARO_MATRIX_YEARS.map((y) => (
             <button
               key={y}
               onClick={() => setYear(y)}
               className={`px-2.5 py-1 font-semibold transition ${
-                year === y ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                year === y ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
               }`}
             >
               {y}
             </button>
           ))}
         </div>
-        <span className="text-[11px] text-grey-500">
+        <span className="text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
           All figures computed live from the MethodHub-hosted FIGARO extract (EU-27 as one economy, € current
           prices).
         </span>
@@ -291,12 +291,12 @@ export default function FigaroAnalysis({
           `Everything EU industries bought from other industries in ${year} — the inter-industry economy the table maps.`,
         )}
         {kpi(
-          `${((stats.totalImported / stats.totalIntermediate) * 100).toFixed(1)}%`,
+          `${(stats.totalIntermediate > 0 ? (stats.totalImported / stats.totalIntermediate) * 100 : 0).toFixed(1)}%`,
           'of those inputs were imported',
           `€${fmtBn(stats.totalImported)} of intermediate inputs came from outside the EU-27.`,
         )}
         {kpi(
-          `${((stats.manufImported / stats.manufTotal) * 100).toFixed(1)}%`,
+          `${(stats.manufTotal > 0 ? (stats.manufImported / stats.manufTotal) * 100 : 0).toFixed(1)}%`,
           'imported share in manufacturing',
           `Section C bought €${fmtBn(stats.manufTotal)} of intermediate inputs; €${fmtBn(stats.manufImported)} imported.`,
         )}
@@ -309,10 +309,10 @@ export default function FigaroAnalysis({
 
       <div className="grid gap-4 lg:grid-cols-2">
         {/* import dependence by industry */}
-        <div className="rounded-lg border border-grey-200 bg-white p-4">
+        <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
           <div className="flex flex-wrap items-center justify-between gap-2">
-            <h3 className="text-sm font-bold text-grey-900">Import dependence by industry</h3>
-            <label className="flex items-center gap-1.5 text-[11px] text-grey-600">
+            <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Import dependence by industry</h3>
+            <label className="flex items-center gap-1.5 text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
               <input
                 type="checkbox"
                 checked={manufacturingOnly}
@@ -321,7 +321,7 @@ export default function FigaroAnalysis({
               manufacturing only
             </label>
           </div>
-          <p className="mb-2 mt-1 text-[11px] text-grey-500">
+          <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
             Imported share of each industry&apos;s intermediate inputs, {year}.{' '}
             <span className="font-semibold" style={{ color: BLUE }}>
               Blue
@@ -345,11 +345,11 @@ export default function FigaroAnalysis({
         </div>
 
         {/* who supplies the EU */}
-        <div className="rounded-lg border border-grey-200 bg-white p-4">
-          <h3 className="text-sm font-bold text-grey-900">Who supplies the EU-27</h3>
-          <p className="mb-2 mt-1 text-[11px] text-grey-500">
+        <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+          <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Who supplies the EU-27</h3>
+          <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
             Total supply delivered into EU-27 use by partner, {year} — solid ={' '}
-            <span className="font-semibold text-grey-700">to industries (intermediate)</span>, pale = to final
+            <span className="font-semibold text-grey-700 dark:text-[var(--mh-muted)]">to industries (intermediate)</span>, pale = to final
             demand. Hover for the split.
           </p>
           <div className="space-y-1">
@@ -361,14 +361,14 @@ export default function FigaroAnalysis({
                   className="grid grid-cols-[128px_1fr_66px] items-center gap-2"
                   title={`${data.countries[o.code] ?? o.code}: €${fmtBn(o.int)} to intermediate use + €${fmtBn(o.fin)} to final demand`}
                 >
-                  <div className="truncate text-[11px] font-semibold text-grey-800">
+                  <div className="truncate text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
                     {data.countries[o.code] ?? o.code}
                   </div>
-                  <div className="flex h-3.5 overflow-hidden rounded-sm bg-grey-100">
+                  <div className="flex h-3.5 overflow-hidden rounded-sm bg-grey-100 dark:bg-[var(--mh-bg)]">
                     <div style={{ width: `${(o.int / max) * 100}%`, background: RED }} />
                     <div style={{ width: `${(o.fin / max) * 100}%`, background: RED, opacity: 0.35 }} />
                   </div>
-                  <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700">
+                  <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700 dark:text-[var(--mh-muted)]">
                     €{fmtBn(o.total)}
                   </div>
                 </div>
@@ -387,9 +387,9 @@ export default function FigaroAnalysis({
         </div>
 
         {/* biggest imported flows */}
-        <div className="rounded-lg border border-grey-200 bg-white p-4">
-          <h3 className="text-sm font-bold text-grey-900">The 15 largest imported input flows</h3>
-          <p className="mb-2 mt-1 text-[11px] text-grey-500">
+        <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+          <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">The 15 largest imported input flows</h3>
+          <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
             Single origin → supplying industry → EU use, {year}. The concentrated arteries of the EU&apos;s
             import structure.
           </p>
@@ -409,11 +409,11 @@ export default function FigaroAnalysis({
         </div>
 
         {/* EU exports */}
-        <div className="rounded-lg border border-grey-200 bg-white p-4">
-          <h3 className="text-sm font-bold text-grey-900">Where EU-27 output goes (exports)</h3>
+        <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+          <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Where EU-27 output goes (exports)</h3>
           {exportStats ? (
             <>
-              <p className="mb-2 mt-1 text-[11px] text-grey-500">
+              <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
                 EU-27 deliveries to extra-EU economies, {year}: €{fmtBn(exportStats.total)} in total. Top
                 destinations, all industries.
               </p>
@@ -429,7 +429,7 @@ export default function FigaroAnalysis({
                   />
                 ))}
               </div>
-              <div className="mb-1 mt-3 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+              <div className="mb-1 mt-3 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
                 Top exporting industries
               </div>
               <div className="space-y-1">
@@ -448,19 +448,19 @@ export default function FigaroAnalysis({
               </div>
             </>
           ) : (
-            <p className="mt-2 text-[11px] text-grey-500">Loading export data…</p>
+            <p className="mt-2 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">Loading export data…</p>
           )}
         </div>
       </div>
 
       {/* industry focus */}
-      <div className="mt-4 rounded-lg border border-grey-200 bg-white p-4">
+      <div className="mt-4 rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
         <div className="flex flex-wrap items-center gap-2">
-          <h3 className="text-sm font-bold text-grey-900">Industry focus — input decomposition of</h3>
+          <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Industry focus — input decomposition of</h3>
           <select
             value={focus}
             onChange={(e) => setFocus(e.target.value)}
-            className="rounded border border-grey-200 bg-white px-2 py-1 text-[12px] text-grey-800"
+            className="rounded border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] px-2 py-1 text-[12px] text-grey-800 dark:text-[var(--mh-fg)]"
           >
             {data.indUse.slice(0, n).map((code) => (
               <option key={code} value={code}>
@@ -472,7 +472,7 @@ export default function FigaroAnalysis({
         {focusStats && (
           <div className="mt-3 grid gap-4 md:grid-cols-2">
             <div>
-              <div className="mb-1 text-[11px] text-grey-600">
+              <div className="mb-1 text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
                 {focus} bought <span className="font-bold">€{fmtBn(focusStats.total)}</span> of intermediate
                 inputs in {year} — <span className="font-bold text-accent-red">{focusStats.total > 0 ? ((focusStats.imp / focusStats.total) * 100).toFixed(1) : '0'}% imported</span>. Top supplying industries (solid = intra-EU, pale red = imported):
               </div>
@@ -485,15 +485,15 @@ export default function FigaroAnalysis({
                       className="grid grid-cols-[168px_1fr_66px] items-center gap-2"
                       title={`${shortLabel(data, r.code)}: €${fmtBn(r.dom)} intra-EU + €${fmtBn(r.imp)} imported`}
                     >
-                      <div className="truncate text-[11px] text-grey-800">
+                      <div className="truncate text-[11px] text-grey-800 dark:text-[var(--mh-fg)]">
                         <span className="font-semibold">{r.code}</span>{' '}
-                        <span className="text-[10px] text-grey-500">{shortLabel(data, r.code).slice(0, 24)}</span>
+                        <span className="text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">{shortLabel(data, r.code).slice(0, 24)}</span>
                       </div>
-                      <div className="flex h-3.5 overflow-hidden rounded-sm bg-grey-100">
+                      <div className="flex h-3.5 overflow-hidden rounded-sm bg-grey-100 dark:bg-[var(--mh-bg)]">
                         <div style={{ width: `${(r.dom / max) * 100}%`, background: BLUE }} />
                         <div style={{ width: `${(r.imp / max) * 100}%`, background: RED }} />
                       </div>
-                      <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700">
+                      <div className="text-right text-[10px] font-semibold tabular-nums text-grey-700 dark:text-[var(--mh-muted)]">
                         €{fmtBn(r.total)}
                       </div>
                     </div>
@@ -502,7 +502,7 @@ export default function FigaroAnalysis({
               </div>
             </div>
             <div>
-              <div className="mb-1 text-[11px] text-grey-600">
+              <div className="mb-1 text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
                 Where {focus}&apos;s imported inputs come from (all supplying industries summed):
               </div>
               <div className="space-y-1">
@@ -517,7 +517,7 @@ export default function FigaroAnalysis({
                   />
                 ))}
               </div>
-              <p className="mt-2 text-[10px] leading-snug text-grey-400">
+              <p className="mt-2 text-[10px] leading-snug text-grey-400 dark:text-[var(--mh-muted)]">
                 Legend: <span className="font-semibold" style={{ color: BLUE }}>blue</span> = intra-EU supply,{' '}
                 <span className="font-semibold" style={{ color: RED }}>red</span> = extra-EU imports. Origin
                 bars sum every supplying industry&apos;s deliveries into {focus}.

@@ -48,21 +48,21 @@ function Src({ src, label }: { src: Source; label?: string }) {
 
 function Section({ n, title, children }: { n: number; title: string; children: React.ReactNode }) {
   return (
-    <section className="rounded-lg border border-grey-200 bg-white p-4">
-      <h3 className="flex items-baseline gap-2 text-sm font-bold text-grey-900">
+    <section className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+      <h3 className="flex items-baseline gap-2 text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">
         <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">
           {n}
         </span>
         {title}
       </h3>
-      <div className="mt-2 space-y-2 text-xs leading-relaxed text-grey-700">{children}</div>
+      <div className="mt-2 space-y-2 text-xs leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">{children}</div>
     </section>
   );
 }
 
 function Formula({ children }: { children: React.ReactNode }) {
   return (
-    <div className="rounded border border-grey-200 bg-grey-50 px-3 py-2 font-mono text-[11px] text-grey-800">
+    <div className="rounded border border-grey-200 dark:border-[var(--mh-border)] bg-grey-50 dark:bg-[var(--mh-bg)] px-3 py-2 font-mono text-[11px] text-grey-800 dark:text-[var(--mh-fg)]">
       {children}
     </div>
   );
@@ -173,7 +173,7 @@ export default function MethodologyPanel() {
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-[11px]">
             <thead>
-              <tr className="border-b border-grey-300 text-left text-grey-500">
+              <tr className="border-b border-grey-300 dark:border-[var(--mh-border)] text-left text-grey-500 dark:text-[var(--mh-muted)]">
                 <th className="py-1.5 pr-3 font-semibold">Dataset</th>
                 <th className="py-1.5 pr-3 font-semibold">Feeds</th>
                 <th className="py-1.5 pr-3 font-semibold">Attribution concept</th>
@@ -182,7 +182,7 @@ export default function MethodologyPanel() {
             </thead>
             <tbody>
               {DATASETS.map((d) => (
-                <tr key={d.code} className="border-b border-grey-100 align-top">
+                <tr key={d.code} className="border-b border-grey-100 dark:border-[var(--mh-border)] align-top">
                   <td className="py-1.5 pr-3 font-mono text-[10px]">
                     <Src src={d.src} label={d.code} />
                   </td>
@@ -237,7 +237,7 @@ export default function MethodologyPanel() {
       </Section>
 
       <Section n={5} title="Definitions & formulas">
-        <p className="font-semibold text-grey-800">Imported share of intermediate inputs (use table)</p>
+        <p className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Imported share of intermediate inputs (use table)</p>
         <Formula>
           imported share(i) = imported intermediate inputs(i) / total intermediate inputs(i)
         </Formula>
@@ -247,7 +247,7 @@ export default function MethodologyPanel() {
           EU. Across manufacturing: €{Math.round(INPUT_MIX_TOTAL_C.importedBn)} bn imported of €
           {Math.round(INPUT_MIX_TOTAL_C.totalBn)} bn total inputs = {INPUT_MIX_TOTAL_C.importedShare}%.
         </p>
-        <p className="mt-2 font-semibold text-grey-800">Foreign value added in exports (FIGARO)</p>
+        <p className="mt-2 font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Foreign value added in exports (FIGARO)</p>
         <Formula>
           FVA share(i) = FVA(i) / gross extra-EU exports(i), &nbsp;FVA via v̂ · L · x̂ (Leontief decomposition)
         </Formula>
@@ -259,15 +259,25 @@ export default function MethodologyPanel() {
           {FIGARO_C_FVA ? FIGARO_C_FVA.fvaPct : 22.4}% of gross exports; C19 peaks at{' '}
           {fvaC19 ? fvaC19.fvaPct : 64}%. Cross-check: <Src src={OECD_TIVA_EU} label="OECD TiVA" /> (EU-27,
           data year 2020) put C19 at 49.9% — the level differences reflect the data year (2022–23 energy
-          prices), not disagreement about the method.
+          prices), not disagreement about the method. For a machine-checkable, up-to-date look at the same
+          series, see the{' '}
+          <a
+            href="https://www.oecd.org/en/topics/sub-issues/trade-in-value-added.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            interactive OECD TiVA data explorer ↗
+          </a>
+          .
         </p>
-        <p className="mt-2 font-semibold text-grey-800">Import reliance (EC criticality methodology)</p>
+        <p className="mt-2 font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Import reliance (EC criticality methodology)</p>
         <Formula>IR = (imports − exports) / (domestic production + imports − exports)</Formula>
         <p>
           Used for the curated materials layer and the dependency map’s x-axis, as reported by the EC/JRC
           criticality studies. It nets out re-exports, which is why it can differ from customs shares.
         </p>
-        <p className="mt-2 font-semibold text-grey-800">Supplier concentration (dependency map y-axis)</p>
+        <p className="mt-2 font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Supplier concentration (dependency map y-axis)</p>
         <p>
           The largest single supplier’s share of EU supply of that material or product — a first-moment
           proxy for the Herfindahl-Hirschman index used in the EC and IMF dependency literature. It
@@ -298,7 +308,7 @@ export default function MethodologyPanel() {
             EU’s most acute, is <em>invisible</em> in the named-partner shares and appears only in the
             curated layer. Rest-of-world is also large for fuels (OPEC states are not named). The FIGARO IO
             data view therefore adds an <em>indicative</em> breakdown of that block from customs statistics
-            (<code className="rounded bg-grey-100 px-1">ext_tec03</code>, EU goods trade by partner country:
+            (<code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">ext_tec03</code>, EU goods trade by partner country:
             Taiwan, Viet Nam, Kazakhstan, the Gulf states, Ukraine, North Africa…) — a different attribution
             (TEC/customs, goods only), shown separately and never mixed into the FIGARO figures.
           </li>
@@ -329,18 +339,18 @@ export default function MethodologyPanel() {
         </p>
         <Formula>node scripts/fetch-trade-flows-io-data.mjs</Formula>
         <p>
-          The script writes <code className="rounded bg-grey-100 px-1">eurostat-io.generated.ts</code> with
+          The script writes <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">eurostat-io.generated.ts</code> with
           the full extract (backbone, use-table input mixes, FIGARO origins/destinations/FVA, energy
           dependency), stamped with the generation date. The curated dependency layer lives in{' '}
-          <code className="rounded bg-grey-100 px-1">trade-data.ts</code>, one source link per figure.
+          <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">trade-data.ts</code>, one source link per figure.
           Nothing is invented; if a number has no source, it does not appear.
         </p>
         <Formula>node scripts/fetch-figaro-io-dataset.mjs --refresh</Formula>
         <p>
           A second script imports the <em>entire</em> FIGARO inter-country input–output table
-          (<code className="rounded bg-grey-100 px-1">naio_10_fcp_ii4</code>, ~11 million cells, 2022–2023)
+          (<code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">naio_10_fcp_ii4</code>, ~11 million cells, 2022–2023)
           from the Eurostat bulk-download service and condenses it to the EU-27-as-one-economy account
-          served from <code className="rounded bg-grey-100 px-1">public/data/figaro/</code> — the dataset
+          served from <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">public/data/figaro/</code> — the dataset
           behind the FIGARO IO data view lives in this repository, not behind an external link. Aggregation
           choices (EU-27 destinations summed, value-added rows folded into the intra-EU origin, €0.1 m
           rounding) are documented in the script header and in the view&apos;s &quot;The data&quot; panel.

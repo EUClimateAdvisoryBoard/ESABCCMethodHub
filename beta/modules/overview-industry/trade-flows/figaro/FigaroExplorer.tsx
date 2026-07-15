@@ -34,7 +34,12 @@ export default function FigaroExplorer() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadFigaroIo().then(setIo).catch((e) => setError(String(e)));
+    loadFigaroIo()
+      .then(setIo)
+      .catch((e) => {
+        console.error('Failed to load the FIGARO extract', e);
+        setError(String(e));
+      });
     loadFigaroGlobal().then(setGlobal).catch(() => undefined);
   }, []);
 
@@ -46,25 +51,31 @@ export default function FigaroExplorer() {
             key={v.id}
             onClick={() => setView(v.id)}
             className={`rounded-lg border px-3 py-1.5 text-left transition ${
-              view === v.id ? 'border-primary bg-surface-blue' : 'border-grey-200 bg-white hover:border-grey-400'
+              view === v.id ? 'border-primary bg-surface-blue dark:bg-primary/15' : 'border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] hover:border-grey-400 dark:hover:border-[var(--mh-muted)]'
             }`}
           >
-            <div className={`text-sm font-semibold ${view === v.id ? 'text-primary' : 'text-grey-800'}`}>
+            <div className={`text-sm font-semibold ${view === v.id ? 'text-primary' : 'text-grey-800 dark:text-[var(--mh-fg)]'}`}>
               {v.label}
             </div>
-            <div className="text-[10px] text-grey-500">{v.blurb}</div>
+            <div className="text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">{v.blurb}</div>
           </button>
         ))}
       </div>
 
       {error && (
-        <div className="rounded-lg border border-accent-red/40 bg-surface-orange/40 p-4 text-sm text-grey-700">
-          Could not load the FIGARO extract ({error}). Regenerate it with{' '}
-          <code className="rounded bg-grey-100 px-1 text-[12px]">node scripts/fetch-figaro-io-dataset.mjs</code>.
+        <div className="rounded-lg border border-accent-red/40 bg-surface-orange/40 dark:bg-accent-red/10 p-4 text-sm text-grey-700 dark:text-[var(--mh-muted)]">
+          <p>
+            Couldn&apos;t load the FIGARO extract. Regenerate it with{' '}
+            <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[12px]">node scripts/fetch-figaro-io-dataset.mjs</code>.
+          </p>
+          <details className="mt-2 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+            <summary className="cursor-pointer select-none">Technical details</summary>
+            <p className="mt-1 whitespace-pre-wrap break-words font-mono">{error}</p>
+          </details>
         </div>
       )}
       {!io && !error && (
-        <div className="rounded-lg border border-grey-200 bg-white p-8 text-center text-sm text-grey-500">
+        <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-8 text-center text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           Loading the FIGARO input–output extract (≈0.9 MB, served from the MethodHub)…
         </div>
       )}
@@ -78,17 +89,17 @@ export default function FigaroExplorer() {
 
 function DataPanel({ data }: { data: FigaroIoData }) {
   const row = (k: string, v: React.ReactNode) => (
-    <div className="grid grid-cols-[180px_1fr] gap-2 border-b border-grey-100 py-1.5 text-[12px]">
-      <div className="font-semibold text-grey-600">{k}</div>
-      <div className="text-grey-800">{v}</div>
+    <div className="grid grid-cols-[180px_1fr] gap-2 border-b border-grey-100 dark:border-[var(--mh-border)] py-1.5 text-[12px]">
+      <div className="font-semibold text-grey-600 dark:text-[var(--mh-muted)]">{k}</div>
+      <div className="text-grey-800 dark:text-[var(--mh-fg)]">{v}</div>
     </div>
   );
   return (
-    <div className="rounded-lg border border-grey-200 bg-white p-4">
-      <h3 className="text-sm font-bold text-grey-900">The dataset behind this page</h3>
-      <p className="mt-1 max-w-text text-[12px] leading-relaxed text-grey-600">
+    <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+      <h3 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">The dataset behind this page</h3>
+      <p className="mt-1 max-w-text text-[12px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
         The complete Eurostat FIGARO inter-country input–output table (industry by industry, ~11 million
-        cells) is imported by <code className="rounded bg-grey-100 px-1">scripts/fetch-figaro-io-dataset.mjs</code>{' '}
+        cells) is imported by <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1">scripts/fetch-figaro-io-dataset.mjs</code>{' '}
         and condensed to the EU-27-as-one-economy account you are browsing: for each origin (intra-EU + 23
         partner areas) the full supplying-industry × using-industry matrix, plus the 50×50 country flow
         matrix and EU export margins. The JSON lives in this repository and is served from the MethodHub —
@@ -131,10 +142,10 @@ function DataPanel({ data }: { data: FigaroIoData }) {
           </span>
         ))}
         {row('Reproduce / refresh', (
-          <code className="rounded bg-grey-100 px-1 text-[11px]">node scripts/fetch-figaro-io-dataset.mjs --refresh</code>
+          <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[11px]">node scripts/fetch-figaro-io-dataset.mjs --refresh</code>
         ))}
       </div>
-      <p className="mt-3 max-w-text text-[11px] leading-snug text-grey-500">
+      <p className="mt-3 max-w-text text-[11px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
         Reading guide: a cell is the € value of what row industry (in the origin area) delivered into the
         column&apos;s use in the EU-27. The intra-EU view carries the value-added and adjustment rows
         (B2A3G, D1, D21X31, D29X39, OP_RES, OP_NRES), so each industry column under &quot;All origins&quot;

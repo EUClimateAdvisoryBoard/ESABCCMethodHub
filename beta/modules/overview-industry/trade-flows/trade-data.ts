@@ -376,7 +376,8 @@ export interface CriticalMaterial {
 /**
  * CURATED LAYER — critical & strategic raw materials the EU manufactures with
  * but barely produces. Framing: Critical Raw Materials Act, Reg. (EU)
- * 2024/1252 — 34 critical + 17 strategic raw materials. `euImportReliance`
+ * 2024/1252 — 34 critical raw materials (Annex II), 17 of which are
+ * additionally designated strategic (Annex I). `euImportReliance`
  * follows the EC criticality methodology: IR = (imports − exports) /
  * (domestic production + imports − exports). `supplierShare` is the EC/JRC
  * "share of EU supply" (sourcing stage) unless the source says otherwise; that
