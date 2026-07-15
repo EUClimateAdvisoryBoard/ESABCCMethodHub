@@ -15,15 +15,29 @@
  * from the Eurostat API (`scripts/fetch-trade-flows-io-data.mjs`,
  * `scripts/fetch-figaro-io-dataset.mjs`); dependency figures are sourced to
  * the EC/JRC strategic-dependency reviews and the Critical Raw Materials Act.
- * Every value is linked.
+ * Every value is linked. Everything on this page exports to ONE Excel handover
+ * workbook (./export.ts) — backbone, IO layers, dependency layers and sources.
  */
 
+import { useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import TradeFlowExplorer from './TradeFlowExplorer';
+import { exportTradeFlowsWorkbook } from './export';
 
 export default function TradeFlowsPage() {
+  const [exporting, setExporting] = useState(false);
+
+  const onExport = async () => {
+    setExporting(true);
+    try {
+      await exportTradeFlowsWorkbook();
+    } finally {
+      setExporting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-grey-50">
       <SiteHeader />
@@ -69,6 +83,21 @@ export default function TradeFlowsPage() {
             attribution concepts, formulas, limits — is one click away in the{' '}
             <span className="font-semibold">Methodology</span> view.
           </p>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              onClick={onExport}
+              disabled={exporting}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-dark disabled:opacity-60"
+            >
+              {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
+            </button>
+            <span className="text-[12px] text-grey-500">
+              12 sheets: read-me · headline facts · trade backbone (2023 + 2024) · FIGARO partners ·
+              foreign value added · imported inputs · critical materials · strategic &amp; energy
+              dependencies · risk hotspots · critical inputs · sources
+            </span>
+          </div>
         </header>
 
         <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
