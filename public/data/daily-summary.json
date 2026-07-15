@@ -1,6 +1,6 @@
 {
   "date": "2026-07-15",
-  "generatedAt": "2026-07-15T12:19:11.497Z",
+  "generatedAt": "2026-07-15T18:08:35.474Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 15 July 2026 — Key developments from the last 24 hours",
   "highlights": [
@@ -11,16 +11,22 @@
       "color": "#007B6C"
     },
     {
-      "headline": "Commissioner's Roswall speech at the United Nations High-Level Meeting on Critical Energy Transition Minerals, New York",
-      "summary": "European Commission Speech New York, 14 Jul 2026 Thank you, Madam Deputy Secretary-General, Excellencies, ladies and gentlemen.\r\nLet me begin by thanking the United Nations for convening this important meeting ...",
+      "headline": "China detains US scientist who studied North Korea nuclear tests",
+      "summary": "Chen Youlin's family says he has been wrongfully detained for nearly two years on spying charges.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "28 quotes from next UK leader Andy Burnham on climate, net-zero and fossil fuels",
-      "summary": "The UK’s incoming prime minister Andy Burnham has remained tight-lipped on his views on climate... The post 28 quotes from next UK leader Andy Burnham on climate, net-zero and fossil fuels appeared first on Carbon Brief.",
+      "headline": "Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks",
+      "summary": "Plans to build Africa's second largest oil refinery in ecologically sensitive region criticised as \"environmental recklessness\" The post Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
+    },
+    {
+      "headline": "US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "tag": "FINANCE",
+      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -35,22 +41,6 @@
           "description": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
           "published": "2026-07-14T22:00:00.000Z",
           "score": 27
-        },
-        {
-          "title": "Highlights - Exchange of views with the Commission on the environmental protection in Albania - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79253",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260701PHT46239/20260701PHT46239-ms.jpeg\" width=\"180\" alt=\"environmental protection areas\" title=\"picture flamingos.jpeg © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI members held an exchange of views on the ongoing accession negotiations of Chapter 27 dedicated to environment and climate change. This exchange of views took",
-          "published": "2026-07-14T15:55:25.000Z",
-          "score": 24
-        },
-        {
-          "title": "Highlights - ENVI vote on the opinion on the European Regional Development Fund - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79251",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20201124PHT92310/20201124PHT92310-ms.png\" width=\"180\" alt=\"environment, countryside, green deal\" title=\"Green Deal.png © image used under the license from Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July2026, ENVI Members voted on the draft opinion on the future framework of the European Regional Development Fund (ERDF). The file was attributed to REGI as lead committee, ",
-          "published": "2026-07-14T15:54:07.000Z",
-          "score": 24
         }
       ]
     },
@@ -58,22 +48,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Commissioner's Roswall speech at the United Nations High-Level Meeting on Critical Energy Transition Minerals, New York",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1620",
-          "source": "European Commission",
-          "description": "European Commission Speech New York, 14 Jul 2026 Thank you, Madam Deputy Secretary-General, Excellencies, ladies and gentlemen.\r\nLet me begin by thanking the United Nations for convening this important meeting ...",
-          "published": "2026-07-14T17:25:55.000Z",
-          "score": 19
-        },
-        {
-          "title": "Coalition and One Nation’s plan to ditch net zero would not lower power prices, CSIRO report finds",
-          "link": "https://www.theguardian.com/australia-news/2026/jul/15/coalition-and-one-nations-plan-to-ditch-net-zero-would-not-lower-power-prices-csiro-report-finds",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;GenCost report contradicts parties’ claims about abandoning emissions target, and finds nuclear would be most expensive way to generate power&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/15/australia-news-live-ceo-pay-anthony-albanese-palestine-gaza-ai-artificial-intelligence-datacentres-copyright-royal-commission-antisemitism-labor-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&g",
-          "published": "2026-07-14T14:01:27.000Z",
-          "score": 9
-        },
         {
           "title": "China detains US scientist who studied North Korea nuclear tests",
           "link": "https://www.bbc.co.uk/news/articles/cqx1xdn3g4eo?at_medium=RSS&amp;at_campaign=rss",
@@ -83,20 +57,36 @@
           "score": 7
         },
         {
-          "title": "'Hand of God', Rattin and Beckham see red: Witnesses relive England Argentina World Cup rivalry - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0oxMzE4N1RUOFFzY2lFYk9hNVRYa3BiVXY0cVdRTEFsNUljdXpZTW9hLXRNTGphaVg0WUhEalJYb2RhOG1LeG12ZVBkZ0RuejJiZklSZjBHVnRXOGdQUUFMYngxbFR4bnZlbkViRlYwWEFZc3NFU1VfajJZb1JDeTNqOTNOWXVZekhTM0hjbm9neS1PYlhvcGd3cS03ZWsybVZsbHJrSDBJR2R0Qmo2M2I0ZUI0OUIyT0VfVEFvdEtRNmFz?oc=5",
+          "title": "EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0oxMzE4N1RUOFFzY2lFYk9hNVRYa3BiVXY0cVdRTEFsNUljdXpZTW9hLXRNTGphaVg0WUhEalJYb2RhOG1LeG12ZVBkZ0RuejJiZklSZjBHVnRXOGdQUUFMYngxbFR4bnZlbkViRlYwWEFZc3NFU1VfajJZb1JDeTNqOTNOWXVZekhTM0hjbm9neS1PYlhvcGd3cS03ZWsybVZsbHJrSDBJR2R0Qmo2M2I0ZUI0OUIyT0VfVEFvdEtRNmFz?oc=5\" target=\"_blank\"&gt;'Hand of God', Rattin and Beckham see red: Witnesses relive England Argentina World Cup rivalry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reut",
-          "published": "2026-07-14T17:27:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
+          "published": "2026-07-15T17:47:00.000Z",
           "score": 7
         },
         {
-          "title": "US striker Balogun expected controversy over suspended red-card ban - reuters.com",
+          "title": "US striker Balogun expected controversy over suspended red-card ban - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5\" target=\"_blank\"&gt;US striker Balogun expected controversy over suspended red-card ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5\" target=\"_blank\"&gt;US striker Balogun expected controversy over suspended red-card ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-14T20:47:43.000Z",
           "score": 7
+        },
+        {
+          "title": "Surviving extreme heat increasingly boils down to this: access to air conditioning | Mark Wolfe",
+          "link": "https://www.theguardian.com/commentisfree/2026/jul/15/air-conditioning-access-extreme-heat",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;The next great climate divide will be between countries that have the resources to adapt and those that don’t&lt;/p&gt;&lt;p&gt;This summer, much of the media’s attention has focused on record temperatures across Europe and the United States. Television coverage has been filled with familiar images: heat maps shaded deep red, schools closing, rail lines slowing, wildfires spreading and emergency rooms treating growing numbers of people with heat-related illnesses.&lt;/p&gt;&lt;p&gt;Publ",
+          "published": "2026-07-15T12:00:55.000Z",
+          "score": 6
+        },
+        {
+          "title": "To drill or not to drill? Andy Burnham faces North Sea oil dilemma",
+          "link": "https://www.bbc.co.uk/news/articles/cg5350rp3z2o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Burnham, who is expected to become the UK's next prime minister, has been handed a letter from the oil and gas industry calling for his support.",
+          "published": "2026-07-15T05:06:34.000Z",
+          "score": 2
         }
       ]
     },
@@ -105,11 +95,11 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "28 quotes from next UK leader Andy Burnham on climate, net-zero and fossil fuels",
-          "link": "https://www.carbonbrief.org/28-quotes-from-next-uk-leader-andy-burnham-on-climate-net-zero-and-fossil-fuels/",
-          "source": "Carbon Brief",
-          "description": "The UK’s incoming prime minister Andy Burnham has remained tight-lipped on his views on climate... The post 28 quotes from next UK leader Andy Burnham on climate, net-zero and fossil fuels appeared first on Carbon Brief.",
-          "published": "2026-07-14T14:43:57.000Z",
+          "title": "Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks",
+          "link": "https://www.climatechangenews.com/2026/07/15/campaigners-oppose-dangotes-planned-kenya-refinery-over-climate-and-ecological-risks/",
+          "source": "Climate Home News",
+          "description": "Plans to build Africa's second largest oil refinery in ecologically sensitive region criticised as \"environmental recklessness\" The post Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks appeared first on Climate Home News.",
+          "published": "2026-07-15T14:47:31.000Z",
           "score": 13
         },
         {
@@ -121,27 +111,27 @@
           "score": 13
         },
         {
-          "title": "A strong El Niño spells more climate pain for the Philippines",
-          "link": "https://www.climatechangenews.com/2026/07/14/a-strong-el-nino-spells-more-climate-pain-for-the-philippines/",
-          "source": "Climate Home News",
-          "description": "As forecasters warn that the weather phenomenon will bring more extreme weather, its effects are already being felt in a country reeling from a series of disasters The post A strong El Niño spells more climate pain for the Philippines appeared first on Climate Home News.",
-          "published": "2026-07-14T13:31:57.000Z",
-          "score": 13
-        },
-        {
-          "title": "UN seabed regulator defends authority as mining firms seek to halt inquiry",
-          "link": "https://www.climatechangenews.com/2026/07/14/deep-sea-mining-firms-sue-un-seabed-body-inquiry-isa-itlos-metals-company/",
-          "source": "Climate Home News",
-          "description": "Campaigners accused deep-sea mining frontrunner The Metals Company of obstructing an inquiry into its subsidiaries. The firm says it is being targeted without procedural basis The post UN seabed regulator defends authority as mining firms seek to halt inquiry appeared first on Climate Home News.",
-          "published": "2026-07-14T18:02:01.000Z",
+          "title": "UK withdraws millions in funding from world’s second-largest rainforest in Congo",
+          "link": "https://www.carbonbrief.org/uk-withdraws-millions-in-funding-from-worlds-second-largest-rainforest-in-congo/",
+          "source": "Carbon Brief",
+          "description": "The UK has abandoned projects worth tens of millions of pounds that were meant to... The post UK withdraws millions in funding from world’s second-largest rainforest in Congo appeared first on Carbon Brief.",
+          "published": "2026-07-15T16:04:22.000Z",
           "score": 10
         },
         {
-          "title": "US trial could reveal who paid hackers to target Exxon climate critics: ‘on the edge of our seats’",
-          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/jul/15/climate-activists-exxon-hired-hackers-trial",
+          "title": "Cropped 15 July 2026: Uganda starves &#124; Trump opens endangered habitats &#124; UK cuts rainforest aid",
+          "link": "https://www.carbonbrief.org/cropped-15-july-2026-uganda-starves-trump-opens-endangered-habitats-uk-cuts-rainforest-aid/",
+          "source": "Carbon Brief",
+          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 15 July 2026: Uganda starves | Trump opens endangered habitats | UK cuts rainforest aid appeared first on Carbon Brief.",
+          "published": "2026-07-15T14:49:04.000Z",
+          "score": 10
+        },
+        {
+          "title": "Wildfires in Ontario make Toronto air quality worst in world",
+          "link": "https://www.theguardian.com/world/2026/jul/15/wildfires-in-ontario-make-toronto-canada-air-quality-worst-in-world",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Oil giant has denied involvement, but climate activists are closely watching court case against Israeli private investigator for answers&lt;/p&gt;&lt;p&gt;A group of American climate activists are closely watching a US court case that could reveal who hired hackers to target their inboxes a decade ago.&lt;/p&gt;&lt;p&gt;In 2015, a set of &lt;a href=\"https://insideclimatenews.org/project/exxon-the-road-not-taken/\"&gt;explosive media reports&lt;/a&gt; revealed that ExxonMobil’s own scient",
-          "published": "2026-07-15T10:00:53.000Z",
+          "description": "&lt;p&gt;Environment Canada has issued health warnings after sky over city turns yellow&lt;/p&gt;&lt;p&gt;Smoke from more than 100 active wildfires in northern Ontario have made Toronto’s air quality the current worst in the world and caused yellow, smoky air in cities across the north-east US.&lt;/p&gt;&lt;p&gt;Environment Canada issued health warnings on Wednesday after the sky over country’s largest city turned a sickly yellow and was ranked the worst in the world according to &lt;a href=\"htt",
+          "published": "2026-07-15T16:08:39.000Z",
           "score": 7
         }
       ]
@@ -149,50 +139,27 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": []
+      "items": [
+        {
+          "title": "US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T15:55:47.000Z",
+          "score": 2
+        }
+      ]
     },
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
-          "title": "Highlights - Vote on the outcome of the negotiations on the Chemical Omnibus (together with IMCO) - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79250",
-          "source": "EU Parliament ENVI Committee",
-          "description": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20200609PHT80818/20200609PHT80818-ms.bmp\" width=\"180\" alt=\"chemicals\" title=\"chemicals © AdobeStock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI and IMCO Members voted on the provisional agreement resulting from interinstitutional negotiations on simplification of certain requirements and procedures for chemical products (Chemical Omnibus). &lt;/div&gt;&lt;br /&gt;&lt;",
-          "published": "2026-07-14T15:53:49.000Z",
-          "score": 18
-        },
-        {
-          "title": "Video of a committee meeting - Tuesday, 14 July 2026 - 12:45 - Committee on the Environment, Public Health and Food Safety",
-          "link": "https://multimedia.europarl.europa.eu/en/committees_20260714-1445-COMMITTEE-ENVI_vd",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Length of video : 180'&lt;br /&gt;&lt;br /&gt;Disclaimer : The interpretation of debates serves to facilitate communication and does not constitute an authentic record of proceedings. Only the original speech or the revised written translation is authentic.&lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-14T15:48:18.000Z",
-          "score": 18
-        },
-        {
-          "title": "Minutes - Wednesday, 3 June 2026 - PE789.135v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Transport and Tourism",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ46-PV-2026-06-03-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-14T12:23:00.000Z",
-          "score": 18
-        },
-        {
           "title": "Ukraine: Kyiv and EU agree on new drone production deal",
           "link": "https://www.dw.com/en/ukraine-kyiv-and-eu-agree-on-new-drone-production-deal/live-77962795?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
           "description": "Ukraine and the EU have agreed on a drone deal combining Kyiv’s know-how with the bloc&#039;s scale-up power. Meanwhile, Russian attacks caused more fatalities in Odesa as Moscow increasingly targets the port. DW has more.",
           "published": "2026-07-15T10:55:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Ukraine parliament accepts PM Svyrydenko&#039;s resignation",
-          "link": "https://www.dw.com/en/ukraine-parliament-accepts-pm-svyrydenko-s-resignation/a-77954364?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "With Ukraine &quot;changing its political strategy,&quot; President Volodymyr Zelenskyy is trying to remake the government,",
-          "published": "2026-07-14T14:07:00.000Z",
           "score": 8
         }
       ]
@@ -202,52 +169,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Taiwan's premium mangoes wing their way to Europe for the first time - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5",
+          "title": "European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5\" target=\"_blank\"&gt;Taiwan's premium mangoes wing their way to Europe for the first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-07-15T02:02:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5\" target=\"_blank\"&gt;European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-07-15T09:01:54.000Z",
           "score": 8
         },
         {
-          "title": "UK summons senior Iranian diplomat over alleged proxy attacks in Europe - reuters.com",
+          "title": "UK summons senior Iranian diplomat over alleged proxy attacks in Europe - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5\" target=\"_blank\"&gt;UK summons senior Iranian diplomat over alleged proxy attacks in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5\" target=\"_blank\"&gt;UK summons senior Iranian diplomat over alleged proxy attacks in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-14T23:50:15.000Z",
           "score": 8
         },
         {
-          "title": "EU aviation body reinstates Middle East flights warning as fighting resumes - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT3RURUV1aDVOdzI3Ui1jN1YxUjBBdUtnME1lN3VIMlZ0OS12alN1Znl5OHhyaG5xQk12dWNPeDNSRTVHWFpfQ1VjLW5wSzlGSFRZZGNPZkRUX0RvbDVTekJVOVBvMjhlZDl4N2hTYXR5anVvemFqQ1NMT2hsUGwwTHQ4cXdzTVF3ekxmbEpQWFNhaUxKTDVKNjVIOFdubDlHd2N3b1UxVFFvbDZBSHRlTEU2RzdsT2NGNGh1QXp3TGpJeXU4?oc=5",
+          "title": "Taiwan's premium mangoes wing their way to Europe for the first time - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOT3RURUV1aDVOdzI3Ui1jN1YxUjBBdUtnME1lN3VIMlZ0OS12alN1Znl5OHhyaG5xQk12dWNPeDNSRTVHWFpfQ1VjLW5wSzlGSFRZZGNPZkRUX0RvbDVTekJVOVBvMjhlZDl4N2hTYXR5anVvemFqQ1NMT2hsUGwwTHQ4cXdzTVF3ekxmbEpQWFNhaUxKTDVKNjVIOFdubDlHd2N3b1UxVFFvbDZBSHRlTEU2RzdsT2NGNGh1QXp3TGpJeXU4?oc=5\" target=\"_blank\"&gt;EU aviation body reinstates Middle East flights warning as fighting resumes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-07-14T13:18:08.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5\" target=\"_blank\"&gt;Taiwan's premium mangoes wing their way to Europe for the first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T02:02:00.000Z",
           "score": 8
         },
         {
-          "title": "India's Hero MotoCorp to invest about $104 million in Ather Energy - reuters.com",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU1d4Z0RxRGFKbkZYQXBrUklkeDlGcEYwYUZ4SmV0Z0p5anh4a0hHMGIxaUEtY19sTUdkZWk2WTZ4bzJQU19leWMwSXBWNS1RQUE0NllyclBKOFJldFNNNFFaa3FaVTFYZU16cWR6YnFWQzhZUEl5RjQ5QnlINGExSkhadk1XLTZURkpiNXpZWDNtT2hBX2dMbDBPOGFrWENSWFlGeFJhYTYzZw?oc=5",
+          "title": "Drones, AI and white paint: Europe races to protect infrastructure from heat - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaXdoVVJmMDlIQjZjczlybWZqTWN6YUpVYzJrYzQtZGVkbFJEd21JYXFzdTMwZ3oxODhRVGFYallkWnVOcjhtM25uZ3REeVQteDRYS0lYTU10VTRDbldwaE9ybWx4WDRoSlhqOGpEcWVkU2ZwUkpmMmsyV2xmWW9WNVNrVEl3Q2JJR0RsSUQ2S1BSM05IajR2WE1aSTEtTnpTQXMzQzlOcw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU1d4Z0RxRGFKbkZYQXBrUklkeDlGcEYwYUZ4SmV0Z0p5anh4a0hHMGIxaUEtY19sTUdkZWk2WTZ4bzJQU19leWMwSXBWNS1RQUE0NllyclBKOFJldFNNNFFaa3FaVTFYZU16cWR6YnFWQzhZUEl5RjQ5QnlINGExSkhadk1XLTZURkpiNXpZWDNtT2hBX2dMbDBPOGFrWENSWFlGeFJhYTYzZw?oc=5\" target=\"_blank\"&gt;India's Hero MotoCorp to invest about $104 million in Ather Energy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
-          "published": "2026-07-14T15:08:08.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOaXdoVVJmMDlIQjZjczlybWZqTWN6YUpVYzJrYzQtZGVkbFJEd21JYXFzdTMwZ3oxODhRVGFYallkWnVOcjhtM25uZ3REeVQteDRYS0lYTU10VTRDbldwaE9ybWx4WDRoSlhqOGpEcWVkU2ZwUkpmMmsyV2xmWW9WNVNrVEl3Q2JJR0RsSUQ2S1BSM05IajR2WE1aSTEtTnpTQXMzQzlOcw?oc=5\" target=\"_blank\"&gt;Drones, AI and white paint: Europe races to protect infrastructure from heat&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T17:30:35.000Z",
+          "score": 8
         },
         {
-          "title": "Italy's Meloni suffers surprise setback in close vote on electoral reform",
-          "link": "https://www.bbc.co.uk/news/articles/c1kykx3vnyyo?at_medium=RSS&amp;at_campaign=rss",
+          "title": "French MPs approve assisted dying law with strict rules after years of argument",
+          "link": "https://www.bbc.co.uk/news/articles/cvg7g2z4pv3o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
-          "description": "The defeat triggered opposition calls for Meloni to resign ahead of next year's general election.",
-          "published": "2026-07-15T11:44:28.000Z",
+          "description": "The bill would allow assisted dying for terminally ill adults who meet strict criteria.",
+          "published": "2026-07-15T17:29:26.000Z",
           "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 436,
-    "articlesLast24h": 191,
-    "afterDedup": 170,
+    "totalArticlesScanned": 437,
+    "articlesLast24h": 175,
+    "afterDedup": 166,
     "feedsQueried": 19
   }
 }
