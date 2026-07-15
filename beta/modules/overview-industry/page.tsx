@@ -11,6 +11,10 @@
  *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
  *                   Section C divisions): imports/exports, supply-chain inputs
  *                   and high-risk import dependencies, on live Eurostat data.
+ *   • Downstream  — the demand side: review of the EU lead-market policies
+ *                   (public procurement, quotas, border signals) assessed on
+ *                   the five Better Regulation criteria, plus the downstream
+ *                   standards they depend on. Exports an Excel handover pack.
  */
 
 import Link from 'next/link';
@@ -33,8 +37,9 @@ export default function OverviewIndustryPage() {
         </div>
         <h1 className="mt-2 text-3xl font-bold text-grey-900">Overview Industry</h1>
         <p className="mt-2 max-w-text text-grey-700">
-          A cross-cutting overview surface for EU industrial decarbonisation. Two sub-pages so far —
-          an evidence catalogue of clean-tech options, and a trade-flows view.
+          A cross-cutting overview surface for EU industrial decarbonisation. Three sub-pages so far
+          — an evidence catalogue of clean-tech options, a trade-flows view, and a demand-side review
+          of lead-market policies and downstream standards.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -86,6 +91,33 @@ export default function OverviewIndustryPage() {
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
               Open the map →
+            </span>
+          </Link>
+
+          <Link
+            href="/beta/overview-industry/downstream"
+            className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-accent-violet hover:shadow"
+          >
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-violet text-white">
+                ⬇
+              </span>
+              <h2 className="text-lg font-bold text-grey-900 group-hover:text-accent-violet">
+                Downstream
+              </h2>
+            </div>
+            <p className="mt-2 text-sm text-grey-600">
+              The demand side: a review of the EU&apos;s lead-market policies — public procurement
+              (voluntary GPP, NZIA non-price criteria, the Industrial Accelerator Act, the Public
+              Procurement Act revision, ESPR mandatory GPP), quotas (ELV recycled content, clean-fuel
+              mandates) and the CBAM border signal — each assessed against the five Better Regulation
+              evaluation criteria (effectiveness, efficiency, relevance, coherence, EU added value).
+              Plus the downstream standards underneath: low-carbon definitions, labels, product rules.
+              One click exports the whole review as an Excel handover workbook with assessment, data,
+              sources and a what-to-watch timeline.
+            </p>
+            <span className="mt-3 inline-block text-sm font-semibold text-accent-violet">
+              Open the review →
             </span>
           </Link>
         </div>

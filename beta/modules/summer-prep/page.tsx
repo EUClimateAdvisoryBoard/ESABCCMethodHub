@@ -42,7 +42,7 @@ const COMBINED: SubModule[] = [
     icon: '⚙',
     accent: '#004B7F',
     blurb:
-      'The cross-cutting industry surface — the clean-tech emissions wheel (NACE Section C → subsectors → levers with cost, readiness and real investment decisions) and the input–output trade-flows map with its import-dependency risk layer.',
+      'The cross-cutting industry surface — the clean-tech emissions wheel (NACE Section C → subsectors → levers with cost, readiness and real investment decisions), the input–output trade-flows map with its import-dependency risk layer, and the new Downstream review: lead-market policies (procurement, quotas, CBAM) assessed on the five Better Regulation criteria, with an Excel handover workbook.',
     cta: 'Open Overview Industry',
     external: true,
   },
