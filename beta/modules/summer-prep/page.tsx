@@ -4,15 +4,20 @@
  * Summer Prep — beta module M · 35 (formerly M · 37).
  * ----------------------------------------------------
  * A workspace that bundles the industry & transport preparation for
- * the next progress report. Overview Industry and the Policy Gap Tracker
- * (formerly listed separately as M · 34 and M · 36) are folded in here as
- * sub-modules — their routes stay alive but they no longer appear as
- * stand-alone modules on the landing page. On top of them sit three
- * internal notes:
+ * the next progress report into TWO modules:
  *
- *   • Indicator Check — what has moved, data-wise, since the last report.
- *   • Synergies & trade-offs (mitigation ↔ adaptation) for industry & transport.
- *   • Policy gaps for transport & industry (extends the Policy Gap Tracker).
+ *   1. Industry Report      — the former Overview Industry module (M · 34):
+ *                             clean-tech emissions wheel, trade flows,
+ *                             Downstream lead-market review and the
+ *                             industry-report objectives page.
+ *   2. Policy Gap 2.0 Report — the former Policy Gap Tracker (M · 36) plus
+ *                             the three internal notes built for this prep
+ *                             cycle (Indicator Check, Synergies & trade-offs,
+ *                             Policy gaps — transport & industry), which now
+ *                             live inside this module.
+ *
+ * The folded-in routes stay alive; they simply no longer appear as
+ * stand-alone modules on the landing page.
  */
 
 import Link from 'next/link';
@@ -20,7 +25,16 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
 
-interface SubModule {
+interface SubLink {
+  href: string;
+  title: string;
+  tag?: string;
+  desc: string;
+  icon: string;
+  accent: string;
+}
+
+interface PrepModule {
   href: string;
   title: string;
   badge: string;
@@ -28,70 +42,104 @@ interface SubModule {
   accent: string;
   blurb: string;
   cta: string;
-  external?: boolean;
+  contents: SubLink[];
+  contentsLabel: string;
 }
 
-const COMBINED: SubModule[] = [
+const MODULES: PrepModule[] = [
   {
     href: '/beta/overview-industry',
-    title: 'Overview Industry',
-    badge: 'Sub-module 1 · was M · 34',
+    title: 'Industry Report',
+    badge: 'Module 1 · was M · 34 (Overview Industry)',
     icon: '⚙',
     accent: '#004B7F',
     blurb:
-      'The cross-cutting industry surface — the clean-tech emissions wheel (NACE Section C → subsectors → levers with cost, readiness and real investment decisions), the input–output trade-flows map with its critical-dependencies dashboard, the Downstream review of lead-market policies (procurement, quotas, CBAM) documented along the five Better Regulation criteria, and the industry-report objectives page (roadmap & clean-tech syntheses with a fully sourced Excel download).',
-    cta: 'Open Overview Industry',
-    external: true,
+      'The cross-cutting industry surface for the next report’s industry chapter — evidence catalogue, trade dependencies, demand-side policy review and the report objectives themselves.',
+    cta: 'Open the Industry Report',
+    contentsLabel: 'Inside this module',
+    contents: [
+      {
+        href: '/beta/overview-industry/cleantech',
+        title: 'Clean Tech',
+        desc: 'The collapsible emissions wheel of EU manufacturing (NACE Section C → subsectors → levers with cost, readiness and real investment decisions).',
+        icon: '⚙',
+        accent: '#004B7F',
+      },
+      {
+        href: '/beta/overview-industry/trade-flows',
+        title: 'Trade flows',
+        desc: 'The input–output map of EU-27 manufacturing trade with its critical-dependencies dashboard, on live Eurostat data.',
+        icon: '⇄',
+        accent: '#00928F',
+      },
+      {
+        href: '/beta/overview-industry/downstream',
+        title: 'Downstream',
+        desc: 'The review of EU lead-market policies (procurement, quotas, CBAM) documented along the five Better Regulation criteria.',
+        icon: '⬇',
+        accent: '#6667AB',
+      },
+      {
+        href: '/beta/overview-industry/report-objectives',
+        title: 'Industry report — objectives',
+        desc: 'Roadmap & clean-tech syntheses and the report objectives, with a fully sourced Excel download.',
+        icon: '◎',
+        accent: '#B87400',
+      },
+    ],
   },
   {
     href: '/beta/policy-gaps',
-    title: 'Policy Gap Tracker',
-    badge: 'Sub-module 2 · was M · 36',
+    title: 'Policy Gap 2.0 Report',
+    badge: 'Module 2 · was M · 36 + the internal notes',
     icon: '▤',
     accent: '#B83230',
     blurb:
-      'Every policy, ambition and implementation gap and inconsistency the Board identified across all 12 report chapters — editable, filterable and exportable to Excel, with the verbatim report quote and page behind each finding.',
-    cta: 'Open Policy Gap Tracker',
-    external: true,
+      'Everything for the policy-gap work of the next report: the gap tracker seeded from the last report, plus the three internal notes built for this prep cycle.',
+    cta: 'Open the Gap Tracker',
+    contentsLabel: 'Inside this module',
+    contents: [
+      {
+        href: '/beta/policy-gaps',
+        title: 'Policy Gap Tracker',
+        desc: 'Every policy, ambition and implementation gap and inconsistency the Board identified across all 12 report chapters — editable, filterable and exportable to Excel, with the verbatim report quote and page behind each finding.',
+        icon: '▤',
+        accent: '#B83230',
+      },
+      {
+        href: '/beta/summer-prep/indicator-check',
+        title: 'Indicator Check',
+        tag: 'Note 1 · all sectors',
+        desc: 'What has moved, data-wise, since the last report? A dashboard over the report’s progress indicators (the Policy Gap 2.0 indicator database) showing the latest data points added since publication and the change against the report baseline.',
+        icon: '📈',
+        accent: '#007B6C',
+      },
+      {
+        href: '/beta/summer-prep/synergies-tradeoffs',
+        title: 'Synergies & Trade-offs — Mitigation ↔ Adaptation',
+        tag: 'Note 2 · industry & transport',
+        desc: 'A literature note mapping, subsector by subsector, where cutting emissions also builds climate resilience — and where it works against it.',
+        icon: '⇄',
+        accent: '#6667AB',
+      },
+      {
+        href: '/beta/summer-prep/policy-gaps-sectors',
+        title: 'Policy Gaps — Transport & Industry',
+        tag: 'Note 3 · extends the gap tracker',
+        desc: 'Do the transport- and industry-tagged gaps still exist after the legislation adopted since the report? Where are candidates for additional gaps? Plus a per-sector, per-subsector map of the gap landscape.',
+        icon: '◍',
+        accent: '#FF9933',
+      },
+    ],
   },
 ];
 
-const NOTES: SubModule[] = [
-  {
-    href: '/beta/summer-prep/indicator-check',
-    title: 'Indicator Check',
-    badge: 'Note 1 · all sectors',
-    icon: '📈',
-    accent: '#007B6C',
-    blurb:
-      'What has moved, data-wise, since the last report? A dashboard over the old report’s progress indicators (the Policy Gap 2.0 indicator database) showing the latest two–three data points added since publication and the arithmetic change against the report baseline.',
-    cta: 'Open the indicator dashboard',
-  },
-  {
-    href: '/beta/summer-prep/synergies-tradeoffs',
-    title: 'Synergies & Trade-offs — Mitigation ↔ Adaptation',
-    badge: 'Note 2 · industry & transport',
-    icon: '⇄',
-    accent: '#6667AB',
-    blurb:
-      'A literature note mapping, subsector by subsector (kept in the report’s own structure), where cutting emissions also builds climate resilience — and where it works against it, or where an adaptation need pushes emissions back up.',
-    cta: 'Open the synergies note',
-  },
-  {
-    href: '/beta/summer-prep/policy-gaps-sectors',
-    title: 'Policy Gaps — Transport & Industry',
-    badge: 'Note 3 · extends the gap tracker',
-    icon: '◍',
-    accent: '#FF9933',
-    blurb:
-      'Takes the transport- and industry-tagged gaps and asks: do they still exist after the legislation adopted since the report? Where are candidates for additional gaps? Plus a per-sector, per-subsector map of the gap landscape.',
-    cta: 'Open the sector gap note',
-  },
-];
-
-function Card({ m }: { m: SubModule }) {
-  const inner = (
-    <>
+function ModuleCard({ m }: { m: PrepModule }) {
+  return (
+    <section
+      aria-label={m.title}
+      className="flex flex-col rounded-xl border border-[#E6E7E8] bg-white p-5 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
+    >
       <div className="flex items-center gap-2">
         <span
           aria-hidden
@@ -104,30 +152,64 @@ function Card({ m }: { m: SubModule }) {
           <div className="text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
             {m.badge}
           </div>
-          <h3 className="text-[16px] font-bold leading-tight text-[#3D5265] dark:text-[var(--mh-fg)]">
+          <h3 className="text-[17px] font-bold leading-tight text-[#3D5265] dark:text-[var(--mh-fg)]">
             {m.title}
           </h3>
         </div>
       </div>
+
       <p className="mt-3 text-[13px] leading-relaxed text-[#3D5265]/75 dark:text-[var(--mh-muted)]">
         {m.blurb}
       </p>
-      <span
-        className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold"
+
+      <Link
+        href={m.href}
+        className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold hover:underline"
         style={{ color: m.accent }}
       >
         {m.cta} →
-      </span>
-    </>
-  );
+      </Link>
 
-  const className =
-    'group block rounded-xl border border-[#E6E7E8] bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]';
-
-  return (
-    <Link href={m.href} className={className}>
-      {inner}
-    </Link>
+      <div className="mt-4 border-t border-[#E6E7E8] pt-3 dark:border-[var(--mh-border)]">
+        <div className="mb-2 text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+          {m.contentsLabel}
+        </div>
+        <ul className="space-y-2">
+          {m.contents.map((s) => (
+            <li key={`${m.href}-${s.href}`}>
+              <Link
+                href={s.href}
+                className="group flex gap-2.5 rounded-lg border border-transparent p-2 transition hover:border-[#E6E7E8] hover:bg-[#F7F9FA] dark:hover:border-[var(--mh-border)] dark:hover:bg-[var(--mh-bg)]"
+              >
+                <span
+                  aria-hidden
+                  className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-md text-[14px] text-white"
+                  style={{ backgroundColor: s.accent }}
+                >
+                  {s.icon}
+                </span>
+                <span className="min-w-0">
+                  {s.tag && (
+                    <span className="block text-[9px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+                      {s.tag}
+                    </span>
+                  )}
+                  <span
+                    className="block text-[13px] font-semibold leading-snug text-[#3D5265] group-hover:underline dark:text-[var(--mh-fg)]"
+                    style={{ textDecorationColor: s.accent }}
+                  >
+                    {s.title}
+                  </span>
+                  <span className="mt-0.5 block text-[12px] leading-relaxed text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
+                    {s.desc}
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }
 
@@ -140,47 +222,19 @@ export default function SummerPrepPage() {
         subtitle={
           <>
             A working space for the industry &amp; transport preparation ahead of the next
-            progress report. Two existing modules are bundled here as sub-modules; three new
-            internal notes sit alongside them.
+            progress report, organised in two modules: the <strong>Industry Report</strong> and
+            the <strong>Policy Gap 2.0 Report</strong> — the three internal notes built for this
+            prep cycle live inside the Policy Gap 2.0 Report.
           </>
         }
       />
 
       <main className="mx-auto max-w-[1080px] px-4 py-8 sm:px-6">
-        <section aria-labelledby="combined-h">
-          <h2
-            id="combined-h"
-            className="mb-1 text-[13px] font-bold uppercase tracking-wide text-[#3D5265] dark:text-[var(--mh-fg)]"
-          >
-            Combined modules
-          </h2>
-          <p className="mb-4 text-[13px] text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
-            Two former stand-alone modules now living inside this workspace — open in place, then
-            use the back control to return here.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {COMBINED.map((m) => (
-              <Card key={m.href} m={m} />
-            ))}
-          </div>
-        </section>
-
-        <section aria-labelledby="notes-h" className="mt-10">
-          <h2
-            id="notes-h"
-            className="mb-1 text-[13px] font-bold uppercase tracking-wide text-[#3D5265] dark:text-[var(--mh-fg)]"
-          >
-            New internal notes
-          </h2>
-          <p className="mb-4 text-[13px] text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
-            Built for this prep cycle, grounded in the old report’s structure and data.
-          </p>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {NOTES.map((m) => (
-              <Card key={m.href} m={m} />
-            ))}
-          </div>
-        </section>
+        <div className="grid items-start gap-5 lg:grid-cols-2">
+          {MODULES.map((m) => (
+            <ModuleCard key={m.href} m={m} />
+          ))}
+        </div>
 
         <p className="mt-10 max-w-3xl text-[12px] leading-relaxed text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
           Provenance: the Indicator Check reads the report’s own progress indicators live from
@@ -193,7 +247,7 @@ export default function SummerPrepPage() {
         </p>
       </main>
 
-    <SiteFooter />
-  </div>
+      <SiteFooter />
+    </div>
   );
 }
