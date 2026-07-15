@@ -56,6 +56,14 @@ const S = {
     url: 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2024:63:FIN',
     year: '2024',
   } as Source,
+  /** The adopted, legally binding 2040 target — supersedes the IA's range as current law. */
+  climateLaw2040: {
+    org: 'Council of the EU; European Parliament',
+    title:
+      'Amended European Climate Law — Regulation (EU) 2026/667: final green light for a legally binding 90% net GHG reduction by 2040 (see also europarl.europa.eu/news/en/press-room/20260205IPR33620)',
+    url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/03/05/2040-climate-target-council-gives-final-green-light/',
+    year: '2026',
+  } as Source,
   ipccCh12: {
     org: 'IPCC',
     title: 'AR6 WGIII, Chapter 12 (Table 12.3: sectoral mitigation potentials in 2030)',
@@ -134,6 +142,13 @@ const S = {
     url: 'https://ehpa.org/policy-2/repowereu-and-the-eu-heat-pump-action-plan/',
     year: '2023',
   } as Source,
+  heatpumpSalesDrop: {
+    org: 'SigmaEarth (EHPA data)',
+    title:
+      'Heat pump sales in Europe drop 23%, returning to pre-Ukraine-war levels (see also heatpumpswatch.org: "Are the ambitious heat pump targets achievable?")',
+    url: 'https://sigmaearth.com/heat-pump-sales-in-europe-drop-23-returning-to-pre-ukraine-war-levels/',
+    year: '2025',
+  } as Source,
   fertEurope: {
     org: 'Fertilizers Europe',
     title: 'Ammonia Roadmap for the European fertilizer industry',
@@ -151,6 +166,14 @@ const S = {
     title: 'Trends and Projections 2024 — power emissions down 22% in 2023 on renewables growth',
     url: 'https://www.eea.europa.eu/en/newsroom/news/eea-trends-and-projections',
     year: '2024',
+  } as Source,
+  /** The Northvolt bankruptcy that undercuts the Draghi "~15%" battery-capacity trajectory. */
+  northvoltCollapse: {
+    org: 'Eurofound',
+    title:
+      'Battery manufacturing in the EU: from hope to crisis to hope again (see also EPRS briefing, europarl.europa.eu/RegData/etudes/BRIE/2025/767214)',
+    url: 'https://www.eurofound.europa.eu/en/publications/all/battery-manufacturing-in-the-eu-from-hope-to-crisis-to-hope-again',
+    year: '2025',
   } as Source,
 };
 
@@ -309,7 +332,7 @@ export const CLEANTECH_INDUSTRIES: CleanTechIndustry[] = [
         source: S.draghi,
       },
       {
-        value: '98% of EU solar-panel imports came from China in 2024 (€10.8 bn)',
+        value: '98% of EU solar-panel imports came from China in 2024 (€10.9 bn)',
         note: 'down from €19.0 bn in 2023 on falling panel prices, not falling volumes',
         source: S.eurostatSolar,
       },
@@ -439,6 +462,11 @@ export const CLEANTECH_INDUSTRIES: CleanTechIndustry[] = [
         value: 'EU holds only ~6.5% of global battery-cell production',
         note: 'planned capacity would lift it to ~15%; battery imports grew 7.5× over 2017–2023, >€17 bn from China in 2023',
         source: S.draghi,
+      },
+      {
+        value: 'That "~15%" trajectory predates the Northvolt bankruptcy',
+        note: 'Northvolt — the flagship gigafactory behind much of the planned capacity — collapsed in March 2025; Skellefteå output fell from a planned 16 GWh to ~1 GWh before the site was sold to Lyten in Aug 2025. The Draghi projection above has not been revised down for this loss, even as other capacity (e.g. CATL Debrecen) fills part of the gap — see current 2025/26 capacity data before treating ~15% as on track',
+        source: S.northvoltCollapse,
       },
       {
         value: '~90% of wafer, anode and cathode manufacturing capacity sits in the Asia-Pacific region',
@@ -605,6 +633,11 @@ export const CLEANTECH_INDUSTRIES: CleanTechIndustry[] = [
         value: 'REPowerEU goal: 10 million additional heat pumps by 2027, ~30 million by 2030',
         source: S.ehpaRepower,
       },
+      {
+        value: '2024–25 sales are running well below that pace',
+        note: 'EU heat-pump sales fell ~23% in 2024 (~2.1M units, back to pre-war levels) and only partly recovered in 2025 (~2.3M) — the policy-demand momentum behind the 30-million-by-2030 goal is not yet materialising',
+        source: S.heatpumpSalesDrop,
+      },
     ],
     euPosition: [
       {
@@ -722,8 +755,15 @@ export const SECTOR_PATHWAYS: SectorPathway[] = [
 /** Sourced headline facts for the top of Side 2. */
 export const EXTERNAL_HEADLINES: Sourced[] = [
   {
-    value: '−90 to −95% net GHG by 2040',
-    note: 'the preferred option of the Commission\'s 2040-target impact assessment (vs 1990), in line with the ESABCC advice — the economy-wide envelope every sector below fits into',
+    value: '−90% net GHG by 2040 — legally binding',
+    note:
+      'set by the amended European Climate Law (Regulation (EU) 2026/667, in force since 7 April 2026): a flat 90% cut vs 1990, with at least 85% achieved domestically and up to 5% international credits permitted from 2036 — the economy-wide envelope every sector below fits into',
+    source: S.climateLaw2040,
+  },
+  {
+    value: '90–95% net GHG by 2040 (2024 impact-assessment range)',
+    note:
+      'dated 2024 analytical context, not current law: the preferred option of the Commission\'s 2040-target impact assessment (vs 1990), in line with the ESABCC\'s 2024 advice — this range fed into, and was since narrowed by, the legally binding 90% target above',
     source: S.iaExec,
   },
   {

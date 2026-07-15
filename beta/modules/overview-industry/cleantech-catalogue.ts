@@ -385,9 +385,9 @@ export const CATALOGUE: Subsector[] = [
             location: 'Duisburg, Germany',
             capacity: '2.5 Mt/yr DRI (hydrogen-ready)',
             status: 'construction',
-            fid: 'Under construction (~2027), but green-H₂ tender postponed indefinitely (Mar 2025); runs on natural gas until ~2028',
+            fid: 'Under construction; plant completion targeted end-2026, but green-H₂ tender postponed indefinitely (Mar 2025); first H₂ use planned 2028, full switch to hydrogen by 2029',
             year: '2025',
-            source: { org: 'EUROMETAL', title: 'Thyssenkrupp Steel pauses German green hydrogen tender on high prices', url: 'https://eurometal.net/thyssenkrupp-steel-pauses-german-green-hydrogen-tender-on-high-prices/', year: '2025' },
+            source: { org: 'Midrex', title: 'thyssenkrupp Steel receives construction approval for hydrogen-ready DRI-smelter project', url: 'https://www.midrex.com/company-news/thyssenkrupp-steel-receives-construction-approval-for-hydrogen-ready-dri-smelter-project/', year: '2025' },
           },
           {
             name: 'ArcelorMittal EU DRI-EAF projects (Bremen & Eisenhüttenstadt)',
@@ -581,14 +581,14 @@ export const CATALOGUE: Subsector[] = [
         name: 'Inert anodes (ELYSIS)',
         description:
           'Replace consumable carbon anodes with inert anodes that emit oxygen instead of CO₂, eliminating direct process emissions from smelting.',
-        trl: { value: 'TRL 6–7 (industrial-scale prototype cells)', source: S.ieaEtpGuide },
+        trl: { value: 'TRL 7 (full-scale 450 kA commercial-size cell operating; multi-year performance validation under way)', source: S.ieaEtpGuide },
         availability: {
-          value: 'Commercial-scale prototype (450 kA) cells starting up; commercialisation this decade',
+          value: 'Full-scale 450 kA commercial-size cell started up at Alma (Nov 2025) — a first at this scale — now in multi-year performance testing; commercialisation this decade',
           source: {
             org: 'ELYSIS',
-            title: 'Carbon-free aluminium smelting advances commercial demonstration and operates at industrial scale',
-            url: 'https://elysis.com/en/carbon-free-aluminium-smelting-a-step-closer-elysis-advances-commercial-demonstration-and-operates',
-            year: '2021',
+            title: 'ELYSIS achieves breakthrough with commercial-size cell — a first in aluminium production using this technology (see also Mining Weekly, 2025-11-14)',
+            url: 'https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the',
+            year: '2025',
           },
         },
         projects: [
@@ -598,12 +598,13 @@ export const CATALOGUE: Subsector[] = [
             location: 'Quebec, Canada (tech relevant to EU smelters)',
             capacity: '450 kA commercial-scale cells',
             status: 'pilot',
-            fid: 'Prototype cell construction/start-up from 2024; first technology licence issued',
-            year: '2024',
+            fid: 'Full-scale 450 kA commercial-size cell started up Nov 2025, now in multi-year performance testing; a 10-cell Arvida demonstration plant is planned for ~2027',
+            year: '2025',
             source: {
               org: 'ELYSIS',
-              title: 'Start of construction of commercial-scale inert anode cells',
-              url: 'https://elysis.com/en/start-of-construction-of-commercial-scale-inert-anode-cells',
+              title: 'ELYSIS achieves breakthrough with commercial-size cell — a first in aluminium production using this technology',
+              url: 'https://elysis.com/en/elysis-achieves-breakthrough-with-commercial-size-cell-a-first-in-aluminium-production-using-the',
+              year: '2025',
             },
           },
         ],
@@ -802,13 +803,13 @@ export const CATALOGUE: Subsector[] = [
             location: 'Hannover, Germany; Vernasca, Italy',
             capacity: 'LEILAC-2 ≈ 100 kt CO₂/yr; CLEANKER pilot',
             status: 'pilot',
-            fid: 'EU-funded demonstrations (not commercial FIDs) — LEILAC-2 targeting operation ~2025',
+            fid: 'EU-funded demonstrations (not commercial FIDs) — LEILAC-2 pre-FEED completed; FEED phase entered late 2025; construction not yet started; commissioning now targeted 2026',
             year: '2025',
             source: {
               org: 'Project LEILAC (Calix)',
-              title: 'LEILAC: capturing CO₂ in cement precalciners',
-              url: 'https://calix.global/news/leilac-capturing-co2-in-cement-precalciners/',
-              year: '2021',
+              title: 'LEILAC-2 gets new, improved design & revised timeline (see also the LEILAC2 pre-FEED report, leilac.com/report/leilac2-pre-feed-report)',
+              url: 'https://www.leilac.com/news/leilac-2-gets-new-improved-design-revised-timeline/',
+              year: '2025',
             },
           },
         ],
@@ -994,6 +995,21 @@ export const CATALOGUE: Subsector[] = [
             source: { org: 'Yara International', title: 'Yara opens renewable hydrogen plant: a major milestone', url: 'https://www.yara.com/corporate-releases/yara-opens-renewable-hydrogen-plant-a-major-milestone/', year: '2024' },
           },
           { name: 'EU green-ammonia pipeline', location: 'EU', status: 'announced', fid: 'Several announced; FIDs gated by hydrogen cost & offtake', source: S.ieaH2 },
+          {
+            name: 'Yara Porsgrunn & Sluiskil next-stage green-ammonia expansions',
+            company: 'Yara International',
+            location: 'Porsgrunn, Norway; Sluiskil, Netherlands',
+            capacity: 'Next-stage green-hydrogen/ammonia expansion beyond the operating Herøya plant',
+            status: 'cancelled',
+            fid: 'Shelved October 2024 — Yara cited "low-value" green-hydrogen economics; a concrete, dated illustration of the scale problem below',
+            year: '2024',
+            source: {
+              org: 'Quantum Commodity Intelligence',
+              title: 'Yara scraps commercial green hydrogen plans in Norway, Netherlands',
+              url: 'https://www.qcintel.com/ammonia/article/yara-scraps-commercial-green-hydrogen-plans-in-norway-netherlands-31148.html',
+              year: '2024',
+            },
+          },
         ],
         rationale: {
           costDrivers: { value: 'Green hydrogen is much dearer than SMR hydrogen at current electrolyser and power costs.', source: S.ieaAmmonia },
@@ -1489,14 +1505,14 @@ export const CROSS_CUTTING_ENABLERS: Subsector[] = [
             source: { org: 'MAN Energy Solutions', title: 'Mega Heat Pump Delivers First Heat in Esbjerg', url: 'https://www.man-es.com/company/press-releases/press-details/2024/11/28/mega-heat-pump-delivers-first-heat-in-esbjerg', year: '2024' },
           },
           {
-            name: 'EU pilot auction for industrial heat decarbonisation',
+            name: 'EU IF25 Heat pilot auction — concluded; IF26 Heat now the live round',
             company: 'European Commission (Innovation Fund)',
             location: 'EU-wide',
-            capacity: '€1 billion budget',
-            status: 'announced',
-            fid: 'Terms & conditions published October 2025 — policy instrument, not a plant',
-            year: '2025',
-            source: { org: 'European Commission (DG CLIMA)', title: 'First pilot auction for industrial heat decarbonisation (€1bn)', url: 'https://climate.ec.europa.eu/news-other-reads/news/commission-publishes-terms-and-conditions-first-pilot-auction-industrial-heat-decarbonisation-budget-2025-10-10_en', year: '2025' },
+            capacity: '€1 billion ceiling (IF25 Heat); €400m actually awarded',
+            status: 'fid',
+            fid: 'IF25 Heat concluded: €400m awarded to 65 projects, results ~25 May 2026, ~6.6 Mt CO₂ avoided over 10 years — policy instrument, not a plant; IF26 Heat is now the open round',
+            year: '2026',
+            source: { org: 'pv magazine', title: 'EU awards €400 million to 65 industrial heat projects in auction', url: 'https://www.pv-magazine.com/2026/05/25/eu-awards-e400-million-to-65-industrial-heat-projects-in-auction/', year: '2026' },
           },
         ],
         rationale: {
@@ -1647,7 +1663,7 @@ export const CROSS_CUTTING_ENABLERS: Subsector[] = [
             location: 'Maasvlakte, Rotterdam, Netherlands',
             capacity: '200 MW electrolyser (up to 80 t/day H₂)',
             status: 'construction',
-            fid: 'FID 2022; under construction, commissioning due 2026',
+            fid: 'FID 2022; under construction — reported in March 2025 that the project "may never open" after a Dutch government corrective-factor cut into its economics; has since recovered, commissioning due 2026',
             year: '2025',
             source: { org: 'Energy Institute (New Energy World)', title: 'Major hydrogen project advances in the Netherlands', url: 'https://knowledge.energyinst.org/new-energy-world/article?id=139775', year: '2025' },
           },
@@ -1809,7 +1825,7 @@ export const TECH_METRICS: Record<string, TechMetric> = {
   'x-heatpumps': { macLowEur: 45, macHighEur: 147, trlLow: 6, trlHigh: 9, costNote: 'US proxy (LBNL)', macSource: MAC_SRC.lbnlHeatPump },
   'x-ccs-networks': { trlLow: 8, trlHigh: 9 },
   'x-electrolysers': { macLowEur: 183, macHighEur: 187, trlLow: 8, trlHigh: 9, costNote: 'green H₂ vs SMR', macSource: MAC_SRC.natureAmmonia },
-  'x-circular': { macLowEur: -50, macHighEur: 10, trlLow: 8, trlHigh: 9, costNote: 'often negative-cost (demand-side)', macSource: S.matecon },
+  'x-circular-levers': { macLowEur: -50, macHighEur: 10, trlLow: 8, trlHigh: 9, costNote: 'often negative-cost (demand-side)', macSource: S.matecon },
 };
 
 /* ------------------------------------------------- clean-tech vs old-tech */
@@ -1989,6 +2005,17 @@ export interface EmissionsMapBlock {
   scope: string;
   /** True when the figure is on the EU ETS 2023 industry basis (569 Mt total). */
   etsBasis: boolean;
+  /**
+   * True when this block's `mt` figure is known to materially understate the
+   * subsector's full footprint on a different (but equally valid) accounting
+   * basis — e.g. direct-only process emissions vs. a sector-wide figure incl.
+   * indirect electricity. Intended to carry the same "arc drawn on a partial
+   * basis, treat with caveat" flag that multi-`subsectorIds` blocks already
+   * get from `subsectorIds.length > 1` in `buildWheel()`; a single-subsector
+   * block flagged here should be treated identically once wired into the
+   * wheel's `exact`/`*` mechanics.
+   */
+  shared?: boolean;
   note?: string;
   source: Source;
 }
@@ -2011,7 +2038,8 @@ export const EMISSIONS_MAP: EmissionsMapBlock[] = [
     mt: 2.75,
     scope: 'direct CO₂, 2022',
     etsBasis: false,
-    note: 'direct (anode) process CO₂ only — the far larger power-related emissions (sector ≈24 Mt CO₂e incl. indirect) are not shown',
+    shared: true,
+    note: 'direct process/energy emissions only — full sector footprint incl. indirect electricity ≈24 Mt (≈9× larger); flagged here the same way shared, multi-subsector blocks are, because the drawn arc is on a partial basis',
     source: { org: 'JRC (European Commission)', title: 'Aluminium factsheet (JRC144120)', url: 'https://publications.jrc.ec.europa.eu/repository/bitstream/JRC144120/Aluminium_factsheet_JRC144120.pdf', year: '2026' },
   },
   {
