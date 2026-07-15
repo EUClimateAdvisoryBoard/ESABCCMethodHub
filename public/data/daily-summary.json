@@ -1,15 +1,9 @@
 {
   "date": "2026-07-15",
-  "generatedAt": "2026-07-15T18:08:35.474Z",
+  "generatedAt": "2026-07-15T23:59:32.533Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 15 July 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "EU law on nitrates pollution remains effective, with scope for smarter implementation",
-      "summary": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "China detains US scientist who studied North Korea nuclear tests",
       "summary": "Chen Youlin's family says he has been wrongfully detained for nearly two years on spying charges.",
@@ -23,8 +17,8 @@
       "color": "#2E8B57"
     },
     {
-      "headline": "US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "US House panel unveils $95 billion plan to fund defense, parts of Trump's voter ID bill - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense, parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "FINANCE",
       "color": "#7C3AED"
     }
@@ -33,16 +27,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "EU law on nitrates pollution remains effective, with scope for smarter implementation",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1594",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
-          "published": "2026-07-14T22:00:00.000Z",
-          "score": 27
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -61,15 +46,15 @@
           "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
-          "published": "2026-07-15T17:47:00.000Z",
+          "published": "2026-07-15T21:20:30.000Z",
           "score": 7
         },
         {
-          "title": "US striker Balogun expected controversy over suspended red-card ban - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5",
+          "title": "What is Pickaxe Mountain, the Iranian nuclear-linked site threatened by Trump? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNczloTzlFM1kxaUtEY05pWE9NbkJqV3Nya0ZRMHFFc2oySkZWSmN5UXQ2Nk1oX1dORmlGUW9kOGNmdkNLRVpuc3liZ3lpelgxUzh6QjY2MHVDMWtYeG41R3FjM3I2N0tmRHVDZEVJRjhEamJmVm5FdkNydDV3dUZDMFAtRnM5M1RyTld4OEt1N0F0SkZrVlhQZzM1bVRPR2xDVk40NzNKYjRndUQtTVlKeXROdW0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5\" target=\"_blank\"&gt;US striker Balogun expected controversy over suspended red-card ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-14T20:47:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNczloTzlFM1kxaUtEY05pWE9NbkJqV3Nya0ZRMHFFc2oySkZWSmN5UXQ2Nk1oX1dORmlGUW9kOGNmdkNLRVpuc3liZ3lpelgxUzh6QjY2MHVDMWtYeG41R3FjM3I2N0tmRHVDZEVJRjhEamJmVm5FdkNydDV3dUZDMFAtRnM5M1RyTld4OEt1N0F0SkZrVlhQZzM1bVRPR2xDVk40NzNKYjRndUQtTVlKeXROdW0?oc=5\" target=\"_blank\"&gt;What is Pickaxe Mountain, the Iranian nuclear-linked site threatened by Trump?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T15:53:01.000Z",
           "score": 7
         },
         {
@@ -81,12 +66,12 @@
           "score": 6
         },
         {
-          "title": "To drill or not to drill? Andy Burnham faces North Sea oil dilemma",
-          "link": "https://www.bbc.co.uk/news/articles/cg5350rp3z2o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "Burnham, who is expected to become the UK's next prime minister, has been handed a letter from the oil and gas industry calling for his support.",
-          "published": "2026-07-15T05:06:34.000Z",
-          "score": 2
+          "title": "A Cold War bunker gets a luxury makeover as 'doomsday' condos",
+          "link": "https://www.bbc.co.uk/news/articles/cn4d3lpjkggo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "A former Canadian government nuclear bomb shelter in rural Nova Scotia may soon be home to the country’s first large-scale luxury survival shelter.",
+          "published": "2026-07-15T23:35:39.000Z",
+          "score": 4
         }
       ]
     },
@@ -141,11 +126,11 @@
       "title": "Green Finance & Investment",
       "items": [
         {
-          "title": "US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill - Reuters",
+          "title": "US House panel unveils $95 billion plan to fund defense, parts of Trump's voter ID bill - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense and parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-15T15:55:47.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNMlQ0djViS2VmcXRZaFFhU3ZwM29CdVpoOUF0dUJWU1Y5MDZEN053eHNLdWxwNkExaGJUNkQtUlEwVms1NjZEdlBTUW5nREFRQXZDS29WYTM1WlhGNjdNQVd6M3gxbWxIR1JVSU9EaThDcVVLMUhSdmxib3JDWVFsUjZ1WmdVYi1UekYyNFhIQWV0Wkp4NUZRRm1RWWswWDYtbWFnblVING1KTDNyaDF3UGZwa3BIR1ZaWnVr?oc=5\" target=\"_blank\"&gt;US House panel unveils $95 billion plan to fund defense, parts of Trump's voter ID bill&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T20:14:48.000Z",
           "score": 2
         }
       ]
@@ -158,7 +143,7 @@
           "title": "Ukraine: Kyiv and EU agree on new drone production deal",
           "link": "https://www.dw.com/en/ukraine-kyiv-and-eu-agree-on-new-drone-production-deal/live-77962795?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "Ukraine and the EU have agreed on a drone deal combining Kyiv’s know-how with the bloc&#039;s scale-up power. Meanwhile, Russian attacks caused more fatalities in Odesa as Moscow increasingly targets the port. DW has more.",
+          "description": "Ukraine and the EU have agreed on a drone deal combining Kyiv’s know-how with the bloc&#039;s scale-up power. Meanwhile, Russian attacks caused more fatalities in Odesa as Moscow increasingly targets the port.",
           "published": "2026-07-15T10:55:00.000Z",
           "score": 8
         }
@@ -169,19 +154,27 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "France&#039;s parliament passes assisted dying law",
+          "link": "https://www.dw.com/en/france-s-parliament-passes-assisted-dying-law/a-77974616?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The lower house of France&#039;s parliament adopted bill for assisted dying. But the the government bypassed the right-wing dominated Senate and the law will instead go to the highest constitutional court for final approval.",
+          "published": "2026-07-15T19:27:00.000Z",
+          "score": 12
+        },
+        {
+          "title": "German engineering body urges broader EU duties, tougher action on China - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZENoa0RYWmxPUGpGVjhDN0xEeGRMZ2ZLbEp1X2Y2UTNBMEJFRG9RSmJCaUp1aUY5V1pQYkExV0tXdlNxb1RWTE9COWVPMWY0RG9FakRhdjlTR3ItVEVMa1diLUFyUUNaTmhPQ1YtN3VnTnJuVFJVazFpTFdTYUdFRDBIdWV4aXlCNC1LNGtmekxjcFRaOEVObXNuSURuY3Y0dmJsOXhMNHVqc0wxMHVHSjBRbFJKWlE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOZENoa0RYWmxPUGpGVjhDN0xEeGRMZ2ZLbEp1X2Y2UTNBMEJFRG9RSmJCaUp1aUY5V1pQYkExV0tXdlNxb1RWTE9COWVPMWY0RG9FakRhdjlTR3ItVEVMa1diLUFyUUNaTmhPQ1YtN3VnTnJuVFJVazFpTFdTYUdFRDBIdWV4aXlCNC1LNGtmekxjcFRaOEVObXNuSURuY3Y0dmJsOXhMNHVqc0wxMHVHSjBRbFJKWlE?oc=5\" target=\"_blank\"&gt;German engineering body urges broader EU duties, tougher action on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T09:19:44.000Z",
+          "score": 8
+        },
+        {
           "title": "European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5\" target=\"_blank\"&gt;European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
           "published": "2026-07-15T09:01:54.000Z",
-          "score": 8
-        },
-        {
-          "title": "UK summons senior Iranian diplomat over alleged proxy attacks in Europe - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5\" target=\"_blank\"&gt;UK summons senior Iranian diplomat over alleged proxy attacks in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-14T23:50:15.000Z",
           "score": 8
         },
         {
@@ -193,28 +186,20 @@
           "score": 8
         },
         {
-          "title": "Drones, AI and white paint: Europe races to protect infrastructure from heat - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOaXdoVVJmMDlIQjZjczlybWZqTWN6YUpVYzJrYzQtZGVkbFJEd21JYXFzdTMwZ3oxODhRVGFYallkWnVOcjhtM25uZ3REeVQteDRYS0lYTU10VTRDbldwaE9ybWx4WDRoSlhqOGpEcWVkU2ZwUkpmMmsyV2xmWW9WNVNrVEl3Q2JJR0RsSUQ2S1BSM05IajR2WE1aSTEtTnpTQXMzQzlOcw?oc=5",
+          "title": "Congo forms new council in push for war crimes justice - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPV29TV0JWSTRuWm1XMmdicWIwaDNfN2RvYTFlNHBQYTRBa0NSOVVBUmJ5bnl0M3Zxa0ZQa1NnbDRQVWhJYXFNNTV2ZmtucjlxSTdzZjNmSmlDZF85MnNSbHlUVzlCb2xXTFM0WDRmUjE1MHNuaHpzMkQ4VUJqRnRCMmVkdUF4Q1pIeU5RLVF4c1oySHJuTTFYX0hnSzc?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxOaXdoVVJmMDlIQjZjczlybWZqTWN6YUpVYzJrYzQtZGVkbFJEd21JYXFzdTMwZ3oxODhRVGFYallkWnVOcjhtM25uZ3REeVQteDRYS0lYTU10VTRDbldwaE9ybWx4WDRoSlhqOGpEcWVkU2ZwUkpmMmsyV2xmWW9WNVNrVEl3Q2JJR0RsSUQ2S1BSM05IajR2WE1aSTEtTnpTQXMzQzlOcw?oc=5\" target=\"_blank\"&gt;Drones, AI and white paint: Europe races to protect infrastructure from heat&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-15T17:30:35.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPV29TV0JWSTRuWm1XMmdicWIwaDNfN2RvYTFlNHBQYTRBa0NSOVVBUmJ5bnl0M3Zxa0ZQa1NnbDRQVWhJYXFNNTV2ZmtucjlxSTdzZjNmSmlDZF85MnNSbHlUVzlCb2xXTFM0WDRmUjE1MHNuaHpzMkQ4VUJqRnRCMmVkdUF4Q1pIeU5RLVF4c1oySHJuTTFYX0hnSzc?oc=5\" target=\"_blank\"&gt;Congo forms new council in push for war crimes justice&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T09:55:43.000Z",
           "score": 8
-        },
-        {
-          "title": "French MPs approve assisted dying law with strict rules after years of argument",
-          "link": "https://www.bbc.co.uk/news/articles/cvg7g2z4pv3o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The bill would allow assisted dying for terminally ill adults who meet strict criteria.",
-          "published": "2026-07-15T17:29:26.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 437,
-    "articlesLast24h": 175,
-    "afterDedup": 166,
+    "totalArticlesScanned": 436,
+    "articlesLast24h": 173,
+    "afterDedup": 165,
     "feedsQueried": 19
   }
 }
