@@ -43,10 +43,13 @@ import {
   DATA_POINTS,
   TRAJECTORIES,
   ELECTRIFICATION_BENCHMARKS,
-  INVESTMENT_ESTIMATES,
+  INVESTMENT_INDUSTRY,
+  INVESTMENT_ECONOMY,
+  FUNDING_CHANNELS,
   TOPIC_META,
   sourceById,
   type IrTopic,
+  type IrFigureBar,
 } from '@/data/industry-report-objectives';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Tooltip, Legend);
@@ -62,6 +65,23 @@ const BASE_SCALE_OPTS = {
   border: { color: GRID },
   ticks: { color: TICK, font: { size: 11 } },
 };
+
+/** Wrap a category label onto multiple tick lines so it never truncates. */
+function wrapLabel(label: string, width = 26): string[] {
+  const words = label.split(' ');
+  const lines: string[] = [];
+  let line = '';
+  for (const w of words) {
+    if (line && (line + ' ' + w).length > width) {
+      lines.push(line);
+      line = w;
+    } else {
+      line = line ? `${line} ${w}` : w;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
 
 /* ── Small building blocks ─────────────────────────────────────────── */
 
@@ -156,15 +176,14 @@ function TrajectoriesFigure() {
 
   const data = useMemo(
     () => ({
-      labels: years.map(String),
       datasets: TRAJECTORIES.map((t, i) => {
         const base = t.series[0].value;
         return {
           label: t.label,
-          data: years.map((y) => {
-            const p = t.series.find((s) => s.year === y);
-            return p ? Math.round((p.value / base) * 1000) / 10 : null;
-          }),
+          data: t.series.map((p) => ({
+            x: p.year,
+            y: Math.round((p.value / base) * 1000) / 10,
+          })),
           borderColor: CAT[i % CAT.length],
           backgroundColor: CAT[i % CAT.length],
           borderWidth: 2,
@@ -172,19 +191,18 @@ function TrajectoriesFigure() {
           pointHoverRadius: 6,
           pointBorderColor: '#FFFFFF',
           pointBorderWidth: 2,
-          spanGaps: true,
           tension: 0.15,
         };
       }),
     }),
-    [years],
+    [],
   );
 
   return (
     <FigureCard
       number={1}
       title="Industry emissions under net-zero pathways"
-      subtitle="Each pathway indexed to 100 in its own base year (scopes differ — EU vs global, sector coverage varies — so levels are not directly comparable; the common index makes the *pace* comparable). Hover for values; exact tonnages, scopes and links sit in the table and the Excel."
+      subtitle="Each pathway indexed to 100 in its own base year (scopes differ — EU vs global, sector coverage varies — so levels are not directly comparable; the common index makes the pace comparable). Hover for values; exact tonnages, scopes and links sit in the table and the Excel."
     >
       <div className="relative h-[320px]">
         <Line
@@ -192,7 +210,7 @@ function TrajectoriesFigure() {
           options={{
             responsive: true,
             maintainAspectRatio: false,
-            interaction: { mode: 'index', intersect: false },
+            interaction: { mode: 'nearest', intersect: false },
             plugins: {
               legend: {
                 position: 'bottom',
@@ -200,6 +218,7 @@ function TrajectoriesFigure() {
               },
               tooltip: {
                 callbacks: {
+                  title: (items) => String(items[0]?.parsed.x ?? ''),
                   label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y} (base = 100)`,
                 },
               },
@@ -210,7 +229,18 @@ function TrajectoriesFigure() {
                 title: { display: true, text: 'Index (base year = 100)', color: TICK, font: { size: 11 } },
                 min: 0,
               },
-              x: { ...BASE_SCALE_OPTS, grid: { display: false } },
+              x: {
+                ...BASE_SCALE_OPTS,
+                type: 'linear' as const,
+                min: 2015,
+                max: 2070,
+                grid: { display: false },
+                ticks: {
+                  ...BASE_SCALE_OPTS.ticks,
+                  stepSize: 5,
+                  callback: (v) => String(v),
+                },
+              },
             },
           }}
         />
@@ -246,7 +276,7 @@ function BenchmarkFigure({
   number: number;
   title: string;
   subtitle: string;
-  items: typeof ELECTRIFICATION_BENCHMARKS;
+  items: IrFigureBar[];
   color: string;
   axisLabel: string;
   suggestedMax?: number;
@@ -276,7 +306,7 @@ function BenchmarkFigure({
 
   return (
     <FigureCard number={number} title={title} subtitle={subtitle}>
-      <div className="relative" style={{ height: `${64 + items.length * 44}px` }}>
+      <div className="relative" style={{ height: `${64 + items.length * 56}px` }}>
         <Bar
           data={data}
           options={{
@@ -304,7 +334,12 @@ function BenchmarkFigure({
               y: {
                 ...BASE_SCALE_OPTS,
                 grid: { display: false },
-                ticks: { ...BASE_SCALE_OPTS.ticks, autoSkip: false, font: { size: 10.5 } },
+                ticks: {
+                  ...BASE_SCALE_OPTS.ticks,
+                  autoSkip: false,
+                  font: { size: 10.5 },
+                  callback: (_v, i) => wrapLabel(items[i].label),
+                },
               },
             },
           }}
@@ -426,6 +461,50 @@ function exportWorkbook() {
       ),
     },
     {
+      name: 'Figure benchmarks',
+      title: 'Figures 2–5 — benchmark bars (electrification & investment)',
+      subtitle: 'One row per bar, with scope note and the source link per row',
+      headers: ['Figure', 'Estimate', 'Value', 'Unit', 'Scope / note', 'Full citation', 'Source link'],
+      rows: [
+        ...ELECTRIFICATION_BENCHMARKS.map((b): CellValue[] => [
+          'Fig 2 — electrification',
+          b.label,
+          Array.isArray(b.value) ? `${b.value[0]}–${b.value[1]}` : b.value,
+          b.unit,
+          b.note ?? '',
+          cite(b.sourceId),
+          link(b.sourceId),
+        ]),
+        ...INVESTMENT_INDUSTRY.map((b): CellValue[] => [
+          'Fig 3 — investment, EU heavy industry',
+          b.label,
+          Array.isArray(b.value) ? `${b.value[0]}–${b.value[1]}` : b.value,
+          b.unit,
+          b.note ?? '',
+          cite(b.sourceId),
+          link(b.sourceId),
+        ]),
+        ...INVESTMENT_ECONOMY.map((b): CellValue[] => [
+          'Fig 4 — investment, EU economy-wide',
+          b.label,
+          Array.isArray(b.value) ? `${b.value[0]}–${b.value[1]}` : b.value,
+          b.unit,
+          b.note ?? '',
+          cite(b.sourceId),
+          link(b.sourceId),
+        ]),
+        ...FUNDING_CHANNELS.map((b): CellValue[] => [
+          'Fig 5 — funding channels (totals)',
+          b.label,
+          Array.isArray(b.value) ? `${b.value[0]}–${b.value[1]}` : b.value,
+          b.unit,
+          b.note ?? '',
+          cite(b.sourceId),
+          link(b.sourceId),
+        ]),
+      ],
+    },
+    {
       name: 'Sources',
       title: 'Source register',
       subtitle: 'Every source used, with type and link (DOI where available)',
@@ -498,8 +577,8 @@ export default function ReportObjectivesPage() {
             ⬇ Download the full workbook (Excel)
           </button>
           <p className="mt-1.5 text-xs text-grey-500">
-            5 sheets: objectives · roadmap synthesis · all data points · scenario series · source
-            register — with a clickable source link on every data row.
+            6 sheets: objectives · roadmap synthesis · all data points · scenario series · figure
+            benchmarks · source register — with a clickable source link on every data row.
           </p>
         </header>
 
@@ -551,23 +630,41 @@ export default function ReportObjectivesPage() {
           </p>
           <div className="space-y-5">
             <TrajectoriesFigure />
-            <div className="grid gap-5 xl:grid-cols-2">
-              <BenchmarkFigure
-                number={2}
-                title="How far industry electrifies"
-                subtitle="Electricity's share of industrial final energy — where scenario ensembles land by 2050, what the technical-potential literature says is electrifiable, and the EU's near-term economy-wide marker. Scopes differ by row (see note in tooltip / table)."
-                items={ELECTRIFICATION_BENCHMARKS}
-                color={CAT[0]}
-                axisLabel="% of final energy"
-                suggestedMax={100}
-              />
+            <BenchmarkFigure
+              number={2}
+              title="How far industry electrifies"
+              subtitle="Electricity's share of final energy — where the scenario ensembles land, what the technical-potential literature says is electrifiable, and the EU's near-term economy-wide marker. Scopes differ by row (industry vs economy-wide — see each row's note in the tooltip and table); ranges shown as floating bars."
+              items={ELECTRIFICATION_BENCHMARKS}
+              color={CAT[0]}
+              axisLabel="% of final energy"
+              suggestedMax={100}
+            />
+            {/* Investment: three scopes at three different scales — separate
+                charts instead of one misleading shared axis. */}
+            <div className="grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
               <BenchmarkFigure
                 number={3}
-                title="Investment needs & timelines"
-                subtitle="Annualised investment estimates behind the roadmaps — scopes range from EU heavy industry alone to the whole EU energy system, so bars are read per row, not summed. Ranges shown as floating bars."
-                items={INVESTMENT_ESTIMATES}
+                title="Investment per year — EU heavy industry"
+                subtitle="Annualised additional investment behind the Material Economics net-zero pathways (steel, chemicals, ammonia, cement)."
+                items={INVESTMENT_INDUSTRY}
                 color={CAT[1]}
                 axisLabel="bn EUR per year"
+              />
+              <BenchmarkFigure
+                number={4}
+                title="Investment per year — EU economy-wide"
+                subtitle="System-level annual investment estimates for context — a different scale and scope than Figure 3, hence a separate axis."
+                items={INVESTMENT_ECONOMY}
+                color={CAT[2]}
+                axisLabel="bn EUR per year"
+              />
+              <BenchmarkFigure
+                number={5}
+                title="Funding channels & programmes"
+                subtitle="Programme and sector-need totals (bn EUR, not per year): the EU funding channels against the steel sector's stated need to 2030."
+                items={FUNDING_CHANNELS}
+                color={CAT[3]}
+                axisLabel="bn EUR (total)"
               />
             </div>
           </div>
