@@ -164,7 +164,7 @@ export const SYNERGIES: SynergyEntry[] = [
     mitigation: 'Hydrogen direct-reduced iron (H₂-DRI) powered by renewable electrolysis.',
     adaptation: 'Freshwater availability under more frequent and severe droughts.',
     mechanism:
-      'Water electrolysis needs ~9 litres of purified water per kg of H₂ stoichiometrically — roughly 24 litres once water treatment is counted, plus cooling water on top (Tonelli et al. 2023). Siting large H₂-DRI plants in southern/Mediterranean regions that are attractive for cheap solar power can collide with declining summer water availability, creating a maladaptation risk unless desalination or reuse is planned in.',
+      'Water electrolysis needs ~9 litres of purified water per kg of H₂ stoichiometrically — on the order of 20–30 litres once water treatment is counted, plus cooling water on top (Tonelli et al. 2023). Siting large H₂-DRI plants in southern/Mediterranean regions that are attractive for cheap solar power can collide with declining summer water availability, creating a maladaptation risk unless desalination or reuse is planned in.',
     implication:
       'Green-steel siting and Net-Zero Industry Act support should carry a water-stress screen; the EUCRA rates southern-European water scarcity as a high and rising risk.',
     references: [

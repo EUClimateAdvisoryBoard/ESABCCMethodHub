@@ -16,6 +16,7 @@
  */
 
 import { useMemo, useState } from 'react';
+import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
@@ -40,6 +41,8 @@ const TYPE_KEYS = Object.keys(GAP_TYPE_META) as GapType[];
 
 interface EnrichedGap extends PolicyGap {
   subsector: string;
+  /** Additional subsector(s) this gap also bears on (see `GapReassessment.alsoSubsectors`). */
+  alsoSubsectors: string[];
   reassessedStatus: GapStatus;
   reassessmentNote: string;
 }
@@ -80,6 +83,7 @@ function SectorGapsInner() {
         return {
           ...g,
           subsector: r?.subsector ?? 'Cross-cutting',
+          alsoSubsectors: r?.alsoSubsectors ?? [],
           reassessedStatus: r?.status ?? g.currentStatus,
           reassessmentNote: r?.note ?? '',
         };
@@ -107,6 +111,9 @@ function SectorGapsInner() {
     });
     enriched.forEach((g) => {
       if (cell[g.subsector]) cell[g.subsector][g.type].existing += 1;
+      g.alsoSubsectors.forEach((sub) => {
+        if (cell[sub]) cell[sub][g.type].existing += 1;
+      });
     });
     candidates.forEach((c) => {
       if (cell[c.subsector]) cell[c.subsector][c.type].candidate += 1;
@@ -160,6 +167,36 @@ function SectorGapsInner() {
       />
 
       <main className="mx-auto max-w-[1120px] px-4 py-6 sm:px-6 sm:py-8">
+        {/* ── Internal notes (Policy Gap 2.0 Report) ────────────────────── */}
+        <section
+          aria-label="Internal notes"
+          className="mb-6 rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-[#F7F9FA] dark:bg-[var(--mh-card)] p-3"
+        >
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+            Policy Gap 2.0 Report · internal notes for this prep cycle
+          </div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Link
+              href="/beta/policy-gaps"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#003399] hover:underline"
+            >
+              ☰ Policy Gap Tracker
+            </Link>
+            <Link
+              href="/beta/summer-prep/indicator-check"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#007B6C] hover:underline"
+            >
+              📈 Indicator Check
+            </Link>
+            <Link
+              href="/beta/summer-prep/synergies-tradeoffs"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#6667AB] hover:underline"
+            >
+              ⇄ Synergies &amp; Trade-offs
+            </Link>
+          </div>
+        </section>
+
         {/* Sector switch */}
         <div className="mb-6 inline-flex rounded-lg border border-[#E6E7E8] p-1 dark:border-[var(--mh-border)]">
           {SECTORS.map((s) => (
@@ -269,7 +306,11 @@ function SectorGapsInner() {
             <span className="text-[12px] font-semibold text-[#3D5265]/70 dark:text-[var(--mh-muted)]">
               Still exists? (reassessed):
             </span>
-            {(['open', 'partially-addressed', 'addressed'] as GapStatus[]).map((s) => (
+            {(
+              statusRoll.unknown > 0
+                ? (['open', 'partially-addressed', 'addressed', 'unknown'] as GapStatus[])
+                : (['open', 'partially-addressed', 'addressed'] as GapStatus[])
+            ).map((s) => (
               <span key={s} className="inline-flex items-center gap-1.5 text-[12px]">
                 <span
                   className="inline-block h-2.5 w-2.5 rounded-full"
@@ -343,10 +384,10 @@ function SectorGapsInner() {
             {candidates.map((c) => (
               <article
                 key={c.id}
-                className="rounded-xl border border-dashed border-[#FF9933]/70 bg-[#FF9933]/5 p-4"
+                className="rounded-xl border border-dashed border-[#FF9933]/70 bg-[#FF9933]/5 p-4 dark:border-[#FF9933]/50 dark:bg-[#FF9933]/10"
               >
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="rounded bg-white/70 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:bg-[var(--mh-card)]">
+                  <span className="rounded bg-white/70 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:bg-[var(--mh-card)] dark:text-[var(--mh-muted)]">
                     {c.subsector}
                   </span>
                   <TypeBadge type={c.type} />

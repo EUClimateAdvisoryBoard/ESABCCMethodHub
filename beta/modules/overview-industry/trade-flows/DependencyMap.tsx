@@ -72,9 +72,9 @@ export default function DependencyMap() {
   const yTicks = [0, 0.25, 0.5, 0.75, 1];
 
   return (
-    <div className="rounded-lg border border-grey-200 bg-white p-3">
-      <h4 className="text-sm font-bold text-grey-900">Import-dependency map</h4>
-      <p className="mb-2 mt-1 text-xs text-grey-600">
+    <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
+      <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Import-dependency map</h4>
+      <p className="mb-2 mt-1 text-xs text-grey-600 dark:text-[var(--mh-muted)]">
         Every numbered bubble is an import dependency of EU manufacturing — the list alongside carries the
         full names, ordered by the product of the two axes. →right = more of EU demand is imported; ↑up =
         more concentrated in a single supplier; red = China is the largest supplier. The x-axis starts at
@@ -86,25 +86,25 @@ export default function DependencyMap() {
             {/* grid */}
             {xTicks.map((t) => (
               <g key={`x${t}`}>
-                <line x1={x(t)} y1={M.t} x2={x(t)} y2={M.t + ih} stroke="#EEF0F1" />
-                <text x={x(t)} y={M.t + ih + 16} textAnchor="middle" fontSize={9} className="fill-grey-400">
+                <line x1={x(t)} y1={M.t} x2={x(t)} y2={M.t + ih} stroke="var(--mh-border)" />
+                <text x={x(t)} y={M.t + ih + 16} textAnchor="middle" fontSize={9} className="fill-grey-400 dark:fill-[var(--mh-muted)]">
                   {(t * 100).toFixed(0)}%
                 </text>
               </g>
             ))}
             {yTicks.map((t) => (
               <g key={`y${t}`}>
-                <line x1={M.l} y1={y(t)} x2={M.l + iw} y2={y(t)} stroke="#EEF0F1" />
-                <text x={M.l - 8} y={y(t) + 3} textAnchor="end" fontSize={9} className="fill-grey-400">
+                <line x1={M.l} y1={y(t)} x2={M.l + iw} y2={y(t)} stroke="var(--mh-border)" />
+                <text x={M.l - 8} y={y(t) + 3} textAnchor="end" fontSize={9} className="fill-grey-400 dark:fill-[var(--mh-muted)]">
                   {(t * 100).toFixed(0)}%
                 </text>
               </g>
             ))}
             {/* axis titles */}
-            <text x={M.l + iw / 2} y={H - 8} textAnchor="middle" fontSize={11} fontWeight={600} className="fill-grey-600">
+            <text x={M.l + iw / 2} y={H - 8} textAnchor="middle" fontSize={11} fontWeight={600} className="fill-grey-600 dark:fill-[var(--mh-muted)]">
               Import reliance — share of EU demand met by imports →
             </text>
-            <text transform={`rotate(-90 14 ${M.t + ih / 2})`} x={14} y={M.t + ih / 2} textAnchor="middle" fontSize={11} fontWeight={600} className="fill-grey-600">
+            <text transform={`rotate(-90 14 ${M.t + ih / 2})`} x={14} y={M.t + ih / 2} textAnchor="middle" fontSize={11} fontWeight={600} className="fill-grey-600 dark:fill-[var(--mh-muted)]">
               Supplier concentration — largest single supplier ↑
             </text>
 
@@ -125,7 +125,7 @@ export default function DependencyMap() {
                     cy={h.py}
                     r={active ? R + 2 : R}
                     fill={china ? '#B83230' : '#004B7F'}
-                    stroke="#fff"
+                    stroke="var(--mh-card)"
                     strokeWidth={1.5}
                   >
                     <title>{`${h.label} — ${h.supplier}: reliance ${(h.importReliance * 100).toFixed(0)}%, concentration ${(h.supplierConcentration * 100).toFixed(0)}% (${h.naceDivision})`}</title>
@@ -150,7 +150,7 @@ export default function DependencyMap() {
                 onMouseEnter={() => setHover(h.n)}
                 onMouseLeave={() => setHover(null)}
                 className={`flex items-center gap-2 rounded px-1.5 py-[3px] transition ${
-                  active ? 'bg-surface-blue' : hover !== null ? 'opacity-40' : ''
+                  active ? 'bg-surface-blue dark:bg-primary/15' : hover !== null ? 'opacity-40' : ''
                 }`}
               >
                 <span
@@ -160,10 +160,10 @@ export default function DependencyMap() {
                   {h.n}
                 </span>
                 <span className="min-w-0 flex-1 truncate">
-                  <span className="font-semibold text-grey-800">{h.label}</span>{' '}
-                  <span className="text-grey-500">· {h.supplier}</span>
+                  <span className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">{h.label}</span>{' '}
+                  <span className="text-grey-500 dark:text-[var(--mh-muted)]">· {h.supplier}</span>
                 </span>
-                <span className="shrink-0 tabular-nums text-grey-500" title="import reliance / supplier concentration">
+                <span className="shrink-0 tabular-nums text-grey-500 dark:text-[var(--mh-muted)]" title="import reliance / supplier concentration">
                   {(h.importReliance * 100).toFixed(0)}/{(h.supplierConcentration * 100).toFixed(0)}
                 </span>
               </li>
@@ -171,7 +171,7 @@ export default function DependencyMap() {
           })}
         </ol>
       </div>
-      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-grey-500">
+      <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">
         <span className="inline-flex items-center gap-1">
           <span className="inline-block h-2.5 w-2.5 rounded-full bg-accent-red" /> China largest supplier
         </span>

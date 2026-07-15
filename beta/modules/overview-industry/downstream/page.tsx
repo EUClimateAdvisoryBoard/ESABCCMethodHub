@@ -46,7 +46,7 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
   return (
     <article
       id={p.id}
-      className="scroll-mt-24 rounded-xl border border-grey-200 bg-white p-5 shadow-sm"
+      className="scroll-mt-24 rounded-xl border border-grey-200 bg-white p-5 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
     >
       <div className="flex flex-wrap items-center gap-2">
         <span
@@ -62,15 +62,15 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
           <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: st.color }} />
           {st.label}
         </span>
-        <span className="ml-auto hidden text-[11px] uppercase tracking-wide text-grey-500 sm:inline">
+        <span className="ml-auto hidden text-[11px] uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)] sm:inline">
           {p.sectors}
         </span>
       </div>
 
-      <h3 className="mt-2 text-[16px] font-bold leading-snug text-grey-900">{p.name}</h3>
-      <p className="mt-1.5 text-[13px] leading-relaxed text-grey-600">{p.description}</p>
+      <h3 className="mt-2 text-[16px] font-bold leading-snug text-grey-900 dark:text-[var(--mh-fg)]">{p.name}</h3>
+      <p className="mt-1.5 text-[13px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">{p.description}</p>
 
-      <div className="mt-3 rounded-md border-l-2 border-primary/50 bg-surface-blue px-3 py-2 text-[12.5px] leading-relaxed text-grey-700">
+      <div className="mt-3 rounded-md border-l-2 border-primary/50 bg-surface-blue px-3 py-2 text-[12.5px] leading-relaxed text-grey-700 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
         <span className="font-semibold text-primary">Lead-market mechanism: </span>
         {p.leadMarketMechanism}
       </div>
@@ -83,8 +83,8 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
       </button>
 
       {open && (
-        <div className="mt-3 space-y-4 border-t border-grey-200 pt-3">
-          <div className="text-[11px] uppercase tracking-wide text-grey-500">
+        <div className="mt-3 space-y-4 border-t border-grey-200 pt-3 dark:border-[var(--mh-border)]">
+          <div className="text-[11px] uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
             {p.reference} · {p.statusDetail}
           </div>
 
@@ -99,7 +99,7 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
                     {BR_CRITERIA_META[c].label}
                   </div>
                 </div>
-                <p className="text-[12.5px] leading-relaxed text-grey-700">
+                <p className="text-[12.5px] leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">
                   {p.assessment[c].rationale}
                 </p>
               </div>
@@ -107,17 +107,17 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
           </div>
 
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wide text-grey-600">
+            <h4 className="text-[12px] font-bold uppercase tracking-wide text-grey-600 dark:text-[var(--mh-muted)]">
               Key data
             </h4>
-            <div className="mt-1.5 overflow-x-auto rounded-lg border border-grey-200">
+            <div className="mt-1.5 overflow-x-auto rounded-lg border border-grey-200 dark:border-[var(--mh-border)]">
               <table className="w-full min-w-[520px] border-collapse text-[12px]">
                 <tbody>
                   {p.keyData.map((d) => (
-                    <tr key={d.label} className="border-t border-grey-200 first:border-t-0">
-                      <td className="w-56 px-3 py-1.5 font-semibold text-grey-700">{d.label}</td>
-                      <td className="px-3 py-1.5 text-grey-700">{d.value}</td>
-                      <td className="px-3 py-1.5 text-grey-500">{d.source}</td>
+                    <tr key={d.label} className="border-t border-grey-200 first:border-t-0 dark:border-[var(--mh-border)]">
+                      <td className="w-56 px-3 py-1.5 font-semibold text-grey-700 dark:text-[var(--mh-fg)]">{d.label}</td>
+                      <td className="px-3 py-1.5 text-grey-700 dark:text-[var(--mh-fg)]">{d.value}</td>
+                      <td className="px-3 py-1.5 text-grey-500 dark:text-[var(--mh-muted)]">{d.source}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -126,7 +126,7 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
           </div>
 
           <div>
-            <h4 className="text-[12px] font-bold uppercase tracking-wide text-grey-600">Sources</h4>
+            <h4 className="text-[12px] font-bold uppercase tracking-wide text-grey-600 dark:text-[var(--mh-muted)]">Sources</h4>
             <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1">
               {p.sources.map((s) => (
                 <li key={s.url}>
@@ -143,7 +143,7 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
             </ul>
           </div>
 
-          <div className="rounded-md border-l-2 border-accent-orange/70 bg-surface-orange px-3 py-2 text-[12.5px] leading-relaxed text-grey-700">
+          <div className="rounded-md border-l-2 border-accent-orange/70 bg-surface-orange px-3 py-2 text-[12.5px] leading-relaxed text-grey-700 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
             <span className="font-semibold text-accent-orange">Handover — what to do / watch: </span>
             {p.handoverNotes}
           </div>
@@ -166,16 +166,16 @@ export default function DownstreamPage() {
   };
 
   return (
-    <div className="min-h-screen bg-grey-50">
+    <div className="min-h-screen bg-grey-50 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
 
       <main className="mx-auto max-w-content px-4 py-8">
-        <nav className="mb-4 text-sm text-grey-500">
+        <nav className="mb-4 text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           <Link href="/beta/overview-industry" className="hover:underline">
             Overview Industry
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-grey-700">Downstream</span>
+          <span className="text-grey-700 dark:text-[var(--mh-fg)]">Downstream</span>
         </nav>
 
         <header className="mb-6">
@@ -186,14 +186,14 @@ export default function DownstreamPage() {
             <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
               Demand side · lead markets
             </span>
-            <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+            <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary dark:bg-[var(--mh-border)]">
               Status {DOWNSTREAM_META.asOf}
             </span>
           </div>
-          <h1 className="mt-2 text-3xl font-bold text-grey-900">
+          <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             Downstream — lead-market policies &amp; downstream standards
           </h1>
-          <p className="mt-2 max-w-text text-grey-700">
+          <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             Supply-side support alone does not close the green premium — someone has to{' '}
             <span className="font-semibold">buy</span> the low-carbon steel, cement and fuels. This
             page reviews the EU&apos;s demand-side instruments in two layers:{' '}
@@ -222,25 +222,25 @@ export default function DownstreamPage() {
             >
               {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
             </button>
-            <span className="text-[12px] text-grey-500">
+            <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
               5 sheets: read-me &amp; watch-list · criteria notes · data · sources · standards
             </span>
           </div>
         </header>
 
         {/* ── Method: the five criteria ─────────────────────────────────── */}
-        <section className="mb-8 rounded-xl border border-grey-200 bg-white p-5 shadow-sm">
-          <h2 className="text-[13px] font-bold uppercase tracking-wide text-grey-900">
+        <section className="mb-8 rounded-xl border border-grey-200 bg-white p-5 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+          <h2 className="text-[13px] font-bold uppercase tracking-wide text-grey-900 dark:text-[var(--mh-fg)]">
             The reading grid — five Better Regulation evaluation criteria
           </h2>
-          <p className="mt-1 max-w-text text-[12.5px] text-grey-600">
+          <p className="mt-1 max-w-text text-[12.5px] text-grey-600 dark:text-[var(--mh-muted)]">
             {DOWNSTREAM_META.frameworkNote}
           </p>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
             {BR_CRITERIA.map((c) => (
               <div
                 key={c}
-                className="rounded-lg border border-grey-200 bg-grey-50 p-3"
+                className="rounded-lg border border-grey-200 bg-grey-50 p-3 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]"
                 style={{ borderTopColor: BR_CRITERIA_META[c].color, borderTopWidth: 3 }}
               >
                 <div
@@ -249,13 +249,13 @@ export default function DownstreamPage() {
                 >
                   {BR_CRITERIA_META[c].label}
                 </div>
-                <p className="mt-1 text-[11.5px] leading-relaxed text-grey-600">
+                <p className="mt-1 text-[11.5px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
                   {BR_CRITERIA_META[c].question}
                 </p>
               </div>
             ))}
           </div>
-          <p className="mt-3 text-[12px] text-grey-500">
+          <p className="mt-3 text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
             The criteria are used as a reading grid only — each policy carries a factual note per
             criterion, with the data points and sources behind it. No rating scale is applied.
           </p>
@@ -263,35 +263,35 @@ export default function DownstreamPage() {
 
         {/* ── Instrument index ──────────────────────────────────────────── */}
         <section className="mb-8">
-          <h2 className="text-[15px] font-bold text-grey-900">
+          <h2 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             The instruments at a glance — {LEAD_MARKET_POLICIES.length} lead-market policies
           </h2>
-          <p className="mb-3 mt-1 text-[12.5px] text-grey-600">
+          <p className="mb-3 mt-1 text-[12.5px] text-grey-600 dark:text-[var(--mh-muted)]">
             Click a row to jump to the full card with criteria notes, data and sources.
           </p>
-          <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
             <table className="w-full min-w-[780px] border-collapse text-[12px]">
               <thead>
-                <tr className="bg-grey-100">
-                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Instrument</th>
-                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Family</th>
-                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Status</th>
-                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Legal reference</th>
-                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Sectors</th>
+                <tr className="bg-grey-100 dark:bg-[var(--mh-bg)]">
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700 dark:text-[var(--mh-fg)]">Instrument</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700 dark:text-[var(--mh-fg)]">Family</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700 dark:text-[var(--mh-fg)]">Status</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700 dark:text-[var(--mh-fg)]">Legal reference</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700 dark:text-[var(--mh-fg)]">Sectors</th>
                 </tr>
               </thead>
               <tbody>
                 {LEAD_MARKET_POLICIES.map((p) => (
                   <tr
                     key={p.id}
-                    className="cursor-pointer border-t border-grey-200 transition hover:bg-surface-blue"
+                    className="cursor-pointer border-t border-grey-200 transition hover:bg-surface-blue dark:border-[var(--mh-border)] dark:hover:bg-[var(--mh-bg)]"
                     onClick={() =>
                       document
                         .getElementById(p.id)
                         ?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                     }
                   >
-                    <td className="px-3 py-2 font-semibold text-grey-900">{p.shortName}</td>
+                    <td className="px-3 py-2 font-semibold text-grey-900 dark:text-[var(--mh-fg)]">{p.shortName}</td>
                     <td className="px-3 py-2">
                       <span
                         className="whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
@@ -314,8 +314,8 @@ export default function DownstreamPage() {
                         {POLICY_STATUS_META[p.status].label}
                       </span>
                     </td>
-                    <td className="px-3 py-2 text-grey-600">{p.reference}</td>
-                    <td className="px-3 py-2 text-grey-600">{p.sectors}</td>
+                    <td className="px-3 py-2 text-grey-600 dark:text-[var(--mh-muted)]">{p.reference}</td>
+                    <td className="px-3 py-2 text-grey-600 dark:text-[var(--mh-muted)]">{p.sectors}</td>
                   </tr>
                 ))}
               </tbody>
@@ -325,7 +325,7 @@ export default function DownstreamPage() {
 
         {/* ── Policy review cards ───────────────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="mb-3 text-[15px] font-bold text-grey-900">
+          <h2 className="mb-3 text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             The review — instrument by instrument
           </h2>
           <div className="space-y-4">
@@ -337,15 +337,15 @@ export default function DownstreamPage() {
 
         {/* ── What to watch ─────────────────────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-[15px] font-bold text-grey-900">
+          <h2 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             What to watch — the handover timeline
           </h2>
-          <p className="mb-3 mt-1 text-[12.5px] text-grey-600">
+          <p className="mb-3 mt-1 text-[12.5px] text-grey-600 dark:text-[var(--mh-muted)]">
             The decisions expected while this review sits with the cover — each one changes the
             facts behind at least one instrument above. Also on the &ldquo;Read me&rdquo; sheet of
             the workbook.
           </p>
-          <div className="rounded-xl border border-grey-200 bg-white p-5 shadow-sm">
+          <div className="rounded-xl border border-grey-200 bg-white p-5 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
             <ol className="space-y-3">
               {WATCH_TIMELINE.map((w) => {
                 const p = LEAD_MARKET_POLICIES.find((x) => x.id === w.policyId);
@@ -354,7 +354,7 @@ export default function DownstreamPage() {
                     <span className="w-36 shrink-0 pt-0.5 text-[11px] font-bold uppercase tracking-wide text-primary">
                       {w.when}
                     </span>
-                    <p className="text-[12.5px] leading-relaxed text-grey-700">
+                    <p className="text-[12.5px] leading-relaxed text-grey-700 dark:text-[var(--mh-muted)]">
                       {w.what}{' '}
                       {p && (
                         <button
@@ -378,10 +378,10 @@ export default function DownstreamPage() {
 
         {/* ── Downstream standards ──────────────────────────────────────── */}
         <section className="mb-10">
-          <h2 className="text-[15px] font-bold text-grey-900">
+          <h2 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             Downstream standards — the layer the lead markets stand on
           </h2>
-          <p className="mb-3 mt-1 max-w-text text-[12.5px] text-grey-600">
+          <p className="mb-3 mt-1 max-w-text text-[12.5px] text-grey-600 dark:text-[var(--mh-muted)]">
             Every procurement preference and quota above needs an answer to &ldquo;what counts as
             low-carbon?&rdquo;. That answer lives here — and most of it is still being written. These
             are the definitions, labels and product standards to track.
@@ -392,7 +392,7 @@ export default function DownstreamPage() {
               return (
                 <article
                   key={st.id}
-                  className="rounded-xl border border-grey-200 bg-white p-5 shadow-sm"
+                  className="rounded-xl border border-grey-200 bg-white p-5 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
                 >
                   <div className="flex flex-wrap items-center gap-2">
                     <span
@@ -401,20 +401,20 @@ export default function DownstreamPage() {
                     >
                       {t.label}
                     </span>
-                    <span className="text-[11px] text-grey-500">{st.status}</span>
+                    <span className="text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">{st.status}</span>
                   </div>
-                  <h3 className="mt-2 text-[14.5px] font-bold leading-snug text-grey-900">
+                  <h3 className="mt-2 text-[14.5px] font-bold leading-snug text-grey-900 dark:text-[var(--mh-fg)]">
                     {st.name}
                   </h3>
-                  <p className="mt-1.5 text-[12.5px] leading-relaxed text-grey-600">
+                  <p className="mt-1.5 text-[12.5px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
                     {st.description}
                   </p>
-                  <div className="mt-2 rounded-md border-l-2 border-secondary/60 bg-surface-teal px-3 py-2 text-[12px] leading-relaxed text-grey-700">
+                  <div className="mt-2 rounded-md border-l-2 border-secondary/60 bg-surface-teal px-3 py-2 text-[12px] leading-relaxed text-grey-700 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
                     <span className="font-semibold text-secondary">Why it matters: </span>
                     {st.whyItMatters}
                   </div>
-                  <div className="mt-2 text-[12px] leading-relaxed text-grey-600">
-                    <span className="font-semibold text-grey-800">Watch: </span>
+                  <div className="mt-2 text-[12px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
+                    <span className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">Watch: </span>
                     {st.watchPoints}
                   </div>
                   <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1">
@@ -437,7 +437,7 @@ export default function DownstreamPage() {
           </div>
         </section>
 
-        <p className="max-w-text text-[12px] leading-relaxed text-grey-500">
+        <p className="max-w-text text-[12px] leading-relaxed text-grey-500 dark:text-[var(--mh-muted)]">
           Provenance: statuses, dates and data points were web-verified against the linked sources
           in {DOWNSTREAM_META.asOf}; the per-criterion notes are AI-compiled working drafts —
           largely ex-ante, since most instruments are new or still proposals — pending verification

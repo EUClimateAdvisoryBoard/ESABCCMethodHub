@@ -103,7 +103,7 @@ function GroupBadge({ code }: { code: string }) {
   const group = figaroIndustryFor(code);
   return (
     <span
-      className="rounded bg-grey-100 px-1 py-0.5 text-[9px] font-semibold text-grey-500"
+      className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 py-0.5 text-[9px] font-semibold text-grey-500 dark:text-[var(--mh-muted)]"
       title={`The input–output layer publishes this division only as part of the group ${IO_GROUP_LABELS[group] ?? group}.`}
     >
       IO: {IO_GROUP_LABELS[group] ?? group}
@@ -130,14 +130,14 @@ export default function TradeFlowExplorer() {
             onClick={() => setView(v.id)}
             className={`rounded-lg border px-3 py-1.5 text-left transition ${
               view === v.id
-                ? 'border-primary bg-surface-blue'
-                : 'border-grey-200 bg-white hover:border-grey-400'
+                ? 'border-primary bg-surface-blue dark:bg-primary/15'
+                : 'border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] hover:border-grey-400 dark:hover:border-[var(--mh-muted)]'
             }`}
           >
-            <div className={`text-sm font-semibold ${view === v.id ? 'text-primary' : 'text-grey-800'}`}>
+            <div className={`text-sm font-semibold ${view === v.id ? 'text-primary' : 'text-grey-800 dark:text-[var(--mh-fg)]'}`}>
               {v.label}
             </div>
-            <div className="text-[10px] text-grey-500">{v.blurb}</div>
+            <div className="text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">{v.blurb}</div>
           </button>
         ))}
       </div>
@@ -162,10 +162,10 @@ function OverviewDashboard({ onOpenDivision }: { onOpenDivision: (code: string) 
       {/* headline stat strip */}
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {HEADLINE_FACTS.map((f) => (
-          <div key={f.label} className="rounded-lg border border-grey-200 bg-white p-3">
-            <div className="text-2xl font-bold text-grey-900">{f.value}</div>
-            <div className="mt-0.5 text-xs font-semibold text-grey-700">{f.label}</div>
-            <div className="mt-1 text-[11px] leading-snug text-grey-500">{f.detail}</div>
+          <div key={f.label} className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
+            <div className="text-2xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">{f.value}</div>
+            <div className="mt-0.5 text-xs font-semibold text-grey-700 dark:text-[var(--mh-muted)]">{f.label}</div>
+            <div className="mt-1 text-[11px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">{f.detail}</div>
             <div className="mt-1 text-[10px]">
               <SourceLink src={f.src} />
             </div>
@@ -174,20 +174,20 @@ function OverviewDashboard({ onOpenDivision }: { onOpenDivision: (code: string) 
       </div>
 
       {/* trade balance — the door into the division deep-dive */}
-      <div className="rounded-lg border border-grey-200 bg-white p-3">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
         <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-          <p className="text-xs text-grey-600">
+          <p className="text-xs text-grey-600 dark:text-[var(--mh-muted)]">
             EU-27 extra-EU imports (red) vs exports (colour by branch), € bn, {year}. Sorted by net balance.{' '}
             <span className="font-semibold text-primary">Click a division to open its full profile.</span>
           </p>
           <div className="flex shrink-0 items-center gap-3">
-            <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+            <div className="flex overflow-hidden rounded border border-grey-200 dark:border-[var(--mh-border)] text-[11px]">
               {TEC_YEARS.map((y) => (
                 <button
                   key={y}
                   onClick={() => setYear(y)}
                   className={`px-2 py-0.5 font-semibold transition ${
-                    year === y ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                    year === y ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
                   }`}
                   title={
                     y === REFERENCE_YEAR
@@ -199,14 +199,14 @@ function OverviewDashboard({ onOpenDivision }: { onOpenDivision: (code: string) 
                 </button>
               ))}
             </div>
-            <label className="flex items-center gap-1.5 text-[11px] text-grey-600">
+            <label className="flex items-center gap-1.5 text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
               <input type="checkbox" checked={showIntra} onChange={(e) => setShowIntra(e.target.checked)} />
               show intra-EU
             </label>
           </div>
         </div>
         <TradeBalanceFigure selected={null} onSelect={onOpenDivision} showIntra={showIntra} year={year} />
-        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-grey-500">
+        <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">
           {Object.entries(TRADE_BRANCH_COLORS).map(([b, c]) => (
             <span key={b} className="inline-flex items-center gap-1">
               <span className="inline-block h-2.5 w-2.5 rounded-sm" style={{ background: c }} />
@@ -260,13 +260,13 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
     const w = (v: number) => `${(v / Math.max(f.impExt + f.impInt, f.expExt + f.expInt, 1)) * 100}%`;
     return (
       <div className="mb-1.5">
-        <div className="flex justify-between text-[10px] text-grey-500">
+        <div className="flex justify-between text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">
           <span>{label}</span>
           <span>
             extra €{fmt(extra)}bn · intra €{fmt(intra)}bn
           </span>
         </div>
-        <div className="flex h-3 overflow-hidden rounded bg-grey-100">
+        <div className="flex h-3 overflow-hidden rounded bg-grey-100 dark:bg-[var(--mh-bg)]">
           <div style={{ width: w(extra), background: extraColor }} />
           <div style={{ width: w(intra), background: extraColor, opacity: 0.35 }} />
         </div>
@@ -277,9 +277,9 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
   return (
     <div className="space-y-4">
       {/* division picker */}
-      <div className="rounded-lg border border-grey-200 bg-white p-3">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
         <div className="flex flex-wrap items-center gap-1">
-          <span className="mr-1 text-xs text-grey-500">Section C division:</span>
+          <span className="mr-1 text-xs text-grey-500 dark:text-[var(--mh-muted)]">Section C division:</span>
           {DIVISION_TRADE.map((d) => (
             <button
               key={d.code}
@@ -287,8 +287,8 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
               title={d.label}
               className={`rounded border px-1.5 py-0.5 text-[11px] transition ${
                 d.code === code
-                  ? 'border-primary bg-surface-blue font-semibold text-primary'
-                  : 'border-grey-200 text-grey-600 hover:border-grey-400'
+                  ? 'border-primary bg-surface-blue dark:bg-primary/15 font-semibold text-primary'
+                  : 'border-grey-200 dark:border-[var(--mh-border)] text-grey-600 dark:text-[var(--mh-muted)] hover:border-grey-400 dark:hover:border-[var(--mh-muted)]'
               }`}
             >
               {d.code}
@@ -298,22 +298,22 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
       </div>
 
       {/* header + KPIs */}
-      <div className="rounded-lg border border-grey-200 bg-white p-4">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded px-1.5 py-0.5 text-[10px] font-bold text-white" style={{ background: color }}>
               {div.code}
             </span>
-            <h3 className="text-lg font-bold text-grey-900">{div.label}</h3>
+            <h3 className="text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">{div.label}</h3>
             <GroupBadge code={div.code} />
           </div>
-          <div className="flex overflow-hidden rounded border border-grey-200 text-[11px]">
+          <div className="flex overflow-hidden rounded border border-grey-200 dark:border-[var(--mh-border)] text-[11px]">
             {TEC_YEARS.map((y) => (
               <button
                 key={y}
                 onClick={() => setYear(y)}
                 className={`px-2 py-0.5 font-semibold transition ${
-                  year === y ? 'bg-primary text-white' : 'bg-white text-grey-600 hover:bg-grey-50'
+                  year === y ? 'bg-primary text-white' : 'bg-white dark:bg-[var(--mh-card)] text-grey-600 dark:text-[var(--mh-muted)] hover:bg-grey-50 dark:hover:bg-[var(--mh-bg)]'
                 }`}
               >
                 {y}
@@ -321,33 +321,33 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
             ))}
           </div>
         </div>
-        <p className="mt-1.5 max-w-text text-xs leading-snug text-grey-600">{div.note}</p>
+        <p className="mt-1.5 max-w-text text-xs leading-snug text-grey-600 dark:text-[var(--mh-muted)]">{div.note}</p>
 
         <div className="mt-3 grid grid-cols-2 gap-2 text-center sm:grid-cols-4">
-          <div className="rounded bg-grey-50 p-2">
+          <div className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2">
             <div className={`text-base font-bold ${netExt >= 0 ? 'text-secondary' : 'text-accent-red'}`}>
               {netExt >= 0 ? '+' : ''}€{fmt(netExt)}bn
             </div>
-            <div className="text-[9px] text-grey-500">extra-EU balance {year}</div>
+            <div className="text-[9px] text-grey-500 dark:text-[var(--mh-muted)]">extra-EU balance {year}</div>
           </div>
-          <div className="rounded bg-grey-50 p-2">
-            <div className="text-base font-bold text-grey-800">{extraShare.toFixed(0)}%</div>
-            <div className="text-[9px] text-grey-500">extra-EU share of trade</div>
+          <div className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2">
+            <div className="text-base font-bold text-grey-800 dark:text-[var(--mh-fg)]">{extraShare.toFixed(0)}%</div>
+            <div className="text-[9px] text-grey-500 dark:text-[var(--mh-muted)]">extra-EU share of trade</div>
           </div>
-          <div className="rounded bg-grey-50 p-2">
-            <div className="text-base font-bold text-grey-800">{mix ? `${mix.importedShare.toFixed(0)}%` : '—'}</div>
-            <div className="text-[9px] text-grey-500">inputs imported (IO, {REFERENCE_YEAR})</div>
+          <div className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2">
+            <div className="text-base font-bold text-grey-800 dark:text-[var(--mh-fg)]">{mix ? `${mix.importedShare.toFixed(0)}%` : '—'}</div>
+            <div className="text-[9px] text-grey-500 dark:text-[var(--mh-muted)]">inputs imported (IO, {REFERENCE_YEAR})</div>
           </div>
-          <div className="rounded bg-grey-50 p-2">
-            <div className="text-base font-bold text-grey-800">{fva ? `${fva.fvaPct}%` : '—'}</div>
-            <div className="text-[9px] text-grey-500">foreign value added in exports</div>
+          <div className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2">
+            <div className="text-base font-bold text-grey-800 dark:text-[var(--mh-fg)]">{fva ? `${fva.fvaPct}%` : '—'}</div>
+            <div className="text-[9px] text-grey-500 dark:text-[var(--mh-muted)]">foreign value added in exports</div>
           </div>
         </div>
 
         <div className="mt-3 max-w-xl">
           {tradeBar('Imports', f.impExt, f.impInt, '#B83230')}
           {tradeBar('Exports', f.expExt, f.expInt, color)}
-          <p className="text-[9px] text-grey-400">
+          <p className="text-[9px] text-grey-400 dark:text-[var(--mh-muted)]">
             Solid = extra-EU · faded = intra-EU. {REFERENCE_YEAR}→{LATEST_YEAR} extra-EU balance:{' '}
             {netDelta >= 0 ? '+' : ''}€{fmt(netDelta)}bn (current prices — price and volume effects mixed).
             Source: Eurostat ext_tec01, {year} (enterprise-based — see Methodology).
@@ -355,7 +355,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
         </div>
 
         {fva && (
-          <div className="mt-3 max-w-xl rounded bg-surface-blue p-2 text-[11px] text-grey-700">
+          <div className="mt-3 max-w-xl rounded bg-surface-blue dark:bg-primary/15 p-2 text-[11px] text-grey-700 dark:text-[var(--mh-muted)]">
             <span className="font-semibold">Foreign value added in exports: {fva.fvaPct}%</span> (FIGARO{' '}
             {REFERENCE_YEAR})
             {fva.origins.length > 0 && (
@@ -375,39 +375,39 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
       </div>
 
       {/* the input–output chain */}
-      <div className="rounded-lg border border-grey-200 bg-white p-4">
-        <h4 className="mb-3 text-sm font-bold text-grey-900">The input–output chain</h4>
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+        <h4 className="mb-3 text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">The input–output chain</h4>
         <div className="grid gap-3 md:grid-cols-[1.15fr_auto_1fr] md:items-stretch">
           {/* INPUTS */}
-          <div className="rounded-lg border border-accent-red/30 bg-surface-orange/40 p-3">
+          <div className="rounded-lg border border-accent-red/30 bg-surface-orange/40 dark:bg-accent-red/10 p-3">
             <div className="mb-2 text-[11px] font-bold uppercase tracking-wide text-accent-red">
               ◄ Imported inputs (what, how much, from where)
             </div>
 
             {mix && mix.intermediateInputsBn > 0 && (
-              <div className="mb-3 rounded bg-white/80 p-2">
+              <div className="mb-3 rounded bg-white/80 dark:bg-[var(--mh-card)]/80 p-2">
                 <div className="flex items-baseline justify-between">
-                  <span className="text-[11px] font-semibold text-grey-800">
+                  <span className="text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
                     Imported intermediate inputs (IO use table, {REFERENCE_YEAR})
                   </span>
                   <span className="text-sm font-bold text-accent-red">{mix.importedShare}%</span>
                 </div>
-                <div className="text-[10px] text-grey-500">
+                <div className="text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">
                   €{fmt(mix.importedInputsBn)}bn of €{fmt(mix.intermediateInputsBn)}bn total inputs
                 </div>
                 <div className="mt-2 space-y-1">
                   {mix.topImported.slice(0, 6).map((t) => (
                     <div key={t.product} className="flex items-center gap-1.5">
-                      <span className="w-40 shrink-0 truncate text-[10px] text-grey-700" title={t.name}>
+                      <span className="w-40 shrink-0 truncate text-[10px] text-grey-700 dark:text-[var(--mh-muted)]" title={t.name}>
                         {shortProduct(t.name)}
                       </span>
-                      <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-100">
+                      <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-100 dark:bg-[var(--mh-bg)]">
                         <div
                           className="h-full bg-accent-red/80"
                           style={{ width: `${(t.valueBn / maxInput) * 100}%` }}
                         />
                       </div>
-                      <span className="w-14 shrink-0 text-right text-[9px] font-semibold text-grey-600">
+                      <span className="w-14 shrink-0 text-right text-[9px] font-semibold text-grey-600 dark:text-[var(--mh-muted)]">
                         €{fmt(t.valueBn)}bn
                       </span>
                     </div>
@@ -420,14 +420,14 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
             )}
 
             {origins && origins.partners.length > 0 && (
-              <div className="mb-3 rounded bg-white/80 p-2">
-                <div className="text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+              <div className="mb-3 rounded bg-white/80 dark:bg-[var(--mh-card)]/80 p-2">
+                <div className="text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
                   Import origins of this division&apos;s products (FIGARO, {REFERENCE_YEAR})
                 </div>
                 <div className="mt-1">
                   <PartnerColumn title="" partners={origins.partners} accent="#B83230" />
                 </div>
-                <p className="mt-1 text-[9px] leading-snug text-grey-400">
+                <p className="mt-1 text-[9px] leading-snug text-grey-400 dark:text-[var(--mh-muted)]">
                   {skew ? skew + ' ' : ''}
                   <SourceLink src={EUROSTAT_FIGARO_IMPORTS} />
                 </p>
@@ -436,14 +436,14 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
 
             {io && (
               <>
-                <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-grey-500">
+                <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
                   Named critical inputs (curated layer)
                 </div>
                 <ul className="space-y-2">
                   {io.inputs.map((inp) => (
-                    <li key={inp.name} className="rounded bg-white/70 p-2">
-                      <div className="text-xs font-semibold text-grey-800">{inp.name}</div>
-                      <div className="text-[11px] text-grey-600">{inp.suppliers}</div>
+                    <li key={inp.name} className="rounded bg-white/70 dark:bg-[var(--mh-card)]/70 p-2">
+                      <div className="text-xs font-semibold text-grey-800 dark:text-[var(--mh-fg)]">{inp.name}</div>
+                      <div className="text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">{inp.suppliers}</div>
                       <div className="text-[9px]">
                         <SourceLink src={inp.src} />
                       </div>
@@ -456,7 +456,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
 
           {/* SECTOR NODE */}
           <div className="flex flex-col items-center justify-center gap-2 px-2">
-            <div className="hidden text-2xl text-grey-300 md:block">→</div>
+            <div className="hidden text-2xl text-grey-300 dark:text-[var(--mh-muted)] md:block">→</div>
             <div className="rounded-xl px-4 py-3 text-center text-white shadow" style={{ background: color }}>
               <div className="text-xs font-bold">{div.code}</div>
               <div className="text-sm font-semibold">{div.label}</div>
@@ -465,11 +465,11 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
               )}
               {fva && <div className="mt-0.5 text-[10px] opacity-90">{fva.fvaPct}% foreign value added in exports</div>}
             </div>
-            <div className="hidden text-2xl text-grey-300 md:block">→</div>
+            <div className="hidden text-2xl text-grey-300 dark:text-[var(--mh-muted)] md:block">→</div>
           </div>
 
           {/* OUTPUTS */}
-          <div className="rounded-lg border border-secondary/30 bg-surface-green/60 p-3">
+          <div className="rounded-lg border border-secondary/30 bg-surface-green/60 dark:bg-secondary/15 p-3">
             <div className="mb-2 text-[11px] font-bold uppercase tracking-wide text-secondary">
               Where the output sells ►
             </div>
@@ -479,7 +479,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
             </div>
             {destinations && destinations.partners.length > 0 && (
               <div className="mt-3">
-                <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500">
+                <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
                   Top extra-EU destinations (FIGARO, {REFERENCE_YEAR})
                 </div>
                 <PartnerColumn title="" partners={destinations.partners} accent={color} />
@@ -488,13 +488,13 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
                 </div>
               </div>
             )}
-            <p className="mt-3 text-[10px] leading-snug text-grey-500">
+            <p className="mt-3 text-[10px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
               Split of observed exports, € bn, {REFERENCE_YEAR}. Extra-EU €{fmt(outExtra)}bn vs intra-EU €
               {fmt(outIntra)}bn. Domestic own-use is not shown (not a trade flow). Source: Eurostat ext_tec01.
             </p>
           </div>
         </div>
-        <p className="mt-3 text-[11px] leading-snug text-grey-500">
+        <p className="mt-3 text-[11px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
           Reads left→right as an input–output chain: the imported-input mix straight from the EU-27 use
           table, the origin countries of those imports (FIGARO), the named critical materials below the
           2-digit radar (curated) — and where the output goes. Attribution concepts differ by design — see
@@ -506,9 +506,9 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
       {(materials.length > 0 || risks.length > 0 || energy.length > 0) && (
         <div className="grid gap-4 lg:grid-cols-2">
           {(materials.length > 0 || energy.length > 0) && (
-            <div className="rounded-lg border border-grey-200 bg-white p-4">
-              <h4 className="text-sm font-bold text-grey-900">Critical materials &amp; feedstocks used by {div.code}</h4>
-              <p className="mt-1 text-[11px] text-grey-500">
+            <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+              <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Critical materials &amp; feedstocks used by {div.code}</h4>
+              <p className="mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
                 Curated EC/JRC layer, filtered to this division. Bar = dominant supplier&apos;s share of EU
                 supply.
               </p>
@@ -518,12 +518,12 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
                   const china = /china/i.test(m.topSupplier);
                   return (
                     <div key={m.material} className="grid grid-cols-[150px_1fr] items-center gap-2">
-                      <div className="text-[11px] font-medium text-grey-800" title={`${m.usedIn} — ${m.note}`}>
+                      <div className="text-[11px] font-medium text-grey-800 dark:text-[var(--mh-fg)]" title={`${m.usedIn} — ${m.note}`}>
                         {m.material}
-                        {m.strategic && <span className="ml-1 text-[8px] font-bold text-accent-orange">SRM</span>}
+                        {m.strategic && <span className="ml-1 text-[8px] font-bold text-[#7A4400] dark:text-[#FFB366]">SRM</span>}
                       </div>
                       <div className="flex items-center gap-2">
-                        <div className="h-4 flex-1 overflow-hidden rounded bg-grey-100">
+                        <div className="h-4 flex-1 overflow-hidden rounded bg-grey-100 dark:bg-[var(--mh-bg)]">
                           <div
                             className="flex h-full items-center justify-end pr-1 text-[9px] font-bold text-white"
                             style={{ width: `${Math.max(share, 12)}%`, background: china ? '#B83230' : '#004B7F' }}
@@ -531,25 +531,25 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
                             {share ? `${share}%` : 'n/a'}
                           </div>
                         </div>
-                        <div className="w-24 shrink-0 text-[10px] text-grey-600">{m.topSupplier}</div>
+                        <div className="w-24 shrink-0 text-[10px] text-grey-600 dark:text-[var(--mh-muted)]">{m.topSupplier}</div>
                       </div>
                     </div>
                   );
                 })}
               </div>
               {energy.length > 0 && (
-                <ul className="mt-3 space-y-2 border-t border-grey-100 pt-2">
+                <ul className="mt-3 space-y-2 border-t border-grey-100 dark:border-[var(--mh-border)] pt-2">
                   {energy.map((e) => (
                     <li key={e.item}>
                       <div className="flex items-baseline justify-between gap-2">
-                        <span className="text-[11px] font-semibold text-grey-800">
-                          {e.item} <span className="font-normal text-grey-400">({e.year})</span>
+                        <span className="text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
+                          {e.item} <span className="font-normal text-grey-400 dark:text-[var(--mh-muted)]">({e.year})</span>
                         </span>
                         {e.dependencyPct != null && (
                           <span className="text-sm font-bold text-accent-red">{e.dependencyPct}%</span>
                         )}
                       </div>
-                      <div className="text-[10px] leading-snug text-grey-500">
+                      <div className="text-[10px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
                         {e.note} <SourceLink src={e.src} />
                       </div>
                     </li>
@@ -557,32 +557,32 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
                 </ul>
               )}
               {materials.length === 0 && energy.length === 0 && (
-                <p className="mt-2 text-[11px] text-grey-500">No curated material dependency mapped to this division.</p>
+                <p className="mt-2 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">No curated material dependency mapped to this division.</p>
               )}
             </div>
           )}
 
           {risks.length > 0 && (
-            <div className="rounded-lg border border-grey-200 bg-white p-4">
-              <h4 className="text-sm font-bold text-grey-900">Import dependencies touching {div.code}</h4>
-              <p className="mt-1 text-[11px] text-grey-500">
+            <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+              <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Import dependencies touching {div.code}</h4>
+              <p className="mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
                 From the import-dependency map (import reliance × supplier concentration) — this
                 division&apos;s entries.
               </p>
               <ul className="mt-2 space-y-2">
                 {risks.map((h) => (
-                  <li key={h.label} className="rounded bg-grey-50 p-2">
+                  <li key={h.label} className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2">
                     <div className="flex items-baseline justify-between gap-2">
-                      <span className="text-[11px] font-semibold text-grey-800">{h.label}</span>
-                      <span className="shrink-0 text-[10px] text-grey-600">{h.supplier}</span>
+                      <span className="text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">{h.label}</span>
+                      <span className="shrink-0 text-[10px] text-grey-600 dark:text-[var(--mh-muted)]">{h.supplier}</span>
                     </div>
-                    <div className="mt-1 flex items-center gap-2 text-[10px] text-grey-600">
+                    <div className="mt-1 flex items-center gap-2 text-[10px] text-grey-600 dark:text-[var(--mh-muted)]">
                       <span>reliance {(h.importReliance * 100).toFixed(0)}%</span>
-                      <div className="h-2 flex-1 overflow-hidden rounded-sm bg-grey-200">
+                      <div className="h-2 flex-1 overflow-hidden rounded-sm bg-grey-200 dark:bg-[var(--mh-border)]">
                         <div className="h-full bg-accent-red/80" style={{ width: `${h.importReliance * 100}%` }} />
                       </div>
                       <span>concentration {(h.supplierConcentration * 100).toFixed(0)}%</span>
-                      <div className="h-2 flex-1 overflow-hidden rounded-sm bg-grey-200">
+                      <div className="h-2 flex-1 overflow-hidden rounded-sm bg-grey-200 dark:bg-[var(--mh-border)]">
                         <div className="h-full bg-primary/80" style={{ width: `${h.supplierConcentration * 100}%` }} />
                       </div>
                     </div>
@@ -597,7 +597,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
         </div>
       )}
 
-      <div className="rounded-lg border border-grey-200 bg-surface-blue/60 p-3 text-[12px] text-grey-700">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-surface-blue/60 dark:bg-primary/15 p-3 text-[12px] text-grey-700 dark:text-[var(--mh-muted)]">
         Want the raw numbers behind this profile? The full FIGARO input–output matrix (this division is
         industry <span className="font-mono font-semibold">{figaroIndustryFor(code)}</span>{' '}
         in the A*64 classification) is hosted on the MethodHub —{' '}
@@ -613,19 +613,19 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
 
 function FigaroTeaser() {
   return (
-    <div className="rounded-lg border border-grey-200 bg-white p-5">
+    <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-5">
       <div className="flex flex-wrap items-center gap-2">
-        <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+        <span className="rounded border border-primary-lighter bg-surface-blue dark:bg-primary/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
           naio_10_fcp_ii4 · 2022–2023
         </span>
-        <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+        <span className="rounded bg-grey-200 dark:bg-[var(--mh-border)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
           Hosted on the MethodHub
         </span>
       </div>
-      <h3 className="mt-2 text-lg font-bold text-grey-900">The full FIGARO input–output table lives here now</h3>
-      <p className="mt-2 max-w-text text-sm text-grey-600">
+      <h3 className="mt-2 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">The full FIGARO input–output table lives here now</h3>
+      <p className="mt-2 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
         The complete Eurostat FIGARO inter-country input–output table (~11 million cells, industry by
-        industry) is imported by <code className="rounded bg-grey-100 px-1 text-[12px]">scripts/fetch-figaro-io-dataset.mjs</code>{' '}
+        industry) is imported by <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[12px]">scripts/fetch-figaro-io-dataset.mjs</code>{' '}
         and condensed to the EU-27 as one economy: 64 supplying industries + value added × 64 using
         industries + final demand, for intra-EU supply and each of the 23 extra-EU partner areas. The JSON is
         committed to this repository and served from this site — browsable as a filterable{' '}
@@ -649,20 +649,20 @@ function PartnerColumn({ title, partners, accent }: { title: string; partners: F
   const shown = partners.slice(0, 5);
   const max = Math.max(...shown.map((p) => p.pctOfExtra), 1);
   return (
-    <div className="rounded bg-grey-50 p-1.5">
+    <div className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-1.5">
       {title && (
-        <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500">{title}</div>
+        <div className="mb-1 text-[9px] font-semibold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">{title}</div>
       )}
       <div className="space-y-1">
         {shown.map((p) => (
           <div key={p.code} className="flex items-center gap-1">
-            <span className="w-16 shrink-0 truncate text-[10px] text-grey-700" title={p.name}>
+            <span className="w-16 shrink-0 truncate text-[10px] text-grey-700 dark:text-[var(--mh-muted)]" title={p.name}>
               {p.name}
             </span>
-            <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-200">
+            <div className="h-2.5 flex-1 overflow-hidden rounded-sm bg-grey-200 dark:bg-[var(--mh-border)]">
               <div style={{ width: `${(p.pctOfExtra / max) * 100}%`, background: accent }} className="h-full" />
             </div>
-            <span className="w-8 shrink-0 text-right text-[9px] font-semibold text-grey-600">{p.pctOfExtra}%</span>
+            <span className="w-8 shrink-0 text-right text-[9px] font-semibold text-grey-600 dark:text-[var(--mh-muted)]">{p.pctOfExtra}%</span>
           </div>
         ))}
       </div>
@@ -674,11 +674,11 @@ function FlowBar({ label, value, total, color }: { label: string; value: number;
   const pct = total > 0 ? (value / total) * 100 : 0;
   return (
     <div>
-      <div className="flex justify-between text-[11px] text-grey-600">
+      <div className="flex justify-between text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
         <span>{label}</span>
         <span className="font-semibold">{pct.toFixed(0)}%</span>
       </div>
-      <div className="mt-0.5 h-4 overflow-hidden rounded bg-white">
+      <div className="mt-0.5 h-4 overflow-hidden rounded bg-white dark:bg-[var(--mh-card)]">
         <div className="flex h-full items-center justify-end pr-1 text-[9px] font-bold text-white" style={{ width: `${Math.max(pct, 8)}%`, background: color }}>
           €{fmt(value)}bn
         </div>
@@ -694,9 +694,9 @@ function MaterialsView() {
   const isChina = (s: string) => /china/i.test(s);
   return (
     <div className="grid gap-4 lg:grid-cols-[1fr_300px]">
-      <div className="rounded-lg border border-grey-200 bg-white p-4">
-        <h4 className="text-sm font-bold text-grey-900">Critical materials — who the EU depends on</h4>
-        <p className="mb-3 mt-1 text-xs text-grey-600">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+        <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Critical materials — who the EU depends on</h4>
+        <p className="mb-3 mt-1 text-xs text-grey-600 dark:text-[var(--mh-muted)]">
           Critical &amp; strategic raw materials the EU manufactures with but barely produces, ranked by the
           dominant supplier&apos;s share of EU supply. The bar is that supplier&apos;s share; the label names
           the country. China (red) holds a commanding share of most of them.
@@ -707,12 +707,12 @@ function MaterialsView() {
             const china = isChina(m.topSupplier);
             return (
               <div key={m.material} className="grid grid-cols-[150px_1fr] items-center gap-2">
-                <div className="text-[11px] font-medium text-grey-800" title={m.usedIn}>
+                <div className="text-[11px] font-medium text-grey-800 dark:text-[var(--mh-fg)]" title={m.usedIn}>
                   {m.material}
-                  {m.strategic && <span className="ml-1 text-[8px] font-bold text-accent-orange">SRM</span>}
+                  {m.strategic && <span className="ml-1 text-[8px] font-bold text-[#7A4400] dark:text-[#FFB366]">SRM</span>}
                 </div>
                 <div className="flex items-center gap-2">
-                  <div className="h-4 flex-1 overflow-hidden rounded bg-grey-100">
+                  <div className="h-4 flex-1 overflow-hidden rounded bg-grey-100 dark:bg-[var(--mh-bg)]">
                     <div
                       className="flex h-full items-center justify-end pr-1 text-[9px] font-bold text-white"
                       style={{ width: `${Math.max(share, 12)}%`, background: china ? '#B83230' : '#004B7F' }}
@@ -720,37 +720,37 @@ function MaterialsView() {
                       {share ? `${share}%` : 'n/a'}
                     </div>
                   </div>
-                  <div className="w-24 shrink-0 text-[10px] text-grey-600">{m.topSupplier}</div>
+                  <div className="w-24 shrink-0 text-[10px] text-grey-600 dark:text-[var(--mh-muted)]">{m.topSupplier}</div>
                 </div>
               </div>
             );
           })}
         </div>
-        <p className="mt-3 text-[10px] text-grey-400">
+        <p className="mt-3 text-[10px] text-grey-400 dark:text-[var(--mh-muted)]">
           SRM = Strategic Raw Material under the Critical Raw Materials Act (Reg. (EU) 2024/1252). Share = of
           EU supply (sourcing stage), as reported by the EC/JRC; customs trade shares differ.
         </p>
       </div>
 
       {/* energy / feedstock side panel */}
-      <div className="rounded-lg border border-grey-200 bg-white p-4">
-        <h4 className="text-sm font-bold text-grey-900">Energy &amp; feedstock reliance</h4>
-        <p className="mt-1 text-[11px] text-grey-600">
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+        <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Energy &amp; feedstock reliance</h4>
+        <p className="mt-1 text-[11px] text-grey-600 dark:text-[var(--mh-muted)]">
           The other input dependency — behind refining (C19) and chemicals (C20). Live Eurostat{' '}
-          <code className="rounded bg-grey-100 px-1 text-[10px]">nrg_ind_id</code> values.
+          <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[10px]">nrg_ind_id</code> values.
         </p>
         <ul className="mt-3 space-y-2.5">
           {ENERGY_FEEDSTOCK_DEPENDENCY.map((e) => (
             <li key={e.item}>
               <div className="flex items-baseline justify-between gap-2">
-                <span className="text-[11px] font-semibold text-grey-800">
-                  {e.item} <span className="font-normal text-grey-400">({e.year})</span>
+                <span className="text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
+                  {e.item} <span className="font-normal text-grey-400 dark:text-[var(--mh-muted)]">({e.year})</span>
                 </span>
                 {e.dependencyPct != null && (
                   <span className="text-sm font-bold text-accent-red">{e.dependencyPct}%</span>
                 )}
               </div>
-              <div className="text-[10px] leading-snug text-grey-500">
+              <div className="text-[10px] leading-snug text-grey-500 dark:text-[var(--mh-muted)]">
                 {e.note} <SourceLink src={e.src} />
               </div>
             </li>

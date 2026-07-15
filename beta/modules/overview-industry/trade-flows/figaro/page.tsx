@@ -17,11 +17,11 @@ import FigaroExplorer from './FigaroExplorer';
 
 export default function FigaroPage() {
   return (
-    <div className="min-h-screen bg-grey-50">
+    <div className="min-h-screen bg-grey-50 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
 
       <main className="mx-auto max-w-wide px-4 py-8">
-        <nav className="mb-4 text-sm text-grey-500">
+        <nav className="mb-4 text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           <Link href="/beta/overview-industry" className="hover:underline">
             Overview Industry
           </Link>
@@ -30,25 +30,25 @@ export default function FigaroPage() {
             Trade flows
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-grey-700">FIGARO IO data</span>
+          <span className="text-grey-700 dark:text-[var(--mh-muted)]">FIGARO IO data</span>
         </nav>
 
         <header className="mb-6">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded bg-accent-orange px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+            <span className="rounded bg-[#7A4400] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
               Beta
             </span>
-            <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+            <span className="rounded border border-primary-lighter bg-surface-blue dark:bg-primary/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
               FIGARO · naio_10_fcp_ii4
             </span>
-            <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+            <span className="rounded bg-grey-200 dark:bg-[var(--mh-border)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
               Data hosted on the MethodHub
             </span>
           </div>
-          <h1 className="mt-2 text-3xl font-bold text-grey-900">
+          <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             FIGARO input–output data — table viewer &amp; analysis
           </h1>
-          <p className="mt-2 max-w-text text-grey-700">
+          <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             The complete Eurostat <span className="font-semibold">FIGARO</span> inter-country input–output
             table (industry by industry, 2022–2023), imported into the MethodHub and aggregated to the EU-27
             as one economy: 64 industries + value added on the supply side, 64 industries + final demand on
@@ -59,7 +59,7 @@ export default function FigaroPage() {
           </p>
         </header>
 
-        <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
+        <section className="rounded-xl border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4 shadow-sm sm:p-5">
           <FigaroExplorer />
         </section>
       </main>

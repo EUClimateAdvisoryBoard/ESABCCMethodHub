@@ -29,6 +29,15 @@
  * SOURCING RULE (hard, identical to the catalogue): every value carries a
  * `source` with a real, working link. Nothing here is invented; gaps are left
  * empty rather than guessed.
+ *
+ * STATUS: staged, not yet wired in. This whole-economy layer is intentionally
+ * held out of the live UI for now — it is not imported by `EmissionsSunburst.tsx`
+ * (which currently reads only `nace-2-1.ts`, the pure classification, for the
+ * sunburst). It is kept here, complete and sourced, for a future integration
+ * that lets clicking any arc surface whole-economy context per NACE division;
+ * see the "Wire `nace-emissions-layer.ts` into the sunburst detail panel" item
+ * in the deferred backlog of `docs-internal/summer-prep-quality-review/README.md`.
+ * Do not delete as dead code — it is deliberately unused, not orphaned.
  */
 
 import type { Source, Sourced } from './cleantech-catalogue';

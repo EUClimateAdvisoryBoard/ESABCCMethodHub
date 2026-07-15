@@ -50,6 +50,16 @@ export interface GapReassessment {
   subsector: string;
   status: GapStatus;
   note: string;
+  /**
+   * Optional additional subsector(s) this gap also bears on, beyond its
+   * primary `subsector` (e.g. an aviation/maritime ETS gap that concerns
+   * both). Counted into the landscape-matrix cell for each listed subsector
+   * as well as the primary one, so a shared gap doesn't leave one subsector's
+   * row silently empty.
+   */
+  alsoSubsectors?: string[];
+  /** Source URL(s) backing this reassessment's status/note, where the note relies on developments beyond the base report quote. */
+  sources?: string[];
 }
 
 export const GAP_REASSESSMENTS: Record<string, GapReassessment> = {
@@ -79,7 +89,11 @@ export const GAP_REASSESSMENTS: Record<string, GapReassessment> = {
   'transport-modal-shift-freight': {
     subsector: 'Road freight',
     status: 'partially-addressed',
-    note: 'The proposed recast of the Combined Transport Directive and TEN-T (Reg. (EU) 2024/1679) address some ambition weaknesses, but the Combined Transport file is still in negotiation and delivery mechanisms are unproven — ambition gap only partly narrowed.',
+    note: 'The TEN-T recast (Reg. (EU) 2024/1679) is in force and addresses some ambition weaknesses, but the Combined Transport Directive recast came close to being withdrawn by the Commission in late 2025, was kept alive only after Parliament rejected the withdrawal (Jan 2026), and remains stalled in Council with no agreed text as of mid-2026 — the ambition gap is unresolved and the file’s survival itself is in question.',
+    sources: [
+      'https://www.railwaygazette.com/freight/2026/06/04/rail-association-throw-last-hail-mary-to-save-combined-transport-directive/',
+      'https://www.cer.be/cer-press-releases/council-faces-stalemate-as-combined-transport-directive-loses-momentum',
+    ],
   },
   'transport-modal-shift-implementation': {
     subsector: 'Road freight',
@@ -99,12 +113,17 @@ export const GAP_REASSESSMENTS: Record<string, GapReassessment> = {
   'transport-biofuel-fraud': {
     subsector: 'Cross-cutting',
     status: 'partially-addressed',
-    note: 'The Union Database for Biofuels (mandatory from 2024) and stricter voluntary-scheme oversight tighten traceability, but well-founded fraud suspicions persist — implementation gap narrowed, not resolved.',
+    note: 'The Union Database for Biofuels has been operational since January 2024 and stricter voluntary-scheme oversight tightens traceability, but the delegated act setting a binding mandatory-use/sanctions date is still pending agreement with Member States as of 2025–2026 — enforcement teeth are not yet in place, so the implementation gap is narrowed, not resolved.',
+    sources: [
+      'https://vespertool.com/blog/the-udb-will-be-mandatory/',
+      'https://energy.ec.europa.eu/news/eu-database-biofuels-becomes-operational-2024-01-15_en',
+    ],
   },
   'transport-extra-eu-exemption': {
     subsector: 'Aviation',
     status: 'open',
     note: 'Extra-EU aviation still sits under CORSIA rather than the ETS, and half of extra-EU maritime remains outside the ETS; the review clauses have not changed the scope. Assessed unchanged (also applies to Maritime).',
+    alsoSubsectors: ['Maritime'],
   },
 };
 
@@ -119,6 +138,8 @@ export interface CandidateGap {
   instrument: string;
   /** Why this is only a *candidate* and what would confirm/refute it. */
   testToConfirm: string;
+  /** Source URL(s) grounding the rationale/test, where it relies on facts beyond the underlying report gap. */
+  sources?: string[];
 }
 
 export const CANDIDATE_GAPS: CandidateGap[] = [
@@ -131,9 +152,13 @@ export const CANDIDATE_GAPS: CandidateGap[] = [
     title: 'No binding demand signal for near-zero steel',
     rationale:
       'Near-zero primary steel carries a green premium that no EU instrument yet guarantees demand for. Without mandatory lead-market quotas (e.g. green public procurement or a minimum near-zero content in cars/construction), first-mover H₂-DRI plants lack an offtake floor — a market-formation gap the report flags generically but not for steel specifically.',
-    instrument: 'Public procurement, Clean Industrial Deal lead-market measures, product standards',
+    instrument: 'Public procurement, Clean Industrial Deal lead-market measures, product standards, Industrial Accelerator Act',
     testToConfirm:
-      'Confirmed if, by the 2025 review, no EU measure sets enforceable near-zero-steel demand; refuted if the Industrial Decarbonisation Accelerator Act introduces binding content/procurement quotas.',
+      'A draft Industrial Accelerator Act (renamed from "Industrial Decarbonisation Accelerator Act" in von der Leyen’s Sept-2025 State of the Union address) was tabled 4 March 2026 with "Made in EU" / low-carbon procurement content among its core measures — the gap is now "policy proposed, not yet enacted", not a purely hypothetical future test. Confirmed if the Act is adopted without binding near-zero-steel content/procurement quotas, or stalls before adoption; refuted if the adopted Act sets enforceable near-zero-steel demand.',
+    sources: [
+      'https://www.sidley.com/en/insights/newsupdates/2026/04/industrial-accelerator-act',
+      'https://single-market-economy.ec.europa.eu/publications/industrial-accelerator-act_en',
+    ],
   },
   {
     id: 'cand-cement-co2-storage',
@@ -220,6 +245,22 @@ export const CANDIDATE_GAPS: CandidateGap[] = [
     instrument: 'TEN-T climate-proofing requirements, CEF Transport, Rail Freight rules',
     testToConfirm:
       'Confirmed if electrification funding carries no binding adaptation/climate-proofing condition; refuted if TEN-T climate-proofing is enforced on rail works.',
+  },
+  {
+    id: 'cand-maritime-fueleu-conditions',
+    sector: 'Transport',
+    subsector: 'Maritime',
+    type: 'implementation',
+    title: 'FuelEU Maritime compliance conditions not yet in place',
+    rationale:
+      'FuelEU Maritime\'s declining GHG-intensity limit (in force since 1 January 2025) assumes fuel and infrastructure conditions that are still open questions rather than settled facts: RFNBO/biofuel supply may not scale fast enough (a conditional 2% RFNBO sub-target only bites from 2034, and only if uptake stays below 1% through 2031), well-to-wake lifecycle accounting leaves commercial/contractual practicalities unresolved between charterers, pool members and owners, and shore-side (OPS) port infrastructure was only ~20% contracted/installed by May 2025 against the 1 January 2030 AFIR deadline for major container/passenger ports — leaving the sector\'s own gap landscape with no tagged Maritime-specific risk despite these open questions.',
+    instrument: 'FuelEU Maritime (Reg. (EU) 2023/1805), AFIR onshore power supply requirements, RED III RFNBO sub-target mechanism',
+    testToConfirm:
+      'Confirmed if RFNBO uptake stays below 1% of maritime fuel use through 2031 (triggering the conditional 2034 sub-target) and/or OPS installation at major EU ports continues to lag the 1 January 2030 AFIR deadline; refuted if RFNBO/biofuel supply and port electrification scale to meet the FuelEU trajectory on schedule.',
+    sources: [
+      'https://transport.ec.europa.eu/transport-modes/maritime/decarbonising-maritime-transport-fueleu-maritime/questions-and-answers-regulation-eu-20231805-use-renewable-and-low-carbon-fuels-maritime-transport_en',
+      'https://www.sustainable-ships.org/stories/2025/eu-shore-power-demand-2030',
+    ],
   },
   {
     id: 'cand-aviation-nonco2',

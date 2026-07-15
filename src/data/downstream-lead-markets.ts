@@ -376,8 +376,8 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
     keyData: [
       {
         label: 'Minimum low-carbon shares (as proposed)',
-        value: '≥25% steel, 5% concrete/mortar, 25% aluminium in covered public contracts (fixed in the proposal; "low-carbon" thresholds set later via delegated acts)',
-        source: 'Commission proposal / law-firm analyses',
+        value: '≥25% steel, 5% concrete/mortar, 25% aluminium in covered public contracts (fixed in the proposal; "low-carbon" thresholds set later via delegated acts); Member States must apply the shares to ≥45% of the national budget for support schemes covering these materials.',
+        source: 'Commission proposal / Skadden & Mayer Brown law-firm analyses, Mar–Apr 2026',
       },
       {
         label: 'Proposal date / procedure',
@@ -433,6 +433,14 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       {
         label: 'EUROFER position — prioritise low-carbon steel made in Europe',
         url: 'https://www.eurofer.eu/press-releases/industrial-accelerator-act-eu-must-prioritise-low-carbon-steel-made-in-europe-not-foreign-imports',
+      },
+      {
+        label: 'Skadden — Commission proposes the Industrial Accelerator Act (Apr 2026)',
+        url: 'https://www.skadden.com/insights/publications/2026/04/european-commission-proposes-industrial-accelerator-act',
+      },
+      {
+        label: 'Mayer Brown — Commission proposes the Industrial Accelerator Act (Mar 2026)',
+        url: 'https://www.mayerbrown.com/en/insights/publications/2026/03/european-commission-proposes-industrial-accelerator-act',
       },
     ],
     handoverNotes:
@@ -686,7 +694,7 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
     category: 'quota',
     status: 'adopted',
     statusDetail:
-      'Provisional agreement 12 Dec 2025; Council formal adoption 29 June 2026. Applies (in the main) two years after entry into force. Recycled-plastic quota: 15% at year 6 rising to 25% at year 10 (with 20% of that from ELVs); delegated act within two years to set minimum recycled-steel (ferrous scrap) and recycled-aluminium shares per vehicle type.',
+      'Provisional agreement 12 Dec 2025; EP plenary approval 18 June 2026; Council formal adoption 29 June 2026. Applies (in the main) two years after entry into force. Recycled-plastic quota: 15% at year 6 rising to 25% at year 10 (with 20% of that from ELVs); delegated act within two years to set minimum recycled-steel (ferrous scrap) and recycled-aluminium shares per vehicle type.',
     reference: 'ELV Regulation (2023/0284(COD)) — adopted June 2026',
     sectors: 'Automotive; upstream pull on plastics recyclers, steel & aluminium',
     description:
@@ -740,8 +748,16 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
         url: 'https://www.europarl.europa.eu/legislative-train/theme-a-european-green-deal/file-revision-of-eu-rules-on-end-of-life-vehicles-and-type-approval-of-motor-vehicles',
       },
       {
+        label: 'European Parliament — plenary approval, new rules for a more sustainable EU automotive sector (18 June 2026)',
+        url: 'https://www.europarl.europa.eu/news/en/press-room/20260611IPR45210/new-rules-for-a-more-sustainable-eu-automotive-sector',
+      },
+      {
         label: 'Council document ST-6759-2026 (compromise text)',
         url: 'https://data.consilium.europa.eu/doc/document/ST-6759-2026-INIT/en/pdf',
+      },
+      {
+        label: 'Council of the EU — Council greenlights rules for a more circular automotive sector (29 June 2026)',
+        url: 'https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/council-greenlights-rules-for-a-more-circular-automotive-sector/',
       },
       {
         label: 'CDX — EU formally adopts the ELV Regulation',

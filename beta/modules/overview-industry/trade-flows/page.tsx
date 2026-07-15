@@ -26,7 +26,7 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import TradeFlowExplorer from './TradeFlowExplorer';
-import { exportTradeFlowsWorkbook } from './export';
+import { exportTradeFlowsWorkbook, SHEET_NAMES } from './export';
 
 export default function TradeFlowsPage() {
   const [exporting, setExporting] = useState(false);
@@ -41,34 +41,34 @@ export default function TradeFlowsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-grey-50">
+    <div className="min-h-screen bg-grey-50 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
 
       <main className="mx-auto max-w-wide px-4 py-8">
-        <nav className="mb-4 text-sm text-grey-500">
+        <nav className="mb-4 text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           <Link href="/beta/overview-industry" className="hover:underline">
             Overview Industry
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-grey-700">Trade flows</span>
+          <span className="text-grey-700 dark:text-[var(--mh-muted)]">Trade flows</span>
         </nav>
 
         <header className="mb-6">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded bg-accent-orange px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+            <span className="rounded bg-[#7A4400] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
               Beta
             </span>
-            <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+            <span className="rounded border border-primary-lighter bg-surface-blue dark:bg-primary/15 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
               NACE C · Manufacturing
             </span>
-            <span className="rounded bg-grey-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
+            <span className="rounded bg-grey-200 dark:bg-[var(--mh-border)] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-tertiary">
               Live Eurostat data · IO tables
             </span>
           </div>
-          <h1 className="mt-2 text-3xl font-bold text-grey-900">
+          <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             Trade flows — the input–output map of EU manufacturing
           </h1>
-          <p className="mt-2 max-w-text text-grey-700">
+          <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             An input–output reading of EU-27 manufacturing trade (NACE Rev. 2 Section&nbsp;C, divisions
             10–33). The <span className="font-semibold">Overview</span> is one summary
             dashboard: headline facts, the imports-vs-exports balance of all 24 divisions, the
@@ -97,24 +97,22 @@ export default function TradeFlowsPage() {
             >
               {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
             </button>
-            <span className="text-[12px] text-grey-500">
-              12 sheets: read-me · headline facts · trade backbone (2023 + 2024) · FIGARO partners ·
-              foreign value added · imported inputs · critical materials · strategic &amp; energy
-              dependencies · risk hotspots · critical inputs · sources
+            <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
+              {SHEET_NAMES.length} sheets: {SHEET_NAMES.join(' · ')}
             </span>
           </div>
         </header>
 
-        <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
+        <section className="rounded-xl border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4 shadow-sm sm:p-5">
           <TradeFlowExplorer />
         </section>
 
-        <section className="mt-6 max-w-text text-sm text-grey-600">
-          <h2 className="text-base font-bold text-grey-800">How to read this — the short version</h2>
+        <section className="mt-6 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
+          <h2 className="text-base font-bold text-grey-800 dark:text-[var(--mh-fg)]">How to read this — the short version</h2>
           <ul className="mt-2 list-disc space-y-1.5 pl-5">
             <li>
               <span className="font-semibold">Three data layers, kept apart on purpose.</span> A trade
-              backbone (Eurostat <code className="rounded bg-grey-100 px-1 text-[12px]">ext_tec01</code>,
+              backbone (Eurostat <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[12px]">ext_tec01</code>,
               all 24 divisions, 2023 + 2024), an input–output layer (EU-27 use table + FIGARO, 2023), and a
               curated critical-materials layer (EC/JRC, &quot;as reported by&quot;).
             </li>
@@ -138,11 +136,11 @@ export default function TradeFlowsPage() {
             </li>
             <li>
               <span className="font-semibold">Reproducible:</span>{' '}
-              <code className="rounded bg-grey-100 px-1 text-[12px]">
+              <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[12px]">
                 node scripts/fetch-trade-flows-io-data.mjs
               </code>{' '}
               regenerates every statistical number on this page from the public Eurostat API, and{' '}
-              <code className="rounded bg-grey-100 px-1 text-[12px]">
+              <code className="rounded bg-grey-100 dark:bg-[var(--mh-bg)] px-1 text-[12px]">
                 node scripts/fetch-figaro-io-dataset.mjs
               </code>{' '}
               re-imports the full FIGARO table.

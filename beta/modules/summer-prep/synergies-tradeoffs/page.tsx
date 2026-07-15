@@ -28,12 +28,23 @@ import {
 const KIND_KEYS = Object.keys(SYNERGY_KIND_META) as InteractionKind[];
 const SECTORS: SectorKey[] = ['Industry', 'Transport'];
 
+// Dark-mode text colors for the synergy/trade-off chip labels — the plain
+// `m.color` values (#007B6C, #B83230) fail WCAG contrast against the dark
+// theme's near-black backgrounds (measured 2.84:1 / 2.57:1); `mixed`
+// (#FF9933) already passes at 6.36:1 so it keeps the same color in both
+// themes. The category color still drives the chip's background tint.
+const KIND_TEXT_CLASS: Record<InteractionKind, string> = {
+  synergy: 'text-[#007B6C] dark:text-[#4FD9C3]',
+  'trade-off': 'text-[#B83230] dark:text-[#FF8A80]',
+  mixed: 'text-[#FF9933]',
+};
+
 function KindBadge({ kind }: { kind: InteractionKind }) {
   const m = SYNERGY_KIND_META[kind];
   return (
     <span
-      className="inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
-      style={{ backgroundColor: `${m.color}1A`, color: m.color }}
+      className={`inline-flex items-center gap-1 whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide ${KIND_TEXT_CLASS[kind]}`}
+      style={{ backgroundColor: `${m.color}1A` }}
       title={m.description}
     >
       <span aria-hidden>{m.symbol}</span> {m.label}
@@ -55,13 +66,13 @@ function EntryCard({ e }: { e: SynergyEntry }) {
 
       <div className="mt-2 grid grid-cols-1 gap-1.5 sm:grid-cols-2">
         <div className="rounded-md bg-[#F3F5F7] px-2.5 py-1.5 dark:bg-[var(--mh-bg)]">
-          <div className="text-[9px] font-bold uppercase tracking-wide text-[#004B7F]">
+          <div className="text-[9px] font-bold uppercase tracking-wide text-[#004B7F] dark:text-[#5B9BD5]">
             Mitigation
           </div>
           <div className="text-[12px] leading-snug">{e.mitigation}</div>
         </div>
         <div className="rounded-md bg-[#F3F5F7] px-2.5 py-1.5 dark:bg-[var(--mh-bg)]">
-          <div className="text-[9px] font-bold uppercase tracking-wide text-[#007B6C]">
+          <div className="text-[9px] font-bold uppercase tracking-wide text-[#007B6C] dark:text-[#4FD9C3]">
             Adaptation / resilience
           </div>
           <div className="text-[12px] leading-snug">{e.adaptation}</div>

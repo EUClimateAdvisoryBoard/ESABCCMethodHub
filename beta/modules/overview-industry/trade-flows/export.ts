@@ -64,6 +64,27 @@ import {
   INDUSTRY_INPUT_MIX,
 } from './eurostat-io.generated';
 
+/**
+ * The 12 worksheet names, in the exact order they are added below (kept
+ * adjacent to the `wb.addWorksheet(SHEET_NAMES[i], …)` calls so the two can
+ * never drift apart). `page.tsx` renders its "N sheets: …" summary straight
+ * from this array — do not rename/reorder without checking that copy too.
+ */
+export const SHEET_NAMES = [
+  'Read me',
+  'Headline facts',
+  'Trade backbone',
+  'FIGARO partners',
+  'Foreign value added',
+  'Imported inputs',
+  'Critical materials',
+  'Strategic dependencies',
+  'Energy dependency',
+  'Risk hotspots',
+  'Critical inputs',
+  'Sources',
+] as const;
+
 const NAVY = 'FF004B7F';
 const TEAL = 'FF007B6C';
 const ORANGE = 'FFFF9933';
@@ -133,7 +154,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   addSrc(SWD_2021_352, 'Strategic-dependency review');
 
   /* ── 1 · Read me ──────────────────────────────────────────────────── */
-  const rm = wb.addWorksheet('Read me', { properties: { tabColor: { argb: NAVY } } });
+  const rm = wb.addWorksheet(SHEET_NAMES[0], { properties: { tabColor: { argb: NAVY } } });
   rm.columns = [{ width: 30 }, { width: 112 }];
   const rmRows: [string, string][] = [
     ['Workbook', 'Trade flows — the input–output map of EU-27 manufacturing (handover copy)'],
@@ -163,7 +184,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   rm.mergeCells('A1:B1');
 
   /* ── 2 · Headline facts ───────────────────────────────────────────── */
-  const hf = wb.addWorksheet('Headline facts', { properties: { tabColor: { argb: TEAL } } });
+  const hf = wb.addWorksheet(SHEET_NAMES[1], { properties: { tabColor: { argb: TEAL } } });
   hf.columns = [
     { header: 'Item', key: 'label', width: 42 },
     { header: 'Value', key: 'value', width: 20 },
@@ -194,7 +215,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(hf);
 
   /* ── 3 · Trade backbone ───────────────────────────────────────────── */
-  const tb = wb.addWorksheet('Trade backbone', { properties: { tabColor: { argb: NAVY } } });
+  const tb = wb.addWorksheet(SHEET_NAMES[2], { properties: { tabColor: { argb: NAVY } } });
   tb.columns = [
     { header: 'Division', key: 'code', width: 9 },
     { header: 'Label', key: 'label', width: 40 },
@@ -238,7 +259,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(tb);
 
   /* ── 4 · FIGARO partners ──────────────────────────────────────────── */
-  const fp = wb.addWorksheet('FIGARO partners', { properties: { tabColor: { argb: TEAL } } });
+  const fp = wb.addWorksheet(SHEET_NAMES[3], { properties: { tabColor: { argb: TEAL } } });
   fp.columns = [
     { header: 'Flow', key: 'flow', width: 20 },
     { header: 'Industry', key: 'industry', width: 12 },
@@ -273,7 +294,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(fp);
 
   /* ── 5 · Foreign value added ──────────────────────────────────────── */
-  const fv = wb.addWorksheet('Foreign value added', { properties: { tabColor: { argb: ORANGE } } });
+  const fv = wb.addWorksheet(SHEET_NAMES[4], { properties: { tabColor: { argb: ORANGE } } });
   fv.columns = [
     { header: 'Industry', key: 'industry', width: 12 },
     { header: 'Industry label', key: 'label', width: 42 },
@@ -307,7 +328,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(fv);
 
   /* ── 6 · Imported inputs ──────────────────────────────────────────── */
-  const im = wb.addWorksheet('Imported inputs', { properties: { tabColor: { argb: VIOLET } } });
+  const im = wb.addWorksheet(SHEET_NAMES[5], { properties: { tabColor: { argb: VIOLET } } });
   im.columns = [
     { header: 'Industry', key: 'industry', width: 12 },
     { header: 'Industry label', key: 'label', width: 42 },
@@ -346,7 +367,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(im);
 
   /* ── 7 · Critical materials ───────────────────────────────────────── */
-  const cm = wb.addWorksheet('Critical materials', { properties: { tabColor: { argb: RED } } });
+  const cm = wb.addWorksheet(SHEET_NAMES[6], { properties: { tabColor: { argb: RED } } });
   cm.columns = [
     { header: 'Material', key: 'material', width: 30 },
     { header: 'CRMA status', key: 'strategic', width: 16 },
@@ -374,7 +395,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(cm);
 
   /* ── 8 · Strategic dependencies ───────────────────────────────────── */
-  const sd = wb.addWorksheet('Strategic dependencies', { properties: { tabColor: { argb: NAVY } } });
+  const sd = wb.addWorksheet(SHEET_NAMES[7], { properties: { tabColor: { argb: NAVY } } });
   sd.columns = [
     { header: 'Product family', key: 'family', width: 36 },
     { header: 'NACE division(s)', key: 'naceDivision', width: 14 },
@@ -402,7 +423,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(sd);
 
   /* ── 9 · Energy dependency ────────────────────────────────────────── */
-  const en = wb.addWorksheet('Energy dependency', { properties: { tabColor: { argb: ORANGE } } });
+  const en = wb.addWorksheet(SHEET_NAMES[8], { properties: { tabColor: { argb: ORANGE } } });
   en.columns = [
     { header: 'Item', key: 'item', width: 42 },
     { header: 'NACE relevance', key: 'naceRelevance', width: 26 },
@@ -426,7 +447,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(en);
 
   /* ── 10 · Risk hotspots ───────────────────────────────────────────── */
-  const rh = wb.addWorksheet('Risk hotspots', { properties: { tabColor: { argb: RED } } });
+  const rh = wb.addWorksheet(SHEET_NAMES[9], { properties: { tabColor: { argb: RED } } });
   rh.columns = [
     { header: 'Hotspot', key: 'label', width: 36 },
     { header: 'NACE division(s)', key: 'naceDivision', width: 15 },
@@ -456,7 +477,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(rh);
 
   /* ── 11 · Critical inputs ─────────────────────────────────────────── */
-  const ci = wb.addWorksheet('Critical inputs', { properties: { tabColor: { argb: VIOLET } } });
+  const ci = wb.addWorksheet(SHEET_NAMES[10], { properties: { tabColor: { argb: VIOLET } } });
   ci.columns = [
     { header: 'Division', key: 'code', width: 9 },
     { header: 'Label', key: 'label', width: 34 },
@@ -479,7 +500,7 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   wrapAll(ci);
 
   /* ── 12 · Sources ─────────────────────────────────────────────────── */
-  const src = wb.addWorksheet('Sources', { properties: { tabColor: { argb: VIOLET } } });
+  const src = wb.addWorksheet(SHEET_NAMES[11], { properties: { tabColor: { argb: VIOLET } } });
   src.columns = [
     { header: 'Organisation', key: 'org', width: 40 },
     { header: 'Title', key: 'title', width: 75 },

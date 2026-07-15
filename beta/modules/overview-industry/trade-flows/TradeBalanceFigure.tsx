@@ -63,7 +63,7 @@ export default function TradeBalanceFigure({
           Exports (extra-EU) ►
         </text>
         {/* centre line */}
-        <line x1={mid} y1={22} x2={mid} y2={height - 6} stroke="#DCDDDE" strokeWidth={1} />
+        <line x1={mid} y1={22} x2={mid} y2={height - 6} stroke="var(--mh-border)" strokeWidth={1} />
 
         {rows.map((d, i) => {
           const f = d.flows[year];
@@ -88,15 +88,15 @@ export default function TradeBalanceFigure({
                 width={width - 4}
                 height={ROW_H}
                 rx={4}
-                fill={isSel ? '#F2F6F8' : 'transparent'}
+                fill={isSel ? 'var(--mh-bg)' : 'transparent'}
                 stroke={isSel ? color : 'transparent'}
                 strokeWidth={1}
               />
               {/* label */}
-              <text x={LABEL_W - 8} y={y + ROW_H / 2 - 4} textAnchor="end" fontSize={11} fontWeight={600} className="fill-grey-900">
+              <text x={LABEL_W - 8} y={y + ROW_H / 2 - 4} textAnchor="end" fontSize={11} fontWeight={600} className="fill-grey-900 dark:fill-[var(--mh-fg)]">
                 {d.label.length > 26 ? d.label.slice(0, 25) + '…' : d.label}
               </text>
-              <text x={LABEL_W - 8} y={y + ROW_H / 2 + 7} textAnchor="end" fontSize={9} className="fill-grey-500">
+              <text x={LABEL_W - 8} y={y + ROW_H / 2 + 7} textAnchor="end" fontSize={9} className="fill-grey-500 dark:fill-[var(--mh-muted)]">
                 {d.code} · {net >= 0 ? '+' : ''}€{fmt(net)}bn net
               </text>
 
@@ -128,6 +128,46 @@ export default function TradeBalanceFigure({
           );
         })}
       </svg>
+
+      {/* Screen-reader-only data table mirroring every bar in the figure above —
+          same pattern as DependencyMap's textual list alongside its plot. */}
+      <table className="sr-only">
+        <caption>
+          EU-27 manufacturing — extra-EU imports vs. exports by NACE Section C division, {year} (€ billion,
+          current prices){showIntra ? ', including intra-EU flows' : ''}.
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">Division</th>
+            <th scope="col">Label</th>
+            <th scope="col">Extra-EU imports (€bn)</th>
+            <th scope="col">Extra-EU exports (€bn)</th>
+            <th scope="col">Net extra-EU balance (€bn)</th>
+            {showIntra && <th scope="col">Intra-EU imports (€bn)</th>}
+            {showIntra && <th scope="col">Intra-EU exports (€bn)</th>}
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((d) => {
+            const f = d.flows[year];
+            const net = f.expExt - f.impExt;
+            return (
+              <tr key={d.code}>
+                <th scope="row">{d.code}</th>
+                <td>{d.label}</td>
+                <td>{fmt(f.impExt)}</td>
+                <td>{fmt(f.expExt)}</td>
+                <td>
+                  {net >= 0 ? '+' : ''}
+                  {fmt(net)}
+                </td>
+                {showIntra && <td>{fmt(f.impInt)}</td>}
+                {showIntra && <td>{fmt(f.expInt)}</td>}
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

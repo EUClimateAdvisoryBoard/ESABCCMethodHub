@@ -63,8 +63,18 @@ export interface PolicyGap {
   quote: string;
   /** Report chapter + page for traceability (page carrying the tagged gap). */
   reference: string;
-  /** How the Board judged it at the Jan-2025 baseline (always 'open'). */
+  /** How the Board judged it at the Jan-2024 baseline (always 'open'). */
   reportStatus: 'open';
+  /**
+   * Whether this row is a Board finding from the report baseline, or a row an
+   * analyst added later via the tracker UI. Optional for backwards
+   * compatibility with rows already persisted in localStorage before this
+   * field existed — `commitAdd()` in beta/modules/policy-gaps/page.tsx always
+   * sets it explicitly on new rows; the UI treats a missing value as 'report'
+   * for known report ids (this file's ids) and 'custom' otherwise. Custom
+   * rows must never be labelled with the report's "Open (Jan 2024)" baseline.
+   */
+  source?: 'report' | 'custom';
   /** Live assessment — does the gap still exist today? Editable in the UI. */
   currentStatus: GapStatus;
   /** Free-text note backing the live status (developments since the report). */
