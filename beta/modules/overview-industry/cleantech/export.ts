@@ -455,7 +455,7 @@ export async function exportCleanTechWorkbook(): Promise<void> {
   const xp = wb.addWorksheet('Ext. 2040 paths', { properties: { tabColor: { argb: VIOLET } } });
   xp.columns = [
     { header: 'Sector', key: 'sector', width: 22 },
-    { header: 'Year', key: 'year', width: 8 },
+    { header: 'Scenario point (2040)', key: 'point', width: 18 },
     { header: 'Reduction vs base year (%)', key: 'pct', width: 20 },
     { header: 'Base year', key: 'base', width: 12 },
     { header: 'Scenario', key: 'scenario', width: 34 },
@@ -471,7 +471,7 @@ export async function exportCleanTechWorkbook(): Promise<void> {
     p.points.forEach((pt, i) => {
       xp.addRow({
         sector: i === 0 ? sector : '',
-        year: pt.year,
+        point: pt.label,
         pct: -pt.pct,
         base: p.baseYear,
         scenario: p.scenario,
@@ -483,7 +483,7 @@ export async function exportCleanTechWorkbook(): Promise<void> {
     addSrc(p.source, `2040 pathway: ${sector}`);
   });
   xp.addRow({});
-  xp.addRow({ sector: 'CAVEATS', year: '', pct: '', base: '', scenario: '', drivers: '', note: PATHWAY_CAVEAT });
+  xp.addRow({ sector: 'CAVEATS', point: '', pct: '', base: '', scenario: '', drivers: '', note: PATHWAY_CAVEAT });
   styleHeaderRow(xp, VIOLET);
   wrapAll(xp);
 

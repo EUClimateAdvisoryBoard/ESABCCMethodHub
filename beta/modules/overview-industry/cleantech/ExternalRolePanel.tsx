@@ -261,7 +261,7 @@ function PathwayChart({
 }: {
   onPickTech: (id: string) => void;
 }) {
-  const [hover, setHover] = useState<{ p: SectorPathway; year: number } | null>(null);
+  const [hover, setHover] = useState<{ p: SectorPathway; label: string } | null>(null);
 
   const maxPct = 100;
   const innerW = CHART.w - CHART.padL - CHART.padR;
@@ -314,11 +314,11 @@ function PathwayChart({
                 {p.points.map((pt, i) => {
                   const bx = x0 + i * (barW + 6);
                   const by = y(pt.pct);
-                  const isHover = hover?.p.sectorId === p.sectorId && hover.year === pt.year;
+                  const isHover = hover?.p.sectorId === p.sectorId && hover.label === pt.label;
                   return (
                     <g
-                      key={pt.year}
-                      onMouseEnter={() => setHover({ p, year: pt.year })}
+                      key={pt.label}
+                      onMouseEnter={() => setHover({ p, label: pt.label })}
                       onMouseLeave={() => setHover(null)}
                       style={{ cursor: 'default' }}
                     >
@@ -343,7 +343,7 @@ function PathwayChart({
                         fontSize={9}
                         fill="#64748B"
                       >
-                        {pt.year}
+                        {pt.label}
                       </text>
                     </g>
                   );
@@ -390,9 +390,9 @@ function PathwayChart({
         {hover ? (
           <>
             <span className="font-semibold">
-              {DEMAND_SECTORS.find((s) => s.id === hover.p.sectorId)?.name}, {hover.year}:
+              {DEMAND_SECTORS.find((s) => s.id === hover.p.sectorId)?.name}, 2040 · {hover.label}:
             </span>{' '}
-            −{hover.p.points.find((pt) => pt.year === hover.year)?.pct}% vs {hover.p.baseYear} ({hover.p.scenario}).{' '}
+            −{hover.p.points.find((pt) => pt.label === hover.label)?.pct}% vs {hover.p.baseYear} ({hover.p.scenario}).{' '}
             {hover.p.note ? <span className="text-grey-500">{hover.p.note} </span> : null}
             <SourceLink source={hover.p.source} />
           </>
