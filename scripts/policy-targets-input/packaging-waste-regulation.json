@@ -1,0 +1,515 @@
+{
+  "policy_id": "packaging-waste-regulation",
+  "targets": [
+    {
+      "quote": "3.   This Regulation contributes to the transition to a circular economy and to achieving climate neutrality at the latest by 2050, as provided for under Regulation (EU) 2021/1119 of the European Parliament and of the Council (53), by laying down measures in line with the waste hierarchy set out in Article 4 of Directive 2008/98/EC (‘waste hierarchy’).",
+      "article": "Article 1(3)",
+      "label": "objective",
+      "timeline": "at the latest by 2050",
+      "indicators": [
+        "climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   All packaging placed on the market shall be recyclable.",
+      "article": "Article 6(1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "recyclability of packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Without prejudice to paragraph 10, from 1 January 2030 or 24 months from the entry into force of the delegated acts adopted pursuant to paragraph 4 of this Article, whichever is the latest, packaging shall not be placed on the market unless it is recyclable within grades A, B or C as described in Table 3 of Annex II.",
+      "article": "Article 6(3)",
+      "label": "target",
+      "timeline": "from 1 January 2030",
+      "indicators": [
+        "recyclability performance grades"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Without prejudice to paragraph 10 of this Article, from 1 January 2038 packaging shall not be placed on the market unless it is recyclable within grades A or B as described in Table 3 of Annex II.",
+      "article": "Article 6(3)",
+      "label": "target",
+      "timeline": "from 1 January 2038",
+      "indicators": [
+        "recyclability performance grades"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 1 January 2030 or 3 years from the date of entry into force of the implementing act referred to in paragraph 8 of this Article, whichever is the latest, any plastic part of packaging placed on the market shall contain the following minimum percentage of recycled content recovered from post-consumer plastic waste, per packaging type and format as referred to in Table 1 of Annex II, calculated as an average per manufacturing plant and year:",
+      "article": "Article 7(1)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "minimum recycled content in plastic packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "30 % for contact-sensitive packaging made from polyethylene terephthalate (PET) as the major component, except single-use plastic beverage bottles;",
+      "article": "Article 7(1)(a)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "recycled content share (PET contact-sensitive)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "10 % for contact-sensitive packaging made from plastic materials other than PET, except single-use plastic beverage bottles;",
+      "article": "Article 7(1)(b)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "recycled content share (non-PET contact-sensitive)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "30 % for single-use plastic beverage bottles;",
+      "article": "Article 7(1)(c)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "recycled content share (single-use plastic beverage bottles)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "35 % for plastic packaging other than those referred to in points (a), (b) and (c) of this paragraph.",
+      "article": "Article 7(1)(d)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "recycled content share (other plastic packaging)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   By 1 January 2040, any plastic part of packaging placed on the market shall contain the following minimum percentage of recycled content recovered from post-consumer plastic waste, per packaging type and format as referred to in Table 1 of Annex II, calculated as an average per manufacturing plant and year:",
+      "article": "Article 7(2)",
+      "label": "target",
+      "timeline": "By 1 January 2040",
+      "indicators": [
+        "minimum recycled content in plastic packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "50 % for contact-sensitive packaging made from PET as the major component, except single-use plastic beverage bottles;",
+      "article": "Article 7(2)(a)",
+      "label": "target",
+      "timeline": "By 1 January 2040",
+      "indicators": [
+        "recycled content share (PET contact-sensitive)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "25 % for contact-sensitive packaging made from plastic materials other than PET, except single-use plastic beverage bottles;",
+      "article": "Article 7(2)(b)",
+      "label": "target",
+      "timeline": "By 1 January 2040",
+      "indicators": [
+        "recycled content share (non-PET contact-sensitive)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "65 % for single-use plastic beverage bottles;",
+      "article": "Article 7(2)(c)",
+      "label": "target",
+      "timeline": "By 1 January 2040",
+      "indicators": [
+        "recycled content share (single-use plastic beverage bottles)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "65 % for plastic packaging other than those referred to in points (a), (b) and (c) of this paragraph.",
+      "article": "Article 7(2)(d)",
+      "label": "target",
+      "timeline": "By 1 January 2040",
+      "indicators": [
+        "recycled content share (other plastic packaging)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 1 January 2030, the manufacturer or importer shall ensure that the packaging placed on the market is designed so that its weight and volume is reduced to the minimum necessary to ensure its functionality, taking account of the shape and material from which the packaging is made.",
+      "article": "Article 10(1)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "packaging weight and volume minimisation"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 1 January 2030 or 3 years from the entry into force of the implementing acts adopted pursuant to paragraph 2, whichever is the latest, economic operators who fill grouped packaging, transport packaging or e-commerce packaging shall ensure that the maximum empty space ratio, expressed as a percentage, is 50 %.",
+      "article": "Article 24(1)",
+      "label": "target",
+      "timeline": "By 1 January 2030",
+      "indicators": [
+        "empty space ratio"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   From 1 January 2030, economic operators shall not place on the market packaging in the formats and for the uses listed in Annex V.",
+      "article": "Article 25(1)",
+      "label": "other",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "restricted packaging formats (Annex V)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   From 1 January 2030, economic operators that use transport packaging, or sales packaging used for transporting products, including for products distributed via e-commerce, within the territory of the Union, in the form of pallets, foldable-plastic boxes, boxes, trays, plastic crates, intermediate bulk containers, pails, drums and canisters of any size or material, including flexible formats or pallet wrappings or straps for stabilisation and protection of products put on pallets during transport, shall ensure that at least 40 % of such packaging in total is reusable packaging within a re-use system.",
+      "article": "Article 29(1)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "share of reusable transport packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2040, those economic operators shall endeavour to use at least 70 % of the packaging referred to in the first subparagraph in a reusable format within a re-use system.",
+      "article": "Article 29(1)",
+      "label": "target",
+      "timeline": "From 1 January 2040",
+      "indicators": [
+        "share of reusable transport packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   From 1 January 2030, by way of derogation from paragraph 1 of this Article, economic operators that use transport packaging or sales packaging used for transporting products, in the forms as listed in paragraph 1 of this Article, within the territory of the Union, between different sites on which the operator performs its activity, or between any of the sites on which the operator performs its activity and the sites of any other linked enterprise or partner enterprise, as defined in Article 3 of the Annex to Recommendation 2003/361/EC as applicable on 11 February 2025, shall ensure that such packaging is reusable within a re-use system.",
+      "article": "Article 29(2)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "reusable transport packaging within re-use system"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   From 1 January 2030, by way of derogation from paragraph 1, economic operators that use transport packaging or sales packaging used for transporting products, including for products distributed via e-commerce, in the forms as listed in paragraph 1, to deliver products to another economic operator within the same Member State shall ensure that such packaging is reusable within a re-use system.",
+      "article": "Article 29(3)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "reusable transport packaging within re-use system"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "5.   From 1 January 2030, economic operators that use grouped packaging in the form of boxes, excluding cardboard, outside of sales packaging to group a certain number of products to create a stock-keeping or distribution unit shall ensure that at least 10 % of such packaging is reusable packaging within a re-use system.",
+      "article": "Article 29(5)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "share of reusable grouped packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2040, economic operators shall endeavour to use at least 25 % of the packaging referred to in the first subparagraph in a reusable format within a re-use system.",
+      "article": "Article 29(5)",
+      "label": "target",
+      "timeline": "From 1 January 2040",
+      "indicators": [
+        "share of reusable grouped packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "6.   From 1 January 2030, final distributors that make alcoholic and non-alcoholic beverages in sales packaging available on the territory of a Member State to consumers shall ensure that at least 10 % of those products are made available in reusable packaging within a re-use system.",
+      "article": "Article 29(6)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "share of beverages in reusable packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2040, economic operators shall endeavour to make at least 40 % of the products referred to in the first subparagraph available in reusable packaging within a re-use system.",
+      "article": "Article 29(6)",
+      "label": "target",
+      "timeline": "From 1 January 2040",
+      "indicators": [
+        "share of beverages in reusable packaging"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 12 February 2028, final distributors that conduct their business activity in the HORECA sector and that make available on the territory of a Member State hot or cold beverages or ready-prepared food in take-away packaging shall give consumers the option of obtaining the products in re-useable packaging within a system for re-use.",
+      "article": "Article 33(1)",
+      "label": "other",
+      "timeline": "By 12 February 2028",
+      "indicators": [
+        "re-use offer for take-away (HORECA)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "5.   From 2030, final distributors shall endeavour to offer 10 % of products for sale in a reusable packaging format.",
+      "article": "Article 33(5)",
+      "label": "target",
+      "timeline": "From 2030",
+      "indicators": [
+        "share of take-away products in reusable format"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall take measures to achieve a sustained reduction in the consumption of lightweight plastic carrier bags on their territory.",
+      "article": "Article 34(1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "consumption of lightweight plastic carrier bags"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "A sustained reduction is considered to be achieved if the annual consumption does not exceed 40 lightweight plastic carrier bags per capita, or the equivalent target in weight, by 31 December 2025 and subsequently by 31 December each year thereafter.",
+      "article": "Article 34(1)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "lightweight plastic carrier bags per capita"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Each Member State shall reduce the packaging waste generated per capita, as compared to the packaging waste generated per capita in 2018 as reported to the Commission in accordance with Decision 2005/270/EC, by at least:",
+      "article": "Article 43(1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "packaging waste generated per capita"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "5 % by 2030;",
+      "article": "Article 43(1)(a)",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "packaging waste per capita reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "10 % by 2035;",
+      "article": "Article 43(1)(b)",
+      "label": "target",
+      "timeline": "by 2035",
+      "indicators": [
+        "packaging waste per capita reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "15 % by 2040.",
+      "article": "Article 43(1)(c)",
+      "label": "target",
+      "timeline": "by 2040",
+      "indicators": [
+        "packaging waste per capita reduction"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 1 January 2029, Member States shall set mandatory collection objectives and take the necessary measures to ensure that the collection of the materials listed in Article 52 is consistent with the recycling targets set out in that Article and with the mandatory recycled content targets set out in Article 7.",
+      "article": "Article 49",
+      "label": "objective",
+      "timeline": "By 1 January 2029",
+      "indicators": [
+        "mandatory collection objectives"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 1 January 2029, Member States shall take the necessary measures to ensure the separate collection of at least 90 % per year by weight of the following packaging formats made available on the market for the first time in that Member State in a given calendar year:",
+      "article": "Article 50(1)",
+      "label": "target",
+      "timeline": "By 1 January 2029",
+      "indicators": [
+        "separate collection rate (beverage bottles/containers)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2025, a minimum of 65 % by weight of all packaging waste generated;",
+      "article": "Article 52(1)(a)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "recycling rate of all packaging waste"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2025, the following minimum percentages by weight of the following specific materials contained in packaging waste generated:",
+      "article": "Article 52(1)(b)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "material-specific recycling rates"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "50 % of plastic;",
+      "article": "Article 52(1)(b)(i)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "plastic recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "25 % of wood;",
+      "article": "Article 52(1)(b)(ii)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "wood recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "70 % of ferrous metals;",
+      "article": "Article 52(1)(b)(iii)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "ferrous metals recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "50 % of aluminium;",
+      "article": "Article 52(1)(b)(iv)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "aluminium recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "70 % of glass;",
+      "article": "Article 52(1)(b)(v)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "glass recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "75 % of paper and cardboard;",
+      "article": "Article 52(1)(b)(vi)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "paper and cardboard recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, a minimum of 70 % by weight of all packaging waste generated;",
+      "article": "Article 52(1)(c)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "recycling rate of all packaging waste"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, the following minimum percentages by weight of the following specific materials contained in packaging waste generated:",
+      "article": "Article 52(1)(d)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "material-specific recycling rates"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "55 % of plastic;",
+      "article": "Article 52(1)(d)(i)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "plastic recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "30 % of wood;",
+      "article": "Article 52(1)(d)(ii)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "wood recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "80 % of ferrous metals;",
+      "article": "Article 52(1)(d)(iii)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "ferrous metals recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "60 % of aluminium;",
+      "article": "Article 52(1)(d)(iv)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "aluminium recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "75 % of glass;",
+      "article": "Article 52(1)(d)(v)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "glass recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "85 % of paper and cardboard.",
+      "article": "Article 52(1)(d)(vi)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "paper and cardboard recycling rate"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

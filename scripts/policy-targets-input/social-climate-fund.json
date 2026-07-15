@@ -1,0 +1,177 @@
+{
+  "policy_id": "social-climate-fund",
+  "targets": [
+    {
+      "quote": "This Regulation establishes the Social Climate Fund (the ‘Fund’) for the period from 2026 to 2032.",
+      "article": "Article 1 — Subject matter and scope",
+      "label": "other",
+      "timeline": "for the period from 2026 to 2032",
+      "indicators": [
+        "Social Climate Fund"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The measures and investments supported by the Fund shall benefit households, micro-enterprises and transport users, which are vulnerable and particularly affected by the inclusion of greenhouse gas emissions from buildings and road transport within the scope of Directive 2003/87/EC, in particular households in energy poverty or households in transport poverty.",
+      "article": "Article 1 — Subject matter and scope",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "vulnerable households",
+        "energy poverty",
+        "transport poverty"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The general objective of the Fund shall be to contribute to a socially fair transition towards climate neutrality by addressing the social impacts of the inclusion of greenhouse gas emissions from buildings and road transport within the scope of Directive 2003/87/EC.",
+      "article": "Article 3(1) — Objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "socially fair transition towards climate neutrality",
+        "greenhouse gas emissions from buildings and road transport"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   The specific objectives of the Fund shall be to support vulnerable households, vulnerable micro-enterprises and vulnerable transport users, through temporary direct income support and through measures and investments intended to increase the energy efficiency of buildings, decarbonisation of heating and cooling of buildings, including through the integration in buildings of renewable energy generation and storage, and to grant improved access to zero- and low-emission mobility and transport.",
+      "article": "Article 3(2) — Objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy efficiency of buildings",
+        "decarbonisation of heating and cooling",
+        "zero- and low-emission mobility"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Each Member State shall submit to the Commission its Plan. The Plan shall contain a coherent set of existing or new national measures and investments to address the impact of carbon pricing on vulnerable households, vulnerable micro-enterprises and vulnerable transport users in order to ensure affordable heating, cooling and mobility, while accompanying and accelerating necessary measures to meet the climate targets of the Union.",
+      "article": "Article 4(1) — Social Climate Plans",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate targets of the Union",
+        "vulnerable households"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "carry out building renovation, and decarbonise heating and cooling of buildings, including the integration of renewable energy generation and storage;",
+      "article": "Article 4(4)(a) — Social Climate Plans",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "building renovation",
+        "decarbonise heating and cooling",
+        "renewable energy generation and storage"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "increase the uptake of zero- and low-emission mobility and transport.",
+      "article": "Article 4(4)(b) — Social Climate Plans",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "uptake of zero- and low-emission mobility and transport"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Payment of financial support pursuant to paragraph 1 of this Article to each Member State shall be conditional upon that Member State achieving the milestones and targets for the measures and investments in accordance with Article 8 of this Regulation. Those milestones and targets shall be compatible with the Union’s climate targets and the objective set out in Regulation (EU) 2021/1119, and shall cover in particular:",
+      "article": "Article 7(2) — Principles governing the Fund",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "milestones and targets",
+        "Union's climate targets"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "greenhouse gas emission reductions;",
+      "article": "Article 7(2)(d) — Principles governing the Fund",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emission reductions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "reductions in the number of vulnerable households, in particular households in energy poverty, of vulnerable micro-enterprises and of vulnerable transport users.",
+      "article": "Article 7(2)(e) — Principles governing the Fund",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "number of vulnerable households in energy poverty",
+        "vulnerable micro-enterprises",
+        "vulnerable transport users"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Member States may include in the estimated total costs of the Plans the costs of measures providing direct income support to vulnerable households and vulnerable transport users to reduce the impact of the increase in road transport and heating fuel prices. Such support shall be temporary and decrease over time. Member States may provide temporary direct income support if their Plans contain measures or investments aimed at those vulnerable households and vulnerable transport users in accordance with Article 8(1) of this Regulation. Such support shall be limited to the direct impact of the inclusion of greenhouse gas emissions from buildings and road transport within the scope of Directive 2003/87/EC. The costs of measures providing temporary direct income support shall not represent more than 37,5 % of the estimated total costs of the Plan, as referred to in Article 6(1), point (j), of this Regulation.",
+      "article": "Article 8(2) — Eligible measures and investments",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of temporary direct income support in estimated total costs of the Plan"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   Member States may include in the estimated total costs of the Plans the costs of technical assistance to cover expenses related to training, programming, monitoring, control, audit and evaluation activities which are required for the management of the Fund and the achievement of its objectives, for example studies, information technology (IT) expenses, public consultation of stakeholders, information and communication actions. The costs of such technical assistance shall be up to 2,5 % of the estimated total costs of the Plan, as referred to in Article 6(1), point (j).",
+      "article": "Article 8(3) — Eligible measures and investments",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of technical assistance in estimated total costs of the Plan"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "1.   A maximum amount of EUR 65 000 000 000 for the period from 1 January 2026 to 31 December 2032 in current prices shall be made available, in accordance with Articles 10a(8b), 30d(3) and 30d(4) of Directive 2003/87/EC, for implementation of the Fund. That amount shall constitute external assigned revenue for the purposes of Article 21(5) of Regulation (EU, Euratom) 2018/1046, without prejudice to Article 30d(4), sixth subparagraph, of Directive 2003/87/EC.",
+      "article": "Article 10(1) — Resources of the Fund",
+      "label": "other",
+      "timeline": "for the period from 1 January 2026 to 31 December 2032",
+      "indicators": [
+        "maximum amount available for the Fund"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   Member States may request in their Plans submitted in accordance with Article 4(1) of this Regulation for the transfer of up to 15 % of their maximum annual financial allocation to the funds under shared management provided for in Regulation (EU) 2021/1060. The transferred resources shall finance measures and investments as referred to in Article 8 of this Regulation and shall be implemented in accordance with the rules of the funds to which the resources are transferred. Resources shall be transferred by Member States through the amendment of one or more programmes, except for programmes under the European territorial cooperation goal (Interreg), in accordance with Article 26a of Regulation (EU) 2021/1060, and shall be implemented in accordance with the rules set out in that Regulation and the rules of the funds to which the resources are transferred.",
+      "article": "Article 11(2) — Resources from and to shared management programmes",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of maximum annual financial allocation transferable"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "4.   Member States may include in their Plans, as part of the estimated total costs, the payments for additional technical support pursuant to Article 7 of Regulation (EU) 2021/240 and the amount of the cash contribution for the purpose of the Member State compartment pursuant to the relevant provisions of Regulation (EU) 2021/523 of the European Parliament and of the Council (31). Those costs shall not exceed 4 % of the maximum financial allocation for the Plan, and the relevant measures, as set out in the Plan, shall comply with this Regulation.",
+      "article": "Article 11(4) — Resources from and to shared management programmes",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of maximum financial allocation for technical support"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall contribute at least to 25 % of the estimated total costs of their Plans.",
+      "article": "Article 15 — National contribution to the estimated total costs",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "national contribution as share of estimated total costs of Plans",
+        "co-financing"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

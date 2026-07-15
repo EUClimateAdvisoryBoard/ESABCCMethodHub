@@ -1,0 +1,59 @@
+{
+  "policy_id": "sfdr",
+  "targets": [
+    {
+      "quote": "a reference to their adherence to responsible business conduct codes and internationally recognised standards for due diligence and reporting and, where relevant, the degree of their alignment with the objectives of the Paris Agreement.",
+      "article": "Article 4(2)(d) — Transparency of adverse sustainability impacts at entity level",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "alignment with the objectives of the Paris Agreement"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Where a financial product promotes, among other characteristics, environmental or social characteristics, or a combination of those characteristics, provided that the companies in which the investments are made follow good governance practices, the information to be disclosed pursuant to Article 6(1) and (3) shall include the following:",
+      "article": "Article 8(1) — Transparency of the promotion of environmental or social characteristics in pre-contractual disclosures",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "environmental or social characteristics"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "2.   Where a financial product has sustainable investment as its objective and no index has been designated as a reference benchmark, the information to be disclosed pursuant to Article 6(1) and (3) shall include an explanation on how that objective is to be attained.",
+      "article": "Article 9(2) — Transparency of sustainable investments in pre-contractual disclosures",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "sustainable investment objective"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "3.   Where a financial product has a reduction in carbon emissions as its objective, the information to be disclosed pursuant to Article 6(1) and (3) shall include the objective of low carbon emission exposure in view of achieving the long‐term global warming objectives of the Paris Agreement.",
+      "article": "Article 9(3), first subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "reduction in carbon emissions",
+        "low carbon emission exposure",
+        "long-term global warming objectives of the Paris Agreement"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By way of derogation from paragraph 2 of this Article, where no EU Climate Transition Benchmark or EU Paris‐aligned Benchmark in accordance with Regulation (EU) 2016/1011 of the European Parliament and of the Council (20) is available, the information referred to in Article 6 shall include a detailed explanation of how the continued effort of attaining the objective of reducing carbon emissions is ensured in view of achieving the long‐term global warming objectives of the Paris Agreement.",
+      "article": "Article 9(3), second subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "EU Climate Transition Benchmark",
+        "EU Paris-aligned Benchmark",
+        "reducing carbon emissions"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

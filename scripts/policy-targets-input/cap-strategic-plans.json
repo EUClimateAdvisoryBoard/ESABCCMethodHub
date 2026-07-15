@@ -1,0 +1,155 @@
+{
+  "policy_id": "cap-strategic-plans",
+  "targets": [
+    {
+      "quote": "to support and strengthen environmental protection, including biodiversity, and climate action and to contribute to achieving the environmental and climate-related objectives of the Union, including its commitments under the Paris Agreement;",
+      "article": "Article 5 — General objectives, point (b)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "environmental protection",
+        "biodiversity",
+        "climate action"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "to contribute to climate change mitigation and adaptation, including by reducing greenhouse gas emissions and enhancing carbon sequestration, as well as to promote sustainable energy;",
+      "article": "Article 6 — Specific objectives (1), point (d)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emissions",
+        "carbon sequestration",
+        "sustainable energy"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "to foster sustainable development and efficient management of natural resources such as water, soil and air, including by reducing chemical dependency;",
+      "article": "Article 6 — Specific objectives (1), point (e)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "management of natural resources (water, soil, air)",
+        "chemical dependency"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "to contribute to halting and reversing biodiversity loss, enhance ecosystem services and preserve habitats and landscapes;",
+      "article": "Article 6 — Specific objectives (1), point (f)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "biodiversity loss",
+        "ecosystem services",
+        "habitats and landscapes"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall ensure that all agricultural areas, including land which is no longer used for production purposes, are maintained in good agricultural and environmental condition.",
+      "article": "Article 13 — Good agricultural and environmental condition of land",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "good agricultural and environmental condition (GAEC)"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall establish, and provide support for, voluntary schemes for the climate, the environment and animal welfare (‘eco-schemes’) under the conditions set out in this Article and as further specified in their CAP Strategic Plans.",
+      "article": "Article 31 — Schemes for the climate, the environment and animal welfare (1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "eco-schemes"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "climate change mitigation, including reduction of greenhouse gas emissions from agricultural practices, as well as maintenance of existing carbon stores and enhancement of carbon sequestration;",
+      "article": "Article 31 — Eco-schemes (4), point (a)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emissions",
+        "carbon stores",
+        "carbon sequestration"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "climate change adaptation, including actions to improve resilience of food production systems and animal and plant diversity for stronger resistance to diseases and climate change;",
+      "article": "Article 31 — Eco-schemes (4), point (b)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "resilience of food production systems",
+        "climate change adaptation"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall include agri-environment-climate commitments among the interventions in their CAP Strategic Plans and may include other management commitments therein.",
+      "article": "Article 70 — Environmental, climate-related and other management commitments (1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "agri-environment-climate commitments"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "At least 5 % of the total EAFRD contribution to the CAP Strategic Plan set out in Annex XI shall be reserved for LEADER.",
+      "article": "Article 92 — Minimum financial allocations for LEADER (1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of EAFRD contribution reserved for LEADER"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "At least 35 % of the total EAFRD contribution to the CAP Strategic Plan as set out in Annex XI shall be reserved for the interventions addressing the specific objectives set out in Article 6(1), points (d), (e) and (f) and, as regards animal welfare, in Article 6(1), point (i).",
+      "article": "Article 93 — Minimum financial allocations for interventions addressing environmental and climate-related specific objectives (1)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of EAFRD contribution reserved for environmental and climate-related objectives"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "At least 25 % of the allocations set out in Annex IX shall be reserved for every calendar year from 2023 to 2027 for eco-schemes referred to in Title III, Chapter II, Section 2, Subsection 4.",
+      "article": "Article 97 — Minimum financial allocations for eco-schemes (1)",
+      "label": "target",
+      "timeline": "for every calendar year from 2023 to 2027",
+      "indicators": [
+        "share of direct-payment allocations reserved for eco-schemes"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "At least 10 % of the allocations set out in Annex IX shall be reserved annually for the redistributive income support referred to in Article 29.",
+      "article": "Article 98 — Minimum financial allocations for the redistributive income support (1)",
+      "label": "target",
+      "timeline": "annually",
+      "indicators": [
+        "share of allocations reserved for redistributive income support"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall aim to make, through their CAP Strategic Plans and in particular through the elements of the intervention strategy referred to in Article 109(2), point (a), a greater overall contribution to the achievement of the specific objectives set out in Article 6(1), points (d), (e) and (f), in comparison to the overall contribution made to the achievement of the objective laid down in Article 110(2), first subparagraph, point (b), of Regulation (EU) No 1306/2013 through support under the EAGF and the EAFRD in the period 2014 to 2020.",
+      "article": "Article 105 — Increased ambition with regard to environmental and climate-related objectives (1)",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "overall contribution to environmental and climate-related objectives"
+      ],
+      "climate_relevance": "both"
+    }
+  ]
+}

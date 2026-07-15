@@ -1,0 +1,195 @@
+{
+  "policy_id": "f-gas-regulation",
+  "targets": [
+    {
+      "quote": "1.   The intentional release of fluorinated greenhouse gases into the atmosphere shall be prohibited where the release is not technically necessary for the intended use.",
+      "article": "Article 4(1) — Prevention of emissions",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "intentional release of fluorinated greenhouse gases"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The placing on the market of products and equipment, including parts thereof, listed in Annex IV, with an exemption for military equipment, shall be prohibited from the date specified in that Annex, differentiating, where applicable, according to the type or global warming potential of the gas contained.",
+      "article": "Article 11(1) — Restrictions on placing on the market and sale",
+      "label": "obligation",
+      "timeline": "from the date specified in Annex IV",
+      "indicators": [
+        "placing on the market of products and equipment containing F-gases"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   The use of fluorinated greenhouse gases, with a global warming potential of 2 500 or more, for the maintenance or servicing of refrigeration equipment with a charge size of 40 tonnes of CO2 equivalent or more, shall be prohibited. From 1 January 2025, the use of fluorinated greenhouse gases, with a global warming potential of 2 500 or more, for the maintenance or servicing of any refrigeration equipment shall be prohibited.",
+      "article": "Article 13(3) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2025",
+      "indicators": [
+        "use of F-gases with GWP >= 2 500 for refrigeration servicing"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "4.   From 1 January 2026, the use of fluorinated greenhouse gases listed in Annex I, with a global warming potential of 2 500 or more, for the maintenance or servicing of air-conditioning equipment and heat pumps shall be prohibited.",
+      "article": "Article 13(4) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2026",
+      "indicators": [
+        "use of F-gases with GWP >= 2 500 for air-conditioning and heat pump servicing"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "5.   From 1 January 2032, the use of fluorinated greenhouse gases listed in Annex I, with a global warming potential of 750 or more, for the maintenance or servicing of stationary refrigeration equipment, with the exclusion of chillers, shall be prohibited.",
+      "article": "Article 13(5) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2032",
+      "indicators": [
+        "use of F-gases with GWP >= 750 for stationary refrigeration servicing"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2035, the use of SF6 for the maintenance or servicing of electrical switchgear equipment shall be prohibited unless it is reclaimed or recycled",
+      "article": "Article 13(7) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2035",
+      "indicators": [
+        "use of SF6 for electrical switchgear servicing"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The use of desflurane as an inhalation anaesthetic shall be prohibited from 1 January 2026, except where such use is strictly required and no other anaesthetic can be used on medical grounds.",
+      "article": "Article 13(8) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2026",
+      "indicators": [
+        "use of desflurane as inhalation anaesthetic"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The putting into operation of the following electrical switchgear using, or whose functioning relies upon, fluorinated greenhouse gases in insulating or breaking medium shall be prohibited as follows:",
+      "article": "Article 13(9) — Control of use",
+      "label": "obligation",
+      "timeline": "various dates from 1 January 2026",
+      "indicators": [
+        "putting into operation of electrical switchgear using F-gases"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2026, medium voltage electrical switchgear for primary and secondary distribution up to and including 24 kV;",
+      "article": "Article 13(9)(a) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2026",
+      "indicators": [
+        "medium voltage electrical switchgear up to 24 kV"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2030, medium voltage electrical switchgear for primary and secondary distribution from more than 24 kV up to and including 52 kV;",
+      "article": "Article 13(9)(b) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2030",
+      "indicators": [
+        "medium voltage electrical switchgear 24-52 kV"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2028, high voltage electrical switchgear from 52 kV up to and including 145 kV and up to and including 50 kA short circuit current, with a global warming potential of 1 or more;",
+      "article": "Article 13(9)(c) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2028",
+      "indicators": [
+        "high voltage electrical switchgear 52-145 kV"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2032, high voltage electrical switchgear of more than 145 kV or more than 50 kA short circuit current, with a global warming potential of 1 or more.",
+      "article": "Article 13(9)(d) — Control of use",
+      "label": "obligation",
+      "timeline": "from 1 January 2032",
+      "indicators": [
+        "high voltage electrical switchgear >145 kV"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The placing on the market of hydrofluorocarbons shall be allowed only to the extent that producers and importers have been allocated quota by the Commission as set out in Article 17.",
+      "article": "Article 16(1) — Reduction of the quantity of hydrofluorocarbons placed on the market",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "hydrofluorocarbon quota"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The maximum amount of hydrofluorocarbons allowed to be placed on the Union market in a given year is as follows:",
+      "article": "Annex VII(1) — Maximum quantities and calculation of reference values and quota",
+      "label": "target",
+      "timeline": "2025 to 2050 onwards",
+      "indicators": [
+        "hydrofluorocarbons placed on the Union market (tonnes CO2 equivalent)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "The 2015 base-value for the maximum quantity is set to be: 176 700 479 tonnes CO2 equivalent.",
+      "article": "Annex VII(2) — Maximum quantities and calculation of reference values and quota",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "2015 base-value for HFC maximum quantity (tonnes CO2 equivalent)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the period 1 January 2025 to 31 December 2028, 60 % of the annual average of its production in 2011-2013;",
+      "article": "Annex V(a) — Production rights for placing hydrofluorocarbons on the market",
+      "label": "target",
+      "timeline": "1 January 2025 to 31 December 2028",
+      "indicators": [
+        "hydrofluorocarbon production rights (% of 2011-2013 average)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from the period 1 January 2029 to 31 December 2033, 30 % of the annual average of its production in 2011-2013;",
+      "article": "Annex V(b) — Production rights for placing hydrofluorocarbons on the market",
+      "label": "target",
+      "timeline": "1 January 2029 to 31 December 2033",
+      "indicators": [
+        "hydrofluorocarbon production rights (% of 2011-2013 average)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the period 1 January 2034 to 31 December 2035, 20 % of the annual average of its production in 2011-2013;",
+      "article": "Annex V(c) — Production rights for placing hydrofluorocarbons on the market",
+      "label": "target",
+      "timeline": "1 January 2034 to 31 December 2035",
+      "indicators": [
+        "hydrofluorocarbon production rights (% of 2011-2013 average)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the period 1 January 2036 and thereafter, 15 % of the annual average of its production in 2011-2013.",
+      "article": "Annex V(d) — Production rights for placing hydrofluorocarbons on the market",
+      "label": "target",
+      "timeline": "1 January 2036 and thereafter",
+      "indicators": [
+        "hydrofluorocarbon production rights (% of 2011-2013 average)"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

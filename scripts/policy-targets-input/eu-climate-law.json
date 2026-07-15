@@ -1,0 +1,81 @@
+{
+  "policy_id": "eu-climate-law",
+  "targets": [
+    {
+      "quote": "This Regulation sets out a binding objective of climate neutrality in the Union by 2050 in pursuit of the long-term temperature goal set out in point (a) of Article 2(1) of the Paris Agreement, and provides a framework for achieving progress in pursuit of the global adaptation goal established in Article 7 of the Paris Agreement. This Regulation also sets out a binding Union target of a net domestic reduction in greenhouse gas emissions for 2030.",
+      "article": "Article 1 — Subject matter and scope",
+      "label": "objective",
+      "timeline": "by 2050 / for 2030",
+      "indicators": [
+        "greenhouse gas emissions",
+        "net greenhouse gas emissions"
+      ],
+      "climate_relevance": "both"
+    },
+    {
+      "quote": "1.   Union-wide greenhouse gas emissions and removals regulated in Union law shall be balanced within the Union at the latest by 2050, thus reducing emissions to net zero by that date, and the Union shall aim to achieve negative emissions thereafter.",
+      "article": "Article 2(1) — Climate-neutrality objective",
+      "label": "objective",
+      "timeline": "by 2050",
+      "indicators": [
+        "greenhouse gas emissions and removals",
+        "net zero"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   The relevant Union institutions and the Member States shall take the necessary measures at Union and national level, respectively, to enable the collective achievement of the climate-neutrality objective set out in paragraph 1, taking into account the importance of promoting both fairness and solidarity among Member States and cost-effectiveness in achieving this objective.",
+      "article": "Article 2(2) — Climate-neutrality objective",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "climate-neutrality objective"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   In order to reach the climate-neutrality objective set out in Article 2(1), the binding Union 2030 climate target shall be a domestic reduction of net greenhouse gas emissions (emissions after deduction of removals) by at least 55 % compared to 1990 levels by 2030.",
+      "article": "Article 4(1) — Intermediate Union climate targets",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "net greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "In order to ensure that sufficient mitigation efforts are deployed up to 2030, for the purpose of this Regulation and without prejudice to the review of Union legislation referred to in paragraph 2, the contribution of net removals to the Union 2030 climate target shall be limited to 225 million tonnes of CO2 equivalent. In order to enhance the Union’s carbon sink in line with the objective of achieving climate neutrality by 2050, the Union shall aim to achieve a higher volume of its net carbon sink in 2030.",
+      "article": "Article 4(1) — Intermediate Union climate targets",
+      "label": "target",
+      "timeline": "up to 2030",
+      "indicators": [
+        "net removals",
+        "million tonnes of CO2 equivalent",
+        "carbon sink"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "3.   With a view to achieving the climate-neutrality objective set out in Article 2(1) of this Regulation, a Union-wide climate target for 2040 shall be set. To that end, at the latest within six months of the first global stocktake referred to in Article 14 of the Paris Agreement, the Commission shall make a legislative proposal, as appropriate, based on a detailed impact assessment, to amend this Regulation to include the Union 2040 climate target, taking into account the conclusions of the assessments referred to in Articles 6 and 7 of this Regulation and the outcomes of the global stocktake.",
+      "article": "Article 4(3) — Intermediate Union climate targets",
+      "label": "target",
+      "timeline": "for 2040",
+      "indicators": [
+        "Union 2040 climate target"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The relevant Union institutions and the Member States shall ensure continuous progress in enhancing adaptive capacity, strengthening resilience and reducing vulnerability to climate change in accordance with Article 7 of the Paris Agreement.",
+      "article": "Article 5(1) — Adaptation to climate change",
+      "label": "goal",
+      "timeline": "",
+      "indicators": [
+        "adaptive capacity",
+        "resilience",
+        "vulnerability to climate change"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

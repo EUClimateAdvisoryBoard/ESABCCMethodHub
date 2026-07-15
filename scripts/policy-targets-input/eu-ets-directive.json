@@ -1,0 +1,56 @@
+{
+  "policy_id": "eu-ets-directive",
+  "targets": [
+    {
+      "quote": "This Directive establishes a scheme for greenhouse gas emission allowance trading within the Community (hereinafter referred to as the ‘Community scheme’) in order to promote reductions of greenhouse gas emissions in a cost-effective and economically efficient manner.",
+      "article": "Article 1 — Subject matter",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "greenhouse gas emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "For the three-year period beginning 1 January 2005 Member States shall allocate at least 95 % of the allowances free of charge.",
+      "article": "Article 10 — Method of allocation",
+      "label": "target",
+      "timeline": "for the three-year period beginning 1 January 2005 and the five-year period beginning 1 January 2008",
+      "indicators": [
+        "share of allowances allocated free of charge"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that, by 30 April each year at the latest, the operator of each installation surrenders a number of allowances equal to the total emissions from that installation during the preceding calendar year as verified in accordance with Article 15, and that these are subsequently cancelled.",
+      "article": "Article 12(3) — Transfer, surrender and cancellation of allowances",
+      "label": "target",
+      "timeline": "by 30 April each year",
+      "indicators": [
+        "allowances surrendered",
+        "verified emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that any operator who does not surrender sufficient allowances by 30 April of each year to cover its emissions during the preceding year shall be held liable for the payment of an excess emissions penalty. The excess emissions penalty shall be EUR 100 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
+      "article": "Article 16(3) — Penalties",
+      "label": "obligation",
+      "timeline": "by 30 April of each year",
+      "indicators": [
+        "excess emissions penalty (EUR per tonne CO2 equivalent)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "During the three-year period beginning 1 January 2005, Member States shall apply a lower excess emissions penalty of EUR 40 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
+      "article": "Article 16(4) — Penalties",
+      "label": "obligation",
+      "timeline": "during the three-year period beginning 1 January 2005",
+      "indicators": [
+        "excess emissions penalty (EUR per tonne CO2 equivalent)"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

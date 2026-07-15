@@ -1,0 +1,390 @@
+{
+  "policy_id": "afir-regulation",
+  "targets": [
+    {
+      "quote": "1.   Member States shall ensure that, in their territory, publicly accessible recharging stations dedicated to light-duty electric vehicles are deployed in a way that is commensurate with the uptake of light-duty electric vehicles and that they provide sufficient power output for those vehicles.",
+      "article": "Article 3(1) — Targets for recharging infrastructure dedicated to light-duty electric vehicles",
+      "label": "target",
+      "timeline": "starting from 2024",
+      "indicators": [
+        "publicly accessible recharging stations",
+        "power output"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for each light-duty battery electric vehicle registered in their territory, a total power output of at least 1,3 kW is provided through publicly accessible recharging stations; and",
+      "article": "Article 3(1)(a)",
+      "label": "target",
+      "timeline": "end of each year, starting from 2024",
+      "indicators": [
+        "total power output per light-duty battery electric vehicle (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for each light-duty plug-in hybrid vehicle registered in their territory, a total power output of at least 0,80 kW is provided through publicly accessible recharging stations.",
+      "article": "Article 3(1)(b)",
+      "label": "target",
+      "timeline": "end of each year, starting from 2024",
+      "indicators": [
+        "total power output per light-duty plug-in hybrid vehicle (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "along the TEN-T core road network, publicly accessible recharging pools dedicated to light-duty electric vehicles and meeting the following requirements are deployed in each direction of travel with a maximum distance of 60 km between them:",
+      "article": "Article 3(4)(a)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "recharging pools along TEN-T core road network",
+        "maximum distance (km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2025, each recharging pool offers a power output of at least 400 kW and includes at least one recharging point with an individual power output of at least 150 kW;",
+      "article": "Article 3(4)(a)(i)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "recharging pool power output (kW)",
+        "individual recharging point power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2027, each recharging pool offers a power output of at least 600 kW and includes at least two recharging points with an individual power output of at least 150 kW;",
+      "article": "Article 3(4)(a)(ii)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "recharging pool power output (kW)",
+        "individual recharging point power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "along the TEN-T comprehensive road network, publicly accessible recharging pools dedicated to light-duty electric vehicles and meeting the following requirements are deployed in each direction of travel with a maximum distance of 60 km between them:",
+      "article": "Article 3(4)(b)",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "recharging pools along TEN-T comprehensive road network",
+        "maximum distance (km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2027, along at least 50 % of the length of the TEN-T comprehensive road network, each recharging pool offers a power output of at least 300 kW and includes at least one recharging point with an individual power output of at least 150 kW;",
+      "article": "Article 3(4)(b)(i)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "share of TEN-T comprehensive road network length (%)",
+        "recharging pool power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, each recharging pool offers a power output of at least 300 kW and includes at least one recharging point with an individual power output of at least 150 kW;",
+      "article": "Article 3(4)(b)(ii)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "recharging pool power output (kW)",
+        "individual recharging point power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2035, each recharging pool offers a power output of at least 600 kW and includes at least two recharging points with an individual power output of at least 150 kW.",
+      "article": "Article 3(4)(b)(iii)",
+      "label": "target",
+      "timeline": "by 31 December 2035",
+      "indicators": [
+        "recharging pool power output (kW)",
+        "individual recharging point power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure a minimum coverage of publicly accessible recharging points dedicated to heavy-duty electric vehicles in their territory.",
+      "article": "Article 4(1) — Targets for recharging infrastructure dedicated to heavy-duty electric vehicles",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "minimum coverage of publicly accessible recharging points"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2025, along at least 15 % of the length of the TEN-T road network, publicly accessible recharging pools dedicated to heavy-duty electric vehicles are deployed in each direction of travel and that each recharging pool offers a power output of at least 1 400 kW and includes at least one recharging point with an individual power output of at least 350 kW;",
+      "article": "Article 4(1)(a)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "share of TEN-T road network length (%)",
+        "recharging pool power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2027, along at least 50 % of the length of the TEN-T road network, publicly accessible recharging pools dedicated to heavy-duty electric vehicles are deployed in each direction of travel and that each recharging pool:",
+      "article": "Article 4(1)(b)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "share of TEN-T road network length (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "along the TEN-T core road network, offers a power output of at least 2 800 kW and includes at least two recharging points with an individual power output of at least 350 kW;",
+      "article": "Article 4(1)(b)(i)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "recharging pool power output along TEN-T core (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "along the TEN-T comprehensive road network, offers a power output of at least 1 400 kW and includes at least one recharging point with an individual power output of at least 350 kW;",
+      "article": "Article 4(1)(b)(ii)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "recharging pool power output along TEN-T comprehensive (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, along the TEN-T core road network, publicly accessible recharging pools dedicated to heavy-duty electric vehicles are deployed in each direction of travel with a maximum distance of 60 km between them and that each recharging pool offers a power output of at least 3 600 kW and includes at least two recharging points with an individual power output of at least 350 kW;",
+      "article": "Article 4(1)(c)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "recharging pool power output along TEN-T core (kW)",
+        "maximum distance (km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, along the TEN-T comprehensive road network, publicly accessible recharging pools dedicated to heavy-duty electric vehicles are deployed in each direction of travel with a maximum distance of 100 km between them and each recharging pool offers a power output of at least 1 500 kW and includes at least one recharging point with an individual power output of at least 350 kW;",
+      "article": "Article 4(1)(d)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "recharging pool power output along TEN-T comprehensive (kW)",
+        "maximum distance (km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2027, in each safe and secure parking area at least two publicly accessible recharging stations dedicated to heavy-duty electric vehicles with an individual power output of at least 100 kW are deployed;",
+      "article": "Article 4(1)(e)",
+      "label": "target",
+      "timeline": "by 31 December 2027",
+      "indicators": [
+        "recharging stations in safe and secure parking areas",
+        "power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, in each safe and secure parking area at least four publicly accessible recharging stations dedicated to heavy-duty electric vehicles with an individual power output of at least 100 kW are deployed;",
+      "article": "Article 4(1)(f)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "recharging stations in safe and secure parking areas",
+        "power output (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2025, in each urban node publicly accessible recharging points dedicated to heavy-duty electric vehicles with an aggregated power output of at least 900 kW are deployed, provided by recharging stations with an individual power output of at least 150 kW;",
+      "article": "Article 4(1)(g)",
+      "label": "target",
+      "timeline": "by 31 December 2025",
+      "indicators": [
+        "aggregated power output per urban node (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2030, in each urban node publicly accessible recharging points dedicated to heavy-duty electric vehicles with an aggregated power output of at least 1 800 kW are deployed, provided by recharging stations with an individual power output of at least 150 kW.",
+      "article": "Article 4(1)(h)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "aggregated power output per urban node (kW)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "7.   By 14 October 2024, operators of recharging points shall ensure that all publicly accessible recharging points operated by them are digitally-connected recharging points.",
+      "article": "Article 5(7) — Recharging infrastructure",
+      "label": "obligation",
+      "timeline": "By 14 October 2024",
+      "indicators": [
+        "digitally-connected recharging points"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "",
+      "article": "Article 5(10)",
+      "label": "obligation",
+      "timeline": "By 14 April 2025",
+      "indicators": [
+        "DC recharging points with fixed cable"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that, in their territory, a minimum number of publicly accessible hydrogen refuelling stations are deployed by 31 December 2030.",
+      "article": "Article 6(1) — Targets for hydrogen refuelling infrastructure of road vehicles",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "publicly accessible hydrogen refuelling stations"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "To that end, Member States shall ensure that by 31 December 2030 publicly accessible hydrogen refuelling stations designed for a minimum cumulative capacity of 1 tonne per day and equipped with at least a 700 bar dispenser are deployed with a maximum distance of 200 km between them along the TEN-T core network.",
+      "article": "Article 6(1)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "hydrogen refuelling station capacity (tonnes/day)",
+        "dispenser pressure (bar)",
+        "maximum distance along TEN-T core (km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that, by 31 December 2030, at least one publicly accessible hydrogen refuelling station is deployed in each urban node. Member States shall ensure that an analysis is carried out to determine the best location for such refuelling stations and that the analysis examines in particular the deployment of such refuelling stations in multimodal hubs where other transport modes could also be supplied.",
+      "article": "Article 6(1)",
+      "label": "target",
+      "timeline": "by 31 December 2030",
+      "indicators": [
+        "hydrogen refuelling stations per urban node"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that a minimum shore-side electricity supply for seagoing container ships and seagoing passenger ships is provided in TEN-T maritime ports.",
+      "article": "Article 9(1) — Targets for shore-side electricity supply in maritime ports",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "minimum shore-side electricity supply in TEN-T maritime ports"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "TEN-T core maritime ports and TEN-T comprehensive maritime ports for which the annual number of port calls of ships that are moored at the quayside, averaged over the last three years, by seagoing container ships above 5 000 gross tonnes is above 100 are equipped to provide each year shore-side electricity supply for at least 90 % of the total number of port calls of seagoing container ships above 5 000 gross tonnes that are moored at the quayside at the maritime port concerned;",
+      "article": "Article 9(1)(a)",
+      "label": "target",
+      "timeline": "by 31 December 2029",
+      "indicators": [
+        "shore-side electricity supply for seagoing container ships (% of port calls)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "TEN-T core maritime ports and TEN-T comprehensive maritime ports for which the annual number of port calls of ships that are moored at the quayside, averaged over the last three years, by seagoing ro-ro passenger ships above 5 000 gross tonnes and seagoing high-speed passenger craft above 5 000 gross tonnes is above 40 are equipped to provide each year shore-side electricity supply for at least 90 % of the total number of port calls of seagoing ro-ro passenger ships above 5 000 gross tonnes and seagoing high-speed passenger craft above 5 000 gross tonnes that are moored at the quayside at the maritime port concerned;",
+      "article": "Article 9(1)(b)",
+      "label": "target",
+      "timeline": "by 31 December 2029",
+      "indicators": [
+        "shore-side electricity supply for ro-ro and high-speed passenger craft (% of port calls)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "TEN-T core maritime ports and TEN-T comprehensive maritime ports for which the annual number of port calls of ships that are moored at the quayside, averaged over the last three years, by seagoing passenger ships above 5 000 gross tonnes other than seagoing ro-ro passenger ships and seagoing high-speed passenger craft is above 25 are equipped to provide each year shore-side electricity supply for at least 90 % of the total number of port calls of seagoing passenger ships above 5 000 gross tonnes other than seagoing ro-ro passenger ships and seagoing high-speed passenger craft that are moored at the quayside at the maritime port concerned.",
+      "article": "Article 9(1)(c)",
+      "label": "target",
+      "timeline": "by 31 December 2029",
+      "indicators": [
+        "shore-side electricity supply for other seagoing passenger ships (% of port calls)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "at least one installation providing shore-side electricity supply to inland waterway vessels is deployed at all TEN-T core inland waterway ports by 31 December 2024;",
+      "article": "Article 10(a) — Targets for shore-side electricity supply in inland waterway ports",
+      "label": "target",
+      "timeline": "by 31 December 2024",
+      "indicators": [
+        "shore-side electricity installations at TEN-T core inland waterway ports"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "at least one installation providing shore-side electricity supply to inland waterway vessels is deployed at all TEN-T comprehensive inland waterway ports by 31 December 2029.",
+      "article": "Article 10(b)",
+      "label": "target",
+      "timeline": "by 31 December 2029",
+      "indicators": [
+        "shore-side electricity installations at TEN-T comprehensive inland waterway ports"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that an appropriate number of refuelling points for liquefied methane are deployed at TEN-T core maritime ports referred to in paragraph 2 to enable seagoing ships to circulate throughout the TEN-T core network by 31 December 2024. Member States shall cooperate with neighbouring Member States where that is necessary in order to ensure adequate coverage of the TEN-T core network.",
+      "article": "Article 11(1) — Targets for supply of liquefied methane in maritime ports",
+      "label": "target",
+      "timeline": "by 31 December 2024",
+      "indicators": [
+        "refuelling points for liquefied methane at TEN-T core maritime ports"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   Member States shall ensure that, at all airports of the TEN-T core network and TEN-T comprehensive network, the provision of electricity supply to stationary aircraft is ensured as follows:",
+      "article": "Article 12(1) — Targets for supply of electricity to stationary aircraft",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "electricity supply to stationary aircraft at TEN-T airports"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2024, at all aircraft contact stands used for commercial air transport operations to embark or disembark passengers or to load or unload goods;",
+      "article": "Article 12(1)(a)",
+      "label": "target",
+      "timeline": "by 31 December 2024",
+      "indicators": [
+        "electricity supply at aircraft contact stands"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "by 31 December 2029, at all aircraft remote stands used for commercial air transport operations to embark or disembark passengers or to load or unload goods.",
+      "article": "Article 12(1)(b)",
+      "label": "target",
+      "timeline": "by 31 December 2029",
+      "indicators": [
+        "electricity supply at aircraft remote stands"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "4.   As of 1 January 2030 at the latest, Member States shall take the necessary measures to ensure that the electricity supplied pursuant to paragraph 1 originates from the electricity grid or is generated on site without using fossil fuels.",
+      "article": "Article 12(4)",
+      "label": "target",
+      "timeline": "As of 1 January 2030 at the latest",
+      "indicators": [
+        "electricity to stationary aircraft from grid or non-fossil on-site generation"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

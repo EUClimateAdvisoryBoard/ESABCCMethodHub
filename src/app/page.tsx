@@ -398,6 +398,7 @@ export default async function HomePage() {
     // alive and are reached from the Summer Prep workspace.
     { code: 'M · 34', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
     { code: 'M · 35', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['Industry · Transport', 'Gap tracker · Indicators'] },
+    { code: 'M · 36', title: 'Policy Targets Register', href: '/beta/policy-targets', tags: ['Verbatim targets', 'Excel export', 'Human-confirmed'] },
   ];
 
   return (

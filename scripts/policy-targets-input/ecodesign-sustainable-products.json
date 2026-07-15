@@ -1,0 +1,136 @@
+{
+  "policy_id": "ecodesign-sustainable-products",
+  "targets": [
+    {
+      "quote": "(104)",
+      "article": "Article 1(1)",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "overall carbon footprint and environmental footprint of products"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(48)",
+      "article": "Article 4(1)",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "ecodesign requirements"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "‘technical specification’ means a document that prescribes technical requirements to be fulfilled by a product, process or service;",
+      "article": "Article 4(4)",
+      "label": "other",
+      "timeline": "not earlier than 18 months from entry into force",
+      "indicators": [
+        "date of application of delegated acts"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "The definitions of ‘market surveillance’, ‘market surveillance authority’, ‘fulfilment service provider’, ‘online interface’, ‘corrective action’, ‘end user’, ‘recall’, ‘withdrawal’, ‘customs authorities’ and ‘release for free circulation’ in Article 3, points (3), (4), (11), (15), (16), (21), (22), (23), (24) and (25), respectively, of Regulation (EU) 2019/1020 apply.",
+      "article": "Article 4(7)",
+      "label": "other",
+      "timeline": "before 19 July 2025",
+      "indicators": [
+        "first ecodesign delegated act"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(e)",
+      "article": "Article 13(1)",
+      "label": "other",
+      "timeline": "By 19 July 2026",
+      "indicators": [
+        "digital product passport registry"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(e)",
+      "article": "Article 23",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "destruction of unsold consumer products"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a note explaining how the self-regulation measure submitted pursuant to paragraph 1 improves the environmental sustainability of products in line with the objectives of this Regulation more quickly or at lesser expense than a delegated act adopted pursuant to Article 4; that note shall be supported by evidence, consisting of a structured technical, environmental and economic analysis, justifying the ecodesign requirements and objectives of the self-regulation measure, and assessing the impacts of those ecodesign requirements.",
+      "article": "Article 24(1)",
+      "label": "other",
+      "timeline": "annual",
+      "indicators": [
+        "number and weight of unsold consumer products discarded"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "5.   Once a self-regulation measure has been listed in an implementing act adopted pursuant to paragraph 3, second subparagraph, the signatories of that measure shall report to the Commission, at regular intervals set out in that implementing act, on the progress made towards achieving the objectives of the self-regulation measure and to demonstrate that the criteria set in paragraph 3 remain fulfilled.",
+      "article": "Article 24(3)",
+      "label": "other",
+      "timeline": "by 19 July 2025",
+      "indicators": [
+        "implementing act on disclosure of unsold product destruction"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(e)",
+      "article": "Article 24(1)",
+      "label": "other",
+      "timeline": "from 19 July 2030 (medium-sized enterprises)",
+      "indicators": [
+        "disclosure of unsold consumer products discarded"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "6.   Where the Commission considers that a self-regulation measure listed in an implementing act adopted pursuant to paragraph 3, second subparagraph, no longer fulfils the criteria set out in this Article or where the signatories of the self-regulation measure concerned did not meet the deadline referred to in paragraph 4, it shall delete that measure from the list referred to in paragraph 3 by means of implementing acts. Those implementing acts shall be adopted in accordance with the advisory procedure referred to in Article 73(2).",
+      "article": "Article 25(1)",
+      "label": "commitment",
+      "timeline": "From 19 July 2026",
+      "indicators": [
+        "destruction of unsold consumer products (Annex VII)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Article 22",
+      "article": "Article 25(1)",
+      "label": "commitment",
+      "timeline": "from 19 July 2030 (medium-sized enterprises)",
+      "indicators": [
+        "destruction of unsold consumer products (Annex VII)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "This paragraph shall apply to medium-sized enterprises from 19 July 2030.",
+      "article": "Article 26",
+      "label": "other",
+      "timeline": "By 19 July 2027 and every 36 months thereafter",
+      "indicators": [
+        "destruction of unsold consumer products"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "References to the relevant harmonised standards or to the common specifications used or references to the other technical specifications in relation to which conformity is declared:",
+      "article": "Annex VII",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "apparel and clothing accessories",
+        "footwear"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

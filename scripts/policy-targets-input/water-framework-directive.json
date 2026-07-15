@@ -1,0 +1,90 @@
+{
+  "policy_id": "water-framework-directive",
+  "targets": [
+    {
+      "quote": "Member States shall implement the necessary measures to prevent deterioration of the status of all bodies of surface water, subject to the application of paragraphs 6 and 7 and without prejudice to paragraph 8;",
+      "article": "Article 4(1)(a)(i) — Environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "status of bodies of surface water",
+        "non-deterioration"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall protect, enhance and restore all bodies of surface water, subject to the application of subparagraph (iii) for artificial and heavily modified bodies of water, with the aim of achieving good surface water status at the latest 15 years after the date of entry into force of this Directive, in accordance with the provisions laid down in Annex V, subject to the application of extensions determined in accordance with paragraph 4 and to the application of paragraphs 5, 6 and 7 without prejudice to paragraph 8;",
+      "article": "Article 4(1)(a)(ii) — Environmental objectives",
+      "label": "objective",
+      "timeline": "at the latest 15 years after the date of entry into force of this Directive",
+      "indicators": [
+        "good surface water status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall protect and enhance all artificial and heavily modified bodies of water, with the aim of achieving good ecological potential and good surface water chemical status at the latest 15 years from the date of entry into force of this Directive, in accordance with the provisions laid down in Annex V, subject to the application of extensions determined in accordance with paragraph 4 and to the application of paragraphs 5, 6 and 7 without prejudice to paragraph 8;",
+      "article": "Article 4(1)(a)(iii) — Environmental objectives",
+      "label": "objective",
+      "timeline": "at the latest 15 years from the date of entry into force of this Directive",
+      "indicators": [
+        "good ecological potential",
+        "good surface water chemical status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall implement the necessary measures in accordance with Article 16(1) and (8), with the aim of progressively reducing pollution from priority substances and ceasing or phasing out emissions, discharges and losses of priority hazardous substances",
+      "article": "Article 4(1)(a)(iv) — Environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "pollution from priority substances",
+        "emissions, discharges and losses of priority hazardous substances"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Member States shall implement the measures necessary to prevent or limit the input of pollutants into groundwater and to prevent the deterioration of the status of all bodies of groundwater, subject to the application of paragraphs 6 and 7 and without prejudice to paragraph 8 of this Article and subject to the application of Article 11(3)(j);",
+      "article": "Article 4(1)(b)(i) — Environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "status of bodies of groundwater",
+        "input of pollutants into groundwater"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall protect, enhance and restore all bodies of groundwater, ensure a balance between abstraction and recharge of groundwater, with the aim of achieving good groundwater status at the latest 15 years after the date of entry into force of this Directive, in accordance with the provisions laid down in Annex V, subject to the application of extensions determined in accordance with paragraph 4 and to the application of paragraphs 5, 6 and 7 without prejudice to paragraph 8 of this Article and subject to the application of Article 11(3)(j);",
+      "article": "Article 4(1)(b)(ii) — Environmental objectives",
+      "label": "objective",
+      "timeline": "at the latest 15 years after the date of entry into force of this Directive",
+      "indicators": [
+        "good groundwater status",
+        "balance between abstraction and recharge of groundwater"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall implement the measures necessary to reverse any significant and sustained upward trend in the concentration of any pollutant resulting from the impact of human activity in order progressively to reduce pollution of groundwater.",
+      "article": "Article 4(1)(b)(iii) — Environmental objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "concentration of pollutants in groundwater"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Member States shall achieve compliance with any standards and objectives at the latest 15 years after the date of entry into force of this Directive, unless otherwise specified in the Community legislation under which the individual protected areas have been established.",
+      "article": "Article 4(1)(c) — Environmental objectives",
+      "label": "objective",
+      "timeline": "at the latest 15 years after the date of entry into force of this Directive",
+      "indicators": [
+        "compliance with protected-area standards and objectives"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}

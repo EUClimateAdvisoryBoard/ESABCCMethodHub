@@ -190,6 +190,7 @@ nav:
       - "M·17 Strategy & Framework Docs (beta)": modules/strategy-docs.md
       - "M·32 Ex-Post Policy Assessment (beta)": modules/ex-post-analysis.md
       - "M·33 Sector Background (beta)": modules/sector-background.md
+      - "M·36 Policy Targets Register (beta)": modules/policy-targets.md
   - Infrastructure:
       - Overview: infrastructure/index.md
       - Architecture overview: infrastructure/architecture.md

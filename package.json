@@ -7,6 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/build-extension-zip.mjs && node scripts/build-eu27-geojson.mjs && node scripts/build-policy-bodies-from-texts.mjs",
     "build:policy-bodies": "node scripts/build-policy-bodies-from-texts.mjs",
+    "build:policy-targets": "node scripts/extract-policy-targets.mjs && node scripts/build-policy-targets.mjs",
     "check:policies": "node scripts/check-policy-registries.mjs",
     "build": "next build",
     "build:docs": "bash scripts/build-docs.sh",

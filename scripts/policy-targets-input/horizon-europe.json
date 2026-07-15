@@ -1,0 +1,159 @@
+{
+  "policy_id": "horizon-europe",
+  "targets": [
+    {
+      "quote": "'classified information' means European Union classified information as defined in Article 3 of Decision (EU, Euratom) 2015/444 as well as classified information of Member States, classified information of third countries with which the Union has a security agreement and classified information of international organisation with which the Union has a security agreement;",
+      "article": "Article 3(1) — Programme objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "scientific, technological, economic and societal impact"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(31)",
+      "article": "Article 3(2)(b) — Programme objectives",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "climate change",
+        "SDGs"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "(iii)",
+      "article": "Article 7(8) — Principles of the Programme",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "public and private investment in R&I",
+        "Union GDP in research and development"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(d)",
+      "article": "Article 7(10) — Principles of the Programme",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "share of expenditure to climate objectives",
+        "climate mainstreaming"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Article 5",
+      "article": "Article 8(2) — Missions",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "mission objectives, budget, targets, scope, indicators and milestones"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Defence research and development",
+      "article": "Article 8(3) — Missions",
+      "label": "target",
+      "timeline": "During the first three years of the Programme",
+      "indicators": [
+        "share of annual budget of Pillar II for missions"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Strategic planning and implementation and forms of Union funding",
+      "article": "Article 8(4)(a) — Missions",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "SDGs",
+        "Union added value"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "6.   The implementation of the specific programme referred to in point (a) of Article 1(2) and the EIT's KICs shall be supported by a transparent and strategic planning of R&I activities as laid down in the specific programme referred to in point (a) of Article 1(2), in particular for the pillar 'Global Challenges and European Industrial Competitiveness' and cover also relevant activities in other pillars and the 'Widening participation and strengthening the ERA' part.",
+      "article": "Article 8(4)(d) — Missions",
+      "label": "target",
+      "timeline": "time-bound",
+      "indicators": [
+        "measurable and time-bound objectives"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(d)",
+      "article": "Article 8(5) — Missions",
+      "label": "commitment",
+      "timeline": "no later than 2023",
+      "indicators": [
+        "progress towards short, medium and long-term targets"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "1.   The Commission shall establish the EIC as a centrally managed one-stop shop for implementing actions under Pillar III 'Innovative Europe' which relate to the EIC. The EIC shall focus mainly on breakthrough and disruptive innovation, targeting especially market-creating innovation, while also supporting all types of innovation, including incremental.",
+      "article": "Article 12(1) — Budget",
+      "label": "other",
+      "timeline": "for the period from 1 January 2021 to 31 December 2027",
+      "indicators": [
+        "financial envelope"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "clear Union added value;",
+      "article": "Article 12(2)(a) — Budget",
+      "label": "other",
+      "timeline": "for the period 2021 to 2027",
+      "indicators": [
+        "budget share Pillar I Excellent Science"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "effectiveness;",
+      "article": "Article 12(2)(b) — Budget",
+      "label": "other",
+      "timeline": "for the period 2021 to 2027",
+      "indicators": [
+        "budget share Pillar II Global Challenges and European Industrial Competitiveness"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "(a)",
+      "article": "Article 12(2)(b)(v) — Budget",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "budget share cluster Climate, Energy and Mobility"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Institutionalised European Partnerships shall be implemented only where other parts of the Programme, including other forms of European Partnerships, would not achieve the objectives or would not generate the necessary expected impacts, and where justified by a long-term perspective and a high degree of integration. European Partnerships in accordance with Article 185 or Article 187 TFEU shall implement a central management of all financial contributions, except in duly justified cases. In the case of central management of all financial contributions, project level contributions from one participating state shall be made on the basis of the funding requested in proposals from legal entities established in that participating state, unless otherwise agreed among all participating states.",
+      "article": "Article 12(2)(c) — Budget",
+      "label": "other",
+      "timeline": "for the period 2021 to 2027",
+      "indicators": [
+        "budget share Pillar III Innovative Europe"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "have a clear life-cycle approach, be limited in time and include conditions for phasing-out the Programme funding.",
+      "article": "Article 12(2)(d) — Budget",
+      "label": "other",
+      "timeline": "for the period 2021 to 2027",
+      "indicators": [
+        "budget share Widening Participation and Strengthening the ERA"
+      ],
+      "climate_relevance": "none"
+    }
+  ]
+}

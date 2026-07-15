@@ -1,0 +1,109 @@
+{
+  "policy_id": "co2-cars-regulation",
+  "targets": [
+    {
+      "quote": "2.   From 1 January 2020, this Regulation sets an EU fleet-wide target of 95 g CO2/km for the average emissions of new passenger cars and an EU fleet-wide target of 147 g CO2/km for the average emissions of new light commercial vehicles registered in the Union, as measured until 31 December 2020 in accordance with Regulation (EC) No 692/2008 together with Implementing Regulations (EU) 2017/1152 and (EU) 2017/1153, and from 1 January 2021 measured in accordance with Regulation (EU) 2017/1151.",
+      "article": "Article 1(2) — Subject matter and objectives",
+      "label": "target",
+      "timeline": "From 1 January 2020",
+      "indicators": [
+        "EU fleet-wide target",
+        "average CO2 emissions of new passenger cars (g CO2/km)",
+        "average CO2 emissions of new light commercial vehicles (g CO2/km)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 15 % reduction of the target in 2021determined in accordance with point 6.1.1 of Part A of Annex I;",
+      "article": "Article 1(4)(a)",
+      "label": "target",
+      "timeline": "From 1 January 2025",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new passenger car fleet",
+        "reduction of the 2021 target (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the average emissions of the new light commercial vehicles fleet, an EU fleet-wide target equal to a 15 % reduction of the target in 2021 determined in accordance with point 6.1.1 of Part B of Annex I.",
+      "article": "Article 1(4)(b)",
+      "label": "target",
+      "timeline": "From 1 January 2025",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new light commercial vehicles fleet",
+        "reduction of the 2021 target (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the average emissions of the new passenger car fleet, an EU fleet-wide target equal to a 37,5 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part A of Annex I;",
+      "article": "Article 1(5)(a)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new passenger car fleet",
+        "reduction of the 2021 target (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the average emissions of the new light commercial vehicles fleet, an EU fleet- wide target equal to a 31 % reduction of the target in 2021 determined in accordance with point 6.1.2 of Part B of Annex I.",
+      "article": "Article 1(5)(b)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "EU fleet-wide target",
+        "average emissions of the new light commercial vehicles fleet",
+        "reduction of the 2021 target (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "6.   From 1 January 2025, a zero- and low-emission vehicles' benchmark equal to a 15 % share of the respective fleets of new passenger cars and new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
+      "article": "Article 1(6)",
+      "label": "target",
+      "timeline": "From 1 January 2025",
+      "indicators": [
+        "zero- and low-emission vehicles' benchmark",
+        "share of fleet (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a benchmark equal to a 35 % share of the fleet of new passenger cars; and",
+      "article": "Article 1(7)(a)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "zero- and low-emission vehicles' benchmark",
+        "share of new passenger cars (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "a benchmark equal to a 30 % share of the fleet of new light commercial vehicles.",
+      "article": "Article 1(7)(b)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "zero- and low-emission vehicles' benchmark",
+        "share of new light commercial vehicles (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The manufacturer shall ensure that its average specific emissions of CO2 do not exceed the following specific emissions targets:",
+      "article": "Article 4(1) — Specific emissions targets",
+      "label": "target",
+      "timeline": "",
+      "indicators": [
+        "average specific emissions of CO2",
+        "specific emissions target"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

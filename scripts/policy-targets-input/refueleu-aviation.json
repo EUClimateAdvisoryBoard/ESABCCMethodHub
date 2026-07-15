@@ -1,0 +1,124 @@
+{
+  "policy_id": "refueleu-aviation",
+  "targets": [
+    {
+      "quote": "1.   Subject to Article 15, aviation fuel suppliers shall ensure that all aviation fuel made available to aircraft operators at each Union airport contains the minimum shares of SAF, including the minimum shares of synthetic aviation fuel in accordance with the values and dates of application set out in Annex I. Without prejudice to those minimum shares, aviation fuel suppliers shall also ensure that all aviation fuel made available to aircraft operators at each Union airport over the periods from 1 January 2030 until 31 December 2031 and from 1 January 2032 until 31 December 2034 contains at least the average shares of synthetic aviation fuels in accordance with the values set out in Annex I.",
+      "article": "Article 4(1) — Shares of SAF available at Union airports",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "minimum share of SAF",
+        "minimum share of synthetic aviation fuel",
+        "average share of synthetic aviation fuels"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "4.   For each reporting period, aviation biofuels other than advanced biofuels as defined in Article 2, second paragraph, point (34), of Directive (EU) 2018/2001 and other than biofuels produced from the feedstock listed in Part B of Annex IX to that Directive, supplied across Union airports by each aviation fuel supplier, shall account for a maximum of 3 % of aviation fuels supplied for the purposes of complying with the minimum shares referred to in paragraph 1 of this Article and Annex I to this Regulation.",
+      "article": "Article 4(4)",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "maximum share of aviation biofuels other than advanced biofuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The yearly quantity of aviation fuel uplifted by a given aircraft operator at a given Union airport shall be at least 90 % of the yearly aviation fuel required.",
+      "article": "Article 5(1) — Refuelling obligation for aircraft operators",
+      "label": "obligation",
+      "timeline": "",
+      "indicators": [
+        "yearly aviation fuel uplifted (% of required)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2025, each year a minimum share of 2 % of SAF;",
+      "article": "Annex I (a) — Shares of SAF referred to in Article 4",
+      "label": "target",
+      "timeline": "From 1 January 2025",
+      "indicators": [
+        "minimum share of SAF (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2030, each year a minimum share of 6 % of SAF, of which:",
+      "article": "Annex I (b)",
+      "label": "target",
+      "timeline": "From 1 January 2030",
+      "indicators": [
+        "minimum share of SAF (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the period from 1 January 2030 until 31 December 2031, an average share over the period of 1,2 % of synthetic aviation fuels, of which each year a minimum share of 0,7 % of synthetic aviation fuels;",
+      "article": "Annex I (b)(i)",
+      "label": "target",
+      "timeline": "from 1 January 2030 until 31 December 2031",
+      "indicators": [
+        "average share of synthetic aviation fuels (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "for the period from 1 January 2032 until 31 December 2034, an average share over the period of 2,0 % of synthetic aviation fuels, of which each year a minimum share of 1,2 % from 1 January 2032 until 31 December 2033 and of which a minimum share of 2,0 % from 1 January 2034 until 31 December 2034 of synthetic aviation fuels;",
+      "article": "Annex I (b)(ii)",
+      "label": "target",
+      "timeline": "from 1 January 2032 until 31 December 2034",
+      "indicators": [
+        "average share of synthetic aviation fuels (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2035, each year a minimum share of 20 % of SAF, of which a minimum share of 5 % of synthetic aviation fuels;",
+      "article": "Annex I (c)",
+      "label": "target",
+      "timeline": "From 1 January 2035",
+      "indicators": [
+        "minimum share of SAF (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2040, each year a minimum share of 34 % of SAF, of which a minimum share of 10 % of synthetic aviation fuels;",
+      "article": "Annex I (d)",
+      "label": "target",
+      "timeline": "From 1 January 2040",
+      "indicators": [
+        "minimum share of SAF (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2045, each year a minimum share of 42 % of SAF, of which a minimum share of 15 % of synthetic aviation fuels;",
+      "article": "Annex I (e)",
+      "label": "target",
+      "timeline": "From 1 January 2045",
+      "indicators": [
+        "minimum share of SAF (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "From 1 January 2050, each year a minimum share of 70 % of SAF, of which a minimum share of 35 % of synthetic aviation fuels.",
+      "article": "Annex I (f)",
+      "label": "target",
+      "timeline": "From 1 January 2050",
+      "indicators": [
+        "minimum share of SAF (%)",
+        "minimum share of synthetic aviation fuels (%)"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

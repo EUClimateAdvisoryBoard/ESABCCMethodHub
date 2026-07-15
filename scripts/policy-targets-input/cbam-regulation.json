@@ -1,0 +1,93 @@
+{
+  "policy_id": "cbam-regulation",
+  "targets": [
+    {
+      "quote": "Goods shall be imported into the customs territory of the Union only by an authorised CBAM declarant.",
+      "article": "Article 4 — Importation of goods",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "authorised CBAM declarant"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   By 31 May of each year, and for the first time in 2027 for the year 2026, each authorised CBAM declarant shall use the CBAM registry referred to in Article 14 to submit a CBAM declaration for the preceding calendar year.",
+      "article": "Article 6(1) — CBAM declaration",
+      "label": "other",
+      "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026",
+      "indicators": [
+        "CBAM declaration",
+        "embedded emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By 31 May of each year, and for the first time in 2027 for the year 2026, the authorised CBAM declarant shall surrender via the CBAM registry a number of CBAM certificates that corresponds to the embedded emissions declared in accordance with Article 6(2), point (c), and verified in accordance with Article 8, for the calendar year preceding the surrender.",
+      "article": "Article 22(1) — Surrender of CBAM certificates",
+      "label": "other",
+      "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026",
+      "indicators": [
+        "CBAM certificates surrendered",
+        "embedded emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "2.   The authorised CBAM declarant shall ensure that the number of CBAM certificates on its account in the CBAM registry at the end of each quarter corresponds to at least 80 % of the embedded emissions, determined by reference to default values in accordance with the methods set out in Annex IV, in all goods it has imported since the beginning of the calendar year.",
+      "article": "Article 22(2) — Surrender of CBAM certificates",
+      "label": "other",
+      "timeline": "at the end of each quarter",
+      "indicators": [
+        "CBAM certificates on account",
+        "embedded emissions"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1.   The CBAM certificates to be surrendered in accordance with Article 22 of this Regulation shall be adjusted to reflect the extent to which EU ETS allowances are allocated free of charge in accordance with Article 10a of Directive 2003/87/EC to installations producing, within the Union, the goods listed in Annex I to this Regulation.",
+      "article": "Article 31(1) — Free allocation of allowances under the EU ETS and obligation to surrender CBAM certificates",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "CBAM certificates to be surrendered",
+        "EU ETS free allocation"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "During the transitional period from 1 October 2023 until 31 December 2025, the obligations of the importer under this Regulation shall be limited to the reporting obligations set out in Articles 33, 34 and 35 of this Regulation.",
+      "article": "Article 32 — Scope of the transitional period",
+      "label": "other",
+      "timeline": "from 1 October 2023 until 31 December 2025",
+      "indicators": [
+        "reporting obligations"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "It shall apply from 1 October 2023.",
+      "article": "Article 36(2) — Entry into force",
+      "label": "other",
+      "timeline": "from 1 October 2023",
+      "indicators": [],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Articles 5, 10, 14, 16 and 17 shall apply from 31 December 2024;",
+      "article": "Article 36(2), point (a) — Entry into force",
+      "label": "other",
+      "timeline": "from 31 December 2024",
+      "indicators": [],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Article 2(2) and Articles 4, 6 to 9, 15 and 19, Article 20(1), (3), (4) and (5), Articles 21 to 27 and 31 shall apply from 1 January 2026.",
+      "article": "Article 36(2), point (b) — Entry into force",
+      "label": "other",
+      "timeline": "from 1 January 2026",
+      "indicators": [],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

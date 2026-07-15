@@ -1,0 +1,302 @@
+{
+  "policy_id": "energy-efficiency-directive",
+  "targets": [
+    {
+      "quote": "In accordance with the energy efficiency first principle, Member States shall ensure that energy efficiency solutions, including demand-side resources and system flexibilities, are assessed in planning, policy and major investment decisions of a value of more than EUR 100 000 000 each or EUR 175 000 000 for transport infrastructure projects, relating to the following sectors:",
+      "article": "Article 3 — Energy efficiency first principle",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "energy efficiency first principle"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall collectively ensure a reduction of energy consumption of at least 11,7 % in 2030 compared to the projections of the 2020 EU Reference Scenario so that the Union’s final energy consumption amounts to no more than 763 Mtoe. Member States shall make efforts to collectively contribute to the indicative Union primary energy consumption target amounting to no more than 992,5 Mtoe in 2030.",
+      "article": "Article 4(1) — Energy efficiency targets",
+      "label": "target",
+      "timeline": "by 2030",
+      "indicators": [
+        "final energy consumption",
+        "primary energy consumption",
+        "reduction of energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Each Member State shall set an indicative national energy efficiency contribution based on final energy consumption to meet, collectively, the Union’s binding final energy consumption target referred to in paragraph 1 of this Article and shall make efforts to contribute collectively to the Union’s indicative primary energy consumption target referred to in that paragraph.",
+      "article": "Article 4(2) — Energy efficiency targets",
+      "label": "commitment",
+      "timeline": "by 2030",
+      "indicators": [
+        "indicative national energy efficiency contribution",
+        "final energy consumption",
+        "primary energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "When applying the requirements set out in paragraph 3, a Member State shall ensure that its contribution in Mtoe is not more than 2,5 % above what it would have been had it resulted from the formula set out in Annex I.",
+      "article": "Article 4(4) — Energy efficiency targets",
+      "label": "other",
+      "timeline": "",
+      "indicators": [
+        "indicative national energy efficiency contribution"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall ensure that the total final energy consumption of all public bodies combined is reduced by at least 1,9 % each year, when compared to 2021.",
+      "article": "Article 5(1) — Public sector leading on energy efficiency",
+      "label": "target",
+      "timeline": "each year, when compared to 2021",
+      "indicators": [
+        "total final energy consumption of all public bodies"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Without prejudice to Article 7 of Directive 2010/31/EU, each Member State shall ensure that at least 3 % of the total floor area of heated and/or cooled buildings that are owned by public bodies is renovated each year to be transformed into at least nearly zero-energy buildings or zero-emission buildings in accordance with Article 9 of Directive 2010/31/EU.",
+      "article": "Article 6(1) — Exemplary role of public bodies’ buildings",
+      "label": "target",
+      "timeline": "each year",
+      "indicators": [
+        "total floor area renovated",
+        "nearly zero-energy buildings",
+        "zero-emission buildings"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "ensure that, each year, a renovation passport is introduced, where applicable, for buildings representing at least 3 % of the total floor area of heated and/or cooled buildings that are owned by public bodies. For those buildings, the renovation to nearly zero-energy building shall be achieved at the latest by 2040;",
+      "article": "Article 6(6)(a) — Exemplary role of public bodies’ buildings",
+      "label": "target",
+      "timeline": "each year; at the latest by 2040",
+      "indicators": [
+        "total floor area",
+        "renovation passport",
+        "nearly zero-energy building"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "new savings each year from 1 January 2014 to 31 December 2020 of 1,5 % of annual energy sales to final customers by volume, averaged over the most recent three-year period preceding 1 January 2013. Sales of energy, by volume, used in transport may be excluded, in whole or in part, from that calculation;",
+      "article": "Article 8(1)(a) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "from 1 January 2014 to 31 December 2020",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual energy sales to final customers"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "0,8 % of annual final energy consumption from 1 January 2021 to 31 December 2023, averaged over the most recent three-year period preceding 1 January 2019;",
+      "article": "Article 8(1)(b)(i) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "from 1 January 2021 to 31 December 2023",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1,3 % of annual final energy consumption from 1 January 2024 to 31 December 2025, averaged over the most recent three-year period preceding 1 January 2019;",
+      "article": "Article 8(1)(b)(ii) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "from 1 January 2024 to 31 December 2025",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1,5 % of annual final energy consumption from 1 January 2026 to 31 December 2027, averaged over the most recent three-year period preceding 1 January 2019;",
+      "article": "Article 8(1)(b)(iii) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "from 1 January 2026 to 31 December 2027",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "1,9 % of annual final energy consumption from 1 January 2028 to 31 December 2030, averaged over the most recent three-year period preceding 1 January 2019.",
+      "article": "Article 8(1)(b)(iv) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "from 1 January 2028 to 31 December 2030",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By way of derogation from point (b)(i) of the first subparagraph, Cyprus and Malta shall achieve new savings each year from 1 January 2021 to 31 December 2023, equivalent to 0,24 % of annual final energy consumption, averaged over the most recent three-year period prior to 1 January 2019.",
+      "article": "Article 8(1) — Energy savings obligation (Cyprus and Malta derogation)",
+      "label": "commitment",
+      "timeline": "from 1 January 2021 to 31 December 2023",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "By way of derogation from points (b)(ii), (iii) and (iv) of the first subparagraph, Cyprus and Malta shall achieve new savings each year from 1 January 2024 to 31 December 2030 equivalent to 0,45 % of annual FEC, averaged over the most recent three-year period preceding 1 January 2019.",
+      "article": "Article 8(1) — Energy savings obligation (Cyprus and Malta derogation)",
+      "label": "commitment",
+      "timeline": "from 1 January 2024 to 31 December 2030",
+      "indicators": [
+        "cumulative end-use energy savings",
+        "annual final energy consumption"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall continue to achieve new annual savings in accordance with the savings rate provided for in point (b)(iv) of the first subparagraph for ten-year periods after 2030.",
+      "article": "Article 8(1) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "for ten-year periods after 2030",
+      "indicators": [
+        "new annual savings",
+        "savings rate"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "Member States shall establish and achieve a share of the required amount of cumulative end-use energy savings among people affected by energy poverty, vulnerable customers, people in low-income households and, where applicable, people living in social housing. This share shall at least be equal to the proportion of households in energy poverty as assessed in their national energy and climate plans established in accordance with Article 3(3), point (d), of Regulation (EU) 2018/1999.",
+      "article": "Article 8(3) — Energy savings obligation",
+      "label": "commitment",
+      "timeline": "",
+      "indicators": [
+        "share of cumulative end-use energy savings",
+        "proportion of households in energy poverty"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "until 31 December 2027, a system using at least 50 % renewable energy, 50 % waste heat, 75 % cogenerated heat or 50 % of a combination of such energy and heat;",
+      "article": "Article 26(1)(a) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "until 31 December 2027",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat",
+        "share of cogenerated heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2028, a system using at least 50 % renewable energy, 50 % waste heat, 50 % renewable energy and waste heat, 80 % of high-efficiency cogenerated heat or at least a combination of such thermal energy going into the network where the share of renewable energy is at least 5 % and the total share of renewable energy, waste heat or high-efficiency cogenerated heat is at least 50 %;",
+      "article": "Article 26(1)(b) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "from 1 January 2028",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat",
+        "share of high-efficiency cogenerated heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2035, a system using at least 50 % renewable energy, 50 % waste heat or 50 % renewable energy and waste heat, or a system where the total share of renewable energy, waste heat or high-efficiency cogenerated heat is at least 80 % and in addition the total share of renewable energy or waste heat is at least 35 %;",
+      "article": "Article 26(1)(c) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "from 1 January 2035",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat",
+        "share of high-efficiency cogenerated heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2040, a system using at least 75 % renewable energy, 75 % waste heat or 75 % renewable energy and waste heat, or a system using at least 95 % renewable energy, waste heat and high-efficiency cogenerated heat and in addition the total share of renewable energy or waste heat is at least 35 %;",
+      "article": "Article 26(1)(d) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "from 1 January 2040",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat",
+        "share of high-efficiency cogenerated heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2045, a system using at least 75 % renewable energy, 75 % waste heat or 75 % renewable energy and waste heat;",
+      "article": "Article 26(1)(e) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "from 1 January 2045",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2050, a system using only renewable energy, only waste heat, or only a combination of renewable energy and waste heat.",
+      "article": "Article 26(1)(f) — Heating and cooling supply",
+      "label": "target",
+      "timeline": "from 1 January 2050",
+      "indicators": [
+        "share of renewable energy",
+        "share of waste heat"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "until 31 December 2025: 200 grams/kWh;",
+      "article": "Article 26(2)(a) — Heating and cooling supply (GHG emissions criterion)",
+      "label": "target",
+      "timeline": "until 31 December 2025",
+      "indicators": [
+        "GHG emissions per unit of heat or cold delivered"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2026: 150 grams/kWh;",
+      "article": "Article 26(2)(b) — Heating and cooling supply (GHG emissions criterion)",
+      "label": "target",
+      "timeline": "from 1 January 2026",
+      "indicators": [
+        "GHG emissions per unit of heat or cold delivered"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2035: 100 grams/kWh;",
+      "article": "Article 26(2)(c) — Heating and cooling supply (GHG emissions criterion)",
+      "label": "target",
+      "timeline": "from 1 January 2035",
+      "indicators": [
+        "GHG emissions per unit of heat or cold delivered"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2045: 50 grams/kWh;",
+      "article": "Article 26(2)(d) — Heating and cooling supply (GHG emissions criterion)",
+      "label": "target",
+      "timeline": "from 1 January 2045",
+      "indicators": [
+        "GHG emissions per unit of heat or cold delivered"
+      ],
+      "climate_relevance": "mitigation"
+    },
+    {
+      "quote": "from 1 January 2050: 0 grams/kWh.",
+      "article": "Article 26(2)(e) — Heating and cooling supply (GHG emissions criterion)",
+      "label": "target",
+      "timeline": "from 1 January 2050",
+      "indicators": [
+        "GHG emissions per unit of heat or cold delivered"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "policy_id": "zero-pollution-action-plan",
+  "targets": [
+    {
+      "quote": "To steer the EU towards the 2050 vision of a Healthy Planet for All, this action plan sets key 2030 targets to speed up pollution reduction.",
+      "article": "2.1 The zero pollution ambition",
+      "label": "objective",
+      "timeline": "2030",
+      "indicators": [
+        "pollution reduction"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Target 1: By 2030 the EU should reduce by more than 55% the health impacts (premature deaths) of air pollution",
+      "article": "Annex 2 — Target 1",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "health impacts (premature deaths) of air pollution"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Target 2: By 2030 the EU should reduce by 30% the share of people chronically disturbed by transport noise",
+      "article": "Annex 2 — Target 2",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "share of people chronically disturbed by transport noise"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Target 3: By 2030 the EU should reduce by 25% the EU ecosystems where air pollution threatens biodiversity",
+      "article": "Annex 2 — Target 3",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "EU ecosystems where air pollution threatens biodiversity"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "Target 4: By 2030 the EU should reduce by 50% nutrient losses, the use and risk of chemical pesticides and the use of the more hazardous ones, and the sale of antimicrobials for farmed animals and in aquaculture",
+      "article": "Annex 2 — Target 4",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "nutrient losses",
+        "use and risk of chemical pesticides",
+        "sales of antimicrobials"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Target 5: By 2030 the EU should reduce by 50% plastic litter at sea and by 30% micro-plastics released into the environment",
+      "article": "Annex 2 — Target 5",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "plastic litter at sea",
+        "micro-plastics released into the environment"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "Target 6: By 2030 the EU should reduce significantly total waste generation and by 50% residual municipal waste",
+      "article": "Annex 2 — Target 6",
+      "label": "target",
+      "timeline": "By 2030",
+      "indicators": [
+        "total waste generation",
+        "residual municipal waste"
+      ],
+      "climate_relevance": "none"
+    },
+    {
+      "quote": "It will aim to ensuring that, by 2030, 75% of soils are healthy, also thanks to a specific objective on reducing soil pollution and enhancing restoration.",
+      "article": "2.3 Living within our planetary boundaries",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "share of healthy soils"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "The proposed Horizon Europe Cities Mission will, through a demand-driven and cross-sectoral approach aligned with the zero pollution ambition, support 100 cities in their transition towards climate neutrality by 2030, to inspire other European cities to be climate neutral by 2050 and contribute substantially to reducing urban pollution.",
+      "article": "3.2 Boosting change across society for zero pollution",
+      "label": "objective",
+      "timeline": "by 2030",
+      "indicators": [
+        "cities transitioning towards climate neutrality"
+      ],
+      "climate_relevance": "mitigation"
+    }
+  ]
+}

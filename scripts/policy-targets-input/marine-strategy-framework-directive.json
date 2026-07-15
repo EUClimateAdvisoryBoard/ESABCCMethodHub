@@ -1,0 +1,97 @@
+{
+  "policy_id": "marine-strategy-framework-directive",
+  "targets": [
+    {
+      "quote": "This Directive establishes a framework within which Member States shall take the necessary measures to achieve or maintain good environmental status in the marine environment by the year 2020 at the latest.",
+      "article": "Article 1(1) — Subject matter",
+      "label": "objective",
+      "timeline": "by the year 2020 at the latest",
+      "indicators": [
+        "good environmental status of the marine environment"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "protect and preserve the marine environment, prevent its deterioration or, where practicable, restore marine ecosystems in areas where they have been adversely affected;",
+      "article": "Article 1(2)(a) — Subject matter",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "status of marine ecosystems"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "prevent and reduce inputs in the marine environment, with a view to phasing out pollution as defined in Article 3(8), so as to ensure that there are no significant impacts on or risks to marine biodiversity, marine ecosystems, human health or legitimate uses of the sea.",
+      "article": "Article 1(2)(b) — Subject matter",
+      "label": "objective",
+      "timeline": "",
+      "indicators": [
+        "inputs of pollution to the marine environment",
+        "marine biodiversity"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "an initial assessment, to be completed by 15 July 2012 of the current environmental status of the waters concerned and the environmental impact of human activities thereon, in accordance with Article 8;",
+      "article": "Article 5(2)(a)(i) — Marine strategies",
+      "label": "other",
+      "timeline": "by 15 July 2012",
+      "indicators": [
+        "environmental status of marine waters"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "a determination, to be established by 15 July 2012 of good environmental status for the waters concerned, in accordance with Article 9(1);",
+      "article": "Article 5(2)(a)(ii) — Marine strategies",
+      "label": "other",
+      "timeline": "by 15 July 2012",
+      "indicators": [
+        "good environmental status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "establishment, by 15 July 2012, of a series of environmental targets and associated indicators, in accordance with Article 10(1);",
+      "article": "Article 5(2)(a)(iii) — Marine strategies",
+      "label": "other",
+      "timeline": "by 15 July 2012",
+      "indicators": [
+        "environmental targets and associated indicators"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "establishment and implementation, by 15 July 2014 except where otherwise specified in the relevant Community legislation, of a monitoring programme for ongoing assessment and regular updating of targets, in accordance with Article 11(1);",
+      "article": "Article 5(2)(a)(iv) — Marine strategies",
+      "label": "other",
+      "timeline": "by 15 July 2014",
+      "indicators": [
+        "monitoring programme"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "development, by 2015 at the latest, of a programme of measures designed to achieve or maintain good environmental status, in accordance with Article 13(1), (2) and (3);",
+      "article": "Article 5(2)(b)(i) — Marine strategies",
+      "label": "other",
+      "timeline": "by 2015 at the latest",
+      "indicators": [
+        "programme of measures",
+        "good environmental status"
+      ],
+      "climate_relevance": "adaptation"
+    },
+    {
+      "quote": "entry into operation of the programme provided for in point (i), by 2016 at the latest, in accordance with Article 13(10).",
+      "article": "Article 5(2)(b)(ii) — Marine strategies",
+      "label": "other",
+      "timeline": "by 2016 at the latest",
+      "indicators": [
+        "programme of measures"
+      ],
+      "climate_relevance": "adaptation"
+    }
+  ]
+}
