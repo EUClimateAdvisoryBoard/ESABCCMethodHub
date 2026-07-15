@@ -65,16 +65,16 @@ export default function CleanTechPage() {
   };
 
   return (
-    <div className="min-h-screen bg-grey-50">
+    <div className="min-h-screen bg-grey-50 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-fg)]">
       <SiteHeader />
 
       <main className="mx-auto max-w-wide px-4 py-8">
-        <nav className="mb-4 text-sm text-grey-500">
+        <nav className="mb-4 text-sm text-grey-500 dark:text-[var(--mh-muted)]">
           <Link href="/beta/overview-industry" className="hover:underline">
             Overview Industry
           </Link>
           <span className="mx-1">/</span>
-          <span className="text-grey-700">Clean Tech</span>
+          <span className="text-grey-700 dark:text-[var(--mh-muted)]">Clean Tech</span>
         </nav>
 
         <header className="mb-6">
@@ -82,19 +82,21 @@ export default function CleanTechPage() {
             <span className="rounded bg-accent-orange px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
               Beta
             </span>
-            <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary">
+            <span className="rounded border border-primary-lighter bg-surface-blue px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-primary dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]">
               NACE C · Manufacturing
             </span>
           </div>
-          <h1 className="mt-2 text-3xl font-bold text-grey-900">
+          <h1 className="mt-2 text-3xl font-bold text-grey-900 dark:text-[var(--mh-fg)]">
             Clean Tech — two sides of industrial decarbonisation
           </h1>
-          <p className="mt-2 max-w-text text-grey-700">
+          <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             One module, two complementary sub-segments. <strong>Side&nbsp;1</strong> looks <em>inside</em> industry:
             EU manufacturing (NACE Rev. 2.1 Section&nbsp;C, divisions {MANUFACTURING_SECTION.divisionRange}) as a
             collapsible emissions sunburst — the sector total decomposing into divisions, subsectors and their
             decarbonisation levers, each with sourced abatement cost, readiness, barriers and investment decisions,
-            plus the clean-tech vs old-tech overlay. <strong>Side&nbsp;2</strong> turns the telescope around and looks{' '}
+            plus the clean-tech vs old-tech overlay — plus a dedicated section for the cross-cutting enablers
+            (electrification, CO₂ transport &amp; storage, hydrogen, circularity) that sit outside the manufacturing
+            tree but underpin it. <strong>Side&nbsp;2</strong> turns the telescope around and looks{' '}
             <em>outside</em>: the new clean-tech manufacturing industries — solar PV, wind, batteries, EVs,
             electrolysers, heat pumps — and how their products decarbonise everyone <em>else</em> (power, transport,
             buildings, other industry, agriculture), evidenced with sourced mitigation potentials and the sectoral
@@ -110,7 +112,7 @@ export default function CleanTechPage() {
             >
               {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
             </button>
-            <span className="text-[12px] text-grey-500">
+            <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
               13 sheets, both sides: read-me · overview · subsectors · technologies (MAC / TRL / clean-vs-old) ·
               projects &amp; FIDs · emissions map · sector MACC · external role (industries · support matrix ·
               2040 pathways · priority read) · reading list · sources
@@ -130,29 +132,29 @@ export default function CleanTechPage() {
                 aria-pressed={active}
                 className={`rounded-xl border p-3.5 text-left transition ${
                   active
-                    ? 'border-primary bg-surface-blue shadow-sm'
-                    : 'border-grey-200 bg-white hover:border-primary-lighter hover:bg-grey-50'
+                    ? 'border-primary bg-surface-blue shadow-sm dark:bg-[var(--mh-bg)]'
+                    : 'border-grey-200 bg-white hover:border-primary-lighter hover:bg-grey-50 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] dark:hover:bg-[var(--mh-bg)]'
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <span
                     className={`flex h-6 w-6 flex-none items-center justify-center rounded-full text-[12px] font-bold ${
-                      active ? 'bg-primary text-white' : 'bg-grey-200 text-grey-600'
+                      active ? 'bg-primary text-white' : 'bg-grey-200 text-grey-600 dark:bg-[var(--mh-border)] dark:text-[var(--mh-muted)]'
                     }`}
                   >
                     {s.k}
                   </span>
-                  <span className={`text-[13.5px] font-bold ${active ? 'text-primary' : 'text-grey-900'}`}>
+                  <span className={`text-[13.5px] font-bold ${active ? 'text-primary' : 'text-grey-900 dark:text-[var(--mh-fg)]'}`}>
                     {s.label}
                   </span>
                 </div>
-                <p className="mt-1 pl-8 text-[11.5px] leading-snug text-grey-600">{s.sub}</p>
+                <p className="mt-1 pl-8 text-[11.5px] leading-snug text-grey-600 dark:text-[var(--mh-muted)]">{s.sub}</p>
               </button>
             );
           })}
         </div>
 
-        <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
+        <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] sm:p-5">
           {side === 'inside' ? <EmissionsSunburst /> : <ExternalRolePanel />}
         </section>
       </main>
