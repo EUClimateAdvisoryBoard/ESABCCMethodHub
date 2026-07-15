@@ -7,15 +7,16 @@
  *
  *   1. LEAD-MARKET POLICIES — the EU instruments that create demand for
  *      low-carbon industrial products (public procurement rules, quotas,
- *      border price signals), each reviewed and assessed against the FIVE
- *      Better Regulation evaluation criteria (SWD(2021) 305 / Toolbox #47):
+ *      border price signals), each documented along the FIVE Better
+ *      Regulation evaluation criteria (SWD(2021) 305 / Toolbox #47):
  *      effectiveness · efficiency · relevance · coherence · EU added value.
+ *      Facts only — no rating scale; each criterion carries a factual note.
  *
  *   2. DOWNSTREAM STANDARDS — the definitions / labels / product-standard
  *      layer those lead markets depend on (what counts as low-carbon steel?).
  *
  * Everything on this page exports to ONE Excel handover workbook
- * (./export.ts) so the review can be handed over — assessment, data,
+ * (./export.ts) so the review can be handed over — notes, data,
  * sources and a what-to-watch timeline included. Data: src/data/
  * downstream-lead-markets.ts (single source of truth for page + workbook).
  */
@@ -28,7 +29,6 @@ import {
   DOWNSTREAM_META,
   BR_CRITERIA,
   BR_CRITERIA_META,
-  SCORE_META,
   LEAD_MARKET_POLICIES,
   POLICY_CATEGORY_META,
   POLICY_STATUS_META,
@@ -36,22 +36,8 @@ import {
   STANDARD_TYPE_META,
   WATCH_TIMELINE,
   type LeadMarketPolicy,
-  type ScoreLevel,
 } from '@/data/downstream-lead-markets';
 import { exportDownstreamWorkbook } from './export';
-
-function ScoreChip({ score, compact }: { score: ScoreLevel; compact?: boolean }) {
-  const m = SCORE_META[score];
-  return (
-    <span
-      className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
-      style={{ backgroundColor: `${m.color}1A`, color: m.color }}
-    >
-      <span className="inline-block h-1.5 w-1.5 rounded-full" style={{ backgroundColor: m.color }} />
-      {compact ? m.label.slice(0, 1) : m.label}
-    </span>
-  );
-}
 
 function PolicyCard({ p }: { p: LeadMarketPolicy }) {
   const [open, setOpen] = useState(false);
@@ -89,33 +75,11 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
         {p.leadMarketMechanism}
       </div>
 
-      {/* five-criteria strip */}
-      <div className="mt-3 grid gap-2 sm:grid-cols-5">
-        {BR_CRITERIA.map((c) => (
-          <div key={c} className="rounded-lg border border-grey-200 bg-grey-50 px-2.5 py-2">
-            <div
-              className="text-[10px] font-bold uppercase tracking-wide"
-              style={{ color: BR_CRITERIA_META[c].color }}
-            >
-              {BR_CRITERIA_META[c].label}
-            </div>
-            <div className="mt-1">
-              <ScoreChip score={p.assessment[c].score} />
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <p className="mt-3 text-[12.5px] leading-relaxed text-grey-700">
-        <span className="font-semibold text-grey-900">Overall read: </span>
-        {p.overallRead}
-      </p>
-
       <button
         onClick={() => setOpen((v) => !v)}
         className="mt-3 text-[12.5px] font-semibold text-primary hover:underline"
       >
-        {open ? '▾ Hide rationale, data & sources' : '▸ Rationale, data & sources'}
+        {open ? '▾ Hide criteria notes, data & sources' : '▸ Criteria notes, data & sources'}
       </button>
 
       {open && (
@@ -134,7 +98,6 @@ function PolicyCard({ p }: { p: LeadMarketPolicy }) {
                   >
                     {BR_CRITERIA_META[c].label}
                   </div>
-                  <ScoreChip score={p.assessment[c].score} />
                 </div>
                 <p className="text-[12.5px] leading-relaxed text-grey-700">
                   {p.assessment[c].rationale}
@@ -238,7 +201,7 @@ export default function DownstreamPage() {
             quotas and border price signals that create protected demand) and the{' '}
             <span className="font-semibold">downstream standards</span> underneath them — the
             definitions, labels and product rules that decide what counts as
-            &ldquo;low-carbon&rdquo; in the first place. Each policy is assessed with the five
+            &ldquo;low-carbon&rdquo; in the first place. Each policy is documented along the five
             evaluation criteria of the Commission&apos;s{' '}
             <a
               href={DOWNSTREAM_META.frameworkUrl}
@@ -260,8 +223,7 @@ export default function DownstreamPage() {
               {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
             </button>
             <span className="text-[12px] text-grey-500">
-              5 sheets: read-me &amp; watch-list · assessment (5 criteria) · data · sources ·
-              standards
+              5 sheets: read-me &amp; watch-list · criteria notes · data · sources · standards
             </span>
           </div>
         </header>
@@ -269,7 +231,7 @@ export default function DownstreamPage() {
         {/* ── Method: the five criteria ─────────────────────────────────── */}
         <section className="mb-8 rounded-xl border border-grey-200 bg-white p-5 shadow-sm">
           <h2 className="text-[13px] font-bold uppercase tracking-wide text-grey-900">
-            The assessment lens — five Better Regulation evaluation criteria
+            The reading grid — five Better Regulation evaluation criteria
           </h2>
           <p className="mt-1 max-w-text text-[12.5px] text-grey-600">
             {DOWNSTREAM_META.frameworkNote}
@@ -293,40 +255,29 @@ export default function DownstreamPage() {
               </div>
             ))}
           </div>
-          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12px] text-grey-600">
-            <span className="font-semibold">Scores:</span>
-            {(Object.keys(SCORE_META) as ScoreLevel[]).map((s) => (
-              <span key={s} className="inline-flex items-center gap-1.5">
-                <ScoreChip score={s} />
-                {s === 'too-early' && (
-                  <span className="text-grey-500">(instrument too new / still a proposal)</span>
-                )}
-              </span>
-            ))}
-          </div>
+          <p className="mt-3 text-[12px] text-grey-500">
+            The criteria are used as a reading grid only — each policy carries a factual note per
+            criterion, with the data points and sources behind it. No rating scale is applied.
+          </p>
         </section>
 
-        {/* ── Assessment matrix ─────────────────────────────────────────── */}
+        {/* ── Instrument index ──────────────────────────────────────────── */}
         <section className="mb-8">
           <h2 className="text-[15px] font-bold text-grey-900">
-            Assessment at a glance — {LEAD_MARKET_POLICIES.length} instruments × 5 criteria
+            The instruments at a glance — {LEAD_MARKET_POLICIES.length} lead-market policies
           </h2>
           <p className="mb-3 mt-1 text-[12.5px] text-grey-600">
-            Click a row to jump to the full review card with rationale, data and sources.
+            Click a row to jump to the full card with criteria notes, data and sources.
           </p>
           <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm">
             <table className="w-full min-w-[780px] border-collapse text-[12px]">
               <thead>
                 <tr className="bg-grey-100">
                   <th className="px-3 py-2 text-left font-semibold text-grey-700">Instrument</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Family</th>
                   <th className="px-3 py-2 text-left font-semibold text-grey-700">Status</th>
-                  {BR_CRITERIA.map((c) => (
-                    <th key={c} className="px-2 py-2 text-center font-semibold">
-                      <span style={{ color: BR_CRITERIA_META[c].color }}>
-                        {BR_CRITERIA_META[c].label}
-                      </span>
-                    </th>
-                  ))}
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Legal reference</th>
+                  <th className="px-3 py-2 text-left font-semibold text-grey-700">Sectors</th>
                 </tr>
               </thead>
               <tbody>
@@ -345,6 +296,17 @@ export default function DownstreamPage() {
                       <span
                         className="whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
                         style={{
+                          backgroundColor: `${POLICY_CATEGORY_META[p.category].color}14`,
+                          color: POLICY_CATEGORY_META[p.category].color,
+                        }}
+                      >
+                        {POLICY_CATEGORY_META[p.category].label}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2">
+                      <span
+                        className="whitespace-nowrap rounded-full px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
+                        style={{
                           backgroundColor: `${POLICY_STATUS_META[p.status].color}14`,
                           color: POLICY_STATUS_META[p.status].color,
                         }}
@@ -352,11 +314,8 @@ export default function DownstreamPage() {
                         {POLICY_STATUS_META[p.status].label}
                       </span>
                     </td>
-                    {BR_CRITERIA.map((c) => (
-                      <td key={c} className="px-2 py-2 text-center">
-                        <ScoreChip score={p.assessment[c].score} />
-                      </td>
-                    ))}
+                    <td className="px-3 py-2 text-grey-600">{p.reference}</td>
+                    <td className="px-3 py-2 text-grey-600">{p.sectors}</td>
                   </tr>
                 ))}
               </tbody>
@@ -382,8 +341,9 @@ export default function DownstreamPage() {
             What to watch — the handover timeline
           </h2>
           <p className="mb-3 mt-1 text-[12.5px] text-grey-600">
-            The decisions expected while this review sits with the cover — each one changes at least
-            one score above. Also on the &ldquo;Read me&rdquo; sheet of the workbook.
+            The decisions expected while this review sits with the cover — each one changes the
+            facts behind at least one instrument above. Also on the &ldquo;Read me&rdquo; sheet of
+            the workbook.
           </p>
           <div className="rounded-xl border border-grey-200 bg-white p-5 shadow-sm">
             <ol className="space-y-3">
@@ -479,10 +439,10 @@ export default function DownstreamPage() {
 
         <p className="max-w-text text-[12px] leading-relaxed text-grey-500">
           Provenance: statuses, dates and data points were web-verified against the linked sources
-          in {DOWNSTREAM_META.asOf}; the five-criteria scores and rationales are AI-compiled working
-          judgements — evaluation-style and largely ex-ante, since most instruments are new or still
-          proposals — pending verification by the industry lead. A prompt for judgement, not a Board
-          position. Page and workbook are generated from the same data file
+          in {DOWNSTREAM_META.asOf}; the per-criterion notes are AI-compiled working drafts —
+          largely ex-ante, since most instruments are new or still proposals — pending verification
+          by the industry lead. No rating scale is applied; not a Board position. Page and workbook
+          are generated from the same data file
           (<span className="font-mono">src/data/downstream-lead-markets.ts</span>), so corrections
           there propagate to both.
         </p>

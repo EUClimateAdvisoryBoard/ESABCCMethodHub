@@ -10,11 +10,12 @@
  *                   with cost / readiness / barriers / investment decisions.
  *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
  *                   Section C divisions): imports/exports, supply-chain inputs
- *                   and high-risk import dependencies, on live Eurostat data.
+ *                   and a critical-dependencies dashboard, on live Eurostat data.
  *   • Downstream  — the demand side: review of the EU lead-market policies
- *                   (public procurement, quotas, border signals) assessed on
- *                   the five Better Regulation criteria, plus the downstream
- *                   standards they depend on. Exports an Excel handover pack.
+ *                   (public procurement, quotas, border signals) documented
+ *                   along the five Better Regulation criteria, plus the
+ *                   downstream standards they depend on. Exports an Excel
+ *                   handover pack.
  *   • Industry report — objectives & evidence base for the next progress
  *                   report's industry chapter: a synthesis of industrial
  *                   decarbonisation roadmaps (incl. investment timelines) and
@@ -88,13 +89,14 @@ export default function OverviewIndustryPage() {
             </div>
             <p className="mt-2 text-sm text-grey-600">
               An input–output map of EU-27 manufacturing trade (all 24 NACE Section&nbsp;C divisions): one
-              summary dashboard, then a deep-dive per division — trade balance, imported-input mix straight
-              from the EU input–output use table and FIGARO (incl. foreign value added in exports, real
-              origin/destination shares), critical inputs and the high-risk import dependencies where one
-              supplier dominates. The full FIGARO inter-country input–output table is imported into the
-              MethodHub itself, with a table viewer and analysis dashboard. Statistical layers regenerate
-              from the Eurostat API; the risk layer sits on the Critical Raw Materials Act and the
-              Commission&apos;s strategic-dependency reviews — with a full Methodology view.
+              summary dashboard, a critical-dependencies dashboard, then a deep-dive per division — trade
+              balance, imported-input mix straight from the EU input–output use table and FIGARO (incl.
+              foreign value added in exports, real origin/destination shares), critical inputs and the
+              import dependencies where imports are large and one supplier dominates. The full FIGARO
+              inter-country input–output table is imported into the MethodHub itself, with a table viewer
+              and analysis dashboard. Statistical layers regenerate from the Eurostat API; the dependency
+              layer sits on the Critical Raw Materials Act and the Commission&apos;s strategic-dependency
+              reviews — with a full Methodology view.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
               Open the map →
@@ -117,10 +119,11 @@ export default function OverviewIndustryPage() {
               The demand side: a review of the EU&apos;s lead-market policies — public procurement
               (voluntary GPP, NZIA non-price criteria, the Industrial Accelerator Act, the Public
               Procurement Act revision, ESPR mandatory GPP), quotas (ELV recycled content, clean-fuel
-              mandates) and the CBAM border signal — each assessed against the five Better Regulation
-              evaluation criteria (effectiveness, efficiency, relevance, coherence, EU added value).
+              mandates) and the CBAM border signal — each documented along the five Better Regulation
+              evaluation criteria (effectiveness, efficiency, relevance, coherence, EU added value),
+              facts and sources only, no rating scale.
               Plus the downstream standards underneath: low-carbon definitions, labels, product rules.
-              One click exports the whole review as an Excel handover workbook with assessment, data,
+              One click exports the whole review as an Excel handover workbook with criteria notes, data,
               sources and a what-to-watch timeline.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-accent-violet">

@@ -7,19 +7,19 @@
  * Two datasets:
  *   • LEAD_MARKET_POLICIES — the EU demand-side ("lead market") instruments
  *     for low-carbon industrial products (public procurement rules, quotas,
- *     border price signals), each assessed against the FIVE mandatory
+ *     border price signals), each documented along the FIVE mandatory
  *     evaluation criteria of the Commission's Better Regulation framework
  *     (Better Regulation Guidelines SWD(2021) 305 / Toolbox Tool #47):
  *     effectiveness, efficiency, relevance, coherence, EU added value.
  *   • DOWNSTREAM_STANDARDS — the definition / label / product-standard layer
  *     that lead markets depend on (what counts as "low-carbon steel"?).
  *
- * IMPORTANT — nature of the assessment: most instruments are new or still in
- * the legislative pipeline, so this is an evaluation-STYLE, largely EX-ANTE
- * assessment (a prospective read using the Better Regulation criteria as a
- * lens), not a formal ex-post evaluation. Scores are AI-compiled working
- * judgements as of July 2026, pending verification by the industry lead —
- * a prompt for judgement, not a Board position.
+ * IMPORTANT — nature of the notes: most instruments are new or still in the
+ * legislative pipeline, so the per-criterion notes are evaluation-STYLE and
+ * largely EX-ANTE (a prospective read using the Better Regulation criteria
+ * as a grid), not a formal ex-post evaluation. NO rating scale is applied —
+ * the notes are AI-compiled working drafts as of July 2026, pending
+ * verification by the industry lead; not a Board position.
  */
 
 export const DOWNSTREAM_META = {
@@ -91,22 +91,15 @@ export const BR_CRITERIA_META: Record<
   },
 };
 
-/* ── Scores ────────────────────────────────────────────────────────────── */
+/* ── Criteria notes ────────────────────────────────────────────────────── */
 
-export type ScoreLevel = 'strong' | 'moderate' | 'weak' | 'too-early';
-
-export const SCORE_META: Record<
-  ScoreLevel,
-  { label: string; color: string; rank: number }
-> = {
-  strong: { label: 'Strong', color: '#007B6C', rank: 3 },
-  moderate: { label: 'Moderate', color: '#FF9933', rank: 2 },
-  weak: { label: 'Weak', color: '#B83230', rank: 1 },
-  'too-early': { label: 'Too early', color: '#808285', rank: 0 },
-};
-
+/**
+ * One factual note per Better Regulation criterion. Deliberately NOT rated:
+ * no strong/moderate/weak scale is applied anywhere — the note carries the
+ * facts (design, data points, state of play) and leaves the judgement to the
+ * reader.
+ */
 export interface CriterionAssessment {
-  score: ScoreLevel;
   rationale: string;
 }
 
@@ -190,27 +183,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Voluntary demand pull: if enough contracting authorities adopt the common criteria, tenders reward low-carbon products. No obligation, no floor, no monitoring regime.',
     assessment: {
       effectiveness: {
-        score: 'weak',
         rationale:
           'Uptake stayed low after 15+ years: fewer than 15% of above-threshold contracts include green criteria and over 55% of tenders are still awarded on lowest price alone. The voluntary design never converted the EU\'s ~14%-of-GDP purchasing power into a reliable demand signal.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'Cheap to run (criteria sets, no enforcement apparatus) and low burden on buyers — but the foregone scale means very little demand pull per euro of policy effort. Evidence also shows green criteria can reduce bidder participation and raise award prices where used without market preparation.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'The need it targets is exactly right — public purchasing is the single largest controllable demand lever for low-carbon materials (~€2 trillion/yr). The instrument, not the problem, is the weak part.',
       },
       coherence: {
-        score: 'moderate',
         rationale:
           'GPP criteria pre-date and are not aligned with the ETS/CBAM carbon-accounting stack now used by NZIA, ESPR and the proposed IAA; sectoral mandatory regimes are overtaking it, leaving two parallel logics until the Public Procurement Directive revision knits them together.',
       },
       euAddedValue: {
-        score: 'moderate',
         rationale:
           'Common criteria sets prevented 27 divergent national green-criteria catalogues and lowered the entry cost for municipalities — real but modest added value given voluntariness.',
       },
@@ -273,27 +261,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Converts public tenders and renewables auctions from pure price competition into markets that reward sustainability and supply-chain resilience — a lead market for cleaner and EU-diversified clean tech, with guardrails capping the extra cost buyers must accept.',
     assessment: {
       effectiveness: {
-        score: 'too-early',
         rationale:
           'The machinery only completed in 2026 (procurement IR of 20 March 2026; first NZIA-compliant auctions opening through 2026). Design caution: the 30%/6 GW auction floor and cost-cap guardrails deliberately limit how much demand is actually redirected, so even full compliance moves a minority of volume.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'Leverages existing tender machinery and caps the premium public buyers must absorb — proportionate by design. But per-tender assessment of eight environmental criteria plus resilience checks adds real administrative load on contracting authorities, and pre-qualification-style criteria may shrink bidder pools.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'Directly answers the diagnosed problem — EU clean-tech manufacturers losing tenders on price to concentrated non-EU supply — and the 2024–25 evidence (solar, batteries) kept the need acute.',
       },
       coherence: {
-        score: 'moderate',
         rationale:
           'Well linked to the CRMA and state-aid frameworks, but now overlaps the proposed IAA (which adds its own procurement preferences for net-zero tech) and the upcoming Public Procurement Act — three layers whose reconciliation is explicitly still open.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'Single-market-wide criteria prevent a race to the bottom between national auctions and give manufacturers one rulebook instead of 27 — precisely the case where EU action outperforms national schemes.',
       },
@@ -368,27 +351,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Binding minimum shares of low-carbon products = a guaranteed quantity signal (not just award points), designed to underwrite offtake for near-zero steel, cement and aluminium plants that currently cannot close their green premium (~10–40% for steel, higher for cement).',
     assessment: {
       effectiveness: {
-        score: 'too-early',
         rationale:
           'Ex-ante the design is the strongest yet — binding minimum shares beat award-criteria nudges. But effectiveness hinges on three unresolved points: the level of the shares (set later via implementing acts), the 2029 start date (late for plants needing offtake now), and the retreat from a mandatory to a voluntary carbon label, which weakens the price-discovery signal buyers need.',
       },
       efficiency: {
-        score: 'too-early',
         rationale:
           'Reuses ETS/CBAM emissions data and existing product law rather than inventing new accounting — good. Open cost questions: green-premium pass-through to public budgets, administrative burden on contracting authorities verifying origin and carbon intensity, and WTO/GPA exposure of the Union-origin preferences.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'Aims squarely at the need every diagnosis (Draghi report, Clean Industrial Deal, ESABCC industry analysis) identified: without demand-side pull, EU low-carbon steel/cement/aluminium projects do not reach FID. Sector choice matches where green premiums block investment.',
       },
       coherence: {
-        score: 'moderate',
         rationale:
           'Deliberately architected to sit on ESPR/CPR definitions and CBAM/ETS data — coherent on paper, but that makes it hostage to the ESPR steel delegated act (2026) and CPR acts landing on time, and its overlap with NZIA procurement rules and the parallel Public Procurement Act revision is not yet reconciled.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'A lead market only works at scale: 27 national low-carbon procurement schemes with 27 definitions would fragment exactly the demand pool the plants need. EU-level minimum shares plus one classification system is the textbook added-value case.',
       },
@@ -472,27 +450,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Would move green/resilience criteria from sectoral exceptions (NZIA, IAA) into the default procurement framework itself — potentially ending the lowest-price default that neutralises lead-market signals across the ~€2 trillion market.',
     assessment: {
       effectiveness: {
-        score: 'too-early',
         rationale:
           'No proposal text yet. The effectiveness question is whether sustainability criteria become mandatory defaults (with floors) or remain enabled-but-optional — the voluntary GPP experience shows the latter does not move demand.',
       },
       efficiency: {
-        score: 'too-early',
         rationale:
           'Simplification could cut tender transaction costs (a genuine pain point for SMEs and small buyers); but stacking sustainability + resilience + social + European-preference tests risks the opposite. Depends entirely on drafting.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'The framework is the root cause of the lowest-price default; every sectoral instrument (NZIA, IAA, ESPR GPP acts) is currently a workaround. Revising the trunk rather than adding branches addresses the actual need.',
       },
       coherence: {
-        score: 'too-early',
         rationale:
           'This file decides whether the procurement layer stack (NZIA + ESPR implementing acts + IAA + GPP criteria) becomes one coherent system or four overlapping regimes — the single biggest coherence lever in the whole lead-market agenda.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'Procurement thresholds and remedies are already EU-harmonised; only EU-level revision can change the default award logic across the single market.',
       },
@@ -554,27 +527,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Two-step lead market: (1) performance classes make carbon intensity visible and comparable; (2) mandatory GPP acts oblige public buyers to buy the better classes, creating protected demand for top-class (low-carbon) steel and aluminium.',
     assessment: {
       effectiveness: {
-        score: 'too-early',
         rationale:
           'Nothing binding exists yet for materials — the steel delegated act is targeted for 2026 with compliance ~2028, and no Art. 65 GPP implementing act has been adopted. The mechanism is credible; the delivery risk is timing, given the IAA explicitly depends on these definitions.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'Class-based requirements are administratively lean for buyers (buy class A/B — no bespoke LCA per tender), pushing the burden to producers via the DPP. DPP/verification compliance cost for producers is real but serves multiple regimes at once (IAA, CBAM, CPR).',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'Solves the recognised binding constraint of the entire lead-market agenda: without harmonised low-carbon definitions and classes for materials, no procurement preference can be enforced.',
       },
       coherence: {
-        score: 'strong',
         rationale:
           'Deliberately positioned as the definitions layer the IAA, CPR and GPP mandates plug into; working plan explicitly coordinates intermediate-product rules so they don\'t cascade badly into final-product markets. Main risk is schedule slip, not design conflict.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'One EU classification and passport per product beats 27 national eco-labels — and it is the piece that makes cross-border lead markets possible at all.',
       },
@@ -637,27 +605,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Defends the price premium that lead-market instruments create: without border adjustment downstream, procurement preferences for low-carbon materials would simply pull in third-country processed goods. Its embedded-emissions methodology is also becoming the common carbon-accounting language for labels and classes.',
     assessment: {
       effectiveness: {
-        score: 'moderate',
         rationale:
           'The mechanism is live and the de-minimis redesign kept 99% of embedded emissions covered with a fraction of the administrative population. But effectiveness against circumvention is only as good as scope: the 2028 downstream extension exists precisely because leakage was shifting downstream, and export-side leakage remains unaddressed pending the 2026 review.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'The 2025 simplification materially improved the cost-benefit ratio (~90% of importers exempted, negligible emissions coverage lost). The downstream extension re-raises burden questions for thousands of importers of complex goods — default values and simplified methods will decide whether it stays proportionate.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'With free allocation phasing out from 2026, some border instrument is indispensable for exactly the sectors (steel, cement, aluminium) the lead-market agenda targets; the downstream gap was the most-cited flaw and is being addressed.',
       },
       coherence: {
-        score: 'strong',
         rationale:
           'Tightly coupled to the ETS (certificate price mirrors EUA auctions, scope mirrors free-allocation phase-out) and now reused as the methodology base for the IAA classification — CBAM is becoming the accounting keystone of the whole framework.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'A border measure is definitionally impossible at Member State level inside a customs union.',
       },
@@ -727,27 +690,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Quota = guaranteed offtake. Creates a captive lead market for automotive-grade recyclates (and later recycled/low-carbon steel and aluminium) independent of public budgets — demonstrating the quota model that ESABCC and think-tank work suggest for materials generally.',
     assessment: {
       effectiveness: {
-        score: 'too-early',
         rationale:
           'Binding and quantified — ex-ante the strongest demand-signal design in this list — but obligations only bite from ~2028 (application) and the material quotas that matter for industrial decarbonisation (steel, aluminium) are still a delegated act away.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'Quotas outsource the cost to the value chain rather than public budgets, but closed-loop plastic supply (25%, with ELV-sourced sub-quota) is tight: recyclate availability and quality could make compliance expensive; the phase-in and review clauses are the safety valve.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'Targets a real gap: voluntary recyclate demand collapsed with virgin-price swings, and automotive is the highest-value sink for circular materials. Also directly relevant to steel decarbonisation via future scrap-share requirements.',
       },
       coherence: {
-        score: 'moderate',
         rationale:
           'Fits the ESPR/CPR circularity architecture, but the recycled-steel delegated act must be squared with the ESPR steel act, EU scrap-export policy and the IAA low-carbon steel definitions — several moving parts, one material.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'Vehicle type-approval is a single-market competence; only EU-level quotas can create a harmonised recyclate market at automotive scale.',
       },
@@ -805,27 +763,22 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       'Quotas translate directly into bankable demand volumes (SAF offtake contracts, e-fuel FIDs, electrolyser projects), shifting the green premium onto users (airlines, shipping lines, industrial H₂ consumers) with flexibility/pooling mechanisms to contain cost.',
     assessment: {
       effectiveness: {
-        score: 'moderate',
         rationale:
           '2025 was the first compliance year and the 2% SAF mandate was broadly deliverable — but nearly all supply is HEFA-based, the 2030 synthetic sub-mandate still lacks FIDs at scale, and RED III industry-target transposition is late in many Member States. The signal works; delivery of advanced volumes lags.',
       },
       efficiency: {
-        score: 'moderate',
         rationale:
           'Quotas avoid public spending but concentrate compliance cost on users with few abatement alternatives (SAF at 2–6× fossil kerosene). Flexibility mechanisms (pooling, banking, the ETS SAF allowances top-up) mitigate; whether e-fuel sub-mandates are the cheapest route to those molecules remains contested.',
       },
       relevance: {
-        score: 'strong',
         rationale:
           'Aviation, shipping and industrial hydrogen are exactly the segments where carbon pricing alone cannot trigger first-of-a-kind fuel plants — the demand-gap diagnosis holds squarely.',
       },
       coherence: {
-        score: 'moderate',
         rationale:
           'Interlocks with ETS/ETS2 and the hydrogen framework, but feedstock competition across the three regimes, the RFNBO delegated-act strictness debate, and uneven RED III transposition create friction; the 2026–27 reviews will need to reconcile ambition with actual supply.',
       },
       euAddedValue: {
-        score: 'strong',
         rationale:
           'Fuel mandates for inherently cross-border transport modes only work as single-market rules — national SAF mandates (pre-ReFuelEU) were fragmenting exactly this market.',
       },

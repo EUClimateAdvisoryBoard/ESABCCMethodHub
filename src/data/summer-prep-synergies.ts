@@ -35,9 +35,6 @@ export type SectorKey = 'Industry' | 'Transport';
 /** Direction of the mitigation ↔ adaptation interaction. */
 export type InteractionKind = 'synergy' | 'trade-off' | 'mixed';
 
-/** How well-established the interaction is in the literature. */
-export type EvidenceStrength = 'strong' | 'moderate' | 'emerging';
-
 export interface LitReference {
   /** Full human-readable citation. */
   cite: string;
@@ -61,7 +58,6 @@ export interface SynergyEntry {
   mechanism: string;
   /** Practical implication for EU policy design. */
   implication: string;
-  strength: EvidenceStrength;
   references: LitReference[];
 }
 
@@ -89,12 +85,6 @@ export const SYNERGY_KIND_META: Record<
     description:
       'The interaction is a synergy or a trade-off depending on design, siting or resource context.',
   },
-};
-
-export const STRENGTH_META: Record<EvidenceStrength, { label: string; color: string }> = {
-  strong: { label: 'Well established', color: '#004B7F' },
-  moderate: { label: 'Moderate evidence', color: '#478EA5' },
-  emerging: { label: 'Emerging / context-specific', color: '#75C9DB' },
 };
 
 /** Subsector order per sector (mirrors the report chapter structure). */
@@ -153,7 +143,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Secondary (scrap-based) steelmaking cuts direct CO₂ by roughly 80–90% versus the integrated route while also shortening and localising the supply chain, reducing exposure to climate- and geopolitics-driven disruption of coke and ore imports. EAF routes are markedly less water-intensive than integrated works, easing pressure where cooling water is scarce.',
     implication:
       'Circular-economy and scrap-quality policy (CEAP, Ecodesign) is simultaneously a resilience instrument; the report already flags the EU’s recycling-first, prevention-last gap for industry.',
-    strength: 'strong',
     references: [
       AR6_WG3,
       {
@@ -178,7 +167,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Water electrolysis needs ~9 litres of purified water per kg of H₂ stoichiometrically — roughly 24 litres once water treatment is counted, plus cooling water on top (Tonelli et al. 2023). Siting large H₂-DRI plants in southern/Mediterranean regions that are attractive for cheap solar power can collide with declining summer water availability, creating a maladaptation risk unless desalination or reuse is planned in.',
     implication:
       'Green-steel siting and Net-Zero Industry Act support should carry a water-stress screen; the EUCRA rates southern-European water scarcity as a high and rising risk.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Tonelli, D. et al. (2023) "Global land and water limits to electrolytic hydrogen production using wind and solar resources", Nature Communications 14:5532.',
@@ -205,7 +193,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Hard adaptation infrastructure is overwhelmingly concrete- and cement-based, so ramping up coastal and flood protection pushes cement demand — and its hard-to-abate process emissions — in the opposite direction to the mitigation target. The larger the unmet adaptation deficit, the stronger the counter-pull on the cement budget.',
     implication:
       'Adaptation investment plans and cement decarbonisation (CCS, clinker substitution) must be budgeted together; nature-based and low-clinker defences reduce the clash.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Habert, G. et al. (2020) "Environmental impacts and decarbonization strategies in the cement and concrete industries", Nature Reviews Earth & Environment 1:559–573.',
@@ -227,7 +214,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Well-designed blended and carbonation-cured concretes can raise durability (fewer high-carbon replacement cycles) and, where formulated as reflective/"cool" surfaces, cut absorbed heat in cities — an adaptation co-benefit of a mitigation product. The synergy is conditional on durability being verified for the specific low-clinker mix.',
     implication:
       'Standards and public procurement can reward the mixes that deliver both lower embodied carbon and demonstrated durability/albedo.',
-    strength: 'emerging',
     references: [
       SHARIFI_SYN,
       {
@@ -249,7 +235,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Carbon capture raises a plant’s water intensity — retrofitting post-combustion capture raises a coal plant’s water intensity by roughly 55%, and CCS water footprints span orders of magnitude (≈0.7–575 m³ per tCO₂) depending on capture and cooling technology. Cement CCS sited in drought-prone basins therefore adds water demand exactly where EUCRA sees scarcity rising; cooling choices (dry/hybrid) and reuse determine how sharp the conflict becomes.',
     implication:
       'CCS permitting and Net-Zero Industry Act support for cement should carry the same water-stress screen proposed for hydrogen, with capture/cooling configurations sized to local hydrology.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Rosa, L., Sanchez, D.L., Realmonte, G., Baldocchi, D. & D’Odorico, P. (2021) "The water footprint of carbon capture and storage technologies", Renewable and Sustainable Energy Reviews 138:110511.',
@@ -272,7 +257,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Large-scale biomass feedstocks for chemicals add to the same land- and water-competition pressures the report flags for biofuels and bioenergy: they can raise vulnerability of food and ecosystems in a drying climate and drive indirect land-use change. The trade-off is smallest for waste/residue and CO₂-based (CCU) feedstocks.',
     implication:
       'Feedstock-switching incentives should prioritise circular carbon and residues over primary biomass, mirroring the report’s cascading-use logic.',
-    strength: 'moderate',
     references: [
       AR6_WG3,
       {
@@ -294,7 +278,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'The big integrated chemical parks (e.g. along the Rhine–Scheldt axis) benefit from grid and hydrogen infrastructure for electrification, but sit exactly where cooling-water availability falls in droughts and where flood/surge risk rises. The same site that enables deep mitigation carries concentrated climate risk, so the two agendas must be planned on the same asset.',
     implication:
       'Cluster decarbonisation roadmaps (and their permitting) should embed climate-proofing of cooling water and flood defences, not treat them separately.',
-    strength: 'moderate',
     references: [EUCRA, AR6_WG2],
   },
   // Cross-cutting industry
@@ -311,7 +294,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Electrification is central to industrial mitigation but concentrates the sector’s resilience on the power system, which itself is stressed by climate: heatwaves cut thermal-plant output and transmission capacity, droughts cut hydro and cooling, and demand for cooling peaks at the same time. Deep electrification is only a robust strategy if paired with a climate-resilient, flexible grid.',
     implication:
       'The report’s "plan and operate the energy system as a whole" gap is also an adaptation gap; industrial electrification and grid climate-proofing are one problem.',
-    strength: 'strong',
     references: [
       {
         cite: 'van Vliet, M.T.H. et al. (2016) "Power-generation system vulnerability and adaptation to changes in climate and water resources", Nature Climate Change 6:375–380.',
@@ -333,7 +315,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Cutting primary material throughput reduces both embodied emissions and the volume of vulnerable imports the EU must secure, so material efficiency doubles as a supply-security/resilience measure. This is the same logic the report applies when it criticises the recycling-only focus of the first Circular Economy Action Plan.',
     implication:
       'Material-efficiency mandates (Ecodesign for circularity, product-lifetime rules) should be credited for their resilience value, not only their tonnes of CO₂.',
-    strength: 'strong',
     references: [
       {
         cite: 'IEA (2021) "The Role of Critical Minerals in Clean Energy Transitions".',
@@ -358,7 +339,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Avoiding car kilometres cuts CO₂ while the accompanying urban form — compactness, green corridors, shade — reduces heat exposure and pollution and builds the classic mitigation–adaptation co-benefit documented for cities. Street trees and shading that make walking/cycling viable in heat are adaptation and mitigation at once.',
     implication:
       'Demand-moderation and modal-shift measures (which the report flags as under-used in EU strategy) should be evaluated for their heat- and health-resilience co-benefits.',
-    strength: 'strong',
     references: [SHARIFI_SYN, AR6_WG2],
   },
   {
@@ -374,7 +354,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Extreme heat degrades battery performance, range and lifetime and stresses charging infrastructure, while floods threaten kerbside chargers; separately, the critical-mineral supply chains for batteries are themselves exposed to climate and geopolitical disruption — aggravated by the report’s point that CO₂ standards can push buyers toward larger, more mineral-hungry ZEVs.',
     implication:
       'Charging-network and battery standards should include thermal/flood resilience, and vehicle-efficiency incentives (the report’s ambition gap) also cut mineral exposure.',
-    strength: 'moderate',
     references: [
       EUCRA,
       {
@@ -397,7 +376,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'A large EV fleet is also a large distributed battery: with smart charging and V2G it can shift load away from heatwave-driven peaks and provide reserve when extremes derate thermal, hydro or network capacity — turning the electrification lever into a resilience resource instead of only an added load. The benefit is conditional on chargers, market rules and aggregation actually enabling bidirectional participation.',
     implication:
       'AFIR roll-out and network codes should enable bidirectional charging and aggregation so the EV fleet contributes to, rather than burdens, system adequacy in extremes — the flip side of this note’s EV-exposure trade-off.',
-    strength: 'emerging',
     references: [
       {
         cite: 'Kempton, W. & Tomić, J. (2005) "Vehicle-to-grid power implementation: From stabilizing the grid to supporting large-scale renewable energy", Journal of Power Sources 144(1):280–294.',
@@ -420,7 +398,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Modal shift is a core mitigation lever, but the lower-carbon modes it relies on are themselves climate-sensitive: rail to heat-buckling and flooding, inland waterways to droughts. The shift is a durable win only if the target network is adapted; otherwise mitigation gains are eroded by reliability losses during extremes.',
     implication:
       'The report’s modal-shift ambition/implementation gaps (Combined Transport Directive, Rail Freight Corridors, TEN-T) should be read together with TEN-T climate-proofing requirements.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Palin, E.J., Stipanovic Oslakovic, I., Gavin, K. & Quinn, A. (2021) "Implications of climate change for railway infrastructure", WIREs Climate Change 12(5):e728.',
@@ -443,7 +420,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Rail is among the lowest-carbon modes, yet steel track buckles and overhead lines sag in extreme heat (forcing speed restrictions), and lines flood or wash out in extreme rain. Rising heatwave frequency in Europe therefore threatens the reliability of the very asset the mitigation strategy leans on — protecting it is a precondition, not an optional add-on.',
     implication:
       'Rail electrification funding should be paired with heat-/flood-proofing (rail stress management, drainage) so adaptation protects the mitigation investment.',
-    strength: 'strong',
     references: [
       {
         cite: 'Dobney, K., Baker, C.J., Quinn, A.D. & Chapman, L. (2009) "Quantifying the effects of high summer temperatures due to climate change on buckling and rail related delays in south-east United Kingdom", Meteorological Applications 16(2):245–251.',
@@ -470,7 +446,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'ReFuelEU Aviation (Art. 4(5)) excludes food- and feed-crop biofuels from the SAF mandate, but the eligible biomass pathways (RED Annex IX feedstocks, incl. certain intermediate crops added by Delegated Directive 2024/1405) still draw on a finite biomass, land and water base — the biofuel indirect-effects concern the report raises — so scaling them can erode food- and ecosystem resilience in a drying climate. The trade-off is smallest for genuine wastes/residues; synthetic e-SAF instead shifts the pressure onto renewable electricity and water.',
     implication:
       'SAF sub-targets should steer hard toward genuine residues and e-fuels; the report’s biofuel ambition/implementation gaps apply directly here.',
-    strength: 'moderate',
     references: [
       AR6_WG3,
       {
@@ -492,7 +467,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Hotter air lowers air density, so on extreme-heat days aircraft face weight/payload restrictions and longer take-off rolls, and many major European airports are coastal and low-lying, exposed to sea-level rise and storm surge. These physical adaptation pressures interact with — and can raise the cost of — the mitigation transition (e.g. heavier alternative-fuel aircraft).',
     implication:
       'Airport adaptation planning belongs alongside aviation decarbonisation and the report’s call to close the extra-EU ETS exemption.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Coffel, E. & Horton, R. (2015) "Climate Change and the Impact of Extreme Temperatures on Aviation", Weather, Climate, and Society 7(1):94–102.',
@@ -519,7 +493,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'The fuel-bunkering, shore-power and hydrogen/ammonia infrastructure needed to decarbonise shipping is concentrated in ports — precisely the assets most exposed to sea-level rise and storm surge. New low-carbon port infrastructure that is not designed for those hazards risks being stranded or damaged, undercutting the mitigation investment.',
     implication:
       'FuelEU Maritime / AFIR port-infrastructure roll-out should be conditioned on climate-proofing of the port itself.',
-    strength: 'moderate',
     references: [
       {
         cite: 'Izaguirre, C., Losada, I.J., Camus, P., Vigh, J.L. & Stenek, V. (2021) "Climate change risk to global port operations", Nature Climate Change 11:14–20.',
@@ -541,7 +514,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Inland shipping is low-carbon per tonne-km but directly hostage to river hydrology: the 2018 and 2022 Rhine low-water episodes forced barges to sail part-loaded and diverted freight back to road and rail, i.e. climate change degraded the reliability of the mode the mitigation strategy wants to grow.',
     implication:
       'Modal-shift-to-water targets need a hydrological-risk hedge (fleet design for low draught, redundancy with rail) or they will underperform in dry years.',
-    strength: 'strong',
     references: [
       {
         cite: 'Ademmer, M., Jannsen, N. & Meuchelböck, S. (2023) "Extreme Weather Events and Economic Activity: The Case of Low Water Levels on the Rhine River", German Economic Review 24(2):121–144.',
@@ -564,7 +536,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Reducing the need to travel cuts emissions and simultaneously reduces the population and freight exposed to network disruptions (heat, floods) — the least infrastructure is also the least vulnerable infrastructure. This is the "avoid" tier of avoid–shift–improve doing double duty.',
     implication:
       'The report’s finding that demand moderation is absent from EU mobility strategy is thus both a mitigation and a resilience gap.',
-    strength: 'moderate',
     references: [AR6_WG3, SHARIFI_SYN],
   },
   {
@@ -580,7 +551,6 @@ export const SYNERGIES: SynergyEntry[] = [
       'Adapting transport assets — heavier drainage, reinforced bridges, raised roads, heat-resistant pavements — is material- and cement-intensive, so the adaptation programme pulls against the embodied-carbon side of the mitigation ledger, echoing the cement/adaptation-demand trade-off in the industry chapter.',
     implication:
       'Resilience upgrades should specify low-carbon and nature-based solutions (e.g. sustainable drainage) to blunt the embodied-carbon penalty.',
-    strength: 'moderate',
     references: [SHARIFI_TRADE, AR6_WG2],
   },
 ];

@@ -13,8 +13,8 @@
  *                   inter-country input–output framework, and
  *               (3) a curated critical-materials layer (EC/JRC) naming the
  *                   specific feedstocks below the 2-digit radar, and
- *   • RISK    → the hotspots where imports are both large and concentrated in
- *               a single supplier (carbon-leakage / CBAM / CRMA front line).
+ *   • DEPENDENCY → where imports are both large and concentrated in a single
+ *               supplier (carbon-leakage / CBAM / CRMA front line).
  *
  * DATA ARCHITECTURE (three layers, see the Methodology view for the full story):
  *
@@ -456,7 +456,7 @@ export const STRATEGIC_DEPENDENCIES: StrategicDependency[] = [
   { family: 'Platinum-group metals', naceDivision: 'C20/C29', ecosystem: 'Energy-intensive / mobility', euImportReliance: 100, topSupplier: 'South Africa', supplierShare: 71, vulnerability: 'South Africa 71% of EU platinum (more for Ir/Rh/Ru); catalysts, autocatalysts, electrolysers; no EU mining', src: { org: 'European Commission (DG GROW)', title: 'Critical raw materials', url: 'https://single-market-economy.ec.europa.eu/sectors/raw-materials/areas-specific-interest/critical-raw-materials_en', year: '2023' } },
 ];
 
-/* -------------------------------------------------------------- risk quadrant */
+/* --------------------------------------------------------- dependency map */
 
 export interface RiskHotspot {
   label: string;
@@ -470,11 +470,10 @@ export interface RiskHotspot {
 }
 
 /**
- * CURATED LAYER — the high-risk matrix that drives the risk-quadrant chart.
- * Two 0–1 axes: import reliance × supplier concentration. The top-right corner
- * (high on both) is where a single foreign supplier can choke an EU value
- * chain — derived from the critical-materials, strategic-dependency and energy
- * datasets above. Axis definitions and caveats: see the Methodology view.
+ * CURATED LAYER — the entries behind the import-dependency map. Two 0–1 axes:
+ * import reliance × supplier concentration, derived from the
+ * critical-materials, strategic-dependency and energy datasets above. Axis
+ * definitions and caveats: see the Methodology view.
  */
 export const RISK_HOTSPOTS: RiskHotspot[] = [
   { label: 'Rare-earth magnets (NdFeB)', naceDivision: 'C27/C29', importReliance: 1.0, supplierConcentration: 1.0, supplier: 'China', src: { org: 'European Commission (DG GROW)', title: 'Critical raw materials', url: 'https://single-market-economy.ec.europa.eu/sectors/raw-materials/areas-specific-interest/critical-raw-materials_en', year: '2023' } },

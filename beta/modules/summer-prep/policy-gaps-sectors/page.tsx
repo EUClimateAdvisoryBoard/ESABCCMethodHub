@@ -19,7 +19,6 @@ import { useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
-import SummerPrepGate from '@/components/SummerPrepGate';
 import {
   POLICY_GAPS,
   GAP_TYPE_META,
@@ -388,9 +387,5 @@ function SectorGapsInner() {
 }
 
 export default function PolicyGapsSectorsPage() {
-  return (
-    <SummerPrepGate>
-      <SectorGapsInner />
-    </SummerPrepGate>
-  );
+  return <SectorGapsInner />;
 }

@@ -15,11 +15,9 @@ import { useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
-import SummerPrepGate from '@/components/SummerPrepGate';
 import {
   SYNERGIES,
   SYNERGY_KIND_META,
-  STRENGTH_META,
   SUBSECTOR_ORDER,
   SYNERGY_REPORT_META,
   type SectorKey,
@@ -45,7 +43,6 @@ function KindBadge({ kind }: { kind: InteractionKind }) {
 
 function EntryCard({ e }: { e: SynergyEntry }) {
   const m = SYNERGY_KIND_META[e.kind];
-  const s = STRENGTH_META[e.strength];
   return (
     <article
       className="rounded-xl border border-[#E6E7E8] bg-white p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]"
@@ -53,12 +50,6 @@ function EntryCard({ e }: { e: SynergyEntry }) {
     >
       <div className="mb-1.5 flex flex-wrap items-center gap-2">
         <KindBadge kind={e.kind} />
-        <span
-          className="rounded-full px-2 py-0.5 text-[10px] font-semibold"
-          style={{ backgroundColor: `${s.color}1A`, color: s.color }}
-        >
-          {s.label}
-        </span>
       </div>
       <h3 className="text-[14px] font-bold leading-snug">{e.title}</h3>
 
@@ -126,7 +117,6 @@ function exportCsv() {
     'sector',
     'subsector',
     'kind',
-    'evidence_strength',
     'title',
     'mitigation',
     'adaptation',
@@ -139,7 +129,6 @@ function exportCsv() {
       e.sector,
       e.subsector,
       SYNERGY_KIND_META[e.kind].label,
-      STRENGTH_META[e.strength].label,
       e.title,
       e.mitigation,
       e.adaptation,
@@ -308,9 +297,5 @@ function SynergiesInner() {
 }
 
 export default function SynergiesTradeoffsPage() {
-  return (
-    <SummerPrepGate>
-      <SynergiesInner />
-    </SummerPrepGate>
-  );
+  return <SynergiesInner />;
 }
