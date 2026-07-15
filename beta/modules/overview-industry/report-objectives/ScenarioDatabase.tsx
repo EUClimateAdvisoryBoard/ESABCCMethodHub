@@ -115,7 +115,7 @@ export function MultiScenarioFigure() {
         label: sc.label,
         data: PLOT_YEARS.map((y) => {
           const v = indexedValueAt(sc, y);
-          return v == null ? null : { x: y, y: Math.round(v * 10) / 10 };
+          return { x: y, y: v == null ? null : Math.round(v * 10) / 10 };
         }),
         borderColor: color,
         backgroundColor: color,
