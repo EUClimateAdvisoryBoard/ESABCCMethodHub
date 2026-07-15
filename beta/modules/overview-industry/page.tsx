@@ -4,13 +4,17 @@
  * Overview Industry — beta module landing page.
  * ---------------------------------------------
  * An overview surface for the industry lead's cross-cutting work, gathering
- * three sub-pages:
+ * four sub-pages:
  *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
  *                   (NACE Section C): total → divisions → subsectors → levers,
  *                   with cost / readiness / barriers / investment decisions.
  *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
  *                   Section C divisions): imports/exports, supply-chain inputs
  *                   and high-risk import dependencies, on live Eurostat data.
+ *   • Downstream  — the demand side: review of the EU lead-market policies
+ *                   (public procurement, quotas, border signals) assessed on
+ *                   the five Better Regulation criteria, plus the downstream
+ *                   standards they depend on. Exports an Excel handover pack.
  *   • Industry report — objectives & evidence base for the next progress
  *                   report's industry chapter: a synthesis of industrial
  *                   decarbonisation roadmaps (incl. investment timelines) and
@@ -39,9 +43,10 @@ export default function OverviewIndustryPage() {
         </div>
         <h1 className="mt-2 text-3xl font-bold text-grey-900">Overview Industry</h1>
         <p className="mt-2 max-w-text text-grey-700">
-          A cross-cutting overview surface for EU industrial decarbonisation. Three sub-pages so
-          far — an evidence catalogue of clean-tech options, a trade-flows view, and the objectives
-          &amp; evidence base for the next report&apos;s industry chapter.
+          A cross-cutting overview surface for EU industrial decarbonisation. Four sub-pages so far
+          — an evidence catalogue of clean-tech options, a trade-flows view, a demand-side review
+          of lead-market policies and downstream standards, and the objectives &amp; evidence base
+          for the next report&apos;s industry chapter.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -97,14 +102,41 @@ export default function OverviewIndustryPage() {
           </Link>
 
           <Link
-            href="/beta/overview-industry/report-objectives"
+            href="/beta/overview-industry/downstream"
             className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-accent-violet hover:shadow"
           >
             <div className="flex items-center gap-2">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-violet text-white">
-                ◎
+                ⬇
               </span>
               <h2 className="text-lg font-bold text-grey-900 group-hover:text-accent-violet">
+                Downstream
+              </h2>
+            </div>
+            <p className="mt-2 text-sm text-grey-600">
+              The demand side: a review of the EU&apos;s lead-market policies — public procurement
+              (voluntary GPP, NZIA non-price criteria, the Industrial Accelerator Act, the Public
+              Procurement Act revision, ESPR mandatory GPP), quotas (ELV recycled content, clean-fuel
+              mandates) and the CBAM border signal — each assessed against the five Better Regulation
+              evaluation criteria (effectiveness, efficiency, relevance, coherence, EU added value).
+              Plus the downstream standards underneath: low-carbon definitions, labels, product rules.
+              One click exports the whole review as an Excel handover workbook with assessment, data,
+              sources and a what-to-watch timeline.
+            </p>
+            <span className="mt-3 inline-block text-sm font-semibold text-accent-violet">
+              Open the review →
+            </span>
+          </Link>
+
+          <Link
+            href="/beta/overview-industry/report-objectives"
+            className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-tertiary hover:shadow"
+          >
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-tertiary text-white">
+                ◎
+              </span>
+              <h2 className="text-lg font-bold text-grey-900 group-hover:text-tertiary">
                 Industry report — objectives
               </h2>
             </div>
@@ -117,7 +149,7 @@ export default function OverviewIndustryPage() {
               and one Excel download carries every data point, the objectives, the scenarios and
               the exact link to the paper behind each number.
             </p>
-            <span className="mt-3 inline-block text-sm font-semibold text-accent-violet">
+            <span className="mt-3 inline-block text-sm font-semibold text-tertiary">
               Open the objectives →
             </span>
           </Link>
