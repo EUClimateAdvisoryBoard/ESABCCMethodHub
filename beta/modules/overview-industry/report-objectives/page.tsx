@@ -51,6 +51,9 @@ import {
   type IrTopic,
   type IrFigureBar,
 } from '@/data/industry-report-objectives';
+import { SCENARIO_SOURCES } from '@/data/industry-scenario-db';
+import { MultiScenarioFigure, SubsectorDrilldown, ScenarioDatabaseTable } from './ScenarioDatabase';
+import { scenarioSheets } from './scenario-export';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Tooltip, Legend);
 
@@ -504,18 +507,28 @@ function exportWorkbook() {
         ]),
       ],
     },
+    ...scenarioSheets(),
     {
       name: 'Sources',
       title: 'Source register',
       subtitle: 'Every source used, with type and link (DOI where available)',
       headers: ['ID', 'Type', 'Full citation', 'DOI', 'Link'],
-      rows: SOURCES.map((s) => [
-        s.id,
-        s.type,
-        s.cite,
-        s.doi ?? '',
-        { text: s.url, hyperlink: s.url },
-      ]),
+      rows: [
+        ...SOURCES.map((s): CellValue[] => [
+          s.id,
+          s.type,
+          s.cite,
+          s.doi ?? '',
+          { text: s.url, hyperlink: s.url },
+        ]),
+        ...SCENARIO_SOURCES.map((s): CellValue[] => [
+          s.id,
+          s.family,
+          s.cite,
+          s.doi ?? '',
+          { text: s.url, hyperlink: s.url },
+        ]),
+      ],
     },
   ];
 
@@ -577,8 +590,10 @@ export default function ReportObjectivesPage() {
             ⬇ Download the full workbook (Excel)
           </button>
           <p className="mt-1.5 text-xs text-grey-500">
-            6 sheets: objectives · roadmap synthesis · all data points · scenario series · figure
-            benchmarks · source register — with a clickable source link on every data row.
+            12 sheets: objectives · roadmap synthesis · all data points · scenario series · figure
+            benchmarks · scenario database · scenario pathways · scenario ensembles · NACE-C
+            subsectors · subsector pathways · industry history · source register — a clickable
+            source link on every data row.
           </p>
         </header>
 
@@ -625,8 +640,11 @@ export default function ReportObjectivesPage() {
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600">
             Aggregated from the roadmaps, the peer-reviewed pathway literature and the
-            IIASA-hosted AR6 scenario ensemble. Every figure has a table-view twin, and every
-            underlying value (in original units) is in the workbook with its source link.
+            IIASA-hosted AR6 scenario ensemble. Figure&nbsp;6 puts every sourced pathway on one
+            indexed plot with the computed ensemble median and the EU&apos;s own 2040 scenarios
+            highlighted; Figure&nbsp;7 opens the whole-industry curve into its NACE Section-C
+            subsectors. Every figure has a table-view twin, and every underlying value is in the
+            workbook with its source link.
           </p>
           <div className="space-y-5">
             <TrajectoriesFigure />
@@ -667,13 +685,31 @@ export default function ReportObjectivesPage() {
                 axisLabel="bn EUR (total)"
               />
             </div>
+            <MultiScenarioFigure />
+            <SubsectorDrilldown />
           </div>
+        </section>
+
+        {/* 2b ── Scenario database */}
+        <section aria-labelledby="scenariodb-h" className="mb-10">
+          <h2 id="scenariodb-h" className="mb-1 text-lg font-bold text-grey-900">
+            3 · The scenario database
+          </h2>
+          <p className="mb-4 max-w-text text-sm text-grey-600">
+            The widened evidence base behind Figure 6: a browsable database of every industry
+            emission pathway — from the IIASA-hosted AR6 ensemble, PIK (REMIND / Ariadne), the
+            European Commission&apos;s 2040 Impact Assessment (S1/S2/S3, highlighted), the IEA, the
+            ECEMF multi-model EU ensemble and the ESABCC&apos;s own work — each with what it is
+            characterised by and how it differs, plus the scenario infrastructure the report draws
+            on. The same tables are in the workbook, with a source link on every row.
+          </p>
+          <ScenarioDatabaseTable />
         </section>
 
         {/* 3 ── Roadmap synthesis */}
         <section aria-labelledby="roadmaps-h" className="mb-10">
           <h2 id="roadmaps-h" className="mb-1 text-lg font-bold text-grey-900">
-            3 · Synthesis of pathways, roadmaps &amp; the clean-tech evidence
+            4 · Synthesis of pathways, roadmaps &amp; the clean-tech evidence
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600">
             One card per roadmap or study — its core finding, main levers, investment timeline and
@@ -751,7 +787,7 @@ export default function ReportObjectivesPage() {
         {/* 4 ── Data points */}
         <section aria-labelledby="data-h" className="mb-10">
           <h2 id="data-h" className="mb-1 text-lg font-bold text-grey-900">
-            4 · All extracted data points
+            5 · All extracted data points
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600">
             The full extraction behind the figures and syntheses — every value with its scenario,
