@@ -1,8 +1,10 @@
 'use client';
 
 /**
- * Policy Gap Tracker (beta) — Summer Prep sub-module (formerly stand-alone
- * module M · 36; now part of M · 35 Summer Prep).
+ * Policy Gap Tracker (beta) — heart of the "Policy Gap 2.0 Report" module
+ * inside M · 35 Summer Prep (formerly stand-alone module M · 36). The three
+ * internal prep notes (Indicator Check, Synergies & Trade-offs, Policy Gaps —
+ * Transport & Industry) are linked from a strip under the hero.
  *
  * Tracks every gap and inconsistency the European Scientific Advisory Board
  * on Climate Change identified in its January-2024 report *"Towards EU
@@ -19,6 +21,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
 import SiteHeader from '@/components/SiteHeader';
@@ -338,6 +341,36 @@ export default function PolicyGapsPage() {
       />
 
       <main className="max-w-[1280px] mx-auto px-4 sm:px-6 py-6 sm:py-8">
+        {/* ── Internal notes (Policy Gap 2.0 Report) ────────────────────── */}
+        <section
+          aria-label="Internal notes"
+          className="mb-6 rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-[#F7F9FA] dark:bg-[var(--mh-card)] p-3"
+        >
+          <div className="text-[10px] font-semibold uppercase tracking-wide text-[#54728C] dark:text-[var(--mh-muted)]">
+            Policy Gap 2.0 Report · internal notes for this prep cycle
+          </div>
+          <div className="mt-2 flex flex-wrap gap-2">
+            <Link
+              href="/beta/summer-prep/indicator-check"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#007B6C] hover:underline"
+            >
+              📈 Indicator Check
+            </Link>
+            <Link
+              href="/beta/summer-prep/synergies-tradeoffs"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#6667AB] hover:underline"
+            >
+              ⇄ Synergies &amp; Trade-offs
+            </Link>
+            <Link
+              href="/beta/summer-prep/policy-gaps-sectors"
+              className="inline-flex items-center gap-1.5 rounded-md border border-[#E6E7E8] dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-bg)] px-2.5 py-1.5 text-[12px] font-semibold text-[#FF9933] hover:underline"
+            >
+              ◍ Policy Gaps — Transport &amp; Industry
+            </Link>
+          </div>
+        </section>
+
         {/* ── Summary cards ─────────────────────────────────────────────── */}
         <section aria-label="Summary" className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-6">
           <div className="rounded-lg border border-[#E6E7E8] dark:border-[var(--mh-border)] p-3">
