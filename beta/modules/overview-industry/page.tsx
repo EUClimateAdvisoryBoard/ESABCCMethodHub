@@ -5,9 +5,14 @@
  * ---------------------------------------------
  * An overview surface for the industry lead's cross-cutting work, gathering
  * four sub-pages:
- *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
- *                   (NACE Section C): total → divisions → subsectors → levers,
- *                   with cost / readiness / barriers / investment decisions.
+ *   • Clean Tech  — two sides: (1) inside industry — a collapsible emissions
+ *                   sunburst of EU manufacturing (NACE Section C): total →
+ *                   divisions → subsectors → levers, with cost / readiness /
+ *                   barriers / investment decisions; (2) outside industry —
+ *                   the external role of the new clean-tech industries (solar,
+ *                   wind, batteries, EVs, electrolysers, heat pumps) in
+ *                   decarbonising the other sectors, with the EC 2040 impact-
+ *                   assessment pathways and a priority/competitiveness read.
  *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
  *                   Section C divisions): imports/exports, supply-chain inputs
  *                   and a critical-dependencies dashboard, on live Eurostat data.
@@ -62,16 +67,18 @@ export default function OverviewIndustryPage() {
               <h2 className="text-lg font-bold text-grey-900 group-hover:text-primary">Clean Tech</h2>
             </div>
             <p className="mt-2 text-sm text-grey-600">
-
-              One figure: EU manufacturing (NACE Rev. 2.1 Section&nbsp;C) as a collapsible emissions
-              sunburst — the sector total decomposing into NACE divisions, subsectors and their
-              decarbonisation levers, every arc sized by sourced Mt CO₂. Each lever carries its
-              marginal abatement cost, technology readiness, barriers, scale and the real investment
-              decisions (incl. FIDs), all with source links — plus a clean-tech vs old-tech overlay
-              that splits the levers into near-zero routes and incumbent-based transitional bridges.
+              Two sides of one story. Side&nbsp;1 — inside industry: EU manufacturing (NACE Rev. 2.1
+              Section&nbsp;C) as a collapsible emissions sunburst — the sector total decomposing into
+              NACE divisions, subsectors and their decarbonisation levers, each with sourced abatement
+              cost, readiness, barriers and investment decisions (incl. FIDs), plus a clean-tech vs
+              old-tech overlay. Side&nbsp;2 — outside industry: the new clean-tech manufacturing
+              industries (solar PV, wind, batteries, EVs, electrolysers, heat pumps) and how their
+              products decarbonise the other sectors — support matrix, sourced mitigation potentials,
+              the sectoral 2040 pathways of the Commission&apos;s impact assessment, and a flagged
+              priority &amp; competitiveness read.
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-primary">
-              Open the wheel →
+              Open the two sides →
             </span>
           </Link>
 

@@ -2,25 +2,34 @@
 /**
  * Excel handover workbook for the Clean Tech sub-module.
  * ------------------------------------------------------
- * Everything the emissions-wheel page knows, in one self-contained .xlsx a
- * colleague can work from without the site: the EU-27 industry emission
- * profile, every subsector with its sourced emission statements, every
- * decarbonisation lever with MAC / TRL / availability / rationale and the
- * clean-vs-old classification, the real project pipeline (incl. FIDs), the
- * emissions map and sector MACC behind the figures, the Clean Tech reading
- * list, and every source with a clickable URL.
+ * Everything BOTH sides of the Clean Tech page know, in one self-contained
+ * .xlsx a colleague can work from without the site: Side 1 (inside industry)
+ * — the EU-27 industry emission profile, every subsector with its sourced
+ * emission statements, every decarbonisation lever with MAC / TRL /
+ * availability / rationale and the clean-vs-old classification, the real
+ * project pipeline (incl. FIDs), the emissions map and sector MACC behind the
+ * figures; Side 2 (outside industry) — the clean-tech industries, the sectors
+ * their products decarbonise, the sourced mitigation potentials and EU
+ * manufacturing positions, the EC 2040 impact-assessment sectoral pathways
+ * and the flagged priority & competitiveness read; plus the Clean Tech
+ * reading list and every source with a clickable URL.
  *
  * Sheets:
- *   1. "Read me"        — purpose, scope, method, caveats, provenance.
- *   2. "Overview"       — headline facts + the EU ETS 2023 industry split.
- *   3. "Subsectors"     — one row per subsector × emission statement (NACE map).
- *   4. "Technologies"   — one row per lever: MAC, TRL, availability,
- *                         clean/old class + rationale, cost/readiness/scale.
- *   5. "Projects"       — the real project pipeline, incl. FID status.
- *   6. "Emissions map"  — the sourced Mt CO₂ blocks behind the treemap/sunburst.
- *   7. "Sector MACC"    — the indicative sector-level abatement-cost curve.
- *   8. "Reading list"   — the Clean Tech chapter reading list (seeded corpus).
- *   9. "Sources"        — every source deduplicated, with clickable URL.
+ *   1.  "Read me"          — purpose, scope, method, caveats, provenance.
+ *   2.  "Overview"         — headline facts + the EU ETS 2023 industry split.
+ *   3.  "Subsectors"       — one row per subsector × emission statement (NACE map).
+ *   4.  "Technologies"     — one row per lever: MAC, TRL, availability,
+ *                            clean/old class + rationale, cost/readiness/scale.
+ *   5.  "Projects"         — the real project pipeline, incl. FID status.
+ *   6.  "Emissions map"    — the sourced Mt CO₂ blocks behind the treemap/sunburst.
+ *   7.  "Sector MACC"      — the indicative sector-level abatement-cost curve.
+ *   8.  "Ext. industries"  — Side 2: one row per clean-tech industry × sourced
+ *                            statement (mitigation / 2040 deployment / EU position).
+ *   9.  "Ext. matrix"      — Side 2: industry × demand-sector support matrix.
+ *   10. "Ext. 2040 paths"  — Side 2: EC 2040-IA sectoral reductions + drivers.
+ *   11. "Ext. priorities"  — Side 2: the editorial priority & competitiveness read.
+ *   12. "Reading list"     — the Clean Tech chapter reading list (seeded corpus).
+ *   13. "Sources"          — every source deduplicated, with clickable URL.
  *
  * Uses ExcelJS (existing project dep), same pattern as the Downstream
  * sub-module handover export (../downstream/export.ts).
@@ -44,6 +53,15 @@ import {
   type Source,
   type Subsector,
 } from '../cleantech-catalogue';
+import {
+  CLEANTECH_INDUSTRIES,
+  DEMAND_SECTORS,
+  EXTERNAL_HEADLINES,
+  EXTERNAL_PRIORITIES,
+  EXTERNAL_PRIORITY_NOTE,
+  PATHWAY_CAVEAT,
+  SECTOR_PATHWAYS,
+} from '../cleantech-external-role';
 import { CLEAN_TECH_READING_LIST } from '@/data/clean-tech-reading-list';
 
 const NAVY = 'FF004B7F';
@@ -107,14 +125,14 @@ export async function exportCleanTechWorkbook(): Promise<void> {
   const rm = wb.addWorksheet('Read me', { properties: { tabColor: { argb: NAVY } } });
   rm.columns = [{ width: 28 }, { width: 110 }];
   const rmRows: [string, string][] = [
-    ['Workbook', 'Clean Tech — EU industry decarbonisation catalogue (handover copy)'],
+    ['Workbook', 'Clean Tech — EU industry decarbonisation, both sides (handover copy)'],
     ['Compiled', today],
-    ['Purpose', 'Handover pack: the full Clean Tech catalogue mapping the EU-27 industry emission profile → each energy-intensive subsector → every available mitigation technology → its marginal abatement cost (MAC), technology readiness (TRL), commercial availability, real project pipeline (incl. Final Investment Decisions) and plain-language rationale for costs, readiness and scaling. Built so a colleague can work from the file without the MethodHub.'],
+    ['Purpose', 'Handover pack for BOTH sides of the Clean Tech module. Side 1 (inside industry): the full catalogue mapping the EU-27 industry emission profile → each energy-intensive subsector → every available mitigation technology → its marginal abatement cost (MAC), technology readiness (TRL), commercial availability, real project pipeline (incl. Final Investment Decisions) and plain-language rationale for costs, readiness and scaling. Side 2 (outside industry): the new clean-tech manufacturing industries (solar PV, wind, batteries, EVs, electrolysers, heat pumps), the demand sectors their products decarbonise, sourced mitigation potentials, the EC 2040 impact-assessment sectoral pathways, the EU manufacturing position per industry and the flagged priority & competitiveness read. Built so a colleague can work from the file without the MethodHub.'],
     ['Scope', MANUFACTURING_SECTION.note],
     ['Sourcing rule', 'Every data point carries a real, working source link — nothing is invented. Figures come from EU official data (EEA, EU ETS/EUTL), IPCC AR6 WGIII Ch. 11, IEA roadmaps/databases and peer-reviewed / high-quality grey literature. MAC and TRL bands are study- and assumption-dependent: read each as "as reported by <source>", not a settled number.'],
     ['Clean vs old tech', `EDITORIAL overlay, not a sourced datum: "${TECH_CLASS_META.clean.label}" = ${TECH_CLASS_META.clean.definition} "${TECH_CLASS_META.old.label}" = ${TECH_CLASS_META.old.definition}`],
-    ['Sheet guide', 'Overview = headline facts + ETS 2023 industry split. Subsectors = one row per subsector × sourced emission statement, with the NACE Rev. 2.1 mapping. Technologies = one row per decarbonisation lever with MAC / TRL / availability, the clean-vs-old call and the cost/readiness/scale rationale. Projects = the real pipeline with FID status. Emissions map + Sector MACC = the sourced numbers behind the figures. Reading list = the Clean Tech chapter corpus. Sources = every link, deduplicated.'],
-    ['Live module', '/beta/overview-industry/cleantech on the MethodHub (this workbook is generated from the same data file: beta/modules/overview-industry/cleantech-catalogue.ts).'],
+    ['Sheet guide', 'Overview = headline facts + ETS 2023 industry split. Subsectors = one row per subsector × sourced emission statement, with the NACE Rev. 2.1 mapping. Technologies = one row per decarbonisation lever with MAC / TRL / availability, the clean-vs-old call and the cost/readiness/scale rationale. Projects = the real pipeline with FID status. Emissions map + Sector MACC = the sourced numbers behind the figures. Ext. industries / Ext. matrix / Ext. 2040 paths / Ext. priorities = Side 2, the external role of the clean-tech industries (per-industry sourced statements; the industry × sector support matrix; the EC 2040 impact-assessment sectoral pathways with their modelled clean-tech drivers; the editorial priority & competitiveness read). Reading list = the Clean Tech chapter corpus. Sources = every link, deduplicated.'],
+    ['Live module', '/beta/overview-industry/cleantech on the MethodHub (this workbook is generated from the same data files: beta/modules/overview-industry/cleantech-catalogue.ts and cleantech-external-role.ts).'],
     ['Provenance / caveat', 'Curated first build (v0.1): broad across the high-emitting subsectors and principal levers, deliberately extensible; gaps are marked rather than filled with guesses. The clean/old classification is an analytical judgement by MethodHub, clearly flagged as such.'],
   ];
   rmRows.forEach(([k, v]) => {
@@ -368,7 +386,129 @@ export async function exportCleanTechWorkbook(): Promise<void> {
   styleHeaderRow(mc, NAVY);
   wrapAll(mc);
 
-  /* ── 8 · Reading list ─────────────────────────────────────────────── */
+  /* ── 8 · Ext. industries (Side 2) ─────────────────────────────────── */
+  const xi = wb.addWorksheet('Ext. industries', { properties: { tabColor: { argb: TEAL } } });
+  xi.columns = [
+    { header: 'Clean-tech industry', key: 'name', width: 26 },
+    { header: 'NACE Rev. 2.1 codes', key: 'nace', width: 22 },
+    { header: 'What it manufactures', key: 'what', width: 60 },
+    { header: 'Block', key: 'block', width: 26 },
+    { header: 'Statement', key: 'value', width: 55 },
+    { header: 'Note', key: 'note', width: 55 },
+    { header: 'Source', key: 'source', width: 55 },
+  ];
+  EXTERNAL_HEADLINES.forEach((f) => {
+    xi.addRow({ name: '(headline)', nace: '', what: '', block: 'Headline fact', value: f.value, note: f.note ?? '', source: cite(f.source) });
+    addSrc(f.source, 'External role: headline fact');
+  });
+  CLEANTECH_INDUSTRIES.forEach((t) => {
+    const blocks: [string, typeof t.mitigation][] = [
+      ['Mitigation potential', t.mitigation],
+      ['Deployment in 2040 modelling', t.scenarioDeployment],
+      ['EU manufacturing position', t.euPosition],
+    ];
+    let first = true;
+    blocks.forEach(([block, items]) =>
+      items.forEach((e) => {
+        xi.addRow({
+          name: t.name,
+          nace: first ? t.nace.join(', ') : '',
+          what: first ? t.what : '',
+          block,
+          value: e.value,
+          note: e.note ?? '',
+          source: cite(e.source),
+        });
+        addSrc(e.source, `External role: ${t.name}`);
+        first = false;
+      }),
+    );
+  });
+  styleHeaderRow(xi, TEAL);
+  wrapAll(xi);
+
+  /* ── 9 · Ext. matrix (Side 2) ─────────────────────────────────────── */
+  const xm = wb.addWorksheet('Ext. matrix', { properties: { tabColor: { argb: ORANGE } } });
+  xm.columns = [
+    { header: 'Clean-tech industry', key: 'tech', width: 26 },
+    { header: 'Demand sector it decarbonises', key: 'sector', width: 26 },
+    { header: 'Role', key: 'role', width: 14 },
+    { header: 'Mechanism', key: 'note', width: 90 },
+    { header: 'Source', key: 'source', width: 55 },
+  ];
+  CLEANTECH_INDUSTRIES.forEach((t) =>
+    t.supports.forEach((c) => {
+      xm.addRow({
+        tech: t.name,
+        sector: DEMAND_SECTORS.find((s) => s.id === c.sectorId)?.name ?? c.sectorId,
+        role: c.role,
+        note: c.note,
+        source: cite(c.source),
+      });
+      addSrc(c.source, `Support matrix: ${t.name}`);
+    }),
+  );
+  styleHeaderRow(xm, ORANGE);
+  wrapAll(xm);
+
+  /* ── 10 · Ext. 2040 paths (Side 2) ────────────────────────────────── */
+  const xp = wb.addWorksheet('Ext. 2040 paths', { properties: { tabColor: { argb: VIOLET } } });
+  xp.columns = [
+    { header: 'Sector', key: 'sector', width: 22 },
+    { header: 'Scenario point (2040)', key: 'point', width: 18 },
+    { header: 'Reduction vs base year (%)', key: 'pct', width: 20 },
+    { header: 'Base year', key: 'base', width: 12 },
+    { header: 'Scenario', key: 'scenario', width: 34 },
+    { header: 'Modelled clean-tech drivers', key: 'drivers', width: 45 },
+    { header: 'Note', key: 'note', width: 70 },
+    { header: 'Source', key: 'source', width: 55 },
+  ];
+  SECTOR_PATHWAYS.forEach((p) => {
+    const sector = DEMAND_SECTORS.find((s) => s.id === p.sectorId)?.name ?? p.sectorId;
+    const drivers = p.drivenBy
+      .map((id) => CLEANTECH_INDUSTRIES.find((t) => t.id === id)?.name ?? id)
+      .join(' · ');
+    p.points.forEach((pt, i) => {
+      xp.addRow({
+        sector: i === 0 ? sector : '',
+        point: pt.label,
+        pct: -pt.pct,
+        base: p.baseYear,
+        scenario: p.scenario,
+        drivers: i === 0 ? drivers : '',
+        note: i === 0 ? p.note ?? '' : '',
+        source: cite(p.source),
+      });
+    });
+    addSrc(p.source, `2040 pathway: ${sector}`);
+  });
+  xp.addRow({});
+  xp.addRow({ sector: 'CAVEATS', point: '', pct: '', base: '', scenario: '', drivers: '', note: PATHWAY_CAVEAT });
+  styleHeaderRow(xp, VIOLET);
+  wrapAll(xp);
+
+  /* ── 11 · Ext. priorities (Side 2, editorial) ─────────────────────── */
+  const xr = wb.addWorksheet('Ext. priorities', { properties: { tabColor: { argb: NAVY } } });
+  xr.columns = [
+    { header: 'Rank', key: 'rank', width: 8 },
+    { header: 'Clean-tech industry', key: 'tech', width: 26 },
+    { header: 'Mitigation leverage (editorial)', key: 'rationale', width: 90 },
+    { header: 'Competitiveness read (editorial)', key: 'competitiveness', width: 90 },
+  ];
+  EXTERNAL_PRIORITIES.forEach((p) => {
+    xr.addRow({
+      rank: p.rank,
+      tech: CLEANTECH_INDUSTRIES.find((t) => t.id === p.techId)?.name ?? p.techId,
+      rationale: p.rationale,
+      competitiveness: p.competitiveness,
+    });
+  });
+  xr.addRow({});
+  xr.addRow({ rank: '', tech: 'NOTE', rationale: EXTERNAL_PRIORITY_NOTE });
+  styleHeaderRow(xr, NAVY);
+  wrapAll(xr);
+
+  /* ── 12 · Reading list ────────────────────────────────────────────── */
   const rl = wb.addWorksheet('Reading list', { properties: { tabColor: { argb: TEAL } } });
   rl.columns = [
     { header: 'Organisation / authors', key: 'source', width: 40 },
@@ -392,7 +532,7 @@ export async function exportCleanTechWorkbook(): Promise<void> {
   styleHeaderRow(rl, TEAL);
   wrapAll(rl);
 
-  /* ── 9 · Sources ──────────────────────────────────────────────────── */
+  /* ── 13 · Sources ─────────────────────────────────────────────────── */
   const src = wb.addWorksheet('Sources', { properties: { tabColor: { argb: VIOLET } } });
   src.columns = [
     { header: 'Organisation', key: 'org', width: 38 },
