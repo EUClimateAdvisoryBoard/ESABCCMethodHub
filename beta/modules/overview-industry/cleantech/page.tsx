@@ -8,15 +8,30 @@
  * decarbonisation levers, with a connected detail panel carrying each lever's
  * marginal abatement cost, readiness, barriers, scale and investment decisions.
  * All data lives in `../cleantech-catalogue.ts`; every value is sourced.
+ * Everything on this page exports to ONE Excel handover workbook (./export.ts)
+ * — data, findings, project pipeline, reading list and sources included.
  */
 
+import { useState } from 'react';
 import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { MANUFACTURING_SECTION } from '../cleantech-catalogue';
 import EmissionsSunburst from './EmissionsSunburst';
+import { exportCleanTechWorkbook } from './export';
 
 export default function CleanTechPage() {
+  const [exporting, setExporting] = useState(false);
+
+  const onExport = async () => {
+    setExporting(true);
+    try {
+      await exportCleanTechWorkbook();
+    } finally {
+      setExporting(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-grey-50">
       <SiteHeader />
@@ -53,6 +68,20 @@ export default function CleanTechPage() {
             routes from the incumbent-based transitional bridges (gas/&ldquo;blue&rdquo; hydrogen, blast-furnace CCS,
             fossil fuel-switching) — an analytical classification, clearly flagged, not a sourced datum.
           </p>
+
+          <div className="mt-4 flex flex-wrap items-center gap-3">
+            <button
+              onClick={onExport}
+              disabled={exporting}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-primary-dark disabled:opacity-60"
+            >
+              {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
+            </button>
+            <span className="text-[12px] text-grey-500">
+              9 sheets: read-me · overview · subsectors · technologies (MAC / TRL / clean-vs-old) ·
+              projects &amp; FIDs · emissions map · sector MACC · reading list · sources
+            </span>
+          </div>
         </header>
 
         <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5">
