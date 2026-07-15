@@ -162,8 +162,15 @@ export default function DownloadMenu({
     const sheets = data!.getSheets();
     if (sheets.length === 0) return;
     // CSV is single-table; use the first sheet (the primary view).
+    // Hyperlink cells flatten to their display text.
     const s = sheets[0];
-    downloadCsv(filename, s.headers, s.rows);
+    downloadCsv(
+      filename,
+      s.headers,
+      s.rows.map(r =>
+        r.map(v => (typeof v === 'object' && v != null && 'hyperlink' in v ? v.text : v))
+      )
+    );
   }
 
   async function exportWord() {
