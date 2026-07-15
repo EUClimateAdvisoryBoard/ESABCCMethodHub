@@ -1,5 +1,5 @@
 -- ============================================================================
--- COMBINED MIGRATIONS (base schema + 001 -> 065)
+-- COMBINED MIGRATIONS (base schema + 001 -> 075)
 -- Auto-generated for one-shot Supabase SQL Editor runs.
 -- Base schema first (defines core tables like public.annotations that later
 -- migrations alter), then every numbered migration in apply order.
@@ -6467,31 +6467,42 @@ values
   ('esabcc-b1-buildings-ghg', 2024, 430.7),
   ('esabcc-b2-buildings-fec', 2022, 4213.6),
   ('esabcc-b2-buildings-fec', 2023, 4037.9),
-  ('esabcc-b5a-residential-fossil-share', 2023, 0.42000),
-  ('esabcc-b5b-tertiary-fossil-share', 2023, 0.32200),
+  ('esabcc-b5a-residential-fossil-share', 2023, 42.000),
+  ('esabcc-b5b-tertiary-fossil-share', 2023, 32.200),
+  ('esabcc-b6-heat-pump-stock', 2023, 23.960),
+  ('esabcc-b6-heat-pump-stock', 2024, 25.500),
   ('esabcc-e1-energy-supply-ghg', 2023, 746.3),
   ('esabcc-e1-energy-supply-ghg', 2024, 689.1),
+  ('esabcc-e2-fossil-power-share', 2023, 33.000),
+  ('esabcc-e2-fossil-power-share', 2024, 29.000),
+  ('esabcc-e2-fossil-power-share', 2025, 29.000),
+  ('esabcc-e2-res-noBio-power-share', 2023, 39.000),
   ('esabcc-e4a-solar-pv-add', 2023, 56.000),
   ('esabcc-e4a-solar-pv-add', 2024, 65.500),
+  ('esabcc-e4a-solar-pv-add', 2025, 65.100),
   ('esabcc-e4b-wind-add', 2023, 16.200),
   ('esabcc-e4b-wind-add', 2024, 12.900),
+  ('esabcc-e4b-wind-add', 2025, 15.100),
   ('esabcc-e6-energy-ch4', 2022, 64.460),
   ('esabcc-e6-energy-ch4', 2023, 60.050),
   ('esabcc-e6-energy-ch4', 2024, 57.770),
+  ('esabcc-f-cleantech-investment', 2023, 0.00070),
+  ('esabcc-f-cleantech-investment', 2024, 0.00050),
+  ('esabcc-f-cleantech-investment', 2025, 0.00040),
   ('esabcc-f-fossil-subsidies', 2023, 111.0),
   ('esabcc-f-gerd', 2023, 2.2600),
   ('esabcc-f-gerd', 2024, 2.2400),
-  ('esabcc-f-green-bonds-share', 2023, 0.05300),
-  ('esabcc-f-green-bonds-share', 2024, 0.06900),
+  ('esabcc-f-green-bonds-share', 2023, 5.3000),
+  ('esabcc-f-green-bonds-share', 2024, 6.9000),
   ('esabcc-i1-industry-ghg', 2023, 622.1),
   ('esabcc-i1-industry-ghg', 2024, 611.4),
-  ('esabcc-i3-circular-mat-use', 2022, 0.11400),
-  ('esabcc-i3-circular-mat-use', 2023, 0.12100),
-  ('esabcc-i3-circular-mat-use', 2024, 0.12200),
+  ('esabcc-i3-circular-mat-use', 2022, 11.400),
+  ('esabcc-i3-circular-mat-use', 2023, 12.100),
+  ('esabcc-i3-circular-mat-use', 2024, 12.200),
   ('esabcc-i5-industry-fec', 2022, 2627.8),
   ('esabcc-i5-industry-fec', 2023, 2497.2),
-  ('esabcc-i6-industry-electrification', 2022, 0.33300),
-  ('esabcc-i6-industry-electrification', 2023, 0.32600),
+  ('esabcc-i6-industry-electrification', 2022, 33.300),
+  ('esabcc-i6-industry-electrification', 2023, 32.600),
   ('esabcc-l1-lulucf-net', 2023, -215.5),
   ('esabcc-l1-lulucf-net', 2024, -231.0),
   ('esabcc-o2-fec', 2022, 10711.2),
@@ -6504,11 +6515,18 @@ values
   ('esabcc-o3-gross-inland', 2023, 15575.3),
   ('esabcc-t1-transport-ghg', 2023, 901.9),
   ('esabcc-t1-transport-ghg', 2024, 920.0),
+  ('esabcc-t2a-passenger-demand', 2022, 5617.0),
+  ('esabcc-t2a-passenger-demand', 2023, 5932.0),
+  ('esabcc-t2b-freight-demand', 2023, 2319.0),
+  ('esabcc-t3b-air-passenger', 2022, 512.0),
+  ('esabcc-t3b-air-passenger', 2023, 582.0),
   ('esabcc-t4-car-co2-intensity', 2023, 106.4),
-  ('esabcc-t5a-zev-share-newcars', 2023, 0.14600),
-  ('esabcc-t5a-zev-share-newcars', 2024, 0.13600)
+  ('esabcc-t4-car-co2-intensity', 2024, 106.8),
+  ('esabcc-t4-car-co2-intensity', 2025, 96.700),
+  ('esabcc-t5a-zev-share-newcars', 2023, 14.600),
+  ('esabcc-t5a-zev-share-newcars', 2024, 13.600),
+  ('esabcc-t5a-zev-share-newcars', 2025, 17.400)
 on conflict (indicator_id, year) do nothing;
-
 
 -- ----------------------------------------------------------------------------
 -- 055_content_analysis_note_author.sql
@@ -7103,3 +7121,1488 @@ create policy "Flow-chart state is viewable by everyone"
 -- the document in their local library. Idempotent.
 alter table public.content_analysis_corpus
   add column if not exists doc_meta jsonb;
+
+-- ----------------------------------------------------------------------------
+-- 066_national_climate_policies.sql
+-- ----------------------------------------------------------------------------
+
+-- ============================================================================
+-- 066 — National Level Climate Policies (beta module)
+--
+-- Durable store for the EU-27 snapshot of Climate Change Laws of the World
+-- (climate-laws.org, Grantham Research Institute at LSE / Climate Policy
+-- Radar, CC-BY 4.0). One row holds the whole dataset as jsonb.
+--
+-- The /national-climate-policies page reads the committed snapshot in
+-- `public/data/national-climate-policies.json` as a fallback; once someone
+-- presses "Refresh" in the module (POST /api/national-climate-policies),
+-- the server fetches current data from api.climatepolicyradar.org and the
+-- row written here becomes the source of truth.
+--
+-- Public read; writes go through the service role in the API route.
+-- Idempotent.
+-- ============================================================================
+
+create table if not exists public.national_climate_policies_snapshot (
+  id            text primary key default 'eu27',
+  data          jsonb not null,          -- full PolicyDataset (source block + policies array)
+  snapshot_date text not null,           -- ISO date the data was fetched
+  policy_count  integer not null,
+  refreshed_at  timestamptz not null default now()
+);
+
+alter table public.national_climate_policies_snapshot enable row level security;
+
+drop policy if exists "National climate policies are viewable by everyone"
+  on public.national_climate_policies_snapshot;
+create policy "National climate policies are viewable by everyone"
+  on public.national_climate_policies_snapshot for select using (true);
+
+-- ----------------------------------------------------------------------------
+-- 067_pw_activity_log.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Project Workspace activity log.
+--
+-- One append-only table (`pw_activity_log`) recording who changed what, when,
+-- across the whole Project Workspace — projects, tools, indicators,
+-- recommendations, meetings, milestones, phases, comments, verifications,
+-- member-state cells, policy annotations/codes, notes and flow charts.
+--
+-- Entries are written by a single AFTER trigger (`pw_log_activity`) attached
+-- to every pw_* table, so every code path — current and future — is captured
+-- without each API route having to remember to log. Indicator changes are not
+-- triggered off `pw_indicators` / `pw_indicator_points` directly (the seed and
+-- refresh jobs write thousands of rows there); instead the trigger listens on
+-- `pw_indicator_revisions`, which already records exactly the user-driven
+-- indicator actions with a ready-made summary and actor name.
+--
+-- Noise control:
+--   • seed inserts (`is_seed = true`) are skipped,
+--   • cascade deletes under a project delete collapse into the single
+--     "Deleted project" entry (children are skipped once the project row is
+--     gone),
+--   • repeats of the same action on the same entity by the same person within
+--     15 minutes coalesce into one entry (autosaved notes, flow-chart
+--     write-through, code forks).
+--
+-- The trigger is best-effort: any unexpected error is swallowed so a logging
+-- failure can never abort the data change it is recording.
+--
+-- `project_id` deliberately has NO foreign key — the log of a deleted project
+-- (including its deletion) must survive the project row.
+--
+-- Read by GET /api/project-workspace/projects/[projectId]/activity; included
+-- in the nightly off-site backup (scripts/backup-content-analysis.mjs).
+-- ─────────────────────────────────────────────────────────────────────────────
+
+create table if not exists public.pw_activity_log (
+  id            bigint      generated always as identity primary key,
+  project_id    text        not null,
+  table_name    text        not null,
+  op            text        not null check (op in ('insert','update','delete')),
+  -- Friendly entity kind ('indicator', 'meeting', 'comment', …) + identity.
+  entity_kind   text        not null,
+  entity_id     text        not null default '',
+  entity_label  text        not null default '',
+  -- One human-readable line, e.g. 'Edited meeting “Kick-off”'.
+  summary       text        not null default '',
+  actor_id      uuid,
+  actor_name    text        not null default '',
+  created_at    timestamptz not null default now()
+);
+
+create index if not exists pw_activity_log_project_idx
+  on public.pw_activity_log(project_id, id desc);
+
+-- Serves the 15-minute coalescing lookup in the trigger.
+create index if not exists pw_activity_log_coalesce_idx
+  on public.pw_activity_log(project_id, table_name, entity_id, created_at desc);
+
+alter table public.pw_activity_log enable row level security;
+
+-- Read-only for clients; rows are only ever written by the trigger function
+-- below (security definer — the table owner bypasses RLS). No insert/update/
+-- delete policies on purpose: the log is append-only and tamper-proof from
+-- the app's point of view.
+drop policy if exists "pw_activity_log read" on public.pw_activity_log;
+create policy "pw_activity_log read"
+  on public.pw_activity_log for select to authenticated using (true);
+
+-- ── Trigger function ─────────────────────────────────────────────────────────
+create or replace function public.pw_log_activity()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  rec          record;
+  v_op         text := lower(TG_OP);
+  v_project    text;
+  v_kind       text;
+  v_id         text := '';
+  v_label      text;
+  v_summary    text := '';
+  v_actor      uuid;
+  v_actor_name text := '';
+  v_verb       text;
+begin
+  if TG_OP = 'DELETE' then rec := OLD; else rec := NEW; end if;
+
+  case TG_TABLE_NAME
+    when 'pw_projects' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.id; v_kind := 'project';
+      v_id := rec.id; v_label := rec.name;
+
+    when 'pw_modules' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.project_id; v_kind := 'tool';
+      v_id := rec.id; v_label := rec.name;
+
+    when 'pw_recommendations' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.project_id; v_kind := 'recommendation';
+      v_id := rec.id; v_label := rec.title;
+
+    when 'pw_recommendation_events' then
+      -- Service-role inserts here are the seed pass — skip them.
+      if TG_OP = 'INSERT' and auth.uid() is null then return null; end if;
+      select project_id, title into v_project, v_label
+        from public.pw_recommendations where id = rec.recommendation_id;
+      v_kind := 'recommendation update'; v_id := rec.id::text;
+
+    when 'pw_member_state_cells' then
+      v_project := rec.project_id; v_kind := 'member-state cell';
+      v_id := rec.country_code || ':' || rec.sector_id;
+      v_label := rec.country_code || ' · ' || rec.sector_id;
+
+    when 'pw_policy_annotations' then
+      v_project := rec.project_id; v_kind := 'policy annotation';
+      v_id := rec.id::text;
+      v_label := rec.kind || ' on ' || rec.policy_id;
+
+    when 'pw_policy_codes' then
+      -- Entity = the policy, not the individual code row, so a fork (which
+      -- copies every master code in one statement) coalesces into one entry.
+      v_project := rec.project_id; v_kind := 'policy codes';
+      v_id := rec.policy_id; v_label := rec.policy_id;
+      v_verb := case v_op when 'insert' then 'Added' when 'update' then 'Edited' else 'Removed' end;
+      v_summary := v_verb || ' codes on policy “' || rec.policy_id || '”';
+
+    when 'pw_custom_module_content' then
+      v_project := rec.project_id; v_kind := 'notes';
+      v_id := rec.module_id;
+      select name into v_label from public.pw_modules
+        where project_id = rec.project_id and id = rec.module_id;
+      v_label := coalesce(v_label, rec.module_id);
+      v_summary := 'Edited notes “' || v_label || '”';
+
+    when 'pw_comments' then
+      v_project := rec.project_id; v_kind := 'comment';
+      v_id := rec.id::text;
+      v_label := left(rec.body, 80);
+      if v_actor_name = '' then v_actor_name := coalesce(rec.author_name, ''); end if;
+      v_verb := case v_op when 'insert' then 'Commented' when 'update' then 'Edited a comment' else 'Deleted a comment' end;
+      v_summary := v_verb || ' on ' || rec.target_kind || ' ' || rec.target_id
+        || ': “' || left(rec.body, 80) || '”';
+
+    when 'pw_verifications' then
+      v_project := rec.project_id; v_kind := 'verification';
+      v_id := rec.target_kind || ':' || rec.target_id;
+      v_label := rec.target_kind || ' ' || rec.target_id;
+      v_actor_name := coalesce(nullif(rec.user_name, ''), v_actor_name);
+      v_summary := case when v_op = 'delete'
+        then 'Cleared their vote on ' || rec.target_kind || ' ' || rec.target_id
+        else 'Marked ' || rec.target_kind || ' ' || rec.target_id || ' as ' || rec.status
+      end;
+
+    when 'pw_meetings' then
+      v_project := rec.project_id; v_kind := 'meeting';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_meeting_milestones' then
+      v_project := rec.project_id; v_kind := 'milestone';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_project_phases' then
+      v_project := rec.project_id; v_kind := 'phase';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_flowchart_state' then
+      v_project := rec.project_id; v_kind := 'flow chart';
+      v_id := rec.storage_key; v_label := rec.storage_key;
+      v_summary := 'Edited the flow charts';
+
+    when 'pw_indicator_revisions' then
+      -- Mirror of the Indicator Database audit log: one entry per recorded
+      -- revision, with the actor and summary the app already resolved.
+      v_project := rec.project_id; v_kind := 'indicator';
+      v_id := rec.indicator_id;
+      select name into v_label from public.pw_indicators where id = rec.indicator_id;
+      v_label := coalesce(v_label, rec.snapshot #>> '{metadata,name}', rec.indicator_id);
+      v_actor := rec.changed_by;
+      v_actor_name := coalesce(nullif(rec.changed_by_name, ''), '');
+      v_op := case rec.action
+        when 'create' then 'insert'
+        when 'delete' then 'delete'
+        else 'update'
+      end;
+      v_summary := case rec.action
+        when 'create'       then 'Created indicator'
+        when 'edit-sheet'   then 'Edited the data grid of indicator'
+        when 'import'       then 'Imported Excel data into indicator'
+        when 'refresh'      then 'Refreshed indicator'
+        when 'point-upsert' then 'Edited a data point of indicator'
+        when 'point-delete' then 'Removed a data point of indicator'
+        when 'metadata'     then 'Edited the details of indicator'
+        when 'restore'      then 'Restored a previous version of indicator'
+        when 'delete'       then 'Deleted indicator'
+        else 'Changed indicator'
+      end || ' “' || v_label || '”';
+
+    else
+      return null;
+  end case;
+
+  if v_project is null then return null; end if;
+
+  -- A project delete cascades into every child table; the single
+  -- 'Deleted project' entry is enough — skip the per-row child deletes.
+  if TG_TABLE_NAME <> 'pw_projects'
+     and not exists (select 1 from public.pw_projects where id = v_project) then
+    return null;
+  end if;
+
+  v_label := coalesce(v_label, v_id);
+
+  if v_actor is null then
+    v_actor := auth.uid();
+  end if;
+  if v_actor is not null and v_actor_name = '' then
+    select display_name into v_actor_name from public.profiles where id = v_actor;
+    v_actor_name := coalesce(v_actor_name, '');
+  end if;
+  if v_actor_name = '' then
+    begin
+      v_actor_name := coalesce(
+        current_setting('request.jwt.claims', true)::jsonb ->> 'email', '');
+    exception when others then
+      v_actor_name := '';
+    end;
+  end if;
+
+  if v_summary = '' then
+    v_verb := case v_op when 'insert' then 'Added' when 'update' then 'Edited' else 'Deleted' end;
+    v_summary := v_verb || ' ' || v_kind
+      || case when v_label <> '' then ' “' || v_label || '”' else '' end;
+  end if;
+
+  -- Coalesce repeats: same entity + action + actor + summary within 15
+  -- minutes is one log entry (autosaves, write-through stores, bulk forks).
+  if exists (
+    select 1 from public.pw_activity_log
+     where project_id = v_project
+       and table_name = TG_TABLE_NAME
+       and entity_id  = v_id
+       and op         = v_op
+       and actor_id is not distinct from v_actor
+       and summary    = v_summary
+       and created_at > now() - interval '15 minutes'
+  ) then
+    return null;
+  end if;
+
+  insert into public.pw_activity_log
+    (project_id, table_name, op, entity_kind, entity_id, entity_label, summary, actor_id, actor_name)
+  values
+    (v_project, TG_TABLE_NAME, v_op, v_kind, v_id, v_label, v_summary, v_actor, v_actor_name);
+
+  return null;
+exception when others then
+  -- Best-effort: a logging failure must never abort the change it records.
+  raise warning 'pw_log_activity failed on %.%: %', TG_TABLE_NAME, TG_OP, sqlerrm;
+  return null;
+end;
+$$;
+
+-- ── Attach the trigger to every workspace table ──────────────────────────────
+do $$
+declare
+  t text;
+  tbls text[] := array[
+    'pw_projects','pw_modules','pw_recommendations','pw_recommendation_events',
+    'pw_member_state_cells','pw_policy_annotations','pw_policy_codes',
+    'pw_custom_module_content','pw_comments','pw_verifications',
+    'pw_meetings','pw_meeting_milestones','pw_project_phases','pw_flowchart_state'
+  ];
+begin
+  foreach t in array tbls loop
+    execute format('drop trigger if exists trg_%s_activity on public.%I', t, t);
+    execute format(
+      'create trigger trg_%s_activity
+         after insert or update or delete on public.%I
+         for each row execute function public.pw_log_activity()',
+      t, t
+    );
+  end loop;
+end $$;
+
+-- Indicator changes arrive via the revisions archive (insert-only).
+drop trigger if exists trg_pw_indicator_revisions_activity on public.pw_indicator_revisions;
+create trigger trg_pw_indicator_revisions_activity
+  after insert on public.pw_indicator_revisions
+  for each row execute function public.pw_log_activity();
+
+-- ----------------------------------------------------------------------------
+-- 068_content_analysis_activity_log.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Activity log, part 2: content-analysis coverage + attribution.
+--
+-- Migration 067 wired the Project Workspace's pw_* tables into the
+-- pw_activity_log. The Content Analysis workbench, however, writes to its own
+-- content_analysis_* tables — adding documents to a workspace, writing
+-- whole-document summaries, tagging passages, general notes, overall tags,
+-- the report outline and project codes. None of that was logged. This
+-- migration extends the same trigger to those tables.
+--
+-- Attribution: the content-analysis store writes through the SERVICE ROLE
+-- (no auth.uid() in the trigger), so the API routes now resolve the signed-in
+-- user from the request's bearer token and stamp their id onto the row —
+-- `author_id` on segments/summaries/notes/codes (columns that already
+-- existed), and the two columns added here:
+--    content_analysis_corpus.added_by     — who added/removed the document
+--    content_analysis_outlines.updated_by — who last edited the outline
+-- For deletes the route stamps the deleter onto the row first; the trigger
+-- ignores updates that ONLY touch attribution columns, so that stamp never
+-- produces a spurious "edited" entry.
+--
+-- Project scoping: corpus/outline rows carry a project id. Segments,
+-- summaries and notes carry one too (nullable — master-library annotations
+-- fall back to every project whose corpus contains the document). Overall
+-- tags are document-scoped only and always fan out via the corpus.
+--
+-- Robustness: every reference to a content_analysis_* table is guarded, so
+-- this file applies cleanly even on a database where some of those
+-- migrations (061–065) have not landed — the matching triggers are simply
+-- skipped and reported by pw_activity_log_status() below. Idempotent; safe
+-- to re-run.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+do $$
+begin
+  if to_regclass('public.content_analysis_corpus') is not null then
+    alter table public.content_analysis_corpus
+      add column if not exists added_by uuid references auth.users(id) on delete set null;
+  end if;
+  if to_regclass('public.content_analysis_outlines') is not null then
+    alter table public.content_analysis_outlines
+      add column if not exists updated_by uuid references auth.users(id) on delete set null;
+  end if;
+end $$;
+
+-- ── Helpers ──────────────────────────────────────────────────────────────────
+-- (plpgsql with per-statement guards so they exist — and work — even where
+-- the content-analysis tables don't.)
+
+-- Friendly display label for a document: corpus metadata title → ingested
+-- document title → the raw id.
+drop function if exists public.pw_activity_doc_label(text);
+create function public.pw_activity_doc_label(p_doc text)
+returns text
+language plpgsql stable
+security definer
+set search_path = public
+as $$
+declare
+  v text;
+begin
+  begin
+    select coalesce(c.doc_meta->>'shortTitle', c.doc_meta->>'title') into v
+      from public.content_analysis_corpus c
+     where c.document_id = p_doc and c.doc_meta is not null
+     limit 1;
+  exception when undefined_table or undefined_column then
+    v := null;
+  end;
+  if v is null then
+    begin
+      select d.title into v
+        from public.content_analysis_documents d where d.id = p_doc;
+    exception when undefined_table then
+      v := null;
+    end;
+  end if;
+  return coalesce(v, p_doc);
+end;
+$$;
+
+-- Every project whose workspace corpus contains the document (for changes
+-- that don't carry their own project id).
+drop function if exists public.pw_activity_doc_projects(text);
+create function public.pw_activity_doc_projects(p_doc text)
+returns text[]
+language plpgsql stable
+security definer
+set search_path = public
+as $$
+declare
+  v text[];
+begin
+  begin
+    select coalesce(array_agg(distinct c.project_id), '{}'::text[]) into v
+      from public.content_analysis_corpus c
+     where c.document_id = p_doc;
+  exception when undefined_table then
+    v := '{}'::text[];
+  end;
+  return coalesce(v, '{}'::text[]);
+end;
+$$;
+
+-- ── Trigger function (full replacement of 067's version) ─────────────────────
+create or replace function public.pw_log_activity()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  rec          record;
+  v_op         text := lower(TG_OP);
+  v_project    text;
+  v_projects   text[];
+  v_kind       text;
+  v_id         text := '';
+  v_label      text;
+  v_summary    text := '';
+  v_actor      uuid;
+  v_actor_name text := '';
+  v_verb       text;
+begin
+  if TG_OP = 'DELETE' then rec := OLD; else rec := NEW; end if;
+
+  -- An update that only touches attribution columns is the routes' delete- /
+  -- write-stamp, not a content change — never log it.
+  if TG_OP = 'UPDATE' and TG_TABLE_NAME like 'content\_analysis\_%' escape '\' then
+    if (to_jsonb(OLD) - 'author_id' - 'added_by' - 'updated_by' - 'updated_at')
+       = (to_jsonb(NEW) - 'author_id' - 'added_by' - 'updated_by' - 'updated_at') then
+      return null;
+    end if;
+  end if;
+
+  case TG_TABLE_NAME
+    when 'pw_projects' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.id; v_kind := 'project';
+      v_id := rec.id; v_label := rec.name;
+
+    when 'pw_modules' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.project_id; v_kind := 'tool';
+      v_id := rec.id; v_label := rec.name;
+
+    when 'pw_recommendations' then
+      if TG_OP = 'INSERT' and rec.is_seed then return null; end if;
+      v_project := rec.project_id; v_kind := 'recommendation';
+      v_id := rec.id; v_label := rec.title;
+
+    when 'pw_recommendation_events' then
+      -- Service-role inserts here are the seed pass — skip them.
+      if TG_OP = 'INSERT' and auth.uid() is null then return null; end if;
+      select project_id, title into v_project, v_label
+        from public.pw_recommendations where id = rec.recommendation_id;
+      v_kind := 'recommendation update'; v_id := rec.id::text;
+
+    when 'pw_member_state_cells' then
+      v_project := rec.project_id; v_kind := 'member-state cell';
+      v_id := rec.country_code || ':' || rec.sector_id;
+      v_label := rec.country_code || ' · ' || rec.sector_id;
+
+    when 'pw_policy_annotations' then
+      v_project := rec.project_id; v_kind := 'policy annotation';
+      v_id := rec.id::text;
+      v_label := rec.kind || ' on ' || rec.policy_id;
+
+    when 'pw_policy_codes' then
+      -- Entity = the policy, not the individual code row, so a fork (which
+      -- copies every master code in one statement) coalesces into one entry.
+      v_project := rec.project_id; v_kind := 'policy codes';
+      v_id := rec.policy_id; v_label := rec.policy_id;
+      v_verb := case v_op when 'insert' then 'Added' when 'update' then 'Edited' else 'Removed' end;
+      v_summary := v_verb || ' codes on policy “' || rec.policy_id || '”';
+
+    when 'pw_custom_module_content' then
+      v_project := rec.project_id; v_kind := 'notes';
+      v_id := rec.module_id;
+      select name into v_label from public.pw_modules
+        where project_id = rec.project_id and id = rec.module_id;
+      v_label := coalesce(v_label, rec.module_id);
+      v_summary := 'Edited notes “' || v_label || '”';
+
+    when 'pw_comments' then
+      v_project := rec.project_id; v_kind := 'comment';
+      v_id := rec.id::text;
+      v_label := left(rec.body, 80);
+      if v_actor_name = '' then v_actor_name := coalesce(rec.author_name, ''); end if;
+      v_verb := case v_op when 'insert' then 'Commented' when 'update' then 'Edited a comment' else 'Deleted a comment' end;
+      v_summary := v_verb || ' on ' || rec.target_kind || ' ' || rec.target_id
+        || ': “' || left(rec.body, 80) || '”';
+
+    when 'pw_verifications' then
+      v_project := rec.project_id; v_kind := 'verification';
+      v_id := rec.target_kind || ':' || rec.target_id;
+      v_label := rec.target_kind || ' ' || rec.target_id;
+      v_actor_name := coalesce(nullif(rec.user_name, ''), v_actor_name);
+      v_summary := case when v_op = 'delete'
+        then 'Cleared their vote on ' || rec.target_kind || ' ' || rec.target_id
+        else 'Marked ' || rec.target_kind || ' ' || rec.target_id || ' as ' || rec.status
+      end;
+
+    when 'pw_meetings' then
+      v_project := rec.project_id; v_kind := 'meeting';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_meeting_milestones' then
+      v_project := rec.project_id; v_kind := 'milestone';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_project_phases' then
+      v_project := rec.project_id; v_kind := 'phase';
+      v_id := rec.id::text; v_label := rec.title;
+
+    when 'pw_flowchart_state' then
+      v_project := rec.project_id; v_kind := 'flow chart';
+      v_id := rec.storage_key; v_label := rec.storage_key;
+      v_summary := 'Edited the flow charts';
+
+    when 'pw_indicator_revisions' then
+      -- Mirror of the Indicator Database audit log: one entry per recorded
+      -- revision, with the actor and summary the app already resolved.
+      v_project := rec.project_id; v_kind := 'indicator';
+      v_id := rec.indicator_id;
+      select name into v_label from public.pw_indicators where id = rec.indicator_id;
+      v_label := coalesce(v_label, rec.snapshot #>> '{metadata,name}', rec.indicator_id);
+      v_actor := rec.changed_by;
+      v_actor_name := coalesce(nullif(rec.changed_by_name, ''), '');
+      v_op := case rec.action
+        when 'create' then 'insert'
+        when 'delete' then 'delete'
+        else 'update'
+      end;
+      v_summary := case rec.action
+        when 'create'       then 'Created indicator'
+        when 'edit-sheet'   then 'Edited the data grid of indicator'
+        when 'import'       then 'Imported Excel data into indicator'
+        when 'refresh'      then 'Refreshed indicator'
+        when 'point-upsert' then 'Edited a data point of indicator'
+        when 'point-delete' then 'Removed a data point of indicator'
+        when 'metadata'     then 'Edited the details of indicator'
+        when 'restore'      then 'Restored a previous version of indicator'
+        when 'delete'       then 'Deleted indicator'
+        else 'Changed indicator'
+      end || ' “' || v_label || '”';
+
+    -- ── Content analysis ────────────────────────────────────────────────────
+
+    when 'content_analysis_corpus' then
+      -- An update is a metadata refresh on a re-add — not worth a log entry.
+      if TG_OP = 'UPDATE' then return null; end if;
+      v_project := rec.project_id; v_kind := 'document';
+      v_id := rec.document_id;
+      v_label := coalesce(
+        rec.doc_meta->>'shortTitle', rec.doc_meta->>'title',
+        public.pw_activity_doc_label(rec.document_id));
+      v_actor := rec.added_by;
+      v_summary := case v_op
+        when 'insert' then 'Added document “' || v_label || '” to the workspace'
+        else 'Removed document “' || v_label || '” from the workspace'
+      end;
+
+    when 'content_analysis_segments' then
+      if rec.code_id = '__ws_corpus__' then
+        -- Corpus membership stored via the segments fallback (used while the
+        -- corpus table's migration is missing): log it as the document
+        -- add/remove it really is. The row's `text` carries the doc metadata.
+        if TG_OP = 'UPDATE' then return null; end if;
+        v_project := rec.project_id; v_kind := 'document';
+        v_id := rec.document_id;
+        begin
+          v_label := coalesce(
+            rec.text::jsonb->>'shortTitle', rec.text::jsonb->>'title');
+        exception when others then
+          v_label := null;
+        end;
+        v_label := coalesce(v_label, public.pw_activity_doc_label(rec.document_id));
+        v_actor := rec.author_id;
+        v_summary := case v_op
+          when 'insert' then 'Added document “' || v_label || '” to the workspace'
+          else 'Removed document “' || v_label || '” from the workspace'
+        end;
+      else
+        v_kind := 'tag'; v_id := rec.document_id;
+        v_label := public.pw_activity_doc_label(rec.document_id);
+        v_actor := coalesce(rec.author_id, rec.note_author_id);
+        if rec.project_id is not null then
+          v_projects := array[rec.project_id];
+        else
+          v_projects := public.pw_activity_doc_projects(rec.document_id);
+        end if;
+        v_summary := case v_op
+          when 'insert' then 'Added a tag in document “' || v_label || '”'
+          when 'update' then 'Edited tags in document “' || v_label || '”'
+          else 'Removed a tag from document “' || v_label || '”'
+        end;
+      end if;
+
+    when 'content_analysis_summaries' then
+      v_kind := 'summary'; v_id := rec.document_id;
+      v_label := public.pw_activity_doc_label(rec.document_id);
+      v_actor := rec.author_id;
+      if rec.project_id is not null then
+        v_projects := array[rec.project_id];
+      else
+        v_projects := public.pw_activity_doc_projects(rec.document_id);
+      end if;
+      v_summary := case v_op
+        when 'insert' then 'Wrote a summary for document “' || v_label || '”'
+        when 'update' then 'Edited the summary of document “' || v_label || '”'
+        else 'Deleted the summary of document “' || v_label || '”'
+      end;
+
+    when 'content_analysis_notes' then
+      v_kind := 'note'; v_id := rec.document_id;
+      v_label := public.pw_activity_doc_label(rec.document_id);
+      v_actor := rec.author_id;
+      v_actor_name := coalesce(nullif(rec.author, ''), v_actor_name);
+      if rec.project_id is not null then
+        v_projects := array[rec.project_id];
+      else
+        v_projects := public.pw_activity_doc_projects(rec.document_id);
+      end if;
+      v_summary := case v_op
+        when 'insert' then 'Added a note on document “' || v_label || '”'
+        when 'update' then 'Edited a note on document “' || v_label || '”'
+        else 'Removed a note from document “' || v_label || '”'
+      end;
+
+    when 'content_analysis_overall_tags' then
+      v_kind := 'overall tags'; v_id := rec.document_id;
+      v_label := public.pw_activity_doc_label(rec.document_id);
+      v_actor := rec.created_by;
+      v_projects := public.pw_activity_doc_projects(rec.document_id);
+      v_summary := case v_op
+        when 'delete' then 'Removed an overall tag from document “' || v_label || '”'
+        else 'Added an overall tag on document “' || v_label || '”'
+      end;
+
+    when 'content_analysis_outlines' then
+      v_project := rec.project_id; v_kind := 'report outline';
+      v_id := rec.project_id; v_label := 'Report outline';
+      v_actor := rec.updated_by;
+      v_summary := 'Edited the report outline';
+
+    when 'content_analysis_codes' then
+      -- Master codes are deterministic seed data; only project codes are
+      -- workspace activity.
+      if rec.project_id is null then return null; end if;
+      v_project := rec.project_id; v_kind := 'code';
+      v_id := rec.id; v_label := rec.name;
+      v_actor := rec.author_id;
+
+    else
+      return null;
+  end case;
+
+  if v_projects is null then
+    if v_project is null then return null; end if;
+    v_projects := array[v_project];
+  end if;
+  select array_agg(distinct p) into v_projects
+    from unnest(v_projects) p where p is not null and p <> '';
+  if v_projects is null then return null; end if;
+
+  v_label := coalesce(v_label, v_id);
+
+  if v_actor is null then
+    v_actor := auth.uid();
+  end if;
+  if v_actor is not null and v_actor_name = '' then
+    select display_name into v_actor_name from public.profiles where id = v_actor;
+    v_actor_name := coalesce(v_actor_name, '');
+  end if;
+  if v_actor_name = '' then
+    begin
+      v_actor_name := coalesce(
+        current_setting('request.jwt.claims', true)::jsonb ->> 'email', '');
+    exception when others then
+      v_actor_name := '';
+    end;
+  end if;
+
+  if v_summary = '' then
+    v_verb := case v_op when 'insert' then 'Added' when 'update' then 'Edited' else 'Deleted' end;
+    v_summary := v_verb || ' ' || v_kind
+      || case when v_label <> '' then ' “' || v_label || '”' else '' end;
+  end if;
+
+  foreach v_project in array v_projects loop
+    -- A project delete cascades into every child table; the single
+    -- 'Deleted project' entry is enough — skip the per-row child deletes.
+    if TG_TABLE_NAME <> 'pw_projects'
+       and not exists (select 1 from public.pw_projects where id = v_project) then
+      continue;
+    end if;
+
+    -- Coalesce repeats: same entity + action + actor + summary within 15
+    -- minutes is one log entry (autosaves, write-through stores, bulk saves).
+    if exists (
+      select 1 from public.pw_activity_log
+       where project_id = v_project
+         and table_name = TG_TABLE_NAME
+         and entity_id  = v_id
+         and op         = v_op
+         and actor_id is not distinct from v_actor
+         and summary    = v_summary
+         and created_at > now() - interval '15 minutes'
+    ) then
+      continue;
+    end if;
+
+    insert into public.pw_activity_log
+      (project_id, table_name, op, entity_kind, entity_id, entity_label, summary, actor_id, actor_name)
+    values
+      (v_project, TG_TABLE_NAME, v_op, v_kind, v_id, v_label, v_summary, v_actor, v_actor_name);
+  end loop;
+
+  return null;
+exception when others then
+  -- Best-effort: a logging failure must never abort the change it records.
+  raise warning 'pw_log_activity failed on %.%: %', TG_TABLE_NAME, TG_OP, sqlerrm;
+  return null;
+end;
+$$;
+
+-- ── Attach the trigger to the content-analysis tables that exist ─────────────
+do $$
+declare
+  t text;
+  tbls text[] := array[
+    'content_analysis_corpus','content_analysis_segments',
+    'content_analysis_summaries','content_analysis_notes',
+    'content_analysis_overall_tags','content_analysis_outlines',
+    'content_analysis_codes'
+  ];
+begin
+  foreach t in array tbls loop
+    if to_regclass('public.' || t) is null then
+      raise notice 'pw activity: table % not present — trigger skipped', t;
+      continue;
+    end if;
+    execute format('drop trigger if exists trg_%s_activity on public.%I', t, t);
+    execute format(
+      'create trigger trg_%s_activity
+         after insert or update or delete on public.%I
+         for each row execute function public.pw_log_activity()',
+      t, t
+    );
+  end loop;
+end $$;
+
+-- ── Self-diagnosis ────────────────────────────────────────────────────────────
+-- Reports, for every table the log is supposed to watch, whether its trigger
+-- is installed ('ok'), the table exists but the trigger is missing
+-- ('no-trigger' → re-run 067/068), or the table itself is absent
+-- ('table-missing' → that feature's migration hasn't been applied; harmless).
+-- Surfaced in the Activity log dialog so "the log shows nothing" is
+-- diagnosable from the UI instead of silently empty.
+create or replace function public.pw_activity_log_status()
+returns jsonb
+language plpgsql stable
+security definer
+set search_path = public
+as $$
+declare
+  tables jsonb;
+  cnt    bigint;
+begin
+  select jsonb_object_agg(s.tbl, s.st) into tables from (
+    select tbl,
+      case
+        when to_regclass('public.' || tbl) is null then 'table-missing'
+        when exists (
+          select 1 from pg_trigger t
+           where t.tgrelid = to_regclass('public.' || tbl)
+             and t.tgname = 'trg_' || tbl || '_activity'
+             and not t.tgisinternal
+        ) then 'ok'
+        else 'no-trigger'
+      end as st
+    from unnest(array[
+      'pw_projects','pw_modules','pw_recommendations','pw_recommendation_events',
+      'pw_member_state_cells','pw_policy_annotations','pw_policy_codes',
+      'pw_custom_module_content','pw_comments','pw_verifications',
+      'pw_meetings','pw_meeting_milestones','pw_project_phases','pw_flowchart_state',
+      'pw_indicator_revisions',
+      'content_analysis_corpus','content_analysis_segments','content_analysis_summaries',
+      'content_analysis_notes','content_analysis_overall_tags','content_analysis_outlines',
+      'content_analysis_codes'
+    ]) tbl
+  ) s;
+  select count(*) into cnt from public.pw_activity_log;
+  return jsonb_build_object('tables', tables, 'entryCount', cnt);
+end;
+$$;
+
+grant execute on function public.pw_activity_log_status() to anon, authenticated, service_role;
+
+-- ----------------------------------------------------------------------------
+-- 069_activity_log_selftest.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Activity log, part 3: end-to-end self-test.
+--
+-- "The log shows nothing" has too many possible causes to debug blind from
+-- the UI (triggers missing, project row absent, trigger erroring, or simply
+-- no changes made since installation). This function settles it: it performs
+-- a real probe write (insert + delete of a uniquely-keyed pw_flowchart_state
+-- row), checks the trigger recorded it in pw_activity_log, removes the probe
+-- entries again, and reports the outcome. The Activity log dialog runs it
+-- when the log is empty and shows the verdict, so an empty log is always
+-- accompanied by "verified working — nothing has happened yet" or the exact
+-- failure reason.
+--
+-- Leaves no trace: both the probe row and its log entries are deleted.
+-- Idempotent; safe to re-run.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+create or replace function public.pw_activity_log_selftest(p_project text)
+returns jsonb
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  k text := '__activity_selftest__' || extract(epoch from clock_timestamp())::text;
+  n int;
+begin
+  if to_regclass('public.pw_activity_log') is null then
+    return jsonb_build_object('ok', false, 'reason', 'log-table-missing');
+  end if;
+  -- The trigger only logs changes for projects that exist in pw_projects;
+  -- a missing row would silently swallow every change in this project.
+  if not exists (select 1 from public.pw_projects where id = p_project) then
+    return jsonb_build_object('ok', false, 'reason', 'project-not-in-db');
+  end if;
+
+  begin
+    insert into public.pw_flowchart_state (project_id, storage_key, data)
+      values (p_project, k, '{}'::jsonb);
+    delete from public.pw_flowchart_state
+      where project_id = p_project and storage_key = k;
+  exception when others then
+    return jsonb_build_object('ok', false, 'reason', 'probe-write-failed', 'error', sqlerrm);
+  end;
+
+  select count(*) into n from public.pw_activity_log
+    where project_id = p_project
+      and table_name = 'pw_flowchart_state'
+      and entity_id = k;
+
+  -- Clean up the probe's log entries — the self-test must leave no trace.
+  delete from public.pw_activity_log
+    where project_id = p_project
+      and table_name = 'pw_flowchart_state'
+      and entity_id = k;
+
+  return jsonb_build_object(
+    'ok', n > 0,
+    'reason', case when n > 0 then 'ok' else 'trigger-did-not-fire' end
+  );
+end;
+$$;
+
+grant execute on function public.pw_activity_log_selftest(text) to anon, authenticated, service_role;
+
+-- ----------------------------------------------------------------------------
+-- 070_pw_literature_watch_module.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Literature watch module for the Project Workspace.
+--
+-- A daily GitHub Action (.github/workflows/daily-publication-screening.yml)
+-- screens the relevant scientific journals via Crossref and commits a daily
+-- markdown report plus a rolling suggestions archive under
+-- public/data/publication-screening/. The new 'literature-watch' module kind
+-- renders those suggestions inside each project (matched to the project's
+-- keyword profile) and lets the team read the daily reports.
+--
+-- This migration:
+--   • widens the pw_modules kind CHECK to allow 'literature-watch', and
+--   • seeds the module row for both seed projects (idempotent; the runtime
+--     seeder `ensureSeedModules` does the same lazily for fresh deploys).
+--
+-- Idempotent: safe to re-run.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+alter table public.pw_modules drop constraint if exists pw_modules_kind_check;
+alter table public.pw_modules add constraint pw_modules_kind_check
+  check (kind in (
+    'indicators',
+    'recommendations',
+    'member-states',
+    'policy-analysis',
+    'content-analysis',
+    'meetings',
+    'literature-watch',
+    'custom'
+  ));
+
+insert into public.pw_modules (id, project_id, kind, name, description, position, is_seed, beta)
+values
+  (
+    'literature-watch',
+    'policy-gap-2-0',
+    'literature-watch',
+    'Literature watch',
+    'New peer-reviewed publications from the relevant journals, screened ' ||
+    'every morning and matched to this project. Read the daily screening ' ||
+    'report and pick the papers worth a closer look.',
+    (select coalesce(max(position), -1) + 1 from public.pw_modules where project_id = 'policy-gap-2-0'),
+    true,
+    true
+  ),
+  (
+    'literature-watch',
+    'industry-project',
+    'literature-watch',
+    'Literature watch',
+    'New peer-reviewed publications on industrial decarbonisation — steel, ' ||
+    'cement, hydrogen, CBAM, CCS/CCU — screened every morning from the ' ||
+    'relevant journals and matched to this project.',
+    (select coalesce(max(position), -1) + 1 from public.pw_modules where project_id = 'industry-project'),
+    true,
+    true
+  )
+on conflict (project_id, id) do nothing;
+
+-- ----------------------------------------------------------------------------
+-- 071_policy_coherence_2.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Policy Coherence 2.0 (beta) — durable block-level analysis store.
+--
+-- The PC 2.0 engine splits every shipped policy text into sentence-level
+-- units, extracts typed claims (targets, obligations, instruments, MRV,
+-- flexibility markers, cross-references) and derives within- and cross-policy
+-- inconsistency findings from declared rules. These tables persist whole runs
+-- so the text blocks become a stable, referenceable substrate: unit ids are
+-- deterministic over the corpus, every finding cites the unit ids it rests
+-- on, and the JSONB claim/evidence payloads are ML-ready as stored.
+--
+-- Access model mirrors the content-analysis tables: public read, writes go
+-- through the service role in /api/policy-coherence-2/analyze. Idempotent.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+create table if not exists public.pc2_runs (
+  id             uuid primary key default gen_random_uuid(),
+  engine_version text not null,
+  corpus_hash    text not null,
+  policy_count   int  not null default 0,
+  block_count    int  not null default 0,
+  unit_count     int  not null default 0,
+  claim_count    int  not null default 0,
+  finding_count  int  not null default 0,
+  created_at     timestamptz not null default now(),
+  unique (engine_version, corpus_hash)
+);
+
+create table if not exists public.pc2_units (
+  run_id      uuid not null references public.pc2_runs(id) on delete cascade,
+  id          text not null,            -- deterministic: u-<policyId>-b<order>-s<idx>
+  policy_id   text not null,
+  block_id    text not null,            -- content-analysis block id space
+  block_kind  text not null,
+  block_order int  not null,
+  unit_index  int  not null,
+  path        text not null default '', -- "Article 4 — …" / "Recital (12)" / "Preamble"
+  start_char  int  not null,
+  end_char    int  not null,
+  text        text not null,
+  step_ids    text[] not null default '{}',
+  claims      jsonb  not null default '[]',
+  primary key (run_id, id)
+);
+
+create index if not exists idx_pc2_units_policy on public.pc2_units (run_id, policy_id, block_order, unit_index);
+
+create table if not exists public.pc2_findings (
+  run_id     uuid not null references public.pc2_runs(id) on delete cascade,
+  id         text not null,             -- deterministic per corpus
+  rule_id    text not null,
+  step_id    text not null,             -- ex-ante | horizontal | goals-means | evaluation
+  severity   text not null,             -- high | medium | low | info
+  scope      text not null,             -- within-policy | cross-policy
+  policy_ids text[] not null default '{}',
+  unit_ids   text[] not null default '{}',
+  title      text not null,
+  detail     text not null,
+  evidence   jsonb not null default '[]',
+  tier       text,
+  primary key (run_id, id)
+);
+
+create index if not exists idx_pc2_findings_rule on public.pc2_findings (run_id, rule_id);
+create index if not exists idx_pc2_findings_severity on public.pc2_findings (run_id, severity);
+
+alter table public.pc2_runs     enable row level security;
+alter table public.pc2_units    enable row level security;
+alter table public.pc2_findings enable row level security;
+
+drop policy if exists "PC2 runs are viewable by everyone" on public.pc2_runs;
+create policy "PC2 runs are viewable by everyone"
+  on public.pc2_runs for select using (true);
+
+drop policy if exists "PC2 units are viewable by everyone" on public.pc2_units;
+create policy "PC2 units are viewable by everyone"
+  on public.pc2_units for select using (true);
+
+drop policy if exists "PC2 findings are viewable by everyone" on public.pc2_findings;
+create policy "PC2 findings are viewable by everyone"
+  on public.pc2_findings for select using (true);
+
+-- ----------------------------------------------------------------------------
+-- 072_policy_coherence_2_ml.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Policy Coherence 2.0 (beta) — machine-learning layer results.
+--
+-- Persists the unsupervised pass over the pc2_units substrate (TF-IDF
+-- vector-space model → cosine pair mining → signal classification → theme
+-- clustering): contradiction candidates, trade-off candidates,
+-- duplication/overlap pairs and cross-policy theme clusters. Rows reference
+-- the run whose units they were learned from, so pair.unit_a/unit_b and
+-- cluster.unit_ids join back to pc2_units(run_id, id).
+--
+-- Access model as the other PC2 tables: public read, writes via the service
+-- role in /api/policy-coherence-2/ml. Idempotent.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+create table if not exists public.pc2_ml_pairs (
+  run_id       uuid not null references public.pc2_runs(id) on delete cascade,
+  id           text not null,            -- deterministic over the unit-id pair
+  ml_version   text not null,
+  kind         text not null,            -- contradiction-candidate | tradeoff-candidate | duplication-overlap
+  score        double precision not null,
+  cosine       double precision not null,
+  scope        text not null,            -- within-policy | cross-policy
+  policy_a     text not null,
+  policy_b     text not null,
+  unit_a       text not null,
+  unit_b       text not null,
+  path_a       text not null default '',
+  path_b       text not null default '',
+  quote_a      text not null default '',
+  quote_b      text not null default '',
+  shared_terms text[] not null default '{}',
+  signals      text[] not null default '{}',
+  axis         text,
+  primary key (run_id, id)
+);
+
+create index if not exists idx_pc2_ml_pairs_kind on public.pc2_ml_pairs (run_id, kind);
+
+create table if not exists public.pc2_ml_clusters (
+  run_id     uuid not null references public.pc2_runs(id) on delete cascade,
+  id         text not null,
+  ml_version text not null,
+  label      text not null,
+  size       int  not null,
+  policy_ids text[] not null default '{}',
+  unit_ids   text[] not null default '{}',
+  axis       text,
+  primary key (run_id, id)
+);
+
+alter table public.pc2_ml_pairs    enable row level security;
+alter table public.pc2_ml_clusters enable row level security;
+
+drop policy if exists "PC2 ML pairs are viewable by everyone" on public.pc2_ml_pairs;
+create policy "PC2 ML pairs are viewable by everyone"
+  on public.pc2_ml_pairs for select using (true);
+
+drop policy if exists "PC2 ML clusters are viewable by everyone" on public.pc2_ml_clusters;
+create policy "PC2 ML clusters are viewable by everyone"
+  on public.pc2_ml_clusters for select using (true);
+
+-- ----------------------------------------------------------------------------
+-- 073_sector_background_readings_seed.sql
+-- ----------------------------------------------------------------------------
+
+-- 073_sector_background_readings_seed.sql
+-- ---------------------------------------------------------------------------
+-- Seed the Sector Background reading lists (Industry & Transport) so they show
+-- up in the live app. GENERATED by scripts/seed-sector-background-readings.mjs
+-- — edit that script and re-run it, do not hand-edit this file.
+--
+--   1. custom_references          — the papers in the Reference Manager (DOI).
+--   2. content_analysis_corpus    — added to the "Policy Gap" project workspace.
+--   3. content_analysis_overall_tags — each tagged with its chapter (sector)
+--      tag, Industry (chapter:#9C3B3B:Industry) or Transport
+--      (chapter:#3D6E8C:Transport), matching src/lib/content-analysis/chapter-tags.ts.
+--
+-- Document ids are ref-doc-<referenceId>, the id space the workbench uses for
+-- references. Idempotent: every statement upserts, so re-running is safe.
+-- ---------------------------------------------------------------------------
+
+insert into public.custom_references
+  (id, doi, title, authors, year, journal, type, url, full_citation, source, tags)
+values
+  ('sbg-matecon-2019', '', 'Industrial Transformation 2050 — Pathways to Net-Zero Emissions from EU Heavy Industry', 'Material Economics', '2019', 'Material Economics / University of Cambridge CISL report', 'report', 'https://materialeconomics.com/node/13', 'Material Economics (2019). Industrial Transformation 2050 — Pathways to Net-Zero Emissions from EU Heavy Industry. Material Economics / University of Cambridge CISL report.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-matecon-circular-2018', '', 'The Circular Economy — a Powerful Force for Climate Mitigation', 'Material Economics', '2018', 'Material Economics report', 'report', 'https://materialeconomics.com/node/14', 'Material Economics (2018). The Circular Economy — a Powerful Force for Climate Mitigation. Material Economics report.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-rissman-2020', '10.1016/j.apenergy.2020.114848', 'Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070', 'Rissman, J., et al.', '2020', 'Applied Energy 266, 114848', 'article', 'https://doi.org/10.1016/j.apenergy.2020.114848', 'Rissman, J., et al. (2020). Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070. Applied Energy 266, 114848. DOI: 10.1016/j.apenergy.2020.114848.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-bataille-2018', '10.1016/j.jclepro.2018.03.107', 'A review of technology and policy deep decarbonization pathway options for making energy-intensive industry production consistent with the Paris Agreement', 'Bataille, C., et al.', '2018', 'Journal of Cleaner Production 187, 960–973', 'article', 'https://doi.org/10.1016/j.jclepro.2018.03.107', 'Bataille, C., et al. (2018). A review of technology and policy deep decarbonization pathway options for making energy-intensive industry production consistent with the Paris Agreement. Journal of Cleaner Production 187, 960–973. DOI: 10.1016/j.jclepro.2018.03.107.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-bataille-2020-wires', '10.1002/wcc.633', 'Physical and policy pathways to net-zero emissions industry', 'Bataille, C.', '2020', 'WIREs Climate Change 11(2), e633', 'article', 'https://doi.org/10.1002/wcc.633', 'Bataille, C. (2020). Physical and policy pathways to net-zero emissions industry. WIREs Climate Change 11(2), e633. DOI: 10.1002/wcc.633.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-davis-2018', '10.1126/science.aas9793', 'Net-zero emissions energy systems', 'Davis, S. J., Lewis, N. S., et al.', '2018', 'Science 360(6396), eaas9793', 'article', 'https://doi.org/10.1126/science.aas9793', 'Davis, S. J., Lewis, N. S., et al. (2018). Net-zero emissions energy systems. Science 360(6396), eaas9793. DOI: 10.1126/science.aas9793.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-ipcc-ar6-wg3-ch11', '', 'Climate Change 2022: Mitigation of Climate Change — Chapter 11: Industry', 'Bashmakov, I. A., Nilsson, L. J., Bataille, C., et al. (IPCC AR6 WGIII)', '2022', 'Cambridge University Press (IPCC AR6 WGIII)', 'chapter', 'https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/', 'Bashmakov, I. A., Nilsson, L. J., Bataille, C., et al. (IPCC AR6 WGIII) (2022). Climate Change 2022: Mitigation of Climate Change — Chapter 11: Industry. Cambridge University Press (IPCC AR6 WGIII).', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-vogl-2018', '10.1016/j.jclepro.2018.08.279', 'Assessment of hydrogen direct reduction for fossil-free steelmaking', 'Vogl, V., Åhman, M., Nilsson, L. J.', '2018', 'Journal of Cleaner Production 203, 736–745', 'article', 'https://doi.org/10.1016/j.jclepro.2018.08.279', 'Vogl, V., Åhman, M., Nilsson, L. J. (2018). Assessment of hydrogen direct reduction for fossil-free steelmaking. Journal of Cleaner Production 203, 736–745. DOI: 10.1016/j.jclepro.2018.08.279.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-vogl-2021-joule', '10.1016/j.joule.2021.09.007', 'Phasing out the blast furnace to meet global climate targets', 'Vogl, V., Olsson, O., Nykvist, B.', '2021', 'Joule 5(10), 2646–2662', 'article', 'https://doi.org/10.1016/j.joule.2021.09.007', 'Vogl, V., Olsson, O., Nykvist, B. (2021). Phasing out the blast furnace to meet global climate targets. Joule 5(10), 2646–2662. DOI: 10.1016/j.joule.2021.09.007.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-madeddu-2020', '10.1088/1748-9326/abbd02', 'The CO2 reduction potential for the European industry via direct electrification of heat supply (power-to-heat)', 'Madeddu, S., Ueckerdt, F., et al.', '2020', 'Environmental Research Letters 15(12), 124004', 'article', 'https://doi.org/10.1088/1748-9326/abbd02', 'Madeddu, S., Ueckerdt, F., et al. (2020). The CO2 reduction potential for the European industry via direct electrification of heat supply (power-to-heat). Environmental Research Letters 15(12), 124004. DOI: 10.1088/1748-9326/abbd02.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-allwood-2010', '10.1021/es902909k', 'Options for achieving a 50% cut in industrial carbon emissions by 2050', 'Allwood, J. M., Cullen, J. M., Milford, R. L.', '2010', 'Environmental Science & Technology 44(6), 1888–1894', 'article', 'https://doi.org/10.1021/es902909k', 'Allwood, J. M., Cullen, J. M., Milford, R. L. (2010). Options for achieving a 50% cut in industrial carbon emissions by 2050. Environmental Science & Technology 44(6), 1888–1894. DOI: 10.1021/es902909k.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-ahman-2017', '10.1080/14693062.2016.1167009', 'Global climate policy and deep decarbonization of energy-intensive industries', 'Åhman, M., Nilsson, L. J., Johansson, B.', '2017', 'Climate Policy 17(5), 634–649', 'article', 'https://doi.org/10.1080/14693062.2016.1167009', 'Åhman, M., Nilsson, L. J., Johansson, B. (2017). Global climate policy and deep decarbonization of energy-intensive industries. Climate Policy 17(5), 634–649. DOI: 10.1080/14693062.2016.1167009.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-sartor-2019-iddri', '', 'Decarbonising basic materials in Europe: How carbon contracts-for-difference could help bring breakthrough technologies to market', 'Sartor, O., Bataille, C.', '2019', 'IDDRI Study No. 06', 'report', 'https://www.iddri.org/en/publications-and-events/study/decarbonising-basic-materials-europe', 'Sartor, O., Bataille, C. (2019). Decarbonising basic materials in Europe: How carbon contracts-for-difference could help bring breakthrough technologies to market. IDDRI Study No. 06.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-richstein-2022', '10.1016/j.isci.2022.104700', 'Carbon Contracts-for-Difference: How to de-risk innovative investments for a low-carbon industry?', 'Richstein, J. C., Neuhoff, K.', '2022', 'iScience 25(8), 104700', 'article', 'https://doi.org/10.1016/j.isci.2022.104700', 'Richstein, J. C., Neuhoff, K. (2022). Carbon Contracts-for-Difference: How to de-risk innovative investments for a low-carbon industry?. iScience 25(8), 104700. DOI: 10.1016/j.isci.2022.104700.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-stede-2021', '10.1016/j.ecolecon.2021.107168', 'Carbon pricing of basic materials: Incentives and risks for the value chain and consumers', 'Stede, J., Pauliuk, S., Hardadi, G., Neuhoff, K.', '2021', 'Ecological Economics 189, 107168', 'article', 'https://doi.org/10.1016/j.ecolecon.2021.107168', 'Stede, J., Pauliuk, S., Hardadi, G., Neuhoff, K. (2021). Carbon pricing of basic materials: Incentives and risks for the value chain and consumers. Ecological Economics 189, 107168. DOI: 10.1016/j.ecolecon.2021.107168.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-leeson-2017', '10.1016/j.ijggc.2017.03.020', 'A techno-economic analysis and systematic review of CCS applied to the iron and steel, cement, oil refining and pulp and paper industries', 'Leeson, D., Mac Dowell, N., Shah, N., Petit, C., Fennell, P. S.', '2017', 'International Journal of Greenhouse Gas Control 61, 71–84', 'article', 'https://doi.org/10.1016/j.ijggc.2017.03.020', 'Leeson, D., Mac Dowell, N., Shah, N., Petit, C., Fennell, P. S. (2017). A techno-economic analysis and systematic review of CCS applied to the iron and steel, cement, oil refining and pulp and paper industries. International Journal of Greenhouse Gas Control 61, 71–84. DOI: 10.1016/j.ijggc.2017.03.020.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-iea-steel-2020', '', 'Iron and Steel Technology Roadmap', 'International Energy Agency', '2020', 'IEA report', 'report', 'https://www.iea.org/reports/iron-and-steel-technology-roadmap', 'International Energy Agency (2020). Iron and Steel Technology Roadmap. IEA report.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-iea-cement-2018', '', 'Technology Roadmap — Low-Carbon Transition in the Cement Industry', 'International Energy Agency & WBCSD/CSI', '2018', 'IEA report', 'report', 'https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry', 'International Energy Agency & WBCSD/CSI (2018). Technology Roadmap — Low-Carbon Transition in the Cement Industry. IEA report.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-creutzig-2015', '10.1126/science.aac8033', 'Transport: A roadblock to climate change mitigation?', 'Creutzig, F., et al.', '2015', 'Science 350(6263), 911–912', 'article', 'https://doi.org/10.1126/science.aac8033', 'Creutzig, F., et al. (2015). Transport: A roadblock to climate change mitigation?. Science 350(6263), 911–912. DOI: 10.1126/science.aac8033.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-creutzig-2018', '10.1038/s41558-018-0121-1', 'Towards demand-side solutions for mitigating climate change', 'Creutzig, F., et al.', '2018', 'Nature Climate Change 8(4), 268–271', 'article', 'https://doi.org/10.1038/s41558-018-0121-1', 'Creutzig, F., et al. (2018). Towards demand-side solutions for mitigating climate change. Nature Climate Change 8(4), 268–271. DOI: 10.1038/s41558-018-0121-1.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-axsen-2020', '10.1038/s41558-020-0877-y', 'Crafting strong, integrated policy mixes for deep CO2 mitigation in road transport', 'Axsen, J., Plötz, P., Wolinetz, M.', '2020', 'Nature Climate Change 10, 809–818', 'article', 'https://doi.org/10.1038/s41558-020-0877-y', 'Axsen, J., Plötz, P., Wolinetz, M. (2020). Crafting strong, integrated policy mixes for deep CO2 mitigation in road transport. Nature Climate Change 10, 809–818. DOI: 10.1038/s41558-020-0877-y.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-milovanoff-2020', '10.1038/s41558-020-00921-7', 'Electrification of light-duty vehicle fleet alone will not meet mitigation targets', 'Milovanoff, A., Posen, I. D., MacLean, H. L.', '2020', 'Nature Climate Change 10, 1102–1107', 'article', 'https://doi.org/10.1038/s41558-020-00921-7', 'Milovanoff, A., Posen, I. D., MacLean, H. L. (2020). Electrification of light-duty vehicle fleet alone will not meet mitigation targets. Nature Climate Change 10, 1102–1107. DOI: 10.1038/s41558-020-00921-7.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-mattioli-2020', '10.1016/j.erss.2020.101486', 'The political economy of car dependence: A systems of provision approach', 'Mattioli, G., Roberts, C., Steinberger, J. K., Brown, A.', '2020', 'Energy Research & Social Science 66, 101486', 'article', 'https://doi.org/10.1016/j.erss.2020.101486', 'Mattioli, G., Roberts, C., Steinberger, J. K., Brown, A. (2020). The political economy of car dependence: A systems of provision approach. Energy Research & Social Science 66, 101486. DOI: 10.1016/j.erss.2020.101486.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-brand-2021', '10.1016/j.trd.2021.102764', 'The climate change mitigation effects of daily active travel in cities', 'Brand, C., et al.', '2021', 'Transportation Research Part D 93, 102764', 'article', 'https://doi.org/10.1016/j.trd.2021.102764', 'Brand, C., et al. (2021). The climate change mitigation effects of daily active travel in cities. Transportation Research Part D 93, 102764. DOI: 10.1016/j.trd.2021.102764.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-gota-2019', '10.1007/s12053-018-9671-3', 'Decarbonising transport to achieve Paris Agreement targets', 'Gota, S., Huizenga, C., Peet, K., Medimorec, N., Bakker, S.', '2019', 'Energy Efficiency 12(2), 363–386', 'article', 'https://doi.org/10.1007/s12053-018-9671-3', 'Gota, S., Huizenga, C., Peet, K., Medimorec, N., Bakker, S. (2019). Decarbonising transport to achieve Paris Agreement targets. Energy Efficiency 12(2), 363–386. DOI: 10.1007/s12053-018-9671-3.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-ipcc-ar6-wg3-ch10', '', 'Climate Change 2022: Mitigation of Climate Change — Chapter 10: Transport', 'Jaramillo, P., Kahn Ribeiro, S., Newman, P., et al. (IPCC AR6 WGIII)', '2022', 'Cambridge University Press (IPCC AR6 WGIII)', 'chapter', 'https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-10/', 'Jaramillo, P., Kahn Ribeiro, S., Newman, P., et al. (IPCC AR6 WGIII) (2022). Climate Change 2022: Mitigation of Climate Change — Chapter 10: Transport. Cambridge University Press (IPCC AR6 WGIII).', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-iea-gevo-2024', '', 'Global EV Outlook 2024', 'International Energy Agency', '2024', 'IEA report', 'report', 'https://www.iea.org/reports/global-ev-outlook-2024', 'International Energy Agency (2024). Global EV Outlook 2024. IEA report.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-iea-trucks-2017', '', 'The Future of Trucks — Implications for Energy and the Environment', 'International Energy Agency', '2017', 'IEA report', 'report', 'https://www.iea.org/reports/the-future-of-trucks', 'International Energy Agency (2017). The Future of Trucks — Implications for Energy and the Environment. IEA report.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-bieker-2021-icct', '', 'A global comparison of the life-cycle GHG emissions of combustion engine and electric passenger cars', 'Bieker, G. (ICCT)', '2021', 'International Council on Clean Transportation (white paper)', 'report', 'https://theicct.org/publication/a-global-comparison-of-the-life-cycle-greenhouse-gas-emissions-of-combustion-engine-and-electric-passenger-cars/', 'Bieker, G. (ICCT) (2021). A global comparison of the life-cycle GHG emissions of combustion engine and electric passenger cars. International Council on Clean Transportation (white paper).', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-knobloch-2020', '10.1038/s41893-020-0488-7', 'Net emission reductions from electric cars and heat pumps in 59 world regions over time', 'Knobloch, F., et al.', '2020', 'Nature Sustainability 3(6), 437–447', 'article', 'https://doi.org/10.1038/s41893-020-0488-7', 'Knobloch, F., et al. (2020). Net emission reductions from electric cars and heat pumps in 59 world regions over time. Nature Sustainability 3(6), 437–447. DOI: 10.1038/s41893-020-0488-7.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-ueckerdt-2021', '10.1038/s41558-021-01032-7', 'Potential and risks of hydrogen-based e-fuels in climate change mitigation', 'Ueckerdt, F., et al.', '2021', 'Nature Climate Change 11(5), 384–393', 'article', 'https://doi.org/10.1038/s41558-021-01032-7', 'Ueckerdt, F., et al. (2021). Potential and risks of hydrogen-based e-fuels in climate change mitigation. Nature Climate Change 11(5), 384–393. DOI: 10.1038/s41558-021-01032-7.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-plotz-2022', '10.1038/s41928-021-00706-6', 'Hydrogen technology is unlikely to play a major role in sustainable road transport', 'Plötz, P.', '2022', 'Nature Electronics 5, 8–10', 'article', 'https://doi.org/10.1038/s41928-021-00706-6', 'Plötz, P. (2022). Hydrogen technology is unlikely to play a major role in sustainable road transport. Nature Electronics 5, 8–10. DOI: 10.1038/s41928-021-00706-6.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-teoh-2022', '10.1021/acs.est.2c05781', 'Targeted Use of Sustainable Aviation Fuel to Maximize Climate Benefits', 'Teoh, R., et al.', '2022', 'Environmental Science & Technology 56(23), 17246–17255', 'article', 'https://doi.org/10.1021/acs.est.2c05781', 'Teoh, R., et al. (2022). Targeted Use of Sustainable Aviation Fuel to Maximize Climate Benefits. Environmental Science & Technology 56(23), 17246–17255. DOI: 10.1021/acs.est.2c05781.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-korberg-2021', '10.1016/j.rser.2021.110861', 'Techno-economic assessment of advanced fuels and propulsion systems in future fossil-free ships', 'Korberg, A. D., Brynolf, S., Grahn, M., Skov, I. R.', '2021', 'Renewable and Sustainable Energy Reviews 142, 110861', 'article', 'https://doi.org/10.1016/j.rser.2021.110861', 'Korberg, A. D., Brynolf, S., Grahn, M., Skov, I. R. (2021). Techno-economic assessment of advanced fuels and propulsion systems in future fossil-free ships. Renewable and Sustainable Energy Reviews 142, 110861. DOI: 10.1016/j.rser.2021.110861.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-duranton-2011', '10.1257/aer.101.6.2616', 'The Fundamental Law of Road Congestion: Evidence from US Cities', 'Duranton, G., Turner, M. A.', '2011', 'American Economic Review 101(6), 2616–2652', 'article', 'https://doi.org/10.1257/aer.101.6.2616', 'Duranton, G., Turner, M. A. (2011). The Fundamental Law of Road Congestion: Evidence from US Cities. American Economic Review 101(6), 2616–2652. DOI: 10.1257/aer.101.6.2616.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-moreno-2021', '10.3390/smartcities4010006', 'Introducing the "15-Minute City": Sustainability, Resilience and Place Identity in Future Post-Pandemic Cities', 'Moreno, C., Allam, Z., Chabaud, D., Gall, C., Pratlong, F.', '2021', 'Smart Cities 4(1), 93–111', 'article', 'https://doi.org/10.3390/smartcities4010006', 'Moreno, C., Allam, Z., Chabaud, D., Gall, C., Pratlong, F. (2021). Introducing the "15-Minute City": Sustainability, Resilience and Place Identity in Future Post-Pandemic Cities. Smart Cities 4(1), 93–111. DOI: 10.3390/smartcities4010006.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-eucra-2024', '', 'European Climate Risk Assessment (EUCRA)', 'European Environment Agency', '2024', 'EEA Report 01/2024', 'report', 'https://www.eea.europa.eu/en/analysis/publications/european-climate-risk-assessment', 'European Environment Agency (2024). European Climate Risk Assessment (EUCRA). EEA Report 01/2024.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-forzieri-2018', '10.1016/j.gloenvcha.2017.11.007', 'Escalating impacts of climate extremes on critical infrastructures in Europe', 'Forzieri, G., et al.', '2018', 'Global Environmental Change 48, 97–107', 'article', 'https://doi.org/10.1016/j.gloenvcha.2017.11.007', 'Forzieri, G., et al. (2018). Escalating impacts of climate extremes on critical infrastructures in Europe. Global Environmental Change 48, 97–107. DOI: 10.1016/j.gloenvcha.2017.11.007.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-nemry-2012', '', 'Impacts of Climate Change on Transport: A focus on road and rail transport infrastructures', 'Nemry, F., Demirel, H. (JRC/IPTS)', '2012', 'JRC Scientific and Policy Reports (EUR 25553 EN)', 'report', 'https://publications.jrc.ec.europa.eu/repository/handle/JRC72217', 'Nemry, F., Demirel, H. (JRC/IPTS) (2012). Impacts of Climate Change on Transport: A focus on road and rail transport infrastructures. JRC Scientific and Policy Reports (EUR 25553 EN).', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-peseta-iv-2020', '', 'Climate change impacts and adaptation in Europe (JRC PESETA IV final report)', 'Feyen, L., et al. (eds.), JRC', '2020', 'EUR 30180 EN, Publications Office of the EU', 'report', 'https://joint-research-centre.ec.europa.eu/projects-and-activities/peseta-climate-change-projects/jrc-peseta-iv_en', 'Feyen, L., et al. (eds.), JRC (2020). Climate change impacts and adaptation in Europe (JRC PESETA IV final report). EUR 30180 EN, Publications Office of the EU.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-ipcc-ar6-wg2-ch13', '', 'Climate Change 2022: Impacts, Adaptation and Vulnerability — Chapter 13: Europe', 'Bednar-Friedl, B., Biesbroek, R., et al. (IPCC AR6 WGII)', '2022', 'Cambridge University Press, pp. 1817–1927', 'chapter', 'https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-13/', 'Bednar-Friedl, B., Biesbroek, R., et al. (IPCC AR6 WGII) (2022). Climate Change 2022: Impacts, Adaptation and Vulnerability — Chapter 13: Europe. Cambridge University Press, pp. 1817–1927.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-koks-2019', '10.1038/s41467-019-10442-3', 'A global multi-hazard risk analysis of road and railway infrastructure assets', 'Koks, E. E., Rozenberg, J., Zorn, C., et al.', '2019', 'Nature Communications 10, 2677', 'article', 'https://doi.org/10.1038/s41467-019-10442-3', 'Koks, E. E., Rozenberg, J., Zorn, C., et al. (2019). A global multi-hazard risk analysis of road and railway infrastructure assets. Nature Communications 10, 2677. DOI: 10.1038/s41467-019-10442-3.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-verschuur-2023', '10.1038/s41558-023-01754-w', 'Systemic risks from climate-related disruptions at ports', 'Verschuur, J., Koks, E. E., Hall, J. W.', '2023', 'Nature Climate Change 13, 804–811', 'article', 'https://doi.org/10.1038/s41558-023-01754-w', 'Verschuur, J., Koks, E. E., Hall, J. W. (2023). Systemic risks from climate-related disruptions at ports. Nature Climate Change 13, 804–811. DOI: 10.1038/s41558-023-01754-w.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-sun-2024', '10.1038/s41586-024-07147-z', 'Global supply chains amplify economic costs of future extreme heat risk', 'Sun, Y., Zhu, S., Wang, D., et al.', '2024', 'Nature 627, 797–804', 'article', 'https://doi.org/10.1038/s41586-024-07147-z', 'Sun, Y., Zhu, S., Wang, D., et al. (2024). Global supply chains amplify economic costs of future extreme heat risk. Nature 627, 797–804. DOI: 10.1038/s41586-024-07147-z.', 'web', ARRAY['Sector Background', 'Industry']::text[]),
+  ('sbg-eu-adapt-strategy-2021', '', 'Forging a climate-resilient Europe — the new EU Strategy on Adaptation to Climate Change (COM(2021) 82 final)', 'European Commission', '2021', 'Communication COM(2021) 82 final', 'legislation', 'https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082', 'European Commission (2021). Forging a climate-resilient Europe — the new EU Strategy on Adaptation to Climate Change (COM(2021) 82 final). Communication COM(2021) 82 final.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-climate-proofing-2021', '', 'Technical guidance on the climate proofing of infrastructure in the period 2021–2027 (Commission Notice 2021/C 373/01)', 'European Commission', '2021', 'Official Journal of the EU, C 373', 'report', 'https://op.europa.eu/en/publication-detail/-/publication/23a24b21-16d0-11ec-b4fe-01aa75ed71a1', 'European Commission (2021). Technical guidance on the climate proofing of infrastructure in the period 2021–2027 (Commission Notice 2021/C 373/01). Official Journal of the EU, C 373.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-eea-transport-adapt-2014', '', 'Adaptation of transport to climate change in Europe', 'European Environment Agency', '2014', 'EEA Report No 8/2014', 'report', 'https://www.eea.europa.eu/en/analysis/publications/adaptation-of-transport-to-climate', 'European Environment Agency (2014). Adaptation of transport to climate change in Europe. EEA Report No 8/2014.', 'web', ARRAY['Sector Background', 'Transport']::text[]),
+  ('sbg-eea-losses-2025', '', 'Economic losses and fatalities from weather- and climate-related extremes in Europe', 'European Environment Agency', '2025', 'EEA indicator', 'report', 'https://www.eea.europa.eu/en/analysis/indicators/economic-losses-from-climate-related', 'European Environment Agency (2025). Economic losses and fatalities from weather- and climate-related extremes in Europe. EEA indicator.', 'web', ARRAY['Sector Background', 'Industry']::text[])
+on conflict (id) do update set
+  doi = excluded.doi,
+  title = excluded.title,
+  authors = excluded.authors,
+  year = excluded.year,
+  journal = excluded.journal,
+  type = excluded.type,
+  url = excluded.url,
+  full_citation = excluded.full_citation,
+  tags = excluded.tags;
+
+insert into public.content_analysis_corpus (project_id, document_id, doc_meta)
+values
+  ('project-policy-gap', 'ref-doc-sbg-matecon-2019', '{"id":"ref-doc-sbg-matecon-2019","title":"Industrial Transformation 2050 — Pathways to Net-Zero Emissions from EU Heavy Industry","shortTitle":"Industrial Transformation 2050","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Material Economics","referenceYear":"2019","referenceUrl":"https://materialeconomics.com/node/13"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-matecon-circular-2018', '{"id":"ref-doc-sbg-matecon-circular-2018","title":"The Circular Economy — a Powerful Force for Climate Mitigation","shortTitle":"The Circular Economy","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Material Economics","referenceYear":"2018","referenceUrl":"https://materialeconomics.com/node/14"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-rissman-2020', '{"id":"ref-doc-sbg-rissman-2020","title":"Technologies and policies to decarbonize global industry: Review and assessment of mitigation drivers through 2070","shortTitle":"Technologies and policies to decarbonize global industry","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Rissman, J., et al.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1016/j.apenergy.2020.114848"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-bataille-2018', '{"id":"ref-doc-sbg-bataille-2018","title":"A review of technology and policy deep decarbonization pathway options for making energy-intensive industry production consistent with the Paris Agreement","shortTitle":"A review of technology and policy deep decarbonization pathway options","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Bataille, C., et al.","referenceYear":"2018","referenceUrl":"https://doi.org/10.1016/j.jclepro.2018.03.107"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-bataille-2020-wires', '{"id":"ref-doc-sbg-bataille-2020-wires","title":"Physical and policy pathways to net-zero emissions industry","shortTitle":"Physical and policy pathways to net-zero emissions industry","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Bataille, C.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1002/wcc.633"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-davis-2018', '{"id":"ref-doc-sbg-davis-2018","title":"Net-zero emissions energy systems","shortTitle":"Net-zero emissions energy systems","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Davis, S. J., Lewis, N. S., et al.","referenceYear":"2018","referenceUrl":"https://doi.org/10.1126/science.aas9793"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-ipcc-ar6-wg3-ch11', '{"id":"ref-doc-sbg-ipcc-ar6-wg3-ch11","title":"Climate Change 2022: Mitigation of Climate Change — Chapter 11: Industry","shortTitle":"Climate Change 2022","kind":"report","sourceKind":"reference","referenceType":"chapter","referenceAuthors":"Bashmakov, I. A., Nilsson, L. J., Bataille, C., et al. (IPCC AR6 WGIII)","referenceYear":"2022","referenceUrl":"https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-11/"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-vogl-2018', '{"id":"ref-doc-sbg-vogl-2018","title":"Assessment of hydrogen direct reduction for fossil-free steelmaking","shortTitle":"Assessment of hydrogen direct reduction for fossil-free steelmaking","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Vogl, V., Åhman, M., Nilsson, L. J.","referenceYear":"2018","referenceUrl":"https://doi.org/10.1016/j.jclepro.2018.08.279"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-vogl-2021-joule', '{"id":"ref-doc-sbg-vogl-2021-joule","title":"Phasing out the blast furnace to meet global climate targets","shortTitle":"Phasing out the blast furnace to meet global climate targets","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Vogl, V., Olsson, O., Nykvist, B.","referenceYear":"2021","referenceUrl":"https://doi.org/10.1016/j.joule.2021.09.007"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-madeddu-2020', '{"id":"ref-doc-sbg-madeddu-2020","title":"The CO2 reduction potential for the European industry via direct electrification of heat supply (power-to-heat)","shortTitle":"The CO2 reduction potential for the European industry via direct elect","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Madeddu, S., Ueckerdt, F., et al.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1088/1748-9326/abbd02"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-allwood-2010', '{"id":"ref-doc-sbg-allwood-2010","title":"Options for achieving a 50% cut in industrial carbon emissions by 2050","shortTitle":"Options for achieving a 50% cut in industrial carbon emissions by 2050","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Allwood, J. M., Cullen, J. M., Milford, R. L.","referenceYear":"2010","referenceUrl":"https://doi.org/10.1021/es902909k"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-ahman-2017', '{"id":"ref-doc-sbg-ahman-2017","title":"Global climate policy and deep decarbonization of energy-intensive industries","shortTitle":"Global climate policy and deep decarbonization of energy-intensive ind","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Åhman, M., Nilsson, L. J., Johansson, B.","referenceYear":"2017","referenceUrl":"https://doi.org/10.1080/14693062.2016.1167009"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-sartor-2019-iddri', '{"id":"ref-doc-sbg-sartor-2019-iddri","title":"Decarbonising basic materials in Europe: How carbon contracts-for-difference could help bring breakthrough technologies to market","shortTitle":"Decarbonising basic materials in Europe","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Sartor, O., Bataille, C.","referenceYear":"2019","referenceUrl":"https://www.iddri.org/en/publications-and-events/study/decarbonising-basic-materials-europe"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-richstein-2022', '{"id":"ref-doc-sbg-richstein-2022","title":"Carbon Contracts-for-Difference: How to de-risk innovative investments for a low-carbon industry?","shortTitle":"Carbon Contracts-for-Difference","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Richstein, J. C., Neuhoff, K.","referenceYear":"2022","referenceUrl":"https://doi.org/10.1016/j.isci.2022.104700"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-stede-2021', '{"id":"ref-doc-sbg-stede-2021","title":"Carbon pricing of basic materials: Incentives and risks for the value chain and consumers","shortTitle":"Carbon pricing of basic materials","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Stede, J., Pauliuk, S., Hardadi, G., Neuhoff, K.","referenceYear":"2021","referenceUrl":"https://doi.org/10.1016/j.ecolecon.2021.107168"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-leeson-2017', '{"id":"ref-doc-sbg-leeson-2017","title":"A techno-economic analysis and systematic review of CCS applied to the iron and steel, cement, oil refining and pulp and paper industries","shortTitle":"A techno-economic analysis and systematic review of CCS applied to the","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Leeson, D., Mac Dowell, N., Shah, N., Petit, C., Fennell, P. S.","referenceYear":"2017","referenceUrl":"https://doi.org/10.1016/j.ijggc.2017.03.020"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-iea-steel-2020', '{"id":"ref-doc-sbg-iea-steel-2020","title":"Iron and Steel Technology Roadmap","shortTitle":"Iron and Steel Technology Roadmap","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"International Energy Agency","referenceYear":"2020","referenceUrl":"https://www.iea.org/reports/iron-and-steel-technology-roadmap"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-iea-cement-2018', '{"id":"ref-doc-sbg-iea-cement-2018","title":"Technology Roadmap — Low-Carbon Transition in the Cement Industry","shortTitle":"Technology Roadmap","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"International Energy Agency & WBCSD/CSI","referenceYear":"2018","referenceUrl":"https://www.iea.org/reports/technology-roadmap-low-carbon-transition-in-the-cement-industry"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-creutzig-2015', '{"id":"ref-doc-sbg-creutzig-2015","title":"Transport: A roadblock to climate change mitigation?","shortTitle":"Transport","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Creutzig, F., et al.","referenceYear":"2015","referenceUrl":"https://doi.org/10.1126/science.aac8033"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-creutzig-2018', '{"id":"ref-doc-sbg-creutzig-2018","title":"Towards demand-side solutions for mitigating climate change","shortTitle":"Towards demand-side solutions for mitigating climate change","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Creutzig, F., et al.","referenceYear":"2018","referenceUrl":"https://doi.org/10.1038/s41558-018-0121-1"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-axsen-2020', '{"id":"ref-doc-sbg-axsen-2020","title":"Crafting strong, integrated policy mixes for deep CO2 mitigation in road transport","shortTitle":"Crafting strong, integrated policy mixes for deep CO2 mitigation in ro","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Axsen, J., Plötz, P., Wolinetz, M.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1038/s41558-020-0877-y"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-milovanoff-2020', '{"id":"ref-doc-sbg-milovanoff-2020","title":"Electrification of light-duty vehicle fleet alone will not meet mitigation targets","shortTitle":"Electrification of light-duty vehicle fleet alone will not meet mitiga","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Milovanoff, A., Posen, I. D., MacLean, H. L.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1038/s41558-020-00921-7"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-mattioli-2020', '{"id":"ref-doc-sbg-mattioli-2020","title":"The political economy of car dependence: A systems of provision approach","shortTitle":"The political economy of car dependence","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Mattioli, G., Roberts, C., Steinberger, J. K., Brown, A.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1016/j.erss.2020.101486"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-brand-2021', '{"id":"ref-doc-sbg-brand-2021","title":"The climate change mitigation effects of daily active travel in cities","shortTitle":"The climate change mitigation effects of daily active travel in cities","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Brand, C., et al.","referenceYear":"2021","referenceUrl":"https://doi.org/10.1016/j.trd.2021.102764"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-gota-2019', '{"id":"ref-doc-sbg-gota-2019","title":"Decarbonising transport to achieve Paris Agreement targets","shortTitle":"Decarbonising transport to achieve Paris Agreement targets","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Gota, S., Huizenga, C., Peet, K., Medimorec, N., Bakker, S.","referenceYear":"2019","referenceUrl":"https://doi.org/10.1007/s12053-018-9671-3"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-ipcc-ar6-wg3-ch10', '{"id":"ref-doc-sbg-ipcc-ar6-wg3-ch10","title":"Climate Change 2022: Mitigation of Climate Change — Chapter 10: Transport","shortTitle":"Climate Change 2022","kind":"report","sourceKind":"reference","referenceType":"chapter","referenceAuthors":"Jaramillo, P., Kahn Ribeiro, S., Newman, P., et al. (IPCC AR6 WGIII)","referenceYear":"2022","referenceUrl":"https://www.ipcc.ch/report/ar6/wg3/chapter/chapter-10/"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-iea-gevo-2024', '{"id":"ref-doc-sbg-iea-gevo-2024","title":"Global EV Outlook 2024","shortTitle":"Global EV Outlook 2024","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"International Energy Agency","referenceYear":"2024","referenceUrl":"https://www.iea.org/reports/global-ev-outlook-2024"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-iea-trucks-2017', '{"id":"ref-doc-sbg-iea-trucks-2017","title":"The Future of Trucks — Implications for Energy and the Environment","shortTitle":"The Future of Trucks","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"International Energy Agency","referenceYear":"2017","referenceUrl":"https://www.iea.org/reports/the-future-of-trucks"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-bieker-2021-icct', '{"id":"ref-doc-sbg-bieker-2021-icct","title":"A global comparison of the life-cycle GHG emissions of combustion engine and electric passenger cars","shortTitle":"A global comparison of the life-cycle GHG emissions of combustion engi","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Bieker, G. (ICCT)","referenceYear":"2021","referenceUrl":"https://theicct.org/publication/a-global-comparison-of-the-life-cycle-greenhouse-gas-emissions-of-combustion-engine-and-electric-passenger-cars/"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-knobloch-2020', '{"id":"ref-doc-sbg-knobloch-2020","title":"Net emission reductions from electric cars and heat pumps in 59 world regions over time","shortTitle":"Net emission reductions from electric cars and heat pumps in 59 world ","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Knobloch, F., et al.","referenceYear":"2020","referenceUrl":"https://doi.org/10.1038/s41893-020-0488-7"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-ueckerdt-2021', '{"id":"ref-doc-sbg-ueckerdt-2021","title":"Potential and risks of hydrogen-based e-fuels in climate change mitigation","shortTitle":"Potential and risks of hydrogen-based e-fuels in climate change mitiga","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Ueckerdt, F., et al.","referenceYear":"2021","referenceUrl":"https://doi.org/10.1038/s41558-021-01032-7"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-plotz-2022', '{"id":"ref-doc-sbg-plotz-2022","title":"Hydrogen technology is unlikely to play a major role in sustainable road transport","shortTitle":"Hydrogen technology is unlikely to play a major role in sustainable ro","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Plötz, P.","referenceYear":"2022","referenceUrl":"https://doi.org/10.1038/s41928-021-00706-6"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-teoh-2022', '{"id":"ref-doc-sbg-teoh-2022","title":"Targeted Use of Sustainable Aviation Fuel to Maximize Climate Benefits","shortTitle":"Targeted Use of Sustainable Aviation Fuel to Maximize Climate Benefits","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Teoh, R., et al.","referenceYear":"2022","referenceUrl":"https://doi.org/10.1021/acs.est.2c05781"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-korberg-2021', '{"id":"ref-doc-sbg-korberg-2021","title":"Techno-economic assessment of advanced fuels and propulsion systems in future fossil-free ships","shortTitle":"Techno-economic assessment of advanced fuels and propulsion systems in","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Korberg, A. D., Brynolf, S., Grahn, M., Skov, I. R.","referenceYear":"2021","referenceUrl":"https://doi.org/10.1016/j.rser.2021.110861"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-duranton-2011', '{"id":"ref-doc-sbg-duranton-2011","title":"The Fundamental Law of Road Congestion: Evidence from US Cities","shortTitle":"The Fundamental Law of Road Congestion","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Duranton, G., Turner, M. A.","referenceYear":"2011","referenceUrl":"https://doi.org/10.1257/aer.101.6.2616"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-moreno-2021', '{"id":"ref-doc-sbg-moreno-2021","title":"Introducing the \"15-Minute City\": Sustainability, Resilience and Place Identity in Future Post-Pandemic Cities","shortTitle":"Introducing the \"15-Minute City\"","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Moreno, C., Allam, Z., Chabaud, D., Gall, C., Pratlong, F.","referenceYear":"2021","referenceUrl":"https://doi.org/10.3390/smartcities4010006"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-eucra-2024', '{"id":"ref-doc-sbg-eucra-2024","title":"European Climate Risk Assessment (EUCRA)","shortTitle":"European Climate Risk Assessment (EUCRA)","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"European Environment Agency","referenceYear":"2024","referenceUrl":"https://www.eea.europa.eu/en/analysis/publications/european-climate-risk-assessment"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-forzieri-2018', '{"id":"ref-doc-sbg-forzieri-2018","title":"Escalating impacts of climate extremes on critical infrastructures in Europe","shortTitle":"Escalating impacts of climate extremes on critical infrastructures in ","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Forzieri, G., et al.","referenceYear":"2018","referenceUrl":"https://doi.org/10.1016/j.gloenvcha.2017.11.007"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-nemry-2012', '{"id":"ref-doc-sbg-nemry-2012","title":"Impacts of Climate Change on Transport: A focus on road and rail transport infrastructures","shortTitle":"Impacts of Climate Change on Transport","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Nemry, F., Demirel, H. (JRC/IPTS)","referenceYear":"2012","referenceUrl":"https://publications.jrc.ec.europa.eu/repository/handle/JRC72217"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-peseta-iv-2020', '{"id":"ref-doc-sbg-peseta-iv-2020","title":"Climate change impacts and adaptation in Europe (JRC PESETA IV final report)","shortTitle":"Climate change impacts and adaptation in Europe (JRC PESETA IV final r","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"Feyen, L., et al. (eds.), JRC","referenceYear":"2020","referenceUrl":"https://joint-research-centre.ec.europa.eu/projects-and-activities/peseta-climate-change-projects/jrc-peseta-iv_en"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-ipcc-ar6-wg2-ch13', '{"id":"ref-doc-sbg-ipcc-ar6-wg2-ch13","title":"Climate Change 2022: Impacts, Adaptation and Vulnerability — Chapter 13: Europe","shortTitle":"Climate Change 2022","kind":"report","sourceKind":"reference","referenceType":"chapter","referenceAuthors":"Bednar-Friedl, B., Biesbroek, R., et al. (IPCC AR6 WGII)","referenceYear":"2022","referenceUrl":"https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-13/"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-koks-2019', '{"id":"ref-doc-sbg-koks-2019","title":"A global multi-hazard risk analysis of road and railway infrastructure assets","shortTitle":"A global multi-hazard risk analysis of road and railway infrastructure","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Koks, E. E., Rozenberg, J., Zorn, C., et al.","referenceYear":"2019","referenceUrl":"https://doi.org/10.1038/s41467-019-10442-3"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-verschuur-2023', '{"id":"ref-doc-sbg-verschuur-2023","title":"Systemic risks from climate-related disruptions at ports","shortTitle":"Systemic risks from climate-related disruptions at ports","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Verschuur, J., Koks, E. E., Hall, J. W.","referenceYear":"2023","referenceUrl":"https://doi.org/10.1038/s41558-023-01754-w"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-sun-2024', '{"id":"ref-doc-sbg-sun-2024","title":"Global supply chains amplify economic costs of future extreme heat risk","shortTitle":"Global supply chains amplify economic costs of future extreme heat ris","kind":"report","sourceKind":"reference","referenceType":"article","referenceAuthors":"Sun, Y., Zhu, S., Wang, D., et al.","referenceYear":"2024","referenceUrl":"https://doi.org/10.1038/s41586-024-07147-z"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-eu-adapt-strategy-2021', '{"id":"ref-doc-sbg-eu-adapt-strategy-2021","title":"Forging a climate-resilient Europe — the new EU Strategy on Adaptation to Climate Change (COM(2021) 82 final)","shortTitle":"Forging a climate-resilient Europe","kind":"report","sourceKind":"reference","referenceType":"legislation","referenceAuthors":"European Commission","referenceYear":"2021","referenceUrl":"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0082"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-climate-proofing-2021', '{"id":"ref-doc-sbg-climate-proofing-2021","title":"Technical guidance on the climate proofing of infrastructure in the period 2021–2027 (Commission Notice 2021/C 373/01)","shortTitle":"Technical guidance on the climate proofing of infrastructure in the pe","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"European Commission","referenceYear":"2021","referenceUrl":"https://op.europa.eu/en/publication-detail/-/publication/23a24b21-16d0-11ec-b4fe-01aa75ed71a1"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-eea-transport-adapt-2014', '{"id":"ref-doc-sbg-eea-transport-adapt-2014","title":"Adaptation of transport to climate change in Europe","shortTitle":"Adaptation of transport to climate change in Europe","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"European Environment Agency","referenceYear":"2014","referenceUrl":"https://www.eea.europa.eu/en/analysis/publications/adaptation-of-transport-to-climate"}'::jsonb),
+  ('project-policy-gap', 'ref-doc-sbg-eea-losses-2025', '{"id":"ref-doc-sbg-eea-losses-2025","title":"Economic losses and fatalities from weather- and climate-related extremes in Europe","shortTitle":"Economic losses and fatalities from weather- and climate-related extre","kind":"report","sourceKind":"reference","referenceType":"report","referenceAuthors":"European Environment Agency","referenceYear":"2025","referenceUrl":"https://www.eea.europa.eu/en/analysis/indicators/economic-losses-from-climate-related"}'::jsonb)
+on conflict (project_id, document_id) do update set
+  doc_meta = excluded.doc_meta;
+
+insert into public.content_analysis_overall_tags (document_id, code_id)
+values
+  ('ref-doc-sbg-matecon-2019', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-matecon-circular-2018', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-rissman-2020', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-bataille-2018', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-bataille-2020-wires', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-davis-2018', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-ipcc-ar6-wg3-ch11', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-vogl-2018', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-vogl-2021-joule', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-madeddu-2020', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-allwood-2010', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-ahman-2017', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-sartor-2019-iddri', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-richstein-2022', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-stede-2021', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-leeson-2017', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-iea-steel-2020', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-iea-cement-2018', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-creutzig-2015', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-creutzig-2018', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-axsen-2020', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-milovanoff-2020', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-mattioli-2020', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-brand-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-gota-2019', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-ipcc-ar6-wg3-ch10', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-iea-gevo-2024', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-iea-trucks-2017', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-bieker-2021-icct', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-knobloch-2020', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-ueckerdt-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-plotz-2022', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-teoh-2022', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-korberg-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-duranton-2011', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-moreno-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-eucra-2024', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-forzieri-2018', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-nemry-2012', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-peseta-iv-2020', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-ipcc-ar6-wg2-ch13', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-koks-2019', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-verschuur-2023', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-sun-2024', 'chapter:#9C3B3B:Industry'),
+  ('ref-doc-sbg-eu-adapt-strategy-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-climate-proofing-2021', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-eea-transport-adapt-2014', 'chapter:#3D6E8C:Transport'),
+  ('ref-doc-sbg-eea-losses-2025', 'chapter:#9C3B3B:Industry')
+on conflict (document_id, code_id) do nothing;
+
+-- ----------------------------------------------------------------------------
+-- 074_content_analysis_reading.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Reading responsibility — who is reading which document in a project workspace.
+--
+-- The Content Analysis workbench gains a "Reading responsibility" view next to
+-- the Chapter view: the same shared corpus (content_analysis_corpus), grouped by
+-- the person responsible for reading each document. This table stores that
+-- assignment, keyed by (project_id, document_id) so every collaborator sees the
+-- same reader — mirroring the corpus/overall-tags access model (public read,
+-- writes go through an authenticated route / the service role).
+--
+-- A single responsible reader per document per project. `reader` is a free-text
+-- display name (matched against team profiles in the UI, but not constrained to
+-- them — the seeded scoping-phase list uses first names). An empty/removed
+-- assignment is represented by deleting the row.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+create table if not exists public.content_analysis_reading (
+  project_id   text not null,
+  document_id  text not null,
+  reader       text not null default '',
+  updated_by   uuid references auth.users(id) on delete set null,
+  updated_at   timestamptz not null default now(),
+  primary key (project_id, document_id)
+);
+
+create index if not exists idx_ca_reading_project
+  on public.content_analysis_reading (project_id);
+
+alter table public.content_analysis_reading enable row level security;
+
+drop policy if exists "Content analysis reading is viewable by everyone" on public.content_analysis_reading;
+create policy "Content analysis reading is viewable by everyone"
+  on public.content_analysis_reading for select using (true);
+
+drop policy if exists "Authenticated users can assign readers" on public.content_analysis_reading;
+create policy "Authenticated users can assign readers"
+  on public.content_analysis_reading for insert
+  with check (auth.role() = 'authenticated');
+
+drop policy if exists "Authenticated users can update readers" on public.content_analysis_reading;
+create policy "Authenticated users can update readers"
+  on public.content_analysis_reading for update
+  using (auth.role() = 'authenticated');
+
+drop policy if exists "Authenticated users can clear readers" on public.content_analysis_reading;
+create policy "Authenticated users can clear readers"
+  on public.content_analysis_reading for delete
+  using (auth.role() = 'authenticated');
+
+-- ----------------------------------------------------------------------------
+-- 075_rescale_remaining_percent_indicators.sql
+-- ----------------------------------------------------------------------------
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- Finish the percent-encoding reconciliation started by 058 for the remaining
+-- six ESABCC '%' indicators whose pw_indicator_points rows still carry the
+-- report workbook's FRACTION convention (0.117) while the unit column says
+-- '%' and the bundled TS series (the app's preview/fallback and the seed for
+-- fresh installs) stores percent-numbers (11.7).
+--
+-- 058 rescaled only the six indicators with an ECNO duplicate; these six were
+-- left on the fraction convention, which (a) renders as "0.117 %" in the
+-- Indicator Database and the Summer Prep indicator check, and (b) now
+-- conflicts with the regenerated 055 backfill, whose generator reads the
+-- percent-scale TS values verbatim.
+--
+-- Values below are the bundled TS series verbatim (report years + afterReport
+-- years). Idempotent: explicit target values via ON CONFLICT DO UPDATE.
+-- ─────────────────────────────────────────────────────────────────────────────
+
+insert into public.pw_indicator_points (indicator_id, year, value)
+values
+  ('esabcc-e2-res-noBio-power-share', 2005, 14.26),
+  ('esabcc-e2-res-noBio-power-share', 2006, 14.49),
+  ('esabcc-e2-res-noBio-power-share', 2007, 15.05),
+  ('esabcc-e2-res-noBio-power-share', 2008, 16.09),
+  ('esabcc-e2-res-noBio-power-share', 2009, 17.67),
+  ('esabcc-e2-res-noBio-power-share', 2010, 19.14),
+  ('esabcc-e2-res-noBio-power-share', 2011, 18.79),
+  ('esabcc-e2-res-noBio-power-share', 2012, 21.25),
+  ('esabcc-e2-res-noBio-power-share', 2013, 23.89),
+  ('esabcc-e2-res-noBio-power-share', 2014, 25.27),
+  ('esabcc-e2-res-noBio-power-share', 2015, 25.32),
+  ('esabcc-e2-res-noBio-power-share', 2016, 25.59),
+  ('esabcc-e2-res-noBio-power-share', 2017, 25.38),
+  ('esabcc-e2-res-noBio-power-share', 2018, 27.61),
+  ('esabcc-e2-res-noBio-power-share', 2019, 29.08),
+  ('esabcc-e2-res-noBio-power-share', 2020, 33.23),
+  ('esabcc-e2-res-noBio-power-share', 2021, 32.08),
+  ('esabcc-e2-res-noBio-power-share', 2022, 33.76),
+  ('esabcc-t6a-fossil-transport-share', 2005, 97.69),
+  ('esabcc-t6a-fossil-transport-share', 2006, 97.25),
+  ('esabcc-t6a-fossil-transport-share', 2007, 96.78),
+  ('esabcc-t6a-fossil-transport-share', 2008, 96.31),
+  ('esabcc-t6a-fossil-transport-share', 2009, 95.72),
+  ('esabcc-t6a-fossil-transport-share', 2010, 95.31),
+  ('esabcc-t6a-fossil-transport-share', 2011, 95.08),
+  ('esabcc-t6a-fossil-transport-share', 2012, 94.66),
+  ('esabcc-t6a-fossil-transport-share', 2013, 95),
+  ('esabcc-t6a-fossil-transport-share', 2014, 94.8),
+  ('esabcc-t6a-fossil-transport-share', 2015, 94.86),
+  ('esabcc-t6a-fossil-transport-share', 2016, 95.06),
+  ('esabcc-t6a-fossil-transport-share', 2017, 94.84),
+  ('esabcc-t6a-fossil-transport-share', 2018, 94.51),
+  ('esabcc-t6a-fossil-transport-share', 2019, 94.4),
+  ('esabcc-t6a-fossil-transport-share', 2020, 93.22),
+  ('esabcc-t6a-fossil-transport-share', 2021, 93.44),
+  ('esabcc-i3-circular-mat-use', 2010, 10.8),
+  ('esabcc-i3-circular-mat-use', 2011, 10.3),
+  ('esabcc-i3-circular-mat-use', 2012, 11.1),
+  ('esabcc-i3-circular-mat-use', 2013, 11.3),
+  ('esabcc-i3-circular-mat-use', 2014, 11.2),
+  ('esabcc-i3-circular-mat-use', 2015, 11.3),
+  ('esabcc-i3-circular-mat-use', 2016, 11.5),
+  ('esabcc-i3-circular-mat-use', 2017, 11.5),
+  ('esabcc-i3-circular-mat-use', 2018, 11.7),
+  ('esabcc-i3-circular-mat-use', 2019, 12),
+  ('esabcc-i3-circular-mat-use', 2020, 11.7),
+  ('esabcc-i3-circular-mat-use', 2021, 11.7),
+  ('esabcc-i3-circular-mat-use', 2022, 11.4),
+  ('esabcc-i3-circular-mat-use', 2023, 12.1),
+  ('esabcc-i3-circular-mat-use', 2024, 12.2),
+  ('esabcc-b5a-residential-fossil-share', 2005, 56.61),
+  ('esabcc-b5a-residential-fossil-share', 2006, 55.73),
+  ('esabcc-b5a-residential-fossil-share', 2007, 51.74),
+  ('esabcc-b5a-residential-fossil-share', 2008, 52.64),
+  ('esabcc-b5a-residential-fossil-share', 2009, 51.88),
+  ('esabcc-b5a-residential-fossil-share', 2010, 51.87),
+  ('esabcc-b5a-residential-fossil-share', 2011, 50.36),
+  ('esabcc-b5a-residential-fossil-share', 2012, 49.74),
+  ('esabcc-b5a-residential-fossil-share', 2013, 49.65),
+  ('esabcc-b5a-residential-fossil-share', 2014, 47.28),
+  ('esabcc-b5a-residential-fossil-share', 2015, 47.99),
+  ('esabcc-b5a-residential-fossil-share', 2016, 48.44),
+  ('esabcc-b5a-residential-fossil-share', 2017, 47.89),
+  ('esabcc-b5a-residential-fossil-share', 2018, 46.98),
+  ('esabcc-b5a-residential-fossil-share', 2019, 46.53),
+  ('esabcc-b5a-residential-fossil-share', 2020, 46.74),
+  ('esabcc-b5a-residential-fossil-share', 2021, 45.58),
+  ('esabcc-b5a-residential-fossil-share', 2023, 42),
+  ('esabcc-b5b-tertiary-fossil-share', 2005, 46.98),
+  ('esabcc-b5b-tertiary-fossil-share', 2006, 46.65),
+  ('esabcc-b5b-tertiary-fossil-share', 2007, 42.85),
+  ('esabcc-b5b-tertiary-fossil-share', 2008, 43.89),
+  ('esabcc-b5b-tertiary-fossil-share', 2009, 43.26),
+  ('esabcc-b5b-tertiary-fossil-share', 2010, 42.84),
+  ('esabcc-b5b-tertiary-fossil-share', 2011, 40.8),
+  ('esabcc-b5b-tertiary-fossil-share', 2012, 40.9),
+  ('esabcc-b5b-tertiary-fossil-share', 2013, 42.42),
+  ('esabcc-b5b-tertiary-fossil-share', 2014, 39.98),
+  ('esabcc-b5b-tertiary-fossil-share', 2015, 40.36),
+  ('esabcc-b5b-tertiary-fossil-share', 2016, 40.13),
+  ('esabcc-b5b-tertiary-fossil-share', 2017, 38.97),
+  ('esabcc-b5b-tertiary-fossil-share', 2018, 37.71),
+  ('esabcc-b5b-tertiary-fossil-share', 2019, 37.13),
+  ('esabcc-b5b-tertiary-fossil-share', 2020, 37.28),
+  ('esabcc-b5b-tertiary-fossil-share', 2021, 38.74),
+  ('esabcc-b5b-tertiary-fossil-share', 2023, 32.2),
+  ('esabcc-f-green-bonds-share', 2012, 0.08),
+  ('esabcc-f-green-bonds-share', 2013, 0.1),
+  ('esabcc-f-green-bonds-share', 2014, 0.83),
+  ('esabcc-f-green-bonds-share', 2015, 0.85),
+  ('esabcc-f-green-bonds-share', 2016, 1.69),
+  ('esabcc-f-green-bonds-share', 2017, 4.18),
+  ('esabcc-f-green-bonds-share', 2018, 3.19),
+  ('esabcc-f-green-bonds-share', 2019, 4.82),
+  ('esabcc-f-green-bonds-share', 2020, 4.57),
+  ('esabcc-f-green-bonds-share', 2021, 8.08),
+  ('esabcc-f-green-bonds-share', 2022, 6.74),
+  ('esabcc-f-green-bonds-share', 2023, 5.3),
+  ('esabcc-f-green-bonds-share', 2024, 6.9)
+on conflict (indicator_id, year) do update set value = excluded.value;

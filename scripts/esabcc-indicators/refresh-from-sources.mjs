@@ -95,10 +95,10 @@ const RECIPES = {
   'esabcc-i3-circular-mat-use': {
     kind: 'eurostat', dataset: 'cei_srm030',
     filters: { geo: 'EU27_2020', unit: 'PC' },
-    toRepo: v => v / 100, round: 3,
+    toRepo: v => v, round: 1,
     sourceUrl: `${EUROSTAT_BASE}/cei_srm030?format=JSON&geo=EU27_2020&unit=PC`,
     sourceTitle: 'Eurostat cei_srm030 · circular material use rate · EU27_2020',
-    note: 'Percent÷100→fraction.',
+    note: 'Stored as percent-number — the TS series was rescaled ×100 (WP6 unit fix); the old ÷100 recipe failed its anchor check ever since. DB rows realigned by migration 075.',
   },
   'esabcc-f-gerd': {
     kind: 'eurostat', dataset: 'rd_e_gerdtot',
@@ -188,6 +188,127 @@ const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge · CRF 4 (LULUCF) net · EU27_2020',
     note: 'Net sink is negative. Subject to inventory-vintage revision vs the report base year.',
   },
+
+  // ── Coverage extension (July 2026): previously-stale indicators ─────────
+  // All splice-mode unless the source matches the report scope exactly, so a
+  // scope/level offset can never step the series — only the source's own
+  // year-on-year movement is applied to the report baseline.
+  'esabcc-o1-ghg-total': {
+    // Report scope = European Climate Law: total GHG excl LULUCF incl intl
+    // aviation, plus intl maritime. TOTX4_MEMONIA carries the first part;
+    // the intl-navigation memo leg adds maritime. Splice absorbs any
+    // remaining scope residual (e.g. NF3 coverage differences).
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'TOTX4_MEMONIA' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1D1B' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTX4_MEMONIA`,
+    sourceTitle: 'Eurostat env_air_gge · total excl LULUCF incl intl aviation (TOTX4_MEMONIA) + intl maritime (1.D.1.b) · EU27_2020',
+    note: 'Spliced: Climate-Law-scope proxy YoY change × report baseline.',
+  },
+  'esabcc-e2-fossil-power-share': {
+    // Fossil share of gross electricity production: fossil siec legs over
+    // TOTAL, both from nrg_bal_peh (GWh). Ratio → percent; spliced.
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_peh',
+      legs: ['C0000X0350-0370', 'P1000', 'S2000', 'O4000XBIO', 'G3000'].map(siec => (
+        { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec })),
+    },
+    den: {
+      dataset: 'nrg_bal_peh',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP`,
+    sourceTitle: 'Eurostat nrg_bal_peh · fossil ÷ total gross electricity production · EU27_2020',
+    note: 'Spliced ratio: (solid fossil + peat + oil shale + oil + gas) ÷ TOTAL, YoY change × report baseline.',
+  },
+  'esabcc-e2-res-noBio-power-share': {
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_peh',
+      legs: ['RA100', 'RA200', 'RA300', 'RA400'].map(siec => (
+        { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec })),
+    },
+    den: {
+      dataset: 'nrg_bal_peh',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP`,
+    sourceTitle: 'Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar) ÷ total gross electricity production · EU27_2020',
+    note: 'Spliced ratio: non-biomass renewables ÷ TOTAL, YoY change × report baseline.',
+  },
+  'esabcc-e3-grid-co2-intensity': {
+    // Proxy for the EEA electricity-intensity indicator (no API): CRF 1.A.1.a
+    // is unavailable at aggregate level, so use CRF 1.A.1 emissions over gross
+    // electricity production. The level is NOT g/kWh (includes refineries and
+    // heat output) — splice-only, the offset cancels in the YoY ratio.
+    kind: 'eurostat-ratio', round: 1, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [{ geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF1A1' }],
+    },
+    den: {
+      dataset: 'nrg_bal_peh',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GEP', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A1`,
+    sourceTitle: 'Eurostat env_air_gge CRF 1.A.1 ÷ nrg_bal_peh gross electricity production · EU27_2020',
+    note: 'Spliced trend proxy for the EEA intensity indicator; hand-check against the EEA-published value when available.',
+  },
+  'esabcc-t3a-road-share-passenger': {
+    kind: 'eurostat', dataset: 'tran_hv_psmod', round: 2, mode: 'splice',
+    filters: { geo: 'EU27_2020', unit: 'PC', vehicle: 'CAR_BUS_TOT' },
+    sourceUrl: `${EUROSTAT_BASE}/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR_BUS_TOT`,
+    sourceTitle: 'Eurostat tran_hv_psmod · car+bus share of inland passenger transport · EU27_2020',
+    note: 'Spliced: Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.',
+  },
+  'esabcc-t5b-zev-lorries-stock': {
+    kind: 'eurostat', dataset: 'road_eqs_lormot', round: 0,
+    filters: { geo: 'EU27_2020', unit: 'NR', vehicle: 'LOR_HVY', mot_nrg: 'ELC' },
+    sourceUrl: `${EUROSTAT_BASE}/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_HVY&mot_nrg=ELC`,
+    sourceTitle: 'Eurostat road_eqs_lormot · battery-electric heavy lorries in the fleet · EU27_2020',
+    note: 'Direct count; anchor check guards the EAFO-vs-Eurostat scope (skipped on mismatch).',
+  },
+  'esabcc-t6a-fossil-transport-share': {
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'nrg_bal_s',
+      legs: ['O4000XBIO', 'G3000', 'C0000X0350-0370'].map(siec => (
+        { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_TRA_E', siec })),
+    },
+    den: {
+      dataset: 'nrg_bal_s',
+      legs: [{ geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'FC_TRA_E', siec: 'TOTAL' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_TRA_E`,
+    sourceTitle: 'Eurostat nrg_bal_s · fossil ÷ total transport final energy · EU27_2020',
+    note: 'Spliced ratio: report scope includes intl bunkers, FC_TRA does not; YoY change × report baseline.',
+  },
+  'esabcc-l6-forest-sink': {
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF4A' },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4A`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 4.A forest land · EU27_2020',
+    note: 'Spliced: report stores the sink as a positive magnitude (living biomass only) while CRF 4.A is negative net — the ratio preserves the report convention.',
+  },
+  'esabcc-l7-nonforest-lulucf': {
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: ['CRF4B', 'CRF4C', 'CRF4D', 'CRF4E'].map(src_crf => (
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf })),
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4B`,
+    sourceTitle: 'Eurostat env_air_gge · CRF 4.B–4.E (cropland, grassland, wetlands, settlements) · EU27_2020',
+    note: 'Spliced sum of the non-forest land categories, YoY change × report baseline.',
+  },
+  'esabcc-l8-bioenergy-use': {
+    kind: 'eurostat', dataset: 'nrg_bal_s', round: 1, mode: 'splice',
+    sumFilters: ['R5110-5150_W6000RI', 'R5210B', 'R5300', 'W6100_6220'].map(siec => (
+      { geo: 'EU27_2020', unit: 'GWH', freq: 'A', nrg_bal: 'GIC', siec })),
+    sourceUrl: `${EUROSTAT_BASE}/nrg_bal_s?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GIC`,
+    sourceTitle: 'Eurostat nrg_bal_s · gross inland consumption of biofuels + renewable waste · EU27_2020',
+    note: 'Spliced sum (GWh→TWh); a failed siec leg is skipped, the splice ratio absorbs the level offset.',
+  },
 };
 
 // ───────────────────────── helpers ─────────────────────────
@@ -251,6 +372,22 @@ async function fetchEurostatSum(dataset, legs) {
   }
   if (ok === 0) throw new Error('all sum legs failed');
   return [...acc.entries()].map(([year, value]) => ({ year, value })).sort((a, b) => a.year - b.year);
+}
+
+/**
+ * Fetch a numerator and a denominator (each a summed set of Eurostat legs,
+ * possibly from different datasets) and return their per-year ratio × 100.
+ * Only years present in BOTH sides are kept. Ratio recipes are meant to run
+ * in splice mode: any constant scale factor (×100, unit mixes) cancels in the
+ * year-on-year ratio, so only the trend is trusted, never the level.
+ */
+async function fetchEurostatRatio(rec) {
+  const num = await fetchEurostatSum(rec.num.dataset, rec.num.legs);
+  const den = await fetchEurostatSum(rec.den.dataset, rec.den.legs);
+  const dm = new Map(den.map(p => [p.year, p.value]));
+  return num
+    .filter(p => Number.isFinite(dm.get(p.year)) && Math.abs(dm.get(p.year)) > 1e-12)
+    .map(p => ({ year: p.year, value: (p.value / dm.get(p.year)) * 100 }));
 }
 
 function detectDelimiter(line) {
@@ -407,7 +544,9 @@ async function main() {
         ? (rec.sumFilters
             ? await fetchEurostatSum(rec.dataset, rec.sumFilters)
             : await fetchEurostat(rec.dataset, rec.filters))
-        : await fetchEea(rec);
+        : rec.kind === 'eurostat-ratio'
+          ? await fetchEurostatRatio(rec)
+          : await fetchEea(rec);
     } catch (e) {
       console.error(`! ${id}: fetch failed — ${e.message}`);
       provenance.push({ ...meta, status: 'error', message: e.message });
