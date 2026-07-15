@@ -1,12 +1,12 @@
 {
   "date": "2026-07-15",
-  "generatedAt": "2026-07-15T07:18:36.821Z",
+  "generatedAt": "2026-07-15T12:19:11.497Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Wednesday, 15 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Highlights - Exchange of views with the Commission on the environmental protection in Albania - Committee on the Environment, Public Health and Food Safety",
-      "summary": "&lt;div style=\"float:left; margin:0px 5px 0px 0px;\"&gt;&lt;img src=\"https://www.europarl.europa.eu/resources/library/images/20260701PHT46239/20260701PHT46239-ms.jpeg\" width=\"180\" alt=\"environmental protection areas\" title=\"picture flamingos.jpeg © Image used under the license of Adobe Stock\"/&gt;&lt;/div&gt;&lt;div&gt;On 14 July 2026, ENVI members held an exchange of views on the ongoing accession negotiations of Chapter 27 dedicated to environment and climate change. This exchange of views took",
+      "headline": "EU law on nitrates pollution remains effective, with scope for smarter implementation",
+      "summary": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
@@ -28,6 +28,14 @@
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
       "items": [
+        {
+          "title": "EU law on nitrates pollution remains effective, with scope for smarter implementation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1594",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
+          "published": "2026-07-14T22:00:00.000Z",
+          "score": 27
+        },
         {
           "title": "Highlights - Exchange of views with the Commission on the environmental protection in Albania - Committee on the Environment, Public Health and Food Safety",
           "link": "https://www.europarl.europa.eu/committees/en/product/product-details/20260707CAN79253",
@@ -75,19 +83,19 @@
           "score": 7
         },
         {
-          "title": "US striker Balogun expected controversy over suspended red-card ban - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5",
+          "title": "'Hand of God', Rattin and Beckham see red: Witnesses relive England Argentina World Cup rivalry - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0oxMzE4N1RUOFFzY2lFYk9hNVRYa3BiVXY0cVdRTEFsNUljdXpZTW9hLXRNTGphaVg0WUhEalJYb2RhOG1LeG12ZVBkZ0RuejJiZklSZjBHVnRXOGdQUUFMYngxbFR4bnZlbkViRlYwWEFZc3NFU1VfajJZb1JDeTNqOTNOWXVZekhTM0hjbm9neS1PYlhvcGd3cS03ZWsybVZsbHJrSDBJR2R0Qmo2M2I0ZUI0OUIyT0VfVEFvdEtRNmFz?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5\" target=\"_blank\"&gt;US striker Balogun expected controversy over suspended red-card ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-14T20:47:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxQd0oxMzE4N1RUOFFzY2lFYk9hNVRYa3BiVXY0cVdRTEFsNUljdXpZTW9hLXRNTGphaVg0WUhEalJYb2RhOG1LeG12ZVBkZ0RuejJiZklSZjBHVnRXOGdQUUFMYngxbFR4bnZlbkViRlYwWEFZc3NFU1VfajJZb1JDeTNqOTNOWXVZekhTM0hjbm9neS1PYlhvcGd3cS03ZWsybVZsbHJrSDBJR2R0Qmo2M2I0ZUI0OUIyT0VfVEFvdEtRNmFz?oc=5\" target=\"_blank\"&gt;'Hand of God', Rattin and Beckham see red: Witnesses relive England Argentina World Cup rivalry&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reut",
+          "published": "2026-07-14T17:27:00.000Z",
           "score": 7
         },
         {
-          "title": "After Hormuz, Iran turns to Red Sea gateway as new pressure point - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQUGg5NkVYV29DZzNPWWdfQnBqVkllT3BZYlpEMkZEb3JmODhYT0JYMVQ5SHc4cEZoMUh5bnp0TC1ITl9JZ1d2VmZ4T2dFcGY3TDVsUFJhbVdpa0w1LUdFM0M3WU90VXZFWnY4QkhyeUc3SmtlQkJYb05OUENvQWxwU2ZnTkVCcTZyRjh3UUtrYlhMVWMtTmVSTmlObnd1SEhsUk5uUk8tLUdEZ21faGhRc3J3?oc=5",
+          "title": "US striker Balogun expected controversy over suspended red-card ban - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQUGg5NkVYV29DZzNPWWdfQnBqVkllT3BZYlpEMkZEb3JmODhYT0JYMVQ5SHc4cEZoMUh5bnp0TC1ITl9JZ1d2VmZ4T2dFcGY3TDVsUFJhbVdpa0w1LUdFM0M3WU90VXZFWnY4QkhyeUc3SmtlQkJYb05OUENvQWxwU2ZnTkVCcTZyRjh3UUtrYlhMVWMtTmVSTmlObnd1SEhsUk5uUk8tLUdEZ21faGhRc3J3?oc=5\" target=\"_blank\"&gt;After Hormuz, Iran turns to Red Sea gateway as new pressure point&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-14T14:17:52.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQUTdpcTFmS2J4Y0dlWVFwMFZqTHVFREd6a1dnVFh6N1RtUndVVE84RXVOT1M1MGZxZzhfU1g3T0w2dkl0TXBKOFdpNlJHV21nMDNJa0FWTTlZalB1bGFNV29abTdiNTNISzhtUFZEX3dSLUFzVVduWks4aVdwNTdvSFZ6T0tmLTZrSGs3NElKNmdEUFJKSGRFTFBGdE9jVy1YUHFvb184aENpWTFwYjU0ZUJDS0lTLTZM?oc=5\" target=\"_blank\"&gt;US striker Balogun expected controversy over suspended red-card ban&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-07-14T20:47:43.000Z",
           "score": 7
         }
       ]
@@ -102,6 +110,14 @@
           "source": "Carbon Brief",
           "description": "The UK’s incoming prime minister Andy Burnham has remained tight-lipped on his views on climate... The post 28 quotes from next UK leader Andy Burnham on climate, net-zero and fossil fuels appeared first on Carbon Brief.",
           "published": "2026-07-14T14:43:57.000Z",
+          "score": 13
+        },
+        {
+          "title": "Major emitting countries knew of climate risks decades earlier than claimed",
+          "link": "https://www.climatechangenews.com/2026/07/15/major-emitting-countries-knew-of-climate-risks-decades-earlier-than-claimed/",
+          "source": "Climate Home News",
+          "description": "Governments have known since at least the 1960s that fossil fuel use was warming the planet. They kept quiet to avoid responsibility. The post Major emitting countries knew of climate risks decades earlier than claimed appeared first on Climate Home News.",
+          "published": "2026-07-15T10:51:19.000Z",
           "score": 13
         },
         {
@@ -121,19 +137,11 @@
           "score": 10
         },
         {
-          "title": "‘Unprecedented’ changes in UK climate are normalising extremes, report says",
-          "link": "https://www.theguardian.com/environment/2026/jul/15/uk-climate-extreme-weather-2025-hottest-year-on-record",
+          "title": "US trial could reveal who paid hackers to target Exxon climate critics: ‘on the edge of our seats’",
+          "link": "https://www.theguardian.com/us-news/ng-interactive/2026/jul/15/climate-activists-exxon-hired-hackers-trial",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Annual State of the UK Climate analysis finds last four years in UK are in top five hottest on record&lt;/p&gt;&lt;p&gt;The UK’s climatic extremes are becoming increasingly normal, a report has found, with last year the hottest on record and further “unprecedented changes” likely to break the record again soon.&lt;/p&gt;&lt;p&gt;Data stretching back to 1884 shows the UK has never experienced a year as hot as 2025, according to the annual State of the UK Climate report, with temperatures",
-          "published": "2026-07-14T23:01:38.000Z",
-          "score": 7
-        },
-        {
-          "title": "Andy Burnham must act fast on the climate – or risk getting stuck in a ‘derailment’ doom loop | Laurie Laybourn",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/14/andy-burnham-climate-floods-fires-political-capital",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Around the world, climate-sceptic parties are exploiting floods and fires to make political capital. Without urgent changes, this deadly spiral will continue&lt;/p&gt;&lt;p&gt;Recent unprecedented heatwaves in the UK may have &lt;a href=\"https://www.theguardian.com/environment/2026/jul/13/june-heatwave-killed-440-people-a-day-england-wales-data-suggests-climate-crisis\"&gt;killed thousands&lt;/a&gt; of people. Children are suffering in &lt;a href=\"https://www.theguardian.com/education/20",
-          "published": "2026-07-14T16:51:49.000Z",
+          "description": "&lt;p&gt;Oil giant has denied involvement, but climate activists are closely watching court case against Israeli private investigator for answers&lt;/p&gt;&lt;p&gt;A group of American climate activists are closely watching a US court case that could reveal who hired hackers to target their inboxes a decade ago.&lt;/p&gt;&lt;p&gt;In 2015, a set of &lt;a href=\"https://insideclimatenews.org/project/exxon-the-road-not-taken/\"&gt;explosive media reports&lt;/a&gt; revealed that ExxonMobil’s own scient",
+          "published": "2026-07-15T10:00:53.000Z",
           "score": 7
         }
       ]
@@ -172,20 +180,20 @@
           "score": 18
         },
         {
-          "title": "Ukraine parliament accepts PM Svyrydenko&#039;s resignation",
-          "link": "https://www.dw.com/en/ukraine-parliament-accepts-pm-svyrydenko-s-resignation/a-77954364?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Ukraine: Kyiv and EU agree on new drone production deal",
+          "link": "https://www.dw.com/en/ukraine-kyiv-and-eu-agree-on-new-drone-production-deal/live-77962795?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "It comes as President Volodymyr Zelenskyy moves to reshuffle the cabinet as Ukraine was &quot;changing its political strategy.&quot;",
-          "published": "2026-07-14T14:07:00.000Z",
+          "description": "Ukraine and the EU have agreed on a drone deal combining Kyiv’s know-how with the bloc&#039;s scale-up power. Meanwhile, Russian attacks caused more fatalities in Odesa as Moscow increasingly targets the port. DW has more.",
+          "published": "2026-07-15T10:55:00.000Z",
           "score": 8
         },
         {
-          "title": "Bastille Day: France holds parade with Ukraine in focus",
-          "link": "https://www.dw.com/en/bastille-day-france-holds-parade-with-ukraine-in-focus/a-77945107?maca=en-rss-en-all-1573-xml-mrss",
+          "title": "Ukraine parliament accepts PM Svyrydenko&#039;s resignation",
+          "link": "https://www.dw.com/en/ukraine-parliament-accepts-pm-svyrydenko-s-resignation/a-77954364?maca=en-rss-en-all-1573-xml-mrss",
           "source": "Deutsche Welle World",
-          "description": "The celebrations featured troops and warplanes from around Europe in a show of support for Ukraine, as it fends off Russia&#039;s ongoing invasion. It was Emmanuel Macron&#039;s last Bastille Day as France&#039;s president.",
-          "published": "2026-07-14T09:58:00.000Z",
-          "score": 4
+          "description": "With Ukraine &quot;changing its political strategy,&quot; President Volodymyr Zelenskyy is trying to remake the government,",
+          "published": "2026-07-14T14:07:00.000Z",
+          "score": 8
         }
       ]
     },
@@ -194,52 +202,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU bans gold imports from Sudan to curb money financing the war",
-          "link": "https://www.bbc.co.uk/news/articles/ce3e3nqwr5do?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "The ban also restricts exports of mercury and cyanide to Sudan, chemicals widely used in gold mining.",
-          "published": "2026-07-14T08:32:49.000Z",
-          "score": 8
-        },
-        {
-          "title": "China urges Europe to stop backing 'illegal' South China Sea ruling to avoid harming ties - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM1ZheXdvZmxPZ09nRGcyYXQta1JHLXhGc2tFYXU3TmdoWFZtWXpfdU1zaXNTVG9LTnBKRkxwZ0kwWHBVNGJJU3Z5d2VIRWZiejlBMFFjekhlaWd6OTNIbjNPc01jazd0NWZBQTNMNWlqb01KWG8wRUItUVA2dkZ0cjVaMmxxT0t0QzAwXzEya2ZjNjYwdGdRYTFqLWJ6ZURhVnpFZU9QYkFTMktqWHE0aWlOZ1hsbUwyMnVnSGpPMlRTUQ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM1ZheXdvZmxPZ09nRGcyYXQta1JHLXhGc2tFYXU3TmdoWFZtWXpfdU1zaXNTVG9LTnBKRkxwZ0kwWHBVNGJJU3Z5d2VIRWZiejlBMFFjekhlaWd6OTNIbjNPc01jazd0NWZBQTNMNWlqb01KWG8wRUItUVA2dkZ0cjVaMmxxT0t0QzAwXzEya2ZjNjYwdGdRYTFqLWJ6ZURhVnpFZU9QYkFTMktqWHE0aWlOZ1hsbUwyMnVnSGpPMlRTUQ?oc=5\" target=\"_blank\"&gt;China urges Europe to stop backing 'illegal' South China Sea ruling to avoid harming ties&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/",
-          "published": "2026-07-14T07:33:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "Nine EU nations urge funding cut for sports bodies including IOC over readmitting Russians - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVk9uaXk2RXZtRWpJZE5DNE9RbkUtUUhMcmpOTjZrQ2FFRlBrTXh6TmxnYURxNDRXYUMwSGxGeEYzWTg2R0lxdjFOeTNwODVHYmI2bElGRVFYUzBOLTlxZklheWh2dDQtMHdhWVZaZnE3WVh5ZDhjM1Z4UUFiT1FLNzdEZWlseWN6LTdQT1NmMVZhMkZoSkVocTlmS3loWFI5ZUFBRVMtTDg5Snl3c3dfUXE0MjFlSXFOdEgwNg?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOVk9uaXk2RXZtRWpJZE5DNE9RbkUtUUhMcmpOTjZrQ2FFRlBrTXh6TmxnYURxNDRXYUMwSGxGeEYzWTg2R0lxdjFOeTNwODVHYmI2bElGRVFYUzBOLTlxZklheWh2dDQtMHdhWVZaZnE3WVh5ZDhjM1Z4UUFiT1FLNzdEZWlseWN6LTdQT1NmMVZhMkZoSkVocTlmS3loWFI5ZUFBRVMtTDg5Snl3c3dfUXE0MjFlSXFOdEgwNg?oc=5\" target=\"_blank\"&gt;Nine EU nations urge funding cut for sports bodies including IOC over readmitting Russians&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt",
-          "published": "2026-07-14T12:17:43.000Z",
-          "score": 8
-        },
-        {
-          "title": "Several dead in fire at Brussels construction site, authorities say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzZONzhvTUUtOWRsb2xhQzNoRGJBaEd2YWRtODkySWl0c2lNbmNrV3p6VTlkMG1VclJ0NFdzMVFhQnY0TnlwcHVzTkFXdW5GV3lfUlIzb1Y0RTVzNk54cjZvV2lvdjZ5U3hsVXpiRGVTR0tBcVN0ZzlOZzV0RHEtam9PdF9VV0lhQUo2YUV5T05FUGxwWW4yWWNVS2wyVXRZbmJ1anh5Sk4?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxQXzZONzhvTUUtOWRsb2xhQzNoRGJBaEd2YWRtODkySWl0c2lNbmNrV3p6VTlkMG1VclJ0NFdzMVFhQnY0TnlwcHVzTkFXdW5GV3lfUlIzb1Y0RTVzNk54cjZvV2lvdjZ5U3hsVXpiRGVTR0tBcVN0ZzlOZzV0RHEtam9PdF9VV0lhQUo2YUV5T05FUGxwWW4yWWNVS2wyVXRZbmJ1anh5Sk4?oc=5\" target=\"_blank\"&gt;Several dead in fire at Brussels construction site, authorities say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-14T13:23:49.000Z",
-          "score": 8
-        },
-        {
-          "title": "Taiwan's premium mangoes wing their way to Europe for the first time - Reuters",
+          "title": "Taiwan's premium mangoes wing their way to Europe for the first time - reuters.com",
           "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5\" target=\"_blank\"&gt;Taiwan's premium mangoes wing their way to Europe for the first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisAFBVV95cUxOT19IV0ZrRk5oQ0ZlTExPdm9pbGFsd1NXQ2tPZDNSTjhMQVJrMWxPT3lhTGR5ajhvVjUycTdscGduQ3AzMkFHSzBEdl9MMmtCSlB3N29jYXBRY0JuYU5GN0FidTl4YkcwVzRLSE9wd3Z3TC1FZnFnYzRzQ2R5bkdBZmQzdkJTU3lHcmp2c0ZwbTJ5aWhzUEpXY2d2RWtHdU56ZW1nVG1Zc3NOYS1fX01rOQ?oc=5\" target=\"_blank\"&gt;Taiwan's premium mangoes wing their way to Europe for the first time&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
           "published": "2026-07-15T02:02:00.000Z",
           "score": 8
+        },
+        {
+          "title": "UK summons senior Iranian diplomat over alleged proxy attacks in Europe - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxOUlNuaDJVZGJwT3hkUHlFT3J6cjMtZkpOSnRhempJWEdUdWw4WFgyZzRQYVRydVRoNnprcDJvdW15QXFtZmFzU0RWUVU3NERYc29XSm9yWURSNmxpUXhmTVlZTlRGUnRvMndyQnFacVNyQnRGY01USWF6M096S2hlV2ZhenZDYUwya3d0SU04bzI4R0RoTTNiZDhybnFRVXpMcXN3YlFDYXAwSkdGbzVRcW92WQ?oc=5\" target=\"_blank\"&gt;UK summons senior Iranian diplomat over alleged proxy attacks in Europe&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-07-14T23:50:15.000Z",
+          "score": 8
+        },
+        {
+          "title": "EU aviation body reinstates Middle East flights warning as fighting resumes - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOT3RURUV1aDVOdzI3Ui1jN1YxUjBBdUtnME1lN3VIMlZ0OS12alN1Znl5OHhyaG5xQk12dWNPeDNSRTVHWFpfQ1VjLW5wSzlGSFRZZGNPZkRUX0RvbDVTekJVOVBvMjhlZDl4N2hTYXR5anVvemFqQ1NMT2hsUGwwTHQ4cXdzTVF3ekxmbEpQWFNhaUxKTDVKNjVIOFdubDlHd2N3b1UxVFFvbDZBSHRlTEU2RzdsT2NGNGh1QXp3TGpJeXU4?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOT3RURUV1aDVOdzI3Ui1jN1YxUjBBdUtnME1lN3VIMlZ0OS12alN1Znl5OHhyaG5xQk12dWNPeDNSRTVHWFpfQ1VjLW5wSzlGSFRZZGNPZkRUX0RvbDVTekJVOVBvMjhlZDl4N2hTYXR5anVvemFqQ1NMT2hsUGwwTHQ4cXdzTVF3ekxmbEpQWFNhaUxKTDVKNjVIOFdubDlHd2N3b1UxVFFvbDZBSHRlTEU2RzdsT2NGNGh1QXp3TGpJeXU4?oc=5\" target=\"_blank\"&gt;EU aviation body reinstates Middle East flights warning as fighting resumes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-07-14T13:18:08.000Z",
+          "score": 8
+        },
+        {
+          "title": "India's Hero MotoCorp to invest about $104 million in Ather Energy - reuters.com",
+          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU1d4Z0RxRGFKbkZYQXBrUklkeDlGcEYwYUZ4SmV0Z0p5anh4a0hHMGIxaUEtY19sTUdkZWk2WTZ4bzJQU19leWMwSXBWNS1RQUE0NllyclBKOFJldFNNNFFaa3FaVTFYZU16cWR6YnFWQzhZUEl5RjQ5QnlINGExSkhadk1XLTZURkpiNXpZWDNtT2hBX2dMbDBPOGFrWENSWFlGeFJhYTYzZw?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU1d4Z0RxRGFKbkZYQXBrUklkeDlGcEYwYUZ4SmV0Z0p5anh4a0hHMGIxaUEtY19sTUdkZWk2WTZ4bzJQU19leWMwSXBWNS1RQUE0NllyclBKOFJldFNNNFFaa3FaVTFYZU16cWR6YnFWQzhZUEl5RjQ5QnlINGExSkhadk1XLTZURkpiNXpZWDNtT2hBX2dMbDBPOGFrWENSWFlGeFJhYTYzZw?oc=5\" target=\"_blank\"&gt;India's Hero MotoCorp to invest about $104 million in Ather Energy&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;reuters.com&lt;/font&gt;",
+          "published": "2026-07-14T15:08:08.000Z",
+          "score": 7
+        },
+        {
+          "title": "Italy's Meloni suffers surprise setback in close vote on electoral reform",
+          "link": "https://www.bbc.co.uk/news/articles/c1kykx3vnyyo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "The defeat triggered opposition calls for Meloni to resign ahead of next year's general election.",
+          "published": "2026-07-15T11:44:28.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 438,
-    "articlesLast24h": 181,
-    "afterDedup": 162,
+    "totalArticlesScanned": 436,
+    "articlesLast24h": 191,
+    "afterDedup": 170,
     "feedsQueried": 19
   }
 }
