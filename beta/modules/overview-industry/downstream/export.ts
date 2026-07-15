@@ -7,9 +7,10 @@
  *
  * Sheets:
  *   1. "Read me"             — purpose, scope, method, what to watch, provenance.
- *   2. "Assessment"          — one row per lead-market policy × the five Better
- *                              Regulation criteria (score + rationale each).
- *   3. "Data"                — the key data points behind each assessment.
+ *   2. "Criteria notes"      — one row per lead-market policy × the five Better
+ *                              Regulation criteria (a factual note each; no
+ *                              rating scale).
+ *   3. "Data"                — the key data points behind each policy.
  *   4. "Sources"             — every source with clickable URL.
  *   5. "Downstream standards"— the definitions / labels / product-standards layer.
  *
@@ -22,7 +23,6 @@ import {
   DOWNSTREAM_META,
   BR_CRITERIA,
   BR_CRITERIA_META,
-  SCORE_META,
   LEAD_MARKET_POLICIES,
   POLICY_CATEGORY_META,
   POLICY_STATUS_META,
@@ -36,13 +36,6 @@ const TEAL = 'FF007B6C';
 const ORANGE = 'FFFF9933';
 const VIOLET = 'FF6667AB';
 const GREY = 'FF54728C';
-
-const SCORE_FILL: Record<string, string> = {
-  strong: 'FFDDF2EC',
-  moderate: 'FFFFEDDE',
-  weak: 'FFF8E2E1',
-  'too-early': 'FFEFF0F1',
-};
 
 function styleHeaderRow(ws: ExcelJS.Worksheet, argb: string) {
   const header = ws.getRow(1);
@@ -73,16 +66,16 @@ export async function exportDownstreamWorkbook(): Promise<void> {
   const rmRows: [string, string][] = [
     ['Workbook', 'Downstream — lead-market policies review & downstream standards (handover copy)'],
     ['Status date', `${DOWNSTREAM_META.asOf} (compiled ${DOWNSTREAM_META.compiled})`],
-    ['Purpose', 'Handover pack: a review of the EU demand-side ("lead market") instruments for low-carbon industrial products, assessed with the five Better Regulation evaluation criteria, plus the downstream standards they depend on. Built so the cover during parental leave can pick up the file without the MethodHub.'],
+    ['Purpose', 'Handover pack: a review of the EU demand-side ("lead market") instruments for low-carbon industrial products, documented along the five Better Regulation evaluation criteria, plus the downstream standards they depend on. Built so the cover during parental leave can pick up the file without the MethodHub.'],
     ['Scope', DOWNSTREAM_META.scope],
     ['Method', DOWNSTREAM_META.frameworkNote],
     ['Framework reference', DOWNSTREAM_META.frameworkUrl],
-    ['How to read the scores', 'Strong / Moderate / Weak = working judgement against the criterion. "Too early" = instrument too recent or still a proposal — judge the design, revisit once evidence exists. Every score has its rationale next to it; disagree with the rationale, change the score.'],
-    ['Sheet guide', 'Assessment = one row per policy, five criteria with score + rationale, overall read and handover notes. Data = the data points cited in the assessment. Sources = all links. Downstream standards = the definitions/label/product-standard layer (the part that usually bites last but binds first).'],
+    ['How to read the notes', 'The five criteria are used as a reading grid only — each policy carries a factual note per criterion, with the data points and sources behind it. No rating scale (no strong/moderate/weak) is applied.'],
+    ['Sheet guide', 'Criteria notes = one row per policy, five criteria with a factual note each, plus handover notes. Data = the data points cited in the notes. Sources = all links. Downstream standards = the definitions/label/product-standard layer (the part that usually bites last but binds first).'],
     ['Live module', '/beta/overview-industry/downstream on the MethodHub (this workbook is generated from the same data file: src/data/downstream-lead-markets.ts).'],
-    ['Provenance / caveat', 'AI-compiled working assessment (web-verified July 2026), pending verification by the industry lead. Evaluation-style, largely ex-ante. Not a Board position.'],
+    ['Provenance / caveat', 'AI-compiled working notes (web-verified July 2026), pending verification by the industry lead. Largely ex-ante. Not a Board position.'],
     ['', ''],
-    ['WHAT TO WATCH', 'Timeline of the decisions that will change this assessment:'],
+    ['WHAT TO WATCH', 'Timeline of the decisions that will change the facts in this workbook:'],
     ...WATCH_TIMELINE.map((w): [string, string] => {
       const p = LEAD_MARKET_POLICIES.find((x) => x.id === w.policyId);
       return [w.when, `${w.what}${p ? `  [${p.shortName}]` : ''}`];
@@ -100,12 +93,13 @@ export async function exportDownstreamWorkbook(): Promise<void> {
   title.font = { bold: true, size: 14, color: { argb: NAVY } };
   rm.mergeCells('A1:B1');
 
-  /* ── 2 · Assessment ───────────────────────────────────────────────── */
-  const as = wb.addWorksheet('Assessment', { properties: { tabColor: { argb: TEAL } } });
-  const critCols = BR_CRITERIA.flatMap((c) => [
-    { header: `${BR_CRITERIA_META[c].label} — score`, key: `${c}Score`, width: 13 },
-    { header: `${BR_CRITERIA_META[c].label} — rationale`, key: `${c}Note`, width: 55 },
-  ]);
+  /* ── 2 · Criteria notes ───────────────────────────────────────────── */
+  const as = wb.addWorksheet('Criteria notes', { properties: { tabColor: { argb: TEAL } } });
+  const critCols = BR_CRITERIA.map((c) => ({
+    header: `${BR_CRITERIA_META[c].label} — note`,
+    key: `${c}Note`,
+    width: 55,
+  }));
   as.columns = [
     { header: 'Policy', key: 'name', width: 42 },
     { header: 'Instrument family', key: 'category', width: 18 },
@@ -114,7 +108,6 @@ export async function exportDownstreamWorkbook(): Promise<void> {
     { header: 'Sectors', key: 'sectors', width: 30 },
     { header: 'Lead-market mechanism', key: 'mechanism', width: 55 },
     ...critCols,
-    { header: 'Overall read', key: 'overall', width: 60 },
     { header: 'Handover notes — what to do / watch', key: 'notes', width: 60 },
   ];
   LEAD_MARKET_POLICIES.forEach((p) => {
@@ -125,23 +118,12 @@ export async function exportDownstreamWorkbook(): Promise<void> {
       reference: p.reference,
       sectors: p.sectors,
       mechanism: p.leadMarketMechanism,
-      overall: p.overallRead,
       notes: p.handoverNotes,
     };
     BR_CRITERIA.forEach((c) => {
-      row[`${c}Score`] = SCORE_META[p.assessment[c].score].label;
       row[`${c}Note`] = p.assessment[c].rationale;
     });
-    const added = as.addRow(row);
-    BR_CRITERIA.forEach((c, i) => {
-      const cell = added.getCell(7 + i * 2);
-      cell.fill = {
-        type: 'pattern',
-        pattern: 'solid',
-        fgColor: { argb: SCORE_FILL[p.assessment[c].score] },
-      };
-      cell.font = { bold: true, size: 10 };
-    });
+    as.addRow(row);
   });
   styleHeaderRow(as, TEAL);
   wrapAll(as);

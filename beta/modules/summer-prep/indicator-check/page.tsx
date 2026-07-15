@@ -9,7 +9,8 @@
  * AFTER the January-2024 report, it shows:
  *   • the report baseline value (the latest figure the report itself carried);
  *   • the two–three newer points added since publication; and
- *   • a direction-aware read of whether the sector improved or slipped.
+ *   • the arithmetic change between the two (no better/worse read is applied —
+ *     the page shows the numbers and leaves the judgement to the reader).
  *
  * The indicator series are NOT bundled here: the server wrapper
  * (src/app/beta/summer-prep/indicator-check/page.tsx) reads them from the
@@ -25,7 +26,6 @@ import Link from 'next/link';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import PageHero from '@/components/PageHero';
-import SummerPrepGate from '@/components/SummerPrepGate';
 import type { Indicator, IndicatorCategory } from '@/data/ecno-indicators';
 
 const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }> = {
@@ -41,8 +41,6 @@ const CATEGORY_META: Record<IndicatorCategory, { label: string; color: string }>
   fairness: { label: 'Fairness', color: '#FF9933' },
   adaptation: { label: 'Adaptation', color: '#478EA5' },
 };
-
-const MAJOR_MOVE_PCT = 4; // |Δ| ≥ 4% since the report counts as a "major update"
 
 /**
  * Deep link into the Policy Gap 2.0 Project Workspace: opens the Indicator
@@ -62,8 +60,6 @@ interface IndicatorRead {
   post: { year: number; value: number }[];
   hasUpdate: boolean;
   pctChange: number | null; // baseline → latest, signed
-  improving: boolean | null; // direction-aware
-  major: boolean;
 }
 
 function readIndicator(ind: Indicator): IndicatorRead {
@@ -75,13 +71,9 @@ function readIndicator(ind: Indicator): IndicatorRead {
   const hasUpdate = post.length > 0;
 
   let pctChange: number | null = null;
-  let improving: boolean | null = null;
   if (baseline && latest && baseline.value !== 0 && hasUpdate) {
     pctChange = ((latest.value - baseline.value) / Math.abs(baseline.value)) * 100;
-    const delta = latest.value - baseline.value;
-    improving = ind.direction === 'down' ? delta < 0 : delta > 0;
   }
-  const major = pctChange !== null && Math.abs(pctChange) >= MAJOR_MOVE_PCT;
 
   return {
     ind,
@@ -90,8 +82,6 @@ function readIndicator(ind: Indicator): IndicatorRead {
     post: post.map((p) => ({ year: p.year, value: p.value })),
     hasUpdate,
     pctChange,
-    improving,
-    major,
   };
 }
 
@@ -102,7 +92,7 @@ function fmtNum(v: number): string {
 }
 
 /** Small inline sparkline; post-report points drawn as filled dots. */
-function Sparkline({ ind, improving }: { ind: Indicator; improving: boolean | null }) {
+function Sparkline({ ind }: { ind: Indicator }) {
   const data = [...ind.data].sort((a, b) => a.year - b.year).slice(-10);
   if (data.length < 2) return null;
   const w = 132;
@@ -119,8 +109,7 @@ function Sparkline({ ind, improving }: { ind: Indicator; improving: boolean | nu
     return { x, y, after: !!d.afterReport };
   });
   const line = pts.map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`).join(' ');
-  const stroke =
-    improving === null ? '#54728C' : improving ? '#007B6C' : '#B83230';
+  const stroke = '#004B7F';
   // index of first post-report point (where the "since report" tail begins)
   const firstAfter = pts.findIndex((p) => p.after);
   return (
@@ -168,9 +157,8 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
     return {
       total: reads.length,
       updated: updated.length,
-      improving: updated.filter((r) => r.improving === true).length,
-      worsening: updated.filter((r) => r.improving === false).length,
-      major: updated.filter((r) => r.major).length,
+      rose: updated.filter((r) => r.pctChange !== null && r.pctChange > 0).length,
+      fell: updated.filter((r) => r.pctChange !== null && r.pctChange < 0).length,
     };
   }, [reads]);
 
@@ -203,7 +191,7 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
           <>
             The old report’s progress indicators, read for movement. For every indicator that has
             gained data since January 2024, this shows the report baseline, the newest two–three
-            points, and whether the sector has improved or slipped. Click an indicator to open its
+            points, and the arithmetic change between the two. Click an indicator to open its
             full series in the Policy Gap 2.0 Project Workspace — every value shown here is read
             from that workspace’s indicator database, so the two views always match.
           </>
@@ -214,14 +202,13 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
         {/* Summary tiles */}
         <section
           aria-label="Summary"
-          className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5"
+          className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4"
         >
           {[
             { label: 'Indicators tracked', value: summary.total, color: '#3D5265' },
             { label: 'With new data since report', value: summary.updated, color: '#004B7F' },
-            { label: 'Improving', value: summary.improving, color: '#007B6C' },
-            { label: 'Slipping', value: summary.worsening, color: '#B83230' },
-            { label: `Major moves (≥${MAJOR_MOVE_PCT}%)`, value: summary.major, color: '#FF9933' },
+            { label: 'Value rose vs report', value: summary.rose, color: '#54728C' },
+            { label: 'Value fell vs report', value: summary.fell, color: '#54728C' },
           ].map((t) => (
             <div
               key={t.label}
@@ -282,8 +269,6 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
             const cat = CATEGORY_META[r.ind.category];
             const arrow =
               r.pctChange === null ? '' : r.pctChange > 0 ? '▲' : r.pctChange < 0 ? '▼' : '▬';
-            const moveColor =
-              r.improving === null ? '#54728C' : r.improving ? '#007B6C' : '#B83230';
             return (
               <article
                 key={r.ind.id}
@@ -302,13 +287,8 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
                         {r.ind.code}
                       </span>
                     )}
-                    {r.major && (
-                      <span className="ml-1.5 rounded-full bg-[#FF9933]/20 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#B26A00] dark:text-[#FF9933]">
-                        Major
-                      </span>
-                    )}
                   </div>
-                  <Sparkline ind={r.ind} improving={r.improving} />
+                  <Sparkline ind={r.ind} />
                 </div>
 
                 <h3 className="mt-2 text-[13px] font-semibold leading-snug">
@@ -342,14 +322,11 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
                         </div>
                       </div>
                       <div className="ml-auto pb-0.5 text-right">
-                        <div
-                          className="text-[14px] font-bold tabular-nums"
-                          style={{ color: moveColor }}
-                        >
+                        <div className="text-[14px] font-bold tabular-nums text-[#3D5265] dark:text-[var(--mh-fg)]">
                           {arrow} {r.pctChange !== null ? `${Math.abs(r.pctChange).toFixed(1)}%` : '—'}
                         </div>
-                        <div className="text-[10px] uppercase tracking-wide" style={{ color: moveColor }}>
-                          {r.improving === null ? 'no read' : r.improving ? 'improving' : 'slipping'}
+                        <div className="text-[10px] uppercase tracking-wide text-[#3D5265]/55 dark:text-[var(--mh-muted)]">
+                          change vs report
                         </div>
                       </div>
                     </div>
@@ -412,13 +389,10 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
 
         <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] text-[#3D5265]/60 dark:text-[var(--mh-muted)]">
           <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#007B6C]" /> improving vs report
-          </span>
-          <span className="inline-flex items-center gap-1.5">
-            <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#B83230]" /> slipping vs report
-          </span>
-          <span className="inline-flex items-center gap-1.5">
             <span className="inline-block h-3 w-[1px] bg-[#D6DAE0]" /> dashed line on a sparkline = report publication
+          </span>
+          <span className="inline-flex items-center gap-1.5">
+            <span className="inline-block h-2.5 w-2.5 rounded-full bg-[#004B7F]" /> filled dot = data point added since the report
           </span>
         </div>
 
@@ -427,10 +401,9 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
           indicator database — the same series the workspace’s Indicator Database tab shows, so
           nothing appears here that is not also in the workspace. Post-report points are figures
           the primary publisher (Eurostat / EEA / EAFO / IRENA / EHPA) released after the
-          January-2024 report; the “improving / slipping” read is direction-aware (for a
-          lower-is-better indicator, a fall counts as improvement). A “major” move is a change of
-          at least {MAJOR_MOVE_PCT}% from the report baseline — a screen for attention, not a
-          formal significance test.
+          January-2024 report. The percentage shown is the arithmetic change from the report
+          baseline to the latest value (▲ = the value rose, ▼ = it fell); no better/worse
+          interpretation is applied.
         </p>
       </main>
       <SiteFooter />
@@ -439,9 +412,5 @@ function IndicatorCheckInner({ indicators }: { indicators: Indicator[] }) {
 }
 
 export default function IndicatorCheckPage({ indicators }: { indicators: Indicator[] }) {
-  return (
-    <SummerPrepGate>
-      <IndicatorCheckInner indicators={indicators} />
-    </SummerPrepGate>
-  );
+  return <IndicatorCheckInner indicators={indicators} />;
 }

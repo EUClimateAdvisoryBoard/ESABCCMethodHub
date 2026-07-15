@@ -93,9 +93,9 @@ export default function MethodologyPanel() {
         <p>
           The page reads EU-27 manufacturing (NACE Rev. 2 Section C, divisions 10–33) as an{' '}
           <span className="font-semibold">input–output system</span>: what each industry sells and where
-          (output side), what it must buy and from whom (input side), and where a single foreign supplier
-          could choke the chain (risk). It stacks three layers of evidence, each shown with its own
-          provenance rather than blended:
+          (output side), what it must buy and from whom (input side), and where imports are both large and
+          concentrated in a single supplier (dependencies). It stacks three layers of evidence, each shown
+          with its own provenance rather than blended:
         </p>
         <ul className="list-disc space-y-1 pl-5">
           <li>
@@ -214,15 +214,15 @@ export default function MethodologyPanel() {
         <p className="mt-2 font-semibold text-grey-800">Import reliance (EC criticality methodology)</p>
         <Formula>IR = (imports − exports) / (domestic production + imports − exports)</Formula>
         <p>
-          Used for the curated materials layer and the risk quadrant’s x-axis, as reported by the EC/JRC
+          Used for the curated materials layer and the dependency map’s x-axis, as reported by the EC/JRC
           criticality studies. It nets out re-exports, which is why it can differ from customs shares.
         </p>
-        <p className="mt-2 font-semibold text-grey-800">Supplier concentration (risk quadrant y-axis)</p>
+        <p className="mt-2 font-semibold text-grey-800">Supplier concentration (dependency map y-axis)</p>
         <p>
           The largest single supplier’s share of EU supply of that material or product — a first-moment
           proxy for the Herfindahl-Hirschman index used in the EC and IMF dependency literature. It
-          understates risk when suppliers two and three are also non-diversified, and says nothing about
-          substitutability, stocks or recyclability — which the full EC methodology does weigh.
+          understates concentration when suppliers two and three are also non-diversified, and says nothing
+          about substitutability, stocks or recyclability — which the full EC methodology does weigh.
         </p>
       </Section>
 
