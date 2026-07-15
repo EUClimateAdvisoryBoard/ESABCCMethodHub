@@ -6515,9 +6515,17 @@ values
   ('esabcc-o3-gross-inland', 2023, 15575.3),
   ('esabcc-t1-transport-ghg', 2023, 901.9),
   ('esabcc-t1-transport-ghg', 2024, 920.0),
+  ('esabcc-t2a-passenger-demand', 2022, 5617.0),
+  ('esabcc-t2a-passenger-demand', 2023, 5932.0),
+  ('esabcc-t2b-freight-demand', 2023, 2319.0),
+  ('esabcc-t3b-air-passenger', 2022, 512.0),
+  ('esabcc-t3b-air-passenger', 2023, 582.0),
   ('esabcc-t4-car-co2-intensity', 2023, 106.4),
+  ('esabcc-t4-car-co2-intensity', 2024, 106.8),
+  ('esabcc-t4-car-co2-intensity', 2025, 96.700),
   ('esabcc-t5a-zev-share-newcars', 2023, 14.600),
-  ('esabcc-t5a-zev-share-newcars', 2024, 13.600)
+  ('esabcc-t5a-zev-share-newcars', 2024, 13.600),
+  ('esabcc-t5a-zev-share-newcars', 2025, 17.400)
 on conflict (indicator_id, year) do nothing;
 
 -- ----------------------------------------------------------------------------

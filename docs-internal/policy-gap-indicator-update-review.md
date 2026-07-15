@@ -126,6 +126,18 @@ published.
 | E4b wind additions | 2025 = 15.1 GW (EU-27) | WindEurope 2025 statistics (Feb 2026) | high |
 | B6 heat-pump stock | 2023 = 23.96 M; 2024 = 25.5 M | EHPA press releases (21- resp. 19-country "Europe" sample — see finding 6) | 2023 high / 2024 medium |
 | F5 cleantech investment | 2023 = 0.0007, 2024 = 0.0005, 2025 = 0.0004 (fraction of GDP) | Cleantech for Europe annual briefings: €11.6 bn (2023), €8.7–8.8 bn (2024), €8.2 bn (2025) ÷ Eurostat EU-27 nominal GDP (≈ €17.1 / 17.9 / 18.3 tn) | medium (GDP denominator approximated; series stores 1-significant-digit fractions) |
+| T2a passenger demand | 2022 ≈ 5 617, 2023 = 5 932 Gpkm | EEA "Sustainability of Europe's mobility systems" 2024/2025 editions (republishing the Statistical Pocketbook; excl. extra-EU aviation) | high, but see the revision caveat below |
+| T2b freight demand | 2023 ≈ 2 319 Gtkm | Sum of same-vintage EEA 2025-edition components (road 1 807 + rail ~396 + IWW ~116); 2021/2022 deliberately skipped — their published components mix data vintages | medium (computed sum, single vintage) |
+| T3b intra-EU air | 2022 = 512, 2023 = 582 Gpkm | EEA mobility systems 2024/2025 editions | high |
+| T4 new-car CO₂ | 2024 = 106.8, 2025 = 96.7 g CO₂/km | EEA new-car CO₂ monitoring press releases (2024 provisional +0.4 vs 2023 confirms the EU-27 basis; 2025 provisional covers EU+NO+IS — verify EU-27-only when the dataset lands) | 2024 high / 2025 medium-high |
+| T5a ZEV share of new cars | 2025 = 17.4 % | ACEA full-year 2025 registrations (BEV; FCEV volumes are negligible at one decimal); ACEA's 13.6 % for 2024 matches the series | high |
+
+**Series-revision caveat (transport):** the Pocketbook/EEA 2025 vintage revised
+earlier years (intra-EU air 2019 is now ~575 Gpkm vs the report's 585.5; road
+freight 2022 was revised down between editions). The appended points therefore
+sit on a slightly different base than the pre-2021 series. When network access
+to transport.ec.europa.eu is available, re-pull the full 2013–2023 series from
+the Pocketbook 2025 Excel files instead of splicing editions.
 
 Deliberately **not** added, with reasons:
 
@@ -138,6 +150,12 @@ Deliberately **not** added, with reasons:
   currency and alignment methodology. The F2 *share* series is current to 2024.
 - **F4 climate-patent share** — OECD ENV-Tech EU-27 values after 2019 not
   retrievable outside the OECD Data Explorer.
+- **T5b zero-emission lorry stock** — the only stated continuation
+  (≈13 500 at end-2024) is an ACEA/industry estimate with undefined
+  geographic and category scope, not EAFO; the new Eurostat
+  `road_eqs_lormot` recipe is the consistent path.
+- **T2a 2021, T2b 2021–2022** — published components mix data vintages
+  across EEA editions; appending cross-vintage sums would fabricate a trend.
 - **A7 bioenergy feedstock, A3 NUE, L3 afforestation, L5 settlement area** —
   the 2026 inventory (published April 2026) and the December-2025 JRC outlook
   contain the data, but no explicit values were retrievable through the
