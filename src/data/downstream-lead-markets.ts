@@ -352,7 +352,7 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
     assessment: {
       effectiveness: {
         rationale:
-          'Ex-ante the design is the strongest yet — binding minimum shares beat award-criteria nudges. But effectiveness hinges on three unresolved points: the level of the shares (set later via implementing acts), the 2029 start date (late for plants needing offtake now), and the retreat from a mandatory to a voluntary carbon label, which weakens the price-discovery signal buyers need.',
+          'Ex-ante the design is the strongest yet — binding minimum shares beat award-criteria nudges. The proposal already fixes the headline shares (≥25% low-carbon steel, 5% concrete/mortar, 25% aluminium from 1 Jan 2029); what is left to delegated acts is the definition of "low-carbon" (the GHG-intensity thresholds and performance classes via ESPR/CPR). Effectiveness therefore hinges on: how strict those thresholds turn out to be, the 2029 start date (late for plants needing offtake now), and the retreat from a mandatory to a voluntary carbon label, which weakens the price-discovery signal buyers need.',
       },
       efficiency: {
         rationale:
@@ -372,8 +372,13 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
       },
     },
     overallRead:
-      'The central file to follow. The design direction is right (binding shares, common definitions); the risks are timing (2029), ambition level left to implementing acts, and the voluntary-label retreat. Trilogue outcome expected 2027.',
+      'The central file to follow. The design direction is right (binding shares of 25%/5%/25% for steel/concrete/aluminium, common definitions); the risks are timing (2029), how strict the delegated "low-carbon" thresholds turn out to be, and the voluntary-label retreat. Trilogue outcome expected 2027.',
     keyData: [
+      {
+        label: 'Minimum low-carbon shares (as proposed)',
+        value: '≥25% steel, 5% concrete/mortar, 25% aluminium in covered public contracts (fixed in the proposal; "low-carbon" thresholds set later via delegated acts)',
+        source: 'Commission proposal / law-firm analyses',
+      },
       {
         label: 'Proposal date / procedure',
         value: '4 March 2026, 2026/0068(COD), joint ITRE-IMCO-INTA',
@@ -594,7 +599,7 @@ export const LEAD_MARKET_POLICIES: LeadMarketPolicy[] = [
     category: 'border-price',
     status: 'proposed',
     statusDetail:
-      'Base regulation (EU) 2023/956 in force; definitive regime with financial obligations from 1 Jan 2026 (2025 omnibus added a 50 t/yr de-minimis exempting ~90% of importers while keeping ~99% of embedded emissions). December 2025 proposal extends scope to ~180 downstream products (avg. 79% steel/aluminium content) with certificates from 1 Jan 2028; Council general approach June 2026; ENVI position adopted (incl. Temporary Decarbonisation Fund); trilogues ahead.',
+      'Base regulation (EU) 2023/956 in force; definitive regime with financial obligations from 1 Jan 2026 (2025 omnibus added a 50 t/yr de-minimis exempting ~90% of importers while keeping ~99% of embedded emissions). December 2025 proposal extends scope to ~180 downstream products (avg. 79% steel/aluminium content) with certificates from 1 Jan 2028; Council general approach June 2026; ENVI committee position adopted (incl. Temporary Decarbonisation Fund), with the Parliament plenary mandate expected September 2026 before trilogues can begin.',
     reference:
       'Reg. (EU) 2023/956; omnibus amendment 2025; downstream-extension proposal Dec 2025 (COD ongoing)',
     sectors:
@@ -1013,7 +1018,7 @@ export const WATCH_TIMELINE: WatchItem[] = [
   },
   {
     when: 'H2 2026',
-    what: 'CBAM downstream-extension trilogues (Council GA June 2026, ENVI position adopted) — product list, default values, Temporary Decarbonisation Fund.',
+    what: 'CBAM downstream-extension: Parliament plenary position expected September 2026 (Council GA June 2026, ENVI committee position adopted) before trilogues on product list, default values, Temporary Decarbonisation Fund.',
     policyId: 'cbam-downstream',
   },
   {

@@ -148,7 +148,7 @@ export default function MethodologyPanel() {
           <span className="font-semibold">Reference year:</span> {REFERENCE_YEAR} — the latest year covered
           by the whole input–output layer, so every view describes the same cross-section. 2024 backbone
           data is already published and available via the year toggle in the trade-balance view; the IO
-          layer will follow with the next FIGARO release (annual, t+18 months).
+          layer will follow with the next FIGARO release (published annually each July, covering data up to t−2).
         </p>
       </Section>
 

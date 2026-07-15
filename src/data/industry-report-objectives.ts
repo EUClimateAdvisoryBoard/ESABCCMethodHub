@@ -255,9 +255,9 @@ export const SOURCES: IrSource[] = [
     id: 'ar6-db-iiasa',
     type: 'scenario database',
     short: 'AR6 Scenario DB (IIASA)',
-    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database hosted by IIASA (release 1.1, Nov 2022; 3,131 scenarios). International Institute for Applied Systems Analysis.',
+    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database hosted by IIASA (release 1.1, Nov 2022; 3,131 scenarios, 188 modelling frameworks). International Institute for Applied Systems Analysis.',
     url: 'https://data.ece.iiasa.ac.at/ar6/',
-    doi: '10.5281/zenodo.5886911',
+    doi: '10.5281/zenodo.5886912',
   },
   {
     id: 'iea-nze-2023',
@@ -653,10 +653,10 @@ export const ROADMAPS: IrRoadmap[] = [
     region: 'EU',
     sourceId: 'nzia-2024',
     summary:
-      'The EU’s legislative answer to concentrated clean-tech supply chains: manufacturing capacity for strategic net-zero technologies should approach or reach at least 40% of the Union’s annual deployment needs by 2030 and 15% of world production (in value) by 2040 — plus the first legally binding CO2-storage target: ≥50 Mt/yr injection capacity by 2030.',
+      'The EU’s legislative answer to concentrated clean-tech supply chains: the binding benchmark is manufacturing capacity for strategic net-zero technologies approaching or reaching at least 40% of the Union’s annual deployment needs by 2030 (Art. 5), alongside a broader aspirational objective of 15% of world production (in value) by 2040 (Art. 1) — plus the first legally binding CO2-storage target: ≥50 Mt/yr injection capacity by 2030.',
     levers: [
       '40% domestic-manufacturing benchmark (2030)',
-      '15%-of-world-production benchmark (2040)',
+      '15%-of-world-production aspirational objective (2040)',
       'CO2 injection capacity ≥50 Mt/yr (2030)',
       'Permitting acceleration & net-zero valleys',
     ],
