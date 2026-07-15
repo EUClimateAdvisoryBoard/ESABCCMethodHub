@@ -119,7 +119,57 @@ export default function MethodologyPanel() {
         </ul>
       </Section>
 
-      <Section n={2} title="Datasets — what feeds what">
+      <Section n={2} title="How input–output modelling works — intermediate demand and the Leontief inverse">
+        <p>
+          An input–output (IO) table is a grid of the whole economy: each{' '}
+          <span className="font-semibold">row</span> is an industry as a <em>seller</em>, and each{' '}
+          <span className="font-semibold">column</span> is the same industry as a <em>buyer</em>. Reading a
+          column down the table gives the recipe of one industry — everything it has to purchase to make its
+          own output.
+        </p>
+        <p>
+          Those purchases are <span className="font-semibold">intermediate demand</span> (also called
+          intermediate consumption): goods and services bought by one industry and used up in producing
+          something else — crude oil into a refinery, steel into a car, electricity into a smelter. They are
+          the counterpart of <span className="font-semibold">final demand</span>, where output leaves the
+          production system for good: household consumption, government spending, investment and exports.
+          Every euro of an industry’s output is bought either as another industry’s intermediate input or as
+          final demand — the accounting identity the table balances:
+        </p>
+        <Formula>x = A·x + f&nbsp;&nbsp;→&nbsp;&nbsp;output = intermediate demand + final demand</Formula>
+        <p>
+          <em>x</em> is the vector of each industry’s total output, <em>f</em> is final demand, and{' '}
+          <em>A</em> is the <span className="font-semibold">technical-coefficients matrix</span>: cell{' '}
+          <em>
+            a<sub>ij</sub>
+          </em>{' '}
+          is the euros of product <em>i</em> needed per euro of output of industry <em>j</em> — the input
+          recipe, read straight off the table columns. So <em>A·x</em> is all the intermediate demand the
+          economy generates in order to produce output <em>x</em>.
+        </p>
+        <p>Solving that identity for output gives the engine of IO modelling:</p>
+        <Formula>x = (I − A)⁻¹ · f&nbsp;&nbsp;— where (I − A)⁻¹ is the Leontief inverse, L</Formula>
+        <p>
+          The <span className="font-semibold">Leontief inverse</span> L converts a bill of final demand into
+          the <em>total</em> output every industry must produce to satisfy it — not just the direct input,
+          but the whole chain behind it. One euro of car exports pulls in steel directly; the steel pulls in
+          iron ore, coke and electricity; those pull in mining and fuels, and so on. L sums that regress
+          (I + A + A² + A³ + …) into a single multiplier, so it captures the{' '}
+          <span className="font-semibold">direct and indirect</span> requirements of any demand.
+        </p>
+        <p>
+          This is what the other views rely on. The imported crude that “disappears” from C19 under product
+          attribution (§4) reappears as intermediate demand into refining because the column recipe puts it
+          there; the foreign value added in exports (§5) is L applied across borders — Eurostat’s FIGARO
+          tables link one country’s intermediate demand to another’s value added, so an import can be traced
+          to the origin economy whose labour and capital ultimately produced it. The one strong assumption is{' '}
+          <span className="font-semibold">proportionality</span>: every euro of an industry’s output is taken
+          to use the same recipe <em>A</em> (no economies of scale, no input substitution) — which is why the
+          IO figures are modelled statistics rather than raw observations.
+        </p>
+      </Section>
+
+      <Section n={3} title="Datasets — what feeds what">
         <div className="overflow-x-auto">
           <table className="w-full min-w-[640px] border-collapse text-[11px]">
             <thead>
@@ -148,11 +198,11 @@ export default function MethodologyPanel() {
           <span className="font-semibold">Reference year:</span> {REFERENCE_YEAR} — the latest year covered
           by the whole input–output layer, so every view describes the same cross-section. 2024 backbone
           data is already published and available via the year toggle in the trade-balance view; the IO
-          layer will follow with the next FIGARO release (annual, t+18 months).
+          layer will follow with the next FIGARO release (published annually each July, covering data up to t−2).
         </p>
       </Section>
 
-      <Section n={3} title="One trade flow, three attributions — why the numbers differ (C19 worked example)">
+      <Section n={4} title="One trade flow, three attributions — why the numbers differ (C19 worked example)">
         <p>
           “Imports of division X” is not one number. The three official lenses used here attribute the same
           customs flows differently, and the differences are informative rather than errors:
@@ -186,7 +236,7 @@ export default function MethodologyPanel() {
         </p>
       </Section>
 
-      <Section n={4} title="Definitions & formulas">
+      <Section n={5} title="Definitions & formulas">
         <p className="font-semibold text-grey-800">Imported share of intermediate inputs (use table)</p>
         <Formula>
           imported share(i) = imported intermediate inputs(i) / total intermediate inputs(i)
@@ -226,7 +276,7 @@ export default function MethodologyPanel() {
         </p>
       </Section>
 
-      <Section n={5} title="Known gaps and consistency notes (read before quoting numbers)">
+      <Section n={6} title="Known gaps and consistency notes (read before quoting numbers)">
         <ul className="list-disc space-y-1.5 pl-5">
           <li>
             <span className="font-semibold">The Section C total ≠ the sum of its divisions in TEC.</span>{' '}
@@ -272,7 +322,7 @@ export default function MethodologyPanel() {
         </ul>
       </Section>
 
-      <Section n={6} title="Reproducibility">
+      <Section n={7} title="Reproducibility">
         <p>
           Every statistical number on this page is regenerated by one script against the public Eurostat
           dissemination API (no key required):

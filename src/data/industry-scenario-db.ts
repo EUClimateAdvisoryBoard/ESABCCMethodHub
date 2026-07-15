@@ -190,7 +190,7 @@ export const SCENARIO_SOURCES: ScenarioSource[] = [
   {
     id: 'ar6-db-iiasa',
     short: 'AR6 Scenario DB (IIASA)',
-    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database (v1.0, 4 Apr 2022) [Data set]. Zenodo. Hosted by IIASA — 3,131 scenarios, 191 modelling frameworks; 1,202 climate-classified (C1–C8).',
+    cite: 'Byers, E., Krey, V., Kriegler, E., Riahi, K., Schaeffer, R., et al. (2022). AR6 Scenarios Database (release 1.1, Nov 2022) [Data set]. Zenodo. Hosted by IIASA — 3,131 scenarios, 188 modelling frameworks; 1,202 climate-classified (C1–C8).',
     url: 'https://data.ece.iiasa.ac.at/ar6/',
     doi: '10.5281/zenodo.5886912',
     family: 'IIASA / AR6',
@@ -740,14 +740,14 @@ export const SCENARIOS: IndustryScenario[] = [
   },
   {
     id: 'sc-ec-ia-s1',
-    label: 'EU 2040 IA — S1 (Option 1, −78%)',
+    label: 'EU 2040 IA — S1 (Option 1, up to −80%)',
     ensemble: 'EC 2040 Impact Assessment (SWD(2024) 63)',
     sourceId: 'ec-2040-ia',
     scenarioClass: 'EU-netzero',
     scope: 'EU industry (energy + process, GHG)',
     unit: 'Mt CO2e',
     highlight: true,
-    net2040: '−78% net vs 1990 (economy-wide)',
+    net2040: 'up to −80% net vs 1990 (economy-wide)',
     characterisedBy:
       'The lowest-ambition modelled pathway (maps to Option 1, ~80% economy-wide). Strengthens existing trends but postpones the novel levers — hydrogen electrolysis, carbon capture and industrial removals — largely to 2041–2050; carbon capture stays below ~100 Mt/yr and fossil-import dependence is highest (34%).',
     differsBy: 'Slowest technology roll-out, highest 2030–2050 GHG budget (21 Gt), most industry abatement left to the final decade — industry at the top of the 25–219 Mt 2040 range.',
@@ -759,17 +759,17 @@ export const SCENARIOS: IndustryScenario[] = [
   },
   {
     id: 'sc-ec-ia-s2',
-    label: 'EU 2040 IA — S2 (Option 2, −88%)',
+    label: 'EU 2040 IA — S2 (Option 2, −85 to −90%)',
     ensemble: 'EC 2040 Impact Assessment (SWD(2024) 63)',
     sourceId: 'ec-2040-ia',
     scenarioClass: 'EU-netzero',
     scope: 'EU industry (energy + process, GHG)',
     unit: 'Mt CO2e',
     highlight: true,
-    net2040: '−88% net vs 1990 (economy-wide)',
+    net2040: '−85 to −90% net vs 1990 (economy-wide)',
     characterisedBy:
-      'The IA baseline (Option 2, 85–90%): full deployment of existing solutions — electrification, renewables — plus carbon capture (~220 Mt/yr, ~150 stored), higher e-fuel uptake on fossil-free carbon and further agricultural abatement. Industry energy-related emissions ~120 Mt in 2040.',
-    differsBy: 'The reference/continuation pathway — more novel tech than S1, less and later than S3; industry mid-range (~120 Mt) in 2040.',
+      'The middle-ambition option (Option 2, 85–90%): full deployment of existing solutions — electrification, renewables — plus carbon capture (~220 Mt/yr, ~150 stored), higher e-fuel uptake on fossil-free carbon and further agricultural abatement. Industry energy-related emissions ~120 Mt in 2040.',
+    differsBy: 'The intermediate ambition pathway — more novel tech than S1, less and later than S3; industry mid-range (~120 Mt) in 2040.',
     series: [
       { year: 2022, value: 691.3 },
       { year: 2030, value: 496 },
@@ -778,14 +778,14 @@ export const SCENARIOS: IndustryScenario[] = [
   },
   {
     id: 'sc-ec-ia-s3',
-    label: 'EU 2040 IA — S3 (Option 3, −90–92%, preferred)',
+    label: 'EU 2040 IA — S3 (Option 3, −90 to −95%, preferred)',
     ensemble: 'EC 2040 Impact Assessment (SWD(2024) 63)',
     sourceId: 'ec-2040-ia',
     scenarioClass: 'EU-netzero',
     scope: 'EU industry (energy + process, GHG)',
     unit: 'Mt CO2e',
     highlight: true,
-    net2040: '−90 to −92% net vs 1990 (recommended 90%)',
+    net2040: '−90 to −95% net vs 1990 (recommended 90%)',
     characterisedBy:
       'The Commission’s preferred pathway (Option 3, 90–95%): earliest and fastest roll-out of hydrogen electrolysis, carbon capture (~350 Mt/yr, ~240 stored) and industrial removals in 2031–2040; renewables + nuclear >90% of electricity, final-energy electrification roughly doubling from ~25% to ~50%. Deepest industry cut — to the low end of the 25–219 Mt 2040 range.',
     differsBy: 'Earliest, deepest cuts, lowest 2030–2050 budget (16 Gt), highest reliance on capture and industrial removals; industry near the bottom of the 25–219 Mt 2040 range.',
@@ -988,7 +988,7 @@ export const ENSEMBLE_FAMILIES: EnsembleFamily[] = [
     scope: 'Global',
     sourceId: 'ar6-db-iiasa',
     characterisedBy:
-      'The reference IPCC AR6 ensemble: 3,131 scenarios from 191 modelling frameworks, of which 1,202 are climate-classified into categories C1–C8 by peak/2100 warming. Industry CO2 falls a median 70% (max 96%) from 2019 to 2050 in scenarios ≤2 °C.',
+      'The reference IPCC AR6 ensemble: 3,131 scenarios from 188 modelling frameworks, of which 1,202 are climate-classified into categories C1–C8 by peak/2100 warming. Industry CO2 falls a median 70% (max 96%) from 2019 to 2050 in scenarios ≤2 °C.',
     differsBy:
       'Scenarios differ by warming category (C1 = 1.5 °C no/limited overshoot → C8 > 4 °C), by model family and by socio-economic (SSP) assumptions.',
     plotted: true,

@@ -360,7 +360,7 @@ export const CATALOGUE: Subsector[] = [
             location: 'Boden, Sweden',
             capacity: '2.1 Mt/yr DRI · 2.5 Mt/yr steel · 700 MW electrolyser (phase 1)',
             status: 'construction',
-            fid: 'FID 2023–24; under construction, ~60% complete (Oct 2025), first steel targeted 2026; ~60% of output under offtake (Mercedes-Benz, Porsche, Volvo, IKEA)',
+            fid: 'FID 2023–24; under construction, ~60% complete (Oct 2025); first-steel target (2026) under strain after cost overruns prompted a ~€1.4bn additional financing round (Apr 2026); ~60% of output under offtake (Mercedes-Benz, Porsche, Volvo, IKEA)',
             year: '2024',
             source: {
               org: 'Mission Possible Partnership',
@@ -1208,7 +1208,7 @@ export const CATALOGUE: Subsector[] = [
             location: 'Rotterdam, Netherlands',
             capacity: '≈ 2.5 Mt CO₂/yr from refineries & hydrogen plants',
             status: 'fid',
-            fid: 'FID taken October 2023; construction from 2024; operation expected ~2026–2028',
+            fid: 'FID taken October 2023; construction from 2024; operation expected H2 2027',
             year: '2023',
             source: {
               org: 'Rigzone',
@@ -1313,7 +1313,7 @@ export const CATALOGUE: Subsector[] = [
             name: 'HEINEKEN Seville solar thermal plant',
             company: 'HEINEKEN España + ENGIE',
             location: 'Seville, Spain',
-            capacity: '30 MW concentrating solar + 68 MWh storage; ~50% of brewery heat',
+            capacity: '30 MW concentrating solar + 68 MWh storage; cuts brewery fossil-gas use by >60%',
             status: 'operational',
             fid: 'Built & operational (inaugurated Sept 2023; ~€21m)',
             year: '2023',
@@ -1568,11 +1568,11 @@ export const CROSS_CUTTING_ENABLERS: Subsector[] = [
           },
           {
             name: 'Aramis',
-            company: 'TotalEnergies, Shell, EBN, Gasunie',
+            company: 'EBN, Gasunie (state parties); TotalEnergies & Shell partners on storage but withdrew from pipeline-infrastructure financing',
             location: 'Rotterdam (Maasvlakte) → North Sea storage',
             capacity: '≥5 Mt/yr initially, expandable to ~22 Mt/yr',
             status: 'announced',
-            fid: 'FID not yet taken (expected 2026); €726m Dutch government support committed',
+            fid: 'FID not yet taken (guided 2026–27); ~$726m (≈€639m) Dutch government support committed after Shell & TotalEnergies opted out of financing the pipeline',
             year: '2026',
             source: {
               org: 'Aramis CCS',
