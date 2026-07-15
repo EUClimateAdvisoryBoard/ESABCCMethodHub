@@ -22,6 +22,18 @@ const COLORS = {
   subtitle: '666666',
 };
 
+/** A cell that renders as a clickable hyperlink in the workbook. */
+export interface LinkCell {
+  text: string;
+  hyperlink: string;
+}
+
+export type CellValue = string | number | LinkCell | null | undefined;
+
+function isLinkCell(v: CellValue): v is LinkCell {
+  return typeof v === 'object' && v != null && 'hyperlink' in v;
+}
+
 export interface SheetSpec {
   /** Worksheet name (sanitised + truncated to 31 chars). */
   name: string;
@@ -30,7 +42,7 @@ export interface SheetSpec {
   /** Optional italic subtitle (unit, provenance, …). */
   subtitle?: string;
   headers: string[];
-  rows: (string | number | null | undefined)[][];
+  rows: CellValue[][];
 }
 
 function sanitizeSheetName(name: string, fallback: string): string {
@@ -100,8 +112,14 @@ export async function downloadTableWorkbook(
       const row = ws.getRow(headerRowNum + 1 + ri);
       spec.headers.forEach((_, ci) => {
         const v = r[ci];
-        row.getCell(ci + 1).value = v == null ? '' : (v as string | number);
-        row.getCell(ci + 1).font = { size: 10 };
+        const cell = row.getCell(ci + 1);
+        if (isLinkCell(v)) {
+          cell.value = { text: v.text, hyperlink: v.hyperlink };
+          cell.font = { size: 10, color: { argb: '0563C1' }, underline: true };
+        } else {
+          cell.value = v == null ? '' : v;
+          cell.font = { size: 10 };
+        }
       });
       if (ri % 2 === 0) {
         for (let c = 1; c <= lastCol; c++) {
@@ -119,7 +137,7 @@ export async function downloadTableWorkbook(
       let maxLen = h.length;
       for (const r of spec.rows.slice(0, 200)) {
         const v = r[ci];
-        if (v != null) maxLen = Math.max(maxLen, String(v).length);
+        if (v != null) maxLen = Math.max(maxLen, (isLinkCell(v) ? v.text : String(v)).length);
       }
       ws.getColumn(ci + 1).width = Math.min(Math.max(maxLen + 2, 10), 60);
     });

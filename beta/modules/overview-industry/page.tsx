@@ -4,13 +4,19 @@
  * Overview Industry — beta module landing page.
  * ---------------------------------------------
  * An overview surface for the industry lead's cross-cutting work, gathering
- * two sub-pages:
+ * three sub-pages:
  *   • Clean Tech  — ONE collapsible emissions sunburst of EU manufacturing
  *                   (NACE Section C): total → divisions → subsectors → levers,
  *                   with cost / readiness / barriers / investment decisions.
  *   • Trade flows — input–output map of EU-27 manufacturing trade (all NACE
  *                   Section C divisions): imports/exports, supply-chain inputs
  *                   and high-risk import dependencies, on live Eurostat data.
+ *   • Industry report — objectives & evidence base for the next progress
+ *                   report's industry chapter: a synthesis of industrial
+ *                   decarbonisation roadmaps (incl. investment timelines) and
+ *                   of the clean-tech industry's role in economy-wide
+ *                   decarbonisation, with overview figures and a fully sourced
+ *                   Excel download (every data point linked to its paper).
  */
 
 import Link from 'next/link';
@@ -33,8 +39,9 @@ export default function OverviewIndustryPage() {
         </div>
         <h1 className="mt-2 text-3xl font-bold text-grey-900">Overview Industry</h1>
         <p className="mt-2 max-w-text text-grey-700">
-          A cross-cutting overview surface for EU industrial decarbonisation. Two sub-pages so far —
-          an evidence catalogue of clean-tech options, and a trade-flows view.
+          A cross-cutting overview surface for EU industrial decarbonisation. Three sub-pages so
+          far — an evidence catalogue of clean-tech options, a trade-flows view, and the objectives
+          &amp; evidence base for the next report&apos;s industry chapter.
         </p>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -86,6 +93,32 @@ export default function OverviewIndustryPage() {
             </p>
             <span className="mt-3 inline-block text-sm font-semibold text-secondary">
               Open the map →
+            </span>
+          </Link>
+
+          <Link
+            href="/beta/overview-industry/report-objectives"
+            className="group rounded-xl border border-grey-200 bg-white p-5 shadow-sm transition hover:border-accent-violet hover:shadow"
+          >
+            <div className="flex items-center gap-2">
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-violet text-white">
+                ◎
+              </span>
+              <h2 className="text-lg font-bold text-grey-900 group-hover:text-accent-violet">
+                Industry report — objectives
+              </h2>
+            </div>
+            <p className="mt-2 text-sm text-grey-600">
+              The objectives and evidence base for the next progress report&apos;s industry work: a
+              synthesis of industrial decarbonisation pathways and roadmaps (including their
+              investment timelines), a synthesis of the clean-tech industry&apos;s role in
+              economy-wide decarbonisation, and the report objectives themselves. Key overview
+              figures aggregate pathway, scenario (incl. IIASA AR6 ensemble) and investment data —
+              and one Excel download carries every data point, the objectives, the scenarios and
+              the exact link to the paper behind each number.
+            </p>
+            <span className="mt-3 inline-block text-sm font-semibold text-accent-violet">
+              Open the objectives →
             </span>
           </Link>
         </div>
