@@ -135,17 +135,26 @@ async function syncCombined(sql) {
 
   const marker = `\n${RULE}\n-- ${MIGRATION_NAME}\n`;
   const at = combined.indexOf(marker);
-  // This migration is the highest-numbered, so its block runs to EOF — drop
-  // everything from the marker onward, then re-append the fresh block.
-  if (at >= 0) combined = combined.slice(0, at);
-  combined = combined.replace(/\s*$/, '\n');
-  combined += `\n${RULE}\n-- ${MIGRATION_NAME}\n${RULE}\n\n${sql.replace(/\s*$/, '')}\n`;
+  const block = `\n${RULE}\n-- ${MIGRATION_NAME}\n${RULE}\n\n${sql.replace(/\s*$/, '')}\n`;
+  if (at >= 0) {
+    // Replace ONLY this migration's block. It is NOT necessarily the last
+    // block in the file (higher-numbered migrations are appended after it),
+    // so cutting to EOF here would silently delete them — the block ends at
+    // the next block header (separator line + "-- <file>" comment) or EOF.
+    const rest = combined.slice(at + marker.length);
+    const next = rest.indexOf(`\n${RULE}\n-- `);
+    const tail = next >= 0 ? rest.slice(next) : '\n';
+    combined = combined.slice(0, at) + block + tail;
+  } else {
+    combined = combined.replace(/\s*$/, '\n') + block;
+  }
 
-  // Bump the banner's upper bound to this migration's number.
+  // Bump the banner's upper bound, but only upward — this migration may not
+  // be the highest-numbered one in the file.
   const num = MIGRATION_NAME.match(/^(\d+)_/)[1];
   combined = combined.replace(
-    /-- COMBINED MIGRATIONS \((\d+) -> \d+\)/,
-    `-- COMBINED MIGRATIONS ($1 -> ${num})`
+    /(-- COMBINED MIGRATIONS \(.*?-> )(\d+)\)/,
+    (m, pre, n) => (Number(n) >= Number(num) ? m : `${pre}${num})`)
   );
 
   await writeFile(COMBINED, combined);
