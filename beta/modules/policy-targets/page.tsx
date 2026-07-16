@@ -25,6 +25,7 @@ import {
   type PolicyTarget,
 } from '@/data/policy-targets';
 import { useTargetConfirmations } from '@/lib/useTargetConfirmations';
+import TargetSourceModal from './TargetSourceModal';
 
 type FilterKey = 'policy' | 'document_type' | 'target_label' | 'obligation' | 'target_type' | 'climate_relevance';
 
@@ -49,6 +50,8 @@ export default function PolicyTargetsRegisterPage() {
   const [timeline, setTimeline] = useState<'all' | 'timebound' | 'unspecified'>('all');
   const [confirmView, setConfirmView] = useState<'all' | 'confirmed' | 'unconfirmed'>('all');
   const [downloading, setDownloading] = useState(false);
+  // Target whose EUR-Lex source text is open in the reader modal (null = closed).
+  const [sourceTarget, setSourceTarget] = useState<PolicyTarget | null>(null);
 
   const options = useMemo(() => ({
     policy: uniqueSorted(policyTargets.map((t) => t.policy_short)),
@@ -233,7 +236,18 @@ export default function PolicyTargetsRegisterPage() {
                     <td className="px-2 py-2 text-tertiary-dark dark:text-[var(--mh-fg)]">{t.policy_area}</td>
                     <td className="px-2 py-2 text-tertiary-dark dark:text-[var(--mh-fg)]">
                       <div className="leading-snug">{t.target_text}</div>
-                      {t.article && <div className="text-[10.5px] text-secondary mt-1">{t.article}</div>}
+                      <button
+                        type="button"
+                        onClick={() => setSourceTarget(t)}
+                        title="Show the verbatim source text from EUR-Lex (Policy Navigator workspace)"
+                        className="group mt-1 inline-flex items-start gap-1 text-left text-[10.5px] text-secondary hover:text-primary hover:underline decoration-secondary/40"
+                      >
+                        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 mt-px opacity-70 group-hover:opacity-100">
+                          <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+                          <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+                        </svg>
+                        <span>{t.article || 'View source text'}</span>
+                      </button>
                     </td>
                     <td className="px-2 py-2"><Badge label={LABEL_META[t.target_label].label} color={LABEL_META[t.target_label].color} /></td>
                     <td className="px-2 py-2"><Badge label={OBLIGATION_META[t.obligation].label} color={OBLIGATION_META[t.obligation].color} bg={OBLIGATION_META[t.obligation].bg} /></td>
@@ -252,6 +266,8 @@ export default function PolicyTargetsRegisterPage() {
           </table>
         </div>
       </div>
+
+      <TargetSourceModal target={sourceTarget} onClose={() => setSourceTarget(null)} />
     </div>
   );
 }
