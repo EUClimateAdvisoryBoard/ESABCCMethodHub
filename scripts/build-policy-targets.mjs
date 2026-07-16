@@ -25,6 +25,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -33,6 +34,7 @@ const TEXTS_DIR = path.join(ROOT, 'public/data/policy-texts');
 const POLICIES_TS = path.join(ROOT, 'src/data/policies.ts');
 const AGENT_DIR = process.env.AGENT_TARGETS_DIR
   || path.join(ROOT, 'scripts/policy-targets-input');
+const OVERRIDES_FILE = path.join(ROOT, 'scripts/policy-targets-overrides.json');
 const OUTPUT_FILE = path.join(ROOT, 'src/data/policy-targets.generated.ts');
 
 const MIN_QUOTE = 30;
@@ -86,7 +88,7 @@ function bodyFor(policy) {
 }
 
 // ─── Deterministic classification ───────────────────────────────────────────
-const MITIGATION = ['greenhouse gas', 'ghg', 'emission', 'net zero', 'net-zero', 'climate neutrality', 'climate-neutral', 'renewable', 'energy efficiency', 'energy saving', 'final energy consumption', 'primary energy', 'decarbon', 'carbon', 'co2', 'methane', 'fluorinated', 'removal', 'carbon sink', 'sink', 'zero-emission', 'zero emission', 'fossil fuel', 'low-carbon', 'low carbon', 'hydrogen'];
+const MITIGATION = ['greenhouse gas', 'ghg', 'emission', 'net zero', 'net-zero', 'climate neutrality', 'climate-neutral', 'renewable', 'energy efficiency', 'energy saving', 'final energy consumption', 'primary energy', 'decarbon', 'carbon', 'co2', 'methane', 'fluorinated', 'removal', 'carbon sink', 'sink', 'zero-emission', 'zero emission', 'fossil fuel', 'low-carbon', 'low carbon', 'hydrogen', 'sustainable aviation fuel', 'synthetic aviation fuel', 'onshore power supply', 'climate change mitigation', 'paris agreement'];
 const ADAPTATION = ['adaptation', 'adaptive capacity', 'resilience', 'resilient', 'climate risk', 'climate-related', 'restoration', 'restore', 'ecosystem', 'good ecological status', 'good environmental status', 'water reuse', 'drought', 'flood', 'vulnerability', 'early warning', 'nature restoration', 'favourable reference'];
 const INDICATOR_VOCAB = [
   'net greenhouse gas emissions', 'greenhouse gas emissions', 'greenhouse gas emission reductions', 'CO2 emissions', 'CO2 equivalent',
@@ -133,9 +135,18 @@ function timelineOf(s) {
 }
 
 function obligationOf(s, instrumentBinding) {
+  // Soft law binds nobody: a communication/strategy row is voluntary even when
+  // the quoted passage contains "shall" (it is usually quoting or proposing
+  // binding text that lives elsewhere).
+  if (!instrumentBinding) return 'voluntary';
   const lc = s.toLowerCase();
+  // Best-efforts constructions defeat "shall": "shall endeavour / aim / strive"
+  // is not a hard obligation…
+  if (/\bshall\s+(endeavour|aim|strive)\b/.test(lc)) return 'voluntary';
+  // …but a governing "shall"/"must" wins over an incidental "may"/"should"
+  // elsewhere in the sentence.
   if (/\b(shall|must|are required to|is required to|are obliged to|mandatory|binding)\b/.test(lc)) return 'mandatory';
-  if (/\b(should|may|aim to|aims to|endeavour|strive|are encouraged to|is encouraged to|voluntary|on a voluntary basis|where appropriate|as far as possible)\b/.test(lc)) return 'voluntary';
+  if (/\b(should|may|aim to|aims to|endeavour|strive|are encouraged to|is encouraged to|voluntary|on a voluntary basis|as far as possible)\b/.test(lc)) return 'voluntary';
   return instrumentBinding ? 'mandatory' : 'voluntary';
 }
 
@@ -203,9 +214,38 @@ function verbatimSlice(body, quote) {
   return norm(original.slice(startPos, i));
 }
 
+// Truncate at a word boundary (no mid-word cuts), appending an ellipsis when
+// something was actually removed.
+function truncateWords(s, max) {
+  if (!s || s.length <= max) return s;
+  const cut = s.slice(0, max - 1);
+  const at = cut.lastIndexOf(' ');
+  return (at > max * 0.6 ? cut.slice(0, at) : cut).replace(/[\s,;—-]+$/, '') + '…';
+}
+
+// Stable, content-derived row id: survives re-ordering and regeneration, so
+// per-user human confirmations (column 12, keyed by id in localStorage) keep
+// pointing at the same target.
+function stableId(policyId, exactText) {
+  return 'tgt-' + crypto.createHash('sha1').update(policyId + '::' + norm(exactText).toLowerCase()).digest('hex').slice(0, 8);
+}
+
+// Reviewed corrections (scripts/policy-targets-overrides.json): the output of
+// the 2026-07 per-act fact-check + verification pass. Each entry is keyed by
+// the stable row id and either drops the row or overrides named fields after
+// deterministic classification. See the "reason" field of each entry.
+function loadOverrides() {
+  if (!fs.existsSync(OVERRIDES_FILE)) return new Map();
+  const list = JSON.parse(fs.readFileSync(OVERRIDES_FILE, 'utf8'));
+  const m = new Map();
+  for (const o of list) m.set(o.id, o);
+  return m;
+}
+
 // ─── Merge ──────────────────────────────────────────────────────────────────
 function main() {
   const policies = loadPolicies();
+  const overrides = loadOverrides();
   const sources = [];
   if (fs.existsSync(AGENT_DIR)) {
     // Agent files first, the regex safety-net (_regex.json) LAST, so that on a
@@ -254,22 +294,30 @@ function main() {
 
     const instrumentBinding = ['regulation', 'directive', 'decision'].includes(p.document_type);
     const rec = {
+      id: stableId(p.id, exact),
       policy_id: p.id,
       policy_name: p.title,
       policy_short: p.short_title || p.title,
       document_type: p.document_type,
       policy_area: POLICY_AREA[p.domain] || (p.domain ? p.domain[0].toUpperCase() + p.domain.slice(1) : '—'),
-      article: (typeof c.article === 'string' && c.article.trim()) ? c.article.trim().slice(0, 80) : '',
+      article: (typeof c.article === 'string' && c.article.trim()) ? truncateWords(c.article.trim(), 120) : '',
       target_text: exact,
       target_label: labelOf(exact, c.label),
       obligation: obligationOf(exact, instrumentBinding),
       target_type: targetTypeOf(exact),
-      timeline: timelineOf(exact) || (typeof c.timeline === 'string' && /\d|every|annual/i.test(c.timeline) ? norm(c.timeline).slice(0, 60) : ''),
+      timeline: timelineOf(exact) || (typeof c.timeline === 'string' && /\d|every|annual/i.test(c.timeline) ? truncateWords(norm(c.timeline), 80) : ''),
       indicators: indicatorsOf(exact, c.indicators),
       climate_relevance: climateRelevanceOf(exact),
       celex_number: p.celex_number,
       eurlex_url: p.eurlex_url,
     };
+    const ov = overrides.get(rec.id);
+    if (ov) {
+      if (ov.drop) continue;
+      for (const [k, v] of Object.entries(ov.set || {})) rec[k] = v;
+      rec.article = truncateWords(rec.article, 120);
+      rec.timeline = truncateWords(rec.timeline, 80);
+    }
     if (!perPolicy.has(p.id)) perPolicy.set(p.id, []);
     perPolicy.get(p.id).push(rec);
   }
@@ -286,7 +334,6 @@ function main() {
     list.forEach((r, i) => { r.target_number = i + 1; });
     out.push(...list);
   }
-  out.forEach((r, i) => { r.id = `tgt-${String(i + 1).padStart(4, '0')}`; });
 
   const tally = (key) => out.reduce((m, t) => ((m[t[key]] = (m[t[key]] || 0) + 1), m), {});
 
@@ -299,6 +346,10 @@ function main() {
  * public/data/policy-texts/*.txt. Candidates were gathered by a fan-out of
  * extraction agents (recall-first) plus a regex safety net, then every quote
  * was validated as an exact source substring before being kept.
+ *
+ * Row ids are stable content hashes (policy_id + quote), so human-confirm
+ * state keyed on them survives regeneration. Reviewed corrections from the
+ * fact-check pass are applied from scripts/policy-targets-overrides.json.
  *
  * ${out.length} targets across ${policyOrder.length} acts.
  *   label:            ${JSON.stringify(tally('target_label'))}
