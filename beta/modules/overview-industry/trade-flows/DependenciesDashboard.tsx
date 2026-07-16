@@ -11,6 +11,8 @@
  *   • the import-dependency map (reliance × supplier concentration);
  *   • the critical & strategic raw-materials register (CRMA legal
  *     designations, EC/JRC reliance and supplier shares) — sortable;
+ *   • the import-dependent MANUFACTURED-product register (solar panels,
+ *     batteries, chips, medicines, apparel…) spanning Section C — sortable;
  *   • the strategic product families of SWD(2021) 352;
  *   • live Eurostat energy & feedstock import dependency;
  *   • the same dependencies aggregated by supplier country and by NACE
@@ -24,6 +26,7 @@ import { useMemo, useState } from 'react';
 import {
   CRITICAL_MATERIALS,
   STRATEGIC_DEPENDENCIES,
+  PRODUCT_DEPENDENCIES,
   ENERGY_FEEDSTOCK_DEPENDENCY,
   RISK_HOTSPOTS,
   SECTOR_IO_INPUTS,
@@ -77,6 +80,7 @@ function DivisionChips({ text, onOpen }: { text: string; onOpen: (code: string) 
 }
 
 type MaterialSort = 'reliance' | 'share' | 'name';
+type ProductSort = 'share' | 'division' | 'name';
 type DivisionSort = 'inputShare' | 'imports' | 'entries' | 'code';
 
 export default function DependenciesDashboard({
@@ -85,29 +89,32 @@ export default function DependenciesDashboard({
   onOpenDivision: (code: string) => void;
 }) {
   const [materialSort, setMaterialSort] = useState<MaterialSort>('share');
+  const [productSort, setProductSort] = useState<ProductSort>('share');
   const [divisionSort, setDivisionSort] = useState<DivisionSort>('inputShare');
 
   const totalEnergy = ENERGY_FEEDSTOCK_DEPENDENCY[0];
 
   // Plain counts over the curated datasets — arithmetic, not assessment.
   const kpis = useMemo(() => {
-    const fullReliance = CRITICAL_MATERIALS.filter((m) => m.euImportReliance === 100).length;
-    const chinaTop = CRITICAL_MATERIALS.filter((m) => isChina(m.topSupplier)).length;
+    const materialsAndProducts = CRITICAL_MATERIALS.length + PRODUCT_DEPENDENCIES.length;
+    const chinaMaterials = CRITICAL_MATERIALS.filter((m) => isChina(m.topSupplier)).length;
+    const chinaProducts = PRODUCT_DEPENDENCIES.filter((p) => isChina(p.topSupplier)).length;
+    const chinaTop = chinaMaterials + chinaProducts;
     return [
       {
-        value: `${RISK_HOTSPOTS.length}`,
-        label: 'curated import dependencies mapped',
-        detail: 'Materials, product families and feedstocks on the dependency map (EC/JRC-sourced reliance × concentration).',
+        value: `${materialsAndProducts}`,
+        label: 'curated import dependencies tracked',
+        detail: `${CRITICAL_MATERIALS.length} critical raw materials and ${PRODUCT_DEPENDENCIES.length} manufactured-product families across Section C — reliance × supplier concentration, every figure sourced.`,
       },
       {
-        value: `${fullReliance} of ${CRITICAL_MATERIALS.length}`,
-        label: 'tracked materials at 100% import reliance',
-        detail: 'EC criticality methodology: the EU produces none (net) of these materials itself.',
+        value: `${PRODUCT_DEPENDENCIES.length}`,
+        label: 'manufactured-product dependencies',
+        detail: 'Finished / intermediate products (solar panels, batteries, chips, APIs, apparel…) the EU imports at scale — the "not just raw materials" layer.',
       },
       {
-        value: `${chinaTop} of ${CRITICAL_MATERIALS.length}`,
-        label: 'tracked materials with China as largest supplier',
-        detail: 'Count of register rows whose largest single supplier of EU supply is China, as reported by the EC/JRC.',
+        value: `${chinaTop} of ${materialsAndProducts}`,
+        label: 'dependencies with China as largest supplier',
+        detail: 'Register rows (materials + products) whose largest single supplier is China, as reported by the source.',
       },
       {
         value: totalEnergy.dependencyPct != null ? `${totalEnergy.dependencyPct}%` : '—',
@@ -129,13 +136,29 @@ export default function DependenciesDashboard({
     return rows;
   }, [materialSort]);
 
-  // Aggregate the mapped dependencies by their largest supplier country.
+  const products = useMemo(() => {
+    const rows = [...PRODUCT_DEPENDENCIES];
+    if (productSort === 'share') {
+      rows.sort((a, b) => (b.supplierShare ?? -1) - (a.supplierShare ?? -1));
+    } else if (productSort === 'division') {
+      rows.sort((a, b) => a.naceDivision.localeCompare(b.naceDivision, undefined, { numeric: true }));
+    } else {
+      rows.sort((a, b) => a.product.localeCompare(b.product));
+    }
+    return rows;
+  }, [productSort]);
+
+  // Aggregate the mapped dependencies (materials + products) by their largest supplier country.
   const bySupplier = useMemo(() => {
     const norm = (s: string) => s.split(/[/(]/)[0].trim();
     const acc = new Map<string, string[]>();
     RISK_HOTSPOTS.forEach((h) => {
       const key = norm(h.supplier);
       acc.set(key, [...(acc.get(key) ?? []), h.label]);
+    });
+    PRODUCT_DEPENDENCIES.forEach((p) => {
+      const key = norm(p.topSupplier);
+      acc.set(key, [...(acc.get(key) ?? []), p.product]);
     });
     return Array.from(acc.entries())
       .map(([country, items]) => ({ country, items }))
@@ -149,6 +172,7 @@ export default function DependenciesDashboard({
       const fva = fvaFor(d.code);
       const entries =
         CRITICAL_MATERIALS.filter((m) => mentionsDivision(m.usedIn, d.code)).length +
+        PRODUCT_DEPENDENCIES.filter((p) => mentionsDivision(p.naceDivision, d.code)).length +
         RISK_HOTSPOTS.filter((h) => mentionsDivision(h.naceDivision, d.code)).length +
         ENERGY_FEEDSTOCK_DEPENDENCY.filter((e) => mentionsDivision(e.naceRelevance, d.code)).length +
         (SECTOR_IO_INPUTS.find((s) => s.code === d.code)?.inputs.length ?? 0);
@@ -293,6 +317,88 @@ export default function DependenciesDashboard({
         </div>
       </div>
 
+      {/* import-dependent manufactured products register */}
+      <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">
+            Import-dependent manufactured products — the register
+          </h4>
+          <div className="flex items-center gap-1.5">
+            <span className="text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">Sort:</span>
+            {sortButton(productSort, setProductSort, 'share', 'supplier share')}
+            {sortButton(productSort, setProductSort, 'division', 'division')}
+            {sortButton(productSort, setProductSort, 'name', 'product')}
+          </div>
+        </div>
+        <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+          The other side of the dependency story: finished and intermediate <em>products</em> the EU imports
+          at scale — solar panels, batteries, chips, medicines, apparel — not just the raw materials above.
+          Supplier share is the largest supplier&apos;s share of extra-EU imports unless the source states
+          otherwise (hover the share for the basis); reliance is left blank where no clean demand-based
+          figure is published. Click a division code to open its deep-dive.
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[860px] border-collapse text-[11.5px]">
+            <thead>
+              <tr className="bg-grey-100 dark:bg-[var(--mh-bg)] text-left text-[10.5px] uppercase tracking-wide text-grey-600 dark:text-[var(--mh-muted)]">
+                <th className="px-2 py-1.5 font-semibold">Product</th>
+                <th className="px-2 py-1.5 font-semibold">Category</th>
+                <th className="px-2 py-1.5 font-semibold">NACE division(s)</th>
+                <th className="px-2 py-1.5 text-right font-semibold">EU import reliance</th>
+                <th className="px-2 py-1.5 font-semibold">Largest supplier</th>
+                <th className="px-2 py-1.5 font-semibold">Supplier share</th>
+                <th className="px-2 py-1.5 font-semibold">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((p) => {
+                const share = p.supplierShare ?? 0;
+                return (
+                  <tr key={p.product} className="border-t border-grey-100 dark:border-[var(--mh-border)] align-top">
+                    <td className="px-2 py-1.5 font-semibold text-grey-800 dark:text-[var(--mh-fg)]" title={p.note}>
+                      {p.product}
+                    </td>
+                    <td className="px-2 py-1.5 text-grey-600 dark:text-[var(--mh-muted)]">{p.category}</td>
+                    <td className="px-2 py-1.5">
+                      <DivisionChips text={p.naceDivision} onOpen={onOpenDivision} />
+                    </td>
+                    <td className="px-2 py-1.5 text-right font-semibold tabular-nums text-grey-800 dark:text-[var(--mh-fg)]">
+                      {p.euImportReliance != null ? `${p.euImportReliance}%` : '—'}
+                    </td>
+                    <td className="px-2 py-1.5 text-grey-700 dark:text-[var(--mh-muted)]">{p.topSupplier}</td>
+                    <td className="px-2 py-1.5">
+                      <div className="flex items-center gap-1.5" title={`${p.supplierShare != null ? `${p.supplierShare}% ` : ''}${p.shareBasis}`}>
+                        <div className="h-3 w-28 shrink-0 overflow-hidden rounded-sm bg-grey-100 dark:bg-[var(--mh-bg)]">
+                          <div
+                            className="h-full"
+                            style={{
+                              width: `${share}%`,
+                              background: isChina(p.topSupplier) ? '#B83230' : '#004B7F',
+                            }}
+                          />
+                        </div>
+                        <span className="tabular-nums text-grey-600 dark:text-[var(--mh-muted)]">
+                          {p.supplierShare != null ? `${p.supplierShare}%` : 'n/a'}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="px-2 py-1.5 text-[10px]">
+                      <SourceLink src={p.src} />
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-[10px] text-grey-400 dark:text-[var(--mh-muted)]">
+          Product supplier shares are customs-based (share of extra-EU imports), a different concept from the
+          EC/JRC &quot;share of EU supply&quot; used for raw materials — the exact basis is on each share.
+          Where a product also sits on the import-dependency map above (solar, batteries, laptops, chips,
+          APIs), its map position uses a demand-based reliance estimate documented in the source.
+        </p>
+      </div>
+
       {/* strategic product families + energy */}
       <div className="grid gap-4 lg:grid-cols-[1.4fr_1fr]">
         <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
@@ -414,8 +520,8 @@ export default function DependenciesDashboard({
         </div>
         <p className="mb-2 mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
           All 24 Section C divisions: the statistical import shares next to the number of curated
-          dependency entries (materials, named inputs, mapped dependencies, energy rows) that touch
-          the division. Click a row to open the division deep-dive.
+          dependency entries (raw materials, manufactured products, named inputs, mapped dependencies,
+          energy rows) that touch the division. Click a row to open the division deep-dive.
         </p>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px] border-collapse text-[11.5px]">

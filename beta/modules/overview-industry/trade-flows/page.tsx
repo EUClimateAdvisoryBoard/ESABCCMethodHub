@@ -75,8 +75,9 @@ export default function TradeFlowsPage() {
             import-dependency map of the inputs where imports are both large and concentrated in a single
             supplier, and the critical-materials board. The{' '}
             <span className="font-semibold">Dependencies dashboard</span> pulls every curated critical
-            trade dependency — materials, strategic product families, energy — into one sortable register,
-            aggregated by supplier country and by NACE division. From there, pick
+            trade dependency — critical raw materials <em>and</em> import-dependent manufactured products
+            (solar panels, batteries, chips, medicines, apparel…), strategic product families and energy —
+            into one sortable register, aggregated by supplier country and by NACE division. From there, pick
             any division for the <span className="font-semibold">deep-dive</span>: its trade balance and
             intra/extra-EU split, the imported-input mix straight out of the EU-27{' '}
             <span className="font-semibold">input–output use table</span>, import origins and export

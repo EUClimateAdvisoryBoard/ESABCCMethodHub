@@ -14,7 +14,7 @@
  */
 
 import { useState } from 'react';
-import { RISK_HOTSPOTS } from './trade-data';
+import { ALL_MAPPED_DEPENDENCIES } from './trade-data';
 
 const X_MIN = 0.5; // every entry sits above 63% reliance — start the axis at 50%
 
@@ -33,7 +33,7 @@ export default function DependencyMap() {
 
   // order by reliance × concentration, largest product first — the
   // numbering shared between bubbles and the side list
-  const ranked = [...RISK_HOTSPOTS].sort(
+  const ranked = [...ALL_MAPPED_DEPENDENCIES].sort(
     (a, b) => b.importReliance * b.supplierConcentration - a.importReliance * a.supplierConcentration,
   );
 
@@ -75,10 +75,11 @@ export default function DependencyMap() {
     <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-3">
       <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Import-dependency map</h4>
       <p className="mb-2 mt-1 text-xs text-grey-600 dark:text-[var(--mh-muted)]">
-        Every numbered bubble is an import dependency of EU manufacturing — the list alongside carries the
-        full names, ordered by the product of the two axes. →right = more of EU demand is imported; ↑up =
-        more concentrated in a single supplier; red = China is the largest supplier. The x-axis starts at
-        50% — every entry shown is majority-imported.
+        Every numbered bubble is an import dependency of EU manufacturing — raw materials AND finished
+        products (solar panels, batteries, laptops, chips, APIs) — the list alongside carries the full
+        names, ordered by the product of the two axes. →right = more of EU demand is imported; ↑up = more
+        concentrated in a single supplier; red = China is the largest supplier. The x-axis starts at 50% —
+        every entry shown is majority-imported.
       </p>
       <div className="grid gap-3 lg:grid-cols-[1fr_330px] lg:items-start">
         <div className="overflow-x-auto">
@@ -182,8 +183,9 @@ export default function DependencyMap() {
           List shows reliance/concentration in %; ordering is the product of the two values (a display
           ordering, not a rating). Overlapping bubbles are nudged apart for legibility — exact values in the
           list and tooltips. x-axis: EC import reliance, IR = (M−X)/(P+M−X); y-axis: largest
-          supplier&apos;s share of EU supply (concentration proxy). Curated from EC/JRC sources — definitions
-          &amp; caveats in Methodology.
+          supplier&apos;s share of EU supply for raw materials, or of extra-EU imports for finished products
+          (concentration proxy). Curated from EC/JRC, Eurostat &amp; industry sources — definitions &amp;
+          caveats in Methodology.
         </span>
       </div>
     </div>
