@@ -116,6 +116,14 @@ export default function TradeFlowsPage() {
             >
               {buildingDeck ? 'Building slides…' : '⬇ Download overview slides (.pdf)'}
             </button>
+            <a
+              href="/decks/eu-industry-trade-status.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-primary bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm transition hover:bg-surface-blue dark:bg-[var(--mh-card)] dark:hover:bg-primary/15"
+            >
+              ↗ View status deck (interactive)
+            </a>
             <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
               {SHEET_NAMES.length} sheets · {SLIDE_COUNT}-slide status deck: headline figures, trade balance,
               import-dependency, critical materials, products, energy
