@@ -266,7 +266,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2008, value: 1.010 }, { year: 2009, value: 1.002 }, { year: 2010, value: 0.9942 }, { year: 2011, value: 0.9446 }, { year: 2012, value: 0.9371 }, { year: 2013, value: 0.9499 }, { year: 2014, value: 0.9378 }, { year: 2015, value: 0.9871 }, { year: 2016, value: 0.9861 }, { year: 2017, value: 0.9656 }, { year: 2018, value: 0.9526 }, { year: 2019, value: 0.9675 }, { year: 2020, value: 0.9605 }, { year: 2021, value: 0.9623 }],
+    data: [{ year: 2008, value: 1.01 }, { year: 2009, value: 1.002 }, { year: 2010, value: 0.9942 }, { year: 2011, value: 0.9446 }, { year: 2012, value: 0.9371 }, { year: 2013, value: 0.9499 }, { year: 2014, value: 0.9378 }, { year: 2015, value: 0.9871 }, { year: 2016, value: 0.9861 }, { year: 2017, value: 0.9656 }, { year: 2018, value: 0.9526 }, { year: 2019, value: 0.9675 }, { year: 2020, value: 0.9605 }, { year: 2021, value: 0.9623 }, { year: 2022, value: 0.9662, afterReport: true }, { year: 2023, value: 0.9415, afterReport: true }, { year: 2024, value: 0.9113, afterReport: true }],
   },
   {
     id: 'esabcc-i4-cement-ghg-intensity',
@@ -281,7 +281,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2005, value: 0.5987 }, { year: 2006, value: 0.5744 }, { year: 2007, value: 0.6230 }, { year: 2008, value: 0.6159 }, { year: 2009, value: 0.6130 }, { year: 2010, value: 0.6429 }, { year: 2011, value: 0.6248 }, { year: 2012, value: 0.6673 }, { year: 2013, value: 0.6740 }, { year: 2014, value: 0.7029 }, { year: 2015, value: 0.6895 }, { year: 2016, value: 0.6825 }, { year: 2017, value: 0.6751 }, { year: 2018, value: 0.6324 }, { year: 2019, value: 0.6535 }, { year: 2020, value: 0.6237 }, { year: 2021, value: 0.6038 }],
+    data: [{ year: 2005, value: 0.5987 }, { year: 2006, value: 0.5744 }, { year: 2007, value: 0.623 }, { year: 2008, value: 0.6159 }, { year: 2009, value: 0.613 }, { year: 2010, value: 0.6429 }, { year: 2011, value: 0.6248 }, { year: 2012, value: 0.6673 }, { year: 2013, value: 0.674 }, { year: 2014, value: 0.7029 }, { year: 2015, value: 0.6895 }, { year: 2016, value: 0.6825 }, { year: 2017, value: 0.6751 }, { year: 2018, value: 0.6324 }, { year: 2019, value: 0.6535 }, { year: 2020, value: 0.6237 }, { year: 2021, value: 0.6038 }, { year: 2022, value: 0.5875, afterReport: true }, { year: 2023, value: 0.5797, afterReport: true }, { year: 2024, value: 0.5614, afterReport: true }],
   },
   {
     id: 'esabcc-i4-chemicals-ghg-intensity',
@@ -972,7 +972,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 102.5 }, { year: 2011, value: 100.9 }, { year: 2012, value: 101.1 }, { year: 2013, value: 101.6 }, { year: 2014, value: 102.1 }, { year: 2015, value: 103.1 }, { year: 2016, value: 103.8 }, { year: 2017, value: 103.8 }, { year: 2018, value: 103.3 }, { year: 2019, value: 101.7 }, { year: 2020, value: 100.8 }, { year: 2021, value: 100.3 }],
+    data: [{ year: 2010, value: 102.5 }, { year: 2011, value: 100.9 }, { year: 2012, value: 101.1 }, { year: 2013, value: 101.6 }, { year: 2014, value: 102.1 }, { year: 2015, value: 103.1 }, { year: 2016, value: 103.8 }, { year: 2017, value: 103.8 }, { year: 2018, value: 103.3 }, { year: 2019, value: 101.7 }, { year: 2020, value: 100.8 }, { year: 2021, value: 100.3 }, { year: 2022, value: 99.3, afterReport: true }, { year: 2023, value: 98.4, afterReport: true }, { year: 2024, value: 96.9, afterReport: true }],
   },
   {
     id: 'esabcc-a2-bovine-production',
@@ -1002,7 +1002,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 14.13 }, { year: 2011, value: 14.15 }, { year: 2012, value: 14.74 }, { year: 2013, value: 15.46 }, { year: 2014, value: 15.48 }, { year: 2015, value: 15.11 }, { year: 2016, value: 14.83 }, { year: 2017, value: 14.85 }, { year: 2018, value: 14.52 }, { year: 2019, value: 14.53 }, { year: 2020, value: 14.53 }],
+    data: [{ year: 2010, value: 14.13 }, { year: 2011, value: 14.15 }, { year: 2012, value: 14.74 }, { year: 2013, value: 15.46 }, { year: 2014, value: 15.48 }, { year: 2015, value: 15.11 }, { year: 2016, value: 14.83 }, { year: 2017, value: 14.85 }, { year: 2018, value: 14.52 }, { year: 2019, value: 14.53 }, { year: 2020, value: 14.53 }, { year: 2021, value: 14.45, afterReport: true }, { year: 2022, value: 14.65, afterReport: true }, { year: 2023, value: 15.09, afterReport: true }, { year: 2024, value: 14.42, afterReport: true }],
   },
   {
     id: 'esabcc-a2-dairy-ghg',
@@ -1017,7 +1017,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 95.72 }, { year: 2011, value: 95.98 }, { year: 2012, value: 96.46 }, { year: 2013, value: 97.00 }, { year: 2014, value: 98.38 }, { year: 2015, value: 99.23 }, { year: 2016, value: 99.40 }, { year: 2017, value: 99.37 }, { year: 2018, value: 98.63 }, { year: 2019, value: 98.20 }, { year: 2020, value: 98.63 }, { year: 2021, value: 97.79 }],
+    data: [{ year: 2010, value: 95.72 }, { year: 2011, value: 95.98 }, { year: 2012, value: 96.46 }, { year: 2013, value: 97 }, { year: 2014, value: 98.38 }, { year: 2015, value: 99.23 }, { year: 2016, value: 99.4 }, { year: 2017, value: 99.37 }, { year: 2018, value: 98.63 }, { year: 2019, value: 98.2 }, { year: 2020, value: 98.63 }, { year: 2021, value: 97.79 }, { year: 2022, value: 96.8, afterReport: true }, { year: 2023, value: 95.9, afterReport: true }, { year: 2024, value: 94.5, afterReport: true }],
   },
   {
     id: 'esabcc-a2-dairy-production',
@@ -1047,7 +1047,7 @@ export const ESABCC_REPORT_INDICATORS: Indicator[] = [
     direction: 'down',
     group: 'esabcc',
     isSeed: true,
-    data: [{ year: 2010, value: 0.6785 }, { year: 2011, value: 0.6691 }, { year: 2012, value: 0.6710 }, { year: 2013, value: 0.6677 }, { year: 2014, value: 0.6552 }, { year: 2015, value: 0.6479 }, { year: 2016, value: 0.6420 }, { year: 2017, value: 0.6371 }, { year: 2018, value: 0.6230 }, { year: 2019, value: 0.6090 }, { year: 2020, value: 0.6049 }],
+    data: [{ year: 2010, value: 0.6785 }, { year: 2011, value: 0.6691 }, { year: 2012, value: 0.671 }, { year: 2013, value: 0.6677 }, { year: 2014, value: 0.6552 }, { year: 2015, value: 0.6479 }, { year: 2016, value: 0.642 }, { year: 2017, value: 0.6371 }, { year: 2018, value: 0.623 }, { year: 2019, value: 0.609 }, { year: 2020, value: 0.6049 }, { year: 2021, value: 0.6015, afterReport: true }, { year: 2022, value: 0.5948, afterReport: true }, { year: 2023, value: 0.5858, afterReport: true }, { year: 2024, value: 0.5739, afterReport: true }],
   },
   {
     id: 'esabcc-a2-pig-ghg',

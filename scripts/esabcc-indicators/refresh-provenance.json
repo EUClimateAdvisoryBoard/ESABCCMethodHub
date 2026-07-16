@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T11:15:36.855Z",
+  "generatedAt": "2026-07-16T12:00:53.722Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -822,6 +822,146 @@
         {
           "year": 2024,
           "value": 1.238
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i4-steel-ghg-intensity",
+      "sourceTitle": "Eurostat env_air_gge CRF 2.C.1 iron & steel process CO₂ ÷ sts_inpr_a NACE C241 production index · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CO2&src_crf=CRF2C1",
+      "note": "Spliced ratio: steel process CO₂ ÷ production index; YoY change × report 2021 intensity baseline (0.9623 t CO₂/t). Same C241 leg as I2 steel production.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 0.9662
+        },
+        {
+          "year": 2023,
+          "value": 0.9415
+        },
+        {
+          "year": 2024,
+          "value": 0.9113
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i4-cement-ghg-intensity",
+      "sourceTitle": "Eurostat env_air_gge CRF 2.A.1 cement process CO₂ ÷ sts_inpr_a NACE C235 production index · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CO2&src_crf=CRF2A1",
+      "note": "Spliced ratio: cement process CO₂ ÷ production index; YoY change × report 2021 intensity baseline (0.6038 t CO₂/t). Same C235 leg as I2 cement production.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 0.5875
+        },
+        {
+          "year": 2023,
+          "value": 0.5797
+        },
+        {
+          "year": 2024,
+          "value": 0.5614
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-bovine-ghg",
+      "sourceTitle": "Eurostat env_air_gge · cattle enteric (3.A.1) + manure (3.B.1) GHG · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1",
+      "note": "Spliced: total cattle-emissions YoY change × report bovine-meat baseline (meat/dairy allocation share held constant — the inventory does not split cattle).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 99.3
+        },
+        {
+          "year": 2023,
+          "value": 98.4
+        },
+        {
+          "year": 2024,
+          "value": 96.9
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-dairy-ghg",
+      "sourceTitle": "Eurostat env_air_gge · cattle enteric (3.A.1) + manure (3.B.1) GHG · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1",
+      "note": "Spliced: total cattle-emissions YoY change × report dairy baseline (meat/dairy allocation share held constant — the inventory does not split cattle).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 96.8
+        },
+        {
+          "year": 2023,
+          "value": 95.9
+        },
+        {
+          "year": 2024,
+          "value": 94.5
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-bovine-ghg-intensity",
+      "sourceTitle": "Eurostat env_air_gge cattle GHG (3.A.1 + 3.B.1) ÷ apro_mt_pann bovine meat (B1000) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1",
+      "note": "Spliced ratio (report intensity = GHG ÷ production): cattle emissions ÷ bovine production; a constant meat allocation share cancels in the YoY ratio (report baseline 14.53 t CO₂eq/t).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 14.45
+        },
+        {
+          "year": 2022,
+          "value": 14.65
+        },
+        {
+          "year": 2023,
+          "value": 15.09
+        },
+        {
+          "year": 2024,
+          "value": 14.42
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-dairy-ghg-intensity",
+      "sourceTitle": "Eurostat env_air_gge cattle GHG (3.A.1 + 3.B.1) ÷ apro_mk_farm raw milk (D1100A) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1",
+      "note": "Spliced ratio (report intensity = GHG ÷ production): cattle emissions ÷ milk production; a constant dairy allocation share cancels in the YoY ratio (report baseline 0.6049 t CO₂eq/t).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 0.6015
+        },
+        {
+          "year": 2022,
+          "value": 0.5948
+        },
+        {
+          "year": 2023,
+          "value": 0.5858
+        },
+        {
+          "year": 2024,
+          "value": 0.5739
         }
       ]
     }

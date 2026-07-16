@@ -480,6 +480,88 @@ const RECIPES = {
     sourceTitle: 'Eurostat env_air_gge swine GHG (3.A.3 + 3.B.3) ÷ apro_mt_pann pigmeat (B3100) · EU27_2020',
     note: 'Spliced ratio: swine GHG ÷ pig production; num/den unit mix cancels in the YoY ratio, only the trend is applied to the report intensity baseline (conceptual 2020 0.931×).',
   },
+  // Industry GHG intensity = material process CO₂ ÷ production-volume index.
+  // Splice-only: the ratio's absolute level (Mt ÷ index) is meaningless, only
+  // its YoY change tracks the intensity trend, applied to the report baseline.
+  // Chemicals intensity is NOT wired: CRF 2.B is the whole chemical industry
+  // (inorganic-dominated) and does not isolate base organic chemicals, so the
+  // ratio against the C201 output collapse is a scope artifact — kept as the
+  // report figure rather than published as a spurious intensity rise.
+  'esabcc-i4-steel-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 4, mode: 'splice',
+    num: { dataset: 'env_air_gge', legs: [{ geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CO2', src_crf: 'CRF2C1' }] },
+    den: { dataset: 'sts_inpr_a', legs: [{ geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C241' }] },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CO2&src_crf=CRF2C1`,
+    sourceTitle: 'Eurostat env_air_gge CRF 2.C.1 iron & steel process CO₂ ÷ sts_inpr_a NACE C241 production index · EU27_2020',
+    note: 'Spliced ratio: steel process CO₂ ÷ production index; YoY change × report 2021 intensity baseline (0.9623 t CO₂/t). Same C241 leg as I2 steel production.',
+  },
+  'esabcc-i4-cement-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 4, mode: 'splice',
+    num: { dataset: 'env_air_gge', legs: [{ geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'CO2', src_crf: 'CRF2A1' }] },
+    den: { dataset: 'sts_inpr_a', legs: [{ geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C235' }] },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=CO2&src_crf=CRF2A1`,
+    sourceTitle: 'Eurostat env_air_gge CRF 2.A.1 cement process CO₂ ÷ sts_inpr_a NACE C235 production index · EU27_2020',
+    note: 'Spliced ratio: cement process CO₂ ÷ production index; YoY change × report 2021 intensity baseline (0.6038 t CO₂/t). Same C235 leg as I2 cement production.',
+  },
+
+  // Cattle GHG & intensity (July 2026, batch 3) — apply the report's own
+  // derivation logic to the components now in the workspace. The GHG inventory
+  // does not split cattle into bovine-meat vs dairy (the report figures are an
+  // allocation), so the ABSOLUTE split can't be re-derived — but in splice mode
+  // only the YoY change is used, and a constant meat/dairy allocation share
+  // cancels in that ratio. So bovine/dairy GHG track total cattle emissions
+  // (enteric CRF 3.A.1 + manure CRF 3.B.1), and each intensity = cattle
+  // emissions ÷ that species' production (the report's GHG/production formula,
+  // allocation share cancelling). Held-constant-share is the one assumption and
+  // is noted; over the 2–3 post-report years it is a sound first-order estimate.
+  'esabcc-a2-bovine-ghg': {
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A1' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B1' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1`,
+    sourceTitle: 'Eurostat env_air_gge · cattle enteric (3.A.1) + manure (3.B.1) GHG · EU27_2020',
+    note: 'Spliced: total cattle-emissions YoY change × report bovine-meat baseline (meat/dairy allocation share held constant — the inventory does not split cattle).',
+  },
+  'esabcc-a2-dairy-ghg': {
+    kind: 'eurostat', dataset: 'env_air_gge', round: 1, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A1' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B1' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1`,
+    sourceTitle: 'Eurostat env_air_gge · cattle enteric (3.A.1) + manure (3.B.1) GHG · EU27_2020',
+    note: 'Spliced: total cattle-emissions YoY change × report dairy baseline (meat/dairy allocation share held constant — the inventory does not split cattle).',
+  },
+  'esabcc-a2-bovine-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 2, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A1' },
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B1' },
+      ],
+    },
+    den: { dataset: 'apro_mt_pann', legs: [{ geo: 'EU27_2020', meat: 'B1000', meatitem: 'SLAUGHT', unit: 'THS_T' }] },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1`,
+    sourceTitle: 'Eurostat env_air_gge cattle GHG (3.A.1 + 3.B.1) ÷ apro_mt_pann bovine meat (B1000) · EU27_2020',
+    note: 'Spliced ratio (report intensity = GHG ÷ production): cattle emissions ÷ bovine production; a constant meat allocation share cancels in the YoY ratio (report baseline 14.53 t CO₂eq/t).',
+  },
+  'esabcc-a2-dairy-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 4, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A1' },
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B1' },
+      ],
+    },
+    den: { dataset: 'apro_mk_farm', legs: [{ geo: 'EU27_2020', dairyprod: 'D1100A', milkitem: 'PRO' }] },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A1`,
+    sourceTitle: 'Eurostat env_air_gge cattle GHG (3.A.1 + 3.B.1) ÷ apro_mk_farm raw milk (D1100A) · EU27_2020',
+    note: 'Spliced ratio (report intensity = GHG ÷ production): cattle emissions ÷ milk production; a constant dairy allocation share cancels in the YoY ratio (report baseline 0.6049 t CO₂eq/t).',
+  },
 };
 
 // ───────────────────────── helpers ─────────────────────────
