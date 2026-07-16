@@ -1,0 +1,2616 @@
+[
+  {
+    "id": "tgt-009edd20",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1d13d77c",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1d85bb03",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-2bc0527f",
+    "policy_id": "afir-regulation",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('maximum distance of 60 km between them') so target_type should be quantitative, not unspecified. | climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-2c9e6749",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-2da26712",
+    "policy_id": "afir-regulation",
+    "set": {
+      "article": "Article 3(2)"
+    },
+    "reason": "article: Quote is Article 3(2) verbatim, not a generic reference to 'Article 3'."
+  },
+  {
+    "id": "tgt-2e9619e4",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-32d4af35",
+    "policy_id": "afir-regulation",
+    "set": {
+      "article": "Article 12(3)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is Article 12(3) verbatim, not a generic reference to 'Article 12'. | label: This is an exemption carving certain stands out of the Article 12(1) target, not itself a deployment target."
+  },
+  {
+    "id": "tgt-32fbe5f8",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Electricity supply target at aircraft contact stands replaces fossil-fuel auxiliary power units — mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-3914b0a3",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-3e0be761",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Electricity supply to stationary aircraft replaces fossil-fuel-burning auxiliary power units (Recital 54: 'reduce...the impact of aircraft on climate c"
+  },
+  {
+    "id": "tgt-414687de",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-667001e9",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-6f1c7eb1",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Electricity supply target at aircraft remote stands replaces fossil-fuel auxiliary power units — mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-708adb47",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-7c64b132",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8b105bf9",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-94518309",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-985392c5",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-9cb011ef",
+    "policy_id": "afir-regulation",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('maximum distance of 60 km between them') so target_type should be quantitative, not unspecified. | climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-a5baad46",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-a675f706",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-ad99e542",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-b8b261df",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c032b615",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c7fb7ca2",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c84353b0",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-d78f9658",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-da652a7a",
+    "policy_id": "afir-regulation",
+    "set": {
+      "article": "Article 3(8)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is Article 3(8) verbatim, not a generic reference to 'Article 3'. | label: This is a derogation/exception clause allowing Member States to reduce a requirement, analogous to tgt-0011 (same Article, same kind of derogation) which"
+  },
+  {
+    "id": "tgt-e206f70b",
+    "policy_id": "afir-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: EV-recharging / shore-side electricity deployment enables zero-emission transport (AFIR Art. 1 purpose) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-e711f82a",
+    "policy_id": "afir-regulation",
+    "set": {
+      "article": "Article 4(5)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is Article 4(5) verbatim, not a generic reference to 'Article 4'. | label: This is a derogation/exception clause (Member States 'may reduce'), the heavy-duty-vehicle counterpart of tgt-0012/tgt-0011 which are exceptions to targe"
+  },
+  {
+    "id": "tgt-ee8cf4a9",
+    "policy_id": "afir-regulation",
+    "set": {
+      "article": "Article 19(4)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is the second subparagraph of Article 19(4) verbatim, not a generic reference to 'Article 19'. | label: This describes a Commission implementing-act procedure for fuel-compatibility labelling, not a deployment/quantitative target like the other rows in this"
+  },
+  {
+    "id": "tgt-9e83bd7c",
+    "policy_id": "batteries-regulation",
+    "set": {
+      "timeline": "from 18 February 2025"
+    },
+    "reason": "timeline: replaces string truncated mid-word; first applicability date of the Art. 7(1) carbon-footprint schedule [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-07cb9691",
+    "policy_id": "cap-strategic-plans",
+    "set": {
+      "climate_relevance": "none"
+    },
+    "reason": "climate: The quote is the reimbursement ceiling for 'green harvesting' (destruction/removal of immature grape bunches for market/yield management in the wine se"
+  },
+  {
+    "id": "tgt-249f062b",
+    "policy_id": "cap-strategic-plans",
+    "set": {
+      "article": "Article 93(1) — Minimum financial allocations for interventions addressing environmental and climate-related specific…",
+      "climate_relevance": "both"
+    },
+    "reason": "article: Article label is truncated mid-word ('...addressing environm'). The full heading of Article 93 is 'Minimum financial allocations for interventions addr | climate: provision expressly serves the Art. 6(1)(d)-(f) climate mitigation/adaptation & environment objectives [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-f0b15157",
+    "policy_id": "cap-strategic-plans",
+    "set": {
+      "article": "Article 105 — Increased ambition with regard to environmental and climate-related objectives",
+      "climate_relevance": "both"
+    },
+    "reason": "article: Article label is truncated mid-word ('...climate-relate'). The full heading of Article 105 is 'Increased ambition with regard to environmental and clim | climate: provision expressly serves the Art. 6(1)(d)-(f) climate mitigation/adaptation & environment objectives [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-f964611b",
+    "policy_id": "cap-strategic-plans",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: provision expressly serves the Art. 6(1)(d)-(f) climate mitigation/adaptation & environment objectives [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-ffd509f5",
+    "policy_id": "cap-strategic-plans",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: provision expressly serves the Art. 6(1)(d)-(f) climate mitigation/adaptation & environment objectives [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-239ce643",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "article": "Article 2(8), point (d)"
+    },
+    "reason": "article: Article reference cites only the article-level heading; the quote actually comes from a specific numbered condition within Article 2, paragraph 8. Othe"
+  },
+  {
+    "id": "tgt-461fa733",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "article": "Article 31(1) — Free allocation of allowances under the EU ETS and obligation to surrender CBAM certificates"
+    },
+    "reason": "article: The article heading text is truncated, cutting off the second half of the article title ('surrender CBAM certificates'). Confirms the deterministic ART"
+  },
+  {
+    "id": "tgt-4de361ed",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026"
+    },
+    "reason": "timeline: Timeline field is truncated mid-word at ~60 characters, cutting off before 'the year 2026'. The full date phrase is already fully present in the quote"
+  },
+  {
+    "id": "tgt-8fb2521a",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "article": "Article 22(2) — Surrender of CBAM certificates (duplicate of tgt-0074; consider removing one)"
+    },
+    "reason": "article: This row is a duplicate of tgt-0074 (identical quote, same content) but cites the article at heading level only, omitting the paragraph number that tgt"
+  },
+  {
+    "id": "tgt-c6339652",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026"
+    },
+    "reason": "timeline: Same mid-word truncation as tgt-0072; the full phrase is already present verbatim in the quote."
+  },
+  {
+    "id": "tgt-e52db04e",
+    "policy_id": "cbam-regulation",
+    "set": {
+      "article": "Article 2(9), point (c)"
+    },
+    "reason": "article: Same imprecision as tgt-0069: the quote is a specific de-listing condition in Article 2, paragraph 9, point (c), not a generic reference to the whole '"
+  },
+  {
+    "id": "tgt-1a941a88",
+    "policy_id": "co2-cars-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified as 'none' but this is a zero- and low-emission vehicle (ZLEV) fleet-share benchmark for 2030, the same kind of measure as tgt-0086 (Article "
+  },
+  {
+    "id": "tgt-a1412522",
+    "policy_id": "co2-cars-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same ZLEV benchmark provision (Article 1(7)(b), light commercial vehicles) classified as 'none' while the parallel 2025 benchmark (tgt-0086) is 'mitiga"
+  },
+  {
+    "id": "tgt-e8a74685",
+    "policy_id": "co2-cars-regulation",
+    "drop": true,
+    "reason": "duplicate of tgt-0086 (same provision text) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-45d43665",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "article": "Article 9(1) - Single point of contact"
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: the quote is the opening sentence of Article 9 ('Single point of contact'), not Article 8 (which is titled 'Reporting and i"
+  },
+  {
+    "id": "tgt-4b2497c5",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('12 months'), which is quantitative, not 'unspecified'."
+  },
+  {
+    "id": "tgt-c5c48a45",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('15 months'), which is quantitative, not 'unspecified'."
+  },
+  {
+    "id": "tgt-c7dccbb1",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('27 months') for the maximum permit-granting duration, which is a quantitative figure, not 'unspecifi"
+  },
+  {
+    "id": "tgt-e8d27c91",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('24 months'), which is quantitative, not 'unspecified'."
+  },
+  {
+    "id": "tgt-ef8df580",
+    "policy_id": "critical-raw-materials-act",
+    "set": {
+      "climate_relevance": "none"
+    },
+    "reason": "climate: Quote is Article 1(1)'s general objective — internal-market functioning and secure/resilient/sustainable supply of critical raw materials plus circular"
+  },
+  {
+    "id": "tgt-3f38d147",
+    "policy_id": "csddd",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Same consideration as tgt-0108/tgt-0110: quote (duplicate of Article 22(1) first subparagraph) contains explicit numeric thresholds (1.5°C, 2050)."
+  },
+  {
+    "id": "tgt-60077c9b",
+    "policy_id": "csddd",
+    "set": {
+      "article": "Article 25(1) — Powers of supervisory authorities"
+    },
+    "reason": "article: The heading 'Supervisory authorities' belongs to Article 24. The quoted paragraph, granting supervisory authorities powers/resources and tasking them w"
+  },
+  {
+    "id": "tgt-a3b3ccd6",
+    "policy_id": "csddd",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit numeric threshold ('1,5 oC'). Elsewhere in this project a bare embedded number is treated as sufficient for a 'quantitat"
+  },
+  {
+    "id": "tgt-c8e62421",
+    "policy_id": "csddd",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Same consideration as tgt-0108: quote contains explicit numeric thresholds (1.5°C, 2050 climate-neutrality target)."
+  },
+  {
+    "id": "tgt-3f22cbfa",
+    "policy_id": "csrd",
+    "set": {
+      "target_type": "qualitative"
+    },
+    "reason": "target_type: Same as tgt-0115 (group-level equivalent, Article 29a(2)(b)): the quote gives only years, not a numeric magnitude for the target."
+  },
+  {
+    "id": "tgt-8fcc9933",
+    "policy_id": "csrd",
+    "set": {
+      "target_type": "qualitative"
+    },
+    "reason": "target_type: The quote contains no numeric percentage or quantity for the emission-reduction target itself — only the years 2030/2050 (a timeline), and the phra"
+  },
+  {
+    "id": "tgt-337c264c",
+    "policy_id": "deforestation-regulation",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: quote addresses GHG emissions (mitigation) and biodiversity/ecosystem loss (adaptation side) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1fb31107",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Article 2(49)",
+      "timeline": "",
+      "indicators": []
+    },
+    "reason": "article: Quote is the definition of 'technical specification', which is Article 2, point (49) (Definitions) in the source text, not Article 4(4). Article 4 is ' | timeline: unsupported (\"not earlier than 18 months from entry in\") | indicators: Indicator 'date of application of delegated acts' is unrelated to the 'technical specification' definition quote; nothing in this quote concerns del"
+  },
+  {
+    "id": "tgt-26e121b4",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Annex V, point 6",
+      "indicators": []
+    },
+    "reason": "article: Quote ('References to the relevant harmonised standards or to the common specifications used...') is point 6 of ANNEX V (EU declaration of conformity t | indicators: Indicators 'apparel and clothing accessories' and 'footwear' are actual product-category entries from Annex VII (destruction-ban product list), not "
+  },
+  {
+    "id": "tgt-412040e4",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Article 2 (unnumbered paragraph following point (58), cross-referencing Regulation (EU) 2019/1020)",
+      "timeline": "",
+      "indicators": []
+    },
+    "reason": "article: Quote is the unnumbered closing paragraph of Article 2 (Definitions) that incorporates market-surveillance-related definitions from Regulation (EU) 201 | timeline: unsupported (\"before 19 July 2025\") | indicators: Indicator 'first ecodesign delegated act' has no connection to this definitions cross-reference paragraph."
+  },
+  {
+    "id": "tgt-43a429ff",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Article 21(5)",
+      "timeline": "",
+      "indicators": []
+    },
+    "reason": "article: Quote is verbatim Article 21(5) (self-regulation measure progress reporting), not Article 24(3) (implementing acts on disclosure format). | timeline: unsupported (\"by 19 July 2025\") | indicators: Indicator 'implementing act on disclosure of unsold product destruction' does not describe the Article 21(5) self-regulation progress-reporting cont"
+  },
+  {
+    "id": "tgt-60b8b5d5",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Article 21(6)",
+      "timeline": "",
+      "indicators": [],
+      "target_label": "other"
+    },
+    "reason": "article: Quote is verbatim Article 21(6) (delisting a non-compliant self-regulation measure), not Article 25(1) (prohibition on destruction of unsold consumer p | timeline: unsupported (\"From 19 July 2026\") | indicators: Indicator 'destruction of unsold consumer products (Annex VII)' is unrelated to the Article 21(6) self-regulation delisting text quoted; it matches  | label: The quoted content is a Commission procedural/administrative power to delist a self-regulation measure, not a 'commitment'."
+  },
+  {
+    "id": "tgt-66f50cd1",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "timeline": "from 19 July 2030",
+      "article": "Article 25(1) (same sentence also in Article 24(1))"
+    },
+    "reason": "timeline: 'By 19 July 2027 and every 36 months thereafter' is not supported by the quoted sentence (which itself states a different date, 19 July 2030, for medi | article/timeline: quote is the SME-applicability sentence of Art. 25(1)/24(1), not Article 26; timeline from the quote itself [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-eb2b9583",
+    "policy_id": "ecodesign-sustainable-products",
+    "set": {
+      "article": "Article 21(2), point (f)",
+      "timeline": "",
+      "indicators": []
+    },
+    "reason": "article: Quote is verbatim Article 21(2), point (f) (Self-regulation measures — content of the note justifying a self-regulation measure), not Article 24(1) (Di | timeline: unsupported (\"annual\") | indicators: Indicator 'number and weight of unsold consumer products discarded' does not relate to the self-regulation-measure note quoted in this row; it is dr"
+  },
+  {
+    "id": "tgt-897682ac",
+    "policy_id": "effort-sharing-regulation",
+    "set": {
+      "article": "Article 11(5) — Safety reserve"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 11(5)."
+  },
+  {
+    "id": "tgt-c28cbdc2",
+    "policy_id": "effort-sharing-regulation",
+    "set": {
+      "article": "Article 4(4) — Annual emission levels for the period from 2021 to 2030"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(4)."
+  },
+  {
+    "id": "tgt-c8d671ae",
+    "policy_id": "effort-sharing-regulation",
+    "set": {
+      "article": "Article 11(3) — Safety reserve"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 11(3)."
+  },
+  {
+    "id": "tgt-dda3bc2a",
+    "policy_id": "effort-sharing-regulation",
+    "set": {
+      "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)"
+    },
+    "reason": "article: Reference is truncated mid-cross-reference and thus ambiguous. The Annex I title itself references Article 4(1), not Article 4(3) (the '(3)' visible in"
+  },
+  {
+    "id": "tgt-0637c222",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote governs the calculation of a Member State's indicative national energy efficiency contribution (measured in Mtoe, an energy unit) under Article 4"
+  },
+  {
+    "id": "tgt-109cb911",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is the Cyprus/Malta energy savings derogation for 2024-2030 — same topic as tgt-0156 (the 2021-2023 derogation), which is correctly labelled 'mit"
+  },
+  {
+    "id": "tgt-17d3600a",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "qualitative"
+    },
+    "reason": "target_type: The quote defines the energy-poverty savings share by formula ('equal to the proportion of households in energy poverty...') without stating any nu"
+  },
+  {
+    "id": "tgt-26a68879",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "article": "Article 6(1), fifth subparagraph — Exemplary role of public bodies' buildings"
+    },
+    "reason": "climate: Quote defines the building stock subject to the Article 6(1) nearly-zero-energy-building renovation obligation — same topic as tgt-0147 which is labell | article: Quote is the fifth subparagraph of Article 6(1), not a generic 'Article 6' reference."
+  },
+  {
+    "id": "tgt-44d534d0",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (150 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-4ca958a3",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 35(7), point (e) — Review and monitoring of implementation",
+      "target_label": "other",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Quote is verbatim point (e) of Article 35(7), not a generic 'Article 35' reference. | label: The quote is a Commission review/evaluation criterion (whether to revisit the Article 6(1) renovation rate), not itself a target imposed on Member States | climate: Quote concerns the continuation of the building-renovation-into-nearly-zero-energy-buildings target — same topic as tgt-0147/tgt-0148, both labelled 'm"
+  },
+  {
+    "id": "tgt-6a57e785",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 25(6), point (j) — Heating and cooling assessment and planning",
+      "obligation": "voluntary"
+    },
+    "reason": "article: Quote is verbatim point (j) of Article 25(6), not a generic 'Article 25' reference. | obligation: governing chapeau uses \"should\" (\"Those plans should at least:\") [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-76a08e35",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 8(9)(a) — Energy savings obligation"
+    },
+    "reason": "article: Quote is verbatim Article 8(9), point (a), not a generic 'Article 8' reference."
+  },
+  {
+    "id": "tgt-76f362d9",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "obligation": "mandatory"
+    },
+    "reason": "climate: Quote is part of the Article 8(1) energy savings obligation — same topic as tgt-0152 through tgt-0155 (Article 8(1)(b)(i)-(iv)), all correctly labelled | obligation: governed by Art. 8(1) chapeau \"Member States shall achieve cumulative end-use energy savings\" [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-7cece1ec",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 8(9)(b) — Energy savings obligation"
+    },
+    "reason": "article: Quote is verbatim Article 8(9), point (b), not a generic 'Article 8' reference."
+  },
+  {
+    "id": "tgt-7ceff24f",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 4(5), third subparagraph — Energy efficiency targets"
+    },
+    "reason": "article: Quote is located in the third subparagraph of Article 4(5), not a generic 'Article 4' reference."
+  },
+  {
+    "id": "tgt-845cb005",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 3(1) — Energy efficiency first principle"
+    },
+    "reason": "article: Quote is verbatim Article 3, paragraph 1 (the numbered subparagraph starting 'In accordance with the energy efficiency first principle...'); the claime"
+  },
+  {
+    "id": "tgt-8f201f25",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (50 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-916775f4",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (200 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-94c7627b",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "article": "Article 8(13), second subparagraph — Energy savings obligation"
+    },
+    "reason": "article: Quote is verbatim the second subparagraph of Article 8(13), not a generic 'Article 8' reference."
+  },
+  {
+    "id": "tgt-9a8d4547",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (0 grams/kWh, i.e. zero-emission), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold (zero-emission) for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-d09f5b9d",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote concerns renovating public buildings into nearly zero-energy buildings — the same energy-efficiency/building-renovation topic as tgt-0147 (Articl"
+  },
+  {
+    "id": "tgt-d30adf3b",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "article": "Article 6(6)(a) — Exemplary role of public bodies' buildings"
+    },
+    "reason": "climate: Quote is the nearly-zero-energy-building renovation deadline, the same topic as tgt-0147/tgt-0148 which are labelled 'mitigation'. 'none' is wrong. | article: Quote is verbatim from Article 6(6), point (a) (it is the same sentence fragment also captured within tgt-0148's longer quote), not a generic 'Article "
+  },
+  {
+    "id": "tgt-d534e2a7",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote requires continuation of the Article 8(1)(b)(iv) energy savings rate beyond 2030 — same energy-savings topic as the surrounding rows (tgt-0152 to"
+  },
+  {
+    "id": "tgt-f665ad36",
+    "policy_id": "energy-efficiency-directive",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: The quote states an explicit numeric GHG-intensity ceiling (100 grams/kWh), which is a quantitative threshold. | climate: Quote is a maximum GHG emissions threshold for district heating/cooling systems — clearly mitigation-relevant, not 'none'."
+  },
+  {
+    "id": "tgt-173ee764",
+    "policy_id": "epbd-recast",
+    "set": {
+      "article": "Article 14(1), point (a) — Infrastructure for sustainable mobility"
+    },
+    "reason": "article: ARTICLE_MISMATCH confirmed: the quote is from Article 14(1), point (a) (\"Infrastructure for sustainable mobility\"), not Article 15 (which is titled \"Sm"
+  },
+  {
+    "id": "tgt-21c2285b",
+    "policy_id": "epbd-recast",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Labeled \"none\", but this is the Commission's monitoring of the same average-primary-energy-use decrease values (Article 9(2), second/third subparagraph"
+  },
+  {
+    "id": "tgt-2b004764",
+    "policy_id": "epbd-recast",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Labeled \"none\", but this quote is the same average-primary-energy-use reduction milestone from Article 9(2) whose parent/sibling extractions (e.g. tgt-"
+  },
+  {
+    "id": "tgt-3b113ab6",
+    "policy_id": "epbd-recast",
+    "set": {
+      "article": "Article 6(3) — Calculation of cost-optimal levels of minimum energy performance requirements"
+    },
+    "reason": "article: Article reference omits the paragraph number. The quote (15% discrepancy / 24-month adjustment) is paragraph 3 of Article 6, not the article as a whole"
+  },
+  {
+    "id": "tgt-44ca28df",
+    "policy_id": "epbd-recast",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified as \"none\" but the quote concerns limit values on the life-cycle global warming potential (GWP) of new buildings — a direct climate-mitigatio"
+  },
+  {
+    "id": "tgt-86f1ac80",
+    "policy_id": "epbd-recast",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same issue as tgt-0197: this is the 2035 milestone of the same Article 9(2) average-primary-energy-use decrease target, inconsistently tagged \"none\" wh"
+  },
+  {
+    "id": "tgt-fc2da23e",
+    "policy_id": "epbd-recast",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Labeled \"both\" (mitigation+adaptation), but the quote is an accounting rule for crediting disaster-affected building renovations toward the primary-ene"
+  },
+  {
+    "id": "tgt-051f2228",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 2(1) — Climate-neutrality objective"
+    },
+    "reason": "article: Quote is verbatim Article 2, paragraph 1, but is cited only as generic 'Article 2' (paragraph number omitted, unlike the near-duplicate row tgt-0217 wh"
+  },
+  {
+    "id": "tgt-08ced768",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(10)(a) (replacing point 3.1.1(i), Section A, Part 1, Annex I to Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-0913f0ed",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 6(1)(a) — Assessment of Union progress and measures"
+    },
+    "reason": "article: Quote is point (a) of Article 6, paragraph 1, cited only as generic 'Article 6'."
+  },
+  {
+    "id": "tgt-0e50947f",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 6(3) — Assessment of Union progress and measures"
+    },
+    "reason": "article: Quote is verbatim Article 6, paragraph 3, cited only as generic 'Article 6'."
+  },
+  {
+    "id": "tgt-1201f2df",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 4(1) — Intermediate Union climate targets"
+    },
+    "reason": "article: Quote is verbatim Article 4, paragraph 1 (first subparagraph), cited only as generic 'Article 4' (unlike near-duplicate tgt-0221, which correctly says "
+  },
+  {
+    "id": "tgt-182d72ef",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(9) (replacing Article 45 of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1adf7e9a",
+    "policy_id": "eu-climate-law",
+    "drop": true,
+    "reason": "duplicate of the Article 2(2) sentence already captured (identical text minus paragraph number) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1ae33f36",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 4(2) — Intermediate Union climate targets"
+    },
+    "reason": "article: Quote is verbatim Article 4, paragraph 2, cited only as generic 'Article 4'."
+  },
+  {
+    "id": "tgt-1d4e05ee",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 8(2) — Common provisions on Commission assessment"
+    },
+    "reason": "article: Quote is verbatim Article 8, paragraph 2, cited only as generic 'Article 8'."
+  },
+  {
+    "id": "tgt-2afa204b",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(7)(a) (replacing Article 17(2)(a) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-2b180ebd",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 6(4) — Assessment of Union progress and measures"
+    },
+    "reason": "article: Quote is from Article 6, paragraph 4, cited only as generic 'Article 6'."
+  },
+  {
+    "id": "tgt-36057ac8",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 9(1) — Public participation"
+    },
+    "reason": "article: Quote is the first sentence of Article 9, paragraph 1, cited only as generic 'Article 9'."
+  },
+  {
+    "id": "tgt-3769a95e",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 4(3) — Intermediate Union climate targets"
+    },
+    "reason": "article: Quote is verbatim the first sentence of Article 4, paragraph 3, cited only as generic 'Article 4'."
+  },
+  {
+    "id": "tgt-434d2845",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(10)(b) (inserting point 5.5, Section B, Part 1, Annex I to Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-48d710cd",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "timeline": "2030"
+    },
+    "reason": "timeline: This quote's two operative figures (the 225 Mt CO2eq removals cap, and the 'higher net carbon sink' aim) both pertain to 2030 (the Union 2030 climate "
+  },
+  {
+    "id": "tgt-530fa44b",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 4(1) — Intermediate Union climate targets",
+      "timeline": "2030"
+    },
+    "reason": "article: Quote is verbatim from Article 4(1), third subparagraph, cited only as generic 'Article 4'. | timeline: The sentence's operative target (a higher net carbon sink) is dated 2030; '2050' in the quote refers only to the overarching climate-neutrality object"
+  },
+  {
+    "id": "tgt-5450319c",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(4) (inserting Article 8(2)(e) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: Correct at the article level but imprecise: this is specifically Article 13(4), inserting a new point (e) into Article 8(2) of Regulation (EU) 2018/199"
+  },
+  {
+    "id": "tgt-5c8b9f18",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(3) (replacing Article 3(2)(f) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: Correct at the article level but imprecise: this is specifically Article 13(3), inserting Article 3(2)(f) of Regulation (EU) 2018/1999."
+  },
+  {
+    "id": "tgt-69956688",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(5) (replacing Article 11 of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-6c18debe",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(11) (replacing point (c)(viii) of Annex VI to Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-6e446bfd",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 6(2)(a) — Assessment of Union progress and measures"
+    },
+    "reason": "article: Quote is point (a) of Article 6, paragraph 2, cited only as generic 'Article 6'."
+  },
+  {
+    "id": "tgt-797c8191",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(8) (replacing Article 29(1)(b) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8c6c81d5",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(1) (replacing Article 1(1)(a) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: Correct at the article level (Article 13 is indeed the amending provision) but could be more precise: this is specifically Article 13(1), inserting Art"
+  },
+  {
+    "id": "tgt-a8a956d9",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 8(1) — Common provisions on Commission assessment"
+    },
+    "reason": "article: Quote is verbatim Article 8, paragraph 1, cited only as generic 'Article 8'."
+  },
+  {
+    "id": "tgt-c35fd9ba",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-d337ee9a",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 13(6)(b) (replacing Article 15(3)(c) of Regulation (EU) 2018/1999)"
+    },
+    "reason": "article: quote is amendment text the Climate Law inserts into Reg. (EU) 2018/1999 via its Article 13 (the Climate Law itself has no such article) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-e3739f0d",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 7(2) — Assessment of national measures"
+    },
+    "reason": "article: Quote is verbatim Article 7, paragraph 2, cited only as generic 'Article 7'."
+  },
+  {
+    "id": "tgt-f64e6aa3",
+    "policy_id": "eu-climate-law",
+    "set": {
+      "article": "Article 7(1)(a) — Assessment of national measures"
+    },
+    "reason": "article: Quote is point (a) of Article 7, paragraph 1, cited only as generic 'Article 7'."
+  },
+  {
+    "id": "tgt-5a7e8ff4",
+    "policy_id": "eu-ets-directive",
+    "set": {
+      "timeline": "for the three-year period beginning 1 January 2005"
+    },
+    "reason": "timeline: Timeline value is truncated/garbled mid-sentence and bleeds into content belonging to the following (separate) sentence about the five-year period beg"
+  },
+  {
+    "id": "tgt-627e15d9",
+    "policy_id": "eu-ets-directive",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit quantitative monetary threshold (EUR 100 per tonne CO2eq), which meets the rubric's requirement for 'quantitative' (a nu"
+  },
+  {
+    "id": "tgt-e2a116d1",
+    "policy_id": "eu-ets-directive",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit quantitative monetary threshold (EUR 40 per tonne CO2eq), which meets the rubric's requirement for 'quantitative', but t"
+  },
+  {
+    "id": "tgt-2587bdf1",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.7 Preserving and restoring ecosystems and biodiversity"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-4fe17786",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-50e7fb22",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.2 Supplying clean, affordable and secure energy"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-5f1802a1",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.2.3 Mobilising research and fostering innovation"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-5f7c1722",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8b3862c0",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.6. From ‘Farm to Fork’: designing a fair, healthy and environmentally-friendly food system"
+    },
+    "reason": "article: heading was truncated mid-word [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-94201942",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "climate_relevance": "adaptation"
+    },
+    "reason": "climate: Quote sits under the section heading 'Preserving and restoring ecosystems and biodiversity' and concerns biodiversity/ecosystem loss. Per the register'"
+  },
+  {
+    "id": "tgt-9ecb3b97",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c5018ef7",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c58aac0f",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-d0cf5ab7",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "climate_relevance": "none",
+      "article": "3. The EU as a global leader"
+    },
+    "reason": "climate: generic climate-related budget share; \"climate-related\" keyword falsely tripped adaptation; siblings are \"none\" [fact-check 2026-07] | section: quote sits in this numbered section, not generic \"Body\" [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-e16d2c6d",
+    "policy_id": "eu-green-deal",
+    "set": {
+      "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition"
+    },
+    "reason": "section: quote sits in this numbered section, not generic Body [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-793086cc",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 18(2) — Reporting and review"
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: quote is Article 18(2) ('Reporting and review'), not Article 21 ('Entry into force and application'). Article 21 contains o"
+  },
+  {
+    "id": "tgt-93dbf851",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 18(3) — Reporting and review"
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: quote is Article 18(3) ('Reporting and review'), not Article 21."
+  },
+  {
+    "id": "tgt-ade6ec07",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 10(8) — Emission type-approval, conformity of production, in-service conformity and market surveillance"
+    },
+    "reason": "article: Article number is correct (10) but the heading is truncated and no paragraph is given; the quote is specifically paragraph 8, a derogation for M2/M3 ve"
+  },
+  {
+    "id": "tgt-c7e1b871",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 18(4) — Reporting and review",
+      "timeline": "",
+      "indicators": []
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: quote is the continuation of Article 18(4) (second sentence, on minimum performance requirements for vehicle durability), n | timeline: unsupported (\"from 1 July 2030 / from 1 July 2031\") | indicators: Indicator 'application dates for small-volume manufacturers' is unrelated to this quote, which is about minimum durability performance requirements "
+  },
+  {
+    "id": "tgt-dee030db",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 3, point (58) — Definitions"
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: the quote is a definition ('NOVC-HEV') found in Article 3 (Definitions), point (58), not in Article 4 (Obligations of the m"
+  },
+  {
+    "id": "tgt-e76df0ff",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 4(6), point (b)",
+      "indicators": []
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: the quote ('OBM systems capable of monitoring exhaust emissions;') is Article 4(6), point (b) (Obligations of the manufactu | indicators: Indicators ('emission limits (Annex I)', 'lifetime of the vehicle (Annex IV)', 'battery durability minimum performance requirements (Annex II)') do "
+  },
+  {
+    "id": "tgt-f1ce8871",
+    "policy_id": "euro-7-regulation",
+    "set": {
+      "article": "Article 18(4) — Reporting and review",
+      "indicators": []
+    },
+    "reason": "article: Confirmed ARTICLE_MISMATCH: quote is Article 18(4), first sentence ('Reporting and review', battery durability report), not Article 21. | indicators: Indicator 'application dates for C1, C2, C3 class tyres' is completely unrelated to this quote, which concerns a battery-durability report. Tyre app"
+  },
+  {
+    "id": "tgt-06baa173",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same inconsistency as tgt-0300: sub-point of the Article 13(9) F-gas switchgear phase-out, which is a mitigation measure."
+  },
+  {
+    "id": "tgt-07c922a0",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 6(1) — Leakage detection systems"
+    },
+    "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 6(1)."
+  },
+  {
+    "id": "tgt-0a15046d",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation",
+      "target_type": "quantitative"
+    },
+    "reason": "climate: Same inconsistency as tgt-0300: sub-point of the Article 13(9) F-gas switchgear phase-out, which is a mitigation measure. | target_type: Quote contains explicit numeric thresholds (145 kV, 50 kA, GWP of 1) so it meets the quantitative rule; labelled 'unspecified' while the identicall"
+  },
+  {
+    "id": "tgt-1d7cca1c",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 5(1) — Leak checks"
+    },
+    "reason": "article: Article reference lacks the paragraph number; the quote is verbatim Article 5(1), not the whole of Article 5."
+  },
+  {
+    "id": "tgt-1eb2c4e3",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 6(2) — Leakage detection systems"
+    },
+    "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 6(2)."
+  },
+  {
+    "id": "tgt-23e32e4b",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains a numeric GWP threshold ('global warming potential of 750 or more') so it meets the quantitative rule; labelled 'qualitative' incons"
+  },
+  {
+    "id": "tgt-29ff133e",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified 'none' but this is a sub-point of Article 13(9), the parent clause of which (tgt-0299) is correctly classified 'mitigation' — banning F-gas-"
+  },
+  {
+    "id": "tgt-3344bbe2",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same inconsistency as tgt-0311: Annex V HFC production-right phase-down step, a mitigation measure."
+  },
+  {
+    "id": "tgt-3c2e1f1c",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains a numeric GWP threshold ('global warming potential of 2 500 or more') so it meets the quantitative rule; labelled 'qualitative' whil"
+  },
+  {
+    "id": "tgt-4095939a",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 5(6)(c) — Leak checks"
+    },
+    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(c)."
+  },
+  {
+    "id": "tgt-49605178",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 31(5) — Penalties"
+    },
+    "reason": "article: Article reference lacks the paragraph number; quote is verbatim from Article 31(5), second sentence."
+  },
+  {
+    "id": "tgt-4fe57798",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 16(1) — Reduction of the quantity of hydrofluorocarbons placed on the market"
+    },
+    "reason": "article: Article heading is truncated mid-word (matches the ARTICLE_TRUNCATED flag); full Article 16 heading is 'Reduction of the quantity of hydrofluorocarbons"
+  },
+  {
+    "id": "tgt-5cde3d7b",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 5(6)(b) — Leak checks"
+    },
+    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(b)."
+  },
+  {
+    "id": "tgt-6e36ba24",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 5(6)(a) — Leak checks"
+    },
+    "reason": "article: Article reference lacks paragraph/point; quote is verbatim Article 5(6)(a)."
+  },
+  {
+    "id": "tgt-a1f07801",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified 'none' but Annex V sets production-right phase-down caps for hydrofluorocarbons (potent GHGs) as part of the Regulation's HFC phase-down, co"
+  },
+  {
+    "id": "tgt-a33963ca",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 17(7) — Determination of reference values and quota allocations for the placing on the market of…"
+    },
+    "reason": "article: Article heading truncated mid-word and missing the paragraph number; quote is from Article 17(7), second subparagraph."
+  },
+  {
+    "id": "tgt-ad13d0c2",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified 'none' but the provision restricts placing on the market of products/equipment containing fluorinated greenhouse gases (very potent GHGs) un"
+  },
+  {
+    "id": "tgt-af6b2c36",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 26(8) — Reporting by undertakings"
+    },
+    "reason": "article: Article reference lacks the paragraph number; quote is verbatim Article 26(8)."
+  },
+  {
+    "id": "tgt-b6eb909a",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified 'none' but desflurane is an F-gas covered by this Regulation; recital 27 explicitly calls it 'that very potent greenhouse gas'. Phasing out "
+  },
+  {
+    "id": "tgt-b7439b50",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified 'none' but SF6 is a listed fluorinated greenhouse gas (Annex I) and recital 22 identifies it as a very potent GHG; restricting its use in sw"
+  },
+  {
+    "id": "tgt-cc5d1fda",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same inconsistency as tgt-0311: Annex V HFC production-right phase-down step, a mitigation measure."
+  },
+  {
+    "id": "tgt-d8ae4a5f",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same inconsistency as tgt-0311: Annex V HFC production-right phase-down step, a mitigation measure."
+  },
+  {
+    "id": "tgt-f4fc64f4",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 13(3) — Control of use"
+    },
+    "reason": "article: Article reference lacks the paragraph number; quote is verbatim the first sentence of Article 13(3)."
+  },
+  {
+    "id": "tgt-f56a0626",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "article": "Article 17(8) — Determination of reference values and quota allocations for the placing on the market of…"
+    },
+    "reason": "article: Article heading truncated mid-word and missing the paragraph number; quote is from Article 17(8)."
+  },
+  {
+    "id": "tgt-fccfd356",
+    "policy_id": "f-gas-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same inconsistency as tgt-0300: sub-point of the Article 13(9) F-gas switchgear phase-out, which is a mitigation measure."
+  },
+  {
+    "id": "tgt-06fd25a7",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink"
+    },
+    "reason": "section: Article/section reference is truncated mid-word."
+  },
+  {
+    "id": "tgt-0d509deb",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action"
+    },
+    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
+  },
+  {
+    "id": "tgt-195a40f2",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink"
+    },
+    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
+  },
+  {
+    "id": "tgt-2025acfe",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.2.2 Cleaner mobility and transport fuels"
+    },
+    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
+  },
+  {
+    "id": "tgt-27f97df3",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "3.Opportunities and Incentives: Innovation and Investment for a competitive transition"
+    },
+    "reason": "section: Article/section reference is truncated mid-word."
+  },
+  {
+    "id": "tgt-33252dd6",
+    "policy_id": "fit-for-55",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is about reducing energy consumption, which the register's own taxonomy defines as a mitigation topic (mitigation = emissions/energy/renewables/c"
+  },
+  {
+    "id": "tgt-43362bdd",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "5. Conclusion"
+    },
+    "reason": "section: quote sits in this numbered section, not generic \"Body\" [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-7944ffef",
+    "policy_id": "fit-for-55",
+    "drop": true,
+    "reason": "duplicate of tgt-0319 (same provision text) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8273e96a",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.2 A competitive transition: New opportunities through industrial and sectoral change"
+    },
+    "reason": "section: Article/section reference is truncated mid-word."
+  },
+  {
+    "id": "tgt-89288c9b",
+    "policy_id": "fit-for-55",
+    "drop": true,
+    "reason": "quote is the document title, not a target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8b90cdb3",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "4. A Sustainable EU in a Sustainable World"
+    },
+    "reason": "section: quote sits in this numbered section, not generic \"Body\" [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-8c6b0235",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.2.1 Industrial transformation and carbon pricing"
+    },
+    "reason": "section: Article field is generic 'Body' but the quote sits within a specific numbered subsection."
+  },
+  {
+    "id": "tgt-a4ff486a",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "3.Opportunities and Incentives: Innovation and Investment for a competitive transition",
+      "climate_relevance": "none"
+    },
+    "reason": "section: Article/section reference is truncated mid-word. | climate: Quote is a generic 'green transition' budget-share figure for the Recovery and Resilience Facility, with no resilience/ecosystem/water-specific wording"
+  },
+  {
+    "id": "tgt-ae5baca0",
+    "policy_id": "fit-for-55",
+    "drop": true,
+    "reason": "quote is the Section 1 heading (title repeated), not a target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-d873be19",
+    "policy_id": "fit-for-55",
+    "drop": true,
+    "reason": "duplicate of tgt-0325 (same provision text) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-f3ad597b",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action"
+    },
+    "reason": "section: Article/section reference is truncated mid-word."
+  },
+  {
+    "id": "tgt-f5445a08",
+    "policy_id": "fit-for-55",
+    "set": {
+      "article": "1.'Fit for 55': delivering the EU's 2030 Climate Target on the way to climate neutrality"
+    },
+    "reason": "section: Article/section reference is truncated mid-word."
+  },
+  {
+    "id": "tgt-31e539a8",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: On-shore power supply (OPS) at berth eliminates onboard fuel-combustion emissions while ships are moored — a direct energy/emissions mitigation measure"
+  },
+  {
+    "id": "tgt-3e25e7d2",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "article": "Article 2(2) — Scope",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is from a specific paragraph (Article 2(2)) but is cited only at the heading level, unlike sibling rows in this packet that use paragraph-level c | label: The quoted text is an administrative/definitional criterion the Commission uses to designate 'neighbouring container transhipment ports' via implementing"
+  },
+  {
+    "id": "tgt-4c45c1a8",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: The quote explicitly contains a numeric reference value ('91,16 grams of CO2 equivalent per MJ') used to calculate the GHG intensity limit, which d"
+  },
+  {
+    "id": "tgt-53b44714",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "article": "Article 5(4)"
+    },
+    "reason": "article: Cited at heading level only; the quote is verbatim Article 5, paragraph 4."
+  },
+  {
+    "id": "tgt-6c03bd42",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "climate_relevance": "mitigation",
+      "article": "Article 5(3) (duplicate of tgt-0341; consider removing one)"
+    },
+    "reason": "climate: Duplicate of tgt-0341 (identical quote content, generic article citation). Same climate_relevance misclassification applies. | article: Cited at heading level only; the quote is specifically Article 5(3) content, and is a duplicate row of tgt-0341 which already carries the correct parag"
+  },
+  {
+    "id": "tgt-7e7be956",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "article": "Article 6(10)",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Cited at article heading level only; the quote is verbatim Article 6, paragraph 10. | climate: This provision caps how often a ship may invoke exceptions to the Article 6 OPS/zero-emission-at-berth mandate, so it is part of the same mitigation me"
+  },
+  {
+    "id": "tgt-87d2e3dd",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same OPS mitigation measure as tgt-0344, phased in for a broader set of ports from 2035."
+  },
+  {
+    "id": "tgt-98f47289",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "obligation": "voluntary"
+    },
+    "reason": "obligation: permissive RFNBO multiplier (\"can be used\"), an option not a duty [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c5a7f504",
+    "policy_id": "fueleu-maritime",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: The quote concerns a mandatory subtarget for the share of RFNBO (renewable fuels of non-biological origin) in a ship's yearly energy use — a renewable-"
+  },
+  {
+    "id": "tgt-2ffff099",
+    "policy_id": "governance-regulation",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains explicit numeric thresholds (2 °C, 1.5 °C). For internal consistency with other rows in this packet where an embedded number drives "
+  },
+  {
+    "id": "tgt-37e4b001",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union"
+    },
+    "reason": "article: Same truncated heading / missing pinpoint issue."
+  },
+  {
+    "id": "tgt-3def2076",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 53(1)(a) — Amendments to Directive 2010/31/EU"
+    },
+    "reason": "article: no Article 2a exists in Reg. (EU) 2018/1999; quote is text inserted into Directive 2010/31/EU [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-4a5ad4ec",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union"
+    },
+    "reason": "article: Same truncated heading / missing pinpoint as tgt-0359; quote is part of the same Article 4(a)(2) paragraph."
+  },
+  {
+    "id": "tgt-4ab436f0",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 5(2) — Member States' contribution setting process in the area of renewable energy"
+    },
+    "reason": "article: Heading is truncated ('...area of renewable') and lacks the paragraph (2) pinpoint; quote is specifically Article 5(2)."
+  },
+  {
+    "id": "tgt-6a33a9b7",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union"
+    },
+    "reason": "article: Heading is truncated ('...for the five dimensio') and lacks the point (a)(2) pinpoint; the quote is the renewable-energy sub-point of Article 4(a)."
+  },
+  {
+    "id": "tgt-6b09672e",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 2, point (20)(b) — Definitions ('early efforts')",
+      "target_label": "other"
+    },
+    "reason": "article: Citation lacks the pinpoint sub-point; the quote is the 'early efforts' definition, Article 2, point (20)(b), not a generic Article 2 reference. | label: definition of \"early efforts\", not a target of the act [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-6b6b65ed",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 47(1)(b) — Amendments to Directive 98/70/EC"
+    },
+    "reason": "article: no Article 7a exists in Reg. (EU) 2018/1999; quote is text inserted into Directive 98/70/EC [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-7dd1788d",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 29(2) — Assessment of progress"
+    },
+    "reason": "article: Missing paragraph pinpoint; the quote is specifically Article 29(2) (renewable-energy progress assessment), not the article as a whole."
+  },
+  {
+    "id": "tgt-8e2c58a5",
+    "policy_id": "governance-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: The quote is about national objectives to promote clean energy technologies, a mitigation-related (energy) topic; it should not be 'none'."
+  },
+  {
+    "id": "tgt-bc7054d3",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 4(a)(2), second subparagraph — National objectives, targets and contributions for the five dimensions of the…"
+    },
+    "reason": "article: Same truncated heading; quote is the unnumbered second subparagraph following point (a)(2), not a bare 'Article 4'."
+  },
+  {
+    "id": "tgt-cbc5be0d",
+    "policy_id": "governance-regulation",
+    "set": {
+      "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union"
+    },
+    "reason": "article: Same truncated heading / missing pinpoint issue."
+  },
+  {
+    "id": "tgt-0fe160b8",
+    "policy_id": "horizon-europe",
+    "drop": true,
+    "reason": "quote is a bare heading (\"Strategic planning and implementation and forms of Union funding\"), not a target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-21a925fb",
+    "policy_id": "horizon-europe",
+    "set": {
+      "article": "Article 2(28)",
+      "indicators": [],
+      "target_label": "other"
+    },
+    "reason": "article: Quote is verbatim the definition of 'classified information', which is Article 2, point (28) (Definitions) in the source text, not Article 3(1) (Object | indicators: Indicator 'scientific, technological, economic and societal impact' has no connection to the 'classified information' definition; it reads like lang | label: A definitional clause is labeled 'objective'; it is not an objective statement."
+  },
+  {
+    "id": "tgt-33333c8e",
+    "policy_id": "horizon-europe",
+    "set": {
+      "article": "Article 6(6)"
+    },
+    "reason": "article: Quote is verbatim Article 6, paragraph 6 (strategic planning support for the specific programme/EIT KICs), not Article 8(4)(d). The row's indicator ('m"
+  },
+  {
+    "id": "tgt-824cfbf4",
+    "policy_id": "horizon-europe",
+    "set": {
+      "article": "Article 10(2)(c)"
+    },
+    "reason": "article: Quote is verbatim Article 10(2), point (c) (European Partnerships design criteria), not Article 12(2)(d) (Budget). The row's timeline ('for the period "
+  },
+  {
+    "id": "tgt-f6108fbb",
+    "policy_id": "horizon-europe",
+    "drop": true,
+    "reason": "quote is a bare heading (\"Defence research and development\"), not a target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-f7f2bcbf",
+    "policy_id": "horizon-europe",
+    "set": {
+      "article": "Article 9(1) — Budget"
+    },
+    "reason": "article: Quote is verbatim Article 9(1) (establishment of the European Innovation Council), not Article 12(1) (Budget). The row's timeline ('for the period from"
+  },
+  {
+    "id": "tgt-f92dd8e8",
+    "policy_id": "horizon-europe",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: 35% climate-expenditure mainstreaming target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-fc894ad5",
+    "policy_id": "horizon-europe",
+    "set": {
+      "article": "Article 10(1) (second subparagraph)"
+    },
+    "reason": "article: Quote is verbatim from Article 10(1) (European Partnerships — central management rule), not Article 12(2)(c) (Budget). The row's timeline ('for the per"
+  },
+  {
+    "id": "tgt-91d4b25e",
+    "policy_id": "industrial-emissions-directive",
+    "set": {
+      "article": "Article 46(2) — Control of emissions"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is the second subparagraph of Article 46(2), the same paragraph as row tgt-0389."
+  },
+  {
+    "id": "tgt-e3f9c8db",
+    "policy_id": "industrial-emissions-directive",
+    "set": {
+      "article": "Article 55(2) — Reporting and public information on waste incineration plants and waste co-incineration plants"
+    },
+    "reason": "article: Article title is truncated and the paragraph number is omitted; quote is verbatim from Article 55(2)."
+  },
+  {
+    "id": "tgt-feede12b",
+    "policy_id": "industrial-emissions-directive",
+    "set": {
+      "article": "Article 33(3) — Limited life time derogation"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from paragraph 3 of Article 33, not the article as a whole."
+  },
+  {
+    "id": "tgt-b10ce60e",
+    "policy_id": "lulucf-regulation",
+    "set": {
+      "article": "Article 13b(1) — Land flexibility mechanism for the period from 2026 to 2030"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 13b(1) (a subset of the same paragraph quoted in full in row tgt-0407, whi"
+  },
+  {
+    "id": "tgt-b1c22e59",
+    "policy_id": "lulucf-regulation",
+    "set": {
+      "article": "Article 4(2) — Commitments and targets"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(2) (identical quote to row tgt-0401, which correctly cites Article 4(2))"
+  },
+  {
+    "id": "tgt-bedce6d9",
+    "policy_id": "lulucf-regulation",
+    "set": {
+      "article": "Article 4(5) — Commitments and targets"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 4(5)."
+  },
+  {
+    "id": "tgt-bfec02c0",
+    "policy_id": "lulucf-regulation",
+    "set": {
+      "article": "Article 13b(3) — Land flexibility mechanism for the period from 2026 to 2030"
+    },
+    "reason": "article: Article reference omits the paragraph number; quote is verbatim from Article 13b(3)."
+  },
+  {
+    "id": "tgt-0e4ae91a",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 23(1)"
+    },
+    "reason": "article: Quote is Article 23(1), not Article 23 generally."
+  },
+  {
+    "id": "tgt-278b6e3c",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 18(2), point (a)"
+    },
+    "reason": "article: Quote is point (a) of the derogation plan in Article 18(2), not Article 18 generally; heading text is also truncated."
+  },
+  {
+    "id": "tgt-28d42680",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 18(1) — Inactive wells, temporarily plugged wells and permanently plugged and abandoned wells"
+    },
+    "reason": "article: Article heading text in the field is truncated ('permanently plugge'); the paragraph reference (18(1)) itself is correct."
+  },
+  {
+    "id": "tgt-29cc822d",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote requires operators to submit an LDAR (leak detection and repair) programme, i.e. the core methane-leak mitigation mechanism of the Regulation. La"
+  },
+  {
+    "id": "tgt-2cc1ee69",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 33(2)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is part of Article 33(2) (the concluding sentence after the penalty list), not Article 33 generally. | label: This is an administrative fine cap (a penalty/enforcement provision), not a sustainability target, goal or commitment."
+  },
+  {
+    "id": "tgt-310c5cc5",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is the repair-timeline requirement for detected methane leaks, part of the mitigation regime; 'none' understates its relevance."
+  },
+  {
+    "id": "tgt-31e1f505",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote concerns the LDAR survey timetable (methane leak detection), a mitigation-chain provision; 'none' understates its relevance."
+  },
+  {
+    "id": "tgt-36f8aa1b",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 18(2), point (c)"
+    },
+    "reason": "article: Quote is point (c) of Article 18(2), not Article 18 generally; heading text is also truncated."
+  },
+  {
+    "id": "tgt-3e8444a4",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: This is the compliance deadline for the Article 15 venting/flaring ban, a mitigation measure; 'none' is a clear misclassification (compare Article 22 r"
+  },
+  {
+    "id": "tgt-4b14c75f",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation",
+      "article": "Article 14(5), point (b)"
+    },
+    "reason": "climate: Quote sets LDAR survey frequency (a leak-mitigation activity); 'none' understates its relevance. | article: Quote is point (b) of the derogation conditions in Article 14(5), not Article 14 generally."
+  },
+  {
+    "id": "tgt-63c7494f",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 29(2) — Methane intensity of the production of crude oil, natural gas and coal"
+    },
+    "reason": "article: Article heading text in the field is truncated ('crude oil, natural gas an'); the paragraph reference (29(2)) itself is correct."
+  },
+  {
+    "id": "tgt-6a69b7e5",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 18(2), point (b)"
+    },
+    "reason": "article: Quote is point (b) of Article 18(2), not Article 18 generally; heading text is also truncated."
+  },
+  {
+    "id": "tgt-81384094",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 33(2)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is part of Article 33(2) (the concluding sentence after the penalty list), not Article 33 generally. | label: This is an administrative fine cap (a penalty/enforcement provision), not a sustainability target, goal or commitment."
+  },
+  {
+    "id": "tgt-853f9f97",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 25(2)"
+    },
+    "reason": "article: Quote is the third sentence of Article 25(2), not Article 25 generally."
+  },
+  {
+    "id": "tgt-99cd6561",
+    "policy_id": "methane-regulation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: The venting/flaring prohibition is a direct methane-emission mitigation measure (equivalent in nature to Article 22, which the packet correctly labels "
+  },
+  {
+    "id": "tgt-aa6f0cc3",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 14(5)"
+    },
+    "reason": "article: Quote is the second subparagraph of Article 14(5) (the reversion-to-paragraph-2 trigger), not Article 14 generally."
+  },
+  {
+    "id": "tgt-b3a3cbc5",
+    "policy_id": "methane-regulation",
+    "drop": true,
+    "reason": "duplicate of tgt-0435 (same provision text) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-b7f92812",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 36(2), point (c)",
+      "target_label": "other"
+    },
+    "reason": "article: Quote is Article 36(2), point (c), not Article 36 generally. | label: review-report criterion cross-referencing targets, not itself a target [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-bd5a4311",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 20(4)"
+    },
+    "reason": "article: Quote is the third subparagraph of Article 20(4), not Article 20 generally."
+  },
+  {
+    "id": "tgt-e9bbddd2",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 25(2)"
+    },
+    "reason": "article: Quote is the second sentence of Article 25(2), not Article 25 generally."
+  },
+  {
+    "id": "tgt-f064e250",
+    "policy_id": "methane-regulation",
+    "set": {
+      "article": "Article 20(1)"
+    },
+    "reason": "article: Quote is the second sentence of Article 20(1), not Article 20 generally."
+  },
+  {
+    "id": "tgt-00ab563b",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: Same peatland-rewetting target series; mitigation dimension omitted."
+  },
+  {
+    "id": "tgt-277a650a",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 8(1) — Restoration of urban ecosystems"
+    },
+    "reason": "article: Generic 'Article 8' citation; quote is the second sentence of Article 8(1)."
+  },
+  {
+    "id": "tgt-2a19dd5e",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 5(7), point (a) — Restoration of marine ecosystems"
+    },
+    "reason": "article: Generic 'Article 5' citation; quote is precisely Article 5(7), point (a)."
+  },
+  {
+    "id": "tgt-482617d6",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 5(14), point (a) — Restoration of marine ecosystems"
+    },
+    "reason": "article: Generic 'Article 5' citation; quote is precisely Article 5(14), point (a)."
+  },
+  {
+    "id": "tgt-65a683ce",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "article: Generic 'Article 4' citation; quote is the third sentence of Article 4(5)."
+  },
+  {
+    "id": "tgt-72f73929",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: Peatland rewetting targets are explicitly tied to greenhouse-gas mitigation in the same Article 11(4): rewetting reduces net GHG emissions in addition "
+  },
+  {
+    "id": "tgt-836b5948",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains explicit numeric index values (110, 120, 130); classifying as 'unspecified' is wrong."
+  },
+  {
+    "id": "tgt-87aeeea9",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 5(1), point (c) — Restoration of marine ecosystems"
+    },
+    "reason": "article: Generic 'Article 5' citation; quote is precisely Article 5(1), first subparagraph, point (c)."
+  },
+  {
+    "id": "tgt-a1c7fc7d",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "adaptation",
+      "article": "Article 4(2), point (c) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "climate: Same Article 4(2) derogation series; classified 'none' inconsistent with sibling restoration-percentage rows classified 'adaptation'. | article: Generic 'Article 4' citation; quote is precisely Article 4(2), second subparagraph, point (c)."
+  },
+  {
+    "id": "tgt-a362f90f",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "article: Generic 'Article 4' citation; quote is the second sentence of Article 4(5)."
+  },
+  {
+    "id": "tgt-ade78a12",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "adaptation",
+      "article": "Article 4(2), point (b) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "climate: Same Article 4(2) derogation series as tgt-0453; a habitat-restoration percentage target classified 'none' while sibling Article 4(1) targets are 'adap | article: Generic 'Article 4' citation; quote is precisely Article 4(2), second subparagraph, point (b)."
+  },
+  {
+    "id": "tgt-b61da0f3",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "article: Generic 'Article 4' citation; quote is the first sentence of Article 4(5) (the derogation clause)."
+  },
+  {
+    "id": "tgt-be3670ea",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains explicit numeric index values (105, 110, 115); classifying as 'unspecified' is wrong."
+  },
+  {
+    "id": "tgt-c2545199",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 17(2), point (c) — Assessment of the national restoration plan",
+      "target_label": "other"
+    },
+    "reason": "article: Generic 'Article 17' citation; quote is precisely Article 17(2), point (c). | label: Commission assessment criterion cross-referencing existing targets [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-c3babf4c",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "adaptation",
+      "article": "Article 4(2), point (a) — Restoration of terrestrial, coastal and freshwater ecosystems"
+    },
+    "reason": "climate: Classified 'none' but the quote is an area-based habitat restoration target (Article 4(2) derogation, point (a)), directly analogous to tgt-0447/tgt-04 | article: Article field is generic ('Article 4') though the quote is precisely locatable to Article 4(2), second subparagraph, point (a); sibling rows in the sam"
+  },
+  {
+    "id": "tgt-cf6efe96",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "adaptation"
+    },
+    "reason": "climate: Quote concerns non-deterioration of restored habitat/species-habitat areas (ecosystem maintenance), thematically the same as tgt-0451 (Article 4(17)(a)"
+  },
+  {
+    "id": "tgt-d3f7c8b2",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: Same peatland-rewetting target series as tgt-0470; mitigation dimension (GHG emission reduction from rewetting) is omitted."
+  },
+  {
+    "id": "tgt-d5164117",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "target_type": "qualitative"
+    },
+    "reason": "target_type: Quote contains no number, percentage, or quantity threshold ('increasing trend', 'satisfactory levels' left to be set elsewhere under Article 14(5)"
+  },
+  {
+    "id": "tgt-e05e9ae1",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 15(3), point (b) — Content of the national restoration plan",
+      "target_label": "other"
+    },
+    "reason": "article: Generic 'Article 15' citation; quote is precisely Article 15(3), point (b). | label: Quote is a procedural plan-content requirement (justification text a Member State must include if using a derogation), not itself a restoration target; '"
+  },
+  {
+    "id": "tgt-e3289ec4",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 5(3) — Restoration of marine ecosystems"
+    },
+    "reason": "article: Generic 'Article 5' citation; quote is the derogation clause of Article 5(3)."
+  },
+  {
+    "id": "tgt-edfc3f37",
+    "policy_id": "nature-restoration-law",
+    "set": {
+      "article": "Article 5(7), point (c) — Restoration of marine ecosystems"
+    },
+    "reason": "article: Generic 'Article 5' citation; quote is precisely Article 5(7), point (c)."
+  },
+  {
+    "id": "tgt-070dc8ee",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 23(11) — Contribution of authorised oil and gas producers"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 23(11), not the article generally."
+  },
+  {
+    "id": "tgt-0aa0f59c",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 23(3) — Contribution of authorised oil and gas producers"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 23(3)."
+  },
+  {
+    "id": "tgt-161faf27",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified as 'none' but the quote is a Commission reporting duty on progress toward the Union CO2 injection (CCS) capacity target set in Article 20(1)"
+  },
+  {
+    "id": "tgt-27f98575",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 23(1) — Contribution of authorised oil and gas producers"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is the second sentence of Article 23(1)."
+  },
+  {
+    "id": "tgt-2f817f77",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 25(7), second subparagraph, point (a)"
+    },
+    "reason": "article: Article citation omits the paragraph/subparagraph/point. The quote is Article 25(7), second subparagraph, point (a)."
+  },
+  {
+    "id": "tgt-37c82f22",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 25(7), second subparagraph, point (b)"
+    },
+    "reason": "article: Article citation omits the paragraph/subparagraph/point. The quote is Article 25(7), second subparagraph, point (b)."
+  },
+  {
+    "id": "tgt-732078dd",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 25(7), second subparagraph, point (d)"
+    },
+    "reason": "article: Article citation omits the paragraph/subparagraph/point. The quote is Article 25(7), second subparagraph, point (d)."
+  },
+  {
+    "id": "tgt-92a9ad15",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 26(2)",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 26(2), second subparagraph. | climate: Classified as 'both' but the quote's 'resilience' concerns third-country supply-chain concentration (security of supply), not climate-change adaptation"
+  },
+  {
+    "id": "tgt-950818cf",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Classified as 'both' (mitigation+adaptation), but the quote contains no adaptation substance. 'Safeguard their resilience' refers to net-zero technolog"
+  },
+  {
+    "id": "tgt-aa2d18be",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "target_type": "quantitative",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "target_type: Quote states an explicit numeric threshold ('18 months') so it should be classified quantitative, not unspecified. | climate: Classified as 'none' but the quote concerns permitting of CO2 geological storage sites under the CCS Directive (2009/31/EC) — a core mitigation technol"
+  },
+  {
+    "id": "tgt-b548e63c",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 20(5) — Union level objective of CO2 injection capacity"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quoted text is Article 20, paragraph 5, not the article as a whole."
+  },
+  {
+    "id": "tgt-b7712f6b",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 46(2)(b)"
+    },
+    "reason": "article: Article citation omits the paragraph and point. The quote is Article 46(2)(b)."
+  },
+  {
+    "id": "tgt-d155c2cd",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 28(2)"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 28(2)."
+  },
+  {
+    "id": "tgt-f2429fd0",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 28(4)",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 28(4), first subparagraph. | climate: Classified as 'both' but 'resilience' here again refers to third-country supply-chain concentration for net-zero technology products, not climate-chang"
+  },
+  {
+    "id": "tgt-f71c48df",
+    "policy_id": "net-zero-industry-act",
+    "set": {
+      "article": "Article 26(4)",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Article citation omits the paragraph number. The quote is Article 26(4). | climate: Classified as 'adaptation' alone, but the quote is a procedural weighting rule for auction award criteria assessing industrial supply-chain 'resilience"
+  },
+  {
+    "id": "tgt-dd724677",
+    "policy_id": "packaging-waste-regulation",
+    "set": {
+      "article": "Article 29(14)(a) — Re-use targets",
+      "obligation": "voluntary"
+    },
+    "reason": "article: Quote is not from a generic 'Article 29' passage but from a specific sub-clause deep in the Article; the citation should carry the paragraph/point numb | obligation: condition of a permissive Member State derogation (\"may exempt\") [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-f734cd8a",
+    "policy_id": "packaging-waste-regulation",
+    "set": {
+      "article": "Article 52(2)(b) — Recycling targets and promotion of recycling"
+    },
+    "reason": "article: Quote comes from a specific derogation condition deep in Article 52, not a generic 'Article 52' passage; citation should include the paragraph/point nu"
+  },
+  {
+    "id": "tgt-0a2d425b",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: anti-tankering refuelling obligation avoids extra fuel burn (SAF framework) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-1d58bcbd",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Annex I(a) sets the 2025 minimum SAF share, part of the Regulation's core decarbonisation mandate (SAF/synthetic aviation fuel = renewable fuel). clima"
+  },
+  {
+    "id": "tgt-3e5cefee",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Article 4(4) caps non-advanced aviation biofuels used to comply with SAF minimum shares, part of the same SAF decarbonisation mandate. climate_relevanc"
+  },
+  {
+    "id": "tgt-4a01d6e4",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: anti-tankering refuelling obligation avoids extra fuel burn (SAF framework) [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-6d81dc1f",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Annex I(b) sets the 2030 minimum SAF/synthetic aviation fuel shares, the Regulation's core decarbonisation mandate. climate_relevance 'none' is a miscl"
+  },
+  {
+    "id": "tgt-f786b593",
+    "policy_id": "refueleu-aviation",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Duplicate of the Article 4(4) biofuel cap (see tgt-0544); same misclassification."
+  },
+  {
+    "id": "tgt-3b1337c8",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 29(4), point (c) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
+      "target_label": "other"
+    },
+    "reason": "article: Article field is truncated and lacks a paragraph/point reference. Quote is Article 29(4), point (c). | label: Same definitional/exclusionary land-classification criterion as tgt-0587, not a target for an actor to achieve; sibling item tgt-0589 (Article 29(11)(c))"
+  },
+  {
+    "id": "tgt-3bc1efaf",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "timeline": "in 2030"
+    },
+    "reason": "timeline: Timeline picks the ancillary Commission-review deadline ('by 2023') rather than the actual target year of this row (2030, the year the 32% Union renew"
+  },
+  {
+    "id": "tgt-65789506",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 29(4), point (b) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
+      "target_label": "other",
+      "climate_relevance": "mitigation"
+    },
+    "reason": "article: Article field is truncated and lacks a paragraph/point reference. Quote is Article 29(4), point (b). | label: Quote is a definitional/exclusionary land-classification criterion (defines 'high-carbon-stock' land for biofuel-sourcing eligibility), not a target for  | climate: Classified 'none' while the essentially identical sibling item tgt-0588 (Article 29(4), point (c) -- same high-carbon-stock land definition, different "
+  },
+  {
+    "id": "tgt-6e693ed3",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same Article 29(10) GHG-emission-savings threshold family; should be mitigation, not 'none'."
+  },
+  {
+    "id": "tgt-712fc8a2",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 5(5)"
+    },
+    "reason": "article: Quote is from Article 5(5), not a generic reference to 'Article 5'."
+  },
+  {
+    "id": "tgt-725ff32b",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 26(1), fourth subparagraph — Specific rules for biofuels, bioliquids and biomass fuels produced from food and…"
+    },
+    "reason": "article: Article field is truncated mid-title and lacks a paragraph reference. Quote is the fourth subparagraph of Article 26(1)."
+  },
+  {
+    "id": "tgt-95a4be70",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote concerns Member States' national contributions toward the binding renewable-energy target via their national energy and climate plans -- squarely"
+  },
+  {
+    "id": "tgt-99c9ee28",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote sets advanced-biofuel/biogas sub-targets expressed as a share of final consumption of energy in transport -- an energy/renewables provision, not "
+  },
+  {
+    "id": "tgt-9e9c53f2",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 21(3), point (b)"
+    },
+    "reason": "article: Quote is specifically Article 21(3), point (b), not a generic reference to 'Article 21'."
+  },
+  {
+    "id": "tgt-9edf0aa9",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "article": "Article 29(11), point (c) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…"
+    },
+    "reason": "article: Article field is truncated and lacks a paragraph/point reference. Quote is Article 29(11), point (c)."
+  },
+  {
+    "id": "tgt-a16995a5",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same aviation gross-final-consumption-of-energy calculation rule as tgt-0562 (Cyprus/Malta variant); should carry the same mitigation relevance, not 'n"
+  },
+  {
+    "id": "tgt-a6b92607",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Row is a greenhouse gas emission savings threshold under Article 29(10) (the row's own indicators list 'greenhouse gas emission savings'); this is a mi"
+  },
+  {
+    "id": "tgt-a948a791",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "obligation": "voluntary"
+    },
+    "reason": "obligation: \"with the objective of arriving at\" — purpose of an enabling framework, not a duty on a bearer [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-ab0a6451",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is an energy-consumption threshold (district heating/cooling share of overall energy consumption) used to determine renewable-energy-related exem"
+  },
+  {
+    "id": "tgt-bcbe057d",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is an energy-accounting rule feeding directly into compliance measurement for the Directive's renewable-energy targets/trajectory; it repeatedly "
+  },
+  {
+    "id": "tgt-cfd33e0d",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote references the Member State's integrated national energy and climate plan and district heating/cooling development; contains 'energy' explicitly "
+  },
+  {
+    "id": "tgt-d403b0be",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Quote is a biofuel/biogas feedstock share limit expressed as a percentage of the energy content of transport fuels -- an energy/renewables provision, n"
+  },
+  {
+    "id": "tgt-dc797af1",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation",
+      "timeline": "from 1 January 2021 until 31 December 2025, and from 1 January 2026"
+    },
+    "reason": "climate: Same Article 29(10)(d) GHG-emission-savings threshold family; should be mitigation, not 'none'. | timeline: full two-part period from the quote; was truncated mid-word [fact-check 2026-07]"
+  },
+  {
+    "id": "tgt-dee6fef3",
+    "policy_id": "renewable-energy-directive",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: Same Article 29(10) GHG-emission-savings threshold family as tgt-0583/tgt-0585/tgt-0586; should be mitigation, not 'none'."
+  },
+  {
+    "id": "tgt-7ef1a6a7",
+    "policy_id": "social-climate-fund",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: The quote states that milestones and targets 'shall be compatible with the Union's climate targets and the objective set out in Regulation (EU) 2021/11"
+  },
+  {
+    "id": "tgt-f2c9d86e",
+    "policy_id": "social-climate-fund",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: Quote contains an explicit quantitative figure (EUR 65 000 000 000, a fixed maximum monetary amount), which meets the definition of a quantitative "
+  },
+  {
+    "id": "tgt-c056a453",
+    "policy_id": "taxonomy-regulation",
+    "set": {
+      "article": "Article 5 — Transparency of environmentally sustainable investments in pre-contractual disclosures and in periodic…"
+    },
+    "reason": "article: The article label is truncated mid-word ('...in pre-contr'), producing a garbled/incomplete citation string in the data even though the article number "
+  },
+  {
+    "id": "tgt-eab05ff7",
+    "policy_id": "taxonomy-regulation",
+    "set": {
+      "climate_relevance": "both"
+    },
+    "reason": "climate: Row cites Article 9 (Environmental objectives), whose chapeau is quoted here, and the row's own indicators list explicitly names 'climate change mitiga"
+  },
+  {
+    "id": "tgt-83db3834",
+    "policy_id": "waste-framework-directive",
+    "set": {
+      "target_type": "qualitative"
+    },
+    "reason": "target_type: Classified as 'quantitative' but the quote contains no number, percentage, or quantity threshold — it only names four material streams (paper, meta"
+  },
+  {
+    "id": "tgt-593fe449",
+    "policy_id": "water-framework-directive",
+    "set": {
+      "climate_relevance": "none"
+    },
+    "reason": "climate: Classified 'mitigation' but the 'pollution', 'priority substances' and 'emissions, discharges and losses of priority hazardous substances' referred to "
+  },
+  {
+    "id": "tgt-80eb4b3a",
+    "policy_id": "water-framework-directive",
+    "set": {
+      "climate_relevance": "adaptation"
+    },
+    "reason": "climate: Classified 'none' but the clause is structurally identical to Article 4(1)(a)(ii) (tgt-0642), the immediately preceding sub-point, which was correctly "
+  },
+  {
+    "id": "tgt-26d2f223",
+    "policy_id": "zero-pollution-action-plan",
+    "set": {
+      "climate_relevance": "mitigation"
+    },
+    "reason": "climate: The quote references only the '2050 climate-neutrality goal' (a mitigation concept); it contains no resilience/adaptation/climate-risk language. climat"
+  },
+  {
+    "id": "tgt-4113e6d3",
+    "policy_id": "zero-pollution-action-plan",
+    "set": {
+      "climate_relevance": "none"
+    },
+    "reason": "climate: The quote reports reductions in 'main air pollutants' (ammonia, sulphur oxides) — conventional air-quality pollutants, not greenhouse gases/CO2. There "
+  },
+  {
+    "id": "tgt-9f8ee271",
+    "policy_id": "zero-pollution-action-plan",
+    "set": {
+      "target_type": "quantitative"
+    },
+    "reason": "target_type: The quote specifies a concrete numeric threshold ('100 cities'), which is a quantifiable target element, yet target_type is set to 'unspecified' ra"
+  },
+  {
+    "id": "tgt-f0855362",
+    "policy_id": "zero-pollution-action-plan",
+    "set": {
+      "climate_relevance": "adaptation"
+    },
+    "reason": "climate: The quote concerns air-pollution-driven eutrophication threatening land/freshwater ecosystem biodiversity under the NEC Directive; it contains no GHG/e"
+  }
+]

@@ -23,7 +23,7 @@ One row per target (a policy can have many), with twelve columns:
 | 5 | Target label | target · goal · objective · commitment · other. |
 | 6 | Obligation | mandatory vs voluntary. |
 | 7 | Type of target | quantitative · qualitative · unspecified. |
-| 8 | Timeline | verbatim time phrase (e.g. "by 2030"), or unspecified. |
+| 8 | Timeline | time phrase from the quote (e.g. "by 2030") — or, for a few reviewed rows, from the surrounding provision — or unspecified. |
 | 9 | Indicators | metrics linked to the target, if any. |
 | 10 | Climate-relevance | mitigation · adaptation · both · none. |
 | 11 | Source | link to the act on EUR-Lex. |
@@ -44,6 +44,7 @@ flowchart LR
     B --> D[scripts/policy-targets-input/*.json]
     C --> D
     D --> E[build-policy-targets.mjs<br/>VERBATIM validation + classify]
+    O[Reviewed overrides<br/>policy-targets-overrides.json] --> E
     E --> F[src/data/policy-targets.generated.ts]
     F --> G[/beta/policy-targets table + Excel/]
 ```
@@ -58,6 +59,19 @@ flowchart LR
    stored text is guaranteed real EUR-Lex text — not an agent paraphrase.
    Obligation, type, timeline and climate-relevance are then derived
    deterministically for consistency.
+4. **Reviewed overrides** (`scripts/policy-targets-overrides.json`) carry the
+   verified corrections from the July 2026 per-act fact-check pass (one
+   reviewer per act, every row checked against the source, adversarially
+   verified): precise provision references (including amendment text an act
+   inserts into *other* legislation), context-supported timelines,
+   substance-based climate-relevance calls the keyword rules miss (e.g. SAF
+   mandates, EV-charging infrastructure), and drops for heading-only or
+   duplicate rows. Each entry records its reason and is applied after
+   deterministic classification.
+
+Row ids are **stable content hashes** of (policy, quote) — regenerating the
+dataset does not shift them, so human confirmations (column 12) keep
+pointing at the same target.
 
 Regenerate with:
 
@@ -79,7 +93,10 @@ The register keeps the ESABCC distinction explicit in column 5:
 Column 6 combines the **instrument type** (regulations, directives and
 decisions bind; communications and strategies are soft law) with the
 **modal language** of the provision ("shall" → mandatory, "should" /
-"may" / "aim to" → voluntary).
+"may" / "aim to" → voluntary). Soft-law rows are **always voluntary** —
+even when the quoted passage contains "shall", it is quoting or proposing
+binding text that lives elsewhere — and best-efforts constructions
+("shall endeavour / aim / strive") count as voluntary in binding acts too.
 
 ## Code surface
 
@@ -91,8 +108,9 @@ decisions bind; communications and strategies are soft law) with the
 | `src/data/policy-targets.generated.ts` | Generated dataset (verbatim rows). |
 | `src/lib/useTargetConfirmations.ts` | Per-user human-confirm state (localStorage). |
 | `scripts/extract-policy-targets.mjs` | Regex safety-net. |
-| `scripts/build-policy-targets.mjs` | Merge, verbatim validation, classification. |
+| `scripts/build-policy-targets.mjs` | Merge, verbatim validation, classification, overrides. |
 | `scripts/policy-targets-input/*.json` | Committed extraction input (agents + regex). |
+| `scripts/policy-targets-overrides.json` | Verified corrections from the fact-check pass (with reasons). |
 
 ## Caveats
 

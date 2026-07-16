@@ -22,6 +22,8 @@ export type TargetType = 'quantitative' | 'qualitative' | 'unspecified';
 export type ClimateRelevance = 'mitigation' | 'adaptation' | 'both' | 'none';
 
 export interface RawPolicyTarget {
+  /** Stable content hash of (policy_id + quote) — survives regeneration, so
+   *  per-user confirmations keyed on it keep pointing at the same target. */
   id: string;
   policy_id: string;
   /** Column 1 — full official name of the act. */
@@ -44,7 +46,9 @@ export interface RawPolicyTarget {
   obligation: Obligation;
   /** Column 7 — quantitative / qualitative / unspecified. */
   target_type: TargetType;
-  /** Column 8 — verbatim time expression, or "" when unspecified. */
+  /** Column 8 — time expression from the quote itself where one exists; a few
+   *  reviewed rows carry a phrase from the surrounding provision instead
+   *  (see scripts/policy-targets-overrides.json). "" when unspecified. */
   timeline: string;
   /** Column 9 — indicators linked to the target (may be empty). */
   indicators: string[];

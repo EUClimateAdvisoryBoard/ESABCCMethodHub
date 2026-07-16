@@ -8,23 +8,28 @@
  * extraction agents (recall-first) plus a regex safety net, then every quote
  * was validated as an exact source substring before being kept.
  *
- * 662 targets across 38 acts.
- *   label:            {"target":382,"other":130,"objective":96,"commitment":50,"goal":4}
- *   obligation:       {"mandatory":587,"voluntary":75}
- *   type:             {"qualitative":202,"quantitative":355,"unspecified":105}
- *   climate_relevance:{"none":323,"mitigation":287,"adaptation":39,"both":13}
+ * Row ids are stable content hashes (policy_id + quote), so human-confirm
+ * state keyed on them survives regeneration. Reviewed corrections from the
+ * fact-check pass are applied from scripts/policy-targets-overrides.json.
+ *
+ * 653 targets across 38 acts.
+ *   label:            {"target":363,"other":144,"objective":93,"commitment":49,"goal":4}
+ *   obligation:       {"mandatory":568,"voluntary":85}
+ *   type:             {"qualitative":196,"quantitative":372,"unspecified":85}
+ *   climate_relevance:{"mitigation":388,"none":208,"both":18,"adaptation":39}
  *   (88 candidates rejected as non-verbatim / out of scope)
  */
 import type { RawPolicyTarget } from './policy-targets';
 
 export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
   {
+    "id": "tgt-009edd20",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 3(1) — Targets for recharging infrastructure dedicated to light-duty ele",
+    "article": "Article 3(1) — Targets for recharging infrastructure dedicated to light-duty electric vehicles",
     "target_text": "1. Member States shall ensure that, in their territory, publicly accessible recharging stations dedicated to light-duty electric vehicles are deployed in a way that is commensurate with the uptake of light-duty electric vehicles and that they provide sufficient power output for those vehicles.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -34,13 +39,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "publicly accessible recharging stations",
       "power output"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 1,
-    "id": "tgt-0001"
+    "target_number": 1
   },
   {
+    "id": "tgt-a5baad46",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -55,13 +60,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "total power output per light-duty battery electric vehicle (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 2,
-    "id": "tgt-0002"
+    "target_number": 2
   },
   {
+    "id": "tgt-c7fb7ca2",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -76,13 +81,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "total power output per light-duty plug-in hybrid vehicle (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 3,
-    "id": "tgt-0003"
+    "target_number": 3
   },
   {
+    "id": "tgt-2bc0527f",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -92,19 +97,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "along the TEN-T core road network, publicly accessible recharging pools dedicated to light-duty electric vehicles and meeting the following requirements are deployed in each direction of travel with a maximum distance of 60 km between them:",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "recharging pools along TEN-T core road network",
       "maximum distance (km)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 4,
-    "id": "tgt-0004"
+    "target_number": 4
   },
   {
+    "id": "tgt-1d85bb03",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -120,13 +125,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output (kW)",
       "individual recharging point power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 5,
-    "id": "tgt-0005"
+    "target_number": 5
   },
   {
+    "id": "tgt-667001e9",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -142,13 +147,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output (kW)",
       "individual recharging point power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 6,
-    "id": "tgt-0006"
+    "target_number": 6
   },
   {
+    "id": "tgt-9cb011ef",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -158,19 +163,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "along the TEN-T comprehensive road network, publicly accessible recharging pools dedicated to light-duty electric vehicles and meeting the following requirements are deployed in each direction of travel with a maximum distance of 60 km between them:",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "recharging pools along TEN-T comprehensive road network",
       "maximum distance (km)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 7,
-    "id": "tgt-0007"
+    "target_number": 7
   },
   {
+    "id": "tgt-e206f70b",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -186,13 +191,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of TEN-T comprehensive road network length (%)",
       "recharging pool power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 8,
-    "id": "tgt-0008"
+    "target_number": 8
   },
   {
+    "id": "tgt-2c9e6749",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -208,13 +213,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output (kW)",
       "individual recharging point power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 9,
-    "id": "tgt-0009"
+    "target_number": 9
   },
   {
+    "id": "tgt-c032b615",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -230,19 +235,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output (kW)",
       "individual recharging point power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 10,
-    "id": "tgt-0010"
+    "target_number": 10
   },
   {
+    "id": "tgt-2da26712",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 3 — Targets for recharging infrastructure dedicated to light-duty electr",
+    "article": "Article 3(2)",
     "target_text": "When the share of light-duty battery electric vehicles compared to the total fleet of light-duty vehicles registered in the territory of a Member State reaches at least 15 % and the Member State demonstrates that the implementation of the requirements set out in paragraph 1, second subparagraph, has adverse effects in that Member State, in that it is discouraging private investments, and is no longer justified, that Member State may submit to the Commission a reasoned request for authorisation to apply lower requirements in terms of level of total power output or to cease to apply such requirements.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -252,18 +257,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 11,
-    "id": "tgt-0011"
+    "target_number": 11
   },
   {
+    "id": "tgt-da652a7a",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 3 — Targets for recharging infrastructure dedicated to light-duty electr",
+    "article": "Article 3(8)",
     "target_text": "By way of derogation from paragraph 4 of this Article, along roads of the TEN-T network with a total annual average daily traffic of fewer than 8 500 light-duty vehicles and where the deployment of infrastructure cannot be justified in socio-economic cost-benefit terms, Member States may reduce, by up to 50 %, the total power output of a publicly accessible recharging pool dedicated to light-duty vehicles required pursuant to paragraph 4 of this Article, provided that that recharging pool serves only one direction of travel and that the other requirements set out in paragraph 4 of this Article, in terms of the maximum distance between recharging pools, the number of recharging points and the power output of single recharging points, are complied with.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "",
@@ -271,16 +276,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 12,
-    "id": "tgt-0012"
+    "target_number": 12
   },
   {
+    "id": "tgt-1d13d77c",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 4(1) — Targets for recharging infrastructure dedicated to heavy-duty ele",
+    "article": "Article 4(1) — Targets for recharging infrastructure dedicated to heavy-duty electric vehicles",
     "target_text": "1. Member States shall ensure a minimum coverage of publicly accessible recharging points dedicated to heavy-duty electric vehicles in their territory.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -289,13 +294,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "minimum coverage of publicly accessible recharging points"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 13,
-    "id": "tgt-0013"
+    "target_number": 13
   },
   {
+    "id": "tgt-a675f706",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -311,13 +316,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of TEN-T road network length (%)",
       "recharging pool power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 14,
-    "id": "tgt-0014"
+    "target_number": 14
   },
   {
+    "id": "tgt-2e9619e4",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -332,13 +337,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of TEN-T road network length (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 15,
-    "id": "tgt-0015"
+    "target_number": 15
   },
   {
+    "id": "tgt-94518309",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -353,13 +358,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recharging pool power output along TEN-T core (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 16,
-    "id": "tgt-0016"
+    "target_number": 16
   },
   {
+    "id": "tgt-708adb47",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -374,13 +379,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "recharging pool power output along TEN-T comprehensive (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 17,
-    "id": "tgt-0017"
+    "target_number": 17
   },
   {
+    "id": "tgt-b8b261df",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -396,13 +401,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output along TEN-T core (kW)",
       "maximum distance (km)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 18,
-    "id": "tgt-0018"
+    "target_number": 18
   },
   {
+    "id": "tgt-985392c5",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -418,13 +423,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging pool power output along TEN-T comprehensive (kW)",
       "maximum distance (km)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 19,
-    "id": "tgt-0019"
+    "target_number": 19
   },
   {
+    "id": "tgt-414687de",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -440,13 +445,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging stations in safe and secure parking areas",
       "power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 20,
-    "id": "tgt-0020"
+    "target_number": 20
   },
   {
+    "id": "tgt-3914b0a3",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -462,13 +467,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "recharging stations in safe and secure parking areas",
       "power output (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 21,
-    "id": "tgt-0021"
+    "target_number": 21
   },
   {
+    "id": "tgt-c84353b0",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -483,13 +488,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "aggregated power output per urban node (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 22,
-    "id": "tgt-0022"
+    "target_number": 22
   },
   {
+    "id": "tgt-ad99e542",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -504,21 +509,21 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "aggregated power output per urban node (kW)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 23,
-    "id": "tgt-0023"
+    "target_number": 23
   },
   {
+    "id": "tgt-e711f82a",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 4 — Targets for recharging infrastructure dedicated to heavy-duty electr",
+    "article": "Article 4(5)",
     "target_text": "By way of derogation from paragraph 1 of this Article, along roads of the TEN-T network with a total annual average daily traffic of fewer than 2 000 heavy-duty vehicles and where the deployment of infrastructure cannot be justified in socio-economic cost-benefit terms, Member States may reduce by up to 50 % the total power output of a publicly accessible recharging pool dedicated to heavy-duty electric vehicles required pursuant to paragraph 1 of this Article, provided that that recharging pool serves only one direction of travel and that the other requirements set out in paragraph 1 of this Article, in terms of the maximum distance between recharging pools, the number of recharging points and the power output of single recharging points, are complied with.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "",
@@ -526,10 +531,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 24,
-    "id": "tgt-0024"
+    "target_number": 24
   },
   {
+    "id": "tgt-dc368e1c",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -547,10 +552,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 25,
-    "id": "tgt-0025"
+    "target_number": 25
   },
   {
+    "id": "tgt-ba1eca66",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -568,10 +573,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 26,
-    "id": "tgt-0026"
+    "target_number": 26
   },
   {
+    "id": "tgt-64e17c9a",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -591,10 +596,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 27,
-    "id": "tgt-0027"
+    "target_number": 27
   },
   {
+    "id": "tgt-e2381291",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -612,10 +617,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 28,
-    "id": "tgt-0028"
+    "target_number": 28
   },
   {
+    "id": "tgt-7c64b132",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -630,13 +635,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "minimum shore-side electricity supply in TEN-T maritime ports"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 29,
-    "id": "tgt-0029"
+    "target_number": 29
   },
   {
+    "id": "tgt-8b105bf9",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -651,19 +656,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "shore-side electricity supply for seagoing container ships (% of port calls)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 30,
-    "id": "tgt-0030"
+    "target_number": 30
   },
   {
+    "id": "tgt-d78f9658",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 10(a) — Targets for shore-side electricity supply in inland waterway por",
+    "article": "Article 10(a) — Targets for shore-side electricity supply in inland waterway ports",
     "target_text": "at least one installation providing shore-side electricity supply to inland waterway vessels is deployed at all TEN-T core inland waterway ports by 31 December 2024;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -672,13 +677,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "shore-side electricity installations at TEN-T core inland waterway ports"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 31,
-    "id": "tgt-0031"
+    "target_number": 31
   },
   {
+    "id": "tgt-a839356f",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -696,10 +701,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 32,
-    "id": "tgt-0032"
+    "target_number": 32
   },
   {
+    "id": "tgt-3e0be761",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -714,13 +719,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "electricity supply to stationary aircraft at TEN-T airports"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 33,
-    "id": "tgt-0033"
+    "target_number": 33
   },
   {
+    "id": "tgt-32fbe5f8",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -735,13 +740,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "electricity supply at aircraft contact stands"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 34,
-    "id": "tgt-0034"
+    "target_number": 34
   },
   {
+    "id": "tgt-6f1c7eb1",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -756,13 +761,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "electricity supply at aircraft remote stands"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 35,
-    "id": "tgt-0035"
+    "target_number": 35
   },
   {
+    "id": "tgt-a341c43f",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
@@ -780,18 +785,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 36,
-    "id": "tgt-0036"
+    "target_number": 36
   },
   {
+    "id": "tgt-32d4af35",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 12 — Targets for supply of electricity to stationary aircraft",
+    "article": "Article 12(3)",
     "target_text": "Paragraph 1 shall not apply to specially dedicated de-icing stands, stands inside designated military areas and stands specially dedicated to general aviation aircraft below 5,7 tonnes of maximum take-off weight.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -799,18 +804,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 37,
-    "id": "tgt-0037"
+    "target_number": 37
   },
   {
+    "id": "tgt-ee8cf4a9",
     "policy_id": "afir-regulation",
     "policy_name": "Regulation (EU) 2023/1804 on the deployment of alternative fuels infrastructure (AFIR)",
     "policy_short": "Alternative Fuels Infrastructure Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 19 — User information",
+    "article": "Article 19(4)",
     "target_text": "On the basis of the compatibility labelling specifications developed by the European standardisation organisations pursuant to the mandate referred to in the first subparagraph, the Commission shall adopt implementing acts determining the graphical expression, including a colour coding scheme, of compatibility for fuels introduced in the Union market which reach the level of 1 % of the total volume of sales, in the assessment of the Commission, in more than one Member State.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -818,10 +823,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1804",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1804",
-    "target_number": 38,
-    "id": "tgt-0038"
+    "target_number": 38
   },
   {
+    "id": "tgt-0648a8b9",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -839,10 +844,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 1,
-    "id": "tgt-0039"
+    "target_number": 1
   },
   {
+    "id": "tgt-dcca0c91",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -860,10 +865,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 2,
-    "id": "tgt-0040"
+    "target_number": 2
   },
   {
+    "id": "tgt-ac4e687c",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -881,10 +886,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 3,
-    "id": "tgt-0041"
+    "target_number": 3
   },
   {
+    "id": "tgt-631a4288",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -902,10 +907,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 4,
-    "id": "tgt-0042"
+    "target_number": 4
   },
   {
+    "id": "tgt-b4729590",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -923,10 +928,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 5,
-    "id": "tgt-0043"
+    "target_number": 5
   },
   {
+    "id": "tgt-e6eda40b",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -944,10 +949,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 6,
-    "id": "tgt-0044"
+    "target_number": 6
   },
   {
+    "id": "tgt-9e83bd7c",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -958,17 +963,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "from 18 February 2025 (electric vehicle batteries), 18 Febru",
+    "timeline": "from 18 February 2025",
     "indicators": [
       "carbon footprint of the battery"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 7,
-    "id": "tgt-0045"
+    "target_number": 7
   },
   {
+    "id": "tgt-e3bb9624",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -986,10 +991,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 8,
-    "id": "tgt-0046"
+    "target_number": 8
   },
   {
+    "id": "tgt-19a54597",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -1007,10 +1012,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 9,
-    "id": "tgt-0047"
+    "target_number": 9
   },
   {
+    "id": "tgt-a3f5c1b7",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -1028,10 +1033,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 10,
-    "id": "tgt-0048"
+    "target_number": 10
   },
   {
+    "id": "tgt-11dad2de",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -1049,10 +1054,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 11,
-    "id": "tgt-0049"
+    "target_number": 11
   },
   {
+    "id": "tgt-e4805267",
     "policy_id": "batteries-regulation",
     "policy_name": "Regulation (EU) 2023/1542 concerning batteries and waste batteries",
     "policy_short": "Batteries Regulation",
@@ -1071,10 +1076,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1542",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542",
-    "target_number": 12,
-    "id": "tgt-0050"
+    "target_number": 12
   },
   {
+    "id": "tgt-fcee3e48",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1091,13 +1096,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "biodiversity",
       "climate action"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 1,
-    "id": "tgt-0051"
+    "target_number": 1
   },
   {
+    "id": "tgt-1fdf0d05",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1117,10 +1122,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 2,
-    "id": "tgt-0052"
+    "target_number": 2
   },
   {
+    "id": "tgt-476eee56",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1139,10 +1144,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 3,
-    "id": "tgt-0053"
+    "target_number": 3
   },
   {
+    "id": "tgt-e2fd1e7f",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1162,10 +1167,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 4,
-    "id": "tgt-0054"
+    "target_number": 4
   },
   {
+    "id": "tgt-9def1461",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1183,10 +1188,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 5,
-    "id": "tgt-0055"
+    "target_number": 5
   },
   {
+    "id": "tgt-ffd509f5",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1201,13 +1206,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "eco-schemes"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 6,
-    "id": "tgt-0056"
+    "target_number": 6
   },
   {
+    "id": "tgt-132ace67",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1227,10 +1232,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 7,
-    "id": "tgt-0057"
+    "target_number": 7
   },
   {
+    "id": "tgt-8c0348de",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1249,10 +1254,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 8,
-    "id": "tgt-0058"
+    "target_number": 8
   },
   {
+    "id": "tgt-51e7b223",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1268,10 +1273,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 9,
-    "id": "tgt-0059"
+    "target_number": 9
   },
   {
+    "id": "tgt-07cb9691",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1284,13 +1289,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 10,
-    "id": "tgt-0060"
+    "target_number": 10
   },
   {
+    "id": "tgt-71394e15",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1309,10 +1314,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 11,
-    "id": "tgt-0061"
+    "target_number": 11
   },
   {
+    "id": "tgt-f964611b",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1327,13 +1332,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "agri-environment-climate commitments"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 12,
-    "id": "tgt-0062"
+    "target_number": 12
   },
   {
+    "id": "tgt-03a8aa10",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1349,10 +1354,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 13,
-    "id": "tgt-0063"
+    "target_number": 13
   },
   {
+    "id": "tgt-f38caa83",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1370,29 +1375,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 14,
-    "id": "tgt-0064"
+    "target_number": 14
   },
   {
+    "id": "tgt-249f062b",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
     "document_type": "regulation",
     "policy_area": "Agriculture",
-    "article": "Article 93 — Minimum financial allocations for interventions addressing environm",
+    "article": "Article 93(1) — Minimum financial allocations for interventions addressing environmental and climate-related specific…",
     "target_text": "At least 35 % of the total EAFRD contribution to the CAP Strategic Plan as set out in Annex XI shall be reserved for the interventions addressing the specific objectives set out in Article 6(1), points (d), (e) and (f) and, as regards animal welfare, in Article 6(1), point (i).",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 15,
-    "id": "tgt-0065"
+    "target_number": 15
   },
   {
+    "id": "tgt-6c3bf26d",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
@@ -1410,16 +1415,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 16,
-    "id": "tgt-0066"
+    "target_number": 16
   },
   {
+    "id": "tgt-44850cc4",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
     "document_type": "regulation",
     "policy_area": "Agriculture",
-    "article": "Article 98 — Minimum financial allocations for the redistributive income support",
+    "article": "Article 98 — Minimum financial allocations for the redistributive income support (1)",
     "target_text": "At least 10 % of the allocations set out in Annex IX shall be reserved annually for the redistributive income support referred to in Article 29.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -1431,37 +1436,37 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 17,
-    "id": "tgt-0067"
+    "target_number": 17
   },
   {
+    "id": "tgt-f0b15157",
     "policy_id": "cap-strategic-plans",
     "policy_name": "Regulation (EU) 2021/2115 establishing rules on support for strategic plans to be drawn up by Member States under the common agricultural policy (CAP Strategic Plans)",
     "policy_short": "CAP Strategic Plans Regulation",
     "document_type": "regulation",
     "policy_area": "Agriculture",
-    "article": "Article 105 — Increased ambition with regard to environmental and climate-relate",
+    "article": "Article 105 — Increased ambition with regard to environmental and climate-related objectives",
     "target_text": "Member States shall aim to make, through their CAP Strategic Plans and in particular through the elements of the intervention strategy referred to in Article 109(2), point (a), a greater overall contribution to the achievement of the specific objectives set out in Article 6(1), points (d), (e) and (f), in comparison to the overall contribution made to the achievement of the objective laid down in Article 110(2), first subparagraph, point (b), of Regulation (EU) No 1306/2013 through support under the EAGF and the EAFRD in the period 2014 to 2020.",
     "target_label": "commitment",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [
       "overall contribution to environmental and climate-related objectives"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32021R2115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R2115",
-    "target_number": 18,
-    "id": "tgt-0068"
+    "target_number": 18
   },
   {
+    "id": "tgt-239ce643",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 2 — Scope",
+    "article": "Article 2(8), point (d)",
     "target_text": "the third country or territory has committed to climate neutrality by 2050 and, where applicable, has accordingly formally formulated and communicated to the United Nations Framework Convention on Climate Change (UNFCCC) a mid-century, long-term low greenhouse gas emissions development strategy aligned with that objective, and has implemented that commitment in its domestic legislation;",
     "target_label": "commitment",
     "obligation": "mandatory",
@@ -1473,16 +1478,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 1,
-    "id": "tgt-0069"
+    "target_number": 1
   },
   {
+    "id": "tgt-e52db04e",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 2 — Scope",
+    "article": "Article 2(9), point (c)",
     "target_text": "the Commission has evidence that, as a result of increased exports of electricity to the Union, the emissions per kilowatt-hour of electricity produced in that third country or territory have increased by at least 5 % compared to 1 January 2026.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -1492,10 +1497,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 2,
-    "id": "tgt-0070"
+    "target_number": 2
   },
   {
+    "id": "tgt-1a4b987e",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1513,10 +1518,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 3,
-    "id": "tgt-0071"
+    "target_number": 3
   },
   {
+    "id": "tgt-4de361ed",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1527,7 +1532,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "By 31 May of each year, and for the first time in 2027 for t",
+    "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026",
     "indicators": [
       "CBAM declaration",
       "embedded emissions"
@@ -1535,10 +1540,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 4,
-    "id": "tgt-0072"
+    "target_number": 4
   },
   {
+    "id": "tgt-c6339652",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1549,7 +1554,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "By 31 May of each year, and for the first time in 2027 for t",
+    "timeline": "By 31 May of each year, and for the first time in 2027 for the year 2026",
     "indicators": [
       "CBAM certificates surrendered",
       "embedded emissions"
@@ -1557,10 +1562,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 5,
-    "id": "tgt-0073"
+    "target_number": 5
   },
   {
+    "id": "tgt-2392f6ce",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1579,16 +1584,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 6,
-    "id": "tgt-0074"
+    "target_number": 6
   },
   {
+    "id": "tgt-8fb2521a",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 22 — Surrender of CBAM certificates",
+    "article": "Article 22(2) — Surrender of CBAM certificates (duplicate of tgt-0074; consider removing one)",
     "target_text": "The authorised CBAM declarant shall ensure that the number of CBAM certificates on its account in the CBAM registry at the end of each quarter corresponds to at least 80 % of the embedded emissions, determined by reference to default values in accordance with the methods set out in Annex IV, in all goods it has imported since the beginning of the calendar year.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -1598,16 +1603,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 7,
-    "id": "tgt-0075"
+    "target_number": 7
   },
   {
+    "id": "tgt-461fa733",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 31(1) — Free allocation of allowances under the EU ETS and obligation to",
+    "article": "Article 31(1) — Free allocation of allowances under the EU ETS and obligation to surrender CBAM certificates",
     "target_text": "1. The CBAM certificates to be surrendered in accordance with Article 22 of this Regulation shall be adjusted to reflect the extent to which EU ETS allowances are allocated free of charge in accordance with Article 10a of Directive 2003/87/EC to installations producing, within the Union, the goods listed in Annex I to this Regulation.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -1620,10 +1625,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 8,
-    "id": "tgt-0076"
+    "target_number": 8
   },
   {
+    "id": "tgt-9974ef0b",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1641,10 +1646,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 9,
-    "id": "tgt-0077"
+    "target_number": 9
   },
   {
+    "id": "tgt-f4d46cd2",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1660,10 +1665,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 10,
-    "id": "tgt-0078"
+    "target_number": 10
   },
   {
+    "id": "tgt-2c9d6a25",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1679,10 +1684,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 11,
-    "id": "tgt-0079"
+    "target_number": 11
   },
   {
+    "id": "tgt-eeab38dd",
     "policy_id": "cbam-regulation",
     "policy_name": "Regulation (EU) 2023/956 establishing a Carbon Border Adjustment Mechanism",
     "policy_short": "CBAM Regulation",
@@ -1698,10 +1703,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0956",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0956",
-    "target_number": 12,
-    "id": "tgt-0080"
+    "target_number": 12
   },
   {
+    "id": "tgt-478572a0",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1721,10 +1726,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 1,
-    "id": "tgt-0081"
+    "target_number": 1
   },
   {
+    "id": "tgt-742f6eb4",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1744,10 +1749,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 2,
-    "id": "tgt-0082"
+    "target_number": 2
   },
   {
+    "id": "tgt-79a06394",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1767,10 +1772,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 3,
-    "id": "tgt-0083"
+    "target_number": 3
   },
   {
+    "id": "tgt-5483219d",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1790,10 +1795,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 4,
-    "id": "tgt-0084"
+    "target_number": 4
   },
   {
+    "id": "tgt-a9018475",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1813,10 +1818,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 5,
-    "id": "tgt-0085"
+    "target_number": 5
   },
   {
+    "id": "tgt-8c9f75ee",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1835,10 +1840,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 6,
-    "id": "tgt-0086"
+    "target_number": 6
   },
   {
+    "id": "tgt-1a941a88",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1854,13 +1859,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "zero- and low-emission vehicles' benchmark",
       "share of new passenger cars (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 7,
-    "id": "tgt-0087"
+    "target_number": 7
   },
   {
+    "id": "tgt-a1412522",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1876,32 +1881,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "zero- and low-emission vehicles' benchmark",
       "share of new light commercial vehicles (%)"
     ],
-    "climate_relevance": "none",
-    "celex_number": "32019R0631",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 8,
-    "id": "tgt-0088"
-  },
-  {
-    "policy_id": "co2-cars-regulation",
-    "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
-    "policy_short": "CO2 Standards for Cars",
-    "document_type": "regulation",
-    "policy_area": "Transport",
-    "article": "Article 1 — Subject matter and objectives",
-    "target_text": "From 1 January 2025, a zero- and low-emission vehicles' benchmark equal to a 15 % share of the respective fleets of new passenger cars and new light commercial vehicles shall apply in accordance with points 6.3 of Parts A and B of Annex I, respectively.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 9,
-    "id": "tgt-0089"
+    "target_number": 8
   },
   {
+    "id": "tgt-3b76652b",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1920,10 +1906,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 10,
-    "id": "tgt-0090"
+    "target_number": 9
   },
   {
+    "id": "tgt-594c23fe",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1939,10 +1925,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 11,
-    "id": "tgt-0091"
+    "target_number": 10
   },
   {
+    "id": "tgt-1bd89465",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1958,10 +1944,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 12,
-    "id": "tgt-0092"
+    "target_number": 11
   },
   {
+    "id": "tgt-194cea72",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1977,10 +1963,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 13,
-    "id": "tgt-0093"
+    "target_number": 12
   },
   {
+    "id": "tgt-878a8e80",
     "policy_id": "co2-cars-regulation",
     "policy_name": "Regulation (EU) 2019/631 setting CO2 emission performance standards for new passenger cars and light commercial vehicles",
     "policy_short": "CO2 Standards for Cars",
@@ -1996,10 +1982,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R0631",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R0631",
-    "target_number": 14,
-    "id": "tgt-0094"
+    "target_number": 13
   },
   {
+    "id": "tgt-ef8df580",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2014,13 +2000,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "supply of critical raw materials"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 1,
-    "id": "tgt-0095"
+    "target_number": 1
   },
   {
+    "id": "tgt-56f58432",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2039,10 +2025,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 2,
-    "id": "tgt-0096"
+    "target_number": 2
   },
   {
+    "id": "tgt-c6198b5f",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2061,10 +2047,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 3,
-    "id": "tgt-0097"
+    "target_number": 3
   },
   {
+    "id": "tgt-27fe56c5",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2083,10 +2069,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 4,
-    "id": "tgt-0098"
+    "target_number": 4
   },
   {
+    "id": "tgt-706e71ff",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2105,10 +2091,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 5,
-    "id": "tgt-0099"
+    "target_number": 5
   },
   {
+    "id": "tgt-ca7e973f",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2127,10 +2113,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 6,
-    "id": "tgt-0100"
+    "target_number": 6
   },
   {
+    "id": "tgt-164998bd",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2148,16 +2134,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 7,
-    "id": "tgt-0101"
+    "target_number": 7
   },
   {
+    "id": "tgt-45d43665",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 8(1) - Single points of contact",
+    "article": "Article 9(1) - Single point of contact",
     "target_text": "By 24 February 2025, Member States shall establish or designate one or more authorities as single points of contact.",
     "target_label": "commitment",
     "obligation": "mandatory",
@@ -2167,10 +2153,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 8,
-    "id": "tgt-0102"
+    "target_number": 8
   },
   {
+    "id": "tgt-c7dccbb1",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2180,7 +2166,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "27 months for Strategic Projects involving extraction;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "permit-granting duration"
@@ -2188,10 +2174,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 9,
-    "id": "tgt-0103"
+    "target_number": 9
   },
   {
+    "id": "tgt-c5c48a45",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2201,7 +2187,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "15 months for Strategic Projects involving only processing or recycling.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "permit-granting duration"
@@ -2209,10 +2195,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 10,
-    "id": "tgt-0104"
+    "target_number": 10
   },
   {
+    "id": "tgt-e8d27c91",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2222,7 +2208,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "24 months for Strategic Projects involving extraction;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "permit-granting duration"
@@ -2230,10 +2216,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 11,
-    "id": "tgt-0105"
+    "target_number": 11
   },
   {
+    "id": "tgt-4b2497c5",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2243,7 +2229,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "12 months for Strategic Projects involving only processing or recycling.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "permit-granting duration"
@@ -2251,10 +2237,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 12,
-    "id": "tgt-0106"
+    "target_number": 12
   },
   {
+    "id": "tgt-06db9e02",
     "policy_id": "critical-raw-materials-act",
     "policy_name": "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials",
     "policy_short": "Critical Raw Materials Act",
@@ -2273,10 +2259,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1252",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252",
-    "target_number": 13,
-    "id": "tgt-0107"
+    "target_number": 13
   },
   {
+    "id": "tgt-a3b3ccd6",
     "policy_id": "csddd",
     "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
     "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
@@ -2286,39 +2272,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "the obligation for companies to adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, compatibility of the business model and of the strategy of the company with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement.",
     "target_label": "commitment",
     "obligation": "voluntary",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "global warming limit of 1,5 °C"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 1,
-    "id": "tgt-0108"
+    "target_number": 1
   },
   {
-    "policy_id": "csddd",
-    "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
-    "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
-    "document_type": "directive",
-    "policy_area": "Trade",
-    "article": "Article 15(1) — Supervisory authorities",
-    "target_text": "1. Member States shall ensure that the supervisory authorities have adequate powers and resources to carry out the tasks assigned to them under this Directive, including the power to require companies to provide information and carry out investigations related to compliance with the obligations set out in Articles 7 to 16. Member States shall require the supervisory authorities to supervise the adoption and design of the transition plan for climate change mitigation in accordance with the requirements provided for in Article 22(1).",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "transition plan for climate change mitigation"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32024L1760",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 2,
-    "id": "tgt-0109"
-  },
-  {
+    "id": "tgt-c8e62421",
     "policy_id": "csddd",
     "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
     "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
@@ -2328,7 +2293,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "1. Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
     "target_label": "commitment",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 2050",
     "indicators": [
       "global warming limit of 1,5 °C",
@@ -2337,10 +2302,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 3,
-    "id": "tgt-0110"
+    "target_number": 2
   },
   {
+    "id": "tgt-51ad7b1f",
     "policy_id": "csddd",
     "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
     "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
@@ -2349,7 +2314,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 22(1), second subparagraph, point (a) — Combating climate change",
     "target_text": "time-bound targets related to climate change for 2030 and in five-year steps up to 2050 based on conclusive scientific evidence and, where appropriate, absolute emission reduction targets for greenhouse gas for scope 1, scope 2 and scope 3 greenhouse gas emissions for each significant category;",
     "target_label": "target",
-    "obligation": "voluntary",
+    "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "for 2030 and in five-year steps up to 2050",
     "indicators": [
@@ -2360,10 +2325,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 4,
-    "id": "tgt-0111"
+    "target_number": 3
   },
   {
+    "id": "tgt-d81c5383",
     "policy_id": "csddd",
     "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
     "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
@@ -2378,13 +2343,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "progress towards climate targets"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 5,
-    "id": "tgt-0112"
+    "target_number": 4
   },
   {
+    "id": "tgt-3f38d147",
     "policy_id": "csddd",
     "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
     "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
@@ -2394,16 +2359,37 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall ensure that companies referred to in Article 2(1), points (a), (b) and (c), and Article 2(2), points (a), (b) and (c), adopt and put into effect a transition plan for climate change mitigation which aims to ensure, through best efforts, that the business model and strategy of the company are compatible with the transition to a sustainable economy and with the limiting of global warming to 1,5 oC in line with the Paris Agreement and the objective of achieving climate neutrality as established in Regulation (EU) 2021/1119, including its intermediate and 2050 climate neutrality targets, and where relevant, the exposure of the company to coal-, oil- and gas-related activities.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32024L1760",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
-    "target_number": 6,
-    "id": "tgt-0113"
+    "target_number": 5
   },
   {
+    "id": "tgt-60077c9b",
+    "policy_id": "csddd",
+    "policy_name": "Directive (EU) 2024/1760 on corporate sustainability due diligence",
+    "policy_short": "Corporate Sustainability Due Diligence Directive (CSDDD)",
+    "document_type": "directive",
+    "policy_area": "Trade",
+    "article": "Article 25(1) — Powers of supervisory authorities",
+    "target_text": "1. Member States shall ensure that the supervisory authorities have adequate powers and resources to carry out the tasks assigned to them under this Directive, including the power to require companies to provide information and carry out investigations related to compliance with the obligations set out in Articles 7 to 16. Member States shall require the supervisory authorities to supervise the adoption and design of the transition plan for climate change mitigation in accordance with the requirements provided for in Article 22(1).",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [
+      "transition plan for climate change mitigation"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32024L1760",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1760",
+    "target_number": 6
+  },
+  {
+    "id": "tgt-3194cd8f",
     "policy_id": "csrd",
     "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
     "policy_short": "Corporate Sustainability Reporting Directive",
@@ -2422,10 +2408,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "target_number": 1,
-    "id": "tgt-0114"
+    "target_number": 1
   },
   {
+    "id": "tgt-8fcc9933",
     "policy_id": "csrd",
     "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
     "policy_short": "Corporate Sustainability Reporting Directive",
@@ -2434,8 +2420,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 1 — inserted Article 19a(2), point (b) of Directive 2013/34/EU",
     "target_text": "a description of the time-bound targets related to sustainability matters set by the undertaking, including, where appropriate, absolute greenhouse gas emission reduction targets at least for 2030 and 2050, a description of the progress the undertaking has made towards achieving those targets, and a statement of whether the undertaking’s targets related to environmental factors are based on conclusive scientific evidence;",
     "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
     "timeline": "at least for 2030 and 2050",
     "indicators": [
       "absolute greenhouse gas emission reduction targets",
@@ -2444,10 +2430,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "target_number": 2,
-    "id": "tgt-0115"
+    "target_number": 2
   },
   {
+    "id": "tgt-844bb719",
     "policy_id": "csrd",
     "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
     "policy_short": "Corporate Sustainability Reporting Directive",
@@ -2466,10 +2452,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "target_number": 3,
-    "id": "tgt-0116"
+    "target_number": 3
   },
   {
+    "id": "tgt-3f22cbfa",
     "policy_id": "csrd",
     "policy_name": "Directive (EU) 2022/2464 regarding corporate sustainability reporting (CSRD)",
     "policy_short": "Corporate Sustainability Reporting Directive",
@@ -2478,8 +2464,8 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 1 — inserted Article 29a(2), point (b) of Directive 2013/34/EU",
     "target_text": "a description of the time-bound targets related to sustainability matters set by the group, including, where appropriate, absolute greenhouse gas emission reduction targets at least for 2030 and 2050, a description of the progress the group has made towards achieving those targets, and a statement of whether the group’s targets related to environmental factors are based on conclusive scientific evidence;",
     "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
     "timeline": "at least for 2030 and 2050",
     "indicators": [
       "absolute greenhouse gas emission reduction targets",
@@ -2488,10 +2474,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32022L2464",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
-    "target_number": 4,
-    "id": "tgt-0117"
+    "target_number": 4
   },
   {
+    "id": "tgt-b189f5ba",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2509,10 +2495,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 1,
-    "id": "tgt-0118"
+    "target_number": 1
   },
   {
+    "id": "tgt-337c264c",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2528,13 +2514,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "greenhouse gas emissions",
       "global biodiversity loss"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "both",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 2,
-    "id": "tgt-0119"
+    "target_number": 2
   },
   {
+    "id": "tgt-3bdb39de",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2553,10 +2539,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 3,
-    "id": "tgt-0120"
+    "target_number": 3
   },
   {
+    "id": "tgt-b46fb58d",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2575,10 +2561,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 4,
-    "id": "tgt-0121"
+    "target_number": 4
   },
   {
+    "id": "tgt-77effa3e",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2597,10 +2583,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 5,
-    "id": "tgt-0122"
+    "target_number": 5
   },
   {
+    "id": "tgt-ece16f6b",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2618,10 +2604,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 6,
-    "id": "tgt-0123"
+    "target_number": 6
   },
   {
+    "id": "tgt-18119316",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2639,10 +2625,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 7,
-    "id": "tgt-0124"
+    "target_number": 7
   },
   {
+    "id": "tgt-7ee7cc78",
     "policy_id": "deforestation-regulation",
     "policy_name": "Regulation (EU) 2023/1115 on deforestation-free supply chains",
     "policy_short": "Deforestation Regulation",
@@ -2660,158 +2646,145 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1115",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1115",
-    "target_number": 8,
-    "id": "tgt-0125"
+    "target_number": 8
   },
   {
+    "id": "tgt-1fb31107",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 4(4)",
+    "article": "Article 2(49)",
     "target_text": "‘technical specification’ means a document that prescribes technical requirements to be fulfilled by a product, process or service;",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "unspecified",
-    "timeline": "not earlier than 18 months from entry into force",
-    "indicators": [
-      "date of application of delegated acts"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 1,
-    "id": "tgt-0126"
+    "target_number": 1
   },
   {
+    "id": "tgt-412040e4",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 4(7)",
+    "article": "Article 2 (unnumbered paragraph following point (58), cross-referencing Regulation (EU) 2019/1020)",
     "target_text": "The definitions of ‘market surveillance’, ‘market surveillance authority’, ‘fulfilment service provider’, ‘online interface’, ‘corrective action’, ‘end user’, ‘recall’, ‘withdrawal’, ‘customs authorities’ and ‘release for free circulation’ in Article 3, points (3), (4), (11), (15), (16), (21), (22), (23), (24) and (25), respectively, of Regulation (EU) 2019/1020 apply.",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "unspecified",
-    "timeline": "before 19 July 2025",
-    "indicators": [
-      "first ecodesign delegated act"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 2,
-    "id": "tgt-0127"
+    "target_number": 2
   },
   {
+    "id": "tgt-26e121b4",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 24(1)",
+    "article": "Annex V, point 6",
+    "target_text": "References to the relevant harmonised standards or to the common specifications used or references to the other technical specifications in relation to which conformity is declared:",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32024R1781",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
+    "target_number": 3
+  },
+  {
+    "id": "tgt-eb2b9583",
+    "policy_id": "ecodesign-sustainable-products",
+    "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
+    "policy_short": "Ecodesign for Sustainable Products Regulation",
+    "document_type": "regulation",
+    "policy_area": "Circular economy",
+    "article": "Article 21(2), point (f)",
     "target_text": "a note explaining how the self-regulation measure submitted pursuant to paragraph 1 improves the environmental sustainability of products in line with the objectives of this Regulation more quickly or at lesser expense than a delegated act adopted pursuant to Article 4; that note shall be supported by evidence, consisting of a structured technical, environmental and economic analysis, justifying the ecodesign requirements and objectives of the self-regulation measure, and assessing the impacts of those ecodesign requirements.",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "annual",
-    "indicators": [
-      "number and weight of unsold consumer products discarded"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 3,
-    "id": "tgt-0128"
+    "target_number": 4
   },
   {
+    "id": "tgt-43a429ff",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 24(3)",
+    "article": "Article 21(5)",
     "target_text": "5. Once a self-regulation measure has been listed in an implementing act adopted pursuant to paragraph 3, second subparagraph, the signatories of that measure shall report to the Commission, at regular intervals set out in that implementing act, on the progress made towards achieving the objectives of the self-regulation measure and to demonstrate that the criteria set in paragraph 3 remain fulfilled.",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "by 19 July 2025",
-    "indicators": [
-      "implementing act on disclosure of unsold product destruction"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 4,
-    "id": "tgt-0129"
+    "target_number": 5
   },
   {
+    "id": "tgt-60b8b5d5",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 25(1)",
+    "article": "Article 21(6)",
     "target_text": "6. Where the Commission considers that a self-regulation measure listed in an implementing act adopted pursuant to paragraph 3, second subparagraph, no longer fulfils the criteria set out in this Article or where the signatories of the self-regulation measure concerned did not meet the deadline referred to in paragraph 4, it shall delete that measure from the list referred to in paragraph 3 by means of implementing acts. Those implementing acts shall be adopted in accordance with the advisory procedure referred to in Article 73(2).",
-    "target_label": "commitment",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "From 19 July 2026",
-    "indicators": [
-      "destruction of unsold consumer products (Annex VII)"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 5,
-    "id": "tgt-0130"
+    "target_number": 6
   },
   {
+    "id": "tgt-66f50cd1",
     "policy_id": "ecodesign-sustainable-products",
     "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
     "policy_short": "Ecodesign for Sustainable Products Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 26",
+    "article": "Article 25(1) (same sentence also in Article 24(1))",
     "target_text": "This paragraph shall apply to medium-sized enterprises from 19 July 2030.",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "By 19 July 2027 and every 36 months thereafter",
+    "timeline": "from 19 July 2030",
     "indicators": [
       "destruction of unsold consumer products"
     ],
     "climate_relevance": "none",
     "celex_number": "32024R1781",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 6,
-    "id": "tgt-0131"
+    "target_number": 7
   },
   {
-    "policy_id": "ecodesign-sustainable-products",
-    "policy_name": "Regulation (EU) 2024/1781 establishing a framework for setting ecodesign requirements for sustainable products",
-    "policy_short": "Ecodesign for Sustainable Products Regulation",
-    "document_type": "regulation",
-    "policy_area": "Circular economy",
-    "article": "Annex VII",
-    "target_text": "References to the relevant harmonised standards or to the common specifications used or references to the other technical specifications in relation to which conformity is declared:",
-    "target_label": "other",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "apparel and clothing accessories",
-      "footwear"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32024R1781",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1781",
-    "target_number": 7,
-    "id": "tgt-0132"
-  },
-  {
+    "id": "tgt-3cbe73df",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
@@ -2829,10 +2802,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 1,
-    "id": "tgt-0133"
+    "target_number": 1
   },
   {
+    "id": "tgt-6d451f41",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
@@ -2850,10 +2823,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 2,
-    "id": "tgt-0134"
+    "target_number": 2
   },
   {
+    "id": "tgt-3e09349d",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
@@ -2873,16 +2846,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 3,
-    "id": "tgt-0135"
+    "target_number": 3
   },
   {
+    "id": "tgt-dda3bc2a",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(",
+    "article": "Annex I — Member State greenhouse gas emission reductions pursuant to Article 4(1)",
     "target_text": "Member State greenhouse gas emission reductions in 2030 in relation to their 2005 levels determined in accordance with Article 4(3)",
     "target_label": "target",
     "obligation": "mandatory",
@@ -2896,16 +2869,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 4,
-    "id": "tgt-0136"
+    "target_number": 4
   },
   {
+    "id": "tgt-c28cbdc2",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Annual emission levels for the period from 2021 to 2030",
+    "article": "Article 4(4) — Annual emission levels for the period from 2021 to 2030",
     "target_text": "If the sum of all Member States’ total quantities were to exceed the collective total of 100 million, the total quantities for each Member State shall be reduced on a pro rata basis so that the collective total is not exceeded.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -2915,10 +2888,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 5,
-    "id": "tgt-0137"
+    "target_number": 5
   },
   {
+    "id": "tgt-c4b7889e",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
@@ -2936,16 +2909,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 6,
-    "id": "tgt-0138"
+    "target_number": 6
   },
   {
+    "id": "tgt-c8d671ae",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 11 — Safety reserve",
+    "article": "Article 11(3) — Safety reserve",
     "target_text": "That quantity shall not exceed 20 % of its overall overachievement in the period from 2013 to 2020.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -2955,16 +2928,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 7,
-    "id": "tgt-0139"
+    "target_number": 7
   },
   {
+    "id": "tgt-897682ac",
     "policy_id": "effort-sharing-regulation",
     "policy_name": "Regulation (EU) 2018/842 on binding annual greenhouse gas emission reductions by Member States (Effort Sharing Regulation)",
     "policy_short": "Effort Sharing Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 11 — Safety reserve",
+    "article": "Article 11(5) — Safety reserve",
     "target_text": "After the completion of the review referred to in Article 19 of Regulation (EU) No 525/2013 for the year 2020, the Commission shall, for each Member State that fulfils the conditions in points (a) and (b) of paragraph 2 of this Article, publish the amounts corresponding to 20 % of the overall overachievement in the period from 2013 to 2020 as referred to in the first subparagraph of paragraph 3 of this Article.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -2974,16 +2947,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R0842",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0842",
-    "target_number": 8,
-    "id": "tgt-0140"
+    "target_number": 8
   },
   {
+    "id": "tgt-845cb005",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 3 — Energy efficiency first principle",
+    "article": "Article 3(1) — Energy efficiency first principle",
     "target_text": "In accordance with the energy efficiency first principle, Member States shall ensure that energy efficiency solutions, including demand-side resources and system flexibilities, are assessed in planning, policy and major investment decisions of a value of more than EUR 100 000 000 each or EUR 175 000 000 for transport infrastructure projects, relating to the following sectors:",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -2996,10 +2969,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 1,
-    "id": "tgt-0141"
+    "target_number": 1
   },
   {
+    "id": "tgt-00b3b2ef",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3019,10 +2992,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 2,
-    "id": "tgt-0142"
+    "target_number": 2
   },
   {
+    "id": "tgt-ecd28c7f",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3043,10 +3016,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 3,
-    "id": "tgt-0143"
+    "target_number": 3
   },
   {
+    "id": "tgt-0637c222",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3061,19 +3034,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "indicative national energy efficiency contribution"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 4,
-    "id": "tgt-0144"
+    "target_number": 4
   },
   {
+    "id": "tgt-7ceff24f",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 4 — Energy efficiency targets",
+    "article": "Article 4(5), third subparagraph — Energy efficiency targets",
     "target_text": "Where a Member State wishes to update its indicative national energy efficiency contribution, it shall ensure that its contribution in Mtoe is not more than 2,5 % above what it would have been had it resulted from the formula set out in Annex I with the use of the updated 2020 EU Reference Scenario.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3085,10 +3058,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 5,
-    "id": "tgt-0145"
+    "target_number": 5
   },
   {
+    "id": "tgt-cb34e96a",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3107,10 +3080,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 6,
-    "id": "tgt-0146"
+    "target_number": 6
   },
   {
+    "id": "tgt-1e9ea892",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3130,10 +3103,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 7,
-    "id": "tgt-0147"
+    "target_number": 7
   },
   {
+    "id": "tgt-d09f5b9d",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3150,19 +3123,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "renovation passport",
       "nearly zero-energy building"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 8,
-    "id": "tgt-0148"
+    "target_number": 8
   },
   {
+    "id": "tgt-26a68879",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 6 — Exemplary role of public bodies’ buildings",
+    "article": "Article 6(1), fifth subparagraph — Exemplary role of public bodies' buildings",
     "target_text": "The rate of at least 3 % shall be calculated on the total floor area of buildings which have a total useful floor area of over 250 m2, that are owned by public bodies and that, on 1 January 2024, are not nearly zero-energy buildings.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3171,32 +3144,32 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "nearly zero-energy buildings"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 9,
-    "id": "tgt-0149"
+    "target_number": 9
   },
   {
+    "id": "tgt-d30adf3b",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 6 — Exemplary role of public bodies’ buildings",
+    "article": "Article 6(6)(a) — Exemplary role of public bodies' buildings",
     "target_text": "For those buildings, the renovation to nearly zero-energy building shall be achieved at the latest by 2040;",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "by 2040",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 10,
-    "id": "tgt-0150"
+    "target_number": 10
   },
   {
+    "id": "tgt-76f362d9",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3205,20 +3178,20 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 8(1)(a) — Energy savings obligation",
     "target_text": "new savings each year from 1 January 2014 to 31 December 2020 of 1,5 % of annual energy sales to final customers by volume, averaged over the most recent three-year period preceding 1 January 2013. Sales of energy, by volume, used in transport may be excluded, in whole or in part, from that calculation;",
     "target_label": "commitment",
-    "obligation": "voluntary",
+    "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "from 1 January 2014 to 31 December 2020",
     "indicators": [
       "cumulative end-use energy savings",
       "annual energy sales to final customers"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 11,
-    "id": "tgt-0151"
+    "target_number": 11
   },
   {
+    "id": "tgt-8ed5b2ff",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3238,10 +3211,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 12,
-    "id": "tgt-0152"
+    "target_number": 12
   },
   {
+    "id": "tgt-3d74fc08",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3261,10 +3234,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 13,
-    "id": "tgt-0153"
+    "target_number": 13
   },
   {
+    "id": "tgt-e008f88b",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3284,10 +3257,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 14,
-    "id": "tgt-0154"
+    "target_number": 14
   },
   {
+    "id": "tgt-fbcbf203",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3307,10 +3280,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 15,
-    "id": "tgt-0155"
+    "target_number": 15
   },
   {
+    "id": "tgt-44995e2a",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3330,10 +3303,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 16,
-    "id": "tgt-0156"
+    "target_number": 16
   },
   {
+    "id": "tgt-109cb911",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3349,13 +3322,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "cumulative end-use energy savings",
       "annual final energy consumption"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 17,
-    "id": "tgt-0157"
+    "target_number": 17
   },
   {
+    "id": "tgt-d534e2a7",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3371,13 +3344,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "new annual savings",
       "savings rate"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 18,
-    "id": "tgt-0158"
+    "target_number": 18
   },
   {
+    "id": "tgt-17d3600a",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3387,7 +3360,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall establish and achieve a share of the required amount of cumulative end-use energy savings among people affected by energy poverty, vulnerable customers, people in low-income households and, where applicable, people living in social housing. This share shall at least be equal to the proportion of households in energy poverty as assessed in their national energy and climate plans established in accordance with Article 3(3), point (d), of Regulation (EU) 2018/1999.",
     "target_label": "commitment",
     "obligation": "mandatory",
-    "target_type": "quantitative",
+    "target_type": "qualitative",
     "timeline": "",
     "indicators": [
       "energy savings",
@@ -3397,16 +3370,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 19,
-    "id": "tgt-0159"
+    "target_number": 19
   },
   {
+    "id": "tgt-76a08e35",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 8 — Energy savings obligation",
+    "article": "Article 8(9)(a) — Energy savings obligation",
     "target_text": "All the options chosen under paragraph 8 taken together shall amount to no more than 25 % of the amount of energy savings referred to in paragraph 1, first subparagraph, point (a);",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3418,16 +3391,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 20,
-    "id": "tgt-0160"
+    "target_number": 20
   },
   {
+    "id": "tgt-7cece1ec",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 8 — Energy savings obligation",
+    "article": "Article 8(9)(b) — Energy savings obligation",
     "target_text": "All the options chosen under paragraph 8 taken together shall not lead to a reduction of more than 35 % of the amount of energy savings calculated in accordance with paragraphs 6 and 7.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3439,16 +3412,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 21,
-    "id": "tgt-0161"
+    "target_number": 21
   },
   {
+    "id": "tgt-94c7627b",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 8 — Energy savings obligation",
+    "article": "Article 8(13), second subparagraph — Energy savings obligation",
     "target_text": "Alternatively, where a Member State has achieved cumulative end-use energy savings above the required level by the end of each obligation period set out in paragraph 1, it shall be entitled to carry the eligible amount of no more than 10 % of such surplus into the following obligation period without the target commitment being increased.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3460,29 +3433,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 22,
-    "id": "tgt-0162"
+    "target_number": 22
   },
   {
+    "id": "tgt-6a57e785",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 25 — Heating and cooling assessment and planning",
+    "article": "Article 25(6), point (j) — Heating and cooling assessment and planning",
     "target_text": "include a trajectory to achieve the goals of the plans in line with climate neutrality and the monitoring of the progress of the implementation of policies and measures identified;",
     "target_label": "goal",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 23,
-    "id": "tgt-0163"
+    "target_number": 23
   },
   {
+    "id": "tgt-7c3c42a1",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3503,10 +3476,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 24,
-    "id": "tgt-0164"
+    "target_number": 24
   },
   {
+    "id": "tgt-9b161e18",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3527,10 +3500,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 25,
-    "id": "tgt-0165"
+    "target_number": 25
   },
   {
+    "id": "tgt-e556fea0",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3551,10 +3524,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 26,
-    "id": "tgt-0166"
+    "target_number": 26
   },
   {
+    "id": "tgt-c31a4248",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3575,10 +3548,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 27,
-    "id": "tgt-0167"
+    "target_number": 27
   },
   {
+    "id": "tgt-35e2d67c",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3598,10 +3571,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 28,
-    "id": "tgt-0168"
+    "target_number": 28
   },
   {
+    "id": "tgt-64c67d8f",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3621,10 +3594,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 29,
-    "id": "tgt-0169"
+    "target_number": 29
   },
   {
+    "id": "tgt-916775f4",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3634,18 +3607,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "until 31 December 2025: 200 grams/kWh;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "until 31 December 2025",
     "indicators": [
       "GHG emissions per unit of heat or cold delivered"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 30,
-    "id": "tgt-0170"
+    "target_number": 30
   },
   {
+    "id": "tgt-44d534d0",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3655,18 +3628,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "from 1 January 2026: 150 grams/kWh;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2026",
     "indicators": [
       "GHG emissions per unit of heat or cold delivered"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 31,
-    "id": "tgt-0171"
+    "target_number": 31
   },
   {
+    "id": "tgt-f665ad36",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3676,18 +3649,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "from 1 January 2035: 100 grams/kWh;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2035",
     "indicators": [
       "GHG emissions per unit of heat or cold delivered"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 32,
-    "id": "tgt-0172"
+    "target_number": 32
   },
   {
+    "id": "tgt-8f201f25",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3697,18 +3670,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "from 1 January 2045: 50 grams/kWh;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2045",
     "indicators": [
       "GHG emissions per unit of heat or cold delivered"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 33,
-    "id": "tgt-0173"
+    "target_number": 33
   },
   {
+    "id": "tgt-9a8d4547",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
@@ -3718,37 +3691,37 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "from 1 January 2050: 0 grams/kWh.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2050",
     "indicators": [
       "GHG emissions per unit of heat or cold delivered"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 34,
-    "id": "tgt-0174"
+    "target_number": 34
   },
   {
+    "id": "tgt-4ca958a3",
     "policy_id": "energy-efficiency-directive",
     "policy_name": "Directive (EU) 2023/1791 on energy efficiency (recast)",
     "policy_short": "Energy Efficiency Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 35 — Review and monitoring of implementation",
+    "article": "Article 35(7), point (e) — Review and monitoring of implementation",
     "target_text": "whether Member States are to continue to ensure that at least 3 % of the total floor area of heated and/or cooled buildings that are owned by public bodies is renovated each year in accordance with Article 6(1) with a view to revising the renovation rate in that Article;",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023L1791",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023L1791",
-    "target_number": 35,
-    "id": "tgt-0175"
+    "target_number": 35
   },
   {
+    "id": "tgt-fcbc4f23",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3768,10 +3741,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 1,
-    "id": "tgt-0176"
+    "target_number": 1
   },
   {
+    "id": "tgt-0c047e5d",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3790,10 +3763,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 2,
-    "id": "tgt-0177"
+    "target_number": 2
   },
   {
+    "id": "tgt-cb89b5a4",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3812,10 +3785,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 3,
-    "id": "tgt-0178"
+    "target_number": 3
   },
   {
+    "id": "tgt-900d5f6a",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3838,10 +3811,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 4,
-    "id": "tgt-0179"
+    "target_number": 4
   },
   {
+    "id": "tgt-237c50bb",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3860,10 +3833,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 5,
-    "id": "tgt-0180"
+    "target_number": 5
   },
   {
+    "id": "tgt-74817bd4",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3882,10 +3855,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 6,
-    "id": "tgt-0181"
+    "target_number": 6
   },
   {
+    "id": "tgt-cd617c8f",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3903,16 +3876,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 7,
-    "id": "tgt-0182"
+    "target_number": 7
   },
   {
+    "id": "tgt-3b113ab6",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 6 — Calculation of cost-optimal levels of minimum energy performance req",
+    "article": "Article 6(3) — Calculation of cost-optimal levels of minimum energy performance requirements",
     "target_text": "If the result of the comparison performed in accordance with paragraph 2 shows that the minimum energy performance requirements in force in a Member State are less energy-efficient than cost-optimal levels of minimum energy performance requirements by more than 15 %, the Member State concerned shall adjust the minimum energy performance requirements in place within 24 months of the availability of the results of that comparison.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -3924,10 +3897,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 8,
-    "id": "tgt-0183"
+    "target_number": 8
   },
   {
+    "id": "tgt-b7f9d5ee",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3945,10 +3918,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 9,
-    "id": "tgt-0184"
+    "target_number": 9
   },
   {
+    "id": "tgt-44ca28df",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3963,13 +3936,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "life-cycle GWP"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 10,
-    "id": "tgt-0185"
+    "target_number": 10
   },
   {
+    "id": "tgt-38354e77",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -3985,10 +3958,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 11,
-    "id": "tgt-0186"
+    "target_number": 11
   },
   {
+    "id": "tgt-c551d65e",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4007,16 +3980,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 12,
-    "id": "tgt-0187"
+    "target_number": 12
   },
   {
+    "id": "tgt-2ad08a12",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 9(1) — Minimum energy performance standards for non-residential building",
+    "article": "Article 9(1) — Minimum energy performance standards for non-residential buildings",
     "target_text": "Each Member State shall set a maximum energy performance threshold to the effect that 16 % of its national non-residential building stock is above that threshold (the ‘16 % threshold’). Each Member State shall also set a maximum energy performance threshold to the effect that 26 % of its national non-residential building stock is above that threshold (the ‘26 % threshold’). Member States may set the maximum energy performance thresholds with reference to the national non-residential building stock as a whole or per building type or category of building.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4030,16 +4003,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 13,
-    "id": "tgt-0188"
+    "target_number": 13
   },
   {
+    "id": "tgt-1672096b",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 9(1) — Minimum energy performance standards for non-residential building",
+    "article": "Article 9(1) — Minimum energy performance standards for non-residential buildings",
     "target_text": "The minimum energy performance standards shall ensure, at least, that all non-residential buildings are below: (a) the 16 % threshold from 2030; and (b) the 26 % threshold from 2033.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4052,16 +4025,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 14,
-    "id": "tgt-0189"
+    "target_number": 14
   },
   {
+    "id": "tgt-74ba8943",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 9(2) — Trajectories for progressive renovation of the residential buildi",
+    "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
     "target_text": "2. By 29 May 2026, each Member State shall establish a national trajectory for the progressive renovation of the residential building stock in line with the national roadmap and the 2030, 2040 and 2050 targets contained in the Member State’s national building renovation plan and with the aim of transforming the national building stock into a zero-emission building stock by 2050. The national trajectory for the progressive renovation of the residential building stock shall be expressed as a decrease in the average primary energy use in kWh/(m2.y) of the entire residential building stock over the period from 2020 to 2050, and shall identify the number of residential buildings and residential building units or floor area to be renovated annually, including the number or floor area of the 43 % worst-performing residential buildings and residential building units.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4075,16 +4048,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 15,
-    "id": "tgt-0190"
+    "target_number": 15
   },
   {
+    "id": "tgt-0adeee0d",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 9(2) — Trajectories for progressive renovation of the residential buildi",
+    "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
     "target_text": "Member States shall ensure that the average primary energy use in kWh/(m2.y) of the entire residential building stock: (a) decreases by at least 16 % compared to 2020 by 2030; (b) decreases by at least 20-22 % compared to 2020 by 2035; (c) by 2040, and every 5 years thereafter, is equivalent to, or lower than the nationally determined value derived from a progressive decrease in the average primary energy use from 2030 to 2050, in line with the transformation of the residential building stock into a zero-emission building stock.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4096,16 +4069,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 16,
-    "id": "tgt-0191"
+    "target_number": 16
   },
   {
+    "id": "tgt-fc2da23e",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 9(2) — Trajectories for progressive renovation of the residential buildi",
+    "article": "Article 9(2) — Trajectories for progressive renovation of the residential building stock",
     "target_text": "Member States shall ensure that at least 55 % of the decrease in the average primary energy use referred to in the third subparagraph is achieved through the renovation of the 43 % worst-performing residential buildings. Member States may count the decrease in the average primary energy use achieved by the renovation of residential buildings affected by natural disasters such as earthquakes and floods towards the share achieved by means of the renovation of the 43 % worst-performing residential buildings.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4115,13 +4088,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "average primary energy use",
       "worst-performing residential buildings"
     ],
-    "climate_relevance": "both",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 17,
-    "id": "tgt-0192"
+    "target_number": 17
   },
   {
+    "id": "tgt-562c68e8",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4139,10 +4112,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 18,
-    "id": "tgt-0193"
+    "target_number": 18
   },
   {
+    "id": "tgt-98d88116",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4161,10 +4134,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 19,
-    "id": "tgt-0194"
+    "target_number": 19
   },
   {
+    "id": "tgt-32e5f199",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4182,10 +4155,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 20,
-    "id": "tgt-0195"
+    "target_number": 20
   },
   {
+    "id": "tgt-0b0cc7a3",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4201,10 +4174,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 21,
-    "id": "tgt-0196"
+    "target_number": 21
   },
   {
+    "id": "tgt-2b004764",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4217,13 +4190,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 22,
-    "id": "tgt-0197"
+    "target_number": 22
   },
   {
+    "id": "tgt-86f1ac80",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4236,13 +4209,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2035",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 23,
-    "id": "tgt-0198"
+    "target_number": 23
   },
   {
+    "id": "tgt-21c2285b",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4257,13 +4230,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "building renovation"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 24,
-    "id": "tgt-0199"
+    "target_number": 24
   },
   {
+    "id": "tgt-a540e567",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4279,10 +4252,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 25,
-    "id": "tgt-0200"
+    "target_number": 25
   },
   {
+    "id": "tgt-dbfb15c4",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4300,10 +4273,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 26,
-    "id": "tgt-0201"
+    "target_number": 26
   },
   {
+    "id": "tgt-5181ad17",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4323,10 +4296,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 27,
-    "id": "tgt-0202"
+    "target_number": 27
   },
   {
+    "id": "tgt-1363ceb5",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4344,10 +4317,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 28,
-    "id": "tgt-0203"
+    "target_number": 28
   },
   {
+    "id": "tgt-e25bd989",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4365,10 +4338,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 29,
-    "id": "tgt-0204"
+    "target_number": 29
   },
   {
+    "id": "tgt-e8f3be7b",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4377,7 +4350,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 13(7) — Technical building systems",
     "target_text": "7. Member States shall strive to replace stand-alone boilers powered by fossil fuels in existing buildings, in line with the national phase-out plans for fossil fuel boilers.",
     "target_label": "commitment",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [
@@ -4386,10 +4359,31 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 30,
-    "id": "tgt-0205"
+    "target_number": 30
   },
   {
+    "id": "tgt-173ee764",
+    "policy_id": "epbd-recast",
+    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
+    "policy_short": "Energy Performance of Buildings Directive",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 14(1), point (a) — Infrastructure for sustainable mobility",
+    "target_text": "the installation of at least one recharging point for every five car parking spaces;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "unspecified",
+    "timeline": "",
+    "indicators": [
+      "recharging point"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "32024L1275",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
+    "target_number": 31
+  },
+  {
+    "id": "tgt-a5cd7880",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4405,10 +4399,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 31,
-    "id": "tgt-0206"
+    "target_number": 32
   },
   {
+    "id": "tgt-d65bef80",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4424,10 +4418,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 32,
-    "id": "tgt-0207"
+    "target_number": 33
   },
   {
+    "id": "tgt-1a64dd3e",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4443,10 +4437,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 33,
-    "id": "tgt-0208"
+    "target_number": 34
   },
   {
+    "id": "tgt-4d0579d6",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4462,10 +4456,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 34,
-    "id": "tgt-0209"
+    "target_number": 35
   },
   {
+    "id": "tgt-c9a5a7a2",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4481,31 +4475,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 35,
-    "id": "tgt-0210"
+    "target_number": 36
   },
   {
-    "policy_id": "epbd-recast",
-    "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
-    "policy_short": "Energy Performance of Buildings Directive",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 15(1) — Infrastructure for sustainable mobility",
-    "target_text": "the installation of at least one recharging point for every five car parking spaces;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "recharging point"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32024L1275",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 36,
-    "id": "tgt-0211"
-  },
-  {
+    "id": "tgt-bb7b7612",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4521,10 +4494,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 37,
-    "id": "tgt-0212"
+    "target_number": 37
   },
   {
+    "id": "tgt-fbcb16c9",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4540,10 +4513,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 38,
-    "id": "tgt-0213"
+    "target_number": 38
   },
   {
+    "id": "tgt-01bce5f3",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4559,10 +4532,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 39,
-    "id": "tgt-0214"
+    "target_number": 39
   },
   {
+    "id": "tgt-4671eda2",
     "policy_id": "epbd-recast",
     "policy_name": "Directive (EU) 2024/1275 on the energy performance of buildings (recast)",
     "policy_short": "Energy Performance of Buildings Directive",
@@ -4582,10 +4555,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024L1275",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L1275",
-    "target_number": 40,
-    "id": "tgt-0215"
+    "target_number": 40
   },
   {
+    "id": "tgt-ca094b73",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4604,10 +4577,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 1,
-    "id": "tgt-0216"
+    "target_number": 1
   },
   {
+    "id": "tgt-eaf1577d",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4616,7 +4589,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 2(1) — Climate-neutrality objective",
     "target_text": "1. Union-wide greenhouse gas emissions and removals regulated in Union law shall be balanced within the Union at the latest by 2050, thus reducing emissions to net zero by that date, and the Union shall aim to achieve negative emissions thereafter.",
     "target_label": "objective",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "by 2050",
     "indicators": [
@@ -4628,10 +4601,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 2,
-    "id": "tgt-0217"
+    "target_number": 2
   },
   {
+    "id": "tgt-33205bdb",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4649,19 +4622,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 3,
-    "id": "tgt-0218"
+    "target_number": 3
   },
   {
+    "id": "tgt-051f2228",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 2 — Climate-neutrality objective",
+    "article": "Article 2(1) — Climate-neutrality objective",
     "target_text": "Union-wide greenhouse gas emissions and removals regulated in Union law shall be balanced within the Union at the latest by 2050, thus reducing emissions to net zero by that date, and the Union shall aim to achieve negative emissions thereafter.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "by 2050",
     "indicators": [
@@ -4671,29 +4644,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 4,
-    "id": "tgt-0219"
+    "target_number": 4
   },
   {
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 2 — Climate-neutrality objective",
-    "target_text": "The relevant Union institutions and the Member States shall take the necessary measures at Union and national level, respectively, to enable the collective achievement of the climate-neutrality objective set out in paragraph 1, taking into account the importance of promoting both fairness and solidarity among Member States and cost-effectiveness in achieving this objective.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 5,
-    "id": "tgt-0220"
-  },
-  {
+    "id": "tgt-8bf4d88c",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4713,10 +4667,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 6,
-    "id": "tgt-0221"
+    "target_number": 5
   },
   {
+    "id": "tgt-48d710cd",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4725,9 +4679,9 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 4(1) — Intermediate Union climate targets",
     "target_text": "In order to ensure that sufficient mitigation efforts are deployed up to 2030, for the purpose of this Regulation and without prejudice to the review of Union legislation referred to in paragraph 2, the contribution of net removals to the Union 2030 climate target shall be limited to 225 million tonnes of CO2 equivalent. In order to enhance the Union’s carbon sink in line with the objective of achieving climate neutrality by 2050, the Union shall aim to achieve a higher volume of its net carbon sink in 2030.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
-    "timeline": "by 2050",
+    "timeline": "2030",
     "indicators": [
       "CO2 equivalent",
       "net removals",
@@ -4738,10 +4692,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 7,
-    "id": "tgt-0222"
+    "target_number": 6
   },
   {
+    "id": "tgt-c5714f34",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4759,16 +4713,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 8,
-    "id": "tgt-0223"
+    "target_number": 7
   },
   {
+    "id": "tgt-1201f2df",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Intermediate Union climate targets",
+    "article": "Article 4(1) — Intermediate Union climate targets",
     "target_text": "In order to reach the climate-neutrality objective set out in Article 2(1), the binding Union 2030 climate target shall be a domestic reduction of net greenhouse gas emissions (emissions after deduction of removals) by at least 55 % compared to 1990 levels by 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4782,37 +4736,37 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 9,
-    "id": "tgt-0224"
+    "target_number": 8
   },
   {
+    "id": "tgt-530fa44b",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Intermediate Union climate targets",
+    "article": "Article 4(1) — Intermediate Union climate targets",
     "target_text": "In order to enhance the Union’s carbon sink in line with the objective of achieving climate neutrality by 2050, the Union shall aim to achieve a higher volume of its net carbon sink in 2030.",
     "target_label": "objective",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
-    "timeline": "by 2050",
+    "timeline": "2030",
     "indicators": [
       "carbon sink"
     ],
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 10,
-    "id": "tgt-0225"
+    "target_number": 9
   },
   {
+    "id": "tgt-1ae33f36",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Intermediate Union climate targets",
+    "article": "Article 4(2) — Intermediate Union climate targets",
     "target_text": "By 30 June 2021, the Commission shall review relevant Union legislation in order to enable the achievement of the target set out in paragraph 1 of this Article and the climate-neutrality objective set out in Article 2(1) and consider taking the necessary measures, including the adoption of legislative proposals, in accordance with the Treaties.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4822,16 +4776,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 11,
-    "id": "tgt-0226"
+    "target_number": 10
   },
   {
+    "id": "tgt-3769a95e",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Intermediate Union climate targets",
+    "article": "Article 4(3) — Intermediate Union climate targets",
     "target_text": "With a view to achieving the climate-neutrality objective set out in Article 2(1) of this Regulation, a Union-wide climate target for 2040 shall be set.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4841,10 +4795,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 12,
-    "id": "tgt-0227"
+    "target_number": 11
   },
   {
+    "id": "tgt-bdf617b6",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -4861,19 +4815,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "resilience",
       "vulnerability to climate change"
     ],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 13,
-    "id": "tgt-0228"
+    "target_number": 12
   },
   {
+    "id": "tgt-0913f0ed",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Assessment of Union progress and measures",
+    "article": "Article 6(1)(a) — Assessment of Union progress and measures",
     "target_text": "the collective progress made by all Member States towards the achievement of the climate-neutrality objective set out in Article 2(1) of this Regulation;",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -4883,16 +4837,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 14,
-    "id": "tgt-0229"
+    "target_number": 13
   },
   {
+    "id": "tgt-6e446bfd",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Assessment of Union progress and measures",
+    "article": "Article 6(2)(a) — Assessment of Union progress and measures",
     "target_text": "the consistency of Union measures with the climate-neutrality objective set out in Article 2(1);",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -4902,16 +4856,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 15,
-    "id": "tgt-0230"
+    "target_number": 14
   },
   {
+    "id": "tgt-0e50947f",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Assessment of Union progress and measures",
+    "article": "Article 6(3) — Assessment of Union progress and measures",
     "target_text": "Where, based on the assessments referred to in paragraphs 1 and 2 of this Article, the Commission finds that Union measures are inconsistent with the climate-neutrality objective set out in Article 2(1) or inconsistent with ensuring progress on adaptation as referred to in Article 5, or that the progress towards that climate-neutrality objective or on adaptation as referred to in Article 5 is insufficient, it shall take the necessary measures in accordance with the Treaties.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -4921,16 +4875,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 16,
-    "id": "tgt-0231"
+    "target_number": 15
   },
   {
+    "id": "tgt-2b180ebd",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Assessment of Union progress and measures",
+    "article": "Article 6(4) — Assessment of Union progress and measures",
     "target_text": "The Commission shall assess the consistency of any draft measure or legislative proposal, including budgetary proposals, with the climate-neutrality objective set out in Article 2(1) and the Union 2030 and 2040 climate targets before adoption, and include that assessment in any impact assessment accompanying these measures or proposals, and make the result of that assessment publicly available at the time of adoption.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4940,16 +4894,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 17,
-    "id": "tgt-0232"
+    "target_number": 16
   },
   {
+    "id": "tgt-f64e6aa3",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 7 — Assessment of national measures",
+    "article": "Article 7(1)(a) — Assessment of national measures",
     "target_text": "the consistency of national measures identified, on the basis of the integrated national energy and climate plans, national long-term strategies and the biennial progress reports submitted in accordance with Regulation (EU) 2018/1999, as relevant for the achievement of the climate-neutrality objective set out in Article 2(1) of this Regulation with that objective;",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -4959,16 +4913,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 18,
-    "id": "tgt-0233"
+    "target_number": 17
   },
   {
+    "id": "tgt-e3739f0d",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 7 — Assessment of national measures",
+    "article": "Article 7(2) — Assessment of national measures",
     "target_text": "Where the Commission finds, after due consideration of the collective progress assessed in accordance with Article 6(1), that a Member State’s measures are inconsistent with the climate-neutrality objective set out in Article 2(1) or inconsistent with ensuring progress on adaptation as referred to in Article 5, it may issue recommendations to that Member State.",
     "target_label": "objective",
     "obligation": "voluntary",
@@ -4978,16 +4932,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 19,
-    "id": "tgt-0234"
+    "target_number": 18
   },
   {
+    "id": "tgt-a8a956d9",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 8 — Common provisions on Commission assessment",
+    "article": "Article 8(1) — Common provisions on Commission assessment",
     "target_text": "The Commission shall base its first and second assessments referred to in Articles 6 and 7 on an indicative, linear trajectory which sets out the pathway for the reduction of net emissions at Union level and which links the Union 2030 climate target referred to in Article 4(1), the Union 2040 climate target, when adopted, and the climate-neutrality objective set out in Article 2(1).",
     "target_label": "target",
     "obligation": "mandatory",
@@ -4997,16 +4951,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 20,
-    "id": "tgt-0235"
+    "target_number": 19
   },
   {
+    "id": "tgt-1d4e05ee",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 8 — Common provisions on Commission assessment",
+    "article": "Article 8(2) — Common provisions on Commission assessment",
     "target_text": "Following the first and second assessments referred to in paragraph 1, the Commission shall base any subsequent assessment on an indicative, linear trajectory linking the Union 2040 climate target, when adopted, and the climate-neutrality objective set out in Article 2(1).",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5016,16 +4970,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 21,
-    "id": "tgt-0236"
+    "target_number": 20
   },
   {
+    "id": "tgt-36057ac8",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 9 — Public participation",
+    "article": "Article 9(1) — Public participation",
     "target_text": "The Commission shall engage with all parts of society to enable and empower them to take action towards a just and socially fair transition to a climate-neutral and climate-resilient society.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -5035,10 +4989,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 22,
-    "id": "tgt-0237"
+    "target_number": 21
   },
   {
+    "id": "tgt-48ba823c",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
@@ -5054,35 +5008,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 23,
-    "id": "tgt-0238"
+    "target_number": 22
   },
   {
+    "id": "tgt-8c6c81d5",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 11 — ‘Article 11",
-    "target_text": "Each Member State shall establish a multilevel climate and energy dialogue pursuant to national rules, in which local authorities, civil society organisations, business community, investors and other relevant stakeholders and the general public are able actively to engage and discuss the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and the different scenarios envisaged for energy and climate policies, including for the long term, and review progress, unless it already has a structure which serves the same purpose.",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32021R1119",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 24,
-    "id": "tgt-0239"
-  },
-  {
-    "policy_id": "eu-climate-law",
-    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
-    "policy_short": "European Climate Law",
-    "document_type": "regulation",
-    "policy_area": "Climate",
-    "article": "Article 13 — Amendments to Regulation (EU) 2018/1999",
+    "article": "Article 13(1) (replacing Article 1(1)(a) of Regulation (EU) 2018/1999)",
     "target_text": "implement strategies and measures designed to meet the objectives and targets of the Energy Union and the long-term Union greenhouse gas emissions commitments consistent with the Paris Agreement, in particular the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 of the European Parliament and of the Council (*1), and, for the first ten-year period, from 2021 to 2030, in particular the Union’s 2030 targets for energy and climate;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5094,16 +5029,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 25,
-    "id": "tgt-0240"
+    "target_number": 23
   },
   {
+    "id": "tgt-5c8b9f18",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 13 — Amendments to Regulation (EU) 2018/1999",
+    "article": "Article 13(3) (replacing Article 3(2)(f) of Regulation (EU) 2018/1999)",
     "target_text": "an assessment of the impacts of the planned policies and measures to meet the objectives referred to in point (b) of this paragraph, including their consistency with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, the long-term greenhouse gas emission reduction objectives under the Paris Agreement and the long-term strategies as referred to in Article 15 of this Regulation;’;",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -5113,16 +5048,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 26,
-    "id": "tgt-0241"
+    "target_number": 24
   },
   {
+    "id": "tgt-5450319c",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 13 — Amendments to Regulation (EU) 2018/1999",
+    "article": "Article 13(4) (inserting Article 8(2)(e) of Regulation (EU) 2018/1999)",
     "target_text": "the manner in which existing policies and measures and planned policies and measures contribute to the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119.’;",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -5132,16 +5067,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 27,
-    "id": "tgt-0242"
+    "target_number": 25
   },
   {
+    "id": "tgt-69956688",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 15 — (a)",
+    "article": "Article 13(5) (replacing Article 11 of Regulation (EU) 2018/1999)",
+    "target_text": "Each Member State shall establish a multilevel climate and energy dialogue pursuant to national rules, in which local authorities, civil society organisations, business community, investors and other relevant stakeholders and the general public are able actively to engage and discuss the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and the different scenarios envisaged for energy and climate policies, including for the long term, and review progress, unless it already has a structure which serves the same purpose.",
+    "target_label": "objective",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32021R1119",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
+    "target_number": 26
+  },
+  {
+    "id": "tgt-c35fd9ba",
+    "policy_id": "eu-climate-law",
+    "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
+    "policy_short": "European Climate Law",
+    "document_type": "regulation",
+    "policy_area": "Climate",
+    "article": "Article 13(6)(a) (replacing Article 15(1) of Regulation (EU) 2018/1999)",
     "target_text": "By 1 January 2020, and subsequently by 1 January 2029 and every 10 years thereafter, each Member State shall prepare and submit to the Commission its long-term strategy with a 30-year perspective and consistent with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -5151,16 +5105,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 28,
-    "id": "tgt-0243"
+    "target_number": 27
   },
   {
+    "id": "tgt-d337ee9a",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 15 — (a)",
+    "article": "Article 13(6)(b) (replacing Article 15(3)(c) of Regulation (EU) 2018/1999)",
     "target_text": "achieving long-term greenhouse gas emission reductions and enhancements of removals by sinks in all sectors in accordance with the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, in the context of necessary greenhouse gas emission reductions and enhancements of removals by sinks according to the Intergovernmental Panel on Climate Change (IPCC) to reduce the Union’s greenhouse gas emissions in a cost-effective manner and enhance removals by sinks in pursuit of the long-term temperature goal in the Paris Agreement so as to achieve a balance between anthropogenic emissions by sources and removals by sinks of greenhouse gases within the Union and, as appropriate, achieve negative emissions thereafter;’;",
     "target_label": "goal",
     "obligation": "mandatory",
@@ -5175,16 +5129,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 29,
-    "id": "tgt-0244"
+    "target_number": 28
   },
   {
+    "id": "tgt-2afa204b",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 17 — (a)",
+    "article": "Article 13(7)(a) (replacing Article 17(2)(a) of Regulation (EU) 2018/1999)",
     "target_text": "information on the progress accomplished towards reaching the objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions set out in the integrated national energy and climate plan, and towards financing and implementing the policies and measures necessary to meet them, including a review of actual investment against initial investment assumptions;’;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5194,16 +5148,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 30,
-    "id": "tgt-0245"
+    "target_number": 29
   },
   {
+    "id": "tgt-797c8191",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 17 — (a)",
+    "article": "Article 13(8) (replacing Article 29(1)(b) of Regulation (EU) 2018/1999)",
     "target_text": "the progress made by each Member State towards meeting its objectives, including progress towards the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, targets and contributions and implementing the policies and measures set out in its integrated national energy and climate plan;’;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5213,35 +5167,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 31,
-    "id": "tgt-0246"
+    "target_number": 30
   },
   {
+    "id": "tgt-182d72ef",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 45 — ‘Article 45",
+    "article": "Article 13(9) (replacing Article 45 of Regulation (EU) 2018/1999)",
     "target_text": "The Commission shall report to the European Parliament and to the Council within six months of each global stocktake agreed under Article 14 of the Paris Agreement on the operation of this Regulation, its contribution to governance of the Energy Union, its contribution to the long-term goals of the Paris Agreement, progress towards the achievement of the 2030 climate and energy targets and the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119, additional Energy Union objectives and the conformity of the planning, reporting and monitoring provisions laid down in this Regulation with other Union law or decisions relating to the UNFCCC and the Paris Agreement.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "within six months of each global stocktake agreed under Article 14 of the Paris Agreement on the operation of this Regulation",
+    "timeline": "within six months of each global stocktake agreed under Article 14 of the…",
     "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 32,
-    "id": "tgt-0247"
+    "target_number": 31
   },
   {
+    "id": "tgt-08ced768",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 45 — ‘Article 45",
+    "article": "Article 13(10)(a) (replacing point 3.1.1(i), Section A, Part 1, Annex I to Regulation (EU) 2018/1999)",
     "target_text": "Policies and measures to achieve the target set under Regulation (EU) 2018/842 as referred to in point 2.1.1 of this Section and policies and measures to comply with Regulation (EU) 2018/841, covering all key emitting sectors and sectors for the enhancement of removals, with an outlook to the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119’;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5253,16 +5207,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 33,
-    "id": "tgt-0248"
+    "target_number": 32
   },
   {
+    "id": "tgt-434d2845",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 45 — ‘Article 45",
+    "article": "Article 13(10)(b) (inserting point 5.5, Section B, Part 1, Annex I to Regulation (EU) 2018/1999)",
     "target_text": "The contribution of planned policies and measures to the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119’;",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -5272,16 +5226,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 34,
-    "id": "tgt-0249"
+    "target_number": 33
   },
   {
+    "id": "tgt-6c18debe",
     "policy_id": "eu-climate-law",
     "policy_name": "Regulation (EU) 2021/1119 establishing the framework for achieving climate neutrality (European Climate Law)",
     "policy_short": "European Climate Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 45 — ‘Article 45",
+    "article": "Article 13(11) (replacing point (c)(viii) of Annex VI to Regulation (EU) 2018/1999)",
     "target_text": "an assessment of the contribution of the policy or measure to the achievement of the Union’s climate-neutrality objective set out in Article 2(1) of Regulation (EU) 2021/1119 and to the achievement of the long-term strategy referred to in Article 15 of this Regulation;’.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -5291,10 +5245,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32021R1119",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R1119",
-    "target_number": 35,
-    "id": "tgt-0250"
+    "target_number": 34
   },
   {
+    "id": "tgt-cc2d0ac7",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5312,10 +5266,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 1,
-    "id": "tgt-0251"
+    "target_number": 1
   },
   {
+    "id": "tgt-5a7e8ff4",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5326,17 +5280,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "for the three-year period beginning 1 January 2005 and the f",
+    "timeline": "for the three-year period beginning 1 January 2005",
     "indicators": [
       "share of allowances allocated free of charge"
     ],
     "climate_relevance": "none",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 2,
-    "id": "tgt-0252"
+    "target_number": 2
   },
   {
+    "id": "tgt-75235150",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5352,10 +5306,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 3,
-    "id": "tgt-0253"
+    "target_number": 3
   },
   {
+    "id": "tgt-e3273d1b",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5374,10 +5328,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 4,
-    "id": "tgt-0254"
+    "target_number": 4
   },
   {
+    "id": "tgt-627e15d9",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5387,7 +5341,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall ensure that any operator who does not surrender sufficient allowances by 30 April of each year to cover its emissions during the preceding year shall be held liable for the payment of an excess emissions penalty. The excess emissions penalty shall be EUR 100 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "by 30 April of each year",
     "indicators": [
       "excess emissions penalty (EUR per tonne CO2 equivalent)"
@@ -5395,10 +5349,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 5,
-    "id": "tgt-0255"
+    "target_number": 5
   },
   {
+    "id": "tgt-e2a116d1",
     "policy_id": "eu-ets-directive",
     "policy_name": "Directive 2003/87/EC establishing a scheme for greenhouse gas emission allowance trading (EU ETS)",
     "policy_short": "EU ETS Directive",
@@ -5408,7 +5362,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "During the three-year period beginning 1 January 2005, Member States shall apply a lower excess emissions penalty of EUR 40 for each tonne of carbon dioxide equivalent emitted by that installation for which the operator has not surrendered allowances.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "during the three-year period beginning 1 January 2005",
     "indicators": [
       "excess emissions penalty (EUR per tonne CO2 equivalent)"
@@ -5416,10 +5370,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32003L0087",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32003L0087",
-    "target_number": 6,
-    "id": "tgt-0256"
+    "target_number": 6
   },
   {
+    "id": "tgt-70c2fffd",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5437,10 +5391,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 1,
-    "id": "tgt-0257"
+    "target_number": 1
   },
   {
+    "id": "tgt-8e1d4f83",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5458,10 +5412,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 2,
-    "id": "tgt-0258"
+    "target_number": 2
   },
   {
+    "id": "tgt-a4e25ea5",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5480,10 +5434,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 3,
-    "id": "tgt-0259"
+    "target_number": 3
   },
   {
+    "id": "tgt-1ee15483",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5501,10 +5455,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 4,
-    "id": "tgt-0260"
+    "target_number": 4
   },
   {
+    "id": "tgt-ce6f27be",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5522,10 +5476,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 5,
-    "id": "tgt-0261"
+    "target_number": 5
   },
   {
+    "id": "tgt-e659cd0e",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5543,10 +5497,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 6,
-    "id": "tgt-0262"
+    "target_number": 6
   },
   {
+    "id": "tgt-cbc6b28e",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5565,16 +5519,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 7,
-    "id": "tgt-0263"
+    "target_number": 7
   },
   {
+    "id": "tgt-8b3862c0",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "2.1.6 From ‘Farm to Fork’: designing a fair, healthy and environmentally-friendl",
+    "article": "2.1.6. From ‘Farm to Fork’: designing a fair, healthy and environmentally-friendly food system",
     "target_text": "The Commission’s proposals for the common agricultural policy for 2021 to 2027 stipulate that at least 40% of the common agricultural policy’s overall budget and at least 30% of the Maritime Fisheries Fund would contribute to climate action.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -5586,10 +5540,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 8,
-    "id": "tgt-0264"
+    "target_number": 8
   },
   {
+    "id": "tgt-94201942",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5604,13 +5558,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "biodiversity loss"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 9,
-    "id": "tgt-0265"
+    "target_number": 9
   },
   {
+    "id": "tgt-f7913f3b",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
@@ -5628,16 +5582,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 10,
-    "id": "tgt-0266"
+    "target_number": 10
   },
   {
+    "id": "tgt-5f7c1722",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
     "target_text": "The Commission has already set out a clear vision of how to achieve climate neutrality by 2050 5 .",
     "target_label": "target",
     "obligation": "voluntary",
@@ -5647,16 +5601,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 11,
-    "id": "tgt-0267"
+    "target_number": 11
   },
   {
+    "id": "tgt-4fe17786",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
     "target_text": "The Climate Law will also ensure that all EU policies contribute to the climate neutrality objective and that all sectors play their part.",
     "target_label": "objective",
     "obligation": "voluntary",
@@ -5666,16 +5620,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 12,
-    "id": "tgt-0268"
+    "target_number": 12
   },
   {
+    "id": "tgt-9ecb3b97",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1.1 Increasing the EU’s climate ambition for 2030 and 2050",
     "target_text": "However, current policies will only reduce greenhouse gas emissions by 60% by 2050.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -5687,16 +5641,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 13,
-    "id": "tgt-0269"
+    "target_number": 13
   },
   {
+    "id": "tgt-50e7fb22",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1.2 Supplying clean, affordable and secure energy",
     "target_text": "The regulatory framework for energy infrastructure, including the TEN-E Regulation 12 , will need to be reviewed to ensure consistency with the climate neutrality objective.",
     "target_label": "objective",
     "obligation": "voluntary",
@@ -5706,16 +5660,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 14,
-    "id": "tgt-0270"
+    "target_number": 14
   },
   {
+    "id": "tgt-2587bdf1",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1.7 Preserving and restoring ecosystems and biodiversity",
     "target_text": "The EU’s forested area needs to improve, both in quality and quantity, for the EU to reach climate neutrality and a healthy environment.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -5725,16 +5679,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 15,
-    "id": "tgt-0271"
+    "target_number": 15
   },
   {
+    "id": "tgt-c5018ef7",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition",
     "target_text": "The Commission has proposed a 25% target for climate mainstreaming across all EU programmes.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -5744,16 +5698,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 16,
-    "id": "tgt-0272"
+    "target_number": 16
   },
   {
+    "id": "tgt-c58aac0f",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition",
     "target_text": "At least 30% of the InvestEU Fund will contribute to fighting climate change.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -5763,16 +5717,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 17,
-    "id": "tgt-0273"
+    "target_number": 17
   },
   {
+    "id": "tgt-e16d2c6d",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.1 Pursuing green finance and investment and ensuring a just transition",
     "target_text": "The EIB set itself the target of doubling its climate target from 25% to 50% by 2025, thus becoming Europe’s climate bank.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -5782,16 +5736,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 18,
-    "id": "tgt-0274"
+    "target_number": 18
   },
   {
+    "id": "tgt-5f1802a1",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.3 Mobilising research and fostering innovation",
     "target_text": "At least 35% of the budget of Horizon Europe will fund new solutions for climate, which are relevant for implementing the Green Deal.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -5801,35 +5755,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 19,
-    "id": "tgt-0275"
+    "target_number": 19
   },
   {
+    "id": "tgt-d0cf5ab7",
     "policy_id": "eu-green-deal",
     "policy_name": "Communication COM(2019) 640 - The European Green Deal",
     "policy_short": "European Green Deal",
     "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "3. The EU as a global leader",
     "target_text": "The Commission proposal for a Neighbourhood, Development and International Cooperation Instrument proposes to allocate a target of 25% of its budget to climate-related objectives.",
     "target_label": "target",
     "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "none",
     "celex_number": "52019DC0640",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52019DC0640",
-    "target_number": 20,
-    "id": "tgt-0276"
+    "target_number": 20
   },
   {
+    "id": "tgt-dee030db",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 4(1) — Obligations of the manufacturers concerning construction of vehic",
+    "article": "Article 3, point (58) — Definitions",
     "target_text": "‘not off-vehicle charging hybrid electric vehicle’ or ‘NOVC-HEV’ means a vehicle with at least two different energy converters and two different energy storage systems that are used for the purpose of vehicle propulsion and that cannot be charged from an external source;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -5841,39 +5795,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 1,
-    "id": "tgt-0277"
+    "target_number": 1
   },
   {
+    "id": "tgt-e76df0ff",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 6(1) — Durability requirements",
+    "article": "Article 4(6), point (b)",
     "target_text": "OBM systems capable of monitoring exhaust emissions;",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "unspecified",
     "timeline": "",
-    "indicators": [
-      "emission limits (Annex I)",
-      "lifetime of the vehicle (Annex IV)",
-      "battery durability minimum performance requirements (Annex II)"
-    ],
+    "indicators": [],
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 2,
-    "id": "tgt-0278"
+    "target_number": 2
   },
   {
+    "id": "tgt-ade6ec07",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 10 — Emission type-approval, conformity of production, in-service confor",
+    "article": "Article 10(8) — Emission type-approval, conformity of production, in-service conformity and market surveillance",
     "target_text": "By way of derogation from paragraph 7 of this Article, until 31 December 2029, national authorities shall allow for vehicles of category M2 or M3, for which there is a 100 % zero-emission target as from the reporting period of the year 2030 in accordance with Regulation (EU) 2019/1242, the registration, sale or entry into service of new vehicles, which do not comply with this Regulation but have a valid emission type-approval in accordance with Regulation (EC) No 595/2009.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -5883,16 +5833,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 3,
-    "id": "tgt-0279"
+    "target_number": 3
   },
   {
+    "id": "tgt-793086cc",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 21 — Entry into force and application",
+    "article": "Article 18(2) — Reporting and review",
     "target_text": "2. By 1 September 2031, on the basis of the information provided in accordance with paragraph 1, the Commission shall submit to the European Parliament and to the Council an evaluation report on the application of this Regulation, including an evaluation of the exhaust and non-exhaust emission reductions achieved.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -5905,16 +5855,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 4,
-    "id": "tgt-0280"
+    "target_number": 4
   },
   {
+    "id": "tgt-93dbf851",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 21",
+    "article": "Article 18(3) — Reporting and review",
     "target_text": "3. By 31 December 2025, the Commission shall submit to the European Parliament and to the Council a report assessing the durability performance of heavy-duty vehicles with regard to emissions.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -5926,52 +5876,48 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 5,
-    "id": "tgt-0281"
+    "target_number": 5
   },
   {
+    "id": "tgt-f1ce8871",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 21",
+    "article": "Article 18(4) — Reporting and review",
     "target_text": "4. By 31 December 2027, the Commission shall submit to the European Parliament and to the Council a report on battery durability reviewing the state of the art, as a basis for a review of the minimum performance requirements, with a view to the adoption of the delegated acts referred to in Article 15(2), point (c).",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "By 31 December 2027",
-    "indicators": [
-      "application dates for C1, C2, C3 class tyres"
-    ],
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 6,
-    "id": "tgt-0282"
+    "target_number": 6
   },
   {
+    "id": "tgt-c7e1b871",
     "policy_id": "euro-7-regulation",
     "policy_name": "Regulation (EU) 2024/1257 on type-approval of motor vehicles and engines with respect to their emissions (Euro 7)",
     "policy_short": "Euro 7 Regulation",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 21",
+    "article": "Article 18(4) — Reporting and review",
     "target_text": "That report shall assess, inter alia, the appropriateness of setting out minimum performance requirements for vehicles up to at least 10 years or 200 000 km, whichever comes first.",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "from 1 July 2030 / from 1 July 2031",
-    "indicators": [
-      "application dates for small-volume manufacturers"
-    ],
+    "timeline": "",
+    "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32024R1257",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1257",
-    "target_number": 7,
-    "id": "tgt-0283"
+    "target_number": 7
   },
   {
+    "id": "tgt-74fb9c09",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -5989,10 +5935,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 1,
-    "id": "tgt-0284"
+    "target_number": 1
   },
   {
+    "id": "tgt-777f8d37",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6011,10 +5957,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 2,
-    "id": "tgt-0285"
+    "target_number": 2
   },
   {
+    "id": "tgt-9827d28c",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6033,16 +5979,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 3,
-    "id": "tgt-0286"
+    "target_number": 3
   },
   {
+    "id": "tgt-1d7cca1c",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Leak checks",
+    "article": "Article 5(1) — Leak checks",
     "target_text": "Operators and manufacturers of equipment that contains 5 tonnes of CO2 equivalent or more of fluorinated greenhouse gases listed in Annex I or 1 kilogram or more of fluorinated greenhouse gases listed in Section 1 of Annex II that is not contained in foams, shall ensure that the equipment is checked for leaks.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6055,16 +6001,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 4,
-    "id": "tgt-0287"
+    "target_number": 4
   },
   {
+    "id": "tgt-6e36ba24",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Leak checks",
+    "article": "Article 5(6)(a) — Leak checks",
     "target_text": "for equipment that contains less than 50 tonnes of CO2 equivalent of fluorinated greenhouse gases listed in Annex I or less than 10 kilograms of fluorinated greenhouse gases listed in Section 1 of Annex II: at least every 12 months; or where a leakage detection system is installed in such equipment, at least every 24 months;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -6077,16 +6023,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 5,
-    "id": "tgt-0288"
+    "target_number": 5
   },
   {
+    "id": "tgt-5cde3d7b",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Leak checks",
+    "article": "Article 5(6)(b) — Leak checks",
     "target_text": "for equipment that contains 50 tonnes of CO2 equivalent or more, but less than 500 tonnes of CO2 equivalent of fluorinated greenhouse gases listed in Annex I or 10 kilograms or more, but less than 100 kilograms of fluorinated greenhouse gases listed in Section 1 of Annex II: at least every 6 months or, where a leakage detection system is installed in such equipment, at least every 12 months;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -6099,16 +6045,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 6,
-    "id": "tgt-0289"
+    "target_number": 6
   },
   {
+    "id": "tgt-4095939a",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Leak checks",
+    "article": "Article 5(6)(c) — Leak checks",
     "target_text": "for equipment that contains 500 tonnes of CO2 equivalent or more of fluorinated greenhouse gases listed in Annex I or 100 kilograms or more of fluorinated greenhouse gases listed in Section 1 of Annex II: at least every 3 months or, where a leakage detection system is installed in such equipment, at least every 6 months.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -6121,16 +6067,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 7,
-    "id": "tgt-0290"
+    "target_number": 7
   },
   {
+    "id": "tgt-07c922a0",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Leakage detection systems",
+    "article": "Article 6(1) — Leakage detection systems",
     "target_text": "Operators of stationary equipment listed in Article 5(2), points (a) to (d), that contains fluorinated greenhouse gases listed in Annex I in quantities of 500 tonnes of CO2 equivalent or more or 100 kilograms or more of gases listed in Section 1 of Annex II, shall ensure that the equipment has a leakage detection system which alerts the operator or a service company of any leakage.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6143,16 +6089,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 8,
-    "id": "tgt-0291"
+    "target_number": 8
   },
   {
+    "id": "tgt-1eb2c4e3",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 6 — Leakage detection systems",
+    "article": "Article 6(2) — Leakage detection systems",
     "target_text": "Operators of stationary equipment listed in Article 5(2), points (e) and (f), that contains fluorinated greenhouse gases listed in Annex I in quantities of 500 tonnes of CO2 equivalent or more and installed from 1 January 2017, shall ensure that the equipment has a leakage detection system which alerts the operator or a service company of any leakage.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6165,10 +6111,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 9,
-    "id": "tgt-0292"
+    "target_number": 9
   },
   {
+    "id": "tgt-ad13d0c2",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6183,13 +6129,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "placing on the market of products and equipment containing F-gases"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 10,
-    "id": "tgt-0293"
+    "target_number": 10
   },
   {
+    "id": "tgt-bb0d4f19",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6209,10 +6155,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 11,
-    "id": "tgt-0294"
+    "target_number": 11
   },
   {
+    "id": "tgt-3c2e1f1c",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6222,7 +6168,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "4. From 1 January 2026, the use of fluorinated greenhouse gases listed in Annex I, with a global warming potential of 2 500 or more, for the maintenance or servicing of air-conditioning equipment and heat pumps shall be prohibited.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2026",
     "indicators": [
       "fluorinated greenhouse gases",
@@ -6231,10 +6177,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 12,
-    "id": "tgt-0295"
+    "target_number": 12
   },
   {
+    "id": "tgt-23e32e4b",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6244,7 +6190,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "5. From 1 January 2032, the use of fluorinated greenhouse gases listed in Annex I, with a global warming potential of 750 or more, for the maintenance or servicing of stationary refrigeration equipment, with the exclusion of chillers, shall be prohibited.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2032",
     "indicators": [
       "fluorinated greenhouse gases",
@@ -6253,10 +6199,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 13,
-    "id": "tgt-0296"
+    "target_number": 13
   },
   {
+    "id": "tgt-b7439b50",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6271,13 +6217,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "use of SF6 for electrical switchgear servicing"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 14,
-    "id": "tgt-0297"
+    "target_number": 14
   },
   {
+    "id": "tgt-b6eb909a",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6292,13 +6238,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "use of desflurane as inhalation anaesthetic"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 15,
-    "id": "tgt-0298"
+    "target_number": 15
   },
   {
+    "id": "tgt-ce454cb9",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6317,10 +6263,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 16,
-    "id": "tgt-0299"
+    "target_number": 16
   },
   {
+    "id": "tgt-29ff133e",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6335,13 +6281,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "medium voltage electrical switchgear up to 24 kV"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 17,
-    "id": "tgt-0300"
+    "target_number": 17
   },
   {
+    "id": "tgt-fccfd356",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6356,13 +6302,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "medium voltage electrical switchgear 24-52 kV"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 18,
-    "id": "tgt-0301"
+    "target_number": 18
   },
   {
+    "id": "tgt-06baa173",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6377,13 +6323,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "high voltage electrical switchgear 52-145 kV"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 19,
-    "id": "tgt-0302"
+    "target_number": 19
   },
   {
+    "id": "tgt-0a15046d",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6393,24 +6339,24 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "from 1 January 2032, high voltage electrical switchgear of more than 145 kV or more than 50 kA short circuit current, with a global warming potential of 1 or more.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "from 1 January 2032",
     "indicators": [
       "high voltage electrical switchgear >145 kV"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 20,
-    "id": "tgt-0303"
+    "target_number": 20
   },
   {
+    "id": "tgt-f4fc64f4",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 13 — Control of use",
+    "article": "Article 13(3) — Control of use",
     "target_text": "The use of fluorinated greenhouse gases, with a global warming potential of 2 500 or more, for the maintenance or servicing of refrigeration equipment with a charge size of 40 tonnes of CO2 equivalent or more, shall be prohibited.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6423,16 +6369,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 21,
-    "id": "tgt-0304"
+    "target_number": 21
   },
   {
+    "id": "tgt-4fe57798",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 16(1) — Reduction of the quantity of hydrofluorocarbons placed on the ma",
+    "article": "Article 16(1) — Reduction of the quantity of hydrofluorocarbons placed on the market",
     "target_text": "The placing on the market of hydrofluorocarbons shall be allowed only to the extent that producers and importers have been allocated quota by the Commission as set out in Article 17.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -6444,16 +6390,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 22,
-    "id": "tgt-0305"
+    "target_number": 22
   },
   {
+    "id": "tgt-a33963ca",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 17 — Determination of reference values and quota allocations for the pla",
+    "article": "Article 17(7) — Determination of reference values and quota allocations for the placing on the market of…",
     "target_text": "Where the assessment demonstrates a severe shortage of fluorinated greenhouse gases listed in Section 1 of Annex I for the deployment of heat pumps which could endanger the attainment of the REPowerEU heat pump deployment targets, the Commission shall adopt delegated acts in accordance with Article 32 to amend Annex VII in order to allow the placing on the market of a quantity of fluorinated greenhouse gases listed in Annex I, in addition to the quota under Annex VII, respectively up to 4 410 247 tonnes of CO2 equivalent, per year, for the period 2025-2026 and up to 1 425 536 tonnes of CO2 equivalent, per year, for the period 2027-2029.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6466,16 +6412,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 23,
-    "id": "tgt-0306"
+    "target_number": 23
   },
   {
+    "id": "tgt-f56a0626",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 17 — Determination of reference values and quota allocations for the pla",
+    "article": "Article 17(8) — Determination of reference values and quota allocations for the placing on the market of…",
     "target_text": "The revenue used to cover those costs shall not exceed the maximum annual amount of EUR 3 million.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6485,10 +6431,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 24,
-    "id": "tgt-0307"
+    "target_number": 24
   },
   {
+    "id": "tgt-41d5088c",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6506,16 +6452,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 25,
-    "id": "tgt-0308"
+    "target_number": 25
   },
   {
+    "id": "tgt-af6b2c36",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 26 — Reporting by undertakings",
+    "article": "Article 26(8) — Reporting by undertakings",
     "target_text": "By 30 April 2025 and every year thereafter, each undertaking which, under paragraph 1, reports on the placing on the market of 1 000 tonnes of CO2 equivalent or more of hydrofluorocarbons during the preceding calendar year shall, in addition, ensure that the veracity of its report is confirmed, at a reasonable level of assurance, by an independent auditor.",
     "target_label": "commitment",
     "obligation": "mandatory",
@@ -6527,16 +6473,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 26,
-    "id": "tgt-0309"
+    "target_number": 26
   },
   {
+    "id": "tgt-49605178",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 31 — Penalties",
+    "article": "Article 31(5) — Penalties",
     "target_text": "The amount of reduction shall be calculated as 200 % of the amount by which the quota was exceeded.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -6546,10 +6492,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 27,
-    "id": "tgt-0310"
+    "target_number": 27
   },
   {
+    "id": "tgt-a1f07801",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6564,13 +6510,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "hydrofluorocarbon production rights (% of 2011-2013 average)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 28,
-    "id": "tgt-0311"
+    "target_number": 28
   },
   {
+    "id": "tgt-3344bbe2",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6585,13 +6531,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "hydrofluorocarbon production rights (% of 2011-2013 average)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 29,
-    "id": "tgt-0312"
+    "target_number": 29
   },
   {
+    "id": "tgt-cc5d1fda",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6606,13 +6552,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "hydrofluorocarbon production rights (% of 2011-2013 average)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 30,
-    "id": "tgt-0313"
+    "target_number": 30
   },
   {
+    "id": "tgt-d8ae4a5f",
     "policy_id": "f-gas-regulation",
     "policy_name": "Regulation (EU) 2024/573 on fluorinated greenhouse gases",
     "policy_short": "F-Gas Regulation",
@@ -6627,19 +6573,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "hydrofluorocarbon production rights (% of 2011-2013 average)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R0573",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R0573",
-    "target_number": 31,
-    "id": "tgt-0314"
+    "target_number": 31
   },
   {
+    "id": "tgt-f5445a08",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "1. ‘Fit for 55’: delivering the EU’s 2030 Climate Target on the way to climate n",
+    "article": "1.'Fit for 55': delivering the EU's 2030 Climate Target on the way to climate neutrality",
     "target_text": "The EU has led by example in setting ambitious targets for reducing net emissions by at least 55% by 2030 compared to 1990 and for being the first climate neutral continent by 2050.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -6652,16 +6598,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 1,
-    "id": "tgt-0315"
+    "target_number": 1
   },
   {
+    "id": "tgt-8273e96a",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "2.2 A competitive transition: New opportunities through industrial and sectoral ",
+    "article": "2.2 A competitive transition: New opportunities through industrial and sectoral change",
     "target_text": "The proposal should deliver an EU-wide reduction of 40% in emissions from these sectors by 2030, compared to the situation in 2005.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -6673,14 +6619,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 2,
-    "id": "tgt-0316"
+    "target_number": 2
   },
   {
+    "id": "tgt-f7c9d98c",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.1 Industrial transformation and carbon pricing",
     "target_text": "will need to reduce their greenhouse gas emissions by 61%, compared to 2005 levels.",
@@ -6695,19 +6641,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 3,
-    "id": "tgt-0317"
+    "target_number": 3
   },
   {
+    "id": "tgt-5f156a66",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.3 Energy",
     "target_text": "To reach the 2030 target, the updated Renewable Energy Directive proposes to increase the overall binding target from the current 32% to a new level of 40% of renewables in the EU energy mix.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "2030",
     "indicators": [
@@ -6717,14 +6663,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 4,
-    "id": "tgt-0318"
+    "target_number": 4
   },
   {
+    "id": "tgt-33252dd6",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.3 Energy",
     "target_text": "This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections",
@@ -6735,19 +6681,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "energy consumption reduction"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 5,
-    "id": "tgt-0319"
+    "target_number": 5
   },
   {
+    "id": "tgt-06fd25a7",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "2.3 A green transition: Protecting nature and increasing the EU’s natural carbon",
+    "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink",
     "target_text": "It proposes to set an EU target of net greenhouse gas removals in the LULUCF sector of 310 million tons of CO2 equivalent by 2030.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -6761,14 +6707,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 6,
-    "id": "tgt-0320"
+    "target_number": 6
   },
   {
+    "id": "tgt-051d70a0",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.2 Cleaner mobility and transport fuels",
     "target_text": "Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050",
@@ -6782,16 +6728,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 7,
-    "id": "tgt-0321"
+    "target_number": 7
   },
   {
+    "id": "tgt-f3ad597b",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "2.1 A socially fair transition: tackling inequality and energy poverty through c",
+    "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action",
     "target_text": "The Social Climate Fund will provide €72.2 billion in current prices for the period 2025-2032 in the EU budget from the new Emissions Trading System.",
     "target_label": "commitment",
     "obligation": "voluntary",
@@ -6803,14 +6749,14 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 8,
-    "id": "tgt-0322"
+    "target_number": 8
   },
   {
+    "id": "tgt-e7359b3d",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
     "article": "2.2.1 Industrial transformation and carbon pricing",
     "target_text": "This is why the Commission proposes to start applying emissions trading from 2026 for road transport and buildings.",
@@ -6824,96 +6770,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 9,
-    "id": "tgt-0323"
+    "target_number": 9
   },
   {
+    "id": "tgt-0d509deb",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "3. Opportunities and Incentives: Innovation and Investment for a competitive tra",
-    "target_text": "30% of programmes under the 2021-2027 Multiannual Financial Framework are dedicated to support climate action, for example through cohesion policy, agriculture, and the LIFE programme for climate and environment.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "2021-2027",
-    "indicators": [
-      "share of MFF for climate action"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 10,
-    "id": "tgt-0324"
-  },
-  {
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
-    "policy_area": "Cross-cutting",
-    "article": "3. Opportunities and Incentives: Innovation and Investment for a competitive tra",
-    "target_text": "national recovery and resilience plans financed under the Recovery and Resilience Facility need to contribute to the green transition with measures accounting to at least 37% of the plans’ allocations.",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [
-      "share of recovery and resilience plan allocations for the green transition"
-    ],
-    "climate_relevance": "adaptation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 11,
-    "id": "tgt-0325"
-  },
-  {
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
-    "policy_area": "Cross-cutting",
-    "article": "Body",
-    "target_text": "'Fit for 55': delivering the EU's 2030 Climate Target on the way to climate neutrality",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 12,
-    "id": "tgt-0326"
-  },
-  {
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
-    "policy_area": "Cross-cutting",
-    "article": "Body",
-    "target_text": "1.'Fit for 55': delivering the EU's 2030 Climate Target on the way to climate neutrality",
-    "target_label": "target",
-    "obligation": "voluntary",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 13,
-    "id": "tgt-0327"
-  },
-  {
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
-    "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.1 A socially fair transition: tackling inequality and energy poverty through climate action",
     "target_text": "The transition towards climate neutrality can be a unique opportunity to reduce systemic inequality.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -6923,16 +6789,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 14,
-    "id": "tgt-0328"
+    "target_number": 10
   },
   {
+    "id": "tgt-8c6b0235",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.1 Industrial transformation and carbon pricing",
     "target_text": "Reflecting the need for steeper emission reductions, the Commission is today proposing that by 2030 sectors covered by the revised EU ETS 4 will need to reduce their greenhouse gas emissions by 61%, compared to 2005 levels.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -6945,16 +6811,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 15,
-    "id": "tgt-0329"
+    "target_number": 11
   },
   {
+    "id": "tgt-2025acfe",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.2.2 Cleaner mobility and transport fuels",
     "target_text": "Emissions remain higher than in 1990 and a 90% reduction in overall transport emissions by 2050 5 will be required to reach climate neutrality.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -6964,35 +6830,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 16,
-    "id": "tgt-0330"
+    "target_number": 12
   },
   {
+    "id": "tgt-195a40f2",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
-    "target_text": "This should lead to 9% reduction in energy consumption by 2030, compared to the baseline projections 7 .",
-    "target_label": "other",
-    "obligation": "voluntary",
-    "target_type": "quantitative",
-    "timeline": "by 2030",
-    "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "52021DC0550",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 17,
-    "id": "tgt-0331"
-  },
-  {
-    "policy_id": "fit-for-55",
-    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
-    "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
-    "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "2.3 A green transition: Protecting nature and increasing the EU's natural carbon sink",
     "target_text": "Bioenergy currently accounts for around 60% of renewable energy production and, while that share is projected to decline between 2030 and 2050, the overall demand for renewable energy will increase.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -7004,35 +6851,58 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 18,
-    "id": "tgt-0332"
+    "target_number": 13
   },
   {
+    "id": "tgt-27f97df3",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
-    "target_text": "In addition, Member States’ national recovery and resilience plans financed under the Recovery and Resilience Facility need to contribute to the green transition with measures accounting to at least 37% of the plans’ allocations.",
-    "target_label": "other",
+    "article": "3.Opportunities and Incentives: Innovation and Investment for a competitive transition",
+    "target_text": "30% of programmes under the 2021-2027 Multiannual Financial Framework are dedicated to support climate action, for example through cohesion policy, agriculture, and the LIFE programme for climate and environment.",
+    "target_label": "target",
+    "obligation": "voluntary",
+    "target_type": "quantitative",
+    "timeline": "2021-2027",
+    "indicators": [
+      "share of MFF for climate action"
+    ],
+    "climate_relevance": "none",
+    "celex_number": "52021DC0550",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
+    "target_number": 14
+  },
+  {
+    "id": "tgt-a4ff486a",
+    "policy_id": "fit-for-55",
+    "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
+    "policy_short": "Fit for 55 Package",
+    "document_type": "communication",
+    "policy_area": "Cross-cutting",
+    "article": "3.Opportunities and Incentives: Innovation and Investment for a competitive transition",
+    "target_text": "national recovery and resilience plans financed under the Recovery and Resilience Facility need to contribute to the green transition with measures accounting to at least 37% of the plans’ allocations.",
+    "target_label": "target",
     "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "",
-    "indicators": [],
-    "climate_relevance": "adaptation",
+    "indicators": [
+      "share of recovery and resilience plan allocations for the green transition"
+    ],
+    "climate_relevance": "none",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 19,
-    "id": "tgt-0333"
+    "target_number": 15
   },
   {
+    "id": "tgt-8b90cdb3",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "4. A Sustainable EU in a Sustainable World",
     "target_text": "While only accounting for 8% of global CO2 emissions, the EU recognises its responsibility for a higher share of cumulative emissions.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -7044,16 +6914,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 20,
-    "id": "tgt-0334"
+    "target_number": 16
   },
   {
+    "id": "tgt-43362bdd",
     "policy_id": "fit-for-55",
     "policy_name": "Communication COM(2021) 550 - Fit for 55: delivering the EU's 2030 climate target",
     "policy_short": "Fit for 55 Package",
-    "document_type": "strategy",
+    "document_type": "communication",
     "policy_area": "Cross-cutting",
-    "article": "Body",
+    "article": "5. Conclusion",
     "target_text": "To make the European Union Fit for 55 and reduce in time our emissions by at least 55%, we need all these tools and this balance.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -7063,10 +6933,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0550",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0550",
-    "target_number": 21,
-    "id": "tgt-0335"
+    "target_number": 17
   },
   {
+    "id": "tgt-822f75f6",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7082,18 +6952,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 1,
-    "id": "tgt-0336"
+    "target_number": 1
   },
   {
+    "id": "tgt-3e25e7d2",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 2 — Scope",
+    "article": "Article 2(2) — Scope",
     "target_text": "The implementing acts referred to in the first subparagraph shall list a port as a neighbouring container transhipment port where the share of transhipment of containers, measured in 20 foot equivalent units, exceeds 65 % of the total container traffic of that port during the most recent 12-month period for which relevant data are available and where that port is located outside the Union but less than 300 nautical miles from a port under the jurisdiction of a Member State.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -7101,10 +6971,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 2,
-    "id": "tgt-0337"
+    "target_number": 2
   },
   {
+    "id": "tgt-464c9779",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7122,10 +6992,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 3,
-    "id": "tgt-0338"
+    "target_number": 3
   },
   {
+    "id": "tgt-4c45c1a8",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7135,7 +7005,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "2. The limit referred to in paragraph 1 shall be calculated by reducing the reference value of 91,16 grams of CO2 equivalent per MJ by the following percentage:",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "CO2 equivalent",
@@ -7146,10 +7016,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 4,
-    "id": "tgt-0339"
+    "target_number": 4
   },
   {
+    "id": "tgt-98f47289",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7158,7 +7028,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 5(1) — Use of Renewable Fuels of Non-Biological Origin",
     "target_text": "1. For the calculation of the GHG intensity of the energy used on board by a ship, from 1 January 2025 to 31 December 2033 a multiplier of ‘2’ can be used to reward the ship for the use of RFNBO. The methodology for this calculation is set out in Annex I.",
     "target_label": "other",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "unspecified",
     "timeline": "from 1 January 2025 to 31 December 2033",
     "indicators": [
@@ -7168,10 +7038,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 5,
-    "id": "tgt-0340"
+    "target_number": 5
   },
   {
+    "id": "tgt-c5a7f504",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7186,38 +7056,38 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "share of RFNBO in yearly energy used on board (subtarget %)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 6,
-    "id": "tgt-0341"
+    "target_number": 6
   },
   {
+    "id": "tgt-6c03bd42",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 5 — Use of Renewable Fuels of Non-Biological Origin",
+    "article": "Article 5(3) (duplicate of tgt-0341; consider removing one)",
     "target_text": "If the share of RFNBO referred to in paragraph 2 is less than 1 % for the reporting period 2031, a subtarget of 2 % shall apply for such fuels in the yearly energy used on board by a ship from 1 January 2034, subject to paragraph 5.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 7,
-    "id": "tgt-0342"
+    "target_number": 7
   },
   {
+    "id": "tgt-53b44714",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 5 — Use of Renewable Fuels of Non-Biological Origin",
+    "article": "Article 5(4)",
     "target_text": "Paragraph 3 shall not apply where the monitoring results provided for in paragraph 2 that are available before 1 January 2033 demonstrate that the share referred to in paragraph 2 is more than 2 %.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7227,10 +7097,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 8,
-    "id": "tgt-0343"
+    "target_number": 8
   },
   {
+    "id": "tgt-31e539a8",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7245,13 +7115,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "on-shore power supply (OPS) connection at berth"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 9,
-    "id": "tgt-0344"
+    "target_number": 9
   },
   {
+    "id": "tgt-87d2e3dd",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
@@ -7266,32 +7136,32 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "on-shore power supply (OPS) connection at berth"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 10,
-    "id": "tgt-0345"
+    "target_number": 10
   },
   {
+    "id": "tgt-7e7be956",
     "policy_id": "fueleu-maritime",
     "policy_name": "Regulation (EU) 2023/1805 on the use of renewable and low-carbon fuels in maritime transport (FuelEU Maritime)",
     "policy_short": "FuelEU Maritime",
     "document_type": "regulation",
     "policy_area": "Transport",
-    "article": "Article 6 — Additional zero-emission requirements for energy used at berth",
+    "article": "Article 6(10)",
     "target_text": "From 1 January 2035, in ports falling under the requirements of Article 9 of Regulation (EU) 2023/1804, it shall only be possible to apply the exceptions provided for in paragraph 5, points (d), (e) and (f) to a maximum number of port calls corresponding to 10 % of a ship’s total number of port calls that took place during a reporting period, rounded up to the nearest whole number, where relevant, or to a maximum of 10 port calls during the relevant reporting period, whichever is lower.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R1805",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1805",
-    "target_number": 11,
-    "id": "tgt-0346"
+    "target_number": 11
   },
   {
+    "id": "tgt-52e8cbae",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7310,10 +7180,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 1,
-    "id": "tgt-0347"
+    "target_number": 1
   },
   {
+    "id": "tgt-ee1fe223",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7336,18 +7206,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 2,
-    "id": "tgt-0348"
+    "target_number": 2
   },
   {
+    "id": "tgt-6b09672e",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 2 — Definitions",
+    "article": "Article 2, point (20)(b) — Definitions ('early efforts')",
     "target_text": "in the context of Commission recommendations based on the assessment pursuant to point (b) of Article 29(1) with regard to energy from renewable sources, a Member State's early implementation of its contribution to the Union's binding target of at least 32 % of renewable energy in 2030 as measured against its national reference points for renewable energy;",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -7357,31 +7227,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 3,
-    "id": "tgt-0349"
+    "target_number": 3
   },
   {
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 2a — (a)",
-    "target_text": "Each Member State shall establish a long-term renovation strategy to support the renovation of the national stock of residential and non-residential buildings, both public and private, into a highly energy efficient and decarbonised building stock by 2050, facilitating the cost-effective transformation of existing buildings into nearly zero-energy buildings.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "by 2050",
-    "indicators": [
-      "nearly zero-energy buildings"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 4,
-    "id": "tgt-0350"
-  },
-  {
+    "id": "tgt-8154f171",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7399,10 +7248,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 5,
-    "id": "tgt-0351"
+    "target_number": 4
   },
   {
+    "id": "tgt-63981197",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7420,10 +7269,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 6,
-    "id": "tgt-0352"
+    "target_number": 5
   },
   {
+    "id": "tgt-abdfdc7c",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7442,10 +7291,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 7,
-    "id": "tgt-0353"
+    "target_number": 6
   },
   {
+    "id": "tgt-53a12547",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7467,10 +7316,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 8,
-    "id": "tgt-0354"
+    "target_number": 7
   },
   {
+    "id": "tgt-f72211b6",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7489,10 +7338,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 9,
-    "id": "tgt-0355"
+    "target_number": 8
   },
   {
+    "id": "tgt-dc5f6a52",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7512,10 +7361,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 10,
-    "id": "tgt-0356"
+    "target_number": 9
   },
   {
+    "id": "tgt-c12e600f",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7533,10 +7382,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 11,
-    "id": "tgt-0357"
+    "target_number": 10
   },
   {
+    "id": "tgt-8e2c58a5",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7551,19 +7400,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "clean energy technologies"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 12,
-    "id": "tgt-0358"
+    "target_number": 11
   },
   {
+    "id": "tgt-6a33a9b7",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensio",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "With a view to achieving the Union's binding target of at least 32 % renewable energy in 2030 as referred to in Article 3 of Directive (EU) 2018/2001, a contribution to that target in terms of the Member State's share of energy from renewable sources in gross final consumption of energy in 2030, with an indicative trajectory for that contribution from 2021 onwards.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7577,16 +7426,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 13,
-    "id": "tgt-0359"
+    "target_number": 12
   },
   {
+    "id": "tgt-4a5ad4ec",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensio",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2022, the indicative trajectory shall reach a reference point of at least 18 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target, and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7598,16 +7447,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 14,
-    "id": "tgt-0360"
+    "target_number": 13
   },
   {
+    "id": "tgt-cbc5be0d",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensio",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2025, the indicative trajectory shall reach a reference point of at least 43 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7619,16 +7468,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 15,
-    "id": "tgt-0361"
+    "target_number": 14
   },
   {
+    "id": "tgt-37e4b001",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensio",
+    "article": "Article 4(a)(2) — National objectives, targets and contributions for the five dimensions of the Energy Union",
     "target_text": "By 2027, the indicative trajectory shall reach a reference point of at least 65 % of the total increase in the share of energy from renewable sources between that Member State's binding 2020 national target and its contribution to the 2030 target.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7640,16 +7489,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 16,
-    "id": "tgt-0362"
+    "target_number": 15
   },
   {
+    "id": "tgt-bc7054d3",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 4 — National objectives, targets and contributions for the five dimensio",
+    "article": "Article 4(a)(2), second subparagraph — National objectives, targets and contributions for the five dimensions of the…",
     "target_text": "The Member States' indicative trajectories, taken together, shall add up to the Union reference points in 2022, 2025 and 2027 and to the Union's binding target of at least 32 % renewable energy in 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7661,16 +7510,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 17,
-    "id": "tgt-0363"
+    "target_number": 16
   },
   {
+    "id": "tgt-4ab436f0",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 5 — Member States' contribution setting process in the area of renewable",
+    "article": "Article 5(2) — Member States' contribution setting process in the area of renewable energy",
     "target_text": "Member States shall collectively ensure that the sum of their contributions amounts to at least 32 % of energy from renewable sources in gross final energy consumption at Union level by 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7682,31 +7531,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 18,
-    "id": "tgt-0364"
+    "target_number": 17
   },
   {
-    "policy_id": "governance-regulation",
-    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
-    "policy_short": "Governance Regulation",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 7a — (a)",
-    "target_text": "Member States shall require suppliers to reduce as gradually as possible life cycle greenhouse gas emissions per unit of energy from fuel and energy supplied by up to 10 % by 31 December 2020, compared with the fuel baseline standard set out in Annex II to Council Directive (EU) 2015/652. That reduction shall consist of:’;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "by 31 December 2020",
-    "indicators": [
-      "greenhouse gas emissions"
-    ],
-    "climate_relevance": "mitigation",
-    "celex_number": "32018R1999",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 19,
-    "id": "tgt-0365"
-  },
-  {
+    "id": "tgt-5bca178f",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7724,10 +7552,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 20,
-    "id": "tgt-0366"
+    "target_number": 18
   },
   {
+    "id": "tgt-7a7661cf",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7747,10 +7575,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 21,
-    "id": "tgt-0367"
+    "target_number": 19
   },
   {
+    "id": "tgt-2ffff099",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7760,18 +7588,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "fulfilling the objective of the Paris Agreement of holding the increase in the global average temperature to well below 2 °C above pre-industrial levels and to pursue efforts to limit the temperature increase to 1,5 °C above pre-industrial levels;",
     "target_label": "objective",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "global average temperature increase"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 22,
-    "id": "tgt-0368"
+    "target_number": 20
   },
   {
+    "id": "tgt-67244f0a",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7793,10 +7621,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 23,
-    "id": "tgt-0369"
+    "target_number": 21
   },
   {
+    "id": "tgt-23ff7417",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
@@ -7815,16 +7643,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 24,
-    "id": "tgt-0370"
+    "target_number": 22
   },
   {
+    "id": "tgt-7dd1788d",
     "policy_id": "governance-regulation",
     "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
     "policy_short": "Governance Regulation",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 29 — Assessment of progress",
+    "article": "Article 29(2) — Assessment of progress",
     "target_text": "In the area of renewable energy, as part of its assessment referred to in paragraph 1, the Commission shall assess the progress made in the share of energy from renewable sources in the Union's gross final consumption on the basis of an indicative Union trajectory that starts from 20 % in 2020, reaches reference points of at least 18 % in 2022, 43 % in 2025 and 65 % in 2027 of the total increase in the share of energy from renewable sources between the Union's 2020 renewable energy target and the Union's 2030 renewable energy target, and reaches the Union's 2030 renewable energy target of at least 32 % in 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -7837,31 +7665,92 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R1999",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
-    "target_number": 25,
-    "id": "tgt-0371"
+    "target_number": 23
   },
   {
+    "id": "tgt-6b6b65ed",
+    "policy_id": "governance-regulation",
+    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
+    "policy_short": "Governance Regulation",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 47(1)(b) — Amendments to Directive 98/70/EC",
+    "target_text": "Member States shall require suppliers to reduce as gradually as possible life cycle greenhouse gas emissions per unit of energy from fuel and energy supplied by up to 10 % by 31 December 2020, compared with the fuel baseline standard set out in Annex II to Council Directive (EU) 2015/652. That reduction shall consist of:’;",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "by 31 December 2020",
+    "indicators": [
+      "greenhouse gas emissions"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018R1999",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "target_number": 24
+  },
+  {
+    "id": "tgt-3def2076",
+    "policy_id": "governance-regulation",
+    "policy_name": "Regulation (EU) 2018/1999 on the Governance of the Energy Union and Climate Action",
+    "policy_short": "Governance Regulation",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 53(1)(a) — Amendments to Directive 2010/31/EU",
+    "target_text": "Each Member State shall establish a long-term renovation strategy to support the renovation of the national stock of residential and non-residential buildings, both public and private, into a highly energy efficient and decarbonised building stock by 2050, facilitating the cost-effective transformation of existing buildings into nearly zero-energy buildings.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "by 2050",
+    "indicators": [
+      "nearly zero-energy buildings"
+    ],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018R1999",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R1999",
+    "target_number": 25
+  },
+  {
+    "id": "tgt-21a925fb",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
     "policy_short": "Horizon Europe",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 3(1) — Programme objectives",
+    "article": "Article 2(28)",
     "target_text": "'classified information' means European Union classified information as defined in Article 3 of Decision (EU, Euratom) 2015/444 as well as classified information of Member States, classified information of third countries with which the Union has a security agreement and classified information of international organisation with which the Union has a security agreement;",
-    "target_label": "objective",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "unspecified",
     "timeline": "",
+    "indicators": [],
+    "climate_relevance": "none",
+    "celex_number": "32021R0695",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
+    "target_number": 1
+  },
+  {
+    "id": "tgt-33333c8e",
+    "policy_id": "horizon-europe",
+    "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
+    "policy_short": "Horizon Europe",
+    "document_type": "regulation",
+    "policy_area": "Cross-cutting",
+    "article": "Article 6(6)",
+    "target_text": "6. The implementation of the specific programme referred to in point (a) of Article 1(2) and the EIT's KICs shall be supported by a transparent and strategic planning of R&I activities as laid down in the specific programme referred to in point (a) of Article 1(2), in particular for the pillar 'Global Challenges and European Industrial Competitiveness' and cover also relevant activities in other pillars and the 'Widening participation and strengthening the ERA' part.",
+    "target_label": "target",
+    "obligation": "mandatory",
+    "target_type": "qualitative",
+    "timeline": "",
     "indicators": [
-      "scientific, technological, economic and societal impact"
+      "measurable and time-bound objectives"
     ],
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 1,
-    "id": "tgt-0372"
+    "target_number": 2
   },
   {
+    "id": "tgt-f92dd8e8",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
     "policy_short": "Horizon Europe",
@@ -7874,83 +7763,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 2,
-    "id": "tgt-0373"
+    "target_number": 3
   },
   {
+    "id": "tgt-f7f2bcbf",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
     "policy_short": "Horizon Europe",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 8(3) — Missions",
-    "target_text": "Defence research and development",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "share of annual budget of Pillar II for missions"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32021R0695",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 3,
-    "id": "tgt-0374"
-  },
-  {
-    "policy_id": "horizon-europe",
-    "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
-    "policy_short": "Horizon Europe",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 8(4)(a) — Missions",
-    "target_text": "Strategic planning and implementation and forms of Union funding",
-    "target_label": "objective",
-    "obligation": "mandatory",
-    "target_type": "unspecified",
-    "timeline": "",
-    "indicators": [
-      "SDGs",
-      "Union added value"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32021R0695",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 4,
-    "id": "tgt-0375"
-  },
-  {
-    "policy_id": "horizon-europe",
-    "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
-    "policy_short": "Horizon Europe",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 8(4)(d) — Missions",
-    "target_text": "6. The implementation of the specific programme referred to in point (a) of Article 1(2) and the EIT's KICs shall be supported by a transparent and strategic planning of R&I activities as laid down in the specific programme referred to in point (a) of Article 1(2), in particular for the pillar 'Global Challenges and European Industrial Competitiveness' and cover also relevant activities in other pillars and the 'Widening participation and strengthening the ERA' part.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "qualitative",
-    "timeline": "",
-    "indicators": [
-      "measurable and time-bound objectives"
-    ],
-    "climate_relevance": "none",
-    "celex_number": "32021R0695",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 5,
-    "id": "tgt-0376"
-  },
-  {
-    "policy_id": "horizon-europe",
-    "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
-    "policy_short": "Horizon Europe",
-    "document_type": "regulation",
-    "policy_area": "Cross-cutting",
-    "article": "Article 12(1) — Budget",
+    "article": "Article 9(1) — Budget",
     "target_text": "1. The Commission shall establish the EIC as a centrally managed one-stop shop for implementing actions under Pillar III 'Innovative Europe' which relate to the EIC. The EIC shall focus mainly on breakthrough and disruptive innovation, targeting especially market-creating innovation, while also supporting all types of innovation, including incremental.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -7962,16 +7787,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 6,
-    "id": "tgt-0377"
+    "target_number": 4
   },
   {
+    "id": "tgt-fc894ad5",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
     "policy_short": "Horizon Europe",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 12(2)(c) — Budget",
+    "article": "Article 10(1) (second subparagraph)",
     "target_text": "Institutionalised European Partnerships shall be implemented only where other parts of the Programme, including other forms of European Partnerships, would not achieve the objectives or would not generate the necessary expected impacts, and where justified by a long-term perspective and a high degree of integration. European Partnerships in accordance with Article 185 or Article 187 TFEU shall implement a central management of all financial contributions, except in duly justified cases. In the case of central management of all financial contributions, project level contributions from one participating state shall be made on the basis of the funding requested in proposals from legal entities established in that participating state, unless otherwise agreed among all participating states.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -7983,16 +7808,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 7,
-    "id": "tgt-0378"
+    "target_number": 5
   },
   {
+    "id": "tgt-824cfbf4",
     "policy_id": "horizon-europe",
     "policy_name": "Regulation (EU) 2021/695 establishing Horizon Europe, the Framework Programme for Research and Innovation",
     "policy_short": "Horizon Europe",
     "document_type": "regulation",
     "policy_area": "Cross-cutting",
-    "article": "Article 12(2)(d) — Budget",
+    "article": "Article 10(2)(c)",
     "target_text": "have a clear life-cycle approach, be limited in time and include conditions for phasing-out the Programme funding.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -8004,16 +7829,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32021R0695",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0695",
-    "target_number": 8,
-    "id": "tgt-0379"
+    "target_number": 6
   },
   {
+    "id": "tgt-7511f2ef",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 11(b) - General principles governing the basic obligations of the operat",
+    "article": "Article 11(b) - General principles governing the basic obligations of the operator",
     "target_text": "the best available techniques are applied;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -8025,10 +7850,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 1,
-    "id": "tgt-0380"
+    "target_number": 1
   },
   {
+    "id": "tgt-02d626a9",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8046,10 +7871,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 2,
-    "id": "tgt-0381"
+    "target_number": 2
   },
   {
+    "id": "tgt-cb8c2376",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8067,16 +7892,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 3,
-    "id": "tgt-0382"
+    "target_number": 3
   },
   {
+    "id": "tgt-6aefa963",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measu",
+    "article": "Article 15(3) - Emission limit values, equivalent parameters and technical measures",
     "target_text": "The competent authority shall set emission limit values that ensure that, under normal operating conditions, emissions do not exceed the emission levels associated with the best available techniques as laid down in the decisions on BAT conclusions referred to in Article 13(5) through either of the following:",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8089,16 +7914,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 4,
-    "id": "tgt-0383"
+    "target_number": 4
   },
   {
+    "id": "tgt-55ac11e0",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 15(4) - Emission limit values, equivalent parameters and technical measu",
+    "article": "Article 15(4) - Emission limit values, equivalent parameters and technical measures",
     "target_text": "The emission limit values set in accordance with the first subparagraph shall, however, not exceed the emission limit values set out in the Annexes to this Directive, where applicable.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8110,16 +7935,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 5,
-    "id": "tgt-0384"
+    "target_number": 5
   },
   {
+    "id": "tgt-dfa631bf",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 21(3) - Reconsideration and updating of permit conditions by the compete",
+    "article": "Article 21(3) - Reconsideration and updating of permit conditions by the competent authority",
     "target_text": "Within 4 years of publication of decisions on BAT conclusions in accordance with Article 13(5) relating to the main activity of an installation, the competent authority shall ensure that:",
     "target_label": "other",
     "obligation": "mandatory",
@@ -8132,10 +7957,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 6,
-    "id": "tgt-0385"
+    "target_number": 6
   },
   {
+    "id": "tgt-0be5f9fc",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8154,10 +7979,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 7,
-    "id": "tgt-0386"
+    "target_number": 7
   },
   {
+    "id": "tgt-ac9f718a",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8176,16 +8001,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 8,
-    "id": "tgt-0387"
+    "target_number": 8
   },
   {
+    "id": "tgt-feede12b",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 33 — Limited life time derogation",
+    "article": "Article 33(3) — Limited life time derogation",
     "target_text": "In case of a combustion plant being, on 6 January 2011, part of a small isolated system and accounting at that date for at least 35 % of the electricity supply within that system, which is unable, due to its technical characteristics, to comply with the emission limit values referred to in Article 30(2), the number of operating hours referred to in paragraph 1(a) of this Article shall be 18 000, starting from 1 January 2020 and ending no later than 31 December 2023, and the date referred to in paragraph 1(b) and paragraph 2 of this Article shall be 1 January 2020.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8195,10 +8020,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 9,
-    "id": "tgt-0388"
+    "target_number": 9
   },
   {
+    "id": "tgt-262de2c4",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8217,16 +8042,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 10,
-    "id": "tgt-0389"
+    "target_number": 10
   },
   {
+    "id": "tgt-91d4b25e",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 46 — Control of emissions",
+    "article": "Article 46(2) — Control of emissions",
     "target_text": "If in a waste co-incineration plant more than 40 % of the resulting heat release comes from hazardous waste, or the plant co-incinerates untreated mixed municipal waste, the emission limit values set out in Part 3 of Annex VI shall apply.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8236,10 +8061,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 11,
-    "id": "tgt-0390"
+    "target_number": 11
   },
   {
+    "id": "tgt-adc51c62",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8258,10 +8083,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 12,
-    "id": "tgt-0391"
+    "target_number": 12
   },
   {
+    "id": "tgt-c25caf38",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8280,10 +8105,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 13,
-    "id": "tgt-0392"
+    "target_number": 13
   },
   {
+    "id": "tgt-7aed6db3",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8301,16 +8126,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 14,
-    "id": "tgt-0393"
+    "target_number": 14
   },
   {
+    "id": "tgt-e3f9c8db",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
     "document_type": "directive",
     "policy_area": "Industry",
-    "article": "Article 55 — Reporting and public information on waste incineration plants and w",
+    "article": "Article 55(2) — Reporting and public information on waste incineration plants and waste co-incineration plants",
     "target_text": "For waste incineration plants or waste co-incineration plants with a nominal capacity of 2 tonnes or more per hour, the report referred to in Article 72 shall include information on the functioning and monitoring of the plant and give account of the running of the incineration or co-incineration process and the level of emissions into air and water in comparison with the emission limit values.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8320,10 +8145,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 15,
-    "id": "tgt-0394"
+    "target_number": 15
   },
   {
+    "id": "tgt-fec7d7ab",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8342,10 +8167,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 16,
-    "id": "tgt-0395"
+    "target_number": 16
   },
   {
+    "id": "tgt-5799ee90",
     "policy_id": "industrial-emissions-directive",
     "policy_name": "Directive 2010/75/EU on industrial emissions (integrated pollution prevention and control)",
     "policy_short": "Industrial Emissions Directive",
@@ -8364,10 +8189,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32010L0075",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32010L0075",
-    "target_number": 17,
-    "id": "tgt-0396"
+    "target_number": 17
   },
   {
+    "id": "tgt-a714b712",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8385,10 +8210,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 1,
-    "id": "tgt-0397"
+    "target_number": 1
   },
   {
+    "id": "tgt-46edce0f",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8406,10 +8231,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 2,
-    "id": "tgt-0398"
+    "target_number": 2
   },
   {
+    "id": "tgt-3fd63c95",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8428,10 +8253,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 3,
-    "id": "tgt-0399"
+    "target_number": 3
   },
   {
+    "id": "tgt-742a1c15",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8450,10 +8275,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 4,
-    "id": "tgt-0400"
+    "target_number": 4
   },
   {
+    "id": "tgt-4d15af1f",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8474,10 +8299,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 5,
-    "id": "tgt-0401"
+    "target_number": 5
   },
   {
+    "id": "tgt-2b161df1",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8496,10 +8321,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 6,
-    "id": "tgt-0402"
+    "target_number": 6
   },
   {
+    "id": "tgt-209f2d96",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8518,16 +8343,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 7,
-    "id": "tgt-0403"
+    "target_number": 7
   },
   {
+    "id": "tgt-b1c22e59",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Commitments and targets",
+    "article": "Article 4(2) — Commitments and targets",
     "target_text": "The Union-wide target for net greenhouse gas removals shall be 310 million tonnes of CO2 equivalent as a sum of the Member State targets set out in Annex IIa for the year 2030, based on the average of its greenhouse gas inventory data for the years 2028, 2029 and 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8540,16 +8365,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 8,
-    "id": "tgt-0404"
+    "target_number": 8
   },
   {
+    "id": "tgt-bedce6d9",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Commitments and targets",
+    "article": "Article 4(5) — Commitments and targets",
     "target_text": "The Commission shall, by 2025, propose, following a comprehensive review, national targets for Member States for net greenhouse gas removals in the LULUCF sector for each Member State for the period after 2030, including the combined land use, LULUCF and agriculture sector.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8561,10 +8386,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 9,
-    "id": "tgt-0405"
+    "target_number": 9
   },
   {
+    "id": "tgt-89ecee41",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8584,10 +8409,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 10,
-    "id": "tgt-0406"
+    "target_number": 10
   },
   {
+    "id": "tgt-c1827a4e",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
@@ -8608,16 +8433,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 11,
-    "id": "tgt-0407"
+    "target_number": 11
   },
   {
+    "id": "tgt-b10ce60e",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 13b — Land flexibility mechanism for the period from 2026 to 2030",
+    "article": "Article 13b(1) — Land flexibility mechanism for the period from 2026 to 2030",
     "target_text": "A land flexibility mechanism, corresponding to a maximum quantity of 178 million tonnes of CO2 equivalent, shall be available in the Union as an additional flexibility to each Member State and shall cover net removals or emissions from the land reporting categories referred to in Article 2 of this Regulation.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8631,16 +8456,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 12,
-    "id": "tgt-0408"
+    "target_number": 12
   },
   {
+    "id": "tgt-bfec02c0",
     "policy_id": "lulucf-regulation",
     "policy_name": "Regulation (EU) 2018/841 on the inclusion of greenhouse gas emissions and removals from LULUCF",
     "policy_short": "LULUCF Regulation",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 13b — Land flexibility mechanism for the period from 2026 to 2030",
+    "article": "Article 13b(3) — Land flexibility mechanism for the period from 2026 to 2030",
     "target_text": "Where the Union does not achieve the target referred to in Article 4(2), the overall land flexibility available to Member States shall not exceed a maximum quantity of 178 million tonnes of CO2 equivalent for the whole period from 2026 to 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8652,10 +8477,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018R0841",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018R0841",
-    "target_number": 13,
-    "id": "tgt-0409"
+    "target_number": 13
   },
   {
+    "id": "tgt-7a4b75ab",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8674,10 +8499,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 1,
-    "id": "tgt-0410"
+    "target_number": 1
   },
   {
+    "id": "tgt-ef0b8565",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8695,10 +8520,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 2,
-    "id": "tgt-0411"
+    "target_number": 2
   },
   {
+    "id": "tgt-d65eab7d",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8717,10 +8542,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 3,
-    "id": "tgt-0412"
+    "target_number": 3
   },
   {
+    "id": "tgt-fefb1200",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8738,10 +8563,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 4,
-    "id": "tgt-0413"
+    "target_number": 4
   },
   {
+    "id": "tgt-99e2443d",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8759,10 +8584,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 5,
-    "id": "tgt-0414"
+    "target_number": 5
   },
   {
+    "id": "tgt-5906dd22",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8780,10 +8605,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 6,
-    "id": "tgt-0415"
+    "target_number": 6
   },
   {
+    "id": "tgt-e243fac9",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8801,10 +8626,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 7,
-    "id": "tgt-0416"
+    "target_number": 7
   },
   {
+    "id": "tgt-3fcb25b0",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8823,10 +8648,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 8,
-    "id": "tgt-0417"
+    "target_number": 8
   },
   {
+    "id": "tgt-7a2f728d",
     "policy_id": "marine-strategy-framework-directive",
     "policy_name": "Directive 2008/56/EC establishing a framework for community action in the field of marine environmental policy",
     "policy_short": "Marine Strategy Framework Directive",
@@ -8844,10 +8669,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0056",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0056",
-    "target_number": 9,
-    "id": "tgt-0418"
+    "target_number": 9
   },
   {
+    "id": "tgt-62409a24",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -8865,10 +8690,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 1,
-    "id": "tgt-0419"
+    "target_number": 1
   },
   {
+    "id": "tgt-29cc822d",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -8883,13 +8708,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "leak detection and repair programme"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 2,
-    "id": "tgt-0420"
+    "target_number": 2
   },
   {
+    "id": "tgt-31e1f505",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -8904,13 +8729,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "type 2 LDAR survey"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 3,
-    "id": "tgt-0421"
+    "target_number": 3
   },
   {
+    "id": "tgt-310c5cc5",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -8921,42 +8746,42 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "no later than 5 days after detection and shall be completed within 30 days after detection",
+    "timeline": "no later than 5 days after detection and shall be completed within 30 days…",
     "indicators": [
       "repair of methane leaks"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 4,
-    "id": "tgt-0422"
+    "target_number": 4
   },
   {
+    "id": "tgt-4b14c75f",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 14 — Leak detection and repair",
+    "article": "Article 14(5), point (b)",
     "target_text": "for at least 25 % of all components at processing locations, type 2 LDAR surveys are carried out every 12 months, with all components being checked at least every 48 months;",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 5,
-    "id": "tgt-0423"
+    "target_number": 5
   },
   {
+    "id": "tgt-aa6f0cc3",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 14 — Leak detection and repair",
+    "article": "Article 14(5)",
     "target_text": "If, following the LDAR surveys carried out in accordance with the first subparagraph of this paragraph, 1 % or more of all the components and subcomponents in each site are leaking or the aggregated methane emissions associated with those leaks represent more than 0,08 % of the total volume of gas or 0,015 % of the total mass of crude oil processed or extracted, the operator concerned shall be subject to the obligations under paragraph 2 in that site.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -8968,10 +8793,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 6,
-    "id": "tgt-0424"
+    "target_number": 6
   },
   {
+    "id": "tgt-99cd6561",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -8987,13 +8812,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "methane venting",
       "routine flaring"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 7,
-    "id": "tgt-0425"
+    "target_number": 7
   },
   {
+    "id": "tgt-3e8444a4",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9004,17 +8829,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "not later than 5 February 2026 for existing sites and not later than 12 months from the date of start of operations for new sites",
+    "timeline": "not later than 5 February 2026 for existing sites and not later than 12 months…",
     "indicators": [
       "venting and flaring restrictions"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 8,
-    "id": "tgt-0426"
+    "target_number": 8
   },
   {
+    "id": "tgt-fa11e733",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9032,16 +8857,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 9,
-    "id": "tgt-0427"
+    "target_number": 9
   },
   {
+    "id": "tgt-28d42680",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 18(1) — Inactive wells, temporarily plugged wells and permanently plugge",
+    "article": "Article 18(1) — Inactive wells, temporarily plugged wells and permanently plugged and abandoned wells",
     "target_text": "By 5 August 2025, Member States shall establish and make publicly available an inventory of all inactive wells, temporarily plugged wells and permanently plugged and abandoned wells on their territory or under their jurisdiction that are recorded or where information or evidence on their location is available or where their location can be identified with all reasonable efforts.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9053,16 +8878,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 10,
-    "id": "tgt-0428"
+    "target_number": 10
   },
   {
+    "id": "tgt-278b6e3c",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 18 — Inactive wells, temporarily plugged wells and permanently plugged a",
+    "article": "Article 18(2), point (a)",
     "target_text": "by 5 August 2025, at least 20 % of those wells are included in the inventory with priority being given to inactive wells and temporary plugged wells;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9072,16 +8897,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 11,
-    "id": "tgt-0429"
+    "target_number": 11
   },
   {
+    "id": "tgt-6a69b7e5",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 18 — Inactive wells, temporarily plugged wells and permanently plugged a",
+    "article": "Article 18(2), point (b)",
     "target_text": "by 5 August 2026, at least 40 % of those wells are included in the inventory;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9091,16 +8916,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 12,
-    "id": "tgt-0430"
+    "target_number": 12
   },
   {
+    "id": "tgt-36f8aa1b",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 18 — Inactive wells, temporarily plugged wells and permanently plugged a",
+    "article": "Article 18(2), point (c)",
     "target_text": "every 12 months after 5 August 2026, at least an additional 15 % of those wells are included in the inventory;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9110,16 +8935,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 13,
-    "id": "tgt-0431"
+    "target_number": 13
   },
   {
+    "id": "tgt-f064e250",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 20 — Monitoring and reporting",
+    "article": "Article 20(1)",
     "target_text": "Mine operators shall report to the competent authorities methane emissions per ventilation shaft per year in kilotonne of methane, using equipment and methodologies resulting in a measurement accuracy with a tolerance of 0,5 kilotonne of methane per year or of 5 % of the reported amount, whichever value is lower.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9131,16 +8956,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 14,
-    "id": "tgt-0432"
+    "target_number": 14
   },
   {
+    "id": "tgt-bd5a4311",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 20 — Monitoring and reporting",
+    "article": "Article 20(4)",
     "target_text": "The equipment used for continuous source-level direct measurements and quantification referred to in paragraphs 1 and 2 shall operate for more than 90 % of the period for which it is used to monitor methane emissions, excluding downtime taken for re-calibration and repairs.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9152,10 +8977,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 15,
-    "id": "tgt-0433"
+    "target_number": 15
   },
   {
+    "id": "tgt-eea7482d",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9174,10 +8999,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 16,
-    "id": "tgt-0434"
+    "target_number": 16
   },
   {
+    "id": "tgt-ddfc4a1f",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9193,10 +9018,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 17,
-    "id": "tgt-0435"
+    "target_number": 17
   },
   {
+    "id": "tgt-7416abd8",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9212,35 +9037,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 18,
-    "id": "tgt-0436"
+    "target_number": 18
   },
   {
+    "id": "tgt-0e4ae91a",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 22 — Mitigation measures",
-    "target_text": "Venting of methane through ventilation shafts in coal mines emitting more than 5 tonnes of methane per kilotonne of coal mined, other than coking coal mines, shall be prohibited from 1 January 2027, except in the case of an emergency.",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "mitigation",
-    "celex_number": "32024R1787",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 19,
-    "id": "tgt-0437"
-  },
-  {
-    "policy_id": "methane-regulation",
-    "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
-    "policy_short": "Methane Emissions Regulation",
-    "document_type": "regulation",
-    "policy_area": "Energy",
-    "article": "Article 23 — Reporting of venting events and flaring events",
+    "article": "Article 23(1)",
     "target_text": "From 1 January 2025, drainage station operators shall notify the competent authorities of all venting events and all flaring events with a destruction and removal efficiency by design level below 99 %:",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9250,16 +9056,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 20,
-    "id": "tgt-0438"
+    "target_number": 19
   },
   {
+    "id": "tgt-e9bbddd2",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 25 — Monitoring and reporting",
+    "article": "Article 25(2)",
     "target_text": "Measurement equipment shall be installed on all elements listed in Part 1, point 1.5, of Annex VIII which were found to emit above 0,5 tonnes of methane per year based on the inventory in paragraph 1 of this Article.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9269,16 +9075,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 21,
-    "id": "tgt-0439"
+    "target_number": 20
   },
   {
+    "id": "tgt-853f9f97",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 25 — Monitoring and reporting",
+    "article": "Article 25(2)",
     "target_text": "The measurement equipment shall operate for more than 90 % of the period for which it is used to monitor methane emissions, excluding downtime taken for re-calibration and repair.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9290,10 +9096,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 22,
-    "id": "tgt-0440"
+    "target_number": 21
   },
   {
+    "id": "tgt-dca25a08",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
@@ -9312,16 +9118,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 23,
-    "id": "tgt-0441"
+    "target_number": 22
   },
   {
+    "id": "tgt-63c7494f",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 29(2) — Methane intensity of the production of crude oil, natural gas an",
+    "article": "Article 29(2) — Methane intensity of the production of crude oil, natural gas and coal",
     "target_text": "2. By 5 August 2030 and every year thereafter, Union producers and importers placing crude oil, natural gas and coal on the Union market under supply contracts concluded or renewed after 5 August 2030 shall demonstrate to the competent authorities of the Member State in which they are established that the methane intensity of the production of crude oil, natural gas and coal placed by them on the Union market, calculated in accordance with the methodology set out pursuant to paragraph 4, is below the maximum methane intensity values established in accordance with paragraph 6 to promote the global methane emissions reductions for those products.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9335,18 +9141,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 24,
-    "id": "tgt-0442"
+    "target_number": 23
   },
   {
+    "id": "tgt-2cc1ee69",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 33 — Penalties",
+    "article": "Article 33(2)",
     "target_text": "In the case of legal persons, the amount of the administrative fines referred to in point (e) shall not exceed 20 % of the annual turnover in the preceding business year.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -9354,18 +9160,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 25,
-    "id": "tgt-0443"
+    "target_number": 24
   },
   {
+    "id": "tgt-81384094",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 33 — Penalties",
+    "article": "Article 33(2)",
     "target_text": "In the case of natural persons, the amount of those fines shall not exceed 20 % of the annual income in the preceding calendar year.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -9373,18 +9179,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 26,
-    "id": "tgt-0444"
+    "target_number": 25
   },
   {
+    "id": "tgt-b7f92812",
     "policy_id": "methane-regulation",
     "policy_name": "Regulation (EU) 2024/1787 on the reduction of methane emissions in the energy sector",
     "policy_short": "Methane Emissions Regulation",
     "document_type": "regulation",
     "policy_area": "Energy",
-    "article": "Article 36 — Commission monitoring, review and reports",
+    "article": "Article 36(2), point (c)",
     "target_text": "whether additional or alternative measures are necessary to foster and accelerate the reduction of methane emissions in the value chain of crude oil, natural gas and coal placed on the Union market to support the Union’s target of net-zero greenhouse gas emissions by 2050 and its commitments under the Paris Agreement.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "unspecified",
     "timeline": "by 2050",
@@ -9395,10 +9201,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1787",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1787",
-    "target_number": 27,
-    "id": "tgt-0445"
+    "target_number": 26
   },
   {
+    "id": "tgt-516064e1",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9418,10 +9224,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 1,
-    "id": "tgt-0446"
+    "target_number": 1
   },
   {
+    "id": "tgt-20ee6336",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9439,10 +9245,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 2,
-    "id": "tgt-0447"
+    "target_number": 2
   },
   {
+    "id": "tgt-38001b7a",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9460,10 +9266,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 3,
-    "id": "tgt-0448"
+    "target_number": 3
   },
   {
+    "id": "tgt-089de6db",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9482,10 +9288,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 4,
-    "id": "tgt-0449"
+    "target_number": 4
   },
   {
+    "id": "tgt-9ca55191",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9503,10 +9309,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 5,
-    "id": "tgt-0450"
+    "target_number": 5
   },
   {
+    "id": "tgt-0782aa5f",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9525,10 +9331,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 6,
-    "id": "tgt-0451"
+    "target_number": 6
   },
   {
+    "id": "tgt-cf6efe96",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9537,83 +9343,83 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 4(11) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "Without prejudice to Directive 92/43/EEC, Member States shall put in place measures which shall aim to ensure that areas in which good condition has been reached, and in which the sufficient quality of the habitats of the species has been reached, do not significantly deteriorate.",
     "target_label": "other",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "qualitative",
     "timeline": "",
     "indicators": [
       "condition of habitat types",
       "non-deterioration of restored areas"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 7,
-    "id": "tgt-0452"
+    "target_number": 7
   },
   {
+    "id": "tgt-c3babf4c",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(2), point (a) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "by 2050 on an area representing at least 80 % of the area that is not in good condition for each of those habitat types;",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "by 2050",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 8,
-    "id": "tgt-0453"
+    "target_number": 8
   },
   {
+    "id": "tgt-ade78a12",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(2), point (b) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "by 2030 on at least one third of the percentage referred to in point (a); and",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 9,
-    "id": "tgt-0454"
+    "target_number": 9
   },
   {
+    "id": "tgt-a1c7fc7d",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(2), point (c) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "by 2040 on at least two thirds of the percentage referred to in point (a).",
     "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "by 2040",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 10,
-    "id": "tgt-0455"
+    "target_number": 10
   },
   {
+    "id": "tgt-b61da0f3",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "By way of derogation from paragraph 4 of this Article, if a Member State considers that it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area for a specific habitat type on 100 % of the surface, the Member State concerned may set a lower percentage at a level between 90 % and 100 % in its national restoration plan as referred to in Article 15 and provide adequate justification.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -9626,16 +9432,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 11,
-    "id": "tgt-0456"
+    "target_number": 11
   },
   {
+    "id": "tgt-a362f90f",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "In such a case, the Member State shall gradually put in place restoration measures that are necessary to achieve that lower percentage by 2050.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9647,16 +9453,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 12,
-    "id": "tgt-0457"
+    "target_number": 12
   },
   {
+    "id": "tgt-65a683ce",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 4 — Restoration of terrestrial, coastal and freshwater ecosystems",
+    "article": "Article 4(5) — Restoration of terrestrial, coastal and freshwater ecosystems",
     "target_text": "By 2030, those restoration measures shall cover at least 30 % of the additional surface needed to achieve such lower percentage by 2050, and by 2040, they shall cover at least 60 % of the additional surface needed to achieve such lower percentage by 2050.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -9668,10 +9474,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 13,
-    "id": "tgt-0458"
+    "target_number": 13
   },
   {
+    "id": "tgt-7960323b",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9689,10 +9495,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 14,
-    "id": "tgt-0459"
+    "target_number": 14
   },
   {
+    "id": "tgt-c2af8f0b",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9710,16 +9516,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 15,
-    "id": "tgt-0460"
+    "target_number": 15
   },
   {
+    "id": "tgt-87aeeea9",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Restoration of marine ecosystems",
+    "article": "Article 5(1), point (c) — Restoration of marine ecosystems",
     "target_text": "by 2040, on at least two thirds of the percentage referred to in point (d) of this paragraph of the area of group 7 of the habitat types listed in Annex II that is not in good condition, as quantified in the national restoration plan referred to in Article 15; and",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9729,16 +9535,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 16,
-    "id": "tgt-0461"
+    "target_number": 16
   },
   {
+    "id": "tgt-e3289ec4",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Restoration of marine ecosystems",
+    "article": "Article 5(3) — Restoration of marine ecosystems",
     "target_text": "By way of derogation from paragraph 2 of this Article, if a Member State considers that it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area for a specific habitat type on 100 % of the surface, the Member State concerned may set a lower percentage at a level between 90 % and 100 % in its national restoration plan as referred to in Article 15 and provide adequate justification.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -9751,16 +9557,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 17,
-    "id": "tgt-0462"
+    "target_number": 17
   },
   {
+    "id": "tgt-2a19dd5e",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Restoration of marine ecosystems",
+    "article": "Article 5(7), point (a) — Restoration of marine ecosystems",
     "target_text": "by 2030, for at least 50 % of the area distributed over all habitat types in groups 1 to 6 listed in Annex II;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9770,16 +9576,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 18,
-    "id": "tgt-0463"
+    "target_number": 18
   },
   {
+    "id": "tgt-edfc3f37",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Restoration of marine ecosystems",
+    "article": "Article 5(7), point (c) — Restoration of marine ecosystems",
     "target_text": "by 2040, for at least 50 % of the area distributed over all habitat types in group 7 listed in Annex II;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9789,16 +9595,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 19,
-    "id": "tgt-0464"
+    "target_number": 19
   },
   {
+    "id": "tgt-482617d6",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 5 — Restoration of marine ecosystems",
+    "article": "Article 5(14), point (a) — Restoration of marine ecosystems",
     "target_text": "an increase of the area in good condition for habitat types of groups 1 to 6 of the habitat types listed in Annex II until at least 90 % is in good condition and until the favourable reference area for each habitat type in each biogeographic region of the Member State concerned is reached;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -9810,10 +9616,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 20,
-    "id": "tgt-0465"
+    "target_number": 20
   },
   {
+    "id": "tgt-7ddeb721",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9832,16 +9638,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 21,
-    "id": "tgt-0466"
+    "target_number": 21
   },
   {
+    "id": "tgt-277a650a",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 8 — Restoration of urban ecosystems",
+    "article": "Article 8(1) — Restoration of urban ecosystems",
     "target_text": "For the purposes of this paragraph, Member States may exclude from those total national areas the urban ecosystem areas in which the share of urban green space in the urban centres and urban clusters exceeds 45 % and the share of urban tree canopy cover exceeds 10 %.",
     "target_label": "other",
     "obligation": "voluntary",
@@ -9851,10 +9657,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 22,
-    "id": "tgt-0467"
+    "target_number": 22
   },
   {
+    "id": "tgt-1803b80e",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9873,10 +9679,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 23,
-    "id": "tgt-0468"
+    "target_number": 23
   },
   {
+    "id": "tgt-d5164117",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9886,7 +9692,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Member States shall, by putting in place in a timely manner appropriate and effective measures, improve pollinator diversity and reverse the decline of pollinator populations at the latest by 2030 and thereafter achieve an increasing trend of pollinator populations, measured at least every six years from 2030, until satisfactory levels are achieved, as set in accordance with Article 14(5).",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "quantitative",
+    "target_type": "qualitative",
     "timeline": "by 2030",
     "indicators": [
       "pollinator diversity",
@@ -9895,10 +9701,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 24,
-    "id": "tgt-0469"
+    "target_number": 24
   },
   {
+    "id": "tgt-72f73929",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9914,13 +9720,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of drained peatlands under restoration",
       "share of peatlands rewetted"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 25,
-    "id": "tgt-0470"
+    "target_number": 25
   },
   {
+    "id": "tgt-d3f7c8b2",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9936,13 +9742,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of drained peatlands under restoration",
       "share of peatlands rewetted"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 26,
-    "id": "tgt-0471"
+    "target_number": 26
   },
   {
+    "id": "tgt-00ab563b",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9958,13 +9764,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of drained peatlands under restoration",
       "share of peatlands rewetted"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 27,
-    "id": "tgt-0472"
+    "target_number": 27
   },
   {
+    "id": "tgt-836b5948",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9974,7 +9780,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "for Member States listed in Annex V with historically more depleted populations of farmland birds: 110 by 2030, 120 by 2040 and 130 by 2050;",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
       "common farmland bird index"
@@ -9982,10 +9788,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 28,
-    "id": "tgt-0473"
+    "target_number": 28
   },
   {
+    "id": "tgt-be3670ea",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -9995,7 +9801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "for Member States listed in Annex V with historically less depleted populations of farmland birds: 105 by 2030, 110 by 2040 and 115 by 2050.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
       "common farmland bird index"
@@ -10003,10 +9809,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 29,
-    "id": "tgt-0474"
+    "target_number": 29
   },
   {
+    "id": "tgt-9730be62",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
@@ -10015,7 +9821,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 13(1) — Planting three billion additional trees",
     "target_text": "When identifying and implementing the restoration measures to fulfil the objectives and obligations set out in Articles 4 and 8 to 12, Member States shall aim to contribute to the commitment of planting at least three billion additional trees by 2030 at Union level.",
     "target_label": "commitment",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
@@ -10025,18 +9831,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 30,
-    "id": "tgt-0475"
+    "target_number": 30
   },
   {
+    "id": "tgt-e05e9ae1",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 15 — Content of the national restoration plan",
+    "article": "Article 15(3), point (b) — Content of the national restoration plan",
     "target_text": "if a Member State applies the derogation laid down in Article 4(5) or Article 5(3), a justification of the reasons why it is not possible to put in place restoration measures by 2050 that are necessary to reach the favourable reference area of a specific habitat type and a justification of the lower percentage set pursuant to those Articles, as identified by that Member State;",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "qualitative",
     "timeline": "by 2050",
@@ -10047,18 +9853,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 31,
-    "id": "tgt-0476"
+    "target_number": 31
   },
   {
+    "id": "tgt-c2545199",
     "policy_id": "nature-restoration-law",
     "policy_name": "Regulation (EU) 2024/1991 on nature restoration",
     "policy_short": "Nature Restoration Law",
     "document_type": "regulation",
     "policy_area": "Climate",
-    "article": "Article 17 — Assessment of the national restoration plan",
+    "article": "Article 17(2), point (c) — Assessment of the national restoration plan",
     "target_text": "its contribution to the Union’s overarching objectives and targets referred to in Article 1, the specific objectives referred to in Article 9(1) to restore at least 25 000 km of rivers into free-flowing rivers in the Union by 2030 and the commitment under Article 13 of planting at least three billion additional trees in the Union by 2030.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "by 2030",
@@ -10066,12 +9872,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32024R1991",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1991",
-    "target_number": 32,
-    "id": "tgt-0477"
+    "target_number": 32
   },
   {
+    "id": "tgt-950818cf",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10085,15 +9891,15 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "manufacturing capacity of net-zero technologies",
       "climate neutrality"
     ],
-    "climate_relevance": "both",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 1,
-    "id": "tgt-0478"
+    "target_number": 1
   },
   {
+    "id": "tgt-47a4b74d",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10110,12 +9916,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 2,
-    "id": "tgt-0479"
+    "target_number": 2
   },
   {
+    "id": "tgt-8fa67f0f",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10132,12 +9938,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 3,
-    "id": "tgt-0480"
+    "target_number": 3
   },
   {
+    "id": "tgt-a263c360",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10151,12 +9957,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 4,
-    "id": "tgt-0481"
+    "target_number": 4
   },
   {
+    "id": "tgt-4b958583",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10173,12 +9979,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 5,
-    "id": "tgt-0482"
+    "target_number": 5
   },
   {
+    "id": "tgt-671e9849",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10195,12 +10001,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 6,
-    "id": "tgt-0483"
+    "target_number": 6
   },
   {
+    "id": "tgt-486dc5c0",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10216,16 +10022,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 7,
-    "id": "tgt-0484"
+    "target_number": 7
   },
   {
+    "id": "tgt-55d2bc30",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 16(1)(a) - Duration of the permit-granting process for net-zero strategi",
+    "article": "Article 16(1)(a) - Duration of the permit-granting process for net-zero strategic projects",
     "target_text": "9 months for the construction or expansion of net-zero strategic projects with a yearly manufacturing capacity of less than 1 GW;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10238,16 +10044,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 8,
-    "id": "tgt-0485"
+    "target_number": 8
   },
   {
+    "id": "tgt-b5fe6c04",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 16(1)(b) - Duration of the permit-granting process for net-zero strategi",
+    "article": "Article 16(1)(b) - Duration of the permit-granting process for net-zero strategic projects",
     "target_text": "12 months for the construction or expansion of net-zero strategic projects with a yearly manufacturing capacity of 1 GW or more;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10260,38 +10066,38 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 9,
-    "id": "tgt-0486"
+    "target_number": 9
   },
   {
+    "id": "tgt-aa2d18be",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 16(1)(c) - Duration of the permit-granting process for net-zero strategi",
+    "article": "Article 16(1)(c) - Duration of the permit-granting process for net-zero strategic projects",
     "target_text": "18 months for all necessary permits to operate a storage site in accordance with Directive 2009/31/EC.",
     "target_label": "target",
     "obligation": "mandatory",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "",
     "indicators": [
       "permit-granting duration",
       "CO2 storage site"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 10,
-    "id": "tgt-0487"
+    "target_number": 10
   },
   {
+    "id": "tgt-e226c2b6",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 16(2) - Duration of the permit-granting process for net-zero strategic p",
+    "article": "Article 16(2) - Duration of the permit-granting process for net-zero strategic projects",
     "target_text": "For net-zero strategic projects for which a yearly manufacturing capacity is not measured in GW, the permit-granting process shall not exceed 12 months.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10303,12 +10109,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 11,
-    "id": "tgt-0488"
+    "target_number": 11
   },
   {
+    "id": "tgt-57e59816",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10324,12 +10130,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 12,
-    "id": "tgt-0489"
+    "target_number": 12
   },
   {
+    "id": "tgt-161faf27",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10342,19 +10148,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "annual CO2 injection capacity"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 13,
-    "id": "tgt-0490"
+    "target_number": 13
   },
   {
+    "id": "tgt-b548e63c",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 20 — Union level objective of CO2 injection capacity",
+    "article": "Article 20(5) — Union level objective of CO2 injection capacity",
     "target_text": "By 31 December 2028, the Commission may submit, on the basis of the assessment referred to in paragraph 3, a legislative proposal to introduce a new Union-level objective for CO2 injection capacity by 2040 or earlier if needed.",
     "target_label": "objective",
     "obligation": "voluntary",
@@ -10364,12 +10170,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 14,
-    "id": "tgt-0491"
+    "target_number": 14
   },
   {
+    "id": "tgt-35c5943b",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10385,12 +10191,12 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 15,
-    "id": "tgt-0492"
+    "target_number": 15
   },
   {
+    "id": "tgt-bce79ef9",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
@@ -10406,16 +10212,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 16,
-    "id": "tgt-0493"
+    "target_number": 16
   },
   {
+    "id": "tgt-27f98575",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 23 — Contribution of authorised oil and gas producers",
+    "article": "Article 23(1) — Contribution of authorised oil and gas producers",
     "target_text": "Those individual contributions shall be calculated pro-rata on the basis of each entity’s share in the Union’s crude oil and natural gas production from 1 January 2020 to 31 December 2023 and shall consist of CO2 injection capacity in a storage site permitted in accordance with Directive 2009/31/EC and available to the market by 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10425,16 +10231,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 17,
-    "id": "tgt-0494"
+    "target_number": 17
   },
   {
+    "id": "tgt-0aa0f59c",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 23 — Contribution of authorised oil and gas producers",
+    "article": "Article 23(3) — Contribution of authorised oil and gas producers",
     "target_text": "Following the receipt of the reports submitted pursuant to Article 21(2), the Commission, after consulting Member States and interested parties, shall specify the contributions to the Union CO2 injection capacity objective by 2030 from entities referred to in paragraph 1 of this Article.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -10444,16 +10250,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 18,
-    "id": "tgt-0495"
+    "target_number": 18
   },
   {
+    "id": "tgt-070dc8ee",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 23 — Contribution of authorised oil and gas producers",
+    "article": "Article 23(11) — Contribution of authorised oil and gas producers",
     "target_text": "By 31 December 2028, the Commission shall, on the basis of the reports referred to in Article 42(1), point (c), and Article 42(8), assess the relationship between the demand for injection capacity from CO2 capture projects and the main infrastructure needed for the transport of CO2 in progress or planned to be operational by 2030 and the sum of the individual contributions of the entities referred to in paragraph 1 of this Article in relation to the production activities on the territory of a given Member State.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10463,16 +10269,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 19,
-    "id": "tgt-0496"
+    "target_number": 19
   },
   {
+    "id": "tgt-2f817f77",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 25 — Sustainability and resilience contribution in public procurement pr",
+    "article": "Article 25(7), second subparagraph, point (a)",
     "target_text": "an obligation for the duration of the contract not to supply more than 50 % of the value of the specific net-zero technology referred to in this paragraph from each individual third country as determined by the Commission;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -10482,16 +10288,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 20,
-    "id": "tgt-0497"
+    "target_number": 20
   },
   {
+    "id": "tgt-37c82f22",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 25 — Sustainability and resilience contribution in public procurement pr",
+    "article": "Article 25(7), second subparagraph, point (b)",
     "target_text": "an obligation for the duration of the contract that no more than 50 % of the value of the main specific components of the specific net-zero technology referred to in this paragraph is supplied or provided directly by the successful tenderer or by a subcontractor from each individual third country as determined by the Commission;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -10501,16 +10307,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 21,
-    "id": "tgt-0498"
+    "target_number": 21
   },
   {
+    "id": "tgt-732078dd",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 25 — Sustainability and resilience contribution in public procurement pr",
+    "article": "Article 25(7), second subparagraph, point (d)",
     "target_text": "an obligation to pay a proportionate charge, in the event of non-observance of the conditions referred in point (a) or (b), of at least 10 % of the value of the specific net-zero technologies of the contract referred to in this paragraph.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -10520,54 +10326,54 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 22,
-    "id": "tgt-0499"
+    "target_number": 22
   },
   {
+    "id": "tgt-92a9ad15",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 26 — Auctions to deploy renewable energy sources",
+    "article": "Article 26(2)",
     "target_text": "Auctions shall contribute to resilience, taking into account the proportion of the net-zero technology or its main specific components that originates from a third country accounting for more than 50 % of the supply of that specific net-zero technology or its main specific components within the Union.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "both",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 23,
-    "id": "tgt-0500"
+    "target_number": 23
   },
   {
+    "id": "tgt-f71c48df",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 26 — Auctions to deploy renewable energy sources",
+    "article": "Article 26(4)",
     "target_text": "Member States shall give to each of the criteria to assess the auction’s sustainability and resilience contribution, when applied as award criteria, a minimum weight of 5 % and a combined weight of between 15 % and 30 % of the award criteria.",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "adaptation",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 24,
-    "id": "tgt-0501"
+    "target_number": 24
   },
   {
+    "id": "tgt-d155c2cd",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 28 — Other forms of public intervention",
+    "article": "Article 28(2)",
     "target_text": "The additional financial compensation granted by authorities in accordance with paragraph 1 of this Article, due to the application of the criteria laid down in paragraph 4, first subparagraph, introductory part and points (b) and (c), of this Article, shall not exceed 5 % of the cost of the net-zero technology final product for the consumer, with the exception of schemes targeting citizens living in energy poverty, as defined in Article 2, point (1), of Regulation (EU) 2023/955 of the European Parliament and of the Council (57), for which the limit shall be 15 %.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10577,35 +10383,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 25,
-    "id": "tgt-0502"
+    "target_number": 25
   },
   {
+    "id": "tgt-f2429fd0",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 28 — Other forms of public intervention",
+    "article": "Article 28(4)",
     "target_text": "The sustainability and resilience contribution of other forms of public intervention shall be based on their contribution to resilience, taking into account the proportion of the net-zero technology or its main specific components originating from a third country that accounts for more than 50 % of the supply of that specific net-zero technology within the Union, and at least one of the following:",
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "both",
+    "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 26,
-    "id": "tgt-0503"
+    "target_number": 26
   },
   {
+    "id": "tgt-b7712f6b",
     "policy_id": "net-zero-industry-act",
-    "policy_name": "Regulation (EU) 2024/1735 establishing a framework for ensuring a secure and sustainable supply of net-zero technologies",
+    "policy_name": "Regulation (EU) 2024/1735 establishing a framework of measures for strengthening Europe's net-zero technology manufacturing ecosystem (Net-Zero Industry Act)",
     "policy_short": "Net-Zero Industry Act",
     "document_type": "regulation",
     "policy_area": "Industry",
-    "article": "Article 46 — Evaluation",
+    "article": "Article 46(2)(b)",
     "target_text": "whether this Regulation is fit to deliver beyond 2030 and towards the longer term 2050 climate neutrality target referred to in Article 1, taking into account, among other aspects, the possibility to include in this Regulation other technologies that can play a significant role in achieving climate neutrality by 2050;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -10615,10 +10421,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32024R1735",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1735",
-    "target_number": 27,
-    "id": "tgt-0504"
+    "target_number": 27
   },
   {
+    "id": "tgt-f2d77c02",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10636,10 +10442,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 1,
-    "id": "tgt-0505"
+    "target_number": 1
   },
   {
+    "id": "tgt-17cdf20e",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10657,10 +10463,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 2,
-    "id": "tgt-0506"
+    "target_number": 2
   },
   {
+    "id": "tgt-685a7a80",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10678,10 +10484,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 3,
-    "id": "tgt-0507"
+    "target_number": 3
   },
   {
+    "id": "tgt-bb0da776",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10699,10 +10505,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 4,
-    "id": "tgt-0508"
+    "target_number": 4
   },
   {
+    "id": "tgt-012c6f71",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10721,10 +10527,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 5,
-    "id": "tgt-0509"
+    "target_number": 5
   },
   {
+    "id": "tgt-bedf9484",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10742,10 +10548,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 6,
-    "id": "tgt-0510"
+    "target_number": 6
   },
   {
+    "id": "tgt-bb269d9e",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10763,10 +10569,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 7,
-    "id": "tgt-0511"
+    "target_number": 7
   },
   {
+    "id": "tgt-c56564ca",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10784,10 +10590,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 8,
-    "id": "tgt-0512"
+    "target_number": 8
   },
   {
+    "id": "tgt-c71f1ef4",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10805,10 +10611,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 9,
-    "id": "tgt-0513"
+    "target_number": 9
   },
   {
+    "id": "tgt-0040efea",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10827,10 +10633,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 10,
-    "id": "tgt-0514"
+    "target_number": 10
   },
   {
+    "id": "tgt-5e6891f6",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10848,10 +10654,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 11,
-    "id": "tgt-0515"
+    "target_number": 11
   },
   {
+    "id": "tgt-e77d6701",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10869,10 +10675,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 12,
-    "id": "tgt-0516"
+    "target_number": 12
   },
   {
+    "id": "tgt-e9dcb074",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10890,10 +10696,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 13,
-    "id": "tgt-0517"
+    "target_number": 13
   },
   {
+    "id": "tgt-782a0dc7",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10911,10 +10717,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 14,
-    "id": "tgt-0518"
+    "target_number": 14
   },
   {
+    "id": "tgt-c6d633ca",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10932,10 +10738,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 15,
-    "id": "tgt-0519"
+    "target_number": 15
   },
   {
+    "id": "tgt-e03a5cc0",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10953,10 +10759,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 16,
-    "id": "tgt-0520"
+    "target_number": 16
   },
   {
+    "id": "tgt-f72d6a54",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10974,10 +10780,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 17,
-    "id": "tgt-0521"
+    "target_number": 17
   },
   {
+    "id": "tgt-c7bf5165",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -10995,10 +10801,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 18,
-    "id": "tgt-0522"
+    "target_number": 18
   },
   {
+    "id": "tgt-5cf01ede",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11007,7 +10813,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 29(1)",
     "target_text": "From 1 January 2040, those economic operators shall endeavour to use at least 70 % of the packaging referred to in the first subparagraph in a reusable format within a re-use system.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "From 1 January 2040",
     "indicators": [
@@ -11016,10 +10822,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 19,
-    "id": "tgt-0523"
+    "target_number": 19
   },
   {
+    "id": "tgt-b2266e38",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11037,10 +10843,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 20,
-    "id": "tgt-0524"
+    "target_number": 20
   },
   {
+    "id": "tgt-5b792546",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11058,10 +10864,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 21,
-    "id": "tgt-0525"
+    "target_number": 21
   },
   {
+    "id": "tgt-38fc3b3d",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11079,10 +10885,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 22,
-    "id": "tgt-0526"
+    "target_number": 22
   },
   {
+    "id": "tgt-992819ce",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11091,7 +10897,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 29(5)",
     "target_text": "From 1 January 2040, economic operators shall endeavour to use at least 25 % of the packaging referred to in the first subparagraph in a reusable format within a re-use system.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "From 1 January 2040",
     "indicators": [
@@ -11100,10 +10906,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 23,
-    "id": "tgt-0527"
+    "target_number": 23
   },
   {
+    "id": "tgt-a35097ed",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11121,10 +10927,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 24,
-    "id": "tgt-0528"
+    "target_number": 24
   },
   {
+    "id": "tgt-8d252139",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11133,7 +10939,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 29(6)",
     "target_text": "From 1 January 2040, economic operators shall endeavour to make at least 40 % of the products referred to in the first subparagraph available in reusable packaging within a re-use system.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "From 1 January 2040",
     "indicators": [
@@ -11142,29 +10948,29 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 25,
-    "id": "tgt-0529"
+    "target_number": 25
   },
   {
+    "id": "tgt-dd724677",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 29 — Re-use targets",
+    "article": "Article 29(14)(a) — Re-use targets",
     "target_text": "the exempting Member State reaches 5 percentage points above the targets for recycling of packaging waste per material to be achieved by 2025 and is expected to reach 5 percentage points above the 2030 target according to the report published by the Commission 3 years before that date;",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "by 2025",
     "indicators": [],
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 26,
-    "id": "tgt-0530"
+    "target_number": 26
   },
   {
+    "id": "tgt-d8ca31e9",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11182,10 +10988,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 27,
-    "id": "tgt-0531"
+    "target_number": 27
   },
   {
+    "id": "tgt-acc4ce38",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11194,7 +11000,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 33(5)",
     "target_text": "5. From 2030, final distributors shall endeavour to offer 10 % of products for sale in a reusable packaging format.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "From 2030",
     "indicators": [
@@ -11203,10 +11009,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 28,
-    "id": "tgt-0532"
+    "target_number": 28
   },
   {
+    "id": "tgt-d43aa467",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11224,10 +11030,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 29,
-    "id": "tgt-0533"
+    "target_number": 29
   },
   {
+    "id": "tgt-291ed126",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11245,10 +11051,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 30,
-    "id": "tgt-0534"
+    "target_number": 30
   },
   {
+    "id": "tgt-105b0f08",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11266,10 +11072,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 31,
-    "id": "tgt-0535"
+    "target_number": 31
   },
   {
+    "id": "tgt-2d420182",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11288,10 +11094,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 32,
-    "id": "tgt-0536"
+    "target_number": 32
   },
   {
+    "id": "tgt-31b9f479",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11309,10 +11115,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 33,
-    "id": "tgt-0537"
+    "target_number": 33
   },
   {
+    "id": "tgt-aad1e4a5",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11330,10 +11136,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 34,
-    "id": "tgt-0538"
+    "target_number": 34
   },
   {
+    "id": "tgt-a87c19ac",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11351,10 +11157,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 35,
-    "id": "tgt-0539"
+    "target_number": 35
   },
   {
+    "id": "tgt-0a5326f9",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11372,10 +11178,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 36,
-    "id": "tgt-0540"
+    "target_number": 36
   },
   {
+    "id": "tgt-2eec81cb",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
@@ -11393,16 +11199,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 37,
-    "id": "tgt-0541"
+    "target_number": 37
   },
   {
+    "id": "tgt-f734cd8a",
     "policy_id": "packaging-waste-regulation",
     "policy_name": "Regulation (EU) 2025/40 on packaging and packaging waste",
     "policy_short": "Packaging and Packaging Waste Regulation",
     "document_type": "regulation",
     "policy_area": "Circular economy",
-    "article": "Article 52 — Recycling targets and promotion of recycling",
+    "article": "Article 52(2)(b) — Recycling targets and promotion of recycling",
     "target_text": "as a result of the derogation from the targets in the period of postponement, the recycling rate for a single target is not reduced below 30 %;",
     "target_label": "target",
     "obligation": "mandatory",
@@ -11414,10 +11220,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32025R0040",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0040",
-    "target_number": 38,
-    "id": "tgt-0542"
+    "target_number": 38
   },
   {
+    "id": "tgt-8aac09f1",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11434,13 +11240,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of synthetic aviation fuel",
       "average share of synthetic aviation fuels"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 1,
-    "id": "tgt-0543"
+    "target_number": 1
   },
   {
+    "id": "tgt-3e5cefee",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11455,13 +11261,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "maximum share of aviation biofuels other than advanced biofuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 2,
-    "id": "tgt-0544"
+    "target_number": 2
   },
   {
+    "id": "tgt-1d58bcbd",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11476,13 +11282,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "minimum share of SAF (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 3,
-    "id": "tgt-0545"
+    "target_number": 3
   },
   {
+    "id": "tgt-f786b593",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11495,13 +11301,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 4,
-    "id": "tgt-0546"
+    "target_number": 4
   },
   {
+    "id": "tgt-4a01d6e4",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11516,13 +11322,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "yearly aviation fuel uplifted (% of required)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 5,
-    "id": "tgt-0547"
+    "target_number": 5
   },
   {
+    "id": "tgt-0a2d425b",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11535,13 +11341,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 6,
-    "id": "tgt-0548"
+    "target_number": 6
   },
   {
+    "id": "tgt-6d81dc1f",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11557,13 +11363,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of SAF (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 7,
-    "id": "tgt-0549"
+    "target_number": 7
   },
   {
+    "id": "tgt-f4140bc0",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11579,13 +11385,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "average share of synthetic aviation fuels (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 8,
-    "id": "tgt-0550"
+    "target_number": 8
   },
   {
+    "id": "tgt-36485fbf",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11601,13 +11407,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "average share of synthetic aviation fuels (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 9,
-    "id": "tgt-0551"
+    "target_number": 9
   },
   {
+    "id": "tgt-f2feea34",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11623,13 +11429,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of SAF (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 10,
-    "id": "tgt-0552"
+    "target_number": 10
   },
   {
+    "id": "tgt-def6d915",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11645,13 +11451,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of SAF (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 11,
-    "id": "tgt-0553"
+    "target_number": 11
   },
   {
+    "id": "tgt-2d138352",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11667,13 +11473,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of SAF (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 12,
-    "id": "tgt-0554"
+    "target_number": 12
   },
   {
+    "id": "tgt-728d4b37",
     "policy_id": "refueleu-aviation",
     "policy_name": "Regulation (EU) 2023/2405 on ensuring a level playing field for sustainable air transport (ReFuelEU Aviation)",
     "policy_short": "ReFuelEU Aviation",
@@ -11689,13 +11495,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "minimum share of SAF (%)",
       "minimum share of synthetic aviation fuels (%)"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R2405",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2405",
-    "target_number": 13,
-    "id": "tgt-0555"
+    "target_number": 13
   },
   {
+    "id": "tgt-3bc1efaf",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11706,7 +11512,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "by 2023",
+    "timeline": "in 2030",
     "indicators": [
       "share of energy from renewable sources",
       "renewable energy",
@@ -11715,10 +11521,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 1,
-    "id": "tgt-0556"
+    "target_number": 1
   },
   {
+    "id": "tgt-95a4be70",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11734,13 +11540,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "national contributions",
       "share of energy from renewable sources"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 2,
-    "id": "tgt-0557"
+    "target_number": 2
   },
   {
+    "id": "tgt-d8a8eedb",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11760,10 +11566,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 3,
-    "id": "tgt-0558"
+    "target_number": 3
   },
   {
+    "id": "tgt-a948a791",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11772,7 +11578,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 3(5), point (c)",
     "target_text": "developing transmission and distribution grid infrastructure, intelligent networks, storage facilities and interconnections, with the objective of arriving at a 15 % electricity interconnection target by 2030, in order to increase the technically feasible and economically affordable level of renewable energy in the electricity system;",
     "target_label": "objective",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
@@ -11782,10 +11588,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 4,
-    "id": "tgt-0559"
+    "target_number": 4
   },
   {
+    "id": "tgt-68e01242",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11803,16 +11609,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 5,
-    "id": "tgt-0560"
+    "target_number": 5
   },
   {
+    "id": "tgt-712fc8a2",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 5 — Opening of support schemes for electricity from renewable sources",
+    "article": "Article 5(5)",
     "target_text": "That evaluation shall assess the need to introduce an obligation on Member States partially to open participation in their support schemes for electricity from renewable sources to producers located in other Member States with a view to a 5 % opening by 2025 and a 10 % opening by 2030.",
     "target_label": "target",
     "obligation": "mandatory",
@@ -11822,10 +11628,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 6,
-    "id": "tgt-0561"
+    "target_number": 6
   },
   {
+    "id": "tgt-bcbe057d",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11840,13 +11646,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "gross final consumption of energy"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 7,
-    "id": "tgt-0562"
+    "target_number": 7
   },
   {
+    "id": "tgt-a16995a5",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11861,13 +11667,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "gross final consumption of energy"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 8,
-    "id": "tgt-0563"
+    "target_number": 8
   },
   {
+    "id": "tgt-ba5fd11a",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11888,10 +11694,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 9,
-    "id": "tgt-0564"
+    "target_number": 9
   },
   {
+    "id": "tgt-69d16e11",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11909,16 +11715,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 10,
-    "id": "tgt-0565"
+    "target_number": 10
   },
   {
+    "id": "tgt-9e9c53f2",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 21 — Renewables self-consumers",
+    "article": "Article 21(3), point (b)",
     "target_text": "from 1 December 2026, if the overall share of self-consumption installations exceeds 8 % of the total installed electricity capacity of a Member State, and if it is demonstrated, by means of a cost-benefit analysis performed by the national regulatory authority of that Member State, which is conducted by way of an open, transparent and participatory process, that the provision laid down in point (a)(ii) of paragraph 2 either results in a significant disproportionate burden on the long-term financial sustainability of the electric system, or creates an incentive exceeding what is objectively needed to achieve cost-effective deployment of renewable energy, and that such burden or incentive cannot be minimised by taking other reasonable actions; or",
     "target_label": "target",
     "obligation": "mandatory",
@@ -11930,10 +11736,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 11,
-    "id": "tgt-0566"
+    "target_number": 11
   },
   {
+    "id": "tgt-19578429",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11942,7 +11748,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "article": "Article 23(1) — Mainstreaming renewable energy in heating and cooling",
     "target_text": "In order to promote the use of renewable energy in the heating and cooling sector, each Member State shall endeavour to increase the share of renewable energy in that sector by an indicative 1,3 percentage points as an annual average calculated for the periods 2021 to 2025 and 2026 to 2030, starting from the share of renewable energy in the heating and cooling sector in 2020, expressed in terms of national share of final energy consumption and calculated in accordance with the methodology set out in Article 7, without prejudice to paragraph 2 of this Article. That increase shall be limited to an indicative 1,1 percentage points for Member States where waste heat and cold is not used. Member States shall, where appropriate, prioritise the best available technologies.",
     "target_label": "target",
-    "obligation": "mandatory",
+    "obligation": "voluntary",
     "target_type": "quantitative",
     "timeline": "for the periods 2021 to 2025 and 2026 to 2030",
     "indicators": [
@@ -11954,10 +11760,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 12,
-    "id": "tgt-0567"
+    "target_number": 12
   },
   {
+    "id": "tgt-717c2d9a",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11973,10 +11779,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 13,
-    "id": "tgt-0568"
+    "target_number": 13
   },
   {
+    "id": "tgt-21d76c47",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -11992,10 +11798,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 14,
-    "id": "tgt-0569"
+    "target_number": 14
   },
   {
+    "id": "tgt-d3b0abb8",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12014,10 +11820,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 15,
-    "id": "tgt-0570"
+    "target_number": 15
   },
   {
+    "id": "tgt-8225ecd8",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12037,10 +11843,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 16,
-    "id": "tgt-0571"
+    "target_number": 16
   },
   {
+    "id": "tgt-287b5112",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12058,10 +11864,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 17,
-    "id": "tgt-0572"
+    "target_number": 17
   },
   {
+    "id": "tgt-ab0a6451",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12074,13 +11880,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 18,
-    "id": "tgt-0573"
+    "target_number": 18
   },
   {
+    "id": "tgt-cfd33e0d",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12093,13 +11899,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 19,
-    "id": "tgt-0574"
+    "target_number": 19
   },
   {
+    "id": "tgt-2e3e32a0",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12115,10 +11921,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 20,
-    "id": "tgt-0575"
+    "target_number": 20
   },
   {
+    "id": "tgt-10c67c82",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12138,10 +11944,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 21,
-    "id": "tgt-0576"
+    "target_number": 21
   },
   {
+    "id": "tgt-99c9ee28",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12157,13 +11963,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "contribution of advanced biofuels and biogas",
       "share of final consumption of energy in the transport sector"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 22,
-    "id": "tgt-0577"
+    "target_number": 22
   },
   {
+    "id": "tgt-e6840b7b",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12183,10 +11989,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 23,
-    "id": "tgt-0578"
+    "target_number": 23
   },
   {
+    "id": "tgt-e2e88dc0",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12206,10 +12012,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 24,
-    "id": "tgt-0579"
+    "target_number": 24
   },
   {
+    "id": "tgt-4daf0660",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12227,16 +12033,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 25,
-    "id": "tgt-0580"
+    "target_number": 25
   },
   {
+    "id": "tgt-725ff32b",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 26 — Specific rules for biofuels, bioliquids and biomass fuels produced ",
+    "article": "Article 26(1), fourth subparagraph — Specific rules for biofuels, bioliquids and biomass fuels produced from food and…",
     "target_text": "Where the share of biofuels and bioliquids, as well as of biomass fuels consumed in transport, produced from food and feed crops in a Member State is limited to a share lower than 7 % or a Member State decides to limit the share further, that Member State may reduce the minimum share referred to in the first subparagraph of Article 25(1) accordingly, by a maximum of 7 percentage points.",
     "target_label": "target",
     "obligation": "voluntary",
@@ -12246,10 +12052,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 26,
-    "id": "tgt-0581"
+    "target_number": 26
   },
   {
+    "id": "tgt-d403b0be",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12265,13 +12071,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "share of biofuels and biogas from feedstock in Part B of Annex IX",
       "energy content of transport fuels"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 27,
-    "id": "tgt-0582"
+    "target_number": 27
   },
   {
+    "id": "tgt-a6b92607",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12287,13 +12093,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "greenhouse gas emission savings",
       "biofuels, biogas, bioliquids"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 28,
-    "id": "tgt-0583"
+    "target_number": 28
   },
   {
+    "id": "tgt-dee6fef3",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12309,13 +12115,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "greenhouse gas emission savings",
       "biofuels, biogas, bioliquids"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 29,
-    "id": "tgt-0584"
+    "target_number": 29
   },
   {
+    "id": "tgt-6e693ed3",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12331,13 +12137,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "greenhouse gas emission savings",
       "biofuels, biogas, bioliquids"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 30,
-    "id": "tgt-0585"
+    "target_number": 30
   },
   {
+    "id": "tgt-dc797af1",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12348,45 +12154,26 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "target",
     "obligation": "mandatory",
     "target_type": "quantitative",
-    "timeline": "from 1 January 2021 until 31 December 2025, and from 1 Janua",
+    "timeline": "from 1 January 2021 until 31 December 2025, and from 1 January 2026",
     "indicators": [
       "greenhouse gas emission savings",
       "electricity, heating and cooling from biomass fuels"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 31,
-    "id": "tgt-0586"
+    "target_number": 31
   },
   {
+    "id": "tgt-65789506",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for bio",
+    "article": "Article 29(4), point (b) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
     "target_text": "continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;",
-    "target_label": "target",
-    "obligation": "mandatory",
-    "target_type": "quantitative",
-    "timeline": "",
-    "indicators": [],
-    "climate_relevance": "none",
-    "celex_number": "32018L2001",
-    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 32,
-    "id": "tgt-0587"
-  },
-  {
-    "policy_id": "renewable-energy-directive",
-    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
-    "policy_short": "Renewable Energy Directive (RED II)",
-    "document_type": "directive",
-    "policy_area": "Energy",
-    "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for bio",
-    "target_text": "land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ, unless evidence is provided that the carbon stock of the area before and after conversion is such that, when the methodology laid down in Part C of Annex V is applied, the conditions laid down in paragraph 10 of this Article would be fulfilled.",
-    "target_label": "target",
+    "target_label": "other",
     "obligation": "mandatory",
     "target_type": "quantitative",
     "timeline": "",
@@ -12394,16 +12181,35 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 33,
-    "id": "tgt-0588"
+    "target_number": 32
   },
   {
+    "id": "tgt-3b1337c8",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
     "document_type": "directive",
     "policy_area": "Energy",
-    "article": "Article 29 — Sustainability and greenhouse gas emissions saving criteria for bio",
+    "article": "Article 29(4), point (c) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
+    "target_text": "land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ, unless evidence is provided that the carbon stock of the area before and after conversion is such that, when the methodology laid down in Part C of Annex V is applied, the conditions laid down in paragraph 10 of this Article would be fulfilled.",
+    "target_label": "other",
+    "obligation": "mandatory",
+    "target_type": "quantitative",
+    "timeline": "",
+    "indicators": [],
+    "climate_relevance": "mitigation",
+    "celex_number": "32018L2001",
+    "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
+    "target_number": 33
+  },
+  {
+    "id": "tgt-9edf0aa9",
+    "policy_id": "renewable-energy-directive",
+    "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
+    "policy_short": "Renewable Energy Directive (RED II)",
+    "document_type": "directive",
+    "policy_area": "Energy",
+    "article": "Article 29(11), point (c) — Sustainability and greenhouse gas emissions saving criteria for biofuels, bioliquids and…",
     "target_text": "for installations with a total rated thermal input above 100 MW, it is produced applying high-efficiency cogeneration technology, or, for electricity-only installations, achieving an net-electrical efficiency of at least 36 %;",
     "target_label": "other",
     "obligation": "mandatory",
@@ -12413,10 +12219,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 34,
-    "id": "tgt-0589"
+    "target_number": 34
   },
   {
+    "id": "tgt-f552bf61",
     "policy_id": "renewable-energy-directive",
     "policy_name": "Directive (EU) 2018/2001 on the promotion of the use of energy from renewable sources (RED II)",
     "policy_short": "Renewable Energy Directive (RED II)",
@@ -12435,10 +12241,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32018L2001",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32018L2001",
-    "target_number": 35,
-    "id": "tgt-0590"
+    "target_number": 35
   },
   {
+    "id": "tgt-df66bf6d",
     "policy_id": "sfdr",
     "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
     "policy_short": "Sustainable Finance Disclosure Regulation",
@@ -12453,19 +12259,19 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "indicators": [
       "alignment with the objectives of the Paris Agreement"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "target_number": 1,
-    "id": "tgt-0591"
+    "target_number": 1
   },
   {
+    "id": "tgt-ff3b5c8d",
     "policy_id": "sfdr",
     "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
     "policy_short": "Sustainable Finance Disclosure Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 8(1) — Transparency of the promotion of environmental or social characte",
+    "article": "Article 8(1) — Transparency of the promotion of environmental or social characteristics in pre-contractual disclosures",
     "target_text": "1. Where a financial product promotes, among other characteristics, environmental or social characteristics, or a combination of those characteristics, provided that the companies in which the investments are made follow good governance practices, the information to be disclosed pursuant to Article 6(1) and (3) shall include the following:",
     "target_label": "other",
     "obligation": "mandatory",
@@ -12477,16 +12283,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "target_number": 2,
-    "id": "tgt-0592"
+    "target_number": 2
   },
   {
+    "id": "tgt-cc0eb9f6",
     "policy_id": "sfdr",
     "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
     "policy_short": "Sustainable Finance Disclosure Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 9(2) — Transparency of sustainable investments in pre-contractual disclo",
+    "article": "Article 9(2) — Transparency of sustainable investments in pre-contractual disclosures",
     "target_text": "2. Where a financial product has sustainable investment as its objective and no index has been designated as a reference benchmark, the information to be disclosed pursuant to Article 6(1) and (3) shall include an explanation on how that objective is to be attained.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -12498,16 +12304,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "target_number": 3,
-    "id": "tgt-0593"
+    "target_number": 3
   },
   {
+    "id": "tgt-5b191547",
     "policy_id": "sfdr",
     "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
     "policy_short": "Sustainable Finance Disclosure Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 9(3), first subparagraph — Transparency of sustainable investments in pr",
+    "article": "Article 9(3), first subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
     "target_text": "3. Where a financial product has a reduction in carbon emissions as its objective, the information to be disclosed pursuant to Article 6(1) and (3) shall include the objective of low carbon emission exposure in view of achieving the long‐term global warming objectives of the Paris Agreement.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -12521,16 +12327,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "target_number": 4,
-    "id": "tgt-0594"
+    "target_number": 4
   },
   {
+    "id": "tgt-f1260ec6",
     "policy_id": "sfdr",
     "policy_name": "Regulation (EU) 2019/2088 on sustainability-related disclosures in the financial services sector (SFDR)",
     "policy_short": "Sustainable Finance Disclosure Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 9(3), second subparagraph — Transparency of sustainable investments in p",
+    "article": "Article 9(3), second subparagraph — Transparency of sustainable investments in pre-contractual disclosures",
     "target_text": "By way of derogation from paragraph 2 of this Article, where no EU Climate Transition Benchmark or EU Paris‐aligned Benchmark in accordance with Regulation (EU) 2016/1011 of the European Parliament and of the Council (20) is available, the information referred to in Article 6 shall include a detailed explanation of how the continued effort of attaining the objective of reducing carbon emissions is ensured in view of achieving the long‐term global warming objectives of the Paris Agreement.",
     "target_label": "objective",
     "obligation": "mandatory",
@@ -12544,10 +12350,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32019R2088",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019R2088",
-    "target_number": 5,
-    "id": "tgt-0595"
+    "target_number": 5
   },
   {
+    "id": "tgt-c1927192",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12565,10 +12371,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 1,
-    "id": "tgt-0596"
+    "target_number": 1
   },
   {
+    "id": "tgt-97dbcc82",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12586,10 +12392,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 2,
-    "id": "tgt-0597"
+    "target_number": 2
   },
   {
+    "id": "tgt-b4e0e41c",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12607,10 +12413,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 3,
-    "id": "tgt-0598"
+    "target_number": 3
   },
   {
+    "id": "tgt-3e62e517",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12628,10 +12434,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 4,
-    "id": "tgt-0599"
+    "target_number": 4
   },
   {
+    "id": "tgt-9369ace5",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12649,10 +12455,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 5,
-    "id": "tgt-0600"
+    "target_number": 5
   },
   {
+    "id": "tgt-f2e91381",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12671,10 +12477,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 6,
-    "id": "tgt-0601"
+    "target_number": 6
   },
   {
+    "id": "tgt-2e47a203",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12692,10 +12498,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 7,
-    "id": "tgt-0602"
+    "target_number": 7
   },
   {
+    "id": "tgt-401c38dc",
     "policy_id": "single-use-plastics-directive",
     "policy_name": "Directive (EU) 2019/904 on the reduction of the impact of certain plastic products on the environment",
     "policy_short": "Single-Use Plastics Directive",
@@ -12713,10 +12519,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32019L0904",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32019L0904",
-    "target_number": 8,
-    "id": "tgt-0603"
+    "target_number": 8
   },
   {
+    "id": "tgt-413f8054",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12734,10 +12540,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 1,
-    "id": "tgt-0604"
+    "target_number": 1
   },
   {
+    "id": "tgt-2e11df41",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12758,10 +12564,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 2,
-    "id": "tgt-0605"
+    "target_number": 2
   },
   {
+    "id": "tgt-49e5ffde",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12781,10 +12587,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 3,
-    "id": "tgt-0606"
+    "target_number": 3
   },
   {
+    "id": "tgt-18f21fe8",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12806,10 +12612,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 4,
-    "id": "tgt-0607"
+    "target_number": 4
   },
   {
+    "id": "tgt-56920fba",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12827,10 +12633,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 5,
-    "id": "tgt-0608"
+    "target_number": 5
   },
   {
+    "id": "tgt-386b02bf",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12849,10 +12655,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 6,
-    "id": "tgt-0609"
+    "target_number": 6
   },
   {
+    "id": "tgt-6cc95723",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12873,10 +12679,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 7,
-    "id": "tgt-0610"
+    "target_number": 7
   },
   {
+    "id": "tgt-86a67071",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12894,10 +12700,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 8,
-    "id": "tgt-0611"
+    "target_number": 8
   },
   {
+    "id": "tgt-7ef1a6a7",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12913,13 +12719,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "milestones and targets",
       "Union's climate targets"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 9,
-    "id": "tgt-0612"
+    "target_number": 9
   },
   {
+    "id": "tgt-c9416d96",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12938,10 +12744,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 10,
-    "id": "tgt-0613"
+    "target_number": 10
   },
   {
+    "id": "tgt-688c442a",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12961,10 +12767,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 11,
-    "id": "tgt-0614"
+    "target_number": 11
   },
   {
+    "id": "tgt-ca9ffc90",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12982,10 +12788,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 12,
-    "id": "tgt-0615"
+    "target_number": 12
   },
   {
+    "id": "tgt-f2c9d86e",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -12995,7 +12801,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "1. A maximum amount of EUR 65 000 000 000 for the period from 1 January 2026 to 31 December 2032 in current prices shall be made available, in accordance with Articles 10a(8b), 30d(3) and 30d(4) of Directive 2003/87/EC, for implementation of the Fund. That amount shall constitute external assigned revenue for the purposes of Article 21(5) of Regulation (EU, Euratom) 2018/1046, without prejudice to Article 30d(4), sixth subparagraph, of Directive 2003/87/EC.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "qualitative",
+    "target_type": "quantitative",
     "timeline": "for the period from 1 January 2026 to 31 December 2032",
     "indicators": [
       "maximum amount available for the Fund"
@@ -13003,10 +12809,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 13,
-    "id": "tgt-0616"
+    "target_number": 13
   },
   {
+    "id": "tgt-b69b4d31",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -13024,10 +12830,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 14,
-    "id": "tgt-0617"
+    "target_number": 14
   },
   {
+    "id": "tgt-735f3427",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -13045,10 +12851,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 15,
-    "id": "tgt-0618"
+    "target_number": 15
   },
   {
+    "id": "tgt-a6d47fbe",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -13067,10 +12873,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 16,
-    "id": "tgt-0619"
+    "target_number": 16
   },
   {
+    "id": "tgt-cceab404",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -13086,10 +12892,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 17,
-    "id": "tgt-0620"
+    "target_number": 17
   },
   {
+    "id": "tgt-e2de3877",
     "policy_id": "social-climate-fund",
     "policy_name": "Regulation (EU) 2023/955 establishing a Social Climate Fund",
     "policy_short": "Social Climate Fund",
@@ -13105,10 +12911,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32023R0955",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R0955",
-    "target_number": 18,
-    "id": "tgt-0621"
+    "target_number": 18
   },
   {
+    "id": "tgt-16780e11",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13126,10 +12932,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 1,
-    "id": "tgt-0622"
+    "target_number": 1
   },
   {
+    "id": "tgt-f14050a3",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13147,16 +12953,16 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 2,
-    "id": "tgt-0623"
+    "target_number": 2
   },
   {
+    "id": "tgt-c056a453",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
     "document_type": "regulation",
     "policy_area": "Finance",
-    "article": "Article 5 — Transparency of environmentally sustainable investments in pre-contr",
+    "article": "Article 5 — Transparency of environmentally sustainable investments in pre-contractual disclosures and in periodic…",
     "target_text": "The description referred to in point (b) of the first subparagraph of this Article shall specify the proportion of investments in environmentally sustainable economic activities selected for the financial product, including details on the proportions of enabling and transitional activities referred to in Article 16 and Article 10(2), respectively, as a percentage of all investments selected for the financial product.",
     "target_label": "other",
     "obligation": "mandatory",
@@ -13169,10 +12975,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 3,
-    "id": "tgt-0624"
+    "target_number": 3
   },
   {
+    "id": "tgt-9d39f464",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13190,10 +12996,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 4,
-    "id": "tgt-0625"
+    "target_number": 4
   },
   {
+    "id": "tgt-eab05ff7",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13213,13 +13019,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "pollution prevention and control",
       "biodiversity and ecosystems"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "both",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 5,
-    "id": "tgt-0626"
+    "target_number": 5
   },
   {
+    "id": "tgt-7d62258c",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13240,10 +13046,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 6,
-    "id": "tgt-0627"
+    "target_number": 6
   },
   {
+    "id": "tgt-921c449a",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13263,10 +13069,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 7,
-    "id": "tgt-0628"
+    "target_number": 7
   },
   {
+    "id": "tgt-77171292",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13284,10 +13090,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 8,
-    "id": "tgt-0629"
+    "target_number": 8
   },
   {
+    "id": "tgt-51b84dd6",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13305,10 +13111,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 9,
-    "id": "tgt-0630"
+    "target_number": 9
   },
   {
+    "id": "tgt-15fe7607",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13327,10 +13133,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 10,
-    "id": "tgt-0631"
+    "target_number": 10
   },
   {
+    "id": "tgt-f3301811",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13349,10 +13155,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 11,
-    "id": "tgt-0632"
+    "target_number": 11
   },
   {
+    "id": "tgt-fef57ef8",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13368,10 +13174,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 12,
-    "id": "tgt-0633"
+    "target_number": 12
   },
   {
+    "id": "tgt-348675a0",
     "policy_id": "taxonomy-regulation",
     "policy_name": "Regulation (EU) 2020/852 on the establishment of a framework to facilitate sustainable investment (EU Taxonomy)",
     "policy_short": "EU Taxonomy Regulation",
@@ -13387,10 +13193,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "32020R0852",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32020R0852",
-    "target_number": 13,
-    "id": "tgt-0634"
+    "target_number": 13
   },
   {
+    "id": "tgt-8b681297",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13408,10 +13214,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 1,
-    "id": "tgt-0635"
+    "target_number": 1
   },
   {
+    "id": "tgt-83db3834",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13421,7 +13227,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "Subject to Article 10(2), by 2015 separate collection shall be set up for at least the following: paper, metal, plastic and glass.",
     "target_label": "other",
     "obligation": "mandatory",
-    "target_type": "quantitative",
+    "target_type": "qualitative",
     "timeline": "by 2015",
     "indicators": [
       "separate collection of paper, metal, plastic and glass"
@@ -13429,10 +13235,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 2,
-    "id": "tgt-0636"
+    "target_number": 2
   },
   {
+    "id": "tgt-2f609e11",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13450,10 +13256,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 3,
-    "id": "tgt-0637"
+    "target_number": 3
   },
   {
+    "id": "tgt-bcd03946",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13471,10 +13277,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 4,
-    "id": "tgt-0638"
+    "target_number": 4
   },
   {
+    "id": "tgt-87d4eda5",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13492,10 +13298,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 5,
-    "id": "tgt-0639"
+    "target_number": 5
   },
   {
+    "id": "tgt-62810f77",
     "policy_id": "waste-framework-directive",
     "policy_name": "Directive 2008/98/EC on waste (Waste Framework Directive)",
     "policy_short": "Waste Framework Directive",
@@ -13513,10 +13319,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32008L0098",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32008L0098",
-    "target_number": 6,
-    "id": "tgt-0640"
+    "target_number": 6
   },
   {
+    "id": "tgt-a37bd430",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13535,10 +13341,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 1,
-    "id": "tgt-0641"
+    "target_number": 1
   },
   {
+    "id": "tgt-7ce857bc",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13549,17 +13355,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "at the latest 15 years after the date of entry into force of",
+    "timeline": "at the latest 15 years after the date of entry into force of this Directive",
     "indicators": [
       "good surface water status"
     ],
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 2,
-    "id": "tgt-0642"
+    "target_number": 2
   },
   {
+    "id": "tgt-80eb4b3a",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13570,18 +13376,18 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "at the latest 15 years from the date of entry into force of ",
+    "timeline": "at the latest 15 years from the date of entry into force of this Directive",
     "indicators": [
       "good ecological potential",
       "good surface water chemical status"
     ],
-    "climate_relevance": "none",
+    "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 3,
-    "id": "tgt-0643"
+    "target_number": 3
   },
   {
+    "id": "tgt-593fe449",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13597,13 +13403,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
       "pollution from priority substances",
       "emissions, discharges and losses of priority hazardous substances"
     ],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 4,
-    "id": "tgt-0644"
+    "target_number": 4
   },
   {
+    "id": "tgt-e0b591ff",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13622,10 +13428,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 5,
-    "id": "tgt-0645"
+    "target_number": 5
   },
   {
+    "id": "tgt-bade8a74",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13636,7 +13442,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "at the latest 15 years after the date of entry into force of",
+    "timeline": "at the latest 15 years after the date of entry into force of this Directive",
     "indicators": [
       "good groundwater status",
       "balance between abstraction and recharge of groundwater"
@@ -13644,10 +13450,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 6,
-    "id": "tgt-0646"
+    "target_number": 6
   },
   {
+    "id": "tgt-2e2604f6",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13665,10 +13471,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 7,
-    "id": "tgt-0647"
+    "target_number": 7
   },
   {
+    "id": "tgt-138e1e07",
     "policy_id": "water-framework-directive",
     "policy_name": "Directive 2000/60/EC establishing a framework for Community action in the field of water policy",
     "policy_short": "Water Framework Directive",
@@ -13679,17 +13485,17 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_label": "objective",
     "obligation": "mandatory",
     "target_type": "qualitative",
-    "timeline": "at the latest 15 years after the date of entry into force of",
+    "timeline": "at the latest 15 years after the date of entry into force of this Directive",
     "indicators": [
       "compliance with protected-area standards and objectives"
     ],
     "climate_relevance": "none",
     "celex_number": "32000L0060",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32000L0060",
-    "target_number": 8,
-    "id": "tgt-0648"
+    "target_number": 8
   },
   {
+    "id": "tgt-407d9f2d",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13707,10 +13513,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 1,
-    "id": "tgt-0649"
+    "target_number": 1
   },
   {
+    "id": "tgt-0752f1e7",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13728,10 +13534,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 2,
-    "id": "tgt-0650"
+    "target_number": 2
   },
   {
+    "id": "tgt-f44985f6",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13749,10 +13555,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 3,
-    "id": "tgt-0651"
+    "target_number": 3
   },
   {
+    "id": "tgt-782699f0",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13770,10 +13576,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 4,
-    "id": "tgt-0652"
+    "target_number": 4
   },
   {
+    "id": "tgt-e203357e",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13793,10 +13599,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 5,
-    "id": "tgt-0653"
+    "target_number": 5
   },
   {
+    "id": "tgt-c354de79",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13815,10 +13621,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 6,
-    "id": "tgt-0654"
+    "target_number": 6
   },
   {
+    "id": "tgt-682ee7da",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13837,10 +13643,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 7,
-    "id": "tgt-0655"
+    "target_number": 7
   },
   {
+    "id": "tgt-f4429175",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13858,10 +13664,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 8,
-    "id": "tgt-0656"
+    "target_number": 8
   },
   {
+    "id": "tgt-9f8ee271",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13871,7 +13677,7 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_text": "The proposed Horizon Europe Cities Mission will, through a demand-driven and cross-sectoral approach aligned with the zero pollution ambition, support 100 cities in their transition towards climate neutrality by 2030, to inspire other European cities to be climate neutral by 2050 and contribute substantially to reducing urban pollution.",
     "target_label": "objective",
     "obligation": "voluntary",
-    "target_type": "unspecified",
+    "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [
       "cities transitioning towards climate neutrality"
@@ -13879,10 +13685,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 9,
-    "id": "tgt-0657"
+    "target_number": 9
   },
   {
+    "id": "tgt-4113e6d3",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13895,13 +13701,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "mitigation",
+    "climate_relevance": "none",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 10,
-    "id": "tgt-0658"
+    "target_number": 10
   },
   {
+    "id": "tgt-26d2f223",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13914,13 +13720,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "unspecified",
     "timeline": "",
     "indicators": [],
-    "climate_relevance": "both",
+    "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 11,
-    "id": "tgt-0659"
+    "target_number": 11
   },
   {
+    "id": "tgt-8b34f01e",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13936,10 +13742,10 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "mitigation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 12,
-    "id": "tgt-0660"
+    "target_number": 12
   },
   {
+    "id": "tgt-f0855362",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13952,13 +13758,13 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "target_type": "quantitative",
     "timeline": "by 2030",
     "indicators": [],
-    "climate_relevance": "both",
+    "climate_relevance": "adaptation",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 13,
-    "id": "tgt-0661"
+    "target_number": 13
   },
   {
+    "id": "tgt-13a73978",
     "policy_id": "zero-pollution-action-plan",
     "policy_name": "Communication COM(2021) 400 - Pathway to a Healthy Planet for All: EU Action Plan for Zero Pollution",
     "policy_short": "Zero Pollution Action Plan",
@@ -13974,7 +13780,6 @@ export const RAW_POLICY_TARGETS: RawPolicyTarget[] = [
     "climate_relevance": "both",
     "celex_number": "52021DC0400",
     "eurlex_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021DC0400",
-    "target_number": 14,
-    "id": "tgt-0662"
+    "target_number": 14
   }
 ];

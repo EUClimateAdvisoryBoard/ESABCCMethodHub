@@ -1,0 +1,67 @@
+# Policy Targets Register (M·36) — fact-check audit, July 2026
+
+Full review of the target-extraction dataset shipped with PR #407: every one
+of the 662 rows across all 38 acts was fact-checked (one reviewer agent per
+act reading the act's EUR-Lex source text), findings were adversarially
+re-verified, and the confirmed corrections were applied. Result: **653 rows**
+(9 dropped), with 312 rows corrected via `scripts/policy-targets-overrides.json`.
+
+## What was checked, per row
+
+1. Quote provenance (verbatim, enacting terms only) — re-validated
+   independently of the build pipeline.
+2. Provision reference (`article`) against the actual location of the quote.
+3. Timeline support (agent-supplied timelines vs the surrounding provision).
+4. Indicators (fabricated vs context-supported).
+5. Classifications: label, obligation, type, climate-relevance.
+6. Act metadata: title, CELEX, document type, EUR-Lex URL.
+
+## Outcome
+
+- **Verbatim integrity held**: all 662 quotes were exact substrings of the
+  enacting terms — no fabricated or paraphrased text was found. All CELEX
+  numbers and EUR-Lex URLs checked out.
+- **426 row-level findings** were raised; after deterministic re-verification
+  against the sources, they resolved into 321 override entries + rule fixes.
+
+## Errors fixed
+
+- **Provision references**: ~180 rows now cite the precise paragraph/point;
+  amendment text an act inserts into *other* legislation is now labelled as
+  such (EU Climate Law Art. 13 insertions into Reg. 2018/1999; Governance
+  Regulation Arts. 47/53 insertions — rows previously cited non-existent
+  articles like "Article 2a"). Green Deal / Fit-for-55 rows cite numbered
+  sections instead of "Body". Mid-word 80-char truncations eliminated.
+- **Obligation**: soft law (communications/strategies) is now always
+  voluntary; "shall endeavour / aim / strive" counts as voluntary (PPWR 2040
+  endeavour sub-targets, CAP Art. 105, RED interconnection objective, FuelEU
+  RFNBO multiplier…). Fit-for-55 was also re-typed strategy → communication.
+- **Climate relevance**: substance-based corrections for keyword misses —
+  all 13 RefuelEU SAF mandates, AFIR EV-charging/shore-side rows, FuelEU OPS,
+  CAP climate/eco-scheme rows, CSDDD/SFDR "climate change mitigation"/Paris
+  rows (none → mitigation/both); and keyword false positives (chemical
+  "emissions" in the Water FD, industrial "resilience" in NZIA,
+  "climate-related" budget shares) downgraded.
+- **Type**: EUR 65bn (SCF), EUR/tonne penalties (ETS), month-count deadlines
+  (CRMA) now quantitative; chapeau quotes whose numbers sit in unquoted
+  sub-points no longer claim to be quantitative.
+- **Timelines**: garbled 60-char truncations replaced with the correct
+  period from the source (or cleared when unsupported); wrong years fixed
+  (e.g. RED Art. 3 headline target: 2023 review year → the 2030 target year).
+- **Dropped rows (9)**: document titles/headings extracted as "targets"
+  (Fit-for-55 title ×2, Horizon Europe headings ×2) and near-duplicate rows
+  (Fit-for-55 ×2, CO2 cars, methane, Climate Law).
+- **Metadata**: NZIA title corrected (had CRMA's "secure and sustainable
+  supply" wording); Fit-for-55 document type corrected.
+
+## Durability improvements
+
+- Row ids are now **stable content hashes** — regeneration no longer shifts
+  ids, so reviewers' column-12 confirmations stay attached to the right rows.
+- All corrections live in `scripts/policy-targets-overrides.json` with a
+  per-entry reason, applied by the build script after deterministic
+  classification — `npm run build:policy-targets` reproduces the dataset.
+
+Remaining known caveat (unchanged, documented in the module docs): a few
+corpus texts are pre-consolidation versions (EU ETS 2003/87/EC original,
+RED 2018), so their figures reflect that text.
