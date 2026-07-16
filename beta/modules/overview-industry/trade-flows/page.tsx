@@ -27,9 +27,11 @@ import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import TradeFlowExplorer from './TradeFlowExplorer';
 import { exportTradeFlowsWorkbook, SHEET_NAMES } from './export';
+import { exportTradeFlowsSlideshow, SLIDE_COUNT } from './slideshow';
 
 export default function TradeFlowsPage() {
   const [exporting, setExporting] = useState(false);
+  const [buildingDeck, setBuildingDeck] = useState(false);
 
   const onExport = async () => {
     setExporting(true);
@@ -37,6 +39,15 @@ export default function TradeFlowsPage() {
       await exportTradeFlowsWorkbook();
     } finally {
       setExporting(false);
+    }
+  };
+
+  const onExportDeck = async () => {
+    setBuildingDeck(true);
+    try {
+      await exportTradeFlowsSlideshow();
+    } finally {
+      setBuildingDeck(false);
     }
   };
 
@@ -98,8 +109,16 @@ export default function TradeFlowsPage() {
             >
               {exporting ? 'Building workbook…' : '⬇ Download handover workbook (.xlsx)'}
             </button>
+            <button
+              onClick={onExportDeck}
+              disabled={buildingDeck}
+              className="inline-flex items-center gap-2 rounded-lg border border-primary bg-white px-4 py-2 text-sm font-semibold text-primary shadow-sm transition hover:bg-surface-blue disabled:opacity-60 dark:bg-[var(--mh-card)] dark:hover:bg-primary/15"
+            >
+              {buildingDeck ? 'Building slides…' : '⬇ Download overview slides (.pdf)'}
+            </button>
             <span className="text-[12px] text-grey-500 dark:text-[var(--mh-muted)]">
-              {SHEET_NAMES.length} sheets: {SHEET_NAMES.join(' · ')}
+              {SHEET_NAMES.length} sheets · {SLIDE_COUNT}-slide status deck: headline figures, trade balance,
+              import-dependency, critical materials, products, energy
             </span>
           </div>
         </header>
