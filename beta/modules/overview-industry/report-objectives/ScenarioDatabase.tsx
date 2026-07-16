@@ -90,6 +90,8 @@ export interface ChartTheme {
   tick: string;
   median: string;
   pointBorder: string;
+  /** Neutral low-opacity fill for the Commission 2040 range band. */
+  corridor: string;
 }
 
 export function useChartTheme(): ChartTheme {
@@ -104,6 +106,10 @@ export function useChartTheme(): ChartTheme {
       // Hover-point border should match the card background so points read
       // as "cut out" of the card, in both themes (var(--mh-card)).
       pointBorder: isDark ? '#18222E' : '#FFFFFF',
+      // A range band is NOT a categorical series — a neutral slate at low
+      // opacity reads as "the Commission's own 2040 spread" without competing
+      // with the S1/S2/S3 line colours (dataviz: range ≠ series).
+      corridor: isDark ? 'rgba(148,163,184,0.16)' : 'rgba(100,116,139,0.13)',
     }),
     [isDark],
   );
@@ -138,7 +144,18 @@ function SourceLink({ sourceId, children }: { sourceId: string; children?: React
 
 const PLOT_YEARS = [2015, 2020, 2025, 2030, 2035, 2040, 2045, 2050, 2060, 2070];
 
-export function MultiScenarioFigure() {
+/** The four EU-2040 scenarios the figure singles out, in ambition order. */
+const EC_IA_IDS = ['sc-ec-ia-s1', 'sc-ec-ia-s2', 'sc-ec-ia-s3'] as const;
+
+/** 2040 outcome of a scenario: absolute endpoint + the cut vs its own base. */
+function outcome2040(sc: IndustryScenario) {
+  const base = sc.series[0]?.value ?? 0;
+  const pt = sc.series.find((p) => p.year === 2040);
+  if (!pt || base === 0) return null;
+  return { value: pt.value, unit: sc.unit, cut: Math.round((1 - pt.value / base) * 100) };
+}
+
+export function MultiScenarioFigure({ headline = false }: { headline?: boolean } = {}) {
   const theme = useChartTheme();
   const median = useMemo(() => ensembleMedian(SCENARIOS), []);
 
@@ -182,7 +199,52 @@ export function MultiScenarioFigure() {
       spanGaps: true,
     };
 
-    return { datasets: [...scenarioSets, medianSet] };
+    /* Commission 2040 range band — the wedge between the shallowest (S1) and
+       deepest (S3) Impact-Assessment options. The two options agree through
+       2030 and fan out to their 2040 industry range, so the band reads as
+       "the EU's own 2040 target corridor for industry". Two border-less
+       helper datasets (lower first, then upper filling down to it); hidden
+       from the tooltip and legend via the `__` label prefix. */
+    const s1 = SCENARIOS.find((s) => s.id === 'sc-ec-ia-s1');
+    const s3 = SCENARIOS.find((s) => s.id === 'sc-ec-ia-s3');
+    const corridorSets: ChartData<'line'>['datasets'] = [];
+    if (s1 && s3) {
+      const bandYears = [2022, 2030, 2040];
+      const idx = (sc: IndustryScenario, y: number) => {
+        const v = indexedValueAt(sc, y);
+        return v == null ? null : Math.round(v * 10) / 10;
+      };
+      corridorSets.push(
+        {
+          label: '__ec-corridor-lower',
+          data: bandYears.map((y) => ({ x: y, y: idx(s3, y) })),
+          borderColor: 'transparent',
+          backgroundColor: 'transparent',
+          borderWidth: 0,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          fill: false,
+          tension: 0.15,
+          order: 6,
+          spanGaps: true,
+        },
+        {
+          label: '__ec-corridor-upper',
+          data: bandYears.map((y) => ({ x: y, y: idx(s1, y) })),
+          borderColor: 'transparent',
+          backgroundColor: theme.corridor,
+          borderWidth: 0,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          fill: '-1',
+          tension: 0.15,
+          order: 6,
+          spanGaps: true,
+        },
+      );
+    }
+
+    return { datasets: [...corridorSets, ...scenarioSets, medianSet] };
   }, [median, theme]);
 
   const options = useMemo<ChartOptions<'line'>>(
@@ -193,6 +255,7 @@ export function MultiScenarioFigure() {
       plugins: {
         legend: { display: false },
         tooltip: {
+          filter: (item) => !(item.dataset.label ?? '').startsWith('__'),
           callbacks: {
             title: (items) => `Year ${items[0]?.parsed.x ?? ''}`,
             label: (ctx) => ` ${ctx.dataset.label}: ${ctx.parsed.y} (base = 100)`,
@@ -221,24 +284,51 @@ export function MultiScenarioFigure() {
 
   const highlighted = SCENARIOS.filter((s) => s.highlight);
   const others = SCENARIOS.filter((s) => !s.highlight);
+  const ecIa = EC_IA_IDS.map((id) => SCENARIOS.find((s) => s.id === id)).filter(
+    (s): s is IndustryScenario => !!s,
+  );
+  const esabcc2040 = SCENARIOS.find((s) => s.id === 'sc-esabcc-2040');
 
   return (
-    <section className="rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
-      <div className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">Figure 6</div>
-      <h3 className="text-[15px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
+    <section
+      className={
+        headline
+          ? 'rounded-2xl border-2 border-primary/25 bg-white p-4 shadow-md ring-1 ring-primary/5 sm:p-6 dark:border-primary/30 dark:bg-[var(--mh-card)]'
+          : 'rounded-xl border border-grey-200 bg-white p-4 shadow-sm sm:p-5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]'
+      }
+    >
+      <div className="flex flex-wrap items-center gap-2">
+        {headline && (
+          <span className="rounded-full bg-primary px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white">
+            Headline figure
+          </span>
+        )}
+        <span className="text-[10px] font-bold uppercase tracking-wide text-grey-500 dark:text-[var(--mh-muted)]">
+          Figure 6
+        </span>
+      </div>
+      <h3
+        className={`mt-1 font-bold text-grey-900 dark:text-[var(--mh-fg)] ${
+          headline ? 'text-lg sm:text-xl' : 'text-[15px]'
+        }`}
+      >
         Whole-industry emission pathways — the scenario ensemble &amp; its median
       </h3>
-      <p className="mb-3 mt-0.5 text-xs leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
+      <p
+        className={`mb-3 mt-0.5 leading-relaxed text-grey-600 dark:text-[var(--mh-muted)] ${
+          headline ? 'max-w-text text-[13px]' : 'text-xs'
+        }`}
+      >
         Every sourced industry pathway indexed to 100 in its own base year, so the pace of decline
         is comparable across scopes that must never be summed (global vs EU; direct vs direct+indirect).
         The <span className="font-semibold" style={{ color: theme.median }}>ensemble median</span> is
-        computed across the pathways at each year. The European Commission&apos;s 2040 Impact-Assessment
-        scenarios and the ESABCC 2040 advice are highlighted — they are the EU&apos;s own 2040 target
-        pathways. Hover any line for its value; absolute tonnages and source links are in the table
-        and the workbook.
+        computed across the pathways at each year. The European Commission&apos;s three 2040
+        Impact-Assessment options (S1/S2/S3) are drawn in colour with their 2040 range shaded, and the
+        ESABCC 2040 advice alongside them — these are the EU&apos;s own 2040 target pathways. Hover any
+        line for its value; absolute tonnages and source links are in the table and the workbook.
       </p>
 
-      <div className="relative h-[380px]">
+      <div className={`relative ${headline ? 'h-[440px]' : 'h-[380px]'}`}>
         <Line data={data} options={options} />
       </div>
 
@@ -249,15 +339,91 @@ export function MultiScenarioFigure() {
           Ensemble median
         </span>
         {highlighted.map((s) => (
-          <span key={s.id} className="flex items-center gap-1.5 text-grey-700">
+          <span key={s.id} className="flex items-center gap-1.5 text-grey-700 dark:text-[var(--mh-muted)]">
             <span className="inline-block h-0.5 w-5" style={{ backgroundColor: HIGHLIGHT_COLORS[s.id] }} />
             {s.label}
           </span>
         ))}
         <span className="flex items-center gap-1.5 text-grey-500 dark:text-[var(--mh-muted)]">
+          <span className="inline-block h-3 w-5 rounded-sm" style={{ backgroundColor: theme.corridor }} />
+          Commission 2040 range (S1–S3)
+        </span>
+        <span className="flex items-center gap-1.5 text-grey-500 dark:text-[var(--mh-muted)]">
           <span className="inline-block h-0.5 w-5" style={{ backgroundColor: MUTED }} />
           {others.length} further pathways (ensemble)
         </span>
+      </div>
+
+      {/* ── Commission 2040 Impact-Assessment overview strip ──────────────
+          The three IA options side by side — ambition target and the 2040
+          industry outcome each lands on — with the ESABCC advice for contrast.
+          This is the "better overview with the Commission scenarios": the
+          reader gets the EU's own 2040 corridor without reading the table. */}
+      <div className="mt-4 rounded-xl border border-grey-200 bg-grey-50 p-3 sm:p-4 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]">
+        <div className="mb-2 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+          <h4 className="text-[11px] font-bold uppercase tracking-wide text-grey-600 dark:text-[var(--mh-muted)]">
+            The EU&apos;s 2040 target — Commission Impact-Assessment options
+          </h4>
+          <span className="text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+            Industry GHG lands at 30–219 Mt in 2040 across the set ·{' '}
+            <SourceLink sourceId="ec-2040-ia">SWD(2024) 63</SourceLink>
+          </span>
+        </div>
+        <div className="grid gap-2.5 sm:grid-cols-3">
+          {ecIa.map((s) => {
+            const o = outcome2040(s);
+            const color = HIGHLIGHT_COLORS[s.id];
+            const preferred = s.id === 'sc-ec-ia-s3';
+            return (
+              <div
+                key={s.id}
+                className="rounded-lg border bg-white p-2.5 dark:bg-[var(--mh-card)]"
+                style={{ borderColor: `${color}59`, borderLeft: `3px solid ${color}` }}
+              >
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[13px] font-bold text-grey-900 dark:text-[var(--mh-fg)]">
+                    {s.label.replace('EU 2040 IA — ', '')}
+                  </span>
+                  {preferred && (
+                    <span className="rounded bg-primary/10 px-1 py-0.5 text-[9px] font-bold uppercase tracking-wide text-primary">
+                      Preferred
+                    </span>
+                  )}
+                </div>
+                <div className="mt-0.5 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+                  {s.net2040}
+                </div>
+                {o && (
+                  <div className="mt-1.5 flex items-baseline gap-1">
+                    <span className="text-[17px] font-bold tabular-nums" style={{ color }}>
+                      {o.value}
+                    </span>
+                    <span className="text-[10px] text-grey-500 dark:text-[var(--mh-muted)]">
+                      Mt · −{o.cut}% vs 2022
+                    </span>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        {esabcc2040 &&
+          (() => {
+            const o = outcome2040(esabcc2040);
+            return (
+              <p className="mt-2.5 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-[11.5px] leading-relaxed text-grey-600 dark:text-[var(--mh-muted)]">
+                <span
+                  className="inline-block h-2.5 w-2.5 rounded-full"
+                  style={{ backgroundColor: HIGHLIGHT_COLORS['sc-esabcc-2040'] }}
+                />
+                <span className="font-semibold text-grey-800 dark:text-[var(--mh-fg)]">
+                  ESABCC 2040 advice
+                </span>
+                — industry CO₂ to {o ? `${o.value} Mt` : '89–129 Mt'} (max path), on a stricter
+                2030–2050 budget than the Commission IA and explicitly minimising CO₂ removals.
+              </p>
+            );
+          })()}
       </div>
 
       <details className="mt-3">
