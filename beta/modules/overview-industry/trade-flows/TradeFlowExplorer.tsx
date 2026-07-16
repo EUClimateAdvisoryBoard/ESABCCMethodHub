@@ -34,6 +34,7 @@ import {
   DIVISION_TRADE,
   TRADE_BRANCH_COLORS,
   CRITICAL_MATERIALS,
+  PRODUCT_DEPENDENCIES,
   RISK_HOTSPOTS,
   SECTOR_IO_INPUTS,
   ENERGY_FEEDSTOCK_DEPENDENCY,
@@ -238,6 +239,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
   const destinations = exportDestinationsFor(code);
   const skew = IO_GROUP_SKEW_NOTES[code];
   const materials = CRITICAL_MATERIALS.filter((m) => mentionsDivision(m.usedIn, code));
+  const products = PRODUCT_DEPENDENCIES.filter((p) => mentionsDivision(p.naceDivision, code));
   const risks = RISK_HOTSPOTS.filter((h) => mentionsDivision(h.naceDivision, code));
   const energy = ENERGY_FEEDSTOCK_DEPENDENCY.filter((e) => mentionsDivision(e.naceRelevance, code));
 
@@ -503,7 +505,7 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
       </div>
 
       {/* division-specific dependencies */}
-      {(materials.length > 0 || risks.length > 0 || energy.length > 0) && (
+      {(materials.length > 0 || products.length > 0 || risks.length > 0 || energy.length > 0) && (
         <div className="grid gap-4 lg:grid-cols-2">
           {(materials.length > 0 || energy.length > 0) && (
             <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
@@ -591,6 +593,45 @@ function DivisionProfile({ code, onSelect }: { code: string; onSelect: (c: strin
                     </div>
                   </li>
                 ))}
+              </ul>
+            </div>
+          )}
+
+          {products.length > 0 && (
+            <div className="rounded-lg border border-grey-200 dark:border-[var(--mh-border)] bg-white dark:bg-[var(--mh-card)] p-4">
+              <h4 className="text-sm font-bold text-grey-900 dark:text-[var(--mh-fg)]">Import-dependent products of {div.code}</h4>
+              <p className="mt-1 text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+                Finished / intermediate products (not raw materials) this division makes or embeds and the
+                EU imports at scale. Bar = largest supplier&apos;s share (basis on hover).
+              </p>
+              <ul className="mt-2 space-y-1.5">
+                {products.map((p) => {
+                  const share = p.supplierShare ?? 0;
+                  const china = /china/i.test(p.topSupplier);
+                  return (
+                    <li key={p.product} className="rounded bg-grey-50 dark:bg-[var(--mh-bg)] p-2" title={p.note}>
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="text-[11px] font-semibold text-grey-800 dark:text-[var(--mh-fg)]">{p.product}</span>
+                        <span className="shrink-0 text-[10px] text-grey-600 dark:text-[var(--mh-muted)]">{p.topSupplier}</span>
+                      </div>
+                      <div className="mt-1 flex items-center gap-2" title={`${p.supplierShare != null ? `${p.supplierShare}% ` : ''}${p.shareBasis}`}>
+                        <div className="h-3 flex-1 overflow-hidden rounded-sm bg-grey-200 dark:bg-[var(--mh-border)]">
+                          <div
+                            className="h-full"
+                            style={{ width: `${Math.max(share, 4)}%`, background: china ? '#B83230' : '#004B7F' }}
+                          />
+                        </div>
+                        <span className="w-24 shrink-0 text-right text-[10px] tabular-nums text-grey-600 dark:text-[var(--mh-muted)]">
+                          {p.supplierShare != null ? `${p.supplierShare}%` : 'n/a'}
+                          {p.euImportReliance != null ? ` · reliance ${p.euImportReliance}%` : ''}
+                        </span>
+                      </div>
+                      <div className="mt-0.5 text-[9px]">
+                        <SourceLink src={p.src} />
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           )}

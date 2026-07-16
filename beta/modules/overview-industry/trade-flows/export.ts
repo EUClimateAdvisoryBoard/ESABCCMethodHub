@@ -24,7 +24,8 @@
  *    9. "Energy dependency"     — live nrg_ind_id rows + Russia-share row.
  *   10. "Risk hotspots"         — import reliance × supplier concentration.
  *   11. "Critical inputs"       — named imported inputs per division.
- *   12. "Sources"               — every source deduplicated, clickable URL.
+ *   12. "Product dependencies"  — import-dependent manufactured/finished products.
+ *   13. "Sources"               — every source deduplicated, clickable URL.
  *
  * Uses ExcelJS (existing project dep), same pattern as the Downstream
  * sub-module handover export (../downstream/export.ts).
@@ -40,6 +41,7 @@ import {
   HEADLINE_FACTS,
   CRITICAL_MATERIALS,
   STRATEGIC_DEPENDENCIES,
+  PRODUCT_DEPENDENCIES,
   ENERGY_FEEDSTOCK_DEPENDENCY,
   RISK_HOTSPOTS,
   SECTOR_IO_INPUTS,
@@ -65,7 +67,7 @@ import {
 } from './eurostat-io.generated';
 
 /**
- * The 12 worksheet names, in the exact order they are added below (kept
+ * The 13 worksheet names, in the exact order they are added below (kept
  * adjacent to the `wb.addWorksheet(SHEET_NAMES[i], …)` calls so the two can
  * never drift apart). `page.tsx` renders its "N sheets: …" summary straight
  * from this array — do not rename/reorder without checking that copy too.
@@ -82,6 +84,7 @@ export const SHEET_NAMES = [
   'Energy dependency',
   'Risk hotspots',
   'Critical inputs',
+  'Product dependencies',
   'Sources',
 ] as const;
 
@@ -499,8 +502,44 @@ export async function exportTradeFlowsWorkbook(): Promise<void> {
   styleHeaderRow(ci, VIOLET);
   wrapAll(ci);
 
-  /* ── 12 · Sources ─────────────────────────────────────────────────── */
-  const src = wb.addWorksheet(SHEET_NAMES[11], { properties: { tabColor: { argb: VIOLET } } });
+  /* ── 12 · Product dependencies ────────────────────────────────────── */
+  const pd = wb.addWorksheet(SHEET_NAMES[11], { properties: { tabColor: { argb: RED } } });
+  pd.columns = [
+    { header: 'Product', key: 'product', width: 40 },
+    { header: 'Category', key: 'category', width: 26 },
+    { header: 'NACE division(s)', key: 'naceDivision', width: 15 },
+    { header: 'EU import reliance %', key: 'ir', width: 13 },
+    { header: 'Largest supplier', key: 'topSupplier', width: 20 },
+    { header: 'Supplier share %', key: 'share', width: 12 },
+    { header: 'Share basis', key: 'shareBasis', width: 34 },
+    { header: 'Note', key: 'note', width: 80 },
+    { header: 'Source', key: 'source', width: 50 },
+  ];
+  PRODUCT_DEPENDENCIES.forEach((p) => {
+    pd.addRow({
+      product: p.product,
+      category: p.category,
+      naceDivision: p.naceDivision,
+      ir: p.euImportReliance ?? 'n/a',
+      topSupplier: p.topSupplier,
+      share: p.supplierShare ?? 'n/a',
+      shareBasis: p.shareBasis,
+      note: p.note,
+      source: cite(p.src),
+    });
+    addSrc(p.src, `Product dependency: ${p.product}`);
+  });
+  pd.addRow({});
+  pd.addRow({
+    product: 'HOW TO READ',
+    note:
+      'Import-dependent MANUFACTURED / finished products (not raw materials): the "not just raw materials" side of EU manufacturing\'s import reliance. Supplier share is customs-based (largest supplier\'s share of extra-EU imports) unless the Share basis says otherwise — a different concept from the EC/JRC "share of EU supply" used on the Critical materials sheet. Import reliance is blank where no clean demand-based figure is published.',
+  });
+  styleHeaderRow(pd, RED);
+  wrapAll(pd);
+
+  /* ── 13 · Sources ─────────────────────────────────────────────────── */
+  const src = wb.addWorksheet(SHEET_NAMES[12], { properties: { tabColor: { argb: VIOLET } } });
   src.columns = [
     { header: 'Organisation', key: 'org', width: 40 },
     { header: 'Title', key: 'title', width: 75 },

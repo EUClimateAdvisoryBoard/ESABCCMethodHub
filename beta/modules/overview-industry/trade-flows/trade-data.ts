@@ -140,6 +140,78 @@ export const SWD_2021_352: Source = {
   year: '2021',
 };
 
+/* -------- sources for the manufactured-product dependency layer (below) ----- */
+
+export const EUROSTAT_GREEN_TRADE: Source = {
+  org: 'Eurostat (Statistics Explained)',
+  title: 'International trade in products related to green energy',
+  url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=International_trade_in_products_related_to_green_energy',
+  year: '2024',
+};
+
+export const EUROSTAT_CHINA_TRADE: Source = {
+  org: 'Eurostat (Statistics Explained)',
+  title: 'EU trade with China — latest developments',
+  url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php?title=EU_trade_with_China_-_latest_developments',
+  year: '2024',
+};
+
+export const EUROSTAT_LAPTOPS: Source = {
+  org: 'Eurostat',
+  title: 'Imports of laptops at all-time high',
+  url: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/-/ddn-20201023-2',
+  year: '2020',
+};
+
+export const EUROSTAT_CLOTHING: Source = {
+  org: 'Eurostat',
+  title: 'Where do our clothes come from?',
+  url: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/-/edn-20200424-1',
+  year: '2019',
+};
+
+export const EUROSTAT_FURNITURE: Source = {
+  org: 'Eurostat',
+  title: 'EU trade in furniture around the globe',
+  url: 'https://ec.europa.eu/eurostat/web/products-eurostat-news/-/ddn-20180124-1',
+  year: '2016',
+};
+
+export const ACEA_BATTERIES: Source = {
+  org: 'ACEA',
+  title: 'Fact sheet — EU battery supply chain and import reliance',
+  url: 'https://www.acea.auto/fact/fact-sheet-eu-battery-supply-chain-and-import-reliance/',
+  year: '2024',
+};
+
+export const IEA_HEATPUMPS: Source = {
+  org: 'IEA',
+  title: 'Is a turnaround in sight for heat pump markets?',
+  url: 'https://www.iea.org/commentaries/is-a-turnaround-in-sight-for-heat-pump-markets',
+  year: '2024',
+};
+
+export const SCRREEN_RUBBER: Source = {
+  org: 'SCRREEN / EC',
+  title: 'Natural rubber CRM factsheet',
+  url: 'https://scrreen.eu/wp-content/uploads/2023/01/NATURAL-RUBBER_CRM_2020_Factsheets_critical_Final.pdf',
+  year: '2020',
+};
+
+export const PIIE_PPE: Source = {
+  org: 'PIIE',
+  title: "COVID-19: China's exports of medical supplies",
+  url: 'https://www.piie.com/blogs/trade-and-investment-policy-watch/covid-19-chinas-exports-medical-supplies-provide-ray-hope',
+  year: '2020',
+};
+
+export const PHARMA_API_DEP: Source = {
+  org: 'Pharmacia (peer-reviewed)',
+  title: "The EU's dependence on imports of active pharmaceutical ingredients from third countries",
+  url: 'https://pharmacia.pensoft.net/article/172383/',
+  year: '2025',
+};
+
 /* ------------------------------------------------------------ trade branches */
 
 /**
@@ -493,6 +565,129 @@ export const RISK_HOTSPOTS: RiskHotspot[] = [
   { label: 'Crude oil / refined feedstock', naceDivision: 'C19', importReliance: 0.97, supplierConcentration: 0.16, supplier: 'USA (crude/products)', src: { org: 'Eurostat', title: 'Energy production and imports', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Energy_production_and_imports', year: '2024' } },
   { label: 'Natural gas (chemicals feedstock)', naceDivision: 'C20', importReliance: 0.90, supplierConcentration: 0.30, supplier: 'Norway', src: { org: 'Eurostat', title: 'Energy production and imports', url: 'https://ec.europa.eu/eurostat/statistics-explained/index.php/Energy_production_and_imports', year: '2024' } },
 ];
+
+/* ------------------------------------------ manufactured-product dependencies */
+
+export interface ProductDependency {
+  /** The manufactured / intermediate product family (not a raw material). */
+  product: string;
+  /** NACE Section C division(s) that make or embed the product ('C26', 'C27/C29'). */
+  naceDivision: string;
+  /** Short product-group label for grouping/colour. */
+  category: string;
+  /** EU import reliance, % of demand met by imports; null where no clean demand-based figure is published. */
+  euImportReliance: number | null;
+  topSupplier: string;
+  /** Largest supplier's share, %; null where obscured. See `shareBasis` for what it measures. */
+  supplierShare: number | null;
+  /** What `supplierShare` measures, e.g. 'of extra-EU imports (2024)' — kept explicit because
+   *  product shares are usually import-based, not the EC "share of EU supply" used for raw materials. */
+  shareBasis: string;
+  note: string;
+  src: Source;
+  /**
+   * Optional coordinates for the shared import-dependency map (both 0–1). Present ONLY where a
+   * demand-based reliance AND a single-supplier concentration are both defensible from the source,
+   * so the product can sit on the same two axes as the raw-materials hotspots without mixing concepts.
+   */
+  map?: { importReliance: number; supplierConcentration: number };
+}
+
+/**
+ * CURATED LAYER — import-dependent MANUFACTURED / intermediate products (the
+ * "not just raw materials" side of EU manufacturing's import dependence),
+ * spanning Section C beyond the metals-and-minerals divisions the raw-materials
+ * register already covers: electronics (C26), electrical & batteries (C27),
+ * vehicles (C29), machinery (C28), pharmaceuticals (C21), apparel (C14),
+ * rubber (C22), furniture (C31) and medical goods (C32).
+ *
+ * Product supplier shares are typically "largest supplier's share of extra-EU
+ * imports" (customs-based), NOT the EC/JRC "share of EU supply" used for raw
+ * materials — `shareBasis` states which, per row. Read every figure as
+ * "as reported by <source>".
+ */
+export const PRODUCT_DEPENDENCIES: ProductDependency[] = [
+  {
+    product: 'Solar PV panels & cells', naceDivision: 'C26/C27', category: 'Clean-tech equipment',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 98, shareBasis: 'of extra-EU imports (2024)',
+    note: 'EU imported €11.1 bn of solar panels in 2024, 98% from China; EU domestic module manufacturing meets only a small share of demand — flagged a strategic dependency by the Commission',
+    src: EUROSTAT_GREEN_TRADE, map: { importReliance: 0.95, supplierConcentration: 0.98 },
+  },
+  {
+    product: 'Lithium-ion battery cells & packs', naceDivision: 'C27/C29', category: 'Clean-tech equipment',
+    euImportReliance: 90, topSupplier: 'China', supplierShare: 87, shareBasis: 'of EU battery imports by value (2024)',
+    note: 'EU imported ~€27 bn of batteries in 2024, ~87% from China; the finished-cell counterpart to the lithium/cobalt/graphite raw-material rows',
+    src: ACEA_BATTERIES, map: { importReliance: 0.90, supplierConcentration: 0.87 },
+  },
+  {
+    product: 'Portable computers / laptops', naceDivision: 'C26', category: 'Electronics & IT hardware',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 90, shareBasis: 'of extra-EU imports (2019–2020)',
+    note: 'China supplied ~90% of extra-EU laptop imports; essentially no volume laptop assembly remains in the EU',
+    src: EUROSTAT_LAPTOPS, map: { importReliance: 0.95, supplierConcentration: 0.90 },
+  },
+  {
+    product: 'Smartphones & telecom equipment', naceDivision: 'C26', category: 'Electronics & IT hardware',
+    euImportReliance: null, topSupplier: 'China', supplierShare: null, shareBasis: 'largest supplier (import-based)',
+    note: 'Telecoms & sound equipment was the EU’s 2nd-largest import category from China (€60.9 bn, 2024); China is the dominant extra-EU supplier of phones and network gear',
+    src: EUROSTAT_CHINA_TRADE,
+  },
+  {
+    product: 'Semiconductors / advanced logic chips', naceDivision: 'C26', category: 'Electronics & IT hardware',
+    euImportReliance: null, topSupplier: 'Taiwan / East Asia', supplierShare: 92, shareBasis: 'Taiwan share of global advanced-logic (≤10 nm) capacity',
+    note: 'Advanced-node fabrication is concentrated in Taiwan (~92% of leading-edge capacity); a critical digital-transition dependency the EU Chips Act targets. Already plotted on the import-dependency map via the strategic-dependency layer',
+    src: SWD_2021_352,
+  },
+  {
+    product: 'Active pharmaceutical ingredients & generic medicines', naceDivision: 'C21', category: 'Pharmaceuticals',
+    euImportReliance: 80, topSupplier: 'China / India', supplierShare: 45, shareBasis: 'China share of imported pharma ingredients',
+    note: 'Up to ~80% of the chemical substances used in EU pharma are made outside the EU (China ~45%); ~90% of APIs for generics come from India & China',
+    src: PHARMA_API_DEP, map: { importReliance: 0.80, supplierConcentration: 0.45 },
+  },
+  {
+    product: 'Apparel & clothing', naceDivision: 'C14', category: 'Textiles & consumer goods',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 29, shareBasis: 'of extra-EU clothing imports (2019)',
+    note: 'Extra-EU clothing imports: China 29%, Bangladesh 19%, Türkiye 11% — a classic offshored value chain; the EU retains only premium/quick-response production',
+    src: EUROSTAT_CLOTHING,
+  },
+  {
+    product: 'Natural rubber (tyre feedstock)', naceDivision: 'C22', category: 'Rubber & plastics',
+    euImportReliance: 100, topSupplier: 'South-East Asia', supplierShare: 65, shareBasis: 'South-East Asia share of EU natural-rubber imports',
+    note: 'The EU grows no natural rubber; South-East Asia supplies ~65% of imports, the top five origins (incl. Côte d’Ivoire) ~89%. Tyres are the main use',
+    src: SCRREEN_RUBBER,
+  },
+  {
+    product: 'Heat pumps (air-source)', naceDivision: 'C28', category: 'Clean-tech equipment',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 60, shareBasis: 'China share of the EU air-source heat-pump market',
+    note: 'China is the leading supplier of air-source heat pumps to Europe (~60%); EU domestic manufacturing exists but import share is rising fast',
+    src: IEA_HEATPUMPS,
+  },
+  {
+    product: 'Furniture', naceDivision: 'C31', category: 'Textiles & consumer goods',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 57, shareBasis: 'of extra-EU furniture imports (2016)',
+    note: 'China supplied ~57% of extra-EU furniture imports; the EU is a net exporter overall but imports the low-cost segment (figure is 2016 vintage)',
+    src: EUROSTAT_FURNITURE,
+  },
+  {
+    product: 'Medical protective equipment (PPE)', naceDivision: 'C32', category: 'Medical & other manufacturing',
+    euImportReliance: null, topSupplier: 'China', supplierShare: 50, shareBasis: 'China share of extra-EU PPE imports (2018)',
+    note: 'China supplied ~50% of extra-EU PPE imports (71% of face masks) pre-COVID; the pandemic exposed the concentration when export volumes and prices spiked',
+    src: PIIE_PPE,
+  },
+];
+
+/** PRODUCT_DEPENDENCIES rows that carry map coordinates, reshaped as RiskHotspot points. */
+export const productMapPoints = (): RiskHotspot[] =>
+  PRODUCT_DEPENDENCIES.filter((p) => p.map).map((p) => ({
+    label: p.product,
+    naceDivision: p.naceDivision,
+    importReliance: p.map!.importReliance,
+    supplierConcentration: p.map!.supplierConcentration,
+    supplier: p.topSupplier,
+    src: p.src,
+  }));
+
+/** The full set plotted on the import-dependency map: raw-material hotspots + mappable products. */
+export const ALL_MAPPED_DEPENDENCIES: RiskHotspot[] = [...RISK_HOTSPOTS, ...productMapPoints()];
 
 /* --------------------------------------- curated critical imported inputs */
 
