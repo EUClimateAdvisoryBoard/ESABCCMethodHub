@@ -681,13 +681,16 @@ export default function ReportObjectivesPage() {
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             Aggregated from the roadmaps, the peer-reviewed pathway literature and the
-            IIASA-hosted AR6 scenario ensemble. Figure&nbsp;6 puts every sourced pathway on one
-            indexed plot with the computed ensemble median and the EU&apos;s own 2040 scenarios
-            highlighted; Figure&nbsp;7 opens the whole-industry curve into its NACE Section-C
-            subsectors. Every figure has a table-view twin, and every underlying value is in the
-            workbook with its source link.
+            IIASA-hosted AR6 scenario ensemble. The headline figure (Fig&nbsp;6) leads: it puts every
+            sourced pathway on one indexed plot with the computed ensemble median and the European
+            Commission&apos;s own 2040 Impact-Assessment options (S1/S2/S3) drawn out with their 2040
+            range shaded — the EU&apos;s target corridor at a glance. Figure&nbsp;7 then opens that
+            whole-industry curve into its NACE Section-C subsectors, and the supporting figures
+            (1–5) carry the pathway, electrification and investment evidence. Every figure has a
+            table-view twin, and every underlying value is in the workbook with its source link.
           </p>
           <div className="space-y-5">
+            <MultiScenarioFigure headline />
             <TrajectoriesFigure />
             <BenchmarkFigure
               number={2}
@@ -726,7 +729,6 @@ export default function ReportObjectivesPage() {
                 axisLabel="bn EUR (total)"
               />
             </div>
-            <MultiScenarioFigure />
             <SubsectorDrilldown />
           </div>
         </section>
