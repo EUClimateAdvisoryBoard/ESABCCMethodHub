@@ -309,6 +309,177 @@ const RECIPES = {
     sourceTitle: 'Eurostat nrg_bal_s · gross inland consumption of biofuels + renewable waste · EU27_2020',
     note: 'Spliced sum (GWh→TWh); a failed siec leg is skipped, the splice ratio absorbs the level offset.',
   },
+
+  // ── Coverage extension (July 2026, batch 2): agriculture / buildings /
+  //    industry-materials indicators wired from the live Eurostat JSON-stat
+  //    path after per-indicator API probes. Splice-mode wherever the source
+  //    scope/level differs from the report (production-volume indices, memo
+  //    aggregates); direct only where the source reproduces the report's own
+  //    last value within a few percent.
+  'esabcc-a6-food-waste': {
+    // Report stores kg of food waste per capita; env_wasfw total (all NACE
+    // sectors + households) is on the same unit. Fetched 2020=128 vs report
+    // 131.0 (0.98× — a Eurostat vintage revision, within a few %), so direct.
+    kind: 'eurostat', dataset: 'env_wasfw', round: 0,
+    filters: { geo: 'EU27_2020', nace_r2: 'TOT', unit: 'KG_HAB' },
+    toRepo: v => v,
+    sourceUrl: `${EUROSTAT_BASE}/env_wasfw?format=JSON&geo=EU27_2020&nace_r2=TOT&unit=KG_HAB`,
+    sourceTitle: 'Eurostat env_wasfw · total food waste, kg per capita · EU27_2020',
+    note: 'Total food waste per capita (all NACE + households). Same unit as report; direct map.',
+  },
+  'esabcc-b4-population': {
+    // Report stores EU population as an index (2005 = 1.0). demo_gind AVG is
+    // absolute average population, so splice: apply its year-on-year change to
+    // the report's index baseline — the absolute level cancels in the ratio,
+    // no base constant needed.
+    kind: 'eurostat', dataset: 'demo_gind', round: 3, mode: 'splice',
+    filters: { geo: 'EU27_2020', indic_de: 'AVG' },
+    toRepo: v => v,
+    sourceUrl: `${EUROSTAT_BASE}/demo_gind?format=JSON&geo=EU27_2020&indic_de=AVG`,
+    sourceTitle: 'Eurostat demo_gind · average population (indexed onto report 2005=1.0 baseline) · EU27_2020',
+    note: 'Spliced: absolute EU27 average population YoY change × the report’s population index baseline.',
+  },
+  // Industry material production — PRODCOM absolute tonnage (DS-056120/prom)
+  // and Comext trade (DS-045409) are NOT served by the JSON-stat dissemination
+  // API (404). The production-volume index sts_inpr_a IS, so splice its YoY
+  // change onto each report Mt baseline (splice uses trend only; index base
+  // 2021=100 cancels). Apparent-use / trade-balance need Comext flows → not
+  // wired (kept as report figures). C235/C201 are the narrowest EU27 proxies.
+  'esabcc-i2-steel-production': {
+    kind: 'eurostat', dataset: 'sts_inpr_a', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C241' },
+    toRepo: v => v,
+    sourceUrl: `${EUROSTAT_BASE}/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C241`,
+    sourceTitle: 'Eurostat sts_inpr_a · production-volume index (2021=100), NACE C241 basic iron & steel · EU27_2020',
+    note: 'Spliced: steel production-volume index YoY change × report 2021 baseline (152.8 Mt).',
+  },
+  'esabcc-i2-cement-production': {
+    kind: 'eurostat', dataset: 'sts_inpr_a', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C235' },
+    toRepo: v => v,
+    sourceUrl: `${EUROSTAT_BASE}/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C235`,
+    sourceTitle: 'Eurostat sts_inpr_a · production-volume index (2021=100), NACE C235 cement/lime/plaster · EU27_2020',
+    note: 'Spliced: cement-dominated NACE C235 production-volume index (cement-only C2351 has no EU27 series) YoY change × report 2021 baseline (182.5 Mt).',
+  },
+  'esabcc-i2-chemicals-production': {
+    kind: 'eurostat', dataset: 'sts_inpr_a', round: 2, mode: 'splice',
+    filters: { geo: 'EU27_2020', indic_bt: 'PRD', s_adj: 'CA', unit: 'I21', nace_r2: 'C201' },
+    toRepo: v => v,
+    sourceUrl: `${EUROSTAT_BASE}/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C201`,
+    sourceTitle: 'Eurostat sts_inpr_a · production-volume index (2021=100), NACE C201 basic chemicals · EU27_2020',
+    note: 'Spliced: basic-chemicals production-volume index YoY change × report 2021 baseline (26.84 Mt).',
+  },
+
+  // ── Agriculture livestock (July 2026, batch 2): meat/milk production,
+  //    herd sizes and pig-sector GHG from the live Eurostat animal-production
+  //    statistics. Per-species GHG for cattle is NOT wired: env_air_gge splits
+  //    agricultural emissions to combined cattle only, not bovine-meat vs
+  //    dairy (the report figures are an allocation model), and A4 apparent
+  //    consumption needs a net production+imports−exports the engine can't
+  //    express — both kept as report figures. `a2-*` and `a4-*` production
+  //    share one series (same recipe on both ids).
+  'esabcc-a2-bovine-production': {
+    kind: 'eurostat', dataset: 'apro_mt_pann', round: 3,
+    filters: { geo: 'EU27_2020', meat: 'B1000', meatitem: 'SLAUGHT', unit: 'THS_T' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T`,
+    sourceTitle: 'Eurostat apro_mt_pann · bovine meat (B1000) slaughterings · EU27_2020',
+    note: 'Slaughterings = production; thousand t → Mt (÷1000). Direct (anchor 2020 0.984×).',
+  },
+  'esabcc-a4-bovine-production': {
+    kind: 'eurostat', dataset: 'apro_mt_pann', round: 3,
+    filters: { geo: 'EU27_2020', meat: 'B1000', meatitem: 'SLAUGHT', unit: 'THS_T' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T`,
+    sourceTitle: 'Eurostat apro_mt_pann · bovine meat (B1000) slaughterings · EU27_2020',
+    note: 'Same series as esabcc-a2-bovine-production.',
+  },
+  'esabcc-a2-pig-production': {
+    kind: 'eurostat', dataset: 'apro_mt_pann', round: 2,
+    filters: { geo: 'EU27_2020', meat: 'B3100', meatitem: 'SLAUGHT', unit: 'THS_T' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B3100&meatitem=SLAUGHT&unit=THS_T`,
+    sourceTitle: 'Eurostat apro_mt_pann · pigmeat (B3100) slaughterings · EU27_2020',
+    note: 'Pig code B3100 (not B4000 = sheep/goats); thousand t → Mt. Direct (anchor 2020 0.992×).',
+  },
+  'esabcc-a4-pig-production': {
+    kind: 'eurostat', dataset: 'apro_mt_pann', round: 2,
+    filters: { geo: 'EU27_2020', meat: 'B3100', meatitem: 'SLAUGHT', unit: 'THS_T' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B3100&meatitem=SLAUGHT&unit=THS_T`,
+    sourceTitle: 'Eurostat apro_mt_pann · pigmeat (B3100) slaughterings · EU27_2020',
+    note: 'Same series as esabcc-a2-pig-production.',
+  },
+  'esabcc-a2-dairy-production': {
+    kind: 'eurostat', dataset: 'apro_mk_farm', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', dairyprod: 'D1100A', milkitem: 'PRO' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mk_farm?format=JSON&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO`,
+    sourceTitle: 'Eurostat apro_mk_farm · raw milk total available on farms · EU27_2020',
+    note: 'Spliced: raw-milk-available scope differs slightly from the report dairy-production boundary (anchor 2020 0.983×); 1000 t → Mt.',
+  },
+  'esabcc-a4-dairy-production': {
+    kind: 'eurostat', dataset: 'apro_mk_farm', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', dairyprod: 'D1100A', milkitem: 'PRO' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mk_farm?format=JSON&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO`,
+    sourceTitle: 'Eurostat apro_mk_farm · raw milk total available on farms · EU27_2020',
+    note: 'Same series as esabcc-a2-dairy-production.',
+  },
+  'esabcc-a4-bovine-herd-size': {
+    kind: 'eurostat', dataset: 'apro_mt_lscatl', round: 2, mode: 'splice',
+    filters: { geo: 'EU27_2020', animals: 'A2000', month: 'M11_M12', unit: 'THS_HD' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_lscatl?format=JSON&geo=EU27_2020&animals=A2000&month=M11_M12&unit=THS_HD`,
+    sourceTitle: 'Eurostat apro_mt_lscatl · live bovine animals (A2000), Nov–Dec survey · EU27_2020',
+    note: 'Spliced: A2000 total cattle includes dairy, report bovine-meat herd is a subset (anchor 1.272×); thousand head → million head.',
+  },
+  'esabcc-a4-dairy-herd-size': {
+    kind: 'eurostat', dataset: 'apro_mt_lscatl', round: 2,
+    filters: { geo: 'EU27_2020', animals: 'A2300F', month: 'M11_M12', unit: 'THS_HD' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_lscatl?format=JSON&geo=EU27_2020&animals=A2300F&month=M11_M12&unit=THS_HD`,
+    sourceTitle: 'Eurostat apro_mt_lscatl · dairy cows (A2300F), Nov–Dec survey · EU27_2020',
+    note: 'Dairy cows; thousand head → million head. Direct (anchor 2020 0.995×).',
+  },
+  'esabcc-a4-pig-herd-size': {
+    kind: 'eurostat', dataset: 'apro_mt_lspig', round: 1, mode: 'splice',
+    filters: { geo: 'EU27_2020', animals: 'A3100', month: 'M11_M12', unit: 'THS_HD' },
+    toRepo: v => v / 1000,
+    sourceUrl: `${EUROSTAT_BASE}/apro_mt_lspig?format=JSON&geo=EU27_2020&animals=A3100&month=M11_M12&unit=THS_HD`,
+    sourceTitle: 'Eurostat apro_mt_lspig · live swine (A3100), Nov–Dec survey · EU27_2020',
+    note: 'Pig herd code A3100 (not A5000); thousand head → million head. Spliced onto report baseline (anchor 1.042×).',
+  },
+  'esabcc-a2-pig-ghg': {
+    // env_air_gge splits agricultural GHG to combined cattle only, so bovine
+    // and dairy GHG are un-sourceable; swine (CRF 3.A.3 enteric + 3.B.3 manure)
+    // IS separable → splice the swine on-farm GHG trend onto the report baseline.
+    kind: 'eurostat', dataset: 'env_air_gge', round: 2, mode: 'splice',
+    sumFilters: [
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A3' },
+      { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B3' },
+    ],
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A3`,
+    sourceTitle: 'Eurostat env_air_gge · swine enteric (CRF 3.A.3) + manure (CRF 3.B.3) GHG · EU27_2020',
+    note: 'Spliced: on-farm swine GHG (CO₂-eq) YoY change × report baseline (anchor 2021 0.929×). Cattle cannot be split into bovine-meat vs dairy in the inventory.',
+  },
+  'esabcc-a2-pig-ghg-intensity': {
+    kind: 'eurostat-ratio', round: 3, mode: 'splice',
+    num: {
+      dataset: 'env_air_gge',
+      legs: [
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3A3' },
+        { geo: 'EU27_2020', unit: 'MIO_T', freq: 'A', airpol: 'GHG', src_crf: 'CRF3B3' },
+      ],
+    },
+    den: {
+      dataset: 'apro_mt_pann',
+      legs: [{ geo: 'EU27_2020', meat: 'B3100', meatitem: 'SLAUGHT', unit: 'THS_T' }],
+    },
+    sourceUrl: `${EUROSTAT_BASE}/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3B3`,
+    sourceTitle: 'Eurostat env_air_gge swine GHG (3.A.3 + 3.B.3) ÷ apro_mt_pann pigmeat (B3100) · EU27_2020',
+    note: 'Spliced ratio: swine GHG ÷ pig production; num/den unit mix cancels in the YoY ratio, only the trend is applied to the report intensity baseline (conceptual 2020 0.931×).',
+  },
 };
 
 // ───────────────────────── helpers ─────────────────────────

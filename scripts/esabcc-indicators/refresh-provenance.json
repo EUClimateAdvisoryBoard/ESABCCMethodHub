@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T08:39:27.974Z",
+  "generatedAt": "2026-07-16T11:15:36.855Z",
   "indicators": [
     {
       "id": "esabcc-o2-pec",
@@ -23,7 +23,7 @@
       "id": "esabcc-e5-electrification",
       "sourceTitle": "Eurostat nrg_bal_s · electricity share of final energy · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_E&siec=E7000&unit=PC",
-      "note": "Percent÷100→fraction.",
+      "note": "Stored as percent-number to match ECNO duplicate end-use-electrification.",
       "status": "up-to-date",
       "baseYear": 2021,
       "newPoints": []
@@ -32,7 +32,7 @@
       "id": "esabcc-i6-industry-electrification",
       "sourceTitle": "Eurostat nrg_bal_s · industry electricity share · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&nrg_bal=FC_IND_E&siec=E7000&unit=PC",
-      "note": "Percent÷100→fraction.",
+      "note": "Stored as percent-number to match ECNO duplicate industry-electrification.",
       "status": "up-to-date",
       "baseYear": 2021,
       "newPoints": []
@@ -41,21 +41,21 @@
       "id": "esabcc-i3-circular-mat-use",
       "sourceTitle": "Eurostat cei_srm030 · circular material use rate · EU27_2020",
       "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/cei_srm030?format=JSON&geo=EU27_2020&unit=PC",
-      "note": "Percent÷100→fraction.",
+      "note": "Stored as percent-number — the TS series was rescaled ×100 (WP6 unit fix); the old ÷100 recipe failed its anchor check ever since. DB rows realigned by migration 075.",
       "status": "updated",
       "baseYear": 2021,
       "newPoints": [
         {
           "year": 2022,
-          "value": 0.114
+          "value": 11.4
         },
         {
           "year": 2023,
-          "value": 0.121
+          "value": 12.1
         },
         {
           "year": 2024,
-          "value": 0.122
+          "value": 12.2
         }
       ]
     },
@@ -204,6 +204,624 @@
         {
           "year": 2024,
           "value": -231
+        }
+      ]
+    },
+    {
+      "id": "esabcc-o1-ghg-total",
+      "sourceTitle": "Eurostat env_air_gge · total excl LULUCF incl intl aviation (TOTX4_MEMONIA) + intl maritime (1.D.1.b) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=TOTX4_MEMONIA",
+      "note": "Spliced: Climate-Law-scope proxy YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 3104.6
+        },
+        {
+          "year": 2024,
+          "value": 3222.1
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e2-fossil-power-share",
+      "sourceTitle": "Eurostat nrg_bal_peh · fossil ÷ total gross electricity production · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP",
+      "note": "Spliced ratio: (solid fossil + peat + oil shale + oil + gas) ÷ TOTAL, YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 31.42
+        },
+        {
+          "year": 2024,
+          "value": 28.11
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e2-res-noBio-power-share",
+      "sourceTitle": "Eurostat nrg_bal_peh · (hydro + geothermal + wind + solar) ÷ total gross electricity production · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_peh?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GEP",
+      "note": "Spliced ratio: non-biomass renewables ÷ TOTAL, YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 40.01
+        },
+        {
+          "year": 2024,
+          "value": 41.38
+        }
+      ]
+    },
+    {
+      "id": "esabcc-e3-grid-co2-intensity",
+      "sourceTitle": "Eurostat env_air_gge CRF 1.A.1 ÷ nrg_bal_peh gross electricity production · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF1A1",
+      "note": "Spliced trend proxy for the EEA intensity indicator; hand-check against the EEA-published value when available.",
+      "status": "updated",
+      "baseYear": 2022,
+      "newPoints": [
+        {
+          "year": 2023,
+          "value": 208.7
+        },
+        {
+          "year": 2024,
+          "value": 187.4
+        }
+      ]
+    },
+    {
+      "id": "esabcc-t3a-road-share-passenger",
+      "sourceTitle": "Eurostat tran_hv_psmod · car+bus share of inland passenger transport · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/tran_hv_psmod?format=JSON&geo=EU27_2020&unit=PC&vehicle=CAR_BUS_TOT",
+      "note": "Spliced: Eurostat modal-split scope (car+bus vs report car+two-wheeler) differs slightly; YoY change × report baseline.",
+      "status": "mismatch",
+      "message": "splice anchor 2020 missing in source",
+      "baseYear": 2020
+    },
+    {
+      "id": "esabcc-t5b-zev-lorries-stock",
+      "sourceTitle": "Eurostat road_eqs_lormot · battery-electric heavy lorries in the fleet · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/road_eqs_lormot?format=JSON&geo=EU27_2020&unit=NR&vehicle=LOR_HVY&mot_nrg=ELC",
+      "note": "Direct count; anchor check guards the EAFO-vs-Eurostat scope (skipped on mismatch).",
+      "status": "up-to-date",
+      "baseYear": 2022,
+      "newPoints": []
+    },
+    {
+      "id": "esabcc-t6a-fossil-transport-share",
+      "sourceTitle": "Eurostat nrg_bal_s · fossil ÷ total transport final energy · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=FC_TRA_E",
+      "note": "Spliced ratio: report scope includes intl bunkers, FC_TRA does not; YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 93.41
+        },
+        {
+          "year": 2023,
+          "value": 92.91
+        },
+        {
+          "year": 2024,
+          "value": 93.17
+        }
+      ]
+    },
+    {
+      "id": "esabcc-l6-forest-sink",
+      "sourceTitle": "Eurostat env_air_gge · CRF 4.A forest land · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4A",
+      "note": "Spliced: report stores the sink as a positive magnitude (living biomass only) while CRF 4.A is negative net — the ratio preserves the report convention.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 236.7
+        },
+        {
+          "year": 2023,
+          "value": 255.7
+        },
+        {
+          "year": 2024,
+          "value": 258.3
+        }
+      ]
+    },
+    {
+      "id": "esabcc-l7-nonforest-lulucf",
+      "sourceTitle": "Eurostat env_air_gge · CRF 4.B–4.E (cropland, grassland, wetlands, settlements) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF4B",
+      "note": "Spliced sum of the non-forest land categories, YoY change × report baseline.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 101.2
+        },
+        {
+          "year": 2023,
+          "value": 113.9
+        },
+        {
+          "year": 2024,
+          "value": 103
+        }
+      ]
+    },
+    {
+      "id": "esabcc-l8-bioenergy-use",
+      "sourceTitle": "Eurostat nrg_bal_s · gross inland consumption of biofuels + renewable waste · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/nrg_bal_s?format=JSON&geo=EU27_2020&unit=GWH&nrg_bal=GIC",
+      "note": "Spliced sum (GWh→TWh); a failed siec leg is skipped, the splice ratio absorbs the level offset.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 1811.9
+        },
+        {
+          "year": 2023,
+          "value": 1766.3
+        },
+        {
+          "year": 2024,
+          "value": 1761.2
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a6-food-waste",
+      "sourceTitle": "Eurostat env_wasfw · total food waste, kg per capita · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_wasfw?format=JSON&geo=EU27_2020&nace_r2=TOT&unit=KG_HAB",
+      "note": "Total food waste per capita (all NACE + households). Same unit as report; direct map.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 129
+        },
+        {
+          "year": 2022,
+          "value": 129
+        },
+        {
+          "year": 2023,
+          "value": 129
+        }
+      ]
+    },
+    {
+      "id": "esabcc-b4-population",
+      "sourceTitle": "Eurostat demo_gind · average population (indexed onto report 2005=1.0 baseline) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/demo_gind?format=JSON&geo=EU27_2020&indic_de=AVG",
+      "note": "Spliced: absolute EU27 average population YoY change × the report’s population index baseline.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 1.027
+        },
+        {
+          "year": 2022,
+          "value": 1.029
+        },
+        {
+          "year": 2023,
+          "value": 1.033
+        },
+        {
+          "year": 2024,
+          "value": 1.036
+        },
+        {
+          "year": 2025,
+          "value": 1.04
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-steel-production",
+      "sourceTitle": "Eurostat sts_inpr_a · production-volume index (2021=100), NACE C241 basic iron & steel · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C241",
+      "note": "Spliced: steel production-volume index YoY change × report 2021 baseline (152.8 Mt).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 136.3
+        },
+        {
+          "year": 2023,
+          "value": 125.9
+        },
+        {
+          "year": 2024,
+          "value": 128.8
+        },
+        {
+          "year": 2025,
+          "value": 128.8
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-cement-production",
+      "sourceTitle": "Eurostat sts_inpr_a · production-volume index (2021=100), NACE C235 cement/lime/plaster · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C235",
+      "note": "Spliced: cement-dominated NACE C235 production-volume index (cement-only C2351 has no EU27 series) YoY change × report 2021 baseline (182.5 Mt).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 174.7
+        },
+        {
+          "year": 2023,
+          "value": 160.8
+        },
+        {
+          "year": 2024,
+          "value": 159.1
+        },
+        {
+          "year": 2025,
+          "value": 157.7
+        }
+      ]
+    },
+    {
+      "id": "esabcc-i2-chemicals-production",
+      "sourceTitle": "Eurostat sts_inpr_a · production-volume index (2021=100), NACE C201 basic chemicals · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/sts_inpr_a?format=JSON&geo=EU27_2020&indic_bt=PRD&s_adj=CA&unit=I21&nace_r2=C201",
+      "note": "Spliced: basic-chemicals production-volume index YoY change × report 2021 baseline (26.84 Mt).",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 25.36
+        },
+        {
+          "year": 2023,
+          "value": 21.45
+        },
+        {
+          "year": 2024,
+          "value": 19.89
+        },
+        {
+          "year": 2025,
+          "value": 18.55
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-bovine-production",
+      "sourceTitle": "Eurostat apro_mt_pann · bovine meat (B1000) slaughterings · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T",
+      "note": "Slaughterings = production; thousand t → Mt (÷1000). Direct (anchor 2020 0.984×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 6.802
+        },
+        {
+          "year": 2022,
+          "value": 6.64
+        },
+        {
+          "year": 2023,
+          "value": 6.385
+        },
+        {
+          "year": 2024,
+          "value": 6.584
+        },
+        {
+          "year": 2025,
+          "value": 6.32
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-bovine-production",
+      "sourceTitle": "Eurostat apro_mt_pann · bovine meat (B1000) slaughterings · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B1000&meatitem=SLAUGHT&unit=THS_T",
+      "note": "Same series as esabcc-a2-bovine-production.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 6.802
+        },
+        {
+          "year": 2022,
+          "value": 6.64
+        },
+        {
+          "year": 2023,
+          "value": 6.385
+        },
+        {
+          "year": 2024,
+          "value": 6.584
+        },
+        {
+          "year": 2025,
+          "value": 6.32
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-pig-production",
+      "sourceTitle": "Eurostat apro_mt_pann · pigmeat (B3100) slaughterings · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B3100&meatitem=SLAUGHT&unit=THS_T",
+      "note": "Pig code B3100 (not B4000 = sheep/goats); thousand t → Mt. Direct (anchor 2020 0.992×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 23.39
+        },
+        {
+          "year": 2022,
+          "value": 22.07
+        },
+        {
+          "year": 2023,
+          "value": 20.64
+        },
+        {
+          "year": 2024,
+          "value": 21.09
+        },
+        {
+          "year": 2025,
+          "value": 21.84
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-pig-production",
+      "sourceTitle": "Eurostat apro_mt_pann · pigmeat (B3100) slaughterings · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_pann?format=JSON&geo=EU27_2020&meat=B3100&meatitem=SLAUGHT&unit=THS_T",
+      "note": "Same series as esabcc-a2-pig-production.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 23.39
+        },
+        {
+          "year": 2022,
+          "value": 22.07
+        },
+        {
+          "year": 2023,
+          "value": 20.64
+        },
+        {
+          "year": 2024,
+          "value": 21.09
+        },
+        {
+          "year": 2025,
+          "value": 21.84
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-dairy-production",
+      "sourceTitle": "Eurostat apro_mk_farm · raw milk total available on farms · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mk_farm?format=JSON&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO",
+      "note": "Spliced: raw-milk-available scope differs slightly from the report dairy-production boundary (anchor 2020 0.983×); 1000 t → Mt.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 162.6
+        },
+        {
+          "year": 2022,
+          "value": 162.8
+        },
+        {
+          "year": 2023,
+          "value": 163.7
+        },
+        {
+          "year": 2024,
+          "value": 164.6
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-dairy-production",
+      "sourceTitle": "Eurostat apro_mk_farm · raw milk total available on farms · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mk_farm?format=JSON&geo=EU27_2020&dairyprod=D1100A&milkitem=PRO",
+      "note": "Same series as esabcc-a2-dairy-production.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 162.6
+        },
+        {
+          "year": 2022,
+          "value": 162.8
+        },
+        {
+          "year": 2023,
+          "value": 163.7
+        },
+        {
+          "year": 2024,
+          "value": 164.6
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-bovine-herd-size",
+      "sourceTitle": "Eurostat apro_mt_lscatl · live bovine animals (A2000), Nov–Dec survey · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lscatl?format=JSON&geo=EU27_2020&animals=A2000&month=M11_M12&unit=THS_HD",
+      "note": "Spliced: A2000 total cattle includes dairy, report bovine-meat herd is a subset (anchor 1.272×); thousand head → million head.",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 59.5
+        },
+        {
+          "year": 2022,
+          "value": 58.79
+        },
+        {
+          "year": 2023,
+          "value": 57.97
+        },
+        {
+          "year": 2024,
+          "value": 56.5
+        },
+        {
+          "year": 2025,
+          "value": 56.26
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-dairy-herd-size",
+      "sourceTitle": "Eurostat apro_mt_lscatl · dairy cows (A2300F), Nov–Dec survey · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lscatl?format=JSON&geo=EU27_2020&animals=A2300F&month=M11_M12&unit=THS_HD",
+      "note": "Dairy cows; thousand head → million head. Direct (anchor 2020 0.995×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 20.21
+        },
+        {
+          "year": 2022,
+          "value": 20.07
+        },
+        {
+          "year": 2023,
+          "value": 19.91
+        },
+        {
+          "year": 2024,
+          "value": 19.22
+        },
+        {
+          "year": 2025,
+          "value": 19.02
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a4-pig-herd-size",
+      "sourceTitle": "Eurostat apro_mt_lspig · live swine (A3100), Nov–Dec survey · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/apro_mt_lspig?format=JSON&geo=EU27_2020&animals=A3100&month=M11_M12&unit=THS_HD",
+      "note": "Pig herd code A3100 (not A5000); thousand head → million head. Spliced onto report baseline (anchor 1.042×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 135.9
+        },
+        {
+          "year": 2022,
+          "value": 129
+        },
+        {
+          "year": 2023,
+          "value": 127.5
+        },
+        {
+          "year": 2024,
+          "value": 126.8
+        },
+        {
+          "year": 2025,
+          "value": 126.1
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-pig-ghg",
+      "sourceTitle": "Eurostat env_air_gge · swine enteric (CRF 3.A.3) + manure (CRF 3.B.3) GHG · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3A3",
+      "note": "Spliced: on-farm swine GHG (CO₂-eq) YoY change × report baseline (anchor 2021 0.929×). Cattle cannot be split into bovine-meat vs dairy in the inventory.",
+      "status": "updated",
+      "baseYear": 2021,
+      "newPoints": [
+        {
+          "year": 2022,
+          "value": 28.01
+        },
+        {
+          "year": 2023,
+          "value": 26.82
+        },
+        {
+          "year": 2024,
+          "value": 26.18
+        }
+      ]
+    },
+    {
+      "id": "esabcc-a2-pig-ghg-intensity",
+      "sourceTitle": "Eurostat env_air_gge swine GHG (3.A.3 + 3.B.3) ÷ apro_mt_pann pigmeat (B3100) · EU27_2020",
+      "sourceUrl": "https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/env_air_gge?format=JSON&geo=EU27_2020&unit=MIO_T&airpol=GHG&src_crf=CRF3B3",
+      "note": "Spliced ratio: swine GHG ÷ pig production; num/den unit mix cancels in the YoY ratio, only the trend is applied to the report intensity baseline (conceptual 2020 0.931×).",
+      "status": "updated",
+      "baseYear": 2020,
+      "newPoints": [
+        {
+          "year": 2021,
+          "value": 1.219
+        },
+        {
+          "year": 2022,
+          "value": 1.266
+        },
+        {
+          "year": 2023,
+          "value": 1.296
+        },
+        {
+          "year": 2024,
+          "value": 1.238
         }
       ]
     }
