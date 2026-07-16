@@ -24,7 +24,7 @@
  * every data point with its source link, nothing invented.
  */
 
-import { useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   CATALOGUE,
   BRANCH_COLORS,
@@ -193,6 +193,54 @@ function MacBar({ low, high, note }: { low: number; high: number; note?: string 
         €{low}–{high}/tCO₂{note ? <span className="ml-1 text-[10px] font-normal text-grey-500 dark:text-[var(--mh-muted)]">({note})</span> : null}
       </div>
     </div>
+  );
+}
+
+/** One labelled row of filter pills. */
+function FilterRow({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-wrap items-center gap-1">
+      <span className="mr-0.5 w-[74px] flex-none text-[10px] font-semibold text-grey-500 dark:text-[var(--mh-muted)]">{label}</span>
+      {children}
+    </div>
+  );
+}
+
+/** A single toggle pill inside a filter row. */
+function FilterPill({
+  on,
+  title,
+  dot,
+  onClick,
+  children,
+}: {
+  on: boolean;
+  title?: string;
+  dot?: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      title={title}
+      aria-pressed={on}
+      className={`inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-[10.5px] font-medium transition ${
+        on
+          ? 'border-primary bg-primary text-white'
+          : 'border-grey-300 bg-white text-tertiary hover:border-primary hover:text-primary dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] dark:text-[var(--mh-muted)]'
+      }`}
+    >
+      {dot ? (
+        <span
+          className="inline-block h-1.5 w-1.5 rounded-full"
+          style={{ background: on ? '#ffffff' : dot }}
+          aria-hidden
+        />
+      ) : null}
+      {children}
+    </button>
   );
 }
 
@@ -449,6 +497,81 @@ function labelTransform(a0: number, a1: number, rMid: number): string {
 
 const fmtMt = (mt: number) => (mt >= 10 ? Math.round(mt).toString() : mt.toFixed(mt >= 1 ? 1 : 2));
 
+/* --------------------------------------------------------- lever filtering */
+
+/**
+ * Intelligent lever filters — an *overview* read layered on the wheel. Each
+ * facet narrows the outer (lever) ring to the levers that meet a criterion; the
+ * rest are dimmed rather than removed, so the shape of the sector is preserved
+ * while the matching levers light up. Facets combine with AND, and every match
+ * is derived straight from the sourced `TECH_METRICS` / `TECH_CLASSIFICATION`
+ * data — the filter never invents a datum, it only reads one.
+ */
+type CostBand = 'any' | 'save' | 'le100' | 'gt100' | 'unpriced';
+type ClassFilter = 'any' | TechClass;
+
+interface LeverFilters {
+  /** Minimum demonstrated readiness (match when `trlHigh >= trlMin`); 0 = any. */
+  trlMin: number;
+  /** Best-case marginal abatement cost band (reads `macLowEur`). */
+  cost: CostBand;
+  /** Clean-tech vs old-tech overlay class. */
+  cls: ClassFilter;
+}
+
+const DEFAULT_FILTERS: LeverFilters = { trlMin: 0, cost: 'any', cls: 'any' };
+
+const filtersActive = (f: LeverFilters) => f.trlMin > 0 || f.cost !== 'any' || f.cls !== 'any';
+
+/** Readiness threshold presets — "how mature is the most advanced version?". */
+const TRL_OPTIONS: { v: number; label: string; title: string }[] = [
+  { v: 0, label: 'Any', title: 'All readiness levels' },
+  { v: 6, label: '≥ TRL 6', title: 'Large prototype demonstrated or better (TRL 6–9)' },
+  { v: 7, label: '≥ TRL 7', title: 'Pre-commercial demonstration or better (TRL 7–9)' },
+  { v: 8, label: '≥ TRL 8', title: 'First-of-a-kind / near-market or better (TRL 8–9)' },
+  { v: 9, label: 'TRL 9', title: 'Commercially proven at scale (TRL 9)' },
+];
+
+/** Best-case abatement-cost bands (from the low end of the sourced MAC range). */
+const COST_OPTIONS: { v: CostBand; label: string; title: string }[] = [
+  { v: 'any', label: 'Any', title: 'All costs, priced or not' },
+  { v: 'save', label: 'Cost-saving', title: 'Best case is net-negative — cheaper than the incumbent (MAC < €0/t)' },
+  { v: 'le100', label: '≤ €100/t', title: 'Best-case marginal abatement cost €0–100/tCO₂' },
+  { v: 'gt100', label: '> €100/t', title: 'Best-case marginal abatement cost above €100/tCO₂' },
+  { v: 'unpriced', label: 'Unpriced', title: 'No sourced MAC figure — cost not quantified' },
+];
+
+const CLASS_FILTER_OPTIONS: { v: ClassFilter; label: string; title: string }[] = [
+  { v: 'any', label: 'Any', title: 'Clean and old / transitional levers' },
+  { v: 'clean', label: 'Clean tech', title: TECH_CLASS_META.clean.definition },
+  { v: 'old', label: 'Old / transitional', title: TECH_CLASS_META.old.definition },
+];
+
+/** Does a single lever (by `Technology.id`) satisfy the active facet set? */
+function leverMatches(techId: string | undefined, f: LeverFilters): boolean {
+  if (!techId) return false;
+  const m = TECH_METRICS[techId];
+
+  if (f.trlMin > 0 && (!m || m.trlHigh < f.trlMin)) return false;
+
+  if (f.cost !== 'any') {
+    const priced = !!m && m.macLowEur != null && m.macHighEur != null;
+    if (f.cost === 'unpriced') {
+      if (priced) return false;
+    } else {
+      if (!priced) return false;
+      const low = m!.macLowEur!;
+      if (f.cost === 'save' && !(low < 0)) return false;
+      if (f.cost === 'le100' && !(low >= 0 && low <= 100)) return false;
+      if (f.cost === 'gt100' && !(low > 100)) return false;
+    }
+  }
+
+  if (f.cls !== 'any' && TECH_CLASSIFICATION[techId]?.class !== f.cls) return false;
+
+  return true;
+}
+
 /* ------------------------------------------------------------ the figure */
 
 export default function EmissionsSunburst() {
@@ -461,6 +584,8 @@ export default function EmissionsSunburst() {
   const [selectedId, setSelectedId] = useState<string>('root');
   // colour the outer (lever) ring by NACE branch, or by clean-tech vs old-tech
   const [colorMode, setColorMode] = useState<'branch' | 'class'>('branch');
+  // intelligent lever filters (readiness / cost / clean-vs-old) — dim non-matches
+  const [filters, setFilters] = useState<LeverFilters>(DEFAULT_FILTERS);
   const wrapRef = useRef<HTMLDivElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -480,6 +605,21 @@ export default function EmissionsSunburst() {
     return { clean, old, total: clean + old };
   }, []);
 
+  const filterOn = filtersActive(filters);
+  const matches = (techId?: string) => leverMatches(techId, filters);
+
+  // live tally of how many wheel levers survive the active facet set
+  const { leverTotal, leverMatched } = useMemo(() => {
+    let total = 0;
+    let matched = 0;
+    index.forEach(n => {
+      if (n.kind !== 'lever') return;
+      total += 1;
+      if (leverMatches(n.tech?.id, filters)) matched += 1;
+    });
+    return { leverTotal: total, leverMatched: matched };
+  }, [index, filters]);
+
   const toggle = (id: string) =>
     setCollapsed(prev => {
       const next = new Set(prev);
@@ -490,6 +630,13 @@ export default function EmissionsSunburst() {
   /** Fold the whole wheel so exactly the rings up to `depth` show. */
   const foldTo = (depth: number) =>
     setCollapsed(new Set([...index.values()].filter(n => n.depth === depth && n.children.length).map(n => n.id)));
+
+  // when a lever filter is engaged, open the lever ring so the highlight is
+  // actually visible (a filter on a folded wheel would be a silent no-op)
+  useEffect(() => {
+    if (filterOn) foldTo(3);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filterOn]);
 
   const clickArc = (node: WheelNode) => {
     setSelectedId(node.id);
@@ -617,6 +764,80 @@ export default function EmissionsSunburst() {
           })}
         </div>
 
+        {/* intelligent lever filters — readiness / cost / clean-vs-old */}
+        <div className="mb-3 rounded-lg border border-grey-200 bg-grey-50 p-2.5 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)]">
+          <div className="mb-1.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+            <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary dark:text-[var(--mh-muted)]">
+              Filter levers
+            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-medium text-grey-600 dark:text-[var(--mh-muted)]">
+                {filterOn ? (
+                  <>
+                    <span className="font-bold text-primary">{leverMatched}</span> of {leverTotal} levers match
+                  </>
+                ) : (
+                  <>All {leverTotal} levers shown</>
+                )}
+              </span>
+              {filterOn ? (
+                <button
+                  type="button"
+                  onClick={() => setFilters(DEFAULT_FILTERS)}
+                  className="rounded-full border border-grey-300 bg-white px-2 py-0.5 text-[10px] font-semibold text-tertiary hover:border-accent-red hover:text-accent-red dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)] dark:text-[var(--mh-muted)]"
+                >
+                  ✕ Reset
+                </button>
+              ) : null}
+            </div>
+          </div>
+
+          <div className="space-y-1.5">
+            {/* readiness — TRL threshold */}
+            <FilterRow label="Readiness">
+              {TRL_OPTIONS.map(o => (
+                <FilterPill
+                  key={o.v}
+                  on={filters.trlMin === o.v}
+                  title={o.title}
+                  onClick={() => setFilters(f => ({ ...f, trlMin: o.v }))}
+                >
+                  {o.label}
+                </FilterPill>
+              ))}
+            </FilterRow>
+
+            {/* cost — best-case MAC band */}
+            <FilterRow label="Cost (MAC)">
+              {COST_OPTIONS.map(o => (
+                <FilterPill
+                  key={o.v}
+                  on={filters.cost === o.v}
+                  title={o.title}
+                  onClick={() => setFilters(f => ({ ...f, cost: o.v }))}
+                >
+                  {o.label}
+                </FilterPill>
+              ))}
+            </FilterRow>
+
+            {/* clean-tech vs old-tech overlay */}
+            <FilterRow label="Type">
+              {CLASS_FILTER_OPTIONS.map(o => (
+                <FilterPill
+                  key={o.v}
+                  on={filters.cls === o.v}
+                  title={o.title}
+                  dot={o.v === 'clean' ? TECH_CLASS_META.clean.color : o.v === 'old' ? TECH_CLASS_META.old.color : undefined}
+                  onClick={() => setFilters(f => ({ ...f, cls: o.v }))}
+                >
+                  {o.label}
+                </FilterPill>
+              ))}
+            </FilterRow>
+          </div>
+        </div>
+
         <svg
           viewBox={`${-V} ${-V} ${2 * V} ${2 * V}`}
           role="group"
@@ -634,6 +855,10 @@ export default function EmissionsSunburst() {
             const classColored = colorMode === 'class' && node.kind === 'lever' && node.techClass;
             const fill = classColored ? TECH_CLASS_META[node.techClass!].color : node.color;
             const dimmed = colorMode === 'class' && node.kind !== 'lever';
+            // an active lever filter fades out the levers that don't match, so
+            // the qualifying ones light up against the greyed remainder
+            const filteredOut = filterOn && node.kind === 'lever' && !matches(node.tech?.id);
+            const fillOpacity = filteredOut ? 0.1 : dimmed ? 0.4 : node.kind === 'lever' ? 0.9 : 1;
             const isCollapsed = collapsed.has(node.id);
             const active = node.id === selectedId;
             const textFill = luminance(fill) > 0.6 ? '#1f2937' : '#ffffff';
@@ -650,7 +875,7 @@ export default function EmissionsSunburst() {
                 <path
                   d={arcPath(r0, r1, node.a0, node.a1)}
                   fill={fill}
-                  fillOpacity={dimmed ? 0.4 : node.kind === 'lever' ? 0.9 : 1}
+                  fillOpacity={fillOpacity}
                   stroke={active ? 'var(--mh-fg, #1f2937)' : 'var(--mh-card, #ffffff)'}
                   strokeWidth={active ? 2 : 0.8}
                   strokeLinejoin="round"
@@ -671,7 +896,7 @@ export default function EmissionsSunburst() {
                     }
                   }}
                 />
-                {spanPx > 30 ? (
+                {spanPx > 30 && !filteredOut ? (
                   <text
                     pointerEvents="none"
                     textAnchor="middle"
@@ -801,6 +1026,16 @@ export default function EmissionsSunburst() {
           sector-association estimates on different boundaries and years (aluminium, glass, ceramics, pulp &amp;
           paper, food &amp; drink) — see each block&apos;s scope badge for its exact basis.
         </p>
+        {filterOn ? (
+          <p className="mt-1 text-center text-[10.5px] leading-relaxed text-grey-500 dark:text-[var(--mh-muted)]">
+            <span className="font-semibold text-grey-600 dark:text-[var(--mh-fg)]">Filter active</span> —{' '}
+            <span className="font-semibold text-primary">{leverMatched}</span> of {leverTotal} levers match
+            {filters.trlMin > 0 ? ` · readiness ≥ TRL ${filters.trlMin}` : ''}
+            {filters.cost !== 'any' ? ` · ${COST_OPTIONS.find(o => o.v === filters.cost)?.label}` : ''}
+            {filters.cls !== 'any' ? ` · ${TECH_CLASS_META[filters.cls as TechClass].label}` : ''}. Non-matching levers are
+            faded, not removed, so the sector shape stays intact. Bands read straight from the sourced MAC / TRL data.
+          </p>
+        ) : null}
         {colorMode === 'class' ? (
           <p className="mt-1 text-center text-[10.5px] leading-relaxed text-grey-500 dark:text-[var(--mh-muted)]">
             <span className="font-semibold text-grey-600 dark:text-[var(--mh-fg)]">Clean vs old is an analytical overlay</span> — the near-zero
@@ -816,6 +1051,8 @@ export default function EmissionsSunburst() {
         <DetailPanel
           node={selected}
           onSelect={setSelectedId}
+          filterActive={filterOn}
+          leverMatches={matches}
           onShowClasses={() => {
             setColorMode('class');
             foldTo(3);
@@ -838,10 +1075,14 @@ function DetailPanel({
   node,
   onSelect,
   onShowClasses,
+  filterActive = false,
+  leverMatches: matchesLever,
 }: {
   node: WheelNode;
   onSelect: (id: string) => void;
   onShowClasses?: () => void;
+  filterActive?: boolean;
+  leverMatches?: (techId?: string) => boolean;
 }) {
   if (node.kind === 'root') {
     let clean = 0;
@@ -1042,18 +1283,26 @@ function DetailPanel({
         </div>
 
         <div>
-          <div className="mb-1 text-[10px] font-semibold uppercase tracking-wide text-tertiary dark:text-[var(--mh-muted)]">
-            {node.children.length} decarbonisation levers — cost, readiness, barriers &amp; investment decisions
+          <div className="mb-1 flex flex-wrap items-baseline justify-between gap-x-2 text-[10px] font-semibold uppercase tracking-wide text-tertiary dark:text-[var(--mh-muted)]">
+            <span>{node.children.length} decarbonisation levers — cost, readiness, barriers &amp; investment decisions</span>
+            {filterActive && matchesLever ? (
+              <span className="normal-case text-primary">
+                {node.children.filter(l => matchesLever(l.tech?.id)).length} match the filter
+              </span>
+            ) : null}
           </div>
           <div className="space-y-1">
             {node.children.map(l => {
               const m = l.tech ? TECH_METRICS[l.tech.id] : undefined;
+              const dimLever = filterActive && !!matchesLever && !matchesLever(l.tech?.id);
               return (
                 <button
                   key={l.id}
                   type="button"
                   onClick={() => onSelect(l.id)}
-                  className="flex w-full items-baseline gap-2 rounded border border-grey-200 px-2 py-1.5 text-left hover:border-primary hover:bg-grey-50 dark:border-[var(--mh-border)] dark:hover:bg-[var(--mh-bg)]"
+                  className={`flex w-full items-baseline gap-2 rounded border border-grey-200 px-2 py-1.5 text-left transition hover:border-primary hover:bg-grey-50 dark:border-[var(--mh-border)] dark:hover:bg-[var(--mh-bg)] ${
+                    dimLever ? 'opacity-40' : ''
+                  }`}
                 >
                   <span className="inline-block h-2.5 w-2.5 flex-none self-center rounded-sm" style={{ background: l.color }} />
                   <span className="min-w-0 flex-1 text-[12px] font-medium text-grey-800 dark:text-[var(--mh-fg)]">{l.label}</span>
