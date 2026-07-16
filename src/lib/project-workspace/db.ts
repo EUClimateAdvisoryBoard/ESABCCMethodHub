@@ -738,25 +738,39 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
       ...ECNO_INDICATORS,
     ].map(i => [i.id, i]),
   );
-  // Self-heal: if a seeded indicator's row exists but its points never landed
-  // (a first-seed that inserted the row then failed/raced on its points), the
-  // chart would render blank. `points` is already in hand, so detecting the gap
-  // is free; we repopulate from the bundled series and only write when there is
-  // an actual gap, so the steady state costs nothing extra.
-  const idsWithPoints = new Set((points ?? []).map(p => p.indicator_id));
+  // Self-heal: keep the stored series in step with the bundled seed. `points`
+  // is already in hand, so detecting gaps is free. One pass covers two cases:
+  //   • an indicator whose row exists but whose points never landed (a
+  //     first-seed that inserted the row then failed/raced on its points); and
+  //   • an already-seeded indicator that is missing YEARS the monthly refresh
+  //     has since added to the bundled series. The render path deliberately
+  //     skips the gated `backfillExistingPoints` (an extra read it doesn't want
+  //     to pay), so without this the DB would freeze at the first seed while the
+  //     code carries newer post-report years — exactly what left the Indicator
+  //     Check showing only the handful of indicators seeded long ago.
+  // Only genuinely-missing (indicator_id, year) pairs are written, with
+  // ignoreDuplicates, so a manually-edited value is never overwritten.
+  const havePointKey = new Set((points ?? []).map(p => `${p.indicator_id}:${p.year}`));
   const missingPoints = rows
-    .filter(r => esabccById.has(r.id) && !idsWithPoints.has(r.id))
+    .filter(r => esabccById.has(r.id))
     .flatMap(r =>
-      (esabccById.get(r.id)?.data ?? []).map(p => ({
-        indicator_id: r.id,
-        year: p.year,
-        value: p.value,
-      }))
+      (esabccById.get(r.id)?.data ?? [])
+        .filter(p => !havePointKey.has(`${r.id}:${p.year}`))
+        .map(p => ({ indicator_id: r.id, year: p.year, value: p.value }))
     );
   if (missingPoints.length > 0) {
     await sb
       .from('pw_indicator_points')
       .upsert(missingPoints, { onConflict: 'indicator_id,year', ignoreDuplicates: true });
+  }
+  // Index the just-added points by indicator so THIS response already reflects
+  // them — the upsert catches the DB up for next time, but the user shouldn't
+  // have to wait a second render to see a freshly-refreshed year.
+  const missingByIndicator = new Map<string, { year: number; value: number }[]>();
+  for (const p of missingPoints) {
+    const arr = missingByIndicator.get(p.indicator_id) ?? [];
+    arr.push({ year: p.year, value: p.value });
+    missingByIndicator.set(p.indicator_id, arr);
   }
   return rows.map<DBIndicator>(r => {
     const isEsabcc = r.id.startsWith('esabcc-');
@@ -767,20 +781,17 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
     const afterReportYears = new Set(
       (meta?.data ?? []).filter(p => p.afterReport).map(p => p.year)
     );
+    const flag = (year: number, value: number): IndicatorDataPoint =>
+      afterReportYears.has(year) ? { year, value, afterReport: true } : { year, value };
     const dbData = (points ?? [])
       .filter(p => p.indicator_id === r.id)
-      .map<IndicatorDataPoint>(p =>
-        afterReportYears.has(p.year)
-          ? { year: p.year, value: p.value, afterReport: true }
-          : { year: p.year, value: p.value }
-      )
-      .sort((a, b) => a.year - b.year);
-    // If the DB row had no points yet, serve the bundled series straight away
-    // (the self-heal above persists them for next time).
-    const data =
-      dbData.length === 0 && meta?.data?.length
-        ? [...meta.data].sort((a, b) => a.year - b.year)
-        : dbData;
+      .map(p => flag(p.year, p.value));
+    // Fold in any seed years that were missing from the DB (self-healed above)
+    // so the series is complete on the first render, not just the next one.
+    const data = [
+      ...dbData,
+      ...(missingByIndicator.get(r.id) ?? []).map(p => flag(p.year, p.value)),
+    ].sort((a, b) => a.year - b.year);
     return {
       id: r.id,
       name: r.name,
