@@ -1,18 +1,18 @@
 {
   "date": "2026-07-16",
-  "generatedAt": "2026-07-16T07:26:46.336Z",
+  "generatedAt": "2026-07-16T12:24:55.280Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Thursday, 16 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
+      "headline": "Commission approves €300 million Irish State aid scheme for temporary electricity price relief for energy-intensive companies",
+      "summary": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €300 million Irish scheme to provide temporary electricity price relief for energy-intensive companies in line with the objectives of the Clean Industrial Deal.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks",
-      "summary": "Plans to build Africa's second largest oil refinery in ecologically sensitive region criticised as \"environmental recklessness\" The post Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks appeared first on Climate Home News.",
+      "headline": "Commission approves €41 million Greek State aid for agricultural companies facing increased fertiliser prices",
+      "summary": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €41 million Greek aid scheme to support agricultural companies facing increased fertiliser prices due to the Middle East crisis. The scheme was approved under the Middle East Crisis Temporary State Aid Framework (METSAF) adopted by the Commission on 29 April 2026.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,20 +34,36 @@
       "title": "Energy Transition",
       "items": [
         {
-          "title": "EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxORkMzazNjc1U0Uk5pTUJ2bTBxaVl5UTR6VzZXSGpTY29VVXNSTzZvSG5KVEhJSGctWGZGelh0R0ZiV1YyUVRXSHZ1al9jNG5mNkhZa1dQVjY4Nm1MTW9HZjRkRDg1anU3YS05VG4wbmhvVnB1b29wU1BoVEtrWHhSaU1lTHBZVWJER3RnOUFLdGwxbUo5dXdGcGRBMVVnU1daaU1nNDhsQ200c1JHcjJfeWVSNDU5a1JVaG9KOHE3NXFlVko1N1NR?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Files relating to India’s largest nuclear power plant Kudankulam exposed in data breach&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&",
-          "published": "2026-07-15T21:20:30.000Z",
+          "title": "Commission approves €300 million Irish State aid scheme for temporary electricity price relief for energy-intensive companies",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1610",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €300 million Irish scheme to provide temporary electricity price relief for energy-intensive companies in line with the objectives of the Clean Industrial Deal.",
+          "published": "2026-07-15T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Commission approves Czech capacity mechanism under Clean Industrial Deal State Aid Framework",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1611",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved, under EU State aid rules, Czechia's market-wide capacity mechanism. The measure aims to ensure there is sufficient capacity to produce or store electricity, or to reduce electricity consumption so that production meets demand in the long term.",
+          "published": "2026-07-15T22:00:00.000Z",
+          "score": 18
+        },
+        {
+          "title": "'Complete extermination' of greys is the only way to protect red squirrels",
+          "link": "https://www.bbc.co.uk/news/articles/cz7d3rgn5w8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "A grey squirrel control officer says there is no other option to trapping and killing the greys after a number of cases of squirrelpox were confirmed in the Borders.",
+          "published": "2026-07-16T11:58:56.000Z",
           "score": 7
         },
         {
-          "title": "Surviving extreme heat increasingly boils down to this: access to air conditioning | Mark Wolfe",
-          "link": "https://www.theguardian.com/commentisfree/2026/jul/15/air-conditioning-access-extreme-heat",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;The next great climate divide will be between countries that have the resources to adapt and those that don’t&lt;/p&gt;&lt;p&gt;This summer, much of the media’s attention has focused on record temperatures across Europe and the United States. Television coverage has been filled with familiar images: heat maps shaded deep red, schools closing, rail lines slowing, wildfires spreading and emergency rooms treating growing numbers of people with heat-related illnesses.&lt;/p&gt;&lt;p&gt;Publ",
-          "published": "2026-07-15T12:00:55.000Z",
-          "score": 6
+          "title": "Iran warns Strait of Hormuz is a 'red line' and will resist until the end - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxQbGxQSEpXZmFYRldBSGhRcTZWZlBvbUFOZFJDeVoxdXVZczVtY2w1TlhqSnhFaGxsSWlINnBKbDZhNi1mT0Q1anJRTjM0Z0toaVg3QXhMcmkyZlBQRTZ1cVZvbmhZSmU4WDU4NGdnN3FJZGRzbnYzdm0zQUVxWjNUZ1dTZHlwMTA0VTNhbUg0UHVxZmFLUlVtSmVfeHZCb0tfWEE?oc=5\" target=\"_blank\"&gt;Iran warns Strait of Hormuz is a 'red line' and will resist until the end&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T10:35:39.000Z",
+          "score": 7
         },
         {
           "title": "A Cold War bunker gets a luxury makeover as 'doomsday' condos",
@@ -64,6 +80,22 @@
       "title": "Climate & Environment",
       "items": [
         {
+          "title": "Commission approves €41 million Greek State aid for agricultural companies facing increased fertiliser prices",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1578",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €41 million Greek aid scheme to support agricultural companies facing increased fertiliser prices due to the Middle East crisis. The scheme was approved under the Middle East Crisis Temporary State Aid Framework (METSAF) adopted by the Commission on 29 April 2026.",
+          "published": "2026-07-15T22:00:00.000Z",
+          "score": 22
+        },
+        {
+          "title": "Commission provides guidance to Google for AI interoperability on Android and sharing of Google Search data under the Digital Markets Act",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1634",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 16 Jul 2026 Today, the European Commission has issued two sets of binding specification measures to Google under the Digital Markets Act.",
+          "published": "2026-07-15T22:00:00.000Z",
+          "score": 18
+        },
+        {
           "title": "Campaigners oppose Dangote&#8217;s planned Kenya refinery over climate and ecological risks",
           "link": "https://www.climatechangenews.com/2026/07/15/campaigners-oppose-dangotes-planned-kenya-refinery-over-climate-and-ecological-risks/",
           "source": "Climate Home News",
@@ -72,11 +104,11 @@
           "score": 13
         },
         {
-          "title": "Major emitting countries knew of climate risks decades earlier than claimed",
-          "link": "https://www.climatechangenews.com/2026/07/15/major-emitting-countries-knew-of-climate-risks-decades-earlier-than-claimed/",
-          "source": "Climate Home News",
-          "description": "Governments have known since at least the 1960s that fossil fuel use was warming the planet. They kept quiet to avoid responsibility. The post Major emitting countries knew of climate risks decades earlier than claimed appeared first on Climate Home News.",
-          "published": "2026-07-15T10:51:19.000Z",
+          "title": "The EU climate policy the world copied is under fire — what&#039;s at stake?",
+          "link": "https://www.dw.com/en/the-eu-climate-policy-the-world-copied-is-under-fire-what-s-at-stake/a-77979725?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The emissions trading system became a global blueprint for pricing carbon and cutting CO2. Now industry groups are pushing back against tougher climate rules. How effective is the scheme and where does it fall short?",
+          "published": "2026-07-16T11:33:00.000Z",
           "score": 13
         },
         {
@@ -86,22 +118,6 @@
           "description": "The UK has abandoned projects worth tens of millions of pounds that were meant to... The post UK withdraws millions in funding from world’s second-largest rainforest in Congo appeared first on Carbon Brief.",
           "published": "2026-07-15T16:04:22.000Z",
           "score": 10
-        },
-        {
-          "title": "Cropped 15 July 2026: Uganda starves &#124; Trump opens endangered habitats &#124; UK cuts rainforest aid",
-          "link": "https://www.carbonbrief.org/cropped-15-july-2026-uganda-starves-trump-opens-endangered-habitats-uk-cuts-rainforest-aid/",
-          "source": "Carbon Brief",
-          "description": "We handpick and explain the most important stories at the intersection of climate, land, food... The post Cropped 15 July 2026: Uganda starves | Trump opens endangered habitats | UK cuts rainforest aid appeared first on Carbon Brief.",
-          "published": "2026-07-15T14:49:04.000Z",
-          "score": 10
-        },
-        {
-          "title": "Wildfire smoke engulfs Toronto as unhealthy air reaches New York - video",
-          "link": "https://www.theguardian.com/world/video/2026/jul/16/wildfire-smoke-engulfs-toronto-as-unhealthy-air-reaches-new-york-video",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Smoke from more than 100 active wildfires in northern Ontario have made Toronto’s air quality the current worst in the world and caused yellow, smoky air in cities across the north-east US. 'You could definitely smell the smoke in the air and it's very hazy out. So absolutely it's noticeable,' says Toronto resident Paula Oreskovich&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/15/wildfires-in-ontario-make-toronto-canada-a",
-          "published": "2026-07-16T03:29:08.000Z",
-          "score": 7
         }
       ]
     },
@@ -132,6 +148,14 @@
       "title": "Beyond Climate — Other Major EU News",
       "items": [
         {
+          "title": "DRAFT REPORT on the proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on the market of genetically modified micro-organisms and the processing of organs - PE789.094v01-00",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ64-PR-789094_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "DRAFT REPORT on the proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on the market of genetically modified micro-organisms and the processing of organs&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Public Health&lt;br/&gt;Marta Temido, Adam Jarubas&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Unio",
+          "published": "2026-07-16T11:53:03.000Z",
+          "score": 22
+        },
+        {
           "title": "Draft agenda - Wednesday, 2 September 2026 - PE791.034v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Public Health",
           "link": "https://www.europarl.europa.eu/doceo/document/CJ64-OJ-2026-09-02-1_EN.html",
           "source": "EU Parliament ENVI Committee",
@@ -140,11 +164,11 @@
           "score": 18
         },
         {
-          "title": "Ukraine: Kyiv and EU agree on new drone production deal",
-          "link": "https://www.dw.com/en/ukraine-kyiv-and-eu-agree-on-new-drone-production-deal/live-77962795?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Ukraine and the EU have agreed on a drone deal combining Kyiv’s know-how with the bloc&#039;s scale-up power. Meanwhile, Russian attacks caused more fatalities in Odesa as Moscow increasingly targets the port.",
-          "published": "2026-07-15T10:55:00.000Z",
+          "title": "EU, Ukraine seal 'drone deal' to boost production, establish joint ventures - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPVzV0TkplU2pSb1RNbnVZTnAteUt2Y2xqZVphRzNVeWk2bGpYNjA0UmlyZnZwRTdlU3Q3aDhxTVNFRzU1UEtkMHRSS21ZVjhRTGROQXFXRExxNTQxOHRSVnY0TFpvWk00dE9QdjhsU2k2WjFXVXFPNmI5RjFLb3ZBTVptWkowcUFfTVV6Yld3?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijgFBVV95cUxPVzV0TkplU2pSb1RNbnVZTnAteUt2Y2xqZVphRzNVeWk2bGpYNjA0UmlyZnZwRTdlU3Q3aDhxTVNFRzU1UEtkMHRSS21ZVjhRTGROQXFXRExxNTQxOHRSVnY0TFpvWk00dE9QdjhsU2k2WjFXVXFPNmI5RjFLb3ZBTVptWkowcUFfTVV6Yld3?oc=5\" target=\"_blank\"&gt;EU, Ukraine seal 'drone deal' to boost production, establish joint ventures&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-15T17:11:45.000Z",
           "score": 8
         }
       ]
@@ -162,35 +186,35 @@
           "score": 12
         },
         {
-          "title": "IOC defends Russian Olympic Committee reinstatement after EU countries call for funding cuts - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOV1BpLUhCcXFOZ3pDUFZPRW1mTGoxNTgtV0JFU2FuSHExV21RMFBoSGI0Z1RNWGgwblhrdzV4cWRVTWNoRjRic3h4ZXZWZUZWQVRfaHVFRnVkYjcwa0RNX1pNelNMdGQzaWFQREV0ekxMQ2tBVUJuUjVzMUdaXy1kS0drVll0ODA5SUNwbzRpR2l4aGZXMWZUY3lwUWs3aUNfN2ZkVHBueWdlM1pXY1l2MXl0S0NoMmFVSVE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiugFBVV95cUxOV1BpLUhCcXFOZ3pDUFZPRW1mTGoxNTgtV0JFU2FuSHExV21RMFBoSGI0Z1RNWGgwblhrdzV4cWRVTWNoRjRic3h4ZXZWZUZWQVRfaHVFRnVkYjcwa0RNX1pNelNMdGQzaWFQREV0ekxMQ2tBVUJuUjVzMUdaXy1kS0drVll0ODA5SUNwbzRpR2l4aGZXMWZUY3lwUWs3aUNfN2ZkVHBueWdlM1pXY1l2MXl0S0NoMmFVSVE?oc=5\" target=\"_blank\"&gt;IOC defends Russian Olympic Committee reinstatement after EU countries call for funding cuts&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-15T18:39:49.000Z",
-          "score": 12
-        },
-        {
-          "title": "German engineering body urges broader EU duties, tougher action on China - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOZENoa0RYWmxPUGpGVjhDN0xEeGRMZ2ZLbEp1X2Y2UTNBMEJFRG9RSmJCaUp1aUY5V1pQYkExV0tXdlNxb1RWTE9COWVPMWY0RG9FakRhdjlTR3ItVEVMa1diLUFyUUNaTmhPQ1YtN3VnTnJuVFJVazFpTFdTYUdFRDBIdWV4aXlCNC1LNGtmekxjcFRaOEVObXNuSURuY3Y0dmJsOXhMNHVqc0wxMHVHSjBRbFJKWlE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxOZENoa0RYWmxPUGpGVjhDN0xEeGRMZ2ZLbEp1X2Y2UTNBMEJFRG9RSmJCaUp1aUY5V1pQYkExV0tXdlNxb1RWTE9COWVPMWY0RG9FakRhdjlTR3ItVEVMa1diLUFyUUNaTmhPQ1YtN3VnTnJuVFJVazFpTFdTYUdFRDBIdWV4aXlCNC1LNGtmekxjcFRaOEVObXNuSURuY3Y0dmJsOXhMNHVqc0wxMHVHSjBRbFJKWlE?oc=5\" target=\"_blank\"&gt;German engineering body urges broader EU duties, tougher action on China&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-15T09:19:44.000Z",
+          "title": "Germany may make it illegal to deny Israel&#039;s right to exist",
+          "link": "https://www.dw.com/en/germany-may-make-it-illegal-to-deny-israel-s-right-to-exist/a-77980283?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Germany&#039;s upper house of parliament, the Bundesrat, has introduced a bill seeking to ban the questioning of Israel&#039;s right to exist. It is now up to the lower house to decide whether to turn it into law.",
+          "published": "2026-07-16T11:37:00.000Z",
           "score": 8
         },
         {
-          "title": "European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxOcHRuV0F0aTQyVTlYd2xCSGxSWU1EYkNJVW5yQ09MN2hNXzVELUxqaXdRVGc2RFlqMjRLUVZSMFVLLWVQU3dyUXozSzk3Wl9ENlFYdHdCck1xNWZlQTlYb2p5SEQxWWhUckVFdk1jTnlYR2pvcjlIdzZfU1MzaDJXT2lCOVM3OGdKbncxNkFYYVF2MUU0NjlNTEgyUmVVWmF1VmhUU3N3Umxzd2Q1ODBuOWJCWnAtWWhkS1FlLXcxYWw?oc=5\" target=\"_blank\"&gt;European Athletics, broadcasters issue guidelines on preventing sexualisation of female athletes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
-          "published": "2026-07-15T09:01:54.000Z",
+          "title": "AI: Why Europe is falling behind, and how it can catch up",
+          "link": "https://www.dw.com/en/ai-why-europe-is-falling-behind-and-how-it-can-catch-up/a-77853943?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Europe trails the US and China in artificial intelligence. Economist and Nobel laureate Philippe Aghion says better research funding, venture capital and AI innovation can help it catch up.",
+          "published": "2026-07-16T08:15:00.000Z",
           "score": 8
         },
         {
-          "title": "Congo forms new council in push for war crimes justice - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPV29TV0JWSTRuWm1XMmdicWIwaDNfN2RvYTFlNHBQYTRBa0NSOVVBUmJ5bnl0M3Zxa0ZQa1NnbDRQVWhJYXFNNTV2ZmtucjlxSTdzZjNmSmlDZF85MnNSbHlUVzlCb2xXTFM0WDRmUjE1MHNuaHpzMkQ4VUJqRnRCMmVkdUF4Q1pIeU5RLVF4c1oySHJuTTFYX0hnSzc?oc=5",
+          "title": "EU court upholds Google's $854,250 Italian fine over gambling advertising - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbGJKT243LWdLT3pLMU8yOGVPRkxtOHJCb09COEFxWnhWdGZ3ejF5ampMTTBMZGtQcjZFcEhzRkZTT1RlUk5zakxDNTJCS19VcTR5TmE1X2otZGx4WU9JMXgwZkloXzhEb0dQSDlmcFRsOTVXeTlLMUVIMmtFYUtrbHNuZG1UYUVvZ19CN1JyMVlLd3RpVXRnY0ZjemNuYzRCWE5jV29ITFdOTzh2SWF5SU1B?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxPV29TV0JWSTRuWm1XMmdicWIwaDNfN2RvYTFlNHBQYTRBa0NSOVVBUmJ5bnl0M3Zxa0ZQa1NnbDRQVWhJYXFNNTV2ZmtucjlxSTdzZjNmSmlDZF85MnNSbHlUVzlCb2xXTFM0WDRmUjE1MHNuaHpzMkQ4VUJqRnRCMmVkdUF4Q1pIeU5RLVF4c1oySHJuTTFYX0hnSzc?oc=5\" target=\"_blank\"&gt;Congo forms new council in push for war crimes justice&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-15T09:55:43.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQbGJKT243LWdLT3pLMU8yOGVPRkxtOHJCb09COEFxWnhWdGZ3ejF5ampMTTBMZGtQcjZFcEhzRkZTT1RlUk5zakxDNTJCS19VcTR5TmE1X2otZGx4WU9JMXgwZkloXzhEb0dQSDlmcFRsOTVXeTlLMUVIMmtFYUtrbHNuZG1UYUVvZ19CN1JyMVlLd3RpVXRnY0ZjemNuYzRCWE5jV29ITFdOTzh2SWF5SU1B?oc=5\" target=\"_blank\"&gt;EU court upholds Google's $854,250 Italian fine over gambling advertising&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T08:41:32.000Z",
+          "score": 8
+        },
+        {
+          "title": "Italy's parliament backs Meloni's contested electoral reform - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5\" target=\"_blank\"&gt;Italy's parliament backs Meloni's contested electoral reform&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T11:12:15.000Z",
           "score": 8
         }
       ]
@@ -198,7 +222,7 @@
   ],
   "stats": {
     "totalArticlesScanned": 437,
-    "articlesLast24h": 173,
+    "articlesLast24h": 172,
     "afterDedup": 167,
     "feedsQueried": 19
   }
