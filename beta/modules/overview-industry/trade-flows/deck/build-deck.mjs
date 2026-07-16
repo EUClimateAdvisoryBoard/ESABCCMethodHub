@@ -76,6 +76,97 @@ const SUP_NAME = { a: 'China', b: 'Taiwan / Türkiye', c: 'Latin America / SE As
 const eur = (v) => (Math.abs(v) >= 100 ? Math.round(v) : v.toFixed(1));
 const net = (imp, exp) => Math.round(exp - imp);
 
+/* ------------------------------------------------------- trade-origins map */
+// Extra-EU manufacturing imports by partner country — Section C total (Eurostat FIGARO,
+// naio_10_fgti, 2023). [code, name, lon, lat, valueBn, pctOfExtra, gdpBn]
+// Coordinates are each country's capital (a representative landing point for the map, not
+// a trade-weighted centroid). GDP is World Bank "GDP (current US$)", latest available estimate
+// — a different reference year from the 2023 trade figures; used only for the relative-to-GDP
+// sizing mode, where it is presented as an indicative ratio, not a point-in-time precision figure.
+const MAP_PARTNERS_RAW = [
+  ['CN', 'China', 116.4, 39.9, 336.2, 24.4, 19498.0],
+  ['US', 'United States', -77.0, 38.9, 142.7, 10.3, 30769.7],
+  ['CH', 'Switzerland', 7.4, 46.9, 123.4, 8.9, 1043.5],
+  ['UK', 'United Kingdom', -0.1, 51.5, 97.9, 7.1, 4002.6],
+  ['TR', 'Türkiye', 32.9, 39.9, 60.8, 4.4, 1597.3],
+  ['KR', 'South Korea', 127.0, 37.6, 54.7, 4.0, 1872.4],
+  ['JP', 'Japan', 139.7, 35.7, 42.6, 3.1, 4435.2],
+  ['IN', 'India', 77.2, 28.6, 33.8, 2.4, 3956.1],
+  ['MX', 'Mexico', -99.1, 19.4, 26.9, 2.0, 1832.6],
+  ['NO', 'Norway', 10.7, 59.9, 19.1, 1.4, 530.8],
+  ['RU', 'Russia', 37.6, 55.75, 15.1, 1.1, 2561.3],
+  ['CA', 'Canada', -75.7, 45.4, 12.9, 0.9, 2319.9],
+  ['RS', 'Serbia', 20.5, 44.8, 12.2, 0.9, 100.0],
+  ['BR', 'Brazil', -47.9, -15.8, 11.3, 0.8, 2279.9],
+  ['ID', 'Indonesia', 106.8, -6.2, 8.6, 0.6, 1445.6],
+  ['SA', 'Saudi Arabia', 46.7, 24.7, 6.2, 0.4, 1276.9],
+  ['MK', 'North Macedonia', 21.4, 42.0, 4.8, 0.4, 19.1],
+  ['ZA', 'South Africa', 28.2, -25.7, 4.6, 0.3, 427.3],
+  ['AU', 'Australia', 149.1, -35.3, 4.2, 0.3, 1798.5],
+  ['AR', 'Argentina', -58.4, -34.6, 2.8, 0.2, 683.1],
+  ['AL', 'Albania', 19.8, 41.3, 0.6, 0.0, 30.5],
+  ['ME', 'Montenegro', 19.3, 42.4, 0.1, 0.0, 9.2],
+];
+const MAP_EU_POINT = [9.0, 50.0]; // representative EU landing point, central Europe
+// FIGARO 'rest of world' — not attributable to a single country, so not plotted on the map.
+const MAP_REST_OF_WORLD = { valueBn: 357.8, pctOfExtra: 25.9 };
+
+const sqrtScale = (v, d0, d1, r0, r1) => {
+  const t = (Math.sqrt(Math.max(v, 0)) - Math.sqrt(d0)) / (Math.sqrt(d1) - Math.sqrt(d0));
+  return r0 + Math.max(0, Math.min(1, t)) * (r1 - r0);
+};
+
+function arcPath(x1, y1, x2, y2, bend = 0.18) {
+  const dx = x2 - x1, dy = y2 - y1;
+  const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+  const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+  const nx = -dy / dist, ny = dx / dist;
+  const cx = mx + nx * dist * bend, cy = my + ny * dist * bend;
+  return `M${x1.toFixed(1)},${y1.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
+}
+
+async function buildMap() {
+  const d3 = await import('d3');
+  const topojson = await import('topojson-client');
+  const { createRequire } = await import('node:module');
+  const require = createRequire(import.meta.url);
+  const world = require('world-atlas/land-110m.json');
+  const land = topojson.feature(world, world.objects.land);
+
+  const W = 1040, H = 480;
+  const projection = d3.geoNaturalEarth1().fitExtent([[10, 12], [W - 10, H - 12]], land);
+  const path = d3.geoPath(projection);
+  const worldPath = path(land);
+  const [eux, euy] = projection(MAP_EU_POINT);
+
+  const values = MAP_PARTNERS_RAW.map((p) => p[4]);
+  const ratios = MAP_PARTNERS_RAW.map((p) => (p[4] / p[6]) * 100);
+  const vMin = Math.min(...values), vMax = Math.max(...values);
+  const rMin = Math.min(...ratios), rMax = Math.max(...ratios);
+  const rNode = (v, d0, d1) => sqrtScale(v, d0, d1, 3.5, 24);
+  const swArc = (v, d0, d1) => sqrtScale(v, d0, d1, 1.2, 13);
+
+  const partners = MAP_PARTNERS_RAW.map(([code, name, lon, lat, valueBn, pctOfExtra, gdpBn]) => {
+    const [x, y] = projection([lon, lat]);
+    const ratioRaw = (valueBn / gdpBn) * 100;
+    const ratioPct = ratioRaw >= 1 ? +ratioRaw.toFixed(1) : +ratioRaw.toFixed(2);
+    return {
+      code, name, valueBn, pctOfExtra, gdpBn, ratioPct,
+      x: +x.toFixed(1), y: +y.toFixed(1),
+      arcD: arcPath(x, y, eux, euy),
+      rValue: +rNode(valueBn, vMin, vMax).toFixed(1),
+      rGdp: +rNode(ratioRaw, rMin, rMax).toFixed(1),
+      swValue: +swArc(valueBn, vMin, vMax).toFixed(1),
+      swGdp: +swArc(ratioRaw, rMin, rMax).toFixed(1),
+    };
+  });
+
+  const legendValue = [10, 100, 330].map((v) => ({ v, r: +rNode(v, vMin, vMax).toFixed(1) }));
+  const legendGdp = [1, 5, 20].map((v) => ({ v, r: +rNode(v, rMin, rMax).toFixed(1) }));
+
+  return { W, H, worldPath, eu: { x: +eux.toFixed(1), y: +euy.toFixed(1) }, partners, legendValue, legendGdp };
+}
+
 /* ------------------------------------------------------------- fragments */
 
 function tradeRows() {
@@ -156,8 +247,78 @@ const logoMark = (white) => `<img class="logo-mark" src="${white ? logoWhite : l
 const point = (n, title, body, teal) =>
   `<div class="point"><span class="pn${teal ? ' n' : ''}">${n}</span><div class="pt"><h3>${title}</h3><p>${body}</p></div></div>`;
 
+/** Extra-EU import-origins map: world silhouette + arcs/nodes sized by value or by GDP share. */
+function mapSlideHTML(map, num) {
+  const { W, H, worldPath, eu, partners, legendValue, legendGdp } = map;
+  const top = partners[0]; // China — pre-selected so the panel and print view show a worked example
+
+  const arcs = partners.map((p) => `
+      <path class="arc${p.code === top.code ? ' selected' : ''}" data-code="${p.code}" d="${p.arcD}"
+        stroke-width="${p.swValue}" data-sw-value="${p.swValue}" data-sw-gdp="${p.swGdp}"><title>${p.name} → EU-27</title></path>`).join('');
+  const dots = partners.map((p, i) => `
+      <circle class="flow-dot" data-code="${p.code}" r="3.2" style="offset-path:path('${p.arcD}');--delay:${(i * 110) % 2200}ms"></circle>`).join('');
+  const nodes = partners.map((p) => `
+      <g class="node-g${p.code === top.code ? ' selected' : ''}" data-code="${p.code}" tabindex="0" role="button"
+         aria-label="${p.name}: €${p.valueBn} bn, ${p.pctOfExtra}% of extra-EU manufacturing imports">
+        <circle class="node" cx="${p.x}" cy="${p.y}" r="${p.rValue}" data-r-value="${p.rValue}" data-r-gdp="${p.rGdp}"></circle>
+        <title>${p.name} — €${p.valueBn} bn (${p.pctOfExtra}% of extra-EU imports)</title>
+      </g>`).join('');
+
+  const legendRow = (items, unit) => items.map((it) => `
+        <span class="map-scale-item"><i style="width:${(it.r * 2).toFixed(1)}px;height:${(it.r * 2).toFixed(1)}px"></i>${it.v}${unit}</span>`).join('');
+
+  const panel = (p) => `
+    <div class="map-panel-code">${p.code}</div>
+    <h3 class="map-panel-name">${p.name}</h3>
+    <div class="map-panel-stat"><span class="mp-v">€${p.valueBn} bn</span><span class="mp-l">extra-EU manufacturing imports, 2023</span></div>
+    <div class="map-panel-stat"><span class="mp-v">${p.pctOfExtra}%</span><span class="mp-l">of total extra-EU manufacturing imports</span></div>
+    <div class="map-panel-stat"><span class="mp-v">${p.ratioPct}%</span><span class="mp-l">of ${p.name}&rsquo;s own GDP (World Bank, latest est.)</span></div>`;
+
+  return `
+<section class="slide map-slide" data-label="Trade origins">
+  ${kick(num, 'Trade origins · FIGARO 2023', 'Extra-EU imports, by partner country')}
+  <h2 class="s-title anim">Where EU manufacturing imports <em>originate.</em></h2>
+  <p class="s-lede anim">Twenty-one partner countries account for most of the ~€1 379 bn extra-EU manufacturing import bill in
+    2023; a further ${MAP_REST_OF_WORLD.pctOfExtra}% (€${MAP_REST_OF_WORLD.valueBn} bn) is not attributable to a single
+    country. Size scales with import value by default — toggle to size by value relative to the partner's own economy.</p>
+  <div class="map-wrap anim">
+    <div class="map-stage">
+      <div class="map-controls">
+        <div class="seg" role="group" aria-label="Size flows by">
+          <button type="button" class="seg-btn on" data-mode="value">By trade value</button>
+          <button type="button" class="seg-btn" data-mode="gdp">Relative to partner GDP</button>
+        </div>
+        <button type="button" class="play-btn" id="mapPlay">&#9654; Animate all flows</button>
+      </div>
+      <svg class="map-svg" id="mapSvg" viewBox="0 0 ${W} ${H}" role="img"
+        aria-label="Map of extra-EU manufacturing import origins, sized by import value">
+        <path class="map-land" d="${worldPath}"></path>
+        <g class="map-arcs">${arcs}</g>
+        <g class="map-dots">${dots}</g>
+        <g class="map-nodes">${nodes}</g>
+        <g class="eu-mark">
+          <circle class="eu-ring" cx="${eu.x}" cy="${eu.y}" r="15"></circle>
+          <circle class="eu-node" cx="${eu.x}" cy="${eu.y}" r="7"></circle>
+          <text class="eu-label" x="${eu.x}" y="${eu.y - 20}">EU-27</text>
+        </g>
+      </svg>
+      <div class="map-scale" id="mapScale">
+        <span class="map-scale-t legend-value">Import value, € bn</span>
+        <span class="legend-value">${legendRow(legendValue, '')}</span>
+        <span class="map-scale-t legend-gdp">Import value, % of partner GDP</span>
+        <span class="legend-gdp">${legendRow(legendGdp, '%')}</span>
+      </div>
+    </div>
+    <aside class="map-panel" id="mapPanel">${panel(top)}</aside>
+  </div>
+  <script id="mapData" type="application/json">${JSON.stringify(partners)}</script>
+  ${src('Eurostat (FIGARO), naio_10_fgti (2023) — extra-EU manufacturing imports by partner country. GDP: World Bank, GDP (current US$), latest available estimate — a different reference year from the 2023 trade figures; the ratio is indicative of relative economic scale, not a point-in-time precision figure.')}
+</section>`;
+}
+
 /* -------------------------------------------------------------- slides */
 const slides = [];
+const MAP = await buildMap();
 
 // 1 — Cover
 slides.push(`
@@ -187,7 +348,7 @@ slides.push(`
     ${logoMark(false)}
     <div class="cover-foot-r">
       <span>Eurostat · FIGARO · European Commission (DG GROW / DG ENER / JRC)</span>
-      <span class="muted">11 slides · a neutral, source-linked status assessment</span>
+      <span class="muted">12 slides · a neutral, source-linked status assessment</span>
     </div>
   </div>
 </section>`);
@@ -223,10 +384,13 @@ slides.push(`
   ${src('Eurostat ext_tec01 (EU-27, enterprise-based attribution, € bn current prices). Section C 2023: exports €1 650 bn · imports €976 bn.')}
 </section>`);
 
+// 3.5 — Trade origins map
+slides.push(mapSlideHTML(MAP, '03'));
+
 // 4 — Import dependency board
 slides.push(`
 <section class="slide" data-label="Input dependencies">
-  ${kick('03', 'Input dependencies', 'Reliance and supplier concentration')}
+  ${kick('04', 'Input dependencies', 'Reliance and supplier concentration')}
   <h2 class="s-title anim">Where import reliance and supplier concentration <em>coincide</em>.</h2>
   <p class="s-lede anim">Two independent measures — the share of EU demand met by imports, and the largest supplier's share of
     that supply. Materials high on both are the focus of the Critical Raw Materials Act and CBAM.</p>
@@ -240,7 +404,7 @@ slides.push(`
 // 5 — Critical raw materials
 slides.push(`
 <section class="slide white" data-label="Raw materials">
-  ${kick('04', 'Critical raw materials · CRMA', 'Dominant supplier share of EU supply')}
+  ${kick('05', 'Critical raw materials · CRMA', 'Dominant supplier share of EU supply')}
   <h2 class="s-title anim">The <em>feedstocks</em> the EU consumes but produces little of.</h2>
   <p class="s-lede anim">For several strategic materials a single country supplies most of EU demand — spanning magnets,
     batteries, semiconductors and steel micro-alloying. Bars show the dominant supplier's share of EU supply (EC/JRC).</p>
@@ -254,7 +418,7 @@ slides.push(`
 // 6 — Manufactured products
 slides.push(`
 <section class="slide cream" data-label="Manufactured goods">
-  ${kick('05', 'Manufactured products', 'The finished-goods dimension')}
+  ${kick('06', 'Manufactured products', 'The finished-goods dimension')}
   <h2 class="s-title anim">Import reliance also runs through <em>finished goods.</em></h2>
   <p class="s-lede anim">Beyond raw materials, several manufactured products — clean-tech equipment, electronics, medicines — are
     sourced predominantly from one origin. Bars show the largest supplier's share of extra-EU supply.</p>
@@ -265,7 +429,7 @@ slides.push(`
 // 7 — Energy & feedstock
 slides.push(`
 <section class="slide" data-label="Energy & feedstock">
-  ${kick('06', 'Energy & feedstock', 'The input side of refining & chemicals')}
+  ${kick('07', 'Energy & feedstock', 'The input side of refining & chemicals')}
   <h2 class="s-title anim">Refining and chemicals run on <em>imported</em> energy and feedstock.</h2>
   <p class="s-lede anim">The 2022 supply shock was absorbed over a multi-year horizon through supplier diversification; the structural
     level of energy-import dependency remains high.</p>
@@ -282,7 +446,7 @@ slides.push(`
 // 8 — Competitiveness
 slides.push(`
 <section class="slide blue" data-label="Competitiveness">
-  ${kick('07', 'Implication · Competitiveness', 'What the pattern implies', true)}
+  ${kick('08', 'Implication · Competitiveness', 'What the pattern implies', true)}
   <h2 class="s-title anim">For EU <em>competitiveness</em>: strength in output, exposure in inputs.</h2>
   <div class="two-col anim-children">
     ${point('A', 'Revealed strength in high-value branches', 'The €674 bn surplus concentrates in machinery, motor vehicles, pharmaceuticals and chemicals — capital- and R&amp;D-intensive segments where the EU holds comparative advantage and price-setting capacity.')}
@@ -296,7 +460,7 @@ slides.push(`
 // 9 — Geopolitical resilience
 slides.push(`
 <section class="slide" data-label="Resilience">
-  ${kick('08', 'Implication · Geopolitical resilience', 'What the pattern implies')}
+  ${kick('09', 'Implication · Geopolitical resilience', 'What the pattern implies')}
   <h2 class="s-title anim">For <em>geopolitical resilience</em>: reliance is high, adjustment is demonstrable.</h2>
   <div class="two-col anim-children">
     ${point('A', 'Continuity depends on few origins', 'For several strategic materials one country supplies most of EU demand, so supply continuity is sensitive to the bilateral relationship and policy environment of a small set of origin countries.', true)}
@@ -310,7 +474,7 @@ slides.push(`
 // 10 — Status quo synthesis
 slides.push(`
 <section class="slide cream" data-label="Status quo">
-  ${kick('09', 'Status quo', 'The current-state assessment')}
+  ${kick('10', 'Status quo', 'The current-state assessment')}
   <h2 class="s-title anim">Status quo: a <em>competitive</em> exporter with a <em>concentrated</em> input base.</h2>
   <div class="sq anim-children">
     <div class="sq-item"><span class="sq-k">Output</span><p>A structural extra-EU surplus (+€674 bn, 2023; +€843 bn, 2024), led by machinery, vehicles, pharmaceuticals and chemicals.</p></div>
@@ -325,7 +489,7 @@ slides.push(`
 // 11 — Sources & method
 slides.push(`
 <section class="slide white" data-label="Sources & method">
-  ${kick('10', 'Sources & method', 'Three data layers, every figure sourced')}
+  ${kick('11', 'Sources & method', 'Three data layers, every figure sourced')}
   <h2 class="s-title anim">How to read this — and where the numbers come from.</h2>
   <div class="layers anim-children">
     <div class="layer"><span class="ln" style="background:var(--teal)"></span>
@@ -359,6 +523,7 @@ const html = `<div class="deck">
   ${slides.join('\n')}
   <nav class="dots" id="dots"></nav>
   <div class="counter"><span id="cur">01</span> / <span id="tot">${String(slides.length).padStart(2, '0')}</span></div>
+  <button type="button" class="pdf-btn" id="pdfBtn">⬇ Download PDF</button>
   <div class="hint" id="hint">Use ↑ ↓ or scroll · press <b>F</b> for fullscreen</div>
 </div>
 <style>${CSS}</style>
