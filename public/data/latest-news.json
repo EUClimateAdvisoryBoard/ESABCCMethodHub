@@ -1,11 +1,48 @@
 [
   {
-    "title": "EU law on nitrates pollution remains effective, with scope for smarter implementation",
-    "summary": "European Commission Press release Brussels, 15 Jul 2026 The European Commission today published the first comprehensive evaluation of the Nitrates Directive since its adoption in 1991.",
-    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1594",
+    "title": "Commission provides guidance to Google for AI interoperability on Android and sharing of Google Search data under the Digital Markets Act",
+    "summary": "European Commission Press release Brussels, 16 Jul 2026 Today, the European Commission has issued two sets of binding specification measures to Google under the Digital Markets Act.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1634",
     "source": "european_commission",
     "sourceLabel": "European Commission",
-    "publishedDate": "2026-07-14T22:00:00.000Z",
-    "tags": []
+    "publishedDate": "2026-07-15T22:00:00.000Z",
+    "tags": [
+      "emissions"
+    ]
+  },
+  {
+    "title": "Commission approves Czech capacity mechanism under Clean Industrial Deal State Aid Framework",
+    "summary": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved, under EU State aid rules, Czechia's market-wide capacity mechanism. The measure aims to ensure there is sufficient capacity to produce or store electricity, or to reduce electricity consumption so that production meets demand in the long term.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1611",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-07-15T22:00:00.000Z",
+    "tags": [
+      "emissions",
+      "industry"
+    ]
+  },
+  {
+    "title": "Commission approves €300 million Irish State aid scheme for temporary electricity price relief for energy-intensive companies",
+    "summary": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €300 million Irish scheme to provide temporary electricity price relief for energy-intensive companies in line with the objectives of the Clean Industrial Deal.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1610",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-07-15T22:00:00.000Z",
+    "tags": [
+      "energy",
+      "industry"
+    ]
+  },
+  {
+    "title": "Commission approves €41 million Greek State aid for agricultural companies facing increased fertiliser prices",
+    "summary": "European Commission Press release Brussels, 16 Jul 2026 The European Commission has approved a €41 million Greek aid scheme to support agricultural companies facing increased fertiliser prices due to the Middle East crisis. The scheme was approved under the Middle East Crisis Temporary State Aid Framework (METSAF) adopted by the Commission on 29 April 2026.",
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1578",
+    "source": "european_commission",
+    "sourceLabel": "European Commission",
+    "publishedDate": "2026-07-15T22:00:00.000Z",
+    "tags": [
+      "emissions"
+    ]
   }
 ]
