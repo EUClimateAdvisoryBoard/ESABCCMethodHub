@@ -40,6 +40,7 @@ import {
   OBJECTIVES,
   SOURCES,
   ROADMAPS,
+  SUBSECTOR_ASSOCIATIONS,
   DATA_POINTS,
   TRAJECTORIES,
   ELECTRIFICATION_BENCHMARKS,
@@ -426,6 +427,34 @@ function exportWorkbook() {
       }),
     },
     {
+      name: 'Subsector associations',
+      title: 'Industry subsectors & their EU representative associations',
+      subtitle:
+        'Each energy-intensive NACE Section-C subsector (and clean-tech branch) and the EU-level trade association that represents it, with a link to that association’s own decarbonisation roadmap',
+      headers: [
+        'Subsector',
+        'NACE',
+        'Association',
+        'Full name',
+        'Represents',
+        'Decarbonisation roadmap',
+        'Headline',
+        'Full citation',
+        'Source link',
+      ],
+      rows: SUBSECTOR_ASSOCIATIONS.map((a) => [
+        a.subsector,
+        a.nace,
+        a.association,
+        a.associationFull,
+        a.represents,
+        a.roadmap,
+        a.headline,
+        cite(a.sourceId),
+        link(a.sourceId),
+      ]),
+    },
+    {
       name: 'Data points',
       title: 'All extracted data points',
       subtitle:
@@ -588,10 +617,12 @@ export default function ReportObjectivesPage() {
           <p className="mt-2 max-w-text text-grey-700 dark:text-[var(--mh-muted)]">
             What the next report&apos;s industry work sets out to do, and the evidence it stands
             on: a synthesis of industrial decarbonisation pathways and roadmaps (including their
-            investment timelines), a synthesis of the clean-tech industry&apos;s role in
-            economy-wide decarbonisation, key overview figures aggregating pathway, scenario and
-            investment data — and one Excel download in which every data point carries the exact
-            link to the paper or database it came from.
+            investment timelines) — from the peer-reviewed literature and from the EU-level trade
+            association (&ldquo;industry lobby&rdquo;) of every energy-intensive subsector, each of
+            which has published its own roadmap — a synthesis of the clean-tech industry&apos;s role
+            in economy-wide decarbonisation, key overview figures aggregating pathway, scenario and
+            investment data, and one Excel download in which every data point carries the exact link
+            to the paper or database it came from.
           </p>
           <button
             onClick={exportWorkbook}
@@ -600,10 +631,10 @@ export default function ReportObjectivesPage() {
             ⬇ Download the full workbook (Excel)
           </button>
           <p className="mt-1.5 text-xs text-grey-500 dark:text-[var(--mh-muted)]">
-            12 sheets: objectives · roadmap synthesis · all data points · scenario series · figure
-            benchmarks · scenario database · scenario pathways · scenario ensembles · NACE-C
-            subsectors · subsector pathways · industry history · source register — a clickable
-            source link on every data row.
+            13 sheets: objectives · roadmap synthesis · subsector associations · all data points ·
+            scenario series · figure benchmarks · scenario database · scenario pathways · scenario
+            ensembles · NACE-C subsectors · subsector pathways · industry history · source register
+            — a clickable source link on every data row.
           </p>
         </header>
 
@@ -716,14 +747,99 @@ export default function ReportObjectivesPage() {
           <ScenarioDatabaseTable />
         </section>
 
+        {/* 2c ── Subsector representative associations directory */}
+        <section aria-labelledby="assoc-h" className="mb-10">
+          <h2 id="assoc-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
+            4 · Industry subsectors &amp; their representative associations
+          </h2>
+          <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
+            Every energy-intensive subsector of EU manufacturing — and each clean-tech branch — is
+            represented in Brussels by a dedicated EU-level trade association (an
+            &ldquo;industry lobby&rdquo;), and each of those has published its own decarbonisation
+            roadmap. This directory maps the NACE Section-C subsector to its representative body and
+            links straight to that body&apos;s roadmap; the detailed synthesis of each roadmap
+            follows in section&nbsp;5. Every roadmap here is also a row in the workbook&apos;s
+            &ldquo;Subsector associations&rdquo; sheet, with the source link.
+          </p>
+
+          <div className="overflow-x-auto rounded-xl border border-grey-200 bg-white shadow-sm dark:border-[var(--mh-border)] dark:bg-[var(--mh-card)]">
+            <table className="w-full min-w-[860px] border-collapse text-xs">
+              <thead>
+                <tr className="border-b border-grey-200 bg-grey-50 text-left text-grey-600 dark:border-[var(--mh-border)] dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
+                  <th className="px-3 py-2 font-semibold">Subsector</th>
+                  <th className="px-3 py-2 font-semibold">NACE</th>
+                  <th className="px-3 py-2 font-semibold">Representative association</th>
+                  <th className="px-3 py-2 font-semibold">Represents</th>
+                  <th className="px-3 py-2 font-semibold">Its decarbonisation roadmap</th>
+                </tr>
+              </thead>
+              <tbody>
+                {SUBSECTOR_ASSOCIATIONS.map((a) => (
+                  <tr
+                    key={a.subsector}
+                    className="border-b border-grey-100 align-top text-grey-700 dark:border-[var(--mh-border)] dark:text-[var(--mh-muted)]"
+                  >
+                    <td className="px-3 py-2 font-semibold text-grey-900 dark:text-[var(--mh-fg)]">
+                      {a.subsector}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-2">
+                      <span className="rounded bg-grey-100 px-1.5 py-0.5 text-[10px] font-semibold text-grey-600 dark:bg-[var(--mh-bg)] dark:text-[var(--mh-muted)]">
+                        {a.nace}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2">
+                      <span
+                        className="inline-block rounded-full px-2 py-0.5 text-[11px] font-bold"
+                        style={{
+                          backgroundColor: `${TOPIC_META[a.theme === 'cleantech' ? 'cleantech' : 'pathways'].color}1A`,
+                          color: TOPIC_META[a.theme === 'cleantech' ? 'cleantech' : 'pathways'].color,
+                        }}
+                      >
+                        {a.association}
+                      </span>
+                      <span className="mt-0.5 block text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+                        {a.associationFull}
+                      </span>
+                    </td>
+                    <td className="px-3 py-2 text-[12px]">{a.represents}</td>
+                    <td className="px-3 py-2">
+                      <SourceLink sourceId={a.sourceId}>{a.roadmap}</SourceLink>
+                      <span className="mt-0.5 block text-[11px] text-grey-500 dark:text-[var(--mh-muted)]">
+                        {a.headline}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-2 text-xs text-grey-500 dark:text-[var(--mh-muted)]">
+            {SUBSECTOR_ASSOCIATIONS.length} representative associations, each with its own published
+            roadmap. Colour marks which synthesis the roadmap sits under below —{' '}
+            <span style={{ color: TOPIC_META.pathways.color }} className="font-semibold">
+              decarbonisation pathways
+            </span>{' '}
+            or the{' '}
+            <span style={{ color: TOPIC_META.cleantech.color }} className="font-semibold">
+              clean-tech role
+            </span>
+            .
+          </p>
+        </section>
+
         {/* 3 ── Roadmap synthesis */}
         <section aria-labelledby="roadmaps-h" className="mb-10">
           <h2 id="roadmaps-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
-            4 · Synthesis of pathways, roadmaps &amp; the clean-tech evidence
+            5 · Synthesis of pathways, roadmaps &amp; the clean-tech evidence
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             One card per roadmap or study — its core finding, main levers, investment timeline and
-            milestones. Grouped into the two syntheses the report objectives call for.
+            milestones. This includes the self-published decarbonisation roadmap of each
+            subsector&apos;s representative association from the directory above (Cefic, EUROFER,
+            CEMBUREAU, European Aluminium, Eurometaux, Cepi, Fertilizers Europe, Cerame-Unie, FEVE,
+            EuLA, FuelsEurope, Hydrogen Europe, SolarPower Europe, WindEurope) alongside the
+            peer-reviewed and agency literature. Grouped into the two syntheses the report
+            objectives call for.
           </p>
 
           {[
@@ -797,7 +913,7 @@ export default function ReportObjectivesPage() {
         {/* 4 ── Data points */}
         <section aria-labelledby="data-h" className="mb-10">
           <h2 id="data-h" className="mb-1 text-lg font-bold text-grey-900 dark:text-[var(--mh-fg)]">
-            5 · All extracted data points
+            6 · All extracted data points
           </h2>
           <p className="mb-4 max-w-text text-sm text-grey-600 dark:text-[var(--mh-muted)]">
             The full extraction behind the figures and syntheses — every value with its scenario,

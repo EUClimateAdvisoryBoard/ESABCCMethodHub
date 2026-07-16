@@ -68,6 +68,32 @@ export interface IrRoadmap {
   milestones: { period: string; milestone: string }[];
 }
 
+/**
+ * A NACE Section-C subsector (or clean-tech branch) and the EU-level
+ * representative trade association — the "industry lobby" — that speaks for it,
+ * together with that association's own published decarbonisation roadmap.
+ */
+export interface IrSubsectorAssociation {
+  /** Plain-language subsector name ("Steel", "Cement", "Chemicals"). */
+  subsector: string;
+  /** NACE Rev. 2.1 code(s) the subsector maps to, or an enabler note. */
+  nace: string;
+  /** Short acronym / common name of the association ("Cefic", "EUROFER"). */
+  association: string;
+  /** Full official name of the association. */
+  associationFull: string;
+  /** Whom it represents / what it advocates for, one line. */
+  represents: string;
+  /** Title of the association's decarbonisation roadmap / climate strategy. */
+  roadmap: string;
+  /** One-line quantified headline from that roadmap. */
+  headline: string;
+  /** Source id (links to the roadmap in SOURCES). */
+  sourceId: string;
+  /** Which synthesis the matching roadmap card sits under, if any. */
+  theme?: IrTheme;
+}
+
 export type IrTopic = 'pathways' | 'cleantech' | 'scenarios' | 'investment';
 
 export interface IrDataPoint {
@@ -321,6 +347,95 @@ export const SOURCES: IrSource[] = [
     short: 'Hydrogen IPCEIs',
     cite: 'European Commission, DG COMP. Hydrogen value chain — approved IPCEIs (Hy2Tech 2022, Hy2Use 2022, Hy2Infra 2024, Hy2Move 2024).',
     url: 'https://competition-policy.ec.europa.eu/state-aid/ipcei/approved-ipceis/hydrogen-value-chain_en',
+  },
+
+  // ── Sector representative associations ("industry lobby") roadmaps ──
+  // The EU-level trade body of each energy-intensive subsector and clean-tech
+  // branch, each with its own published decarbonisation roadmap / climate
+  // strategy. URLs checked when this file was compiled.
+  {
+    id: 'cefic-transition-2023',
+    type: 'industry roadmap',
+    short: 'Cefic Transition Pathway 2023',
+    cite: 'Cefic — European Chemical Industry Council (2023). The EU Chemical Industry Transition Pathway (co-created with the European Commission and stakeholders, published 27 January 2023).',
+    url: 'https://transition-pathway.cefic.org/',
+  },
+  {
+    id: 'euralum-2023',
+    type: 'industry roadmap',
+    short: 'European Aluminium Net-Zero 2050',
+    cite: 'European Aluminium (2023). Net-Zero by 2050: Science-based Decarbonisation Pathways for the European Aluminium Industry (14 November 2023).',
+    url: 'https://european-aluminium.eu/blog/netzeroby2050/',
+  },
+  {
+    id: 'eurometaux-2022',
+    type: 'industry roadmap',
+    short: 'Eurometaux Metals for Clean Energy 2022',
+    cite: 'Eurometaux / KU Leuven (2022). Metals for Clean Energy: Pathways to solving Europe’s raw materials challenge. Study by KU Leuven, commissioned by Eurometaux (April 2022).',
+    url: 'https://eurometaux.eu/metals-clean-energy/',
+  },
+  {
+    id: 'cepi-2050',
+    type: 'industry roadmap',
+    short: 'Cepi 2050 Roadmap',
+    cite: 'Cepi — Confederation of European Paper Industries (2017/2020). Unfold the Future — The Forest Fibre Industry 2050 Roadmap to a low-carbon bio-economy.',
+    url: 'https://sustainability.cepi.org/energy-climate/',
+  },
+  {
+    id: 'fertilizerseurope-2023',
+    type: 'industry roadmap',
+    short: 'Fertilizers Europe roadmap 2023',
+    cite: 'Fertilizers Europe (2023). Decarbonising Fertilizers by 2050 — the industry’s roadmap.',
+    url: 'https://www.fertilizerseurope.com/decarbonising-fertilizers-by-2050/',
+  },
+  {
+    id: 'cerameunie-2050',
+    type: 'industry roadmap',
+    short: 'Cerame-Unie Ceramic Roadmap 2050',
+    cite: 'Cerame-Unie — The European Ceramic Industry Association (2021/2022). Ceramic Roadmap to 2050: Continuing our Path towards Climate Neutrality.',
+    url: 'https://cerameunie.eu/topics/cerame-unie-sectors/cerame-unie/ceramic-roadmap-to-2050-continuing-our-path-towards-climate-neutrality/',
+  },
+  {
+    id: 'feve-2024',
+    type: 'industry roadmap',
+    short: 'FEVE glass decarbonisation 2024',
+    cite: 'FEVE — The European Container Glass Federation (2024). Decarbonisation of the container glass industry (member of Glass Alliance Europe).',
+    url: 'https://feve.org/decarbonisation-glass-packaging/',
+  },
+  {
+    id: 'eula-2023',
+    type: 'industry roadmap',
+    short: 'EuLA lime roadmap',
+    cite: 'EuLA — European Lime Association (2019, updated). A Pathway to Negative CO2 Emissions by 2050 — the European lime sector climate roadmap.',
+    url: 'https://eula.eu/resources/a-pathway-to-negative-co2emissions-by-2050/',
+  },
+  {
+    id: 'fuelseurope-2020',
+    type: 'industry roadmap',
+    short: 'FuelsEurope Clean Fuels for All',
+    cite: 'FuelsEurope (2020). Clean Fuels for All — the EU refining industry’s potential pathway to climate neutrality by 2050.',
+    url: 'https://www.fuelseurope.eu/publication/clean-fuels-for-all-eu-refining-industry-proposes-a-potential-pathway-for-climate-neutrality-by-2050/',
+  },
+  {
+    id: 'hydrogeneurope-2020',
+    type: 'industry roadmap',
+    short: 'Hydrogen Europe 2×40 GW',
+    cite: 'Hydrogen Europe (2020). Green Hydrogen for a European Green Deal — A 2×40 GW Initiative.',
+    url: 'https://hydrogeneurope.eu/wp-content/uploads/2021/11/Hydrogen-Europe_2x40-GW-Green-H2-Initative-Paper.pdf',
+  },
+  {
+    id: 'solarpowereurope-2024',
+    type: 'industry roadmap',
+    short: 'SolarPower Europe manufacturing',
+    cite: 'SolarPower Europe / European Solar PV Industry Alliance (2022–2024). EU solar manufacturing objective — 30 GW across the value chain.',
+    url: 'https://www.solarpowereurope.org/interests/manufacturing',
+  },
+  {
+    id: 'windeurope-2024',
+    type: 'industry roadmap',
+    short: 'WindEurope outlook 2024–2030',
+    cite: 'WindEurope (2024). Wind energy in Europe: 2023 Statistics and the outlook for 2024–2030.',
+    url: 'https://windeurope.org/intelligence-platform/product/wind-energy-in-europe-2023-statistics-and-the-outlook-for-2024-2030/',
   },
 ];
 
@@ -582,6 +697,220 @@ export const ROADMAPS: IrRoadmap[] = [
     ],
   },
 
+  // ── Sector representative-association roadmaps (the "industry lobby" of
+  //    each energy-intensive subsector, with its own decarbonisation plan) ──
+  {
+    id: 'rm-cefic',
+    theme: 'pathways',
+    name: 'EU Chemical Industry Transition Pathway',
+    publisher: 'Cefic (European Chemical Industry Council)',
+    year: 2023,
+    region: 'EU',
+    sourceId: 'cefic-transition-2023',
+    summary:
+      'The chemical sector’s roadmap to 2050 climate neutrality, co-created with the European Commission: nearly 200 concrete actions for EU institutions, Member States and industry across energy efficiency, electrification, alternative feedstocks and CCUS. The industry has already cut its GHG emissions by over 60% in 30 years, but closing the remaining gap needs breakthrough process innovation and major changes to production.',
+    levers: [
+      'Energy & resource efficiency',
+      'Electrification of process heat',
+      'Alternative feedstocks (bio, recycled, CO2/CCU)',
+      'CCUS',
+      'Carbon removals for residual emissions',
+    ],
+    investmentTimeline:
+      'The Processes4Planet partnership (Horizon Europe) estimates €218–238 bn for early-stage commercial deployment of the breakthrough technologies, and trillions more to scale them across Europe — front-loaded on the demonstration plants of the 2020s–2030s.',
+    milestones: [
+      { period: 'to 2030', milestone: 'The Transition Pathway’s ~200 actions underway; first-of-a-kind low-carbon plants deployed.' },
+      { period: '2050', milestone: 'Climate-neutral, circular chemical industry; carbon removals compensate hard-to-abate residual emissions.' },
+    ],
+  },
+  {
+    id: 'rm-fertilizerseurope',
+    theme: 'pathways',
+    name: 'Decarbonising Fertilizers by 2050',
+    publisher: 'Fertilizers Europe',
+    year: 2023,
+    region: 'EU',
+    sourceId: 'fertilizerseurope-2023',
+    summary:
+      'The nitrogen-fertilizer industry’s roadmap to climate neutrality by 2050. Ammonia is today made via steam-methane reforming; the roadmap sets a technology-neutral path — biomethane/biogas feedstock, CCS and large-scale electrolysis for green hydrogen — having already cut scope 1–2 emissions 49% between 2005 and 2020.',
+    levers: [
+      'Green hydrogen (electrolytic ammonia)',
+      'Biomethane / biogas feedstock',
+      'Carbon capture & storage',
+      'CBAM safeguards & lead-market demand',
+    ],
+    investmentTimeline:
+      'Both interim and end targets are dated to force the investment now: a decarbonisation masterplan by 2026, then the switch from SMR to electrolytic and CCS-abated ammonia across the 2030s to reach −70% by 2040.',
+    milestones: [
+      { period: '2026', milestone: 'Decarbonisation masterplan developed.' },
+      { period: '2040', milestone: '−70% GHG emissions.' },
+      { period: '2050', milestone: 'Climate-neutral fertilizer production.' },
+    ],
+  },
+  {
+    id: 'rm-fuelseurope',
+    theme: 'pathways',
+    name: 'Clean Fuels for All (refining Vision 2050)',
+    publisher: 'FuelsEurope',
+    year: 2020,
+    region: 'EU',
+    sourceId: 'fuelseurope-2020',
+    summary:
+      'The EU refining industry’s potential pathway to climate-neutral liquid fuels by 2050: every litre of transport fuel made net-climate-neutral, decarbonising aviation, maritime and road through advanced biofuels, e-fuels, biomass/waste-to-liquid and HVO, with CCS and clean hydrogen cutting refinery carbon intensity.',
+    levers: [
+      'Advanced biofuels & HVO',
+      'E-fuels (RFNBOs)',
+      'Biomass/waste-to-liquid (BTL)',
+      'CCS & clean hydrogen in refineries',
+    ],
+    investmentTimeline:
+      'The pathway needs an estimated €400–650 bn, with first-of-a-kind industrial-scale plants coming online from the mid-2020s; it targets a 100 Mt CO2/yr cut in transport by 2035 — equivalent to taking the CO2 of ~50 million battery-electric vehicles off the road.',
+    milestones: [
+      { period: '2035', milestone: '~100 Mt CO2/yr reduction in transport from low-carbon liquid fuels.' },
+      { period: '2050', milestone: 'Net-climate-neutral liquid fuels; €400–650 bn cumulative investment.' },
+    ],
+  },
+  {
+    id: 'rm-euralum',
+    theme: 'pathways',
+    name: 'Net-Zero by 2050 — European aluminium decarbonisation pathways',
+    publisher: 'European Aluminium',
+    year: 2023,
+    region: 'EU',
+    sourceId: 'euralum-2023',
+    summary:
+      'Science-based pathways to net-zero across the aluminium value chain (primary, semi-fabrication, recycling), aligned with the IPCC 1.5 °C scenario. The European aluminium industry emits ~24 Mt CO2e/yr; the roadmap targets a 92.4% GHG cut by 2050 versus 2021, led by electrifying alumina refining and smelting and scaling recycled ("secondary") metal.',
+    levers: [
+      'Decarbonised electricity for smelting',
+      'Inert anodes & process innovation',
+      'Electrification of alumina refining & heat',
+      'Recycling / secondary aluminium scale-up',
+    ],
+    investmentTimeline:
+      'Because smelting is already highly electrified, grid decarbonisation and power prices — not new process kit — set the pace: the pathways depend on access to abundant, competitively priced zero-carbon electricity this decade.',
+    milestones: [
+      { period: '2030', milestone: 'Interim science-based reductions on the path; recycled-metal share and clean-power sourcing rise.' },
+      { period: '2050', milestone: '−92.4% GHG vs 2021 across the value chain (IPCC 1.5 °C-aligned).' },
+    ],
+  },
+  {
+    id: 'rm-cepi',
+    theme: 'pathways',
+    name: 'Unfold the Future — 2050 Roadmap to a low-carbon bio-economy',
+    publisher: 'Cepi (Confederation of European Paper Industries)',
+    year: 2017,
+    region: 'EU',
+    sourceId: 'cepi-2050',
+    summary:
+      'The forest-fibre industry’s roadmap to European carbon neutrality by 2050. The sector has already cut carbon emissions 59% per tonne of product (1990–2024) and invests ~€5.5 bn/yr; the remaining path runs through new production technologies, cogeneration and emerging breakthroughs, plus falling indirect emissions as the grid decarbonises.',
+    levers: [
+      'Fossil-free process energy & biomass',
+      'Cogeneration assets',
+      'Breakthrough production technologies',
+      'Grid decarbonisation (indirect emissions)',
+    ],
+    investmentTimeline:
+      'The industry frames itself as an early mover investing ~€5.5 bn/yr; the roadmap’s 2050 wedges — new technologies (−7 Mt), cogeneration (−2 Mt) and breakthrough tech (−5 Mt CO2) — depend on sustained fossil-free-energy investment across the period.',
+    milestones: [
+      { period: '1990–2024', milestone: '−59% carbon emissions per tonne of product (direct + indirect).' },
+      { period: '2050', milestone: 'European carbon neutrality; breakthrough technologies deliver the largest single wedge.' },
+    ],
+  },
+  {
+    id: 'rm-cerameunie',
+    theme: 'pathways',
+    name: 'Ceramic Roadmap to 2050',
+    publisher: 'Cerame-Unie (European Ceramic Industry Association)',
+    year: 2022,
+    region: 'EU',
+    sourceId: 'cerameunie-2050',
+    summary:
+      'The ceramic industry’s roadmap to 2050 climate neutrality. The sector has cut total emissions ~33% since 1990 (over 45% since its 2000s production peak); its Emissions Reduction Model shows energy efficiency, circularity, green fuels, CO2 capture and electrification could cut expected direct emissions by up to 40% within 10 years for this hard-to-abate sector of many small kilns.',
+    levers: [
+      'Energy efficiency',
+      'Green fuels (biomass, hydrogen)',
+      'Electrification of kilns',
+      'CO2 capture',
+      'Circular economy',
+    ],
+    investmentTimeline:
+      'Annual decarbonisation costs are put at over €500 m by 2030 and cumulative abatement costs at around €27 bn to 2050 — for a hard-to-abate sector of many small, dispersed kilns (80% SMEs) that needs strong institutional support (funding, infrastructure) to reach each reinvestment point.',
+    milestones: [
+      { period: '2019→2050', milestone: 'Emissions model: 19.1 Mt CO2 (2019) → 12.4 (2030) → 7.0 (2040) → 1.3 (2050), residual offset by removals.' },
+      { period: 'within ~10 yrs', milestone: 'Up to −40% expected direct emissions from efficiency, circularity, green fuels, CCS and electrification.' },
+      { period: '2050', milestone: 'Carbon neutrality aligned with the EU Climate Law.' },
+    ],
+  },
+  {
+    id: 'rm-feve',
+    theme: 'pathways',
+    name: 'Container-glass decarbonisation to net zero',
+    publisher: 'FEVE / Glass Alliance Europe',
+    year: 2024,
+    region: 'EU',
+    sourceId: 'feve-2024',
+    summary:
+      'The container-glass industry’s path to a climate-neutral glass-packaging circular economy by 2050. About 80% of the sector’s direct CO2 comes from burning natural gas; more than 100 pilot projects — electric, hydrogen, biofuel and hybrid furnaces — already show CO2 reductions of 55–64%.',
+    levers: [
+      'Electric & hybrid melting',
+      'Hydrogen & biofuel firing',
+      'Cullet (recycled glass) recovery',
+      'Low-carbon electricity',
+    ],
+    investmentTimeline:
+      'The sector invests over €600 m/yr in innovation and decarbonisation today; reaching net zero needs an estimated ~€20 bn additional capex by 2050 to upgrade melting technology — contingent on fast access to low-carbon energy infrastructure.',
+    milestones: [
+      { period: 'now', milestone: '>100 pilot furnaces show 55–64% CO2 cuts; >90% of EU glass containers made by SBTi-committed companies.' },
+      { period: '2050', milestone: 'Climate-neutral glass-packaging circular economy; ~€20 bn additional capex.' },
+    ],
+  },
+  {
+    id: 'rm-eula',
+    theme: 'pathways',
+    name: 'A Pathway to Negative CO2 Emissions by 2050 (lime)',
+    publisher: 'EuLA (European Lime Association)',
+    year: 2019,
+    region: 'EU',
+    sourceId: 'eula-2023',
+    summary:
+      'The lime sector’s roadmap to negative CO2 emissions by 2050. Because ~69% of lime CO2 is unavoidably released by the chemical process (limestone decarbonation), CCS/BECCS and carbonation during the use phase are central. Alternative fuels are targeted to reach ~50% of the kiln fuel mix by 2030 and 100% by 2050.',
+    levers: [
+      'Alternative fuels (biomass, hydrogen, e-fuels)',
+      'Carbon capture & storage / BECCS',
+      'Electrification',
+      'Carbonation uptake in the use phase',
+    ],
+    investmentTimeline:
+      'Electricity consumption climbs from almost 10 TWh by 2030 to over 22 TWh by 2050 and CCS scales across the fleet; because most lime CO2 is process-inherent, the sector cannot reach neutrality without CO2 transport-and-storage infrastructure built in this period (capture technologies expected industrial-scale from ~2025–2028).',
+    milestones: [
+      { period: '2030', milestone: 'Direct CO2 ~−20% vs 2019; alternative fuels reach ~50% of the kiln fuel mix (~35 PJ).' },
+      { period: '2050', milestone: 'Net direct CO2 ~−5 Mt (carbon-negative): 100% alternative fuels, CCS/BECCS + ~33% of process CO2 reabsorbed by carbonation.' },
+    ],
+  },
+  {
+    id: 'rm-eurometaux',
+    theme: 'cleantech',
+    name: 'Metals for Clean Energy',
+    publisher: 'Eurometaux / KU Leuven',
+    year: 2022,
+    region: 'EU',
+    sourceId: 'eurometaux-2022',
+    summary:
+      'KU Leuven study commissioned by the non-ferrous metals association on the metals Europe needs for its own clean-energy transition. Without more mined, refined and recycled supply, Europe faces critical shortfalls of copper, lithium, nickel, cobalt and rare earths around 2030 — the EU will need ~35× more lithium and 7–26× more rare earths by 2050. But 40–75% of clean-energy metal needs could be met from local recycling by 2050 if investment and permitting bottlenecks are fixed now.',
+    levers: [
+      'Domestic mining & refining capacity',
+      'Circularity / recycling scale-up',
+      'Permitting & investment de-risking',
+      'Low-carbon smelting on clean electricity',
+    ],
+    investmentTimeline:
+      'The supply gap is this decade: metal demand for EVs and renewables pulls hardest over the next ~15 years, ahead of when recycling can supply it (a 10–15-year lag) — so refining and recycling capacity must be built in the 2020s to avoid strategic dependencies.',
+    milestones: [
+      { period: '~2030', milestone: 'Global supply-shortage risk for five metals: lithium, cobalt, nickel, rare earths and copper.' },
+      { period: '2050', milestone: '40–75% of Europe’s clean-energy metal needs potentially met by local recycling.' },
+    ],
+  },
+
   // ── Clean-tech industry in economy-wide decarbonisation ──
   {
     id: 'rm-iea-etp',
@@ -708,6 +1037,237 @@ export const ROADMAPS: IrRoadmap[] = [
     milestones: [
       { period: 'from 2025', milestone: '€750–800 bn/yr additional EU investment; investment share ~22% → ~27% of GDP.' },
     ],
+  },
+  {
+    id: 'rm-hydrogeneurope',
+    theme: 'cleantech',
+    name: 'Green Hydrogen for a European Green Deal — 2×40 GW Initiative',
+    publisher: 'Hydrogen Europe',
+    year: 2020,
+    region: 'EU + neighbourhood',
+    sourceId: 'hydrogeneurope-2020',
+    summary:
+      'The hydrogen industry association’s founding deployment initiative: 40 GW of EU electrolyser capacity plus 40 GW in neighbouring North Africa and Ukraine by 2030, avoiding roughly 82 Mt CO2/yr in the EU. It underpinned the EU Hydrogen Strategy’s 40 GW / 10 Mt renewable-hydrogen 2030 targets and the drive to scale European electrolyser manufacturing.',
+    levers: [
+      'Electrolyser deployment (40 GW EU by 2030)',
+      'Dedicated additional renewables',
+      'EU + neighbourhood supply/import chain',
+      'Electrolyser manufacturing scale-up',
+    ],
+    investmentTimeline:
+      'The initiative front-loads the 2020s: reaching 40 GW installed by 2030 requires electrolyser manufacturing to scale roughly tenfold (the 2022 Electrolyser Summit target of 17.5 GW/yr by 2025) — so the manufacturing build-out decision falls now, not in the 2040s.',
+    milestones: [
+      { period: '2030', milestone: '40 GW EU electrolysers (6 GW captive + 34 GW market) + 40 GW in North Africa/Ukraine; ~82 Mt CO2/yr avoided in the EU.' },
+    ],
+  },
+  {
+    id: 'rm-solarpowereurope',
+    theme: 'cleantech',
+    name: 'EU solar manufacturing — 30 GW across the value chain',
+    publisher: 'SolarPower Europe / EU Solar PV Industry Alliance',
+    year: 2024,
+    region: 'EU',
+    sourceId: 'solarpowereurope-2024',
+    summary:
+      'The solar sector’s manufacturing objective, carried by SolarPower Europe and the European Solar PV Industry Alliance and written into the Net-Zero Industry Act: 30 GW/yr of European PV manufacturing at every value-chain stage (polysilicon, wafers, cells, modules). The EU installed 338 GW of solar cumulatively by end-2024 and could reach ~816 GW by 2030 — but today runs under 10 GW/yr of domestic cell, wafer and module capacity.',
+    levers: [
+      'Domestic manufacturing across the value chain',
+      'EU Solar Charter & Net-Zero Industry Act support',
+      'Skills (50k new + 30k upskilled by 2027)',
+      'Green public procurement & state aid',
+    ],
+    investmentTimeline:
+      'The 30 GW manufacturing target needs around €30 bn of investment; because plants take years to build, the capital decisions must be taken this decade to change the 2030 supply map, against Chinese modules that remain materially cheaper.',
+    milestones: [
+      { period: '2025→2030', milestone: '30 GW/yr EU PV manufacturing at each value-chain stage (Net-Zero Industry Act benchmark); ~€30 bn investment.' },
+    ],
+  },
+  {
+    id: 'rm-windeurope',
+    theme: 'cleantech',
+    name: 'Wind energy in Europe — 2030 outlook & manufacturing',
+    publisher: 'WindEurope',
+    year: 2024,
+    region: 'EU',
+    sourceId: 'windeurope-2024',
+    summary:
+      'The wind industry’s 2030 outlook and industrial case: wind supplied 19% of EU electricity in 2023 (targeted 35% by 2030). WindEurope forecasts ~29 GW/yr of new installs over 2024–30 — reaching ~393 GW against the ~425 GW the EU needs — and, under the Net-Zero Industry Act, a 36 GW/yr turbine-manufacturing capacity target that Europe is on course to miss by ~30 GW/yr.',
+    levers: [
+      'Faster permitting & auction reform',
+      'Grid investment',
+      'EU-made turbine supply chain (36 GW/yr)',
+      'Access to finance (Wind Power Action Plan)',
+    ],
+    investmentTimeline:
+      'The European Wind Power Action Plan (2023) front-loads permitting, grid and manufacturing investment this decade; without it Europe falls ~30 GW/yr short on both installation and turbine-manufacturing capacity by 2030.',
+    milestones: [
+      { period: '2023', milestone: '16.2 GW installed; wind = 19% of EU electricity.' },
+      { period: '2030', milestone: '~393 GW installed (vs 425 GW needed); wind targeted at 35% of EU electricity; 36 GW/yr manufacturing capacity.' },
+    ],
+  },
+];
+
+/* ── 3b · Subsector → representative association directory ───────────────
+   Every energy-intensive NACE Section-C subsector, and the clean-tech
+   branches, has an EU-level trade/representative association ("industry
+   lobby") that advances its interests in Brussels — and each has published
+   its own decarbonisation roadmap. Ordered roughly by industrial-emissions
+   weight, then the clean-tech enablers. ────────────────────────────────── */
+
+export const SUBSECTOR_ASSOCIATIONS: IrSubsectorAssociation[] = [
+  {
+    subsector: 'Steel',
+    nace: 'C24.1',
+    association: 'EUROFER',
+    associationFull: 'European Steel Association',
+    represents: 'EU steel producers (integrated & electric-arc)',
+    roadmap: 'Map of key low-CO2 steel projects',
+    headline: '60 low-carbon projects, −81.5 Mt CO2/yr potential by 2030; €85 bn CAPEX+OPEX',
+    sourceId: 'eurofer-2022',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Cement',
+    nace: 'C23.51',
+    association: 'CEMBUREAU',
+    associationFull: 'The European Cement Association (Cement Europe)',
+    represents: 'EU cement manufacturers',
+    roadmap: 'From Ambition to Deployment — 2050 Net Zero Roadmap',
+    headline: '−37% cement CO2 by 2030; net-zero cement 2050, CCUS the largest lever',
+    sourceId: 'cembureau-2024',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Lime',
+    nace: 'C23.52',
+    association: 'EuLA',
+    associationFull: 'European Lime Association',
+    represents: 'EU lime producers',
+    roadmap: 'A Pathway to Negative CO2 Emissions by 2050',
+    headline: '~69% process CO2; carbon-negative by 2050 via CCS/BECCS + carbonation',
+    sourceId: 'eula-2023',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Chemicals',
+    nace: 'C20',
+    association: 'Cefic',
+    associationFull: 'European Chemical Industry Council',
+    represents: 'EU chemical manufacturers',
+    roadmap: 'EU Chemical Industry Transition Pathway',
+    headline: '−60% GHG in 30 yrs; ~200 actions to climate neutrality 2050; €218–238 bn early deployment',
+    sourceId: 'cefic-transition-2023',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Fertilizers & ammonia',
+    nace: 'C20.15',
+    association: 'Fertilizers Europe',
+    associationFull: 'Fertilizers Europe',
+    represents: 'EU mineral-fertilizer & ammonia producers',
+    roadmap: 'Decarbonising Fertilizers by 2050',
+    headline: '−49% scope 1–2 (2005–2020); −70% by 2040; climate-neutral 2050',
+    sourceId: 'fertilizerseurope-2023',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Oil refining',
+    nace: 'C19.2',
+    association: 'FuelsEurope',
+    associationFull: 'FuelsEurope (European petroleum refiners) / Concawe',
+    represents: 'EU refiners & liquid-fuel producers',
+    roadmap: 'Clean Fuels for All (Vision 2050)',
+    headline: 'Net-neutral liquid fuels by 2050; €400–650 bn; −100 Mt CO2/yr in transport',
+    sourceId: 'fuelseurope-2020',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Aluminium',
+    nace: 'C24.42',
+    association: 'European Aluminium',
+    associationFull: 'European Aluminium',
+    represents: 'EU aluminium value chain (primary, semis, recycling)',
+    roadmap: 'Net-Zero by 2050 — science-based pathways',
+    headline: '~24 Mt CO2e/yr; −92.4% by 2050 vs 2021 (IPCC 1.5 °C-aligned)',
+    sourceId: 'euralum-2023',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Non-ferrous metals',
+    nace: 'C24.4',
+    association: 'Eurometaux',
+    associationFull: 'European Association of Metals',
+    represents: 'EU non-ferrous & base-metals producers',
+    roadmap: 'Metals for Clean Energy',
+    headline: 'EU needs ~35× lithium, 7–26× rare earths by 2050; 40–75% from recycling',
+    sourceId: 'eurometaux-2022',
+    theme: 'cleantech',
+  },
+  {
+    subsector: 'Glass',
+    nace: 'C23.1',
+    association: 'FEVE / Glass Alliance Europe',
+    associationFull: 'European Container Glass Federation (umbrella: Glass Alliance Europe)',
+    represents: 'EU glass manufacturers (container, flat, special)',
+    roadmap: 'Container-glass decarbonisation to net zero',
+    headline: '~80% CO2 from natural gas; net zero 2050 needs ~€20 bn extra capex',
+    sourceId: 'feve-2024',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Ceramics',
+    nace: 'C23.3 / C23.4',
+    association: 'Cerame-Unie',
+    associationFull: 'The European Ceramic Industry Association',
+    represents: 'EU ceramics (bricks, tiles, refractories, sanitaryware…)',
+    roadmap: 'Ceramic Roadmap to 2050',
+    headline: '−33% since 1990; up to −40% direct emissions within 10 yrs; ~€27 bn to 2050',
+    sourceId: 'cerameunie-2050',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Pulp & paper',
+    nace: 'C17',
+    association: 'Cepi',
+    associationFull: 'Confederation of European Paper Industries',
+    represents: 'EU pulp, paper & board (forest-fibre) industry',
+    roadmap: 'Unfold the Future — 2050 Roadmap',
+    headline: '−59% CO2/tonne (1990–2024); European carbon neutrality by 2050',
+    sourceId: 'cepi-2050',
+    theme: 'pathways',
+  },
+  {
+    subsector: 'Hydrogen (enabler)',
+    nace: 'Cross-cutting enabler',
+    association: 'Hydrogen Europe',
+    associationFull: 'Hydrogen Europe',
+    represents: 'EU hydrogen & electrolyser industry',
+    roadmap: 'Green Hydrogen — 2×40 GW Initiative',
+    headline: '40 GW EU electrolysers by 2030; ~82 Mt CO2/yr avoided',
+    sourceId: 'hydrogeneurope-2020',
+    theme: 'cleantech',
+  },
+  {
+    subsector: 'Solar PV (clean-tech)',
+    nace: 'C27',
+    association: 'SolarPower Europe',
+    associationFull: 'SolarPower Europe / EU Solar PV Industry Alliance',
+    represents: 'EU solar deployment & manufacturing',
+    roadmap: 'EU solar manufacturing — 30 GW',
+    headline: '30 GW/yr EU manufacturing target; ~€30 bn investment',
+    sourceId: 'solarpowereurope-2024',
+    theme: 'cleantech',
+  },
+  {
+    subsector: 'Wind (clean-tech)',
+    nace: 'C28',
+    association: 'WindEurope',
+    associationFull: 'WindEurope',
+    represents: 'EU wind deployment & turbine manufacturing',
+    roadmap: 'Wind energy in Europe — 2030 outlook',
+    headline: '19%→35% of EU power by 2030; 36 GW/yr manufacturing target',
+    sourceId: 'windeurope-2024',
+    theme: 'cleantech',
   },
 ];
 
