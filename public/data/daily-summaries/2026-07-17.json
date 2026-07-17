@@ -1,12 +1,12 @@
 {
   "date": "2026-07-17",
-  "generatedAt": "2026-07-17T00:00:43.054Z",
+  "generatedAt": "2026-07-17T07:20:49.803Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 17 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "'Complete extermination' of greys is the only way to protect red squirrels",
-      "summary": "A grey squirrel control officer says there is no other option to trapping and killing the greys after a number of cases of squirrelpox were confirmed in the Borders.",
+      "headline": "As the UK and Europe battle deadly wildfires, what lessons can Australia offer?",
+      "summary": "&lt;p&gt;Knowledge learned over more than a century in Australia is being tested by worsening fires. It’s a familiar narrative around the world&lt;/p&gt;&lt;p&gt;The violent hot red flames of deadly wildfires across the UK and Europe and scenes of panicked communities fleeing homes could not, at least geographically, be further away for Jan Harris.&lt;/p&gt;&lt;p&gt;But sitting in her new home at Reedy Swamp in rural New South Wales in Australia, the 67-year-old has found herself in tears.&lt;/p",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -28,6 +28,14 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "As the UK and Europe battle deadly wildfires, what lessons can Australia offer?",
+          "link": "https://www.theguardian.com/world/2026/jul/17/as-the-uk-and-europe-battle-deadly-wildfires-what-lessons-can-australia-offer",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Knowledge learned over more than a century in Australia is being tested by worsening fires. It’s a familiar narrative around the world&lt;/p&gt;&lt;p&gt;The violent hot red flames of deadly wildfires across the UK and Europe and scenes of panicked communities fleeing homes could not, at least geographically, be further away for Jan Harris.&lt;/p&gt;&lt;p&gt;But sitting in her new home at Reedy Swamp in rural New South Wales in Australia, the 67-year-old has found herself in tears.&lt;/p",
+          "published": "2026-07-17T04:00:58.000Z",
+          "score": 10
+        },
+        {
           "title": "'Complete extermination' of greys is the only way to protect red squirrels",
           "link": "https://www.bbc.co.uk/news/articles/cz7d3rgn5w8o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -44,12 +52,20 @@
           "score": 7
         },
         {
-          "title": "Food scraps and mushrooms: the closed-loop garden behind the world’s first community-powered sauna",
-          "link": "https://www.theguardian.com/environment/2026/jul/16/community-sauna-food-waste-r-urban-poplar",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;R-Urban Poplar in London is a ‘living lab’ where locals can experiment with ways of taking charge of their food supply&lt;/p&gt;&lt;p&gt;On a stiflingly hot and dusty morning at the height of the summer’s third heatwave, traffic thunders down the A12 arterial route through east London. A high, red-brick wall rises by the road. What few passersby will realise is that this ivy-topped wall shelters an urban oasis, within which sits an unprecedented sustainable project.&lt;/p&gt;&lt;p&gt;Th",
-          "published": "2026-07-16T13:00:39.000Z",
-          "score": 4
+          "title": "Global energy security at risk if Strait of Hormuz does not open in weeks, IEA chief says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiywFBVV95cUxPemtCTGQ0SDdIMFRmVlNYbkRuTDZHT194eDY1MzBrYVZyTzZNUlZvWDd5ZjFZRFdUeV8xbnJIb2wtSHZ2WGZFeHR1X3o2MjUtc0h1MUNkOERBdFZCVnVaMkJwaHVnbk9IaDJiVV9RRE82U3NwTmFrMDJuaFpnOUl1Y2Y2eWNaNXhLMjlRWk5uV0ZZMnVPV18zeTZPcTFWeWM4N1JiS01DSWRzT2Q1NzZ3Yk5ubm54TDUwUldyUkpkSjVjNUQxLTY1Q3ZLMA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxPemtCTGQ0SDdIMFRmVlNYbkRuTDZHT194eDY1MzBrYVZyTzZNUlZvWDd5ZjFZRFdUeV8xbnJIb2wtSHZ2WGZFeHR1X3o2MjUtc0h1MUNkOERBdFZCVnVaMkJwaHVnbk9IaDJiVV9RRE82U3NwTmFrMDJuaFpnOUl1Y2Y2eWNaNXhLMjlRWk5uV0ZZMnVPV18zeTZPcTFWeWM4N1JiS01DSWRzT2Q1NzZ3Yk5ubm54TDUwUldyUkpkSjVjNUQxLTY1Q3ZLMA?oc=5\" target=\"_blank\"&gt;Global energy security at risk if Strait of Hormuz does not open in weeks, IEA chief says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;",
+          "published": "2026-07-17T00:34:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Oil rises on intensifying US-Iran hostilities, threat of Red Sea closure - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYnAzc0RfelUyaHNBcU5ERWVndUwxNkhxOC1sREo3M2xoeGp0Vko0MTREMXludzBTcG52UVpvSmpRdlpLV2FFU0VNT2cybFU2b3NjTkhUMkZKWlNZMmo0RWFDV0pfSEU1RDFtVURxQjAtRVBXeTB6VWZCNUpFUVRJRFRSRDA0NzJlN1d2bjl5T3VLZ2lxQndYZ29SUFB0Y05YUkxzd1pOSktyME9XMTFMVWRsVnhRV2RG?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYnAzc0RfelUyaHNBcU5ERWVndUwxNkhxOC1sREo3M2xoeGp0Vko0MTREMXludzBTcG52UVpvSmpRdlpLV2FFU0VNT2cybFU2b3NjTkhUMkZKWlNZMmo0RWFDV0pfSEU1RDFtVURxQjAtRVBXeTB6VWZCNUpFUVRJRFRSRDA0NzJlN1d2bjl5T3VLZ2lxQndYZ29SUFB0Y05YUkxzd1pOSktyME9XMTFMVWRsVnhRV2RG?oc=5\" target=\"_blank\"&gt;Oil rises on intensifying US-Iran hostilities, threat of Red Sea closure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T01:31:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -74,12 +90,12 @@
           "score": 13
         },
         {
-          "title": "Wildfire smoke engulfs Toronto as unhealthy air reaches New York - video",
-          "link": "https://www.theguardian.com/world/video/2026/jul/16/wildfire-smoke-engulfs-toronto-as-unhealthy-air-reaches-new-york-video",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Smoke from more than 100 active wildfires in northern Ontario have made Toronto’s air quality the current worst in the world and caused yellow, smoky air in cities across the north-east US. 'You could definitely smell the smoke in the air and it's very hazy out. So absolutely it's noticeable,' says Toronto resident Paula Oreskovich&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/2026/jul/15/wildfires-in-ontario-make-toronto-canada-a",
-          "published": "2026-07-16T03:29:08.000Z",
-          "score": 7
+          "title": "Africa can lead the Age of Electrification",
+          "link": "https://www.climatechangenews.com/2026/07/16/africa-can-lead-the-age-of-electrification/",
+          "source": "Climate Home News",
+          "description": "The electrification agenda presents both an extraordinary opportunity for Africa and an immense challenge for the continent The post Africa can lead the Age of Electrification appeared first on Climate Home News.",
+          "published": "2026-07-16T09:52:53.000Z",
+          "score": 10
         },
         {
           "title": "How green is Andy Burnham? Britain’s next PM faces tough climate decisions",
@@ -117,14 +133,6 @@
           "score": 22
         },
         {
-          "title": "Draft agenda - Wednesday, 2 September 2026 - PE791.034v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Public Health",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ64-OJ-2026-09-02-1_EN.html",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-16T07:10:02.000Z",
-          "score": 18
-        },
-        {
           "title": "Ukraine parliament approves energy executive Koretskyi as new PM - Reuters",
           "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPeEtTemJ5T2NxcW9Oa0ZSaGowQlR3cC1jQlRFRG5sdjJ4NWhJMzhWeDZSamdhZGtsTnJvQnZGZEJoUngxa0RYRVJMb3JYMnc0dXMtdUlGcUdmenlKQXRickxtczM1S0dQZ25VdnVXN0FycldMZXkwa1pRVG9XWEhpMUtCYUQ4MjFhRnBuZXFXOVBqVlFtUmN2a1Iycl92ZjJoM3RLM1JB?oc=5",
           "source": "Reuters World (via Google News)",
@@ -138,14 +146,6 @@
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
-        {
-          "title": "Europe's next energy shock is drying up in plain sight - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHZXbDNfemIwQXNPZV9qd3lJelFMamN5eHJYMEUxWkQ4WDB3V3BHUGlyenN4TEFiRFU4Z1BQeFNfUWpMSWEwM1lNUzZFaWFMSHdyal90UWI4bnVhSV9OaEc3a0cxVTlEWEJGNE5OY0VZNHlXNmZEVVBGYmdFdkxKVVVEakd6TWN5YjhaODdHRzJYd3pMVnVOWTRKSzVmMkhhT1pOdllaWTVnN0xYZnFZOVhyY1d6dDBONi1r?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNSHZXbDNfemIwQXNPZV9qd3lJelFMamN5eHJYMEUxWkQ4WDB3V3BHUGlyenN4TEFiRFU4Z1BQeFNfUWpMSWEwM1lNUzZFaWFMSHdyal90UWI4bnVhSV9OaEc3a0cxVTlEWEJGNE5OY0VZNHlXNmZEVVBGYmdFdkxKVVVEakd6TWN5YjhaODdHRzJYd3pMVnVOWTRKSzVmMkhhT1pOdllaWTVnN0xYZnFZOVhyY1d6dDBONi1r?oc=5\" target=\"_blank\"&gt;Europe's next energy shock is drying up in plain sight&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-16T06:00:00.000Z",
-          "score": 13
-        },
         {
           "title": "EU court endorses Spanish PM&#039;s contentious Catalan amnesty",
           "link": "https://www.dw.com/en/eu-court-endorses-spanish-pm-s-contentious-catalan-amnesty/a-77981590?maca=en-rss-en-all-1573-xml-mrss",
@@ -171,6 +171,14 @@
           "score": 8
         },
         {
+          "title": "Italy's parliament backs Meloni's contested electoral reform - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5\" target=\"_blank\"&gt;Italy's parliament backs Meloni's contested electoral reform&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T11:12:15.000Z",
+          "score": 8
+        },
+        {
           "title": "Google required to open up to AI, search engine rivals under EU-mandated changes - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWNZSnZMWVlJN01HaEZaS1ktSVZhRnFoY2hOU0pEa2Nnb1JZeDhRNzV5VFQ2dVZSZ3ByR0R0MWVVdTZKZ3g3d2lQbUdEZjZoN1VMSkZjQ1hSU00xMFlJY0UtY0xCQWJ1MUFiYU1XSDMwcWEzVkxuZVZhM0M4T0RmTmRlVS1vMzFxc3JfQ2hBRXVkcUl3MzZhZkJiZV9pR2ZtdVZWWmZPMXRMMWozai04YTUzOEZGZw?oc=5",
           "source": "Reuters World (via Google News)",
@@ -182,9 +190,9 @@
     }
   ],
   "stats": {
-    "totalArticlesScanned": 398,
-    "articlesLast24h": 173,
-    "afterDedup": 167,
+    "totalArticlesScanned": 446,
+    "articlesLast24h": 180,
+    "afterDedup": 170,
     "feedsQueried": 19
   }
 }
