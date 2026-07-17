@@ -284,6 +284,20 @@ const logoMark = (white) => `<img class="logo-mark" src="${white ? logoWhite : l
 const point = (n, title, body, teal) =>
   `<div class="point"><span class="pn${teal ? ' n' : ''}">${n}</span><div class="pt"><h3>${title}</h3><p>${body}</p></div></div>`;
 
+/** Full-bleed section-divider slide announcing a part of the deck. */
+function dividerHTML({ part, roman, kicker, title, sub, toc, green }) {
+  return `
+<section class="slide divider${green ? ' green' : ''}" data-label="${part}">
+  <div class="divider-num" aria-hidden="true">${roman}</div>
+  <div class="divider-inner">
+    <div class="divider-kicker anim"><i class="rule"></i>${part} · ${kicker}</div>
+    <h2 class="anim">${title}</h2>
+    <p class="divider-sub anim">${sub}</p>
+    <div class="divider-toc anim">${toc.map((t) => `<span>${t}</span>`).join('')}</div>
+  </div>
+</section>`;
+}
+
 /** Extra-EU import-origins map: world silhouette + arcs/nodes sized by value or by GDP share. */
 function mapSlideHTML(map, num) {
   const { W, H, worldPath, eu, partners, legendValue, legendGdp, viewBox } = map;
@@ -367,32 +381,41 @@ slides.push(`
   <div class="cover-grid"></div>
   <div class="cover-top anim">
     <div class="brandline"><span>ESABCC</span><i class="pulse"></i><span>Method Hub · Overview Industry</span></div>
-    <div class="brandline r">Status quo · Reference year 2023</div>
+    <div class="brandline r">Status quo · a two-part briefing</div>
   </div>
   <div class="cover-body">
     <div class="cover-lead">
-      <div class="kicker anim"><i class="rule"></i>Trade flows & input dependencies</div>
-      <h1 class="anim">EU manufacturing:<br>the <em>trade balance</em> and the<br>inputs behind it.</h1>
-      <p class="cover-lede anim">An input–output reading of EU-27 manufacturing trade (NACE Rev. 2 Section&nbsp;C,
-        divisions&nbsp;10–33): a large export surplus, and the imported inputs on which it depends —
-        with what the pattern implies for <b>competitiveness</b> and <b>geopolitical resilience</b>.</p>
+      <div class="kicker anim"><i class="rule"></i>Trade &amp; the clean-tech transition</div>
+      <h1 class="anim">EU industry:<br>the <em>trade exposure</em><br>and the <em>transition</em>.</h1>
+      <p class="cover-lede anim">Two linked readings of EU-27 manufacturing (NACE Rev. 2 Section&nbsp;C).
+        <b>Part I</b> — the trade balance and the imported inputs behind it.
+        <b>Part II</b> — the clean-tech transition on both sides: decarbonising the heavy industry we
+        already have, and building the new clean-tech industries that cut everyone else's emissions.</p>
     </div>
     <div class="cover-figs anim">
-      ${[['+€674 bn', 'Extra-EU manufacturing trade surplus'],
-         ['22.4%', 'Foreign value added in exports'],
-         ['19.2%', 'Imported intermediate inputs'],
-         ['24.4%', 'China share of extra-EU imports']]
+      ${[['+€674 bn', 'Extra-EU manufacturing trade surplus (Part I)'],
+         ['24.4%', 'China share of extra-EU imports (Part I)'],
+         ['−90%', 'Net GHG by 2040, legally binding (Part II)'],
+         ['> $2 tn', 'Clean-tech market by 2035 (Part II)']]
         .map(([v, l]) => `<div class="cfig"><div class="cfig-v">${v}</div><div class="cfig-l">${l}</div></div>`).join('')}
     </div>
   </div>
   <div class="cover-foot anim">
     ${logoMark(false)}
     <div class="cover-foot-r">
-      <span>Eurostat · FIGARO · European Commission (DG GROW / DG ENER / JRC)</span>
-      <span class="muted">12 slides · a neutral, source-linked status assessment</span>
+      <span>Eurostat · FIGARO · EEA · European Commission · IEA · IPCC</span>
+      <span class="muted">Part I · Trade &amp; dependencies — Part II · Clean tech, both sides</span>
     </div>
   </div>
 </section>`);
+
+// 1b — Part I divider
+slides.push(dividerHTML({
+  part: 'Part I', roman: 'I', kicker: 'Trade & dependencies',
+  title: 'Where EU manufacturing <em>sells</em>, and what it must <em>import</em>.',
+  sub: 'A large export surplus, the imported inputs on which it depends, and what the pattern implies for competitiveness and geopolitical resilience.',
+  toc: ['State of play', 'Trade backbone', 'Import origins', 'Critical materials', 'Energy', 'Competitiveness', 'Resilience'],
+}));
 
 // 2 — State of play (headline figures)
 slides.push(`
@@ -545,6 +568,245 @@ slides.push(`
   </div>
   <div class="repro anim">Reproducible: the statistical layers regenerate from the public Eurostat API. This deck presents the same figures the Method Hub renders and the .xlsx handover workbook contains.</div>
   ${src('Eurostat · FIGARO · European Commission (DG GROW / DG ENER / JRC) · CRMA Reg. (EU) 2024/1252 · SWD(2021) 352.')}
+</section>`);
+
+/* ═══════════════════════════════ PART II — CLEAN TECH ═══════════════════════════════ */
+
+// Side A abatement levers — SECTOR_MACC (2050 potential Mt/yr, MAC €/tCO₂, primary route, clean|old)
+const CT_LEVERS = [
+  ['Iron & steel', 145, '73–166', 'H₂-DRI + electric-arc furnace', 'clean'],
+  ['Refining', 120, '153–170', 'CCS + clean H₂ + electrification', 'old'],
+  ['Chemicals (HVC)', 119, '100–170', 'Electric crackers + recycling', 'clean'],
+  ['Cement', 110, '40–107', 'Carbon capture + clinker substitution', 'clean'],
+  ['Ammonia', 36, '183–362', 'Electrolytic (green) hydrogen', 'clean'],
+  ['Pulp & paper', 27, '45–147', 'Electrification / heat pumps', 'clean'],
+  ['Glass', 18, '202–300', 'Electric / hybrid furnace + CCS', 'clean'],
+];
+const ctMaxPot = Math.max(...CT_LEVERS.map((l) => l[1]));
+const ctTotalPot = CT_LEVERS.reduce((s, l) => s + l[1], 0);
+const leverRows = () => CT_LEVERS.map(([name, pot, mac, route, cls], i) => `
+      <div class="lrow" style="--d:${i * 45}ms">
+        <div class="l-name">${name}<span class="l-route">${route}</span></div>
+        <div class="l-track"><i class="bar l-${cls}" style="--w:${(pot / ctMaxPot * 100).toFixed(1)}%"></i><span class="l-pot">${pot} Mt/yr</span></div>
+        <div class="l-mac">€${mac}<span> /tCO₂</span></div>
+      </div>`).join('');
+
+// Side B new industries — CO₂ avoided (deployed 2019–24) + EU manufacturing position (status)
+const CT_INDUSTRIES = [
+  ['Solar PV', '~1.4 Gt/yr', 'Negligible EU making (~9 GW/yr assembly); 98% of panels imported from China (€10.9 bn, 2024)', 'Lost', 'weak'],
+  ['Wind', '~900 Mt/yr', 'Serves ~85–92% of its own market, net exporter — but global share fell 58% → 30% (2017→22)', 'Holds', 'holds'],
+  ['Batteries', '~80 Mt/yr', 'Only ~6.5% of global cell production (planned ~15%, pre-Northvolt); ~90% of upstream in Asia', 'Lost', 'weak'],
+  ['Heat pumps', '~65 Mt/yr', '80–90% of air-to-water monoblocs EU-assembled; but EU sales fell ~23% in 2024', 'Holds', 'holds'],
+  ['Electrolysers', 'unlocks hard tonnes', 'EU leads on IP but has no Giga-scale; China holds ~60% of global capacity', 'Leads IP', 'leads'],
+  ['Electric vehicles', 'transport backbone', 'Full automotive base to convert; EU clean-tech imports from China ~€43 bn (2023)', 'Incumbent', 'inc'],
+];
+const ctIndustryRows = () => CT_INDUSTRIES.map(([name, avoided, position, status, cls], i) => `
+      <tr style="--d:${i * 45}ms">
+        <td class="ci-name">${name}</td>
+        <td class="ci-avoid">${avoided}</td>
+        <td class="ci-pos">${position}</td>
+        <td class="ci-status"><span class="pill pill-${cls}">${status}</span></td>
+      </tr>`).join('');
+
+// Side B manufacturing gap — EU-made share of what it deploys (green fill), rest imported
+const CT_GAP = [
+  ['Wind turbines', 88, 'European suppliers held ~92% of the EU market (2024)'],
+  ['Heat pumps', 65, '80–90% of air-to-water monoblocs EU-assembled'],
+  ['Electrolysers', 26, 'EU >25% of announced 2030 capacity; China ~60%'],
+  ['Batteries (cells)', 7, '~90% of wafer / anode / cathode capacity in Asia-Pacific'],
+  ['Solar modules', 2, '98% of EU panel imports from China (2024)'],
+];
+const gapRows = () => CT_GAP.map(([name, share, note], i) => `
+      <div class="gaprow" style="--d:${i * 55}ms">
+        <div class="gap-name">${name}<span class="gap-sub">${note}</span></div>
+        <div class="gap-track"><i class="gap-fill" style="--w:${share}%"></i></div>
+        <div class="gap-val">${share}% EU-made <span class="imp">· ${100 - share}% imported</span></div>
+      </div>`).join('');
+
+// Side B — 2040 reductions vs 2015 by demand sector (EC 2040 IA, S1 lower → S3 upper)
+const CT_PATHS = [
+  ['Power', 88, 100, 'Solar · wind · batteries'],
+  ['Buildings', 77, 85, 'Heat pumps · solar · renovation'],
+  ['Transport', 69, 78, 'EVs · batteries · e-fuels'],
+  ['Other industry', 56, 84, 'Electrolysers · heat pumps · wind · solar'],
+  ['Agriculture', 10, 30, 'Green-ammonia · EVs · heat pumps'],
+];
+const pathRows = () => CT_PATHS.map(([name, lo, hi, drv], i) => `
+      <div class="pathrow" style="--d:${i * 60}ms">
+        <div class="path-name">${name}<span class="path-drv">${drv}</span></div>
+        <div class="path-track"><i class="path-hi" style="--w:${hi}%"></i><i class="path-lo" style="--w:${lo}%"></i></div>
+        <div class="path-val">−${lo}%<span> to −${hi}%</span></div>
+      </div>`).join('');
+
+// Part II divider
+slides.push(dividerHTML({
+  part: 'Part II', roman: 'II', green: true, kicker: 'Clean tech · two sides of decarbonisation',
+  title: 'Decarbonise the <em>industry we have</em> — build the <em>industries we need</em>.',
+  sub: "Two complementary jobs. Side A removes the emissions of the heavy manufacturing subsectors that already exist. Side B is the new clean-tech manufacturing — solar, wind, batteries, EVs, electrolysers, heat pumps — whose products cut everyone else's emissions.",
+  toc: ['The two sides', 'Abatement levers', 'The pipeline', 'New industries', 'Manufacturing gap', 'Decarbonising everyone else', 'Priority read'],
+}));
+
+// II·01 — The two sides
+slides.push(`
+<section class="slide cream" data-label="Two sides">
+  ${kick('01', 'Clean tech · framing', 'Two sides of one transition')}
+  <h2 class="s-title anim">One transition, <em>two industrial jobs</em>.</h2>
+  <p class="s-lede anim">Clean tech reads from both sides: mitigating the heavy industry inside Section&nbsp;C, and the new clean-tech industries that decarbonise the sectors outside it.</p>
+  <div class="sides anim-children">
+    <div class="side">
+      <div class="side-tag a">Side A · inside industry</div>
+      <h3>Decarbonise the industry we already have</h3>
+      <div class="side-figs">
+        <div><b>≈ 665 Mt</b><span>CO₂e from EU manufacturing (2024) — −18% since 2013</span></div>
+        <div><b>≈ 27%</b><span>of industry GHG from six energy-intensive branches — −42% since 2005</span></div>
+        <div><b>≈ 60%</b><span>of cement CO₂ is process chemistry, not fuel — the hard core</span></div>
+      </div>
+      <p class="side-q">“How do we remove the emissions of the subsectors we <em>already have</em>?”</p>
+    </div>
+    <div class="side">
+      <div class="side-tag b">Side B · outside industry</div>
+      <h3>Build the industries that cut everyone else's</h3>
+      <div class="side-figs">
+        <div><b>≈ 2.6 Gt/yr</b><span>CO₂ already avoided by clean tech deployed 2019–24 — &gt;10% of EU 2024 emissions</span></div>
+        <div><b>&gt; $2 tn</b><span>clean-tech market by 2035, tripling from ~$700 bn (2023)</span></div>
+        <div><b>≥ 40%</b><span>of deployment to be EU-made by 2030 (Net-Zero Industry Act)</span></div>
+      </div>
+      <p class="side-q">“What do the <em>new</em> industries do for everyone else's emissions?”</p>
+    </div>
+  </div>
+  ${src('EEA, Energy-intensive industries (2026); Eurostat air emissions accounts (env_ac_ainah_r2); IEA Global Energy Review 2025 & ETP 2024; Net-Zero Industry Act, Reg. (EU) 2024/1735.')}
+</section>`);
+
+// II·02 — Abatement levers (Side A)
+slides.push(`
+<section class="slide" data-label="Abatement levers">
+  ${kick('02', 'Side A · abatement levers', '2050 potential × cost × route')}
+  <h2 class="s-title anim">The levers that <em>remove</em> heavy-industry emissions.</h2>
+  <p class="s-lede anim">Each heavy subsector has a primary near-zero route. Bar length is the 2050 abatement potential; the figure at right is its marginal abatement cost. Together the seven cover ~${ctTotalPot} Mt CO₂/yr.</p>
+  <div class="levers anim">
+    <div class="lhead"><span><i class="sw clean"></i>Near-zero (clean) route</span><span><i class="sw old"></i>Transitional (fossil-bridge) route</span></div>
+    ${leverRows()}
+  </div>
+  <div class="lnote anim">Five other catalogued levers — blue-hydrogen ammonia, blast-furnace CCS, gas-DRI steel, refinery CCS — cut emissions only <b>partially</b>: real near-term reductions, but a clean substitute for the same process already exists (fossil lock-in risk).</div>
+  ${src('Material Economics, Industrial Transformation 2050; IEA technology roadmaps; IEAGHG capture-cost studies. Per-lever MAC/TRL bands and the clean-vs-old classification are in the Clean Tech catalogue.')}
+</section>`);
+
+// II·03 — The pipeline (Side A competitiveness)
+slides.push(`
+<section class="slide white" data-label="The pipeline">
+  ${kick('03', 'Side A · the pipeline', 'From announcement to steel in the ground')}
+  <h2 class="s-title anim">Real projects — but the <em>momentum has thinned</em>.</h2>
+  <p class="s-lede anim">First-of-a-kind plants are operating; at the same time flagship projects are being cancelled. Green-steel project announcements fell from ~15 (2021) to 2 (2025).</p>
+  <div class="momentum anim-children">
+    <div class="mom">
+      <div class="mom-h"><span class="mom-tag go">Moving</span>operational or at final investment decision</div>
+      <ul>
+        <li><b>Stegra / Boden</b> — 2.1 Mt/yr H₂-DRI steel; offtake to Mercedes, Porsche, Volvo, IKEA</li>
+        <li><b>Brevik CCS</b> — world-first industrial cement capture, live 2025 (~400 kt/yr)</li>
+        <li><b>Northern Lights</b> — CO₂ storage operational Aug 2025 (1.5 → ≥5 Mt/yr)</li>
+        <li><b>BASF–SABIC electric cracker</b> — running since 2024 (~90% CO₂-cut potential)</li>
+      </ul>
+    </div>
+    <div class="mom">
+      <div class="mom-h"><span class="mom-tag stop">Stalling</span>cancelled or shelved</div>
+      <ul>
+        <li><b>ArcelorMittal Bremen &amp; Eisenhüttenstadt</b> — DRI-EAF cancelled 2025 (forwent €1.3 bn grant)</li>
+        <li><b>Yara green-ammonia expansion</b> — shelved Oct 2024</li>
+        <li><b>Ørsted FlagshipONE e-methanol</b> — cancelled Aug 2024</li>
+        <li><b>Northvolt</b> — bankruptcy March 2025; Skellefteå ~1 GWh vs 16 GWh planned</li>
+      </ul>
+    </div>
+  </div>
+  <div class="eband anim"><div class="eband-t">The binding constraint</div><p>The cancellations point to the same two variables: <b>industrial electricity prices</b> and the <b>cost of clean hydrogen</b>. Where they clear, projects proceed; where they don't, near-zero routes are deferred — the direct link back to Part I's energy-cost exposure.</p></div>
+  ${src('LeadIT Green Steel Tracker; company announcements 2024–2026; the Clean Tech project pipeline (incl. FIDs).')}
+</section>`);
+
+// II·04 — New industries (Side B)
+slides.push(`
+<section class="slide cream" data-label="New industries">
+  ${kick('04', 'Side B · new industries', 'What they avoid, where the EU makes them')}
+  <h2 class="s-title anim">Six industries that cut <em>everyone else's</em> emissions.</h2>
+  <p class="s-lede anim">The mass-manufactured clean technologies, the CO₂ each already avoids (deployed 2019–24), and where the EU sits in making them.</p>
+  <table class="mtable ci-table anim">
+    <thead><tr><th>Technology</th><th>CO₂ avoided / yr</th><th>EU manufacturing position</th><th>Standing</th></tr></thead>
+    <tbody>${ctIndustryRows()}</tbody>
+  </table>
+  ${src('IEA Global Energy Review 2025 (avoided CO₂); Draghi report (competitiveness); Eurostat green-trade; JRC & IEA technology trackers. "Standing" is a MethodHub reading of the manufacturing position.')}
+</section>`);
+
+// II·05 — Manufacturing gap (Side B competitiveness)
+slides.push(`
+<section class="slide" data-label="Manufacturing gap">
+  ${kick('05', 'Side B · manufacturing gap', 'Made in the EU vs imported')}
+  <h2 class="s-title anim">The EU <em>deploys</em> more clean tech than it <em>makes</em>.</h2>
+  <p class="s-lede anim">Share of each technology's EU deployment that is manufactured in the EU (green) versus imported (mostly China). The Net-Zero Industry Act sets a ≥40% made-in-EU benchmark for 2030.</p>
+  <div class="gapchart anim">
+    <div class="gap-head"><span><i style="background:var(--c-green)"></i>Made in the EU</span><span><i style="background:#e0e5e4"></i>Imported</span><span><i style="background:transparent;border:1.5px dashed var(--teal);width:9px;height:9px"></i>NZIA 2030 target ≥40%</span></div>
+    ${gapRows()}
+  </div>
+  ${src('Eurostat green-trade statistics; ACEA; IEA & JRC clean-tech trackers; WindEurope. Net-Zero Industry Act, Reg. (EU) 2024/1735. Shares are indicative, latest available year per technology.')}
+</section>`);
+
+// II·06 — Decarbonising everyone else (Side B payoff)
+slides.push(`
+<section class="slide white" data-label="Decarbonising everyone else">
+  ${kick('06', 'Side B · the payoff', 'How the products cut other sectors')}
+  <h2 class="s-title anim">What the new industries <em>do</em> for the rest of the economy.</h2>
+  <p class="s-lede anim">Modelled 2040 emission reductions vs 2015 by demand sector (EC 2040-target impact assessment, lower–upper scenarios), and the clean technologies that drive each.</p>
+  <div class="pathchart anim">${pathRows()}</div>
+  ${src('European Commission, 2040-target impact assessment SWD(2024) 63 (PRIMES/GAINS), scenarios S1 (lower) to S3 (upper). Ranges are modelled reductions vs 2015.')}
+</section>`);
+
+// II·07 — Priority & competitiveness read
+slides.push(`
+<section class="slide blue" data-label="Priority read">
+  ${kick('07', 'Side B · priority read', 'Mitigation leverage × defensibility', true)}
+  <h2 class="s-title anim">Where to <em>build</em>, where to <em>deploy</em>.</h2>
+  <p class="s-lede anim">A MethodHub reading — weighing each technology's mitigation leverage against how defensible the EU's manufacturing position is. Not a sourced datum; a prioritisation.</p>
+  <div class="two-col anim-children">
+    ${point('1', 'Wind — defend & scale', 'Keystone of the power-sector cut and the strongest home position (~85–92% of its own market) — but a 58% → 30% global-share slide to arrest.')}
+    ${point('2', 'Heat pumps — hold the home market', 'The single named driver of the 77–85% buildings cut; 80–90% of monoblocs already EU-assembled. Demand support is the lever.')}
+    ${point('3', 'Electrolysers — build now', 'The unlock for the hardest tonnes (steel, ammonia). EU leads on IP but has no Giga-scale while China holds ~60% of capacity.')}
+    ${point('4', 'Batteries — resilience play', 'More a security than a leadership play: ~6.5% of cells, ~90% of upstream in Asia. Diversify and secure, rather than out-compete.')}
+    ${point('5', 'EVs — convert incumbent strength', 'The EU is the 2nd-largest EV market with a full automotive base; the open question is conversion speed, not capability.')}
+    ${point('6', 'Solar — deploy first', 'Climate value is best captured by deploying cheap imports fast; EU making is negligible (98% of panels from China). Defend niches, not the whole chain.')}
+  </div>
+  ${src('MethodHub priority read (weights mitigation leverage × competitive defensibility). Underlying figures: Draghi report; EC 2040 IA; IEA; NZIA. Flagged as analytical judgement, not a datum.', true)}
+</section>`);
+
+// II·08 — Clean-tech status quo
+slides.push(`
+<section class="slide cream" data-label="Clean-tech status quo">
+  ${kick('08', 'Status quo', 'The current-state assessment')}
+  <h2 class="s-title anim">Status quo: the <em>levers exist</em>; the <em>question is cost and making</em>.</h2>
+  <div class="sq anim-children">
+    <div class="sq-item"><span class="sq-k">Target</span><p>A legally binding −90% net GHG by 2040 (≥85% domestic) frames both sides of the transition.</p></div>
+    <div class="sq-item"><span class="sq-k">Side A</span><p>Near-zero routes for every heavy subsector are known and cover ~${ctTotalPot} Mt/yr — but deployment is gated by industrial power and hydrogen costs, and the project pipeline has thinned.</p></div>
+    <div class="sq-item"><span class="sq-k">Side B</span><p>Clean tech deployed since 2019 already avoids ~2.6 Gt/yr globally and drives the 2040 sector pathways; the market triples to &gt;$2 tn by 2035.</p></div>
+    <div class="sq-item"><span class="sq-k">EU making</span><p>The EU holds wind, heat pumps and electrolyser IP, but makes ~2% of its solar and ~6.5% of its battery cells — the same import concentration as Part I.</p></div>
+    <div class="sq-item"><span class="sq-k">Link to Part I</span><p>The binding constraint — energy cost — and the exposure — single-origin imports — are the same variables that run through the trade account. The two parts are one story.</p></div>
+  </div>
+  ${src('Composite of the clean-tech layers. Amended European Climate Law, Reg. (EU) 2026/667; all figures source-linked on the Method Hub and in the .xlsx handover workbook.')}
+</section>`);
+
+// II·09 — Sources & method (Part II)
+slides.push(`
+<section class="slide white" data-label="Clean-tech sources">
+  ${kick('09', 'Sources & method', 'Clean tech, every figure sourced')}
+  <h2 class="s-title anim">Where the clean-tech numbers come from.</h2>
+  <div class="layers anim-children">
+    <div class="layer"><span class="ln" style="background:var(--c-green)"></span>
+      <h3>Side A — emissions & levers</h3>
+      <p>EEA energy-intensive-industries report (2026); EU ETS / EUTL via Sandbag (2023 split); Eurostat air emissions accounts (env_ac_ainah_r2); Material Economics; IEA roadmaps; IPCC AR6 WGIII; per-project pipeline incl. FIDs.</p></div>
+    <div class="layer"><span class="ln" style="background:var(--teal)"></span>
+      <h3>Side B — new industries & pathways</h3>
+      <p>EC 2040-target impact assessment SWD(2024) 63/64; Draghi competitiveness report; IEA Global Energy Review 2025 & ETP 2024; Eurostat green-trade; JRC factsheets; Net-Zero Industry Act.</p></div>
+    <div class="layer"><span class="ln" style="background:var(--c-orange)"></span>
+      <h3>Framework</h3>
+      <p>Amended European Climate Law (Reg. (EU) 2026/667, −90% by 2040); NACE Rev. 2.1 Section C scoping. The "clean vs old tech" split and the priority read are flagged MethodHub judgements.</p></div>
+  </div>
+  <div class="repro anim">Both parts are drawn from the same Overview Industry data files and .xlsx handover workbooks on the Method Hub; every figure carries its source there.</div>
+  ${src('EEA · Sandbag/EUTL · Eurostat · European Commission (2040 IA, Draghi, NZIA) · IEA · IPCC AR6 · Material Economics.')}
 </section>`);
 
 /* ---------------------------------------------------------- helpers used above */

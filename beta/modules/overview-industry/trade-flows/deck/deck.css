@@ -291,6 +291,115 @@
 .mp-l{ font-size:clamp(10px,.86vw,12.5px); color:var(--muted); line-height:1.35 }
 .map-panel-empty{ font-size:clamp(11px,.95vw,14px); color:var(--muted); line-height:1.5 }
 
+/* =========================================================== section divider */
+.slide.divider{ background:var(--teal-ink); color:#fff; justify-content:center; overflow:hidden }
+.slide.divider.green{ background:#183a30 } /* deep green-teal for the clean-tech act */
+.divider-num{ position:absolute; right:clamp(-10px,1vw,40px); top:50%; transform:translateY(-52%);
+  font-family:var(--semi); font-weight:600; font-size:min(64vh,560px); line-height:.7;
+  color:rgba(255,255,255,.06); pointer-events:none; letter-spacing:-.05em; user-select:none }
+.divider-inner{ position:relative; z-index:1; max-width:62ch }
+.divider-kicker{ font-family:var(--mono); letter-spacing:.24em; text-transform:uppercase;
+  font-size:clamp(11px,1.1vw,16px); color:#fff; display:flex; gap:14px; align-items:center; margin-bottom:clamp(16px,2.4vh,26px) }
+.divider-kicker .rule{ display:inline-block; width:46px; height:2px; background:currentColor }
+.divider h2{ font-family:var(--semi); font-weight:600; font-size:clamp(32px,4.8vw,72px); line-height:1.03;
+  letter-spacing:-.03em; margin:0 0 clamp(14px,2vh,22px); max-width:19ch; text-wrap:balance }
+.divider h2 em{ font-style:normal; color:#a6ccc0 }
+.divider.green h2 em{ color:#8fca9e }
+.divider-sub{ font-size:clamp(15px,1.55vw,22px); line-height:1.5; color:rgba(255,255,255,.86); max-width:54ch; margin:0 0 clamp(18px,2.8vh,30px) }
+.divider-toc{ display:flex; flex-wrap:wrap; gap:10px 12px }
+.divider-toc span{ font-family:var(--mono); font-size:clamp(10px,.82vw,12.5px); letter-spacing:.05em;
+  border:1px solid rgba(255,255,255,.32); border-radius:999px; padding:6px 15px; color:rgba(255,255,255,.86) }
+
+/* =========================================================== capacity vs demand (gap) */
+.gapchart{ flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(7px,1.1vh,15px) }
+.gap-head{ display:flex; gap:clamp(14px,1.8vw,28px); font-family:var(--mono); font-size:clamp(9.5px,.82vw,12px);
+  letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:2px }
+.gap-head i{ width:11px; height:11px; border-radius:3px; display:inline-block; margin-right:6px; vertical-align:-1px }
+.gaprow{ display:grid; grid-template-columns:minmax(150px,25%) 1fr auto; gap:clamp(10px,1.4vw,22px); align-items:center }
+.gap-name{ font-weight:600; font-size:clamp(12px,1.05vw,16px); color:var(--ink); line-height:1.2 }
+.gap-sub{ display:block; font-family:var(--mono); font-size:clamp(9px,.74vw,11px); color:var(--faint); margin-top:2px; letter-spacing:.02em }
+.gap-track{ position:relative; height:clamp(15px,1.9vh,21px); background:#e7ecec; border-radius:4px; overflow:hidden }
+.gap-fill{ display:block; height:100%; background:var(--c-green); border-radius:4px 0 0 4px; width:var(--w); transform-origin:left }
+.gap-track.full .gap-fill{ border-radius:4px }
+.gap-val{ font-family:var(--mono); font-weight:600; font-size:clamp(10.5px,.9vw,14px); text-align:right; min-width:clamp(120px,12vw,168px);
+  color:var(--ink); font-variant-numeric:tabular-nums }
+.gap-val .imp{ color:var(--c-orange); font-weight:400 }
+
+/* =========================================================== two-sides framing */
+.sides{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.8vw,28px); flex:1; align-content:center }
+.side{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:clamp(16px,1.8vw,26px);
+  display:flex; flex-direction:column; gap:clamp(9px,1.3vh,15px) }
+.side-tag{ font-family:var(--mono); font-size:clamp(10px,.86vw,12.5px); letter-spacing:.07em; text-transform:uppercase;
+  font-weight:700; width:fit-content; padding:5px 12px; border-radius:6px; color:#fff }
+.side-tag.a{ background:var(--c-orange) }
+.side-tag.b{ background:var(--c-green) }
+.side h3{ font-family:var(--semi); font-weight:600; font-size:clamp(15px,1.4vw,21px); margin:0; line-height:1.2; color:var(--ink) }
+.side-figs{ display:flex; flex-direction:column; gap:clamp(7px,1vh,11px) }
+.side-figs > div{ display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:baseline;
+  padding-top:clamp(7px,1vh,11px); border-top:1px solid var(--line) }
+.side-figs b{ font-family:var(--semi); font-weight:600; font-size:clamp(17px,1.7vw,25px); color:var(--teal-ink); white-space:nowrap }
+.side-figs span{ font-size:clamp(11px,.9vw,13.5px); color:var(--muted); line-height:1.4 }
+.side-q{ margin:auto 0 0; font-family:var(--semi); font-style:italic; font-size:clamp(12px,1.1vw,16px); color:var(--ink-2); line-height:1.35 }
+.side-q em{ font-style:italic; color:var(--teal-ink); font-weight:600 }
+
+/* =========================================================== abatement levers */
+.levers{ flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(6px,1vh,13px) }
+.lhead{ display:flex; gap:clamp(16px,2vw,32px); font-family:var(--mono); font-size:clamp(9.5px,.82vw,12px);
+  letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:4px }
+.lhead .sw{ width:11px; height:11px; border-radius:3px; display:inline-block; margin-right:6px; vertical-align:-1px }
+.sw.clean{ background:var(--c-green) } .sw.old{ background:#B45309 }
+.lrow{ display:grid; grid-template-columns:minmax(160px,27%) 1fr auto; gap:clamp(10px,1.4vw,22px); align-items:center }
+.l-name{ font-weight:600; font-size:clamp(12px,1.05vw,16px); color:var(--ink); line-height:1.2 }
+.l-route{ display:block; font-family:var(--mono); font-size:clamp(9px,.74vw,11px); color:var(--faint); margin-top:2px; letter-spacing:.02em }
+.l-track{ display:grid; grid-template-columns:1fr auto; gap:9px; align-items:center }
+.bar.l-clean{ background:var(--c-green); width:var(--w) }
+.bar.l-old{ background:#B45309; width:var(--w) }
+.l-pot{ font-family:var(--mono); font-weight:600; font-size:clamp(10px,.86vw,13px); color:var(--ink); white-space:nowrap; font-variant-numeric:tabular-nums }
+.l-mac{ font-family:var(--mono); font-weight:600; font-size:clamp(11px,.95vw,14px); color:var(--teal-ink); text-align:right;
+  min-width:clamp(100px,10vw,142px); white-space:nowrap }
+.l-mac span{ color:var(--faint); font-weight:400; font-size:.82em }
+.lnote{ margin-top:clamp(10px,1.6vh,20px); background:var(--teal-wash); border-radius:10px; padding:clamp(11px,1.3vw,18px);
+  font-size:clamp(10.5px,.9vw,13.5px); color:var(--ink-2); line-height:1.45 }
+.lnote b{ color:var(--ink) }
+
+/* =========================================================== momentum (pipeline) */
+.momentum{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(14px,1.8vw,28px); margin-bottom:clamp(11px,1.6vh,18px) }
+.mom{ background:var(--card); border:1px solid var(--line); border-radius:12px; padding:clamp(13px,1.5vw,22px) }
+.mom-h{ display:flex; align-items:center; gap:10px; font-family:var(--mono); font-size:clamp(9px,.78vw,11.5px);
+  letter-spacing:.03em; text-transform:uppercase; color:var(--faint); margin-bottom:11px }
+.mom-tag{ font-weight:700; color:#fff; padding:4px 11px; border-radius:6px; font-size:clamp(9.5px,.82vw,12px); letter-spacing:.06em }
+.mom-tag.go{ background:var(--c-green) } .mom-tag.stop{ background:var(--c-orange) }
+.mom ul{ margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:clamp(6px,.9vh,11px) }
+.mom li{ font-size:clamp(11px,.92vw,14px); color:var(--muted); line-height:1.4; padding-left:16px; position:relative }
+.mom li::before{ content:''; position:absolute; left:0; top:.5em; width:6px; height:6px; border-radius:50%; background:var(--line) }
+.mom li b{ color:var(--ink) }
+
+/* =========================================================== new-industries table */
+.ci-table td{ vertical-align:middle }
+.ci-name{ font-family:var(--semi); font-weight:600; font-size:clamp(12px,1.05vw,16px); color:var(--ink); width:19% }
+.ci-avoid{ font-family:var(--mono); font-weight:600; font-size:clamp(11px,.95vw,14px); color:var(--teal-ink); width:15%; white-space:nowrap }
+.ci-pos{ font-size:clamp(10.5px,.9vw,13.5px); color:var(--muted); line-height:1.4 }
+.ci-status{ width:10%; text-align:right }
+.pill{ font-family:var(--mono); font-weight:700; font-size:clamp(9px,.78vw,11.5px); letter-spacing:.04em; padding:4px 10px;
+  border-radius:999px; white-space:nowrap; color:#fff; display:inline-block }
+.pill-weak{ background:var(--c-orange) } .pill-holds{ background:var(--c-green) }
+.pill-leads{ background:var(--teal) } .pill-inc{ background:var(--c-navy) }
+
+/* =========================================================== 2040 pathways */
+.pathchart{ flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(9px,1.5vh,19px) }
+.pathrow{ display:grid; grid-template-columns:minmax(150px,22%) 1fr auto; gap:clamp(10px,1.4vw,22px); align-items:center }
+.path-name{ font-weight:600; font-size:clamp(12px,1.05vw,16px); color:var(--ink); line-height:1.2 }
+.path-drv{ display:block; font-family:var(--mono); font-size:clamp(9px,.74vw,11px); color:var(--faint); margin-top:2px; letter-spacing:.02em }
+.path-track{ position:relative; height:clamp(16px,2vh,22px); border-radius:4px; overflow:hidden; background:#eef2f1;
+  background-image:linear-gradient(90deg,transparent calc(25% - 1px),rgba(30,60,50,.09) 25%,transparent calc(25% + 1px)),
+    linear-gradient(90deg,transparent calc(50% - 1px),rgba(30,60,50,.09) 50%,transparent calc(50% + 1px)),
+    linear-gradient(90deg,transparent calc(75% - 1px),rgba(30,60,50,.09) 75%,transparent calc(75% + 1px)) }
+.path-hi{ position:absolute; left:0; top:0; height:100%; width:var(--w); background:#bcd8cb; border-radius:4px; transform-origin:left }
+.path-lo{ position:absolute; left:0; top:0; height:100%; width:var(--w); background:var(--c-green); border-radius:4px; transform-origin:left }
+.path-val{ font-family:var(--mono); font-weight:600; font-size:clamp(10.5px,.9vw,14px); color:var(--c-green); text-align:right;
+  min-width:clamp(110px,11vw,150px); white-space:nowrap; font-variant-numeric:tabular-nums }
+.path-val span{ color:var(--faint); font-weight:400 }
+
 /* =========================================================== nav chrome */
 .progress{ position:fixed; top:0; left:0; right:0; height:3px; background:rgba(0,0,0,.06); z-index:50 }
 .progress i{ display:block; height:100%; width:0; background:var(--teal); transition:width .25s ease }
@@ -344,16 +453,17 @@
 @keyframes pulse{ 0%,100%{ transform:scale(1); opacity:1 } 50%{ transform:scale(1.5); opacity:.5 } }
 
 /* bars/meters grow when the slide is active */
-.bar, .meter i, .p-track .bar{ transform:scaleX(0) }
-.is-active .bar, .is-active .meter i, .is-active .p-track .bar{ animation:grow .7s cubic-bezier(.3,.8,.3,1) forwards; animation-delay:calc(.1s + var(--d,0ms)) }
+.bar, .meter i, .p-track .bar, .gap-fill, .path-hi, .path-lo{ transform:scaleX(0) }
+.is-active .bar, .is-active .meter i, .is-active .p-track .bar, .is-active .gap-fill, .is-active .path-hi, .is-active .path-lo{ animation:grow .7s cubic-bezier(.3,.8,.3,1) forwards; animation-delay:calc(.1s + var(--d,0ms)) }
 @keyframes grow{ to{ transform:scaleX(1) } }
 /* elements carrying a per-item delay also stagger their rise */
-.trow, .prow, .mtable tbody tr{ opacity:0; transform:translateY(12px) }
-.is-active .trow, .is-active .prow, .is-active .mtable tbody tr{ animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay:var(--d,0ms) }
+.trow, .prow, .mtable tbody tr, .lrow, .gaprow, .pathrow{ opacity:0; transform:translateY(12px) }
+.is-active .trow, .is-active .prow, .is-active .mtable tbody tr, .is-active .lrow, .is-active .gaprow, .is-active .pathrow{ animation:rise .7s cubic-bezier(.2,.7,.2,1) forwards; animation-delay:var(--d,0ms) }
 
 @media (prefers-reduced-motion: reduce){
   .deck{ scroll-behavior:auto }
-  .anim, .anim-children > *, .bar, .meter i, .p-track .bar, .trow, .prow, .mtable tbody tr{ opacity:1 !important; transform:none !important; animation:none !important }
+  .anim, .anim-children > *, .bar, .meter i, .p-track .bar, .trow, .prow, .mtable tbody tr,
+  .gap-fill, .path-hi, .path-lo, .lrow, .gaprow, .pathrow{ opacity:1 !important; transform:none !important; animation:none !important }
   .flow-dot{ display:none !important }
 }
 
@@ -377,7 +487,8 @@
   .slide{ width:1280px; height:720px; min-height:720px; page-break-after:always; break-after:page; break-inside:avoid }
   .slide:last-of-type{ page-break-after:auto; break-after:auto }
   /* the live page only ever marks ONE slide .is-active — for print every slide must render in full */
-  .anim, .anim-children > *, .bar, .meter i, .p-track .bar, .trow, .prow, .mtable tbody tr{
+  .anim, .anim-children > *, .bar, .meter i, .p-track .bar, .trow, .prow, .mtable tbody tr,
+  .gap-fill, .path-hi, .path-lo, .lrow, .gaprow, .pathrow{
     opacity:1 !important; transform:none !important; animation:none !important;
   }
   .flow-dot{ display:none } /* a still page can't show motion; arc width and node size already carry the value */

@@ -1,13 +1,26 @@
-# EU manufacturing — trade & dependency status deck
+# EU industry — trade & clean-tech status deck
 
 A self-contained, interactive HTML slide deck (the "status deck") for the
-Overview Industry / Trade flows sub-module. It presents the current-state
-reading of EU-27 manufacturing trade, its input dependencies, and the
-implications for **competitiveness** and **geopolitical resilience**, in the
-ESABCC visual identity (teal `#608C95`, Segoe UI, the ESABCC logo mark).
+Overview Industry section, in the ESABCC visual identity (teal `#608C95`,
+Segoe UI, the ESABCC logo mark). It is a **two-part briefing** — two linked
+presentations in one file, each opened by a full-bleed section divider and
+numbered from 01:
+
+- **Part I · Trade & dependencies** — the current-state reading of EU-27
+  manufacturing trade, its imported inputs (incl. the interactive
+  trade-origins map), and the implications for competitiveness and
+  geopolitical resilience.
+- **Part II · Clean tech, both sides** — the transition read from both sides:
+  **Side A** decarbonising the heavy industry that already exists (emissions,
+  abatement levers, the project pipeline), and **Side B** the new clean-tech
+  manufacturing industries (what they avoid, the EU manufacturing gap, how
+  their products cut everyone else's emissions, and a priority read).
 
 The language is deliberately neutral and source-linked — a status assessment,
-not an advocacy piece.
+not an advocacy piece. Part II's clean-tech figures are mapped from the
+sibling Clean Tech submodule (`../../cleantech*` + `../../nace-emissions-layer.ts`);
+the "clean vs old tech" split and the priority read are flagged MethodHub
+judgements.
 
 ## Files
 
@@ -36,10 +49,13 @@ so it has no external dependencies (works offline; CSP-safe).
 node beta/modules/overview-industry/trade-flows/deck/build-deck.mjs
 ```
 
-Figures mirror `../trade-data.ts` + `../eurostat-io.generated.ts` (Eurostat
-`ext_tec01`, the EU-27 use table, FIGARO, and the curated EC/JRC dependency
-layer). Update the data arrays at the top of `build-deck.mjs` when those change,
-then regenerate.
+Part I figures mirror `../trade-data.ts` + `../eurostat-io.generated.ts`
+(Eurostat `ext_tec01`, the EU-27 use table, FIGARO, and the curated EC/JRC
+dependency layer). Part II figures are transcribed from the Clean Tech
+submodule data (`../../cleantech-catalogue.ts`, `../../cleantech-external-role.ts`,
+`../../nace-emissions-layer.ts`) into the `CT_*` data arrays in
+`build-deck.mjs`. Update the arrays at the top of `build-deck.mjs` when the
+underlying data changes, then regenerate.
 
 ## Navigation
 
@@ -47,7 +63,7 @@ Arrow keys / space / scroll to move between slides; `F` toggles fullscreen;
 the dot rail and progress bar track position. Motion respects
 `prefers-reduced-motion`.
 
-## Trade-origins map (slide 4)
+## Trade-origins map (Part I)
 
 An interactive world map of extra-EU manufacturing imports by partner country
 (Eurostat FIGARO, `naio_10_fgti`, 2023 — the same country breakdown behind the

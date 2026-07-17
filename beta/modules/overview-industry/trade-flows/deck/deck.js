@@ -27,7 +27,7 @@
     prog.style.width = ((i + 1) / slides.length) * 100 + '%';
     // adapt fixed chrome to dark (teal) grounds; keep the cover uncluttered
     const s = slides[i];
-    const dark = s.classList.contains('blue') || s.classList.contains('cover');
+    const dark = s.classList.contains('blue') || s.classList.contains('cover') || s.classList.contains('divider');
     deck.classList.toggle('dark-chrome', dark);
     deck.classList.toggle('on-cover', s.classList.contains('cover'));
     // entering the map slide: (re)start "animate all" so the flows are moving the moment
@@ -83,7 +83,7 @@
   dots[0].classList.add('on');
   prog.style.width = (1 / slides.length) * 100 + '%';
   const first = slides[0];
-  if (first.classList.contains('blue') || first.classList.contains('cover')) deck.classList.add('dark-chrome');
+  if (first.classList.contains('blue') || first.classList.contains('cover') || first.classList.contains('divider')) deck.classList.add('dark-chrome');
   if (first.classList.contains('cover')) deck.classList.add('on-cover');
 
   // download-as-PDF: the browser's native print pipeline, styled by the @media print rules in deck.css
