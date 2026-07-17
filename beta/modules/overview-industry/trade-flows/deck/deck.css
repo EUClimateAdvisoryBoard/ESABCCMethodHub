@@ -219,29 +219,41 @@
 .map-wrap{ flex:1; min-height:0; display:grid; grid-template-columns:1fr 250px; gap:clamp(12px,1.6vw,22px) }
 .map-stage{ display:flex; flex-direction:column; min-height:0; gap:10px }
 .map-svg{ flex:1; min-height:0; width:100%; display:block }
-.map-land{ fill:#dbe5e3 }
+.map-land{ fill:#dbe5e3; stroke:rgba(61,98,100,.2); stroke-width:.6 }
 .cream .map-land{ fill:#e1e8e6 }
 
-.arc{ fill:none; stroke:var(--teal); stroke-linecap:round; opacity:.3; cursor:pointer;
-  transition:opacity .18s ease, stroke .18s ease }
-.arc:hover{ opacity:.6 }
-.arc.selected{ stroke:var(--c-orange); opacity:.9 }
-.map-svg.playing-all .arc{ opacity:.55 }
+.arc{ fill:none; stroke:var(--teal); stroke-linecap:round; opacity:.42; cursor:pointer;
+  transition:opacity .18s ease, stroke .18s ease, stroke-width .18s ease }
+.arc:hover, .arc.hovered{ opacity:.75; stroke-width:3.5 }
+.arc.selected{ stroke:var(--c-orange); opacity:.95 }
+.map-svg.playing-all .arc{ opacity:.6 }
 
 .node-g{ cursor:pointer }
 .node-g:focus-visible{ outline:none }
-.node{ fill:var(--teal); stroke:var(--paper); stroke-width:1.5; opacity:.88; transition:fill .18s ease, opacity .18s ease }
-.node-g:hover .node{ opacity:1 }
+.node{ fill:var(--teal); stroke:var(--paper); stroke-width:1.75; opacity:.92; transition:fill .18s ease, opacity .18s ease }
+.node-g:hover .node, .node-g.hovered .node{ opacity:1; stroke-width:2.5 }
 .node-g:focus-visible .node{ stroke:var(--ink); stroke-width:2.5 }
 .node-g.selected .node{ fill:var(--c-orange); opacity:1 }
+
+/* persistent on-map labels for the top partners: a white halo (paint-order + thick
+   stroke) keeps them legible over arcs and land without needing a background chip */
+.map-label{
+  font-family:var(--sans); font-weight:600; font-size:11.5px; fill:var(--ink-2);
+  paint-order:stroke; stroke:var(--paper); stroke-width:3px; stroke-linejoin:round;
+  pointer-events:none; user-select:none;
+}
+.cream .map-label{ stroke:var(--teal-wash) }
+.map-label.hovered, .map-label.selected{ fill:var(--c-orange); font-weight:700 }
 
 .eu-ring{ fill:none; stroke:var(--c-navy); stroke-width:1.5; stroke-dasharray:2 3; opacity:.55 }
 .eu-node{ fill:var(--c-navy); stroke:#fff; stroke-width:2 }
 .eu-label{ font-family:var(--mono); font-size:12px; font-weight:700; fill:var(--c-navy); text-anchor:middle; letter-spacing:.06em }
 
 .flow-dot{ fill:var(--c-orange); opacity:0 }
-.flow-dot.playing-one{ animation:flowMove 1.6s cubic-bezier(.3,.6,.3,1) 1 }
-.map-svg.playing-all .flow-dot{ animation:flowMove 2.2s linear infinite; animation-delay:var(--delay,0ms) }
+/* gated on .is-active so the animation only ever runs while the slide is actually on
+   screen — the class is set on slide-enter (see deck.js), not by scroll proximity alone */
+.is-active .flow-dot.playing-one{ animation:flowMove 1.6s cubic-bezier(.3,.6,.3,1) 1 }
+.is-active .map-svg.playing-all .flow-dot{ animation:flowMove 2.2s linear infinite; animation-delay:var(--delay,0ms) }
 @keyframes flowMove{
   0%{ offset-distance:0%; opacity:0 }
   6%{ opacity:1 }
@@ -342,6 +354,7 @@
 @media (prefers-reduced-motion: reduce){
   .deck{ scroll-behavior:auto }
   .anim, .anim-children > *, .bar, .meter i, .p-track .bar, .trow, .prow, .mtable tbody tr{ opacity:1 !important; transform:none !important; animation:none !important }
+  .flow-dot{ display:none !important }
 }
 
 /* narrow screens: stack the two-column blocks */

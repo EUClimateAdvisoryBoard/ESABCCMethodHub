@@ -5,6 +5,7 @@
   const prog = document.getElementById('prog');
   const curEl = document.getElementById('cur');
   const hint = document.getElementById('hint');
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   let current = 0;
 
   // build dots
@@ -29,12 +30,15 @@
     const dark = s.classList.contains('blue') || s.classList.contains('cover');
     deck.classList.toggle('dark-chrome', dark);
     deck.classList.toggle('on-cover', s.classList.contains('cover'));
-    // leaving the map slide: stop the "animate all" loop so it doesn't run off-screen
-    if (prevSlide && prevSlide.classList.contains('map-slide') && prevSlide !== s) {
-      const svg = prevSlide.querySelector('#mapSvg');
-      const playBtn = prevSlide.querySelector('#mapPlay');
-      if (svg) svg.classList.remove('playing-all');
-      if (playBtn) playBtn.innerHTML = '&#9654; Animate all flows';
+    // entering the map slide: (re)start "animate all" so the flows are moving the moment
+    // it comes into view, every time — CSS gates the actual animation on .is-active, so
+    // leaving already stops it visually for free; this just resets the on/off state and
+    // button label for the next visit. Skipped under prefers-reduced-motion.
+    if (s.classList.contains('map-slide') && prevSlide !== s && !prefersReducedMotion) {
+      const svg = s.querySelector('#mapSvg');
+      const playBtn = s.querySelector('#mapPlay');
+      if (svg) svg.classList.add('playing-all');
+      if (playBtn) playBtn.innerHTML = '&#9632; Stop animating';
     }
   }
 
@@ -107,14 +111,22 @@
         '<span class="mp-l">of ' + p.name + '’s own GDP (World Bank, latest est.)</span></div>';
     }
 
+    function partsFor(code) {
+      return {
+        node: mapSvg.querySelector('.node-g[data-code="' + code + '"]'),
+        arc: mapSvg.querySelector('.arc[data-code="' + code + '"]'),
+        label: mapSvg.querySelector('.map-label[data-code="' + code + '"]'),
+      };
+    }
+
     function selectCountry(code) {
       const p = byCode[code];
       if (!p) return;
-      mapSvg.querySelectorAll('.node-g.selected, .arc.selected').forEach((el) => el.classList.remove('selected'));
-      const node = mapSvg.querySelector('.node-g[data-code="' + code + '"]');
-      const arc = mapSvg.querySelector('.arc[data-code="' + code + '"]');
+      mapSvg.querySelectorAll('.selected').forEach((el) => el.classList.remove('selected'));
+      const { node, arc, label } = partsFor(code);
       if (node) node.classList.add('selected');
       if (arc) arc.classList.add('selected');
+      if (label) label.classList.add('selected');
       const dot = mapSvg.querySelector('.flow-dot[data-code="' + code + '"]');
       if (dot) {
         dot.classList.remove('playing-one');
@@ -124,13 +136,26 @@
       renderPanel(p);
     }
 
+    // hovering a node or its arc highlights both together (and its label, if labelled) —
+    // otherwise a thin arc among 21 overlapping ones is hard to trace back to its country.
+    function setHovered(code, on) {
+      const { node, arc, label } = partsFor(code);
+      if (node) node.classList.toggle('hovered', on);
+      if (arc) arc.classList.toggle('hovered', on);
+      if (label) label.classList.toggle('hovered', on);
+    }
+
     mapSvg.querySelectorAll('.node-g, .arc').forEach((el) => {
       el.addEventListener('click', () => selectCountry(el.dataset.code));
+      el.addEventListener('mouseenter', () => setHovered(el.dataset.code, true));
+      el.addEventListener('mouseleave', () => setHovered(el.dataset.code, false));
     });
     mapSvg.querySelectorAll('.node-g').forEach((el) => {
       el.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectCountry(el.dataset.code); }
       });
+      el.addEventListener('focus', () => setHovered(el.dataset.code, true));
+      el.addEventListener('blur', () => setHovered(el.dataset.code, false));
     });
 
     const mapSlideEl = mapSvg.closest('.map-slide');

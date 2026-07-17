@@ -125,6 +125,22 @@ function arcPath(x1, y1, x2, y2, bend = 0.18) {
   return `M${x1.toFixed(1)},${y1.toFixed(1)} Q${cx.toFixed(1)},${cy.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
 }
 
+// Countries whose names get a persistent on-map label (not just on click/hover) — the
+// top partners by trade value, so identities read at a glance without interaction.
+const MAP_LABELLED = new Set(['CN', 'US', 'CH', 'UK', 'TR', 'KR', 'JP', 'IN']);
+// Per-country label DIRECTION (unit vector, not a fixed pixel offset) — tuned by hand so
+// labels in the crowded East-Asia cluster fan outward instead of colliding with each
+// other, the EU label, or their own arcs. The actual distance is computed per-country
+// below from its own node radius, so a label always clears its (possibly large) circle
+// in whichever size-by mode is active. Countries not listed default to "above".
+const MAP_LABEL_DIR = {
+  CN: [0, -1], US: [0, -1], CH: [-0.55, 0.84], UK: [-1, -0.1],
+  TR: [0.25, 0.97], KR: [0.85, -0.53], JP: [0.8, 0.6], IN: [-0.2, 1],
+};
+// One shorter on-map form, to save horizontal space in the crowded East-Asia cluster
+// (the panel still shows the full name on click).
+const MAP_SHORT_NAME = { KR: 'S. Korea' };
+
 async function buildMap() {
   const d3 = await import('d3');
   const topojson = await import('topojson-client');
@@ -139,6 +155,17 @@ async function buildMap() {
   const worldPath = path(land);
   const [eux, euy] = projection(MAP_EU_POINT);
 
+  // Crop the empty polar bands (deep Arctic ice, Antarctica) out of the visible viewBox —
+  // none of the 21 partners or the EU sit above ~64°N or below ~-38°, so cutting there
+  // lets the populated band fill the frame instead of floating in open ocean. Sampled at
+  // a few longitudes (naturalEarth1's meridians curve, so a single-longitude sample would
+  // under- or over-crop) and padded a little for breathing room.
+  const sampleLons = [-160, -90, -20, 40, 100, 160];
+  const yAt = (lat) => Math.min(...sampleLons.map((lon) => projection([lon, lat])[1]));
+  const yAtMax = (lat) => Math.max(...sampleLons.map((lon) => projection([lon, lat])[1]));
+  const cropTop = Math.max(0, yAt(68) - 14);
+  const cropBottom = Math.min(H, yAtMax(-36) + 14);
+
   const values = MAP_PARTNERS_RAW.map((p) => p[4]);
   const ratios = MAP_PARTNERS_RAW.map((p) => (p[4] / p[6]) * 100);
   const vMin = Math.min(...values), vMax = Math.max(...values);
@@ -150,21 +177,31 @@ async function buildMap() {
     const [x, y] = projection([lon, lat]);
     const ratioRaw = (valueBn / gdpBn) * 100;
     const ratioPct = ratioRaw >= 1 ? +ratioRaw.toFixed(1) : +ratioRaw.toFixed(2);
+    const rValue = +rNode(valueBn, vMin, vMax).toFixed(1);
+    const rGdp = +rNode(ratioRaw, rMin, rMax).toFixed(1);
+    // clear the LARGER of the two size-by modes, so the label never sits over the node
+    // in either mode even though its position is baked once at build time
+    const [dx, dy] = MAP_LABEL_DIR[code] || [0, -1];
+    const clearance = Math.max(rValue, rGdp) + 10;
     return {
       code, name, valueBn, pctOfExtra, gdpBn, ratioPct,
       x: +x.toFixed(1), y: +y.toFixed(1),
       arcD: arcPath(x, y, eux, euy),
-      rValue: +rNode(valueBn, vMin, vMax).toFixed(1),
-      rGdp: +rNode(ratioRaw, rMin, rMax).toFixed(1),
+      rValue, rGdp,
       swValue: +swArc(valueBn, vMin, vMax).toFixed(1),
       swGdp: +swArc(ratioRaw, rMin, rMax).toFixed(1),
+      labelled: MAP_LABELLED.has(code),
+      labelX: +(x + dx * clearance).toFixed(1), labelY: +(y + dy * clearance).toFixed(1),
     };
   });
 
   const legendValue = [10, 100, 330].map((v) => ({ v, r: +rNode(v, vMin, vMax).toFixed(1) }));
   const legendGdp = [1, 5, 20].map((v) => ({ v, r: +rNode(v, rMin, rMax).toFixed(1) }));
 
-  return { W, H, worldPath, eu: { x: +eux.toFixed(1), y: +euy.toFixed(1) }, partners, legendValue, legendGdp };
+  return {
+    W, H, worldPath, eu: { x: +eux.toFixed(1), y: +euy.toFixed(1) }, partners, legendValue, legendGdp,
+    viewBox: `0 ${cropTop.toFixed(1)} ${W} ${(cropBottom - cropTop).toFixed(1)}`,
+  };
 }
 
 /* ------------------------------------------------------------- fragments */
@@ -249,7 +286,7 @@ const point = (n, title, body, teal) =>
 
 /** Extra-EU import-origins map: world silhouette + arcs/nodes sized by value or by GDP share. */
 function mapSlideHTML(map, num) {
-  const { W, H, worldPath, eu, partners, legendValue, legendGdp } = map;
+  const { W, H, worldPath, eu, partners, legendValue, legendGdp, viewBox } = map;
   const top = partners[0]; // China — pre-selected so the panel and print view show a worked example
 
   const arcs = partners.map((p) => `
@@ -263,6 +300,9 @@ function mapSlideHTML(map, num) {
         <circle class="node" cx="${p.x}" cy="${p.y}" r="${p.rValue}" data-r-value="${p.rValue}" data-r-gdp="${p.rGdp}"></circle>
         <title>${p.name} — €${p.valueBn} bn (${p.pctOfExtra}% of extra-EU imports)</title>
       </g>`).join('');
+  // Persistent labels for the top partners — legible without a click, so the map reads at a glance.
+  const labels = partners.filter((p) => p.labelled).map((p) => `
+      <text class="map-label${p.code === top.code ? ' selected' : ''}" data-code="${p.code}" x="${p.labelX}" y="${p.labelY}" text-anchor="middle">${MAP_SHORT_NAME[p.code] || p.name}</text>`).join('');
 
   const legendRow = (items, unit) => items.map((it) => `
         <span class="map-scale-item"><i style="width:${(it.r * 2).toFixed(1)}px;height:${(it.r * 2).toFixed(1)}px"></i>${it.v}${unit}</span>`).join('');
@@ -288,14 +328,15 @@ function mapSlideHTML(map, num) {
           <button type="button" class="seg-btn on" data-mode="value">By trade value</button>
           <button type="button" class="seg-btn" data-mode="gdp">Relative to partner GDP</button>
         </div>
-        <button type="button" class="play-btn" id="mapPlay">&#9654; Animate all flows</button>
+        <button type="button" class="play-btn" id="mapPlay">&#9632; Stop animating</button>
       </div>
-      <svg class="map-svg" id="mapSvg" viewBox="0 0 ${W} ${H}" role="img"
-        aria-label="Map of extra-EU manufacturing import origins, sized by import value">
+      <svg class="map-svg playing-all" id="mapSvg" viewBox="${viewBox}" role="img"
+        aria-label="Map of extra-EU manufacturing import origins, sized by import value, flows animating into the EU">
         <path class="map-land" d="${worldPath}"></path>
         <g class="map-arcs">${arcs}</g>
         <g class="map-dots">${dots}</g>
         <g class="map-nodes">${nodes}</g>
+        <g class="map-labels">${labels}</g>
         <g class="eu-mark">
           <circle class="eu-ring" cx="${eu.x}" cy="${eu.y}" r="15"></circle>
           <circle class="eu-node" cx="${eu.x}" cy="${eu.y}" r="7"></circle>
