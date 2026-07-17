@@ -400,6 +400,30 @@
   min-width:clamp(110px,11vw,150px); white-space:nowrap; font-variant-numeric:tabular-nums }
 .path-val span{ color:var(--faint); font-weight:400 }
 
+/* =========================================================== conclusion bridge */
+.bridge{ flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(10px,1.6vh,20px) }
+.brow{ position:relative; display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(10px,1.4vw,20px); align-items:stretch }
+.brow::before{ content:''; position:absolute; left:12%; right:12%; top:50%; height:2px; background:var(--line); z-index:0 }
+.bcell{ position:relative; z-index:1; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:clamp(11px,1.3vw,18px); border-left:4px solid var(--line) }
+.bcell.pi{ border-left-color:var(--teal) }
+.bcell.pii{ border-left-color:var(--c-green) }
+.btag{ font-family:var(--mono); font-size:clamp(9px,.76vw,11px); letter-spacing:.06em; text-transform:uppercase; margin-bottom:5px; display:block }
+.bcell.pi .btag{ color:var(--teal-ink) }
+.bcell.pii .btag{ color:var(--c-green) }
+.bcell p{ margin:0; font-size:clamp(11px,.92vw,14px); color:var(--muted); line-height:1.4 }
+.bmid{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  min-width:clamp(96px,11vw,150px) }
+.blink{ font-size:clamp(15px,1.4vw,20px); color:var(--c-navy); line-height:1 }
+.bchip{ font-family:var(--semi); font-weight:600; font-size:clamp(11px,.95vw,14px); color:var(--c-navy); text-align:center;
+  background:var(--card); border:1.5px solid var(--c-navy); border-radius:999px; padding:6px 14px; line-height:1.15 }
+
+/* closing statement band */
+.closing{ margin-top:clamp(14px,2.2vh,26px); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28);
+  border-radius:12px; padding:clamp(16px,1.9vw,26px); font-family:var(--semi); font-weight:600;
+  font-size:clamp(14px,1.35vw,20px); line-height:1.4; color:#fff }
+.closing b{ color:var(--eu-gold,#fff); text-decoration:underline; text-decoration-color:rgba(255,255,255,.4); text-underline-offset:3px }
+
 /* =========================================================== nav chrome */
 .progress{ position:fixed; top:0; left:0; right:0; height:3px; background:rgba(0,0,0,.06); z-index:50 }
 .progress i{ display:block; height:100%; width:0; background:var(--teal); transition:width .25s ease }

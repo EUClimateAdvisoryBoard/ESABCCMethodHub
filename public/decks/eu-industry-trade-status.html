@@ -948,8 +948,56 @@
   <div class="repro anim">Both parts are drawn from the same Overview Industry data files and .xlsx handover workbooks on the Method Hub; every figure carries its source there.</div>
   <div class="s-src">EEA · Sandbag/EUTL · Eurostat · European Commission (2040 IA, Draghi, NZIA) · IEA · IPCC AR6 · Material Economics.</div>
 </section>
+
+<section class="slide divider" data-label="Conclusion">
+  <div class="divider-num" aria-hidden="true">&</div>
+  <div class="divider-inner">
+    <div class="divider-kicker anim"><i class="rule"></i>Conclusion · Two readings, one story</div>
+    <h2 class="anim">Trade and the transition are the <em>same story</em>.</h2>
+    <p class="divider-sub anim">The exposure that runs through the trade account and the constraint that governs the clean-tech transition are the same variables — energy cost, single-origin reliance, and where manufacturing value is captured.</p>
+    <div class="divider-toc anim"><span>How the two parts link</span><span>What to take away</span></div>
+  </div>
+</section>
+
+<section class="slide white" data-label="How the two parts link">
+  <div class="s-kicker anim"><span class="num">∴</span><span>Conclusion</span><i class="dot"></i><span class="sub">How the two parts link</span></div>
+  <h2 class="s-title anim">Three variables run through <em>both</em> parts.</h2>
+  <p class="s-lede anim">Read side by side, the trade account (Part I) and the clean-tech transition (Part II) are governed by the same three things.</p>
+  <div class="bridge anim-children">
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>Net energy-import dependency ~57%; the 2022 shock was absorbed by changing suppliers, not cutting reliance.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Energy cost</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The same power and hydrogen costs decide whether near-zero steel, ammonia and chemicals actually get built.</p></div>
+    </div>
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>24% of manufactured imports from China; critical materials (magnets, gallium) up to ~100% single-origin.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Single-origin reliance</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The build-out imports its inputs too — 98% of solar, ~90% of battery upstream from the same few origins.</p></div>
+    </div>
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>A high-value export surplus, but ~22% of export value is created abroad and embedded via imports.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Where value is made</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The EU deploys clean tech but makes little of it — ~2% of its solar, ~6.5% of its battery cells.</p></div>
+    </div>
+  </div>
+  <div class="eband anim"><div class="eband-t">One instrument set spans both</div><p>The Critical Raw Materials Act, the Net-Zero Industry Act, CBAM and the Chips Act all target the same reliance — across the trade account and the transition alike.</p></div>
+  <div class="s-src">Synthesis of Parts I and II. All underlying figures are source-linked on the preceding slides.</div>
+</section>
+
+<section class="slide blue" data-label="Take-aways">
+  <div class="s-kicker anim"><span class="num">∴</span><span>Conclusion</span><i class="dot"></i><span class="sub">What to take away</span></div>
+  <h2 class="s-title anim">Four things to <em>carry forward</em>.</h2>
+  <div class="two-col anim-children">
+    <div class="point"><span class="pn">1</span><div class="pt"><h3>One base, one exposure</h3><p>The trade surplus and the decarbonisation of EU manufacturing run on the same imported, single-origin inputs. Resilience is one problem, not two.</p></div></div>
+    <div class="point"><span class="pn">2</span><div class="pt"><h3>Energy cost is the master variable</h3><p>It sets the import bill in Part I and decides whether near-zero routes get built in Part II. Lower industrial power and hydrogen costs unlock both.</p></div></div>
+    <div class="point"><span class="pn">3</span><div class="pt"><h3>The transition redraws the dependency map — it does not erase it</h3><p>Reliance shifts from oil, gas and critical materials toward solar modules, battery cells and magnets, unless EU making scales to the NZIA benchmarks.</p></div></div>
+    <div class="point"><span class="pn">4</span><div class="pt"><h3>The instrument set already spans both</h3><p>CRMA, the Net-Zero Industry Act, CBAM and the Chips Act target the same reliance. The open questions are deployment speed and cost — not the diagnosis.</p></div></div>
+  </div>
+  <div class="closing anim">EU manufacturing is globally competitive <b>and</b> deeply exposed — on the same variables, in trade and in the transition. The two readings are one story.</div>
+  <div class="s-src inv">ESABCC Method Hub · Overview Industry. A neutral, source-linked status assessment across trade and the clean-tech transition.</div>
+</section>
   <nav class="dots" id="dots"></nav>
-  <div class="counter"><span id="cur">01</span> / <span id="tot">23</span></div>
+  <div class="counter"><span id="cur">01</span> / <span id="tot">26</span></div>
   <button type="button" class="pdf-btn" id="pdfBtn">⬇ Download PDF</button>
   <div class="hint" id="hint">Use ↑ ↓ or scroll · press <b>F</b> for fullscreen</div>
 </div>
@@ -1354,6 +1402,30 @@
 .path-val{ font-family:var(--mono); font-weight:600; font-size:clamp(10.5px,.9vw,14px); color:var(--c-green); text-align:right;
   min-width:clamp(110px,11vw,150px); white-space:nowrap; font-variant-numeric:tabular-nums }
 .path-val span{ color:var(--faint); font-weight:400 }
+
+/* =========================================================== conclusion bridge */
+.bridge{ flex:1; display:flex; flex-direction:column; justify-content:center; gap:clamp(10px,1.6vh,20px) }
+.brow{ position:relative; display:grid; grid-template-columns:1fr auto 1fr; gap:clamp(10px,1.4vw,20px); align-items:stretch }
+.brow::before{ content:''; position:absolute; left:12%; right:12%; top:50%; height:2px; background:var(--line); z-index:0 }
+.bcell{ position:relative; z-index:1; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  padding:clamp(11px,1.3vw,18px); border-left:4px solid var(--line) }
+.bcell.pi{ border-left-color:var(--teal) }
+.bcell.pii{ border-left-color:var(--c-green) }
+.btag{ font-family:var(--mono); font-size:clamp(9px,.76vw,11px); letter-spacing:.06em; text-transform:uppercase; margin-bottom:5px; display:block }
+.bcell.pi .btag{ color:var(--teal-ink) }
+.bcell.pii .btag{ color:var(--c-green) }
+.bcell p{ margin:0; font-size:clamp(11px,.92vw,14px); color:var(--muted); line-height:1.4 }
+.bmid{ position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+  min-width:clamp(96px,11vw,150px) }
+.blink{ font-size:clamp(15px,1.4vw,20px); color:var(--c-navy); line-height:1 }
+.bchip{ font-family:var(--semi); font-weight:600; font-size:clamp(11px,.95vw,14px); color:var(--c-navy); text-align:center;
+  background:var(--card); border:1.5px solid var(--c-navy); border-radius:999px; padding:6px 14px; line-height:1.15 }
+
+/* closing statement band */
+.closing{ margin-top:clamp(14px,2.2vh,26px); background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.28);
+  border-radius:12px; padding:clamp(16px,1.9vw,26px); font-family:var(--semi); font-weight:600;
+  font-size:clamp(14px,1.35vw,20px); line-height:1.4; color:#fff }
+.closing b{ color:var(--eu-gold,#fff); text-decoration:underline; text-decoration-color:rgba(255,255,255,.4); text-underline-offset:3px }
 
 /* =========================================================== nav chrome */
 .progress{ position:fixed; top:0; left:0; right:0; height:3px; background:rgba(0,0,0,.06); z-index:50 }

@@ -809,9 +809,64 @@ slides.push(`
   ${src('EEA · Sandbag/EUTL · Eurostat · European Commission (2040 IA, Draghi, NZIA) · IEA · IPCC AR6 · Material Economics.')}
 </section>`);
 
+/* ═══════════════════════════════════ CONCLUSION ═══════════════════════════════════ */
+
+// Conclusion divider
+slides.push(dividerHTML({
+  part: 'Conclusion', roman: '&', kicker: 'Two readings, one story',
+  title: 'Trade and the transition are the <em>same story</em>.',
+  sub: "The exposure that runs through the trade account and the constraint that governs the clean-tech transition are the same variables — energy cost, single-origin reliance, and where manufacturing value is captured.",
+  toc: ['How the two parts link', 'What to take away'],
+}));
+
+// Conclusion 1 — the bridge (how the two parts link)
+slides.push(`
+<section class="slide white" data-label="How the two parts link">
+  ${kick('∴', 'Conclusion', 'How the two parts link')}
+  <h2 class="s-title anim">Three variables run through <em>both</em> parts.</h2>
+  <p class="s-lede anim">Read side by side, the trade account (Part I) and the clean-tech transition (Part II) are governed by the same three things.</p>
+  <div class="bridge anim-children">
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>Net energy-import dependency ~57%; the 2022 shock was absorbed by changing suppliers, not cutting reliance.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Energy cost</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The same power and hydrogen costs decide whether near-zero steel, ammonia and chemicals actually get built.</p></div>
+    </div>
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>24% of manufactured imports from China; critical materials (magnets, gallium) up to ~100% single-origin.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Single-origin reliance</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The build-out imports its inputs too — 98% of solar, ~90% of battery upstream from the same few origins.</p></div>
+    </div>
+    <div class="brow">
+      <div class="bcell pi"><span class="btag">Part I · trade</span><p>A high-value export surplus, but ~22% of export value is created abroad and embedded via imports.</p></div>
+      <div class="bmid"><span class="blink">↔</span><span class="bchip">Where value is made</span></div>
+      <div class="bcell pii"><span class="btag">Part II · clean tech</span><p>The EU deploys clean tech but makes little of it — ~2% of its solar, ~6.5% of its battery cells.</p></div>
+    </div>
+  </div>
+  <div class="eband anim"><div class="eband-t">One instrument set spans both</div><p>The Critical Raw Materials Act, the Net-Zero Industry Act, CBAM and the Chips Act all target the same reliance — across the trade account and the transition alike.</p></div>
+  ${src('Synthesis of Parts I and II. All underlying figures are source-linked on the preceding slides.')}
+</section>`);
+
+// Conclusion 2 — take-aways
+slides.push(`
+<section class="slide blue" data-label="Take-aways">
+  ${kick('∴', 'Conclusion', 'What to take away', true)}
+  <h2 class="s-title anim">Four things to <em>carry forward</em>.</h2>
+  <div class="two-col anim-children">
+    ${point('1', 'One base, one exposure', 'The trade surplus and the decarbonisation of EU manufacturing run on the same imported, single-origin inputs. Resilience is one problem, not two.')}
+    ${point('2', 'Energy cost is the master variable', 'It sets the import bill in Part I and decides whether near-zero routes get built in Part II. Lower industrial power and hydrogen costs unlock both.')}
+    ${point('3', 'The transition redraws the dependency map — it does not erase it', 'Reliance shifts from oil, gas and critical materials toward solar modules, battery cells and magnets, unless EU making scales to the NZIA benchmarks.')}
+    ${point('4', 'The instrument set already spans both', 'CRMA, the Net-Zero Industry Act, CBAM and the Chips Act target the same reliance. The open questions are deployment speed and cost — not the diagnosis.')}
+  </div>
+  <div class="closing anim">EU manufacturing is globally competitive <b>and</b> deeply exposed — on the same variables, in trade and in the transition. The two readings are one story.</div>
+  ${src('ESABCC Method Hub · Overview Industry. A neutral, source-linked status assessment across trade and the clean-tech transition.', true)}
+</section>`);
+
 /* ---------------------------------------------------------- helpers used above */
 function kick(num, label, sub, invert) {
-  return `<div class="s-kicker anim"><span class="num">§ ${num}</span><span>${label}</span><i class="dot"></i><span class="sub">${sub}</span></div>`;
+  // numeric section numbers get the "§" prefix; a symbolic marker (e.g. the "∴" of the
+  // cross-cutting conclusion) is shown on its own.
+  const marker = /^\d/.test(String(num)) ? `§ ${num}` : num;
+  return `<div class="s-kicker anim"><span class="num">${marker}</span><span>${label}</span><i class="dot"></i><span class="sub">${sub}</span></div>`;
 }
 function src(text, invert) {
   return `<div class="s-src${invert ? ' inv' : ''}">${text}</div>`;
