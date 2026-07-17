@@ -1,9 +1,15 @@
 {
   "date": "2026-07-17",
-  "generatedAt": "2026-07-17T07:20:49.803Z",
+  "generatedAt": "2026-07-17T12:13:25.907Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Friday, 17 July 2026 — Key developments from the last 24 hours",
   "highlights": [
+    {
+      "headline": "Minutes - Thursday, 25 June 2026 - PE790.755v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Industry, Research and Energy , Committee on Security and Defence",
+      "summary": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
     {
       "headline": "As the UK and Europe battle deadly wildfires, what lessons can Australia offer?",
       "summary": "&lt;p&gt;Knowledge learned over more than a century in Australia is being tested by worsening fires. It’s a familiar narrative around the world&lt;/p&gt;&lt;p&gt;The violent hot red flames of deadly wildfires across the UK and Europe and scenes of panicked communities fleeing homes could not, at least geographically, be further away for Jan Harris.&lt;/p&gt;&lt;p&gt;But sitting in her new home at Reedy Swamp in rural New South Wales in Australia, the 67-year-old has found herself in tears.&lt;/p",
@@ -11,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Press release - Irish Presidency debriefs European Parliament committees on its priorities",
-      "summary": "Ministers hold a series of meetings in parliamentary committees to present the priorities of the Irish Presidency of the Council in the relevant policy fields.&lt;br/&gt;Committee on Constitutional Affairs&lt;br/&gt;Committee on Foreign Affairs&lt;br/&gt;Committee on Agriculture and Rural Development&lt;br/&gt;Committee on Culture and Education&lt;br/&gt;Committee on Development&lt;br/&gt;Committee on Economic and Monetary Affairs&lt;br/&gt;Committee on Employment and Social Affairs&lt;br/&gt;Co",
+      "headline": "Commission boosts Europe's competitiveness, decarbonisation and independence with Electrification Action Plan and ETS review",
+      "summary": "European Commission Press release Brussels, 17 Jul 2026 The Commission today presents an Electrification Action Plan to make Europe the first electro-powered continent, and a stronger carbon market to support EU's industry in the clean transition and electrification.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -21,7 +27,16 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Minutes - Thursday, 25 June 2026 - PE790.755v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Industry, Research and Energy , Committee on Security and Defence",
+          "link": "https://www.europarl.europa.eu/doceo/document/CJ61-PV-2026-06-25-1_EN.pdf",
+          "source": "EU Parliament ENVI Committee",
+          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+          "published": "2026-07-17T11:52:44.000Z",
+          "score": 23
+        }
+      ]
     },
     {
       "id": "energy",
@@ -34,14 +49,6 @@
           "description": "&lt;p&gt;Knowledge learned over more than a century in Australia is being tested by worsening fires. It’s a familiar narrative around the world&lt;/p&gt;&lt;p&gt;The violent hot red flames of deadly wildfires across the UK and Europe and scenes of panicked communities fleeing homes could not, at least geographically, be further away for Jan Harris.&lt;/p&gt;&lt;p&gt;But sitting in her new home at Reedy Swamp in rural New South Wales in Australia, the 67-year-old has found herself in tears.&lt;/p",
           "published": "2026-07-17T04:00:58.000Z",
           "score": 10
-        },
-        {
-          "title": "'Complete extermination' of greys is the only way to protect red squirrels",
-          "link": "https://www.bbc.co.uk/news/articles/cz7d3rgn5w8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "A grey squirrel control officer says there is no other option to trapping and killing the greys after a number of cases of squirrelpox were confirmed in the Borders.",
-          "published": "2026-07-16T11:58:56.000Z",
-          "score": 7
         },
         {
           "title": "EXCLUSIVE: Iran tells Houthis to close Red Sea gateway if US hits power network, sources say - Reuters",
@@ -60,12 +67,20 @@
           "score": 7
         },
         {
-          "title": "Oil rises on intensifying US-Iran hostilities, threat of Red Sea closure - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYnAzc0RfelUyaHNBcU5ERWVndUwxNkhxOC1sREo3M2xoeGp0Vko0MTREMXludzBTcG52UVpvSmpRdlpLV2FFU0VNT2cybFU2b3NjTkhUMkZKWlNZMmo0RWFDV0pfSEU1RDFtVURxQjAtRVBXeTB6VWZCNUpFUVRJRFRSRDA0NzJlN1d2bjl5T3VLZ2lxQndYZ29SUFB0Y05YUkxzd1pOSktyME9XMTFMVWRsVnhRV2RG?oc=5",
+          "title": "India joins select group of nations operating hydrogen-powered trains - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYThyNXVFRkozYUJzVVJ5UDJBSGEzSDJXYUo2WGQ2LW9JV2g4dGJVa1J6SVM4aFAwbUptd3A3dm1FbHYwbzJhYzFrOTVrWXZLeGJqZE9HNEllc2hkazB2ejhQZ3VHZnRwTEtZOGR1ZmFqb2cwcGJNOU1GUXBxaU14TkRQYlB2dHFPVjMxUFl4ZUU1WWpWN2EteGlzdURqUUlEV3RkYVhtWnE1eUEzQy1wWUM4SlM?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxQYnAzc0RfelUyaHNBcU5ERWVndUwxNkhxOC1sREo3M2xoeGp0Vko0MTREMXludzBTcG52UVpvSmpRdlpLV2FFU0VNT2cybFU2b3NjTkhUMkZKWlNZMmo0RWFDV0pfSEU1RDFtVURxQjAtRVBXeTB6VWZCNUpFUVRJRFRSRDA0NzJlN1d2bjl5T3VLZ2lxQndYZ29SUFB0Y05YUkxzd1pOSktyME9XMTFMVWRsVnhRV2RG?oc=5\" target=\"_blank\"&gt;Oil rises on intensifying US-Iran hostilities, threat of Red Sea closure&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T01:31:00.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYThyNXVFRkozYUJzVVJ5UDJBSGEzSDJXYUo2WGQ2LW9JV2g4dGJVa1J6SVM4aFAwbUptd3A3dm1FbHYwbzJhYzFrOTVrWXZLeGJqZE9HNEllc2hkazB2ejhQZ3VHZnRwTEtZOGR1ZmFqb2cwcGJNOU1GUXBxaU14TkRQYlB2dHFPVjMxUFl4ZUU1WWpWN2EteGlzdURqUUlEV3RkYVhtWnE1eUEzQy1wWUM4SlM?oc=5\" target=\"_blank\"&gt;India joins select group of nations operating hydrogen-powered trains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T07:53:43.000Z",
           "score": 7
+        },
+        {
+          "title": "Food scraps and mushrooms: the closed-loop garden behind the world’s first community-powered sauna",
+          "link": "https://www.theguardian.com/environment/2026/jul/16/community-sauna-food-waste-r-urban-poplar",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;R-Urban Poplar in London is a ‘living lab’ where locals can experiment with ways of taking charge of their food supply&lt;/p&gt;&lt;p&gt;On a stiflingly hot and dusty morning at the height of the summer’s third heatwave, traffic thunders down the A12 arterial route through east London. A high, red-brick wall rises by the road. What few passersby will realise is that this ivy-topped wall shelters an urban oasis, within which sits an unprecedented sustainable project.&lt;/p&gt;&lt;p&gt;Th",
+          "published": "2026-07-16T13:00:39.000Z",
+          "score": 4
         }
       ]
     },
@@ -73,6 +88,30 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Commission boosts Europe's competitiveness, decarbonisation and independence with Electrification Action Plan and ETS review",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1596",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 17 Jul 2026 The Commission today presents an Electrification Action Plan to make Europe the first electro-powered continent, and a stronger carbon market to support EU's industry in the clean transition and electrification.",
+          "published": "2026-07-16T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Questions and answers on the EU Emissions Trading System (EU ETS) review",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1598",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 17 Jul 2026 What are the main changes proposed under the review of the EU Emissions Trading System?",
+          "published": "2026-07-16T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "Remarks by Executive Vice-President Ribera and Commissioners Hoekstra and Jørgensen at the press conference on the EU Emission Trading System review and the Electrification Action Plan",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/speech_26_1643",
+          "source": "European Commission",
+          "description": "European Commission Speech Brussels, 17 Jul 2026 Executive Vice-President Ribera\r\n \r\nThank you very much, and thank you for joining us today.\r\nWe are presenting a set of important proposals.\r\nRecent weeks, and las...",
+          "published": "2026-07-16T22:00:00.000Z",
+          "score": 23
+        },
         {
           "title": "Press release - Irish Presidency debriefs European Parliament committees on its priorities",
           "link": "https://www.europarl.europa.eu/news/en/press-room/20260709IPR46412/",
@@ -82,36 +121,12 @@
           "score": 22
         },
         {
-          "title": "The EU climate policy the world copied is under fire — what&#039;s at stake?",
-          "link": "https://www.dw.com/en/the-eu-climate-policy-the-world-copied-is-under-fire-what-s-at-stake/a-77979725?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The emissions trading system became a global blueprint for pricing carbon and cutting CO2. Now industry groups are pushing back against tougher climate rules. How effective is the scheme and where does it fall short?",
-          "published": "2026-07-16T11:33:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "Africa can lead the Age of Electrification",
-          "link": "https://www.climatechangenews.com/2026/07/16/africa-can-lead-the-age-of-electrification/",
-          "source": "Climate Home News",
-          "description": "The electrification agenda presents both an extraordinary opportunity for Africa and an immense challenge for the continent The post Africa can lead the Age of Electrification appeared first on Climate Home News.",
-          "published": "2026-07-16T09:52:53.000Z",
-          "score": 10
-        },
-        {
-          "title": "How green is Andy Burnham? Britain’s next PM faces tough climate decisions",
-          "link": "https://www.theguardian.com/environment/2026/jul/16/how-green-andy-burnham-britain-next-pm-tough-climate-decisions",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Heatwaves, high energy prices, calls for reindustrialisation and North Sea drilling are all high on the to-do list&lt;/p&gt;&lt;p&gt;Wildfires &lt;a href=\"https://www.manchestereveningnews.co.uk/news/greater-manchester-news/greater-manchesters-new-air-quality-34292334\"&gt;cast a pall of smoke this week over Greater Manchester&lt;/a&gt;, whose former mayor Andy Burnham stands on the threshold of No 10. Amid three UK heatwaves so far this year, which have &lt;a href=\"https://www.theguardi",
-          "published": "2026-07-16T14:00:41.000Z",
-          "score": 7
-        },
-        {
-          "title": "Watch: Flood waters surge in Texas after huge rainstorms",
-          "link": "https://www.bbc.co.uk/news/videos/cyvlp93r2dyo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The deluge prompted evacuations and water rescues in the same region where 25 children and two counsellors at Camp Mystic died in flooding in 2025.",
-          "published": "2026-07-16T16:45:55.000Z",
-          "score": 7
+          "title": "Q&#038;A: Europe’s May and June heatwave deaths – and how they were counted",
+          "link": "https://www.carbonbrief.org/qa-europes-may-and-june-heatwave-deaths-and-how-they-were-counted/",
+          "source": "Carbon Brief",
+          "description": "Recent weeks have seen a flurry of reports from public health authorities and scientists that... The post Q&amp;A: Europe’s May and June heatwave deaths – and how they were counted appeared first on Carbon Brief.",
+          "published": "2026-07-17T11:17:09.000Z",
+          "score": 16
         }
       ]
     },
@@ -123,76 +138,59 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": [
-        {
-          "title": "DRAFT REPORT on the proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on the market of genetically modified micro-organisms and the processing of organs - PE789.094v01-00",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ64-PR-789094_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "DRAFT REPORT on the proposal for a Directive of the European Parliament and of the Council amending Directives 2001/18/EC and 2010/53/EU as regards the placing on the market of genetically modified micro-organisms and the processing of organs&lt;br/&gt;Committee on the Environment, Public Health and Food Safety&lt;br/&gt;Committee on Public Health&lt;br/&gt;Marta Temido, Adam Jarubas&lt;br /&gt; &lt;br /&gt;Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Unio",
-          "published": "2026-07-16T11:53:03.000Z",
-          "score": 22
-        },
-        {
-          "title": "Ukraine parliament approves energy executive Koretskyi as new PM - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPeEtTemJ5T2NxcW9Oa0ZSaGowQlR3cC1jQlRFRG5sdjJ4NWhJMzhWeDZSamdhZGtsTnJvQnZGZEJoUngxa0RYRVJMb3JYMnc0dXMtdUlGcUdmenlKQXRickxtczM1S0dQZ25VdnVXN0FycldMZXkwa1pRVG9XWEhpMUtCYUQ4MjFhRnBuZXFXOVBqVlFtUmN2a1Iycl92ZjJoM3RLM1JB?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipgFBVV95cUxPeEtTemJ5T2NxcW9Oa0ZSaGowQlR3cC1jQlRFRG5sdjJ4NWhJMzhWeDZSamdhZGtsTnJvQnZGZEJoUngxa0RYRVJMb3JYMnc0dXMtdUlGcUdmenlKQXRickxtczM1S0dQZ25VdnVXN0FycldMZXkwa1pRVG9XWEhpMUtCYUQ4MjFhRnBuZXFXOVBqVlFtUmN2a1Iycl92ZjJoM3RLM1JB?oc=5\" target=\"_blank\"&gt;Ukraine parliament approves energy executive Koretskyi as new PM&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-16T10:47:43.000Z",
-          "score": 13
-        }
-      ]
+      "items": []
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "EU court endorses Spanish PM&#039;s contentious Catalan amnesty",
-          "link": "https://www.dw.com/en/eu-court-endorses-spanish-pm-s-contentious-catalan-amnesty/a-77981590?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU&#039;s top court has backed a Spanish law giving amnesty to Catalan separatists over the independence referendum. The deal let Prime Minister Pedro Sanchez stay in office in 2023 and prompted major opposition protests.",
-          "published": "2026-07-16T12:50:00.000Z",
-          "score": 12
-        },
-        {
-          "title": "Germany may make it illegal to deny Israel&#039;s right to exist",
-          "link": "https://www.dw.com/en/germany-may-make-it-illegal-to-deny-israel-s-right-to-exist/a-77980283?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany&#039;s upper house of parliament, the Bundesrat, has introduced a bill seeking to ban the questioning of Israel&#039;s right to exist. It is now up to the lower house to decide whether to turn it into law.",
-          "published": "2026-07-16T11:37:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "AI: Why Europe is falling behind, and how it can catch up",
-          "link": "https://www.dw.com/en/ai-why-europe-is-falling-behind-and-how-it-can-catch-up/a-77853943?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Europe trails the US and China in artificial intelligence. Economist and Nobel laureate Philippe Aghion says better research funding, venture capital and AI innovation can help it catch up.",
-          "published": "2026-07-16T08:15:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Italy's parliament backs Meloni's contested electoral reform - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5",
+          "title": "Germany proposes EU force to replace UN mission in Lebanon - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOai1XZS1NY0Z6WThpdTJiVmdaVjBnTkJSazJaWGd0bG1PSjVacHZvMC16T0ctSDRkLTVjelQ2T29RSFY5a2s3bGw3Sm1oUGFpUXVwT3lROXpLY1F5cUZ3QkstZ01qRXg4YlFiTHA5Y2lMTGJFSjRSQ2F3N2dWWVBZVzZueVZfYzJIRVNhT1Jwbi1xc2tjN3ZWRnVR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPaXllLTFSTGhSOFY2Znk1WVRtSVREYmxYX0VHbnY0dzFvTnZid1hHeUM0WHA0RVdYblYteDZHdllnWGtaQUNCT3ZJeVZWTTVRNG1vRW9KVkR1V3JsdURSbkx4Y3o5YmphWFF1THF3U2trTGRiM2ZnMmZwRWZ3UnVFNkx1a2hQYk5xWFY0RFpac1k0amxfWmFKUmF0QzI0d2pRYmc?oc=5\" target=\"_blank\"&gt;Italy's parliament backs Meloni's contested electoral reform&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-16T11:12:15.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMimgFBVV95cUxOai1XZS1NY0Z6WThpdTJiVmdaVjBnTkJSazJaWGd0bG1PSjVacHZvMC16T0ctSDRkLTVjelQ2T29RSFY5a2s3bGw3Sm1oUGFpUXVwT3lROXpLY1F5cUZ3QkstZ01qRXg4YlFiTHA5Y2lMTGJFSjRSQ2F3N2dWWVBZVzZueVZfYzJIRVNhT1Jwbi1xc2tjN3ZWRnVR?oc=5\" target=\"_blank\"&gt;Germany proposes EU force to replace UN mission in Lebanon&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T06:14:00.000Z",
           "score": 8
         },
         {
-          "title": "Google required to open up to AI, search engine rivals under EU-mandated changes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWNZSnZMWVlJN01HaEZaS1ktSVZhRnFoY2hOU0pEa2Nnb1JZeDhRNzV5VFQ2dVZSZ3ByR0R0MWVVdTZKZ3g3d2lQbUdEZjZoN1VMSkZjQ1hSU00xMFlJY0UtY0xCQWJ1MUFiYU1XSDMwcWEzVkxuZVZhM0M4T0RmTmRlVS1vMzFxc3JfQ2hBRXVkcUl3MzZhZkJiZV9pR2ZtdVZWWmZPMXRMMWozai04YTUzOEZGZw?oc=5",
+          "title": "No liability exemption for Google in Italian YouTube spat, EU court says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQbGJKT243LWdLT3pLMU8yOGVPRkxtOHJCb09COEFxWnhWdGZ3ejF5ampMTTBMZGtQcjZFcEhzRkZTT1RlUk5zakxDNTJCS19VcTR5TmE1X2otZGx4WU9JMXgwZkloXzhEb0dQSDlmcFRsOTVXeTlLMUVIMmtFYUtrbHNuZG1UYUVvZ19CN1JyMVlLd3RpVXRnY0ZjemNuYzRCWE5jV29ITFdOTzh2SWF5SU1B?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOWWNZSnZMWVlJN01HaEZaS1ktSVZhRnFoY2hOU0pEa2Nnb1JZeDhRNzV5VFQ2dVZSZ3ByR0R0MWVVdTZKZ3g3d2lQbUdEZjZoN1VMSkZjQ1hSU00xMFlJY0UtY0xCQWJ1MUFiYU1XSDMwcWEzVkxuZVZhM0M4T0RmTmRlVS1vMzFxc3JfQ2hBRXVkcUl3MzZhZkJiZV9pR2ZtdVZWWmZPMXRMMWozai04YTUzOEZGZw?oc=5\" target=\"_blank\"&gt;Google required to open up to AI, search engine rivals under EU-mandated changes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-16T12:08:22.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxQbGJKT243LWdLT3pLMU8yOGVPRkxtOHJCb09COEFxWnhWdGZ3ejF5ampMTTBMZGtQcjZFcEhzRkZTT1RlUk5zakxDNTJCS19VcTR5TmE1X2otZGx4WU9JMXgwZkloXzhEb0dQSDlmcFRsOTVXeTlLMUVIMmtFYUtrbHNuZG1UYUVvZ19CN1JyMVlLd3RpVXRnY0ZjemNuYzRCWE5jV29ITFdOTzh2SWF5SU1B?oc=5\" target=\"_blank\"&gt;No liability exemption for Google in Italian YouTube spat, EU court says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T18:14:56.000Z",
           "score": 8
+        },
+        {
+          "title": "VW workers to grill CEO on overhaul threatening 140,000 jobs, works council says - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZXI5V2RULThybkNadEROSVctcnpWc3FJUlozR2ZYaGJwZXg2TFNsMEs0SXlNV1JhODdjUlUtLXVTLXdFX1FpOGxUMkw1dWxxeEY4UkZJNFNib2ZuSmIteHdMams4R3AyUE9HZ2VEV0hleDhjTWpYRjdGSzV4VHBONkRVOEthTm02MnhUS3Y3cldYYlVzU1pncDI2MTFTR0RUQ1pJX0lWZkFTTkIzZDVZNHlLV3puN00?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPZXI5V2RULThybkNadEROSVctcnpWc3FJUlozR2ZYaGJwZXg2TFNsMEs0SXlNV1JhODdjUlUtLXVTLXdFX1FpOGxUMkw1dWxxeEY4UkZJNFNib2ZuSmIteHdMams4R3AyUE9HZ2VEV0hleDhjTWpYRjdGSzV4VHBONkRVOEthTm02MnhUS3Y3cldYYlVzU1pncDI2MTFTR0RUQ1pJX0lWZkFTTkIzZDVZNHlLV3puN00?oc=5\" target=\"_blank\"&gt;VW workers to grill CEO on overhaul threatening 140,000 jobs, works council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T07:52:36.000Z",
+          "score": 8
+        },
+        {
+          "title": "Canada fires prompt US air quality alerts as smoke blankets major cities",
+          "link": "https://www.bbc.co.uk/news/articles/c0m7n427xd8o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Smoke from more than 800 blazes has filled major cities from Toronto and New York, to parts of the US Midwest and Great Lakes.",
+          "published": "2026-07-17T02:15:23.000Z",
+          "score": 7
+        },
+        {
+          "title": "England to ban sale of high-caffeine energy drinks to under-16s from next year - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPd3B4OFF1NkFuSXlEU3p1OW5SNFhSdkpVSGZuWFZBcUZKZmJYbllHZUdJZlBmb1I2Z1lCUWlnTXduR3ktaGZYVmloM0ZoeHRMd2pJWTRGTFU3bGNxMklTRC1fcVRsOEc2X2NIYUtYVHBMcUIyX1l5MF9rajJ4MHhuc2VJMXhKWUJNVC1HRkpLNGlCM1NBZjF1c2hqWTVIWTR0a3RsUDM2elBXVWY1V2c?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxPd3B4OFF1NkFuSXlEU3p1OW5SNFhSdkpVSGZuWFZBcUZKZmJYbllHZUdJZlBmb1I2Z1lCUWlnTXduR3ktaGZYVmloM0ZoeHRMd2pJWTRGTFU3bGNxMklTRC1fcVRsOEc2X2NIYUtYVHBMcUIyX1l5MF9rajJ4MHhuc2VJMXhKWUJNVC1HRkpLNGlCM1NBZjF1c2hqWTVIWTR0a3RsUDM2elBXVWY1V2c?oc=5\" target=\"_blank\"&gt;England to ban sale of high-caffeine energy drinks to under-16s from next year&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-16T18:31:02.000Z",
+          "score": 7
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 446,
+    "totalArticlesScanned": 447,
     "articlesLast24h": 180,
-    "afterDedup": 170,
+    "afterDedup": 169,
     "feedsQueried": 19
   }
 }
