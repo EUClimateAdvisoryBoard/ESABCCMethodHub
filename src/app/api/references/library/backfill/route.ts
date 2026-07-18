@@ -7,8 +7,12 @@
  * fields, de-duplicates by DOI (or by title+year when DOI is
  * missing), and upserts.
  *
- * Admin-gated — checked against `isAdminEmail()`. Every invocation
- * writes to `admin_audit_log`.
+ * Admin-gated — requires the `REFS_ADMIN_TOKEN` secret (via
+ * `x-admin-token` header or `?token=`) when that env var is configured.
+ * (Earlier documentation for this route described an `isAdminEmail()` +
+ * `admin_audit_log` gate; that was never implemented here — this route
+ * predates the session-based admin pattern used elsewhere and still
+ * only has the shared-secret check.)
  *
  * Historically this route was used during the prototype phase to
  * seed the custom store from a CI job. Kept for operational use
@@ -16,13 +20,8 @@
  * bibliography in.
  */
 import { NextRequest, NextResponse } from 'next/server';
-import {
-  CustomRef,
-  ensureSeedLoaded,
-  getStore,
-  hasGitHubToken,
-  persistToGitHub,
-} from '@/lib/references/custom-store';
+import { CustomRef, listRefs, upsertRef } from '@/lib/references/custom-store';
+import { normalizeDoi } from '@/lib/references/server/route-helpers';
 
 // ---------------------------------------------------------------------------
 // Backfill missing metadata for existing references via CrossRef.
@@ -33,8 +32,8 @@ import {
 // overwrite non-empty user data — the backfill is strictly additive.
 //
 // This endpoint runs on Vercel where CrossRef is reachable, so we do not try
-// to call it from local sandboxes.  Persistence happens once at the very end
-// via a single GitHub commit.
+// to call it from local sandboxes.  Persistence happens per-reference via
+// `upsertRef()` (Postgres) once the CrossRef scan has finished.
 // ---------------------------------------------------------------------------
 
 export const runtime = 'nodejs';
@@ -45,15 +44,6 @@ const CROSSREF_BASE = 'https://api.crossref.org/works/';
 // CrossRef asks API consumers to identify themselves for the "polite pool".
 const POLITE_UA =
   'ESABCC-ReferenceManager/1.0 (mailto:refs@climate-advisory-board.europa.eu)';
-
-function normalizeDoi(d: string | undefined): string {
-  return (d || '')
-    .trim()
-    .toLowerCase()
-    .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
-    .replace(/^doi:\s*/, '')
-    .trim();
-}
 
 // Dig a DOI out of an arbitrary string (title, fullCitation, …).
 function extractDoi(s: string | undefined): string {
@@ -238,8 +228,7 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  await ensureSeedLoaded();
-  const store = getStore();
+  const store = await listRefs();
   const dryRun = request.nextUrl.searchParams.get('dryRun') === '1';
 
   const report: BackfillReport = {
@@ -251,11 +240,12 @@ export async function POST(request: NextRequest) {
     details: [],
   };
 
-  // Keep a snapshot so we can roll back if persistence ultimately fails.
-  const snapshot = store.map(r => ({ ...r }));
+  // Refs whose merge produced a change, queued for a Postgres upsert once
+  // the scan has finished. Additive-only: `mergeFromCrossref` never
+  // overwrites a non-empty field, it only fills blanks.
+  const updates: CustomRef[] = [];
 
-  for (let i = 0; i < store.length; i++) {
-    const ref = store[i];
+  for (const ref of store) {
     report.scanned++;
 
     // Is anything missing?  If not, skip.
@@ -295,7 +285,7 @@ export async function POST(request: NextRequest) {
       continue;
     }
 
-    store[i] = merged;
+    updates.push(merged);
     report.updated++;
     report.details.push({
       id: ref.id,
@@ -310,30 +300,28 @@ export async function POST(request: NextRequest) {
   }
 
   if (dryRun) {
-    // Restore the in-memory store and report what would change.
-    for (let i = 0; i < snapshot.length; i++) store[i] = snapshot[i];
+    // Nothing was written above — the loop only ever mutated local copies —
+    // so a dry run just reports what would change.
     return NextResponse.json({ dryRun: true, ...report });
   }
 
-  let persisted = false;
-  let persistError: string | undefined;
-  let commitSha: string | undefined;
-  if (report.updated > 0 && hasGitHubToken()) {
-    const result = await persistToGitHub(store);
-    persisted = result.ok;
-    persistError = result.error;
-    commitSha = result.commitSha;
-    if (!persisted) {
-      // Roll back to snapshot
-      for (let i = 0; i < snapshot.length; i++) store[i] = snapshot[i];
+  // Persist each changed reference through the store's normal Supabase
+  // upsert path. One row's failure doesn't block the others; failures are
+  // collected and surfaced via `persistError`.
+  let persisted = true;
+  const errors: string[] = [];
+  for (const ref of updates) {
+    const result = await upsertRef(ref);
+    if (!result.ok) {
+      persisted = false;
+      errors.push(`${ref.id}: ${result.error ?? 'unknown error'}`);
     }
   }
 
   return NextResponse.json({
     ...report,
     persisted,
-    persistError,
-    commitSha,
-    persistence: hasGitHubToken() ? 'github' : 'memory-only',
+    persistError: errors.length > 0 ? errors.join('; ') : undefined,
+    persistence: 'postgres',
   });
 }

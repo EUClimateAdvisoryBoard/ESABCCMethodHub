@@ -51,10 +51,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'id is required' }, { status: 400 });
   }
 
-  // `listRefs()` reads the custom-references table directly. (The old
-  // synchronous `getStore()` accessor is a deprecated stub that always
-  // returns an empty array, so this route previously 404'd on every
-  // server-stored reference.)
+  // `listRefs()` reads the custom-references table directly. (An earlier,
+  // synchronous `getStore()` accessor was a deprecated stub that always
+  // returned an empty array, 404-ing on every server-stored reference; it
+  // and the other GitHub-era stubs were removed from custom-store.ts once
+  // every call site had migrated to `listRefs()` — WP-01.)
   const store = await listRefs();
   const ref = store.find(r => r.id === id);
   if (!ref) {

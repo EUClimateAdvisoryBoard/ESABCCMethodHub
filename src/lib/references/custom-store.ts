@@ -123,9 +123,6 @@ export interface PersistResult {
   ok: boolean;
   status?: number;
   error?: string;
-  // Retained only to keep the legacy backfill route compiling; the GitHub
-  // persistence path is disabled so this field is always undefined.
-  commitSha?: string;
 }
 
 // Insert or update a single reference. Uses the service-role client so the
@@ -162,38 +159,4 @@ export async function deleteRef(id: string): Promise<PersistResult> {
     .eq('id', id);
   if (error) return { ok: false, status, error: error.message };
   return { ok: true, status };
-}
-
-// Back-compat shims — keep the old call-sites compiling while they migrate.
-// New code should prefer listRefs / upsertRef / deleteRef.
-
-export async function ensureSeedLoaded(): Promise<void> {
-  // No-op: the database is the source of truth. Retained so existing
-  // route handlers that `await ensureSeedLoaded()` keep working.
-}
-
-export function getStore(): CustomRef[] {
-  // Deprecated synchronous accessor. Always returns empty; callers should
-  // migrate to `await listRefs()`. Kept as a stub to avoid breaking
-  // legacy imports in a single-file cutover.
-  return [];
-}
-
-export async function reloadFromGitHub(): Promise<boolean> {
-  // The GitHub-as-database path has been retired for EU-sovereignty
-  // reasons. Always returns false so callers know there is nothing to
-  // reload. Safe to delete once all references are gone.
-  return false;
-}
-
-export async function persistToGitHub(_store: CustomRef[]): Promise<PersistResult> {
-  return {
-    ok: false,
-    error:
-      'persistToGitHub is disabled: custom references are stored in Postgres. Use upsertRef() instead.',
-  };
-}
-
-export function hasGitHubToken(): boolean {
-  return false;
 }

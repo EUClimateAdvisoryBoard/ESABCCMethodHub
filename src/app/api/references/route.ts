@@ -5,10 +5,8 @@
  * POST /api/references                 Create a new reference from a payload.
  *
  * Combines the bundled `@/data/references` seed with the user-added
- * `custom-references` store so the Word add-in and the web UI see a
- * single flat list. `ensureSeedLoaded()` hydrates the custom store on
- * cold start (reads from Postgres in production, from GitHub JSON
- * during the prototype phase).
+ * `custom-references` store (`listRefs()`, Postgres-backed) so the
+ * Word add-in and the web UI see a single flat list.
  *
  * The `runtime = 'nodejs'` pin is required because the Word-VBA add-in
  * path depends on Node's string APIs for ISO-8859-1 fallbacks; edge
@@ -20,11 +18,12 @@
  */
 import { NextRequest, NextResponse } from 'next/server';
 import { references } from '@/data/references';
-import { ensureSeedLoaded, getStore } from '@/lib/references/custom-store';
+import { listRefs } from '@/lib/references/custom-store';
 import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
 import type { CSLName } from '@/lib/references/types';
 import { aggregateProjects, referenceInProject } from '@/lib/references/projects';
 import { getPolicyFlatRefs } from '@/lib/references/policy-entries';
+import { normalize, sanitize } from '@/lib/references/server/route-helpers';
 
 // Flat shape the Word add-in / VBA consume.
 interface FlatRef {
@@ -86,29 +85,9 @@ async function getSupabaseReferences(): Promise<FlatRef[]> {
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-// Sanitize strings for VBA compatibility (replace smart quotes, en-dashes etc.)
-function sanitize(str: string): string {
-  return str
-    .replace(/[\u2018\u2019\u201A]/g, "'")   // smart single quotes
-    .replace(/[\u201C\u201D\u201E]/g, '"')    // smart double quotes
-    .replace(/[\u2013\u2014]/g, '-')           // en-dash, em-dash
-    .replace(/[\u2026]/g, '...')               // ellipsis
-    .replace(/[\u00A0]/g, ' ');                // non-breaking space
-}
-
-// Normalize a string for fuzzy comparison: lowercase, decompose Unicode
-// (so "é" becomes "e" + combining mark), strip combining marks, collapse
-// whitespace.  This makes "Edenhofer" match "Édenhöfer" and "co2" match
-// "CO₂" (after the subscript is normalized).
-function normalize(s: string): string {
-  if (!s) return '';
-  return s
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, ' ')
-    .trim();
-}
+// `sanitize` / `normalize` now live in `@/lib/references/server/route-helpers`
+// (WP-01 dedup -- this file, doi/route.ts, library/route.ts and
+// project-workspace/route.ts each had identical copies).
 
 // Extract DOI-like substring out of a query so that pasting a full
 // "https://doi.org/10.1234/abcd" in the search box still finds the ref.
@@ -199,12 +178,8 @@ export async function GET(request: NextRequest) {
   const limit = parseInt(request.nextUrl.searchParams.get('limit') || '50');
   const offset = parseInt(request.nextUrl.searchParams.get('offset') || '0');
 
-  // Ensure custom refs are loaded from GitHub / seed file on cold starts so
-  // search sees VBA-synced references even on a fresh serverless instance.
-  await ensureSeedLoaded();
-
   // Merge static references with custom references from library
-  const customRefs = getStore().map(r => ({
+  const customRefs = (await listRefs()).map(r => ({
     id: r.id,
     authors: r.authors || '',
     year: r.year || '',

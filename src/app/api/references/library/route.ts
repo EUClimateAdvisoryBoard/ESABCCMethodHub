@@ -24,6 +24,7 @@ import {
 import { combineTags, splitTags } from '@/lib/references/projects';
 import { createAdminClient, hasServiceRole } from '@/lib/supabase-server';
 import type { CSLName } from '@/lib/references/types';
+import { normalizeDoi } from '@/lib/references/server/route-helpers';
 
 // Force the route to run on the Node.js runtime (pg/supabase client) and
 // always evaluate fresh (no edge caching of mutations).
@@ -31,14 +32,6 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const PERSISTENCE = 'postgres';
-
-const normalizeDoi = (d: string | undefined): string =>
-  (d || '')
-    .trim()
-    .toLowerCase()
-    .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
-    .replace(/^doi:\s*/, '')
-    .trim();
 
 // Render a CSL author array ("Family, Given; …") to the flat string the
 // custom-references shape uses.
