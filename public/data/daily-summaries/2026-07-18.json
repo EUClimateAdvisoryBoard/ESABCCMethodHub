@@ -1,12 +1,12 @@
 {
   "date": "2026-07-18",
-  "generatedAt": "2026-07-18T07:02:07.021Z",
+  "generatedAt": "2026-07-18T11:53:51.160Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 18 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Minutes - Thursday, 25 June 2026 - PE790.755v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Industry, Research and Energy , Committee on Security and Defence",
-      "summary": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
+      "headline": "Europe’s most effective tool to cut greenhouse gas emissions ‘risks being weakened’",
+      "summary": "&lt;p&gt;European Commission proposal to overhaul emissions trading system would give companies less demanding pathway to reductions&lt;/p&gt;&lt;p&gt;Europe’s most effective method of cutting dangerous planet-heating gases risks being weakened after the European Commission proposed an overhaul of its flagship carbon market, critics have said.&lt;/p&gt;&lt;p&gt;In a long-awaited review of the European Union emissions trading system (ETS), the European Commission proposed giving companies a less ",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
@@ -17,8 +17,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: Europe’s May and June heatwave deaths – and how they were counted",
-      "summary": "Recent weeks have seen a flurry of reports from public health authorities and scientists that... The post Q&amp;A: Europe’s May and June heatwave deaths – and how they were counted appeared first on Carbon Brief.",
+      "headline": "Debriefed 17 July 2026: UK ‘firewave’ &#124; Fossil-fuelled heat deaths &#124; London’s Natural History Museum spotlights climate",
+      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post Debriefed 17 July 2026: UK ‘firewave’ | Fossil-fuelled heat deaths | London’s Natural History Museum spotlights climate appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -28,14 +28,6 @@
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
       "items": [
-        {
-          "title": "Minutes - Thursday, 25 June 2026 - PE790.755v01-00 - Committee on the Environment, Public Health and Food Safety , Committee on Industry, Research and Energy , Committee on Security and Defence",
-          "link": "https://www.europarl.europa.eu/doceo/document/CJ61-PV-2026-06-25-1_EN.pdf",
-          "source": "EU Parliament ENVI Committee",
-          "description": "Source : &lt;a href=\"https://www.europarl.europa.eu/privacy-policy/en\"&gt;© European Union, 2026 - EP&lt;/a&gt;",
-          "published": "2026-07-17T11:52:44.000Z",
-          "score": 23
-        },
         {
           "title": "Europe’s most effective tool to cut greenhouse gas emissions ‘risks being weakened’",
           "link": "https://www.theguardian.com/environment/2026/jul/17/europe-emissions-trading-system-greenhouse-gas-risks-weakened",
@@ -75,20 +67,20 @@
           "score": 7
         },
         {
-          "title": "India joins select group of nations operating hydrogen-powered trains - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOYThyNXVFRkozYUJzVVJ5UDJBSGEzSDJXYUo2WGQ2LW9JV2g4dGJVa1J6SVM4aFAwbUptd3A3dm1FbHYwbzJhYzFrOTVrWXZLeGJqZE9HNEllc2hkazB2ejhQZ3VHZnRwTEtZOGR1ZmFqb2cwcGJNOU1GUXBxaU14TkRQYlB2dHFPVjMxUFl4ZUU1WWpWN2EteGlzdURqUUlEV3RkYVhtWnE1eUEzQy1wWUM4SlM?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOYThyNXVFRkozYUJzVVJ5UDJBSGEzSDJXYUo2WGQ2LW9JV2g4dGJVa1J6SVM4aFAwbUptd3A3dm1FbHYwbzJhYzFrOTVrWXZLeGJqZE9HNEllc2hkazB2ejhQZ3VHZnRwTEtZOGR1ZmFqb2cwcGJNOU1GUXBxaU14TkRQYlB2dHFPVjMxUFl4ZUU1WWpWN2EteGlzdURqUUlEV3RkYVhtWnE1eUEzQy1wWUM4SlM?oc=5\" target=\"_blank\"&gt;India joins select group of nations operating hydrogen-powered trains&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T07:53:43.000Z",
-          "score": 7
+          "title": "Burnham expected to reverse ban on new oil and gas drilling",
+          "link": "https://www.theguardian.com/politics/2026/jul/18/burnham-expected-to-reverse-ban-on-new-oil-and-gas-drilling",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Incoming prime minister likely to reverse manifesto pledge and allow new North Sea licences, reports say&lt;/p&gt;&lt;p&gt;Andy Burnham is expected to relax the government’s restrictions on new oil and gas drilling when he becomes prime minister, according to &lt;a href=\"https://www.bbc.co.uk/news/articles/c935yx2z9d4o\"&gt;reports&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A decision to grant new licences for the practice in the North Sea would mark a departure from Labour’s 2024 manifesto, in which ",
+          "published": "2026-07-18T11:14:47.000Z",
+          "score": 2
         },
         {
-          "title": "China to levy consumption tax on lithium-ion batteries and solar cells - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMjloQ3c4TGE0b3hBSTYzWHJLRFdfZEF3Zk1hN1lWNXFfWnJuTHdodTk3VTEteWY2cERKdkliakxUNk1KSjdfWUJHU1piRGlzc3oza2xFZ0Jzb0lYSUpUaXdTQVVYMF9nT1BEQlRkeTFOSkt6eTJfT2JxV3JOVWY2bG81ajYxY2NKbzVZUF9wcUJMSTA3RG1IZUlsby1CSHVuc0hvSzVxalFXYUxkakVxTDlmZGRoa3k5UzNJ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOMjloQ3c4TGE0b3hBSTYzWHJLRFdfZEF3Zk1hN1lWNXFfWnJuTHdodTk3VTEteWY2cERKdkliakxUNk1KSjdfWUJHU1piRGlzc3oza2xFZ0Jzb0lYSUpUaXdTQVVYMF9nT1BEQlRkeTFOSkt6eTJfT2JxV3JOVWY2bG81ajYxY2NKbzVZUF9wcUJMSTA3RG1IZUlsby1CSHVuc0hvSzVxalFXYUxkakVxTDlmZGRoa3k5UzNJ?oc=5\" target=\"_blank\"&gt;China to levy consumption tax on lithium-ion batteries and solar cells&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T10:03:30.000Z",
-          "score": 7
+          "title": "Jackdaw gasfield would create only 27 direct full-time jobs, documents show",
+          "link": "https://www.theguardian.com/business/2026/jul/17/jackdaw-gasfield-north-sea-drilling-andy-burnham",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;Campaigners say field will bring minimal benefit for UK economy, as industry lobbies Burnham for go-ahead&lt;/p&gt;&lt;p&gt;More people can fit on to the top deck of a standard London bus than will be directly employed on the new Jackdaw gasfield in the North Sea, industry documents show.&lt;/p&gt;&lt;p&gt;Only 27 direct full-time jobs would be created by &lt;a href=\"https://www.theguardian.com/environment/2026/apr/04/new-north-sea-drilling-jackdaw-rosebank-uk-gas-imports\"&gt;Jackdaw, o",
+          "published": "2026-07-17T12:30:23.000Z",
+          "score": 2
         }
       ]
     },
@@ -97,18 +89,10 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Q&#038;A: Europe’s May and June heatwave deaths – and how they were counted",
-          "link": "https://www.carbonbrief.org/qa-europes-may-and-june-heatwave-deaths-and-how-they-were-counted/",
-          "source": "Carbon Brief",
-          "description": "Recent weeks have seen a flurry of reports from public health authorities and scientists that... The post Q&amp;A: Europe’s May and June heatwave deaths – and how they were counted appeared first on Carbon Brief.",
-          "published": "2026-07-17T11:17:09.000Z",
-          "score": 16
-        },
-        {
           "title": "Debriefed 17 July 2026: UK ‘firewave’ &#124; Fossil-fuelled heat deaths &#124; London’s Natural History Museum spotlights climate",
           "link": "https://www.carbonbrief.org/debriefed-17-july-2026-uk-firewave-fossil-fuelled-heat-deaths-londons-natural-history-museum-spotlights-climate/",
           "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post Debriefed 17 July 2026: UK ‘firewave’ | Fossil-fuelled heat deaths | London��s Natural History Museum spotlights climate appeared first on Carbon Brief.",
+          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post Debriefed 17 July 2026: UK ‘firewave’ | Fossil-fuelled heat deaths | London’s Natural History Museum spotlights climate appeared first on Carbon Brief.",
           "published": "2026-07-17T12:38:43.000Z",
           "score": 13
         },
@@ -129,11 +113,19 @@
           "score": 13
         },
         {
-          "title": "The EU climate policy the world copied is under fire — what&#039;s at stake?",
-          "link": "https://www.dw.com/en/the-eu-climate-policy-the-world-copied-is-under-fire-what-s-at-stake/a-77979725?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The EU Commission has proposed to weaken Europe&#039;s emissions trading system, a global blueprint for pricing carbon and cutting CO2. How effective is the scheme and where does it fall short?",
-          "published": "2026-07-17T10:51:00.000Z",
+          "title": "The EU's plan to overhaul its carbon market - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOEtaZVBOb0JZOEVjUXZSeGc1SUxXRV8ySGE1eDRzeEtrVkVpV3NyT2lRUWduRnBYZWVEaHBUZl96Q3JFWkV4bTNWR19zcTF2enZqYTh5ZzF4QXo2R3FZOTNQSEQxV1RCdXhqTmZ4MlpvYnN2M2ZwU3RTT1djWGNBTnNWMXNnMlRKMnVDLUUzTUxQbW5kdU5z?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNOEtaZVBOb0JZOEVjUXZSeGc1SUxXRV8ySGE1eDRzeEtrVkVpV3NyT2lRUWduRnBYZWVEaHBUZl96Q3JFWkV4bTNWR19zcTF2enZqYTh5ZzF4QXo2R3FZOTNQSEQxV1RCdXhqTmZ4MlpvYnN2M2ZwU3RTT1djWGNBTnNWMXNnMlRKMnVDLUUzTUxQbW5kdU5z?oc=5\" target=\"_blank\"&gt;The EU's plan to overhaul its carbon market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T16:17:52.000Z",
+          "score": 13
+        },
+        {
+          "title": "Wildfires, drought and storms hound Europe even as heatwave recedes - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTnRyVjJuMXNVY2hrNFBvUnNmVS1lMFV2SVRxUGl5QzA0b3RZeFpvWVZodXZYWHdmYkxFM0FlNkUwcHB4SXlfR1ctNDhhdDVTUGhiOWpnazlBc0pjQ25qSkg3X2VTdVlQcnhxSjQ5bV9tenRNWXdTRHB4V19zbnR1VlRJdGJTOWxWdUE1ZDE5bmdCc3Rwb1BFQ2xKLU1VS1VzZndMVU9ncWJJRHRsSmFKRmpaVjJQcmM?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNTnRyVjJuMXNVY2hrNFBvUnNmVS1lMFV2SVRxUGl5QzA0b3RZeFpvWVZodXZYWHdmYkxFM0FlNkUwcHB4SXlfR1ctNDhhdDVTUGhiOWpnazlBc0pjQ25qSkg3X2VTdVlQcnhxSjQ5bV9tenRNWXdTRHB4V19zbnR1VlRJdGJTOWxWdUE1ZDE5bmdCc3Rwb1BFQ2xKLU1VS1VzZndMVU9ncWJJRHRsSmFKRmpaVjJQcmM?oc=5\" target=\"_blank\"&gt;Wildfires, drought and storms hound Europe even as heatwave recedes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T16:31:25.000Z",
           "score": 13
         }
       ]
@@ -185,20 +177,20 @@
           "score": 8
         },
         {
-          "title": "Wildfires give North American cities the worst air quality on Earth - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1lZblo1YzVyUjZnZWRsQ0RDbEtBelI1akhPUTJqa3lDbENSY3pMclV6Sk1idDdDOXl5VmNtSVl5aUVSWnlNNG9jUklJd0N5TVRITlJJWkd1TnlhbWNua2JOQktLOC14ZXBOLWZJd2V1Rzh3dldBU0x0NTBuMkVWWjlxalFCb1Z6aVZpRm5LNTFtQ0FYTU9KajloNHRRaUtIQ2lDVWZnU1J4bFFWbkpDQUFCNl9GVTFB?oc=5",
+          "title": "EU plans measures to help EU banks build scale and compete with US rivals - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY1d3Q3NiMzMzckxzUEN6czhxUE5WWDNFV1JQLUFNOEN2d015VlZYOWhfRk1ZQWxVb01kYWxIaVRVd1ZoS1daZGR5aUhWQmVzLW9qSlpCd0pOYVRhQklVWW4wZXBLRTdZNWY3SHFQQ1c1SkFOdVZXYmFKY1UyYXNRYzdtMHYzQldjUHBsQWl1aUhCSnlaX1hIUmdBTE40M3gzbXlpNVBBSzVoSGRxV1lqVmRSYmthejlLbWlR?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1lZblo1YzVyUjZnZWRsQ0RDbEtBelI1akhPUTJqa3lDbENSY3pMclV6Sk1idDdDOXl5VmNtSVl5aUVSWnlNNG9jUklJd0N5TVRITlJJWkd1TnlhbWNua2JOQktLOC14ZXBOLWZJd2V1Rzh3dldBU0x0NTBuMkVWWjlxalFCb1Z6aVZpRm5LNTFtQ0FYTU9KajloNHRRaUtIQ2lDVWZnU1J4bFFWbkpDQUFCNl9GVTFB?oc=5\" target=\"_blank\"&gt;Wildfires give North American cities the worst air quality on Earth&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T18:41:35.000Z",
-          "score": 7
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY1d3Q3NiMzMzckxzUEN6czhxUE5WWDNFV1JQLUFNOEN2d015VlZYOWhfRk1ZQWxVb01kYWxIaVRVd1ZoS1daZGR5aUhWQmVzLW9qSlpCd0pOYVRhQklVWW4wZXBLRTdZNWY3SHFQQ1c1SkFOdVZXYmFKY1UyYXNRYzdtMHYzQldjUHBsQWl1aUhCSnlaX1hIUmdBTE40M3gzbXlpNVBBSzVoSGRxV1lqVmRSYmthejlLbWlR?oc=5\" target=\"_blank\"&gt;EU plans measures to help EU banks build scale and compete with US rivals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T13:19:43.000Z",
+          "score": 8
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 439,
-    "articlesLast24h": 179,
-    "afterDedup": 165,
+    "totalArticlesScanned": 438,
+    "articlesLast24h": 169,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
