@@ -1,15 +1,9 @@
 {
   "date": "2026-07-18",
-  "generatedAt": "2026-07-18T11:53:51.160Z",
+  "generatedAt": "2026-07-18T17:57:26.144Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Saturday, 18 July 2026 — Key developments from the last 24 hours",
   "highlights": [
-    {
-      "headline": "Europe’s most effective tool to cut greenhouse gas emissions ‘risks being weakened’",
-      "summary": "&lt;p&gt;European Commission proposal to overhaul emissions trading system would give companies less demanding pathway to reductions&lt;/p&gt;&lt;p&gt;Europe’s most effective method of cutting dangerous planet-heating gases risks being weakened after the European Commission proposed an overhaul of its flagship carbon market, critics have said.&lt;/p&gt;&lt;p&gt;In a long-awaited review of the European Union emissions trading system (ETS), the European Commission proposed giving companies a less ",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
     {
       "headline": "Greece says EU sanctions against Russia risk ceding LNG market share to rivals - Reuters",
       "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxQVzkxeFRrT2JJNTlNa0laY2xnX1dyOFMxczZDMVlFRldrMHRpWVptYkx6V2ZuaDh3TV9VQmYwbTVQVkZzeU80QVdvMENaX1VvTjNmYnBDRS1qYjNvZEZrLXpXZVRXVUUteXhHc2NHaWxpSnRJdXpqY2VoWENhOEJQeXd5UlFtdXhiMExoaS1pU0FSelVKa2hsSkJrYWZISDFVN19DY19SSGQ5aUZMbEh6ZUlPNkx6T0x5S0FVa1RQTVJmc2dxd1E?oc=5\" target=\"_blank\"&gt;Greece says EU sanctions against Russia risk ceding LNG market share to rivals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&g",
@@ -17,8 +11,8 @@
       "color": "#E87722"
     },
     {
-      "headline": "Debriefed 17 July 2026: UK ‘firewave’ &#124; Fossil-fuelled heat deaths &#124; London’s Natural History Museum spotlights climate",
-      "summary": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post Debriefed 17 July 2026: UK ‘firewave’ | Fossil-fuelled heat deaths | London’s Natural History Museum spotlights climate appeared first on Carbon Brief.",
+      "headline": "EU proposes slowing down cuts to carbon emissions for businesses",
+      "summary": "Under the proposals, the EU plans to relax its emissions trading system to give companies more time to reduce their carbon output.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,16 +21,7 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "Europe’s most effective tool to cut greenhouse gas emissions ‘risks being weakened’",
-          "link": "https://www.theguardian.com/environment/2026/jul/17/europe-emissions-trading-system-greenhouse-gas-risks-weakened",
-          "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;European Commission proposal to overhaul emissions trading system would give companies less demanding pathway to reductions&lt;/p&gt;&lt;p&gt;Europe’s most effective method of cutting dangerous planet-heating gases risks being weakened after the European Commission proposed an overhaul of its flagship carbon market, critics have said.&lt;/p&gt;&lt;p&gt;In a long-awaited review of the European Union emissions trading system (ETS), the European Commission proposed giving companies a less ",
-          "published": "2026-07-17T16:01:02.000Z",
-          "score": 17
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
@@ -59,27 +44,11 @@
           "score": 7
         },
         {
-          "title": "Germany news: Merz, Macron plan closer nuclear cooperation",
-          "link": "https://www.dw.com/en/germany-news-merz-macron-plan-closer-nuclear-cooperation/live-77998510?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Germany is expected to soon take part in a nuclear drill with France, Germany&#039;s Merz said after meeting France&#039;s Macron. It comes as Franco-German ties face an unclear future as French elections loom. DW has more.",
-          "published": "2026-07-17T14:55:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Burnham expected to reverse ban on new oil and gas drilling",
+          "title": "Burnham risks Labour backlash if he reverses ban on new oil and gas drilling",
           "link": "https://www.theguardian.com/politics/2026/jul/18/burnham-expected-to-reverse-ban-on-new-oil-and-gas-drilling",
           "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Incoming prime minister likely to reverse manifesto pledge and allow new North Sea licences, reports say&lt;/p&gt;&lt;p&gt;Andy Burnham is expected to relax the government’s restrictions on new oil and gas drilling when he becomes prime minister, according to &lt;a href=\"https://www.bbc.co.uk/news/articles/c935yx2z9d4o\"&gt;reports&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;A decision to grant new licences for the practice in the North Sea would mark a departure from Labour’s 2024 manifesto, in which ",
-          "published": "2026-07-18T11:14:47.000Z",
-          "score": 2
-        },
-        {
-          "title": "Jackdaw gasfield would create only 27 direct full-time jobs, documents show",
-          "link": "https://www.theguardian.com/business/2026/jul/17/jackdaw-gasfield-north-sea-drilling-andy-burnham",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Campaigners say field will bring minimal benefit for UK economy, as industry lobbies Burnham for go-ahead&lt;/p&gt;&lt;p&gt;More people can fit on to the top deck of a standard London bus than will be directly employed on the new Jackdaw gasfield in the North Sea, industry documents show.&lt;/p&gt;&lt;p&gt;Only 27 direct full-time jobs would be created by &lt;a href=\"https://www.theguardian.com/environment/2026/apr/04/new-north-sea-drilling-jackdaw-rosebank-uk-gas-imports\"&gt;Jackdaw, o",
-          "published": "2026-07-17T12:30:23.000Z",
+          "description": "&lt;p&gt;Party manifesto pledged to honour existing North Sea exploration licences but not issue new ones&lt;/p&gt;&lt;p&gt;Andy Burnham risks his first confrontation with Labour MPs if he announces new oil and gas drilling licences when he becomes prime minister, insiders have warned.&lt;/p&gt;&lt;p&gt;Speculation is rife that Burnham will announce some new plans for drilling in the North Sea after he is installed in Downing Street on Monday.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/po",
+          "published": "2026-07-18T16:26:38.000Z",
           "score": 2
         }
       ]
@@ -89,22 +58,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Debriefed 17 July 2026: UK ‘firewave’ &#124; Fossil-fuelled heat deaths &#124; London’s Natural History Museum spotlights climate",
-          "link": "https://www.carbonbrief.org/debriefed-17-july-2026-uk-firewave-fossil-fuelled-heat-deaths-londons-natural-history-museum-spotlights-climate/",
-          "source": "Carbon Brief",
-          "description": "Welcome to Carbon Brief’s DeBriefed.&#160;An essential guide to the week&#8217;s key developments relating to climate... The post Debriefed 17 July 2026: UK ‘firewave’ | Fossil-fuelled heat deaths | London’s Natural History Museum spotlights climate appeared first on Carbon Brief.",
-          "published": "2026-07-17T12:38:43.000Z",
-          "score": 13
-        },
-        {
-          "title": "Most &#8220;zombie credits&#8221; locked out of new UN carbon market after China and India snub",
-          "link": "https://www.climatechangenews.com/2026/07/17/most-zombie-credits-locked-out-of-new-un-carbon-market-after-china-and-india-snub/",
-          "source": "Climate Home News",
-          "description": "Fears of a flood of environmentally-dubious carbon credits have faded, with most old projects not able to transition to new UN market The post Most &#8220;zombie credits&#8221; locked out of new UN carbon market after China and India snub appeared first on Climate Home News.",
-          "published": "2026-07-17T16:38:23.000Z",
-          "score": 13
-        },
-        {
           "title": "EU proposes slowing down cuts to carbon emissions for businesses",
           "link": "https://www.bbc.co.uk/news/articles/ckgv0zd497zo?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC Science & Environment",
@@ -113,20 +66,36 @@
           "score": 13
         },
         {
-          "title": "The EU's plan to overhaul its carbon market - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNOEtaZVBOb0JZOEVjUXZSeGc1SUxXRV8ySGE1eDRzeEtrVkVpV3NyT2lRUWduRnBYZWVEaHBUZl96Q3JFWkV4bTNWR19zcTF2enZqYTh5ZzF4QXo2R3FZOTNQSEQxV1RCdXhqTmZ4MlpvYnN2M2ZwU3RTT1djWGNBTnNWMXNnMlRKMnVDLUUzTUxQbW5kdU5z?oc=5",
+          "title": "Wildfire smoke to have minimal impact on World Cup final - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTXJxMU00NXpSeDAyRGtYX1JIWGRpRm9YUDNYRGdGY0RrRGtIdFhuR1loNGRtMFNGc185TG1JcTVxdEgyNTRQZ3RSWFhqT1VVMWE1aW9OYXZUVXY3SUFrUWozWEZ1ci1mU0FSV25pTWFHMjVWOVBGUkllSWVsaWx2RmxJVzhfQ3J2empZT001QXFYcERfX3RXRjZ1ZmUzX2EtSm1KSl9tYXc1LU0?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMilwFBVV95cUxNOEtaZVBOb0JZOEVjUXZSeGc1SUxXRV8ySGE1eDRzeEtrVkVpV3NyT2lRUWduRnBYZWVEaHBUZl96Q3JFWkV4bTNWR19zcTF2enZqYTh5ZzF4QXo2R3FZOTNQSEQxV1RCdXhqTmZ4MlpvYnN2M2ZwU3RTT1djWGNBTnNWMXNnMlRKMnVDLUUzTUxQbW5kdU5z?oc=5\" target=\"_blank\"&gt;The EU's plan to overhaul its carbon market&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T16:17:52.000Z",
-          "score": 13
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTXJxMU00NXpSeDAyRGtYX1JIWGRpRm9YUDNYRGdGY0RrRGtIdFhuR1loNGRtMFNGc185TG1JcTVxdEgyNTRQZ3RSWFhqT1VVMWE1aW9OYXZUVXY3SUFrUWozWEZ1ci1mU0FSV25pTWFHMjVWOVBGUkllSWVsaWx2RmxJVzhfQ3J2empZT001QXFYcERfX3RXRjZ1ZmUzX2EtSm1KSl9tYXc1LU0?oc=5\" target=\"_blank\"&gt;Wildfire smoke to have minimal impact on World Cup final&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T20:50:51.000Z",
+          "score": 7
         },
         {
-          "title": "Wildfires, drought and storms hound Europe even as heatwave recedes - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNTnRyVjJuMXNVY2hrNFBvUnNmVS1lMFV2SVRxUGl5QzA0b3RZeFpvWVZodXZYWHdmYkxFM0FlNkUwcHB4SXlfR1ctNDhhdDVTUGhiOWpnazlBc0pjQ25qSkg3X2VTdVlQcnhxSjQ5bV9tenRNWXdTRHB4V19zbnR1VlRJdGJTOWxWdUE1ZDE5bmdCc3Rwb1BFQ2xKLU1VS1VzZndMVU9ncWJJRHRsSmFKRmpaVjJQcmM?oc=5",
+          "title": "Explainer: Why is Canada's wildfire smoke blanketing parts of North America? - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSHBqd1E0MVFfdmM2U3liUFhTMlVVaWI3bUJwRFN4UlU0VlhDTmU4WlRSOGFiOFlfSHlTMUtZMTM4RmZTb2hWV2lDLTJHZHdzT3EtN3pib25admthRFRCZ3hrdWlLUXJBc2pmdUZ0a0VQakxwWDd2anB0OGE2Z1gzenVCNjhHa0hBeDFTU3hORXFHeHV6VUo0WkRESjNiU3NSY2xNTlBmNndyajhIM2UzdzdDdXVSSkVk?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxNTnRyVjJuMXNVY2hrNFBvUnNmVS1lMFV2SVRxUGl5QzA0b3RZeFpvWVZodXZYWHdmYkxFM0FlNkUwcHB4SXlfR1ctNDhhdDVTUGhiOWpnazlBc0pjQ25qSkg3X2VTdVlQcnhxSjQ5bV9tenRNWXdTRHB4V19zbnR1VlRJdGJTOWxWdUE1ZDE5bmdCc3Rwb1BFQ2xKLU1VS1VzZndMVU9ncWJJRHRsSmFKRmpaVjJQcmM?oc=5\" target=\"_blank\"&gt;Wildfires, drought and storms hound Europe even as heatwave recedes&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T16:31:25.000Z",
-          "score": 13
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPSHBqd1E0MVFfdmM2U3liUFhTMlVVaWI3bUJwRFN4UlU0VlhDTmU4WlRSOGFiOFlfSHlTMUtZMTM4RmZTb2hWV2lDLTJHZHdzT3EtN3pib25admthRFRCZ3hrdWlLUXJBc2pmdUZ0a0VQakxwWDd2anB0OGE2Z1gzenVCNjhHa0hBeDFTU3hORXFHeHV6VUo0WkRESjNiU3NSY2xNTlBmNndyajhIM2UzdzdDdXVSSkVk?oc=5\" target=\"_blank\"&gt;Explainer: Why is Canada's wildfire smoke blanketing parts of North America?&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T20:09:00.000Z",
+          "score": 7
+        },
+        {
+          "title": "Canada prepares to evacuate Ontario community as wildfire smoke chokes US - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOdWRlX0x0cFY3NTVYVE1pbHVGQmZEYkVfLUtJZEZEamlnRk5HemRkckV5RjhRaUhoYVltcWRWcWZDZ2JyNUVFa3B2TW8welVMVFJiUkx4MDVLdlBpaUNNZUJlNGJkSDI4Q1JQcXJQZjFFcVA1N2V3TXJVWFFIc1M3TzdpWVRtcWI4M1ZiWHAyd3RER1I2UEN1U1hRM3dncnNCWjJkeWxlRzZValRldFNXb2FfbmFHMEFLWWpGUmxwVzJWUQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxOdWRlX0x0cFY3NTVYVE1pbHVGQmZEYkVfLUtJZEZEamlnRk5HemRkckV5RjhRaUhoYVltcWRWcWZDZ2JyNUVFa3B2TW8welVMVFJiUkx4MDVLdlBpaUNNZUJlNGJkSDI4Q1JQcXJQZjFFcVA1N2V3TXJVWFFIc1M3TzdpWVRtcWI4M1ZiWHAyd3RER1I2UEN1U1hRM3dncnNCWjJkeWxlRzZValRldFNXb2FfbmFHMEFLWWpGUmxwVzJWUQ?oc=5\" target=\"_blank\"&gt;Canada prepares to evacuate Ontario community as wildfire smoke chokes US&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-18T16:20:24.000Z",
+          "score": 7
+        },
+        {
+          "title": "Flash flood kills 4, leaves 4 others missing in Vietnam - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONjZ5TDU5a2pfT01oNlB2YWxIYTgzRFVRc2kzSjhNcjFHem1Qc2lYV0hSOEJLVDFHU0dObnNGM3lwR24td2JqQ2h1UjRpMVBXMkQ1Unk1Ti0xWHNha0dCZmh6Yk1zSkJoSXJDUVhrYXJ6WjRmcWxFUnp6aC1vbndWbVlYaEEwUnF1d08zQjEtWnlFNXJSWVpJUE5oVUw3UG5obDBQVDJUZGdXMXpN?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxONjZ5TDU5a2pfT01oNlB2YWxIYTgzRFVRc2kzSjhNcjFHem1Qc2lYV0hSOEJLVDFHU0dObnNGM3lwR24td2JqQ2h1UjRpMVBXMkQ1Unk1Ti0xWHNha0dCZmh6Yk1zSkJoSXJDUVhrYXJ6WjRmcWxFUnp6aC1vbndWbVlYaEEwUnF1d08zQjEtWnlFNXJSWVpJUE5oVUw3UG5obDBQVDJUZGdXMXpN?oc=5\" target=\"_blank\"&gt;Flash flood kills 4, leaves 4 others missing in Vietnam&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-18T05:30:00.000Z",
+          "score": 7
         }
       ]
     },
@@ -145,52 +114,52 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "VW workers to grill CEO on overhaul threatening 140,000 jobs, works council says - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPZXI5V2RULThybkNadEROSVctcnpWc3FJUlozR2ZYaGJwZXg2TFNsMEs0SXlNV1JhODdjUlUtLXVTLXdFX1FpOGxUMkw1dWxxeEY4UkZJNFNib2ZuSmIteHdMams4R3AyUE9HZ2VEV0hleDhjTWpYRjdGSzV4VHBONkRVOEthTm02MnhUS3Y3cldYYlVzU1pncDI2MTFTR0RUQ1pJX0lWZkFTTkIzZDVZNHlLV3puN00?oc=5",
+          "title": "Wildfires give North American cities the worst air quality on Earth - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1lZblo1YzVyUjZnZWRsQ0RDbEtBelI1akhPUTJqa3lDbENSY3pMclV6Sk1idDdDOXl5VmNtSVl5aUVSWnlNNG9jUklJd0N5TVRITlJJWkd1TnlhbWNua2JOQktLOC14ZXBOLWZJd2V1Rzh3dldBU0x0NTBuMkVWWjlxalFCb1Z6aVZpRm5LNTFtQ0FYTU9KajloNHRRaUtIQ2lDVWZnU1J4bFFWbkpDQUFCNl9GVTFB?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitwFBVV95cUxPZXI5V2RULThybkNadEROSVctcnpWc3FJUlozR2ZYaGJwZXg2TFNsMEs0SXlNV1JhODdjUlUtLXVTLXdFX1FpOGxUMkw1dWxxeEY4UkZJNFNib2ZuSmIteHdMams4R3AyUE9HZ2VEV0hleDhjTWpYRjdGSzV4VHBONkRVOEthTm02MnhUS3Y3cldYYlVzU1pncDI2MTFTR0RUQ1pJX0lWZkFTTkIzZDVZNHlLV3puN00?oc=5\" target=\"_blank\"&gt;VW workers to grill CEO on overhaul threatening 140,000 jobs, works council says&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T16:14:30.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxNZ1lZblo1YzVyUjZnZWRsQ0RDbEtBelI1akhPUTJqa3lDbENSY3pMclV6Sk1idDdDOXl5VmNtSVl5aUVSWnlNNG9jUklJd0N5TVRITlJJWkd1TnlhbWNua2JOQktLOC14ZXBOLWZJd2V1Rzh3dldBU0x0NTBuMkVWWjlxalFCb1Z6aVZpRm5LNTFtQ0FYTU9KajloNHRRaUtIQ2lDVWZnU1J4bFFWbkpDQUFCNl9GVTFB?oc=5\" target=\"_blank\"&gt;Wildfires give North American cities the worst air quality on Earth&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T18:41:35.000Z",
+          "score": 7
         },
         {
-          "title": "EU imposes sanctions on Russian executive, five companies over drones - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWWFLMVZ6UTM4MFpsUndYZFdyQldZdHhzUUZGczVQUEVrYVhncGhSOHdwcXVvWmFGU3dqYjlxSGpyYlk5TnR0bmp1R0FOVGhwVjhTZXFHS3lydUhNbmNHSUUtb2lEeGR4OUpCQ0hiYllKZlNuMTRTWUlqS1NDYU02NUZBY1FWaG1pdk9lNGNQelAzeFlkMDZsaWRpMVZ4Uy0taXVONGFYVlJydE0?oc=5",
+          "title": "Electricians at BHP's key Australian iron ore hub vote for work stoppages - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdkg4OTdXOXFjOWlBTmhwUkNLSVNmRnJPNWlnNXZ6bkF1dWRQZWloMGhpTE8taEc0UVFNMTM4NWlJeENHRExxNzZYNTNkSktya3lNVWxqenBfSEQ1dkowVkROdWtXeHBsSnoyUVVTTXR0bFI2c09XOWlmNjUtakJ0NFhiWDFFR1JRWXBvbjZaSW1iRmd0OWxhc3o5YmxObHRzYkpkUHJfRmxJbUo2M0tMUkZhZHMya1NKUzdCX0g5VWVNSmVHa3YwXw?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqwFBVV95cUxNWWFLMVZ6UTM4MFpsUndYZFdyQldZdHhzUUZGczVQUEVrYVhncGhSOHdwcXVvWmFGU3dqYjlxSGpyYlk5TnR0bmp1R0FOVGhwVjhTZXFHS3lydUhNbmNHSUUtb2lEeGR4OUpCQ0hiYllKZlNuMTRTWUlqS1NDYU02NUZBY1FWaG1pdk9lNGNQelAzeFlkMDZsaWRpMVZ4Uy0taXVONGFYVlJydE0?oc=5\" target=\"_blank\"&gt;EU imposes sanctions on Russian executive, five companies over drones&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T12:55:48.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdkg4OTdXOXFjOWlBTmhwUkNLSVNmRnJPNWlnNXZ6bkF1dWRQZWloMGhpTE8taEc0UVFNMTM4NWlJeENHRExxNzZYNTNkSktya3lNVWxqenBfSEQ1dkowVkROdWtXeHBsSnoyUVVTTXR0bFI2c09XOWlmNjUtakJ0NFhiWDFFR1JRWXBvbjZaSW1iRmd0OWxhc3o5YmxObHRzYkpkUHJfRmxJbUo2M0tMUkZhZHMya1NKUzdCX0g5VWVNSmVHa3YwXw?oc=5\" target=\"_blank\"&gt;Electricians at BHP's key Australian iron ore hub vote for work stoppages&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-17T21:32:53.000Z",
+          "score": 6
         },
         {
-          "title": "Tech selloff weighs on European shares ahead of ECB meeting next week - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOGpMM3hiNFRxY0h6Z01MczdJZFJKdzd0c1JGR2ZxQUJFUEdQb0NwNDlKejRLdGVITV9wWDRkdGJ3VmdsWnpEMlJqN1BrbDFVTnM4UGg5eEZGQmNGRXNYVXJVR01iTFRuMmh0bVBNSEU3Y1BDUDJnWE4zOFVMczVnM1RySHlON1puSHUtaFZNanhmQ0l5cm5CWDJrQkxrNFFFLVExUkNMQXVEQQ?oc=5",
+          "title": "Trump administration discloses subpoenas to law firms in fight with US lawyer group - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQV0tkVXh5V1ZqbFNIS3ZWMkVXM1BmaTFkb2s1MnRSNlR6RGtJTWdxeDBSR3liOENKNDlFWTVyc1EwRlVFVUoteFdmd0JpaXhsemlXRWFxempxU0pHc20wTzMza1J0UUhKeFNzMm45WnNUbmNnM0xjWGNWNHZraTJNbmtHcmkzRTZYeGpWQ1Z4enRfRnI1ZUZaaXlVdXVSMmVLb0JVRzBQWjFpcV9NV2tSZC1XODRCMzRYY3loQmR3MHU2cUtZYzlxa3p3?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiqgFBVV95cUxQOGpMM3hiNFRxY0h6Z01MczdJZFJKdzd0c1JGR2ZxQUJFUEdQb0NwNDlKejRLdGVITV9wWDRkdGJ3VmdsWnpEMlJqN1BrbDFVTnM4UGg5eEZGQmNGRXNYVXJVR01iTFRuMmh0bVBNSEU3Y1BDUDJnWE4zOFVMczVnM1RySHlON1puSHUtaFZNanhmQ0l5cm5CWDJrQkxrNFFFLVExUkNMQXVEQQ?oc=5\" target=\"_blank\"&gt;Tech selloff weighs on European shares ahead of ECB meeting next week&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T16:45:28.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQV0tkVXh5V1ZqbFNIS3ZWMkVXM1BmaTFkb2s1MnRSNlR6RGtJTWdxeDBSR3liOENKNDlFWTVyc1EwRlVFVUoteFdmd0JpaXhsemlXRWFxempxU0pHc20wTzMza1J0UUhKeFNzMm45WnNUbmNnM0xjWGNWNHZraTJNbmtHcmkzRTZYeGpWQ1Z4enRfRnI1ZUZaaXlVdXVSMmVLb0JVRzBQWjFpcV9NV2tSZC1XODRCMzRYY3loQmR3MHU2cUtZYzlxa3p3?oc=5\" target=\"_blank\"&gt;Trump administration discloses subpoenas to law firms in fight with US lawyer group&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&",
+          "published": "2026-07-18T00:46:09.000Z",
+          "score": 6
         },
         {
-          "title": "EXCLUSIVE: Saudi PIF set to win EU nod for Electronic Arts deal under subsidy rules, sources say - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPT3BrSTBMQ3g2aVFzcXNuQmF4bm5BeUtzUC1IZDV4LVZhby1oY19QajdQMWdtQVVlNVc5TVJ5eHdWZzM1WUN3N1RLNzBvd3k2TUdTdFRGR3FNbERWd3V5ZEZFendRSXh2cVpCbG5qclV2ZGZRRHBNYWlLTjVqc193SmVrcXBUc2Eyck9na0lzMEN6TElqbVJhUk4yTDE1cWxtM3RqU0x1TDJWUENmZnA4U1B3TTBrUVNKcDAxTXA0QQ?oc=5",
+          "title": "Trump team scrutinized election agency over 2020 vote before firing its leaders - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNcl9tWjYyOV8wb3hqMVdnMFBiSklnNjhxbVpZUXhMZXRBU3VtTlNWSHZGOUJCWGNraEF2SVFTLThMTVFOUmQzSzkxcHd2UFlvNXRrRjlJbDJrQVRHdmFmUWo2U3pULXZZa1ZfX0c4cldkb2ZyUFVsUGNNNkFMM2s5Si1VVGhkeDVVWWw0UVk4Rlp5NmRhLVRta3NJTzZYMkpwMER3MXUyLWhYNmhIZklneURqeUpaenYzVm1BZms5VjhUX2Q1ZmRvT2xtN2I?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPT3BrSTBMQ3g2aVFzcXNuQmF4bm5BeUtzUC1IZDV4LVZhby1oY19QajdQMWdtQVVlNVc5TVJ5eHdWZzM1WUN3N1RLNzBvd3k2TUdTdFRGR3FNbERWd3V5ZEZFendRSXh2cVpCbG5qclV2ZGZRRHBNYWlLTjVqc193SmVrcXBUc2Eyck9na0lzMEN6TElqbVJhUk4yTDE1cWxtM3RqU0x1TDJWUENmZnA4U1B3TTBrUVNKcDAxTXA0QQ?oc=5\" target=\"_blank\"&gt;EXCLUSIVE: Saudi PIF set to win EU nod for Electronic Arts deal under subsidy rules, sources say&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
-          "published": "2026-07-17T16:08:52.000Z",
-          "score": 8
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNcl9tWjYyOV8wb3hqMVdnMFBiSklnNjhxbVpZUXhMZXRBU3VtTlNWSHZGOUJCWGNraEF2SVFTLThMTVFOUmQzSzkxcHd2UFlvNXRrRjlJbDJrQVRHdmFmUWo2U3pULXZZa1ZfX0c4cldkb2ZyUFVsUGNNNkFMM2s5Si1VVGhkeDVVWWw0UVk4Rlp5NmRhLVRta3NJTzZYMkpwMER3MXUyLWhYNmhIZklneURqeUpaenYzVm1BZms5VjhUX2Q1ZmRvT2xtN2I?oc=5\" target=\"_blank\"&gt;Trump team scrutinized election agency over 2020 vote before firing its leaders&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&l",
+          "published": "2026-07-17T21:10:00.000Z",
+          "score": 6
         },
         {
-          "title": "EU plans measures to help EU banks build scale and compete with US rivals - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY1d3Q3NiMzMzckxzUEN6czhxUE5WWDNFV1JQLUFNOEN2d015VlZYOWhfRk1ZQWxVb01kYWxIaVRVd1ZoS1daZGR5aUhWQmVzLW9qSlpCd0pOYVRhQklVWW4wZXBLRTdZNWY3SHFQQ1c1SkFOdVZXYmFKY1UyYXNRYzdtMHYzQldjUHBsQWl1aUhCSnlaX1hIUmdBTE40M3gzbXlpNVBBSzVoSGRxV1lqVmRSYmthejlLbWlR?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxOY1d3Q3NiMzMzckxzUEN6czhxUE5WWDNFV1JQLUFNOEN2d015VlZYOWhfRk1ZQWxVb01kYWxIaVRVd1ZoS1daZGR5aUhWQmVzLW9qSlpCd0pOYVRhQklVWW4wZXBLRTdZNWY3SHFQQ1c1SkFOdVZXYmFKY1UyYXNRYzdtMHYzQldjUHBsQWl1aUhCSnlaX1hIUmdBTE40M3gzbXlpNVBBSzVoSGRxV1lqVmRSYmthejlLbWlR?oc=5\" target=\"_blank\"&gt;EU plans measures to help EU banks build scale and compete with US rivals&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-17T13:19:43.000Z",
-          "score": 8
+          "title": "One anti-war critic fined, another held as Russia clamps down on dissent",
+          "link": "https://www.bbc.co.uk/news/articles/cn0n3y6ewn4o?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "While Boris Nadezhdin is barred from running for parliament, blogger Ilya Remeslo is remanded in custody.",
+          "published": "2026-07-17T20:00:54.000Z",
+          "score": 4
         }
       ]
     }
   ],
   "stats": {
     "totalArticlesScanned": 438,
-    "articlesLast24h": 169,
-    "afterDedup": 156,
+    "articlesLast24h": 152,
+    "afterDedup": 138,
     "feedsQueried": 19
   }
 }
