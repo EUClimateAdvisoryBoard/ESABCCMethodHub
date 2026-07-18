@@ -614,6 +614,7 @@ export async function listProjects(): Promise<DBProject[]> {
         description: m.description,
         featured: !!m.featured,
         beta: !!m.beta,
+        isSeed: !!m.is_seed,
       })),
   }));
 }
@@ -646,6 +647,7 @@ export async function getProject(projectId: string): Promise<DBProject | null> {
       description: m.description,
       featured: !!m.featured,
       beta: !!m.beta,
+      isSeed: !!m.is_seed,
     })),
   };
 }
@@ -874,6 +876,7 @@ export async function listRecommendations(projectId: string): Promise<DBRecommen
 }
 
 export async function listMemberStateCells(projectId: string): Promise<MemberStateCell[]> {
+  noStore();
   const sb = getServerSupabase();
   if (!sb) return [];
   const { data } = await sb
