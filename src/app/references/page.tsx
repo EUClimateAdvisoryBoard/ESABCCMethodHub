@@ -857,7 +857,7 @@ export default function ReferencesPage() {
         steps={[
           { title: 'Add by DOI or PDF', body: 'Drop a PDF or paste a DOI to auto-fill metadata via Crossref.' },
           { title: 'Filter and sort', body: 'Type filter narrows by article / report / chapter; click a column header to sort.' },
-          { title: 'Bulk actions', body: 'Tick the boxes to select; export BibTeX or add to a Collection in one click.' },
+          { title: 'Bulk actions', body: 'Tick the boxes to select; export BibTeX, RIS, or CSL-JSON, or add to a Collection in one click.' },
           { title: 'Word add-in', body: 'Cite directly into Word documents — see the setup link in the page header.' },
         ]}
       />
