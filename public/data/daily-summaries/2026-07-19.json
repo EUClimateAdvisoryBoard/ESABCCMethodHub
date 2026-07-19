@@ -1,18 +1,18 @@
 {
   "date": "2026-07-19",
-  "generatedAt": "2026-07-19T07:27:46.388Z",
+  "generatedAt": "2026-07-19T11:59:33.034Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Sunday, 19 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Bank of England to stop accepting bonds linked to coal for key loans",
-      "summary": "&lt;p&gt;Campaigners hope move will force commercial banks to rethink holding assets linked to the fossil fuel&lt;/p&gt;&lt;p&gt;Climate campaigners have declared a victory after the Bank of England said it would no longer accept bonds linked to one of the most polluting industries on the planet for key loan arrangements.&lt;/p&gt;&lt;p&gt;The ban, which comes into force in October, marks a fresh crackdown on thermal coal, which is burned in power plants to create electricity, and has &lt;a href",
+      "headline": "Molten salt and human sweat: the weird batteries that could store renewable energy",
+      "summary": "&lt;p&gt;From Nevada to Manchester, developers are trialling innovative solutions to clean energy���s biggest challenge&lt;/p&gt;&lt;p&gt;In the deserts of the United Arab Emirates a sprawling &lt;a href=\"https://www.reuters.com/sustainability/climate-energy/how-falling-battery-costs-are-igniting-race-round-the-clock-solar-power--ecmii-2026-03-10/\"&gt;clean energy project&lt;/a&gt;, stretching across an area roughly the size of 12,600 football fields, will play host to a breakthrough allowing so",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Flash flood kills 4, leaves 4 others missing in Vietnam - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMirAFBVV95cUxONjZ5TDU5a2pfT01oNlB2YWxIYTgzRFVRc2kzSjhNcjFHem1Qc2lYV0hSOEJLVDFHU0dObnNGM3lwR24td2JqQ2h1UjRpMVBXMkQ1Unk1Ti0xWHNha0dCZmh6Yk1zSkJoSXJDUVhrYXJ6WjRmcWxFUnp6aC1vbndWbVlYaEEwUnF1d08zQjEtWnlFNXJSWVpJUE5oVUw3UG5obDBQVDJUZGdXMXpN?oc=5\" target=\"_blank\"&gt;Flash flood kills 4, leaves 4 others missing in Vietnam&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+      "headline": "Majority of US voters link extreme weather to climate crisis, study finds",
+      "summary": "&lt;p&gt;Top Democrat says findings show public ‘way ahead of the politicians’ as Trump dismisses global heating as ‘hoax’&lt;/p&gt;&lt;p&gt;Amid a summer of dangerous &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;heat&lt;/a&gt;, &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/07/lake-powell-water-crisis\"&gt;drought&lt;/a&gt; and &lt;a href=\"https://www.theguardian.com/us-news/2026/jun/27/kentucky-flood-deaths-storms\"&gt;floods&lt;/",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     },
@@ -34,11 +34,27 @@
       "title": "Energy Transition",
       "items": [
         {
+          "title": "Molten salt and human sweat: the weird batteries that could store renewable energy",
+          "link": "https://www.theguardian.com/environment/2026/jul/19/molten-salt-human-sweat-weird-batteries-store-renewable-energy",
+          "source": "The Guardian - Energy",
+          "description": "&lt;p&gt;From Nevada to Manchester, developers are trialling innovative solutions to clean energy���s biggest challenge&lt;/p&gt;&lt;p&gt;In the deserts of the United Arab Emirates a sprawling &lt;a href=\"https://www.reuters.com/sustainability/climate-energy/how-falling-battery-costs-are-igniting-race-round-the-clock-solar-power--ecmii-2026-03-10/\"&gt;clean energy project&lt;/a&gt;, stretching across an area roughly the size of 12,600 football fields, will play host to a breakthrough allowing so",
+          "published": "2026-07-19T11:00:25.000Z",
+          "score": 7
+        },
+        {
           "title": "Bank of England to stop accepting bonds linked to coal for key loans",
           "link": "https://www.theguardian.com/business/2026/jul/19/bank-of-england-bonds-coal-loans-assets",
           "source": "The Guardian - Energy",
           "description": "&lt;p&gt;Campaigners hope move will force commercial banks to rethink holding assets linked to the fossil fuel&lt;/p&gt;&lt;p&gt;Climate campaigners have declared a victory after the Bank of England said it would no longer accept bonds linked to one of the most polluting industries on the planet for key loan arrangements.&lt;/p&gt;&lt;p&gt;The ban, which comes into force in October, marks a fresh crackdown on thermal coal, which is burned in power plants to create electricity, and has &lt;a href",
           "published": "2026-07-19T05:00:17.000Z",
+          "score": 4
+        },
+        {
+          "title": "US and Iran exchange strikes after two US soldiers killed in Jordan",
+          "link": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Kuwait says an electricity and water plant is on fire after the second such attack in two days. Iran says US strikes hit an under-construction nuclear power plant.",
+          "published": "2026-07-19T11:57:10.000Z",
           "score": 4
         },
         {
@@ -48,6 +64,14 @@
           "description": "&lt;p&gt;Party manifesto pledged to honour existing North Sea exploration licences but not issue new ones&lt;/p&gt;&lt;p&gt;Andy Burnham risks his first confrontation with Labour MPs if he announces new oil and gas drilling licences when he becomes prime minister, insiders have warned.&lt;/p&gt;&lt;p&gt;Speculation is rife that Burnham will unveil fresh plans for drilling in the North Sea after he is installed in Downing Street.&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/politics/2026/jul",
           "published": "2026-07-18T16:26:38.000Z",
           "score": 2
+        },
+        {
+          "title": "Is Burnham promising a new dawn for North Sea oil and gas?",
+          "link": "https://www.bbc.co.uk/news/articles/c4g3l22ry6wo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "The incoming PM is expected to announce fresh support for the North Sea from day one of his premiership.",
+          "published": "2026-07-19T09:52:48.000Z",
+          "score": 2
         }
       ]
     },
@@ -55,6 +79,14 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
+        {
+          "title": "Majority of US voters link extreme weather to climate crisis, study finds",
+          "link": "https://www.theguardian.com/environment/2026/jul/19/climate-crisis-us-voters-study",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Top Democrat says findings show public ‘way ahead of the politicians’ as Trump dismisses global heating as ‘hoax’&lt;/p&gt;&lt;p&gt;Amid a summer of dangerous &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/03/heatwave-world-cup-250th-anniversary\"&gt;heat&lt;/a&gt;, &lt;a href=\"https://www.theguardian.com/us-news/2026/jul/07/lake-powell-water-crisis\"&gt;drought&lt;/a&gt; and &lt;a href=\"https://www.theguardian.com/us-news/2026/jun/27/kentucky-flood-deaths-storms\"&gt;floods&lt;/",
+          "published": "2026-07-19T11:00:26.000Z",
+          "score": 7
+        },
         {
           "title": "Flash flood kills 4, leaves 4 others missing in Vietnam - Reuters",
           "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxONjZ5TDU5a2pfT01oNlB2YWxIYTgzRFVRc2kzSjhNcjFHem1Qc2lYV0hSOEJLVDFHU0dObnNGM3lwR24td2JqQ2h1UjRpMVBXMkQ1Unk1Ti0xWHNha0dCZmh6Yk1zSkJoSXJDUVhrYXJ6WjRmcWxFUnp6aC1vbndWbVlYaEEwUnF1d08zQjEtWnlFNXJSWVpJUE5oVUw3UG5obDBQVDJUZGdXMXpN?oc=5",
@@ -84,15 +116,7 @@
           "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMie0FVX3lxTE1xcW1nTV9oSTFNczAyY3ZTTzZKc1RoaUVqdndJZmV5VnRaVldYYUs3bERrYjlSYWZQUnA4T0VBUzNDVEZNSllaelNQbHlsREQxVl94ODZsaEFUZ1c3b00zazAtNWEzRlFvYnZnVi1SQ2FuaHRmSVJ0dGd0VQ?oc=5\" target=\"_blank\"&gt;Reuters Climate Monitor&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-19T04:33:37.000Z",
-          "score": 7
-        },
-        {
-          "title": "Major wildfire burns more than 38,000 acres in northern Spain - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGQUdNc21tSVZOSWVybGYtYWZBTGFBT1YxU2lseEw0Ql9GcnlBNDRjQlNIb0FCa0FlU1kydnplQVBQOUtJUzRYeTBkRm40bF9XVzBzaHdxbXZNVVl3QnQzTlhtUmhIdW8?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGQUdNc21tSVZOSWVybGYtYWZBTGFBT1YxU2lseEw0Ql9GcnlBNDRjQlNIb0FCa0FlU1kydnplQVBQOUtJUzRYeTBkRm40bF9XVzBzaHdxbXZNVVl3QnQzTlhtUmhIdW8?oc=5\" target=\"_blank\"&gt;Major wildfire burns more than 38,000 acres in northern Spain&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-18T13:45:57.000Z",
+          "published": "2026-07-19T05:25:31.000Z",
           "score": 7
         }
       ]
@@ -108,6 +132,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxPOU4xcVQ5aVRTd3hURWx3clNoS2VWdzJ2QWZqc0g1alM2SHJBdk5zWnZqV01ndFhpMXBUQWlhTXdjVTMtdElHYzl0LXlCcFg3bDkyUjFOWm9hOG1zQzdLQnIyZUZpbGxaOFB3MlhITDhYY2I2UU9MTFJSV2FSdU9sbTA5WHROMXhnNnNGSlJ3MUc2U1Fudmp6Mlp3UWlyN0R0Q01NUkxCczFxbjhOUjM5TE1TMUFQTzVDRFN5emFmZjlsTEpodVVaUFJUZ29sdUF2WkQ0VA?oc=5\" target=\"_blank\"&gt;Trump administration to fund Maga-aligned projects in Europe as he reorders US aid, FT reports&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font co",
           "published": "2026-07-18T18:26:41.000Z",
           "score": 8
+        },
+        {
+          "title": "China's Jingye Steel urges UK to compensate its investment losses - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNc2RqYlFpN2JQRTF1eV9zWnJEWHQxeThpU1Uya2VLVEVqRUFDSUljajMzRTNodE1NWUhlVjdqc3hsMjNqZUVEZF9BSHFpNThWLXAtODZFeXgzdVotSFFla3B4RHo5OTlieHFldkdNaExoVE15WjAwYVZ4QkhtLTlFeXVrVGxHTUdxQjlvOE4zS2I4TC1YVUdoRkhXM1doMW9feEZuUmdMVHJheTFERVE?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNc2RqYlFpN2JQRTF1eV9zWnJEWHQxeThpU1Uya2VLVEVqRUFDSUljajMzRTNodE1NWUhlVjdqc3hsMjNqZUVEZF9BSHFpNThWLXAtODZFeXgzdVotSFFla3B4RHo5OTlieHFldkdNaExoVE15WjAwYVZ4QkhtLTlFeXVrVGxHTUdxQjlvOE4zS2I4TC1YVUdoRkhXM1doMW9feEZuUmdMVHJheTFERVE?oc=5\" target=\"_blank\"&gt;China's Jingye Steel urges UK to compensate its investment losses&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-19T04:22:00.000Z",
+          "score": 2
         }
       ]
     },
@@ -142,7 +174,7 @@
           "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMijwFBVV95cUxQb1JxTEllMHdPcll4UE44T2lsT2VkWV94Zmh6bDVVMmVmMEJHTHBoOFg5cVowc2RtSHR3VGoyR2tJYVFlWlNWZTlkbnNTUWJLV0JMbG5kM1FXdVU2Zmd6T0p2aDV3V0hJUjUzWm1xOTB1MHp1cG0yVm15TXpVc3RLTG1XU3R2UHE5TnJNR0N2MA?oc=5\" target=\"_blank\"&gt;Tracking Western Europe’s heatwave&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-18T19:35:21.000Z",
+          "published": "2026-07-19T09:49:58.000Z",
           "score": 8
         },
         {
@@ -154,28 +186,28 @@
           "score": 6
         },
         {
-          "title": "US and Iran exchange strikes after two US soldiers killed in Jordan",
-          "link": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "US forces target Iranian sites for the eighth night in a row, while Iran says it fired drones at the US military in Kuwait.",
-          "published": "2026-07-19T05:10:57.000Z",
-          "score": 2
-        },
-        {
-          "title": "Andrew Tate and brother arrested in US after more charges laid against them in UK",
+          "title": "Tate brothers arrested in US as further UK charges take total to 59",
           "link": "https://www.bbc.co.uk/news/articles/cwymly9yd33o?at_medium=RSS&amp;at_campaign=rss",
           "source": "BBC World News",
           "description": "The Crown Prosecution Service says it has requested their extradition from the US, while their lawyer says they are innocent.",
-          "published": "2026-07-19T02:17:07.000Z",
+          "published": "2026-07-19T11:04:50.000Z",
+          "score": 2
+        },
+        {
+          "title": "Russia launches major ballistic missile attack on Ukrainian cities",
+          "link": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Four people are killed and at least 36 injured as Ukraine's two largest cities are targeted, as Kyiv continues its own assault on Russian infrastructure.",
+          "published": "2026-07-19T11:28:24.000Z",
           "score": 2
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 138,
-    "afterDedup": 122,
+    "totalArticlesScanned": 427,
+    "articlesLast24h": 146,
+    "afterDedup": 129,
     "feedsQueried": 19
   }
 }
