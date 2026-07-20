@@ -1,32 +1,26 @@
 {
   "date": "2026-07-20",
-  "generatedAt": "2026-07-20T18:54:07.783Z",
+  "generatedAt": "2026-07-20T23:57:51.015Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 20 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "Questions and answers on a set of recommendations to implement the EU Methane Regulation",
-      "summary": "European Commission Questions and answers Brussels, 20 Jul 2026 What is the Commission recommending to Member States to implement the EU Methane Regulation?\r\nThe European Commission has adopted two recommendations (one on com...",
+      "headline": "EU waives penalties for oil and gas firms that breach methane law - Reuters",
+      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5\" target=\"_blank\"&gt;EU waives penalties for oil and gas firms that breach methane law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
       "tag": "EU POLICY",
       "color": "#007B6C"
     },
     {
-      "headline": "Commission provides clarity on how to effectively implement EU rules to reduce methane emissions",
-      "summary": "European Commission Press release Brussels, 20 Jul 2026 The conflict in the Middle East has forced the EU to compete for supplies on global oil and gas markets, which have seen a significant reduction in supply and increased prices.",
+      "headline": "India news: Police fire tear gas at &#039;Cockroaches&#039; parliament march",
+      "summary": "Police had not granted permission for the march organized by India&#039;s Cockroach Janta Party movement. The CJP said its leader Abhijeet Dipke had been &quot;picked up&quot; by police but not &quot;detained.&quot;",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Commission endorses Latvia's €617 million Social Climate Plan",
-      "summary": "European Commission Press release Brussels, 20 Jul 2026 The European Commission endorsed Latvia's Social Climate Plan — the third national plan approved under the new Social Climate Fund. Using carbon pricing revenues, the Fund ensures a fair and inclusive clean transition for vulnerable citizens and businesses.",
+      "headline": "Q&#038;A: What the EU’s carbon market review means for climate action",
+      "summary": "The European Commission has put forward new plans to cut emissions under the EU carbon... The post Q&amp;A: What the EU’s carbon market review means for climate action appeared first on Carbon Brief.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
-    },
-    {
-      "headline": "TSMC expects 'strong, multi-year' demand for AI chips as it ramps up Arizona investment - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNeWtrc3R6QmdYREpuRHNxR3dFNkJkVjdSMTRYcFhmRHJYQ18yaGFfSHcwbmVKSjZvWVo2M0FqdF9VZkJmbG9CVTVObEZTQ2t1amx5MTlJZ201YWR3cE9IMFNxVTNXdlp6SVV5MnZDLXotWS1EQVFNbUFFV2hZUWJJeUVScVNRaUhjci1zUXJoUTBnMFBkSnFzeWgwWkNpd2FqZ2hZQW14cTNCRDcydkp4X2p2QlYyRWlTRWFISmFoSllBY01OWmNlVWNpamk?oc=5\" target=\"_blank\"&gt;TSMC expects 'strong, multi-year' demand for AI chips as it ramps up Arizona investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
-      "tag": "FINANCE",
-      "color": "#7C3AED"
     }
   ],
   "sections": [
@@ -34,14 +28,6 @@
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
       "items": [
-        {
-          "title": "Questions and answers on a set of recommendations to implement the EU Methane Regulation",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1652",
-          "source": "European Commission",
-          "description": "European Commission Questions and answers Brussels, 20 Jul 2026 What is the Commission recommending to Member States to implement the EU Methane Regulation?\r\nThe European Commission has adopted two recommendations (one on com...",
-          "published": "2026-07-19T22:00:00.000Z",
-          "score": 27
-        },
         {
           "title": "EU waives penalties for oil and gas firms that breach methane law - Reuters",
           "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5",
@@ -56,14 +42,6 @@
       "id": "energy",
       "title": "Energy Transition",
       "items": [
-        {
-          "title": "Commission provides clarity on how to effectively implement EU rules to reduce methane emissions",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1651",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 20 Jul 2026 The conflict in the Middle East has forced the EU to compete for supplies on global oil and gas markets, which have seen a significant reduction in supply and increased prices.",
-          "published": "2026-07-19T22:00:00.000Z",
-          "score": 23
-        },
         {
           "title": "India news: Police fire tear gas at &#039;Cockroaches&#039; parliament march",
           "link": "https://www.dw.com/en/india-news-police-fire-tear-gas-at-cockroaches-parliament-march/live-78030856?maca=en-rss-en-all-1573-xml-mrss",
@@ -95,14 +73,6 @@
       "title": "Climate & Environment",
       "items": [
         {
-          "title": "Commission endorses Latvia's €617 million Social Climate Plan",
-          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1655",
-          "source": "European Commission",
-          "description": "European Commission Press release Brussels, 20 Jul 2026 The European Commission endorsed Latvia's Social Climate Plan — the third national plan approved under the new Social Climate Fund. Using carbon pricing revenues, the Fund ensures a fair and inclusive clean transition for vulnerable citizens and businesses.",
-          "published": "2026-07-19T22:00:00.000Z",
-          "score": 23
-        },
-        {
           "title": "Q&#038;A: What the EU’s carbon market review means for climate action",
           "link": "https://www.carbonbrief.org/qa-what-the-eus-carbon-market-review-means-for-climate-action/",
           "source": "Carbon Brief",
@@ -130,8 +100,16 @@
           "title": "Australian ski resorts smash July climate records with temperatures 12C above average",
           "link": "https://www.theguardian.com/australia-news/2026/jul/21/australian-ski-resorts-smash-july-climate-records-with-temperatures-12c-above-average",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Resorts in NSW and Victoria face a warm and dry start to the season with only sporadic falls of natural snow in many alpine areas&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&",
+          "description": "&lt;p&gt;Resorts in New South Wales and Victoria face a warm and dry start to the season with only sporadic falls of natural snow in many alpine areas&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/21/australia-news-live-barnaby-joyce-pauline-hanson-one-nation-anthony-albanese-labor-antisemitism-royal-commission-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt",
           "published": "2026-07-20T15:00:45.000Z",
+          "score": 9
+        },
+        {
+          "title": "Slowdown in Arctic ice melt ends after largest winter decline on record",
+          "link": "https://www.theguardian.com/environment/2026/jul/20/slowdown-arctic-sea-ice-melt-largest-winter-decline-record",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Scientists recorded slower reduction over past 20 years, but study finds this was ‘temporary rather than sustained’&lt;/p&gt;&lt;p&gt;A previously recorded slowdown in Arctic sea ice decline has ended, according to a new study, with the largest year-to-year wintertime reduction ever recorded.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.theguardian.com/environment/2025/aug/20/slowdown-in-melting-of-arctic-sea-ice-surprises-scientists\"&gt;study&lt;/a&gt; published last summer, research",
+          "published": "2026-07-20T19:00:48.000Z",
           "score": 7
         }
       ]
@@ -139,16 +117,7 @@
     {
       "id": "finance",
       "title": "Green Finance & Investment",
-      "items": [
-        {
-          "title": "TSMC expects 'strong, multi-year' demand for AI chips as it ramps up Arizona investment - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNeWtrc3R6QmdYREpuRHNxR3dFNkJkVjdSMTRYcFhmRHJYQ18yaGFfSHcwbmVKSjZvWVo2M0FqdF9VZkJmbG9CVTVObEZTQ2t1amx5MTlJZ201YWR3cE9IMFNxVTNXdlp6SVV5MnZDLXotWS1EQVFNbUFFV2hZUWJJeUVScVNRaUhjci1zUXJoUTBnMFBkSnFzeWgwWkNpd2FqZ2hZQW14cTNCRDcydkp4X2p2QlYyRWlTRWFISmFoSllBY01OWmNlVWNpamk?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxNeWtrc3R6QmdYREpuRHNxR3dFNkJkVjdSMTRYcFhmRHJYQ18yaGFfSHcwbmVKSjZvWVo2M0FqdF9VZkJmbG9CVTVObEZTQ2t1amx5MTlJZ201YWR3cE9IMFNxVTNXdlp6SVV5MnZDLXotWS1EQVFNbUFFV2hZUWJJeUVScVNRaUhjci1zUXJoUTBnMFBkSnFzeWgwWkNpd2FqZ2hZQW14cTNCRDcydkp4X2p2QlYyRWlTRWFISmFoSllBY01OWmNlVWNpamk?oc=5\" target=\"_blank\"&gt;TSMC expects 'strong, multi-year' demand for AI chips as it ramps up Arizona investment&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;R",
-          "published": "2026-07-19T23:15:00.000Z",
-          "score": 2
-        }
-      ]
+      "items": []
     },
     {
       "id": "eu_general",
@@ -189,7 +158,15 @@
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUVpUlNMMVJmWWw1cmhVYnVRTkF2dkkzM2hXSVlfc3I5cnQtR0d0YmZwUWdvQzcwbncyUDdHZDVfMjdTcW9BMHh2THFidHFBRnRvaWJHMU1nSGNQSktGeWlpY1hfeTdoNE5MY3NuU0pHLUNkZF8ycW1rYjg2cWVxdE03SWtWWUhlREp0VjRkSWNmcm9GZHJzdmJMMjFob2IyM1VZSw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUVpUlNMMVJmWWw1cmhVYnVRTkF2dkkzM2hXSVlfc3I5cnQtR0d0YmZwUWdvQzcwbncyUDdHZDVfMjdTcW9BMHh2THFidHFBRnRvaWJHMU1nSGNQSktGeWlpY1hfeTdoNE5MY3NuU0pHLUNkZF8ycW1rYjg2cWVxdE03SWtWWUhlREp0VjRkSWNmcm9GZHJzdmJMMjFob2IyM1VZSw?oc=5\" target=\"_blank\"&gt;Indian students cool on 'American Dream' as EU opens its doors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T17:59:19.000Z",
+          "published": "2026-07-20T01:05:21.000Z",
+          "score": 8
+        },
+        {
+          "title": "Aliexpress says €550 million EU tech fine is disproportionate - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOT1BFMVFHcE80Tm9TdUk5SUdJaDNaLXFzbDlxT2ZmdjRYLTI5VUxCS2w0c3o1MXowU1N2dUJ2N0dKc3FaXzh6RHN4S0NvYkRDV1RLdDIwYjEzQk9MOFNJamNyV3VMNzFLdEh2cTF1Y3VaNkdxR3pxdWx4REJZaTRwZGNRb1plQWNEdU5Uc2syRXpGOURudGR4ZzlGTGJlWWN2bXVOZQ?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOT1BFMVFHcE80Tm9TdUk5SUdJaDNaLXFzbDlxT2ZmdjRYLTI5VUxCS2w0c3o1MXowU1N2dUJ2N0dKc3FaXzh6RHN4S0NvYkRDV1RLdDIwYjEzQk9MOFNJamNyV3VMNzFLdEh2cTF1Y3VaNkdxR3pxdWx4REJZaTRwZGNRb1plQWNEdU5Uc2syRXpGOURudGR4ZzlGTGJlWWN2bXVOZQ?oc=5\" target=\"_blank\"&gt;Aliexpress says €550 million EU tech fine is disproportionate&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-20T18:57:35.000Z",
           "score": 8
         },
         {
@@ -207,22 +184,14 @@
           "description": "New legislation aims to address the shrinking ranks of Japan&#039;s imperial family, while preserving male-only succession despite broad support for a female emperor.",
           "published": "2026-07-20T13:09:00.000Z",
           "score": 6
-        },
-        {
-          "title": "India says no proposal to offer long-term tax relief for domestic equity investors - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNDV5aDVvNUlWZ0Z3VTlpRlQyXy1NbENGNlNVdmxGQ0t2SWxxSDcweXdMaFd6YmpYWnVOZ3pUVWZvNUhEX2hSNHIwTDk2WlVQSVZTUU9JUVlWRmcxeEtwakF6c1h3LWRfT1I3Zl94azl4SExsOVJUdW5NcDV2QmV4dHBEa1VXLTExekJnTUNONGJZVnhBMGVVT1FoaXVnRE5yMldiTjFxUVlITDI4MWcwNVhUams1bnFGV3k5anduR1k?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNDV5aDVvNUlWZ0Z3VTlpRlQyXy1NbENGNlNVdmxGQ0t2SWxxSDcweXdMaFd6YmpYWnVOZ3pUVWZvNUhEX2hSNHIwTDk2WlVQSVZTUU9JUVlWRmcxeEtwakF6c1h3LWRfT1I3Zl94azl4SExsOVJUdW5NcDV2QmV4dHBEa1VXLTExekJnTUNONGJZVnhBMGVVT1FoaXVnRE5yMldiTjFxUVlITDI4MWcwNVhUams1bnFGV3k5anduR1k?oc=5\" target=\"_blank\"&gt;India says no proposal to offer long-term tax relief for domestic equity investors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T10:56:04.000Z",
-          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 444,
-    "articlesLast24h": 170,
-    "afterDedup": 156,
+    "totalArticlesScanned": 446,
+    "articlesLast24h": 166,
+    "afterDedup": 152,
     "feedsQueried": 19
   }
 }
