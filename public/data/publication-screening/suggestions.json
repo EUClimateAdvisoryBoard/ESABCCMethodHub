@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T07:03:18.398Z",
+  "generatedAt": "2026-07-20T07:39:38.895Z",
   "windowDays": 60,
   "journals": [
     "Nature Climate Change",
@@ -20,6 +20,27 @@
     "Mitigation and Adaptation Strategies for Global Change"
   ],
   "suggestions": [
+    {
+      "doi": "10.1002/wcc.70081",
+      "title": "Fast Today, Fair Tomorrow: Competing Priorities Shaping <scp>EU</scp> Climate Law and Policy",
+      "journal": "WIREs Climate Change",
+      "authors": "Alessandra Accogli, Jonas Meuleman, Aron Buzogány et al.",
+      "published": "2026-07",
+      "url": "https://doi.org/10.1002/wcc.70081",
+      "abstract": "This review critically assesses academic literature on how EU legal frameworks and institutions have navigated the dual imperatives of urgency (“fast”) and justice (“fair”) in climate governance, since the launch of the European Green Deal (EGD) and during the first term of the von der Leyen Commission. It focuses on core legal instruments and on the roles of key institutions tasked with developing and enforcing climate obligations: the European Commission (EC), the European Parliament (EP), the Council and European Council, the Court of Justice of the EU (CJEU), and national courts. Positioned at the intersection of EU studies and sustainability transition studies, the review bridges legal and political science perspectives. Drawing on urgency and justice as analytical lenses, we identify a recurring temporal mismatch across EU climate governance, where urgency is embedded ex‐ante, whereas fairness tends to be appended ex‐post. This pattern is visible in EU climate laws—which mandate fast action through ambitious targets and accelerated transitions—and institutional dynamics. The EC and Parliament broadly align on urgency imperatives, with justice often reduced to distributive compensation. In contrast, the Council's and the European Council's intergovernmental, consensus‐driven logic emphasizes nationally framed justice, which can temper urgency. National courts strongly engage with urgency but generally defer burden‐sharing decisions to political actors. We argue that embe",
+      "suggestedOn": "2026-07-20",
+      "projects": [
+        {
+          "projectId": "policy-gap-2-0",
+          "score": 7,
+          "matched": [
+            "european green deal",
+            "climate governance",
+            "climate law"
+          ]
+        }
+      ]
+    },
     {
       "doi": "10.1038/s41558-026-02685-y",
       "title": "Future-proofing interpretations of the Paris Agreement’s limit of well below 2 °C",
