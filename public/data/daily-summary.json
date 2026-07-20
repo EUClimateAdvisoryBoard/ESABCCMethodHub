@@ -1,12 +1,18 @@
 {
   "date": "2026-07-20",
-  "generatedAt": "2026-07-20T13:10:28.044Z",
+  "generatedAt": "2026-07-20T18:54:07.783Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Monday, 20 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "On a Colorado farm, solar panels bring shade for plants, power – and cash: in pictures",
-      "summary": "&lt;p&gt;More than 3,000 solar panels power Jack’s Solar Garden, cool the land and help it turn a profit&lt;/p&gt;&lt;p&gt;&lt;em&gt;The Guardian receives support for visual climate coverage from the Outrider Foundation. The Guardian’s coverage is editorially independent&lt;/em&gt;&lt;/p&gt; &lt;a href=\"https://www.theguardian.com/environment/gallery/2026/jul/20/colorado-farming-solar-panels-in-pictures\"&gt;Continue reading...&lt;/a&gt;",
+      "headline": "Questions and answers on a set of recommendations to implement the EU Methane Regulation",
+      "summary": "European Commission Questions and answers Brussels, 20 Jul 2026 What is the Commission recommending to Member States to implement the EU Methane Regulation?\r\nThe European Commission has adopted two recommendations (one on com...",
+      "tag": "EU POLICY",
+      "color": "#007B6C"
+    },
+    {
+      "headline": "Commission provides clarity on how to effectively implement EU rules to reduce methane emissions",
+      "summary": "European Commission Press release Brussels, 20 Jul 2026 The conflict in the Middle East has forced the EU to compete for supplies on global oil and gas markets, which have seen a significant reduction in supply and increased prices.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
@@ -27,12 +33,45 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": []
+      "items": [
+        {
+          "title": "Questions and answers on a set of recommendations to implement the EU Methane Regulation",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/qanda_26_1652",
+          "source": "European Commission",
+          "description": "European Commission Questions and answers Brussels, 20 Jul 2026 What is the Commission recommending to Member States to implement the EU Methane Regulation?\r\nThe European Commission has adopted two recommendations (one on com...",
+          "published": "2026-07-19T22:00:00.000Z",
+          "score": 27
+        },
+        {
+          "title": "EU waives penalties for oil and gas firms that breach methane law - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5\" target=\"_blank\"&gt;EU waives penalties for oil and gas firms that breach methane law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-20T15:21:16.000Z",
+          "score": 17
+        }
+      ]
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Commission provides clarity on how to effectively implement EU rules to reduce methane emissions",
+          "link": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1651",
+          "source": "European Commission",
+          "description": "European Commission Press release Brussels, 20 Jul 2026 The conflict in the Middle East has forced the EU to compete for supplies on global oil and gas markets, which have seen a significant reduction in supply and increased prices.",
+          "published": "2026-07-19T22:00:00.000Z",
+          "score": 23
+        },
+        {
+          "title": "India news: Police fire tear gas at &#039;Cockroaches&#039; parliament march",
+          "link": "https://www.dw.com/en/india-news-police-fire-tear-gas-at-cockroaches-parliament-march/live-78030856?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Police had not granted permission for the march organized by India&#039;s Cockroach Janta Party movement. The CJP said its leader Abhijeet Dipke had been &quot;picked up&quot; by police but not &quot;detained.&quot;",
+          "published": "2026-07-20T03:32:00.000Z",
+          "score": 8
+        },
         {
           "title": "On a Colorado farm, solar panels bring shade for plants, power – and cash: in pictures",
           "link": "https://www.theguardian.com/environment/gallery/2026/jul/20/colorado-farming-solar-panels-in-pictures",
@@ -48,30 +87,6 @@
           "description": "A 3D-printed battery designed at Queen's University Belfast could speed up energy storage research.",
           "published": "2026-07-20T08:20:07.000Z",
           "score": 7
-        },
-        {
-          "title": "Few tankers enter Hormuz to load oil, LNG floating storage rises, data shows - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNcXJLRU1YX1JLOTBVdFVRLUlWNEh5N1BjVkNWQktyNkFaMXdSVTNGcklmNUJuckpzcVEtenNPX1E3TnRBQTF1REFyQmw0cEJLY1J1MW1Oc3JoaEIzdlBEWnNxX1F1OS03UWk5V3g3RVNLNS1iNFQ5bGdTdS1DWnFkU1VSSTR4WEJkRWhMcUIydkFJTndVYmJxTHR5Umw?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMinAFBVV95cUxNcXJLRU1YX1JLOTBVdFVRLUlWNEh5N1BjVkNWQktyNkFaMXdSVTNGcklmNUJuckpzcVEtenNPX1E3TnRBQTF1REFyQmw0cEJLY1J1MW1Oc3JoaEIzdlBEWnNxX1F1OS03UWk5V3g3RVNLNS1iNFQ5bGdTdS1DWnFkU1VSSTR4WEJkRWhMcUIydkFJTndVYmJxTHR5Umw?oc=5\" target=\"_blank\"&gt;Few tankers enter Hormuz to load oil, LNG floating storage rises, data shows&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-19T23:16:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "US expands Iran offensive as diplomats claim talks ongoing",
-          "link": "https://www.theguardian.com/world/2026/jul/20/us-strikes-iran-strait-of-hormuz-oil-prices",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;US military confirms third service member killed in current round of fighting, as price of oil passes $90 a barrel&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/20/us-iran-war-live-updates-strikes-strait-of-hormuz-middle-east-crisis-latest-news\"&gt;Middle East crisis live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The US has expanded its aerial offensive against Iran, hitting a city hosting a nuclear power plant",
-          "published": "2026-07-20T09:34:42.000Z",
-          "score": 4
-        },
-        {
-          "title": "Is Burnham promising a new dawn for North Sea oil and gas?",
-          "link": "https://www.bbc.co.uk/news/articles/c4g3l22ry6wo?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The incoming PM is expected to announce fresh support for the North Sea from day one of his premiership.",
-          "published": "2026-07-19T14:27:15.000Z",
-          "score": 2
         }
       ]
     },
@@ -88,6 +103,14 @@
           "score": 23
         },
         {
+          "title": "Q&#038;A: What the EU’s carbon market review means for climate action",
+          "link": "https://www.carbonbrief.org/qa-what-the-eus-carbon-market-review-means-for-climate-action/",
+          "source": "Carbon Brief",
+          "description": "The European Commission has put forward new plans to cut emissions under the EU carbon... The post Q&amp;A: What the EU’s carbon market review means for climate action appeared first on Carbon Brief.",
+          "published": "2026-07-20T16:11:23.000Z",
+          "score": 19
+        },
+        {
           "title": "Flood deaths in West African cities raise fraught issue of slum evictions",
           "link": "https://www.climatechangenews.com/2026/07/20/flood-deaths-in-west-african-megacities-raise-fraught-issue-of-slum-evictions/",
           "source": "Climate Home News",
@@ -96,27 +119,19 @@
           "score": 13
         },
         {
-          "title": "'Hidden time-capsule of UK biodiversity' unlocked",
-          "link": "https://www.bbc.co.uk/news/articles/cze9ee1yej9o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC Science & Environment",
-          "description": "The specimens with links to Charles Darwin will soon be studied by scientists across the world.",
-          "published": "2026-07-20T05:25:27.000Z",
-          "score": 7
+          "title": "Top maritime court rejects bid to halt UN deep-sea mining inquiry",
+          "link": "https://www.climatechangenews.com/2026/07/20/top-maritime-court-rejects-bid-to-halt-un-deep-sea-mining-inquiry/",
+          "source": "Climate Home News",
+          "description": "Two subsidiaries of The Metals Company sought to block the probe into potential contract breaches launched after the firm's application for US-sponsored permits The post Top maritime court rejects bid to halt UN deep-sea mining inquiry appeared first on Climate Home News.",
+          "published": "2026-07-20T18:12:46.000Z",
+          "score": 10
         },
         {
-          "title": "Spain: Emergency crews battle wildfire north of Madrid",
-          "link": "https://www.dw.com/en/spain-emergency-crews-battle-wildfire-north-of-madrid/a-78026297?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "More than 25 firefighting planes have been deployed to battle the blaze in central Spain, which has been raging for three days.",
-          "published": "2026-07-19T15:27:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "Wildfire on France's Mediterranean coast forces hamlet evacuations - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd2NmcEFCVWlrWGswdzNtaVp1bzExcURpclhQN1E0OTRTTlVfbmdDa0lCZGJNbTJzeHB3Mmk3NElGTGUwMGVwQTRmNnRvZ3FsdHpWVDNtUWl3dnlwTUpxVzE0eWh4eWhWWW0zdFdtbmJJNGpzOG1NcllQVi1oRWVXTmtaUThxVmJnUWxXcHFJQVdlMFVRWENQenlWZjUzVTRHTmVOUndER0ZGbmlMdC1MQWlsZnpFS0RKUjZr?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNd2NmcEFCVWlrWGswdzNtaVp1bzExcURpclhQN1E0OTRTTlVfbmdDa0lCZGJNbTJzeHB3Mmk3NElGTGUwMGVwQTRmNnRvZ3FsdHpWVDNtUWl3dnlwTUpxVzE0eWh4eWhWWW0zdFdtbmJJNGpzOG1NcllQVi1oRWVXTmtaUThxVmJnUWxXcHFJQVdlMFVRWENQenlWZjUzVTRHTmVOUndER0ZGbmlMdC1MQWlsZnpFS0RKUjZr?oc=5\" target=\"_blank\"&gt;Wildfire on France's Mediterranean coast forces hamlet evacuations&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-19T18:15:00.000Z",
+          "title": "Australian ski resorts smash July climate records with temperatures 12C above average",
+          "link": "https://www.theguardian.com/australia-news/2026/jul/21/australian-ski-resorts-smash-july-climate-records-with-temperatures-12c-above-average",
+          "source": "The Guardian - Climate",
+          "description": "&lt;p&gt;Resorts in NSW and Victoria face a warm and dry start to the season with only sporadic falls of natural snow in many alpine areas&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;Get our &lt;a href=\"https://www.theguardian.com/email-newsletters?CMP=cvau_sfl\"&gt;breaking news email&lt;/a&gt;, &lt;a href=\"https://app.adjust.com/w4u7jx3\"&gt;free app&lt;/a&gt; or &lt;a href=\"https://www.theguardian.com/australia-news/series/full-story?CMP=cvau_sfl\"&gt;daily news podcast&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&",
+          "published": "2026-07-20T15:00:45.000Z",
           "score": 7
         }
       ]
@@ -138,42 +153,35 @@
     {
       "id": "eu_general",
       "title": "Beyond Climate — Other Major EU News",
-      "items": []
+      "items": [
+        {
+          "title": "AliExpress hit with record EU fine",
+          "link": "https://www.dw.com/en/aliexpress-hit-with-record-eu-fine/a-78040720?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "The Chinese retailer has become the latest major online marketplace to face penalties under the EU’s Digital Services Act.",
+          "published": "2026-07-20T17:43:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Construction chemicals companies, trade associations hit with EU cartel charges - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPN0dPX1YwY2I0cHNpcU84UTlYUzltUFpwYXFJNEJ1TUU3allxUGlMRUFsQzZYeFZGamYwdVo4cXlhYWJPLUNGYXNvbDMzNmhpdkxOS2tNcVhEYW5iYkpNOElfSG9Mc2RYNjhoUWp6UUozR05DSmNIbDM0a0VYRFRtUTlHc1RYR2hOblREWFFienYxak5zcDQtQXpueUpZVVFCZlB6SlY2NEdNQm04X3A5TzJWYlFwNTlsRDZtVg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPN0dPX1YwY2I0cHNpcU84UTlYUzltUFpwYXFJNEJ1TUU3allxUGlMRUFsQzZYeFZGamYwdVo4cXlhYWJPLUNGYXNvbDMzNmhpdkxOS2tNcVhEYW5iYkpNOElfSG9Mc2RYNjhoUWp6UUozR05DSmNIbDM0a0VYRFRtUTlHc1RYR2hOblREWFFienYxak5zcDQtQXpueUpZVVFCZlB6SlY2NEdNQm04X3A5TzJWYlFwNTlsRDZtVg?oc=5\" target=\"_blank\"&gt;Construction chemicals companies, trade associations hit with EU cartel charges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-20T14:58:29.000Z",
+          "score": 8
+        }
+      ]
     },
     {
       "id": "other_world",
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
-          "title": "Algeria seeks larger EU energy role amid regional tensions",
-          "link": "https://www.dw.com/en/algeria-seeks-larger-eu-energy-role-amid-regional-tensions/a-78007849?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Algeria and Germany agreed to deepen energy ties during President Abdelmadjid Tebboune&#039;s recent visit to Berlin. But Algiers is still grappling with tensions at home, over Western Sahara and instability in the Sahel.",
-          "published": "2026-07-19T15:51:00.000Z",
-          "score": 13
-        },
-        {
-          "title": "EU charging network outpaces EV sales as infrastructure targets met - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNR09FeW9fd2NzajFVcGZ5aTFkUWF5OU9DUEY2cG9rUDZwQkxZUWxPYW9HZXE0ZGFYSFBmTGdGeThGNkl0MXN2Y1p4dHVsSkxlaEVTaXphalN5Uk9wM0hpQ2J0SVNmcEhVZUViVzAyZWRjS0FGbE1sTnN4TlNCd0VhUE80ZnBHcktGdkRGNjY2SWd6eGhiXzBqN09UUGQ3Mm16SC1XalFXek53VUhkaUE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxNR09FeW9fd2NzajFVcGZ5aTFkUWF5OU9DUEY2cG9rUDZwQkxZUWxPYW9HZXE0ZGFYSFBmTGdGeThGNkl0MXN2Y1p4dHVsSkxlaEVTaXphalN5Uk9wM0hpQ2J0SVNmcEhVZUViVzAyZWRjS0FGbE1sTnN4TlNCd0VhUE80ZnBHcktGdkRGNjY2SWd6eGhiXzBqN09UUGQ3Mm16SC1XalFXek53VUhkaUE?oc=5\" target=\"_blank\"&gt;EU charging network outpaces EV sales as infrastructure targets met&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-19T22:17:10.000Z",
-          "score": 13
-        },
-        {
-          "title": "India news: &#039;Cockroaches&#039; take on Modi with parliament march",
-          "link": "https://www.dw.com/en/india-news-cockroaches-take-on-modi-with-parliament-march/live-78030856?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "Police have not granted permission for the march organized by India&#039;s Cockroach Janta Party movement. The CJP said its leader Abhijeet Dipke had been &quot;picked up&quot; by police but not &quot;detained.&quot; DW has the latest.",
-          "published": "2026-07-20T03:32:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "AliExpress hit with $629 million EU fine over sales of illegal, counterfeit products - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOUmhYRERFUHk2UW1BR09CaTRielRHOG5MYi1KTkl3OEw3YW55OUdzNW1PYzg5a2dxQ21uLVJnQ21WWEdUYUEtOUJjSHpxQXNSRVhxV1h4OXpoLUphV0dtdjZ5azVRd1VjTE9xUXlPZjYxaVFCbHA5NUFxM1hod0tmYnJnRnJGWkZ2T19IYVV1eG1zUzFoYklkcmdzMWRzVHZHNDRlZzBfak9Cc1ZpUTJXRWdIYlJyNFZ2MjdBNU1R?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxOUmhYRERFUHk2UW1BR09CaTRielRHOG5MYi1KTkl3OEw3YW55OUdzNW1PYzg5a2dxQ21uLVJnQ21WWEdUYUEtOUJjSHpxQXNSRVhxV1h4OXpoLUphV0dtdjZ5azVRd1VjTE9xUXlPZjYxaVFCbHA5NUFxM1hod0tmYnJnRnJGWkZ2T19IYVV1eG1zUzFoYklkcmdzMWRzVHZHNDRlZzBfak9Cc1ZpUTJXRWdIYlJyNFZ2MjdBNU1R?oc=5\" target=\"_blank\"&gt;AliExpress hit with $629 million EU fine over sales of illegal, counterfeit products&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T10:53:16.000Z",
+          "title": "Police block thousands of 'cockroach' protesters marching on India's parliament",
+          "link": "https://www.bbc.co.uk/news/articles/cvg9w9dxd7lo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC World News",
+          "description": "Some protesters demanding education reforms said they were injured in clashes with police who banned the march.",
+          "published": "2026-07-20T16:26:40.000Z",
           "score": 8
         },
         {
@@ -181,16 +189,40 @@
           "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUVpUlNMMVJmWWw1cmhVYnVRTkF2dkkzM2hXSVlfc3I5cnQtR0d0YmZwUWdvQzcwbncyUDdHZDVfMjdTcW9BMHh2THFidHFBRnRvaWJHMU1nSGNQSktGeWlpY1hfeTdoNE5MY3NuU0pHLUNkZF8ycW1rYjg2cWVxdE03SWtWWUhlREp0VjRkSWNmcm9GZHJzdmJMMjFob2IyM1VZSw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUVpUlNMMVJmWWw1cmhVYnVRTkF2dkkzM2hXSVlfc3I5cnQtR0d0YmZwUWdvQzcwbncyUDdHZDVfMjdTcW9BMHh2THFidHFBRnRvaWJHMU1nSGNQSktGeWlpY1hfeTdoNE5MY3NuU0pHLUNkZF8ycW1rYjg2cWVxdE03SWtWWUhlREp0VjRkSWNmcm9GZHJzdmJMMjFob2IyM1VZSw?oc=5\" target=\"_blank\"&gt;Indian students cool on 'American Dream' as EU opens its doors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T01:03:16.000Z",
+          "published": "2026-07-20T17:59:19.000Z",
           "score": 8
+        },
+        {
+          "title": "Indonesian parliament panel gives go-ahead to financial centres plan - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSS1tamRTbFVCM01lN0JnaHl5aEN0dXRVeThxMl9rZjN2N1VoUFlBVS0xdkkxZlR4MzdiWFhlQllhTGJyTnp2c2xYZFJqclFXbFNuaWx6UjNsT1FBZXRzS25oV2tsY3FuNC10cS1OYmoySXZreDVrX1NfOVRhOFFMWEJCSFVyMXQ0V21PRkZXeGt3QUxiVVBtbVBYRkdXY2RSd0I0VjBaWk4zWEE4cEt6aVFBbnlMbndFbW1KQg?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxOSS1tamRTbFVCM01lN0JnaHl5aEN0dXRVeThxMl9rZjN2N1VoUFlBVS0xdkkxZlR4MzdiWFhlQllhTGJyTnp2c2xYZFJqclFXbFNuaWx6UjNsT1FBZXRzS25oV2tsY3FuNC10cS1OYmoySXZreDVrX1NfOVRhOFFMWEJCSFVyMXQ0V21PRkZXeGt3QUxiVVBtbVBYRkdXY2RSd0I0VjBaWk4zWEE4cEt6aVFBbnlMbndFbW1KQg?oc=5\" target=\"_blank\"&gt;Indonesian parliament panel gives go-ahead to financial centres plan&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-20T05:59:00.000Z",
+          "score": 8
+        },
+        {
+          "title": "Why Japan&#039;s new imperial law keeps women off the throne",
+          "link": "https://www.dw.com/en/why-japan-s-new-imperial-law-keeps-women-off-the-throne/a-78037181?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "New legislation aims to address the shrinking ranks of Japan&#039;s imperial family, while preserving male-only succession despite broad support for a female emperor.",
+          "published": "2026-07-20T13:09:00.000Z",
+          "score": 6
+        },
+        {
+          "title": "India says no proposal to offer long-term tax relief for domestic equity investors - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNDV5aDVvNUlWZ0Z3VTlpRlQyXy1NbENGNlNVdmxGQ0t2SWxxSDcweXdMaFd6YmpYWnVOZ3pUVWZvNUhEX2hSNHIwTDk2WlVQSVZTUU9JUVlWRmcxeEtwakF6c1h3LWRfT1I3Zl94azl4SExsOVJUdW5NcDV2QmV4dHBEa1VXLTExekJnTUNONGJZVnhBMGVVT1FoaXVnRE5yMldiTjFxUVlITDI4MWcwNVhUams1bnFGV3k5anduR1k?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNDV5aDVvNUlWZ0Z3VTlpRlQyXy1NbENGNlNVdmxGQ0t2SWxxSDcweXdMaFd6YmpYWnVOZ3pUVWZvNUhEX2hSNHIwTDk2WlVQSVZTUU9JUVlWRmcxeEtwakF6c1h3LWRfT1I3Zl94azl4SExsOVJUdW5NcDV2QmV4dHBEa1VXLTExekJnTUNONGJZVnhBMGVVT1FoaXVnRE5yMldiTjFxUVlITDI4MWcwNVhUams1bnFGV3k5anduR1k?oc=5\" target=\"_blank\"&gt;India says no proposal to offer long-term tax relief for domestic equity investors&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-20T10:56:04.000Z",
+          "score": 6
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 431,
-    "articlesLast24h": 152,
-    "afterDedup": 141,
+    "totalArticlesScanned": 444,
+    "articlesLast24h": 170,
+    "afterDedup": 156,
     "feedsQueried": 19
   }
 }
