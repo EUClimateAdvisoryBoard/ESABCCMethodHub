@@ -196,6 +196,70 @@ function SupplyCurveChart({ trOnly, trMeas, baseline, target, pOnly, pMeas }: {
   );
 }
 
+/* -------------------------------------------- 2040 scenario benchmark data */
+// Direct electrification share of final energy in 2040 (electricity as % of FEC),
+// harmonised across decarbonisation-consistent scenarios. Sources: négaWatt,
+// "Make electrification 'Fit for 90'" (Jan 2026); EC 2040 Impact Assessment
+// SWD(2024) 63/64; ESABCC 2040 advice (2023), Indicator E5.
+type Scen = { name: string; org: string; kind: 'scen' | 'advice' | 'target'; val?: number; lo?: number; hi?: number };
+const SCEN_MAX = 75;
+const SCEN_2040: Scen[] = [
+  { name: 'PAC 2.0', org: 'CAN Europe, 2024', kind: 'scen', val: 70 },
+  { name: 'SP90', org: 'Strategic Perspectives, 2023', kind: 'scen', val: 57 },
+  { name: 'ESABCC 2040 advice', org: 'ESABCC, 2023 · central range', kind: 'advice', lo: 50, hi: 54 },
+  { name: 'CLEVER', org: 'négaWatt network, 2023', kind: 'scen', val: 51 },
+  { name: 'REMIND', org: 'PIK, 2024', kind: 'scen', val: 51 },
+  { name: 'EC Impact Assessment', org: 'EC S2/S3, 2024 · FEC perimeter', kind: 'scen', val: 47 },
+  { name: 'Agora', org: '“Breaking free from fossil gas”, 2023', kind: 'scen', val: 46 },
+  { name: 'TYNDP24 Distributed Energy', org: 'ENTSO-E/G, 2024', kind: 'scen', val: 46 },
+  { name: 'Action Plan target', org: 'EC, 17 Jul 2026 · indicative', kind: 'target', val: 46 },
+];
+// Trajectory anchors (whole-economy electrification rate, Indicator E5).
+const TRAJECTORY = [
+  { v: '23%', y: '2021', l: 'Historic (Eurostat)', c: C_NAVY },
+  { v: '30%', y: '2030', l: 'Fit-for-55 MIX benchmark', c: C_NAVY },
+  { v: '46%', y: '2040', l: 'Action Plan target', c: C_ONLY },
+  { v: '61–63%', y: '2050', l: 'ESABCC advice', c: C_MEAS },
+];
+
+function ScenarioBenchmark() {
+  const guidePct = (46 / SCEN_MAX) * 100;
+  const colour = (k: Scen['kind']) => (k === 'target' ? C_ONLY : k === 'advice' ? C_MEAS : C_NAVY);
+  return (
+    <div>
+      <div className="space-y-1.5">
+        {SCEN_2040.map((s) => {
+          const solidTo = s.kind === 'advice' ? s.lo! : s.val!;
+          const label = s.kind === 'advice' ? `${s.lo}–${s.hi}%` : `${s.val}%`;
+          return (
+            <div key={s.name} className="grid grid-cols-[150px_1fr_50px] items-center gap-2 sm:grid-cols-[186px_1fr_50px]">
+              <div className="min-w-0">
+                <p className="truncate text-[12px] font-semibold text-tertiary-dark">{s.name}</p>
+                <p className="truncate text-[10px] text-tertiary">{s.org}</p>
+              </div>
+              <div className="relative h-5 overflow-hidden rounded-sm border border-grey-200 bg-grey-50">
+                {s.kind === 'advice' && (
+                  <div className="absolute inset-y-0" aria-hidden
+                    style={{ left: `${(s.lo! / SCEN_MAX) * 100}%`, width: `${((s.hi! - s.lo!) / SCEN_MAX) * 100}%`, background: colour(s.kind), opacity: 0.4 }} />
+                )}
+                <div className="absolute inset-y-0 left-0" style={{ width: `${(solidTo / SCEN_MAX) * 100}%`, background: colour(s.kind) }} />
+                <div className="pointer-events-none absolute inset-y-0 border-l border-dashed" style={{ left: `${guidePct}%`, borderColor: C_ONLY }} aria-hidden />
+              </div>
+              <span className="text-right font-mono text-[12px] font-semibold tabular-nums text-tertiary-dark">{label}</span>
+            </div>
+          );
+        })}
+      </div>
+      <p className="mt-2.5 text-[10.5px] leading-snug text-tertiary">
+        Dashed red line = the 46% Action Plan target. Values are direct electrification (electricity share of final
+        energy consumption), ~2040. Perimeter matters — figures shift 5–15 pp by whether international transport and
+        feedstocks sit in the denominator; these are the FEC/EED perimeter where reported. Sources: négaWatt “Make
+        electrification Fit for 90” (2026); EC 2040 Impact Assessment SWD(2024) 63/64; ESABCC 2040 advice (2023).
+      </p>
+    </div>
+  );
+}
+
 /* ------------------------------------------------------------------ page */
 export default function EtsReviewModule() {
   const [a, setA] = useState<Assumptions>(DEFAULTS);
@@ -343,6 +407,34 @@ export default function EtsReviewModule() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* 2040 scenario evidence */}
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-tertiary-dark">Where 46% sits — the 2040 scenario evidence</h2>
+          <p className="mt-1 max-w-3xl text-[13px] text-tertiary">
+            The bankable numbers. Across the decarbonisation-consistent 2040 scenarios, direct electrification lands
+            between <strong>46% and 70%</strong>; excluding the maximal PAC outlier, a tight <strong>46–57%</strong>.
+            The Commission pitched its indicative target at the very <strong>bottom</strong> of that range — below its
+            own impact assessment (~47%) and below the Board&apos;s advised <strong>50–54%</strong>. Doubling from
+            today&apos;s stalled 23% is a real break with the past, but against the modelling 46% is the conservative
+            anchor, not a stretch.
+          </p>
+          {/* trajectory anchors */}
+          <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
+            {TRAJECTORY.map((t) => (
+              <div key={t.y} className="rounded-lg border border-grey-200 bg-white p-3">
+                <p className="font-mono text-xl font-bold tabular-nums" style={{ color: t.c }}>{t.v}</p>
+                <p className="mt-0.5 text-[11px] font-semibold text-tertiary-dark">{t.y}</p>
+                <p className="text-[10.5px] leading-snug text-tertiary">{t.l}</p>
+              </div>
+            ))}
+          </div>
+          {/* benchmark bar chart */}
+          <div className="mt-3 rounded-lg border border-grey-200 bg-white p-4">
+            <p className="mb-3 text-[12px] font-bold text-tertiary-dark">Direct electrification share of final energy, 2040 · by scenario</p>
+            <ScenarioBenchmark />
           </div>
         </section>
 
