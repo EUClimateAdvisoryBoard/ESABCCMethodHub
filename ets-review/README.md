@@ -9,6 +9,15 @@ next to `esabcc-reports/` as a research folder (not a software module).
 | File | What it covers |
 |------|----------------|
 | [`electrification-46-percent.md`](electrification-46-percent.md) | The core analysis: what the 46% electrification target measures, how much of final demand can physically be electrified, whether 46% is high or low for a 2040 pathway, what it costs to get there with and without demand-side measures, and which demand-side measures do the work. |
+| [`model/`](model/) | A least-cost model of the cost question — a reproducible Python reference model (`electrification_lcm.py`) and an interactive slider tool (`explorer.html`) to play with the assumptions. See [`model/README.md`](model/README.md). |
+
+## Interactive model
+
+The carbon price needed to reach 46% electrification — price-only versus with a
+demand-side package — is a least-cost model you can drive yourself:
+
+- **Explore in the browser:** [electrification least-cost explorer](https://claude.ai/code/artifact/1a6a35d5-fc56-40e0-9a1d-6734a32dbfab) (or open [`model/explorer.html`](model/explorer.html) locally).
+- **Reproduce / script it:** `python3 model/electrification_lcm.py` (default run: ~€166/t price-only, ~€55/t with measures, €111/t gap).
 
 ## The four questions this submodule answers
 

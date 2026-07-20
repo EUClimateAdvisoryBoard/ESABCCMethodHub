@@ -190,6 +190,12 @@ decarbonisation.
 
 ## 4. Cost: price-only versus with demand-side measures
 
+> **Run it yourself.** This section is backed by a least-cost model in
+> [`model/`](model/) — a reproducible Python reference (`electrification_lcm.py`)
+> and an [interactive slider tool](https://claude.ai/code/artifact/1a6a35d5-fc56-40e0-9a1d-6734a32dbfab)
+> for playing with the assumptions (barrier costs, measure strength, electricity-
+> price reform, target rate). The default run reproduces the figures below.
+
 **The headline gap.** Reaching a 46% economy-wide electrification rate by 2040
 through **a uniform carbon price alone** requires a price on buildings-and-
 transport fuels *far* above the level the ETS2 was designed to tolerate. **With
