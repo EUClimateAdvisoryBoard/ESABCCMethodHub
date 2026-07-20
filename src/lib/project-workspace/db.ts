@@ -697,7 +697,16 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
   noStore();
   const sb = getServerSupabase();
   if (!sb) return seedIndicators(projectId);
-  await ensureSeedDataFor(projectId);
+  // Pass backfillPoints=true so the later years the monthly Eurostat/EEA
+  // refresh appends to the bundled series of already-seeded indicators are
+  // inserted into pw_indicator_points *before* we read them back below. Without
+  // it, an indicator that was seeded before a post-report point was added stays
+  // frozen at its old series in the DB: the newer `afterReport` years never
+  // land, so the "with new data since report" count on the Indicator Check page
+  // stagnates even though the bundled data has moved on. Once the DB is caught
+  // up the backfill is a no-op (one key-only read), so the read path can afford
+  // to run it every time rather than waiting for a manual reseed.
+  await ensureSeedDataFor(projectId, true);
   const rowsResult = await sb
     .from('pw_indicators')
     .select('*')
