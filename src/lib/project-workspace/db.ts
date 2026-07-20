@@ -782,14 +782,34 @@ export async function listIndicators(projectId: string): Promise<DBIndicator[]> 
         afterReportYears.has(p.year)
           ? { year: p.year, value: p.value, afterReport: true }
           : { year: p.year, value: p.value }
-      )
-      .sort((a, b) => a.year - b.year);
-    // If the DB row had no points yet, serve the bundled series straight away
-    // (the self-heal above persists them for next time).
-    const data =
-      dbData.length === 0 && meta?.data?.length
-        ? [...meta.data].sort((a, b) => a.year - b.year)
-        : dbData;
+      );
+    // Merge in any bundled years the DB series is missing. The app-level seeder
+    // only writes points when the whole indicator is new, and the monthly
+    // Eurostat/EEA refresh appends later years to the bundled TS file that never
+    // reach an already-seeded DB row until the backfill migration
+    // (05x_backfill_indicator_points.sql) is applied. Filling the gap here — the
+    // bundled value is used ONLY for years absent from the DB, existing DB
+    // values are never overridden — keeps this read (and therefore the Indicator
+    // Check page's "with new data since report" count) in step with the bundled
+    // series even before that migration runs. The read-path backfill above still
+    // persists these when the render client can write, so the DB catches up too.
+    // This also subsumes the old zero-points fallback: an indicator with no DB
+    // points gets its whole bundled series here.
+    const dbYears = new Set(dbData.map(p => p.year));
+    const data = (
+      meta?.data?.length
+        ? [
+            ...dbData,
+            ...meta.data
+              .filter(p => !dbYears.has(p.year))
+              .map<IndicatorDataPoint>(p =>
+                p.afterReport
+                  ? { year: p.year, value: p.value, afterReport: true }
+                  : { year: p.year, value: p.value }
+              ),
+          ]
+        : dbData
+    ).sort((a, b) => a.year - b.year);
     return {
       id: r.id,
       name: r.name,
