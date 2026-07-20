@@ -1,0 +1,29 @@
+# ETS Review — submodule
+
+Working analysis space for the Secretariat's read of the latest **EU ETS
+review package** and the accompanying **Electrification Action Plan**. It sits
+next to `esabcc-reports/` as a research folder (not a software module).
+
+## Contents
+
+| File | What it covers |
+|------|----------------|
+| [`electrification-46-percent.md`](electrification-46-percent.md) | The core analysis: what the 46% electrification target measures, how much of final demand can physically be electrified, whether 46% is high or low for a 2040 pathway, what it costs to get there with and without demand-side measures, and which demand-side measures do the work. |
+
+## The four questions this submodule answers
+
+1. **Cost** — how expensive is 46% electrification of final demand **without**
+   demand-side measures versus **with** them?
+2. **Measures** — what would those demand-side measures actually be?
+3. **Feasibility** — how much of final demand can even be electrified, and is
+   46% *direct* electrification only or does it include *indirect*
+   electrification via hydrogen/e-fuels?
+4. **Benchmark** — against the modelling for a 2040 (–90%) pathway, is 46%
+   high or low?
+
+## Primary anchor
+
+The Board's own indicator **E5 — electrification rate (share of electricity in
+final energy use)** — from *Towards EU climate neutrality* and the *2040 climate
+target advice* is the reference series used throughout. See the analysis for the
+full table and sources.
