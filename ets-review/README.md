@@ -16,7 +16,8 @@ next to `esabcc-reports/` as a research folder (not a software module).
 The carbon price needed to reach 46% electrification — price-only versus with a
 demand-side package — is a least-cost model you can drive yourself:
 
-- **Explore in the browser:** [electrification least-cost explorer](https://claude.ai/code/artifact/1a6a35d5-fc56-40e0-9a1d-6734a32dbfab) (or open [`model/explorer.html`](model/explorer.html) locally).
+- **In the app:** beta module **M·37 — ETS Review** at [`/beta/ets-review`](../src/app/beta/ets-review/page.tsx) (source: [`beta/modules/ets-review/page.tsx`](../beta/modules/ets-review/page.tsx)). Native React port of the model, in exact numerical parity.
+- **Standalone / offline:** open [`model/explorer.html`](model/explorer.html), or the hosted [explorer artifact](https://claude.ai/code/artifact/1a6a35d5-fc56-40e0-9a1d-6734a32dbfab).
 - **Reproduce / script it:** `python3 model/electrification_lcm.py` (default run: ~€166/t price-only, ~€55/t with measures, €111/t gap).
 
 ## The four questions this submodule answers
