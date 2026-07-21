@@ -399,7 +399,7 @@ export default async function HomePage() {
     { code: 'M · 34', title: 'Electricity Prices', href: '/beta/electricity-prices', tags: ['Merit order', 'EU · US · China'] },
     { code: 'M · 35', title: 'Summer Prep', href: '/beta/summer-prep', tags: ['Industry · Transport', 'Gap tracker · Indicators'] },
     { code: 'M · 36', title: 'Policy Targets Register', href: '/beta/policy-targets', tags: ['Verbatim targets', 'Excel export', 'Human-confirmed'] },
-    { code: 'M · 37', title: 'ETS Review — 46% Electrification', href: '/beta/ets-review', tags: ['Least-cost model', '46% by 2040', 'ETS2'] },
+    { code: 'M · 37', title: 'ETS Review & Electrification', href: '/beta/ets-review', tags: ['Electrification model', 'ETS reform overview', '17 Jul 2026 package'] },
   ];
 
   return (
