@@ -24,7 +24,8 @@
  * price levels as indicative. For a full power-system solve see pypsa-service/.
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import type { PointerEvent as ReactPointerEvent } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -102,6 +103,38 @@ function breakdown(tr: Tranche[], price: number): Record<Sector, number> {
 const fmt = (v: number) => (Math.abs(v) >= 100 ? Math.round(v).toString() : v.toFixed(v % 1 ? 2 : 0));
 // Deterministic thousands separator (avoids locale-dependent hydration mismatch).
 const thou = (n: number) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+const clamp = (v: number, min: number, max: number) => Math.min(max, Math.max(min, v));
+
+/* ------------------------------------------------------------ presets/URL */
+// Slider ranges, reused for clamping both preset construction and URL parsing.
+const RANGE = {
+  target: [40, 60] as const, baseline: [20, 32] as const, barrierMult: [0.6, 1.6] as const,
+  reform: [0, 60] as const, strength: [0, 100] as const,
+};
+
+const PRESETS: { name: string; a: Assumptions }[] = [
+  { name: 'Action Plan default', a: DEFAULTS },
+  { name: 'ESABCC advice (52%)', a: { ...DEFAULTS, target: 52 } },
+  { name: 'High-barrier stress', a: { ...DEFAULTS, barrierMult: 1.25 } },
+  { name: 'Weak package', a: { ...DEFAULTS, reform: 15, strength: { buildings: 35, transport: 35, industry: 35 } } },
+];
+
+function sameAssumptions(x: Assumptions, y: Assumptions): boolean {
+  return x.target === y.target && x.baseline === y.baseline && x.barrierMult === y.barrierMult &&
+    x.reform === y.reform && x.strength.buildings === y.strength.buildings &&
+    x.strength.transport === y.strength.transport && x.strength.industry === y.strength.industry;
+}
+
+// Cap a possibly-unreachable target price at PMAX for display/plotting; flag it so callers can mark "≥".
+function capPrice(p: number | null): { v: number; capped: boolean } {
+  return p == null ? { v: PMAX, capped: true } : { v: p, capped: false };
+}
+function computeOnlyPrice(aa: Assumptions): number | null {
+  return priceForTarget(buildTranches(aa, false), aa.baseline, aa.target);
+}
+function computeMeasPrice(aa: Assumptions): number | null {
+  return priceForTarget(buildTranches(aa, true), aa.baseline, aa.target);
+}
 
 /* ------------------------------------------------------------- Slider UI */
 function Slider(props: {
@@ -150,6 +183,8 @@ function SupplyCurveChart({ trOnly, trMeas, baseline, target, pOnly, pMeas }: {
   const PX = W - M.l - M.r, PY = H - M.t - M.b, YMAX = 66;
   const xPx = (p: number) => M.l + (p / PMAX) * PX;
   const yPx = (r: number) => M.t + (1 - r / YMAX) * PY;
+  const svgRef = useRef<SVGSVGElement>(null);
+  const [hoverP, setHoverP] = useState<number | null>(null);
   const path = (tr: Tranche[]) => {
     let d = '';
     for (let p = 0; p <= PMAX; p += 2) d += (p === 0 ? 'M' : 'L') + xPx(p).toFixed(1) + ' ' + yPx(rateAt(tr, baseline, p)).toFixed(1);
@@ -168,8 +203,16 @@ function SupplyCurveChart({ trOnly, trMeas, baseline, target, pOnly, pMeas }: {
       </g>
     );
   };
+  const onPointerMove = (e: ReactPointerEvent<SVGRectElement>) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const rect = svg.getBoundingClientRect();
+    const localX = ((e.clientX - rect.left) / rect.width) * W;
+    setHoverP(clamp(((localX - M.l) / PX) * PMAX, 0, PMAX));
+  };
+  const onPointerLeave = () => setHoverP(null);
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img"
+    <svg ref={svgRef} viewBox={`0 0 ${W} ${H}`} className="w-full" role="img"
       aria-label="Electrification rate versus carbon price, price-only vs with demand-side measures">
       {yTicks.map((r) => (
         <g key={r}>
@@ -182,6 +225,9 @@ function SupplyCurveChart({ trOnly, trMeas, baseline, target, pOnly, pMeas }: {
       ))}
       <text x={M.l + PX / 2} y={H - 4} textAnchor="middle" fontSize={11.5} fontWeight={600} fill="#5d6f6e">Carbon price €/tCO₂ (ETS1+ETS2)</text>
       <text transform={`translate(14 ${M.t + PY / 2}) rotate(-90)`} textAnchor="middle" fontSize={11.5} fontWeight={600} fill="#5d6f6e">Electrification rate</text>
+      {/* ESABCC 2040 advice band, 50–54% */}
+      <rect x={M.l} y={yPx(54)} width={PX} height={yPx(50) - yPx(54)} fill={C_NAVY} opacity={0.08} />
+      <text x={W - M.r - 4} y={yPx(54) + 11} textAnchor="end" fontSize={10} fill={C_NAVY} opacity={0.75}>ESABCC advice 50–54%</text>
       {/* trigger + target reference lines */}
       <line x1={xPx(45)} y1={M.t} x2={xPx(45)} y2={M.t + PY} stroke="#9aa7a6" strokeWidth={1.5} strokeDasharray="5 4" />
       <text x={xPx(45) + 4} y={M.t + 11} fontSize={10.5} fill="#5d6f6e">€45 trigger</text>
@@ -192,15 +238,133 @@ function SupplyCurveChart({ trOnly, trMeas, baseline, target, pOnly, pMeas }: {
       <path d={path(trMeas)} fill="none" stroke={C_MEAS} strokeWidth={2.5} />
       {marker(pMeas, C_MEAS, false)}
       {marker(pOnly, C_ONLY, true)}
+      {/* pointer readout */}
+      {hoverP != null && (() => {
+        const x = xPx(hoverP);
+        const rOnly = rateAt(trOnly, baseline, hoverP);
+        const rMeas = rateAt(trMeas, baseline, hoverP);
+        const boxW = 128, boxH = 54;
+        const bx = clamp(x + 10, M.l, W - M.r - boxW);
+        const by = M.t + 6;
+        return (
+          <g pointerEvents="none">
+            <line x1={x} y1={M.t} x2={x} y2={M.t + PY} stroke={C_NAVY} strokeWidth={1} opacity={0.55} />
+            <circle cx={x} cy={yPx(rOnly)} r={3.5} fill={C_ONLY} stroke="white" strokeWidth={1.5} />
+            <circle cx={x} cy={yPx(rMeas)} r={3.5} fill={C_MEAS} stroke="white" strokeWidth={1.5} />
+            <rect x={bx} y={by} width={boxW} height={boxH} rx={4} fill="white" stroke="#d8e0df" />
+            <text x={bx + 8} y={by + 16} fontSize={11.5} fontWeight={700} fill={C_NAVY} className="font-mono tabular-nums">€{Math.round(hoverP)}/t</text>
+            <text x={bx + 8} y={by + 31} fontSize={10.5} fill={C_ONLY} className="font-mono tabular-nums">only {rOnly.toFixed(1)}%</text>
+            <text x={bx + 8} y={by + 45} fontSize={10.5} fill={C_MEAS} className="font-mono tabular-nums">meas {rMeas.toFixed(1)}%</text>
+          </g>
+        );
+      })()}
+      {/* transparent capture layer, kept topmost for reliable pointer tracking */}
+      <rect x={M.l} y={M.t} width={PX} height={PY} fill="transparent"
+        onPointerMove={onPointerMove} onPointerLeave={onPointerLeave} style={{ cursor: 'crosshair', touchAction: 'none' }} />
+    </svg>
+  );
+}
+
+/* ------------------------------------------------------------- Tornado SVG */
+interface TornadoRow { label: string; lo: number; hi: number; loCapped: boolean; hiCapped: boolean }
+
+function TornadoChart({ rows, center, color }: { rows: TornadoRow[]; center: number; color: string }) {
+  const W = 640, rowH = 30, M = { l: 168, r: 54, t: 6, b: 6 };
+  const H = M.t + M.b + rows.length * rowH;
+  const PXw = W - M.l - M.r;
+  const vals = rows.flatMap((r) => [r.lo, r.hi]).concat([center]);
+  const vMin = Math.min(...vals), vMax = Math.max(...vals);
+  const pad = Math.max((vMax - vMin) * 0.15, 5);
+  const d0 = vMin - pad, d1 = vMax + pad;
+  const xPx = (v: number) => M.l + ((v - d0) / (d1 - d0 || 1)) * PXw;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Tornado sensitivity chart">
+      <line x1={xPx(center)} y1={0} x2={xPx(center)} y2={H} stroke={C_NAVY} strokeWidth={1} strokeDasharray="3 3" opacity={0.5} />
+      {rows.map((r, i) => {
+        const y = M.t + i * rowH;
+        const loIsBarLo = r.lo <= r.hi;
+        const barLo = loIsBarLo ? r.lo : r.hi, barHi = loIsBarLo ? r.hi : r.lo;
+        const barLoCapped = loIsBarLo ? r.loCapped : r.hiCapped;
+        const barHiCapped = loIsBarLo ? r.hiCapped : r.loCapped;
+        const x1 = xPx(barLo), x2 = xPx(barHi);
+        return (
+          <g key={r.label}>
+            <text x={M.l - 8} y={y + rowH / 2 + 4} textAnchor="end" fontSize={11} fill="#5d6f6e">{r.label}</text>
+            <rect x={x1} y={y + 6} width={Math.max(x2 - x1, 1)} height={rowH - 14} fill={color} opacity={0.32} rx={2} />
+            <line x1={x1} y1={y + 3} x2={x1} y2={y + rowH - 3} stroke={color} strokeWidth={2} />
+            <line x1={x2} y1={y + 3} x2={x2} y2={y + rowH - 3} stroke={color} strokeWidth={2} />
+            <text x={x1 - 4} y={y + rowH / 2 + 4} textAnchor="end" fontSize={10} fontWeight={600} fill={color} className="font-mono tabular-nums">
+              {barLoCapped ? '≥' : ''}€{Math.round(barLo)}
+            </text>
+            <text x={x2 + 4} y={y + rowH / 2 + 4} textAnchor="start" fontSize={10} fontWeight={600} fill={color} className="font-mono tabular-nums">
+              {barHiCapped ? '≥' : ''}€{Math.round(barHi)}
+            </text>
+          </g>
+        );
+      })}
     </svg>
   );
 }
 
 /* ------------------------------------------------------------------ page */
 export default function EtsReviewModule() {
+  // Initial render always uses DEFAULTS (server and client match); the URL is
+  // only consulted after mount, in an effect — see hydration-safety note above.
   const [a, setA] = useState<Assumptions>(DEFAULTS);
+  const [copied, setCopied] = useState(false);
   const set = (patch: Partial<Assumptions>) => setA((prev) => ({ ...prev, ...patch }));
   const setStrength = (s: Sector, v: number) => setA((prev) => ({ ...prev, strength: { ...prev.strength, [s]: v } }));
+
+  // Read a shared scenario from the URL query string, once, after mount.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (![...params.keys()].length) return;
+    const num = (key: string, [min, max]: readonly [number, number], fallback: number) => {
+      const raw = params.get(key);
+      if (raw == null) return fallback;
+      const n = Number(raw);
+      return Number.isFinite(n) ? clamp(n, min, max) : fallback;
+    };
+    setA((prev) => ({
+      target: num('t', RANGE.target, prev.target),
+      baseline: num('b', RANGE.baseline, prev.baseline),
+      barrierMult: num('m', RANGE.barrierMult, prev.barrierMult),
+      reform: num('r', RANGE.reform, prev.reform),
+      strength: {
+        buildings: num('sb', RANGE.strength, prev.strength.buildings),
+        transport: num('st', RANGE.strength, prev.strength.transport),
+        industry: num('si', RANGE.strength, prev.strength.industry),
+      },
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Keep the URL in sync with the current scenario (debounced), via
+  // history.replaceState so this never adds navigation entries.
+  useEffect(() => {
+    const id = setTimeout(() => {
+      const params = new URLSearchParams({
+        t: String(a.target), b: String(a.baseline), m: String(a.barrierMult), r: String(a.reform),
+        sb: String(a.strength.buildings), st: String(a.strength.transport), si: String(a.strength.industry),
+      });
+      window.history.replaceState(null, '', `${window.location.pathname}?${params.toString()}`);
+    }, 300);
+    return () => clearTimeout(id);
+  }, [a]);
+
+  const activePreset = PRESETS.find((p) => sameAssumptions(p.a, a))?.name ?? 'Custom';
+
+  const copyLink = () => {
+    const params = new URLSearchParams({
+      t: String(a.target), b: String(a.baseline), m: String(a.barrierMult), r: String(a.reform),
+      sb: String(a.strength.buildings), st: String(a.strength.transport), si: String(a.strength.industry),
+    });
+    const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
+    navigator.clipboard.writeText(url).then(
+      () => { setCopied(true); setTimeout(() => setCopied(false), 1500); },
+      () => {},
+    );
+  };
 
   const m = useMemo(() => {
     const trOnly = buildTranches(a, false);
@@ -217,6 +381,48 @@ export default function EtsReviewModule() {
       bMeas: breakdown(trMeas, pMeas ?? PMAX),
     };
   }, [a]);
+
+  // Sensitivity tornado: one-at-a-time perturbations from the current settings,
+  // mirroring the Python reference's --sensitivity barrier-multiplier tornado
+  // but extended to every demand-side lever. Perturbing strength/reform only
+  // moves the with-measures curve; perturbing barrierMult moves both curves.
+  const tornadoRows = useMemo(() => {
+    type Spec = { label: string; lowA: Assumptions; highA: Assumptions; onlyChanges: boolean };
+    const specs: Spec[] = [
+      {
+        label: 'Barrier-cost multiplier (±25%)', onlyChanges: true,
+        lowA: { ...a, barrierMult: clamp(a.barrierMult * 0.75, ...RANGE.barrierMult) },
+        highA: { ...a, barrierMult: clamp(a.barrierMult * 1.25, ...RANGE.barrierMult) },
+      },
+      {
+        label: 'Electricity-price reform (±€10/t)', onlyChanges: false,
+        lowA: { ...a, reform: clamp(a.reform - 10, ...RANGE.reform) },
+        highA: { ...a, reform: clamp(a.reform + 10, ...RANGE.reform) },
+      },
+      ...SECTORS.map((s) => ({
+        label: `${s[0].toUpperCase()}${s.slice(1)} measures (±15pp)`, onlyChanges: false,
+        lowA: { ...a, strength: { ...a.strength, [s]: clamp(a.strength[s] - 15, ...RANGE.strength) } },
+        highA: { ...a, strength: { ...a.strength, [s]: clamp(a.strength[s] + 15, ...RANGE.strength) } },
+      })),
+    ];
+    const rows = specs.map((spec) => {
+      const lowMeas = capPrice(computeMeasPrice(spec.lowA));
+      const highMeas = capPrice(computeMeasPrice(spec.highA));
+      const lowOnly = capPrice(spec.onlyChanges ? computeOnlyPrice(spec.lowA) : m.pOnly);
+      const highOnly = capPrice(spec.onlyChanges ? computeOnlyPrice(spec.highA) : m.pOnly);
+      return {
+        label: spec.label,
+        meas: { lo: lowMeas.v, hi: highMeas.v, loCapped: lowMeas.capped, hiCapped: highMeas.capped },
+        gap: {
+          lo: lowOnly.v - lowMeas.v, hi: highOnly.v - highMeas.v,
+          loCapped: lowOnly.capped || lowMeas.capped, hiCapped: highOnly.capped || highMeas.capped,
+        },
+        impact: Math.abs(highMeas.v - lowMeas.v),
+      };
+    });
+    rows.sort((x, y) => y.impact - x.impact);
+    return rows;
+  }, [a, m.pOnly]);
 
   const cards: { k: string; v: string; u: string; c: string }[] = [
     { k: 'Price only', v: m.pOnly != null ? `€${m.pOnly}` : '—', u: '/t', c: C_ONLY },
@@ -281,7 +487,22 @@ export default function EtsReviewModule() {
           <div className="mt-3 grid gap-4 lg:grid-cols-[320px_1fr]">
             {/* controls */}
             <div className="rounded-lg border border-grey-200 bg-white p-4">
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-tertiary">Assumptions</p>
+              <p className="mb-3 flex items-baseline justify-between gap-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-tertiary">
+                Assumptions
+                <span className="normal-case tracking-normal text-tertiary/80">
+                  scenario: <span className={activePreset === 'Custom' ? 'text-accent-orange' : 'text-primary'}>{activePreset}</span>
+                </span>
+              </p>
+              <div className="mb-3.5 flex flex-wrap gap-1.5">
+                {PRESETS.map((p) => (
+                  <button key={p.name} type="button" onClick={() => setA(p.a)}
+                    className={`rounded-full border px-2.5 py-1 text-[10.5px] font-semibold ${activePreset === p.name
+                      ? 'border-primary bg-primary/10 text-primary'
+                      : 'border-grey-200 text-tertiary hover:border-primary hover:text-primary'}`}>
+                    {p.name}
+                  </button>
+                ))}
+              </div>
               <div className="space-y-3.5">
                 <Slider label="Electrification target (2040)" hint="Action Plan indicative target: 46%" value={a.target} min={40} max={60} step={1} unit="%" std={46} onChange={(v) => set({ target: v })} />
                 <Slider label="Baseline rate, no new policy" hint="Autonomous 2040 electrification" value={a.baseline} min={20} max={32} step={1} unit="%" std={26} onChange={(v) => set({ baseline: v })} />
@@ -295,10 +516,16 @@ export default function EtsReviewModule() {
                     <Slider label="Industry measures" hint="CCfDs for electrified heat, fast grid connections" value={a.strength.industry} min={0} max={100} step={5} unit="%" std={55} onChange={(v) => setStrength('industry', v)} />
                   </div>
                 </div>
-                <button type="button" onClick={() => setA(DEFAULTS)}
-                  className="mt-1 w-full rounded-md border border-grey-200 px-3 py-1.5 text-[12px] font-semibold text-tertiary hover:border-primary hover:text-primary">
-                  ↺ Reset to defaults
-                </button>
+                <div className="mt-1 flex gap-2">
+                  <button type="button" onClick={() => setA(DEFAULTS)}
+                    className="flex-1 rounded-md border border-grey-200 px-3 py-1.5 text-[12px] font-semibold text-tertiary hover:border-primary hover:text-primary">
+                    ↺ Reset to defaults
+                  </button>
+                  <button type="button" onClick={copyLink}
+                    className="flex-1 rounded-md border border-grey-200 px-3 py-1.5 text-[12px] font-semibold text-tertiary hover:border-primary hover:text-primary">
+                    {copied ? 'Copied' : 'Copy link to this scenario'}
+                  </button>
+                </div>
               </div>
             </div>
             {/* chart */}
@@ -347,6 +574,39 @@ export default function EtsReviewModule() {
                   <p className="mt-1 text-[11px] leading-snug text-tertiary">{k.l}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* sensitivity tornado */}
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-tertiary-dark">Sensitivity — what moves the price</h2>
+          <p className="mt-1 max-w-3xl text-[13px] text-tertiary">
+            One-at-a-time perturbations from the current settings above — mirrors the Python reference's
+            <code className="rounded bg-surface-blue px-1 py-0.5">--sensitivity</code> tornado, extended to every
+            demand-side lever: barrier-cost multiplier ±25%, each sector's measure strength ±15pp (clamped 0–100),
+            and the electricity-price reform ±€10/t. Bars are sorted by impact on the with-measures price; the dashed
+            line marks the current value. A price at the €{PMAX}/t sweep ceiling (target unreachable) is capped and
+            marked <span className="font-mono">≥</span>.
+          </p>
+          <div className="mt-3 grid gap-4 lg:grid-cols-2">
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <p className="mb-3 text-[12px] font-bold text-tertiary-dark">
+                With-measures price
+                <span className="ml-1.5 font-mono font-normal text-tertiary">
+                  · current {m.pMeas != null ? `€${m.pMeas}` : `≥€${PMAX}`}/t
+                </span>
+              </p>
+              <TornadoChart rows={tornadoRows.map((r) => ({ label: r.label, ...r.meas }))} center={m.pMeas ?? PMAX} color={C_MEAS} />
+            </div>
+            <div className="rounded-lg border border-grey-200 bg-white p-4">
+              <p className="mb-3 text-[12px] font-bold text-tertiary-dark">
+                Gap (shadow value)
+                <span className="ml-1.5 font-mono font-normal text-tertiary">
+                  · current {m.gap != null ? `€${m.gap}` : '—'}/t
+                </span>
+              </p>
+              <TornadoChart rows={tornadoRows.map((r) => ({ label: r.label, ...r.gap }))} center={m.gap ?? 0} color={C_NAVY} />
             </div>
           </div>
         </section>
