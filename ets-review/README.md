@@ -10,6 +10,7 @@ next to `esabcc-reports/` as a research folder (not a software module).
 |------|----------------|
 | [`electrification-46-percent.md`](electrification-46-percent.md) | The core analysis: what the 46% electrification target measures, how much of final demand can physically be electrified, whether 46% is high or low for a 2040 pathway, what it costs to get there with and without demand-side measures, and which demand-side measures do the work. |
 | [`model/`](model/) | A least-cost model of the cost question — a reproducible Python reference model (`electrification_lcm.py`) and an interactive slider tool (`explorer.html`) to play with the assumptions. See [`model/README.md`](model/README.md). |
+| **Impact-assessment subpage** ([`beta/modules/ets-review/impact-assessment/page.tsx`](../beta/modules/ets-review/impact-assessment/page.tsx)) | A page-sourced read-out of the underlying impact assessment **SWD(2026) 616** (5 parts, 958 pp) and its **technology-assumptions workbook** (E3Modelling/PRIMES). Two areas — the **electrification goal** and the **ETS reform itself** — with the technical assumptions visualised (cap trajectory, policy-option budgets, CDR cost bands, technology learning curves, 20 MW coverage) and a **filterable uncertainty & ambiguity register**. Lives in the app at [`/beta/ets-review/impact-assessment`](../src/app/beta/ets-review/impact-assessment/page.tsx). |
 
 ## Interactive model
 
