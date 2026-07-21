@@ -23,7 +23,7 @@
  * IA gives a range, the range is shown.
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 
@@ -50,6 +50,10 @@ type SrcKey = keyof typeof SRC;
 interface Change {
   cat: string; catColor: string; title: string; figure: string;
   proposed: string; quote: string; links: SrcKey[];
+  /** stable id, used as the DOM anchor for cross-links from the register */
+  id: string;
+  /** ids of REGISTER entries (Unc.id) this change is uncertain about */
+  rel: string[];
 }
 const CAT = {
   ambition: { label: 'Ambition & cap', color: C_RED },
@@ -67,6 +71,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'The Linear Reduction Factor is cut from today’s 4.3% to 3.7% for 2031–35 and 1.7% for 2036–40 — a two-step, more back-loaded path to the 85% domestic reduction by 2040 (−90% net with credits + removals).',
     quote: '“It updates the Linear Reduction Factor (LRF) of 3.7% for 2031-2035 and 1.7% for 2036-2040, making the trajectory more gradual.”',
     links: ['PR', 'COM', 'IA'],
+    id: 'lrf', rel: ['cap-model-range'],
   },
   {
     cat: 'flex', catColor: CAT.flex.color,
@@ -74,6 +79,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'From 2036 the EU may use up to 2% high-quality international credits — ~260 Mt cumulative over 2036–40 (2% is the ETS share of the climate law’s 5% flexibility). Contingent on a 2033 availability review; if it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%).',
     quote: '“Up to 2% high-quality international credits will allow to finance decarbonisation projects abroad and provide breathing space in 2036-2040.”',
     links: ['PR', 'QA'],
+    id: 'credits', rel: ['credits-2033-review'],
   },
   {
     cat: 'scope', catColor: CAT.scope.color,
@@ -81,6 +87,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'A new Article 9c lifts the cap by 250 Mt (+10 Mt contingency) over 2031–40; the Commission auctions these and uses the revenue to buy an equal tonnage of CRCF-certified EU BioCCS/DACCS — a central “Removals Authority”, not an emitter-to-supplier market. On top of the cap and not subject to the LRF. The IA modelled 175–330 Mt.',
     quote: '“The proposal also integrates permanent carbon removals into the EU ETS … additional flexibility for the hardest-to-abate sectors.”',
     links: ['PR', 'IA'],
+    id: 'removals', rel: ['cdr-cost', 'removal-target', 'net-vs-gross', 'on-top-of-cap', 'removal-delivery', 'removals-divisive'],
   },
   {
     cat: 'flex', catColor: CAT.flex.color,
@@ -88,6 +95,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'The MSR intake rate is halved (24% → 12%) so allowances stay in circulation longer, cutting volatility. Complements the April 2026 proposal to stop automatic invalidation of reserve allowances.',
     quote: '“a reform of the Market Stability Reserve (MSR) to … maintain liquidity and reduce excessive price volatility.”',
     links: ['PR', 'QA'],
+    id: 'msr', rel: ['msr-effect'],
   },
   {
     cat: 'invest', catColor: CAT.invest.color,
@@ -95,6 +103,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'A new €100 bn bank channels ETS revenue into industrial decarbonisation at scale; an ETS Investment Booster runs before 2030 as its first phase. The IA models ~1,630 Mt abated at ~€60/t average support.',
     quote: '“The Industrial Decarbonisation Bank will have €100bn funding going towards industrial decarbonisation across Europe at scale.”',
     links: ['PR', 'IA'],
+    id: 'idb', rel: ['idb-illustrative'],
   },
   {
     cat: 'invest', catColor: CAT.invest.color,
@@ -102,6 +111,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'Member States must spend 50% of national ETS revenues on decarbonising ETS sectors — adding to more than €100 bn of investment before 2030. “Contributions by industry should flow back to industry.”',
     quote: '“Member States will be required to spend 50% of their national ETS revenues on investments to decarbonise ETS sectors.”',
     links: ['PR', 'QA'],
+    id: 'earmarking', rel: [],
   },
   {
     cat: 'industry', catColor: CAT.industry.color,
@@ -109,6 +119,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'Free allocation is kept past 2030 but tied more tightly to actual decarbonisation investment in Europe — rewarding movers, pressuring laggards.',
     quote: '“Free allocation for companies will continue beyond 2030, and will be more closely linked to investments in decarbonisation in Europe.”',
     links: ['PR', 'IA'],
+    id: 'free-alloc', rel: ['free-allocation-contested', 'refinery-output'],
   },
   {
     cat: 'industry', catColor: CAT.industry.color,
@@ -116,6 +127,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'For CBAM sectors the free-allocation phase-out is slowed and extended to 2038 (from 2034). A separate benchmarks proposal raises industry free allocation by €6 bn for 2026–30.',
     quote: '“the reduction of free allocation will be slowed and the phase-out extended until 2038.”',
     links: ['PR', 'IA'],
+    id: 'cbam', rel: ['leakage-formula', 'mw-threshold'],
   },
   {
     cat: 'scope', catColor: CAT.scope.color,
@@ -123,6 +135,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'The ETS for aviation and maritime is reinforced and aligned with international measures (CORSIA, IMO), addressing evasion and levelling the field. Aviation baseline 690 Mt (2024); maritime SMAP support 46 M EUAs.',
     quote: '“The proposal strengthens EU ETS for aviation and maritime sectors and extends it to waste incineration.”',
     links: ['PR', 'IA'],
+    id: 'aviation-maritime', rel: ['aviation-cap', 'aviation-scope-revert', 'green-fuel-pot'],
   },
   {
     cat: 'scope', catColor: CAT.scope.color,
@@ -130,6 +143,7 @@ const CHANGES: (Change & { cat: CatKey })[] = [
     proposed: 'Municipal (and, in the widest option, hazardous + landfill) waste incineration is gradually pulled into the ETS — the IA scopes cap additions of +41.5 Mt (municipal), +10.7 Mt (hazardous), ~+65 Mt (landfill).',
     quote: '“… extends it to waste incineration … addresses risks of circumvention and levels the playing field.”',
     links: ['PR', 'IA'],
+    id: 'waste', rel: ['waste-emissions'],
   },
 ];
 
@@ -145,31 +159,31 @@ const TAGS: Record<TagKey, { label: string; color: string; blurb: string }> = {
   unquantified: { label: 'Could not quantify', color: C_NAVY, blurb: 'The IA states a quantity it could not compute or monetise.' },
 };
 
-interface Unc { tag: TagKey; title: string; detail: string; src: string; }
+interface Unc { id: string; tag: TagKey; title: string; detail: string; src: string; }
 const REGISTER: Unc[] = [
-  { tag: 'unquantified', title: 'Costs & benefits could not be monetised', detail: 'The Regulatory Scrutiny Board and the IA state it was “not possible to monetise the aggregated costs and benefits of the preferred option” — too heterogeneous, and dependent on future MRV design.', src: 'Annex 1–2, p8' },
-  { tag: 'attribution', title: 'Reductions may not be the ETS at all', detail: 'The evaluation finds industrial cuts were “primarily driven by a decline in levels of activity … unrelated to the ETS” — energy-crisis prices, not the carbon price. Decoupling could not be shown.', src: 'Annex 15, p29' },
-  { tag: 'attribution', title: 'MSR effect cannot be isolated', detail: 'Price rises “mainly explained by the increased Linear Reduction Factor, with the MSR having only a small effect”; “the individual effect of the MSR on confidence cannot be assessed.” No clean 2014 baseline exists.', src: 'Annex 15, p20/70' },
-  { tag: 'definitional', title: '“Carbon-leakage formula not relevant”', detail: 'EU27 ETS emissions rise from baseline in every scenario (+7.7 to +45.8 Mt), so the conventional leakage rate (foreign rise ÷ domestic fall) simply cannot be computed for this reform.', src: 'Annex 12, p58' },
-  { tag: 'range', title: 'The cap depends on which model', detail: 'PRIMES and POTEnCIA put the 2035 cap anywhere from 560 to 670 Mt for the same 85% target — “the intrinsic uncertainties involved in assessments on the longer-term technological future.”', src: 'Annex 8 I, p11' },
-  { tag: 'range', title: 'CDR cost “highly variable and uncertain”', detail: '“Reliable cost estimates are only available for BECCS”; DACCS spans €185–370/t in 2040. The IA “tries to withhold judgement on cost-competitiveness” and assumes BECCS cost = BioCCS cost.', src: 'Annex 8 II, p37/46' },
-  { tag: 'assumption', title: 'Removal target “may simply not be met”', detail: 'Under PO3 “as long as removals are not cost competitive … the EU ETS [misses] its net objective. The risk … is that the modelled assumptions would simply not be met.” DACCS never reaches competitiveness in-period.', src: 'Part 1, p30–31' },
-  { tag: 'assumption', title: 'Cost falls “significantly shape the results”', detail: 'Removals fiscal cost “strongly depends on … ETS prices, the ratio of BioCCS to DACCS and timing” and “cannot be fully optimised.” A “conservative approach … would be advisable.”', src: 'Annex 8 II, p46' },
-  { tag: 'data-gap', title: '20 MW figure rests on two countries', detail: 'The headline “up to 28 MtCO₂e / 94,428 installations” comes from French + Polish registries only, “applied as a representative curve for the entire EU” and “driven primarily by the Polish dataset.”', src: 'Annex 12, p62/68' },
-  { tag: 'data-gap', title: 'Waste emissions “complex to estimate”', detail: 'Municipal, hazardous and landfill caps are built on “a buffer for underestimation” and “limited availability of measurement-based data … constraints on harmonised, robust and verified data.”', src: 'Annex 8 I, p18' },
-  { tag: 'contested', title: 'Removals integration is “very divisive”', detail: 'Temporary removals drew “the highest level of strong disagreement”; ~12% of consultation respondents (mainly NGOs) oppose integration outright on environmental-integrity grounds.', src: 'Annex 8 II, p64' },
-  { tag: 'contested', title: 'Free allocation: industry vs NGOs', detail: 'Business favours keeping and improving free allocation; NGOs favour phase-out on “polluter pays”. On the 20 MW threshold and CORSIA quality, groups are “strongly divided”.', src: 'Annex 2 (consultation)' },
-  { tag: 'assumption', title: 'Aviation cap addition “is uncertain”', detail: 'The +148 Mt added for incoming/outgoing international aviation in 2027 rests on a PRIMES estimate the IA calls “uncertain, but it gives an indication.” Small maritime extensions were “ignored”.', src: 'Annex 8 I, p8' },
-  { tag: 'assumption', title: 'Price volatility “cannot be assessed”', detail: 'Modelled prices “rely on uncertain assumptions and may not capture actual short-term price movements”; “within-year price volatility cannot be assessed quantitatively.” “Reality will lie between these two extremes.”', src: 'Part 1, p52–53' },
-  { tag: 'assumption', title: 'IDB abatement is “illustrative”', detail: 'The Bank’s 1,630 Mt figure “will depend on the final IDB design … demand for low-carbon products and project delivery risks”, and the ETS price feeding it “is an assumption … derived from 2040 climate-target modelling.”', src: 'Part 1, p34–35' },
-  { tag: 'assumption', title: 'Refinery output held constant', detail: 'The free-allocation calculation “assumes refinery output remains constant over time”, while “in reality it is expected to decline” — an explicit simplification affecting the leakage budget.', src: 'Annex 12, p21' },
-  { tag: 'definitional', title: 'Net vs gross removals ambiguity', detail: 'CR2 gross outcome is “uncertain and unlimited”; CR3 has “a maximum level of removals … but not a minimum,” so the net can silently equal the gross and miss the target.', src: 'Annex 8 II, p29/53' },
-  { tag: 'contested', title: 'Removals sit on top of the cap', detail: 'The 250 Mt Art. 9c removals are added above the cap and are not subject to the LRF — adding allowances rather than displacing emission budget. Critics (e.g. Bellona) call this “flooding the market”.', src: 'Removals summary · Art. 9c' },
-  { tag: 'assumption', title: 'Removal delivery is not guaranteed', detail: 'The programme is revenue-driven: the Commission auctions the 250 Mt and buys removals with the proceeds, so delivered tonnage depends on auction revenue vs removal cost (hence the +10 Mt contingency). It is not a hard commitment to 250 Mt delivered.', src: 'Removals summary · Art. 9c' },
-  { tag: 'assumption', title: 'International credits hinge on a 2033 review', detail: 'The ~260 Mt of 2036–40 international credits is contingent: a 2033 review must find high-integrity, cost-effective credits available. If it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%) to tighten the cap instead.', src: 'Removals summary · 2033 review' },
-  { tag: 'range', title: '2040 ambition is contested', detail: 'The Commission estimates the package delivers an 85–87% reduction by 2040; Climact estimates the tabled text delivers ~80%. The proposal is entering trialogue, so the architecture and figures may still shift.', src: 'Removals summary · secondary coverage' },
-  { tag: 'assumption', title: 'Aviation scope can revert in 2032', detail: 'The extension to departing flights (≤5,000 km, from 2029) is provisional: a 2032 review of CORSIA can revert the scope to intra-EEA if CORSIA is judged “ambitious, efficient and successful”, or widen it if not.', src: 'Q&A · aviation coverage' },
-  { tag: 'assumption', title: 'Green-fuel support is a capped pot', detail: 'The SAF reserve (~110 M allowances, ~€9bn to 2040) and maritime SMAP (~46 M EUAs) are fixed pots covering a fixed share of the price gap. With SAF abatement at $600–800/t vs offsets $10–40/t, uptake still assumes the ReFuelEU/FuelEU mandates are met.', src: 'Part 1, p40 · coverage' },
+  { id: 'unmonetised', tag: 'unquantified', title: 'Costs & benefits could not be monetised', detail: 'The Regulatory Scrutiny Board and the IA state it was “not possible to monetise the aggregated costs and benefits of the preferred option” — too heterogeneous, and dependent on future MRV design.', src: 'Annex 1–2, p8' },
+  { id: 'attribution-industrial', tag: 'attribution', title: 'Reductions may not be the ETS at all', detail: 'The evaluation finds industrial cuts were “primarily driven by a decline in levels of activity … unrelated to the ETS” — energy-crisis prices, not the carbon price. Decoupling could not be shown.', src: 'Annex 15, p29' },
+  { id: 'msr-effect', tag: 'attribution', title: 'MSR effect cannot be isolated', detail: 'Price rises “mainly explained by the increased Linear Reduction Factor, with the MSR having only a small effect”; “the individual effect of the MSR on confidence cannot be assessed.” No clean 2014 baseline exists.', src: 'Annex 15, p20/70' },
+  { id: 'leakage-formula', tag: 'definitional', title: '“Carbon-leakage formula not relevant”', detail: 'EU27 ETS emissions rise from baseline in every scenario (+7.7 to +45.8 Mt), so the conventional leakage rate (foreign rise ÷ domestic fall) simply cannot be computed for this reform.', src: 'Annex 12, p58' },
+  { id: 'cap-model-range', tag: 'range', title: 'The cap depends on which model', detail: 'PRIMES and POTEnCIA put the 2035 cap anywhere from 560 to 670 Mt for the same 85% target — “the intrinsic uncertainties involved in assessments on the longer-term technological future.”', src: 'Annex 8 I, p11' },
+  { id: 'cdr-cost', tag: 'range', title: 'CDR cost “highly variable and uncertain”', detail: '“Reliable cost estimates are only available for BECCS”; DACCS spans €185–370/t in 2040. The IA “tries to withhold judgement on cost-competitiveness” and assumes BECCS cost = BioCCS cost.', src: 'Annex 8 II, p37/46' },
+  { id: 'removal-target', tag: 'assumption', title: 'Removal target “may simply not be met”', detail: 'Under PO3 “as long as removals are not cost competitive … the EU ETS [misses] its net objective. The risk … is that the modelled assumptions would simply not be met.” DACCS never reaches competitiveness in-period.', src: 'Part 1, p30–31' },
+  { id: 'cost-falls', tag: 'assumption', title: 'Cost falls “significantly shape the results”', detail: 'Removals fiscal cost “strongly depends on … ETS prices, the ratio of BioCCS to DACCS and timing” and “cannot be fully optimised.” A “conservative approach … would be advisable.”', src: 'Annex 8 II, p46' },
+  { id: 'mw-threshold', tag: 'data-gap', title: '20 MW figure rests on two countries', detail: 'The headline “up to 28 MtCO₂e / 94,428 installations” comes from French + Polish registries only, “applied as a representative curve for the entire EU” and “driven primarily by the Polish dataset.”', src: 'Annex 12, p62/68' },
+  { id: 'waste-emissions', tag: 'data-gap', title: 'Waste emissions “complex to estimate”', detail: 'Municipal, hazardous and landfill caps are built on “a buffer for underestimation” and “limited availability of measurement-based data … constraints on harmonised, robust and verified data.”', src: 'Annex 8 I, p18' },
+  { id: 'removals-divisive', tag: 'contested', title: 'Removals integration is “very divisive”', detail: 'Temporary removals drew “the highest level of strong disagreement”; ~12% of consultation respondents (mainly NGOs) oppose integration outright on environmental-integrity grounds.', src: 'Annex 8 II, p64' },
+  { id: 'free-allocation-contested', tag: 'contested', title: 'Free allocation: industry vs NGOs', detail: 'Business favours keeping and improving free allocation; NGOs favour phase-out on “polluter pays”. On the 20 MW threshold and CORSIA quality, groups are “strongly divided”.', src: 'Annex 2 (consultation)' },
+  { id: 'aviation-cap', tag: 'assumption', title: 'Aviation cap addition “is uncertain”', detail: 'The +148 Mt added for incoming/outgoing international aviation in 2027 rests on a PRIMES estimate the IA calls “uncertain, but it gives an indication.” Small maritime extensions were “ignored”.', src: 'Annex 8 I, p8' },
+  { id: 'price-volatility', tag: 'assumption', title: 'Price volatility “cannot be assessed”', detail: 'Modelled prices “rely on uncertain assumptions and may not capture actual short-term price movements”; “within-year price volatility cannot be assessed quantitatively.” “Reality will lie between these two extremes.”', src: 'Part 1, p52–53' },
+  { id: 'idb-illustrative', tag: 'assumption', title: 'IDB abatement is “illustrative”', detail: 'The Bank’s 1,630 Mt figure “will depend on the final IDB design … demand for low-carbon products and project delivery risks”, and the ETS price feeding it “is an assumption … derived from 2040 climate-target modelling.”', src: 'Part 1, p34–35' },
+  { id: 'refinery-output', tag: 'assumption', title: 'Refinery output held constant', detail: 'The free-allocation calculation “assumes refinery output remains constant over time”, while “in reality it is expected to decline” — an explicit simplification affecting the leakage budget.', src: 'Annex 12, p21' },
+  { id: 'net-vs-gross', tag: 'definitional', title: 'Net vs gross removals ambiguity', detail: 'CR2 gross outcome is “uncertain and unlimited”; CR3 has “a maximum level of removals … but not a minimum,” so the net can silently equal the gross and miss the target.', src: 'Annex 8 II, p29/53' },
+  { id: 'on-top-of-cap', tag: 'contested', title: 'Removals sit on top of the cap', detail: 'The 250 Mt Art. 9c removals are added above the cap and are not subject to the LRF — adding allowances rather than displacing emission budget. Critics (e.g. Bellona) call this “flooding the market”.', src: 'Removals summary · Art. 9c' },
+  { id: 'removal-delivery', tag: 'assumption', title: 'Removal delivery is not guaranteed', detail: 'The programme is revenue-driven: the Commission auctions the 250 Mt and buys removals with the proceeds, so delivered tonnage depends on auction revenue vs removal cost (hence the +10 Mt contingency). It is not a hard commitment to 250 Mt delivered.', src: 'Removals summary · Art. 9c' },
+  { id: 'credits-2033-review', tag: 'assumption', title: 'International credits hinge on a 2033 review', detail: 'The ~260 Mt of 2036–40 international credits is contingent: a 2033 review must find high-integrity, cost-effective credits available. If it fails, the 2036–40 LRF reverts to 2.7% (from 1.7%) to tighten the cap instead.', src: 'Removals summary · 2033 review' },
+  { id: 'ambition-contested', tag: 'range', title: '2040 ambition is contested', detail: 'The Commission estimates the package delivers an 85–87% reduction by 2040; Climact estimates the tabled text delivers ~80%. The proposal is entering trialogue, so the architecture and figures may still shift.', src: 'Removals summary · secondary coverage' },
+  { id: 'aviation-scope-revert', tag: 'assumption', title: 'Aviation scope can revert in 2032', detail: 'The extension to departing flights (≤5,000 km, from 2029) is provisional: a 2032 review of CORSIA can revert the scope to intra-EEA if CORSIA is judged “ambitious, efficient and successful”, or widen it if not.', src: 'Q&A · aviation coverage' },
+  { id: 'green-fuel-pot', tag: 'assumption', title: 'Green-fuel support is a capped pot', detail: 'The SAF reserve (~110 M allowances, ~€9bn to 2040) and maritime SMAP (~46 M EUAs) are fixed pots covering a fixed share of the price gap. With SAF abatement at $600–800/t vs offsets $10–40/t, uptake still assumes the ReFuelEU/FuelEU mandates are met.', src: 'Part 1, p40 · coverage' },
 ];
 
 /* ---------------------------------------------------- cap trajectory chart */
@@ -244,6 +258,56 @@ function RangeBars({ rows, max, unit }: { rows: { name: string; lo: number; hi: 
   );
 }
 
+/* ---------------------------------------------------- legislative timeline (2026 → 2040) */
+interface TimelineItem { year: number; dateLabel: string; lines: string[]; color: string; kind: 'event' | 'review'; }
+const TIMELINE: TimelineItem[] = [
+  { year: 2026 + 198 / 365, dateLabel: '17 Jul 2026', lines: ['Proposal tabled,', 'trialogue begins'], color: C_NAVY, kind: 'event' },
+  { year: 2029, dateLabel: '2029', lines: ['Aviation scope starts', '(departing ≤5,000 km)'], color: CAT.scope.color, kind: 'event' },
+  { year: 2031, dateLabel: '2031', lines: ['Phase 5 starts —', 'LRF 3.7%, removals open'], color: CAT.ambition.color, kind: 'event' },
+  { year: 2032, dateLabel: '2032', lines: ['CORSIA review —', 'aviation scope may revert'], color: CAT.scope.color, kind: 'review' },
+  { year: 2033, dateLabel: '2033', lines: ['Credits review —', 'fail ⇒ LRF reverts 2.7%'], color: CAT.flex.color, kind: 'review' },
+  { year: 2036, dateLabel: '2036', lines: ['Credits window opens,', 'LRF steps to 1.7%'], color: CAT.flex.color, kind: 'event' },
+  { year: 2038, dateLabel: '2038', lines: ['CBAM free-allocation', 'phase-out ends'], color: CAT.industry.color, kind: 'event' },
+  { year: 2040, dateLabel: '2040', lines: ['Endpoint: −90% net /', '85% domestic, cap ≈330 Mt'], color: CAT.ambition.color, kind: 'event' },
+];
+function TimelineChart() {
+  const W = 780, H = 250, M = { l: 30, r: 30 };
+  const PX = W - M.l - M.r;
+  const axisY = H / 2;
+  const minY = 2026, maxY = 2040;
+  const x = (yr: number) => M.l + ((yr - minY) / (maxY - minY)) * PX;
+  const stemLen = 36;
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="w-full" role="img" aria-label="Legislative timeline of the ETS reform, 2026 to 2040, with scheduled milestones and review points">
+      <line x1={M.l} y1={axisY} x2={W - M.r} y2={axisY} stroke={GRID} strokeWidth={2} />
+      {[2026, 2028, 2030, 2032, 2034, 2036, 2038, 2040].map((yr) => (
+        <line key={yr} x1={x(yr)} y1={axisY - 3} x2={x(yr)} y2={axisY + 3} stroke="#c9d6d5" />
+      ))}
+      {TIMELINE.map((t, i) => {
+        const above = i % 2 === 0;
+        const cx = x(t.year);
+        const tipY = above ? axisY - stemLen : axisY + stemLen;
+        const dateY = above ? axisY - stemLen - 26 : axisY + stemLen + 14;
+        return (
+          <g key={t.dateLabel + i}>
+            <title>{`${t.dateLabel} — ${t.lines.join(' ')}`}</title>
+            <line x1={cx} y1={axisY} x2={cx} y2={tipY} stroke={t.color} strokeWidth={1.25} strokeDasharray={t.kind === 'review' ? '2 2' : undefined} />
+            {t.kind === 'review' ? (
+              <rect x={cx - 4.5} y={axisY - 4.5} width={9} height={9} fill="#fff" stroke={t.color} strokeWidth={2} transform={`rotate(45 ${cx} ${axisY})`} />
+            ) : (
+              <circle cx={cx} cy={axisY} r={4.5} fill={t.color} stroke="#fff" strokeWidth={1.25} />
+            )}
+            <text x={cx} y={dateY} textAnchor="middle" fontSize={9.5} fontWeight={700} fill={t.color} className="tabular-nums">{t.dateLabel}</text>
+            {t.lines.map((ln, li) => (
+              <text key={li} x={cx} y={dateY + 11 * (li + 1)} textAnchor="middle" fontSize={9} fill={INK}>{ln}</text>
+            ))}
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
 /* ------------------------------------------- flexibility package (removals + credits) */
 const PILLARS = [
   {
@@ -285,6 +349,41 @@ const SAF_TIERS = [
   { name: 'Advanced biofuels', pct: 70, color: C_BLUE },
   { name: 'Other ReFuelEU SAF', pct: 50, color: C_AMBER },
 ];
+
+/* ---------------------------------------------- flexibility headroom, magnitude comparison */
+const HEADROOM = [
+  { name: 'Domestic removals (Art. 9c)', color: C_PURPLE, base: 250, extra: 10, relation: 'on top of the cap' },
+  { name: 'International credits (2036–40)', color: C_TEAL, base: 260, extra: 0, relation: 'inside the cap' },
+];
+function HeadroomChart() {
+  const max = 280;
+  return (
+    <div className="space-y-3">
+      {HEADROOM.map((h) => {
+        const baseW = (h.base / max) * 100;
+        const extraW = (h.extra / max) * 100;
+        return (
+          <div key={h.name} className="grid grid-cols-[168px_1fr] items-center gap-3">
+            <div className="text-[11.5px] leading-tight text-tertiary-dark">{h.name}</div>
+            <div className="relative h-6">
+              <div className="absolute inset-y-0 left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-grey-200" />
+              <div className="absolute top-1/2 h-3.5 -translate-y-1/2 rounded-l-[3px]"
+                style={{ left: 0, width: `${baseW}%`, background: h.color, borderRadius: h.extra > 0 ? '3px 0 0 3px' : '3px' }} />
+              {h.extra > 0 && (
+                <div className="absolute top-1/2 h-3.5 -translate-y-1/2 rounded-r-[3px] border-2 border-dashed"
+                  style={{ left: `${baseW}%`, width: `${Math.max(extraW, 1)}%`, borderColor: h.color, background: `${h.color}22` }} />
+              )}
+              <span className="absolute top-1/2 -translate-y-1/2 whitespace-nowrap font-mono text-[10px] font-semibold tabular-nums"
+                style={{ left: `${baseW + extraW + 1.5}%`, color: h.color }}>
+                {fmt(h.base + h.extra)} Mt{h.extra > 0 ? ` (incl. +${h.extra} Mt contingency)` : ''} · {h.relation}
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function Pillars() {
   return (
@@ -352,14 +451,54 @@ function Card({ children, className = '' }: { children: React.ReactNode; classNa
 export default function EtsReformPage() {
   const [tagFilter, setTagFilter] = useState<TagKey | null>(null);
   const [catFilter, setCatFilter] = useState<CatKey | null>(null);
+  const [registerQuery, setRegisterQuery] = useState('');
+  const [highlightUncIds, setHighlightUncIds] = useState<string[]>([]);
+  const [highlightChangeId, setHighlightChangeId] = useState<string | null>(null);
 
   const changes = useMemo(() => CHANGES.filter((c) => catFilter === null || c.cat === catFilter), [catFilter]);
-  const register = useMemo(() => REGISTER.filter((r) => tagFilter === null || r.tag === tagFilter), [tagFilter]);
+  const register = useMemo(() => {
+    const q = registerQuery.trim().toLowerCase();
+    return REGISTER.filter((r) => (tagFilter === null || r.tag === tagFilter) && (q === '' || `${r.title} ${r.detail}`.toLowerCase().includes(q)));
+  }, [tagFilter, registerQuery]);
   const counts = useMemo(() => { const c: Record<string, number> = {}; for (const r of REGISTER) c[r.tag] = (c[r.tag] ?? 0) + 1; return c; }, []);
+  // reverse index: register id -> the (first) change that cites it, for the back-reference on each register card
+  const uncToChange = useMemo(() => {
+    const m: Record<string, { id: string; title: string }> = {};
+    for (const c of CHANGES) for (const rid of c.rel) if (!(rid in m)) m[rid] = { id: c.id, title: c.title };
+    return m;
+  }, []);
+
+  // cross-link: change card -> register entries. Clears blocking filters, highlights the matches, scrolls to the first.
+  function showUncertainties(ids: string[]) {
+    if (ids.length === 0) return;
+    setTagFilter(null);
+    setRegisterQuery('');
+    setHighlightUncIds(ids);
+  }
+  // cross-link: register card -> its related change card.
+  function showChange(id: string) {
+    setCatFilter(null);
+    setHighlightChangeId(id);
+  }
+  useEffect(() => {
+    if (highlightUncIds.length === 0) return;
+    const el = document.getElementById(`unc-${highlightUncIds[0]}`);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const t = window.setTimeout(() => setHighlightUncIds([]), 2200);
+    return () => window.clearTimeout(t);
+  }, [highlightUncIds]);
+  useEffect(() => {
+    if (!highlightChangeId) return;
+    const el = document.getElementById(`chg-${highlightChangeId}`);
+    el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    const t = window.setTimeout(() => setHighlightChangeId(null), 2200);
+    return () => window.clearTimeout(t);
+  }, [highlightChangeId]);
 
   const nav = [
     { id: 'changes', label: 'Key changes' },
     { id: 'numbers', label: 'The numbers' },
+    { id: 'timeline', label: 'What happens when' },
     { id: 'flexibility', label: 'Removals & credits' },
     { id: 'aviation-maritime', label: 'Aviation & maritime' },
     { id: 'register', label: 'Uncertainty register' },
@@ -418,20 +557,38 @@ export default function EtsReformPage() {
             ))}
           </div>
           <div className="grid gap-3 md:grid-cols-2">
-            {changes.map((c) => (
-              <div key={c.title} className="flex flex-col rounded-lg border border-l-[3px] border-grey-200 bg-white p-4" style={{ borderLeftColor: c.catColor }}>
-                <div className="mb-1 flex items-start justify-between gap-3">
-                  <p className="text-[13.5px] font-bold text-tertiary-dark">{c.title}</p>
-                  <span className="shrink-0 rounded-full px-2 py-0.5 font-mono text-[11px] font-bold tabular-nums" style={{ background: `${c.catColor}14`, color: c.catColor }}>{c.figure}</span>
+            {changes.map((c) => {
+              const isHi = highlightChangeId === c.id;
+              return (
+                <div key={c.id} id={`chg-${c.id}`}
+                  className="scroll-mt-24 flex flex-col rounded-lg border border-l-[3px] border-grey-200 bg-white p-4"
+                  style={{
+                    borderLeftColor: c.catColor,
+                    transition: 'background-color 900ms ease, box-shadow 900ms ease',
+                    backgroundColor: isHi ? `${c.catColor}14` : '#fff',
+                    boxShadow: isHi ? `0 0 0 2px ${c.catColor}66` : 'none',
+                  }}>
+                  <div className="mb-1 flex items-start justify-between gap-3">
+                    <p className="text-[13.5px] font-bold text-tertiary-dark">{c.title}</p>
+                    <span className="shrink-0 rounded-full px-2 py-0.5 font-mono text-[11px] font-bold tabular-nums" style={{ background: `${c.catColor}14`, color: c.catColor }}>{c.figure}</span>
+                  </div>
+                  <p className="text-[12px] leading-relaxed text-tertiary">{c.proposed}</p>
+                  <p className="mt-2 border-l-2 pl-2 text-[11.5px] italic leading-snug text-tertiary-dark" style={{ borderColor: `${c.catColor}55` }}>{c.quote}</p>
+                  <div className="mt-2.5 flex flex-wrap items-center justify-between gap-1.5">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Stated in →</span>
+                      {c.links.map((k) => <SourceChip key={k} k={k} />)}
+                    </div>
+                    {c.rel.length > 0 && (
+                      <button type="button" onClick={() => showUncertainties(c.rel)}
+                        className="text-[10.5px] font-semibold text-tertiary hover:text-primary hover:underline">
+                        uncertainties: {c.rel.length} →
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <p className="text-[12px] leading-relaxed text-tertiary">{c.proposed}</p>
-                <p className="mt-2 border-l-2 pl-2 text-[11.5px] italic leading-snug text-tertiary-dark" style={{ borderColor: `${c.catColor}55` }}>{c.quote}</p>
-                <div className="mt-2.5 flex flex-wrap items-center gap-1.5">
-                  <span className="text-[10px] font-semibold uppercase tracking-wide text-tertiary">Stated in →</span>
-                  {c.links.map((k) => <SourceChip key={k} k={k} />)}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
@@ -472,6 +629,28 @@ export default function EtsReformPage() {
           </div>
         </section>
 
+        {/* ===================== TIMELINE ===================== */}
+        <section id="timeline" className="mb-10 scroll-mt-16">
+          <h2 className="text-lg font-bold text-tertiary-dark">What happens when — the legislative timeline, 2026 → 2040</h2>
+          <p className="mb-4 max-w-3xl text-[13px] text-tertiary">
+            The proposal is not a single date — it is a sequence of thresholds and review points running to 2040. Diamonds mark
+            review/decision points where the trajectory can still change; circles mark scheduled milestones.
+          </p>
+          <Card>
+            <TimelineChart />
+            <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 px-1 text-[11px] text-tertiary">
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2.5 w-2.5 rounded-full" style={{ background: INK }} />Scheduled milestone</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rotate-45 border-2" style={{ borderColor: INK, background: '#fff' }} />Review / decision point</span>
+              <span className="mx-1 text-grey-200" aria-hidden>·</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: C_NAVY }} />Process</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: CAT.ambition.color }} />{CAT.ambition.label}</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: CAT.flex.color }} />{CAT.flex.label}</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: CAT.scope.color }} />{CAT.scope.label}</span>
+              <span className="inline-flex items-center gap-1.5"><span className="inline-block h-2 w-2 rounded-full" style={{ background: CAT.industry.color }} />{CAT.industry.label}</span>
+            </div>
+          </Card>
+        </section>
+
         {/* ===================== FLEXIBILITY PACKAGE ===================== */}
         <section id="flexibility" className="mb-10 scroll-mt-16">
           <h2 className="text-lg font-bold text-tertiary-dark">The flexibility package — removals &amp; international credits</h2>
@@ -480,6 +659,15 @@ export default function EtsReformPage() {
             figures are <strong>cumulative over the decade, not annual</strong>. This is the design that draws the most political fire.
           </p>
           <Pillars />
+          <Card className="mt-3">
+            <p className="mb-1 text-[12px] font-bold text-tertiary-dark">Cumulative headroom, 2031–2040 · Mt CO₂</p>
+            <p className="mb-3 text-[11px] text-tertiary">
+              A magnitude comparison only — the two pillars are not modelled together and sit in different places relative to the
+              cap: removals are added <strong>on top of</strong> it (solid + dashed contingency segment), credits are reflected{' '}
+              <strong>inside</strong> it (solid).
+            </p>
+            <HeadroomChart />
+          </Card>
           <div className="mt-3 grid gap-3 lg:grid-cols-3">
             {[
               { h: 'On top of the cap', b: 'The 250 Mt removals are added above the cap via Art. 9c and are not subject to the LRF — critics (Bellona) call this “flooding the market”, since it adds allowances rather than cutting the emission budget.', c: C_PURPLE },
@@ -562,17 +750,44 @@ export default function EtsReformPage() {
               <TagChip key={k} tag={k} onClick={() => setTagFilter(tagFilter === k ? null : k)} active={tagFilter === null ? undefined : tagFilter === k} />
             ))}
             {tagFilter && <button type="button" onClick={() => setTagFilter(null)} className="text-[11px] font-semibold text-accent-orange hover:underline">↺ clear</button>}
+            <input
+              type="text"
+              value={registerQuery}
+              onChange={(e) => setRegisterQuery(e.target.value)}
+              placeholder="Search title or detail…"
+              aria-label="Search the uncertainty register"
+              className="ml-1 w-full max-w-[210px] rounded-md border border-grey-200 px-2 py-1 text-[11.5px] text-tertiary-dark placeholder:text-tertiary focus:border-primary focus:outline-none sm:w-auto"
+            />
             <span className="ml-auto text-[11px] text-tertiary">{register.length} of {REGISTER.length}</span>
           </div>
           <div className="grid gap-2.5 md:grid-cols-2">
-            {register.map((r) => (
-              <div key={r.title} className="rounded-lg border-l-[3px] border border-grey-200 bg-white p-3.5" style={{ borderLeftColor: TAGS[r.tag].color }}>
-                <div className="mb-1"><TagChip tag={r.tag} /></div>
-                <p className="text-[13px] font-bold text-tertiary-dark">{r.title}</p>
-                <p className="mt-1 text-[12px] leading-relaxed text-tertiary">{r.detail}</p>
-                <p className="mt-1.5"><span className="rounded bg-grey-100 px-1 py-px font-mono text-[9.5px] text-tertiary">{r.src}</span></p>
-              </div>
-            ))}
+            {register.map((r) => {
+              const isHi = highlightUncIds.includes(r.id);
+              const back = uncToChange[r.id];
+              return (
+                <div key={r.id} id={`unc-${r.id}`}
+                  className="scroll-mt-24 rounded-lg border-l-[3px] border border-grey-200 p-3.5"
+                  style={{
+                    borderLeftColor: TAGS[r.tag].color,
+                    transition: 'background-color 900ms ease, box-shadow 900ms ease',
+                    backgroundColor: isHi ? `${TAGS[r.tag].color}14` : '#fff',
+                    boxShadow: isHi ? `0 0 0 2px ${TAGS[r.tag].color}66` : 'none',
+                  }}>
+                  <div className="mb-1"><TagChip tag={r.tag} /></div>
+                  <p className="text-[13px] font-bold text-tertiary-dark">{r.title}</p>
+                  <p className="mt-1 text-[12px] leading-relaxed text-tertiary">{r.detail}</p>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-2">
+                    <span className="rounded bg-grey-100 px-1 py-px font-mono text-[9.5px] text-tertiary">{r.src}</span>
+                    {back && (
+                      <button type="button" onClick={() => showChange(back.id)}
+                        className="text-[10px] font-semibold text-tertiary hover:text-primary hover:underline">
+                        ↳ relates to “{back.title}”
+                      </button>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           {register.length === 0 && <p className="py-6 text-center text-[13px] text-tertiary">No entries for this filter.</p>}
           <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-tertiary">
