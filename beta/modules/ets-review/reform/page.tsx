@@ -275,7 +275,7 @@ const PILLARS = [
 /* ------------------------------------------- aviation & maritime (current vs proposed) */
 const AVMAR = [
   { area: 'Aviation scope', current: 'Flights within the EEA only (intra-EEA + departing to CH/UK)', proposed: '+ flights departing the EEA to third countries ≤5,000 km from the Union’s centre, from 2029 (Istanbul, Dubai in; US, China, Far East out). Reversible at a 2032 CORSIA review.' },
-  { area: 'Business / private jets', current: 'Largely exempt (flight-number thresholds)', proposed: 'Brought in via a single 10,000 tCO₂/yr emissions threshold for all operator types.' },
+  { area: 'Business / private jets', current: 'Non-commercial jets exempt below 1,000 tCO₂/yr; ~67% of private-jet emissions uncovered', proposed: 'Priced for the first time — mainly via the wider departing-flight scope, plus a tighter small-emitter exemption (exact threshold TBC in COM(2026) 616).' },
   { area: 'SAF support', current: '20 M-allowance reserve, expiring ~2030', proposed: 'Reserve grown to ~110 M allowances (~€9bn) and extended to 2040; “book-and-claim”, tiered to fuel quality.' },
   { area: 'Maritime scope', current: 'Ships ≥ 5,000 GT (100% intra-EEA + 50% extra-EEA)', proposed: 'Extended toward smaller vessels (~400–5,000 GT); cap raised, anti-evasion safeguards (+11–15 Mt scope).' },
   { area: 'Clean marine fuels', current: 'No dedicated support mechanism', proposed: 'New SMAP mechanism ≈ 46 M EUAs (IA) to bridge the fossil-vs-alternative price gap; 50% of maritime ETS revenue recycled to the sector.' },
