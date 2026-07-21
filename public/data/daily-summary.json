@@ -1,24 +1,18 @@
 {
   "date": "2026-07-21",
-  "generatedAt": "2026-07-21T12:28:18.441Z",
+  "generatedAt": "2026-07-21T18:17:33.756Z",
   "title": "EU Climate & Energy Daily Briefing",
   "subtitle": "Tuesday, 21 July 2026 — Key developments from the last 24 hours",
   "highlights": [
     {
-      "headline": "EU waives penalties for oil and gas firms that breach methane law - Reuters",
-      "summary": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5\" target=\"_blank\"&gt;EU waives penalties for oil and gas firms that breach methane law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-      "tag": "EU POLICY",
-      "color": "#007B6C"
-    },
-    {
-      "headline": "Climate and rock art advocates take on Woodside’s ‘carbon bomb’ WA gas project in federal court",
-      "summary": "&lt;p&gt;Albanese government’s approval of&lt;s&gt; &lt;/s&gt;North West Shelf gas extension being challenged by the Australian Conservation Foundation and Friends of Australian Rock Art&lt;/p&gt;&lt;p&gt;The Albanese government’s decision to approve one of the world’s largest gas projects in Western Australia is being challenged in the federal court, setting up a significant test of how Australia’s environment law deals with the climate crisis.&lt;/p&gt;&lt;p&gt;The Australian Conservation Foun",
+      "headline": "Energy transition policymaking must evolve to fit an age of rupture",
+      "summary": "Economic competitiveness, energy security and green industrialisation are driving real-world change - but will this damage our collective mission for a fair green shift? The post Energy transition policymaking must evolve to fit an age of rupture appeared first on Climate Home News.",
       "tag": "ENERGY",
       "color": "#E87722"
     },
     {
-      "headline": "Q&#038;A: What the EU’s carbon market review means for climate action",
-      "summary": "The European Commission has put forward new plans to cut emissions under the EU carbon... The post Q&amp;A: What the EU’s carbon market review means for climate action appeared first on Carbon Brief.",
+      "headline": "Extreme heat costing India&#8217;s poorest workers 2% of GDP, survey finds",
+      "summary": "India's informal workers are estimated to be losing $78 billion in wages per year because of productivity declines and illness caused by intensifying heat The post Extreme heat costing India&#8217;s poorest workers 2% of GDP, survey finds appeared first on Climate Home News.",
       "tag": "CLIMATE",
       "color": "#2E8B57"
     }
@@ -27,21 +21,20 @@
     {
       "id": "eu_policy",
       "title": "EU Policy & Legislation",
-      "items": [
-        {
-          "title": "EU waives penalties for oil and gas firms that breach methane law - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxNYnE3NEl2M3ZZYVBvcVhmaXQycHpvaWI0SnF0OG1rNnBrR0J6LXpqUmZELVdvbjVDa2lCMEIwOFdjN1BQLUlUSUV1eHFrZE05RXdYOGpkSGx2YWZ0eVU1ZE81RERfclhRTkxESzc3eE9rY2pzbS1ScUVaUUR6RjJQaTZBdkpzTERmUXZIQWFzX3BMV1ZSc0F1QkRLV0Y0UmMzaFNTT0V1OGNwODcxaEV0dXNsRzA?oc=5\" target=\"_blank\"&gt;EU waives penalties for oil and gas firms that breach methane law&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T15:21:16.000Z",
-          "score": 17
-        }
-      ]
+      "items": []
     },
     {
       "id": "energy",
       "title": "Energy Transition",
       "items": [
+        {
+          "title": "Energy transition policymaking must evolve to fit an age of rupture",
+          "link": "https://www.climatechangenews.com/2026/07/21/energy-transition-policymaking-must-evolve-to-fit-an-age-of-rupture/",
+          "source": "Climate Home News",
+          "description": "Economic competitiveness, energy security and green industrialisation are driving real-world change - but will this damage our collective mission for a fair green shift? The post Energy transition policymaking must evolve to fit an age of rupture appeared first on Climate Home News.",
+          "published": "2026-07-21T14:50:51.000Z",
+          "score": 13
+        },
         {
           "title": "Climate and rock art advocates take on Woodside’s ‘carbon bomb’ WA gas project in federal court",
           "link": "https://www.theguardian.com/environment/2026/jul/21/north-west-shelf-gas-project-woodside-wa-federal-court-challenge",
@@ -73,14 +66,6 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxNV09nNHJnRVFremV5MkNFSW9ER3Q2bDllSURrWk5tOGpvN0Q5X0xaX2VMTlFZY04tenI5WEltOEZvV25qSjQ1blhnRG1VUGxQZEljSFhfakNrMjZfUkk0SWZPN1BtTDVzb29BOGVPQ2VzWV9pT2U0dThaZDU5Ump6VnZYek5XZlpJR0NWanhrNTAxRnMyT0hqemZieUtjN2x2Y3dUX0tkdUY0SHRTaEk2dmxVZGVYUHpEX3FlRE43VDVwMVpyb3BV?oc=5\" target=\"_blank\"&gt;Houthi Red Sea blockade would lift oil prices, but workarounds could limit impact&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/fo",
           "published": "2026-07-20T22:51:05.000Z",
           "score": 7
-        },
-        {
-          "title": "US launches 10th round of strikes as Iran says it is in ‘full-scale war’",
-          "link": "https://www.theguardian.com/world/2026/jul/20/us-strikes-iran-strait-of-hormuz-oil-prices",
-          "source": "The Guardian - Energy",
-          "description": "&lt;p&gt;Diplomats say de-escalation talks continue as Trump vows retaliation over US soldier deaths&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news\"&gt;Middle East crisis live – latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The US military said it has launched its 10th consecutive round of strikes on Iran to force the r",
-          "published": "2026-07-20T20:19:46.000Z",
-          "score": 4
         }
       ]
     },
@@ -88,14 +73,6 @@
       "id": "climate",
       "title": "Climate & Environment",
       "items": [
-        {
-          "title": "Q&#038;A: What the EU’s carbon market review means for climate action",
-          "link": "https://www.carbonbrief.org/qa-what-the-eus-carbon-market-review-means-for-climate-action/",
-          "source": "Carbon Brief",
-          "description": "The European Commission has put forward new plans to cut emissions under the EU carbon... The post Q&amp;A: What the EU’s carbon market review means for climate action appeared first on Carbon Brief.",
-          "published": "2026-07-20T16:11:23.000Z",
-          "score": 19
-        },
         {
           "title": "Extreme heat costing India&#8217;s poorest workers 2% of GDP, survey finds",
           "link": "https://www.climatechangenews.com/2026/07/21/extreme-heat-costing-india-poor-workers-2-gdp-survey-finds/",
@@ -105,20 +82,12 @@
           "score": 10
         },
         {
-          "title": "Top maritime court rejects bid to halt UN deep-sea mining inquiry",
-          "link": "https://www.climatechangenews.com/2026/07/20/top-maritime-court-rejects-bid-to-halt-un-deep-sea-mining-inquiry/",
-          "source": "Climate Home News",
-          "description": "Two subsidiaries of The Metals Company sought to block the probe into potential contract breaches launched after the firm's application for US-sponsored permits The post Top maritime court rejects bid to halt UN deep-sea mining inquiry appeared first on Climate Home News.",
-          "published": "2026-07-20T18:12:46.000Z",
-          "score": 10
-        },
-        {
-          "title": "Australian ski resorts smash July climate records with temperatures 12C above average",
-          "link": "https://www.theguardian.com/australia-news/2026/jul/21/australian-ski-resorts-smash-july-climate-records-with-temperatures-12c-above-average",
+          "title": "Millions face long-term coastal flooding risk in UK without climate action, scientists warn",
+          "link": "https://www.theguardian.com/environment/2026/jul/21/millions-long-term-coastal-flooding-risk-uk-climate-action",
           "source": "The Guardian - Climate",
-          "description": "&lt;p&gt;Resorts in New South Wales and Victoria face a warm and dry start to the season with only sporadic falls of natural snow in many alpine areas&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href=\"https://www.theguardian.com/australia-news/live/2026/jul/21/australia-news-live-barnaby-joyce-pauline-hanson-one-nation-anthony-albanese-labor-antisemitism-royal-commission-ntwnfb\"&gt;Follow our Australia news live blog for latest updates&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;Get our &lt",
-          "published": "2026-07-20T15:00:45.000Z",
-          "score": 9
+          "description": "&lt;p&gt;A ‘reasonable worst-case scenario’ suggests need for large-scale movement of populations away from reshaped coast&lt;/p&gt;&lt;p&gt;Up to 13 million people in the UK face the long-term risk of coastal flooding due to the climate crisis, scientists have warned, with a “reasonable worst-case scenario” suggesting the need for the large-scale movement of populations away from a dramatically reshaped coast.&lt;/p&gt;&lt;p&gt;Even if today’s global pledges to cut carbon pollution are met, abo",
+          "published": "2026-07-21T17:00:51.000Z",
+          "score": 7
         },
         {
           "title": "Slowdown in Arctic ice melt ends after largest winter decline on record",
@@ -127,6 +96,22 @@
           "description": "&lt;p&gt;Scientists recorded slower reduction over past 20 years, but study finds this was ‘temporary rather than sustained’&lt;/p&gt;&lt;p&gt;A previously recorded slowdown in Arctic sea ice decline has ended, according to a new study, with the largest year-to-year wintertime reduction ever recorded.&lt;/p&gt;&lt;p&gt;In a &lt;a href=\"https://www.theguardian.com/environment/2025/aug/20/slowdown-in-melting-of-arctic-sea-ice-surprises-scientists\"&gt;study&lt;/a&gt; published last summer, research",
           "published": "2026-07-20T19:00:48.000Z",
           "score": 7
+        },
+        {
+          "title": "Parts of the UK move closer to drought",
+          "link": "https://www.bbc.co.uk/weather/articles/cjwx0xv571eo?at_medium=RSS&amp;at_campaign=rss",
+          "source": "BBC Science & Environment",
+          "description": "Eight areas across England are now in prolonged dry weather – the stage before drought.",
+          "published": "2026-07-21T13:46:05.000Z",
+          "score": 7
+        },
+        {
+          "title": "Afghanistan: Deadly flash floods hit Nuristan province",
+          "link": "https://www.dw.com/en/afghanistan-deadly-flash-floods-hit-nuristan-province/a-78045451?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Some 20 people have been killed and more than 80 injured, with the city of Parun hit particularly hard. A lack of infrastructure and the effects of climate change have left the country vulnerable to natural disaster.",
+          "published": "2026-07-21T08:19:00.000Z",
+          "score": 4
         }
       ]
     },
@@ -148,19 +133,11 @@
           "score": 22
         },
         {
-          "title": "AliExpress hit with record EU fine",
-          "link": "https://www.dw.com/en/aliexpress-hit-with-record-eu-fine/a-78040720?maca=en-rss-en-all-1573-xml-mrss",
-          "source": "Deutsche Welle World",
-          "description": "The Chinese retailer has become the latest major online marketplace to face penalties under the EU’s Digital Services Act.",
-          "published": "2026-07-20T17:43:00.000Z",
-          "score": 8
-        },
-        {
-          "title": "Construction chemicals companies, trade associations hit with EU cartel charges - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPN0dPX1YwY2I0cHNpcU84UTlYUzltUFpwYXFJNEJ1TUU3allxUGlMRUFsQzZYeFZGamYwdVo4cXlhYWJPLUNGYXNvbDMzNmhpdkxOS2tNcVhEYW5iYkpNOElfSG9Mc2RYNjhoUWp6UUozR05DSmNIbDM0a0VYRFRtUTlHc1RYR2hOblREWFFienYxak5zcDQtQXpueUpZVVFCZlB6SlY2NEdNQm04X3A5TzJWYlFwNTlsRDZtVg?oc=5",
+          "title": "China's foreign minister discusses trade balance with EU lawmakers - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTZtbUZSVkVVMzJKZzhmNlF1TmVIb3Z5ZlpoTUxweDd3ZUtTZ0dKUW1DdENYV1Fua0hqSEVyNHhiUGVHODBGNnJqdC1tQUNFQTBHMnNBS2I1Y3NESGVYTkxIckRvREhYbC1HTW5rcFJhMVN4ZnFydTFlOU1sU1dOWHdCVXdOOFVhLXlnVEhTc2lIV0lhbDJudWpyQlhuejlaell6cElUUmhMTzV3SkFMREdzQQ?oc=5",
           "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPN0dPX1YwY2I0cHNpcU84UTlYUzltUFpwYXFJNEJ1TUU3allxUGlMRUFsQzZYeFZGamYwdVo4cXlhYWJPLUNGYXNvbDMzNmhpdkxOS2tNcVhEYW5iYkpNOElfSG9Mc2RYNjhoUWp6UUozR05DSmNIbDM0a0VYRFRtUTlHc1RYR2hOblREWFFienYxak5zcDQtQXpueUpZVVFCZlB6SlY2NEdNQm04X3A5TzJWYlFwNTlsRDZtVg?oc=5\" target=\"_blank\"&gt;Construction chemicals companies, trade associations hit with EU cartel charges&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-20T14:58:29.000Z",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxQcTZtbUZSVkVVMzJKZzhmNlF1TmVIb3Z5ZlpoTUxweDd3ZUtTZ0dKUW1DdENYV1Fua0hqSEVyNHhiUGVHODBGNnJqdC1tQUNFQTBHMnNBS2I1Y3NESGVYTkxIckRvREhYbC1HTW5rcFJhMVN4ZnFydTFlOU1sU1dOWHdCVXdOOFVhLXlnVEhTc2lIV0lhbDJudWpyQlhuejlaell6cElUUmhMTzV3SkFMREdzQQ?oc=5\" target=\"_blank\"&gt;China's foreign minister discusses trade balance with EU lawmakers&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-21T12:27:50.000Z",
           "score": 8
         },
         {
@@ -178,11 +155,35 @@
       "title": "Beyond Climate & EU — World News Highlights",
       "items": [
         {
+          "title": "French lawmakers vote on social media ban for children",
+          "link": "https://www.dw.com/en/french-lawmakers-vote-on-social-media-ban-for-children/a-78052466?maca=en-rss-en-all-1573-xml-mrss",
+          "source": "Deutsche Welle World",
+          "description": "Lawmakers in France voted on a social media ban which could come into effect by the start of the new school year in September. If approved, France would be the first EU country to enact such a ban.",
+          "published": "2026-07-21T15:45:00.000Z",
+          "score": 8
+        },
+        {
           "title": "Indian steelmakers pivot home as Europe tightens imports, China squeezes margins - Reuters",
           "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5",
           "source": "Reuters World (via Google News)",
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNakN6b1dteDhQOUhlTUNOTHVnZVVoVzZTREhQRHhCNFRybWZFaUI5bVp1UFh2NDZOYTY4Tms5dWJGRFd4RWlBejBrTEdoWkthd3FVWkdVNW9pNGdpQzVpdHFkME1JMC1nUWdMRUdVY2drdjZVdWt2ZEl5dXRoWHlPQ21LLXVzbFdJbmoxSmNLcThueGw2aXJJSHlLdzlrT053YmlzX2VjRjF4N0piMy00LWdUUnUxdWNxd1lwdVJ6WHpJdw?oc=5\" target=\"_blank\"&gt;Indian steelmakers pivot home as Europe tightens imports, China squeezes margins&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T07:15:43.000Z",
+          "published": "2026-07-21T17:16:50.000Z",
+          "score": 8
+        },
+        {
+          "title": "Fires in Spain and France, hail in Balkans; Europe's erratic weather persists - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPWi1yaHBIRE5YS2RBOXFTMmtJQ2ZDSDU1WU9YZXFfcmJ5aXFRVUFFMFFLdEtQOTVSVXhiNmZwLUFuTnl3R2pjM3lUVGtHQk43NTlUVXRTN1F0amJuOTgwTTJzY0w5ajV6RVJxSjh3dDNLaE1fZVVOaTdRb3RTbFVzZ0J2UTB6XzdPXzEwQUVjQlhBdEpZUnNNYWNRM1FvaTYwZzNDZnZiQ2pkYXU2WXcyQlA5UHFrWFVlSFliajhR?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxPWi1yaHBIRE5YS2RBOXFTMmtJQ2ZDSDU1WU9YZXFfcmJ5aXFRVUFFMFFLdEtQOTVSVXhiNmZwLUFuTnl3R2pjM3lUVGtHQk43NTlUVXRTN1F0amJuOTgwTTJzY0w5ajV6RVJxSjh3dDNLaE1fZVVOaTdRb3RTbFVzZ0J2UTB6XzdPXzEwQUVjQlhBdEpZUnNNYWNRM1FvaTYwZzNDZnZiQ2pkYXU2WXcyQlA5UHFrWFVlSFliajhR?oc=5\" target=\"_blank\"&gt;Fires in Spain and France, hail in Balkans; Europe's erratic weather persists&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-21T15:22:09.000Z",
+          "score": 8
+        },
+        {
+          "title": "Indonesia parliament passes bill to set up international financial centres - Reuters",
+          "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOYWt0dmlVSXJVRGY0QVBjQ2dudXZidTk5Q2JlY2lfR1ZCRXV4d1lxVVRsNTlIcWFuMDk3TkRvU0VfM2p0Ty1jQXRIdmRJQURreTFHN0hhS0FSMXdja1pIaEt3alR3anIzcXdnNXg4QXBrWlVyVklyT21saUlmSGZ3LTEyVFBiQlVXcllRQ1pJc21mMFE4VS1kVHFDRjd0bXNSaWp2MzBqNjdwSHowZ3hIa0x5dTJrUGFDOTc4OFUzcG04R2xv?oc=5",
+          "source": "Reuters World (via Google News)",
+          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxOYWt0dmlVSXJVRGY0QVBjQ2dudXZidTk5Q2JlY2lfR1ZCRXV4d1lxVVRsNTlIcWFuMDk3TkRvU0VfM2p0Ty1jQXRIdmRJQURreTFHN0hhS0FSMXdja1pIaEt3alR3anIzcXdnNXg4QXBrWlVyVklyT21saUlmSGZ3LTEyVFBiQlVXcllRQ1pJc21mMFE4VS1kVHFDRjd0bXNSaWp2MzBqNjdwSHowZ3hIa0x5dTJrUGFDOTc4OFUzcG04R2xv?oc=5\" target=\"_blank\"&gt;Indonesia parliament passes bill to set up international financial centres&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
+          "published": "2026-07-21T03:43:00.000Z",
           "score": 8
         },
         {
@@ -192,38 +193,14 @@
           "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMipAFBVV95cUxOT1BFMVFHcE80Tm9TdUk5SUdJaDNaLXFzbDlxT2ZmdjRYLTI5VUxCS2w0c3o1MXowU1N2dUJ2N0dKc3FaXzh6RHN4S0NvYkRDV1RLdDIwYjEzQk9MOFNJamNyV3VMNzFLdEh2cTF1Y3VaNkdxR3pxdWx4REJZaTRwZGNRb1plQWNEdU5Uc2syRXpGOURudGR4ZzlGTGJlWWN2bXVOZQ?oc=5\" target=\"_blank\"&gt;Aliexpress says €550 million EU tech fine is disproportionate&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
           "published": "2026-07-20T18:57:35.000Z",
           "score": 8
-        },
-        {
-          "title": "Burnham targets lower energy bills in first move as UK prime minister - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOaXVRbW1TZTJtN3FhRl9ZR1lNYWk5MWd0cnB3eEw4ckhBOVJxMVFHSTVudVhjd2E0UTZ1ZTZ6WmEzUEI5dGpGclg0R1BSSlRXc0g2MzN4dG81MmhBQkxsWDBzOFZkR3E1a3ZVcTk1ZlZPS3RCQ0NVZkhWNks4UWczTzFQcFBXUkVQU3pVdk1adHdweXdGZUo0a1pqX3JfX3pvUjNJ?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxOaXVRbW1TZTJtN3FhRl9ZR1lNYWk5MWd0cnB3eEw4ckhBOVJxMVFHSTVudVhjd2E0UTZ1ZTZ6WmEzUEI5dGpGclg0R1BSSlRXc0g2MzN4dG81MmhBQkxsWDBzOFZkR3E1a3ZVcTk1ZlZPS3RCQ0NVZkhWNks4UWczTzFQcFBXUkVQU3pVdk1adHdweXdGZUo0a1pqX3JfX3pvUjNJ?oc=5\" target=\"_blank\"&gt;Burnham targets lower energy bills in first move as UK prime minister&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T05:05:00.000Z",
-          "score": 7
-        },
-        {
-          "title": "French lawmakers vote on social media ban for children - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPa0JnMFRoc19wNlFndnQ1NU9kazRFWEJqVFljTkFrUmFxd0ZpLTBiUGNvTV9qdjJEejVPd3J4bE1oY0Q1R3FRY2U0MHA4QTctNlZib2E1dWFPdDBWdlpuVzhuUVZhSGVjRHFBZVROVzJqbXRzVlFyaUhkMmhaMFo0eFpoN3NxbDFiOXBVdTdTOEw3YUtDSFBqd2JMbFZmeU1PVkE?oc=5",
-          "source": "Reuters World (via Google News)",
-          "description": "&lt;a href=\"https://news.google.com/rss/articles/CBMiogFBVV95cUxPa0JnMFRoc19wNlFndnQ1NU9kazRFWEJqVFljTkFrUmFxd0ZpLTBiUGNvTV9qdjJEejVPd3J4bE1oY0Q1R3FRY2U0MHA4QTctNlZib2E1dWFPdDBWdlpuVzhuUVZhSGVjRHFBZVROVzJqbXRzVlFyaUhkMmhaMFo0eFpoN3NxbDFiOXBVdTdTOEw3YUtDSFBqd2JMbFZmeU1PVkE?oc=5\" target=\"_blank\"&gt;French lawmakers vote on social media ban for children&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;font color=\"#6f6f6f\"&gt;Reuters&lt;/font&gt;",
-          "published": "2026-07-21T10:13:43.000Z",
-          "score": 6
-        },
-        {
-          "title": "Why are thousands protesting for education reform in India?",
-          "link": "https://www.bbc.co.uk/news/articles/cedj9j911p8o?at_medium=RSS&amp;at_campaign=rss",
-          "source": "BBC World News",
-          "description": "Thousands of mostly young people tried to march on India's parliament to demand changes to how the education system is run.",
-          "published": "2026-07-21T10:01:59.000Z",
-          "score": 4
         }
       ]
     }
   ],
   "stats": {
-    "totalArticlesScanned": 434,
-    "articlesLast24h": 159,
-    "afterDedup": 151,
+    "totalArticlesScanned": 436,
+    "articlesLast24h": 163,
+    "afterDedup": 155,
     "feedsQueried": 19
   }
 }
