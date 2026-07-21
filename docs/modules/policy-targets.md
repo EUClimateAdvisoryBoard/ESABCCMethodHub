@@ -32,6 +32,65 @@ One row per target (a policy can have many), with twelve columns:
 The full table (including confirmation status) downloads as **`.xlsx`**
 (styled, auto-filtered, confirmed rows shaded green) or **`.csv`**.
 
+## Scope — which acts are in the register, and why
+
+The register is **not** the whole EU acquis and it is **not** a "top target
+per policy area" pick. Its scope is the **climate-relevant subset of the
+Policy Navigator registry** (M·04, `src/data/policies.ts` — 97 acts): every
+act whose enacting terms set a target, goal, objective or commitment bearing
+on **climate mitigation or adaptation**. That gives **38 acts**, selected
+systematically from the Navigator's own `domain` tags rather than hand-picked,
+so the choice is reproducible and auditable.
+
+Concretely, the 38 are:
+
+- the **core climate architecture** — Climate Law, EU ETS, Effort Sharing,
+  LULUCF, F-gas, Nature Restoration;
+- the **Fit-for-55 / Green Deal delivery acts** across energy (RED, EED,
+  EPBD, Methane), transport (CO2 cars, AFIR, FuelEU, RefuelEU, Euro 7),
+  industry (IED, NZIA, CRMA), buildings, and the circular-economy files
+  (Batteries, Ecodesign, Waste FD, SUP, PPWR);
+- the **land / water / environment** acts with climate content (CAP Strategic
+  Plans, Deforestation, Water FD, Marine Strategy FD, Zero-Pollution);
+- the **sustainable-finance and cross-cutting** enablers (Taxonomy, SFDR,
+  CSRD, CBAM, Social Climate Fund, CSDDD; Governance Regulation, Horizon
+  Europe; the Green Deal and Fit-for-55 umbrella communications).
+
+Everything with **no direct climate-target content** — the digital, health,
+security, migration, justice, consumer-protection and education acquis, and
+the purely prudential finance / trade-defence files — is **out of scope**.
+
+### Coverage is auditable
+
+Because the selection tracks domain tags, it can be checked mechanically. The
+coverage audit prints the 38 covered acts by domain, then the not-covered acts
+in three tiers — **candidate gaps** (core climate/energy acts not yet in, which
+a reviewer should consciously keep out or add), **judgment calls** (mixed-domain
+acts where only the climate-relevant ones were pulled in) and **out of scope**:
+
+```bash
+npm run check:policy-targets-coverage
+```
+
+At the time of writing the audit flags **6 candidate gaps** in the core
+domains — Electricity Market Reform, the Hydrogen & Gas Market package,
+REPowerEU, TEN-E (energy) and CO2 standards for heavy-duty vehicles, TEN-T
+(transport) — for a reviewer to accept or add.
+
+To confirm a **prior list** of policies (e.g. everything named in **PGR 1.0**)
+is captured, drop the list into a text file — one policy per line, as a
+Navigator id or a free-text name — and diff it:
+
+```bash
+cp scripts/data/pgr-1.0-policies.example.txt scripts/data/pgr-1.0-policies.txt
+# …replace the examples with the PGR 1.0 policy list…
+npm run check:policy-targets-coverage -- --ref scripts/data/pgr-1.0-policies.txt
+```
+
+The diff reports each reference entry as *captured in the register* / *in the
+Navigator but not the register* / *not found in the Navigator at all*, and exits
+non-zero if anything from the list is missing.
+
 ## How the data is built
 
 The pipeline is **recall-first** by design — it is better to surface a
@@ -109,6 +168,7 @@ binding text that lives elsewhere — and best-efforts constructions
 | `src/lib/useTargetConfirmations.ts` | Per-user human-confirm state (localStorage). |
 | `scripts/extract-policy-targets.mjs` | Regex safety-net. |
 | `scripts/build-policy-targets.mjs` | Merge, verbatim validation, classification, overrides. |
+| `scripts/check-policy-targets-coverage.mjs` | Scope/coverage audit + reference-list (PGR) diff. |
 | `scripts/policy-targets-input/*.json` | Committed extraction input (agents + regex). |
 | `scripts/policy-targets-overrides.json` | Verified corrections from the fact-check pass (with reasons). |
 

@@ -1,0 +1,24 @@
+# Reference policy list — template for the Policy Targets Register coverage diff.
+#
+# Purpose: confirm every policy already identified elsewhere (e.g. the policies
+# named in "PGR 1.0") is captured in the M·36 register. Fill this file with one
+# policy per line, then run:
+#
+#   npm run check:policy-targets-coverage -- --ref scripts/data/pgr-1.0-policies.txt
+#
+# Each line may be either a Navigator policy id (exact, preferred) or a
+# free-text name (matched case-insensitively against the act's id / short title
+# / full title). Blank lines and lines starting with '#' are ignored.
+#
+# The audit reports, for each entry: captured in the register / in the Navigator
+# but not the register / not found in the Navigator at all — so you can see at a
+# glance whether anything from the prior list is missing.
+#
+# Copy this file to pgr-1.0-policies.txt and replace the examples below with the
+# actual PGR 1.0 policy list.
+
+# --- examples (delete these) ---
+eu-ets-directive
+Effort Sharing Regulation
+Renewable Energy Directive
+CO2 Standards for Heavy-Duty Vehicles
