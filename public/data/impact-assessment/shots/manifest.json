@@ -1,0 +1,426 @@
+[
+  {
+    "part": 1,
+    "page": 28,
+    "slug": "cap-trajectories",
+    "file": "p1-028-cap-trajectories.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 29,
+    "slug": "cap-trajectories-2",
+    "file": "p1-029-cap-trajectories-2.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 34,
+    "slug": "idb-cost-effectiveness",
+    "file": "p1-034-idb-cost-effectiveness.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 38,
+    "slug": "aviation-emissions-options",
+    "file": "p1-038-aviation-emissions-options.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 52,
+    "slug": "msr-eua-price-paths",
+    "file": "p1-052-msr-eua-price-paths.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 53,
+    "slug": "tnac-emissions-ratio",
+    "file": "p1-053-tnac-emissions-ratio.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 64,
+    "slug": "energy-system-costs",
+    "file": "p1-064-energy-system-costs.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 65,
+    "slug": "industry-investment-needs",
+    "file": "p1-065-industry-investment-needs.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 98,
+    "slug": "gem-e3-macro-summary",
+    "file": "p1-098-gem-e3-macro-summary.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 99,
+    "slug": "maritime-npv-options-scoring",
+    "file": "p1-099-maritime-npv-options-scoring.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 1,
+    "page": 102,
+    "slug": "options-revenues-comparison",
+    "file": "p1-102-options-revenues-comparison.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 2,
+    "page": 69,
+    "slug": "gdp-assumptions",
+    "file": "p2-069-gdp-assumptions.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 2,
+    "page": 81,
+    "slug": "eua-price-poles-vs-primes",
+    "file": "p2-081-eua-price-poles-vs-primes.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 2,
+    "page": 106,
+    "slug": "baseline-cap-table",
+    "file": "p2-106-baseline-cap-table.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 8,
+    "slug": "legal-cap-trajectory",
+    "file": "p3-008-legal-cap-trajectory.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 11,
+    "slug": "cap123-primes",
+    "file": "p3-011-cap123-primes.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 12,
+    "slug": "cap123-potencia",
+    "file": "p3-012-cap123-potencia.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 13,
+    "slug": "investment-needs-cap",
+    "file": "p3-013-investment-needs-cap.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 16,
+    "slug": "system-costs-removals",
+    "file": "p3-016-system-costs-removals.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 36,
+    "slug": "removals-volumes-prices",
+    "file": "p3-036-removals-volumes-prices.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 47,
+    "slug": "cdr-costs-fiscal",
+    "file": "p3-047-cdr-costs-fiscal.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 48,
+    "slug": "cdr-unit-prices",
+    "file": "p3-048-cdr-unit-prices.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 126,
+    "slug": "msr-dashboard-1",
+    "file": "p3-126-msr-dashboard-1.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 127,
+    "slug": "msr-dashboard-2",
+    "file": "p3-127-msr-dashboard-2.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 138,
+    "slug": "po-dashboard",
+    "file": "p3-138-po-dashboard.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 184,
+    "slug": "idb-abatement-model",
+    "file": "p3-184-idb-abatement-model.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 185,
+    "slug": "idb-abatement-model-2",
+    "file": "p3-185-idb-abatement-model-2.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 219,
+    "slug": "maritime-fuel-macs",
+    "file": "p3-219-maritime-fuel-macs.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 254,
+    "slug": "saf-price-projections",
+    "file": "p3-254-saf-price-projections.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 3,
+    "page": 312,
+    "slug": "mss2-smaller-vessels",
+    "file": "p3-312-mss2-smaller-vessels.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 16,
+    "slug": "gem-e3-scenarios",
+    "file": "p4-016-gem-e3-scenarios.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 19,
+    "slug": "free-allocation-budgets",
+    "file": "p4-019-free-allocation-budgets.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 30,
+    "slug": "free-allocation-value",
+    "file": "p4-030-free-allocation-value.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 31,
+    "slug": "icc-decomposition",
+    "file": "p4-031-icc-decomposition.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 46,
+    "slug": "unit-production-costs",
+    "file": "p4-046-unit-production-costs.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 49,
+    "slug": "gdp-impacts-2040",
+    "file": "p4-049-gdp-impacts-2040.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 55,
+    "slug": "auction-revenue-2031-40",
+    "file": "p4-055-auction-revenue-2031-40.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 56,
+    "slug": "employment-impacts-2040",
+    "file": "p4-056-employment-impacts-2040.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 58,
+    "slug": "emissions-change-leakage",
+    "file": "p4-058-emissions-change-leakage.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 70,
+    "slug": "threshold-20mw",
+    "file": "p4-070-threshold-20mw.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 77,
+    "slug": "mwi-cap-extension",
+    "file": "p4-077-mwi-cap-extension.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 4,
+    "page": 141,
+    "slug": "ccu-capture-potential",
+    "file": "p4-141-ccu-capture-potential.png",
+    "w": 1310,
+    "h": 1853
+  },
+  {
+    "part": 5,
+    "page": 26,
+    "slug": "ets-emissions-since-2005",
+    "file": "p5-026-ets-emissions-since-2005.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 30,
+    "slug": "required-carbon-price-tech",
+    "file": "p5-030-required-carbon-price-tech.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 37,
+    "slug": "cap-vs-verified",
+    "file": "p5-037-cap-vs-verified.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 42,
+    "slug": "mac-curve-stylised",
+    "file": "p5-042-mac-curve-stylised.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 43,
+    "slug": "free-allocation-vs-auctioned",
+    "file": "p5-043-free-allocation-vs-auctioned.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 62,
+    "slug": "tnac-msr-history",
+    "file": "p5-062-tnac-msr-history.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 65,
+    "slug": "eua-price-history",
+    "file": "p5-065-eua-price-history.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 112,
+    "slug": "benchmark-carbon-costs",
+    "file": "p5-112-benchmark-carbon-costs.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 117,
+    "slug": "carbon-leakage-list",
+    "file": "p5-117-carbon-leakage-list.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 125,
+    "slug": "icc-compensation-history",
+    "file": "p5-125-icc-compensation-history.png",
+    "w": 1310,
+    "h": 1852
+  },
+  {
+    "part": 5,
+    "page": 220,
+    "slug": "auction-revenue-history",
+    "file": "p5-220-auction-revenue-history.png",
+    "w": 1310,
+    "h": 1852
+  }
+]
