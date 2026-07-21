@@ -247,6 +247,11 @@ export default function EtsReviewModule() {
             <strong> demand-side package</strong>. The gap between the two is the <em>shadow value of demand-side
             policy</em>. Move the sliders to test the assumptions.
           </p>
+          <a href="/beta/ets-review/impact-assessment"
+            className="mt-3 inline-flex items-center gap-2 rounded-md border border-grey-200 bg-white px-3 py-1.5 text-[12px] font-semibold text-tertiary-dark hover:border-primary hover:text-primary">
+            Inside the impact assessment — assumptions &amp; uncertainty
+            <span aria-hidden className="text-tertiary">SWD(2026) 616 · two areas · uncertainty register →</span>
+          </a>
         </section>
 
         {/* headline result cards */}
