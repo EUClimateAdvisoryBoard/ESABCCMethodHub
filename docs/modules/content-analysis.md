@@ -318,6 +318,29 @@ The **Snapshots** panel captures the current code tree + segments:
   projects are preserved — and a safety snapshot is captured first
   so a restore can itself be undone.
 
+### Policy clustering
+
+A lens in the Analyse view (`PolicyClusteringBoard`) that runs the first
+step of the policy coherence analysis: for each system (Energy supply,
+Buildings, Agri-food, and others to follow), every relevant EU policy or
+measure is sorted into one of four categories describing the type of
+governing resource it uses — information, law, money, or institutional
+capacity — and tagged for whether it serves mitigation, adaptation, or
+both. This produces the structured inventory the coherence board
+(`PolicyCoherenceBoard`) needs before it can look for gaps, overlaps and
+conflicts across and within the clusters.
+
+The four-category framework (originally "NATO": Nodality, Authority,
+Treasure, Organization) is Daniel Henstra's policy-instruments typology
+(Henstra, D. (2015). *The tools of climate adaptation policy: analysing
+instruments and instrument selection*. Climate Policy.
+doi:10.1080/14693062.2015.1015946). The dataset and category metadata
+live in
+[`src/lib/content-analysis/policy-clustering.ts`](https://github.com/EUClimateAdvisoryBoard/ESABCCMethodHub/blob/main/src/lib/content-analysis/policy-clustering.ts);
+it is a draft working tool — instrument lists are a first pass and should
+be checked against current legislation before use in the final coherence
+analysis.
+
 ### Two-step New Project Wizard
 
 The **New Project** flow is a two-step stepper:

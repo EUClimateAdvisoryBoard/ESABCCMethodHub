@@ -14,6 +14,7 @@ import ReportOutlineBuilder from './ReportOutlineBuilder';
 import ObjectiveChecklistMatrix from './ObjectiveChecklistMatrix';
 import PolicyCoherenceBoard from './PolicyCoherenceBoard';
 import SectorFlowBoard from './SectorFlowBoard';
+import PolicyClusteringBoard from './PolicyClusteringBoard';
 
 interface Props {
   projectId: string;
@@ -33,7 +34,7 @@ interface Props {
   onTabChange?: (tab: AnalysisTab) => void;
 }
 
-export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution' | 'checklist' | 'coherence' | 'flow';
+export type AnalysisTab = 'outline' | 'matrix' | 'evidence' | 'distribution' | 'checklist' | 'clustering' | 'coherence' | 'flow';
 
 const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'outline', label: 'Report outline', blurb: 'Map sections to tags — see which articles belong where, and where the gaps are.' },
@@ -41,6 +42,7 @@ const TABS: Array<{ id: AnalysisTab; label: string; blurb: string }> = [
   { id: 'evidence', label: 'Evidence base', blurb: 'A citation-ready quote bank per theme, exportable to Word.' },
   { id: 'distribution', label: 'Tag distribution', blurb: 'How coding effort is spread across tags and documents.' },
   { id: 'checklist', label: 'Objective checklist', blurb: 'Policies × delivery criteria — can each act deliver its own objective, and where are the inconsistencies (incl. consistency for adaptation)?' },
+  { id: 'clustering', label: 'Policy clustering', blurb: 'First step of the coherence analysis: sort each system’s policies into the four Henstra/NATO instrument categories (information, law, money, institutional capacity), tagged for mitigation/adaptation.' },
   { id: 'coherence', label: 'Policy coherence (beta)', blurb: 'Four-step coherence model: ① ex-ante design vs world development, ② across all policy goals, ③ goals vs means (derived from the objective checklist), ④ evaluation of policy change and outcomes.' },
   { id: 'flow', label: 'Sector flow', blurb: 'Per-sector flow chart linking ① progress reporting → ② policy analysis → ③ ESABCC recommendations, with co-benefits (health, air, water, biodiversity…) and live data indicators on every node.' },
 ];
@@ -192,6 +194,7 @@ export default function WorkspaceAnalysis({
             scopeLabel="This workspace"
           />
         )}
+        {tab === 'clustering' && <PolicyClusteringBoard />}
         {tab === 'coherence' && (
           <PolicyCoherenceBoard
             scopeIds={documents.map(d => d.id)}
